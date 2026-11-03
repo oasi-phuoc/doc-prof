@@ -1,0 +1,662 @@
+[
+  {
+    "slug": "velo",
+    "genre": "annonce de service",
+    "title": "Réparer son vélo ensemble",
+    "text": "Votre vélo a un pneu crevé ? Venez à l’atelier du quartier samedi, entre dix heures et midi. Deux bénévoles vous apprennent à réparer votre vélo. Apportez une chambre à air neuve. Les outils sont disponibles sur place. L’atelier se déroule dans la cour du centre social. Il est gratuit, mais chaque personne doit réserver sa place par téléphone.",
+    "questions": [
+      {
+        "prompt": "Quand a lieu l’atelier ?",
+        "answer": "Il a lieu samedi entre dix heures et midi.",
+        "evidence": "samedi, entre dix heures et midi"
+      },
+      {
+        "prompt": "Qui aide les participants ?",
+        "answer": "Deux bénévoles aident les participants.",
+        "evidence": "Deux bénévoles"
+      },
+      {
+        "prompt": "Que faut-il apporter ?",
+        "answer": "Il faut apporter une chambre à air neuve.",
+        "evidence": "une chambre à air neuve"
+      },
+      {
+        "prompt": "Où se déroule l’atelier ?",
+        "answer": "Il se déroule dans la cour du centre social.",
+        "evidence": "dans la cour du centre social"
+      },
+      {
+        "prompt": "Comment réserve-t-on sa place ?",
+        "answer": "On réserve sa place par téléphone.",
+        "evidence": "par téléphone"
+      }
+    ]
+  },
+  {
+    "slug": "objet",
+    "genre": "avis de recherche",
+    "title": "Un sac oublié",
+    "text": "Hier soir, j’ai oublié mon sac dans le bus numéro 7. Je suis descendu devant l’hôpital vers dix-huit heures. C’est un petit sac gris. Il contient mes clés et un cahier de français. Il n’y a pas d’argent à l’intérieur. Si vous le trouvez, merci de le déposer au bureau des objets trouvés de la gare. Malik.",
+    "questions": [
+      {
+        "prompt": "Où Malik a-t-il oublié son sac ?",
+        "answer": "Il l’a oublié dans le bus numéro 7.",
+        "evidence": "dans le bus numéro 7"
+      },
+      {
+        "prompt": "Quand est-il descendu du bus ?",
+        "answer": "Il est descendu vers dix-huit heures.",
+        "evidence": "vers dix-huit heures"
+      },
+      {
+        "prompt": "Que contient le sac ?",
+        "answer": "Il contient des clés et un cahier de français.",
+        "evidence": "mes clés et un cahier de français"
+      },
+      {
+        "prompt": "De quelle couleur est le sac ?",
+        "answer": "Le sac est gris.",
+        "evidence": "un petit sac gris"
+      },
+      {
+        "prompt": "Où faut-il déposer le sac ?",
+        "answer": "Il faut le déposer au bureau des objets trouvés de la gare.",
+        "evidence": "au bureau des objets trouvés de la gare"
+      }
+    ]
+  },
+  {
+    "slug": "recette",
+    "genre": "recette",
+    "title": "Une salade pour le déjeuner",
+    "text": "Pour préparer cette salade pour quatre personnes, prenez deux tomates, un concombre et du fromage. Lavez les légumes puis coupez-les en petits morceaux. Mettez-les dans un grand saladier. Ajoutez le fromage, deux cuillères d’huile et un peu de sel. Mélangez doucement. Gardez la salade au frais pendant trente minutes avant de la servir avec du pain.",
+    "questions": [
+      {
+        "prompt": "Pour combien de personnes est cette recette ?",
+        "answer": "Elle est pour quatre personnes.",
+        "evidence": "pour quatre personnes"
+      },
+      {
+        "prompt": "Que faut-il faire avant de couper les légumes ?",
+        "answer": "Il faut laver les légumes.",
+        "evidence": "Lavez les légumes puis coupez-les"
+      },
+      {
+        "prompt": "Dans quoi met-on les légumes ?",
+        "answer": "On les met dans un grand saladier.",
+        "evidence": "dans un grand saladier"
+      },
+      {
+        "prompt": "Combien de cuillères d’huile ajoute-t-on ?",
+        "answer": "On ajoute deux cuillères d’huile.",
+        "evidence": "deux cuillères d’huile"
+      },
+      {
+        "prompt": "Combien de temps garde-t-on la salade au frais ?",
+        "answer": "On la garde au frais pendant trente minutes.",
+        "evidence": "pendant trente minutes"
+      }
+    ]
+  },
+  {
+    "slug": "meteo",
+    "genre": "bulletin météo",
+    "title": "Le temps de demain",
+    "text": "Demain matin, le ciel sera gris sur la région du lac. La pluie commencera vers onze heures. L’après-midi, le vent chassera les nuages et le soleil reviendra. Il fera quinze degrés au maximum. En montagne, il neigera au-dessus de deux mille mètres. Pour la promenade du matin, prenez un parapluie et des chaussures qui ne glissent pas.",
+    "questions": [
+      {
+        "prompt": "Quand la pluie commencera-t-elle ?",
+        "answer": "Elle commencera vers onze heures.",
+        "evidence": "vers onze heures"
+      },
+      {
+        "prompt": "Comment sera le ciel le matin ?",
+        "answer": "Le ciel sera gris.",
+        "evidence": "le ciel sera gris"
+      },
+      {
+        "prompt": "Pourquoi le soleil reviendra-t-il ?",
+        "answer": "Le soleil reviendra parce que le vent chassera les nuages.",
+        "evidence": "le vent chassera les nuages"
+      },
+      {
+        "prompt": "Où neigera-t-il ?",
+        "answer": "Il neigera au-dessus de deux mille mètres en montagne.",
+        "evidence": "au-dessus de deux mille mètres"
+      },
+      {
+        "prompt": "Que faut-il prendre pour la promenade ?",
+        "answer": "Il faut prendre un parapluie et des chaussures qui ne glissent pas.",
+        "evidence": "un parapluie et des chaussures qui ne glissent pas"
+      }
+    ]
+  },
+  {
+    "slug": "entretien",
+    "genre": "courriel professionnel",
+    "title": "Votre entretien de lundi",
+    "text": "Bonjour Madame Ali, nous vous attendons lundi à quatorze heures pour un entretien dans notre magasin de vêtements. Demandez Monsieur Vidal à l’accueil. L’entretien durera environ trente minutes. Apportez votre CV et une copie de votre diplôme. L’entrée du personnel est derrière le magasin, à côté du parking. Merci de confirmer votre venue avant vendredi.",
+    "questions": [
+      {
+        "prompt": "Quand est prévu l’entretien ?",
+        "answer": "Il est prévu lundi à quatorze heures.",
+        "evidence": "lundi à quatorze heures"
+      },
+      {
+        "prompt": "Qui faut-il demander à l’accueil ?",
+        "answer": "Il faut demander Monsieur Vidal.",
+        "evidence": "Monsieur Vidal"
+      },
+      {
+        "prompt": "Combien de temps durera l’entretien ?",
+        "answer": "Il durera environ trente minutes.",
+        "evidence": "environ trente minutes"
+      },
+      {
+        "prompt": "Que doit apporter Madame Ali ?",
+        "answer": "Elle doit apporter son CV et une copie de son diplôme.",
+        "evidence": "votre CV et une copie de votre diplôme"
+      },
+      {
+        "prompt": "Où est l’entrée du personnel ?",
+        "answer": "Elle est derrière le magasin, à côté du parking.",
+        "evidence": "derrière le magasin, à côté du parking"
+      }
+    ]
+  },
+  {
+    "slug": "interview",
+    "genre": "entretien",
+    "title": "Une nouvelle habitante",
+    "text": "Journaliste : Pourquoi avez-vous choisi ce village ?\nEva : Mon mari travaille ici et nous aimons la campagne.\nJournaliste : Depuis quand habitez-vous ici ?\nEva : Depuis trois mois. Avant, nous habitions à Lyon.\nJournaliste : Que faites-vous le week-end ?\nEva : Nous marchons en forêt avec nos deux enfants.\nJournaliste : Comment avez-vous rencontré vos voisins ?\nEva : À la fête du village.",
+    "questions": [
+      {
+        "prompt": "Pourquoi Eva a-t-elle choisi ce village ?",
+        "answer": "Son mari travaille ici et la famille aime la campagne.",
+        "evidence": "Mon mari travaille ici et nous aimons la campagne."
+      },
+      {
+        "prompt": "Depuis quand y habite-t-elle ?",
+        "answer": "Elle y habite depuis trois mois.",
+        "evidence": "Depuis trois mois."
+      },
+      {
+        "prompt": "Où habitait-elle avant ?",
+        "answer": "Elle habitait à Lyon.",
+        "evidence": "à Lyon"
+      },
+      {
+        "prompt": "Avec qui marche-t-elle en forêt ?",
+        "answer": "Elle marche avec son mari et ses deux enfants.",
+        "evidence": "avec nos deux enfants"
+      },
+      {
+        "prompt": "Où a-t-elle rencontré ses voisins ?",
+        "answer": "Elle les a rencontrés à la fête du village.",
+        "evidence": "À la fête du village."
+      }
+    ]
+  },
+  {
+    "slug": "cinema",
+    "genre": "programme culturel",
+    "title": "Une soirée cinéma en plein air",
+    "text": "Le centre culturel vous invite à une séance de cinéma dans le parc municipal vendredi soir. Le film commence à vingt et une heures. Les portes ouvrent une heure avant pour permettre aux spectateurs de pique-niquer. Apportez une couverture pour vous asseoir sur l’herbe. L’entrée coûte cinq francs pour les adultes et elle est gratuite pour les enfants de moins de douze ans.",
+    "questions": [
+      {
+        "prompt": "Où a lieu la séance ?",
+        "answer": "Elle a lieu dans le parc municipal.",
+        "evidence": "dans le parc municipal"
+      },
+      {
+        "prompt": "Quand commence le film ?",
+        "answer": "Il commence vendredi à vingt et une heures.",
+        "evidence": "vingt et une heures"
+      },
+      {
+        "prompt": "Pourquoi les portes ouvrent-elles plus tôt ?",
+        "answer": "Elles ouvrent plus tôt pour permettre aux spectateurs de pique-niquer.",
+        "evidence": "pour permettre aux spectateurs de pique-niquer"
+      },
+      {
+        "prompt": "Que faut-il apporter ?",
+        "answer": "Il faut apporter une couverture.",
+        "evidence": "une couverture"
+      },
+      {
+        "prompt": "Combien coûte l’entrée pour un adulte ?",
+        "answer": "Elle coûte cinq francs.",
+        "evidence": "cinq francs"
+      }
+    ]
+  },
+  {
+    "slug": "facture",
+    "genre": "avis de paiement",
+    "title": "Comprendre sa facture d’eau",
+    "text": "Votre facture d’eau pour les mois de janvier à mars est de quarante-huit francs. Elle doit être payée avant le 30 avril. Vous pouvez payer en ligne ou au guichet de la poste. Si le montant vous semble incorrect, contactez le service des eaux avec votre numéro de client. Ce numéro figure en haut de la facture, à droite de votre nom.",
+    "questions": [
+      {
+        "prompt": "Quelle période couvre la facture ?",
+        "answer": "Elle couvre les mois de janvier à mars.",
+        "evidence": "de janvier à mars"
+      },
+      {
+        "prompt": "Combien faut-il payer ?",
+        "answer": "Il faut payer quarante-huit francs.",
+        "evidence": "quarante-huit francs"
+      },
+      {
+        "prompt": "Quand faut-il payer ?",
+        "answer": "Il faut payer avant le 30 avril.",
+        "evidence": "avant le 30 avril"
+      },
+      {
+        "prompt": "Comment peut-on payer ?",
+        "answer": "On peut payer en ligne ou au guichet de la poste.",
+        "evidence": "en ligne ou au guichet de la poste"
+      },
+      {
+        "prompt": "Où se trouve le numéro de client ?",
+        "answer": "Il se trouve en haut de la facture, à droite du nom.",
+        "evidence": "en haut de la facture, à droite de votre nom"
+      }
+    ]
+  },
+  {
+    "slug": "compte",
+    "genre": "récit personnel",
+    "title": "Ma première journée au travail",
+    "text": "Ce matin, j’ai commencé mon nouveau travail dans un hôtel. La responsable m’a accueilli à sept heures. Elle m’a présenté mes collègues puis m’a montré les chambres du deuxième étage. À midi, nous avons mangé ensemble dans la salle du personnel. J’étais un peu nerveux au début, mais mes collègues m’ont aidé. Je suis rentré chez moi très content. Samir.",
+    "questions": [
+      {
+        "prompt": "Où Samir travaille-t-il ?",
+        "answer": "Il travaille dans un hôtel.",
+        "evidence": "dans un hôtel"
+      },
+      {
+        "prompt": "Qui l’a accueilli ?",
+        "answer": "La responsable l’a accueilli.",
+        "evidence": "La responsable"
+      },
+      {
+        "prompt": "À quelle heure a-t-il été accueilli ?",
+        "answer": "Il a été accueilli à sept heures.",
+        "evidence": "à sept heures"
+      },
+      {
+        "prompt": "Où a-t-il mangé à midi ?",
+        "answer": "Il a mangé dans la salle du personnel.",
+        "evidence": "dans la salle du personnel"
+      },
+      {
+        "prompt": "Comment se sentait-il au début ?",
+        "answer": "Il était un peu nerveux.",
+        "evidence": "un peu nerveux au début"
+      }
+    ]
+  },
+  {
+    "slug": "judo",
+    "genre": "inscription",
+    "title": "Découvrir le judo",
+    "text": "Le club de judo propose une séance d’essai gratuite aux nouveaux habitants. Elle aura lieu le 18 septembre dans le gymnase des Érables. Les adultes commencent à dix-huit heures et les enfants à dix-sept heures. Il suffit de porter un pantalon de sport et un tee-shirt. Pour participer, envoyez votre prénom et votre âge à Luc, le responsable du club.",
+    "questions": [
+      {
+        "prompt": "Quand aura lieu la séance d’essai ?",
+        "answer": "Elle aura lieu le 18 septembre.",
+        "evidence": "le 18 septembre"
+      },
+      {
+        "prompt": "Où se déroulera-t-elle ?",
+        "answer": "Elle se déroulera dans le gymnase des Érables.",
+        "evidence": "dans le gymnase des Érables"
+      },
+      {
+        "prompt": "À quelle heure commencent les adultes ?",
+        "answer": "Ils commencent à dix-huit heures.",
+        "evidence": "à dix-huit heures"
+      },
+      {
+        "prompt": "Que faut-il porter ?",
+        "answer": "Il faut porter un pantalon de sport et un tee-shirt.",
+        "evidence": "un pantalon de sport et un tee-shirt"
+      },
+      {
+        "prompt": "À qui faut-il envoyer ses informations ?",
+        "answer": "Il faut les envoyer à Luc.",
+        "evidence": "à Luc"
+      }
+    ]
+  },
+  {
+    "slug": "internet",
+    "genre": "consignes",
+    "title": "Installer sa connexion",
+    "text": "Branchez d’abord votre modem à la prise électrique. Reliez ensuite le modem à la prise du téléphone avec le câble gris. Attendez que le voyant vert reste allumé. Vous pourrez alors connecter votre ordinateur au réseau indiqué sous le modem. Le mot de passe se trouve sur la même étiquette. Si le voyant reste rouge, appelez l’assistance au numéro écrit sur votre contrat.",
+    "questions": [
+      {
+        "prompt": "Que faut-il brancher d’abord ?",
+        "answer": "Il faut brancher le modem à la prise électrique.",
+        "evidence": "votre modem à la prise électrique"
+      },
+      {
+        "prompt": "De quelle couleur est le câble du téléphone ?",
+        "answer": "Il est gris.",
+        "evidence": "le câble gris"
+      },
+      {
+        "prompt": "Quand peut-on connecter l’ordinateur ?",
+        "answer": "On peut le connecter quand le voyant vert reste allumé.",
+        "evidence": "le voyant vert reste allumé"
+      },
+      {
+        "prompt": "Où est écrit le mot de passe ?",
+        "answer": "Il est écrit sur l’étiquette sous le modem.",
+        "evidence": "sous le modem"
+      },
+      {
+        "prompt": "Que faut-il faire si le voyant reste rouge ?",
+        "answer": "Il faut appeler l’assistance.",
+        "evidence": "appelez l’assistance"
+      }
+    ]
+  },
+  {
+    "slug": "brocante",
+    "genre": "invitation",
+    "title": "Une brocante entre voisins",
+    "text": "Samedi prochain, nous organisons une brocante dans la cour de notre immeuble. Vous pourrez vendre vos livres, vos jouets et vos petits objets en bon état. Chaque famille dispose d’une table. L’installation commence à huit heures et les ventes à neuf heures. À midi, nous partagerons un repas. Merci de prévenir la gardienne avant jeudi si vous voulez tenir un stand.",
+    "questions": [
+      {
+        "prompt": "Où aura lieu la brocante ?",
+        "answer": "Elle aura lieu dans la cour de l’immeuble.",
+        "evidence": "dans la cour de notre immeuble"
+      },
+      {
+        "prompt": "Que peut-on vendre ?",
+        "answer": "On peut vendre des livres, des jouets et de petits objets en bon état.",
+        "evidence": "vos livres, vos jouets et vos petits objets en bon état"
+      },
+      {
+        "prompt": "À quelle heure commence l’installation ?",
+        "answer": "Elle commence à huit heures.",
+        "evidence": "à huit heures"
+      },
+      {
+        "prompt": "Quand les ventes commencent-elles ?",
+        "answer": "Elles commencent à neuf heures.",
+        "evidence": "les ventes à neuf heures"
+      },
+      {
+        "prompt": "Qui faut-il prévenir pour avoir un stand ?",
+        "answer": "Il faut prévenir la gardienne.",
+        "evidence": "la gardienne"
+      }
+    ]
+  },
+  {
+    "slug": "musee",
+    "genre": "panneau d’accueil",
+    "title": "Visiter le musée des métiers",
+    "text": "Bienvenue au musée des métiers ! La visite commence au rez-de-chaussée, dans l’ancienne boulangerie. Au premier étage, vous découvrirez les outils des couturiers et des menuisiers. Les photographies sans flash sont autorisées. Pour écouter les explications, prenez un casque à l’accueil. Une visite guidée gratuite est proposée chaque dimanche à quinze heures. Les groupes doivent réserver une semaine avant leur venue.",
+    "questions": [
+      {
+        "prompt": "Où commence la visite ?",
+        "answer": "Elle commence au rez-de-chaussée, dans l’ancienne boulangerie.",
+        "evidence": "au rez-de-chaussée, dans l’ancienne boulangerie"
+      },
+      {
+        "prompt": "Que découvre-t-on au premier étage ?",
+        "answer": "On y découvre les outils des couturiers et des menuisiers.",
+        "evidence": "les outils des couturiers et des menuisiers"
+      },
+      {
+        "prompt": "Comment peut-on prendre des photographies ?",
+        "answer": "On peut prendre des photographies sans flash.",
+        "evidence": "sans flash"
+      },
+      {
+        "prompt": "Où peut-on prendre un casque ?",
+        "answer": "On peut prendre un casque à l’accueil.",
+        "evidence": "à l’accueil"
+      },
+      {
+        "prompt": "Quand a lieu la visite guidée ?",
+        "answer": "Elle a lieu chaque dimanche à quinze heures.",
+        "evidence": "chaque dimanche à quinze heures"
+      }
+    ]
+  },
+  {
+    "slug": "vacances",
+    "genre": "lettre",
+    "title": "Des vacances à la ferme",
+    "text": "Chère amie, je passe quelques jours dans une ferme avec mes enfants. Nous dormons dans une petite maison à côté de l’étable. Chaque matin, le fermier nous montre comment nourrir les poules. Les enfants aiment ramasser les œufs. Hier, nous avons fait du pain avec sa femme. Nous rentrerons dimanche en voiture. Je te raconterai tout cela autour d’un café. Amicalement, Lucie.",
+    "questions": [
+      {
+        "prompt": "Avec qui Lucie passe-t-elle ses vacances ?",
+        "answer": "Elle passe ses vacances avec ses enfants.",
+        "evidence": "avec mes enfants"
+      },
+      {
+        "prompt": "Où dort la famille ?",
+        "answer": "La famille dort dans une petite maison à côté de l’étable.",
+        "evidence": "dans une petite maison à côté de l’étable"
+      },
+      {
+        "prompt": "Qui montre comment nourrir les poules ?",
+        "answer": "Le fermier le montre.",
+        "evidence": "le fermier"
+      },
+      {
+        "prompt": "Que les enfants aiment-ils faire ?",
+        "answer": "Ils aiment ramasser les œufs.",
+        "evidence": "ramasser les œufs"
+      },
+      {
+        "prompt": "Quand la famille rentrera-t-elle ?",
+        "answer": "Elle rentrera dimanche.",
+        "evidence": "dimanche en voiture"
+      }
+    ]
+  },
+  {
+    "slug": "bibliobus",
+    "genre": "avis municipal",
+    "title": "Le bibliobus arrive",
+    "text": "Le bibliobus s’arrêtera désormais chaque mercredi sur la place du village, de quatorze heures à seize heures. Vous y trouverez des romans, des albums et des magazines. Pour emprunter, présentez une pièce d’identité lors de votre première visite. Chaque lecteur peut emporter quatre documents. Les livres doivent être rendus trois semaines plus tard. Les enfants de moins de six ans viennent avec un adulte.",
+    "questions": [
+      {
+        "prompt": "Quand vient le bibliobus ?",
+        "answer": "Il vient chaque mercredi de quatorze heures à seize heures.",
+        "evidence": "chaque mercredi"
+      },
+      {
+        "prompt": "Où s’arrête-t-il ?",
+        "answer": "Il s’arrête sur la place du village.",
+        "evidence": "sur la place du village"
+      },
+      {
+        "prompt": "Que faut-il présenter à la première visite ?",
+        "answer": "Il faut présenter une pièce d’identité.",
+        "evidence": "une pièce d’identité"
+      },
+      {
+        "prompt": "Combien de documents peut-on emporter ?",
+        "answer": "On peut emporter quatre documents.",
+        "evidence": "quatre documents"
+      },
+      {
+        "prompt": "Au bout de combien de temps faut-il rendre les livres ?",
+        "answer": "Il faut les rendre au bout de trois semaines.",
+        "evidence": "trois semaines plus tard"
+      }
+    ]
+  },
+  {
+    "slug": "entraineur",
+    "genre": "dialogue",
+    "title": "Un entraînement déplacé",
+    "text": "Mila : Pourquoi l’entraînement n’a-t-il pas lieu au stade ?\nL’entraîneur : Le terrain est trop mouillé. Nous irons dans la salle de sport de l’école.\nMila : À quelle heure ?\nL’entraîneur : À dix-sept heures, comme d’habitude.\nMila : Que dois-je apporter ?\nL’entraîneur : Des chaussures propres et une bouteille d’eau. Préviens aussi ton frère : son groupe commence juste après le tien.",
+    "questions": [
+      {
+        "prompt": "Pourquoi l’entraînement est-il déplacé ?",
+        "answer": "Il est déplacé parce que le terrain est trop mouillé.",
+        "evidence": "Le terrain est trop mouillé."
+      },
+      {
+        "prompt": "Où aura lieu l’entraînement ?",
+        "answer": "Il aura lieu dans la salle de sport de l’école.",
+        "evidence": "dans la salle de sport de l’école"
+      },
+      {
+        "prompt": "À quelle heure commence-t-il ?",
+        "answer": "Il commence à dix-sept heures.",
+        "evidence": "À dix-sept heures"
+      },
+      {
+        "prompt": "Que doit apporter Mila ?",
+        "answer": "Elle doit apporter des chaussures propres et une bouteille d’eau.",
+        "evidence": "Des chaussures propres et une bouteille d’eau."
+      },
+      {
+        "prompt": "Qui doit-elle prévenir ?",
+        "answer": "Elle doit prévenir son frère.",
+        "evidence": "ton frère"
+      }
+    ]
+  },
+  {
+    "slug": "reparations",
+    "genre": "note de service",
+    "title": "Une coupure d’eau",
+    "text": "Mardi matin, l’eau sera coupée dans tout l’immeuble entre huit heures et onze heures. Une entreprise doit remplacer un tuyau dans la cave. Avant huit heures, pensez à remplir quelques bouteilles pour boire et cuisiner. Les toilettes de la salle commune resteront accessibles. En cas de problème après onze heures, contactez la régie. Le numéro est affiché à côté des boîtes aux lettres.",
+    "questions": [
+      {
+        "prompt": "Quand l’eau sera-t-elle coupée ?",
+        "answer": "Elle sera coupée mardi entre huit heures et onze heures.",
+        "evidence": "entre huit heures et onze heures"
+      },
+      {
+        "prompt": "Pourquoi l’eau sera-t-elle coupée ?",
+        "answer": "Une entreprise doit remplacer un tuyau dans la cave.",
+        "evidence": "remplacer un tuyau"
+      },
+      {
+        "prompt": "Que faut-il faire avant huit heures ?",
+        "answer": "Il faut remplir quelques bouteilles.",
+        "evidence": "remplir quelques bouteilles"
+      },
+      {
+        "prompt": "Qui faut-il contacter en cas de problème après onze heures ?",
+        "answer": "Il faut contacter la régie.",
+        "evidence": "contactez la régie"
+      },
+      {
+        "prompt": "Où est affiché le numéro ?",
+        "answer": "Il est affiché à côté des boîtes aux lettres.",
+        "evidence": "à côté des boîtes aux lettres"
+      }
+    ]
+  },
+  {
+    "slug": "festival",
+    "genre": "article local",
+    "title": "Un festival fait par les habitants",
+    "text": "Le petit festival du quartier a attiré deux cents personnes samedi. Les habitants avaient préparé les stands et la décoration. Le concert des enfants a commencé à quinze heures. Une association a vendu des gâteaux pour financer des cours de musique. Malgré une courte averse, les visiteurs sont restés jusqu’au soir. Le prochain festival aura lieu au printemps dans le même parc.",
+    "questions": [
+      {
+        "prompt": "Combien de personnes sont venues au festival ?",
+        "answer": "Deux cents personnes sont venues.",
+        "evidence": "deux cents personnes"
+      },
+      {
+        "prompt": "Qui avait préparé la décoration ?",
+        "answer": "Les habitants avaient préparé la décoration.",
+        "evidence": "Les habitants"
+      },
+      {
+        "prompt": "Quand le concert des enfants a-t-il commencé ?",
+        "answer": "Il a commencé à quinze heures.",
+        "evidence": "à quinze heures"
+      },
+      {
+        "prompt": "Pourquoi l’association a-t-elle vendu des gâteaux ?",
+        "answer": "Elle les a vendus pour financer des cours de musique.",
+        "evidence": "pour financer des cours de musique"
+      },
+      {
+        "prompt": "Quand aura lieu le prochain festival ?",
+        "answer": "Il aura lieu au printemps.",
+        "evidence": "au printemps"
+      }
+    ]
+  },
+  {
+    "slug": "chien",
+    "genre": "portrait",
+    "title": "Un chien dans une école",
+    "text": "Tous les vendredis, Anna vient à l’école avec son chien Oslo. Elle est éducatrice et aide des enfants à lire à voix haute. Oslo reste couché près de la chaise de l’élève. Les enfants lui lisent une courte histoire. Ils ont moins peur de se tromper, car le chien les écoute calmement. La séance dure vingt minutes et se termine par une promenade dans la cour.",
+    "questions": [
+      {
+        "prompt": "Quand Anna vient-elle à l’école ?",
+        "answer": "Elle vient tous les vendredis.",
+        "evidence": "Tous les vendredis"
+      },
+      {
+        "prompt": "Comment s’appelle le chien ?",
+        "answer": "Le chien s’appelle Oslo.",
+        "evidence": "son chien Oslo"
+      },
+      {
+        "prompt": "Où reste Oslo pendant la lecture ?",
+        "answer": "Il reste couché près de la chaise de l’élève.",
+        "evidence": "près de la chaise de l’élève"
+      },
+      {
+        "prompt": "Pourquoi les enfants ont-ils moins peur de se tromper ?",
+        "answer": "Ils ont moins peur parce que le chien les écoute calmement.",
+        "evidence": "le chien les écoute calmement"
+      },
+      {
+        "prompt": "Combien de temps dure la séance ?",
+        "answer": "Elle dure vingt minutes.",
+        "evidence": "vingt minutes"
+      }
+    ]
+  },
+  {
+    "slug": "agenda",
+    "genre": "agenda personnel",
+    "title": "La journée de Nora",
+    "text": "7 h : accompagner ma fille à l’école.\n9 h : rendez-vous à la banque pour ouvrir un compte. Apporter mon passeport.\n12 h : déjeuner avec ma sœur au café des Arts.\n15 h : aller chercher ma nouvelle carte de bus au guichet de la gare.\n18 h : cours de français à la maison de quartier. Penser à prendre le cahier bleu.",
+    "questions": [
+      {
+        "prompt": "Qui Nora accompagne-t-elle à l’école ?",
+        "answer": "Elle accompagne sa fille.",
+        "evidence": "ma fille"
+      },
+      {
+        "prompt": "Pourquoi va-t-elle à la banque ?",
+        "answer": "Elle y va pour ouvrir un compte.",
+        "evidence": "pour ouvrir un compte"
+      },
+      {
+        "prompt": "Avec qui déjeune-t-elle ?",
+        "answer": "Elle déjeune avec sa sœur.",
+        "evidence": "avec ma sœur"
+      },
+      {
+        "prompt": "Où doit-elle prendre sa nouvelle carte de bus ?",
+        "answer": "Elle doit la prendre au guichet de la gare.",
+        "evidence": "au guichet de la gare"
+      },
+      {
+        "prompt": "Quand a lieu son cours de français ?",
+        "answer": "Il a lieu à dix-huit heures.",
+        "evidence": "18 h"
+      }
+    ]
+  }
+]

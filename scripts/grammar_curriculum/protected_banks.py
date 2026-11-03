@@ -57,3 +57,26 @@ for les in PROTECTED:
 for lesson in PROTECTED:
  for row in lesson['items']:
   if row['answer'].endswith('’'):row['prompt']=row['prompt'].replace('___ ','___',1)
+
+# Put the subject cue immediately to the right of the answer line.
+import re
+GENDERS = {'Léa':'♀','Omar':'♂','Lina':'♀','Hugo':'♂','Inès':'♀','Chloé':'♀',
+           'Paul':'♂','Nadia':'♀','Karim':'♂','Yanis':'♂','Marco':'♂'}
+for lesson in PROTECTED:
+ if lesson['subId'] != 'a2':continue
+ lesson['label']='Complétez le pronom'
+ for row in lesson['items']:
+  text=row['prompt']
+  cue=re.search(r'\s*\(([^)]+)\)\.?$',text)
+  if cue:
+   text=text[:cue.start()].rstrip()
+   if not text.endswith(('.', '?', '!')):text+='.'
+   text=text.replace('___', '___ ('+cue[1]+')',1)
+  else:
+   # Existing introductory rows with their cue at the beginning of the sentence.
+   for prefix,subject in [('Hugo et moi, ','Hugo et moi'),('Inès et Chloé, ','Inès et Chloé')]:
+    if text.startswith(prefix):
+     text=text[len(prefix):].replace('___','___ ('+subject+')',1)
+  for name,symbol in GENDERS.items():
+   text=re.sub(r'\b'+re.escape(name)+r'\b',name+' '+symbol,text)
+  row['prompt']=re.sub(r'(\))(?=\w)', r'\1 ', text)

@@ -1,367 +1,113 @@
 import type { GrammaireTheoryDoc } from '../types'
+import { ex, ligne, p, sheet, table } from './falc-sheet'
 
-/** Théorie réécrite en français facile ; gabarit visuel et identifiants conservés. */
+/** Théorie FALC — thème gram-argumenter. Français seul (pas de traductions). */
 export const argumenterDocs: GrammaireTheoryDoc[] = [
   {
-    "id": "k1",
-    "typeId": "gram-k1-theorie",
-    "index": 1,
-    "title": "Approuver et désapprouver",
-    "topic": "gram-argumenter",
-    "public": "A2",
-    "objectif": "Dire son avis clairement.",
-    "blocks": [
-      {
-        "kind": "heading",
-        "text": "Approuver et désapprouver"
-      },
-      {
-        "kind": "paragraph",
-        "text": "Je donne mon accord ou mon désaccord de manière respectueuse."
-      },
-      {
-        "kind": "paragraph",
-        "text": "{ligne/2}"
-      },
-      {
-        "kind": "section",
-        "role": "regarder",
-        "blocks": [
-          {
-            "kind": "examples",
-            "marker": "puces",
-            "items": [
-              "Je suis {c}d’accord{/c} avec cette proposition.",
-              "{c}À mon avis{/c}, le bus est plus pratique.",
-              "Je comprends, {c}mais{/c} je préfère attendre."
-            ]
-          }
-        ]
-      },
-      {
-        "kind": "section",
-        "role": "expliquer",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Je suis d’accord exprime un accord."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je ne suis pas d’accord exprime un désaccord."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je peux limiter l’accord : je suis d’accord sur ce point."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "À mon avis et je pense que annoncent mon opinion."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Parce que permet de donner une raison."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je peux reconnaître une partie de l’idée avant d’ajouter une réserve."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je garde un ton adapté à la personne."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je distingue une opinion et un fait vérifiable."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je critique une idée sans attaquer la personne."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          }
-        ]
-      },
-      {
-        "kind": "page"
-      },
-      {
-        "kind": "section",
-        "role": "retenir",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Je suis d’accord exprime un accord."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "table",
-            "colHeader": true,
-            "rowHeader": false,
-            "headers": [
-              "Sens",
-              "Formule"
-            ],
-            "rows": [
-              [
-                "avis",
-                "Je pense que…"
-              ],
-              [
-                "avis",
-                "À mon avis…"
-              ],
-              [
-                "pour",
-                "Je suis d’accord."
-              ],
-              [
-                "pour",
-                "Je suis pour."
-              ],
-              [
-                "contre",
-                "Je ne suis pas d’accord."
-              ],
-              [
-                "contre",
-                "Je suis contre."
-              ]
-            ]
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "attention",
-            "text": "Je peux dire je ne suis pas tout à fait d’accord pour exprimer une réserve avec politesse."
-          }
-        ]
-      }
-    ]
+    id: 'k1',
+    typeId: 'gram-k1-theorie',
+    index: 1,
+    title: 'Approuver et désapprouver',
+    topic: 'gram-argumenter',
+    public: 'A2',
+    objectif: 'Dire son avis clairement.',
+    blocks: sheet({
+      title: 'Approuver et désapprouver',
+      intro: 'Je dis mon {g}avis{/g} clairement.',
+      regarder: [
+        '{tab:1<}{c}Je pense que{/c} c’est une bonne idée. | {c}À mon avis{/c}, c’est trop cher.',
+        '{tab:1<}{c}Je suis d’accord{/c}. | {c}Je ne suis pas d’accord{/c}.',
+        '{tab:1<}{c}Je suis pour{/c}. | {c}Je suis contre{/c}.',
+      ],
+      expliquer: [
+        p('Pour donner un avis : je pense que, à mon avis, selon moi.'),
+        p('Pour approuver : je suis d’accord, je suis pour.'),
+        p('Pour désapprouver : je ne suis pas d’accord, je suis contre.'),
+        p('Après {c}je pense que{/c}, le verbe suivant se conjugue.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Intention{/g} | {g}Formule{/g}',
+          '{tab:1>}donner un avis | {c}Je pense que{/c}…',
+          '{tab:1>}approuver | {c}Je suis d’accord{/c}.',
+          '{tab:1>}désapprouver | {c}Je suis contre{/c}.',
+          '{tab:1>}nuancer | {c}Selon moi{/c}, …',
+        ]),
+      ],
+      retenir: [
+        p('Une opinion = une formule claire.'),
+        p('Puis je donne une raison courte.'),
+        ligne,
+        table(
+          ['Sens', 'Formule'],
+          [
+            ['avis', 'Je pense que…'],
+            ['avis', 'À mon avis…'],
+            ['pour', 'Je suis d’accord.'],
+            ['pour', 'Je suis pour.'],
+            ['contre', 'Je ne suis pas d’accord.'],
+            ['contre', 'Je suis contre.'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Après je pense que, je conjugue le verbe.'),
+        ex([
+          { text: 'Je dis : « Je pense que c’{c}est{/c} utile. »', wrong: 'Je pense que c’être utile.' },
+        ]),
+      ],
+    }),
   },
   {
-    "id": "k2",
-    "typeId": "gram-k2-theorie",
-    "index": 2,
-    "title": "Les connecteurs",
-    "topic": "gram-argumenter",
-    "public": "A2 / B1",
-    "objectif": "Organiser ses idées avec un mot de liaison.",
-    "blocks": [
-      {
-        "kind": "heading",
-        "text": "Les connecteurs"
-      },
-      {
-        "kind": "paragraph",
-        "text": "Je relie mes idées pour être facile à suivre."
-      },
-      {
-        "kind": "paragraph",
-        "text": "{ligne/2}"
-      },
-      {
-        "kind": "section",
-        "role": "regarder",
-        "blocks": [
-          {
-            "kind": "examples",
-            "marker": "puces",
-            "items": [
-              "Je reste {c}parce que{/c} je suis malade.",
-              "Il pleut, {c}donc{/c} je prends un parapluie.",
-              "J’aime ce quartier, {c}mais{/c} il est bruyant."
-            ]
-          }
-        ]
-      },
-      {
-        "kind": "section",
-        "role": "expliquer",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Un connecteur montre le lien entre deux idées."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Et ajoute une information ; ou propose un choix."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Mais montre une opposition."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Parce que donne une raison."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Donc annonce souvent une conséquence."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "D’abord, ensuite et enfin organisent les étapes."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Par exemple introduit un cas précis."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "En revanche oppose deux aspects."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je choisis le connecteur selon le sens et j’évite d’en ajouter sans besoin."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Un même mot peut avoir plusieurs emplois ; je regarde toute la phrase."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          }
-        ]
-      },
-      {
-        "kind": "page"
-      },
-      {
-        "kind": "section",
-        "role": "retenir",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Un connecteur montre le lien entre deux idées."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "table",
-            "colHeader": true,
-            "rowHeader": false,
-            "headers": [
-              "Rôle",
-              "Connecteur",
-              "Exemple"
-            ],
-            "rows": [
-              [
-                "exemple",
-                "par exemple",
-                "Par exemple, le lundi."
-              ],
-              [
-                "conséquence",
-                "donc",
-                "Donc, je reste."
-              ],
-              [
-                "opposition",
-                "par contre",
-                "Par contre, c’est loin."
-              ],
-              [
-                "condition",
-                "si",
-                "Si tu veux, viens."
-              ],
-              [
-                "ordre",
-                "ensuite",
-                "Ensuite, je pars."
-              ]
-            ]
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "attention",
-            "text": "Parce que explique la cause ; donc présente le résultat : je ne les échange pas au hasard."
-          }
-        ]
-      }
-    ]
-  }
+    id: 'k2',
+    typeId: 'gram-k2-theorie',
+    index: 2,
+    title: 'Les connecteurs',
+    topic: 'gram-argumenter',
+    public: 'A2 / B1',
+    objectif: 'Organiser ses idées avec un mot de liaison.',
+    blocks: sheet({
+      title: 'Les connecteurs',
+      intro: 'J’organise mes idées avec des {g}mots de liaison{/g}.',
+      regarder: [
+        '{tab:1<}{c}Par exemple{/c}, le bus est gratuit. | {c}Donc{/c}, je le prends.',
+        '{tab:1<}{c}Par contre{/c}, il est lent. | {c}Si{/c} je suis en retard, je marche.',
+        '{tab:1<}{c}D’abord{/c}, j’écoute. | {c}Ensuite{/c}, je réponds.',
+      ],
+      expliquer: [
+        p('Un connecteur a {c}un rôle{/c} : exemple, cause, opposition…'),
+        p('Je mets {c}un seul{/c} connecteur par idée.'),
+        p('Je le place au début de la phrase, puis une virgule souvent.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Rôle{/g} | {g}Mots{/g}',
+          '{tab:1>}exemple | par exemple, ainsi',
+          '{tab:1>}cause | parce que, car',
+          '{tab:1>}conséquence | donc, alors',
+          '{tab:1>}opposition | par contre, mais',
+          '{tab:1>}condition | si, à condition de',
+          '{tab:1>}ordre | d’abord, ensuite, enfin',
+          '{tab:1>}reformulation | c’est-à-dire',
+        ]),
+      ],
+      retenir: [
+        p('Un connecteur = un rôle.'),
+        p('Je ne mets pas trois connecteurs dans la même phrase.'),
+        ligne,
+        table(
+          ['Rôle', 'Connecteur', 'Exemple'],
+          [
+            ['exemple', 'par exemple', 'Par exemple, le lundi.'],
+            ['conséquence', 'donc', 'Donc, je reste.'],
+            ['opposition', 'par contre', 'Par contre, c’est loin.'],
+            ['condition', 'si', 'Si tu veux, viens.'],
+            ['ordre', 'ensuite', 'Ensuite, je pars.'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Mais et par contre ne s’empilent pas.'),
+        ex([
+          { text: 'Je dis : « C’est bien. {c}Par contre{/c}, c’est cher. »', wrong: 'Mais par contre, c’est cher.' },
+        ]),
+      ],
+    }),
+  },
 ]

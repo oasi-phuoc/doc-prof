@@ -486,6 +486,8 @@ export type MathItem = {
   /** Second calcul (layout geo dual : aire à droite). */
   calcAnswerSecondary?: string
   responseAnswer?: string
+  /** Infinitive displayed in the theme color after the sentence answer line. */
+  responseVerb?: string
   /** Problème CFR (ex. 15–16) : id du modèle pour reconstruire l’énoncé. */
   problemTemplateId?: string
   /** Variables numériques du problème (partagées entre les deux parties). */
@@ -1060,6 +1062,8 @@ export type WorksheetDocument = {
 }
 
 export type WorksheetBlock = {
+  /** Original block index when manual page breaks distribute exercises across sheets. */
+  sourceBlockIndex?: number
   exerciseIndex: number
   title: string
   instruction: string

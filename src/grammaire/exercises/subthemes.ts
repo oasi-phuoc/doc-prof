@@ -33,6 +33,12 @@ export const GRAM_SUBTHEMES: GramSubtheme[] = [
     theoryTypeIds: ['gram-m3-theorie'],
   },
   {
+    id: 'aller-destination',
+    label: 'Aller',
+    topic: 'gram-present',
+    theoryTypeIds: ['gram-a4-theorie', 'gram-a5-theorie'],
+  },
+  {
     id: 'er',
     label: 'Verbes en -er',
     topic: 'gram-present',
@@ -43,12 +49,6 @@ export const GRAM_SUBTHEMES: GramSubtheme[] = [
     label: 'Verbes en -er particuliers',
     topic: 'gram-present',
     theoryTypeIds: ['gram-m5-theorie'],
-  },
-  {
-    id: 'aller-destination',
-    label: 'Aller : destination',
-    topic: 'gram-present',
-    theoryTypeIds: ['gram-a4-theorie', 'gram-a5-theorie'],
   },
   {
     id: 'ir',
@@ -64,7 +64,7 @@ export const GRAM_SUBTHEMES: GramSubtheme[] = [
   },
   {
     id: 'modaux',
-    label: 'Pouvoir, devoir, vouloir',
+    label: 'Verbes modaux',
     topic: 'gram-present',
     theoryTypeIds: ['gram-modaux-theorie'],
   },

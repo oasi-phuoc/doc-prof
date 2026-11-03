@@ -1,676 +1,215 @@
 import type { GrammaireTheoryDoc } from '../types'
+import { ex, ligne, p, sheet, table } from './falc-sheet'
 
-/** Théorie réécrite en français facile ; gabarit visuel et identifiants conservés. */
+/** Théorie FALC — thème gram-questions. Français seul (pas de traductions). */
 export const questionsDocs: GrammaireTheoryDoc[] = [
   {
-    "id": "c1",
-    "typeId": "gram-c1-theorie",
-    "index": 1,
-    "title": "Trois façons de poser une question",
-    "topic": "gram-questions",
-    "public": "A1",
-    "objectif": "Former une question de trois façons.",
-    "blocks": [
-      {
-        "kind": "heading",
-        "text": "Trois façons de poser une question"
-      },
-      {
-        "kind": "paragraph",
-        "text": "Je pose la même question de plusieurs façons."
-      },
-      {
-        "kind": "paragraph",
-        "text": "{ligne/2}"
-      },
-      {
-        "kind": "section",
-        "role": "regarder",
-        "blocks": [
-          {
-            "kind": "examples",
-            "marker": "puces",
-            "items": [
-              "Vous venez {c}?{/c}",
-              "{c}Est-ce que{/c} vous venez ?",
-              "{c}Venez-vous{/c} demain ?"
-            ]
-          }
-        ]
-      },
-      {
-        "kind": "section",
-        "role": "expliquer",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "À l’oral, je peux garder l’ordre habituel des mots et monter la voix."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "À l’écrit, cette question se termine aussi par un point d’interrogation."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Avec est-ce que, je garde le sujet avant le verbe."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Devant une voyelle : est-ce qu’il vient ?"
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Avec l’inversion, je place le pronom sujet après le verbe et j’ajoute un trait d’union."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "À la troisième personne, j’ajoute parfois -t- : parle-t-elle ?"
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Avec un nom sujet : Lina vient-elle ?"
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je ne mélange pas est-ce que et l’inversion."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Pour une question simple et courante, est-ce que est un modèle utile."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          }
-        ]
-      },
-      {
-        "kind": "page"
-      },
-      {
-        "kind": "section",
-        "role": "retenir",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "À l’oral, je peux garder l’ordre habituel des mots et monter la voix."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "table",
-            "colHeader": true,
-            "rowHeader": false,
-            "headers": [
-              "Façon",
-              "Exemple"
-            ],
-            "rows": [
-              [
-                "intonation",
-                "Vous êtes italien ?"
-              ],
-              [
-                "est-ce que",
-                "Est-ce que vous êtes italien ?"
-              ],
-              [
-                "inversion",
-                "Êtes-vous italien ?"
-              ]
-            ]
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "attention",
-            "text": "Je choisis un seul modèle : Est-ce que tu viens ? ou Viens-tu ?"
-          }
-        ]
-      }
-    ]
+    id: 'c1',
+    typeId: 'gram-c1-theorie',
+    index: 1,
+    title: 'Trois façons de poser une question',
+    topic: 'gram-questions',
+    public: 'A1',
+    objectif: 'Former une question de trois façons.',
+    blocks: sheet({
+      title: 'Trois façons de poser une question',
+      intro: 'Je pose une question de {g}trois façons{/g}.',
+      regarder: [
+        '{tab:1<}Vous êtes italien ? | Est-ce que vous êtes italien ?',
+        '{tab:1<}Êtes-vous italien ? | Tu habites à Sion ?',
+        '{tab:1<}Est-ce que tu habites à Sion ? | Habites-tu à Sion ?',
+      ],
+      expliquer: [
+        p('La phrase reste la même. Ma voix {c}monte{/c} à la fin.'),
+        p('J’utilise cette façon surtout à l’oral, avec une personne proche.'),
+        ligne,
+        p('Je place {c}est-ce que{/c} devant la phrase.'),
+        p('L’ordre des mots ne change pas. C’est la forme claire.'),
+        ligne,
+        p('J’inverse le {c}verbe{/c} et le {c}sujet{/c}.'),
+        p('Cette forme est plus écrite, plus soutenue.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Façon{/g} | {g}Exemple{/g}',
+          '{tab:1>}Intonation | Vous {c}êtes{/c} prêt ?',
+          '{tab:1>}Est-ce que | {c}Est-ce que{/c} vous êtes prêt ?',
+          '{tab:1>}Inversion | {c}Êtes-vous{/c} prêt ?',
+        ]),
+      ],
+      retenir: [
+        p('Pour débuter, je choisis {c}est-ce que{/c}.'),
+        p('Les trois façons posent la même question.'),
+        ligne,
+        table(
+          ['Façon', 'Exemple'],
+          [
+            ['intonation', 'Vous êtes italien ?'],
+            ['est-ce que', 'Est-ce que vous êtes italien ?'],
+            ['inversion', 'Êtes-vous italien ?'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} À l’écrit, je préfère est-ce que ou l’inversion.'),
+        ex([
+          { text: 'Je dis : « {c}Est-ce que{/c} tu viens ? »', wrong: 'Tu viens. (sans ?) ' },
+        ]),
+      ],
+    }),
   },
   {
-    "id": "c2",
-    "typeId": "gram-c2-theorie",
-    "index": 2,
-    "title": "Questions fermées et ouvertes",
-    "topic": "gram-questions",
-    "public": "A1",
-    "objectif": "Distinguer oui/non et mots interrogatifs.",
-    "blocks": [
-      {
-        "kind": "heading",
-        "text": "Questions fermées et ouvertes"
-      },
-      {
-        "kind": "paragraph",
-        "text": "Je distingue une question oui/non d’une question qui demande une information."
-      },
-      {
-        "kind": "paragraph",
-        "text": "{ligne/2}"
-      },
-      {
-        "kind": "section",
-        "role": "regarder",
-        "blocks": [
-          {
-            "kind": "examples",
-            "marker": "puces",
-            "items": [
-              "Tu viens ? — {c}Oui{/c}.",
-              "{c}Où{/c} allez-vous ? — À Sion.",
-              "Tu ne viens pas ? — {c}Si{/c}, je viens."
-            ]
-          }
-        ]
-      },
-      {
-        "kind": "section",
-        "role": "expliquer",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Une question fermée attend souvent oui ou non."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Une question ouverte demande une information précise."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Qui demande une personne ; que ou quoi demande une chose."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Où demande un lieu ; quand demande un moment."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Comment demande une manière ou un état."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Pourquoi demande une raison ; combien demande une quantité ou un prix."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je peux mettre le mot interrogatif devant est-ce que."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je réponds avec le type d’information demandé."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Après une question négative, si sert à contredire la négation."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          }
-        ]
-      },
-      {
-        "kind": "page"
-      },
-      {
-        "kind": "section",
-        "role": "retenir",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Une question fermée attend souvent oui ou non."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "table",
-            "colHeader": true,
-            "rowHeader": false,
-            "headers": [
-              "Mot",
-              "Sens",
-              "Exemple"
-            ],
-            "rows": [
-              [
-                "Qui ?",
-                "personne",
-                "Qui vient demain ?"
-              ],
-              [
-                "Que ?",
-                "chose",
-                "Que prenez-vous ?"
-              ],
-              [
-                "Où ?",
-                "lieu",
-                "Où dormons-nous ?"
-              ],
-              [
-                "Quand ?",
-                "temps",
-                "Quand pars-tu ?"
-              ],
-              [
-                "Combien ?",
-                "quantité",
-                "Combien coûte le billet ?"
-              ],
-              [
-                "Comment ?",
-                "manière",
-                "Comment voyage-t-il ?"
-              ],
-              [
-                "Pourquoi ?",
-                "raison",
-                "Pourquoi est-elle absente ?"
-              ]
-            ]
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "attention",
-            "text": "Combien de est suivi d’un nom : combien de personnes ?"
-          }
-        ]
-      }
-    ]
+    id: 'c2',
+    typeId: 'gram-c2-theorie',
+    index: 2,
+    title: 'Questions fermées et ouvertes',
+    topic: 'gram-questions',
+    public: 'A1',
+    objectif: 'Distinguer oui/non et mots interrogatifs.',
+    blocks: sheet({
+      title: 'Questions fermées et ouvertes',
+      intro: 'Je sais si la réponse est {g}oui / non{/g} ou une information.',
+      regarder: [
+        '{tab:1<}Tu aimes le café ? | Oui, j’aime le café.',
+        '{tab:1<}Où habites-tu ? | J’habite à Martigny.',
+        '{tab:1<}Pourquoi es-tu en retard ? | Le bus est en panne.',
+      ],
+      expliquer: [
+        p('Une question {c}fermée{/c} attend oui ou non.'),
+        p('Je n’ajoute pas de mot interrogatif.'),
+        ligne,
+        p('Une question {c}ouverte{/c} demande une information.'),
+        p('Je commence par un mot : qui, que, où, quand…'),
+        ligne,
+        ex([
+          '{tab:+2++}{g}Mot{/g} | {g}Je demande{/g} | {g}Exemple{/g}',
+          '{tab:2+>}Qui | une personne | {c}Qui{/c} vient ?',
+          '{tab:2+>}Que / Quoi | une chose | {c}Que{/c} prenez-vous ?',
+          '{tab:2+>}Où | un lieu | {c}Où{/c} est la gare ?',
+          '{tab:2+>}Quand | un moment | {c}Quand{/c} pars-tu ?',
+          '{tab:2+>}Comment | une manière | {c}Comment{/c} vas-tu ?',
+          '{tab:2+>}Pourquoi | une raison | {c}Pourquoi{/c} ?',
+          '{tab:2+>}Combien | une quantité | {c}Combien{/c} ça coûte ?',
+        ]),
+      ],
+      retenir: [
+        p('Sans mot interrogatif, la réponse est oui ou non.'),
+        p('Avec un mot interrogatif, je donne une information.'),
+        ligne,
+        table(
+          ['Mot', 'Sens', 'Exemple'],
+          [
+            ['Qui ?', 'personne', 'Qui vient demain ?'],
+            ['Que ?', 'chose', 'Que prenez-vous ?'],
+            ['Où ?', 'lieu', 'Où dormons-nous ?'],
+            ['Quand ?', 'temps', 'Quand pars-tu ?'],
+            ['Combien ?', 'quantité', 'Combien coûte le billet ?'],
+            ['Comment ?', 'manière', 'Comment voyage-t-il ?'],
+            ['Pourquoi ?', 'raison', 'Pourquoi est-elle absente ?'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} {c}Qui{/c} = une personne. {c}Que{/c} = une chose.'),
+        ex([
+          { text: 'Je dis : « {c}Qui{/c} est là ? »', wrong: 'Que est là ?' },
+        ]),
+      ],
+    }),
   },
   {
-    "id": "c3",
-    "typeId": "gram-c3-theorie",
-    "index": 3,
-    "title": "Les questions avec quel",
-    "topic": "gram-questions",
-    "public": "A1",
-    "objectif": "Accorder quel / quelle / quels / quelles.",
-    "blocks": [
-      {
-        "kind": "heading",
-        "text": "Les questions avec quel"
-      },
-      {
-        "kind": "paragraph",
-        "text": "Je demande de préciser un nom avec quel."
-      },
-      {
-        "kind": "paragraph",
-        "text": "{ligne/2}"
-      },
-      {
-        "kind": "section",
-        "role": "regarder",
-        "blocks": [
-          {
-            "kind": "examples",
-            "marker": "puces",
-            "items": [
-              "{c}Quel{/c} train prends-tu ?",
-              "{c}Quelle{/c} est la date ?",
-              "{c}Quelles{/c} langues parlez-vous ?"
-            ]
-          }
-        ]
-      },
-      {
-        "kind": "section",
-        "role": "expliquer",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Quel s’accorde avec le nom, même quand le verbe être les sépare."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Masculin singulier : quel."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Féminin singulier : quelle."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Masculin pluriel : quels."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Féminin pluriel : quelles."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je regarde le nom et non la personne qui pose la question."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Quel peut précéder directement le nom : quel train ?"
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Avec être : quelle est votre adresse ?"
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Les quatre formes se prononcent de la même façon."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          }
-        ]
-      },
-      {
-        "kind": "page"
-      },
-      {
-        "kind": "section",
-        "role": "retenir",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Quel s’accorde avec le nom, même quand le verbe être les sépare."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "table",
-            "colHeader": true,
-            "rowHeader": true,
-            "headers": [
-              "",
-              "Masculin",
-              "Féminin"
-            ],
-            "rows": [
-              [
-                "singulier",
-                "{c}quel{/c}",
-                "{c}quelle{/c}"
-              ],
-              [
-                "pluriel",
-                "{c}quels{/c}",
-                "{c}quelles{/c}"
-              ]
-            ]
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "attention",
-            "text": "Je vérifie le genre et le nombre du nom avant d’écrire la fin de quel."
-          }
-        ]
-      }
-    ]
+    id: 'c3',
+    typeId: 'gram-c3-theorie',
+    index: 3,
+    title: 'Les questions avec quel',
+    topic: 'gram-questions',
+    public: 'A1',
+    objectif: 'Accorder quel / quelle / quels / quelles.',
+    blocks: sheet({
+      title: 'Les questions avec quel',
+      intro: 'J’utilise {g}quel{/g} pour préciser un nom.',
+      regarder: [
+        '{tab:1<}{c}Quel{/c} est ton nom ? | {c}Quelle{/c} est ton adresse ?',
+        '{tab:1<}{c}Quels{/c} jours travailles-tu ? | {c}Quelles{/c} langues parles-tu ?',
+        '{tab:1<}{c}Quel{/c} bus prends-tu ? | {c}Quelle{/c} heure est-il ?',
+      ],
+      expliquer: [
+        p('{c}Quel{/c} se place devant le nom, ou avec être.'),
+        p('Il s’accorde avec le nom : masculin ou féminin, singulier ou pluriel.'),
+        ligne,
+        ex([
+          '{tab:+2++}{g}Nom{/g} | {g}Forme{/g} | {g}Exemple{/g}',
+          '{tab:2+>}Masculin singulier | {c}quel{/c} | {c}Quel{/c} jour ?',
+          '{tab:2+>}Féminin singulier | {c}quelle{/c} | {c}Quelle{/c} heure ?',
+          '{tab:2+>}Masculin pluriel | {c}quels{/c} | {c}Quels{/c} bus ?',
+          '{tab:2+>}Féminin pluriel | {c}quelles{/c} | {c}Quelles{/c} activités ?',
+        ]),
+      ],
+      retenir: [
+        p('Je regarde le genre et le nombre du nom.'),
+        p('Puis je choisis quel, quelle, quels ou quelles.'),
+        ligne,
+        table(
+          ['', 'Masculin', 'Féminin'],
+          [
+            ['singulier', '{c}quel{/c}', '{c}quelle{/c}'],
+            ['pluriel', '{c}quels{/c}', '{c}quelles{/c}'],
+          ],
+          true,
+        ),
+        ligne,
+        p('{c}Attention :{/c} Activité est féminin. Je dis quelles activités.'),
+        ex([
+          { text: 'Je dis : « {c}Quelle{/c} est la date ? »', wrong: 'Quel est la date ?' },
+        ]),
+      ],
+    }),
   },
   {
-    "id": "c4",
-    "typeId": "gram-c4-theorie",
-    "index": 4,
-    "title": "La phrase exclamative",
-    "topic": "gram-questions",
-    "public": "A1 / A2",
-    "objectif": "Former une phrase exclamative simple.",
-    "blocks": [
-      {
-        "kind": "heading",
-        "text": "La phrase exclamative"
-      },
-      {
-        "kind": "paragraph",
-        "text": "Je montre une émotion, une surprise ou une admiration."
-      },
-      {
-        "kind": "paragraph",
-        "text": "{ligne/2}"
-      },
-      {
-        "kind": "section",
-        "role": "regarder",
-        "blocks": [
-          {
-            "kind": "examples",
-            "marker": "puces",
-            "items": [
-              "{c}Quelle{/c} belle surprise !",
-              "{c}Comme{/c} ce gâteau est bon !",
-              "Tu cours vite {c}!{/c}"
-            ]
-          }
-        ]
-      },
-      {
-        "kind": "section",
-        "role": "expliquer",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Une exclamation exprime une réaction forte."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "À l’écrit, je termine la phrase par un point d’exclamation."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Quel accompagne un nom et s’accorde avec ce nom."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Quelle belle journée ! est une exclamation, pas une question."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Comme peut introduire une phrase avec un sujet et un verbe."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Que peut renforcer un adjectif ou un adverbe."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Une exclamation peut aussi être très courte : Bravo !"
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je choisis des mots adaptés à l’émotion et à la personne."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          }
-        ]
-      },
-      {
-        "kind": "page"
-      },
-      {
-        "kind": "section",
-        "role": "retenir",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Une exclamation exprime une réaction forte."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "table",
-            "colHeader": true,
-            "rowHeader": false,
-            "headers": [
-              "Forme",
-              "Exemple"
-            ],
-            "rows": [
-              [
-                "quel + nom",
-                "Quelle surprise !"
-              ],
-              [
-                "comme…",
-                "Comme tu es gentil !"
-              ],
-              [
-                "que…",
-                "Que c’est difficile !"
-              ]
-            ]
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "attention",
-            "text": "Le point d’exclamation ne remplace pas le point d’interrogation : une question demande une réponse."
-          }
-        ]
-      }
-    ]
-  }
+    id: 'c4',
+    typeId: 'gram-c4-theorie',
+    index: 4,
+    title: 'La phrase exclamative',
+    topic: 'gram-exclamation',
+    public: 'A1 / A2',
+    objectif: 'Former une phrase exclamative simple.',
+    blocks: sheet({
+      title: 'La phrase exclamative',
+      intro: 'J’exprime un {g}sentiment fort{/g}.',
+      regarder: [
+        '{tab:1<}{c}Quel{/c} beau jour ! | {c}Quelle{/c} surprise !',
+        '{tab:1<}{c}Comme{/c} c’est bon ! | {c}Comme{/c} tu es gentil !',
+        '{tab:1<}{c}Qu’{/c}il fait froid ! | {c}Que{/c} c’est difficile !',
+      ],
+      expliquer: [
+        p('Avec un nom, j’utilise {c}quel{/c}, {c}quelle{/c}, {c}quels{/c} ou {c}quelles{/c}.'),
+        p('Quel s’accorde avec le nom, comme dans une question.'),
+        ligne,
+        p('Avec une phrase, j’utilise {c}comme{/c} ou {c}que{/c}.'),
+        p('À l’écrit, je mets un point d’exclamation {c}!{/c}'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Forme{/g} | {g}Exemple{/g}',
+          '{tab:1>}quel + nom | {c}Quelle{/c} bonne idée !',
+          '{tab:1>}comme + phrase | {c}Comme{/c} il est tard !',
+          '{tab:1>}que + phrase | {c}Que{/c} c’est cher !',
+        ]),
+      ],
+      retenir: [
+        p('Quel + nom. Comme ou que + phrase.'),
+        p('Le point d’exclamation montre le sentiment.'),
+        ligne,
+        table(
+          ['Forme', 'Exemple'],
+          [
+            ['quel + nom', 'Quelle surprise !'],
+            ['comme…', 'Comme tu es gentil !'],
+            ['que…', 'Que c’est difficile !'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} J’accorde quel avec le nom.'),
+        ex([
+          { text: 'Je dis : « {c}Quelle{/c} idée ! »', wrong: 'Quel idée !' },
+        ]),
+      ],
+    }),
+  },
 ]

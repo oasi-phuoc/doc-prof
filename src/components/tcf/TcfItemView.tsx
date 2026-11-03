@@ -112,6 +112,8 @@ export function TcfItemView({
   const raw = item.tcf
   if (!raw) return null
   const tcf = withActiveForm(raw, tcfFormMode)
+  const intro = /^gram-gram-ex-(?:a1|a2|a3|a6|famille|b1|b2|b3)-/.test(item.tcfExerciseId ?? '')
+  const blankStyle = intro ? 'line' as const : 'dots' as const
   const points = item.points
   switch (tcf.kind) {
     case 'support': {
@@ -123,9 +125,9 @@ export function TcfItemView({
     }
     case 'qcm':
       return tcf.mode === 'image' ? (
-        <QuestionQCMImage {...tcf} points={points} mode={mode} />
+        <QuestionQCMImage {...tcf} points={points} mode={mode} blankStyle={blankStyle} />
       ) : (
-        <QuestionQCMTexte {...tcf} points={points} mode={mode} />
+        <QuestionQCMTexte {...tcf} points={points} mode={mode} blankStyle={blankStyle} />
       )
     case 'lignes':
       return <QuestionLignes {...tcf} points={points} mode={mode} />
@@ -138,6 +140,7 @@ export function TcfItemView({
       return (
         <AudioCadre
           audioLabel={tcf.audioLabel}
+          blankStyle={blankStyle}
           questions={questions}
           mode={mode}
           onSelectForm={

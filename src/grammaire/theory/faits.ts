@@ -1,864 +1,254 @@
 import type { GrammaireTheoryDoc } from '../types'
+import { ex, ligne, p, sheet, table } from './falc-sheet'
 
-/** Théorie réécrite en français facile ; gabarit visuel et identifiants conservés. */
+/** Théorie FALC — thème gram-faits. Français seul (pas de traductions). */
 export const faitsDocs: GrammaireTheoryDoc[] = [
   {
-    "id": "j6",
-    "typeId": "gram-j6-theorie",
-    "index": 1,
-    "title": "La forme passive",
-    "topic": "gram-faits",
-    "public": "B1",
-    "objectif": "Mettre l’objet au début de la phrase.",
-    "blocks": [
-      {
-        "kind": "heading",
-        "text": "La forme passive"
-      },
-      {
-        "kind": "paragraph",
-        "text": "Je commence ma phrase par l’élément qui reçoit l’action."
-      },
-      {
-        "kind": "paragraph",
-        "text": "{ligne/2}"
-      },
-      {
-        "kind": "section",
-        "role": "regarder",
-        "blocks": [
-          {
-            "kind": "examples",
-            "marker": "puces",
-            "items": [
-              "Le jardinier arrose les fleurs.",
-              "Les fleurs {c}sont arrosées{/c} par le jardinier.",
-              "La route {c}sera fermée{/c} demain."
-            ]
-          }
-        ]
-      },
-      {
-        "kind": "section",
-        "role": "expliquer",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Dans une phrase active, le sujet fait l’action."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Dans une phrase passive, le sujet reçoit l’action."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Le complément direct de la phrase active peut devenir le sujet de la phrase passive."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je conjugue être au temps nécessaire."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "J’ajoute un participe passé accordé avec le nouveau sujet."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je peux nommer l’auteur de l’action avec par."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je peux aussi ne pas nommer cet auteur si je ne le connais pas."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Seuls certains verbes avec un complément direct permettent cette transformation."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Le temps de l’information doit rester le même."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          }
-        ]
-      },
-      {
-        "kind": "page"
-      },
-      {
-        "kind": "section",
-        "role": "retenir",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Dans une phrase active, le sujet fait l’action."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "table",
-            "colHeader": true,
-            "rowHeader": false,
-            "headers": [
-              "Temps de être",
-              "Exemple"
-            ],
-            "rows": [
-              [
-                "présent",
-                "La porte est fermée."
-              ],
-              [
-                "passé composé",
-                "La porte a été fermée."
-              ],
-              [
-                "imparfait",
-                "La porte était fermée."
-              ],
-              [
-                "futur",
-                "La porte sera fermée."
-              ]
-            ]
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "attention",
-            "text": "Je cherche d’abord qui fait l’action et quel élément la reçoit."
-          }
-        ]
-      }
-    ]
+    id: 'j6',
+    typeId: 'gram-j6-theorie',
+    index: 1,
+    title: 'La forme passive',
+    topic: 'gram-faits',
+    public: 'B1',
+    objectif: 'Mettre l’objet au début de la phrase.',
+    blocks: sheet({
+      title: 'La forme passive',
+      intro: 'Je mets l’objet {g}au début{/g} de la phrase.',
+      regarder: [
+        '{tab:1<}Le chat mange la souris. | La souris {c}est mangée{/c} par le chat.',
+        '{tab:1<}On a ouvert la porte. | La porte {c}a été ouverte{/c}.',
+        '{tab:1<}Les élèves lisent le texte. | Le texte {c}est lu{/c} par les élèves.',
+      ],
+      expliquer: [
+        p('Forme passive = {c}être{/c} + participe passé.'),
+        p('L’ancien objet devient le sujet.'),
+        p('Le participe s’accorde avec ce nouveau sujet.'),
+        p('L’ancien sujet peut rester avec {c}par{/c}. Il peut aussi disparaître.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Active{/g} | {g}Passive{/g}',
+          '{tab:1>}Nina ferme la porte. | La porte {c}est fermée{/c} par Nina.',
+          '{tab:1>}On a volé le vélo. | Le vélo {c}a été volé{/c}.',
+        ]),
+      ],
+      retenir: [
+        p('Être + participe (+ par).'),
+        p('J’accorde le participe avec le sujet de la phrase passive.'),
+        ligne,
+        table(
+          ['Temps de être', 'Exemple'],
+          [
+            ['présent', 'La porte est fermée.'],
+            ['passé composé', 'La porte a été fermée.'],
+            ['imparfait', 'La porte était fermée.'],
+            ['futur', 'La porte sera fermée.'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Féminin : mangée. Pluriel : mangés ou mangées.'),
+        ex([
+          { text: 'Je dis : « La pomme est {c}mangée{/c}. »', wrong: 'La pomme est mangé.' },
+        ]),
+      ],
+    }),
   },
   {
-    "id": "j7",
-    "typeId": "gram-j7-theorie",
-    "index": 2,
-    "title": "Discours direct et indirect",
-    "topic": "gram-faits",
-    "public": "B1",
-    "objectif": "Rapporter des paroles avec ou sans guillemets.",
-    "blocks": [
-      {
-        "kind": "heading",
-        "text": "Discours direct et indirect"
-      },
-      {
-        "kind": "paragraph",
-        "text": "Je rapporte ce qu’une personne a dit ou demandé."
-      },
-      {
-        "kind": "paragraph",
-        "text": "{ligne/2}"
-      },
-      {
-        "kind": "section",
-        "role": "regarder",
-        "blocks": [
-          {
-            "kind": "examples",
-            "marker": "puces",
-            "items": [
-              "Il dit {c}qu’il est{/c} malade.",
-              "Elle demande {c}si{/c} tu viens.",
-              "Il demande {c}où tu habites{/c}."
-            ]
-          }
-        ]
-      },
-      {
-        "kind": "section",
-        "role": "expliquer",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Au discours direct, je peux citer les paroles entre guillemets."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Au discours indirect, j’introduis les paroles avec un verbe comme dire ou demander."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Une affirmation est souvent introduite par que."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Une question oui/non est introduite par si."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Une question avec où, quand ou pourquoi garde ce mot interrogatif."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Qu’est-ce que devient ce que dans une question indirecte."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je remets le sujet avant le verbe ; je ne garde pas l’inversion de la question directe."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je change les pronoms pour garder les bonnes personnes."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Si le verbe introducteur est au passé, des temps peuvent changer : présent vers imparfait, futur vers conditionnel."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je vérifie aussi les repères comme demain, qui peut devenir le lendemain selon le récit."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          }
-        ]
-      },
-      {
-        "kind": "page"
-      },
-      {
-        "kind": "section",
-        "role": "retenir",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Au discours direct, je peux citer les paroles entre guillemets."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "table",
-            "colHeader": true,
-            "rowHeader": false,
-            "headers": [
-              "Type",
-              "Mot",
-              "Exemple"
-            ],
-            "rows": [
-              [
-                "information",
-                "que",
-                "Il dit qu’il vient."
-              ],
-              [
-                "oui / non",
-                "si",
-                "Elle demande si tu viens."
-              ],
-              [
-                "où / quand…",
-                "le même mot",
-                "Il demande où tu vas."
-              ],
-              [
-                "ordre",
-                "de + infinitif",
-                "Il dit de partir."
-              ]
-            ]
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "attention",
-            "text": "Il demande où tu habites ne garde pas l’inversion de Où habites-tu ?"
-          }
-        ]
-      }
-    ]
+    id: 'j7',
+    typeId: 'gram-j7-theorie',
+    index: 2,
+    title: 'Discours direct et indirect',
+    topic: 'gram-faits',
+    public: 'B1',
+    objectif: 'Rapporter des paroles avec ou sans guillemets.',
+    blocks: sheet({
+      title: 'Discours direct et indirect',
+      intro: 'Je rapporte des paroles {g}avec{/g} ou {g}sans{/g} guillemets.',
+      regarder: [
+        '{tab:1<}Il dit : « Je suis fatigué. » | Il dit {c}qu’{/c}il est fatigué.',
+        '{tab:1<}Elle demande : « Tu viens ? » | Elle demande {c}si{/c} je viens.',
+        '{tab:1<}Il dit : « Ouvre la porte. » | Il dit {c}d’ouvrir{/c} la porte.',
+      ],
+      expliquer: [
+        p('Direct = les mots exacts, entre guillemets.'),
+        p('Indirect = je transforme. Une information → {c}que{/c}.'),
+        p('Question oui / non → {c}si{/c}.'),
+        p('Question avec un mot → je garde le mot : où, quand, pourquoi.'),
+        p('Ordre → {c}de{/c} + infinitif.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Direct{/g} | {g}Indirect{/g}',
+          '{tab:1>}« Je pars. » | Il dit {c}qu’{/c}il part.',
+          '{tab:1>}« Tu viens ? » | Elle demande {c}si{/c} je viens.',
+          '{tab:1>}« Où est la gare ? » | Il demande {c}où{/c} est la gare.',
+          '{tab:1>}« Assieds-toi. » | Elle dit de {c}s’asseoir{/c}.',
+        ]),
+      ],
+      retenir: [
+        p('Indirect = que, si, ou le mot interrogatif.'),
+        p('Plus de guillemets. Plus de point d’interrogation souvent.'),
+        ligne,
+        table(
+          ['Type', 'Mot', 'Exemple'],
+          [
+            ['information', 'que', 'Il dit qu’il vient.'],
+            ['oui / non', 'si', 'Elle demande si tu viens.'],
+            ['où / quand…', 'le même mot', 'Il demande où tu vas.'],
+            ['ordre', 'de + infinitif', 'Il dit de partir.'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} « Qu’est-ce que » devient « ce que » à l’indirect.'),
+        ex([
+          { text: 'Je dis : « Il demande {c}ce que{/c} tu veux. »', wrong: 'Il demande qu’est-ce que tu veux.' },
+        ]),
+      ],
+    }),
   },
   {
-    "id": "j8",
-    "typeId": "gram-j8-theorie",
-    "index": 3,
-    "title": "Le conditionnel (emploi)",
-    "topic": "gram-faits",
-    "public": "A2 / B1",
-    "objectif": "Exprimer un souhait, un conseil ou une hypothèse.",
-    "blocks": [
-      {
-        "kind": "heading",
-        "text": "Le conditionnel (emploi)"
-      },
-      {
-        "kind": "paragraph",
-        "text": "Je formule un souhait, une demande polie ou une hypothèse."
-      },
-      {
-        "kind": "paragraph",
-        "text": "{ligne/2}"
-      },
-      {
-        "kind": "section",
-        "role": "regarder",
-        "blocks": [
-          {
-            "kind": "examples",
-            "marker": "puces",
-            "items": [
-              "Je {c}voudrais{/c} un renseignement.",
-              "Vous {c}pourriez{/c} venir.",
-              "Si j’avais le temps, je {c}lirais{/c}."
-            ]
-          }
-        ]
-      },
-      {
-        "kind": "section",
-        "role": "expliquer",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Le conditionnel présent utilise la base du futur et les terminaisons de l’imparfait."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Les terminaisons sont -ais, -ais, -ait, -ions, -iez, -aient."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Être donne je serais ; avoir donne j’aurais."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je voudrais permet une demande plus polie que je veux."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Tu devrais permet de donner un conseil."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Avec une condition imaginée, je peux utiliser si plus imparfait et conditionnel."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Le conditionnel peut aussi présenter une information non confirmée."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je choisis la forme selon le sujet."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "À la négation, ne et pas entourent le verbe."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          }
-        ]
-      },
-      {
-        "kind": "page"
-      },
-      {
-        "kind": "section",
-        "role": "retenir",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Le conditionnel présent utilise la base du futur et les terminaisons de l’imparfait."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "table",
-            "colHeader": true,
-            "rowHeader": false,
-            "headers": [
-              "Emploi",
-              "Exemple"
-            ],
-            "rows": [
-              [
-                "souhait poli",
-                "Je voudrais un rendez-vous."
-              ],
-              [
-                "conseil",
-                "Tu devrais dormir."
-              ],
-              [
-                "hypothèse",
-                "Il serait content."
-              ]
-            ]
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "attention",
-            "text": "Je distingue le futur je serai et le conditionnel je serais, même si leur prononciation peut se ressembler."
-          }
-        ]
-      }
-    ]
+    id: 'j8',
+    typeId: 'gram-j8-theorie',
+    index: 3,
+    title: 'Le conditionnel (emploi)',
+    topic: 'gram-faits',
+    public: 'A2 / B1',
+    objectif: 'Exprimer un souhait, un conseil ou une hypothèse.',
+    blocks: sheet({
+      title: 'Le conditionnel',
+      intro: 'J’exprime un souhait, un conseil ou une {g}hypothèse{/g}.',
+      regarder: [
+        '{tab:1<}Je {c}voudrais{/c} un café. | J’{c}aimerais{/c} visiter Sion.',
+        '{tab:1<}Tu {c}devrais{/c} te reposer. | Nous {c}pourrions{/c} partir plus tôt.',
+        '{tab:1<}Il {c}serait{/c} content. | Elles {c}viendraient{/c} si elles pouvaient.',
+      ],
+      expliquer: [
+        p('Souvent poli : je voudrais, j’aimerais.'),
+        p('Conseil : tu devrais, vous pourriez.'),
+        p('Le radical est celui du {c}futur{/c}.'),
+        p('Les terminaisons sont celles de l’imparfait : ais, ais, ait, ions, iez, aient.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Personne{/g} | {g}parler{/g}',
+          '{tab:1>}je | parler{c}ais{/c}',
+          '{tab:1>}tu | parler{c}ais{/c}',
+          '{tab:1>}il / elle | parler{c}ait{/c}',
+          '{tab:1>}nous | parler{c}ions{/c}',
+          '{tab:1>}vous | parler{c}iez{/c}',
+          '{tab:1>}ils / elles | parler{c}aient{/c}',
+        ]),
+      ],
+      retenir: [
+        p('Radical du futur + ais, ais, ait, ions, iez, aient.'),
+        ligne,
+        table(
+          ['Emploi', 'Exemple'],
+          [
+            ['souhait poli', 'Je voudrais un rendez-vous.'],
+            ['conseil', 'Tu devrais dormir.'],
+            ['hypothèse', 'Il serait content.'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Je voudrais, pas « je voudrai » pour une demande polie.'),
+        ex([
+          { text: 'Je dis : « Je {c}voudrais{/c} un café. »', wrong: 'Je veux un café. (moins poli)' },
+        ]),
+      ],
+    }),
   },
   {
-    "id": "j9",
-    "typeId": "gram-j9-theorie",
-    "index": 4,
-    "title": "L’hypothèse avec si",
-    "topic": "gram-faits",
-    "public": "A2 / B1",
-    "objectif": "Parler d’une situation imaginée avec si.",
-    "blocks": [
-      {
-        "kind": "heading",
-        "text": "L’hypothèse avec si"
-      },
-      {
-        "kind": "paragraph",
-        "text": "Je distingue une condition possible et une situation imaginée."
-      },
-      {
-        "kind": "paragraph",
-        "text": "{ligne/2}"
-      },
-      {
-        "kind": "section",
-        "role": "regarder",
-        "blocks": [
-          {
-            "kind": "examples",
-            "marker": "puces",
-            "items": [
-              "Si tu viens, je {c}cuisinerai{/c}.",
-              "Si j’avais un vélo, je {c}viendrais{/c}.",
-              "Si j’avais su, je {c}serais venu{/c}."
-            ]
-          }
-        ]
-      },
-      {
-        "kind": "section",
-        "role": "expliquer",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Si plus présent présente une condition possible."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "La conséquence peut être au futur, au présent ou à l’impératif."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Si plus imparfait permet d’imaginer une situation différente."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Sa conséquence est souvent au conditionnel présent."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Si plus plus-que-parfait imagine une condition passée qui ne s’est pas réalisée."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Sa conséquence peut être au conditionnel passé."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Dans ces modèles, je ne mets pas le conditionnel juste après si."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je peux commencer par la condition ou par la conséquence."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je vérifie si je parle du possible, de l’imaginé ou du passé."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          }
-        ]
-      },
-      {
-        "kind": "page"
-      },
-      {
-        "kind": "section",
-        "role": "retenir",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Si plus présent présente une condition possible."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "table",
-            "colHeader": true,
-            "rowHeader": false,
-            "headers": [
-              "Si",
-              "Résultat",
-              "Exemple"
-            ],
-            "rows": [
-              [
-                "présent",
-                "futur",
-                "S’il pleut, je resterai."
-              ],
-              [
-                "imparfait",
-                "conditionnel",
-                "Si j’avais le temps, je viendrais."
-              ]
-            ]
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "attention",
-            "text": "Je dis si j’avais, et non si j’aurais, dans la condition imaginée."
-          }
-        ]
-      }
-    ]
+    id: 'j9',
+    typeId: 'gram-j9-theorie',
+    index: 4,
+    title: 'L’hypothèse avec si',
+    topic: 'gram-faits',
+    public: 'A2 / B1',
+    objectif: 'Parler d’une situation imaginée avec si.',
+    blocks: sheet({
+      title: 'L’hypothèse avec si',
+      intro: 'Je parle d’une situation {g}imaginée{/g}.',
+      regarder: [
+        '{tab:1<}{c}S’il{/c} pleut, je prends le bus. | {c}Si{/c} j’avais le temps, je viendrais.',
+        '{tab:1<}{c}Si{/c} tu veux, on sort. | {c}Si{/c} elle était là, elle aiderait.',
+        '{tab:1<}{c}Si{/c} nous pouvons, nous irons. | {c}Si{/c} j’étais toi, je demanderais.',
+      ],
+      expliquer: [
+        p('Situation {c}possible{/c} : si + présent → futur ou présent.'),
+        p('Situation {c}imaginée{/c} : si + imparfait → conditionnel.'),
+        p('Je ne mets pas le conditionnel juste après si.'),
+        ligne,
+        ex([
+          '{tab:+2++}{g}Si{/g} | {g}Autre partie{/g} | {g}Sens{/g}',
+          '{tab:2+>}présent | futur | possible',
+          '{tab:2+>}imparfait | conditionnel | imaginé',
+        ]),
+      ],
+      retenir: [
+        p('Si + présent → futur. Si + imparfait → conditionnel.'),
+        ligne,
+        table(
+          ['Si', 'Résultat', 'Exemple'],
+          [
+            ['présent', 'futur', 'S’il pleut, je resterai.'],
+            ['imparfait', 'conditionnel', 'Si j’avais le temps, je viendrais.'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Pas de conditionnel après si.'),
+        ex([
+          { text: 'Je dis : « Si j’{c}avais{/c} le temps, je viendrais. »', wrong: 'Si j’aurais le temps, je viendrais.' },
+        ]),
+      ],
+    }),
   },
   {
-    "id": "j10",
-    "typeId": "gram-j10-theorie",
-    "index": 5,
-    "title": "Le conditionnel passé",
-    "topic": "gram-faits",
-    "public": "B1",
-    "objectif": "Parler d’une action qui n’a pas eu lieu.",
-    "blocks": [
-      {
-        "kind": "heading",
-        "text": "Le conditionnel passé"
-      },
-      {
-        "kind": "paragraph",
-        "text": "Je parle d’une action envisagée dans le passé mais non réalisée, ou d’un regret."
-      },
-      {
-        "kind": "paragraph",
-        "text": "{ligne/2}"
-      },
-      {
-        "kind": "section",
-        "role": "regarder",
-        "blocks": [
-          {
-            "kind": "examples",
-            "marker": "puces",
-            "items": [
-              "J’{c}aurais aimé{/c} venir.",
-              "Elle {c}serait partie{/c} plus tôt.",
-              "Si j’avais étudié, j’{c}aurais réussi{/c}."
-            ]
-          }
-        ]
-      },
-      {
-        "kind": "section",
-        "role": "expliquer",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Le conditionnel passé contient avoir ou être au conditionnel présent."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "J’ajoute un participe passé."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je choisis l’auxiliaire comme au passé composé."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Avec être, je fais les accords nécessaires."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "J’aurais aimé exprime souvent un souhait passé."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "J’aurais dû peut exprimer un regret ou un reproche."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Avec si plus plus-que-parfait, je présente une condition passée non réalisée."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "La conséquence peut être au conditionnel passé."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Le conditionnel passé peut aussi rapporter une information non confirmée."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          }
-        ]
-      },
-      {
-        "kind": "page"
-      },
-      {
-        "kind": "section",
-        "role": "retenir",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Le conditionnel passé contient avoir ou être au conditionnel présent."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "table",
-            "colHeader": true,
-            "rowHeader": false,
-            "headers": [
-              "Personne",
-              "avoir",
-              "être"
-            ],
-            "rows": [
-              [
-                "j’",
-                "aurais fini",
-                "serais parti(e)"
-              ],
-              [
-                "tu",
-                "aurais fini",
-                "serais parti(e)"
-              ],
-              [
-                "il / elle",
-                "aurait fini",
-                "serait parti(e)"
-              ],
-              [
-                "nous",
-                "aurions fini",
-                "serions parti(e)s"
-              ],
-              [
-                "vous",
-                "auriez fini",
-                "seriez parti(e)(s)"
-              ],
-              [
-                "ils / elles",
-                "auraient fini",
-                "seraient parti(e)s"
-              ]
-            ]
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "attention",
-            "text": "Je ne remplace pas l’auxiliaire : j’aurais pris, elle serait venue."
-          }
-        ]
-      }
-    ]
-  }
+    id: 'j10',
+    typeId: 'gram-j10-theorie',
+    index: 5,
+    title: 'Le conditionnel passé',
+    topic: 'gram-faits',
+    public: 'B1',
+    objectif: 'Parler d’une action qui n’a pas eu lieu.',
+    blocks: sheet({
+      title: 'Le conditionnel passé',
+      intro: 'Je parle d’une action qui {g}n’a pas eu lieu{/g}.',
+      regarder: [
+        '{tab:1<}J’{c}aurais aimé{/c} venir. | Elle {c}serait partie{/c} plus tôt.',
+        '{tab:1<}Tu {c}aurais dû{/c} téléphoner. | Nous {c}aurions pu{/c} aider.',
+        '{tab:1<}Si j’avais su, j’{c}aurais prévenu{/c}. | Ils {c}auraient fini{/c} à temps.',
+      ],
+      expliquer: [
+        p('Conditionnel passé = avoir ou être au {c}conditionnel{/c} + participe.'),
+        p('Souvent : un regret, un reproche, une hypothèse passée.'),
+        p('Avec si : si + plus-que-parfait → conditionnel passé.'),
+        p('Même auxiliaire qu’au passé composé.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Sens{/g} | {g}Exemple{/g}',
+          '{tab:1>}regret | J’{c}aurais aimé{/c} rester.',
+          '{tab:1>}reproche | Tu {c}aurais dû{/c} venir.',
+          '{tab:1>}hypothèse | Si j’avais su, j’{c}aurais dit{/c} non.',
+        ]),
+      ],
+      retenir: [
+        p('J’aurais ou je serais + participe.'),
+        ligne,
+        table(
+          ['Personne', 'avoir', 'être'],
+          [
+            ['j’', 'aurais fini', 'serais parti(e)'],
+            ['tu', 'aurais fini', 'serais parti(e)'],
+            ['il / elle', 'aurait fini', 'serait parti(e)'],
+            ['nous', 'aurions fini', 'serions parti(e)s'],
+            ['vous', 'auriez fini', 'seriez parti(e)(s)'],
+            ['ils / elles', 'auraient fini', 'seraient parti(e)s'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Avec être, j’accorde le participe.'),
+        ex([
+          { text: 'Je dis : « Elle {c}serait partie{/c}. »', wrong: 'Elle serait parti.' },
+        ]),
+      ],
+    }),
+  },
 ]

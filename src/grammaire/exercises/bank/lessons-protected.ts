@@ -5,11 +5,11 @@ export const GRAM_LESSONS_PROTECTED: GramLesson[] = [
   {
     "subId": "a2",
     "kindId": "qcm-verbe",
-    "label": "Choisir le pronom sujet",
+    "label": "Complétez le pronom",
     "instruction": "Complétez avec je, tu, il, elle, nous, vous, ils ou elles.",
     "items": [
       {
-        "prompt": "___ m’appelle Léa.",
+        "prompt": "___ m’appelle Léa ♀.",
         "answer": "Je",
         "options": [
           "Je",
@@ -18,7 +18,7 @@ export const GRAM_LESSONS_PROTECTED: GramLesson[] = [
         ]
       },
       {
-        "prompt": "___ es en classe, Omar ?",
+        "prompt": "___ es en classe, Omar ♂ ?",
         "answer": "Tu",
         "options": [
           "Tu",
@@ -27,7 +27,7 @@ export const GRAM_LESSONS_PROTECTED: GramLesson[] = [
         ]
       },
       {
-        "prompt": "___ est à Sion (Lina).",
+        "prompt": "___ (Lina ♀) est à Sion.",
         "answer": "Elle",
         "options": [
           "Elle",
@@ -36,7 +36,7 @@ export const GRAM_LESSONS_PROTECTED: GramLesson[] = [
         ]
       },
       {
-        "prompt": "Hugo et moi, ___ sommes étudiants.",
+        "prompt": "___ (Hugo ♂ et moi) sommes étudiants.",
         "answer": "nous",
         "options": [
           "nous",
@@ -54,7 +54,7 @@ export const GRAM_LESSONS_PROTECTED: GramLesson[] = [
         ]
       },
       {
-        "prompt": "Inès et Chloé, ___ sont suisses.",
+        "prompt": "___ (Inès ♀ et Chloé ♀) sont suisses.",
         "answer": "elles",
         "options": [
           "elles",
@@ -63,7 +63,7 @@ export const GRAM_LESSONS_PROTECTED: GramLesson[] = [
         ]
       },
       {
-        "prompt": "___ parle avec le voisin (moi).",
+        "prompt": "___ (moi) parle avec le voisin.",
         "answer": "Je",
         "options": [
           "Je",
@@ -72,7 +72,7 @@ export const GRAM_LESSONS_PROTECTED: GramLesson[] = [
         ]
       },
       {
-        "prompt": "___ écoute les consignes (Paul).",
+        "prompt": "___ (Paul ♂) écoute les consignes.",
         "answer": "Il",
         "options": [
           "Il",
@@ -81,7 +81,7 @@ export const GRAM_LESSONS_PROTECTED: GramLesson[] = [
         ]
       },
       {
-        "prompt": "___ regardent la météo (Paul et Omar).",
+        "prompt": "___ (Paul ♂ et Omar ♂) regardent la météo.",
         "answer": "Ils",
         "options": [
           "Ils",
@@ -90,7 +90,7 @@ export const GRAM_LESSONS_PROTECTED: GramLesson[] = [
         ]
       },
       {
-        "prompt": "___ cherches un logement (toi).",
+        "prompt": "___ (toi) cherches un logement.",
         "answer": "Tu",
         "options": [
           "Tu",
@@ -99,7 +99,7 @@ export const GRAM_LESSONS_PROTECTED: GramLesson[] = [
         ]
       },
       {
-        "prompt": "___ travaillons à la bibliothèque (Lina et moi).",
+        "prompt": "___ (Lina ♀ et moi) travaillons à la bibliothèque.",
         "answer": "Nous",
         "options": [
           "Nous",
@@ -108,7 +108,7 @@ export const GRAM_LESSONS_PROTECTED: GramLesson[] = [
         ]
       },
       {
-        "prompt": "___ habitent près du marché (Lina et Nadia).",
+        "prompt": "___ (Lina ♀ et Nadia ♀) habitent près du marché.",
         "answer": "Elles",
         "options": [
           "Elles",
@@ -117,7 +117,7 @@ export const GRAM_LESSONS_PROTECTED: GramLesson[] = [
         ]
       },
       {
-        "prompt": "___ prépare la salade (Lina).",
+        "prompt": "___ (Lina ♀) prépare la salade.",
         "answer": "Elle",
         "options": [
           "Elle",
@@ -126,7 +126,7 @@ export const GRAM_LESSONS_PROTECTED: GramLesson[] = [
         ]
       },
       {
-        "prompt": "___ demandez une attestation (Lina et vous).",
+        "prompt": "___ (Lina ♀ et vous) demandez une attestation.",
         "answer": "Vous",
         "options": [
           "Vous",
@@ -135,7 +135,7 @@ export const GRAM_LESSONS_PROTECTED: GramLesson[] = [
         ]
       },
       {
-        "prompt": "___arrive à la gare (moi).",
+        "prompt": "___ (moi) arrive à la gare.",
         "answer": "J’",
         "options": [
           "J’",
@@ -144,7 +144,7 @@ export const GRAM_LESSONS_PROTECTED: GramLesson[] = [
         ]
       },
       {
-        "prompt": "___ reste chez ma sœur (Paul).",
+        "prompt": "___ (Paul ♂) reste chez ma sœur.",
         "answer": "Il",
         "options": [
           "Il",
@@ -153,7 +153,7 @@ export const GRAM_LESSONS_PROTECTED: GramLesson[] = [
         ]
       },
       {
-        "prompt": "___ aiment la randonnée (Paul et Omar).",
+        "prompt": "___ (Paul ♂ et Omar ♂) aiment la randonnée.",
         "answer": "Ils",
         "options": [
           "Ils",
@@ -162,7 +162,7 @@ export const GRAM_LESSONS_PROTECTED: GramLesson[] = [
         ]
       },
       {
-        "prompt": "___ dessines un paysage (toi).",
+        "prompt": "___ (toi) dessines un paysage.",
         "answer": "Tu",
         "options": [
           "Tu",
@@ -171,7 +171,7 @@ export const GRAM_LESSONS_PROTECTED: GramLesson[] = [
         ]
       },
       {
-        "prompt": "___ cuisinons un repas simple (Lina et moi).",
+        "prompt": "___ (Lina ♀ et moi) cuisinons un repas simple.",
         "answer": "Nous",
         "options": [
           "Nous",
@@ -180,7 +180,7 @@ export const GRAM_LESSONS_PROTECTED: GramLesson[] = [
         ]
       },
       {
-        "prompt": "___ réparent la sonnette (Lina et Nadia).",
+        "prompt": "___ (Lina ♀ et Nadia ♀) réparent la sonnette.",
         "answer": "Elles",
         "options": [
           "Elles",
@@ -189,7 +189,7 @@ export const GRAM_LESSONS_PROTECTED: GramLesson[] = [
         ]
       },
       {
-        "prompt": "___ ferme la fenêtre (Lina).",
+        "prompt": "___ (Lina ♀) ferme la fenêtre.",
         "answer": "Elle",
         "options": [
           "Elle",
@@ -198,7 +198,7 @@ export const GRAM_LESSONS_PROTECTED: GramLesson[] = [
         ]
       },
       {
-        "prompt": "___ lavez les légumes (Lina et vous).",
+        "prompt": "___ (Lina ♀ et vous) lavez les légumes.",
         "answer": "Vous",
         "options": [
           "Vous",
@@ -207,7 +207,7 @@ export const GRAM_LESSONS_PROTECTED: GramLesson[] = [
         ]
       },
       {
-        "prompt": "___ porte un sac léger (moi).",
+        "prompt": "___ (moi) porte un sac léger.",
         "answer": "Je",
         "options": [
           "Je",
@@ -216,7 +216,7 @@ export const GRAM_LESSONS_PROTECTED: GramLesson[] = [
         ]
       },
       {
-        "prompt": "___ visite le musée (Paul).",
+        "prompt": "___ (Paul ♂) visite le musée.",
         "answer": "Il",
         "options": [
           "Il",
@@ -225,7 +225,7 @@ export const GRAM_LESSONS_PROTECTED: GramLesson[] = [
         ]
       },
       {
-        "prompt": "___ rangent les outils (Paul et Omar).",
+        "prompt": "___ (Paul ♂ et Omar ♂) rangent les outils.",
         "answer": "Ils",
         "options": [
           "Ils",
@@ -234,7 +234,7 @@ export const GRAM_LESSONS_PROTECTED: GramLesson[] = [
         ]
       },
       {
-        "prompt": "___ expliques le trajet (toi).",
+        "prompt": "___ (toi) expliques le trajet.",
         "answer": "Tu",
         "options": [
           "Tu",
@@ -243,7 +243,7 @@ export const GRAM_LESSONS_PROTECTED: GramLesson[] = [
         ]
       },
       {
-        "prompt": "___ aidons la nouvelle élève (Lina et moi).",
+        "prompt": "___ (Lina ♀ et moi) aidons la nouvelle élève.",
         "answer": "Nous",
         "options": [
           "Nous",
@@ -252,7 +252,7 @@ export const GRAM_LESSONS_PROTECTED: GramLesson[] = [
         ]
       },
       {
-        "prompt": "___ étudient le vocabulaire (Lina et Nadia).",
+        "prompt": "___ (Lina ♀ et Nadia ♀) étudient le vocabulaire.",
         "answer": "Elles",
         "options": [
           "Elles",
@@ -261,7 +261,7 @@ export const GRAM_LESSONS_PROTECTED: GramLesson[] = [
         ]
       },
       {
-        "prompt": "___ joue au basket (Lina).",
+        "prompt": "___ (Lina ♀) joue au basket.",
         "answer": "Elle",
         "options": [
           "Elle",
@@ -270,7 +270,7 @@ export const GRAM_LESSONS_PROTECTED: GramLesson[] = [
         ]
       },
       {
-        "prompt": "___ chantez avec la chorale (Lina et vous).",
+        "prompt": "___ (Lina ♀ et vous) chantez avec la chorale.",
         "answer": "Vous",
         "options": [
           "Vous",
@@ -279,7 +279,7 @@ export const GRAM_LESSONS_PROTECTED: GramLesson[] = [
         ]
       },
       {
-        "prompt": "___ danse à la fête (moi).",
+        "prompt": "___ (moi) danse à la fête.",
         "answer": "Je",
         "options": [
           "Je",
@@ -288,7 +288,7 @@ export const GRAM_LESSONS_PROTECTED: GramLesson[] = [
         ]
       },
       {
-        "prompt": "___ réserve une place (Paul).",
+        "prompt": "___ (Paul ♂) réserve une place.",
         "answer": "Il",
         "options": [
           "Il",
@@ -297,7 +297,7 @@ export const GRAM_LESSONS_PROTECTED: GramLesson[] = [
         ]
       },
       {
-        "prompt": "___ commandent un sandwich (Paul et Omar).",
+        "prompt": "___ (Paul ♂ et Omar ♂) commandent un sandwich.",
         "answer": "Ils",
         "options": [
           "Ils",
@@ -306,7 +306,7 @@ export const GRAM_LESSONS_PROTECTED: GramLesson[] = [
         ]
       },
       {
-        "prompt": "___ partages le dessert (toi).",
+        "prompt": "___ (toi) partages le dessert.",
         "answer": "Tu",
         "options": [
           "Tu",
@@ -315,7 +315,7 @@ export const GRAM_LESSONS_PROTECTED: GramLesson[] = [
         ]
       },
       {
-        "prompt": "___ invitons les collègues (Lina et moi).",
+        "prompt": "___ (Lina ♀ et moi) invitons les collègues.",
         "answer": "Nous",
         "options": [
           "Nous",
@@ -324,7 +324,7 @@ export const GRAM_LESSONS_PROTECTED: GramLesson[] = [
         ]
       },
       {
-        "prompt": "___ racontent une anecdote (Lina et Nadia).",
+        "prompt": "___ (Lina ♀ et Nadia ♀) racontent une anecdote.",
         "answer": "Elles",
         "options": [
           "Elles",
@@ -333,7 +333,7 @@ export const GRAM_LESSONS_PROTECTED: GramLesson[] = [
         ]
       },
       {
-        "prompt": "___ dessine le plan du quartier (Lina).",
+        "prompt": "___ (Lina ♀) dessine le plan du quartier.",
         "answer": "Elle",
         "options": [
           "Elle",
@@ -342,7 +342,7 @@ export const GRAM_LESSONS_PROTECTED: GramLesson[] = [
         ]
       },
       {
-        "prompt": "___ empruntez un roman (Lina et vous).",
+        "prompt": "___ (Lina ♀ et vous) empruntez un roman.",
         "answer": "Vous",
         "options": [
           "Vous",
@@ -351,7 +351,7 @@ export const GRAM_LESSONS_PROTECTED: GramLesson[] = [
         ]
       },
       {
-        "prompt": "___ rapporte le livre (moi).",
+        "prompt": "___ (moi) rapporte le livre.",
         "answer": "Je",
         "options": [
           "Je",
@@ -360,7 +360,7 @@ export const GRAM_LESSONS_PROTECTED: GramLesson[] = [
         ]
       },
       {
-        "prompt": "___ apporte une gourde (Paul).",
+        "prompt": "___ (Paul ♂) apporte une gourde.",
         "answer": "Il",
         "options": [
           "Il",
@@ -369,7 +369,7 @@ export const GRAM_LESSONS_PROTECTED: GramLesson[] = [
         ]
       },
       {
-        "prompt": "___ montrent la sortie (Paul et Omar).",
+        "prompt": "___ (Paul ♂ et Omar ♂) montrent la sortie.",
         "answer": "Ils",
         "options": [
           "Ils",
@@ -378,7 +378,7 @@ export const GRAM_LESSONS_PROTECTED: GramLesson[] = [
         ]
       },
       {
-        "prompt": "___ demandes le prix du billet (toi).",
+        "prompt": "___ (toi) demandes le prix du billet.",
         "answer": "Tu",
         "options": [
           "Tu",
@@ -387,7 +387,7 @@ export const GRAM_LESSONS_PROTECTED: GramLesson[] = [
         ]
       },
       {
-        "prompt": "___ notons la nouvelle adresse (Lina et moi).",
+        "prompt": "___ (Lina ♀ et moi) notons la nouvelle adresse.",
         "answer": "Nous",
         "options": [
           "Nous",
@@ -396,7 +396,7 @@ export const GRAM_LESSONS_PROTECTED: GramLesson[] = [
         ]
       },
       {
-        "prompt": "___ signent le formulaire (Lina et Nadia).",
+        "prompt": "___ (Lina ♀ et Nadia ♀) signent le formulaire.",
         "answer": "Elles",
         "options": [
           "Elles",
@@ -405,7 +405,7 @@ export const GRAM_LESSONS_PROTECTED: GramLesson[] = [
         ]
       },
       {
-        "prompt": "___ patiente devant le guichet (Lina).",
+        "prompt": "___ (Lina ♀) patiente devant le guichet.",
         "answer": "Elle",
         "options": [
           "Elle",
@@ -414,7 +414,7 @@ export const GRAM_LESSONS_PROTECTED: GramLesson[] = [
         ]
       },
       {
-        "prompt": "___ traversez la rue (Lina et vous).",
+        "prompt": "___ (Lina ♀ et vous) traversez la rue.",
         "answer": "Vous",
         "options": [
           "Vous",
@@ -423,7 +423,7 @@ export const GRAM_LESSONS_PROTECTED: GramLesson[] = [
         ]
       },
       {
-        "prompt": "___ tourne à droite (moi).",
+        "prompt": "___ (moi) tourne à droite.",
         "answer": "Je",
         "options": [
           "Je",
@@ -432,7 +432,7 @@ export const GRAM_LESSONS_PROTECTED: GramLesson[] = [
         ]
       },
       {
-        "prompt": "___ marche jusqu’au parc (Paul).",
+        "prompt": "___ (Paul ♂) marche jusqu’au parc.",
         "answer": "Il",
         "options": [
           "Il",
@@ -441,7 +441,7 @@ export const GRAM_LESSONS_PROTECTED: GramLesson[] = [
         ]
       },
       {
-        "prompt": "___ montent les cartons (Paul et Omar).",
+        "prompt": "___ (Paul ♂ et Omar ♂) montent les cartons.",
         "answer": "Ils",
         "options": [
           "Ils",
@@ -450,221 +450,13 @@ export const GRAM_LESSONS_PROTECTED: GramLesson[] = [
         ]
       },
       {
-        "prompt": "___ poses la valise (toi).",
+        "prompt": "___ (toi) poses la valise.",
         "answer": "Tu",
         "options": [
           "Tu",
           "Il",
           "Nous"
         ]
-      }
-    ]
-  },
-  {
-    "subId": "a2",
-    "kindId": "fill-conj",
-    "label": "Compléter le pronom",
-    "instruction": "Écrivez le pronom sujet qui convient.",
-    "items": [
-      {
-        "prompt": "___ suis en formation. (moi)",
-        "answer": "Je"
-      },
-      {
-        "prompt": "___ as un cours ? (toi)",
-        "answer": "Tu"
-      },
-      {
-        "prompt": "___ travaille à Martigny (Karim).",
-        "answer": "Il"
-      },
-      {
-        "prompt": "Nadia et moi, ___ habitons à Sion.",
-        "answer": "nous"
-      },
-      {
-        "prompt": "Monsieur Besse, ___ êtes professeur.",
-        "answer": "vous"
-      },
-      {
-        "prompt": "___ arrivent à 8 h (Yanis et Marco).",
-        "answer": "ils"
-      },
-      {
-        "prompt": "___ parle avec le voisin (moi).",
-        "answer": "Je"
-      },
-      {
-        "prompt": "___ écoute les consignes (Paul).",
-        "answer": "Il"
-      },
-      {
-        "prompt": "___ regardent la météo (Paul et Omar).",
-        "answer": "Ils"
-      },
-      {
-        "prompt": "___ cherches un logement (toi).",
-        "answer": "Tu"
-      },
-      {
-        "prompt": "___ travaillons à la bibliothèque (Lina et moi).",
-        "answer": "Nous"
-      },
-      {
-        "prompt": "___ habitent près du marché (Lina et Nadia).",
-        "answer": "Elles"
-      },
-      {
-        "prompt": "___ prépare la salade (Lina).",
-        "answer": "Elle"
-      },
-      {
-        "prompt": "___ demandez une attestation (Lina et vous).",
-        "answer": "Vous"
-      },
-      {
-        "prompt": "___arrive à la gare (moi).",
-        "answer": "J’"
-      },
-      {
-        "prompt": "___ reste chez ma sœur (Paul).",
-        "answer": "Il"
-      },
-      {
-        "prompt": "___ aiment la randonnée (Paul et Omar).",
-        "answer": "Ils"
-      },
-      {
-        "prompt": "___ dessines un paysage (toi).",
-        "answer": "Tu"
-      },
-      {
-        "prompt": "___ cuisinons un repas simple (Lina et moi).",
-        "answer": "Nous"
-      },
-      {
-        "prompt": "___ réparent la sonnette (Lina et Nadia).",
-        "answer": "Elles"
-      },
-      {
-        "prompt": "___ ferme la fenêtre (Lina).",
-        "answer": "Elle"
-      },
-      {
-        "prompt": "___ lavez les légumes (Lina et vous).",
-        "answer": "Vous"
-      },
-      {
-        "prompt": "___ porte un sac léger (moi).",
-        "answer": "Je"
-      },
-      {
-        "prompt": "___ visite le musée (Paul).",
-        "answer": "Il"
-      },
-      {
-        "prompt": "___ rangent les outils (Paul et Omar).",
-        "answer": "Ils"
-      },
-      {
-        "prompt": "___ expliques le trajet (toi).",
-        "answer": "Tu"
-      },
-      {
-        "prompt": "___ aidons la nouvelle élève (Lina et moi).",
-        "answer": "Nous"
-      },
-      {
-        "prompt": "___ étudient le vocabulaire (Lina et Nadia).",
-        "answer": "Elles"
-      },
-      {
-        "prompt": "___ joue au basket (Lina).",
-        "answer": "Elle"
-      },
-      {
-        "prompt": "___ chantez avec la chorale (Lina et vous).",
-        "answer": "Vous"
-      },
-      {
-        "prompt": "___ danse à la fête (moi).",
-        "answer": "Je"
-      },
-      {
-        "prompt": "___ réserve une place (Paul).",
-        "answer": "Il"
-      },
-      {
-        "prompt": "___ commandent un sandwich (Paul et Omar).",
-        "answer": "Ils"
-      },
-      {
-        "prompt": "___ partages le dessert (toi).",
-        "answer": "Tu"
-      },
-      {
-        "prompt": "___ invitons les collègues (Lina et moi).",
-        "answer": "Nous"
-      },
-      {
-        "prompt": "___ racontent une anecdote (Lina et Nadia).",
-        "answer": "Elles"
-      },
-      {
-        "prompt": "___ dessine le plan du quartier (Lina).",
-        "answer": "Elle"
-      },
-      {
-        "prompt": "___ empruntez un roman (Lina et vous).",
-        "answer": "Vous"
-      },
-      {
-        "prompt": "___ rapporte le livre (moi).",
-        "answer": "Je"
-      },
-      {
-        "prompt": "___ apporte une gourde (Paul).",
-        "answer": "Il"
-      },
-      {
-        "prompt": "___ montrent la sortie (Paul et Omar).",
-        "answer": "Ils"
-      },
-      {
-        "prompt": "___ demandes le prix du billet (toi).",
-        "answer": "Tu"
-      },
-      {
-        "prompt": "___ notons la nouvelle adresse (Lina et moi).",
-        "answer": "Nous"
-      },
-      {
-        "prompt": "___ signent le formulaire (Lina et Nadia).",
-        "answer": "Elles"
-      },
-      {
-        "prompt": "___ patiente devant le guichet (Lina).",
-        "answer": "Elle"
-      },
-      {
-        "prompt": "___ traversez la rue (Lina et vous).",
-        "answer": "Vous"
-      },
-      {
-        "prompt": "___ tourne à droite (moi).",
-        "answer": "Je"
-      },
-      {
-        "prompt": "___ marche jusqu’au parc (Paul).",
-        "answer": "Il"
-      },
-      {
-        "prompt": "___ montent les cartons (Paul et Omar).",
-        "answer": "Ils"
-      },
-      {
-        "prompt": "___ poses la valise (toi).",
-        "answer": "Tu"
       }
     ]
   },

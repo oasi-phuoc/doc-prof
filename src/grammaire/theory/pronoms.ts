@@ -1,1565 +1,464 @@
 import type { GrammaireTheoryDoc } from '../types'
+import { ex, ligne, p, sheet, table } from './falc-sheet'
 
-/** Théorie réécrite en français facile ; gabarit visuel et identifiants conservés. */
+/** Théorie FALC — thème gram-pronoms. Français seul (pas de traductions). */
 export const pronomsDocs: GrammaireTheoryDoc[] = [
   {
-    "id": "i1",
-    "typeId": "gram-i1-theorie",
-    "index": 1,
-    "title": "Les pronoms relatifs",
-    "topic": "gram-pronoms",
-    "public": "A2",
-    "objectif": "Relier deux informations avec qui, que, où ou dont.",
-    "blocks": [
-      {
-        "kind": "heading",
-        "text": "Les pronoms relatifs"
-      },
-      {
-        "kind": "paragraph",
-        "text": "Je relie deux informations sans répéter le même nom."
-      },
-      {
-        "kind": "paragraph",
-        "text": "{ligne/2}"
-      },
-      {
-        "kind": "section",
-        "role": "regarder",
-        "blocks": [
-          {
-            "kind": "examples",
-            "marker": "puces",
-            "items": [
-              "La femme {c}qui{/c} parle est médecin.",
-              "Le livre {c}que{/c} je lis est court.",
-              "Voici la ville {c}où{/c} je travaille."
-            ]
-          }
-        ]
-      },
-      {
-        "kind": "section",
-        "role": "expliquer",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Le pronom relatif reprend un nom appelé antécédent."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Qui est le sujet du verbe qui suit."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Que est le complément direct du verbe qui suit."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Devant une voyelle, que devient qu’."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Où peut reprendre un lieu ou un moment."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Dont reprend un complément construit avec de."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Le pronom dépend de son rôle dans la deuxième partie, pas du genre du nom."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Le verbe après qui s’accorde avec le nom repris."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je garde une phrase qui donne une information claire sur ce nom."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          }
-        ]
-      },
-      {
-        "kind": "page"
-      },
-      {
-        "kind": "section",
-        "role": "retenir",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Le pronom relatif reprend un nom appelé antécédent."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "table",
-            "colHeader": true,
-            "rowHeader": false,
-            "headers": [
-              "Pronom",
-              "Exemple"
-            ],
-            "rows": [
-              [
-                "qui",
-                "la femme qui parle"
-              ],
-              [
-                "que",
-                "le livre que je lis"
-              ],
-              [
-                "qu’",
-                "l’homme qu’elle connaît"
-              ],
-              [
-                "où",
-                "la ville où j’habite"
-              ],
-              [
-                "dont",
-                "l’ami dont je parle"
-              ]
-            ]
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "attention",
-            "text": "Qui n’est pas réservé aux personnes : le bus qui arrive utilise aussi qui."
-          }
-        ]
-      }
-    ]
+    id: 'i1',
+    typeId: 'gram-i1-theorie',
+    index: 1,
+    title: 'Les pronoms relatifs',
+    topic: 'gram-pronoms',
+    public: 'A2',
+    objectif: 'Relier deux informations avec qui, que, où ou dont.',
+    blocks: sheet({
+      title: 'Les pronoms relatifs',
+      intro: 'Je relie deux informations dans {g}une phrase{/g}.',
+      regarder: [
+        '{tab:1<}La femme {c}qui{/c} parle est médecin. | Le livre {c}que{/c} je lis est neuf.',
+        '{tab:1<}La ville {c}où{/c} j’habite est calme. | L’ami {c}dont{/c} je parle est ici.',
+        '{tab:1<}L’homme {c}qu’{/c}elle connaît. | Le jour {c}où{/c} je suis arrivé.',
+      ],
+      expliquer: [
+        p('{c}Qui{/c} = sujet du verbe qui suit.'),
+        p('{c}Que{/c} = complément. Devant une voyelle : {c}qu’{/c}.'),
+        p('{c}Où{/c} = lieu ou moment.'),
+        p('{c}Dont{/c} = de + nom. Le livre dont je parle.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Pronom{/g} | {g}Rôle{/g}',
+          '{tab:1>}qui | {c}sujet{/c}',
+          '{tab:1>}que / qu’ | {c}complément{/c}',
+          '{tab:1>}où | {c}lieu{/c} ou temps',
+          '{tab:1>}dont | {c}de{/c} + nom',
+        ]),
+      ],
+      retenir: [
+        p('Qui fait l’action. Que reçoit l’action. Où = lieu. Dont = de.'),
+        ligne,
+        table(
+          ['Pronom', 'Exemple'],
+          [
+            ['qui', 'la femme qui parle'],
+            ['que', 'le livre que je lis'],
+            ['qu’', 'l’homme qu’elle connaît'],
+            ['où', 'la ville où j’habite'],
+            ['dont', 'l’ami dont je parle'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Qui ≠ que. Qui est sujet.'),
+        ex([
+          { text: 'Je dis : « la femme {c}qui{/c} parle. »', wrong: 'la femme que parle.' },
+        ]),
+      ],
+    }),
   },
   {
-    "id": "i2",
-    "typeId": "gram-i2-theorie",
-    "index": 2,
-    "title": "Les pronoms possessifs",
-    "topic": "gram-pronoms",
-    "public": "A2",
-    "objectif": "Remplacer un nom déjà connu avec le mien, le tien…",
-    "blocks": [
-      {
-        "kind": "heading",
-        "text": "Les pronoms possessifs"
-      },
-      {
-        "kind": "paragraph",
-        "text": "Je remplace un nom pour parler de ce qui appartient à quelqu’un."
-      },
-      {
-        "kind": "paragraph",
-        "text": "{ligne/2}"
-      },
-      {
-        "kind": "section",
-        "role": "regarder",
-        "blocks": [
-          {
-            "kind": "examples",
-            "marker": "puces",
-            "items": [
-              "Ton sac est ici ; {c}le mien{/c} est là.",
-              "Cette clé est {c}la sienne{/c}.",
-              "Je pense {c}aux vôtres{/c}."
-            ]
-          }
-        ]
-      },
-      {
-        "kind": "section",
-        "role": "expliquer",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Un pronom possessif remplace un nom déjà connu."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je le choisis d’après le propriétaire et le nom remplacé."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Avec moi : le mien, la mienne, les miens, les miennes."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Avec toi : le tien, la tienne, les tiens, les tiennes."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Avec lui ou elle : le sien, la sienne, les siens, les siennes."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Avec nous : le nôtre, la nôtre, les nôtres."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Avec vous : le vôtre, la vôtre, les vôtres."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Avec eux ou elles : le leur, la leur, les leurs."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "L’article fait partie du pronom et peut se contracter après à ou de."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          }
-        ]
-      },
-      {
-        "kind": "page"
-      },
-      {
-        "kind": "section",
-        "role": "retenir",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Un pronom possessif remplace un nom déjà connu."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "table",
-            "colHeader": true,
-            "rowHeader": false,
-            "headers": [
-              "Déterminant",
-              "Pronom"
-            ],
-            "rows": [
-              [
-                "mon sac",
-                "le mien"
-              ],
-              [
-                "ma clé",
-                "la mienne"
-              ],
-              [
-                "tes livres",
-                "les tiens"
-              ],
-              [
-                "notre maison",
-                "la nôtre"
-              ],
-              [
-                "vos idées",
-                "les vôtres"
-              ]
-            ]
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "attention",
-            "text": "Je distingue notre sac, sans accent, et le nôtre, avec un accent circonflexe."
-          }
-        ]
-      }
-    ]
+    id: 'i2',
+    typeId: 'gram-i2-theorie',
+    index: 2,
+    title: 'Les pronoms possessifs',
+    topic: 'gram-pronoms',
+    public: 'A2',
+    objectif: 'Remplacer un nom déjà connu avec le mien, le tien…',
+    blocks: sheet({
+      title: 'Les pronoms possessifs',
+      intro: 'Je remplace un nom déjà {g}connu{/g}.',
+      regarder: [
+        '{tab:1<}C’est mon sac. C’est {c}le mien{/c}. | C’est ta clé. C’est {c}la tienne{/c}.',
+        '{tab:1<}Ce sont nos places. Ce sont {c}les nôtres{/c}. | C’est leur idée. C’est {c}la leur{/c}.',
+        '{tab:1<}Ton bus ou {c}le mien{/c} ? | Leurs enfants et {c}les nôtres{/c}.',
+      ],
+      expliquer: [
+        p('Le pronom possessif remplace le nom + le possessif.'),
+        p('Je garde un article : {c}le{/c}, {c}la{/c} ou {c}les{/c}.'),
+        p('L’article et la fin du mot suivent le nom remplacé.'),
+        ligne,
+        ex([
+          '{tab:+2++}{g}Possesseur{/g} | {g}Masculin{/g} | {g}Féminin{/g}',
+          '{tab:2+>}je | le {c}mien{/c} | la {c}mienne{/c}',
+          '{tab:2+>}tu | le {c}tien{/c} | la {c}tienne{/c}',
+          '{tab:2+>}il / elle | le {c}sien{/c} | la {c}sienne{/c}',
+          '{tab:2+>}nous | le {c}nôtre{/c} | la {c}nôtre{/c}',
+          '{tab:2+>}vous | le {c}vôtre{/c} | la {c}vôtre{/c}',
+          '{tab:2+>}ils / elles | le {c}leur{/c} | la {c}leur{/c}',
+        ]),
+      ],
+      retenir: [
+        p('Article + mien, tien, sien, nôtre, vôtre, leur.'),
+        p('Pluriel : les miens, les miennes, les nôtres…'),
+        ligne,
+        table(
+          ['Déterminant', 'Pronom'],
+          [
+            ['mon sac', 'le mien'],
+            ['ma clé', 'la mienne'],
+            ['tes livres', 'les tiens'],
+            ['notre maison', 'la nôtre'],
+            ['vos idées', 'les vôtres'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Je garde l’article. Pas « mien » seul.'),
+        ex([
+          { text: 'Je dis : « C’est {c}le mien{/c}. »', wrong: 'C’est mien.' },
+        ]),
+      ],
+    }),
   },
   {
-    "id": "i3",
-    "typeId": "gram-i3-theorie",
-    "index": 3,
-    "title": "Les pronoms démonstratifs",
-    "topic": "gram-pronoms",
-    "public": "A2",
-    "objectif": "Désigner une chose sans répéter le nom.",
-    "blocks": [
-      {
-        "kind": "heading",
-        "text": "Les pronoms démonstratifs"
-      },
-      {
-        "kind": "paragraph",
-        "text": "Je montre un élément sans répéter son nom."
-      },
-      {
-        "kind": "paragraph",
-        "text": "{ligne/2}"
-      },
-      {
-        "kind": "section",
-        "role": "regarder",
-        "blocks": [
-          {
-            "kind": "examples",
-            "marker": "puces",
-            "items": [
-              "Je prends {c}celui-ci{/c}.",
-              "La veste de Paul et {c}celle de{/c} Lina.",
-              "Voici {c}ceux qui{/c} ont répondu."
-            ]
-          }
-        ]
-      },
-      {
-        "kind": "section",
-        "role": "expliquer",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Celui remplace un nom masculin singulier."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Celle remplace un nom féminin singulier."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Ceux et celles remplacent des noms pluriels."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je choisis la forme d’après le nom remplacé."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "J’ajoute souvent une précision : celui de Léa ou celle qui parle."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "-ci et -là peuvent préciser l’élément montré."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Ceci et cela reprennent une chose ou une idée sans préciser son genre."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Ça est une forme courante de cela."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je distingue ce devant un nom et celui qui remplace le nom."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          }
-        ]
-      },
-      {
-        "kind": "page"
-      },
-      {
-        "kind": "section",
-        "role": "retenir",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Celui remplace un nom masculin singulier."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "table",
-            "colHeader": true,
-            "rowHeader": false,
-            "headers": [
-              "Forme",
-              "Exemple"
-            ],
-            "rows": [
-              [
-                "celui",
-                "celui de Paul"
-              ],
-              [
-                "celle-ci",
-                "cette clé, pas celle-ci"
-              ],
-              [
-                "ceux qui",
-                "ceux qui arrivent"
-              ],
-              [
-                "celles que",
-                "celles que tu veux"
-              ]
-            ]
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "attention",
-            "text": "Dans une phrase écrite complète, je précise généralement celui ou celle avec de, qui, que, -ci ou -là."
-          }
-        ]
-      }
-    ]
+    id: 'i3',
+    typeId: 'gram-i3-theorie',
+    index: 3,
+    title: 'Les pronoms démonstratifs',
+    topic: 'gram-pronoms',
+    public: 'A2',
+    objectif: 'Désigner une chose sans répéter le nom.',
+    blocks: sheet({
+      title: 'Les pronoms démonstratifs',
+      intro: 'Je désigne une chose sans {g}répéter{/g} le nom.',
+      regarder: [
+        '{tab:1<}Ce livre ou {c}celui-là{/c} ? | Cette chaise et {c}celle-ci{/c}.',
+        '{tab:1<}Je prends {c}ceux{/c} de Nina. | {c}Celles{/c} qui restent sont à nous.',
+        '{tab:1<}{c}Celui{/c} de gauche. | {c}Celles{/c} que tu vois.',
+      ],
+      expliquer: [
+        p('{c}Celui{/c}, {c}celle{/c}, {c}ceux{/c}, {c}celles{/c} remplacent un nom.'),
+        p('J’accorde avec le nom remplacé.'),
+        p('Souvent + -ci / -là, ou + de, qui, que.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Nom{/g} | {g}Pronom{/g}',
+          '{tab:1>}masculin singulier | {c}celui{/c}',
+          '{tab:1>}féminin singulier | {c}celle{/c}',
+          '{tab:1>}masculin pluriel | {c}ceux{/c}',
+          '{tab:1>}féminin pluriel | {c}celles{/c}',
+        ]),
+      ],
+      retenir: [
+        p('Celui-ci = proche. Celui-là = plus loin.'),
+        ligne,
+        table(
+          ['Forme', 'Exemple'],
+          [
+            ['celui', 'celui de Paul'],
+            ['celle-ci', 'cette clé, pas celle-ci'],
+            ['ceux qui', 'ceux qui arrivent'],
+            ['celles que', 'celles que tu veux'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} J’accorde avec le nom, pas avec la personne.'),
+        ex([
+          { text: 'Je dis : « la chaise, {c}celle{/c}-là. »', wrong: 'la chaise, celui-là.' },
+        ]),
+      ],
+    }),
   },
   {
-    "id": "i4",
-    "typeId": "gram-i4-theorie",
-    "index": 4,
-    "title": "Les pronoms COD",
-    "topic": "gram-pronoms",
-    "public": "A2",
-    "objectif": "Remplacer un complément direct.",
-    "blocks": [
-      {
-        "kind": "heading",
-        "text": "Les pronoms COD"
-      },
-      {
-        "kind": "paragraph",
-        "text": "Je remplace un complément direct pour ne pas répéter le nom."
-      },
-      {
-        "kind": "paragraph",
-        "text": "{ligne/2}"
-      },
-      {
-        "kind": "section",
-        "role": "regarder",
-        "blocks": [
-          {
-            "kind": "examples",
-            "marker": "puces",
-            "items": [
-              "Je regarde le bus ; je {c}le{/c} regarde.",
-              "Tu vois les enfants ; tu {c}les{/c} vois.",
-              "Je vais {c}l’{/c}appeler."
-            ]
-          }
-        ]
-      },
-      {
-        "kind": "section",
-        "role": "expliquer",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Un complément direct se construit sans préposition."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je peux souvent le trouver avec la question qui ou quoi après le verbe."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Le remplace un masculin singulier ; la remplace un féminin singulier."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Les remplace un pluriel."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Devant une voyelle ou un h muet, le et la deviennent l’."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Me, te, nous et vous peuvent aussi être compléments directs."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je place le pronom avant le verbe conjugué."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Avec un infinitif, je le place devant le verbe dont il dépend : je vais le lire."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Au passé composé : je l’ai lu ; un accord du participe peut être nécessaire."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "À l’impératif affirmatif : regarde-le."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          }
-        ]
-      },
-      {
-        "kind": "page"
-      },
-      {
-        "kind": "section",
-        "role": "retenir",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Un complément direct se construit sans préposition."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "table",
-            "colHeader": true,
-            "rowHeader": false,
-            "headers": [
-              "Remplace",
-              "Pronom",
-              "Exemple"
-            ],
-            "rows": [
-              [
-                "un homme / un objet m.",
-                "le",
-                "Je le vois."
-              ],
-              [
-                "une femme / un objet f.",
-                "la",
-                "Je la prends."
-              ],
-              [
-                "plusieurs",
-                "les",
-                "Je les aide."
-              ],
-              [
-                "moi",
-                "me",
-                "Tu me vois."
-              ],
-              [
-                "voyelle",
-                "l’",
-                "Je l’écoute."
-              ]
-            ]
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "attention",
-            "text": "Je vérifie la construction : écouter quelqu’un est direct, téléphoner à quelqu’un est indirect."
-          }
-        ]
-      }
-    ]
+    id: 'i4',
+    typeId: 'gram-i4-theorie',
+    index: 4,
+    title: 'Les pronoms COD',
+    topic: 'gram-pronoms',
+    public: 'A2',
+    objectif: 'Remplacer un complément direct.',
+    blocks: sheet({
+      title: 'Les pronoms COD',
+      intro: 'Je remplace un nom complément {g}direct{/g}.',
+      regarder: [
+        '{tab:1<}Je vois Nina. → Je {c}la{/c} vois. | Tu prends le bus. → Tu {c}le{/c} prends.',
+        '{tab:1<}Il aide les enfants. → Il {c}les{/c} aide. | Elle m’appelle. → Elle {c}m’{/c}appelle.',
+        '{tab:1<}Nous {c}vous{/c} attendons. | Je {c}l’{/c}écoute.',
+      ],
+      expliquer: [
+        p('Le pronom COD se place {c}avant{/c} le verbe.'),
+        p('Personnes : me, te, nous, vous.'),
+        p('Choses ou personnes : le, la, les.'),
+        p('Devant une voyelle : le et la deviennent {c}l’{/c}.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Nom{/g} | {g}Pronom{/g}',
+          '{tab:1>}moi | {c}me / m’{/c}',
+          '{tab:1>}toi | {c}te / t’{/c}',
+          '{tab:1>}masculin | {c}le / l’{/c}',
+          '{tab:1>}féminin | {c}la / l’{/c}',
+          '{tab:1>}pluriel | {c}les{/c}',
+        ]),
+      ],
+      retenir: [
+        p('COD avant le verbe.'),
+        ligne,
+        table(
+          ['Remplace', 'Pronom', 'Exemple'],
+          [
+            ['un homme / un objet m.', 'le', 'Je le vois.'],
+            ['une femme / un objet f.', 'la', 'Je la prends.'],
+            ['plusieurs', 'les', 'Je les aide.'],
+            ['moi', 'me', 'Tu me vois.'],
+            ['voyelle', 'l’', 'Je l’écoute.'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Le pronom est avant le verbe, pas après.'),
+        ex([
+          { text: 'Je dis : « Je {c}la{/c} vois. »', wrong: 'Je vois la. (si « la » remplace Nina)' },
+        ]),
+      ],
+    }),
   },
   {
-    "id": "i5",
-    "typeId": "gram-i5-theorie",
-    "index": 5,
-    "title": "Les pronoms COI",
-    "topic": "gram-pronoms",
-    "public": "A2",
-    "objectif": "Remplacer à + personne.",
-    "blocks": [
-      {
-        "kind": "heading",
-        "text": "Les pronoms COI"
-      },
-      {
-        "kind": "paragraph",
-        "text": "Je remplace à plus une personne avec un pronom complément."
-      },
-      {
-        "kind": "paragraph",
-        "text": "{ligne/2}"
-      },
-      {
-        "kind": "section",
-        "role": "regarder",
-        "blocks": [
-          {
-            "kind": "examples",
-            "marker": "puces",
-            "items": [
-              "Je parle à Lina ; je {c}lui{/c} parle.",
-              "Il téléphone aux voisins ; il {c}leur{/c} téléphone.",
-              "Nous allons {c}lui{/c} répondre."
-            ]
-          }
-        ]
-      },
-      {
-        "kind": "section",
-        "role": "expliquer",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Certains verbes se construisent avec à devant une personne."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Lui remplace à un homme ou à une femme."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Leur remplace à plusieurs personnes."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Me, te, nous et vous peuvent aussi être compléments indirects."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Le pronom se place avant le verbe conjugué."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Devant un infinitif, je le place avec le verbe dont il dépend."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Au passé composé, il se place avant l’auxiliaire."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Avec un complément indirect, je n’accorde pas le participe à cause de lui ou leur."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Tous les verbes avec à ne suivent pas ce modèle : je pense à elle."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "À l’impératif affirmatif : téléphone-lui."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          }
-        ]
-      },
-      {
-        "kind": "page"
-      },
-      {
-        "kind": "section",
-        "role": "retenir",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Certains verbes se construisent avec à devant une personne."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "table",
-            "colHeader": true,
-            "rowHeader": false,
-            "headers": [
-              "Phrase",
-              "Avec pronom"
-            ],
-            "rows": [
-              [
-                "Je parle à Paul.",
-                "Je lui parle."
-              ],
-              [
-                "Je parle à Marie.",
-                "Je lui parle."
-              ],
-              [
-                "Je parle aux enfants.",
-                "Je leur parle."
-              ],
-              [
-                "Il écrit à nous.",
-                "Il nous écrit."
-              ]
-            ]
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "attention",
-            "text": "Leur pronom ne prend pas de s : je leur écris ; leurs lettres est un autre emploi."
-          }
-        ]
-      }
-    ]
+    id: 'i5',
+    typeId: 'gram-i5-theorie',
+    index: 5,
+    title: 'Les pronoms COI',
+    topic: 'gram-pronoms',
+    public: 'A2',
+    objectif: 'Remplacer à + personne.',
+    blocks: sheet({
+      title: 'Les pronoms COI',
+      intro: 'Je remplace {g}à + personne{/g}.',
+      regarder: [
+        '{tab:1<}Je parle à Nina. → Je {c}lui{/c} parle. | Il téléphone à ses parents. → Il {c}leur{/c} téléphone.',
+        '{tab:1<}Tu {c}me{/c} réponds. | Elle {c}nous{/c} écrit.',
+        '{tab:1<}Je {c}vous{/c} explique. | Ils {c}te{/c} demandent l’heure.',
+      ],
+      expliquer: [
+        p('Le COI remplace {c}à{/c} + une personne.'),
+        p('Il se place {c}avant{/c} le verbe.'),
+        p('{c}Lui{/c} = à lui ou à elle. {c}Leur{/c} = à eux ou à elles.'),
+        p('Leur pronom n’a pas de s.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}À + personne{/g} | {g}Pronom{/g}',
+          '{tab:1>}à moi | {c}me{/c}',
+          '{tab:1>}à toi | {c}te{/c}',
+          '{tab:1>}à lui / à elle | {c}lui{/c}',
+          '{tab:1>}à nous | {c}nous{/c}',
+          '{tab:1>}à vous | {c}vous{/c}',
+          '{tab:1>}à eux / à elles | {c}leur{/c}',
+        ]),
+      ],
+      retenir: [
+        p('COI avant le verbe. Lui et leur sans à.'),
+        ligne,
+        table(
+          ['Phrase', 'Avec pronom'],
+          [
+            ['Je parle à Paul.', 'Je lui parle.'],
+            ['Je parle à Marie.', 'Je lui parle.'],
+            ['Je parle aux enfants.', 'Je leur parle.'],
+            ['Il écrit à nous.', 'Il nous écrit.'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Pas de s à leur. Je leur parle, pas « je leurs parle ».'),
+        ex([
+          { text: 'Je dis : « Je {c}leur{/c} parle. »', wrong: 'Je leurs parle.' },
+        ]),
+      ],
+    }),
   },
   {
-    "id": "i6",
-    "typeId": "gram-i6-theorie",
-    "index": 6,
-    "title": "Les pronoms indéfinis",
-    "topic": "gram-pronoms",
-    "public": "A2",
-    "objectif": "Parler d’une personne ou d’une chose non précise.",
-    "blocks": [
-      {
-        "kind": "heading",
-        "text": "Les pronoms indéfinis"
-      },
-      {
-        "kind": "paragraph",
-        "text": "Je parle d’une personne ou d’une chose sans la nommer précisément."
-      },
-      {
-        "kind": "paragraph",
-        "text": "{ligne/2}"
-      },
-      {
-        "kind": "section",
-        "role": "regarder",
-        "blocks": [
-          {
-            "kind": "examples",
-            "marker": "puces",
-            "items": [
-              "{c}Quelqu’un{/c} attend.",
-              "{c}Personne ne{/c} répond.",
-              "Je cherche quelque chose {c}de simple{/c}."
-            ]
-          }
-        ]
-      },
-      {
-        "kind": "section",
-        "role": "expliquer",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Quelqu’un désigne une personne non précisée."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Quelque chose désigne une chose non précisée."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Tout le monde désigne l’ensemble des personnes et prend un verbe au singulier."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Chacun parle des éléments d’un groupe un par un et prend aussi le singulier."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Personne et rien s’emploient avec ne dans une phrase négative."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Personne peut être le sujet : personne ne vient."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Plusieurs, certains, tous et d’autres peuvent remplacer un nom pluriel."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Après quelqu’un ou quelque chose, un adjectif est souvent introduit par de."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je distingue un déterminant devant le nom et un pronom qui remplace le nom."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          }
-        ]
-      },
-      {
-        "kind": "page"
-      },
-      {
-        "kind": "section",
-        "role": "retenir",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Quelqu’un désigne une personne non précisée."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "table",
-            "colHeader": true,
-            "rowHeader": false,
-            "headers": [
-              "Affirmatif",
-              "Négatif"
-            ],
-            "rows": [
-              [
-                "quelqu’un",
-                "ne … personne"
-              ],
-              [
-                "quelque chose",
-                "ne … rien"
-              ],
-              [
-                "tout le monde",
-                "personne ne…"
-              ]
-            ]
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "attention",
-            "text": "Je dis tout le monde est prêt, avec un verbe au singulier."
-          }
-        ]
-      }
-    ]
+    id: 'i6',
+    typeId: 'gram-i6-theorie',
+    index: 6,
+    title: 'Les pronoms indéfinis',
+    topic: 'gram-pronoms',
+    public: 'A2',
+    objectif: 'Parler d’une personne ou d’une chose non précise.',
+    blocks: sheet({
+      title: 'Les pronoms indéfinis',
+      intro: 'Je parle d’une personne ou d’une chose {g}non précise{/g}.',
+      regarder: [
+        '{tab:1<}{c}Quelqu’un{/c} frappe. | Je vois {c}quelque chose{/c}.',
+        '{tab:1<}{c}Tout le monde{/c} est là. | Je ne vois {c}rien{/c}.',
+        '{tab:1<}{c}Personne{/c} n’est là. | {c}Chacun{/c} a un cahier.',
+      ],
+      expliquer: [
+        p('{c}Quelqu’un{/c} = une personne. {c}Quelque chose{/c} = une chose.'),
+        p('{c}Tout le monde{/c} = toutes les personnes. Le verbe est au singulier.'),
+        p('{c}Rien{/c} et {c}personne{/c} vont avec {c}ne{/c}.'),
+        p('Si personne est au début : Personne n’est là.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Mot{/g} | {g}Sens{/g}',
+          '{tab:1>}quelqu’un | une personne',
+          '{tab:1>}quelque chose | une chose',
+          '{tab:1>}tout le monde | toutes les personnes',
+          '{tab:1>}rien | aucune chose',
+          '{tab:1>}personne | aucune personne',
+        ]),
+      ],
+      retenir: [
+        p('Rien et personne + ne.'),
+        ligne,
+        table(
+          ['Affirmatif', 'Négatif'],
+          [
+            ['quelqu’un', 'ne … personne'],
+            ['quelque chose', 'ne … rien'],
+            ['tout le monde', 'personne ne…'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Personne au début prend n’.'),
+        ex([
+          { text: 'Je dis : « {c}Personne n’{/c}est là. »', wrong: 'Personne est là.' },
+        ]),
+      ],
+    }),
   },
   {
-    "id": "i7",
-    "typeId": "gram-i7-theorie",
-    "index": 7,
-    "title": "En et y",
-    "topic": "gram-pronoms",
-    "public": "A2",
-    "objectif": "Remplacer de + chose avec en, ou un lieu avec y.",
-    "blocks": [
-      {
-        "kind": "heading",
-        "text": "En et y"
-      },
-      {
-        "kind": "paragraph",
-        "text": "Je remplace un lieu ou un complément introduit par de."
-      },
-      {
-        "kind": "paragraph",
-        "text": "{ligne/2}"
-      },
-      {
-        "kind": "section",
-        "role": "regarder",
-        "blocks": [
-          {
-            "kind": "examples",
-            "marker": "puces",
-            "items": [
-              "Je vais à la gare ; j’{c}y{/c} vais.",
-              "Tu veux du pain ? J’{c}en{/c} veux.",
-              "J’ai trois billets ; j’{c}en{/c} ai trois."
-            ]
-          }
-        ]
-      },
-      {
-        "kind": "section",
-        "role": "expliquer",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Y remplace souvent un lieu introduit par à, dans, chez ou sur."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Y peut aussi reprendre à plus une chose : je pense à ce projet, j’y pense."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "En remplace souvent de plus une chose."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "En reprend aussi un nom accompagné d’une quantité."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je garde la quantité après le verbe : j’en prends deux."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "En et y se placent avant le verbe dont ils dépendent."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "La négation entoure le groupe : je n’en veux pas."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "À l’impératif affirmatif : vas-y, prends-en."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Pour une personne, la construction du verbe peut demander lui, leur ou un pronom tonique."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je ne répète pas le complément déjà remplacé."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          }
-        ]
-      },
-      {
-        "kind": "page"
-      },
-      {
-        "kind": "section",
-        "role": "retenir",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Y remplace souvent un lieu introduit par à, dans, chez ou sur."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "table",
-            "colHeader": true,
-            "rowHeader": false,
-            "headers": [
-              "Remplace",
-              "Pronom",
-              "Exemple"
-            ],
-            "rows": [
-              [
-                "de + chose",
-                "en",
-                "J’en veux."
-              ],
-              [
-                "un nombre",
-                "en + nombre",
-                "J’en ai deux."
-              ],
-              [
-                "à + lieu",
-                "y",
-                "J’y vais."
-              ],
-              [
-                "à + idée",
-                "y",
-                "J’y pense."
-              ]
-            ]
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "attention",
-            "text": "Je garde trois dans j’en ai trois ; en ne remplace pas le nombre lui-même."
-          }
-        ]
-      }
-    ]
+    id: 'i7',
+    typeId: 'gram-i7-theorie',
+    index: 7,
+    title: 'En et y',
+    topic: 'gram-pronoms',
+    public: 'A2',
+    objectif: 'Remplacer de + chose avec en, ou un lieu avec y.',
+    blocks: sheet({
+      title: 'En et y',
+      intro: 'Je remplace {g}de + chose{/g} avec en, ou un lieu avec {g}y{/g}.',
+      regarder: [
+        '{tab:1<}Tu veux du café ? J’{c}en{/c} veux. | Il a trois enfants. Il {c}en{/c} a trois.',
+        '{tab:1<}Je vais à Sion. J’{c}y{/c} vais. | Tu penses à l’examen ? J’{c}y{/c} pense.',
+        '{tab:1<}Elle revient de la poste. Elle {c}en{/c} revient.',
+      ],
+      expliquer: [
+        p('{c}En{/c} remplace de + un nom : quantité, partitif, provenance.'),
+        p('{c}Y{/c} remplace à, dans, en + un lieu ou une idée.'),
+        p('En et y se placent {c}avant{/c} le verbe.'),
+        p('Avec un nombre, je garde le nombre : j’en ai trois.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Phrase{/g} | {g}Pronom{/g}',
+          '{tab:1>}du pain | j’{c}en{/c} mange',
+          '{tab:1>}de la gare | j’{c}en{/c} viens',
+          '{tab:1>}à Sion | j’{c}y{/c} vais',
+          '{tab:1>}à ce problème | j’{c}y{/c} pense',
+        ]),
+      ],
+      retenir: [
+        p('En = de. Y = à ou un lieu.'),
+        ligne,
+        table(
+          ['Remplace', 'Pronom', 'Exemple'],
+          [
+            ['de + chose', 'en', 'J’en veux.'],
+            ['un nombre', 'en + nombre', 'J’en ai deux.'],
+            ['à + lieu', 'y', 'J’y vais.'],
+            ['à + idée', 'y', 'J’y pense.'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} En et y sont avant le verbe.'),
+        ex([
+          { text: 'Je dis : « J’{c}y{/c} vais. »', wrong: 'Je vais y. (ordre faux)' },
+        ]),
+      ],
+    }),
   },
   {
-    "id": "i8",
-    "typeId": "gram-i8-theorie",
-    "index": 8,
-    "title": "Le pronom relatif dont",
-    "topic": "gram-pronoms",
-    "public": "B1",
-    "objectif": "Remplacer de + nom avec dont.",
-    "blocks": [
-      {
-        "kind": "heading",
-        "text": "Le pronom relatif dont"
-      },
-      {
-        "kind": "paragraph",
-        "text": "Je relie une information qui contient de à un nom déjà cité."
-      },
-      {
-        "kind": "paragraph",
-        "text": "{ligne/2}"
-      },
-      {
-        "kind": "section",
-        "role": "regarder",
-        "blocks": [
-          {
-            "kind": "examples",
-            "marker": "puces",
-            "items": [
-              "Voici le livre {c}dont{/c} je parle.",
-              "C’est le document {c}dont{/c} j’ai besoin.",
-              "La femme {c}dont{/c} le fils arrive."
-            ]
-          }
-        ]
-      },
-      {
-        "kind": "section",
-        "role": "expliquer",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Dont reprend un complément construit avec de."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je repère d’abord la construction : parler de, avoir besoin de, être fier de."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Dont remplace de plus le nom repris."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je ne garde pas de une deuxième fois."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Le complément peut dépendre d’un verbe, d’un adjectif ou d’un nom."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je peux dire la personne dont je connais le frère."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je ne répète pas son, sa ou ses pour ce même lien."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Après une préposition composée comme près de, je préfère les formes avec lequel."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je garde le reste de la phrase dans un ordre clair."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          }
-        ]
-      },
-      {
-        "kind": "page"
-      },
-      {
-        "kind": "section",
-        "role": "retenir",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Dont reprend un complément construit avec de."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "table",
-            "colHeader": true,
-            "rowHeader": false,
-            "headers": [
-              "Construction",
-              "Exemple"
-            ],
-            "rows": [
-              [
-                "parler de",
-                "le sujet dont je parle"
-              ],
-              [
-                "être fier de",
-                "le travail dont il est fier"
-              ],
-              [
-                "avoir besoin de",
-                "l’aide dont j’ai besoin"
-              ],
-              [
-                "possession",
-                "l’amie dont le frère travaille"
-              ]
-            ]
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "attention",
-            "text": "Je dis le dossier dont j’ai besoin, et non le dossier dont j’ai besoin de."
-          }
-        ]
-      }
-    ]
+    id: 'i8',
+    typeId: 'gram-i8-theorie',
+    index: 8,
+    title: 'Le pronom relatif dont',
+    topic: 'gram-pronoms',
+    public: 'B1',
+    objectif: 'Remplacer de + nom avec dont.',
+    blocks: sheet({
+      title: 'Le pronom relatif dont',
+      intro: 'Je remplace {g}de + nom{/g} avec dont.',
+      regarder: [
+        '{tab:1<}Le film {c}dont{/c} je parle est bon. | La ville {c}dont{/c} il vient est loin.',
+        '{tab:1<}L’aide {c}dont{/c} j’ai besoin. | Une amie {c}dont{/c} le frère est ici.',
+        '{tab:1<}Les cours {c}dont{/c} tu te souviens. | Le sujet {c}dont{/c} nous discutons.',
+      ],
+      expliquer: [
+        p('{c}Dont{/c} = de + qui, ou de + que.'),
+        p('Je l’utilise après un verbe avec {c}de{/c} : parler de, avoir besoin de.'),
+        p('Aussi pour la possession : dont le, dont la, dont les.'),
+        p('Un seul dont. Je ne dis pas « de dont ».'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Je vois de{/g} | {g}Je mets dont{/g}',
+          '{tab:1>}parler de ce film | le film {c}dont{/c} je parle',
+          '{tab:1>}avoir besoin de cette aide | l’aide {c}dont{/c} j’ai besoin',
+          '{tab:1>}le frère de mon amie | l’amie {c}dont{/c} le frère…',
+        ]),
+      ],
+      retenir: [
+        p('Je vois un de ? Souvent, je mets dont.'),
+        ligne,
+        table(
+          ['Construction', 'Exemple'],
+          [
+            ['parler de', 'le sujet dont je parle'],
+            ['venir de', 'la ville dont il vient'],
+            ['avoir besoin de', 'l’aide dont j’ai besoin'],
+            ['possession', 'l’amie dont le frère travaille'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Pas « de dont ».'),
+        ex([
+          { text: 'Je dis : « le film {c}dont{/c} je parle. »', wrong: 'le film de dont je parle.' },
+        ]),
+      ],
+    }),
   },
   {
-    "id": "i9",
-    "typeId": "gram-i9-theorie",
-    "index": 9,
-    "title": "Les pronoms relatifs composés",
-    "topic": "gram-pronoms",
-    "public": "B1",
-    "objectif": "Relier deux idées après une préposition.",
-    "blocks": [
-      {
-        "kind": "heading",
-        "text": "Les pronoms relatifs composés"
-      },
-      {
-        "kind": "paragraph",
-        "text": "Je relie deux informations après une préposition."
-      },
-      {
-        "kind": "paragraph",
-        "text": "{ligne/2}"
-      },
-      {
-        "kind": "section",
-        "role": "regarder",
-        "blocks": [
-          {
-            "kind": "examples",
-            "marker": "puces",
-            "items": [
-              "La chaise {c}sur laquelle{/c} je suis assis.",
-              "Le projet {c}auquel{/c} je pense.",
-              "Les arbres {c}près desquels{/c} nous attendons."
-            ]
-          }
-        ]
-      },
-      {
-        "kind": "section",
-        "role": "expliquer",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Lequel varie avec le nom repris : lequel, laquelle, lesquels, lesquelles."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Après sur, dans, avec ou pour, je garde cette forme après la préposition."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Avec à, je forme auquel, à laquelle, auxquels et auxquelles."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Avec de, je forme duquel, de laquelle, desquels et desquelles."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Pour une personne, qui est souvent possible après une préposition."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je choisis le genre et le nombre d’après le nom remplacé."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Après près de ou à côté de, la contraction dépend de ce même nom."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Dont est souvent plus simple avec un complément directement introduit par de."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je ne change pas le sujet ou le sens de la deuxième information."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          }
-        ]
-      },
-      {
-        "kind": "page"
-      },
-      {
-        "kind": "section",
-        "role": "retenir",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Lequel varie avec le nom repris : lequel, laquelle, lesquels, lesquelles."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "table",
-            "colHeader": true,
-            "rowHeader": false,
-            "headers": [
-              "Préposition",
-              "Masculin",
-              "Féminin"
-            ],
-            "rows": [
-              [
-                "avec",
-                "lequel",
-                "laquelle"
-              ],
-              [
-                "à",
-                "auquel",
-                "à laquelle"
-              ],
-              [
-                "de",
-                "duquel",
-                "de laquelle"
-              ],
-              [
-                "dans",
-                "lequel",
-                "laquelle"
-              ]
-            ]
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "attention",
-            "text": "À laquelle reste en deux mots ; auquel et auxquels sont des contractions."
-          }
-        ]
-      }
-    ]
-  }
+    id: 'i9',
+    typeId: 'gram-i9-theorie',
+    index: 9,
+    title: 'Les pronoms relatifs composés',
+    topic: 'gram-pronoms',
+    public: 'B1',
+    objectif: 'Relier deux idées après une préposition.',
+    blocks: sheet({
+      title: 'Les pronoms relatifs composés',
+      intro: 'Je relie deux idées après une {g}préposition{/g}.',
+      regarder: [
+        '{tab:1<}La personne {c}avec laquelle{/c} je travaille. | Le bus {c}dans lequel{/c} je monte.',
+        '{tab:1<}Le sujet {c}auquel{/c} je pense. | La règle {c}à laquelle{/c} je pense.',
+        '{tab:1<}Le dossier {c}duquel{/c} je parle. | Les gens {c}parmi lesquels{/c} je vis.',
+      ],
+      expliquer: [
+        p('Après une préposition, j’utilise {c}lequel{/c} accordé.'),
+        p('Lequel, laquelle, lesquels, lesquelles.'),
+        p('À + lequel → {c}auquel{/c}, à laquelle, auxquels, auxquelles.'),
+        p('De + lequel → {c}duquel{/c}, de laquelle, desquels, desquelles.'),
+        p('J’accorde avec le nom repris.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Nom{/g} | {g}Lequel{/g}',
+          '{tab:1>}masculin | {c}lequel{/c}',
+          '{tab:1>}féminin | {c}laquelle{/c}',
+          '{tab:1>}masculin pluriel | {c}lesquels{/c}',
+          '{tab:1>}féminin pluriel | {c}lesquelles{/c}',
+        ]),
+      ],
+      retenir: [
+        p('Préposition + lequel accordé.'),
+        p('Qui ne va pas après toutes les prépositions.'),
+        ligne,
+        table(
+          ['Préposition', 'Masculin', 'Féminin'],
+          [
+            ['avec', 'lequel', 'laquelle'],
+            ['à', 'auquel', 'à laquelle'],
+            ['de', 'duquel', 'de laquelle'],
+            ['dans', 'lequel', 'laquelle'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} J’accorde lequel avec le nom, pas avec la personne qui parle.'),
+        ex([
+          { text: 'Je dis : « la règle {c}à laquelle{/c} je pense. »', wrong: 'la règle auquel je pense.' },
+        ]),
+      ],
+    }),
+  },
 ]

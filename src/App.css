@@ -3180,6 +3180,7 @@ html,body,#root{
   min-height:1.55em;margin-top:4px;padding:0 2px 2px;box-sizing:border-box;
   font-size:calc(14px * var(--app-font-scale, 1));line-height:1.4;font-weight:700
 }
+.phrase-verb-hint{flex:0 0 auto;margin-left:.4em;white-space:nowrap}
 .phrase-answer-slot .phrase-write-line{
   flex:1 1 auto;width:100%;min-height:1.55em;margin-top:0;padding:0;
   border:0;border-bottom:1.5px dashed color-mix(in srgb,var(--purple) 55%,#fff);
@@ -4191,6 +4192,9 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-annonce-title{margin:0 0 6px;font-weight:800;text-align:center;text-transform:uppercase;letter-spacing:.03em}
 .tcf-annonce-body{display:flex;gap:12px;align-items:flex-start;min-width:0;max-width:100%}
 .tcf-annonce-body .tcf-image{width:34mm;height:26mm}
+.tcf-annonce.is-image-bullets .tcf-image{width:28mm;height:28mm;flex:0 0 28mm;object-fit:contain}
+.tcf-annonce-points{flex:1;min-width:0;margin:0;padding-left:1.2em}
+.tcf-annonce-points li + li{margin-top:.4em}
 /* CE « Lire pour s’orienter » : un bloc par document + tableau personnes → N°. */
 .tcf-assoc{display:flex;flex-direction:column;gap:5px;width:100%;max-width:100%;min-width:0}
 .tcf-assoc .tcf-annonce-title{margin-bottom:2px}

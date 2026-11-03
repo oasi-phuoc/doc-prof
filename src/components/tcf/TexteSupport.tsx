@@ -207,13 +207,17 @@ export function TexteSupport({ exercise: ex, mode }: { exercise: TcfExercise; mo
       return (
         <>
           {banque}
-          <div className="tcf-annonce">
+          <div className={`tcf-annonce${ex.support.presentation === 'image-bullets' ? ' is-image-bullets' : ''}`}>
             {ex.support.titre ? <p className="tcf-annonce-title">{ex.support.titre}</p> : null}
             <div className="tcf-annonce-body">
               {ex.support.image ? <TcfImage src={ex.support.image} alt={ex.support.titre} /> : null}
-              <div>
-                <Paragraphs text={ex.support.texte} />
-              </div>
+              {ex.support.presentation === 'image-bullets' ? (
+                <ul className="tcf-annonce-points">
+                  {ex.support.texte.split('\n').filter(Boolean).map((line, index) => <li key={index}>{line}</li>)}
+                </ul>
+              ) : (
+                <div><Paragraphs text={ex.support.texte} /></div>
+              )}
             </div>
           </div>
         </>

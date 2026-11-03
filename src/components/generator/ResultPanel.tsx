@@ -1,4 +1,5 @@
 import { useMemo, type RefObject } from 'react'
+import { isGrammarReadingType } from '@/grammaire/exercises/reading-types'
 import { A4Frame } from '@/components/generator/A4Frame'
 import { FormesPalette } from '@/components/generator/FormesPalette'
 import { isA5DoubleFormat, type SheetFormat } from '@/components/generator/sheet-format'
@@ -391,7 +392,7 @@ export function ResultPanel({
                           interactiveOralModes={isOralComprehensionExercise(activeBlock.exerciseType)}
                           onCycleOralAnswerMode={cycleOralAnswerMode}
                           interactiveTcfOptions={isTcf || Boolean(isGrammaireExercise)}
-                          interactiveTcfPageBreaks={isTcf}
+                          interactiveTcfPageBreaks={isTcf || pageExerciseBlocks.some(block => isGrammarReadingType(block.exerciseType))}
                           onSelectTcfForm={selectTcfForm}
                           onSelectTcfFormForExercise={selectTcfFormForExercise}
                           onToggleFormulaireLetterGrid={toggleFormulaireLetterGrid}
@@ -425,7 +426,7 @@ export function ResultPanel({
                           interactiveOralModes={isOralComprehensionExercise(activeBlock.exerciseType)}
                           onCycleOralAnswerMode={cycleOralAnswerMode}
                           interactiveTcfOptions={isTcf || Boolean(isGrammaireExercise)}
-                          interactiveTcfPageBreaks={isTcf}
+                          interactiveTcfPageBreaks={isTcf || pageExerciseBlocks.some(block => isGrammarReadingType(block.exerciseType))}
                           onSelectTcfForm={selectTcfForm}
                           onSelectTcfFormForExercise={selectTcfFormForExercise}
                           onToggleFormulaireLetterGrid={toggleFormulaireLetterGrid}

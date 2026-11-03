@@ -1,2524 +1,732 @@
 import type { GrammaireTheoryDoc } from '../types'
+import { ex, ligne, p, sheet, table } from './falc-sheet'
 
-/** Théorie réécrite en français facile ; gabarit visuel et identifiants conservés. */
+/** Théorie FALC — thème gram-aide. Français seul (pas de traductions). */
 export const aideDocs: GrammaireTheoryDoc[] = [
   {
-    "id": "l1",
-    "typeId": "gram-l1-theorie",
-    "index": 1,
-    "title": "L’apostrophe",
-    "topic": "gram-aide",
-    "public": "A1",
-    "objectif": "Remplacer une voyelle par une apostrophe.",
-    "blocks": [
-      {
-        "kind": "heading",
-        "text": "L’apostrophe"
-      },
-      {
-        "kind": "paragraph",
-        "text": "Je remplace certaines voyelles par une apostrophe."
-      },
-      {
-        "kind": "paragraph",
-        "text": "{ligne/2}"
-      },
-      {
-        "kind": "section",
-        "role": "regarder",
-        "blocks": [
-          {
-            "kind": "examples",
-            "marker": "puces",
-            "items": [
-              "{c}J’{/c}habite ici.",
-              "La porte {c}s’{/c}ouvre.",
-              "Je parle {c}du héros{/c}."
-            ]
-          }
-        ]
-      },
-      {
-        "kind": "section",
-        "role": "expliquer",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Devant une voyelle ou un h muet, certains mots perdent leur voyelle finale."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je devient j’ ; me, te, se et ne deviennent m’, t’, s’ et n’."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Le et la deviennent l’."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "De devient d’ ; que devient qu’."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je n’ajoute pas d’espace après l’apostrophe."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Un et une ne s’élident pas."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Ce devient c’ dans c’est et c’était."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Le h aspiré bloque normalement l’élision : le héros, la honte."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Si devient s’ seulement devant il et ils dans ces emplois."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je vérifie le mot qui suit, pas seulement sa première lettre écrite."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          }
-        ]
-      },
-      {
-        "kind": "page"
-      },
-      {
-        "kind": "section",
-        "role": "retenir",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Devant une voyelle ou un h muet, certains mots perdent leur voyelle finale."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "table",
-            "colHeader": true,
-            "rowHeader": false,
-            "headers": [
-              "Mot",
-              "Forme",
-              "Exemple"
-            ],
-            "rows": [
-              [
-                "je",
-                "j’",
-                "j’ai"
-              ],
-              [
-                "le / la",
-                "l’",
-                "l’ami"
-              ],
-              [
-                "me / te / se",
-                "m’ / t’ / s’",
-                "s’appelle"
-              ],
-              [
-                "de",
-                "d’",
-                "d’accord"
-              ],
-              [
-                "que",
-                "qu’",
-                "qu’elle"
-              ],
-              [
-                "ne",
-                "n’",
-                "n’est pas"
-              ]
-            ]
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "attention",
-            "text": "Je n’écris pas l’haricot : haricot commence par un h aspiré."
-          }
-        ]
-      }
-    ]
+    id: 'l1',
+    typeId: 'gram-l1-theorie',
+    index: 1,
+    title: 'L’apostrophe',
+    topic: 'gram-aide',
+    public: 'A1',
+    objectif: 'Remplacer une voyelle par une apostrophe.',
+    blocks: sheet({
+      title: 'L’apostrophe',
+      intro: 'Je remplace une voyelle par {g}’{/g} devant une autre voyelle.',
+      regarder: [
+        '{tab:1<}{c}J’{/c}habite à Sion. | {c}L’{/c}école est ouverte.',
+        '{tab:1<}Elle {c}m’{/c}aide. | Tu {c}t’{/c}appelles comment ?',
+        '{tab:1<}Un verre {c}d’{/c}eau. | {c}Qu’{/c}est-ce que c’est ?',
+      ],
+      expliquer: [
+        p('Deux voyelles qui se suivent sont difficiles à dire.'),
+        p('J’enlève la voyelle du petit mot et je mets {c}’{/c}.'),
+        p('Petits mots fréquents : je, le, la, me, te, se, de, que, ne.'),
+        p('Je n’ajoute pas une apostrophe au hasard.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Mot{/g} | {g}Devant voyelle{/g}',
+          '{tab:1>}je | {c}j’{/c}habite',
+          '{tab:1>}le / la | {c}l’{/c}école',
+          '{tab:1>}me / te / se | {c}m’{/c}appelle',
+          '{tab:1>}de | {c}d’{/c}eau',
+          '{tab:1>}que | {c}qu’{/c}il vient',
+          '{tab:1>}ne | {c}n’{/c}est pas',
+        ]),
+      ],
+      retenir: [
+        p('Voyelle + voyelle → souvent une apostrophe.'),
+        p('Seulement avec ces petits mots.'),
+        ligne,
+        table(
+          ['Mot', 'Forme', 'Exemple'],
+          [
+            ['je', 'j’', 'j’ai'],
+            ['le / la', 'l’', 'l’ami'],
+            ['me / te / se', 'm’ / t’ / s’', 's’appelle'],
+            ['de', 'd’', 'd’accord'],
+            ['que', 'qu’', 'qu’elle'],
+            ['ne', 'n’', 'n’est pas'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Pas d’apostrophe devant une consonne.'),
+        ex([
+          { text: 'Je dis : « {c}le{/c} bus. »', wrong: 'l’bus.' },
+        ]),
+      ],
+    }),
   },
   {
-    "id": "l2",
-    "typeId": "gram-l2-theorie",
-    "index": 2,
-    "title": "Le genre des noms",
-    "topic": "gram-aide",
-    "public": "A1 / A2",
-    "objectif": "Former le féminin d’un nom.",
-    "blocks": [
-      {
-        "kind": "heading",
-        "text": "Le genre des noms"
-      },
-      {
-        "kind": "paragraph",
-        "text": "Je reconnais le genre d’un nom et je forme certains féminins."
-      },
-      {
-        "kind": "paragraph",
-        "text": "{ligne/2}"
-      },
-      {
-        "kind": "section",
-        "role": "regarder",
-        "blocks": [
-          {
-            "kind": "examples",
-            "marker": "puces",
-            "items": [
-              "Un ami, une {c}amie{/c}.",
-              "Un vendeur, une {c}vendeuse{/c}.",
-              "Un collègue, une {c}collègue{/c}."
-            ]
-          }
-        ]
-      },
-      {
-        "kind": "section",
-        "role": "expliquer",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Un nom est masculin ou féminin."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je l’apprends avec un déterminant : un livre, une table."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Pour certaines personnes ou certains animaux, le féminin se forme avec e."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Parfois la consonne double : un chat, une chatte."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Certaines fins changent : vendeur, vendeuse ; acteur, actrice."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Certains noms ont la même forme : un collègue, une collègue."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "D’autres changent complètement : un homme, une femme."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Tous les objets n’ont pas une forme masculine et une forme féminine."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Le genre du nom n’indique pas forcément le sexe d’un être vivant."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Les déterminants et adjectifs dépendent du genre du nom."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          }
-        ]
-      },
-      {
-        "kind": "page"
-      },
-      {
-        "kind": "section",
-        "role": "retenir",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Un nom est masculin ou féminin."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "table",
-            "colHeader": true,
-            "rowHeader": false,
-            "headers": [
-              "Masculin",
-              "Féminin"
-            ],
-            "rows": [
-              [
-                "ami",
-                "amie"
-              ],
-              [
-                "étudiant",
-                "étudiante"
-              ],
-              [
-                "vendeur",
-                "vendeuse"
-              ],
-              [
-                "acteur",
-                "actrice"
-              ],
-              [
-                "boulanger",
-                "boulangère"
-              ]
-            ]
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "attention",
-            "text": "Je n’invente pas un féminin pour un nom de chose : une chaise reste féminin."
-          }
-        ]
-      }
-    ]
+    id: 'l2',
+    typeId: 'gram-l2-theorie',
+    index: 2,
+    title: 'Le genre des noms',
+    topic: 'gram-aide',
+    public: 'A1 / A2',
+    objectif: 'Former le féminin d’un nom.',
+    blocks: sheet({
+      title: 'Le genre des noms',
+      intro: 'Je forme le {g}féminin{/g} d’un nom.',
+      regarder: [
+        '{tab:1<}un ami → une {c}amie{/c} | un étudiant → une {c}étudiante{/c}',
+        '{tab:1<}un vendeur → une {c}vendeuse{/c} | un acteur → une {c}actrice{/c}',
+        '{tab:1<}un boulanger → une {c}boulangère{/c} | un chef → une {c}cheffe{/c}',
+      ],
+      expliquer: [
+        p('Souvent, j’ajoute un {c}e{/c} : ami → amie.'),
+        p('La fin du mot indique parfois un autre modèle.'),
+        p('-eur → -euse. -teur → -trice. -er → -ère.'),
+        p('Quelques noms ont une forme à apprendre : chef → cheffe.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Fin{/g} | {g}Féminin{/g}',
+          '{tab:1>}+ e | un ami → une ami{c}e{/c}',
+          '{tab:1>}eur → euse | vendeur → vende{c}use{/c}',
+          '{tab:1>}teur → trice | acteur → ac{c}trice{/c}',
+          '{tab:1>}er → ère | boulanger → boulang{c}ère{/c}',
+        ]),
+      ],
+      retenir: [
+        p('Je regarde la fin du mot pour former le féminin.'),
+        ligne,
+        table(
+          ['Masculin', 'Féminin'],
+          [
+            ['ami', 'amie'],
+            ['étudiant', 'étudiante'],
+            ['vendeur', 'vendeuse'],
+            ['acteur', 'actrice'],
+            ['boulanger', 'boulangère'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Un chef → une cheffe. À apprendre.'),
+        ex([
+          { text: 'Je dis : « une {c}actrice{/c}. »', wrong: 'une acteure.' },
+        ]),
+      ],
+    }),
   },
   {
-    "id": "l3",
-    "typeId": "gram-l3-theorie",
-    "index": 3,
-    "title": "Le nombre des noms",
-    "topic": "gram-aide",
-    "public": "A1",
-    "objectif": "Mettre un nom au pluriel.",
-    "blocks": [
-      {
-        "kind": "heading",
-        "text": "Le nombre des noms"
-      },
-      {
-        "kind": "paragraph",
-        "text": "Je passe d’un élément à plusieurs éléments."
-      },
-      {
-        "kind": "paragraph",
-        "text": "{ligne/2}"
-      },
-      {
-        "kind": "section",
-        "role": "regarder",
-        "blocks": [
-          {
-            "kind": "examples",
-            "marker": "puces",
-            "items": [
-              "Un livre, des {c}livres{/c}.",
-              "Un journal, des {c}journaux{/c}.",
-              "Un bijou, des {c}bijoux{/c}."
-            ]
-          }
-        ]
-      },
-      {
-        "kind": "section",
-        "role": "expliquer",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Un nom singulier désigne un élément ; un nom pluriel peut en désigner plusieurs."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Le pluriel se forme souvent avec s."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Les noms déjà terminés par s, x ou z ne changent généralement pas."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Beaucoup de noms en -au, -eau et -eu prennent x."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Pneu et bleu prennent normalement s."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Beaucoup de noms en -al deviennent -aux."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Bal, carnaval et festival gardent un pluriel en -s."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "La plupart des noms en -ou prennent s, mais bijou, caillou, chou, genou, hibou, joujou et pou prennent x."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je change aussi le déterminant et les accords utiles dans la phrase."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          }
-        ]
-      },
-      {
-        "kind": "page"
-      },
-      {
-        "kind": "section",
-        "role": "retenir",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Un nom singulier désigne un élément ; un nom pluriel peut en désigner plusieurs."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "table",
-            "colHeader": true,
-            "rowHeader": false,
-            "headers": [
-              "Singulier",
-              "Pluriel"
-            ],
-            "rows": [
-              [
-                "un livre",
-                "des livres"
-              ],
-              [
-                "un gâteau",
-                "des gâteaux"
-              ],
-              [
-                "un journal",
-                "des journaux"
-              ],
-              [
-                "un nez",
-                "des nez"
-              ],
-              [
-                "un œil",
-                "des yeux"
-              ]
-            ]
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "attention",
-            "text": "Je distingue une terminaison habituelle et les exceptions apprises avec le nom."
-          }
-        ]
-      }
-    ]
+    id: 'l3',
+    typeId: 'gram-l3-theorie',
+    index: 3,
+    title: 'Le nombre des noms',
+    topic: 'gram-aide',
+    public: 'A1',
+    objectif: 'Mettre un nom au pluriel.',
+    blocks: sheet({
+      title: 'Le nombre des noms',
+      intro: 'Je mets un nom au {g}pluriel{/g}.',
+      regarder: [
+        '{tab:1<}un livre → des {c}livres{/c} | une table → des {c}tables{/c}',
+        '{tab:1<}un gâteau → des {c}gâteaux{/c} | un journal → des {c}journaux{/c}',
+        '{tab:1<}un œil → des {c}yeux{/c} | un bus → des {c}bus{/c}',
+      ],
+      expliquer: [
+        p('Souvent, j’ajoute un {c}s{/c}.'),
+        p('Les noms en -eau, -au et -eu prennent souvent un {c}x{/c}.'),
+        p('Les noms en -al deviennent souvent {c}-aux{/c}.'),
+        p('Quelques pluriels sont irréguliers : un œil → des yeux.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Fin{/g} | {g}Pluriel{/g}',
+          '{tab:1>}souvent | + {c}s{/c}',
+          '{tab:1>}eau / au / eu | + {c}x{/c}',
+          '{tab:1>}al | {c}-aux{/c}',
+          '{tab:1>}s, x, z | {c}pas{/c} de lettre en plus',
+        ]),
+      ],
+      retenir: [
+        p('Pluriel souvent + s.'),
+        ligne,
+        table(
+          ['Singulier', 'Pluriel'],
+          [
+            ['un livre', 'des livres'],
+            ['un gâteau', 'des gâteaux'],
+            ['un journal', 'des journaux'],
+            ['un nez', 'des nez'],
+            ['un œil', 'des yeux'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Un œil → des yeux. Pas « des œils ».'),
+        ex([
+          { text: 'Je dis : « des {c}yeux{/c}. »', wrong: 'des œils.' },
+        ]),
+      ],
+    }),
   },
   {
-    "id": "l4",
-    "typeId": "gram-l4-theorie",
-    "index": 4,
-    "title": "Le genre des adjectifs",
-    "topic": "gram-aide",
-    "public": "A1 / A2",
-    "objectif": "Accorder l’adjectif au féminin.",
-    "blocks": [
-      {
-        "kind": "heading",
-        "text": "Le genre des adjectifs"
-      },
-      {
-        "kind": "paragraph",
-        "text": "Je fais correspondre l’adjectif à un nom féminin."
-      },
-      {
-        "kind": "paragraph",
-        "text": "{ligne/2}"
-      },
-      {
-        "kind": "section",
-        "role": "regarder",
-        "blocks": [
-          {
-            "kind": "examples",
-            "marker": "puces",
-            "items": [
-              "Une voisine {c}gentille{/c}.",
-              "Une élève {c}sportive{/c}.",
-              "Une {c}belle{/c} journée."
-            ]
-          }
-        ]
-      },
-      {
-        "kind": "section",
-        "role": "expliquer",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Un adjectif s’accorde avec le nom qu’il décrit."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Le féminin se forme souvent en ajoutant e."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Un adjectif déjà terminé par e garde souvent la même forme."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Les adjectifs en -eux donnent souvent -euse."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Les adjectifs en -if donnent souvent -ive."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Certains adjectifs doublent une consonne : bon, bonne ; ancien, ancienne."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Beau donne belle ; nouveau donne nouvelle ; vieux donne vieille."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Blanc donne blanche ; frais donne fraîche."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Certaines couleurs restent invariables, comme orange ou marron."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je ne décide pas l’accord d’après le sujet si l’adjectif décrit un autre nom."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          }
-        ]
-      },
-      {
-        "kind": "page"
-      },
-      {
-        "kind": "section",
-        "role": "retenir",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Un adjectif s’accorde avec le nom qu’il décrit."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "table",
-            "colHeader": true,
-            "rowHeader": false,
-            "headers": [
-              "Masculin",
-              "Féminin"
-            ],
-            "rows": [
-              [
-                "petit",
-                "petite"
-              ],
-              [
-                "heureux",
-                "heureuse"
-              ],
-              [
-                "actif",
-                "active"
-              ],
-              [
-                "beau",
-                "belle"
-              ],
-              [
-                "nouveau",
-                "nouvelle"
-              ],
-              [
-                "vieux",
-                "vieille"
-              ]
-            ]
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "attention",
-            "text": "Le féminin est une forme écrite à apprendre ; je n’ajoute pas toujours seulement e."
-          }
-        ]
-      }
-    ]
+    id: 'l4',
+    typeId: 'gram-l4-theorie',
+    index: 4,
+    title: 'Le genre des adjectifs',
+    topic: 'gram-aide',
+    public: 'A1 / A2',
+    objectif: 'Accorder l’adjectif au féminin.',
+    blocks: sheet({
+      title: 'Le genre des adjectifs',
+      intro: 'J’accorde l’adjectif au {g}féminin{/g}.',
+      regarder: [
+        '{tab:1<}Il est grand. Elle est {c}grande{/c}. | Il est heureux. Elle est {c}heureuse{/c}.',
+        '{tab:1<}Il est sportif. Elle est {c}sportive{/c}. | Il est cher. Elle est {c}chère{/c}.',
+        '{tab:1<}Il est beau. Elle est {c}belle{/c}. | Il est vieux. Elle est {c}vieille{/c}.',
+      ],
+      expliquer: [
+        p('L’adjectif suit le nom : masculin ou féminin.'),
+        p('Souvent, j’ajoute un {c}e{/c}.'),
+        p('-eux → -euse. -f → -ve. -er → -ère.'),
+        p('Quelques formes changent beaucoup : beau → belle.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Masculin{/g} | {g}Féminin{/g}',
+          '{tab:1>}grand | grand{c}e{/c}',
+          '{tab:1>}heureux | heure{c}use{/c}',
+          '{tab:1>}sportif | sporti{c}ve{/c}',
+          '{tab:1>}cher | chè{c}re{/c}',
+          '{tab:1>}beau | {c}belle{/c}',
+        ]),
+      ],
+      retenir: [
+        p('Adjectif féminin = accord avec le nom.'),
+        ligne,
+        table(
+          ['Masculin', 'Féminin'],
+          [
+            ['petit', 'petite'],
+            ['heureux', 'heureuse'],
+            ['actif', 'active'],
+            ['beau', 'belle'],
+            ['nouveau', 'nouvelle'],
+            ['vieux', 'vieille'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Beau → belle. Nouveau → nouvelle. Vieux → vieille.'),
+        ex([
+          { text: 'Je dis : « Elle est {c}belle{/c}. »', wrong: 'Elle est beau.' },
+        ]),
+      ],
+    }),
   },
   {
-    "id": "l5",
-    "typeId": "gram-l5-theorie",
-    "index": 5,
-    "title": "Le nombre des adjectifs",
-    "topic": "gram-aide",
-    "public": "A1",
-    "objectif": "Accorder l’adjectif au pluriel.",
-    "blocks": [
-      {
-        "kind": "heading",
-        "text": "Le nombre des adjectifs"
-      },
-      {
-        "kind": "paragraph",
-        "text": "Je fais correspondre l’adjectif à un nom pluriel."
-      },
-      {
-        "kind": "paragraph",
-        "text": "{ligne/2}"
-      },
-      {
-        "kind": "section",
-        "role": "regarder",
-        "blocks": [
-          {
-            "kind": "examples",
-            "marker": "puces",
-            "items": [
-              "Des vêtements {c}chauds{/c}.",
-              "Des maisons {c}blanches{/c}.",
-              "Des rubans {c}bleu clair{/c}."
-            ]
-          }
-        ]
-      },
-      {
-        "kind": "section",
-        "role": "expliquer",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Un adjectif qui décrit plusieurs éléments se met généralement au pluriel."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "J’ajoute souvent s."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Un adjectif masculin déjà terminé par s ou x ne change pas."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Les adjectifs en -eau prennent x : beaux."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Beaucoup d’adjectifs en -al deviennent -aux : principaux."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Certains restent en -als, comme banals et fatals."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je forme d’abord le féminin si les noms sont féminins."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je garde ensuite le pluriel : des robes blanches."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Les couleurs composées restent généralement invariables."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je regarde tous les noms décrits pour décider l’accord."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          }
-        ]
-      },
-      {
-        "kind": "page"
-      },
-      {
-        "kind": "section",
-        "role": "retenir",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Un adjectif qui décrit plusieurs éléments se met généralement au pluriel."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "table",
-            "colHeader": true,
-            "rowHeader": false,
-            "headers": [
-              "Singulier",
-              "Pluriel"
-            ],
-            "rows": [
-              [
-                "petit",
-                "petits"
-              ],
-              [
-                "petite",
-                "petites"
-              ],
-              [
-                "heureux",
-                "heureux"
-              ],
-              [
-                "beau",
-                "beaux"
-              ],
-              [
-                "nouveau",
-                "nouveaux"
-              ]
-            ]
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "attention",
-            "text": "Je n’ajoute pas de s à orange ou marron quand ces noms servent de couleurs."
-          }
-        ]
-      }
-    ]
+    id: 'l5',
+    typeId: 'gram-l5-theorie',
+    index: 5,
+    title: 'Le nombre des adjectifs',
+    topic: 'gram-aide',
+    public: 'A1',
+    objectif: 'Accorder l’adjectif au pluriel.',
+    blocks: sheet({
+      title: 'Le nombre des adjectifs',
+      intro: 'J’accorde l’adjectif au {g}pluriel{/g}.',
+      regarder: [
+        '{tab:1<}un livre rouge → des livres {c}rouges{/c}',
+        '{tab:1<}un beau gâteau → de {c}beaux{/c} gâteaux',
+        '{tab:1<}une grande table → de {c}grandes{/c} tables',
+      ],
+      expliquer: [
+        p('L’adjectif s’accorde en genre {c}et{/c} en nombre.'),
+        p('Souvent, j’ajoute un {c}s{/c}.'),
+        p('Les adjectifs en -eau prennent un {c}x{/c} : beau → beaux.'),
+        p('Le féminin pluriel : -e + s. Grande → grandes.'),
+        ligne,
+        ex([
+          '{tab:+2++}{g}Singulier{/g} | {g}Masculin pluriel{/g} | {g}Féminin pluriel{/g}',
+          '{tab:2+>}rouge | rouge{c}s{/c} | rouge{c}s{/c}',
+          '{tab:2+>}grand | grand{c}s{/c} | grande{c}s{/c}',
+          '{tab:2+>}beau | beau{c}x{/c} | belle{c}s{/c}',
+        ]),
+      ],
+      retenir: [
+        p('Pluriel de l’adjectif = accord avec le nom.'),
+        ligne,
+        table(
+          ['Singulier', 'Pluriel'],
+          [
+            ['petit', 'petits'],
+            ['petite', 'petites'],
+            ['heureux', 'heureux'],
+            ['beau', 'beaux'],
+            ['nouveau', 'nouveaux'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Heureux ne change pas au masculin pluriel.'),
+        ex([
+          { text: 'Je dis : « des gâteaux {c}beaux{/c}. » ou « de beaux gâteaux ».', wrong: 'de beaus gâteaux.' },
+        ]),
+      ],
+    }),
   },
   {
-    "id": "l6",
-    "typeId": "gram-l6-theorie",
-    "index": 6,
-    "title": "Les lettres G et C",
-    "topic": "gram-aide",
-    "public": "A1 / A2",
-    "objectif": "Savoir quand g et c sont durs ou doux.",
-    "blocks": [
-      {
-        "kind": "heading",
-        "text": "Les lettres G et C"
-      },
-      {
-        "kind": "paragraph",
-        "text": "Je reconnais les sons de g et de c selon les lettres qui suivent."
-      },
-      {
-        "kind": "paragraph",
-        "text": "{ligne/2}"
-      },
-      {
-        "kind": "section",
-        "role": "regarder",
-        "blocks": [
-          {
-            "kind": "examples",
-            "marker": "puces",
-            "items": [
-              "Nous commen{c}ç{/c}ons.",
-              "Une {c}gu{/c}itare.",
-              "Nous man{c}ge{/c}ons."
-            ]
-          }
-        ]
-      },
-      {
-        "kind": "section",
-        "role": "expliquer",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Devant a, o ou u, c a souvent le son de car."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Devant e, i ou y, c a souvent le son de cinéma."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Pour garder ce son doux devant a, o ou u, je peux écrire ç."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Devant a, o ou u, g a souvent le son de gare."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Devant e, i ou y, g a souvent le son de girafe."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Pour garder le son de gare devant e ou i, j’écris souvent gu."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Pour garder le son de girafe devant a ou o, j’ajoute parfois e : mangeons."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je regarde donc les lettres autour du son."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "J’apprends aussi les mots particuliers avec leur orthographe."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          }
-        ]
-      },
-      {
-        "kind": "page"
-      },
-      {
-        "kind": "section",
-        "role": "retenir",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Devant a, o ou u, c a souvent le son de car."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "table",
-            "colHeader": true,
-            "rowHeader": false,
-            "headers": [
-              "Mot",
-              "Pourquoi"
-            ],
-            "rows": [
-              [
-                "cinéma",
-                "c + i = son s"
-              ],
-              [
-                "café",
-                "c + a = son k"
-              ],
-              [
-                "français",
-                "ç garde le son s"
-              ],
-              [
-                "mangeons",
-                "e garde le son j"
-              ],
-              [
-                "gare",
-                "g + a = son g"
-              ]
-            ]
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "attention",
-            "text": "La cédille s’écrit sous c ; je ne la mets pas devant e ou i pour obtenir le son doux habituel."
-          }
-        ]
-      }
-    ]
+    id: 'l6',
+    typeId: 'gram-l6-theorie',
+    index: 6,
+    title: 'Les lettres G et C',
+    topic: 'gram-aide',
+    public: 'A1 / A2',
+    objectif: 'Savoir quand g et c sont durs ou doux.',
+    blocks: sheet({
+      title: 'Les lettres G et C',
+      intro: 'Je sais quand {g}g{/g} et {g}c{/g} sont durs ou doux.',
+      regarder: [
+        '{tab:1<}{c}café{/c} (son k) | {c}cinéma{/c} (son s)',
+        '{tab:1<}{c}gare{/c} (son g) | {c}gâteau{/c} (son g)',
+        '{tab:1<}{c}français{/c} | nous {c}mangeons{/c}',
+      ],
+      expliquer: [
+        p('Devant e, i, y : c et g sont {c}doux{/c}. Cinéma, girafe.'),
+        p('Devant a, o, u : c et g sont {c}durs{/c}. Café, gâteau.'),
+        p('La cédille {c}ç{/c} garde le son s devant a, o, u : français.'),
+        p('Pour garder le son doux de g devant o : nous mangeons.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Devant{/g} | {g}Son{/g}',
+          '{tab:1>}e, i, y | {c}doux{/c}',
+          '{tab:1>}a, o, u | {c}dur{/c}',
+          '{tab:1>}ç + a, o, u | son {c}s{/c}',
+        ]),
+      ],
+      retenir: [
+        p('E, i, y → doux. A, o, u → dur.'),
+        ligne,
+        table(
+          ['Mot', 'Pourquoi'],
+          [
+            ['cinéma', 'c + i = son s'],
+            ['café', 'c + a = son k'],
+            ['français', 'ç garde le son s'],
+            ['mangeons', 'e garde le son j'],
+            ['gare', 'g + a = son g'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Nous mangeons, avec un e. Pas « nous mangons ».'),
+        ex([
+          { text: 'Je dis : « nous {c}mangeons{/c}. »', wrong: 'nous mangons.' },
+        ]),
+      ],
+    }),
   },
   {
-    "id": "l7",
-    "typeId": "gram-l7-theorie",
-    "index": 7,
-    "title": "Les lettres S et M",
-    "topic": "gram-aide",
-    "public": "A1 / A2",
-    "objectif": "Faire attention au son de s et à m devant b ou p.",
-    "blocks": [
-      {
-        "kind": "heading",
-        "text": "Les lettres S et M"
-      },
-      {
-        "kind": "paragraph",
-        "text": "Je vérifie s, ss et la lettre m dans les mots."
-      },
-      {
-        "kind": "paragraph",
-        "text": "{ligne/2}"
-      },
-      {
-        "kind": "section",
-        "role": "regarder",
-        "blocks": [
-          {
-            "kind": "examples",
-            "marker": "puces",
-            "items": [
-              "Un poi{c}ss{/c}on.",
-              "Une mai{c}s{/c}on.",
-              "Une cha{c}m{/c}bre."
-            ]
-          }
-        ]
-      },
-      {
-        "kind": "section",
-        "role": "expliquer",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Entre deux voyelles, un seul s a souvent le son de z."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Pour obtenir le son de s entre deux voyelles, j’écris souvent ss."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Au début d’un mot, s ne suit pas ce modèle entre deux voyelles."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "La position de la lettre change donc la lecture."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Devant m, b ou p, j’écris souvent m à la place de n."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je retrouve cette écriture dans impossible, chambre et emmener."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Il existe des exceptions, comme bonbon."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je sépare la règle générale et les mots à mémoriser."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je relis le mot complet avant de changer une lettre."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          }
-        ]
-      },
-      {
-        "kind": "page"
-      },
-      {
-        "kind": "section",
-        "role": "retenir",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Entre deux voyelles, un seul s a souvent le son de z."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "table",
-            "colHeader": true,
-            "rowHeader": false,
-            "headers": [
-              "Mot",
-              "À retenir"
-            ],
-            "rows": [
-              [
-                "maison",
-                "s = z"
-              ],
-              [
-                "rose",
-                "s = z"
-              ],
-              [
-                "poisson",
-                "ss = s"
-              ],
-              [
-                "classe",
-                "ss = s"
-              ],
-              [
-                "chambre",
-                "m devant b"
-              ],
-              [
-                "lampe",
-                "m devant p"
-              ]
-            ]
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "attention",
-            "text": "Un seul s et deux s peuvent changer le sens : poisson et poison ne sont pas le même mot."
-          }
-        ]
-      }
-    ]
+    id: 'l7',
+    typeId: 'gram-l7-theorie',
+    index: 7,
+    title: 'Les lettres S et M',
+    topic: 'gram-aide',
+    public: 'A1 / A2',
+    objectif: 'Faire attention au son de s et à m devant b ou p.',
+    blocks: sheet({
+      title: 'Les lettres S et M',
+      intro: 'Je fais attention aux lettres {g}s{/g} et {g}m{/g}.',
+      regarder: [
+        '{tab:1<}{c}maison{/c} (son z) | {c}poisson{/c} (son s)',
+        '{tab:1<}{c}classe{/c} (son s) | {c}rose{/c} (son z)',
+        '{tab:1<}{c}chambre{/c} | {c}lampe{/c}',
+      ],
+      expliquer: [
+        p('Un s entre deux voyelles a souvent le son {c}z{/c} : maison, rose.'),
+        p('Deux s, {c}ss{/c}, gardent le son s : poisson, classe.'),
+        p('Devant b ou p, j’écris souvent {c}m{/c}, pas n : chambre, lampe.'),
+        p('Une règle à la fois. Puis je vérifie le mot.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Cas{/g} | {g}Son ou lettre{/g}',
+          '{tab:1>}s entre voyelles | souvent {c}z{/c}',
+          '{tab:1>}ss | son {c}s{/c}',
+          '{tab:1>}devant b / p | souvent {c}m{/c}',
+        ]),
+      ],
+      retenir: [
+        p('S entre voyelles → souvent z. Ss → s.'),
+        ligne,
+        table(
+          ['Mot', 'À retenir'],
+          [
+            ['maison', 's = z'],
+            ['rose', 's = z'],
+            ['poisson', 'ss = s'],
+            ['classe', 'ss = s'],
+            ['chambre', 'm devant b'],
+            ['lampe', 'm devant p'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Chambre et lampe s’écrivent avec m.'),
+        ex([
+          { text: 'Je dis : « une {c}lampe{/c}. »', wrong: 'une lanpe.' },
+        ]),
+      ],
+    }),
   },
   {
-    "id": "l8",
-    "typeId": "gram-l8-theorie",
-    "index": 8,
-    "title": "Les accents",
-    "topic": "gram-aide",
-    "public": "A1",
-    "objectif": "Reconnaître é, è, ê, à, ù et ç.",
-    "blocks": [
-      {
-        "kind": "heading",
-        "text": "Les accents"
-      },
-      {
-        "kind": "paragraph",
-        "text": "Je garde les signes qui permettent de lire et de distinguer les mots."
-      },
-      {
-        "kind": "paragraph",
-        "text": "{ligne/2}"
-      },
-      {
-        "kind": "section",
-        "role": "regarder",
-        "blocks": [
-          {
-            "kind": "examples",
-            "marker": "puces",
-            "items": [
-              "Une {c}é{/c}cole.",
-              "{c}Où{/c} habitez-vous ?",
-              "Il va {c}à{/c} la gare."
-            ]
-          }
-        ]
-      },
-      {
-        "kind": "section",
-        "role": "expliquer",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "L’accent aigu s’écrit sur é."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "L’accent grave peut s’écrire sur è, à ou ù."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "L’accent circonflexe peut s’écrire sur plusieurs voyelles."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Le tréma indique parfois que deux voyelles se lisent séparément."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Les accents font partie du mot et restent sur les majuscules."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "À peut distinguer une préposition du verbe a."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Où indique souvent un lieu ; ou propose un choix."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "La cédille n’est pas un accent : elle change le son de c."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Certains mots admettent deux graphies reconnues, comme coût et cout."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je vérifie l’orthographe d’un mot plutôt que d’ajouter un signe au hasard."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          }
-        ]
-      },
-      {
-        "kind": "page"
-      },
-      {
-        "kind": "section",
-        "role": "retenir",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "L’accent aigu s’écrit sur é."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "table",
-            "colHeader": true,
-            "rowHeader": false,
-            "headers": [
-              "Mot",
-              "Autre mot"
-            ],
-            "rows": [
-              [
-                "a (avoir)",
-                "à (préposition)"
-              ],
-              [
-                "ou",
-                "où"
-              ],
-              [
-                "sur",
-                "sûr"
-              ],
-              [
-                "la",
-                "là"
-              ]
-            ]
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "attention",
-            "text": "Je garde l’accent dans École, même avec une majuscule."
-          }
-        ]
-      }
-    ]
+    id: 'l8',
+    typeId: 'gram-l8-theorie',
+    index: 8,
+    title: 'Les accents',
+    topic: 'gram-aide',
+    public: 'A1',
+    objectif: 'Reconnaître é, è, ê, à, ù et ç.',
+    blocks: sheet({
+      title: 'Les accents',
+      intro: 'Je reconnais les {g}accents{/g}.',
+      regarder: [
+        '{tab:1<}{c}é{/c}té | p{c}è{/c}re | f{c}ê{/c}te',
+        '{tab:1<}Je vais {c}à{/c} Sion. | {c}Où{/c} habites-tu ?',
+        '{tab:1<}fran{c}ç{/c}ais | Il {c}a{/c} un sac.',
+      ],
+      expliquer: [
+        p('{c}É{/c} = accent aigu. Le son est fermé : été.'),
+        p('{c}È{/c} = accent grave. {c}Ê{/c} = accent circonflexe.'),
+        p('{c}À{/c} et {c}ù{/c} sont surtout dans de petits mots : à, où.'),
+        p('L’accent change parfois le son et le sens.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Signe{/g} | {g}Nom{/g}',
+          '{tab:1>}é | aigu',
+          '{tab:1>}è | grave',
+          '{tab:1>}ê | circonflexe',
+          '{tab:1>}ç | cédille',
+        ]),
+      ],
+      retenir: [
+        p('L’accent change parfois le sens du mot.'),
+        ligne,
+        table(
+          ['Mot', 'Autre mot'],
+          [
+            ['a (avoir)', 'à (préposition)'],
+            ['ou', 'où'],
+            ['sur', 'sûr'],
+            ['la', 'là'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} A (verbe avoir) ≠ à (préposition).'),
+        ex([
+          { text: 'Je dis : « Il {c}a{/c} un sac. »', wrong: 'Il à un sac.' },
+          { text: 'Je dis : « Je vais {c}à{/c} Sion. »', wrong: 'Je vais a Sion.' },
+        ]),
+      ],
+    }),
   },
   {
-    "id": "l9",
-    "typeId": "gram-l9-theorie",
-    "index": 9,
-    "title": "Les classes grammaticales",
-    "topic": "gram-aide",
-    "public": "A2",
-    "objectif": "Reconnaître la classe d’un mot.",
-    "blocks": [
-      {
-        "kind": "heading",
-        "text": "Les classes grammaticales"
-      },
-      {
-        "kind": "paragraph",
-        "text": "Je reconnais le rôle habituel des mots dans une phrase."
-      },
-      {
-        "kind": "paragraph",
-        "text": "{ligne/2}"
-      },
-      {
-        "kind": "section",
-        "role": "regarder",
-        "blocks": [
-          {
-            "kind": "examples",
-            "marker": "puces",
-            "items": [
-              "Dans le petit chat dort, chat est un {c}nom{/c}.",
-              "Petit est un {c}adjectif{/c}.",
-              "Dort est un {c}verbe{/c}."
-            ]
-          }
-        ]
-      },
-      {
-        "kind": "section",
-        "role": "expliquer",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Un nom désigne une personne, un lieu, une chose ou une idée."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Un déterminant accompagne un nom."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Un adjectif décrit un nom."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Un verbe exprime notamment une action ou un état."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Un pronom remplace souvent un nom ou désigne une personne."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Un adverbe précise notamment un verbe, un adjectif ou un autre adverbe."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Une préposition relie des mots : à, de, dans, avec."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Une conjonction relie des groupes ou des propositions : et, mais, parce que."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Une interjection exprime une réaction : ah ! bravo !"
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Le contexte aide à décider, car certains mots peuvent changer de classe."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          }
-        ]
-      },
-      {
-        "kind": "page"
-      },
-      {
-        "kind": "section",
-        "role": "retenir",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Un nom désigne une personne, un lieu, une chose ou une idée."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "table",
-            "colHeader": true,
-            "rowHeader": false,
-            "headers": [
-              "Classe",
-              "Question utile"
-            ],
-            "rows": [
-              [
-                "nom",
-                "De qui ou de quoi je parle ?"
-              ],
-              [
-                "verbe",
-                "Quelle action ou quel état ?"
-              ],
-              [
-                "adjectif",
-                "Comment est le nom ?"
-              ],
-              [
-                "déterminant",
-                "Quel petit mot devant le nom ?"
-              ],
-              [
-                "préposition",
-                "Quel mot de lien : à, de, dans ?"
-              ]
-            ]
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "attention",
-            "text": "Je distingue la classe du mot et sa fonction dans la phrase : sujet est une fonction, pas une classe."
-          }
-        ]
-      }
-    ]
+    id: 'l9',
+    typeId: 'gram-l9-theorie',
+    index: 9,
+    title: 'Les classes grammaticales',
+    topic: 'gram-aide',
+    public: 'A2',
+    objectif: 'Reconnaître la classe d’un mot.',
+    blocks: sheet({
+      title: 'Les classes grammaticales',
+      intro: 'Je reconnais la {g}classe{/g} d’un mot.',
+      regarder: [
+        '{tab:1<}{c}Nina{/c} habite à Sion. | Elle est {c}fatiguée{/c}.',
+        '{tab:1<}{c}Le{/c} bus arrive. | Je {c}parle{/c} {c}souvent{/c}.',
+        '{tab:1<}Je vais {c}à{/c} l’école {c}et{/c} je travaille.',
+      ],
+      expliquer: [
+        p('Chaque mot a une classe. La classe dit son rôle.'),
+        p('Le même mot peut changer de rôle selon la phrase.'),
+        p('Je regarde le mot {c}dans la phrase{/c}, pas seul.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Classe{/g} | {g}Exemple{/g}',
+          '{tab:1>}nom | {c}Nina{/c}, bus, école',
+          '{tab:1>}adjectif | {c}fatiguée{/c}',
+          '{tab:1>}déterminant | {c}le{/c}, une, mon',
+          '{tab:1>}pronom | {c}elle{/c}, je',
+          '{tab:1>}verbe | {c}habite{/c}, parle',
+          '{tab:1>}adverbe | {c}souvent{/c}',
+          '{tab:1>}préposition | {c}à{/c}, de, dans',
+          '{tab:1>}conjonction | {c}et{/c}, mais, parce que',
+        ]),
+      ],
+      retenir: [
+        p('Chaque mot a une classe.'),
+        ligne,
+        table(
+          ['Classe', 'Question utile'],
+          [
+            ['nom', 'De qui ou de quoi je parle ?'],
+            ['verbe', 'Quelle action ou quel état ?'],
+            ['adjectif', 'Comment est le nom ?'],
+            ['déterminant', 'Quel petit mot devant le nom ?'],
+            ['préposition', 'Quel mot de lien : à, de, dans ?'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} « Le » peut être un article. « Le » pronom est autre chose.'),
+        ex([
+          { text: 'Je dis : « {c}Le{/c} bus arrive. » (article)', wrong: 'Le = toujours un pronom.' },
+        ]),
+      ],
+    }),
   },
   {
-    "id": "l10",
-    "typeId": "gram-l10-theorie",
-    "index": 10,
-    "title": "La ponctuation",
-    "topic": "gram-aide",
-    "public": "A1",
-    "objectif": "Utiliser le point, la virgule, le point d’interrogation et d’exclamation.",
-    "blocks": [
-      {
-        "kind": "heading",
-        "text": "La ponctuation"
-      },
-      {
-        "kind": "paragraph",
-        "text": "Je rends les limites et le sens de ma phrase faciles à comprendre."
-      },
-      {
-        "kind": "paragraph",
-        "text": "{ligne/2}"
-      },
-      {
-        "kind": "section",
-        "role": "regarder",
-        "blocks": [
-          {
-            "kind": "examples",
-            "marker": "puces",
-            "items": [
-              "Vous venez {c}?{/c}",
-              "Je demande si vous venez {c}.{/c}",
-              "{c}Attention !{/c}"
-            ]
-          }
-        ]
-      },
-      {
-        "kind": "section",
-        "role": "expliquer",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Le point termine une phrase déclarative."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Le point d’interrogation termine une question directe."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Le point d’exclamation marque une réaction ou une consigne forte."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "La virgule sépare certains éléments ; elle ne termine pas toujours la phrase."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Les deux-points peuvent annoncer une explication, une liste ou des paroles."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Les guillemets peuvent encadrer des paroles citées."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Une phrase commence normalement par une majuscule."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je ne sépare pas sans raison le sujet et le verbe par une virgule."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Une question indirecte peut se terminer par un point."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je relis en suivant les groupes de sens."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          }
-        ]
-      },
-      {
-        "kind": "page"
-      },
-      {
-        "kind": "section",
-        "role": "retenir",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Le point termine une phrase déclarative."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "table",
-            "colHeader": true,
-            "rowHeader": false,
-            "headers": [
-              "Signe",
-              "Exemple"
-            ],
-            "rows": [
-              [
-                ".",
-                "Je suis à Sion."
-              ],
-              [
-                "?",
-                "Tu es à Sion ?"
-              ],
-              [
-                "!",
-                "Quelle bonne idée !"
-              ],
-              [
-                ",",
-                "D’abord, je me lève."
-              ],
-              [
-                ":",
-                "Il dit : « Bonjour. »"
-              ]
-            ]
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "attention",
-            "text": "Je distingue Où va-t-il ? et Je demande où il va."
-          }
-        ]
-      }
-    ]
+    id: 'l10',
+    typeId: 'gram-l10-theorie',
+    index: 10,
+    title: 'La ponctuation',
+    topic: 'gram-aide',
+    public: 'A1',
+    objectif: 'Utiliser le point, la virgule, le point d’interrogation et d’exclamation.',
+    blocks: sheet({
+      title: 'La ponctuation',
+      intro: 'J’utilise les signes pour {g}clarifier{/g}.',
+      regarder: [
+        '{tab:1<}Je m’appelle Nina{c}.{/c} | Tu viens {c}?{/c}',
+        '{tab:1<}Quelle surprise {c}!{/c} | Je prends le bus{c},{/c} puis je marche.',
+        '{tab:1<}Il dit {c}:{/c} « Bonjour. »',
+      ],
+      expliquer: [
+        p('Le {c}point{/c} finit une phrase.'),
+        p('Le {c}?{/c} finit une question. Le {c}!{/c} montre un sentiment fort.'),
+        p('La {c}virgule{/c} marque une pause courte.'),
+        p('Les {c}:{/c} annoncent une explication ou des paroles.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Signe{/g} | {g}Rôle{/g}',
+          '{tab:1>}. | fin de phrase',
+          '{tab:1>}? | question',
+          '{tab:1>}! | sentiment fort',
+          '{tab:1>}, | pause courte',
+          '{tab:1>}: | annonce',
+        ]),
+      ],
+      retenir: [
+        p('Une phrase = une ponctuation claire à la fin.'),
+        ligne,
+        table(
+          ['Signe', 'Exemple'],
+          [
+            ['.', 'Je suis à Sion.'],
+            ['?', 'Tu es à Sion ?'],
+            ['!', 'Quelle bonne idée !'],
+            [',', 'D’abord, je me lève.'],
+            [':', 'Il dit : « Bonjour. »'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Une question écrite prend un point d’interrogation.'),
+        ex([
+          { text: 'Je dis : « Tu viens {c}?{/c} »', wrong: 'Tu viens.' },
+        ]),
+      ],
+    }),
   },
   {
-    "id": "l11",
-    "typeId": "gram-l11-theorie",
-    "index": 11,
-    "title": "Les homophones (sélection)",
-    "topic": "gram-aide",
-    "public": "A2",
-    "objectif": "Distinguer des mots qui se prononcent pareil.",
-    "blocks": [
-      {
-        "kind": "heading",
-        "text": "Les homophones (sélection)"
-      },
-      {
-        "kind": "paragraph",
-        "text": "Je distingue des mots qui se prononcent de la même façon."
-      },
-      {
-        "kind": "paragraph",
-        "text": "{ligne/2}"
-      },
-      {
-        "kind": "section",
-        "role": "regarder",
-        "blocks": [
-          {
-            "kind": "examples",
-            "marker": "puces",
-            "items": [
-              "Elle {c}a{/c} rendez-vous {c}à{/c} midi.",
-              "Ils {c}sont{/c} prêts.",
-              "Tu veux du thé {c}ou{/c} du café ?"
-            ]
-          }
-        ]
-      },
-      {
-        "kind": "section",
-        "role": "expliquer",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Des homophones ont une prononciation proche ou identique, mais une écriture et un rôle différents."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "A est le verbe avoir ; à est une préposition."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Est est le verbe être ; et relie des éléments."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "On est un pronom sujet ; ont est le verbe avoir."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Son peut être possessif ; sont est le verbe être."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Ou propose un choix ; où indique souvent un lieu ou un moment."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Ce accompagne ou reprend un élément ; se appartient à un verbe pronominal."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Ces montre plusieurs éléments ; ses indique leur appartenance."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je peux changer le temps d’un verbe pour vérifier : a devient avait, est devient était."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je vérifie le sens de la phrase avant de choisir."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          }
-        ]
-      },
-      {
-        "kind": "page"
-      },
-      {
-        "kind": "section",
-        "role": "retenir",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Des homophones ont une prononciation proche ou identique, mais une écriture et un rôle différents."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "table",
-            "colHeader": true,
-            "rowHeader": false,
-            "headers": [
-              "J’entends",
-              "J’écris",
-              "Test"
-            ],
-            "rows": [
-              [
-                "a",
-                "a",
-                "avait"
-              ],
-              [
-                "a",
-                "à",
-                "pas « avait »"
-              ],
-              [
-                "é",
-                "et",
-                "et puis"
-              ],
-              [
-                "é",
-                "est",
-                "était"
-              ],
-              [
-                "on",
-                "on",
-                "il"
-              ],
-              [
-                "on",
-                "ont",
-                "avaient"
-              ]
-            ]
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "attention",
-            "text": "Un test de remplacement aide, mais le rôle du mot et le sens restent importants."
-          }
-        ]
-      }
-    ]
+    id: 'l11',
+    typeId: 'gram-l11-theorie',
+    index: 11,
+    title: 'Les homophones (sélection)',
+    topic: 'gram-aide',
+    public: 'A2',
+    objectif: 'Distinguer des mots qui se prononcent pareil.',
+    blocks: sheet({
+      title: 'Les homophones',
+      intro: 'Je distingue les mots qui se {g}prononcent pareil{/g}.',
+      regarder: [
+        '{tab:1<}Il {c}a{/c} faim. | Je vais {c}à{/c} Sion.',
+        '{tab:1<}Du pain {c}et{/c} de l’eau. | Elle {c}est{/c} là.',
+        '{tab:1<}{c}On{/c} part. | Ils {c}ont{/c} fini. | {c}Ou{/c} bien tu restes.',
+      ],
+      expliquer: [
+        p('Des homophones se prononcent pareil, mais ne s’écrivent pas pareil.'),
+        p('Je teste en remplaçant le mot.'),
+        p('A → avait. Et → et puis. On → il. Ou → ou bien.'),
+        p('Un homophone à la fois. Je ne mélange pas les tests.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Mot{/g} | {g}Test{/g}',
+          '{tab:1>}a | je peux dire {c}avait{/c}',
+          '{tab:1>}à | je ne peux pas dire avait',
+          '{tab:1>}et | {c}et puis{/c}',
+          '{tab:1>}est | {c}était{/c}',
+          '{tab:1>}on | {c}il{/c}',
+          '{tab:1>}ou | {c}ou bien{/c}',
+        ]),
+      ],
+      retenir: [
+        p('Je remplace pour choisir le bon mot.'),
+        ligne,
+        table(
+          ['J’entends', 'J’écris', 'Test'],
+          [
+            ['a', 'a', 'avait'],
+            ['a', 'à', 'pas « avait »'],
+            ['é', 'et', 'et puis'],
+            ['é', 'est', 'était'],
+            ['on', 'on', 'il'],
+            ['on', 'ont', 'avaient'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} On part = il part. Ils ont = ils avaient.'),
+        ex([
+          { text: 'Je dis : « Il {c}a{/c} faim. »', wrong: 'Il à faim.' },
+        ]),
+      ],
+    }),
   },
   {
-    "id": "l12",
-    "typeId": "gram-l12-theorie",
-    "index": 12,
-    "title": "Les noms composés",
-    "topic": "gram-aide",
-    "public": "B1",
-    "objectif": "Mettre un nom composé au pluriel.",
-    "blocks": [
-      {
-        "kind": "heading",
-        "text": "Les noms composés"
-      },
-      {
-        "kind": "paragraph",
-        "text": "Je vérifie le pluriel des noms construits avec plusieurs mots."
-      },
-      {
-        "kind": "paragraph",
-        "text": "{ligne/2}"
-      },
-      {
-        "kind": "section",
-        "role": "regarder",
-        "blocks": [
-          {
-            "kind": "examples",
-            "marker": "puces",
-            "items": [
-              "Un chou-fleur, des {c}choux-fleurs{/c}.",
-              "Un arc-en-ciel, des {c}arcs-en-ciel{/c}.",
-              "Un cache-nez, des {c}cache-nez{/c}."
-            ]
-          }
-        ]
-      },
-      {
-        "kind": "section",
-        "role": "expliquer",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Un nom composé réunit plusieurs éléments pour désigner une seule notion."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Certains éléments sont reliés par des traits d’union."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je regarde la classe et le sens des éléments."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Des noms et des adjectifs peuvent prendre le pluriel."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Un verbe ou une préposition dans le composé ne prend pas un accord ordinaire de nom."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je dis des choux-fleurs et des arcs-en-ciel."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Certains mots sont traditionnellement invariables, comme des cache-nez."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Les rectifications orthographiques admettent aussi des pluriels simplifiés pour plusieurs composés."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je retiens la graphie choisie dans un dictionnaire de référence."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je ne considère pas une variante reconnue comme une faute."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          }
-        ]
-      },
-      {
-        "kind": "page"
-      },
-      {
-        "kind": "section",
-        "role": "retenir",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Un nom composé réunit plusieurs éléments pour désigner une seule notion."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "table",
-            "colHeader": true,
-            "rowHeader": false,
-            "headers": [
-              "Singulier",
-              "Pluriel",
-              "Type"
-            ],
-            "rows": [
-              [
-                "chou-fleur",
-                "choux-fleurs",
-                "nom + nom"
-              ],
-              [
-                "grand-père",
-                "grands-pères",
-                "adjectif + nom"
-              ],
-              [
-                "tire-bouchon",
-                "tire-bouchons",
-                "verbe + nom"
-              ],
-              [
-                "après-midi",
-                "après-midi ou après-midis",
-                "deux pluriels admis"
-              ]
-            ]
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "attention",
-            "text": "Les noms composés ont des exceptions et parfois deux pluriels admis ; une règle unique serait trompeuse."
-          }
-        ]
-      }
-    ]
+    id: 'l12',
+    typeId: 'gram-l12-theorie',
+    index: 12,
+    title: 'Les noms composés',
+    topic: 'gram-aide',
+    public: 'B1',
+    objectif: 'Mettre un nom composé au pluriel.',
+    blocks: sheet({
+      title: 'Les noms composés',
+      intro: 'Un nom composé a {g}plusieurs mots{/g}.',
+      regarder: [
+        '{tab:1<}un chou-fleur → des {c}choux-fleurs{/c}',
+        '{tab:1<}un grand-père → des {c}grands-pères{/c}',
+        '{tab:1<}un tire-bouchon → des {c}tire-bouchons{/c}',
+      ],
+      expliquer: [
+        p('Nom + nom : souvent les {c}deux{/c} mots prennent le pluriel.'),
+        p('Adjectif + nom : les deux s’accordent.'),
+        p('Verbe + nom : souvent seul le {c}nom{/c} change.'),
+        p('Certains pluriels sont fixes. Je vérifie le mot fréquent.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Type{/g} | {g}Pluriel{/g}',
+          '{tab:1>}nom + nom | les deux souvent',
+          '{tab:1>}adjectif + nom | les deux',
+          '{tab:1>}verbe + nom | souvent le nom',
+        ]),
+      ],
+      retenir: [
+        p('Je regarde le type de composition.'),
+        ligne,
+        table(
+          ['Singulier', 'Pluriel', 'Type'],
+          [
+            ['chou-fleur', 'choux-fleurs', 'nom + nom'],
+            ['grand-père', 'grands-pères', 'adjectif + nom'],
+            ['tire-bouchon', 'tire-bouchons', 'verbe + nom'],
+            ['après-midi', 'après-midi', 'souvent invariable'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Après-midi ne change souvent pas.'),
+        ex([
+          { text: 'Je dis : « des {c}tire-bouchons{/c}. »', wrong: 'des tires-bouchons.' },
+        ]),
+      ],
+    }),
   },
   {
-    "id": "l13",
-    "typeId": "gram-l13-theorie",
-    "index": 13,
-    "title": "Les adverbes en -ment",
-    "topic": "gram-aide",
-    "public": "A2",
-    "objectif": "Former un adverbe à partir d’un adjectif.",
-    "blocks": [
-      {
-        "kind": "heading",
-        "text": "Les adverbes en -ment"
-      },
-      {
-        "kind": "paragraph",
-        "text": "Je forme un adverbe qui précise la manière de faire."
-      },
-      {
-        "kind": "paragraph",
-        "text": "{ligne/2}"
-      },
-      {
-        "kind": "section",
-        "role": "regarder",
-        "blocks": [
-          {
-            "kind": "examples",
-            "marker": "puces",
-            "items": [
-              "Elle parle {c}lentement{/c}.",
-              "Ils répondent {c}poliment{/c}.",
-              "Tu agis {c}prudemment{/c}."
-            ]
-          }
-        ]
-      },
-      {
-        "kind": "section",
-        "role": "expliquer",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Beaucoup d’adverbes de manière se terminent par -ment."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je pars souvent du féminin de l’adjectif."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Lente devient lentement ; douce devient doucement."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Si l’adjectif masculin se termine par une voyelle, je peux ajouter directement -ment : vrai donne vraiment."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Les adjectifs en -ant donnent souvent -amment : courant donne couramment."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Les adjectifs en -ent donnent souvent -emment : prudent donne prudemment."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Certains adverbes sont irréguliers, comme gentiment."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Un adverbe reste généralement invariable."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je distingue l’adjectif qui décrit un nom et l’adverbe qui précise une action."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          }
-        ]
-      },
-      {
-        "kind": "page"
-      },
-      {
-        "kind": "section",
-        "role": "retenir",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Beaucoup d’adverbes de manière se terminent par -ment."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "table",
-            "colHeader": true,
-            "rowHeader": false,
-            "headers": [
-              "Adjectif",
-              "Adverbe"
-            ],
-            "rows": [
-              [
-                "lent",
-                "lentement"
-              ],
-              [
-                "doux",
-                "doucement"
-              ],
-              [
-                "heureux",
-                "heureusement"
-              ],
-              [
-                "courant",
-                "couramment"
-              ],
-              [
-                "évident",
-                "évidemment"
-              ]
-            ]
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "attention",
-            "text": "Même si le sujet est féminin ou pluriel, je n’accorde pas l’adverbe."
-          }
-        ]
-      }
-    ]
+    id: 'l13',
+    typeId: 'gram-l13-theorie',
+    index: 13,
+    title: 'Les adverbes en -ment',
+    topic: 'gram-aide',
+    public: 'A2',
+    objectif: 'Former un adverbe à partir d’un adjectif.',
+    blocks: sheet({
+      title: 'Les adverbes en -ment',
+      intro: 'Je forme un adverbe à partir d’un {g}adjectif{/g}.',
+      regarder: [
+        '{tab:1<}lent → {c}lentement{/c} | doux → {c}doucement{/c}',
+        '{tab:1<}heureux → {c}heureusement{/c} | vrai → {c}vraiment{/c}',
+        '{tab:1<}évident → {c}évidemment{/c} | courant → {c}couramment{/c}',
+      ],
+      expliquer: [
+        p('Souvent : adjectif au {c}féminin{/c} + -ment.'),
+        p('Lente + ment → lentement. Douce + ment → doucement.'),
+        p('Si l’adjectif finit par -ant : {c}-amment{/c}. Par -ent : {c}-emment{/c}.'),
+        p('L’adverbe {c}ne s’accorde pas{/c}.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Adjectif{/g} | {g}Adverbe{/g}',
+          '{tab:1>}lent / lente | lente{c}ment{/c}',
+          '{tab:1>}heureux / heureuse | heureuse{c}ment{/c}',
+          '{tab:1>}courant | cour{c}amment{/c}',
+          '{tab:1>}évident | évid{c}emment{/c}',
+        ]),
+      ],
+      retenir: [
+        p('Féminin de l’adjectif + ment.'),
+        p('L’adverbe reste invariable.'),
+        ligne,
+        table(
+          ['Adjectif', 'Adverbe'],
+          [
+            ['lent', 'lentement'],
+            ['doux', 'doucement'],
+            ['heureux', 'heureusement'],
+            ['courant', 'couramment'],
+            ['évident', 'évidemment'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Elle parle doucement. Pas « doucemente ».'),
+        ex([
+          { text: 'Je dis : « Elle parle {c}doucement{/c}. »', wrong: 'Elle parle doucemente.' },
+        ]),
+      ],
+    }),
   },
   {
-    "id": "l14",
-    "typeId": "gram-l14-theorie",
-    "index": 14,
-    "title": "Les adverbes d’intensité",
-    "topic": "gram-aide",
-    "public": "A1 / A2",
-    "objectif": "Renforcer ou atténuer une idée.",
-    "blocks": [
-      {
-        "kind": "heading",
-        "text": "Les adverbes d’intensité"
-      },
-      {
-        "kind": "paragraph",
-        "text": "Je renforce ou j’atténue une qualité, une quantité ou une action."
-      },
-      {
-        "kind": "paragraph",
-        "text": "{ligne/2}"
-      },
-      {
-        "kind": "section",
-        "role": "regarder",
-        "blocks": [
-          {
-            "kind": "examples",
-            "marker": "puces",
-            "items": [
-              "Le sac est {c}très{/c} lourd.",
-              "Elle travaille {c}beaucoup{/c}.",
-              "Il reste {c}un peu de{/c} pain."
-            ]
-          }
-        ]
-      },
-      {
-        "kind": "section",
-        "role": "expliquer",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Très renforce souvent un adjectif ou un adverbe."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Beaucoup précise notamment une action ou une quantité."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Assez indique que le niveau convient ou est relativement important."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Trop indique que le niveau dépasse ce qui convient."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Un peu atténue ou indique une petite quantité."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Vraiment renforce une affirmation."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Presque indique que la limite est proche, sans être atteinte."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je place l’adverbe avec l’élément qu’il précise."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Devant un nom, je peux avoir besoin de de : beaucoup de travail."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Ces adverbes sont normalement invariables."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          }
-        ]
-      },
-      {
-        "kind": "page"
-      },
-      {
-        "kind": "section",
-        "role": "retenir",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Très renforce souvent un adjectif ou un adverbe."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "table",
-            "colHeader": true,
-            "rowHeader": false,
-            "headers": [
-              "Mot",
-              "Exemple"
-            ],
-            "rows": [
-              [
-                "très",
-                "très content"
-              ],
-              [
-                "trop",
-                "trop sucré"
-              ],
-              [
-                "assez",
-                "assez grand"
-              ],
-              [
-                "un peu",
-                "un peu tard"
-              ],
-              [
-                "beaucoup",
-                "j’aime beaucoup"
-              ],
-              [
-                "vraiment",
-                "vraiment utile"
-              ]
-            ]
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "attention",
-            "text": "Je dis très content, mais j’aime beaucoup : très ne remplace pas beaucoup devant tous les verbes."
-          }
-        ]
-      }
-    ]
-  }
+    id: 'l14',
+    typeId: 'gram-l14-theorie',
+    index: 14,
+    title: 'Les adverbes d’intensité',
+    topic: 'gram-aide',
+    public: 'A1 / A2',
+    objectif: 'Renforcer ou atténuer une idée.',
+    blocks: sheet({
+      title: 'Les adverbes d’intensité',
+      intro: 'Je renforce ou j’atténue une {g}idée{/g}.',
+      regarder: [
+        '{tab:1<}C’est {c}très{/c} bon. | C’est {c}trop{/c} cher.',
+        '{tab:1<}C’est {c}assez{/c} clair. | Je suis {c}un peu{/c} fatigué.',
+        '{tab:1<}J’aime {c}beaucoup{/c} le thé. | C’est {c}vraiment{/c} utile.',
+      ],
+      expliquer: [
+        p('Ces mots se placent souvent {c}devant{/c} l’adjectif.'),
+        p('{c}Très{/c} = fort. {c}Un peu{/c} = faible. {c}Assez{/c} = suffisant.'),
+        p('{c}Trop{/c} = plus que ce qu’il faut.'),
+        p('{c}Beaucoup{/c} va avec un verbe : j’aime beaucoup.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Mot{/g} | {g}Force{/g}',
+          '{tab:1>}un peu | faible',
+          '{tab:1>}assez | suffisant',
+          '{tab:1>}très | fort',
+          '{tab:1>}trop | trop fort',
+          '{tab:1>}beaucoup | avec un verbe',
+        ]),
+      ],
+      retenir: [
+        p('Très = fort. Un peu = faible. Trop = trop pour la situation.'),
+        ligne,
+        table(
+          ['Mot', 'Exemple'],
+          [
+            ['très', 'très content'],
+            ['trop', 'trop sucré'],
+            ['assez', 'assez grand'],
+            ['un peu', 'un peu tard'],
+            ['beaucoup', 'j’aime beaucoup'],
+            ['vraiment', 'vraiment utile'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Trop ≠ très. Trop dit que c’est excessif.'),
+        ex([
+          { text: 'Je dis : « C’est {c}trop{/c} cher. »', wrong: 'C’est très cher. (si je veux dire excessif)' },
+        ]),
+      ],
+    }),
+  },
 ]

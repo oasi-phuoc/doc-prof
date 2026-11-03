@@ -259,7 +259,8 @@ export function WorksheetSheet({
         />
       ) : null}
       <SheetBody>
-        {(page.blocks.length > 0 ? page.blocks : fallbackBlocks(page)).map((block, blockIndex) => {
+        {(page.blocks.length > 0 ? page.blocks : fallbackBlocks(page)).map((block, renderedBlockIndex) => {
+          const blockIndex = block.sourceBlockIndex ?? renderedBlockIndex
           const algebraItems = block.items.filter((item) => item.layout === 'algebra')
           const maxTokens =
             algebraItems.length > 0

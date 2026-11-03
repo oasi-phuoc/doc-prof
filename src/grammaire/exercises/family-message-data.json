@@ -1,0 +1,1082 @@
+[
+  {
+    "slug": "ecole",
+    "genre": "email",
+    "direction": "envoyé",
+    "title": "Inscrire sa fille à l’école",
+    "text": "De : Nadia Benali\nÀ : Secrétariat de l’école des Tilleuls\nObjet : Inscription de ma fille\n\nBonjour,\nNous venons d’arriver à Sion. Je souhaite inscrire ma fille Lina, 8 ans, dans votre école. Son père Karim est chauffeur et je suis vendeuse. Nous pouvons venir au secrétariat mardi à 10 heures. Quels documents devons-nous apporter ?\nMerci pour votre réponse.\nNadia Benali",
+    "questions": [
+      {
+        "prompt": "Qui envoie cet email ?",
+        "answer": "Nadia Benali",
+        "options": [
+          "Nadia Benali",
+          "Lina Benali",
+          "Karim Benali"
+        ]
+      },
+      {
+        "prompt": "Quel enfant faut-il inscrire ?",
+        "answer": "Lina",
+        "options": [
+          "Lina",
+          "Nadia",
+          "Karim"
+        ]
+      },
+      {
+        "prompt": "Quel âge a Lina ?",
+        "answer": "8 ans",
+        "options": [
+          "8 ans",
+          "6 ans",
+          "10 ans"
+        ]
+      },
+      {
+        "prompt": "Quel métier exerce le père ?",
+        "answer": "chauffeur",
+        "options": [
+          "chauffeur",
+          "boulanger",
+          "médecin"
+        ]
+      },
+      {
+        "prompt": "Quand la famille peut-elle venir ?",
+        "answer": "mardi à 10 heures",
+        "options": [
+          "mardi à 10 heures",
+          "lundi à 10 heures",
+          "mardi à 14 heures"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "reponse-ecole",
+    "genre": "email",
+    "direction": "reçu",
+    "title": "La réponse du secrétariat",
+    "text": "De : Secrétariat de l’école des Tilleuls\nÀ : Nadia Benali\nObjet : Votre rendez-vous\n\nMadame,\nNous confirmons votre rendez-vous de mardi à 10 heures pour l’inscription de Lina. Apportez une pièce d’identité, un justificatif de domicile et le dernier bulletin scolaire de votre fille. Le secrétariat se trouve au premier étage. Vous pouvez venir avec le père de Lina.\nCordialement,\nClaire Dupont, secrétaire",
+    "questions": [
+      {
+        "prompt": "Qui écrit à Nadia ?",
+        "answer": "Claire Dupont",
+        "options": [
+          "Claire Dupont",
+          "Karim Benali",
+          "Lina Benali"
+        ]
+      },
+      {
+        "prompt": "Pourquoi Nadia a-t-elle rendez-vous ?",
+        "answer": "pour une inscription",
+        "options": [
+          "pour une inscription",
+          "pour un achat",
+          "pour une visite médicale"
+        ]
+      },
+      {
+        "prompt": "Quel document faut-il apporter ?",
+        "answer": "un justificatif de domicile",
+        "options": [
+          "un justificatif de domicile",
+          "un billet de train",
+          "une ordonnance"
+        ]
+      },
+      {
+        "prompt": "Où est le secrétariat ?",
+        "answer": "au premier étage",
+        "options": [
+          "au premier étage",
+          "au rez-de-chaussée",
+          "au troisième étage"
+        ]
+      },
+      {
+        "prompt": "Qui peut accompagner Nadia ?",
+        "answer": "le père de Lina",
+        "options": [
+          "le père de Lina",
+          "le voisin de Claire",
+          "le professeur de musique"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "garde",
+    "genre": "message",
+    "direction": "reçu",
+    "title": "Un message de sa sœur",
+    "text": "De : Sophie\nÀ : Marc\n\nBonjour mon frère ! Je travaille à l’hôpital jusqu’à 19 heures jeudi. Peux-tu garder ma fille Emma et mon fils Louis après l’école ? Ils sortent à 16 heures. Leur père viendra les chercher chez toi à 19 h 30. Emma doit prendre son livre de lecture. Merci beaucoup ! Ta sœur Sophie.",
+    "questions": [
+      {
+        "prompt": "Quel est le lien entre Sophie et Marc ?",
+        "answer": "ils sont sœur et frère",
+        "options": [
+          "ils sont sœur et frère",
+          "ils sont mère et fils",
+          "ils sont cousins"
+        ]
+      },
+      {
+        "prompt": "Quels enfants faut-il garder ?",
+        "answer": "Emma et Louis",
+        "options": [
+          "Emma et Louis",
+          "Sophie et Marc",
+          "Emma et Marc"
+        ]
+      },
+      {
+        "prompt": "Où travaille Sophie ?",
+        "answer": "à l’hôpital",
+        "options": [
+          "à l’hôpital",
+          "à la poste",
+          "au musée"
+        ]
+      },
+      {
+        "prompt": "À quelle heure les enfants sortent-ils ?",
+        "answer": "à 16 heures",
+        "options": [
+          "à 16 heures",
+          "à 19 heures",
+          "à 19 h 30"
+        ]
+      },
+      {
+        "prompt": "Qui viendra chercher les enfants ?",
+        "answer": "leur père",
+        "options": [
+          "leur père",
+          "leur grand-mère",
+          "leur tante"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "confirmation-garde",
+    "genre": "message",
+    "direction": "envoyé",
+    "title": "Confirmer une garde",
+    "text": "De : Marc\nÀ : Sophie\n\nSalut Sophie, oui, je garderai ma nièce Emma et mon neveu Louis jeudi. Je termine mon travail de plombier à 15 heures. Je serai devant l’école à 16 heures. Nous prendrons le goûter chez moi. Dis à leur père de sonner chez Martin, au deuxième étage. À jeudi ! Marc.",
+    "questions": [
+      {
+        "prompt": "Emma est la ___ de Marc.",
+        "answer": "nièce",
+        "options": [
+          "nièce",
+          "mère",
+          "tante"
+        ]
+      },
+      {
+        "prompt": "Louis est le ___ de Marc.",
+        "answer": "neveu",
+        "options": [
+          "neveu",
+          "père",
+          "oncle"
+        ]
+      },
+      {
+        "prompt": "Quel métier exerce Marc ?",
+        "answer": "plombier",
+        "options": [
+          "plombier",
+          "cuisinier",
+          "enseignant"
+        ]
+      },
+      {
+        "prompt": "Où Marc attendra-t-il les enfants ?",
+        "answer": "devant l’école",
+        "options": [
+          "devant l’école",
+          "devant la gare",
+          "à la bibliothèque"
+        ]
+      },
+      {
+        "prompt": "À quel étage habite Marc ?",
+        "answer": "au deuxième étage",
+        "options": [
+          "au deuxième étage",
+          "au premier étage",
+          "au quatrième étage"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "piscine",
+    "genre": "email",
+    "direction": "envoyé",
+    "title": "Demander une place au cours de natation",
+    "text": "De : Thomas Roche\nÀ : Club de natation du Lac\nObjet : Cours pour mon fils\n\nBonjour,\nMon fils Hugo a 10 ans. Il sait déjà nager et souhaite suivre le cours du mercredi après-midi. Sa sœur Léa est inscrite dans votre club depuis septembre. Pouvez-vous me dire s’il reste une place et combien coûte le trimestre ? Je suis joignable après 17 heures, à la fin de mon travail de boulanger.\nMerci.\nThomas Roche",
+    "questions": [
+      {
+        "prompt": "Pour qui Thomas demande-t-il une place ?",
+        "answer": "Hugo",
+        "options": [
+          "Hugo",
+          "Léa",
+          "Thomas"
+        ]
+      },
+      {
+        "prompt": "Quel cours intéresse Hugo ?",
+        "answer": "le cours du mercredi après-midi",
+        "options": [
+          "le cours du mercredi après-midi",
+          "le cours du lundi matin",
+          "le cours du samedi soir"
+        ]
+      },
+      {
+        "prompt": "Qui est déjà inscrit au club ?",
+        "answer": "sa sœur Léa",
+        "options": [
+          "sa sœur Léa",
+          "son père Thomas",
+          "son grand-père"
+        ]
+      },
+      {
+        "prompt": "Quelle information Thomas demande-t-il ?",
+        "answer": "le prix du trimestre",
+        "options": [
+          "le prix du trimestre",
+          "le menu de la semaine",
+          "l’adresse d’un garage"
+        ]
+      },
+      {
+        "prompt": "Quel métier exerce Thomas ?",
+        "answer": "boulanger",
+        "options": [
+          "boulanger",
+          "mécanicien",
+          "pharmacien"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "reponse-piscine",
+    "genre": "email",
+    "direction": "reçu",
+    "title": "Une place disponible à la piscine",
+    "text": "De : Club de natation du Lac\nÀ : Thomas Roche\nObjet : Une place pour Hugo\n\nBonjour Monsieur,\nIl reste une place au cours du mercredi, de 14 heures à 15 heures. Le trimestre coûte 90 francs. Pour inscrire votre fils Hugo, remplissez le formulaire joint et renvoyez-le avant vendredi. Le premier cours aura lieu le 7 octobre. Hugo doit apporter un bonnet de bain.\nCordialement,\nÉmilie, monitrice de natation",
+    "questions": [
+      {
+        "prompt": "Qui répond à Thomas ?",
+        "answer": "Émilie",
+        "options": [
+          "Émilie",
+          "Léa",
+          "Hugo"
+        ]
+      },
+      {
+        "prompt": "À quelle heure commence le cours ?",
+        "answer": "à 14 heures",
+        "options": [
+          "à 14 heures",
+          "à 15 heures",
+          "à 16 heures"
+        ]
+      },
+      {
+        "prompt": "Combien coûte le trimestre ?",
+        "answer": "90 francs",
+        "options": [
+          "90 francs",
+          "70 francs",
+          "120 francs"
+        ]
+      },
+      {
+        "prompt": "Quand faut-il renvoyer le formulaire ?",
+        "answer": "avant vendredi",
+        "options": [
+          "avant vendredi",
+          "après dimanche",
+          "le 7 novembre"
+        ]
+      },
+      {
+        "prompt": "Que doit apporter Hugo ?",
+        "answer": "un bonnet de bain",
+        "options": [
+          "un bonnet de bain",
+          "un ballon",
+          "un livre"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "anniversaire",
+    "genre": "message",
+    "direction": "envoyé",
+    "title": "Inviter sa cousine",
+    "text": "De : Inès\nÀ : Chloé\n\nSalut ma cousine ! Nous fêtons l’anniversaire de grand-mère Jeanne dimanche à midi, chez mes parents. Mon père Paul prépare le repas et ma mère Alice achète le gâteau. Peux-tu apporter les photos de nos vacances ? Ton frère Jules est aussi invité. Réponds-moi avant samedi pour que nous préparions assez de places. Bisous, Inès.",
+    "questions": [
+      {
+        "prompt": "Chloé est la ___ d’Inès.",
+        "answer": "cousine",
+        "options": [
+          "cousine",
+          "mère",
+          "nièce"
+        ]
+      },
+      {
+        "prompt": "Qui fête son anniversaire ?",
+        "answer": "Jeanne",
+        "options": [
+          "Jeanne",
+          "Alice",
+          "Chloé"
+        ]
+      },
+      {
+        "prompt": "Quand a lieu le repas ?",
+        "answer": "dimanche à midi",
+        "options": [
+          "dimanche à midi",
+          "samedi à midi",
+          "dimanche soir"
+        ]
+      },
+      {
+        "prompt": "Que doit apporter Chloé ?",
+        "answer": "les photos des vacances",
+        "options": [
+          "les photos des vacances",
+          "un gâteau",
+          "des boissons"
+        ]
+      },
+      {
+        "prompt": "Qui prépare le repas ?",
+        "answer": "Paul",
+        "options": [
+          "Paul",
+          "Jules",
+          "Jeanne"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "retard",
+    "genre": "message",
+    "direction": "reçu",
+    "title": "Prévenir d’un retard",
+    "text": "De : Chloé\nÀ : Inès\n\nCoucou Inès, je viens bien dimanche avec mon frère Jules. Mais nous arriverons à 12 h 30 : Jules termine son service de serveur à midi. Je prends les photos de vacances et une carte pour grand-mère Jeanne. Ne nous attendez pas pour commencer l’entrée ! À dimanche, Chloé.",
+    "questions": [
+      {
+        "prompt": "Avec qui vient Chloé ?",
+        "answer": "son frère Jules",
+        "options": [
+          "son frère Jules",
+          "son père Paul",
+          "sa tante Alice"
+        ]
+      },
+      {
+        "prompt": "À quelle heure arriveront-ils ?",
+        "answer": "à 12 h 30",
+        "options": [
+          "à 12 h 30",
+          "à 11 h 30",
+          "à 14 heures"
+        ]
+      },
+      {
+        "prompt": "Quel métier exerce Jules ?",
+        "answer": "serveur",
+        "options": [
+          "serveur",
+          "chauffeur",
+          "jardinier"
+        ]
+      },
+      {
+        "prompt": "À qui est destinée la carte ?",
+        "answer": "à Jeanne",
+        "options": [
+          "à Jeanne",
+          "à Inès",
+          "à Jules"
+        ]
+      },
+      {
+        "prompt": "Que propose Chloé ?",
+        "answer": "de commencer l’entrée sans eux",
+        "options": [
+          "de commencer l’entrée sans eux",
+          "d’annuler le repas",
+          "de déplacer la fête au samedi"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "medecin",
+    "genre": "email",
+    "direction": "envoyé",
+    "title": "Demander un rendez-vous pour son père",
+    "text": "De : Leila Haddad\nÀ : Cabinet médical du Centre\nObjet : Rendez-vous pour mon père\n\nBonjour,\nMon père Hassan a besoin d’un rendez-vous avec le docteur Blanc. Il est disponible lundi ou jeudi matin. Je l’accompagnerai, car il parle encore peu français. Je travaille comme coiffeuse et je peux me libérer avant midi. Merci de me répondre par email.\nCordialement,\nLeila Haddad",
+    "questions": [
+      {
+        "prompt": "Pour qui Leila demande-t-elle un rendez-vous ?",
+        "answer": "son père Hassan",
+        "options": [
+          "son père Hassan",
+          "son fils Hassan",
+          "son frère Hassan"
+        ]
+      },
+      {
+        "prompt": "Quel médecin veut-il voir ?",
+        "answer": "le docteur Blanc",
+        "options": [
+          "le docteur Blanc",
+          "le docteur Martin",
+          "le docteur Roche"
+        ]
+      },
+      {
+        "prompt": "Quand Hassan est-il disponible ?",
+        "answer": "lundi ou jeudi matin",
+        "options": [
+          "lundi ou jeudi matin",
+          "mardi ou vendredi soir",
+          "mercredi après-midi"
+        ]
+      },
+      {
+        "prompt": "Pourquoi Leila accompagne-t-elle son père ?",
+        "answer": "il parle peu français",
+        "options": [
+          "il parle peu français",
+          "il n’a pas de téléphone",
+          "il est médecin"
+        ]
+      },
+      {
+        "prompt": "Quel métier exerce Leila ?",
+        "answer": "coiffeuse",
+        "options": [
+          "coiffeuse",
+          "dentiste",
+          "traductrice"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "rendez-vous",
+    "genre": "email",
+    "direction": "reçu",
+    "title": "Le cabinet confirme le rendez-vous",
+    "text": "De : Cabinet médical du Centre\nÀ : Leila Haddad\nObjet : Confirmation pour Hassan Haddad\n\nMadame,\nLe docteur Blanc recevra votre père jeudi à 9 h 15. Merci d’arriver dix minutes avant le rendez-vous. Votre père doit apporter sa carte d’assurance et la liste de ses médicaments. Notre cabinet est au 12, rue du Parc. En cas d’empêchement, téléphonez-nous la veille.\nSalutations,\nNora, assistante médicale",
+    "questions": [
+      {
+        "prompt": "Qui a rendez-vous ?",
+        "answer": "Hassan Haddad",
+        "options": [
+          "Hassan Haddad",
+          "Leila Haddad",
+          "Nora"
+        ]
+      },
+      {
+        "prompt": "Quel jour est fixé le rendez-vous ?",
+        "answer": "jeudi",
+        "options": [
+          "jeudi",
+          "lundi",
+          "vendredi"
+        ]
+      },
+      {
+        "prompt": "À quelle heure faut-il arriver ?",
+        "answer": "à 9 h 05",
+        "options": [
+          "à 9 h 05",
+          "à 9 h 15",
+          "à 9 h 25"
+        ]
+      },
+      {
+        "prompt": "Que doit apporter Hassan ?",
+        "answer": "sa carte d’assurance",
+        "options": [
+          "sa carte d’assurance",
+          "un justificatif scolaire",
+          "un billet de train"
+        ]
+      },
+      {
+        "prompt": "Quelle est l’adresse du cabinet ?",
+        "answer": "12, rue du Parc",
+        "options": [
+          "12, rue du Parc",
+          "20, rue du Lac",
+          "5, rue de la Gare"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "gare",
+    "genre": "message",
+    "direction": "envoyé",
+    "title": "Aller chercher sa tante",
+    "text": "De : Adam\nÀ : Tante Sonia\n\nBonjour tante Sonia ! Je viendrai te chercher demain à la gare de Lausanne. Mon cours finit à 15 heures et ton train arrive à 15 h 40. Je t’attendrai devant la boulangerie, dans le hall. Mon père Farid, ton frère, nous rejoindra à la maison après son travail de cuisinier. Bon voyage ! Adam.",
+    "questions": [
+      {
+        "prompt": "Sonia est la ___ d’Adam.",
+        "answer": "tante",
+        "options": [
+          "tante",
+          "fille",
+          "nièce"
+        ]
+      },
+      {
+        "prompt": "Dans quelle ville arrive Sonia ?",
+        "answer": "Lausanne",
+        "options": [
+          "Lausanne",
+          "Genève",
+          "Sion"
+        ]
+      },
+      {
+        "prompt": "À quelle heure arrive son train ?",
+        "answer": "à 15 h 40",
+        "options": [
+          "à 15 h 40",
+          "à 15 heures",
+          "à 16 h 40"
+        ]
+      },
+      {
+        "prompt": "Où Adam attendra-t-il Sonia ?",
+        "answer": "devant la boulangerie",
+        "options": [
+          "devant la boulangerie",
+          "devant la pharmacie",
+          "sur le parking du musée"
+        ]
+      },
+      {
+        "prompt": "Quel métier exerce Farid ?",
+        "answer": "cuisinier",
+        "options": [
+          "cuisinier",
+          "peintre",
+          "facteur"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "train",
+    "genre": "message",
+    "direction": "reçu",
+    "title": "Un changement de train",
+    "text": "De : Tante Sonia\nÀ : Adam\n\nMerci mon neveu ! Mon premier train a du retard. Je prendrai le suivant et j’arriverai à Lausanne à 16 h 10, sur la voie 4. Je porte un manteau rouge et j’ai une petite valise bleue. Ne viens pas trop tôt ! Tu peux prévenir ton père ? À tout à l’heure. Sonia.",
+    "questions": [
+      {
+        "prompt": "Adam est le ___ de Sonia.",
+        "answer": "neveu",
+        "options": [
+          "neveu",
+          "oncle",
+          "père"
+        ]
+      },
+      {
+        "prompt": "Pourquoi Sonia change-t-elle de train ?",
+        "answer": "son premier train a du retard",
+        "options": [
+          "son premier train a du retard",
+          "elle a perdu sa valise",
+          "elle veut visiter Genève"
+        ]
+      },
+      {
+        "prompt": "À quelle heure arrivera-t-elle ?",
+        "answer": "à 16 h 10",
+        "options": [
+          "à 16 h 10",
+          "à 15 h 40",
+          "à 17 heures"
+        ]
+      },
+      {
+        "prompt": "Quelle est la couleur de son manteau ?",
+        "answer": "rouge",
+        "options": [
+          "rouge",
+          "bleue",
+          "verte"
+        ]
+      },
+      {
+        "prompt": "Qui Adam doit-il prévenir ?",
+        "answer": "son père",
+        "options": [
+          "son père",
+          "sa cousine",
+          "son grand-père"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "bibliotheque",
+    "genre": "email",
+    "direction": "envoyé",
+    "title": "Inscrire sa mère à la bibliothèque",
+    "text": "De : Victor Petit\nÀ : Bibliothèque municipale\nObjet : Carte de lecteur pour ma mère\n\nBonjour,\nMa mère Cécile souhaite obtenir une carte de lecteur. Elle vient d’emménager dans notre commune. Elle aime les romans et les livres de jardinage. Peut-elle s’inscrire samedi matin ? Je l’accompagnerai avec ma fille Alice. Quels sont les frais d’inscription ?\nMerci.\nVictor Petit",
+    "questions": [
+      {
+        "prompt": "Qui veut une carte de lecteur ?",
+        "answer": "Cécile",
+        "options": [
+          "Cécile",
+          "Victor",
+          "Alice"
+        ]
+      },
+      {
+        "prompt": "Cécile est la ___ de Victor.",
+        "answer": "mère",
+        "options": [
+          "mère",
+          "fille",
+          "nièce"
+        ]
+      },
+      {
+        "prompt": "Quel type de livres aime Cécile ?",
+        "answer": "les romans et les livres de jardinage",
+        "options": [
+          "les romans et les livres de jardinage",
+          "les bandes dessinées seulement",
+          "les livres de cuisine seulement"
+        ]
+      },
+      {
+        "prompt": "Quand souhaite-t-elle venir ?",
+        "answer": "samedi matin",
+        "options": [
+          "samedi matin",
+          "vendredi soir",
+          "lundi midi"
+        ]
+      },
+      {
+        "prompt": "Alice est la ___ de Victor.",
+        "answer": "fille",
+        "options": [
+          "fille",
+          "tante",
+          "cousine"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "centre-loisirs",
+    "genre": "email",
+    "direction": "reçu",
+    "title": "Une réponse du centre de loisirs",
+    "text": "De : Centre de loisirs des Pins\nÀ : Amel Bernard\nObjet : Inscription de Nour\n\nBonjour Madame,\nVotre fille Nour est inscrite à l’atelier de peinture du samedi, de 10 heures à 11 h 30. Son cousin Bilal est dans le même groupe. L’atelier est animé par Lucie, artiste peintre. Merci d’apporter un vieux tee-shirt et de régler les 25 francs à l’accueil avant le premier cours.\nCordialement,\nL’équipe du centre",
+    "questions": [
+      {
+        "prompt": "À quel atelier Nour est-elle inscrite ?",
+        "answer": "à la peinture",
+        "options": [
+          "à la peinture",
+          "à la natation",
+          "au théâtre"
+        ]
+      },
+      {
+        "prompt": "Bilal est le ___ de Nour.",
+        "answer": "cousin",
+        "options": [
+          "cousin",
+          "père",
+          "oncle"
+        ]
+      },
+      {
+        "prompt": "Qui anime l’atelier ?",
+        "answer": "Lucie",
+        "options": [
+          "Lucie",
+          "Amel",
+          "Nour"
+        ]
+      },
+      {
+        "prompt": "Que faut-il apporter ?",
+        "answer": "un vieux tee-shirt",
+        "options": [
+          "un vieux tee-shirt",
+          "un bonnet de bain",
+          "un appareil photo"
+        ]
+      },
+      {
+        "prompt": "Quel est le prix de l’atelier ?",
+        "answer": "25 francs",
+        "options": [
+          "25 francs",
+          "15 francs",
+          "50 francs"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "dejeuner",
+    "genre": "message",
+    "direction": "reçu",
+    "title": "Une invitation de grand-mère",
+    "text": "De : Grand-mère Rose\nÀ : Lucas\n\nBonjour Lucas ! Ton grand-père André et moi t’invitons à déjeuner mercredi. Ta cousine Sarah sera là avec sa mère, ta tante Sylvie. Sarah veut te parler de son nouveau travail de pâtissière. Viens vers midi et apporte le jeu de cartes. Nous préparons une soupe et une tarte aux pommes. Gros bisous, grand-mère.",
+    "questions": [
+      {
+        "prompt": "Qui écrit à Lucas ?",
+        "answer": "sa grand-mère Rose",
+        "options": [
+          "sa grand-mère Rose",
+          "sa tante Sylvie",
+          "sa cousine Sarah"
+        ]
+      },
+      {
+        "prompt": "Quel jour est prévu le déjeuner ?",
+        "answer": "mercredi",
+        "options": [
+          "mercredi",
+          "jeudi",
+          "samedi"
+        ]
+      },
+      {
+        "prompt": "Sarah est la ___ de Lucas.",
+        "answer": "cousine",
+        "options": [
+          "cousine",
+          "mère",
+          "nièce"
+        ]
+      },
+      {
+        "prompt": "Quel est le nouveau métier de Sarah ?",
+        "answer": "pâtissière",
+        "options": [
+          "pâtissière",
+          "médecin",
+          "bibliothécaire"
+        ]
+      },
+      {
+        "prompt": "Que doit apporter Lucas ?",
+        "answer": "le jeu de cartes",
+        "options": [
+          "le jeu de cartes",
+          "une soupe",
+          "une tarte"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "remerciement",
+    "genre": "message",
+    "direction": "envoyé",
+    "title": "Remercier son oncle",
+    "text": "De : Jade\nÀ : Oncle Nicolas\n\nMerci pour ton aide au déménagement, oncle Nicolas ! Ta camionnette était très pratique. Mon frère Nathan et moi avons fini de ranger les cartons. Maman, ta sœur Élodie, prépare un repas pour te remercier. Elle t’invite vendredi à 19 heures. Ta fille Louise, notre cousine, peut venir aussi. À bientôt ! Jade.",
+    "questions": [
+      {
+        "prompt": "Pourquoi Jade remercie-t-elle Nicolas ?",
+        "answer": "pour son aide au déménagement",
+        "options": [
+          "pour son aide au déménagement",
+          "pour une inscription",
+          "pour un cadeau d’anniversaire"
+        ]
+      },
+      {
+        "prompt": "Nathan est le ___ de Jade.",
+        "answer": "frère",
+        "options": [
+          "frère",
+          "oncle",
+          "neveu"
+        ]
+      },
+      {
+        "prompt": "Élodie est la ___ de Nicolas.",
+        "answer": "sœur",
+        "options": [
+          "sœur",
+          "fille",
+          "nièce"
+        ]
+      },
+      {
+        "prompt": "Quand Nicolas est-il invité ?",
+        "answer": "vendredi à 19 heures",
+        "options": [
+          "vendredi à 19 heures",
+          "jeudi à 19 heures",
+          "vendredi à midi"
+        ]
+      },
+      {
+        "prompt": "Louise est la ___ de Jade.",
+        "answer": "cousine",
+        "options": [
+          "cousine",
+          "mère",
+          "tante"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "absence",
+    "genre": "email",
+    "direction": "envoyé",
+    "title": "Signaler une absence à l’école",
+    "text": "De : Florence Morel\nÀ : Madame Simon, enseignante\nObjet : Absence de mon fils Oscar\n\nBonjour Madame,\nOscar sera absent demain matin, car il a un rendez-vous chez le dentiste à 9 heures. Son grand-père Bernard le ramènera à l’école vers 11 heures. Je travaille comme aide-soignante et ne peux pas l’accompagner. Merci de lui donner les exercices à terminer à la maison.\nCordialement,\nFlorence Morel",
+    "questions": [
+      {
+        "prompt": "Qui sera absent demain matin ?",
+        "answer": "Oscar",
+        "options": [
+          "Oscar",
+          "Bernard",
+          "Florence"
+        ]
+      },
+      {
+        "prompt": "Pourquoi sera-t-il absent ?",
+        "answer": "il a rendez-vous chez le dentiste",
+        "options": [
+          "il a rendez-vous chez le dentiste",
+          "il part en vacances",
+          "il doit travailler"
+        ]
+      },
+      {
+        "prompt": "Qui le ramènera à l’école ?",
+        "answer": "son grand-père",
+        "options": [
+          "son grand-père",
+          "sa tante",
+          "son cousin"
+        ]
+      },
+      {
+        "prompt": "Vers quelle heure reviendra-t-il ?",
+        "answer": "vers 11 heures",
+        "options": [
+          "vers 11 heures",
+          "vers 9 heures",
+          "vers 14 heures"
+        ]
+      },
+      {
+        "prompt": "Quel métier exerce Florence ?",
+        "answer": "aide-soignante",
+        "options": [
+          "aide-soignante",
+          "enseignante",
+          "dentiste"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "logement",
+    "genre": "email",
+    "direction": "reçu",
+    "title": "Une visite d’appartement",
+    "text": "De : Agence du Lac\nÀ : Laurent et Cécile Petit\nObjet : Visite de l’appartement\n\nBonjour,\nNous vous proposons une visite jeudi à 17 h 30 au 8, rue des Fleurs. L’appartement a trois chambres et se trouve près de l’école. Vous pouvez venir avec votre fils Victor et votre fille Alice. Pour préparer le dossier, apportez une pièce d’identité et vos trois dernières fiches de salaire.\nMeilleures salutations,\nIsabelle, agente immobilière",
+    "questions": [
+      {
+        "prompt": "Qui propose la visite ?",
+        "answer": "Isabelle",
+        "options": [
+          "Isabelle",
+          "Victor",
+          "Alice"
+        ]
+      },
+      {
+        "prompt": "Quand aura lieu la visite ?",
+        "answer": "jeudi à 17 h 30",
+        "options": [
+          "jeudi à 17 h 30",
+          "mardi à 17 h 30",
+          "jeudi à 10 heures"
+        ]
+      },
+      {
+        "prompt": "Combien de chambres y a-t-il ?",
+        "answer": "trois",
+        "options": [
+          "trois",
+          "deux",
+          "quatre"
+        ]
+      },
+      {
+        "prompt": "Alice est la ___ de Laurent et Cécile.",
+        "answer": "fille",
+        "options": [
+          "fille",
+          "tante",
+          "nièce"
+        ]
+      },
+      {
+        "prompt": "Quels documents de travail faut-il apporter ?",
+        "answer": "les trois dernières fiches de salaire",
+        "options": [
+          "les trois dernières fiches de salaire",
+          "un diplôme scolaire",
+          "une carte de bibliothèque"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "courses",
+    "genre": "message",
+    "direction": "envoyé",
+    "title": "Organiser les courses en famille",
+    "text": "De : Nora\nÀ : Son frère Léo\n\nSalut Léo ! Notre mère Eva termine son travail de fleuriste à 18 heures. Je vais faire les courses pour le dîner. Peux-tu acheter du pain en rentrant ? Notre tante Anna vient avec sa fille Mia, notre cousine. Papa prépare des pâtes pour six personnes. Retrouvons-nous à la maison à 19 heures. Nora.",
+    "questions": [
+      {
+        "prompt": "Léo est le ___ de Nora.",
+        "answer": "frère",
+        "options": [
+          "frère",
+          "père",
+          "neveu"
+        ]
+      },
+      {
+        "prompt": "Quel métier exerce Eva ?",
+        "answer": "fleuriste",
+        "options": [
+          "fleuriste",
+          "comptable",
+          "avocate"
+        ]
+      },
+      {
+        "prompt": "Que doit acheter Léo ?",
+        "answer": "du pain",
+        "options": [
+          "du pain",
+          "des pâtes",
+          "des fleurs"
+        ]
+      },
+      {
+        "prompt": "Mia est la ___ de Nora.",
+        "answer": "cousine",
+        "options": [
+          "cousine",
+          "grand-mère",
+          "mère"
+        ]
+      },
+      {
+        "prompt": "À quelle heure doivent-ils se retrouver ?",
+        "answer": "à 19 heures",
+        "options": [
+          "à 19 heures",
+          "à 18 heures",
+          "à 20 heures"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "photo",
+    "genre": "message",
+    "direction": "reçu",
+    "title": "Demander une photo de famille",
+    "text": "De : Cousine Yasmine\nÀ : Lina\n\nBonjour Lina ! Je prépare un album pour les 60 ans de notre tante Sonia. Peux-tu m’envoyer la photo prise à son mariage ? On y voit ton père Omar, mon père Farid et nos grands-parents Hassan et Samira. Envoie-la avant dimanche, s’il te plaît. Je ferai imprimer l’album lundi chez le photographe. Merci ! Yasmine.",
+    "questions": [
+      {
+        "prompt": "Yasmine est la ___ de Lina.",
+        "answer": "cousine",
+        "options": [
+          "cousine",
+          "mère",
+          "nièce"
+        ]
+      },
+      {
+        "prompt": "Pour qui prépare-t-elle un album ?",
+        "answer": "Sonia",
+        "options": [
+          "Sonia",
+          "Samira",
+          "Lina"
+        ]
+      },
+      {
+        "prompt": "Quelle photo demande-t-elle ?",
+        "answer": "la photo du mariage",
+        "options": [
+          "la photo du mariage",
+          "la photo de l’école",
+          "la photo du marché"
+        ]
+      },
+      {
+        "prompt": "Qui sont Hassan et Samira ?",
+        "answer": "leurs grands-parents",
+        "options": [
+          "leurs grands-parents",
+          "leurs cousins",
+          "leurs enfants"
+        ]
+      },
+      {
+        "prompt": "Quand faut-il envoyer la photo ?",
+        "answer": "avant dimanche",
+        "options": [
+          "avant dimanche",
+          "lundi soir",
+          "après mardi"
+        ]
+      }
+    ]
+  }
+]

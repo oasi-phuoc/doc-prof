@@ -48,6 +48,9 @@ function isLabelBlankPrompt(text: string): boolean {
 
 function themedParen(inner: string): ReactNode {
   const trimmed = inner.trim()
+  if (/masculin|féminin/i.test(trimmed)) {
+    return <> (<span className="tcf-verbe-theme">{trimmed}</span>)</>
+  }
   const comma = trimmed.indexOf(',')
   const verb = (comma === -1 ? trimmed : trimmed.slice(0, comma)).trim()
   const extra = comma === -1 ? '' : trimmed.slice(comma)
@@ -57,6 +60,15 @@ function themedParen(inner: string): ReactNode {
       <span className="tcf-verbe-theme">{verb}</span>
       {extra})
     </>
+  )
+}
+
+/** Gender cues keep the theme color even away from an answer line. */
+function renderGenderHints(text: string): ReactNode {
+  return text.split(/(\([^)]*(?:masculin|féminin)[^)]*\))/gi).map((part, index) =>
+    /^\([^)]*(?:masculin|féminin)/i.test(part)
+      ? <span key={index}>(<span className="tcf-verbe-theme">{part.slice(1, -1)}</span>)</span>
+      : part,
   )
 }
 
@@ -77,7 +89,7 @@ export function renderEnonceText(
   INLINE_BLANK_RE.lastIndex = 0
   let match: RegExpExecArray | null
   while ((match = INLINE_BLANK_RE.exec(text))) {
-    if (match.index > last) nodes.push(text.slice(last, match.index))
+    if (match.index > last) nodes.push(<Fragment key={`t${key}`}>{renderGenderHints(text.slice(last, match.index))}</Fragment>)
     nodes.push(
       <InlineBlank
         key={`b${key}`}
@@ -98,8 +110,8 @@ export function renderEnonceText(
     last = end
     key += 1
   }
-  if (nodes.length === 0) return text
-  if (last < text.length) nodes.push(text.slice(last))
+  if (nodes.length === 0) return renderGenderHints(text)
+  if (last < text.length) nodes.push(<Fragment key="tail">{renderGenderHints(text.slice(last))}</Fragment>)
   return nodes
 }
 
@@ -217,6 +229,7 @@ type QuestionHead = {
   image?: string
   images?: string[]
   showNumero?: boolean
+  blankStyle?: 'line' | 'dots'
 }
 
 export function QuestionQCMTexte({
@@ -238,7 +251,7 @@ export function QuestionQCMTexte({
       enonceSlot={
         <Enonce
           {...head}
-          blankStyle="dots"
+          blankStyle={head.blankStyle ?? 'dots'}
           showNumero={head.showNumero ?? !head.audioFrame}
         />
       }
@@ -275,7 +288,7 @@ export function QuestionQCMImage({
       enonceSlot={
         <Enonce
           {...head}
-          blankStyle="dots"
+          blankStyle={head.blankStyle ?? 'dots'}
           showNumero={head.showNumero ?? !head.audioFrame}
         />
       }
@@ -352,7 +365,9 @@ export function AudioCadre({
   questions,
   mode,
   onSelectForm,
+  blankStyle,
 }: {
+  blankStyle?: 'line' | 'dots'
   audioLabel: string
   questions: TcfCadreQuestion[]
   mode: PreviewMode
@@ -383,6 +398,7 @@ export function AudioCadre({
                   numeroLabel={q.numeroLabel}
                   enonce={q.enonce}
                   choix={q.choix}
+                  blankStyle={blankStyle}
                   image={q.image}
                   images={q.images}
                   points={q.points}
@@ -396,6 +412,7 @@ export function AudioCadre({
                   numeroLabel={q.numeroLabel}
                   enonce={q.enonce}
                   choix={q.choix}
+                  blankStyle={blankStyle}
                   image={q.image}
                   images={q.images}
                   points={q.points}

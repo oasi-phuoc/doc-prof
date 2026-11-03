@@ -231,7 +231,7 @@ export function usePageConfig({
         const block = pageBlocks(page)[targetBlock] ?? blockFromPage(page)
         const modes = resizeOralAnswerModes(block.oralAnswerModes, block.count)
         const sheet = worksheets[safeSheetIndex]
-        const sheetBlock = sheet?.blocks[targetBlock]
+        const sheetBlock = sheet?.blocks.find((entry, i) => (entry.sourceBlockIndex ?? i) === targetBlock)
         const item = sheetBlock?.items[itemIndex]
         const imagesAvailable = Boolean(item?.imagesAvailable)
         const offset = sheetBlock?.itemOffset ?? (sheet?.isContinuation ? 4 : 0)
@@ -248,7 +248,7 @@ export function usePageConfig({
         if (index !== pageIndex) return page
         const block = pageBlocks(page)[targetBlock] ?? blockFromPage(page)
         const sheet = worksheets[safeSheetIndex]
-        const sheetBlock = sheet?.blocks[targetBlock]
+        const sheetBlock = sheet?.blocks.find((entry, i) => (entry.sourceBlockIndex ?? i) === targetBlock)
         const offset = sheetBlock?.itemOffset ?? 0
         const modeIndex = itemIndex + offset
         const len = Math.max(block.tcfFormModes?.length ?? 0, modeIndex + 1, sheetBlock?.items.length ?? 0)
@@ -266,7 +266,7 @@ export function usePageConfig({
         if (index !== pageIndex) return page
         const block = pageBlocks(page)[targetBlock] ?? blockFromPage(page)
         const sheet = worksheets[safeSheetIndex]
-        const sheetBlock = sheet?.blocks[targetBlock]
+        const sheetBlock = sheet?.blocks.find((entry, i) => (entry.sourceBlockIndex ?? i) === targetBlock)
         const offset = sheetBlock?.itemOffset ?? 0
         const items = sheetBlock?.items ?? []
         const len = Math.max(block.tcfFormModes?.length ?? 0, items.length + offset, 1)
@@ -302,7 +302,7 @@ export function usePageConfig({
         if (index !== pageIndex) return page
         const block = pageBlocks(page)[targetBlock] ?? blockFromPage(page)
         const sheet = worksheets[safeSheetIndex]
-        const sheetBlock = sheet?.blocks[targetBlock]
+        const sheetBlock = sheet?.blocks.find((entry, i) => (entry.sourceBlockIndex ?? i) === targetBlock)
         const offset = sheetBlock?.itemOffset ?? 0
         // Saut avant la question = coupure après l’item précédent.
         const modeIndex = itemIndex + offset - 1
@@ -310,7 +310,7 @@ export function usePageConfig({
         const totalItems = Math.max(
           block.tcfPageBreakAfter?.length ?? 0,
           modeIndex + 1,
-          activeSheet?.blocks[targetBlock]?.items.length ?? 0,
+          sheetBlock?.items.length ?? 0,
         )
         const breaks = Array.from({ length: totalItems }, (_, i) => block.tcfPageBreakAfter?.[i] ?? false)
         breaks[modeIndex] = !breaks[modeIndex]

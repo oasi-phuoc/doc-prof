@@ -11,6 +11,10 @@ import {
 import { parseGramExerciseType } from './subthemes'
 import { bankForType, lessonForType } from './bank'
 import { gramItemsToTcfExercise } from './to-tcf'
+import { buildPresentOrder, isPresentSupplementSubtheme } from './present-supplement'
+import { buildQuestionReading, QUESTION_READING_CAP } from './question-reading'
+import { isQuestionReadingType } from './reading-types'
+import { tryBuildModalCommunication } from './modal-communication'
 import { isGrammaireExerciseType } from './types'
 import { buildGrammarCommunication, communicationQuestionCap, isCommunicationKind } from './communication'
 import {
@@ -131,6 +135,29 @@ export function tryGenerateGrammaireExerciseBlock(
     }
   }
 
+  if (parsed.subId === 'modaux') {
+    const modal = tryBuildModalCommunication({ kindId: parsed.kindId, typeId, rng, count: config.count, forms: config.tcfFormModes })
+    if (modal) return modal
+  }
+
+  if (isQuestionReadingType(typeId)) {
+    const exercise = buildQuestionReading({ typeId, rng, count: config.count })
+    return {
+      instruction: exercise.consigne ?? kind.instruction,
+      items: tcfExerciseItems(exercise, rng, config.tcfFormModes).map(item => ({
+        ...item, tcfExerciseId: exercise.id,
+      })),
+      bankQuestionCap: QUESTION_READING_CAP,
+    }
+  }
+
+  const orderedItems = buildPresentOrder({ ...parsed, count: config.count, rng })
+  if (orderedItems) return {
+    instruction: lessonForType(typeId)?.instruction ?? kind.instruction,
+    items: orderedItems,
+    bankQuestionCap: 50,
+  }
+
   if (isCommunicationKind(parsed.kindId)) {
     const exercise = buildGrammarCommunication({
       subId: parsed.subId, kindId: parsed.kindId, typeId, rng, count: config.count,
@@ -169,7 +196,8 @@ export function tryGenerateGrammaireExerciseBlock(
 
   const lesson = lessonForType(typeId)
   let instruction = lesson?.instruction ?? kind.instruction
-  const singleVerb = parsed.kindId === 'qcm-conj' || parsed.kindId === 'fill-conj'
+  const keepVerbCue = isPresentSupplementSubtheme(parsed.subId) && !['etre', 'avoir', 'aller-destination'].includes(parsed.subId)
+  const singleVerb = !keepVerbCue && (parsed.kindId === 'qcm-conj' || parsed.kindId === 'fill-conj')
     ? uniqueSampleVerb(sampled)
     : null
   const items = singleVerb

@@ -8,27 +8,24 @@ import type {
   TcfQuestionQcmTexte,
 } from '@/tcf/types'
 import type { GramExerciseKindId } from './kinds'
+import { buildFamilyReading } from './family-reading'
 
 const CHOICE_IDS = ['a', 'b', 'c'] as const
 const AUD = '/lib/audio/grammaire/famille'
 
 export const FAMILLE_KIND_IDS = [
   'fam-det',
-  'fam-pronoms-1',
-  'fam-pronoms-2',
   'fam-faire-part',
-  'fam-pe',
-  'fam-arbre',
   'fam-photo',
-  'fam-recit',
   'fam-email',
   'fam-co',
+  'fam-pe',
 ] as const satisfies readonly GramExerciseKindId[]
 
-export type FamilleKindId = (typeof FAMILLE_KIND_IDS)[number]
+export type FamilleKindId = (typeof FAMILLE_KIND_IDS)[number] | 'fam-pronoms-1' | 'fam-pronoms-2' | 'fam-arbre' | 'fam-recit'
 
 export function isFamilleKind(kindId: string): kindId is FamilleKindId {
-  return (FAMILLE_KIND_IDS as readonly string[]).includes(kindId)
+  return (FAMILLE_KIND_IDS as readonly string[]).includes(kindId) || kindId === 'fam-pronoms-1' || kindId === 'fam-pronoms-2' || kindId === 'fam-arbre' || kindId === 'fam-recit'
 }
 
 export const FAMILLE_DEFAULT_COUNT: Record<FamilleKindId, number> = {
@@ -36,7 +33,7 @@ export const FAMILLE_DEFAULT_COUNT: Record<FamilleKindId, number> = {
   'fam-pronoms-1': 7,
   'fam-pronoms-2': 8,
   'fam-faire-part': 6,
-  'fam-pe': 5,
+  'fam-pe': 1,
   'fam-arbre': 6,
   'fam-photo': 5,
   'fam-recit': 6,
@@ -47,7 +44,7 @@ export const FAMILLE_DEFAULT_COUNT: Record<FamilleKindId, number> = {
 export function familleBankCap(kindId: FamilleKindId): number {
   switch (kindId) {
     case 'fam-det':
-      return DET_BANK.length
+      return DET_BANK.length + PRONOMS_1.length + PRONOMS_2.length
     case 'fam-pronoms-1':
       return PRONOMS_1.length
     case 'fam-pronoms-2':
@@ -55,15 +52,15 @@ export function familleBankCap(kindId: FamilleKindId): number {
     case 'fam-faire-part':
       return FAIRE_PARTS[0]!.questions.length
     case 'fam-pe':
-      return 5
+      return 1
     case 'fam-arbre':
-      return ARBRE_QUESTIONS.length
+      return 5
     case 'fam-photo':
-      return PHOTO_SETS[0]!.questions.length
+      return 5
     case 'fam-recit':
-      return RECIT_QUESTIONS.length
+      return 5
     case 'fam-email':
-      return EMAIL_QUESTIONS.length
+      return 5
     case 'fam-co':
       return Math.max(...CO_SETS.map((s) => s.questions.length))
   }
@@ -74,12 +71,12 @@ export function familleFormUi(kindId: string): 'none' | 'header2' | 'margin3' {
     kindId === 'fam-det' ||
     kindId === 'fam-pronoms-1' ||
     kindId === 'fam-pronoms-2' ||
-    kindId === 'fam-faire-part' ||
-    kindId === 'fam-photo'
+    kindId === 'fam-faire-part'
   ) {
     return 'header2'
   }
   if (
+    kindId === 'fam-photo' ||
     kindId === 'fam-arbre' ||
     kindId === 'fam-recit' ||
     kindId === 'fam-email' ||
@@ -302,157 +299,8 @@ const FAIRE_PARTS: FairePart[] = [
 
 // —— PE ——
 
-const PE_MODELE = [
-  '1. Je m’appelle …',
-  '2. J’ai un frère / une sœur.',
-  '3. Mes parents s’appellent …',
-  '4. Mon grand-père habite à …',
-  '5. Nous sommes une famille de … personnes.',
-].join('\n')
+const PE_MODELE = 'Je m’appelle Léa. Dans ma famille, nous sommes cinq personnes. Mes parents s’appellent Julie et Thomas. J’ai un frère et une sœur. Mon frère s’appelle Noah et ma sœur s’appelle Emma. Mes grands-parents habitent près de chez nous. Nous aimons manger ensemble le dimanche.'
 
-// —— CE arbre ——
-
-const ARBRE_TEXTE = 'Élisabeth Kerval et Dominique Lepont ont une fille, Claire, et deux fils, Louis et Guillaume. Claire est musicienne. Elle est mariée à Damien Paulo, qui est chanteur. Ils ont un fils, Auguste. Ces deux parents sont artistes. Louis est médecin et le beau-frère de Damien. Guillaume et sa conjointe Camille Sagu sont étudiants. Ils ont un fils, Alban. Auguste et Alban sont les deux petits-fils d’Élisabeth et Dominique. Ils n’ont pas de petite-fille.'
-
-const ARBRE_QUESTIONS: TcfQuestion[] = [
-  vf('Dominique a une petite-fille.', false),
-  vf('Louis et Damien sont frères.', false),
-  vf('Camille est la sœur de Guillaume.', false),
-  vf('L’oncle d’Alban est médecin.', true),
-  vf('Les parents d’Auguste sont artistes.', true),
-  vf('Les grands-parents d’Alban ont trois fils.', false),
-]
-
-// —— CE photo ——
-
-type PhotoSet = {
-  slug: string
-  texte: string
-  questions: TcfQuestion[]
-}
-
-function photoQuestions(n: {
-  dad: string
-  girl: string
-  boy: string
-  gm: string
-  gf: string
-  mom: string
-}): TcfQuestion[] {
-  return [
-    dualQcmTrait(`${n.dad} est le ___ de ${n.girl}.`, 'père', ['père', 'frère', 'fils']),
-    dualQcmTrait(`${n.gf} est le ___ de ${n.boy}.`, 'grand-père', ['père', 'grand-père', 'oncle']),
-    dualQcmTrait(`${n.boy} est le ___ de ${n.girl}.`, 'frère', ['frère', 'père', 'cousin']),
-    dualQcmTrait(`${n.gm} est la ___ de ${n.boy}.`, 'grand-mère', ['mère', 'grand-mère', 'tante']),
-    dualQcmTrait(`${n.dad} et ${n.mom} sont les ___ de ${n.girl}.`, 'parents', ['parents', 'grands-parents', 'enfants']),
-  ]
-}
-
-const PHOTO_SETS: PhotoSet[] = [
-  {
-    slug: 'paul-lea',
-    texte: "Paul et Françoise ont deux enfants : Léa et Jules. Léa est la sœur de Jules. Elise est leur grand-mère et Daniel est leur grand-père.",
-    questions: photoQuestions({
-      dad: 'Paul',
-      girl: 'Léa',
-      boy: 'Jules',
-      gm: 'Elise',
-      gf: 'Daniel',
-      mom: 'Françoise',
-    }),
-  },
-  {
-    slug: 'marc-nina',
-    texte: "Marc et Sophie ont deux enfants : Nina et Hugo. Nina est la sœur de Hugo. Anne est leur grand-mère et Pierre est leur grand-père.",
-    questions: photoQuestions({
-      dad: 'Marc',
-      girl: 'Nina',
-      boy: 'Hugo',
-      gm: 'Anne',
-      gf: 'Pierre',
-      mom: 'Sophie',
-    }),
-  },
-  {
-    slug: 'karim-sara',
-    texte: "Karim et Leila ont deux enfants : Sara et Amir. Sara est la sœur d’Amir. Fatima est leur grand-mère et Hassan est leur grand-père.",
-    questions: photoQuestions({
-      dad: 'Karim',
-      girl: 'Sara',
-      boy: 'Amir',
-      gm: 'Fatima',
-      gf: 'Hassan',
-      mom: 'Leila',
-    }),
-  },
-  {
-    slug: 'thomas-emma',
-    texte: "Thomas et Julie ont deux enfants : Emma et Noah. Emma est la sœur de Noah. Claire est leur grand-mère et Jean est leur grand-père.",
-    questions: photoQuestions({
-      dad: 'Thomas',
-      girl: 'Emma',
-      boy: 'Noah',
-      gm: 'Claire',
-      gf: 'Jean',
-      mom: 'Julie',
-    }),
-  },
-  {
-    slug: 'youssef-mina',
-    texte: "Youssef et Nadia ont deux enfants : Mina et Adam. Mina est la sœur d’Adam. Amira est leur grand-mère et Rachid est leur grand-père.",
-    questions: photoQuestions({
-      dad: 'Youssef',
-      girl: 'Mina',
-      boy: 'Adam',
-      gm: 'Amira',
-      gf: 'Rachid',
-      mom: 'Nadia',
-    }),
-  },
-]
-
-// —— CE récit ——
-
-const RECIT_TEXTE = `Je vais vous parler de ma famille. Mes parents s’appellent Muzghan et Noorullah. J’ai un grand frère et une petite sœur. Mon frère s’appelle Ali, et ma sœur s’appelle Amina.
-J’ai deux cousins. Ils s’appellent Karim et Sara. Nous jouons souvent ensemble le week-end. La fille de Sara s’appelle Mary.
-Mon frère Ali a un fils et une fille. Mon neveu s’appelle Omar et ma nièce s’appelle Leila. La fille d’Amina s’appelle Jamila.`
-
-const RECIT_QUESTIONS: TcfQuestion[] = [
-  dualQcmTrait('Comment s’appellent les parents ?', 'Muzghan et Noorullah', [
-    'Muzghan et Noorullah',
-    'Ali et Amina',
-    'Karim et Sara',
-  ]),
-  dualQcmTrait('Combien de frères et sœurs a la personne ?', 'Un frère et une sœur', [
-    'Deux frères',
-    'Un frère et une sœur',
-    'Deux sœurs',
-  ]),
-  dualQcmTrait('Comment s’appelle le frère ?', 'Ali', ['Ali', 'Karim', 'Omar']),
-  dualQcmTrait('Comment s’appelle la fille de Sara ?', 'Mary', ['Mary', 'Leila', 'Jamila']),
-  lignes('Comment s’appelle le neveu ?', 'Omar'),
-  lignes('Comment s’appelle la nièce ?', 'Leila'),
-]
-
-// —— CE email ——
-
-const EMAIL_TEXTE = 'À : Monsieur le directeur\nObjet : Inscription à l’école\n\nMonsieur le directeur,\nNous sommes nouveaux à Saint-Georges et nous avons deux enfants : Marie, 8 ans, et Bérangère, 10 ans. Nous souhaitons les inscrire dans votre école.\nMerci beaucoup.\nCordialement,\nTom et Véronique Duval.'
-
-const EMAIL_QUESTIONS: TcfQuestion[] = [
-  dualQcmTrait('Le document est …', 'Un email au directeur', [
-    'Un email au directeur',
-    'Une invitation',
-    'Une lettre d’amour',
-  ]),
-  dualQcmTrait('C’est pour inscrire les enfants …', 'À l’école', [
-    'Au sport',
-    'À une fête',
-    'À l’école',
-  ]),
-  lignes('Comment s’appelle la mère ?', 'Véronique'),
-  lignes('Quel âge ont les enfants ?', 'Marie a 8 ans et Bérangère a 10 ans'),
-  lignes('Quel est le nom de famille ?', 'Duval'),
-]
 
 // —— CO ——
 
@@ -558,21 +406,25 @@ export function buildFamilleExercise(opts: {
   const { kindId, typeId, rng, count } = opts
   switch (kindId) {
     case 'fam-det': {
-      const rows = take(rng, DET_BANK, count)
-      return wrap(typeId, 'Choisissez le déterminant possessif correct.', {
+      const bank = [
+        ...DET_BANK.map((row) => {
+          const used = new Set<string>([row.answer, ...row.options])
+          const third =
+            ['Mon', 'Ma', 'Mes', 'Ton', 'Ta', 'Tes', 'Son', 'Sa', 'Ses', 'Notre', 'Nos', 'Votre', 'Vos', 'Leur', 'Leurs'].find(
+              (word) => !used.has(word),
+            ) ?? 'Ses'
+          return dualQcmTrait(row.stem, row.answer, [...row.options, third])
+        }),
+        ...PRONOMS_1.map((row) => dualQcmTrait(pronomPrompt(row), row.answer, pronomOptions(row.answer))),
+        ...PRONOMS_2.map((row) => dualQcmTrait(pronomPrompt2(row), row.answer, pronomOptions(row.answer))),
+      ]
+      return wrap(typeId, 'Complétez les phrases avec les déterminants possessifs.', {
         id: '',
         niveau: 'A1-A2',
         competence: 'CO',
         type_exercice: 'complet',
         support: { audio: '', transcription: '' },
-        questions: rows.map((row) => {
-          const used = new Set<string>([row.answer, ...row.options])
-          const third =
-            ['Mon', 'Ma', 'Mes', 'Ton', 'Ta', 'Tes', 'Son', 'Sa', 'Ses', 'Notre', 'Nos', 'Votre', 'Vos', 'Leur', 'Leurs'].find(
-              (w) => !used.has(w),
-            ) ?? 'Ses'
-          return dualQcmTrait(row.stem, row.answer, [row.options[0], row.options[1], third])
-        }),
+        questions: take(rng, bank, count),
       })
     }
     case 'fam-pronoms-1': {
@@ -602,75 +454,42 @@ export function buildFamilleExercise(opts: {
       })
     }
     case 'fam-faire-part': {
-      const set = pick(rng, FAIRE_PARTS)
+      const set = FAIRE_PARTS.find((part) => part.slug === 'lucas')!
       const questions = set.questions.slice(0, Math.max(1, count))
       return wrap(typeId, 'Lisez le faire-part, puis répondez aux questions.', {
         id: '',
         niveau: 'A1-A2',
         competence: 'CE',
         type_exercice: 'annonce',
-        support: { titre: '', texte: set.texte, image: null },
+        support: {
+          titre: '',
+          texte: set.texte.replace(/\. /g, '.\n'),
+          image: '/lib/images/documents/famille/bebe.webp',
+          presentation: 'image-bullets',
+        },
         questions,
       })
     }
     case 'fam-pe': {
-      const n = Math.min(Math.max(1, count), 5)
-      return wrap(typeId, 'Écrivez cinq phrases sur votre famille.', {
+      return wrap(typeId, 'Lisez la consigne et rédigez votre texte.', {
         id: '',
         niveau: 'A1-A2',
-        competence: 'CO',
-        type_exercice: 'complet',
-        support: { audio: '', transcription: PE_MODELE },
-        questions: Array.from({ length: n }, () =>
-          lignes('', '(phrase libre sur la famille)', 1),
-        ),
+        competence: 'PE',
+        type_exercice: 'question_texte',
+        support: {
+          consigne: 'Présentez votre famille en cinq phrases ou plus. Parlez de vos parents, de vos frères et sœurs ou d’autres personnes de votre famille. Dites comment ils s’appellent et ce que vous aimez faire ensemble. (40 mots minimum)',
+          nb_mots: { min: 40 },
+          reponse_modele: PE_MODELE,
+        },
+        questions: [],
       })
     }
-    case 'fam-arbre': {
-      const questions = ARBRE_QUESTIONS.slice(0, Math.max(1, count))
-      return wrap(typeId, 'Lisez la présentation de la famille. Vrai ou faux ?', {
-        id: '',
-        niveau: 'A1-A2',
-        competence: 'CE',
-        type_exercice: 'annonce',
-        support: { titre: 'Famille Lepont', texte: ARBRE_TEXTE, image: null },
-        questions,
-      })
-    }
-    case 'fam-photo': {
-      const set = pick(rng, PHOTO_SETS)
-      const questions = set.questions.slice(0, Math.max(1, count))
-      return wrap(typeId, 'Lisez la présentation. Complétez les phrases.', {
-        id: '',
-        niveau: 'A1-A2',
-        competence: 'CE',
-        type_exercice: 'annonce',
-        support: { titre: '', texte: set.texte, image: null },
-        questions,
-      })
-    }
-    case 'fam-recit': {
-      const questions = RECIT_QUESTIONS.slice(0, Math.max(1, count))
-      return wrap(typeId, 'Lisez le texte, puis répondez aux questions.', {
-        id: '',
-        niveau: 'A1-A2',
-        competence: 'CE',
-        type_exercice: 'annonce',
-        support: { titre: 'Ma famille', texte: RECIT_TEXTE, image: null },
-        questions,
-      })
-    }
-    case 'fam-email': {
-      const questions = EMAIL_QUESTIONS.slice(0, Math.max(1, count))
-      return wrap(typeId, 'Lisez le document, puis répondez aux questions.', {
-        id: '',
-        niveau: 'A1-A2',
-        competence: 'CE',
-        type_exercice: 'annonce',
-        support: { titre: 'Courriel au directeur', texte: EMAIL_TEXTE, image: null },
-        questions,
-      })
-    }
+    case 'fam-arbre':
+    case 'fam-photo':
+    case 'fam-recit':
+      return buildFamilyReading({ typeId, rng, count })
+    case 'fam-email':
+      return buildFamilyReading({ typeId, rng, count, messages: true })
     case 'fam-co': {
       const set = pick(rng, CO_SETS)
       const questions = set.questions.slice(0, Math.max(1, count))
