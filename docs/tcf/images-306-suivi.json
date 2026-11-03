@@ -15,11 +15,11 @@
   ],
   "summary": {
     "initial_question_candidates": 306,
-    "questions_illustrated_or_prepared": 139,
-    "newly_activated": 50,
-    "prepared_pending_audio_link": 85,
+    "questions_illustrated_or_prepared": 143,
+    "newly_activated": 51,
+    "prepared_pending_audio_link": 88,
     "prepared_pending_audio_validation": 4,
-    "remaining_questions_requiring_images_or_review": 167,
+    "remaining_questions_requiring_images_or_review": 163,
     "unreviewed_complete_trios": 0,
     "audio_references_next_stage": 432,
     "vocabulary_occurrences_final_stage": 1906
@@ -4871,7 +4871,7 @@
           "asset": "6744331d043a"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a1-abc:34:5259bb482d20:1000b471"
       ],
@@ -4884,16 +4884,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co834-dentiste-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cabinet-veterinaire-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cabinet-pediatrie-dessine.webp"
       ],
-      "missing_labels": [
-        "Le cabinet dentaire",
-        "Le cabinet vétérinaire",
-        "Le cabinet de pédiatrie"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-dentiste-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cabinet-veterinaire-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cabinet-pediatrie-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s54-co-3",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co834-dentiste-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-cabinet-veterinaire-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-cabinet-pediatrie-dessine.webp"
+        ],
+        "support_quote": "Bonjour, ici le cabinet dentaire. Je vous rappelle que vous avez rendez-vous le 13 janvier à 14h. Le rendez-vous est annulé si vous avez 10 minutes de retard. Pensez à apporter votre carte vitale. Prenez le métro. Évitez de prendre le bus ou la voiture. Il y a des travaux actuellement. Au revoir.",
+        "current_bank_transcription": "Bonjour, ici le cabinet dentaire.\nJe vous rappelle que vous avez rendez-vous le 13 janvier à 14 heures.\nLe rendez-vous est annulé si vous avez 10 minutes de retard.\nPensez à apporter votre carte Vitale.\nPrenez le métro, évitez de prendre le bus ou la voiture, il y a des travaux actuellement.\nAu revoir.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet contrôlé en paysage 4:3, style comparé à 48a753d8 et transcription relue. Cabinet dentaire existant réutilisé car fauteuil, lampe dentaire et instruments sont visibles ; cabinet vétérinaire à animal et pédiatrie à enfant distincts. Aucun jour, date ou horaire de rendez-vous dans les images."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -5330,20 +5344,29 @@
           "asset": "3b188af3d0c8"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-dent-cassee-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-bras-casse-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-brulure-main-dessine.webp"
       ],
-      "missing_labels": [
-        "Une dent cassée",
-        "Un bras cassé",
-        "Une brûlure à la main"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s57-co-3",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-dent-cassee-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-bras-casse-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-brulure-main-dessine.webp"
+        ],
+        "support_quote": "- Allo Docteur Roux ?\nC'est Mme Martin.\nMon fils de 5 ans a une dent cassée, est-ce que je peux venir au cabinet médical ?\n- Non !\nAppelez le cabinet dentaire plutôt !",
+        "current_bank_transcription": "- Allo Docteur Roux ?\nC'est Mme Martin.\nMon fils de 5 ans a une dent cassée, est-ce que je peux venir au cabinet médical ?\n- Non !\nAppelez le cabinet dentaire plutôt !",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet contrôlé en paysage 4:3, style comparé à 48a753d8 et transcription relue. Dent à couronne ébréchée, bras immobilisé dans un plâtre et petite brûlure de la main : trois problèmes distincts, sans diagnostic ajouté ni contenu graphique."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -5374,20 +5397,29 @@
           "asset": "6744331d043a"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co834-dentiste-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cabinet-veterinaire-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cabinet-pediatrie-dessine.webp"
       ],
-      "missing_labels": [
-        "Le cabinet dentaire",
-        "Le cabinet vétérinaire",
-        "Le cabinet de pédiatrie"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s57-co-3",
+        "question": 4,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co834-dentiste-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-cabinet-veterinaire-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-cabinet-pediatrie-dessine.webp"
+        ],
+        "support_quote": "- Allo Docteur Roux ?\nC'est Mme Martin.\nMon fils de 5 ans a une dent cassée, est-ce que je peux venir au cabinet médical ?\n- Non !\nAppelez le cabinet dentaire plutôt !",
+        "current_bank_transcription": "- Allo Docteur Roux ?\nC'est Mme Martin.\nMon fils de 5 ans a une dent cassée, est-ce que je peux venir au cabinet médical ?\n- Non !\nAppelez le cabinet dentaire plutôt !",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet contrôlé en paysage 4:3, style comparé à 48a753d8 et transcription relue. Même trio de cabinets réutilisé, les lieux sont qualifiés par leurs équipements et patients. Le cabinet dentaire reste la réponse au conseil donné après la dent cassée."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -12879,20 +12911,29 @@
           "asset": "d10da0d45157"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-radio-poumons-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-radio-bras-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-radio-dents-dessine.webp"
       ],
-      "missing_labels": [
-        "Une radio des poumons",
-        "Une radio du bras",
-        "Une radio des dents"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s53-co-1",
+        "question": 4,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-radio-poumons-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-radio-bras-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-radio-dents-dessine.webp"
+        ],
+        "support_quote": "— Comment allez-vous aujourd'hui, monsieur Abrie ?\n— Pas très bien. Je tousse toujours, je suis enrhumé et j'ai mal à la tête.\n— J'ai vos résultats d'analyse de sang et la radio des poumons. Vous avez une bronchite. Vous avez déjà un traitement contre la douleur et la fièvre. Prenez aussi cet antibiotique. Vous fumez toujours ?\n— Oui, un peu.\n— Il faut que vous fassiez attention. Pour guérir rapidement, arrêtez la cigarette.",
+        "current_bank_transcription": "— Comment allez-vous aujourd'hui, monsieur Abrie ?\n— Pas très bien. Je tousse toujours, je suis enrhumé et j'ai mal à la tête.\n— J'ai vos résultats d'analyse de sang et la radio des poumons. Vous avez une bronchite. Vous avez déjà un traitement contre la douleur et la fièvre. Prenez aussi cet antibiotique. Vous fumez toujours ?\n— Oui, un peu.\n— Il faut que vous fassiez attention. Pour guérir rapidement, arrêtez la cigarette.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet contrôlé en paysage 4:3, style comparé à 48a753d8 et transcription relue. Trois examens radiographiques présentés dans des panneaux semblables : thorax/poumons, bras et dents, régions anatomiques clairement distinctes. La question n’exige pas d’interprétation médicale du cliché."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",

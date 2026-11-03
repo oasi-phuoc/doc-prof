@@ -20096,6 +20096,345 @@
       "bytes": 90738,
       "domain": "co",
       "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-cabinet-veterinaire-dessine",
+      "label": "Le cabinet vétérinaire",
+      "path": "/lib/images/tcf/qcm-audit/co306-cabinet-veterinaire-dessine.webp",
+      "prompt": "Modifier uniquement l’étagère du cabinet vétérinaire : retirer entièrement les DEUX modèles de mains HUMAINES qui se trouvent entre le squelette animal et le meuble blanc en haut à droite. Les remplacer par deux petits livres de médecine vétérinaire à couvertures unies sans mots. Garder le squelette animal, la cage de transport, le chien entier, la vétérinaire, les deux mains de la vétérinaire, son stéthoscope et le reste de la scène. Même dessin numérique peint semi-réaliste aux contours discrets, couleurs naturelles et volumes doux. Format final PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Aucun mot, montant, date, jour, mois ou chiffre. Ne pas ajouter de personnage.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s54-co-3",
+          "question": 1,
+          "choice": "b",
+          "label": "Le cabinet vétérinaire",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        },
+        {
+          "exercise": "tcf-ss-a1-s57-co-3",
+          "question": 4,
+          "choice": "b",
+          "label": "Le cabinet vétérinaire",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "referenced_image_paths": [
+        "/workspace/generated_images/exec-f300d711-559f-42c6-8b26-0e8b884eb997.png"
+      ],
+      "previous_source_png": "/workspace/generated_images/exec-f300d711-559f-42c6-8b26-0e8b884eb997.png",
+      "revision_reason": "Deux modèles anatomiques de mains humaines apparus sur l’étagère sont inadaptés au cabinet vétérinaire et retirés avant publication.",
+      "source_png": "/workspace/generated_images/exec-f6b008e9-52c0-472d-bb1c-48c14f3ad24b.png",
+      "status": "visually_reviewed",
+      "review_note": "Cabinet vétérinaire avec vétérinaire fictive nouvelle, chien entier examiné, cage de transport et squelette animal. Les modèles de mains humaines parasites ont été retirés de l’étagère avant publication. Contrôle du concept entier et du natif paysage exact 4:3.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+        ],
+        "review_note": "Comparaison aux personnages et mains peints du club photo 48a753d8, relus visuellement : visages dessinés, volumes doux, contours discrets. Cabinet vétérinaire avec vétérinaire fictive nouvelle, chien entier examiné, cage de transport et squelette animal. Les modèles de mains humaines parasites ont été retirés de l’étagère avant publication."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "9100fc3cdba3ccc9d312bc8098cf2148c20d6e6421829d6334289dac3b4bd9c1",
+      "sha256": "9bf9cf3e0d5ab9cddde304a7c0d659ed1a3d8eff8ee5acc89e09bd56ef1610fc",
+      "bytes": 133314,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-cabinet-pediatrie-dessine",
+      "label": "Le cabinet de pédiatrie",
+      "path": "/lib/images/tcf/qcm-audit/co306-cabinet-pediatrie-dessine.webp",
+      "prompt": "Illustration pédagogique numérique DESSINÉE ET PEINTE semi-réaliste, format PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Contours fins discrets, volumes doux, nuances peintes et couleurs naturelles, sans photographie, 3D ou gros contour noir. Sujets caractéristiques entiers avec marges. Aucun mot, chiffre, nom, date, jour, mois, prix ou montant. Modifier le cabinet médical de la première référence pour en faire un cabinet de PÉDIATRIE, dans le dessin peint de la deuxième référence. Retirer les deux personnages de la première référence. Une pédiatre fictive nouvelle, femme vietnamienne de 62 ans aux cheveux gris courts et lunettes rondes, blouse blanche, examine avec un stéthoscope sur son T-shirt un petit garçon noir fictif de 5 ans assis sur une table d’examen basse. Il porte un T-shirt vert et un pantalon bleu, pieds pendants, posture calme. Quelques jouets et peluches montrent l’accueil des enfants. Deux bras et deux mains par personnage, pas de parent ou autre patient, aucune inscription.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s54-co-3",
+          "question": 1,
+          "choice": "c",
+          "label": "Le cabinet de pédiatrie",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        },
+        {
+          "exercise": "tcf-ss-a1-s57-co-3",
+          "question": 4,
+          "choice": "c",
+          "label": "Le cabinet de pédiatrie",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-medecin-dessine.webp",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "source_png": "/workspace/generated_images/exec-1dd266ad-be3c-4e65-8a8a-e08d25d775dc.png",
+      "status": "visually_reviewed",
+      "review_note": "Cabinet pédiatrique avec médecin âgée fictive nouvelle et jeune garçon noir examiné sur son T-shirt, jouets et table d’examen adaptée ; mains et membres relus, aucun autre patient. Contrôle du concept entier et du natif paysage exact 4:3.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+        ],
+        "review_note": "Comparaison aux personnages et mains peints du club photo 48a753d8, relus visuellement : visages dessinés, volumes doux, contours discrets. Cabinet pédiatrique avec médecin âgée fictive nouvelle et jeune garçon noir examiné sur son T-shirt, jouets et table d’examen adaptée ; mains et membres relus, aucun autre patient."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "b333b216544f9a8da9db08da217263e275b2230c5d03e2c616aec9424cfecdce",
+      "sha256": "db82e79f588ffc406f7da77c487ab16d252a31c903b150b014daf6c888278dcf",
+      "bytes": 159086,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-radio-poumons-dessine",
+      "label": "Une radio des poumons",
+      "path": "/lib/images/tcf/qcm-audit/co306-radio-poumons-dessine.webp",
+      "prompt": "Illustration pédagogique numérique DESSINÉE ET PEINTE semi-réaliste, format PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Contours fins discrets, volumes doux, nuances peintes et couleurs naturelles, sans photographie, 3D ou gros contour noir. Sujets caractéristiques entiers avec marges. Aucun mot, chiffre, nom, date, jour, mois, prix ou montant. Sur fond crème uni et ombre légère, un panneau de visualisation radiographique gris encadre un cliché NOIR ET BLANC frontal du thorax : cage thoracique symétrique, colonne centrale, deux champs pulmonaires, diaphragme et silhouette du cœur décalée normalement à gauche du patient. Dessin médical schématique propre et plausible, pas une photo radiologique réelle. Aucune marque de maladie, aucun cercle, flèche, chiffre, initiale ou légende. Panneau entier au centre, pas de patient.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a2-s53-co-1",
+          "question": 4,
+          "choice": "a",
+          "label": "Une radio des poumons",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-9f2d2b7c-aba1-46d6-bdbe-3349c12bb289.png",
+      "status": "visually_reviewed",
+      "review_note": "Radiographie thoracique en noir et blanc dans panneau gris entier sur fond crème ; les deux champs pulmonaires, côtes et silhouette cardiaque sont reconnaissables, aucune donnée personnelle ou date. Contrôle du concept entier et du natif paysage exact 4:3.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ],
+        "review_note": "Comparaison au modelé des objets 48a753d8 relus, fond crème, ombre douce et panneau entier dessiné ; les radiographies conservent une représentation monochrome du cliché médical. Radiographie thoracique en noir et blanc dans panneau gris entier sur fond crème ; les deux champs pulmonaires, côtes et silhouette cardiaque sont reconnaissables, aucune donnée personnelle ou date."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "b3569a05032452ffc891da5f78b94b5ae78e400281414887d581f8f42d6ca920",
+      "sha256": "723425a31a696fabd2ae9069908a6ef8d5fe552a8c43a6b6db13e6eb09a7b1ab",
+      "bytes": 55502,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-radio-bras-dessine",
+      "label": "Une radio du bras",
+      "path": "/lib/images/tcf/qcm-audit/co306-radio-bras-dessine.webp",
+      "prompt": "Illustration pédagogique numérique DESSINÉE ET PEINTE semi-réaliste, format PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Contours fins discrets, volumes doux, nuances peintes et couleurs naturelles, sans photographie, 3D ou gros contour noir. Sujets caractéristiques entiers avec marges. Aucun mot, chiffre, nom, date, jour, mois, prix ou montant. Sur fond crème uni et ombre légère, un panneau de visualisation radiographique gris encadre un cliché NOIR ET BLANC du bras humain, épaule à coude : un humérus unique continu, tête ronde au niveau de l’épaule et articulation du coude en bas, sans fracture. Image de l’os et de son contour de bras, schéma radiographique médical propre et plausible. Aucune marque, flèche, chiffre, initiale ou légende. Panneau entier au centre, pas de visage ou autre partie du corps.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a2-s53-co-1",
+          "question": 4,
+          "choice": "b",
+          "label": "Une radio du bras",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-a977e579-1188-4629-bd8a-2df71a362977.png",
+      "status": "visually_reviewed",
+      "review_note": "Radiographie de bras, humérus de l’épaule au coude reconnaissable dans panneau gris entier ; pas de fracture ou légende ajoutée. Contrôle du concept entier et du natif paysage exact 4:3.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ],
+        "review_note": "Comparaison au modelé des objets 48a753d8 relus, fond crème, ombre douce et panneau entier dessiné ; les radiographies conservent une représentation monochrome du cliché médical. Radiographie de bras, humérus de l’épaule au coude reconnaissable dans panneau gris entier ; pas de fracture ou légende ajoutée."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "8d96c1df6269504bd3f103a92dba767791b05917faa0f6bce92fa65b5d8f5b19",
+      "sha256": "ee943ec5e2f895ecd16e472ea79bf73b1a9c20e5491079d1017e0b92c4474da6",
+      "bytes": 26196,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-radio-dents-dessine",
+      "label": "Une radio des dents",
+      "path": "/lib/images/tcf/qcm-audit/co306-radio-dents-dessine.webp",
+      "prompt": "Illustration pédagogique numérique DESSINÉE ET PEINTE semi-réaliste, format PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Contours fins discrets, volumes doux, nuances peintes et couleurs naturelles, sans photographie, 3D ou gros contour noir. Sujets caractéristiques entiers avec marges. Aucun mot, chiffre, nom, date, jour, mois, prix ou montant. Sur fond crème uni et ombre légère, un panneau de visualisation radiographique gris encadre un cliché dentaire NOIR ET BLANC montrant les couronnes et racines de plusieurs dents alignées dans la mâchoire, radio dentaire panoramique simplifiée anatomiquement plausible. Aucun crâne entier, silhouette thoracique ou os de bras. Aucune marque, flèche, chiffre, initiale ou légende. Panneau entier au centre, pas de patient.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a2-s53-co-1",
+          "question": 4,
+          "choice": "c",
+          "label": "Une radio des dents",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-eeb01bf9-a877-4b34-ac2d-3dd7dc543d1c.png",
+      "status": "visually_reviewed",
+      "review_note": "Radiographie dentaire en noir et blanc, couronnes et racines de plusieurs dents visibles dans panneau gris entier ; pas de nombre, nom ou date. Contrôle du concept entier et du natif paysage exact 4:3.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ],
+        "review_note": "Comparaison au modelé des objets 48a753d8 relus, fond crème, ombre douce et panneau entier dessiné ; les radiographies conservent une représentation monochrome du cliché médical. Radiographie dentaire en noir et blanc, couronnes et racines de plusieurs dents visibles dans panneau gris entier ; pas de nombre, nom ou date."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "720700187b34eb586aa4baa55de7bc082cc93ec3d9615a5ce42e7dd04cb5e048",
+      "sha256": "a273eb2b69a62aced7aa351fd95dade5560852ad29ea4bf7baa83b437393962b",
+      "bytes": 66186,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-dent-cassee-dessine",
+      "label": "Une dent cassée",
+      "path": "/lib/images/tcf/qcm-audit/co306-dent-cassee-dessine.webp",
+      "prompt": "Illustration pédagogique numérique DESSINÉE ET PEINTE semi-réaliste, format PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Contours fins discrets, volumes doux, nuances peintes et couleurs naturelles, sans photographie, 3D ou gros contour noir. Sujets caractéristiques entiers avec marges. Aucun mot, chiffre, nom, date, jour, mois, prix ou montant. Sur fond crème uni et ombre légère : vue médicale pédagogique schématique d’UNE incisive blanche isolée avec sa couronne et sa racine. Un coin visible de la couronne est cassé et manque, une petite fissure part de ce bord ébréché, aucune dent supplémentaire ou morceau détaché. Pas de sang, chair ou gencive. Aspect propre, dessin peint aux contours fins, dent entière au centre.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s57-co-3",
+          "question": 3,
+          "choice": "a",
+          "label": "Une dent cassée",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-5731c15a-b183-4629-ad4f-ee8c136260b5.png",
+      "status": "visually_reviewed",
+      "review_note": "Une incisive isolée avec coin de couronne manquant et fissure discrète, racine entière ; dent cassée rendue explicite sans sang ou chair. Contrôle du concept entier et du natif paysage exact 4:3.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ],
+        "review_note": "Comparaison au modelé des objets 48a753d8 relus, fond crème, ombre douce et panneau entier dessiné ; les radiographies conservent une représentation monochrome du cliché médical. Une incisive isolée avec coin de couronne manquant et fissure discrète, racine entière ; dent cassée rendue explicite sans sang ou chair."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "c0d858bf50a0d47a4a25e1c17cec0950d3ab5754bceffd5ca2c4f27326e6a549",
+      "sha256": "b1db8c6a5818ed93d63a8911ef461e7ef1b76bad3636abd04cebc686eb10dc7f",
+      "bytes": 16304,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-bras-casse-dessine",
+      "label": "Un bras cassé",
+      "path": "/lib/images/tcf/qcm-audit/co306-bras-casse-dessine.webp",
+      "prompt": "Redessiner le sujet de la PREMIÈRE image avec le trait et le modelé peint des MAINS des personnages de la DEUXIÈME référence. La deuxième image est une référence de style seulement, ne pas ajouter ses personnages ou ses appareils photo. Conserver le même bras plâtré ou la même main selon la première image, exactement cinq doigts anatomiques et la même indication de blessure légère. Supprimer les pores et la microtexture photographique de la peau, remplacer par des aplats modelés doux et des petites ombres PEINTES avec fins contours discrets. Garder le modelé semi-réaliste naturel, pas de gros contour noir ou cartoon. Même fond crème. PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Sujet complet avec marges sur les quatre côtés, aucun mot, chiffre, montant, date, jour ou mois.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s57-co-3",
+          "question": 3,
+          "choice": "b",
+          "label": "Un bras cassé",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "previous_source_png": "/workspace/generated_images/exec-9a678f3f-f703-45c5-99ed-4c3e01631bcd.png",
+      "revision_reason": "Textures de peau trop photographiques, reprises avec les mains peintes de la référence 48a753d8.",
+      "referenced_image_paths": [
+        "/workspace/generated_images/exec-9a678f3f-f703-45c5-99ed-4c3e01631bcd.png",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "source_png": "/workspace/generated_images/exec-6982704d-9334-4b35-b918-ba4447c4ecf8.png",
+      "status": "visually_reviewed",
+      "review_note": "Bras immobilisé dans plâtre bleu clair et écharpe, main à cinq doigts. Peau et tissu redessinés avec modelé peint après rejet de la microtexture photographique. Contrôle du concept entier et du natif paysage exact 4:3.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+        ],
+        "review_note": "Comparaison aux personnages et mains peints du club photo 48a753d8, relus visuellement : visages dessinés, volumes doux, contours discrets. Bras immobilisé dans plâtre bleu clair et écharpe, main à cinq doigts. Peau et tissu redessinés avec modelé peint après rejet de la microtexture photographique."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "898b74a671735da9852bdb04a97cda52f1f4bb133f3898e7d771d72eb1bfa8b6",
+      "sha256": "73ed68c0268e47d6b5881e55ac32a1c6e06f131369929ed15e958604d64ae4c9",
+      "bytes": 46970,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-brulure-main-dessine",
+      "label": "Une brûlure à la main",
+      "path": "/lib/images/tcf/qcm-audit/co306-brulure-main-dessine.webp",
+      "prompt": "Redessiner le sujet de la PREMIÈRE image avec le trait et le modelé peint des MAINS des personnages de la DEUXIÈME référence. La deuxième image est une référence de style seulement, ne pas ajouter ses personnages ou ses appareils photo. Conserver le même bras plâtré ou la même main selon la première image, exactement cinq doigts anatomiques et la même indication de blessure légère. Supprimer les pores et la microtexture photographique de la peau, remplacer par des aplats modelés doux et des petites ombres PEINTES avec fins contours discrets. Garder le modelé semi-réaliste naturel, pas de gros contour noir ou cartoon. Même fond crème. PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Sujet complet avec marges sur les quatre côtés, aucun mot, chiffre, montant, date, jour ou mois.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s57-co-3",
+          "question": 3,
+          "choice": "c",
+          "label": "Une brûlure à la main",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "previous_source_png": "/workspace/generated_images/exec-0e47e83c-d7a6-4496-bb7b-23400ddb8fbd.png",
+      "revision_reason": "Textures de peau trop photographiques, reprises avec les mains peintes de la référence 48a753d8.",
+      "referenced_image_paths": [
+        "/workspace/generated_images/exec-0e47e83c-d7a6-4496-bb7b-23400ddb8fbd.png",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "source_png": "/workspace/generated_images/exec-763bcbf9-042c-4d92-9690-5f1b5fbc2eb7.png",
+      "status": "visually_reviewed",
+      "review_note": "Main entière à cinq doigts avec petite rougeur superficielle et deux traits de chaleur ; texture de peau redessinée avec modelé peint doux, sans sang ou blessure ouverte. Contrôle du concept entier et du natif paysage exact 4:3.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+        ],
+        "review_note": "Comparaison aux personnages et mains peints du club photo 48a753d8, relus visuellement : visages dessinés, volumes doux, contours discrets. Main entière à cinq doigts avec petite rougeur superficielle et deux traits de chaleur ; texture de peau redessinée avec modelé peint doux, sans sang ou blessure ouverte."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "e4e04df01a99b5f099158578749ef0a6f5eba8d7b8c07352be2feee9f93eb8e9",
+      "sha256": "fa7e13b62d41147bd086079c6fa9427d852543e428359e239202737b5d2f88cd",
+      "bytes": 25736,
+      "domain": "co",
+      "batch": "active-audios-834"
     }
   ],
   "activated_questions": [
@@ -24252,6 +24591,26 @@
       ],
       "source_ids": [
         "delf_a2_eb2w:002:6174b8971935"
+      ]
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s54-co-3",
+      "question": 1,
+      "enonce": "Quel cabinet rappelle le rendez-vous ?",
+      "images": [
+        "/lib/images/tcf/qcm-audit/co834-dentiste-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cabinet-veterinaire-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cabinet-pediatrie-dessine.webp"
+      ],
+      "source_batch": "active-audios-834",
+      "status": "active_after_visual_review",
+      "source_support_review": "Trio complet contrôlé en paysage 4:3, style comparé à 48a753d8 et transcription relue. Cabinet dentaire existant réutilisé car fauteuil, lampe dentaire et instruments sont visibles ; cabinet vétérinaire à animal et pédiatrie à enfant distincts. Aucun jour, date ou horaire de rendez-vous dans les images. Transcription relue : Bonjour, ici le cabinet dentaire. Je vous rappelle que vous avez rendez-vous le 13 janvier à 14h. Le rendez-vous est annulé si vous avez 10 minutes de retard. Pensez à apporter votre carte vitale. Prenez le métro. Évitez de prendre le bus ou la voiture. Il y a des travaux actuellement. Au revoir.",
+      "source_old_refs": [
+        "/lib/audio/tcf/co/transports/bonjour-ici-cabinet-dentaire.mp3"
+      ],
+      "source_ids": [
+        "additional-20261102:mdf-a1-abc:34:5259bb482d20:1000b471"
       ]
     }
   ],

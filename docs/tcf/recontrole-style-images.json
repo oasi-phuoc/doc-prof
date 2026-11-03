@@ -224,19 +224,19 @@
     "Les contours noirs appuyés, hachures et volumes fortement simplifiés des dernières reprises ne correspondent pas à la référence validée."
   ],
   "summary": {
-    "reviewed_co_images": 516,
+    "reviewed_co_images": 524,
     "reviewed_other_images": 59,
-    "reviewed_total_images": 575,
+    "reviewed_total_images": 583,
     "user_approved_reference_images": 35,
     "initial_redraw_required": 11,
     "initial_co_redraw_required": 11,
     "initial_other_redraw_required": 0,
-    "already_aligned": 564,
+    "already_aligned": 572,
     "redrawn_images": 11,
     "remaining_redraws": 0,
     "restored_previous_images": 14,
     "rejected_unpublished_previews": 12,
-    "new_images_compared_to_reference": 257
+    "new_images_compared_to_reference": 265
   },
   "superseded_review": {
     "commit": "f6f2a521",
@@ -7364,6 +7364,126 @@
       "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
       "references": [
         "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-cabinet-veterinaire-dessine",
+      "label": "Le cabinet vétérinaire",
+      "path": "/lib/images/tcf/qcm-audit/co306-cabinet-veterinaire-dessine.webp",
+      "sha256": "9bf9cf3e0d5ab9cddde304a7c0d659ed1a3d8eff8ee5acc89e09bd56ef1610fc",
+      "status": "aligned",
+      "review_note": "Comparaison aux personnages et mains peints du club photo 48a753d8, relus visuellement : visages dessinés, volumes doux, contours discrets. Cabinet vétérinaire avec vétérinaire fictive nouvelle, chien entier examiné, cage de transport et squelette animal. Les modèles de mains humaines parasites ont été retirés de l’étagère avant publication.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-cabinet-pediatrie-dessine",
+      "label": "Le cabinet de pédiatrie",
+      "path": "/lib/images/tcf/qcm-audit/co306-cabinet-pediatrie-dessine.webp",
+      "sha256": "db82e79f588ffc406f7da77c487ab16d252a31c903b150b014daf6c888278dcf",
+      "status": "aligned",
+      "review_note": "Comparaison aux personnages et mains peints du club photo 48a753d8, relus visuellement : visages dessinés, volumes doux, contours discrets. Cabinet pédiatrique avec médecin âgée fictive nouvelle et jeune garçon noir examiné sur son T-shirt, jouets et table d’examen adaptée ; mains et membres relus, aucun autre patient.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-radio-poumons-dessine",
+      "label": "Une radio des poumons",
+      "path": "/lib/images/tcf/qcm-audit/co306-radio-poumons-dessine.webp",
+      "sha256": "723425a31a696fabd2ae9069908a6ef8d5fe552a8c43a6b6db13e6eb09a7b1ab",
+      "status": "aligned",
+      "review_note": "Comparaison au modelé des objets 48a753d8 relus, fond crème, ombre douce et panneau entier dessiné ; les radiographies conservent une représentation monochrome du cliché médical. Radiographie thoracique en noir et blanc dans panneau gris entier sur fond crème ; les deux champs pulmonaires, côtes et silhouette cardiaque sont reconnaissables, aucune donnée personnelle ou date.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-radio-bras-dessine",
+      "label": "Une radio du bras",
+      "path": "/lib/images/tcf/qcm-audit/co306-radio-bras-dessine.webp",
+      "sha256": "ee943ec5e2f895ecd16e472ea79bf73b1a9c20e5491079d1017e0b92c4474da6",
+      "status": "aligned",
+      "review_note": "Comparaison au modelé des objets 48a753d8 relus, fond crème, ombre douce et panneau entier dessiné ; les radiographies conservent une représentation monochrome du cliché médical. Radiographie de bras, humérus de l’épaule au coude reconnaissable dans panneau gris entier ; pas de fracture ou légende ajoutée.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-radio-dents-dessine",
+      "label": "Une radio des dents",
+      "path": "/lib/images/tcf/qcm-audit/co306-radio-dents-dessine.webp",
+      "sha256": "a273eb2b69a62aced7aa351fd95dade5560852ad29ea4bf7baa83b437393962b",
+      "status": "aligned",
+      "review_note": "Comparaison au modelé des objets 48a753d8 relus, fond crème, ombre douce et panneau entier dessiné ; les radiographies conservent une représentation monochrome du cliché médical. Radiographie dentaire en noir et blanc, couronnes et racines de plusieurs dents visibles dans panneau gris entier ; pas de nombre, nom ou date.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-dent-cassee-dessine",
+      "label": "Une dent cassée",
+      "path": "/lib/images/tcf/qcm-audit/co306-dent-cassee-dessine.webp",
+      "sha256": "b1db8c6a5818ed93d63a8911ef461e7ef1b76bad3636abd04cebc686eb10dc7f",
+      "status": "aligned",
+      "review_note": "Comparaison au modelé des objets 48a753d8 relus, fond crème, ombre douce et panneau entier dessiné ; les radiographies conservent une représentation monochrome du cliché médical. Une incisive isolée avec coin de couronne manquant et fissure discrète, racine entière ; dent cassée rendue explicite sans sang ou chair.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-bras-casse-dessine",
+      "label": "Un bras cassé",
+      "path": "/lib/images/tcf/qcm-audit/co306-bras-casse-dessine.webp",
+      "sha256": "73ed68c0268e47d6b5881e55ac32a1c6e06f131369929ed15e958604d64ae4c9",
+      "status": "aligned",
+      "review_note": "Comparaison aux personnages et mains peints du club photo 48a753d8, relus visuellement : visages dessinés, volumes doux, contours discrets. Bras immobilisé dans plâtre bleu clair et écharpe, main à cinq doigts. Peau et tissu redessinés avec modelé peint après rejet de la microtexture photographique.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-brulure-main-dessine",
+      "label": "Une brûlure à la main",
+      "path": "/lib/images/tcf/qcm-audit/co306-brulure-main-dessine.webp",
+      "sha256": "fa7e13b62d41147bd086079c6fa9427d852543e428359e239202737b5d2f88cd",
+      "status": "aligned",
+      "review_note": "Comparaison aux personnages et mains peints du club photo 48a753d8, relus visuellement : visages dessinés, volumes doux, contours discrets. Main entière à cinq doigts avec petite rougeur superficielle et deux traits de chaleur ; texture de peau redessinée avec modelé peint doux, sans sang ou blessure ouverte.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
       ],
       "review_origin": "new_generation_after_reference48",
       "user_approved_reference": false

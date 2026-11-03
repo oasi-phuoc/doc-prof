@@ -31,20 +31,20 @@
     "received_source_entries": 836,
     "copyright_removed": 2,
     "planned_question_candidates": 423,
-    "activated_planned_questions": 167,
-    "pending_question_candidates": 256,
+    "activated_planned_questions": 168,
+    "pending_question_candidates": 255,
     "original_missing_concepts": 741,
-    "original_concepts_now_generated_or_reused": 403,
-    "remaining_original_concepts": 338,
-    "new_co_images_this_batch": 516,
+    "original_concepts_now_generated_or_reused": 411,
+    "remaining_original_concepts": 330,
+    "new_co_images_this_batch": 524,
     "activated_association_scenes_this_batch": 13,
     "pending_association_scenes": 0,
-    "sources_with_pending_question_candidates": 116,
-    "sources_with_new_active_question_or_scene": 167,
+    "sources_with_pending_question_candidates": 115,
+    "sources_with_new_active_question_or_scene": 168,
     "sources_without_current_bank_reference": 234,
     "remaining_audio_references_to_match": 432,
     "co_images_needing_style_correction": 0,
-    "co_images_style_aligned": 516,
+    "co_images_style_aligned": 524,
     "co_style_redraws_completed": 11
   },
   "instructions": [
@@ -10605,17 +10605,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/transports/bonjour-ici-cabinet-dentaire.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a1-s54-co-3",
           "question": 1
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 5,
-      "current_linked_image_variants": 2,
+      "current_linked_image_variants": 3,
       "complete_image_audit_certified": false
     },
     {
@@ -22992,7 +22992,7 @@
           "asset": "6744331d043a"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a1-abc:34:5259bb482d20:1000b471"
       ],
@@ -23003,6 +23003,11 @@
           "candidate_cut_id": "additional-20261102-mdf-a1-abc-34-5259bb482d20-1000b471-d1",
           "transcription": "Bonjour, ici le cabinet dentaire. Je vous rappelle que vous avez rendez-vous le 13 janvier à 14h. Le rendez-vous est annulé si vous avez 10 minutes de retard. Pensez à apporter votre carte vitale. Prenez le métro. Évitez de prendre le bus ou la voiture. Il y a des travaux actuellement. Au revoir."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-dentiste-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cabinet-veterinaire-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cabinet-pediatrie-dessine.webp"
       ]
     },
     {
@@ -23414,7 +23419,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-dent-cassee-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-bras-casse-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-brulure-main-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s57-co-3",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-dent-cassee-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-bras-casse-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-brulure-main-dessine.webp"
+        ],
+        "support_quote": "- Allo Docteur Roux ?\nC'est Mme Martin.\nMon fils de 5 ans a une dent cassée, est-ce que je peux venir au cabinet médical ?\n- Non !\nAppelez le cabinet dentaire plutôt !",
+        "current_bank_transcription": "- Allo Docteur Roux ?\nC'est Mme Martin.\nMon fils de 5 ans a une dent cassée, est-ce que je peux venir au cabinet médical ?\n- Non !\nAppelez le cabinet dentaire plutôt !",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet contrôlé en paysage 4:3, style comparé à 48a753d8 et transcription relue. Dent à couronne ébréchée, bras immobilisé dans un plâtre et petite brûlure de la main : trois problèmes distincts, sans diagnostic ajouté ni contenu graphique."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -23447,7 +23471,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co834-dentiste-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cabinet-veterinaire-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cabinet-pediatrie-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s57-co-3",
+        "question": 4,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co834-dentiste-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-cabinet-veterinaire-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-cabinet-pediatrie-dessine.webp"
+        ],
+        "support_quote": "- Allo Docteur Roux ?\nC'est Mme Martin.\nMon fils de 5 ans a une dent cassée, est-ce que je peux venir au cabinet médical ?\n- Non !\nAppelez le cabinet dentaire plutôt !",
+        "current_bank_transcription": "- Allo Docteur Roux ?\nC'est Mme Martin.\nMon fils de 5 ans a une dent cassée, est-ce que je peux venir au cabinet médical ?\n- Non !\nAppelez le cabinet dentaire plutôt !",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet contrôlé en paysage 4:3, style comparé à 48a753d8 et transcription relue. Même trio de cabinets réutilisé, les lieux sont qualifiés par leurs équipements et patients. Le cabinet dentaire reste la réponse au conseil donné après la dent cassée."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -32166,7 +32209,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-radio-poumons-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-radio-bras-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-radio-dents-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s53-co-1",
+        "question": 4,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-radio-poumons-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-radio-bras-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-radio-dents-dessine.webp"
+        ],
+        "support_quote": "— Comment allez-vous aujourd'hui, monsieur Abrie ?\n— Pas très bien. Je tousse toujours, je suis enrhumé et j'ai mal à la tête.\n— J'ai vos résultats d'analyse de sang et la radio des poumons. Vous avez une bronchite. Vous avez déjà un traitement contre la douleur et la fièvre. Prenez aussi cet antibiotique. Vous fumez toujours ?\n— Oui, un peu.\n— Il faut que vous fassiez attention. Pour guérir rapidement, arrêtez la cigarette.",
+        "current_bank_transcription": "— Comment allez-vous aujourd'hui, monsieur Abrie ?\n— Pas très bien. Je tousse toujours, je suis enrhumé et j'ai mal à la tête.\n— J'ai vos résultats d'analyse de sang et la radio des poumons. Vous avez une bronchite. Vous avez déjà un traitement contre la douleur et la fièvre. Prenez aussi cet antibiotique. Vous fumez toujours ?\n— Oui, un peu.\n— Il faut que vous fassiez attention. Pour guérir rapidement, arrêtez la cigarette.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet contrôlé en paysage 4:3, style comparé à 48a753d8 et transcription relue. Trois examens radiographiques présentés dans des panneaux semblables : thorax/poumons, bras et dents, régions anatomiques clairement distinctes. La question n’exige pas d’interprétation médicale du cliché."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -37819,7 +37881,7 @@
       "label": "Un bras cassé",
       "path_after_generation": "/lib/images/tcf/qcm-audit/ff8b74195f20.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un bras cassé ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s57-co-3",
@@ -37827,8 +37889,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-bras-casse-dessine.webp",
+      "sha256": "73ed68c0268e47d6b5881e55ac32a1c6e06f131369929ed15e958604d64ae4c9",
+      "review_note": "Bras immobilisé dans plâtre bleu clair et écharpe, main à cinq doigts. Peau et tissu redessinés avec modelé peint après rejet de la microtexture photographique. Contrôle du concept entier et du natif paysage exact 4:3.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "7343c3fe2e6b",
@@ -38619,7 +38686,7 @@
       "label": "Une brûlure à la main",
       "path_after_generation": "/lib/images/tcf/qcm-audit/3b188af3d0c8.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une brûlure à la main ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s57-co-3",
@@ -38627,8 +38694,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-brulure-main-dessine.webp",
+      "sha256": "fa7e13b62d41147bd086079c6fa9427d852543e428359e239202737b5d2f88cd",
+      "review_note": "Main entière à cinq doigts avec petite rougeur superficielle et deux traits de chaleur ; texture de peau redessinée avec modelé peint doux, sans sang ou blessure ouverte. Contrôle du concept entier et du natif paysage exact 4:3.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "db5830e319ed",
@@ -40670,7 +40742,7 @@
       "label": "Une radio du bras",
       "path_after_generation": "/lib/images/tcf/qcm-audit/ff3bcb9639f9.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une radio du bras ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s53-co-1",
@@ -40678,8 +40750,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-radio-bras-dessine.webp",
+      "sha256": "ee943ec5e2f895ecd16e472ea79bf73b1a9c20e5491079d1017e0b92c4474da6",
+      "review_note": "Radiographie de bras, humérus de l’épaule au coude reconnaissable dans panneau gris entier ; pas de fracture ou légende ajoutée. Contrôle du concept entier et du natif paysage exact 4:3.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "fd621f9ae768",
@@ -41864,7 +41941,7 @@
       "label": "Le cabinet de pédiatrie",
       "path_after_generation": "/lib/images/tcf/qcm-audit/6744331d043a.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le cabinet de pédiatrie ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s54-co-3",
@@ -41877,8 +41954,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-cabinet-pediatrie-dessine.webp",
+      "sha256": "db82e79f588ffc406f7da77c487ab16d252a31c903b150b014daf6c888278dcf",
+      "review_note": "Cabinet pédiatrique avec médecin âgée fictive nouvelle et jeune garçon noir examiné sur son T-shirt, jouets et table d’examen adaptée ; mains et membres relus, aucun autre patient. Contrôle du concept entier et du natif paysage exact 4:3.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "bdbfb0ff2ca8",
@@ -43557,7 +43639,7 @@
       "label": "Une radio des dents",
       "path_after_generation": "/lib/images/tcf/qcm-audit/d10da0d45157.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une radio des dents ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s53-co-1",
@@ -43565,8 +43647,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-radio-dents-dessine.webp",
+      "sha256": "a273eb2b69a62aced7aa351fd95dade5560852ad29ea4bf7baa83b437393962b",
+      "review_note": "Radiographie dentaire en noir et blanc, couronnes et racines de plusieurs dents visibles dans panneau gris entier ; pas de nombre, nom ou date. Contrôle du concept entier et du natif paysage exact 4:3.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "a7c5bfdf755a",
@@ -46053,7 +46140,7 @@
       "label": "Le cabinet vétérinaire",
       "path_after_generation": "/lib/images/tcf/qcm-audit/d0067cf05f8c.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le cabinet vétérinaire ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s54-co-3",
@@ -46066,8 +46153,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-cabinet-veterinaire-dessine.webp",
+      "sha256": "9bf9cf3e0d5ab9cddde304a7c0d659ed1a3d8eff8ee5acc89e09bd56ef1610fc",
+      "review_note": "Cabinet vétérinaire avec vétérinaire fictive nouvelle, chien entier examiné, cage de transport et squelette animal. Les modèles de mains humaines parasites ont été retirés de l’étagère avant publication. Contrôle du concept entier et du natif paysage exact 4:3.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "df5586f7ac66",
@@ -46158,7 +46250,7 @@
       "label": "Une dent cassée",
       "path_after_generation": "/lib/images/tcf/qcm-audit/6f98daf590b8.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une dent cassée ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s57-co-3",
@@ -46166,8 +46258,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-dent-cassee-dessine.webp",
+      "sha256": "b1db8c6a5818ed93d63a8911ef461e7ef1b76bad3636abd04cebc686eb10dc7f",
+      "review_note": "Une incisive isolée avec coin de couronne manquant et fissure discrète, racine entière ; dent cassée rendue explicite sans sang ou chair. Contrôle du concept entier et du natif paysage exact 4:3.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "86bde69ed810",
@@ -49028,7 +49125,7 @@
       "label": "Une radio des poumons",
       "path_after_generation": "/lib/images/tcf/qcm-audit/587687fe8c4e.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une radio des poumons ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s53-co-1",
@@ -49036,8 +49133,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-radio-poumons-dessine.webp",
+      "sha256": "723425a31a696fabd2ae9069908a6ef8d5fe552a8c43a6b6db13e6eb09a7b1ab",
+      "review_note": "Radiographie thoracique en noir et blanc dans panneau gris entier sur fond crème ; les deux champs pulmonaires, côtes et silhouette cardiaque sont reconnaissables, aucune donnée personnelle ou date. Contrôle du concept entier et du natif paysage exact 4:3.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "ba873cc2de37",
@@ -50643,19 +50745,19 @@
   "pending_association_images": [],
   "visual_style_review": {
     "audit": "recontrole-style-images.json",
-    "reviewed_co_images": 516,
+    "reviewed_co_images": 524,
     "reviewed_other_images": 59,
-    "reviewed_total_images": 575,
+    "reviewed_total_images": 583,
     "user_approved_reference_images": 35,
     "initial_redraw_required": 11,
     "initial_co_redraw_required": 11,
     "initial_other_redraw_required": 0,
-    "already_aligned": 564,
+    "already_aligned": 572,
     "redrawn_images": 11,
     "remaining_redraws": 0,
     "restored_previous_images": 14,
     "rejected_unpublished_previews": 12,
-    "new_images_compared_to_reference": 257
+    "new_images_compared_to_reference": 265
   },
   "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
   "workflow_order": [

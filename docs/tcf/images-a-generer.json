@@ -21,8 +21,8 @@
     },
     "generated_reviewed_assets": 48,
     "activated_ce_questions_this_batch": 59,
-    "co_new_reviewed_images_this_batch": 516,
-    "co_activated_questions_this_batch": 167,
+    "co_new_reviewed_images_this_batch": 524,
+    "co_activated_questions_this_batch": 168,
     "association_scenes_restored_this_batch": 13
   },
   "questions": [
@@ -6964,7 +6964,12 @@
           "asset": "6744331d043a"
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active_after_visual_and_source_text_review",
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-dentiste-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cabinet-veterinaire-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cabinet-pediatrie-dessine.webp"
+      ]
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
