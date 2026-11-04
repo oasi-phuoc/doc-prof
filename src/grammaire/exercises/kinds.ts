@@ -241,6 +241,13 @@ export const GRAM_EXERCISE_KINDS = [
     layout: 'qcm' as const,
   },
   {
+    id: 'co-theme',
+    label: 'Compréhension orale',
+    description: 'Enregistrements du thème, niveau A1 ; A2 sera ajouté plus tard.',
+    instruction: 'Écoutez l’enregistrement.',
+    layout: 'qcm' as const,
+  },
+  {
     id: 'ce-texte',
     label: 'Lire et répondre',
     description: 'Compréhension écrite : se présenter (format TCF CE).',

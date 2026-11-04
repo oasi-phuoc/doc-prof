@@ -2,6 +2,7 @@ import type { InstitutionalHeader } from '@/components/math/PrintDocumentChrome'
 import type { SheetFormat } from '@/components/generator/sheet-format'
 import type { Domain, PageConfig } from '@/math/types'
 import { normalizeLegacyPhraseBlock } from '@/francais/phrase-themes'
+import { normalizeGrammarCoBlock } from '@/grammaire/exercises/co-themes'
 
 /** Recette qui reproduit la fiche imprimée : config, graine, en-tête, points. */
 export type FicheRecipe = {
@@ -95,7 +96,8 @@ function migratePage(page: PageConfig): PageConfig {
       topic: migrateDomainToken(block.topic),
       exerciseType: migrateDomainToken(block.exerciseType),
     }
-    return page.domain === 'gattegno' ? normalizeLegacyPhraseBlock(migrated) : migrated
+    return page.domain === 'gattegno' ? normalizeLegacyPhraseBlock(migrated)
+      : page.domain === 'grammaire' ? normalizeGrammarCoBlock(migrated) : migrated
   })
   const migrated = {
     ...page,
@@ -104,7 +106,8 @@ function migratePage(page: PageConfig): PageConfig {
     exerciseType: migrateDomainToken(page.exerciseType),
     extraBlocks: extra,
   }
-  return migrated.domain === 'gattegno' ? normalizeLegacyPhraseBlock(migrated) : migrated
+  return migrated.domain === 'gattegno' ? normalizeLegacyPhraseBlock(migrated)
+    : migrated.domain === 'grammaire' ? normalizeGrammarCoBlock(migrated) : migrated
 }
 
 export function parseFicheRecipe(value: unknown): FicheRecipe | null {

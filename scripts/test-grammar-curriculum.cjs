@@ -59,7 +59,9 @@ for (const doc of theory) {
   }
   assert.deepEqual(doc.blocks, original.blocks, `restored theory ${doc.typeId}`)
 }
-const subthemes = ALL_GRAM_SUBTHEMES.filter(s => !protectedTopics.has(s.topic))
+// Imported listening contexts have audio supports, rather than new 50-question theory banks.
+const audioSubthemes = new Set(get('exercises/co-bank.ts').grammarCoSubthemes().map(s=>s.id))
+const subthemes = ALL_GRAM_SUBTHEMES.filter(s => !protectedTopics.has(s.topic) && !audioSubthemes.has(s.id))
 assert.deepEqual(new Set(lessons.map(l => l.subId)), new Set(subthemes.map(s => s.id)))
 const catalog = buildGrammairePracticeTypes()
 check(lessons.length === 104, '104 rewritten subthemes')
@@ -252,7 +254,7 @@ const { FAMILY_READING_TEXTS, FAMILY_MESSAGE_TEXTS, buildFamilyReading } = get('
 check(!familyTypes.some(t => /fam-(arbre|recit)$/.test(t.id)), 'old reading types combined under Photo de famille')
 check(familyTypes.find(t => t.id.endsWith('fam-photo')).label === 'Photo de famille', 'photo label retained')
 check(familyTypes.find(t => t.id.endsWith('fam-email')).label === 'Message et email', 'message label')
-check(familyTypes.find(t => t.id.endsWith('fam-co')).label === 'Compréhension orale', 'oral comprehension label')
+check(familyTypes.find(t => t.id.endsWith('co-theme')).label === 'Compréhension orale', 'shared oral comprehension label')
 check(new Set(FAMILY_MESSAGE_TEXTS.map(doc => doc.direction)).size === 2, 'sent and received messages')
 check(new Set(FAMILY_MESSAGE_TEXTS.map(doc => doc.genre)).size === 2, 'messages and emails')
 check(new Set(FAMILY_READING_TEXTS.map(doc => doc.genre)).size >= 10, 'varied reading genres')
@@ -353,7 +355,7 @@ for (const subId of Object.keys(PRESENT_SUPPLEMENT_DATA)) {
   }
   check(allSentences.size === 100, 'A1 and A2 contain one hundred unique sentences per verb')
 }
-for (const sub of ALL_GRAM_SUBTHEMES.filter(row => row.topic === 'gram-present')) {
+for (const sub of ALL_GRAM_SUBTHEMES.filter(row => row.topic === 'gram-present' && !audioSubthemes.has(row.id))) {
   check(PRESENT_SUPPLEMENT_DATA[sub.id], 'all present subthemes covered ' + sub.id)
   if (['etre','avoir','aller-destination'].includes(sub.id)) continue
   for (const kindId of ['ordre-a1','ordre-a2']) {
@@ -538,6 +540,10 @@ for (let i = 0; i < MODAL_READING_TEXTS.length; i++) {
 for (const type of catalog.filter(type => ['gram-present','gram-questions'].includes(type.topic))) {
   const isReading = /question-reading-(?:ce|write)$/.test(type.id) || type.id === 'gram-ex-modaux-communication-ce'
   const result = generate({ exerciseType: type.id, count: 1000 }, 99)
+  if (type.id.endsWith('-co-theme')) {
+    check(result.bankQuestionCap === 0 && result.items.length === 1 && result.items[0].tcf?.kind === 'support', 'imported audio has no invented questions ' + type.id)
+    continue
+  }
   if (isReading) {
     check(result.bankQuestionCap === 5, 'CE has five questions per document ' + type.id)
   } else {

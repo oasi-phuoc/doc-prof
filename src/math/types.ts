@@ -864,6 +864,9 @@ export type ExerciseBlock = {
   inlineBlankPx?: number
   /** Modes de réponse par question (compréhension orale) : QCM / texte / images. */
   oralAnswerModes?: Array<'qcm' | 'text' | 'images'>
+  /** Imported grammar listening lots: all current sources are A1; A2 is separate. */
+  grammarCoLevel?: 'A1' | 'A2'
+  grammarCoAudioId?: string
   /**
    * TCF : forme de réponse par item (qcm_texte / qcm_image / lignes).
    * Index = rang de l’item dans le bloc.

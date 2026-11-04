@@ -10,6 +10,7 @@ import { hasGrammarCommunication } from './communication'
 export function gramExerciseFormUi(exerciseType: string): QuiSuisJeFormUi {
   const parsed = parseGramExerciseType(exerciseType)
   if (!parsed) return 'none'
+  if (parsed.kindId==='co-theme') return 'margin3'
   if (parsed.subId === 'a1') return quiSuisJeFormUi(parsed.kindId)
   if (parsed.subId === 'a3') return nationaliteFormUi(parsed.kindId)
   if (parsed.subId === 'a6') return provenanceFormUi(parsed.kindId)

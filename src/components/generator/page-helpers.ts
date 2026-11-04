@@ -35,6 +35,7 @@ import {
   isFamilleKind,
 } from '@/grammaire/exercises/famille'
 import { isGrammaireExerciseType, isGrammaireTheoryType } from '@/grammaire/types'
+import { isGrammarCoType } from '@/grammaire/exercises/co-themes'
 import { isGrammarReadingType } from '@/grammaire/exercises/reading-types'
 import { parseAlphaType } from '@/alphabetisation/kinds'
 import { parseSoutienType } from '@/francais/soutien/kinds'
@@ -208,6 +209,8 @@ export function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<Exe
     track: type.track,
     phrasePolarity: isPhrase ? prev?.phrasePolarity : undefined,
     phraseCategories: isPhrase ? prev?.phraseCategories : undefined,
+    grammarCoLevel: isGrammarCoType(type.id) ? prev?.grammarCoLevel ?? 'A1' : undefined,
+    grammarCoAudioId: isGrammarCoType(type.id) && prev?.exerciseType===type.id ? prev.grammarCoAudioId : undefined,
     columns: type.preferredColumns ?? 2,
     ...clearLibreContentFreeze(),
     ...(isDecompose
