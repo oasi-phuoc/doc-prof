@@ -15,11 +15,11 @@
   ],
   "summary": {
     "initial_question_candidates": 306,
-    "questions_illustrated_or_prepared": 181,
-    "newly_activated": 78,
-    "prepared_pending_audio_link": 99,
+    "questions_illustrated_or_prepared": 189,
+    "newly_activated": 85,
+    "prepared_pending_audio_link": 100,
     "prepared_pending_audio_validation": 4,
-    "remaining_questions_requiring_images_or_review": 125,
+    "remaining_questions_requiring_images_or_review": 117,
     "unreviewed_complete_trios": 0,
     "audio_references_next_stage": 432,
     "vocabulary_occurrences_final_stage": 1906
@@ -6315,7 +6315,7 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:011:a99cd8478f3d"
       ],
@@ -6328,16 +6328,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-magasin-motos-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-magasin-velos-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp"
       ],
-      "missing_labels": [
-        "Dans un magasin de motos",
-        "Dans un magasin de vélos",
-        "Dans un restaurant"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-magasin-motos-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-magasin-velos-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a1-2022-co-ex1-11",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-magasin-motos-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-magasin-velos-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp"
+        ],
+        "support_quote": "Oui, c'est Jacques. Alors, samedi, je ne travaille pas au magasin de moto. On peut aller au parc faire du vélo. Après, on peut faire des crêpes chez moi. Appelle-moi.",
+        "current_bank_transcription": "Oui, c’est Jacques. Alors, samedi, je ne travaille pas au magasin de moto. On peut aller au parc faire du vélo. Après, on peut faire des crêpes chez moi. Appelle-moi !",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Boutique de motos à moteur, boutique de bicyclettes et salle de restaurant dressée : trois lieux entiers, aucun véhicule seul ne remplace son magasin."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -6368,7 +6382,7 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:011:a99cd8478f3d"
       ],
@@ -6381,16 +6395,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-faire-velo-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-jouer-football-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-courir-dessine.webp"
       ],
-      "missing_labels": [
-        "Faire du vélo",
-        "Jouer au football",
-        "Courir"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-faire-velo-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-jouer-football-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-courir-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a1-2022-co-ex1-11",
+        "question": 4,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-faire-velo-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-jouer-football-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-courir-dessine.webp"
+        ],
+        "support_quote": "Oui, c'est Jacques. Alors, samedi, je ne travaille pas au magasin de moto. On peut aller au parc faire du vélo. Après, on peut faire des crêpes chez moi. Appelle-moi.",
+        "current_bank_transcription": "Oui, c’est Jacques. Alors, samedi, je ne travaille pas au magasin de moto. On peut aller au parc faire du vélo. Après, on peut faire des crêpes chez moi. Appelle-moi !",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Personnes réellement en action : pédalage, jeu de football et course, trois activités distinctes. Visages et profils variés, figures et équipements entiers."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -6421,7 +6449,7 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:012:cb03e09d8390"
       ],
@@ -6434,16 +6462,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-foret-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-musee-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-supermarche-dessine.webp"
       ],
-      "missing_labels": [
-        "Dans les forêts de la région",
-        "Dans un musée",
-        "Dans un supermarché"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-foret-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-musee-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-supermarche-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a1-2022-co-ex1-12",
+        "question": 4,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-foret-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-musee-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-supermarche-dessine.webp"
+        ],
+        "support_quote": "Vous voulez voir des animaux? Visitez les forêts de notre région. Dans les arbres, cherchez les petits animaux. Il y a aussi beaucoup de champs avec des vaches.",
+        "current_bank_transcription": "Vous voulez voir des animaux ? Visitez les forêts de notre région. Dans les arbres, cherchez les petits animaux. Il y a aussi beaucoup de champs avec des vaches.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Forêt de feuillus existante réutilisée pour le type de milieu nommé : aucune région précise ou caractéristique géographique particulière n’est donnée par le support. Galerie de musée reprise en 4:3 et supermarché alimentaire distincts."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -6474,7 +6516,7 @@
           "asset": "e216360ad2b4"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:012:cb03e09d8390"
       ],
@@ -6487,16 +6529,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-arbres-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-magasins-dessine.webp"
       ],
-      "missing_labels": [
-        "Dans les arbres",
-        "Dans les gares",
-        "Dans les magasins"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-arbres-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-magasins-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a1-2022-co-ex1-12",
+        "question": 5,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-arbres-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-magasins-dessine.webp"
+        ],
+        "support_quote": "Vous voulez voir des animaux? Visitez les forêts de notre région. Dans les arbres, cherchez les petits animaux. Il y a aussi beaucoup de champs avec des vaches.",
+        "current_bank_transcription": "Vous voulez voir des animaux ? Visitez les forêts de notre région. Dans les arbres, cherchez les petits animaux. Il y a aussi beaucoup de champs avec des vaches.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Ramures de plusieurs arbres, gare déjà disponible et intérieurs de magasins : trois catégories de lieux. Le pluriel gares désigne un type de lieu sans quantité à compter ; l’intérieur de gare existant convient. Aucun animal ajouté pour marquer la bonne réponse."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -6527,7 +6583,7 @@
           "asset": "6a540e77d09f"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:012:cb03e09d8390"
       ],
@@ -6540,16 +6596,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-immeubles-boulevards-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-champs-vaches-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-plages-falaises-dessine.webp"
       ],
-      "missing_labels": [
-        "Les grands immeubles et les boulevards",
-        "Les champs et les vaches",
-        "Les plages et les falaises"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-immeubles-boulevards-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-champs-vaches-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-plages-falaises-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a1-2022-co-ex1-12",
+        "question": 9,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-immeubles-boulevards-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-champs-vaches-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-plages-falaises-dessine.webp"
+        ],
+        "support_quote": "Pour visiter la ville, prenez le bus touristique. Achetez un ticket au musée et montez dans le bus. Regardez les grands immeubles et les boulevards. C'est magnifique!",
+        "current_bank_transcription": "Pour visiter la ville, prenez le bus touristique. Achetez un ticket au musée et montez dans le bus. Regardez les grands immeubles et les boulevards. C’est magnifique !",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Chaque image conserve les deux éléments demandés : grands immeubles avec larges boulevards, champs avec vaches, plages avec falaises. Aucune réponse réduite à un seul élément."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -8492,7 +8562,7 @@
           "asset": "36a122d59ba7"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:071:6c883ff62da0"
       ],
@@ -8505,16 +8575,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-regarder-film-television-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-jouer-football-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-faire-promenade-dessine.webp"
       ],
-      "missing_labels": [
-        "Regarder un film à la télévision",
-        "Jouer au football",
-        "Faire une promenade"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-regarder-film-television-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-jouer-football-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-faire-promenade-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a1-2022-co-ex5-71",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-regarder-film-television-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-jouer-football-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-faire-promenade-dessine.webp"
+        ],
+        "support_quote": "Bonjour, c'est Pierre. Tu veux venir à la maison ce soir? Il y a un super film à la télévision. Viens à 20h. Tu as la clé de l'appartement, alors tu peux entrer. Je prépare des pâtes à la sauce tomate. Tu peux apporter du pain? Merci. A tout à l'heure.",
+        "current_bank_transcription": "Bonjour, c’est Pierre. Tu veux venir à la maison ce soir ? Il y a un super film à la télévision. Viens à 20 heures ! Tu as la clé de l’appartement alors tu peux entrer. Je prépare des pâtes à la sauce tomate. Tu peux apporter du pain ? Merci, à tout à l’heure.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Film regardé sur un téléviseur à la maison, jeu de football réutilisé et promenade calme ; l’action de regarder est visible, pas seulement un DVD ou une télévision isolée. Aucun horaire ajouté."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -10000,11 +10084,10 @@
       "resolved_images": [
         null,
         "/lib/images/tcf/qcm-audit/co306-banque-dessine.webp",
-        null
+        "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp"
       ],
       "missing_labels": [
-        "Une association",
-        "Un restaurant"
+        "Une association"
       ],
       "ready_for_source_review": false
     },
@@ -11703,12 +11786,11 @@
       "source_links": [],
       "resolved_images": [
         null,
-        null,
+        "/lib/images/tcf/qcm-audit/co306-ecouter-musique-dessine.webp",
         null
       ],
       "missing_labels": [
         "Lire les sous-titres",
-        "Écouter de la musique",
         "Regarder des dessins animés"
       ],
       "ready_for_source_review": false
@@ -12039,11 +12121,10 @@
       "resolved_images": [
         null,
         "/lib/images/tcf/qcm-audit/co306-hopital-dessine.webp",
-        null
+        "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp"
       ],
       "missing_labels": [
-        "L’entreprise et le bureau",
-        "Le restaurant"
+        "L’entreprise et le bureau"
       ],
       "ready_for_source_review": false
     },
@@ -12598,12 +12679,11 @@
       "source_links": [],
       "resolved_images": [
         null,
-        null,
+        "/lib/images/tcf/qcm-audit/co306-theatre-dessine.webp",
         null
       ],
       "missing_labels": [
         "L'église",
-        "Le théâtre",
         "Le palais de justice"
       ],
       "ready_for_source_review": false
@@ -12927,20 +13007,29 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co834-cours-gym-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-theatre-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-peinture-dessine.webp"
       ],
-      "missing_labels": [
-        "Du sport",
-        "Du théâtre",
-        "De la peinture"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s48-co-2",
+        "question": 2,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co834-cours-gym-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-theatre-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-peinture-dessine.webp"
+        ],
+        "support_quote": "- Catherine, salut !\nTu as bonne mine !\n- Oui, je fais du sport et je mange mieux.",
+        "current_bank_transcription": "- Catherine, salut !\nTu as bonne mine !\n- Oui, je fais du sport et je mange mieux.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Scène de gymnastique existante réutilisée pour la pratique sportive, théâtre joué et peinture pratiquée repris en 4:3 ; les activités sont visibles, pas seulement leurs lieux. Transcription actuelle relue ; audio de remplacement à rapprocher."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -14183,12 +14272,11 @@
       ],
       "resolved_images": [
         null,
-        null,
+        "/lib/images/tcf/qcm-audit/co306-musee-dessine.webp",
         "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp"
       ],
       "missing_labels": [
-        "Dans la grande salle des fêtes",
-        "Au musée"
+        "Dans la grande salle des fêtes"
       ],
       "ready_for_source_review": false
     },
@@ -15401,7 +15489,7 @@
           "asset": "f3686ebe2d92"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a2_2021:021:c9d13cfec4cd"
       ],
@@ -15414,16 +15502,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-ecouter-musique-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-regarder-film-television-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-jouer-football-dessine.webp"
       ],
-      "missing_labels": [
-        "Écouter de la musique",
-        "Regarder un film",
-        "Jouer au football"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-ecouter-musique-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-regarder-film-television-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-jouer-football-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a2-2021-co-ex3-21",
+        "question": 4,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-ecouter-musique-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-regarder-film-television-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-jouer-football-dessine.webp"
+        ],
+        "support_quote": "Simon, arrête ta musique et viens mettre la table, s'il plaît.",
+        "current_bank_transcription": "Simon, arrête ta musique et viens mettre la table, s’il te plaît.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Écoute de musique au casque, film regardé à la télévision réutilisé pour l’action générale regarder un film et football en train d’être joué réutilisé ; trois actions distinctes, pas de simples objets."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -16797,12 +16899,11 @@
       ],
       "resolved_images": [
         null,
-        null,
+        "/lib/images/tcf/qcm-audit/co306-theatre-dessine.webp",
         null
       ],
       "missing_labels": [
         "La danse",
-        "Le théâtre",
         "Les films futuristes"
       ],
       "ready_for_source_review": false

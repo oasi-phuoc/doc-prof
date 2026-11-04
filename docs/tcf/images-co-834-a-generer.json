@@ -31,20 +31,20 @@
     "received_source_entries": 836,
     "copyright_removed": 2,
     "planned_question_candidates": 423,
-    "activated_planned_questions": 195,
-    "pending_question_candidates": 228,
+    "activated_planned_questions": 202,
+    "pending_question_candidates": 221,
     "original_missing_concepts": 741,
-    "original_concepts_now_generated_or_reused": 477,
-    "remaining_original_concepts": 264,
-    "new_co_images_this_batch": 606,
+    "original_concepts_now_generated_or_reused": 491,
+    "remaining_original_concepts": 250,
+    "new_co_images_this_batch": 624,
     "activated_association_scenes_this_batch": 13,
     "pending_association_scenes": 0,
-    "sources_with_pending_question_candidates": 86,
-    "sources_with_new_active_question_or_scene": 184,
+    "sources_with_pending_question_candidates": 82,
+    "sources_with_new_active_question_or_scene": 187,
     "sources_without_current_bank_reference": 234,
     "remaining_audio_references_to_match": 432,
     "co_images_needing_style_correction": 0,
-    "co_images_style_aligned": 606,
+    "co_images_style_aligned": 624,
     "co_style_redraws_completed": 11
   },
   "instructions": [
@@ -1695,8 +1695,9 @@
         "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_11-2.mp3",
         "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_11-3.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "delf-a1-2022-co-ex1-11",
           "question": 3
@@ -1706,10 +1707,9 @@
           "question": 4
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 14,
-      "current_linked_image_variants": 7,
+      "current_linked_image_variants": 9,
       "complete_image_audit_certified": false
     },
     {
@@ -1724,8 +1724,9 @@
         "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_12-2.mp3",
         "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_12-3.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "delf-a1-2022-co-ex1-12",
           "question": 4
@@ -1739,10 +1740,9 @@
           "question": 9
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 10,
-      "current_linked_image_variants": 4,
+      "current_linked_image_variants": 7,
       "complete_image_audit_certified": false
     },
     {
@@ -3043,14 +3043,13 @@
       "old_refs": [
         "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_71.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "delf-a1-2022-co-ex5-71",
           "question": 3
-        }
-      ],
-      "new_active_visual_questions": [
+        },
         {
           "exercise": "delf-a1-2022-co-ex5-71",
           "question": 5
@@ -3062,7 +3061,7 @@
       ],
       "new_active_association_scenes": [],
       "current_linked_questions": 7,
-      "current_linked_image_variants": 5,
+      "current_linked_image_variants": 6,
       "complete_image_audit_certified": false
     },
     {
@@ -5991,17 +5990,17 @@
         "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_21-3.mp3",
         "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_21-4.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "delf-a2-2021-co-ex3-21",
           "question": 4
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 9,
-      "current_linked_image_variants": 1,
+      "current_linked_image_variants": 2,
       "complete_image_audit_certified": false
     },
     {
@@ -24426,7 +24425,7 @@
           "asset": null
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:011:a99cd8478f3d"
       ],
@@ -24437,6 +24436,11 @@
           "candidate_cut_id": "delf_a1_2022-011-a99cd8478f3d-r2-d1",
           "transcription": "Oui, c'est Jacques. Alors, samedi, je ne travaille pas au magasin de moto. On peut aller au parc faire du vélo. Après, on peut faire des crêpes chez moi. Appelle-moi."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-magasin-motos-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-magasin-velos-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp"
       ]
     },
     {
@@ -24468,7 +24472,7 @@
           "asset": null
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:011:a99cd8478f3d"
       ],
@@ -24479,6 +24483,11 @@
           "candidate_cut_id": "delf_a1_2022-011-a99cd8478f3d-r2-d1",
           "transcription": "Oui, c'est Jacques. Alors, samedi, je ne travaille pas au magasin de moto. On peut aller au parc faire du vélo. Après, on peut faire des crêpes chez moi. Appelle-moi."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-faire-velo-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-jouer-football-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-courir-dessine.webp"
       ]
     },
     {
@@ -24510,7 +24519,7 @@
           "asset": null
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:012:cb03e09d8390"
       ],
@@ -24521,6 +24530,11 @@
           "candidate_cut_id": "delf_a1_2022-012-cb03e09d8390-d2",
           "transcription": "Vous voulez voir des animaux? Visitez les forêts de notre région. Dans les arbres, cherchez les petits animaux. Il y a aussi beaucoup de champs avec des vaches."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-foret-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-musee-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-supermarche-dessine.webp"
       ]
     },
     {
@@ -24552,7 +24566,7 @@
           "asset": "e216360ad2b4"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:012:cb03e09d8390"
       ],
@@ -24563,6 +24577,11 @@
           "candidate_cut_id": "delf_a1_2022-012-cb03e09d8390-d2",
           "transcription": "Vous voulez voir des animaux? Visitez les forêts de notre région. Dans les arbres, cherchez les petits animaux. Il y a aussi beaucoup de champs avec des vaches."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-arbres-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-magasins-dessine.webp"
       ]
     },
     {
@@ -24594,7 +24613,7 @@
           "asset": "6a540e77d09f"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:012:cb03e09d8390"
       ],
@@ -24605,6 +24624,11 @@
           "candidate_cut_id": "delf_a1_2022-012-cb03e09d8390-d3",
           "transcription": "Pour visiter la ville, prenez le bus touristique. Achetez un ticket au musée et montez dans le bus. Regardez les grands immeubles et les boulevards. C'est magnifique!"
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-immeubles-boulevards-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-champs-vaches-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-plages-falaises-dessine.webp"
       ]
     },
     {
@@ -27077,7 +27101,7 @@
           "asset": "36a122d59ba7"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:071:6c883ff62da0"
       ],
@@ -27088,6 +27112,11 @@
           "candidate_cut_id": "delf_a1_2022-071-6c883ff62da0-d1",
           "transcription": "Bonjour, c'est Pierre. Tu veux venir à la maison ce soir? Il y a un super film à la télévision. Viens à 20h. Tu as la clé de l'appartement, alors tu peux entrer. Je prépare des pâtes à la sauce tomate. Tu peux apporter du pain? Merci. A tout à l'heure."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-regarder-film-television-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-jouer-football-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-faire-promenade-dessine.webp"
       ]
     },
     {
@@ -32048,7 +32077,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co834-cours-gym-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-theatre-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-peinture-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s48-co-2",
+        "question": 2,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co834-cours-gym-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-theatre-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-peinture-dessine.webp"
+        ],
+        "support_quote": "- Catherine, salut !\nTu as bonne mine !\n- Oui, je fais du sport et je mange mieux.",
+        "current_bank_transcription": "- Catherine, salut !\nTu as bonne mine !\n- Oui, je fais du sport et je mange mieux.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Scène de gymnastique existante réutilisée pour la pratique sportive, théâtre joué et peinture pratiquée repris en 4:3 ; les activités sont visibles, pas seulement leurs lieux. Transcription actuelle relue ; audio de remplacement à rapprocher."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -34824,7 +34872,7 @@
           "asset": "f3686ebe2d92"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a2_2021:021:c9d13cfec4cd"
       ],
@@ -34835,6 +34883,11 @@
           "candidate_cut_id": "delf_a2_2021-021-c9d13cfec4cd-d2",
           "transcription": "Simon, arrête ta musique et viens mettre la table, s'il plaît."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-ecouter-musique-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-regarder-film-television-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-jouer-football-dessine.webp"
       ]
     },
     {
@@ -36831,7 +36884,7 @@
       "label": "Dans un magasin de vélos",
       "path_after_generation": "/lib/images/tcf/qcm-audit/c80bf77287ca.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Dans un magasin de vélos ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-ex1-11",
@@ -36839,8 +36892,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-magasin-velos-dessine.webp",
+      "sha256": "465bdc06c68b82451f43c8ffe56db9341ffea6a3584aaa010771b7cdf47cc68e",
+      "review_note": "Magasin de bicyclettes avec deux vélos entiers au premier plan et vélos rangés derrière. Groupe de fête, verres, guirlandes et ballons du premier essai supprimés ; aucun moteur ou personne. Concept entier et paysage natif exact 4:3 relus ; sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "5f39fc017989",
@@ -37015,7 +37073,7 @@
       "label": "Faire une promenade",
       "path_after_generation": "/lib/images/tcf/qcm-audit/36a122d59ba7.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Faire une promenade ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1v-ce-008",
@@ -37028,8 +37086,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-faire-promenade-dessine.webp",
+      "sha256": "df61225be45134f696668dbfcb00b1c2376da9151b7d44b7c7793ddf97e8622f",
+      "review_note": "Deux adultes différents, femme âgée est-asiatique et homme polynésien, marchent calmement sur une allée de parc ; figures entières et pas de foulée de course ou équipement sportif. Concept entier et paysage natif exact 4:3 relus ; sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "4da20961efb9",
@@ -37200,7 +37263,7 @@
       "label": "Dans un magasin de motos",
       "path_after_generation": "/lib/images/tcf/qcm-audit/85532f3cbfde.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Dans un magasin de motos ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-ex1-11",
@@ -37208,8 +37271,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-magasin-motos-dessine.webp",
+      "sha256": "f048329de45d053d1deb4c975dae6fb78ec057996a6b25ef39cd35963aa309d5",
+      "review_note": "Intérieur de magasin avec deux motos entières au premier plan et une autre derrière, casques et vitrine ; véhicules à moteur et contexte de boutique bien distincts du magasin de bicyclettes. Concept entier et paysage natif exact 4:3 relus ; sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "74516d227fdd",
@@ -42649,7 +42717,7 @@
       "label": "Les plages et les falaises",
       "path_after_generation": "/lib/images/tcf/qcm-audit/6a540e77d09f.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Les plages et les falaises ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-ex1-12",
@@ -42657,8 +42725,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-plages-falaises-dessine.webp",
+      "sha256": "09f38b12eb87566a96404ba39c24c8f1b9bf597b0636319ab1d1e700a36b6298",
+      "review_note": "Deux anses de plage de sable au pied de hautes falaises claires, mer bleue et pelouse ; groupe de fête non demandé supprimé et côte reconstituée. Les deux éléments de la réponse sont conservés. Concept entier et paysage natif exact 4:3 relus ; sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "bc37c6957995",
@@ -44088,7 +44161,7 @@
       "label": "Les champs et les vaches",
       "path_after_generation": "/lib/images/tcf/qcm-audit/70e88782c480.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Les champs et les vaches ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-ex1-12",
@@ -44096,8 +44169,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-champs-vaches-dessine.webp",
+      "sha256": "cb3e150ff31bead25791801a81dacb8f09e44cbebc15031ab35a592f15b45c14",
+      "review_note": "Deux vaches distinctes, noire et blanche puis brune, paissent dans un champ avec autres parcelles de prairie derrière ; champs et vaches présents ensemble, anatomie naturelle et aucun personnage. Concept entier et paysage natif exact 4:3 relus ; sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "0ac701e8666e",
@@ -44775,7 +44853,7 @@
       "label": "Faire du vélo",
       "path_after_generation": "/lib/images/tcf/qcm-audit/bbbd36cf47df.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Faire du vélo ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a1p-s4-ce-1",
@@ -44788,8 +44866,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-faire-velo-dessine.webp",
+      "sha256": "cf547a08822a952696ecd9be9719aeaf66a72544d715419293e1aef4e158cf77",
+      "review_note": "Femme adulte est-asiatique à cheveux poivre et sel et veste orange, casque attaché, en train de pédaler sur son vélo bleu entier. Deux mains sur guidon et un pied par pédale ; activité et équipement complets. Concept entier et paysage natif exact 4:3 relus ; sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "fbc604d258a3",
@@ -46092,7 +46175,7 @@
       "label": "Les grands immeubles et les boulevards",
       "path_after_generation": "/lib/images/tcf/qcm-audit/45003505c590.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Les grands immeubles et les boulevards ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-ex1-12",
@@ -46100,8 +46183,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-immeubles-boulevards-dessine.webp",
+      "sha256": "33850c2487c1bec36304b64c17c795acfb3c995cf44a85e6f7b57f20e33cba75",
+      "review_note": "Grands immeubles à nombreux étages et deux larges boulevards à un carrefour, voitures donnant l’échelle. Groupe de fête non demandé supprimé, chaussées et trottoirs reconstitués ; les deux éléments de la réponse restent visibles. Concept entier et paysage natif exact 4:3 relus ; sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "83244c3241ea",
@@ -47033,7 +47121,7 @@
       "label": "Dans les magasins",
       "path_after_generation": "/lib/images/tcf/qcm-audit/e216360ad2b4.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Dans les magasins ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-ex1-12",
@@ -47041,8 +47129,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-magasins-dessine.webp",
+      "sha256": "f7b8b80be3d7c1c55cea93a448f446c71851a3253491f008639d40af3d97c807",
+      "review_note": "Galerie intérieure avec boutiques de vêtements, chaussures et livres, entrées et produits visibles. Groupe de fête non demandé supprimé, sols et vitrines reconstitués ; pas de façade extérieure à sa place. Concept entier et paysage natif exact 4:3 relus ; sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "d91860c5d269",
@@ -47186,7 +47279,7 @@
       "label": "Écouter de la musique",
       "path_after_generation": "/lib/images/tcf/qcm-audit/5d1772d40002.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Écouter de la musique ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s31-co-3",
@@ -47199,8 +47292,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-ecouter-musique-dessine.webp",
+      "sha256": "afe5d3f72e26788f504d41c623c05180e6778b33e5a2b566403fdaa54c58ad0c",
+      "review_note": "Jeune homme adulte brun à cheveux bouclés, casque audio sur les oreilles, écoutant détendu dans un fauteuil ; lecteur relié au casque à simple note de musique sur son écran, aucun chiffre, jeu vidéo ou microphone. Concept entier et paysage natif exact 4:3 relus ; sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "e5a591e159fa",
@@ -47604,7 +47702,7 @@
       "label": "Du théâtre",
       "path_after_generation": "/lib/images/tcf/qcm-audit/141068626994.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Du théâtre ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s48-co-2",
@@ -47612,8 +47710,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-theatre-dessine.webp",
+      "sha256": "0623da1b72b84c31490e3aaaf2e8117af58153d729cac7d5c15c7a4339701887",
+      "review_note": "Théâtre joué par les deux acteurs de la scène existante, recomposé en 4:3 avec rideaux et spectateurs ; deux bras par acteur et gestes de dialogue conservés, aucun bras supplémentaire. Concept entier et paysage natif exact 4:3 relus ; sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "463d39608061",
@@ -48372,7 +48475,7 @@
       "label": "Dans les gares",
       "path_after_generation": "/lib/images/tcf/qcm-audit/7458b7170365.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Dans les gares ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-ex1-12",
@@ -48385,15 +48488,20 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp",
+      "sha256": "90c6937e14ff3f93037ccbac70366ec8831989cde9964d64bac55b1ec8ae9570",
+      "review_note": "Train et quais sous verrière, trois voyageurs différents avec bagages, aucun horaire affiché. Contrôle visuel individuel : format natif exact 4:3, sujet entier, aucun montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "c7304ab36c5e",
       "label": "Regarder un film à la télévision",
       "path_after_generation": "/lib/images/tcf/qcm-audit/c7304ab36c5e.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Regarder un film à la télévision ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-ex5-71",
@@ -48401,8 +48509,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-regarder-film-television-dessine.webp",
+      "sha256": "f45b5baad64efe8001dde2856b80375199b1faa73ac97401cfc388f23e98f630",
+      "review_note": "Deux adultes d’âges et d’origines variés sont assis sur un canapé et regardent un film de fiction sur un téléviseur entier ; l’action est visible et l’écran ne montre pas un match ou jeu vidéo. Concept entier et paysage natif exact 4:3 relus ; sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "b5e107d80468",
@@ -48677,7 +48790,7 @@
       "label": "Regarder un film",
       "path_after_generation": "/lib/images/tcf/qcm-audit/288e5a9a788e.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Regarder un film ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1v-ce-008",
@@ -48690,8 +48803,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-regarder-film-television-dessine.webp",
+      "sha256": "f45b5baad64efe8001dde2856b80375199b1faa73ac97401cfc388f23e98f630",
+      "review_note": "Deux adultes d’âges et d’origines variés sont assis sur un canapé et regardent un film de fiction sur un téléviseur entier ; l’action est visible et l’écran ne montre pas un match ou jeu vidéo. Concept entier et paysage natif exact 4:3 relus ; sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "0a8c5d6e0895",
@@ -51071,7 +51189,7 @@
       "label": "Dans les forêts de la région",
       "path_after_generation": "/lib/images/tcf/qcm-audit/8c66d60f5446.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Dans les forêts de la région ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-ex1-12",
@@ -51079,8 +51197,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-foret-dessine.webp",
+      "sha256": "aeeed7ab78e592299cbba947a3b510d8e6f9077ce2eae9fa1b60f7057109b35f",
+      "review_note": "Intérieur d’une forêt dense de feuillus avec troncs, sous-bois, fougères et sentier naturel ; aucun jardin aménagé ou massif montagneux parasite. Concept entier et paysage natif exact 4:3 relus ; sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "500c216cb3b1",
@@ -51406,19 +51529,19 @@
   "pending_association_images": [],
   "visual_style_review": {
     "audit": "recontrole-style-images.json",
-    "reviewed_co_images": 606,
+    "reviewed_co_images": 624,
     "reviewed_other_images": 59,
-    "reviewed_total_images": 665,
+    "reviewed_total_images": 683,
     "user_approved_reference_images": 35,
     "initial_redraw_required": 11,
     "initial_co_redraw_required": 11,
     "initial_other_redraw_required": 0,
-    "already_aligned": 654,
+    "already_aligned": 672,
     "redrawn_images": 11,
     "remaining_redraws": 0,
     "restored_previous_images": 14,
     "rejected_unpublished_previews": 12,
-    "new_images_compared_to_reference": 347
+    "new_images_compared_to_reference": 365
   },
   "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
   "workflow_order": [

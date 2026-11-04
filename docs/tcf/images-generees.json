@@ -23934,6 +23934,799 @@
       "bytes": 375336,
       "domain": "co",
       "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-magasin-motos-dessine",
+      "label": "Dans un magasin de motos",
+      "path": "/lib/images/tcf/qcm-audit/co306-magasin-motos-dessine.webp",
+      "prompt": "Recomposer les références en une illustration numérique DESSINÉE et PEINTE semi-réaliste, comme la dernière référence de fête validée : contours fins discrets, modelé doux, nuances et petites touches de pinceau, couleurs naturelles chaleureuses et matières peintes. Les visages, mains et vêtements sont PEINTS en nuances douces sans pores ou microtexture photographique ; pas de photographie, rendu 3D, filtre ou gros contour noir. PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Une seule scène, sujets principaux ENTIERS avec marges. Aucun montant, prix, date, jour, mois, horaire, chiffre, texte, logo, marque ou légende. Les nouveaux personnages sont fictifs, divers et différents de ceux des références ; deux bras, deux jambes et cinq doigts par main. Intérieur d’un MAGASIN DE MOTOS : deux vraies motos entières sur leurs béquilles et une troisième plus loin, sol de magasin, vitrine et présentoir de casques sans marque. Conserver le type de moto bleue de la première référence ; ajouter une moto rouge de type similaire. Aucun vélo, scooter, mécanicien, rue ou personne. Aucun texte ou étiquette.",
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co306-moto-dessine.webp",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "references": [
+        {
+          "exercise": "delf-a1-2022-co-ex1-11",
+          "question": 3,
+          "choice": "a",
+          "label": "Dans un magasin de motos",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-51046620-e0af-4871-b009-1e02be33c93d.png",
+      "status": "visually_reviewed",
+      "review_note": "Intérieur de magasin avec deux motos entières au premier plan et une autre derrière, casques et vitrine ; véhicules à moteur et contexte de boutique bien distincts du magasin de bicyclettes. Concept entier et paysage natif exact 4:3 relus ; sans date ou montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+        ],
+        "review_note": "Comparaison aux références 48a753d8 réellement vues : peinture numérique à contours discrets, volumes doux, couleurs naturelles et visages peints. Les nouvelles distributions sont variées ; les scènes déjà disponibles conservent leurs personnes lors de la reprise en 4:3. Intérieur de magasin avec deux motos entières au premier plan et une autre derrière, casques et vitrine ; véhicules à moteur et contexte de boutique bien distincts du magasin de bicyclettes."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "daf650fd97141640104e80084a475eb4f7e4f22be0c6cef1637be99b4b6d9eb0",
+      "sha256": "f048329de45d053d1deb4c975dae6fb78ec057996a6b25ef39cd35963aa309d5",
+      "bytes": 242366,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-magasin-velos-dessine",
+      "label": "Dans un magasin de vélos",
+      "path": "/lib/images/tcf/qcm-audit/co306-magasin-velos-dessine.webp",
+      "prompt": "MODIFICATION PRÉCISE de la première image. SUPPRIMER ABSOLUMENT TOUS LES PERSONNAGES, toutes les silhouettes, leurs ombres et les objets tenus. La scène est ENTIÈREMENT VIDE DE PERSONNES. Reconstituer naturellement le sol et le décor à leur place, sans silhouette résiduelle. Conserver les DEUX vélos entiers au premier plan, les vélos rangés derrière et les présentoirs de casques : une vraie boutique de vélos. RETIRER AUSSI toutes les guirlandes et tous les ballons de fête. Aucun décor de fête ne doit rester. Conserver le cadrage, la perspective et le dessin numérique PEINT semi-réaliste doux de l’image. La deuxième référence confirme seulement le modelé peint des objets. PAYSAGE EXACT 4:3, 1448 × 1086. Aucun nouveau personnage, reflet humain, mannequin réaliste, affiche, logo, mot, chiffre, montant, date, jour ou mois. Ne pas transformer le style en photo ou gros contours noirs.",
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co306-moto-dessine.webp",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "references": [
+        {
+          "exercise": "delf-a1-2022-co-ex1-11",
+          "question": 3,
+          "choice": "b",
+          "label": "Dans un magasin de vélos",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-5bd5816f-fa13-480d-9736-36b3492755d8.png",
+      "status": "visually_reviewed",
+      "previous_source_png": "/workspace/generated_images/exec-53246277-8a68-4064-b6a7-593808ca818e.png",
+      "revision_reason": "Supprimer les personnages non demandés repris de la référence et restituer le lieu demandé sans groupe de fête.",
+      "review_note": "Magasin de bicyclettes avec deux vélos entiers au premier plan et vélos rangés derrière. Groupe de fête, verres, guirlandes et ballons du premier essai supprimés ; aucun moteur ou personne. Concept entier et paysage natif exact 4:3 relus ; sans date ou montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+        ],
+        "review_note": "Comparaison aux références 48a753d8 réellement vues : peinture numérique à contours discrets, volumes doux, couleurs naturelles et visages peints. Les nouvelles distributions sont variées ; les scènes déjà disponibles conservent leurs personnes lors de la reprise en 4:3. Magasin de bicyclettes avec deux vélos entiers au premier plan et vélos rangés derrière. Groupe de fête, verres, guirlandes et ballons du premier essai supprimés ; aucun moteur ou personne."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "c5472ceab493fb250e47b5477b52d42bf77eeb77a5278dc6f39af6523f1695f2",
+      "sha256": "465bdc06c68b82451f43c8ffe56db9341ffea6a3584aaa010771b7cdf47cc68e",
+      "bytes": 303328,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-restaurant-dessine",
+      "label": "Dans un restaurant",
+      "path": "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp",
+      "prompt": "MODIFICATION PRÉCISE de la première image. SUPPRIMER ABSOLUMENT TOUS LES PERSONNAGES, toutes les silhouettes, leurs ombres et les objets tenus. La scène est ENTIÈREMENT VIDE DE PERSONNES. Reconstituer naturellement le sol et le décor à leur place, sans silhouette résiduelle. Conserver les tables dressées, nappes, assiettes, verres posés sur les tables, chaises et cuisine visible au fond : une salle de restaurant vide de clients. Supprimer les verres TENUS et ceux qui flotteraient après retrait des personnes, mais conserver les verres normalement posés sur les tables. Conserver le cadrage, la perspective et le dessin numérique PEINT semi-réaliste doux de l’image. La deuxième référence confirme seulement le modelé peint des objets. PAYSAGE EXACT 4:3, 1448 × 1086. Aucun nouveau personnage, reflet humain, mannequin réaliste, affiche, logo, mot, chiffre, montant, date, jour ou mois. Ne pas transformer le style en photo ou gros contours noirs.",
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co306-restaurant-universite-dessine.webp",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "references": [
+        {
+          "exercise": "delf-a1-2022-co-ex1-11",
+          "question": 3,
+          "choice": "c",
+          "label": "Dans un restaurant",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-7d1ae737-c81a-440b-bf60-15297d37e248.png",
+      "status": "visually_reviewed",
+      "previous_source_png": "/workspace/generated_images/exec-5a09ba5a-1d77-44e6-9980-290ac1cabf2d.png",
+      "revision_reason": "Supprimer les personnages non demandés repris de la référence et restituer le lieu demandé sans groupe de fête.",
+      "review_note": "Salle de restaurant avec tables dressées et cuisine visible ; groupe de personnes non demandé supprimé, verres normalement posés sur les tables conservés. Aucun texte ou prix. Concept entier et paysage natif exact 4:3 relus ; sans date ou montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+        ],
+        "review_note": "Comparaison aux références 48a753d8 réellement vues : peinture numérique à contours discrets, volumes doux, couleurs naturelles et visages peints. Les nouvelles distributions sont variées ; les scènes déjà disponibles conservent leurs personnes lors de la reprise en 4:3. Salle de restaurant avec tables dressées et cuisine visible ; groupe de personnes non demandé supprimé, verres normalement posés sur les tables conservés. Aucun texte ou prix."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "bf23b7e5cd383791850c0ea6a91834373da5ef4edb29ae67725c0a5eef81cd9b",
+      "sha256": "2059fd4bda4dddc629accc3d1ded4327c95adb088df8a68af267de4c8500a0b4",
+      "bytes": 212028,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-faire-velo-dessine",
+      "label": "Faire du vélo",
+      "path": "/lib/images/tcf/qcm-audit/co306-faire-velo-dessine.webp",
+      "prompt": "Recomposer les références en une illustration numérique DESSINÉE et PEINTE semi-réaliste, comme la dernière référence de fête validée : contours fins discrets, modelé doux, nuances et petites touches de pinceau, couleurs naturelles chaleureuses et matières peintes. Les visages, mains et vêtements sont PEINTS en nuances douces sans pores ou microtexture photographique ; pas de photographie, rendu 3D, filtre ou gros contour noir. PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Une seule scène, sujets principaux ENTIERS avec marges. Aucun montant, prix, date, jour, mois, horaire, chiffre, texte, logo, marque ou légende. Les nouveaux personnages sont fictifs, divers et différents de ceux des références ; deux bras, deux jambes et cinq doigts par main. Une femme adulte fictive coréenne de 50 ans aux cheveux courts poivre et sel porte un casque de vélo bleu bien attaché, une veste orange légère et un pantalon foncé. Elle ROULE à vélo sur une allée verte de parc, deux mains sur le guidon, un pied sur chaque pédale, deux roues bien rondes et vélo entier. Vue de trois quarts, personne et vélo entiers, geste de pédalage clair, pas de course ou moto, pas de texte.",
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co306-pistes-cyclables-dessine.webp",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-casque-velo-4-3.webp",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "references": [
+        {
+          "exercise": "delf-a1-2022-co-ex1-11",
+          "question": 4,
+          "choice": "a",
+          "label": "Faire du vélo",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-5f032341-a049-4dc2-ae62-357637838f4d.png",
+      "status": "visually_reviewed",
+      "review_note": "Femme adulte est-asiatique à cheveux poivre et sel et veste orange, casque attaché, en train de pédaler sur son vélo bleu entier. Deux mains sur guidon et un pied par pédale ; activité et équipement complets. Concept entier et paysage natif exact 4:3 relus ; sans date ou montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+        ],
+        "review_note": "Comparaison aux références 48a753d8 réellement vues : peinture numérique à contours discrets, volumes doux, couleurs naturelles et visages peints. Les nouvelles distributions sont variées ; les scènes déjà disponibles conservent leurs personnes lors de la reprise en 4:3. Femme adulte est-asiatique à cheveux poivre et sel et veste orange, casque attaché, en train de pédaler sur son vélo bleu entier. Deux mains sur guidon et un pied par pédale ; activité et équipement complets."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "e5f66f7198cb1f197974c68fd4099b88e6a43dd350eba91742c8aa232f6fc623",
+      "sha256": "cf547a08822a952696ecd9be9719aeaf66a72544d715419293e1aef4e158cf77",
+      "bytes": 268930,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-jouer-football-dessine",
+      "label": "Jouer au football",
+      "path": "/lib/images/tcf/qcm-audit/co306-jouer-football-dessine.webp",
+      "prompt": "Recomposer les références en une illustration numérique DESSINÉE et PEINTE semi-réaliste, comme la dernière référence de fête validée : contours fins discrets, modelé doux, nuances et petites touches de pinceau, couleurs naturelles chaleureuses et matières peintes. Les visages, mains et vêtements sont PEINTS en nuances douces sans pores ou microtexture photographique ; pas de photographie, rendu 3D, filtre ou gros contour noir. PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Une seule scène, sujets principaux ENTIERS avec marges. Aucun montant, prix, date, jour, mois, horaire, chiffre, texte, logo, marque ou légende. Les nouveaux personnages sont fictifs, divers et différents de ceux des références ; deux bras, deux jambes et cinq doigts par main. Deux femmes adultes fictives jouent AU FOOTBALL sur une pelouse : l’une noire de 28 ans, tresses attachées, maillot turquoise et short marine, conduit un ballon de football noir et blanc au pied ; l’autre blanche de 45 ans, cheveux courts châtains et visage à taches de rousseur, t-shirt bleu et short vert, se prépare à défendre. Un but et ses filets apparaissent au fond. Deux personnes entières avec deux bras et deux jambes chacune, un seul ballon, pas d’autre sport, spectateur, numéro sur les maillots ou inscription.",
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co306-petit-parc-dessine.webp",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-cours-gym-dessine.webp",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "references": [
+        {
+          "exercise": "delf-a1-2022-co-ex1-11",
+          "question": 4,
+          "choice": "b",
+          "label": "Jouer au football",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        },
+        {
+          "exercise": "delf-a1-2022-co-ex5-71",
+          "question": 3,
+          "choice": "b",
+          "label": "Jouer au football",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        },
+        {
+          "exercise": "delf-a2-2021-co-ex3-21",
+          "question": 4,
+          "choice": "c",
+          "label": "Jouer au football",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-7ac0f2bf-2e55-4269-9e0e-8f75c688b1a9.png",
+      "status": "visually_reviewed",
+      "review_note": "Deux femmes adultes distinctes, noire à tresses et blanche à cheveux courts, jouent avec un ballon de football devant un but. Figures entières, deux bras et deux jambes chacune, mains relues en vue pleine ; aucune tenue numérotée. Concept entier et paysage natif exact 4:3 relus ; sans date ou montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+        ],
+        "review_note": "Comparaison aux références 48a753d8 réellement vues : peinture numérique à contours discrets, volumes doux, couleurs naturelles et visages peints. Les nouvelles distributions sont variées ; les scènes déjà disponibles conservent leurs personnes lors de la reprise en 4:3. Deux femmes adultes distinctes, noire à tresses et blanche à cheveux courts, jouent avec un ballon de football devant un but. Figures entières, deux bras et deux jambes chacune, mains relues en vue pleine ; aucune tenue numérotée."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "2f20f2fc07d434be282ed9ac86459630a5319827143584e38429011a6e8403a0",
+      "sha256": "976cfaf5b9a50d8fc7b45f8011e8b3cd08ed4de42b64ee5d0158e4af9ebab64a",
+      "bytes": 301410,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-courir-dessine",
+      "label": "Courir",
+      "path": "/lib/images/tcf/qcm-audit/co306-courir-dessine.webp",
+      "prompt": "Recomposer les références en une illustration numérique DESSINÉE et PEINTE semi-réaliste, comme la dernière référence de fête validée : contours fins discrets, modelé doux, nuances et petites touches de pinceau, couleurs naturelles chaleureuses et matières peintes. Les visages, mains et vêtements sont PEINTS en nuances douces sans pores ou microtexture photographique ; pas de photographie, rendu 3D, filtre ou gros contour noir. PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Une seule scène, sujets principaux ENTIERS avec marges. Aucun montant, prix, date, jour, mois, horaire, chiffre, texte, logo, marque ou légende. Les nouveaux personnages sont fictifs, divers et différents de ceux des références ; deux bras, deux jambes et cinq doigts par main. Un homme adulte fictif marocain de 40 ans à cheveux courts poivre et sel et barbe courte, corpulence normale, COURT en tenue de sport : t-shirt violet, short noir et chaussures de course. Il jogge sur une allée de parc, posture dynamique, bras fléchis et jambes en foulée, deux pieds nettement dégagés du fond. Personnage entier avec marges, visage et tissus peints, pas de vélo, ballon, course compétitive ou texte.",
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co306-petit-parc-dessine.webp",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-cours-gym-dessine.webp",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "references": [
+        {
+          "exercise": "delf-a1-2022-co-ex1-11",
+          "question": 4,
+          "choice": "c",
+          "label": "Courir",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-f5ac8378-3de1-4dd3-862d-0655f936130e.png",
+      "status": "visually_reviewed",
+      "review_note": "Homme adulte à barbe courte, t-shirt violet et short, courant sur une allée de parc ; silhouette entière en foulée, geste de course distinct de la promenade et du vélo. Concept entier et paysage natif exact 4:3 relus ; sans date ou montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+        ],
+        "review_note": "Comparaison aux références 48a753d8 réellement vues : peinture numérique à contours discrets, volumes doux, couleurs naturelles et visages peints. Les nouvelles distributions sont variées ; les scènes déjà disponibles conservent leurs personnes lors de la reprise en 4:3. Homme adulte à barbe courte, t-shirt violet et short, courant sur une allée de parc ; silhouette entière en foulée, geste de course distinct de la promenade et du vélo."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "8fd093b74d46b4bc63a09d4c8fb0080682bcf712e89bda2c79e715c079994fcb",
+      "sha256": "6142a29f0c73f9657ed3373bbd5764bec7f46fd7e647331b26eb854d11e2f60b",
+      "bytes": 315714,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-musee-dessine",
+      "label": "Dans un musée",
+      "path": "/lib/images/tcf/qcm-audit/co306-musee-dessine.webp",
+      "prompt": "Recomposer les références en une illustration numérique DESSINÉE et PEINTE semi-réaliste, comme la dernière référence de fête validée : contours fins discrets, modelé doux, nuances et petites touches de pinceau, couleurs naturelles chaleureuses et matières peintes. Les visages, mains et vêtements sont PEINTS en nuances douces sans pores ou microtexture photographique ; pas de photographie, rendu 3D, filtre ou gros contour noir. PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Une seule scène, sujets principaux ENTIERS avec marges. Aucun montant, prix, date, jour, mois, horaire, chiffre, texte, logo, marque ou légende. Les nouveaux personnages sont fictifs, divers et différents de ceux des références ; deux bras, deux jambes et cinq doigts par main. Recomposer la première référence du MUSÉE en PAYSAGE 4:3 sans étirer ni couper les sujets : même galerie de tableaux encadrés, sculpture sur socle et deux visiteurs qui regardent les œuvres, mêmes personnages et œuvres, sol et plafond prolongés naturellement. Conserver la peinture semi-réaliste mais rapprocher ses nuances douces de la dernière référence validée. Aucun peintre en train de travailler, pinceau en main, texte, panneau, montant ou date. Visiteurs avec deux bras chacun et sculpture bien distincte d’une personne vivante.",
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/640c7c11101e.webp",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "references": [
+        {
+          "exercise": "delf-a1-2022-co-ex1-12",
+          "question": 4,
+          "choice": "b",
+          "label": "Dans un musée",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-a7e58d2d-826f-4d90-acc7-c252c724ff52.png",
+      "status": "visually_reviewed",
+      "review_note": "Galerie existante recomposée en 4:3 avec tableaux, sculpture et deux visiteurs qui contemplent les œuvres ; personnages et composition conservés, sol et plafond prolongés naturellement, pas d’activité de peinture. Concept entier et paysage natif exact 4:3 relus ; sans date ou montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+        ],
+        "review_note": "Comparaison aux références 48a753d8 réellement vues : peinture numérique à contours discrets, volumes doux, couleurs naturelles et visages peints. Les nouvelles distributions sont variées ; les scènes déjà disponibles conservent leurs personnes lors de la reprise en 4:3. Galerie existante recomposée en 4:3 avec tableaux, sculpture et deux visiteurs qui contemplent les œuvres ; personnages et composition conservés, sol et plafond prolongés naturellement, pas d’activité de peinture."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "6475eff83505b62f8dcc39df5256aa5b26fcd0a02d16186ebd2f9253e8959240",
+      "sha256": "a9116d2cc17df59e118a080e9fb11d90b35c583b447abcbfcd8e8028717ce843",
+      "bytes": 164432,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-supermarche-dessine",
+      "label": "Dans un supermarché",
+      "path": "/lib/images/tcf/qcm-audit/co306-supermarche-dessine.webp",
+      "prompt": "MODIFICATION PRÉCISE de la première image. SUPPRIMER ABSOLUMENT TOUS LES PERSONNAGES, toutes les silhouettes, leurs ombres et les objets tenus. La scène est ENTIÈREMENT VIDE DE PERSONNES. Reconstituer naturellement le sol et le décor à leur place, sans silhouette résiduelle. Conserver les rayons de produits alimentaires, présentoirs de légumes, caisses et chariot vide, sans aucune personne. Retirer également les sacs et fruits portés par les personnages, sans laisser d’objets flottants. Reconstituer l’allée et les rayons derrière eux. Conserver le cadrage, la perspective et le dessin numérique PEINT semi-réaliste doux de l’image. La deuxième référence confirme seulement le modelé peint des objets. PAYSAGE EXACT 4:3, 1448 × 1086. Aucun nouveau personnage, reflet humain, mannequin réaliste, affiche, logo, mot, chiffre, montant, date, jour ou mois. Ne pas transformer le style en photo ou gros contours noirs.",
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-caisse-dessinee.webp",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "references": [
+        {
+          "exercise": "delf-a1-2022-co-ex1-12",
+          "question": 4,
+          "choice": "c",
+          "label": "Dans un supermarché",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-2ceb5d72-af58-47e4-a0c9-0ddb015b7c18.png",
+      "status": "visually_reviewed",
+      "previous_source_png": "/workspace/generated_images/exec-3dc8bbc8-268c-4108-9540-1e4b9073cd37.png",
+      "revision_reason": "Supprimer les personnages non demandés repris de la référence et restituer le lieu demandé sans groupe de fête.",
+      "review_note": "Supermarché alimentaire à rayons, produits frais, caisses et chariot au bord de l’allée ; groupe de personnages non demandé et produits qu’ils tenaient supprimés, aucune étiquette lisible ou prix. Concept entier et paysage natif exact 4:3 relus ; sans date ou montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+        ],
+        "review_note": "Comparaison aux références 48a753d8 réellement vues : peinture numérique à contours discrets, volumes doux, couleurs naturelles et visages peints. Les nouvelles distributions sont variées ; les scènes déjà disponibles conservent leurs personnes lors de la reprise en 4:3. Supermarché alimentaire à rayons, produits frais, caisses et chariot au bord de l’allée ; groupe de personnages non demandé et produits qu’ils tenaient supprimés, aucune étiquette lisible ou prix."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "c213983925250cb6dee24e40ebd83a51a56ddeeb3aed57fbe89f69a98b580457",
+      "sha256": "cdb04119e729cc7588d99bc9e967c339f565ceb027ed9285f4a04bae9eed75aa",
+      "bytes": 191730,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-arbres-dessine",
+      "label": "Dans les arbres",
+      "path": "/lib/images/tcf/qcm-audit/co306-arbres-dessine.webp",
+      "prompt": "Recomposer les références en une illustration numérique DESSINÉE et PEINTE semi-réaliste, comme la dernière référence de fête validée : contours fins discrets, modelé doux, nuances et petites touches de pinceau, couleurs naturelles chaleureuses et matières peintes. Les visages, mains et vêtements sont PEINTS en nuances douces sans pores ou microtexture photographique ; pas de photographie, rendu 3D, filtre ou gros contour noir. PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Une seule scène, sujets principaux ENTIERS avec marges. Aucun montant, prix, date, jour, mois, horaire, chiffre, texte, logo, marque ou légende. Les nouveaux personnages sont fictifs, divers et différents de ceux des références ; deux bras, deux jambes et cinq doigts par main. Vue rapprochée de PLUSIEURS ARBRES feuillus vivants : trois troncs, grosses branches et houppiers verts denses au-dessus. Point de vue légèrement vers le haut, branches et feuilles clairement le sujet, non un paysage de forêt au loin. Vue montrant bien l’intérieur des ramures où l’on peut chercher quelque chose, sans ajouter d’animal ou d’objet qui donnerait la bonne réponse. Pas de jardin aménagé, gare, boutique, personne ou texte.",
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co306-foret-dessine.webp",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "references": [
+        {
+          "exercise": "delf-a1-2022-co-ex1-12",
+          "question": 5,
+          "choice": "a",
+          "label": "Dans les arbres",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-c768e7b3-3d74-4187-be6d-52cc89809bbf.png",
+      "status": "visually_reviewed",
+      "review_note": "Ramures de plusieurs arbres feuillus vues en levant les yeux, grosses branches et houppiers ; milieu dans les arbres explicite, aucun animal ajouté qui marquerait la bonne réponse. Concept entier et paysage natif exact 4:3 relus ; sans date ou montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+        ],
+        "review_note": "Comparaison aux références 48a753d8 réellement vues : peinture numérique à contours discrets, volumes doux, couleurs naturelles et visages peints. Les nouvelles distributions sont variées ; les scènes déjà disponibles conservent leurs personnes lors de la reprise en 4:3. Ramures de plusieurs arbres feuillus vues en levant les yeux, grosses branches et houppiers ; milieu dans les arbres explicite, aucun animal ajouté qui marquerait la bonne réponse."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "4973b12d0e8db9564be605b8a2a7454b994ab4fea0713b2ca7a27cd148b4af6c",
+      "sha256": "d51b5d659a5fcb389e3e80f7ba9e019cf6c44011af9be4596706127b1b5dd96a",
+      "bytes": 312860,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-magasins-dessine",
+      "label": "Dans les magasins",
+      "path": "/lib/images/tcf/qcm-audit/co306-magasins-dessine.webp",
+      "prompt": "MODIFICATION PRÉCISE de la première image. SUPPRIMER ABSOLUMENT TOUS LES PERSONNAGES, toutes les silhouettes, leurs verres et les objets qu’ils tiennent, sans aucune exception. La scène doit être ENTIÈREMENT VIDE DE PERSONNES. Reconstituer naturellement à leur place le sol, les trottoirs, les boutiques ou les chaussées qui se trouvaient derrière. Conserver le même lieu, ses aménagements, sa perspective et son dessin peint doux. Ne pas ajouter de nouvelle personne, ombre humaine, mannequin réaliste ou figure sur une affiche. Le sujet est UNIQUEMENT l’intérieur de la galerie avec les différents MAGASINS ouverts et leurs produits, vêtements, chaussures et livres, clairement visibles. Conserver PAYSAGE EXACT 4:3, 1448 × 1086, dessin numérique peint semi-réaliste, contours discrets, modelé doux, pas de photo ou de gros trait noir. La deuxième référence sert seulement à confirmer le modelé peint doux. Aucun mot, chiffre, montant, date, jour, mois, logo ou affiche.",
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co306-centre-commercial-dessine.webp",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "references": [
+        {
+          "exercise": "delf-a1-2022-co-ex1-12",
+          "question": 5,
+          "choice": "c",
+          "label": "Dans les magasins",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-16bac533-2e38-46b8-9c13-7bff8f54cf64.png",
+      "status": "visually_reviewed",
+      "previous_source_png": "/workspace/generated_images/exec-b3a6e07b-c708-4a73-9ecf-6288a89f30d2.png",
+      "revision_reason": "Retirer les personnages non demandés repris de la référence de fête, pour ne conserver que le lieu.",
+      "review_note": "Galerie intérieure avec boutiques de vêtements, chaussures et livres, entrées et produits visibles. Groupe de fête non demandé supprimé, sols et vitrines reconstitués ; pas de façade extérieure à sa place. Concept entier et paysage natif exact 4:3 relus ; sans date ou montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+        ],
+        "review_note": "Comparaison aux références 48a753d8 réellement vues : peinture numérique à contours discrets, volumes doux, couleurs naturelles et visages peints. Les nouvelles distributions sont variées ; les scènes déjà disponibles conservent leurs personnes lors de la reprise en 4:3. Galerie intérieure avec boutiques de vêtements, chaussures et livres, entrées et produits visibles. Groupe de fête non demandé supprimé, sols et vitrines reconstitués ; pas de façade extérieure à sa place."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "06ebe3affe0b4890e82a14616abc59b5e67d492f451915b10c67f13888790307",
+      "sha256": "f7b8b80be3d7c1c55cea93a448f446c71851a3253491f008639d40af3d97c807",
+      "bytes": 233266,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-immeubles-boulevards-dessine",
+      "label": "Les grands immeubles et les boulevards",
+      "path": "/lib/images/tcf/qcm-audit/co306-immeubles-boulevards-dessine.webp",
+      "prompt": "MODIFICATION PRÉCISE de la première image. SUPPRIMER ABSOLUMENT TOUS LES PERSONNAGES, toutes les silhouettes, leurs verres et les objets qu’ils tiennent, sans aucune exception. La scène doit être ENTIÈREMENT VIDE DE PERSONNES. Reconstituer naturellement à leur place le sol, les trottoirs, les boutiques ou les chaussées qui se trouvaient derrière. Conserver le même lieu, ses aménagements, sa perspective et son dessin peint doux. Ne pas ajouter de nouvelle personne, ombre humaine, mannequin réaliste ou figure sur une affiche. Le sujet est UNIQUEMENT les GRANDS IMMEUBLES et les DEUX LARGES BOULEVARDS avec petites voitures, qui doivent être tous deux clairement visibles. Conserver PAYSAGE EXACT 4:3, 1448 × 1086, dessin numérique peint semi-réaliste, contours discrets, modelé doux, pas de photo ou de gros trait noir. La deuxième référence sert seulement à confirmer le modelé peint doux. Aucun mot, chiffre, montant, date, jour, mois, logo ou affiche.",
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co306-pistes-cyclables-dessine.webp",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "references": [
+        {
+          "exercise": "delf-a1-2022-co-ex1-12",
+          "question": 9,
+          "choice": "a",
+          "label": "Les grands immeubles et les boulevards",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-24a1721d-63bc-4287-b923-ef7580d78623.png",
+      "status": "visually_reviewed",
+      "previous_source_png": "/workspace/generated_images/exec-ff747e04-bae1-4ab2-8b0a-f77839f82d17.png",
+      "revision_reason": "Retirer les personnages non demandés repris de la référence de fête, pour ne conserver que le lieu.",
+      "review_note": "Grands immeubles à nombreux étages et deux larges boulevards à un carrefour, voitures donnant l’échelle. Groupe de fête non demandé supprimé, chaussées et trottoirs reconstitués ; les deux éléments de la réponse restent visibles. Concept entier et paysage natif exact 4:3 relus ; sans date ou montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+        ],
+        "review_note": "Comparaison aux références 48a753d8 réellement vues : peinture numérique à contours discrets, volumes doux, couleurs naturelles et visages peints. Les nouvelles distributions sont variées ; les scènes déjà disponibles conservent leurs personnes lors de la reprise en 4:3. Grands immeubles à nombreux étages et deux larges boulevards à un carrefour, voitures donnant l’échelle. Groupe de fête non demandé supprimé, chaussées et trottoirs reconstitués ; les deux éléments de la réponse restent visibles."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "6a290507d78b1f7261cdcea78531b6f858a4b64a90df6d2afff7c219af4ed8a8",
+      "sha256": "33850c2487c1bec36304b64c17c795acfb3c995cf44a85e6f7b57f20e33cba75",
+      "bytes": 321072,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-champs-vaches-dessine",
+      "label": "Les champs et les vaches",
+      "path": "/lib/images/tcf/qcm-audit/co306-champs-vaches-dessine.webp",
+      "prompt": "Recomposer les références en une illustration numérique DESSINÉE et PEINTE semi-réaliste, comme la dernière référence de fête validée : contours fins discrets, modelé doux, nuances et petites touches de pinceau, couleurs naturelles chaleureuses et matières peintes. Les visages, mains et vêtements sont PEINTS en nuances douces sans pores ou microtexture photographique ; pas de photographie, rendu 3D, filtre ou gros contour noir. PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Une seule scène, sujets principaux ENTIERS avec marges. Aucun montant, prix, date, jour, mois, horaire, chiffre, texte, logo, marque ou légende. Les nouveaux personnages sont fictifs, divers et différents de ceux des références ; deux bras, deux jambes et cinq doigts par main. Paysage rural avec DEUX CHAMPS verts de prairie séparés par une haie basse, et DEUX VACHES entières, l’une blanche à taches noires et l’autre brune, paissant dans le champ au premier plan. Les champs cultivés et les vaches sont tous deux bien visibles, chaque vache possède quatre pattes et une queue, têtes de vache reconnaissables. Pas de ville, bâtiment, cheval, route ou personne.",
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co306-jardin-urbain-dessine.webp",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co306-montagnes-forets-dessine.webp",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "references": [
+        {
+          "exercise": "delf-a1-2022-co-ex1-12",
+          "question": 9,
+          "choice": "b",
+          "label": "Les champs et les vaches",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-f720a87a-bb40-47f0-909e-7efafd29e154.png",
+      "status": "visually_reviewed",
+      "review_note": "Deux vaches distinctes, noire et blanche puis brune, paissent dans un champ avec autres parcelles de prairie derrière ; champs et vaches présents ensemble, anatomie naturelle et aucun personnage. Concept entier et paysage natif exact 4:3 relus ; sans date ou montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+        ],
+        "review_note": "Comparaison aux références 48a753d8 réellement vues : peinture numérique à contours discrets, volumes doux, couleurs naturelles et visages peints. Les nouvelles distributions sont variées ; les scènes déjà disponibles conservent leurs personnes lors de la reprise en 4:3. Deux vaches distinctes, noire et blanche puis brune, paissent dans un champ avec autres parcelles de prairie derrière ; champs et vaches présents ensemble, anatomie naturelle et aucun personnage."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "2d0d47db73ec5e04db8242c676168d8521608d18325303532005d4b9da2f78bb",
+      "sha256": "cb3e150ff31bead25791801a81dacb8f09e44cbebc15031ab35a592f15b45c14",
+      "bytes": 339592,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-plages-falaises-dessine",
+      "label": "Les plages et les falaises",
+      "path": "/lib/images/tcf/qcm-audit/co306-plages-falaises-dessine.webp",
+      "prompt": "MODIFICATION PRÉCISE de la première image. SUPPRIMER ABSOLUMENT TOUS LES PERSONNAGES, toutes les silhouettes, leurs ombres et les objets tenus. La scène est ENTIÈREMENT VIDE DE PERSONNES. Reconstituer naturellement le sol et le décor à leur place, sans silhouette résiduelle. Le sujet est les DEUX PLAGES et les HAUTES FALAISES côtières, mer et herbe au premier plan. Supprimer les personnes et leurs verres, puis reconstituer la pelouse et la côte naturellement, sans aucun personnage, bateau ou construction ajouté. Conserver le cadrage, la perspective et le dessin numérique PEINT semi-réaliste doux de l’image. La deuxième référence confirme seulement le modelé peint des objets. PAYSAGE EXACT 4:3, 1448 × 1086. Aucun nouveau personnage, reflet humain, mannequin réaliste, affiche, logo, mot, chiffre, montant, date, jour ou mois. Ne pas transformer le style en photo ou gros contours noirs.",
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co306-montagnes-forets-dessine.webp",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "references": [
+        {
+          "exercise": "delf-a1-2022-co-ex1-12",
+          "question": 9,
+          "choice": "c",
+          "label": "Les plages et les falaises",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-fe11025f-4e8a-4eed-afba-a3684318de14.png",
+      "status": "visually_reviewed",
+      "previous_source_png": "/workspace/generated_images/exec-abe20a7d-893f-4414-9817-5785c964bc3c.png",
+      "revision_reason": "Supprimer les personnages non demandés repris de la référence et restituer le lieu demandé sans groupe de fête.",
+      "review_note": "Deux anses de plage de sable au pied de hautes falaises claires, mer bleue et pelouse ; groupe de fête non demandé supprimé et côte reconstituée. Les deux éléments de la réponse sont conservés. Concept entier et paysage natif exact 4:3 relus ; sans date ou montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+        ],
+        "review_note": "Comparaison aux références 48a753d8 réellement vues : peinture numérique à contours discrets, volumes doux, couleurs naturelles et visages peints. Les nouvelles distributions sont variées ; les scènes déjà disponibles conservent leurs personnes lors de la reprise en 4:3. Deux anses de plage de sable au pied de hautes falaises claires, mer bleue et pelouse ; groupe de fête non demandé supprimé et côte reconstituée. Les deux éléments de la réponse sont conservés."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "489d79f5be555bb6262d6236dc606ebbfc99590e1954a7bdf60ac792f78a2144",
+      "sha256": "09f38b12eb87566a96404ba39c24c8f1b9bf597b0636319ab1d1e700a36b6298",
+      "bytes": 300082,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-regarder-film-television-dessine",
+      "label": "Regarder un film à la télévision",
+      "path": "/lib/images/tcf/qcm-audit/co306-regarder-film-television-dessine.webp",
+      "prompt": "Recomposer les références en une illustration numérique DESSINÉE et PEINTE semi-réaliste, comme la dernière référence de fête validée : contours fins discrets, modelé doux, nuances et petites touches de pinceau, couleurs naturelles chaleureuses et matières peintes. Les visages, mains et vêtements sont PEINTS en nuances douces sans pores ou microtexture photographique ; pas de photographie, rendu 3D, filtre ou gros contour noir. PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Une seule scène, sujets principaux ENTIERS avec marges. Aucun montant, prix, date, jour, mois, horaire, chiffre, texte, logo, marque ou légende. Les nouveaux personnages sont fictifs, divers et différents de ceux des références ; deux bras, deux jambes et cinq doigts par main. Scène de salon où deux adultes fictifs regardent attentivement UN FILM À LA TÉLÉVISION : une femme indienne de 55 ans à longue tresse grise, lunettes et pull prune, et un homme blanc de 60 ans chauve à barbe grise et cardigan beige, assis côte à côte sur un canapé vus de trois quarts arrière. Le téléviseur peint de la première référence est bien visible EN ENTIER en face d’eux et son écran montre une scène de fiction peinte : deux voyageurs en manteaux devant un paysage de montagne, sans violence ou inscription. Télécommande sur table basse, pas de stade, jeu vidéo, émission, lettre, heure ou chiffre. Corps naturels et visages peints.",
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-television-dessinee.webp",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "references": [
+        {
+          "exercise": "delf-a1-2022-co-ex5-71",
+          "question": 3,
+          "choice": "a",
+          "label": "Regarder un film à la télévision",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-537447e3-a802-40bd-a66a-be39ff21224c.png",
+      "status": "visually_reviewed",
+      "review_note": "Deux adultes d’âges et d’origines variés sont assis sur un canapé et regardent un film de fiction sur un téléviseur entier ; l’action est visible et l’écran ne montre pas un match ou jeu vidéo. Concept entier et paysage natif exact 4:3 relus ; sans date ou montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+        ],
+        "review_note": "Comparaison aux références 48a753d8 réellement vues : peinture numérique à contours discrets, volumes doux, couleurs naturelles et visages peints. Les nouvelles distributions sont variées ; les scènes déjà disponibles conservent leurs personnes lors de la reprise en 4:3. Deux adultes d’âges et d’origines variés sont assis sur un canapé et regardent un film de fiction sur un téléviseur entier ; l’action est visible et l’écran ne montre pas un match ou jeu vidéo."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "123d4f7c450f56fcb4aab885273f940f80e9fd81ceff13b1205009f648a9655c",
+      "sha256": "f45b5baad64efe8001dde2856b80375199b1faa73ac97401cfc388f23e98f630",
+      "bytes": 210560,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-faire-promenade-dessine",
+      "label": "Faire une promenade",
+      "path": "/lib/images/tcf/qcm-audit/co306-faire-promenade-dessine.webp",
+      "prompt": "Recomposer les références en une illustration numérique DESSINÉE et PEINTE semi-réaliste, comme la dernière référence de fête validée : contours fins discrets, modelé doux, nuances et petites touches de pinceau, couleurs naturelles chaleureuses et matières peintes. Les visages, mains et vêtements sont PEINTS en nuances douces sans pores ou microtexture photographique ; pas de photographie, rendu 3D, filtre ou gros contour noir. PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Une seule scène, sujets principaux ENTIERS avec marges. Aucun montant, prix, date, jour, mois, horaire, chiffre, texte, logo, marque ou légende. Les nouveaux personnages sont fictifs, divers et différents de ceux des références ; deux bras, deux jambes et cinq doigts par main. Deux adultes fictifs font UNE PROMENADE calme sur une allée de parc, marchant côte à côte : une femme japonaise de 68 ans aux cheveux gris courts, veste jaune et pantalon bleu, et un homme polynésien de 35 ans grand et robuste, cheveux longs noirs attachés, veste verte et pantalon beige. Deux personnes entières, chaussures de marche quotidiennes, gestes détendus, deux pieds au sol ou pas de marche normal ; aucune foulée de jogging, vélo, ballon, chien ou texte.",
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co306-petit-parc-dessine.webp",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "references": [
+        {
+          "exercise": "delf-a1-2022-co-ex5-71",
+          "question": 3,
+          "choice": "c",
+          "label": "Faire une promenade",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-3b447f8d-d712-4cf8-a548-5d31e92dca63.png",
+      "status": "visually_reviewed",
+      "review_note": "Deux adultes différents, femme âgée est-asiatique et homme polynésien, marchent calmement sur une allée de parc ; figures entières et pas de foulée de course ou équipement sportif. Concept entier et paysage natif exact 4:3 relus ; sans date ou montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+        ],
+        "review_note": "Comparaison aux références 48a753d8 réellement vues : peinture numérique à contours discrets, volumes doux, couleurs naturelles et visages peints. Les nouvelles distributions sont variées ; les scènes déjà disponibles conservent leurs personnes lors de la reprise en 4:3. Deux adultes différents, femme âgée est-asiatique et homme polynésien, marchent calmement sur une allée de parc ; figures entières et pas de foulée de course ou équipement sportif."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "f046e600da87a65d6dbd03b67cd87b03cfcacb54319a12c0dd9bce45bcb750a7",
+      "sha256": "df61225be45134f696668dbfcb00b1c2376da9151b7d44b7c7793ddf97e8622f",
+      "bytes": 331742,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-ecouter-musique-dessine",
+      "label": "Écouter de la musique",
+      "path": "/lib/images/tcf/qcm-audit/co306-ecouter-musique-dessine.webp",
+      "prompt": "Recomposer les références en une illustration numérique DESSINÉE et PEINTE semi-réaliste, comme la dernière référence de fête validée : contours fins discrets, modelé doux, nuances et petites touches de pinceau, couleurs naturelles chaleureuses et matières peintes. Les visages, mains et vêtements sont PEINTS en nuances douces sans pores ou microtexture photographique ; pas de photographie, rendu 3D, filtre ou gros contour noir. PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Une seule scène, sujets principaux ENTIERS avec marges. Aucun montant, prix, date, jour, mois, horaire, chiffre, texte, logo, marque ou légende. Les nouveaux personnages sont fictifs, divers et différents de ceux des références ; deux bras, deux jambes et cinq doigts par main. Un jeune homme adulte fictif péruvien de 19 ans, peau brune et cheveux noirs bouclés, porte UN CASQUE AUDIO sur les deux oreilles, assis dans un fauteuil de salon et écoutant de la musique avec un sourire et les yeux doucement fermés. Un petit lecteur audio posé à côté de lui montre sur son écran uniquement un pictogramme de note de musique, aucun chiffre ou mot. Ses mains sont détendues sur ses genoux et le câble du casque mène au lecteur. Pas de microphone, jeu vidéo, télévision, console, geste de chant ou texte. Visage et mains peints, pas de pores photo.",
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-cours-gym-dessine.webp",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a2-s31-co-3",
+          "question": 4,
+          "choice": "b",
+          "label": "Écouter de la musique",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        },
+        {
+          "exercise": "delf-a2-2021-co-ex3-21",
+          "question": 4,
+          "choice": "a",
+          "label": "Écouter de la musique",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-f323e6e3-b809-47a3-ba43-776637bfa04c.png",
+      "status": "visually_reviewed",
+      "review_note": "Jeune homme adulte brun à cheveux bouclés, casque audio sur les oreilles, écoutant détendu dans un fauteuil ; lecteur relié au casque à simple note de musique sur son écran, aucun chiffre, jeu vidéo ou microphone. Concept entier et paysage natif exact 4:3 relus ; sans date ou montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+        ],
+        "review_note": "Comparaison aux références 48a753d8 réellement vues : peinture numérique à contours discrets, volumes doux, couleurs naturelles et visages peints. Les nouvelles distributions sont variées ; les scènes déjà disponibles conservent leurs personnes lors de la reprise en 4:3. Jeune homme adulte brun à cheveux bouclés, casque audio sur les oreilles, écoutant détendu dans un fauteuil ; lecteur relié au casque à simple note de musique sur son écran, aucun chiffre, jeu vidéo ou microphone."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "c6dd98395074e1433baab9557032abe25877cfad05be5db4ce7bfa8a0f91e0ba",
+      "sha256": "afe5d3f72e26788f504d41c623c05180e6778b33e5a2b566403fdaa54c58ad0c",
+      "bytes": 229428,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-theatre-dessine",
+      "label": "Du théâtre",
+      "path": "/lib/images/tcf/qcm-audit/co306-theatre-dessine.webp",
+      "prompt": "Recomposer les références en une illustration numérique DESSINÉE et PEINTE semi-réaliste, comme la dernière référence de fête validée : contours fins discrets, modelé doux, nuances et petites touches de pinceau, couleurs naturelles chaleureuses et matières peintes. Les visages, mains et vêtements sont PEINTS en nuances douces sans pores ou microtexture photographique ; pas de photographie, rendu 3D, filtre ou gros contour noir. PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Une seule scène, sujets principaux ENTIERS avec marges. Aucun montant, prix, date, jour, mois, horaire, chiffre, texte, logo, marque ou légende. Les nouveaux personnages sont fictifs, divers et différents de ceux des références ; deux bras, deux jambes et cinq doigts par main. Recomposer la première référence de THÉÂTRE en PAYSAGE 4:3 sans étirer ou couper : conserver les DEUX acteurs en train de jouer leur scène, mêmes personnages et costumes, rideaux rouges, table fleurie et quelques spectateurs de dos. Prolonger naturellement le cadre vertical. Anatomie déjà corrigée à respecter : exactement deux bras chacun, gestes de dialogue lisibles, pas de bras supplémentaire ou de main flottante. Modelé et détails peints rapprochés de la dernière référence, aucun texte ou affiche.",
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/b3a9535d4a2f-v2.webp",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a2-s48-co-2",
+          "question": 2,
+          "choice": "b",
+          "label": "Du théâtre",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-ca8e2d43-bc08-4f4c-a673-01d3ca93832c.png",
+      "status": "visually_reviewed",
+      "review_note": "Théâtre joué par les deux acteurs de la scène existante, recomposé en 4:3 avec rideaux et spectateurs ; deux bras par acteur et gestes de dialogue conservés, aucun bras supplémentaire. Concept entier et paysage natif exact 4:3 relus ; sans date ou montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+        ],
+        "review_note": "Comparaison aux références 48a753d8 réellement vues : peinture numérique à contours discrets, volumes doux, couleurs naturelles et visages peints. Les nouvelles distributions sont variées ; les scènes déjà disponibles conservent leurs personnes lors de la reprise en 4:3. Théâtre joué par les deux acteurs de la scène existante, recomposé en 4:3 avec rideaux et spectateurs ; deux bras par acteur et gestes de dialogue conservés, aucun bras supplémentaire."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "b39837c62bf1515445a2f3860a2d6c7c099513d2f883e575f506d30eff372056",
+      "sha256": "0623da1b72b84c31490e3aaaf2e8117af58153d729cac7d5c15c7a4339701887",
+      "bytes": 131608,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-peinture-dessine",
+      "label": "De la peinture",
+      "path": "/lib/images/tcf/qcm-audit/co306-peinture-dessine.webp",
+      "prompt": "Recomposer les références en une illustration numérique DESSINÉE et PEINTE semi-réaliste, comme la dernière référence de fête validée : contours fins discrets, modelé doux, nuances et petites touches de pinceau, couleurs naturelles chaleureuses et matières peintes. Les visages, mains et vêtements sont PEINTS en nuances douces sans pores ou microtexture photographique ; pas de photographie, rendu 3D, filtre ou gros contour noir. PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Une seule scène, sujets principaux ENTIERS avec marges. Aucun montant, prix, date, jour, mois, horaire, chiffre, texte, logo, marque ou légende. Les nouveaux personnages sont fictifs, divers et différents de ceux des références ; deux bras, deux jambes et cinq doigts par main. Recomposer la première référence d’ACTIVITÉ PEINTURE en PAYSAGE 4:3 sans étirer ni couper : conserver les deux adultes qui peignent des paysages sur leurs chevalets et leur formatrice qui les accompagne, mêmes personnes et vêtements. Pinceaux, palettes et tableaux en cours visibles, prolonger naturellement sol et plafond. Trois personnes seulement, deux bras par personne, cinq doigts par main, aucun texte ou exposition de musée. Même dessin peint doux que la dernière référence.",
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/c4051ad4c87f.webp",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a2-s48-co-2",
+          "question": 2,
+          "choice": "c",
+          "label": "De la peinture",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-8e731724-9389-4161-a614-18a00e8cb9a8.png",
+      "status": "visually_reviewed",
+      "review_note": "Deux adultes peignent sur chevalets avec leur formatrice ; scène existante recomposée en 4:3, mêmes personnes et accessoires, pinceaux et palettes visibles, trois personnes et anatomie naturelle. Concept entier et paysage natif exact 4:3 relus ; sans date ou montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+        ],
+        "review_note": "Comparaison aux références 48a753d8 réellement vues : peinture numérique à contours discrets, volumes doux, couleurs naturelles et visages peints. Les nouvelles distributions sont variées ; les scènes déjà disponibles conservent leurs personnes lors de la reprise en 4:3. Deux adultes peignent sur chevalets avec leur formatrice ; scène existante recomposée en 4:3, mêmes personnes et accessoires, pinceaux et palettes visibles, trois personnes et anatomie naturelle."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "23cd961f5f7d7422bae513c01d6d8eaad97800b5851ece60de83275b56580163",
+      "sha256": "8b3669865fd3df47d05866612560e3b7329bd5c685db5ab9c49a9901fffb16a7",
+      "bytes": 225526,
+      "domain": "co",
+      "batch": "active-audios-834"
     }
   ],
   "activated_questions": [
@@ -28656,6 +29449,146 @@
       ],
       "source_ids": [
         "delf_a2_2021:023:50990deefc22"
+      ]
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "delf-a1-2022-co-ex1-11",
+      "question": 3,
+      "enonce": "Où Jacques travaille-t-il ?",
+      "images": [
+        "/lib/images/tcf/qcm-audit/co306-magasin-motos-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-magasin-velos-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp"
+      ],
+      "source_batch": "active-audios-834",
+      "status": "active_after_visual_review",
+      "source_support_review": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Boutique de motos à moteur, boutique de bicyclettes et salle de restaurant dressée : trois lieux entiers, aucun véhicule seul ne remplace son magasin. Transcription relue : Oui, c'est Jacques. Alors, samedi, je ne travaille pas au magasin de moto. On peut aller au parc faire du vélo. Après, on peut faire des crêpes chez moi. Appelle-moi.",
+      "source_old_refs": [
+        "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_11-1.mp3"
+      ],
+      "source_ids": [
+        "delf_a1_2022:011:a99cd8478f3d"
+      ]
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "delf-a1-2022-co-ex1-11",
+      "question": 4,
+      "enonce": "Quelle activité propose-t-il au parc ?",
+      "images": [
+        "/lib/images/tcf/qcm-audit/co306-faire-velo-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-jouer-football-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-courir-dessine.webp"
+      ],
+      "source_batch": "active-audios-834",
+      "status": "active_after_visual_review",
+      "source_support_review": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Personnes réellement en action : pédalage, jeu de football et course, trois activités distinctes. Visages et profils variés, figures et équipements entiers. Transcription relue : Oui, c'est Jacques. Alors, samedi, je ne travaille pas au magasin de moto. On peut aller au parc faire du vélo. Après, on peut faire des crêpes chez moi. Appelle-moi.",
+      "source_old_refs": [
+        "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_11-1.mp3"
+      ],
+      "source_ids": [
+        "delf_a1_2022:011:a99cd8478f3d"
+      ]
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "delf-a1-2022-co-ex1-12",
+      "question": 4,
+      "enonce": "Où peut-on voir de petits animaux ?",
+      "images": [
+        "/lib/images/tcf/qcm-audit/co306-foret-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-musee-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-supermarche-dessine.webp"
+      ],
+      "source_batch": "active-audios-834",
+      "status": "active_after_visual_review",
+      "source_support_review": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Forêt de feuillus existante réutilisée pour le type de milieu nommé : aucune région précise ou caractéristique géographique particulière n’est donnée par le support. Galerie de musée reprise en 4:3 et supermarché alimentaire distincts. Transcription relue : Vous voulez voir des animaux? Visitez les forêts de notre région. Dans les arbres, cherchez les petits animaux. Il y a aussi beaucoup de champs avec des vaches.",
+      "source_old_refs": [
+        "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_12-2.mp3"
+      ],
+      "source_ids": [
+        "delf_a1_2022:012:cb03e09d8390"
+      ]
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "delf-a1-2022-co-ex1-12",
+      "question": 5,
+      "enonce": "Où faut-il chercher les petits animaux ?",
+      "images": [
+        "/lib/images/tcf/qcm-audit/co306-arbres-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-magasins-dessine.webp"
+      ],
+      "source_batch": "active-audios-834",
+      "status": "active_after_visual_review",
+      "source_support_review": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Ramures de plusieurs arbres, gare déjà disponible et intérieurs de magasins : trois catégories de lieux. Le pluriel gares désigne un type de lieu sans quantité à compter ; l’intérieur de gare existant convient. Aucun animal ajouté pour marquer la bonne réponse. Transcription relue : Vous voulez voir des animaux? Visitez les forêts de notre région. Dans les arbres, cherchez les petits animaux. Il y a aussi beaucoup de champs avec des vaches.",
+      "source_old_refs": [
+        "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_12-2.mp3"
+      ],
+      "source_ids": [
+        "delf_a1_2022:012:cb03e09d8390"
+      ]
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "delf-a1-2022-co-ex1-12",
+      "question": 9,
+      "enonce": "Que peut-on admirer pendant la visite ?",
+      "images": [
+        "/lib/images/tcf/qcm-audit/co306-immeubles-boulevards-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-champs-vaches-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-plages-falaises-dessine.webp"
+      ],
+      "source_batch": "active-audios-834",
+      "status": "active_after_visual_review",
+      "source_support_review": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Chaque image conserve les deux éléments demandés : grands immeubles avec larges boulevards, champs avec vaches, plages avec falaises. Aucune réponse réduite à un seul élément. Transcription relue : Pour visiter la ville, prenez le bus touristique. Achetez un ticket au musée et montez dans le bus. Regardez les grands immeubles et les boulevards. C'est magnifique!",
+      "source_old_refs": [
+        "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_12-3.mp3"
+      ],
+      "source_ids": [
+        "delf_a1_2022:012:cb03e09d8390"
+      ]
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "delf-a1-2022-co-ex5-71",
+      "question": 3,
+      "enonce": "Quelle activité propose-t-il ?",
+      "images": [
+        "/lib/images/tcf/qcm-audit/co306-regarder-film-television-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-jouer-football-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-faire-promenade-dessine.webp"
+      ],
+      "source_batch": "active-audios-834",
+      "status": "active_after_visual_review",
+      "source_support_review": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Film regardé sur un téléviseur à la maison, jeu de football réutilisé et promenade calme ; l’action de regarder est visible, pas seulement un DVD ou une télévision isolée. Aucun horaire ajouté. Transcription relue : Bonjour, c'est Pierre. Tu veux venir à la maison ce soir? Il y a un super film à la télévision. Viens à 20h. Tu as la clé de l'appartement, alors tu peux entrer. Je prépare des pâtes à la sauce tomate. Tu peux apporter du pain? Merci. A tout à l'heure.",
+      "source_old_refs": [
+        "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_71.mp3"
+      ],
+      "source_ids": [
+        "delf_a1_2022:071:6c883ff62da0"
+      ]
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "delf-a2-2021-co-ex3-21",
+      "question": 4,
+      "enonce": "Quelle activité doit-il arrêter ?",
+      "images": [
+        "/lib/images/tcf/qcm-audit/co306-ecouter-musique-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-regarder-film-television-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-jouer-football-dessine.webp"
+      ],
+      "source_batch": "active-audios-834",
+      "status": "active_after_visual_review",
+      "source_support_review": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Écoute de musique au casque, film regardé à la télévision réutilisé pour l’action générale regarder un film et football en train d’être joué réutilisé ; trois actions distinctes, pas de simples objets. Transcription relue : Simon, arrête ta musique et viens mettre la table, s'il plaît.",
+      "source_old_refs": [
+        "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_21-2.mp3"
+      ],
+      "source_ids": [
+        "delf_a2_2021:021:c9d13cfec4cd"
       ]
     }
   ],
