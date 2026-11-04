@@ -11,8 +11,8 @@ import type { GramExerciseKindId } from './kinds'
 
 const CHOICE_IDS = ['a', 'b', 'c'] as const
 
-/** Audio CSC_FR_LECON-01_03.01_AUDIO-3 — à déposer sous ce chemin. */
-export const NAT_CO_ALI_AUDIO = '/lib/audio/grammaire/presenter/lecon-01-03-01-audio-3.mp3'
+/** Aucun fichier audio associé. */
+export const NAT_CO_ALI_AUDIO = ''
 
 export const NATIONALITE_KIND_IDS = [
   'nat-image',
@@ -210,7 +210,7 @@ function dualQcmTrait(
 
 /**
  * CO Ali — questions fixes (QCM + trait + image).
- * Audio à déposer : CSC_FR_LECON-01_03.01_AUDIO-3 → {@link NAT_CO_ALI_AUDIO}.
+ * Aucun fichier audio ni transcription associés.
  */
 const NAT_CO_ALI_QUESTIONS: TcfQuestion[] = [
   dualQcmTrait('D’où vient Ali ?', 'Je ne sais pas', [
@@ -265,14 +265,6 @@ const NAT_CO_ALI_QUESTIONS: TcfQuestion[] = [
   ),
 ]
 
-const NAT_CO_ALI_TRANSCRIPTION = [
-  'Léon :\tAli est arrivé à Marseille à l’âge de 14 ans',
-  'Nina :\tAh !',
-  'Léon :\tAli a traversé le Mali, le Sénégal, le Maroc, la France à pied !',
-  'Nina :\tAh ! Vous habitez à Paris Ali ?',
-  'Ali :\tOui, madame, voilà l’adresse.',
-].join('\n')
-
 function lignes(enonce: string, modele: string, nb = 1): TcfQuestionLignes {
   return { enonce, type_reponse: 'lignes', nb_lignes: nb, reponse_modele: modele }
 }
@@ -312,7 +304,7 @@ export function buildNationaliteExercise(opts: {
         type_exercice: 'complet',
         support: {
           audio: NAT_CO_ALI_AUDIO,
-          transcription: NAT_CO_ALI_TRANSCRIPTION,
+          transcription: '',
         },
         questions,
       })
