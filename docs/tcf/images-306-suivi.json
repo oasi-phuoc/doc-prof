@@ -15,11 +15,11 @@
   ],
   "summary": {
     "initial_question_candidates": 306,
-    "questions_illustrated_or_prepared": 164,
-    "newly_activated": 68,
-    "prepared_pending_audio_link": 92,
+    "questions_illustrated_or_prepared": 174,
+    "newly_activated": 76,
+    "prepared_pending_audio_link": 94,
     "prepared_pending_audio_validation": 4,
-    "remaining_questions_requiring_images_or_review": 142,
+    "remaining_questions_requiring_images_or_review": 132,
     "unreviewed_complete_trios": 0,
     "audio_references_next_stage": 432,
     "vocabulary_occurrences_final_stage": 1906
@@ -7356,7 +7356,7 @@
           "asset": "aeea7da7bfac"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:064:ed6bd842d6ff"
       ],
@@ -7369,16 +7369,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-quai-e-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-quai-b-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-quai-d-dessine.webp"
       ],
-      "missing_labels": [
-        "La voie E",
-        "La voie B",
-        "La voie D"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-quai-e-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-quai-b-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-quai-d-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a1-2022-co-ex2-64",
+        "question": 4,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-quai-e-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-quai-b-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-quai-d-dessine.webp"
+        ],
+        "support_quote": "Mesdames et messieurs, votre attention s'il est. Le train TGV, numéro 8570, partira à 10h24, voie eux. Pour des consignes de sécurité, merci de vous présenter 15 minutes avant le départ. N'oubliez pas votre billet et votre pièce d'identité. Merci de mettre votre nom sur tous vos bagages. Bon voyage!",
+        "current_bank_transcription": "Mesdames et Messieurs, votre attention s’il vous\nplaît. Le train TGV numéro 8570 partira à 10 h 24\nvoie E. Pour des consignes de sécurité, merci\nde vous présenter 15 minutes avant le départ.\nN’oubliez pas votre billet et votre pièce d’identité.\nMerci de mettre votre nom sur tous vos bagages.\nBon voyage !",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Quai et voie matérialisés par la scène de gare avec un panneau E, B ou D distinct. La transcription préparée écrit le son E « eux », la transcription de la banque écrit voie E ; aucun horaire ou numéro de train n’est dessiné. Cette relecture n’est pas une certification d’écoute."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -7409,7 +7423,7 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:068:160d235a48ef"
       ],
@@ -7422,15 +7436,30 @@
         }
       ],
       "resolved_images": [
-        null,
+        "/lib/images/tcf/qcm-audit/co306-films-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-vetements-dessines.webp",
-        null
+        "/lib/images/tcf/qcm-audit/co306-instruments-dessine.webp"
       ],
-      "missing_labels": [
-        "Des films",
-        "Des instruments"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-films-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-vetements-dessines.webp",
+        "/lib/images/tcf/qcm-audit/co306-instruments-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a1-2022-co-ex4-68",
+        "question": 8,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-films-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-vetements-dessines.webp",
+          "/lib/images/tcf/qcm-audit/co306-instruments-dessine.webp"
+        ],
+        "support_quote": "Bonjour, ici c'est la bibliothèque. Vous pouvez prendre des livres. Super! Et des films aussi? Oui, tu peux prendre des films aussi.",
+        "current_bank_transcription": "– Bonjour. Ici, c’est la bibliothèque. Vous pouvez prendre des livres. – Super ! Et des films aussi ? – Oui, tu peux prendre des films aussi.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Deux boîtiers de films, plusieurs vêtements existants et plusieurs instruments : les trois catégories au pluriel sont complètes ; les films sont réutilisés pour l’autre question de même sens."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -8516,7 +8545,7 @@
           "asset": "903b3674657f"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:071:6c883ff62da0"
       ],
@@ -8529,16 +8558,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-cle-appartement-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-badge-entreprise-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-carte-hotel-dessine.webp"
       ],
-      "missing_labels": [
-        "La clé de l'appartement",
-        "Un badge d'entreprise",
-        "Une carte d'hôtel"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-cle-appartement-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-badge-entreprise-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-carte-hotel-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a1-2022-co-ex5-71",
+        "question": 5,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-cle-appartement-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-badge-entreprise-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-carte-hotel-dessine.webp"
+        ],
+        "support_quote": "Bonjour, c'est Pierre. Tu veux venir à la maison ce soir? Il y a un super film à la télévision. Viens à 20h. Tu as la clé de l'appartement, alors tu peux entrer. Je prépare des pâtes à la sauce tomate. Tu peux apporter du pain? Merci. A tout à l'heure.",
+        "current_bank_transcription": "Bonjour, c’est Pierre. Tu veux venir à la maison ce soir ? Il y a un super film à la télévision. Viens à 20 heures ! Tu as la clé de l’appartement alors tu peux entrer. Je prépare des pâtes à la sauce tomate. Tu peux apporter du pain ? Merci, à tout à l’heure.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Une clé d’appartement avec contexte domestique et porte-clés, un badge professionnel et une carte-clé d’hôtel : les trois accès sont distincts. Aucune donnée personnelle ou numéro de chambre."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -9231,20 +9274,29 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-place-concert-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-livre-recettes-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-raquette-tennis-dessine.webp"
       ],
-      "missing_labels": [
-        "Une place de concert",
-        "Un livre de recettes",
-        "Une raquette de tennis"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-a2p-s1-co-4",
+        "question": 16,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-place-concert-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-livre-recettes-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-raquette-tennis-dessine.webp"
+        ],
+        "support_quote": "C’est l’anniversaire de Juliette samedi.\nQu’est-ce qu’on achète ?\nJe n’ai pas d’idée.\nTu sais ce qu’elle aime, toi ?\n— Elle adore la musique.\nPourquoi pas une place de concert ?\n— Oh, oui !\nParfait !\nTu as toujours de super idées !",
+        "current_bank_transcription": "C’est l’anniversaire de Juliette samedi.\nQu’est-ce qu’on achète ?\nJe n’ai pas d’idée.\nTu sais ce qu’elle aime, toi ?\n— Elle adore la musique.\nPourquoi pas une place de concert ?\n— Oh, oui !\nParfait !\nTu as toujours de super idées !",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Une seule place matérialisée par un ticket devant le concert déjà disponible, un seul livre RECETTES et une raquette de tennis isolée du ballon existant. Transcription actuelle relue ; lien vers le remplacement audio à établir."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -12342,19 +12394,29 @@
           "asset": "3a6e5659b8ed"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
+        "/lib/images/tcf/qcm-audit/co306-produits-alimentaires-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-vetements-dessines.webp",
-        null
+        "/lib/images/tcf/qcm-audit/co306-livres-francais-dessine.webp"
       ],
-      "missing_labels": [
-        "Des produits alimentaires",
-        "Des livres scolaires"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s42-co-1",
+        "question": 9,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-produits-alimentaires-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-vetements-dessines.webp",
+          "/lib/images/tcf/qcm-audit/co306-livres-francais-dessine.webp"
+        ],
+        "support_quote": "On vient d'arriver dans la ville et on voudrait se rendre utile dans une association.\nTrès bien, on a toujours besoin de bénévoles.\nNous avons besoin de bénévoles pour démission dans le secteur social, sportif ou culturel.\nÇa vous intéresse ?\nOui, je me suis déjà investi dans le soutien scolaire et mon ami dans le secteur sportif.\nComment on fait pour être bénévoles ?\nFaites une demande de mission en ligne.\nÀ la réunion de Samdi, vous rencontrerez d'autres bénévoles qui se sont déjà mobilisés dans différentes associations.\nNotre association recherche 4 000 bénévoles partout en France pour faire la collecte de produits alimentaires.\nÇa m'intéresse, je veux bien récupérer les dons à la sortie des magasins.",
+        "current_bank_transcription": "On vient d'arriver dans la ville et on voudrait se rendre utile dans une association.\nTrès bien, on a toujours besoin de bénévoles.\nNous avons besoin de bénévoles pour démission dans le secteur social, sportif ou culturel.\nÇa vous intéresse ?\nOui, je me suis déjà investi dans le soutien scolaire et mon ami dans le secteur sportif.\nComment on fait pour être bénévoles ?\nFaites une demande de mission en ligne.\nÀ la réunion de Samdi, vous rencontrerez d'autres bénévoles qui se sont déjà mobilisés dans différentes associations.\nNotre association recherche 4 000 bénévoles partout en France pour faire la collecte de produits alimentaires.\nÇa m'intéresse, je veux bien récupérer les dons à la sortie des magasins.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Assortiment alimentaire réutilisé, vêtements existants et deux livres scolaires de français réutilisés, qui représentent bien la catégorie livres scolaires ; pas de nombre de bénévoles ajouté. Transcription actuelle relue ; remplacement audio à rapprocher."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -14103,7 +14165,7 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a2-abc-direct:17:2163e371959c:7d404394"
       ],
@@ -14116,15 +14178,30 @@
         }
       ],
       "resolved_images": [
-        null,
+        "/lib/images/tcf/qcm-audit/co306-films-dessine.webp",
         "/lib/images/tcf/qcm-audit/co306-journaux-dessine.webp",
-        null
+        "/lib/images/tcf/qcm-audit/co306-repas-dessine.webp"
       ],
-      "missing_labels": [
-        "Des films",
-        "Des repas"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-films-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-journaux-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-repas-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ssx-a2-annonce-3-5-co-2",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-films-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-journaux-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-repas-dessine.webp"
+        ],
+        "support_quote": "Chers voyageurs, pour votre sécurité, il est strictement interdit d'ouvrir les portes du train. Merci de passer vos appels uniquement dans les couloirs. Des films sont à votre disposition.",
+        "current_bank_transcription": "Chers voyageurs, pour votre sécurité, il est strictement interdit d’ouvrir les portes du train.\nMerci de passer vos appels uniquement dans les couloirs.\nDes films sont à votre disposition.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Films au pluriel réutilisés, journaux existants réutilisés et deux plateaux-repas distincts : trois catégories de services aux voyageurs, sans reprendre d’interdiction dans les images."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -14626,7 +14703,7 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "9782090351958:022:7f8bd4692577",
         "additional-20261102:mdf-a2-abc-junior-direct:22:7f8bd4692577:fa483cc4"
@@ -14641,14 +14718,29 @@
       ],
       "resolved_images": [
         "/lib/images/tcf/qcm-audit/co834-parapluie-dessine.webp",
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-ticket-bus-dessine.webp",
+        "/lib/images/tcf/qcm-audit/a840cdfdb301.webp"
       ],
-      "missing_labels": [
-        "Un ticket de bus",
-        "Une veste"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-parapluie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-ticket-bus-dessine.webp",
+        "/lib/images/tcf/qcm-audit/a840cdfdb301.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ssx-a2-transport-comment-tu-rentres-co-4",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co834-parapluie-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-ticket-bus-dessine.webp",
+          "/lib/images/tcf/qcm-audit/a840cdfdb301.webp"
+        ],
+        "support_quote": "Jules, comment tu rentres chez toi? En bus. Et toi? J'aimerais rentrer à pied mais il pleut. J'ai un parapluie, prends le si tu veux. Tu me le rendras demain. Ah oui, super, merci.",
+        "current_bank_transcription": "- Jules, comment tu rentres chez toi ?\n- En bus, et toi ?\n- J'aimerais rentrer à pied, mais il pleut.\n- J'ai un parapluie, prends-le si tu veux.\nTu me le rendras demain.\n- Ah oui, super, merci !",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Parapluie et veste bleue déjà disponibles relus et réutilisés ; un ticket papier de bus ajouté, sans montant, numéro ou date."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -14947,7 +15039,7 @@
           "asset": "4d198aeabb86"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a2_2021:003:2505cafdfeda"
       ],
@@ -14960,16 +15052,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-quai-a-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-quai-b-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-quai-c-dessine.webp"
       ],
-      "missing_labels": [
-        "Du quai A",
-        "Du quai B",
-        "Du quai C"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-quai-a-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-quai-b-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-quai-c-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a2-2021-co-ex1-03",
+        "question": 11,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-quai-a-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-quai-b-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-quai-c-dessine.webp"
+        ],
+        "support_quote": "Le train 5957 en provenance de Paris-Gare de Lyon. A destination de Clermont-Ferrand partira quai à à 17h.",
+        "current_bank_transcription": "Le train 5957 en provenance de Paris Gare de Lyon, à destination de Clermont-Ferrand, partira quai A à 17 h.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Panneaux de quai A, B et C relus. La transcription préparée rend A par « à », la transcription de la banque écrit quai A ; aucun autre renseignement chiffré n’est ajouté. Cette relecture n’est pas une certification d’écoute."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -15000,7 +15106,7 @@
           "asset": "aeea7da7bfac"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a2_2021:004:7a3b958c8d4a"
       ],
@@ -15013,16 +15119,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-quai-b-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-quai-a-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-quai-d-dessine.webp"
       ],
-      "missing_labels": [
-        "La voie B",
-        "La voie A",
-        "La voie D"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-quai-b-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-quai-a-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-quai-d-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a2-2021-co-ex1-04",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-quai-b-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-quai-a-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-quai-d-dessine.webp"
+        ],
+        "support_quote": "Départ du train 2365 à destination de Rennes à 13h50 voie B. Les voies A à D se situent au premier étage par l'escalier roulant.",
+        "current_bank_transcription": "Départ du train 2365 à destination de Rennes à\n13 h 50 voie B. Les voies A à D se situent au premier\nétage par l’escalier roulant.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Panneaux B, A et D dans des scènes ferroviaires comparables ; lettre et contexte visibles, sans horaires ou autres lettres parasites."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -15105,7 +15225,7 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a2_2021:009:999b8647c0b5"
       ],
@@ -15118,15 +15238,30 @@
         }
       ],
       "resolved_images": [
-        null,
+        "/lib/images/tcf/qcm-audit/co306-produits-alimentaires-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-vetements-dessines.webp",
-        null
+        "/lib/images/tcf/qcm-audit/co306-meubles-dessine.webp"
       ],
-      "missing_labels": [
-        "Les produits alimentaires",
-        "Les meubles"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-produits-alimentaires-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-vetements-dessines.webp",
+        "/lib/images/tcf/qcm-audit/co306-meubles-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a2-2021-co-ex2-09",
+        "question": 2,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-produits-alimentaires-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-vetements-dessines.webp",
+          "/lib/images/tcf/qcm-audit/co306-meubles-dessine.webp"
+        ],
+        "support_quote": "Vous cherchez des idées de repas? Jusqu'à la fin du mois, des surprises vous attendent à Rondspoint Boutique. 17% d'économie sur tous les produits alimentaires.",
+        "current_bank_transcription": "Vous cherchez des idées de repas ? Jusqu’à la fin du mois, des surprises vous attendent à Rond-Point Boutique : 17 % d’économie sur tous les produits alimentaires.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Assortiment de courses alimentaires, vêtements existants et plusieurs meubles : catégories au pluriel ; aucune réduction chiffrée ou indication de fin de mois du support reproduite."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -15383,12 +15518,11 @@
       ],
       "resolved_images": [
         null,
-        null,
+        "/lib/images/tcf/qcm-audit/co306-produits-alimentaires-dessine.webp",
         null
       ],
       "missing_labels": [
         "Les produits dangereux",
-        "Les produits alimentaires",
         "Les produits en promotion"
       ],
       "ready_for_source_review": false

@@ -31,20 +31,20 @@
     "received_source_entries": 836,
     "copyright_removed": 2,
     "planned_question_candidates": 423,
-    "activated_planned_questions": 185,
-    "pending_question_candidates": 238,
+    "activated_planned_questions": 193,
+    "pending_question_candidates": 230,
     "original_missing_concepts": 741,
-    "original_concepts_now_generated_or_reused": 450,
-    "remaining_original_concepts": 291,
-    "new_co_images_this_batch": 572,
+    "original_concepts_now_generated_or_reused": 467,
+    "remaining_original_concepts": 274,
+    "new_co_images_this_batch": 589,
     "activated_association_scenes_this_batch": 13,
     "pending_association_scenes": 0,
-    "sources_with_pending_question_candidates": 95,
-    "sources_with_new_active_question_or_scene": 176,
+    "sources_with_pending_question_candidates": 87,
+    "sources_with_new_active_question_or_scene": 182,
     "sources_without_current_bank_reference": 234,
     "remaining_audio_references_to_match": 432,
     "co_images_needing_style_correction": 0,
-    "co_images_style_aligned": 572,
+    "co_images_style_aligned": 589,
     "co_style_redraws_completed": 11
   },
   "instructions": [
@@ -2889,22 +2889,21 @@
       "old_refs": [
         "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_64.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
+        {
+          "exercise": "delf-a1-2022-co-ex2-64",
+          "question": 3
+        },
         {
           "exercise": "delf-a1-2022-co-ex2-64",
           "question": 4
         }
       ],
-      "new_active_visual_questions": [
-        {
-          "exercise": "delf-a1-2022-co-ex2-64",
-          "question": 3
-        }
-      ],
       "new_active_association_scenes": [],
       "current_linked_questions": 7,
-      "current_linked_image_variants": 1,
+      "current_linked_image_variants": 2,
       "complete_image_audit_certified": false
     },
     {
@@ -2974,17 +2973,17 @@
         "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_68-3.mp3",
         "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_68-4.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "delf-a1-2022-co-ex4-68",
           "question": 8
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 8,
-      "current_linked_image_variants": 3,
+      "current_linked_image_variants": 4,
       "complete_image_audit_certified": false
     },
     {
@@ -3049,13 +3048,13 @@
         {
           "exercise": "delf-a1-2022-co-ex5-71",
           "question": 3
-        },
-        {
-          "exercise": "delf-a1-2022-co-ex5-71",
-          "question": 5
         }
       ],
       "new_active_visual_questions": [
+        {
+          "exercise": "delf-a1-2022-co-ex5-71",
+          "question": 5
+        },
         {
           "exercise": "delf-a1-2022-co-ex5-71",
           "question": 6
@@ -3063,7 +3062,7 @@
       ],
       "new_active_association_scenes": [],
       "current_linked_questions": 7,
-      "current_linked_image_variants": 4,
+      "current_linked_image_variants": 5,
       "complete_image_audit_certified": false
     },
     {
@@ -4426,17 +4425,17 @@
         "/lib/audio/tcf/co/transports/01-transport-comment-tu-rentres.mp3",
         "/lib/audio/tcf/co/transports/02-transport-le-bus-va-à-la-gare.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ssx-a2-transport-comment-tu-rentres-co-4",
           "question": 3
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 16,
-      "current_linked_image_variants": 4,
+      "current_linked_image_variants": 5,
       "complete_image_audit_certified": false
     },
     {
@@ -5606,13 +5605,8 @@
         "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_03-3.mp3",
         "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_03-4.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
-        {
-          "exercise": "delf-a2-2021-co-ex1-03",
-          "question": 11
-        }
-      ],
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
       "new_active_visual_questions": [
         {
           "exercise": "delf-a2-2021-co-ex1-03",
@@ -5621,11 +5615,15 @@
         {
           "exercise": "delf-a2-2021-co-ex1-03",
           "question": 7
+        },
+        {
+          "exercise": "delf-a2-2021-co-ex1-03",
+          "question": 11
         }
       ],
       "new_active_association_scenes": [],
       "current_linked_questions": 16,
-      "current_linked_image_variants": 4,
+      "current_linked_image_variants": 5,
       "complete_image_audit_certified": false
     },
     {
@@ -5638,17 +5636,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_04.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "delf-a2-2021-co-ex1-04",
           "question": 3
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 5,
-      "current_linked_image_variants": 1,
+      "current_linked_image_variants": 2,
       "complete_image_audit_certified": false
     },
     {
@@ -5754,17 +5752,17 @@
         "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_09-4.mp3",
         "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_09-5.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "delf-a2-2021-co-ex2-09",
           "question": 2
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 19,
-      "current_linked_image_variants": 0,
+      "current_linked_image_variants": 1,
       "complete_image_audit_certified": false
     },
     {
@@ -11638,17 +11636,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/transports/moyen-a2__annonce-3.5.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ssx-a2-annonce-3-5-co-2",
           "question": 3
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 3,
-      "current_linked_image_variants": 0,
+      "current_linked_image_variants": 1,
       "complete_image_audit_certified": false
     },
     {
@@ -13650,17 +13648,17 @@
         "/lib/audio/tcf/co/transports/01-transport-comment-tu-rentres.mp3",
         "/lib/audio/tcf/co/transports/02-transport-le-bus-va-à-la-gare.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ssx-a2-transport-comment-tu-rentres-co-4",
           "question": 3
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 16,
-      "current_linked_image_variants": 4,
+      "current_linked_image_variants": 5,
       "complete_image_audit_certified": false
     },
     {
@@ -25630,7 +25628,7 @@
           "asset": "aeea7da7bfac"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:064:ed6bd842d6ff"
       ],
@@ -25641,6 +25639,11 @@
           "candidate_cut_id": "delf_a1_2022-064-ed6bd842d6ff-d1",
           "transcription": "Mesdames et messieurs, votre attention s'il est. Le train TGV, numéro 8570, partira à 10h24, voie eux. Pour des consignes de sécurité, merci de vous présenter 15 minutes avant le départ. N'oubliez pas votre billet et votre pièce d'identité. Merci de mettre votre nom sur tous vos bagages. Bon voyage!"
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-quai-e-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-quai-b-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-quai-d-dessine.webp"
       ]
     },
     {
@@ -25672,7 +25675,7 @@
           "asset": null
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:068:160d235a48ef"
       ],
@@ -25683,6 +25686,11 @@
           "candidate_cut_id": "delf_a1_2022-068-160d235a48ef-r2-d4",
           "transcription": "Bonjour, ici c'est la bibliothèque. Vous pouvez prendre des livres. Super! Et des films aussi? Oui, tu peux prendre des films aussi."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-films-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-vetements-dessines.webp",
+        "/lib/images/tcf/qcm-audit/co306-instruments-dessine.webp"
       ]
     },
     {
@@ -27110,7 +27118,7 @@
           "asset": "903b3674657f"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:071:6c883ff62da0"
       ],
@@ -27121,6 +27129,11 @@
           "candidate_cut_id": "delf_a1_2022-071-6c883ff62da0-d1",
           "transcription": "Bonjour, c'est Pierre. Tu veux venir à la maison ce soir? Il y a un super film à la télévision. Viens à 20h. Tu as la clé de l'appartement, alors tu peux entrer. Je prépare des pâtes à la sauce tomate. Tu peux apporter du pain? Merci. A tout à l'heure."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-cle-appartement-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-badge-entreprise-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-carte-hotel-dessine.webp"
       ]
     },
     {
@@ -27926,7 +27939,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-place-concert-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-livre-recettes-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-raquette-tennis-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-a2p-s1-co-4",
+        "question": 16,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-place-concert-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-livre-recettes-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-raquette-tennis-dessine.webp"
+        ],
+        "support_quote": "C’est l’anniversaire de Juliette samedi.\nQu’est-ce qu’on achète ?\nJe n’ai pas d’idée.\nTu sais ce qu’elle aime, toi ?\n— Elle adore la musique.\nPourquoi pas une place de concert ?\n— Oh, oui !\nParfait !\nTu as toujours de super idées !",
+        "current_bank_transcription": "C’est l’anniversaire de Juliette samedi.\nQu’est-ce qu’on achète ?\nJe n’ai pas d’idée.\nTu sais ce qu’elle aime, toi ?\n— Elle adore la musique.\nPourquoi pas une place de concert ?\n— Oh, oui !\nParfait !\nTu as toujours de super idées !",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Une seule place matérialisée par un ticket devant le concert déjà disponible, un seul livre RECETTES et une raquette de tennis isolée du ballon existant. Transcription actuelle relue ; lien vers le remplacement audio à établir."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -31538,7 +31570,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-produits-alimentaires-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-vetements-dessines.webp",
+        "/lib/images/tcf/qcm-audit/co306-livres-francais-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s42-co-1",
+        "question": 9,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-produits-alimentaires-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-vetements-dessines.webp",
+          "/lib/images/tcf/qcm-audit/co306-livres-francais-dessine.webp"
+        ],
+        "support_quote": "On vient d'arriver dans la ville et on voudrait se rendre utile dans une association.\nTrès bien, on a toujours besoin de bénévoles.\nNous avons besoin de bénévoles pour démission dans le secteur social, sportif ou culturel.\nÇa vous intéresse ?\nOui, je me suis déjà investi dans le soutien scolaire et mon ami dans le secteur sportif.\nComment on fait pour être bénévoles ?\nFaites une demande de mission en ligne.\nÀ la réunion de Samdi, vous rencontrerez d'autres bénévoles qui se sont déjà mobilisés dans différentes associations.\nNotre association recherche 4 000 bénévoles partout en France pour faire la collecte de produits alimentaires.\nÇa m'intéresse, je veux bien récupérer les dons à la sortie des magasins.",
+        "current_bank_transcription": "On vient d'arriver dans la ville et on voudrait se rendre utile dans une association.\nTrès bien, on a toujours besoin de bénévoles.\nNous avons besoin de bénévoles pour démission dans le secteur social, sportif ou culturel.\nÇa vous intéresse ?\nOui, je me suis déjà investi dans le soutien scolaire et mon ami dans le secteur sportif.\nComment on fait pour être bénévoles ?\nFaites une demande de mission en ligne.\nÀ la réunion de Samdi, vous rencontrerez d'autres bénévoles qui se sont déjà mobilisés dans différentes associations.\nNotre association recherche 4 000 bénévoles partout en France pour faire la collecte de produits alimentaires.\nÇa m'intéresse, je veux bien récupérer les dons à la sortie des magasins.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Assortiment alimentaire réutilisé, vêtements existants et deux livres scolaires de français réutilisés, qui représentent bien la catégorie livres scolaires ; pas de nombre de bénévoles ajouté. Transcription actuelle relue ; remplacement audio à rapprocher."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -33512,7 +33563,7 @@
           "asset": null
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a2-abc-direct:17:2163e371959c:7d404394"
       ],
@@ -33523,6 +33574,11 @@
           "candidate_cut_id": "additional-20261102-mdf-a2-abc-direct-17-2163e371959c-7d404394-d1",
           "transcription": "Chers voyageurs, pour votre sécurité, il est strictement interdit d'ouvrir les portes du train. Merci de passer vos appels uniquement dans les couloirs. Des films sont à votre disposition."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-films-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-journaux-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-repas-dessine.webp"
       ]
     },
     {
@@ -34065,7 +34121,7 @@
           "asset": null
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "9782090351958:022:7f8bd4692577",
         "additional-20261102:mdf-a2-abc-junior-direct:22:7f8bd4692577:fa483cc4"
@@ -34077,6 +34133,11 @@
           "candidate_cut_id": "9782090351958-022-7f8bd4692577-d2",
           "transcription": "Jules, comment tu rentres chez toi? En bus. Et toi? J'aimerais rentrer à pied mais il pleut. J'ai un parapluie, prends le si tu veux. Tu me le rendras demain. Ah oui, super, merci."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-parapluie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-ticket-bus-dessine.webp",
+        "/lib/images/tcf/qcm-audit/a840cdfdb301.webp"
       ]
     },
     {
@@ -34343,7 +34404,7 @@
           "asset": "4d198aeabb86"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a2_2021:003:2505cafdfeda"
       ],
@@ -34354,6 +34415,11 @@
           "candidate_cut_id": "delf_a2_2021-003-2505cafdfeda-d3",
           "transcription": "Le train 5957 en provenance de Paris-Gare de Lyon. A destination de Clermont-Ferrand partira quai à à 17h."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-quai-a-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-quai-b-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-quai-c-dessine.webp"
       ]
     },
     {
@@ -34385,7 +34451,7 @@
           "asset": "aeea7da7bfac"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a2_2021:004:7a3b958c8d4a"
       ],
@@ -34396,6 +34462,11 @@
           "candidate_cut_id": "delf_a2_2021-004-7a3b958c8d4a-d1",
           "transcription": "Départ du train 2365 à destination de Rennes à 13h50 voie B. Les voies A à D se situent au premier étage par l'escalier roulant."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-quai-b-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-quai-a-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-quai-d-dessine.webp"
       ]
     },
     {
@@ -34563,7 +34634,7 @@
           "asset": null
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a2_2021:009:999b8647c0b5"
       ],
@@ -34574,6 +34645,11 @@
           "candidate_cut_id": "delf_a2_2021-009-999b8647c0b5-d1",
           "transcription": "Vous cherchez des idées de repas? Jusqu'à la fin du mois, des surprises vous attendent à Rondspoint Boutique. 17% d'économie sur tous les produits alimentaires."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-produits-alimentaires-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-vetements-dessines.webp",
+        "/lib/images/tcf/qcm-audit/co306-meubles-dessine.webp"
       ]
     },
     {
@@ -37034,7 +37110,7 @@
       "label": "Des produits alimentaires",
       "path_after_generation": "/lib/images/tcf/qcm-audit/74516d227fdd.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des produits alimentaires ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s42-co-1",
@@ -37042,8 +37118,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-produits-alimentaires-dessine.webp",
+      "sha256": "e7c4e786e9d78d8c494f54d063d29214540cf0e24b7fac9ac14e344d0c510857",
+      "review_note": "Assortiment de courses alimentaires entier : pain, œufs, légumes, pommes, pâtes sèches et lait à emballage sans texte. Aucun prix, marque, date ou quantité chiffrée. Concept entier et paysage natif exact 4:3 relus ; sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "88a6b997029d",
@@ -37728,7 +37809,7 @@
       "label": "Du quai B",
       "path_after_generation": "/lib/images/tcf/qcm-audit/7a41d5ab27a2.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Du quai B ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a2-2021-co-ex1-03",
@@ -37736,8 +37817,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-quai-b-dessine.webp",
+      "sha256": "beeb992bf28bd5535f18f9821d7217d344a30cb395b3d518c102cc6541028103",
+      "review_note": "Quai ferroviaire avec rails et train, panneau bleu portant uniquement la lettre B correctement relue ; aucun numéro ou horaire. Les cinq scènes sont comparables, et le contexte représente aussi la voie désignée par la lettre. Concept entier et paysage natif exact 4:3 relus ; sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "6e25671d8bf2",
@@ -38338,7 +38424,7 @@
       "label": "La voie B",
       "path_after_generation": "/lib/images/tcf/qcm-audit/a943fdea8cf2.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « La voie B ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-ex2-64",
@@ -38351,8 +38437,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-quai-b-dessine.webp",
+      "sha256": "beeb992bf28bd5535f18f9821d7217d344a30cb395b3d518c102cc6541028103",
+      "review_note": "Quai ferroviaire avec rails et train, panneau bleu portant uniquement la lettre B correctement relue ; aucun numéro ou horaire. Les cinq scènes sont comparables, et le contexte représente aussi la voie désignée par la lettre. Concept entier et paysage natif exact 4:3 relus ; sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "367f5918a7b0",
@@ -38776,7 +38867,7 @@
       "label": "Une carte d'hôtel",
       "path_after_generation": "/lib/images/tcf/qcm-audit/903b3674657f.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une carte d'hôtel ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-ex5-71",
@@ -38784,8 +38875,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-carte-hotel-dessine.webp",
+      "sha256": "a560ccc28d68c88f3ab90a9e53b0caee86bd05e3307bf402e85ce8be5de4efe5",
+      "review_note": "Une carte-clé entière HÔTEL avec accent correctement relu en vue pleine, pictogramme de lit et poignée à lecteur ; aucun numéro de chambre ou montant. Concept entier et paysage natif exact 4:3 relus ; sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "8db629d5ee8e",
@@ -39265,7 +39361,7 @@
       "label": "Du quai A",
       "path_after_generation": "/lib/images/tcf/qcm-audit/c3c843a756af.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Du quai A ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a2-2021-co-ex1-03",
@@ -39273,8 +39369,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-quai-a-dessine.webp",
+      "sha256": "d0930545d0f87e055941b5f301168120eea46d61f6e0a07c0865427c13e751c1",
+      "review_note": "Quai ferroviaire avec rails et train, panneau bleu portant uniquement la lettre A correctement relue ; aucun numéro ou horaire. Les cinq scènes sont comparables, et le contexte représente aussi la voie désignée par la lettre. Concept entier et paysage natif exact 4:3 relus ; sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "c93c0e9a2da2",
@@ -40993,7 +41094,7 @@
       "label": "Des livres scolaires",
       "path_after_generation": "/lib/images/tcf/qcm-audit/3a6e5659b8ed.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des livres scolaires ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s42-co-1",
@@ -41001,8 +41102,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-livres-francais-dessine.webp",
+      "sha256": "5eeacaa37c86536747f76f1eebb85af9dca6e9dc5de5c7953e58b71489817752",
+      "review_note": "Deux livres rouges distincts portant FRANÇAIS ; le pluriel est représenté. Concept entier au singulier ou pluriel demandé, paysage natif exact 4:3, sans prix, date, jour ou mois.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "811561e8887c",
@@ -42618,7 +42724,7 @@
       "label": "La voie E",
       "path_after_generation": "/lib/images/tcf/qcm-audit/eb71e1eb484d.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « La voie E ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-ex2-64",
@@ -42626,8 +42732,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-quai-e-dessine.webp",
+      "sha256": "0e247a61ec53d795d8ae8962ed692071777b482b35eb14f21abbd33716a90b4d",
+      "review_note": "Quai ferroviaire avec rails et train, panneau bleu portant uniquement la lettre E correctement relue ; aucun numéro ou horaire. Les cinq scènes sont comparables, et le contexte représente aussi la voie désignée par la lettre. Concept entier et paysage natif exact 4:3 relus ; sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "5d8e88dcdcf7",
@@ -42703,7 +42814,7 @@
       "label": "La clé de l'appartement",
       "path_after_generation": "/lib/images/tcf/qcm-audit/dabc4d41a2dc.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « La clé de l'appartement ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-ex5-71",
@@ -42711,8 +42822,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-cle-appartement-dessine.webp",
+      "sha256": "5dba715f4a43d37d45e37c834db76608fdca083a7b869117cb479895af723039",
+      "review_note": "Une clé dorée entière sur anneau et porte-clés APPARTEMENT correctement relu, porte domestique et canapé en arrière-plan ; aucune clé supplémentaire ou numéro. Concept entier et paysage natif exact 4:3 relus ; sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "8a34edd9dc81",
@@ -44213,7 +44329,7 @@
       "label": "La voie A",
       "path_after_generation": "/lib/images/tcf/qcm-audit/78bea85d42ab.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « La voie A ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a2-2021-co-ex1-04",
@@ -44221,8 +44337,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-quai-a-dessine.webp",
+      "sha256": "d0930545d0f87e055941b5f301168120eea46d61f6e0a07c0865427c13e751c1",
+      "review_note": "Quai ferroviaire avec rails et train, panneau bleu portant uniquement la lettre A correctement relue ; aucun numéro ou horaire. Les cinq scènes sont comparables, et le contexte représente aussi la voie désignée par la lettre. Concept entier et paysage natif exact 4:3 relus ; sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "ca9308bedad2",
@@ -44913,7 +45034,7 @@
       "label": "Des films",
       "path_after_generation": "/lib/images/tcf/qcm-audit/57c361aa9816.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des films ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-ex4-68",
@@ -44926,8 +45047,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-films-dessine.webp",
+      "sha256": "83f44c996c2c3773e3288f0bcf4802e34b34b26fa196d227cd00b6fb47f3a47b",
+      "review_note": "Deux boîtiers de DVD à clap et pellicule, l’un ouvert sur son disque ; aucun CD audio générique, titre ou chiffre. Concept entier et paysage natif exact 4:3 relus ; sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "b22fc6d3b83c",
@@ -45447,7 +45573,7 @@
       "label": "Un livre de recettes",
       "path_after_generation": "/lib/images/tcf/qcm-audit/52806b6e76ae.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un livre de recettes ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1v-ce-030",
@@ -45460,8 +45586,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-livre-recettes-dessine.webp",
+      "sha256": "b1edc769a68865a092a53df3e3e62c7e49525c136eb1530840ff9f8f086fcef8",
+      "review_note": "Un seul livre orange, titre RECETTES correctement relu, casserole et bol de soupe intégrés à la couverture ; pas de recette chiffrée. Concept entier et paysage natif exact 4:3 relus ; sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "8e33e56e2d89",
@@ -47274,7 +47405,7 @@
       "label": "La voie D",
       "path_after_generation": "/lib/images/tcf/qcm-audit/aeea7da7bfac.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « La voie D ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-ex2-64",
@@ -47287,8 +47418,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-quai-d-dessine.webp",
+      "sha256": "d900995663dcb70347e9bc8dc7fe7f9144c9384ade9c1afc65779e569e8ecf6a",
+      "review_note": "Quai ferroviaire avec rails et train, panneau bleu portant uniquement la lettre D correctement relue ; aucun numéro ou horaire. Les cinq scènes sont comparables, et le contexte représente aussi la voie désignée par la lettre. Concept entier et paysage natif exact 4:3 relus ; sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "27d9003ce885",
@@ -47448,7 +47584,7 @@
       "label": "Un ticket de bus",
       "path_after_generation": "/lib/images/tcf/qcm-audit/e5764664c609.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un ticket de bus ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ssx-a2-transport-comment-tu-rentres-co-4",
@@ -47456,8 +47592,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-ticket-bus-dessine.webp",
+      "sha256": "e469daf0c6fce7710af80ad5007d391edff13672bb3fae220bb84630732cb8a1",
+      "review_note": "Un ticket de papier entier à bords dentelés, seul mot BUS et pictogramme de bus ; sans tarif, ligne, horaire ou date. Concept entier et paysage natif exact 4:3 relus ; sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "2e5bf7d262f0",
@@ -48353,7 +48494,7 @@
       "label": "Du quai C",
       "path_after_generation": "/lib/images/tcf/qcm-audit/4d198aeabb86.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Du quai C ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a2-2021-co-ex1-03",
@@ -48361,8 +48502,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-quai-c-dessine.webp",
+      "sha256": "ced328827d8399b4af59f1d21cc30e08fa285de79f70f356a49372ba9b1e69d4",
+      "review_note": "Quai ferroviaire avec rails et train, panneau bleu portant uniquement la lettre C correctement relue ; aucun numéro ou horaire. Les cinq scènes sont comparables, et le contexte représente aussi la voie désignée par la lettre. Concept entier et paysage natif exact 4:3 relus ; sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "d31fa32e3d3f",
@@ -49618,7 +49764,7 @@
       "label": "Une place de concert",
       "path_after_generation": "/lib/images/tcf/qcm-audit/5adf2951fa1a.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une place de concert ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a2p-s1-co-4",
@@ -49626,8 +49772,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-place-concert-dessine.webp",
+      "sha256": "05e1302b6cdb4bfc13876e375789b222aad9b90b67346e71d38b291f51f52818",
+      "review_note": "Un seul ticket vierge entier devant le concert peint existant ; artistes et public variés conservés et aucune nouvelle distribution inutile. Pas de prix, date ou siège numéroté. Concept entier et paysage natif exact 4:3 relus ; sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "222ab72a131b",
@@ -50565,7 +50716,7 @@
       "label": "Un badge d'entreprise",
       "path_after_generation": "/lib/images/tcf/qcm-audit/7ad4aa4c4537.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un badge d'entreprise ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-ex5-71",
@@ -50573,8 +50724,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-badge-entreprise-dessine.webp",
+      "sha256": "d3dd50cda7b2fda18b103cf453e94b79590e135863bf5693c3bbf8fa28e22333",
+      "review_note": "Un badge professionnel entier avec clip et lanière, portrait fictif peint d’une femme noire et pictogramme de bureaux ; ENTREPRISE correctement relu en vue pleine, aucune donnée personnelle. Concept entier et paysage natif exact 4:3 relus ; sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "9b58e05be793",
@@ -50775,7 +50931,7 @@
       "label": "Les produits alimentaires",
       "path_after_generation": "/lib/images/tcf/qcm-audit/500c216cb3b1.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Les produits alimentaires ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a2-2021-co-ex2-09",
@@ -50788,8 +50944,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-produits-alimentaires-dessine.webp",
+      "sha256": "e7c4e786e9d78d8c494f54d063d29214540cf0e24b7fac9ac14e344d0c510857",
+      "review_note": "Assortiment de courses alimentaires entier : pain, œufs, légumes, pommes, pâtes sèches et lait à emballage sans texte. Aucun prix, marque, date ou quantité chiffrée. Concept entier et paysage natif exact 4:3 relus ; sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "b0f59a44a94d",
@@ -51089,19 +51250,19 @@
   "pending_association_images": [],
   "visual_style_review": {
     "audit": "recontrole-style-images.json",
-    "reviewed_co_images": 572,
+    "reviewed_co_images": 589,
     "reviewed_other_images": 59,
-    "reviewed_total_images": 631,
+    "reviewed_total_images": 648,
     "user_approved_reference_images": 35,
     "initial_redraw_required": 11,
     "initial_co_redraw_required": 11,
     "initial_other_redraw_required": 0,
-    "already_aligned": 620,
+    "already_aligned": 637,
     "redrawn_images": 11,
     "remaining_redraws": 0,
     "restored_previous_images": 14,
     "rejected_unpublished_previews": 12,
-    "new_images_compared_to_reference": 313
+    "new_images_compared_to_reference": 330
   },
   "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
   "workflow_order": [
