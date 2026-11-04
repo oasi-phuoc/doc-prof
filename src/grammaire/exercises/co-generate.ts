@@ -2,7 +2,7 @@ import type { Rng } from '@/math/rng'
 import type { MathItem, PageConfig } from '@/math/types'
 import { tcfExerciseItems } from '@/tcf/generate'
 import { grammarCoThemeForType } from './co-themes'
-import { grammarCoEntries, hasGrammarCoTheme, type GrammarCoEntry } from './co-bank'
+import { defaultGrammarCoLevel, grammarCoEntries, hasGrammarCoTheme, type GrammarCoEntry } from './co-bank'
 
 /** No level fallback: an A2 recipe never draws a currently available A1 recording. */
 export function buildImportedGrammarCo(config: PageConfig, rng: Rng, bank?: readonly GrammarCoEntry[]): {
@@ -11,7 +11,7 @@ export function buildImportedGrammarCo(config: PageConfig, rng: Rng, bank?: read
   const theme = grammarCoThemeForType(config.exerciseType)
   if (!theme || config.tcfExercise) return null
   if (!config.exerciseType.endsWith('-co-theme') && !bank && !hasGrammarCoTheme(theme.id)) return null
-  const level = config.grammarCoLevel ?? 'A1'
+  const level = config.grammarCoLevel ?? defaultGrammarCoLevel(theme.id,bank)
   const entries = grammarCoEntries(theme.id,level,bank)
   if (!entries.length) return {
     instruction:'Compréhension orale',bankQuestionCap:0,

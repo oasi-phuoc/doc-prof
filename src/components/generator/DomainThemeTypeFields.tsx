@@ -2,7 +2,7 @@ import { PhrasePolarityControl } from './PhrasePolarityControl'
 import { PhraseCategoryControls } from './PhraseCategoryControls'
 import { GrammarCoLevelControl } from './GrammarCoLevelControl'
 import { grammarCoThemeForType } from '@/grammaire/exercises/co-themes'
-import { grammarCoEntries, hasGrammarCoTheme } from '@/grammaire/exercises/co-bank'
+import { defaultGrammarCoLevel, grammarCoEntries, hasGrammarCoTheme } from '@/grammaire/exercises/co-bank'
 import { isNegativePhraseTheme, isPhraseThemeId } from '@/francais/phrase-themes'
 import { phraseSelection } from '@/francais/phrase-options'
 import {
@@ -151,7 +151,8 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
   } = p
   const grammarCoTheme = grammarCoThemeForType(activeBlock.exerciseType)
   const showGrammarCoLevel = grammarCoTheme && (activeBlock.exerciseType.endsWith('-co-theme') || hasGrammarCoTheme(grammarCoTheme.id))
-  const grammarCoAudios = grammarCoTheme ? grammarCoEntries(grammarCoTheme.id,activeBlock.grammarCoLevel??'A1') : []
+  const grammarCoLevel = activeBlock.grammarCoLevel ?? (grammarCoTheme ? defaultGrammarCoLevel(grammarCoTheme.id) : 'A1')
+  const grammarCoAudios = grammarCoTheme ? grammarCoEntries(grammarCoTheme.id,grammarCoLevel) : []
   return (
     <>
               {isJeuxDomain || isCalliDomain ? null : (
@@ -440,7 +441,8 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
               ) : null}
               {isGrammaireDomain && showGrammarCoLevel ? (
                 <GrammarCoLevelControl
-                  value={activeBlock.grammarCoLevel??'A1'}
+                  value={grammarCoLevel}
+                  a1Available={grammarCoEntries(grammarCoTheme.id,'A1').length>0}
                   a2Available={grammarCoEntries(grammarCoTheme.id,'A2').length>0}
                   onChange={grammarCoLevel=>updatePage({
                     ...clearLibreContentFreeze(),grammarCoLevel,grammarCoAudioId:undefined,tcfExercise:undefined,
@@ -455,7 +457,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                     tcfBankId:undefined,tcfFormModes:undefined,tcfPageBreakAfter:undefined,
                   })}>
                   {grammarCoAudios.map(entry=>(
-                    <option key={entry.exercise.id} value={entry.exercise.id}>{entry.source.filename.replace('.mp3','').replace('piste','Piste ')}</option>
+                    <option key={entry.exercise.id} value={entry.exercise.id}>{entry.source.filename.replace('.mp3','').replace(/^piste_?/,'Piste ')}</option>
                   ))}
                 </SelectBox>
               ) : null}

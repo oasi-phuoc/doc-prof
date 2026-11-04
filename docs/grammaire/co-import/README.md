@@ -1,18 +1,18 @@
 # Audios de compréhension orale — Grammaire
 
-**127 audios originaux, 20 thèmes, tous A1.** Les fichiers sont dans `public/lib/audio/grammaire/co/<theme>/pisteNNN.mp3`. Chaque fichier est identique à celui envoyé (SHA-256 contrôlé), sans découpe ni conversion. L’inventaire [sources.json](sources.json) conserve les identifiants d’envoi, durées, empreintes, chemins et destinations.
+**252 audios originaux : 127 A1 et 125 A2, répartis dans 38 thèmes/sous-thèmes.** Les 24 lots A2 partagent 23 destinations, « Activités de loisir » et « Centres d’intérêt » étant réunis. Les fichiers A1 restent dans `public/lib/audio/grammaire/co/<theme>/pisteNNN.mp3` ; les nouveaux A2 sont dans `public/lib/audio/grammaire/co/<theme>/a2/piste_NNN.mp3`, sans collision avec les noms A1. Chaque fichier est identique à celui envoyé (SHA-256 contrôlé), sans découpe ni conversion. L’inventaire [sources.json](sources.json) conserve les identifiants d’envoi, durées, empreintes, chemins et destinations.
 
 ## Utilisation
 
-Dans le thème/sous-thème convenu, choisir **Compréhension orale**, puis la piste dans le menu **Audio**. Le réglage **A1 / A2** est propre à l’exercice et sauvegardé avec la piste sélectionnée. Tous les enregistrements actuels sont A1. A2 est désactivé jusqu’à l’ajout de ses propres audios ; aucune recette A2 ne tire un audio A1 à la place.
+Dans le thème/sous-thème convenu, choisir **Compréhension orale**, puis la piste dans le menu **Audio**. Le réglage **A1 / A2** est propre à l’exercice et sauvegardé avec la piste sélectionnée. Seuls les niveaux possédant leurs propres enregistrements sont activés. Le niveau par défaut est A1 si disponible, sinon A2. Aucune recette A2 ne tire un audio A1 à la place, et inversement.
 
-Se présenter et Famille réutilisent les sous-thèmes existants. Les 18 autres lots sont classés dans leurs contextes dédiés sous les parties convenues : temps, décrire, demander/proposer, conseiller, activités, présent, aliments, espace et questions. La table complète est dans `src/grammaire/exercises/co-themes.ts`.
+Se présenter et Famille réutilisent les sous-thèmes existants. Les autres lots sont classés dans leurs contextes dédiés sous les parties convenues : temps, décrire, demander/proposer, conseiller, activités, présent, aliments, espace, questions, faits divers, argumentation et entrer en contact. Les corrections A2 convenues sont conservées : « Centres d’intérêt » avec les loisirs, « Ville ou campagne » dans argumenter, « Prendre soin de soi » dans conseiller, « Entretien d’embauche » et « S’intégrer dans l’entreprise » dans demander/proposer. La table complète est dans `src/grammaire/exercises/co-themes.ts`.
 
-Chaque piste est liée au support CO du rendu TCF. **Les 127 transcriptions ont été ajoutées à la demande du 4 novembre 2026.** Les questions restent vides et leur nombre est masqué. Les anciennes recettes identité/famille sont reconnues et migrées vers le type commun.
+Chaque piste est liée au support CO du rendu TCF. **Les 127 transcriptions A1 déjà ajoutées sur main sont conservées. Les 125 pistes A2 restent sans transcription.** Les questions restent vides et leur nombre est masqué. Les anciennes recettes identité/famille sont reconnues et migrées vers le type commun.
 
 ## Transcriptions et questions
 
-Deux moteurs locaux, Parakeet et Whisper en français, ont traité chaque original. Une lecture supplémentaire de Whisper sans jetons d’horodatage a permis de retrouver des débuts de dialogues omis. Les textes ont été relus et corrigés par comparaison, notamment les nombres et les mots français reconnus en anglais. Les annonces parlées de page et d’exercice restent transcrites pour correspondre aux originaux de grammaire.
+Deux moteurs locaux, Parakeet et Whisper en français, ont traité les 127 originaux A1. Une lecture supplémentaire de Whisper sans jetons d’horodatage a permis de retrouver des débuts de dialogues omis. Les textes ont été relus et corrigés par comparaison, notamment les nombres et les mots français reconnus en anglais. Les annonces parlées de page et d’exercice restent transcrites pour correspondre aux originaux de grammaire.
 
 Le rapport [transcriptions.json](transcriptions.json) conserve, pour chaque identifiant et empreinte audio, le texte retenu, les reconnaissances brutes, les corrections et les points incertains. Les graphies de certains noms propres et une source à la fin tronquée restent signalées. Ce travail est une transcription automatique recoupée et relue ; aucune écoute humaine n’est attestée. Les découpes des versions TCF sont suivies séparément.
 
@@ -33,4 +33,4 @@ Les trois formats de réponse (QCM texte, réponse sur trait et QCM images) sont
 node scripts/audit-grammar-co-import.cjs
 ```
 
-Le contrôle vérifie les 127 fichiers et empreintes, les 20 liens du catalogue, l’accès à chaque piste, le rendu de l’audio et de sa transcription, le niveau A1, l’absence de question ajoutée, la sauvegarde de la sélection et l’absence de repli A2 vers A1. L’import reproductible est `scripts/import-grammar-co-transcriptions.py` ; il refuse les empreintes divergentes et toute modification collatérale des questions ou fichiers audio.
+Le contrôle vérifie les 252 fichiers et empreintes, les 38 liens du catalogue, l’accès à chaque piste, le rendu du bon audio, son niveau A1 ou A2, la conservation des transcriptions A1 et l’absence de transcription A2 ou de question ajoutée, la sauvegarde de la sélection et l’absence de repli entre les niveaux.
