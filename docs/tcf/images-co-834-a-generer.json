@@ -31,20 +31,20 @@
     "received_source_entries": 836,
     "copyright_removed": 2,
     "planned_question_candidates": 423,
-    "activated_planned_questions": 210,
-    "pending_question_candidates": 213,
+    "activated_planned_questions": 212,
+    "pending_question_candidates": 211,
     "original_missing_concepts": 741,
-    "original_concepts_now_generated_or_reused": 521,
-    "remaining_original_concepts": 220,
-    "new_co_images_this_batch": 653,
+    "original_concepts_now_generated_or_reused": 535,
+    "remaining_original_concepts": 206,
+    "new_co_images_this_batch": 670,
     "activated_association_scenes_this_batch": 13,
     "pending_association_scenes": 0,
-    "sources_with_pending_question_candidates": 71,
-    "sources_with_new_active_question_or_scene": 198,
+    "sources_with_pending_question_candidates": 69,
+    "sources_with_new_active_question_or_scene": 200,
     "sources_without_current_bank_reference": 234,
     "remaining_audio_references_to_match": 432,
     "co_images_needing_style_correction": 0,
-    "co_images_style_aligned": 653,
+    "co_images_style_aligned": 670,
     "co_style_redraws_completed": 11
   },
   "instructions": [
@@ -3962,17 +3962,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/travail/l-offre-d-emploi.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-a1-tpb-co-3",
           "question": 2
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 8,
-      "current_linked_image_variants": 0,
+      "current_linked_image_variants": 1,
       "complete_image_audit_certified": false
     },
     {
@@ -11595,17 +11595,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/magasins/13-magasin-annonce-problème-de-caisse.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ssx-a2-annonce-3-3-co-2",
           "question": 1
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 3,
-      "current_linked_image_variants": 0,
+      "current_linked_image_variants": 1,
       "complete_image_audit_certified": false
     },
     {
@@ -18095,7 +18095,7 @@
           "asset": "72793a334b97"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "piste_a1:008:83a3c1c8cd2e"
       ],
@@ -18106,6 +18106,11 @@
           "candidate_cut_id": "piste_a1-008-83a3c1c8cd2e-d1",
           "transcription": "Bonjour, c'est Madame Leroy de l'Agence pour l'emploi. Une entreprise de service cherche un commercial. Allez sur notre site internet pour répondre à l'offre d'emploi. Référence A749 avant mercredi 2 juin. N'oubliez pas de m'envoyer une photocopie de votre dernier diplôme pour votre dossier. Merci beaucoup. Au revoir."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-entreprise-service-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-entreprise-agricole-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-entreprise-construction-dessine.webp"
       ]
     },
     {
@@ -18878,7 +18883,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-studios-appartements-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-maisons-chateaux-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-bureaux-magasins-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s10-co-3",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-studios-appartements-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-maisons-chateaux-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-bureaux-magasins-dessine.webp"
+        ],
+        "support_quote": "Vous voulez habiter dans un quartier calme ?\nVenez visiter les pièces lumineuses des studios avec terrasse et des appartements de 4 pièces de notre immeuble avec jardin.\nNous sommes ouverts…",
+        "current_bank_transcription": "Vous voulez habiter dans un quartier calme ?\nVenez visiter les pièces lumineuses des studios avec terrasse et des appartements de 4 pièces de notre immeuble avec jardin.\nNous sommes ouverts…",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Chaque image montre deux catégories complètes de lieux. La question porte sur les types de logements proposés, et non sur le nombre de pièces ; la transcription actuelle mentionne studios et appartements. Liaison audio de remplacement encore à rapprocher."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -29750,7 +29774,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-studio-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-chambre-hotel-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s16-co-4",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-studio-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-chambre-hotel-dessine.webp"
+        ],
+        "support_quote": "- Je cherche un appartement à louer.\n- Quel type d'appartement vous intéresse : un studio, un T2 ?\n- Est-ce que c'est proche de la gare ?\n- Oui, c'est à 5 minutes à pied.\n- Est-ce que le studio est toujours disponible ?\n- Oui, il est libre à partir de mars.\n/ Non, il n'est plus disponible.\n- L'appartement se trouve dans le quartier de la Banque.\n- Pouvez-vous me donner l'adresse exacte ?\n- Est-ce que c'est lumineux ?\n- Oui, l'appartement est exposé sud.\n- L'appartement est rénové ?\n- Non, mais l'état général est excellent.\n- Alors, cette visite ?\nTu penses quoi du studio ?\n- Un coup de cœur !\nJ'adore !\n- Les visites sont organisées la semaine prochaine.\n- Est-ce que je dois m'inscrire ?\n- Non, pas besoin !\n- Tu signes le bail quand ?\n- J'attends la réponse de l'agence.",
+        "current_bank_transcription": "- Je cherche un appartement à louer.\n- Quel type d'appartement vous intéresse : un studio, un T2 ?\n- Est-ce que c'est proche de la gare ?\n- Oui, c'est à 5 minutes à pied.\n- Est-ce que le studio est toujours disponible ?\n- Oui, il est libre à partir de mars.\n/ Non, il n'est plus disponible.\n- L'appartement se trouve dans le quartier de la Banque.\n- Pouvez-vous me donner l'adresse exacte ?\n- Est-ce que c'est lumineux ?\n- Oui, l'appartement est exposé sud.\n- L'appartement est rénové ?\n- Non, mais l'état général est excellent.\n- Alors, cette visite ?\nTu penses quoi du studio ?\n- Un coup de cœur !\nJ'adore !\n- Les visites sont organisées la semaine prochaine.\n- Est-ce que je dois m'inscrire ?\n- Non, pas besoin !\n- Tu signes le bail quand ?\n- J'attends la réponse de l'agence.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Studio avec lit et kitchenette dans la même pièce, maison extérieure et chambre d’hôtel avec carte-clé forment trois catégories distinctes. Transcription actuelle relue ; aucune date de disponibilité représentée, audio de remplacement à rapprocher."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -31909,7 +31952,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-eglise-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-batiment-theatre-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-palais-justice-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s43-co-4",
+        "question": 2,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-eglise-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-batiment-theatre-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-palais-justice-dessine.webp"
+        ],
+        "support_quote": "D'ocumen A.\nBonjour ma dame, bonjour monsieur, je peux vous renseigner ?\nBonjour monsieur, on est ici pour une semaine de vacances et on voudrait savoir ce qu'il y a à faire dans la région.\nAlors, si vous aimez l'histoire, je vous recommande de visiter l'église.\nNous proposons aussi une visite guide et du village tous les jours.\nSi vous souhaitez participer, il faudra réserver.\nQu'est-ce qu'on peut faire à vélo ?\nÀ vélo, vous pouvez aller au far de grave.\nIl y a deux magasins de location de vélo dans la rue de la plage, si vous voulez.\nQu'est-ce que vous nous conseillez pour les enfants ?\nIls ont 9 et 12 ans.\nLa plage, bien sûr.\nEt si vos enfants aiment le sport, cap 33 organise beaucoup d'activités.\nCiao à voile, surf, équitation.\nAh, ça pourrait les intéresser.\nVous avez une brochure ?\nOui monsieur, tenez.",
+        "current_bank_transcription": "D'ocumen A.\nBonjour ma dame, bonjour monsieur, je peux vous renseigner ?\nBonjour monsieur, on est ici pour une semaine de vacances et on voudrait savoir ce qu'il y a à faire dans la région.\nAlors, si vous aimez l'histoire, je vous recommande de visiter l'église.\nNous proposons aussi une visite guide et du village tous les jours.\nSi vous souhaitez participer, il faudra réserver.\nQu'est-ce qu'on peut faire à vélo ?\nÀ vélo, vous pouvez aller au far de grave.\nIl y a deux magasins de location de vélo dans la rue de la plage, si vous voulez.\nQu'est-ce que vous nous conseillez pour les enfants ?\nIls ont 9 et 12 ans.\nLa plage, bien sûr.\nEt si vos enfants aiment le sport, cap 33 organise beaucoup d'activités.\nCiao à voile, surf, équitation.\nAh, ça pourrait les intéresser.\nVous avez une brochure ?\nOui monsieur, tenez.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Trois monuments : église, bâtiment du théâtre et palais de justice. La sélection du théâtre a été précisée pour exclure une image d’acteurs. L’église est recommandée explicitement dans la transcription actuelle ; liaison audio à rapprocher."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -32940,7 +33002,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-immeuble-moderne-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-maison-ancienne-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-ferme-isolee-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s60-co-2",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-immeuble-moderne-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-maison-ancienne-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-ferme-isolee-dessine.webp"
+        ],
+        "support_quote": "J'habite dans un immeuble moderne au centre-ville.\nC'est bruyant, mais il y a plus de pollution qu'à la campagne.",
+        "current_bank_transcription": "J'habite dans un immeuble moderne au centre-ville.\nC'est bruyant, mais il y a plus de pollution qu'à la campagne.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Le trio distingue immeuble résidentiel contemporain, maison ancienne et ferme réellement isolée. Le premier est explicitement nommé dans la transcription actuelle ; liaison audio à rapprocher."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -33263,7 +33344,7 @@
           "asset": "b00b19d34c26"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a2-abc-direct:15:e72d58004033:2cec33f8"
       ],
@@ -33274,6 +33355,11 @@
           "candidate_cut_id": "additional-20261102-mdf-a2-abc-direct-15-e72d58004033-2cec33f8-d1",
           "transcription": "Cher clients, suite à un problème technique, nous vous rappelons que la caisse prioritaire pour les personnes handicapées est fermée. Veuillez vous rediriger vers les caiss rapides ou les caisses."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-caisse-prioritaire-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-caisse-rapide-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-caisse-automatique-dessinee.webp"
       ]
     },
     {
@@ -37358,7 +37444,7 @@
       "label": "Une entreprise agricole",
       "path_after_generation": "/lib/images/tcf/qcm-audit/fbef88ae7ff6.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une entreprise agricole ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a1-tpb-co-3",
@@ -37366,8 +37452,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-entreprise-agricole-dessine.webp",
+      "sha256": "a8c87171162183fa0e03a0fd64b38d15bff702048442700c03f55c487c7fdc86",
+      "review_note": "Entreprise agricole : deux adultes dans les cultures, légumes récoltés, serre et tracteur ; visages variés, gestes naturels et anatomie relus. Concept entier et paysage natif exact 4:3 relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "dff3ca430742",
@@ -41529,7 +41620,7 @@
       "label": "La caisse automatique",
       "path_after_generation": "/lib/images/tcf/qcm-audit/b00b19d34c26.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « La caisse automatique ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ssx-a2-annonce-3-3-co-2",
@@ -41537,8 +41628,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-caisse-automatique-dessinee.webp",
+      "sha256": "c21318db67afdee3e2995c2397e7340161e7ce69f5c61067a3e5582af047c728",
+      "review_note": "Revue visuelle individuelle : paysage 4:3 exact, style dessiné CE/CO, lieu ou rayon entier identifiable, pas de montant ni date. Accueil, caisse avec personnel, caisse automatique, entrée et sortie sont distincts. Le frais montre des yaourts réfrigérés et du poisson frais ; les surgelés sont dans des congélateurs. Les portraits principaux diffèrent et les clients répétitifs ajoutés ont été retirés des commerces avant intégration.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "9b511cf764ee",
@@ -43220,7 +43316,7 @@
       "label": "Des bureaux et des magasins",
       "path_after_generation": "/lib/images/tcf/qcm-audit/248becd5d0f2.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des bureaux et des magasins ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s10-co-3",
@@ -43228,8 +43324,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-bureaux-magasins-dessine.webp",
+      "sha256": "575144f38f7c06cabc3df0010641f5e4e39bceb9349580184b45442d41cc920f",
+      "review_note": "Deux vignettes : bureaux avec postes de travail et dossiers, et galerie de magasins avec vitrines de vêtements, chaussures et livres. Deux usages distincts et aucun personnage ou chiffre. Concept entier et paysage natif exact 4:3 relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "b71b3f3f229e",
@@ -43841,7 +43942,7 @@
       "label": "Un immeuble moderne",
       "path_after_generation": "/lib/images/tcf/qcm-audit/f0288e8424aa.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un immeuble moderne ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s60-co-2",
@@ -43849,8 +43950,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-immeuble-moderne-dessine.webp",
+      "sha256": "489fd621dc69cf92270f491cdb41bd01d1d1d74363c2d5879d9f29dc8563fc09",
+      "review_note": "Immeuble moderne à appartements : plusieurs étages, balcons, grandes baies, entrée commune et trottoir de ville ; architecture résidentielle contemporaine. Concept entier et paysage natif exact 4:3 relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "b1d26f62910d",
@@ -44729,7 +44835,7 @@
       "label": "Le palais de justice",
       "path_after_generation": "/lib/images/tcf/qcm-audit/7fc758bcecd9.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le palais de justice ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s43-co-4",
@@ -44737,8 +44843,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-palais-justice-dessine.webp",
+      "sha256": "db16ed32f5b3dc2a1881501eb87cf85d0c13aa9ec227cb6d490a27f931f2f9f3",
+      "review_note": "Palais de justice entier, colonnes, escalier et rampe, balance de justice et inscription naturelle PALAIS DE JUSTICE correctement écrite. Concept entier et paysage natif exact 4:3 relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "e1b23bf8a5a6",
@@ -44818,7 +44929,7 @@
       "label": "Une entreprise de service",
       "path_after_generation": "/lib/images/tcf/qcm-audit/ca9308bedad2.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une entreprise de service ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a1-tpb-co-3",
@@ -44826,8 +44937,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-entreprise-service-dessine.webp",
+      "sha256": "88389ddbde719f62ac82c8a26d7c5963fa222e60a9cd54c57d6438ac834ea9e9",
+      "review_note": "Entreprise de service : professionnel et cliente autour d’un dossier dans des bureaux, mot SERVICES naturel ; activité de conseil sans fabrication ou chantier. Concept entier et paysage natif exact 4:3 relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "48dfc1a2e224",
@@ -45096,7 +45212,7 @@
       "label": "La caisse prioritaire",
       "path_after_generation": "/lib/images/tcf/qcm-audit/5d188b6061ab.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « La caisse prioritaire ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ssx-a2-annonce-3-3-co-2",
@@ -45104,8 +45220,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-caisse-prioritaire-dessine.webp",
+      "sha256": "cc7eee6d540236ceda10663a37d4ef33c8f88f89d46b07ed8062a7181b6b5d16",
+      "review_note": "Caisse prioritaire accessible, panneau PRIORITÉ et pictogramme fauteuil, client noir en fauteuil et caissière plus âgée ; mains et fauteuil relus en vue pleine. Aucun montant ou nombre d’articles. Concept entier et paysage natif exact 4:3 relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "bbbd36cf47df",
@@ -45454,7 +45575,7 @@
       "label": "Des maisons et des châteaux",
       "path_after_generation": "/lib/images/tcf/qcm-audit/dcfdb434c1c3.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des maisons et des châteaux ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s10-co-3",
@@ -45462,8 +45583,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-maisons-chateaux-dessine.webp",
+      "sha256": "f9d7f709b21a85bc3729d95e0453f9367db2c5d820c13f2730f91f5237837ffb",
+      "review_note": "Deux vignettes : maison individuelle entière et château à tours et porte monumentale entier ; aucune réduction de la réponse à une seule catégorie. Concept entier et paysage natif exact 4:3 relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "81795dce2be8",
@@ -46161,7 +46287,7 @@
       "label": "Une maison ancienne",
       "path_after_generation": "/lib/images/tcf/qcm-audit/1009f750cdaf.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une maison ancienne ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s60-co-2",
@@ -46169,8 +46295,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-maison-ancienne-dessine.webp",
+      "sha256": "2db65321a805655b6b0d879fd538f9527d8386fe0a9a953935e6ce3fc8f08260",
+      "review_note": "Maison ancienne entière : pierre patinée, porte et volets de bois, toiture traditionnelle et plantes grimpantes ; habitation entretenue, sans château ou ruine. Concept entier et paysage natif exact 4:3 relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "de1d833648a2",
@@ -46622,7 +46753,7 @@
       "label": "Des studios et des appartements",
       "path_after_generation": "/lib/images/tcf/qcm-audit/37f0f189b732.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des studios et des appartements ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s10-co-3",
@@ -46630,8 +46761,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-studios-appartements-dessine.webp",
+      "sha256": "7e05ce01b67717b9c15a31de39f09d3fa3685c50697f53f32ad6bfd2a9a0b7d7",
+      "review_note": "Deux vignettes : studio avec lit, salon et kitchenette dans une pièce ; appartement avec cuisine et chambre dans des pièces séparées. Les deux catégories de logement sont visibles sans texte de réponse. Concept entier et paysage natif exact 4:3 relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "09ee72acab76",
@@ -48234,7 +48370,7 @@
       "label": "Une entreprise de construction",
       "path_after_generation": "/lib/images/tcf/qcm-audit/72793a334b97.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une entreprise de construction ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a1-tpb-co-3",
@@ -48242,8 +48378,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-entreprise-construction-dessine.webp",
+      "sha256": "a2d3b19df040be6c9876cc618b69e93d96abafdcfd4027f4be8fde1f4258e5c3",
+      "review_note": "Entreprise de construction : ingénieure et ouvrier à casques et gilets examinant un plan sans chiffres sur chantier à échafaudages et grue ; mains et équipement relus en vue pleine. Concept entier et paysage natif exact 4:3 relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "6fc0ab281183",
@@ -49937,7 +50078,7 @@
       "label": "Une chambre d’hôtel",
       "path_after_generation": "/lib/images/tcf/qcm-audit/43e4b7a5f622.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une chambre d’hôtel ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s16-co-4",
@@ -49945,8 +50086,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-chambre-hotel-dessine.webp",
+      "sha256": "719fef768a30494a0b414413fc1004ed06f5f61fb22c936bdd460c3ae77aed7e",
+      "review_note": "Chambre d’hôtel : lit fait, tables de nuit, fauteuil, bureau, valise sur porte-bagage et carte-clé portant HÔTEL ; absence de cuisine. Concept entier et paysage natif exact 4:3 relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "233b936ec1ec",
@@ -50106,7 +50252,7 @@
       "label": "Une ferme isolée",
       "path_after_generation": "/lib/images/tcf/qcm-audit/53347b15a4ad.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une ferme isolée ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s60-co-2",
@@ -50114,8 +50260,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-ferme-isolee-dessine.webp",
+      "sha256": "45f162e054bc59b4af60bb0bd56d43d083351d7a50ec67bb238df967932f595e",
+      "review_note": "Ferme isolée avec maison et grange au milieu de prairies, petit chemin et aucune autre habitation visible ; l’isolement fait partie du sens représenté. Concept entier et paysage natif exact 4:3 relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "1b76adfe941c",
@@ -51551,7 +51702,7 @@
       "label": "La caisse rapide",
       "path_after_generation": "/lib/images/tcf/qcm-audit/514b2f2f846a.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « La caisse rapide ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ssx-a2-annonce-3-3-co-2",
@@ -51559,8 +51710,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-caisse-rapide-dessine.webp",
+      "sha256": "11ad9eb62574035a25f045442f17664b24a77ec881aaab29f938c7daebdc82c6",
+      "review_note": "Caisse rapide, panneau CAISSE RAPIDE et petit panier, caissière asiatique et client roux distincts des personnages de la caisse prioritaire ; gestes et mains relus. Aucun montant ou limite d’articles écrite. Concept entier et paysage natif exact 4:3 relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "98ece4b786ea",
@@ -51833,19 +51989,19 @@
   "pending_association_images": [],
   "visual_style_review": {
     "audit": "recontrole-style-images.json",
-    "reviewed_co_images": 653,
+    "reviewed_co_images": 670,
     "reviewed_other_images": 59,
-    "reviewed_total_images": 712,
+    "reviewed_total_images": 729,
     "user_approved_reference_images": 35,
     "initial_redraw_required": 11,
     "initial_co_redraw_required": 11,
     "initial_other_redraw_required": 0,
-    "already_aligned": 701,
+    "already_aligned": 718,
     "redrawn_images": 11,
     "remaining_redraws": 0,
     "restored_previous_images": 14,
     "rejected_unpublished_previews": 12,
-    "new_images_compared_to_reference": 394
+    "new_images_compared_to_reference": 411
   },
   "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
   "workflow_order": [

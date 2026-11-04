@@ -15,11 +15,11 @@
   ],
   "summary": {
     "initial_question_candidates": 306,
-    "questions_illustrated_or_prepared": 203,
-    "newly_activated": 93,
-    "prepared_pending_audio_link": 106,
+    "questions_illustrated_or_prepared": 209,
+    "newly_activated": 95,
+    "prepared_pending_audio_link": 110,
     "prepared_pending_audio_validation": 4,
-    "remaining_questions_requiring_images_or_review": 103,
+    "remaining_questions_requiring_images_or_review": 97,
     "unreviewed_complete_trios": 0,
     "audio_references_next_stage": 432,
     "vocabulary_occurrences_final_stage": 1906
@@ -758,7 +758,7 @@
           "asset": "72793a334b97"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "piste_a1:008:83a3c1c8cd2e"
       ],
@@ -771,16 +771,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-entreprise-service-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-entreprise-agricole-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-entreprise-construction-dessine.webp"
       ],
-      "missing_labels": [
-        "Une entreprise de service",
-        "Une entreprise agricole",
-        "Une entreprise de construction"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-entreprise-service-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-entreprise-agricole-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-entreprise-construction-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-a1-tpb-co-3",
+        "question": 2,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-entreprise-service-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-entreprise-agricole-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-entreprise-construction-dessine.webp"
+        ],
+        "support_quote": "Bonjour, c'est Madame Leroy de l'Agence pour l'emploi. Une entreprise de service cherche un commercial. Allez sur notre site internet pour répondre à l'offre d'emploi. Référence A749 avant mercredi 2 juin. N'oubliez pas de m'envoyer une photocopie de votre dernier diplôme pour votre dossier. Merci beaucoup. Au revoir.",
+        "current_bank_transcription": "Bonjour, c’est Madame Le Roi, de l’Agence pour l’emploi.\nUne entreprise de service cherche un commercial.\nAllez sur notre site internet pour répondre à l’offre d’emploi, référence A749, avant mercredi 2 juin.\nN’oubliez pas de m’envoyer une photocopie de votre dernier diplôme pour votre dossier.\nMerci beaucoup.\nAu revoir.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Les trois secteurs sont représentés entièrement : conseil en bureaux, cultures agricoles, construction sur chantier. Le secteur de service est explicite dans la transcription préparée ; pas de référence d’offre, date ou diplôme ajoutés."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -1313,20 +1327,29 @@
           "asset": "248becd5d0f2"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-studios-appartements-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-maisons-chateaux-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-bureaux-magasins-dessine.webp"
       ],
-      "missing_labels": [
-        "Des studios et des appartements",
-        "Des maisons et des châteaux",
-        "Des bureaux et des magasins"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s10-co-3",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-studios-appartements-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-maisons-chateaux-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-bureaux-magasins-dessine.webp"
+        ],
+        "support_quote": "Vous voulez habiter dans un quartier calme ?\nVenez visiter les pièces lumineuses des studios avec terrasse et des appartements de 4 pièces de notre immeuble avec jardin.\nNous sommes ouverts…",
+        "current_bank_transcription": "Vous voulez habiter dans un quartier calme ?\nVenez visiter les pièces lumineuses des studios avec terrasse et des appartements de 4 pièces de notre immeuble avec jardin.\nNous sommes ouverts…",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Chaque image montre deux catégories complètes de lieux. La question porte sur les types de logements proposés, et non sur le nombre de pièces ; la transcription actuelle mentionne studios et appartements. Liaison audio de remplacement encore à rapprocher."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -10598,20 +10621,29 @@
           "asset": "43e4b7a5f622"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-studio-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-chambre-hotel-dessine.webp"
       ],
-      "missing_labels": [
-        "Un studio",
-        "Une maison",
-        "Une chambre d’hôtel"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s16-co-4",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-studio-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-chambre-hotel-dessine.webp"
+        ],
+        "support_quote": "- Je cherche un appartement à louer.\n- Quel type d'appartement vous intéresse : un studio, un T2 ?\n- Est-ce que c'est proche de la gare ?\n- Oui, c'est à 5 minutes à pied.\n- Est-ce que le studio est toujours disponible ?\n- Oui, il est libre à partir de mars.\n/ Non, il n'est plus disponible.\n- L'appartement se trouve dans le quartier de la Banque.\n- Pouvez-vous me donner l'adresse exacte ?\n- Est-ce que c'est lumineux ?\n- Oui, l'appartement est exposé sud.\n- L'appartement est rénové ?\n- Non, mais l'état général est excellent.\n- Alors, cette visite ?\nTu penses quoi du studio ?\n- Un coup de cœur !\nJ'adore !\n- Les visites sont organisées la semaine prochaine.\n- Est-ce que je dois m'inscrire ?\n- Non, pas besoin !\n- Tu signes le bail quand ?\n- J'attends la réponse de l'agence.",
+        "current_bank_transcription": "- Je cherche un appartement à louer.\n- Quel type d'appartement vous intéresse : un studio, un T2 ?\n- Est-ce que c'est proche de la gare ?\n- Oui, c'est à 5 minutes à pied.\n- Est-ce que le studio est toujours disponible ?\n- Oui, il est libre à partir de mars.\n/ Non, il n'est plus disponible.\n- L'appartement se trouve dans le quartier de la Banque.\n- Pouvez-vous me donner l'adresse exacte ?\n- Est-ce que c'est lumineux ?\n- Oui, l'appartement est exposé sud.\n- L'appartement est rénové ?\n- Non, mais l'état général est excellent.\n- Alors, cette visite ?\nTu penses quoi du studio ?\n- Un coup de cœur !\nJ'adore !\n- Les visites sont organisées la semaine prochaine.\n- Est-ce que je dois m'inscrire ?\n- Non, pas besoin !\n- Tu signes le bail quand ?\n- J'attends la réponse de l'agence.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Studio avec lit et kitchenette dans la même pièce, maison extérieure et chambre d’hôtel avec carte-clé forment trois catégories distinctes. Transcription actuelle relue ; aucune date de disponibilité représentée, audio de remplacement à rapprocher."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -12792,19 +12824,29 @@
           "asset": "7fc758bcecd9"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        "/lib/images/tcf/qcm-audit/co306-theatre-dessine.webp",
-        null
+        "/lib/images/tcf/qcm-audit/co306-eglise-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-batiment-theatre-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-palais-justice-dessine.webp"
       ],
-      "missing_labels": [
-        "L'église",
-        "Le palais de justice"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s43-co-4",
+        "question": 2,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-eglise-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-batiment-theatre-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-palais-justice-dessine.webp"
+        ],
+        "support_quote": "D'ocumen A.\nBonjour ma dame, bonjour monsieur, je peux vous renseigner ?\nBonjour monsieur, on est ici pour une semaine de vacances et on voudrait savoir ce qu'il y a à faire dans la région.\nAlors, si vous aimez l'histoire, je vous recommande de visiter l'église.\nNous proposons aussi une visite guide et du village tous les jours.\nSi vous souhaitez participer, il faudra réserver.\nQu'est-ce qu'on peut faire à vélo ?\nÀ vélo, vous pouvez aller au far de grave.\nIl y a deux magasins de location de vélo dans la rue de la plage, si vous voulez.\nQu'est-ce que vous nous conseillez pour les enfants ?\nIls ont 9 et 12 ans.\nLa plage, bien sûr.\nEt si vos enfants aiment le sport, cap 33 organise beaucoup d'activités.\nCiao à voile, surf, équitation.\nAh, ça pourrait les intéresser.\nVous avez une brochure ?\nOui monsieur, tenez.",
+        "current_bank_transcription": "D'ocumen A.\nBonjour ma dame, bonjour monsieur, je peux vous renseigner ?\nBonjour monsieur, on est ici pour une semaine de vacances et on voudrait savoir ce qu'il y a à faire dans la région.\nAlors, si vous aimez l'histoire, je vous recommande de visiter l'église.\nNous proposons aussi une visite guide et du village tous les jours.\nSi vous souhaitez participer, il faudra réserver.\nQu'est-ce qu'on peut faire à vélo ?\nÀ vélo, vous pouvez aller au far de grave.\nIl y a deux magasins de location de vélo dans la rue de la plage, si vous voulez.\nQu'est-ce que vous nous conseillez pour les enfants ?\nIls ont 9 et 12 ans.\nLa plage, bien sûr.\nEt si vos enfants aiment le sport, cap 33 organise beaucoup d'activités.\nCiao à voile, surf, équitation.\nAh, ça pourrait les intéresser.\nVous avez une brochure ?\nOui monsieur, tenez.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Trois monuments : église, bâtiment du théâtre et palais de justice. La sélection du théâtre a été précisée pour exclure une image d’acteurs. L’église est recommandée explicitement dans la transcription actuelle ; liaison audio à rapprocher."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -13721,20 +13763,29 @@
           "asset": "53347b15a4ad"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-immeuble-moderne-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-maison-ancienne-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-ferme-isolee-dessine.webp"
       ],
-      "missing_labels": [
-        "Un immeuble moderne",
-        "Une maison ancienne",
-        "Une ferme isolée"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s60-co-2",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-immeuble-moderne-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-maison-ancienne-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-ferme-isolee-dessine.webp"
+        ],
+        "support_quote": "J'habite dans un immeuble moderne au centre-ville.\nC'est bruyant, mais il y a plus de pollution qu'à la campagne.",
+        "current_bank_transcription": "J'habite dans un immeuble moderne au centre-ville.\nC'est bruyant, mais il y a plus de pollution qu'à la campagne.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Le trio distingue immeuble résidentiel contemporain, maison ancienne et ferme réellement isolée. Le premier est explicitement nommé dans la transcription actuelle ; liaison audio à rapprocher."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -13976,7 +14027,7 @@
           "asset": "b00b19d34c26"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a2-abc-direct:15:e72d58004033:2cec33f8"
       ],
@@ -13989,15 +14040,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
+        "/lib/images/tcf/qcm-audit/co306-caisse-prioritaire-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-caisse-rapide-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-caisse-automatique-dessinee.webp"
       ],
-      "missing_labels": [
-        "La caisse prioritaire",
-        "La caisse rapide"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-caisse-prioritaire-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-caisse-rapide-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-caisse-automatique-dessinee.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ssx-a2-annonce-3-3-co-2",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-caisse-prioritaire-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-caisse-rapide-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-caisse-automatique-dessinee.webp"
+        ],
+        "support_quote": "Cher clients, suite à un problème technique, nous vous rappelons que la caisse prioritaire pour les personnes handicapées est fermée. Veuillez vous rediriger vers les caiss rapides ou les caisses.",
+        "current_bank_transcription": "Chers clients, suite à un problème technique, nous vous rappelons que la caisse prioritaire pour les personnes handicapées est fermée.\nVeuillez vous rediriger vers les caisses rapides ou les caisses automatiques.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Caisse prioritaire à panneau et accès fauteuil, caisse rapide à petit panier et caisse automatique déjà disponible réutilisée. La question identifie la catégorie fermée, donc les images montrent les catégories sans fermeture ajoutée à tous les choix. La transcription préparée nomme explicitement la caisse prioritaire ; aucune donnée de paiement."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -17071,7 +17137,7 @@
       ],
       "resolved_images": [
         null,
-        "/lib/images/tcf/qcm-audit/co306-theatre-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-batiment-theatre-dessine.webp",
         null
       ],
       "missing_labels": [
