@@ -211,7 +211,6 @@ const ORDRE_PHRASES = [
 type CoSet = {
   id: string
   audio: string
-  transcription: string
   questions: TcfQuestion[]
 }
 
@@ -248,13 +247,11 @@ function lignes(enonce: string, modele: string, nb = 1): TcfQuestionLignes {
   return { enonce, type_reponse: 'lignes', nb_lignes: nb, reponse_modele: modele }
 }
 
-/** Transcriptions et questions de compréhension orale (Qui suis-je ?). */
+/** Questions de compréhension orale (Qui suis-je ?). */
 const CO_SETS: CoSet[] = [
   {
     id: 'audrey',
     audio: '',
-    transcription:
-      'Je m’appelle Audrey. J’habite à Odawara. Je suis française. Je suis du Nord. Je parle français, anglais et un peu japonais. J’ai 29 ans. J’aime bien dessiner et j’aime bien aller au musée.',
     questions: [
       qcm('Elle s’appelle comment ?', 'Audrey', ['Aurélien', 'Audrey', 'Aurélie'], true, {
         modele: 'Audrey',
@@ -278,8 +275,6 @@ const CO_SETS: CoSet[] = [
   {
     id: 'paul-bernard-lignes',
     audio: '',
-    transcription:
-      '— Vous êtes monsieur ? — Je suis Paul Bernard. Mon prénom est Paul et mon nom de famille est Bernard. — Vous êtes anglais ? — Non, je suis canadien. Je suis de Vancouver. — Vous êtes en France pour le travail ? — Oui et non, je suis écrivain, je suis toujours en vacances.',
     questions: [
       lignes('Quel est son prénom ?', 'Paul'),
       lignes('Quel est son nom de famille ?', 'Bernard'),
@@ -290,8 +285,6 @@ const CO_SETS: CoSet[] = [
   {
     id: 'paul-bernard-vf',
     audio: '',
-    transcription:
-      '— Vous êtes monsieur ? — Je suis Paul Bernard. Mon prénom est Paul et mon nom de famille est Bernard. — Vous êtes anglais ? — Non, je suis canadien. Je suis de Vancouver. — Vous êtes en France pour le travail ? — Oui et non, je suis écrivain, je suis toujours en vacances.',
     questions: [
       vf('Il est anglais.', false),
       vf('Son prénom est Bernard.', false),
@@ -302,8 +295,6 @@ const CO_SETS: CoSet[] = [
   {
     id: 'bus',
     audio: '',
-    transcription:
-      '— Tiens, bonjour Noémie, ça fait plaisir de te voir. Ça va ? — Oui, bien. Merci. Et toi ? — Pas mal, merci. Tu vas au travail ? — Oui, je vais prendre le bus. — Au fait, vous vous connaissez ? — Non. — Alors, voici Léo, mon voisin. Noémie, une ancienne collègue. — Bonjour. — Eh bien, mon bus arrive. Je vous laisse. Bonne journée, et à bientôt ! — Au revoir, à la prochaine ! Dis bonjour à Renaud de ma part !',
     questions: [
       vf('Noémie et Léo se connaissent.', false),
       vf('Barbara va prendre le bus.', false),
@@ -315,8 +306,6 @@ const CO_SETS: CoSet[] = [
   {
     id: 'nael',
     audio: '',
-    transcription:
-      'Bonjour à tous. Je suis votre professeur. Je m’appelle Nael Kervelek. Nael, N-A-E-L. C’est mon prénom. Et Kervelek, K-E-R-V-E-L-E-K. C’est mon nom. Je suis français et j’ai 34 ans. — Monsieur, vous pouvez répéter s’il vous plaît ?',
     questions: [
       lignes('Nom : ___', 'Kervelek', 0),
       lignes('Prénom : ___', 'Nael', 0),
@@ -328,8 +317,6 @@ const CO_SETS: CoSet[] = [
   {
     id: 'repondeur',
     audio: '',
-    transcription:
-      'Vous êtes bien au 01 39 10 22 50. Bienvenue chez Lucie et Thomas ! Laissez votre nom, prénom et un numéro de téléphone s’il vous plaît.',
     questions: [
       vf('Vous écoutez un message.', true),
       vf('Le numéro est le 01 39 11 22 50.', false),
@@ -342,8 +329,6 @@ const CO_SETS: CoSet[] = [
   {
     id: 'passeport',
     audio: '',
-    transcription:
-      '— Bonjour, monsieur. C’est pour un passeport ? Votre nom de famille, s’il vous plaît. — Zola. Z-O-L-A. — Mais… tu es Dominique, non ? — Oui. — Ah, Jacques. Jacques Zola. Tu es l’ami de Camille, non ? Salut, ça va ?',
     questions: [
       qcm('La femme dit :', 'C’est pour un passeport.', [
         'C’est pour un passeport.',
@@ -362,8 +347,6 @@ const CO_SETS: CoSet[] = [
   {
     id: 'annie-nadine',
     audio: '',
-    transcription:
-      'Et voici deux amies, Annie et Nadine. Annie Schultz, vous avez 37 ans, vous êtes suisse et vous êtes vendeuse. Et vous, Nadine Gatineau, vous êtes pharmacienne, vous êtes belge et vous avez 42 ans. C’est bien ça ?',
     questions: [
       qcm('Le nom de famille d’Annie est…', 'Schultz', ['Schultz', 'Gatineau'], false),
       qcm('Annie a…', '37 ans', ['37 ans', '42 ans'], false),
@@ -376,8 +359,6 @@ const CO_SETS: CoSet[] = [
   {
     id: 'nina-felipe',
     audio: '',
-    transcription:
-      '— Mais… c’est Sophie ! Sophie ! Bonjour ! — Non ! Moi c’est Nina ! — Pardon, Madame ! — Tu peux dire Nina, pas Madame ! J’ai 25 ans ! — Et Sophie ? — C’est ma sœur ! — Ah ! Enchanté Nina ! Moi c’est Felipe ! — Enchantée Felipe ! Tu es l’ami brésilien de ma sœur ? — Oui ! Je suis étudiant avec elle ! — Super ! Et toi ? Tu es étudiante aussi ? — Non ! Moi je travaille déjà ! Je suis ingénieure !',
     questions: [
       qcm('La femme s’appelle…', 'Nina', ['Sophie', 'Nina'], false),
       qcm('L’homme s’appelle…', 'Félipe', ['Félipe', 'Felix'], false),
@@ -813,7 +794,7 @@ export function buildQuiSuisJeExercise(opts: {
         niveau: 'A1-A2',
         competence: 'CO',
         type_exercice: 'complet',
-        support: { audio: set.audio, transcription: set.transcription },
+        support: { audio: set.audio, transcription: '' },
         questions,
       })
     }

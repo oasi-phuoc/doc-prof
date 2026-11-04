@@ -306,7 +306,6 @@ const PE_MODELE = 'Je m’appelle Léa. Dans ma famille, nous sommes cinq person
 type CoSet = {
   id: string
   audio: string
-  transcription: string
   questions: TcfQuestion[]
 }
 
@@ -314,8 +313,6 @@ const CO_SETS: CoSet[] = [
   {
     id: 'audio-1-vf',
     audio: '',
-    transcription:
-      'Je m’appelle Irina Dupré-Ortega. Dupré, c’est le nom de ma mère. Elle est française. Elle habite à Fougères. Mon père s’appelle Federico Ortega. C’est un musicien espagnol. J’ai deux sœurs. Elles sont médecins. Mon fils, Thomas, a six ans. Il parle français et espagnol.',
     questions: [
       vf('Duprès c’est le nom de son père.', false),
       vf('Sa mère est française.', true),
@@ -328,8 +325,6 @@ const CO_SETS: CoSet[] = [
   {
     id: 'audio-2-lettres',
     audio: '',
-    transcription:
-      'a. Sa femme est musicienne.\nb. Leur tante a trois enfants.\nc. Votre oncle est professeur ?\nd. Nos parents ont 50 ans.',
     questions: [
       lignes('Sa ___ est musicienne.', 'femme', 0, 'a'),
       lignes('Leur tante a trois ___.', 'enfants', 0, 'b'),
@@ -340,8 +335,6 @@ const CO_SETS: CoSet[] = [
   {
     id: 'audio-3-fabien',
     audio: '',
-    transcription:
-      'Papa, maman, voici mon ami Fabien, il est étudiant dans mon université. Fabien, voici mes parents, Simon et Flavie, et le grand brun, c’est mon frère Sébastien.',
     questions: [
       dualQcmTrait('Fabien est ___.', 'un ami', ['un ami', 'une amie']),
       dualQcmTrait('Fabien est ___.', 'étudiant', ['professeur', 'étudiant']),
@@ -354,8 +347,6 @@ const CO_SETS: CoSet[] = [
   {
     id: 'audio-4-photo',
     audio: '',
-    transcription:
-      'Regarde, voici la photo d’anniversaire de mes 18 ans. La jeune fille blonde, c’est moi. Et voici papa, ton papi. Le petit roux, c’est mon frère Thomas. Il est veuf.',
     questions: [
       vf('On parle d’une photo de mariage.', false),
       vf('La personne qui parle est sur la photo.', true),
@@ -368,8 +359,6 @@ const CO_SETS: CoSet[] = [
   {
     id: 'audio-5-familles',
     audio: '',
-    transcription:
-      'En général, les familles françaises ont un ou deux enfants. Les parents sont jeunes, ils ont entre 30 et 35 ans et sont souvent mariés ou pacsés. Mais ils peuvent aussi être séparés ou divorcés.',
     questions: [
       dualQcmTrait('On parle des familles ___.', 'françaises', ['anglaises', 'françaises']),
       dualQcmTrait('Elles ont ___.', 'un ou deux enfants', ['un enfant', 'un ou deux enfants']),
@@ -385,8 +374,6 @@ const CO_SETS: CoSet[] = [
   {
     id: 'audio-nina',
     audio: '',
-    transcription:
-      'Fatima, regarde la photo sur mon téléphone. C’est ma famille. Là c’est mon frère, Farid.\nWaouh, le bel homme ! Il est célibataire ?\nNon, il est marié. Et là, c’est sa femme, Fanny.\nMoi, je suis célibataire et heureuse avec mes enfants, en famille monoparentale… et nombreuse ! Vive les enfants.',
     questions: [
       lignes('Avec qui parle Nina ?', 'Fatima'),
       lignes('Comment s’appelle le frère de Nina ?', 'Farid'),
@@ -497,7 +484,7 @@ export function buildFamilleExercise(opts: {
         niveau: 'A1-A2',
         competence: 'CO',
         type_exercice: 'complet',
-        support: { audio: set.audio, transcription: set.transcription },
+        support: { audio: set.audio, transcription: '' },
         questions,
       })
     }
