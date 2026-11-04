@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-11-04T18:03:55.415312+00:00",
+  "successful_checks": [
+    {
+      "command": "node scripts/check-tcf-bank.mjs",
+      "result": "1262 exercises, 1318 audio entries; saved selection aliases checked"
+    },
+    {
+      "command": "node scripts/audit-grammar-co-import.cjs",
+      "result": "1948 checks; 127 original recordings and their transcripts preserved"
+    },
+    {
+      "command": "python3 scripts/apply-tcf-reviewed-audio-corrections.py --patch docs/tcf/remplacement-audio/corrections-appliquees-20261104.json",
+      "result": "7 exercises, 14 exact MP3 files, 57 reviewed questions; dry-run matches applied state"
+    },
+    {
+      "command": "python3 -m unittest discover -s scripts -p test_grammar_co_transcripts.py -v",
+      "result": "7 tests passed"
+    },
+    {
+      "command": "python3 -m unittest discover -s scripts -p test_grammar_tcf_candidates.py -v",
+      "result": "4 tests passed"
+    },
+    {
+      "command": "python3 -m unittest discover -s scripts -p test_tcf_audio_boundaries.py -v",
+      "result": "25 tests passed"
+    },
+    {
+      "command": "./node_modules/.bin/tsc -b --pretty false",
+      "result": "passed"
+    },
+    {
+      "command": "python3 scripts/audit-tcf-bank.py --report docs/tcf/remplacement-audio/audit-banque-apres-corrections-20261104.json",
+      "result": "9490 questions; 0 structural errors, 0 warnings"
+    },
+    {
+      "command": "node scripts/test-grammar-curriculum.cjs",
+      "result": "51216 checks passed"
+    },
+    {
+      "command": "./node_modules/.bin/vite build",
+      "result": "passed; 654 modules transformed"
+    },
+    {
+      "command": "./node_modules/.bin/oxlint src/tcf/audio-replacements.ts src/tcf/draw-series.ts src/tcf/co-audio-slots.tsx",
+      "result": "no errors; existing component export and Date.now warnings"
+    }
+  ],
+  "preexisting_failure": {
+    "command": "node scripts/check-tcf-question-audit.mjs",
+    "exercise_id": "tcf-a0a1-ce-001",
+    "reason": "Current exercise has eight questions; historical semantic review records three facts. Both counts already occur in baseline commit 17cce6e1; CE sources are unchanged by this task.",
+    "baseline_commit": "17cce6e1",
+    "current_question_count": 8,
+    "historical_review_fact_count": 3,
+    "semantic_validation_complete": false
+  },
+  "technical_audio_validation": {
+    "grammar_tcf_candidates": 131,
+    "post_encoding_recognitions": 131,
+    "automatic_checks_passed": 131,
+    "original_grammar_recordings_modified": 0,
+    "human_listening_performed": false
+  },
+  "remaining": {
+    "grammar_transcripts_with_documented_uncertainties": 20,
+    "historical_references_without_received_original": 297,
+    "historical_references_without_received_original_have_direct_transcripts": true,
+    "prepared_reference_pools_below_minimum": 21,
+    "all_current_co_pools_below_minimum": 97,
+    "ce_supports_below_minimum": 3,
+    "global_human_listening_and_semantic_review_complete": false,
+    "d1_recipes_migrated": false
+  }
+}

@@ -1,23 +1,27 @@
-# Recherche dans les 127 audios A1 ajoutés à main
+# Découpes TCF issues des 127 originaux de grammaire
 
-L’import de grammaire `35332e09`, reçu pendant la reprise des 432 références, ajoute 127 originaux A1. Leur consultation a permis de retrouver **131 références CO supplémentaires**, avec trois ancres du signal concordantes, une corrélation d’au moins 0,8 et un écart de décalage d’au plus 40 ms.
+Les 127 originaux A1 reçus pour la grammaire ont permis d’identifier **131 anciennes références CO**. Les identités reposent sur trois ancres à corrélation ≥ 0,8 et un décalage commun à 40 ms près. Les originaux de grammaire sont conservés sans modification ; leurs [127 transcriptions](../../../../grammaire/co-import/transcriptions.json) sont maintenant intégrées à leur propre banque.
 
-Les fichiers et les entrées de grammaire conservent leur état d’import original et `audio-only`. Cette recherche produit uniquement des preuves de correspondance pour les anciennes références CO.
+**Les 131 coupes TCF sont préparées et passent les contrôles techniques automatiques.** Chaque coupe possède un FLAC comparé exactement aux échantillons de la source, un MP3 intégralement décodé et quatre fenêtres de frontière. Le MP3 final a été retranscrit ; six divergences ont reçu une seconde reconnaissance française. Le premier « Oh » de la piste 094 manquait réellement dans la première coupe : un alignement DTW rétablit son attaque à 13,194 s, avant la limite précédente. La version précédente reste conservée.
 
-- [127 sources consultées](sources.json) : identifiants d’envoi, fichiers, empreintes et provenance de l’import.
-- [131 liaisons à découper](liaisons-a-decouper.json) : anciennes références, sources concordantes, preuves et fenêtres temporelles estimées.
-- [Comparaisons du signal](preuves-signal.json), y compris les tentatives sans confirmation.
+Les cinq fichiers `vie-quotidienne-objet-4-1` à `4-5` correspondent à cinq règles distinctes dans la piste 067. Ils utilisent chacun leur passage, sans numéro parlé. Ce sont cinq extraits différents, pas cinq alias du même dialogue. La fin inachevée « Nous sommes ouverts » de la piste 044 est exclue de sa version TCF, sans inventer de suite. Quatre sources ont nécessité un réalignement DTW : 049, 094, 126 et 171.
 
-Les fenêtres estimées localisent l’ancien fichier dans l’original. **Elles ne sont pas des découpes validées** : les introductions, consignes, mots complets, répétitions et frontières restent à contrôler. Ces 131 références ne sont donc pas ajoutées aux 890 candidats déjà préparés.
+- [131 sources identifiées et fenêtres historiques](liaisons-a-decouper.json) : nom conservé pour la reprise des anciens liens ; les fenêtres estimées ne servent pas de coupes validées.
+- [131 coupes préparées](decoupes-preparees.json), avec empreintes, limites et chemins de travail.
+- [Contrôles après encodage](validation-technique.json) : 131 reconnaissances finales, 131 contrôles techniques réussis ; aucune écoute humaine attestée.
+- [Sélection explicite des mots utiles](segmentation-overrides.json), [sources reçues](sources.json) et [preuves de signal](preuves-signal.json).
+- [Corrections appliquées à sept exercices](../../corrections-appliquees-20261104.json) : quatorze audios installés, dont des coupes réutilisées de ce lot, et 57 questions relues. Toutes les banques de ce lot atteignent maintenant leur minimum de questions.
 
-Le [registre des identités de sources](../../identites-sources-unifiees.json) réunit maintenant **1 021 références sur 1 318** : 890 candidats préparés et 131 sources identifiées dont les découpes restent à préparer. Sur les 432 références de départ, **135 sont rapprochées** et **297 disposent de la transcription de leur fichier actuel sans source d’origine retrouvée**. Les 432 retranscriptions restent toutes conservées.
+Le registre historique compte **1 021 anciennes références avec candidat préparé sur 1 318** ; aucune des 131 identités de ce lot n’attend encore son découpage. Les **297 sans original retrouvé** disposent de leur transcription directe de repli. Les corrections utilisant un autre enregistrement reçu sont documentées comme des remplacements, jamais comme une identité retrouvée avec l’ancien fichier.
 
-Pour reprendre cette recherche :
+## Reprise
+
+Le travail se trouve dans `/workspace/work/tcf-audio-reconciliation-20261104/grammar-cuts-work`. L’index courant est `segmentation-index-v3.json`. Les 126 autres plans de la version 2 restent utilisés sans nouvelle coupe ; seule la piste 094 possède une nouvelle préparation. Les sorties ASR précédentes sont conservées.
 
 ```sh
-OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python scripts/audio_replacement/fingerprint_sources.py --catalogue /workspace/work/tcf-audio-reconciliation-20261104/grammar-source-search/source-catalogue.json --refs-json /workspace/work/tcf-audio-reconciliation-20261104/grammar-source-search/remaining-428.json --work /workspace/work/tcf-audio-reconciliation-20261104/grammar-source-search --keep 12 --output-name discovery.json
-OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python scripts/audio_replacement/verify_recording_discovery.py --discovery /workspace/work/tcf-audio-reconciliation-20261104/grammar-source-search/discovery.json --refs-json /workspace/work/tcf-audio-reconciliation-20261104/grammar-source-search/remaining-428.json --output /workspace/work/tcf-audio-reconciliation-20261104/grammar-source-search/waveform-evidence.json --top 3
-python scripts/audio_replacement/build_reconciliation_report.py --work /workspace/work/tcf-audio-reconciliation-20261104 --grammar-search /workspace/work/tcf-audio-reconciliation-20261104/grammar-source-search
+python scripts/audio_replacement/publish_grammar_tcf_candidates.py --work /workspace/work/tcf-audio-reconciliation-20261104/grammar-cuts-work
+python scripts/audio_replacement/validate_grammar_tcf_candidates.py --work /workspace/work/tcf-audio-reconciliation-20261104/grammar-cuts-work --extra-asr-dir /workspace/work/tcf-audio-reconciliation-20261104/grammar-cuts-work/candidate-asr-prefix-v3
+python scripts/audio_replacement/build_reconciliation_report.py --work /workspace/work/tcf-audio-reconciliation-20261104 --prepared-grammar /workspace/work/tcf-audio-reconciliation-20261104/grammar-cuts-work/prepared-grammar-proposals.json
 ```
 
-Aucun audio servi, aucune question et aucune transcription de banque n’ont été modifiés par cette recherche. Aucune écoute humaine n’est déclarée.
+Ces vérifications automatiques et relectures textuelles n’attestent pas une écoute humaine ni la justesse de toutes les questions du corpus. Les noms propres encore incertains restent signalés dans les rapports.

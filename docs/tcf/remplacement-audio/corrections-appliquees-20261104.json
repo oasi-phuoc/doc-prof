@@ -1,0 +1,3655 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-11-04T17:52:42.145294+00:00",
+  "status": "applied_automatic_technical_checks_and_text_review",
+  "bank": "src/tcf/content/a0-a1/co.json",
+  "audios": [
+    {
+      "destination": "/lib/audio/tcf/co/vie-quotidienne/restaurant-entreprise.mp3",
+      "source_work_file": "/workspace/work/tcf-audio-reconciliation-20261104/repair-daily-dialogues-work/staged-boundaries-work/run-20261104T174650-d059955eaa/current-3633eaf95e37712f3e37-d1/candidate.mp3",
+      "sha256": "2617aefadc238e483572474c5e917e4778d8f42c3df81fda5e4f506d98120967",
+      "duration_seconds": 16.953469,
+      "source_kind": "current_recording_fallback_original_not_found",
+      "source_id": "current:3633eaf95e37712f3e37",
+      "original_source_sha256": "3633eaf95e37712f3e37b97df9718988bd176fde04448b576711f5cfd6373e74",
+      "boundary_manifest": "/workspace/work/tcf-audio-reconciliation-20261104/repair-daily-dialogues-work/staged-boundaries-work/run-20261104T174650-d059955eaa/manifest.json",
+      "boundary_manifest_sha256": "f9cf682d0036cbff886a482d94074e355f1e9ee12c050f90ab012b92b3eaae92",
+      "technical_checks_passed": true,
+      "human_listening_performed": false
+    },
+    {
+      "destination": "/lib/audio/tcf/co/vie-quotidienne/achat-cerises.mp3",
+      "source_work_file": "/workspace/work/tcf-audio-reconciliation-20261104/repair-daily-dialogues-work/staged-boundaries-work/run-20261104T174649-57d605bc3f/current-826e1d451fb86c5c42ba-d1/candidate.mp3",
+      "sha256": "c51462043d5e0ee106952a6a125680d1bfc72a3d6fb5b4147d073e5eb915309b",
+      "duration_seconds": 10.553469,
+      "source_kind": "current_recording_fallback_original_not_found",
+      "source_id": "current:826e1d451fb86c5c42ba",
+      "original_source_sha256": "826e1d451fb86c5c42ba4c69572e9925f67abb27825b20c0e80b5322eb2b71db",
+      "boundary_manifest": "/workspace/work/tcf-audio-reconciliation-20261104/repair-daily-dialogues-work/staged-boundaries-work/run-20261104T174649-57d605bc3f/manifest.json",
+      "boundary_manifest_sha256": "d46032590518b9b802d897612a8dd86375f8d0c6e5f963afd56c0321349adf42",
+      "technical_checks_passed": true,
+      "human_listening_performed": false
+    },
+    {
+      "destination": "/lib/audio/tcf/co/vie-quotidienne/rendez-vous-medecin-travail.mp3",
+      "source_work_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261103T015111-93e90a2f35/delf_a1_2022-090-7e440722112e-d1/candidate.mp3",
+      "sha256": "e00be93c017539d2aa4dd98e5f14ba674a506f081927f656028f7ca35e94b823",
+      "duration_seconds": 32.130612,
+      "source_kind": "received_alternative_original_questions_rewritten",
+      "source_id": "delf_a1_2022:090:7e440722112e",
+      "original_source_sha256": "7e440722112e79fc937adf41d4c5e0f44fc06bf581d9e8995a2a63053d02247d",
+      "boundary_manifest": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261103T015111-93e90a2f35/manifest.json",
+      "boundary_manifest_sha256": "c62a1ef01100af5e985a3206219897874100dc4ab5ac5e223167062dcb472b3c",
+      "technical_checks_passed": true,
+      "human_listening_performed": false
+    },
+    {
+      "destination": "/lib/audio/tcf/co/vie-quotidienne/essayage-robe-chaussures.mp3",
+      "source_work_file": "/workspace/work/tcf-audio-reconciliation-20261104/grammar-cuts-work/staged-boundaries-work/run-20261104T173750-aca2aee042/grammar-import-20261104-file_00000000ecd8824694c3abfb6fe682aa-d1/candidate.mp3",
+      "sha256": "8bda8574cdc809f48f27a859e8a53d9576668dc2779fc729d0e8bb3e047b1d52",
+      "duration_seconds": 60.395102,
+      "source_kind": "received_original_reused",
+      "source_id": "grammar-import-20261104:file_00000000ecd8824694c3abfb6fe682aa",
+      "original_source_sha256": "5ec0dcbcd6e8e0e8d9b6e443c23acf4288a3d3af9e6882c7f2d0e35962dc68ce",
+      "boundary_manifest": "/workspace/work/tcf-audio-reconciliation-20261104/grammar-cuts-work/staged-boundaries-work/run-20261104T173750-aca2aee042/manifest.json",
+      "boundary_manifest_sha256": "d0a72a363adb46289ae50cfe4852aed2f8c7e59cfa8612778c317a49859e29c2",
+      "technical_checks_passed": true,
+      "human_listening_performed": false
+    },
+    {
+      "destination": "/lib/audio/tcf/co/vie-quotidienne/tickets-metro-bordeaux.mp3",
+      "source_work_file": "/workspace/work/tcf-audio-reconciliation-20261104/grammar-cuts-work/staged-boundaries-work/run-20261104T173511-cd7bd39668/grammar-import-20261104-file_000000001cc481f48b01feb5aade5c35-d1/candidate.mp3",
+      "sha256": "799865523d1c2802cb084a50f5dfc6a23db3dc47bbb3a4f7ebfd1400abd5d4e2",
+      "duration_seconds": 14.001633,
+      "source_kind": "received_original_reused",
+      "source_id": "grammar-import-20261104:file_000000001cc481f48b01feb5aade5c35",
+      "original_source_sha256": "a0ba162dc6a273796be6f77a8eb1c3c055eb8e5ad27366e2b39e57e9db23508b",
+      "boundary_manifest": "/workspace/work/tcf-audio-reconciliation-20261104/grammar-cuts-work/staged-boundaries-work/run-20261104T173511-cd7bd39668/manifest.json",
+      "boundary_manifest_sha256": "00578b125ff5cd713336d663f28501918c2ea56bd4cd32bc1e749fbfc8b19334",
+      "technical_checks_passed": true,
+      "human_listening_performed": false
+    },
+    {
+      "destination": "/lib/audio/tcf/co/vie-quotidienne/repondeur-lucie-thomas.mp3",
+      "source_work_file": "/workspace/work/tcf-audio-reconciliation-20261104/grammar-cuts-work/staged-boundaries-work/run-20261104T173626-31f2c7532e/grammar-import-20261104-file_0000000003648243b9dbe119d8176cce-d1/candidate.mp3",
+      "sha256": "9ea8a58eba7a12f182febb9c35ba9bb1f7bf463011e3cf5ccf6fcfabb1fb2c52",
+      "duration_seconds": 22.700408,
+      "source_kind": "received_original_reused",
+      "source_id": "grammar-import-20261104:file_0000000003648243b9dbe119d8176cce",
+      "original_source_sha256": "4f0599f37ee3f038437d46957a05ed802ae216ee2c8c46b53fdd7aa5cc071f05",
+      "boundary_manifest": "/workspace/work/tcf-audio-reconciliation-20261104/grammar-cuts-work/staged-boundaries-work/run-20261104T173626-31f2c7532e/manifest.json",
+      "boundary_manifest_sha256": "189dd2125d16be27a4e265de51ba548e4f38e89db4cf8bb1d2729eed4ea030b2",
+      "technical_checks_passed": true,
+      "human_listening_performed": false
+    },
+    {
+      "destination": "/lib/audio/tcf/co/vie-quotidienne/manon-musique-voisin.mp3",
+      "source_work_file": "/workspace/work/tcf-audio-reconciliation-20261104/grammar-cuts-work/staged-boundaries-work/run-20261104T173558-7d44ece8e4/grammar-import-20261104-file_000000005288821089919bf789f6589f-d1/candidate.mp3",
+      "sha256": "e2ea9d096ebb0a0f494f8472b470a46fe06c5d4a260c82912b54fb100d69d8f9",
+      "duration_seconds": 19.591837,
+      "source_kind": "received_original_reused",
+      "source_id": "grammar-import-20261104:file_000000005288821089919bf789f6589f",
+      "original_source_sha256": "2e928fbf3d6fee6dd6738b92f6b86afe8d5bf28b2ecd872035d1ef0c1e0f32ab",
+      "boundary_manifest": "/workspace/work/tcf-audio-reconciliation-20261104/grammar-cuts-work/staged-boundaries-work/run-20261104T173558-7d44ece8e4/manifest.json",
+      "boundary_manifest_sha256": "d994c5399b9795ad75cd70a702b28543eeea68f55e96b3b0e1d71ca3f7378719",
+      "technical_checks_passed": true,
+      "human_listening_performed": false
+    },
+    {
+      "destination": "/lib/audio/tcf/co/vie-quotidienne/chiens-en-laisse.mp3",
+      "source_work_file": "/workspace/work/tcf-audio-reconciliation-20261104/grammar-cuts-work/staged-boundaries-work/run-20261104T173636-f3f9f6cb92/grammar-import-20261104-file_000000003684821196e8094047c49744-d1/candidate.mp3",
+      "sha256": "d1297379b44f168f9deefff38a0fad33c3460d6c070da0c50c0a141cbc932af4",
+      "duration_seconds": 2.246531,
+      "source_kind": "received_original_reused",
+      "source_id": "grammar-import-20261104:file_000000003684821196e8094047c49744",
+      "original_source_sha256": "03c34d0c1c532e8e28b4b88d4fc055ac1f74aba823c80a09cde6f3f04f1bbc1d",
+      "boundary_manifest": "/workspace/work/tcf-audio-reconciliation-20261104/grammar-cuts-work/staged-boundaries-work/run-20261104T173636-f3f9f6cb92/manifest.json",
+      "boundary_manifest_sha256": "d48c71f7f1c025e16a1e2de9b51699a63a2ed12e490f5c807a113714d8d2e2d1",
+      "technical_checks_passed": true,
+      "human_listening_performed": false
+    },
+    {
+      "destination": "/lib/audio/tcf/co/vie-quotidienne/interdiction-fumer-couloir.mp3",
+      "source_work_file": "/workspace/work/tcf-audio-reconciliation-20261104/grammar-cuts-work/staged-boundaries-work/run-20261104T173636-f3f9f6cb92/grammar-import-20261104-file_000000003684821196e8094047c49744-d2/candidate.mp3",
+      "sha256": "62b9dc8d7f67af2b52f44bb01b19a79f592327f93f75038baef5bdca9b8083de",
+      "duration_seconds": 2.951837,
+      "source_kind": "received_original_reused",
+      "source_id": "grammar-import-20261104:file_000000003684821196e8094047c49744",
+      "original_source_sha256": "03c34d0c1c532e8e28b4b88d4fc055ac1f74aba823c80a09cde6f3f04f1bbc1d",
+      "boundary_manifest": "/workspace/work/tcf-audio-reconciliation-20261104/grammar-cuts-work/staged-boundaries-work/run-20261104T173636-f3f9f6cb92/manifest.json",
+      "boundary_manifest_sha256": "d48c71f7f1c025e16a1e2de9b51699a63a2ed12e490f5c807a113714d8d2e2d1",
+      "technical_checks_passed": true,
+      "human_listening_performed": false
+    },
+    {
+      "destination": "/lib/audio/tcf/co/vie-quotidienne/rangement-velos-local.mp3",
+      "source_work_file": "/workspace/work/tcf-audio-reconciliation-20261104/grammar-cuts-work/staged-boundaries-work/run-20261104T173636-f3f9f6cb92/grammar-import-20261104-file_000000003684821196e8094047c49744-d3/candidate.mp3",
+      "sha256": "343d704e89a729339653ac3a2a2f966b7499ef25751c9d0e889594a8b081f25e",
+      "duration_seconds": 2.951837,
+      "source_kind": "received_original_reused",
+      "source_id": "grammar-import-20261104:file_000000003684821196e8094047c49744",
+      "original_source_sha256": "03c34d0c1c532e8e28b4b88d4fc055ac1f74aba823c80a09cde6f3f04f1bbc1d",
+      "boundary_manifest": "/workspace/work/tcf-audio-reconciliation-20261104/grammar-cuts-work/staged-boundaries-work/run-20261104T173636-f3f9f6cb92/manifest.json",
+      "boundary_manifest_sha256": "d48c71f7f1c025e16a1e2de9b51699a63a2ed12e490f5c807a113714d8d2e2d1",
+      "technical_checks_passed": true,
+      "human_listening_performed": false
+    },
+    {
+      "destination": "/lib/audio/tcf/co/vie-quotidienne/nom-boite-aux-lettres.mp3",
+      "source_work_file": "/workspace/work/tcf-audio-reconciliation-20261104/grammar-cuts-work/staged-boundaries-work/run-20261104T173636-f3f9f6cb92/grammar-import-20261104-file_000000003684821196e8094047c49744-d4/candidate.mp3",
+      "sha256": "f053b3e044a179ecc9bde79c054dac569ec7b44673f6acea47223662a1b35807",
+      "duration_seconds": 4.153469,
+      "source_kind": "received_original_reused",
+      "source_id": "grammar-import-20261104:file_000000003684821196e8094047c49744",
+      "original_source_sha256": "03c34d0c1c532e8e28b4b88d4fc055ac1f74aba823c80a09cde6f3f04f1bbc1d",
+      "boundary_manifest": "/workspace/work/tcf-audio-reconciliation-20261104/grammar-cuts-work/staged-boundaries-work/run-20261104T173636-f3f9f6cb92/manifest.json",
+      "boundary_manifest_sha256": "d48c71f7f1c025e16a1e2de9b51699a63a2ed12e490f5c807a113714d8d2e2d1",
+      "technical_checks_passed": true,
+      "human_listening_performed": false
+    },
+    {
+      "destination": "/lib/audio/tcf/co/vie-quotidienne/calme-apres-22-heures.mp3",
+      "source_work_file": "/workspace/work/tcf-audio-reconciliation-20261104/grammar-cuts-work/staged-boundaries-work/run-20261104T173636-f3f9f6cb92/grammar-import-20261104-file_000000003684821196e8094047c49744-d5/candidate.mp3",
+      "sha256": "1aad1e6511e916c1a619ae52bffa82f5e69997d86c78b0c97ec0afc8403b3ccc",
+      "duration_seconds": 3.761633,
+      "source_kind": "received_original_reused",
+      "source_id": "grammar-import-20261104:file_000000003684821196e8094047c49744",
+      "original_source_sha256": "03c34d0c1c532e8e28b4b88d4fc055ac1f74aba823c80a09cde6f3f04f1bbc1d",
+      "boundary_manifest": "/workspace/work/tcf-audio-reconciliation-20261104/grammar-cuts-work/staged-boundaries-work/run-20261104T173636-f3f9f6cb92/manifest.json",
+      "boundary_manifest_sha256": "d48c71f7f1c025e16a1e2de9b51699a63a2ed12e490f5c807a113714d8d2e2d1",
+      "technical_checks_passed": true,
+      "human_listening_performed": false
+    },
+    {
+      "destination": "/lib/audio/tcf/co/vie-quotidienne/ponctualite-christian.mp3",
+      "source_work_file": "/workspace/work/tcf-audio-reconciliation-20261104/grammar-cuts-work/staged-boundaries-work/run-20261104T173557-28bd7a24da/grammar-import-20261104-file_0000000086b481f68efdd045d6acf968-d1/candidate.mp3",
+      "sha256": "ac6e88ee996940b70c5ff67c3fdd620cdd5cd4cb15f6efdba77eda716ad70a46",
+      "duration_seconds": 17.110204,
+      "source_kind": "received_original_reused",
+      "source_id": "grammar-import-20261104:file_0000000086b481f68efdd045d6acf968",
+      "original_source_sha256": "cbb80c31667e659102f110affc893d9276befaf02b6eeb893eda51b9523a6c60",
+      "boundary_manifest": "/workspace/work/tcf-audio-reconciliation-20261104/grammar-cuts-work/staged-boundaries-work/run-20261104T173557-28bd7a24da/manifest.json",
+      "boundary_manifest_sha256": "20aed56167eef8ccb601f2261d620959d0bdca6e9b4e35cbdca0d17d5b777d04",
+      "technical_checks_passed": true,
+      "human_listening_performed": false
+    },
+    {
+      "destination": "/lib/audio/tcf/co/vie-quotidienne/rencontre-nina-felipe.mp3",
+      "source_work_file": "/workspace/work/tcf-audio-reconciliation-20261104/grammar-cuts-work/staged-boundaries-work/run-20261104T173711-9839965064/grammar-import-20261104-file_00000000de38820a8d363ac578821acb-d1/candidate.mp3",
+      "sha256": "69247621f42b8438e3c4931f5627180a59fb6b9d7ce080a61e8d60eb64393969",
+      "duration_seconds": 46.994286,
+      "source_kind": "received_original_reused",
+      "source_id": "grammar-import-20261104:file_00000000de38820a8d363ac578821acb",
+      "original_source_sha256": "704243a93d6c17955f44c7ae17a781b43d5799250a5fa9ff54509ccb0279bd3d",
+      "boundary_manifest": "/workspace/work/tcf-audio-reconciliation-20261104/grammar-cuts-work/staged-boundaries-work/run-20261104T173711-9839965064/manifest.json",
+      "boundary_manifest_sha256": "58fe4123a3298208bfe50e12aa0df61669f81856222ea3523d83d4d285cb1b88",
+      "technical_checks_passed": true,
+      "human_listening_performed": false
+    }
+  ],
+  "exercises": [
+    {
+      "before": {
+        "id": "tcf-a1-sem1-co-2",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "TCF A1.1-A1 scolaire · semestre 1 · Quatre petits dialogues",
+        "scenario": "vie-quotidienne",
+        "scene": "Les situations du quotidien",
+        "consigne": "Vous allez entendre 4 petits dialogues. Vous entendrez chaque dialogue deux fois. Lisez les questions et cochez la bonne réponse.",
+        "support": {
+          "transcription": [
+            "Le midi, vous pouvez manger au restaurant de l'entreprise.\nAh oui.\nEt le restaurant ouvre à quelle heure?\nÀ 11h30.\n11h30.\nD'accord.\nÀ tout à l'heure?\nLe midi, vous pouvez manger au restaurant de l'entreprise.\nAh oui.\nEt le restaurant ouvre à quelle heure?\nÀ 11h30.\n11h30.\nD'accord.\nÀ tout à l'heure?",
+            "Bonjour monsieur.\nC'est combien le kilo de se risent?\n6,40.\n6,40.\nJ'en veux 500 grammes.\nTrès bien.\nVoilà.\nBonjour monsieur.\nC'est combien le kilo de se risent?\n6,40.\n6,40.\nJ'en veux 500 grammes.\nTrès bien.\nVoilà.",
+            "Pour la visite médicale, prenez rendez-vous avec le médecin du travail.\nC'est le docteur chéré.\nSon téléphone est le 01, 48, 24, 32.\nMerci.\nJe téléphone tout de suite.\nPour la visite médicale, prenez rendez-vous avec le médecin du travail.\nC'est le docteur chéré.\nSon téléphone est le 01, 48, 24, 32.\n01, 48, 24, 32.\nMerci.\nJe téléphone tout de suite.",
+            "Bonjour.\nEst-ce que je pourrais essayer cette robe s'il vous plaît?\nOui, bien sûr.\nQuelle est votre taille?\n38.\n38.\nVoilà.\nBonjour.\nEst-ce que je pourrais essayer cette robe s'il vous plaît?\nOui, bien sûr.\nQuelle est votre taille?\n38.\n38.\nVoilà."
+          ],
+          "audios": [
+            "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-3-1.mp3",
+            "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-3-2.mp3",
+            "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-3-3.mp3",
+            "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-3-4.mp3"
+          ],
+          "images_descriptions": [
+            "Scénario vidéo (audio CO moyen, « Les situations du quotidien — dialogue 1 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans une situation de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Le midi, vous pouvez manger au restaurant de l'entreprise » ; B : « Ah oui » ; A : « Et le restaurant ouvre à quelle heure? » ; B : « À 11h30 » ; A : « 11h30 » ; B : « D'accord » ; A : « À tout à l'heure? » ; B : « Le midi, vous pouvez manger au restaurant de l'entreprise ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Les situations du quotidien — dialogue 2 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans une situation de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Bonjour monsieur » ; B : « C'est combien le kilo de se risent? » ; A : « 6,40 » ; B : « 6,40 » ; A : « J'en veux 500 grammes » ; B : « Très bien » ; A : « Voilà » ; B : « Bonjour monsieur ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Les situations du quotidien — dialogue 3 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans une situation de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Pour la visite médicale, prenez rendez-vous avec le médecin du travail » ; B : « C'est le docteur chéré » ; A : « Son téléphone est le 01, 48, 24, 32 » ; B : « Merci » ; A : « Je téléphone tout de suite » ; B : « Pour la visite médicale, prenez rendez-vous avec le médecin du travail » ; A : « C'est le docteur chéré » ; B : « Son téléphone est le 01, 48, 24, 32 ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Les situations du quotidien — dialogue 4 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans une situation de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Bonjour » ; B : « Est-ce que je pourrais essayer cette robe s'il vous plaît? » ; A : « Oui, bien sûr » ; B : « Quelle est votre taille? » ; A : « Voilà » ; B : « Bonjour » ; A : « Est-ce que je pourrais essayer cette robe s'il vous plaît? » ; B : « Oui, bien sûr ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
+          ]
+        },
+        "questions": [
+          {
+            "enonce": "Où peut-on manger le midi ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Au restaurant de l’entreprise",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Au restaurant du musée"
+              },
+              {
+                "id": "c",
+                "texte": "Au restaurant de la gare"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Au restaurant de l’entreprise"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "À quelle heure ouvre ce restaurant ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "À 11 h 30",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "À 11 h"
+              },
+              {
+                "id": "c",
+                "texte": "À midi"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "À 11 h 30"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/vocabulaire/heure-horloge/onze-heures-trente.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/vocabulaire/heure-horloge/onze-heures.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/vocabulaire/heure-horloge/midi.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Quel prix au kilo le vendeur annonce-t-il ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "6,40 euros",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "5,40 euros"
+              },
+              {
+                "id": "c",
+                "texte": "6,30 euros"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "6,40 euros"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Quelle quantité le client veut-il acheter ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "500 g",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "250 g"
+              },
+              {
+                "id": "c",
+                "texte": "1 kg"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "500 g"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Avec quel professionnel faut-il prendre rendez-vous ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Le médecin du travail",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Le dentiste"
+              },
+              {
+                "id": "c",
+                "texte": "Le pharmacien"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Le médecin du travail"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Pour quelle raison faut-il prendre rendez-vous ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Pour une visite médicale",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Pour une inscription sportive"
+              },
+              {
+                "id": "c",
+                "texte": "Pour un entretien d’embauche"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Pour une visite médicale"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quel numéro de téléphone est donné ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "01 48 24 32",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "01 48 34 32"
+              },
+              {
+                "id": "c",
+                "texte": "01 58 24 32"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "01 48 24 32"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Comment la personne va-t-elle prendre rendez-vous ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "En téléphonant tout de suite",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "En envoyant un courriel demain"
+              },
+              {
+                "id": "c",
+                "texte": "En écrivant une lettre"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "En téléphonant tout de suite"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quel vêtement la cliente souhaite-t-elle essayer ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Une robe",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Une jupe"
+              },
+              {
+                "id": "c",
+                "texte": "Un pantalon"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Une robe"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/437924daf0f1.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/88a6b997029d.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-pantalons-dessines.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Quelle taille demande-t-elle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "38",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "36"
+              },
+              {
+                "id": "c",
+                "texte": "40"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "38"
+              }
+            },
+            "audio": 4
+          }
+        ],
+        "consigne_supplementaire": null
+      },
+      "after": {
+        "id": "tcf-a1-sem1-co-2",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "TCF A1.1-A1 scolaire · semestre 1 · Quatre petits dialogues",
+        "scenario": "vie-quotidienne",
+        "scene": "Les situations du quotidien",
+        "consigne": "Lisez les questions, puis écoutez les quatre dialogues et répondez.",
+        "support": {
+          "transcription": [
+            "Le midi, vous pouvez manger au restaurant de l’entreprise. Ah oui ? Et le restaurant ouvre à quelle heure ? À 11 h 30. 11 h 30. D’accord. À tout à l’heure !",
+            "Bonjour monsieur. C’est combien le kilo de cerises ? Six euros quarante. Six euros quarante ? J’en veux 500 grammes. Très bien.",
+            "Bonjour, c’est José, le secrétaire du directeur. Vous avez rendez-vous avec le médecin du travail lundi prochain. Pour votre rendez-vous, venez à 10 h au deuxième étage. Vous pouvez parler de votre accident d’hier, raconter votre visite à l’hôpital et montrer votre ordonnance. Si vous avez des questions, appelez-moi vendredi. Bonne journée.",
+            "Bonjour madame Je peux vous aider Oui bonjour Je pourrais essayer la robe bleue Bien sûr Vous faites quelle taille Je fais du 38 Voici du 38 Vous aimeriez essayer autre chose ? Oui, des chaussures. Quelle couleur ? Noire, s'il vous plaît. Quelle est votre pointure ? Je fais du 39. Très bien. Voici du 39. Alors, ça vous plaît ? La robe vous va très bien. Oui, j'aime bien, mais les chaussures, ça ne va pas. Je prends la robe. Je voudrais aussi acheter une veste en cuir pour mon mari. Désolé, nous n'avons pas de vêtements pour hommes en boutique. Regardez sur notre site internet."
+          ],
+          "audios": [
+            "/lib/audio/tcf/co/vie-quotidienne/restaurant-entreprise.mp3",
+            "/lib/audio/tcf/co/vie-quotidienne/achat-cerises.mp3",
+            "/lib/audio/tcf/co/vie-quotidienne/rendez-vous-medecin-travail.mp3",
+            "/lib/audio/tcf/co/vie-quotidienne/essayage-robe-chaussures.mp3"
+          ],
+          "images_descriptions": [
+            "Deux collègues parlent du restaurant de leur entreprise.",
+            "Un client achète des cerises à un vendeur au marché.",
+            "Le secrétaire du directeur laisse un message au sujet d’un rendez-vous avec le médecin du travail.",
+            "Une cliente essaie une robe bleue et des chaussures dans une boutique, puis cherche une veste en cuir pour son mari."
+          ]
+        },
+        "questions": [
+          {
+            "enonce": "Où peut-on manger le midi ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Au restaurant de l’entreprise",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Au restaurant du musée"
+              },
+              {
+                "id": "c",
+                "texte": "Au restaurant de la gare"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Au restaurant de l’entreprise"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "À quelle heure ouvre ce restaurant ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "À 11 h 30",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "À 11 h"
+              },
+              {
+                "id": "c",
+                "texte": "À midi"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "À 11 h 30"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/vocabulaire/heure-horloge/onze-heures-trente.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/vocabulaire/heure-horloge/onze-heures.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/vocabulaire/heure-horloge/midi.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Quel prix au kilo le vendeur annonce-t-il ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "6,40 euros",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "5,40 euros"
+              },
+              {
+                "id": "c",
+                "texte": "6,30 euros"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "6,40 euros"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Quelle quantité le client veut-il acheter ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "500 g",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "250 g"
+              },
+              {
+                "id": "c",
+                "texte": "1 kg"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "500 g"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Avec quel professionnel faut-il prendre rendez-vous ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Le médecin du travail",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Le dentiste"
+              },
+              {
+                "id": "c",
+                "texte": "Le pharmacien"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Le médecin du travail"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quel jour le rendez-vous médical est-il prévu ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Lundi prochain",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Mardi prochain"
+              },
+              {
+                "id": "c",
+                "texte": "Vendredi prochain"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Lundi prochain"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quel document la personne peut-elle montrer au médecin ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Son ordonnance",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Son permis de conduire"
+              },
+              {
+                "id": "c",
+                "texte": "Son billet de train"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Son ordonnance"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quand peut-elle appeler le secrétaire si elle a des questions ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Vendredi",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Samedi"
+              },
+              {
+                "id": "c",
+                "texte": "Dimanche"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Vendredi"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quel vêtement la cliente souhaite-t-elle essayer ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Une robe",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Une jupe"
+              },
+              {
+                "id": "c",
+                "texte": "Un pantalon"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Une robe"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/437924daf0f1.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/88a6b997029d.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-pantalons-dessines.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Quelle taille demande-t-elle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "38",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "36"
+              },
+              {
+                "id": "c",
+                "texte": "40"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "38"
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "À quel moment de la journée peut-on manger dans ce restaurant ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Le midi",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Le matin"
+              },
+              {
+                "id": "c",
+                "texte": "Le soir"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Le midi"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Quelle formule termine le premier dialogue ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "À tout à l’heure",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "À demain"
+              },
+              {
+                "id": "c",
+                "texte": "Bonne nuit"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "À tout à l’heure"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Quel fruit le client achète-t-il ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Des cerises",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Des pommes"
+              },
+              {
+                "id": "c",
+                "texte": "Des poires"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Des cerises"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "De quelle couleur est la robe essayée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Bleue",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Rouge"
+              },
+              {
+                "id": "c",
+                "texte": "Verte"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Bleue"
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Quelle pointure la cliente demande-t-elle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "39",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "37"
+              },
+              {
+                "id": "c",
+                "texte": "40"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "39"
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Pourquoi la cliente ne prend-elle pas les chaussures ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Elles ne lui vont pas",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Elle les a déjà achetées"
+              },
+              {
+                "id": "c",
+                "texte": "Le magasin n’en vend pas"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Elles ne lui vont pas"
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Pour qui cherche-t-elle une veste ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Pour son mari",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Pour son fils"
+              },
+              {
+                "id": "c",
+                "texte": "Pour son frère"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Pour son mari"
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Quel vêtement veut-elle acheter à son mari ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Une veste",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Un pull"
+              },
+              {
+                "id": "c",
+                "texte": "Un manteau"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Une veste"
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Dans quelle matière souhaite-t-elle cette veste ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "En cuir",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "En laine"
+              },
+              {
+                "id": "c",
+                "texte": "En coton"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "En cuir"
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Où le vendeur lui conseille-t-il de chercher les vêtements pour hommes ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Sur le site Internet",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Dans un catalogue papier"
+              },
+              {
+                "id": "c",
+                "texte": "Au rayon pour hommes de la boutique"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Sur le site Internet"
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Quelle est la fonction de José ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "audio": 3,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Le secrétaire du directeur",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Le directeur de l’entreprise"
+              },
+              {
+                "id": "c",
+                "texte": "Le médecin du travail"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Le secrétaire du directeur"
+              }
+            }
+          },
+          {
+            "enonce": "Pourquoi le vendeur conseille-t-il le site Internet pour les vêtements pour hommes ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "audio": 4,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La boutique ne vend pas de vêtements pour hommes",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Le site propose seulement des chaussures"
+              },
+              {
+                "id": "c",
+                "texte": "La boutique est fermée"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "La boutique ne vend pas de vêtements pour hommes"
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null
+      },
+      "reason": "Trois liaisons décalées réparées. Les cerises proviennent du fichier actuel disponible ; les originaux médecin/robe attendus n’étant pas retrouvés, deux autres enregistrements reçus sont réutilisés et leurs questions sont adaptées. Quatre questions restaurant, trois cerises, cinq médecin et dix essayage.",
+      "facts": [
+        {
+          "question": "Où peut-on manger le midi ?",
+          "correct_answer": "Au restaurant de l’entreprise",
+          "evidence": [
+            "restaurant de l’entreprise"
+          ]
+        },
+        {
+          "question": "À quelle heure ouvre ce restaurant ?",
+          "correct_answer": "À 11 h 30",
+          "evidence": [
+            "11 h 30"
+          ]
+        },
+        {
+          "question": "Quel prix au kilo le vendeur annonce-t-il ?",
+          "correct_answer": "6,40 euros",
+          "evidence": [
+            "Six euros quarante"
+          ]
+        },
+        {
+          "question": "Quelle quantité le client veut-il acheter ?",
+          "correct_answer": "500 g",
+          "evidence": [
+            "500 grammes"
+          ]
+        },
+        {
+          "question": "Avec quel professionnel faut-il prendre rendez-vous ?",
+          "correct_answer": "Le médecin du travail",
+          "evidence": [
+            "médecin du travail"
+          ]
+        },
+        {
+          "question": "Quel jour le rendez-vous médical est-il prévu ?",
+          "correct_answer": "Lundi prochain",
+          "evidence": [
+            "lundi prochain"
+          ]
+        },
+        {
+          "question": "Quel document la personne peut-elle montrer au médecin ?",
+          "correct_answer": "Son ordonnance",
+          "evidence": [
+            "montrer votre ordonnance"
+          ]
+        },
+        {
+          "question": "Quand peut-elle appeler le secrétaire si elle a des questions ?",
+          "correct_answer": "Vendredi",
+          "evidence": [
+            "appelez-moi vendredi"
+          ]
+        },
+        {
+          "question": "Quel vêtement la cliente souhaite-t-elle essayer ?",
+          "correct_answer": "Une robe",
+          "evidence": [
+            "essayer la robe bleue"
+          ]
+        },
+        {
+          "question": "Quelle taille demande-t-elle ?",
+          "correct_answer": "38",
+          "evidence": [
+            "38"
+          ]
+        },
+        {
+          "question": "À quel moment de la journée peut-on manger dans ce restaurant ?",
+          "correct_answer": "Le midi",
+          "evidence": [
+            "Le midi"
+          ]
+        },
+        {
+          "question": "Quelle formule termine le premier dialogue ?",
+          "correct_answer": "À tout à l’heure",
+          "evidence": [
+            "À tout à l’heure"
+          ]
+        },
+        {
+          "question": "Quel fruit le client achète-t-il ?",
+          "correct_answer": "Des cerises",
+          "evidence": [
+            "kilo de cerises"
+          ]
+        },
+        {
+          "question": "De quelle couleur est la robe essayée ?",
+          "correct_answer": "Bleue",
+          "evidence": [
+            "robe bleue"
+          ]
+        },
+        {
+          "question": "Quelle pointure la cliente demande-t-elle ?",
+          "correct_answer": "39",
+          "evidence": [
+            "39"
+          ]
+        },
+        {
+          "question": "Pourquoi la cliente ne prend-elle pas les chaussures ?",
+          "correct_answer": "Elles ne lui vont pas",
+          "evidence": [
+            "les chaussures, ça ne va pas"
+          ]
+        },
+        {
+          "question": "Pour qui cherche-t-elle une veste ?",
+          "correct_answer": "Pour son mari",
+          "evidence": [
+            "pour mon mari"
+          ]
+        },
+        {
+          "question": "Quel vêtement veut-elle acheter à son mari ?",
+          "correct_answer": "Une veste",
+          "evidence": [
+            "une veste en cuir"
+          ]
+        },
+        {
+          "question": "Dans quelle matière souhaite-t-elle cette veste ?",
+          "correct_answer": "En cuir",
+          "evidence": [
+            "en cuir"
+          ]
+        },
+        {
+          "question": "Où le vendeur lui conseille-t-il de chercher les vêtements pour hommes ?",
+          "correct_answer": "Sur le site Internet",
+          "evidence": [
+            "notre site internet"
+          ]
+        },
+        {
+          "question": "Quelle est la fonction de José ?",
+          "correct_answer": "Le secrétaire du directeur",
+          "evidence": [
+            "José, le secrétaire du directeur"
+          ]
+        },
+        {
+          "question": "Pourquoi le vendeur conseille-t-il le site Internet pour les vêtements pour hommes ?",
+          "correct_answer": "La boutique ne vend pas de vêtements pour hommes",
+          "evidence": [
+            "nous n’avons pas de vêtements pour hommes en boutique"
+          ]
+        }
+      ],
+      "review_method": "Comparison of the received/current recording recognitions and explicit transcript quotes; no human listening claim"
+    },
+    {
+      "before": {
+        "id": "tcf-ss-a1-s44-co-4",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Dialogue 169",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/vie-quotidienne/bonjour-voudrais-tickets-1.mp3",
+          "transcription": "Pâge 99, exercice 4."
+        },
+        "questions": [
+          {
+            "enonce": "Quel numéro de page est annoncé ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "99",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "19"
+              },
+              {
+                "id": "c",
+                "texte": "90"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "99"
+              }
+            }
+          },
+          {
+            "enonce": "Quel numéro d'exercice est annoncé ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "4",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "3"
+              },
+              {
+                "id": "c",
+                "texte": "5"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "4"
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "vie-quotidienne",
+        "scene": "Bonjour voudrais tickets"
+      },
+      "after": {
+        "id": "tcf-ss-a1-s44-co-4",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Acheter des tickets de métro",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/vie-quotidienne/tickets-metro-bordeaux.mp3",
+          "transcription": "Bonjour monsieur. Je voudrais des tickets de métro, s'il vous plaît. J'ai beaucoup de trajets à faire à Bordeaux aujourd'hui. Alors prenez un passe pour la journée, ou un carnet de 10 tickets."
+        },
+        "questions": [
+          {
+            "enonce": "Que souhaite acheter la personne ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Des tickets de métro",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Des billets de train"
+              },
+              {
+                "id": "c",
+                "texte": "Des billets d’avion"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Des tickets de métro"
+              }
+            }
+          },
+          {
+            "enonce": "Dans quelle ville la personne doit-elle se déplacer ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "À Bordeaux",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "À Lille"
+              },
+              {
+                "id": "c",
+                "texte": "À Lyon"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "À Bordeaux"
+              }
+            }
+          },
+          {
+            "enonce": "Pourquoi le vendeur conseille-t-il un passe ou un carnet ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Parce que la personne a beaucoup de trajets à faire",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Parce que la personne voyage avec un groupe"
+              },
+              {
+                "id": "c",
+                "texte": "Parce que la personne a perdu ses billets"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Parce que la personne a beaucoup de trajets à faire"
+              }
+            }
+          },
+          {
+            "enonce": "Pour quelle durée le passe proposé est-il valable ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Pour une journée",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Pour une semaine"
+              },
+              {
+                "id": "c",
+                "texte": "Pour un mois"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Pour une journée"
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "vie-quotidienne",
+        "scene": "Tickets de métro à Bordeaux"
+      },
+      "reason": "Questions Page 99/Exercice 4 remplacées par quatre faits du dialogue, annonce pédagogique retirée.",
+      "facts": [
+        {
+          "question": "Que souhaite acheter la personne ?",
+          "correct_answer": "Des tickets de métro",
+          "evidence": [
+            "tickets de métro"
+          ]
+        },
+        {
+          "question": "Dans quelle ville la personne doit-elle se déplacer ?",
+          "correct_answer": "À Bordeaux",
+          "evidence": [
+            "Bordeaux"
+          ]
+        },
+        {
+          "question": "Pourquoi le vendeur conseille-t-il un passe ou un carnet ?",
+          "correct_answer": "Parce que la personne a beaucoup de trajets à faire",
+          "evidence": [
+            "beaucoup de trajets à faire"
+          ]
+        },
+        {
+          "question": "Pour quelle durée le passe proposé est-il valable ?",
+          "correct_answer": "Pour une journée",
+          "evidence": [
+            "pour la journée"
+          ]
+        }
+      ],
+      "review_method": "Comparison of the received/current recording recognitions and explicit transcript quotes; no human listening claim"
+    },
+    {
+      "before": {
+        "id": "tcf-ss-a1-s51-co-2",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Dialogue 012",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/transports/je-viens-louer-voiture-1.mp3",
+          "transcription": "Vous êtes bien chez Lucie et Thomas.\nNous ne pouvons pas prendre votre appel.\nMerci de laisser votre nom et votre prénom après le bip.\nLe numéro est le 01 39 10 22 50.\nÀ bientôt !"
+        },
+        "questions": [
+          {
+            "enonce": "Chez qui le message de répondeur est-il enregistré ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Lucie et Thomas",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Alice et Pierre"
+              },
+              {
+                "id": "c",
+                "texte": "Marie et Julien"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Lucie et Thomas"
+              }
+            }
+          },
+          {
+            "enonce": "Pourquoi faut-il laisser un message ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Ils ne peuvent pas prendre l'appel",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Le numéro a changé"
+              },
+              {
+                "id": "c",
+                "texte": "Le téléphone est cassé"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Ils ne peuvent pas prendre l'appel"
+              }
+            }
+          },
+          {
+            "enonce": "Quelles informations faut-il laisser ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Son nom et son prénom",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Son adresse et son âge"
+              },
+              {
+                "id": "c",
+                "texte": "Sa profession et sa nationalité"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Son nom et son prénom"
+              }
+            }
+          },
+          {
+            "enonce": "Quand faut-il laisser ces informations ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Après le bip",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Avant le bip"
+              },
+              {
+                "id": "c",
+                "texte": "Après une chanson"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Après le bip"
+              }
+            }
+          },
+          {
+            "enonce": "Quel numéro est annoncé ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "01 39 10 22 50",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "01 39 12 20 50"
+              },
+              {
+                "id": "c",
+                "texte": "01 39 10 50 22"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "01 39 10 22 50"
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "transports",
+        "scene": "Je viens louer voiture"
+      },
+      "after": {
+        "id": "tcf-ss-a1-s51-co-2",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Message du répondeur de Lucie et Thomas",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/vie-quotidienne/repondeur-lucie-thomas.mp3",
+          "transcription": "Bonjour. Vous êtes bien au 01 39 10 22 50. Bienvenue chez Lucie et Thomas. Laissez votre nom, prénom et un numéro de téléphone, s’il vous plaît."
+        },
+        "questions": [
+          {
+            "enonce": "Chez qui le message de répondeur est-il enregistré ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Lucie et Thomas",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Alice et Pierre"
+              },
+              {
+                "id": "c",
+                "texte": "Marie et Julien"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Lucie et Thomas"
+              }
+            }
+          },
+          {
+            "enonce": "Quel type d’enregistrement entend-on ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un message de répondeur",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Une annonce de gare"
+              },
+              {
+                "id": "c",
+                "texte": "Un bulletin météo"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un message de répondeur"
+              }
+            }
+          },
+          {
+            "enonce": "Quelles informations faut-il laisser ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Son nom et son prénom",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Son adresse et son âge"
+              },
+              {
+                "id": "c",
+                "texte": "Sa profession et sa nationalité"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Son nom et son prénom"
+              }
+            }
+          },
+          {
+            "enonce": "Quelle information faut-il laisser en plus du nom et du prénom ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un numéro de téléphone",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Une adresse postale"
+              },
+              {
+                "id": "c",
+                "texte": "Une adresse électronique"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un numéro de téléphone"
+              }
+            }
+          },
+          {
+            "enonce": "Quel numéro est annoncé ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "01 39 10 22 50",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "01 39 12 20 50"
+              },
+              {
+                "id": "c",
+                "texte": "01 39 10 50 22"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "01 39 10 22 50"
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "vie-quotidienne",
+        "scene": "Laisser ses coordonnées sur un répondeur"
+      },
+      "reason": "Transcription rétablie sur l’audio ; bip et impossibilité de répondre non prononcés retirés des questions. Scénario transports corrigé.",
+      "facts": [
+        {
+          "question": "Chez qui le message de répondeur est-il enregistré ?",
+          "correct_answer": "Lucie et Thomas",
+          "evidence": [
+            "Lucie et Thomas"
+          ]
+        },
+        {
+          "question": "Quel type d’enregistrement entend-on ?",
+          "correct_answer": "Un message de répondeur",
+          "evidence": [
+            "Vous êtes bien au"
+          ]
+        },
+        {
+          "question": "Quelles informations faut-il laisser ?",
+          "correct_answer": "Son nom et son prénom",
+          "evidence": [
+            "votre nom, prénom"
+          ]
+        },
+        {
+          "question": "Quelle information faut-il laisser en plus du nom et du prénom ?",
+          "correct_answer": "Un numéro de téléphone",
+          "evidence": [
+            "un numéro de téléphone"
+          ]
+        },
+        {
+          "question": "Quel numéro est annoncé ?",
+          "correct_answer": "01 39 10 22 50",
+          "evidence": [
+            "01 39 10 22 50"
+          ]
+        }
+      ],
+      "review_method": "Comparison of the received/current recording recognitions and explicit transcript quotes; no human listening claim"
+    },
+    {
+      "before": {
+        "id": "tcf-ss-a1-s6-co-2",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Dialogue 069",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/vie-quotidienne/allo-manon-c-est-flo-1.mp3",
+          "transcription": "- Allo Manon, c'est Flo…\n- Ça va ?\n- Non…\nmon voisin n'est pas content…\nJ'écoute la musique trop fort et je fais du bruit !\n- Et alors ?\n- Alors je ne respecte pas le règlement et le calme..."
+        },
+        "questions": [
+          {
+            "enonce": "Qui téléphone à Manon ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Flo",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Léa"
+              },
+              {
+                "id": "c",
+                "texte": "Magali"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Flo"
+              }
+            }
+          },
+          {
+            "enonce": "Pourquoi le voisin n’est-il pas content ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La musique est trop forte",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Le chien aboie"
+              },
+              {
+                "id": "c",
+                "texte": "La porte est bloquée"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "La musique est trop forte"
+              }
+            }
+          },
+          {
+            "enonce": "Qu’est-ce que Flo reconnaît ne pas respecter ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Le règlement et le calme",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Le budget de la fête"
+              },
+              {
+                "id": "c",
+                "texte": "Les horaires du magasin"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Le règlement et le calme"
+              }
+            }
+          },
+          {
+            "enonce": "Comment Flo répond-elle quand Manon lui demande si ça va ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Elle dit que ça ne va pas",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Elle dit que tout va bien"
+              },
+              {
+                "id": "c",
+                "texte": "Elle refuse de répondre"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Elle dit que ça ne va pas"
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "vie-quotidienne",
+        "scene": "Allo Manon c'est Flo"
+      },
+      "after": {
+        "id": "tcf-ss-a1-s6-co-2",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Musique et voisinage",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/vie-quotidienne/manon-musique-voisin.mp3",
+          "transcription": "Allô, Manon, c’est Flo. Ça va ? Non. Mon voisin n’est pas content. J’écoute la musique trop fort et je fais du bruit. Et alors ? Alors je ne respecte pas le règlement et le calme."
+        },
+        "questions": [
+          {
+            "enonce": "Qui téléphone à Manon ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Flo",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Léa"
+              },
+              {
+                "id": "c",
+                "texte": "Magali"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Flo"
+              }
+            }
+          },
+          {
+            "enonce": "Pourquoi le voisin n’est-il pas content ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La musique est trop forte",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Le chien aboie"
+              },
+              {
+                "id": "c",
+                "texte": "La porte est bloquée"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "La musique est trop forte"
+              }
+            }
+          },
+          {
+            "enonce": "Qu’est-ce que Manon reconnaît ne pas respecter ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Le règlement et le calme",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Le budget de la fête"
+              },
+              {
+                "id": "c",
+                "texte": "Les horaires du magasin"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Le règlement et le calme"
+              }
+            }
+          },
+          {
+            "enonce": "Comment Manon répond-elle quand Flo lui demande si ça va ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Elle dit que ça ne va pas",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Elle dit que tout va bien"
+              },
+              {
+                "id": "c",
+                "texte": "Elle refuse de répondre"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Elle dit que ça ne va pas"
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "vie-quotidienne",
+        "scene": "Respecter le calme de l’immeuble"
+      },
+      "reason": "Flo appelle Manon ; les rôles dans deux questions sont rétablis.",
+      "facts": [
+        {
+          "question": "Qui téléphone à Manon ?",
+          "correct_answer": "Flo",
+          "evidence": [
+            "c’est Flo"
+          ]
+        },
+        {
+          "question": "Pourquoi le voisin n’est-il pas content ?",
+          "correct_answer": "La musique est trop forte",
+          "evidence": [
+            "J’écoute la musique trop fort"
+          ]
+        },
+        {
+          "question": "Qu’est-ce que Manon reconnaît ne pas respecter ?",
+          "correct_answer": "Le règlement et le calme",
+          "evidence": [
+            "je ne respecte pas le règlement et le calme"
+          ]
+        },
+        {
+          "question": "Comment Manon répond-elle quand Flo lui demande si ça va ?",
+          "correct_answer": "Elle dit que ça ne va pas",
+          "evidence": [
+            "Ça va ? Non"
+          ]
+        }
+      ],
+      "review_method": "Comparison of the received/current recording recognitions and explicit transcript quotes; no human listening claim"
+    },
+    {
+      "before": {
+        "id": "tcf-ss-a1-s25-co-4",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Dialogue 067",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "transcription": [
+            "Tenez les chiens en laisse.",
+            "Ne fumez pas dans les couloirs.",
+            "Rangez les vélos dans le local.",
+            "Mettez votre nom sur la boîte aux lettres.",
+            "Ne faites pas de bruit après 22 heures."
+          ],
+          "audios": [
+            "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-objet-4-1.mp3",
+            "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-objet-4-2.mp3",
+            "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-objet-4-3.mp3",
+            "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-objet-4-4.mp3",
+            "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-objet-4-5.mp3"
+          ],
+          "images_descriptions": [
+            "Scénario vidéo (audio CO moyen, « Vie quotidienne · Objet — dialogue 1 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans une situation de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Tenez les chiens en laisse ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Vie quotidienne · Objet — dialogue 2 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans une situation de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Ne fumez pas dans les couloirs ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Vie quotidienne · Objet — dialogue 3 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans une situation de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Rangez les vélos dans le local ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Vie quotidienne · Objet — dialogue 4 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans une situation de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Mettez votre nom sur la boîte aux lettres ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Vie quotidienne · Objet — dialogue 5 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans une situation de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Ne faites pas de bruit après 22 heures ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
+          ]
+        },
+        "questions": [
+          {
+            "enonce": "Que faut-il faire avec les chiens ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Les tenir en laisse",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Les laisser libres dans le couloir"
+              },
+              {
+                "id": "c",
+                "texte": "Les faire entrer dans le local à vélos"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Les tenir en laisse"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Où est-il interdit de fumer ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Dans les couloirs",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Sur les balcons"
+              },
+              {
+                "id": "c",
+                "texte": "Dans les appartements"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Dans les couloirs"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/vocabulaire/maison/couloir.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/co/bg/balcon.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/vocabulaire/maison/appartement.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Où faut-il ranger les vélos ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Dans le local",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Dans le couloir"
+              },
+              {
+                "id": "c",
+                "texte": "Devant la boîte aux lettres"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Dans le local"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Où faut-il mettre son nom ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Sur la boîte aux lettres",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Sur le garage"
+              },
+              {
+                "id": "c",
+                "texte": "Dans l’ascenseur"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Sur la boîte aux lettres"
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Après quelle heure faut-il éviter de faire du bruit ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "22 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "20 h"
+              },
+              {
+                "id": "c",
+                "texte": "Minuit"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "22 h"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/vocabulaire/heure-horloge/vingt-deux-heures.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/vocabulaire/heure-horloge/vingt-heures.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/vocabulaire/heure-horloge/minuit.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 5
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "vie-quotidienne",
+        "scene": "Vie quotidienne · Objet"
+      },
+      "after": {
+        "id": "tcf-ss-a1-s25-co-4",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Cinq règles dans un immeuble",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "transcription": [
+            "Tenez les chiens en laisse",
+            "Ne fumez pas dans les couloirs",
+            "Rangez les vélos dans le local",
+            "Mettez votre nom sur la boîte aux lettres.",
+            "Ne faites pas de bruit après 22 heures."
+          ],
+          "audios": [
+            "/lib/audio/tcf/co/vie-quotidienne/chiens-en-laisse.mp3",
+            "/lib/audio/tcf/co/vie-quotidienne/interdiction-fumer-couloir.mp3",
+            "/lib/audio/tcf/co/vie-quotidienne/rangement-velos-local.mp3",
+            "/lib/audio/tcf/co/vie-quotidienne/nom-boite-aux-lettres.mp3",
+            "/lib/audio/tcf/co/vie-quotidienne/calme-apres-22-heures.mp3"
+          ],
+          "images_descriptions": [
+            "Scénario vidéo (audio CO moyen, « Vie quotidienne · Objet — dialogue 1 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans une situation de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Tenez les chiens en laisse ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Vie quotidienne · Objet — dialogue 2 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans une situation de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Ne fumez pas dans les couloirs ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Vie quotidienne · Objet — dialogue 3 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans une situation de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Rangez les vélos dans le local ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Vie quotidienne · Objet — dialogue 4 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans une situation de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Mettez votre nom sur la boîte aux lettres ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Vie quotidienne · Objet — dialogue 5 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans une situation de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Ne faites pas de bruit après 22 heures ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
+          ]
+        },
+        "questions": [
+          {
+            "enonce": "Que faut-il faire avec les chiens ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Les tenir en laisse",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Les laisser libres dans le couloir"
+              },
+              {
+                "id": "c",
+                "texte": "Les faire entrer dans le local à vélos"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Les tenir en laisse"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Où est-il interdit de fumer ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Dans les couloirs",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Sur les balcons"
+              },
+              {
+                "id": "c",
+                "texte": "Dans les appartements"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Dans les couloirs"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/vocabulaire/maison/couloir.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/co/bg/balcon.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/vocabulaire/maison/appartement.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Où faut-il ranger les vélos ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Dans le local",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Dans le couloir"
+              },
+              {
+                "id": "c",
+                "texte": "Devant la boîte aux lettres"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Dans le local"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Où faut-il mettre son nom ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Sur la boîte aux lettres",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Sur le garage"
+              },
+              {
+                "id": "c",
+                "texte": "Dans l’ascenseur"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Sur la boîte aux lettres"
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Après quelle heure faut-il éviter de faire du bruit ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "22 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "20 h"
+              },
+              {
+                "id": "c",
+                "texte": "Minuit"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "22 h"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/vocabulaire/heure-horloge/vingt-deux-heures.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/vocabulaire/heure-horloge/vingt-heures.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/vocabulaire/heure-horloge/minuit.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 5
+          },
+          {
+            "enonce": "Quels animaux doivent être tenus en laisse ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Les chiens",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Les chats"
+              },
+              {
+                "id": "c",
+                "texte": "Les chevaux"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Les chiens"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Quelle action est interdite dans les couloirs ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Fumer",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Courir"
+              },
+              {
+                "id": "c",
+                "texte": "Chanter"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Fumer"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Quels objets faut-il ranger dans le local ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Les vélos",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Les chaises"
+              },
+              {
+                "id": "c",
+                "texte": "Les poussettes"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Les vélos"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quelle information faut-il mettre sur la boîte aux lettres ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Son nom",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Son âge"
+              },
+              {
+                "id": "c",
+                "texte": "Son numéro de téléphone"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Son nom"
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Quel comportement faut-il éviter après vingt-deux heures ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Faire du bruit",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Lire un livre"
+              },
+              {
+                "id": "c",
+                "texte": "Éteindre la lumière"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Faire du bruit"
+              }
+            },
+            "audio": 5
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "vie-quotidienne",
+        "scene": "Respecter les règles de l’immeuble"
+      },
+      "reason": "Cinq numéros parlés retirés et deux questions distinctes pour chacune des cinq règles courtes.",
+      "facts": [
+        {
+          "question": "Que faut-il faire avec les chiens ?",
+          "correct_answer": "Les tenir en laisse",
+          "evidence": [
+            "Tenez les chiens en laisse"
+          ]
+        },
+        {
+          "question": "Où est-il interdit de fumer ?",
+          "correct_answer": "Dans les couloirs",
+          "evidence": [
+            "Ne fumez pas dans les couloirs"
+          ]
+        },
+        {
+          "question": "Où faut-il ranger les vélos ?",
+          "correct_answer": "Dans le local",
+          "evidence": [
+            "Rangez les vélos dans le local"
+          ]
+        },
+        {
+          "question": "Où faut-il mettre son nom ?",
+          "correct_answer": "Sur la boîte aux lettres",
+          "evidence": [
+            "Mettez votre nom sur la boîte aux lettres."
+          ]
+        },
+        {
+          "question": "Après quelle heure faut-il éviter de faire du bruit ?",
+          "correct_answer": "22 h",
+          "evidence": [
+            "Ne faites pas de bruit après 22 heures."
+          ]
+        },
+        {
+          "question": "Quels animaux doivent être tenus en laisse ?",
+          "correct_answer": "Les chiens",
+          "evidence": [
+            "Tenez les chiens en laisse"
+          ]
+        },
+        {
+          "question": "Quelle action est interdite dans les couloirs ?",
+          "correct_answer": "Fumer",
+          "evidence": [
+            "Ne fumez pas dans les couloirs"
+          ]
+        },
+        {
+          "question": "Quels objets faut-il ranger dans le local ?",
+          "correct_answer": "Les vélos",
+          "evidence": [
+            "Rangez les vélos dans le local"
+          ]
+        },
+        {
+          "question": "Quelle information faut-il mettre sur la boîte aux lettres ?",
+          "correct_answer": "Son nom",
+          "evidence": [
+            "Mettez votre nom sur la boîte aux lettres."
+          ]
+        },
+        {
+          "question": "Quel comportement faut-il éviter après vingt-deux heures ?",
+          "correct_answer": "Faire du bruit",
+          "evidence": [
+            "Ne faites pas de bruit après 22 heures."
+          ]
+        }
+      ],
+      "review_method": "Text compared with source recognitions; explicit facts only, no listening claim"
+    },
+    {
+      "before": {
+        "id": "tcf-ss-a1-s27-co-2",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Dialogue 092",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/vie-quotidienne/salut-christian-toujours-l-heure-1.mp3",
+          "transcription": "- Salut Christian, toujours à l'heure !\n- Oui, je n'aime pas être en retard.\nQuand je peux, j'arrive en avance, à 7 h 30.\n- Mais comment tu fais ?\n- Je me réveille tôt, c'est tout !"
+        },
+        "questions": [
+          {
+            "enonce": "Quelle habitude Christian a-t-il selon son interlocuteur ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Être toujours à l’heure",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Être souvent en retard"
+              },
+              {
+                "id": "c",
+                "texte": "Partir avant la fin"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Être toujours à l’heure"
+              }
+            }
+          },
+          {
+            "enonce": "À quelle heure arrive-t-il quand il peut venir en avance ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "À 7 h 30",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "À 8 h 30"
+              },
+              {
+                "id": "c",
+                "texte": "À 9 h 30"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "À 7 h 30"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/vocabulaire/heure-horloge/sept-heures-trente.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/vocabulaire/heure-horloge/huit-heures-trente.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/vocabulaire/heure-horloge/neuf-heures-trente.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "Comment fait-il pour arriver tôt ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Il se réveille tôt",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Il dort au bureau"
+              },
+              {
+                "id": "c",
+                "texte": "Il prend toujours un taxi"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Il se réveille tôt"
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "vie-quotidienne",
+        "scene": "Salut Christian toujours l'heure"
+      },
+      "after": {
+        "id": "tcf-ss-a1-s27-co-2",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Dialogue 092",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/vie-quotidienne/ponctualite-christian.mp3",
+          "transcription": "Salut Christian, toujours à l’heure ! Oui, je n’aime pas être en retard. Quand je peux, j’arrive en avance, à 7 h 30. Mais comment tu fais ? Je me réveille tôt. C’est tout."
+        },
+        "questions": [
+          {
+            "enonce": "Quelle habitude Christian a-t-il selon son interlocuteur ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Être toujours à l’heure",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Être souvent en retard"
+              },
+              {
+                "id": "c",
+                "texte": "Partir avant la fin"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Être toujours à l’heure"
+              }
+            }
+          },
+          {
+            "enonce": "À quelle heure arrive-t-il quand il peut venir en avance ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "À 7 h 30",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "À 8 h 30"
+              },
+              {
+                "id": "c",
+                "texte": "À 9 h 30"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "À 7 h 30"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/vocabulaire/heure-horloge/sept-heures-trente.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/vocabulaire/heure-horloge/huit-heures-trente.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/vocabulaire/heure-horloge/neuf-heures-trente.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "Comment fait-il pour arriver tôt ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Il se réveille tôt",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Il dort au bureau"
+              },
+              {
+                "id": "c",
+                "texte": "Il prend toujours un taxi"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Il se réveille tôt"
+              }
+            }
+          },
+          {
+            "enonce": "Pourquoi Christian préfère-t-il arriver en avance ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Il n’aime pas être en retard",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Il travaille dans une autre ville"
+              },
+              {
+                "id": "c",
+                "texte": "Il va à un cours de sport"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Il n’aime pas être en retard"
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "vie-quotidienne",
+        "scene": "Salut Christian toujours l'heure"
+      },
+      "reason": "Banque moyenne complétée à quatre faits distincts, transcription et coupe complètes.",
+      "facts": [
+        {
+          "question": "Quelle habitude Christian a-t-il selon son interlocuteur ?",
+          "correct_answer": "Être toujours à l’heure",
+          "evidence": [
+            "toujours à l’heure"
+          ]
+        },
+        {
+          "question": "À quelle heure arrive-t-il quand il peut venir en avance ?",
+          "correct_answer": "À 7 h 30",
+          "evidence": [
+            "7 h 30"
+          ]
+        },
+        {
+          "question": "Comment fait-il pour arriver tôt ?",
+          "correct_answer": "Il se réveille tôt",
+          "evidence": [
+            "Je me réveille tôt"
+          ]
+        },
+        {
+          "question": "Pourquoi Christian préfère-t-il arriver en avance ?",
+          "correct_answer": "Il n’aime pas être en retard",
+          "evidence": [
+            "je n’aime pas être en retard"
+          ]
+        }
+      ],
+      "review_method": "Text compared with source recognitions; explicit facts only, no listening claim"
+    },
+    {
+      "before": {
+        "id": "tcf-ss-a1-s51-co-4",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Dialogue 015",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/transports/bonsoir-viens-d-entendre-l-annonce-1.mp3",
+          "transcription": "Nina et Felipe se présentent.\nSophie est la sœur de Nina.\nFelipe est brésilien.\nNina est ingénieure."
+        },
+        "questions": [
+          {
+            "enonce": "Que font Nina et Felipe ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Ils se présentent",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Ils font des courses"
+              },
+              {
+                "id": "c",
+                "texte": "Ils prennent rendez-vous"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Ils se présentent"
+              }
+            }
+          },
+          {
+            "enonce": "Qui est Sophie pour Nina ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Sa sœur",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Sa cousine"
+              },
+              {
+                "id": "c",
+                "texte": "Sa mère"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Sa sœur"
+              }
+            }
+          },
+          {
+            "enonce": "Quelle est la nationalité de Felipe ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Brésilien",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Espagnol"
+              },
+              {
+                "id": "c",
+                "texte": "Français"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Brésilien"
+              }
+            }
+          },
+          {
+            "enonce": "Quelle est la profession de Nina ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Ingénieure",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Vendeuse"
+              },
+              {
+                "id": "c",
+                "texte": "Médecin"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Ingénieure"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/vocabulaire/metiers/ingénieure.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/vocabulaire/metiers/vendeuse.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/vocabulaire/metiers/médecin.webp"
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "transports",
+        "scene": "Bonsoir viens d'entendre l'annonce"
+      },
+      "after": {
+        "id": "tcf-ss-a1-s51-co-4",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "La rencontre de Nina et Felipe",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/vie-quotidienne/rencontre-nina-felipe.mp3",
+          "transcription": "Mais c’est Sophie ! Sophie, bonjour ! Non, moi, c’est Nina. Pardon, madame. Tu peux dire Nina, pas madame. J’ai 25 ans. Et Sophie, c’est ma sœur. Ah, enchanté, Nina. Moi, c’est Felipe. Enchantée, Felipe. Tu es l’ami brésilien de ma sœur ? Oui, je suis étudiant avec elle. Super ! Et toi, tu es étudiante aussi ? Non, moi, je travaille déjà. Je suis ingénieure."
+        },
+        "questions": [
+          {
+            "enonce": "Que font Nina et Felipe ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Ils se présentent",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Ils font des courses"
+              },
+              {
+                "id": "c",
+                "texte": "Ils prennent rendez-vous"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Ils se présentent"
+              }
+            }
+          },
+          {
+            "enonce": "Qui est Sophie pour Nina ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Sa sœur",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Sa cousine"
+              },
+              {
+                "id": "c",
+                "texte": "Sa mère"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Sa sœur"
+              }
+            }
+          },
+          {
+            "enonce": "Quelle est la nationalité de Felipe ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Brésilien",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Espagnol"
+              },
+              {
+                "id": "c",
+                "texte": "Français"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Brésilien"
+              }
+            }
+          },
+          {
+            "enonce": "Quelle est la profession de Nina ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Ingénieure",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Vendeuse"
+              },
+              {
+                "id": "c",
+                "texte": "Médecin"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Ingénieure"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/vocabulaire/metiers/ingénieure.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/vocabulaire/metiers/vendeuse.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/vocabulaire/metiers/médecin.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "Quel âge a Nina ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "25 ans",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "23 ans"
+              },
+              {
+                "id": "c",
+                "texte": "35 ans"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "25 ans"
+              }
+            }
+          },
+          {
+            "enonce": "Quel est le statut de Felipe ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Il est étudiant",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Il est journaliste"
+              },
+              {
+                "id": "c",
+                "texte": "Il est pharmacien"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Il est étudiant"
+              }
+            }
+          },
+          {
+            "enonce": "Quel lien unit Felipe et Sophie ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Ils étudient ensemble",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Ils sont voisins"
+              },
+              {
+                "id": "c",
+                "texte": "Ils travaillent ensemble"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Ils étudient ensemble"
+              }
+            }
+          },
+          {
+            "enonce": "Comment Nina préfère-t-elle être appelée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Par son prénom",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Par son nom de famille"
+              },
+              {
+                "id": "c",
+                "texte": "Par le titre « Madame »"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Par son prénom"
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "vie-quotidienne",
+        "scene": "Se présenter et parler de ses études"
+      },
+      "reason": "Résumé remplacé par la transcription complète ; huit questions pour le dialogue long, scénario transports corrigé.",
+      "facts": [
+        {
+          "question": "Que font Nina et Felipe ?",
+          "correct_answer": "Ils se présentent",
+          "evidence": [
+            "Moi, c’est Felipe"
+          ]
+        },
+        {
+          "question": "Qui est Sophie pour Nina ?",
+          "correct_answer": "Sa sœur",
+          "evidence": [
+            "c’est ma sœur"
+          ]
+        },
+        {
+          "question": "Quelle est la nationalité de Felipe ?",
+          "correct_answer": "Brésilien",
+          "evidence": [
+            "l’ami brésilien"
+          ]
+        },
+        {
+          "question": "Quelle est la profession de Nina ?",
+          "correct_answer": "Ingénieure",
+          "evidence": [
+            "Je suis ingénieure"
+          ]
+        },
+        {
+          "question": "Quel âge a Nina ?",
+          "correct_answer": "25 ans",
+          "evidence": [
+            "J’ai 25 ans"
+          ]
+        },
+        {
+          "question": "Quel est le statut de Felipe ?",
+          "correct_answer": "Il est étudiant",
+          "evidence": [
+            "Je suis étudiant"
+          ]
+        },
+        {
+          "question": "Quel lien unit Felipe et Sophie ?",
+          "correct_answer": "Ils étudient ensemble",
+          "evidence": [
+            "Je suis étudiant avec elle"
+          ]
+        },
+        {
+          "question": "Comment Nina préfère-t-elle être appelée ?",
+          "correct_answer": "Par son prénom",
+          "evidence": [
+            "Tu peux dire Nina, pas madame"
+          ]
+        }
+      ],
+      "review_method": "Text compared with source recognitions; explicit facts only, no listening claim"
+    }
+  ],
+  "human_listening_performed": false,
+  "production_modified": true,
+  "original_audio_files_deleted": 0,
+  "existing_exercise_ids_preserved": true,
+  "backup": "The before objects are included below; original audio files remain available and in git history.",
+  "audio_reference_aliases": {
+    "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-3-1.mp3": "/lib/audio/tcf/co/vie-quotidienne/restaurant-entreprise.mp3",
+    "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-3-2.mp3": "/lib/audio/tcf/co/vie-quotidienne/achat-cerises.mp3",
+    "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-3-3.mp3": "/lib/audio/tcf/co/vie-quotidienne/rendez-vous-medecin-travail.mp3",
+    "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-3-4.mp3": "/lib/audio/tcf/co/vie-quotidienne/essayage-robe-chaussures.mp3",
+    "/lib/audio/tcf/co/vie-quotidienne/bonjour-voudrais-tickets-1.mp3": "/lib/audio/tcf/co/vie-quotidienne/tickets-metro-bordeaux.mp3",
+    "/lib/audio/tcf/co/transports/je-viens-louer-voiture-1.mp3": "/lib/audio/tcf/co/vie-quotidienne/repondeur-lucie-thomas.mp3",
+    "/lib/audio/tcf/co/vie-quotidienne/allo-manon-c-est-flo-1.mp3": "/lib/audio/tcf/co/vie-quotidienne/manon-musique-voisin.mp3",
+    "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-objet-4-1.mp3": "/lib/audio/tcf/co/vie-quotidienne/chiens-en-laisse.mp3",
+    "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-objet-4-2.mp3": "/lib/audio/tcf/co/vie-quotidienne/interdiction-fumer-couloir.mp3",
+    "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-objet-4-3.mp3": "/lib/audio/tcf/co/vie-quotidienne/rangement-velos-local.mp3",
+    "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-objet-4-4.mp3": "/lib/audio/tcf/co/vie-quotidienne/nom-boite-aux-lettres.mp3",
+    "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-objet-4-5.mp3": "/lib/audio/tcf/co/vie-quotidienne/calme-apres-22-heures.mp3",
+    "/lib/audio/tcf/co/vie-quotidienne/salut-christian-toujours-l-heure-1.mp3": "/lib/audio/tcf/co/vie-quotidienne/ponctualite-christian.mp3",
+    "/lib/audio/tcf/co/transports/bonsoir-viens-d-entendre-l-annonce-1.mp3": "/lib/audio/tcf/co/vie-quotidienne/rencontre-nina-felipe.mp3"
+  }
+}

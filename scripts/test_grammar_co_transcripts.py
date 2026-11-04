@@ -1,5 +1,6 @@
 import copy
 import importlib.util
+import hashlib
 from pathlib import Path
 import unittest
 
@@ -40,6 +41,14 @@ class GrammarTranscriptTests(unittest.TestCase):
     def test_existing_transcript_is_not_silently_overwritten(self):
         self.bank[0]['exercise']['support']['transcription']='Previously reviewed text.'
         with self.assertRaisesRegex(ValueError,'existing transcript'):module.build_entries(self.bank,self.first,self.second,self.decisions)
+
+    def test_explicit_revision_preserves_previous_text_and_recording(self):
+        old='Previously reviewed text.'
+        self.bank[0]['exercise']['support']['transcription']=old
+        self.decisions['first']['previous_text_sha256']=hashlib.sha256(old.encode()).hexdigest()
+        entries,records=module.build_entries(self.bank,self.first,self.second,self.decisions)
+        self.assertEqual(records[0]['previous_selected_text'],old)
+        self.assertEqual(entries[0]['exercise']['support']['audio'],'/original.mp3')
 
     def test_every_selection_requires_review(self):
         self.decisions['first']['text_reviewed']=False

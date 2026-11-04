@@ -8,6 +8,7 @@ import {
   type TcfAudioEntry,
 } from './audio-bank'
 import { isTcfCoAssociation } from './association-audio'
+import { resolveTcfAudioReference } from './audio-replacements'
 import {
   tcfCoConsigneForType,
 } from './consignes'
@@ -54,7 +55,7 @@ function pickAudioSlots(
   const used = new Set<string>()
   const out: Array<TcfAudioEntry | null> = Array.from({ length: count }, () => null)
   for (let i = 0; i < count; i++) {
-    const path = pinned?.[i]?.trim()
+    const path = resolveTcfAudioReference(pinned?.[i])
     const pinnedEntry = path ? byPath.get(path) : undefined
     if (pinnedEntry && !used.has(pinnedEntry.audio)) {
       out[i] = pinnedEntry
@@ -149,7 +150,7 @@ function pickDialogueSlots(
   const used = new Set<string>()
   const out: Array<DialogueUnit | null> = Array.from({ length: count }, () => null)
   for (let i = 0; i < count; i++) {
-    const path = pinned?.[i]?.trim()
+    const path = resolveTcfAudioReference(pinned?.[i])
     const pinnedUnit = path ? byPath.get(path) : undefined
     if (pinnedUnit && !used.has(pinnedUnit.audio)) {
       out[i] = pinnedUnit

@@ -1,0 +1,2839 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-11-04T17:55:42.193325+00:00",
+  "summary": {
+    "candidates": 131,
+    "original_recordings_preserved": 127,
+    "lossless_slices_checked": 131,
+    "mp3_full_decodes_checked": 131,
+    "post_cut_recognitions_completed": 131,
+    "automatic_technical_checks_passed": 131,
+    "textual_review_required": 0,
+    "human_listening_performed": false,
+    "semantic_correctness_certified": false
+  },
+  "method": "Exact source-derived FLAC and full MP3 decode verified during preparation; hashes rechecked; independent final-file recognition compared lexically. No human listening certification.",
+  "checks": [
+    {
+      "old_ref": "/lib/audio/tcf/co/actualite/03-actualité-la-fête-des-voisins.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000be3481f4b4b9f3981e6ffb7a-d1",
+      "source_sha256": "3843c01e1801f0e48d807592f1975b902f1914bdb4ad7804a75eac23d8792b35",
+      "candidate_sha256": "a3816815b1bd56e1e4b52d94c09e778750d57b3ac8bd5d34a3db54f7f911da66",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "bddbc662d3c03e8246a088e85e05350a196df22b4a292143371cbbbfbc349b76",
+      "post_cut_recognition": "Aujourd'hui, nous parlons de la fête des voisins. Cette année, les Français sont invités à organiser la fête le vendredi 29 mai. Pour le buffet, les voisins apportent des plats chauds ou froid à partager.",
+      "comparison": {
+        "expected_token_coverage": 0.9722,
+        "candidate_token_precision": 0.9722,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/fetes/22-invitation-apéro-à-la-maison.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000ef7c8243b9a259844f5d9180-d1",
+      "source_sha256": "0c8419b0024b100a6ab8c7c15210136de356915e5c0dfff464cc2b22ae14ced9",
+      "candidate_sha256": "eb4cd4849735379dfec2544f45a4e367a69199bb8e5b4460ef5287d368cd7d8d",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "72e0642f51c0b6d175dd1b02d71ba27d1aeb36938c1c990a5d377d1789ad666e",
+      "post_cut_recognition": "Bonjour Marc. Tu es libre jeudi? J'organise un apéro chez moi. Je t'invite avec mes amis Christelle et Laurane. Désolée, Maude. Je ne suis pas libre jeudi. Dommage. Et vendredi, tu peux venir? Ah oui, vendredi volontiers.",
+      "comparison": {
+        "expected_token_coverage": 0.9231,
+        "candidate_token_precision": 0.9231,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/fetes/21-fêtes-ouf-c-est-bon.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000811881f49306b9d2bdb362e1-d1",
+      "source_sha256": "d229e02382291145c702ed437e08db4a3345b84320f00ff6b1d2a6b0de74b760",
+      "candidate_sha256": "803a897b70f18aea722cf1bd20d317b52728ed8512ac3ca0ac48ca2f823f64ac",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "eae4f993989dcf3336c7909455fcd865c1a7a02b40bcb3b561ed7640a4a15986",
+      "post_cut_recognition": "C'est bon pour ma fête dimanche. D'accord. Tu invites qui? Mon ami Sylvie et son mari. Notre voisine Angela avec sa sœur. Et mon frère? Oui bien sûr. Ton frère et aussi son amie Céline. Ils apportent des boissons. Tu as besoin de quelque chose? Je prépare une pizza? Une pizza? Oui, super. Et pour le dessert? Angela apporte une salade de fruits. On commence la fête à quelle heure? À 20h. Super.",
+      "comparison": {
+        "expected_token_coverage": 0.974,
+        "candidate_token_precision": 0.9868,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/famille/21-famille-appeler-une-amie-Lorie.mp3",
+      "candidate_id": "grammar-import-20261104-file_000000007fe881f48e6c02913de9834b-d1",
+      "source_sha256": "0ab032f0429b03ed7002c784a42f1ea230d991db722eb9f9818cb6b68c15ed32",
+      "candidate_sha256": "e966458c84bd5e4b025c7c9a06aa14905b26d40d70287e6546cdf4ff610fd7fe",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "ad09f55b308e4662b926f042bedf99a9f2bdf0f331bf411c4e9fc001b933ebac",
+      "post_cut_recognition": "Allie? Non, je suis sa mère. Pardon, madame. Bonjour. Je suis une amie de Lori. Je m'appelle Laura. Bonjour, Laura. J'appelle ma fille.",
+      "comparison": {
+        "expected_token_coverage": 0.9231,
+        "candidate_token_precision": 0.96,
+        "flags": [
+          "first_words_require_review"
+        ]
+      },
+      "transcript_unresolved_points": [
+        "Orthographe du prénom Lori à confirmer."
+      ],
+      "supplementary_french_recognition": "Allô, L'Ori ? Non, je suis sa mère. Pardon, madame. Bonjour. Je suis une amie de L'Ori. Je m'appelle Laura. Bonjour, Laura. J'appelle ma fille.",
+      "supplementary_comparison": {
+        "expected_token_coverage": 0.9231,
+        "candidate_token_precision": 0.8571,
+        "flags": []
+      },
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/transports/03-transport-comment-aller-chez-Magali.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000fc508210a34b9e8b169b0268-d1",
+      "source_sha256": "660131c038431643a28bd546e850cef405a6ea5d36377ee6ab424945e2f66ac7",
+      "candidate_sha256": "3fe48ad2082e444cde79a3248a33cd4d7cccd4802e6a56e08419ee1b385147d7",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "6bcbe7465930270e734e78b4100c189a296e7c8f2aec887097c24422ebb64265",
+      "post_cut_recognition": "Bonjour Michelle, c'est Magali. Pour aller chez moi, c'est facile. J'habite à côté du parc Mon Repos. À pied, c'est long. Mais avec le bus 21, c'est plus rapide. Mon immeuble est en face de l'arrêt. A demain?",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/actualite/10-actualité-achat-e-ticket.mp3",
+      "candidate_id": "grammar-import-20261104-file_000000007c64824396c21eeef5b1c2ab-d1",
+      "source_sha256": "b1ebb335bfd062b97e2fc5460f276699aa6a18a84c5e6a167c736a132f7410e1",
+      "candidate_sha256": "973cbd9cc9caa43568b2f5def6666d555db76a9d995926faeca4881789d6ec49",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "b510285fc23c01f1c8a55e76ddeafb811018a09f9ee0fb2b6254406bad0dd65e",
+      "post_cut_recognition": "Au revoir, l'achat au distributeur. Bonjour, l'eTicket. Avec votre téléphone portable et un numéro français, vous pouvez payer par SMS et télécharger votre ticket.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/ecole/30-école-presenter-nael-kervelek.mp3",
+      "candidate_id": "grammar-import-20261104-file_0000000089a481f4b5ac2177f7cf91a0-d1",
+      "source_sha256": "b539dd9b947e6b2aec95d8d4cf1c9f947c1837501b6b471c944f196358e36429",
+      "candidate_sha256": "114447fe890052119ea074f42157676f04ceeb553474e2b7aec4edcf5e2fc9a4",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "4e14ddabfec287984cedb5d2754c4e5eb5b33f2586c96aa9c954814df3e9f612",
+      "post_cut_recognition": "Bonjour à tous. Je suis votre professeur. Je m'appelle Naël Kervelek. Nael N A E L. C'est mon prénom. Et Kervelek, K. E R V, E, L, E, K, c'est mon nom. Je suis français et j'ai 34 ans. Monsieur, vous pouvez répéter, s'il vous plaît.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/regarde-j-ai-photo-mariage-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_000000001830824687fbfd60aad2d5ce-d1",
+      "source_sha256": "7d8163b201f062cccca1d82d0aab672bf71f1e82e2fbd4ddde9bfb15174f15a2",
+      "candidate_sha256": "209e88bc9a1a07559fdf5856ce7bfa882835fa61caf4ab9856365cc0ca875036",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "e8380d4700d03f44f0de24d9ea92b56b39908ba763387e74aee6d40a2063f0ca",
+      "post_cut_recognition": "Regarde, j'ai une photo du mariage de ma sœur. Le mariage de ta sœur Sonia ou de ta sœur Marie? De Sonia. Marie est célibataire. Et toi, ta famille? Tu as une sœur ou un frère? Non, nous sommes trois. Mon père, ma mère et moi. Regarde la photo. Voici mes parents. Et lui, c'est qui? C'est mon frère, Simon. Et la petite femme blonde, c'est C'est Sandra. La femme de Simon. Ton frère a des enfants? Oui regarde. Voici leurs enfants. Andrea et Lisa. Alors tes parents sont déjà grands-parents. Oui. Ce sont de jeunes grands-parents.",
+      "comparison": {
+        "expected_token_coverage": 0.9903,
+        "candidate_token_precision": 0.9808,
+        "flags": []
+      },
+      "transcript_unresolved_points": [
+        "Second prénom des enfants : Lisa ou Élisa selon les reconnaissances."
+      ],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/lea-j-ai-question-c-est-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_000000003e5c81f999577d20a8e173ab-d1",
+      "source_sha256": "1a5def43a1376c8d0694be74dd5acfdd0980140d347995cc5a6b3b46f3b7b947",
+      "candidate_sha256": "9ef7525525a9294f91d6e81e803742694a44ffa2f8c797fe28fa51f81ee9990b",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "8a35ea7d0c5dcf3f39343a35fa29e83ba546738b92c8441279f308b001c778e4",
+      "post_cut_recognition": "Léa, j'ai une question. Qui c'est la jeune femme brune là-bas? Mais Agnès, regarde bien, c'est Nathalie, ma sœur. Elle a quel âge, ta sœur? Elle a 30 ans. Elle est en couple? Oui, elle est mariée. Ah bon? Son mari s'appelle comment? John. Il est là, regarde. Le grand homme roux. Lui il est français? Non. John est anglais. Il est cuisinier. Il est très sympa. Il a un frère? Non. Il a une sœur. Megan. Elle, elle est pacée et elle a deux enfants. Un fils et une fille.",
+      "comparison": {
+        "expected_token_coverage": 0.9896,
+        "candidate_token_precision": 0.9896,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/allo-manon-c-est-flo-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_000000005288821089919bf789f6589f-d1",
+      "source_sha256": "2e928fbf3d6fee6dd6738b92f6b86afe8d5bf28b2ecd872035d1ef0c1e0f32ab",
+      "candidate_sha256": "e2ea9d096ebb0a0f494f8472b470a46fe06c5d4a260c82912b54fb100d69d8f9",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "d994c5399b9795ad75cd70a702b28543eeea68f55e96b3b0e1d71ca3f7378719",
+      "post_cut_recognition": "Allô Manon? C'flou? Ça va? Non. Mon voisin n'est pas content. J'écoute la musi trop fort et je fais du bruit. Et alors? Alors je ne respecte pas le règlement et le calme.",
+      "comparison": {
+        "expected_token_coverage": 0.9189,
+        "candidate_token_precision": 0.9444,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-nouvelle-2.mp3",
+      "candidate_id": "grammar-import-20261104-file_0000000059ec81f48d882da32d2bf865-d1",
+      "source_sha256": "71c96e3cbf9a24fae490326ff8d9a9fe358ebe5a3e2d3c10a303d703465fd069",
+      "candidate_sha256": "80b4870d3c63fef136b32417bd8f5051fe929c37e4c8c2230d0b2649ea85f067",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "78eb93891ab8dca1267c520d34ed3b39bc882c90ca03c6bf1ac7dd46130461a2",
+      "post_cut_recognition": "Bonjour monsieur. Je suis une nouvelle étudiante. Bonjour. Vous vous appelez comment? Je m'appelle Yoko Sumida. Vous avez votre carte d'étudiant? Non. C'est quoi? C'est la carte pour entrer à la faculté. Vous inscrire à la bibliothèque. Ah oui! J'ai le formulaire de demande. Très bien. Et excusez-moi. Je cherche le cours d'économie. Où est la salle, s'il vous plaît? Aujourd'hui, le cours a lieu dans l'Amphi A 12. Venez chercher votre carte demain à 10h. Merci. Euh. Je peux venir plus tard? Vous pouvez venir quand? Demain, je commence à 9h et je finis à 11h. Venez à 11h alors.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/01-quotidien-problème-avec-la-box.mp3",
+      "candidate_id": "grammar-import-20261104-file_000000003028820c8038222a9ff44eeb-d1",
+      "source_sha256": "d269f3f66fcdc4eb7660977daaad91c2c40b87d7678b319ebc071e322af69e69",
+      "candidate_sha256": "d8aa19bfdc3393392b3d79b60e5937ebe20dbac7921b0cf0ddc68764eb63e790",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "87c7c733456068a1ce30f861f9d33db330b768ead703ca9c44dad51dd88a3981",
+      "post_cut_recognition": "Bonjour monsieur, j'ai un problème avec ma box. Comment ça se passe? Le technicien vient chez vous, il regarde pourquoi ça ne marche pas et il fait un devis. Si vous êtes d'accord avec le devis, il fait la réparation.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/radio/07-radio-météo-à-Grenoble.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000fb5881f48b508291f7cff506-d1",
+      "source_sha256": "41dbb48805b8a3c819658a1a0b9ddb7cf8c5f1210ab1865293e20e8a2769f948",
+      "candidate_sha256": "431ac3e579d08e317f3ba4341bf9172485108c4c807fe0c2eda5fa12d46e5250",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "f9f31ecee6b58256349cc29b2c3bf2f4bff29d75a4d32c8e4055d55d247b3d60",
+      "post_cut_recognition": "C'est l'hiver! À Grenoble, il va faire moins 5 degrés. Mettez un manteau et des chaussures chaudes. Et surtout, n'oubliez pas le bonnet, l'écharpe, et les gants.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/ca-te-dit-venir-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_000000009fdc8246856ce38f7ebbc6a1-d1",
+      "source_sha256": "3a8455a1058ad83f24c314941008785a7f7f62f61b74232cc80e1d7c3bcc0d70",
+      "candidate_sha256": "9157ce4f3d66dfad06c5aab8e8047daf69b45af61eda55acd29352503e3353dc",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "ba559191edc3a553478bd5babb8c4494a1f90b3eb01aa37b061696de10c88dfd",
+      "post_cut_recognition": "Vous voulez habiter dans un quartier calme? Venez visiter les pièces lumineuses des studios avec terrasses et des appartements de quatre pièces de notre immeuble avec jardin.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [
+        "La source originale s’arrête après « Nous sommes ouverts » ; aucune suite ni horaire ajouté."
+      ],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/inscrivez-l-association-etudiants-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000ca9881f4b98bcd011a6b2db2-d1",
+      "source_sha256": "12fc95f6ce12dcbc485d81ae75d3a348c760f67a2793230c3f610836104c5e44",
+      "candidate_sha256": "aee90844b3caa5de61e6f2202d17bfa25cd908c09812ffb0fd76d9a51bdd2453",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "fc58877b519deff301a0be94eca7d6cc152156b567a69d7673488a04a23b31c1",
+      "post_cut_recognition": "Inscrivez-vous à l'association des étudiants de la fac des lettres. Nous aidons les étudiants à réussir les examens. Nous organisons des révisions à la bibliothèque. Et après, nous organisons des fêtes.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/aujourd-hui-ecoutons-recette-sandwich-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000e5f481f4aebd48f71aacb343-d1",
+      "source_sha256": "1f493325669867759b5dd9d17c31b49392e6408dffb2b4ed89965dc7db1599e9",
+      "candidate_sha256": "15cba992d5949eb8c68a53e0865a33052810280258483927c80b425eaec07c0f",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "e34f00627edb65c42b66aa99fba81f6af6546ddefc94010281d123706d591c7c",
+      "post_cut_recognition": "Écoutons la recette du sandwich, le Bocase. C'est très simple. Dans une demi-baguette, mettez beaucoup de beurre, un oeuf dur, 150 g de fromage, trois tranches de tomate avec un peu de sel et un morceau de poulet.",
+      "comparison": {
+        "expected_token_coverage": 0.9048,
+        "candidate_token_precision": 0.95,
+        "flags": [
+          "first_words_require_review"
+        ]
+      },
+      "transcript_unresolved_points": [
+        "Nom du sandwich : Bocaz/Bokaz à confirmer."
+      ],
+      "supplementary_french_recognition": "aujourd'hui écoutons la recette du sandwich le bokas c'est très simple dans une demi baguette mettez beaucoup de beurre un œuf dur 150 grammes de fromage trois tranches de tomates avec un peu de sel et un morceau de poulet",
+      "supplementary_comparison": {
+        "expected_token_coverage": 0.9524,
+        "candidate_token_precision": 0.9524,
+        "flags": []
+      },
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/maison/bonjour-etes-norin-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_000000003d3082469938e17e57e3ae7b-d1",
+      "source_sha256": "3d8d64a745af711da410175dd937b469b455f88a439240b3d27942771eebef4f",
+      "candidate_sha256": "50b44bc8794f6daa6891f58554d2e8983bc84f92c17089eef38da742eb629b04",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "5d0b1259a496d4d84581e7d2ffc85fe54a1d452fff7aa1741d5c585b62874b89",
+      "post_cut_recognition": "Papa, Maman. Voici mon ami Fabien. Il est étudiant dans mon université. Fabien, voici mes parents. Simon et Flavie. Et le grand brin là, c'est mon frère Sébastien.",
+      "comparison": {
+        "expected_token_coverage": 0.9655,
+        "candidate_token_precision": 0.9655,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/maison/une-visite-d-appartement-c-est-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000542482468dee6adf1685ae43-d1",
+      "source_sha256": "84c4055e00619780577c4412f81603f46703dee1da4d84e07281d24874471b9f",
+      "candidate_sha256": "0468c195d91b77de7549e438d265d667038a81a17cb293fd7462154a7b94f582",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "4240457445aae99017d92b76ce43539f538ae7b06c53841ac5cd33fe3b401187",
+      "post_cut_recognition": "Regarde. Voici la photo d'anniversaire de mes 18 ans. La jeune fille blonde, c'est moi. Et voici papa, ton papy. Le petit roux, c'est mon frère Thomas. Il est veuf.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/maison/salut-flo-alors-cette-2.mp3",
+      "candidate_id": "grammar-import-20261104-file_000000005a888243a814eea756ffe74b-d1",
+      "source_sha256": "f3bbe8d381e0df41560f49370eacdbba062d1d3270b3548a457f7eba0134da00",
+      "candidate_sha256": "efb0ed7fd4694d94fde2918afc0e30bd8ad1a2b0ce93a9264c9dfc8c9e598ae7",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "c48f5660da7f21591d2d7402da93d2680158db63461036af2d6f4c7e11a408de",
+      "post_cut_recognition": "En général, les familles françaises ont un ou deux enfants. Les parents sont jeunes, ils ont entre 3 et 35 ans, et sont souvent mariés ou pâksés, mais ils peuvent aussi être séparés ou divorcés.",
+      "comparison": {
+        "expected_token_coverage": 0.9429,
+        "candidate_token_precision": 0.9429,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/maison/merci-bouquet-tulipes-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_0000000086608211b473dcda57eab723-d1",
+      "source_sha256": "25d206457c9a55109047c1610b469e877ee603af3935db4ec44118442c8f8a9c",
+      "candidate_sha256": "9298984247d1240a95b8227c043a15fd9de9a35ebd95cc96ac08d254aa587fe5",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "f277e8d8f4dca740564282c4a039b024c955dcc825f450eb737e76fc3092be9f",
+      "post_cut_recognition": "Tu habites au troisième? Non, au rez-de-chaussée, dans un studio. Il est bien? Non. La pièce est petite, sombre et la cuisine n'est pas équipée.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/maison/la-nouvelle-collection-printemps-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000ffec82118a6d8aa1570e6cb0-d1",
+      "source_sha256": "20c5a1a500be49c940697c88220f418fc116ffa1e758b03ac81a114271bf202c",
+      "candidate_sha256": "ee823cabbb723b7e16b357ad997946b81948113532d59dac68674a7829031a4d",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "d6815109b24b761b419aed03934136aa40d90f57a15a971a33c30a27808c4be5",
+      "post_cut_recognition": "La nouvelle collection Printemps été pour enfants est déjà dans notre boutique. Large choix de couleurs de t-shirt, de nombreux modèles de chaussures et d'accessoires.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/loisirs/bonjour-voudrais-voir-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000057882469577fa772bfda166-d1",
+      "source_sha256": "edfb4b9e8bee27822863d10bbaf720c8493824a212d5c5b7583673b1b37ac8ed",
+      "candidate_sha256": "e5675ae9643008086c85753e6e38f1d4ce9c66467df456e18c28a8b643aaa817",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "fdb4f6b3d43ebf0ed376a59539da7e63a94a5900434c15c2fd171d8958b6d629",
+      "post_cut_recognition": "Bonjour madame. Je voudrais voir la montre noire, s'il vous plaît. J'aimerais faire un cadeau à ma femme. Bien sûr, monsieur. Voilà. Très bien. Je pourrais avoir le prix, s'il vous plaît.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/loisirs/je-dejeune-tous-jours-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000635081f485a49aca9a677e95-d1",
+      "source_sha256": "7414ab85ea5b316213ce61be919ff31e37f9491b4db325862ac9b71c81eaa839",
+      "candidate_sha256": "3e9d77157ba29e3aa0db6ed11f587570b1bdd9f5b5f7496a3bbcbe9da3dd2b6d",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "8710da7cf7215b5d8d194f927388fe0bc102ea42b6b5d37861ac2170a493ed6e",
+      "post_cut_recognition": "Je déjeune tous les jours chez Jeanne. Les plats et les desserts sont excellents. Il y a toujours deux entrées avec des légumes délicieux. En été, ils servent aussi des glaces à la fraise.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/loisirs/nature-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000bf3081f493412c735ed4dca6-d1",
+      "source_sha256": "314228ec5b66672a1f5f7d7e80a2f0524eef4db3afe93e6e1cd03783e2b99a53",
+      "candidate_sha256": "299b15c194ab045ef4e70932b4e603a0753ca59683a55e5c787c50aebe65c79b",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "2241982c16921d62c20f17fb293fe3590affb58e81d6609a8ca1b0954accfe3c",
+      "post_cut_recognition": "C'est l'hiver, la grippe arrive. Mes conseils sont faciles. Lavez-vous les mains à l'eau et au savon. Vous êtes malade? N'allez pas au travail et allez voir votre médecin.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/maison/bonjour-racine-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_000000003d2c8246af3591d8f4277f80-d1",
+      "source_sha256": "65624c2f403018635a4040dd5e99bb5e312e1551bb9ea468ccb97dd429ae3093",
+      "candidate_sha256": "a3b83c38dae7ec615765c415e62d98eb6192580af95fdc1499885b21521075da",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "918a66b4a61b6b8c8dd49696b745f598f689ac14db971fb6447d2dd036894c3b",
+      "post_cut_recognition": "Bonjour Madame Racine. Je peux entrer? Oui, bonjour. Madame, ma note d'écrit est mauvaise. Nous avons encore un examen. Vous avez encore deux écrits et un oral. L'oral, c'est quoi? C'est une présentation devant la classe. Comment je peux réussir l'examen? Eh bien. Pour commencer, venez au cours d'expression orale vendredi. Le cours commence à quelle heure? À 13h. Dans la salle 613. D'accord. Merci beaucoup, madame. À vendredi. A vendredi.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/maison/le-lundi-n-est-journee-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_0000000037e081f4bd75fbffb8a8b89c-d1",
+      "source_sha256": "5ac7542caf81df85f8c17fd4cf59911dc00fe6db7840d3ad61f8f3cc5c26756c",
+      "candidate_sha256": "f2ce2babc440494e0dc1aabc08199f9ad5ef8e895a775fc116194a6b194e9c64",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "43fa8baa88c0852fc25116bc550c2e2b278812fdc27b2d78ff56587583551e2f",
+      "post_cut_recognition": "Le lundi n'est pas une journée facile. On se réveille fatigué, on a besoin de temps pour s'habiller, se coiffer, prendre le petit déjeuner. Voilà comment on peut s'organiser.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [
+        "La dernière proposition de la source est inachevée."
+      ],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/maison/bonjour-directeur-demain-votre-2.mp3",
+      "candidate_id": "grammar-import-20261104-file_0000000093a482438211932f0641dd77-d1",
+      "source_sha256": "b2b9a99a6daeb0047a48c192def0e1581d8c97008dcfe2de5d75075d12619f72",
+      "candidate_sha256": "c08fbeddead2a34ebd230794b4aa5ecfec3aeac1b3d9b6af157fc2c98c2dcdbc",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "084e9a996ead14422b8d38f63383003bcdca179a890209fc05e5605f03182664",
+      "post_cut_recognition": "Bonjour Monsieur le Directeur Demain votre journée commence à 9h. Vous avez une visioconférence avec les employés de CIEC. A 11h, rendez-vous avec les informaticiens. Et à midi, vous déjeunez avec Madame Tapy, directrice de CIC.",
+      "comparison": {
+        "expected_token_coverage": 0.9231,
+        "candidate_token_precision": 0.9231,
+        "flags": []
+      },
+      "transcript_unresolved_points": [
+        "Orthographe de Sijek et du nom Tapie à confirmer."
+      ],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/maison/le-restaurant-d-entreprise-mille-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000ab5081f49cd541e98500cb2e-d1",
+      "source_sha256": "ab3c0f43090c1cd92f554b24c9cdf10582902e01502fe12071de3c6f713273ad",
+      "candidate_sha256": "1211cc703cb5d1435b65f455eb9aa707bea98cee3c997160bac7f413c5d8e9c7",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "744144d1cad648894dd4316c36901263d3fdc51e620759de4be339d3cb0ece72",
+      "post_cut_recognition": "Le restaurant d'entreprise 1000 repas cherche un serveur ou une serveuse. Vous êtes sérieux, pas stressé, vous aimez travailler en équipe. Début du contrat, le 1er avril.",
+      "comparison": {
+        "expected_token_coverage": 0.9355,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/maison/vous-avez-mal-ou-3.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000792081f48eda1f8a69112dc2-d1",
+      "source_sha256": "7b32b1075f58e778e8c2c4401fec761b18ed3e4fce423e9e5c0e06e0f0807c26",
+      "candidate_sha256": "d9ff2333274351a00fa7087559f26aea2be635953060febf7a7ae1b199a7d5fa",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "ca217870646aa400a41a8408eba99ae014bb47c0a2a5ceb6e4c73e34b7cf9b04",
+      "post_cut_recognition": "Vous avez mal où? J'ai mal à la gorge. Vous toussez? Oui. Je tousse beaucoup. Et vous vous sentez comment? J'ai froid, j'ai chaud. Et j'ai très soif. Vous avez mal au vent? Non. J'ai mal à la tête. Et je n'ai pas faim. Je pense que vous avez de la fièvre. Vous êtes fatigué, vous avez besoin de repos. Mais qu'est-ce que j'ai? Un rhume? Non. C'est la grippe. Qu'est-ce que je dois faire, docteur? Pour commencer, je vous conseille de rester à la maison et de vous reposer.",
+      "comparison": {
+        "expected_token_coverage": 0.9804,
+        "candidate_token_precision": 0.9804,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-bugier-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_000000001e788246ab6dc2c13d6eea4f-d1",
+      "source_sha256": "fc2d44702384f361ef887f3b470ce777c4093832a6614b968ecf6cf3195e0db1",
+      "candidate_sha256": "3273179112a10a7f22e8f8104a4d22f842dca45055d4b9926539eeedf2b47519",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "daa4a2455026e6e9db115dacc62a7c9c01a8f9bb4a1340afefc21a56d3bac66a",
+      "post_cut_recognition": "Bonjour, Madame Bugier. Comment ça va? Bonjour, Thomas. Moi, ça va. Et votre famille? Bien, merci. La fête des voisins, c'est bientôt, non? Non. La fête des voisins est en juin. Mais j'organise un apéro samedi. Je vous invite, vous et votre femme. Vous êtes libre? Samedi 28? Moi je suis libre, mais ma femme ne peut pas. Elle travaille le week-end. Dommage. C'est à quelle heure? On commence à 7 heures. C'est un buffet. J'apporte quelque chose? Une salade, une quiche à partager, des chips, une boisson. Quelque chose pour le dessert peut-être. Une salade de fruits? Super. À samedi, alors. À samedi.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [
+        "Orthographe du nom Bugier à confirmer."
+      ],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-nicolas-dimanche-octobre-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000e658821091872e5332df542c-d1",
+      "source_sha256": "06f81d3eac8b20ceb6946593645c57fa8d4b6271a2a687f3511d6a539229a09e",
+      "candidate_sha256": "413494b04c329bbca21fb749c9b80079bf7c33dc4dfd32524bd478ce46015f7f",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "87ec8439cc555de258d8e1c59481af777aa9fd1065a8e56c6fe4fe19857dd2c8",
+      "post_cut_recognition": "Bonjour Nicolas! Le dimanche 14 octobre, nous organisons une fête d'anniversaire pour notre fille. C'est un apéro avec des amis et des voisins. Nous t'invitons avec Sarah. On commence à 7h30.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/ah-roxane-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000041c81f4abca81fb1842eb2b-d1",
+      "source_sha256": "f56087c4937e4e64fe11cae519e774426347f254d6dcd6298962bb50c5c24b93",
+      "candidate_sha256": "a1ac2e1991035673c36b52cc8e62fe5ccdd9d2c75e1593946136007ea8c5b93b",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "88a1bfcb642ac7dde9f98af0f0e81d98879959cda721ff38491fb25497e61242",
+      "post_cut_recognition": "Ah, Roxanne, pour notre pique-nique, j'ai besoin de serviettes et d'assiette. D'accord, Tim. J'apporte aussi des chips et des boissons. Je prépare une salade et, Rémi, une pizza.",
+      "comparison": {
+        "expected_token_coverage": 0.9394,
+        "candidate_token_precision": 0.9394,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/nous-sommes-aujourd-hui-maison-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000f61081f49ea299886cf3c8a6-d1",
+      "source_sha256": "f0ef4f6d411092565276cbab8fc09ca335c9a935c277520e7c3cccbf59b34e7a",
+      "candidate_sha256": "7d5dbf1ca76538bb0b28a7ca2bd35d82a2846a04af65347a7c285d7a14271e08",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "a43bd9f1d1f44c44d94c63aa311781a34e5c84d62dcc93c820d4aa3ece68480a",
+      "post_cut_recognition": "Nous sommes aujourd'hui dans la maison de Victor Hugo, aux 6 place des Vosges à Paris. Et nous allons visiter ensemble le Salon Rouge, le petit salon et la chambre.",
+      "comparison": {
+        "expected_token_coverage": 0.9677,
+        "candidate_token_precision": 0.9677,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/la-societe-allo-paul-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_000000002f7881f485692d50944bb514-d1",
+      "source_sha256": "0278f93bac68308a0fcd0ef15621be78aa6d01bf7dbad7289ace1ac87eb846b9",
+      "candidate_sha256": "d034d0c47b689a4f78276c87f268520929eddfe8670cd388e113ff51b1cda65a",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "222d0a55450e39052dcf5533a9fa6de4b4ad704b3808a80fb6179574f11ff726",
+      "post_cut_recognition": "La société Allo Polare en 48 heures les appareils électriques, les télévisions, les frigos, les radiateurs. AlloPol, la bonne adresse quand vous avez une panne.",
+      "comparison": {
+        "expected_token_coverage": 0.92,
+        "candidate_token_precision": 0.92,
+        "flags": []
+      },
+      "transcript_unresolved_points": [
+        "Orthographe commerciale Allopol à confirmer."
+      ],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-objet-2.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000dd0881f482508b4195c5f96a-d1",
+      "source_sha256": "0780af8fc7eccb6a465d1bdb42f1309349fb0fac5e2f17fce4d069376f118cf5",
+      "candidate_sha256": "b79d0487986899ae8500aafc4517c1938a90d430bc46361a9b7fe26883a15bc6",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "acc198963ef6decc741d55333c21a387db33787ee037def300cef910a751916b",
+      "post_cut_recognition": "Bonjour Monsieur Duchaud, c'est Monsieur Dupré. Je vous appelle pour la panne de chauffage et les toilettes. Il y a aussi une fuite d'eau dans la cuisine. Merci de venir vite.",
+      "comparison": {
+        "expected_token_coverage": 0.9706,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [
+        "Orthographe du nom Duchaud/Duchot à confirmer."
+      ],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/repar-serrure-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000c0508243907d3613d0f14c1d-d1",
+      "source_sha256": "cd327e70353f0c547c2e969e5edc6906a32095e5d9f6d860e33cc440414b0675",
+      "candidate_sha256": "693a858f76309ceb92cad795bd840b91588df065584f6f57d5432d2d118a16ac",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "cd515de02f5bb20f28c8cae748d02458efa18981f96bff767a9288b09b8b395a",
+      "post_cut_recognition": "Répare Serrure, bonjour Bonjour madame. J'ai un problème de serrure. Je ne peux plus ouvrir ma porte. Qu'est-ce qui ne va pas? Je ne sais pas. La serrure ne marche plus. Votre adresse? 20 avenue des Chartreux à Marseille. Un serrurier peut venir à 14 heures. Mais il est 9 heures. Oui, je sais. Mais ce n'est pas possible maintenant. Vous pouvez me donner le prix. Le dépannage coûte 150 euros. Vous pouvez me donner votre numéro de téléphone? Oui. C'est le 07 03 04 05 06 Le serrurier va vous appeler avant de venir.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 0.96,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-objet-4-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_000000003684821196e8094047c49744-d1",
+      "source_sha256": "03c34d0c1c532e8e28b4b88d4fc055ac1f74aba823c80a09cde6f3f04f1bbc1d",
+      "candidate_sha256": "d1297379b44f168f9deefff38a0fad33c3460d6c070da0c50c0a141cbc932af4",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "d48c71f7f1c025e16a1e2de9b51699a63a2ed12e490f5c807a113714d8d2e2d1",
+      "post_cut_recognition": "Tenez les chiens en laisse.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-objet-4-2.mp3",
+      "candidate_id": "grammar-import-20261104-file_000000003684821196e8094047c49744-d2",
+      "source_sha256": "03c34d0c1c532e8e28b4b88d4fc055ac1f74aba823c80a09cde6f3f04f1bbc1d",
+      "candidate_sha256": "62b9dc8d7f67af2b52f44bb01b19a79f592327f93f75038baef5bdca9b8083de",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "d48c71f7f1c025e16a1e2de9b51699a63a2ed12e490f5c807a113714d8d2e2d1",
+      "post_cut_recognition": "Ne fumez pas dans les couloirs.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-objet-4-3.mp3",
+      "candidate_id": "grammar-import-20261104-file_000000003684821196e8094047c49744-d3",
+      "source_sha256": "03c34d0c1c532e8e28b4b88d4fc055ac1f74aba823c80a09cde6f3f04f1bbc1d",
+      "candidate_sha256": "343d704e89a729339653ac3a2a2f966b7499ef25751c9d0e889594a8b081f25e",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "d48c71f7f1c025e16a1e2de9b51699a63a2ed12e490f5c807a113714d8d2e2d1",
+      "post_cut_recognition": "Ranger les vélos dans le local.",
+      "comparison": {
+        "expected_token_coverage": 0.8333,
+        "candidate_token_precision": 0.8333,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-objet-4-4.mp3",
+      "candidate_id": "grammar-import-20261104-file_000000003684821196e8094047c49744-d4",
+      "source_sha256": "03c34d0c1c532e8e28b4b88d4fc055ac1f74aba823c80a09cde6f3f04f1bbc1d",
+      "candidate_sha256": "f053b3e044a179ecc9bde79c054dac569ec7b44673f6acea47223662a1b35807",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "d48c71f7f1c025e16a1e2de9b51699a63a2ed12e490f5c807a113714d8d2e2d1",
+      "post_cut_recognition": "Mettez votre nom sur la boîte aux lettres.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-objet-4-5.mp3",
+      "candidate_id": "grammar-import-20261104-file_000000003684821196e8094047c49744-d5",
+      "source_sha256": "03c34d0c1c532e8e28b4b88d4fc055ac1f74aba823c80a09cde6f3f04f1bbc1d",
+      "candidate_sha256": "1aad1e6511e916c1a619ae52bffa82f5e69997d86c78b0c97ec0afc8403b3ccc",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "d48c71f7f1c025e16a1e2de9b51699a63a2ed12e490f5c807a113714d8d2e2d1",
+      "post_cut_recognition": "Ne faites pas de bruit après 22 heures.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-signoret-c-est-blanc-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000364882468fd3594745bf2c31-d1",
+      "source_sha256": "810b9d253ad3a6c94514f05b242f697e896d123ae1bc168d9a1d3a1b3c4c0994",
+      "candidate_sha256": "15c4dccd70977160119995547878c9edee24ab45a928001272de1ea6fdd3ed88",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "2db7d747bceef73b8ca2a3157aba882b55b3959d144b7e5fb1dfb332b64cf542",
+      "post_cut_recognition": "Bonjour, madame Signoret. C'est Monsieur Blanc. Votre poubelle est dans le couloir, et c'est sale. Vous ne respectez pas le règlement. Les ordures, c'est dans le local à poubelle. Merci.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/salut-cherche-bureau-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000914482119206b8b4e0abf334-d1",
+      "source_sha256": "6e14093e0d8834faed48f7ad7d5ed97823d8ba571f069ca3359917806c905285",
+      "candidate_sha256": "9c6aa17caf04e9c2b7536cf2e177282a923700c15bcd9e644c1d62e49ba8a0ac",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "3c1379815f2719847a352f564955142bd41c6751e5e5079c10b20a1ea22b5430",
+      "post_cut_recognition": "Salut, je cherche le bureau du professeur Martin. Il est où? Tu peux m'aider? Euh... Non. Désolé. Je suis nouveau à la fac. Demande au secrétariat.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/sacha-retard-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_0000000048b481f49ad4fb2fb8bc95e4-d1",
+      "source_sha256": "03761631a6c22581d0c743e0391c477f2ee45b8194a4471c7414c593745a3956",
+      "candidate_sha256": "1579c7a8018e5182f5a9e16d6dabbbfa58dffdfe484108f6a78cee2f1c33104c",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "5022a4225434437c9e39cd351bcf14e88d3e68a3435c4442bfc37123927054d7",
+      "post_cut_recognition": "Sacha On est en retard Maman, je prends mon petit déjeuner. Tu te couches trop tard. Après, tu as des problèmes pour te réveiller le matin. D'accord. Ce soir, je me couche tôt, et je mets mon réveil pour me lever à 6h30 demain. Bien. Et arrête de regarder la télé. Tu peux lire aussi. Anaïs, elle, regarde des séries après le dîner. Je dois parler avec elle. Mais elle est où ta sœur? Elle se douche, se maquille, ou s'habille peut-être. Elle a besoin d'une heure pour se préparer. Elle n'est pas en avance. Anaïs! Tu finis le travail à quelle heure aujourd'hui? À 17 heures. Je fais les courses et je rentre à la maison pour cuisiner.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/d-habitude-fais-quoi-week-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000d4cc824684ca4d8f107d4e65-d1",
+      "source_sha256": "b02a4b95102e78d977a5a52f830f684452daa1d41654c9822678bfa85ce21594",
+      "candidate_sha256": "369a78fb045fb7f00fc6d752fa1fea65212cb524f903db50fb0b90e86698a67c",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "f8e2aa346f92277da6b769010a2294031a3ec9dcbbb193556ff8c8801d6b83e8",
+      "post_cut_recognition": "D'habitude tu fais quoi le week-end Charlotte? Dans ma famille, on aime prendre le petit déjeuner tard. On se promène, on dîne au restaurant. Et le dimanche, on invite des amis à déjeuner.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/athletic-nouveau-club-sportif-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000f5ac8211881a35c068a59c49-d1",
+      "source_sha256": "47391b068d660764dcb45980b8e771e72deeb8b62968e37680f3ed86bafb1634",
+      "candidate_sha256": "dfd6f9a03168d52ab7fbe8c1485eb63c1bc95578628281c2056d21ac222c57b7",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "2baf60031cc49858a15165c91a8047fd25129b76f62d77a4b3da35bb46ad9f2c",
+      "post_cut_recognition": "Athlétique, le nouveau club sportif dans votre ville. Vous travaillez beaucoup? Vous êtes fatigué? Pensez à faire du sport à l'heure du déjeuner. Après le travail. Ou quand vous avez du temps libre. Inscription sur www.atletic.com",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [
+        "Adresse web : atletic.com / athlétique.com selon les reconnaissances ; ne pas l’utiliser pour une question avant vérification."
+      ],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/salut-christian-toujours-l-heure-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_0000000086b481f68efdd045d6acf968-d1",
+      "source_sha256": "cbb80c31667e659102f110affc893d9276befaf02b6eeb893eda51b9523a6c60",
+      "candidate_sha256": "ac6e88ee996940b70c5ff67c3fdd620cdd5cd4cb15f6efdba77eda716ad70a46",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "20aed56167eef8ccb601f2261d620959d0bdca6e9b4e35cbdca0d17d5b777d04",
+      "post_cut_recognition": "Salut Christian. Toujours à l'heure. Oui. Je n'aime pas être en retard. Quand je peux, j'arrive en avance. À 7h30. Mais comment tu fais? Je me réveille tôt. C'est tout.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/catherine-prend-petit-dejeuner-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_000000000974824688584fa9f5aebe9f-d1",
+      "source_sha256": "4f848bc0f70174c106bc4a84d64d5533756cd036a7fbbc6f2924c4e089e87eb0",
+      "candidate_sha256": "eab2d91091d4bef05b2ca780863d925520a7f9589e602b1894835a00c0b6095f",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "fc61a561eda9f1e366a7f6c0070d6f66af34648048e6bc9454ef66b21110c113",
+      "post_cut_recognition": "Catherine, on prend le petit déjeuner ensemble demain matin? Avec plaisir. À quelle heure? À 8h30. Ça va? Mais Chantal, c'est trop tôt. Demain c'est le week-end. Je me lève à 10h. Mais ton réveil? Ah non! Pas de réveil le week-end! Le samedi, j'aime me réveiller tard. Moi, le samedi matin, je fais du sport. Je cuisine pour la semaine. Oh là là! Quel emploi du temps! Bon d'accord. Alors, tu déjeunes avec moi? À midi? D'accord.",
+      "comparison": {
+        "expected_token_coverage": 0.9886,
+        "candidate_token_precision": 0.9886,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/oh-la-la-la-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_0000000025cc81f4b2126cd32ae5e865-d1",
+      "source_sha256": "01b359cc4b46fe3b770dd2381fc7fd59fd3e7ec8fd962c0c79d3396daa2da5a9",
+      "candidate_sha256": "d1d4e43e96d6916b4b99302d739a8282f092a89d0c5eeac2e03bce9f93512406",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "ea8e2850f3d6041c4af0338ca57710fb31090592bf9ae80ccf9565ce2e4339f7",
+      "post_cut_recognition": "Oh là là là là là là je suis stressée Ma présentation pour la réunion de onze heures n'est pas prête j'ai un problème d'ordinateur Ton assistante peut t'aider, non? Elle est où? Elle n'est pas au bureau. Aujourd'hui, elle télétravaille. Tu peux demander à Charles, notre informaticien. Il est en réunion pour préparer la visioconférence de demain. Alors, demande à Ariane. Elle est sympa. Oui, mais elle est bavarde. C'est vrai. Mais c'est une collègue sérieuse. D'accord. On déjeune ensemble à la cafette à midi? Désolé, pas aujourd'hui. Je dois préparer un dossier important.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 0.9619,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-tous-philippe-hugon-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000c74082438297c1e51171f6be-d1",
+      "source_sha256": "3304a597b5596fccb099609a326ef69a8874b6169a8fa29375653be8d996a23e",
+      "candidate_sha256": "c841a3d743c6dcfa684ba48fb765362a50b8b5c1384af478bc21c99595a2a7d2",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "51bbbf2ec9652419c0e1ca73afd221ebb8e28d0162da9b05bd607890bd49c5be",
+      "post_cut_recognition": "Bonjour à tous, je suis Philippe Hugon, spécialiste en outils informatiques. Je suis ici pour vous aider à organiser les fichiers et présenter l'agenda professionnel de l'entreprise.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [
+        "Orthographe du nom Philippe Hugon à confirmer."
+      ],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-viens-reparer-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000d5dc824683161543be3bef8f-d1",
+      "source_sha256": "e1c49f412e010e7ec5d653f7969d649e33f265445120a7fab93a172d3d767866",
+      "candidate_sha256": "11acf70be6179630441f16444d6dc9d8afd0e913e142da4108ef85d87568ec97",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "79d1548f80cf7b92f1a4dce1d4f48641dec3d45f7a7b9357cc5e3a6899d847ce",
+      "post_cut_recognition": "Bonjour madame. Je viens pour réparer votre machine à café. Elle est où? Dans le couloir. Après la grande salle de réunion. Ah oui, à côté de l'accueil. Non. L'accueil est au rez-de-chaussée. La machine café est ici, au premier étage.",
+      "comparison": {
+        "expected_token_coverage": 0.9783,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-peux-aider-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000ecd8824694c3abfb6fe682aa-d1",
+      "source_sha256": "5ec0dcbcd6e8e0e8d9b6e443c23acf4288a3d3af9e6882c7f2d0e35962dc68ce",
+      "candidate_sha256": "8bda8574cdc809f48f27a859e8a53d9576668dc2779fc729d0e8bb3e047b1d52",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "d0a72a363adb46289ae50cfe4852aed2f8c7e59cfa8612778c317a49859e29c2",
+      "post_cut_recognition": "Bonjour madame. Je peux vous aider? Oui, bonjour. Je pourrais essayer la robe bleue. Bien sûr. Vous faites quelle taille? Je fais du 38. Voici du 38. Vous aimeriez essayer autre chose? Oui, des chaussures. Quelle couleur? Noir, s'il vous plaît. Quelle est votre pointure? Je fais du 39. Très bien. Voici du 39. Alors, ça vous plaît? La robe vous va très bien. Oui j'aime bien. Mais les chaussures, ça ne va pas. Je prends la robe. Je voudrais aussi acheter une veste en cuir pour mon mari. Désolée. Nous n'avons pas de vêtements pour hommes en boutique. Regardez sur notre site internet.",
+      "comparison": {
+        "expected_token_coverage": 0.9813,
+        "candidate_token_precision": 0.9813,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-objet-6.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000fa608243a84f0d1121bc919c-d1",
+      "source_sha256": "683c7a22cb62d192db5eb73a3f1fef306b0621d53d97117cfb9ab4a910861456",
+      "candidate_sha256": "9f75c518c964f55e5790a31fa5e154e352516ec10fb6d7e0a9e4a9aeb1a768ba",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "cd9368ad3e6abb655ca61a9920c539a2becbecbefecef9dd0c109b5ff6ac8520",
+      "post_cut_recognition": "Regarde la jolie boutique. On entre? D'accord. J'aimerais bien essayer des jupes. Et moi des pulls. Regarde le pull rouge. Il est super. Il est en coton? Non. En laine. J'ai besoin de vêtements chauds pour partir à la montagne. Regarde! Ils ont des vestes, des gants et des écharpes. Oh essaie l'écharpe jaune. Elle va bien avec ton manteau noir. Oui, mais je déteste la couleur, et ça ne va pas avec mon bonnet. D'accord. Et ce pantalon, il te plaît? Ah oui, j'aime bien. Je voudrais l'essayer aussi. Où est la vendeuse?",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 0.9901,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-c-est-dejeuner-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_000000008d0c8246bc22cbb8827cc752-d1",
+      "source_sha256": "394151d5d4da3801e659e19458117c9714dd0fdab3507ded57f70c60c4330b45",
+      "candidate_sha256": "1e5632c71fc34748def59d5dd79ec2faa325444c0c919b485e88207c43aaa18a",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "fc5cdbf9083e08171dfffddbe6befe3102788c334b3347af3f977c91c454be43",
+      "post_cut_recognition": "Bonjour! C'est pour déjeuner? Oui. Vous avez une table pour deux? Ici. Voici le menu du jour. Tu prends du poisson ou de la viande? Mais je suis végétarien. C'est vrai. Tu ne manges pas de viande. Pas de poisson. Une salade? D'accord. Et tu bois quoi? Pas d'alcool. Je bois de l'eau. Je peux prendre votre commande. Alors... Une salade chinoise, un steak frites et deux tartes aux fraises. Qu'est-ce que vous buvez? Une carafe d'eau, s'il vous plaît. Tout va bien? Oui, c'est excellent. L'addition, s'il vous plaît. On laisse un pourboire? Oui, bien sûr.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [
+        "Quantité et formulation du dessert : « deux tartes aux fraises » à confirmer à l’écoute."
+      ],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/delideli-peux-prendre-votre-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000d37481f4b7ef851a68a1a224-d1",
+      "source_sha256": "8a152ed91a44e1f20c181f67872b3ba21483668e7f9bad6826d434738b1bb2de",
+      "candidate_sha256": "44269be31e4f9d59ee7aab720efa55620898d2a6d499ebabba72089d7794f64b",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "77355adae0dd9a2d2ecab5ce5e1dc92b530cf82801f96deabbef683f5d972359",
+      "post_cut_recognition": "Delly Deli, bonjour. Je peux prendre votre commande? Oui, bonjour. Je voudrais un menu Roma avec une salade italienne et des pâtes aux légumes. D'accord. Donnez-moi votre adresse.",
+      "comparison": {
+        "expected_token_coverage": 0.9667,
+        "candidate_token_precision": 0.9667,
+        "flags": []
+      },
+      "transcript_unresolved_points": [
+        "Orthographe commerciale Dely Dely à confirmer."
+      ],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-messieurs-dames-voici-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000ce8481f4a68aacde0b21f673-d1",
+      "source_sha256": "b35e06c2a32f583562c7b249bae68282195baa66706294fd17e9aa3432bcdf7a",
+      "candidate_sha256": "4c4154903077c923e9f17c2c9aee8d0601f8b60163a964008f76f6fa444e579d",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "3f268e450dd98ccc71f4bdd8dd730a0b345d79b5f3cc23926fe30e206911d36f",
+      "post_cut_recognition": "Bonjour messieurs dames. Voici une table pour quatre. Aujourd'hui, pour le déjeuner, le chef vous propose un menu spécial Atlantique avec du poisson et des petits légumes.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-avons-reservation-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_0000000027f4821183ffee13a5641edd-d1",
+      "source_sha256": "8234df0b5d8285d244ffa45455a8a780cdf508be8082b2324640a5065455bd3a",
+      "candidate_sha256": "e1e3121bec0d23e2062e45ee1ad118c4347b71f2d4ece9b07d66bc8dda3b520d",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "2a1e7bc4c7cdd63c037302d276061b5461cbc45b22387fa57e6ce654e4647a1d",
+      "post_cut_recognition": "Bonjour. Nous avons une réservation pour huit. Ah oui. Voici une table pour 8. Je vous apporte le menu. Je prends votre commande? Oui. Nous prenons 8 menus. 8 entrées et 8 plats. Mais pas de dessert. Est-ce que vous prenez du fromage? Non, pas de fromage. Qu'est-ce que vous buvez? Du vin? Non, pas de vin. Trois jus d'orange, une eau gazeuse, un jus de tomate et une carafe d'eau.",
+      "comparison": {
+        "expected_token_coverage": 0.9868,
+        "candidate_token_precision": 0.9868,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vous-adorez-croissants-macaron-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_000000006acc81f4acfc723bdbe53bb2-d1",
+      "source_sha256": "c772c98b1b9e15f4ea91a6872e0ae533e7988369935dac239ccbdc54d8cb5264",
+      "candidate_sha256": "a5c06f51bc6d6d323b13a4e108d4458ffe538adf7a78185bcda6362750086e83",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "df07188fac9b1a77e7a61586288f21ad194cc6506eeebe06f59c7f4e0819a03c",
+      "post_cut_recognition": "Vous adorez les croissants du macaron doré? Venez découvrir maintenant leurs tartes aux fruits, leurs gâteaux, leurs crêponnes, leurs macarons et leurs éclairs au café. Venez nombreux!",
+      "comparison": {
+        "expected_token_coverage": 0.9286,
+        "candidate_token_precision": 0.963,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/salut-lea-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000926881f48f9f77d59fada574-d1",
+      "source_sha256": "10f53ed4d1e4928e92f7b374266612afd9b38cda3bc3bfa974048e60c79190a8",
+      "candidate_sha256": "baa5d73085ff922381b56332e02822ffef8ede1321b84b7907878ee40d2d995f",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "ec0a95807c1ddca6017ead3d6726697598bc3989f91dc5bf0c1f7405a3bb6fae",
+      "post_cut_recognition": "Salut Léa, c'est maman. Tu connais la pâtisserie Le Macaron Doré? Ils font de super gâteaux maintenant. Pour ton anniversaire, je peux acheter le gâteau chez eux. Rappelle-moi. Bisous.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/allo-papa-ca-va-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_0000000015a881f49972f4b30fcff047-d1",
+      "source_sha256": "4ece6c18ce6f5d5aa63d8c3a6f869b1900f8d953ed058e17c5bf10599f2d5076",
+      "candidate_sha256": "01402ab004190b5b6197aa7e0af827a414e83df69de8eb14b82aa010b84f3f11",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "05e9b209b71c0845dd6ef9b47695386dc63f705fda1f583ff4fe331e263a8fa7",
+      "post_cut_recognition": "Allo papa? Ça va? Ah ma chérie. Oui? Et toi? Comment ça va? Moi, ça va pas du tout. J'ai la jambe cassée. Et j'ai le pied cassé aussi! Ah bon? Mais tu es où? A l'hôpital! Je ne peux pas marcher. Et tu as mal? Oui! J'ai très... Je dois encore voir le médecin. Pour le prochain rendez-vous. Tu vois un médecin le dimanche? Oui, bien sûr. Je suis aux urgences. D'accord. Je viens te chercher en voiture. Et puis, on va faire un bon repas.",
+      "comparison": {
+        "expected_token_coverage": 0.9789,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-avez-ordonnance-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000e2248243b993243203232e5e-d1",
+      "source_sha256": "93d5b13e209e7e1b9090778bb0061b34a87b02721031abc6926d366f1f46f36a",
+      "candidate_sha256": "81339bfd6ba87c6b15f7878207c8388a9fd5e8933db6b3cc166d4999efd573fc",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "97ff9a0d47b5f0dcb8c898a49f6a1d135634379a7cf7c586ce099c5943ed7818",
+      "post_cut_recognition": "Bonjour monsieur. Vous avez une ordonnance. Oui. Et voilà ma carte vitale. Merci. Alors, voilà les antibiotiques, l'aspirine pour la fièvre. Et le sirop contre la toux. Comment je prends ces médicaments, s'il vous plaît? Pour l'antibiotique, vous devez prendre un comprimé matin. Midi et soir. Avec un verre d'eau. Et le sirop? Une cuillère, deux fois par jour, matin et soir, pendant trois jours. Vous avez de l'aspirine en sachet? Bien sûr. Tenez. Et contre la toux. Vous avez des pastilles? Oui, bien sûr. Ce sera tout? Euh. Non. Ma fille a une brûlure à la main. Vous avez une crème ou un gel? Bien sûr. Il faut mettre cette crème sur la brûlure deux fois par jour.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/les-pharmaciens-sont-professionnels-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000051481f4ba55411dc2a30813-d1",
+      "source_sha256": "2243f20fb794dcbba4763d6905e80e550deab1927b46c0e94b89e3e66de51ec1",
+      "candidate_sha256": "279568b5e58b8a453530bc20833e384ad6c9b1b44bda391b39f1db4630475b65",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "aa9c92ba6543a98fa391370fecae88f6cd174cdbcbecfa84899b0092820a4dd7",
+      "post_cut_recognition": "Les pharmaciens sont des professionnels de la santé. Ils ont un rôle important. 4 millions de Français entrent dans une pharmacie chaque jour. Les pharmaciens préparent les médicaments et répondent aux questions des malades. Ils prennent la carte vitale, expliquent les ordonnances et donnent des informations sur les antibiotics par exemple.",
+      "comparison": {
+        "expected_token_coverage": 0.9804,
+        "candidate_token_precision": 0.9804,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vous-toussez-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_000000008d8c81f4ac4702acec45b003-d1",
+      "source_sha256": "b15713041dd19869c4914ee47afd705ddfd4e2862c604dd36a0dc4a04671f17f",
+      "candidate_sha256": "6e4cffc057e4d0cc182ccda722a9bf12c45d00defcbf9fe66396ceb74c566881",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "cbcb0d64214f8633c559647fd44ecd3a5d3c6c359b6848a8a2a34411e08c8bf8",
+      "post_cut_recognition": "Vous toussez? Achetez Calmatou pour toute la famille, adulte ou enfant. Des pastilles contre la toux et le mal de gorge à utiliser le jour et la nuit. Cet hiver, Calmatou est dans toutes les pharmacies.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-monsieur-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_000000006e2482469b192ea5edd5a9ae-d1",
+      "source_sha256": "2ad2af39948029b82cda5fe303a85bfeeab1da8e2ce40bb4401139ed29303cef",
+      "candidate_sha256": "fe6e94e06a0101886f6ca2f630eded6d12a87a4d23afbadaf09922eb37879cd3",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "0a4723c1aaa46fe09fb22106e0cd2ccbaa19c405d19df2442c63eb890ce671d1",
+      "post_cut_recognition": "Bonjour monsieur. Bonjour madame. Ma fille est malade. Elle tousse beaucoup et a un peu de fièvre. Est-ce que vous pouvez me donner un médicament? Oui. Votre fille a quel âge? Elle a 8 ans. Je vous donne le sirop calmatou. Il faut prendre une cuillère le matin, à midi et le soir. Vous pouvez me donner quelque chose contre la fièvre. Je vous donne de l'aspirine, mais demain, il faut aller voir un médecin. Je ne peux pas aller chez le médecin. Je n'ai pas le temps. Mais votre fille tousse vraiment beaucoup.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 0.9794,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/pour-vacances-pensez-covoiturage-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_000000005cd881f486d3e82d2eb3c46d-d1",
+      "source_sha256": "4dd0885dea36e78e2d2d08b32e276c5c832083eb0b2a838a95d2512d02ba00f6",
+      "candidate_sha256": "9b6950116dde742f2117ec1379890771a8525a5579a9855167b8f7359859bff8",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "1b82f074d7e3415e1311b52122d5ea993697af464f87d19d0c4b4126ebcaf612",
+      "post_cut_recognition": "Pour les vacances, pensez au covoiturage avec l'applic. Choisissez votre trajet, votre horaire et votre conducteur. Réservez et payer. Voyager avec Covoat. C'est simple.",
+      "comparison": {
+        "expected_token_coverage": 0.8148,
+        "candidate_token_precision": 0.8462,
+        "flags": []
+      },
+      "transcript_unresolved_points": [
+        "Orthographe commerciale de l’application Covoit à confirmer."
+      ],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/salut-paul-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000ae2c81f9b18c2115650264c0-d1",
+      "source_sha256": "c186f7f6012365cc84e5a73b167415aa189466072bb3d462c11d65cbfc40aea9",
+      "candidate_sha256": "85e6813e55b62e80fcb496d36f5fc9771aceed6e35a9640ecca1739359f8410c",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "d75b9a15a724e2a48e117f8b37e1979546650e5a42fbdb2adc6a60ff8c8fcae0",
+      "post_cut_recognition": "Salut Paul Finalement, je ne fais pas de covoiturage pour mon trajet Strasbourg Nice. C'est trop long. Je prends le TGV de 6h samedi. Le billet est à 20 euros.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-voudrais-prix-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000725881f7be87fc2e6f2d36df-d1",
+      "source_sha256": "05a32870b4ea6ce40a712d2f6de119a1e525c7131f370b137fee7609119e8c6a",
+      "candidate_sha256": "f1158c768d66d92ec8a152e14d2ebf77571e8085464143a300c23bedd4b5e0ee",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "09418ca3b76b7be9abedcf15222c48996bfa059a4361c47d002783a20550e2b3",
+      "post_cut_recognition": "Bonjour monsieur, je voudrais le prix d'un billet Marseille-Lyon le 2 décembre, s'il vous plaît. Vous voulez un aller-retour ou un aller simple? Un aller simple. Et vous voulez partir le matin ou l'après-midi? Tôt le matin, s'il vous plaît. Vous avez un TER à 6h, avec une arrivée à Lyon à 9h45. Le billet est à 49 euros. Oh là là, c'est trop long. Oui, le trajet dure 3h45 et il y a 13 arrêts. Il n'y a pas de TGV? Si. Vous avez le TGV de 9h35. Il arrive à 1h20. Le trajet dure 1h45 et il y a deux arrêts. Mais le billet est à 67 euros. Merci beaucoup, monsieur.",
+      "comparison": {
+        "expected_token_coverage": 0.9925,
+        "candidate_token_precision": 0.9925,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/mesdames-messieurs-votre-attention-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000cc688243b075ec50445a1254-d1",
+      "source_sha256": "3a12f2cfec8efca40ede06449ce89c6a5ed7b5146e063d2ad01759b1b2d4622a",
+      "candidate_sha256": "5eb297261ae40e8d7a1627e375b9d6beebf855423cc6cedaf0d96a418f776f17",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "eea3d6857d8c483be9bb58867e18d2b1cc891cd09350c1a58d36fd42ef33658d",
+      "post_cut_recognition": "Mesdames et Messieurs, votre attention s'il vous plaît. Les passagers du vol AF416 à destination de Porto sont invités à se présenter porte d'embarquement B6 avec leur passeport.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-votre-passeport-s-il-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000d81481f4b46b67bd3ece0163-d1",
+      "source_sha256": "bf154199eea9019c205eb51943dfafe00efb9e95ec2cc2d46ce0ca62f8aad13c",
+      "candidate_sha256": "da9ce5de8f8212875f31303d041fd971f7b285571c68eb5e1edd4eb03bb3ef7d",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "18b6da8e2721a455f2dc887817655102b65d44d17e675ac29f2999a3a40b9b14",
+      "post_cut_recognition": "Bonjour. Votre passeport, s'il vous plaît. Quelle est votre destination? Bonjour. Je vais aux États Unis. Un vol direct à destination de Boston. Vous avez un Visa? Oui, bien sûr. Voilà. Très bien. Bon vol.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-votre-passeport-votre-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_000000006aac81f487477deafb9dc158-d1",
+      "source_sha256": "552a81e1dd077efb91e78b7e92681acc66c60b5c3d1cd406f37fb0941d9dbd5b",
+      "candidate_sha256": "4e6b85f624babded8887750887c971b92e0e5731d222debe307a026fe06e28a5",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "a227667bc7b3902ac7fef0f8ec87fc7b797b26d0e48387b2d558e2669aa6a6f4",
+      "post_cut_recognition": "Bonjour, votre passeport et votre carte d'embarquement, s'il vous plaît. Voilà. C'est votre bagage, monsieur? Vous avez un ordinateur dans le sac? Non. Mon ordinateur est ici. Avec ma trousse de toilette. C'est votre valise, monsieur. Vous pouvez l'ouvrir s'il vous plaît. Oui, bien sûr. C'est une bouteille d'eau? C'est interdit, vous savez. Ah oui, désolé. Très bien. Je vous souhaite un bon vol, monsieur.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/beausoleil-l-hotel-villa-propose.mp3",
+      "candidate_id": "grammar-import-20261104-file_0000000076e481f488e8fc6fe4354e92-d1",
+      "source_sha256": "25a534393c5b882609d10ed272db8ed6b8f979e98fc34295319ce7a53e9de662",
+      "candidate_sha256": "345355cef17139c4b9d726d97df6df173a3be238c6cad4a446985a724cf09969",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "09439f583be6fef411b297df2a51d5fcd322215471da080236a26a41afbf739a",
+      "post_cut_recognition": "A Beau Soleil, l'hôtel La Villa vous propose des chambres à côté de la plage. Du 1er mai au 30 septembre, la piscine vous attend, avec ses transats et ses parasol.",
+      "comparison": {
+        "expected_token_coverage": 0.9697,
+        "candidate_token_precision": 0.9697,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/hotel-plage.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000a18081f4af4d07fed0fa3e6c-d1",
+      "source_sha256": "c207d35f521e947d900304cfacb0d75b99fdcbfce1d2cab9ec89bc7c64615289",
+      "candidate_sha256": "6be585ecf970f115126c15d7bd956b6e8f0cfa5cf4209ed06771ac92bc7e0e3e",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "b28372bbb18c6764d45edaa93edfe4ca2ae1d2c68c99d43f783c949e41b26401",
+      "post_cut_recognition": "Hôtel de la plage, bonjour. Bonjour, vous avez une chamble disponible pour la nuit du 12 au 13 juin, s'il vous plaît? Non. Mais nous avons des chambres simples.",
+      "comparison": {
+        "expected_token_coverage": 0.9355,
+        "candidate_token_precision": 0.9667,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vous-aimez-camping.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000a29482469c321a338f000688-d1",
+      "source_sha256": "56823af4097e84e47f3fe76f242c059f65d97b08fb364f3ac823f6f1bbc02ae7",
+      "candidate_sha256": "962694e1825eed368b732703681207f0170d2e96fbf11f9e91d7963ec2b7f7a4",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "1d079af2339b5ef38e04ddbdf972eb0dbeb415c8d4b692a332c46e5fa381b53c",
+      "post_cut_recognition": "Vous aimez le camping, mais quelle destination choisir? Dans les Alpes, entre montagne et forêt, la campagne et les rivières de Normandie, la mer et les plages de Provence?",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-objet-8.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000ec2081f4871fe083626bc098-d1",
+      "source_sha256": "00017c995b4ef743c4633ff09aaa161fc60e080aaef1ea6a74d78b86b1fdc853",
+      "candidate_sha256": "cf5cdd80a18875c5b28713aed9e8fd8533c8efc11790e3b1aeb88d3395725bbe",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "c9d1d09a6580372d605959046fca8fcf87c49842baee08cd5ece3c4535c18213",
+      "post_cut_recognition": "Bonjour. Vous proposer la pension complète? Non, nous proposons un petit déjeuner au restaurant du camping et un buffet le soir, mais nous n'avons pas de déjeuner.",
+      "comparison": {
+        "expected_token_coverage": 0.9643,
+        "candidate_token_precision": 0.9643,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vous-etes-aussi-camping.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000c79081f4bbe28337e7f84113-d1",
+      "source_sha256": "28f2ea2ab7c60d7752037bd4db13e75fcdd2597a5bee3b305a00a8e86ac4dfa8",
+      "candidate_sha256": "4ca60186bb936d2e53e35d077a712c08aa721923ce0f93b63e93b3c3b9c905bf",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "23c9d64e866edc14333a7870ddb0c579ac2a9dee5011ee4728672a6e52dceb8f",
+      "post_cut_recognition": "Vous êtes aussi au camping derrière la plage? Non, nous sommes à l'hôtel entre la piscine et le parc. Et les chambres sont comment? Elles sont grandes, avec un mini-bar. Il y a une baignoire et un sèche-cheveux dans la salle de bain. C'est parfait. Et vous, le camping, c'est comment? Il est très bien aussi. Mais notre tante est à côté du restaurant et c'est bruyant. C'est dommage. Oui. Mais les enfants ont plein d'amis et sont très contents. Et vous mangez au restaurant du camping? Non. Nous mangeons devant la tente. Et vous? Nous sommes en pension complète. Les vraies vacances.",
+      "comparison": {
+        "expected_token_coverage": 0.991,
+        "candidate_token_precision": 0.991,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/ah-fait-beau-aujourd-hui.mp3",
+      "candidate_id": "grammar-import-20261104-file_0000000053448210a80905541fe9c0bd-d1",
+      "source_sha256": "62a3bfda364a7b93fcb7835daef391c4fa2973cb8e1ce3377c583d5c40bd8ef2",
+      "candidate_sha256": "8e3502c3945a63babb56cbd5245430928b445ec79d47706eed7a83d75875b6e1",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "92aa0ea62343c0ecd7feeeb2ed71d05aa16d821dcc8499889d172d84b0727fb3",
+      "post_cut_recognition": "Il fait beau aujourd'hui On joue au tennis Ah non je déteste le tennis On peut faire du VTT Mais il fait trop chaud pour faire du vélo Mais non il fait 20 degrés C'est parfait pour faire du vélo en montagne Je préfère faire de l'escalade L'escalade au printemps ou en automne d'accord Mais en été, avec le soleil, non merci. Alors, faisons de la voile sur le lac. Ou louons un canoë kayak. Écoute, aujourd'hui, moi je fais du vélo. Et demain, on fait ce que tu veux. Tu n'es pas sympa. Et puis regarde la météo. Demain, il pleut et il fait froid.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/et-voici-meteo.mp3",
+      "candidate_id": "grammar-import-20261104-file_000000000a408246af1b0274181fbd67-d1",
+      "source_sha256": "da879eb6181d81ffc61168fc77f4f08abde97b10cda35882e4f9dd56e4ef846f",
+      "candidate_sha256": "62cf063257852fe52d8b1c31d90fa613dd381ea6731bcb9c9a7d518e50cebaf2",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "ee924179c5f58214302d0e8b59bee27e3b9c7eda43f7462b97cfaa01a3985ae7",
+      "post_cut_recognition": "Et voici la météo de ce jour de printemps. À Paris, temps beau et chaud. A Bordeaux, nuage et vent. A Strasbourg, Pluie et Vent. A Nice, du soleil et 32 degrés. Et enfin à Lille, 12 degrés et des nuages.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/et-maintenant-parlons-vacances.mp3",
+      "candidate_id": "grammar-import-20261104-file_0000000085e08246a6d39d2c490ef16b-d1",
+      "source_sha256": "5300df973a44464c3d81f15a5e3b272e549d9dbdb0b7767aaccba15fe486a1ff",
+      "candidate_sha256": "05ea205b03e9a52ad389aee52df4ffd8ecf7e8da27db61b06efabe9f57e43f1c",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "50207b4abf7fa7ff5b2762de5407fab9603cc76568a2205c2e71ed698fb75caf",
+      "post_cut_recognition": "Et maintenant, parlons des vacances d'hiver. Il fait froid, il neige et les pistes ouvrent ce week-end dans les Alpes. Préparez votre luge, vos skis ou votre surf.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/des-francais-font-sport.mp3",
+      "candidate_id": "grammar-import-20261104-file_000000004f508243a0bcc2cb897a52b0-d1",
+      "source_sha256": "671ac67ca0351a99e2923c07f2ee472b5a3091a069bb9ad5c4f4633bb5ab9c57",
+      "candidate_sha256": "f42461750b29f299064d70173a15301f3af19a7c43137ab7c9c6739cbde6a187",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "50bd602668ed3cf4840986fa89fae9822bbbce29b95b3c891bc94fcaf4836c99",
+      "post_cut_recognition": "50% des Français font du sport pendant les vacances d'été. Natation, randonnée, vélo ou VTT. Les jeunes aiment faire du canoë kayak. Les adultes font plutôt de la voile et de la natation.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/allo-lea.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000db78824694e8e14b0ff51e32-d1",
+      "source_sha256": "1751ef89acffa5f2539b3182b80f8c0e60ea3bf51be176f54c1e8b0afb5cf2a2",
+      "candidate_sha256": "a97cc13e8b1ee748def5692e96c709b0a160901079ff333fbff8e5fe71c36834",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "430467137079a4e5e8b1ad1416d8ea90ff2ec76af758a3370c4bb45ebcb9192f",
+      "post_cut_recognition": "Allô Léa? C'est maman. Écoute, pour notre weekend à la montagne, je réserve six activités. VTT pour Bertrand. Tennis pour Tom et toi. Canyoning pour Robin. Voile pour papa. Et Escalade pour moi. Ça te va?",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-fait.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000514081f4b4d0fd2f556774ac-d1",
+      "source_sha256": "012de8ae094adcb5ddd2218d813ab67b5e274c7b72c4c34166d9c6c2012496a6",
+      "candidate_sha256": "eb8f8615c7b688d3ab911ed457b3b6a2fd9b22884c8a4eb604e6a1a62c7f713d",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "735769ef96b1902891ae580cd13e01c74f6232a96c416a74d07d357a6b80aced",
+      "post_cut_recognition": "Bonjour madame. Il ne fait pas très beau aujourd'hui et je voudrais savoir quelles activités vous proposer. Ce matin, il ne pleut pas. Et je peux vous proposer une sortie en canoë kayak à 10 heures. Ou un cours de voile à 11h. Les deux activités durent deux heures. Euh. Je ne sais pas. Je peux vous proposer aussi un cours d'escalade à 11 heures. Il dure deux heures aussi. Ah oui, c'est bien l'escalade, non? Oui, c'est très bien. Mais nous ne savons pas faire d'escalade. Il y a un cours pour les débutants. Vous voulez vous inscrire? Oui, s'il vous plaît.",
+      "comparison": {
+        "expected_token_coverage": 0.991,
+        "candidate_token_precision": 0.991,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/on-journee-libre.mp3",
+      "candidate_id": "grammar-import-20261104-file_000000009e3c8243bea524cfc22877d0-d1",
+      "source_sha256": "6cc97de7d7045a7449a760c7c06f5ea748e72ace4b49186e3c3aa4b992a5fa0d",
+      "candidate_sha256": "90d1cb98700fa3a3ad32248aa2497a976c0306349c688ba72b2f633d0f0cf3e8",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "e2876d93a2e02a7b68f393f3ab6afe094af83cbe7e37257c94bbbbc3fe1edd49",
+      "post_cut_recognition": "On a une journée libre. On fait quoi? Ce matin, on peut aller au musée Granée voir cette grande exposition de Paul Cézanne. Super! J'adore Cézanne. Et après, on peut aller visiter le château. Euh... C'est quoi son nom? Le château d'Arnajon. Bonne idée. Et ce soir, qu'est-ce qu'on fait? On peut aller voir le film avec cette acte de la comédie française, um, tu sais. Oui, Guillaume Galien. Quel beau programme.",
+      "comparison": {
+        "expected_token_coverage": 0.7935,
+        "candidate_token_precision": 0.9359,
+        "flags": [
+          "transcript_difference_requires_review"
+        ]
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": "On a une journée libre. On fait quoi ? Ce matin, on peut aller au Musée Granée voir cette grande exposition de Paul Cézanne. Super ! J'adore Cézanne ! Et après, on peut aller visiter le château de... C'est quoi son nom ? Le château d'Arnagion. Bonne idée ! Il y a des visites guidées et on peut acheter les billets en ligne. Et ce soir, qu'est-ce qu'on fait ? On peut aller voir le film avec cet acteur de la comédie française, tu sais... Oui, Guillaume Gallienne. Quel beau programme.",
+      "supplementary_comparison": {
+        "expected_token_coverage": 0.9674,
+        "candidate_token_precision": 0.978,
+        "flags": []
+      },
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/et-maintenant-programme-culturel.mp3",
+      "candidate_id": "grammar-import-20261104-file_0000000032f481f49f550cf65e4e51f9-d1",
+      "source_sha256": "317972acadcc3c56c6506792a5cdb42f80aa959ee54946e8e3a5006b2396353a",
+      "candidate_sha256": "9ddcb939824c6591dcff3c2ca1e69122f60fe901d6f6e7bbd8b434ef53fa4e87",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "5acf293d6deacdb636676ad185fb494314af95899e0d7bbe4ff25312b3fc4357",
+      "post_cut_recognition": "Et maintenant, le programme culturel de l'été à Avignon. Plus de 1000 pièces de théâtre, trois grandes expositions et des concerts tous les jours dans les rues ou dans les salles de concert.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-voudrais-huit-billets.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000b73c82438c4d1ff43d88dd34-d1",
+      "source_sha256": "9734a0fb0d93cf700cf53f77b210a48b64257a3ac51aac75b812ac48df64bc20",
+      "candidate_sha256": "3cadfc684767c679e3ecd386ec90f7bb0cedc04111a8b54e2316231546d3a75f",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "0b36c24d438b0cd6970994956e4e23da72997511a7914196185ba5439e3c678a",
+      "post_cut_recognition": "Bonjour, je voudrais 8 billets pour l'exposition Picasso. 8 billets pour des adultes? Non. 4 billets adultes à 12 euros, 3 billets gratuits pour les enfants, et un billets à 8 euros pour un senior.",
+      "comparison": {
+        "expected_token_coverage": 0.9722,
+        "candidate_token_precision": 0.9722,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vous-adorez-theatre.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000a0e881f4838d1c4d235cc817-d1",
+      "source_sha256": "188eb10db3a53e1d4af810854ebf1a537547b4c9ad04436dd9b6feee7f2b70a2",
+      "candidate_sha256": "2e9c380c7d157329e850a31651758d104ca5df0354786593710084abfa5f75cd",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "425029174acfbb0324e5f18ebe748435066a9a7784769bcb5103514c88d4d1af",
+      "post_cut_recognition": "Vous adorez le théâtre, vous aimez les salles de spectacle, vous voulez devenir comédien, comédienne, chanteur, chanteuse, acteur, actrice, musicien ou musicienne, les inscriptions pour l'école des arts commencent aujourd'hui.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/alors-va-cinema-ou.mp3",
+      "candidate_id": "grammar-import-20261104-file_000000009fb882118ce21584f6f46850-d1",
+      "source_sha256": "3e90bc7a44ada8af9d10635bad01703f7e76c118e2bbc9004ebd4f416d05f233",
+      "candidate_sha256": "c844294d62c35483f5c12e6e1d3bf8aef655fc48cbc9055fbda314a237c3352f",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "c5e6addcbef34781552725b6ebd2496c9fd745496b08b7d7a9cce6a6de4ac4f0",
+      "post_cut_recognition": "Alors, on va au cinéma ou au théâtre ce soir? Au cinéma. On va à la séance de 18h ou de 20h30? 20h30. Je prends deux hibillets et on va manger une pizza avant.",
+      "comparison": {
+        "expected_token_coverage": 0.95,
+        "candidate_token_precision": 0.9744,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/je-vais-nice-pendant.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000d630820a8b1e5af6f190a63e-d1",
+      "source_sha256": "0580aab6bba84132ff36c3dc6ee1d2915d6014aafcc6e7be777f7820148471d6",
+      "candidate_sha256": "759634045f956c50ba8dded53a328a365c06c861924e6359b4da30c135f961e6",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "4abf1fdd84cae8772b253f96fe124e44640cd9d13e4c08166f12db831a359e16",
+      "post_cut_recognition": "Je vais à Nice pendant les vacances. Il y a des lieux culturels intéressants. À Nice? Bien sûr, beaucoup. Tu devrais acheter un pass. Super. Qu'est-ce que je peux faire avec le pass? Tu peux visiter tous les musées. Le musée Matisse, le musée Chagal. J'aime beaucoup ces deux peintres. Et qu'est-ce que je peux faire encore? Tu peux écouter de la musique à Acropolis. C'est une grande salle de spectacle. Et pour le théâtre, il y a la comédie. Et la ville? Elle est belle? Oui. Magnifique. Tu peux faire une visite guidée et te promener sur la promenade des Anglais. Merci beaucoup.",
+      "comparison": {
+        "expected_token_coverage": 0.9636,
+        "candidate_token_precision": 0.9636,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/mais-regarde-lea.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000d05881f4b9f02207bbc2a4e7-d1",
+      "source_sha256": "286597224c156699c34e41127ab3c0b5ff1b6c272f952b756971647ddfa4f933",
+      "candidate_sha256": "b48c8c3d2dcd84a2b415fefd705a52002d09716137c955384d94a527016282c6",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "b4bf66095274b6a266915a0c26f53f7f2c8a10bdb949380db4e2b685abfc9b71",
+      "post_cut_recognition": "Mais regarde Léa! L'homme grand et blond là-bas. C'est notre amie Yan. Mais oui, c'est Yann. Il est avec une jeune femme rousse. C'est sa sœur? Mais non, c'est sa femme. Yan est mariée et ils ont un fils. Sacha. Sa femme s'appelle comment? Rosa. Rosa. Elle est espagnole? Non. Elle est brésilienne. Et leur fils, il a quel âge? Il est petit. Il a un an. Pour notre apéro samedi, on invite Yann et sa femme, d'accord? Ah oui. Vontiers. Ya?",
+      "comparison": {
+        "expected_token_coverage": 0.9333,
+        "candidate_token_precision": 0.9333,
+        "flags": [
+          "last_words_require_review"
+        ]
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": "Mais regarde Léa, l'homme grand et blond là-bas, c'est notre ami Yann. Mais oui, c'est Yann ! Il est avec une jeune femme rousse. C'est sa sœur ? Mais non, c'est sa femme. Yann est mariée et ils ont un fils. Sacha. Sa femme s'appelle Comment? Rosa. Rosa. Elle est espagnole? Non. Elle est brésilienne. Et leur fils? Il a quel âge? Il est petit. Il a un an. Pour notre apéro samedi, on invite Yann et sa femme, d'accord? Ah oui, volontiers. Yaa!",
+      "supplementary_comparison": {
+        "expected_token_coverage": 0.9778,
+        "candidate_token_precision": 0.9778,
+        "flags": []
+      },
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-objet-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000491881f4936cd34f2261c997-d1",
+      "source_sha256": "b801cbe07e74f78c3ee0c11fda0a6e13a2fa7632fa739d0a0804eba0c6849881",
+      "candidate_sha256": "57cb65d675017eb8e8bfa68754a9fdecfde797fae609db4561dc4ff50fe8b961",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "cd56b0049fe41f65ccb1c3f11ce98cbdb550b7a4b8c23ae0146ffb7543959b58",
+      "post_cut_recognition": "Alors, comment ça se passe dans ton nouvel immeuble? Raconte. Mon appartement est grand et lumineux. Il y a une belle terrasse. Le quartier est calme. Super. Tout va bien alors. Non. J'ai des problèmes d'électricité dans la cuisine, et l'électricien ne trouve pas la panne. Aujourd'hui les toilettes sont bouchées et il y a une fuite d'eau dans la salle de bain. Ah bon? Mais l'immeuble est neuf, non? Non. Il est ancien. Et les voisins? Ils sont sympas? Oui, ça va. Ils me disent bonjour et on parle souvent dans le hall. Et il y a un règlement? Oui, il faut tenir les chiens en laisse, rang son vélo dans le local, et il est interdit de fumer dans les couloirs.",
+      "comparison": {
+        "expected_token_coverage": 0.9922,
+        "candidate_token_precision": 0.9922,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-m-appelle-tim.mp3",
+      "candidate_id": "grammar-import-20261104-file_000000000d148210845ccd373ea41be8-d1",
+      "source_sha256": "6190e6e1135b5004b080e4d5e5d70e93b1331d06cd9a6cd237c7d8cedc6e580e",
+      "candidate_sha256": "a07be9d5d3b8092dea662b062938007c9e5043dc5a7d88d64f3255ef5b35f904",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "d4c39a9c58aaf328cf038141e391e72d064a0697c5c73d96e399dbb9fb59c275",
+      "post_cut_recognition": "Bonjour, je m'appelle Tim et je suis le nouveau serveur. Ah oui, bienvenue. Je m'appelle Natacha. Super. Tu es en avance? Oui. Je peux venir plus tard demain. Non, les serveurs commencent toujours à 1h. Et la journée de travail est organisée comment? Le matin, quand on arrive, on prend un café avec les collègues et après, on se prépare pour ouvrir le restaurant pour le déjeuner. Et l'après-midi, on prépare les tables pour le dîner. Ah bon? On ne fait pas de pause. Et le soir, on finit à quelle heure? À 23h, 23h30. On travaille tard. D'habitude, je me couche à une heure du matin. Ouh là là, mais tu te reposes quand? Le lundi, quand le restaurant est fermé.",
+      "comparison": {
+        "expected_token_coverage": 0.9924,
+        "candidate_token_precision": 0.9924,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/salut-emilie.mp3",
+      "candidate_id": "grammar-import-20261104-file_0000000010708246acdf74e57b38bda1-d1",
+      "source_sha256": "8e1db336b0cc811a7086913b46387eca8b9f554ce066705344bc2052c9bf14e6",
+      "candidate_sha256": "c1a4d45d9a838f4b79fde9f23294f160eb7669f521443c067e0f3361730be80f",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "182b227190f8eefdef3d7fa521e5e5a02292841bc120c38f92aa2c5f2c5e90cb",
+      "post_cut_recognition": "Salut Emilie. Tu vas bien? Ça va, et toi? Qu'est-ce que tu fais en ville? Eh bien, ce matin, je dois acheter des vêtements pour l'hiver et à midi, je déjeune au restaurant avec mon frère. Et toi? Moi j'achète une baguette et je rentre à la maison. Et vous allez dans quel restaurant? A la table du chef. La sal is belle and the viande is excellent. And the quiche aux légumes are delicious. And for the vêtements. You see where you can achieve untalon and unlaine? Oui, va chez Zaro. It's also a jolly accessories. Des bonnets et des écharpes laine, des ceintures en cuir. C'est une super idée. Merci. Je t'en prie. Au revoir.",
+      "comparison": {
+        "expected_token_coverage": 0.6531,
+        "candidate_token_precision": 0.7742,
+        "flags": [
+          "transcript_difference_requires_review"
+        ]
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": "Salut Émilie, tu vas bien ? Salut Théo, ça va, et toi ? Qu'est-ce que tu fais en ville ? Eh bien, ce matin, je dois acheter des vêtements pour l'hiver, et à midi, je déjeune au restaurant avec mon frère, et toi ? Moi, j'achète une baguette et je rentre à la maison. Et vous allez dans quel restaurant ? À la table du chef. La salle est belle et la viande est excellente. Moi je suis végétarienne, alors je préfère aller chez Léa. Et les quiches aux légumes sont délicieuses. C'est bien aussi. Et pour les vêtements, tu sais où je peux acheter un beau pantalon et un pull en laine ? Oui, va chez Zaro. Il y a aussi de jolis accessoires. Des bonnets et des écharpes en laine, des ceintures en cuir. C'est une super idée. Merci. J'étends pris. Au revoir.",
+      "supplementary_comparison": {
+        "expected_token_coverage": 0.9728,
+        "candidate_token_precision": 0.9795,
+        "flags": []
+      },
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/allo-mathilde.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000d59081f4bc8d14cc896fa3c9-d1",
+      "source_sha256": "8a81163aa71bb69171b951a271abda991e8227775954db253c83f6248acabfc4",
+      "candidate_sha256": "d8653d66d37486aa2cd89702a45e826ecbd225d3d6a67e1f61ca5f51a4c00657",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "0694586bb71c51c34637104fa01e8ace877b3167ed7801f43f5719ab363f791f",
+      "post_cut_recognition": "Allô Mathilde, c'est Mathieu. Bonjour Mathieu. Tu es où? Je suis à la maison. Je suis malade. et je ne peux pas venir travailler aujourd'hui. Ah bon? Mais qu'est-ce que tu as? J'ai mal à la gorge. Et je tousse. C'est un gros rhume, je pense. Tu as de la fièvre? Oui. J'ai 39 degrés. Et j'ai mal à la tête. Alors c'est la grippe. Oh là là. Je dois voir un médecin, alors. Oui. Prends un rendez-vous pour une téléconsultation. Ce soir, je dois passer à la pharmacie. Je peux prendre ton ordonnance et acheter tes médicaments. Merci beaucoup, Mathilde. Tu es vraiment très sympa.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/alors-notre-voyage-prend.mp3",
+      "candidate_id": "grammar-import-20261104-file_0000000027f48243bc0890551e8b919f-d1",
+      "source_sha256": "ee83a7e93f915eeb1ec1052333187f40b397e25793b6a2d988ef755cae0a1a20",
+      "candidate_sha256": "f5e0b508c1f06558e450dfbbdaf43af2727c0c02f4fb3071aa458dbd88d324d8",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "ece2d4aeb66730898c9c45b3387302d090846a4a50401e2477f6bbdc4e4d8c22",
+      "post_cut_recognition": "Alors, pour notre voyage, on prend le train ou l'avion? Le voyage chez mes parents en Provence? Mais non, pas pour le weekend en Provence. Pour nos vacances au Portugal, en juillet. Ah oui, bien sûr. On peut prendre le bus, peut-être? Ah non. Pourquoi non? Tu n'aimes pas le bus? Le trajet est trop long. C'est loin. Je préfère le train. Il y a une voiture barre. En avion, le trajet Paris Porto dure deux heures. C'est rapide. En avion, c'est compliqué. Il faut réserver son billet, faire une carte d'embarquement, enregistrer ses bagages, passer le contrôle de sûreté à l'aéroport. En train aussi, il faut réserver sa place. Et ce n'est pas direct. Bon, il faut choisir. On ne peut pas aller au Portugal à pied.",
+      "comparison": {
+        "expected_token_coverage": 0.9783,
+        "candidate_token_precision": 0.9854,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/alors-faites-quoi-cet.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000ba6881f4ad8d2552949f4229-d1",
+      "source_sha256": "c96ae792a7c8193246079495367dfcf05149c65bbdd31eda6decd87caaa46020",
+      "candidate_sha256": "606f96ee9f4ed8736e43506b193ac355694169a48515bf86613e70b494ce545b",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "0e13b25e8ada0c5267130863ef700e6bf4ac6e4ada8e87f214504dd6d7c14776",
+      "post_cut_recognition": "Alors, vous faites quoi cet été? En juillet, on va au festival Musilac à Aix-les-Bains. Ça dure 4 jours. On adore. C'est un festival de théâtre? Non, c'est un festival de musique au bord du lac. Le soir, on écoute des concerts et dans la journée, on fait des visites guidées dans la région. Et les musiciens, ils sont français? We're des Français, mais aussi des Italiens, des Anglais. toutes les nationalités. Vous allez à l'hôtel ou au camping? On va dans un petit hôtel en demi-pension. Et vous, vous faites quoi cet été? On part deux semaines faire du camping en Corse. Les enfants veulent faire du canyoning and de l'escalade. Et nous, nous voulons nous reposer. Ah c'est super!",
+      "comparison": {
+        "expected_token_coverage": 0.9621,
+        "candidate_token_precision": 0.9769,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/paolo-bonjour-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_000000001fac8210888a8f71ad10c7e9-d1",
+      "source_sha256": "80c824192be4120229070f892511bed63160cb2f192a5d35e30a844ec5108f78",
+      "candidate_sha256": "63d30472aa05173d09f43c17df7fc060475a8589b96c07f4b70eafe8f5a7a944",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "713d9a9b122b00320e4dfd9204e3c947724c7a4c91594914677bd2244424ec54",
+      "post_cut_recognition": "Bonjour. Moi, c'est Paolo. Et vous, vous vous appelez comment? Je m'appelle Nicole. Tu peux dire tu. Enchantée, Nicole. Tu as un prénom français. Tu es française, non? Non. Je suis allemande. Et toi? Je suis italien. Et tu as quel âge? J'ai 25 ans. Moi, j'ai 35 ans. Quelle est ta profession? Je suis journaliste. Voici ma carte de visite. Voici ma carte aussi. Merci. C'est ton numéro de portable sur la carte. Non. Mon portable, c'est le Zero six dix-huit quatorze trente onze Tu peux répéter, s'il te plaît?",
+      "comparison": {
+        "expected_token_coverage": 0.949,
+        "candidate_token_precision": 0.9394,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-monsieur-5.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000411c82118b665536ef956e92-d1",
+      "source_sha256": "302427f4ee9040f41eba7a4f5000df8ed894200470c0186cde59e12d230b0c18",
+      "candidate_sha256": "e15c81a8262681454d35206dee23dd3306e52a77120d46708dcb11e289b25d09",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "f81c9220197c42d4d445f684b73e2d059ccf99b64ef63eb6444216e02db86711",
+      "post_cut_recognition": "Bonjour monsieur. C'est pour un passeport Votre nom de famille, s'il vous plaît. Zola. Z O L A Mais Tu es Dominique, non? Oui. A Jacques. Jacques, Zola. Tu es l'ie de Camille, non? Salut, ça va?",
+      "comparison": {
+        "expected_token_coverage": 0.95,
+        "candidate_token_precision": 0.95,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/pierre-invite-chez.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000aa008211ba855719dc8864f6-d1",
+      "source_sha256": "526af3dc2e98a0e4a359365283ecb27e5c81475171d045cdaeffa281d766d808",
+      "candidate_sha256": "d70b0b877387191b5809d4c3c1ef24cd0219a7e1ceda0df5452faba4097c91d5",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "32ac599696532149a0821ac5284c30d1b1ee195c79c7293f8f441951e92ca457",
+      "post_cut_recognition": "Bonjour Marion C'est Alice J'habite maintenant dans un immeuble neuf au quatrième étage à Toulon. Voici mon adresse. 10 Place de la Liberté 83 000 Toulon. A bientôt",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-cherche-appartement-2.mp3",
+      "candidate_id": "grammar-import-20261104-file_000000004dfc81f98ce562d086ac6a06-d1",
+      "source_sha256": "7eb48b53a94543ec38b988938a27b0f7e9a9e18fbfc927310ac3bc304ace83f6",
+      "candidate_sha256": "decf157495b12f2842e2c98574bb356f00bbb85d48dc3751b2d07a19aa39ee1b",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "44289d0f533c89ebc943c6d16cce6545fc5c43a45e256885dcaf73d2a0b4e855",
+      "post_cut_recognition": "Bonjour monsieur. Je cherche un appartement dans un immeuble calme. Très bien. Et vous habitez où maintenant? J'habite boulevard des charmes. Et il y a beaucoup de bruit. C'est vrai. Vous voulez combien de pièces? Nous sommes un couple avec deux enfants. Et vous voulez deux ou trois chambres? Trois chambres, c'est bien. Et une cuisine équipée et des pièces lumineuses. Bien sûr. Vous préférez un appartement à l'étage, avec une terrasse, ou au rez-de-chaussée avec un jardin. Un appartement avec un jardin? C'est super. Nous avons un chien. Vous êtes libre aujourd'hui pour visiter un appartement?",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/sos-depannage-j-ecoute-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_0000000061508243b9a4220e31c582c4-d1",
+      "source_sha256": "fb7776e5767fe980edf88d1101b2c0863e2e4e6a284656f3469b9accc35c88e6",
+      "candidate_sha256": "4a3204009673a48ef487fe867417ca6fa9fe86cc3e3be17a9bfff3737b1ad405",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "55d5164f6249ad1e57169d8f0fbf75b98577eb5195e5abd2cac2f5ade1c6bea8",
+      "post_cut_recognition": "SOS Dépanage, j'écoute. Bonjour monsieur. Je vous appelle pour une panne. Je n'ai plus de lumière. Qu'est-ce qui ne va pas exactement? Les lampes, la télé, l'ordinateur... Le frigo ne marche pas. Je n'ai plus d'électricité. Et les radiateurs, ils sont chauds? Oui. J'ai un chauffage au gaz. Bien. On peut prendre rendez-vous pour demain. Désolé, mais c'est vraiment urgent. D'accord. Je peux venir aujourd'hui, mais à 1. Vous pouvez me donner votre adresse, s'il vous plaît? J'habite 8 rue du Jura. Et le prix de la réparation? Je viens, je regarde, ensuite je fais un devis. D'accord. Merci.",
+      "comparison": {
+        "expected_token_coverage": 0.9739,
+        "candidate_token_precision": 0.9825,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/un-probleme-d-eau-ou-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_0000000006b4820a987cd36868c68d3c-d1",
+      "source_sha256": "a411c8ee8009eb75b3153250d112d9d7cce815c4c7aa806b47aeb5b9fd6bbb60",
+      "candidate_sha256": "bbdd65fa50fc01578149246ee747f65f2ebf16fa34d0658c576865077eb6c97c",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "9c5e98d8be9a79caa869b70e733cdd62d7e8fc0c36fca9d7820740ff5f820848",
+      "post_cut_recognition": "Un problème d'eau ou d'électricité, un problème de serrure, vous pouvez appeler l'assistance téléphonique au 118 712. Un réparateur, plombier, électricien ou serrurier peut venir très vite chez vous, même le dimanche.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-monsieur-3.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000e2508246bc3f9e52965bcd60-d1",
+      "source_sha256": "bc164b6bd52a4f51f9cf6fd37fd1948d6d52ff4df91e05b00c3f6d4fcc0d2388",
+      "candidate_sha256": "057738e1ee1048828090f6647ab0f97bfb19f4883b68bab4103eefef88a21571",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "cd0ca98039111397091662c226313a7d3934a619e3a5fba66bd65a9956a687db",
+      "post_cut_recognition": "Bonjour monsieur. Bonjour, madame. Vous êtes nouvelle dans l'immeuble, non? Oui. Je suis votre nouvelle voisine. Est-ce que votre nom est déjà sur la boîte aux lettres? Oui, regardez. Catherine Sol Bienvenue. C'est un immeuble. Oui, j'ai un chien. Mais il ne fait pas de bruit. Très bien. Mais vous le tenez en laisse. Bien sûr. Et j'ai une question. On peut ranger vélos où? Il y a un local à vélo à côté du garage. Merci. Et il y a un règlement pour l'immeuble? Oui, regardez, dans le hall d'entrée. Et il y a un mot dans l'ascenseur. Merci. A bientôt.",
+      "comparison": {
+        "expected_token_coverage": 0.991,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [
+        "Orthographe du nom Catherine Sol à confirmer."
+      ],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/mon-immeuble-tres-propre-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_000000002e2c82118d80afdf81f74a80-d1",
+      "source_sha256": "81930ae8bbdb2218dbdf74a6ebdce72c8556407a4fef090572cd30c02a84b087",
+      "candidate_sha256": "6a814a7fb13adddaa64d0a3f6500f7c65d2187c8dc749934a828573646557080",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "85e58c492fa0a1ba95ec32b549e7a51b7a31bc13da4d82e8fe5dac64c14dd02f",
+      "post_cut_recognition": "Mon immeuble est très propre. J'ai des voisins calmes, ils ne fument pas et tiennent leur chien en laisse. Et puis, ils sont très gentils. Et nous parlons souvent devant les boîtes aux lettres.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-garant-allez-bien-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_000000003128820ebf9cbab294ead93e-d1",
+      "source_sha256": "06e5aee038e861544f0f4636a52a6540b297a2278ba2741f3dee9f4b43d9379d",
+      "candidate_sha256": "a589640de087e75129c509f909b74737111eb59cdc1f778d3017cf1103b97130",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "f1cd154cd9da194d588d36ae2393d9d3e70d0b147923b47d69e542cb5cf2d117",
+      "post_cut_recognition": "Bonjour monsieur Garant. Vous allez bien? Ça va, merci. Et vous? Ça va, mais il y a des vélos dans le hall. Et on ne peut plus passer. Ah bon? Mais nous avons un local à vélo. Oui. Et puis il y a aussi des bouteilles dans les escaliers. Mais nous avons un local à poubelle. Et une poubelle pour le verre. Et il y a le chien de Madame Martin. Il n'est pas en laisse. Il est gros, mais il n'est pas méchant. Et puis elle fume dans les couloirs. Ouh là là. Et le règlement, alors?",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/en-france-beaucoup-d-etudiants-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000e23481f8a2f83f2a254055d7-d1",
+      "source_sha256": "c76b6bf9352e3f83abaae44d7a0455434739b720cbf4fa6809feafeb5d5d71ec",
+      "candidate_sha256": "2993f3b07367f3968f30509a087a86400df962ebb2be79ced71fc9c710afc39b",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "7a6bc0697c7ad9770e64967590ff23c1243a19d7c92d4fd77d42b4d3842812dd",
+      "post_cut_recognition": "En France, il y a beaucoup d'étudiants étrangers. Ils viennent de 196 pays différents. Deux facultés sont très populaires, les lettres et les sciences.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/maman-commence-fac-lundi-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_000000004950824386981c122888fc1b-d1",
+      "source_sha256": "721850cdcf3d02243b595ad78b7ccb6462d7ee8e887f64526ab5276b610b93c5",
+      "candidate_sha256": "dfe97d63f136f4ff69a22995113f3f2bb15cf9432dcfe853e3e7b2f56129e313",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "dd38ef8c15f477621edf9c0cd2b7dcfab1150f3b956e39fe6f0eb512a4fc590d",
+      "post_cut_recognition": "Maman, je commence la fac lundi. Et j'ai déjà un TD et un TP. Mardi, le CM est à 8h. Mercredi, j'ai une évaluation le matin. Et je finis les cours à 20h.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/c-est-qui-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_000000006ce481f49481b6d2a28b4094-d1",
+      "source_sha256": "c33d164d992ebd60b1a39271a8c2dce3e3bcfb73925e5ce233e2cf801f8da6c1",
+      "candidate_sha256": "f8a2c8100af82cf7b4a23cda790e7dcdc5fccdf66534aa04904aa7ba00ca512e",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "3e4c9e91833ad2a3904715f319c749c5cf735fe85041b11eac7b7df655c87edc",
+      "post_cut_recognition": "C'est à qui? Madame? Non, c'est à moi. Bonjour. Deux croissants, s'il vous plaît. Et avec ceci? Une baguette. Je voudrais aussi une tarte au citron. Une tarte pour combien? Pour six. Ce sera tout? Vous faites des crêpes? Non, désolé. Alors c'est tout. 17,30 euros, s'il plaît. Par carte? Oui. Sans contact. Au revoir. Merci monsieur. Bonne journée.",
+      "comparison": {
+        "expected_token_coverage": 0.9846,
+        "candidate_token_precision": 0.9846,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/c-est-qui-3.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000323881f4b8bb65fc7f1cf155-d1",
+      "source_sha256": "1282e54f1dc2f179b22237da9dd6dacb20a8ec6afbcc4a0ef58afea40694ea32",
+      "candidate_sha256": "549b7583ae30b6224e83eb40d9e81990f63b5457f6791d7d57244213d05a4640",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "f75f2a220c43af1a2a0ebc805def660b79183b6da2274d60a1c0fa9dd7ecb589",
+      "post_cut_recognition": "C'est à qui? Monsieur? Non. C'est à moi. Bonjour, madame. Vous désirez? Bonjour. Vous avez des sandwichs? Oui, bien sûr. Au saumon, au poulet. Végétarien. On a aussi des formules déjeuner. Ah. Qu'est-ce qu'il y a dans une formule? Un sandwich, une boisson. Et une part de tarte ou un éclair. Parfait. Une formule, s'il vous plaît. Avec un sandwich végétarien et une part de tarte aux pommes. Et comme boisson. Un jus d'orange, s'il vous plaît. Voilà. Et avec ceci, ce sera tout. Merci.",
+      "comparison": {
+        "expected_token_coverage": 0.9892,
+        "candidate_token_precision": 0.9892,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/cabinet-medical-docteurs-blanc-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000e9bc81f4a47b27ff185a6b34-d1",
+      "source_sha256": "c151f39acdbe0e13997cfeb69b1a654e6351db316146ac3dbfebda90d228bddb",
+      "candidate_sha256": "32ad1a03e5b7b66ddda51e0839697cbfad7c4eb034469da62dda5a13bde637de",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "4e1c67df44d011e6ac76fd46a1dfc261b9ec066cb7915c58379a6d3940e798a1",
+      "post_cut_recognition": "Cabinet médical des docteurs Blanc et Truc, pédiatres. Nous recevons les enfants du lundi au vendredi de 9h à 19h. Si votre enfant est malade le week-end, appelez le 15 pour les urgences.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [
+        "Orthographe du deuxième médecin « Truc » à confirmer."
+      ],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-j-ai-brulure-main-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_000000003be48210b8b17981db8c832c-d1",
+      "source_sha256": "fb634d83ac13984ccbe82c4134d6cdca9a18a67da23cb3a42fc2189f00a34be1",
+      "candidate_sha256": "27218358eb3c24972fdb46812d16e5c20ccb7a53cf87a19c2ee859bf48d78c46",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "37cc8783ba12aa538a52985cb93edc222c860e7b25750a94e3d9700ea28c64f0",
+      "post_cut_recognition": "Bonjour, j'ai une brûlure à la main et j'ai très mal. Vous pouvez m'aider s'il vous plaît. Oui, bien sûr. Voici une crème à mettre 4 fois par jour pendant une semaine.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/excusez-moi-pourriez-m-aider-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000307081f4993201064efffbb9-d1",
+      "source_sha256": "82294031151a6155568b1fe3b04ee188b4f14328bbd526a8c7e8d49415359579",
+      "candidate_sha256": "6c6b46f1126dfe862c374c4071ecf6e32c02ad3868f902029ba9e08a40d1fe79",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "9a15636de7d522b3ca1396e5cf5721f5958a37c702df37719f8a357a22e12a18",
+      "post_cut_recognition": "Excusez-moi, madame. Vous pourriez m'aider, s'il vous plaît. Oui. Je peux aller à pied à la place de la mairie. Non, regardez sur le plan, c'est trop loin. Vous devez prendre les transports. Quel bus va à la mairie? Le 14 passe par la mairie, mais le trajet dure quarante minutes. Oh, c'est long. Oui, il y a beaucoup d'arrêt. En métro, ça va plus vite. 20 minutes seulement. Merci madame. Ah, j'ai encore une question. Où on achète les tickets? Au distributeur automatique. Ou alors dans le bus, vous pouvez demander au chauffeur. Merci beaucoup. Et où est le métro? Allez tout droit. La station est en face de la gare.",
+      "comparison": {
+        "expected_token_coverage": 0.9916,
+        "candidate_token_precision": 0.9916,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-voudrais-tickets-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_000000001cc481f48b01feb5aade5c35-d1",
+      "source_sha256": "a0ba162dc6a273796be6f77a8eb1c3c055eb8e5ad27366e2b39e57e9db23508b",
+      "candidate_sha256": "799865523d1c2802cb084a50f5dfc6a23db3dc47bbb3a4f7ebfd1400abd5d4e2",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "00578b125ff5cd713336d663f28501918c2ea56bd4cd32bc1e749fbfc8b19334",
+      "post_cut_recognition": "Bonjour monsieur, je voudrais des tickets de métro, s'il vous plaît. J'ai beaucoup de trajets à faire à Bordeaux aujourd'hui. Alors prenez un pass pour la journée ou un carnet de 10 tickets.",
+      "comparison": {
+        "expected_token_coverage": 0.9722,
+        "candidate_token_precision": 0.9722,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-avez-plan-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000d5e08246b026618889e12bc3-d1",
+      "source_sha256": "4cbeb186079404bd1a1e6204c8ed875d513f264e62d7e8bf99390f67bdb129b6",
+      "candidate_sha256": "1dbae0286d71ba426221aedc6f5f705c095300069cbd689def794d3d0b06e5b7",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "1f4bcec15c7ea57111158849e98ca38e341fc97501922ebffb1ca5ac529a783f",
+      "post_cut_recognition": "Bonjour monsieur. Vous avez un plan de la ville, s'il vous plaît? Je cherche la préfecture. Oui, bien sûr. Voilà. Pour aller à la préfecture, vous pouvez prendre le métro ou le bus. Je préfère le métro pour aller plus vite. La station est loin? Non, regardez sur le plan. L'office du tourisme est ici. Vous traversez la rue, vous tourne à gauche et vous allez tout droit. La station de métro est en face du commissariat. Et c'est direct? Non. Il faut changer à Opéra et prendre la ligne 7.",
+      "comparison": {
+        "expected_token_coverage": 0.9894,
+        "candidate_token_precision": 0.9894,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/pardon-j-ai-place-cote-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_000000005fdc8210a03296f61d0963cd-d1",
+      "source_sha256": "1a62c13e14075e43cf5faf4f77e485b083e4734d926eccd85a49d5307cef68a8",
+      "candidate_sha256": "6f7f8b6fd0c62d8a0d02aa8b23c3d7688db56ce3f21afea44577b99d1a17be8b",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "779f1d4056ba80a44b35b768d1ce2b22c447207bce6795a4c2911f4d12617325",
+      "post_cut_recognition": "Pardon madame. J'ai la place 46, côté fenêtre, voiture 4. Attendez, je regarde mon billet. Ah, excusez-moi. J'ai la place 46. C'est aussi une fenêtre, mais dans la voiture 5.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-quelle-votre-destination-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_000000007cdc820abd89c7badb9a6d44-d1",
+      "source_sha256": "f941273c7f8d893d0636850e99df08301aa4bf5e108fb81c701755a22aa0e872",
+      "candidate_sha256": "6ff497998862e123c4f0a6ff5d20293f095b4184a2c6a2a816d031477c38d80d",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "4a039e7cdb730c722a1c2903d29e30c156750292e0fd7144e9ee0f47626e50aa",
+      "post_cut_recognition": "Bonjour madame. Quelle est votre destination? Bonjour. Je vais à Bruxelles. Bien. Le vol à destination de Bruxelles départ 7h15. Votre passeport, s'il vous plaît. J'ai ma carte d'identité. Et voici une copie de mon billet électronique. Très bien. Vous avez des bagages à enregistrer? Non, j'ai seulement une valise cabine et mon sac à main. Voici votre carte d'embarquement. Vous avez le siège 28F. C'est bien côté Hublot. Oui. L'embarquement commence à 6h45. Je ne vois pas la porte d'embarquement sur la carte. C'est normal. La porte n'est pas encore indiquée. Vous devez regarder sur le tableau des départs. Merci monsieur. Bon séjour en Belgique.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/logement/02-logement-description-de-l-appartement-2.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000589481f4aa6ff4e919606d63-d1",
+      "source_sha256": "a900fc89033c1e4e140a9000dcbdcc998ea3625763f8ce3256737441c08a84e1",
+      "candidate_sha256": "b377efb21140ab6c8157cc9aaafd307ac69502e0e03afc8a354e046bfdd62433",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "28d0b4bceef755397c3f0a4098b0f2150d5e508356593b0160181fff4b435161",
+      "post_cut_recognition": "Regarde mamie. J'ai des photos de mon nouvel appartement à Annecy. C'est un studio? Non, un appartement. Montre-moi. Oh C'est grand et très lumineux. Oui, il y a un salon, une chambre et une cuisine équipée. Et puis, je n'aime pas les appartements sombres. Il y a un balcon? Oui, on peut manger sur le balcon. La salle de bain est grande? Non. Elle est petite. Mais les toilettes sont très grandes. C'est à quel étage? Au troisième. L'immeuble est ancien? Non, il est neuf. Et c'est où? C'est dans un quartier calme. Au centre-ville.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/magasins/21-magasin-pas-comprendre-taille-des-vêtements.mp3",
+      "candidate_id": "grammar-import-20261104-file_000000003b408243ad85ecf5460ff195-d1",
+      "source_sha256": "6e800a6d989e276d94271c2c00ebb6bf94b5d7e61c235467c6f651a9f693a991",
+      "candidate_sha256": "23e4ed391234b2d71573f939f1a4eda4a2a590c126ff71c8313a814d8f10cdf3",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "d728343cee2536981a020b44d27be54de76d0cc2685d779a38caa7706f8198b8",
+      "post_cut_recognition": "Aline, je ne comprends pas les tailles françaises. Tu peux m'expliquer? Pas de problème, Cathy. Quelle est ta taille? Je fais du L. En France, c'est du 42. Et c'est ce pantalon.",
+      "comparison": {
+        "expected_token_coverage": 0.9697,
+        "candidate_token_precision": 0.9143,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/actualite/08-actualité-le-pourboire-en-France.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000342881f494394ec1e6b61859-d1",
+      "source_sha256": "c6ff5e0230dd1920e35f7662d6c6cf49a21d726eb0ee6b3364ec136ba79dbe41",
+      "candidate_sha256": "e10adec96b51620a7dc921ac3e1bb3ab25afe694acfbe1329e5384b11b68260a",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "b2d4dd639006411801a6f98fdd998f079ee488a0bb4662895bef1edd8ed12b43",
+      "post_cut_recognition": "Nous recevons beaucoup de questions sur le pourboire en France. C'est simple, le pourboire n'est pas obligatoire, mais si vous voulez, vous pouvez laisser environ 5% de votre addition.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/transports/je-viens-louer-voiture-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_0000000003648243b9dbe119d8176cce-d1",
+      "source_sha256": "4f0599f37ee3f038437d46957a05ed802ae216ee2c8c46b53fdd7aa5cc071f05",
+      "candidate_sha256": "9ea8a58eba7a12f182febb9c35ba9bb1f7bf463011e3cf5ccf6fcfabb1fb2c52",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "189dd2125d16be27a4e265de51ba548e4f38e89db4cf8bb1d2729eed4ea030b2",
+      "post_cut_recognition": "Bonjour, vous êtes bien au 01 39 10 22 50 Bienvenue chez Lucie et Thomas. Laissez votre nom, prénom et un numéro de téléphone, s'il vous plaît.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/transports/chers-voyageurs-ameliorer-notre-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000a15881f4a286764cbf7d7e4c-d1",
+      "source_sha256": "212c73c4bff216dd65fea7991df2b78b28dd12776a55d96dc871df3d8fe55d49",
+      "candidate_sha256": "e838f22b43f7f888e22df0a069614f3905167af640812a5f994455994d140900",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "8419fe99a1ca507908ff43c1b4a17e797cec69db085d082ae32546965b9c4599",
+      "post_cut_recognition": "Et voici deux amis, Annie et Nadine. Annie Schulz, vous avez 37 ans, vous êtes suisse et vous êtes vendeuse. Et vous, Nadine Gatineau, vous êtes pharmacienne, vous êtes belge, et vous avez 42 ans. C'est bien ça?",
+      "comparison": {
+        "expected_token_coverage": 0.925,
+        "candidate_token_precision": 0.9487,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/transports/bonsoir-viens-d-entendre-l-annonce-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000de38820a8d363ac578821acb-d1",
+      "source_sha256": "704243a93d6c17955f44c7ae17a781b43d5799250a5fa9ff54509ccb0279bd3d",
+      "candidate_sha256": "69247621f42b8438e3c4931f5627180a59fb6b9d7ce080a61e8d60eb64393969",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "58fe4123a3298208bfe50e12aa0df61669f81856222ea3523d83d4d285cb1b88",
+      "post_cut_recognition": "Mais c'est Sophie. Sophie! Bonjour. Non. Moi c'est Nina. Pardon, Madame. Tu peux dire Nina, pas Madame. J'ai 25 ans. Et Sophie? C'est ma sœur. Ah! Enchantée, Nina. Moi, c'est Felipe. Enchantée, Felipe. Tu es l'ami brésilien de ma sœur? Je suis étudiante avec elle. Super. Et toi, tu es étudiante aussi? Non. Moi, je travaille déjà. Je suis ingénieure.",
+      "comparison": {
+        "expected_token_coverage": 0.9552,
+        "candidate_token_precision": 0.9697,
+        "flags": []
+      },
+      "transcript_unresolved_points": [
+        "Orthographe du prénom Felipe à confirmer."
+      ],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/transports/bonjour-viens-l-emploi-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_0000000078cc82108569569ac5f89d41-d1",
+      "source_sha256": "e47f6218a1d5ea67e0f37b0b2a6bd7810355bee2bc3f782bef8da89a93256543",
+      "candidate_sha256": "2b2c7fe39d2c5e8bc05efc61c78bda1d643be710b79160dfa9e0e13ef171af8f",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "1c837d0e946b73e8755616d3ec6697eb7ad1de92161b579f7de4ad08ffb66ada",
+      "post_cut_recognition": "Bonjour madame. Je viens pour l'emploi de vendeur dans votre entreprise. Ah oui! Vous êtes Monsieur Ken. Oui, c'est moi. Merci de me recevoir. Parlez-moi de vous. J'ai 39 ans, je suis patient et calme. Pourquoi vous voulez être vendeur? Parce que je suis dynamique et j'aime rencontrer des personnes. Très bien. Alors bienvenue dans notre équipe. Vous pouvez commencer demain? Avec plaisir, je suis disponible.",
+      "comparison": {
+        "expected_token_coverage": 0.9859,
+        "candidate_token_precision": 0.9859,
+        "flags": []
+      },
+      "transcript_unresolved_points": [
+        "Orthographe du nom Khan à confirmer."
+      ],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/travail/bonjour-week-end-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000d0088246bd6ac375feffe23e-d1",
+      "source_sha256": "fbd11eda3ea677337d7a77f653cc6e2f159f06230e5a538fdc659292e3c97c7b",
+      "candidate_sha256": "962c6c5c4271e509b1801c36280feddf739a6b2897ec4a0d2935c3d628f4d90c",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "cfe94cc67ebeedba64a9e0e6fb9400a43216639ce6a24986241c96770f2591a7",
+      "post_cut_recognition": "Bonjour. Le weekend des 3 et 4 octobre, la pharmacie de garde est la pharmacie du jardin, boulevard Rossi. Elle est ouverte le jour et la nuit. N'oubliez pas votre carte vitale et votre ordonnance.",
+      "comparison": {
+        "expected_token_coverage": 0.9459,
+        "candidate_token_precision": 0.9722,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/travail/vous-etes-france-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_0000000068cc82109743ef5a6781ab16-d1",
+      "source_sha256": "5f00918f5c4dcb5704fc1c72418f757015bd2aa720ca2a5a853c2b6719ff0a44",
+      "candidate_sha256": "08f4327510f0d1cd1f1e326c7514410342b120a40ab96a067a2fa0c309beb2ff",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "70804f936cceefc65597aee5e96cf3302b5bcd1b245bffc7b8af630d632d7308",
+      "post_cut_recognition": "Vous êtes en France et vous avez seulement une journée pour visiter une grande ville, prenez un vélo ou une trottinette électrique en libre service. À Paris, à Lyon, il y a beaucoup de stations au centre-ville et à côté des gares.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/travail/alors-marianne-pourquoi-prends-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_000000006e008243a9632eac8f4e89a0-d1",
+      "source_sha256": "7ec0830aebe1b0de30694f86370dba369a87cfe901e48f8dcb92231e6d2ad7e9",
+      "candidate_sha256": "6c12588e6ba83387ac9e2b9fa16fdc7b848e36902ae0a876f1de104f2013b5d4",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "edd46905bcde0ce351c6a9246503d1c7d1eada62adbb22cb130bdd5e26d6de7e",
+      "post_cut_recognition": "Alors Marianne, pourquoi tu ne prends pas le train? J'adore le covoiturage. Les conducteurs et les passagers sont sympas. Et les voitures confortables. Mais il n'y a pas de voiture bar. Et toi Antoine, tu n'aimes pas le train? Si, mais les billets sont trop chers. Et il y a souvent du retard. Et quand il y a une grève, les trains sont annulés. Claire, tu voyages toujours en voiture, toi? Non. Quand le trajet est long, je prends le train. Je réserve une place côenêtre et je dors. Et vous achetez vos billets sur l'appli de la SNCF? Oui, c'est simple et pratique. Quelle application? Montre moi",
+      "comparison": {
+        "expected_token_coverage": 0.9825,
+        "candidate_token_precision": 0.9912,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/travail/mesdames-messieurs-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000fb448210aaf1bc830a1ae7c8-d1",
+      "source_sha256": "da3695888748fc164f40bbe6ff5b482fae4f97cbb664bddde98fc9948ebab94b",
+      "candidate_sha256": "c24588327fe09331566924d40c327ce53312df7d53913cdbe7290d431cfe1c70",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "81a29501a74543237d4b4cb941f0d292ab2ba84d0a0f4599e67e885f706d5cda",
+      "post_cut_recognition": "Mesdames, Messieurs, bonjour. La vitesse de notre TGV est maintenant de 300 km heure. L'arrivée en gare de Bordeaux est prévue à 11h2 avec un retard de 5 minutes. La SNCF vous souhaite un excellent voyage.",
+      "comparison": {
+        "expected_token_coverage": 0.9744,
+        "candidate_token_precision": 0.9744,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/travail/pardon-trouve-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000995c8246b226c5766ab9252d-d1",
+      "source_sha256": "07b5bf5a358f181f380a3d2993491073468935a4dfbdce8977906693bb2bafaf",
+      "candidate_sha256": "da29adbcae80bedaa41cec32b87e5afaa797a7b29243b64e4830b2263b716c37",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "0d5e47de42d6ab262ba2db7fd7fb8ab6a946ed956e562094c62a98178030c21e",
+      "post_cut_recognition": "Pardon monsieur, je ne trouve pas ma valise sur le tapis 4. Votre numéro de vol est le KL173? Oui, je viens d'Amsterdam. Tous les bagages sont ici. Vous devez aller au service bagage.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/travail/chloe-as-deja-ta-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000ea9881f494010e64b6d62bb8-d1",
+      "source_sha256": "55038bf4a3c0d3564c66d684b3df7e3cce5a7033e47b42ad62f14bee03bbcc1a",
+      "candidate_sha256": "d8675e3ad65b9f38a2b9791ec0cd519d2e5eb0f604f79abc3164edb445f79b74",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "981f33c0495796f7d8bd70887c808f71dcc7222f45ad42f918aacb97dd2c53d3",
+      "post_cut_recognition": "Chloé, tu as déjà ta carte d'embarquement? Non, je dois aller au comptoir d'enregistrement. J'ai deux valises à enregistrer. Tu dois arriver à l'aéroport deux heures avant le départ, alors.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/travail/bonjour-bienvenue-camping-beau-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_000000003ed4820cad7d03a034738ac8-d1",
+      "source_sha256": "a50f23963360e946bddfcbacb4ed4ff28dbde07618c1bc7a14889c8a54e22f3e",
+      "candidate_sha256": "225641df928e4c572cbc669596b48b7610bdbf1b94bdcf82156f1dbb2020a757",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "5f6fd608f215f96b0ead626e52e8d3a501b48cda834c27abf8805cae75d904be",
+      "post_cut_recognition": "Bonjour et bienvenue au Camping Boval. Bonjour. On voudrait réserver pour deux nuits, s'il vous plaît. Vous avez une tante, un camping-car, une caravane peut-être? Non, on voudrait un bingalow pour quatre. Un moment. Je regarde les disponibilités. Il me reste deux bingalows pour quatre. Je vous montre sur le plan. Un ici, devant la rivière, et un autre à droite de la forêt. Qu'est-ce que vous préférez? La rivière, la rivière! La rivière! Devant la forêt, non? La rivière, la rivière! Bon, d'accord, à côté de la rivière. Et c'est combien, s'il vous plaît? 160 euros pour de nuit. C'est à quel nom? Nocella. Voilà ma carte. Merci. Et voilà la clé du bingalow numéro 23.",
+      "comparison": {
+        "expected_token_coverage": 0.9435,
+        "candidate_token_precision": 0.9286,
+        "flags": []
+      },
+      "transcript_unresolved_points": [
+        "Nom de réservation Nocella non épelé : orthographe à confirmer."
+      ],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/magasins/c-est-question-d-equilibre-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000a00881f4a6ac4f1b5a04df7f-d1",
+      "source_sha256": "9346d805b4518c68e5052be5dd8f074a6e4b006e0bec8a120b1d4268952e12a6",
+      "candidate_sha256": "7105fd541975c5ec62b348ba9949de4f901e28bb1d574b73454cb35a4fb02c99",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "7437f768a4dd625cb1de6a51b704b88f16188fde3d721f9b2351cb7c4af0cadd",
+      "post_cut_recognition": "Chérie, j'achète quoi? Deux baguettes, deux croissants. Des pains au chocolat. Oui, un pain au chocolat, mais pas de pain au raisin. D'accord.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/magasins/allo-docteur-roux-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000048082119050597069b0fdba-d1",
+      "source_sha256": "6cce29147e1e41182140d0c05f7045edea72017f4a3a61904271f5d00351ddc2",
+      "candidate_sha256": "804104fdfdc92ae234898119b87aab9f25dddff52b3a604774774ab3785458f9",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "5bdf573b179a95dbfec44f77baecb7c31f3eb54c2fb39aa27872cfe152ffe734",
+      "post_cut_recognition": "Allô, docteur Roux? C'est Madame Martin. Mon fils de 5 ans a une dent cassée. Est-ce que je peux venir au cabinet médical? Non. Appelez le cabinet dentaire, plutôt.",
+      "comparison": {
+        "expected_token_coverage": 1.0,
+        "candidate_token_precision": 1.0,
+        "flags": []
+      },
+      "transcript_unresolved_points": [],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/magasins/le-nouveau-cabinet-medical-1.mp3",
+      "candidate_id": "grammar-import-20261104-file_00000000b1088246bd2a9900e01f510b-d1",
+      "source_sha256": "aef2f08a4e95d9141dbc981c9dc1d771fefaa88c41e88367fa6619986e274266",
+      "candidate_sha256": "5607d41bc08cdf38ce79509c031519ca249f10a6065394cc36f8028d6fc853b3",
+      "status": "automatic_technical_checks_passed",
+      "exact_lossless_source_slice_verified": true,
+      "mp3_full_decode_verified": true,
+      "boundary_manifest_sha256": "d2bae3e2ff80d1f78520f5181b4023f5202769df34e2218218824b14b776a902",
+      "post_cut_recognition": "Le nouveau cabinet médical Les Trois Chaînes accueille cinq médecins. Pour vos dents, prenez rendez-vous avec le docteur Martin, dentiste. Pour vos yeux, téléphonez au Dr Jacques. Pour votre dos, appelez Madame Dubac. Pour vos enfants, prenez rendez-vous avec le docteur Lejeune, pédiatre.",
+      "comparison": {
+        "expected_token_coverage": 0.9778,
+        "candidate_token_precision": 0.9778,
+        "flags": []
+      },
+      "transcript_unresolved_points": [
+        "Orthographe du cabinet Trois Chaînes/Chênes et du nom Dubac à confirmer."
+      ],
+      "supplementary_french_recognition": null,
+      "supplementary_comparison": null,
+      "semantic_correctness_certified": false,
+      "human_listening_performed": false
+    }
+  ]
+}

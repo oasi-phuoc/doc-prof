@@ -10,6 +10,8 @@ try {
   const { createRng } = await vite.ssrLoadModule('/src/math/rng.ts')
   const { tcfBankAllLevels } = await vite.ssrLoadModule('/src/tcf/loader.ts')
   const { tcfTagForAudioDuration } = await vite.ssrLoadModule('/src/tcf/audio-tags.ts')
+  const { resolveTcfAudioReference } = await vite.ssrLoadModule('/src/tcf/audio-replacements.ts')
+  const { drawUnLongCompose, drawTroisMoyensCompose } = await vite.ssrLoadModule('/src/tcf/draw-series.ts')
   const all = []
   for (const level of ['a0-a1', 'a1-a2', 'a2-b1']) {
     for (const skill of ['ce', 'co']) {
@@ -26,6 +28,19 @@ try {
   const durations = JSON.parse(readFileSync('src/tcf/content/audio-durations.json', 'utf8'))
   const reviewedPools = JSON.parse(readFileSync('src/tcf/content/co-reviewed-pools.json', 'utf8'))
   const audioEntries = tcfAudioEntries(all.filter(ex => ex.competence === 'CO'))
+  const aliases = JSON.parse(readFileSync('src/tcf/content/audio-replacements.json', 'utf8'))
+  for (const [oldPath, currentPath] of Object.entries(aliases)) {
+    assert.equal(resolveTcfAudioReference(oldPath), currentPath)
+    assert.ok(audioEntries.some(entry => entry.audio === currentPath && entry.questionPool?.length), currentPath)
+  }
+  const legacyDress = '/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-3-4.mp3'
+  const restoredDress = drawUnLongCompose('A0-A1', createRng(42), { audioSlots: [legacyDress], questionCount: 10 })
+  assert.equal(restoredDress.support.audio, aliases[legacyDress])
+  assert.equal(restoredDress.questions.length, 10)
+  assert.ok(restoredDress.support.transcription.includes('robe bleue'))
+  const legacyMessage = '/lib/audio/tcf/co/transports/je-viens-louer-voiture-1.mp3'
+  const restoredMessage = drawTroisMoyensCompose('A0-A1', createRng(42), { audioSlots: [legacyMessage] })
+  assert.equal(restoredMessage.support.audios[0], aliases[legacyMessage])
   const audioPaths = new Set(all.filter(ex => ex.competence === 'CO').flatMap(ex =>
     ex.support.audios?.length ? ex.support.audios : [ex.support.audio]))
   assert.equal(audioEntries.length, audioPaths.size, 'Every audio remains indexed once')

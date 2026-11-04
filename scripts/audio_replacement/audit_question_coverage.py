@@ -44,6 +44,11 @@ def main():
     parser.add_argument('--out',type=Path,required=True)
     args=parser.parse_args()
     mapping={r['old_ref']:r for r in read(args.mapping)['proposals']}
+    canonical={ref:ref for ref in mapping}
+    for ref,row in mapping.items():
+        alias=row.get('proposed_ref',ref)
+        if alias in canonical and canonical[alias]!=ref:raise ValueError('Ambiguous current audio reference')
+        canonical[alias]=ref
     deliveries={}
     for work in args.work:
         for row in read(work/'staged-boundaries-work/mp3-index.json')['sources']:
@@ -60,7 +65,8 @@ def main():
             support=exercise.get('support',{})
             refs=support.get('audios') or [support.get('audio')]
             for ai,ref in enumerate(refs,1):
-                if ref not in mapping:
+                original_ref=canonical.get(ref)
+                if original_ref is None:
                     continue
                 selected=[]
                 unassigned=False
@@ -78,7 +84,7 @@ def main():
                         'prompt':prompt,'type_reponse':question.get('type_reponse'),
                         'choices':question.get('choix',[]),'structural_review_flags':issues,
                         'answer_correctness_certified':False})
-                uses[ref].append({'exercise_id':exercise['id'],'audio_index_1based':ai,
+                uses[original_ref].append({'exercise_id':exercise['id'],'audio_index_1based':ai,'current_audio_ref':ref,
                     'audio_scope':'single_audio' if len(refs)==1 else
                         'multi_audio_includes_unassigned_questions_require_review' if unassigned else
                         'multi_audio_explicit_question_indices',

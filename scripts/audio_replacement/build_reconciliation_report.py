@@ -54,8 +54,15 @@ def main():
     parser.add_argument('--repo',type=Path,default=Path(__file__).resolve().parents[2])
     parser.add_argument('--work',type=Path,required=True)
     parser.add_argument('--grammar-search',type=Path,help='Optional read-only source-identity search in the later grammar import')
+    parser.add_argument('--prepared-grammar',type=Path,help='Source-bound grammar cut delivery; identities alone do not count as cuts')
     args=parser.parse_args();repo=args.repo;work=args.work
     out=repo/'docs/tcf/remplacement-audio/rapprochement-432'
+    applied_path=repo/'docs/tcf/remplacement-audio/corrections-appliquees-20261104.json'
+    applied=read(applied_path) if applied_path.exists() else {}
+    current_exercises={e['id']:e for bank in (repo/'src/tcf/content').glob('*/co.json') for e in read(bank)}
+    corrected={r['after']['id']:r for r in applied.get('exercises',[])
+        if applied.get('production_modified') and current_exercises.get(r['after']['id'])==r['after']}
+    applied_aliases=applied.get('audio_reference_aliases',{}) if len(corrected)==len(applied.get('exercises',[])) else {}
     refs=read(work/'remaining-432-baseline.json');assert len(refs)==432
     extension_file=out/'extension-127/liaisons-a-decouper.json'
     if args.grammar_search:
@@ -152,6 +159,10 @@ def main():
                 next_action='Rétablir le passage sonore correspondant aux questions ; aucune réponse du thème absent ne doit être inventée.',
                 human_listening_performed=False)
             binding_mismatches.append(issue);match['binding_issue']=issue
+            if 'tcf-a1-sem1-co-2' in corrected:
+                issue.update(status='historical_mismatch_corrected_with_authentic_recordings_and_revised_questions',
+                    corrected=True,correction_report='../corrections-appliquees-20261104.json',
+                    next_action='Liaison corrigée dans la banque ; contrôle d’écoute humaine non attesté.')
         if name=='bonjour-voudrais-tickets-1.mp3':
             def question(prompt,answers):
                 return dict(enonce=prompt,type_reponse='qcm_texte',melanger=True,
@@ -166,6 +177,8 @@ def main():
                     question('Pourquoi le vendeur conseille-t-il un passe ou un carnet ?',['Parce que la personne a beaucoup de trajets à faire','Parce que la personne voyage avec un groupe','Parce que la personne a perdu ses billets']),
                     question('Pour quelle durée le passe proposé est-il valable ?',['Pour une journée','Pour une semaine','Pour un mois'])],
                 bank_modified=False,listening_performed=False))
+            if 'tcf-ss-a1-s44-co-4' in corrected:
+                question_revision_drafts[-1].update(status='applied_four_content_questions_and_clean_audio',bank_modified=True)
         matches.append(match)
     # Only prepared, byte-bound links with independently proved source identity
     # are added. Direct ASR by itself never creates a replacement mapping.
@@ -188,6 +201,26 @@ def main():
         old=merged.get(proposal['old_ref'])
         assert old is None or old.get('reconciliation_batch')=='20261104_remaining_432'
         merged[proposal['old_ref']]=proposal
+    grammar_delivery=read(args.prepared_grammar) if args.prepared_grammar else None
+    if grammar_delivery:
+        for proposal in grammar_delivery['proposals']:
+            identity=extended[proposal['old_ref']]
+            assert identity['source_sha256']==proposal['source_sha256']
+            assert sha(Path(grammar_delivery['work_root'])/proposal['candidate_work_file'])==proposal['candidate_sha256']
+            previous=merged.get(proposal['old_ref'])
+            assert previous is None or previous.get('reconciliation_batch')=='20261104_grammar_131'
+            merged[proposal['old_ref']]=proposal
+    for ref,new_ref in applied_aliases.items():
+        if ref in merged:
+            candidate=merged[ref]
+            delivery=next(r for r in applied['audios'] if r['destination']==new_ref)
+            assert candidate['candidate_sha256']==delivery['sha256']
+            candidate['proposed_ref']=new_ref
+            candidate['bank_correction_applied']=True
+    for match in matches:
+        if match['old_ref'] in merged:
+            match['status']='received_source_identified_candidate_prepared'
+            match['candidate_sha256']=merged[match['old_ref']]['candidate_sha256']
     unified.update(prepared_references=len(merged),proposals=list(merged.values()))
     write(unified_path,unified)
     # Register the extra assembly alongside the earlier immutable deliveries.
@@ -204,27 +237,29 @@ def main():
                          if c['source_sha256']==baseline_known[control['old_ref']]['source_sha256']),None) for control in controls]
     assert len(control_ranks)==48 and all(rank==1 for rank in control_ranks)
     all_identified=set(merged)|set(extended)
-    assert not set(extended).intersection(merged)
+    pending_extended={key:value for key,value in extended.items() if key not in merged}
     write(repo/'docs/tcf/remplacement-audio/identites-sources-unifiees.json',dict(schema_version=1,
         identified_references=len(all_identified),prepared_references=len(merged),
         references=[dict(old_ref=r['old_ref'],source_id=r['source_id'],source_sha256=r['source_sha256'],
             status='prepared_candidate_requires_listening_and_question_review',candidate_sha256=r['candidate_sha256'])
-            for r in merged.values()]+list(extended.values())))
+            for r in merged.values()]+list(pending_extended.values())))
     summary=dict(initial_unmatched_references=432,direct_transcriptions_completed=len(transcriptions),
         transcription_failures=0,independent_french_asr_checks=len(secondary),new_received_source_links=len(proposals),
         new_constant_offset_source_confirmations=constant,new_internally_edited_source_identifications=len(proposals)-constant,
         additional_read_only_grammar_source_entries=extension['source_entries'],
         additional_source_identities=len(extended),new_source_identities_total=len(proposals)+len(extended),
         prepared_reference_links_total=len(merged),identified_reference_links_total=len(all_identified),
-        identified_references_pending_segmentation=len(extended),remaining_without_received_source=1318-len(all_identified),
+        identified_references_pending_segmentation=len(pending_extended),remaining_without_received_source=1318-len(all_identified),
         remaining_with_direct_current_audio_transcription=432-len(proposals)-len(extended),
         source_receipts_searched=834+extension['source_entries'],distinct_source_files_searched=len(source_hashes),
         known_positive_controls=48,controls_retrieved_at_rank_one=48,
         candidate_pairs_examined=len(evidence['evidence'])+len(extra_attempts),
         full_waveform_or_first_8khz_anchor_checks=sum(r['status']!='coarse_signal_candidate_rejected' for r in evidence['evidence']+extra_attempts),
         discovery_only_coarse_rejections=sum(r['status']=='coarse_signal_candidate_rejected' for r in evidence['evidence']+extra_attempts),
-        confirmed_wrong_audio_bindings=len(binding_mismatches),new_lossless_verified_assemblies=1,
-        human_listening_performed=False,production_modified=False,bank_transcriptions_modified=False)
+        confirmed_wrong_audio_bindings=sum(not r.get('corrected') for r in binding_mismatches),
+        historical_wrong_audio_bindings_corrected=sum(bool(r.get('corrected')) for r in binding_mismatches),
+        new_lossless_verified_assemblies=1,
+        human_listening_performed=False,production_modified=bool(corrected),bank_transcriptions_modified=bool(corrected))
     meta=dict(schema_version=1,updated_at=dt.datetime.now(dt.timezone.utc).isoformat(),summary=summary)
     write(out/'etat.json',meta)
     write(out/'transcriptions.json',dict(schema_version=1,parameters=next(iter(actual.values()))['parameters'],
@@ -232,7 +267,7 @@ def main():
         listening_performed=False,production_modified=False,sources=transcriptions),compact=True)
     write(out/'correspondances.json',dict(**meta,proposals=proposals,references=matches))
     write(out/'corrections-a-preparer.json',dict(schema_version=1,confirmed_binding_mismatches=binding_mismatches,
-        question_revision_drafts=question_revision_drafts,bank_modified=False,listening_performed=False))
+        question_revision_drafts=question_revision_drafts,bank_modified=bool(corrected),listening_performed=False))
     write(out/'preuves-signal.json',evidence,compact=True)
     write(out/'controles-positifs.json',dict(fingerprint_ranks=control_ranks,
         coarse_calibration=read(work/'coarse-control-calibration.json'),
@@ -241,7 +276,7 @@ def main():
     progress.update(updated_at=meta['updated_at'],signal_confirmed_old_refs=886+constant+len(extended),
         old_refs_identified_with_internal_edits=len(proposals)-constant,
         old_refs_with_identified_source=len(all_identified),old_refs_with_prepared_candidate=len(merged),
-        old_refs_identified_pending_segmentation=len(extended),
+        old_refs_identified_pending_segmentation=len(pending_extended),
         old_refs_remaining_unmatched=1318-len(all_identified),assembled_mp3_candidates=14,
         initial_signal_confirmed_refs=672+sum(p['source_batch']=='initial' and p['signal_status']=='signal_source_confirmed' for p in proposals),
         additional_signal_confirmed_refs=451+sum(p['source_batch']=='additional' and p['signal_status']=='signal_source_confirmed' for p in proposals),
@@ -251,6 +286,22 @@ def main():
         shared_grammar_sources_consulted_read_only=extension['source_entries'],
         shared_grammar_signal_confirmed_refs=len(extended),
         reconciliation_432_report='rapprochement-432/etat.json')
+    if grammar_delivery:
+        progress.update(planned_segments=1548+grammar_delivery['lossless_cuts'],
+            prepared_flac_segments=1548+grammar_delivery['lossless_cuts'],
+            prepared_mp3_segments=1548+grammar_delivery['mp3_candidates'],
+            grammar_original_sources_transcribed=127,grammar_original_sources_preserved=127,
+            grammar_source_cut_candidates=grammar_delivery['mp3_candidates'],
+            grammar_source_prepared_refs=grammar_delivery['reference_count'])
+        progress['preferred_plan_indexes']['grammar']=grammar_delivery['preferred_plan_index']
+    if corrected:
+        progress.update(production_modified=True,corrected_exercises_with_clean_audio=len(corrected),
+            audio_replacements_applied=len(applied['audios']),
+            question_additions=3+sum(len(r['after']['questions'])-len(r['before']['questions']) for r in corrected.values()),
+            current_recording_fallback_cuts_prepared=2,
+            planned_segments=1681,prepared_flac_segments=1681,prepared_mp3_segments=1681,
+            received_source_prepared_segments=1679,
+            applied_corrections_report='corrections-appliquees-20261104.json')
     write(progress_path,progress)
     print(json.dumps(summary,ensure_ascii=False))
 

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-04T16:47:18.113475+00:00",
+  "updated_at": "2026-11-04T18:01:53.308306+00:00",
   "summary": {
     "initial_unmatched_references": 432,
     "direct_transcriptions_completed": 432,
@@ -12,9 +12,9 @@
     "additional_read_only_grammar_source_entries": 127,
     "additional_source_identities": 131,
     "new_source_identities_total": 135,
-    "prepared_reference_links_total": 890,
+    "prepared_reference_links_total": 1021,
     "identified_reference_links_total": 1021,
-    "identified_references_pending_segmentation": 131,
+    "identified_references_pending_segmentation": 0,
     "remaining_without_received_source": 297,
     "remaining_with_direct_current_audio_transcription": 297,
     "source_receipts_searched": 961,
@@ -24,11 +24,12 @@
     "candidate_pairs_examined": 3656,
     "full_waveform_or_first_8khz_anchor_checks": 1601,
     "discovery_only_coarse_rejections": 2055,
-    "confirmed_wrong_audio_bindings": 3,
+    "confirmed_wrong_audio_bindings": 0,
+    "historical_wrong_audio_bindings_corrected": 3,
     "new_lossless_verified_assemblies": 1,
     "human_listening_performed": false,
-    "production_modified": false,
-    "bank_transcriptions_modified": false
+    "production_modified": true,
+    "bank_transcriptions_modified": true
   },
   "proposals": [
     {
@@ -714,7 +715,8 @@
           "clean_boundaries_validated": false,
           "seeded_retry_performed": true
         }
-      }
+      },
+      "candidate_sha256": "8ff4e5254973906ae11043932e3fef8bae962f694da742cbe401abc19a52dc02"
     },
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-1.mp3",
@@ -834,14 +836,16 @@
         "exercise_ids": [
           "tcf-a1-sem1-co-2"
         ],
-        "status": "wrong_audio_question_binding_corroborated_by_two_independent_asr_runs",
+        "status": "historical_mismatch_corrected_with_authentic_recordings_and_revised_questions",
         "expected_topic_from_bank": "Achat de cerises : prix au kilo et quantité",
         "actual_topic": "restaurant d’entreprise",
         "bank_transcript": "Bonjour monsieur.\nC'est combien le kilo de se risent?\n6,40.\n6,40.\nJ'en veux 500 grammes.\nTrès bien.\nVoilà.\nBonjour monsieur.\nC'est combien le kilo de se risent?\n6,40.\n6,40.\nJ'en veux 500 grammes.\nTrès bien.\nVoilà.",
         "direct_asr_quote": "Le midi, vous pouvez manger au restaurant de l'entreprise. Ah oui? Et le restaurant ouvre à quelle heure? À 11h30. 11h30. D'accord. A tout à l'heure?",
         "independent_french_asr_quote": "Le midi, vous pouvez manger au restaurant de l'entreprise. Ah oui ? Et le restaurant ouvre à quelle heure ? À 11h30. 11h30. D'accord. À tout à l'heure ?",
-        "next_action": "Rétablir le passage sonore correspondant aux questions ; aucune réponse du thème absent ne doit être inventée.",
-        "human_listening_performed": false
+        "next_action": "Liaison corrigée dans la banque ; contrôle d’écoute humaine non attesté.",
+        "human_listening_performed": false,
+        "corrected": true,
+        "correction_report": "../corrections-appliquees-20261104.json"
       }
     },
     {
@@ -856,14 +860,16 @@
         "exercise_ids": [
           "tcf-a1-sem1-co-2"
         ],
-        "status": "wrong_audio_question_binding_corroborated_by_two_independent_asr_runs",
+        "status": "historical_mismatch_corrected_with_authentic_recordings_and_revised_questions",
         "expected_topic_from_bank": "Rendez-vous de médecine du travail",
         "actual_topic": "achat de cerises",
         "bank_transcript": "Pour la visite médicale, prenez rendez-vous avec le médecin du travail.\nC'est le docteur chéré.\nSon téléphone est le 01, 48, 24, 32.\nMerci.\nJe téléphone tout de suite.\nPour la visite médicale, prenez rendez-vous avec le médecin du travail.\nC'est le docteur chéré.\nSon téléphone est le 01, 48, 24, 32.\n01, 48, 24, 32.\nMerci.\nJe téléphone tout de suite.",
         "direct_asr_quote": "Dialogue numéro 2. Bonjour monsieur. C'est combien le kilo de cerise? 6h40. 6,40 €? J'en veux 500 grammes. Très bien. Voilà.",
         "independent_french_asr_quote": "- Bonjour Monsieur, c'est combien le kilo de cerise ? - 6,40 €. - 6,40 € ? J'en veux 500 g. - Très bien. Voilà.",
-        "next_action": "Rétablir le passage sonore correspondant aux questions ; aucune réponse du thème absent ne doit être inventée.",
-        "human_listening_performed": false
+        "next_action": "Liaison corrigée dans la banque ; contrôle d’écoute humaine non attesté.",
+        "human_listening_performed": false,
+        "corrected": true,
+        "correction_report": "../corrections-appliquees-20261104.json"
       }
     },
     {
@@ -891,14 +897,16 @@
         "exercise_ids": [
           "tcf-a1-sem1-co-2"
         ],
-        "status": "wrong_audio_question_binding_corroborated_by_two_independent_asr_runs",
+        "status": "historical_mismatch_corrected_with_authentic_recordings_and_revised_questions",
         "expected_topic_from_bank": "Essayage d’une robe en taille 38",
         "actual_topic": "achat de cerises",
         "bank_transcript": "Bonjour.\nEst-ce que je pourrais essayer cette robe s'il vous plaît?\nOui, bien sûr.\nQuelle est votre taille?\n38.\n38.\nVoilà.\nBonjour.\nEst-ce que je pourrais essayer cette robe s'il vous plaît?\nOui, bien sûr.\nQuelle est votre taille?\n38.\n38.\nVoilà.",
         "direct_asr_quote": "Bonjour monsieur. C'est combien le kilo de cerise? 6 euros quarante. 6 euros quarante? J'en veux 500 grammes. Très bien.",
         "independent_french_asr_quote": "Bonjour Monsieur, c'est combien le kilo de cerise ? 6,40 € 6,40 € ? J'en veux 500 g. Très bien.",
-        "next_action": "Rétablir le passage sonore correspondant aux questions ; aucune réponse du thème absent ne doit être inventée.",
-        "human_listening_performed": false
+        "next_action": "Liaison corrigée dans la banque ; contrôle d’écoute humaine non attesté.",
+        "human_listening_performed": false,
+        "corrected": true,
+        "correction_report": "../corrections-appliquees-20261104.json"
       }
     },
     {
@@ -934,7 +942,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/actualite/03-actualité-la-fête-des-voisins.mp3",
       "audio_sha256": "23664eea7b29181a84dda0e203fab2a29fb9c60beec2d74e87fe6b45c77f64c9",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -993,12 +1001,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/fetes/piste033.mp3"
+      "source_audio": "/lib/audio/grammaire/co/fetes/piste033.mp3",
+      "candidate_sha256": "a3816815b1bd56e1e4b52d94c09e778750d57b3ac8bd5d34a3db54f7f911da66"
     },
     {
       "old_ref": "/lib/audio/tcf/co/fetes/22-invitation-apéro-à-la-maison.mp3",
       "audio_sha256": "e75647507fbd8c60ca388caf42702ca3034e6a3a1d62b779d81fec20b71c49bf",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -1057,12 +1066,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/fetes/piste036.mp3"
+      "source_audio": "/lib/audio/grammaire/co/fetes/piste036.mp3",
+      "candidate_sha256": "eb4cd4849735379dfec2544f45a4e367a69199bb8e5b4460ef5287d368cd7d8d"
     },
     {
       "old_ref": "/lib/audio/tcf/co/fetes/21-fêtes-ouf-c-est-bon.mp3",
       "audio_sha256": "c659a1fa55c01a88998510de19ee083bd301bfed3553f88b81ee6831750b15a1",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -1121,12 +1131,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/fetes/piste037.mp3"
+      "source_audio": "/lib/audio/grammaire/co/fetes/piste037.mp3",
+      "candidate_sha256": "803a897b70f18aea722cf1bd20d317b52728ed8512ac3ca0ac48ca2f823f64ac"
     },
     {
       "old_ref": "/lib/audio/tcf/co/famille/21-famille-appeler-une-amie-Lorie.mp3",
       "audio_sha256": "59e1f2a79aaae22a400217df0891a15c248edb918e921c6bb55533adb2ae75d9",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -1185,12 +1196,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/famille/piste025.mp3"
+      "source_audio": "/lib/audio/grammaire/co/famille/piste025.mp3",
+      "candidate_sha256": "e966458c84bd5e4b025c7c9a06aa14905b26d40d70287e6546cdf4ff610fd7fe"
     },
     {
       "old_ref": "/lib/audio/tcf/co/transports/03-transport-comment-aller-chez-Magali.mp3",
       "audio_sha256": "168b706ec4567cbbb99963ab55823a6a18e058a111b98c32e42b73472f07ba3d",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -1249,12 +1261,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/se-deplacer/piste166.mp3"
+      "source_audio": "/lib/audio/grammaire/co/se-deplacer/piste166.mp3",
+      "candidate_sha256": "3fe48ad2082e444cde79a3248a33cd4d7cccd4802e6a56e08419ee1b385147d7"
     },
     {
       "old_ref": "/lib/audio/tcf/co/actualite/10-actualité-achat-e-ticket.mp3",
       "audio_sha256": "1cb9670285d31e628d4a6ac53e7e6373a924781100569001c555920fc957ad65",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -1313,12 +1326,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/se-deplacer/piste167.mp3"
+      "source_audio": "/lib/audio/grammaire/co/se-deplacer/piste167.mp3",
+      "candidate_sha256": "973cbd9cc9caa43568b2f5def6666d555db76a9d995926faeca4881789d6ec49"
     },
     {
       "old_ref": "/lib/audio/tcf/co/ecole/30-école-presenter-nael-kervelek.mp3",
       "audio_sha256": "ec71101b91037c5ff1aa719cc38249c302f5a37be7d5b1679c4ba55751f80bee",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -1377,12 +1391,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/presenter/piste011.mp3"
+      "source_audio": "/lib/audio/grammaire/co/presenter/piste011.mp3",
+      "candidate_sha256": "114447fe890052119ea074f42157676f04ceeb553474e2b7aec4edcf5e2fc9a4"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/regarde-j-ai-photo-mariage-1.mp3",
       "audio_sha256": "7d8163b201f062cccca1d82d0aab672bf71f1e82e2fbd4ddde9bfb15174f15a2",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -1441,12 +1456,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/famille/piste016.mp3"
+      "source_audio": "/lib/audio/grammaire/co/famille/piste016.mp3",
+      "candidate_sha256": "209e88bc9a1a07559fdf5856ce7bfa882835fa61caf4ab9856365cc0ca875036"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/lea-j-ai-question-c-est-1.mp3",
       "audio_sha256": "a5051fdae66b75db1064395636b54eb198073fe39961615c15a69bf4679016bb",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -1505,12 +1521,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/famille/piste026.mp3"
+      "source_audio": "/lib/audio/grammaire/co/famille/piste026.mp3",
+      "candidate_sha256": "9ef7525525a9294f91d6e81e803742694a44ffa2f8c797fe28fa51f81ee9990b"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/allo-manon-c-est-flo-1.mp3",
       "audio_sha256": "2e928fbf3d6fee6dd6738b92f6b86afe8d5bf28b2ecd872035d1ef0c1e0f32ab",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -1569,12 +1586,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/reglement-immeuble/piste069.mp3"
+      "source_audio": "/lib/audio/grammaire/co/reglement-immeuble/piste069.mp3",
+      "candidate_sha256": "e2ea9d096ebb0a0f494f8472b470a46fe06c5d4a260c82912b54fb100d69d8f9"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-nouvelle-2.mp3",
       "audio_sha256": "71c96e3cbf9a24fae490326ff8d9a9fe358ebe5a3e2d3c10a303d703465fd069",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -1633,12 +1651,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/universite-ecole/piste072.mp3"
+      "source_audio": "/lib/audio/grammaire/co/universite-ecole/piste072.mp3",
+      "candidate_sha256": "80b4870d3c63fef136b32417bd8f5051fe929c37e4c8c2230d0b2649ea85f067"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/01-quotidien-problème-avec-la-box.mp3",
       "audio_sha256": "ba6ecfe56f97f0a42a667033248b34d41937ee545f080844f4383f92ca1690b3",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -1697,12 +1716,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/problemes-domestiques/piste057.mp3"
+      "source_audio": "/lib/audio/grammaire/co/problemes-domestiques/piste057.mp3",
+      "candidate_sha256": "d8aa19bfdc3393392b3d79b60e5937ebe20dbac7921b0cf0ddc68764eb63e790"
     },
     {
       "old_ref": "/lib/audio/tcf/co/radio/07-radio-météo-à-Grenoble.mp3",
       "audio_sha256": "fa186e41c83b26d3bd9f9c05b698eb156347fb9bbf43b644ce03d63dbaa570a5",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -1761,12 +1781,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/magasin-vetements/piste111.mp3"
+      "source_audio": "/lib/audio/grammaire/co/magasin-vetements/piste111.mp3",
+      "candidate_sha256": "431ac3e579d08e317f3ba4341bf9172485108c4c807fe0c2eda5fa12d46e5250"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/ca-te-dit-venir-1.mp3",
       "audio_sha256": "3a8455a1058ad83f24c314941008785a7f7f62f61b74232cc80e1d7c3bcc0d70",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -1825,12 +1846,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/logement/piste044.mp3"
+      "source_audio": "/lib/audio/grammaire/co/logement/piste044.mp3",
+      "candidate_sha256": "9157ce4f3d66dfad06c5aab8e8047daf69b45af61eda55acd29352503e3353dc"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/inscrivez-l-association-etudiants-1.mp3",
       "audio_sha256": "12fc95f6ce12dcbc485d81ae75d3a348c760f67a2793230c3f610836104c5e44",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -1889,7 +1911,8 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/universite-ecole/piste080.mp3"
+      "source_audio": "/lib/audio/grammaire/co/universite-ecole/piste080.mp3",
+      "candidate_sha256": "aee90844b3caa5de61e6f2202d17bfa25cd908c09812ffb0fd76d9a51bdd2453"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/tu-travailles-ou-1.mp3",
@@ -1909,7 +1932,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/aujourd-hui-ecoutons-recette-sandwich-1.mp3",
       "audio_sha256": "1f493325669867759b5dd9d17c31b49392e6408dffb2b4ed89965dc7db1599e9",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -1968,7 +1991,8 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/boulangerie/piste136.mp3"
+      "source_audio": "/lib/audio/grammaire/co/boulangerie/piste136.mp3",
+      "candidate_sha256": "15cba992d5949eb8c68a53e0865a33052810280258483927c80b425eaec07c0f"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vous-avez-ordonnance-2.mp3",
@@ -2009,7 +2033,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/maison/bonjour-etes-norin-1.mp3",
       "audio_sha256": "3d8d64a745af711da410175dd937b469b455f88a439240b3d27942771eebef4f",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -2068,12 +2092,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/famille/piste022.mp3"
+      "source_audio": "/lib/audio/grammaire/co/famille/piste022.mp3",
+      "candidate_sha256": "50b44bc8794f6daa6891f58554d2e8983bc84f92c17089eef38da742eb629b04"
     },
     {
       "old_ref": "/lib/audio/tcf/co/maison/une-visite-d-appartement-c-est-1.mp3",
       "audio_sha256": "84c4055e00619780577c4412f81603f46703dee1da4d84e07281d24874471b9f",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -2132,12 +2157,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/famille/piste023.mp3"
+      "source_audio": "/lib/audio/grammaire/co/famille/piste023.mp3",
+      "candidate_sha256": "0468c195d91b77de7549e438d265d667038a81a17cb293fd7462154a7b94f582"
     },
     {
       "old_ref": "/lib/audio/tcf/co/maison/salut-flo-alors-cette-2.mp3",
       "audio_sha256": "f3bbe8d381e0df41560f49370eacdbba062d1d3270b3548a457f7eba0134da00",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -2196,12 +2222,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/famille/piste024.mp3"
+      "source_audio": "/lib/audio/grammaire/co/famille/piste024.mp3",
+      "candidate_sha256": "efb0ed7fd4694d94fde2918afc0e30bd8ad1a2b0ce93a9264c9dfc8c9e598ae7"
     },
     {
       "old_ref": "/lib/audio/tcf/co/maison/merci-bouquet-tulipes-1.mp3",
       "audio_sha256": "25d206457c9a55109047c1610b469e877ee603af3935db4ec44118442c8f8a9c",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -2260,12 +2287,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/logement/piste046.mp3"
+      "source_audio": "/lib/audio/grammaire/co/logement/piste046.mp3",
+      "candidate_sha256": "9298984247d1240a95b8227c043a15fd9de9a35ebd95cc96ac08d254aa587fe5"
     },
     {
       "old_ref": "/lib/audio/tcf/co/maison/la-nouvelle-collection-printemps-1.mp3",
       "audio_sha256": "20c5a1a500be49c940697c88220f418fc116ffa1e758b03ac81a114271bf202c",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -2324,7 +2352,8 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/magasin-vetements/piste112.mp3"
+      "source_audio": "/lib/audio/grammaire/co/magasin-vetements/piste112.mp3",
+      "candidate_sha256": "ee823cabbb723b7e16b357ad997946b81948113532d59dac68674a7829031a4d"
     },
     {
       "old_ref": "/lib/audio/tcf/co/maison/vous-avez-mal-ou-1.mp3",
@@ -2365,7 +2394,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/loisirs/bonjour-voudrais-voir-1.mp3",
       "audio_sha256": "edfb4b9e8bee27822863d10bbaf720c8493824a212d5c5b7583673b1b37ac8ed",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -2430,12 +2459,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/magasin-vetements/piste113.mp3"
+      "source_audio": "/lib/audio/grammaire/co/magasin-vetements/piste113.mp3",
+      "candidate_sha256": "e5675ae9643008086c85753e6e38f1d4ce9c66467df456e18c28a8b643aaa817"
     },
     {
       "old_ref": "/lib/audio/tcf/co/loisirs/je-dejeune-tous-jours-1.mp3",
       "audio_sha256": "7414ab85ea5b316213ce61be919ff31e37f9491b4db325862ac9b71c81eaa839",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -2494,12 +2524,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/restaurant/piste122.mp3"
+      "source_audio": "/lib/audio/grammaire/co/restaurant/piste122.mp3",
+      "candidate_sha256": "3e9d77157ba29e3aa0db6ed11f587570b1bdd9f5b5f7496a3bbcbe9da3dd2b6d"
     },
     {
       "old_ref": "/lib/audio/tcf/co/loisirs/nature-1.mp3",
       "audio_sha256": "314228ec5b66672a1f5f7d7e80a2f0524eef4db3afe93e6e1cd03783e2b99a53",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -2558,12 +2589,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/medecin/piste146.mp3"
+      "source_audio": "/lib/audio/grammaire/co/medecin/piste146.mp3",
+      "candidate_sha256": "299b15c194ab045ef4e70932b4e603a0753ca59683a55e5c787c50aebe65c79b"
     },
     {
       "old_ref": "/lib/audio/tcf/co/maison/bonjour-racine-1.mp3",
       "audio_sha256": "65624c2f403018635a4040dd5e99bb5e312e1551bb9ea468ccb97dd429ae3093",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -2622,12 +2654,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/universite-ecole/piste082.mp3"
+      "source_audio": "/lib/audio/grammaire/co/universite-ecole/piste082.mp3",
+      "candidate_sha256": "a3b83c38dae7ec615765c415e62d98eb6192580af95fdc1499885b21521075da"
     },
     {
       "old_ref": "/lib/audio/tcf/co/maison/le-lundi-n-est-journee-1.mp3",
       "audio_sha256": "5ac7542caf81df85f8c17fd4cf59911dc00fe6db7840d3ad61f8f3cc5c26756c",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -2686,12 +2719,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/quotidien/piste090.mp3"
+      "source_audio": "/lib/audio/grammaire/co/quotidien/piste090.mp3",
+      "candidate_sha256": "f2ce2babc440494e0dc1aabc08199f9ad5ef8e895a775fc116194a6b194e9c64"
     },
     {
       "old_ref": "/lib/audio/tcf/co/maison/bonjour-directeur-demain-votre-2.mp3",
       "audio_sha256": "478f64959bfbb2d349dceec2193ecc16687d4023dfe8d1044b86df84ad170161",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -2750,12 +2784,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/travail/piste101.mp3"
+      "source_audio": "/lib/audio/grammaire/co/travail/piste101.mp3",
+      "candidate_sha256": "c08fbeddead2a34ebd230794b4aa5ecfec3aeac1b3d9b6af157fc2c98c2dcdbc"
     },
     {
       "old_ref": "/lib/audio/tcf/co/maison/le-restaurant-d-entreprise-mille-1.mp3",
       "audio_sha256": "ab3c0f43090c1cd92f554b24c9cdf10582902e01502fe12071de3c6f713273ad",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -2814,12 +2849,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/travail/piste102.mp3"
+      "source_audio": "/lib/audio/grammaire/co/travail/piste102.mp3",
+      "candidate_sha256": "1211cc703cb5d1435b65f455eb9aa707bea98cee3c997160bac7f413c5d8e9c7"
     },
     {
       "old_ref": "/lib/audio/tcf/co/maison/vous-avez-mal-ou-3.mp3",
       "audio_sha256": "dcbbb260a02f00a88169d0ade42d356eeead8f5dfc8c6c0b7114d468ce051908",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -2884,12 +2920,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/medecin/piste138.mp3"
+      "source_audio": "/lib/audio/grammaire/co/medecin/piste138.mp3",
+      "candidate_sha256": "d9ff2333274351a00fa7087559f26aea2be635953060febf7a7ae1b199a7d5fa"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-bugier-1.mp3",
       "audio_sha256": "d026479ddb7355223dd71b1134a5a2701efd82f5efda92fb84b7b09e88c0be8b",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -2948,7 +2985,8 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/fetes/piste027.mp3"
+      "source_audio": "/lib/audio/grammaire/co/fetes/piste027.mp3",
+      "candidate_sha256": "3273179112a10a7f22e8f8104a4d22f842dca45055d4b9926539eeedf2b47519"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/j-organise-apero-es-libre-1.mp3",
@@ -2968,7 +3006,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-nicolas-dimanche-octobre-1.mp3",
       "audio_sha256": "86e93f5d8b817fd3399256367514ca3e37c4540fd778e8c4f1183a960bfeed04",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -3027,12 +3065,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/fetes/piste034.mp3"
+      "source_audio": "/lib/audio/grammaire/co/fetes/piste034.mp3",
+      "candidate_sha256": "413494b04c329bbca21fb749c9b80079bf7c33dc4dfd32524bd478ce46015f7f"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/ah-roxane-1.mp3",
       "audio_sha256": "f56087c4937e4e64fe11cae519e774426347f254d6dcd6298962bb50c5c24b93",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -3091,12 +3130,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/fetes/piste035.mp3"
+      "source_audio": "/lib/audio/grammaire/co/fetes/piste035.mp3",
+      "candidate_sha256": "a1ac2e1991035673c36b52cc8e62fe5ccdd9d2c75e1593946136007ea8c5b93b"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/nous-sommes-aujourd-hui-maison-1.mp3",
       "audio_sha256": "f0ef4f6d411092565276cbab8fc09ca335c9a935c277520e7c3cccbf59b34e7a",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -3155,12 +3195,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/logement/piste045.mp3"
+      "source_audio": "/lib/audio/grammaire/co/logement/piste045.mp3",
+      "candidate_sha256": "7d5dbf1ca76538bb0b28a7ca2bd35d82a2846a04af65347a7c285d7a14271e08"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/la-societe-allo-paul-1.mp3",
       "audio_sha256": "0278f93bac68308a0fcd0ef15621be78aa6d01bf7dbad7289ace1ac87eb846b9",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -3219,12 +3260,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/problemes-domestiques/piste056.mp3"
+      "source_audio": "/lib/audio/grammaire/co/problemes-domestiques/piste056.mp3",
+      "candidate_sha256": "d034d0c47b689a4f78276c87f268520929eddfe8670cd388e113ff51b1cda65a"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-objet-2.mp3",
       "audio_sha256": "0780af8fc7eccb6a465d1bdb42f1309349fb0fac5e2f17fce4d069376f118cf5",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -3283,12 +3325,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/problemes-domestiques/piste059.mp3"
+      "source_audio": "/lib/audio/grammaire/co/problemes-domestiques/piste059.mp3",
+      "candidate_sha256": "b79d0487986899ae8500aafc4517c1938a90d430bc46361a9b7fe26883a15bc6"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/repar-serrure-1.mp3",
       "audio_sha256": "cd327e70353f0c547c2e969e5edc6906a32095e5d9f6d860e33cc440414b0675",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -3347,12 +3390,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/problemes-domestiques/piste060.mp3"
+      "source_audio": "/lib/audio/grammaire/co/problemes-domestiques/piste060.mp3",
+      "candidate_sha256": "693a858f76309ceb92cad795bd840b91588df065584f6f57d5432d2d118a16ac"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-objet-4-1.mp3",
       "audio_sha256": "4971f9e59126676947040c79ef0f1fb97278027e68fdf961aef19a52956c0efe",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -3417,12 +3461,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/reglement-immeuble/piste067.mp3"
+      "source_audio": "/lib/audio/grammaire/co/reglement-immeuble/piste067.mp3",
+      "candidate_sha256": "d1297379b44f168f9deefff38a0fad33c3460d6c070da0c50c0a141cbc932af4"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-objet-4-2.mp3",
       "audio_sha256": "503572d3c4d4fdcf18c99aef67396cecb2e7a4dd8553f646fed87f76c273b92e",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -3483,12 +3528,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/reglement-immeuble/piste067.mp3"
+      "source_audio": "/lib/audio/grammaire/co/reglement-immeuble/piste067.mp3",
+      "candidate_sha256": "62b9dc8d7f67af2b52f44bb01b19a79f592327f93f75038baef5bdca9b8083de"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-objet-4-3.mp3",
       "audio_sha256": "e35f93c7943c2473547fcff5e2684dcb4ef634cf4b7bef7d2e043dcba0736610",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -3553,12 +3599,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/reglement-immeuble/piste067.mp3"
+      "source_audio": "/lib/audio/grammaire/co/reglement-immeuble/piste067.mp3",
+      "candidate_sha256": "343d704e89a729339653ac3a2a2f966b7499ef25751c9d0e889594a8b081f25e"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-objet-4-4.mp3",
       "audio_sha256": "45009604324abae6b3047befbc05130557398b58bd6b5855a254bcb81f14cf4e",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -3623,12 +3670,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/reglement-immeuble/piste067.mp3"
+      "source_audio": "/lib/audio/grammaire/co/reglement-immeuble/piste067.mp3",
+      "candidate_sha256": "f053b3e044a179ecc9bde79c054dac569ec7b44673f6acea47223662a1b35807"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-objet-4-5.mp3",
       "audio_sha256": "19bc08ab4b30070466454ed725bb81d509a6497c7476b12e047b8bf375c2e2f2",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -3693,12 +3741,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/reglement-immeuble/piste067.mp3"
+      "source_audio": "/lib/audio/grammaire/co/reglement-immeuble/piste067.mp3",
+      "candidate_sha256": "1aad1e6511e916c1a619ae52bffa82f5e69997d86c78b0c97ec0afc8403b3ccc"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-signoret-c-est-blanc-1.mp3",
       "audio_sha256": "810b9d253ad3a6c94514f05b242f697e896d123ae1bc168d9a1d3a1b3c4c0994",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -3757,12 +3806,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/reglement-immeuble/piste068.mp3"
+      "source_audio": "/lib/audio/grammaire/co/reglement-immeuble/piste068.mp3",
+      "candidate_sha256": "15c4dccd70977160119995547878c9edee24ab45a928001272de1ea6fdd3ed88"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/salut-cherche-bureau-1.mp3",
       "audio_sha256": "6e14093e0d8834faed48f7ad7d5ed97823d8ba571f069ca3359917806c905285",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -3821,12 +3871,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/universite-ecole/piste081.mp3"
+      "source_audio": "/lib/audio/grammaire/co/universite-ecole/piste081.mp3",
+      "candidate_sha256": "9c6aa17caf04e9c2b7536cf2e177282a923700c15bcd9e644c1d62e49ba8a0ac"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/sacha-retard-1.mp3",
       "audio_sha256": "5b8903e5d23c92796d506cdcf26346871b6e2630e40bc70c84c368f2b7864c5a",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -3885,12 +3936,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/quotidien/piste083.mp3"
+      "source_audio": "/lib/audio/grammaire/co/quotidien/piste083.mp3",
+      "candidate_sha256": "1579c7a8018e5182f5a9e16d6dabbbfa58dffdfe484108f6a78cee2f1c33104c"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/d-habitude-fais-quoi-week-1.mp3",
       "audio_sha256": "b02a4b95102e78d977a5a52f830f684452daa1d41654c9822678bfa85ce21594",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -3949,12 +4001,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/quotidien/piste089.mp3"
+      "source_audio": "/lib/audio/grammaire/co/quotidien/piste089.mp3",
+      "candidate_sha256": "369a78fb045fb7f00fc6d752fa1fea65212cb524f903db50fb0b90e86698a67c"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/athletic-nouveau-club-sportif-1.mp3",
       "audio_sha256": "47391b068d660764dcb45980b8e771e72deeb8b62968e37680f3ed86bafb1634",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -4013,12 +4066,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/quotidien/piste091.mp3"
+      "source_audio": "/lib/audio/grammaire/co/quotidien/piste091.mp3",
+      "candidate_sha256": "dfd6f9a03168d52ab7fbe8c1485eb63c1bc95578628281c2056d21ac222c57b7"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/salut-christian-toujours-l-heure-1.mp3",
       "audio_sha256": "1d6d4dae288ed16145871d5cc77193983a9409f4051753ebf55e2fc6af9f9958",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -4077,12 +4131,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/quotidien/piste092.mp3"
+      "source_audio": "/lib/audio/grammaire/co/quotidien/piste092.mp3",
+      "candidate_sha256": "ac6e88ee996940b70c5ff67c3fdd620cdd5cd4cb15f6efdba77eda716ad70a46"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/catherine-prend-petit-dejeuner-1.mp3",
       "audio_sha256": "4f848bc0f70174c106bc4a84d64d5533756cd036a7fbbc6f2924c4e089e87eb0",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -4141,12 +4196,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/quotidien/piste093.mp3"
+      "source_audio": "/lib/audio/grammaire/co/quotidien/piste093.mp3",
+      "candidate_sha256": "eab2d91091d4bef05b2ca780863d925520a7f9589e602b1894835a00c0b6095f"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/oh-la-la-la-1.mp3",
       "audio_sha256": "01b359cc4b46fe3b770dd2381fc7fd59fd3e7ec8fd962c0c79d3396daa2da5a9",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -4205,12 +4261,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/travail/piste094.mp3"
+      "source_audio": "/lib/audio/grammaire/co/travail/piste094.mp3",
+      "candidate_sha256": "d1d4e43e96d6916b4b99302d739a8282f092a89d0c5eeac2e03bce9f93512406"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-tous-philippe-hugon-1.mp3",
       "audio_sha256": "3304a597b5596fccb099609a326ef69a8874b6169a8fa29375653be8d996a23e",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -4269,12 +4326,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/travail/piste100.mp3"
+      "source_audio": "/lib/audio/grammaire/co/travail/piste100.mp3",
+      "candidate_sha256": "c841a3d743c6dcfa684ba48fb765362a50b8b5c1384af478bc21c99595a2a7d2"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-viens-reparer-1.mp3",
       "audio_sha256": "e1c49f412e010e7ec5d653f7969d649e33f265445120a7fab93a172d3d767866",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -4333,12 +4391,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/travail/piste103.mp3"
+      "source_audio": "/lib/audio/grammaire/co/travail/piste103.mp3",
+      "candidate_sha256": "11acf70be6179630441f16444d6dc9d8afd0e913e142da4108ef85d87568ec97"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-peux-aider-1.mp3",
       "audio_sha256": "aaaaabe94098faf1cd719593098dc11ead665565b6baaaa2836b85fb5d2b30f4",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -4397,12 +4456,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/magasin-vetements/piste105.mp3"
+      "source_audio": "/lib/audio/grammaire/co/magasin-vetements/piste105.mp3",
+      "candidate_sha256": "8bda8574cdc809f48f27a859e8a53d9576668dc2779fc729d0e8bb3e047b1d52"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-objet-6.mp3",
       "audio_sha256": "683c7a22cb62d192db5eb73a3f1fef306b0621d53d97117cfb9ab4a910861456",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -4461,12 +4521,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/magasin-vetements/piste115.mp3"
+      "source_audio": "/lib/audio/grammaire/co/magasin-vetements/piste115.mp3",
+      "candidate_sha256": "9f75c518c964f55e5790a31fa5e154e352516ec10fb6d7e0a9e4a9aeb1a768ba"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-c-est-dejeuner-1.mp3",
       "audio_sha256": "58522bbd191770cfd544e39853b640af04d55733e896f59f33431694442aefde",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -4525,12 +4586,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/restaurant/piste116.mp3"
+      "source_audio": "/lib/audio/grammaire/co/restaurant/piste116.mp3",
+      "candidate_sha256": "1e5632c71fc34748def59d5dd79ec2faa325444c0c919b485e88207c43aaa18a"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/delideli-peux-prendre-votre-1.mp3",
       "audio_sha256": "8a152ed91a44e1f20c181f67872b3ba21483668e7f9bad6826d434738b1bb2de",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -4595,12 +4657,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/restaurant/piste123.mp3"
+      "source_audio": "/lib/audio/grammaire/co/restaurant/piste123.mp3",
+      "candidate_sha256": "44269be31e4f9d59ee7aab720efa55620898d2a6d499ebabba72089d7794f64b"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-messieurs-dames-voici-1.mp3",
       "audio_sha256": "b35e06c2a32f583562c7b249bae68282195baa66706294fd17e9aa3432bcdf7a",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -4659,12 +4722,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/restaurant/piste124.mp3"
+      "source_audio": "/lib/audio/grammaire/co/restaurant/piste124.mp3",
+      "candidate_sha256": "4c4154903077c923e9f17c2c9aee8d0601f8b60163a964008f76f6fa444e579d"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-avons-reservation-1.mp3",
       "audio_sha256": "8234df0b5d8285d244ffa45455a8a780cdf508be8082b2324640a5065455bd3a",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -4723,12 +4787,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/restaurant/piste126.mp3"
+      "source_audio": "/lib/audio/grammaire/co/restaurant/piste126.mp3",
+      "candidate_sha256": "e1e3121bec0d23e2062e45ee1ad118c4347b71f2d4ece9b07d66bc8dda3b520d"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vous-adorez-croissants-macaron-1.mp3",
       "audio_sha256": "c772c98b1b9e15f4ea91a6872e0ae533e7988369935dac239ccbdc54d8cb5264",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -4787,12 +4852,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/boulangerie/piste133.mp3"
+      "source_audio": "/lib/audio/grammaire/co/boulangerie/piste133.mp3",
+      "candidate_sha256": "a5c06f51bc6d6d323b13a4e108d4458ffe538adf7a78185bcda6362750086e83"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/salut-lea-1.mp3",
       "audio_sha256": "10f53ed4d1e4928e92f7b374266612afd9b38cda3bc3bfa974048e60c79190a8",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -4851,12 +4917,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/boulangerie/piste135.mp3"
+      "source_audio": "/lib/audio/grammaire/co/boulangerie/piste135.mp3",
+      "candidate_sha256": "baa5d73085ff922381b56332e02822ffef8ede1321b84b7907878ee40d2d995f"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/allo-papa-ca-va-1.mp3",
       "audio_sha256": "4ece6c18ce6f5d5aa63d8c3a6f869b1900f8d953ed058e17c5bf10599f2d5076",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -4915,12 +4982,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/medecin/piste148.mp3"
+      "source_audio": "/lib/audio/grammaire/co/medecin/piste148.mp3",
+      "candidate_sha256": "01402ab004190b5b6197aa7e0af827a414e83df69de8eb14b82aa010b84f3f11"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-avez-ordonnance-1.mp3",
       "audio_sha256": "e623c01f68f5c70b854b700efe4c618641a48500c5a4abc1d406df91684cf16c",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -4979,12 +5047,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/pharmacie/piste149.mp3"
+      "source_audio": "/lib/audio/grammaire/co/pharmacie/piste149.mp3",
+      "candidate_sha256": "81339bfd6ba87c6b15f7878207c8388a9fd5e8933db6b3cc166d4999efd573fc"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/les-pharmaciens-sont-professionnels-1.mp3",
       "audio_sha256": "2243f20fb794dcbba4763d6905e80e550deab1927b46c0e94b89e3e66de51ec1",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -5043,12 +5112,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/pharmacie/piste156.mp3"
+      "source_audio": "/lib/audio/grammaire/co/pharmacie/piste156.mp3",
+      "candidate_sha256": "279568b5e58b8a453530bc20833e384ad6c9b1b44bda391b39f1db4630475b65"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vous-toussez-1.mp3",
       "audio_sha256": "b15713041dd19869c4914ee47afd705ddfd4e2862c604dd36a0dc4a04671f17f",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -5107,12 +5177,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/pharmacie/piste157.mp3"
+      "source_audio": "/lib/audio/grammaire/co/pharmacie/piste157.mp3",
+      "candidate_sha256": "6e4cffc057e4d0cc182ccda722a9bf12c45d00defcbf9fe66396ceb74c566881"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-monsieur-1.mp3",
       "audio_sha256": "2ad2af39948029b82cda5fe303a85bfeeab1da8e2ce40bb4401139ed29303cef",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -5171,12 +5242,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/pharmacie/piste159.mp3"
+      "source_audio": "/lib/audio/grammaire/co/pharmacie/piste159.mp3",
+      "candidate_sha256": "fe6e94e06a0101886f6ca2f630eded6d12a87a4d23afbadaf09922eb37879cd3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/pour-vacances-pensez-covoiturage-1.mp3",
       "audio_sha256": "4dd0885dea36e78e2d2d08b32e276c5c832083eb0b2a838a95d2512d02ba00f6",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -5235,12 +5307,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/gare/piste178.mp3"
+      "source_audio": "/lib/audio/grammaire/co/gare/piste178.mp3",
+      "candidate_sha256": "9b6950116dde742f2117ec1379890771a8525a5579a9855167b8f7359859bff8"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/salut-paul-1.mp3",
       "audio_sha256": "c186f7f6012365cc84e5a73b167415aa189466072bb3d462c11d65cbfc40aea9",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -5299,12 +5372,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/gare/piste180.mp3"
+      "source_audio": "/lib/audio/grammaire/co/gare/piste180.mp3",
+      "candidate_sha256": "85e6813e55b62e80fcb496d36f5fc9771aceed6e35a9640ecca1739359f8410c"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-voudrais-prix-1.mp3",
       "audio_sha256": "05a32870b4ea6ce40a712d2f6de119a1e525c7131f370b137fee7609119e8c6a",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -5363,12 +5437,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/gare/piste181.mp3"
+      "source_audio": "/lib/audio/grammaire/co/gare/piste181.mp3",
+      "candidate_sha256": "f1158c768d66d92ec8a152e14d2ebf77571e8085464143a300c23bedd4b5e0ee"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/mesdames-messieurs-votre-attention-1.mp3",
       "audio_sha256": "3a12f2cfec8efca40ede06449ce89c6a5ed7b5146e063d2ad01759b1b2d4622a",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -5433,12 +5508,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/aeroport/piste188.mp3"
+      "source_audio": "/lib/audio/grammaire/co/aeroport/piste188.mp3",
+      "candidate_sha256": "5eb297261ae40e8d7a1627e375b9d6beebf855423cc6cedaf0d96a418f776f17"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-votre-passeport-s-il-1.mp3",
       "audio_sha256": "bf154199eea9019c205eb51943dfafe00efb9e95ec2cc2d46ce0ca62f8aad13c",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -5503,12 +5579,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/aeroport/piste189.mp3"
+      "source_audio": "/lib/audio/grammaire/co/aeroport/piste189.mp3",
+      "candidate_sha256": "da9ce5de8f8212875f31303d041fd971f7b285571c68eb5e1edd4eb03bb3ef7d"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-votre-passeport-votre-1.mp3",
       "audio_sha256": "552a81e1dd077efb91e78b7e92681acc66c60b5c3d1cd406f37fb0941d9dbd5b",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -5567,12 +5644,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/aeroport/piste192.mp3"
+      "source_audio": "/lib/audio/grammaire/co/aeroport/piste192.mp3",
+      "candidate_sha256": "4e6b85f624babded8887750887c971b92e0e5731d222debe307a026fe06e28a5"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/beausoleil-l-hotel-villa-propose.mp3",
       "audio_sha256": "a55d2913a2ccff516cd148fae8c11c009ea0948136ae26128f2770813c5159b0",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -5631,12 +5709,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/hotel/piste200.mp3"
+      "source_audio": "/lib/audio/grammaire/co/hotel/piste200.mp3",
+      "candidate_sha256": "345355cef17139c4b9d726d97df6df173a3be238c6cad4a446985a724cf09969"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/hotel-plage.mp3",
       "audio_sha256": "fa81585c172d36efe9c3360b38ae741aad0771e6ad0f80d8f6f04c3eb3961272",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -5695,12 +5774,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/hotel/piste201.mp3"
+      "source_audio": "/lib/audio/grammaire/co/hotel/piste201.mp3",
+      "candidate_sha256": "6be585ecf970f115126c15d7bd956b6e8f0cfa5cf4209ed06771ac92bc7e0e3e"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vous-aimez-camping.mp3",
       "audio_sha256": "f772dd34b028b4fe2ed3f6751d6449c641c86e0b8fd8a0a5852737e4906d2107",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -5759,12 +5839,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/hotel/piste202.mp3"
+      "source_audio": "/lib/audio/grammaire/co/hotel/piste202.mp3",
+      "candidate_sha256": "962694e1825eed368b732703681207f0170d2e96fbf11f9e91d7963ec2b7f7a4"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-objet-8.mp3",
       "audio_sha256": "24ac4f2dc582ef7607b3bbe616a88225c0c82c24890229c175ab956538ff4920",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -5823,12 +5904,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/hotel/piste203.mp3"
+      "source_audio": "/lib/audio/grammaire/co/hotel/piste203.mp3",
+      "candidate_sha256": "cf5cdd80a18875c5b28713aed9e8fd8533c8efc11790e3b1aeb88d3395725bbe"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vous-etes-aussi-camping.mp3",
       "audio_sha256": "28f2ea2ab7c60d7752037bd4db13e75fcdd2597a5bee3b305a00a8e86ac4dfa8",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -5887,12 +5969,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/hotel/piste204.mp3"
+      "source_audio": "/lib/audio/grammaire/co/hotel/piste204.mp3",
+      "candidate_sha256": "4ca60186bb936d2e53e35d077a712c08aa721923ce0f93b63e93b3c3b9c905bf"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/ah-fait-beau-aujourd-hui.mp3",
       "audio_sha256": "06d0da1d69d9bd0876b53602d1f18f6a4c38cdb4cae7de067e47f7ace471549f",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -5951,12 +6034,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/sport/piste205.mp3"
+      "source_audio": "/lib/audio/grammaire/co/sport/piste205.mp3",
+      "candidate_sha256": "8e3502c3945a63babb56cbd5245430928b445ec79d47706eed7a83d75875b6e1"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/et-voici-meteo.mp3",
       "audio_sha256": "da879eb6181d81ffc61168fc77f4f08abde97b10cda35882e4f9dd56e4ef846f",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -6015,12 +6099,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/sport/piste211.mp3"
+      "source_audio": "/lib/audio/grammaire/co/sport/piste211.mp3",
+      "candidate_sha256": "62cf063257852fe52d8b1c31d90fa613dd381ea6731bcb9c9a7d518e50cebaf2"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/et-maintenant-parlons-vacances.mp3",
       "audio_sha256": "5300df973a44464c3d81f15a5e3b272e549d9dbdb0b7767aaccba15fe486a1ff",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -6079,12 +6164,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/sport/piste212.mp3"
+      "source_audio": "/lib/audio/grammaire/co/sport/piste212.mp3",
+      "candidate_sha256": "05ea205b03e9a52ad389aee52df4ffd8ecf7e8da27db61b06efabe9f57e43f1c"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/des-francais-font-sport.mp3",
       "audio_sha256": "671ac67ca0351a99e2923c07f2ee472b5a3091a069bb9ad5c4f4633bb5ab9c57",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -6143,12 +6229,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/sport/piste213.mp3"
+      "source_audio": "/lib/audio/grammaire/co/sport/piste213.mp3",
+      "candidate_sha256": "f42461750b29f299064d70173a15301f3af19a7c43137ab7c9c6739cbde6a187"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/allo-lea.mp3",
       "audio_sha256": "1751ef89acffa5f2539b3182b80f8c0e60ea3bf51be176f54c1e8b0afb5cf2a2",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -6207,12 +6294,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/sport/piste214.mp3"
+      "source_audio": "/lib/audio/grammaire/co/sport/piste214.mp3",
+      "candidate_sha256": "a97cc13e8b1ee748def5692e96c709b0a160901079ff333fbff8e5fe71c36834"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-fait.mp3",
       "audio_sha256": "012de8ae094adcb5ddd2218d813ab67b5e274c7b72c4c34166d9c6c2012496a6",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -6271,12 +6359,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/sport/piste215.mp3"
+      "source_audio": "/lib/audio/grammaire/co/sport/piste215.mp3",
+      "candidate_sha256": "eb8f8615c7b688d3ab911ed457b3b6a2fd9b22884c8a4eb604e6a1a62c7f713d"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/on-journee-libre.mp3",
       "audio_sha256": "9501974767cdb33ca0684e1731731fbe11e8b251b9ee6a23dd75e89b721b2b3b",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -6335,12 +6424,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/lieux-culturels/piste216.mp3"
+      "source_audio": "/lib/audio/grammaire/co/lieux-culturels/piste216.mp3",
+      "candidate_sha256": "90d1cb98700fa3a3ad32248aa2497a976c0306349c688ba72b2f633d0f0cf3e8"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/et-maintenant-programme-culturel.mp3",
       "audio_sha256": "3cf21516899f6aede3eb15b794b2e5c16503cbc8637eb9d3d21e6c46dc38c8bf",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -6399,12 +6489,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/lieux-culturels/piste222.mp3"
+      "source_audio": "/lib/audio/grammaire/co/lieux-culturels/piste222.mp3",
+      "candidate_sha256": "9ddcb939824c6591dcff3c2ca1e69122f60fe901d6f6e7bbd8b434ef53fa4e87"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-voudrais-huit-billets.mp3",
       "audio_sha256": "c3f7055f9899640d0086362e2ec5baa5d5dc1ce6fead62443ddf8d06e4d1bed4",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -6463,12 +6554,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/lieux-culturels/piste223.mp3"
+      "source_audio": "/lib/audio/grammaire/co/lieux-culturels/piste223.mp3",
+      "candidate_sha256": "3cadfc684767c679e3ecd386ec90f7bb0cedc04111a8b54e2316231546d3a75f"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vous-adorez-theatre.mp3",
       "audio_sha256": "4b765608eb37aad12ce7b79d9eec502610a33adad139825f479b9c8316aef03b",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -6527,12 +6619,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/lieux-culturels/piste224.mp3"
+      "source_audio": "/lib/audio/grammaire/co/lieux-culturels/piste224.mp3",
+      "candidate_sha256": "2e9c380c7d157329e850a31651758d104ca5df0354786593710084abfa5f75cd"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/alors-va-cinema-ou.mp3",
       "audio_sha256": "3e90bc7a44ada8af9d10635bad01703f7e76c118e2bbc9004ebd4f416d05f233",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -6597,12 +6690,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/lieux-culturels/piste225.mp3"
+      "source_audio": "/lib/audio/grammaire/co/lieux-culturels/piste225.mp3",
+      "candidate_sha256": "c844294d62c35483f5c12e6e1d3bf8aef655fc48cbc9055fbda314a237c3352f"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/je-vais-nice-pendant.mp3",
       "audio_sha256": "0580aab6bba84132ff36c3dc6ee1d2915d6014aafcc6e7be777f7820148471d6",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -6661,12 +6755,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/lieux-culturels/piste226.mp3"
+      "source_audio": "/lib/audio/grammaire/co/lieux-culturels/piste226.mp3",
+      "candidate_sha256": "759634045f956c50ba8dded53a328a365c06c861924e6359b4da30c135f961e6"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/mais-regarde-lea.mp3",
       "audio_sha256": "cea1138491707cf7840cc152a377d75548bccb2d9e683567228a291a7a5cd996",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -6725,12 +6820,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/presenter/piste227.mp3"
+      "source_audio": "/lib/audio/grammaire/co/presenter/piste227.mp3",
+      "candidate_sha256": "b48c8c3d2dcd84a2b415fefd705a52002d09716137c955384d94a527016282c6"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-objet-1.mp3",
       "audio_sha256": "b801cbe07e74f78c3ee0c11fda0a6e13a2fa7632fa739d0a0804eba0c6849881",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -6789,12 +6885,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/logement/piste228.mp3"
+      "source_audio": "/lib/audio/grammaire/co/logement/piste228.mp3",
+      "candidate_sha256": "57cb65d675017eb8e8bfa68754a9fdecfde797fae609db4561dc4ff50fe8b961"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-m-appelle-tim.mp3",
       "audio_sha256": "6190e6e1135b5004b080e4d5e5d70e93b1331d06cd9a6cd237c7d8cedc6e580e",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -6853,12 +6950,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/fetes/piste229.mp3"
+      "source_audio": "/lib/audio/grammaire/co/fetes/piste229.mp3",
+      "candidate_sha256": "a07be9d5d3b8092dea662b062938007c9e5043dc5a7d88d64f3255ef5b35f904"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/salut-emilie.mp3",
       "audio_sha256": "8e1db336b0cc811a7086913b46387eca8b9f554ce066705344bc2052c9bf14e6",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -6917,12 +7015,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/restaurant/piste230.mp3"
+      "source_audio": "/lib/audio/grammaire/co/restaurant/piste230.mp3",
+      "candidate_sha256": "c1a4d45d9a838f4b79fde9f23294f160eb7669f521443c067e0f3361730be80f"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/allo-mathilde.mp3",
       "audio_sha256": "e66d01bccc3448b6bbcb5e9e9ac731671c83e84b99e63929ea69e45012068289",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -6981,12 +7080,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/medecin/piste231.mp3"
+      "source_audio": "/lib/audio/grammaire/co/medecin/piste231.mp3",
+      "candidate_sha256": "d8653d66d37486aa2cd89702a45e826ecbd225d3d6a67e1f61ca5f51a4c00657"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/alors-notre-voyage-prend.mp3",
       "audio_sha256": "ee83a7e93f915eeb1ec1052333187f40b397e25793b6a2d988ef755cae0a1a20",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -7045,12 +7145,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/se-deplacer/piste232.mp3"
+      "source_audio": "/lib/audio/grammaire/co/se-deplacer/piste232.mp3",
+      "candidate_sha256": "f5e0b508c1f06558e450dfbbdaf43af2727c0c02f4fb3071aa458dbd88d324d8"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/alors-faites-quoi-cet.mp3",
       "audio_sha256": "bf7e9ab4cae5d6c679967030a1d293727f02f5030abb657b94f0a0ce8d11fd55",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -7109,12 +7210,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/hotel/piste233.mp3"
+      "source_audio": "/lib/audio/grammaire/co/hotel/piste233.mp3",
+      "candidate_sha256": "606f96ee9f4ed8736e43506b193ac355694169a48515bf86613e70b494ce545b"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/paolo-bonjour-1.mp3",
       "audio_sha256": "80c824192be4120229070f892511bed63160cb2f192a5d35e30a844ec5108f78",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -7173,7 +7275,8 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/presenter/piste005.mp3"
+      "source_audio": "/lib/audio/grammaire/co/presenter/piste005.mp3",
+      "candidate_sha256": "63d30472aa05173d09f43c17df7fc060475a8589b96c07f4b70eafe8f5a7a944"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/salut-vincent-1.mp3",
@@ -7193,7 +7296,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-monsieur-5.mp3",
       "audio_sha256": "302427f4ee9040f41eba7a4f5000df8ed894200470c0186cde59e12d230b0c18",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -7252,12 +7355,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/presenter/piste013.mp3"
+      "source_audio": "/lib/audio/grammaire/co/presenter/piste013.mp3",
+      "candidate_sha256": "e15c81a8262681454d35206dee23dd3306e52a77120d46708dcb11e289b25d09"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/pierre-invite-chez.mp3",
       "audio_sha256": "526af3dc2e98a0e4a359365283ecb27e5c81475171d045cdaeffa281d766d808",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -7316,12 +7420,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/logement/piste047.mp3"
+      "source_audio": "/lib/audio/grammaire/co/logement/piste047.mp3",
+      "candidate_sha256": "d70b0b877387191b5809d4c3c1ef24cd0219a7e1ceda0df5452faba4097c91d5"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-cherche-appartement-2.mp3",
       "audio_sha256": "7eb48b53a94543ec38b988938a27b0f7e9a9e18fbfc927310ac3bc304ace83f6",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -7380,12 +7485,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/logement/piste048.mp3"
+      "source_audio": "/lib/audio/grammaire/co/logement/piste048.mp3",
+      "candidate_sha256": "decf157495b12f2842e2c98574bb356f00bbb85d48dc3751b2d07a19aa39ee1b"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/sos-depannage-j-ecoute-1.mp3",
       "audio_sha256": "19c5d5e314ec2ac8070aa67c2b9227578540083891db65906ccf5c31491e8b93",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -7444,7 +7550,8 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/problemes-domestiques/piste049.mp3"
+      "source_audio": "/lib/audio/grammaire/co/problemes-domestiques/piste049.mp3",
+      "candidate_sha256": "4a3204009673a48ef487fe867417ca6fa9fe86cc3e3be17a9bfff3737b1ad405"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/sos-depannage-j-ecoute-3.mp3",
@@ -7464,7 +7571,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/un-probleme-d-eau-ou-1.mp3",
       "audio_sha256": "a411c8ee8009eb75b3153250d112d9d7cce815c4c7aa806b47aeb5b9fd6bbb60",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -7523,12 +7630,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/problemes-domestiques/piste058.mp3"
+      "source_audio": "/lib/audio/grammaire/co/problemes-domestiques/piste058.mp3",
+      "candidate_sha256": "bbdd65fa50fc01578149246ee747f65f2ebf16fa34d0658c576865077eb6c97c"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-monsieur-3.mp3",
       "audio_sha256": "94d8fbcd968eebdf7887a94146e2a5fec05fde7e57db615b9c7f4a5657ab46cc",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -7587,12 +7695,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/reglement-immeuble/piste061.mp3"
+      "source_audio": "/lib/audio/grammaire/co/reglement-immeuble/piste061.mp3",
+      "candidate_sha256": "057738e1ee1048828090f6647ab0f97bfb19f4883b68bab4103eefef88a21571"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/mon-immeuble-tres-propre-1.mp3",
       "audio_sha256": "81930ae8bbdb2218dbdf74a6ebdce72c8556407a4fef090572cd30c02a84b087",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -7651,12 +7760,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/reglement-immeuble/piste070.mp3"
+      "source_audio": "/lib/audio/grammaire/co/reglement-immeuble/piste070.mp3",
+      "candidate_sha256": "6a814a7fb13adddaa64d0a3f6500f7c65d2187c8dc749934a828573646557080"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-garant-allez-bien-1.mp3",
       "audio_sha256": "06e5aee038e861544f0f4636a52a6540b297a2278ba2741f3dee9f4b43d9379d",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -7715,12 +7825,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/reglement-immeuble/piste071.mp3"
+      "source_audio": "/lib/audio/grammaire/co/reglement-immeuble/piste071.mp3",
+      "candidate_sha256": "a589640de087e75129c509f909b74737111eb59cdc1f778d3017cf1103b97130"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/en-france-beaucoup-d-etudiants-1.mp3",
       "audio_sha256": "96f74e472556b6b7984deccd0ea9c28d59c545f95f2b21acee8b72678f320583",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -7779,12 +7890,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/universite-ecole/piste078.mp3"
+      "source_audio": "/lib/audio/grammaire/co/universite-ecole/piste078.mp3",
+      "candidate_sha256": "2993f3b07367f3968f30509a087a86400df962ebb2be79ced71fc9c710afc39b"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/maman-commence-fac-lundi-1.mp3",
       "audio_sha256": "721850cdcf3d02243b595ad78b7ccb6462d7ee8e887f64526ab5276b610b93c5",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -7843,7 +7955,8 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/universite-ecole/piste079.mp3"
+      "source_audio": "/lib/audio/grammaire/co/universite-ecole/piste079.mp3",
+      "candidate_sha256": "dfe97d63f136f4ff69a22995113f3f2bb15cf9432dcfe853e3e7b2f56129e313"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/tu-te-couches-tard-1.mp3",
@@ -7863,7 +7976,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/c-est-qui-1.mp3",
       "audio_sha256": "ec531541f1733024be521d240edc5a104d7e9e8d36ea5d9fa79c361941ce877d",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -7922,12 +8035,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/boulangerie/piste127.mp3"
+      "source_audio": "/lib/audio/grammaire/co/boulangerie/piste127.mp3",
+      "candidate_sha256": "f8a2c8100af82cf7b4a23cda790e7dcdc5fccdf66534aa04904aa7ba00ca512e"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/c-est-qui-3.mp3",
       "audio_sha256": "1282e54f1dc2f179b22237da9dd6dacb20a8ec6afbcc4a0ef58afea40694ea32",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -7986,12 +8100,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/boulangerie/piste137.mp3"
+      "source_audio": "/lib/audio/grammaire/co/boulangerie/piste137.mp3",
+      "candidate_sha256": "549b7583ae30b6224e83eb40d9e81990f63b5457f6791d7d57244213d05a4640"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/cabinet-medical-docteurs-blanc-1.mp3",
       "audio_sha256": "c151f39acdbe0e13997cfeb69b1a654e6351db316146ac3dbfebda90d228bddb",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -8056,12 +8171,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/medecin/piste144.mp3"
+      "source_audio": "/lib/audio/grammaire/co/medecin/piste144.mp3",
+      "candidate_sha256": "32ad1a03e5b7b66ddda51e0839697cbfad7c4eb034469da62dda5a13bde637de"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-j-ai-brulure-main-1.mp3",
       "audio_sha256": "fb634d83ac13984ccbe82c4134d6cdca9a18a67da23cb3a42fc2189f00a34be1",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -8126,12 +8242,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/pharmacie/piste158.mp3"
+      "source_audio": "/lib/audio/grammaire/co/pharmacie/piste158.mp3",
+      "candidate_sha256": "27218358eb3c24972fdb46812d16e5c20ccb7a53cf87a19c2ee859bf48d78c46"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/excusez-moi-pourriez-m-aider-1.mp3",
       "audio_sha256": "82294031151a6155568b1fe3b04ee188b4f14328bbd526a8c7e8d49415359579",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -8190,12 +8307,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/se-deplacer/piste160.mp3"
+      "source_audio": "/lib/audio/grammaire/co/se-deplacer/piste160.mp3",
+      "candidate_sha256": "6c6b46f1126dfe862c374c4071ecf6e32c02ad3868f902029ba9e08a40d1fe79"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-voudrais-tickets-1.mp3",
       "audio_sha256": "a0ba162dc6a273796be6f77a8eb1c3c055eb8e5ad27366e2b39e57e9db23508b",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -8260,12 +8378,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/se-deplacer/piste169.mp3"
+      "source_audio": "/lib/audio/grammaire/co/se-deplacer/piste169.mp3",
+      "candidate_sha256": "799865523d1c2802cb084a50f5dfc6a23db3dc47bbb3a4f7ebfd1400abd5d4e2"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-avez-plan-1.mp3",
       "audio_sha256": "4cbeb186079404bd1a1e6204c8ed875d513f264e62d7e8bf99390f67bdb129b6",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -8324,7 +8443,8 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/se-deplacer/piste170.mp3"
+      "source_audio": "/lib/audio/grammaire/co/se-deplacer/piste170.mp3",
+      "candidate_sha256": "1dbae0286d71ba426221aedc6f5f705c095300069cbd689def794d3d0b06e5b7"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-sommes-combien-1.mp3",
@@ -8344,7 +8464,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/pardon-j-ai-place-cote-1.mp3",
       "audio_sha256": "1a62c13e14075e43cf5faf4f77e485b083e4734d926eccd85a49d5307cef68a8",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -8403,12 +8523,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/gare/piste179.mp3"
+      "source_audio": "/lib/audio/grammaire/co/gare/piste179.mp3",
+      "candidate_sha256": "6f7f8b6fd0c62d8a0d02aa8b23c3d7688db56ce3f21afea44577b99d1a17be8b"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-quelle-votre-destination-1.mp3",
       "audio_sha256": "7900c342a9b38bfc4231d3a1f7bd0ec60fc58fd6d76f8f3c3d672a814f24f156",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -8467,7 +8588,8 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/aeroport/piste182.mp3"
+      "source_audio": "/lib/audio/grammaire/co/aeroport/piste182.mp3",
+      "candidate_sha256": "6ff497998862e123c4f0a6ff5d20293f095b4184a2c6a2a816d031477c38d80d"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vous-avez-chambres-disponibles-1.mp3",
@@ -8487,7 +8609,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/logement/02-logement-description-de-l-appartement-2.mp3",
       "audio_sha256": "e4d0929a32d8d94fd5e3c5722d76ea76f9c684a13cc9d4d221c7172f0576dcb4",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -8552,12 +8674,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/logement/piste038.mp3"
+      "source_audio": "/lib/audio/grammaire/co/logement/piste038.mp3",
+      "candidate_sha256": "b377efb21140ab6c8157cc9aaafd307ac69502e0e03afc8a354e046bfdd62433"
     },
     {
       "old_ref": "/lib/audio/tcf/co/magasins/21-magasin-pas-comprendre-taille-des-vêtements.mp3",
       "audio_sha256": "8ec360a423e578e309ed20d224d53c2ffe851a59063517dc5d3d1e72570da9f3",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -8616,7 +8739,8 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/magasin-vetements/piste114.mp3"
+      "source_audio": "/lib/audio/grammaire/co/magasin-vetements/piste114.mp3",
+      "candidate_sha256": "23e4ed391234b2d71573f939f1a4eda4a2a590c126ff71c8313a814d8f10cdf3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/restaurant/07-restaurant-le-dejeuner.mp3",
@@ -8636,7 +8760,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/actualite/08-actualité-le-pourboire-en-France.mp3",
       "audio_sha256": "55fee299c2f0007f477397b0343f686ef32271e2f2f078765c133e82b83e9358",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -8695,12 +8819,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/restaurant/piste125.mp3"
+      "source_audio": "/lib/audio/grammaire/co/restaurant/piste125.mp3",
+      "candidate_sha256": "e10adec96b51620a7dc921ac3e1bb3ab25afe694acfbe1329e5384b11b68260a"
     },
     {
       "old_ref": "/lib/audio/tcf/co/transports/je-viens-louer-voiture-1.mp3",
       "audio_sha256": "4f0599f37ee3f038437d46957a05ed802ae216ee2c8c46b53fdd7aa5cc071f05",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [],
       "listening_performed": false,
@@ -8752,12 +8877,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/presenter/piste012.mp3"
+      "source_audio": "/lib/audio/grammaire/co/presenter/piste012.mp3",
+      "candidate_sha256": "9ea8a58eba7a12f182febb9c35ba9bb1f7bf463011e3cf5ccf6fcfabb1fb2c52"
     },
     {
       "old_ref": "/lib/audio/tcf/co/transports/chers-voyageurs-ameliorer-notre-1.mp3",
       "audio_sha256": "212c73c4bff216dd65fea7991df2b78b28dd12776a55d96dc871df3d8fe55d49",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -8822,12 +8948,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/presenter/piste014.mp3"
+      "source_audio": "/lib/audio/grammaire/co/presenter/piste014.mp3",
+      "candidate_sha256": "e838f22b43f7f888e22df0a069614f3905167af640812a5f994455994d140900"
     },
     {
       "old_ref": "/lib/audio/tcf/co/transports/bonsoir-viens-d-entendre-l-annonce-1.mp3",
       "audio_sha256": "704243a93d6c17955f44c7ae17a781b43d5799250a5fa9ff54509ccb0279bd3d",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [],
       "listening_performed": false,
@@ -8879,12 +9006,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/presenter/piste015.mp3"
+      "source_audio": "/lib/audio/grammaire/co/presenter/piste015.mp3",
+      "candidate_sha256": "69247621f42b8438e3c4931f5627180a59fb6b9d7ce080a61e8d60eb64393969"
     },
     {
       "old_ref": "/lib/audio/tcf/co/transports/bonjour-viens-l-emploi-1.mp3",
       "audio_sha256": "e47f6218a1d5ea67e0f37b0b2a6bd7810355bee2bc3f782bef8da89a93256543",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -8943,7 +9071,8 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/travail/piste104.mp3"
+      "source_audio": "/lib/audio/grammaire/co/travail/piste104.mp3",
+      "candidate_sha256": "2b2c7fe39d2c5e8bc05efc61c78bda1d643be710b79160dfa9e0e13ef171af8f"
     },
     {
       "old_ref": "/lib/audio/tcf/co/transports/vous-avez-mal-ou-1.mp3",
@@ -8969,7 +9098,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/travail/bonjour-week-end-1.mp3",
       "audio_sha256": "02b68b6dc8ac1c5bf98ce4dcfd9eb59fb1d6d07b543a25a9206ba65aa77b005b",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -9028,12 +9157,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/pharmacie/piste155.mp3"
+      "source_audio": "/lib/audio/grammaire/co/pharmacie/piste155.mp3",
+      "candidate_sha256": "962c6c5c4271e509b1801c36280feddf739a6b2897ec4a0d2935c3d628f4d90c"
     },
     {
       "old_ref": "/lib/audio/tcf/co/travail/vous-etes-france-1.mp3",
       "audio_sha256": "5f00918f5c4dcb5704fc1c72418f757015bd2aa720ca2a5a853c2b6719ff0a44",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -9092,12 +9222,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/se-deplacer/piste168.mp3"
+      "source_audio": "/lib/audio/grammaire/co/se-deplacer/piste168.mp3",
+      "candidate_sha256": "08f4327510f0d1cd1f1e326c7514410342b120a40ab96a067a2fa0c309beb2ff"
     },
     {
       "old_ref": "/lib/audio/tcf/co/travail/alors-marianne-pourquoi-prends-1.mp3",
       "audio_sha256": "7ec0830aebe1b0de30694f86370dba369a87cfe901e48f8dcb92231e6d2ad7e9",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -9156,12 +9287,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/gare/piste171.mp3"
+      "source_audio": "/lib/audio/grammaire/co/gare/piste171.mp3",
+      "candidate_sha256": "6c12588e6ba83387ac9e2b9fa16fdc7b848e36902ae0a876f1de104f2013b5d4"
     },
     {
       "old_ref": "/lib/audio/tcf/co/travail/mesdames-messieurs-1.mp3",
       "audio_sha256": "1618884d9791c574b877cb826abd5c3e4052db6b6215b3199e99a45e6532552b",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -9220,7 +9352,8 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/gare/piste177.mp3"
+      "source_audio": "/lib/audio/grammaire/co/gare/piste177.mp3",
+      "candidate_sha256": "c24588327fe09331566924d40c327ce53312df7d53913cdbe7290d431cfe1c70"
     },
     {
       "old_ref": "/lib/audio/tcf/co/travail/les-passagers-vol-air-1.mp3",
@@ -9246,7 +9379,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/travail/pardon-trouve-1.mp3",
       "audio_sha256": "07b5bf5a358f181f380a3d2993491073468935a4dfbdce8977906693bb2bafaf",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -9305,12 +9438,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/aeroport/piste190.mp3"
+      "source_audio": "/lib/audio/grammaire/co/aeroport/piste190.mp3",
+      "candidate_sha256": "da29adbcae80bedaa41cec32b87e5afaa797a7b29243b64e4830b2263b716c37"
     },
     {
       "old_ref": "/lib/audio/tcf/co/travail/chloe-as-deja-ta-1.mp3",
       "audio_sha256": "55038bf4a3c0d3564c66d684b3df7e3cce5a7033e47b42ad62f14bee03bbcc1a",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -9369,12 +9503,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/aeroport/piste191.mp3"
+      "source_audio": "/lib/audio/grammaire/co/aeroport/piste191.mp3",
+      "candidate_sha256": "d8675e3ad65b9f38a2b9791ec0cd519d2e5eb0f604f79abc3164edb445f79b74"
     },
     {
       "old_ref": "/lib/audio/tcf/co/travail/bonjour-bienvenue-camping-beau-1.mp3",
       "audio_sha256": "8fb09b8f5a63f054d50fc0874a4da98515b92194883f7be729175ec4711d9bf9",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -9433,7 +9568,8 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/hotel/piste193.mp3"
+      "source_audio": "/lib/audio/grammaire/co/hotel/piste193.mp3",
+      "candidate_sha256": "225641df928e4c572cbc669596b48b7610bdbf1b94bdcf82156f1dbb2020a757"
     },
     {
       "old_ref": "/lib/audio/tcf/co/magasins/c-est-qui-1.mp3",
@@ -9453,7 +9589,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/magasins/c-est-question-d-equilibre-1.mp3",
       "audio_sha256": "d3156ff3956604c94b121744c109950cd33727fef1c6b7dab0bbc81269dff00d",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -9512,12 +9648,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/boulangerie/piste134.mp3"
+      "source_audio": "/lib/audio/grammaire/co/boulangerie/piste134.mp3",
+      "candidate_sha256": "7105fd541975c5ec62b348ba9949de4f901e28bb1d574b73454cb35a4fb02c99"
     },
     {
       "old_ref": "/lib/audio/tcf/co/magasins/allo-docteur-roux-1.mp3",
       "audio_sha256": "6cce29147e1e41182140d0c05f7045edea72017f4a3a61904271f5d00351ddc2",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -9576,12 +9713,13 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/medecin/piste145.mp3"
+      "source_audio": "/lib/audio/grammaire/co/medecin/piste145.mp3",
+      "candidate_sha256": "804104fdfdc92ae234898119b87aab9f25dddff52b3a604774774ab3785458f9"
     },
     {
       "old_ref": "/lib/audio/tcf/co/magasins/le-nouveau-cabinet-medical-1.mp3",
       "audio_sha256": "aef2f08a4e95d9141dbc981c9dc1d771fefaa88c41e88367fa6619986e274266",
-      "status": "source_identified_segmentation_pending",
+      "status": "received_source_identified_candidate_prepared",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -9640,7 +9778,8 @@
         "listening_performed": false,
         "clean_boundaries_validated": false
       },
-      "source_audio": "/lib/audio/grammaire/co/medecin/piste147.mp3"
+      "source_audio": "/lib/audio/grammaire/co/medecin/piste147.mp3",
+      "candidate_sha256": "5607d41bc08cdf38ce79509c031519ca249f10a6065394cc36f8028d6fc853b3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/logement/01-logement-description-de-l-appartement-1.mp3",
@@ -11313,7 +11452,8 @@
         "constant_offset_confirmed": false,
         "replacement_compatibility_validated": false,
         "requires_explicit_segment_or_assembly_assignment": true
-      }
+      },
+      "candidate_sha256": "524c00aa771addd49f2675161129bca4a4b9bb3345051d206695526be7d02b16"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/regarde-j-ai-photo-mariage-2.mp3",
@@ -14126,7 +14266,8 @@
         "source_offset_seconds": 12.4,
         "listening_performed": false,
         "clean_boundaries_validated": false
-      }
+      },
+      "candidate_sha256": "2b5e75cffb14679005ef221a8ff7b2ca953afdf3b53d5f39a36fd3a0dfa6efa0"
     },
     {
       "old_ref": "/lib/audio/tcf/co/magasins/tiens-jacqueline-comment-vas-1.mp3",
@@ -14189,7 +14330,8 @@
         "source_offset_seconds": 2.5,
         "listening_performed": false,
         "clean_boundaries_validated": false
-      }
+      },
+      "candidate_sha256": "43f8dec44fef32e8a18315d50212375da0e1e1a27c2aec15235475deaeb5fdd0"
     }
   ]
 }

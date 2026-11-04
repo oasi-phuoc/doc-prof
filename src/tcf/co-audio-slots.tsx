@@ -3,6 +3,7 @@
  * (listes déroulantes filtrées sur le même tag).
  */
 import { useMemo } from 'react'
+import { resolveTcfAudioReference } from './audio-replacements'
 import {
   tcfCourtAudioEntries,
   tcfLongAudioEntries,
@@ -153,7 +154,7 @@ export function TcfCoAudioSlotsPicker({
 
   if (!kind || !slotCount || pool.length === 0) return null
 
-  const current = Array.from({ length: slotCount }, (_, i) => slots?.[i] ?? '')
+  const current = Array.from({ length: slotCount }, (_, i) => resolveTcfAudioReference(slots?.[i]) ?? '')
 
   const setSlot = (index: number, value: string) => {
     const next = [...current]

@@ -6,42 +6,48 @@
       "exercise_ids": [
         "tcf-a1-sem1-co-2"
       ],
-      "status": "wrong_audio_question_binding_corroborated_by_two_independent_asr_runs",
+      "status": "historical_mismatch_corrected_with_authentic_recordings_and_revised_questions",
       "expected_topic_from_bank": "Achat de cerises : prix au kilo et quantité",
       "actual_topic": "restaurant d’entreprise",
       "bank_transcript": "Bonjour monsieur.\nC'est combien le kilo de se risent?\n6,40.\n6,40.\nJ'en veux 500 grammes.\nTrès bien.\nVoilà.\nBonjour monsieur.\nC'est combien le kilo de se risent?\n6,40.\n6,40.\nJ'en veux 500 grammes.\nTrès bien.\nVoilà.",
       "direct_asr_quote": "Le midi, vous pouvez manger au restaurant de l'entreprise. Ah oui? Et le restaurant ouvre à quelle heure? À 11h30. 11h30. D'accord. A tout à l'heure?",
       "independent_french_asr_quote": "Le midi, vous pouvez manger au restaurant de l'entreprise. Ah oui ? Et le restaurant ouvre à quelle heure ? À 11h30. 11h30. D'accord. À tout à l'heure ?",
-      "next_action": "Rétablir le passage sonore correspondant aux questions ; aucune réponse du thème absent ne doit être inventée.",
-      "human_listening_performed": false
+      "next_action": "Liaison corrigée dans la banque ; contrôle d’écoute humaine non attesté.",
+      "human_listening_performed": false,
+      "corrected": true,
+      "correction_report": "../corrections-appliquees-20261104.json"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-3-3.mp3",
       "exercise_ids": [
         "tcf-a1-sem1-co-2"
       ],
-      "status": "wrong_audio_question_binding_corroborated_by_two_independent_asr_runs",
+      "status": "historical_mismatch_corrected_with_authentic_recordings_and_revised_questions",
       "expected_topic_from_bank": "Rendez-vous de médecine du travail",
       "actual_topic": "achat de cerises",
       "bank_transcript": "Pour la visite médicale, prenez rendez-vous avec le médecin du travail.\nC'est le docteur chéré.\nSon téléphone est le 01, 48, 24, 32.\nMerci.\nJe téléphone tout de suite.\nPour la visite médicale, prenez rendez-vous avec le médecin du travail.\nC'est le docteur chéré.\nSon téléphone est le 01, 48, 24, 32.\n01, 48, 24, 32.\nMerci.\nJe téléphone tout de suite.",
       "direct_asr_quote": "Dialogue numéro 2. Bonjour monsieur. C'est combien le kilo de cerise? 6h40. 6,40 €? J'en veux 500 grammes. Très bien. Voilà.",
       "independent_french_asr_quote": "- Bonjour Monsieur, c'est combien le kilo de cerise ? - 6,40 €. - 6,40 € ? J'en veux 500 g. - Très bien. Voilà.",
-      "next_action": "Rétablir le passage sonore correspondant aux questions ; aucune réponse du thème absent ne doit être inventée.",
-      "human_listening_performed": false
+      "next_action": "Liaison corrigée dans la banque ; contrôle d’écoute humaine non attesté.",
+      "human_listening_performed": false,
+      "corrected": true,
+      "correction_report": "../corrections-appliquees-20261104.json"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-3-4.mp3",
       "exercise_ids": [
         "tcf-a1-sem1-co-2"
       ],
-      "status": "wrong_audio_question_binding_corroborated_by_two_independent_asr_runs",
+      "status": "historical_mismatch_corrected_with_authentic_recordings_and_revised_questions",
       "expected_topic_from_bank": "Essayage d’une robe en taille 38",
       "actual_topic": "achat de cerises",
       "bank_transcript": "Bonjour.\nEst-ce que je pourrais essayer cette robe s'il vous plaît?\nOui, bien sûr.\nQuelle est votre taille?\n38.\n38.\nVoilà.\nBonjour.\nEst-ce que je pourrais essayer cette robe s'il vous plaît?\nOui, bien sûr.\nQuelle est votre taille?\n38.\n38.\nVoilà.",
       "direct_asr_quote": "Bonjour monsieur. C'est combien le kilo de cerise? 6 euros quarante. 6 euros quarante? J'en veux 500 grammes. Très bien.",
       "independent_french_asr_quote": "Bonjour Monsieur, c'est combien le kilo de cerise ? 6,40 € 6,40 € ? J'en veux 500 g. Très bien.",
-      "next_action": "Rétablir le passage sonore correspondant aux questions ; aucune réponse du thème absent ne doit être inventée.",
-      "human_listening_performed": false
+      "next_action": "Liaison corrigée dans la banque ; contrôle d’écoute humaine non attesté.",
+      "human_listening_performed": false,
+      "corrected": true,
+      "correction_report": "../corrections-appliquees-20261104.json"
     }
   ],
   "question_revision_drafts": [
@@ -50,7 +56,7 @@
       "exercise_ids": [
         "tcf-ss-a1-s44-co-4"
       ],
-      "status": "draft_requires_instruction_cut_and_bank_review",
+      "status": "applied_four_content_questions_and_clean_audio",
       "current_audio_sha256": "a0ba162dc6a273796be6f77a8eb1c3c055eb8e5ad27366e2b39e57e9db23508b",
       "reason": "La banque interroge seulement Page 99 et Exercice 4 ; le contenu utile est une demande de tickets de métro.",
       "source_quotes": [
@@ -147,10 +153,10 @@
           ]
         }
       ],
-      "bank_modified": false,
+      "bank_modified": true,
       "listening_performed": false
     }
   ],
-  "bank_modified": false,
+  "bank_modified": true,
   "listening_performed": false
 }

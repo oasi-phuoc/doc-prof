@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-04T16:47:18.113475+00:00",
+  "updated_at": "2026-11-04T18:01:53.308306+00:00",
   "summary": {
     "initial_unmatched_references": 432,
     "direct_transcriptions_completed": 432,
@@ -12,9 +12,9 @@
     "additional_read_only_grammar_source_entries": 127,
     "additional_source_identities": 131,
     "new_source_identities_total": 135,
-    "prepared_reference_links_total": 890,
+    "prepared_reference_links_total": 1021,
     "identified_reference_links_total": 1021,
-    "identified_references_pending_segmentation": 131,
+    "identified_references_pending_segmentation": 0,
     "remaining_without_received_source": 297,
     "remaining_with_direct_current_audio_transcription": 297,
     "source_receipts_searched": 961,
@@ -24,10 +24,11 @@
     "candidate_pairs_examined": 3656,
     "full_waveform_or_first_8khz_anchor_checks": 1601,
     "discovery_only_coarse_rejections": 2055,
-    "confirmed_wrong_audio_bindings": 3,
+    "confirmed_wrong_audio_bindings": 0,
+    "historical_wrong_audio_bindings_corrected": 3,
     "new_lossless_verified_assemblies": 1,
     "human_listening_performed": false,
-    "production_modified": false,
-    "bank_transcriptions_modified": false
+    "production_modified": true,
+    "bank_transcriptions_modified": true
   }
 }

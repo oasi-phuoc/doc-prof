@@ -45,7 +45,8 @@ def build_entries(bank, primary, secondary, decisions, plain=None):
         if not isinstance(text,str) or not text.strip() or '<unk>' in text:
             raise ValueError('Empty or unresolved selected transcript: '+key)
         text=re.sub(r'[ \t]+',' ',text).strip()
-        if exercise['support'].get('transcription') and exercise['support']['transcription']!=text:
+        previous=exercise['support'].get('transcription','')
+        if previous and previous!=text and decision.get('previous_text_sha256')!=hashlib.sha256(previous.encode()).hexdigest():
             raise ValueError('An existing transcript differs; preserve and review explicitly: '+key)
         exercise['support']['transcription']=text
         entry['status']='transcribed'
@@ -57,6 +58,7 @@ def build_entries(bank, primary, secondary, decisions, plain=None):
             parakeet_text=first['text'],whisper_french_text=second['text'],
             supplementary_whisper_plain_text=third['text'] if third else None,
             human_listening_performed=False))
+        if previous and previous!=text:records[-1]['previous_selected_text']=previous
     return revised,records
 
 
@@ -87,6 +89,13 @@ def main():
         else:check.pop('transcriptionReview',None)
         if check!=before:raise ValueError('Unexpected question or recording mutation')
     docs=repo/'docs/grammaire/co-import';inventory=read(docs/'sources.json')
+    old_report=read(docs/'transcriptions.json') if (docs/'transcriptions.json').exists() else None
+    if old_report:
+        earlier={r['exercise_id']:r for r in old_report['transcriptions']}
+        for row in records:
+            old=earlier.get(row['exercise_id'],{})
+            if old.get('previous_selected_text') and 'previous_selected_text' not in row:
+                row['previous_selected_text']=old['previous_selected_text']
     inventory.update(status='original_audio_with_transcripts',transcribed_sources=len(records),
         transcriptions_and_questions='Transcriptions ajoutées à la demande du 4 novembre 2026 ; questions conservées en attente.',
         transcription_method='Two local recognition engines plus recorded text review; no human listening claim')
