@@ -15,11 +15,11 @@
   ],
   "summary": {
     "initial_question_candidates": 306,
-    "questions_illustrated_or_prepared": 189,
-    "newly_activated": 85,
-    "prepared_pending_audio_link": 100,
+    "questions_illustrated_or_prepared": 197,
+    "newly_activated": 89,
+    "prepared_pending_audio_link": 104,
     "prepared_pending_audio_validation": 4,
-    "remaining_questions_requiring_images_or_review": 117,
+    "remaining_questions_requiring_images_or_review": 109,
     "unreviewed_complete_trios": 0,
     "audio_references_next_stage": 432,
     "vocabulary_occurrences_final_stage": 1906
@@ -1598,20 +1598,29 @@
           "asset": "0538db01b3bb"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-piece-sombre-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-piece-lumineuse-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-piece-tres-ensoleillee-dessine.webp"
       ],
-      "missing_labels": [
-        "La pièce est sombre",
-        "La pièce est lumineuse",
-        "La pièce est très ensoleillée"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s16-co-1",
+        "question": 4,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-piece-sombre-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-piece-lumineuse-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-piece-tres-ensoleillee-dessine.webp"
+        ],
+        "support_quote": "- Tu habites au 3e ?\n- Non, au rez-de-chaussée, dans un studio.\n- Il est bien ?\n- Non, la pièce est petite, sombre et la cuisine n'est pas équipée.",
+        "current_bank_transcription": "- Tu habites au 3e ?\n- Non, au rez-de-chaussée, dans un studio.\n- Il est bien ?\n- Non, la pièce est petite, sombre et la cuisine n'est pas équipée.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Trois éclairages de la même pièce et du même mobilier : sombre, lumière diffuse abondante et soleil direct. L’effet ne dépend pas d’un changement d’objet, de couleur de canapé ou de cadrage. Transcription actuelle relue ; audio de remplacement à rapprocher."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -1816,7 +1825,7 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a1-abc:35:069a8d398e14:de36c618"
       ],
@@ -1829,15 +1838,30 @@
         }
       ],
       "resolved_images": [
-        null,
+        "/lib/images/tcf/qcm-audit/co306-dejeuner-restaurant-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp",
-        null
+        "/lib/images/tcf/qcm-audit/co834-cours-gym-dessine.webp"
       ],
-      "missing_labels": [
-        "Un déjeuner au restaurant",
-        "Un cours de sport"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-dejeuner-restaurant-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-cours-gym-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s19-co-4",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-dejeuner-restaurant-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp",
+          "/lib/images/tcf/qcm-audit/co834-cours-gym-dessine.webp"
+        ],
+        "support_quote": "Salut! Je dois annuler notre rendez-vous au restaurant ce midi. J'ai trop de travail. On peut se faire un cinéma demain à 18h. J'ai aussi des entrées gratuites pour le musée le 15 ou le 25 juin. Il faut juste réserver par téléphone. Envoie-moi un SMS pour confirmer.",
+        "current_bank_transcription": "Salut !\nDésolée, je dois annuler notre rendez-vous au restaurant ce midi.\nJ'ai trop de travail.\nOn peut se faire un cinéma demain à 18 heures ?\nJ'ai aussi des entrées gratuites pour le musée le 15 ou le 25 juin.\nIl faut juste réserver par téléphone.\nEnvoie-moi un SMS pour confirmer !",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Déjeuner au restaurant en journée, séance de cinéma existante et cours de gymnastique existant : trois activités complètes, aucun horaire ou date du support reproduit."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -1868,19 +1892,29 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
+        "/lib/images/tcf/qcm-audit/co306-cours-expression-orale-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-cours-dessin-dessine.webp",
-        null
+        "/lib/images/tcf/qcm-audit/co834-cours-gym-dessine.webp"
       ],
-      "missing_labels": [
-        "Le cours d’expression orale",
-        "Le cours de sport"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s21-co-1",
+        "question": 4,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-cours-expression-orale-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-cours-dessin-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-cours-gym-dessine.webp"
+        ],
+        "support_quote": "- Bonjour madame Racine.\nJe peux entrer ?\n- Oui, bonjour.\n- Madame, ma note d'écrit est mauvaise.\nNous avons encore un examen ?\n- Vous avez encore deux écrits et un oral.\n- L'oral, c'est quoi ?\n- C'est une présentation devant la classe.\n- Comment je peux réussir l'examen ?\n- Et bien, pour commencer, venez au cours d'expression orale vendredi.\n- Le cours commence à quelle heure ?\n- À 13 heures, dans la salle 613.\n- D'accord, merci beaucoup madame.\nÀ vendredi.\n- À vendredi.",
+        "current_bank_transcription": "- Bonjour madame Racine.\nJe peux entrer ?\n- Oui, bonjour.\n- Madame, ma note d'écrit est mauvaise.\nNous avons encore un examen ?\n- Vous avez encore deux écrits et un oral.\n- L'oral, c'est quoi ?\n- C'est une présentation devant la classe.\n- Comment je peux réussir l'examen ?\n- Et bien, pour commencer, venez au cours d'expression orale vendredi.\n- Le cours commence à quelle heure ?\n- À 13 heures, dans la salle 613.\n- D'accord, merci beaucoup madame.\nÀ vendredi.\n- À vendredi.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Discussion accompagnée en français, cours de dessin au crayon existant et cours de gymnastique existant ; les trois cours sont distingués par leur activité. Transcription actuelle relue ; audio de remplacement à rapprocher."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -4275,7 +4309,7 @@
           "asset": "5e317a024fab"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "09035276:046:68380186b072",
         "additional-20261102:mdf-a1-abc-junior:46:68380186b072:57aad8f0"
@@ -4289,16 +4323,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-professeure-francais-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-professeure-musique-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-professeure-sport-dessine.webp"
       ],
-      "missing_labels": [
-        "La professeure de français",
-        "La professeure de musique",
-        "La professeure de sport"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-professeure-francais-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-professeure-musique-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-professeure-sport-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s47-co-2",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-professeure-francais-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-professeure-musique-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-professeure-sport-dessine.webp"
+        ],
+        "support_quote": "Tu as vu la nouvelle prof de français? Non, je ne la connais pas. C'est qui? Elle est très sympa. Regarde, c'est elle là-bas, assise sur le banc avec des lunettes.",
+        "current_bank_transcription": "Tu as vu la nouvelle proche de français ?\nNon, je ne la connais pas.\nC'est qui ?\nElle est très sympa.\nRegarde, c'est elle là-bas assise sur le banc avec des lunettes.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Trois professeures distinctes : langue française, musique et sport, chaque rôle visible dans son cadre de cours ; la transcription préparée nomme explicitement la professeure de français."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -7119,7 +7167,7 @@
           "asset": "b975aa5bbb3b"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:045:789023c46e4d"
       ],
@@ -7132,16 +7180,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-professeure-dessin-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-professeure-anglais-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-professeure-histoire-dessine.webp"
       ],
-      "missing_labels": [
-        "La professeure de dessin",
-        "La professeure d'anglais",
-        "La professeure d'histoire"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-professeure-dessin-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-professeure-anglais-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-professeure-histoire-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a1-2022-co-ex4-45",
+        "question": 5,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-professeure-dessin-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-professeure-anglais-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-professeure-histoire-dessine.webp"
+        ],
+        "support_quote": "Lola, tu es dans ta chambre? Est-ce que tu peux me montrer les explications de ton professeur de dessin, Madame Rossignole? Je ne comprends pas ta note.",
+        "current_bank_transcription": "Lola ? Tu es dans ta chambre ? Est-ce que tu peux me montrer les explications de ton professeur de dessin, Madame Rossignol ? Je ne comprends pas ta note.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Trois professeures distinctes : dessin au graphite, anglais et histoire ; les mots naturels des tableaux sont relus, sans dates ou notes chiffrées."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -9271,19 +9333,29 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
+        "/lib/images/tcf/qcm-audit/co306-cours-theatre-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-cours-danse-dessine.webp",
-        null
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
       ],
-      "missing_labels": [
-        "Du cours de théâtre",
-        "Du cours de musique"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-a2p-s1-co-3",
+        "question": 2,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-cours-theatre-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-cours-danse-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+        ],
+        "support_quote": "Salut, c’est Malika.\nJe te téléphone pour le cours de théâtre, samedi.\nL’heure a changé, le cours est avancé à 15 h parce qu’après, à 16 h, la professeure a une réunion avec ses collègues.\nPour le cours, il faut apporter nos costumes.\nJe prends les gants et les lunettes.\nN’oublie pas les chapeaux.\nOn peut aller au cours ensemble, en bus.\nRendez-vous devant chez moi à 14 h 30 ?\nRappelle-moi si tu es d’accord !",
+        "current_bank_transcription": "Salut, c’est Malika.\nJe te téléphone pour le cours de théâtre, samedi.\nL’heure a changé, le cours est avancé à 15 h parce qu’après, à 16 h, la professeure a une réunion avec ses collègues.\nPour le cours, il faut apporter nos costumes.\nJe prends les gants et les lunettes.\nN’oublie pas les chapeaux.\nOn peut aller au cours ensemble, en bus.\nRendez-vous devant chez moi à 14 h 30 ?\nRappelle-moi si tu es d’accord !",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Répétition guidée de théâtre ajoutée, cours de danse existant et séance collective de musique dans une salle de cours réutilisés ; aucune confusion avec un concert public. Transcription actuelle relue ; audio de remplacement à rapprocher."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -12964,19 +13036,29 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
+        "/lib/images/tcf/qcm-audit/co306-cours-cuisine-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-cours-danse-dessine.webp",
-        null
+        "/lib/images/tcf/qcm-audit/co306-cours-expression-orale-dessine.webp"
       ],
-      "missing_labels": [
-        "Un cours de cuisine",
-        "Un cours de français"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s48-co-1",
+        "question": 2,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-cours-cuisine-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-cours-danse-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-cours-expression-orale-dessine.webp"
+        ],
+        "support_quote": "- Salut Louise !\nTu vas faire quoi ce week-end ?\n- Un cours de cuisine, puis une promenade à vélo.",
+        "current_bank_transcription": "- Salut Louise !\nTu vas faire quoi ce week-end ?\n- Un cours de cuisine, puis une promenade à vélo.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Cours de cuisine, cours de danse existant et cours de français oral réutilisé : l’expression orale en français appartient bien au cours de français demandé, sans changer son sens. Transcription actuelle relue ; audio de remplacement à rapprocher."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -14258,7 +14340,7 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a2-abc-direct:68:807e69a84c9c:aed1c937"
       ],
@@ -14271,14 +14353,30 @@
         }
       ],
       "resolved_images": [
-        null,
+        "/lib/images/tcf/qcm-audit/co306-grande-salle-fetes-dessine.webp",
         "/lib/images/tcf/qcm-audit/co306-musee-dessine.webp",
         "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp"
       ],
-      "missing_labels": [
-        "Dans la grande salle des fêtes"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-grande-salle-fetes-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-musee-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ssx-a2-radio-20-2-co-3",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-grande-salle-fetes-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-musee-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp"
+        ],
+        "support_quote": "Ave l'aide de Radio Village, la mairie organise ce week-end une exposition de photographie de notre belle région. Paysages, architecture, commerce locaux. 27 photographes seront présents à la rencontre qui aura lieu dans la grande salle des fêtes. Venez nombreux!",
+        "current_bank_transcription": "Avec l’aide de RadioVillages, la mairie organise ce week-end une exposition de photographies de notre belle région : paysages, architecture, commerces locaux...\n27 photographes seront présents à la rencontre qui aura lieu dans la grande salle des fêtes.\nVenez nombreux !",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Grande salle communale ajoutée, galerie de musée et mairie déjà disponibles réutilisées ; profondeur de la salle et fonctions des trois lieux visibles, aucun nombre de photographes ou indication de jour ajouté."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",

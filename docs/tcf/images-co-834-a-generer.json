@@ -31,20 +31,20 @@
     "received_source_entries": 836,
     "copyright_removed": 2,
     "planned_question_candidates": 423,
-    "activated_planned_questions": 202,
-    "pending_question_candidates": 221,
+    "activated_planned_questions": 206,
+    "pending_question_candidates": 217,
     "original_missing_concepts": 741,
-    "original_concepts_now_generated_or_reused": 491,
-    "remaining_original_concepts": 250,
-    "new_co_images_this_batch": 624,
+    "original_concepts_now_generated_or_reused": 505,
+    "remaining_original_concepts": 236,
+    "new_co_images_this_batch": 638,
     "activated_association_scenes_this_batch": 13,
     "pending_association_scenes": 0,
-    "sources_with_pending_question_candidates": 82,
-    "sources_with_new_active_question_or_scene": 187,
+    "sources_with_pending_question_candidates": 77,
+    "sources_with_new_active_question_or_scene": 192,
     "sources_without_current_bank_reference": 234,
     "remaining_audio_references_to_match": 432,
     "co_images_needing_style_correction": 0,
-    "co_images_style_aligned": 624,
+    "co_images_style_aligned": 638,
     "co_style_redraws_completed": 11
   },
   "instructions": [
@@ -996,17 +996,17 @@
         "/lib/audio/tcf/co/vie-quotidienne/excusez-moi-essaie-retirer-1-2.mp3",
         "/lib/audio/tcf/co/vie-quotidienne/excusez-moi-essaie-retirer-1-3.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a1-s47-co-2",
           "question": 1
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 8,
-      "current_linked_image_variants": 1,
+      "current_linked_image_variants": 2,
       "complete_image_audit_certified": false
     },
     {
@@ -2459,17 +2459,17 @@
         "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_45-2.mp3",
         "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_45-3.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "delf-a1-2022-co-ex4-45",
           "question": 5
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 10,
-      "current_linked_image_variants": 1,
+      "current_linked_image_variants": 2,
       "complete_image_audit_certified": false
     },
     {
@@ -9499,17 +9499,17 @@
         "/lib/audio/tcf/co/vie-quotidienne/excusez-moi-essaie-retirer-1-2.mp3",
         "/lib/audio/tcf/co/vie-quotidienne/excusez-moi-essaie-retirer-1-3.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a1-s47-co-2",
           "question": 1
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 8,
-      "current_linked_image_variants": 1,
+      "current_linked_image_variants": 2,
       "complete_image_audit_certified": false
     },
     {
@@ -10616,17 +10616,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/loisirs/loisirs-instruction.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a1-s19-co-4",
           "question": 1
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 8,
-      "current_linked_image_variants": 3,
+      "current_linked_image_variants": 4,
       "complete_image_audit_certified": false
     },
     {
@@ -12628,17 +12628,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/presenter/moyen-a2__radio-20.2.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ssx-a2-radio-20-2-co-3",
           "question": 3
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 5,
-      "current_linked_image_variants": 1,
+      "current_linked_image_variants": 2,
       "complete_image_audit_certified": false
     },
     {
@@ -19445,7 +19445,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-piece-sombre-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-piece-lumineuse-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-piece-tres-ensoleillee-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s16-co-1",
+        "question": 4,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-piece-sombre-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-piece-lumineuse-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-piece-tres-ensoleillee-dessine.webp"
+        ],
+        "support_quote": "- Tu habites au 3e ?\n- Non, au rez-de-chaussée, dans un studio.\n- Il est bien ?\n- Non, la pièce est petite, sombre et la cuisine n'est pas équipée.",
+        "current_bank_transcription": "- Tu habites au 3e ?\n- Non, au rez-de-chaussée, dans un studio.\n- Il est bien ?\n- Non, la pièce est petite, sombre et la cuisine n'est pas équipée.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Trois éclairages de la même pièce et du même mobilier : sombre, lumière diffuse abondante et soleil direct. L’effet ne dépend pas d’un changement d’objet, de couleur de canapé ou de cadrage. Transcription actuelle relue ; audio de remplacement à rapprocher."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -19817,7 +19836,7 @@
           "asset": null
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a1-abc:35:069a8d398e14:de36c618"
       ],
@@ -19828,6 +19847,11 @@
           "candidate_cut_id": "additional-20261102-mdf-a1-abc-35-069a8d398e14-de36c618-d1",
           "transcription": "Salut! Je dois annuler notre rendez-vous au restaurant ce midi. J'ai trop de travail. On peut se faire un cinéma demain à 18h. J'ai aussi des entrées gratuites pour le musée le 15 ou le 25 juin. Il faut juste réserver par téléphone. Envoie-moi un SMS pour confirmer."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-dejeuner-restaurant-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-cours-gym-dessine.webp"
       ]
     },
     {
@@ -19955,7 +19979,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-cours-expression-orale-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-cours-dessin-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-cours-gym-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s21-co-1",
+        "question": 4,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-cours-expression-orale-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-cours-dessin-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-cours-gym-dessine.webp"
+        ],
+        "support_quote": "- Bonjour madame Racine.\nJe peux entrer ?\n- Oui, bonjour.\n- Madame, ma note d'écrit est mauvaise.\nNous avons encore un examen ?\n- Vous avez encore deux écrits et un oral.\n- L'oral, c'est quoi ?\n- C'est une présentation devant la classe.\n- Comment je peux réussir l'examen ?\n- Et bien, pour commencer, venez au cours d'expression orale vendredi.\n- Le cours commence à quelle heure ?\n- À 13 heures, dans la salle 613.\n- D'accord, merci beaucoup madame.\nÀ vendredi.\n- À vendredi.",
+        "current_bank_transcription": "- Bonjour madame Racine.\nJe peux entrer ?\n- Oui, bonjour.\n- Madame, ma note d'écrit est mauvaise.\nNous avons encore un examen ?\n- Vous avez encore deux écrits et un oral.\n- L'oral, c'est quoi ?\n- C'est une présentation devant la classe.\n- Comment je peux réussir l'examen ?\n- Et bien, pour commencer, venez au cours d'expression orale vendredi.\n- Le cours commence à quelle heure ?\n- À 13 heures, dans la salle 613.\n- D'accord, merci beaucoup madame.\nÀ vendredi.\n- À vendredi.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Discussion accompagnée en français, cours de dessin au crayon existant et cours de gymnastique existant ; les trois cours sont distingués par leur activité. Transcription actuelle relue ; audio de remplacement à rapprocher."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -22350,7 +22393,7 @@
           "asset": "5e317a024fab"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "09035276:046:68380186b072",
         "additional-20261102:mdf-a1-abc-junior:46:68380186b072:57aad8f0"
@@ -22362,6 +22405,11 @@
           "candidate_cut_id": "09035276-046-68380186b072-d1",
           "transcription": "Tu as vu la nouvelle prof de français? Non, je ne la connais pas. C'est qui? Elle est très sympa. Regarde, c'est elle là-bas, assise sur le banc avec des lunettes."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-professeure-francais-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-professeure-musique-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-professeure-sport-dessine.webp"
       ]
     },
     {
@@ -25287,7 +25335,7 @@
           "asset": "b975aa5bbb3b"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:045:789023c46e4d"
       ],
@@ -25298,6 +25346,11 @@
           "candidate_cut_id": "delf_a1_2022-045-789023c46e4d-d2",
           "transcription": "Lola, tu es dans ta chambre? Est-ce que tu peux me montrer les explications de ton professeur de dessin, Madame Rossignole? Je ne comprends pas ta note."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-professeure-dessin-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-professeure-anglais-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-professeure-histoire-dessine.webp"
       ]
     },
     {
@@ -27903,7 +27956,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-cours-theatre-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-cours-danse-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-a2p-s1-co-3",
+        "question": 2,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-cours-theatre-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-cours-danse-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+        ],
+        "support_quote": "Salut, c’est Malika.\nJe te téléphone pour le cours de théâtre, samedi.\nL’heure a changé, le cours est avancé à 15 h parce qu’après, à 16 h, la professeure a une réunion avec ses collègues.\nPour le cours, il faut apporter nos costumes.\nJe prends les gants et les lunettes.\nN’oublie pas les chapeaux.\nOn peut aller au cours ensemble, en bus.\nRendez-vous devant chez moi à 14 h 30 ?\nRappelle-moi si tu es d’accord !",
+        "current_bank_transcription": "Salut, c’est Malika.\nJe te téléphone pour le cours de théâtre, samedi.\nL’heure a changé, le cours est avancé à 15 h parce qu’après, à 16 h, la professeure a une réunion avec ses collègues.\nPour le cours, il faut apporter nos costumes.\nJe prends les gants et les lunettes.\nN’oublie pas les chapeaux.\nOn peut aller au cours ensemble, en bus.\nRendez-vous devant chez moi à 14 h 30 ?\nRappelle-moi si tu es d’accord !",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Répétition guidée de théâtre ajoutée, cours de danse existant et séance collective de musique dans une salle de cours réutilisés ; aucune confusion avec un concert public. Transcription actuelle relue ; audio de remplacement à rapprocher."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -32044,7 +32116,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-cours-cuisine-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-cours-danse-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cours-expression-orale-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s48-co-1",
+        "question": 2,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-cours-cuisine-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-cours-danse-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-cours-expression-orale-dessine.webp"
+        ],
+        "support_quote": "- Salut Louise !\nTu vas faire quoi ce week-end ?\n- Un cours de cuisine, puis une promenade à vélo.",
+        "current_bank_transcription": "- Salut Louise !\nTu vas faire quoi ce week-end ?\n- Un cours de cuisine, puis une promenade à vélo.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Cours de cuisine, cours de danse existant et cours de français oral réutilisé : l’expression orale en français appartient bien au cours de français demandé, sans changer son sens. Transcription actuelle relue ; audio de remplacement à rapprocher."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -33623,7 +33714,7 @@
           "asset": null
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a2-abc-direct:68:807e69a84c9c:aed1c937"
       ],
@@ -33634,6 +33725,11 @@
           "candidate_cut_id": "additional-20261102-mdf-a2-abc-direct-68-807e69a84c9c-aed1c937-d1",
           "transcription": "Ave l'aide de Radio Village, la mairie organise ce week-end une exposition de photographie de notre belle région. Paysages, architecture, commerce locaux. 27 photographes seront présents à la rencontre qui aura lieu dans la grande salle des fêtes. Venez nombreux!"
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-grande-salle-fetes-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-musee-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp"
       ]
     },
     {
@@ -37115,7 +37211,7 @@
       "label": "La professeure de musique",
       "path_after_generation": "/lib/images/tcf/qcm-audit/6676a97d2a46.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « La professeure de musique ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s47-co-2",
@@ -37123,8 +37219,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-professeure-musique-dessine.webp",
+      "sha256": "63c26335361f19ecc97b111c1e71c190a0af5533c777d31dd2694247c2d78621",
+      "review_note": "Une professeure noire à tresses explique une portée avec clé de sol et notes, instruments dans la salle ; une seule personne, aucun nombre de mesure. Paysage natif exact 4:3 et concept entier relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "5393aad0960a",
@@ -38209,7 +38310,7 @@
       "label": "Un déjeuner au restaurant",
       "path_after_generation": "/lib/images/tcf/qcm-audit/18351acde0bf.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un déjeuner au restaurant ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s19-co-4",
@@ -38217,8 +38318,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-dejeuner-restaurant-dessine.webp",
+      "sha256": "57f2fabcc610451581a039cfcb31781f12bd106fc0831b81dd81cc02f44766c9",
+      "review_note": "Deux adultes distincts déjeunent à une table de restaurant en plein jour, assiettes et couverts visibles ; aucune horloge ou date, pas de groupe debout. Paysage natif exact 4:3 et concept entier relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "3faa18b043b2",
@@ -38241,7 +38347,7 @@
       "label": "La professeure d'anglais",
       "path_after_generation": "/lib/images/tcf/qcm-audit/4da4e8a1d18f.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « La professeure d'anglais ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-ex4-45",
@@ -38249,8 +38355,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-professeure-anglais-dessine.webp",
+      "sha256": "aa70aa8c5e579aa3ea3e280a9742d40a8d0709baf856477a325a7ab0c0248fe4",
+      "review_note": "Une professeure est-asiatique seule devant un tableau ENGLISH, Hello!, My name is… relu en vue pleine ; contexte de cours d’anglais, pas de drapeau ou date. Paysage natif exact 4:3 et concept entier relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "35a009818c1d",
@@ -38294,7 +38405,7 @@
       "label": "La pièce est sombre",
       "path_after_generation": "/lib/images/tcf/qcm-audit/e4d4747cb9f7.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « La pièce est sombre ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s16-co-1",
@@ -38302,8 +38413,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-piece-sombre-dessine.webp",
+      "sha256": "a0516f892c04f234ae7c18cfb157c9fda78826ca59730a0e3a1ca7709760c671",
+      "review_note": "Même pièce et mêmes objets, éclairage naturel faible et nettement sombre ; détails encore reconnaissables, aucune lampe ou bougie ajoutée. Paysage natif exact 4:3 et concept entier relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "ff8b74195f20",
@@ -38814,7 +38930,7 @@
       "label": "La professeure de sport",
       "path_after_generation": "/lib/images/tcf/qcm-audit/5e317a024fab.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « La professeure de sport ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s47-co-2",
@@ -38822,8 +38938,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-professeure-sport-dessine.webp",
+      "sha256": "e92dd7d26df0094fcf3d19e0d9b30a22cab2aa0a392250f5a0fc261158bc77ce",
+      "review_note": "Une professeure est-asiatique aux cheveux gris et tenue sportive avec sifflet montre un étirement dans un gymnase ; une seule personne, figure entière et geste clair. Paysage natif exact 4:3 et concept entier relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "a9673b0b3951",
@@ -38888,7 +39009,7 @@
       "label": "Dans la grande salle des fêtes",
       "path_after_generation": "/lib/images/tcf/qcm-audit/0cacdbfb9ed5.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Dans la grande salle des fêtes ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ssx-a2-radio-20-2-co-3",
@@ -38896,8 +39017,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-grande-salle-fetes-dessine.webp",
+      "sha256": "a648cf3001b4fd547a37bb5d9b7409f169078aaae887e6ca08e5ce85c07301ac",
+      "review_note": "Grande salle communale vide avec estrade, rideaux, tables et rangées de chaises ; profondeur et échelle visibles, SALLE DES FÊTES correctement relu en vue pleine. Paysage natif exact 4:3 et concept entier relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "1b0fedc6be4c",
@@ -41404,7 +41530,7 @@
       "label": "La professeure de français",
       "path_after_generation": "/lib/images/tcf/qcm-audit/25c79ccef5bd.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « La professeure de français ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s47-co-2",
@@ -41412,8 +41538,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-professeure-francais-dessine.webp",
+      "sha256": "e9e8af28e1b67977c658e86c4154e8ab3729eb76c26beb169fe1b9a1d2dfa0c7",
+      "review_note": "Une professeure seule à lunettes, livre ouvert et tableau de français ; FRANÇAIS, Bonjour et Je m’appelle correctement relus en vue pleine, aucune note ou date. Paysage natif exact 4:3 et concept entier relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "ed1c4335755e",
@@ -41493,7 +41624,7 @@
       "label": "La professeure d'histoire",
       "path_after_generation": "/lib/images/tcf/qcm-audit/b975aa5bbb3b.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « La professeure d'histoire ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-ex4-45",
@@ -41501,8 +41632,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-professeure-histoire-dessine.webp",
+      "sha256": "b3c8c0daf43ea584a2dd5eaf9b0e6f6e17991654644fef18e390ff635a32fb19",
+      "review_note": "Une professeure aux cheveux bruns bouclés explique un château et une amphore au tableau HISTOIRE correctement relu ; aucune année ou chronologie chiffrée. Paysage natif exact 4:3 et concept entier relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "521649eaa7b7",
@@ -42250,7 +42386,7 @@
       "label": "Un cours de cuisine",
       "path_after_generation": "/lib/images/tcf/qcm-audit/382a0bc20dc1.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un cours de cuisine ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s48-co-1",
@@ -42258,15 +42394,20 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-cours-cuisine-dessine.webp",
+      "sha256": "adcf49233bb429f177fb5985655d0c24b73677caed21214f94b3583874e0bad2",
+      "review_note": "Formateur et deux élèves adultes à un plan de travail de cuisine, légumes, casserole et tabliers ; mains et gestes relus en vue pleine, trois personnes distinctes et pas de repas assis. Paysage natif exact 4:3 et concept entier relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "c3ad38ae591f",
       "label": "La pièce est lumineuse",
       "path_after_generation": "/lib/images/tcf/qcm-audit/c3ad38ae591f.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « La pièce est lumineuse ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s16-co-1",
@@ -42274,8 +42415,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-piece-lumineuse-dessine.webp",
+      "sha256": "f68772ad82d6a81d169c60923f0acae5d14b589bb61e4c6c030c049b20f313dc",
+      "review_note": "Pièce de vie éclairée par une lumière naturelle diffuse abondante, fenêtre à gauche et canapé bleu ; mobilier et petits objets servent de base identique aux deux autres éclairages. Paysage natif exact 4:3 et concept entier relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "f84b97e2c8a8",
@@ -44029,7 +44175,7 @@
       "label": "La pièce est très ensoleillée",
       "path_after_generation": "/lib/images/tcf/qcm-audit/0538db01b3bb.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « La pièce est très ensoleillée ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s16-co-1",
@@ -44037,8 +44183,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-piece-tres-ensoleillee-dessine.webp",
+      "sha256": "13837c73a3b9a81922f6cb6b87ae16904d0a8f7983433f5e4aa11144e43721f6",
+      "review_note": "Même pièce et mêmes objets, grandes plages de soleil direct et ombres nettes de fenêtre et plante ; distinction nette avec la lumière diffuse de la pièce lumineuse. Paysage natif exact 4:3 et concept entier relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "4a13d54969ca",
@@ -46580,7 +46731,7 @@
       "label": "La professeure de dessin",
       "path_after_generation": "/lib/images/tcf/qcm-audit/65674e449937.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « La professeure de dessin ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-ex4-45",
@@ -46588,8 +46739,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-professeure-dessin-dessine.webp",
+      "sha256": "3f774538f4082ca1b63fc2a0df38ba1ffaaed900f1ed0e089d81243c4dbacbe4",
+      "review_note": "Une professeure grisonnante à lunettes explique au crayon un dessin de pomme et vase au graphite ; pas de peinture en couleur, DESSIN relu et une seule personne. Paysage natif exact 4:3 et concept entier relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "92a41ae9f798",
@@ -47686,7 +47842,7 @@
       "label": "Du cours de théâtre",
       "path_after_generation": "/lib/images/tcf/qcm-audit/edd95ce83052.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Du cours de théâtre ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a2p-s1-co-3",
@@ -47694,8 +47850,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-cours-theatre-dessine.webp",
+      "sha256": "d793adf950631455004f86ba39615dec250f1d4155c085076c05d90c01e714c7",
+      "review_note": "Formatrice accompagnant deux jeunes adultes qui répètent un dialogue, rideau et accessoires de répétition ; rôle de cours distingué d’un spectacle public, deux bras par personne. Paysage natif exact 4:3 et concept entier relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "141068626994",
@@ -48433,7 +48594,7 @@
       "label": "Le cours d’expression orale",
       "path_after_generation": "/lib/images/tcf/qcm-audit/8ff6c5b1c5aa.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le cours d’expression orale ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s21-co-1",
@@ -48441,8 +48602,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-cours-expression-orale-dessine.webp",
+      "sha256": "3d478a1b11ba4228fc70dcfb407ea898444ab3656acdfa6bbcd8ec31b4b3c2be",
+      "review_note": "Une enseignante et deux adultes de profils variés conversent en petit cercle, tableau Bonjour ! Comment ça va ? correctement relu ; cours d’expression orale en français reconnaissable. Paysage natif exact 4:3 et concept entier relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "cbc76cf097b1",
@@ -51529,19 +51695,19 @@
   "pending_association_images": [],
   "visual_style_review": {
     "audit": "recontrole-style-images.json",
-    "reviewed_co_images": 624,
+    "reviewed_co_images": 638,
     "reviewed_other_images": 59,
-    "reviewed_total_images": 683,
+    "reviewed_total_images": 697,
     "user_approved_reference_images": 35,
     "initial_redraw_required": 11,
     "initial_co_redraw_required": 11,
     "initial_other_redraw_required": 0,
-    "already_aligned": 672,
+    "already_aligned": 686,
     "redrawn_images": 11,
     "remaining_redraws": 0,
     "restored_previous_images": 14,
     "rejected_unpublished_previews": 12,
-    "new_images_compared_to_reference": 365
+    "new_images_compared_to_reference": 379
   },
   "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
   "workflow_order": [
