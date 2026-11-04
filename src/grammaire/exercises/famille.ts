@@ -11,7 +11,6 @@ import type { GramExerciseKindId } from './kinds'
 import { buildFamilyReading } from './family-reading'
 
 const CHOICE_IDS = ['a', 'b', 'c'] as const
-const AUD = '/lib/audio/grammaire/famille'
 
 export const FAMILLE_KIND_IDS = [
   'fam-det',
@@ -314,7 +313,7 @@ type CoSet = {
 const CO_SETS: CoSet[] = [
   {
     id: 'audio-1-vf',
-    audio: `${AUD}/lecon-02-01-02-audio-1.mp3`,
+    audio: '',
     transcription:
       'Je m’appelle Irina Dupré-Ortega. Dupré, c’est le nom de ma mère. Elle est française. Elle habite à Fougères. Mon père s’appelle Federico Ortega. C’est un musicien espagnol. J’ai deux sœurs. Elles sont médecins. Mon fils, Thomas, a six ans. Il parle français et espagnol.',
     questions: [
@@ -328,7 +327,7 @@ const CO_SETS: CoSet[] = [
   },
   {
     id: 'audio-2-lettres',
-    audio: `${AUD}/lecon-02-01-03-audio-2.mp3`,
+    audio: '',
     transcription:
       'a. Sa femme est musicienne.\nb. Leur tante a trois enfants.\nc. Votre oncle est professeur ?\nd. Nos parents ont 50 ans.',
     questions: [
@@ -340,7 +339,7 @@ const CO_SETS: CoSet[] = [
   },
   {
     id: 'audio-3-fabien',
-    audio: `${AUD}/lecon-02-02-01-audio-3.mp3`,
+    audio: '',
     transcription:
       'Papa, maman, voici mon ami Fabien, il est étudiant dans mon université. Fabien, voici mes parents, Simon et Flavie, et le grand brun, c’est mon frère Sébastien.',
     questions: [
@@ -354,7 +353,7 @@ const CO_SETS: CoSet[] = [
   },
   {
     id: 'audio-4-photo',
-    audio: `${AUD}/lecon-02-02-01-audio-4.mp3`,
+    audio: '',
     transcription:
       'Regarde, voici la photo d’anniversaire de mes 18 ans. La jeune fille blonde, c’est moi. Et voici papa, ton papi. Le petit roux, c’est mon frère Thomas. Il est veuf.',
     questions: [
@@ -368,7 +367,7 @@ const CO_SETS: CoSet[] = [
   },
   {
     id: 'audio-5-familles',
-    audio: `${AUD}/lecon-02-02-01-audio-5.mp3`,
+    audio: '',
     transcription:
       'En général, les familles françaises ont un ou deux enfants. Les parents sont jeunes, ils ont entre 30 et 35 ans et sont souvent mariés ou pacsés. Mais ils peuvent aussi être séparés ou divorcés.',
     questions: [
@@ -385,7 +384,7 @@ const CO_SETS: CoSet[] = [
   },
   {
     id: 'audio-nina',
-    audio: `${AUD}/lecon-02-02-01-audio-1.mp3`,
+    audio: '',
     transcription:
       'Fatima, regarde la photo sur mon téléphone. C’est ma famille. Là c’est mon frère, Farid.\nWaouh, le bel homme ! Il est célibataire ?\nNon, il est marié. Et là, c’est sa femme, Fanny.\nMoi, je suis célibataire et heureuse avec mes enfants, en famille monoparentale… et nombreuse ! Vive les enfants.',
     questions: [

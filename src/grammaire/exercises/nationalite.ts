@@ -11,8 +11,8 @@ import type { GramExerciseKindId } from './kinds'
 
 const CHOICE_IDS = ['a', 'b', 'c'] as const
 
-/** Audio CSC_FR_LECON-01_03.01_AUDIO-3 — à déposer sous ce chemin. */
-export const NAT_CO_ALI_AUDIO = '/lib/audio/grammaire/presenter/lecon-01-03-01-audio-3.mp3'
+/** Aucun fichier audio associé ; transcription conservée. */
+export const NAT_CO_ALI_AUDIO = ''
 
 export const NATIONALITE_KIND_IDS = [
   'nat-image',
@@ -210,7 +210,7 @@ function dualQcmTrait(
 
 /**
  * CO Ali — questions fixes (QCM + trait + image).
- * Audio à déposer : CSC_FR_LECON-01_03.01_AUDIO-3 → {@link NAT_CO_ALI_AUDIO}.
+ * Transcription conservée ; aucun fichier audio associé.
  */
 const NAT_CO_ALI_QUESTIONS: TcfQuestion[] = [
   dualQcmTrait('D’où vient Ali ?', 'Je ne sais pas', [

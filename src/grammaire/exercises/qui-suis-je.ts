@@ -248,11 +248,11 @@ function lignes(enonce: string, modele: string, nb = 1): TcfQuestionLignes {
   return { enonce, type_reponse: 'lignes', nb_lignes: nb, reponse_modele: modele }
 }
 
-/** Audios CSC leçon 01 · 05.03–05.06 (Qui suis-je ?). */
+/** Transcriptions et questions de compréhension orale (Qui suis-je ?). */
 const CO_SETS: CoSet[] = [
   {
     id: 'audrey',
-    audio: '/lib/audio/grammaire/presenter/lecon-01-05-03-audio-1.mp3',
+    audio: '',
     transcription:
       'Je m’appelle Audrey. J’habite à Odawara. Je suis française. Je suis du Nord. Je parle français, anglais et un peu japonais. J’ai 29 ans. J’aime bien dessiner et j’aime bien aller au musée.',
     questions: [
@@ -277,7 +277,7 @@ const CO_SETS: CoSet[] = [
   },
   {
     id: 'paul-bernard-lignes',
-    audio: '/lib/audio/grammaire/presenter/lecon-01-05-03-audio-2.mp3',
+    audio: '',
     transcription:
       '— Vous êtes monsieur ? — Je suis Paul Bernard. Mon prénom est Paul et mon nom de famille est Bernard. — Vous êtes anglais ? — Non, je suis canadien. Je suis de Vancouver. — Vous êtes en France pour le travail ? — Oui et non, je suis écrivain, je suis toujours en vacances.',
     questions: [
@@ -289,7 +289,7 @@ const CO_SETS: CoSet[] = [
   },
   {
     id: 'paul-bernard-vf',
-    audio: '/lib/audio/grammaire/presenter/lecon-01-05-03-audio-2.mp3',
+    audio: '',
     transcription:
       '— Vous êtes monsieur ? — Je suis Paul Bernard. Mon prénom est Paul et mon nom de famille est Bernard. — Vous êtes anglais ? — Non, je suis canadien. Je suis de Vancouver. — Vous êtes en France pour le travail ? — Oui et non, je suis écrivain, je suis toujours en vacances.',
     questions: [
@@ -301,7 +301,7 @@ const CO_SETS: CoSet[] = [
   },
   {
     id: 'bus',
-    audio: '/lib/audio/grammaire/presenter/lecon-01-05-04-audio-1.mp3',
+    audio: '',
     transcription:
       '— Tiens, bonjour Noémie, ça fait plaisir de te voir. Ça va ? — Oui, bien. Merci. Et toi ? — Pas mal, merci. Tu vas au travail ? — Oui, je vais prendre le bus. — Au fait, vous vous connaissez ? — Non. — Alors, voici Léo, mon voisin. Noémie, une ancienne collègue. — Bonjour. — Eh bien, mon bus arrive. Je vous laisse. Bonne journée, et à bientôt ! — Au revoir, à la prochaine ! Dis bonjour à Renaud de ma part !',
     questions: [
@@ -314,7 +314,7 @@ const CO_SETS: CoSet[] = [
   },
   {
     id: 'nael',
-    audio: '/lib/audio/grammaire/presenter/lecon-01-05-04-audio-2.mp3',
+    audio: '',
     transcription:
       'Bonjour à tous. Je suis votre professeur. Je m’appelle Nael Kervelek. Nael, N-A-E-L. C’est mon prénom. Et Kervelek, K-E-R-V-E-L-E-K. C’est mon nom. Je suis français et j’ai 34 ans. — Monsieur, vous pouvez répéter s’il vous plaît ?',
     questions: [
@@ -327,7 +327,7 @@ const CO_SETS: CoSet[] = [
   },
   {
     id: 'repondeur',
-    audio: '/lib/audio/grammaire/presenter/lecon-01-05-04-audio-4.mp3',
+    audio: '',
     transcription:
       'Vous êtes bien au 01 39 10 22 50. Bienvenue chez Lucie et Thomas ! Laissez votre nom, prénom et un numéro de téléphone s’il vous plaît.',
     questions: [
@@ -341,7 +341,7 @@ const CO_SETS: CoSet[] = [
   },
   {
     id: 'passeport',
-    audio: '/lib/audio/grammaire/presenter/lecon-01-05-05-audio-1.mp3',
+    audio: '',
     transcription:
       '— Bonjour, monsieur. C’est pour un passeport ? Votre nom de famille, s’il vous plaît. — Zola. Z-O-L-A. — Mais… tu es Dominique, non ? — Oui. — Ah, Jacques. Jacques Zola. Tu es l’ami de Camille, non ? Salut, ça va ?',
     questions: [
@@ -361,7 +361,7 @@ const CO_SETS: CoSet[] = [
   },
   {
     id: 'annie-nadine',
-    audio: '/lib/audio/grammaire/presenter/lecon-01-05-05-audio-2.mp3',
+    audio: '',
     transcription:
       'Et voici deux amies, Annie et Nadine. Annie Schultz, vous avez 37 ans, vous êtes suisse et vous êtes vendeuse. Et vous, Nadine Gatineau, vous êtes pharmacienne, vous êtes belge et vous avez 42 ans. C’est bien ça ?',
     questions: [
@@ -375,7 +375,7 @@ const CO_SETS: CoSet[] = [
   },
   {
     id: 'nina-felipe',
-    audio: '/lib/audio/grammaire/presenter/lecon-01-05-06-audio-1.mp3',
+    audio: '',
     transcription:
       '— Mais… c’est Sophie ! Sophie ! Bonjour ! — Non ! Moi c’est Nina ! — Pardon, Madame ! — Tu peux dire Nina, pas Madame ! J’ai 25 ans ! — Et Sophie ? — C’est ma sœur ! — Ah ! Enchanté Nina ! Moi c’est Felipe ! — Enchantée Felipe ! Tu es l’ami brésilien de ma sœur ? — Oui ! Je suis étudiant avec elle ! — Super ! Et toi ? Tu es étudiante aussi ? — Non ! Moi je travaille déjà ! Je suis ingénieure !',
     questions: [
