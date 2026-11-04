@@ -224,19 +224,19 @@
     "Les contours noirs appuyés, hachures et volumes fortement simplifiés des dernières reprises ne correspondent pas à la référence validée."
   ],
   "summary": {
-    "reviewed_co_images": 524,
+    "reviewed_co_images": 540,
     "reviewed_other_images": 59,
-    "reviewed_total_images": 583,
+    "reviewed_total_images": 599,
     "user_approved_reference_images": 35,
     "initial_redraw_required": 11,
     "initial_co_redraw_required": 11,
     "initial_other_redraw_required": 0,
-    "already_aligned": 572,
+    "already_aligned": 588,
     "redrawn_images": 11,
     "remaining_redraws": 0,
     "restored_previous_images": 14,
     "rejected_unpublished_previews": 12,
-    "new_images_compared_to_reference": 265
+    "new_images_compared_to_reference": 281
   },
   "superseded_review": {
     "commit": "f6f2a521",
@@ -7484,6 +7484,246 @@
       "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
       "references": [
         "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-couleurs-bleu-vert-dessine",
+      "label": "Le bleu et le vert",
+      "path": "/lib/images/tcf/qcm-audit/co306-couleurs-bleu-vert-dessine.webp",
+      "sha256": "b70129daebfc9c772cf0628ab9c116e2ba59e817e10bb1699bfd60e4994595b3",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : volumes doux, ombres légères, contours discrets et matériaux peints. Les paires de couleurs sont comparées au modelé textile des pulls bleus et les objets au dessin des boissons. Deux échantillons de tissu entiers, bleu franc et vert franc ; formes et plis de la paire noir/blanc conservés, pas de couleur parasite.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-couleurs-rouge-jaune-dessine",
+      "label": "Le rouge et le jaune",
+      "path": "/lib/images/tcf/qcm-audit/co306-couleurs-rouge-jaune-dessine.webp",
+      "sha256": "8ac7aeec232b3e39edeac0f8b0730f64200bd50f16f7d6ac97af98db9e4c0438",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : volumes doux, ombres légères, contours discrets et matériaux peints. Les paires de couleurs sont comparées au modelé textile des pulls bleus et les objets au dessin des boissons. Deux échantillons de tissu entiers, rouge franc et jaune franc ; cohérents avec les autres paires, aucun mot ou signe ajouté.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-passeport-dessine",
+      "label": "Un passeport",
+      "path": "/lib/images/tcf/qcm-audit/co306-passeport-dessine.webp",
+      "sha256": "c2f0b65db0e431c49bf0c0c17fe43e7cd5cc3f195e44b7208cff5ed2b5200ac0",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : volumes doux, ombres légères, contours discrets et matériaux peints. Les paires de couleurs sont comparées au modelé textile des pulls bleus et les objets au dessin des boissons. Passeport fermé générique bleu marine, petit titre PASSEPORT correctement relu et globe ; pas de pays imposé, numéro ou date.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-carte-visite-dessine",
+      "label": "Une carte de visite",
+      "path": "/lib/images/tcf/qcm-audit/co306-carte-visite-dessine.webp",
+      "sha256": "2040f13e81dbe58eaf31579427d9c4e96d136db2efe2164050f893ec1b7a3237",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : volumes doux, ombres légères, contours discrets et matériaux peints. Les paires de couleurs sont comparées au modelé textile des pulls bleus et les objets au dessin des boissons. Deux faces d’une carte de visite professionnelle, pictogrammes de contact et traits abstraits, sans coordonnées personnelles.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-carte-bibliotheque-dessine",
+      "label": "Une carte de bibliothèque",
+      "path": "/lib/images/tcf/qcm-audit/co306-carte-bibliotheque-dessine.webp",
+      "sha256": "d5e7bed44862388d409e471ae5bbb87b7f2b02d31a5e54c9ba1e86e0ca5d8929",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : volumes doux, ombres légères, contours discrets et matériaux peints. Les paires de couleurs sont comparées au modelé textile des pulls bleus et les objets au dessin des boissons. Carte plastifiée à pictogramme de livre ouvert, titre BIBLIOTHÈQUE relu en vue pleine ; pas de numéro, montant, date ou nom.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-carte-cantine-dessine",
+      "label": "Une carte de cantine",
+      "path": "/lib/images/tcf/qcm-audit/co306-carte-cantine-dessine.webp",
+      "sha256": "f3a8aa61c89b60724136cfde7cd8bee24918b3c45031db47dd9944555b8dd398",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : volumes doux, ombres légères, contours discrets et matériaux peints. Les paires de couleurs sont comparées au modelé textile des pulls bleus et les objets au dessin des boissons. Carte de cantine à pictogramme assiette, fourchette et cuillère ; titre CANTINE relu, aucune information chiffrée.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-carte-transport-dessine",
+      "label": "Une carte de transport",
+      "path": "/lib/images/tcf/qcm-audit/co306-carte-transport-dessine.webp",
+      "sha256": "4817395e118594a1168a68d265de7029664cf48eca3cd576606de1040761c884",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : volumes doux, ombres légères, contours discrets et matériaux peints. Les paires de couleurs sont comparées au modelé textile des pulls bleus et les objets au dessin des boissons. Carte de transport à pictogrammes bus/métro, titre TRANSPORTS relu ; aucun prix, ligne, numéro ou date.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-enveloppes-dessine",
+      "label": "Des enveloppes",
+      "path": "/lib/images/tcf/qcm-audit/co306-enveloppes-dessine.webp",
+      "sha256": "a7340a5dc8850f8f65a43035e4e5dcc96e62f978970f6b281c2217fa8d48b296",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : volumes doux, ombres légères, contours discrets et matériaux peints. Les paires de couleurs sont comparées au modelé textile des pulls bleus et les objets au dessin des boissons. Trois enveloppes vierges, deux rabats triangulaires et face avant ; pas de cartes postales ou timbres ajoutés.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-timbres-dessine",
+      "label": "Des timbres",
+      "path": "/lib/images/tcf/qcm-audit/co306-timbres-dessine.webp",
+      "sha256": "ad190d99b683972852413c1704e1a08135ad43020f895af730a6604a74ab33b7",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : volumes doux, ombres légères, contours discrets et matériaux peints. Les paires de couleurs sont comparées au modelé textile des pulls bleus et les objets au dessin des boissons. Bande de trois timbres à bords dentelés, motifs montagne, voilier et fleur ; aucune valeur faciale, date ou lettre.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-cartes-postales-dessine",
+      "label": "Des cartes postales",
+      "path": "/lib/images/tcf/qcm-audit/co306-cartes-postales-dessine.webp",
+      "sha256": "6a0c2b04f62594b5e1d7919190cb7d3929b5f0cb37f53c09bab0585cfbc9166a",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : volumes doux, ombres légères, contours discrets et matériaux peints. Les paires de couleurs sont comparées au modelé textile des pulls bleus et les objets au dessin des boissons. Trois cartes postales, deux illustrations et un verso à lignes d’adresse vierges ; aucune adresse, date ou cachet.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-boite-lettres-dessine",
+      "label": "La boîte aux lettres",
+      "path": "/lib/images/tcf/qcm-audit/co306-boite-lettres-dessine.webp",
+      "sha256": "c302539b33bc5eb4845b1f7cb6b23a52647ddfae003a7f8d8d6246ea668e828c",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : volumes doux, ombres légères, contours discrets et matériaux peints. Les paires de couleurs sont comparées au modelé textile des pulls bleus et les objets au dessin des boissons. Boîte publique jaune à fente et pictogramme d’enveloppe, pied entier ; pas d’horaire ou de marque.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-guichet-colis-dessine",
+      "label": "Le guichet des colis",
+      "path": "/lib/images/tcf/qcm-audit/co306-guichet-colis-dessine.webp",
+      "sha256": "455e55a29778e885e368066b9615225463afa15735733aeedd4b32b3d91becab",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : volumes doux, ombres légères, contours discrets et matériaux peints. Les paires de couleurs sont comparées au modelé textile des pulls bleus et les objets au dessin des boissons. Guichet postal à colis, balance à écran vide et petite enseigne COLIS relue ; guichet et cartons entiers.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-distributeur-timbres-dessine",
+      "label": "Le distributeur de timbres",
+      "path": "/lib/images/tcf/qcm-audit/co306-distributeur-timbres-dessine.webp",
+      "sha256": "b961bcff508f03d15b4982ef8a4526f007ddd64510ac9046a47d43623da746f6",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : volumes doux, ombres légères, contours discrets et matériaux peints. Les paires de couleurs sont comparées au modelé textile des pulls bleus et les objets au dessin des boissons. Automate de timbres à pictogramme de timbre et bande de timbres en sortie ; aucun tarif, chiffre ou autre produit.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-panier-vide-dessine",
+      "label": "Le panier",
+      "path": "/lib/images/tcf/qcm-audit/co306-panier-vide-dessine.webp",
+      "sha256": "d486afcb022c7ebec0c12dde5370910920fc5f87feec3f6d3795c011acfcd8d3",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : volumes doux, ombres légères, contours discrets et matériaux peints. Les paires de couleurs sont comparées au modelé textile des pulls bleus et les objets au dessin des boissons. Un panier en osier entièrement vide avec anse ; ne réutilise pas un panier-repas ou un panier rempli de pommes.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-ceinture-securite-avion-dessine",
+      "label": "La ceinture",
+      "path": "/lib/images/tcf/qcm-audit/co306-ceinture-securite-avion-dessine.webp",
+      "sha256": "f7736a1fad22a7d5768b98d120d28c000428b755bb0a143cbd52d0545bcd0388",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : volumes doux, ombres légères, contours discrets et matériaux peints. Les paires de couleurs sont comparées au modelé textile des pulls bleus et les objets au dessin des boissons. Ceinture de sécurité à sangle bleue et boucle métallique à clapet sur siège d’avion avec hublot, vue pleine relue. L’ancienne correspondance de ceinture de pantalon est explicitement écartée pour cette question avant activation.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-bagages-dessine",
+      "label": "Les bagages",
+      "path": "/lib/images/tcf/qcm-audit/co306-bagages-dessine.webp",
+      "sha256": "d163c4a33e77273b5bc83399aca6d609861da033723ceb8241a5e48be2559c5b",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : volumes doux, ombres légères, contours discrets et matériaux peints. Les paires de couleurs sont comparées au modelé textile des pulls bleus et les objets au dessin des boissons. Valise bleue à roulettes et sac de voyage brun existants composés ensemble, bagages entiers sans étiquette.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
       ],
       "review_origin": "new_generation_after_reference48",
       "user_approved_reference": false

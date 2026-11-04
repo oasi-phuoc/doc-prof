@@ -15,11 +15,11 @@
   ],
   "summary": {
     "initial_question_candidates": 306,
-    "questions_illustrated_or_prepared": 143,
-    "newly_activated": 51,
-    "prepared_pending_audio_link": 88,
+    "questions_illustrated_or_prepared": 150,
+    "newly_activated": 57,
+    "prepared_pending_audio_link": 89,
     "prepared_pending_audio_validation": 4,
-    "remaining_questions_requiring_images_or_review": 163,
+    "remaining_questions_requiring_images_or_review": 156,
     "unreviewed_complete_trios": 0,
     "audio_references_next_stage": 432,
     "vocabulary_occurrences_final_stage": 1906
@@ -3500,20 +3500,29 @@
           "asset": "807259130554"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-passeport-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-carte-visite-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-carte-bibliotheque-dessine.webp"
       ],
-      "missing_labels": [
-        "Un passeport",
-        "Une carte de visite",
-        "Une carte de bibliothèque"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s40-co-3",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-passeport-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-carte-visite-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-carte-bibliotheque-dessine.webp"
+        ],
+        "support_quote": "Femme — C'est pour un passeport ?\nHomme — Oui.\nFemme — Le nom de famille ?\nHomme — Zola.\nFemme — Et le prénom ?\nHomme — Jacques.\nFemme — Tu es l'ami de Camille.\nHomme — Oui.\nFemme — Salut, ça va ?",
+        "current_bank_transcription": "Femme — C'est pour un passeport ?\nHomme — Oui.\nFemme — Le nom de famille ?\nHomme — Zola.\nFemme — Et le prénom ?\nHomme — Jacques.\nFemme — Tu es l'ami de Camille.\nHomme — Oui.\nFemme — Salut, ça va ?",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Passeport, carte de visite et carte de bibliothèque sont trois documents distincts ; les titres naturels des documents ne contiennent aucune donnée personnelle."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -6483,7 +6492,7 @@
           "asset": "b429e2682d5a"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:018:4e7ffcbf4fda"
       ],
@@ -6496,16 +6505,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-boite-lettres-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-guichet-colis-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-distributeur-timbres-dessine.webp"
       ],
-      "missing_labels": [
-        "La boîte aux lettres",
-        "Le guichet des colis",
-        "Le distributeur de timbres"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-boite-lettres-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-guichet-colis-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-distributeur-timbres-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a1-2022-co-ex2-18",
+        "question": 12,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-boite-lettres-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-guichet-colis-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-distributeur-timbres-dessine.webp"
+        ],
+        "support_quote": "La poste est fermée. Vous ne pouvez plus envoyer de colis pendant les vacances. Mais la boîte aux lettres est toujours disponible. Vous pouvez donc envoyer vos lettres pendant les vacances.",
+        "current_bank_transcription": "La poste est fermée ! Vous ne pouvez plus envoyer de colis pendant les vacances. Mais la boîte aux lettres est toujours disponible. Vous pouvez donc envoyer vos lettres pendant les vacances.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Boîte aux lettres, guichet des colis et automate de timbres : trois équipements entiers et distincts, sans horaire ou prix."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -7523,7 +7546,7 @@
           "asset": "994890d8e15a"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:080:cf5c353de918"
       ],
@@ -7536,15 +7559,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
+        "/lib/images/tcf/qcm-audit/co306-couleurs-bleu-vert-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-couleurs-rouge-jaune-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-couleurs-noir-blanc.webp"
       ],
-      "missing_labels": [
-        "Le bleu et le vert",
-        "Le rouge et le jaune"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-couleurs-bleu-vert-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-couleurs-rouge-jaune-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-couleurs-noir-blanc.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a1-2022-co-80",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-couleurs-bleu-vert-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-couleurs-rouge-jaune-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-couleurs-noir-blanc.webp"
+        ],
+        "support_quote": "Ma couleur préférée est le bleu. Moi, c'est le vert. J'ai un chien et deux chats. 1 c'est bien. Moi je n'ai pas d'animaux. Je n'ai pas d'animaux. Ah. Moi j'ai un chien. J'a cinéma avec mes amis. Moi aussi. L'été, je vais en vacances à la mer. D'accord. Où est-ce que vous allez? Je ne prends pas le métro. Moi non plus.",
+        "current_bank_transcription": "– Ma couleur préférée est le bleu. / – Moi, c’est\nle vert.\n– J’ai un chien et deux chats. / – Ah, c’est bien. Moi\nje n’ai pas d’animaux.\n– Je n’ai pas d’animaux. / – Ah, moi j’ai un chien.\n– J’aime aller au cinéma avec mes amis. / – Moi\naussi.\n– L’été, je vais en vacances à la mer. / – D’accord.\nOù est-ce que vous allez ?\n– Je ne prends pas le métro. / – Moi non plus.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Paires bleu/vert, rouge/jaune et noir/blanc cohérentes ; image noir/blanc existante réutilisée, aucune réduction d’une paire à une seule couleur."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -7950,7 +7988,7 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:092:fe7b7db9b31c"
       ],
@@ -7964,14 +8002,29 @@
       ],
       "resolved_images": [
         "/lib/images/tcf/qcm-audit/b48c69f2021e.webp",
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-grande-valise-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-panier-vide-dessine.webp"
       ],
-      "missing_labels": [
-        "La valise",
-        "Le panier"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/b48c69f2021e.webp",
+        "/lib/images/tcf/qcm-audit/co306-grande-valise-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-panier-vide-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a1-2022-co-92",
+        "question": 7,
+        "images": [
+          "/lib/images/tcf/qcm-audit/b48c69f2021e.webp",
+          "/lib/images/tcf/qcm-audit/co306-grande-valise-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-panier-vide-dessine.webp"
+        ],
+        "support_quote": "Allô? Est-ce que tu peux m'aider à faire le sac pour ce week-end? Prends des gants, s'il te plaît. Il faut aussi des serviettes. Elles sont sur mon lit, dans ma chambre. Mets aussi le dentifrice et les brosses à dents dans le sac. Pour nos vêtements, je vais apporter une valise. Merci.",
+        "current_bank_transcription": "Allô ? Est-ce que tu peux m’aider à faire le sac\npour ce week-end ? Prends des gants s’il te plaît.\nIl faut aussi des serviettes. Elles sont sur mon lit,\ndans ma chambre. Mets aussi le dentifrice et les\nbrosses à dents dans le sac. Pour nos vêtements,\nje vais apporter une valise. Merci.\nÉpreuve blanche 2",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Sac de voyage existant et valise existante réutilisés ; panier vide ajouté. Le bon bagage est confirmé par la transcription, sans ajouter d’objets de toilette aux réponses."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -8122,7 +8175,7 @@
           "asset": "88feb36de74f"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:055:54f13cbbf1fe"
       ],
@@ -8135,16 +8188,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-enveloppes-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-timbres-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cartes-postales-dessine.webp"
       ],
-      "missing_labels": [
-        "Des enveloppes",
-        "Des timbres",
-        "Des cartes postales"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-enveloppes-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-timbres-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cartes-postales-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a1-2022-co-ex5-55-2",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-enveloppes-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-timbres-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-cartes-postales-dessine.webp"
+        ],
+        "support_quote": "Ah, et je prends des enveloppes.",
+        "current_bank_transcription": "Ah, et je prends des enveloppes.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Enveloppes, timbres et cartes postales au pluriel ; les timbres n’ont aucune valeur faciale et les cartes aucune date ou adresse."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -10899,7 +10966,7 @@
           "asset": "f2f5928a2522"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "9782090351958:008:bbec346152c1",
         "additional-20261102:mdf-a2-abc-junior-direct:8:bbec346152c1:df0594c9"
@@ -10913,16 +10980,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-carte-cantine-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-carte-bibliotheque-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-carte-transport-dessine.webp"
       ],
-      "missing_labels": [
-        "Une carte de cantine",
-        "Une carte de bibliothèque",
-        "Une carte de transport"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-carte-cantine-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-carte-bibliotheque-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-carte-transport-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s24-co-4",
+        "question": 10,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-carte-cantine-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-carte-bibliotheque-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-carte-transport-dessine.webp"
+        ],
+        "support_quote": "Camille, pour avoir ta carte de cantine, tu dois aller au secrétariat. Et combien je dois payer? Tu dois payer 50 euros et présenter ta carte d'identité. Merci!",
+        "current_bank_transcription": "Camille, pour avoir ta carte de cantine, tu dois aller au secretariat.\nEt combien je dois payer ?\nTu dois payer 50 euros et présenter ta carte d'identité.\nMerci.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Cartes de cantine, bibliothèque et transport de formes comparables, distinguées par pictogrammes et titres naturels ; aucun montant du support reproduit."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -14511,7 +14592,7 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a2_2021:002:f151bbfcaf5f"
       ],
@@ -14524,15 +14605,30 @@
         }
       ],
       "resolved_images": [
-        "/lib/images/tcf/qcm-audit/co306-ceinture-dessine.webp",
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-ceinture-securite-avion-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-casque-velo-4-3.webp",
+        "/lib/images/tcf/qcm-audit/co306-bagages-dessine.webp"
       ],
-      "missing_labels": [
-        "Le casque",
-        "Les bagages"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-ceinture-securite-avion-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-casque-velo-4-3.webp",
+        "/lib/images/tcf/qcm-audit/co306-bagages-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a2-2021-co-ex1-02",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-ceinture-securite-avion-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-casque-velo-4-3.webp",
+          "/lib/images/tcf/qcm-audit/co306-bagages-dessine.webp"
+        ],
+        "support_quote": "Attachez vos ceintures avant le décollage",
+        "current_bank_transcription": "Attachez vos ceintures avant le décollage.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Le contexte avant décollage exige une ceinture de sécurité d’avion : la ceinture de pantalon est écartée par une correspondance explicite propre à cette question. Casque de protection attachable existant réutilisé et ensemble de bagages composé de dessins disponibles."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
