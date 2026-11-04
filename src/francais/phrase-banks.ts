@@ -1,4 +1,6 @@
 import type { PhraseCategory } from '@/math/types'
+import type { PhraseThemeId } from './phrase-themes'
+export type { PhraseThemeId } from './phrase-themes'
 
 /** Couleurs Gattegno — grammaire en couleur (imprimables, contrastées). */
 export const PHRASE_COLORS: Record<PhraseCategory, string> = {
@@ -400,6 +402,13 @@ export const VERBES_AUTRES = [
   { infinitive: 'joindre', forms: { je: 'joins', tu: 'joins', il: 'joint', nous: 'joignons', vous: 'joignez', ils: 'joignent' } },
   { infinitive: 'atteindre', forms: { je: 'atteins', tu: 'atteins', il: 'atteint', nous: 'atteignons', vous: 'atteignez', ils: 'atteignent' } },
   { infinitive: 'résoudre', forms: { je: 'résous', tu: 'résous', il: 'résout', nous: 'résolvons', vous: 'résolvez', ils: 'résolvent' } },
+  { infinitive: 'endormir', forms: { je: 'endors', tu: 'endors', il: 'endort', nous: 'endormons', vous: 'endormez', ils: 'endorment' } },
+  { infinitive: 'entendre', forms: { je: 'entends', tu: 'entends', il: 'entend', nous: 'entendons', vous: 'entendez', ils: 'entendent' } },
+  { infinitive: 'détendre', forms: { je: 'détends', tu: 'détends', il: 'détend', nous: 'détendons', vous: 'détendez', ils: 'détendent' } },
+  { infinitive: 'taire', forms: { je: 'tais', tu: 'tais', il: 'tait', nous: 'taisons', vous: 'taisez', ils: 'taisent' } },
+  { infinitive: 'asseoir', forms: { je: 'assieds', tu: 'assieds', il: 'assied', nous: 'asseyons', vous: 'asseyez', ils: 'asseyent' } },
+  { infinitive: 'souvenir', forms: { je: 'souviens', tu: 'souviens', il: 'souvient', nous: 'souvenons', vous: 'souvenez', ils: 'souviennent' } },
+  { infinitive: 'vêtir', forms: { je: 'vêts', tu: 'vêts', il: 'vêt', nous: 'vêtons', vous: 'vêtez', ils: 'vêtent' } },
 ] as const
 
 export type VerbEntry = {
@@ -619,24 +628,45 @@ export const INTERJECTIONS = [
   's’il vous plaît',
 ] as const
 
-export type PhraseThemeId =
-  | 'phrase-simple'
-  | 'phrase-negation'
-  | 'phrase-adjectif'
-  | 'phrase-negation-adjectif'
-  | 'phrase-determinants'
-  | 'phrase-negation-determinants'
-  | 'phrase-preposition'
-  | 'phrase-negation-preposition'
-  | 'phrase-adverbe'
-  | 'phrase-negation-adverbe'
-  | 'phrase-conjonctions'
-
 /**
  * 15 consignes distinctes de production écrite par thème
  * (structure attendue de la phrase).
  */
 export const PRODUCTION_PROMPTS_BY_THEME: Record<PhraseThemeId, readonly string[]> = {
+  'phrase-pronominaux': [
+    'Écrivez des phrases avec des verbes pronominaux.',
+    'Racontez votre toilette avec des verbes pronominaux.',
+    'Décrivez votre réveil avec des verbes pronominaux.',
+    'Écrivez ce que vous faites pour vous préparer.',
+    'Décrivez une promenade avec des verbes pronominaux.',
+    'Présentez vos habitudes avec me, te ou se.',
+    'Parlez de vos loisirs avec des verbes pronominaux.',
+    'Écrivez des phrases avec nous et des verbes pronominaux.',
+    'Écrivez des phrases avec vous et des verbes pronominaux.',
+    'Écrivez des phrases avec ils ou elles et des verbes pronominaux.',
+    'Décrivez les habitudes d’un proche avec des verbes pronominaux.',
+    'Racontez votre soirée avec des verbes pronominaux.',
+    'Parlez de vos préparatifs avec des verbes pronominaux.',
+    'Décrivez des gestes du quotidien avec des verbes pronominaux.',
+    'Écrivez des phrases qui commencent par un prénom et un verbe pronominal.',
+  ],
+  'phrase-negation-pronominaux': [
+    'Écrivez des phrases négatives avec des verbes pronominaux.',
+    'Dites ce que vous ne faites pas pendant votre toilette.',
+    'Décrivez ce que vous ne faites pas au réveil.',
+    'Parlez de vos habitudes avec ne… pas et un verbe pronominal.',
+    'Écrivez des phrases négatives avec je et me.',
+    'Écrivez des phrases négatives avec tu et te.',
+    'Écrivez des phrases négatives avec il ou elle et se.',
+    'Écrivez des phrases négatives avec nous et nous.',
+    'Écrivez des phrases négatives avec vous et vous.',
+    'Écrivez des phrases négatives avec ils ou elles et se.',
+    'Dites ce que votre famille ne fait pas pour se préparer.',
+    'Parlez de vos loisirs avec des verbes pronominaux négatifs.',
+    'Décrivez des gestes que vous ne faites pas le soir.',
+    'Écrivez des phrases négatives sur les préparatifs d’un voyage.',
+    'Écrivez ce qu’un ami ne fait pas avec des verbes pronominaux.',
+  ],
   'phrase-simple': [
     'Écrivez des phrases simples (sujet + verbe + complément).',
     'Écrivez des phrases qui commencent par un pronom (je, tu, il, elle…).',
@@ -706,7 +736,7 @@ export const PRODUCTION_PROMPTS_BY_THEME: Record<PhraseThemeId, readonly string[
     'Écrivez des phrases négatives avec un article indéfini (un, une).',
   ],
   'phrase-determinants': [
-    'Écrivez des phrases affirmatives avec des déterminants variés.',
+    'Écrivez des phrases avec des déterminants variés.',
     'Écrivez des phrases avec le, la, les, l’, un, une, des.',
     'Écrivez des phrases avec mon, ma, mes, ton, ta, tes.',
     'Écrivez des phrases avec son, sa, ses, notre, votre, leur.',
@@ -807,6 +837,23 @@ export const PRODUCTION_PROMPTS_BY_THEME: Record<PhraseThemeId, readonly string[
     'Écrivez des phrases négatives avec trop / assez.',
     'Écrivez des phrases : on ne… pas toujours.',
   ],
+  'phrase-negation-conjonctions': [
+    'Reliez deux phrases négatives avec et.',
+    'Écrivez ce que deux personnes ne font pas.',
+    'Parlez de deux activités que vous ne faites pas.',
+    'Écrivez deux propositions négatives sur l’école.',
+    'Décrivez deux gestes que votre famille ne fait pas.',
+    'Écrivez une phrase négative avec deux verbes.',
+    'Associez deux refus avec et.',
+    'Écrivez deux propositions négatives sur les repas.',
+    'Reliez ce que vous et votre voisin ne faites pas.',
+    'Parlez de deux loisirs que vous ne pratiquez pas.',
+    'Écrivez deux propositions négatives sur le travail.',
+    'Reliez deux phrases avec ne… pas.',
+    'Décrivez deux activités absentes de votre programme.',
+    'Écrivez ce que deux amis ne mangent pas.',
+    'Reliez deux phrases négatives sur les vacances.',
+  ],
   'phrase-conjonctions': [
     'Écrivez des phrases avec et / ou / mais.',
     'Écrivez des phrases avec un pronom à gauche et un nom commun à droite.',
@@ -826,7 +873,7 @@ export const PRODUCTION_PROMPTS_BY_THEME: Record<PhraseThemeId, readonly string[
   ],
 }
 
-/** Toutes les consignes (165), utiles pour contrôles d’unicité. */
+/** Toutes les consignes, utiles pour contrôles d’unicité. */
 export const PRODUCTION_PROMPTS: readonly string[] = Object.values(PRODUCTION_PROMPTS_BY_THEME).flat()
 
 for (const [theme, prompts] of Object.entries(PRODUCTION_PROMPTS_BY_THEME)) {

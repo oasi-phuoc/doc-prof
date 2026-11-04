@@ -147,6 +147,7 @@ export function usePageNavigation({
       columns: fields.columns ?? nextType.preferredColumns ?? 2,
       track: nextType.track,
       verbGroup: activeBlock.verbGroup,
+      phrasePolarity: activeBlock.phrasePolarity,
       problemDraftGrids: isProblemExercise(nextType.id)
         ? Array.from({ length: count }, () => true)
         : undefined,

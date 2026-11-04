@@ -11,6 +11,7 @@ export function blockFromPage(page: PageConfig): ExerciseBlock {
     pointsPerQuestion: page.pointsPerQuestion,
     track: page.track,
     verbGroup: page.verbGroup,
+    phrasePolarity: page.phrasePolarity,
     contentSeed: page.contentSeed,
     contentSeedTwin: page.contentSeedTwin,
     phraseItems: page.phraseItems,

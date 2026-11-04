@@ -1,3 +1,5 @@
+import { affirmativePhraseTheme, isNegativePhraseTheme, isPhraseThemeId, type PhrasePolarity } from './phrase-themes'
+import { withNegation } from './phrase-negation'
 import {
   COMMON,
   framesForTheme,
@@ -11,7 +13,7 @@ import {
   type AdjPlacement,
   type SubjectKind,
 } from './phrase-sentences'
-import { PRODUCTION_PROMPTS_BY_THEME, VERBES, type PhraseThemeId } from './phrase-banks'
+import { PRODUCTION_PROMPTS_BY_THEME, type PhraseThemeId } from './phrase-banks'
 import { pick, shuffle, type Rng } from '@/math/rng'
 import type { Difficulty, MathItem, PhraseToken, PhraseVerbGroup } from '@/math/types'
 
@@ -19,6 +21,7 @@ export type PhraseBatch = {
   items: MathItem[]
   instruction: string
   preferredColumns?: number
+  bankQuestionCap?: number
 }
 
 export type { PhraseThemeId }
@@ -43,14 +46,8 @@ function tokenForOrder(token: PhraseToken): PhraseToken {
   return { ...token, text: uncap(token.text) }
 }
 
-function builtFromTokens(tokens: PhraseToken[]): BuiltPhrase {
-  const sentence = joinPhrase(tokens)
-  const verb = tokens.find((token) => token.category === 'verbe')
-  const verbText = verb?.text ?? ''
-  const infinitive =
-    VERBES.find((entry) => (Object.values(entry.forms) as string[]).includes(verbText))?.infinitive ??
-    verbText
-  return { tokens, sentence, verbInfinitive: infinitive }
+function builtFromTokens(tokens: PhraseToken[], verbInfinitive: string): BuiltPhrase {
+  return { tokens, sentence: joinPhrase(tokens), verbInfinitive }
 }
 
 /**
@@ -91,6 +88,7 @@ function pickPhrase(
   theme: PhraseThemeId,
   used: Set<string>,
   group: PhraseVerbGroup,
+  negative = false,
 ): BuiltPhrase {
   const frames = framesForTheme(theme, group)
   const unused = frames.filter((frame) => !used.has(`frame:${frame.id}`))
@@ -109,7 +107,7 @@ function pickPhrase(
     () => pick(rng, [...COMMON]),
     adjPlacement,
   )
-  return builtFromTokens(tokens)
+  return builtFromTokens(negative ? withNegation(tokens, [frame.id, frame.rightId ?? frame.id]) : tokens, frame.id)
 }
 
 function typeColor(phrase: BuiltPhrase): MathItem {
@@ -125,6 +123,9 @@ function typeColor(phrase: BuiltPhrase): MathItem {
 function typeOrder(rng: Rng, phrase: BuiltPhrase): MathItem {
   const ordered = phrase.tokens.map(tokenForOrder)
   const scrambled = shuffle(rng, ordered)
+  if (scrambled.length > 1 && scrambled.every((token, i) => token.text === ordered[i]!.text)) {
+    scrambled.push(scrambled.shift()!)
+  }
   return {
     layout: 'phrase-order',
     tokens: scrambled,
@@ -135,26 +136,20 @@ function typeOrder(rng: Rng, phrase: BuiltPhrase): MathItem {
 }
 
 /** Pastilles = catégories de la phrase modèle (corrigé cohérent). */
-function typeBuild(rng: Rng, theme: PhraseThemeId, group: PhraseVerbGroup, used: Set<string>): MathItem {
-  const phrase = pickPhrase(rng, theme, used, group)
-  const pastilles = phrase.tokens.map((token) => token.category)
+function typeBuild(phrase: BuiltPhrase): MathItem {
   return {
     layout: 'phrase-build',
     prompt: phrase.verbInfinitive,
-    pastilles,
+    pastilles: phrase.tokens.map(token => token.category),
     answer: phrase.sentence,
     responseAnswer: phrase.sentence,
     calcAnswer: phrase.verbInfinitive,
   }
 }
 
-function parsePhraseType(typeId: string): { theme: PhraseThemeId; kind: string } | null {
-  const m =
-    /^(phrase-simple|phrase-negation-adjectif|phrase-negation-adverbe|phrase-negation-preposition|phrase-negation-determinants|phrase-negation|phrase-adjectif|phrase-determinants|phrase-preposition|phrase-adverbe|phrase-conjonctions)-(colorier|ordre|construire|ecrire)$/.exec(
-      typeId,
-    )
-  if (!m) return null
-  return { theme: m[1] as PhraseThemeId, kind: m[2]! }
+export function parsePhraseType(typeId: string): { theme: PhraseThemeId; kind: string } | null {
+  const match = /^(.*)-(colorier|ordre|construire|ecrire)$/.exec(typeId)
+  return match && isPhraseThemeId(match[1]!) ? { theme: match[1], kind: match[2]! } : null
 }
 
 const INSTRUCTIONS: Record<string, string> = {
@@ -175,6 +170,7 @@ export function tryGeneratePhraseBatch(
   rng: Rng,
   difficulty: Difficulty = 'moyen',
   group: PhraseVerbGroup = 'er',
+  polarity?: PhrasePolarity,
 ): PhraseBatch | null {
   void difficulty
   const bank = phraseBankGroup(group)
@@ -203,43 +199,32 @@ export function tryGeneratePhraseBatch(
   const parsed = parsePhraseType(exerciseType)
   if (!parsed) return null
 
-  const { theme, kind } = parsed
-  const n = Math.max(1, count)
-
-  if (kind === 'ecrire') {
-    const prompts = PRODUCTION_PROMPTS_BY_THEME[theme]
-    const prompt = pick(rng, [...prompts])
-    const used = new Set<string>()
-    return {
-      items: Array.from({ length: n }, () => {
-        const phrase = pickPhrase(rng, theme, used, bank)
-        return {
-          layout: 'phrase-write' as const,
-          writeLines: 1,
-          answer: phrase.sentence,
-          responseAnswer: phrase.sentence,
-        }
-      }),
-      instruction: prompt ?? INSTRUCTIONS.ecrire,
-      preferredColumns: 1,
-    }
-  }
-
+  const { theme: savedTheme, kind } = parsed
+  const theme = affirmativePhraseTheme(savedTheme)
+  const mode = polarity ?? (isNegativePhraseTheme(savedTheme) ? 'negative' : 'positive')
+  const frames = framesForTheme(theme, bank)
+  const n = Math.min(Math.max(1, count), frames.length)
+  const polarities = mode === 'mixed'
+    ? shuffle(rng, Array.from({ length: n }, (_, index) => n === 1 ? pick(rng, [true, false]) : index < Math.ceil(n / 2)))
+    : Array.from({ length: n }, () => mode === 'negative')
   const used = new Set<string>()
-  const items: MathItem[] = []
-  for (let i = 0; i < n; i++) {
-    if (kind === 'construire') {
-      items.push(typeBuild(rng, theme, bank, used))
-    } else {
-      const phrase = pickPhrase(rng, theme, used, bank)
-      if (kind === 'colorier') items.push(typeColor(phrase))
-      else items.push(typeOrder(rng, phrase))
-    }
-  }
-
+  // Draw all sentences first: the exercise layout cannot change the bank or subjects drawn.
+  const phrases = polarities.map(negative => pickPhrase(rng, theme, used, bank, negative))
+  const items: MathItem[] = phrases.map(phrase => {
+    if (kind === 'colorier') return typeColor(phrase)
+    if (kind === 'ordre') return typeOrder(rng, phrase)
+    if (kind === 'construire') return typeBuild(phrase)
+    return { layout: 'phrase-write', writeLines: 1, answer: phrase.sentence, responseAnswer: phrase.sentence }
+  })
+  const prompts = PRODUCTION_PROMPTS_BY_THEME[theme]
+  const baseInstruction = kind === 'ecrire' ? pick(rng, [...prompts]) : INSTRUCTIONS[kind]!
+  const formInstruction = mode === 'mixed'
+    ? 'Mélangez des phrases affirmatives et négatives.'
+    : mode === 'negative' ? 'Utilisez la forme négative (ne… pas).' : 'Utilisez la forme affirmative.'
   return {
     items,
-    instruction: INSTRUCTIONS[kind] ?? 'Complétez.',
+    instruction: kind === 'ecrire' ? `${baseInstruction} ${formInstruction}` : baseInstruction,
     preferredColumns: 1,
+    bankQuestionCap: frames.length,
   }
 }

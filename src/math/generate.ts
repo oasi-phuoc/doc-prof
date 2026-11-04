@@ -276,6 +276,7 @@ function buildSingleBlock(
     rng,
     difficulty,
     config.verbGroup ?? 'er',
+    config.phrasePolarity,
   )
   if (phrase) {
     const libre =
@@ -288,6 +289,7 @@ function buildSingleBlock(
         ? (config.phraseInstruction ?? phrase.instruction ?? type?.instruction ?? 'Complétez.')
         : (phrase.instruction ?? type?.instruction ?? 'Complétez.'),
       items: libre ? config.phraseItems! : phrase.items,
+      bankQuestionCap: libre ? undefined : phrase.bankQuestionCap,
     }
   }
   const algebra = tryGenerateAlgebraBatch(config.exerciseType, config.count, rng, difficulty)

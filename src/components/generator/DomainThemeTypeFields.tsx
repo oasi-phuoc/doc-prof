@@ -1,3 +1,5 @@
+import { PhrasePolarityControl } from './PhrasePolarityControl'
+import { isNegativePhraseTheme } from '@/francais/phrase-themes'
 import {
   ACCESS_DOMAIN_OPTIONS,
 } from '@/access'
@@ -298,6 +300,17 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                     )}
                   </div>
                 </div>
+              ) : null}
+              {isPhraseDomain && !isPhraseChart ? (
+                <PhrasePolarityControl
+                  value={activeBlock.phrasePolarity ?? (isNegativePhraseTheme(activeBlock.topic) ? 'negative' : 'positive')}
+                  onChange={phrasePolarity => updatePage({
+                    ...clearLibreContentFreeze(),
+                    phrasePolarity,
+                    phraseItems: undefined,
+                    phraseInstruction: undefined,
+                  })}
+                />
               ) : null}
               {!libreMode &&
               isPhraseDomain &&

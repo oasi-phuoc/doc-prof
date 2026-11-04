@@ -1,3 +1,4 @@
+import { startsWithVowelSound } from './phrase-phonetics'
 import { VERBES } from './phrase-banks'
 
 /** Personne verbale pour l’accord du verbe (on → il ; elle → il ; elles → ils). */
@@ -10,10 +11,6 @@ const FORM_KEY: Record<VerbPerson, 'je' | 'tu' | 'il' | 'nous' | 'vous' | 'ils'>
   nous: 'nous',
   vous: 'vous',
   ils: 'ils',
-}
-
-function startsWithVowelSound(word: string): boolean {
-  return /^[aeiouhâàâäéèêëîïôöùûüœ]/i.test(word)
 }
 
 /** Infinitif nu (sans se / s’). */
@@ -48,7 +45,7 @@ function conjugateEr(infinitive: string, person: VerbPerson, form3sg: string): s
     return `${stem}ons`
   }
   if (person === 'vous') return `${stem}ez`
-  return `${stem}ent`
+  return `${form3sg}nt`
 }
 
 /** 2e groupe type finir / choisir (3e sg en -it). */
@@ -178,7 +175,7 @@ export function elideJeSubject(subjectTagged: string, pred: string): string {
   if (!subjectTagged.startsWith('Je/')) return subjectTagged
   const first = pred.trim().split(/\s+/)[0] ?? ''
   const verbText = first.includes('/') ? first.slice(0, first.lastIndexOf('/')) : first
-  if (verbText.startsWith('me') || verbText.startsWith('te') || verbText.startsWith('nous') || verbText.startsWith('vous')) {
+  if (/^(?:m[’']|t[’']|s[’'])/.test(verbText) || verbText.startsWith('me') || verbText.startsWith('te') || verbText.startsWith('nous') || verbText.startsWith('vous')) {
     return subjectTagged
   }
   const core = verbCoreFromToken(verbText).core

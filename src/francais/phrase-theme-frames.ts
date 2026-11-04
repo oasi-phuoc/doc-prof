@@ -3,6 +3,7 @@ import { SIMPLE_FRAMES_AUTRES, SIMPLE_FRAMES_ER, type SimpleFrame } from './phra
 export type ThemedFrame = {
   id: string
   preds: readonly string[]
+  rightId?: string
   rightPreds?: readonly string[]
   conjs?: readonly string[]
 }
@@ -10,14 +11,6 @@ export type ThemedFrame = {
 function frame(id: string, preds: readonly string[]): ThemedFrame {
   return { id, preds }
 }
-
-const CONJS = [
-  'et/conjonction',
-  'ou/conjonction',
-  'mais/conjonction',
-  'puis/conjonction',
-  'donc/conjonction',
-] as const
 
 /**
  * Adjectif sur le complément — accordé avec le nom, phrases réelles.
@@ -33,7 +26,7 @@ const ADJ_ER: Record<string, readonly string[]> = {
   mélanger: ['mélange/verbe la/determinant farine/nom blanche/adjectif', 'mélange/verbe la/determinant salade/nom verte/adjectif'],
   griller: ['grille/verbe le/determinant pain/nom doré/adjectif', 'grille/verbe du/determinant fromage/nom fondu/adjectif'],
   décorer: ['décore/verbe un/determinant gâteau/nom rose/adjectif', 'décore/verbe une/determinant carte/nom colorée/adjectif'],
-  acheter: ['achète/verbe une/determinant glace/nom vanille/adjectif', 'achète/verbe des/determinant fleurs/nom fraîches/adjectif'],
+  acheter: ['achète/verbe une/determinant glace/nom délicieuse/adjectif', 'achète/verbe des/determinant fleurs/nom fraîches/adjectif'],
   fêter: ['fête/verbe un/determinant bel/adjectif anniversaire/nom', 'fête/verbe une/determinant grande/adjectif victoire/nom'],
   payer: ['paie/verbe la/determinant note/nom entière/adjectif', 'paie/verbe le/determinant loyer/nom mensuel/adjectif'],
   accrocher: ['accroche/verbe un/determinant manteau/nom bleu/adjectif', 'accroche/verbe une/determinant photo/nom ancienne/adjectif'],
@@ -47,7 +40,7 @@ const ADJ_ER: Record<string, readonly string[]> = {
   essuyer: ['essuie/verbe un/determinant verre/nom propre/adjectif', 'essuie/verbe la/determinant table/nom mouillée/adjectif'],
   sécher: ['sèche/verbe une/determinant assiette/nom propre/adjectif', 'sèche/verbe le/determinant linge/nom humide/adjectif'],
   repasser: ['repasse/verbe une/determinant chemise/nom blanche/adjectif', 'repasse/verbe une/determinant robe/nom bleue/adjectif'],
-  ranger: ['range/verbe sa/determinant chambre/nom petite/adjectif', 'range/verbe les/determinant jouets/nom cassés/adjectif'],
+  ranger: ['range/verbe sa/determinant petite/adjectif chambre/nom', 'range/verbe les/determinant jouets/nom cassés/adjectif'],
   poser: ['pose/verbe le/determinant sac/nom lourd/adjectif', 'pose/verbe un/determinant vase/nom fragile/adjectif'],
   cacher: ['cache/verbe un/determinant trésor/nom secret/adjectif', 'cache/verbe un/determinant cadeau/nom surprise/adjectif'],
   montrer: ['montre/verbe une/determinant photo/nom ancienne/adjectif', 'montre/verbe un/determinant dessin/nom drôle/adjectif'],
@@ -113,11 +106,11 @@ const ADJ_ER: Record<string, readonly string[]> = {
   fermer: ['ferme/verbe la/determinant porte/nom lourde/adjectif', 'ferme/verbe la/determinant fenêtre/nom ouverte/adjectif'],
   commencer: ['commence/verbe un/determinant dessin/nom libre/adjectif', 'commence/verbe une/determinant histoire/nom courte/adjectif'],
   terminer: ['termine/verbe un/determinant devoir/nom difficile/adjectif', 'termine/verbe un/determinant puzzle/nom géant/adjectif'],
-  continuer: ['continue/verbe le/determinant long/adjectif chemin/nom', 'continue/verbe une/determinant histoire/nom inachevée/adjectif'],
+  continuer: ['continue/verbe son/determinant long/adjectif récit/nom', 'continue/verbe une/determinant histoire/nom inachevée/adjectif'],
   répéter: ['répète/verbe une/determinant phrase/nom courte/adjectif', 'répète/verbe un/determinant mot/nom nouveau/adjectif'],
   gagner: ['gagne/verbe un/determinant match/nom important/adjectif', 'gagne/verbe une/determinant médaille/nom dorée/adjectif'],
-  perdre: ['perd/verbe un/determinant ballon/nom rouge/adjectif', 'perd/verbe une/determinant clé/nom petite/adjectif'],
-  marquer: ['marque/verbe un/determinant but/nom décisif/adjectif', 'marque/verbe une/determinant page/nom utile/adjectif'],
+  perdre: ['perd/verbe un/determinant ballon/nom rouge/adjectif', 'perd/verbe une/determinant petite/adjectif clé/nom'],
+  marquer: ['marque/verbe un/determinant but/nom décisif/adjectif', 'marque/verbe une/determinant page/nom importante/adjectif'],
   emprunter: ['emprunte/verbe un/determinant livre/nom épais/adjectif', 'emprunte/verbe un/determinant vélo/nom jaune/adjectif'],
   prêter: ['prête/verbe un/determinant stylo/nom bleu/adjectif', 'prête/verbe un/determinant livre/nom neuf/adjectif'],
   oublier: ['oublie/verbe un/determinant sac/nom lourd/adjectif', 'oublie/verbe une/determinant clé/nom importante/adjectif'],
@@ -146,10 +139,10 @@ const ADJ_AUTRES: Record<string, readonly string[]> = {
   apprendre: ['apprend/verbe une/determinant leçon/nom nouvelle/adjectif', 'apprend/verbe une/determinant chanson/nom douce/adjectif'],
   comprendre: ['comprend/verbe une/determinant règle/nom simple/adjectif', 'comprend/verbe un/determinant problème/nom difficile/adjectif'],
   descendre: ['descend/verbe l’/determinant escalier/nom étroit/adjectif', 'descend/verbe la/determinant rue/nom calme/adjectif'],
-  attendre: ['attend/verbe le/determinant bus/nom tardif/adjectif', 'attend/verbe un/determinant ami/nom fidèle/adjectif'],
+  attendre: ['attend/verbe le/determinant dernier/adjectif bus/nom', 'attend/verbe un/determinant ami/nom fidèle/adjectif'],
   vendre: ['vend/verbe un/determinant vélo/nom rouge/adjectif', 'vend/verbe des/determinant fleurs/nom fraîches/adjectif'],
-  perdre: ['perd/verbe un/determinant ticket/nom utile/adjectif', 'perd/verbe une/determinant petite/adjectif clé/nom'],
-  dire: ['dit/verbe la/determinant vérité/nom simple/adjectif', 'dit/verbe une/determinant blague/nom drôle/adjectif'],
+  perdre: ['perd/verbe un/determinant ticket/nom gagnant/adjectif', 'perd/verbe une/determinant petite/adjectif clé/nom'],
+  dire: ['dit/verbe une/determinant parole/nom gentille/adjectif', 'dit/verbe une/determinant blague/nom drôle/adjectif'],
   suivre: ['suit/verbe un/determinant chemin/nom étroit/adjectif', 'suit/verbe le/determinant guide/nom local/adjectif'],
   vivre: ['vit/verbe une/determinant grande/adjectif aventure/nom', 'vit/verbe un/determinant rêve/nom étrange/adjectif'],
   conduire: ['conduit/verbe une/determinant voiture/nom rouge/adjectif', 'conduit/verbe un/determinant vieux/adjectif tracteur/nom'],
@@ -164,7 +157,7 @@ const ADJ_AUTRES: Record<string, readonly string[]> = {
   servir: ['sert/verbe le/determinant repas/nom chaud/adjectif', 'sert/verbe un/determinant gâteau/nom sucré/adjectif'],
   connaître: ['connaît/verbe un/determinant chemin/nom secret/adjectif', 'connaît/verbe une/determinant chanson/nom ancienne/adjectif'],
   savoir: ['sait/verbe la/determinant leçon/nom orale/adjectif', 'sait/verbe une/determinant recette/nom simple/adjectif'],
-  vouloir: ['veut/verbe une/determinant glace/nom vanille/adjectif', 'veut/verbe un/determinant vélo/nom neuf/adjectif'],
+  vouloir: ['veut/verbe une/determinant glace/nom délicieuse/adjectif', 'veut/verbe un/determinant vélo/nom neuf/adjectif'],
   recevoir: ['reçoit/verbe un/determinant colis/nom lourd/adjectif', 'reçoit/verbe une/determinant lettre/nom courte/adjectif'],
   battre: ['bat/verbe un/determinant record/nom mondial/adjectif', 'bat/verbe les/determinant œufs/nom frais/adjectif'],
   éteindre: ['éteint/verbe la/determinant lampe/nom rouge/adjectif', 'éteint/verbe la/determinant télé/nom bruyante/adjectif'],
@@ -190,7 +183,7 @@ export const PREP_FRAMES_ER: readonly ThemedFrame[] = [
   frame('penser', ['pense/verbe à/preposition ses/determinant amis/nom', 'pense/verbe à/preposition la/determinant leçon/nom', 'pense/verbe à/preposition un/determinant cadeau/nom']),
   frame('parler', ['parle/verbe à/preposition un/determinant ami/nom', 'parle/verbe avec/preposition la/determinant maîtresse/nom', 'parle/verbe de/preposition la/determinant fête/nom', 'parle/verbe au/preposition téléphone/nom']),
   frame('téléphoner', ['téléphone/verbe à/preposition sa/determinant maman/nom', 'téléphone/verbe à/preposition un/determinant ami/nom', 'téléphone/verbe chez/preposition le/determinant médecin/nom']),
-  frame('rêver', ['rêve/verbe de/preposition la/determinant mer/nom', 'rêve/verbe de/preposition un/determinant voyage/nom', 'rêve/verbe de/preposition son/determinant chien/nom']),
+  frame('rêver', ['rêve/verbe de/preposition la/determinant mer/nom', 'rêve/verbe d’/preposition un/determinant voyage/nom', 'rêve/verbe de/preposition son/determinant chien/nom']),
   frame('voyager', ['voyage/verbe en/preposition train/nom', 'voyage/verbe en/preposition bus/nom', 'voyage/verbe vers/preposition la/determinant mer/nom']),
   frame('chercher', ['cherche/verbe un/determinant livre/nom sous/preposition le/determinant lit/nom', 'cherche/verbe ses/determinant clés/nom dans/preposition le/determinant sac/nom']),
   frame('poser', ['pose/verbe le/determinant livre/nom sur/preposition la/determinant table/nom', 'pose/verbe le/determinant sac/nom près_de/preposition la/determinant porte/nom']),
@@ -204,11 +197,11 @@ export const PREP_FRAMES_ER: readonly ThemedFrame[] = [
   frame('goûter', ['goûte/verbe chez/preposition la/determinant mamie/nom', 'goûte/verbe après/preposition l’/determinant école/nom']),
   frame('participer', ['participe/verbe à/preposition un/determinant jeu/nom', 'participe/verbe à/preposition la/determinant fête/nom']),
   frame('assister', ['assiste/verbe à/preposition un/determinant spectacle/nom', 'assiste/verbe à/preposition un/determinant cours/nom', 'assiste/verbe à/preposition un/determinant match/nom']),
-  frame('s’occuper', ['s’occupe/verbe de/preposition son/determinant frère/nom', 's’occupe/verbe du/determinant chien/nom']),
+  frame('s’occuper', ['s’occupe/verbe de/preposition son/determinant frère/nom', 's’occupe/verbe du/preposition chien/nom']),
   frame('se cacher', ['se_cache/verbe derrière/preposition un/determinant arbre/nom', 'se_cache/verbe sous/preposition la/determinant table/nom']),
   frame('se promener', ['se_promène/verbe dans/preposition le/determinant parc/nom', 'se_promène/verbe près_de/preposition la/determinant rivière/nom']),
   frame('se rendre', ['se_rend/verbe à/preposition l’/determinant école/nom', 'se_rend/verbe chez/preposition le/determinant médecin/nom']),
-  frame('traverser', ['traverse/verbe jusqu’à/preposition la/determinant rive/nom', 'traverse/verbe vers/preposition le/determinant parc/nom']),
+  frame('traverser', ['traverse/verbe le/determinant parc/nom avec/preposition son/determinant ami/nom', 'traverse/verbe la/determinant rivière/nom sur/preposition un/determinant pont/nom']),
   frame('grimper', ['grimpe/verbe sur/preposition un/determinant arbre/nom', 'grimpe/verbe dans/preposition le/determinant grenier/nom']),
   frame('sauter', ['saute/verbe dans/preposition l’/determinant eau/nom', 'saute/verbe sur/preposition le/determinant tapis/nom']),
   frame('danser', ['danse/verbe avec/preposition un/determinant ami/nom', 'danse/verbe dans/preposition la/determinant salle/nom']),
@@ -352,7 +345,7 @@ function adjFramesFrom(simple: readonly SimpleFrame[], extra: Record<string, rea
     const preds = extra[item.id]
     if (preds && preds.length >= 2) out.push(frame(item.id, preds))
   }
-  if (extra.être) out.push(frame('être', extra.être))
+  if (extra.être) out.unshift(frame('être', extra.être))
   return out
 }
 
@@ -362,8 +355,9 @@ function conjFramesFrom(simple: readonly SimpleFrame[]): ThemedFrame[] {
     return {
       id: item.id,
       preds: item.preds,
+      rightId: other.id,
       rightPreds: other.preds,
-      conjs: CONJS,
+      conjs: ['et/conjonction'],
     }
   })
 }
@@ -377,6 +371,7 @@ export function themedFramesFor(
     | 'phrase-adverbe'
     | 'phrase-negation-adverbe'
     | 'phrase-conjonctions'
+    | 'phrase-negation-conjonctions'
     | 'phrase-determinants'
     | 'phrase-negation-determinants',
   group: 'er' | 'autres',
@@ -393,6 +388,7 @@ export function themedFramesFor(
     case 'phrase-negation-adverbe':
       return advFramesFrom(simple)
     case 'phrase-conjonctions':
+    case 'phrase-negation-conjonctions':
       return conjFramesFrom(simple)
     case 'phrase-determinants':
     case 'phrase-negation-determinants':
