@@ -829,6 +829,8 @@ export type ExerciseBlock = {
   track?: FrenchTrack
   /** Phrase : Simple (er), Autres (2e/3e), ou Libre (édition). */
   verbGroup?: PhraseVerbGroup
+  /** Gattegno: affirmative, negative or a balanced mixture of both banks. */
+  phrasePolarity?: import('@/francais/phrase-themes').PhrasePolarity
   /**
    * Graine locale de l’exercice (bouton refresh sur la fiche).
    * Permet de retirer uniquement ce bloc sans régénérer toute la fiche.

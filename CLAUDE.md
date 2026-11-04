@@ -18,7 +18,7 @@ React + Vite + TypeScript. Styles principaux dans `src/App.css` (variables CSS d
 | `src/math/` | Générateurs maths purs (algèbre, géométrie, repérage, `rng`, `types`) — **sans TPM** |
 | `src/tpm/` | Test de placement de mathématiques (dossier dédié, comme `tcf/`) — `README.md` |
 | `src/tcf/` | TPF / TCF CSC / TCF CFR : banque commune, éditeur, rendu — `README.md` |
-| `src/francais/` | FLE : Voc/Gram/Com, Phrase, Soutien |
+| `src/francais/` | FLE : Voc/Gram/Com, Phrase, Soutien ; audit Gattegno dans `docs/gattegno/` |
 | `src/alphabetisation/` | Alphabétisation (ex-Lecture) — lettres, syllabes, mots, phrases |
 | `src/grammaire/` | Théorie FALC (SCAI) — thèmes + fiches ; exercices à venir — `README.md` |
 | `src/vocabulaire/` | Domaine Vocabulaire (squelette) — `README.md` |

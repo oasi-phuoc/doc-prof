@@ -1,3 +1,7 @@
+import { startsWithVowelSound } from './phrase-phonetics'
+import { PHRASE_ALL_THEME_DEFS } from './phrase-themes'
+import { withNegation } from './phrase-negation'
+export { withNegation } from './phrase-negation'
 import type { PhraseThemeId } from './phrase-banks'
 import type { PhraseCategory, PhraseToken, PhraseVerbGroup } from '@/math/types'
 import {
@@ -8,19 +12,36 @@ import {
   verbCoreFromToken,
 } from './phrase-conjugate'
 import { SIMPLE_FRAMES_AUTRES, SIMPLE_FRAMES_ER } from './phrase-simple-frames'
+import { REFLEXIVE_FRAMES_ER, REFLEXIVE_FRAMES_AUTRES } from './phrase-reflexive-frames'
 import { themedFramesFor, type ThemedFrame } from './phrase-theme-frames'
 import { FEMALE_PROPER_NAMES, PROPER_NAMES, PROPER_TAGGED } from './phrase-proper-names'
 
 /** Découpe « mot/catégorie » — l’espace après une apostrophe est omise à l’affichage. */
 export function tagged(source: string): PhraseToken[] {
-  return source.trim().split(/\s+/).map((part) => {
+  const tokens = source.trim().split(/\s+/).flatMap((part): PhraseToken[] => {
     const slash = part.lastIndexOf('/')
     if (slash <= 0) throw new Error(`Jeton sans catégorie : ${part}`)
-    return {
-      text: part.slice(0, slash).replace(/_/g, ' '),
-      category: part.slice(slash + 1) as PhraseCategory,
-    }
+    const text = part.slice(0, slash).replace(/_/g, ' ')
+    const category = part.slice(slash + 1) as PhraseCategory
+    const reflexive = category === 'verbe' ? /^(me |te |se |nous |vous |m[’']|t[’']|s[’'])(.+)$/.exec(text) : null
+    return reflexive
+      ? [{ text: reflexive[1]!.trim(), category: 'pronom' }, { text: reflexive[2]!, category: 'verbe' }]
+      : [{ text, category }]
   })
+  for (let i = 0; i < tokens.length - 1; i++) {
+    const prep = tokens[i]!, article = tokens[i + 1]!
+    if (prep.category !== 'preposition' || article.category !== 'determinant') continue
+    const last = prep.text.split(' ').at(-1)
+    const contraction = last === 'de' ? { le: 'du', les: 'des' } : last === 'à' ? { le: 'au', les: 'aux' } : {}
+    const combined = contraction[article.text as keyof typeof contraction]
+    if (combined) {
+      prep.text = prep.text.slice(0, -last!.length) + combined
+      tokens.splice(i + 1, 1)
+    } else if (last === 'de' && startsWithVowelSound(article.text)) {
+      prep.text = prep.text.slice(0, -2) + 'd’'
+    }
+  }
+  return tokens
 }
 
 export function joinPhrase(tokens: PhraseToken[]): string {
@@ -48,24 +69,6 @@ function parse(source: string): PhraseToken[] {
   return cap(tagged(source))
 }
 
-function startsWithVowel(word: string): boolean {
-  return /^[aeiouhâàâäéèêëîïôöùûüœ]/i.test(word)
-}
-
-export function withNegation(tokens: PhraseToken[]): PhraseToken[] {
-  const index = tokens.findIndex((token) => token.category === 'verbe')
-  if (index < 0) return tokens
-  const verb = tokens[index]!.text
-  const particle = startsWithVowel(verb) ? 'n’' : 'ne'
-  return [
-    ...tokens.slice(0, index),
-    { text: particle, category: 'adverbe' },
-    tokens[index]!,
-    { text: 'pas', category: 'adverbe' },
-    ...tokens.slice(index + 1),
-  ]
-}
-
 function atLeast(list: PhraseToken[][], theme: string, min: number): PhraseToken[][] {
   if (list.length < min) {
     throw new Error(`${theme} : ${list.length} modèles (${min} attendus au minimum)`)
@@ -73,7 +76,8 @@ function atLeast(list: PhraseToken[][], theme: string, min: number): PhraseToken
   return list
 }
 
-const ETRE_FORMS = /^(suis|es|est|sommes|êtes|sont)$/
+// Suis also belongs to suivre; the frame id is checked separately below.
+const ETRE_FORMS = /^(es|est|sommes|êtes|sont)$/
 
 function isEtreVerb(token: PhraseToken): boolean {
   return token.category === 'verbe' && ETRE_FORMS.test(token.text)
@@ -101,10 +105,10 @@ function assertBank(theme: PhraseThemeId, list: PhraseToken[][], min = 100): Phr
     if (hasInanimateSubject(tokens)) {
       throw new Error(`${theme} : sujet inanimé — ${sentence}`)
     }
-    if (!needPrep && tokens.some((token) => token.category === 'preposition')) {
+    if (!needPrep && !theme.includes('pronominaux') && tokens.some((token) => token.category === 'preposition')) {
       throw new Error(`${theme} : préposition hors thème — ${sentence}`)
     }
-    if (theme === 'phrase-conjonctions' && /^.+[A-ZÉÈÊÀÂÎÏÔÙÛÇ]/.test(sentence)) {
+    if ((theme === 'phrase-conjonctions' || theme === 'phrase-negation-conjonctions') && tokens.slice(1).some(token => token.category !== 'nom' && /^[A-ZÉÈÊÀÂÎÏÔÙÛÇ]/.test(token.text))) {
       throw new Error(`${theme} : deuxième majuscule — ${sentence}`)
     }
   }
@@ -151,7 +155,6 @@ export const COMMON = [
   'La/determinant grand-mère/nom',
   'L’/determinant oncle/nom',
   'La/determinant tante/nom',
-  'Le/determinant bébé/nom',
   'Le/determinant médecin/nom',
   'L’/determinant infirmière/nom',
   'Le/determinant boulanger/nom',
@@ -168,7 +171,7 @@ export const COMMON = [
 ] as const
 
 /** Sujets pour instancier un modèle (le modèle lui-même ne change pas). Personnes seulement. */
-export const SIMPLE_SUBJECTS = [...PROPER, ...COMMON, ...PRONOUN_SUBJECTS] as const
+export const SIMPLE_SUBJECTS = [...PROPER, ...COMMON.filter(subject => !subject.includes('bébé/nom')), ...PRONOUN_SUBJECTS] as const
 
 export type SubjectKind = 'proper' | 'common' | 'pronoun'
 
@@ -209,7 +212,7 @@ export { PROPER_NAMES }
 
 export function isProperNameToken(token: PhraseToken): boolean {
   if (token.category !== 'nom') return false
-  if (PROPER_NAMES.has(token.text)) return true
+  if (PROPER_NAMES.has(token.text) || ['Genève', 'Paris', 'Suisse', 'Sion', 'France', 'Lausanne'].includes(token.text)) return true
   const capped = token.text ? token.text[0]!.toUpperCase() + token.text.slice(1) : token.text
   return PROPER_NAMES.has(capped)
 }
@@ -231,7 +234,6 @@ export const ADJ_SUBJECTS = [
   'Une/determinant petite/adjectif cousine/nom',
   'Le/determinant nouveau/adjectif maître/nom',
   'La/determinant nouvelle/adjectif maîtresse/nom',
-  'Le/determinant joli/adjectif bébé/nom',
   'La/determinant jolie/adjectif maman/nom',
   'Un/determinant grand/adjectif papa/nom',
   'Une/determinant grande/adjectif tante/nom',
@@ -302,6 +304,8 @@ function frameHasPrep(frame: ThemedFrame): boolean {
 
 /** Le modèle doit coller aux pastilles du thème (pas d’« habiter » en phrase simple). */
 export function frameMatchesTheme(theme: PhraseThemeId, frame: ThemedFrame): boolean {
+  if (frame.id === 'être' && !theme.includes('adjectif') && !theme.includes('preposition')) return false
+  if (theme.includes('pronominaux')) return true
   const prepTheme = theme === 'phrase-preposition' || theme === 'phrase-negation-preposition'
   if (prepTheme) return frame.preds.length > 0 && frame.preds.every(predHasPrep)
   return !frameHasPrep(frame)
@@ -314,7 +318,9 @@ function bankKey(group: PhraseVerbGroup): 'er' | 'autres' {
 export function framesForTheme(theme: PhraseThemeId, group: PhraseVerbGroup): readonly ThemedFrame[] {
   const bank = bankKey(group)
   const raw =
-    theme === 'phrase-simple' || theme === 'phrase-negation'
+    theme.includes('pronominaux')
+      ? bank === 'autres' ? REFLEXIVE_FRAMES_AUTRES : REFLEXIVE_FRAMES_ER
+      : theme === 'phrase-simple' || theme === 'phrase-negation'
       ? bank === 'autres'
         ? SIMPLE_FRAMES_AUTRES
         : SIMPLE_FRAMES_ER
@@ -327,6 +333,7 @@ export function framesForTheme(theme: PhraseThemeId, group: PhraseVerbGroup): re
             | 'phrase-adverbe'
             | 'phrase-negation-adverbe'
             | 'phrase-conjonctions'
+            | 'phrase-negation-conjonctions'
             | 'phrase-determinants'
             | 'phrase-negation-determinants',
           bank,
@@ -445,7 +452,7 @@ export function instantiateThemeFrame(
   pickRightSubject: () => string = () => COMMON[0]!,
   adjPlacement: AdjPlacement = 'comp',
 ): PhraseToken[] {
-  if (theme === 'phrase-conjonctions') {
+  if (theme === 'phrase-conjonctions' || theme === 'phrase-negation-conjonctions') {
     const leftRaw = pickSubject()
     let right = pickRightSubject()
     if (right === leftRaw) right = pickRightSubject()
@@ -462,11 +469,11 @@ export function instantiateThemeFrame(
     const leftPredRaw = pickPred(frame.preds)
     const rightPredRaw = pickPred(frame.rightPreds ?? frame.preds)
     const leftApplied = applyPredForSubject(frame.id, leftRaw, leftPredRaw)
-    const rightApplied = applyPredForSubject(frame.id, right, rightPredRaw)
+    const rightApplied = applyPredForSubject(frame.rightId ?? frame.id, right, rightPredRaw)
     const tokens = parse(
       `${leftApplied.subject} ${leftApplied.pred} ${pickPred(frame.conjs ?? ['et/conjonction'])} ${lowerCommon(rightApplied.subject)} ${rightApplied.pred}`,
     )
-    return tokens
+    return isNegationTheme(theme) ? withNegation(tokens, [frame.id, frame.rightId ?? frame.id]) : tokens
   }
   const placement = isAdjTheme(theme) ? resolveAdjPlacement(frame.id, adjPlacement) : 'comp'
   const subjectRaw = pickSubject()
@@ -478,7 +485,12 @@ export function instantiateThemeFrame(
   }
   const { subject, pred: nextPred } = applyPredForSubject(frame.id, subjectRaw, pred)
   const tokens = instantiateTagged(subject, nextPred)
-  return isNegationTheme(theme) ? withNegation(tokens) : tokens
+  if (frame.id === 'être' && isAdjTheme(theme) && ['nous', 'vous', 'ils'].includes(verbPersonOf(subjectRaw))) {
+    for (const token of tokens) {
+      if (token.category === 'adjectif' && !/[sx]$/.test(token.text)) token.text += 's'
+    }
+  }
+  return isNegationTheme(theme) ? withNegation(tokens, [frame.id]) : tokens
 }
 
 const ADJ_PLACEMENTS: readonly AdjPlacement[] = ['comp', 'subj', 'both']
@@ -498,67 +510,50 @@ function sampleSubjectFor(
     return pool[index % pool.length]!
   }
   const kind = index % 3
+  const familyIndex = Math.floor(index / 3)
   if (kind === 0) {
     const proper = pool.filter((item) => subjectKindOf(item) === 'proper')
-    if (proper.length) return proper[index % proper.length]!
+    if (proper.length) return proper[familyIndex % proper.length]!
   }
   if (kind === 1) {
     const common = pool.filter((item) => subjectKindOf(item) === 'common')
-    if (common.length) return common[index % common.length]!
+    if (common.length) return common[familyIndex % common.length]!
   }
   const pronouns = pronounsForFrame(frame.id, frame.preds)
-  if (pronouns.length) return pronouns[index % pronouns.length]!
+  if (pronouns.length) return pronouns[familyIndex % pronouns.length]!
   return pool[index % pool.length]!
 }
 
 function samplesFromThemed(theme: PhraseThemeId, group: PhraseVerbGroup): PhraseToken[][] {
   const frames = framesForTheme(theme, group)
-  if (!isAdjTheme(theme)) {
-    return frames.map((frame, index) =>
-      instantiateThemeFrame(
+  const out: PhraseToken[][] = []
+  const seen = new Set<string>()
+  for (let round = 0; round < 100 && out.length < 100; round++) {
+    for (const [index, frame] of frames.entries()) {
+      const placement = isAdjTheme(theme) ? ADJ_PLACEMENTS[round % ADJ_PLACEMENTS.length]! : 'comp'
+      const tokens = instantiateThemeFrame(
         theme,
         frame,
-        () => sampleSubjectFor(theme, frame, index),
-        (preds) => preds[0]!,
-        () => COMMON[(index + 1) % COMMON.length]!,
-      ),
-    )
-  }
-  const out: PhraseToken[][] = []
-  for (const [index, frame] of frames.entries()) {
-    for (const placement of ADJ_PLACEMENTS) {
-      const effective = resolveAdjPlacement(frame.id, placement)
-      out.push(
-        instantiateThemeFrame(
-          theme,
-          frame,
-          () => sampleSubjectFor(theme, frame, index, effective),
-          (preds) => preds[0]!,
-          () => COMMON[(index + 1) % COMMON.length]!,
-          effective,
-        ),
+        () => sampleSubjectFor(theme, frame, index + round * (frames.length + 1), placement),
+        preds => preds[round % preds.length]!,
+        () => COMMON[(index + round + 1) % COMMON.length]!,
+        placement,
       )
+      const sentence = joinPhrase(tokens)
+      if (!seen.has(sentence)) {
+        seen.add(sentence)
+        out.push(tokens)
+      }
+      if (out.length === 100) break
     }
   }
   return out
 }
 
 function bankFor(group: PhraseVerbGroup): Record<PhraseThemeId, PhraseToken[][]> {
-  const simple = framesForTheme('phrase-simple', group)
-  const minSimple = Math.min(100, simple.length)
-  return {
-    'phrase-simple': assertBank('phrase-simple', samplesFromThemed('phrase-simple', group), minSimple),
-    'phrase-negation': assertBank('phrase-negation', samplesFromThemed('phrase-negation', group), minSimple),
-    'phrase-adjectif': assertBank('phrase-adjectif', samplesFromThemed('phrase-adjectif', group), Math.min(100, framesForTheme('phrase-adjectif', group).length)),
-    'phrase-negation-adjectif': assertBank('phrase-negation-adjectif', samplesFromThemed('phrase-negation-adjectif', group), Math.min(100, framesForTheme('phrase-negation-adjectif', group).length)),
-    'phrase-determinants': assertBank('phrase-determinants', samplesFromThemed('phrase-determinants', group), minSimple),
-    'phrase-negation-determinants': assertBank('phrase-negation-determinants', samplesFromThemed('phrase-negation-determinants', group), minSimple),
-    'phrase-preposition': assertBank('phrase-preposition', samplesFromThemed('phrase-preposition', group), Math.min(40, framesForTheme('phrase-preposition', group).length)),
-    'phrase-negation-preposition': assertBank('phrase-negation-preposition', samplesFromThemed('phrase-negation-preposition', group), Math.min(40, framesForTheme('phrase-negation-preposition', group).length)),
-    'phrase-adverbe': assertBank('phrase-adverbe', samplesFromThemed('phrase-adverbe', group), minSimple),
-    'phrase-negation-adverbe': assertBank('phrase-negation-adverbe', samplesFromThemed('phrase-negation-adverbe', group), minSimple),
-    'phrase-conjonctions': assertBank('phrase-conjonctions', samplesFromThemed('phrase-conjonctions', group), minSimple),
-  }
+  return Object.fromEntries(PHRASE_ALL_THEME_DEFS.map(({ topic }) => [
+    topic, assertBank(topic, samplesFromThemed(topic, group), 100),
+  ])) as Record<PhraseThemeId, PhraseToken[][]>
 }
 
 if (SIMPLE_FRAMES_ER.length < 100) {

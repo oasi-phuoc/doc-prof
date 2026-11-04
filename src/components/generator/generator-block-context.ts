@@ -242,7 +242,7 @@ const isConstruire = isReperageConstruire(activeBlock.exerciseType)
 const isTransform = isTransformationExercise(activeBlock.exerciseType)
 const isTransformCentrale = isTransformationCentrale(activeBlock.exerciseType)
 const isTransformPlacer = isTransformationPlacer(activeBlock.exerciseType)
-const maxQuestions = maxQuestionsFor({
+const baseMaxQuestions = maxQuestionsFor({
   isComposer,
   isFormes,
   isTransform,
@@ -251,6 +251,9 @@ const maxQuestions = maxQuestionsFor({
 })
 const activeSheetBlock = worksheets[safeSheetIndex]?.blocks[safeBlockIndex]
 const bankQuestionCap = activeSheetBlock?.bankQuestionCap
+const maxQuestions = activePage.domain === 'gattegno' && bankQuestionCap != null
+  ? Math.min(baseMaxQuestions, bankQuestionCap)
+  : baseMaxQuestions
 const bankOverflow =
   Boolean(bankQuestionCap != null) &&
   (isOralComprehensionExercise(activeBlock.exerciseType) ||

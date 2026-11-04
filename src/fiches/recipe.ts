@@ -1,6 +1,7 @@
 import type { InstitutionalHeader } from '@/components/math/PrintDocumentChrome'
 import type { SheetFormat } from '@/components/generator/sheet-format'
 import type { Domain, PageConfig } from '@/math/types'
+import { normalizeLegacyPhraseBlock } from '@/francais/phrase-themes'
 
 /** Recette qui reproduit la fiche imprimée : config, graine, en-tête, points. */
 export type FicheRecipe = {
@@ -88,18 +89,22 @@ export function migrateTpmToken(value: string): string {
 }
 
 function migratePage(page: PageConfig): PageConfig {
-  const extra = page.extraBlocks?.map((block) => ({
-    ...block,
-    topic: migrateDomainToken(block.topic),
-    exerciseType: migrateDomainToken(block.exerciseType),
-  }))
-  return {
+  const extra = page.extraBlocks?.map((block) => {
+    const migrated = {
+      ...block,
+      topic: migrateDomainToken(block.topic),
+      exerciseType: migrateDomainToken(block.exerciseType),
+    }
+    return page.domain === 'gattegno' ? normalizeLegacyPhraseBlock(migrated) : migrated
+  })
+  const migrated = {
     ...page,
     domain: migrateDomainToken(page.domain) as Domain,
     topic: migrateDomainToken(page.topic),
     exerciseType: migrateDomainToken(page.exerciseType),
     extraBlocks: extra,
   }
+  return migrated.domain === 'gattegno' ? normalizeLegacyPhraseBlock(migrated) : migrated
 }
 
 export function parseFicheRecipe(value: unknown): FicheRecipe | null {

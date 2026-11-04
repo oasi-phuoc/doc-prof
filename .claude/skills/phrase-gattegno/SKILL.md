@@ -20,13 +20,24 @@ Une fiche de phrases n’est **pas** un produit cartésien (Léa / elle / le pap
 | `src/francais/phrase-simple-frames.ts` | Modèles phrase simple / négation simple (≥100 `-er`, pas d’« être ») |
 | `src/francais/phrase-theme-frames.ts` | Modèles adjectif, préposition, adverbe, conjonctions |
 | `src/francais/phrase-sentences.ts` | Sujets (prénoms, GN, pronoms), `framesForTheme`, `instantiateThemeFrame` |
+| `src/francais/phrase-themes.ts` | Ordre des thèmes combinés, formes Positive / Négative / Mixte, migration des anciens ids |
+| `src/francais/phrase-reflexive-frames.ts` | 54 constructions pronominales relues |
+| `src/francais/phrase-negation.ts` | Négation, clitiques, articles et élisions |
 | `src/francais/phrase-conjugate.ts` | Conjugaison du verbe selon le sujet (pronoms) |
 | `src/francais/phrase.ts` | Tirage équilibré des sujets (`used` = `frame:${id}`) pour **tous** les thèmes |
 | `src/francais/phrase-banks.ts` | Verbes (formes), **15 consignes** d’écriture libre par thème |
 
+## Thèmes combinés et formes
+
+Le menu affiche Simple, Déterminants, Verbes pronominaux, Adjectif, Préposition, Adverbe et Conjonctions. Chaque thème a quatre formats et un réglage **Positive / Négative / Mixte**. Les anciens ids `phrase-negation-*` restent lisibles pour les recettes sauvegardées, mais ne constituent plus des thèmes du menu. Leur migration conserve la forme négative.
+
+`phrasePolarity` appartient à l’exercice. Mixte équilibre les deux formes dès deux phrases. Les quatre formats doivent tirer les mêmes phrases avant toute opération de mélange des mots. Ne pas tirer à nouveau une phrase pour « construire » ni consommer un tirage supplémentaire de consigne avant de construire la banque.
+
+Le nombre de phrases d’une fiche est plafonné aux modèles distincts disponibles. La banque de référence conserve **100 phrases distinctes par thème, forme et groupe**, sans inventer des ids comme `mettre2`. Voir `docs/gattegno/README.md` et `scripts/audit-gattegno.cjs` pour les contrôles exhaustifs et les exemples corrigés.
+
 ## Tous les thèmes passent par les modèles
 
-`pickPhrase` et `typeBuild` appellent `framesForTheme` + `instantiateThemeFrame` pour :
+`pickPhrase` appelle `framesForTheme` + `instantiateThemeFrame` avant de répartir les mêmes phrases dans les quatre formats, pour :
 
 - phrase simple / négation simple
 - adjectif / négation + adjectif
@@ -34,6 +45,7 @@ Une fiche de phrases n’est **pas** un produit cartésien (Léa / elle / le pap
 - adverbe / négation + adverbe
 - déterminants / négation + déterminants
 - conjonctions
+- verbes pronominaux
 
 Ne plus assembler `PEOPLE × prédicats`. Un id de verbe déjà tiré (`frame:${id}`) est exclu du tirage suivant.
 
@@ -60,7 +72,7 @@ Le modèle garde la forme 3e sg dans les prédicats ; `instantiateThemeFrame` co
 
 *Habiter*, *aller*, *rester chez*… exigent une préposition (*j’habite à Sion*, *j’habite dans un appartement*). Ils n’apparaissent **jamais** en phrase simple, négation simple, déterminants, adjectif, adverbe ou conjonctions : les pastilles n’ont pas de préposition, l’élève écrirait *habite une maison*.
 
-Ils restent dans les thèmes **préposition** / **négation + préposition**. `frameMatchesTheme` refuse tout modèle dont un complément contient `/preposition` hors de ces thèmes.
+Ils restent dans le thème **Préposition**, dans ses trois formes. Les constructions pronominales sont également autorisées à avoir leurs compléments prépositionnels naturels. `frameMatchesTheme` refuse tout modèle dont un complément contient `/preposition` hors de ces thèmes.
 
 ## Conjonctions : une seule majuscule
 
@@ -90,6 +102,12 @@ Banque : **~15 prénoms par nationalité** (alignée sur le vocabulaire Présent
 | Adjectif / négation + adjectif | Autorisé, formes accordées |
 | Préposition / négation + préposition | Autorisé : *est à / dans / chez* |
 | Autres thèmes | Pas de modèle *être* dédié |
+
+## Négation et pronoms réfléchis
+
+`tagged` sépare les pronoms réfléchis des verbes (*me* / *lave*, *m’* / *habille*). `withNegation` place *ne* avant les clitiques et *pas* après le verbe, rétablit *Je* devant *ne/n’*, et transforme les articles indéfinis/partitifs en *de/d’* sauf avec un attribut de *être*. Une clause coordonnée est traitée séparément. Les mots *ne* et *pas* restent des adverbes négatifs dans le code couleur existant. Les h aspirés de la banque sont explicitement pris en compte.
+
+Dans les conjonctions, chaque proposition conserve son propre id verbal (`rightId` pour la seconde). Ne pas tirer une conjonction causale/adversative au hasard entre deux faits sans lien logique. La banque additive emploie *et*.
 
 ## Production écrite
 

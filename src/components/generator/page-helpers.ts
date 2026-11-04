@@ -206,6 +206,7 @@ export function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<Exe
     exerciseType: type.id,
     topic: type.topic,
     track: type.track,
+    phrasePolarity: isPhrase ? prev?.phrasePolarity : undefined,
     columns: type.preferredColumns ?? 2,
     ...clearLibreContentFreeze(),
     ...(isDecompose

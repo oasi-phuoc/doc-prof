@@ -1,3 +1,4 @@
+import { PHRASE_THEME_DEFS } from '@/francais/phrase-themes'
 import type { Difficulty, Domain, ExerciseType, FrenchTrack, Topic } from './types'
 import {
   ALPHABETISATION_EXERCISE_TYPES,
@@ -61,17 +62,7 @@ export const topics: Topic[] = [
   { id: 'soutien-consonnes-iii', label: 'Consonnes III', domain: 'soutien-fr' },
   { id: 'soutien-sons-complexes', label: 'Sons complexes', domain: 'soutien-fr' },
   { id: 'phrase-tableaux', label: 'Tableaux Gattegno', domain: 'gattegno' },
-  { id: 'phrase-simple', label: 'Simple', domain: 'gattegno' },
-  { id: 'phrase-negation', label: 'Négation simple', domain: 'gattegno' },
-  { id: 'phrase-adjectif', label: 'Adjectif', domain: 'gattegno' },
-  { id: 'phrase-negation-adjectif', label: 'Négation avec adjectif', domain: 'gattegno' },
-  { id: 'phrase-determinants', label: 'Déterminants', domain: 'gattegno' },
-  { id: 'phrase-negation-determinants', label: 'Négation déterminants', domain: 'gattegno' },
-  { id: 'phrase-preposition', label: 'Préposition', domain: 'gattegno' },
-  { id: 'phrase-negation-preposition', label: 'Négation prépositions', domain: 'gattegno' },
-  { id: 'phrase-adverbe', label: 'Adverbe', domain: 'gattegno' },
-  { id: 'phrase-negation-adverbe', label: 'Négation avec adverbe', domain: 'gattegno' },
-  { id: 'phrase-conjonctions', label: 'Conjonctions', domain: 'gattegno' },
+  ...PHRASE_THEME_DEFS.map(theme => ({ id: theme.topic, label: theme.label, domain: 'gattegno' as const })),
   // —— Grammaire FALC (théorie SCAI) ——
   ...GRAMMAIRE_TOPICS,
   // —— Vocabulaire / Société / Santé / ACM (squelettes) ——
@@ -884,21 +875,7 @@ for (const def of allSoutienBankDefs()) {
   }
 }
 
-const PHRASE_THEMES = [
-  { topic: 'phrase-simple', label: 'Simple' },
-  { topic: 'phrase-negation', label: 'Négation simple' },
-  { topic: 'phrase-adjectif', label: 'Adjectif' },
-  { topic: 'phrase-negation-adjectif', label: 'Négation avec adjectif' },
-  { topic: 'phrase-determinants', label: 'Déterminants' },
-  { topic: 'phrase-negation-determinants', label: 'Négation déterminants' },
-  { topic: 'phrase-preposition', label: 'Préposition' },
-  { topic: 'phrase-negation-preposition', label: 'Négation prépositions' },
-  { topic: 'phrase-adverbe', label: 'Adverbe' },
-  { topic: 'phrase-negation-adverbe', label: 'Négation avec adverbe' },
-  { topic: 'phrase-conjonctions', label: 'Conjonctions' },
-] as const
-
-for (const theme of PHRASE_THEMES) {
+for (const theme of PHRASE_THEME_DEFS) {
   exerciseTypes.push(
     t(
       `${theme.topic}-colorier`,
