@@ -224,19 +224,19 @@
     "Les contours noirs appuyés, hachures et volumes fortement simplifiés des dernières reprises ne correspondent pas à la référence validée."
   ],
   "summary": {
-    "reviewed_co_images": 556,
+    "reviewed_co_images": 572,
     "reviewed_other_images": 59,
-    "reviewed_total_images": 615,
+    "reviewed_total_images": 631,
     "user_approved_reference_images": 35,
     "initial_redraw_required": 11,
     "initial_co_redraw_required": 11,
     "initial_other_redraw_required": 0,
-    "already_aligned": 604,
+    "already_aligned": 620,
     "redrawn_images": 11,
     "remaining_redraws": 0,
     "restored_previous_images": 14,
     "rejected_unpublished_previews": 12,
-    "new_images_compared_to_reference": 297
+    "new_images_compared_to_reference": 313
   },
   "superseded_review": {
     "commit": "f6f2a521",
@@ -7969,6 +7969,246 @@
       "references": [
         "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
         "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-livre-francais-dessine",
+      "label": "Un livre de français",
+      "path": "/lib/images/tcf/qcm-audit/co306-livre-francais-dessine.webp",
+      "sha256": "b5130611a84c7ff4c30e59b11e3078383fb8532f1c5ad16e4f4180e7add992a3",
+      "status": "aligned",
+      "review_note": "Comparaison aux livres du commit 48a753d8 réellement vus : papier et couvertures peints, modelé doux, contours discrets, fond crème et ombres légères. Un seul livre rouge fermé, titre FRANÇAIS relu et bulle Abc ; livre scolaire, sans spirale de cahier ou tranche épaisse de dictionnaire.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-livres-francais-dessine",
+      "label": "Les livres de français",
+      "path": "/lib/images/tcf/qcm-audit/co306-livres-francais-dessine.webp",
+      "sha256": "5eeacaa37c86536747f76f1eebb85af9dca6e9dc5de5c7953e58b71489817752",
+      "status": "aligned",
+      "review_note": "Comparaison aux livres du commit 48a753d8 réellement vus : papier et couvertures peints, modelé doux, contours discrets, fond crème et ombres légères. Deux livres rouges distincts portant FRANÇAIS ; le pluriel est représenté.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-livres-histoire-dessine",
+      "label": "Les livres d’histoire",
+      "path": "/lib/images/tcf/qcm-audit/co306-livres-histoire-dessine.webp",
+      "sha256": "9e8ea2283175e663bec132c192cc6113b7808a2524d19c5519d33ac772c42050",
+      "status": "aligned",
+      "review_note": "Comparaison aux livres du commit 48a753d8 réellement vus : papier et couvertures peints, modelé doux, contours discrets, fond crème et ombres légères. Deux livres marron HISTOIRE avec château et amphore sur la couverture ; titre relu, aucune année.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-livres-mathematiques-dessine",
+      "label": "Les livres de mathématiques",
+      "path": "/lib/images/tcf/qcm-audit/co306-livres-mathematiques-dessine.webp",
+      "sha256": "29567c60d8363206f923bc89bd706589dc5b61555d7501a9c2e5fb21dbaca389",
+      "status": "aligned",
+      "review_note": "Comparaison aux livres du commit 48a753d8 réellement vus : papier et couvertures peints, modelé doux, contours discrets, fond crème et ombres légères. Deux livres bleus MATHÉMATIQUES avec figures et x + y ; titres relus, aucun chiffre.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-cahier-musique-dessine",
+      "label": "Un cahier de musique",
+      "path": "/lib/images/tcf/qcm-audit/co306-cahier-musique-dessine.webp",
+      "sha256": "5fbc36ddd52e9a8c1d424ec4dd920b616a520f6db255538acb128460269a1d51",
+      "status": "aligned",
+      "review_note": "Comparaison aux livres du commit 48a753d8 réellement vus : papier et couvertures peints, modelé doux, contours discrets, fond crème et ombres légères. Un cahier vert à spirale MUSIQUE, clé de sol et page à portées avec notes ; cahier distinct des livres de musique reliés.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-cahier-anglais-dessine",
+      "label": "Un cahier d'anglais",
+      "path": "/lib/images/tcf/qcm-audit/co306-cahier-anglais-dessine.webp",
+      "sha256": "583df04870aaae909440a73a9f63c6a731e81a32cf628d2e7e91c02a243cf91a",
+      "status": "aligned",
+      "review_note": "Comparaison aux livres du commit 48a753d8 réellement vus : papier et couvertures peints, modelé doux, contours discrets, fond crème et ombres légères. Un cahier mince bleu à spirale ANGLAIS, ouvert sur une page lignée vierge ; aucun dictionnaire à sa place.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-dictionnaire-anglais-dessine",
+      "label": "Un dictionnaire anglais",
+      "path": "/lib/images/tcf/qcm-audit/co306-dictionnaire-anglais-dessine.webp",
+      "sha256": "71f7b36da6000cb8c3565ac8cb6877f88d856e38156677ce5f0c7e8df7116963",
+      "status": "aligned",
+      "review_note": "Comparaison aux livres du commit 48a753d8 réellement vus : papier et couvertures peints, modelé doux, contours discrets, fond crème et ombres légères. Un seul dictionnaire épais bleu foncé à onglets, DICTIONNAIRE ANGLAIS correctement relu.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-dictionnaire-italien-dessine",
+      "label": "Un dictionnaire italien",
+      "path": "/lib/images/tcf/qcm-audit/co306-dictionnaire-italien-dessine.webp",
+      "sha256": "1b4811011f21fb2447df1fed1c6852c24d2007071905a12554bf63d777226df8",
+      "status": "aligned",
+      "review_note": "Comparaison aux livres du commit 48a753d8 réellement vus : papier et couvertures peints, modelé doux, contours discrets, fond crème et ombres légères. Un seul dictionnaire épais vert foncé à onglets, DICTIONNAIRE ITALIEN correctement relu.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-dictionnaires-francais-dessine",
+      "label": "Des dictionnaires de français",
+      "path": "/lib/images/tcf/qcm-audit/co306-dictionnaires-francais-dessine.webp",
+      "sha256": "2fbcfe4e6a0b71899c680d4c355318f03d92ac08e50be718bae85c74617aff72",
+      "status": "aligned",
+      "review_note": "Comparaison aux livres du commit 48a753d8 réellement vus : papier et couvertures peints, modelé doux, contours discrets, fond crème et ombres légères. Deux dictionnaires épais rouges à onglets, DICTIONNAIRE FRANÇAIS relu ; pluriel visible.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-dictionnaires-anglais-dessine",
+      "label": "Des dictionnaires d'anglais",
+      "path": "/lib/images/tcf/qcm-audit/co306-dictionnaires-anglais-dessine.webp",
+      "sha256": "3d0b67ead2ea4c78fa932b420ac4fc76688db6ff09c06f29308fd1b8d390b6aa",
+      "status": "aligned",
+      "review_note": "Comparaison aux livres du commit 48a753d8 réellement vus : papier et couvertures peints, modelé doux, contours discrets, fond crème et ombres légères. Deux dictionnaires épais bleu foncé à onglets, DICTIONNAIRE ANGLAIS relu ; pluriel visible.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-dictionnaires-italien-dessine",
+      "label": "Des dictionnaires d'italien",
+      "path": "/lib/images/tcf/qcm-audit/co306-dictionnaires-italien-dessine.webp",
+      "sha256": "d361a55e482cbbb85ebf92f8744542c97fb9f3c6317b6b18f283c464258d4238",
+      "status": "aligned",
+      "review_note": "Comparaison aux livres du commit 48a753d8 réellement vus : papier et couvertures peints, modelé doux, contours discrets, fond crème et ombres légères. Deux dictionnaires épais vert foncé à onglets, DICTIONNAIRE ITALIEN relu ; pluriel visible.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-livres-sciences-dessine",
+      "label": "Les livres de sciences",
+      "path": "/lib/images/tcf/qcm-audit/co306-livres-sciences-dessine.webp",
+      "sha256": "8c6fbec27fe1dc47e40a058699f8ba83d42be8f2a4e82b696104b5ca889c1261",
+      "status": "aligned",
+      "review_note": "Comparaison aux livres du commit 48a753d8 réellement vus : papier et couvertures peints, modelé doux, contours discrets, fond crème et ombres légères. Deux livres verts SCIENCES, couvertures à microscope et feuille ; titres relus.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-livres-musique-dessine",
+      "label": "Les livres de musique",
+      "path": "/lib/images/tcf/qcm-audit/co306-livres-musique-dessine.webp",
+      "sha256": "f78a38da13c79c7abfa88ca123ffcd771867fa5caf4eba9c0a7d25d9a198ac88",
+      "status": "aligned",
+      "review_note": "Comparaison aux livres du commit 48a753d8 réellement vus : papier et couvertures peints, modelé doux, contours discrets, fond crème et ombres légères. Deux livres violets MUSIQUE, couvertures à guitare et clavier ; pas de cahier à spirale.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-livres-cuisine-dessine",
+      "label": "Les livres de cuisine",
+      "path": "/lib/images/tcf/qcm-audit/co306-livres-cuisine-dessine.webp",
+      "sha256": "1c90b038f15aded37d468bb1012a30a7038168a88ebc2ca9ad0a99c941f221a4",
+      "status": "aligned",
+      "review_note": "Comparaison aux livres du commit 48a753d8 réellement vus : papier et couvertures peints, modelé doux, contours discrets, fond crème et ombres légères. Deux livres orange CUISINE, couvertures à casserole et soupe ; titres relus et aucune recette chiffrée.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-grand-cahier-dessine",
+      "label": "Un grand cahier",
+      "path": "/lib/images/tcf/qcm-audit/co306-grand-cahier-dessine.webp",
+      "sha256": "4b46e64386fc651d92d8009b62258b83e83bb0d2cccb4af25b491c236eff0431",
+      "status": "aligned",
+      "review_note": "Comparaison aux livres du commit 48a753d8 réellement vus : papier et couvertures peints, modelé doux, contours discrets, fond crème et ombres légères. Grand cahier rouge vierge à spirale, à gauche d’un crayon jaune à gomme rose entier : cahier nettement plus haut que le crayon ; échelle contrôlée par comparaison avec le petit cahier.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-petit-cahier-dessine",
+      "label": "Un petit cahier",
+      "path": "/lib/images/tcf/qcm-audit/co306-petit-cahier-dessine.webp",
+      "sha256": "9d45fa5237fc1d1c5cc27db47900473037f9d22b95179bb7dd1c879670ee4b9b",
+      "status": "aligned",
+      "review_note": "Comparaison aux livres du commit 48a753d8 réellement vus : papier et couvertures peints, modelé doux, contours discrets, fond crème et ombres légères. Petit cahier rouge vierge à spirale, à gauche d’un crayon jaune à gomme rose entier : cahier nettement moins haut que le crayon ; la différence de taille repose sur ce repère commun et pas sur le seul remplissage du cadre.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
       ],
       "review_origin": "new_generation_after_reference48",
       "user_approved_reference": false

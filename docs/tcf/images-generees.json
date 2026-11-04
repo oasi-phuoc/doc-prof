@@ -21760,6 +21760,676 @@
       "bytes": 40918,
       "domain": "co",
       "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-livre-francais-dessine",
+      "label": "Un livre de français",
+      "path": "/lib/images/tcf/qcm-audit/co306-livre-francais-dessine.webp",
+      "prompt": "Recomposer les objets de la référence dans le même dessin numérique peint semi-réaliste : contours fins discrets, modelé doux, papier et couvertures détaillés par la peinture, fond crème uni et ombre légère. PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Sujets entiers avec marge sur les quatre côtés. Les mots demandés sont de VRAIS TITRES intégrés sur les couvertures, bien orthographiés, sans texte ajouté au-dessus ou sous l’objet. Aucun autre texte, nom d’auteur, mot, logo, prix, montant, année, date, jour, mois, grade ou chiffre. Aucune personne, photo, 3D ou gros contour noir. UN livre scolaire relié ROUGE fermé à plat, vue de trois quarts montrant une fine tranche de pages. Titre FRANÇAIS et petit pictogramme de bulle de parole avec lettres Abc en dessous sur la couverture. Aucun autre livre, cahier, dictionnaire ou crayon.",
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+      ],
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s47-co-3",
+          "question": 8,
+          "choice": "a",
+          "label": "Un livre de français",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        },
+        {
+          "exercise": "tcf-ssx-a1-ecole-cahier-d-anglais-co-4",
+          "question": 1,
+          "choice": "b",
+          "label": "Un livre de français",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-7f368554-9b02-4615-8232-16f7541ebbda.png",
+      "status": "visually_reviewed",
+      "review_note": "Un seul livre rouge fermé, titre FRANÇAIS relu et bulle Abc ; livre scolaire, sans spirale de cahier ou tranche épaisse de dictionnaire. Concept entier au singulier ou pluriel demandé, paysage natif exact 4:3, sans prix, date, jour ou mois.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+        ],
+        "review_note": "Comparaison aux livres du commit 48a753d8 réellement vus : papier et couvertures peints, modelé doux, contours discrets, fond crème et ombres légères. Un seul livre rouge fermé, titre FRANÇAIS relu et bulle Abc ; livre scolaire, sans spirale de cahier ou tranche épaisse de dictionnaire."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "88cfd0915075fc9c908d7f4cc175e029fdad28b9828126e3c14a83c022bb4c48",
+      "sha256": "b5130611a84c7ff4c30e59b11e3078383fb8532f1c5ad16e4f4180e7add992a3",
+      "bytes": 47214,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-livres-francais-dessine",
+      "label": "Les livres de français",
+      "path": "/lib/images/tcf/qcm-audit/co306-livres-francais-dessine.webp",
+      "prompt": "Recomposer les objets de la référence dans le même dessin numérique peint semi-réaliste : contours fins discrets, modelé doux, papier et couvertures détaillés par la peinture, fond crème uni et ombre légère. PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Sujets entiers avec marge sur les quatre côtés. Les mots demandés sont de VRAIS TITRES intégrés sur les couvertures, bien orthographiés, sans texte ajouté au-dessus ou sous l’objet. Aucun autre texte, nom d’auteur, mot, logo, prix, montant, année, date, jour, mois, grade ou chiffre. Aucune personne, photo, 3D ou gros contour noir. DEUX livres scolaires reliés ROUGES, légèrement décalés, tous deux portent le titre FRANÇAIS et petit pictogramme de bulle de parole. Couvertures entièrement visibles, aucun autre objet.",
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+      ],
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s19-co-3",
+          "question": 3,
+          "choice": "b",
+          "label": "Les livres de français",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-180a4d40-184b-4181-adcb-fb0df4eb9b48.png",
+      "status": "visually_reviewed",
+      "review_note": "Deux livres rouges distincts portant FRANÇAIS ; le pluriel est représenté. Concept entier au singulier ou pluriel demandé, paysage natif exact 4:3, sans prix, date, jour ou mois.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+        ],
+        "review_note": "Comparaison aux livres du commit 48a753d8 réellement vus : papier et couvertures peints, modelé doux, contours discrets, fond crème et ombres légères. Deux livres rouges distincts portant FRANÇAIS ; le pluriel est représenté."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "95dcb8f060d22e17aa134f52d074153f7439c325e945fb6983452e011417dfdb",
+      "sha256": "5eeacaa37c86536747f76f1eebb85af9dca6e9dc5de5c7953e58b71489817752",
+      "bytes": 56118,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-livres-histoire-dessine",
+      "label": "Les livres d’histoire",
+      "path": "/lib/images/tcf/qcm-audit/co306-livres-histoire-dessine.webp",
+      "prompt": "Recomposer les objets de la référence dans le même dessin numérique peint semi-réaliste : contours fins discrets, modelé doux, papier et couvertures détaillés par la peinture, fond crème uni et ombre légère. PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Sujets entiers avec marge sur les quatre côtés. Les mots demandés sont de VRAIS TITRES intégrés sur les couvertures, bien orthographiés, sans texte ajouté au-dessus ou sous l’objet. Aucun autre texte, nom d’auteur, mot, logo, prix, montant, année, date, jour, mois, grade ou chiffre. Aucune personne, photo, 3D ou gros contour noir. DEUX livres scolaires reliés MARRON, légèrement décalés, tous deux portent le titre HISTOIRE et une petite illustration de château ancien avec une amphore sur leurs couvertures. Aucun personnage, monnaie, année ou autre objet hors des couvertures.",
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+      ],
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s19-co-3",
+          "question": 3,
+          "choice": "a",
+          "label": "Les livres d’histoire",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-1f406d0b-cc75-454e-8e56-2687f8899691.png",
+      "status": "visually_reviewed",
+      "review_note": "Deux livres marron HISTOIRE avec château et amphore sur la couverture ; titre relu, aucune année. Concept entier au singulier ou pluriel demandé, paysage natif exact 4:3, sans prix, date, jour ou mois.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+        ],
+        "review_note": "Comparaison aux livres du commit 48a753d8 réellement vus : papier et couvertures peints, modelé doux, contours discrets, fond crème et ombres légères. Deux livres marron HISTOIRE avec château et amphore sur la couverture ; titre relu, aucune année."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "4bbbf9a6902cbfa0d99eb0d0105344643608398bd6775dbdc4257fbf5d283076",
+      "sha256": "9e8ea2283175e663bec132c192cc6113b7808a2524d19c5519d33ac772c42050",
+      "bytes": 94760,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-livres-mathematiques-dessine",
+      "label": "Les livres de mathématiques",
+      "path": "/lib/images/tcf/qcm-audit/co306-livres-mathematiques-dessine.webp",
+      "prompt": "Recomposer les objets de la référence dans le même dessin numérique peint semi-réaliste : contours fins discrets, modelé doux, papier et couvertures détaillés par la peinture, fond crème uni et ombre légère. PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Sujets entiers avec marge sur les quatre côtés. Les mots demandés sont de VRAIS TITRES intégrés sur les couvertures, bien orthographiés, sans texte ajouté au-dessus ou sous l’objet. Aucun autre texte, nom d’auteur, mot, logo, prix, montant, année, date, jour, mois, grade ou chiffre. Aucune personne, photo, 3D ou gros contour noir. DEUX livres scolaires reliés BLEUS, légèrement décalés, tous deux portent le titre MATHÉMATIQUES et des figures géométriques simples, cercle et triangle, avec les seuls symboles x + y sur la couverture. Pas de nombres ou équation chiffrée, aucun autre objet.",
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+      ],
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s19-co-3",
+          "question": 3,
+          "choice": "c",
+          "label": "Les livres de mathématiques",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-bdab25c3-406c-4b41-86b7-6f4984367a70.png",
+      "status": "visually_reviewed",
+      "review_note": "Deux livres bleus MATHÉMATIQUES avec figures et x + y ; titres relus, aucun chiffre. Concept entier au singulier ou pluriel demandé, paysage natif exact 4:3, sans prix, date, jour ou mois.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+        ],
+        "review_note": "Comparaison aux livres du commit 48a753d8 réellement vus : papier et couvertures peints, modelé doux, contours discrets, fond crème et ombres légères. Deux livres bleus MATHÉMATIQUES avec figures et x + y ; titres relus, aucun chiffre."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "287dfe7ba826a75522c9fc800f5d7efcf0ce021057782cb57d3d64c7f0b89cbe",
+      "sha256": "29567c60d8363206f923bc89bd706589dc5b61555d7501a9c2e5fb21dbaca389",
+      "bytes": 72454,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-cahier-musique-dessine",
+      "label": "Un cahier de musique",
+      "path": "/lib/images/tcf/qcm-audit/co306-cahier-musique-dessine.webp",
+      "prompt": "Recomposer les objets de la référence dans le même dessin numérique peint semi-réaliste : contours fins discrets, modelé doux, papier et couvertures détaillés par la peinture, fond crème uni et ombre légère. PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Sujets entiers avec marge sur les quatre côtés. Les mots demandés sont de VRAIS TITRES intégrés sur les couvertures, bien orthographiés, sans texte ajouté au-dessus ou sous l’objet. Aucun autre texte, nom d’auteur, mot, logo, prix, montant, année, date, jour, mois, grade ou chiffre. Aucune personne, photo, 3D ou gros contour noir. UN cahier à spirale vert légèrement ouvert, un volet de couverture portant le titre MUSIQUE et une clé de sol ; une page blanche visible montre plusieurs portées de cinq lignes avec quelques notes noires. Les portées ne sont pas des lignes de texte. Cahier entier et sans autre livre ou instrument.",
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co306-cahier-dessine.webp"
+      ],
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s47-co-3",
+          "question": 8,
+          "choice": "b",
+          "label": "Un cahier de musique",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        },
+        {
+          "exercise": "tcf-ssx-a1-objet-18-co-1",
+          "question": 3,
+          "choice": "c",
+          "label": "Un cahier de musique",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-e4f02d6b-4cde-4152-8818-65a1a64039cf.png",
+      "status": "visually_reviewed",
+      "review_note": "Un cahier vert à spirale MUSIQUE, clé de sol et page à portées avec notes ; cahier distinct des livres de musique reliés. Concept entier au singulier ou pluriel demandé, paysage natif exact 4:3, sans prix, date, jour ou mois.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+        ],
+        "review_note": "Comparaison aux livres du commit 48a753d8 réellement vus : papier et couvertures peints, modelé doux, contours discrets, fond crème et ombres légères. Un cahier vert à spirale MUSIQUE, clé de sol et page à portées avec notes ; cahier distinct des livres de musique reliés."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "3b974aaf95b3b34f61a59a1075d57c611730b66b1743ab7d3790ffb069aac9b7",
+      "sha256": "5fbc36ddd52e9a8c1d424ec4dd920b616a520f6db255538acb128460269a1d51",
+      "bytes": 67790,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-cahier-anglais-dessine",
+      "label": "Un cahier d'anglais",
+      "path": "/lib/images/tcf/qcm-audit/co306-cahier-anglais-dessine.webp",
+      "prompt": "Recomposer les objets de la référence dans le même dessin numérique peint semi-réaliste : contours fins discrets, modelé doux, papier et couvertures détaillés par la peinture, fond crème uni et ombre légère. PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Sujets entiers avec marge sur les quatre côtés. Les mots demandés sont de VRAIS TITRES intégrés sur les couvertures, bien orthographiés, sans texte ajouté au-dessus ou sous l’objet. Aucun autre texte, nom d’auteur, mot, logo, prix, montant, année, date, jour, mois, grade ou chiffre. Aucune personne, photo, 3D ou gros contour noir. UN cahier à spirale bleu légèrement ouvert, un volet de couverture portant le titre ANGLAIS avec petite bulle de parole ; une page blanche visible présente seulement des lignes régulières d’écriture vides. Cahier mince, pas un dictionnaire épais ou livre scolaire relié ; aucun autre objet.",
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co306-cahier-dessine.webp"
+      ],
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ssx-a1-ecole-cahier-d-anglais-co-4",
+          "question": 1,
+          "choice": "a",
+          "label": "Un cahier d'anglais",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-b5c2b676-d3dd-48df-b4ed-79aed836119e.png",
+      "status": "visually_reviewed",
+      "review_note": "Un cahier mince bleu à spirale ANGLAIS, ouvert sur une page lignée vierge ; aucun dictionnaire à sa place. Concept entier au singulier ou pluriel demandé, paysage natif exact 4:3, sans prix, date, jour ou mois.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+        ],
+        "review_note": "Comparaison aux livres du commit 48a753d8 réellement vus : papier et couvertures peints, modelé doux, contours discrets, fond crème et ombres légères. Un cahier mince bleu à spirale ANGLAIS, ouvert sur une page lignée vierge ; aucun dictionnaire à sa place."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "2e6a5fa96480c61751b19784933434d8db73c2b5a0a6553dac927d5f02fe0294",
+      "sha256": "583df04870aaae909440a73a9f63c6a731e81a32cf628d2e7e91c02a243cf91a",
+      "bytes": 59142,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-dictionnaire-anglais-dessine",
+      "label": "Un dictionnaire anglais",
+      "path": "/lib/images/tcf/qcm-audit/co306-dictionnaire-anglais-dessine.webp",
+      "prompt": "Recomposer les objets de la référence dans le même dessin numérique peint semi-réaliste : contours fins discrets, modelé doux, papier et couvertures détaillés par la peinture, fond crème uni et ombre légère. PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Sujets entiers avec marge sur les quatre côtés. Les mots demandés sont de VRAIS TITRES intégrés sur les couvertures, bien orthographiés, sans texte ajouté au-dessus ou sous l’objet. Aucun autre texte, nom d’auteur, mot, logo, prix, montant, année, date, jour, mois, grade ou chiffre. Aucune personne, photo, 3D ou gros contour noir. UN dictionnaire ÉPAIS à couverture rigide bleu foncé avec gros bloc de pages et petits onglets de tranches sans lettres ou chiffres. Titre de couverture sur deux lignes : DICTIONNAIRE puis ANGLAIS. Aucun autre objet ou page de vocabulaire écrite.",
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+      ],
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s47-co-3",
+          "question": 8,
+          "choice": "c",
+          "label": "Un dictionnaire anglais",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-f49ebad1-1293-4f14-a900-c4d8f6b0000c.png",
+      "status": "visually_reviewed",
+      "review_note": "Un seul dictionnaire épais bleu foncé à onglets, DICTIONNAIRE ANGLAIS correctement relu. Concept entier au singulier ou pluriel demandé, paysage natif exact 4:3, sans prix, date, jour ou mois.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+        ],
+        "review_note": "Comparaison aux livres du commit 48a753d8 réellement vus : papier et couvertures peints, modelé doux, contours discrets, fond crème et ombres légères. Un seul dictionnaire épais bleu foncé à onglets, DICTIONNAIRE ANGLAIS correctement relu."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "47fdca893d4bacb0887475b49e4f9229434c7fced17459f59affd4ad3d0a804c",
+      "sha256": "71f7b36da6000cb8c3565ac8cb6877f88d856e38156677ce5f0c7e8df7116963",
+      "bytes": 71506,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-dictionnaire-italien-dessine",
+      "label": "Un dictionnaire italien",
+      "path": "/lib/images/tcf/qcm-audit/co306-dictionnaire-italien-dessine.webp",
+      "prompt": "Recomposer les objets de la référence dans le même dessin numérique peint semi-réaliste : contours fins discrets, modelé doux, papier et couvertures détaillés par la peinture, fond crème uni et ombre légère. PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Sujets entiers avec marge sur les quatre côtés. Les mots demandés sont de VRAIS TITRES intégrés sur les couvertures, bien orthographiés, sans texte ajouté au-dessus ou sous l’objet. Aucun autre texte, nom d’auteur, mot, logo, prix, montant, année, date, jour, mois, grade ou chiffre. Aucune personne, photo, 3D ou gros contour noir. UN dictionnaire ÉPAIS à couverture rigide vert foncé avec gros bloc de pages et petits onglets de tranches sans lettres ou chiffres. Titre de couverture sur deux lignes : DICTIONNAIRE puis ITALIEN. Aucun autre objet ou page de vocabulaire écrite.",
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+      ],
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ssx-a1-ecole-cahier-d-anglais-co-4",
+          "question": 1,
+          "choice": "c",
+          "label": "Un dictionnaire italien",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-1a6deaff-d5fc-4620-af0c-4f6c30697ec9.png",
+      "status": "visually_reviewed",
+      "review_note": "Un seul dictionnaire épais vert foncé à onglets, DICTIONNAIRE ITALIEN correctement relu. Concept entier au singulier ou pluriel demandé, paysage natif exact 4:3, sans prix, date, jour ou mois.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+        ],
+        "review_note": "Comparaison aux livres du commit 48a753d8 réellement vus : papier et couvertures peints, modelé doux, contours discrets, fond crème et ombres légères. Un seul dictionnaire épais vert foncé à onglets, DICTIONNAIRE ITALIEN correctement relu."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "49a911557f1a867e6b8d21d39cc86aaa502b1733950598daf9c7ce7580451d00",
+      "sha256": "1b4811011f21fb2447df1fed1c6852c24d2007071905a12554bf63d777226df8",
+      "bytes": 54402,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-dictionnaires-francais-dessine",
+      "label": "Des dictionnaires de français",
+      "path": "/lib/images/tcf/qcm-audit/co306-dictionnaires-francais-dessine.webp",
+      "prompt": "Recomposer les objets de la référence dans le même dessin numérique peint semi-réaliste : contours fins discrets, modelé doux, papier et couvertures détaillés par la peinture, fond crème uni et ombre légère. PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Sujets entiers avec marge sur les quatre côtés. Les mots demandés sont de VRAIS TITRES intégrés sur les couvertures, bien orthographiés, sans texte ajouté au-dessus ou sous l’objet. Aucun autre texte, nom d’auteur, mot, logo, prix, montant, année, date, jour, mois, grade ou chiffre. Aucune personne, photo, 3D ou gros contour noir. DEUX dictionnaires ÉPAIS à couvertures rigides rouges, légèrement décalés avec gros blocs de pages et petits onglets de tranches sans lettres ou chiffres. Titres de couverture sur deux lignes : DICTIONNAIRE puis FRANÇAIS. Les deux livres sont entiers. Aucun autre objet.",
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+      ],
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ssx-a1-ecole-dictionnaires-de-francais-co-4",
+          "question": 1,
+          "choice": "a",
+          "label": "Des dictionnaires de français",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-0a3802f6-0fd9-4292-86c3-bbe5d1f1135b.png",
+      "status": "visually_reviewed",
+      "review_note": "Deux dictionnaires épais rouges à onglets, DICTIONNAIRE FRANÇAIS relu ; pluriel visible. Concept entier au singulier ou pluriel demandé, paysage natif exact 4:3, sans prix, date, jour ou mois.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+        ],
+        "review_note": "Comparaison aux livres du commit 48a753d8 réellement vus : papier et couvertures peints, modelé doux, contours discrets, fond crème et ombres légères. Deux dictionnaires épais rouges à onglets, DICTIONNAIRE FRANÇAIS relu ; pluriel visible."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "84e79fd7f6cc8e3bb6cbcbbdbf12a539131e48f37e1fcd6be9218d2a41007082",
+      "sha256": "2fbcfe4e6a0b71899c680d4c355318f03d92ac08e50be718bae85c74617aff72",
+      "bytes": 75288,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-dictionnaires-anglais-dessine",
+      "label": "Des dictionnaires d'anglais",
+      "path": "/lib/images/tcf/qcm-audit/co306-dictionnaires-anglais-dessine.webp",
+      "prompt": "Recomposer les objets de la référence dans le même dessin numérique peint semi-réaliste : contours fins discrets, modelé doux, papier et couvertures détaillés par la peinture, fond crème uni et ombre légère. PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Sujets entiers avec marge sur les quatre côtés. Les mots demandés sont de VRAIS TITRES intégrés sur les couvertures, bien orthographiés, sans texte ajouté au-dessus ou sous l’objet. Aucun autre texte, nom d’auteur, mot, logo, prix, montant, année, date, jour, mois, grade ou chiffre. Aucune personne, photo, 3D ou gros contour noir. DEUX dictionnaires ÉPAIS à couvertures rigides bleu foncé, légèrement décalés avec gros blocs de pages et petits onglets de tranches sans lettres ou chiffres. Titres de couverture sur deux lignes : DICTIONNAIRE puis ANGLAIS. Les deux livres sont entiers. Aucun autre objet.",
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+      ],
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ssx-a1-ecole-dictionnaires-de-francais-co-4",
+          "question": 1,
+          "choice": "b",
+          "label": "Des dictionnaires d'anglais",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-a0c0ce09-8b39-4e98-b68b-930bd703feec.png",
+      "status": "visually_reviewed",
+      "review_note": "Deux dictionnaires épais bleu foncé à onglets, DICTIONNAIRE ANGLAIS relu ; pluriel visible. Concept entier au singulier ou pluriel demandé, paysage natif exact 4:3, sans prix, date, jour ou mois.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+        ],
+        "review_note": "Comparaison aux livres du commit 48a753d8 réellement vus : papier et couvertures peints, modelé doux, contours discrets, fond crème et ombres légères. Deux dictionnaires épais bleu foncé à onglets, DICTIONNAIRE ANGLAIS relu ; pluriel visible."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "1fdef96b0d065deebcfd2afdbb7d5f6c06f642a35dd99a29a65ae87dc77f8627",
+      "sha256": "3d0b67ead2ea4c78fa932b420ac4fc76688db6ff09c06f29308fd1b8d390b6aa",
+      "bytes": 84234,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-dictionnaires-italien-dessine",
+      "label": "Des dictionnaires d'italien",
+      "path": "/lib/images/tcf/qcm-audit/co306-dictionnaires-italien-dessine.webp",
+      "prompt": "Recomposer les objets de la référence dans le même dessin numérique peint semi-réaliste : contours fins discrets, modelé doux, papier et couvertures détaillés par la peinture, fond crème uni et ombre légère. PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Sujets entiers avec marge sur les quatre côtés. Les mots demandés sont de VRAIS TITRES intégrés sur les couvertures, bien orthographiés, sans texte ajouté au-dessus ou sous l’objet. Aucun autre texte, nom d’auteur, mot, logo, prix, montant, année, date, jour, mois, grade ou chiffre. Aucune personne, photo, 3D ou gros contour noir. DEUX dictionnaires ÉPAIS à couvertures rigides vert foncé, légèrement décalés avec gros blocs de pages et petits onglets de tranches sans lettres ou chiffres. Titres de couverture sur deux lignes : DICTIONNAIRE puis ITALIEN. Les deux livres sont entiers. Aucun autre objet.",
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+      ],
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ssx-a1-ecole-dictionnaires-de-francais-co-4",
+          "question": 1,
+          "choice": "c",
+          "label": "Des dictionnaires d'italien",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-0f696bde-61ab-4e23-bc61-2c525ac5d5ae.png",
+      "status": "visually_reviewed",
+      "review_note": "Deux dictionnaires épais vert foncé à onglets, DICTIONNAIRE ITALIEN relu ; pluriel visible. Concept entier au singulier ou pluriel demandé, paysage natif exact 4:3, sans prix, date, jour ou mois.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+        ],
+        "review_note": "Comparaison aux livres du commit 48a753d8 réellement vus : papier et couvertures peints, modelé doux, contours discrets, fond crème et ombres légères. Deux dictionnaires épais vert foncé à onglets, DICTIONNAIRE ITALIEN relu ; pluriel visible."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "d1b9f99c90b99fda13a6ce1a54d3718a6a0cff10e7f01d3ed48edbd35efdc335",
+      "sha256": "d361a55e482cbbb85ebf92f8744542c97fb9f3c6317b6b18f283c464258d4238",
+      "bytes": 82254,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-livres-sciences-dessine",
+      "label": "Les livres de sciences",
+      "path": "/lib/images/tcf/qcm-audit/co306-livres-sciences-dessine.webp",
+      "prompt": "Recomposer les objets de la référence dans le même dessin numérique peint semi-réaliste : contours fins discrets, modelé doux, papier et couvertures détaillés par la peinture, fond crème uni et ombre légère. PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Sujets entiers avec marge sur les quatre côtés. Les mots demandés sont de VRAIS TITRES intégrés sur les couvertures, bien orthographiés, sans texte ajouté au-dessus ou sous l’objet. Aucun autre texte, nom d’auteur, mot, logo, prix, montant, année, date, jour, mois, grade ou chiffre. Aucune personne, photo, 3D ou gros contour noir. DEUX livres reliés verts, légèrement décalés, tous deux portent le titre SCIENCES et une petite illustration de microscope et de feuille sur leurs couvertures. Aucun autre objet, aucun chiffre ou formule.",
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+      ],
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ssx-a1-ecole-dictionnaires-de-francais-co-4",
+          "question": 2,
+          "choice": "a",
+          "label": "Les livres de sciences",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-da22b649-554b-4b7c-b93f-0007218944df.png",
+      "status": "visually_reviewed",
+      "review_note": "Deux livres verts SCIENCES, couvertures à microscope et feuille ; titres relus. Concept entier au singulier ou pluriel demandé, paysage natif exact 4:3, sans prix, date, jour ou mois.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+        ],
+        "review_note": "Comparaison aux livres du commit 48a753d8 réellement vus : papier et couvertures peints, modelé doux, contours discrets, fond crème et ombres légères. Deux livres verts SCIENCES, couvertures à microscope et feuille ; titres relus."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "83a8b29b8801a3734089d9a0766163899ae8b0e4cad953b581002c9e0528428e",
+      "sha256": "8c6fbec27fe1dc47e40a058699f8ba83d42be8f2a4e82b696104b5ca889c1261",
+      "bytes": 72768,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-livres-musique-dessine",
+      "label": "Les livres de musique",
+      "path": "/lib/images/tcf/qcm-audit/co306-livres-musique-dessine.webp",
+      "prompt": "Recomposer les objets de la référence dans le même dessin numérique peint semi-réaliste : contours fins discrets, modelé doux, papier et couvertures détaillés par la peinture, fond crème uni et ombre légère. PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Sujets entiers avec marge sur les quatre côtés. Les mots demandés sont de VRAIS TITRES intégrés sur les couvertures, bien orthographiés, sans texte ajouté au-dessus ou sous l’objet. Aucun autre texte, nom d’auteur, mot, logo, prix, montant, année, date, jour, mois, grade ou chiffre. Aucune personne, photo, 3D ou gros contour noir. DEUX livres reliés violets, légèrement décalés, tous deux portent le titre MUSIQUE et une petite illustration de guitare et clavier de piano sur leurs couvertures. Pas de spirale de cahier, notes manuscrites, autre objet ou chiffre.",
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+      ],
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ssx-a1-ecole-dictionnaires-de-francais-co-4",
+          "question": 2,
+          "choice": "b",
+          "label": "Les livres de musique",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-2edf2c17-3437-42bf-b0fc-e088fd800303.png",
+      "status": "visually_reviewed",
+      "review_note": "Deux livres violets MUSIQUE, couvertures à guitare et clavier ; pas de cahier à spirale. Concept entier au singulier ou pluriel demandé, paysage natif exact 4:3, sans prix, date, jour ou mois.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+        ],
+        "review_note": "Comparaison aux livres du commit 48a753d8 réellement vus : papier et couvertures peints, modelé doux, contours discrets, fond crème et ombres légères. Deux livres violets MUSIQUE, couvertures à guitare et clavier ; pas de cahier à spirale."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "3e100cf37241e6897a352902ba6ada5332021ad9607b2ddc68cff248df86bfc5",
+      "sha256": "f78a38da13c79c7abfa88ca123ffcd771867fa5caf4eba9c0a7d25d9a198ac88",
+      "bytes": 89148,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-livres-cuisine-dessine",
+      "label": "Les livres de cuisine",
+      "path": "/lib/images/tcf/qcm-audit/co306-livres-cuisine-dessine.webp",
+      "prompt": "Recomposer les objets de la référence dans le même dessin numérique peint semi-réaliste : contours fins discrets, modelé doux, papier et couvertures détaillés par la peinture, fond crème uni et ombre légère. PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Sujets entiers avec marge sur les quatre côtés. Les mots demandés sont de VRAIS TITRES intégrés sur les couvertures, bien orthographiés, sans texte ajouté au-dessus ou sous l’objet. Aucun autre texte, nom d’auteur, mot, logo, prix, montant, année, date, jour, mois, grade ou chiffre. Aucune personne, photo, 3D ou gros contour noir. DEUX livres reliés orange, légèrement décalés, tous deux portent le titre CUISINE et une petite illustration de casserole et bol de soupe sur leurs couvertures. Aucune recette écrite, autre objet ou chiffre.",
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+      ],
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ssx-a1-ecole-dictionnaires-de-francais-co-4",
+          "question": 2,
+          "choice": "c",
+          "label": "Les livres de cuisine",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-2c900510-789d-49b6-8e3f-41a3b649feb3.png",
+      "status": "visually_reviewed",
+      "review_note": "Deux livres orange CUISINE, couvertures à casserole et soupe ; titres relus et aucune recette chiffrée. Concept entier au singulier ou pluriel demandé, paysage natif exact 4:3, sans prix, date, jour ou mois.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+        ],
+        "review_note": "Comparaison aux livres du commit 48a753d8 réellement vus : papier et couvertures peints, modelé doux, contours discrets, fond crème et ombres légères. Deux livres orange CUISINE, couvertures à casserole et soupe ; titres relus et aucune recette chiffrée."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "1059f944c72fc0e5dea2f8fea07abe1eeda9eda06c1bbd5cce346931de9f08a7",
+      "sha256": "1c90b038f15aded37d468bb1012a30a7038168a88ebc2ca9ad0a99c941f221a4",
+      "bytes": 90420,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-grand-cahier-dessine",
+      "label": "Un grand cahier",
+      "path": "/lib/images/tcf/qcm-audit/co306-grand-cahier-dessine.webp",
+      "prompt": "Recomposer les objets de la référence dans le même dessin numérique peint semi-réaliste : contours fins discrets, modelé doux, papier et couvertures détaillés par la peinture, fond crème uni et ombre légère. PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Sujets entiers avec marge sur les quatre côtés. Les mots demandés sont de VRAIS TITRES intégrés sur les couvertures, bien orthographiés, sans texte ajouté au-dessus ou sous l’objet. Aucun autre texte, nom d’auteur, mot, logo, prix, montant, année, date, jour, mois, grade ou chiffre. Aucune personne, photo, 3D ou gros contour noir. UN GRAND cahier à spirale ROUGE vierge, posé à plat de face sur le fond crème. À sa DROITE, un crayon jaune standard ENTIER avec gomme rose est posé verticalement pour donner une ÉCHELLE commune : le cahier est nettement PLUS HAUT que le crayon, le crayon mesure environ deux tiers de la hauteur du cahier. Pas de lettre, chiffres, règle graduée ou autre objet. Garder de la marge autour du cahier et du crayon.",
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co306-cahier-dessine.webp"
+      ],
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ssx-a1-objet-18-co-1",
+          "question": 3,
+          "choice": "a",
+          "label": "Un grand cahier",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-77f0dfdf-5ba3-495a-af4d-8f2e223d2f27.png",
+      "status": "visually_reviewed",
+      "review_note": "Grand cahier rouge vierge à spirale, à gauche d’un crayon jaune à gomme rose entier : cahier nettement plus haut que le crayon ; échelle contrôlée par comparaison avec le petit cahier. Concept entier au singulier ou pluriel demandé, paysage natif exact 4:3, sans prix, date, jour ou mois.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+        ],
+        "review_note": "Comparaison aux livres du commit 48a753d8 réellement vus : papier et couvertures peints, modelé doux, contours discrets, fond crème et ombres légères. Grand cahier rouge vierge à spirale, à gauche d’un crayon jaune à gomme rose entier : cahier nettement plus haut que le crayon ; échelle contrôlée par comparaison avec le petit cahier."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "85e86fb70a182a575b62642abe40381ad59eac4b3358005028ca03f1ae8bc823",
+      "sha256": "4b46e64386fc651d92d8009b62258b83e83bb0d2cccb4af25b491c236eff0431",
+      "bytes": 41544,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-petit-cahier-dessine",
+      "label": "Un petit cahier",
+      "path": "/lib/images/tcf/qcm-audit/co306-petit-cahier-dessine.webp",
+      "prompt": "Recomposer les objets de la référence dans le même dessin numérique peint semi-réaliste : contours fins discrets, modelé doux, papier et couvertures détaillés par la peinture, fond crème uni et ombre légère. PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Sujets entiers avec marge sur les quatre côtés. Les mots demandés sont de VRAIS TITRES intégrés sur les couvertures, bien orthographiés, sans texte ajouté au-dessus ou sous l’objet. Aucun autre texte, nom d’auteur, mot, logo, prix, montant, année, date, jour, mois, grade ou chiffre. Aucune personne, photo, 3D ou gros contour noir. UN PETIT cahier à spirale ROUGE vierge, posé à plat de face sur le fond crème. À sa DROITE, un crayon jaune standard ENTIER avec gomme rose est posé verticalement pour donner une ÉCHELLE commune : le cahier est nettement PLUS PETIT que le crayon, le cahier mesure environ deux tiers de la hauteur du crayon. Pas de lettre, chiffres, règle graduée ou autre objet. Garder de la marge autour du cahier et du crayon.",
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co306-cahier-dessine.webp"
+      ],
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ssx-a1-objet-18-co-1",
+          "question": 3,
+          "choice": "b",
+          "label": "Un petit cahier",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-74b8762e-169b-4c79-bbc2-c59298f47609.png",
+      "status": "visually_reviewed",
+      "review_note": "Petit cahier rouge vierge à spirale, à gauche d’un crayon jaune à gomme rose entier : cahier nettement moins haut que le crayon ; la différence de taille repose sur ce repère commun et pas sur le seul remplissage du cadre. Concept entier au singulier ou pluriel demandé, paysage natif exact 4:3, sans prix, date, jour ou mois.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+        ],
+        "review_note": "Comparaison aux livres du commit 48a753d8 réellement vus : papier et couvertures peints, modelé doux, contours discrets, fond crème et ombres légères. Petit cahier rouge vierge à spirale, à gauche d’un crayon jaune à gomme rose entier : cahier nettement moins haut que le crayon ; la différence de taille repose sur ce repère commun et pas sur le seul remplissage du cadre."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "ea247c9329dbcc49c28a4d4282ef3d7684cbe4febd0e6a89878e20891a6ec951",
+      "sha256": "9d45fa5237fc1d1c5cc27db47900473037f9d22b95179bb7dd1c879670ee4b9b",
+      "bytes": 31218,
+      "domain": "co",
+      "batch": "active-audios-834"
     }
   ],
   "activated_questions": [
@@ -26197,6 +26867,90 @@
       ],
       "source_ids": [
         "additional-20261102:mdf-a1-abc:48:b71e48ec4f9a:25e1a588"
+      ]
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s19-co-3",
+      "question": 3,
+      "enonce": "Quels livres la personne cherche-t-elle ?",
+      "images": [
+        "/lib/images/tcf/qcm-audit/co306-livres-histoire-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-livres-francais-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-livres-mathematiques-dessine.webp"
+      ],
+      "source_batch": "active-audios-834",
+      "status": "active_after_visual_review",
+      "source_support_review": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Deux livres par matière : histoire, français et mathématiques. Titres intégrés aux couvertures relus ; aucun niveau scolaire chiffré ou date. Transcription relue : Madame, où sont les livres d'histoire? S'étagère près de la fenêtre. Merci.",
+      "source_old_refs": [
+        "/lib/audio/tcf/co/loisirs/bonjour-voudrais-sandwich-1-2.mp3"
+      ],
+      "source_ids": [
+        "09035276:045:6641da2a02b3",
+        "additional-20261102:mdf-a1-abc-junior:45:6641da2a02b3:9530672f"
+      ]
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s47-co-3",
+      "question": 8,
+      "enonce": "Quel objet doit-elle apporter ?",
+      "images": [
+        "/lib/images/tcf/qcm-audit/co306-livre-francais-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cahier-musique-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-dictionnaire-anglais-dessine.webp"
+      ],
+      "source_batch": "active-audios-834",
+      "status": "active_after_visual_review",
+      "source_support_review": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Chaque objet est unique : livre scolaire de français, cahier à spirale avec portées musicales et dictionnaire anglais épais. Transcription relue : Où tu vas? Je vais chez ma copine Elisa. Je dois lui apporter son livre de français. Ah, très bien. Tu prends ton vélo? Oui. D'accord, mais fais attention.",
+      "source_old_refs": [
+        "/lib/audio/tcf/co/vie-quotidienne/salut-julie-1-3.mp3"
+      ],
+      "source_ids": [
+        "09035276:048:44c1253827eb",
+        "additional-20261102:mdf-a1-abc-junior:48:44c1253827eb:3358dbf8"
+      ]
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ssx-a1-objet-18-co-1",
+      "question": 3,
+      "enonce": "Quel cahier faut-il apporter ?",
+      "images": [
+        "/lib/images/tcf/qcm-audit/co306-grand-cahier-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-petit-cahier-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cahier-musique-dessine.webp"
+      ],
+      "source_batch": "active-audios-834",
+      "status": "active_after_visual_review",
+      "source_support_review": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Grand et petit cahiers rouges comparés chacun à un crayon standard ; cahier de musique avec portées distinct. Les deux tailles ne sont pas déduites seulement du cadrage. Transcription relue : Bonjour, c'est Lydie. Pour le cours de dessin demain, le prof nous demande d'apporter des ciseaux et de la colle. Il faut aussi un grand cahier et des crayons de couleurs. On va dessiner des fleurs. Ah oui, et n'oublie pas ta règle. A demain",
+      "source_old_refs": [
+        "/lib/audio/tcf/co/ecole/32-école-cours-de-dessin-objets.mp3"
+      ],
+      "source_ids": [
+        "09035276:021:9007549ed981",
+        "additional-20261102:mdf-a1-abc-junior:21:9007549ed981:60465dbd"
+      ]
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ssx-a1-ecole-cahier-d-anglais-co-4",
+      "question": 1,
+      "enonce": "Quel objet l'élève rend-il ?",
+      "images": [
+        "/lib/images/tcf/qcm-audit/co306-cahier-anglais-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-livre-francais-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-dictionnaire-italien-dessine.webp"
+      ],
+      "source_batch": "active-audios-834",
+      "status": "active_after_visual_review",
+      "source_support_review": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Cahier d’anglais à spirale, livre scolaire français et dictionnaire italien ; trois objets distincts avec titres de couvertures naturels. Transcription relue : Tiens je te redonne ton cahier d'anglais merci beaucoup De rien Tu comprends mieux le cours maintenant Oui merci",
+      "source_old_refs": [
+        "/lib/audio/tcf/co/ecole/05-école-redonner-le-livre-d-anglais.mp3"
+      ],
+      "source_ids": [
+        "09035276:058:0e9049761456",
+        "additional-20261102:mdf-a1-abc-junior:58:0e9049761456:ff1d6abf"
       ]
     }
   ],

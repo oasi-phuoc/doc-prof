@@ -15,11 +15,11 @@
   ],
   "summary": {
     "initial_question_candidates": 306,
-    "questions_illustrated_or_prepared": 158,
-    "newly_activated": 64,
-    "prepared_pending_audio_link": 90,
+    "questions_illustrated_or_prepared": 164,
+    "newly_activated": 68,
+    "prepared_pending_audio_link": 92,
     "prepared_pending_audio_validation": 4,
-    "remaining_questions_requiring_images_or_review": 148,
+    "remaining_questions_requiring_images_or_review": 142,
     "unreviewed_complete_trios": 0,
     "audio_references_next_stage": 432,
     "vocabulary_occurrences_final_stage": 1906
@@ -1748,7 +1748,7 @@
           "asset": "64fa8a3eb9de"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "09035276:045:6641da2a02b3",
         "additional-20261102:mdf-a1-abc-junior:45:6641da2a02b3:9530672f"
@@ -1762,16 +1762,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-livres-histoire-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-livres-francais-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-livres-mathematiques-dessine.webp"
       ],
-      "missing_labels": [
-        "Les livres d’histoire",
-        "Les livres de français",
-        "Les livres de mathématiques"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-livres-histoire-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-livres-francais-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-livres-mathematiques-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s19-co-3",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-livres-histoire-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-livres-francais-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-livres-mathematiques-dessine.webp"
+        ],
+        "support_quote": "Madame, où sont les livres d'histoire? S'étagère près de la fenêtre. Merci.",
+        "current_bank_transcription": "Madame, où sont les livres d'histoire ?\nLà-bas, sur l'étagère près de la fenêtre.\nMerci.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Deux livres par matière : histoire, français et mathématiques. Titres intégrés aux couvertures relus ; aucun niveau scolaire chiffré ou date."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -4315,7 +4329,7 @@
           "asset": "2371e4768d36"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "09035276:048:44c1253827eb",
         "additional-20261102:mdf-a1-abc-junior:48:44c1253827eb:3358dbf8"
@@ -4329,16 +4343,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-livre-francais-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cahier-musique-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-dictionnaire-anglais-dessine.webp"
       ],
-      "missing_labels": [
-        "Un livre de français",
-        "Un cahier de musique",
-        "Un dictionnaire anglais"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-livre-francais-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cahier-musique-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-dictionnaire-anglais-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s47-co-3",
+        "question": 8,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-livre-francais-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-cahier-musique-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-dictionnaire-anglais-dessine.webp"
+        ],
+        "support_quote": "Où tu vas? Je vais chez ma copine Elisa. Je dois lui apporter son livre de français. Ah, très bien. Tu prends ton vélo? Oui. D'accord, mais fais attention.",
+        "current_bank_transcription": "Où tu vas ?\nJe vais chez ma copine Elisa.\nJe dois lui apporter son livre de français.\nAh, très bien.\nTu prends ton vélo ?\nOui.\nD'accord, mais fais attention.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Chaque objet est unique : livre scolaire de français, cahier à spirale avec portées musicales et dictionnaire anglais épais."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -5540,7 +5568,7 @@
           "asset": "38b59869c170"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "09035276:021:9007549ed981",
         "additional-20261102:mdf-a1-abc-junior:21:9007549ed981:60465dbd"
@@ -5554,16 +5582,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-grand-cahier-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-petit-cahier-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cahier-musique-dessine.webp"
       ],
-      "missing_labels": [
-        "Un grand cahier",
-        "Un petit cahier",
-        "Un cahier de musique"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-grand-cahier-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-petit-cahier-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cahier-musique-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ssx-a1-objet-18-co-1",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-grand-cahier-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-petit-cahier-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-cahier-musique-dessine.webp"
+        ],
+        "support_quote": "Bonjour, c'est Lydie. Pour le cours de dessin demain, le prof nous demande d'apporter des ciseaux et de la colle. Il faut aussi un grand cahier et des crayons de couleurs. On va dessiner des fleurs. Ah oui, et n'oublie pas ta règle. A demain",
+        "current_bank_transcription": "Bonjour, c'est Lidie. Pour le cours de dessin demain, le prof nous demande d'apporter des ciseaux et de la colle. Il faut aussi un grand cahier et des crayons de couleur. On va dessiner des fleurs. Ah oui, n'oublie pas ta règle. À demain.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Grand et petit cahiers rouges comparés chacun à un crayon standard ; cahier de musique avec portées distinct. Les deux tailles ne sont pas déduites seulement du cadrage."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -5912,7 +5954,7 @@
           "asset": "35c2c45dea1f"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "09035276:058:0e9049761456",
         "additional-20261102:mdf-a1-abc-junior:58:0e9049761456:ff1d6abf"
@@ -5926,16 +5968,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-cahier-anglais-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-livre-francais-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-dictionnaire-italien-dessine.webp"
       ],
-      "missing_labels": [
-        "Un cahier d'anglais",
-        "Un livre de français",
-        "Un dictionnaire italien"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-cahier-anglais-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-livre-francais-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-dictionnaire-italien-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ssx-a1-ecole-cahier-d-anglais-co-4",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-cahier-anglais-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-livre-francais-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-dictionnaire-italien-dessine.webp"
+        ],
+        "support_quote": "Tiens je te redonne ton cahier d'anglais merci beaucoup De rien Tu comprends mieux le cours maintenant Oui merci",
+        "current_bank_transcription": "- Tiens, je te redonne ton cahier d'anglais.\nMerci beaucoup !\n- De rien.\nTu comprends mieux le cours maintenant ?\n- Oui, merci.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Cahier d’anglais à spirale, livre scolaire français et dictionnaire italien ; trois objets distincts avec titres de couvertures naturels."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -5966,20 +6022,29 @@
           "asset": "b22fc6d3b83c"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-dictionnaires-francais-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-dictionnaires-anglais-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-dictionnaires-italien-dessine.webp"
       ],
-      "missing_labels": [
-        "Des dictionnaires de français",
-        "Des dictionnaires d'anglais",
-        "Des dictionnaires d'italien"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ssx-a1-ecole-dictionnaires-de-francais-co-4",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-dictionnaires-francais-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-dictionnaires-anglais-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-dictionnaires-italien-dessine.webp"
+        ],
+        "support_quote": "- Excusez-moi, est-ce que vous avez des dictionnaires de français ici ?\n- Oui, ils sont à côté des livres de sciences, en haut.\n- Ah oui, je vois.\nMerci beaucoup.",
+        "current_bank_transcription": "- Excusez-moi, est-ce que vous avez des dictionnaires de français ici ?\n- Oui, ils sont à côté des livres de sciences, en haut.\n- Ah oui, je vois.\nMerci beaucoup.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Deux dictionnaires par langue, français, anglais et italien : pluriels et type de livre respectés. Transcription actuelle relue ; audio de remplacement à rapprocher."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -6010,20 +6075,29 @@
           "asset": "9b511cf764ee"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-livres-sciences-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-livres-musique-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-livres-cuisine-dessine.webp"
       ],
-      "missing_labels": [
-        "Les livres de sciences",
-        "Les livres de musique",
-        "Les livres de cuisine"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ssx-a1-ecole-dictionnaires-de-francais-co-4",
+        "question": 2,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-livres-sciences-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-livres-musique-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-livres-cuisine-dessine.webp"
+        ],
+        "support_quote": "- Excusez-moi, est-ce que vous avez des dictionnaires de français ici ?\n- Oui, ils sont à côté des livres de sciences, en haut.\n- Ah oui, je vois.\nMerci beaucoup.",
+        "current_bank_transcription": "- Excusez-moi, est-ce que vous avez des dictionnaires de français ici ?\n- Oui, ils sont à côté des livres de sciences, en haut.\n- Ah oui, je vois.\nMerci beaucoup.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Deux livres par matière, sciences, musique et cuisine, avec titres et illustrations intégrés aux couvertures. Transcription actuelle relue ; audio de remplacement à rapprocher."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
