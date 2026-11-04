@@ -1,0 +1,722 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-11-04T12:25:01Z",
+  "status": "blocked_image_generation_quota",
+  "provider_error": "usage_limit_reached",
+  "provider_reset_estimate_utc": "2026-11-04T14:21:43+00:00",
+  "provider_reset_estimate_europe_zurich": "2026-11-04T15:21:43+01:00",
+  "scope": "Prochain lot A1/A2 : 15 visuels supplémentaires pour compléter 7 trios, avec réutilisation des fichiers déjà disponibles.",
+  "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+  "required_format": "landscape_exact_4:3",
+  "export_size": {
+    "width": 1280,
+    "height": 960
+  },
+  "instructions": [
+    "Lire aussi docs/tcf/avancement-images.md, docs/tcf/style-images.md et docs/tcf/images-306-suivi.json.",
+    "Les reference_images sont des chemins publics : ouvrir les fichiers locaux sous public/ avant de lancer la génération ou la recomposition.",
+    "Conserver les originaux des générations, vérifier chaque image visuellement, puis exporter en WebP 1280 × 960 sans changer le rapport 4:3.",
+    "Vérifier le sens ENTIER des trois réponses, les paires et les qualificatifs, l’anatomie, les inscriptions naturelles, le style peint de 48a753d8 et la diversité des personnages.",
+    "Aucun montant, date, jour ou mois dans les images. Les seules inscriptions autorisées par chaque prompt sont des éléments naturels utiles du décor ou du produit.",
+    "Ne pas changer les réponses texte ou les corrigés. Ne compléter la forme qcm_image qu’après contrôle visuel des trois fichiers et de la transcription correspondante.",
+    "Un lien vers une source de remplacement ne certifie pas une écoute. Ne pas activer une question sans lien ou signalée en attente de validation audio.",
+    "Ne pas générer le rayon BD avant écoute : la transcription préparée indique DVD, divergence consignée ci-dessous.",
+    "Terminer les illustrations avant la reprise des 432 références audio, puis les 1906 usages du vocabulaire."
+  ],
+  "summary": {
+    "pending_images": 15,
+    "pending_question_trios": 7,
+    "generated_images_in_this_file": 0
+  },
+  "images": [
+    {
+      "id": "co306-librairie-municipale-dessine",
+      "label": "À la librairie municipale",
+      "path": "/lib/images/tcf/qcm-audit/co306-librairie-municipale-dessine.webp",
+      "prompt": "Recomposer les références dans le style habituel de DESSIN numérique PEINT semi-réaliste : contours fins discrets, modelé doux, couleurs naturelles chaleureuses, matières et visages peints. Pas de photo, de texture photographique de peau, de rendu 3D, de gros contour noir. PAYSAGE EXACT 4:3, 1448 pixels de large sur 1086 de haut. Une illustration claire, sujets principaux complets avec marges. Aucun prix, montant, date, jour, mois, horaire, chiffre, marque ou légende. Seules les courtes inscriptions naturelles explicitement demandées sont autorisées. Pas de copie des personnes ou des objets de la dernière référence de style, seulement sa technique peinte. Façade complète d’une petite LIBRAIRIE MUNICIPALE : vitrine avec livres en vente sur présentoirs et porte ouverte montrant rayonnages et petite caisse. Au-dessus, enseigne naturelle LIBRAIRIE MUNICIPALE correctement écrite. Ce n’est pas une bibliothèque de prêt. Aucun prix, montant, affiche d’événement, numéro, autre texte, personne ou boisson.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-a1-s1-co-2",
+          "question": 5,
+          "choice": "c",
+          "label": "À la librairie municipale",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-rayon-librairie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-entree-magasin-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "status": "pending_generation"
+    },
+    {
+      "id": "co306-association-dessine",
+      "label": "Une association",
+      "path": "/lib/images/tcf/qcm-audit/co306-association-dessine.webp",
+      "prompt": "Recomposer les références dans le style habituel de DESSIN numérique PEINT semi-réaliste : contours fins discrets, modelé doux, couleurs naturelles chaleureuses, matières et visages peints. Pas de photo, de texture photographique de peau, de rendu 3D, de gros contour noir. PAYSAGE EXACT 4:3, 1448 pixels de large sur 1086 de haut. Une illustration claire, sujets principaux complets avec marges. Aucun prix, montant, date, jour, mois, horaire, chiffre, marque ou légende. Seules les courtes inscriptions naturelles explicitement demandées sont autorisées. Pas de copie des personnes ou des objets de la dernière référence de style, seulement sa technique peinte. Intérieur d’une ASSOCIATION de solidarité locale, seul mot ASSOCIATION sur le mur. Trois adultes bénévoles fictifs et différents trient des dons de vêtements et des sacs de denrées pour entraide : une femme blanche de 60 ans aux cheveux gris et chemise verte, un homme noir de 30 ans aux cheveux courts et pull bleu, une femme chinoise de 40 ans à carré noir et gilet bordeaux. Tables simples, panneau d’information avec feuilles blanches sans texte lisible. Cadre accueillant et coopératif, ni banque, ni restaurant ou entreprise commerciale. Aucun prix, chiffre, date ou écran chiffré. Trois personnes seulement, mains naturelles.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a2-s5b-co-2",
+          "question": 2,
+          "choice": "a",
+          "label": "Une association",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co306-entreprise-service-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "status": "pending_generation"
+    },
+    {
+      "id": "co306-sortie-magasin-dessine",
+      "label": "La sortie du magasin",
+      "path": "/lib/images/tcf/qcm-audit/co306-sortie-magasin-dessine.webp",
+      "prompt": "Recomposer les références dans le style habituel de DESSIN numérique PEINT semi-réaliste : contours fins discrets, modelé doux, couleurs naturelles chaleureuses, matières et visages peints. Pas de photo, de texture photographique de peau, de rendu 3D, de gros contour noir. PAYSAGE EXACT 4:3, 1448 pixels de large sur 1086 de haut. Une illustration claire, sujets principaux complets avec marges. Aucun prix, montant, date, jour, mois, horaire, chiffre, marque ou légende. Seules les courtes inscriptions naturelles explicitement demandées sont autorisées. Pas de copie des personnes ou des objets de la dernière référence de style, seulement sa technique peinte. Vue DEPUIS L’INTÉRIEUR d’un magasin de vêtements VERS LA SORTIE : portants et vêtements dans les marges, grandes portes vitrées ouvertes montrant trottoir et rue dehors. Au-dessus, panneau naturel SORTIE avec pictogramme de sortie et flèche pointant vers dehors. L’espace doit montrer clairement qu’on quitte le magasin, pas son entrée vue de la rue, un musée ou une caisse. Aucune personne, étiquette de prix, affiche, chiffre, autre inscription ou boisson.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a2-s14-co-4",
+          "question": 1,
+          "choice": "a",
+          "label": "La sortie du magasin",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-entree-magasin-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-rayon-vetements-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "status": "pending_generation"
+    },
+    {
+      "id": "co306-entree-musee-dessine",
+      "label": "L’entrée du musée",
+      "path": "/lib/images/tcf/qcm-audit/co306-entree-musee-dessine.webp",
+      "prompt": "Recomposer les références dans le style habituel de DESSIN numérique PEINT semi-réaliste : contours fins discrets, modelé doux, couleurs naturelles chaleureuses, matières et visages peints. Pas de photo, de texture photographique de peau, de rendu 3D, de gros contour noir. PAYSAGE EXACT 4:3, 1448 pixels de large sur 1086 de haut. Une illustration claire, sujets principaux complets avec marges. Aucun prix, montant, date, jour, mois, horaire, chiffre, marque ou légende. Seules les courtes inscriptions naturelles explicitement demandées sont autorisées. Pas de copie des personnes ou des objets de la dernière référence de style, seulement sa technique peinte. Vue extérieure de L’ENTRÉE D’UN MUSÉE : façade classique entière, grandes portes ouvertes, seul mot MUSÉE correctement accentué sur la façade, tableaux encadrés et une sculpture visibles à l’intérieur. Petite allée menant aux portes, pas de sortie vue depuis le musée, pas de boutique ou caisse de restaurant. Aucun prix de billet, affiche, date, numéro, autre texte, boisson ou personne.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a2-s14-co-4",
+          "question": 1,
+          "choice": "b",
+          "label": "L’entrée du musée",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co306-musee-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "status": "pending_generation"
+    },
+    {
+      "id": "co306-caisse-restaurant-dessine",
+      "label": "La caisse du restaurant",
+      "path": "/lib/images/tcf/qcm-audit/co306-caisse-restaurant-dessine.webp",
+      "prompt": "Recomposer les références dans le style habituel de DESSIN numérique PEINT semi-réaliste : contours fins discrets, modelé doux, couleurs naturelles chaleureuses, matières et visages peints. Pas de photo, de texture photographique de peau, de rendu 3D, de gros contour noir. PAYSAGE EXACT 4:3, 1448 pixels de large sur 1086 de haut. Une illustration claire, sujets principaux complets avec marges. Aucun prix, montant, date, jour, mois, horaire, chiffre, marque ou légende. Seules les courtes inscriptions naturelles explicitement demandées sont autorisées. Pas de copie des personnes ou des objets de la dernière référence de style, seulement sa technique peinte. Comptoir de CAISSE D’UN RESTAURANT avec caisse enregistreuse à écran vide et petit terminal à écran sans chiffres, dans salle à tables dressées, assiettes, couverts et verres. Une responsable fictive libanaise de 45 ans aux cheveux bruns bouclés et chemisier bleu est derrière le comptoir. Le seul mot CAISSE apparaît sur une petite plaque naturelle. Le cadre de restaurant est évident derrière la caisse, aucune allée de supermarché, prix, menu lisible, montant, ticket chiffré ou autre personne.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a2-s14-co-4",
+          "question": 1,
+          "choice": "c",
+          "label": "La caisse du restaurant",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-caisse-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "status": "pending_generation"
+    },
+    {
+      "id": "co306-douches-vestiaires-dessine",
+      "label": "Les douches et les vestiaires",
+      "path": "/lib/images/tcf/qcm-audit/co306-douches-vestiaires-dessine.webp",
+      "prompt": "Recomposer les références dans le style habituel de DESSIN numérique PEINT semi-réaliste : contours fins discrets, modelé doux, couleurs naturelles chaleureuses, matières et visages peints. Pas de photo, de texture photographique de peau, de rendu 3D, de gros contour noir. PAYSAGE EXACT 4:3, 1448 pixels de large sur 1086 de haut. Une illustration claire, sujets principaux complets avec marges. Aucun prix, montant, date, jour, mois, horaire, chiffre, marque ou légende. Seules les courtes inscriptions naturelles explicitement demandées sont autorisées. Pas de copie des personnes ou des objets de la dernière référence de style, seulement sa technique peinte. Deux vignettes de tailles comparables dans UNE image 4:3, séparées par une mince zone crème douce ; pas de signe +, titre, chiffre, bord noir ou légende. Chaque lieu demandé est réellement visible. À gauche, espace collectif de DOUCHES de piscine vide, carrelage clair, plusieurs pommeaux de douche et sol à évacuation. À droite, VESTIAIRES de piscine vides avec casiers sans numéros, banc de changement et quelques serviettes pliées, portes des casiers visibles. Pas de toilettes, restaurant, parking, équipement de gym, objets de boisson ou personne, aucune nudité.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a2-s15-co-4",
+          "question": 4,
+          "choice": "a",
+          "label": "Les douches et les vestiaires",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co306-piece-lumineuse-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "status": "pending_generation"
+    },
+    {
+      "id": "co306-restaurant-parking-dessine",
+      "label": "Le restaurant et le parking",
+      "path": "/lib/images/tcf/qcm-audit/co306-restaurant-parking-dessine.webp",
+      "prompt": "Recomposer les références dans le style habituel de DESSIN numérique PEINT semi-réaliste : contours fins discrets, modelé doux, couleurs naturelles chaleureuses, matières et visages peints. Pas de photo, de texture photographique de peau, de rendu 3D, de gros contour noir. PAYSAGE EXACT 4:3, 1448 pixels de large sur 1086 de haut. Une illustration claire, sujets principaux complets avec marges. Aucun prix, montant, date, jour, mois, horaire, chiffre, marque ou légende. Seules les courtes inscriptions naturelles explicitement demandées sont autorisées. Pas de copie des personnes ou des objets de la dernière référence de style, seulement sa technique peinte. Deux vignettes de tailles comparables dans UNE image 4:3, séparées par une mince zone crème douce ; pas de signe +, titre, chiffre, bord noir ou légende. Chaque lieu demandé est réellement visible. À gauche, conserver la salle intérieure de RESTAURANT à tables dressées de la première référence. À droite, conserver le PARKING avec places et voitures de la deuxième référence. Aucun lieu réduit à un pictogramme ou enseigne, aucun personnage, écriture, montant ou numérotation des places.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a2-s15-co-4",
+          "question": 4,
+          "choice": "b",
+          "label": "Le restaurant et le parking",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-parking-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "status": "pending_generation"
+    },
+    {
+      "id": "co306-accueil-salle-sport-dessine",
+      "label": "L’accueil et la salle de sport",
+      "path": "/lib/images/tcf/qcm-audit/co306-accueil-salle-sport-dessine.webp",
+      "prompt": "Recomposer les références dans le style habituel de DESSIN numérique PEINT semi-réaliste : contours fins discrets, modelé doux, couleurs naturelles chaleureuses, matières et visages peints. Pas de photo, de texture photographique de peau, de rendu 3D, de gros contour noir. PAYSAGE EXACT 4:3, 1448 pixels de large sur 1086 de haut. Une illustration claire, sujets principaux complets avec marges. Aucun prix, montant, date, jour, mois, horaire, chiffre, marque ou légende. Seules les courtes inscriptions naturelles explicitement demandées sont autorisées. Pas de copie des personnes ou des objets de la dernière référence de style, seulement sa technique peinte. Deux vignettes de tailles comparables dans UNE image 4:3, séparées par une mince zone crème douce ; pas de signe +, titre, chiffre, bord noir ou légende. Chaque lieu demandé est réellement visible. À gauche, ACCUEIL avec comptoir et deux personnes de la première référence conservées sans les dupliquer : homme sikh en turban et cliente plus âgée. À droite, SALLE DE SPORT avec tapis et trois adultes de la deuxième référence effectuant leur exercice de gym. Garder les deux scènes distinctes et le matériel entier, gestes naturels et modelé peint. Aucun prix, date, horaire, chiffre ou nouvelle personne.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a2-s15-co-4",
+          "question": 4,
+          "choice": "c",
+          "label": "L’accueil et la salle de sport",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-accueil-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-cours-gym-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "status": "pending_generation"
+    },
+    {
+      "id": "co306-musee-jeu-video-dessine",
+      "label": "Un musée du jeu vidéo",
+      "path": "/lib/images/tcf/qcm-audit/co306-musee-jeu-video-dessine.webp",
+      "prompt": "Recomposer les références dans le style habituel de DESSIN numérique PEINT semi-réaliste : contours fins discrets, modelé doux, couleurs naturelles chaleureuses, matières et visages peints. Pas de photo, de texture photographique de peau, de rendu 3D, de gros contour noir. PAYSAGE EXACT 4:3, 1448 pixels de large sur 1086 de haut. Une illustration claire, sujets principaux complets avec marges. Aucun prix, montant, date, jour, mois, horaire, chiffre, marque ou légende. Seules les courtes inscriptions naturelles explicitement demandées sont autorisées. Pas de copie des personnes ou des objets de la dernière référence de style, seulement sa technique peinte. Une salle de MUSÉE DU JEU VIDÉO : vitrines muséales avec anciennes manettes, consoles et cartouches génériques sans marque, plusieurs générations de matériel exposées ; un écran de démonstration sur socle affiche un jeu de plateformes simple sans texte ni score. Deux visiteurs fictifs, un jeune homme indien de 24 ans aux cheveux noirs longs attachés et veste verte, et une femme noire de 55 ans aux cheveux courts et manteau bleu, regardent une vitrine et ne jouent pas dans une salle d’arcade. Conserver l’architecture peinte du musée de référence, pas de tableaux de peinture, photos connues, dates, années, nombres, légendes lisibles ou autres personnes.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a2-s21-co-3",
+          "question": 1,
+          "choice": "a",
+          "label": "Un musée du jeu vidéo",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/f84b97e2c8a8.webp",
+        "/lib/images/tcf/qcm-audit/co306-jeu-video-football-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "status": "pending_generation"
+    },
+    {
+      "id": "co306-musee-sport-dessine",
+      "label": "Un musée du sport",
+      "path": "/lib/images/tcf/qcm-audit/co306-musee-sport-dessine.webp",
+      "prompt": "Recomposer les références dans le style habituel de DESSIN numérique PEINT semi-réaliste : contours fins discrets, modelé doux, couleurs naturelles chaleureuses, matières et visages peints. Pas de photo, de texture photographique de peau, de rendu 3D, de gros contour noir. PAYSAGE EXACT 4:3, 1448 pixels de large sur 1086 de haut. Une illustration claire, sujets principaux complets avec marges. Aucun prix, montant, date, jour, mois, horaire, chiffre, marque ou légende. Seules les courtes inscriptions naturelles explicitement demandées sont autorisées. Pas de copie des personnes ou des objets de la dernière référence de style, seulement sa technique peinte. Une salle de MUSÉE DU SPORT, même type de vue que le musée de référence : vitrines avec ballons de football et de rugby, raquettes, chaussures de sport ; sur le mur un maillot sans numéro dans un cadre, trophées sans texte dans une autre vitrine. Deux visiteurs fictifs, une femme vietnamienne de 50 ans aux cheveux noirs courts et veste bordeaux et un homme blanc de 65 ans aux cheveux gris et pull bleu, observent les collections. Ce n’est pas une boutique ou une salle de pratique sportive. Aucun prix, date, année, chiffre, nom de champion, texte de panneau, tableau de peinture ou autre personne.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a2-s21-co-3",
+          "question": 1,
+          "choice": "b",
+          "label": "Un musée du sport",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/f84b97e2c8a8.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "status": "pending_generation"
+    },
+    {
+      "id": "co306-laverie-dessine",
+      "label": "Une laverie",
+      "path": "/lib/images/tcf/qcm-audit/co306-laverie-dessine.webp",
+      "prompt": "Recomposer les références dans le style habituel de DESSIN numérique PEINT semi-réaliste : contours fins discrets, modelé doux, couleurs naturelles chaleureuses, matières et visages peints. Pas de photo, de texture photographique de peau, de rendu 3D, de gros contour noir. PAYSAGE EXACT 4:3, 1448 pixels de large sur 1086 de haut. Une illustration claire, sujets principaux complets avec marges. Aucun prix, montant, date, jour, mois, horaire, chiffre, marque ou légende. Seules les courtes inscriptions naturelles explicitement demandées sont autorisées. Pas de copie des personnes ou des objets de la dernière référence de style, seulement sa technique peinte. Intérieur de service de LAVERIE avec plusieurs lave-linge alignés, linge propre plié dans des paniers, planche à repasser et fer posés en sécurité à côté d’un plan de pliage. Un employé fictif brésilien de 35 ans, peau brune, cheveux noirs bouclés et tablier vert, plie un drap propre. Seul mot LAVERIE sur le mur. La scène montre lavage, repassage et pliage du linge, pas magasin d’électroménager ou laverie automobile. Aucun prix, numéro de machine, chiffre, écran chiffré, date, boisson ou autre personne.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ssx-a2-annonce-6-5-co-2",
+          "question": 1,
+          "choice": "a",
+          "label": "Une laverie",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co306-entreprise-service-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "status": "pending_generation"
+    },
+    {
+      "id": "co306-taxi-dessine",
+      "label": "Un taxi",
+      "path": "/lib/images/tcf/qcm-audit/co306-taxi-dessine.webp",
+      "prompt": "Recomposer les références dans le style habituel de DESSIN numérique PEINT semi-réaliste : contours fins discrets, modelé doux, couleurs naturelles chaleureuses, matières et visages peints. Pas de photo, de texture photographique de peau, de rendu 3D, de gros contour noir. PAYSAGE EXACT 4:3, 1448 pixels de large sur 1086 de haut. Une illustration claire, sujets principaux complets avec marges. Aucun prix, montant, date, jour, mois, horaire, chiffre, marque ou légende. Seules les courtes inscriptions naturelles explicitement demandées sont autorisées. Pas de copie des personnes ou des objets de la dernière référence de style, seulement sa technique peinte. Recomposer UNIQUEMENT le taxi jaune de la première référence, voiture entière à quatre roues, carrosserie et petit panneau de toit TAXI ; retirer entièrement le bateau, eau et quai. Taxi bien centré en trois quarts sur petite route avec ombre douce, fond crème clair presque uni. Aucun autre véhicule ou transport, logo, numéro d’immatriculation, prix, chiffre, date ou personne.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ssx-a2-annonce-6-5-co-2",
+          "question": 1,
+          "choice": "c",
+          "label": "Un taxi",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co306-taxi-bateau-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "status": "pending_generation"
+    },
+    {
+      "id": "co306-lave-linge-occasion-dessine",
+      "label": "Un lave-linge d’occasion",
+      "path": "/lib/images/tcf/qcm-audit/co306-lave-linge-occasion-dessine.webp",
+      "prompt": "Recomposer les références dans le style habituel de DESSIN numérique PEINT semi-réaliste : contours fins discrets, modelé doux, couleurs naturelles chaleureuses, matières et visages peints. Pas de photo, de texture photographique de peau, de rendu 3D, de gros contour noir. PAYSAGE EXACT 4:3, 1448 pixels de large sur 1086 de haut. Une illustration claire, sujets principaux complets avec marges. Aucun prix, montant, date, jour, mois, horaire, chiffre, marque ou légende. Seules les courtes inscriptions naturelles explicitement demandées sont autorisées. Pas de copie des personnes ou des objets de la dernière référence de style, seulement sa technique peinte. Un seul appareil électroménager entier sur fond crème clair avec ombre douce, vu de trois quarts. Aucun personnage, boisson, pièce supplémentaire, prix, montant, date, numéro de série, chiffre sur les boutons ou écran allumé. LAVE-LINGE blanc à hublot à chargement frontal, tiroir à lessive et commandes clairement visibles. Très bon état mais légères traces d’usage sur le bord inférieur et petites éraflures discrètes ; pas en panne. Une petite étiquette de magasin accrochée au côté porte uniquement OCCASION. Pas de carton d’emballage ou film neuf.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a2-s26-co-2",
+          "question": 3,
+          "choice": "a",
+          "label": "Un lave-linge d’occasion",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "status": "pending_generation"
+    },
+    {
+      "id": "co306-lave-linge-neuf-dessine",
+      "label": "Un lave-linge neuf",
+      "path": "/lib/images/tcf/qcm-audit/co306-lave-linge-neuf-dessine.webp",
+      "prompt": "Recomposer les références dans le style habituel de DESSIN numérique PEINT semi-réaliste : contours fins discrets, modelé doux, couleurs naturelles chaleureuses, matières et visages peints. Pas de photo, de texture photographique de peau, de rendu 3D, de gros contour noir. PAYSAGE EXACT 4:3, 1448 pixels de large sur 1086 de haut. Une illustration claire, sujets principaux complets avec marges. Aucun prix, montant, date, jour, mois, horaire, chiffre, marque ou légende. Seules les courtes inscriptions naturelles explicitement demandées sont autorisées. Pas de copie des personnes ou des objets de la dernière référence de style, seulement sa technique peinte. Un seul appareil électroménager entier sur fond crème clair avec ombre douce, vu de trois quarts. Aucun personnage, boisson, pièce supplémentaire, prix, montant, date, numéro de série, chiffre sur les boutons ou écran allumé. LAVE-LINGE blanc neuf à hublot à chargement frontal, tiroir à lessive et commandes clairement visibles, plastique de protection transparent partiel bien visible sur le panneau et coins de calage d’emballage propres à côté. Petite étiquette de magasin avec le seul mot NEUF. Aucun vêtement ou trace d’usage.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a2-s26-co-2",
+          "question": 3,
+          "choice": "b",
+          "label": "Un lave-linge neuf",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "status": "pending_generation"
+    },
+    {
+      "id": "co306-seche-linge-neuf-dessine",
+      "label": "Un sèche-linge neuf",
+      "path": "/lib/images/tcf/qcm-audit/co306-seche-linge-neuf-dessine.webp",
+      "prompt": "Recomposer les références dans le style habituel de DESSIN numérique PEINT semi-réaliste : contours fins discrets, modelé doux, couleurs naturelles chaleureuses, matières et visages peints. Pas de photo, de texture photographique de peau, de rendu 3D, de gros contour noir. PAYSAGE EXACT 4:3, 1448 pixels de large sur 1086 de haut. Une illustration claire, sujets principaux complets avec marges. Aucun prix, montant, date, jour, mois, horaire, chiffre, marque ou légende. Seules les courtes inscriptions naturelles explicitement demandées sont autorisées. Pas de copie des personnes ou des objets de la dernière référence de style, seulement sa technique peinte. Un seul appareil électroménager entier sur fond crème clair avec ombre douce, vu de trois quarts. Aucun personnage, boisson, pièce supplémentaire, prix, montant, date, numéro de série, chiffre sur les boutons ou écran allumé. SÈCHE-LINGE blanc neuf à hublot à chargement frontal, grille d’aération en bas et bac récupérateur d’eau clairement visibles ; pas de tiroir à lessive ou symbole de lavage. Film de protection transparent partiel et coins de calage propres. Sur la façade, petite inscription naturelle SÈCHE-LINGE et étiquette accrochée NEUF, seules inscriptions. Pas de linge en train de laver ou traces d’usage.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a2-s26-co-2",
+          "question": 3,
+          "choice": "c",
+          "label": "Un sèche-linge neuf",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "status": "pending_generation"
+    }
+  ],
+  "questions": [
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-a1-s1-co-2",
+      "question": 5,
+      "enonce": "Où faut-il demander le bon de participation ?",
+      "choices": [
+        {
+          "id": "a",
+          "texte": "À la caisse",
+          "correct": true,
+          "existing_image": "/lib/images/vocabulaire/objets/caisse.webp",
+          "asset": null
+        },
+        {
+          "id": "b",
+          "texte": "À l’entrée",
+          "correct": false,
+          "existing_image": "/lib/images/tcf/co/bg/entree-maison.webp",
+          "asset": null
+        },
+        {
+          "id": "c",
+          "texte": "À la librairie municipale",
+          "correct": false,
+          "existing_image": null,
+          "asset": "06bb33f69462"
+        }
+      ],
+      "resolved_images": [
+        "/lib/images/tcf/qcm-audit/co834-caisse-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-entree-magasin-dessinee.webp",
+        null
+      ],
+      "linked_source_ids": [
+        "delf_a1_2022:089:d43462913b14"
+      ],
+      "status": "pending_generation_and_visual_review",
+      "source_text_review": {
+        "basis": "prepared_replacement_transcription",
+        "support_quote": "demander à la caisse",
+        "listening_certified": false
+      },
+      "expected_correct": "À la caisse"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-ss-a2-s5b-co-2",
+      "question": 2,
+      "enonce": "Dans quelle structure fera-t-elle son stage ?",
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Une association",
+          "correct": true,
+          "existing_image": null,
+          "asset": "766102c743b5"
+        },
+        {
+          "id": "b",
+          "texte": "Une banque",
+          "correct": false,
+          "existing_image": "/lib/images/tcf/co/bg/banque.webp",
+          "asset": null
+        },
+        {
+          "id": "c",
+          "texte": "Un restaurant",
+          "correct": false,
+          "existing_image": "/lib/images/tcf/co/bg/restaurant.webp",
+          "asset": null
+        }
+      ],
+      "resolved_images": [
+        null,
+        "/lib/images/tcf/qcm-audit/co306-banque-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp"
+      ],
+      "linked_source_ids": [],
+      "status": "pending_generation_and_visual_review",
+      "source_text_review": {
+        "basis": "current_bank_transcription_pending_replacement_audio_link",
+        "support_quote": "Je le fais dans une association.",
+        "listening_certified": false
+      },
+      "expected_correct": "Une association"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-ss-a2-s14-co-4",
+      "question": 1,
+      "enonce": "Que cherche la personne ?",
+      "choices": [
+        {
+          "id": "a",
+          "texte": "La sortie du magasin",
+          "correct": true,
+          "existing_image": null,
+          "asset": "bc37c6957995"
+        },
+        {
+          "id": "b",
+          "texte": "L’entrée du musée",
+          "correct": false,
+          "existing_image": null,
+          "asset": "927c808eb350"
+        },
+        {
+          "id": "c",
+          "texte": "La caisse du restaurant",
+          "correct": false,
+          "existing_image": null,
+          "asset": "89634ece27ee"
+        }
+      ],
+      "resolved_images": [
+        null,
+        null,
+        null
+      ],
+      "linked_source_ids": [
+        "9782090351958:017:97a669e41198",
+        "additional-20261102:mdf-a2-abc-junior-direct:17:97a669e41198:1bf5e804"
+      ],
+      "status": "pending_generation_and_visual_review",
+      "source_text_review": {
+        "basis": "prepared_replacement_transcription",
+        "support_quote": "la sortie du magasin",
+        "listening_certified": false
+      },
+      "expected_correct": "La sortie du magasin"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-ss-a2-s15-co-4",
+      "question": 4,
+      "enonce": "Vers quels lieux doivent-ils ensuite se diriger ?",
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Les douches et les vestiaires",
+          "correct": true,
+          "existing_image": null,
+          "asset": "c2fa6d2094d9"
+        },
+        {
+          "id": "b",
+          "texte": "Le restaurant et le parking",
+          "correct": false,
+          "existing_image": null,
+          "asset": "521649eaa7b7"
+        },
+        {
+          "id": "c",
+          "texte": "L’accueil et la salle de sport",
+          "correct": false,
+          "existing_image": null,
+          "asset": "50fe7f8b7c93"
+        }
+      ],
+      "resolved_images": [
+        null,
+        null,
+        null
+      ],
+      "linked_source_ids": [
+        "9782090351958:051:c1b7ec577e0b",
+        "additional-20261102:mdf-a2-abc-junior-direct:51:c1b7ec577e0b:58ed421c"
+      ],
+      "status": "pending_generation_and_visual_review",
+      "source_text_review": {
+        "basis": "prepared_replacement_transcription",
+        "support_quote": "les douches et les vestiaires",
+        "listening_certified": false
+      },
+      "expected_correct": "Les douches et les vestiaires"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-ss-a2-s21-co-3",
+      "question": 1,
+      "enonce": "À quel type de musée les visiteurs sont-ils invités ?",
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Un musée du jeu vidéo",
+          "correct": true,
+          "existing_image": null,
+          "asset": "386ebd24640c"
+        },
+        {
+          "id": "b",
+          "texte": "Un musée du sport",
+          "correct": false,
+          "existing_image": null,
+          "asset": "2342bfcb960c"
+        },
+        {
+          "id": "c",
+          "texte": "Un musée de peinture",
+          "correct": false,
+          "existing_image": null,
+          "asset": "f84b97e2c8a8"
+        }
+      ],
+      "resolved_images": [
+        null,
+        null,
+        "/lib/images/tcf/qcm-audit/f84b97e2c8a8.webp"
+      ],
+      "linked_source_ids": [
+        "9782090351958:055:6b088a9bc9dd",
+        "additional-20261102:mdf-a2-abc-junior-direct:55:6b088a9bc9dd:e9b3b277"
+      ],
+      "status": "pending_generation_and_visual_review",
+      "source_text_review": {
+        "basis": "prepared_replacement_transcription",
+        "support_quote": "Le musée des jeux vidéo",
+        "listening_certified": false
+      },
+      "expected_correct": "Un musée du jeu vidéo"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-ssx-a2-annonce-6-5-co-2",
+      "question": 1,
+      "enonce": "Quel nouveau service est proposé ?",
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Une laverie",
+          "correct": true,
+          "existing_image": null,
+          "asset": "6c503aef9a58"
+        },
+        {
+          "id": "b",
+          "texte": "Une boulangerie",
+          "correct": false,
+          "existing_image": "/lib/images/tcf/co/bg/boulangerie.webp",
+          "asset": null
+        },
+        {
+          "id": "c",
+          "texte": "Un taxi",
+          "correct": false,
+          "existing_image": "/lib/images/vocabulaire/transports/taxi.webp",
+          "asset": null
+        }
+      ],
+      "resolved_images": [
+        null,
+        "/lib/images/tcf/qcm-audit/co834-boulangerie-dessinee.webp",
+        null
+      ],
+      "linked_source_ids": [
+        "additional-20261102:mdf-a2-abc-direct:35:ce7a05ef4597:ff66a5ad"
+      ],
+      "status": "pending_generation_and_visual_review",
+      "source_text_review": {
+        "basis": "prepared_replacement_transcription",
+        "support_quote": "notre dernier service de laverie",
+        "listening_certified": false
+      },
+      "expected_correct": "Une laverie"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-ss-a2-s26-co-2",
+      "question": 3,
+      "enonce": "Quel type d’achat préfère-t-elle faire ?",
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Un lave-linge d’occasion",
+          "correct": true,
+          "existing_image": null,
+          "asset": "3e17288f7cab"
+        },
+        {
+          "id": "b",
+          "texte": "Un lave-linge neuf",
+          "correct": false,
+          "existing_image": null,
+          "asset": "25da4308bce4"
+        },
+        {
+          "id": "c",
+          "texte": "Un sèche-linge neuf",
+          "correct": false,
+          "existing_image": null,
+          "asset": "b1d26f62910d"
+        }
+      ],
+      "resolved_images": [
+        null,
+        null,
+        null
+      ],
+      "linked_source_ids": [],
+      "status": "pending_generation_and_visual_review",
+      "source_text_review": {
+        "basis": "current_bank_transcription_pending_replacement_audio_link",
+        "support_quote": "acheter un lave-linge d'occasion",
+        "listening_certified": false
+      },
+      "expected_correct": "Un lave-linge d’occasion"
+    }
+  ],
+  "audio_discrepancies_requiring_listening": [
+    {
+      "exercise": "tcf-ss-a2-s48-co-3",
+      "question": 12,
+      "status": "pending_source_audio_review",
+      "reason": "La bonne réponse de la banque indique « Le rayon BD » ; la transcription préparée de remplacement dit explicitement « le nouveau rayon DVD ». Écouter le segment avant de choisir les illustrations et de valider la réponse. Aucune correction de réponse ni activation QCM image sans cette vérification.",
+      "source_links": [
+        {
+          "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-21-4.mp3",
+          "source_id": "9782090351958:040:42a9a64a8955",
+          "candidate_cut_id": "9782090351958-040-42a9a64a8955-r2-d4",
+          "transcription": "La salle informatique est fermée pour travaux. Si vous devez travailler sur les ordinateurs, vous pouvez aller à la bibliothèque. Profitez-en aussi pour visiter le nouveau rayon DVD."
+        }
+      ]
+    }
+  ]
+}

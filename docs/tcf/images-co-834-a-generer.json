@@ -31,16 +31,16 @@
     "received_source_entries": 836,
     "copyright_removed": 2,
     "planned_question_candidates": 423,
-    "activated_planned_questions": 212,
-    "pending_question_candidates": 211,
+    "activated_planned_questions": 215,
+    "pending_question_candidates": 208,
     "original_missing_concepts": 741,
-    "original_concepts_now_generated_or_reused": 535,
-    "remaining_original_concepts": 206,
+    "original_concepts_now_generated_or_reused": 543,
+    "remaining_original_concepts": 198,
     "new_co_images_this_batch": 670,
     "activated_association_scenes_this_batch": 13,
     "pending_association_scenes": 0,
-    "sources_with_pending_question_candidates": 69,
-    "sources_with_new_active_question_or_scene": 200,
+    "sources_with_pending_question_candidates": 66,
+    "sources_with_new_active_question_or_scene": 202,
     "sources_without_current_bank_reference": 234,
     "remaining_audio_references_to_match": 432,
     "co_images_needing_style_correction": 0,
@@ -2751,14 +2751,13 @@
         "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_58-2.mp3",
         "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_58-3.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "delf-a1-2022-co-ex5-58-1",
           "question": 1
-        }
-      ],
-      "new_active_visual_questions": [
+        },
         {
           "exercise": "delf-a1-2022-co-ex5-58-2",
           "question": 2
@@ -2766,7 +2765,7 @@
       ],
       "new_active_association_scenes": [],
       "current_linked_questions": 12,
-      "current_linked_image_variants": 7,
+      "current_linked_image_variants": 8,
       "complete_image_audit_certified": false
     },
     {
@@ -3188,17 +3187,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_77.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "delf-a1-2022-co-77",
           "question": 9
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 10,
-      "current_linked_image_variants": 2,
+      "current_linked_image_variants": 3,
       "complete_image_audit_certified": false
     },
     {
@@ -6582,17 +6581,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_47.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "delf-a2-2021-co-47",
           "question": 8
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 10,
-      "current_linked_image_variants": 3,
+      "current_linked_image_variants": 4,
       "complete_image_audit_certified": false
     },
     {
@@ -25942,7 +25941,7 @@
           "asset": "1d288bf652f7"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:077:1eb6ed7efb0d"
       ],
@@ -25953,6 +25952,11 @@
           "candidate_cut_id": "delf_a1_2022-077-1eb6ed7efb0d-r2-joined",
           "transcription": "Où habitez-vous? Comment s'appelle votre femme? Quand allez-vous au cinéma? Comment est-ce que vous allez à votre bureau? Combien avez-vous de frères et de sœurs? Quelle est votre profession? Vous lisez quoi? Quelle est votre nationalité? Quel est votre film préféré? Qu'est-ce que vous faites le dimanche?"
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-film-dvd-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-livre-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-cours-gym-dessine.webp"
       ]
     },
     {
@@ -27118,7 +27122,7 @@
           "asset": "c1894208bd4c"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:058:f9fd57145776"
       ],
@@ -27129,6 +27133,11 @@
           "candidate_cut_id": "delf_a1_2022-058-f9fd57145776-d1",
           "transcription": "Pour mon travail, j'ai des chaussures noires. J'ai aussi des gants blancs. Après, je mets une chemise noire et un pantalon noir."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-entreprise-service-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-cours-gym-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
       ]
     },
     {
@@ -28917,7 +28926,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-dejeuner-restaurant-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-concert-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cours-expression-orale-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-a2-sc-co-4",
+        "question": 13,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-dejeuner-restaurant-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-concert-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-cours-expression-orale-dessine.webp"
+        ],
+        "support_quote": "Allô, mon chéri ? Tu as oublié notre déjeuner.\n— Mamie, pardon, mais ce matin, le bus a eu un accident.\n— D'accord, mais le déjeuner…",
+        "current_bank_transcription": "Allô, mon chéri ? Tu as oublié notre déjeuner.\n— Mamie, pardon, mais ce matin, le bus a eu un accident.\n— D'accord, mais le déjeuner…",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Réutilisation après relecture visuelle des trois images : sens, anatomie, style 48a753d8 et format 4:3 contrôlés ; empreintes existantes vérifiées par le registre. Trois rendez-vous distincts : repas de midi dans une salle éclairée de jour, concert avec scène et public, cours avec enseignante et apprenants. Le déjeuner est nommé explicitement dans la transcription actuelle. Les images réutilisées ne prétendent pas représenter les personnages exacts du dialogue ; la question identifie le type de rendez-vous, sans demander leur identité. Audio de remplacement à rapprocher."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -31461,7 +31489,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-entreprise-service-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-hopital-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s37-co-1",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-entreprise-service-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-hopital-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp"
+        ],
+        "support_quote": "Personne est fonction.\nUn salarié, une salarié, un employé, une employé, un supérieur hiérarchique, une supérieur hiérarchique, un chargé des ressources humaines, une chargé des ressources humaines, un directeur des ressources humaines, une directrice des ressources humaines, et rache.\nUn responsable, une responsable, un chef d'équipe, une chef d'équipe, un assistant, une assistante, un commercial, une commercial, un délégué du personnel, une délégué du personnel, un voisin de bureau, une voisine de bureau, un collègue, une collègue, une équipe, le service administratif, le service commercial, le service des ressources humaines, et rache, un organigramme, le règlement intérieur.\nCe détendre, le pot de bienvenue, le pot de départ, prendre une pause, la pause déjeuner, la pause café, la machine à café.\nTravailler, intégrer une entreprise, le bureau, la fiche de paix, la réunion de services, participer à une réunion, compléter un tableau, mettre à jour un document, écrire un compte rendu, rédiger un compte rendu, la pièce jointe, prendre un rendez-vous, demander un rendez-vous, donner des instructions, recevoir des instructions, travailler en collaboration, avoir un conflit avec quelqu'un.",
+        "current_bank_transcription": "Personne est fonction.\nUn salarié, une salarié, un employé, une employé, un supérieur hiérarchique, une supérieur hiérarchique, un chargé des ressources humaines, une chargé des ressources humaines, un directeur des ressources humaines, une directrice des ressources humaines, et rache.\nUn responsable, une responsable, un chef d'équipe, une chef d'équipe, un assistant, une assistante, un commercial, une commercial, un délégué du personnel, une délégué du personnel, un voisin de bureau, une voisine de bureau, un collègue, une collègue, une équipe, le service administratif, le service commercial, le service des ressources humaines, et rache, un organigramme, le règlement intérieur.\nCe détendre, le pot de bienvenue, le pot de départ, prendre une pause, la pause déjeuner, la pause café, la machine à café.\nTravailler, intégrer une entreprise, le bureau, la fiche de paix, la réunion de services, participer à une réunion, compléter un tableau, mettre à jour un document, écrire un compte rendu, rédiger un compte rendu, la pièce jointe, prendre un rendez-vous, demander un rendez-vous, donner des instructions, recevoir des instructions, travailler en collaboration, avoir un conflit avec quelqu'un.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Réutilisation après relecture visuelle des trois images : sens, anatomie, style 48a753d8 et format 4:3 contrôlés ; empreintes existantes vérifiées par le registre. Une scène d’entreprise dans ses bureaux couvre les deux termes du premier milieu professionnel ; entrée d’hôpital avec soignant et salle de restaurant distinguent les deux autres. Le vocabulaire actuel cite entreprise, bureau, collègues et services. Audio de remplacement à rapprocher."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -35824,7 +35871,7 @@
           "asset": "233b936ec1ec"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a2_2021:047:e87bc7820c88"
       ],
@@ -35835,6 +35882,11 @@
           "candidate_cut_id": "delf_a2_2021-047-e87bc7820c88-r2-joined",
           "transcription": "Quel est votre nom Quelle est votre situation familiale Comment s'appellent vos enfants Quelle est votre nationalité Quelle est votre date de naissance? Quel âge avez-vous Avec qui faites-vous du sport? Où mangez-vous à midi Quel est votre plat préféré? Quelle est votre adresse? Où habitez-vous? Qu'est-ce que vous aimez faire le week-end? Est-ce que vous aimez aller au cinéma? Pourquoi? Où allez-passer vos prochaines vacances? Qu'est-ce que vous aimez faire pendant vos congés?"
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-jus-orange-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-tarte-pommes-4-3.webp"
       ]
     },
     {
@@ -39888,7 +39940,7 @@
       "label": "La boisson préférée",
       "path_after_generation": "/lib/images/tcf/qcm-audit/8c47eb676894.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « La boisson préférée ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a2-2021-co-47",
@@ -39896,8 +39948,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-jus-orange-dessine.webp",
+      "sha256": "47bf446aec09cf3930268a1421321038c144cd5013a23a44b2f9f2b2e8d35822",
+      "review_note": "Inspection visuelle : dessin CE/CO cohérent, format paysage natif 4:3, concept entier et contrastes reconnaissables. Aucun texte, chiffre, prix ou date. Distracteur de la boisson du petit-déjeuner, tcf-ss-a2-s25-co-4 Q10.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "11b873fbccdd",
@@ -40671,7 +40728,7 @@
       "label": "Le film préféré",
       "path_after_generation": "/lib/images/tcf/qcm-audit/cbc019bf4773.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le film préféré ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-77",
@@ -40679,8 +40736,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-film-dvd-dessine.webp",
+      "sha256": "53895bfd2058aaac5142339f6358dabf7803f89881cda91f232273dbec3ef4f5",
+      "review_note": "Contrôle visuel individuel : format natif 4:3 et style dessiné CE/CO chaleureux, concept entier reconnaissable, pas de montant ni date. Personnages fictifs aux visages, coiffures, carnations, âges, morphologies et expressions variés dans le lot. Tickets vierges associés explicitement au type de spectacle. Logos des appareils du club photo retirés avant export.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "a28889c8bcb4",
@@ -40793,7 +40855,7 @@
       "label": "Le plat préféré",
       "path_after_generation": "/lib/images/tcf/qcm-audit/a30071aec873.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le plat préféré ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a2-2021-co-47",
@@ -40801,8 +40863,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp",
+      "sha256": "356cdd21e65e27be90da7c1686b5ccb57b53071b414ed6eeedb0df866abaa387",
+      "review_note": "Contrôle visuel individuel : format natif 4:3 et style dessiné CE/CO chaleureux, concept entier reconnaissable, pas de montant ni date. Personnages fictifs aux visages, coiffures, carnations, âges, morphologies et expressions variés dans le lot. Tickets vierges associés explicitement au type de spectacle. Logos des appareils du club photo retirés avant export.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "0a96a63f00ed",
@@ -42879,7 +42946,7 @@
       "label": "Le sport préféré",
       "path_after_generation": "/lib/images/tcf/qcm-audit/1d288bf652f7.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le sport préféré ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-77",
@@ -42887,8 +42954,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-cours-gym-dessine.webp",
+      "sha256": "1dcfa221a99ebccd9cfb60113a80decd6f9d51bcf85b112c225dd4351901bec4",
+      "review_note": "Contrôle visuel individuel : format natif 4:3 et style dessiné CE/CO chaleureux, concept entier reconnaissable, pas de montant ni date. Personnages fictifs aux visages, coiffures, carnations, âges, morphologies et expressions variés dans le lot. Tickets vierges associés explicitement au type de spectacle. Logos des appareils du club photo retirés avant export.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "97d2ae49817d",
@@ -44950,7 +45022,7 @@
       "label": "Un déjeuner",
       "path_after_generation": "/lib/images/tcf/qcm-audit/48dfc1a2e224.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un déjeuner ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a2-sc-co-4",
@@ -44958,8 +45030,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-dejeuner-restaurant-dessine.webp",
+      "sha256": "57f2fabcc610451581a039cfcb31781f12bd106fc0831b81dd81cc02f44766c9",
+      "review_note": "Deux adultes distincts déjeunent à une table de restaurant en plein jour, assiettes et couverts visibles ; aucune horloge ou date, pas de groupe debout. Paysage natif exact 4:3 et concept entier relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "a6a917953b36",
@@ -48302,7 +48379,7 @@
       "label": "L’entreprise et le bureau",
       "path_after_generation": "/lib/images/tcf/qcm-audit/7aec106de717.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « L’entreprise et le bureau ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s37-co-1",
@@ -48310,8 +48387,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-entreprise-service-dessine.webp",
+      "sha256": "88389ddbde719f62ac82c8a26d7c5963fa222e60a9cd54c57d6438ac834ea9e9",
+      "review_note": "Entreprise de service : professionnel et cliente autour d’un dossier dans des bureaux, mot SERVICES naturel ; activité de conseil sans fabrication ou chantier. Concept entier et paysage natif exact 4:3 relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "6dc9358b953f",
@@ -48780,7 +48862,7 @@
       "label": "Le livre préféré",
       "path_after_generation": "/lib/images/tcf/qcm-audit/84d7e426878f.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le livre préféré ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-77",
@@ -48788,8 +48870,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-livre-dessine.webp",
+      "sha256": "73b86876898820010571df5731f532855fbba462297e5d9f4e651a5bfee505f2",
+      "review_note": "Contrôle visuel individuel : style dessiné CE/CO chaleureux, format natif 4:3, objets entiers distincts et aliments fidèles à la proposition complète ; aucun texte, montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "6feafff4fbbb",
@@ -50099,7 +50186,7 @@
       "label": "Le dessert préféré",
       "path_after_generation": "/lib/images/tcf/qcm-audit/233b936ec1ec.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le dessert préféré ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a2-2021-co-47",
@@ -50107,8 +50194,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-tarte-pommes-4-3.webp",
+      "sha256": "e28bb9d9188dc9d628f4945d34d5324017e4814e02b4b76e3b9c00cd1b3716f5",
+      "review_note": "Inspection visuelle : dessin CE/CO cohérent, format paysage natif 4:3, concept entier et contrastes reconnaissables. Aucun texte, chiffre, prix ou date. Distracteur du gâteau au chocolat préparé dans tcf-ss-a1-s20-co-3 Q2. Version CO 4:3 distincte des fichiers CE conservés.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "abcdf94a20cb",

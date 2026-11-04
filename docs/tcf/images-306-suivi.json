@@ -15,11 +15,11 @@
   ],
   "summary": {
     "initial_question_candidates": 306,
-    "questions_illustrated_or_prepared": 209,
-    "newly_activated": 95,
-    "prepared_pending_audio_link": 110,
+    "questions_illustrated_or_prepared": 214,
+    "newly_activated": 98,
+    "prepared_pending_audio_link": 112,
     "prepared_pending_audio_validation": 4,
-    "remaining_questions_requiring_images_or_review": 97,
+    "remaining_questions_requiring_images_or_review": 92,
     "unreviewed_complete_trios": 0,
     "audio_references_next_stage": 432,
     "vocabulary_occurrences_final_stage": 1906
@@ -257,11 +257,10 @@
       ],
       "resolved_images": [
         "/lib/images/tcf/qcm-audit/co834-caisse-dessinee.webp",
-        null,
+        "/lib/images/tcf/qcm-audit/co834-entree-magasin-dessinee.webp",
         null
       ],
       "missing_labels": [
-        "À l’entrée",
         "À la librairie municipale"
       ],
       "ready_for_source_review": false
@@ -7802,7 +7801,7 @@
           "asset": "1d288bf652f7"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:077:1eb6ed7efb0d"
       ],
@@ -7815,16 +7814,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co834-film-dvd-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-livre-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-cours-gym-dessine.webp"
       ],
-      "missing_labels": [
-        "Le film préféré",
-        "Le livre préféré",
-        "Le sport préféré"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-film-dvd-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-livre-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-cours-gym-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a1-2022-co-77",
+        "question": 9,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co834-film-dvd-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-livre-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-cours-gym-dessine.webp"
+        ],
+        "support_quote": "Où habitez-vous? Comment s'appelle votre femme? Quand allez-vous au cinéma? Comment est-ce que vous allez à votre bureau? Combien avez-vous de frères et de sœurs? Quelle est votre profession? Vous lisez quoi? Quelle est votre nationalité? Quel est votre film préféré? Qu'est-ce que vous faites le dimanche?",
+        "current_bank_transcription": "1. Où habitez-vous ?\n2. Comment s’appelle votre femme ?\n3. Quand allez-vous au cinéma ?\n4. Comment est-ce que vous allez à votre bureau ?\n5. Combien avez-vous de frères et de sœurs ?\n6. Quelle est votre profession ?\n7. Vous lisez quoi ?\n8. Quelle est votre nationalité ?\n9. Quel est votre film préféré ?\n10. Qu’est-ce que vous faites le dimanche ?",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Réutilisation après relecture visuelle des trois images : sens, anatomie, style 48a753d8 et format 4:3 contrôlés ; empreintes existantes vérifiées par le registre. La question demande le THÈME de la préférence formulée par la neuvième question, et non le nom du film préféré : film en boîtier à clap, livre seul, pratique sportive. Le qualificatif préféré est commun aux trois réponses et donné par l’énoncé ; il n’est pas attribué à un personnage par l’image. La neuvième demande entendue dans la transcription préparée porte explicitement sur le film préféré."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -8632,7 +8645,7 @@
           "asset": "c1894208bd4c"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:058:f9fd57145776"
       ],
@@ -8645,15 +8658,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
+        "/lib/images/tcf/qcm-audit/co306-entreprise-service-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-cours-gym-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
       ],
-      "missing_labels": [
-        "Le travail",
-        "Le sport"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-entreprise-service-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-cours-gym-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a1-2022-co-ex5-58-1",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-entreprise-service-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-cours-gym-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+        ],
+        "support_quote": "Pour mon travail, j'ai des chaussures noires. J'ai aussi des gants blancs. Après, je mets une chemise noire et un pantalon noir.",
+        "current_bank_transcription": "Pour mon travail, j’ai des chaussures noires. J’ai aussi des gants blancs. Après, je mets une chemise noire et un pantalon noir.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Réutilisation après relecture visuelle des trois images : sens, anatomie, style 48a753d8 et format 4:3 contrôlés ; empreintes existantes vérifiées par le registre. Trois contextes d’usage de vêtements : activité professionnelle dans des bureaux, activité sportive en tenue de gym, fête en vêtements de sortie. La question porte sur l’occasion et non sur la couleur ou l’inventaire des vêtements ; aucune image ne modifie ces derniers dans la banque. L’image de deux élèves faisant leurs devoirs a été écartée pour le travail professionnel. Transcription préparée explicite."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -10041,19 +10069,29 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
+        "/lib/images/tcf/qcm-audit/co306-dejeuner-restaurant-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-concert-dessine.webp",
-        null
+        "/lib/images/tcf/qcm-audit/co306-cours-expression-orale-dessine.webp"
       ],
-      "missing_labels": [
-        "Un déjeuner",
-        "Un cours"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-a2-sc-co-4",
+        "question": 13,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-dejeuner-restaurant-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-concert-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-cours-expression-orale-dessine.webp"
+        ],
+        "support_quote": "Allô, mon chéri ? Tu as oublié notre déjeuner.\n— Mamie, pardon, mais ce matin, le bus a eu un accident.\n— D'accord, mais le déjeuner…",
+        "current_bank_transcription": "Allô, mon chéri ? Tu as oublié notre déjeuner.\n— Mamie, pardon, mais ce matin, le bus a eu un accident.\n— D'accord, mais le déjeuner…",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Réutilisation après relecture visuelle des trois images : sens, anatomie, style 48a753d8 et format 4:3 contrôlés ; empreintes existantes vérifiées par le registre. Trois rendez-vous distincts : repas de midi dans une salle éclairée de jour, concert avec scène et public, cours avec enseignante et apprenants. Le déjeuner est nommé explicitement dans la transcription actuelle. Les images réutilisées ne prétendent pas représenter les personnages exacts du dialogue ; la question identifie le type de rendez-vous, sans demander leur identité. Audio de remplacement à rapprocher."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -12265,18 +12303,29 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
+        "/lib/images/tcf/qcm-audit/co306-entreprise-service-dessine.webp",
         "/lib/images/tcf/qcm-audit/co306-hopital-dessine.webp",
         "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp"
       ],
-      "missing_labels": [
-        "L’entreprise et le bureau"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s37-co-1",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-entreprise-service-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-hopital-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp"
+        ],
+        "support_quote": "Personne est fonction.\nUn salarié, une salarié, un employé, une employé, un supérieur hiérarchique, une supérieur hiérarchique, un chargé des ressources humaines, une chargé des ressources humaines, un directeur des ressources humaines, une directrice des ressources humaines, et rache.\nUn responsable, une responsable, un chef d'équipe, une chef d'équipe, un assistant, une assistante, un commercial, une commercial, un délégué du personnel, une délégué du personnel, un voisin de bureau, une voisine de bureau, un collègue, une collègue, une équipe, le service administratif, le service commercial, le service des ressources humaines, et rache, un organigramme, le règlement intérieur.\nCe détendre, le pot de bienvenue, le pot de départ, prendre une pause, la pause déjeuner, la pause café, la machine à café.\nTravailler, intégrer une entreprise, le bureau, la fiche de paix, la réunion de services, participer à une réunion, compléter un tableau, mettre à jour un document, écrire un compte rendu, rédiger un compte rendu, la pièce jointe, prendre un rendez-vous, demander un rendez-vous, donner des instructions, recevoir des instructions, travailler en collaboration, avoir un conflit avec quelqu'un.",
+        "current_bank_transcription": "Personne est fonction.\nUn salarié, une salarié, un employé, une employé, un supérieur hiérarchique, une supérieur hiérarchique, un chargé des ressources humaines, une chargé des ressources humaines, un directeur des ressources humaines, une directrice des ressources humaines, et rache.\nUn responsable, une responsable, un chef d'équipe, une chef d'équipe, un assistant, une assistante, un commercial, une commercial, un délégué du personnel, une délégué du personnel, un voisin de bureau, une voisine de bureau, un collègue, une collègue, une équipe, le service administratif, le service commercial, le service des ressources humaines, et rache, un organigramme, le règlement intérieur.\nCe détendre, le pot de bienvenue, le pot de départ, prendre une pause, la pause déjeuner, la pause café, la machine à café.\nTravailler, intégrer une entreprise, le bureau, la fiche de paix, la réunion de services, participer à une réunion, compléter un tableau, mettre à jour un document, écrire un compte rendu, rédiger un compte rendu, la pièce jointe, prendre un rendez-vous, demander un rendez-vous, donner des instructions, recevoir des instructions, travailler en collaboration, avoir un conflit avec quelqu'un.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Réutilisation après relecture visuelle des trois images : sens, anatomie, style 48a753d8 et format 4:3 contrôlés ; empreintes existantes vérifiées par le registre. Une scène d’entreprise dans ses bureaux couvre les deux termes du premier milieu professionnel ; entrée d’hôpital avec soignant et salle de restaurant distinguent les deux autres. Le vocabulaire actuel cite entreprise, bureau, collègues et services. Audio de remplacement à rapprocher."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -13307,7 +13356,19 @@
         "Le rayon cuisine",
         "Le rayon voyage"
       ],
-      "ready_for_source_review": false
+      "ready_for_source_review": false,
+      "audio_review_issue": {
+        "status": "pending_source_audio_review",
+        "reason": "La bonne réponse de la banque indique « Le rayon BD » ; la transcription préparée de remplacement dit explicitement « le nouveau rayon DVD ». Écouter le segment avant de choisir les illustrations et de valider la réponse. Aucune correction de réponse ni activation QCM image sans cette vérification.",
+        "source_links": [
+          {
+            "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-21-4.mp3",
+            "source_id": "9782090351958:040:42a9a64a8955",
+            "candidate_cut_id": "9782090351958-040-42a9a64a8955-r2-d4",
+            "transcription": "La salle informatique est fermée pour travaux. Si vous devez travailler sur les ordinateurs, vous pouvez aller à la bibliothèque. Profitez-en aussi pour visiter le nouveau rayon DVD."
+          }
+        ]
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -16415,7 +16476,7 @@
           "asset": "233b936ec1ec"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a2_2021:047:e87bc7820c88"
       ],
@@ -16428,16 +16489,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-jus-orange-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-tarte-pommes-4-3.webp"
       ],
-      "missing_labels": [
-        "Le plat préféré",
-        "La boisson préférée",
-        "Le dessert préféré"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-jus-orange-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-tarte-pommes-4-3.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a2-2021-co-47",
+        "question": 8,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-jus-orange-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-tarte-pommes-4-3.webp"
+        ],
+        "support_quote": "Quel est votre nom Quelle est votre situation familiale Comment s'appellent vos enfants Quelle est votre nationalité Quelle est votre date de naissance? Quel âge avez-vous Avec qui faites-vous du sport? Où mangez-vous à midi Quel est votre plat préféré? Quelle est votre adresse? Où habitez-vous? Qu'est-ce que vous aimez faire le week-end? Est-ce que vous aimez aller au cinéma? Pourquoi? Où allez-passer vos prochaines vacances? Qu'est-ce que vous aimez faire pendant vos congés?",
+        "current_bank_transcription": "1. Quel est votre nom ?\n2. Quelle est votre situation familiale ?\n3. Comment s’appellent vos enfants ?\n4. Quelle est votre nationalité ?\n5. Quelle est votre date de naissance ?\n6. Quel âge avez-vous ?\n7. Avec qui faites-vous du sport ?\n8. Où mangez-vous à midi ?\n9. Quel est votre plat préféré ?\n10. Quelle est votre adresse ?\n11. Où habitez-vous ?\n12. Qu’est-ce que vous aimez faire le week-end ?\n13. Est-ce que vous aimez aller au cinéma ?\nPourquoi ?\n14. Où allez-vous passer vos prochaines vacances ?\n15. Qu’est-ce que vous aimez faire pendant vos\ncongés ?",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Réutilisation après relecture visuelle des trois images : sens, anatomie, style 48a753d8 et format 4:3 contrôlés ; empreintes existantes vérifiées par le registre. La question identifie la catégorie d’une préférence alimentaire : plat principal de poisson et riz, boisson au jus d’orange, dessert en tarte. Ces exemples distinguent les catégories sans prétendre nommer le choix alimentaire de la personne. Le qualificatif préféré est commun aux trois réponses et porté par l’énoncé. La question 9 de la transcription préparée demande explicitement le plat préféré."
+      }
     },
     {
       "bank": "src/tcf/content/a2-b1/co.json",
