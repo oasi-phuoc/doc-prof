@@ -8,7 +8,15 @@ Chaque exercice propose **Positive / Négative / Mixte**. Le réglage est propre
 
 [audit.json](audit.json) contient **100 phrases distinctes par thème, par forme et par groupe de verbes** : 2 800 références au total, soit 100 affirmatives et 100 négatives pour chacun des deux groupes dans chacun des sept thèmes. Les noms propres, groupes nominaux et pronoms sont représentés. Les phrases proviennent de modèles verbaux avec des compléments rédigés et relus ; le moteur peut produire d’autres instanciations de ces modèles.
 
-La banque pronominale comporte 54 constructions : 39 dans « Simple » et 15 dans « Autres », avec trois contextes par construction. Les pronoms réfléchis et les verbes reçoivent des pastilles distinctes. Un même verbe n’est pas répété sur une fiche ; le nombre demandé est donc plafonné au nombre de modèles disponibles dans le groupe choisi. Cela ne limite pas la banque à ce nombre de phrases : chaque modèle possède plusieurs contextes et sujets possibles.
+La banque pronominale comporte 55 constructions : 40 dans « Simple » et 15 dans « Autres », avec au moins trois contextes par construction. Les pronoms réfléchis et les verbes reçoivent des pastilles distinctes. Un même verbe n’est pas répété sur une fiche ; le nombre demandé est donc plafonné au nombre de modèles disponibles dans le groupe choisi. Cela ne limite pas la banque à ce nombre de phrases : chaque modèle possède plusieurs contextes et sujets possibles.
+
+## Catégories autorisées
+
+Chaque exercice propose quatre réglages **Avec / Sans** : adverbes, prépositions, conjonctions et adjectifs. « Avec » autorise la catégorie dans la banque du thème ; « Sans » l’exclut. Par défaut, les catégories sont autorisées. Les réglages se conservent dans les recettes, les changements de format et les nouveaux exercices/pages, et restent indépendants pour chaque bloc existant.
+
+Les filtres sélectionnent des prédicats complets. Ils ne coupent pas un complément nécessaire : *s’occuper du jardin* est exclu sans prépositions. Des variantes pronominales simples ont été rédigées, notamment *Je me lève le matin* et *Je me rase la barbe*. *Le matin* reste un groupe déterminant + nom. Les mots négatifs *ne/n’* et *pas* restent disponibles même sans les autres adverbes.
+
+Si la catégorie centrale du thème est exclue (par exemple « Adjectif » sans adjectifs), les modèles simples sont utilisés. Les quatre formats partagent le même tirage filtré. La quantité de questions tient compte du nombre de verbes encore disponibles, et les consignes de production écrite respectent les exclusions.
 
 ## Corrections issues de l’audit
 

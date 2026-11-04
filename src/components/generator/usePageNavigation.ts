@@ -148,6 +148,7 @@ export function usePageNavigation({
       track: nextType.track,
       verbGroup: activeBlock.verbGroup,
       phrasePolarity: activeBlock.phrasePolarity,
+      phraseCategories: activeBlock.phraseCategories,
       problemDraftGrids: isProblemExercise(nextType.id)
         ? Array.from({ length: count }, () => true)
         : undefined,

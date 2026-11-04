@@ -203,6 +203,64 @@ for(const pages of [restored.pages,restored.libreSnapshot]){
 const conjunction=framesForTheme('phrase-conjonctions','er').find(frame=>frame.id==='manger')
 assert.equal(sentenceOf(instantiateThemeFrame('phrase-conjonctions',conjunction,()=> 'Nous/pronom',preds=>preds[0],()=> 'La/determinant voisine/nom')),'Nous mangeons une pomme et la voisine cuisine un plat.')
 for(const chart of ['categories','mots','vide'])check(tryGeneratePhraseBatch('phrase-tableau-'+chart,6,createRng(1),'moyen','er','mixed').items.length===1,'reference charts remain unchanged')
+
+// Category exclusions select whole predicates and work in all layouts and polarities.
+const {phraseSelection}=get('phrase-options.ts')
+const {PHRASE_OPTIONAL_CATEGORIES}=get('phrase-themes.ts')
+const allWithout=Object.fromEntries(PHRASE_OPTIONAL_CATEGORIES.map(({category})=>[category,false]))
+for(let mask=0;mask<16;mask++){
+  const categories=Object.fromEntries(PHRASE_OPTIONAL_CATEGORIES.map(({category},i)=>[category,Boolean(mask&(1<<i))]))
+  const excluded=Object.keys(categories).filter(key=>!categories[key])
+  for(const {topic} of PHRASE_THEME_DEFS)for(const group of ['er','autres']){
+    const selection=phraseSelection(topic,group,categories)
+    check(selection.frames.length>0,'all category combinations have complete sentences '+topic+group+mask)
+    for(const frame of selection.frames)for(const pred of [...frame.preds,...(frame.rightPreds??[])]){
+      check(tagged(pred).every(token=>!excluded.includes(token.category)),'complete predicates respect exclusions')
+    }
+    for(const polarity of ['positive','negative','mixed']){
+      let sentences
+      for(const kind of ['colorier','ordre','construire','ecrire']){
+        const batch=tryGeneratePhraseBatch(topic+'-'+kind,8,createRng(71+mask),'moyen',group,polarity,categories)
+        check(batch.bankQuestionCap===selection.frames.length&&batch.items.length===Math.min(8,selection.frames.length),'filtered cap and item count agree')
+        const actual=batch.items.map(item=>kind==='colorier'?sentenceOf(item.tokens):item.responseAnswer)
+        if(kind==='colorier')sentences=actual
+        else assert.deepEqual(actual,sentences,'category filters use the same draw in every layout')
+        if(kind==='colorier'||kind==='ordre')for(const item of batch.items){
+          check(item.tokens.every(token=>!excluded.includes(token.category)||(token.category==='adverbe'&&['ne','n’','pas'].includes(token.text.toLowerCase()))),'excluded words never appear in the final sentence')
+        }
+        const forms=actual.map(text=>/(?<![\p{L}])(?:ne(?![\p{L}])|n’)/u.test(text))
+        if(polarity==='positive')check(forms.every(form=>!form),'filtered affirmative sentences')
+        if(polarity==='negative')check(forms.every(Boolean),'negation retained when other adverbs are excluded')
+        if(polarity==='mixed')check(forms.some(Boolean)&&forms.some(form=>!form),'filtered mixed sentences')
+        if(kind==='construire')check(new Set(batch.items.map(item=>item.prompt)).size===batch.items.length,'filters preserve distinct verb models')
+        if(kind==='ecrire'&&categories.adjectif===false)check(!batch.instruction.includes('avec un adjectif'),'writing instructions respect exclusions')
+      }
+    }
+    const original=tryGeneratePhraseBatch(topic+'-ordre',8,createRng(17),'moyen',group,'mixed')
+    const permitted=tryGeneratePhraseBatch(topic+'-ordre',8,createRng(17),'moyen',group,'mixed',{})
+    assert.deepEqual(permitted,original,'unspecified settings preserve the original bank')
+  }
+}
+const simpleReflexives=phraseSelection('phrase-pronominaux','er',allWithout)
+for(const [id,expected]of [['se lever','Je me lève le matin.'],['se raser','Je me rase la barbe.']]){
+  const frame=simpleReflexives.frames.find(frame=>frame.id===id)
+  check(Boolean(frame),'requested simple reflexive construction available '+id)
+  assert.equal(sentenceOf(instantiateThemeFrame(simpleReflexives.theme,frame,()=> 'Je/pronom',preds=>preds[0])),expected)
+}
+check(!simpleReflexives.frames.some(frame=>frame.id==='s’occuper'),'a mandatory preposition is never removed')
+const restrictedRecipe={...recipe,phraseCategories:allWithout}
+assert.deepEqual(blockFromPage(restrictedRecipe).phraseCategories,allWithout,'category options survive page copies')
+assert.deepEqual(applyType(exerciseTypeById['phrase-pronominaux-colorier'],restrictedRecipe).phraseCategories,allWithout,'category options survive layout changes')
+check(!applyType(exerciseTypeById['gram-ex-etre-qcm-conj'],restrictedRecipe).phraseCategories,'category options stay within Gattegno')
+const restrictedPage=buildPage(restrictedRecipe,51)
+assert.deepEqual(restrictedPage.blocks[1].items,page.blocks[1].items,'category changes leave the other blocks unchanged')
+const savedRestricted=parseFicheRecipe({version:1,pages:[restrictedRecipe],seed:51,institutional:{},evalMode:false,pointsPerQuestion:1,libreMode:false,libreSnapshot:null})
+assert.deepEqual(savedRestricted.pages[0].phraseCategories,allWithout,'saved recipes retain category options')
+const {PhraseCategoryControls}=load(path.join(root,'src/components/generator/PhraseCategoryControls.tsx'))
+for(const value of [undefined,allWithout,{adverbe:false,preposition:true}]){
+  const html=renderToStaticMarkup(React.createElement(PhraseCategoryControls,{value,onChange:()=>{}}))
+  check((html.match(/<button/g)||[]).length===8&&(html.match(/aria-pressed="true"/g)||[]).length===4,'four accessible category controls with one selection each')
+}
 report.exhaustiveCases=exhaustiveCases;report.checks=checks
 if(process.argv.includes('--write'))fs.writeFileSync(path.join(root,'docs/gattegno/audit.json'),JSON.stringify(report,null,2)+'\n')
 console.log(`${checks} contrôles réussis ; ${exhaustiveCases} instanciations contrôlées ; ${report.themes.length*200} phrases de référence (100 par banque).`)

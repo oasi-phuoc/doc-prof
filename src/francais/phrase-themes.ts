@@ -19,6 +19,16 @@ export const PHRASE_ALL_THEME_DEFS = [
 export type PhraseThemeId = (typeof PHRASE_ALL_THEME_DEFS)[number]['topic']
 export type PhrasePolarity = 'positive' | 'negative' | 'mixed'
 
+export const PHRASE_OPTIONAL_CATEGORIES = [
+  { category: 'adverbe', label: 'Adverbes' },
+  { category: 'preposition', label: 'Prépositions' },
+  { category: 'conjonction', label: 'Conjonctions' },
+  { category: 'adjectif', label: 'Adjectifs' },
+] as const
+export type PhraseOptionalCategory = (typeof PHRASE_OPTIONAL_CATEGORIES)[number]['category']
+/** Missing entries allow the category and preserve the original theme's bank. */
+export type PhraseCategories = Partial<Record<PhraseOptionalCategory, boolean>>
+
 const AFFIRMATIVE: Partial<Record<PhraseThemeId, PhraseThemeId>> = {
   'phrase-negation': 'phrase-simple',
   'phrase-negation-determinants': 'phrase-determinants',

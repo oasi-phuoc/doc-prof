@@ -1,9 +1,35 @@
 import type { ThemedFrame } from './phrase-theme-frames'
 
-/** Every entry is a distinct reflexive construction with three reviewed contexts. */
+/** Complete simple variants, without adverbs, prepositions, conjunctions or adjectives. */
+const SIMPLE_COMPLEMENTS: Record<string, readonly string[]> = {
+  'se coiffer': ['le/determinant matin/nom', 'chaque/determinant matin/nom'],
+  's’habiller': ['le/determinant matin/nom', 'chaque/determinant jour/nom'],
+  'se déshabiller': ['le/determinant soir/nom', 'chaque/determinant soir/nom'],
+  'se lever': ['le/determinant matin/nom', 'chaque/determinant matin/nom'],
+  'se coucher': ['le/determinant soir/nom', 'chaque/determinant soir/nom'],
+  'se réveiller': ['le/determinant matin/nom', 'chaque/determinant matin/nom'],
+  'se préparer': ['le/determinant matin/nom', 'chaque/determinant matin/nom'],
+  'se reposer': ['le/determinant dimanche/nom', 'chaque/determinant dimanche/nom'],
+  'se promener': ['le/determinant dimanche/nom', 'chaque/determinant soir/nom'],
+  'se dépêcher': ['le/determinant matin/nom', 'chaque/determinant matin/nom'],
+  's’entraîner': ['le/determinant samedi/nom', 'chaque/determinant semaine/nom'],
+  's’amuser': ['le/determinant dimanche/nom', 'chaque/determinant soir/nom'],
+  'se baigner': ['le/determinant dimanche/nom', 'chaque/determinant été/nom'],
+  'se réchauffer': ['les/determinant mains/nom', 'les/determinant pieds/nom'],
+  'se changer': ['le/determinant soir/nom', 'chaque/determinant soir/nom'],
+  'se rafraîchir': ['le/determinant visage/nom', 'les/determinant mains/nom'],
+  's’endormir': ['le/determinant soir/nom', 'chaque/determinant soir/nom'],
+  'se détendre': ['le/determinant dimanche/nom', 'chaque/determinant soir/nom'],
+  'se taire': ['le/determinant matin/nom', 'chaque/determinant matin/nom'],
+  's’asseoir': ['le/determinant soir/nom', 'chaque/determinant heure/nom'],
+  'se vêtir': ['le/determinant matin/nom', 'chaque/determinant matin/nom'],
+}
+
+/** Every entry is a distinct reflexive construction with reviewed complete contexts. */
 function frame(id: string, core: string, complements: readonly string[]): ThemedFrame {
   const prefix = /^[aeiouhéèêàâîôûœ]/i.test(core) ? 's’' : 'se_'
-  return { id, preds: complements.map(complement => `${prefix}${core}/verbe ${complement}`) }
+  const variants = [...new Set([...complements, ...(SIMPLE_COMPLEMENTS[id] ?? [])])]
+  return { id, preds: variants.map(complement => `${prefix}${core}/verbe ${complement}`) }
 }
 
 export const REFLEXIVE_FRAMES_ER: readonly ThemedFrame[] = [
@@ -46,6 +72,7 @@ export const REFLEXIVE_FRAMES_ER: readonly ThemedFrame[] = [
   frame('se changer', 'change', ['après/preposition le/determinant travail/nom', 'dans/preposition la/determinant cabine/nom', 'avant/preposition la/determinant fête/nom']),
   frame('se couper', 'coupe', ['les/determinant ongles/nom', 'les/determinant cheveux/nom', 'avec/preposition du/determinant verre/nom']),
   frame('se baisser', 'baisse', ['sous/preposition la/determinant branche/nom', 'devant/preposition le/determinant placard/nom', 'lentement/adverbe']),
+  frame('se raser', 'rase', ['la/determinant barbe/nom', 'le/determinant menton/nom', 'les/determinant jambes/nom']),
 ]
 
 export const REFLEXIVE_FRAMES_AUTRES: readonly ThemedFrame[] = [

@@ -21,7 +21,8 @@ Une fiche de phrases n’est **pas** un produit cartésien (Léa / elle / le pap
 | `src/francais/phrase-theme-frames.ts` | Modèles adjectif, préposition, adverbe, conjonctions |
 | `src/francais/phrase-sentences.ts` | Sujets (prénoms, GN, pronoms), `framesForTheme`, `instantiateThemeFrame` |
 | `src/francais/phrase-themes.ts` | Ordre des thèmes combinés, formes Positive / Négative / Mixte, migration des anciens ids |
-| `src/francais/phrase-reflexive-frames.ts` | 54 constructions pronominales relues |
+| `src/francais/phrase-reflexive-frames.ts` | 55 constructions pronominales relues, dont des variantes simples |
+| `src/francais/phrase-options.ts` | Sélection des prédicats complets selon les catégories autorisées |
 | `src/francais/phrase-negation.ts` | Négation, clitiques, articles et élisions |
 | `src/francais/phrase-conjugate.ts` | Conjugaison du verbe selon le sujet (pronoms) |
 | `src/francais/phrase.ts` | Tirage équilibré des sujets (`used` = `frame:${id}`) pour **tous** les thèmes |
@@ -34,6 +35,8 @@ Le menu affiche Simple, Déterminants, Verbes pronominaux, Adjectif, Prépositio
 `phrasePolarity` appartient à l’exercice. Mixte équilibre les deux formes dès deux phrases. Les quatre formats doivent tirer les mêmes phrases avant toute opération de mélange des mots. Ne pas tirer à nouveau une phrase pour « construire » ni consommer un tirage supplémentaire de consigne avant de construire la banque.
 
 Le nombre de phrases d’une fiche est plafonné aux modèles distincts disponibles. La banque de référence conserve **100 phrases distinctes par thème, forme et groupe**, sans inventer des ids comme `mettre2`. Voir `docs/gattegno/README.md` et `scripts/audit-gattegno.cjs` pour les contrôles exhaustifs et les exemples corrigés.
+
+`phraseCategories` conserve les quatre réglages **Avec / Sans** pour adverbes, prépositions, conjonctions et adjectifs. Une valeur absente autorise la catégorie selon le thème ; `false` l’exclut. Sélectionner des prédicats complets, jamais retirer arbitrairement un mot ou un complément obligatoire. L’exclusion de la catégorie centrale d’un thème utilise les modèles simples. Les pronominaux conservent leurs constructions et leurs variantes simples rédigées. La négation *ne… pas* reste disponible sans les autres adverbes. Les consignes d’écriture doivent respecter ces choix. Le plafond des questions utilise la banque filtrée.
 
 ## Tous les thèmes passent par les modèles
 

@@ -277,6 +277,7 @@ function buildSingleBlock(
     difficulty,
     config.verbGroup ?? 'er',
     config.phrasePolarity,
+    config.phraseCategories,
   )
   if (phrase) {
     const libre =
