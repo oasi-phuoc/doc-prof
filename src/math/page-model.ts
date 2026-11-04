@@ -12,6 +12,7 @@ export function blockFromPage(page: PageConfig): ExerciseBlock {
     track: page.track,
     verbGroup: page.verbGroup,
     phrasePolarity: page.phrasePolarity,
+    phraseCategories: page.phraseCategories,
     contentSeed: page.contentSeed,
     contentSeedTwin: page.contentSeedTwin,
     phraseItems: page.phraseItems,
@@ -83,7 +84,7 @@ export function pageBlocks(page: PageConfig): ExerciseBlock[] {
 }
 
 export function pageAsConfig(page: PageConfig, block: ExerciseBlock): PageConfig {
-  return { ...page, ...block, extraBlocks: undefined }
+  return { ...page, ...block, phraseCategories: block.phraseCategories, extraBlocks: undefined }
 }
 
 export function setPageBlock(page: PageConfig, blockIndex: number, patch: Partial<ExerciseBlock>): PageConfig {

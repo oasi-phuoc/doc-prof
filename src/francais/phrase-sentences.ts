@@ -452,7 +452,7 @@ export function instantiateThemeFrame(
   pickRightSubject: () => string = () => COMMON[0]!,
   adjPlacement: AdjPlacement = 'comp',
 ): PhraseToken[] {
-  if (theme === 'phrase-conjonctions' || theme === 'phrase-negation-conjonctions') {
+  if (frame.rightPreds?.length) {
     const leftRaw = pickSubject()
     let right = pickRightSubject()
     if (right === leftRaw) right = pickRightSubject()

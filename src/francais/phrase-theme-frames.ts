@@ -6,6 +6,24 @@ export type ThemedFrame = {
   rightId?: string
   rightPreds?: readonly string[]
   conjs?: readonly string[]
+  contexts?: readonly PhraseContext[]
+}
+
+export type PhraseContext = {
+  pred: string
+  rightId?: string
+  rightPred?: string
+}
+
+/** Resolve a complete construction before choosing or conjugating its subjects. */
+export function frameForContext(id: string, context: PhraseContext): ThemedFrame {
+  return {
+    id,
+    preds: [context.pred],
+    rightId: context.rightId,
+    rightPreds: context.rightPred ? [context.rightPred] : undefined,
+    conjs: context.rightPred ? ['et/conjonction'] : undefined,
+  }
 }
 
 function frame(id: string, preds: readonly string[]): ThemedFrame {

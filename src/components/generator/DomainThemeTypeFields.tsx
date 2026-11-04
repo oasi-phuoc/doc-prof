@@ -1,5 +1,7 @@
 import { PhrasePolarityControl } from './PhrasePolarityControl'
-import { isNegativePhraseTheme } from '@/francais/phrase-themes'
+import { PhraseCategoryControls } from './PhraseCategoryControls'
+import { isNegativePhraseTheme, isPhraseThemeId } from '@/francais/phrase-themes'
+import { phraseSelection } from '@/francais/phrase-options'
 import {
   ACCESS_DOMAIN_OPTIONS,
 } from '@/access'
@@ -310,6 +312,23 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                     phraseItems: undefined,
                     phraseInstruction: undefined,
                   })}
+                />
+              ) : null}
+              {isPhraseDomain && !isPhraseChart ? (
+                <PhraseCategoryControls
+                  value={activeBlock.phraseCategories}
+                  onChange={phraseCategories => {
+                    const cap = isPhraseThemeId(activeBlock.topic)
+                      ? phraseSelection(activeBlock.topic, activeBlock.verbGroup ?? 'er', phraseCategories).frames.length
+                      : activeBlock.count
+                    updatePage({
+                      ...clearLibreContentFreeze(),
+                      phraseCategories,
+                      count: Math.max(1, Math.min(activeBlock.count, cap)),
+                      phraseItems: undefined,
+                      phraseInstruction: undefined,
+                    })
+                  }}
                 />
               ) : null}
               {!libreMode &&

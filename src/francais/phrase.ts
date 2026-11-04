@@ -1,8 +1,9 @@
-import { affirmativePhraseTheme, isNegativePhraseTheme, isPhraseThemeId, type PhrasePolarity } from './phrase-themes'
+import { isNegativePhraseTheme, isPhraseThemeId, PHRASE_OPTIONAL_CATEGORIES, type PhraseCategories, type PhrasePolarity } from './phrase-themes'
+import { phraseSelection } from './phrase-options'
+import { frameForContext, type ThemedFrame } from './phrase-theme-frames'
 import { withNegation } from './phrase-negation'
 import {
   COMMON,
-  framesForTheme,
   instantiateThemeFrame,
   isProperNameToken,
   joinPhrase,
@@ -87,16 +88,16 @@ function pickPhrase(
   rng: Rng,
   theme: PhraseThemeId,
   used: Set<string>,
-  group: PhraseVerbGroup,
+  frames: readonly ThemedFrame[],
   negative = false,
 ): BuiltPhrase {
-  const frames = framesForTheme(theme, group)
   const unused = frames.filter((frame) => !used.has(`frame:${frame.id}`))
-  const frame = pick(rng, unused.length ? unused : frames)
+  const model = pick(rng, unused.length ? unused : frames)
+  const frame = model.contexts ? frameForContext(model.id, pick(rng, [...model.contexts])) : model
   used.add(`frame:${frame.id}`)
-  const isAdj = theme === 'phrase-adjectif' || theme === 'phrase-negation-adjectif'
+  const isAdj = (theme === 'phrase-adjectif' || theme === 'phrase-negation-adjectif') && frame.preds.some(pred=>pred.includes('/adjectif'))
   const adjPlacement: AdjPlacement = isAdj
-    ? resolveAdjPlacement(frame.id, pick(rng, ['comp', 'subj', 'both'] as const))
+    ? resolveAdjPlacement(frame.id, pick(rng, model.contexts ? ['comp', 'both'] as const : ['comp', 'subj', 'both'] as const))
     : 'comp'
   const pool = subjectsForAdjPlacement(theme, adjPlacement)
   const tokens = instantiateThemeFrame(
@@ -171,6 +172,7 @@ export function tryGeneratePhraseBatch(
   difficulty: Difficulty = 'moyen',
   group: PhraseVerbGroup = 'er',
   polarity?: PhrasePolarity,
+  categories?: PhraseCategories,
 ): PhraseBatch | null {
   void difficulty
   const bank = phraseBankGroup(group)
@@ -200,16 +202,15 @@ export function tryGeneratePhraseBatch(
   if (!parsed) return null
 
   const { theme: savedTheme, kind } = parsed
-  const theme = affirmativePhraseTheme(savedTheme)
+  const { theme, frames } = phraseSelection(savedTheme, bank, categories)
   const mode = polarity ?? (isNegativePhraseTheme(savedTheme) ? 'negative' : 'positive')
-  const frames = framesForTheme(theme, bank)
   const n = Math.min(Math.max(1, count), frames.length)
   const polarities = mode === 'mixed'
     ? shuffle(rng, Array.from({ length: n }, (_, index) => n === 1 ? pick(rng, [true, false]) : index < Math.ceil(n / 2)))
     : Array.from({ length: n }, () => mode === 'negative')
   const used = new Set<string>()
   // Draw all sentences first: the exercise layout cannot change the bank or subjects drawn.
-  const phrases = polarities.map(negative => pickPhrase(rng, theme, used, bank, negative))
+  const phrases = polarities.map(negative => pickPhrase(rng, theme, used, frames, negative))
   const items: MathItem[] = phrases.map(phrase => {
     if (kind === 'colorier') return typeColor(phrase)
     if (kind === 'ordre') return typeOrder(rng, phrase)
@@ -217,13 +218,21 @@ export function tryGeneratePhraseBatch(
     return { layout: 'phrase-write', writeLines: 1, answer: phrase.sentence, responseAnswer: phrase.sentence }
   })
   const prompts = PRODUCTION_PROMPTS_BY_THEME[theme]
-  const baseInstruction = kind === 'ecrire' ? pick(rng, [...prompts]) : INSTRUCTIONS[kind]!
+  const excluded = PHRASE_OPTIONAL_CATEGORIES.filter(({ category }) => categories?.[category] === false)
+  const restrictions = excluded.length
+    ? ` N’utilisez pas les catégories suivantes : ${excluded.map(({ label }) => label.toLowerCase()).join(', ')}.${categories?.adverbe === false && mode !== 'positive' ? ' Les mots de négation ne… pas restent autorisés.' : ''}`
+    : ''
+  const baseInstruction = kind === 'ecrire'
+    ? excluded.length
+      ? theme === 'phrase-pronominaux' ? 'Écrivez des phrases avec des verbes pronominaux.' : INSTRUCTIONS.ecrire!
+      : pick(rng, [...prompts])
+    : INSTRUCTIONS[kind]!
   const formInstruction = mode === 'mixed'
     ? 'Mélangez des phrases affirmatives et négatives.'
     : mode === 'negative' ? 'Utilisez la forme négative (ne… pas).' : 'Utilisez la forme affirmative.'
   return {
     items,
-    instruction: kind === 'ecrire' ? `${baseInstruction} ${formInstruction}` : baseInstruction,
+    instruction: kind === 'ecrire' ? `${baseInstruction} ${formInstruction}${restrictions}` : baseInstruction,
     preferredColumns: 1,
     bankQuestionCap: frames.length,
   }
