@@ -3,6 +3,7 @@ import {
   formatPointsLabel,
   isTpmConsignesType,
 } from '@/tpm/test'
+import { isAudioOnlyGrammarCo } from '@/grammaire/exercises/co-bank'
 import { isTcmCfrConsignesType } from '@/tcm-cfr/test'
 import {
   isTcfConsignesType,
@@ -130,6 +131,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
     firstExerciseNo,
     sheetTotalPoints,
   } = props
+  const grammarAudioOnly = isAudioOnlyGrammarCo(activeBlock.exerciseType,activeBlock.grammarCoLevel,activeBlock.grammarCoAudioId)
   const sheetItems = activeSheet?.blocks?.[safeBlockIndex]?.items
   const sheetHasInlineBlank = sheetItems?.some((item) => {
     if (!item.tcf) return false
@@ -149,7 +151,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
     (isTcf && peMotsClesSlot)
   return (
     <>
-              {isPhraseChart ||
+              {grammarAudioOnly || isPhraseChart ||
               isVocabLearn ||
               isGramTheory ||
               isJeuxDomain ||

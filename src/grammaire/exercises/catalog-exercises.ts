@@ -17,6 +17,8 @@ import { CLOSED_QUESTION_KIND_IDS } from './closed-questions'
 import { isQuestionReadingType } from './reading-types'
 import { OPEN_QUESTION_KIND_IDS } from './open-questions'
 import { QUEL_QUESTION_KIND_IDS } from './quel-questions'
+import { GRAMMAR_CO_THEMES, grammarCoTypeId } from './co-themes'
+import { grammarCoSubthemes, hasGrammarCoTheme } from './co-bank'
 
 /** Sous-thèmes dérivés des fiches théorie (PDF / notions hors conjugaison listée). */
 function theoryDerivedSubthemes(): Array<{
@@ -46,7 +48,7 @@ function theoryDerivedSubthemes(): Array<{
   return out
 }
 
-export const ALL_GRAM_SUBTHEMES = [...GRAM_SUBTHEMES, ...theoryDerivedSubthemes()]
+export const ALL_GRAM_SUBTHEMES = [...GRAM_SUBTHEMES, ...theoryDerivedSubthemes(), ...grammarCoSubthemes()]
 
 /** Ordre du menu « Sous-thème » — Se présenter. */
 const SE_PRESENTER_SUBORDER = ['a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'famille'] as const
@@ -94,6 +96,8 @@ export function buildGrammairePracticeTypes(): ExerciseType[] {
                 )
               : GRAM_EXERCISE_KINDS
     for (const kind of kinds) {
+      const imported = GRAMMAR_CO_THEMES.find(theme=>theme.subId===sub.id&&hasGrammarCoTheme(theme.id))
+      if (imported && (kind.id==='co-audio'||kind.id==='fam-co')) continue
       const id = gramExerciseTypeId(sub.id, kind.id)
       if (
         bankSize(id) <= 0 &&
@@ -120,6 +124,17 @@ export function buildGrammairePracticeTypes(): ExerciseType[] {
     }
   }
 
+  for (const theme of GRAMMAR_CO_THEMES) {
+    if (!hasGrammarCoTheme(theme.id)) continue
+    const importedType: ExerciseType = {
+      id:grammarCoTypeId(theme.subId),topic:theme.topic,label:'Compréhension orale',
+      description:`${theme.label} — enregistrements A1, A2 à venir.`,
+      instruction:'Écoutez l’enregistrement.',visual:'texte',preferredColumns:1,
+    }
+    const familyWriting = theme.id==='famille' ? types.findIndex(type=>type.id==='gram-ex-famille-fam-pe') : -1
+    if (familyWriting>=0) types.splice(familyWriting,0,importedType)
+    else types.push(importedType)
+  }
   return types
 }
 

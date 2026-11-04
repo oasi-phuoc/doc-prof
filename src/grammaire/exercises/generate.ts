@@ -16,6 +16,7 @@ import { buildQuestionReading, QUESTION_READING_CAP } from './question-reading'
 import { isQuestionReadingType } from './reading-types'
 import { tryBuildModalCommunication } from './modal-communication'
 import { isGrammaireExerciseType } from './types'
+import { buildImportedGrammarCo } from './co-generate'
 import { buildGrammarCommunication, communicationQuestionCap, isCommunicationKind } from './communication'
 import {
   buildQuiSuisJeExercise,
@@ -52,6 +53,8 @@ export function tryGenerateGrammaireExerciseBlock(
   if (!kind) return null
 
   const rng = createRng(seed)
+  const importedCo = buildImportedGrammarCo(config,rng)
+  if (importedCo) return importedCo
   if (parsed.subId === 'a1' && isQuiSuisJeKind(parsed.kindId) && !config.tcfExercise) {
     if (parsed.kindId === 'ordre') {
       return {

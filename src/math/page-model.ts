@@ -21,6 +21,8 @@ export function blockFromPage(page: PageConfig): ExerciseBlock {
     formulaireLetterGrid: page.formulaireLetterGrid,
     inlineBlankPx: page.inlineBlankPx,
     oralAnswerModes: page.oralAnswerModes,
+    grammarCoLevel: page.grammarCoLevel,
+    grammarCoAudioId: page.grammarCoAudioId,
     tcfFormModes: page.tcfFormModes,
     tcfPageBreakAfter: page.tcfPageBreakAfter,
     continueOnNextPage: page.continueOnNextPage,
@@ -84,7 +86,7 @@ export function pageBlocks(page: PageConfig): ExerciseBlock[] {
 }
 
 export function pageAsConfig(page: PageConfig, block: ExerciseBlock): PageConfig {
-  return { ...page, ...block, phraseCategories: block.phraseCategories, extraBlocks: undefined }
+  return { ...page, ...block, phraseCategories: block.phraseCategories, grammarCoLevel: block.grammarCoLevel, grammarCoAudioId: block.grammarCoAudioId, extraBlocks: undefined }
 }
 
 export function setPageBlock(page: PageConfig, blockIndex: number, patch: Partial<ExerciseBlock>): PageConfig {

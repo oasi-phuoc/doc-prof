@@ -1,5 +1,8 @@
 import { PhrasePolarityControl } from './PhrasePolarityControl'
 import { PhraseCategoryControls } from './PhraseCategoryControls'
+import { GrammarCoLevelControl } from './GrammarCoLevelControl'
+import { grammarCoThemeForType } from '@/grammaire/exercises/co-themes'
+import { grammarCoEntries, hasGrammarCoTheme } from '@/grammaire/exercises/co-bank'
 import { isNegativePhraseTheme, isPhraseThemeId } from '@/francais/phrase-themes'
 import { phraseSelection } from '@/francais/phrase-options'
 import {
@@ -146,6 +149,9 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
     isQuadType,
     quadPool,
   } = p
+  const grammarCoTheme = grammarCoThemeForType(activeBlock.exerciseType)
+  const showGrammarCoLevel = grammarCoTheme && (activeBlock.exerciseType.endsWith('-co-theme') || hasGrammarCoTheme(grammarCoTheme.id))
+  const grammarCoAudios = grammarCoTheme ? grammarCoEntries(grammarCoTheme.id,activeBlock.grammarCoLevel??'A1') : []
   return (
     <>
               {isJeuxDomain || isCalliDomain ? null : (
@@ -431,6 +437,27 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                   gameAlpha={activeBlock.gameAlpha}
                   onChange={(next) => updatePage(next)}
                 />
+              ) : null}
+              {isGrammaireDomain && showGrammarCoLevel ? (
+                <GrammarCoLevelControl
+                  value={activeBlock.grammarCoLevel??'A1'}
+                  a2Available={grammarCoEntries(grammarCoTheme.id,'A2').length>0}
+                  onChange={grammarCoLevel=>updatePage({
+                    ...clearLibreContentFreeze(),grammarCoLevel,grammarCoAudioId:undefined,tcfExercise:undefined,
+                    tcfBankId:undefined,tcfFormModes:undefined,tcfPageBreakAfter:undefined,
+                  })}
+                />
+              ) : null}
+              {isGrammaireDomain && showGrammarCoLevel && grammarCoAudios.length>0 ? (
+                <SelectBox label="Audio" value={activeBlock.grammarCoAudioId??grammarCoAudios[0]!.exercise.id}
+                  onChange={grammarCoAudioId=>updatePage({
+                    ...clearLibreContentFreeze(),grammarCoAudioId,tcfExercise:undefined,
+                    tcfBankId:undefined,tcfFormModes:undefined,tcfPageBreakAfter:undefined,
+                  })}>
+                  {grammarCoAudios.map(entry=>(
+                    <option key={entry.exercise.id} value={entry.exercise.id}>{entry.source.filename.replace('.mp3','').replace('piste','Piste ')}</option>
+                  ))}
+                </SelectBox>
               ) : null}
               {isTcf && tcfCoAudioSlotCount(activeBlock.exerciseType) != null ? (
                 <TcfCoAudioSlotsPicker
