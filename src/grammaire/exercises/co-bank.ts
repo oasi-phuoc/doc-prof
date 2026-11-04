@@ -6,7 +6,8 @@ export type GrammarCoEntry = {
   theme: GrammarCoThemeId
   level: GrammarCoLevel
   audioChecked: boolean
-  status: 'audio-only' | 'complete'
+  status: 'audio-only' | 'transcribed' | 'complete'
+  transcriptionReview?: { status: 'automatic_cross_check_and_text_review'; sourceSha256: string; reading: 'parakeet' | 'whisper_fr' | 'editorial'; humanListening: false }
   source: { uploadId: string; filename: string; sha256: string; start: number; end: number }
   exercise: TcfCoComplet
 }
@@ -20,7 +21,7 @@ export function grammarCoEntries(theme: GrammarCoThemeId, level: GrammarCoLevel,
 export function hasGrammarCoTheme(theme: GrammarCoThemeId): boolean {
   return grammarCoEntries(theme,'A1').length>0||grammarCoEntries(theme,'A2').length>0
 }
-/** Audio-only lots are available immediately; transcripts/questions may be added later. */
+/** Recordings remain selectable while transcripts and questions are completed. */
 export function grammarCoSubthemes() {
   return GRAMMAR_CO_THEMES.filter(theme=>!('existing' in theme)&&hasGrammarCoTheme(theme.id)).map(theme=>({
     id:theme.subId,label:theme.label,topic:theme.topic,theoryTypeIds:[] as string[],

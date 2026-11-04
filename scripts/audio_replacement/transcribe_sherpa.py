@@ -25,6 +25,7 @@ def main() -> int:
     parser.add_argument("--model-dir", type=Path, required=True)
     parser.add_argument("--threads", type=int, default=3)
     parser.add_argument("--force", action="store_true")
+    parser.add_argument("--plain-text", action="store_true", help="Decode text without timestamp tokens; retain source windows and raw outputs")
     args = parser.parse_args()
     sources = list(args.input)
     if args.input_dir:
@@ -56,13 +57,13 @@ def main() -> int:
         "engine": "sherpa-onnx", "version": importlib.metadata.version("sherpa-onnx"),
         "model_files_sha256": model_files, "language": "fr", "task": "transcribe",
         "provider": "cpu", "decoding_method": "greedy_search",
-        "enable_segment_timestamps": True, "enable_token_timestamps": token_timestamps_available,
+        "enable_segment_timestamps": not args.plain_text, "enable_token_timestamps": token_timestamps_available and not args.plain_text,
         "long_audio_segmentation": "Silero VAD utterances merged into <=27s processing windows; max 26s speech, 350ms silence, 200ms padding",
     }
     recognizer = sherpa_onnx.OfflineRecognizer.from_whisper(
         encoder=str(encoder), decoder=str(decoder), tokens=str(tokens),
         language="fr", task="transcribe", num_threads=args.threads, provider="cpu",
-        enable_token_timestamps=token_timestamps_available, enable_segment_timestamps=True,
+        enable_token_timestamps=token_timestamps_available and not args.plain_text, enable_segment_timestamps=not args.plain_text,
     )
     model_load_seconds = time.perf_counter() - model_loading_start
     records = []

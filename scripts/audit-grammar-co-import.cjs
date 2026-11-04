@@ -16,12 +16,14 @@ const {blockFromPage,pageAsConfig}=load(path.join(root,'src/math/page-model.ts')
 const {applyType}=load(path.join(root,'src/components/generator/page-helpers.ts'))
 const {parseFicheRecipe}=load(path.join(root,'src/fiches/recipe.ts'))
 const report=JSON.parse(fs.readFileSync(path.join(root,'docs/grammaire/co-import/sources.json'),'utf8'))
+const transcripts=JSON.parse(fs.readFileSync(path.join(root,'docs/grammaire/co-import/transcriptions.json'),'utf8'))
 let checks=0
 function check(value,message){assert.ok(value,message);checks++}
 check(GRAMMAR_CO_THEMES.length===20,'20 agreed themes')
 check(GRAMMAR_CO_BANK.length===127&&report.sources.length===127,'127 imported recordings')
 check(new Set(GRAMMAR_CO_BANK.map(entry=>entry.exercise.id)).size===127,'distinct stable ids')
 check(new Set(report.sources.map(source=>source.sha256)).size===127,'distinct source hashes')
+check(transcripts.transcriptions.length===127,'127 byte-bound transcript records')
 for(const theme of GRAMMAR_CO_THEMES){
  const typeId=grammarCoTypeId(theme.subId),type=exerciseTypeById[typeId]
  check(type&&type.topic===theme.topic&&type.label==='Compréhension orale','one linked oral type '+theme.id)
@@ -32,13 +34,16 @@ for(const theme of GRAMMAR_CO_THEMES){
  const recipe={domain:'grammaire',topic:theme.topic,exerciseType:typeId,count:6,columns:1,grammarCoLevel:'A1'}
  for(const entry of entries){
   const audio=entry.exercise.support.audio
-  check(entry.status==='audio-only'&&entry.audioChecked,'source status')
-  check(entry.exercise.support.transcription===''&&entry.exercise.questions.length===0,'no invented transcript or questions')
+  check(entry.status==='transcribed'&&entry.audioChecked,'source status')
+  check(entry.exercise.support.transcription.trim().length>0&&entry.exercise.questions.length===0,'transcript present; questions still empty')
   check(audio.startsWith('/lib/audio/grammaire/co/'+theme.id+'/'),'audio in correct theme folder')
   const file=path.join(root,'public',audio)
   check(fs.existsSync(file),'linked audio exists '+audio)
   const hash=crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex')
   check(hash===entry.source.sha256,'source bytes unchanged '+audio)
+  const transcript=transcripts.transcriptions.find(row=>row.exercise_id===entry.exercise.id)
+  check(transcript&&transcript.source_sha256===hash&&transcript.selected_text===entry.exercise.support.transcription,'transcript bound to original bytes '+audio)
+  check(transcript.human_listening_performed===false&&entry.transcriptionReview.humanListening===false,'no false listening attestation')
   const source=report.sources.find(source=>source.exercise_id===entry.exercise.id)
   check(source.audio===audio&&source.sha256===hash&&source.level==='A1','inventory link and hash')
   const config={...recipe,grammarCoAudioId:entry.exercise.id}
@@ -46,6 +51,7 @@ for(const theme of GRAMMAR_CO_THEMES){
   check(page.blocks[0].items.length===1,'audio support without fake questions')
   const support=page.blocks[0].items[0].tcf
   check(support.kind==='support'&&support.exercise.support.audio===audio,'selected recording rendered '+audio)
+  check(support.exercise.support.transcription===transcript.selected_text,'selected transcript rendered with its recording')
   check(page.blocks[0].bankQuestionCap===0,'zero question cap for an audio-only source')
   check(isAudioOnlyGrammarCo(typeId,'A1',entry.exercise.id),'question count hidden until questions are added')
   check(blockFromPage(config).grammarCoAudioId===entry.exercise.id,'selected recording copied in recipe')
@@ -69,4 +75,4 @@ const React=require('react'),{renderToStaticMarkup}=require('react-dom/server')
 const {GrammarCoLevelControl}=load(path.join(root,'src/components/generator/GrammarCoLevelControl.tsx'))
 const html=renderToStaticMarkup(React.createElement(GrammarCoLevelControl,{value:'A1',a2Available:false,onChange:()=>{}}))
 check((html.match(/<button/g)||[]).length===2&&(html.match(/disabled/g)||[]).length===1,'A1/A2 toggle with A2 disabled')
-console.log(`${checks} contrôles réussis ; 127 audios A1 liés à 20 thèmes ; transcriptions et questions laissées vides.`)
+console.log(`${checks} contrôles réussis ; 127 audios A1 et transcriptions liés à 20 thèmes ; originaux conservés ; questions laissées vides.`)
