@@ -1,10 +1,12 @@
 # Reprise des 432 références audio
 
-Les **432 fichiers actuellement servis ont été retranscrits directement**, avec leurs empreintes et leurs mots horodatés. La recherche a couvert les **834 réceptions conservées**, soit **644 fichiers sources aux octets distincts**. Les réceptions qui partagent les mêmes octets restent toutes conservées.
+Les **432 fichiers actuellement servis ont été retranscrits directement**, avec leurs empreintes et leurs mots horodatés. La recherche initiale a couvert les **834 réceptions DELF conservées**, soit **644 fichiers sources aux octets distincts**. Les réceptions qui partagent les mêmes octets restent toutes conservées.
 
 **26 fichiers disposent aussi d’une seconde transcription imposée en français**, dont les 22 sorties contenant des fragments en anglais ou des tokens inconnus et les cas de liaison à contrôler. Les deux reconnaissances sont conservées côte à côte ; une sortie plus courte n’efface pas un passage reconnu par l’autre moteur.
 
-**Quatre références supplémentaires disposent maintenant d’une source identifiée et d’un candidat préparé.** Le total unifié passe de 886 à **890 références sur 1 318**. Pour les **428 autres références**, aucune source n’a été retrouvée dans les lots reçus ; leur fichier actuel dispose désormais d’une transcription, conformément à la demande de repli de l’utilisateur. Cette absence de résultat de recherche ne prouve pas que le passage n’existe dans aucune autre collection.
+**135 des 432 références sont maintenant rapprochées d’une source.** Quatre disposent d’un nouveau candidat préparé ; les 131 autres sont retrouvées dans les 127 originaux A1 de grammaire et leurs découpes restent à préparer. Le registre des sources couvre **1 021 références sur 1 318**, dont **890 avec candidat préparé**. Pour les **297 sans source retrouvée**, le fichier actuel dispose de sa transcription de repli. Un résultat de recherche négatif ne prouve pas l’absence du passage dans toute autre collection.
+
+L’[extension aux 127 originaux](extension-127/README.md) conserve ces preuves séparément ; la banque de grammaire garde son état `audio-only`. Le corpus consulté compte **961 réceptions actives**, soit 834 du corpus DELF et 127 originaux de grammaire, représentant 771 fichiers aux octets distincts.
 
 | Référence actuelle | Source retrouvée | Candidat préparé |
 |---|---|---|

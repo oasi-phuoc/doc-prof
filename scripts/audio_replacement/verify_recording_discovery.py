@@ -195,6 +195,15 @@ def main():
                               source_file=candidate['source_file'], receipt_aliases=candidate['receipt_aliases'],
                               discovery_landmark_votes=candidate['landmark_votes'])
                 result.update(compare_candidate(ref['current_file'], candidate['source_file']))
+                if (candidate['landmark_votes']>=100 and result['status']!='signal_source_confirmed'):
+                    offsets=list(dict.fromkeys(round(a['source_offset_seconds'],4)
+                        for a in result.get('anchors',[]) if a['correlation']>=.8))
+                    for hint in offsets:
+                        aligned=compare_at_offset(ref['current_file'],candidate['source_file'],hint)
+                        if aligned['status']=='signal_source_confirmed':
+                            before=result.copy();result.update(aligned)
+                            result['previous_comparison_preserved']=before
+                            break
                 evidence[key] = result
                 if candidate['landmark_votes']>=100:
                     evidence[key]['seeded_retry_performed']=True

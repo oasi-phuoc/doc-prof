@@ -53,9 +53,44 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--repo',type=Path,default=Path(__file__).resolve().parents[2])
     parser.add_argument('--work',type=Path,required=True)
+    parser.add_argument('--grammar-search',type=Path,help='Optional read-only source-identity search in the later grammar import')
     args=parser.parse_args();repo=args.repo;work=args.work
     out=repo/'docs/tcf/remplacement-audio/rapprochement-432'
     refs=read(work/'remaining-432-baseline.json');assert len(refs)==432
+    extension_file=out/'extension-127/liaisons-a-decouper.json'
+    if args.grammar_search:
+        catalogue=read(args.grammar_search/'source-catalogue.json')['sources']
+        src={r['source_id']:r for r in catalogue};old={r['old_ref']:r for r in refs}
+        extra_evidence=read(args.grammar_search/'waveform-evidence.json')
+        extra_links=[]
+        for proof in extra_evidence['evidence']:
+            if proof['status']!='signal_source_confirmed':continue
+            source=src[proof['source_id']];ref=old[proof['old_ref']]
+            assert source['sha256']==proof['source_sha256'] and ref['sha256']==proof['old_sha256']
+            assert sha(source['source_file'])==source['sha256']
+            assert len([a for a in proof['anchors'] if a['correlation']>=.8])>=3
+            assert proof['offset_spread_seconds']<=.04
+            extra_links.append(dict(old_ref=ref['old_ref'],old_sha256=ref['sha256'],
+                exercise_ids=list(dict.fromkeys(u['exercise_id'] for u in ref['uses'])),
+                source_id=source['source_id'],source_sha256=source['sha256'],
+                source_audio=source['original_receipt']['audio'],original_filename=source['original_filename'],
+                source_upload_id=source['original_receipt']['upload_id'],
+                status='source_identified_requires_segmentation_and_question_review',
+                reference_window_estimate=dict(start_seconds=proof['source_offset_seconds'],
+                    end_seconds=proof['source_offset_seconds']+proof['old_duration_decoded'],
+                    is_validated_cut=False),signal_evidence=proof,
+                listening_performed=False,production_modified=False))
+        assert len(extra_links)==len({r['old_ref'] for r in extra_links})
+        write(extension_file,dict(schema_version=1,source_entries=len(catalogue),links=extra_links))
+        write(extension_file.parent/'sources.json',dict(schema_version=1,status='grammar_originals_consulted_read_only',sources=catalogue))
+        write(extension_file.parent/'preuves-signal.json',extra_evidence,compact=True)
+    extension=read(extension_file) if extension_file.exists() else dict(source_entries=0,links=[])
+    extended={r['old_ref']:r for r in extension['links']}
+    extra_proofs_path=out/'extension-127/preuves-signal.json'
+    extra_attempts=read(extra_proofs_path)['evidence'] if extra_proofs_path.exists() else []
+    source_hashes={s['sha256'] for s in read(work/'fingerprint-source-index.json')['sources']}
+    extension_sources=out/'extension-127/sources.json'
+    if extension_sources.exists():source_hashes.update(s['sha256'] for s in read(extension_sources)['sources'])
     actual={d['source_sha256']:d for p in (work/'current-asr-parakeet').glob('current:*.json')
             if (d:=read(p)).get('status')=='transcribed'}
     assert len(actual)==432,'Finish every direct transcription before publication'
@@ -97,6 +132,9 @@ def main():
                         matched_text=c['matched_text']) for c in best],
                    listening_performed=False)
         if ref['old_ref'] in positives:match['source_identity_evidence']=positives[ref['old_ref']]
+        elif ref['old_ref'] in extended:
+            match.update(status='source_identified_segmentation_pending',source_identity_evidence=extended[ref['old_ref']]['signal_evidence'],
+                         source_audio=extended[ref['old_ref']]['source_audio'])
         name=Path(ref['old_ref']).name
         expected_topics={'les-situations-du-quotidien-3-2.mp3':'Achat de cerises : prix au kilo et quantité',
             'les-situations-du-quotidien-3-3.mp3':'Rendez-vous de médecine du travail',
@@ -165,16 +203,26 @@ def main():
     control_ranks=[next((i+1 for i,c in enumerate(next(x for x in discovery['matches'] if x['old_ref']==control['old_ref'])['candidates'])
                          if c['source_sha256']==baseline_known[control['old_ref']]['source_sha256']),None) for control in controls]
     assert len(control_ranks)==48 and all(rank==1 for rank in control_ranks)
+    all_identified=set(merged)|set(extended)
+    assert not set(extended).intersection(merged)
+    write(repo/'docs/tcf/remplacement-audio/identites-sources-unifiees.json',dict(schema_version=1,
+        identified_references=len(all_identified),prepared_references=len(merged),
+        references=[dict(old_ref=r['old_ref'],source_id=r['source_id'],source_sha256=r['source_sha256'],
+            status='prepared_candidate_requires_listening_and_question_review',candidate_sha256=r['candidate_sha256'])
+            for r in merged.values()]+list(extended.values())))
     summary=dict(initial_unmatched_references=432,direct_transcriptions_completed=len(transcriptions),
         transcription_failures=0,independent_french_asr_checks=len(secondary),new_received_source_links=len(proposals),
         new_constant_offset_source_confirmations=constant,new_internally_edited_source_identifications=len(proposals)-constant,
-        prepared_reference_links_total=len(merged),remaining_without_received_source=1318-len(merged),
-        remaining_with_direct_current_audio_transcription=432-len(proposals),
-        source_receipts_searched=834,distinct_source_files_searched=644,
+        additional_read_only_grammar_source_entries=extension['source_entries'],
+        additional_source_identities=len(extended),new_source_identities_total=len(proposals)+len(extended),
+        prepared_reference_links_total=len(merged),identified_reference_links_total=len(all_identified),
+        identified_references_pending_segmentation=len(extended),remaining_without_received_source=1318-len(all_identified),
+        remaining_with_direct_current_audio_transcription=432-len(proposals)-len(extended),
+        source_receipts_searched=834+extension['source_entries'],distinct_source_files_searched=len(source_hashes),
         known_positive_controls=48,controls_retrieved_at_rank_one=48,
-        candidate_pairs_examined=len(evidence['evidence']),
-        full_waveform_or_first_8khz_anchor_checks=sum(r['status']!='coarse_signal_candidate_rejected' for r in evidence['evidence']),
-        discovery_only_coarse_rejections=sum(r['status']=='coarse_signal_candidate_rejected' for r in evidence['evidence']),
+        candidate_pairs_examined=len(evidence['evidence'])+len(extra_attempts),
+        full_waveform_or_first_8khz_anchor_checks=sum(r['status']!='coarse_signal_candidate_rejected' for r in evidence['evidence']+extra_attempts),
+        discovery_only_coarse_rejections=sum(r['status']=='coarse_signal_candidate_rejected' for r in evidence['evidence']+extra_attempts),
         confirmed_wrong_audio_bindings=len(binding_mismatches),new_lossless_verified_assemblies=1,
         human_listening_performed=False,production_modified=False,bank_transcriptions_modified=False)
     meta=dict(schema_version=1,updated_at=dt.datetime.now(dt.timezone.utc).isoformat(),summary=summary)
@@ -190,15 +238,19 @@ def main():
         coarse_calibration=read(work/'coarse-control-calibration.json'),
         waveform_checks=read(work/'positive-control-waveforms.json')))
     progress_path=repo/'docs/tcf/remplacement-audio/progression-unifiee.json';progress=read(progress_path)
-    progress.update(updated_at=meta['updated_at'],signal_confirmed_old_refs=886+constant,
+    progress.update(updated_at=meta['updated_at'],signal_confirmed_old_refs=886+constant+len(extended),
         old_refs_identified_with_internal_edits=len(proposals)-constant,
-        old_refs_with_identified_source=len(merged),old_refs_with_prepared_candidate=len(merged),
-        old_refs_remaining_unmatched=1318-len(merged),assembled_mp3_candidates=14,
+        old_refs_with_identified_source=len(all_identified),old_refs_with_prepared_candidate=len(merged),
+        old_refs_identified_pending_segmentation=len(extended),
+        old_refs_remaining_unmatched=1318-len(all_identified),assembled_mp3_candidates=14,
         initial_signal_confirmed_refs=672+sum(p['source_batch']=='initial' and p['signal_status']=='signal_source_confirmed' for p in proposals),
         additional_signal_confirmed_refs=451+sum(p['source_batch']=='additional' and p['signal_status']=='signal_source_confirmed' for p in proposals),
         additional_refs_not_in_initial=214+sum(p['source_batch']=='additional' for p in proposals),
         current_audio_refs_directly_retranscribed=432,current_audio_retranscription_failures=0,
-        current_audio_refs_retranscribed_without_received_source=432-len(proposals),reconciliation_432_report='rapprochement-432/etat.json')
+        current_audio_refs_retranscribed_without_received_source=432-len(proposals)-len(extended),
+        shared_grammar_sources_consulted_read_only=extension['source_entries'],
+        shared_grammar_signal_confirmed_refs=len(extended),
+        reconciliation_432_report='rapprochement-432/etat.json')
     write(progress_path,progress)
     print(json.dumps(summary,ensure_ascii=False))
 
