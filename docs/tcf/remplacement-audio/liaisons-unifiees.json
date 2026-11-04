@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "purpose": "review-only; not an executable production migration",
-  "prepared_references": 886,
+  "prepared_references": 890,
   "listening_performed": false,
   "production_modified": false,
   "proposals": [
@@ -36618,6 +36618,354 @@
       "source_end": 112.39401360544218,
       "source_batch": "initial",
       "candidate_work_file": "staged-boundaries-work/run-20261102T120753-1363670d88/09035196-007-bd75eac6f83e-r2-d1/candidate.mp3"
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/ecole/47-école-chercher-livre-de-mathématiques.mp3",
+      "dialogue_id": "47-école-chercher-livre-de-mathématiques",
+      "exercise_ids": [
+        "tcf-a1-tpbb-co-2"
+      ],
+      "source_id": "piste_a1:009:ab20da57a3f8",
+      "source_sha256": "ab20da57a3f86169f9425f82b56315bb2831c20495ccc855265a7c5ec52c6c3a",
+      "signal_status": "signal_source_confirmed",
+      "source_identity_method": "fingerprint_seed_and_constant_offset_waveform_anchors",
+      "proposed_ref": "/lib/audio/tcf/co/ecole/47-école-chercher-livre-de-mathématiques.mp3",
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "production_modified": false,
+      "candidate_cut_id": "piste_a1-009-ab20da57a3f8-d3",
+      "candidate_work_file": "staged-boundaries-work/run-20261102T112340-f5f01dbb26/piste_a1-009-ab20da57a3f8-d3/candidate.mp3",
+      "candidate_sha256": "8ff4e5254973906ae11043932e3fef8bae962f694da742cbe401abc19a52dc02",
+      "proposed_name": "Qu'est-ce que tu fais, Sami?",
+      "proposed_tags": [
+        "a1",
+        "piste_a1",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Qu'est-ce que tu fais, Sami? Je cherche mon livre de mathématiques. Il n'est pas dans ton sac? Non. Je ne le trouve pas. Il doit être chez moi.",
+      "source_start": 108.0719954648526,
+      "source_end": 120.67201814058957,
+      "source_batch": "initial",
+      "review_flags": [],
+      "question_answer_review": [],
+      "assignment_method": "Dialogue du livre de mathématiques. Les meilleurs pics globaux venaient de deux lectures différentes ; un décalage cohérent de 107,933375 secondes confirme les trois ancres à plus de 0,95 sans abaisser les seuils. Le premier dialogue complet préparé correspond au contenu retranscrit.",
+      "reconciliation_batch": "20261104_remaining_432",
+      "source_signal_evidence": {
+        "old_ref": "/lib/audio/tcf/co/ecole/47-école-chercher-livre-de-mathématiques.mp3",
+        "old_sha256": "85d88af1001a7fc92d8442a7c0549c783e8e3d2be63058b23f58b96bbf76a3c9",
+        "source_id": "piste_a1:009:ab20da57a3f8",
+        "source_sha256": "ab20da57a3f86169f9425f82b56315bb2831c20495ccc855265a7c5ec52c6c3a",
+        "receipt_aliases": [
+          "piste_a1:009:ab20da57a3f8"
+        ],
+        "discovery_landmark_votes": 467,
+        "seeded_retry_performed": true,
+        "offset_disambiguation_version": 2,
+        "status": "signal_source_confirmed",
+        "method": "fingerprint seed disambiguates repeated readings; separated 8kHz waveform anchors, unchanged correlation and offset thresholds",
+        "comparison_version": 3,
+        "sample_rate": 8000,
+        "anchors": [
+          {
+            "old_anchor_start": 1.226375,
+            "anchor_seconds": 3.0,
+            "source_anchor_start": 109.15975,
+            "correlation": 0.961947,
+            "source_offset_seconds": 107.933375
+          },
+          {
+            "old_anchor_start": 5.316,
+            "anchor_seconds": 3.0,
+            "source_anchor_start": 113.249375,
+            "correlation": 0.97437,
+            "source_offset_seconds": 107.933375
+          },
+          {
+            "old_anchor_start": 9.4055,
+            "anchor_seconds": 3.0,
+            "source_anchor_start": 117.338875,
+            "correlation": 0.9514,
+            "source_offset_seconds": 107.933375
+          }
+        ],
+        "fingerprint_offset_hint_seconds": 107.9334,
+        "local_search_radius_seconds": 1,
+        "offset_spread_seconds": 0.0,
+        "old_duration_decoded": 13.632,
+        "source_duration_decoded": 285.15275,
+        "source_offset_seconds": 107.933375,
+        "listening_performed": false,
+        "clean_boundaries_validated": false
+      },
+      "source_receipt_aliases": [
+        "piste_a1:009:ab20da57a3f8"
+      ],
+      "lexical_score": 0.967741935483871,
+      "lexical_score_basis": "direct_current_asr_vs_explicitly_selected_prepared_cut"
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/ecole/ecole-4.mp3",
+      "dialogue_id": "ecole-4",
+      "exercise_ids": [
+        "tcf-ss-a2-s7-co-2"
+      ],
+      "source_id": "9782090351958:038:90bcfa2850dd",
+      "source_sha256": "90bcfa2850ddf6a4722e93ec323c55fd1c1e3bcb4281b9a07a9bcadab64eb1e9",
+      "signal_status": "signal_source_shared_with_internal_edits",
+      "source_identity_method": "monotonic_waveform_anchors_in_internally_edited_recording",
+      "proposed_ref": "/lib/audio/tcf/co/ecole/ecole-4.mp3",
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "production_modified": false,
+      "candidate_cut_id": "9782090351958-038-90bcfa2850dd-r2-joined",
+      "candidate_work_file": "refinement-work/assemblies-reconciliation-20261104/school-announcements/joined.mp3",
+      "candidate_sha256": "524c00aa771addd49f2675161129bca4a4b9bb3345051d206695526be7d02b16",
+      "proposed_name": "Six annonces scolaires sans numérotation",
+      "proposed_tags": [
+        "long"
+      ],
+      "proposed_transcription": "Le bâtiment C de l'école est fermé du 14 au 26 janvier pour travaux. Vos nouvelles salles de classe pendant cette période sont indiquées sur le tableau d'information à l'entrée. L'Association des parents d'élèves organise le concours \"Dessine ton école idéale\". Pour participer, vous devez envoyer votre dessin avant le 12 mars, à l'adresse parans@lissé.fr Chers élèves, lundi 23 avril, nous avons la chance d'accueillir l'auteur Bernard Werber, dans l'auditorium du collège. Il donnera une conférence sur son métier à l'occasion de la journée internationale du livre. Ceci est une simulation d'alerte aux feux. Nous vous demandons de sortir du bâtiment dans lequel. Merci de laisser vos affaires dans la classe et de ne pas courir. Nous allons tous nous retrouver dans la cour. Votre professeur d'italien, Monsieur Damiani, est absent cette semaine. Il est remplacé à partir de mercredi par Monsieur Bioncardi. L'examen d'italien a bien lieu vendredi. Il est surveillé par Mme Blanchard. Une vente de livre est organisée mardi 22 mai par les élèves de 4e B dans la salle B-116. L'argent de la vente est pour l'association Sourire d'enfants qui aide les enfants malades à l'hôpital.",
+      "source_start": 24.153990929705216,
+      "source_end": 126.50201814058957,
+      "source_batch": "initial",
+      "review_flags": [
+        "email_and_teacher_names_require_listening",
+        "bank_date_3_april_differs_from_direct_asr_23_april",
+        "bank_room_P16_differs_from_direct_asr_B116"
+      ],
+      "question_answer_review": [],
+      "assignment_method": "Six annonces scolaires réunies dans leur ordre d’origine ; numérotation supprimée. Identité de source démontrée par trois ancres fortes à positions croissantes avec décalages différents, puis comparaison des six contenus. PCM de l’assemblage exactement égal à la concaténation des FLAC préparés ; MP3 décodé intégralement.",
+      "reconciliation_batch": "20261104_remaining_432",
+      "source_signal_evidence": {
+        "old_ref": "/lib/audio/tcf/co/ecole/ecole-4.mp3",
+        "old_sha256": "fbb13ee3af79175f9865fb3ca5c74b519c07e3e844a56f931677f9047f917d6f",
+        "source_id": "9782090351958:038:90bcfa2850dd",
+        "source_sha256": "90bcfa2850ddf6a4722e93ec323c55fd1c1e3bcb4281b9a07a9bcadab64eb1e9",
+        "receipt_aliases": [
+          "9782090351958:038:90bcfa2850dd",
+          "additional-20261102:mdf-a2-abc-junior-direct:38:90bcfa2850dd:9fc8633f"
+        ],
+        "discovery_landmark_votes": 163,
+        "status": "signal_source_shared_with_internal_edits",
+        "method": "three separated non-silent 8kHz PCM waveform anchors, normalized FFT correlation",
+        "comparison_version": 2,
+        "sample_rate": 8000,
+        "anchors": [
+          {
+            "old_anchor_start": 16.79975,
+            "anchor_seconds": 3.0,
+            "source_anchor_start": 41.87975,
+            "correlation": 0.997188,
+            "source_offset_seconds": 25.08
+          },
+          {
+            "old_anchor_start": 44.249375,
+            "anchor_seconds": 3.0,
+            "source_anchor_start": 75.209375,
+            "correlation": 0.867023,
+            "source_offset_seconds": 30.96
+          },
+          {
+            "old_anchor_start": 71.699,
+            "anchor_seconds": 3.0,
+            "source_anchor_start": 105.787,
+            "correlation": 0.984409,
+            "source_offset_seconds": 34.088
+          }
+        ],
+        "offset_spread_seconds": 9.008000000000003,
+        "old_duration_decoded": 91.49875,
+        "source_duration_decoded": 128.36575,
+        "source_offset_seconds": null,
+        "listening_performed": false,
+        "clean_boundaries_validated": false,
+        "constant_offset_confirmed": false,
+        "replacement_compatibility_validated": false,
+        "requires_explicit_segment_or_assembly_assignment": true
+      },
+      "source_receipt_aliases": [
+        "9782090351958:038:90bcfa2850dd",
+        "additional-20261102:mdf-a2-abc-junior-direct:38:90bcfa2850dd:9fc8633f"
+      ],
+      "lexical_score": 0.9461358313817331,
+      "lexical_score_basis": "direct_current_asr_vs_explicitly_selected_prepared_cut"
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/une-bonne-cuisine-se.mp3",
+      "dialogue_id": "une-bonne-cuisine-se",
+      "exercise_ids": [
+        "tcf-ss-b1-s13-co-1"
+      ],
+      "source_id": "additional-20261102:mdf-b1-abc-direct:27:66cb51385784:6925c93c",
+      "source_sha256": "66cb5138578418948724584a77e8e6cb0a84fe38a6baab17e5fc2ee39e0a593d",
+      "signal_status": "signal_source_confirmed",
+      "source_identity_method": "fingerprint_seed_and_constant_offset_waveform_anchors",
+      "proposed_ref": "/lib/audio/tcf/co/vie-quotidienne/une-bonne-cuisine-se.mp3",
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "production_modified": false,
+      "candidate_cut_id": "additional-20261102-mdf-b1-abc-direct-27-66cb51385784-6925c93c-d1",
+      "candidate_work_file": "staged-boundaries-work/run-20261103T014737-bc6ef57f2d/additional-20261102-mdf-b1-abc-direct-27-66cb51385784-6925c93c-d1/candidate.mp3",
+      "candidate_sha256": "2b5e75cffb14679005ef221a8ff7b2ca953afdf3b53d5f39a36fd3a0dfa6efa0",
+      "proposed_name": "Une bonne cuisine se fait avec de bons produits.",
+      "proposed_tags": [
+        "b1",
+        "mdf-b1-abc-direct",
+        "source-native",
+        "a-verifier",
+        "long"
+      ],
+      "proposed_transcription": "Une bonne cuisine se fait avec de bons produits. Mais comment se retrouver dans tous les logos qui s'affichent sur les emballages alimentaires? Que garantissent-ils vraiment? Au rayon alimentaire, les normes officielles en vigueur, en France et en Europe, permettent de se fier à des produits répondant à des critères de qualité précis. It's ain't that OC française, appellation d'origine contrôl, désigne un produit that to the étapes of the fabrication, the production, the transformation and the laboration are réalisées along un savoir-faire reconnu in une zone géographique that you don't caracteristics. It's the cased champagne ou du roquefort. L'appellation d'origine protégée is l'équivalent European de l'AOC. It protèges the nomination in to the Union European. Come later, the label rouge. Identifiable as logo Vermillon, it designs produits that, by their condition of production or fabrication, have a niveau de quality superior to other produits similar. It couronne, for example, the volailles, the charcuterie, the fumes and the fromage. But it is the sign of a terroir. Autre sigle communautaire, l'IGP, indication géographique protégée, concernent des aliments aux caractéristiques liées à un lieu déterminé, where they sont au moins produits ou transformés. Contrairement à l'AOC, l'IGP n'implique pas que toutes les étapes de production soient réalisées dans une même zone géographique. Les produits portant le logo européen STG, Speciality Traditionelle Garantie, certifient le respect d'une recette and d'une méthode de fabrication traditionnelle, like la mozzarella italienne ou le jambon serrano espanhol. Quant au logo bio european and logo AB, Alimentation Bique, it garantis that the product is issues d'eau production respectueux of the environment and duel de l'animal. Évidemment, tous ces labels impliquent parfois pour les consommateurs des tarifs plus élevés. Ce n'est pas nouveau, la qualité a un prix.",
+      "source_start": 2.2159863945578233,
+      "source_end": 125.02401360544218,
+      "source_batch": "additional",
+      "review_flags": [
+        "current_clip_lacks_opening_of_full_prepared_document",
+        "native_source_asr_has_mixed_language_requires_editorial_transcription_review"
+      ],
+      "question_answer_review": [],
+      "assignment_method": "Identité de source retrouvée indépendamment de l’ancienne transcription par empreinte spectrale puis trois ancres 8 kHz concordantes. Le passage préparé est complet ; les questions restent à relire sur ce support.",
+      "reconciliation_batch": "20261104_remaining_432",
+      "source_signal_evidence": {
+        "old_ref": "/lib/audio/tcf/co/vie-quotidienne/une-bonne-cuisine-se.mp3",
+        "old_sha256": "2e1d23003f2bd06d2b1446f3b0476a18714b4f000f26c19d58d43899d5e91c43",
+        "source_id": "additional-20261102:mdf-b1-abc-direct:27:66cb51385784:6925c93c",
+        "source_sha256": "66cb5138578418948724584a77e8e6cb0a84fe38a6baab17e5fc2ee39e0a593d",
+        "receipt_aliases": [
+          "additional-20261102:mdf-b1-abc-direct:27:66cb51385784:6925c93c"
+        ],
+        "discovery_landmark_votes": 485,
+        "seeded_retry_performed": true,
+        "status": "signal_source_confirmed",
+        "method": "fingerprint seed disambiguates repeated readings; separated 8kHz waveform anchors, unchanged correlation and offset thresholds",
+        "comparison_version": 3,
+        "sample_rate": 8000,
+        "anchors": [
+          {
+            "old_anchor_start": 21.31175,
+            "anchor_seconds": 3.0,
+            "source_anchor_start": 33.71175,
+            "correlation": 0.999225,
+            "source_offset_seconds": 12.4
+          },
+          {
+            "old_anchor_start": 55.529375,
+            "anchor_seconds": 3.0,
+            "source_anchor_start": 67.929375,
+            "correlation": 0.999349,
+            "source_offset_seconds": 12.4
+          },
+          {
+            "old_anchor_start": 89.747,
+            "anchor_seconds": 3.0,
+            "source_anchor_start": 102.147,
+            "correlation": 0.999355,
+            "source_offset_seconds": 12.4
+          }
+        ],
+        "fingerprint_offset_hint_seconds": 12.544,
+        "local_search_radius_seconds": 1,
+        "offset_spread_seconds": 0.0,
+        "old_duration_decoded": 114.058875,
+        "source_duration_decoded": 126.458875,
+        "source_offset_seconds": 12.4,
+        "listening_performed": false,
+        "clean_boundaries_validated": false
+      },
+      "source_receipt_aliases": [
+        "additional-20261102:mdf-b1-abc-direct:27:66cb51385784:6925c93c"
+      ],
+      "lexical_score": 0.6632124352331608,
+      "lexical_score_basis": "direct_current_asr_vs_explicitly_selected_prepared_cut"
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/magasins/tiens-jacqueline-comment-vas-1.mp3",
+      "dialogue_id": "tiens-jacqueline-comment-vas-1",
+      "exercise_ids": [
+        "tcf-ss-b1-s15-co-1"
+      ],
+      "source_id": "09035196:004:9d0be3cae519",
+      "source_sha256": "9d0be3cae519f50301db44ed79c35642033f2ef13a99254cbd00e4af7a21a72f",
+      "signal_status": "signal_source_confirmed",
+      "source_identity_method": "fingerprint_seed_and_constant_offset_waveform_anchors",
+      "proposed_ref": "/lib/audio/tcf/co/magasins/tiens-jacqueline-comment-vas-1.mp3",
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "production_modified": false,
+      "candidate_cut_id": "09035196-004-9d0be3cae519-d1",
+      "candidate_work_file": "staged-boundaries-work/run-20261102T111131-f5c58a0862/09035196-004-9d0be3cae519-d1/candidate.mp3",
+      "candidate_sha256": "43f8dec44fef32e8a18315d50212375da0e1e1a27c2aec15235475deaeb5fdd0",
+      "proposed_name": "Laura, j'ai une nouvelle à t'annoncer.",
+      "proposed_tags": [
+        "b1",
+        "09035196",
+        "source-native",
+        "a-verifier",
+        "long"
+      ],
+      "proposed_transcription": "Laura, j'ai une nouvelle à t'annoncer. Raconte Ophélie qu'est-ce qu'il y a. Eh bien, je pars au Mexique avec ma famille. Wouah la chance! Tu pars en vacances? Non, je vais y vivre. L'entreprise de mon père l'a envoyée là-bas. C'est une super opportunité pour lui. My mère nous rejoindra in two months, car never quitting to suit my. My pair penes rester three answers and two answers after my bacon sans doute in France. You say I've been at the university at Paris. It will be apprentices to a lycée mexican. I'm in a lycée français, in fact. I'm passing my baccalauréat là-bas. Trop francés and the programme is the same qu'en France. But I've been watching a camarades of class mexican, certainly, and I'm devoir the language. Bon, tu as l'air contente de partir. The Mexique. But I'm tristing. Toi aussi, tu me manques. But you have la chance. Why are you at the bout du monde.",
+      "source_start": 2.2,
+      "source_end": 80.32,
+      "source_batch": "initial",
+      "review_flags": [],
+      "question_answer_review": [],
+      "assignment_method": "Identité de source retrouvée indépendamment de l’ancienne transcription par empreinte spectrale puis trois ancres 8 kHz concordantes. Le passage préparé est complet ; les questions restent à relire sur ce support.",
+      "reconciliation_batch": "20261104_remaining_432",
+      "source_signal_evidence": {
+        "old_ref": "/lib/audio/tcf/co/magasins/tiens-jacqueline-comment-vas-1.mp3",
+        "old_sha256": "7727d8562abdd73b159ad82a3b7ca6cf04d12c4d87fcbb6176ba5bd6e77faffb",
+        "source_id": "09035196:004:9d0be3cae519",
+        "source_sha256": "9d0be3cae519f50301db44ed79c35642033f2ef13a99254cbd00e4af7a21a72f",
+        "receipt_aliases": [
+          "09035196:004:9d0be3cae519",
+          "additional-20261102:mdf-b1-abc-junior-direct:4:9d0be3cae519:325f8e5c"
+        ],
+        "discovery_landmark_votes": 541,
+        "seeded_retry_performed": true,
+        "status": "signal_source_confirmed",
+        "method": "fingerprint seed disambiguates repeated readings; separated 8kHz waveform anchors, unchanged correlation and offset thresholds",
+        "comparison_version": 3,
+        "sample_rate": 8000,
+        "anchors": [
+          {
+            "old_anchor_start": 14.3735,
+            "anchor_seconds": 3.0,
+            "source_anchor_start": 16.8735,
+            "correlation": 0.999643,
+            "source_offset_seconds": 2.5
+          },
+          {
+            "old_anchor_start": 38.183875,
+            "anchor_seconds": 3.0,
+            "source_anchor_start": 40.683875,
+            "correlation": 0.999282,
+            "source_offset_seconds": 2.5
+          },
+          {
+            "old_anchor_start": 61.994125,
+            "anchor_seconds": 3.0,
+            "source_anchor_start": 64.494125,
+            "correlation": 0.99958,
+            "source_offset_seconds": 2.5
+          }
+        ],
+        "fingerprint_offset_hint_seconds": 2.432,
+        "local_search_radius_seconds": 1,
+        "offset_spread_seconds": 0.0,
+        "old_duration_decoded": 79.36775,
+        "source_duration_decoded": 81.86775,
+        "source_offset_seconds": 2.5,
+        "listening_performed": false,
+        "clean_boundaries_validated": false
+      },
+      "source_receipt_aliases": [
+        "09035196:004:9d0be3cae519",
+        "additional-20261102:mdf-b1-abc-junior-direct:4:9d0be3cae519:325f8e5c"
+      ],
+      "lexical_score": 0.5258215962441315,
+      "lexical_score_basis": "direct_current_asr_vs_explicitly_selected_prepared_cut"
     }
   ]
 }

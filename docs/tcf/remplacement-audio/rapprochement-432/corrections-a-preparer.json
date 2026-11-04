@@ -1,0 +1,156 @@
+{
+  "schema_version": 1,
+  "confirmed_binding_mismatches": [
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-3-2.mp3",
+      "exercise_ids": [
+        "tcf-a1-sem1-co-2"
+      ],
+      "status": "wrong_audio_question_binding_corroborated_by_two_independent_asr_runs",
+      "expected_topic_from_bank": "Achat de cerises : prix au kilo et quantité",
+      "actual_topic": "restaurant d’entreprise",
+      "bank_transcript": "Bonjour monsieur.\nC'est combien le kilo de se risent?\n6,40.\n6,40.\nJ'en veux 500 grammes.\nTrès bien.\nVoilà.\nBonjour monsieur.\nC'est combien le kilo de se risent?\n6,40.\n6,40.\nJ'en veux 500 grammes.\nTrès bien.\nVoilà.",
+      "direct_asr_quote": "Le midi, vous pouvez manger au restaurant de l'entreprise. Ah oui? Et le restaurant ouvre à quelle heure? À 11h30. 11h30. D'accord. A tout à l'heure?",
+      "independent_french_asr_quote": "Le midi, vous pouvez manger au restaurant de l'entreprise. Ah oui ? Et le restaurant ouvre à quelle heure ? À 11h30. 11h30. D'accord. À tout à l'heure ?",
+      "next_action": "Rétablir le passage sonore correspondant aux questions ; aucune réponse du thème absent ne doit être inventée.",
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-3-3.mp3",
+      "exercise_ids": [
+        "tcf-a1-sem1-co-2"
+      ],
+      "status": "wrong_audio_question_binding_corroborated_by_two_independent_asr_runs",
+      "expected_topic_from_bank": "Rendez-vous de médecine du travail",
+      "actual_topic": "achat de cerises",
+      "bank_transcript": "Pour la visite médicale, prenez rendez-vous avec le médecin du travail.\nC'est le docteur chéré.\nSon téléphone est le 01, 48, 24, 32.\nMerci.\nJe téléphone tout de suite.\nPour la visite médicale, prenez rendez-vous avec le médecin du travail.\nC'est le docteur chéré.\nSon téléphone est le 01, 48, 24, 32.\n01, 48, 24, 32.\nMerci.\nJe téléphone tout de suite.",
+      "direct_asr_quote": "Dialogue numéro 2. Bonjour monsieur. C'est combien le kilo de cerise? 6h40. 6,40 €? J'en veux 500 grammes. Très bien. Voilà.",
+      "independent_french_asr_quote": "- Bonjour Monsieur, c'est combien le kilo de cerise ? - 6,40 €. - 6,40 € ? J'en veux 500 g. - Très bien. Voilà.",
+      "next_action": "Rétablir le passage sonore correspondant aux questions ; aucune réponse du thème absent ne doit être inventée.",
+      "human_listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-3-4.mp3",
+      "exercise_ids": [
+        "tcf-a1-sem1-co-2"
+      ],
+      "status": "wrong_audio_question_binding_corroborated_by_two_independent_asr_runs",
+      "expected_topic_from_bank": "Essayage d’une robe en taille 38",
+      "actual_topic": "achat de cerises",
+      "bank_transcript": "Bonjour.\nEst-ce que je pourrais essayer cette robe s'il vous plaît?\nOui, bien sûr.\nQuelle est votre taille?\n38.\n38.\nVoilà.\nBonjour.\nEst-ce que je pourrais essayer cette robe s'il vous plaît?\nOui, bien sûr.\nQuelle est votre taille?\n38.\n38.\nVoilà.",
+      "direct_asr_quote": "Bonjour monsieur. C'est combien le kilo de cerise? 6 euros quarante. 6 euros quarante? J'en veux 500 grammes. Très bien.",
+      "independent_french_asr_quote": "Bonjour Monsieur, c'est combien le kilo de cerise ? 6,40 € 6,40 € ? J'en veux 500 g. Très bien.",
+      "next_action": "Rétablir le passage sonore correspondant aux questions ; aucune réponse du thème absent ne doit être inventée.",
+      "human_listening_performed": false
+    }
+  ],
+  "question_revision_drafts": [
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-voudrais-tickets-1.mp3",
+      "exercise_ids": [
+        "tcf-ss-a1-s44-co-4"
+      ],
+      "status": "draft_requires_instruction_cut_and_bank_review",
+      "current_audio_sha256": "a0ba162dc6a273796be6f77a8eb1c3c055eb8e5ad27366e2b39e57e9db23508b",
+      "reason": "La banque interroge seulement Page 99 et Exercice 4 ; le contenu utile est une demande de tickets de métro.",
+      "source_quotes": [
+        "Page 99 Exercice 4 Bonjour monsieur. Je voudrais des tickets de métro, s'il vous plaît. J'ai beaucoup de trajets à faire à Bordeaux aujourd'hui. Alors prenez un passe pour la journée, ou un carnet de 10 tickets.",
+        "page 99 exercice 4 Bonjour monsieur, je voudrais des tickets de métro s'il vous plaît. J'ai beaucoup de trajet à faire à bordeaux aujourd'hui. Alors prenez un passe pour la journée ou incarnez de dits tickets."
+      ],
+      "proposed_questions": [
+        {
+          "enonce": "Que souhaite acheter la personne ?",
+          "type_reponse": "qcm_texte",
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Des tickets de métro",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Des billets de train",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "texte": "Des billets d’avion",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "enonce": "Dans quelle ville la personne doit-elle se déplacer ?",
+          "type_reponse": "qcm_texte",
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "À Bordeaux",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "À Lille",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "texte": "À Lyon",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "enonce": "Pourquoi le vendeur conseille-t-il un passe ou un carnet ?",
+          "type_reponse": "qcm_texte",
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Parce que la personne a beaucoup de trajets à faire",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Parce que la personne voyage avec un groupe",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "texte": "Parce que la personne a perdu ses billets",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "enonce": "Pour quelle durée le passe proposé est-il valable ?",
+          "type_reponse": "qcm_texte",
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Pour une journée",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Pour une semaine",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "texte": "Pour un mois",
+              "correct": false
+            }
+          ]
+        }
+      ],
+      "bank_modified": false,
+      "listening_performed": false
+    }
+  ],
+  "bank_modified": false,
+  "listening_performed": false
+}

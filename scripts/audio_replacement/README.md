@@ -2,6 +2,21 @@
 
 Les scripts de ce dossier effectuent la transcription, le repérage et le rapprochement des sources. Ils ne remplacent pas la bibliothèque servie et ne déclarent jamais une écoute réelle sur la base de l’ASR ou du signal.
 
+## Références sans correspondance textuelle
+
+La reprise du 4 novembre est conservée dans `/workspace/work/tcf-audio-reconciliation-20261104` et publiée dans [le rapport des 432 références](../../docs/tcf/remplacement-audio/rapprochement-432/README.md). Les 432 fichiers actuels y sont retranscrits directement. Les références qui n’ont pas de source retrouvée gardent cette transcription de repli ; elles ne reçoivent pas de source supposée.
+
+`fingerprint_sources.py` cherche les enregistrements sans dépendre du nom du fichier ou de la transcription. Il partage seulement le calcul des réceptions aux mêmes octets, en conservant leurs identifiants. `verify_recording_discovery.py` vérifie les propositions avec les ancres à 8 kHz ; un indice spectral ou le filtre de recherche à 1 kHz ne confirme jamais une source. Les lectures répétées sont désambiguïsées en essayant un décalage commun, toujours avec au moins trois ancres fortes et un écart de 40 ms au plus lorsque la durée le permet. Une source retrouvée dans un montage reste identifiée séparément, avec obligation d’affecter explicitement les passages ou l’assemblage.
+
+```sh
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python scripts/audio_replacement/fingerprint_sources.py --catalogue /workspace/work/tcf-audio-replacement/source-catalogue.json --catalogue /workspace/work/tcf-audio-additional-20261102-work/source-catalogue.json --refs-json /workspace/work/tcf-audio-reconciliation-20261104/all-discovery-480-input.json --work /workspace/work/tcf-audio-reconciliation-20261104 --keep 24 --output-name recording-discovery.json
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python scripts/audio_replacement/verify_recording_discovery.py --discovery /workspace/work/tcf-audio-reconciliation-20261104/recording-discovery.json --refs-json /workspace/work/tcf-audio-reconciliation-20261104/remaining-432-baseline.json --output /workspace/work/tcf-audio-reconciliation-20261104/waveform-evidence.json --top 3
+python scripts/audio_replacement/build_reconciliation_report.py --work /workspace/work/tcf-audio-reconciliation-20261104
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python -m unittest discover -s scripts -p test_audio_fingerprints.py -v
+```
+
+Le générateur de rapport exige les transcriptions terminées, les empreintes courantes et les preuves indépendantes des nouvelles liaisons. Il ajoute seulement les candidats préparés explicitement sélectionnés à `liaisons-unifiees.json`. Il conserve les quatre candidats de ce lot et les preuves sans toucher aux banques ou aux fichiers audio servis. La seconde reconnaissance en français reste un brouillon indépendant, pas une attestation d’écoute.
+
 Le moteur utilisé est Sherpa-ONNX 2.0.1, Parakeet TDT v3 multilingue INT8, avec prise en charge du français. L’archive officielle est disponible dans [la distribution Sherpa-ONNX](https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8.tar.bz2) ; son SHA-256 vérifié est `5793d0fd397c5778d2cf2126994d58e9d56b1be7c04d13c7a15bb1b4eafb16bf`. Les dépendances du traitement sont dans `asr-requirements.lock.txt` ; `ffmpeg` et `ffprobe` sont également nécessaires. Aucun audio n’est transmis à un service externe.
 
 Les neuf pistes bloquées ont ensuite été transcrites et réalignées en français avec `whisper_alignment.py`. Cet outil expose les têtes d’attention déjà présentes dans le modèle Whisper small INT8, sans modifier ses poids, et utilise le DTW natif Sherpa sur une grille de 20 ms. Les graphes enrichis restent en mémoire ; les modèles originaux sont conservés. Les dix têtes sélectionnées sont celles publiées par OpenAI pour Whisper small. Le paquet `onnx` est nécessaire pour cette opération. Les résultats restent des estimations automatiques, avec provenance et empreintes, sans attestation d’écoute.

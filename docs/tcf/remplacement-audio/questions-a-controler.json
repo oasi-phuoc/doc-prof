@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-03T02:25:28.110795+00:00",
+  "generated_at": "2026-11-04T16:19:56.906513+00:00",
   "purpose": "mechanical structure/coverage audit only; semantic correctness requires source review",
   "summary": {
-    "prepared_audio_refs": 886,
-    "existing_question_entries": 4026,
-    "distinct_exercises": 537,
+    "prepared_audio_refs": 890,
+    "existing_question_entries": 4059,
+    "distinct_exercises": 541,
     "structural_flags": {},
     "audio_refs_below_requested_question_minimum": 21,
-    "questions_with_lexical_answer_review_flags": 719,
+    "questions_with_lexical_answer_review_flags": 730,
     "semantic_correctness_certified": false,
     "listening_performed": false,
     "production_modified": false
@@ -6564,6 +6564,75 @@
         {
           "id": "c",
           "texte": "35"
+        }
+      ],
+      "structural_review_flags": [],
+      "answer_correctness_certified": false
+    },
+    "tcf-a1-tpbb-co-2:0": {
+      "exercise_id": "tcf-a1-tpbb-co-2",
+      "question_index_0based": 0,
+      "prompt": "Quel objet Sammy cherche-t-il ?",
+      "type_reponse": "qcm_texte",
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Son livre de mathématiques",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "texte": "Ses clés"
+        },
+        {
+          "id": "c",
+          "texte": "Son téléphone"
+        }
+      ],
+      "structural_review_flags": [],
+      "answer_correctness_certified": false
+    },
+    "tcf-a1-tpbb-co-2:1": {
+      "exercise_id": "tcf-a1-tpbb-co-2",
+      "question_index_0based": 1,
+      "prompt": "Dans quel endroit Sammy n’a-t-il pas trouvé son livre ?",
+      "type_reponse": "qcm_texte",
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Dans son sac",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "texte": "Dans sa chambre"
+        },
+        {
+          "id": "c",
+          "texte": "Dans son casier"
+        }
+      ],
+      "structural_review_flags": [],
+      "answer_correctness_certified": false
+    },
+    "tcf-a1-tpbb-co-2:2": {
+      "exercise_id": "tcf-a1-tpbb-co-2",
+      "question_index_0based": 2,
+      "prompt": "Où Sammy pense-t-il avoir laissé son livre ?",
+      "type_reponse": "qcm_texte",
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Chez lui",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "texte": "Au restaurant"
+        },
+        {
+          "id": "c",
+          "texte": "Dans le bus"
         }
       ],
       "structural_review_flags": [],
@@ -48562,6 +48631,236 @@
         {
           "id": "c",
           "texte": "Une carte de transport"
+        }
+      ],
+      "structural_review_flags": [],
+      "answer_correctness_certified": false
+    },
+    "tcf-ss-a2-s7-co-2:0": {
+      "exercise_id": "tcf-ss-a2-s7-co-2",
+      "question_index_0based": 0,
+      "prompt": "Quel bâtiment de l’école est fermé pour travaux ?",
+      "type_reponse": "qcm_texte",
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Le bâtiment C",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "texte": "Le bâtiment A"
+        },
+        {
+          "id": "c",
+          "texte": "Le bâtiment B"
+        }
+      ],
+      "structural_review_flags": [],
+      "answer_correctness_certified": false
+    },
+    "tcf-ss-a2-s7-co-2:1": {
+      "exercise_id": "tcf-ss-a2-s7-co-2",
+      "question_index_0based": 1,
+      "prompt": "Pendant quelle période ce bâtiment est-il fermé ?",
+      "type_reponse": "qcm_texte",
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Du 14 au 26 janvier",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "texte": "Du 4 au 16 janvier"
+        },
+        {
+          "id": "c",
+          "texte": "Du 14 au 26 février"
+        }
+      ],
+      "structural_review_flags": [],
+      "answer_correctness_certified": false
+    },
+    "tcf-ss-a2-s7-co-2:2": {
+      "exercise_id": "tcf-ss-a2-s7-co-2",
+      "question_index_0based": 2,
+      "prompt": "Où peut-on trouver les nouvelles salles de classe ?",
+      "type_reponse": "qcm_texte",
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Sur le tableau d’informations à l’entrée",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "texte": "Dans le cahier de musique"
+        },
+        {
+          "id": "c",
+          "texte": "Sur la porte du gymnase"
+        }
+      ],
+      "structural_review_flags": [],
+      "answer_correctness_certified": false
+    },
+    "tcf-ss-a2-s7-co-2:3": {
+      "exercise_id": "tcf-ss-a2-s7-co-2",
+      "question_index_0based": 3,
+      "prompt": "Quel dessin faut-il envoyer pour le concours ?",
+      "type_reponse": "qcm_texte",
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Un dessin de son école idéale",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "texte": "Un dessin de son animal préféré"
+        },
+        {
+          "id": "c",
+          "texte": "Un dessin de ses vacances"
+        }
+      ],
+      "structural_review_flags": [],
+      "answer_correctness_certified": false
+    },
+    "tcf-ss-a2-s7-co-2:4": {
+      "exercise_id": "tcf-ss-a2-s7-co-2",
+      "question_index_0based": 4,
+      "prompt": "Quel écrivain vient au collège ?",
+      "type_reponse": "qcm_texte",
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Bernard Werber",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "texte": "Marc Galland"
+        },
+        {
+          "id": "c",
+          "texte": "David Dupré"
+        }
+      ],
+      "structural_review_flags": [],
+      "answer_correctness_certified": false
+    },
+    "tcf-ss-a2-s7-co-2:5": {
+      "exercise_id": "tcf-ss-a2-s7-co-2",
+      "question_index_0based": 5,
+      "prompt": "Où la conférence de l’écrivain a-t-elle lieu ?",
+      "type_reponse": "qcm_texte",
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Dans l’auditorium",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "texte": "Dans la cantine"
+        },
+        {
+          "id": "c",
+          "texte": "Dans le gymnase"
+        }
+      ],
+      "structural_review_flags": [],
+      "answer_correctness_certified": false
+    },
+    "tcf-ss-a2-s7-co-2:6": {
+      "exercise_id": "tcf-ss-a2-s7-co-2",
+      "question_index_0based": 6,
+      "prompt": "Où faut-il se retrouver pendant la simulation d’incendie ?",
+      "type_reponse": "qcm_texte",
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Dans la cour",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "texte": "Dans la bibliothèque"
+        },
+        {
+          "id": "c",
+          "texte": "Dans la salle de sport"
+        }
+      ],
+      "structural_review_flags": [],
+      "answer_correctness_certified": false
+    },
+    "tcf-ss-a2-s7-co-2:7": {
+      "exercise_id": "tcf-ss-a2-s7-co-2",
+      "question_index_0based": 7,
+      "prompt": "Quelle matière monsieur Damien enseigne-t-il ?",
+      "type_reponse": "qcm_texte",
+      "choices": [
+        {
+          "id": "a",
+          "texte": "L’italien",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "texte": "L’espagnol"
+        },
+        {
+          "id": "c",
+          "texte": "L’anglais"
+        }
+      ],
+      "structural_review_flags": [],
+      "answer_correctness_certified": false
+    },
+    "tcf-ss-a2-s7-co-2:8": {
+      "exercise_id": "tcf-ss-a2-s7-co-2",
+      "question_index_0based": 8,
+      "prompt": "Quel jour l’examen d’italien a-t-il lieu ?",
+      "type_reponse": "qcm_texte",
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Vendredi",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "texte": "Mercredi"
+        },
+        {
+          "id": "c",
+          "texte": "Lundi"
+        }
+      ],
+      "structural_review_flags": [],
+      "answer_correctness_certified": false
+    },
+    "tcf-ss-a2-s7-co-2:9": {
+      "exercise_id": "tcf-ss-a2-s7-co-2",
+      "question_index_0based": 9,
+      "prompt": "À qui l’argent de la vente de livres est-il destiné ?",
+      "type_reponse": "qcm_texte",
+      "choices": [
+        {
+          "id": "a",
+          "texte": "À une association qui aide les enfants malades",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "texte": "À une équipe de football"
+        },
+        {
+          "id": "c",
+          "texte": "À un musée"
         }
       ],
       "structural_review_flags": [],
@@ -91002,6 +91301,236 @@
       "structural_review_flags": [],
       "answer_correctness_certified": false
     },
+    "tcf-ss-b1-s13-co-1:0": {
+      "exercise_id": "tcf-ss-b1-s13-co-1",
+      "question_index_0based": 0,
+      "prompt": "Que garantit l'AOC ?",
+      "type_reponse": "qcm_texte",
+      "choices": [
+        {
+          "id": "a",
+          "texte": "L'origine et la qualité dans une zone géographique",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "texte": "Un prix bas"
+        },
+        {
+          "id": "c",
+          "texte": "Un produit importé"
+        }
+      ],
+      "structural_review_flags": [],
+      "answer_correctness_certified": false
+    },
+    "tcf-ss-b1-s13-co-1:1": {
+      "exercise_id": "tcf-ss-b1-s13-co-1",
+      "question_index_0based": 1,
+      "prompt": "Que signifie AOP ?",
+      "type_reponse": "qcm_texte",
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Appellation d'origine protégée",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "texte": "Agriculture officielle paysanne"
+        },
+        {
+          "id": "c",
+          "texte": "Association des producteurs"
+        }
+      ],
+      "structural_review_flags": [],
+      "answer_correctness_certified": false
+    },
+    "tcf-ss-b1-s13-co-1:2": {
+      "exercise_id": "tcf-ss-b1-s13-co-1",
+      "question_index_0based": 2,
+      "prompt": "Que certifie le logo STG selon le document ?",
+      "type_reponse": "qcm_texte",
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Le respect d'une recette et d'une méthode traditionnelles",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "texte": "Une production exclusivement biologique"
+        },
+        {
+          "id": "c",
+          "texte": "Un prix inférieur à tous les concurrents"
+        }
+      ],
+      "structural_review_flags": [],
+      "answer_correctness_certified": false
+    },
+    "tcf-ss-b1-s13-co-1:3": {
+      "exercise_id": "tcf-ss-b1-s13-co-1",
+      "question_index_0based": 3,
+      "prompt": "Que concerne l'IGP ?",
+      "type_reponse": "qcm_texte",
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Des aliments liés au lieu d'origine",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "texte": "Uniquement le vin"
+        },
+        {
+          "id": "c",
+          "texte": "Les produits surgelés"
+        }
+      ],
+      "structural_review_flags": [],
+      "answer_correctness_certified": false
+    },
+    "tcf-ss-b1-s13-co-1:4": {
+      "exercise_id": "tcf-ss-b1-s13-co-1",
+      "question_index_0based": 4,
+      "prompt": "Que garantissent les logos bio européen et AB ?",
+      "type_reponse": "qcm_texte",
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Une production respectueuse de l'environnement",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "texte": "Un prix réduit"
+        },
+        {
+          "id": "c",
+          "texte": "Un emballage recyclable seul"
+        }
+      ],
+      "structural_review_flags": [],
+      "answer_correctness_certified": false
+    },
+    "tcf-ss-b1-s13-co-1:5": {
+      "exercise_id": "tcf-ss-b1-s13-co-1",
+      "question_index_0based": 5,
+      "prompt": "Quelle différence entre l'IGP et l'AOC le document souligne-t-il ?",
+      "type_reponse": "qcm_texte",
+      "choices": [
+        {
+          "id": "a",
+          "texte": "L'IGP n'exige pas toutes les étapes dans une même zone",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "texte": "L'IGP interdit toute transformation du produit"
+        },
+        {
+          "id": "c",
+          "texte": "L'IGP ne concerne que les boissons"
+        }
+      ],
+      "structural_review_flags": [],
+      "answer_correctness_certified": false
+    },
+    "tcf-ss-b1-s13-co-1:6": {
+      "exercise_id": "tcf-ss-b1-s13-co-1",
+      "question_index_0based": 6,
+      "prompt": "Quel est le sujet principal du document ?",
+      "type_reponse": "qcm_texte",
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Les garanties des logos sur les aliments",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "texte": "Les horaires des supermarchés"
+        },
+        {
+          "id": "c",
+          "texte": "Les recettes des restaurants"
+        }
+      ],
+      "structural_review_flags": [],
+      "answer_correctness_certified": false
+    },
+    "tcf-ss-b1-s13-co-1:7": {
+      "exercise_id": "tcf-ss-b1-s13-co-1",
+      "question_index_0based": 7,
+      "prompt": "Que signifie le sigle IGP ?",
+      "type_reponse": "qcm_texte",
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Indication géographique protégée",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "texte": "Institut général des producteurs"
+        },
+        {
+          "id": "c",
+          "texte": "Importation garantie de produits"
+        }
+      ],
+      "structural_review_flags": [],
+      "answer_correctness_certified": false
+    },
+    "tcf-ss-b1-s13-co-1:8": {
+      "exercise_id": "tcf-ss-b1-s13-co-1",
+      "question_index_0based": 8,
+      "prompt": "Quelle spécialité italienne illustre la garantie traditionnelle ?",
+      "type_reponse": "qcm_texte",
+      "choices": [
+        {
+          "id": "a",
+          "texte": "La mozzarella",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "texte": "Le tiramisu"
+        },
+        {
+          "id": "c",
+          "texte": "Le risotto"
+        }
+      ],
+      "structural_review_flags": [],
+      "answer_correctness_certified": false
+    },
+    "tcf-ss-b1-s13-co-1:9": {
+      "exercise_id": "tcf-ss-b1-s13-co-1",
+      "question_index_0based": 9,
+      "prompt": "Quelle conséquence ces garanties peuvent-elles avoir pour le consommateur ?",
+      "type_reponse": "qcm_texte",
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Des prix plus élevés",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "texte": "Une gratuité systématique"
+        },
+        {
+          "id": "c",
+          "texte": "Une interdiction d'achat"
+        }
+      ],
+      "structural_review_flags": [],
+      "answer_correctness_certified": false
+    },
     "tcf-ss-b1-s13-co-2:0": {
       "exercise_id": "tcf-ss-b1-s13-co-2",
       "question_index_0based": 0,
@@ -92607,6 +93136,236 @@
         {
           "id": "c",
           "texte": "Uniquement à des touristes étrangers"
+        }
+      ],
+      "structural_review_flags": [],
+      "answer_correctness_certified": false
+    },
+    "tcf-ss-b1-s15-co-1:0": {
+      "exercise_id": "tcf-ss-b1-s15-co-1",
+      "question_index_0based": 0,
+      "prompt": "Quelle nouvelle Ophélie annonce-t-elle à son amie ?",
+      "type_reponse": "qcm_texte",
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Elle part habiter au Mexique avec sa famille",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "texte": "Elle part en vacances au Mexique avec sa famille"
+        },
+        {
+          "id": "c",
+          "texte": "Elle part étudier seule au Mexique"
+        }
+      ],
+      "structural_review_flags": [],
+      "answer_correctness_certified": false
+    },
+    "tcf-ss-b1-s15-co-1:1": {
+      "exercise_id": "tcf-ss-b1-s15-co-1",
+      "question_index_0based": 1,
+      "prompt": "Pourquoi Ophélie devra-t-elle parler espagnol ?",
+      "type_reponse": "qcm_texte",
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Pour communiquer avec les élèves mexicains",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "texte": "Pour suivre les cours au lycée"
+        },
+        {
+          "id": "c",
+          "texte": "Pour améliorer ses notes en français"
+        }
+      ],
+      "structural_review_flags": [],
+      "answer_correctness_certified": false
+    },
+    "tcf-ss-b1-s15-co-1:2": {
+      "exercise_id": "tcf-ss-b1-s15-co-1",
+      "question_index_0based": 2,
+      "prompt": "Pourquoi est-ce qu'elle part ?",
+      "type_reponse": "qcm_texte",
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Son père est envoyé par son entreprise",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "texte": "Son père change de travail en France"
+        },
+        {
+          "id": "c",
+          "texte": "Son père veut qu'elle étudie au Mexique"
+        }
+      ],
+      "structural_review_flags": [],
+      "answer_correctness_certified": false
+    },
+    "tcf-ss-b1-s15-co-1:3": {
+      "exercise_id": "tcf-ss-b1-s15-co-1",
+      "question_index_0based": 3,
+      "prompt": "Comment Ophélie se sent-elle face au départ ?",
+      "type_reponse": "qcm_texte",
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Contente de découvrir un nouveau pays et triste de quitter son amie",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "texte": "Très contente, elle voudrait partir tout de suite"
+        },
+        {
+          "id": "c",
+          "texte": "Triste, elle n'a pas envie de partir"
+        }
+      ],
+      "structural_review_flags": [],
+      "answer_correctness_certified": false
+    },
+    "tcf-ss-b1-s15-co-1:4": {
+      "exercise_id": "tcf-ss-b1-s15-co-1",
+      "question_index_0based": 4,
+      "prompt": "Quelle perspective positive Laura souligne-t-elle pour son amie ?",
+      "type_reponse": "qcm_texte",
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Faire de nouvelles expériences et de nouvelles rencontres",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "texte": "Devenir immédiatement indépendante de sa famille"
+        },
+        {
+          "id": "c",
+          "texte": "Ne plus avoir besoin d'étudier"
+        }
+      ],
+      "structural_review_flags": [],
+      "answer_correctness_certified": false
+    },
+    "tcf-ss-b1-s15-co-1:5": {
+      "exercise_id": "tcf-ss-b1-s15-co-1",
+      "question_index_0based": 5,
+      "prompt": "Pourquoi la mère ne part-elle pas en même temps que les autres ?",
+      "type_reponse": "qcm_texte",
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Elle ne peut pas quitter tout de suite son travail",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "texte": "Elle part en voyage"
+        },
+        {
+          "id": "c",
+          "texte": "Elle attend les vacances scolaires"
+        }
+      ],
+      "structural_review_flags": [],
+      "answer_correctness_certified": false
+    },
+    "tcf-ss-b1-s15-co-1:6": {
+      "exercise_id": "tcf-ss-b1-s15-co-1",
+      "question_index_0based": 6,
+      "prompt": "Dans combien de temps la mère rejoindra-t-elle le reste de la famille ?",
+      "type_reponse": "qcm_texte",
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Deux mois",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "texte": "Deux semaines"
+        },
+        {
+          "id": "c",
+          "texte": "Deux ans"
+        }
+      ],
+      "structural_review_flags": [],
+      "answer_correctness_certified": false
+    },
+    "tcf-ss-b1-s15-co-1:7": {
+      "exercise_id": "tcf-ss-b1-s15-co-1",
+      "question_index_0based": 7,
+      "prompt": "Combien de temps le père pense-t-il rester au Mexique ?",
+      "type_reponse": "qcm_texte",
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Trois ans",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "texte": "Trois mois"
+        },
+        {
+          "id": "c",
+          "texte": "Dix ans"
+        }
+      ],
+      "structural_review_flags": [],
+      "answer_correctness_certified": false
+    },
+    "tcf-ss-b1-s15-co-1:8": {
+      "exercise_id": "tcf-ss-b1-s15-co-1",
+      "question_index_0based": 8,
+      "prompt": "Dans quel type de lycée Ophélie sera-t-elle inscrite ?",
+      "type_reponse": "qcm_texte",
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Un lycée français",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "texte": "Un lycée professionnel allemand"
+        },
+        {
+          "id": "c",
+          "texte": "Un internat britannique"
+        }
+      ],
+      "structural_review_flags": [],
+      "answer_correctness_certified": false
+    },
+    "tcf-ss-b1-s15-co-1:9": {
+      "exercise_id": "tcf-ss-b1-s15-co-1",
+      "question_index_0based": 9,
+      "prompt": "Dans quelle ville Ophélie souhaite-t-elle aller à l'université ?",
+      "type_reponse": "qcm_texte",
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Paris",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "texte": "Mexico"
+        },
+        {
+          "id": "c",
+          "texte": "Madrid"
         }
       ],
       "structural_review_flags": [],
@@ -131534,6 +132293,305 @@
           ],
           "unretrieved_asr_tokens": [
             "xixe"
+          ],
+          "status": "review_only_asr_absence_does_not_prove_wrong_answer"
+        }
+      ],
+      "transcription_status": "automatic_draft_requires_listening",
+      "listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/ecole/47-école-chercher-livre-de-mathématiques.mp3",
+      "source_id": "piste_a1:009:ab20da57a3f8",
+      "source_batch": "initial",
+      "candidate_id": "piste_a1-009-ab20da57a3f8-d3",
+      "candidate_sha256": "8ff4e5254973906ae11043932e3fef8bae962f694da742cbe401abc19a52dc02",
+      "duration_seconds": 12.643265,
+      "duration_category_provisional": "court",
+      "minimum_questions_requested": 2,
+      "distinct_question_prompts": 3,
+      "question_bank_below_requested_minimum": false,
+      "question_keys": [
+        "tcf-a1-tpbb-co-2:0",
+        "tcf-a1-tpbb-co-2:1",
+        "tcf-a1-tpbb-co-2:2"
+      ],
+      "uses": [
+        {
+          "exercise_id": "tcf-a1-tpbb-co-2",
+          "audio_index_1based": 1,
+          "audio_scope": "single_audio",
+          "questions": [
+            "tcf-a1-tpbb-co-2:0",
+            "tcf-a1-tpbb-co-2:1",
+            "tcf-a1-tpbb-co-2:2"
+          ]
+        }
+      ],
+      "answer_fact_review_flags": [],
+      "transcription_status": "automatic_draft_requires_listening",
+      "listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/ecole/ecole-4.mp3",
+      "source_id": "9782090351958:038:90bcfa2850dd",
+      "source_batch": "initial",
+      "candidate_id": "9782090351958-038-90bcfa2850dd-r2-joined",
+      "candidate_sha256": "524c00aa771addd49f2675161129bca4a4b9bb3345051d206695526be7d02b16",
+      "duration_seconds": 76.199184,
+      "duration_category_provisional": "long",
+      "minimum_questions_requested": 8,
+      "distinct_question_prompts": 10,
+      "question_bank_below_requested_minimum": false,
+      "question_keys": [
+        "tcf-ss-a2-s7-co-2:0",
+        "tcf-ss-a2-s7-co-2:1",
+        "tcf-ss-a2-s7-co-2:2",
+        "tcf-ss-a2-s7-co-2:3",
+        "tcf-ss-a2-s7-co-2:4",
+        "tcf-ss-a2-s7-co-2:5",
+        "tcf-ss-a2-s7-co-2:6",
+        "tcf-ss-a2-s7-co-2:7",
+        "tcf-ss-a2-s7-co-2:8",
+        "tcf-ss-a2-s7-co-2:9"
+      ],
+      "uses": [
+        {
+          "exercise_id": "tcf-ss-a2-s7-co-2",
+          "audio_index_1based": 1,
+          "audio_scope": "single_audio",
+          "questions": [
+            "tcf-ss-a2-s7-co-2:0",
+            "tcf-ss-a2-s7-co-2:1",
+            "tcf-ss-a2-s7-co-2:2",
+            "tcf-ss-a2-s7-co-2:3",
+            "tcf-ss-a2-s7-co-2:4",
+            "tcf-ss-a2-s7-co-2:5",
+            "tcf-ss-a2-s7-co-2:6",
+            "tcf-ss-a2-s7-co-2:7",
+            "tcf-ss-a2-s7-co-2:8",
+            "tcf-ss-a2-s7-co-2:9"
+          ]
+        }
+      ],
+      "answer_fact_review_flags": [],
+      "transcription_status": "automatic_draft_requires_listening",
+      "listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/une-bonne-cuisine-se.mp3",
+      "source_id": "additional-20261102:mdf-b1-abc-direct:27:66cb51385784:6925c93c",
+      "source_batch": "additional",
+      "candidate_id": "additional-20261102-mdf-b1-abc-direct-27-66cb51385784-6925c93c-d1",
+      "candidate_sha256": "2b5e75cffb14679005ef221a8ff7b2ca953afdf3b53d5f39a36fd3a0dfa6efa0",
+      "duration_seconds": 122.853878,
+      "duration_category_provisional": "long",
+      "minimum_questions_requested": 8,
+      "distinct_question_prompts": 10,
+      "question_bank_below_requested_minimum": false,
+      "question_keys": [
+        "tcf-ss-b1-s13-co-1:0",
+        "tcf-ss-b1-s13-co-1:1",
+        "tcf-ss-b1-s13-co-1:2",
+        "tcf-ss-b1-s13-co-1:3",
+        "tcf-ss-b1-s13-co-1:4",
+        "tcf-ss-b1-s13-co-1:5",
+        "tcf-ss-b1-s13-co-1:6",
+        "tcf-ss-b1-s13-co-1:7",
+        "tcf-ss-b1-s13-co-1:8",
+        "tcf-ss-b1-s13-co-1:9"
+      ],
+      "uses": [
+        {
+          "exercise_id": "tcf-ss-b1-s13-co-1",
+          "audio_index_1based": 1,
+          "audio_scope": "single_audio",
+          "questions": [
+            "tcf-ss-b1-s13-co-1:0",
+            "tcf-ss-b1-s13-co-1:1",
+            "tcf-ss-b1-s13-co-1:2",
+            "tcf-ss-b1-s13-co-1:3",
+            "tcf-ss-b1-s13-co-1:4",
+            "tcf-ss-b1-s13-co-1:5",
+            "tcf-ss-b1-s13-co-1:6",
+            "tcf-ss-b1-s13-co-1:7",
+            "tcf-ss-b1-s13-co-1:8",
+            "tcf-ss-b1-s13-co-1:9"
+          ]
+        }
+      ],
+      "answer_fact_review_flags": [
+        {
+          "question_key": "tcf-ss-b1-s13-co-1:3",
+          "current_correct_answers": [
+            "Des aliments liés au lieu d'origine"
+          ],
+          "unretrieved_asr_tokens": [
+            "lies"
+          ],
+          "status": "review_only_asr_absence_does_not_prove_wrong_answer"
+        },
+        {
+          "question_key": "tcf-ss-b1-s13-co-1:4",
+          "current_correct_answers": [
+            "Une production respectueuse de l'environnement"
+          ],
+          "unretrieved_asr_tokens": [
+            "environnement",
+            "respectueuse"
+          ],
+          "status": "review_only_asr_absence_does_not_prove_wrong_answer"
+        },
+        {
+          "question_key": "tcf-ss-b1-s13-co-1:5",
+          "current_correct_answers": [
+            "L'IGP n'exige pas toutes les étapes dans une même zone"
+          ],
+          "unretrieved_asr_tokens": [
+            "exige"
+          ],
+          "status": "review_only_asr_absence_does_not_prove_wrong_answer"
+        }
+      ],
+      "transcription_status": "automatic_draft_requires_listening",
+      "listening_performed": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/magasins/tiens-jacqueline-comment-vas-1.mp3",
+      "source_id": "09035196:004:9d0be3cae519",
+      "source_batch": "initial",
+      "candidate_id": "09035196-004-9d0be3cae519-d1",
+      "candidate_sha256": "43f8dec44fef32e8a18315d50212375da0e1e1a27c2aec15235475deaeb5fdd0",
+      "duration_seconds": 78.158367,
+      "duration_category_provisional": "long",
+      "minimum_questions_requested": 8,
+      "distinct_question_prompts": 10,
+      "question_bank_below_requested_minimum": false,
+      "question_keys": [
+        "tcf-ss-b1-s15-co-1:0",
+        "tcf-ss-b1-s15-co-1:1",
+        "tcf-ss-b1-s15-co-1:2",
+        "tcf-ss-b1-s15-co-1:3",
+        "tcf-ss-b1-s15-co-1:4",
+        "tcf-ss-b1-s15-co-1:5",
+        "tcf-ss-b1-s15-co-1:6",
+        "tcf-ss-b1-s15-co-1:7",
+        "tcf-ss-b1-s15-co-1:8",
+        "tcf-ss-b1-s15-co-1:9"
+      ],
+      "uses": [
+        {
+          "exercise_id": "tcf-ss-b1-s15-co-1",
+          "audio_index_1based": 1,
+          "audio_scope": "single_audio",
+          "questions": [
+            "tcf-ss-b1-s15-co-1:0",
+            "tcf-ss-b1-s15-co-1:1",
+            "tcf-ss-b1-s15-co-1:2",
+            "tcf-ss-b1-s15-co-1:3",
+            "tcf-ss-b1-s15-co-1:4",
+            "tcf-ss-b1-s15-co-1:5",
+            "tcf-ss-b1-s15-co-1:6",
+            "tcf-ss-b1-s15-co-1:7",
+            "tcf-ss-b1-s15-co-1:8",
+            "tcf-ss-b1-s15-co-1:9"
+          ]
+        }
+      ],
+      "answer_fact_review_flags": [
+        {
+          "question_key": "tcf-ss-b1-s15-co-1:0",
+          "current_correct_answers": [
+            "Elle part habiter au Mexique avec sa famille"
+          ],
+          "unretrieved_asr_tokens": [
+            "habiter",
+            "part"
+          ],
+          "status": "review_only_asr_absence_does_not_prove_wrong_answer"
+        },
+        {
+          "question_key": "tcf-ss-b1-s15-co-1:1",
+          "current_correct_answers": [
+            "Pour communiquer avec les élèves mexicains"
+          ],
+          "unretrieved_asr_tokens": [
+            "communiquer",
+            "eleve",
+            "mexicain"
+          ],
+          "status": "review_only_asr_absence_does_not_prove_wrong_answer"
+        },
+        {
+          "question_key": "tcf-ss-b1-s15-co-1:2",
+          "current_correct_answers": [
+            "Son père est envoyé par son entreprise"
+          ],
+          "unretrieved_asr_tokens": [
+            "envoye"
+          ],
+          "status": "review_only_asr_absence_does_not_prove_wrong_answer"
+        },
+        {
+          "question_key": "tcf-ss-b1-s15-co-1:3",
+          "current_correct_answers": [
+            "Contente de découvrir un nouveau pays et triste de quitter son amie"
+          ],
+          "unretrieved_asr_tokens": [
+            "amie",
+            "decouvrir",
+            "nouveau",
+            "pays",
+            "quitter",
+            "triste"
+          ],
+          "status": "review_only_asr_absence_does_not_prove_wrong_answer"
+        },
+        {
+          "question_key": "tcf-ss-b1-s15-co-1:4",
+          "current_correct_answers": [
+            "Faire de nouvelles expériences et de nouvelles rencontres"
+          ],
+          "unretrieved_asr_tokens": [
+            "experience",
+            "faire",
+            "rencontre"
+          ],
+          "status": "review_only_asr_absence_does_not_prove_wrong_answer"
+        },
+        {
+          "question_key": "tcf-ss-b1-s15-co-1:5",
+          "current_correct_answers": [
+            "Elle ne peut pas quitter tout de suite son travail"
+          ],
+          "unretrieved_asr_tokens": [
+            "peut",
+            "quitter",
+            "suite",
+            "tout",
+            "travail"
+          ],
+          "status": "review_only_asr_absence_does_not_prove_wrong_answer"
+        },
+        {
+          "question_key": "tcf-ss-b1-s15-co-1:6",
+          "current_correct_answers": [
+            "Deux mois"
+          ],
+          "unretrieved_asr_tokens": [
+            "2",
+            "mois"
+          ],
+          "status": "review_only_asr_absence_does_not_prove_wrong_answer"
+        },
+        {
+          "question_key": "tcf-ss-b1-s15-co-1:7",
+          "current_correct_answers": [
+            "Trois ans"
+          ],
+          "unretrieved_asr_tokens": [
+            "3",
+            "ans"
           ],
           "status": "review_only_asr_absence_does_not_prove_wrong_answer"
         }
