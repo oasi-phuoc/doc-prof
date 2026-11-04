@@ -21060,6 +21060,706 @@
       "bytes": 86916,
       "domain": "co",
       "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-anniversaire-dessine",
+      "label": "Un anniversaire",
+      "path": "/lib/images/tcf/qcm-audit/co306-anniversaire-dessine.webp",
+      "prompt": "REDESSINER la PREMIÈRE scène dans le style des DEUX DERNIÈRES références. Les dernières images sont des références de dessin uniquement : ne pas copier leurs acteurs, poses ou objets. Conserver les personnages fictifs, leurs visages différents, vêtements, poses, nombre exact, contexte et accessoires de la PREMIÈRE scène. Réduire la microtexture photographique des visages et mains : peau en nuances PEINTES douces, yeux et contours fins clairement DESSINÉS, petites traces de pinceau, plis de vêtements peints, comme les personnages du club photo. Pas de gros contour noir, cartoon plat, photo ou rendu 3D. Garder un modelé semi-réaliste naturel. Paysage EXACT 4:3, 1448 pixels de large et 1086 de haut. Mains anatomiques, aucun bras ou doigt supplémentaire. Conserver uniquement les inscriptions de la première scène si elle en contient et leur orthographe. Aucune date, aucun montant, jour ou mois. Dans la scène de mariage, l’alliance est passée à l’annulaire de la mariée, sans ajouter de mains. Ne pas ajouter de personnage.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "references": [
+        {
+          "exercise": "delf-a1-2022-co-86",
+          "question": 2,
+          "choice": "a",
+          "label": "Un anniversaire",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        },
+        {
+          "exercise": "tcf-ss-a2-s10-co-1",
+          "question": 15,
+          "choice": "b",
+          "label": "Un anniversaire",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        },
+        {
+          "exercise": "delf-a2-2021-co-ex4-29",
+          "question": 1,
+          "choice": "b",
+          "label": "Un anniversaire",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "referenced_image_paths": [
+        "/workspace/generated_images/exec-dba40784-b4a5-4b1b-a611-0369b4753f51.png",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "previous_source_png": "/workspace/generated_images/exec-dba40784-b4a5-4b1b-a611-0369b4753f51.png",
+      "revision_reason": "Peau et visages trop photographiques dans le brouillon ; reprise avec les personnages dessinés des références validées 48a753d8 avant publication.",
+      "source_png": "/workspace/generated_images/exec-6881a210-1fdf-48c0-993b-82127709d24f.png",
+      "status": "visually_reviewed",
+      "review_note": "Anniversaire explicite : personne en fauteuil soufflant une bougie sans chiffre sur un gâteau, cadeaux et deux proches ; visages et mains repris en peinture, pas de texture photographique. Contrôle du concept entier et du paysage natif exact 4:3, sans date ni montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp",
+          "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+        ],
+        "review_note": "Comparaison aux références 48a753d8 réellement vues : modelé doux, contours discrets, ombres légères et matériaux peints. Les scènes sont comparées à la fête et au club photo ; les recompositions reprennent les objets disponibles. Anniversaire explicite : personne en fauteuil soufflant une bougie sans chiffre sur un gâteau, cadeaux et deux proches ; visages et mains repris en peinture, pas de texture photographique."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "69d588da575b93e0555e055b93969cafe25e93c22e222075418b2241cd45dc49",
+      "sha256": "a12bec799deebc4950fbe72189a81dbb57537735c35a0e8322c8cc143fa03faa",
+      "bytes": 248322,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-mariage-dessine",
+      "label": "Un mariage",
+      "path": "/lib/images/tcf/qcm-audit/co306-mariage-dessine.webp",
+      "prompt": "REDESSINER la PREMIÈRE scène dans le style des DEUX DERNIÈRES références. Les dernières images sont des références de dessin uniquement : ne pas copier leurs acteurs, poses ou objets. Conserver les personnages fictifs, leurs visages différents, vêtements, poses, nombre exact, contexte et accessoires de la PREMIÈRE scène. Réduire la microtexture photographique des visages et mains : peau en nuances PEINTES douces, yeux et contours fins clairement DESSINÉS, petites traces de pinceau, plis de vêtements peints, comme les personnages du club photo. Pas de gros contour noir, cartoon plat, photo ou rendu 3D. Garder un modelé semi-réaliste naturel. Paysage EXACT 4:3, 1448 pixels de large et 1086 de haut. Mains anatomiques, aucun bras ou doigt supplémentaire. Conserver uniquement les inscriptions de la première scène si elle en contient et leur orthographe. Aucune date, aucun montant, jour ou mois. Dans la scène de mariage, l’alliance est passée à l’annulaire de la mariée, sans ajouter de mains. Ne pas ajouter de personnage.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "references": [
+        {
+          "exercise": "delf-a1-2022-co-86",
+          "question": 2,
+          "choice": "b",
+          "label": "Un mariage",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        },
+        {
+          "exercise": "tcf-ss-a2-s10-co-1",
+          "question": 15,
+          "choice": "a",
+          "label": "Un mariage",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        },
+        {
+          "exercise": "delf-a2-2021-co-ex4-29",
+          "question": 1,
+          "choice": "a",
+          "label": "Un mariage",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "referenced_image_paths": [
+        "/workspace/generated_images/exec-da0d3dbe-8177-41f4-a7c8-dc40ac9d934c.png",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "previous_source_png": "/workspace/generated_images/exec-da0d3dbe-8177-41f4-a7c8-dc40ac9d934c.png",
+      "revision_reason": "Peau et visages trop photographiques dans le brouillon ; reprise avec les personnages dessinés des références validées 48a753d8 avant publication.",
+      "source_png": "/workspace/generated_images/exec-6a94ae24-9412-4fe3-b04c-51fe39c18366.png",
+      "status": "visually_reviewed",
+      "review_note": "Mariage explicite : couple échangeant une alliance à l’annulaire, robe de mariée, bouquet et deux proches ; personnages variés, visages et tissus peints relus en vue pleine. Contrôle du concept entier et du paysage natif exact 4:3, sans date ni montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp",
+          "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+        ],
+        "review_note": "Comparaison aux références 48a753d8 réellement vues : modelé doux, contours discrets, ombres légères et matériaux peints. Les scènes sont comparées à la fête et au club photo ; les recompositions reprennent les objets disponibles. Mariage explicite : couple échangeant une alliance à l’annulaire, robe de mariée, bouquet et deux proches ; personnages variés, visages et tissus peints relus en vue pleine."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "3b5f4494138bd92674c94af2c00b2b4e4dd325a55ec1a46ac2be4656183e8db7",
+      "sha256": "f663d6ee196e18497007534112ebcef05e2fb5089d13f5eea456aabad33a2ef4",
+      "bytes": 256456,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-depart-retraite-dessine",
+      "label": "Un départ à la retraite",
+      "path": "/lib/images/tcf/qcm-audit/co306-depart-retraite-dessine.webp",
+      "prompt": "REDESSINER la PREMIÈRE scène dans le style des DEUX DERNIÈRES références. Les dernières images sont des références de dessin uniquement : ne pas copier leurs acteurs, poses ou objets. Conserver les personnages fictifs, leurs visages différents, vêtements, poses, nombre exact, contexte et accessoires de la PREMIÈRE scène. Réduire la microtexture photographique des visages et mains : peau en nuances PEINTES douces, yeux et contours fins clairement DESSINÉS, petites traces de pinceau, plis de vêtements peints, comme les personnages du club photo. Pas de gros contour noir, cartoon plat, photo ou rendu 3D. Garder un modelé semi-réaliste naturel. Paysage EXACT 4:3, 1448 pixels de large et 1086 de haut. Mains anatomiques, aucun bras ou doigt supplémentaire. Conserver uniquement les inscriptions de la première scène si elle en contient et leur orthographe. Aucune date, aucun montant, jour ou mois. Dans la scène de mariage, l’alliance est passée à l’annulaire de la mariée, sans ajouter de mains. Ne pas ajouter de personnage.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "references": [
+        {
+          "exercise": "delf-a1-2022-co-86",
+          "question": 2,
+          "choice": "c",
+          "label": "Un départ en retraite",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        },
+        {
+          "exercise": "tcf-ss-a2-s10-co-1",
+          "question": 15,
+          "choice": "c",
+          "label": "Un départ à la retraite",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        },
+        {
+          "exercise": "delf-a2-2021-co-ex4-29",
+          "question": 1,
+          "choice": "c",
+          "label": "Un départ à la retraite",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "referenced_image_paths": [
+        "/workspace/generated_images/exec-65304fdd-b728-4fb2-9415-99a0529dd017.png",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "previous_source_png": "/workspace/generated_images/exec-65304fdd-b728-4fb2-9415-99a0529dd017.png",
+      "revision_reason": "Peau et visages trop photographiques dans le brouillon ; reprise avec les personnages dessinés des références validées 48a753d8 avant publication.",
+      "source_png": "/workspace/generated_images/exec-5e747755-1dc2-463d-980d-3d7051879117.png",
+      "status": "visually_reviewed",
+      "review_note": "Départ à la retraite dans un bureau : collègue aux cheveux gris recevant un cadeau, deux collègues, carte Bonne retraite et affiche Pot de départ à la retraite relues ; traitement peint repris. Contrôle du concept entier et du paysage natif exact 4:3, sans date ni montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp",
+          "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+        ],
+        "review_note": "Comparaison aux références 48a753d8 réellement vues : modelé doux, contours discrets, ombres légères et matériaux peints. Les scènes sont comparées à la fête et au club photo ; les recompositions reprennent les objets disponibles. Départ à la retraite dans un bureau : collègue aux cheveux gris recevant un cadeau, deux collègues, carte Bonne retraite et affiche Pot de départ à la retraite relues ; traitement peint repris."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "84f5a4dc9efa1fd2e734b7d16c34d972c923497136fb99640ba520ff2b69e584",
+      "sha256": "6de8c7dab780fb7751ee6a80510f974bb000a033ba6bc69662784005d324e4c3",
+      "bytes": 212888,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-camion-demenagement-dessine",
+      "label": "Un camion de déménagement",
+      "path": "/lib/images/tcf/qcm-audit/co306-camion-demenagement-dessine.webp",
+      "prompt": "Illustration numérique DESSINÉE ET PEINTE semi-réaliste, paysage EXACT 4:3, 1448 de large et 1086 de haut. Contours fins discrets, volumes doux, matériaux peints détaillés, couleurs naturelles chaleureuses, fond crème uni et ombre légère. Objets entiers avec marge sur les quatre côtés. Pas de photo, 3D ou gros contour noir. Aucun mot, logo, chiffre, prix, montant, date, jour ou mois sauf la brève inscription explicitement demandée. Aucune personne sauf lorsqu’une scène de personnages est explicitement demandée. Un camion de DÉMÉNAGEMENT entier, cabine blanche et grande caisse bleue, vue de trois quarts arrière permettant de voir cabine, roues et arrière ouvert. Quelques cartons fermés et un petit canapé enveloppé d’une couverture de protection sont visibles DANS la caisse. Pas de déménageur, voiture, accident, blessé, inscription ou numéro de plaque.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-sc-15-accident-camion-co-4",
+          "question": 2,
+          "choice": "a",
+          "label": "Un camion de déménagement",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-ca962799-4139-4260-959a-2932639a179c.png",
+      "status": "visually_reviewed",
+      "review_note": "Camion de déménagement entier, cabine blanche et caisse bleue ouverte contenant des cartons et un canapé protégé ; pas de simple camion de livraison. Contrôle du concept entier et du paysage natif exact 4:3, sans date ni montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ],
+        "review_note": "Comparaison aux références 48a753d8 réellement vues : modelé doux, contours discrets, ombres légères et matériaux peints. Les scènes sont comparées à la fête et au club photo ; les recompositions reprennent les objets disponibles. Camion de déménagement entier, cabine blanche et caisse bleue ouverte contenant des cartons et un canapé protégé ; pas de simple camion de livraison."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "b0155bcfe5923dcb30be24850fba72d6c1b2ae0e9893b409a2ddaa799eb86fef",
+      "sha256": "5a3f1daac741c8c82a9f12ce1f1ceb2dfae7353e17c6cb600eb8865c29f61a3a",
+      "bytes": 95910,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-moto-dessine",
+      "label": "Une moto",
+      "path": "/lib/images/tcf/qcm-audit/co306-moto-dessine.webp",
+      "prompt": "Illustration numérique DESSINÉE ET PEINTE semi-réaliste, paysage EXACT 4:3, 1448 de large et 1086 de haut. Contours fins discrets, volumes doux, matériaux peints détaillés, couleurs naturelles chaleureuses, fond crème uni et ombre légère. Objets entiers avec marge sur les quatre côtés. Pas de photo, 3D ou gros contour noir. Aucun mot, logo, chiffre, prix, montant, date, jour ou mois sauf la brève inscription explicitement demandée. Aucune personne sauf lorsqu’une scène de personnages est explicitement demandée. Une seule moto routière bleu foncé et noire, deux roues, selle, réservoir, guidon et rétroviseurs cohérents, entière sur sa béquille. Pas de conducteur, casque, vélo à pédales, side-car, marque ou plaque numérotée.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-sc-15-accident-camion-co-4",
+          "question": 2,
+          "choice": "c",
+          "label": "Une moto",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-5fca79fa-4fa3-41ee-99a9-d4f947c9d08d.png",
+      "status": "visually_reviewed",
+      "review_note": "Une moto bleue et noire entière sur béquille ; aucune confusion avec un scooter ou un vélo. Contrôle du concept entier et du paysage natif exact 4:3, sans date ni montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ],
+        "review_note": "Comparaison aux références 48a753d8 réellement vues : modelé doux, contours discrets, ombres légères et matériaux peints. Les scènes sont comparées à la fête et au club photo ; les recompositions reprennent les objets disponibles. Une moto bleue et noire entière sur béquille ; aucune confusion avec un scooter ou un vélo."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "95de9d3ad15b06273ff682e40acc6d844ed744a4bbc14771cd925a2b45b5c3fd",
+      "sha256": "a7385e6bcdf0d099cee6ede68902ce6e0639fe49fcb36039ef23800048194434",
+      "bytes": 114706,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-tickets-match-rugby-dessine",
+      "label": "Des tickets pour un match",
+      "path": "/lib/images/tcf/qcm-audit/co306-tickets-match-rugby-dessine.webp",
+      "prompt": "Illustration numérique DESSINÉE ET PEINTE semi-réaliste, paysage EXACT 4:3, 1448 de large et 1086 de haut. Contours fins discrets, volumes doux, matériaux peints détaillés, couleurs naturelles chaleureuses, fond crème uni et ombre légère. Objets entiers avec marge sur les quatre côtés. Pas de photo, 3D ou gros contour noir. Aucun mot, logo, chiffre, prix, montant, date, jour ou mois sauf la brève inscription explicitement demandée. Aucune personne sauf lorsqu’une scène de personnages est explicitement demandée. Recomposer les billets vierges de la référence avec une petite vignette de MATCH DE RUGBY : remplacer entièrement le concert et les personnages de la référence par un terrain de rugby à lignes blanches simples et poteaux en H aux extrémités, un ballon OVALE de rugby sur le bord du terrain, gradins sans personnages. Deux billets crème entièrement vierges bien visibles au premier plan. Aucun concert, musique, but de football avec filet, joueur, mot ou chiffre.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ssx-a2-famille-trouver-un-cadeau-co-4",
+          "question": 3,
+          "choice": "a",
+          "label": "Des tickets pour un match",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-places-concert-dessinees.webp"
+      ],
+      "source_png": "/workspace/generated_images/exec-248585b1-2561-402a-bf22-d280a5bedd5a.png",
+      "status": "visually_reviewed",
+      "review_note": "Deux tickets vierges devant un terrain de rugby à poteaux en H avec ballon ovale ; aucun prix, date, siège numéroté ou texte sur les tickets. Contrôle du concept entier et du paysage natif exact 4:3, sans date ni montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+        ],
+        "review_note": "Comparaison aux références 48a753d8 réellement vues : modelé doux, contours discrets, ombres légères et matériaux peints. Les scènes sont comparées à la fête et au club photo ; les recompositions reprennent les objets disponibles. Deux tickets vierges devant un terrain de rugby à poteaux en H avec ballon ovale ; aucun prix, date, siège numéroté ou texte sur les tickets."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "5ff8fd06a92f483ca7c93818cba9b716527b131bbb39f5c62b8bbd3399ff6168",
+      "sha256": "6fbc00e0134b18469fc9b933f507d4b8bd88076602b179b880fbe356224e11c3",
+      "bytes": 200614,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-ballon-rugby-dessine",
+      "label": "Un ballon",
+      "path": "/lib/images/tcf/qcm-audit/co306-ballon-rugby-dessine.webp",
+      "prompt": "Illustration numérique DESSINÉE ET PEINTE semi-réaliste, paysage EXACT 4:3, 1448 de large et 1086 de haut. Contours fins discrets, volumes doux, matériaux peints détaillés, couleurs naturelles chaleureuses, fond crème uni et ombre légère. Objets entiers avec marge sur les quatre côtés. Pas de photo, 3D ou gros contour noir. Aucun mot, logo, chiffre, prix, montant, date, jour ou mois sauf la brève inscription explicitement demandée. Aucune personne sauf lorsqu’une scène de personnages est explicitement demandée. UN ballon de rugby OVALE blanc avec panneaux bleus et verts, coutures discrètes de ses quatre panneaux, sans lacets de football américain. Ballon entier posé de trois quarts avec ombre. Aucun ballon rond, marque, mot, chiffre ou autre accessoire.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ssx-a2-famille-trouver-un-cadeau-co-4",
+          "question": 3,
+          "choice": "b",
+          "label": "Un ballon",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-d2c619da-757c-4ad9-ac61-0d915b924f1f.png",
+      "status": "visually_reviewed",
+      "review_note": "Un ballon de rugby ovale entier, cohérent avec le sport nommé dans la transcription ; pas de ballon de football générique. Contrôle du concept entier et du paysage natif exact 4:3, sans date ni montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ],
+        "review_note": "Comparaison aux références 48a753d8 réellement vues : modelé doux, contours discrets, ombres légères et matériaux peints. Les scènes sont comparées à la fête et au club photo ; les recompositions reprennent les objets disponibles. Un ballon de rugby ovale entier, cohérent avec le sport nommé dans la transcription ; pas de ballon de football générique."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "8912e4b62768661e663680248fd6cb6ff426d8f2086eab41cc22f7e9dfeff471",
+      "sha256": "061a9eeb581ee7cf5664d6694da975f3822ae48a23b4f537ad04188ecbafdf46",
+      "bytes": 69240,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-maillot-rugby-dessine",
+      "label": "Un maillot",
+      "path": "/lib/images/tcf/qcm-audit/co306-maillot-rugby-dessine.webp",
+      "prompt": "Illustration numérique DESSINÉE ET PEINTE semi-réaliste, paysage EXACT 4:3, 1448 de large et 1086 de haut. Contours fins discrets, volumes doux, matériaux peints détaillés, couleurs naturelles chaleureuses, fond crème uni et ombre légère. Objets entiers avec marge sur les quatre côtés. Pas de photo, 3D ou gros contour noir. Aucun mot, logo, chiffre, prix, montant, date, jour ou mois sauf la brève inscription explicitement demandée. Aucune personne sauf lorsqu’une scène de personnages est explicitement demandée. UN maillot de rugby entier à manches courtes, tissu sportif épais avec petit col blanc, larges bandes horizontales rouges et bleu marine. Présenté à plat de face, manches entières ; aucun joueur, cintre, blason, sponsor, nom ou numéro. Pas de maillot de bain.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ssx-a2-famille-trouver-un-cadeau-co-4",
+          "question": 3,
+          "choice": "c",
+          "label": "Un maillot",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-cf7938e6-13bd-4a13-95af-8a355951aaad.png",
+      "status": "visually_reviewed",
+      "review_note": "Un maillot de rugby rouge et bleu marine à col blanc, entier et sans numéro ou marque. Contrôle du concept entier et du paysage natif exact 4:3, sans date ni montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ],
+        "review_note": "Comparaison aux références 48a753d8 réellement vues : modelé doux, contours discrets, ombres légères et matériaux peints. Les scènes sont comparées à la fête et au club photo ; les recompositions reprennent les objets disponibles. Un maillot de rugby rouge et bleu marine à col blanc, entier et sans numéro ou marque."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "6735d75de90aed7e89ccf81e1c368632597c4151560525138c962030648fac1f",
+      "sha256": "de150657e6b616f3db1248480b182068aa717673d8250a77ae3c6b9cc1fe2511",
+      "bytes": 73378,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-telephones-ordinateurs-dessine",
+      "label": "Les téléphones et les ordinateurs",
+      "path": "/lib/images/tcf/qcm-audit/co306-telephones-ordinateurs-dessine.webp",
+      "prompt": "Illustration numérique DESSINÉE ET PEINTE semi-réaliste, paysage EXACT 4:3, 1448 de large et 1086 de haut. Contours fins discrets, volumes doux, matériaux peints détaillés, couleurs naturelles chaleureuses, fond crème uni et ombre légère. Objets entiers avec marge sur les quatre côtés. Pas de photo, 3D ou gros contour noir. Aucun mot, logo, chiffre, prix, montant, date, jour ou mois sauf la brève inscription explicitement demandée. Aucune personne sauf lorsqu’une scène de personnages est explicitement demandée. Composer les deux références en deux groupes lisibles : à gauche DEUX téléphones de même dessin à écran bleu vide, à droite UN ordinateur de bureau avec écran, unité centrale, clavier et souris comme la référence plus UN ordinateur portable ouvert à écran bleu vide. Deux catégories entières au pluriel, aucun mot ou caractère lisible sur les claviers, pas de télévision ou radio.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ssx-a2-annonce-4-4-co-2",
+          "question": 3,
+          "choice": "a",
+          "label": "Les téléphones et les ordinateurs",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-telephone-dessine.webp",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-ordinateur-dessine.webp"
+      ],
+      "source_png": "/workspace/generated_images/exec-1f8d8b80-c8fe-45f6-9171-30e286665c83.png",
+      "status": "visually_reviewed",
+      "review_note": "Deux téléphones, un ordinateur fixe avec écran et unité centrale et un ordinateur portable ; les deux catégories demandées sont complètes et au pluriel. Contrôle du concept entier et du paysage natif exact 4:3, sans date ni montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ],
+        "review_note": "Comparaison aux références 48a753d8 réellement vues : modelé doux, contours discrets, ombres légères et matériaux peints. Les scènes sont comparées à la fête et au club photo ; les recompositions reprennent les objets disponibles. Deux téléphones, un ordinateur fixe avec écran et unité centrale et un ordinateur portable ; les deux catégories demandées sont complètes et au pluriel."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "b20a850e0feb056d7d094a396eb5b906fa85eac5502c19157f090a9e612a274f",
+      "sha256": "352699c411c0156e7b1cc4cb9e7fe76b02d926ba8a03e7c0d4a856feeb923e4a",
+      "bytes": 52248,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-televisions-radios-dessine",
+      "label": "Les télévisions et les radios",
+      "path": "/lib/images/tcf/qcm-audit/co306-televisions-radios-dessine.webp",
+      "prompt": "Illustration numérique DESSINÉE ET PEINTE semi-réaliste, paysage EXACT 4:3, 1448 de large et 1086 de haut. Contours fins discrets, volumes doux, matériaux peints détaillés, couleurs naturelles chaleureuses, fond crème uni et ombre légère. Objets entiers avec marge sur les quatre côtés. Pas de photo, 3D ou gros contour noir. Aucun mot, logo, chiffre, prix, montant, date, jour ou mois sauf la brève inscription explicitement demandée. Aucune personne sauf lorsqu’une scène de personnages est explicitement demandée. Composer à gauche DEUX téléviseurs avec pieds et écrans bleus vides comme la référence, de tailles légèrement différentes. À droite DEUX petites radios portables avec grilles de haut-parleurs, antennes télescopiques et boutons, cadrans à traits sans chiffre ou lettres. Deux catégories entières au pluriel, aucune émission sur les écrans et aucun ordinateur, téléphone ou caméra.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ssx-a2-annonce-4-4-co-2",
+          "question": 3,
+          "choice": "b",
+          "label": "Les télévisions et les radios",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-television-dessinee.webp"
+      ],
+      "source_png": "/workspace/generated_images/exec-cccd47ee-a895-457f-9073-9ac64ff37269.png",
+      "status": "visually_reviewed",
+      "review_note": "Deux télévisions et deux radios : les deux catégories au pluriel sont présentes, cadrans sans valeurs ou fréquences chiffrées. Contrôle du concept entier et du paysage natif exact 4:3, sans date ni montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ],
+        "review_note": "Comparaison aux références 48a753d8 réellement vues : modelé doux, contours discrets, ombres légères et matériaux peints. Les scènes sont comparées à la fête et au club photo ; les recompositions reprennent les objets disponibles. Deux télévisions et deux radios : les deux catégories au pluriel sont présentes, cadrans sans valeurs ou fréquences chiffrées."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "cc773a50f70adbcc44ad15107a8531df8cf4bdb5937dbf6cabdfee1ed317403b",
+      "sha256": "5cada31d7f525dd7b0ed178b696ca81ff91de258a7e2c563d78dcda5e953b33a",
+      "bytes": 64138,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-appareils-photo-dessine",
+      "label": "Les appareils photo",
+      "path": "/lib/images/tcf/qcm-audit/co306-appareils-photo-dessine.webp",
+      "prompt": "Illustration numérique DESSINÉE ET PEINTE semi-réaliste, paysage EXACT 4:3, 1448 de large et 1086 de haut. Contours fins discrets, volumes doux, matériaux peints détaillés, couleurs naturelles chaleureuses, fond crème uni et ombre légère. Objets entiers avec marge sur les quatre côtés. Pas de photo, 3D ou gros contour noir. Aucun mot, logo, chiffre, prix, montant, date, jour ou mois sauf la brève inscription explicitement demandée. Aucune personne sauf lorsqu’une scène de personnages est explicitement demandée. Reprendre l’appareil photo reflex de la référence, entier avec objectif, et ajouter à côté UN appareil photo compact argenté entier avec petit objectif. Deux appareils photo différents, aucun mot, marque, valeur d’objectif, chiffre ou autre appareil électronique.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ssx-a2-annonce-4-4-co-2",
+          "question": 3,
+          "choice": "c",
+          "label": "Les appareils photo",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-appareil-photo-dessine.webp"
+      ],
+      "source_png": "/workspace/generated_images/exec-8be6d801-f81a-40f7-a039-967ac9498efe.png",
+      "status": "visually_reviewed",
+      "review_note": "Deux appareils photo différents, reflex noir et compact argenté ; pluriel visible, aucun logo. Contrôle du concept entier et du paysage natif exact 4:3, sans date ni montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ],
+        "review_note": "Comparaison aux références 48a753d8 réellement vues : modelé doux, contours discrets, ombres légères et matériaux peints. Les scènes sont comparées à la fête et au club photo ; les recompositions reprennent les objets disponibles. Deux appareils photo différents, reflex noir et compact argenté ; pluriel visible, aucun logo."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "a03c9dd45b509ee2c3757fc4406c1b6b429578818ced7083d0cc4defd7e3d636",
+      "sha256": "6f6d73318de2bb0c0431fc301aeb13c59a7239a938fce78e3e3c0169919d4d9f",
+      "bytes": 68210,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-chocolat-blanc-fruits-rouges-dessine",
+      "label": "Le chocolat blanc et les fruits rouges",
+      "path": "/lib/images/tcf/qcm-audit/co306-chocolat-blanc-fruits-rouges-dessine.webp",
+      "prompt": "Illustration numérique DESSINÉE ET PEINTE semi-réaliste, paysage EXACT 4:3, 1448 de large et 1086 de haut. Contours fins discrets, volumes doux, matériaux peints détaillés, couleurs naturelles chaleureuses, fond crème uni et ombre légère. Objets entiers avec marge sur les quatre côtés. Pas de photo, 3D ou gros contour noir. Aucun mot, logo, chiffre, prix, montant, date, jour ou mois sauf la brève inscription explicitement demandée. Aucune personne sauf lorsqu’une scène de personnages est explicitement demandée. À gauche UNE tablette de chocolat BLANC ivoire à carreaux avec deux petits carrés détachés ; à droite un petit groupe de FRUITS ROUGES : fraises, framboises et groseilles rouges. Deux ingrédients pour parfumer un gâteau. Pas de chocolat noir, agrumes, gâteau, boisson, emballage ou mot.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s10-co-2",
+          "question": 7,
+          "choice": "a",
+          "label": "Le chocolat blanc et les fruits rouges",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-adbe814c-efb6-4b85-b8ee-c76c28234f1b.png",
+      "status": "visually_reviewed",
+      "review_note": "Chocolat blanc avec fraises, framboises et groseilles rouges : les deux ingrédients de la réponse sont présents, sans gâteau de saveur seulement supposée. Contrôle du concept entier et du paysage natif exact 4:3, sans date ni montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ],
+        "review_note": "Comparaison aux références 48a753d8 réellement vues : modelé doux, contours discrets, ombres légères et matériaux peints. Les scènes sont comparées à la fête et au club photo ; les recompositions reprennent les objets disponibles. Chocolat blanc avec fraises, framboises et groseilles rouges : les deux ingrédients de la réponse sont présents, sans gâteau de saveur seulement supposée."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "21db3e564b37b9a7ee6eceb8896703585f44362f254f4bb57120dff32607f4d2",
+      "sha256": "22e336de6c6e51af030ef981b3a10a2f6318397307be605f6e945cd3eefff219",
+      "bytes": 77490,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-chocolat-noir-agrumes-dessine",
+      "label": "Le chocolat noir et les agrumes",
+      "path": "/lib/images/tcf/qcm-audit/co306-chocolat-noir-agrumes-dessine.webp",
+      "prompt": "Illustration numérique DESSINÉE ET PEINTE semi-réaliste, paysage EXACT 4:3, 1448 de large et 1086 de haut. Contours fins discrets, volumes doux, matériaux peints détaillés, couleurs naturelles chaleureuses, fond crème uni et ombre légère. Objets entiers avec marge sur les quatre côtés. Pas de photo, 3D ou gros contour noir. Aucun mot, logo, chiffre, prix, montant, date, jour ou mois sauf la brève inscription explicitement demandée. Aucune personne sauf lorsqu’une scène de personnages est explicitement demandée. À gauche UNE tablette de chocolat NOIR brun très foncé à carreaux avec deux petits carrés détachés ; à droite des AGRUMES : une orange et un citron entiers avec une demi-orange montrant ses quartiers. Deux ingrédients pour parfumer un gâteau. Pas de chocolat blanc, petits fruits rouges, gâteau, boisson, emballage ou mot.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s10-co-2",
+          "question": 7,
+          "choice": "b",
+          "label": "Le chocolat noir et les agrumes",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-6a24c9ee-65ae-4afd-a31d-5814979360ea.png",
+      "status": "visually_reviewed",
+      "review_note": "Chocolat noir avec orange, demi-orange et citron : chocolat et agrumes ensemble, aucun pourcentage écrit. Contrôle du concept entier et du paysage natif exact 4:3, sans date ni montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ],
+        "review_note": "Comparaison aux références 48a753d8 réellement vues : modelé doux, contours discrets, ombres légères et matériaux peints. Les scènes sont comparées à la fête et au club photo ; les recompositions reprennent les objets disponibles. Chocolat noir avec orange, demi-orange et citron : chocolat et agrumes ensemble, aucun pourcentage écrit."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "be933064c6469f81dc49780e2ae9477db5ec2e48bc5e99acb4a444ae5e69fee4",
+      "sha256": "e7e4f56a78d243aeacd78169dd088b5eb972a095652b74cd0e45b88d602f6052",
+      "bytes": 101062,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-vanille-noix-coco-dessine",
+      "label": "La vanille et la noix de coco",
+      "path": "/lib/images/tcf/qcm-audit/co306-vanille-noix-coco-dessine.webp",
+      "prompt": "Illustration numérique DESSINÉE ET PEINTE semi-réaliste, paysage EXACT 4:3, 1448 de large et 1086 de haut. Contours fins discrets, volumes doux, matériaux peints détaillés, couleurs naturelles chaleureuses, fond crème uni et ombre légère. Objets entiers avec marge sur les quatre côtés. Pas de photo, 3D ou gros contour noir. Aucun mot, logo, chiffre, prix, montant, date, jour ou mois sauf la brève inscription explicitement demandée. Aucune personne sauf lorsqu’une scène de personnages est explicitement demandée. À gauche deux longues gousses de VANILLE brun foncé fines et courbes avec une fleur d’orchidée vanille crème ; à droite UNE NOIX DE COCO brune fibreuse ouverte en deux moitiés montrant sa chair BLANCHE épaisse. Deux ingrédients pour parfumer un gâteau. Pas de glace, chocolat, agrume, gâteau, boisson, emballage ou mot.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s10-co-2",
+          "question": 7,
+          "choice": "c",
+          "label": "La vanille et la noix de coco",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-508d5006-c2a1-41a9-b6c1-4a0f08af979d.png",
+      "status": "visually_reviewed",
+      "review_note": "Gousses et fleur de vanille avec deux moitiés de noix de coco ; les deux ingrédients entiers sont visibles. Contrôle du concept entier et du paysage natif exact 4:3, sans date ni montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ],
+        "review_note": "Comparaison aux références 48a753d8 réellement vues : modelé doux, contours discrets, ombres légères et matériaux peints. Les scènes sont comparées à la fête et au club photo ; les recompositions reprennent les objets disponibles. Gousses et fleur de vanille avec deux moitiés de noix de coco ; les deux ingrédients entiers sont visibles."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "8d5c6ae1b5666f93791ffd491815300e055e43f413e9a98af95bd4d5e000c493",
+      "sha256": "c1183585196a94e72798ab5d4eae739ae411bb2daf799647bdeb6bb73e4dd20e",
+      "bytes": 106406,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-couronne-feuilles-dessine",
+      "label": "Une couronne de feuilles",
+      "path": "/lib/images/tcf/qcm-audit/co306-couronne-feuilles-dessine.webp",
+      "prompt": "Illustration numérique DESSINÉE ET PEINTE semi-réaliste, paysage EXACT 4:3, 1448 de large et 1086 de haut. Contours fins discrets, volumes doux, matériaux peints détaillés, couleurs naturelles chaleureuses, fond crème uni et ombre légère. Objets entiers avec marge sur les quatre côtés. Pas de photo, 3D ou gros contour noir. Aucun mot, logo, chiffre, prix, montant, date, jour ou mois sauf la brève inscription explicitement demandée. Aucune personne sauf lorsqu’une scène de personnages est explicitement demandée. UNE couronne de feuillage portée habituellement sur la tête, ronde et fermée, uniquement faite de petites feuilles vertes de laurier et d’eucalyptus attachées sur un fin cercle végétal, vue de trois quarts avec un grand vide central. Pas de fleurs, pétales, bouquet à tiges, bijoux, visage ou inscription.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "delf-a2-2021-co-ex4-29",
+          "question": 3,
+          "choice": "b",
+          "label": "Une couronne de feuilles",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-b2cb2690-a948-4823-a5f9-0d4c2cb2abd7.png",
+      "status": "visually_reviewed",
+      "review_note": "Couronne de tête faite uniquement de feuillage vert, aucune fleur ou pétale ; anneau entier. Contrôle du concept entier et du paysage natif exact 4:3, sans date ni montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ],
+        "review_note": "Comparaison aux références 48a753d8 réellement vues : modelé doux, contours discrets, ombres légères et matériaux peints. Les scènes sont comparées à la fête et au club photo ; les recompositions reprennent les objets disponibles. Couronne de tête faite uniquement de feuillage vert, aucune fleur ou pétale ; anneau entier."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "6fef3752ddceb153b9e3953a7d6d0346b1396e2772885fc5bfbf7814e7e7842e",
+      "sha256": "82ac9b43d4c594ac50af964a5428c7866abdda0e21dfdbe51ce79f5c16cfd82e",
+      "bytes": 77192,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-bracelet-petales-dessine",
+      "label": "Un bracelet de pétales",
+      "path": "/lib/images/tcf/qcm-audit/co306-bracelet-petales-dessine.webp",
+      "prompt": "Modifier la première image, en conservant le cadrage PAYSAGE EXACT 4:3 (1448 × 1086), la main brune à cinq doigts entière et son poignet, le fond crème et le ruban bleu. CORRIGER UNIQUEMENT le bijou : remplacer toutes les fleurs entières, roses, marguerites, tulipes, centres jaunes, boutons et feuillages par un VRAI BRACELET DE PÉTALES. Une bande souple étroite fait le tour complet du poignet et est couverte UNIQUEMENT de pétales individuels roses et blancs, superposés comme des écailles douces. Les pétales ne forment aucune fleur entière. Quelques pétales blancs et roses montrent leurs formes individuelles, la bande et le ruban assurent la fixation. Pas de bouquet, couronne, fleur entière ni végétation. Raffiner le rendu DESSINÉ et PEINT de la peau et des pétales comme les deux références suivantes : modelé doux, traits fins discrets, pinceau visible léger, sans microtexture photographique ou 3D. Aucun texte, chiffre, montant, date, jour ou mois.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "references": [
+        {
+          "exercise": "delf-a2-2021-co-ex4-29",
+          "question": 3,
+          "choice": "c",
+          "label": "Un bracelet de pétales",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-bouquet-fleurs-dessine.webp",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "source_png": "/workspace/generated_images/exec-6e4ea31e-3724-4147-991f-d36a97cfaced.png",
+      "status": "visually_reviewed",
+      "previous_source_png": "/workspace/generated_images/exec-cbeaf59e-37f6-42c1-b5bf-87fe49ae5b31.png",
+      "revision_reason": "Représenter littéralement un bracelet de pétales individuels, sans fleurs entières.",
+      "review_note": "Bracelet formé de pétales roses et blancs individuels superposés autour du poignet, fixé par un ruban ; les fleurs entières du premier essai ont été supprimées. Main brune entière à cinq doigts. Contrôle du concept entier et du paysage natif exact 4:3, sans date ni montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+        ],
+        "review_note": "Comparaison aux références 48a753d8 réellement vues : modelé doux, contours discrets, ombres légères et matériaux peints. Les scènes sont comparées à la fête et au club photo ; les recompositions reprennent les objets disponibles. Bracelet formé de pétales roses et blancs individuels superposés autour du poignet, fixé par un ruban ; les fleurs entières du premier essai ont été supprimées. Main brune entière à cinq doigts."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "a9af66a3f2dad2ba40e28ed184ae0611d2138d20f9a2038ec0b28eebbbf6f746",
+      "sha256": "a58de0fdd50ea677999f1b07ac34b092a876210662107bb89d810d31ec3ffdd1",
+      "bytes": 40918,
+      "domain": "co",
+      "batch": "active-audios-834"
     }
   ],
   "activated_questions": [
@@ -25357,6 +26057,146 @@
       ],
       "source_ids": [
         "delf_a2_2021:002:f151bbfcaf5f"
+      ]
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "delf-a1-2022-co-86",
+      "question": 2,
+      "enonce": "Pour quelle occasion l'achète-t-elle ?",
+      "images": [
+        "/lib/images/tcf/qcm-audit/co306-anniversaire-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-mariage-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-depart-retraite-dessine.webp"
+      ],
+      "source_batch": "active-audios-834",
+      "status": "active_after_visual_review",
+      "source_support_review": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Les trois événements sont explicites : bougie et gâteau, cérémonie avec alliance, cadeau de retraite au bureau. Départ en retraite renvoie au même concept entier que départ à la retraite. Transcription relue : Bonjour monsieur, je voudrais une boîte de chocolat. C'est pour un anniversaire.",
+      "source_old_refs": [
+        "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_86-1.mp3"
+      ],
+      "source_ids": [
+        "delf_a1_2022:086:c9d1659a97e4"
+      ]
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-ss-a2-s10-co-1",
+      "question": 15,
+      "enonce": "Quel événement la personne annonce-t-elle ?",
+      "images": [
+        "/lib/images/tcf/qcm-audit/co306-mariage-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-anniversaire-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-depart-retraite-dessine.webp"
+      ],
+      "source_batch": "active-audios-834",
+      "status": "active_after_visual_review",
+      "source_support_review": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Les trois scènes de fête sont réutilisées et correspondent à leurs événements ; la transcription annonce explicitement un mariage. Transcription relue : Tu sais quoi? Paul m'andé en mariage. C'est vrai! Comme c'est romantique! Oui en plus, nous allons nous marier à Paris. Félicitations. Je suis heureuse pour toi.",
+      "source_old_refs": [
+        "/lib/audio/tcf/co/vie-quotidienne/alors-cette-fete-anniversaire-2-3.mp3"
+      ],
+      "source_ids": [
+        "additional-20261102:mdf-a2-abc-direct:95:b95d20d0713a:ac7750fa"
+      ]
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "delf-a2-2021-co-ex4-29",
+      "question": 1,
+      "enonce": "Quel événement est commenté ?",
+      "images": [
+        "/lib/images/tcf/qcm-audit/co306-mariage-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-anniversaire-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-depart-retraite-dessine.webp"
+      ],
+      "source_batch": "active-audios-834",
+      "status": "active_after_visual_review",
+      "source_support_review": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Les mêmes événements sont réutilisés ; robe, bouquet et échange d’alliance appuient clairement la cérémonie de mariage. Transcription relue : Regarde, la voilà comme elle est belle, sa robe lui va bien et le bouquet de fleurs, tu as vu ces fleurs? Oui, et la lumière est belle. C'est bien de se marier au printemps. Les couleurs sont superbes.",
+      "source_old_refs": [
+        "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_29-1.mp3"
+      ],
+      "source_ids": [
+        "delf_a2_2021:029:b65709561615"
+      ]
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "delf-a2-2021-co-ex4-29",
+      "question": 3,
+      "enonce": "Quel accessoire fleuri est mentionné ?",
+      "images": [
+        "/lib/images/tcf/qcm-audit/co834-bouquet-fleurs-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-couronne-feuilles-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-bracelet-petales-dessine.webp"
+      ],
+      "source_batch": "active-audios-834",
+      "status": "active_after_visual_review",
+      "source_support_review": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Bouquet existant réutilisé, couronne de feuilles sans fleurs et bracelet de pétales individuels : trois accessoires distincts, sans changer leur libellé. Transcription relue : Regarde, la voilà comme elle est belle, sa robe lui va bien et le bouquet de fleurs, tu as vu ces fleurs? Oui, et la lumière est belle. C'est bien de se marier au printemps. Les couleurs sont superbes.",
+      "source_old_refs": [
+        "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_29-1.mp3"
+      ],
+      "source_ids": [
+        "delf_a2_2021:029:b65709561615"
+      ]
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-ssx-a2-famille-trouver-un-cadeau-co-4",
+      "question": 3,
+      "enonce": "Que propose Martin ?",
+      "images": [
+        "/lib/images/tcf/qcm-audit/co306-tickets-match-rugby-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-ballon-rugby-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-maillot-rugby-dessine.webp"
+      ],
+      "source_batch": "active-audios-834",
+      "status": "active_after_visual_review",
+      "source_support_review": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Les trois réponses restent dans le contexte rugby : tickets de match, ballon ovale et maillot. Correspondances propres à cette question pour ne pas remplacer le ballon par un ballon de football. Transcription relue : Martin, tu peux m'aider à trouver un cadeau pour mon père? Qu'est-ce qu'aime? Mais il adore le rugby. Tu pourrais lui acheter des tickets pour aller voir un match? C'est une super idée ça. Merci Martin.",
+      "source_old_refs": [
+        "/lib/audio/tcf/co/famille/14-famille-trouver-un-cadeau.mp3"
+      ],
+      "source_ids": [
+        "additional-20261102:mdf-a2-abc-direct:89:bd98123eea96:e4d4b672"
+      ]
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-ssx-a2-annonce-4-4-co-2",
+      "question": 3,
+      "enonce": "Quels produits auront des surprises demain ?",
+      "images": [
+        "/lib/images/tcf/qcm-audit/co306-telephones-ordinateurs-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-televisions-radios-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-appareils-photo-dessine.webp"
+      ],
+      "source_batch": "active-audios-834",
+      "status": "active_after_visual_review",
+      "source_support_review": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Catégories entières et pluriels respectés : deux téléphones et deux ordinateurs, deux télévisions et deux radios, deux appareils photo. Aucune promotion chiffrée ou indication de jour du support reproduite. Transcription relue : Chers clients, aujourd'hui dans votre magasin à tout prix, ne manquez pas les promotions exceptionnelles sur les télévisions. Jusqu'à 40% de réduction. Demain, nous aurons d'autres surprises sur les téléphones et les ordinateurs.",
+      "source_old_refs": [
+        "/lib/audio/tcf/co/magasins/02-magasin-annonce-promotion-télévision.mp3"
+      ],
+      "source_ids": [
+        "additional-20261102:mdf-a2-abc-direct:22:62f33f0434fe:5ed60de9"
+      ]
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s10-co-2",
+      "question": 7,
+      "enonce": "Quels goûts Margot aime-t-elle pour le gâteau ?",
+      "images": [
+        "/lib/images/tcf/qcm-audit/co306-chocolat-blanc-fruits-rouges-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-chocolat-noir-agrumes-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-vanille-noix-coco-dessine.webp"
+      ],
+      "source_batch": "active-audios-834",
+      "status": "active_after_visual_review",
+      "source_support_review": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Chaque image représente les deux ingrédients nommés ; couleurs et matières permettent de distinguer chocolat blanc et noir, fruits rouges et agrumes. Aucun ingrédient omis. Transcription relue : J'ai acheté une jolie robe rouge avec un nœud en soie pour la fête d'anniversaire de Margot. Sally m'a gentiment prêté ses chaussures. Je vais lui chancer. J'apporte ma guitare. As-tu commandé le gâteau? Elle aime le chocolat blanc et les fruits rouges. Michelle s'occupe de la décoration.",
+      "source_old_refs": [
+        "/lib/audio/tcf/co/fetes/17-fêtes_anniversaire-de-Margot-objets.mp3"
+      ],
+      "source_ids": [
+        "additional-20261102:mdf-a1-abc:48:b71e48ec4f9a:25e1a588"
       ]
     }
   ],

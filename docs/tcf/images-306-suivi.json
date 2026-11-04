@@ -15,11 +15,11 @@
   ],
   "summary": {
     "initial_question_candidates": 306,
-    "questions_illustrated_or_prepared": 150,
-    "newly_activated": 57,
-    "prepared_pending_audio_link": 89,
+    "questions_illustrated_or_prepared": 158,
+    "newly_activated": 64,
+    "prepared_pending_audio_link": 90,
     "prepared_pending_audio_validation": 4,
-    "remaining_questions_requiring_images_or_review": 156,
+    "remaining_questions_requiring_images_or_review": 148,
     "unreviewed_complete_trios": 0,
     "audio_references_next_stage": 432,
     "vocabulary_occurrences_final_stage": 1906
@@ -1246,7 +1246,7 @@
           "asset": "5163b8b75348"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a1-abc:48:b71e48ec4f9a:25e1a588"
       ],
@@ -1259,16 +1259,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-chocolat-blanc-fruits-rouges-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-chocolat-noir-agrumes-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-vanille-noix-coco-dessine.webp"
       ],
-      "missing_labels": [
-        "Le chocolat blanc et les fruits rouges",
-        "Le chocolat noir et les agrumes",
-        "La vanille et la noix de coco"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-chocolat-blanc-fruits-rouges-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-chocolat-noir-agrumes-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-vanille-noix-coco-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s10-co-2",
+        "question": 7,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-chocolat-blanc-fruits-rouges-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-chocolat-noir-agrumes-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-vanille-noix-coco-dessine.webp"
+        ],
+        "support_quote": "J'ai acheté une jolie robe rouge avec un nœud en soie pour la fête d'anniversaire de Margot. Sally m'a gentiment prêté ses chaussures. Je vais lui chancer. J'apporte ma guitare. As-tu commandé le gâteau? Elle aime le chocolat blanc et les fruits rouges. Michelle s'occupe de la décoration.",
+        "current_bank_transcription": "J'ai acheté une jolie robe rouge avec un nœud en soie pour la fête d'anniversaire de Margot.\nSally m'a gentiment prêté ses chaussures.\nJe vais lui chanter une belle chanson, j'apporte ma guitare.\nAs-tu commandé le gâteau ?\nElle aime le chocolat blanc et les fruits rouges.\nMichel s'occupe de la décoration.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Chaque image représente les deux ingrédients nommés ; couleurs et matières permettent de distinguer chocolat blanc et noir, fruits rouges et agrumes. Aucun ingrédient omis."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -7681,7 +7695,7 @@
           "asset": "9376dbc6cc4e"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:086:c9d1659a97e4"
       ],
@@ -7694,16 +7708,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-anniversaire-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-mariage-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-depart-retraite-dessine.webp"
       ],
-      "missing_labels": [
-        "Un anniversaire",
-        "Un mariage",
-        "Un départ en retraite"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-anniversaire-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-mariage-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-depart-retraite-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a1-2022-co-86",
+        "question": 2,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-anniversaire-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-mariage-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-depart-retraite-dessine.webp"
+        ],
+        "support_quote": "Bonjour monsieur, je voudrais une boîte de chocolat. C'est pour un anniversaire.",
+        "current_bank_transcription": "Bonjour Monsieur. Je voudrais une boîte de chocolats. C’est pour un anniversaire.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Les trois événements sont explicites : bougie et gâteau, cérémonie avec alliance, cadeau de retraite au bureau. Départ en retraite renvoie au même concept entier que départ à la retraite."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -9886,7 +9914,7 @@
           "asset": "485b546ebb03"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a2-abc-direct:95:b95d20d0713a:ac7750fa"
       ],
@@ -9899,16 +9927,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-mariage-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-anniversaire-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-depart-retraite-dessine.webp"
       ],
-      "missing_labels": [
-        "Un mariage",
-        "Un anniversaire",
-        "Un départ à la retraite"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-mariage-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-anniversaire-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-depart-retraite-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s10-co-1",
+        "question": 15,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-mariage-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-anniversaire-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-depart-retraite-dessine.webp"
+        ],
+        "support_quote": "Tu sais quoi? Paul m'andé en mariage. C'est vrai! Comme c'est romantique! Oui en plus, nous allons nous marier à Paris. Félicitations. Je suis heureuse pour toi.",
+        "current_bank_transcription": "Tu sais quoi ?\nPaul m’a demandée en mariage.\n— C’est vrai ?\nComme c’est romantique.\n— Oui.\nEn plus, nous allons nous marier à Paris.\n— Félicitations !\nJe suis heureuse pour toi.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Les trois scènes de fête sont réutilisées et correspondent à leurs événements ; la transcription annonce explicitement un mariage."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -13576,7 +13618,7 @@
           "asset": "d97b29491bc2"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a2-abc-direct:22:62f33f0434fe:5ed60de9"
       ],
@@ -13589,16 +13631,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-telephones-ordinateurs-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-televisions-radios-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-appareils-photo-dessine.webp"
       ],
-      "missing_labels": [
-        "Les téléphones et les ordinateurs",
-        "Les télévisions et les radios",
-        "Les appareils photo"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-telephones-ordinateurs-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-televisions-radios-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-appareils-photo-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ssx-a2-annonce-4-4-co-2",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-telephones-ordinateurs-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-televisions-radios-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-appareils-photo-dessine.webp"
+        ],
+        "support_quote": "Chers clients, aujourd'hui dans votre magasin à tout prix, ne manquez pas les promotions exceptionnelles sur les télévisions. Jusqu'à 40% de réduction. Demain, nous aurons d'autres surprises sur les téléphones et les ordinateurs.",
+        "current_bank_transcription": "Chers clients, aujourd’hui dans votre magasin Autoprix, ne manquez pas les promotions exceptionnelles sur les télévisions.\nJusqu’à 40% de réduction !\nDemain, nous aurons d’autres surprises sur les téléphones et les ordinateurs.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Catégories entières et pluriels respectés : deux téléphones et deux ordinateurs, deux télévisions et deux radios, deux appareils photo. Aucune promotion chiffrée ou indication de jour du support reproduite."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -14323,19 +14379,29 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
+        "/lib/images/tcf/qcm-audit/co306-camion-demenagement-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
-        null
+        "/lib/images/tcf/qcm-audit/co306-moto-dessine.webp"
       ],
-      "missing_labels": [
-        "Un camion de déménagement",
-        "Une moto"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-sc-15-accident-camion-co-4",
+        "question": 2,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-camion-demenagement-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-moto-dessine.webp"
+        ],
+        "support_quote": "- Au journal de 20 heures, ils ont parlé du terrible accident sur la route nationale.\n- Qu'est-ce qui s'est passé ?\n- Un gros camion de déménagement est rentré dans des voitures, et il y a un seul blessé.\n- C'est incroyable, ça !\nTu crois que c'est vrai ?",
+        "current_bank_transcription": "- Au journal de 20 heures, ils ont parlé du terrible accident sur la route nationale.\n- Qu'est-ce qui s'est passé ?\n- Un gros camion de déménagement est rentré dans des voitures, et il y a un seul blessé.\n- C'est incroyable, ça !\nTu crois que c'est vrai ?",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Camion à cartons et mobilier, bus existant entier et moto entière. Transcription actuelle relue ; le rapprochement de l’audio de remplacement reste nécessaire."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -14539,7 +14605,7 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a2-abc-direct:89:bd98123eea96:e4d4b672"
       ],
@@ -14552,16 +14618,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-tickets-match-rugby-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-ballon-rugby-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-maillot-rugby-dessine.webp"
       ],
-      "missing_labels": [
-        "Des tickets pour un match",
-        "Un ballon",
-        "Un maillot"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-tickets-match-rugby-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-ballon-rugby-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-maillot-rugby-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ssx-a2-famille-trouver-un-cadeau-co-4",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-tickets-match-rugby-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-ballon-rugby-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-maillot-rugby-dessine.webp"
+        ],
+        "support_quote": "Martin, tu peux m'aider à trouver un cadeau pour mon père? Qu'est-ce qu'aime? Mais il adore le rugby. Tu pourrais lui acheter des tickets pour aller voir un match? C'est une super idée ça. Merci Martin.",
+        "current_bank_transcription": "- Martin, tu peux m'aider à trouver un cadeau pour mon père ?\n- Qu'est-ce qu'il aime ?\n- Il adore le rugby.\n- Tu pourrais lui acheter des tickets pour aller voir un match.\n- Ah !\nC'est une super idée, ça !\nMerci, Martin.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Les trois réponses restent dans le contexte rugby : tickets de match, ballon ovale et maillot. Correspondances propres à cette question pour ne pas remplacer le ballon par un ballon de football."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -15268,7 +15348,7 @@
           "asset": "485b546ebb03"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a2_2021:029:b65709561615"
       ],
@@ -15281,16 +15361,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-mariage-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-anniversaire-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-depart-retraite-dessine.webp"
       ],
-      "missing_labels": [
-        "Un mariage",
-        "Un anniversaire",
-        "Un départ à la retraite"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-mariage-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-anniversaire-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-depart-retraite-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a2-2021-co-ex4-29",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-mariage-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-anniversaire-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-depart-retraite-dessine.webp"
+        ],
+        "support_quote": "Regarde, la voilà comme elle est belle, sa robe lui va bien et le bouquet de fleurs, tu as vu ces fleurs? Oui, et la lumière est belle. C'est bien de se marier au printemps. Les couleurs sont superbes.",
+        "current_bank_transcription": "– Regarde, la voilà. Comme elle est belle ! Sa robe lui va bien, et le bouquet de fleurs, tu as vu, ces fleurs ! – Oui, et la lumière est belle. C’est bien de se marier au printemps, les couleurs sont superbes.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Les mêmes événements sont réutilisés ; robe, bouquet et échange d’alliance appuient clairement la cérémonie de mariage."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -15321,7 +15415,7 @@
           "asset": "020819a87b81"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a2_2021:029:b65709561615"
       ],
@@ -15335,14 +15429,29 @@
       ],
       "resolved_images": [
         "/lib/images/tcf/qcm-audit/co834-bouquet-fleurs-dessine.webp",
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-couronne-feuilles-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-bracelet-petales-dessine.webp"
       ],
-      "missing_labels": [
-        "Une couronne de feuilles",
-        "Un bracelet de pétales"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-bouquet-fleurs-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-couronne-feuilles-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-bracelet-petales-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a2-2021-co-ex4-29",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co834-bouquet-fleurs-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-couronne-feuilles-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-bracelet-petales-dessine.webp"
+        ],
+        "support_quote": "Regarde, la voilà comme elle est belle, sa robe lui va bien et le bouquet de fleurs, tu as vu ces fleurs? Oui, et la lumière est belle. C'est bien de se marier au printemps. Les couleurs sont superbes.",
+        "current_bank_transcription": "– Regarde, la voilà. Comme elle est belle ! Sa robe lui va bien, et le bouquet de fleurs, tu as vu, ces fleurs ! – Oui, et la lumière est belle. C’est bien de se marier au printemps, les couleurs sont superbes.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Bouquet existant réutilisé, couronne de feuilles sans fleurs et bracelet de pétales individuels : trois accessoires distincts, sans changer leur libellé."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",

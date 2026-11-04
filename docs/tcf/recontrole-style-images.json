@@ -224,19 +224,19 @@
     "Les contours noirs appuyés, hachures et volumes fortement simplifiés des dernières reprises ne correspondent pas à la référence validée."
   ],
   "summary": {
-    "reviewed_co_images": 540,
+    "reviewed_co_images": 556,
     "reviewed_other_images": 59,
-    "reviewed_total_images": 599,
+    "reviewed_total_images": 615,
     "user_approved_reference_images": 35,
     "initial_redraw_required": 11,
     "initial_co_redraw_required": 11,
     "initial_other_redraw_required": 0,
-    "already_aligned": 588,
+    "already_aligned": 604,
     "redrawn_images": 11,
     "remaining_redraws": 0,
     "restored_previous_images": 14,
     "rejected_unpublished_previews": 12,
-    "new_images_compared_to_reference": 281
+    "new_images_compared_to_reference": 297
   },
   "superseded_review": {
     "commit": "f6f2a521",
@@ -7724,6 +7724,251 @@
       "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
       "references": [
         "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-anniversaire-dessine",
+      "label": "Un anniversaire",
+      "path": "/lib/images/tcf/qcm-audit/co306-anniversaire-dessine.webp",
+      "sha256": "a12bec799deebc4950fbe72189a81dbb57537735c35a0e8322c8cc143fa03faa",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : modelé doux, contours discrets, ombres légères et matériaux peints. Les scènes sont comparées à la fête et au club photo ; les recompositions reprennent les objets disponibles. Anniversaire explicite : personne en fauteuil soufflant une bougie sans chiffre sur un gâteau, cadeaux et deux proches ; visages et mains repris en peinture, pas de texture photographique.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-mariage-dessine",
+      "label": "Un mariage",
+      "path": "/lib/images/tcf/qcm-audit/co306-mariage-dessine.webp",
+      "sha256": "f663d6ee196e18497007534112ebcef05e2fb5089d13f5eea456aabad33a2ef4",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : modelé doux, contours discrets, ombres légères et matériaux peints. Les scènes sont comparées à la fête et au club photo ; les recompositions reprennent les objets disponibles. Mariage explicite : couple échangeant une alliance à l’annulaire, robe de mariée, bouquet et deux proches ; personnages variés, visages et tissus peints relus en vue pleine.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-depart-retraite-dessine",
+      "label": "Un départ à la retraite",
+      "path": "/lib/images/tcf/qcm-audit/co306-depart-retraite-dessine.webp",
+      "sha256": "6de8c7dab780fb7751ee6a80510f974bb000a033ba6bc69662784005d324e4c3",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : modelé doux, contours discrets, ombres légères et matériaux peints. Les scènes sont comparées à la fête et au club photo ; les recompositions reprennent les objets disponibles. Départ à la retraite dans un bureau : collègue aux cheveux gris recevant un cadeau, deux collègues, carte Bonne retraite et affiche Pot de départ à la retraite relues ; traitement peint repris.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-camion-demenagement-dessine",
+      "label": "Un camion de déménagement",
+      "path": "/lib/images/tcf/qcm-audit/co306-camion-demenagement-dessine.webp",
+      "sha256": "5a3f1daac741c8c82a9f12ce1f1ceb2dfae7353e17c6cb600eb8865c29f61a3a",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : modelé doux, contours discrets, ombres légères et matériaux peints. Les scènes sont comparées à la fête et au club photo ; les recompositions reprennent les objets disponibles. Camion de déménagement entier, cabine blanche et caisse bleue ouverte contenant des cartons et un canapé protégé ; pas de simple camion de livraison.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-moto-dessine",
+      "label": "Une moto",
+      "path": "/lib/images/tcf/qcm-audit/co306-moto-dessine.webp",
+      "sha256": "a7385e6bcdf0d099cee6ede68902ce6e0639fe49fcb36039ef23800048194434",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : modelé doux, contours discrets, ombres légères et matériaux peints. Les scènes sont comparées à la fête et au club photo ; les recompositions reprennent les objets disponibles. Une moto bleue et noire entière sur béquille ; aucune confusion avec un scooter ou un vélo.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-tickets-match-rugby-dessine",
+      "label": "Des tickets pour un match",
+      "path": "/lib/images/tcf/qcm-audit/co306-tickets-match-rugby-dessine.webp",
+      "sha256": "6fbc00e0134b18469fc9b933f507d4b8bd88076602b179b880fbe356224e11c3",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : modelé doux, contours discrets, ombres légères et matériaux peints. Les scènes sont comparées à la fête et au club photo ; les recompositions reprennent les objets disponibles. Deux tickets vierges devant un terrain de rugby à poteaux en H avec ballon ovale ; aucun prix, date, siège numéroté ou texte sur les tickets.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-ballon-rugby-dessine",
+      "label": "Un ballon",
+      "path": "/lib/images/tcf/qcm-audit/co306-ballon-rugby-dessine.webp",
+      "sha256": "061a9eeb581ee7cf5664d6694da975f3822ae48a23b4f537ad04188ecbafdf46",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : modelé doux, contours discrets, ombres légères et matériaux peints. Les scènes sont comparées à la fête et au club photo ; les recompositions reprennent les objets disponibles. Un ballon de rugby ovale entier, cohérent avec le sport nommé dans la transcription ; pas de ballon de football générique.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-maillot-rugby-dessine",
+      "label": "Un maillot",
+      "path": "/lib/images/tcf/qcm-audit/co306-maillot-rugby-dessine.webp",
+      "sha256": "de150657e6b616f3db1248480b182068aa717673d8250a77ae3c6b9cc1fe2511",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : modelé doux, contours discrets, ombres légères et matériaux peints. Les scènes sont comparées à la fête et au club photo ; les recompositions reprennent les objets disponibles. Un maillot de rugby rouge et bleu marine à col blanc, entier et sans numéro ou marque.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-telephones-ordinateurs-dessine",
+      "label": "Les téléphones et les ordinateurs",
+      "path": "/lib/images/tcf/qcm-audit/co306-telephones-ordinateurs-dessine.webp",
+      "sha256": "352699c411c0156e7b1cc4cb9e7fe76b02d926ba8a03e7c0d4a856feeb923e4a",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : modelé doux, contours discrets, ombres légères et matériaux peints. Les scènes sont comparées à la fête et au club photo ; les recompositions reprennent les objets disponibles. Deux téléphones, un ordinateur fixe avec écran et unité centrale et un ordinateur portable ; les deux catégories demandées sont complètes et au pluriel.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-televisions-radios-dessine",
+      "label": "Les télévisions et les radios",
+      "path": "/lib/images/tcf/qcm-audit/co306-televisions-radios-dessine.webp",
+      "sha256": "5cada31d7f525dd7b0ed178b696ca81ff91de258a7e2c563d78dcda5e953b33a",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : modelé doux, contours discrets, ombres légères et matériaux peints. Les scènes sont comparées à la fête et au club photo ; les recompositions reprennent les objets disponibles. Deux télévisions et deux radios : les deux catégories au pluriel sont présentes, cadrans sans valeurs ou fréquences chiffrées.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-appareils-photo-dessine",
+      "label": "Les appareils photo",
+      "path": "/lib/images/tcf/qcm-audit/co306-appareils-photo-dessine.webp",
+      "sha256": "6f6d73318de2bb0c0431fc301aeb13c59a7239a938fce78e3e3c0169919d4d9f",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : modelé doux, contours discrets, ombres légères et matériaux peints. Les scènes sont comparées à la fête et au club photo ; les recompositions reprennent les objets disponibles. Deux appareils photo différents, reflex noir et compact argenté ; pluriel visible, aucun logo.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-chocolat-blanc-fruits-rouges-dessine",
+      "label": "Le chocolat blanc et les fruits rouges",
+      "path": "/lib/images/tcf/qcm-audit/co306-chocolat-blanc-fruits-rouges-dessine.webp",
+      "sha256": "22e336de6c6e51af030ef981b3a10a2f6318397307be605f6e945cd3eefff219",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : modelé doux, contours discrets, ombres légères et matériaux peints. Les scènes sont comparées à la fête et au club photo ; les recompositions reprennent les objets disponibles. Chocolat blanc avec fraises, framboises et groseilles rouges : les deux ingrédients de la réponse sont présents, sans gâteau de saveur seulement supposée.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-chocolat-noir-agrumes-dessine",
+      "label": "Le chocolat noir et les agrumes",
+      "path": "/lib/images/tcf/qcm-audit/co306-chocolat-noir-agrumes-dessine.webp",
+      "sha256": "e7e4f56a78d243aeacd78169dd088b5eb972a095652b74cd0e45b88d602f6052",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : modelé doux, contours discrets, ombres légères et matériaux peints. Les scènes sont comparées à la fête et au club photo ; les recompositions reprennent les objets disponibles. Chocolat noir avec orange, demi-orange et citron : chocolat et agrumes ensemble, aucun pourcentage écrit.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-vanille-noix-coco-dessine",
+      "label": "La vanille et la noix de coco",
+      "path": "/lib/images/tcf/qcm-audit/co306-vanille-noix-coco-dessine.webp",
+      "sha256": "c1183585196a94e72798ab5d4eae739ae411bb2daf799647bdeb6bb73e4dd20e",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : modelé doux, contours discrets, ombres légères et matériaux peints. Les scènes sont comparées à la fête et au club photo ; les recompositions reprennent les objets disponibles. Gousses et fleur de vanille avec deux moitiés de noix de coco ; les deux ingrédients entiers sont visibles.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-couronne-feuilles-dessine",
+      "label": "Une couronne de feuilles",
+      "path": "/lib/images/tcf/qcm-audit/co306-couronne-feuilles-dessine.webp",
+      "sha256": "82ac9b43d4c594ac50af964a5428c7866abdda0e21dfdbe51ce79f5c16cfd82e",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : modelé doux, contours discrets, ombres légères et matériaux peints. Les scènes sont comparées à la fête et au club photo ; les recompositions reprennent les objets disponibles. Couronne de tête faite uniquement de feuillage vert, aucune fleur ou pétale ; anneau entier.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-bracelet-petales-dessine",
+      "label": "Un bracelet de pétales",
+      "path": "/lib/images/tcf/qcm-audit/co306-bracelet-petales-dessine.webp",
+      "sha256": "a58de0fdd50ea677999f1b07ac34b092a876210662107bb89d810d31ec3ffdd1",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : modelé doux, contours discrets, ombres légères et matériaux peints. Les scènes sont comparées à la fête et au club photo ; les recompositions reprennent les objets disponibles. Bracelet formé de pétales roses et blancs individuels superposés autour du poignet, fixé par un ruban ; les fleurs entières du premier essai ont été supprimées. Main brune entière à cinq doigts.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
       ],
       "review_origin": "new_generation_after_reference48",
       "user_approved_reference": false
