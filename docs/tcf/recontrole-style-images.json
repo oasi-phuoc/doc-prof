@@ -224,19 +224,19 @@
     "Les contours noirs appuyés, hachures et volumes fortement simplifiés des dernières reprises ne correspondent pas à la référence validée."
   ],
   "summary": {
-    "reviewed_co_images": 589,
+    "reviewed_co_images": 606,
     "reviewed_other_images": 59,
-    "reviewed_total_images": 648,
+    "reviewed_total_images": 665,
     "user_approved_reference_images": 35,
     "initial_redraw_required": 11,
     "initial_co_redraw_required": 11,
     "initial_other_redraw_required": 0,
-    "already_aligned": 637,
+    "already_aligned": 654,
     "redrawn_images": 11,
     "remaining_redraws": 0,
     "restored_previous_images": 14,
     "rejected_unpublished_previews": 12,
-    "new_images_compared_to_reference": 330
+    "new_images_compared_to_reference": 347
   },
   "superseded_review": {
     "commit": "f6f2a521",
@@ -8465,6 +8465,261 @@
       "references": [
         "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-palais-congres-dessine",
+      "label": "Au palais des congrès",
+      "path": "/lib/images/tcf/qcm-audit/co306-palais-congres-dessine.webp",
+      "sha256": "c39683791407d264f8b23172a5a32b70a1dadab57e7d0d060443889c0116335f",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : peinture numérique et volumes doux, contours discrets, végétation, architecture et visages peints. La distribution des personnages varie d’un lieu à l’autre. Palais des congrès à entrée vitrée avec rangées de sièges et pupitre visibles ; enseigne PALAIS DES CONGRÈS correctement relue, aucune date ou affiche.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-mairie-dessine",
+      "label": "À la mairie",
+      "path": "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp",
+      "sha256": "1b6f6370fc81268849496729b7152a440be59ef2b0d15921ed8fa86aa9b813b3",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : peinture numérique et volumes doux, contours discrets, végétation, architecture et visages peints. La distribution des personnages varie d’un lieu à l’autre. Façade municipale entière, entrée et rampe, enseigne MAIRIE correctement relue ; aucun drapeau, horloge ou chiffre.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-universite-dessine",
+      "label": "À l'université",
+      "path": "/lib/images/tcf/qcm-audit/co306-universite-dessine.webp",
+      "sha256": "d8f7ce704879fe6d98aea8d59f91c82203256f7bae6dfc1b95f31955c3bac77c",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : peinture numérique et volumes doux, contours discrets, végétation, architecture et visages peints. La distribution des personnages varie d’un lieu à l’autre. Campus à bâtiment UNIVERSITÉ correctement relu et bibliothèque visible ; trois étudiants adultes distincts, dont une femme en hijab et une personne en fauteuil roulant, figures entières et gestes naturels.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-centre-impots-dessine",
+      "label": "Au centre des impôts",
+      "path": "/lib/images/tcf/qcm-audit/co306-centre-impots-dessine.webp",
+      "sha256": "7083bce81b3edbd696f4e5eabce1f7a14250b87696ebe360882b69739954bdb8",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : peinture numérique et volumes doux, contours discrets, végétation, architecture et visages peints. La distribution des personnages varie d’un lieu à l’autre. Centre administratif à comptoir et dossiers, enseigne CENTRE DES IMPÔTS correctement relue ; pas de banque ou information fiscale personnelle.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-banque-dessine",
+      "label": "À la banque",
+      "path": "/lib/images/tcf/qcm-audit/co306-banque-dessine.webp",
+      "sha256": "a04e11e667af9b9d1f88cc4e1d29e441528484e618e4dcefd5c78ce96c3dbb12",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : peinture numérique et volumes doux, contours discrets, végétation, architecture et visages peints. La distribution des personnages varie d’un lieu à l’autre. Banque avec guichet, bureau de rendez-vous et distributeur sans chiffres ; conseillère est-asiatique et cliente en hijab distinctes. Visages, mains et vêtements repris avec modelé peint doux, sans changer les personnes ou la scène. BANQUE relu.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-hopital-dessine",
+      "label": "À l'hôpital",
+      "path": "/lib/images/tcf/qcm-audit/co306-hopital-dessine.webp",
+      "sha256": "54fbc370b2e923fa99f4c65072d0db3943f3ce953076c06355a7dbedbd471054",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : peinture numérique et volumes doux, contours discrets, végétation, architecture et visages peints. La distribution des personnages varie d’un lieu à l’autre. Entrée d’hôpital accessible, enseigne HÔPITAL correctement relue, homme âgé à canne et infirmier noir en tenue médicale accompagnant sa marche ; deux figures entières et anatomie naturelle, aucun blessé.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-office-tourisme-dessine",
+      "label": "L'office de tourisme",
+      "path": "/lib/images/tcf/qcm-audit/co306-office-tourisme-dessine.webp",
+      "sha256": "a0dbf8b737503fc71b6eba4010f49f5b432e935dc792bba5f53f64b749fc240e",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : peinture numérique et volumes doux, contours discrets, végétation, architecture et visages peints. La distribution des personnages varie d’un lieu à l’autre. Office de tourisme avec brochures, cartes et vues peintes, personne employée rousse et deux visiteurs âgés est-asiatiques ; mains et visages relus en vue pleine. OFFICE DE TOURISME correctement écrit, aucune carte chiffrée.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-commissariat-dessine",
+      "label": "Le commissariat",
+      "path": "/lib/images/tcf/qcm-audit/co306-commissariat-dessine.webp",
+      "sha256": "533c71a9dfabd47511318adf75769216d2406917bb9d4c9c09acb39d1e8389f0",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : peinture numérique et volumes doux, contours discrets, végétation, architecture et visages peints. La distribution des personnages varie d’un lieu à l’autre. Accueil public de commissariat avec policière noire et visiteur aux cheveux bouclés, personnages distincts des autres scènes. Rendu de peau et vêtements repris en peinture ; mains à cinq doigts et enseigne COMMISSARIAT relues en vue pleine. Aucune arme ou arrestation.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-petit-parc-dessine",
+      "label": "Un petit parc",
+      "path": "/lib/images/tcf/qcm-audit/co306-petit-parc-dessine.webp",
+      "sha256": "98e63ecbee045965fe2e380aa0344b0c59ab7af6897eeb84a3cd777b917be3c5",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : peinture numérique et volumes doux, contours discrets, végétation, architecture et visages peints. La distribution des personnages varie d’un lieu à l’autre. Petit parc public de quartier entièrement visible, un banc et quelques arbres entourés d’immeubles à échelle normale ; petite taille explicite dans le contexte, pas un jardin privé.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-jardin-botanique-dessine",
+      "label": "Un grand jardin botanique",
+      "path": "/lib/images/tcf/qcm-audit/co306-jardin-botanique-dessine.webp",
+      "sha256": "218faec8098adb1ec20a7753cf78712ecfc794666363be9939bb359e10cf6dce",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : peinture numérique et volumes doux, contours discrets, végétation, architecture et visages peints. La distribution des personnages varie d’un lieu à l’autre. Grand jardin botanique avec vaste collection de plantes, allées prolongées, bassin et grande serre ; enseigne JARDIN BOTANIQUE correctement relue, grande échelle distincte du petit parc.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-foret-dessine",
+      "label": "Une forêt",
+      "path": "/lib/images/tcf/qcm-audit/co306-foret-dessine.webp",
+      "sha256": "aeeed7ab78e592299cbba947a3b510d8e6f9077ce2eae9fa1b60f7057109b35f",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : peinture numérique et volumes doux, contours discrets, végétation, architecture et visages peints. La distribution des personnages varie d’un lieu à l’autre. Intérieur d’une forêt dense de feuillus avec troncs, sous-bois, fougères et sentier naturel ; aucun jardin aménagé ou massif montagneux parasite.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-jardin-urbain-dessine",
+      "label": "Un jardin urbain",
+      "path": "/lib/images/tcf/qcm-audit/co306-jardin-urbain-dessine.webp",
+      "sha256": "b49a5196f9e470a401e471316c2ae5a53588326c3935d68214f016e54e1501e9",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : peinture numérique et volumes doux, contours discrets, végétation, architecture et visages peints. La distribution des personnages varie d’un lieu à l’autre. Jardin collectif citadin avec carrés cultivés, arbres fruitiers, fleurs et banc, ouvert sur un quartier d’immeubles ; contexte urbain et usage partagé visibles.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-centre-commercial-dessine",
+      "label": "Un centre commercial",
+      "path": "/lib/images/tcf/qcm-audit/co306-centre-commercial-dessine.webp",
+      "sha256": "fee81d6159f32964ea8c3bea9a74fe7189ab980bdd068f5d61b455a76efd8efc",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : peinture numérique et volumes doux, contours discrets, végétation, architecture et visages peints. La distribution des personnages varie d’un lieu à l’autre. Centre commercial entier avec galerie à plusieurs boutiques, deux niveaux et escalators ; CENTRE COMMERCIAL correctement relu, aucun prix ou nom commercial.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-pistes-cyclables-dessine",
+      "label": "Des pistes cyclables",
+      "path": "/lib/images/tcf/qcm-audit/co306-pistes-cyclables-dessine.webp",
+      "sha256": "2aa7ea3d06bceaece40054a370f55787c04476ba10ad8191b1b905feed43426d",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : peinture numérique et volumes doux, contours discrets, végétation, architecture et visages peints. La distribution des personnages varie d’un lieu à l’autre. Deux parcours cyclables verts séparés de la circulation, pictogrammes de vélo lisibles et vélo garé ; les pistes sont le sujet, pas seulement un cycliste ou une route générale.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-autoroutes-dessine",
+      "label": "Des autoroutes",
+      "path": "/lib/images/tcf/qcm-audit/co306-autoroutes-dessine.webp",
+      "sha256": "2d327b14aff22e4a991ff897348f7e41c09ac88b21761b5f55aa7a9d082895bb",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : peinture numérique et volumes doux, contours discrets, végétation, architecture et visages peints. La distribution des personnages varie d’un lieu à l’autre. Deux grandes autoroutes distinctes se croisent à un échangeur, chaussées séparées et bretelles ; plusieurs véhicules à échelle cohérente, pas de voie cyclable ou rail.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-voies-tram-dessine",
+      "label": "Des voies de tram",
+      "path": "/lib/images/tcf/qcm-audit/co306-voies-tram-dessine.webp",
+      "sha256": "e334ffadaaa6e4cb4e3fc0fd390833e3d9eea5cf464cc5955b9536db468d289d",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : peinture numérique et volumes doux, contours discrets, végétation, architecture et visages peints. La distribution des personnages varie d’un lieu à l’autre. Deux voies de tram parallèles avec rails dans la chaussée, caténaires et un tram urbain vert entier ; différence explicite avec les voies ferrées sur ballast.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-voies-ferrees-dessine",
+      "label": "Des voies ferrées",
+      "path": "/lib/images/tcf/qcm-audit/co306-voies-ferrees-dessine.webp",
+      "sha256": "1cd9a30054dd4bdc60aed08a1724c4354d8c95c30767aed1b455734263879fef",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : peinture numérique et volumes doux, contours discrets, végétation, architecture et visages peints. La distribution des personnages varie d’un lieu à l’autre. Deux voies ferrées parallèles sur ballast, chacune à deux rails et traverses, avec caténaires et cadre végétal ; quatre rails au total, pas une seule voie ou rails de tram urbain.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
       ],
       "review_origin": "new_generation_after_reference48",
       "user_approved_reference": false

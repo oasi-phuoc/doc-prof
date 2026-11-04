@@ -15,11 +15,11 @@
   ],
   "summary": {
     "initial_question_candidates": 306,
-    "questions_illustrated_or_prepared": 174,
-    "newly_activated": 76,
-    "prepared_pending_audio_link": 94,
+    "questions_illustrated_or_prepared": 181,
+    "newly_activated": 78,
+    "prepared_pending_audio_link": 99,
     "prepared_pending_audio_validation": 4,
-    "remaining_questions_requiring_images_or_review": 132,
+    "remaining_questions_requiring_images_or_review": 125,
     "unreviewed_complete_trios": 0,
     "audio_references_next_stage": 432,
     "vocabulary_occurrences_final_stage": 1906
@@ -9736,11 +9736,10 @@
       "resolved_images": [
         null,
         "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp",
-        null
+        "/lib/images/tcf/qcm-audit/co306-centre-commercial-dessine.webp"
       ],
       "missing_labels": [
-        "Au bar de la plage",
-        "Au centre commercial"
+        "Au bar de la plage"
       ],
       "ready_for_source_review": false
     },
@@ -9884,12 +9883,11 @@
       ],
       "resolved_images": [
         null,
-        null,
+        "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp",
         null
       ],
       "missing_labels": [
         "À la caisse de la librairie",
-        "À la mairie",
         "À l’entrée du parking"
       ],
       "ready_for_source_review": false,
@@ -10001,12 +9999,11 @@
       "source_links": [],
       "resolved_images": [
         null,
-        null,
+        "/lib/images/tcf/qcm-audit/co306-banque-dessine.webp",
         null
       ],
       "missing_labels": [
         "Une association",
-        "Une banque",
         "Un restaurant"
       ],
       "ready_for_source_review": false
@@ -12041,12 +12038,11 @@
       "source_links": [],
       "resolved_images": [
         null,
-        null,
+        "/lib/images/tcf/qcm-audit/co306-hopital-dessine.webp",
         null
       ],
       "missing_labels": [
         "L’entreprise et le bureau",
-        "L’hôpital",
         "Le restaurant"
       ],
       "ready_for_source_review": false
@@ -12685,19 +12681,29 @@
           "asset": "c0087bdfa341"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
         "/lib/images/tcf/qcm-audit/co306-bureau-poste-dessine.webp",
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-office-tourisme-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-commissariat-dessine.webp"
       ],
-      "missing_labels": [
-        "L'office de tourisme",
-        "Le commissariat"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s44-co-4",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-bureau-poste-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-office-tourisme-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-commissariat-dessine.webp"
+        ],
+        "support_quote": "Salut Maud !\nEst-ce que tu viens à la réunion des habitants ce soir ?\nLa poste veut fermer son bureau parce que notre village est trop petit, mais c'est un service public de proximité très important.\nIl faut qu'on le garde !",
+        "current_bank_transcription": "Salut Maud !\nEst-ce que tu viens à la réunion des habitants ce soir ?\nLa poste veut fermer son bureau parce que notre village est trop petit, mais c'est un service public de proximité très important.\nIl faut qu'on le garde !",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Bureau de poste existant réutilisé, office de tourisme et commissariat distincts ; aucune fermeture ou autre événement non demandé ajouté aux dessins. Transcription actuelle relue ; remplacement audio à rapprocher."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -13073,7 +13079,7 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a2-abc-direct:90:1ae5c01e041b:4048350c"
       ],
@@ -13086,16 +13092,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-centre-impots-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-banque-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-hopital-dessine.webp"
       ],
-      "missing_labels": [
-        "Au centre des impôts",
-        "À la banque",
-        "À l'hôpital"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-centre-impots-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-banque-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-hopital-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s49-co-3",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-centre-impots-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-banque-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-hopital-dessine.webp"
+        ],
+        "support_quote": "Julie, je dois aller au nouveau centre des impôts demain. Tu sais comment y aller? Oui, tu dois prendre le bus 171 et descendre à l'arrêt Gabriel Perry. C'est juste à côté du bureau de poste. Très bien, merci beaucoup.",
+        "current_bank_transcription": "Julie, je dois aller au nouveau centre des impôts demain.\nTu sais comment y aller ?\n— Oui, tu dois prendre le bus 171 et descendre à l’arrêt Gabriel Péri.\nC’est juste à côté du bureau de poste.\n— Très bien, merci beaucoup.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Centre administratif des impôts, banque et hôpital : les fonctions sont explicites et distinctes. Aucun numéro de bus, nom d’arrêt ou indication de jour du support dessiné."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -13334,20 +13354,29 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-palais-congres-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-universite-dessine.webp"
       ],
-      "missing_labels": [
-        "Au palais des congrès",
-        "À la mairie",
-        "À l'université"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s57-co-3",
+        "question": 4,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-palais-congres-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-universite-dessine.webp"
+        ],
+        "support_quote": "Le salon de l'alternance et de l'apprentissage ouvre ses portes du 12 au 14 novembre ou palais des congrès de Strasbourg.\nSi vous recherchez un stage ou un contrat en alternance, venez rencontrer les recruteurs.",
+        "current_bank_transcription": "Le salon de l'alternance et de l'apprentissage ouvre ses portes du 12 au 14 novembre ou palais des congrès de Strasbourg.\nSi vous recherchez un stage ou un contrat en alternance, venez rencontrer les recruteurs.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Palais des congrès à auditorium, mairie et université à campus, trois fonctions distinctes ; enseignes naturelles relues, aucune date du salon ajoutée. Transcription actuelle relue ; remplacement audio à rapprocher."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -13519,20 +13548,29 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-petit-parc-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-jardin-botanique-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-foret-dessine.webp"
       ],
-      "missing_labels": [
-        "Un petit parc",
-        "Un grand jardin botanique",
-        "Une forêt"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s60-co-3",
+        "question": 5,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-petit-parc-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-jardin-botanique-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-foret-dessine.webp"
+        ],
+        "support_quote": "Le week-end dernier, l'association, mon quartier de rêve, a demandé aux habitants du quartier des essais, leur avis sur leur lieu de vie.\n« J'aime bien notre quartier.\nNous sommes au centre-ville.\nLes transports publics sont approximités.\nIl y a un petit parc.\n» « Je propose de créer un jardin urbain avec des arbres fruitiers, des fleurs ou les habitants pourront se rencontrer.\n» « Pour moi, il manque des lieux pour faire du sport, un parcours de santé, par exemple.\n» « Il nous faut plus de pistes cyclables.\n»",
+        "current_bank_transcription": "Le week-end dernier, l'association, mon quartier de rêve, a demandé aux habitants du quartier des essais, leur avis sur leur lieu de vie.\n« J'aime bien notre quartier.\nNous sommes au centre-ville.\nLes transports publics sont approximités.\nIl y a un petit parc.\n» « Je propose de créer un jardin urbain avec des arbres fruitiers, des fleurs ou les habitants pourront se rencontrer.\n» « Pour moi, il manque des lieux pour faire du sport, un parcours de santé, par exemple.\n» « Il nous faut plus de pistes cyclables.\n»",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Petit parc de quartier complet, vaste jardin botanique à serre et forêt : différences de taille et de fonction visibles dans le contexte, sans réduire petit ou grand au cadrage. Transcription actuelle relue ; remplacement audio à rapprocher."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -13563,19 +13601,29 @@
           "asset": "f6145b0eb230"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
+        "/lib/images/tcf/qcm-audit/co306-jardin-urbain-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-centre-commercial-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-parking-dessine.webp"
       ],
-      "missing_labels": [
-        "Un jardin urbain",
-        "Un centre commercial"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s60-co-3",
+        "question": 6,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-jardin-urbain-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-centre-commercial-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-parking-dessine.webp"
+        ],
+        "support_quote": "Le week-end dernier, l'association, mon quartier de rêve, a demandé aux habitants du quartier des essais, leur avis sur leur lieu de vie.\n« J'aime bien notre quartier.\nNous sommes au centre-ville.\nLes transports publics sont approximités.\nIl y a un petit parc.\n» « Je propose de créer un jardin urbain avec des arbres fruitiers, des fleurs ou les habitants pourront se rencontrer.\n» « Pour moi, il manque des lieux pour faire du sport, un parcours de santé, par exemple.\n» « Il nous faut plus de pistes cyclables.\n»",
+        "current_bank_transcription": "Le week-end dernier, l'association, mon quartier de rêve, a demandé aux habitants du quartier des essais, leur avis sur leur lieu de vie.\n« J'aime bien notre quartier.\nNous sommes au centre-ville.\nLes transports publics sont approximités.\nIl y a un petit parc.\n» « Je propose de créer un jardin urbain avec des arbres fruitiers, des fleurs ou les habitants pourront se rencontrer.\n» « Pour moi, il manque des lieux pour faire du sport, un parcours de santé, par exemple.\n» « Il nous faut plus de pistes cyclables.\n»",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Jardin collectif avec espaces cultivés et immeubles visibles, centre commercial à plusieurs boutiques et parking existant réutilisé. Transcription actuelle relue ; remplacement audio à rapprocher."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -13606,20 +13654,29 @@
           "asset": "fbc604d258a3"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-pistes-cyclables-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-autoroutes-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-voies-tram-dessine.webp"
       ],
-      "missing_labels": [
-        "Des pistes cyclables",
-        "Des autoroutes",
-        "Des voies de tram"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s60-co-3",
+        "question": 9,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-pistes-cyclables-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-autoroutes-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-voies-tram-dessine.webp"
+        ],
+        "support_quote": "Le week-end dernier, l'association, mon quartier de rêve, a demandé aux habitants du quartier des essais, leur avis sur leur lieu de vie.\n« J'aime bien notre quartier.\nNous sommes au centre-ville.\nLes transports publics sont approximités.\nIl y a un petit parc.\n» « Je propose de créer un jardin urbain avec des arbres fruitiers, des fleurs ou les habitants pourront se rencontrer.\n» « Pour moi, il manque des lieux pour faire du sport, un parcours de santé, par exemple.\n» « Il nous faut plus de pistes cyclables.\n»",
+        "current_bank_transcription": "Le week-end dernier, l'association, mon quartier de rêve, a demandé aux habitants du quartier des essais, leur avis sur leur lieu de vie.\n« J'aime bien notre quartier.\nNous sommes au centre-ville.\nLes transports publics sont approximités.\nIl y a un petit parc.\n» « Je propose de créer un jardin urbain avec des arbres fruitiers, des fleurs ou les habitants pourront se rencontrer.\n» « Pour moi, il manque des lieux pour faire du sport, un parcours de santé, par exemple.\n» « Il nous faut plus de pistes cyclables.\n»",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Deux parcours cyclables, échangeur de deux autoroutes et deux voies de tram urbain : aménagements distincts, pluriels visibles. Transcription actuelle relue ; remplacement audio à rapprocher."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -14127,12 +14184,11 @@
       "resolved_images": [
         null,
         null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp"
       ],
       "missing_labels": [
         "Dans la grande salle des fêtes",
-        "Au musée",
-        "À la mairie"
+        "Au musée"
       ],
       "ready_for_source_review": false
     },
@@ -15451,7 +15507,7 @@
           "asset": "b71adfb4ca1a"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a2_2021:023:50990deefc22"
       ],
@@ -15464,16 +15520,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-pistes-cyclables-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-autoroutes-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-voies-ferrees-dessine.webp"
       ],
-      "missing_labels": [
-        "Des pistes cyclables",
-        "Des autoroutes",
-        "Des voies ferrées"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-pistes-cyclables-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-autoroutes-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-voies-ferrees-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a2-2021-co-ex3-23",
+        "question": 11,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-pistes-cyclables-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-autoroutes-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-voies-ferrees-dessine.webp"
+        ],
+        "support_quote": "C'est super de se déplacer à vélo sur ces nouvelles pistes cycles.",
+        "current_bank_transcription": "C’est super de se déplacer à vélo sur ces nouvelles pistes cyclables !",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Pistes cyclables et autoroutes réutilisées, deux voies ferrées sur ballast ajoutées ; distinction entre vélo, route automobile, rail de tram urbain et rail ferroviaire relue. La transcription préparée abrège cyclables en cycles, la banque indique cyclables ; aucune certification d’écoute déclarée."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",

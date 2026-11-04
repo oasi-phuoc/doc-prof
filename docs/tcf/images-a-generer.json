@@ -21,8 +21,8 @@
     },
     "generated_reviewed_assets": 48,
     "activated_ce_questions_this_batch": 59,
-    "co_new_reviewed_images_this_batch": 589,
-    "co_activated_questions_this_batch": 193,
+    "co_new_reviewed_images_this_batch": 606,
+    "co_activated_questions_this_batch": 195,
     "association_scenes_restored_this_batch": 13
   },
   "questions": [
@@ -17142,7 +17142,12 @@
           "asset": null
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active_after_visual_and_source_text_review",
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-centre-impots-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-banque-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-hopital-dessine.webp"
+      ]
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -19136,7 +19141,12 @@
           "asset": "b71adfb4ca1a"
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active_after_visual_and_source_text_review",
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-pistes-cyclables-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-autoroutes-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-voies-ferrees-dessine.webp"
+      ]
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
