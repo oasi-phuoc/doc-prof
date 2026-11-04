@@ -15,11 +15,11 @@
   ],
   "summary": {
     "initial_question_candidates": 306,
-    "questions_illustrated_or_prepared": 197,
-    "newly_activated": 89,
-    "prepared_pending_audio_link": 104,
+    "questions_illustrated_or_prepared": 203,
+    "newly_activated": 93,
+    "prepared_pending_audio_link": 106,
     "prepared_pending_audio_validation": 4,
-    "remaining_questions_requiring_images_or_review": 109,
+    "remaining_questions_requiring_images_or_review": 103,
     "unreviewed_complete_trios": 0,
     "audio_references_next_stage": 432,
     "vocabulary_occurrences_final_stage": 1906
@@ -2640,20 +2640,29 @@
           "asset": "44358c7f0053"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-dessert-fromage-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-entree-plat-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-pain-salade-dessine.webp"
       ],
-      "missing_labels": [
-        "Le dessert et le fromage",
-        "L’entrée et le plat",
-        "Le pain et la salade"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s29-co-4",
+        "question": 4,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-dessert-fromage-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-entree-plat-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-pain-salade-dessine.webp"
+        ],
+        "support_quote": "- Bonjour, nous avons une réservation pour huit.\n- Ah oui, voici une table pour huit.\nJe vous apporte le menu.\n- Je prends votre commande ?\n- Oui, nous prenons huit menus, huit entrées et huit plats, mais pas de dessert.\n- Est-ce que vous prenez du fromage ?\n- Non, pas de fromage.\n- Et qu'est-ce que vous buvez ?\nDu vin ?\n- Non, pas de vin.\nTrois jus d'orange, une eau gazeuse, un jus de tomate et une carafe d'eau.",
+        "current_bank_transcription": "- Bonjour, nous avons une réservation pour huit.\n- Ah oui, voici une table pour huit.\nJe vous apporte le menu.\n- Je prends votre commande ?\n- Oui, nous prenons huit menus, huit entrées et huit plats, mais pas de dessert.\n- Est-ce que vous prenez du fromage ?\n- Non, pas de fromage.\n- Et qu'est-ce que vous buvez ?\nDu vin ?\n- Non, pas de vin.\nTrois jus d'orange, une eau gazeuse, un jus de tomate et une carafe d'eau.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Dessert et fromage, petite entrée et plat principal, pain et salade : chaque image garde les deux éléments. Le refus du dessert puis du fromage est explicite dans la transcription actuelle, relue ; audio de remplacement à rapprocher."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -4445,7 +4454,7 @@
           "asset": "83c8f978740e"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "09035276:023:0d9fe760a1ac",
         "additional-20261102:mdf-a1-abc-junior:23:0d9fe760a1ac:810f6ab5"
@@ -4459,16 +4468,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-jeu-video-football-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-jeu-video-course-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-jeu-video-tennis-dessine.webp"
       ],
-      "missing_labels": [
-        "Un jeu de football",
-        "Un jeu de course automobile",
-        "Un jeu de tennis"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-jeu-video-football-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-jeu-video-course-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-jeu-video-tennis-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s48-co-3",
+        "question": 4,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-jeu-video-football-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-jeu-video-course-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-jeu-video-tennis-dessine.webp"
+        ],
+        "support_quote": "Bonjour, c'est Baptiste. Je ne comprends pas l'exercice de français. Est-ce que tu peux m'aider? Viens à la maison mercredi à 14h. On peut faire nos devoirs ensemble. Et après, on peut jouer aux jeux vidéo. J'ai un super jeu de foot. Ma mère peut te ramener chez toi en voiture à 18h. Tu es d'accord?",
+        "current_bank_transcription": "Bonjour, c'est Baptiste.\nJe ne comprends pas l'exercice de français.\nEst-ce que tu peux m'aider ?\nViens à la maison mercredi à 14 heures.\nOn peut faire nos devoirs ensemble.\nEt après, on peut jouer à un jeu vidéo.\nJ'ai un super jeu de foot.\nMa mère peut te ramener chez toi en voiture à 18 heures.\nTu es d'accord ?",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Trois jeux vidéo de sport distincts, football, course automobile et tennis, chacun montré sur un écran avec sa manette. Aucune confusion avec un match simplement regardé à la télévision, aucun horaire ou jour ajouté."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -7689,7 +7712,7 @@
           "asset": "a1f62a66bfc2"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:076:d174e78a94da"
       ],
@@ -7702,16 +7725,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-basketball-karate-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-football-tennis-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-natation-judo-dessine.webp"
       ],
-      "missing_labels": [
-        "Le basketball et le karaté",
-        "Le football et le tennis",
-        "La natation et le judo"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-basketball-karate-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-football-tennis-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-natation-judo-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a1-2022-co-76",
+        "question": 8,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-basketball-karate-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-football-tennis-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-natation-judo-dessine.webp"
+        ],
+        "support_quote": "Comment est-ce que vous vous appelez ? Je m'appelle Youssef. Est-ce que vous pouvez épeler votre prénom s'il vous plaît ? Y O U S S E F Et quel âge avez-vous ? 26 ans. J'ai 26 ans. Merci. Combien de frères et sœurs avez-vous ? J'ai un frère et deux sœurs. Comment s'appelle-t-il ? Mon frère s'appelle Ahmed et mes soeurs s'appellent Lillian et Sarah. Est-ce que vous faites un sport ? Oui. Quel sport est-ce que vous faites ? Je fais du basket-ball et du caraté. D'accord. Et vous faites ces sports quel jour ? Le basketball, c'est le mercredi et le samedi. Je fais du karaté le mardi et le jeudi. Merci Yousef.",
+        "current_bank_transcription": "– Bonjour.\n– Bonjour.\n– Bienvenue à votre épreuve de production orale\ndu DELF A1 Le premier exercice est un entretien .\ndirigé. Je vous pose des questions pour vous\nconnaître. Ça va ? Est-ce que nous pouvons\ncommencer ?\n– Oui, ça va.\n– Comment est-ce que vous vous appelez ?\n– Je m’appelle Youssef.\n– Est-ce que vous pouvez épeler votre prénom s’il\nvous plaît ?\n– Y-O-U-S-S-E-F.\n– Et quel âge avez-vous ?\n– 26 ans. J’ai 26 ans.\n– Merci. Combien de frères et sœurs avez-vous ?\n– J’ai un frère et deux sœurs.\n– Comment s’appellent-ils ?\n– Mon frère s’appelle Ahmed et mes sœurs\ns’appellent Liliane et Sara.\n– Est-ce que vous faites un sport ?\n– Oui.\n– Quel sport est-ce que vous faites ?\n– Je fais du basketball et du karaté.\n– D’accord. Et vous faites ces sports quels jours ?\n– Le basketball, c’est le mercredi et le samedi. Je\nfais du karaté le mardi et le jeudi.\n– Merci Youssef. L’exercice 1 est terminé. Nous\npassons maintenant à l’exercice 2.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Trois paires de sports réellement pratiqués : basketball et karaté, football et tennis, natation et judo. Les graphies basket-ball et caraté de la transcription préparée correspondent aux mots correctement écrits dans la banque ; aucune date ou jour de pratique ajouté."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -10303,20 +10340,29 @@
           "asset": "28f6df82829c"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-randonnee-tennis-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-natation-football-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-ski-rugby-dessine.webp"
       ],
-      "missing_labels": [
-        "La randonnée et le tennis",
-        "La natation et le football",
-        "Le ski et le rugby"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s10-co-4",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-randonnee-tennis-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-natation-football-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-ski-rugby-dessine.webp"
+        ],
+        "support_quote": "– Ça va, Théo ?\n– Non, j'en ai assez de rester chez moi le week-end à regarder des matchs à la télé.\nJe voudrais trouver des copains pour sortir.\nJ'aimerais bien faire des randonnées, du tennis.\n– Eh bien, envoie un poste sur un forum.\n– Et j'écris quoi ?\n– Tu écris un petit texte avec ton prénom et les sports que tu veux pratiquer, et mets des émogies pour montrer ton optimisme.",
+        "current_bank_transcription": "– Ça va, Théo ?\n– Non, j'en ai assez de rester chez moi le week-end à regarder des matchs à la télé.\nJe voudrais trouver des copains pour sortir.\nJ'aimerais bien faire des randonnées, du tennis.\n– Eh bien, envoie un poste sur un forum.\n– Et j'écris quoi ?\n– Tu écris un petit texte avec ton prénom et les sports que tu veux pratiquer, et mets des émogies pour montrer ton optimisme.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Randonnée avec équipement et tennis, natation et football, ski et rugby : aucune paire réduite à un seul sport. Transcription actuelle relue ; audio de remplacement à rapprocher."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -14287,7 +14333,7 @@
           "asset": "01c5afc068a0"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a2-abc-direct:58:39f4143a409d:ffcb8219"
       ],
@@ -14300,16 +14346,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-velo-natation-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-football-tennis-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-course-ski-dessine.webp"
       ],
-      "missing_labels": [
-        "Le vélo et la natation",
-        "Le football et le tennis",
-        "La course et le ski"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-velo-natation-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-football-tennis-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-course-ski-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ssx-a2-radio-17-1-co-3",
+        "question": 2,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-velo-natation-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-football-tennis-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-course-ski-dessine.webp"
+        ],
+        "support_quote": "Bonjour. A l'approche de l'automne, restez en forme en faisant une promenade de 20 minutes. L'effort physique est très bon pour le moral. Pour les plus sportifs, le vélo et la natation vous sont conseillés. N'oubliez pas de boire.",
+        "current_bank_transcription": "Bonjour.\nÀ l’approche de l’automne, restez en forme en faisant une promenade de 20 minutes.\nL’effort physique est très bon pour le moral.\nPour les plus sportifs, le vélo et la natation vous sont conseillés !\nN’oubliez pas de boire !",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Vélo et natation, football et tennis réutilisés de la question A1, course à pied et ski : six activités entières, sans reproduire la durée ou la saison mentionnées dans le support."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -16714,7 +16774,7 @@
           "asset": "33cadc784399"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "09035196:023:d2e19546825f",
         "additional-20261102:mdf-b1-abc-junior-direct:23:d2e19546825f:3a6a9f56"
@@ -16728,16 +16788,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-jeu-video-football-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-jeu-video-course-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-jeu-video-strategie-dessine.webp"
       ],
-      "missing_labels": [
-        "Un jeu de football",
-        "Un jeu de course",
-        "Un jeu de stratégie"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-jeu-video-football-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-jeu-video-course-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-jeu-video-strategie-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ss-b1-s7-co-2",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-jeu-video-football-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-jeu-video-course-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-jeu-video-strategie-dessine.webp"
+        ],
+        "support_quote": "Bonjour et bienvenue dans notre émission spéciale sur les jeux vidéo. Aujourd'hui, nous allons parler football. Alors ce n'est une surprise pour personne, Electronic Arts sortira en octobre prochain une nouvelle édition de FIFA sobrement intitulée FIFA 13. Au cours d'une conférence minutieusement détaillée, les développeurs du jeu nous ont présenté les principales améliorations et modifications que comportera cette nouvelle édition du jeu vidéo de foot le plus vendu du marché. Avant de nous parler de FIFA 13, les développeurs d'I Canada On tout d'abord voulu revenir sur le succès du précédent episode. Vendu à plus de 3,7 millions d'exemplaires au cours de sa première semaine de commercialisation, le jeu s'est écoulé à plus de 10 millions de copies depuis son lancement. The titre a également remporté un franc succès en ligne avec plus d'un milliard de parties online disputées depuis le lancement. Autant dire que la communauté de fans est énorme and the studio en charge du jeu a la pression. Sans surprise, FIFA 13 devrait beaucoup ressembler à son prédécesseur, avec, comme chaque année, l'ajout de dizaines de petites fonctionnalités presque invisibles en apparence, mais qui améliorent chacune à leur façon l'expérience de jeu. Les développeurs n'avaient qu'un mot à la bouche. La créativité. Tout le travail de cette année consiste pour eux à ajouter de nouvelles options pour multiplier les possibilités de jeu et offrir une simulation aussi complète que possible. Le moteur de jeu a évolué. Si les différences graphiques ne sautent pas aux yeux, les développeurs ont en tout cas amélioré significativement l'animation. Certain mouvements peu réalistes ont été corrigés pour la prochaine version. Plus généralement, l'intelligence a été améliorée afin d'être plus proche des joueurs humains, qu'il s'agisse de l'équipe adverse ou des équipers de votre équipe. Ces derniers vont désormais envisager un plus grand nombre de possibilités tactiques en temps réel, de façon à s'adapter aux actions que vous réalisez avec le joueur que vous contrôlez. Par exemple, le joueur le plus proche de vous va étudier les différents endroits où il peut se placer selon la direction que vous prenez, afin que vous puissiez lui passer au mieux la balle.",
+        "current_bank_transcription": "Bonjour et bienvenue dans notre émission spéciale sur les jeux vidéo.\nAujourd'hui, nous allons parler football.\nAlors, ce n'est une surprise pour personne, Electronic Arts sortira en octobre prochain une nouvelle édition de FIFA sobremment intitulée FIFA 13.\nAu cours d'une conférence minutieusement détaillée, les développeurs du jeu nous ont présenté les principales améliorations et modifications que comportera cette nouvelle édition du jeu vidéo de foot le plus vendu du marché.\nAvant de nous parler de FIFA 13, les développeurs d'Yé Canada ont tout d'abord voulu revenir sur le succès du précédent épisode.\nVendu à plus de 3,7 millions d'exemplaires au cours de sa première semaine de commercialisation, le jeu s'est écoulé à plus de 10 millions de copies depuis son lancement.\nLe titre a également remporté un franc succès en ligne avec plus d'un milliards de parties online disputés depuis le lancement.\nAutant dire que la communauté de fans est énorme et que le studio en charge du jeu à la pression.\nSans surprise, FIFA 13 devrait beaucoup ressembler à son prédécesseur avec, comme chaque année, l'ajout de dizaines de petites fonctionnalités presque invisibles en apparence mais qui améliore chacune à leur façon l'expérience de jeu.\nLes développeurs n'avaient qu'un mot à la bouche, la créativité.\nTout le travail de cette année consiste pour eux à ajouter de nouvelles options pour multiplier les possibilités de jeu et offrir une simulation aussi complète que possible.\nLe moteur de jeu a évolué.\nSi les différences graphiques ne sautent pas aux yeux, les développeurs ont en tout cas amélioré significativement l'animation.\nCertains mouvements peu réalistes ont été corriger pour la prochaine version.\nPlus généralement, l'intelligence a été améliorée afin d'être plus proche des joueurs humains qu'il s'agisse de l'équipe adverse ou des équipiers de votre équipe.\nCes derniers vont désormais envisager un plus grand nombre de possibilités tactiques en temps réel, de façon à s'adapter aux actions que vous réalisez avec le joueur que vous contrôlez.\nPar exemple, le joueur le plus proche de vous va étudier les différents endroits où il peut se placer selon la direction que vous prenez afin que vous puissiez lui passer au mieux la balle.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Jeux de football et de course déjà préparés pour A1 réutilisés ; un jeu de stratégie complète ce trio B1. Genre de football explicite dans la transcription préparée ; aucun nom de licence, millésime, date ou chiffre de ventes reproduit."
+      }
     },
     {
       "bank": "src/tcf/content/a2-b1/co.json",

@@ -31,20 +31,20 @@
     "received_source_entries": 836,
     "copyright_removed": 2,
     "planned_question_candidates": 423,
-    "activated_planned_questions": 206,
-    "pending_question_candidates": 217,
+    "activated_planned_questions": 210,
+    "pending_question_candidates": 213,
     "original_missing_concepts": 741,
-    "original_concepts_now_generated_or_reused": 505,
-    "remaining_original_concepts": 236,
-    "new_co_images_this_batch": 638,
+    "original_concepts_now_generated_or_reused": 521,
+    "remaining_original_concepts": 220,
+    "new_co_images_this_batch": 653,
     "activated_association_scenes_this_batch": 13,
     "pending_association_scenes": 0,
-    "sources_with_pending_question_candidates": 77,
-    "sources_with_new_active_question_or_scene": 192,
+    "sources_with_pending_question_candidates": 71,
+    "sources_with_new_active_question_or_scene": 198,
     "sources_without_current_bank_reference": 234,
     "remaining_audio_references_to_match": 432,
     "co_images_needing_style_correction": 0,
-    "co_images_style_aligned": 638,
+    "co_images_style_aligned": 653,
     "co_style_redraws_completed": 11
   },
   "instructions": [
@@ -523,17 +523,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/vie-quotidienne/bonjour-c-est-baptiste.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a1-s48-co-3",
           "question": 4
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 5,
-      "current_linked_image_variants": 1,
+      "current_linked_image_variants": 2,
       "complete_image_audit_certified": false
     },
     {
@@ -3165,17 +3165,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_76.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "delf-a1-2022-co-76",
           "question": 8
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 10,
-      "current_linked_image_variants": 0,
+      "current_linked_image_variants": 1,
       "complete_image_audit_certified": false
     },
     {
@@ -7295,17 +7295,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/loisirs/mutee-saint-denis-jeune-1.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-b1-s7-co-2",
           "question": 1
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 10,
-      "current_linked_image_variants": 0,
+      "current_linked_image_variants": 1,
       "complete_image_audit_certified": false
     },
     {
@@ -9026,17 +9026,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/vie-quotidienne/bonjour-c-est-baptiste.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a1-s48-co-3",
           "question": 4
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 5,
-      "current_linked_image_variants": 1,
+      "current_linked_image_variants": 2,
       "complete_image_audit_certified": false
     },
     {
@@ -12415,17 +12415,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/presenter/moyen-a2__radio-17.1.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ssx-a2-radio-17-1-co-3",
           "question": 2
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 5,
-      "current_linked_image_variants": 1,
+      "current_linked_image_variants": 2,
       "complete_image_audit_certified": false
     },
     {
@@ -16107,17 +16107,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/loisirs/mutee-saint-denis-jeune-1.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-b1-s7-co-2",
           "question": 1
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 10,
-      "current_linked_image_variants": 0,
+      "current_linked_image_variants": 1,
       "complete_image_audit_certified": false
     },
     {
@@ -20865,7 +20865,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-dessert-fromage-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-entree-plat-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-pain-salade-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s29-co-4",
+        "question": 4,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-dessert-fromage-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-entree-plat-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-pain-salade-dessine.webp"
+        ],
+        "support_quote": "- Bonjour, nous avons une réservation pour huit.\n- Ah oui, voici une table pour huit.\nJe vous apporte le menu.\n- Je prends votre commande ?\n- Oui, nous prenons huit menus, huit entrées et huit plats, mais pas de dessert.\n- Est-ce que vous prenez du fromage ?\n- Non, pas de fromage.\n- Et qu'est-ce que vous buvez ?\nDu vin ?\n- Non, pas de vin.\nTrois jus d'orange, une eau gazeuse, un jus de tomate et une carafe d'eau.",
+        "current_bank_transcription": "- Bonjour, nous avons une réservation pour huit.\n- Ah oui, voici une table pour huit.\nJe vous apporte le menu.\n- Je prends votre commande ?\n- Oui, nous prenons huit menus, huit entrées et huit plats, mais pas de dessert.\n- Est-ce que vous prenez du fromage ?\n- Non, pas de fromage.\n- Et qu'est-ce que vous buvez ?\nDu vin ?\n- Non, pas de vin.\nTrois jus d'orange, une eau gazeuse, un jus de tomate et une carafe d'eau.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Dessert et fromage, petite entrée et plat principal, pain et salade : chaque image garde les deux éléments. Le refus du dessert puis du fromage est explicite dans la transcription actuelle, relue ; audio de remplacement à rapprocher."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -22633,7 +22652,7 @@
           "asset": "83c8f978740e"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "09035276:023:0d9fe760a1ac",
         "additional-20261102:mdf-a1-abc-junior:23:0d9fe760a1ac:810f6ab5"
@@ -22645,6 +22664,11 @@
           "candidate_cut_id": "09035276-023-0d9fe760a1ac-d1",
           "transcription": "Bonjour, c'est Baptiste. Je ne comprends pas l'exercice de français. Est-ce que tu peux m'aider? Viens à la maison mercredi à 14h. On peut faire nos devoirs ensemble. Et après, on peut jouer aux jeux vidéo. J'ai un super jeu de foot. Ma mère peut te ramener chez toi en voiture à 18h. Tu es d'accord?"
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-jeu-video-football-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-jeu-video-course-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-jeu-video-tennis-dessine.webp"
       ]
     },
     {
@@ -25847,7 +25871,7 @@
           "asset": "a1f62a66bfc2"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:076:d174e78a94da"
       ],
@@ -25858,6 +25882,11 @@
           "candidate_cut_id": "delf_a1_2022-076-d174e78a94da-d1",
           "transcription": "Comment est-ce que vous vous appelez ? Je m'appelle Youssef. Est-ce que vous pouvez épeler votre prénom s'il vous plaît ? Y O U S S E F Et quel âge avez-vous ? 26 ans. J'ai 26 ans. Merci. Combien de frères et sœurs avez-vous ? J'ai un frère et deux sœurs. Comment s'appelle-t-il ? Mon frère s'appelle Ahmed et mes soeurs s'appellent Lillian et Sarah. Est-ce que vous faites un sport ? Oui. Quel sport est-ce que vous faites ? Je fais du basket-ball et du caraté. D'accord. Et vous faites ces sports quel jour ? Le basketball, c'est le mercredi et le samedi. Je fais du karaté le mardi et le jeudi. Merci Yousef."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-basketball-karate-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-football-tennis-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-natation-judo-dessine.webp"
       ]
     },
     {
@@ -29402,7 +29431,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-randonnee-tennis-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-natation-football-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-ski-rugby-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s10-co-4",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-randonnee-tennis-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-natation-football-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-ski-rugby-dessine.webp"
+        ],
+        "support_quote": "– Ça va, Théo ?\n– Non, j'en ai assez de rester chez moi le week-end à regarder des matchs à la télé.\nJe voudrais trouver des copains pour sortir.\nJ'aimerais bien faire des randonnées, du tennis.\n– Eh bien, envoie un poste sur un forum.\n– Et j'écris quoi ?\n– Tu écris un petit texte avec ton prénom et les sports que tu veux pratiquer, et mets des émogies pour montrer ton optimisme.",
+        "current_bank_transcription": "– Ça va, Théo ?\n– Non, j'en ai assez de rester chez moi le week-end à regarder des matchs à la télé.\nJe voudrais trouver des copains pour sortir.\nJ'aimerais bien faire des randonnées, du tennis.\n– Eh bien, envoie un poste sur un forum.\n– Et j'écris quoi ?\n– Tu écris un petit texte avec ton prénom et les sports que tu veux pratiquer, et mets des émogies pour montrer ton optimisme.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu en paysage 4:3 et comparé au style 48a753d8 ; transcription relue. Randonnée avec équipement et tennis, natation et football, ski et rugby : aucune paire réduite à un seul sport. Transcription actuelle relue ; audio de remplacement à rapprocher."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -33625,7 +33673,7 @@
           "asset": "01c5afc068a0"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a2-abc-direct:58:39f4143a409d:ffcb8219"
       ],
@@ -33636,6 +33684,11 @@
           "candidate_cut_id": "additional-20261102-mdf-a2-abc-direct-58-39f4143a409d-ffcb8219-d1",
           "transcription": "Bonjour. A l'approche de l'automne, restez en forme en faisant une promenade de 20 minutes. L'effort physique est très bon pour le moral. Pour les plus sportifs, le vélo et la natation vous sont conseillés. N'oubliez pas de boire."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-velo-natation-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-football-tennis-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-course-ski-dessine.webp"
       ]
     },
     {
@@ -36073,7 +36126,7 @@
           "asset": "33cadc784399"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "09035196:023:d2e19546825f",
         "additional-20261102:mdf-b1-abc-junior-direct:23:d2e19546825f:3a6a9f56"
@@ -36085,6 +36138,11 @@
           "candidate_cut_id": "09035196-023-d2e19546825f-d1",
           "transcription": "Bonjour et bienvenue dans notre émission spéciale sur les jeux vidéo. Aujourd'hui, nous allons parler football. Alors ce n'est une surprise pour personne, Electronic Arts sortira en octobre prochain une nouvelle édition de FIFA sobrement intitulée FIFA 13. Au cours d'une conférence minutieusement détaillée, les développeurs du jeu nous ont présenté les principales améliorations et modifications que comportera cette nouvelle édition du jeu vidéo de foot le plus vendu du marché. Avant de nous parler de FIFA 13, les développeurs d'I Canada On tout d'abord voulu revenir sur le succès du précédent episode. Vendu à plus de 3,7 millions d'exemplaires au cours de sa première semaine de commercialisation, le jeu s'est écoulé à plus de 10 millions de copies depuis son lancement. The titre a également remporté un franc succès en ligne avec plus d'un milliard de parties online disputées depuis le lancement. Autant dire que la communauté de fans est énorme and the studio en charge du jeu a la pression. Sans surprise, FIFA 13 devrait beaucoup ressembler à son prédécesseur, avec, comme chaque année, l'ajout de dizaines de petites fonctionnalités presque invisibles en apparence, mais qui améliorent chacune à leur façon l'expérience de jeu. Les développeurs n'avaient qu'un mot à la bouche. La créativité. Tout le travail de cette année consiste pour eux à ajouter de nouvelles options pour multiplier les possibilités de jeu et offrir une simulation aussi complète que possible. Le moteur de jeu a évolué. Si les différences graphiques ne sautent pas aux yeux, les développeurs ont en tout cas amélioré significativement l'animation. Certain mouvements peu réalistes ont été corrigés pour la prochaine version. Plus généralement, l'intelligence a été améliorée afin d'être plus proche des joueurs humains, qu'il s'agisse de l'équipe adverse ou des équipers de votre équipe. Ces derniers vont désormais envisager un plus grand nombre de possibilités tactiques en temps réel, de façon à s'adapter aux actions que vous réalisez avec le joueur que vous contrôlez. Par exemple, le joueur le plus proche de vous va étudier les différents endroits où il peut se placer selon la direction que vous prenez, afin que vous puissiez lui passer au mieux la balle."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-jeu-video-football-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-jeu-video-course-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-jeu-video-strategie-dessine.webp"
       ]
     },
     {
@@ -36734,7 +36792,7 @@
       "label": "La natation et le judo",
       "path_after_generation": "/lib/images/tcf/qcm-audit/a1f62a66bfc2.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « La natation et le judo ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-76",
@@ -36742,8 +36800,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-natation-judo-dessine.webp",
+      "sha256": "501ce2cefc8dbdd66992f0308a5098b65b92bf6d7b2607b39896e2c740ed7d0f",
+      "review_note": "Deux vignettes : nageuse en piscine et deux judokas debout se saisissant les revers et manches sur tatami. Anatomie et prises relues en vue pleine ; le judo ne reprend pas les frappes du karaté. Concept entier et paysage natif exact 4:3 relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "49dc1fdc4bc6",
@@ -37195,7 +37258,7 @@
       "label": "L’entrée et le plat",
       "path_after_generation": "/lib/images/tcf/qcm-audit/4da20961efb9.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « L’entrée et le plat ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s29-co-4",
@@ -37203,8 +37266,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-entree-plat-dessine.webp",
+      "sha256": "d4fd124a6dd8d0ffe89515affab45bd7ef04f7a3ce2dc0eb3ef817e165cd1c67",
+      "review_note": "Petite entrée de soupe et grand plat principal de poisson et riz dans deux contenants séparés ; portions et tailles distinguent les services, aucun dessert. Concept entier et paysage natif exact 4:3 relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "6676a97d2a46",
@@ -39561,7 +39629,7 @@
       "label": "Un jeu de course automobile",
       "path_after_generation": "/lib/images/tcf/qcm-audit/ac6cd971bad1.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un jeu de course automobile ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s48-co-3",
@@ -39569,8 +39637,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-jeu-video-course-dessine.webp",
+      "sha256": "b20e9d8a2ff98cbad5c2a9cc1cc06e23164c02a2b431ce7d0bb773cc6792f0b6",
+      "review_note": "Téléviseur et manette de jeu, écran de course automobile avec voitures sur circuit et damier ; aucune marque ou statistique chiffrée. Concept entier et paysage natif exact 4:3 relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "661fcce75c34",
@@ -39593,7 +39666,7 @@
       "label": "Le pain et la salade",
       "path_after_generation": "/lib/images/tcf/qcm-audit/44358c7f0053.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le pain et la salade ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s29-co-4",
@@ -39601,8 +39674,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-pain-salade-dessine.webp",
+      "sha256": "13a0cd7bc0f45d37b39c7c92caea887c0013073539c50c719d66dd565526d54d",
+      "review_note": "Pain et salade de tomates ensemble, objets entiers et distincts, aucun fromage ou viande qui modifierait le sens de la salade. Concept entier et paysage natif exact 4:3 relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "149ccf4c7d95",
@@ -39772,7 +39850,7 @@
       "label": "Un jeu de tennis",
       "path_after_generation": "/lib/images/tcf/qcm-audit/83c8f978740e.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un jeu de tennis ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s48-co-3",
@@ -39780,8 +39858,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-jeu-video-tennis-dessine.webp",
+      "sha256": "059db3ffb525a6a3c9bc80f6f8e4c89de962ac49c64a188fe1c89bbed643682c",
+      "review_note": "Téléviseur et manette de jeu, écran de tennis à filet avec deux joueurs et raquettes ; aucun score ou texte. Concept entier et paysage natif exact 4:3 relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "d294f42dde99",
@@ -41840,7 +41923,7 @@
       "label": "La randonnée et le tennis",
       "path_after_generation": "/lib/images/tcf/qcm-audit/de11d68150bd.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « La randonnée et le tennis ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s10-co-4",
@@ -41848,8 +41931,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-randonnee-tennis-dessine.webp",
+      "sha256": "91d9cf06947481b64c062f9a0a8773a1f3d33a5fc45c22dd060ed34d9504545b",
+      "review_note": "Deux randonneurs à sacs à dos, bâtons et chaussures de marche sur sentier de collines, et scène de tennis réutilisée ; la randonnée est distincte d’une simple promenade urbaine. Concept entier et paysage natif exact 4:3 relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "b4fc7ef8ff4d",
@@ -42349,7 +42437,7 @@
       "label": "Le vélo et la natation",
       "path_after_generation": "/lib/images/tcf/qcm-audit/0cdb874c74dc.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le vélo et la natation ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ssx-a2-radio-17-1-co-3",
@@ -42357,8 +42445,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-velo-natation-dessine.webp",
+      "sha256": "e97ade74ef8f7935f449843d40c65fef5007e8244c057d9aea3527c874766249",
+      "review_note": "Cycliste casquée pédalant sur vélo entier et nageuse en piscine ; figures et vélo relus en vue pleine, immersion naturelle des jambes de la nageuse et activité de natation explicite. Concept entier et paysage natif exact 4:3 relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "3e39ad71677f",
@@ -43374,7 +43467,7 @@
       "label": "Le ski et le rugby",
       "path_after_generation": "/lib/images/tcf/qcm-audit/28f6df82829c.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le ski et le rugby ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s10-co-4",
@@ -43382,8 +43475,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-ski-rugby-dessine.webp",
+      "sha256": "6bd4d5d720b05c1ff5c6a6cf6b68a70aba8549b7c9e31231ede2c264a68470cc",
+      "review_note": "Skieuse avec casque, deux skis et deux bâtons, et rugby avec ballon ovale et poteaux en H. Le visage et les contours de la skieuse sont repris pour le même modelé peint que les autres sportifs ; figures et matériel entiers. Concept entier et paysage natif exact 4:3 relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "70bcc89aceea",
@@ -43506,7 +43604,7 @@
       "label": "Un jeu de football",
       "path_after_generation": "/lib/images/tcf/qcm-audit/12be397fdce1.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un jeu de football ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s48-co-3",
@@ -43519,8 +43617,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-jeu-video-football-dessine.webp",
+      "sha256": "a0a28eaa6e9437f0b73824987c4b94f4e6411b1a59042ef653813d3f29f3351a",
+      "review_note": "Téléviseur et manette de jeu entiers, écran de simulation de football avec terrain, équipes et buts. Trois boissons parasites du premier essai supprimées ; aucun score, logo ou texte. Concept entier et paysage natif exact 4:3 relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "cf4d4662031f",
@@ -44002,7 +44105,7 @@
       "label": "La course et le ski",
       "path_after_generation": "/lib/images/tcf/qcm-audit/01c5afc068a0.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « La course et le ski ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ssx-a2-radio-17-1-co-3",
@@ -44010,8 +44113,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-course-ski-dessine.webp",
+      "sha256": "88e5dec9ca7306b2e8f1f3dfce2f82836b45690c0d5bfa3f5e88f8a5a68212b5",
+      "review_note": "Course à pied et ski en deux vignettes, coureur et matériel de ski entiers. Trait de la skieuse repris en peinture douce ; pas de patinage ou de vélo. Concept entier et paysage natif exact 4:3 relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "ec733f7a5103",
@@ -48226,7 +48334,7 @@
       "label": "Un jeu de stratégie",
       "path_after_generation": "/lib/images/tcf/qcm-audit/33cadc784399.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un jeu de stratégie ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-b1-s7-co-2",
@@ -48234,8 +48342,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "B1_after_priority_levels"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-jeu-video-strategie-dessine.webp",
+      "sha256": "8ad5c89277a5896a9a256b21ad7c7f0324e68e2098fff17d693e9d92a0ea3618",
+      "review_note": "Téléviseur et manette de jeu, écran de stratégie à carte hexagonale, cités et unités miniatures ; aucune statistique, violence ou texte. Matériel cohérent avec les trois autres jeux. Concept entier et paysage natif exact 4:3 relus, sans date ou montant.",
+      "priority": "B1_after_priority_levels",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "cec9cc64156e",
@@ -48767,7 +48880,7 @@
       "label": "Le dessert et le fromage",
       "path_after_generation": "/lib/images/tcf/qcm-audit/5d4821a08500.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le dessert et le fromage ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s29-co-4",
@@ -48775,8 +48888,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-dessert-fromage-dessine.webp",
+      "sha256": "8ec6107f52c56509a606024f2f951b990ba17aa14b048a8ded7ff93e9b813ed3",
+      "review_note": "Coupe de dessert au chocolat et assiette de fromages entières et séparées ; deux éléments de la réponse conservés, sans pain ou autre plat ajouté. Concept entier et paysage natif exact 4:3 relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "c9f1da59328c",
@@ -49024,7 +49142,7 @@
       "label": "La natation et le football",
       "path_after_generation": "/lib/images/tcf/qcm-audit/65e74685f56e.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « La natation et le football ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s10-co-4",
@@ -49032,8 +49150,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-natation-football-dessine.webp",
+      "sha256": "b8ff6497dd9c7de5db0da07b5f8b9ea23cd2b95016c738dad6067363ca8a9373",
+      "review_note": "Natation en piscine et football joué par les deux femmes disponibles ; les deux pratiques complètes sont visibles, aucun tennis résiduel. Concept entier et paysage natif exact 4:3 relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "f062b9e5a5c5",
@@ -50409,7 +50532,7 @@
       "label": "Le football et le tennis",
       "path_after_generation": "/lib/images/tcf/qcm-audit/93efdaf23b3c.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le football et le tennis ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-76",
@@ -50422,8 +50545,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-football-tennis-dessine.webp",
+      "sha256": "8ab53e4fb646a9a1c99fd7d4e21305b362234d21325b03d0c26570b92bed602b",
+      "review_note": "Deux vignettes : les deux footballeuses disponibles rejouent leur scène et deux personnes jouent au tennis sur terrain à filet ; scène de natation retirée de la référence composée. Concept entier et paysage natif exact 4:3 relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "129be0169cbf",
@@ -50629,7 +50757,7 @@
       "label": "Le basketball et le karaté",
       "path_after_generation": "/lib/images/tcf/qcm-audit/b1787d0bd6bd.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le basketball et le karaté ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-76",
@@ -50637,8 +50765,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-basketball-karate-dessine.webp",
+      "sha256": "2e493bdb1a3d4b09ff4b1144fd05915da8cc445123e73911054e9046bd209cc9",
+      "review_note": "Deux vignettes : basketteur qui dribble sur terrain à panier et adulte en kimono à ceinture noire qui exécute un blocage de karaté ; deux pratiques distinctes, pas seulement du matériel. Concept entier et paysage natif exact 4:3 relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "92a4c6089f51",
@@ -51497,7 +51630,7 @@
       "label": "Un jeu de course",
       "path_after_generation": "/lib/images/tcf/qcm-audit/900b44bd6c94.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un jeu de course ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-b1-s7-co-2",
@@ -51505,8 +51638,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "B1_after_priority_levels"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-jeu-video-course-dessine.webp",
+      "sha256": "b20e9d8a2ff98cbad5c2a9cc1cc06e23164c02a2b431ce7d0bb773cc6792f0b6",
+      "review_note": "Téléviseur et manette de jeu, écran de course automobile avec voitures sur circuit et damier ; aucune marque ou statistique chiffrée. Concept entier et paysage natif exact 4:3 relus, sans date ou montant.",
+      "priority": "B1_after_priority_levels",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "398b8e519585",
@@ -51695,19 +51833,19 @@
   "pending_association_images": [],
   "visual_style_review": {
     "audit": "recontrole-style-images.json",
-    "reviewed_co_images": 638,
+    "reviewed_co_images": 653,
     "reviewed_other_images": 59,
-    "reviewed_total_images": 697,
+    "reviewed_total_images": 712,
     "user_approved_reference_images": 35,
     "initial_redraw_required": 11,
     "initial_co_redraw_required": 11,
     "initial_other_redraw_required": 0,
-    "already_aligned": 686,
+    "already_aligned": 701,
     "redrawn_images": 11,
     "remaining_redraws": 0,
     "restored_previous_images": 14,
     "rejected_unpublished_previews": 12,
-    "new_images_compared_to_reference": 379
+    "new_images_compared_to_reference": 394
   },
   "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
   "workflow_order": [

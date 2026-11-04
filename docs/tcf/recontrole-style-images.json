@@ -224,19 +224,19 @@
     "Les contours noirs appuyés, hachures et volumes fortement simplifiés des dernières reprises ne correspondent pas à la référence validée."
   ],
   "summary": {
-    "reviewed_co_images": 638,
+    "reviewed_co_images": 653,
     "reviewed_other_images": 59,
-    "reviewed_total_images": 697,
+    "reviewed_total_images": 712,
     "user_approved_reference_images": 35,
     "initial_redraw_required": 11,
     "initial_co_redraw_required": 11,
     "initial_other_redraw_required": 0,
-    "already_aligned": 686,
+    "already_aligned": 701,
     "redrawn_images": 11,
     "remaining_redraws": 0,
     "restored_previous_images": 14,
     "rejected_unpublished_previews": 12,
-    "new_images_compared_to_reference": 379
+    "new_images_compared_to_reference": 394
   },
   "superseded_review": {
     "commit": "f6f2a521",
@@ -9196,6 +9196,231 @@
       "sha256": "13837c73a3b9a81922f6cb6b87ae16904d0a8f7983433f5e4aa11144e43721f6",
       "status": "aligned",
       "review_note": "Comparaison aux références validées 48a753d8 réellement vues : volumes doux, contours discrets, visages et matières peints. Personnages variés et sujets de cours distincts. Même pièce et mêmes objets, grandes plages de soleil direct et ombres nettes de fenêtre et plante ; distinction nette avec la lumière diffuse de la pièce lumineuse.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-dessert-fromage-dessine",
+      "label": "Le dessert et le fromage",
+      "path": "/lib/images/tcf/qcm-audit/co306-dessert-fromage-dessine.webp",
+      "sha256": "8ec6107f52c56509a606024f2f951b990ba17aa14b048a8ded7ff93e9b813ed3",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : modelé doux, contours discrets et matières peintes. Les sportifs disponibles sont réutilisés pour conserver les activités et des distributions variées. Coupe de dessert au chocolat et assiette de fromages entières et séparées ; deux éléments de la réponse conservés, sans pain ou autre plat ajouté.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-entree-plat-dessine",
+      "label": "L’entrée et le plat",
+      "path": "/lib/images/tcf/qcm-audit/co306-entree-plat-dessine.webp",
+      "sha256": "d4fd124a6dd8d0ffe89515affab45bd7ef04f7a3ce2dc0eb3ef817e165cd1c67",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : modelé doux, contours discrets et matières peintes. Les sportifs disponibles sont réutilisés pour conserver les activités et des distributions variées. Petite entrée de soupe et grand plat principal de poisson et riz dans deux contenants séparés ; portions et tailles distinguent les services, aucun dessert.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-pain-salade-dessine",
+      "label": "Le pain et la salade",
+      "path": "/lib/images/tcf/qcm-audit/co306-pain-salade-dessine.webp",
+      "sha256": "13a0cd7bc0f45d37b39c7c92caea887c0013073539c50c719d66dd565526d54d",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : modelé doux, contours discrets et matières peintes. Les sportifs disponibles sont réutilisés pour conserver les activités et des distributions variées. Pain et salade de tomates ensemble, objets entiers et distincts, aucun fromage ou viande qui modifierait le sens de la salade.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-basketball-karate-dessine",
+      "label": "Le basketball et le karaté",
+      "path": "/lib/images/tcf/qcm-audit/co306-basketball-karate-dessine.webp",
+      "sha256": "2e493bdb1a3d4b09ff4b1144fd05915da8cc445123e73911054e9046bd209cc9",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : modelé doux, contours discrets et matières peintes. Les sportifs disponibles sont réutilisés pour conserver les activités et des distributions variées. Deux vignettes : basketteur qui dribble sur terrain à panier et adulte en kimono à ceinture noire qui exécute un blocage de karaté ; deux pratiques distinctes, pas seulement du matériel.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-football-tennis-dessine",
+      "label": "Le football et le tennis",
+      "path": "/lib/images/tcf/qcm-audit/co306-football-tennis-dessine.webp",
+      "sha256": "8ab53e4fb646a9a1c99fd7d4e21305b362234d21325b03d0c26570b92bed602b",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : modelé doux, contours discrets et matières peintes. Les sportifs disponibles sont réutilisés pour conserver les activités et des distributions variées. Deux vignettes : les deux footballeuses disponibles rejouent leur scène et deux personnes jouent au tennis sur terrain à filet ; scène de natation retirée de la référence composée.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-natation-judo-dessine",
+      "label": "La natation et le judo",
+      "path": "/lib/images/tcf/qcm-audit/co306-natation-judo-dessine.webp",
+      "sha256": "501ce2cefc8dbdd66992f0308a5098b65b92bf6d7b2607b39896e2c740ed7d0f",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : modelé doux, contours discrets et matières peintes. Les sportifs disponibles sont réutilisés pour conserver les activités et des distributions variées. Deux vignettes : nageuse en piscine et deux judokas debout se saisissant les revers et manches sur tatami. Anatomie et prises relues en vue pleine ; le judo ne reprend pas les frappes du karaté.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-randonnee-tennis-dessine",
+      "label": "La randonnée et le tennis",
+      "path": "/lib/images/tcf/qcm-audit/co306-randonnee-tennis-dessine.webp",
+      "sha256": "91d9cf06947481b64c062f9a0a8773a1f3d33a5fc45c22dd060ed34d9504545b",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : modelé doux, contours discrets et matières peintes. Les sportifs disponibles sont réutilisés pour conserver les activités et des distributions variées. Deux randonneurs à sacs à dos, bâtons et chaussures de marche sur sentier de collines, et scène de tennis réutilisée ; la randonnée est distincte d’une simple promenade urbaine.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-natation-football-dessine",
+      "label": "La natation et le football",
+      "path": "/lib/images/tcf/qcm-audit/co306-natation-football-dessine.webp",
+      "sha256": "b8ff6497dd9c7de5db0da07b5f8b9ea23cd2b95016c738dad6067363ca8a9373",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : modelé doux, contours discrets et matières peintes. Les sportifs disponibles sont réutilisés pour conserver les activités et des distributions variées. Natation en piscine et football joué par les deux femmes disponibles ; les deux pratiques complètes sont visibles, aucun tennis résiduel.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-ski-rugby-dessine",
+      "label": "Le ski et le rugby",
+      "path": "/lib/images/tcf/qcm-audit/co306-ski-rugby-dessine.webp",
+      "sha256": "6bd4d5d720b05c1ff5c6a6cf6b68a70aba8549b7c9e31231ede2c264a68470cc",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : modelé doux, contours discrets et matières peintes. Les sportifs disponibles sont réutilisés pour conserver les activités et des distributions variées. Skieuse avec casque, deux skis et deux bâtons, et rugby avec ballon ovale et poteaux en H. Le visage et les contours de la skieuse sont repris pour le même modelé peint que les autres sportifs ; figures et matériel entiers.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-velo-natation-dessine",
+      "label": "Le vélo et la natation",
+      "path": "/lib/images/tcf/qcm-audit/co306-velo-natation-dessine.webp",
+      "sha256": "e97ade74ef8f7935f449843d40c65fef5007e8244c057d9aea3527c874766249",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : modelé doux, contours discrets et matières peintes. Les sportifs disponibles sont réutilisés pour conserver les activités et des distributions variées. Cycliste casquée pédalant sur vélo entier et nageuse en piscine ; figures et vélo relus en vue pleine, immersion naturelle des jambes de la nageuse et activité de natation explicite.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-course-ski-dessine",
+      "label": "La course et le ski",
+      "path": "/lib/images/tcf/qcm-audit/co306-course-ski-dessine.webp",
+      "sha256": "88e5dec9ca7306b2e8f1f3dfce2f82836b45690c0d5bfa3f5e88f8a5a68212b5",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : modelé doux, contours discrets et matières peintes. Les sportifs disponibles sont réutilisés pour conserver les activités et des distributions variées. Course à pied et ski en deux vignettes, coureur et matériel de ski entiers. Trait de la skieuse repris en peinture douce ; pas de patinage ou de vélo.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-jeu-video-football-dessine",
+      "label": "Un jeu de football",
+      "path": "/lib/images/tcf/qcm-audit/co306-jeu-video-football-dessine.webp",
+      "sha256": "a0a28eaa6e9437f0b73824987c4b94f4e6411b1a59042ef653813d3f29f3351a",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : modelé doux, contours discrets et matières peintes. Les sportifs disponibles sont réutilisés pour conserver les activités et des distributions variées. Téléviseur et manette de jeu entiers, écran de simulation de football avec terrain, équipes et buts. Trois boissons parasites du premier essai supprimées ; aucun score, logo ou texte.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-jeu-video-course-dessine",
+      "label": "Un jeu de course automobile",
+      "path": "/lib/images/tcf/qcm-audit/co306-jeu-video-course-dessine.webp",
+      "sha256": "b20e9d8a2ff98cbad5c2a9cc1cc06e23164c02a2b431ce7d0bb773cc6792f0b6",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : modelé doux, contours discrets et matières peintes. Les sportifs disponibles sont réutilisés pour conserver les activités et des distributions variées. Téléviseur et manette de jeu, écran de course automobile avec voitures sur circuit et damier ; aucune marque ou statistique chiffrée.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-jeu-video-tennis-dessine",
+      "label": "Un jeu de tennis",
+      "path": "/lib/images/tcf/qcm-audit/co306-jeu-video-tennis-dessine.webp",
+      "sha256": "059db3ffb525a6a3c9bc80f6f8e4c89de962ac49c64a188fe1c89bbed643682c",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : modelé doux, contours discrets et matières peintes. Les sportifs disponibles sont réutilisés pour conserver les activités et des distributions variées. Téléviseur et manette de jeu, écran de tennis à filet avec deux joueurs et raquettes ; aucun score ou texte.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-jeu-video-strategie-dessine",
+      "label": "Un jeu de stratégie",
+      "path": "/lib/images/tcf/qcm-audit/co306-jeu-video-strategie-dessine.webp",
+      "sha256": "8ad5c89277a5896a9a256b21ad7c7f0324e68e2098fff17d693e9d92a0ea3618",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 réellement vues : modelé doux, contours discrets et matières peintes. Les sportifs disponibles sont réutilisés pour conserver les activités et des distributions variées. Téléviseur et manette de jeu, écran de stratégie à carte hexagonale, cités et unités miniatures ; aucune statistique, violence ou texte. Matériel cohérent avec les trois autres jeux.",
       "group": "co_active_audio_batch",
       "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
       "references": [
