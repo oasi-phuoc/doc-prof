@@ -1,4 +1,5 @@
 import type { ThemedFrame } from './phrase-theme-frames'
+import { REFLEXIVE_SUPPLEMENT_ER, REFLEXIVE_SUPPLEMENT_AUTRES } from './phrase-reflexive-supplement'
 
 /** Complete simple variants, without adverbs, prepositions, conjunctions or adjectives. */
 const SIMPLE_COMPLEMENTS: Record<string, readonly string[]> = {
@@ -32,7 +33,7 @@ function frame(id: string, core: string, complements: readonly string[]): Themed
   return { id, preds: variants.map(complement => `${prefix}${core}/verbe ${complement}`) }
 }
 
-export const REFLEXIVE_FRAMES_ER: readonly ThemedFrame[] = [
+const BASE_REFLEXIVE_FRAMES_ER: readonly ThemedFrame[] = [
   frame('se laver', 'lave', ['les/determinant mains/nom', 'le/determinant visage/nom', 'les/determinant cheveux/nom']),
   frame('se brosser', 'brosse', ['les/determinant dents/nom', 'les/determinant cheveux/nom', 'les/determinant ongles/nom']),
   frame('se coiffer', 'coiffe', ['devant/preposition le/determinant miroir/nom', 'avec/preposition un/determinant peigne/nom', 'avant/preposition le/determinant départ/nom']),
@@ -75,7 +76,7 @@ export const REFLEXIVE_FRAMES_ER: readonly ThemedFrame[] = [
   frame('se raser', 'rase', ['la/determinant barbe/nom', 'le/determinant menton/nom', 'les/determinant jambes/nom']),
 ]
 
-export const REFLEXIVE_FRAMES_AUTRES: readonly ThemedFrame[] = [
+const BASE_REFLEXIVE_FRAMES_AUTRES: readonly ThemedFrame[] = [
   frame('se rafraîchir', 'rafraîchit', ['avec/preposition un/determinant verre/nom d’/preposition eau/nom', 'près_de/preposition la/determinant fontaine/nom', 'après/preposition la/determinant marche/nom']),
   frame('se sentir', 'sent', ['bien/adverbe', 'mieux/adverbe', 'en/preposition forme/nom']),
   frame('se servir', 'sert', ['du/preposition dictionnaire/nom', 'de/preposition la/determinant carte/nom', 'des/preposition outils/nom']),
@@ -92,3 +93,14 @@ export const REFLEXIVE_FRAMES_AUTRES: readonly ThemedFrame[] = [
   frame('se vêtir', 'vêt', ['chaudement/adverbe', 'avec/preposition soin/nom', 'pour/preposition la/determinant cérémonie/nom']),
   frame('se conduire', 'conduit', ['bien/adverbe', 'avec/preposition prudence/nom', 'avec/preposition respect/nom']),
 ]
+
+function mergeFrames(base: readonly ThemedFrame[], extra: readonly ThemedFrame[]): readonly ThemedFrame[] {
+  const frames = new Map(base.map(frame => [frame.id, frame]))
+  for (const frame of extra) {
+    const previous = frames.get(frame.id)
+    frames.set(frame.id, { ...frame, preds: [...new Set([...(previous?.preds ?? []), ...frame.preds])] })
+  }
+  return [...frames.values()]
+}
+export const REFLEXIVE_FRAMES_ER = mergeFrames(BASE_REFLEXIVE_FRAMES_ER, REFLEXIVE_SUPPLEMENT_ER)
+export const REFLEXIVE_FRAMES_AUTRES = mergeFrames(BASE_REFLEXIVE_FRAMES_AUTRES, REFLEXIVE_SUPPLEMENT_AUTRES)

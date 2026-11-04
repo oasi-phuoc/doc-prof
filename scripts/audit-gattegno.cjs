@@ -2,30 +2,13 @@
 const assert = require('node:assert/strict')
 const fs = require('node:fs')
 const path = require('node:path')
-const ts = require('typescript')
-const root = path.resolve(__dirname, '..')
-const cache = new Map()
-function load(file) {
-  file = path.resolve(file)
-  if (!path.extname(file)) file = fs.existsSync(file + '.ts') ? file + '.ts' : fs.existsSync(file + '.tsx') ? file + '.tsx' : path.join(file,'index.ts')
-  if (cache.has(file)) return cache.get(file).exports
-  const module = { exports: {} }; cache.set(file, module)
-  if (file.endsWith('.json')) { module.exports=JSON.parse(fs.readFileSync(file,'utf8')); return module.exports }
-  if (/\.(?:webp|svg|png|jpg)$/.test(file)) { module.exports=file; return file }
-  const source = fs.readFileSync(file, 'utf8').replace(/import\.meta\.glob\('([^']+)',\s*\{[^}]*\}\)/g, (_match,pattern) => `require(${JSON.stringify('__eager_glob__:'+pattern)})`)
-  const code = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022, jsx: ts.JsxEmit.ReactJSX, esModuleInterop: true } }).outputText
-  new Function('require','module','exports', code)(id => {
-    if(id.startsWith('__eager_glob__:')) return Object.fromEntries(fs.globSync(id.slice(15),{cwd:path.dirname(file)}).map(name=>['./'+name,load(path.join(path.dirname(file),name))]))
-    return id.startsWith('@/') ? load(path.join(root,'src',id.slice(2))) : id.startsWith('.') ? load(path.resolve(path.dirname(file),id)) : require(id)
-  },module,module.exports)
-  return module.exports
-}
-const get = name => load(path.join(root,'src/francais',name))
+const { load, get, root } = require('./gattegno-loader.cjs')
 const { PHRASE_THEME_DEFS, PHRASE_ALL_THEME_DEFS, affirmativePhraseTheme, normalizeLegacyPhraseBlock } = get('phrase-themes.ts')
 const { framesForTheme, instantiateThemeFrame, pronounsForFrame, phrasesFor, sentenceOf, tagged } = get('phrase-sentences.ts')
 const { withNegation } = get('phrase-negation.ts')
 const { conjugateCore } = get('phrase-conjugate.ts')
 const { tryGeneratePhraseBatch } = get('phrase.ts')
+const { phraseSelection } = get('phrase-options.ts')
 const { PHRASE_COLORS, PRODUCTION_PROMPTS_BY_THEME } = get('phrase-banks.ts')
 const { createRng } = load(path.join(root,'src/math/rng.ts'))
 let checks = 0
@@ -164,7 +147,7 @@ for(const topic of ['phrase-simple','phrase-preposition','phrase-pronominaux'])f
 }
 for(const {topic}of PHRASE_THEME_DEFS)for(const group of ['er','autres']){
   const batch=tryGeneratePhraseBatch(topic+'-construire',1000,createRng(7),'moyen',group,'mixed')
-  check(batch.items.length===framesForTheme(topic,group).length&&new Set(batch.items.map(item=>item.prompt)).size===batch.items.length,'long requests never recycle a verb model')
+  check(batch.items.length===phraseSelection(topic,group).frames.length&&new Set(batch.items.map(item=>item.prompt)).size===batch.items.length,'long requests never recycle a verb model')
 }
 // Page-model integration: modes survive recipe copies and remain specific to each block.
 const {buildPage}=load(path.join(root,'src/math/generate.ts'))
@@ -205,7 +188,6 @@ assert.equal(sentenceOf(instantiateThemeFrame('phrase-conjonctions',conjunction,
 for(const chart of ['categories','mots','vide'])check(tryGeneratePhraseBatch('phrase-tableau-'+chart,6,createRng(1),'moyen','er','mixed').items.length===1,'reference charts remain unchanged')
 
 // Category exclusions select whole predicates and work in all layouts and polarities.
-const {phraseSelection}=get('phrase-options.ts')
 const {PHRASE_OPTIONAL_CATEGORIES}=get('phrase-themes.ts')
 const allWithout=Object.fromEntries(PHRASE_OPTIONAL_CATEGORIES.map(({category})=>[category,false]))
 for(let mask=0;mask<16;mask++){

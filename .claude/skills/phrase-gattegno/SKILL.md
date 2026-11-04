@@ -21,7 +21,9 @@ Une fiche de phrases n’est **pas** un produit cartésien (Léa / elle / le pap
 | `src/francais/phrase-theme-frames.ts` | Modèles adjectif, préposition, adverbe, conjonctions |
 | `src/francais/phrase-sentences.ts` | Sujets (prénoms, GN, pronoms), `framesForTheme`, `instantiateThemeFrame` |
 | `src/francais/phrase-themes.ts` | Ordre des thèmes combinés, formes Positive / Négative / Mixte, migration des anciens ids |
-| `src/francais/phrase-reflexive-frames.ts` | 55 constructions pronominales relues, dont des variantes simples |
+| `src/francais/phrase-reflexive-frames.ts` | 61 constructions pronominales relues, dont des variantes simples |
+| `src/francais/phrase-combinations.ts` | Quotas des 16 combinaisons, prédicats complets et coordinations |
+| `src/francais/phrase-reflexive-supplement.ts` | Actions pronominales supplémentaires avec compléments naturels |
 | `src/francais/phrase-options.ts` | Sélection des prédicats complets selon les catégories autorisées |
 | `src/francais/phrase-negation.ts` | Négation, clitiques, articles et élisions |
 | `src/francais/phrase-conjugate.ts` | Conjugaison du verbe selon le sujet (pronoms) |
@@ -37,6 +39,12 @@ Le menu affiche Simple, Déterminants, Verbes pronominaux, Adjectif, Prépositio
 Le nombre de phrases d’une fiche est plafonné aux modèles distincts disponibles. La banque de référence conserve **100 phrases distinctes par thème, forme et groupe**, sans inventer des ids comme `mettre2`. Voir `docs/gattegno/README.md` et `scripts/audit-gattegno.cjs` pour les contrôles exhaustifs et les exemples corrigés.
 
 `phraseCategories` conserve les quatre réglages **Avec / Sans** pour adverbes, prépositions, conjonctions et adjectifs. Une valeur absente autorise la catégorie selon le thème ; `false` l’exclut. Sélectionner des prédicats complets, jamais retirer arbitrairement un mot ou un complément obligatoire. L’exclusion de la catégorie centrale d’un thème utilise les modèles simples. Les pronominaux conservent leurs constructions et leurs variantes simples rédigées. La négation *ne… pas* reste disponible sans les autres adverbes. Les consignes d’écriture doivent respecter ces choix. Le plafond des questions utilise la banque filtrée.
+
+## Quotas des combinaisons
+
+Tous les thèmes ont, pour chacun des deux groupes de verbes, 50 constructions simples, 50 pour chaque catégorie seule (adjectif, adverbe, préposition, conjonction), puis 25 pour chacune des 11 combinaisons de deux, trois ou quatre catégories : 525 au total, plus leurs formes négatives. `combinationContexts` fournit ces quotas contrôlables ; `combinationFrames` les ajoute aux constructions existantes sans perte. Les contextes sont regroupés par véritable infinitif, pas par ids artificiels. `frameForContext` résout les prédicats et le second infinitif avant le tirage des sujets.
+
+Les enrichissements autorisent les quatre catégories dans tous les thèmes selon les réglages. Les anciennes banques de base gardent leurs contraintes historiques. Les prépositions nécessaires restent attachées à leur action. Les 16 masques doivent être accessibles via les options, et pas seulement apparaître dans un rapport. Contrôler avec `node scripts/audit-gattegno-combinations.cjs --write`.
 
 ## Tous les thèmes passent par les modèles
 
@@ -73,9 +81,9 @@ Le modèle garde la forme 3e sg dans les prédicats ; `instantiateThemeFrame` co
 
 ## Verbes à préposition
 
-*Habiter*, *aller*, *rester chez*… exigent une préposition (*j’habite à Sion*, *j’habite dans un appartement*). Ils n’apparaissent **jamais** en phrase simple, négation simple, déterminants, adjectif, adverbe ou conjonctions : les pastilles n’ont pas de préposition, l’élève écrirait *habite une maison*.
+*Habiter*, *aller*, *rester chez*… exigent une préposition (*j’habite à Sion*, *j’habite dans un appartement*). Ils ne doivent jamais apparaître sans leur préposition : l’élève écrirait *habite une maison*. Dans les banques de base, ils sont réservés au thème Préposition ; les enrichissements les autorisent dans les autres thèmes seulement avec leur complément prépositionnel complet.
 
-Ils restent dans le thème **Préposition**, dans ses trois formes. Les constructions pronominales sont également autorisées à avoir leurs compléments prépositionnels naturels. `frameMatchesTheme` refuse tout modèle dont un complément contient `/preposition` hors de ces thèmes.
+`frameMatchesTheme` conserve la séparation des banques de base. La sélection des enrichissements vérifie les catégories de chaque contexte complet selon les paramètres. Les constructions pronominales conservent elles aussi leurs compléments prépositionnels naturels.
 
 ## Conjonctions : une seule majuscule
 

@@ -1,6 +1,6 @@
 import { isNegativePhraseTheme, isPhraseThemeId, PHRASE_OPTIONAL_CATEGORIES, type PhraseCategories, type PhrasePolarity } from './phrase-themes'
 import { phraseSelection } from './phrase-options'
-import type { ThemedFrame } from './phrase-theme-frames'
+import { frameForContext, type ThemedFrame } from './phrase-theme-frames'
 import { withNegation } from './phrase-negation'
 import {
   COMMON,
@@ -92,11 +92,12 @@ function pickPhrase(
   negative = false,
 ): BuiltPhrase {
   const unused = frames.filter((frame) => !used.has(`frame:${frame.id}`))
-  const frame = pick(rng, unused.length ? unused : frames)
+  const model = pick(rng, unused.length ? unused : frames)
+  const frame = model.contexts ? frameForContext(model.id, pick(rng, [...model.contexts])) : model
   used.add(`frame:${frame.id}`)
-  const isAdj = theme === 'phrase-adjectif' || theme === 'phrase-negation-adjectif'
+  const isAdj = (theme === 'phrase-adjectif' || theme === 'phrase-negation-adjectif') && frame.preds.some(pred=>pred.includes('/adjectif'))
   const adjPlacement: AdjPlacement = isAdj
-    ? resolveAdjPlacement(frame.id, pick(rng, ['comp', 'subj', 'both'] as const))
+    ? resolveAdjPlacement(frame.id, pick(rng, model.contexts ? ['comp', 'both'] as const : ['comp', 'subj', 'both'] as const))
     : 'comp'
   const pool = subjectsForAdjPlacement(theme, adjPlacement)
   const tokens = instantiateThemeFrame(
