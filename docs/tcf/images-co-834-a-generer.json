@@ -31,20 +31,20 @@
     "received_source_entries": 836,
     "copyright_removed": 2,
     "planned_question_candidates": 324,
-    "activated_planned_questions": 219,
-    "pending_question_candidates": 105,
+    "activated_planned_questions": 228,
+    "pending_question_candidates": 96,
     "original_missing_concepts": 577,
-    "original_concepts_now_generated_or_reused": 462,
-    "remaining_original_concepts": 115,
-    "new_co_images_this_batch": 676,
+    "original_concepts_now_generated_or_reused": 479,
+    "remaining_original_concepts": 98,
+    "new_co_images_this_batch": 697,
     "activated_association_scenes_this_batch": 6,
     "pending_association_scenes": 0,
-    "sources_with_pending_question_candidates": 61,
-    "sources_with_new_active_question_or_scene": 202,
+    "sources_with_pending_question_candidates": 51,
+    "sources_with_new_active_question_or_scene": 209,
     "sources_without_current_bank_reference": 229,
     "remaining_audio_references_to_match": 0,
     "co_images_needing_style_correction": 0,
-    "co_images_style_aligned": 676,
+    "co_images_style_aligned": 697,
     "co_style_redraws_completed": 11
   },
   "instructions": [
@@ -170,17 +170,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/loisirs/01-loisirs-leçon-de-piano.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a1-s9-co-2",
           "question": 4
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 5,
-      "current_linked_image_variants": 1,
+      "current_linked_image_variants": 2,
       "complete_image_audit_certified": false
     },
     {
@@ -1256,17 +1256,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/loisirs/a-la-ferme.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-a1j-s2-co-1",
           "question": 3
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 7,
-      "current_linked_image_variants": 3,
+      "current_linked_image_variants": 4,
       "complete_image_audit_certified": false
     },
     {
@@ -3561,17 +3561,16 @@
         "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_92.mp3",
         "/lib/audio/tcf/co/vacances/01-vacances-le-sac-de-voyage.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
-        {
-          "exercise": "delf-a1-2022-co-92",
-          "question": 1
-        }
-      ],
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
       "new_active_visual_questions": [
         {
           "exercise": "tcf-a1-s1-co-5",
           "question": 4
+        },
+        {
+          "exercise": "delf-a1-2022-co-92",
+          "question": 1
         },
         {
           "exercise": "delf-a1-2022-co-92",
@@ -3584,7 +3583,7 @@
       ],
       "new_active_association_scenes": [],
       "current_linked_questions": 13,
-      "current_linked_image_variants": 7,
+      "current_linked_image_variants": 8,
       "complete_image_audit_certified": false
     },
     {
@@ -5043,14 +5042,13 @@
       "old_refs": [
         "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-28.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a2-s15-co-4",
           "question": 4
-        }
-      ],
-      "new_active_visual_questions": [
+        },
         {
           "exercise": "tcf-ss-a2-s15-co-4",
           "question": 5
@@ -5058,7 +5056,7 @@
       ],
       "new_active_association_scenes": [],
       "current_linked_questions": 8,
-      "current_linked_image_variants": 4,
+      "current_linked_image_variants": 5,
       "complete_image_audit_certified": false
     },
     {
@@ -6289,17 +6287,17 @@
         "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_34-5.mp3",
         "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_34-6.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "delf-a2-2021-co-ex1-34",
           "question": 22
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 22,
-      "current_linked_image_variants": 1,
+      "current_linked_image_variants": 2,
       "complete_image_audit_certified": false
     },
     {
@@ -6384,17 +6382,18 @@
       "pending_visual_questions": [
         {
           "exercise": "delf-a2-2021-co-ex2-38",
-          "question": 3
-        },
-        {
-          "exercise": "delf-a2-2021-co-ex2-38",
           "question": 6
         }
       ],
-      "new_active_visual_questions": [],
+      "new_active_visual_questions": [
+        {
+          "exercise": "delf-a2-2021-co-ex2-38",
+          "question": 3
+        }
+      ],
       "new_active_association_scenes": [],
       "current_linked_questions": 14,
-      "current_linked_image_variants": 0,
+      "current_linked_image_variants": 1,
       "complete_image_audit_certified": false
     },
     {
@@ -6688,17 +6687,16 @@
       "old_refs": [
         "/lib/audio/tcf/co/hotel/01-hôtel-réservation-chambres-Langloi.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
-        {
-          "exercise": "tcf-a2-sa-co-3",
-          "question": 6
-        }
-      ],
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
       "new_active_visual_questions": [
         {
           "exercise": "tcf-a2-sa-co-3",
           "question": 3
+        },
+        {
+          "exercise": "tcf-a2-sa-co-3",
+          "question": 6
         },
         {
           "exercise": "tcf-a2-sa-co-3",
@@ -6707,7 +6705,7 @@
       ],
       "new_active_association_scenes": [],
       "current_linked_questions": 8,
-      "current_linked_image_variants": 3,
+      "current_linked_image_variants": 4,
       "complete_image_audit_certified": false
     },
     {
@@ -8674,17 +8672,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/loisirs/01-loisirs-leçon-de-piano.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a1-s9-co-2",
           "question": 4
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 5,
-      "current_linked_image_variants": 1,
+      "current_linked_image_variants": 2,
       "complete_image_audit_certified": false
     },
     {
@@ -9760,17 +9758,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/loisirs/a-la-ferme.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-a1j-s2-co-1",
           "question": 3
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 7,
-      "current_linked_image_variants": 3,
+      "current_linked_image_variants": 4,
       "complete_image_audit_certified": false
     },
     {
@@ -11989,17 +11987,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/magasins/18-magasin-annoncer-service-de-laverie.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ssx-a2-annonce-6-5-co-2",
           "question": 1
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 3,
-      "current_linked_image_variants": 0,
+      "current_linked_image_variants": 1,
       "complete_image_audit_certified": false
     },
     {
@@ -14298,14 +14296,13 @@
       "old_refs": [
         "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-28.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a2-s15-co-4",
           "question": 4
-        }
-      ],
-      "new_active_visual_questions": [
+        },
         {
           "exercise": "tcf-ss-a2-s15-co-4",
           "question": 5
@@ -14313,7 +14310,7 @@
       ],
       "new_active_association_scenes": [],
       "current_linked_questions": 8,
-      "current_linked_image_variants": 4,
+      "current_linked_image_variants": 5,
       "complete_image_audit_certified": false
     },
     {
@@ -16951,7 +16948,7 @@
           "asset": "dd39092e3677"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "09035276:059:8deb4f887182",
         "additional-20261102:mdf-a1-abc-junior:59:8deb4f887182:8b56a9ff"
@@ -16963,6 +16960,11 @@
           "candidate_cut_id": "09035276-059-8deb4f887182-d1",
           "transcription": "Bonjour, c'est Martin. Cet après-midi, on va visiter une ferme avec mes parents. On va voir les animaux et manger du fromage de chèvre. Tu veux venir avec nous? C'est gratuit. On part à 14h. On ne va pas rentrer trop tard, vers 18h. Rappelle-moi au 02 quatre-vingt-64 vingt un. A plus?"
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-fromage-chevre.webp",
+        "/lib/images/tcf/qcm-audit/co57-fromage-brebis.webp",
+        "/lib/images/tcf/qcm-audit/co57-fromage-vache.webp"
       ]
     },
     {
@@ -18230,7 +18232,7 @@
           "asset": "c6c7e35f3ad8"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "grammar-import-20261104:file_000000005288821089919bf789f6589f"
       ],
@@ -18241,6 +18243,11 @@
           "candidate_cut_id": "grammar-import-20261104-file_000000005288821089919bf789f6589f-d1",
           "transcription": "Allô, Manon, c'est Flo. Ça va ? Non. Mon voisin n'est pas content. J'écoute la musique trop fort et je fais du bruit. Et alors ? Alors je ne respecte pas le règlement et le calme."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-musique-trop-forte.webp",
+        "/lib/images/tcf/qcm-audit/co57-chien-aboie.webp",
+        "/lib/images/tcf/qcm-audit/co57-porte-bloquee.webp"
       ]
     },
     {
@@ -18381,7 +18388,7 @@
           "asset": null
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "09035276:007:3ccb1cc10094",
         "additional-20261102:mdf-a1-abc-junior:7:3ccb1cc10094:8733b172"
@@ -18393,6 +18400,11 @@
           "candidate_cut_id": "09035276-007-3ccb1cc10094-d1",
           "transcription": "Bonjour, c'est Madame Tourret, la professeure de piano. Je vais arriver un peu en retard pour le cours, à 18h15. Je suis désolée, il y a une panne dans le métro. Tu peux commencer à travailler sans moi. A tout à l'heure."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-panne-metro.webp",
+        "/lib/images/tcf/qcm-audit/co57-panne-voiture.webp",
+        "/lib/images/tcf/qcm-audit/co57-embouteillage.webp"
       ]
     },
     {
@@ -25789,7 +25801,7 @@
           "asset": "9095d466489d"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:092:fe7b7db9b31c"
       ],
@@ -25800,6 +25812,11 @@
           "candidate_cut_id": "delf_a1_2022-092-fe7b7db9b31c-r2-d1",
           "transcription": "Allô? Est-ce que tu peux m'aider à faire le sac pour ce week-end? Prends des gants, s'il te plaît. Il faut aussi des serviettes. Elles sont sur mon lit, dans ma chambre. Mets aussi le dentifrice et les brosses à dents dans le sac. Pour nos vêtements, je vais apporter une valise. Merci."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-aide-preparer-sac.webp",
+        "/lib/images/tcf/qcm-audit/co57-aide-devoirs.webp",
+        "/lib/images/tcf/qcm-audit/co57-aide-cuisiner.webp"
       ]
     },
     {
@@ -27086,7 +27103,7 @@
           "asset": "7df3fe96e480"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a2_eb1w:003:5a9ff0eb5c65"
       ],
@@ -27097,6 +27114,11 @@
           "candidate_cut_id": "delf_a2_eb1w-003-5a9ff0eb5c65-r2-d1",
           "transcription": "Bonjour, je suis Madame Langlois. Je vous appelle pour réserver deux chambres doubles pour quatre personnes du 5 au 7 juin. J'aimerais connaître le prix des chambres avec petit déjeuner et savoir s'il y a une baignoire dans les chambres. Est-ce que je peux régler par chèque? Nous viendrons en voiture. Y a-t-il un parking gratuit dans l'hôtel? Merci de me rappeler au 06 71 20 98 80. J'attends votre appel. A bientôt."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-baignoire.webp",
+        "/lib/images/tcf/qcm-audit/co834-ordinateur-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co57-television-geante.webp"
       ]
     },
     {
@@ -28133,7 +28155,7 @@
           "asset": "50fe7f8b7c93"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "9782090351958:051:c1b7ec577e0b",
         "additional-20261102:mdf-a2-abc-junior-direct:51:c1b7ec577e0b:58ed421c"
@@ -28145,6 +28167,11 @@
           "candidate_cut_id": "9782090351958-051-c1b7ec577e0b-d1",
           "transcription": "Votre attention, s'il vous plaît. Il est déjà 18h30. La piscine ferme dans 30 minutes. Vous devez sortir du bassin et vous diriger vers les douches et les vestiaires. N'oubliez rien dans les vestiaires et donnez la clé de votre casier à Isabelle au guichet à la sortie. Nous vous rappelons que la piscine est ouverte tous les jours, même le dimanche et les vacances scolaires, de 9h à 19h et le mercredi de 9h à 22h."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-douches-vestiaires-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-parking-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-accueil-salle-sport-dessine.webp"
       ]
     },
     {
@@ -29669,7 +29696,7 @@
           "asset": null
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a2-abc-direct:35:ce7a05ef4597:ff66a5ad"
       ],
@@ -29680,6 +29707,11 @@
           "candidate_cut_id": "additional-20261102-mdf-a2-abc-direct-35-ce7a05ef4597-ff66a5ad-d1",
           "transcription": "Découvrez notre dernier service de laverie. On s'occupe de votre linge. On nettoie, on repasse et on plie. Passez commande en ligne sur notre site internet."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-laverie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-boulangerie-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-taxi-dessine.webp"
       ]
     },
     {
@@ -31506,7 +31538,7 @@
           "asset": "b539ebfaf403"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a2_2021:034:4c482707a98f"
       ],
@@ -31517,6 +31549,11 @@
           "candidate_cut_id": "delf_a2_2021-034-4c482707a98f-d6",
           "transcription": "Votre attention, s'il vous plaît. Léo, 8 ans, s'est perdue au rayon des jouets. Il attend son papa à l'accueil du magasin. Merci."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-rayon-jouets-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co57-rayon-alimentaire.webp",
+        "/lib/images/tcf/qcm-audit/co834-parking-dessine.webp"
       ]
     },
     {
@@ -31595,7 +31632,7 @@
           "asset": null
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a2_2021:038:9256c30fcdc0"
       ],
@@ -31606,6 +31643,11 @@
           "candidate_cut_id": "delf_a2_2021-038-9256c30fcdc0-d1",
           "transcription": "Ce weekend, rendez-vous à Bisé pour son festival de peinture. Les artistes vous attendent pour vous montrer leurs œuvres d'art sous la grande tente. Achetez votre billet directement à l'entrée du festival. Pour plus d'informations, visitez notre site www.merdebisée.fr"
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-exposition-grande-tente.webp",
+        "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-parc-public-dessine.webp"
       ]
     },
     {
@@ -32685,7 +32727,7 @@
       "label": "La porte est bloquée",
       "path_after_generation": "/lib/images/tcf/qcm-audit/c6c7e35f3ad8.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « La porte est bloquée ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s6-co-2",
@@ -32693,8 +32735,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co57-porte-bloquee.webp",
+      "sha256": "87066027a99e746e5f877456503f83cd265cf2d59f290d38fa45db4412bc6cf8",
+      "review_note": "Commode devant le battant empêchant son ouverture et homme essayant de pousser de l’autre côté ; obstruction réellement visible. Paysage natif exact 1448 × 1086, style peint doux comparé aux références approuvées 48a753d8 ; anatomie et sens entier relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "31474ff5a57c",
@@ -33455,7 +33502,7 @@
       "label": "Le chien aboie",
       "path_after_generation": "/lib/images/tcf/qcm-audit/e6b09c3823b1.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le chien aboie ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s6-co-2",
@@ -33463,8 +33510,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co57-chien-aboie.webp",
+      "sha256": "d1dd2232f463819cbd7594e9a38ee810ad047dbc36c49905297183c9c466e984",
+      "review_note": "Chien gueule ouverte et traits sonores, femme âgée gênée par le bruit ; aboiement explicite, aucune agression. Paysage natif exact 1448 × 1086, style peint doux comparé aux références approuvées 48a753d8 ; anatomie et sens entier relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "12b16293a4cc",
@@ -33492,7 +33544,7 @@
       "label": "Du fromage de brebis",
       "path_after_generation": "/lib/images/tcf/qcm-audit/c83761f74ee0.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Du fromage de brebis ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a1j-s2-co-1",
@@ -33500,8 +33552,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co57-fromage-brebis.webp",
+      "sha256": "e58dca05a362a5c9532db4208edc05e1e9439d1571f0ddae56e63e4041cce8ca",
+      "review_note": "Tomme et quartier sur planche ; brebis laineuse sans cornes sur l’emballage, distincte de la chèvre et de la vache. Paysage natif exact 1448 × 1086 ; modelé peint et contours fins comparés aux références approuvées 48a753d8. Sans prix, date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "40b742b7985d",
@@ -33839,7 +33896,7 @@
       "label": "La musique est trop forte",
       "path_after_generation": "/lib/images/tcf/qcm-audit/d40f9534a8fd.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « La musique est trop forte ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s6-co-2",
@@ -33847,8 +33904,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co57-musique-trop-forte.webp",
+      "sha256": "2c5839a840aeec4fb681ad8d762ea3b0441c4d64680acbb6a3ee5a2957e205ae",
+      "review_note": "Deux enceintes émettent des notes, volume vers le maximum, voisine se bouchant les oreilles ; casque ajouté par le premier rendu retiré par régénération. Paysage natif exact 1448 × 1086, style peint doux comparé aux références approuvées 48a753d8 ; anatomie et sens entier relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "d86fecd89e65",
@@ -34696,7 +34758,7 @@
       "label": "Sous la grande tente",
       "path_after_generation": "/lib/images/tcf/qcm-audit/d11a29886aa8.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Sous la grande tente ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a2-2021-co-ex2-38",
@@ -34704,8 +34766,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co57-exposition-grande-tente.webp",
+      "sha256": "3bfba0716071d3ad49ad14efb8a2d2ce53b3de00ca7ce76f7c428647ae70b807",
+      "review_note": "Grande tente ouverte contenant tableaux et sculptures ; deux visiteurs dont une femme en fauteuil roulant, exposition bien distincte du camping. Paysage natif exact 1448 × 1086, style peint doux comparé aux références approuvées 48a753d8 ; anatomie et sens entier relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "8546c8a5cc6c",
@@ -35563,7 +35630,7 @@
       "label": "Une télévision géante",
       "path_after_generation": "/lib/images/tcf/qcm-audit/7df3fe96e480.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une télévision géante ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a2-sa-co-3",
@@ -35571,8 +35638,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co57-television-geante.webp",
+      "sha256": "405566d80424b4dd630d4f86cbc058c9ff52b05ddf6ddaef7462609709a0d790",
+      "review_note": "Télévision occupant presque tout le mur de la chambre, fauteuil et lit donnant l’échelle ; caractère géant effectivement visible. Paysage natif exact 1448 × 1086, style peint doux comparé aux références approuvées 48a753d8 ; anatomie et sens entier relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "e802c3136a5f",
@@ -36269,7 +36341,7 @@
       "label": "De l'aide pour cuisiner",
       "path_after_generation": "/lib/images/tcf/qcm-audit/9095d466489d.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « De l'aide pour cuisiner ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-92",
@@ -36277,8 +36349,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co57-aide-cuisiner.webp",
+      "sha256": "aa3643a4c9ed837e9f95da6aac0170217181388a0f02ad061bf3300bca2244dc",
+      "review_note": "Deux adultes coopèrent pour préparer une salade, l’un tient le saladier et l’autre y verse les légumes. Second rendu dessiné à carnations peintes retenu ; premier rendu photographique écarté. Paysage natif exact 1448 × 1086 ; modelé peint et contours fins comparés aux références approuvées 48a753d8. Sans prix, date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "65a61409d4ab",
@@ -36658,7 +36735,7 @@
       "label": "Une laverie",
       "path_after_generation": "/lib/images/tcf/qcm-audit/6c503aef9a58.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une laverie ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ssx-a2-annonce-6-5-co-2",
@@ -36666,8 +36743,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-laverie-dessine.webp",
+      "sha256": "9f9ec98bbff6708245381f102a0b687f36654592a2119d1cad31a69da97f73ef",
+      "review_note": "Lave-linge, planche et fer à repasser, employé brun aux cheveux bouclés pliant un drap ; trois actions du service cité sont représentées, inscription LAVERIE correcte, mains naturelles. Paysage natif exact 1448 × 1086 ; modelé peint doux et contours discrets comparés aux références validées 48a753d8.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "b3d5349627f5",
@@ -36889,7 +36971,7 @@
       "label": "Le restaurant et le parking",
       "path_after_generation": "/lib/images/tcf/qcm-audit/521649eaa7b7.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le restaurant et le parking ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s15-co-4",
@@ -36897,8 +36979,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-restaurant-parking-dessine.webp",
+      "sha256": "ad3c84c5d0a5b1c6702c28120ec0faf94edcbe4f68bc7b3c23c907f8d1101931",
+      "review_note": "Restaurant à tables dressées et parking avec voitures, deux scènes distinctes et lisibles de taille comparable ; aucun prix ou numéro. Paysage natif exact 1448 × 1086 ; modelé peint doux et contours discrets comparés aux références validées 48a753d8.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "cde13aecb6d6",
@@ -37960,7 +38047,7 @@
       "label": "Du fromage de vache",
       "path_after_generation": "/lib/images/tcf/qcm-audit/dd39092e3677.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Du fromage de vache ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a1j-s2-co-1",
@@ -37968,8 +38055,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co57-fromage-vache.webp",
+      "sha256": "348a490202715317ede71a2e87622df373cd81fc96a3cdbc5140ce413c9a5e22",
+      "review_note": "Meule et quartier sur planche ; vache tachetée à mamelles sur l’emballage, origine distincte. Paysage natif exact 1448 × 1086 ; modelé peint et contours fins comparés aux références approuvées 48a753d8. Sans prix, date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "2514fe5e2c2a",
@@ -38927,7 +39019,7 @@
       "label": "Au rayon des jouets",
       "path_after_generation": "/lib/images/tcf/qcm-audit/a7c5bfdf755a.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Au rayon des jouets ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a2-2021-co-ex1-34",
@@ -38935,8 +39027,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-rayon-jouets-dessine.webp",
+      "sha256": "6cae2bda213a9e03a51826eb2fc54fb56ce5f8df0a44953e1f4ccda49415daa1",
+      "review_note": "Revue visuelle individuelle : paysage 4:3 exact, style dessiné CE/CO, lieu ou rayon entier identifiable, pas de montant ni date. Accueil, caisse avec personnel, caisse automatique, entrée et sortie sont distincts. Le frais montre des yaourts réfrigérés et du poisson frais ; les surgelés sont dans des congélateurs. Les portraits principaux diffèrent et les clients répétitifs ajoutés ont été retirés des commerces avant intégration.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "79029d6166d7",
@@ -39588,7 +39685,7 @@
       "label": "De l'aide pour faire ses devoirs",
       "path_after_generation": "/lib/images/tcf/qcm-audit/b5dc576e0387.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « De l'aide pour faire ses devoirs ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-92",
@@ -39596,8 +39693,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co57-aide-devoirs.webp",
+      "sha256": "7a0accd9d40be1d5b491eecae49f9d716194cddc795f37b38c88479c56644298",
+      "review_note": "Étudiante au cahier et crayon, ami pointant la page et expliquant ; deux personnes, coopération explicite, pas de chiffres lisibles. Paysage natif exact 1448 × 1086 ; modelé peint et contours fins comparés aux références approuvées 48a753d8. Sans prix, date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "06bb33f69462",
@@ -39667,7 +39769,7 @@
       "label": "Au rayon alimentaire",
       "path_after_generation": "/lib/images/tcf/qcm-audit/0ed88269b484.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Au rayon alimentaire ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a2-2021-co-ex1-34",
@@ -39675,8 +39777,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co57-rayon-alimentaire.webp",
+      "sha256": "965a3133b730d96616d53626011565ed47f1b09147a597638d48267aaf9dfefb",
+      "review_note": "Allée de produits alimentaires : pâtes, céréales, bocaux, conserves et légumes ; aucun jouet ou prix. Paysage natif exact 1448 × 1086, style peint doux comparé aux références approuvées 48a753d8 ; anatomie et sens entier relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "ac85576d88c3",
@@ -39704,7 +39811,7 @@
       "label": "L’accueil et la salle de sport",
       "path_after_generation": "/lib/images/tcf/qcm-audit/50fe7f8b7c93.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « L’accueil et la salle de sport ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s15-co-4",
@@ -39712,8 +39819,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-accueil-salle-sport-dessine.webp",
+      "sha256": "3fb9b3dc51cf9c41728a62f590e4faa41cff1d86f0a945ffc0dc7f233d311106",
+      "review_note": "Accueil à comptoir avec deux personnes et salle de gym avec trois adultes sur tapis ; cinq personnages au total, gestes naturels, scènes séparées et personnes non dupliquées. Paysage natif exact 1448 × 1086 ; modelé peint doux et contours discrets comparés aux références validées 48a753d8.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "d4d9d52b48f3",
@@ -39887,7 +39999,7 @@
       "label": "Une panne de métro",
       "path_after_generation": "/lib/images/tcf/qcm-audit/d234bb4f3f76.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une panne de métro ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s9-co-2",
@@ -39895,8 +40007,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co57-panne-metro.webp",
+      "sha256": "67f50d0b9ace4e5a0a0f64d915bb4c5fd286a1cd2dab1f8aea70d37a5207adfa",
+      "review_note": "Métro souterrain immobile et technicien au panneau ouvert, chevalet PANNE, voyageur âgé à canne. Second rendu peint retenu ; premier rendu trop photographique écarté. Paysage natif exact 1448 × 1086 ; modelé peint et contours fins comparés aux références approuvées 48a753d8. Sans prix, date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "1455d45b191a",
@@ -41792,7 +41909,7 @@
       "label": "Les douches et les vestiaires",
       "path_after_generation": "/lib/images/tcf/qcm-audit/c2fa6d2094d9.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Les douches et les vestiaires ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s15-co-4",
@@ -41800,8 +41917,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-douches-vestiaires-dessine.webp",
+      "sha256": "cce3e2ebd3409d6c3eca40f145f065e57f4d5f2a140e96bc4986d9834a00352b",
+      "review_note": "Deux espaces complets : pommeaux et évacuation de douches collectives à gauche, casiers et banc avec serviettes à droite ; piscine visible, aucune personne ou nudité. Paysage natif exact 1448 × 1086 ; modelé peint doux et contours discrets comparés aux références validées 48a753d8.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "6dc9358b953f",
@@ -43672,7 +43794,7 @@
       "label": "De l'aide pour préparer son sac",
       "path_after_generation": "/lib/images/tcf/qcm-audit/764e0de3f50f.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « De l'aide pour préparer son sac ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-92",
@@ -43680,8 +43802,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co57-aide-preparer-sac.webp",
+      "sha256": "489d8f7ef706efdf6a9ad1e9dca077547b81de71dc575420379b1849e0eb2188",
+      "review_note": "Deux personnes coopèrent : maintien du sac ouvert et rangement d’une serviette ; gants et brosses visibles, mains et contenu relus. Paysage natif exact 1448 × 1086 ; modelé peint et contours fins comparés aux références approuvées 48a753d8. Sans prix, date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "b0d45a659810",
@@ -44616,19 +44743,19 @@
   "pending_association_images": [],
   "visual_style_review": {
     "audit": "recontrole-style-images.json",
-    "reviewed_co_images": 676,
+    "reviewed_co_images": 697,
     "reviewed_other_images": 59,
-    "reviewed_total_images": 735,
+    "reviewed_total_images": 756,
     "user_approved_reference_images": 35,
     "initial_redraw_required": 11,
     "initial_co_redraw_required": 11,
     "initial_other_redraw_required": 0,
-    "already_aligned": 724,
+    "already_aligned": 745,
     "redrawn_images": 11,
     "remaining_redraws": 0,
     "restored_previous_images": 14,
     "rejected_unpublished_previews": 12,
-    "new_images_compared_to_reference": 417
+    "new_images_compared_to_reference": 438
   },
   "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
   "workflow_order": [

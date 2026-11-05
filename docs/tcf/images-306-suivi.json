@@ -15,11 +15,11 @@
   ],
   "summary": {
     "initial_question_candidates": 306,
-    "questions_illustrated_or_prepared": 150,
-    "newly_activated": 102,
+    "questions_illustrated_or_prepared": 159,
+    "newly_activated": 111,
     "prepared_pending_audio_link": 1,
     "prepared_pending_audio_validation": 4,
-    "remaining_questions_requiring_images_or_review": 57,
+    "remaining_questions_requiring_images_or_review": 48,
     "unreviewed_complete_trios": 0,
     "audio_references_next_stage": 0,
     "vocabulary_occurrences_final_stage": 1686,
@@ -57,7 +57,7 @@
           "asset": "dd39092e3677"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "09035276:059:8deb4f887182",
         "additional-20261102:mdf-a1-abc-junior:59:8deb4f887182:8b56a9ff"
@@ -71,16 +71,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co57-fromage-chevre.webp",
+        "/lib/images/tcf/qcm-audit/co57-fromage-brebis.webp",
+        "/lib/images/tcf/qcm-audit/co57-fromage-vache.webp"
       ],
-      "missing_labels": [
-        "Du fromage de chèvre",
-        "Du fromage de brebis",
-        "Du fromage de vache"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-fromage-chevre.webp",
+        "/lib/images/tcf/qcm-audit/co57-fromage-brebis.webp",
+        "/lib/images/tcf/qcm-audit/co57-fromage-vache.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-a1j-s2-co-1",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co57-fromage-chevre.webp",
+          "/lib/images/tcf/qcm-audit/co57-fromage-brebis.webp",
+          "/lib/images/tcf/qcm-audit/co57-fromage-vache.webp"
+        ],
+        "support_quote": "Bonjour, c'est Martin. Cet après-midi, on va visiter une ferme avec mes parents. On va voir les animaux et manger du fromage de chèvre. Tu veux venir avec nous? C'est gratuit. On part à 14h. On ne va pas rentrer trop tard, vers 18h. Rappelle-moi au 02 quatre-vingt-64 vingt un. A plus?",
+        "current_bank_transcription": "Bonjour, c’est Martin.\nCet après-midi, on va visiter une ferme avec mes parents.\nOn va voir les animaux et manger du fromage de chèvre.\nTu veux venir avec nous ?\nC’est gratuit.\nOn part à 14 h.\nOn ne va pas rentrer trop tard, vers 18 h.\nRappelle-moi au 02 89 64 32 21.\nÀ plus !",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Les trois fromages sont distingués par l’animal dessiné sur l’emballage : chèvre, brebis ou vache. Les trois images sont peintes en 4:3 et sans montant ou date ; la source nomme le fromage de chèvre."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -834,7 +848,7 @@
           "asset": "c6c7e35f3ad8"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "grammar-import-20261104:file_000000005288821089919bf789f6589f"
       ],
@@ -847,16 +861,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co57-musique-trop-forte.webp",
+        "/lib/images/tcf/qcm-audit/co57-chien-aboie.webp",
+        "/lib/images/tcf/qcm-audit/co57-porte-bloquee.webp"
       ],
-      "missing_labels": [
-        "La musique est trop forte",
-        "Le chien aboie",
-        "La porte est bloquée"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-musique-trop-forte.webp",
+        "/lib/images/tcf/qcm-audit/co57-chien-aboie.webp",
+        "/lib/images/tcf/qcm-audit/co57-porte-bloquee.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s6-co-2",
+        "question": 2,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co57-musique-trop-forte.webp",
+          "/lib/images/tcf/qcm-audit/co57-chien-aboie.webp",
+          "/lib/images/tcf/qcm-audit/co57-porte-bloquee.webp"
+        ],
+        "support_quote": "Allô, Manon, c'est Flo. Ça va ? Non. Mon voisin n'est pas content. J'écoute la musique trop fort et je fais du bruit. Et alors ? Alors je ne respecte pas le règlement et le calme.",
+        "current_bank_transcription": "Allô, Manon, c’est Flo. Ça va ? Non. Mon voisin n’est pas content. J’écoute la musique trop fort et je fais du bruit. Et alors ? Alors je ne respecte pas le règlement et le calme.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trois problèmes concrets distincts : enceintes trop fortes et voisine gênée, aboiement, porte obstruée par un meuble. Casque ambigu du premier rendu retiré ; la source confirme la musique trop forte."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -949,7 +977,7 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "09035276:007:3ccb1cc10094",
         "additional-20261102:mdf-a1-abc-junior:7:3ccb1cc10094:8733b172"
@@ -963,16 +991,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co57-panne-metro.webp",
+        "/lib/images/tcf/qcm-audit/co57-panne-voiture.webp",
+        "/lib/images/tcf/qcm-audit/co57-embouteillage.webp"
       ],
-      "missing_labels": [
-        "Une panne de métro",
-        "Une panne de voiture",
-        "Un embouteillage"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-panne-metro.webp",
+        "/lib/images/tcf/qcm-audit/co57-panne-voiture.webp",
+        "/lib/images/tcf/qcm-audit/co57-embouteillage.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s9-co-2",
+        "question": 4,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co57-panne-metro.webp",
+          "/lib/images/tcf/qcm-audit/co57-panne-voiture.webp",
+          "/lib/images/tcf/qcm-audit/co57-embouteillage.webp"
+        ],
+        "support_quote": "Bonjour, c'est Madame Tourret, la professeure de piano. Je vais arriver un peu en retard pour le cours, à 18h15. Je suis désolée, il y a une panne dans le métro. Tu peux commencer à travailler sans moi. A tout à l'heure.",
+        "current_bank_transcription": "Bonjour, c'est madame Tourette, la professeur de piano.\nJe vais arriver un peu en retard pour le cours, à 18h15.\nJe suis désolé, il y a une panne dans le métro.\nTu peux commencer à travailler sans moi, à tout à l'heure.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trois causes distinctes entièrement visibles : métro en maintenance, voiture au capot ouvert, circulation bloquée en files. Personnes et anatomie relues, style peint et format 4:3 contrôlés. La source confirme la panne du métro."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -7455,7 +7497,7 @@
           "asset": "9095d466489d"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:092:fe7b7db9b31c"
       ],
@@ -7468,16 +7510,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co57-aide-preparer-sac.webp",
+        "/lib/images/tcf/qcm-audit/co57-aide-devoirs.webp",
+        "/lib/images/tcf/qcm-audit/co57-aide-cuisiner.webp"
       ],
-      "missing_labels": [
-        "De l'aide pour préparer son sac",
-        "De l'aide pour faire ses devoirs",
-        "De l'aide pour cuisiner"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-aide-preparer-sac.webp",
+        "/lib/images/tcf/qcm-audit/co57-aide-devoirs.webp",
+        "/lib/images/tcf/qcm-audit/co57-aide-cuisiner.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a1-2022-co-92",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co57-aide-preparer-sac.webp",
+          "/lib/images/tcf/qcm-audit/co57-aide-devoirs.webp",
+          "/lib/images/tcf/qcm-audit/co57-aide-cuisiner.webp"
+        ],
+        "support_quote": "Allô? Est-ce que tu peux m'aider à faire le sac pour ce week-end? Prends des gants, s'il te plaît. Il faut aussi des serviettes. Elles sont sur mon lit, dans ma chambre. Mets aussi le dentifrice et les brosses à dents dans le sac. Pour nos vêtements, je vais apporter une valise. Merci.",
+        "current_bank_transcription": "Allô ? Est-ce que tu peux m’aider à faire le sac\npour ce week-end ? Prends des gants s’il te plaît.\nIl faut aussi des serviettes. Elles sont sur mon lit,\ndans ma chambre. Mets aussi le dentifrice et les\nbrosses à dents dans le sac. Pour nos vêtements,\nje vais apporter une valise. Merci.\nÉpreuve blanche 2",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Deux personnes coopèrent dans chaque réponse : préparer un sac, faire les devoirs, cuisiner ; personnages différents entre les trois scènes, actions et mains relues. La source demande de l’aide pour faire le sac."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -8391,7 +8447,7 @@
           "asset": "7df3fe96e480"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a2_eb1w:003:5a9ff0eb5c65"
       ],
@@ -8404,15 +8460,30 @@
         }
       ],
       "resolved_images": [
-        null,
+        "/lib/images/tcf/qcm-audit/co57-baignoire.webp",
         "/lib/images/tcf/qcm-audit/co834-ordinateur-dessine.webp",
-        null
+        "/lib/images/tcf/qcm-audit/co57-television-geante.webp"
       ],
-      "missing_labels": [
-        "Une baignoire",
-        "Une télévision géante"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-baignoire.webp",
+        "/lib/images/tcf/qcm-audit/co834-ordinateur-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co57-television-geante.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-a2-sa-co-3",
+        "question": 6,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co57-baignoire.webp",
+          "/lib/images/tcf/qcm-audit/co834-ordinateur-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co57-television-geante.webp"
+        ],
+        "support_quote": "Bonjour, je suis Madame Langlois. Je vous appelle pour réserver deux chambres doubles pour quatre personnes du 5 au 7 juin. J'aimerais connaître le prix des chambres avec petit déjeuner et savoir s'il y a une baignoire dans les chambres. Est-ce que je peux régler par chèque? Nous viendrons en voiture. Y a-t-il un parking gratuit dans l'hôtel? Merci de me rappeler au 06 71 20 98 80. J'attends votre appel. A bientôt.",
+        "current_bank_transcription": "Bonjour, je suis Madame Langlois.\nJe vous appelle pour réserver deux chambres doubles pour quatre personnes du 5 au 7 juin.\nJ'aimerais connaître le prix des chambres avec petits déjeunés et savoir s'il y a une bénouare dans les chambres.\nEst-ce que je peux régler par chèque ?\nNous viendrons en voiture.\nY a-t-il un parking gratuit dans l'hôtel ?\nMerci de me rappeler au 06-71-2880.\nJ'attends votre appel.\nÀ bientôt.\nBonjour, je suis Madame Langlois.\nJe vous appelle pour réserver deux chambres doubles pour quatre personnes du 5 au 7 juin.\nJ'aimerais connaître le prix des chambres avec petits déjeunés et savoir s'il y a une bénouare dans les chambres.\nEst-ce que je peux régler par chèque ?\nNous viendrons en voiture.\nY a-t-il un parking gratuit dans l'hôtel ?\nMerci de me rappeler au 06-71-2880.\nJ'attends votre appel.\nÀ bientôt.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Baignoire créée et télévision géante représentée à l’échelle d’une chambre ; ordinateur peint existant réutilisé après contrôle visuel. Trois équipements distincts, taille géante préservée."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -8905,7 +8976,7 @@
           "asset": "50fe7f8b7c93"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "9782090351958:051:c1b7ec577e0b",
         "additional-20261102:mdf-a2-abc-junior-direct:51:c1b7ec577e0b:58ed421c"
@@ -8919,16 +8990,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-douches-vestiaires-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-parking-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-accueil-salle-sport-dessine.webp"
       ],
-      "missing_labels": [
-        "Les douches et les vestiaires",
-        "Le restaurant et le parking",
-        "L’accueil et la salle de sport"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-douches-vestiaires-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-parking-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-accueil-salle-sport-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s15-co-4",
+        "question": 4,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-douches-vestiaires-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-restaurant-parking-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-accueil-salle-sport-dessine.webp"
+        ],
+        "support_quote": "Votre attention, s'il vous plaît. Il est déjà 18h30. La piscine ferme dans 30 minutes. Vous devez sortir du bassin et vous diriger vers les douches et les vestiaires. N'oubliez rien dans les vestiaires et donnez la clé de votre casier à Isabelle au guichet à la sortie. Nous vous rappelons que la piscine est ouverte tous les jours, même le dimanche et les vacances scolaires, de 9h à 19h et le mercredi de 9h à 22h.",
+        "current_bank_transcription": "Vous êtes à la piscine.\nVous entendez ce message.\nVotre attention, s'il vous plaît.\nIl est déjà 18 h 30.\nLa piscine ferme dans 30 minutes.\nVous devez sortir du bassin et vous diriger vers les douches et les vestiaires.\nN'oubliez rien dans les vestiaires et donnez la clé de votre casier au guichet à la sortie.\nNous vous rappelons que la piscine est ouverte tous les jours, même le dimanche et les vacances scolaires, de 9 heures à 19 heures, et le mercredi de 9 heures à 22 heures.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Les trois images représentent chacune la paire complète de lieux ; la transcription demande explicitement les douches et les vestiaires. Aucun changement de réponse ou corrigé."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -10043,7 +10128,7 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a2-abc-direct:35:ce7a05ef4597:ff66a5ad"
       ],
@@ -10056,15 +10141,30 @@
         }
       ],
       "resolved_images": [
-        null,
+        "/lib/images/tcf/qcm-audit/co306-laverie-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-boulangerie-dessinee.webp",
-        null
+        "/lib/images/tcf/qcm-audit/co306-taxi-dessine.webp"
       ],
-      "missing_labels": [
-        "Une laverie",
-        "Un taxi"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-laverie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-boulangerie-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-taxi-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ssx-a2-annonce-6-5-co-2",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-laverie-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-boulangerie-dessinee.webp",
+          "/lib/images/tcf/qcm-audit/co306-taxi-dessine.webp"
+        ],
+        "support_quote": "Découvrez notre dernier service de laverie. On s'occupe de votre linge. On nettoie, on repasse et on plie. Passez commande en ligne sur notre site internet.",
+        "current_bank_transcription": "Découvrez notre dernier service de laverie !\nOn s’occupe de votre linge : on nettoie, on repasse et on plie !\nPassez commande en ligne sur notre site internet.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Laverie et taxi nouvellement générés, boulangerie peinte réutilisée après contrôle visuel. Trois services distincts, la source dit laverie et détaille nettoyage, repassage et pliage."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -11834,7 +11934,7 @@
           "asset": "b539ebfaf403"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a2_2021:034:4c482707a98f"
       ],
@@ -11847,15 +11947,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
+        "/lib/images/tcf/qcm-audit/co834-rayon-jouets-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co57-rayon-alimentaire.webp",
         "/lib/images/tcf/qcm-audit/co834-parking-dessine.webp"
       ],
-      "missing_labels": [
-        "Au rayon des jouets",
-        "Au rayon alimentaire"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-rayon-jouets-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co57-rayon-alimentaire.webp",
+        "/lib/images/tcf/qcm-audit/co834-parking-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a2-2021-co-ex1-34",
+        "question": 22,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co834-rayon-jouets-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co57-rayon-alimentaire.webp",
+          "/lib/images/tcf/qcm-audit/co834-parking-dessine.webp"
+        ],
+        "support_quote": "Votre attention, s'il vous plaît. Léo, 8 ans, s'est perdue au rayon des jouets. Il attend son papa à l'accueil du magasin. Merci.",
+        "current_bank_transcription": "Votre attention s’il vous plaît ! Léo, 8 ans, s’est perdu au rayon des jouets. Il attend son papa à l’accueil du magasin. Merci !",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Rayon des jouets et parking peints existants contrôlés et réutilisés ; rayon alimentaire créé, sans prix. Trois lieux distincts conformes aux réponses."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -11953,7 +12068,7 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a2_2021:038:9256c30fcdc0"
       ],
@@ -11966,14 +12081,30 @@
         }
       ],
       "resolved_images": [
-        null,
+        "/lib/images/tcf/qcm-audit/co57-exposition-grande-tente.webp",
         "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp",
         "/lib/images/tcf/qcm-audit/co306-parc-public-dessine.webp"
       ],
-      "missing_labels": [
-        "Sous la grande tente"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-exposition-grande-tente.webp",
+        "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-parc-public-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a2-2021-co-ex2-38",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co57-exposition-grande-tente.webp",
+          "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-parc-public-dessine.webp"
+        ],
+        "support_quote": "Ce weekend, rendez-vous à Bisé pour son festival de peinture. Les artistes vous attendent pour vous montrer leurs œuvres d'art sous la grande tente. Achetez votre billet directement à l'entrée du festival. Pour plus d'informations, visitez notre site www.merdebisée.fr",
+        "current_bank_transcription": "Ce week-end, rendez-vous à Bizé, pour son festival de peinture ! Les artistes vous attendent pour vous montrer leurs œuvres d’art sous la grande tente. Achetez votre billet directement à l’entrée du festival. Pour plus d’informations, visitez notre site : www.mairiedebize.fr .",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Exposition réellement sous une grande tente ; gare et parc publics peints existants contrôlés et réutilisés, sans ajouter d’exposition aux distracteurs. Trois lieux distincts en 4:3."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",

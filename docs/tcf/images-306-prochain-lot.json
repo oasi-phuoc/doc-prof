@@ -2,7 +2,7 @@
   "schema_version": 1,
   "created_at_utc": "2026-11-04T12:25:01Z",
   "status": "in_progress",
-  "provider_error": "usage_limit_reached",
+  "provider_error": null,
   "provider_reset_estimate_utc": "2026-11-04T14:21:43+00:00",
   "provider_reset_estimate_europe_zurich": "2026-11-04T15:21:43+01:00",
   "scope": "Lot A1/A2 conservé après retrait des 297 anciennes références ; seules les questions encore présentes sont illustrées.",
@@ -24,9 +24,9 @@
     "Terminer les illustrations avant la reprise des 432 références audio, puis les 1906 usages du vocabulaire."
   ],
   "summary": {
-    "pending_images": 5,
-    "pending_question_trios": 2,
-    "generated_images_in_this_file": 6,
+    "pending_images": 0,
+    "pending_question_trios": 0,
+    "generated_images_in_this_file": 27,
     "retired_image_requests": 4
   },
   "images": [
@@ -176,7 +176,7 @@
         "/lib/images/tcf/qcm-audit/co306-piece-lumineuse-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
       ],
-      "status": "pending_generation"
+      "status": "generated_and_visually_reviewed"
     },
     {
       "id": "co306-restaurant-parking-dessine",
@@ -201,7 +201,7 @@
         "/lib/images/tcf/qcm-audit/co834-parking-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
       ],
-      "status": "pending_generation"
+      "status": "generated_and_visually_reviewed"
     },
     {
       "id": "co306-accueil-salle-sport-dessine",
@@ -226,7 +226,7 @@
         "/lib/images/tcf/qcm-audit/co834-cours-gym-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
       ],
-      "status": "pending_generation"
+      "status": "generated_and_visually_reviewed"
     },
     {
       "id": "co306-musee-jeu-video-dessine",
@@ -299,7 +299,7 @@
         "/lib/images/tcf/qcm-audit/co306-entreprise-service-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
       ],
-      "status": "pending_generation"
+      "status": "generated_and_visually_reviewed"
     },
     {
       "id": "co306-taxi-dessine",
@@ -323,7 +323,7 @@
         "/lib/images/tcf/qcm-audit/co306-taxi-bateau-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
       ],
-      "status": "pending_generation"
+      "status": "generated_and_visually_reviewed"
     },
     {
       "id": "co306-lave-linge-occasion-dessine",
@@ -393,6 +393,374 @@
         "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
       ],
       "status": "retired_question_removed"
+    },
+    {
+      "id": "co57-fromage-chevre",
+      "label": "Du fromage de chèvre",
+      "path": "/lib/images/tcf/qcm-audit/co57-fromage-chevre.webp",
+      "prompt": "Illustration numérique PEINTE semi-réaliste, modelé doux, matières peintes détaillées, couleurs naturelles chaleureuses, contours fins discrets. Même technique que les références jointes du commit validé 48a753d8. Paysage EXACT 4:3, 1448 pixels par 1086. Une seule image pour une réponse de QCM. Aucun prix, montant, date, jour, mois, chiffre, logo ou légende ; seulement les inscriptions naturelles explicitement autorisées. Sujet entier avec marges, lisible en petit. Sur fond crème et planche en bois clair : fromage de chèvre blanc en bûche avec une tranche coupée. Autour du centre de la bûche reste une bande de papier d'emballage portant un grand dessin clair de CHÈVRE entière à barbiche et cornes fines droites. L'animal dessiné sur le papier est essentiel pour identifier l'origine du lait. Aucun autre animal, texte, bouteille ou aliment.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-a1j-s2-co-1",
+          "question": 3,
+          "choice": "a",
+          "label": "Du fromage de chèvre",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "status": "generated_and_visually_reviewed"
+    },
+    {
+      "id": "co57-fromage-brebis",
+      "label": "Du fromage de brebis",
+      "path": "/lib/images/tcf/qcm-audit/co57-fromage-brebis.webp",
+      "prompt": "Illustration numérique PEINTE semi-réaliste, modelé doux, matières peintes détaillées, couleurs naturelles chaleureuses, contours fins discrets. Même technique que les références jointes du commit validé 48a753d8. Paysage EXACT 4:3, 1448 pixels par 1086. Une seule image pour une réponse de QCM. Aucun prix, montant, date, jour, mois, chiffre, logo ou légende ; seulement les inscriptions naturelles explicitement autorisées. Sujet entier avec marges, lisible en petit. Sur fond crème et planche en bois clair : petite tomme de fromage de brebis avec quartier coupé, pâte ivoire. Une bande de papier d'emballage autour de la tomme porte un grand dessin clair de BREBIS entière au pelage laineux bouclé, museau doux, sans cornes, sans barbiche. L'animal dessiné sur le papier est essentiel pour identifier l'origine du lait. Aucun autre animal, texte, bouteille ou aliment.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-a1j-s2-co-1",
+          "question": 3,
+          "choice": "b",
+          "label": "Du fromage de brebis",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "status": "generated_and_visually_reviewed"
+    },
+    {
+      "id": "co57-fromage-vache",
+      "label": "Du fromage de vache",
+      "path": "/lib/images/tcf/qcm-audit/co57-fromage-vache.webp",
+      "prompt": "Illustration numérique PEINTE semi-réaliste, modelé doux, matières peintes détaillées, couleurs naturelles chaleureuses, contours fins discrets. Même technique que les références jointes du commit validé 48a753d8. Paysage EXACT 4:3, 1448 pixels par 1086. Une seule image pour une réponse de QCM. Aucun prix, montant, date, jour, mois, chiffre, logo ou légende ; seulement les inscriptions naturelles explicitement autorisées. Sujet entier avec marges, lisible en petit. Sur fond crème et planche en bois clair : petite meule de fromage au lait de vache avec un quartier coupé, pâte jaune pâle. Une bande de papier d'emballage autour de la meule porte un grand dessin clair de VACHE entière blanche à taches noires et mamelles. L'animal dessiné sur le papier est essentiel pour identifier l'origine du lait. Aucun autre animal, texte, bouteille ou aliment.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-a1j-s2-co-1",
+          "question": 3,
+          "choice": "c",
+          "label": "Du fromage de vache",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "status": "generated_and_visually_reviewed"
+    },
+    {
+      "id": "co57-panne-metro",
+      "label": "Une panne de métro",
+      "path": "/lib/images/tcf/qcm-audit/co57-panne-metro.webp",
+      "prompt": "Illustration numérique PEINTE semi-réaliste, modelé doux, matières peintes détaillées, couleurs naturelles chaleureuses, contours fins discrets. Même technique que les références jointes du commit validé 48a753d8. Paysage EXACT 4:3, 1448 pixels par 1086. Une seule image pour une réponse de QCM. Aucun prix, montant, date, jour, mois, chiffre, logo ou légende ; seulement les inscriptions naturelles explicitement autorisées. Sujet entier avec marges, lisible en petit. Un métro à l'arrêt le long d'un quai souterrain. Portes fermées, aucun train en mouvement. Un technicien fictif asiatique d'environ 50 ans en tenue de travail et gilet réfléchissant examine un petit panneau technique ouvert sur la rame. Sur un chevalet devant le train, seul texte naturel PANNE et pictogramme de clé mécanique. Un voyageur noir âgé avec canne attend sur le quai à distance sûre. Un métro clairement en panne, pas un arrêt normal. Aucun horaire, numéro de ligne, voiture ou autre texte.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s9-co-2",
+          "question": 4,
+          "choice": "a",
+          "label": "Une panne de métro",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "status": "generated_and_visually_reviewed"
+    },
+    {
+      "id": "co57-panne-voiture",
+      "label": "Une panne de voiture",
+      "path": "/lib/images/tcf/qcm-audit/co57-panne-voiture.webp",
+      "prompt": "Illustration numérique PEINTE semi-réaliste, modelé doux, matières peintes détaillées, couleurs naturelles chaleureuses, contours fins discrets. Même technique que les références jointes du commit validé 48a753d8. Paysage EXACT 4:3, 1448 pixels par 1086. Une seule image pour une réponse de QCM. Aucun prix, montant, date, jour, mois, chiffre, logo ou légende ; seulement les inscriptions naturelles explicitement autorisées. Sujet entier avec marges, lisible en petit. Une voiture bleue arrêtée sur l'accotement d'une petite route, capot grand ouvert, léger filet de vapeur du moteur et triangle de panne rouge posé derrière à bonne distance. Une conductrice fictive marocaine de 45 ans, cheveux noirs courts et veste bordeaux, attend à côté sur l'accotement et observe le moteur sans le toucher. Pas d'accident, pas d'autre véhicule ou texte. Voiture entière avec marges, panne immédiatement identifiable.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s9-co-2",
+          "question": 4,
+          "choice": "b",
+          "label": "Une panne de voiture",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "status": "generated_and_visually_reviewed"
+    },
+    {
+      "id": "co57-embouteillage",
+      "label": "Un embouteillage",
+      "path": "/lib/images/tcf/qcm-audit/co57-embouteillage.webp",
+      "prompt": "Illustration numérique PEINTE semi-réaliste, modelé doux, matières peintes détaillées, couleurs naturelles chaleureuses, contours fins discrets. Même technique que les références jointes du commit validé 48a753d8. Paysage EXACT 4:3, 1448 pixels par 1086. Une seule image pour une réponse de QCM. Aucun prix, montant, date, jour, mois, chiffre, logo ou légende ; seulement les inscriptions naturelles explicitement autorisées. Sujet entier avec marges, lisible en petit. Vue légèrement en hauteur d'une route urbaine complètement encombrée par deux files de voitures serrées arrêtées, feux arrière rouges, aucun accident, capot ouvert ou travaux. Plusieurs voitures entières au premier plan, files s'étendant au loin entre immeubles, pas de personnes détaillées, inscriptions ou immatriculations lisibles. L'embouteillage est le sujet évident.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s9-co-2",
+          "question": 4,
+          "choice": "c",
+          "label": "Un embouteillage",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "status": "generated_and_visually_reviewed"
+    },
+    {
+      "id": "co57-aide-preparer-sac",
+      "label": "De l'aide pour préparer son sac",
+      "path": "/lib/images/tcf/qcm-audit/co57-aide-preparer-sac.webp",
+      "prompt": "Illustration numérique PEINTE semi-réaliste, modelé doux, matières peintes détaillées, couleurs naturelles chaleureuses, contours fins discrets. Même technique que les références jointes du commit validé 48a753d8. Paysage EXACT 4:3, 1448 pixels par 1086. Une seule image pour une réponse de QCM. Aucun prix, montant, date, jour, mois, chiffre, logo ou légende ; seulement les inscriptions naturelles explicitement autorisées. Sujet entier avec marges, lisible en petit. Deux adultes fictifs préparent ensemble un sac de voyage ouvert sur un lit. Une jeune femme noire aux cheveux courts tient le sac ouvert et indique une place ; son ami japonais aux cheveux noirs courts y pose une serviette propre pliée. Des gants et brosses à dents sans marque attendent sur le lit. Leur coopération pour FAIRE LE SAC est explicite. Sac entier, mains naturelles, pas d'autre personne, bagage préparé sans texte ni devoirs ou cuisine.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "references": [
+        {
+          "exercise": "delf-a1-2022-co-92",
+          "question": 1,
+          "choice": "a",
+          "label": "De l'aide pour préparer son sac",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "status": "generated_and_visually_reviewed"
+    },
+    {
+      "id": "co57-aide-devoirs",
+      "label": "De l'aide pour faire ses devoirs",
+      "path": "/lib/images/tcf/qcm-audit/co57-aide-devoirs.webp",
+      "prompt": "Illustration numérique PEINTE semi-réaliste, modelé doux, matières peintes détaillées, couleurs naturelles chaleureuses, contours fins discrets. Même technique que les références jointes du commit validé 48a753d8. Paysage EXACT 4:3, 1448 pixels par 1086. Une seule image pour une réponse de QCM. Aucun prix, montant, date, jour, mois, chiffre, logo ou légende ; seulement les inscriptions naturelles explicitement autorisées. Sujet entier avec marges, lisible en petit. Deux adultes fictifs étudient ensemble à une table. Une femme brune d'origine indienne aux cheveux attachés est assise devant un cahier ouvert et tient un crayon ; son ami blanc roux assis à côté lui explique un exercice en pointant une ligne. Page portant seulement de petits traits non lisibles, aucun chiffre ou texte. Aide pour FAIRE SES DEVOIRS claire, expressions attentives, livres scolaires sans titres, aucun sac ou cuisine. Deux personnes, mains naturelles.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "references": [
+        {
+          "exercise": "delf-a1-2022-co-92",
+          "question": 1,
+          "choice": "b",
+          "label": "De l'aide pour faire ses devoirs",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "status": "generated_and_visually_reviewed"
+    },
+    {
+      "id": "co57-aide-cuisiner",
+      "label": "De l'aide pour cuisiner",
+      "path": "/lib/images/tcf/qcm-audit/co57-aide-cuisiner.webp",
+      "prompt": "Illustration numérique PEINTE semi-réaliste, modelé doux, matières peintes détaillées, couleurs naturelles chaleureuses, contours fins discrets. Même technique que les références jointes du commit validé 48a753d8. Paysage EXACT 4:3, 1448 pixels par 1086. Une seule image pour une réponse de QCM. Aucun prix, montant, date, jour, mois, chiffre, logo ou légende ; seulement les inscriptions naturelles explicitement autorisées. Sujet entier avec marges, lisible en petit. Deux adultes fictifs s'entraident pour cuisiner dans une cuisine claire : un homme latino-américain de 40 ans aux cheveux bouclés et tablier bleu tient un grand saladier, sa compagne vietnamienne de 45 ans aux cheveux noirs courts y ajoute des légumes coupés depuis une planche. Tous deux participent visiblement à la même préparation. Mains naturelles, ustensiles et légumes, pas d'autre personne ou texte, aucun sac ou cahier.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "references": [
+        {
+          "exercise": "delf-a1-2022-co-92",
+          "question": 1,
+          "choice": "c",
+          "label": "De l'aide pour cuisiner",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "status": "generated_and_visually_reviewed"
+    },
+    {
+      "id": "co57-musique-trop-forte",
+      "label": "La musique est trop forte",
+      "path": "/lib/images/tcf/qcm-audit/co57-musique-trop-forte.webp",
+      "prompt": "Une ILLUSTRATION numérique PEINTE de banque pédagogique, dans la technique de la référence validée 48a753d8. Modelé doux, contours fins et discrets, visages dessinés avec carnations peintes sans pores ou grain photo. Couleurs naturelles chaleureuses. PAS une photographie, aucun rendu 3D ou cinéma, pas de gros contours noirs. Paysage EXACT 4:3, 1448 par 1086 pixels. Sujet entier lisible avec marges. Aucun prix, montant, date, jour, mois, chiffre, marque ou légende ; seuls les mots naturels explicitement autorisés apparaissent. Personnages fictifs différents de la référence. Un jeune adulte tunisien aux cheveux frisés écoute la musique sur deux enceintes dans son salon. Sur une enceinte, molette vers le maximum avec petit pictogramme de haut-parleur et barres sans chiffre. Quelques petites notes dessinées sortent des enceintes. Près de la cloison, une voisine blanche âgée en gilet bleu se bouche les oreilles et fronce les sourcils : le VOLUME EXCESSIF est évident. Deux personnages seulement, mains naturelles, pas de chien ou porte bloquée.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s6-co-2",
+          "question": 2,
+          "choice": "a",
+          "label": "La musique est trop forte",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "status": "generated_and_visually_reviewed"
+    },
+    {
+      "id": "co57-chien-aboie",
+      "label": "Le chien aboie",
+      "path": "/lib/images/tcf/qcm-audit/co57-chien-aboie.webp",
+      "prompt": "Une ILLUSTRATION numérique PEINTE de banque pédagogique, dans la technique de la référence validée 48a753d8. Modelé doux, contours fins et discrets, visages dessinés avec carnations peintes sans pores ou grain photo. Couleurs naturelles chaleureuses. PAS une photographie, aucun rendu 3D ou cinéma, pas de gros contours noirs. Paysage EXACT 4:3, 1448 par 1086 pixels. Sujet entier lisible avec marges. Aucun prix, montant, date, jour, mois, chiffre, marque ou légende ; seuls les mots naturels explicitement autorisés apparaissent. Personnages fictifs différents de la référence. Un chien brun de profil debout dans une entrée d'appartement, gueule ouverte, posture d'aboiement, trois petits traits sonores dessinés près du museau sans lettres. Sa maîtresse noire d'une soixantaine d'années aux cheveux gris courts porte les mains à ses oreilles et semble gênée par le bruit. Ne pas montrer un chien mordant ou agressant quelqu'un. Un seul chien, une seule personne, pas de musique ou porte bloquée.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s6-co-2",
+          "question": 2,
+          "choice": "b",
+          "label": "Le chien aboie",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "status": "generated_and_visually_reviewed"
+    },
+    {
+      "id": "co57-porte-bloquee",
+      "label": "La porte est bloquée",
+      "path": "/lib/images/tcf/qcm-audit/co57-porte-bloquee.webp",
+      "prompt": "Une ILLUSTRATION numérique PEINTE de banque pédagogique, dans la technique de la référence validée 48a753d8. Modelé doux, contours fins et discrets, visages dessinés avec carnations peintes sans pores ou grain photo. Couleurs naturelles chaleureuses. PAS une photographie, aucun rendu 3D ou cinéma, pas de gros contours noirs. Paysage EXACT 4:3, 1448 par 1086 pixels. Sujet entier lisible avec marges. Aucun prix, montant, date, jour, mois, chiffre, marque ou légende ; seuls les mots naturels explicitement autorisés apparaissent. Personnages fictifs différents de la référence. Une porte d'entrée en bois visiblement bloquée par une lourde commode glissée devant son battant côté intérieur. Un homme indien de 35 ans aux cheveux courts et chemise verte essaie sans succès de pousser la porte de l'autre côté : son visage et ses mains sont visibles par une étroite ouverture, expression perplexe. La commode empêche clairement l'ouverture. Aucune note musicale, animal, clef cassée ou texte.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s6-co-2",
+          "question": 2,
+          "choice": "c",
+          "label": "La porte est bloquée",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "status": "generated_and_visually_reviewed"
+    },
+    {
+      "id": "co57-baignoire",
+      "label": "Une baignoire",
+      "path": "/lib/images/tcf/qcm-audit/co57-baignoire.webp",
+      "prompt": "Une ILLUSTRATION numérique PEINTE de banque pédagogique, dans la technique de la référence validée 48a753d8. Modelé doux, contours fins et discrets, visages dessinés avec carnations peintes sans pores ou grain photo. Couleurs naturelles chaleureuses. PAS une photographie, aucun rendu 3D ou cinéma, pas de gros contours noirs. Paysage EXACT 4:3, 1448 par 1086 pixels. Sujet entier lisible avec marges. Aucun prix, montant, date, jour, mois, chiffre, marque ou légende ; seuls les mots naturels explicitement autorisés apparaissent. Personnages fictifs différents de la référence. Une baignoire blanche entière de salle de bains avec robinet, douchette posée, serviette pliée au bord et carreaux crème en arrière-plan. Vue de trois quarts, sans personne ou eau qui déborde, baignoire immédiatement identifiable et distincte d'une douche seule. Aucun meuble supplémentaire ou texte.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-a2-sa-co-3",
+          "question": 6,
+          "choice": "a",
+          "label": "Une baignoire",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "status": "generated_and_visually_reviewed"
+    },
+    {
+      "id": "co57-television-geante",
+      "label": "Une télévision géante",
+      "path": "/lib/images/tcf/qcm-audit/co57-television-geante.webp",
+      "prompt": "Une ILLUSTRATION numérique PEINTE de banque pédagogique, dans la technique de la référence validée 48a753d8. Modelé doux, contours fins et discrets, visages dessinés avec carnations peintes sans pores ou grain photo. Couleurs naturelles chaleureuses. PAS une photographie, aucun rendu 3D ou cinéma, pas de gros contours noirs. Paysage EXACT 4:3, 1448 par 1086 pixels. Sujet entier lisible avec marges. Aucun prix, montant, date, jour, mois, chiffre, marque ou légende ; seuls les mots naturels explicitement autorisés apparaissent. Personnages fictifs différents de la référence. Une télévision GÉANTE écran plat fixée au mur d'une chambre d'hôtel. L'écran sombre bleu occupe presque toute la largeur du mur au-dessus d'un meuble bas ; un fauteuil et une petite table à côté permettent de lire la très grande taille. Un bord de lit sobre visible en bas de l'image. Pas d'ordinateur ou baignoire, pas de personne, texte ou chiffres sur l'écran.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-a2-sa-co-3",
+          "question": 6,
+          "choice": "c",
+          "label": "Une télévision géante",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "status": "generated_and_visually_reviewed"
+    },
+    {
+      "id": "co57-exposition-grande-tente",
+      "label": "Sous la grande tente",
+      "path": "/lib/images/tcf/qcm-audit/co57-exposition-grande-tente.webp",
+      "prompt": "Une ILLUSTRATION numérique PEINTE de banque pédagogique, dans la technique de la référence validée 48a753d8. Modelé doux, contours fins et discrets, visages dessinés avec carnations peintes sans pores ou grain photo. Couleurs naturelles chaleureuses. PAS une photographie, aucun rendu 3D ou cinéma, pas de gros contours noirs. Paysage EXACT 4:3, 1448 par 1086 pixels. Sujet entier lisible avec marges. Aucun prix, montant, date, jour, mois, chiffre, marque ou légende ; seuls les mots naturels explicitement autorisés apparaissent. Personnages fictifs différents de la référence. Une grande tente blanche de réception ouverte dans un parc, dont plusieurs pans de toile sont relevés. À l'intérieur : cimaises portant tableaux peints abstraits sans texte, sculptures sur socles et deux visiteurs fictifs différents, une femme noire en fauteuil roulant et un homme asiatique âgé qui observent les œuvres sans poser. Montrer la tente entière et assez d'œuvres pour comprendre une EXPOSITION ARTISTIQUE SOUS UNE GRANDE TENTE, pas un camping. Aucun titre, prix ou texte.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "references": [
+        {
+          "exercise": "delf-a2-2021-co-ex2-38",
+          "question": 3,
+          "choice": "a",
+          "label": "Sous la grande tente",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "status": "generated_and_visually_reviewed"
+    },
+    {
+      "id": "co57-rayon-alimentaire",
+      "label": "Au rayon alimentaire",
+      "path": "/lib/images/tcf/qcm-audit/co57-rayon-alimentaire.webp",
+      "prompt": "Une ILLUSTRATION numérique PEINTE de banque pédagogique, dans la technique de la référence validée 48a753d8. Modelé doux, contours fins et discrets, visages dessinés avec carnations peintes sans pores ou grain photo. Couleurs naturelles chaleureuses. PAS une photographie, aucun rendu 3D ou cinéma, pas de gros contours noirs. Paysage EXACT 4:3, 1448 par 1086 pixels. Sujet entier lisible avec marges. Aucun prix, montant, date, jour, mois, chiffre, marque ou légende ; seuls les mots naturels explicitement autorisés apparaissent. Personnages fictifs différents de la référence. Allée de rayon alimentaire d'un supermarché : étagères avec pâtes, conserves, bocaux, céréales et légumes en bout d'allée. Tous emballages sans marques, textes, chiffres ou prix, éléments bien peints, aucun jouet, vêtements ou personne. Rayon alimentaire entier évident, perspective douce et lumière chaleureuse.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "delf-a2-2021-co-ex1-34",
+          "question": 22,
+          "choice": "b",
+          "label": "Au rayon alimentaire",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "status": "generated_and_visually_reviewed"
     }
   ],
   "questions": [
@@ -719,5 +1087,6 @@
         }
       ]
     }
-  ]
+  ],
+  "priority": "Finir les 57 questions restantes avant les autres tâches, A1 et A2 en premier."
 }
