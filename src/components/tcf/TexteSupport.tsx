@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, type ReactNode } from 'react'
 import type { PreviewMode } from '@/math/types'
 import {
   associationAnswersFromExercise,
@@ -132,30 +132,35 @@ function MotsBanque({ mots }: { mots?: string[] }) {
   )
 }
 
+/** Document CE : noir et blanc, comme l’annonce et le courriel. */
+function ceDoc(children: ReactNode) {
+  return <div className="tcf-ce-doc">{children}</div>
+}
+
 /** Support de l’exercice : document à lire, audio, images, consignes de production. */
 export function TexteSupport({ exercise: ex, mode }: { exercise: TcfExercise; mode: PreviewMode }) {
   const banque = <MotsBanque mots={ex.mots_banque} />
   switch (ex.type_exercice) {
     case 'sms':
-      return (
+      return ceDoc(
         <>
           {banque}
           <SmsBubble from={ex.support.expediteur} text={ex.support.texte} />
-        </>
+        </>,
       )
     case 'email':
-      return (
+      return ceDoc(
         <>
           {banque}
           <EmailBox {...ex.support} />
-        </>
+        </>,
       )
     case 'annonce': {
       const association = parseAssociationDocuments(ex.support.texte)
       if (association) {
         const answers = associationAnswersFromExercise(ex as TcfCeAnnonce)
         const show = mode === 'answers'
-        return (
+        return ceDoc(
           <>
             {banque}
             <div className="tcf-assoc">
@@ -201,10 +206,10 @@ export function TexteSupport({ exercise: ex, mode }: { exercise: TcfExercise; mo
                 </tbody>
               </table>
             </div>
-          </>
+          </>,
         )
       }
-      return (
+      return ceDoc(
         <>
           {banque}
           <div className={`tcf-annonce${ex.support.presentation === 'image-bullets' ? ' is-image-bullets' : ''}`}>
@@ -220,7 +225,7 @@ export function TexteSupport({ exercise: ex, mode }: { exercise: TcfExercise; mo
               )}
             </div>
           </div>
-        </>
+        </>,
       )
     }
     case 'images_a_reconnaitre':

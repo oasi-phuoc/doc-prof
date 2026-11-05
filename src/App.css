@@ -4201,6 +4201,28 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
   grid-template-columns:repeat(var(--sheet-columns, 1), minmax(0, 1fr))!important;
 }
 .tcf-text{margin:0 0 6px;text-align:justify;line-height:1.4;max-width:100%;overflow-wrap:break-word;word-wrap:break-word}
+/* CE : le document à lire est en noir et blanc (cadre noir, fond blanc, texte noir). */
+.tcf-ce-doc{color:var(--ink)}
+.tcf-ce-doc .tcf-text,
+.tcf-ce-doc .tcf-annonce,
+.tcf-ce-doc .tcf-annonce-title,
+.tcf-ce-doc .tcf-annonce-points,
+.tcf-ce-doc .tcf-email,
+.tcf-ce-doc .tcf-email-head,
+.tcf-ce-doc .tcf-sms-from,
+.tcf-ce-doc .tcf-assoc-doc-title,
+.tcf-ce-doc .tcf-assoc-people,
+.tcf-ce-doc .tcf-assoc-people-title{color:var(--ink)}
+.tcf-ce-doc .tcf-sms{max-width:100%}
+.tcf-ce-doc .tcf-sms-bubble{
+  border:1.5px solid var(--ink);border-radius:0;background:#fff;color:var(--ink)
+}
+.tcf-ce-doc .tcf-assoc-doc-num,
+.tcf-ce-doc .tcf-assoc-letter,
+.tcf-ce-doc .tcf-assoc-num-label{color:var(--ink)}
+.tcf-ce-doc .tcf-mots.is-theme .tcf-mot{
+  color:var(--ink);border-color:var(--ink);border-radius:0
+}
 .tcf-sms{max-width:78%;margin-bottom:6px}
 .tcf-sms-from{margin:0 0 4px;font-size:.85em;font-weight:700;color:var(--muted)}
 .tcf-sms-bubble{padding:8px 12px;border:1.5px solid var(--purple);border-radius:14px 14px 14px 3px;background:var(--lavender)}
