@@ -38821,6 +38821,60 @@
             "reponse_modele": "Faire du bruit"
           }
         }
+      },
+      {
+        "enonce": "À quel moment faut-il respecter le calme dans les chambres ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "points": 1,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "La nuit",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Uniquement le matin"
+          },
+          {
+            "id": "c",
+            "texte": "Uniquement l’après-midi"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "La nuit"
+          }
+        }
+      },
+      {
+        "enonce": "À qui les clients doivent-ils signaler la venue de personnes extérieures ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "points": 1,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Au personnel de l’hôtel",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Aux autres clients de l’hôtel"
+          },
+          {
+            "id": "c",
+            "texte": "Aux voisins de l’hôtel"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Au personnel de l’hôtel"
+          }
+        }
       }
     ],
     "consigne_supplementaire": null
@@ -40544,6 +40598,33 @@
                 "image": "/lib/images/tcf/qcm-audit/co834-vetements-dessines.webp"
               }
             ]
+          }
+        }
+      },
+      {
+        "enonce": "Quel est le but de ce règlement ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "points": 1,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Permettre de voir un film dans de bonnes conditions",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Présenter les films à l’affiche cette semaine"
+          },
+          {
+            "id": "c",
+            "texte": "Expliquer comment acheter un billet en ligne"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Permettre de voir un film dans de bonnes conditions"
           }
         }
       }

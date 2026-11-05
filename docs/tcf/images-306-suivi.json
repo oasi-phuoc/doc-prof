@@ -15,17 +15,17 @@
   ],
   "summary": {
     "initial_question_candidates": 306,
-    "questions_illustrated_or_prepared": 199,
+    "questions_illustrated_or_prepared": 196,
     "newly_activated": 194,
     "prepared_pending_audio_link": 1,
-    "prepared_pending_audio_validation": 4,
-    "remaining_questions_requiring_images_or_review": 8,
+    "prepared_pending_audio_validation": 0,
+    "remaining_questions_requiring_images_or_review": 11,
     "unreviewed_complete_trios": 0,
     "audio_references_next_stage": 0,
     "vocabulary_occurrences_final_stage": 1036,
     "active_question_candidates": 207,
     "retired_question_candidates": 99,
-    "prepared_pending_activation": 0,
+    "prepared_pending_activation": 1,
     "protected_object_audio_image_occurrences": 202,
     "total_vocabulary_image_occurrences": 1238
   },
@@ -5096,27 +5096,19 @@
       "choices": [
         {
           "id": "a",
-          "texte": "12 h 03",
-          "correct": true,
-          "existing_image": null,
-          "asset": "e04fa7acc651"
+          "texte": "15 h 25",
+          "correct": true
         },
         {
           "id": "b",
-          "texte": "11 h 22",
-          "correct": false,
-          "existing_image": null,
-          "asset": "70e07d2a9d3d"
+          "texte": "15 h 52"
         },
         {
           "id": "c",
-          "texte": "12 h 30",
-          "correct": false,
-          "existing_image": "/lib/images/vocabulaire/heure-horloge/midi-trente.webp",
-          "asset": null
+          "texte": "14 h 25"
         }
       ],
-      "status": "images_prepared_pending_audio_validation",
+      "status": "pending_images",
       "linked_source_ids": [
         "09035276:027:10f0dd53bf08",
         "additional-20261102:mdf-a1-abc-junior:27:10f0dd53bf08:564d7382"
@@ -5126,35 +5118,21 @@
           "old_ref": "/lib/audio/tcf/co/transports/mesdames-messieurs-train-destination.mp3",
           "source_id": "09035276:027:10f0dd53bf08",
           "candidate_cut_id": "09035276-027-10f0dd53bf08-d1",
-          "transcription": "Mesdames et messieurs, le train à destination de Paris va partir voie numéro 17. Il s'arrête à la gare de Bordeaux et arrive à Paris à 1h25. Merci de mettre une étiquette sur vos bagages avec vos nom et adresses. Gardez bien votre billet avec vous pendant tout le voyage."
+          "transcription": "Mesdames et Messieurs, le train à destination de Paris va partir voie numéro 17. Il s'arrête à la gare de Bordeaux et arrive à Paris à 15h25. Merci de mettre une étiquette sur vos bagages avec vos noms et adresses. Gardez bien votre billet avec vous pendant tout le voyage."
         }
       ],
       "resolved_images": [
-        "/lib/images/tcf/qcm-audit/co306-horloge-1203-dessinee.webp",
-        "/lib/images/tcf/qcm-audit/co306-horloge-1122-dessinee.webp",
-        "/lib/images/tcf/qcm-audit/co834-horloge-1230-dessinee.webp"
+        null,
+        null,
+        null
       ],
-      "missing_labels": [],
-      "ready_for_source_review": true,
-      "editorial_review": {
-        "exercise": "tcf-ss-a1-s53-co-3",
-        "question": 4,
-        "images": [
-          "/lib/images/tcf/qcm-audit/co306-horloge-1203-dessinee.webp",
-          "/lib/images/tcf/qcm-audit/co306-horloge-1122-dessinee.webp",
-          "/lib/images/tcf/qcm-audit/co834-horloge-1230-dessinee.webp"
-        ],
-        "support_quote": "Mesdames et messieurs, le train à destination de Paris va partir voie numéro 17. Il s'arrête à la gare de Bordeaux et arrive à Paris à 1h25. Merci de mettre une étiquette sur vos bagages avec vos nom et adresses. Gardez bien votre billet avec vous pendant tout le voyage.",
-        "current_bank_transcription": "Mesdames, messieurs, le train à destination de Paris va partir voie numéro 3.\nIl s'arrête à Lyon à 11 h 22 et arrive à Paris à 12 h 03.\nN'oubliez pas d'écrire votre adresse et votre numéro de téléphone sur l'étiquette de vos bagages.\nVous devez avoir votre billet avec vous pendant le voyage.\nLa SNCF vous souhaite un bon voyage.",
-        "support_basis": "prepared_replacement_transcription",
-        "review_note": "Les trois images d’horloge ont été relues individuellement puis ensemble : heures et minutes exactes, trois choix distincts, 4:3 et style du commit 48a753d8. La banque attend 12 h 03 ; la transcription préparée annonce 1 h 25. Écouter le candidat et contrôler son alignement avant toute activation.",
-        "audio_validation_required": true,
-        "audio_validation_reason": "La banque attend 12 h 03 ; la transcription préparée annonce 1 h 25. Écouter le candidat et contrôler son alignement avant toute activation."
-      },
-      "audio_review_issue": {
-        "status": "pending_source_audio_review",
-        "reason": "La banque attend 12 h 03 ; la transcription préparée annonce 1 h 25. Écouter le candidat et contrôler son alignement avant toute activation."
-      }
+      "missing_labels": [
+        "15 h 25",
+        "15 h 52",
+        "14 h 25"
+      ],
+      "ready_for_source_review": false,
+      "previous_prepared_trio_obsolete": true
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -6612,27 +6590,19 @@
       "choices": [
         {
           "id": "a",
-          "texte": "15 h 40",
-          "correct": true,
-          "existing_image": "/lib/images/vocabulaire/heure-horloge/quinze-heures-quarante.webp",
-          "asset": null
+          "texte": "3 h 40",
+          "correct": true
         },
         {
           "id": "b",
-          "texte": "15 h 14",
-          "correct": false,
-          "existing_image": null,
-          "asset": "6cd8edff719f"
+          "texte": "3 h 14"
         },
         {
           "id": "c",
-          "texte": "16 h 40",
-          "correct": false,
-          "existing_image": "/lib/images/vocabulaire/heure-horloge/seize-heures-quarante.webp",
-          "asset": null
+          "texte": "4 h 40"
         }
       ],
-      "status": "images_prepared_pending_audio_validation",
+      "status": "pending_images",
       "linked_source_ids": [
         "delf_a1_2022:031:6cfe44cdaf17"
       ],
@@ -6641,35 +6611,21 @@
           "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_31-1.mp3",
           "source_id": "delf_a1_2022:031:6cfe44cdaf17",
           "candidate_cut_id": "delf_a1_2022-031-6cfe44cdaf17-d1",
-          "transcription": "Votre rendez-vous est lundi avec Monsieur Denis. Il vous attend à 3h40."
+          "transcription": "Votre rendez-vous est lundi avec M. Denis. Il vous attend à 3 h 40."
         }
       ],
       "resolved_images": [
-        "/lib/images/tcf/qcm-audit/co306-horloge-1540-dessinee.webp",
-        "/lib/images/tcf/qcm-audit/co306-horloge-1514-dessinee.webp",
-        "/lib/images/tcf/qcm-audit/co306-horloge-1640-dessinee.webp"
+        null,
+        null,
+        null
       ],
-      "missing_labels": [],
-      "ready_for_source_review": true,
-      "editorial_review": {
-        "exercise": "delf-a1-2022-co-ex3-31",
-        "question": 3,
-        "images": [
-          "/lib/images/tcf/qcm-audit/co306-horloge-1540-dessinee.webp",
-          "/lib/images/tcf/qcm-audit/co306-horloge-1514-dessinee.webp",
-          "/lib/images/tcf/qcm-audit/co306-horloge-1640-dessinee.webp"
-        ],
-        "support_quote": "Votre rendez-vous est lundi avec Monsieur Denis. Il vous attend à 3h40.",
-        "current_bank_transcription": "Votre rendez-vous est lundi avec Monsieur Denis. Il vous attend à 15 h 40.",
-        "support_basis": "prepared_replacement_transcription",
-        "review_note": "Les trois images d’horloge ont été relues individuellement puis ensemble : heures et minutes exactes, trois choix distincts, 4:3 et style du commit 48a753d8. La banque attend 15 h 40 ; la transcription préparée écrit 3 h 40. Vérifier à l’écoute la forme exacte de l’heure et le contexte avant activation.",
-        "audio_validation_required": true,
-        "audio_validation_reason": "La banque attend 15 h 40 ; la transcription préparée écrit 3 h 40. Vérifier à l’écoute la forme exacte de l’heure et le contexte avant activation."
-      },
-      "audio_review_issue": {
-        "status": "pending_source_audio_review",
-        "reason": "La banque attend 15 h 40 ; la transcription préparée écrit 3 h 40. Vérifier à l’écoute la forme exacte de l’heure et le contexte avant activation."
-      }
+      "missing_labels": [
+        "3 h 40",
+        "3 h 14",
+        "4 h 40"
+      ],
+      "ready_for_source_review": false,
+      "previous_prepared_trio_obsolete": true
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -7571,7 +7527,7 @@
           "asset": "18580c1239a8"
         }
       ],
-      "status": "images_prepared_pending_audio_validation",
+      "status": "images_prepared_pending_activation",
       "linked_source_ids": [
         "delf_a1_2022:085:657006e9075c"
       ],
@@ -7580,7 +7536,7 @@
           "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_85-4.mp3",
           "source_id": "delf_a1_2022:085:657006e9075c",
           "candidate_cut_id": "delf_a1_2022-085-657006e9075c-d4",
-          "transcription": "Il y a un départ pour Paris dans 30 minutes. Le billet coûte 68 euros. Ensuite, le prochain départ est à 1h58. C'est le même prix."
+          "transcription": "Il y a un départ pour Paris dans 30 minutes. Le billet coûte 68 euros. Ensuite, le prochain départ est à 11 h 58. C'est le même prix."
         }
       ],
       "resolved_images": [
@@ -7598,16 +7554,12 @@
           "/lib/images/tcf/qcm-audit/co306-horloge-1148-dessinee.webp",
           "/lib/images/tcf/qcm-audit/co306-horloge-1258-dessinee.webp"
         ],
-        "support_quote": "Il y a un départ pour Paris dans 30 minutes. Le billet coûte 68 euros. Ensuite, le prochain départ est à 1h58. C'est le même prix.",
-        "current_bank_transcription": "Il y a un départ pour Paris dans 30 minutes. Le billet coûte 68 €. Ensuite, le prochain départ est à 11 h 58. C’est le même prix.",
-        "support_basis": "prepared_replacement_transcription",
-        "review_note": "Les trois images d’horloge ont été relues individuellement puis ensemble : heures et minutes exactes, trois choix distincts, 4:3 et style du commit 48a753d8. La banque attend 11 h 58 ; la transcription préparée écrit 1 h 58. Écouter le candidat et vérifier la reconnaissance de l’heure avant activation.",
-        "audio_validation_required": true,
-        "audio_validation_reason": "La banque attend 11 h 58 ; la transcription préparée écrit 1 h 58. Écouter le candidat et vérifier la reconnaissance de l’heure avant activation."
-      },
-      "audio_review_issue": {
-        "status": "pending_source_audio_review",
-        "reason": "La banque attend 11 h 58 ; la transcription préparée écrit 1 h 58. Écouter le candidat et vérifier la reconnaissance de l’heure avant activation."
+        "support_quote": "Il y a un départ pour Paris dans 30 minutes. Le billet coûte 68 euros. Ensuite, le prochain départ est à 11 h 58. C'est le même prix.",
+        "current_bank_transcription": "Il y a un départ pour Paris dans 30 minutes. Le billet coûte 68 euros. Ensuite, le prochain départ est à 11 h 58. C'est le même prix.",
+        "support_basis": "installed_received_source_cut",
+        "review_note": "11 h 58 recoupé par les deux lectures françaises ; candidat installé et réponses contrôlées. Les trois images restent préparées, sans activation dans cette étape audio.",
+        "audio_validation_required": false,
+        "audio_validation_reason": null
       }
     },
     {
@@ -8654,7 +8606,7 @@
           "old_ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-2-4.mp3",
           "source_id": "9782090351958:066:3f7dc91934fc",
           "candidate_cut_id": "9782090351958-066-3f7dc91934fc-r2-d4",
-          "transcription": "Le magasin va fermer ses portes dans 2 minutes. Merci de terminer vos achats et de vous rapprocher des caisses situées au fond du magasin."
+          "transcription": "Le magasin va fermer ses portes dans 20 minutes. Merci de terminer vos achats et de vous rapprocher des caisses automatiques situées au fond du magasin."
         }
       ],
       "resolved_images": [
@@ -8667,11 +8619,7 @@
         "Les caisses réservées aux groupes",
         "Les caisses à l’extérieur"
       ],
-      "ready_for_source_review": false,
-      "audio_review_issue": {
-        "status": "pending_source_audio_review",
-        "reason": "La réponse actuelle indique caisses automatiques, mais le support préparé dit seulement caisses situées au fond du magasin. Vérifier l’alignement et l’audio avant activation ; ne pas ajouter ce qualificatif par l’image."
-      }
+      "ready_for_source_review": false
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -9085,10 +9033,8 @@
       "choices": [
         {
           "id": "a",
-          "texte": "À la caisse de la librairie",
-          "correct": true,
-          "existing_image": null,
-          "asset": "07841704cdc2"
+          "texte": "À l’accueil de la librairie",
+          "correct": true
         },
         {
           "id": "b",
@@ -9115,7 +9061,7 @@
           "old_ref": "/lib/audio/tcf/co/magasins/magasins-3-1.mp3",
           "source_id": "9782090351958:049:a4431f87ae61",
           "candidate_cut_id": "9782090351958-049-a4431f87ae61-r2-d1",
-          "transcription": "La librairie Les Pages organise un grand jeu pour son anniversaire. Gagner des cadeaux en répondant à deux questions. Le bulletin de participation se trouve à l'accueil de la librairie."
+          "transcription": "La librairie Les Pages organise un grand jeu pour son anniversaire. Gagnez des cadeaux en répondant à deux questions. Le bulletin de participation se trouve à l'accueil de la librairie."
         }
       ],
       "resolved_images": [
@@ -9124,13 +9070,9 @@
         "/lib/images/tcf/qcm-audit/co57-entree-parking.webp"
       ],
       "missing_labels": [
-        "À la caisse de la librairie"
+        "À l’accueil de la librairie"
       ],
-      "ready_for_source_review": false,
-      "audio_review_issue": {
-        "status": "pending_source_audio_review",
-        "reason": "La bonne réponse actuelle est « À la caisse de la librairie » ; la transcription préparée indique « à l’accueil de la librairie ». Écouter le candidat et vérifier son alignement avant de corriger les choix et d’activer les images."
-      }
+      "ready_for_source_review": false
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -9141,10 +9083,8 @@
       "choices": [
         {
           "id": "a",
-          "texte": "Des pâtisseries",
-          "correct": true,
-          "existing_image": null,
-          "asset": "d9f954358d38"
+          "texte": "Des pains spéciaux",
+          "correct": true
         },
         {
           "id": "b",
@@ -9161,7 +9101,7 @@
           "asset": null
         }
       ],
-      "status": "images_prepared_pending_audio_validation",
+      "status": "pending_images",
       "linked_source_ids": [
         "9782090351958:049:a4431f87ae61",
         "additional-20261102:mdf-a2-abc-junior-direct:49:a4431f87ae61:beafaa4b"
@@ -9171,35 +9111,19 @@
           "old_ref": "/lib/audio/tcf/co/magasins/magasins-3-2.mp3",
           "source_id": "9782090351958:049:a4431f87ae61",
           "candidate_cut_id": "9782090351958-049-a4431f87ae61-r2-d2",
-          "transcription": "Aujourd'hui dans votre supermarché des réductions sur les tomates et les carottes. Venez vite en profiter et faites aussi un petit tour au rayon boulangerie. Valérie vous fera goûter nos parfétiaux."
+          "transcription": "Aujourd'hui dans votre supermarché, des réductions sur les tomates et les carottes. Venez vite en profiter et faites aussi un petit tour au rayon boulangerie. Valérie vous fera goûter nos pains spéciaux."
         }
       ],
       "resolved_images": [
-        "/lib/images/tcf/qcm-audit/co834-gateaux-dessines.webp",
+        null,
         "/lib/images/tcf/qcm-audit/co834-fromages-dessines.webp",
         "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
       ],
-      "missing_labels": [],
-      "ready_for_source_review": true,
-      "editorial_review": {
-        "exercise": "tcf-ss-a2-s3-co-3",
-        "question": 6,
-        "images": [
-          "/lib/images/tcf/qcm-audit/co834-gateaux-dessines.webp",
-          "/lib/images/tcf/qcm-audit/co834-fromages-dessines.webp",
-          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
-        ],
-        "support_quote": "Aujourd'hui dans votre supermarché des réductions sur les tomates et les carottes. Venez vite en profiter et faites aussi un petit tour au rayon boulangerie. Valérie vous fera goûter nos parfétiaux.",
-        "current_bank_transcription": "Aujourd'hui, dans votre supermarché, des réductions sur les tomates et les carottes.\nVenez vite en profiter.\nFaites aussi un petit tour à l'Oréan boulangerie : Valérie vous fera goûter nos pâtisseries.",
-        "support_basis": "prepared_replacement_transcription",
-        "review_note": "Trois images relues ensemble sur la planche de contrôle, concept complet, format exact 4:3 et style du commit 48a753d8. L’assiette de trois gâteaux représente des pâtisseries ; fromages et boissons sont distincts. Le sujet visuel est prêt, mais le mot « parfétiaux » du candidat ASR ne permet pas de valider ce produit sans écoute.",
-        "audio_validation_required": true,
-        "audio_validation_reason": "Le mot correspondant au produit dégusté est transcrit « parfétiaux ». Écouter le candidat pour distinguer pâtisseries, pains spéciaux ou une autre formule avant activation."
-      },
-      "audio_review_issue": {
-        "status": "pending_source_audio_review",
-        "reason": "Le mot correspondant au produit dégusté est transcrit « parfétiaux ». Écouter le candidat pour distinguer pâtisseries, pains spéciaux ou une autre formule avant activation."
-      }
+      "missing_labels": [
+        "Des pains spéciaux"
+      ],
+      "ready_for_source_review": false,
+      "previous_prepared_trio_obsolete": true
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -9954,10 +9878,8 @@
       "choices": [
         {
           "id": "a",
-          "texte": "Le rayon BD",
-          "correct": true,
-          "existing_image": null,
-          "asset": "70b962d3ba7b"
+          "texte": "Le rayon DVD",
+          "correct": true
         },
         {
           "id": "b",
@@ -9993,23 +9915,11 @@
         null
       ],
       "missing_labels": [
-        "Le rayon BD",
+        "Le rayon DVD",
         "Le rayon cuisine",
         "Le rayon voyage"
       ],
-      "ready_for_source_review": false,
-      "audio_review_issue": {
-        "status": "pending_source_audio_review",
-        "reason": "La bonne réponse de la banque indique « Le rayon BD » ; la transcription préparée de remplacement dit explicitement « le nouveau rayon DVD ». Écouter le segment avant de choisir les illustrations et de valider la réponse. Aucune correction de réponse ni activation QCM image sans cette vérification.",
-        "source_links": [
-          {
-            "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-21-4.mp3",
-            "source_id": "9782090351958:040:42a9a64a8955",
-            "candidate_cut_id": "9782090351958-040-42a9a64a8955-r2-d4",
-            "transcription": "La salle informatique est fermée pour travaux. Si vous devez travailler sur les ordinateurs, vous pouvez aller à la bibliothèque. Profitez-en aussi pour visiter le nouveau rayon DVD."
-          }
-        ]
-      }
+      "ready_for_source_review": false
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",

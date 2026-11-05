@@ -1,0 +1,621 @@
+{
+  "date": "2026-11-05",
+  "summary": {
+    "reviewed": 34,
+    "factual_points_cross_checked": 10,
+    "unspelled_names_with_explicit_editorial_convention": 23,
+    "source_incomplete_explicitly_marked": 1,
+    "original_audio_modified": 0,
+    "a1_entries_modified": 0,
+    "human_listening_performed": false
+  },
+  "method": "Whisper Turbo français sur les 34 originaux ; huit reprises ciblées sur quatre passages, dont quatre à vitesse réduite. Comparaison éditoriale avec Parakeet et Whisper small. Les graphies non épelées restent explicitement des conventions, pas des orthographes certifiées.",
+  "reviews": [
+    {
+      "exercise_id": "gram-co-fetes-a2-piste_058",
+      "source_sha256": "a938a0871df61d6e46206746612e56a6a0f9a28b025a6869600838471706cef4",
+      "audio": "/lib/audio/grammaire/co/fetes/a2/piste_058.mp3",
+      "status": "factual_point_cross_checked",
+      "previous_unresolved_points": [
+        "Date : 12 juillet selon Whisper, 1 juillet selon Parakeet ; nom du service de cagnotte Anna-Lass non confirmé."
+      ],
+      "review_note": "Whisper français et Turbo retrouvent le 12 juillet à 16 h ; Ananas est la lecture nette du nom de cagnotte, graphie éditoriale non épelée.",
+      "before_text": "Leçon 8, page 53. Organiser un événement. Document A.\nDis-moi, Philippe, tu viendras au mariage de Sarah et Julien ? Oui, bien sûr Anna. Je serai là avec Mélanie. Il y a une liste de mariage ou une cagnotte ? Ils ont ouvert une cagnotte sur Anna-Lass. Tu as déjà participé ? Non, pas encore. Et ce sera où exactement ce mariage ? Je ne connais pas cette région. Le restaurant est à la campagne, près de Toulouse. C'est très beau, j'ai vu des photos. On mangera et on dansera dehors. Génial. Et c'est quand déjà, j'ai oublié. Ils se marient le 12 juillet, à 16h, à la mairie de Castelnaudary. Oulala, c'est bientôt ! Il faut organiser l'enterrement de vie de garçon de Julien et l'enterrement de vie de jeune fille de Sarah. Oui, je sais. Avec les copines, nous ferons une réunion la semaine prochaine.",
+      "after_text": "Leçon 8, page 53. Organiser un événement. Document A.\nDis-moi, Philippe, tu viendras au mariage de Sarah et Julien ? Oui, bien sûr Anna. Je serai là avec Mélanie. Il y a une liste de mariage ou une cagnotte ? Ils ont ouvert une cagnotte sur Ananas. Tu as déjà participé ? Non, pas encore. Et ce sera où exactement ce mariage ? Je ne connais pas cette région. Le restaurant est à la campagne, près de Toulouse. C'est très beau, j'ai vu des photos. On mangera et on dansera dehors. Génial. Et c'est quand déjà, j'ai oublié. Ils se marient le 12 juillet, à 16h, à la mairie de Castelnaudary. Oulala, c'est bientôt ! Il faut organiser l'enterrement de vie de garçon de Julien et l'enterrement de vie de jeune fille de Sarah. Oui, je sais. Avec les copines, nous ferons une réunion la semaine prochaine.",
+      "third_recognition": "Leçon 8, page 53. Organiser un événement. Document A. Dis-moi, Philippe, tu viendras au mariage de Sarah et Julien ? Oui, bien sûr, Anna. Je serai là avec Mélanie. Il y a une liste de mariages ou une cagnotte ? Ils ont ouvert une cagnotte sur Ananas. Tu as déjà participé ? Non, pas encore. Et ce sera où exactement, ce mariage ? Je ne connais pas cette région. Le restaurant est à la campagne, près de Toulouse. C'est très beau, j'ai vu des photos. On mangera et on dansera dehors. Génial ! Et c'est quand déjà ? J'ai oublié. Ils se marient le 12 juillet à 16h à la mairie de Castelnaudary. Ouh là là, c'est bientôt ! Il faut organiser l'enterrement de vie de garçon de Julien et l'enterrement de vie de jeune fille de Sarah. Oui, je sais. Avec les copines, nous ferons une réunion la semaine prochaine.",
+      "targeted_readings": [],
+      "source_limitations": [],
+      "human_listening_performed": false
+    },
+    {
+      "exercise_id": "gram-co-fetes-a2-piste_063",
+      "source_sha256": "3284398fc4d99d5e60a196004de7ab05985894f9c677b1941a3235b74ce5ab5d",
+      "audio": "/lib/audio/grammaire/co/fetes/a2/piste_063.mp3",
+      "status": "factual_point_cross_checked",
+      "previous_unresolved_points": [
+        "Heure : 20 heures selon Whisper, 2 heures selon Parakeet ; à confirmer."
+      ],
+      "review_note": "La reprise sans en-tête retrouve la réservation du vendredi 12 à 20 h et confirme Whisper français. Le résultat Turbo complet qui omet le début est conservé comme lecture non retenue.",
+      "before_text": "Page 57. exercice 2.\nBonjour, j'ai réservé une table au nom de Brun pour 15 personnes, vendredi 12 à 20 heures. C'est pour fêter un anniversaire de mariage et je voudrais commander un gâteau avec 25 bougies. Un ami voudrait jouer du saxophone. pouvez-vous me dire si c'est possible ? Merci beaucoup.",
+      "after_text": "Page 57. exercice 2.\nBonjour, j'ai réservé une table au nom de Brun pour 15 personnes, vendredi 12 à 20 heures. C'est pour fêter un anniversaire de mariage et je voudrais commander un gâteau avec 25 bougies. Un ami voudrait jouer du saxophone. pouvez-vous me dire si c'est possible ? Merci beaucoup.",
+      "third_recognition": "Page 57, exercice 2. Pouvez-vous me dire si c'est possible ? Merci beaucoup.",
+      "targeted_readings": [
+        {
+          "source_start": 3,
+          "source_end": 31.0361,
+          "speed": 1.0,
+          "clip_sha256": "b2ad1efc61046d95496f86c82ed20afc87878936d9f59e55083620cf387cb138",
+          "text": "Exercice 2. Bonjour, j'ai réservé une table au nom de Brun pour 15 personnes, vendredi 12 à 20h. C'est pour fêter un anniversaire de mariage et je voudrais commander un gâteau avec 25 bougies. Un ami voudrait jouer du saxophone. Pouvez-vous me dire si c'est possible ? Merci beaucoup."
+        },
+        {
+          "source_start": 3,
+          "source_end": 31.0361,
+          "speed": 0.85,
+          "clip_sha256": "54858202fd060348bc35eff8eac39d2bd297d347358058c2b8cf9b6c581f6ea6",
+          "text": "Exercice 2"
+        }
+      ],
+      "source_limitations": [],
+      "human_listening_performed": false
+    },
+    {
+      "exercise_id": "gram-co-fetes-a2-piste_064",
+      "source_sha256": "3246b8c4c5a3b93527de9dd92223aec8a9ad03344aac4731d2ab0c8cda38c2da",
+      "audio": "/lib/audio/grammaire/co/fetes/a2/piste_064.mp3",
+      "status": "unspelled_name_editorial_spelling",
+      "previous_unresolved_points": [
+        "Orthographe exacte du nom de domaine fêteparfaite.com à confirmer."
+      ],
+      "review_note": "Le nom du site est prononcé fête parfaite point com, sans épellation. La graphie éditoriale fêteparfaite.com est conservée ; aucun contrôle de propriété ou disponibilité du domaine n’est revendiqué.",
+      "before_text": "Page 57. Exercice 3.\nVous voulez organiser une grande fête? C'est simple avec fêteparfaite.com Notre site vous permettra de créer un joli blog avec des photos. Vos amis et votre famille pourront retrouver beaucoup d'informations pratiques, l'adresse et l'heure de la fête, les possibilités de transport et d'hôtels. La fête est un mariage? Notre site vous donne des conseils pour trouver robes de mariée, alliances ou fleurs. Vous pendez la crémaillère ? Nous vous aidons à réserver un traiteur ou un DJ. Choisissez fêteparfaite.com. 100% gratuit, 100% sécurisé.",
+      "after_text": "Page 57. Exercice 3.\nVous voulez organiser une grande fête? C'est simple avec fêteparfaite.com Notre site vous permettra de créer un joli blog avec des photos. Vos amis et votre famille pourront retrouver beaucoup d'informations pratiques, l'adresse et l'heure de la fête, les possibilités de transport et d'hôtels. La fête est un mariage? Notre site vous donne des conseils pour trouver robes de mariée, alliances ou fleurs. Vous pendez la crémaillère ? Nous vous aidons à réserver un traiteur ou un DJ. Choisissez fêteparfaite.com. 100% gratuit, 100% sécurisé.",
+      "third_recognition": "Vous voulez organiser une grande fête ? C'est simple avec fêteparfaites.com Notre site vous permettra de créer un joli blog avec des photos. Vos amis et votre famille pourront retrouver beaucoup d'informations pratiques. L'adresse et l'heure de la fête, les possibilités de transport et d'hôtel. La fête est un mariage ? Notre site vous donne des conseils pour trouver robe de mariée, alliance ou fleur. Vous pendez la crémaillère ? Nous vous aidons à réserver un traiteur ou un DJ. Choisissez faiteparfaite.com. 100% gratuit, 100% sécurisé.",
+      "targeted_readings": [],
+      "source_limitations": [],
+      "human_listening_performed": false
+    },
+    {
+      "exercise_id": "gram-co-logement-a2-piste_017",
+      "source_sha256": "b26b1efd1c9af19a2d609653488ba2e665945570c029fc63b8d31b7e35baf94e",
+      "audio": "/lib/audio/grammaire/co/logement/a2/piste_017.mp3",
+      "status": "unspelled_name_editorial_spelling",
+      "previous_unresolved_points": [
+        "Noms de quartier et de rue à confirmer."
+      ],
+      "review_note": "Trois lectures retrouvent le quartier de la Banque et la rue Ancienne. Ces graphies éditoriales des noms de lieux ne sont pas une validation cartographique.",
+      "before_text": "Leçon 3, page 23. Chercher un logement et déménager. Document A.\nAgence du Rhône, bonjour. Bonjour, monsieur. Je cherche un appartement à louer. Sur votre site, il y a deux annonces intéressantes. Je voudrais vous poser quelques questions. Bien sûr. Quel appartement vous intéresse ? Le T3 dans le quartier de la banque et le T2, rue ancienne. Ah, désolé. Le T2 n'est plus disponible. Les nouveaux locataires vont emménager demain. Déjà ? Bon. Et le T3, il est libre ? Oui, il est disponible. Nous allons organiser les visites la semaine prochaine. Très bien. - Cet appartement est à quel étage ? - Au cinquième. C'est le dernier étage de l'immeuble. Vous avez une jolie vue sur les montagnes. - Il y a bien un ascenseur. - Bien sûr. L'immeuble est moderne et l'appartement est rénové. - Parfait. Les visites, c'est quel jour ? Est-ce que je dois m'inscrire ? - Mardi prochain, de 17h à 19h. Pas besoin de vous inscrire. Je vais vous donner l'adresse exacte.",
+      "after_text": "Leçon 3, page 23. Chercher un logement et déménager. Document A.\nAgence du Rhône, bonjour. Bonjour, monsieur. Je cherche un appartement à louer. Sur votre site, il y a deux annonces intéressantes. Je voudrais vous poser quelques questions. Bien sûr. Quel appartement vous intéresse ? Le T3 dans le quartier de la Banque et le T2, rue Ancienne. Ah, désolé. Le T2 n'est plus disponible. Les nouveaux locataires vont emménager demain. Déjà ? Bon. Et le T3, il est libre ? Oui, il est disponible. Nous allons organiser les visites la semaine prochaine. Très bien. - Cet appartement est à quel étage ? - Au cinquième. C'est le dernier étage de l'immeuble. Vous avez une jolie vue sur les montagnes. - Il y a bien un ascenseur. - Bien sûr. L'immeuble est moderne et l'appartement est rénové. - Parfait. Les visites, c'est quel jour ? Est-ce que je dois m'inscrire ? - Mardi prochain, de 17h à 19h. Pas besoin de vous inscrire. Je vais vous donner l'adresse exacte.",
+      "third_recognition": "Leçon 3, page 23. Cherchez un logement et déménagez. Document A. Agence du Rhône, bonjour. Bonjour, monsieur. Je cherche un appartement à louer. Sur votre site, il y a deux annonces intéressantes. Je voudrais vous poser quelques questions. Bien sûr. Quels appartements vous intéressent? Le T3 dans le quartier de la banque et le T2, rue Ancienne. Ah, désolé. Le T2 n'est plus disponible. Les nouveaux locataires vont emménager demain. Déjà ? Bon. Et le T3, il est libre ? Oui, il est disponible. Nous allons organiser les visites la semaine prochaine. Très bien. Cet appartement est à quel étage ? Au cinquième. C'est le dernier étage de l'immeuble. Vous avez une jolie vue sur les montagnes. Il y a bien un ascenseur ? Bien sûr. L'immeuble est moderne et l'appartement est rénové. Parfait. Les visites, c'est quel jour ? Est-ce que je dois m'inscrire ? Mardi prochain de 17h à 19h. Pas besoin de vous inscrire. Je vais vous donner l'adresse exacte.",
+      "targeted_readings": [],
+      "source_limitations": [],
+      "human_listening_performed": false
+    },
+    {
+      "exercise_id": "gram-co-logement-a2-piste_022",
+      "source_sha256": "5553a3a9f0250e5d6819602f8007ad4fa97b9f9137a705b1c26a0560dcd66460",
+      "audio": "/lib/audio/grammaire/co/logement/a2/piste_022.mp3",
+      "status": "factual_point_cross_checked",
+      "previous_unresolved_points": [
+        "Nom de la gardienne Nora/Norin et heure 16 h/1 h à confirmer."
+      ],
+      "review_note": "Turbo confirme 16 h. Le nom de la gardienne est rendu Norin dans la troisième lecture ; cette graphie reste éditoriale car non épelée.",
+      "before_text": "Page 27. Exercice 2.\n\nBonjour, vous êtes Mme Nora, la gardienne ? Oui, c'est moi. Je viens d'avoir votre numéro par l'agence immobilière. Je voudrais visiter le studio au rez-de-chaussée. Il y a une visite groupée demain à 16h. Venez avec votre dossier complet. D'accord. Merci Mme.",
+      "after_text": "Page 27. Exercice 2.\n\nBonjour, vous êtes Mme Norin, la gardienne ? Oui, c'est moi. Je viens d'avoir votre numéro par l'agence immobilière. Je voudrais visiter le studio au rez-de-chaussée. Il y a une visite groupée demain à 16h. Venez avec votre dossier complet. D'accord. Merci Mme.",
+      "third_recognition": "Page 27, exercice 2. Bonjour, vous êtes Madame Norin, la gardienne ? Oui, c'est moi. Je viens d'avoir votre numéro par l'agence immobilière. Je voudrais visiter le studio au rez-de-chaussée. Il y a une visite groupée demain à 16h. Venez avec votre dossier complet. D'accord. Merci Madame.",
+      "targeted_readings": [],
+      "source_limitations": [],
+      "human_listening_performed": false
+    },
+    {
+      "exercise_id": "gram-co-logement-a2-piste_024",
+      "source_sha256": "fb8c76b317e0f2f7ab0272f7f485647b6a97c0cc18943d34d3d494fc0a14d511",
+      "audio": "/lib/audio/grammaire/co/logement/a2/piste_024.mp3",
+      "status": "unspelled_name_editorial_spelling",
+      "previous_unresolved_points": [
+        "Prénom Alain/Alan : orthographe non épelée à confirmer."
+      ],
+      "review_note": "Alain/Alan sont indiscernables sans épellation. Alain est la graphie éditoriale retenue ; la compréhension du dialogue est recoupée.",
+      "before_text": "Page 27. exercice 4.\nSalut Flo ! Alors, cette visite, tu penses quoi du studio ? Salut Alain, c'est un coup de cœur. Il est grand, 35 mètres carrés, et exposé est-ouest. Et le quartier ? C'est à 5 minutes d'une station de métro. Je vais aussi discuter avec le gardien pour savoir si c'est calme. Bon, 490 euros de loyer, c'est un peu cher, mais les charges sont comprises. Alors je pense que ça va aller. Tu signes le bail quand ? Attends, attends, l'agence va me donner une réponse demain.",
+      "after_text": "Page 27. exercice 4.\nSalut Flo ! Alors, cette visite, tu penses quoi du studio ? Salut Alain, c'est un coup de cœur. Il est grand, 35 mètres carrés, et exposé est-ouest. Et le quartier ? C'est à 5 minutes d'une station de métro. Je vais aussi discuter avec le gardien pour savoir si c'est calme. Bon, 490 euros de loyer, c'est un peu cher, mais les charges sont comprises. Alors je pense que ça va aller. Tu signes le bail quand ? Attends, attends, l'agence va me donner une réponse demain.",
+      "third_recognition": "Page 27, exercice 4. Salut Flo, alors cette visite, tu penses quoi du studio ? Salut Alan, c'est un coup de cœur, il est grand, 35 mètres carrés, et exposé est-ouest. Et le quartier ? C'est à 5 minutes d'une station de métro. Je vais aussi discuter avec le gardien pour savoir si c'est calme. Bon, 490 euros de loyer, c'est un peu cher, mais les charges sont comprises. Alors je pense que ça va aller. Tu signes le bail quand ? Attends, attends ! L'agence va me donner une réponse demain.",
+      "targeted_readings": [],
+      "source_limitations": [],
+      "human_listening_performed": false
+    },
+    {
+      "exercise_id": "gram-co-se-deplacer-a2-piste_009",
+      "source_sha256": "9938944585858cd435840aa2bad3bbe8f8e5b0d0e2bc0013552b83e38a34ae0e",
+      "audio": "/lib/audio/grammaire/co/se-deplacer/a2/piste_009.mp3",
+      "status": "unspelled_name_editorial_spelling",
+      "previous_unresolved_points": [
+        "Orthographe commerciale Loue ma voiture à confirmer."
+      ],
+      "review_note": "Le nom du service est rendu Loue ma voiture par les lectures les plus complètes. Casse et espaces éditoriaux, aucune marque réelle supposée.",
+      "before_text": "Leçon 2 page 17 Se déplacer. Document A.\nSalut Vincent, tu sais comment aller au mariage de Thomas le week-end prochain ? Oui, je viens de louer une voiture. Je pensais prendre le train, mais c'est plus long et plus cher. Et en covoiturage ? Les trajets proposés ne sont pas pratiques. Dommage. Tu es passé par une agence pour la location ? Non. Un service de location de voiture entre particuliers. Ça s'appelle « Loue ma voiture ». Tu connais ? Pas du tout. Mais c'est sûr comme service ? Oui, c'est sûr et simple. Tu t'inscris, tu enregistres une pièce d'identité et ton permis de conduire et tu loues une voiture. Il y a une assurance ? Oui, c'est compris. Et pour cette voiture, le propriétaire vient de faire le contrôle technique. Et pour l'essence ? À la fin du week-end, je dois juste faire le plein dans une station-service avant de rendre la voiture.",
+      "after_text": "Leçon 2 page 17 Se déplacer. Document A.\nSalut Vincent, tu sais comment aller au mariage de Thomas le week-end prochain ? Oui, je viens de louer une voiture. Je pensais prendre le train, mais c'est plus long et plus cher. Et en covoiturage ? Les trajets proposés ne sont pas pratiques. Dommage. Tu es passé par une agence pour la location ? Non. Un service de location de voiture entre particuliers. Ça s'appelle « Loue ma voiture ». Tu connais ? Pas du tout. Mais c'est sûr comme service ? Oui, c'est sûr et simple. Tu t'inscris, tu enregistres une pièce d'identité et ton permis de conduire et tu loues une voiture. Il y a une assurance ? Oui, c'est compris. Et pour cette voiture, le propriétaire vient de faire le contrôle technique. Et pour l'essence ? À la fin du week-end, je dois juste faire le plein dans une station-service avant de rendre la voiture.",
+      "third_recognition": "Leçon 2, page 17. Se déplacer. Document A. Salut Vincent, tu sais comment aller au mariage de Thomas le week-end prochain ? Oui, je viens de louer une voiture. Je pensais prendre le train, mais c'est plus long et plus cher. Et en covoiturage ? Les trajets proposés ne sont pas pratiques. Dommage. Tu es passé par une agence pour la location ? Non, un service de location de voiture entre particuliers. Ça s'appelle « Loue ma voiture ». Tu connais ? Pas du tout. Mais c'est sûr comme service ? Oui, c'est sûr et simple. Tu t'inscris, tu enregistres une pièce d'identité et ton permis de conduire et tu loues une voiture. Il y a une assurance ? Oui, c'est compris. Et pour cette voiture, le propriétaire vient de faire le contrôle technique. Et pour l'essence ? À la fin du week-end, je dois juste faire le plein dans une station-service avant de rendre la voiture.",
+      "targeted_readings": [],
+      "source_limitations": [],
+      "human_listening_performed": false
+    },
+    {
+      "exercise_id": "gram-co-se-deplacer-a2-piste_016",
+      "source_sha256": "b879293290877b24996f339ed0f6682e467352f98072902992ed9c22506d16c5",
+      "audio": "/lib/audio/grammaire/co/se-deplacer/a2/piste_016.mp3",
+      "status": "unspelled_name_editorial_spelling",
+      "previous_unresolved_points": [
+        "Prénom entendu Laure à confirmer ; première lecture tronquée et seconde l’or."
+      ],
+      "review_note": "Laure est retrouvé par Turbo et correspond à la lecture française l’or. Graphie française conventionnelle, non épelée.",
+      "before_text": "Page 21. Exercice 4.\nSalut Laure. Je viens de partir du bureau, donc je vais chercher ma voiture et j'arrive. Très bien. Mais ils viennent d'annoncer un véhicule en panne sur la D5. Et il y a des embouteillages. Tu devrais peut-être laisser ta voiture au parc relais et prendre le tram. En plus, c'est difficile de stationner dans mon quartier. Oui, t'as raison. C'est un ticket commun pour le parking et le tram? Oui, avec transport illimité pour la journée. D'accord. A tout à l'heure.",
+      "after_text": "Page 21. Exercice 4.\nSalut Laure. Je viens de partir du bureau, donc je vais chercher ma voiture et j'arrive. Très bien. Mais ils viennent d'annoncer un véhicule en panne sur la D5. Et il y a des embouteillages. Tu devrais peut-être laisser ta voiture au parc relais et prendre le tram. En plus, c'est difficile de stationner dans mon quartier. Oui, t'as raison. C'est un ticket commun pour le parking et le tram? Oui, avec transport illimité pour la journée. D'accord. A tout à l'heure.",
+      "third_recognition": "Page 21, exercice 4. Salut, Laure. Je viens de partir du bureau, donc je vais chercher ma voiture et j'arrive. Très bien. Mais ils viennent d'annoncer un véhicule en panne sur la D5 et il y a des embouteillages. Tu devrais peut-être laisser ta voiture au parc relais et prendre le tram. En plus, c'est difficile de stationner dans mon quartier. Oui, t'as raison. C'est un ticket commun pour le parking et le tram ? Oui, avec transport illimité pour la journée. D'accord. À tout à l'heure.",
+      "targeted_readings": [],
+      "source_limitations": [],
+      "human_listening_performed": false
+    },
+    {
+      "exercise_id": "gram-co-faire-achats-a2-piste_001",
+      "source_sha256": "4b2c5c66438d519e7fc447ca71dc5cefbd39edbadbc1dc2b31a11e032a88affb",
+      "audio": "/lib/audio/grammaire/co/faire-achats/a2/piste_001.mp3",
+      "status": "unspelled_name_editorial_spelling",
+      "previous_unresolved_points": [
+        "Orthographe des noms des autrices dans l’annonce éditoriale à confirmer."
+      ],
+      "review_note": "Noms de l’introduction éditoriale normalisés en Mariam Camara, Marie Gatin, Marie-Laure Lions-Olivieri et Eugénie Mottironi ; graphies éditoriales phonétiques, non attestées par un exemplaire écrit.",
+      "before_text": "Communication essentielle du français A2 Ouvrage de Mariam Camara Marie Gatin Marie-Laure Lyonce Olivierri Eugénie Motironi Copyright Didier FLE, une marque des éditions Hatier 2022 Leçon 1, page 11. Faire des achats document A Allô ? Allô Raphaël ? C'est Jules. Comment ça va ? Très bien. Et toi ? Bien, mais mon lave-linge est tombé en panne. Ah ! Tu vas le faire réparer ? Non, il est vieux et il n'est plus sous garantie. Alors je vais acheter une nouvelle machine. Oui, je comprends. Bien chez soi, fait des promotions en ce moment sur le rayon électroménager. Il y a des offres en magasins et sur leur site. Je ne savais pas. Mais le centre commercial est loin de chez moi. Et si je commande sur le site internet, il faut attendre quelques semaines. Alors je préfère acheter un lave-linge d'occasion. Oui, c'est vrai que c'est plus rapide et souvent moins cher. Tu as regardé sur Leboncoin. Oui. Et justement, je t'appelle pour ça. À côté de chez moi, j'ai trouvé un lave-linge pas cher et en très bon état. Et le vendeur a des commentaires positifs. Mais il n'y a pas de service de livraison. Tu pourrais m'aider à le porter ? Bien sûr.",
+      "after_text": "Communication essentielle du français A2. Ouvrage de Mariam Camara, Marie Gatin, Marie-Laure Lions-Olivieri et Eugénie Mottironi. Copyright Didier FLE, une marque des éditions Hatier 2022 Leçon 1, page 11. Faire des achats document A Allô ? Allô Raphaël ? C'est Jules. Comment ça va ? Très bien. Et toi ? Bien, mais mon lave-linge est tombé en panne. Ah ! Tu vas le faire réparer ? Non, il est vieux et il n'est plus sous garantie. Alors je vais acheter une nouvelle machine. Oui, je comprends. Bien chez soi, fait des promotions en ce moment sur le rayon électroménager. Il y a des offres en magasins et sur leur site. Je ne savais pas. Mais le centre commercial est loin de chez moi. Et si je commande sur le site internet, il faut attendre quelques semaines. Alors je préfère acheter un lave-linge d'occasion. Oui, c'est vrai que c'est plus rapide et souvent moins cher. Tu as regardé sur Leboncoin. Oui. Et justement, je t'appelle pour ça. À côté de chez moi, j'ai trouvé un lave-linge pas cher et en très bon état. Et le vendeur a des commentaires positifs. Mais il n'y a pas de service de livraison. Tu pourrais m'aider à le porter ? Bien sûr.",
+      "third_recognition": "Communication essentielle du français. A2. Ouvrage de Mariam Camara, Marie Gattin, Marie-Laure Lyons-Olivieri et Eugénie Motironi. Copyright Didier Fleux. Une marque des éditions Attier. 2022. Leçon 1, page 11. Faire des achats. Document A. Allô ? Allô, Raphaël ? C'est Jules. Comment ça va ? Très bien. Et toi ? Bien, mais mon lave-linge est tombé en panne. Ah, tu vas le faire réparer ? Non, il est vieux et il n'est plus sous garantie. Alors je vais acheter une nouvelle machine. Oui, je comprends. Bien chez soi, fais des promotions en ce moment sur le rayon électroménager. Il y a des offres en magasin et sur leur site. Ah, je ne savais pas. Mais le centre commercial est loin de chez moi. Et si je commande sur le site internet, il faut attendre quelques semaines. Alors, je préfère acheter un lave-linge d'occasion. Oui, c'est vrai que c'est plus rapide et souvent moins cher. Tu as regardé sur le Boncoin ? Oui. Et justement, je t'appelle pour ça. À côté de chez moi, j'ai trouvé un lave-linge pas cher et en très bon état. Et le vendeur a des commentaires positifs. Mais il n'y a pas de service de livraison. Tu pourrais m'aider à le porter ? Bien sûr.",
+      "targeted_readings": [],
+      "source_limitations": [],
+      "human_listening_performed": false
+    },
+    {
+      "exercise_id": "gram-co-faire-achats-a2-piste_005",
+      "source_sha256": "fa722c5c9a48140db849e3bf0eac0a3520db1130f86ec2ff999d871f8bbbc5b5",
+      "audio": "/lib/audio/grammaire/co/faire-achats/a2/piste_005.mp3",
+      "status": "unspelled_name_editorial_spelling",
+      "previous_unresolved_points": [
+        "Orthographe de l’enseigne prononcée Voule-Arti à confirmer."
+      ],
+      "review_note": "Turbo reconnaît Boularti. Cette graphie remplace Voule-Arti et reste éditoriale ; l’enseigne n’est pas épelée.",
+      "before_text": "Page 15. exercice 1.\nC'est les soldes chez Voule-Arti. Jusqu'au 19 juillet, profitez de réductions exceptionnelles sur tout le rayon multimédia. Ordinateur, tablette et smartphone à petit prix. Les offres sont disponibles sur le site internet et en magasin. Alors n'attendez plus !",
+      "after_text": "Page 15. exercice 1.\nC'est les soldes chez Boularti. Jusqu'au 19 juillet, profitez de réductions exceptionnelles sur tout le rayon multimédia. Ordinateur, tablette et smartphone à petit prix. Les offres sont disponibles sur le site internet et en magasin. Alors n'attendez plus !",
+      "third_recognition": "Page 15, exercice 1. C'est les soldes chez Boularti. Jusqu'au 19 juillet, profitez de réductions exceptionnelles sur tout le rayon multimédia. Ordinateur, tablette et smartphone à petit prix. Les offres sont disponibles sur le site internet et en magasin. Alors, n'attendez plus !",
+      "targeted_readings": [],
+      "source_limitations": [],
+      "human_listening_performed": false
+    },
+    {
+      "exercise_id": "gram-co-faire-achats-a2-piste_007",
+      "source_sha256": "62cd922a7747073d585d5131fef74dc9231ea8a5085eecc169223d1e1dc20924",
+      "audio": "/lib/audio/grammaire/co/faire-achats/a2/piste_007.mp3",
+      "status": "factual_point_cross_checked",
+      "previous_unresolved_points": [
+        "Année 2020 donnée par un seul moteur après le 20 août : à confirmer."
+      ],
+      "review_note": "L’année 2020 est retrouvée par Whisper français et Turbo. Référence VF3367Y conservée.",
+      "before_text": "Page 15. exercice 3.\nService après-vente, Mathieu à votre écoute. Bonjour monsieur, je vous appelle parce que j'ai acheté un téléphone portable sur votre site, mais depuis hier, il ne s'allume plus. D'accord. Pourriez-vous me donner la référence de la commande? Oui. C'est la commande VF3367Y. J'y suis. Il s'agit d'un smartphone commandé le 20 août 2020 qui est encore sous garantie. Donc je vous envoie un bon de retour par email et vous pouvez retourner le smartphone au service réparation. Très bien. Merci monsieur.",
+      "after_text": "Page 15. exercice 3.\nService après-vente, Mathieu à votre écoute. Bonjour monsieur, je vous appelle parce que j'ai acheté un téléphone portable sur votre site, mais depuis hier, il ne s'allume plus. D'accord. Pourriez-vous me donner la référence de la commande? Oui. C'est la commande VF3367Y. J'y suis. Il s'agit d'un smartphone commandé le 20 août 2020 qui est encore sous garantie. Donc je vous envoie un bon de retour par email et vous pouvez retourner le smartphone au service réparation. Très bien. Merci monsieur.",
+      "third_recognition": "Page 15, exercice 3. Service après-vente, Mathieu, à votre écoute. Bonjour, monsieur. Je vous appelle parce que j'ai acheté un téléphone portable sur votre site, mais depuis hier, il ne s'allume plus. D'accord. Pourriez-vous me donner la référence de la commande ? Oui. C'est la commande VF3367Y. J'y suis. Il s'agit d'un smartphone commandé le 20 août 2020 qui est encore sous garantie. Donc, je vous envoie un bon de retour par e-mail et vous pouvez retourner le smartphone au service réparation. Très bien. Merci, monsieur.",
+      "targeted_readings": [],
+      "source_limitations": [],
+      "human_listening_performed": false
+    },
+    {
+      "exercise_id": "gram-co-actualite-a2-piste_040",
+      "source_sha256": "bff28712a58077a72b57cf256846b11fbd4e169ba21b7d962684ea2d51832908",
+      "audio": "/lib/audio/grammaire/co/actualite/a2/piste_040.mp3",
+      "status": "factual_point_cross_checked",
+      "previous_unresolved_points": [
+        "Durée de l’étude : 30 jours selon Whisper, 3 selon Parakeet ; à confirmer avant d’en faire une question."
+      ],
+      "review_note": "La durée de 30 jours consécutifs est retrouvée par Whisper français et Turbo ; la lecture 3 jours est écartée.",
+      "before_text": "Page 39. exercice 4.\nVoici le résultat de notre étude, les Français et l'information sur Internet. Les auteurs ont analysé les données de connexion de 2372 personnes de plus de 18 ans sur 30 jours consécutifs. Les Français passent en moyenne 3% de leur temps sur Internet, sur des sources d'informations en ligne, soit 4,9 minutes de connexion par jour. Les sources d'informations les plus consultées sont la presse quotidienne régionale, l'actualité sportive et la presse quotidienne nationale.",
+      "after_text": "Page 39. exercice 4.\nVoici le résultat de notre étude, les Français et l'information sur Internet. Les auteurs ont analysé les données de connexion de 2372 personnes de plus de 18 ans sur 30 jours consécutifs. Les Français passent en moyenne 3% de leur temps sur Internet, sur des sources d'informations en ligne, soit 4,9 minutes de connexion par jour. Les sources d'informations les plus consultées sont la presse quotidienne régionale, l'actualité sportive et la presse quotidienne nationale.",
+      "third_recognition": "Page 39, exercice 4. Voici le résultat de notre étude « Les français et l'information sur Internet ». Les auteurs ont analysé les données de connexion de 2372 personnes de plus de 18 ans sur 30 jours consécutifs. Les Français passent en moyenne 3% de leur temps sur Internet, sur des sources d'informations en ligne, soit 4,9 minutes de connexion par jour. Les sources d'informations les plus consultées sont la presse quotidienne régionale, l'actualité sportive et la presse quotidienne nationale.",
+      "targeted_readings": [],
+      "source_limitations": [],
+      "human_listening_performed": false
+    },
+    {
+      "exercise_id": "gram-co-inviter-a2-piste_049",
+      "source_sha256": "9beada4e5342162ecd061337e707ab664b6051219ec916f9f41526c037c479cd",
+      "audio": "/lib/audio/grammaire/co/inviter/a2/piste_049.mp3",
+      "status": "unspelled_name_editorial_spelling",
+      "previous_unresolved_points": [
+        "Orthographe du prénom Tapio à confirmer."
+      ],
+      "review_note": "Tapio, prénom finlandais, est retrouvé à nouveau par Turbo. Graphie éditoriale non épelée.",
+      "before_text": "Page 45. exercice 4.\nPierre, je suis invité chez des Français pour la première fois. Tu peux m'expliquer comment ça se passe s'il te plaît ? D'accord, Tapio. Alors tu n'es pas obligé d'être à l'heure. Tu peux arriver 15 minutes plus tard. Et puis tu peux garder tes chaussures dans l'appartement. N'oublie pas d'offrir un petit cadeau, des fleurs, des chocolats ou un souvenir de ton pays. J'aimerais bien apporter ma guitare et chanter des chansons finlandaises. Bonne idée, mais demande d'abord si c'est d'accord.",
+      "after_text": "Page 45. exercice 4.\nPierre, je suis invité chez des Français pour la première fois. Tu peux m'expliquer comment ça se passe s'il te plaît ? D'accord, Tapio. Alors tu n'es pas obligé d'être à l'heure. Tu peux arriver 15 minutes plus tard. Et puis tu peux garder tes chaussures dans l'appartement. N'oublie pas d'offrir un petit cadeau, des fleurs, des chocolats ou un souvenir de ton pays. J'aimerais bien apporter ma guitare et chanter des chansons finlandaises. Bonne idée, mais demande d'abord si c'est d'accord.",
+      "third_recognition": "Page 45, exercice 4. Pierre, je suis invité chez des Français pour la première fois. Tu peux m'expliquer comment ça se passe, s'il te plaît ? D'accord, Tapio. Alors, tu n'es pas obligé d'être à l'heure. Tu peux arriver 15 minutes plus tard. Et puis, tu peux garder tes chaussures dans l'appartement. N'oublie pas d'offrir un petit cadeau, des fleurs, des chocolats ou un souvenir de ton pays. J'aimerais bien apporter ma guitare et chanter des chansons finlandaises. Bonne idée, mais demande d'abord si c'est d'accord.",
+      "targeted_readings": [],
+      "source_limitations": [],
+      "human_listening_performed": false
+    },
+    {
+      "exercise_id": "gram-co-rencontres-a2-piste_050",
+      "source_sha256": "00b6f477319ef669a08ba564fbc4d63aed8d71a4ac8f521f66590f6103d46401",
+      "audio": "/lib/audio/grammaire/co/rencontres/a2/piste_050.mp3",
+      "status": "unspelled_name_editorial_spelling",
+      "previous_unresolved_points": [
+        "Orthographe Teresa/Theresa non épelée à confirmer."
+      ],
+      "review_note": "La troisième lecture rend Thérésa. Cette graphie conventionnelle est retenue sans prétendre distinguer toutes les variantes orthographiques du prénom.",
+      "before_text": "Leçon 7, page 47. Faire de nouvelles rencontres. Document A.\nSalut, Theresa. Tu es allée au musée ce week-end ? Oui, mais malheureusement, j’y suis allée toute seule. Je ne connais personne ici. Mais pourquoi tu ne t’inscris pas sur le site des rencontres amicales de la ville ? Qu'est-ce que c'est ? C'est un site où tu peux t'inscrire pour rencontrer des personnes. Tu peux faire des randonnées, du sport, aller à des soirées, des conférences avec elles. Ah oui, ça c'est bien. Je vais directement sur le site, c'est ça ? Oui. Tu y vas, tu choisis un pseudo et un mot de passe. C'est très facile. C'est tout. Tu donnes aussi ton prénom, ton adresse mail et tu écris un petit mot pour parler de toi. Je t'aide ? Oui, merci Paul. Regarde l'onglet « Les sorties ». Ce soir, c'est Salsa. Il y a un post de Valérie. Elle y va. J'adore la Salsa. Je peux y aller avec elle.",
+      "after_text": "Leçon 7, page 47. Faire de nouvelles rencontres. Document A.\nSalut, Thérésa. Tu es allée au musée ce week-end ? Oui, mais malheureusement, j’y suis allée toute seule. Je ne connais personne ici. Mais pourquoi tu ne t’inscris pas sur le site des rencontres amicales de la ville ? Qu'est-ce que c'est ? C'est un site où tu peux t'inscrire pour rencontrer des personnes. Tu peux faire des randonnées, du sport, aller à des soirées, des conférences avec elles. Ah oui, ça c'est bien. Je vais directement sur le site, c'est ça ? Oui. Tu y vas, tu choisis un pseudo et un mot de passe. C'est très facile. C'est tout. Tu donnes aussi ton prénom, ton adresse mail et tu écris un petit mot pour parler de toi. Je t'aide ? Oui, merci Paul. Regarde l'onglet « Les sorties ». Ce soir, c'est Salsa. Il y a un post de Valérie. Elle y va. J'adore la Salsa. Je peux y aller avec elle.",
+      "third_recognition": "Leçon 7, page 47. Faire de nouvelles rencontres. Documents A. Salut Thérésa. Tu es allée au musée ce week-end ? Oui, mais malheureusement, j'y suis allée toute seule. Je ne connais personne ici. Mais pourquoi tu ne t'inscris pas sur le site des rencontres amicales de la ville ? Qu'est-ce que c'est ? C'est un site où tu peux t'inscrire pour rencontrer des personnes. Tu peux faire des randonnées, du sport, aller à des soirées, des conférences avec elles. Ah oui, ça c'est bien. Je vais directement sur le site, c'est ça ? Oui, tu y vas, tu choisis un pseudo et un mot de passe. C'est très facile. C'est tout ? Tu donnes aussi ton prénom, ton adresse mail et tu écris un petit mot pour parler de toi. Je t'aide ? Oui, merci Paul. Regarde l'onglet « Les sorties ». Ce soir, c'est salsa. Il y a un poste de Valérie. Elle y va. J'adore la salsa. Je peux y aller avec elle.",
+      "targeted_readings": [],
+      "source_limitations": [],
+      "human_listening_performed": false
+    },
+    {
+      "exercise_id": "gram-co-rencontres-a2-piste_054",
+      "source_sha256": "25f8b1bf9510290f82cfd27f7d7d1ad4628f22f61e3ec660c5895033af038e05",
+      "audio": "/lib/audio/grammaire/co/rencontres/a2/piste_054.mp3",
+      "status": "unspelled_name_editorial_spelling",
+      "previous_unresolved_points": [
+        "Orthographe exacte du site nouveauxamis.fr à confirmer."
+      ],
+      "review_note": "Turbo retrouve nouveauxamis.fr. Les espaces parasites de la première transcription sont supprimés ; graphie de domaine non épelée.",
+      "before_text": "Page 51. Exercice 1.\nVous êtes nouveau ou nouvelle dans la région, vous voulez rencontrer de nouveaux amis et partager avec eux vos centres d'intérêt, vous aimez les activités culturelles ou sportives, inscrivez-vous sur nouveaux amis.fr C'est gratuit et c'est facile",
+      "after_text": "Page 51. Exercice 1.\nVous êtes nouveau ou nouvelle dans la région, vous voulez rencontrer de nouveaux amis et partager avec eux vos centres d'intérêt, vous aimez les activités culturelles ou sportives, inscrivez-vous sur nouveauxamis.fr C'est gratuit et c'est facile",
+      "third_recognition": "Page 51 Exercice 1 Vous êtes nouveau ou nouvelle dans la région ? Vous voulez rencontrer de nouveaux amis et partager avec eux vos centres d'intérêt ? Vous aimez les activités culturelles ou sportives ? Inscrivez-vous sur nouveauxamis.fr C'est gratuit et c'est facile !",
+      "targeted_readings": [],
+      "source_limitations": [],
+      "human_listening_performed": false
+    },
+    {
+      "exercise_id": "gram-co-vie-associative-a2-piste_078",
+      "source_sha256": "848a70826234d5ca8ecd60c4872f632de193e6bfe2d892e638c987d902c60e52",
+      "audio": "/lib/audio/grammaire/co/vie-associative/a2/piste_078.mp3",
+      "status": "factual_point_cross_checked",
+      "previous_unresolved_points": [
+        "Numéro de téléphone mal regroupé par les deux moteurs ; à confirmer et ne pas utiliser pour une question."
+      ],
+      "review_note": "Le numéro 06 07 06 07 00 est retrouvé dans la lecture complète et dans les deux reprises finales, à vitesse normale et à 0,85. Il contient dix chiffres ; le zéro surnuméraire du premier brouillon est retiré.",
+      "before_text": "Page 69. Exercice 1.\nNotre association recherche 4000 bénévoles partout en France, dans le secteur de l'éducation, pour aider les jeunes et les personnes en difficulté. Occupez-vous d'un enfant ou d'un adulte. Aidez-le avec ses devoirs ou ses études. Contactez-nous au 06 07 06 07 000.",
+      "after_text": "Page 69. Exercice 1.\nNotre association recherche 4000 bénévoles partout en France, dans le secteur de l'éducation, pour aider les jeunes et les personnes en difficulté. Occupez-vous d'un enfant ou d'un adulte. Aidez-le avec ses devoirs ou ses études. Contactez-nous au 06 07 06 07 00.",
+      "third_recognition": "Page 69. Exercice 1. Notre association recherche 4000 bénévoles partout en France dans le secteur de l'éducation pour aider les jeunes et les personnes en difficulté. Occupez-vous d'un enfant ou d'un adulte. Aidez-le avec ses devoirs ou ses études. Contactez-nous au 06 07 06 07 00.",
+      "targeted_readings": [
+        {
+          "source_start": 24.288899999999998,
+          "source_end": 32.2889,
+          "speed": 1.0,
+          "clip_sha256": "a2375f457a968023206f32686484b0ba0b77048d22297b856c4d804938a66e94",
+          "text": "06 07 06 07 00"
+        },
+        {
+          "source_start": 24.288899999999998,
+          "source_end": 32.2889,
+          "speed": 0.85,
+          "clip_sha256": "1d354983dfb3fa2146c4a421c6366b865936d002e6e090d42a811d15b0b5de17",
+          "text": "06 07 06 07 00"
+        }
+      ],
+      "source_limitations": [],
+      "human_listening_performed": false
+    },
+    {
+      "exercise_id": "gram-co-vie-associative-a2-piste_080",
+      "source_sha256": "fb437d2146c6f6b0fa85b2e2d11a4a44a2a5778fb277dcc6478c0cc7d23d9d46",
+      "audio": "/lib/audio/grammaire/co/vie-associative/a2/piste_080.mp3",
+      "status": "unspelled_name_editorial_spelling",
+      "previous_unresolved_points": [
+        "Orthographe du prénom Héloïse non épelé à confirmer."
+      ],
+      "review_note": "Héloïse est retrouvé par Turbo. Graphie éditoriale non épelée ; dates et missions inchangées.",
+      "before_text": "Page 69. Exercice 3.\nSalut Marion, c'est Héloïse. Tu sais l'année dernière, je me suis investie dans une association pour faire la collecte de produits alimentaires avant l'hiver. Beaucoup de bénévoles se sont aussi engagés. Cette année, c'est du 26 au 28 novembre. Ta mission sera de saluer les gens à l'entrée des magasins, leur dire de quel produit on a besoin, yaourts, riz, pâtes, sucre, et à la sortie du magasin, tu récupères les dons avec le sourire. C'est urgent, dis-moi vite si tu es dispo. Merci.",
+      "after_text": "Page 69. Exercice 3.\nSalut Marion, c'est Héloïse. Tu sais l'année dernière, je me suis investie dans une association pour faire la collecte de produits alimentaires avant l'hiver. Beaucoup de bénévoles se sont aussi engagés. Cette année, c'est du 26 au 28 novembre. Ta mission sera de saluer les gens à l'entrée des magasins, leur dire de quel produit on a besoin, yaourts, riz, pâtes, sucre, et à la sortie du magasin, tu récupères les dons avec le sourire. C'est urgent, dis-moi vite si tu es dispo. Merci.",
+      "third_recognition": "Page 69. Exercice 3. Salut Marion, c'est Héloïse. Tu sais, l'année dernière, je me suis investie dans une association pour faire la collecte de produits alimentaires avant l'hiver. Beaucoup de bénévoles se sont aussi engagés. Cette année, c'est du 26 au 28 novembre. Ta mission sera de saluer les gens à l'entrée des magasins, leur dire de quels produits on a besoin, yaourts, riz, pâtes, sucre. Et à la sortie du magasin, tu récupères les dons avec le sourire. C'est urgent, dis-moi vite si tu es dispo. Merci.",
+      "targeted_readings": [],
+      "source_limitations": [],
+      "human_listening_performed": false
+    },
+    {
+      "exercise_id": "gram-co-cuisine-a2-piste_086",
+      "source_sha256": "63df5c8c89fc269bb710e6f0df407623467b489fc2ff4fc79a8a57a534860f98",
+      "audio": "/lib/audio/grammaire/co/cuisine/a2/piste_086.mp3",
+      "status": "unspelled_name_editorial_spelling",
+      "previous_unresolved_points": [
+        "Nom commercial de l’application À table à confirmer."
+      ],
+      "review_note": "Le nom de l’application À table est retrouvé par Turbo. Casse et guillemets normalisés sans ajouter de marque ou de service.",
+      "before_text": "Page 75. Exercice 1.\nVous ne voulez pas cuisiner? Téléchargez à table, la nouvelle application de livraison à domicile. Simple à utiliser et partenaire de nombreux restaurants dans votre ville. Alors, créez votre compte, recevez votre commande chez vous et passez à table.",
+      "after_text": "Page 75. Exercice 1.\nVous ne voulez pas cuisiner? Téléchargez « À table », la nouvelle application de livraison à domicile. Simple à utiliser et partenaire de nombreux restaurants dans votre ville. Alors, créez votre compte, recevez votre commande chez vous et passez à table.",
+      "third_recognition": "Page 75, exercice 1. Vous ne voulez pas cuisiner ? Téléchargez à table la nouvelle application de livraison à domicile. Simple à utiliser et partenaire de nombreux restaurants dans votre ville. Alors, créez votre compte, recevez votre commande chez vous et passez à table.",
+      "targeted_readings": [],
+      "source_limitations": [],
+      "human_listening_performed": false
+    },
+    {
+      "exercise_id": "gram-co-loisirs-a2-piste_098",
+      "source_sha256": "0170f38561a62059e456289ef2c1ef7606b6c867fb7ef9589a36c7e5678b294e",
+      "audio": "/lib/audio/grammaire/co/loisirs/a2/piste_098.mp3",
+      "status": "unspelled_name_editorial_spelling",
+      "previous_unresolved_points": [
+        "Orthographe des noms de série/plateforme Série Premium et Enquête numéro 1 à confirmer."
+      ],
+      "review_note": "Turbo recoupe Série Premium et Enquête numéro 1 ; titres éditoriaux non épelés, aucun catalogue commercial externe supposé.",
+      "before_text": "Leçon 13, page 83. Partager ses centres d'intérêt. Document A.\n- Salut, Sophia. Tu as passé une bonne soirée ? - Oui, j'ai regardé trois épisodes d'enquête numéro 1. - J'adore cette série ! C'est la nouvelle saison ? - Oui, certains personnages ont changé, mais la deuxième saison est excellente. Je te recommande de la voir. C'est sur Seri Premium ? Oui. Tu es abonné ? Non. Mais Jules a un compte familial. Et il m'a donné ses codes de connexion. J'ai fait pareil avec ma sœur. Je lui ai proposé de partager un abonnement parce que c'est un peu cher. Absolument ! Surtout qu'on peut voir plein de films et séries gratuitement. D'ailleurs, j'ai vu un très bon film à la télé hier soir sur France 3. Voyage à Santiago. Oui, je voulais le voir. Je l'ai vu avec les enfants. Et ils ont adoré. En version originale ? Non, ça ne leur plaît pas de lire les sous-titres. Alors, en version française. Je vais regarder s'il est disponible en replay sur le site de France Télévisions.",
+      "after_text": "Leçon 13, page 83. Partager ses centres d'intérêt. Document A.\n- Salut, Sophia. Tu as passé une bonne soirée ? - Oui, j'ai regardé trois épisodes d'enquête numéro 1. - J'adore cette série ! C'est la nouvelle saison ? - Oui, certains personnages ont changé, mais la deuxième saison est excellente. Je te recommande de la voir. C'est sur Série Premium ? Oui. Tu es abonné ? Non. Mais Jules a un compte familial. Et il m'a donné ses codes de connexion. J'ai fait pareil avec ma sœur. Je lui ai proposé de partager un abonnement parce que c'est un peu cher. Absolument ! Surtout qu'on peut voir plein de films et séries gratuitement. D'ailleurs, j'ai vu un très bon film à la télé hier soir sur France 3. Voyage à Santiago. Oui, je voulais le voir. Je l'ai vu avec les enfants. Et ils ont adoré. En version originale ? Non, ça ne leur plaît pas de lire les sous-titres. Alors, en version française. Je vais regarder s'il est disponible en replay sur le site de France Télévisions.",
+      "third_recognition": "Leçon 13, page 83. Partager ses centres d'intérêts. Documents A. Salut Sophia, tu as passé une bonne soirée ? Oui, j'ai regardé trois épisodes d'enquête numéro un. J'adore cette série ! C'est la nouvelle saison ? Oui, certains personnages ont changé, mais la deuxième saison est excellente. Je te recommande de la voir. C'est sur Série Premium ? Oui. Tu es abonné ? Non. Mais Jules a un compte familial. Et il m'a donné ses codes de connexion. J'ai fait pareil avec ma sœur. Je lui ai proposé de partager un abonnement parce que c'est un peu cher. Absolument ! Surtout qu'on peut voir plein de films et séries gratuitement. D'ailleurs, j'ai vu un très bon film à la télé hier soir sur France 3. Voyage à Santiago. Oui, je voulais le voir. Je l'ai vu avec les enfants. Et ils ont adoré. En version originale ? Non, ça ne leur plaît pas de lire les sous-titres. Alors, en version française. Je vais regarder s'il est disponible en replay sur le site de France Télévisions.",
+      "targeted_readings": [],
+      "source_limitations": [],
+      "human_listening_performed": false
+    },
+    {
+      "exercise_id": "gram-co-loisirs-a2-piste_102",
+      "source_sha256": "c13bfe02c5d0549d4661d82f6fdae168e0059266f3ee44aea875ea5fd7407a22",
+      "audio": "/lib/audio/grammaire/co/loisirs/a2/piste_102.mp3",
+      "status": "unspelled_name_editorial_spelling",
+      "previous_unresolved_points": [
+        "Prénom Isa/Issa non épelé à confirmer."
+      ],
+      "review_note": "Isa est retrouvé par les deux lectures françaises. Graphie éditoriale non épelée.",
+      "before_text": "Page 87. Exercice 1.\nSalut Isa, c'est Marine. J'ai téléphoné à ton prof de guitare, et je lui ai expliqué mon niveau. Il va me donner des cours à partir de la semaine prochaine. Et me prêter un instrument. J'ai hâte de recommencer à jouer de la guitare.",
+      "after_text": "Page 87. Exercice 1.\nSalut Isa, c'est Marine. J'ai téléphoné à ton prof de guitare, et je lui ai expliqué mon niveau. Il va me donner des cours à partir de la semaine prochaine. Et me prêter un instrument. J'ai hâte de recommencer à jouer de la guitare.",
+      "third_recognition": "Page 87 Exercice 1 Salut Isa, c'est Marine. J'ai téléphoné à ton prof de guitare et je lui ai expliqué mon niveau. Il va me donner des cours à partir de la semaine prochaine et me prêter un instrument. J'ai hâte de recommencer à jouer de la guitare.",
+      "targeted_readings": [],
+      "source_limitations": [],
+      "human_listening_performed": false
+    },
+    {
+      "exercise_id": "gram-co-vacances-a2-piste_111",
+      "source_sha256": "c66399462062b809cb8e8de6abec0026d5a25cdef3b16cfafa0ec98de3a4a8ff",
+      "audio": "/lib/audio/grammaire/co/vacances/a2/piste_111.mp3",
+      "status": "factual_point_cross_checked",
+      "previous_unresolved_points": [
+        "Célébration à 11 h 30 selon Whisper, 1 h 30 selon Parakeet ; à confirmer avant une question sur cet horaire."
+      ],
+      "review_note": "Whisper français et Turbo donnent 11 h 30 pour la célébration ; 22 h 30 et 23 h 30 restent recoupés.",
+      "before_text": "Page 93. Exercice 2.\n\nAujourd'hui, c'est la Fête de la mer. Célébrations sur la plage à 11h30, animation musicale toute la journée, feu d'artifice à 22h30 et concert exceptionnel, place de l'église à 23h30.",
+      "after_text": "Page 93. Exercice 2.\n\nAujourd'hui, c'est la Fête de la mer. Célébrations sur la plage à 11h30, animation musicale toute la journée, feu d'artifice à 22h30 et concert exceptionnel, place de l'église à 23h30.",
+      "third_recognition": "Page 93 Exercice 2 Aujourd'hui, c'est la fête de la mer. Célébration sur la plage à 11h30, animation musicale toute la journée, feu d'artifice à 22h30 et concert exceptionnel Place de l'Église à 23h30.",
+      "targeted_readings": [],
+      "source_limitations": [],
+      "human_listening_performed": false
+    },
+    {
+      "exercise_id": "gram-co-sante-a2-piste_114",
+      "source_sha256": "5f8211fd4996aa95e31454a86a04e12b522b83b3a1a162b20765c3942eb94f71",
+      "audio": "/lib/audio/grammaire/co/sante/a2/piste_114.mp3",
+      "status": "factual_point_cross_checked",
+      "previous_unresolved_points": [
+        "Nom Debal/de Bâle et âge dix mois donné clairement par Whisper seul : à confirmer."
+      ],
+      "review_note": "Les deux lectures françaises donnent une fille de dix mois. La graphie Debal du nom, non épelé, est conservée comme convention éditoriale.",
+      "before_text": "Leçon 15 page 95. S'occuper de sa santé. Document A.\nCabinet du docteur Benoît, bonjour. Bonjour, c'est Mme Debal. Ma fille de 10 mois va mal. Qu'est-ce qu'elle a ? Depuis hier, elle ne mange plus, elle vomit, elle a la diarrhée, 39 de fièvre. Je suis désolée, mais... Ça me fait peur. Il faut que le docteur nous reçoive. C'est urgent. Malheureusement, aujourd'hui, ce n'est pas possible. Le docteur est absent. Vous devez voir un pédiatre aux urgences. J'ai bien compris. Il faut qu'on aille aux urgences ? Oui. Il faut que vous y alliez aujourd'hui. Il faut que je prenne rendez-vous. Non, mais n'oubliez pas votre carte d'assurance. C'est une gastro ? Il faut que je sache pourquoi ma fille est malade. Il faut que le médecin demande des analyses. Je suis vraiment inquiète. Ne vous inquiétez pas, ça va aller. On va soigner votre fille et elle ira mieux rapidement.",
+      "after_text": "Leçon 15 page 95. S'occuper de sa santé. Document A.\nCabinet du docteur Benoît, bonjour. Bonjour, c'est Mme Debal. Ma fille de 10 mois va mal. Qu'est-ce qu'elle a ? Depuis hier, elle ne mange plus, elle vomit, elle a la diarrhée, 39 de fièvre. Je suis désolée, mais... Ça me fait peur. Il faut que le docteur nous reçoive. C'est urgent. Malheureusement, aujourd'hui, ce n'est pas possible. Le docteur est absent. Vous devez voir un pédiatre aux urgences. J'ai bien compris. Il faut qu'on aille aux urgences ? Oui. Il faut que vous y alliez aujourd'hui. Il faut que je prenne rendez-vous. Non, mais n'oubliez pas votre carte d'assurance. C'est une gastro ? Il faut que je sache pourquoi ma fille est malade. Il faut que le médecin demande des analyses. Je suis vraiment inquiète. Ne vous inquiétez pas, ça va aller. On va soigner votre fille et elle ira mieux rapidement.",
+      "third_recognition": "Leçon 15, page 95. S'occuper de sa santé. Document A. Cabinet du docteur Benoît, bonjour. Bonjour, c'est Madame de Bâle. Ma fille de dix mois va mal. Qu'est-ce qu'elle a ? Depuis hier, elle ne mange plus, elle vomit, elle a la diarrhée, 39 de fièvre. Je suis désolée, mais... Ça me fait peur. Il faut que le docteur nous reçoive. C'est urgent. Malheureusement, aujourd'hui, ce n'est pas possible. Le docteur est absent. Vous devez voir un pédiatre aux urgences. J'ai bien compris. Il faut qu'on aille aux urgences ? Oui. Il faut que vous y alliez aujourd'hui. Il faut que je prenne rendez-vous ? Non, mais n'oubliez pas votre carte d'assurance. C'est une gastro ? Il faut que je sache pourquoi ma fille est malade. Il faut que le médecin demande des analyses. Je suis vraiment inquiète. Ne vous inquiétez pas, ça va aller. On va soigner votre fille et elle ira mieux rapidement.",
+      "targeted_readings": [],
+      "source_limitations": [],
+      "human_listening_performed": false
+    },
+    {
+      "exercise_id": "gram-co-sante-a2-piste_120",
+      "source_sha256": "fde8f6169e345d702ac72b667f5364900d18f08bfd46da86f6104c40a956ec65",
+      "audio": "/lib/audio/grammaire/co/sante/a2/piste_120.mp3",
+      "status": "unspelled_name_editorial_spelling",
+      "previous_unresolved_points": [
+        "Orthographe du nom Abri/Abrie à confirmer."
+      ],
+      "review_note": "La graphie Abry est retenue d’après Turbo. Le nom n’est pas épelé ; les symptômes et le diagnostic du dialogue restent inchangés.",
+      "before_text": "Page 99. exercice 3.\nComment allez-vous aujourd'hui, M. Abrie ? Mieux, mais je tousse toujours. Je suis enrhumé, j'ai mal à la tête. J'ai vos résultats d'analyse de sang et la radio des poumons. Vous avez une bronchite. Ouf, ce n'est pas une pneumonie. Comment je dois me soigner ? Vous avez déjà un traitement contre la douleur et la fièvre. Prenez aussi cet antibiotique. Vous fumez toujours ? Oui, un peu. Il faut que vous fassiez attention, monsieur. Pour guérir rapidement, arrêtez la cigarette.",
+      "after_text": "Page 99. exercice 3.\nComment allez-vous aujourd'hui, M. Abry ? Mieux, mais je tousse toujours. Je suis enrhumé, j'ai mal à la tête. J'ai vos résultats d'analyse de sang et la radio des poumons. Vous avez une bronchite. Ouf, ce n'est pas une pneumonie. Comment je dois me soigner ? Vous avez déjà un traitement contre la douleur et la fièvre. Prenez aussi cet antibiotique. Vous fumez toujours ? Oui, un peu. Il faut que vous fassiez attention, monsieur. Pour guérir rapidement, arrêtez la cigarette.",
+      "third_recognition": "Page 99, exercice 3. Comment allez-vous aujourd'hui, M. Abry ? Mieux, mais je touche toujours. Je suis enrhumé, j'ai mal à la tête. J'ai vos résultats d'analyse de sang et la radio des poumons. Vous avez une bronchite. Ouf, ce n'est pas une pneumonie. Comment je dois me soigner ? Vous avez déjà un traitement contre la douleur et la fièvre. Prenez aussi cet antibiotique. Vous fumez toujours ? Oui, un peu. Il faut que vous fassiez attention, monsieur. Pour guérir rapidement, arrêtez la cigarette.",
+      "targeted_readings": [],
+      "source_limitations": [],
+      "human_listening_performed": false
+    },
+    {
+      "exercise_id": "gram-co-sante-a2-piste_121",
+      "source_sha256": "c72b1e505dbeb52ee4476068d1bb5bd63dfef0fec6b2ca344a81ffc728677df8",
+      "audio": "/lib/audio/grammaire/co/sante/a2/piste_121.mp3",
+      "status": "unspelled_name_editorial_spelling",
+      "previous_unresolved_points": [
+        "Orthographe du nom Sophie Forquenault/Forkno à confirmer."
+      ],
+      "review_note": "La lecture plus complète donne Sophie Forquenot, remplaçant Forkno. Nom non épelé : graphie éditoriale, sans certification d’orthographe officielle.",
+      "before_text": "Page 99. exercice 4.\nUne question d'une auditrice pour vous, Dr Sophie Forkno. Mon bébé est en bonne santé, mais il pleure beaucoup le soir. Qu'est-ce que je peux faire ? Si la maman est inquiète, il faut qu'elle téléphone au pédiatre. C'est important de consulter un spécialiste. Une autre question, mon enfant doit être opéré. Est-ce que je peux avoir un arrêt de travail ? Non, mais vous avez droit à trois jours de congé. Attention, ce congé n'est pas payé, mais c'est bien quand les parents restent avec l'enfant après l'opération.",
+      "after_text": "Page 99. exercice 4.\nUne question d'une auditrice pour vous, Dr Sophie Forquenot. Mon bébé est en bonne santé, mais il pleure beaucoup le soir. Qu'est-ce que je peux faire ? Si la maman est inquiète, il faut qu'elle téléphone au pédiatre. C'est important de consulter un spécialiste. Une autre question, mon enfant doit être opéré. Est-ce que je peux avoir un arrêt de travail ? Non, mais vous avez droit à trois jours de congé. Attention, ce congé n'est pas payé, mais c'est bien quand les parents restent avec l'enfant après l'opération.",
+      "third_recognition": "Pages 99. Exercice 4. Une question d'une auditrice pour vous, Dr Sophie Forquenot. Mon bébé est en bonne santé, mais il pleure beaucoup le soir. Qu'est-ce que je peux faire ? Si la maman est inquiète, il faut qu'elle téléphone au pédiatre. C'est important de consulter un spécialiste. Une autre question. Mon enfant doit être opéré. Est-ce que je peux avoir un arrêt de travail ? Non, mais vous avez droit à trois jours de congé. Attention, ce congé n'est pas payé, mais c'est bien quand les parents restent avec l'enfant après l'opération.",
+      "targeted_readings": [],
+      "source_limitations": [],
+      "human_listening_performed": false
+    },
+    {
+      "exercise_id": "gram-co-manger-equilibre-a2-piste_136",
+      "source_sha256": "2fece50d8e94a77363172fdc6d209dd2af7ec02f39621ab454bd309a13946c34",
+      "audio": "/lib/audio/grammaire/co/manger-equilibre/a2/piste_136.mp3",
+      "status": "source_incomplete_explicitly_marked",
+      "previous_unresolved_points": [
+        "La fin du numéro de téléphone n’est pas reconnue complètement par les deux moteurs ; à confirmer sur la fin du fichier avant toute question sur ce numéro."
+      ],
+      "review_note": "Les lectures françaises retrouvent seulement 06 07 08 avant la fin du fichier reçu. La reprise finale ne donne aucune suite fiable ; sa répétition automatique de 08 est écartée comme hallucination. Le numéro incomplet est explicitement marqué et exclu de toute réponse chiffrée complète.",
+      "before_text": "Page 111. Exercice 2.\nFondée en 2008 par un groupe de médecins spécialistes de l'alimentation, l'association \"Manger, bouger\" conseille les adolescents, les jeunes adultes et les personnes âgées qui veulent rester en bonne santé et apprendre à manger équilibré. Vous avez une question ? Appelez-nous. au 06, 07, 08",
+      "after_text": "Page 111. Exercice 2.\nFondée en 2008 par un groupe de médecins spécialistes de l'alimentation, l'association \"Manger, bouger\" conseille les adolescents, les jeunes adultes et les personnes âgées qui veulent rester en bonne santé et apprendre à manger équilibré. Vous avez une question ? Appelez-nous. au 06 07 08… [numéro incomplet dans le fichier reçu].",
+      "third_recognition": "Page 111. Exercice 2. Fondée en 2008 par un groupe de médecins spécialistes de l'alimentation, l'association Manger Bougez conseille les adolescents, les jeunes adultes et les personnes âgées qui veulent rester en bonne santé et apprendre à manger équilibré. Vous avez une question ? Appelez-nous. au 06 07 08",
+      "targeted_readings": [
+        {
+          "source_start": 20.9578,
+          "source_end": 30.9578,
+          "speed": 1.0,
+          "clip_sha256": "4d3fc30230c331ed32480711dc04427b5dd4f3f4a27156214152059eec35694c",
+          "text": "Vous avez une question ? Appelez-nous au 06 07 08 08 08 08 08 08 08 08 08 08 08 08 08 08 08 08 08 08 08 08 08 08 0"
+        },
+        {
+          "source_start": 20.9578,
+          "source_end": 30.9578,
+          "speed": 0.85,
+          "clip_sha256": "06f576e3d484088920f57b43a884c4c020417d678bcba95500c6495a154c2cef",
+          "text": "Vous avez une question ? Appelez-nous au 06 07"
+        }
+      ],
+      "source_limitations": [
+        "Le fichier reçu ne permet pas de restituer un numéro de téléphone complet ; ne pas compléter ni créer de question exigeant ses chiffres manquants."
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "exercise_id": "gram-co-ville-campagne-a2-piste_144",
+      "source_sha256": "6e5bc10b62e2a4d9e88b501269b2fd08f539976d6a0a2833a5772a04e089ffbf",
+      "audio": "/lib/audio/grammaire/co/ville-campagne/a2/piste_144.mp3",
+      "status": "unspelled_name_editorial_spelling",
+      "previous_unresolved_points": [
+        "Orthographe du prénom Maud non épelé à confirmer."
+      ],
+      "review_note": "Maud est retrouvé par Turbo. Graphie éditoriale non épelée.",
+      "before_text": "Page 117. Exercice 2.\nSalut Maud? Est-ce que tu viens à la réunion des habitants ce soir? La poste veut fermer son bureau parce que notre village est trop petit. Mais c'est un service public de proximité très important. Il faut qu'on le garde.",
+      "after_text": "Page 117. Exercice 2.\nSalut Maud? Est-ce que tu viens à la réunion des habitants ce soir? La poste veut fermer son bureau parce que notre village est trop petit. Mais c'est un service public de proximité très important. Il faut qu'on le garde.",
+      "third_recognition": "Page 117 Exercice 2 Salut Maud, est-ce que tu viens à la réunion des habitants ce soir ? La Poste veut fermer son bureau parce que notre village est trop petit. Mais c'est un service public de proximité très important. Il faut qu'on le garde.",
+      "targeted_readings": [],
+      "source_limitations": [],
+      "human_listening_performed": false
+    },
+    {
+      "exercise_id": "gram-co-ville-campagne-a2-piste_145",
+      "source_sha256": "590cd96b0be3d3d761d3954bf8fceaec5cb3f2120d2f2cf7de5d184509b43cd4",
+      "audio": "/lib/audio/grammaire/co/ville-campagne/a2/piste_145.mp3",
+      "status": "unspelled_name_editorial_spelling",
+      "previous_unresolved_points": [
+        "Nom du quartier des Essères/des essais à confirmer."
+      ],
+      "review_note": "La troisième lecture reconnaît un nom de quartier, Esser. Essères est retenu comme graphie éditoriale phonétique ; le nom commun essais est écarté. Aucune localisation réelle n’est déduite.",
+      "before_text": "Page 117. Exercice 3.\nLe week-end dernier, l'association Mon quartier de rêve a demandé aux habitants du quartier des essais leur avis sur leur lieu de vie. J'aime bien notre quartier. Nous sommes au centre-ville. Les transports publics sont à proximité. Il y a un petit parc. Je propose de créer un jardin urbain avec des arbres fruitiers, des fleurs où les habitants pourront se rencontrer. Pour moi, il manque des lieux pour faire du sport. Un parcours de santé, par exemple. Il nous faut plus de pistes cyclables.",
+      "after_text": "Page 117. Exercice 3.\nLe week-end dernier, l'association Mon quartier de rêve a demandé aux habitants du quartier des Essères leur avis sur leur lieu de vie. J'aime bien notre quartier. Nous sommes au centre-ville. Les transports publics sont à proximité. Il y a un petit parc. Je propose de créer un jardin urbain avec des arbres fruitiers, des fleurs où les habitants pourront se rencontrer. Pour moi, il manque des lieux pour faire du sport. Un parcours de santé, par exemple. Il nous faut plus de pistes cyclables.",
+      "third_recognition": "Page 117 Exercice 3 Le week-end dernier, l'association Mon Quartier de Rêve a demandé aux habitants du quartier des Esser leur avis sur leur lieu de vie. J'aime bien notre quartier. Nous sommes au centre-ville. Les transports publics sont à proximité. Il y a un petit parc. Je propose de créer un jardin urbain avec des arbres fruitiers, des fleurs où les habitants pourront se rencontrer. Pour moi, il manque des lieux pour faire du sport, un parcours de santé par exemple. Il nous faut plus de pistes cyclables.",
+      "targeted_readings": [],
+      "source_limitations": [],
+      "human_listening_performed": false
+    },
+    {
+      "exercise_id": "gram-co-ville-campagne-a2-piste_146",
+      "source_sha256": "8efd545e2a47d4a45ef847223b32e282c1209e910db8ccdc71881fa7b862c957",
+      "audio": "/lib/audio/grammaire/co/ville-campagne/a2/piste_146.mp3",
+      "status": "unspelled_name_editorial_spelling",
+      "previous_unresolved_points": [
+        "Orthographe du village Saint-Sardo/Saint-Cerdo à confirmer."
+      ],
+      "review_note": "Saint-Sardo est conservé comme graphie éditoriale phonétique. Les variantes des moteurs ne permettent pas de certifier l’orthographe officielle d’un village sans source écrite.",
+      "before_text": "Page 117. exercice 4.\nIls vivent dans des environnements différents. Est-ce qu'ils sont heureux dans leur vie d'adolescent ? Notre journaliste est allé à la rencontre des enfants des villes et des villages pour savoir ce qu'ils pensent de leur lieu de vie. Voici Léonie, 16 ans. Elle habite dans une grande ville, Toulouse. Quand elle se déplace, Léonie prend toujours le métro. L'avantage, c'est qu'on a tout. Il y a les bars, les cinémas. On peut aller manger au restaurant. Valentin, 15 ans, vient de Saint-Sardo, un petit village de 1500 habitants. Pour voir ses amis, il prend son scooter. C'est la clé de son autonomie. Aujourd'hui, au Stade municipal, il fait un match de foot. L'avantage, c'est que c'est toujours ouvert. Ici, on fait beaucoup de sport, il n'y a pas beaucoup d'autres activités.",
+      "after_text": "Page 117. exercice 4.\nIls vivent dans des environnements différents. Est-ce qu'ils sont heureux dans leur vie d'adolescent ? Notre journaliste est allé à la rencontre des enfants des villes et des villages pour savoir ce qu'ils pensent de leur lieu de vie. Voici Léonie, 16 ans. Elle habite dans une grande ville, Toulouse. Quand elle se déplace, Léonie prend toujours le métro. L'avantage, c'est qu'on a tout. Il y a les bars, les cinémas. On peut aller manger au restaurant. Valentin, 15 ans, vient de Saint-Sardo, un petit village de 1500 habitants. Pour voir ses amis, il prend son scooter. C'est la clé de son autonomie. Aujourd'hui, au Stade municipal, il fait un match de foot. L'avantage, c'est que c'est toujours ouvert. Ici, on fait beaucoup de sport, il n'y a pas beaucoup d'autres activités.",
+      "third_recognition": "Page 117, exercice 4. Ils vivent dans des environnements différents. Est-ce qu'ils sont heureux dans leur vie d'adolescent ? Notre journaliste est allé à la rencontre des enfants des villes et des villages pour savoir ce qu'ils pensent de leur lieu de vie. Voici Léonie, 16 ans. Elle habite dans une grande ville, Toulouse. Quand elle se déplace, Léonie prend toujours le métro. L'avantage, c'est qu'on a tout. Il y a les bars, les cinémas, on peut aller manger au restaurant. Valentin, 15 ans, vient de Saint-Serdeau, un petit village de 1500 habitants. Pour voir ses amis, il prend son scooter. C'est la clé de son autonomie. Aujourd'hui, au stade municipal, il fait un match de foot. L'avantage, c'est que c'est toujours ouvert. Ici, on fait beaucoup de sport, il n'y a pas beaucoup d'autres activités.",
+      "targeted_readings": [],
+      "source_limitations": [],
+      "human_listening_performed": false
+    },
+    {
+      "exercise_id": "gram-co-prendre-soin-a2-piste_152",
+      "source_sha256": "649c7619985040d186cd928bc0939311ad07164285e7daec5c8e712738a5bfbe",
+      "audio": "/lib/audio/grammaire/co/prendre-soin/a2/piste_152.mp3",
+      "status": "factual_point_cross_checked",
+      "previous_unresolved_points": [
+        "Premier produit demandé reconnu savon par les deux moteurs alors que la réplique mentionne déjà le savon ; passage à confirmer."
+      ],
+      "review_note": "Trois lectures complètes et deux reprises du début retrouvent savon. La répétition avec savon de Marseille est donc conservée ; elle ne justifie pas d’inventer shampoing ou un autre produit.",
+      "before_text": "Page 123. Exercice 2.\nThomas, je n'arrive pas à trouver le savon. Il est entre le savon de Marseille et ma mousse à raser. Le Déo, il est où? Je vois seulement mon parfum. Je l'ai vu dans le maquillage, avec ton mascara. Et le dentifrice?",
+      "after_text": "Page 123. Exercice 2.\nThomas, je n'arrive pas à trouver le savon. Il est entre le savon de Marseille et ma mousse à raser. Le Déo, il est où? Je vois seulement mon parfum. Je l'ai vu dans le maquillage, avec ton mascara. Et le dentifrice?",
+      "third_recognition": "Page 123, exercice 2 Thomas, je n'arrive pas à trouver le savon. Il est entre le savon de Marseille et ma mousse à raser. Et le déo, il est où ? Je vois seulement mon parfum. Je l'ai vu dans le maquillage avec ton mascara. Et le dentifrice ?",
+      "targeted_readings": [
+        {
+          "source_start": 3,
+          "source_end": 11,
+          "speed": 1.0,
+          "clip_sha256": "ebede7ad8666ae7135d4d892190210363ccf638f39669d24a0254b593ad5512e",
+          "text": "Exercice 2 Thomas, je n'arrive pas à trouver le savon. Oh, il est en..."
+        },
+        {
+          "source_start": 3,
+          "source_end": 11,
+          "speed": 0.85,
+          "clip_sha256": "662393026c0fb9d71817bc8c928fb0303411fed908fbbe973075a14c028693a4",
+          "text": "Exercice 2 Thomas, je n'arrive pas à trouver le savon."
+        }
+      ],
+      "source_limitations": [],
+      "human_listening_performed": false
+    },
+    {
+      "exercise_id": "gram-co-formation-a2-piste_160",
+      "source_sha256": "c586c7521d55ec99fc0e2fa5474742a29804537d5fe628aaf2427e4b6edd9c23",
+      "audio": "/lib/audio/grammaire/co/formation/a2/piste_160.mp3",
+      "status": "factual_point_cross_checked",
+      "previous_unresolved_points": [
+        "Le mot diplômante est à confirmer avant une question portant sur le type exact de certification."
+      ],
+      "review_note": "Turbo retrouve explicitement formation diplômante. Ce mot est conservé, sans déduire un diplôme ou une accréditation non annoncés.",
+      "before_text": "Page 129. Exercice 2.\nVous souhaitez apprendre le métier de graphiste. Notre organisme de formation vous propose une formation diplômante, rapide et prise en charge par votre CPF. Rendez-vous sur notre site internet pour plus de détails.",
+      "after_text": "Page 129. Exercice 2.\nVous souhaitez apprendre le métier de graphiste. Notre organisme de formation vous propose une formation diplômante, rapide et prise en charge par votre CPF. Rendez-vous sur notre site internet pour plus de détails.",
+      "third_recognition": "Page 129 Exercice 2 Vous souhaitez apprendre le métier de graphiste ? Notre organisme de formation vous propose une formation diplômante, rapide et prise en charge par votre CPF. Rendez-vous sur notre site Internet pour plus de détails.",
+      "targeted_readings": [],
+      "source_limitations": [],
+      "human_listening_performed": false
+    },
+    {
+      "exercise_id": "gram-co-chercher-emploi-a2-piste_170",
+      "source_sha256": "594924bc8111b4bab3eaf34d61c664752fbc7fd7628f42dbe2811b942c7b5412",
+      "audio": "/lib/audio/grammaire/co/chercher-emploi/a2/piste_170.mp3",
+      "status": "unspelled_name_editorial_spelling",
+      "previous_unresolved_points": [
+        "Orthographe Riadi/Riyaddi et enseigne Biogroup à confirmer."
+      ],
+      "review_note": "Turbo retrouve Biogroup et le nom Riadi. Graphies éditoriales normalisées, le patronyme n’est pas épelé.",
+      "before_text": "Page 135. exercice 4.\nBonjour Paul, c'est Mme Riyaddi de Biogruppe. Nous avons bien reçu votre candidature et nous souhaitons vous proposer un contrat en alternance. Nous allons vous accueillir dans notre entreprise à partir de septembre, mais seulement deux jours par semaine. Pouvez-vous venir ce lundi à 16 heures pour un entretien avec votre futur maître d'apprentissage? Merci de nous répondre par mail pour confirmer votre disponibilité. Et envoyez-nous une copie de votre pièce d'identité et de votre carte d'étudiant pour préparer votre contrat. Bonne journée!",
+      "after_text": "Page 135. exercice 4.\nBonjour Paul, c'est Mme Riadi de Biogroup. Nous avons bien reçu votre candidature et nous souhaitons vous proposer un contrat en alternance. Nous allons vous accueillir dans notre entreprise à partir de septembre, mais seulement deux jours par semaine. Pouvez-vous venir ce lundi à 16 heures pour un entretien avec votre futur maître d'apprentissage? Merci de nous répondre par mail pour confirmer votre disponibilité. Et envoyez-nous une copie de votre pièce d'identité et de votre carte d'étudiant pour préparer votre contrat. Bonne journée!",
+      "third_recognition": "Page 135. Exercice 4. Bonjour Paul, c'est Madame Riadie de Biogroup. Nous avons bien reçu votre candidature et nous souhaitons vous proposer un contrat en alternance. Nous allons vous accueillir dans notre entreprise à partir de septembre, mais seulement deux jours par semaine. Pouvez-vous venir ce lundi à 16h pour un entretien avec votre futur maître d'apprentissage ? Merci de nous répondre par mail pour confirmer votre disponibilité. Et envoyez-nous une copie de votre pièce d'identité et de votre carte d'étudiant pour préparer votre contrat. Bonne journée !",
+      "targeted_readings": [],
+      "source_limitations": [],
+      "human_listening_performed": false
+    },
+    {
+      "exercise_id": "gram-co-entretien-embauche-a2-piste_179",
+      "source_sha256": "a048df643ee40c4772bf661efe3ed804699a7cca24d7e3fc5056db5fa504d536",
+      "audio": "/lib/audio/grammaire/co/entretien-embauche/a2/piste_179.mp3",
+      "status": "unspelled_name_editorial_spelling",
+      "previous_unresolved_points": [
+        "Noms Vinot/Vino et Brochard/Brochar non épelés à confirmer."
+      ],
+      "review_note": "Vinot et Brochard sont les graphies éditoriales retenues. Brochard est recoupé dans la piste 186 ; aucune épellation du patronyme n’est inventée.",
+      "before_text": "Leçon 23, page 143. Passer un entretien. Document A.\nJe suis Monsieur Vino. Vous allez faire cet entretien avec moi. Comment va se passer l'entretien ? Tout d'abord, vous allez vous présenter, puis je vous poserai quelques questions sur votre parcours. Enfin, je vous parlerai de l'entreprise et du poste. D'accord. Pour commencer, parlez-moi de vous. Madame Brochar. Je suis diplômée d'une licence en commerce. Après mes études, après mes études, j'ai d'abord fait un stage dans une entreprise de cosmétiques. Ensuite, j'ai travaillé pendant un an comme vendeuse. Comment connaissez-vous notre entreprise ? Je vous suis sur les réseaux sociaux depuis longtemps. Pourquoi vous avez choisi notre offre d'emploi ? Avant tout, parce qu'elle correspond à mes compétences. Et puis... J'aime beaucoup vos produits.",
+      "after_text": "Leçon 23, page 143. Passer un entretien. Document A.\nJe suis Monsieur Vinot. Vous allez faire cet entretien avec moi. Comment va se passer l'entretien ? Tout d'abord, vous allez vous présenter, puis je vous poserai quelques questions sur votre parcours. Enfin, je vous parlerai de l'entreprise et du poste. D'accord. Pour commencer, parlez-moi de vous. Madame Brochard. Je suis diplômée d'une licence en commerce. Après mes études, après mes études, j'ai d'abord fait un stage dans une entreprise de cosmétiques. Ensuite, j'ai travaillé pendant un an comme vendeuse. Comment connaissez-vous notre entreprise ? Je vous suis sur les réseaux sociaux depuis longtemps. Pourquoi vous avez choisi notre offre d'emploi ? Avant tout, parce qu'elle correspond à mes compétences. Et puis... J'aime beaucoup vos produits.",
+      "third_recognition": "Leçon 23, page 143. Passer un entretien. Document A. Je suis M. Vino. Vous allez faire cet entretien avec moi. Comment va se passer l'entretien ? Tout d'abord, vous allez vous présenter, puis je vous poserai quelques questions sur votre parcours. Enfin, je vous parlerai de l'entreprise et du poste. D'accord. Pour commencer, parlez-moi de vous, Madame Brochard. Je suis diplômée d'une licence en commerce. Après mes études, j'ai d'abord fait un stage dans une entreprise de cosmétiques. Ensuite, j'ai travaillé pendant un an comme vendeuse. Comment connaissez-vous notre entreprise ? Je vous suis sur les réseaux sociaux depuis longtemps. Pourquoi vous avez choisi notre offre d'emploi ? Avant tout, parce qu'elle correspond à mes compétences. Et puis... J'aime beaucoup vos produits.",
+      "targeted_readings": [],
+      "source_limitations": [],
+      "human_listening_performed": false
+    },
+    {
+      "exercise_id": "gram-co-entretien-embauche-a2-piste_186",
+      "source_sha256": "8b8555e0a0fc62ce61960f33a5ecc654ee5e669227f7b95a374e54bec3df71f6",
+      "audio": "/lib/audio/grammaire/co/entretien-embauche/a2/piste_186.mp3",
+      "status": "unspelled_name_editorial_spelling",
+      "previous_unresolved_points": [
+        "Orthographe du nom Brochard/Brochar à confirmer."
+      ],
+      "review_note": "Brochard est retrouvé par Turbo et harmonisé avec la piste 179. Nom non épelé : convention de transcription, sans certification d’état civil.",
+      "before_text": "Page 147. Exercice 4.\nJe suis la responsable des ressources humaines et nous sommes ravis de vous accueillir dans l'entreprise, Mme Brochar. Merci. Nous vous proposons un contrat de 35 heures en CDD de 9 mois avec possibilité de CDI. Nous remboursons la moitié de votre carte de transport et nous proposons deux jours de télétravail par semaine. Et pour les congés et le salaire ? Vous avez cinq semaines de congés payés par an et le salaire est de 1754 euros brut, soit environ 1350 euros net.",
+      "after_text": "Page 147. Exercice 4.\nJe suis la responsable des ressources humaines et nous sommes ravis de vous accueillir dans l'entreprise, Mme Brochard. Merci. Nous vous proposons un contrat de 35 heures en CDD de 9 mois avec possibilité de CDI. Nous remboursons la moitié de votre carte de transport et nous proposons deux jours de télétravail par semaine. Et pour les congés et le salaire ? Vous avez cinq semaines de congés payés par an et le salaire est de 1754 euros brut, soit environ 1350 euros net.",
+      "third_recognition": "Page 147. Exercice 4. Je suis la responsable des ressources humaines et nous sommes ravis de vous accueillir dans l'entreprise, Madame Brochard. Merci. Nous vous proposons un contrat de 35 heures en CDD de 9 mois avec possibilité de CDI. Nous remboursons la moitié de votre carte de transport et nous proposons deux jours de télétravail par semaine. Et pour les congés et le salaire ? Vous avez cinq semaines de congés payées par an et le salaire est de 1754 euros bruts, soit environ 1350 euros net.",
+      "targeted_readings": [],
+      "source_limitations": [],
+      "human_listening_performed": false
+    },
+    {
+      "exercise_id": "gram-co-integration-entreprise-a2-piste_194",
+      "source_sha256": "212b41147846d0206445caf8f014cb9509e3fa5047d562bad9734406be3a4a97",
+      "audio": "/lib/audio/grammaire/co/integration-entreprise/a2/piste_194.mp3",
+      "status": "unspelled_name_editorial_spelling",
+      "previous_unresolved_points": [
+        "Nom Bala/Balla non épelé à confirmer."
+      ],
+      "review_note": "Bala est la graphie éditoriale retenue d’après Turbo. Le prénom Laurent et les tâches sont recoupés ; le nom n’est pas épelé.",
+      "before_text": "Page 153. Exercice 4.\nBonjour Laurent, parlez-moi de votre première semaine dans notre entreprise. Qu'est-ce que vous avez fait ? J'ai rencontré mes collègues du service administratif, mais pas encore ceux du service commercial. J'ai mis à jour les contacts, j'ai rangé toutes les factures. J'ai passé une commande pour les fournitures de bureau et j'ai participé à deux réunions de service. Est-ce que vous avez répondu à l'email de Mme Balla ? Non, mais je vais le faire cet après-midi.",
+      "after_text": "Page 153. Exercice 4.\nBonjour Laurent, parlez-moi de votre première semaine dans notre entreprise. Qu'est-ce que vous avez fait ? J'ai rencontré mes collègues du service administratif, mais pas encore ceux du service commercial. J'ai mis à jour les contacts, j'ai rangé toutes les factures. J'ai passé une commande pour les fournitures de bureau et j'ai participé à deux réunions de service. Est-ce que vous avez répondu à l'email de Mme Bala ? Non, mais je vais le faire cet après-midi.",
+      "third_recognition": "Page 153. Exercice 4. Bonjour Laurent. Parlez-moi de votre première semaine dans notre entreprise. Qu'est-ce que vous avez fait? J'ai rencontré mes collègues du service administratif, mais pas encore ceux du service commercial. J'ai mis à jour les contacts, j'ai rangé toutes les factures. J'ai passé une commande pour les fournitures de bureaux et j'ai participé à deux réunions de service. Est-ce que vous avez répondu à l'email de Madame Bala ? Non, mais je vais le faire cet après-midi.",
+      "targeted_readings": [],
+      "source_limitations": [],
+      "human_listening_performed": false
+    }
+  ]
+}

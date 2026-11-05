@@ -13203,6 +13203,60 @@
             "reponse_modele": "Après ses vacances"
           }
         }
+      },
+      {
+        "enonce": "Quel mot affectueux Célia emploie-t-elle à la fin du message ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "points": 1,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Bisous",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Amitiés"
+          },
+          {
+            "id": "c",
+            "texte": "Amicalement"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Bisous"
+          }
+        }
+      },
+      {
+        "enonce": "À qui Célia promet-elle de téléphoner ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "points": 1,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "À la personne qui reçoit sa carte",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "À la personne qui dirige la piscine"
+          },
+          {
+            "id": "c",
+            "texte": "À la personne qui tient le restaurant"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "À la personne qui reçoit sa carte"
+          }
+        }
       }
     ],
     "consigne_supplementaire": null

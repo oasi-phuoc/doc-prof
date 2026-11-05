@@ -264,7 +264,7 @@
           "old_ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-2-4.mp3",
           "source_id": "9782090351958:066:3f7dc91934fc",
           "candidate_cut_id": "9782090351958-066-3f7dc91934fc-r2-d4",
-          "transcription": "Le magasin va fermer ses portes dans 2 minutes. Merci de terminer vos achats et de vous rapprocher des caisses situées au fond du magasin."
+          "transcription": "Le magasin va fermer ses portes dans 20 minutes. Merci de terminer vos achats et de vous rapprocher des caisses automatiques situées au fond du magasin."
         }
       ],
       "resolved_images": [
@@ -293,10 +293,8 @@
       "choices": [
         {
           "id": "a",
-          "texte": "À la caisse de la librairie",
-          "correct": true,
-          "existing_image": null,
-          "asset": "07841704cdc2"
+          "texte": "À l’accueil de la librairie",
+          "correct": true
         },
         {
           "id": "b",
@@ -323,7 +321,7 @@
           "old_ref": "/lib/audio/tcf/co/magasins/magasins-3-1.mp3",
           "source_id": "9782090351958:049:a4431f87ae61",
           "candidate_cut_id": "9782090351958-049-a4431f87ae61-r2-d1",
-          "transcription": "La librairie Les Pages organise un grand jeu pour son anniversaire. Gagner des cadeaux en répondant à deux questions. Le bulletin de participation se trouve à l'accueil de la librairie."
+          "transcription": "La librairie Les Pages organise un grand jeu pour son anniversaire. Gagnez des cadeaux en répondant à deux questions. Le bulletin de participation se trouve à l'accueil de la librairie."
         }
       ],
       "resolved_images": [
@@ -350,10 +348,8 @@
       "choices": [
         {
           "id": "a",
-          "texte": "Le rayon BD",
-          "correct": true,
-          "existing_image": null,
-          "asset": "70b962d3ba7b"
+          "texte": "Le rayon DVD",
+          "correct": true
         },
         {
           "id": "b",
@@ -467,28 +463,33 @@
   ],
   "audio_issues": {
     "tcf-ss-a1-s53-co-3#4": {
-      "status": "pending_source_audio_review",
-      "reason": "La banque attend 12 h 03 ; la transcription préparée annonce 1 h 25. Écouter le candidat et contrôler son alignement avant toute activation."
+      "status": "audio_corrected_pending_image_review",
+      "reason": "Découpe source, transcription et réponses corrigées ; contrôler les images sur les choix actuels.",
+      "audio_correction_report": "docs/tcf/remplacement-audio/corrections-7-divergences-20261105.json"
     },
     "delf-a1-2022-co-ex3-31#3": {
-      "status": "pending_source_audio_review",
-      "reason": "La banque attend 15 h 40 ; la transcription préparée écrit 3 h 40. Vérifier à l’écoute la forme exacte de l’heure et le contexte avant activation."
+      "status": "audio_corrected_pending_image_review",
+      "reason": "Découpe source, transcription et réponses corrigées ; contrôler les images sur les choix actuels.",
+      "audio_correction_report": "docs/tcf/remplacement-audio/corrections-7-divergences-20261105.json"
     },
     "delf-a1-2022-co-85#14": {
-      "status": "pending_source_audio_review",
-      "reason": "La banque attend 11 h 58 ; la transcription préparée écrit 1 h 58. Écouter le candidat et vérifier la reconnaissance de l’heure avant activation."
+      "status": "audio_corrected_pending_image_review",
+      "reason": "Découpe source, transcription et réponses corrigées ; contrôler les images sur les choix actuels.",
+      "audio_correction_report": "docs/tcf/remplacement-audio/corrections-7-divergences-20261105.json"
     },
     "tcf-ss-a2-s3-co-3#6": {
-      "status": "pending_source_audio_review",
-      "reason": "Le mot correspondant au produit dégusté est transcrit « parfétiaux ». Écouter le candidat pour distinguer pâtisseries, pains spéciaux ou une autre formule avant activation."
+      "status": "audio_corrected_pending_image_review",
+      "reason": "Découpe source, transcription et réponses corrigées ; contrôler les images sur les choix actuels.",
+      "audio_correction_report": "docs/tcf/remplacement-audio/corrections-7-divergences-20261105.json"
     },
     "tcf-ss-a2-s3-co-3#3": {
-      "status": "pending_source_audio_review",
-      "reason": "La bonne réponse actuelle est « À la caisse de la librairie » ; la transcription préparée indique « à l’accueil de la librairie ». Écouter le candidat et vérifier son alignement avant de corriger les choix et d’activer les images."
+      "status": "audio_corrected_pending_image_review",
+      "reason": "Découpe source, transcription et réponses corrigées ; contrôler les images sur les choix actuels.",
+      "audio_correction_report": "docs/tcf/remplacement-audio/corrections-7-divergences-20261105.json"
     },
     "tcf-ss-a2-s48-co-3#12": {
-      "status": "pending_source_audio_review",
-      "reason": "La bonne réponse de la banque indique « Le rayon BD » ; la transcription préparée de remplacement dit explicitement « le nouveau rayon DVD ». Écouter le segment avant de choisir les illustrations et de valider la réponse. Aucune correction de réponse ni activation QCM image sans cette vérification.",
+      "status": "audio_corrected_pending_image_review",
+      "reason": "Découpe source, transcription et réponses corrigées ; contrôler les images sur les choix actuels.",
       "source_links": [
         {
           "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-21-4.mp3",
@@ -496,14 +497,17 @@
           "candidate_cut_id": "9782090351958-040-42a9a64a8955-r2-d4",
           "transcription": "La salle informatique est fermée pour travaux. Si vous devez travailler sur les ordinateurs, vous pouvez aller à la bibliothèque. Profitez-en aussi pour visiter le nouveau rayon DVD."
         }
-      ]
+      ],
+      "audio_correction_report": "docs/tcf/remplacement-audio/corrections-7-divergences-20261105.json"
     },
     "tcf-a2j-s2-co-1#13": {
-      "status": "pending_source_audio_review",
-      "reason": "La réponse actuelle indique caisses automatiques, mais le support préparé dit seulement caisses situées au fond du magasin. Vérifier l’alignement et l’audio avant activation ; ne pas ajouter ce qualificatif par l’image."
+      "status": "audio_corrected_pending_image_review",
+      "reason": "Découpe source, transcription et réponses corrigées ; contrôler les images sur les choix actuels.",
+      "audio_correction_report": "docs/tcf/remplacement-audio/corrections-7-divergences-20261105.json"
     }
   },
   "reused_image_usages": 37,
   "retained_text_questions": 5,
-  "pending_audio_questions": 3
+  "pending_audio_questions": 3,
+  "audio_followup": "Les sept divergences sont corrigées ; les trois questions du lot de 57 attendent désormais leurs images adaptées et non une nouvelle recherche audio."
 }
