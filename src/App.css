@@ -4676,15 +4676,36 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-po-images.is-1{grid-template-columns:1fr}
 .tcf-po-images.is-1 .tcf-image{height:60mm}
 .tcf-trois-themes{
-  gap:6mm;flex:1 1 auto;min-height:0;
+  gap:4mm;flex:0 0 auto;min-height:0;
   display:flex;flex-direction:column;justify-content:flex-start
 }
-.tcf-po-theme-block{
-  display:flex;flex-direction:column;gap:4px;justify-content:flex-start;
-  flex:0 0 auto;min-height:0;padding:50px 4mm;border:1.5px solid var(--ink);box-sizing:border-box
+/* Même cadre que les audios CO : bandeau Thème N, nom, images bordées. */
+.tcf-theme-frame{
+  display:flex;flex-direction:column;flex:0 0 auto;min-width:0;width:100%;
+  border:1.5px solid var(--purple);box-sizing:border-box;overflow:hidden;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact
 }
-.tcf-po-theme-block .tcf-po-theme{margin-bottom:26px}
-.tcf-trois-themes .tcf-po-images .tcf-image{height:28mm;object-fit:contain}
+.tcf-theme-frame-head{
+  flex:0 0 auto;height:var(--tcf-audio-head-h, 8mm);box-sizing:border-box;
+  display:flex;align-items:center;padding:0 3mm;
+  background:var(--purple);color:#fff;
+  font-size:calc(9.5pt * var(--app-font-scale, 1));font-weight:800;
+  letter-spacing:.04em;text-transform:uppercase;line-height:1;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact
+}
+.tcf-theme-frame-body{
+  display:flex;flex-direction:column;gap:3mm;min-width:0;
+  padding:var(--tcf-audio-body-pad-y, 2.5mm) var(--tcf-audio-body-pad-x, 3mm) 3mm
+}
+.tcf-theme-frame .tcf-po-theme{
+  margin:0;color:var(--ink);font-weight:700;text-align:left
+}
+.tcf-trois-themes .tcf-po-images{gap:3mm}
+.tcf-trois-themes .tcf-po-images .tcf-image{
+  height:28mm;object-fit:contain;background:#fff;
+  border:2px solid var(--purple);box-sizing:border-box;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact
+}
 .tcf-exemples{margin:2px 0 0;padding:4px 10px 4px 2em;font-size:.88em}
 .tcf-exemples.is-two-cols{columns:2;column-gap:8mm}
 .tcf-exemples.is-two-cols li{break-inside:avoid}

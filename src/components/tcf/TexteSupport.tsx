@@ -373,27 +373,28 @@ export function TexteSupport({ exercise: ex, mode }: { exercise: TcfExercise; mo
       return (
         <div className="tcf-po tcf-trois-themes">
           {ex.support.themes.map((t, i) => (
-            <section key={i} className="tcf-po-theme-block">
-              <p className="tcf-po-theme">
-                Thème {i + 1} : {t.theme}
-              </p>
-              <ul className="tcf-po-images is-4">
-                {t.images.map((src, k) => (
-                  <li key={k}>
-                    <TcfImage src={src} alt="" />
-                  </li>
-                ))}
-              </ul>
-              {mode === 'answers' && t.exemples_questions.some((q) => q.trim()) ? (
-                <ul className="tcf-modele tcf-exemples is-two-cols">
-                  {t.exemples_questions
-                    .filter((q) => q.trim())
-                    .slice(0, 8)
-                    .map((q, k) => (
-                      <li key={k}>{q}</li>
-                    ))}
+            <section key={i} className="tcf-theme-frame">
+              <div className="tcf-theme-frame-head">Thème {i + 1}</div>
+              <div className="tcf-theme-frame-body">
+                <p className="tcf-po-theme">{t.theme}</p>
+                <ul className="tcf-po-images is-4">
+                  {t.images.map((src, k) => (
+                    <li key={k}>
+                      <TcfImage src={src} alt="" />
+                    </li>
+                  ))}
                 </ul>
-              ) : null}
+                {mode === 'answers' && t.exemples_questions.some((q) => q.trim()) ? (
+                  <ul className="tcf-modele tcf-exemples is-two-cols">
+                    {t.exemples_questions
+                      .filter((q) => q.trim())
+                      .slice(0, 8)
+                      .map((q, k) => (
+                        <li key={k}>{q}</li>
+                      ))}
+                  </ul>
+                ) : null}
+              </div>
             </section>
           ))}
         </div>

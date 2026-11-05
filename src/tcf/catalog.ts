@@ -290,7 +290,7 @@ export const TCF_TYPES: readonly TcfTypeMeta[] = [
     typeExercice: 'trois_themes',
     label: '3 thèmes en images : poser des questions',
     description: 'Trois thèmes tirés au hasard, 4 images chacun : l’élève pose des questions à l’examinateur·trice.',
-    instruction: 'Voici trois thèmes. Choisissez un thème et posez des questions à l’examinateur sur ce sujet.',
+    instruction: 'Vous avez 3 thèmes. Posez une question par thème. Aidez-vous avec les images.',
     reponses: [],
   },
   {
