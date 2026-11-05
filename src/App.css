@@ -1313,16 +1313,26 @@ html,body,#root{
   border-color:var(--ink);background:var(--lavender);color:var(--ink);opacity:1
 }
 .a4-frame .worksheet-sheet .draft-grid-chip-margin.tcf-page-chip.off{opacity:1}
-/* Cadre Audio N : le haut des boutons = le haut du texte, sous le bandeau. */
+/* Cadre Audio N : le haut des boutons = le haut du texte, sous le bandeau.
+   Le cadre garde le gap de .tcf-question (6 px) entre le bandeau et le corps,
+   plus la bordure : les boutons en marge doivent descendre d’autant. */
 .exercise-item.layout-tcf:has(.tcf-question.is-audio-frame){
   --tcf-audio-head-h:8mm;
   --tcf-audio-frame-gap:6px;
+  --tcf-audio-head-gap:6px;
+  --tcf-audio-frame-border:1.5px;
   --tcf-audio-body-pad-y:2.5mm;
-  --tcf-audio-body-pad-x:3mm
+  --tcf-audio-body-pad-x:3mm;
+  /* Demi-interligne de l’énoncé (.95em, line-height 1.3) : haut des lettres. */
+  --tcf-audio-text-nudge:calc(0.15 * 0.95 * 13pt * var(--app-font-scale, 1))
 }
 .exercise-item.layout-tcf:has(.tcf-question.is-audio-frame) > .draft-grid-chip-margin.tcf-margin-form-icons,
 .exercise-item.layout-tcf:has(.tcf-question.is-audio-frame) > .draft-grid-chip-margin.tcf-page-chip{
-  top:calc(var(--ex-pad-y) + var(--tcf-audio-frame-gap) + var(--tcf-audio-head-h) + var(--tcf-audio-body-pad-y))
+  top:calc(
+    var(--ex-pad-y) + var(--tcf-audio-frame-gap) + var(--tcf-audio-frame-border)
+    + var(--tcf-audio-head-h) + var(--tcf-audio-head-gap) + var(--tcf-audio-body-pad-y)
+    + var(--tcf-audio-text-nudge)
+  )
 }
 .draft-pad{
   /* 24 colonnes × 5 lignes en 1 col ; on multiplie les lignes par le nombre de colonnes
@@ -4383,9 +4393,9 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 /* Trois moyens : plusieurs questions dans le même cadre. */
 .tcf-audio-cadre-body{gap:8px}
 .tcf-audio-cadre-q{position:relative;display:flex;flex-direction:column;gap:4px}
-/* Plusieurs questions : les 3 formats à gauche, le haut du premier = le haut du texte. */
+/* Plusieurs questions : les 3 formats à gauche, alignés sur le haut des lettres. */
 .a4-frame .worksheet-sheet .tcf-audio-cadre-q > .draft-grid-chip-margin.tcf-margin-form-icons{
-  top:0;left:auto;height:auto;
+  top:var(--tcf-audio-text-nudge, 0);left:auto;height:auto;
   right:calc(100% + var(--tcf-audio-body-pad-x, 3mm) + 1.5px + var(--ex-pad-x) + 2px)
 }
 /* Icônes de format : à droite de la ligne d’énoncé (même hauteur). */
