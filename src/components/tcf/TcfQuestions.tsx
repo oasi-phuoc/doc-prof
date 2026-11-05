@@ -448,8 +448,41 @@ export function AudioCadre({
   )
 }
 
-export function LignesReponse({ nbLignes, texte }: { nbLignes: number; texte?: string }) {
+export function LignesReponse({
+  nbLignes,
+  texte,
+  numerotees = false,
+}: {
+  nbLignes: number
+  texte?: string
+  /** Numéro et trait sur la même ligne. */
+  numerotees?: boolean
+}) {
   const n = Math.max(1, nbLignes)
+  if (numerotees) {
+    const parts = texte?.trim()
+      ? texte
+          .trim()
+          .split(/(?<=[.!?])\s+/)
+          .map((sentence) => sentence.trim())
+          .filter(Boolean)
+      : []
+    return (
+      <ol className="tcf-lignes is-numbered">
+        {Array.from({ length: n }, (_, i) => {
+          const line = parts[i]
+          return (
+            <li key={i}>
+              <span className="tcf-ligne-num">{i + 1}.</span>
+              <span className={`answer-line-field tcf-ligne${line ? ' filled is-plain' : ''}`}>
+                {line ?? ''}
+              </span>
+            </li>
+          )
+        })}
+      </ol>
+    )
+  }
   const answer = texte?.trim()
   if (answer) {
     return (

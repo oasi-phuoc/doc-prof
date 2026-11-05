@@ -401,16 +401,18 @@ export function tcfExerciseItems(
           : ex.type_exercice === 'question_texte'
             ? ex.support.email
             : undefined
+      const lignesNumerotees = ex.type_exercice === 'question_texte' && ex.support.numeroter_lignes === true
       return [
         support(),
         scoredItem({
           kind: 'ecriture',
-          cadre: email ? 'email' : 'message',
+          cadre: lignesNumerotees ? undefined : email ? 'email' : 'message',
           email,
           consigneSupplementaire: consigneSupp,
           nbMots: ex.support.nb_mots,
-          nbLignes: linesForWords(ex.support.nb_mots, fallback),
+          nbLignes: lignesNumerotees ? 8 : linesForWords(ex.support.nb_mots, fallback),
           reponseModele: ex.support.reponse_modele,
+          lignesNumerotees,
         }),
       ]
     }
