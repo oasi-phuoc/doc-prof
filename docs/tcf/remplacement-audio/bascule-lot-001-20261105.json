@@ -1,0 +1,1824 @@
+{
+  "batch": 1,
+  "audio_replacements": [
+    {
+      "ref": "/lib/audio/tcf/co/fetes/21-fêtes-ouf-c-est-bon.mp3",
+      "previous_sha256": "c659a1fa55c01a88998510de19ee083bd301bfed3553f88b81ee6831750b15a1",
+      "candidate_sha256": "803a897b70f18aea722cf1bd20d317b52728ed8512ac3ca0ac48ca2f823f64ac",
+      "rollback_git_blob": "0f12e406f58bba50753c07863c8f4160a16bcc5c",
+      "source_id": "grammar-import-20261104:file_00000000811881f49306b9d2bdb362e1",
+      "source_sha256": "d229e02382291145c702ed437e08db4a3345b84320f00ff6b1d2a6b0de74b760",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "803a897b70f18aea722cf1bd20d317b52728ed8512ac3ca0ac48ca2f823f64ac",
+        "duration": 40.359184,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-reconciliation-20261104/grammar-cuts-work/staged-boundaries-work/run-20261104T173647-72bb8e1e94/manifest.json",
+          "manifest_sha256": "eae4f993989dcf3336c7909455fcd865c1a7a02b40bcb3b561ed7640a4a15986",
+          "lossless_sha256": "3826aed8ad830960435bdcfec096271f0d280816ef46b4acec75f0121496f5f9"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.29,
+          "trailing_quiet_seconds": 0.03,
+          "relative_rms_threshold": 0.0079064,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "editorial_reason": "Le texte de la source préparée et celui du support sont équivalents ; questions et réponses précédemment auditées conservées. La validation du MP3 final reste distincte.",
+      "previous_duration": 42.7,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/maison/bonjour-etes-norin-1.mp3",
+      "previous_sha256": "3d8d64a745af711da410175dd937b469b455f88a439240b3d27942771eebef4f",
+      "candidate_sha256": "50b44bc8794f6daa6891f58554d2e8983bc84f92c17089eef38da742eb629b04",
+      "rollback_git_blob": "ed48997fcda540fa6df5960e61a212296e405c89",
+      "source_id": "grammar-import-20261104:file_000000003d3082469938e17e57e3ae7b",
+      "source_sha256": "3d8d64a745af711da410175dd937b469b455f88a439240b3d27942771eebef4f",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "50b44bc8794f6daa6891f58554d2e8983bc84f92c17089eef38da742eb629b04",
+        "duration": 20.323265,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-reconciliation-20261104/grammar-cuts-work/staged-boundaries-work/run-20261104T173554-40d5cfa1c6/manifest.json",
+          "manifest_sha256": "5d0b1259a496d4d84581e7d2ffc85fe54a1d452fff7aa1741d5c585b62874b89",
+          "lossless_sha256": "1036dcca42edb7e840e38207e21000a368857aa71c8ba4d9f15ca6a1a4dac400"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.34,
+          "trailing_quiet_seconds": 0.45,
+          "relative_rms_threshold": 0.00745,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "editorial_reason": "Le texte de la source préparée et celui du support sont équivalents ; questions et réponses précédemment auditées conservées. La validation du MP3 final reste distincte.",
+      "previous_duration": 27.62,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/travail/mesdames-messieurs-1.mp3",
+      "previous_sha256": "1618884d9791c574b877cb826abd5c3e4052db6b6215b3199e99a45e6532552b",
+      "candidate_sha256": "c24588327fe09331566924d40c327ce53312df7d53913cdbe7290d431cfe1c70",
+      "rollback_git_blob": "7045def09f4d1f244f4cba3aa1b3909ab718d873",
+      "source_id": "grammar-import-20261104:file_00000000fb448210aaf1bc830a1ae7c8",
+      "source_sha256": "da3695888748fc164f40bbe6ff5b482fae4f97cbb664bddde98fc9948ebab94b",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "c24588327fe09331566924d40c327ce53312df7d53913cdbe7290d431cfe1c70",
+        "duration": 20.636735,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-reconciliation-20261104/grammar-cuts-work/staged-boundaries-work/run-20261104T173555-63484edadb/manifest.json",
+          "manifest_sha256": "81a29501a74543237d4b4cb941f0d292ab2ba84d0a0f4599e67e885f706d5cda",
+          "lossless_sha256": "77e8fba8f1305f8ac6d2a4cb474de4c99a1bc4e7b3299852b679d1cb23da6203"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.27,
+          "trailing_quiet_seconds": 0.45,
+          "relative_rms_threshold": 0.0049205,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "editorial_reason": "Le texte de la source préparée et celui du support sont équivalents ; questions et réponses précédemment auditées conservées. La validation du MP3 final reste distincte.",
+      "previous_duration": 20.77,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-avez-plan-1.mp3",
+      "previous_sha256": "4cbeb186079404bd1a1e6204c8ed875d513f264e62d7e8bf99390f67bdb129b6",
+      "candidate_sha256": "1dbae0286d71ba426221aedc6f5f705c095300069cbd689def794d3d0b06e5b7",
+      "rollback_git_blob": "3d798384562b865cc987e1cb0355fd5614ef9e61",
+      "source_id": "grammar-import-20261104:file_00000000d5e08246b026618889e12bc3",
+      "source_sha256": "4cbeb186079404bd1a1e6204c8ed875d513f264e62d7e8bf99390f67bdb129b6",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "1dbae0286d71ba426221aedc6f5f705c095300069cbd689def794d3d0b06e5b7",
+        "duration": 42.527347,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-reconciliation-20261104/grammar-cuts-work/staged-boundaries-work/run-20261104T173654-b859de2e2b/manifest.json",
+          "manifest_sha256": "1f4bcec15c7ea57111158849e98ca38e341fc97501922ebffb1ca5ac529a783f",
+          "lossless_sha256": "a527fe4934bf8257a9ab7963921a7d2964e5a9f9e1941b8db35911327a971647"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.33,
+          "trailing_quiet_seconds": 0.14,
+          "relative_rms_threshold": 0.0080018,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "editorial_reason": "Le texte de la source préparée et celui du support sont équivalents ; questions et réponses précédemment auditées conservées. La validation du MP3 final reste distincte.",
+      "previous_duration": 51.45,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-quelle-votre-destination-1.mp3",
+      "previous_sha256": "7900c342a9b38bfc4231d3a1f7bd0ec60fc58fd6d76f8f3c3d672a814f24f156",
+      "candidate_sha256": "6ff497998862e123c4f0a6ff5d20293f095b4184a2c6a2a816d031477c38d80d",
+      "rollback_git_blob": "0e6d703d39edf08ef21130c83d26ce523e4d0f1b",
+      "source_id": "grammar-import-20261104:file_000000007cdc820abd89c7badb9a6d44",
+      "source_sha256": "f941273c7f8d893d0636850e99df08301aa4bf5e108fb81c701755a22aa0e872",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "6ff497998862e123c4f0a6ff5d20293f095b4184a2c6a2a816d031477c38d80d",
+        "duration": 54.386939,
+        "category": "long",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-reconciliation-20261104/grammar-cuts-work/staged-boundaries-work/run-20261104T173737-23f571e33c/manifest.json",
+          "manifest_sha256": "4a039e7cdb730c722a1c2903d29e30c156750292e0fd7144e9ee0f47626e50aa",
+          "lossless_sha256": "f2dbd0bfdc5f876fab667f7daf7d6f2bd248d2a5bca0ab12d2ae4d7ff93f4d19"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.2,
+          "trailing_quiet_seconds": 0.1,
+          "relative_rms_threshold": 0.0069754,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "editorial_reason": "Le texte de la source préparée et celui du support sont équivalents ; questions et réponses précédemment auditées conservées. La validation du MP3 final reste distincte.",
+      "previous_duration": 56.82,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-viens-reparer-1.mp3",
+      "previous_sha256": "e1c49f412e010e7ec5d653f7969d649e33f265445120a7fab93a172d3d767866",
+      "candidate_sha256": "11acf70be6179630441f16444d6dc9d8afd0e913e142da4108ef85d87568ec97",
+      "rollback_git_blob": "8c162c2c6f36166a0a6f725d9407cde6bef6c792",
+      "source_id": "grammar-import-20261104:file_00000000d5dc824683161543be3bef8f",
+      "source_sha256": "e1c49f412e010e7ec5d653f7969d649e33f265445120a7fab93a172d3d767866",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "11acf70be6179630441f16444d6dc9d8afd0e913e142da4108ef85d87568ec97",
+        "duration": 21.96898,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-reconciliation-20261104/grammar-cuts-work/staged-boundaries-work/run-20261104T173616-defd2376cf/manifest.json",
+          "manifest_sha256": "79d1548f80cf7b92f1a4dce1d4f48641dec3d45f7a7b9357cc5e3a6899d847ce",
+          "lossless_sha256": "a448b428f609ace5a5306680351289f49c9173ae72ce102c9939fca77a754994"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.29,
+          "trailing_quiet_seconds": 0.06,
+          "relative_rms_threshold": 0.0076259,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "editorial_reason": "Le texte de la source préparée et celui du support sont équivalents ; questions et réponses précédemment auditées conservées. La validation du MP3 final reste distincte.",
+      "previous_duration": 29.37,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/d-habitude-fais-quoi-week-1.mp3",
+      "previous_sha256": "b02a4b95102e78d977a5a52f830f684452daa1d41654c9822678bfa85ce21594",
+      "candidate_sha256": "369a78fb045fb7f00fc6d752fa1fea65212cb524f903db50fb0b90e86698a67c",
+      "rollback_git_blob": "995dbbfee7eb0dae3fc3a68c4d92844995d51f8e",
+      "source_id": "grammar-import-20261104:file_00000000d4cc824684ca4d8f107d4e65",
+      "source_sha256": "b02a4b95102e78d977a5a52f830f684452daa1d41654c9822678bfa85ce21594",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "369a78fb045fb7f00fc6d752fa1fea65212cb524f903db50fb0b90e86698a67c",
+        "duration": 17.266939,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-reconciliation-20261104/grammar-cuts-work/staged-boundaries-work/run-20261104T173527-5206af6bd4/manifest.json",
+          "manifest_sha256": "f8e2aa346f92277da6b769010a2294031a3ec9dcbbb193556ff8c8801d6b83e8",
+          "lossless_sha256": "a64e4c21f626f9c4487068ef9860fc582c704c349226505e58f8c36c73e9bd15"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.29,
+          "trailing_quiet_seconds": 0.52,
+          "relative_rms_threshold": 0.0091078,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "editorial_reason": "Le texte de la source préparée et celui du support sont équivalents ; questions et réponses précédemment auditées conservées. La validation du MP3 final reste distincte.",
+      "previous_duration": 24.22,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/excusez-moi-pourriez-m-aider-1.mp3",
+      "previous_sha256": "82294031151a6155568b1fe3b04ee188b4f14328bbd526a8c7e8d49415359579",
+      "candidate_sha256": "6c6b46f1126dfe862c374c4071ecf6e32c02ad3868f902029ba9e08a40d1fe79",
+      "rollback_git_blob": "c748857ecee2bcaded04ba919d3dc6161d13e5e1",
+      "source_id": "grammar-import-20261104:file_00000000307081f4993201064efffbb9",
+      "source_sha256": "82294031151a6155568b1fe3b04ee188b4f14328bbd526a8c7e8d49415359579",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "6c6b46f1126dfe862c374c4071ecf6e32c02ad3868f902029ba9e08a40d1fe79",
+        "duration": 53.498776,
+        "category": "long",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-reconciliation-20261104/grammar-cuts-work/staged-boundaries-work/run-20261104T173739-5a0a70fb6e/manifest.json",
+          "manifest_sha256": "9a15636de7d522b3ca1396e5cf5721f5958a37c702df37719f8a357a22e12a18",
+          "lossless_sha256": "7849bb1ee8aa19b492af19310f37de5c2f872a2312016d8bb18e16a7ffc595f8"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.26,
+          "trailing_quiet_seconds": 0.04,
+          "relative_rms_threshold": 0.0077601,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "editorial_reason": "Le texte de la source préparée et celui du support sont équivalents ; questions et réponses précédemment auditées conservées. La validation du MP3 final reste distincte.",
+      "previous_duration": 68.12,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/hotel-plage.mp3",
+      "previous_sha256": "fa81585c172d36efe9c3360b38ae741aad0771e6ad0f80d8f6f04c3eb3961272",
+      "candidate_sha256": "6be585ecf970f115126c15d7bd956b6e8f0cfa5cf4209ed06771ac92bc7e0e3e",
+      "rollback_git_blob": "a4de696d7d9d569642805ba521616c0013a80cc5",
+      "source_id": "grammar-import-20261104:file_00000000a18081f4af4d07fed0fa3e6c",
+      "source_sha256": "c207d35f521e947d900304cfacb0d75b99fdcbfce1d2cab9ec89bc7c64615289",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "6be585ecf970f115126c15d7bd956b6e8f0cfa5cf4209ed06771ac92bc7e0e3e",
+        "duration": 13.844898,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-reconciliation-20261104/grammar-cuts-work/staged-boundaries-work/run-20261104T173508-74d634be8c/manifest.json",
+          "manifest_sha256": "b28372bbb18c6764d45edaa93edfe4ca2ae1d2c68c99d43f783c949e41b26401",
+          "lossless_sha256": "89a9f09d62cd48f72b3f081b8a296cc96ed7c67af79c03fe77f46ddeb42f6272"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.26,
+          "trailing_quiet_seconds": 0.33,
+          "relative_rms_threshold": 0.0051374,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "editorial_reason": "Le texte de la source préparée et celui du support sont équivalents ; questions et réponses précédemment auditées conservées. La validation du MP3 final reste distincte.",
+      "previous_duration": 14.24,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/lea-j-ai-question-c-est-1.mp3",
+      "previous_sha256": "a5051fdae66b75db1064395636b54eb198073fe39961615c15a69bf4679016bb",
+      "candidate_sha256": "9ef7525525a9294f91d6e81e803742694a44ffa2f8c797fe28fa51f81ee9990b",
+      "rollback_git_blob": "757e18568e5a2330a8e3f24df6c751b0517a91d0",
+      "source_id": "grammar-import-20261104:file_000000003e5c81f999577d20a8e173ab",
+      "source_sha256": "1a5def43a1376c8d0694be74dd5acfdd0980140d347995cc5a6b3b46f3b7b947",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "9ef7525525a9294f91d6e81e803742694a44ffa2f8c797fe28fa51f81ee9990b",
+        "duration": 51.461224,
+        "category": "long",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-reconciliation-20261104/grammar-cuts-work/staged-boundaries-work/run-20261104T173718-788c5542dd/manifest.json",
+          "manifest_sha256": "8a35ea7d0c5dcf3f39343a35fa29e83ba546738b92c8441279f308b001c778e4",
+          "lossless_sha256": "c089f4ff3bcbab0c76eb9a5310d16cd0990dc653debdba8a6fa3faf9beaa20c4"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.24,
+          "trailing_quiet_seconds": 0.18,
+          "relative_rms_threshold": 0.0064044,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "editorial_reason": "Le texte de la source préparée et celui du support sont équivalents ; questions et réponses précédemment auditées conservées. La validation du MP3 final reste distincte.",
+      "previous_duration": 54.1,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/nous-sommes-aujourd-hui-maison-1.mp3",
+      "previous_sha256": "f0ef4f6d411092565276cbab8fc09ca335c9a935c277520e7c3cccbf59b34e7a",
+      "candidate_sha256": "7d5dbf1ca76538bb0b28a7ca2bd35d82a2846a04af65347a7c285d7a14271e08",
+      "rollback_git_blob": "c5c8913f8a507e7d78388e01dc9f5942762f8918",
+      "source_id": "grammar-import-20261104:file_00000000f61081f49ea299886cf3c8a6",
+      "source_sha256": "f0ef4f6d411092565276cbab8fc09ca335c9a935c277520e7c3cccbf59b34e7a",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "7d5dbf1ca76538bb0b28a7ca2bd35d82a2846a04af65347a7c285d7a14271e08",
+        "duration": 15.595102,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-reconciliation-20261104/grammar-cuts-work/staged-boundaries-work/run-20261104T173515-341bc977b9/manifest.json",
+          "manifest_sha256": "a43bd9f1d1f44c44d94c63aa311781a34e5c84d62dcc93c820d4aa3ece68480a",
+          "lossless_sha256": "683171ceaf9ab8dd913270e6db5eaf56a75bc271d5a4a688f012dc05a79c9ea3"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.24,
+          "trailing_quiet_seconds": 0.64,
+          "relative_rms_threshold": 0.0086528,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "editorial_reason": "Le texte de la source préparée et celui du support sont équivalents ; questions et réponses précédemment auditées conservées. La validation du MP3 final reste distincte.",
+      "previous_duration": 22.34,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/sacha-retard-1.mp3",
+      "previous_sha256": "5b8903e5d23c92796d506cdcf26346871b6e2630e40bc70c84c368f2b7864c5a",
+      "candidate_sha256": "1579c7a8018e5182f5a9e16d6dabbbfa58dffdfe484108f6a78cee2f1c33104c",
+      "rollback_git_blob": "3427209a435198a546db0ef04102cc2a2f8aab29",
+      "source_id": "grammar-import-20261104:file_0000000048b481f49ad4fb2fb8bc95e4",
+      "source_sha256": "03761631a6c22581d0c743e0391c477f2ee45b8194a4471c7414c593745a3956",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "1579c7a8018e5182f5a9e16d6dabbbfa58dffdfe484108f6a78cee2f1c33104c",
+        "duration": 61.44,
+        "category": "long",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-reconciliation-20261104/grammar-cuts-work/staged-boundaries-work/run-20261104T173801-2cdeca5a42/manifest.json",
+          "manifest_sha256": "5022a4225434437c9e39cd351bcf14e88d3e68a3435c4442bfc37123927054d7",
+          "lossless_sha256": "df43835427d17cdf4b92507c459afcd9a6b2319050c02c163a467fd44189a6b8"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.35,
+          "trailing_quiet_seconds": 0.05,
+          "relative_rms_threshold": 0.0084395,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "editorial_reason": "Le texte de la source préparée et celui du support sont équivalents ; questions et réponses précédemment auditées conservées. La validation du MP3 final reste distincte.",
+      "previous_duration": 67.27,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/salut-lea-1.mp3",
+      "previous_sha256": "10f53ed4d1e4928e92f7b374266612afd9b38cda3bc3bfa974048e60c79190a8",
+      "candidate_sha256": "baa5d73085ff922381b56332e02822ffef8ede1321b84b7907878ee40d2d995f",
+      "rollback_git_blob": "b6ceae1b1aa6c0eb9f2e8a7fc965e6e2265d00af",
+      "source_id": "grammar-import-20261104:file_00000000926881f48f9f77d59fada574",
+      "source_sha256": "10f53ed4d1e4928e92f7b374266612afd9b38cda3bc3bfa974048e60c79190a8",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "baa5d73085ff922381b56332e02822ffef8ede1321b84b7907878ee40d2d995f",
+        "duration": 17.763265,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-reconciliation-20261104/grammar-cuts-work/staged-boundaries-work/run-20261104T173529-16eeffa10d/manifest.json",
+          "manifest_sha256": "ec0a95807c1ddca6017ead3d6726697598bc3989f91dc5bf0c1f7405a3bb6fae",
+          "lossless_sha256": "97177ce310d3480929aab93aa93abe0388adf962971f2f240e65169b821f9e80"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.3,
+          "trailing_quiet_seconds": 0.25,
+          "relative_rms_threshold": 0.0041403,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "editorial_reason": "Le texte de la source préparée et celui du support sont équivalents ; questions et réponses précédemment auditées conservées. La validation du MP3 final reste distincte.",
+      "previous_duration": 24.38,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-objet-8.mp3",
+      "previous_sha256": "24ac4f2dc582ef7607b3bbe616a88225c0c82c24890229c175ab956538ff4920",
+      "candidate_sha256": "cf5cdd80a18875c5b28713aed9e8fd8533c8efc11790e3b1aeb88d3395725bbe",
+      "rollback_git_blob": "c01ea8e1a13fef27d4d87381b959945453070b5d",
+      "source_id": "grammar-import-20261104:file_00000000ec2081f4871fe083626bc098",
+      "source_sha256": "00017c995b4ef743c4633ff09aaa161fc60e080aaef1ea6a74d78b86b1fdc853",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "cf5cdd80a18875c5b28713aed9e8fd8533c8efc11790e3b1aeb88d3395725bbe",
+        "duration": 13.426939,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-reconciliation-20261104/grammar-cuts-work/staged-boundaries-work/run-20261104T173507-071b06460c/manifest.json",
+          "manifest_sha256": "c9d1d09a6580372d605959046fca8fcf87c49842baee08cd5ece3c4535c18213",
+          "lossless_sha256": "65cd40dc6805aff3e6dd83f47285f42b303eae0f5f946a501b7d387a63d642a8"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.24,
+          "trailing_quiet_seconds": 0.49,
+          "relative_rms_threshold": 0.0069608,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "editorial_reason": "Le texte de la source préparée et celui du support sont équivalents ; questions et réponses précédemment auditées conservées. La validation du MP3 final reste distincte.",
+      "previous_duration": 13.58,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/bibliotheque/01-bibliothèque-chercher-méthode-apprendre-chinois.mp3",
+      "previous_sha256": "e432beb7882ff19efaa3f823465b31450b5dd205880f54c02cfe9bc7917c9c72",
+      "candidate_sha256": "dd8d0786c62d17eae582995b2a9cff3e1cddf684676727798fb161252ffd9c8a",
+      "rollback_git_blob": "b650daa5646ae6d8658db748de37c47464132a09",
+      "source_id": "delf_a1_2022:091:bc958dd86318",
+      "source_sha256": "bc958dd86318eaa9aa156954124a67a979ce75aa073a78e4b3c301e27c2f369e",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "dd8d0786c62d17eae582995b2a9cff3e1cddf684676727798fb161252ffd9c8a",
+        "duration": 13.348571,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111826-a98711ca04/manifest.json",
+          "manifest_sha256": "c5d45611cecfa207e2f27a1a08089602bef363991b699a07ba6976eaaffa99c0",
+          "lossless_sha256": "e5087b1fdc044daa3f911793d1662e779341999fd7797d25a9178730041bd6ce"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.28,
+          "trailing_quiet_seconds": 0.17,
+          "relative_rms_threshold": 0.0123577,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "unchanged_text_and_two_exact_final_file_recognitions",
+      "editorial_reason": null,
+      "previous_duration": 14.91,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/bibliotheque/02-bibliothèque-fermeture-exceptionnelle.mp3",
+      "previous_sha256": "59123eb31c120d169608794ae4f60fe81d8c8eb44714332aee55fd6fae91a11c",
+      "candidate_sha256": "f625fac67a38c86bf2aee56ad7116f2caabc2a7e86fbe39ff729b45db7c39cb6",
+      "rollback_git_blob": "d0113ba8a994fdb6982bcc66f565fa3e81b3fc68",
+      "source_id": "delf_a1_2022:091:bc958dd86318",
+      "source_sha256": "bc958dd86318eaa9aa156954124a67a979ce75aa073a78e4b3c301e27c2f369e",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "f625fac67a38c86bf2aee56ad7116f2caabc2a7e86fbe39ff729b45db7c39cb6",
+        "duration": 14.08,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111826-a98711ca04/manifest.json",
+          "manifest_sha256": "c5d45611cecfa207e2f27a1a08089602bef363991b699a07ba6976eaaffa99c0",
+          "lossless_sha256": "919398663ce4ec522c21d2089315f8968ca3e6631f3f846a14238ef996f9d254"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.1,
+          "trailing_quiet_seconds": 0.15,
+          "relative_rms_threshold": 0.012026,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "unchanged_text_and_two_exact_final_file_recognitions",
+      "editorial_reason": null,
+      "previous_duration": 16.18,
+      "previous_pool": {
+        "tag": "court",
+        "questions": 2
+      },
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/ecole/04-école-oublier-le-livre-de-math.mp3",
+      "previous_sha256": "d87d8371a9e43bb005ab22b58f5b05d3088591290ba730ba5030666580e940f9",
+      "candidate_sha256": "2ea1a008fdbacd0f7c21c96d83108e39ff33241e78d91aa75b1f9c9a4cbd9a44",
+      "rollback_git_blob": "67bd61c650e4e4649b300753098a8c2ab761f8bf",
+      "source_id": "09035276:058:0e9049761456",
+      "source_sha256": "0e9049761456e21a61568a37b8c4c398f00e3eefaa3035bb89f0abe9a6e5d5de",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "2ea1a008fdbacd0f7c21c96d83108e39ff33241e78d91aa75b1f9c9a4cbd9a44",
+        "duration": 10.318367,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T013643-5682a77997/manifest.json",
+          "manifest_sha256": "a0f57703906d2350126b37b131c1fb1fffbc0a13bae907fa4a450384facdf204",
+          "lossless_sha256": "1af37ec3ad9cf2cf97d300f70597e0d9d48fa46e6878850963289d882781fded"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.21,
+          "trailing_quiet_seconds": 0.36,
+          "relative_rms_threshold": 0.0051586,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "unchanged_text_and_two_exact_final_file_recognitions",
+      "editorial_reason": null,
+      "previous_duration": 11.59,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/ecole/05-école-redonner-le-livre-d-anglais.mp3",
+      "previous_sha256": "72cd94909a1f6ba1088131ae8e6368b64ce6aefbe1361426d5862bfac33d7155",
+      "candidate_sha256": "07246986d362089c03546a5b855ed3c7dd03244fbd7eb26e4b87adc4be114864",
+      "rollback_git_blob": "861f109afd86802123f23c9776a48f8d7d6ef529",
+      "source_id": "09035276:058:0e9049761456",
+      "source_sha256": "0e9049761456e21a61568a37b8c4c398f00e3eefaa3035bb89f0abe9a6e5d5de",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "07246986d362089c03546a5b855ed3c7dd03244fbd7eb26e4b87adc4be114864",
+        "duration": 8.306939,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T013643-5682a77997/manifest.json",
+          "manifest_sha256": "a0f57703906d2350126b37b131c1fb1fffbc0a13bae907fa4a450384facdf204",
+          "lossless_sha256": "996f60291e7b5d5e355df38011cf46582397b8b10a80df39ab692027734a00cd"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.38,
+          "trailing_quiet_seconds": 0.17,
+          "relative_rms_threshold": 0.00687,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "unchanged_text_and_two_exact_final_file_recognitions",
+      "editorial_reason": null,
+      "previous_duration": 9.18,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/ecole/08-école-aller-en-salle-d-informatique.mp3",
+      "previous_sha256": "e4231d622b4793f530279d3e6384f3b6d6f0d70a299d1af4ae7a9a5a102c399f",
+      "candidate_sha256": "99ba246771a9fcf0ae85def9a6a68b20bbe537ada52c6924931b332c58b8c75f",
+      "rollback_git_blob": "540d76ffb328954cd52d77f28e8aabdd012fe9c8",
+      "source_id": "09035276:058:0e9049761456",
+      "source_sha256": "0e9049761456e21a61568a37b8c4c398f00e3eefaa3035bb89f0abe9a6e5d5de",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "99ba246771a9fcf0ae85def9a6a68b20bbe537ada52c6924931b332c58b8c75f",
+        "duration": 5.433469,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T013643-5682a77997/manifest.json",
+          "manifest_sha256": "a0f57703906d2350126b37b131c1fb1fffbc0a13bae907fa4a450384facdf204",
+          "lossless_sha256": "f7bb0c5c724ece14b1ad59aa418aae89a66f2c0f147513ff0099f9ba8e11f5fb"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.26,
+          "trailing_quiet_seconds": 0.09,
+          "relative_rms_threshold": 0.0061936,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "unchanged_text_and_two_exact_final_file_recognitions",
+      "editorial_reason": null,
+      "previous_duration": 6.21,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/ecole/09-école-bus-attend-les-élèves.mp3",
+      "previous_sha256": "af06f43b52009d23460f2daf1d7d15d037b1e61b376425aa51e6e15269e761eb",
+      "candidate_sha256": "eb33da837b5f63c93a4bced81f4f5d4b43c1fa9ca5e66f8377dde368e7a420c9",
+      "rollback_git_blob": "b4730227aa02db142716c66b6ee479e35f5c4c54",
+      "source_id": "09035276:062:49e69d6e5e7f",
+      "source_sha256": "49e69d6e5e7f1ad02fd4093c610c815a9f0cd625d294f42bf850c4f95f051785",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "eb33da837b5f63c93a4bced81f4f5d4b43c1fa9ca5e66f8377dde368e7a420c9",
+        "duration": 6.870204,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T013613-9875b8d946/manifest.json",
+          "manifest_sha256": "357a9aa097d313ef8c7e9a5eed768866dcbe20019d38a8607165e1845946d55a",
+          "lossless_sha256": "5319c08d85b101770790c7dca7df3945471f75cfff46fd61c69b52d808236da7"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.31,
+          "trailing_quiet_seconds": 0.36,
+          "relative_rms_threshold": 0.00833,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "unchanged_text_and_two_exact_final_file_recognitions",
+      "editorial_reason": null,
+      "previous_duration": 7.75,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/ecole/12-école-prêter-le-dictionnaire.mp3",
+      "previous_sha256": "947ab189a97ea2d97668e3bf14098a612a9acbc06481b762cc7586822b7989af",
+      "candidate_sha256": "8cc95cfcd188cae46a196af4c1b186da419867562068a9cca6d3c1835bed5444",
+      "rollback_git_blob": "7d34aefe2e0b723df4d5090ddde613d9dd0a9a15",
+      "source_id": "09035276:062:49e69d6e5e7f",
+      "source_sha256": "49e69d6e5e7f1ad02fd4093c610c815a9f0cd625d294f42bf850c4f95f051785",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "8cc95cfcd188cae46a196af4c1b186da419867562068a9cca6d3c1835bed5444",
+        "duration": 5.276735,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T013613-9875b8d946/manifest.json",
+          "manifest_sha256": "357a9aa097d313ef8c7e9a5eed768866dcbe20019d38a8607165e1845946d55a",
+          "lossless_sha256": "c9c04f360fcbbadca774d3b7ff9d0b0dd0e705cd947d7678c49947ea4a246066"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.39,
+          "trailing_quiet_seconds": 0.2,
+          "relative_rms_threshold": 0.0052946,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "unchanged_text_and_two_exact_final_file_recognitions",
+      "editorial_reason": null,
+      "previous_duration": 6.47,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/ecole/15-école-aller-au-cours-de-dessin.mp3",
+      "previous_sha256": "6ba101002697c8275124b0d82f9b7b92f1cb5590c6705a9bea05630e220153f0",
+      "candidate_sha256": "ba78a2314fc445613657fbd7d03c43f33df4186b90eb2c085ebb6ed8b4651530",
+      "rollback_git_blob": "d6bdc416ecb8046394abfed8e3cf9c142aefdc27",
+      "source_id": "09035276:067:0f32d1f3511b",
+      "source_sha256": "0f32d1f3511bd0b4fa2c948360659d83e41f8c963ee11a2262080ee74ce087eb",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "ba78a2314fc445613657fbd7d03c43f33df4186b90eb2c085ebb6ed8b4651530",
+        "duration": 5.355102,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T013608-6ee3505d79/manifest.json",
+          "manifest_sha256": "76d5ea7916215452153beedb0af326dc6c73535a50d0ceb4257675fc954635e8",
+          "lossless_sha256": "8c701d4bb5d9426e7664bdc72e3b11cccdeeaddf8d0834b358cfc9af800c62d8"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.25,
+          "trailing_quiet_seconds": 0.25,
+          "relative_rms_threshold": 0.0054933,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "unchanged_text_and_two_exact_final_file_recognitions",
+      "editorial_reason": null,
+      "previous_duration": 6.38,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/ecole/22-école-menu-viande-au-restaurant.mp3",
+      "previous_sha256": "c2ce00f96f27e0d8cac33a9ebfcbc01b768bc87b26cf4510cee9a31c43e4c8f4",
+      "candidate_sha256": "fdc2869a2ac5577a8e9f22a2de98395375162cd542eeed5362f90dfa074cc76b",
+      "rollback_git_blob": "4f613401c05ce19549c44e9c6e6942882d567837",
+      "source_id": "delf_a1_2022:096:c780e82fd1ad",
+      "source_sha256": "c780e82fd1ad409770881d0b1443896eb513939f93f45b0c2a96486f2a31075c",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "fdc2869a2ac5577a8e9f22a2de98395375162cd542eeed5362f90dfa074cc76b",
+        "duration": 14.733061,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111838-3a9a8cd2a4/manifest.json",
+          "manifest_sha256": "d6d053b4775d3f54a5a363c5efdfa3eb92dfb8e4687ba9da97978d38d1c64f8a",
+          "lossless_sha256": "32625a6d0144ca1b617702fb0b1c12b0d5021d14c31156de70d651a7d7f3331d"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.32,
+          "trailing_quiet_seconds": 0.49,
+          "relative_rms_threshold": 0.0131939,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "unchanged_text_and_two_exact_final_file_recognitions",
+      "editorial_reason": null,
+      "previous_duration": 15.78,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/ecole/24-école-ne-pas-comprendre-l-exercice.mp3",
+      "previous_sha256": "30a5c63d175f402a1c5628b760427a737996968f3fa7338b8bb51021f68dbf0d",
+      "candidate_sha256": "7dcfafe0871e44ff43efcb445e7a87c87477c54c6ddc3b524bef96f08f7443c2",
+      "rollback_git_blob": "9deaa0fe72e367f85c5a9073c997de877274c2a8",
+      "source_id": "delf_a1_2022:096:c780e82fd1ad",
+      "source_sha256": "c780e82fd1ad409770881d0b1443896eb513939f93f45b0c2a96486f2a31075c",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "7dcfafe0871e44ff43efcb445e7a87c87477c54c6ddc3b524bef96f08f7443c2",
+        "duration": 13.609796,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111838-3a9a8cd2a4/manifest.json",
+          "manifest_sha256": "d6d053b4775d3f54a5a363c5efdfa3eb92dfb8e4687ba9da97978d38d1c64f8a",
+          "lossless_sha256": "0513c939db581da1f4eb01eca07076484c271679581d062ef6bc60d6e473073f"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.26,
+          "trailing_quiet_seconds": 0.14,
+          "relative_rms_threshold": 0.0122361,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "unchanged_text_and_two_exact_final_file_recognitions",
+      "editorial_reason": null,
+      "previous_duration": 15.73,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/ecole/46-école-rendez-vous-professeur-de-français.mp3",
+      "previous_sha256": "800c8cb7d2f6279db932e23f806911249794ee6284907d326731e5d6e50faeb8",
+      "candidate_sha256": "34dbcb7e01e433219cb2d015516bd9152dea9f79827b45e201f753d254dc1abc",
+      "rollback_git_blob": "f208b2aaa1bc78cdbfa594a6dc3d0e2d865661db",
+      "source_id": "piste_a1:009:ab20da57a3f8",
+      "source_sha256": "ab20da57a3f86169f9425f82b56315bb2831c20495ccc855265a7c5ec52c6c3a",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "34dbcb7e01e433219cb2d015516bd9152dea9f79827b45e201f753d254dc1abc",
+        "duration": 14.706939,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T112340-f5f01dbb26/manifest.json",
+          "manifest_sha256": "a5b11e61878d252e6a20e217b676c3fe683a88e04d45baf33e668026683f9875",
+          "lossless_sha256": "64c3b0234a5aade98ab1054d803829b38cce2afae3fa8603ad54983155a097df"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.28,
+          "trailing_quiet_seconds": 0.04,
+          "relative_rms_threshold": 0.0122446,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "unchanged_text_and_two_exact_final_file_recognitions",
+      "editorial_reason": null,
+      "previous_duration": 16.76,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/ecole/48-école-venir-au-tableau.mp3",
+      "previous_sha256": "7698c9402fc513386e2691278a09ff1640983cc953bbf065418d716cbc31c96f",
+      "candidate_sha256": "73b55a14dbf785e6272b00e00b06dfa1ed71126ce93ed493c8dc3e35945ea379",
+      "rollback_git_blob": "679bc0d22780ed9b46ecf52d34e3eeafc52d2ecc",
+      "source_id": "piste_a1:009:ab20da57a3f8",
+      "source_sha256": "ab20da57a3f86169f9425f82b56315bb2831c20495ccc855265a7c5ec52c6c3a",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "73b55a14dbf785e6272b00e00b06dfa1ed71126ce93ed493c8dc3e35945ea379",
+        "duration": 10.553469,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T112340-f5f01dbb26/manifest.json",
+          "manifest_sha256": "a5b11e61878d252e6a20e217b676c3fe683a88e04d45baf33e668026683f9875",
+          "lossless_sha256": "5eb1c95f364c6d5885b54ebf50eaf6e3307e0b35aa582e29930ad507f306507d"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.3,
+          "trailing_quiet_seconds": 0.15,
+          "relative_rms_threshold": 0.0131996,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "unchanged_text_and_two_exact_final_file_recognitions",
+      "editorial_reason": null,
+      "previous_duration": 12.54,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/ecole/54-école-absence-au-cours-de-natation.mp3",
+      "previous_sha256": "9a64f5d54993807796419a5393599ef72484289db3e2e537a19f6908b69f65eb",
+      "candidate_sha256": "4d754c9daf22cd155f572a879b039a6d05b49ef1bacf3734bcf4dc31321cd09c",
+      "rollback_git_blob": "ef09eaf39caae077dbbb555e8b319c8fe7597023",
+      "source_id": "9782090351958:069:38399e6d0f4e",
+      "source_sha256": "38399e6d0f4ec8a1a871c80b6264e40931a8d4345d877b2ddc8fb60c269d0d04",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "4d754c9daf22cd155f572a879b039a6d05b49ef1bacf3734bcf4dc31321cd09c",
+        "duration": 11.911837,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T013629-990b25d506/manifest.json",
+          "manifest_sha256": "4ce8019155a73a09529bdd0323e66c70efb111055ca9dc5b37d759297d6ca046",
+          "lossless_sha256": "a0a356e288d21f6e19006fc3860ff6a5fcdf9b75ef86b10a54c255b18e00592f"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.27,
+          "trailing_quiet_seconds": 0.32,
+          "relative_rms_threshold": 0.0078241,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "unchanged_text_and_two_exact_final_file_recognitions",
+      "editorial_reason": null,
+      "previous_duration": 12.67,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/ecole/les-etudes-2-1.mp3",
+      "previous_sha256": "2fc496950712edd7047d889b9661fd1e90daeb60a98e65a5159afbb03d744bf3",
+      "candidate_sha256": "be9a78a1683bd6f44524bf5ecaa2fb626722d43c760db25be9b868f64b70b863",
+      "rollback_git_blob": "e6e12bb95f04302b2898fb75747e9d19afa87b2a",
+      "source_id": "piste_a1:004:a8ddb5bf8bde",
+      "source_sha256": "a8ddb5bf8bdea07bdb30280a2e141385737630ec28cc16cf13cd85ee407ae885",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "be9a78a1683bd6f44524bf5ecaa2fb626722d43c760db25be9b868f64b70b863",
+        "duration": 7.026939,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T112328-d92122c7b4/manifest.json",
+          "manifest_sha256": "4a53f01b1ded58cdac726ce7895be5f451012be0c78c46b8ffb07ec7a3fdeed6",
+          "lossless_sha256": "98539183d05a4eb56a1ed0b52c7937008c010903007158c5d56584e5426c3244"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.38,
+          "trailing_quiet_seconds": 0.2,
+          "relative_rms_threshold": 0.007653,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "unchanged_text_and_two_exact_final_file_recognitions",
+      "editorial_reason": null,
+      "previous_duration": 11.73,
+      "previous_pool": {
+        "tag": "court",
+        "questions": 2
+      },
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/ecole/les-etudes-2-2.mp3",
+      "previous_sha256": "d9015f84c3441df0eb3e2575adc0227d6e6b331b94f646f491ae8188bd6d4e1c",
+      "candidate_sha256": "201c5e8ee81e2d33ef47ec13bf8e01fcd47a1e286c216dcc8b8ecf723719659e",
+      "rollback_git_blob": "49be5fe6db4c03e4a46a4b1f4573a77da5b610df",
+      "source_id": "piste_a1:004:a8ddb5bf8bde",
+      "source_sha256": "a8ddb5bf8bdea07bdb30280a2e141385737630ec28cc16cf13cd85ee407ae885",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "201c5e8ee81e2d33ef47ec13bf8e01fcd47a1e286c216dcc8b8ecf723719659e",
+        "duration": 7.758367,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T112328-d92122c7b4/manifest.json",
+          "manifest_sha256": "4a53f01b1ded58cdac726ce7895be5f451012be0c78c46b8ffb07ec7a3fdeed6",
+          "lossless_sha256": "2953d713f86a230674ae3db3f688b8df0638f733a987e3ff314c9ef0b4d26fa3"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.31,
+          "trailing_quiet_seconds": 0.38,
+          "relative_rms_threshold": 0.0083699,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "unchanged_text_and_two_exact_final_file_recognitions",
+      "editorial_reason": null,
+      "previous_duration": 10.03,
+      "previous_pool": {
+        "tag": "court",
+        "questions": 2
+      },
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/ecole/les-etudes-2-3.mp3",
+      "previous_sha256": "da570f8d9a35d48d05daae0957e5875c4f3838fbb3bdb78f9715364b3e0d211d",
+      "candidate_sha256": "6e61ee7f1b143d3278a654a01606e30cfa2ff47ceef985605b04561d97f7184a",
+      "rollback_git_blob": "b21460f71bacbcb2afd8289714388031ca221320",
+      "source_id": "piste_a1:004:a8ddb5bf8bde",
+      "source_sha256": "a8ddb5bf8bdea07bdb30280a2e141385737630ec28cc16cf13cd85ee407ae885",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "6e61ee7f1b143d3278a654a01606e30cfa2ff47ceef985605b04561d97f7184a",
+        "duration": 5.276735,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T112328-d92122c7b4/manifest.json",
+          "manifest_sha256": "4a53f01b1ded58cdac726ce7895be5f451012be0c78c46b8ffb07ec7a3fdeed6",
+          "lossless_sha256": "425fd5c99eac482c8aac657872c344810617980bb109bdd99abc68264d3041a4"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.16,
+          "trailing_quiet_seconds": 0.56,
+          "relative_rms_threshold": 0.0088882,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "unchanged_text_and_two_exact_final_file_recognitions",
+      "editorial_reason": null,
+      "previous_duration": 8.54,
+      "previous_pool": {
+        "tag": "court",
+        "questions": 2
+      },
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/famille/10-famille-tu-veux-regarder-quoi.mp3",
+      "previous_sha256": "b13492feba78b01dec3b9fb15ff490516d71381abd0414aca13b82c176ed1ce2",
+      "candidate_sha256": "2f766f62a26b1d8a547ee4863177819ead1120720f8202997808d721ece4f867",
+      "rollback_git_blob": "96c70ce731aee8b2ddc6cd7370cb721682238bf2",
+      "source_id": "9782090351958:031:64eebc6b2cdc",
+      "source_sha256": "64eebc6b2cdcae26230de7e795c73571ba47f20aa2312ede2ad982896f7022df",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "2f766f62a26b1d8a547ee4863177819ead1120720f8202997808d721ece4f867",
+        "duration": 11.598367,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T013650-476dade50c/manifest.json",
+          "manifest_sha256": "68ab0097ece5098c7ab8d5c9a8f20e64faff034d9f0678500c2dbf1259e804e9",
+          "lossless_sha256": "4458ed8c07dccf7f96e26a32f394f9715d2e30ceb6677feca3fe94417247fd9f"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.22,
+          "trailing_quiet_seconds": 0.48,
+          "relative_rms_threshold": 0.0080694,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "unchanged_text_and_two_exact_final_file_recognitions",
+      "editorial_reason": null,
+      "previous_duration": 12.43,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/famille/11-famille-préparer-des-pâtes-à-la-tomate.mp3",
+      "previous_sha256": "615cefa194a2e8ed867a4990abe392353997eba7f92a219c236a43e99cddbebc",
+      "candidate_sha256": "0a1cee3f36042846af3ea0d7e60f571b5bb2a94af24be0d5c54ff04979641c72",
+      "rollback_git_blob": "0a860439cb0cec0ef15c2e2d56801fef9277670c",
+      "source_id": "9782090351958:031:64eebc6b2cdc",
+      "source_sha256": "64eebc6b2cdcae26230de7e795c73571ba47f20aa2312ede2ad982896f7022df",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "0a1cee3f36042846af3ea0d7e60f571b5bb2a94af24be0d5c54ff04979641c72",
+        "duration": 9.769796,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T013650-476dade50c/manifest.json",
+          "manifest_sha256": "68ab0097ece5098c7ab8d5c9a8f20e64faff034d9f0678500c2dbf1259e804e9",
+          "lossless_sha256": "d979a056f89bf74451ec4d0f0a7ba5e5447bf1d1522c36bf9164d057deb26b74"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.26,
+          "trailing_quiet_seconds": 0.14,
+          "relative_rms_threshold": 0.0063024,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "unchanged_text_and_two_exact_final_file_recognitions",
+      "editorial_reason": null,
+      "previous_duration": 10.65,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/famille/12-famille-il-fait-quel-temps-demain.mp3",
+      "previous_sha256": "08f987005c7db830c54fca2b1e7e0ecec0de7c756b8e96cc5547288b5662819e",
+      "candidate_sha256": "0f8dbdb4aef3a70e813fa8e18e8497cb53e6a680b686e2b10dcd24e40dce3419",
+      "rollback_git_blob": "4eab4370d87863e9ce7bbad1c9d6801922687ffb",
+      "source_id": "9782090351958:031:64eebc6b2cdc",
+      "source_sha256": "64eebc6b2cdcae26230de7e795c73571ba47f20aa2312ede2ad982896f7022df",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "0f8dbdb4aef3a70e813fa8e18e8497cb53e6a680b686e2b10dcd24e40dce3419",
+        "duration": 9.691429,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T013650-476dade50c/manifest.json",
+          "manifest_sha256": "68ab0097ece5098c7ab8d5c9a8f20e64faff034d9f0678500c2dbf1259e804e9",
+          "lossless_sha256": "ffa505df2e3e0430dd273345f3235e2f76469299c05e43004d566ee7a4ae736e"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.36,
+          "trailing_quiet_seconds": 0.2,
+          "relative_rms_threshold": 0.0084324,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "unchanged_text_and_two_exact_final_file_recognitions",
+      "editorial_reason": null,
+      "previous_duration": 10.88,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/famille/20-maison-tu-es-prêt.mp3",
+      "previous_sha256": "2afcf488f9e8eaa34b88a5642d4f972c611413ff2d78b6f005f8fd2a333b84fe",
+      "candidate_sha256": "20b8a3e253282ca7bdfe861547e8595b376b8fbcc2bbc4b07887f239ef790cbe",
+      "rollback_git_blob": "d972116daef33ea02ef1f591c11c1b7567ca2f82",
+      "source_id": "additional-20261102:mdf-a1-abc:46:0e87b5589d43:3e586f0e",
+      "source_sha256": "0e87b5589d435d0403f6d978683a9a3cd58f9525b71e9e976bbd697c5578465c",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "20b8a3e253282ca7bdfe861547e8595b376b8fbcc2bbc4b07887f239ef790cbe",
+        "duration": 6.635102,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014535-c3c29a34e0/manifest.json",
+          "manifest_sha256": "5f27ac83cec51a86b2193f57d73b7156cf345227c13c8517aa86f6af11bf537c",
+          "lossless_sha256": "66560453c3546df053b1c6b63e3d423337c962c5fd26fdab16e9f177944be0ae"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.37,
+          "trailing_quiet_seconds": 0.13,
+          "relative_rms_threshold": 0.0067112,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "unchanged_text_and_two_exact_final_file_recognitions",
+      "editorial_reason": null,
+      "previous_duration": 9.18,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/loisirs/bonjour-voudrais-sandwich-1-3.mp3",
+      "previous_sha256": "1a28a29b7ce839fd088536d6c2cdefd244e1be856829bd414bbdac024fb73397",
+      "candidate_sha256": "230712c543dfa29cabd26a76e69f9f5f0a05108426e871d7daf25134cb3b9100",
+      "rollback_git_blob": "99c7e234f2015743360a029f5fb84184b99a4eaa",
+      "source_id": "09035276:045:6641da2a02b3",
+      "source_sha256": "6641da2a02b333e72d7439924b155568a488245ccea2aaab353386af17fc8c3c",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "230712c543dfa29cabd26a76e69f9f5f0a05108426e871d7daf25134cb3b9100",
+        "duration": 8.646531,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T013616-585a4d24e6/manifest.json",
+          "manifest_sha256": "490c7adb2ee4d85390a3616002d0bb1a5c8f2290e935737d8f15cde0a724d54f",
+          "lossless_sha256": "e3c0adc631364765f5c950a35170eed36112d2d6a980bde7a86de704e0ee64a6"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.22,
+          "trailing_quiet_seconds": 0.39,
+          "relative_rms_threshold": 0.0056435,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "unchanged_text_and_two_exact_final_file_recognitions",
+      "editorial_reason": null,
+      "previous_duration": 12.74,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/magasins/19-magasin-où-sont-céréales.mp3",
+      "previous_sha256": "a7ab418f76a47529db363998615ef2434c4ceee4abf772ee2857bd1356671298",
+      "candidate_sha256": "efc8eed7eb481f8ec04c7b7eaec4a13c8ee1578b2649ac9f9c7003fa488f5f04",
+      "rollback_git_blob": "a7e24204c7b4b538d2100b14eeaeb2ad7d6e2ef8",
+      "source_id": "additional-20261102:mdf-a1-abc:46:0e87b5589d43:3e586f0e",
+      "source_sha256": "0e87b5589d435d0403f6d978683a9a3cd58f9525b71e9e976bbd697c5578465c",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "efc8eed7eb481f8ec04c7b7eaec4a13c8ee1578b2649ac9f9c7003fa488f5f04",
+        "duration": 6.164898,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014535-c3c29a34e0/manifest.json",
+          "manifest_sha256": "5f27ac83cec51a86b2193f57d73b7156cf345227c13c8517aa86f6af11bf537c",
+          "lossless_sha256": "01f6a38bced584a18b26e47704268e0ce1b476f8cffb1292f7565cc26f298416"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.44,
+          "trailing_quiet_seconds": 0.27,
+          "relative_rms_threshold": 0.0100625,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "unchanged_text_and_two_exact_final_file_recognitions",
+      "editorial_reason": null,
+      "previous_duration": 8.53,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/magasins/les-achats-2.mp3",
+      "previous_sha256": "46d57949437b84cc6e21362ac2ccaea0aac4867ab2a10a733e528573702eceb8",
+      "candidate_sha256": "2ec59a570c9ac9bf2a83b8d3cbfe9d1189b34c910da55f1467de9514505313f3",
+      "rollback_git_blob": "0a3325b986c6f828af2b65c89c082bcb63b49016",
+      "source_id": "delf_a2_eb2w:004:adb4c61350d8",
+      "source_sha256": "adb4c61350d887f8357dd9f1d28409b64e6897580f6cede6133d49330a493304",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "2ec59a570c9ac9bf2a83b8d3cbfe9d1189b34c910da55f1467de9514505313f3",
+        "duration": 12.852245,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261103T015202-92a9791978/manifest.json",
+          "manifest_sha256": "c6a2982cd3617b68b786b7457b4adde4b7d92371558ff53454884623ce007a32",
+          "lossless_sha256": "9e147252e515b1043876dfae7ac640fbeecaa8b74bd3c530046bba2062ccda93"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.29,
+          "trailing_quiet_seconds": 0.19,
+          "relative_rms_threshold": 0.0146499,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "unchanged_text_and_two_exact_final_file_recognitions",
+      "editorial_reason": null,
+      "previous_duration": 15.65,
+      "previous_pool": {
+        "tag": "court",
+        "questions": 2
+      },
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/maison/les-cles-voiture-sont.mp3",
+      "previous_sha256": "1255ec28c9ce78931462a00d060bbc3993edb57e7e966da9d908722eb5766d44",
+      "candidate_sha256": "cedd53c9ea4f7e55bcf8abe8bb5b5a224ea75337da7c537c5ebc257cebf7ebfe",
+      "rollback_git_blob": "cd50eba3f30860891933e2b4543e6d9c1c616042",
+      "source_id": "additional-20261102:mdf-a1-abc:47:1255ec28c9ce:c26b5731",
+      "source_sha256": "1255ec28c9ce78931462a00d060bbc3993edb57e7e966da9d908722eb5766d44",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "cedd53c9ea4f7e55bcf8abe8bb5b5a224ea75337da7c537c5ebc257cebf7ebfe",
+        "duration": 18.468571,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014129-d95d94ef70/manifest.json",
+          "manifest_sha256": "171803c820ccf24d8d280eb312b00be4947d0ccbadff79d16b2826cb18cf8a19",
+          "lossless_sha256": "a7aefc7e26a65f1afadce24e3cc9e36d111ddcc6bfa7a0c16fbe3f56e6ea0145"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.3,
+          "trailing_quiet_seconds": 0.3,
+          "relative_rms_threshold": 0.0050452,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "unchanged_text_and_two_exact_final_file_recognitions",
+      "editorial_reason": null,
+      "previous_duration": 25.09,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/maison/pour-repas-soir.mp3",
+      "previous_sha256": "c8ea873bb0f7a4ab141875cff366c007b40bbedec73b1debe7ba70b9f3b69b13",
+      "candidate_sha256": "587ea3b8d16b750d8d29375daa00b43d6e96212d7dc77fce78ec8b23aa83129f",
+      "rollback_git_blob": "6ac104d7af7c66a49cbbbddde5755424a3aa6f46",
+      "source_id": "additional-20261102:mdf-a1-abc:53:2d4bf5874372:080ebb02",
+      "source_sha256": "2d4bf5874372536471308b9433b25222d21ce5d64ecab47340e73e1789c802f9",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "587ea3b8d16b750d8d29375daa00b43d6e96212d7dc77fce78ec8b23aa83129f",
+        "duration": 19.278367,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014111-c43b6d3c2d/manifest.json",
+          "manifest_sha256": "75aa54591c0b4fd5a5e9b20e4a4c4d34d288d7641b8d3b94143ab1176cf3796a",
+          "lossless_sha256": "15b3beaf60a445ba4b5838407e30a1e4eccbc17ccaf69526868006f4588afd2b"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.29,
+          "trailing_quiet_seconds": 0.42,
+          "relative_rms_threshold": 0.0053055,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "unchanged_text_and_two_exact_final_file_recognitions",
+      "editorial_reason": null,
+      "previous_duration": 19.25,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/radio/les-informations-2-1.mp3",
+      "previous_sha256": "519b42d3a11a8082f87752f74b3e031d3627764509fd065b5fa64585b4f83092",
+      "candidate_sha256": "3e3535bfc82b0320e1af225fb48b558f94e2513e5a7e48b7072ab9e38e6e7c97",
+      "rollback_git_blob": "dfd4159ca8569b8d70d502855d21510882283b91",
+      "source_id": "delf_a2_eb2w:002:6174b8971935",
+      "source_sha256": "6174b8971935d15af4545ff20f7f2f4b2ade1f06455b564c3ad56e6eb6470889",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "3e3535bfc82b0320e1af225fb48b558f94e2513e5a7e48b7072ab9e38e6e7c97",
+        "duration": 15.908571,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T121005-580c30d110/manifest.json",
+          "manifest_sha256": "ff0c81ac5a09d02220b89f74e9e17ce9e83ea7d42897b134861eeddc58fad8c8",
+          "lossless_sha256": "e93b763377df83a7e76301f7899d42704677d45dc24f9c1876caee24d49a0709"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.2,
+          "trailing_quiet_seconds": 0.12,
+          "relative_rms_threshold": 0.017199,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "unchanged_text_and_two_exact_final_file_recognitions",
+      "editorial_reason": null,
+      "previous_duration": 18.68,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/restaurant/02-restaurant-que-manger.mp3",
+      "previous_sha256": "3a4fca1e3eaa457d71cea39b187d7c098aa280bd0649d24cba41202722a891c6",
+      "candidate_sha256": "6896be16d8f2c9d8567172bbd0c779ea3e7b4a6595da782a65d5803c342a2147",
+      "rollback_git_blob": "e856dfca66f2fbf6fb6be97c9081574a7105c849",
+      "source_id": "additional-20261102:mdf-a1-abc:46:0e87b5589d43:3e586f0e",
+      "source_sha256": "0e87b5589d435d0403f6d978683a9a3cd58f9525b71e9e976bbd697c5578465c",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "6896be16d8f2c9d8567172bbd0c779ea3e7b4a6595da782a65d5803c342a2147",
+        "duration": 10.788571,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014535-c3c29a34e0/manifest.json",
+          "manifest_sha256": "5f27ac83cec51a86b2193f57d73b7156cf345227c13c8517aa86f6af11bf537c",
+          "lossless_sha256": "8a4998a707bb98d8f3ade17bb2d3c59e1579404eed4ec35e56a84597d4e42310"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.27,
+          "trailing_quiet_seconds": 0.62,
+          "relative_rms_threshold": 0.0055913,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "unchanged_text_and_two_exact_final_file_recognitions",
+      "editorial_reason": null,
+      "previous_duration": 13.27,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/scènes courtes/03-maison-demander-un-café.mp3",
+      "previous_sha256": "f7f8b6c5d10e4070c32dc72879a4436c6c7cb37b06b44cc4011c809315a4718c",
+      "candidate_sha256": "13385cbbf7b1ea8a9e144d6dfdc52f28f1fcdab55144dbe6d0d1a6f102bb25bf",
+      "rollback_git_blob": "731376cd77939f58f718d09c46e9f9124773686a",
+      "source_id": "additional-20261102:mdf-a1-abc:41:4215c39103a5:c9e70a7a",
+      "source_sha256": "4215c39103a5da5cd38d31a6253269831c268f249d6b6c1585d7634fb2eacb74",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "13385cbbf7b1ea8a9e144d6dfdc52f28f1fcdab55144dbe6d0d1a6f102bb25bf",
+        "duration": 8.150204,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014313-20e67b0e4c/manifest.json",
+          "manifest_sha256": "0186eeeedb8e684263dbd0339e068a48595c76b5e9e062d18f54619fde88d69f",
+          "lossless_sha256": "e228e476403ed85aa66ff696a33fd861406a89982396d7058187486f3da783b4"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.43,
+          "trailing_quiet_seconds": 0.26,
+          "relative_rms_threshold": 0.0043854,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "unchanged_text_and_two_exact_final_file_recognitions",
+      "editorial_reason": null,
+      "previous_duration": 9.31,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/scènes courtes/04-quotidien-horaire-du-musée.mp3",
+      "previous_sha256": "a0f876a67e70951c900a48fc96aacd9ef055fbfce31abb3c6a17ac11188b434c",
+      "candidate_sha256": "9db21b8d826223d4ae5ebb5df712a763e221984878e6f408cf08f9b16c48b378",
+      "rollback_git_blob": "395db4d84fa7ab61f0444f7b7d5304b6c5c0779a",
+      "source_id": "additional-20261102:mdf-a1-abc:41:4215c39103a5:c9e70a7a",
+      "source_sha256": "4215c39103a5da5cd38d31a6253269831c268f249d6b6c1585d7634fb2eacb74",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "9db21b8d826223d4ae5ebb5df712a763e221984878e6f408cf08f9b16c48b378",
+        "duration": 7.131429,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014313-20e67b0e4c/manifest.json",
+          "manifest_sha256": "0186eeeedb8e684263dbd0339e068a48595c76b5e9e062d18f54619fde88d69f",
+          "lossless_sha256": "529645da271d1102c78c6416ff107fae71ab5d925294999703a23d8725589f5c"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.33,
+          "trailing_quiet_seconds": 0.14,
+          "relative_rms_threshold": 0.0071092,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "unchanged_text_and_two_exact_final_file_recognitions",
+      "editorial_reason": null,
+      "previous_duration": 8.45,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_01-3.mp3",
+      "previous_sha256": "a3a84b5e91e7f9e1b3a215d93827e869011550da315e7e5ded5db62849b092b2",
+      "candidate_sha256": "0c2b67724f678e49c6e1928fa2e40cc01125a3b1b70ee55453d33ca39cf142bd",
+      "rollback_git_blob": "2d6fb6880ad2434b1e99119c37b687d46c7a20fa",
+      "source_id": "delf_a2_2021:001:4e668a33cf71",
+      "source_sha256": "4e668a33cf71174e8d933062887cb7d03a7ad78029598c2e622f7421e7d67bfd",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "0c2b67724f678e49c6e1928fa2e40cc01125a3b1b70ee55453d33ca39cf142bd",
+        "duration": 5.355102,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261103T014753-111352e25b/manifest.json",
+          "manifest_sha256": "4e15d9ab6f20c1c8ba8d96ce4f43217b82a5c3dfddaf562ee575112918dec2d3",
+          "lossless_sha256": "0fa740fe4cf1656ef4b47147ee0c328134f4c7d29b26c7be3e7bb1df19a3fc23"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.27,
+          "trailing_quiet_seconds": 0.31,
+          "relative_rms_threshold": 0.0097028,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "unchanged_text_and_two_exact_final_file_recognitions",
+      "editorial_reason": null,
+      "previous_duration": 7.03,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_02-1.mp3",
+      "previous_sha256": "3b4c39578684d9232963d5119198804f8abde54471ebec2a07884b4381ef62b6",
+      "candidate_sha256": "31be4480e2ed0b811727a653c5756036e8d02dc1696adcf7021d0edc83270bac",
+      "rollback_git_blob": "48674db1f9a7d3fb5fa6a6471eb80084777fb274",
+      "source_id": "delf_a2_2021:002:f151bbfcaf5f",
+      "source_sha256": "f151bbfcaf5fd2e54375002098904a6cf2fe4ae6c34343c16ae43df93c5ecf76",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "31be4480e2ed0b811727a653c5756036e8d02dc1696adcf7021d0edc83270bac",
+        "duration": 3.761633,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111857-f808f32a0a/manifest.json",
+          "manifest_sha256": "2274cc2d9b632a3784a04edcebe65f7d48f11db1e39d1c22bf8138978ed161ef",
+          "lossless_sha256": "b19a33727f1b8cf98164498f353e17a1cd41247695b53e5e27a8baff4e098126"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.22,
+          "trailing_quiet_seconds": 0.35,
+          "relative_rms_threshold": 0.0137466,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "unchanged_text_and_two_exact_final_file_recognitions",
+      "editorial_reason": null,
+      "previous_duration": 5.04,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_02-4.mp3",
+      "previous_sha256": "f8f971a6dab26a94bb670c84750f4ad7f873302cfc00d6acf4a8ecbc0f1436e5",
+      "candidate_sha256": "3fa553fdf6dd859139332f4924d3e69b342e129701cb1698a3776f22d7cc5c30",
+      "rollback_git_blob": "33b5b7f5cba3b68433c2f2c12bd4dc116ed7c922",
+      "source_id": "delf_a2_2021:002:f151bbfcaf5f",
+      "source_sha256": "f151bbfcaf5fd2e54375002098904a6cf2fe4ae6c34343c16ae43df93c5ecf76",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "3fa553fdf6dd859139332f4924d3e69b342e129701cb1698a3776f22d7cc5c30",
+        "duration": 5.590204,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111857-f808f32a0a/manifest.json",
+          "manifest_sha256": "2274cc2d9b632a3784a04edcebe65f7d48f11db1e39d1c22bf8138978ed161ef",
+          "lossless_sha256": "5169d32e34bb89e2f8d4c82ba647a8528a657b1ac8081744170d9ae00b05d8eb"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.14,
+          "trailing_quiet_seconds": 0.41,
+          "relative_rms_threshold": 0.0139484,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "unchanged_text_and_two_exact_final_file_recognitions",
+      "editorial_reason": null,
+      "previous_duration": 7.03,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_08-1.mp3",
+      "previous_sha256": "2a38d5e7e0fda1479435ae7f2e99b644746fe8278ae5d5a3bfef3666b3b7ac50",
+      "candidate_sha256": "4c143b63f98a979b9c0647080eba69046ec7a209f1dc42b9c3dc46c276a81c89",
+      "rollback_git_blob": "7bc5bdee1b8c4bce225a6d9cdb86258a1fbdff7e",
+      "source_id": "delf_a2_2021:008:f50114d4eae2",
+      "source_sha256": "f50114d4eae2ed56ede1f1c49d602517171940eb19abe118839ce8864691c5cf",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "4c143b63f98a979b9c0647080eba69046ec7a209f1dc42b9c3dc46c276a81c89",
+        "duration": 2.56,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111907-f5719a8717/manifest.json",
+          "manifest_sha256": "075849ae0bb3529842219bc23ca88d9ba051fdbe7919a23727e89f8715675a90",
+          "lossless_sha256": "ebb5b7c56534f9caaac708e0c34f24197706fa5a06a418364823489455958258"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.24,
+          "trailing_quiet_seconds": 0.43,
+          "relative_rms_threshold": 0.0144464,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "unchanged_text_and_two_exact_final_file_recognitions",
+      "editorial_reason": null,
+      "previous_duration": 3.53,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_08-2.mp3",
+      "previous_sha256": "bfaf7dde177ebea46ebf6ccb30616f46f47789a47cb7da9f8ac9b6dae7a0d593",
+      "candidate_sha256": "25c2b05d44af35f92d69ab640d955c64c20f2993524823c728f40000c6d60585",
+      "rollback_git_blob": "12abe9897d9b8dcd7c5ef1efabcabb484e61016a",
+      "source_id": "delf_a2_2021:008:f50114d4eae2",
+      "source_sha256": "f50114d4eae2ed56ede1f1c49d602517171940eb19abe118839ce8864691c5cf",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "25c2b05d44af35f92d69ab640d955c64c20f2993524823c728f40000c6d60585",
+        "duration": 3.369796,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111907-f5719a8717/manifest.json",
+          "manifest_sha256": "075849ae0bb3529842219bc23ca88d9ba051fdbe7919a23727e89f8715675a90",
+          "lossless_sha256": "b15d87c638b8eb1bfac075d764b785916688bb29fe014d55e96594d0294b6e27"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.24,
+          "trailing_quiet_seconds": 0.53,
+          "relative_rms_threshold": 0.0096924,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "unchanged_text_and_two_exact_final_file_recognitions",
+      "editorial_reason": null,
+      "previous_duration": 4.55,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_09-5.mp3",
+      "previous_sha256": "ea98739b0ff30540121b9c2d0e19646c540fb1f58fbb64cd655e3006f319f643",
+      "candidate_sha256": "3993d57ac8dc2fdcd6e61909fdf4bce1530db348b2c57bfc80b978d2f916ea21",
+      "rollback_git_blob": "9e06f4f2fb7459c74c2e9571b990864700a3e3ca",
+      "source_id": "delf_a2_2021:009:999b8647c0b5",
+      "source_sha256": "999b8647c0b5a96392f1ef7156d27ac901f5cc58d7574c2221b02d03b0ecd91c",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "3993d57ac8dc2fdcd6e61909fdf4bce1530db348b2c57bfc80b978d2f916ea21",
+        "duration": 10.788571,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111910-6c46abce23/manifest.json",
+          "manifest_sha256": "ae064ddd4c069657c23d44c80e5085549aa05220429061434cb388d6c1e2072b",
+          "lossless_sha256": "7f8d392c707dad171b8dbda129bb0067c8340dbdf49c8cf3921aaa4c9d14a729"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.28,
+          "trailing_quiet_seconds": 0.1,
+          "relative_rms_threshold": 0.0115192,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "unchanged_text_and_two_exact_final_file_recognitions",
+      "editorial_reason": null,
+      "previous_duration": 13.14,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_13.mp3",
+      "previous_sha256": "2cd4032e1d799ecc84538aad27b027aaa358925246e1bc336f04dbe3d07387dc",
+      "candidate_sha256": "24eec63e00184f656cce4d98f03141180241ae0cbeac15c19206550a811e4ccc",
+      "rollback_git_blob": "4bd914e4c8fafbb38a54b7610ff958b90d44280d",
+      "source_id": "delf_a2_2021:013:7c9199969d72",
+      "source_sha256": "7c9199969d723a8c88c050d2084fea08fe418f300219771f5f54ad852996f15a",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "24eec63e00184f656cce4d98f03141180241ae0cbeac15c19206550a811e4ccc",
+        "duration": 18.808163,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111917-00574c325b/manifest.json",
+          "manifest_sha256": "e4094f68311adfa9202e4fbbe033b898d583665d2e22824247daabe33c6bccf3",
+          "lossless_sha256": "8aa6345de0ff71ee6ad9d93f183aa35c843b6f7dd24b4c4cefc49ccc30c0e20e"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.32,
+          "trailing_quiet_seconds": 0.64,
+          "relative_rms_threshold": 0.0114662,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "unchanged_text_and_two_exact_final_file_recognitions",
+      "editorial_reason": null,
+      "previous_duration": 19.54,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    }
+  ],
+  "exercise_changes": [],
+  "status": "installed",
+  "received_originals_modified": 0,
+  "human_listening_performed": false
+}
