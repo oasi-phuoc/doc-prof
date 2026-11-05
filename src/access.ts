@@ -78,8 +78,17 @@ const DOMAIN_ALIASES: Readonly<Record<string, Domain>> = {
 const ACCESS_COOKIE = 'clairfle-fiche-access'
 const ACCESS_COOKIE_MAX_AGE = 60 * 60 * 24 * 365
 
-function envString(key: keyof ImportMetaEnv, fallback: string): string {
-  const raw = import.meta.env[key]
+/**
+ * Lecture statique : Vite ne remplace `import.meta.env[key]` au build,
+ * donc une variable Vercel ne serait jamais vue.
+ */
+function envString(key: 'VITE_ACCESS_ADMIN' | 'VITE_ACCESS_FULL' | 'VITE_ACCESS_PARTIAL', fallback: string): string {
+  const raw =
+    key === 'VITE_ACCESS_ADMIN'
+      ? import.meta.env.VITE_ACCESS_ADMIN
+      : key === 'VITE_ACCESS_FULL'
+        ? import.meta.env.VITE_ACCESS_FULL
+        : import.meta.env.VITE_ACCESS_PARTIAL
   return typeof raw === 'string' && raw.trim() ? raw.trim() : fallback
 }
 
@@ -127,24 +136,15 @@ export function parseAccessDomainList(raw: string | undefined): Domain[] {
 }
 
 /**
- * Compte full (`jebosseplus`) : TCF CSC et TCF CFR, jamais TPF
- * (TPF reste réservé au compte admin).
- */
-const FULL_TCF_DOMAINS: readonly Domain[] = ['tcf-csc', 'tcf-cfr']
-
-/**
- * Domaines FULL / PARTIAL d’après l’env (source de vérité).
- * - **full** : `VITE_ACCESS_DOMAINS_FULL`, plus TCF CSC et TCF CFR.
- *   TPF est retiré même s’il figure dans la liste. Liste vide ou absente
- *   → domaines réguliers + TCF CSC / CFR.
+ * Domaines FULL / PARTIAL : la variable d’environnement est la source de vérité
+ * (`VITE_ACCESS_DOMAINS_*`, ou `ACCESS_DOMAINS_*` recopié au build).
+ * - **full** : liste telle quelle. Vide ou absente → domaines réguliers seulement.
  * - **partial** : `VITE_ACCESS_DOMAINS_PARTIAL` (défaut algèbre + géométrie).
  */
 function domainsFromEnv(account: 'full' | 'partial'): Domain[] {
   if (account === 'full') {
     const fromEnv = parseDomainList(import.meta.env.VITE_ACCESS_DOMAINS_FULL, [])
-    const base = fromEnv.length > 0 ? fromEnv : [...REGULAR_DOMAIN_IDS]
-    const withoutTpf = base.filter((domain) => domain !== 'tpf')
-    return [...new Set<Domain>([...withoutTpf, ...FULL_TCF_DOMAINS])]
+    return fromEnv.length > 0 ? fromEnv : [...REGULAR_DOMAIN_IDS]
   }
   return parseDomainList(import.meta.env.VITE_ACCESS_DOMAINS_PARTIAL, [
     'algèbre',
