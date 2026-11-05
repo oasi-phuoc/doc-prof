@@ -71,6 +71,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--apply', action='store_true')
     parser.add_argument('--report', type=Path, help='Write complete proposed trios for editorial review')
+    parser.add_argument('--pending-report', type=Path, help='List incomplete trios and missing whole answer concepts')
     args = parser.parse_args()
     plan = json.loads(PLAN.read_text())
     manifest = json.loads((ROOT / 'docs/tcf/images-generees.json').read_text())
@@ -94,6 +95,16 @@ def main():
     def resolve(label, enonce):
         base, question = normalise(label), normalise(enonce)
         if 'combien' in question:
+            return None
+        # A noun match alone is insufficient for these homonyms. A pink swatch
+        # does not illustrate an offered rose, nor contact lenses a food choice.
+        if base == 'rose' and 'couleur' not in question:
+            return None
+        if base == 'lentilles' and re.search(r'manger|plat|repas|aliment|cuisin|menu|accompagnement', question):
+            return None
+        if base == 'ballon':
+            # The registered generic alias currently depicts a rugby ball.
+            # Football/basketball/handball contexts require their own review.
             return None
         if re.search(r'\bparfum\b|\bsaveur\b|\barome\b', question):
             return None
@@ -122,7 +133,7 @@ def main():
         values = aliases.get(base, set())
         return next(iter(values)) if len(values) == 1 else None
 
-    changes, banks = [], {}
+    changes, banks, pending = [], {}, []
     for bank in BANKS:
         content = json.loads(bank.read_text())
         dirty = False
@@ -138,11 +149,18 @@ def main():
                 if len(choices) != 3 or not any(c.get('image', '').startswith(PREFIX) for c in choices):
                     continue
                 texts = {c['id']: c.get('texte', '') for c in text_form.get('choix', [])}
+                contextual = plan.get('question_image_overrides', {}).get(exercise['id'] + '#' + str(qi), {})
                 paths = []
                 for choice in choices:
                     old = choice.get('image', '')
-                    paths.append(resolve(texts.get(choice['id'], ''), question['enonce']) if old.startswith(PREFIX) else old)
+                    label = texts.get(choice['id'], '')
+                    override = contextual.get(label)
+                    paths.append(old if old in checked else override if override in checked else resolve(label, question['enonce']))
                 if not all(p in checked for p in paths) or len(set(paths)) != 3:
+                    pending.append(dict(bank=str(bank.relative_to(ROOT)), exercise=exercise['id'], question=qi,
+                                        enonce=question['enonce'], labels=[texts[c['id']] for c in choices],
+                                        before=[c['image'] for c in choices], resolved=paths,
+                                        missing_labels=[texts[c['id']] for c, p in zip(choices, paths) if p not in checked]))
                     continue
                 before = [c['image'] for c in choices]
                 changes.append(dict(bank=str(bank.relative_to(ROOT)), exercise=exercise['id'], question=qi,
@@ -165,6 +183,8 @@ def main():
                                       excluded_object_audio=preserve_object_audio_images(exercise)))
     if args.report:
         args.report.write_text(json.dumps(changes, ensure_ascii=False, indent=2) + '\n')
+    if args.pending_report:
+        args.pending_report.write_text(json.dumps(pending, ensure_ascii=False, indent=2) + '\n')
     if args.apply:
         plan['completed_question_trios'].extend(changes)
         plan['remaining_uses'] = remaining
