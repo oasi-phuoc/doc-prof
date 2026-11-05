@@ -130,6 +130,7 @@ function Enonce({
   blankAnswers,
   blankStyle = 'line',
   showNumero = true,
+  trailing,
 }: {
   numero: number
   /** Remplace le numéro (ex. « a » → « a. »). */
@@ -144,6 +145,8 @@ function Enonce({
   blankStyle?: 'line' | 'dots'
   /** Afficher le numéro (désactivé pour six courts seul dans le cadre). */
   showNumero?: boolean
+  /** Icônes de format (cadre multi-questions) : à droite de l’énoncé. */
+  trailing?: ReactNode
 }) {
   const fills = answersForInlineBlanks(blankAnswers, countInlineBlanks(enonce))
   const fillBlank = blankStyle === 'line' && isLabelBlankPrompt(enonce)
@@ -156,6 +159,7 @@ function Enonce({
         {renderEnonceText(enonce, fills, blankStyle)}
       </span>
       <TcfPoints points={points} />
+      {trailing}
     </p>
   )
 }
@@ -230,6 +234,8 @@ type QuestionHead = {
   images?: string[]
   showNumero?: boolean
   blankStyle?: 'line' | 'dots'
+  /** Icônes Texte / Image / Phrase à droite de l’énoncé (cadre multi-questions). */
+  trailing?: ReactNode
 }
 
 export function QuestionQCMTexte({
@@ -380,7 +386,7 @@ export function AudioCadre({
         {questions.map((q) => {
           const formSelect = q.formSelect
           const active = formSelect?.active
-          const formIcons =
+          const trailing =
             onSelectForm && formSelect && active && q.formModeIndex != null ? (
               <TcfFormMarginIcons
                 filled={formSelect.filled}
@@ -403,6 +409,7 @@ export function AudioCadre({
                   images={q.images}
                   points={q.points}
                   showNumero
+                  trailing={trailing}
                   mode={mode}
                 />
               ) : (
@@ -417,6 +424,7 @@ export function AudioCadre({
                   images={q.images}
                   points={q.points}
                   showNumero
+                  trailing={trailing}
                   mode={mode}
                 />
               )
@@ -433,12 +441,12 @@ export function AudioCadre({
                 images={q.images}
                 points={q.points}
                 showNumero
+                trailing={trailing}
                 mode={mode}
               />
             )
           return (
             <div key={q.numero} className="tcf-audio-cadre-q">
-              {formIcons}
               {body}
             </div>
           )

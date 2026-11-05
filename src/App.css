@@ -4337,7 +4337,10 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 /* Trois moyens : plusieurs questions dans le même cadre. */
 .tcf-audio-cadre-body{display:flex;flex-direction:column;gap:8px}
 .tcf-audio-cadre-q{display:flex;flex-direction:column;gap:4px}
-.tcf-audio-cadre-q .tcf-inline-form-icons{align-self:flex-start;margin:0 0 2px}
+/* Icônes de format : à droite de la ligne d’énoncé (même hauteur). */
+.tcf-enonce .tcf-inline-form-icons{
+  flex:0 0 auto;align-self:center;margin:0 0 0 8px
+}
 .tcf-question.is-audio-cadre .tcf-question{margin-top:0;border:0;padding:0}
 .tcf-question.is-audio-cadre .tcf-question .tcf-audio-frame-tag{display:none}
 /* Paramètres : points CO Identiques / Différents. */
@@ -4494,7 +4497,7 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 }
 .tcf-champ-options{display:flex;flex-wrap:wrap;gap:6px 16px}
 .tcf-champ-option{display:inline-flex;align-items:center;gap:6px}
-.tcf-inline-form-icons{display:inline-flex;align-items:center;gap:4px;margin:0 0 1px}
+.tcf-inline-form-icons{display:inline-flex;align-items:center;gap:4px;margin:0}
 .tcf-inline-form-icons .tcf-form-icon-btn{width:22px;height:22px}
 .tcf-dialogue{display:flex;flex-direction:column;gap:6px}
 .tcf-dialogue.is-fill{flex:1 1 auto;min-height:0}
