@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import {
   accountCanAccessDomain,
 } from '@/access'
+import { typeChoicesForBlock } from '@/components/generator/generator-derived'
 import { applyType, isOralComprehensionExercise, isProblemExercise } from '@/components/generator/page-helpers'
 import {
   defaultPage,
@@ -124,15 +125,23 @@ export function usePageNavigation({
   }
   /** Prochain type du même thème (même logique que « + Exercice »). */
   const createNextExerciseBlock = (): ExerciseBlock | null => {
-    const currentTypes = typesForTopic(
-      activeBlock.topic,
-      activePage.domain === 'français' ? (activeBlock.track ?? 'voc') : undefined,
-    )
+    const currentTypes =
+      activePage.domain === 'grammaire'
+        ? typeChoicesForBlock(activePage.domain, activeBlock)
+        : typesForTopic(
+            activeBlock.topic,
+            activePage.domain === 'français' ? (activeBlock.track ?? 'voc') : undefined,
+          )
     const currentIdx = currentTypes.findIndex((type) => type.id === activeBlock.exerciseType)
+    // Grammaire : on avance dans le sous-thème actif. Au dernier type, on reste dessus.
     const nextType =
-      currentTypes[(currentIdx + 1) % Math.max(currentTypes.length, 1)] ??
-      currentTypes[0] ??
-      firstTypeFor(activePage.domain, activeBlock.topic, activeBlock.track)
+      activePage.domain === 'grammaire'
+        ? currentIdx >= 0 && currentIdx < currentTypes.length - 1
+          ? currentTypes[currentIdx + 1]
+          : (currentTypes[currentIdx] ?? exerciseTypeById[activeBlock.exerciseType])
+        : (currentTypes[(currentIdx + 1) % Math.max(currentTypes.length, 1)] ??
+          currentTypes[0] ??
+          firstTypeFor(activePage.domain, activeBlock.topic, activeBlock.track))
     if (!nextType) return null
     const fields = applyType(nextType, activeBlock)
     const isSoutienNext = nextType.topic.startsWith('soutien-')
@@ -324,7 +333,13 @@ export function usePageNavigation({
         current.course === 'Français' ? { ...current, course: 'Mathématiques' } : current,
       )
     }
-    if (next === 'jeux' || next === 'calligraphie' || next === 'soutien-fr' || next === 'alphabetisation') {
+    if (
+      next === 'jeux' ||
+      next === 'calligraphie' ||
+      next === 'soutien-fr' ||
+      next === 'alphabetisation' ||
+      next === 'grammaire'
+    ) {
       setEvalMode(false)
       setMode('student')
     }

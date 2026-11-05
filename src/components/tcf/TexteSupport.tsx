@@ -151,6 +151,56 @@ export function TexteSupport({ exercise: ex, mode }: { exercise: TcfExercise; mo
         </>
       )
     case 'annonce': {
+      if (ex.support.presentation === 'portrait' && ex.support.fiche) {
+        const fiche = ex.support.fiche
+        return (
+          <>
+            {banque}
+            <div className="tcf-portrait-card">
+              <span className="tcf-portrait-photo is-placeholder" role="img" aria-label="Nouveau-né">
+                <span className="tcf-image-placeholder-name">Nouveau-né</span>
+              </span>
+              <div className="tcf-portrait-body">
+                <p className="tcf-portrait-name">{fiche.nom}</p>
+                <dl className="tcf-portrait-fields">
+                  {fiche.lignes.map((ligne) => (
+                    <div key={`${ligne.label}-${ligne.valeur}`}>
+                      <dt>{ligne.label}</dt>
+                      <dd>{ligne.valeur}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            </div>
+          </>
+        )
+      }
+      if (ex.support.presentation === 'portraits' && ex.support.portraits?.length) {
+        const people = ex.support.portraits
+        const rows: Array<typeof people> = []
+        for (let i = 0; i < people.length; i += 3) rows.push(people.slice(i, i + 3))
+        return (
+          <>
+            {banque}
+            <table className="tcf-famille-photos">
+              <tbody>
+                {rows.map((row, rowIndex) => (
+                  <tr key={rowIndex}>
+                    {row.map((person) => (
+                      <td key={person.nom}>
+                        <span className="tcf-famille-slot" role="img" aria-label={person.legende}>
+                          <span className="tcf-image-placeholder-name">{person.legende}</span>
+                        </span>
+                        <p className="tcf-famille-nom">{person.nom}</p>
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </>
+        )
+      }
       const association = parseAssociationDocuments(ex.support.texte)
       if (association) {
         const answers = associationAnswersFromExercise(ex as TcfCeAnnonce)

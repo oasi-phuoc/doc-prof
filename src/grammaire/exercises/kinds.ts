@@ -363,29 +363,22 @@ export const GRAM_EXERCISE_KINDS = [
   {
     id: 'fam-faire-part',
     label: 'Faire-part de naissance',
-    description: 'Lire un faire-part illustré, puis QCM sur la famille.',
+    description: 'Faire-part : emplacement du portrait à gauche, informations dans un tableau, puis questions.',
     instruction: 'Lisez le faire-part, puis répondez aux questions.',
     layout: 'qcm' as const,
   },
   {
     id: 'fam-pe',
     label: 'Écrire sur sa famille',
-    description: 'Production écrite sur votre famille, avec une zone de rédaction au format PE.',
+    description: 'Production écrite sur votre famille : numéro et ligne de réponse sur la même ligne.',
     instruction: 'Lisez la consigne et rédigez votre texte.',
     layout: 'write' as const,
   },
   {
-    id: 'fam-arbre',
-    label: 'Arbre généalogique',
-    description: 'Vrai / faux à partir d’un arbre généalogique.',
-    instruction: 'Observez l’arbre généalogique. Vrai ou faux ?',
-    layout: 'qcm' as const,
-  },
-  {
     id: 'fam-photo',
     label: 'Photo de famille',
-    description: '20 textes variés sur les liens de parenté et les métiers : récits, descriptions, lettres et dialogues.',
-    instruction: 'Lisez le document, puis répondez aux questions.',
+    description: 'Six portraits (homme, femme, garçon, fille, grand-mère, grand-père) avec le prénom sous chaque image.',
+    instruction: 'Observez les portraits, puis répondez aux questions.',
     layout: 'qcm' as const,
   },
   {
@@ -398,7 +391,7 @@ export const GRAM_EXERCISE_KINDS = [
   {
     id: 'fam-email',
     label: 'Message et email',
-    description: '20 messages et emails du quotidien reçus ou envoyés, avec des questions de compréhension.',
+    description: 'Messages et e-mails du quotidien sur la famille, avec des questions de compréhension.',
     instruction: 'Lisez le document, puis répondez aux questions.',
     layout: 'qcm' as const,
   },

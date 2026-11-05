@@ -1078,5 +1078,491 @@
         ]
       }
     ]
+  },
+  {
+    "slug": "creche",
+    "genre": "email",
+    "direction": "envoyé",
+    "title": "Inscrire son fils à la crèche",
+    "text": "De : Hugo Martin\nÀ : Crèche des Marronniers\nObjet : Inscription de mon fils\n\nBonjour,\nJe souhaite inscrire mon fils Tom, 2 ans, à la crèche à partir de septembre. Sa mère, Chloé Martin, travaille à l’hôpital le matin. Je peux venir signer le dossier jeudi à 9 heures. Tom a une sœur, Maya, qui a 6 ans et qui va à l’école. Quels documents faut-il apporter ?\nMerci.\nHugo Martin",
+    "questions": [
+      {
+        "prompt": "Qui envoie cet e-mail ?",
+        "answer": "Hugo Martin",
+        "options": [
+          "Hugo Martin",
+          "Chloé Martin",
+          "Tom Martin"
+        ]
+      },
+      {
+        "prompt": "Quel enfant faut-il inscrire ?",
+        "answer": "Tom",
+        "options": [
+          "Tom",
+          "Maya",
+          "Hugo"
+        ]
+      },
+      {
+        "prompt": "Quel âge a Tom ?",
+        "answer": "2 ans",
+        "options": [
+          "2 ans",
+          "6 ans",
+          "4 ans"
+        ]
+      },
+      {
+        "prompt": "Où travaille Chloé le matin ?",
+        "answer": "à l’hôpital",
+        "options": [
+          "à l’hôpital",
+          "à l’école",
+          "à la crèche"
+        ]
+      },
+      {
+        "prompt": "Quand Hugo peut-il venir ?",
+        "answer": "jeudi à 9 heures",
+        "options": [
+          "jeudi à 9 heures",
+          "jeudi à 15 heures",
+          "lundi à 9 heures"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "colonie",
+    "genre": "email",
+    "direction": "reçu",
+    "title": "La colonie de Lina",
+    "text": "De : Emma Rochat\nÀ : Nadia Benali\nObjet : Inscription de Lina à la colonie\n\nMadame,\nNous confirmons l’inscription de votre fille Lina, 8 ans, à la colonie du 7 au 14 juillet à Gryon. Le départ est lundi à 8 heures devant l’école. Lina partage la chambre avec deux autres filles. Merci d’apporter un sac à dos, une gourde et une veste de pluie. Le père de Lina, Karim, peut aussi signer l’autorisation.\nCordialement,\nEmma Rochat",
+    "questions": [
+      {
+        "prompt": "Qui reçoit cet e-mail ?",
+        "answer": "Nadia Benali",
+        "options": [
+          "Nadia Benali",
+          "Emma Rochat",
+          "Karim Benali"
+        ]
+      },
+      {
+        "prompt": "Où a lieu la colonie ?",
+        "answer": "à Gryon",
+        "options": [
+          "à Gryon",
+          "à Sion",
+          "à Lausanne"
+        ]
+      },
+      {
+        "prompt": "Quelles sont les dates ?",
+        "answer": "du 7 au 14 juillet",
+        "options": [
+          "du 7 au 14 juillet",
+          "du 1er au 7 juillet",
+          "du 14 au 21 juillet"
+        ]
+      },
+      {
+        "prompt": "À quelle heure est le départ ?",
+        "answer": "à 8 heures",
+        "options": [
+          "à 8 heures",
+          "à 9 heures",
+          "à 14 heures"
+        ]
+      },
+      {
+        "prompt": "Qui peut signer l’autorisation ?",
+        "answer": "Karim",
+        "options": [
+          "Karim",
+          "Emma",
+          "une camarade"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "medecin-pere",
+    "genre": "email",
+    "direction": "envoyé",
+    "title": "Un rendez-vous pour son père",
+    "text": "De : Samir El Amrani\nÀ : Cabinet du Dr Perrin\nObjet : Rendez-vous pour mon père\n\nBonjour,\nJe voudrais un rendez-vous pour mon père, Hassan El Amrani, 72 ans. Il a de la fièvre depuis dimanche. Ma mère Fatima l’accompagne. Nous sommes libres mercredi à 15 heures ou jeudi matin. Mon numéro est le 079 222 10 18.\nMerci.\nSamir El Amrani",
+    "questions": [
+      {
+        "prompt": "Pour qui est le rendez-vous ?",
+        "answer": "Hassan",
+        "options": [
+          "Hassan",
+          "Samir",
+          "Fatima"
+        ]
+      },
+      {
+        "prompt": "Quel âge a Hassan ?",
+        "answer": "72 ans",
+        "options": [
+          "72 ans",
+          "62 ans",
+          "82 ans"
+        ]
+      },
+      {
+        "prompt": "Depuis quand a-t-il de la fièvre ?",
+        "answer": "depuis dimanche",
+        "options": [
+          "depuis dimanche",
+          "depuis lundi",
+          "depuis samedi"
+        ]
+      },
+      {
+        "prompt": "Qui l’accompagne ?",
+        "answer": "Fatima",
+        "options": [
+          "Fatima",
+          "Samir",
+          "le docteur"
+        ]
+      },
+      {
+        "prompt": "Quel horaire est proposé mercredi ?",
+        "answer": "à 15 heures",
+        "options": [
+          "à 15 heures",
+          "à 9 heures",
+          "à 18 heures"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "cantine",
+    "genre": "email",
+    "direction": "reçu",
+    "title": "Inscrire Noah à la cantine",
+    "text": "De : École du Parc\nÀ : Julie Favre\nObjet : Inscription à la cantine\n\nMadame,\nVotre fils Noah peut manger à la cantine les lundis, mercredis et vendredis. Le repas coûte 8 francs. Sa sœur Emma est déjà inscrite. Merci de répondre avant le 12 septembre. Le premier repas est le lundi 15 septembre.\nCordialement,\nLe secrétariat",
+    "questions": [
+      {
+        "prompt": "Quels jours Noah mange-t-il à la cantine ?",
+        "answer": "lundi, mercredi et vendredi",
+        "options": [
+          "lundi, mercredi et vendredi",
+          "mardi et jeudi",
+          "tous les jours"
+        ]
+      },
+      {
+        "prompt": "Quel est le prix du repas ?",
+        "answer": "8 francs",
+        "options": [
+          "8 francs",
+          "6 francs",
+          "10 francs"
+        ]
+      },
+      {
+        "prompt": "Qui est déjà inscrite ?",
+        "answer": "Emma",
+        "options": [
+          "Emma",
+          "Julie",
+          "Noah"
+        ]
+      },
+      {
+        "prompt": "Avant quelle date faut-il répondre ?",
+        "answer": "le 12 septembre",
+        "options": [
+          "le 12 septembre",
+          "le 15 septembre",
+          "le 1er octobre"
+        ]
+      },
+      {
+        "prompt": "Quand a lieu le premier repas ?",
+        "answer": "le lundi 15 septembre",
+        "options": [
+          "le lundi 15 septembre",
+          "le mercredi 12 septembre",
+          "le vendredi 20 septembre"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "club-foot",
+    "genre": "email",
+    "direction": "envoyé",
+    "title": "Inscrire son neveu au football",
+    "text": "De : Paul Morel\nÀ : Club de football des Cèdres\nObjet : Inscription de mon neveu\n\nBonjour,\nJe voudrais inscrire mon neveu Yanis Morel, 10 ans, à l’entraînement du mercredi. Il habite chez sa mère, Leila, à Sion. L’entraînement commence à 17 h 30. Yanis a déjà des chaussures de football. Son père, Farid, viendra le chercher à 19 heures.\nMerci.\nPaul Morel",
+    "questions": [
+      {
+        "prompt": "Yanis est le ___ de Paul.",
+        "answer": "neveu",
+        "options": [
+          "neveu",
+          "fils",
+          "cousin"
+        ]
+      },
+      {
+        "prompt": "Quel âge a Yanis ?",
+        "answer": "10 ans",
+        "options": [
+          "10 ans",
+          "8 ans",
+          "12 ans"
+        ]
+      },
+      {
+        "prompt": "Quel jour a lieu l’entraînement ?",
+        "answer": "le mercredi",
+        "options": [
+          "le mercredi",
+          "le samedi",
+          "le lundi"
+        ]
+      },
+      {
+        "prompt": "À quelle heure commence l’entraînement ?",
+        "answer": "à 17 h 30",
+        "options": [
+          "à 17 h 30",
+          "à 16 h 30",
+          "à 19 heures"
+        ]
+      },
+      {
+        "prompt": "Qui vient chercher Yanis ?",
+        "answer": "Farid",
+        "options": [
+          "Farid",
+          "Paul",
+          "Leila"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "cartes-bibliotheque",
+    "genre": "email",
+    "direction": "reçu",
+    "title": "Des cartes pour les enfants",
+    "text": "De : Bibliothèque de la ville\nÀ : Cécile Lambert\nObjet : Cartes pour vos enfants\n\nBonjour,\nVos deux enfants, Maxime et Alice, peuvent recevoir une carte de bibliothèque. Maxime a 11 ans et Alice a 7 ans. Apportez une photo et une pièce d’identité. Le rendez-vous est mardi à 16 heures, au rez-de-chaussée. Votre mari Laurent peut venir à votre place.\nBien à vous,\nLe bureau des inscriptions",
+    "questions": [
+      {
+        "prompt": "Combien d’enfants reçoivent une carte ?",
+        "answer": "deux",
+        "options": [
+          "deux",
+          "un",
+          "trois"
+        ]
+      },
+      {
+        "prompt": "Quel âge a Alice ?",
+        "answer": "7 ans",
+        "options": [
+          "7 ans",
+          "11 ans",
+          "9 ans"
+        ]
+      },
+      {
+        "prompt": "Que faut-il apporter ?",
+        "answer": "une photo et une pièce d’identité",
+        "options": [
+          "une photo et une pièce d’identité",
+          "un livre et un stylo",
+          "seulement une photo"
+        ]
+      },
+      {
+        "prompt": "Quand est le rendez-vous ?",
+        "answer": "mardi à 16 heures",
+        "options": [
+          "mardi à 16 heures",
+          "jeudi à 16 heures",
+          "mardi à 10 heures"
+        ]
+      },
+      {
+        "prompt": "Qui peut venir à la place de Cécile ?",
+        "answer": "Laurent",
+        "options": [
+          "Laurent",
+          "Maxime",
+          "Alice"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "cours-piano",
+    "genre": "email",
+    "direction": "reçu",
+    "title": "Le premier cours de piano",
+    "text": "De : École de musique du Léman\nÀ : David Perrin\nObjet : Cours de piano de Chloé\n\nMonsieur,\nVotre fille Chloé commence le piano le jeudi 3 octobre à 16 h 15, avec Mme Blanc. Le cours dure 30 minutes. Sa mère Claire peut assister au premier cours. Le cahier de solfège coûte 12 francs. Merci de confirmer avant lundi.\nCordialement,\nLe secrétariat",
+    "questions": [
+      {
+        "prompt": "Quel instrument Chloé commence-t-elle ?",
+        "answer": "le piano",
+        "options": [
+          "le piano",
+          "la guitare",
+          "le violon"
+        ]
+      },
+      {
+        "prompt": "Quel jour a lieu le cours ?",
+        "answer": "le jeudi",
+        "options": [
+          "le jeudi",
+          "le mardi",
+          "le samedi"
+        ]
+      },
+      {
+        "prompt": "À quelle heure commence le cours ?",
+        "answer": "à 16 h 15",
+        "options": [
+          "à 16 h 15",
+          "à 15 h 15",
+          "à 17 h 15"
+        ]
+      },
+      {
+        "prompt": "Combien de temps dure le cours ?",
+        "answer": "30 minutes",
+        "options": [
+          "30 minutes",
+          "45 minutes",
+          "une heure"
+        ]
+      },
+      {
+        "prompt": "Combien coûte le cahier ?",
+        "answer": "12 francs",
+        "options": [
+          "12 francs",
+          "10 francs",
+          "20 francs"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "garderie-mercredi",
+    "genre": "email",
+    "direction": "envoyé",
+    "title": "La garderie du mercredi",
+    "text": "De : Aïcha Benali\nÀ : Garderie des Tilleuls\nObjet : Mercredi pour mes petits-enfants\n\nBonjour,\nJe garde mes petits-enfants, Lina et Yanis, le mercredi. Lina a 8 ans et Yanis a 6 ans. Leur mère Nadia travaille jusqu’à 18 heures. Pouvez-vous les accueillir de 12 heures à 17 h 30 ? Leur père Karim viendra les chercher. Je joins l’autorisation de Nadia.\nMerci.\nAïcha Benali",
+    "questions": [
+      {
+        "prompt": "Qui envoie cet e-mail ?",
+        "answer": "Aïcha Benali",
+        "options": [
+          "Aïcha Benali",
+          "Nadia Benali",
+          "Karim Benali"
+        ]
+      },
+      {
+        "prompt": "Lina et Yanis sont ses ___.",
+        "answer": "petits-enfants",
+        "options": [
+          "petits-enfants",
+          "enfants",
+          "neveux"
+        ]
+      },
+      {
+        "prompt": "Quel jour ont-ils besoin de la garderie ?",
+        "answer": "le mercredi",
+        "options": [
+          "le mercredi",
+          "le mardi",
+          "le vendredi"
+        ]
+      },
+      {
+        "prompt": "Jusqu’à quelle heure travaille Nadia ?",
+        "answer": "jusqu’à 18 heures",
+        "options": [
+          "jusqu’à 18 heures",
+          "jusqu’à 17 h 30",
+          "jusqu’à 16 heures"
+        ]
+      },
+      {
+        "prompt": "Qui vient chercher les enfants ?",
+        "answer": "Karim",
+        "options": [
+          "Karim",
+          "Aïcha",
+          "Nadia"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "assurance-emma",
+    "genre": "email",
+    "direction": "reçu",
+    "title": "Ajouter Emma à l’assurance",
+    "text": "De : Caisse maladie du Valais\nÀ : Thomas Meier\nObjet : Ajouter votre fille à l’assurance\n\nMonsieur,\nNous avons bien reçu votre demande pour votre fille Emma, née le 2 mars. Elle sera assurée à partir du 1er avril. Votre femme Julie est déjà sur le contrat. Merci d’envoyer une copie de l’acte de naissance avant le 20 mars. Le numéro de dossier est le 45821.\nCordialement,\nLe service familles",
+    "questions": [
+      {
+        "prompt": "Qui est ajoutée à l’assurance ?",
+        "answer": "Emma",
+        "options": [
+          "Emma",
+          "Julie",
+          "Thomas"
+        ]
+      },
+      {
+        "prompt": "Quelle est sa date de naissance ?",
+        "answer": "le 2 mars",
+        "options": [
+          "le 2 mars",
+          "le 20 mars",
+          "le 1er avril"
+        ]
+      },
+      {
+        "prompt": "À partir de quand est-elle assurée ?",
+        "answer": "le 1er avril",
+        "options": [
+          "le 1er avril",
+          "le 2 mars",
+          "le 20 mars"
+        ]
+      },
+      {
+        "prompt": "Qui est déjà sur le contrat ?",
+        "answer": "Julie",
+        "options": [
+          "Julie",
+          "Emma",
+          "le secrétariat"
+        ]
+      },
+      {
+        "prompt": "Quel est le numéro de dossier ?",
+        "answer": "45821",
+        "options": [
+          "45821",
+          "45812",
+          "45281"
+        ]
+      }
+    ]
   }
 ]

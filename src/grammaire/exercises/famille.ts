@@ -16,15 +16,16 @@ export const FAMILLE_KIND_IDS = [
   'fam-det',
   'fam-faire-part',
   'fam-photo',
+  'fam-recit',
   'fam-email',
   'fam-co',
   'fam-pe',
 ] as const satisfies readonly GramExerciseKindId[]
 
-export type FamilleKindId = (typeof FAMILLE_KIND_IDS)[number] | 'fam-pronoms-1' | 'fam-pronoms-2' | 'fam-arbre' | 'fam-recit'
+export type FamilleKindId = (typeof FAMILLE_KIND_IDS)[number] | 'fam-pronoms-1' | 'fam-pronoms-2'
 
 export function isFamilleKind(kindId: string): kindId is FamilleKindId {
-  return (FAMILLE_KIND_IDS as readonly string[]).includes(kindId) || kindId === 'fam-pronoms-1' || kindId === 'fam-pronoms-2' || kindId === 'fam-arbre' || kindId === 'fam-recit'
+  return (FAMILLE_KIND_IDS as readonly string[]).includes(kindId) || kindId === 'fam-pronoms-1' || kindId === 'fam-pronoms-2'
 }
 
 export const FAMILLE_DEFAULT_COUNT: Record<FamilleKindId, number> = {
@@ -33,9 +34,8 @@ export const FAMILLE_DEFAULT_COUNT: Record<FamilleKindId, number> = {
   'fam-pronoms-2': 8,
   'fam-faire-part': 6,
   'fam-pe': 1,
-  'fam-arbre': 6,
   'fam-photo': 5,
-  'fam-recit': 6,
+  'fam-recit': 5,
   'fam-email': 5,
   'fam-co': 6,
 }
@@ -52,10 +52,8 @@ export function familleBankCap(kindId: FamilleKindId): number {
       return FAIRE_PARTS[0]!.questions.length
     case 'fam-pe':
       return 1
-    case 'fam-arbre':
-      return 5
     case 'fam-photo':
-      return 5
+      return PHOTO_QUESTIONS.length
     case 'fam-recit':
       return 5
     case 'fam-email':
@@ -76,7 +74,6 @@ export function familleFormUi(kindId: string): 'none' | 'header2' | 'margin3' {
   }
   if (
     kindId === 'fam-photo' ||
-    kindId === 'fam-arbre' ||
     kindId === 'fam-recit' ||
     kindId === 'fam-email' ||
     kindId === 'fam-co'
@@ -229,14 +226,21 @@ function pronomPrompt2(item: PronomItem2): string {
 
 type FairePart = {
   slug: string
-  texte: string
+  nom: string
+  lignes: Array<{ label: string; valeur: string }>
   questions: TcfQuestion[]
 }
 
 const FAIRE_PARTS: FairePart[] = [
   {
     slug: 'jackie',
-    texte: "Olivier et Natasha annoncent la naissance de leur fille Jackie. Jackie a un frère, Sébastien, et une sœur, Marion. Marc et Catherine sont leurs grands-parents.",
+    nom: 'Jackie',
+    lignes: [
+      { label: 'Parents', valeur: 'Olivier et Natasha' },
+      { label: 'Frère', valeur: 'Sébastien' },
+      { label: 'Sœur', valeur: 'Marion' },
+      { label: 'Grands-parents', valeur: 'Marc et Catherine' },
+    ],
     questions: [
       dualQcmTrait('Jackie est ___ d’Olivier et Natasha.', 'la fille', ['la fille', 'le fils']),
       dualQcmTrait('Jackie est ___ de Sébastien et Marion.', 'la sœur', ['le frère', 'la sœur']),
@@ -248,7 +252,13 @@ const FAIRE_PARTS: FairePart[] = [
   },
   {
     slug: 'lucas',
-    texte: "Julie et Thomas annoncent la naissance de leur fils Lucas. Lucas a un frère, Noah, et une sœur, Emma. Paul et Anne sont leurs grands-parents.",
+    nom: 'Lucas',
+    lignes: [
+      { label: 'Parents', valeur: 'Julie et Thomas' },
+      { label: 'Frère', valeur: 'Noah' },
+      { label: 'Sœur', valeur: 'Emma' },
+      { label: 'Grands-parents', valeur: 'Paul et Anne' },
+    ],
     questions: [
       dualQcmTrait('Lucas est ___ de Julie et Thomas.', 'le fils', ['la fille', 'le fils']),
       dualQcmTrait('Lucas est ___ d’Emma et Noah.', 'le frère', ['le frère', 'la sœur']),
@@ -260,7 +270,13 @@ const FAIRE_PARTS: FairePart[] = [
   },
   {
     slug: 'sara',
-    texte: "Leila et Samir annoncent la naissance de leur fille Sara. Sara a un frère, Karim, et une sœur, Layla. Hassan et Fatima sont leurs grands-parents.",
+    nom: 'Sara',
+    lignes: [
+      { label: 'Parents', valeur: 'Leila et Samir' },
+      { label: 'Frère', valeur: 'Karim' },
+      { label: 'Sœur', valeur: 'Layla' },
+      { label: 'Grands-parents', valeur: 'Hassan et Fatima' },
+    ],
     questions: [
       dualQcmTrait('Sara est ___ de Leila et Samir.', 'la fille', ['la fille', 'le fils']),
       dualQcmTrait('Sara est ___ de Karim et Layla.', 'la sœur', ['le frère', 'la sœur']),
@@ -272,7 +288,12 @@ const FAIRE_PARTS: FairePart[] = [
   },
   {
     slug: 'leo',
-    texte: "Marie et David annoncent la naissance de leur fils Léo. Léo a une sœur, Chloé. Jean et Claire sont leurs grands-parents.",
+    nom: 'Léo',
+    lignes: [
+      { label: 'Parents', valeur: 'Marie et David' },
+      { label: 'Sœur', valeur: 'Chloé' },
+      { label: 'Grands-parents', valeur: 'Jean et Claire' },
+    ],
     questions: [
       dualQcmTrait('Léo est ___ de Marie et David.', 'le fils', ['la fille', 'le fils']),
       dualQcmTrait('Léo est ___ de Chloé.', 'le frère', ['le frère', 'la sœur']),
@@ -284,7 +305,13 @@ const FAIRE_PARTS: FairePart[] = [
   },
   {
     slug: 'mina',
-    texte: "Nadia et Youssef annoncent la naissance de leur fille Mina. Mina a un frère, Adam, et une sœur, Yasmine. Amira et Rachid sont leurs grands-parents.",
+    nom: 'Mina',
+    lignes: [
+      { label: 'Parents', valeur: 'Nadia et Youssef' },
+      { label: 'Frère', valeur: 'Adam' },
+      { label: 'Sœur', valeur: 'Yasmine' },
+      { label: 'Grands-parents', valeur: 'Amira et Rachid' },
+    ],
     questions: [
       dualQcmTrait('Mina est ___ de Nadia et Youssef.', 'la fille', ['la fille', 'le fils']),
       dualQcmTrait('Mina est ___ d’Adam et Yasmine.', 'la sœur', ['le frère', 'la sœur']),
@@ -299,6 +326,24 @@ const FAIRE_PARTS: FairePart[] = [
 // —— PE ——
 
 const PE_MODELE = 'Je m’appelle Léa. Dans ma famille, nous sommes cinq personnes. Mes parents s’appellent Julie et Thomas. J’ai un frère et une sœur. Mon frère s’appelle Noah et ma sœur s’appelle Emma. Mes grands-parents habitent près de chez nous. Nous aimons manger ensemble le dimanche.'
+
+/** Portraits en réserve : pas de fichier image, seulement le personnage à illustrer plus tard. */
+const PHOTO_PORTRAITS = [
+  { nom: 'Karim', legende: 'Homme adulte, en pied, fond blanc' },
+  { nom: 'Nadia', legende: 'Femme adulte, en pied, fond blanc' },
+  { nom: 'Yanis', legende: 'Garçon, en pied, fond blanc' },
+  { nom: 'Lina', legende: 'Fille, en pied, fond blanc' },
+  { nom: 'Aïcha', legende: 'Grand-mère, en pied, fond blanc' },
+  { nom: 'Ahmed', legende: 'Grand-père, en pied, fond blanc' },
+] as const
+
+const PHOTO_QUESTIONS: TcfQuestion[] = [
+  dualQcmTrait('Karim est le ___ de Lina.', 'père', ['père', 'frère', 'cousin']),
+  dualQcmTrait('Nadia est la ___ de Yanis.', 'mère', ['mère', 'tante', 'sœur']),
+  dualQcmTrait('Lina est la ___ de Yanis.', 'sœur', ['sœur', 'cousine', 'mère']),
+  dualQcmTrait('Ahmed est le ___ de Lina.', 'grand-père', ['grand-père', 'père', 'oncle']),
+  dualQcmTrait('Aïcha est la ___ de Yanis.', 'grand-mère', ['grand-mère', 'mère', 'tante']),
+]
 
 
 // —— CO ——
@@ -449,9 +494,10 @@ export function buildFamilleExercise(opts: {
         type_exercice: 'annonce',
         support: {
           titre: '',
-          texte: set.texte.replace(/\. /g, '.\n'),
-          image: '/lib/images/documents/famille/bebe.webp',
-          presentation: 'image-bullets',
+          texte: '',
+          image: null,
+          presentation: 'portrait',
+          fiche: { nom: set.nom, lignes: set.lignes },
         },
         questions,
       })
@@ -466,12 +512,28 @@ export function buildFamilleExercise(opts: {
           consigne: 'Présentez votre famille en cinq phrases ou plus. Parlez de vos parents, de vos frères et sœurs ou d’autres personnes de votre famille. Dites comment ils s’appellent et ce que vous aimez faire ensemble. (40 mots minimum)',
           nb_mots: { min: 40 },
           reponse_modele: PE_MODELE,
+          numeroter_lignes: true,
         },
         questions: [],
       })
     }
-    case 'fam-arbre':
-    case 'fam-photo':
+    case 'fam-photo': {
+      const questions = PHOTO_QUESTIONS.slice(0, Math.max(1, Math.min(count, PHOTO_QUESTIONS.length)))
+      return wrap(typeId, 'Observez les portraits, puis répondez aux questions.', {
+        id: '',
+        niveau: 'A1-A2',
+        competence: 'CE',
+        type_exercice: 'annonce',
+        support: {
+          titre: '',
+          texte: '',
+          image: null,
+          presentation: 'portraits',
+          portraits: PHOTO_PORTRAITS.map((person) => ({ nom: person.nom, legende: person.legende })),
+        },
+        questions,
+      })
+    }
     case 'fam-recit':
       return buildFamilyReading({ typeId, rng, count })
     case 'fam-email':

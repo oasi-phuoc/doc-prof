@@ -133,7 +133,20 @@ type TcfBase<C extends TcfCompetence, T extends string, S> = {
 
 export type TcfCeSms = TcfBase<'CE', 'sms', { expediteur: string; texte: string }>
 export type TcfCeEmail = TcfBase<'CE', 'email', { de: string; a: string; objet: string; texte: string }>
-export type TcfCeAnnonce = TcfBase<'CE', 'annonce', { titre: string; texte: string; image: string | null; presentation?: 'image-bullets' }>
+export type TcfCeAnnonce = TcfBase<
+  'CE',
+  'annonce',
+  {
+    titre: string
+    texte: string
+    image: string | null
+    presentation?: 'image-bullets' | 'portrait' | 'portraits'
+    /** Faire-part : identité à droite du portrait. */
+    fiche?: { nom: string; lignes: Array<{ label: string; valeur: string }> }
+    /** Photo de famille : portraits en réserve (légende = image à produire plus tard). */
+    portraits?: Array<{ nom: string; legende: string }>
+  }
+>
 export type TcfCeExercise = TcfCeSms | TcfCeEmail | TcfCeAnnonce
 
 // —— CO ——
@@ -265,6 +278,8 @@ export type TcfPeQuestionTexte = TcfBase<
     reponse_modele?: string
     /** Message à écrire présenté comme un e-mail (destinataire et objet imposés). */
     email?: { a: string; objet: string }
+    /** Lignes numérotées : le numéro et le trait sont sur la même ligne. */
+    numeroter_lignes?: boolean
   }
 >
 /** Dialogue écrit : répliques de l’interlocuteur données, l’élève écrit les siennes. */
@@ -463,6 +478,8 @@ export type TcfSheetItem =
       nbMots: TcfNbMots
       nbLignes: number
       reponseModele?: string
+      /** Numéro et trait sur la même ligne. */
+      lignesNumerotees?: boolean
     }
   | {
       kind: 'dialogue'
