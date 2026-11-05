@@ -15,11 +15,11 @@
   ],
   "summary": {
     "initial_question_candidates": 306,
-    "questions_illustrated_or_prepared": 178,
-    "newly_activated": 130,
+    "questions_illustrated_or_prepared": 190,
+    "newly_activated": 142,
     "prepared_pending_audio_link": 1,
     "prepared_pending_audio_validation": 4,
-    "remaining_questions_requiring_images_or_review": 29,
+    "remaining_questions_requiring_images_or_review": 17,
     "unreviewed_complete_trios": 0,
     "audio_references_next_stage": 0,
     "vocabulary_occurrences_final_stage": 1686,
@@ -8876,11 +8876,10 @@
       "resolved_images": [
         null,
         "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp",
-        null
+        "/lib/images/tcf/qcm-audit/co57-entree-parking.webp"
       ],
       "missing_labels": [
-        "À la caisse de la librairie",
-        "À l’entrée du parking"
+        "À la caisse de la librairie"
       ],
       "ready_for_source_review": false,
       "audio_review_issue": {
@@ -10736,7 +10735,7 @@
           "asset": "6f475889b200"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "9782090351958:057:0dc3afbbc24a",
         "additional-20261102:mdf-a2-abc-junior-direct:57:0dc3afbbc24a:eabc88c7"
@@ -10750,16 +10749,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co57-salon-tatouage.webp",
+        "/lib/images/tcf/qcm-audit/co57-salon-coiffure.webp",
+        "/lib/images/tcf/qcm-audit/co57-salon-livre.webp"
       ],
-      "missing_labels": [
-        "Le salon du tatouage",
-        "Le salon de la coiffure",
-        "Le salon du livre"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-salon-tatouage.webp",
+        "/lib/images/tcf/qcm-audit/co57-salon-coiffure.webp",
+        "/lib/images/tcf/qcm-audit/co57-salon-livre.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ssx-a2-radio-salon-du-tatouage-co-3",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co57-salon-tatouage.webp",
+          "/lib/images/tcf/qcm-audit/co57-salon-coiffure.webp",
+          "/lib/images/tcf/qcm-audit/co57-salon-livre.webp"
+        ],
+        "support_quote": "Cette semaine à Paris, il y a le salon du tatouage. On attend des milliers de visiteurs. Le tatouage est très à la mode. Un français sur cinq est tatoué. Ce sont surtout des jeunes de 18 à 35 ans et plus de femmes que d'hommes.",
+        "current_bank_transcription": "Cette semaine à Paris, il y a le salon du tatouage.\nOn attend des milliers de visiteurs.\nLe tatouage est très à la mode : un Français sur cinq est tatoué.\nCe sont surtout des jeunes de 18 à 35 ans, et plus de femmes que d'hommes.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trois salons d’exposition distincts : tatouage, coiffure et livre ; stands et banderoles naturelles lisibles, diversité et mains relues, sans date ni montant."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -10790,7 +10803,7 @@
           "asset": "5a1574cc2c23"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "9782090351958:057:0dc3afbbc24a",
         "additional-20261102:mdf-a2-abc-junior-direct:57:0dc3afbbc24a:eabc88c7"
@@ -10804,16 +10817,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co57-fete-ville.webp",
+        "/lib/images/tcf/qcm-audit/co57-marche-noel.webp",
+        "/lib/images/tcf/qcm-audit/co57-course-pied.webp"
       ],
-      "missing_labels": [
-        "La fête de la ville",
-        "Un marché de Noël",
-        "Une course à pied"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-fete-ville.webp",
+        "/lib/images/tcf/qcm-audit/co57-marche-noel.webp",
+        "/lib/images/tcf/qcm-audit/co57-course-pied.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ssx-a2-radio-fete-de-la-ville-co-3",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co57-fete-ville.webp",
+          "/lib/images/tcf/qcm-audit/co57-marche-noel.webp",
+          "/lib/images/tcf/qcm-audit/co57-course-pied.webp"
+        ],
+        "support_quote": "samedi, c'est la fête de la ville. Cette année encore, venez écouter des concerts dans les rues. Pop, électro, classique, il y en a pour tous les goûts. Une discothèque est même installée sur la place centrale.",
+        "current_bank_transcription": "Samedi, c'est la fête de la ville.\nCette année encore, venez écouter des concerts dans les rues.\nPop, électro, classique : il y en a pour tous les goûts.\nUne discothèque est même installée sur la place centrale.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Fête municipale, marché de Noël et course à pied distincts ; course reprise dans un rendu dessiné, aucun numéro ou date. Source confirme la fête de la ville."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -10912,7 +10939,7 @@
           "asset": "ee2a17e5cfcd"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "9782090351958:035:c8723151fd49",
         "additional-20261102:mdf-a2-abc-junior-direct:35:c8723151fd49:f966320f"
@@ -10926,16 +10953,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co57-regarder-film-action.webp",
+        "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co57-regarder-match.webp"
       ],
-      "missing_labels": [
-        "Regarder un film d'action",
-        "Aller au cinéma",
-        "Regarder un match"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-regarder-film-action.webp",
+        "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co57-regarder-match.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ssx-a2-famille-film-d-action-co-4",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co57-regarder-film-action.webp",
+          "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp",
+          "/lib/images/tcf/qcm-audit/co57-regarder-match.webp"
+        ],
+        "support_quote": "On regarde un film d'action ce soir? Ah non! Je n'aime pas les films d'action, c'est trop violent! Si tu veux, on peut regarder une comédie. Oui, c'est une bonne idée.",
+        "current_bank_transcription": "- On regarde un film d'action, ce soir ?\n- Ah non, je n'aime pas les films d'action, c'est trop violent.\n- Si tu veux, on peut regarder une comédie.\n- Oui, c'est une bonne idée.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Télévision avec poursuite de film d’action, séance au cinéma existante réutilisée après contrôle, télévision avec match. Pas de manettes ou score, trois activités distinctes."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -11502,7 +11543,7 @@
           "asset": "723dc1d4401b"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a2_2021:005:523515a4ebd7"
       ],
@@ -11515,15 +11556,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
+        "/lib/images/tcf/qcm-audit/co57-caisses-rez-chaussee.webp",
+        "/lib/images/tcf/qcm-audit/co57-entree-parking.webp",
         "/lib/images/tcf/qcm-audit/co834-rayon-vetements-dessine.webp"
       ],
-      "missing_labels": [
-        "Aux caisses du rez-de-chaussée",
-        "À l'entrée du parking"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-caisses-rez-chaussee.webp",
+        "/lib/images/tcf/qcm-audit/co57-entree-parking.webp",
+        "/lib/images/tcf/qcm-audit/co834-rayon-vetements-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a2-2021-co-ex1-05",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co57-caisses-rez-chaussee.webp",
+          "/lib/images/tcf/qcm-audit/co57-entree-parking.webp",
+          "/lib/images/tcf/qcm-audit/co834-rayon-vetements-dessine.webp"
+        ],
+        "support_quote": "Chers clients Aujourd'hui le magasin reste ouvert jusqu'à 21h Pour vous éviter une attente trop longue aux caisses chaussée vous pouvez régler vos achats au premier étage Des caisses supplémentaires sont à votre disposition",
+        "current_bank_transcription": "Chers clients, aujourd’hui, le magasin reste ouvert jusqu’à 21 h. Pour vous éviter une attente\ntrop longue aux caisses du rez-de-chaussée, vous\npouvez régler vos achats au 1er étage. Des caisses\nsupplémentaires sont à votre disposition.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Caisses au niveau du trottoir et plaque REZ-DE-CHAUSSÉE, entrée de parking créée et vêtements existants contrôlés. La transcription ASR est tronquée au mot rez-de-chaussée ; la transcription actuelle dit explicitement « attente trop longue aux caisses du rez-de-chaussée ». Rapprochement de textes, sans certification d’écoute."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -11621,7 +11677,7 @@
           "asset": "7be1e80fb83e"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a2_2021:017:e80a87f00222"
       ],
@@ -11634,15 +11690,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
+        "/lib/images/tcf/qcm-audit/co57-entree-reclamations.webp",
+        "/lib/images/tcf/qcm-audit/co57-guichet-gare.webp",
         "/lib/images/tcf/qcm-audit/co306-sortie-magasin-dessine.webp"
       ],
-      "missing_labels": [
-        "À l'entrée du bureau des réclamations",
-        "Au guichet de la gare"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-entree-reclamations.webp",
+        "/lib/images/tcf/qcm-audit/co57-guichet-gare.webp",
+        "/lib/images/tcf/qcm-audit/co306-sortie-magasin-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a2-2021-co-ex3-17",
+        "question": 10,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co57-entree-reclamations.webp",
+          "/lib/images/tcf/qcm-audit/co57-guichet-gare.webp",
+          "/lib/images/tcf/qcm-audit/co306-sortie-magasin-dessine.webp"
+        ],
+        "support_quote": "L'assurée doit prendre un ticket à l'rée du bureau des réclamations.",
+        "current_bank_transcription": "L’assuré doit prendre un ticket à l’entrée du bureau des réclamations.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Entrée du bureau avec distributeur, guichet réellement en gare, sortie du magasin existante contrôlée. La transcription ASR altère entrée, la transcription actuelle dit « L’assuré doit prendre un ticket à l’entrée du bureau des réclamations ». Rapprochement de textes, sans certification d’écoute."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -11740,7 +11811,7 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a2_2021:023:50990deefc22"
       ],
@@ -11753,16 +11824,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co57-soiree.webp",
+        "/lib/images/tcf/qcm-audit/co306-professeure-francais-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co57-voyage.webp"
       ],
-      "missing_labels": [
-        "Une soirée",
-        "Un cours",
-        "Un voyage"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-soiree.webp",
+        "/lib/images/tcf/qcm-audit/co306-professeure-francais-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co57-voyage.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a2-2021-co-ex3-23",
+        "question": 4,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co57-soiree.webp",
+          "/lib/images/tcf/qcm-audit/co306-professeure-francais-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co57-voyage.webp"
+        ],
+        "support_quote": "Tu ne peux pas venir à ma soirée? Comme c'est dommage.",
+        "current_bank_transcription": "Tu ne peux pas venir à ma soirée ? Comme c’est dommage !",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Soirée et voyage créés, classe de français existante réutilisée comme exemple de cours ; trois événements distincts, source confirme soirée."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -12546,12 +12631,11 @@
       "resolved_images": [
         null,
         null,
-        null
+        "/lib/images/tcf/qcm-audit/co57-entree-parking.webp"
       ],
       "missing_labels": [
         "Dans la boîte à la sortie du magasin",
-        "Au rayon informatique",
-        "À l'entrée du parking"
+        "Au rayon informatique"
       ],
       "ready_for_source_review": false
     },
@@ -12584,7 +12668,7 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "09035196:038:359323596792",
         "additional-20261102:mdf-b1-abc-junior-direct:38:359323596792:6ddeb908"
@@ -12598,14 +12682,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co57-legumes-bio.webp",
+        "/lib/images/tcf/qcm-audit/co834-parking-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-vetements-dessines.webp"
       ],
-      "missing_labels": [
-        "Des légumes bio"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-legumes-bio.webp",
+        "/lib/images/tcf/qcm-audit/co834-parking-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-vetements-dessines.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ss-b1-s2-co-2",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co57-legumes-bio.webp",
+          "/lib/images/tcf/qcm-audit/co834-parking-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-vetements-dessines.webp"
+        ],
+        "support_quote": "Mesdames et messieurs, venez approchez, achetez mes légumes, ils sont 100% biologiques! Vous vous demandez pourquoi acheter bio? Mais c'est très simple, côté santé, c'est ce qu'il y a de meilleur. Regardez ces courgettes, ces aubergines, ces carottes. D'abord, c'est des légumes de saison. Rien à voir avec ce que vous trouvez au supermarché. Ici, pas d'import export, ces tomates. Elles viennent de mon jardin. Choisir des produits bio, c'est choisir la sécurité alimentaire. Vous êtes sûr de ne trouver aucun résidu chimique dans mes légumes. Vous pouvez manger les fruits et les légumes bio sans les éplucher, sans aucun souci, d'autant que c'est sous la peau que se concentrent les vitamines et minéraux. Saviez-vous que les aliments biologiques ont une qualité nutritionnelle supérieure de 30% par rapport à ceux issus de l'agriculture conventionnelle? Donc, manger bio veut dire manger des aliment plus riches en vitamines et en minéraux. Madame, avec la poucette, donnez à manger bio à votre enfant! Et ses risques d'allergie alimentaire seront réduits! En plus, les produits bio ont un goût tellement meilleur! Vous vous demandez encore pourquoi choisir le bio? Vous voulez une autre raison? L'agriculture biologique respecte la nature. Comment? Eh bien, en refusant d'utiliser les produits chimiques, le bio favorise la biodiversité. Voilà un petit geste écologique pour la planète qui ne coûte pas très cher. Achete chez moi 6 œufs biologiques. vous coûte 2,40 € contre 1,95€ dans une grande surface. Ça fait une différence de 45 centimes. Qu'est-ce que 45 centimes pour un produit tellement plus savoureux et qui respecte l'équilibre de la nature? Regardez, madame, cette photo derrière moi. Vous voyez cette montagne, cette verdure? Voilà où sont élevées mes poules. Vous penserez à elle en mangeant votre omelette ce soir à la maison!",
+        "current_bank_transcription": "Mes lames et messieurs, venez à proche et acheter mes légumes, ils sont 100% biologiques.\nVous demandez pourquoi j'étais bio mais c'est très simple, côté santé c'est ce qu'il y a de meilleures.\nRegardez ces courgettes, ces obérgines, ces carottes.\nD'abord, ces légumes de saison, rien à voir avec ce que vous le trouvez au supermarché.\nIci, pendant un peu l'expert, ces tomates, elles viennent directement de mon jardin.\nChoisir des produits bio, c'est choisir la sécurité alimentaire.\nVous êtes sûr de ne trouver aucun résidus chimique dans mes légumes.\nVous pouvez manger les fruits et les légumes bio sans les éplucher, sans aucun souci, d'autant que c'est sous la peau, que se concentre les vitamine et minéraux.\nSaviez-vous que les aliments biologiques ont une qualité nutritionnelle supérieure de 30% par rapport à ce issue de l'agriculture conventionnelle ?\nDonc, manger bio veut dire manger des aliments plus riches en vitamine et en minéraux.\nVoilà, mec la poussette, donner un manger bio à votre enfant et ces risques d'allerger alimentaires seront réduits.\nEn plus, les produits bio ont un goût tellement meilleur.\nVous vous demandez encore pourquoi choisir le bio ?\nVous voulez une autre raison ?\nL'agriculture biologique respecte de la nature.\nComment ?\nEn refusant d'utiliser les produits chimiques, le bio favorise la biodiversité.\nVoilà un petit geste écologique pour la planète qui ne coûte pas très cher.\nHT chez moi, si ce biologique vous coûte 2,45 euros contre 1,95 euros dans une bande sur face.\nIl y a une différence de 45 centimes.\nQu'est-ce que 45 centimes pourraient produire tellement plus savoureux et qui respectent l'équilibre de la nature ?\nRegardez madame cette photo derrière moi, vous voyez cette montagne, cette verdure ?\nVoilà vous sont élevé mes poules.\nVous pensez à elle en manger à votre omelette ce soir à la maison ?",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Légumes avec étiquette BIO, plusieurs voitures du parking et vêtements peints existants réutilisés ; qualificatif bio et pluriels respectés."
+      }
     },
     {
       "bank": "src/tcf/content/a2-b1/co.json",
@@ -12848,7 +12948,7 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "09035196:036:a79a2771f57e",
         "additional-20261102:mdf-b1-abc-junior-direct:36:a79a2771f57e:7ada9500"
@@ -12862,15 +12962,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
+        "/lib/images/tcf/qcm-audit/co57-bord-lac.webp",
+        "/lib/images/tcf/qcm-audit/co57-entree-parking.webp",
         "/lib/images/tcf/qcm-audit/co57-cafeteria.webp"
       ],
-      "missing_labels": [
-        "Au bord du lac",
-        "À l'entrée du parking"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-bord-lac.webp",
+        "/lib/images/tcf/qcm-audit/co57-entree-parking.webp",
+        "/lib/images/tcf/qcm-audit/co57-cafeteria.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ss-b1-s6-co-1",
+        "question": 10,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co57-bord-lac.webp",
+          "/lib/images/tcf/qcm-audit/co57-entree-parking.webp",
+          "/lib/images/tcf/qcm-audit/co57-cafeteria.webp"
+        ],
+        "support_quote": "Venez au parc Looping, l'aventure pour tous Ouvert pendant l'été de 1h à 23h, tous les jours du lundi au dimanche. Découvrez le plus grand parc d'attractions de la région à 45 minutes seulement de Marseille par l'autoroute A6. Le parc Looping est l'endroit idéal pour passer une journée de détente et de partage en famille. Le parc Looping rassemble plaisir, authenticité et émotion avec ses 35 attractions et trois spectacles extraordinaires, ainsi que deux points de restauration et des zones de pique-nique. Les grands classiques vous attendent, comme la grande roue ou le train fantôme, mais également de nombreuses nouveautés. Faites vibrer vos 5 sens avec le nouveau simulateur X-Max 3, unique en Europe! Vous pouvez désormais regarder nos films et documentaires en 3D. Les sièges bougent et vous sentez toutes sortes de sensations. Du vent, une tempête de neige, l'odeur du feu, de la forêt, une expérience unique à découvrir absolument! Pour les plus courageux, découvrez l'adrénaline. Vous êtes propulsés grâce à un élastique à plus de 30 mètres d'altitude. Tout simplement incroyable! Découvrez la sensation de grande vitesse avec cette nouvelle attraction hors du commun. Attention, ce manège est interdit au moins de 12 ans. Le parc Looping, c'est aussi des espaces verts dans un cadre naturel magnifique. Vous avez envie de reposer, profitez de nos zones de détente, équipées de hamac et de barbecue pour manger pendant la journée en famille ou avec les amis. La cafétéria Bon Appétit est ouverte à partir de 12h et jusqu'à 21h45. Vous y trouverez des menus à 8,50 euros et un grand choix de boissons chaudes et froides. Pour les petites fins, le snack Mini Loop est ouvert toute la journée. De l'ouverture à la fermeture du parc. Les spectacles du parc Looping, c'est tout simplement... Magique. A 14h, un spectacle inédit de magie vous surprendra. Les tours et les rebondissements se succèdent dans une ambiance chaleureuse et amicale. Devenez complice de l'illusionniste et perdez tout refaire. A ne pas manquer. Le soir, à partir de 21h30, Profitez du splendide spectacle de son et lumière au bord du lac. Des projections de vidéos et de lumière, ainsi que des acrobates et des danseurs, transforment chaque soir le lac en un espace féérique et merveilleux.",
+        "current_bank_transcription": "Plaisir, authenticité et émotion : venez découvrir nos 35 attractions et trois spectacles extraordinaires, ainsi que deux points de restauration et des zones de pique-nique.\nLes grands classiques vous attendent, comme la Grande Roue ou le train fantôme, mais également deux nouveautés.\nFaites vibrer vos sens avec le nouveau simulateur X-MAD-3D, unique en Europe !\nVous pouvez désormais regarder nos films et documentaires en 3D : les sièges bougent et vous sentez toutes sortes de sensations — du vent, une tempête de neige, l'odeur du feu de la forêt…\nUne expérience unique à découvrir absolument.\nPour les plus courageux, découvrez l'Adrénaline : vous êtes propulsé grâce à un élastique à plus de trente mètres d'altitude.\nTout simplement incroyable !\nDécouvrez la sensation de grande vitesse avec cette nouvelle attraction hors du commun.\nAttention, cette attraction est interdite aux moins de douze ans.\nLe parc Walibi, c'est aussi des espaces verts dans un cadre naturel magnifique.\nVous avez envie de vous détendre ?\nProfitez de nos zones de détente équipées d'hamacs et de barbecues pour manger pendant la journée en famille ou avec des amis.\nLa cafétéria, bonne habitude, est ouverte à partir de midi et jusqu'à 21 h 45.\nVous y trouverez des menus à 8,50 euros et un grand choix de boissons chaudes et froides.\nPour les petites faims, le snack Mini Loop est ouvert toute la journée, de l'ouverture à la fermeture du parc.\nLes spectacles du parc Walibi, c'est tout simplement magique.\nÀ 14 heures, un spectacle inédit de magie vous surprendra : les tours et les rebondissements se succèdent dans une ambiance chaleureuse et amicale.\nDevenez complice de l'illusionniste et ne perdez pas un instant de ce spectacle à ne pas manquer.\nLe soir, à partir de 21 h 30, profitez du splendide spectacle « Show et lumière » au bord du lac : les projections de vidéos et de lumières, ainsi que des acrobates et des danseurs, transforment chaque soir le lac en un espace féérique et irréel.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Vue au bord du lac créée, entrée de parking et cafétéria peintes réutilisées ; lieu seul représenté sans donner un spectacle aux distracteurs."
+      }
     },
     {
       "bank": "src/tcf/content/a2-b1/co.json",
@@ -13075,7 +13190,7 @@
           "asset": "83d2d7f8a7da"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "09035196:024:9dd16b09b5a8",
         "additional-20261102:mdf-b1-abc-junior-direct:24:9dd16b09b5a8:e076e313"
@@ -13089,16 +13204,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co57-maison-retraite.webp",
+        "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co57-centre-commercial.webp"
       ],
-      "missing_labels": [
-        "Des maisons de retraite",
-        "Des gares ferroviaires",
-        "Des centres commerciaux"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-maison-retraite.webp",
+        "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co57-centre-commercial.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ss-b1-s11-co-1",
+        "question": 10,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co57-maison-retraite.webp",
+          "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co57-centre-commercial.webp"
+        ],
+        "support_quote": "La zoothérapie utilise la compagnie d'un animal pour diminuer le stress chez des personnes qui souffrent de problems mentaux, physiques ou sociaux, des enfants fragilisés, des personnes âgées seules, des handicapés, des personnes en difficulté d'insertion, des malades Alzheimer. La complicité qui se crée avec l'animal permet de developer des liens affectifs qui deviennent des repères rassurants. François Beger, directeur de l'Institut français de zoothérapie, prise que la réussite de cette thérapie tient sans doute au fait que l'animal ne porte aucun jugement. Depuis les années 1980, de nombreuses études ont confirmé que le simple contact avec l'animal était favorable à la santé physique et mentale. Le simple fait de le promener peut aider à sortir de l'isolement, il stimule la mobilité et la concentration. Dans une famille, il favorise la bonne circulation de l'affection et libère aussi la communication. Chez l'enfant, l'animal va entraîner le rire par son comportement, transmettre de l'affection et créer un véritable attachement. L'animal ne laissera jamais l'enfant indifférent. It will l'aider à faire face à la solitude due à une incompréhension dans les relations avec ses parents ou avec les enseignants. L'animal peut jouer un rôle important dans l'apprentissage de l'autonomie. Avec un animal, la communication est non verbale, elle devient sensorielle, tactile et aussi ludique. Le patient est pris en charge sans même qu'il s'en rend compte. La zoothérapie fait appel en premier lieu aux chiens. Le chien est le médiateur préféré des enfants et des adultes. Le chat est antidépresseur pour les personnes anxieuses. Caresser la fourrure du chat est un geste de réconfort et d'apaisement. Le ronronement du chat est aussi un très bon antistress. En ronronant, le chat émet des fréquences sonores basses émises par le larynx qui ont un effet relaxant. The maisons de retraite n'hésite pas à adopter des chats, car on constater que les chats réconfortent les residents and les aide to s'endormir.",
+        "current_bank_transcription": "L'asothérapie utilise la compagnie d'un animal pour diminuer le stress chez des personnes qui souffrent de problèmes mentaux, physiques ou sociaux, des enfants fragilisés, des personnes âgées sols, des handicapés, des personnes difficultées d'insertion, des malades Alzheimer.\nLa complicité qui se crée avec l'animal permet de développer des liens infectifs qui deviennent des repères rassurants.\nFrançois Béguère, directeur de l'Institut français de Zothérapie, précise que la réussite de cette thérapie tient sans doute au fait que l'animal ne porte aucun jugement.\nDepuis les années 1980, de nombreuses études ont confirmé que le simple contact avec l'animal était favorable à la santé physique et mentale.\nLe simple fait de le promener peut aider à sortir de l'isolement, il stimulue la mobilité et la concentration.\nDans une famille, il favorise la bonne circulation de la fiction et libère aussi la communication.\nChez l'animal va entraîner le rire par son comportement, transmettre de la fiction et créer un véritable attachement.\nL'animal ne les seraient jamais l'enfant indifférent.\nIl peut l'aider à faire face à la solitude, due à une incompréhension dans les relations avec ses parents ou avec les enseignants.\nIl peut jouer un rôle important dans l'apprentissage de l'autonomie.\nAvec un animal, la communication est non-verbal, elle devient sensorial, tactile et aussi ludique.\nLe patient est pris en charge sans même qu'il s'en rend compte.\nLa zothérapie fait appel en premier lieu au chien.\nLe chien et le médiateur préféraient des enfants et des adultes.\nLe chat est enti des presseurs pour les personnes anxieuses.\nCar essai la fauveur du chat est un geste de réconfort et d'apaisement.\nLe ronronnement du chat est aussi un très bon antistresse.\nEn ronronant, le chat est met des fréquences sonores basses et mise par le larinx qui ont un effet relaxant.\nLes maisons de retraite n'hésitent pas à adopter des chats, car on a pu constater que les chats réconfortent les résidents et les aides à s'endormir.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Maison de retraite et centre commercial créés, gare peinte réutilisée ; types d’établissements entiers, aucune scène d’adoption ajoutée aux distracteurs."
+      }
     },
     {
       "bank": "src/tcf/content/a2-b1/co.json",
@@ -13129,7 +13258,7 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "09035196:032:06ca883daec9",
         "additional-20261102:mdf-b1-abc-junior-direct:32:06ca883daec9:506c4b6a"
@@ -13143,16 +13272,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co57-sirene.webp",
+        "/lib/images/tcf/qcm-audit/co57-journaliste.webp",
+        "/lib/images/tcf/qcm-audit/co306-professeure-francais-dessine.webp"
       ],
-      "missing_labels": [
-        "Une sirène",
-        "Une journaliste",
-        "Une professeure"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-sirene.webp",
+        "/lib/images/tcf/qcm-audit/co57-journaliste.webp",
+        "/lib/images/tcf/qcm-audit/co306-professeure-francais-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ss-b1-s11-co-2",
+        "question": 6,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co57-sirene.webp",
+          "/lib/images/tcf/qcm-audit/co57-journaliste.webp",
+          "/lib/images/tcf/qcm-audit/co306-professeure-francais-dessine.webp"
+        ],
+        "support_quote": "Cette semaine au Cinéma Le Studio de la ville de Tours, une super programmation. Le studio est ouvert tous les jours de 14h à minuit. Pour connaître les horaires et les résumés des films à l'affiche, visitez notre site www.lestudiotour.com Voici une sélection parmi les films actuellement à l'affiche. Hors norme. Durée 1h55 Une comédie d'Éric Toledano, Olivier Nakache. Résumé du film Bruno et Malik vivent depuis 20 ans in un monde à part, celui des enfants et adolescents autistes. Au sein de leurs deux associations respectives, ils forment des jeunes issus des quartiers difficiles pour encadrer ces cas qualifiés d'hypercomplexes. Une alliance hors du commun pour des personnalités hors normes. Edmond Durée 1h53, Comédie Historique de Alexis Michalik. Resumé du film. Decembre 1897, Paris. Edmond Rostan n'a pas encore 30 ans, but déjà 2 enfants and become d'angoisse. He's not écrit depuis two ans. In désespoir de cause, he proposes au grand constant Coquelin une pièce, une comédie héroïque en vers pour les fêtes. Seul souci, elle n'est pas encore écrite. Edmond decide d'ignorer le manque d'enthousiasme de l'ensemble de son entourage, il se met à écrire cette pièce à laquelle personne ne croit. For l'instant, il n'a que le titre Cyrano de Bergerac. Une sirène à Paris. Durée 1h42. Film fantastique, drame de Mathias Malzieu. Avecolas Duvausel, Marilyn Lima, Rossi De Palma. Resumé du film. Chanteur de variété au cœur brisé, Gaspard s'était juré de ne plus retomber amoureux. Quant à Lula, jolie sirène, elle n'a que le chant to defend des hommes en faisant s'emballer leur cœur jusqu'à l'explosion. Lorsque la scène en crue vient déposer Lula au pied du flower burger, la péniche cabaret au champ de Gaspard, it's a mini tsunami that will bouleverser their existence. Lui, l'homme qui a souffert d'avoir trop aimé, et elle, la créature qui n'a jamais connu l'amour, vont apprendre à se connaître et à chanter d'une même voix.",
+        "current_bank_transcription": "Cette semaine encore, au cinéma Le Studio de la ville de Tours, une super programmation !\nLe Studio est ouvert tous les jours de 14 heures à minuit.\nPour connaître les horaires et les résumés des films à l'affiche, visitez notre site www.lestudiotours.com.\nVoici une sélection parmi les films actuellement à l'affiche.\nHors norme, durée 155 minutes, une comédie d'Olivier Nakache.\nRésumé du film : Bruno et Malik vivent depuis vingt ans dans un monde à part, celui des enfants et adolescents autistes.\nAu sein de leurs deux associations respectives, ils forment des jeunes issus de quartiers difficiles pour encadrer ces cas qualifiés d'hyper complexes.\nUne alliance hors du commun pour des personnalités hors norme.\nEdmond, durée 153 minutes, comédie historique d'Alexis Michalik.\nRésumé du film : décembre 1897, Paris.\nEdmond Rostand n'a pas encore trente ans, mais déjà deux enfants et beaucoup d'angoisse.\nIl n'a rien écrit depuis deux ans.\nEn désespoir de cause, il propose aux grands comédiens de la Comédie-Française une pièce nouvelle, une comédie héroïque en vers pour les fêtes.\nSouci : elle n'est pas encore écrite.\nEdmond décide d'ignorer le manque d'enthousiasme de son entourage et se met à écrire cette pièce à laquelle personne ne croit.\nPour l'instant, il n'a que le titre : Cyrano de Bergerac.\nUne sirène à Paris, durée 142 minutes, film fantastique, drame de Matthias Malzieux, avec Nicolas Duvauchelle, Marilyn Lima et Rossy de Palma.\nRésumé du film : chanteur de variété au cœur brisé, Gaspar s'était juré de ne plus retomber amoureux.\nQuant à Lula, jolie sirène, elle n'a que le chant pour se défendre des hommes en faisant emballer leur cœur jusqu'à l'explosion.\nLorsque la tempête en furie vient déposer Lula au pied du Flower Power, la péniche-cabaret au bord de la Seine de Gaspar, c'est un mini tsunami qui va bouleverser leur existence.\nLui, l'homme qui a souffert d'avoir trop aimé, et elle, la créature qui n'a jamais connu l'amour, vont apprendre à se connaître et à chanter d'une même voix.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Sirène générique adulte créée avec queue entière, journaliste créée et professeure peinte existante réutilisée ; ce ne sont pas des portraits des actrices, source dit sirène."
+      }
     },
     {
       "bank": "src/tcf/content/a2-b1/co.json",
@@ -13183,7 +13326,7 @@
           "asset": "3d105cd93a22"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "09035196:017:dbf36c7a1874",
         "additional-20261102:mdf-b1-abc-junior-direct:17:dbf36c7a1874:d25bf7d7"
@@ -13197,15 +13340,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        "/lib/images/tcf/qcm-audit/co306-batiment-theatre-dessine.webp",
-        null
+        "/lib/images/tcf/qcm-audit/co834-cours-danse-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cours-theatre-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co57-films-futuristes.webp"
       ],
-      "missing_labels": [
-        "La danse",
-        "Les films futuristes"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-cours-danse-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cours-theatre-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co57-films-futuristes.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ss-b1-s12-co-2",
+        "question": 5,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co834-cours-danse-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-cours-theatre-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co57-films-futuristes.webp"
+        ],
+        "support_quote": "Nous avons aujourd'hui le plaisir et la chance d'avoir avec nous le chanteur Mpokora pour une interview exclusive. Mpokora, bonjour. Bonjour, le plaisir est pour moi. Après l'immense succès de ton album My Way, plus de 600 000 exemplaires vendus, tu as décidé de faire un an de pause. When I feel a pause, I respect the thousand and pause, but you have created six titles and a new album. Wait, that's right. It's a bit of that. Et comment tu as eu l'idée de ton nouvel album Pyramide? Ben justement, j'étais devant la télé je regardais un documentaire qui s'appelle Dans le secret des Pyramides. Juste après, j'ai regardé plusieurs films Marvel avec des super-héros, parce que c'est un style que j'aime bien, et là, bam, l'idée m'est venue. Faire l'album Pyramide avec un monde fantastique un peu futur. J'ai eu des images dans ma tête et j'ai appelé mon équipe pour qu'on commence à travailler. C'est un univers que l'on retrouve dans tes concerts? Oui, les décors sont impressionnants. Pyramid a été un immense succès. Tu es arrivé premier au classement des albums français les plus vendus. On sent que tu as mis beaucoup de toi dans cette album. Tu parles vrai, tu parles sans filtre, tu parles de tes doutes. Oui, c'est vrai. J'ai cherché à me retrouver après avoir chanté longtemps les textes des autres. And this pause, I mean posed a question, notamment to know if j'allais ou non arrêter ma carrière de chanteur. If me restait trois minutes là for, and I did quoi? Pyramide, qui est également devenu le titre de l'album.",
+        "current_bank_transcription": "Journaliste : — Nous avons aujourd'hui le plaisir et la chance d'avoir avec nous le chanteur M.\nPokora pour une interview exclusive.\nM.\nPokora bonjour.\nM.\nPokora : — Bonjour.\nLe plaisir est pour moi.\nJournaliste : — Après l'immense succès de ton album « My Way », plus de 600 000 exemplaires vendus, tu as décidé de faire un an de pause.\nMoi, quand je fais une pause, je reste devant la télé toute la journée à ne rien faire !\nToi, tu dis que tu fais une pause, mais pendant ce temps tu as quand même créé 16 titres et un nouvel album !\nNe serais-tu pas un peu hyper actif ?\nM.\nPokora : — Oui, c'est vrai, il y a un peu de ça.\nHonnêtement, j'ai fait une pause deux mois.\nEnsuite, j'ai commencé à m'ennuyer, je ne savais plus quoi faire.\nÇa ne me ressemblait pas.\nJournaliste : — Et comment tu as eu l'idée de ton nouvel album Pyramide ?\nM.\nPokora : — Ben justement, j'étais devant la télé, je regardais un documentaire qui s'appelle « Dans le secret des pyramides ».\nJuste après, j'ai regardé plusieurs films Marvel avec des super-héros parce que c'est un style que j'aime bien.\nEt là, bam !\nL'idée m'est venue : faire l'album Pyramide avec un monde fantastique, un peu futuriste.\nJ'ai eu des images dans ma tête et j'ai appelé mon équipe pour qu'on commence à travailler.\nJournaliste : — C'est un univers que l'on retrouve dans tes concerts ?\nM.\nPokora : — Oui, les décors sont impressionnants.\nIl y a des feux d'artifice, des lasers et beaucoup de danse parce que c'est quelque chose qui me manquait.\nJournaliste : — Pyramide a été un immense succès, tu es arrivé premier au classement des albums français les plus vendus.\nOn sent que tu as mis beaucoup de toi dans cet album.\nTu parles vrai, tu parles sans filtre, tu parles de tes doutes.\nM.\nPokora : — Oui, c'est vrai, j'ai cherché à me retrouver après avoir chanté longtemps les textes des autres, j'avais envie de quelque chose de plus personnel.\nEt puis, pendant cette pause, je me suis posé beaucoup de questions, notamment de savoir si j'allais ou non arrêter ma carrière de chanteur.\nJe me suis dit « s'il me restait trois minutes là pour dire ce que je veux et qu'ensuite c'est terminé, je dis quoi ?\n».\nÇa a donné la première chanson : Pyramide, qui est également devenue le titre de l'album.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Danse et théâtre peints existants réutilisés, film futuriste créé sur écran de cinéma. La transcription préparée ASR omet une partie de la réponse ; la transcription actuelle dit explicitement « beaucoup de danse parce que c’est quelque chose qui me manquait ». Contrôle de l’illustration sur cette transcription actuelle, sans prétendre à une nouvelle écoute."
+      }
     },
     {
       "bank": "src/tcf/content/a2-b1/co.json",
@@ -13290,7 +13448,7 @@
           "asset": "26876e2318ce"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-b1-abc-direct:17:93a2294ea475:60bf1612"
       ],
@@ -13303,15 +13461,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
+        "/lib/images/tcf/qcm-audit/co57-courir-autour-lac.webp",
+        "/lib/images/tcf/qcm-audit/eb82d6d99458.webp",
         "/lib/images/tcf/qcm-audit/26876e2318ce.webp"
       ],
-      "missing_labels": [
-        "Courir autour du lac",
-        "Faire de la natation"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-courir-autour-lac.webp",
+        "/lib/images/tcf/qcm-audit/eb82d6d99458.webp",
+        "/lib/images/tcf/qcm-audit/26876e2318ce.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ss-b1-s14-co-4",
+        "question": 7,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co57-courir-autour-lac.webp",
+          "/lib/images/tcf/qcm-audit/eb82d6d99458.webp",
+          "/lib/images/tcf/qcm-audit/26876e2318ce.webp"
+        ],
+        "support_quote": "Hello Annie? Tu viens avec moi courir autour du lac? A 10 heures, ça te va? Je suis désolée, ce matin je ne peux pas. Je suis en plein rangement de mes placards. Je ne sais plus où mettre mes vêtements. J'en ai que je ne porte plus. Il y en a même que je viens de retrouver et que j'avais oublié. Qu'est-ce que tu fais des tiens, Chantal? Ça dépend. Sils sont en bon état, je les vends, et avec l'argent, je renouvelle un peu ma garderobe. Tu les vends en ligne. J'ai entendu parler de quelques sites, mais ça ne m'attire pas. One of my amis has a problem with my acheteur. I've been a site sérieux where I vend quelquefois. I visit un dépôt vendre qui s'occupe de vendre at my place. It's as well. It exists des friperies, but I'm not a In fact, it's the nom that ne plaît pas. For my frip que je vends, mais des vêtements, même si elles ne sont plus à la mode. When they were used, I met in a sack and depose in borne de collect. They are always recycling. La plupart du temps je les propose à des personnes que je connais et qui n'ont pas beaucoup de moyens. Si ces vêtements leur plaisent et leur vont, je les leur donne. Mais j'y pense, tu vas bien à la recyclerie. Quand je vais à la déchetterie, je leur laisse les objets qui peuvent être recyclés. Mais pas de vêtements. Tu sais, comme Claude, notre amie du club de gym s'occupe du secours populaire. Je lui remets les vêtements que je ne porte plus, ou encore je les donne à la Croix Rouge. Je reconnais là ta générosité. Allez, je te quitte, je vais courir. Et bon rangement.",
+        "current_bank_transcription": "– Allô Annie ?\nTu viens avec moi courir autour du lac à 10 heures, ça te va ?\n– Je suis désolée, ce matin je ne peux pas.\nJe suis en plein rangement de mes placards.\nJe ne sais plus où mettre mes vêtements.\nJ'en ai que je ne porte plus.\nIl y en a même que je viens de retrouver et que j'avais oubliés.\n– Qu'est-ce que tu fais des tiens, Chantal ?\n– Ça dépend.\nS'ils sont en bon état, je les vends et, avec l'argent, je renouvelle un peu ma garde-robe.\n– Tu les vends en ligne ?\n– J'ai entendu parler de quelques sites, mais ça ne m'attire pas.\nUne de mes amies a eu des problèmes avec son acheteur.\n– Oui, ça arrive parfois, même si c'est plutôt rare.\nJe connais un site sérieux où je vends quelquefois.\nJe vais aussi dans un dépôt-vente qui s'occupe de vendre à ma place.\nC'est assez pratique.\nIl existe aussi des friperies, mais je n'aime pas beaucoup.\nEn fait, c'est peut-être le nom qui ne me plaît pas.\nPour moi, ce ne sont pas des friperies où je vends mes vêtements, même s'ils ne sont plus à la mode.\nQuand ils sont un peu ou trop usés, je les mets dans un sac et je les dépose dans une borne de collecte.\nIls sont alors recyclés.\n– Moi, je n'en ai jamais vendu.\nJe préfère donner.\nLa plupart du temps, je les propose à des personnes que je connais et qui n'ont pas beaucoup de moyens.\nSi ces vêtements leur plaisent et leur vont, je les leur donne.\n– Mais j'y pense, tu vas bien à la recyclerie ?\n– Quand je vais à la déchèterie, je leur laisse les objets qui peuvent être recyclés, mais pas de vêtements.\nTu sais, comme Claude, notre ami du club de gym, s'occupe du Secours populaire, je lui remets les vêtements que je ne porte plus, ou encore je les donne à la Croix-Rouge.\n– Je reconnais là ta générosité.\nAllez, je te quitte, je vais courir.\nEt bon rangement !",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Course sur chemin faisant le tour du lac créée, natation et tennis existants relus et réutilisés ; trois activités distinctes et sens complet de la localisation."
+      }
     }
   ]
 }
