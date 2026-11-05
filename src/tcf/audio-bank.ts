@@ -488,6 +488,99 @@ export function applyExerciseFromAudioBank(current: TcfExercise, source: TcfExer
   }
 }
 
+function questionsWithAudio(questions: TcfQuestion[], audioNo: number): TcfQuestion[] {
+  return questions.map((q) => ({ ...structuredClone(q), audio: audioNo }))
+}
+
+/** Remplace les questions d’une piste en gardant l’ordre des autres audios. */
+function replaceQuestionsForAudio(
+  questions: TcfQuestion[],
+  audioNo: number,
+  replacement: TcfQuestion[],
+  audioCount: number,
+): TcfQuestion[] {
+  const buckets = new Map<number, TcfQuestion[]>()
+  const unassigned: TcfQuestion[] = []
+  for (const q of questions) {
+    if (q.audio == null || q.audio === audioNo) {
+      if (q.audio == null) unassigned.push(q)
+      continue
+    }
+    const list = buckets.get(q.audio) ?? []
+    list.push(q)
+    buckets.set(q.audio, list)
+  }
+  buckets.set(audioNo, replacement)
+  const out: TcfQuestion[] = []
+  for (let audio = 1; audio <= audioCount; audio++) {
+    out.push(...(buckets.get(audio) ?? []))
+  }
+  for (const [audio, list] of buckets) {
+    if (audio < 1 || audio > audioCount) out.push(...list)
+  }
+  out.push(...unassigned)
+  return out
+}
+
+/**
+ * Change une piste d’un exercice déjà composé (6 courts, 3 moyens, complet
+ * multi) sans remplacer les autres audios ni leurs questions.
+ * Un exercice à une seule piste reprend l’exercice banque entier.
+ */
+export function applyAudioSlotFromEntry(
+  current: TcfExercise,
+  entry: TcfAudioEntry,
+  slotIndex: number,
+): TcfExercise {
+  if (
+    (current.type_exercice === 'six_courts' || current.type_exercice === 'trois_moyens') &&
+    slotIndex >= 0 &&
+    slotIndex < current.support.audios.length
+  ) {
+    const audios = current.support.audios.map((audio, i) => (i === slotIndex ? entry.audio : audio))
+    const want = current.type_exercice === 'six_courts' ? 1 : 2
+    const pool = (entry.questionPool ?? []).slice(0, want)
+    if (pool.length === 0) {
+      return { ...current, support: { ...current.support, audios } }
+    }
+    const audioNo = slotIndex + 1
+    return {
+      ...current,
+      support: { ...current.support, audios },
+      questions: replaceQuestionsForAudio(
+        current.questions,
+        audioNo,
+        questionsWithAudio(pool, audioNo),
+        audios.length,
+      ),
+    }
+  }
+  if (
+    current.type_exercice === 'complet' &&
+    (current.support.audios?.length ?? 0) > 1 &&
+    slotIndex >= 0 &&
+    slotIndex < (current.support.audios?.length ?? 0)
+  ) {
+    const audios = current.support.audios!.map((audio, i) => (i === slotIndex ? entry.audio : audio))
+    const pool = entry.questionPool ?? []
+    if (pool.length === 0) {
+      return { ...current, support: { ...current.support, audios, audio: undefined } }
+    }
+    const audioNo = slotIndex + 1
+    return {
+      ...current,
+      support: { ...current.support, audios, audio: undefined },
+      questions: replaceQuestionsForAudio(
+        current.questions,
+        audioNo,
+        questionsWithAudio(pool, audioNo),
+        audios.length,
+      ),
+    }
+  }
+  return applyExerciseFromAudioBank(current, entry.exercise)
+}
+
 /**
  * Place un dialogue scénario découpé dans le créneau `slotIndex` (0-based)
  * d’un exercice association — sans remplacer tout le pack.
