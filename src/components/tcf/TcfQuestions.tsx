@@ -164,6 +164,10 @@ function Enonce({
   )
 }
 
+function AudioFrameHead({ label }: { label: string }) {
+  return <div className="tcf-audio-frame-head">{label}</div>
+}
+
 /** Énoncé au-dessus ; image(s) à gauche des réponses. */
 function QuestionShell({
   image,
@@ -185,35 +189,39 @@ function QuestionShell({
   const pics = (images?.length ? images : image ? [image] : [])
     .map((src) => src.trim())
     .filter(Boolean)
-  const frameClass = audioFrame ? ' is-audio-frame' : ''
-  const corner =
-    audioFrame && audioLabel ? <span className="tcf-audio-frame-tag">{audioLabel}</span> : null
-  if (!pics.length) {
-    return (
-      <div className={`tcf-question${frameClass}`}>
-        {corner}
-        {enonceSlot}
-        {children}
+  const framed = Boolean(audioFrame)
+  const head = framed && audioLabel ? <AudioFrameHead label={audioLabel} /> : null
+  const answers = pics.length ? (
+    <div className="tcf-q-beside">
+      <div className={`tcf-q-beside-images${pics.length > 1 ? ' is-multi' : ''}`}>
+        {pics.map((src, i) => (
+          <TcfImage
+            key={`${src}-${i}`}
+            src={src}
+            alt={`Image ${i + 1} de la question ${numero}`}
+            className="tcf-image is-question is-beside"
+          />
+        ))}
       </div>
-    )
-  }
-  return (
-    <div className={`tcf-question tcf-q-enonce-above${frameClass}`}>
-      {corner}
+      <div className="tcf-q-beside-body">{children}</div>
+    </div>
+  ) : (
+    children
+  )
+  const body = (
+    <>
       {enonceSlot}
-      <div className="tcf-q-beside">
-        <div className={`tcf-q-beside-images${pics.length > 1 ? ' is-multi' : ''}`}>
-          {pics.map((src, i) => (
-            <TcfImage
-              key={`${src}-${i}`}
-              src={src}
-              alt={`Image ${i + 1} de la question ${numero}`}
-              className="tcf-image is-question is-beside"
-            />
-          ))}
-        </div>
-        <div className="tcf-q-beside-body">{children}</div>
-      </div>
+      {answers}
+    </>
+  )
+  return (
+    <div
+      className={`tcf-question${pics.length ? ' tcf-q-enonce-above' : ''}${
+        framed ? ' is-audio-frame' : ''
+      }`}
+    >
+      {head}
+      {framed ? <div className="tcf-audio-frame-body">{body}</div> : body}
     </div>
   )
 }
@@ -381,8 +389,8 @@ export function AudioCadre({
 }) {
   return (
     <div className="tcf-question is-audio-frame is-audio-cadre">
-      <span className="tcf-audio-frame-tag">{audioLabel}</span>
-      <div className="tcf-audio-cadre-body">
+      <AudioFrameHead label={audioLabel} />
+      <div className="tcf-audio-frame-body tcf-audio-cadre-body">
         {questions.map((q) => {
           const formSelect = q.formSelect
           const active = formSelect?.active
