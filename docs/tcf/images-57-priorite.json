@@ -1,0 +1,1609 @@
+{
+  "priority": "Terminer ce lot avant les autres tâches",
+  "initial_questions": 57,
+  "completed_questions": 28,
+  "new_images": 65,
+  "remaining_questions": 29,
+  "remaining": [
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s22-co-4",
+      "question": 1,
+      "enonce": "Pour quel repas les plats sont-ils préparés ?",
+      "audio": null,
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Le repas du soir",
+          "correct": true,
+          "existing_image": null,
+          "asset": "c671ddd88bf9"
+        },
+        {
+          "id": "b",
+          "texte": "Le petit déjeuner",
+          "correct": false,
+          "existing_image": "/lib/images/tcf/co/bg/petit-dejeuner-maison.webp",
+          "asset": null
+        },
+        {
+          "id": "c",
+          "texte": "Le déjeuner du lendemain",
+          "correct": false,
+          "existing_image": null,
+          "asset": "690a1740f335"
+        }
+      ],
+      "status": "pending_images",
+      "linked_source_ids": [
+        "additional-20261102:mdf-a1-abc:53:2d4bf5874372:080ebb02"
+      ],
+      "source_links": [
+        {
+          "old_ref": "/lib/audio/tcf/co/maison/pour-repas-soir.mp3",
+          "source_id": "additional-20261102:mdf-a1-abc:53:2d4bf5874372:080ebb02",
+          "candidate_cut_id": "additional-20261102-mdf-a1-abc-53-2d4bf5874372-080ebb02-d1",
+          "transcription": "Pour le repas de ce soir, j'ai préparé un gâteau, une salade de fruits et un poulet rôti. Je voulais rajouter des carottes et des pommes de terre, mais je n'en ai pas à la maison. Je sais que Jasmine aime les légumes. Je lui ai fait une salade pour me faire pardonner."
+        }
+      ],
+      "resolved_images": [
+        null,
+        null,
+        null
+      ],
+      "missing_labels": [
+        "Le repas du soir",
+        "Le petit déjeuner",
+        "Le déjeuner du lendemain"
+      ],
+      "ready_for_source_review": false
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s35-co-4",
+      "question": 6,
+      "enonce": "Quel type de cours leur est alors proposé ?",
+      "audio": null,
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Un cours pour débutants",
+          "correct": true,
+          "existing_image": null,
+          "asset": "a0b56de6696b"
+        },
+        {
+          "id": "b",
+          "texte": "Un cours pour professionnels",
+          "correct": false,
+          "existing_image": null,
+          "asset": "ecfb6029a38c"
+        },
+        {
+          "id": "c",
+          "texte": "Un cours réservé aux enfants",
+          "correct": false,
+          "existing_image": null,
+          "asset": "c0204049b589"
+        }
+      ],
+      "status": "pending_images",
+      "linked_source_ids": [
+        "grammar-import-20261104:file_00000000514081f4b4d0fd2f556774ac"
+      ],
+      "source_links": [
+        {
+          "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-fait.mp3",
+          "source_id": "grammar-import-20261104:file_00000000514081f4b4d0fd2f556774ac",
+          "candidate_cut_id": "grammar-import-20261104-file_00000000514081f4b4d0fd2f556774ac-d1",
+          "transcription": "Bonjour madame. Il ne fait pas très beau aujourd'hui et je voudrais savoir quelles activités vous proposez. Ce matin, il ne pleut pas, et je peux vous proposer une sortie en canoé kayak à 10 heures, ou un cours de voile à 11 heures. Les deux activités durent deux heures. Euh. Je ne sais pas. Je peux vous proposer aussi un cours d'escalade à 11 heures. Il dure deux heures aussi. Ah oui. C'est bien l'escalade, non ? Oui, c'est très bien. Mais nous ne savons pas faire d'escalade. Il y a un cours pour les débutants. Vous voulez vous inscrire ? Oui, s'il vous plaît."
+        }
+      ],
+      "resolved_images": [
+        null,
+        null,
+        null
+      ],
+      "missing_labels": [
+        "Un cours pour débutants",
+        "Un cours pour professionnels",
+        "Un cours réservé aux enfants"
+      ],
+      "ready_for_source_review": false
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s53-co-1",
+      "question": 5,
+      "enonce": "Où peut-on demander le remboursement du billet ?",
+      "audio": null,
+      "choices": [
+        {
+          "id": "a",
+          "texte": "À l'accueil de la gare",
+          "correct": true,
+          "existing_image": null,
+          "asset": "bf4c56396441"
+        },
+        {
+          "id": "b",
+          "texte": "Dans le train suivant",
+          "correct": false,
+          "existing_image": null,
+          "asset": "109b7d68c492"
+        },
+        {
+          "id": "c",
+          "texte": "À l'office du tourisme",
+          "correct": false,
+          "existing_image": "/lib/images/tcf/co/bg/bureau-information.webp",
+          "asset": null
+        }
+      ],
+      "status": "pending_images",
+      "linked_source_ids": [
+        "additional-20261102:mdf-a1-abc:32:f71ff141da9e:82fae981"
+      ],
+      "source_links": [
+        {
+          "old_ref": "/lib/audio/tcf/co/transports/mesdames-messieurs-train-numero.mp3",
+          "source_id": "additional-20261102:mdf-a1-abc:32:f71ff141da9e:82fae981",
+          "candidate_cut_id": "additional-20261102-mdf-a1-abc-32-f71ff141da9e-82fae981-d1",
+          "transcription": "Mesdames, Messieurs, le train numéro 864 à destination de Nantes, départ prévu à 14h27, est annulé. Vous pouvez prendre le train suivant à 16h18, voie numéro 6. Si vous voulez. Vous pouvez demander un remboursement de votre billet à l'accueil de la gare. La SNCF vous présente ses excuses et vous remercie pour votre compréhension."
+        }
+      ],
+      "resolved_images": [
+        null,
+        null,
+        null
+      ],
+      "missing_labels": [
+        "À l'accueil de la gare",
+        "Dans le train suivant",
+        "À l'office du tourisme"
+      ],
+      "ready_for_source_review": false
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s55-co-2",
+      "question": 5,
+      "enonce": "Quel problème de ponctualité cite Antoine ?",
+      "audio": null,
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Des retards fréquents",
+          "correct": true,
+          "existing_image": null,
+          "asset": "d86fecd89e65"
+        },
+        {
+          "id": "b",
+          "texte": "Des départs trop tôt",
+          "correct": false,
+          "existing_image": null,
+          "asset": "caa90039284d"
+        },
+        {
+          "id": "c",
+          "texte": "Des arrêts trop courts",
+          "correct": false,
+          "existing_image": null,
+          "asset": "2f233a5f6f35"
+        }
+      ],
+      "status": "pending_images",
+      "linked_source_ids": [
+        "grammar-import-20261104:file_000000006e008243a9632eac8f4e89a0"
+      ],
+      "source_links": [
+        {
+          "old_ref": "/lib/audio/tcf/co/travail/alors-marianne-pourquoi-prends-1.mp3",
+          "source_id": "grammar-import-20261104:file_000000006e008243a9632eac8f4e89a0",
+          "candidate_cut_id": "grammar-import-20261104-file_000000006e008243a9632eac8f4e89a0-d1",
+          "transcription": "Alors Marianne, pourquoi tu ne prends pas le train ? J'adore le covoiturage. Les conducteurs et les passagers sont sympas. Et les voitures confortables. Mais il n'y a pas de voiture-bar. Et toi Antoine ? Tu n'aimes pas le train ? Si, mais les billets sont trop chers. Et il y a souvent du retard. Et quand il y a une grève, les trains sont annulés. Claire, tu voyages toujours en voiture, toi ? Non. Quand le trajet est long, je prends le train. Je réserve une place côté fenêtre et je dors. Et vous achetez vos billets sur l'appli de la SNCF ? Oui, c'est simple et pratique. Quelle application ? Montre moi."
+        }
+      ],
+      "resolved_images": [
+        null,
+        null,
+        null
+      ],
+      "missing_labels": [
+        "Des retards fréquents",
+        "Des départs trop tôt",
+        "Des arrêts trop courts"
+      ],
+      "ready_for_source_review": false
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "delf-a1-2022-co-ex1-05",
+      "question": 7,
+      "enonce": "Pour quel repas faut-il les tomates ?",
+      "audio": 3,
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Le repas de ce soir",
+          "correct": true,
+          "existing_image": null,
+          "asset": "35a009818c1d"
+        },
+        {
+          "id": "b",
+          "texte": "Le repas de demain midi",
+          "correct": false,
+          "existing_image": null,
+          "asset": "0742f5ef60fa"
+        },
+        {
+          "id": "c",
+          "texte": "Le petit déjeuner",
+          "correct": false,
+          "existing_image": "/lib/images/tcf/co/bg/petit-dejeuner-maison.webp",
+          "asset": null
+        }
+      ],
+      "status": "pending_images",
+      "linked_source_ids": [
+        "delf_a1_2022:005:7003d0847ea9"
+      ],
+      "source_links": [
+        {
+          "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_05-3.mp3",
+          "source_id": "delf_a1_2022:005:7003d0847ea9",
+          "candidate_cut_id": "delf_a1_2022-005-7003d0847ea9-d3",
+          "transcription": "Est-ce que tu peux acheter 10 tomates pour le repas de ce soir? Merci."
+        }
+      ],
+      "resolved_images": [
+        null,
+        null,
+        null
+      ],
+      "missing_labels": [
+        "Le repas de ce soir",
+        "Le repas de demain midi",
+        "Le petit déjeuner"
+      ],
+      "ready_for_source_review": false
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "delf-a1-2022-co-ex4-47",
+      "question": 5,
+      "enonce": "Pourquoi faut-il se dépêcher ?",
+      "audio": 2,
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Le cours commence maintenant",
+          "correct": true,
+          "existing_image": null,
+          "asset": "ebb65953b89c"
+        },
+        {
+          "id": "b",
+          "texte": "Le cours est annulé",
+          "correct": false,
+          "existing_image": null,
+          "asset": "3eaa4d879a90"
+        },
+        {
+          "id": "c",
+          "texte": "Le cours est terminé",
+          "correct": false,
+          "existing_image": null,
+          "asset": "cde13aecb6d6"
+        }
+      ],
+      "status": "pending_images",
+      "linked_source_ids": [
+        "delf_a1_2022:047:93d18cf6dd78"
+      ],
+      "source_links": [
+        {
+          "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_47-2.mp3",
+          "source_id": "delf_a1_2022:047:93d18cf6dd78",
+          "candidate_cut_id": "delf_a1_2022-047-93d18cf6dd78-d2",
+          "transcription": "C'est à quelle heure le cours de dessin? A 2h30 Mais il est 2h30 Vite"
+        }
+      ],
+      "resolved_images": [
+        null,
+        null,
+        null
+      ],
+      "missing_labels": [
+        "Le cours commence maintenant",
+        "Le cours est annulé",
+        "Le cours est terminé"
+      ],
+      "ready_for_source_review": false
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-a2j-s2-co-1",
+      "question": 13,
+      "enonce": "Vers quelles caisses faut-il se diriger ?",
+      "audio": 4,
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Les caisses automatiques",
+          "correct": true,
+          "existing_image": null,
+          "asset": "3ed19b68fd35"
+        },
+        {
+          "id": "b",
+          "texte": "Les caisses réservées aux groupes",
+          "correct": false,
+          "existing_image": null,
+          "asset": "a28889c8bcb4"
+        },
+        {
+          "id": "c",
+          "texte": "Les caisses à l’extérieur",
+          "correct": false,
+          "existing_image": null,
+          "asset": "975e6934fa80"
+        }
+      ],
+      "status": "pending_images",
+      "linked_source_ids": [
+        "9782090351958:066:3f7dc91934fc",
+        "additional-20261102:mdf-a2-abc-junior-direct:66:3f7dc91934fc:580a125c"
+      ],
+      "source_links": [
+        {
+          "old_ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-2-4.mp3",
+          "source_id": "9782090351958:066:3f7dc91934fc",
+          "candidate_cut_id": "9782090351958-066-3f7dc91934fc-r2-d4",
+          "transcription": "Le magasin va fermer ses portes dans 2 minutes. Merci de terminer vos achats et de vous rapprocher des caisses situées au fond du magasin."
+        }
+      ],
+      "resolved_images": [
+        null,
+        null,
+        null
+      ],
+      "missing_labels": [
+        "Les caisses automatiques",
+        "Les caisses réservées aux groupes",
+        "Les caisses à l’extérieur"
+      ],
+      "ready_for_source_review": false,
+      "audio_review_issue": {
+        "status": "pending_source_audio_review",
+        "reason": "La réponse actuelle indique caisses automatiques, mais le support préparé dit seulement caisses situées au fond du magasin. Vérifier l’alignement et l’audio avant activation ; ne pas ajouter ce qualificatif par l’image."
+      }
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-ss-a2-s3-co-3",
+      "question": 3,
+      "enonce": "Où se trouve le bulletin de participation ?",
+      "audio": 1,
+      "choices": [
+        {
+          "id": "a",
+          "texte": "À la caisse de la librairie",
+          "correct": true,
+          "existing_image": null,
+          "asset": "07841704cdc2"
+        },
+        {
+          "id": "b",
+          "texte": "À la mairie",
+          "correct": false,
+          "existing_image": "/lib/images/tcf/co/bg/mairie.webp",
+          "asset": null
+        },
+        {
+          "id": "c",
+          "texte": "À l’entrée du parking",
+          "correct": false,
+          "existing_image": null,
+          "asset": "190b6defe6e6"
+        }
+      ],
+      "status": "pending_images",
+      "linked_source_ids": [
+        "9782090351958:049:a4431f87ae61",
+        "additional-20261102:mdf-a2-abc-junior-direct:49:a4431f87ae61:beafaa4b"
+      ],
+      "source_links": [
+        {
+          "old_ref": "/lib/audio/tcf/co/magasins/magasins-3-1.mp3",
+          "source_id": "9782090351958:049:a4431f87ae61",
+          "candidate_cut_id": "9782090351958-049-a4431f87ae61-r2-d1",
+          "transcription": "La librairie Les Pages organise un grand jeu pour son anniversaire. Gagner des cadeaux en répondant à deux questions. Le bulletin de participation se trouve à l'accueil de la librairie."
+        }
+      ],
+      "resolved_images": [
+        null,
+        "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp",
+        null
+      ],
+      "missing_labels": [
+        "À la caisse de la librairie",
+        "À l’entrée du parking"
+      ],
+      "ready_for_source_review": false,
+      "audio_review_issue": {
+        "status": "pending_source_audio_review",
+        "reason": "La bonne réponse actuelle est « À la caisse de la librairie » ; la transcription préparée indique « à l’accueil de la librairie ». Écouter le candidat et vérifier son alignement avant de corriger les choix et d’activer les images."
+      }
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-ss-a2-s48-co-3",
+      "question": 12,
+      "enonce": "Quel nouveau rayon peut-on visiter ?",
+      "audio": 4,
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Le rayon BD",
+          "correct": true,
+          "existing_image": null,
+          "asset": "70b962d3ba7b"
+        },
+        {
+          "id": "b",
+          "texte": "Le rayon cuisine",
+          "correct": false,
+          "existing_image": null,
+          "asset": "3bff7b9e520a"
+        },
+        {
+          "id": "c",
+          "texte": "Le rayon voyage",
+          "correct": false,
+          "existing_image": null,
+          "asset": "661fcce75c34"
+        }
+      ],
+      "status": "pending_images",
+      "linked_source_ids": [
+        "9782090351958:040:42a9a64a8955",
+        "additional-20261102:mdf-a2-abc-junior-direct:40:42a9a64a8955:9635072f"
+      ],
+      "source_links": [
+        {
+          "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-21-4.mp3",
+          "source_id": "9782090351958:040:42a9a64a8955",
+          "candidate_cut_id": "9782090351958-040-42a9a64a8955-r2-d4",
+          "transcription": "La salle informatique est fermée pour travaux. Si vous devez travailler sur les ordinateurs, vous pouvez aller à la bibliothèque. Profitez-en aussi pour visiter le nouveau rayon DVD."
+        }
+      ],
+      "resolved_images": [
+        null,
+        null,
+        null
+      ],
+      "missing_labels": [
+        "Le rayon BD",
+        "Le rayon cuisine",
+        "Le rayon voyage"
+      ],
+      "ready_for_source_review": false,
+      "audio_review_issue": {
+        "status": "pending_source_audio_review",
+        "reason": "La bonne réponse de la banque indique « Le rayon BD » ; la transcription préparée de remplacement dit explicitement « le nouveau rayon DVD ». Écouter le segment avant de choisir les illustrations et de valider la réponse. Aucune correction de réponse ni activation QCM image sans cette vérification.",
+        "source_links": [
+          {
+            "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-21-4.mp3",
+            "source_id": "9782090351958:040:42a9a64a8955",
+            "candidate_cut_id": "9782090351958-040-42a9a64a8955-r2-d4",
+            "transcription": "La salle informatique est fermée pour travaux. Si vous devez travailler sur les ordinateurs, vous pouvez aller à la bibliothèque. Profitez-en aussi pour visiter le nouveau rayon DVD."
+          }
+        ]
+      }
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-ssx-a2-radio-salon-du-tatouage-co-3",
+      "question": 1,
+      "enonce": "Quel salon a lieu à Paris cette semaine ?",
+      "audio": null,
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Le salon du tatouage",
+          "correct": true,
+          "existing_image": null,
+          "asset": "30fbb0260133"
+        },
+        {
+          "id": "b",
+          "texte": "Le salon de la coiffure",
+          "correct": false,
+          "existing_image": null,
+          "asset": "67129606c9a1"
+        },
+        {
+          "id": "c",
+          "texte": "Le salon du livre",
+          "correct": false,
+          "existing_image": null,
+          "asset": "6f475889b200"
+        }
+      ],
+      "status": "pending_images",
+      "linked_source_ids": [
+        "9782090351958:057:0dc3afbbc24a",
+        "additional-20261102:mdf-a2-abc-junior-direct:57:0dc3afbbc24a:eabc88c7"
+      ],
+      "source_links": [
+        {
+          "old_ref": "/lib/audio/tcf/co/radio/02-radio-salon-du-tatouage.mp3",
+          "source_id": "9782090351958:057:0dc3afbbc24a",
+          "candidate_cut_id": "9782090351958-057-0dc3afbbc24a-r2-d1",
+          "transcription": "Cette semaine à Paris, il y a le salon du tatouage. On attend des milliers de visiteurs. Le tatouage est très à la mode. Un français sur cinq est tatoué. Ce sont surtout des jeunes de 18 à 35 ans et plus de femmes que d'hommes."
+        }
+      ],
+      "resolved_images": [
+        null,
+        null,
+        null
+      ],
+      "missing_labels": [
+        "Le salon du tatouage",
+        "Le salon de la coiffure",
+        "Le salon du livre"
+      ],
+      "ready_for_source_review": false
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-ssx-a2-radio-fete-de-la-ville-co-3",
+      "question": 1,
+      "enonce": "Quel événement est annoncé ?",
+      "audio": null,
+      "choices": [
+        {
+          "id": "a",
+          "texte": "La fête de la ville",
+          "correct": true,
+          "existing_image": null,
+          "asset": "12e679dd9614"
+        },
+        {
+          "id": "b",
+          "texte": "Un marché de Noël",
+          "correct": false,
+          "existing_image": "/lib/images/vocabulaire/loisirs/marche-de-noel.webp",
+          "asset": null
+        },
+        {
+          "id": "c",
+          "texte": "Une course à pied",
+          "correct": false,
+          "existing_image": null,
+          "asset": "5a1574cc2c23"
+        }
+      ],
+      "status": "pending_images",
+      "linked_source_ids": [
+        "9782090351958:057:0dc3afbbc24a",
+        "additional-20261102:mdf-a2-abc-junior-direct:57:0dc3afbbc24a:eabc88c7"
+      ],
+      "source_links": [
+        {
+          "old_ref": "/lib/audio/tcf/co/radio/04-radio-fête-de-la-ville.mp3",
+          "source_id": "9782090351958:057:0dc3afbbc24a",
+          "candidate_cut_id": "9782090351958-057-0dc3afbbc24a-r2-d3",
+          "transcription": "samedi, c'est la fête de la ville. Cette année encore, venez écouter des concerts dans les rues. Pop, électro, classique, il y en a pour tous les goûts. Une discothèque est même installée sur la place centrale."
+        }
+      ],
+      "resolved_images": [
+        null,
+        null,
+        null
+      ],
+      "missing_labels": [
+        "La fête de la ville",
+        "Un marché de Noël",
+        "Une course à pied"
+      ],
+      "ready_for_source_review": false
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-ssx-a2-famille-film-d-action-co-4",
+      "question": 1,
+      "enonce": "Que propose la première personne ?",
+      "audio": null,
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Regarder un film d'action",
+          "correct": true,
+          "existing_image": null,
+          "asset": "e3906dd36583"
+        },
+        {
+          "id": "b",
+          "texte": "Aller au cinéma",
+          "correct": false,
+          "existing_image": "/lib/images/tcf/co/bg/cinema.webp",
+          "asset": null
+        },
+        {
+          "id": "c",
+          "texte": "Regarder un match",
+          "correct": false,
+          "existing_image": null,
+          "asset": "ee2a17e5cfcd"
+        }
+      ],
+      "status": "pending_images",
+      "linked_source_ids": [
+        "9782090351958:035:c8723151fd49",
+        "additional-20261102:mdf-a2-abc-junior-direct:35:c8723151fd49:f966320f"
+      ],
+      "source_links": [
+        {
+          "old_ref": "/lib/audio/tcf/co/famille/05-famille-regarder-un-film-d-action.mp3",
+          "source_id": "9782090351958:035:c8723151fd49",
+          "candidate_cut_id": "9782090351958-035-c8723151fd49-d1",
+          "transcription": "On regarde un film d'action ce soir? Ah non! Je n'aime pas les films d'action, c'est trop violent! Si tu veux, on peut regarder une comédie. Oui, c'est une bonne idée."
+        }
+      ],
+      "resolved_images": [
+        null,
+        null,
+        null
+      ],
+      "missing_labels": [
+        "Regarder un film d'action",
+        "Aller au cinéma",
+        "Regarder un match"
+      ],
+      "ready_for_source_review": false
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "delf-a2-2021-co-ex1-05",
+      "question": 3,
+      "enonce": "À quel endroit l'attente est-elle trop longue ?",
+      "audio": null,
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Aux caisses du rez-de-chaussée",
+          "correct": true,
+          "existing_image": null,
+          "asset": "93e03ec09330"
+        },
+        {
+          "id": "b",
+          "texte": "À l'entrée du parking",
+          "correct": false,
+          "existing_image": null,
+          "asset": "190b6defe6e6"
+        },
+        {
+          "id": "c",
+          "texte": "Au rayon vêtements",
+          "correct": false,
+          "existing_image": null,
+          "asset": "723dc1d4401b"
+        }
+      ],
+      "status": "pending_images",
+      "linked_source_ids": [
+        "delf_a2_2021:005:523515a4ebd7"
+      ],
+      "source_links": [
+        {
+          "old_ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_05.mp3",
+          "source_id": "delf_a2_2021:005:523515a4ebd7",
+          "candidate_cut_id": "delf_a2_2021-005-523515a4ebd7-d1",
+          "transcription": "Chers clients Aujourd'hui le magasin reste ouvert jusqu'à 21h Pour vous éviter une attente trop longue aux caisses chaussée vous pouvez régler vos achats au premier étage Des caisses supplémentaires sont à votre disposition"
+        }
+      ],
+      "resolved_images": [
+        null,
+        null,
+        "/lib/images/tcf/qcm-audit/co834-rayon-vetements-dessine.webp"
+      ],
+      "missing_labels": [
+        "Aux caisses du rez-de-chaussée",
+        "À l'entrée du parking"
+      ],
+      "ready_for_source_review": false
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "delf-a2-2021-co-ex3-17",
+      "question": 10,
+      "enonce": "Où doit-il le prendre ?",
+      "audio": 4,
+      "choices": [
+        {
+          "id": "a",
+          "texte": "À l'entrée du bureau des réclamations",
+          "correct": true,
+          "existing_image": null,
+          "asset": "9c12bc679b98"
+        },
+        {
+          "id": "b",
+          "texte": "Au guichet de la gare",
+          "correct": false,
+          "existing_image": "/lib/images/tcf/co/bg/gare.webp",
+          "asset": null
+        },
+        {
+          "id": "c",
+          "texte": "À la sortie du magasin",
+          "correct": false,
+          "existing_image": null,
+          "asset": "7be1e80fb83e"
+        }
+      ],
+      "status": "pending_images",
+      "linked_source_ids": [
+        "delf_a2_2021:017:e80a87f00222"
+      ],
+      "source_links": [
+        {
+          "old_ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_17-4.mp3",
+          "source_id": "delf_a2_2021:017:e80a87f00222",
+          "candidate_cut_id": "delf_a2_2021-017-e80a87f00222-d4",
+          "transcription": "L'assurée doit prendre un ticket à l'rée du bureau des réclamations."
+        }
+      ],
+      "resolved_images": [
+        null,
+        null,
+        "/lib/images/tcf/qcm-audit/co306-sortie-magasin-dessine.webp"
+      ],
+      "missing_labels": [
+        "À l'entrée du bureau des réclamations",
+        "Au guichet de la gare"
+      ],
+      "ready_for_source_review": false
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "delf-a2-2021-co-ex3-23",
+      "question": 4,
+      "enonce": "À quel événement l'autre personne ne peut-elle pas venir ?",
+      "audio": 2,
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Une soirée",
+          "correct": true,
+          "existing_image": null,
+          "asset": "d3ac1e9538c1"
+        },
+        {
+          "id": "b",
+          "texte": "Un cours",
+          "correct": false,
+          "existing_image": "/lib/images/tcf/co/bg/salle-classe.webp",
+          "asset": null
+        },
+        {
+          "id": "c",
+          "texte": "Un voyage",
+          "correct": false,
+          "existing_image": "/lib/images/vocabulaire/voyage/voyage.webp",
+          "asset": null
+        }
+      ],
+      "status": "pending_images",
+      "linked_source_ids": [
+        "delf_a2_2021:023:50990deefc22"
+      ],
+      "source_links": [
+        {
+          "old_ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_23-2.mp3",
+          "source_id": "delf_a2_2021:023:50990deefc22",
+          "candidate_cut_id": "delf_a2_2021-023-50990deefc22-d2",
+          "transcription": "Tu ne peux pas venir à ma soirée? Comme c'est dommage."
+        }
+      ],
+      "resolved_images": [
+        null,
+        null,
+        null
+      ],
+      "missing_labels": [
+        "Une soirée",
+        "Un cours",
+        "Un voyage"
+      ],
+      "ready_for_source_review": false
+    },
+    {
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "exercise": "tcf-ss-b1-s1-co-1",
+      "question": 9,
+      "enonce": "Où faut-il déposer le bulletin de concours rempli ?",
+      "audio": null,
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Dans la boîte à la sortie du magasin",
+          "correct": true,
+          "existing_image": null,
+          "asset": "0c34d452726a"
+        },
+        {
+          "id": "b",
+          "texte": "Au rayon informatique",
+          "correct": false,
+          "existing_image": null,
+          "asset": "ec8bb215ef52"
+        },
+        {
+          "id": "c",
+          "texte": "À l'entrée du parking",
+          "correct": false,
+          "existing_image": null,
+          "asset": "190b6defe6e6"
+        }
+      ],
+      "status": "pending_images",
+      "linked_source_ids": [
+        "09035196:033:d3440a21d221",
+        "additional-20261102:mdf-b1-abc-junior-direct:33:d3440a21d221:f36e64fe"
+      ],
+      "source_links": [
+        {
+          "old_ref": "/lib/audio/tcf/co/magasins/achats-annonce-3.mp3",
+          "source_id": "09035196:033:d3440a21d221",
+          "candidate_cut_id": "09035196-033-d3440a21d221-d1",
+          "transcription": "Chérie, quand est-ce qu'on achète une machine à laver? J'ai bien peur que ce mois-ci on ait pas le budget. Tu es sûr? Ils ont fait des promos de folie chez Toupa Cher. Eh oui, chez Toupa Cher nous portons bien notre nom. Cette semaine, pour vous satisfaire, de très nombreuses promotions au rayon jeux vidéo, électroménager et informatique. Vous bénéficiez de 30% sur tous les jeux vidéo. Vous pourrez acheter l'électroménager et les meilleures marques d'ordinateurs avec 20% de réduction et 10% pour la téléphonie. Pour vous permettre d'en profiter plus longtemps, nous ouvrirons jusqu'à 21h tous les soirs et nous avons prolongé la période de promotion de deux jours. Notre magasin tient à la qualité de l'accueil. Pour cela, vous avez la possibilité d'être accompagné et conseillés dans vos achats. Vous pourrez demander aux points, accueil et information, tout ce qui vous est utile. 15 hôtesse d'accueil peuvent vous répondre toute la journée dans les différents points du magasin. Elles vous accompagneront si nécessaire dans les rayons que vous cherchez et vous dirigeront vers les produits intéressants. N'hésitez pas, elles sont là pour vous! Du 1 au 30 juillet, grand concours. Un bulletin concours vous sera donné à la caisse pour tout achat de minimum 20€. Il vous suffit de le remplir et de l'insérer dans la boîte à la sortie du magasin. Attention, il n'est pas possible de remplir plusieurs bulletins. Tirage au sort le 1er août. A gagner, 5 jours dans un centre de remise en forme dans le sud de la France. Au programme, sérénité et relaxation, vie et alimentation saine et équilibrée. Alors venez nombreux dans nos supermarchés, vous serez gagnants à tous les coups. Chérie, laisse donc cette vaisselle dans l'évier et viens! On fonce chez tout pas cher, profitez de la promo. Il n'y a pas une seconde à perdre."
+        }
+      ],
+      "resolved_images": [
+        null,
+        null,
+        null
+      ],
+      "missing_labels": [
+        "Dans la boîte à la sortie du magasin",
+        "Au rayon informatique",
+        "À l'entrée du parking"
+      ],
+      "ready_for_source_review": false
+    },
+    {
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "exercise": "tcf-ss-b1-s2-co-2",
+      "question": 1,
+      "enonce": "De quoi parle cette annonce ?",
+      "audio": null,
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Des légumes bio",
+          "correct": true,
+          "existing_image": null,
+          "asset": "6b5010f2253d"
+        },
+        {
+          "id": "b",
+          "texte": "Des voitures",
+          "correct": false,
+          "existing_image": "/lib/images/vocabulaire/transports/voiture.webp",
+          "asset": null
+        },
+        {
+          "id": "c",
+          "texte": "Des vêtements",
+          "correct": false,
+          "existing_image": "/lib/images/vocabulaire/vetements/vetements.webp",
+          "asset": null
+        }
+      ],
+      "status": "pending_images",
+      "linked_source_ids": [
+        "09035196:038:359323596792",
+        "additional-20261102:mdf-b1-abc-junior-direct:38:359323596792:6ddeb908"
+      ],
+      "source_links": [
+        {
+          "old_ref": "/lib/audio/tcf/co/ecole/ecole-3.mp3",
+          "source_id": "09035196:038:359323596792",
+          "candidate_cut_id": "09035196-038-359323596792-d1",
+          "transcription": "Mesdames et messieurs, venez approchez, achetez mes légumes, ils sont 100% biologiques! Vous vous demandez pourquoi acheter bio? Mais c'est très simple, côté santé, c'est ce qu'il y a de meilleur. Regardez ces courgettes, ces aubergines, ces carottes. D'abord, c'est des légumes de saison. Rien à voir avec ce que vous trouvez au supermarché. Ici, pas d'import export, ces tomates. Elles viennent de mon jardin. Choisir des produits bio, c'est choisir la sécurité alimentaire. Vous êtes sûr de ne trouver aucun résidu chimique dans mes légumes. Vous pouvez manger les fruits et les légumes bio sans les éplucher, sans aucun souci, d'autant que c'est sous la peau que se concentrent les vitamines et minéraux. Saviez-vous que les aliments biologiques ont une qualité nutritionnelle supérieure de 30% par rapport à ceux issus de l'agriculture conventionnelle? Donc, manger bio veut dire manger des aliment plus riches en vitamines et en minéraux. Madame, avec la poucette, donnez à manger bio à votre enfant! Et ses risques d'allergie alimentaire seront réduits! En plus, les produits bio ont un goût tellement meilleur! Vous vous demandez encore pourquoi choisir le bio? Vous voulez une autre raison? L'agriculture biologique respecte la nature. Comment? Eh bien, en refusant d'utiliser les produits chimiques, le bio favorise la biodiversité. Voilà un petit geste écologique pour la planète qui ne coûte pas très cher. Achete chez moi 6 œufs biologiques. vous coûte 2,40 € contre 1,95€ dans une grande surface. Ça fait une différence de 45 centimes. Qu'est-ce que 45 centimes pour un produit tellement plus savoureux et qui respecte l'équilibre de la nature? Regardez, madame, cette photo derrière moi. Vous voyez cette montagne, cette verdure? Voilà où sont élevées mes poules. Vous penserez à elle en mangeant votre omelette ce soir à la maison!"
+        }
+      ],
+      "resolved_images": [
+        null,
+        "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-vetements-dessines.webp"
+      ],
+      "missing_labels": [
+        "Des légumes bio"
+      ],
+      "ready_for_source_review": false
+    },
+    {
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "exercise": "tcf-ss-b1-s3-co-1",
+      "question": 4,
+      "enonce": "Que doivent fermer les parents pendant la journée ?",
+      "audio": null,
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Les volets",
+          "correct": true,
+          "existing_image": "/lib/images/vocabulaire/maison/volet.webp",
+          "asset": null
+        },
+        {
+          "id": "b",
+          "texte": "Les robinets",
+          "correct": false,
+          "existing_image": "/lib/images/vocabulaire/hygiene/robinet.webp",
+          "asset": null
+        },
+        {
+          "id": "c",
+          "texte": "Les portes du réfrigérateur",
+          "correct": false,
+          "existing_image": null,
+          "asset": "fad32162d8cc"
+        }
+      ],
+      "status": "pending_images",
+      "linked_source_ids": [
+        "additional-20261102:mdf-b1-abc-direct:16:a9c3c8627a50:b0a250af"
+      ],
+      "source_links": [
+        {
+          "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-thierry-deja.mp3",
+          "source_id": "additional-20261102:mdf-b1-abc-direct:16:a9c3c8627a50:b0a250af",
+          "candidate_cut_id": "additional-20261102-mdf-b1-abc-direct-16-a9c3c8627a50-b0a250af-d1",
+          "transcription": "Bonjour Madame Thierry. Déjà dans le parc avec votre petite fille, il est à peine 8 heures. Oui, il fait si chaud, depuis deux semaines. Elle a seulement 18 mois, Madame Bertet. Elle est encore bien petite. Les jeunes enfants sont fragiles. Vous avez raison. Il vaut mieux la sortir tôt le matin. Je la sors aussi un peu le soir. Et quand je suis obligée de la sortir dans la journée, je lui passe une crème solaire et je lui mets une petite robe ample et un chapeau en toile. Je fais en sorte de rester le moins longtemps possible dehors. Il ne fait pas trop chaud chez vous. Non, heureusement, l'appartement est frais. Et je la rafraîchis souvent avec un brumisateur. Je la fais boire aussi plus souvent. Je vois que vous êtes bien au courant de ce qu'il faut faire. It's not facile with my parents. They're âgés? They've 84 et 86 ans. I've the chance to habit près de chez eux, Isaac almoins the matin and the soir, en partant and en revenant du travail. And I appeal in the journey. Je vous comprends. My grandmother did not vote jamais show. The person la chaleur like me, and they ne boivent passe. Mes parents ont enfin compris qu'il fallait fermer les volets dans la journée and aérer pendant la nuit. Ils utilisent aussi plus souvent le ventilateur. But I do parfois insister tourne boivent plus souvent, mais sans exagérer. Je veille aussi à ce qu'ils continuent de s'alimenter normalement. But come my mère is assez gourmand, this is not really a problem. Elle prépare de grandes salades et plus de plats de poisson que de viande, parce que c'est plus léger. Ils ont de la chance de vous avoir. Quoi qu'il en soit, espérons qu'il va faire moins chaud."
+        }
+      ],
+      "resolved_images": [
+        null,
+        null,
+        null
+      ],
+      "missing_labels": [
+        "Les volets",
+        "Les robinets",
+        "Les portes du réfrigérateur"
+      ],
+      "ready_for_source_review": false
+    },
+    {
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "exercise": "tcf-ss-b1-s3-co-2",
+      "question": 4,
+      "enonce": "Quel repas français a été inscrit au patrimoine Unesco ?",
+      "audio": null,
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Le repas gastronomique français",
+          "correct": true,
+          "existing_image": null,
+          "asset": "f540e0b4a51a"
+        },
+        {
+          "id": "b",
+          "texte": "La baguette",
+          "correct": false,
+          "existing_image": "/lib/images/vocabulaire/aliments/baguette.webp",
+          "asset": null
+        },
+        {
+          "id": "c",
+          "texte": "Le fromage",
+          "correct": false,
+          "existing_image": "/lib/images/vocabulaire/aliments/fromage.webp",
+          "asset": null
+        }
+      ],
+      "status": "pending_images",
+      "linked_source_ids": [
+        "additional-20261102:mdf-b1-abc-direct:19:2bf9ce820ac5:796d7ba4"
+      ],
+      "source_links": [
+        {
+          "old_ref": "/lib/audio/tcf/co/vie-quotidienne/la-veille-premieres-assises.mp3",
+          "source_id": "additional-20261102:mdf-b1-abc-direct:19:2bf9ce820ac5:796d7ba4",
+          "candidate_cut_id": "additional-20261102-mdf-b1-abc-direct-19-2bf9ce820ac5-796d7ba4-d1",
+          "transcription": "A la veille des premières assises de la Fondation Nestlé France, le repas gastronomique français avait été inscrit au patrimoine culturel immatériel de l'humanité par l'UNESCO. Mais cette reconnaissance patrimoniale s'accompagne de ce qu'on appelle le devoir de transmission. Et dans les familles, La transmission passe d'abord par l'assiette. C'est ce que nous révèle l'enquête publiée en novembre 2011 par la Fondation Nestlé. 87% des personnes interrogées affirment manger des plats dont la recette vient de leurs grands-parents. Au cours des deuxièmes assises de la Fondation Nestlé, qui ont eu lieu sous sa présidence, Eric Orsena parle de la transmission en ces termes. Quand on parle de transmission, On pense tout de suite à cette forme de transmission verticale qu'est la succession. En général, pour ce qui concerne l'alimentation et dans tous les pays du monde, cette transmission des recettes ou des manières de cuisiner est assurée par un relais de mère en fille. Ce n'est toutefois pas toujours vrai. Quand je me demande ce que je laisserai à mes enfants, je suis presque sûr qu'ils garderont de moi certaines recettes de beurre blanc à l'échalote. Une manière particulière de faire pour l'été, un bœuf mod en gelée. Et un lait haillé qui accompagne particulièrement bien certaines recettes de coquelet. Ce qui montre que cette transmission n'est pas forcément le fait des femmes. A l'heure des familles éclatées et recomposées, la cuisine reste un élément qui rassemble, qui structure le clan. Une bonne dose de tradition. Un soupçon de nostalgie, un zeste de valeur. Les enfants en raffolent et tendent leur assiette."
+        }
+      ],
+      "resolved_images": [
+        null,
+        "/lib/images/tcf/qcm-audit/co306-baguette-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-fromages-dessines.webp"
+      ],
+      "missing_labels": [
+        "Le repas gastronomique français"
+      ],
+      "ready_for_source_review": false
+    },
+    {
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "exercise": "tcf-ss-b1-s5-co-4",
+      "question": 8,
+      "enonce": "Quel outil permet de réaliser l'œuvre collective ?",
+      "audio": null,
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Des ordinateurs reliés à une table de dessin",
+          "correct": true,
+          "existing_image": null,
+          "asset": "b8e3c0acfc06"
+        },
+        {
+          "id": "b",
+          "texte": "Des appareils photo jetables",
+          "correct": false,
+          "existing_image": null,
+          "asset": "dff3ca430742"
+        },
+        {
+          "id": "c",
+          "texte": "Des instruments de musique",
+          "correct": false,
+          "existing_image": null,
+          "asset": "8f3006705008"
+        }
+      ],
+      "status": "pending_images",
+      "linked_source_ids": [
+        "09035196:035:0a472f193258",
+        "additional-20261102:mdf-b1-abc-junior-direct:35:0a472f193258:d2e174eb"
+      ],
+      "source_links": [
+        {
+          "old_ref": "/lib/audio/tcf/co/loisirs/pour-faire-signer-vos.mp3",
+          "source_id": "09035196:035:0a472f193258",
+          "candidate_cut_id": "09035196-035-0a472f193258-d1",
+          "transcription": "Bienvenue au Salon de la Bande dessinée de Montréal. Nous sommes le samedi 26 mai. Voici le programme du jour. De 9h à 20h, vous pouvez visiter les stands de nos 150 exposants venus de 17 pays. Les plus grandes maisons d'édition francophone sont là pour vous présenter leur collection. Les auteurs et dessinateurs des bandes dessinées sont également présents. Pour faire signer vos albums préférés par leurs auteurs, rendez-vous tous les jours à partir de 18h dans le salon Obelix. Les festivités commenceront cet après-midi avec un spectacle de danse asiatique dans le hall principal à 15h. Les artistes nous viennent directement du Japon et ont été invités par la maison d'édition KRL spécialisée en manga japonais. L'artiste Paul Mugatti et sa bande nous présenteront ensuite leur spectacle original et émouvant intitulé Tout pour vos yeux. Ce spectacle mène dessin, théâtre, danse et musique. Je ne vous en dis pas plus pour garder la surprise car il s'agit d'un événement particulièrement original. Le café rencontre est ouvert tous les jours à partir de 10h. Vous y rencontrerez tous les professionnels de la bande dessinée dans un cadon convivial et détendu. Si vous êtes dessinateur ou auteur de BD, c'est le lieu idéal pour faire des rencontres et présenter vos créations. D'ailleurs, si vous aimez dessiner, vous pouvez participer à notre événement Décine-moi une histoire. A 19h ce soir, les personnes qui se seront inscrites seront invitées à réaliser un projet collectif de bande dessinée. Grâce à 10 ordinateurs équipés d'une table de dessin, vous pourrez réaliser en direct, sur un grand écran, une œuvre collective. Pour vous inscrire, présentez-vous à la réception avant 18h. Attention, les places sont limitées à 10 personnes par session. Il y aura une session à 19h et une autre à 21h. Enfin, demain, à 16h, nous présenterons les lauréats de notre concours à vos planches dans le hall principal. Les trois premiers prix recevront des cadeaux en récompense de leur travail et leurs œuvres seront éditées par notre maison d'édition partenaire, la plus mouvement. Rendez-vous donc demain à 16h pour ce grand moment attendu par tous ces jeunes d'hommes. Profitez de ces trois journées de festival et n'hésitez pas à contacter les Hôtesses si vous avez des questions."
+        }
+      ],
+      "resolved_images": [
+        null,
+        null,
+        null
+      ],
+      "missing_labels": [
+        "Des ordinateurs reliés à une table de dessin",
+        "Des appareils photo jetables",
+        "Des instruments de musique"
+      ],
+      "ready_for_source_review": false
+    },
+    {
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "exercise": "tcf-ss-b1-s6-co-1",
+      "question": 1,
+      "enonce": "Quel type de parc est annoncé ?",
+      "audio": null,
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Un parc d'attractions",
+          "correct": true,
+          "existing_image": "/lib/images/tcf/co/bg/parc-attractions.webp",
+          "asset": null
+        },
+        {
+          "id": "b",
+          "texte": "Un parc naturel",
+          "correct": false,
+          "existing_image": null,
+          "asset": "f7e209d1e226"
+        },
+        {
+          "id": "c",
+          "texte": "Un parc aquatique",
+          "correct": false,
+          "existing_image": null,
+          "asset": "4a68246d2aef"
+        }
+      ],
+      "status": "pending_images",
+      "linked_source_ids": [
+        "09035196:036:a79a2771f57e",
+        "additional-20261102:mdf-b1-abc-junior-direct:36:a79a2771f57e:7ada9500"
+      ],
+      "source_links": [
+        {
+          "old_ref": "/lib/audio/tcf/co/loisirs/plaisir-authenticite-emotion-venez.mp3",
+          "source_id": "09035196:036:a79a2771f57e",
+          "candidate_cut_id": "09035196-036-a79a2771f57e-d1",
+          "transcription": "Venez au parc Looping, l'aventure pour tous Ouvert pendant l'été de 1h à 23h, tous les jours du lundi au dimanche. Découvrez le plus grand parc d'attractions de la région à 45 minutes seulement de Marseille par l'autoroute A6. Le parc Looping est l'endroit idéal pour passer une journée de détente et de partage en famille. Le parc Looping rassemble plaisir, authenticité et émotion avec ses 35 attractions et trois spectacles extraordinaires, ainsi que deux points de restauration et des zones de pique-nique. Les grands classiques vous attendent, comme la grande roue ou le train fantôme, mais également de nombreuses nouveautés. Faites vibrer vos 5 sens avec le nouveau simulateur X-Max 3, unique en Europe! Vous pouvez désormais regarder nos films et documentaires en 3D. Les sièges bougent et vous sentez toutes sortes de sensations. Du vent, une tempête de neige, l'odeur du feu, de la forêt, une expérience unique à découvrir absolument! Pour les plus courageux, découvrez l'adrénaline. Vous êtes propulsés grâce à un élastique à plus de 30 mètres d'altitude. Tout simplement incroyable! Découvrez la sensation de grande vitesse avec cette nouvelle attraction hors du commun. Attention, ce manège est interdit au moins de 12 ans. Le parc Looping, c'est aussi des espaces verts dans un cadre naturel magnifique. Vous avez envie de reposer, profitez de nos zones de détente, équipées de hamac et de barbecue pour manger pendant la journée en famille ou avec les amis. La cafétéria Bon Appétit est ouverte à partir de 12h et jusqu'à 21h45. Vous y trouverez des menus à 8,50 euros et un grand choix de boissons chaudes et froides. Pour les petites fins, le snack Mini Loop est ouvert toute la journée. De l'ouverture à la fermeture du parc. Les spectacles du parc Looping, c'est tout simplement... Magique. A 14h, un spectacle inédit de magie vous surprendra. Les tours et les rebondissements se succèdent dans une ambiance chaleureuse et amicale. Devenez complice de l'illusionniste et perdez tout refaire. A ne pas manquer. Le soir, à partir de 21h30, Profitez du splendide spectacle de son et lumière au bord du lac. Des projections de vidéos et de lumière, ainsi que des acrobates et des danseurs, transforment chaque soir le lac en un espace féérique et merveilleux."
+        }
+      ],
+      "resolved_images": [
+        null,
+        null,
+        null
+      ],
+      "missing_labels": [
+        "Un parc d'attractions",
+        "Un parc naturel",
+        "Un parc aquatique"
+      ],
+      "ready_for_source_review": false
+    },
+    {
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "exercise": "tcf-ss-b1-s6-co-1",
+      "question": 10,
+      "enonce": "Où a lieu le spectacle « Show et lumière » ?",
+      "audio": null,
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Au bord du lac",
+          "correct": true,
+          "existing_image": "/lib/images/tcf/co/bg/lac.webp",
+          "asset": null
+        },
+        {
+          "id": "b",
+          "texte": "À l'entrée du parking",
+          "correct": false,
+          "existing_image": null,
+          "asset": "190b6defe6e6"
+        },
+        {
+          "id": "c",
+          "texte": "Dans la cafétéria",
+          "correct": false,
+          "existing_image": "/lib/images/tcf/co/bg/cantine.webp",
+          "asset": null
+        }
+      ],
+      "status": "pending_images",
+      "linked_source_ids": [
+        "09035196:036:a79a2771f57e",
+        "additional-20261102:mdf-b1-abc-junior-direct:36:a79a2771f57e:7ada9500"
+      ],
+      "source_links": [
+        {
+          "old_ref": "/lib/audio/tcf/co/loisirs/plaisir-authenticite-emotion-venez.mp3",
+          "source_id": "09035196:036:a79a2771f57e",
+          "candidate_cut_id": "09035196-036-a79a2771f57e-d1",
+          "transcription": "Venez au parc Looping, l'aventure pour tous Ouvert pendant l'été de 1h à 23h, tous les jours du lundi au dimanche. Découvrez le plus grand parc d'attractions de la région à 45 minutes seulement de Marseille par l'autoroute A6. Le parc Looping est l'endroit idéal pour passer une journée de détente et de partage en famille. Le parc Looping rassemble plaisir, authenticité et émotion avec ses 35 attractions et trois spectacles extraordinaires, ainsi que deux points de restauration et des zones de pique-nique. Les grands classiques vous attendent, comme la grande roue ou le train fantôme, mais également de nombreuses nouveautés. Faites vibrer vos 5 sens avec le nouveau simulateur X-Max 3, unique en Europe! Vous pouvez désormais regarder nos films et documentaires en 3D. Les sièges bougent et vous sentez toutes sortes de sensations. Du vent, une tempête de neige, l'odeur du feu, de la forêt, une expérience unique à découvrir absolument! Pour les plus courageux, découvrez l'adrénaline. Vous êtes propulsés grâce à un élastique à plus de 30 mètres d'altitude. Tout simplement incroyable! Découvrez la sensation de grande vitesse avec cette nouvelle attraction hors du commun. Attention, ce manège est interdit au moins de 12 ans. Le parc Looping, c'est aussi des espaces verts dans un cadre naturel magnifique. Vous avez envie de reposer, profitez de nos zones de détente, équipées de hamac et de barbecue pour manger pendant la journée en famille ou avec les amis. La cafétéria Bon Appétit est ouverte à partir de 12h et jusqu'à 21h45. Vous y trouverez des menus à 8,50 euros et un grand choix de boissons chaudes et froides. Pour les petites fins, le snack Mini Loop est ouvert toute la journée. De l'ouverture à la fermeture du parc. Les spectacles du parc Looping, c'est tout simplement... Magique. A 14h, un spectacle inédit de magie vous surprendra. Les tours et les rebondissements se succèdent dans une ambiance chaleureuse et amicale. Devenez complice de l'illusionniste et perdez tout refaire. A ne pas manquer. Le soir, à partir de 21h30, Profitez du splendide spectacle de son et lumière au bord du lac. Des projections de vidéos et de lumière, ainsi que des acrobates et des danseurs, transforment chaque soir le lac en un espace féérique et merveilleux."
+        }
+      ],
+      "resolved_images": [
+        null,
+        null,
+        "/lib/images/tcf/qcm-audit/co57-cafeteria.webp"
+      ],
+      "missing_labels": [
+        "Au bord du lac",
+        "À l'entrée du parking"
+      ],
+      "ready_for_source_review": false
+    },
+    {
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "exercise": "tcf-ss-b1-s9-co-3",
+      "question": 5,
+      "enonce": "Quelles boîtes faut-il aussi éviter selon le document ?",
+      "audio": null,
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Les boîtes rayées, fondues ou décolorées",
+          "correct": true,
+          "existing_image": null,
+          "asset": "7f9ae76f1f04"
+        },
+        {
+          "id": "b",
+          "texte": "Les boîtes en verre intactes",
+          "correct": false,
+          "existing_image": null,
+          "asset": "82119570159e"
+        },
+        {
+          "id": "c",
+          "texte": "Les boîtes neuves en acier inoxydable",
+          "correct": false,
+          "existing_image": null,
+          "asset": "c1bd71aa0d80"
+        }
+      ],
+      "status": "pending_images",
+      "linked_source_ids": [
+        "additional-20261102:mdf-b1-abc-direct:29:6d6f32c4655c:72c9cbbc"
+      ],
+      "source_links": [
+        {
+          "old_ref": "/lib/audio/tcf/co/maison/moules-silicone-boites-film.mp3",
+          "source_id": "additional-20261102:mdf-b1-abc-direct:29:6d6f32c4655c:72c9cbbc",
+          "candidate_cut_id": "additional-20261102-mdf-b1-abc-direct-29-6d6f32c4655c-72c9cbbc-d1",
+          "transcription": "Moule en silicone, boîte, film alimentaire, très présents dans les cuisines jusqu'à ces dernières années, les plastiques n'ont plus la cote. Il y en a pourtant de meilleures que d'autres. Selon leur composition, les boîtes en plastique libèrent ou non des composés toxiques, surtout au contact de liquide chaud ou de corps gras. Pour vous y retrouver, cherchez les numéros peu visibles qui se trouvent sous ces récipients. N'hésitez pas, jetez les numéros 1 en PET, les 3 en PVC, les 6 en polystyrène, les 7 en polycarbonate, car leurs additifs ont tendance à migrer, à passer dans les aliments. Jetez aussi toute boîte rayée, fondue ou décolorée. Vous pouvez garder les numéros 2 et 4 en polyéthylène, qui supportent bien le froid du réfrigérateur, et le 5 en polypropylène, qu'il est préférable de ranger dans les placards à température ambiante. Préférez donc les boîtes en acier inoxydable ou encore les bocaux en verre. Le film alimentaire peut être à base de PVC. Il contient alors des phtalates qui migrent au contact des corps gras. Si il est en polyéthylène basse densité, il est moins nocif. Jetez tout produit gras en contact prolongé avec un film plastique, surtout s'il a été exposé à la chaleur. Préférez le papier sulfurisé non blanchi ou une assiette retournée pour servir de couvercle. Les moules en silicone sont également très utilisées par les cuisinières. Cependant, une enquête réalisée en 2004 a révélé que 44 échantillons analysés sur 81 posaient des problèmes de sécurité alimentaire. Jetez les moules qui contiennent du peroxy, substance souvent utilisée en Chine et encore autorisée en France, alors qu'elle est interdite en Suisse et en Allemagne. Pour savoir si vos moules en contiennent, pincez-les. Si une pliure blanche apparaît, c'est mauvais signe. Vous pouvez garder les modèles qui portent la mention silicone platinium, capables de résister à des températures de 260 ou 280 degrés Celsius sans lâcher de composés indésirables. Préférez les moules en porcelaine blanche, en pyrex non colorées ou encore les caissettes en papier."
+        }
+      ],
+      "resolved_images": [
+        null,
+        null,
+        null
+      ],
+      "missing_labels": [
+        "Les boîtes rayées, fondues ou décolorées",
+        "Les boîtes en verre intactes",
+        "Les boîtes neuves en acier inoxydable"
+      ],
+      "ready_for_source_review": false
+    },
+    {
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "exercise": "tcf-ss-b1-s9-co-3",
+      "question": 8,
+      "enonce": "Que conseille le document pour remplacer un film plastique comme couvercle ?",
+      "audio": null,
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Une assiette retournée",
+          "correct": true,
+          "existing_image": null,
+          "asset": "1737eb9dc5b0"
+        },
+        {
+          "id": "b",
+          "texte": "Une feuille de PVC chauffée",
+          "correct": false,
+          "existing_image": null,
+          "asset": "e3c9243c8b01"
+        },
+        {
+          "id": "c",
+          "texte": "Un moule en silicone plié",
+          "correct": false,
+          "existing_image": null,
+          "asset": "8296abcc6745"
+        }
+      ],
+      "status": "pending_images",
+      "linked_source_ids": [
+        "additional-20261102:mdf-b1-abc-direct:29:6d6f32c4655c:72c9cbbc"
+      ],
+      "source_links": [
+        {
+          "old_ref": "/lib/audio/tcf/co/maison/moules-silicone-boites-film.mp3",
+          "source_id": "additional-20261102:mdf-b1-abc-direct:29:6d6f32c4655c:72c9cbbc",
+          "candidate_cut_id": "additional-20261102-mdf-b1-abc-direct-29-6d6f32c4655c-72c9cbbc-d1",
+          "transcription": "Moule en silicone, boîte, film alimentaire, très présents dans les cuisines jusqu'à ces dernières années, les plastiques n'ont plus la cote. Il y en a pourtant de meilleures que d'autres. Selon leur composition, les boîtes en plastique libèrent ou non des composés toxiques, surtout au contact de liquide chaud ou de corps gras. Pour vous y retrouver, cherchez les numéros peu visibles qui se trouvent sous ces récipients. N'hésitez pas, jetez les numéros 1 en PET, les 3 en PVC, les 6 en polystyrène, les 7 en polycarbonate, car leurs additifs ont tendance à migrer, à passer dans les aliments. Jetez aussi toute boîte rayée, fondue ou décolorée. Vous pouvez garder les numéros 2 et 4 en polyéthylène, qui supportent bien le froid du réfrigérateur, et le 5 en polypropylène, qu'il est préférable de ranger dans les placards à température ambiante. Préférez donc les boîtes en acier inoxydable ou encore les bocaux en verre. Le film alimentaire peut être à base de PVC. Il contient alors des phtalates qui migrent au contact des corps gras. Si il est en polyéthylène basse densité, il est moins nocif. Jetez tout produit gras en contact prolongé avec un film plastique, surtout s'il a été exposé à la chaleur. Préférez le papier sulfurisé non blanchi ou une assiette retournée pour servir de couvercle. Les moules en silicone sont également très utilisées par les cuisinières. Cependant, une enquête réalisée en 2004 a révélé que 44 échantillons analysés sur 81 posaient des problèmes de sécurité alimentaire. Jetez les moules qui contiennent du peroxy, substance souvent utilisée en Chine et encore autorisée en France, alors qu'elle est interdite en Suisse et en Allemagne. Pour savoir si vos moules en contiennent, pincez-les. Si une pliure blanche apparaît, c'est mauvais signe. Vous pouvez garder les modèles qui portent la mention silicone platinium, capables de résister à des températures de 260 ou 280 degrés Celsius sans lâcher de composés indésirables. Préférez les moules en porcelaine blanche, en pyrex non colorées ou encore les caissettes en papier."
+        }
+      ],
+      "resolved_images": [
+        null,
+        null,
+        null
+      ],
+      "missing_labels": [
+        "Une assiette retournée",
+        "Une feuille de PVC chauffée",
+        "Un moule en silicone plié"
+      ],
+      "ready_for_source_review": false
+    },
+    {
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "exercise": "tcf-ss-b1-s11-co-1",
+      "question": 10,
+      "enonce": "Dans quels établissements des chats sont-ils adoptés pour apaiser les résidents ?",
+      "audio": null,
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Des maisons de retraite",
+          "correct": true,
+          "existing_image": null,
+          "asset": "11b873fbccdd"
+        },
+        {
+          "id": "b",
+          "texte": "Des gares ferroviaires",
+          "correct": false,
+          "existing_image": null,
+          "asset": "20911f290515"
+        },
+        {
+          "id": "c",
+          "texte": "Des centres commerciaux",
+          "correct": false,
+          "existing_image": null,
+          "asset": "83d2d7f8a7da"
+        }
+      ],
+      "status": "pending_images",
+      "linked_source_ids": [
+        "09035196:024:9dd16b09b5a8",
+        "additional-20261102:mdf-b1-abc-junior-direct:24:9dd16b09b5a8:e076e313"
+      ],
+      "source_links": [
+        {
+          "old_ref": "/lib/audio/tcf/co/vie-quotidienne/en-moins-d-une-dizaine-1.mp3",
+          "source_id": "09035196:024:9dd16b09b5a8",
+          "candidate_cut_id": "09035196-024-9dd16b09b5a8-d1",
+          "transcription": "La zoothérapie utilise la compagnie d'un animal pour diminuer le stress chez des personnes qui souffrent de problems mentaux, physiques ou sociaux, des enfants fragilisés, des personnes âgées seules, des handicapés, des personnes en difficulté d'insertion, des malades Alzheimer. La complicité qui se crée avec l'animal permet de developer des liens affectifs qui deviennent des repères rassurants. François Beger, directeur de l'Institut français de zoothérapie, prise que la réussite de cette thérapie tient sans doute au fait que l'animal ne porte aucun jugement. Depuis les années 1980, de nombreuses études ont confirmé que le simple contact avec l'animal était favorable à la santé physique et mentale. Le simple fait de le promener peut aider à sortir de l'isolement, il stimule la mobilité et la concentration. Dans une famille, il favorise la bonne circulation de l'affection et libère aussi la communication. Chez l'enfant, l'animal va entraîner le rire par son comportement, transmettre de l'affection et créer un véritable attachement. L'animal ne laissera jamais l'enfant indifférent. It will l'aider à faire face à la solitude due à une incompréhension dans les relations avec ses parents ou avec les enseignants. L'animal peut jouer un rôle important dans l'apprentissage de l'autonomie. Avec un animal, la communication est non verbale, elle devient sensorielle, tactile et aussi ludique. Le patient est pris en charge sans même qu'il s'en rend compte. La zoothérapie fait appel en premier lieu aux chiens. Le chien est le médiateur préféré des enfants et des adultes. Le chat est antidépresseur pour les personnes anxieuses. Caresser la fourrure du chat est un geste de réconfort et d'apaisement. Le ronronement du chat est aussi un très bon antistress. En ronronant, le chat émet des fréquences sonores basses émises par le larynx qui ont un effet relaxant. The maisons de retraite n'hésite pas à adopter des chats, car on constater que les chats réconfortent les residents and les aide to s'endormir."
+        }
+      ],
+      "resolved_images": [
+        null,
+        null,
+        null
+      ],
+      "missing_labels": [
+        "Des maisons de retraite",
+        "Des gares ferroviaires",
+        "Des centres commerciaux"
+      ],
+      "ready_for_source_review": false
+    },
+    {
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "exercise": "tcf-ss-b1-s11-co-2",
+      "question": 6,
+      "enonce": "Dans Une sirène à Paris, qui est Lula ?",
+      "audio": null,
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Une sirène",
+          "correct": true,
+          "existing_image": "/lib/images/vocabulaire/autre/sirène.webp",
+          "asset": null
+        },
+        {
+          "id": "b",
+          "texte": "Une journaliste",
+          "correct": false,
+          "existing_image": null,
+          "asset": "d28f9890df7c"
+        },
+        {
+          "id": "c",
+          "texte": "Une professeure",
+          "correct": false,
+          "existing_image": "/lib/images/vocabulaire/metiers/professeure.webp",
+          "asset": null
+        }
+      ],
+      "status": "pending_images",
+      "linked_source_ids": [
+        "09035196:032:06ca883daec9",
+        "additional-20261102:mdf-b1-abc-junior-direct:32:06ca883daec9:506c4b6a"
+      ],
+      "source_links": [
+        {
+          "old_ref": "/lib/audio/tcf/co/vie-quotidienne/cette-semaine-encore-cinema-1.mp3",
+          "source_id": "09035196:032:06ca883daec9",
+          "candidate_cut_id": "09035196-032-06ca883daec9-d1",
+          "transcription": "Cette semaine au Cinéma Le Studio de la ville de Tours, une super programmation. Le studio est ouvert tous les jours de 14h à minuit. Pour connaître les horaires et les résumés des films à l'affiche, visitez notre site www.lestudiotour.com Voici une sélection parmi les films actuellement à l'affiche. Hors norme. Durée 1h55 Une comédie d'Éric Toledano, Olivier Nakache. Résumé du film Bruno et Malik vivent depuis 20 ans in un monde à part, celui des enfants et adolescents autistes. Au sein de leurs deux associations respectives, ils forment des jeunes issus des quartiers difficiles pour encadrer ces cas qualifiés d'hypercomplexes. Une alliance hors du commun pour des personnalités hors normes. Edmond Durée 1h53, Comédie Historique de Alexis Michalik. Resumé du film. Decembre 1897, Paris. Edmond Rostan n'a pas encore 30 ans, but déjà 2 enfants and become d'angoisse. He's not écrit depuis two ans. In désespoir de cause, he proposes au grand constant Coquelin une pièce, une comédie héroïque en vers pour les fêtes. Seul souci, elle n'est pas encore écrite. Edmond decide d'ignorer le manque d'enthousiasme de l'ensemble de son entourage, il se met à écrire cette pièce à laquelle personne ne croit. For l'instant, il n'a que le titre Cyrano de Bergerac. Une sirène à Paris. Durée 1h42. Film fantastique, drame de Mathias Malzieu. Avecolas Duvausel, Marilyn Lima, Rossi De Palma. Resumé du film. Chanteur de variété au cœur brisé, Gaspard s'était juré de ne plus retomber amoureux. Quant à Lula, jolie sirène, elle n'a que le chant to defend des hommes en faisant s'emballer leur cœur jusqu'à l'explosion. Lorsque la scène en crue vient déposer Lula au pied du flower burger, la péniche cabaret au champ de Gaspard, it's a mini tsunami that will bouleverser their existence. Lui, l'homme qui a souffert d'avoir trop aimé, et elle, la créature qui n'a jamais connu l'amour, vont apprendre à se connaître et à chanter d'une même voix."
+        }
+      ],
+      "resolved_images": [
+        null,
+        null,
+        null
+      ],
+      "missing_labels": [
+        "Une sirène",
+        "Une journaliste",
+        "Une professeure"
+      ],
+      "ready_for_source_review": false
+    },
+    {
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "exercise": "tcf-ss-b1-s12-co-2",
+      "question": 5,
+      "enonce": "Qu'est-ce qui manquait à M. Pokora ?",
+      "audio": null,
+      "choices": [
+        {
+          "id": "a",
+          "texte": "La danse",
+          "correct": true,
+          "existing_image": "/lib/images/tcf/co/bg/salle-de-danse.webp",
+          "asset": null
+        },
+        {
+          "id": "b",
+          "texte": "Le théâtre",
+          "correct": false,
+          "existing_image": "/lib/images/tcf/co/bg/theatre.webp",
+          "asset": null
+        },
+        {
+          "id": "c",
+          "texte": "Les films futuristes",
+          "correct": false,
+          "existing_image": null,
+          "asset": "3d105cd93a22"
+        }
+      ],
+      "status": "pending_images",
+      "linked_source_ids": [
+        "09035196:017:dbf36c7a1874",
+        "additional-20261102:mdf-b1-abc-junior-direct:17:dbf36c7a1874:d25bf7d7"
+      ],
+      "source_links": [
+        {
+          "old_ref": "/lib/audio/tcf/co/vie-quotidienne/presenter-radio.mp3",
+          "source_id": "09035196:017:dbf36c7a1874",
+          "candidate_cut_id": "09035196-017-dbf36c7a1874-d1",
+          "transcription": "Nous avons aujourd'hui le plaisir et la chance d'avoir avec nous le chanteur Mpokora pour une interview exclusive. Mpokora, bonjour. Bonjour, le plaisir est pour moi. Après l'immense succès de ton album My Way, plus de 600 000 exemplaires vendus, tu as décidé de faire un an de pause. When I feel a pause, I respect the thousand and pause, but you have created six titles and a new album. Wait, that's right. It's a bit of that. Et comment tu as eu l'idée de ton nouvel album Pyramide? Ben justement, j'étais devant la télé je regardais un documentaire qui s'appelle Dans le secret des Pyramides. Juste après, j'ai regardé plusieurs films Marvel avec des super-héros, parce que c'est un style que j'aime bien, et là, bam, l'idée m'est venue. Faire l'album Pyramide avec un monde fantastique un peu futur. J'ai eu des images dans ma tête et j'ai appelé mon équipe pour qu'on commence à travailler. C'est un univers que l'on retrouve dans tes concerts? Oui, les décors sont impressionnants. Pyramid a été un immense succès. Tu es arrivé premier au classement des albums français les plus vendus. On sent que tu as mis beaucoup de toi dans cette album. Tu parles vrai, tu parles sans filtre, tu parles de tes doutes. Oui, c'est vrai. J'ai cherché à me retrouver après avoir chanté longtemps les textes des autres. And this pause, I mean posed a question, notamment to know if j'allais ou non arrêter ma carrière de chanteur. If me restait trois minutes là for, and I did quoi? Pyramide, qui est également devenu le titre de l'album."
+        }
+      ],
+      "resolved_images": [
+        null,
+        "/lib/images/tcf/qcm-audit/co306-batiment-theatre-dessine.webp",
+        null
+      ],
+      "missing_labels": [
+        "La danse",
+        "Les films futuristes"
+      ],
+      "ready_for_source_review": false
+    },
+    {
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "exercise": "tcf-ss-b1-s12-co-4",
+      "question": 2,
+      "enonce": "Quel lieu a éveillé son envie de faire ce métier à l'adolescence ?",
+      "audio": null,
+      "choices": [
+        {
+          "id": "a",
+          "texte": "L'atelier d'une amie couturière de sa mère",
+          "correct": true,
+          "existing_image": null,
+          "asset": "584d2077f332"
+        },
+        {
+          "id": "b",
+          "texte": "Une usine automobile",
+          "correct": false,
+          "existing_image": null,
+          "asset": "b44b6b44b1a1"
+        },
+        {
+          "id": "c",
+          "texte": "Une salle de cinéma",
+          "correct": false,
+          "existing_image": null,
+          "asset": "f1d1fda7e042"
+        }
+      ],
+      "status": "pending_images",
+      "linked_source_ids": [
+        "09035196:031:1cb92145fa2e",
+        "additional-20261102:mdf-b1-abc-junior-direct:31:1cb92145fa2e:1bbc6581"
+      ],
+      "source_links": [
+        {
+          "old_ref": "/lib/audio/tcf/co/vie-quotidienne/les-cabines-telephoniques-sont.mp3",
+          "source_id": "09035196:031:1cb92145fa2e",
+          "candidate_cut_id": "09035196-031-1cb92145fa2e-d1",
+          "transcription": "Nous sommes notre styliste Anne-Laure Bécher. Dans son atelier, il y a des tissus, des dessins, les machines à coudre. Partout il y a des vêtements d'une originalité extrême, des mannequins. Bonjour Anne-Laure. Bonjour, entrez donc. Soyez les bienvenus. Installez-vous. Je vous écoute. Qu'est-ce que vous a donné l'envie de faire du stylisme? Nous allions souvent chez une amie de ma mère qui était couturière. J'adorais son atelier. It me fascinait et j'ai eu envie d'en faire mon métier. Je me souviens aussi que quand j'étais petite, je fabriquais déjà des vêtements miniatures pour mes poupées. Parlez-nous de votre carrière. After my two année d'apprentissage, I've eu une bourse d'un an pour étudier à Paris and approfondir le métier. Cela m'a beaucoup aidé car j'ai fait des rencontres intéressantes qui m'ont permis ensuite de participer à des congrès, des seminaires, des salons internationaux. Pourquoi le stylism plus que la couture? Un styliste est plus un artiste qui crée de nouvelles figures, des modèles. Le couturier est moins dans la création. C'est le client qui lui dicte davantage la ligne à suivre. Même si le couturier aime toujours apporter sa couche personnelle, forcément. Moi j'ai besoin de l'art dans mon quotidien. Le stylisme est mon moyen d'assouvir ce besoin. Comment définirie vous la styliste que vous êtes? Je suis curieuse. Comme tous les stylists, curieuse de découvrir de nouvelles formes, de faire des mélanges, aller vers le jamais vu, ne jamais se ressembler, mais ne pas choquer. Comment travaillez-vous au quotidien? Je crée d'abord des vêtements, puis je fais des expos, des défilés, et c'est là que les gens voyages. Après j'ai des demandes. Je dois souvent adapter les modèles, les tissus, les couleurs, mais j'adore ça. Je vais plus loin encore dans la création. Si je peux me permettre, vous arrivez à bien vivre de votre métier. Je n'ai jamais eu de grande difficulté. Quand on est styliste, créatif, flexible et motivé, il n'est pas difficile de se créer une petite clientèle fidèle. Et voilà. Puis il faut dire que les clients sont prêts à payer le coût de la création et de l'originalité, même si moi, j'ai toujours du mal à appliquer des prix très élevés. Certains collègues n'hésitent pas en tout cas."
+        }
+      ],
+      "resolved_images": [
+        null,
+        null,
+        null
+      ],
+      "missing_labels": [
+        "L'atelier d'une amie couturière de sa mère",
+        "Une usine automobile",
+        "Une salle de cinéma"
+      ],
+      "ready_for_source_review": false
+    },
+    {
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "exercise": "tcf-ss-b1-s14-co-4",
+      "question": 7,
+      "enonce": "Quelle activité est proposée au début de l'appel ?",
+      "audio": null,
+      "choices": [
+        {
+          "id": "a",
+          "texte": "Courir autour du lac",
+          "correct": true,
+          "existing_image": null,
+          "asset": "8c9092e48342"
+        },
+        {
+          "id": "b",
+          "texte": "Faire de la natation",
+          "correct": false,
+          "existing_image": null,
+          "asset": "d7cd71fc768f"
+        },
+        {
+          "id": "c",
+          "texte": "Jouer au tennis",
+          "correct": false,
+          "existing_image": null,
+          "asset": "26876e2318ce"
+        }
+      ],
+      "status": "pending_images",
+      "linked_source_ids": [
+        "additional-20261102:mdf-b1-abc-direct:17:93a2294ea475:60bf1612"
+      ],
+      "source_links": [
+        {
+          "old_ref": "/lib/audio/tcf/co/magasins/allo-annie.mp3",
+          "source_id": "additional-20261102:mdf-b1-abc-direct:17:93a2294ea475:60bf1612",
+          "candidate_cut_id": "additional-20261102-mdf-b1-abc-direct-17-93a2294ea475-60bf1612-d1",
+          "transcription": "Hello Annie? Tu viens avec moi courir autour du lac? A 10 heures, ça te va? Je suis désolée, ce matin je ne peux pas. Je suis en plein rangement de mes placards. Je ne sais plus où mettre mes vêtements. J'en ai que je ne porte plus. Il y en a même que je viens de retrouver et que j'avais oublié. Qu'est-ce que tu fais des tiens, Chantal? Ça dépend. Sils sont en bon état, je les vends, et avec l'argent, je renouvelle un peu ma garderobe. Tu les vends en ligne. J'ai entendu parler de quelques sites, mais ça ne m'attire pas. One of my amis has a problem with my acheteur. I've been a site sérieux where I vend quelquefois. I visit un dépôt vendre qui s'occupe de vendre at my place. It's as well. It exists des friperies, but I'm not a In fact, it's the nom that ne plaît pas. For my frip que je vends, mais des vêtements, même si elles ne sont plus à la mode. When they were used, I met in a sack and depose in borne de collect. They are always recycling. La plupart du temps je les propose à des personnes que je connais et qui n'ont pas beaucoup de moyens. Si ces vêtements leur plaisent et leur vont, je les leur donne. Mais j'y pense, tu vas bien à la recyclerie. Quand je vais à la déchetterie, je leur laisse les objets qui peuvent être recyclés. Mais pas de vêtements. Tu sais, comme Claude, notre amie du club de gym s'occupe du secours populaire. Je lui remets les vêtements que je ne porte plus, ou encore je les donne à la Croix Rouge. Je reconnais là ta générosité. Allez, je te quitte, je vais courir. Et bon rangement."
+        }
+      ],
+      "resolved_images": [
+        null,
+        null,
+        "/lib/images/tcf/qcm-audit/26876e2318ce.webp"
+      ],
+      "missing_labels": [
+        "Courir autour du lac",
+        "Faire de la natation"
+      ],
+      "ready_for_source_review": false
+    }
+  ],
+  "audio_issues": {
+    "tcf-ss-a1-s53-co-3#4": {
+      "status": "pending_source_audio_review",
+      "reason": "La banque attend 12 h 03 ; la transcription préparée annonce 1 h 25. Écouter le candidat et contrôler son alignement avant toute activation."
+    },
+    "delf-a1-2022-co-ex3-31#3": {
+      "status": "pending_source_audio_review",
+      "reason": "La banque attend 15 h 40 ; la transcription préparée écrit 3 h 40. Vérifier à l’écoute la forme exacte de l’heure et le contexte avant activation."
+    },
+    "delf-a1-2022-co-85#14": {
+      "status": "pending_source_audio_review",
+      "reason": "La banque attend 11 h 58 ; la transcription préparée écrit 1 h 58. Écouter le candidat et vérifier la reconnaissance de l’heure avant activation."
+    },
+    "tcf-ss-a2-s3-co-3#6": {
+      "status": "pending_source_audio_review",
+      "reason": "Le mot correspondant au produit dégusté est transcrit « parfétiaux ». Écouter le candidat pour distinguer pâtisseries, pains spéciaux ou une autre formule avant activation."
+    },
+    "tcf-ss-a2-s3-co-3#3": {
+      "status": "pending_source_audio_review",
+      "reason": "La bonne réponse actuelle est « À la caisse de la librairie » ; la transcription préparée indique « à l’accueil de la librairie ». Écouter le candidat et vérifier son alignement avant de corriger les choix et d’activer les images."
+    },
+    "tcf-ss-a2-s48-co-3#12": {
+      "status": "pending_source_audio_review",
+      "reason": "La bonne réponse de la banque indique « Le rayon BD » ; la transcription préparée de remplacement dit explicitement « le nouveau rayon DVD ». Écouter le segment avant de choisir les illustrations et de valider la réponse. Aucune correction de réponse ni activation QCM image sans cette vérification.",
+      "source_links": [
+        {
+          "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-21-4.mp3",
+          "source_id": "9782090351958:040:42a9a64a8955",
+          "candidate_cut_id": "9782090351958-040-42a9a64a8955-r2-d4",
+          "transcription": "La salle informatique est fermée pour travaux. Si vous devez travailler sur les ordinateurs, vous pouvez aller à la bibliothèque. Profitez-en aussi pour visiter le nouveau rayon DVD."
+        }
+      ]
+    },
+    "tcf-a2j-s2-co-1#13": {
+      "status": "pending_source_audio_review",
+      "reason": "La réponse actuelle indique caisses automatiques, mais le support préparé dit seulement caisses situées au fond du magasin. Vérifier l’alignement et l’audio avant activation ; ne pas ajouter ce qualificatif par l’image."
+    }
+  }
+}

@@ -31,20 +31,20 @@
     "received_source_entries": 836,
     "copyright_removed": 2,
     "planned_question_candidates": 324,
-    "activated_planned_questions": 228,
-    "pending_question_candidates": 96,
+    "activated_planned_questions": 247,
+    "pending_question_candidates": 77,
     "original_missing_concepts": 577,
-    "original_concepts_now_generated_or_reused": 479,
-    "remaining_original_concepts": 98,
-    "new_co_images_this_batch": 697,
+    "original_concepts_now_generated_or_reused": 517,
+    "remaining_original_concepts": 60,
+    "new_co_images_this_batch": 741,
     "activated_association_scenes_this_batch": 6,
     "pending_association_scenes": 0,
-    "sources_with_pending_question_candidates": 51,
-    "sources_with_new_active_question_or_scene": 209,
+    "sources_with_pending_question_candidates": 41,
+    "sources_with_new_active_question_or_scene": 219,
     "sources_without_current_bank_reference": 229,
     "remaining_audio_references_to_match": 0,
     "co_images_needing_style_correction": 0,
-    "co_images_style_aligned": 697,
+    "co_images_style_aligned": 741,
     "co_style_redraws_completed": 11
   },
   "instructions": [
@@ -723,17 +723,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/vie-quotidienne/cette-semaine-encore-cinema-2.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a1-s46-co-3",
           "question": 1
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 5,
-      "current_linked_image_variants": 3,
+      "current_linked_image_variants": 4,
       "complete_image_audit_certified": false
     },
     {
@@ -3616,22 +3616,21 @@
         "/lib/audio/tcf/co/radio/la-fete-des-meres.mp3",
         "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_94.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
+        {
+          "exercise": "tcf-a1-s2-co-2",
+          "question": 6
+        },
         {
           "exercise": "delf-a1-2022-co-94",
           "question": 1
         }
       ],
-      "new_active_visual_questions": [
-        {
-          "exercise": "tcf-a1-s2-co-2",
-          "question": 6
-        }
-      ],
       "new_active_association_scenes": [],
       "current_linked_questions": 14,
-      "current_linked_image_variants": 8,
+      "current_linked_image_variants": 9,
       "complete_image_audit_certified": false
     },
     {
@@ -4806,17 +4805,18 @@
       "pending_visual_questions": [
         {
           "exercise": "tcf-ss-a2-s48-co-3",
-          "question": 9
-        },
-        {
-          "exercise": "tcf-ss-a2-s48-co-3",
           "question": 12
         }
       ],
-      "new_active_visual_questions": [],
+      "new_active_visual_questions": [
+        {
+          "exercise": "tcf-ss-a2-s48-co-3",
+          "question": 9
+        }
+      ],
       "new_active_association_scenes": [],
       "current_linked_questions": 19,
-      "current_linked_image_variants": 3,
+      "current_linked_image_variants": 4,
       "complete_image_audit_certified": false
     },
     {
@@ -5203,16 +5203,17 @@
         {
           "exercise": "tcf-ssx-a2-radio-fete-de-la-ville-co-3",
           "question": 1
-        },
+        }
+      ],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ssx-a2-radio-fete-de-la-ville-co-3",
           "question": 2
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 14,
-      "current_linked_image_variants": 0,
+      "current_linked_image_variants": 1,
       "complete_image_audit_certified": false
     },
     {
@@ -5386,21 +5387,21 @@
         {
           "exercise": "tcf-a2j-s2-co-1",
           "question": 13
-        },
-        {
-          "exercise": "tcf-a2j-s2-co-1",
-          "question": 17
         }
       ],
       "new_active_visual_questions": [
         {
           "exercise": "tcf-a2j-s2-co-1",
           "question": 4
+        },
+        {
+          "exercise": "tcf-a2j-s2-co-1",
+          "question": 17
         }
       ],
       "new_active_association_scenes": [],
       "current_linked_questions": 20,
-      "current_linked_image_variants": 6,
+      "current_linked_image_variants": 7,
       "complete_image_audit_certified": false
     },
     {
@@ -6138,17 +6139,17 @@
         "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_28-3.mp3",
         "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_28-4.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "delf-a2-2021-co-ex4-28",
           "question": 1
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 10,
-      "current_linked_image_variants": 0,
+      "current_linked_image_variants": 1,
       "complete_image_audit_certified": false
     },
     {
@@ -6213,8 +6214,9 @@
         "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_31-4.mp3",
         "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_31-5.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "delf-a2-2021-co-ex4-31",
           "question": 2
@@ -6222,9 +6224,7 @@
         {
           "exercise": "delf-a2-2021-co-ex4-31",
           "question": 3
-        }
-      ],
-      "new_active_visual_questions": [
+        },
         {
           "exercise": "delf-a2-2021-co-ex4-31",
           "question": 6
@@ -6232,7 +6232,7 @@
       ],
       "new_active_association_scenes": [],
       "current_linked_questions": 15,
-      "current_linked_image_variants": 4,
+      "current_linked_image_variants": 6,
       "complete_image_audit_certified": false
     },
     {
@@ -6378,22 +6378,21 @@
         "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_38-2.mp3",
         "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_38-3.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
+        {
+          "exercise": "delf-a2-2021-co-ex2-38",
+          "question": 3
+        },
         {
           "exercise": "delf-a2-2021-co-ex2-38",
           "question": 6
         }
       ],
-      "new_active_visual_questions": [
-        {
-          "exercise": "delf-a2-2021-co-ex2-38",
-          "question": 3
-        }
-      ],
       "new_active_association_scenes": [],
       "current_linked_questions": 14,
-      "current_linked_image_variants": 1,
+      "current_linked_image_variants": 2,
       "complete_image_audit_certified": false
     },
     {
@@ -6644,17 +6643,17 @@
         "/lib/audio/tcf/co/radio/les-annonces-publiques-5-5.mp3",
         "/lib/audio/tcf/co/radio/les-annonces-publiques-5-6.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-a2-sa-co-1",
           "question": 16
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 23,
-      "current_linked_image_variants": 3,
+      "current_linked_image_variants": 4,
       "complete_image_audit_certified": false
     },
     {
@@ -9225,17 +9224,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/vie-quotidienne/cette-semaine-encore-cinema-2.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a1-s46-co-3",
           "question": 1
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 5,
-      "current_linked_image_variants": 3,
+      "current_linked_image_variants": 4,
       "complete_image_audit_certified": false
     },
     {
@@ -11539,17 +11538,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/cinema/01-cinéma-annonce-réduction-bonbon.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ssx-a2-annonce-2-6-co-2",
           "question": 2
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 3,
-      "current_linked_image_variants": 1,
+      "current_linked_image_variants": 2,
       "complete_image_audit_certified": false
     },
     {
@@ -11936,14 +11935,13 @@
       "old_refs": [
         "/lib/audio/tcf/co/ville/01-ville-annonce-salon-du-tourisme.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ssx-a2-annonce-6-3-co-2",
           "question": 1
-        }
-      ],
-      "new_active_visual_questions": [
+        },
         {
           "exercise": "tcf-ssx-a2-annonce-6-3-co-2",
           "question": 3
@@ -11951,7 +11949,7 @@
       ],
       "new_active_association_scenes": [],
       "current_linked_questions": 3,
-      "current_linked_image_variants": 1,
+      "current_linked_image_variants": 2,
       "complete_image_audit_certified": false
     },
     {
@@ -13293,17 +13291,17 @@
         "/lib/audio/tcf/co/loisirs/elisa-peux-me-preter-2.mp3",
         "/lib/audio/tcf/co/loisirs/elisa-peux-me-preter-3.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a2-s21-co-1",
           "question": 9
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 12,
-      "current_linked_image_variants": 0,
+      "current_linked_image_variants": 1,
       "complete_image_audit_certified": false
     },
     {
@@ -14049,17 +14047,18 @@
       "pending_visual_questions": [
         {
           "exercise": "tcf-ss-a2-s48-co-3",
-          "question": 9
-        },
-        {
-          "exercise": "tcf-ss-a2-s48-co-3",
           "question": 12
         }
       ],
-      "new_active_visual_questions": [],
+      "new_active_visual_questions": [
+        {
+          "exercise": "tcf-ss-a2-s48-co-3",
+          "question": 9
+        }
+      ],
       "new_active_association_scenes": [],
       "current_linked_questions": 19,
-      "current_linked_image_variants": 3,
+      "current_linked_image_variants": 4,
       "complete_image_audit_certified": false
     },
     {
@@ -14428,16 +14427,17 @@
         {
           "exercise": "tcf-ssx-a2-radio-fete-de-la-ville-co-3",
           "question": 1
-        },
+        }
+      ],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ssx-a2-radio-fete-de-la-ville-co-3",
           "question": 2
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 14,
-      "current_linked_image_variants": 0,
+      "current_linked_image_variants": 1,
       "complete_image_audit_certified": false
     },
     {
@@ -14611,21 +14611,21 @@
         {
           "exercise": "tcf-a2j-s2-co-1",
           "question": 13
-        },
-        {
-          "exercise": "tcf-a2j-s2-co-1",
-          "question": 17
         }
       ],
       "new_active_visual_questions": [
         {
           "exercise": "tcf-a2j-s2-co-1",
           "question": 4
+        },
+        {
+          "exercise": "tcf-a2j-s2-co-1",
+          "question": 17
         }
       ],
       "new_active_association_scenes": [],
       "current_linked_questions": 20,
-      "current_linked_image_variants": 6,
+      "current_linked_image_variants": 7,
       "complete_image_audit_certified": false
     },
     {
@@ -20385,7 +20385,7 @@
           "asset": "044fcfc40aa9"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "grammar-import-20261104:file_00000000f61081f49ea299886cf3c8a6"
       ],
@@ -20396,6 +20396,11 @@
           "candidate_cut_id": "grammar-import-20261104-file_00000000f61081f49ea299886cf3c8a6-d1",
           "transcription": "Nous sommes aujourd'hui dans la maison de Victor Hugo au 6 place des Vosges à Paris et nous allons visiter ensemble le Salon Rouge, le petit salon et la chambre."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-salon-rouge-petit.webp",
+        "/lib/images/tcf/qcm-audit/co57-salon-bleu-grand.webp",
+        "/lib/images/tcf/qcm-audit/co57-salon-vert-musique.webp"
       ]
     },
     {
@@ -20854,7 +20859,7 @@
           "asset": "ce3936889480"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "grammar-import-20261104:file_000000006acc81f4acfc723bdbe53bb2"
       ],
@@ -20865,6 +20870,11 @@
           "candidate_cut_id": "grammar-import-20261104-file_000000006acc81f4acfc723bdbe53bb2-d1",
           "transcription": "Vous adorez les croissants du Macaron doré ? Venez découvrir maintenant leurs tartes aux fruits, leurs gâteaux, leurs crêpes bretonnes, leurs macarons et leurs éclairs au café. Venez nombreux !"
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-crepes-bretonnes.webp",
+        "/lib/images/tcf/qcm-audit/co57-crepes-japonaises.webp",
+        "/lib/images/tcf/qcm-audit/co57-crepes-americaines.webp"
       ]
     },
     {
@@ -20957,7 +20967,7 @@
           "asset": "2b354a77b8d1"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "grammar-import-20261104:file_000000008d8c81f4ac4702acec45b003"
       ],
@@ -20968,6 +20978,11 @@
           "candidate_cut_id": "grammar-import-20261104-file_000000008d8c81f4ac4702acec45b003-d1",
           "transcription": "Vous toussez ? Achetez Calmatou pour toute la famille, adulte ou enfant. Des pastilles contre la toux et le mal de gorge à utiliser le jour et la nuit. Cet hiver, Calmatou est dans toutes les pharmacies."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-toux-gorge.webp",
+        "/lib/images/tcf/qcm-audit/co57-dos-brulures.webp",
+        "/lib/images/tcf/qcm-audit/co57-dents-otites.webp"
       ]
     },
     {
@@ -21651,7 +21666,7 @@
           "asset": "ab3130bc05cd"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "grammar-import-20261104:file_00000000d59081f4bc8d14cc896fa3c9"
       ],
@@ -21662,6 +21677,11 @@
           "candidate_cut_id": "grammar-import-20261104-file_00000000d59081f4bc8d14cc896fa3c9-d1",
           "transcription": "Allô Mathilde, c'est Mathieu. Bonjour Mathieu. Tu es où ? Je suis à la maison. Je suis malade. Et je ne peux pas venir travailler aujourd'hui. Ah bon ? Mais qu'est-ce que tu as ? J'ai mal à la gorge. Et je tousse. C'est un gros rhume, je pense. Tu as de la fièvre ? Oui. J'ai 39 degrés. Et j'ai mal à la tête. Alors c'est la grippe. Oh là là. Je dois voir un médecin, alors. Oui. Prends un rendez-vous pour une téléconsultation. Ce soir je dois passer à la pharmacie. Je peux prendre ton ordonnance et acheter tes médicaments. Merci beaucoup Mathilde. Tu es vraiment très sympa."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-gorge-tete.webp",
+        "/lib/images/tcf/qcm-audit/co57-dos-dents.webp",
+        "/lib/images/tcf/qcm-audit/co57-ventre-bras.webp"
       ]
     },
     {
@@ -21801,7 +21821,7 @@
           "asset": "77a7797629c4"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "grammar-import-20261104:file_000000004dfc81f98ce562d086ac6a06"
       ],
@@ -21812,6 +21832,11 @@
           "candidate_cut_id": "grammar-import-20261104-file_000000004dfc81f98ce562d086ac6a06-d1",
           "transcription": "Bonjour monsieur. Je cherche un appartement dans un immeuble calme. Très bien. Et vous habitez où maintenant ? J'habite boulevard des charmes. Et il y a beaucoup de bruit. C'est vrai. Vous voulez combien de pièces ? Nous sommes un couple avec deux enfants. Et vous voulez deux ou trois chambres ? Trois chambres, c'est bien. Et une cuisine équipée et des pièces lumineuses. Bien sûr. Vous préférez un appartement à l'étage, avec une terrasse, ou au rez-de-chaussée avec un jardin. Un appartement avec un jardin ? C'est super. Nous avons un chien. Vous êtes libre aujourd'hui pour visiter un appartement ?"
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-appartement-calme.webp",
+        "/lib/images/tcf/qcm-audit/co57-maison-isolee.webp",
+        "/lib/images/tcf/qcm-audit/co306-studio-dessine.webp"
       ]
     },
     {
@@ -22331,7 +22356,7 @@
           "asset": "ffe7b67dbbd3"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "09035276:033:6a24bf2f6880",
         "additional-20261102:mdf-a1-abc-junior:33:6a24bf2f6880:41822d7e"
@@ -22343,6 +22368,11 @@
           "candidate_cut_id": "09035276-033-6a24bf2f6880-d1",
           "transcription": "Aujourd'hui, c'est la fête du sport dans votre ville jusqu'à 18h. Venez apprendre à jouer au basket à 10h au gymnase. Vous préférez le rugby? C'est à 14h au stade. Une grande course à pied est organisée à 16h au parc des fleurs. Courez 5 kilomètres pour gagner des t-shirts."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-fete-sport.webp",
+        "/lib/images/tcf/qcm-audit/co57-fete-musique.webp",
+        "/lib/images/tcf/qcm-audit/co57-fete-cinema.webp"
       ]
     },
     {
@@ -23004,7 +23034,7 @@
           "asset": null
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "grammar-import-20261104:file_000000006e008243a9632eac8f4e89a0"
       ],
@@ -23015,6 +23045,11 @@
           "candidate_cut_id": "grammar-import-20261104-file_000000006e008243a9632eac8f4e89a0-d1",
           "transcription": "Alors Marianne, pourquoi tu ne prends pas le train ? J'adore le covoiturage. Les conducteurs et les passagers sont sympas. Et les voitures confortables. Mais il n'y a pas de voiture-bar. Et toi Antoine ? Tu n'aimes pas le train ? Si, mais les billets sont trop chers. Et il y a souvent du retard. Et quand il y a une grève, les trains sont annulés. Claire, tu voyages toujours en voiture, toi ? Non. Quand le trajet est long, je prends le train. Je réserve une place côté fenêtre et je dors. Et vous achetez vos billets sur l'appli de la SNCF ? Oui, c'est simple et pratique. Quelle application ? Montre moi."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-voiture-bar.webp",
+        "/lib/images/tcf/qcm-audit/co57-fenetre.webp",
+        "/lib/images/tcf/qcm-audit/co57-radio.webp"
       ]
     },
     {
@@ -25942,7 +25977,7 @@
           "asset": null
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:094:70f2434fa347"
       ],
@@ -25953,6 +25988,11 @@
           "candidate_cut_id": "delf_a1_2022-094-70f2434fa347-d1",
           "transcription": "Ce week-end, c'est la fête des mères. Venez dans notre magasin. Nous sommes ouverts de 10h à 19h. Et il y a 15% de réduction sur tous les produits. Venez vite, il y a plein d'idées pour vos cadeaux. Nous avons beaucoup de parfums pour les mamans. Et on vous propose un prix spécial de 25 euros. Sur tous les chapeaux."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-fete-meres.webp",
+        "/lib/images/tcf/qcm-audit/co57-fete-peres.webp",
+        "/lib/images/tcf/qcm-audit/co57-fete-musique.webp"
       ]
     },
     {
@@ -26875,7 +26915,7 @@
           "asset": "b0994714de30"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "9782090351958:066:3f7dc91934fc",
         "additional-20261102:mdf-a2-abc-junior-direct:66:3f7dc91934fc:580a125c"
@@ -26887,6 +26927,11 @@
           "candidate_cut_id": "9782090351958-066-3f7dc91934fc-r2-d5",
           "transcription": "Bienvenue au musée. Il est interdit de toucher les peintures, de manger, de boire et de courir dans les salles. Merci de déposer les audioguides à l'accueil à la fin de la visite."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-accueil-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co57-cafeteria.webp",
+        "/lib/images/tcf/qcm-audit/co57-salles-musee.webp"
       ]
     },
     {
@@ -27014,7 +27059,7 @@
           "asset": null
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a2_eb1w:001:7e749af22d6c"
       ],
@@ -27025,6 +27070,11 @@
           "candidate_cut_id": "delf_a2_eb1w-001-7e749af22d6c-r2-d4",
           "transcription": "Cher parents. Les familles sont les bienvenues dans notre zoo. Mais attention à vos enfants. Ils ne sont pas autorisés à nourrir les animaux. Merci pour votre attention."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-nourrir-animaux.webp",
+        "/lib/images/tcf/qcm-audit/co57-regarder-animaux.webp",
+        "/lib/images/tcf/qcm-audit/co57-visiter-zoo.webp"
       ]
     },
     {
@@ -28298,7 +28348,7 @@
           "asset": "79029d6166d7"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a2-abc-direct:99:91431a2774b0:cb78f06b"
       ],
@@ -28309,6 +28359,11 @@
           "candidate_cut_id": "additional-20261102-mdf-a2-abc-direct-99-91431a2774b0-cb78f06b-d3",
           "transcription": "Salut Karine. Tu sais ce qui m'est arrivé la semaine dernière? Non, vas-y, raconte. J'ai vu le chanteur du groupe Phénix dans un magasin de disques. Il m'a tenu la porte pour sortir du magasin et après, il m'a sourie."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-magasin-disques.webp",
+        "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co57-salle-concert.webp"
       ]
     },
     {
@@ -28866,7 +28921,7 @@
           "asset": "3350954f3202"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "9782090351958:040:42a9a64a8955",
         "additional-20261102:mdf-a2-abc-junior-direct:40:42a9a64a8955:9635072f"
@@ -28878,6 +28933,11 @@
           "candidate_cut_id": "9782090351958-040-42a9a64a8955-r2-d3",
           "transcription": "Demain, on va s'entraîner pour la course de la semaine prochaine contre les écoles de la ville. N'oubliez pas de prendre des vêtements adaptés pour courir."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-tenue-courir.webp",
+        "/lib/images/tcf/qcm-audit/co57-tenue-pluie.webp",
+        "/lib/images/tcf/qcm-audit/co57-tenue-fete.webp"
       ]
     },
     {
@@ -29377,7 +29437,7 @@
           "asset": null
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a2-abc-direct:12:ca3672b6b147:fb68fd98"
       ],
@@ -29388,6 +29448,11 @@
           "candidate_cut_id": "additional-20261102-mdf-a2-abc-direct-12-ca3672b6b147-fb68fd98-d1",
           "transcription": "Votre cinéma préféré a décidé de vous faire plaisir. Aujourd'hui, pour une place achetée, vous avez 50% de réduction sur les bonbons."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-place-cinema.webp",
+        "/lib/images/tcf/qcm-audit/c7b5c71ee5d5.webp",
+        "/lib/images/tcf/qcm-audit/co834-jus-orange-dessine.webp"
       ]
     },
     {
@@ -29607,7 +29672,7 @@
           "asset": null
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a2-abc-direct:33:31bdd69e1fc4:8aa455b2"
       ],
@@ -29618,6 +29683,11 @@
           "candidate_cut_id": "additional-20261102-mdf-a2-abc-direct-33-31bdd69e1fc4-8aa455b2-d1",
           "transcription": "A l'occasion du Salon du Tourisme, venez découvrir nos derniers séjours au soleil. Balade en bord de mer, baignade, palmier, découvrez nos destinations 100% relaxantes."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-salon-tourisme.webp",
+        "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co57-aeroport.webp"
       ]
     },
     {
@@ -30256,7 +30326,7 @@
           "asset": "79029d6166d7"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "9782090351958:057:0dc3afbbc24a",
         "additional-20261102:mdf-a2-abc-junior-direct:57:0dc3afbbc24a:eabc88c7"
@@ -30268,6 +30338,11 @@
           "candidate_cut_id": "9782090351958-057-0dc3afbbc24a-r2-d3",
           "transcription": "samedi, c'est la fête de la ville. Cette année encore, venez écouter des concerts dans les rues. Pop, électro, classique, il y en a pour tous les goûts. Une discothèque est même installée sur la place centrale."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-fete-musique.webp",
+        "/lib/images/tcf/qcm-audit/co57-concert-stade.webp",
+        "/lib/images/tcf/qcm-audit/co57-salle-concert.webp"
       ]
     },
     {
@@ -31271,7 +31346,7 @@
           "asset": "854cade7fbc7"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a2_2021:028:3e2e5885acb0"
       ],
@@ -31282,6 +31357,11 @@
           "candidate_cut_id": "delf_a2_2021-028-3e2e5885acb0-d1",
           "transcription": "Qu'est-ce que je vous avais dit? Il ne faut pas ranger produits dangereux en bas des rayons. Vous ne comprenez rien."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-produits-dangereux.webp",
+        "/lib/images/tcf/qcm-audit/co306-produits-alimentaires-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co57-produits-promotion.webp"
       ]
     },
     {
@@ -31407,7 +31487,7 @@
           "asset": "23cfe84f1cb8"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a2_2021:031:1cc6f6d1a00d"
       ],
@@ -31418,6 +31498,11 @@
           "candidate_cut_id": "delf_a2_2021-031-1cc6f6d1a00d-d1",
           "transcription": "Bonjour madame, je viens m'inscrire en première année de licence. Ah, vous n'êtes pas au bon bureau. Ici c'est le secrétariat pédagogique. Vous devez aller au bureau 417, au secrétariat administratif."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-secretariat-pedagogique.webp",
+        "/lib/images/tcf/qcm-audit/co57-secretariat-administratif.webp",
+        "/lib/images/tcf/qcm-audit/co57-secretariat-medical.webp"
       ]
     },
     {
@@ -31449,7 +31534,7 @@
           "asset": "fee8fadefd2e"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a2_2021:031:1cc6f6d1a00d"
       ],
@@ -31460,6 +31545,11 @@
           "candidate_cut_id": "delf_a2_2021-031-1cc6f6d1a00d-d1",
           "transcription": "Bonjour madame, je viens m'inscrire en première année de licence. Ah, vous n'êtes pas au bon bureau. Ici c'est le secrétariat pédagogique. Vous devez aller au bureau 417, au secrétariat administratif."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-secretariat-administratif.webp",
+        "/lib/images/tcf/qcm-audit/co57-secretariat-pedagogique.webp",
+        "/lib/images/tcf/qcm-audit/co57-secretariat-mairie.webp"
       ]
     },
     {
@@ -31679,7 +31769,7 @@
           "asset": "2e5bf7d262f0"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a2_2021:038:9256c30fcdc0"
       ],
@@ -31690,6 +31780,11 @@
           "candidate_cut_id": "delf_a2_2021-038-9256c30fcdc0-d2",
           "transcription": "Chers auditeurs, les soldes finissent ce week-end. Alors n'attendez plus! Venez vite dans votre magasin de jardinage préféré pour acheter vos plantes pour l'été. Chez Rosame, profitez de réductixelles, jusqu'à moins 70%."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-magasin-jardinage.webp",
+        "/lib/images/tcf/qcm-audit/co834-rayon-vetements-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co57-magasin-musique.webp"
       ]
     },
     {
@@ -32690,7 +32785,7 @@
       "label": "Les douleurs dentaires et les otites",
       "path_after_generation": "/lib/images/tcf/qcm-audit/2b354a77b8d1.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Les douleurs dentaires et les otites ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s31-co-2",
@@ -32698,8 +32793,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co57-dents-otites.webp",
+      "sha256": "5bbaa8c77880ea8186fc7daa1b8b115d4fd43f7b2ec887aba6a64769911c99a9",
+      "review_note": "Main sur la mâchoire et dessin de dent à gauche, oreille rouge et médaillon d’oreille à droite ; les deux zones sont distinctes. Paysage natif exact 1448 × 1086, style peint doux comparé aux références approuvées 48a753d8 ; anatomie et sens entier relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "fe7817ff539b",
@@ -33187,7 +33287,7 @@
       "label": "Des crêpes japonaises",
       "path_after_generation": "/lib/images/tcf/qcm-audit/6c1dc765a398.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des crêpes japonaises ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s30-co-1",
@@ -33195,8 +33295,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co57-crepes-japonaises.webp",
+      "sha256": "68692d1abfcf32b05ae0f8af881702ea0c9ef6448df06529597371e85888bbf1",
+      "review_note": "Crêpes en cônes avec crème et fruits, motif japonais sur le papier ; réponse distincte des deux autres. Paysage natif exact 1448 × 1086, style peint et modelé doux comparés aux références approuvées 48a753d8 ; mains et sens entier relus, aucun montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "723dc1d4401b",
@@ -33601,7 +33706,7 @@
       "label": "Un appartement calme",
       "path_after_generation": "/lib/images/tcf/qcm-audit/e2c8b724dd64.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un appartement calme ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s41-co-1",
@@ -33609,8 +33714,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co57-appartement-calme.webp",
+      "sha256": "3576bdfd17742ca8cfc7901ab69328df53f3487b09b3645a6afa72e4c266b898",
+      "review_note": "Appartement à salon et chambre séparée, fenêtres donnant sur cour arborée sans circulation ; cadre paisible distinct d’un studio. Paysage natif exact 1448 × 1086, style peint et modelé doux comparés aux références approuvées 48a753d8 ; mains et sens entier relus, aucun montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "89c8dff57510",
@@ -34017,7 +34127,7 @@
       "label": "Un mal de dos et un mal de dents",
       "path_after_generation": "/lib/images/tcf/qcm-audit/6e25671d8bf2.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un mal de dos et un mal de dents ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s38-co-3",
@@ -34025,8 +34135,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co57-dos-dents.webp",
+      "sha256": "6b1d6d730866f9685edeb617daed675bf4d3a39011b09413680b16ec729fb259",
+      "review_note": "Bas du dos douloureux à gauche et joue/mâchoire avec médaillon de dent à droite ; homme âgé aux cheveux gris, paire entière. Paysage natif exact 1448 × 1086, style peint doux comparé aux références approuvées 48a753d8 ; anatomie et sens entier relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "dd40fb30cc87",
@@ -34075,7 +34190,7 @@
       "label": "Le secrétariat de la mairie",
       "path_after_generation": "/lib/images/tcf/qcm-audit/fee8fadefd2e.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le secrétariat de la mairie ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a2-2021-co-ex4-31",
@@ -34083,8 +34198,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co57-secretariat-mairie.webp",
+      "sha256": "8eb0434ef3d68245e58a102d9093bf4fc6d7e8cfeb8b523dee50a03550367745",
+      "review_note": "Plaque SECRÉTARIAT DE LA MAIRIE, drapeau et hall municipal ; agent et usagère âgée en fauteuil. Paysage natif exact 1448 × 1086 ; modelé peint comparé aux références validées 48a753d8, sens entier et mains relus, sans prix, montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "b7c1b054229e",
@@ -34348,7 +34468,7 @@
       "label": "La toux et le mal de gorge",
       "path_after_generation": "/lib/images/tcf/qcm-audit/13d89974de16.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « La toux et le mal de gorge ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s31-co-2",
@@ -34356,8 +34476,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co57-toux-gorge.webp",
+      "sha256": "cbf4e33a89334384aa4bd1bf6e6c290f80f5cc3bc37d6a22aa0c5f6c7a01eaa6",
+      "review_note": "Femme assise toussant dans le coude à gauche puis main sur l’avant du cou à droite ; troisième composition retenue, premiers rendus trop photographique ou aux contours trop accentués écartés. Paysage natif exact 1448 × 1086, style peint doux comparé aux références approuvées 48a753d8 ; anatomie et sens entier relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "50d1b470de6a",
@@ -34406,7 +34531,7 @@
       "label": "Les produits en promotion",
       "path_after_generation": "/lib/images/tcf/qcm-audit/854cade7fbc7.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Les produits en promotion ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a2-2021-co-ex4-28",
@@ -34414,15 +34539,20 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co57-produits-promotion.webp",
+      "sha256": "97acc75d0a94d274c959b74482b93dafbd64d3691ddc7817b3d6a9d377888848",
+      "review_note": "Produits sur présentoir et pancarte PROMOTION ; aucun prix ou pourcentage, caractère promotionnel visible. Paysage natif exact 1448 × 1086 ; format, sens entier et modelé peint comparés aux références approuvées 48a753d8, anatomie relue, sans montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "bde7b3dd02f7",
       "label": "La fête des pères",
       "path_after_generation": "/lib/images/tcf/qcm-audit/bde7b3dd02f7.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « La fête des pères ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-94",
@@ -34430,8 +34560,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co57-fete-peres.webp",
+      "sha256": "0a49dda89c2feaee43d6fde518c090c22977bc4e9257186d3db2de0838346992",
+      "review_note": "Père recevant cadeau et carte Bonne fête papa, deux personnes ; occasion distincte. Paysage natif exact 1448 × 1086 ; modelé peint comparé aux références validées 48a753d8, sens entier et mains relus, sans prix, montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "3762b0724d76",
@@ -34905,7 +35040,7 @@
       "label": "Le secrétariat médical",
       "path_after_generation": "/lib/images/tcf/qcm-audit/23cfe84f1cb8.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le secrétariat médical ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a2-2021-co-ex4-31",
@@ -34913,8 +35048,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co57-secretariat-medical.webp",
+      "sha256": "c806730c75f30af97ee6d0c1082525a45976e8efa7966d89dfa489a1bafc80f0",
+      "review_note": "Plaque SECRÉTARIAT MÉDICAL, salle de consultation visible ; secrétaire et patient âgé, pas de geste médical. Paysage natif exact 1448 × 1086 ; modelé peint comparé aux références validées 48a753d8, sens entier et mains relus, sans prix, montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "903b3674657f",
@@ -35872,7 +36012,7 @@
       "label": "Les produits dangereux",
       "path_after_generation": "/lib/images/tcf/qcm-audit/2434988ceb13.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Les produits dangereux ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a2-2021-co-ex4-28",
@@ -35880,8 +36020,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co57-produits-dangereux.webp",
+      "sha256": "7a2dcd2313272c43892c8094e2fb69d60e8e8b0ec492c4e0a5f5547b744ac6eb",
+      "review_note": "Trois produits ménagers fermés avec pictogrammes corrosif, inflammable et irritant en losanges rouges ; danger identifiable sans texte. Paysage natif exact 1448 × 1086 ; format, sens entier et modelé peint comparés aux références approuvées 48a753d8, anatomie relue, sans montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "847290677be0",
@@ -36172,7 +36317,7 @@
       "label": "Des crêpes bretonnes",
       "path_after_generation": "/lib/images/tcf/qcm-audit/0a96a63f00ed.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des crêpes bretonnes ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s30-co-1",
@@ -36180,8 +36325,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co57-crepes-bretonnes.webp",
+      "sha256": "022f45da67bb821a4ea0f0427d470a682f36485125500b99451e50869c8af0a6",
+      "review_note": "Crêpes fines pliées et déroulées avec motif breton sur papier sous l’assiette ; pas de pancakes épais. Paysage natif exact 1448 × 1086, style peint et modelé doux comparés aux références approuvées 48a753d8 ; mains et sens entier relus, aucun montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "b8e3c0acfc06",
@@ -36225,7 +36375,7 @@
       "label": "Dans les salles",
       "path_after_generation": "/lib/images/tcf/qcm-audit/b0994714de30.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Dans les salles ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a2j-s2-co-1",
@@ -36233,8 +36383,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co57-salles-musee.webp",
+      "sha256": "54b72f4bb37acb0ec8b6e242f9768a82f1f92178ffd2330085f94cab278eb689",
+      "review_note": "Salles de musée de peinture en enfilade et banc, deux visiteurs différents observant les tableaux ; aucun comptoir ou restauration. Paysage natif exact 1448 × 1086, style peint et modelé doux comparés aux références approuvées 48a753d8 ; anatomie et sens entier relus, sans montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "60817b5cd6f1",
@@ -37302,7 +37457,7 @@
       "label": "Dans les rues",
       "path_after_generation": "/lib/images/tcf/qcm-audit/0741fc6955c3.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Dans les rues ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ssx-a2-radio-fete-de-la-ville-co-3",
@@ -37310,8 +37465,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co57-fete-musique.webp",
+      "sha256": "1c0bef0db8a0dae2ee587705a64bc618a9474e4b96c66dfc9296a5cfb8073ed9",
+      "review_note": "Fête dans une rue piétonne, violoniste, guitariste et chanteuse, spectateurs dont un homme en fauteuil ; banderole correcte. Paysage natif exact 1448 × 1086, style peint et modelé doux comparés aux références approuvées 48a753d8 ; mains et sens entier relus, aucun montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "57d97737a7d7",
@@ -37727,7 +37887,7 @@
       "label": "Un mal de gorge et un mal de tête",
       "path_after_generation": "/lib/images/tcf/qcm-audit/5ddb245588e2.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un mal de gorge et un mal de tête ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s38-co-3",
@@ -37735,8 +37895,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co57-gorge-tete.webp",
+      "sha256": "fa0b391cb10a214a5202ac5915c25285ec491f19113b0a2166af74b303cc7f5c",
+      "review_note": "Main sur l’avant du cou à gauche et sur le front à droite ; même homme représenté dans les deux vignettes, paire entière. Paysage natif exact 1448 × 1086, style peint doux comparé aux références approuvées 48a753d8 ; anatomie et sens entier relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "6744331d043a",
@@ -38110,7 +38275,7 @@
       "label": "Des vêtements adaptés pour courir",
       "path_after_generation": "/lib/images/tcf/qcm-audit/eda0c1f42d26.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des vêtements adaptés pour courir ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s48-co-3",
@@ -38118,8 +38283,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co57-tenue-courir.webp",
+      "sha256": "652f3f14f61f7ff712733a5944bc75c3c90489c8d2c4f4e7034e78af9f235744",
+      "review_note": "Tee-shirt technique, short et chaussures de running avec chaussettes, ensemble complet sans marque. Paysage natif exact 1448 × 1086 ; format, sens entier et modelé peint comparés aux références approuvées 48a753d8, anatomie relue, sans montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "248becd5d0f2",
@@ -38147,7 +38317,7 @@
       "label": "Le mal de dos et les brûlures",
       "path_after_generation": "/lib/images/tcf/qcm-audit/b71b3f3f229e.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le mal de dos et les brûlures ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s31-co-2",
@@ -38155,8 +38325,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co57-dos-brulures.webp",
+      "sha256": "c5a075f222a3bf8a7597549e044119e69ba49ef0ecdd1f648a6c98c0f0aeb9bd",
+      "review_note": "Main sur le bas du dos à gauche, rougeur superficielle de l’avant-bras près d’une bouilloire à droite ; les deux symptômes sont visibles. Paysage natif exact 1448 × 1086, style peint doux comparé aux références approuvées 48a753d8 ; anatomie et sens entier relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "dabc4d41a2dc",
@@ -38457,7 +38632,7 @@
       "label": "Le salon rouge et le petit salon",
       "path_after_generation": "/lib/images/tcf/qcm-audit/9653315b84a2.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le salon rouge et le petit salon ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s24-co-4",
@@ -38465,8 +38640,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co57-salon-rouge-petit.webp",
+      "sha256": "fb030ea5fba99b696d472661167a5d74bf8fc67e6b9f0496ffc889b38dfddd79",
+      "review_note": "Deux pièces complètes : salon rouge et petit salon exigu, taille lisible à l’échelle des meubles. Paysage natif exact 1448 × 1086 ; modelé peint comparé aux références validées 48a753d8, sens entier et mains relus, sans prix, montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "832e6c1c473f",
@@ -38578,7 +38758,7 @@
       "label": "La fête du sport",
       "path_after_generation": "/lib/images/tcf/qcm-audit/0bd6b7d5f018.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « La fête du sport ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s46-co-3",
@@ -38586,8 +38766,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co57-fete-sport.webp",
+      "sha256": "282067f29c6e1f0d17ecdac88d3b827297767765bc2bd4a07897585ec2d7e640",
+      "review_note": "Fête sportive avec panier, ballons, piste, quatre participants variés dont une femme en fauteuil de sport ; banderole correcte sans date. Paysage natif exact 1448 × 1086, style peint et modelé doux comparés aux références approuvées 48a753d8 ; mains et sens entier relus, aucun montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "3a84de4cc3d9",
@@ -38825,7 +39010,7 @@
       "label": "Le secrétariat administratif",
       "path_after_generation": "/lib/images/tcf/qcm-audit/29aa3b49e144.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le secrétariat administratif ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a2-2021-co-ex4-31",
@@ -38838,8 +39023,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co57-secretariat-administratif.webp",
+      "sha256": "fc30be5eef1958d82d7ae31190981e13a37e8d7a225523426de04d3008500a3c",
+      "review_note": "Plaque SECRÉTARIAT ADMINISTRATIF, réception de dossier, agent roux et étudiante indienne ; lieu distinct. Paysage natif exact 1448 × 1086 ; modelé peint comparé aux références validées 48a753d8, sens entier et mains relus, sans prix, montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "b69f4b71c7b4",
@@ -39040,7 +39230,7 @@
       "label": "Dans une salle de concert",
       "path_after_generation": "/lib/images/tcf/qcm-audit/79029d6166d7.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Dans une salle de concert ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s21-co-1",
@@ -39053,8 +39243,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co57-salle-concert.webp",
+      "sha256": "614a38bd25c16282b4356bd3c0e856130a90a6ef1d50f8ab9aa4af48eb4027cd",
+      "review_note": "Grande salle avec scène, deux musiciens et public assis en gradins ; architecture intérieure et concert réels. Paysage natif exact 1448 × 1086, style peint et modelé doux comparés aux références approuvées 48a753d8 ; mains et sens entier relus, aucun montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "b4d16c17229b",
@@ -39501,7 +39696,7 @@
       "label": "Au salon du tourisme",
       "path_after_generation": "/lib/images/tcf/qcm-audit/462528526904.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Au salon du tourisme ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ssx-a2-annonce-6-3-co-2",
@@ -39509,8 +39704,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co57-salon-tourisme.webp",
+      "sha256": "4cde23ce94e9b16d40f92f74f9c81aeacbd080593020182b06f1f6c152486d34",
+      "review_note": "Hall d’exposition avec plusieurs stands de destinations et brochures, trois personnes principales différentes ; panneau SALON DU TOURISME, ni gare ni terminal. Paysage natif exact 1448 × 1086, style peint et modelé doux comparés aux références approuvées 48a753d8 ; anatomie et sens entier relus, sans montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "f6145b0eb230",
@@ -39832,7 +40032,7 @@
       "label": "Un magasin de jardinage",
       "path_after_generation": "/lib/images/tcf/qcm-audit/d4d9d52b48f3.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un magasin de jardinage ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a2-2021-co-ex2-38",
@@ -39840,8 +40040,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co57-magasin-jardinage.webp",
+      "sha256": "81c4613aebc0f12d95f6163c375529f19eb5b227f5aa43bcaf9d9e01708cff5f",
+      "review_note": "Plantes, terreau et outils en espace commercial, panneau JARDINAGE et deux adultes différents. Paysage natif exact 1448 × 1086 ; format, sens entier et modelé peint comparés aux références approuvées 48a753d8, anatomie relue, sans montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "dcfdb434c1c3",
@@ -39937,7 +40142,7 @@
       "label": "Un studio meublé",
       "path_after_generation": "/lib/images/tcf/qcm-audit/77a7797629c4.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un studio meublé ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s41-co-1",
@@ -39945,8 +40150,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-studio-dessine.webp",
+      "sha256": "36c913c514d7ced8228c6f392eff56eb4ab69f513d3d838cfcc554a836430066",
+      "review_note": "Studio : lit, salon et kitchenette réunis dans une seule pièce, salle d’eau distincte ; aucune chambre séparée qui suggérerait un appartement à plusieurs pièces. Concept entier et paysage natif exact 4:3 relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "b539ebfaf403",
@@ -40435,7 +40645,7 @@
       "label": "Une place de cinéma",
       "path_after_generation": "/lib/images/tcf/qcm-audit/f4cc9b221b94.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une place de cinéma ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ssx-a2-annonce-2-6-co-2",
@@ -40443,8 +40653,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co57-place-cinema.webp",
+      "sha256": "691e1f28a20337753db9dabf5785a55a614e2af8ffc6f8934a385a34a82f8822",
+      "review_note": "Un seul ticket, mot CINÉMA et pictogramme de caméra ; pas de prix, numéro, date ou horaire, quantité exacte. Paysage natif exact 1448 × 1086, style peint et modelé doux comparés aux références approuvées 48a753d8 ; anatomie et sens entier relus, sans montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "2c195660c1de",
@@ -40786,7 +41001,7 @@
       "label": "Le salon bleu et le grand salon",
       "path_after_generation": "/lib/images/tcf/qcm-audit/09ee72acab76.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le salon bleu et le grand salon ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s24-co-4",
@@ -40794,8 +41009,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co57-salon-bleu-grand.webp",
+      "sha256": "4d22549ab50b2b89dcc85e1b87d45e69d1cc24ab851a6a66be0c5ad4dd57ea17",
+      "review_note": "Salon bleu et très grand salon avec hauts plafonds et vastes espaces entre groupes de meubles. Paysage natif exact 1448 × 1086 ; modelé peint comparé aux références validées 48a753d8, sens entier et mains relus, sans prix, montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "109b7d68c492",
@@ -41547,7 +41767,7 @@
       "label": "Regarder les animaux",
       "path_after_generation": "/lib/images/tcf/qcm-audit/7c23fcabbb72.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Regarder les animaux ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a2-sa-co-1",
@@ -41555,8 +41775,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co57-regarder-animaux.webp",
+      "sha256": "a1aa04c18809695eaf8f9230c4ade683643de7750f391f86f8a64bf6efa37b3f",
+      "review_note": "Enfant et parent observant des girafes derrière rambarde et fossé, aucun aliment tendu. Paysage natif exact 1448 × 1086 ; format, sens entier et modelé peint comparés aux références approuvées 48a753d8, anatomie relue, sans montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "f2f5928a2522",
@@ -41605,7 +41830,7 @@
       "label": "Une maison isolée",
       "path_after_generation": "/lib/images/tcf/qcm-audit/71d0c8ba6c08.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une maison isolée ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s41-co-1",
@@ -41613,8 +41838,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co57-maison-isolee.webp",
+      "sha256": "6bcd208e191562d6809345fa3d861594411a82307988651507a1a612eac61777",
+      "review_note": "Maison individuelle entourée de prairie vide, arbres et chemin ; aucun bâtiment voisin, isolement visible. Paysage natif exact 1448 × 1086, style peint et modelé doux comparés aux références approuvées 48a753d8 ; mains et sens entier relus, aucun montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "3fdab7ee8aab",
@@ -41872,7 +42102,7 @@
       "label": "Un magasin de musique",
       "path_after_generation": "/lib/images/tcf/qcm-audit/2e5bf7d262f0.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un magasin de musique ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a2-2021-co-ex2-38",
@@ -41880,8 +42110,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co57-magasin-musique.webp",
+      "sha256": "23519589efdf3960e776423e7cdcb1c4d2e91f6a9dad4e0e1fe2666d31a85dbd",
+      "review_note": "Guitares, clavier, violon et batterie dans un magasin, comptoir et panneau MUSIQUE, vendeuse et client. Paysage natif exact 1448 × 1086 ; format, sens entier et modelé peint comparés aux références approuvées 48a753d8, anatomie relue, sans montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "5fb44e9d6044",
@@ -42087,7 +42322,7 @@
       "label": "Des vêtements de pluie",
       "path_after_generation": "/lib/images/tcf/qcm-audit/cec9cc64156e.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des vêtements de pluie ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s48-co-3",
@@ -42095,8 +42330,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co57-tenue-pluie.webp",
+      "sha256": "42fb51c757a0e5629b23a0c681b6f9e2ac40598d06ae20f02027a9273a0961c1",
+      "review_note": "Imperméable à capuche, pantalon imperméable, bottes et parapluie ; ensemble distinct de la course et fête. Paysage natif exact 1448 × 1086 ; format, sens entier et modelé peint comparés aux références approuvées 48a753d8, anatomie relue, sans montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "71457a190482",
@@ -42129,7 +42369,7 @@
       "label": "Une voiture-bar",
       "path_after_generation": "/lib/images/tcf/qcm-audit/37c9ed249537.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une voiture-bar ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s55-co-2",
@@ -42137,8 +42377,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co57-voiture-bar.webp",
+      "sha256": "aea6e6e743163ba4fbc9ef0f512b2a812302facd3d10303fdc3402f701b71a3d",
+      "review_note": "Comptoir de restauration dans un wagon ferroviaire avec sièges, fenêtres et passage entre voitures ; café servi, distinct d’un bar en gare. Paysage natif exact 1448 × 1086, style peint doux comparé aux références approuvées 48a753d8 ; anatomie et sens entier relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "0be338165a83",
@@ -42166,7 +42411,7 @@
       "label": "Un mal de ventre et un mal au bras",
       "path_after_generation": "/lib/images/tcf/qcm-audit/ab3130bc05cd.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un mal de ventre et un mal au bras ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s38-co-3",
@@ -42174,8 +42419,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co57-ventre-bras.webp",
+      "sha256": "69eb7797880615a45555ea874af121517f97e21dc1928231b393c2a276837eda",
+      "review_note": "Deux mains sur l’abdomen à gauche puis avant-bras soutenu par l’autre main à droite ; les deux maux sont lisibles. Paysage natif exact 1448 × 1086, style peint doux comparé aux références approuvées 48a753d8 ; anatomie et sens entier relus, sans date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "48c2e5a843f3",
@@ -42534,7 +42784,7 @@
       "label": "Le salon vert et le salon de musique",
       "path_after_generation": "/lib/images/tcf/qcm-audit/044fcfc40aa9.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le salon vert et le salon de musique ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s24-co-4",
@@ -42542,8 +42792,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co57-salon-vert-musique.webp",
+      "sha256": "6bd2d4f6e83bf6b5048fde2efa195df592bf0857bd5a7d66e7e81dfe3aa2f766",
+      "review_note": "Salon vert et salon de musique contenant piano à queue, harpe et pupitres ; paire entière. Paysage natif exact 1448 × 1086 ; modelé peint comparé aux références validées 48a753d8, sens entier et mains relus, sans prix, montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "5d4821a08500",
@@ -42886,7 +43141,7 @@
       "label": "Des vêtements de fête",
       "path_after_generation": "/lib/images/tcf/qcm-audit/3350954f3202.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des vêtements de fête ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s48-co-3",
@@ -42894,8 +43149,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co57-tenue-fete.webp",
+      "sha256": "e292c5bf2d7eaf4f42fac76a3cbcc281fef12f50f0f61bd1e036d7397781762c",
+      "review_note": "Robe habillée, veste, chaussures élégantes et pochette ; ensemble complet peint sur fond crème. Paysage natif exact 1448 × 1086 ; format, sens entier et modelé peint comparés aux références approuvées 48a753d8, anatomie relue, sans montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "678c50345d54",
@@ -43185,7 +43445,7 @@
       "label": "La fête du cinéma",
       "path_after_generation": "/lib/images/tcf/qcm-audit/ffe7b67dbbd3.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « La fête du cinéma ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s46-co-3",
@@ -43193,8 +43453,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co57-fete-cinema.webp",
+      "sha256": "0397e07602b05decbc4338e2da4446ea5a9f8d5ce1cdb04d0b818d9a545673e0",
+      "review_note": "Hall de cinéma décoré pour la fête, projecteur, bobines et salle visible, trois visiteurs principaux ; banderole correcte. Paysage natif exact 1448 × 1086, style peint et modelé doux comparés aux références approuvées 48a753d8 ; mains et sens entier relus, aucun montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "b98ebc312e30",
@@ -43920,7 +44185,7 @@
       "label": "Des crêpes américaines",
       "path_after_generation": "/lib/images/tcf/qcm-audit/ce3936889480.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des crêpes américaines ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s30-co-1",
@@ -43928,15 +44193,20 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co57-crepes-americaines.webp",
+      "sha256": "4f072b33554c963941d5f2c897186132e2ea2046786b2675bf3d937ab41b1c8d",
+      "review_note": "Pile de pancakes épais avec beurre et sirop, motif américain sur papier sous l’assiette ; épaisseur visible. Paysage natif exact 1448 × 1086, style peint et modelé doux comparés aux références approuvées 48a753d8 ; mains et sens entier relus, aucun montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "a0dee0b37d05",
       "label": "Le secrétariat pédagogique",
       "path_after_generation": "/lib/images/tcf/qcm-audit/a0dee0b37d05.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le secrétariat pédagogique ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a2-2021-co-ex4-31",
@@ -43949,8 +44219,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co57-secretariat-pedagogique.webp",
+      "sha256": "0604d4ed080ddf956bdca98435c3a34d3852a4b2a336420093cd63b9894f0324",
+      "review_note": "Plaque SECRÉTARIAT PÉDAGOGIQUE, dossiers d’études et classe visible ; agente plus âgée et étudiant différents. Paysage natif exact 1448 × 1086 ; modelé peint comparé aux références validées 48a753d8, sens entier et mains relus, sans prix, montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "93e03ec09330",
@@ -44104,7 +44379,7 @@
       "label": "Dans un magasin de disques",
       "path_after_generation": "/lib/images/tcf/qcm-audit/d7d450ab3604.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Dans un magasin de disques ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s21-co-1",
@@ -44112,8 +44387,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co57-magasin-disques.webp",
+      "sha256": "0557b7df0be56fb445e2d367f29db61fa7452cdca5d31baed23c0b55ff3a0d99",
+      "review_note": "Bacs de vinyles, CD, platine et panneau DISQUES, vendeuse et client ; ni gare ni salle de spectacle. Paysage natif exact 1448 × 1086, style peint et modelé doux comparés aux références approuvées 48a753d8 ; mains et sens entier relus, aucun montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "54a3e3d08965",
@@ -44241,7 +44521,7 @@
       "label": "La fête des mères",
       "path_after_generation": "/lib/images/tcf/qcm-audit/c8ff993f904e.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « La fête des mères ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-94",
@@ -44249,8 +44529,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co57-fete-meres.webp",
+      "sha256": "2e3f20f5ddf670c819a2be220c5e4849affa891e784110d5ef65e6d35b971f44",
+      "review_note": "Mère recevant bouquet et carte Bonne fête maman, deux personnes différentes ; occasion clairement identifiable. Paysage natif exact 1448 × 1086 ; modelé peint comparé aux références validées 48a753d8, sens entier et mains relus, sans prix, montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "7ad4aa4c4537",
@@ -44743,19 +45028,19 @@
   "pending_association_images": [],
   "visual_style_review": {
     "audit": "recontrole-style-images.json",
-    "reviewed_co_images": 697,
+    "reviewed_co_images": 741,
     "reviewed_other_images": 59,
-    "reviewed_total_images": 756,
+    "reviewed_total_images": 800,
     "user_approved_reference_images": 35,
     "initial_redraw_required": 11,
     "initial_co_redraw_required": 11,
     "initial_other_redraw_required": 0,
-    "already_aligned": 745,
+    "already_aligned": 789,
     "redrawn_images": 11,
     "remaining_redraws": 0,
     "restored_previous_images": 14,
     "rejected_unpublished_previews": 12,
-    "new_images_compared_to_reference": 438
+    "new_images_compared_to_reference": 482
   },
   "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
   "workflow_order": [

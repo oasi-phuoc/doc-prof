@@ -15,11 +15,11 @@
   ],
   "summary": {
     "initial_question_candidates": 306,
-    "questions_illustrated_or_prepared": 159,
-    "newly_activated": 111,
+    "questions_illustrated_or_prepared": 178,
+    "newly_activated": 130,
     "prepared_pending_audio_link": 1,
     "prepared_pending_audio_validation": 4,
-    "remaining_questions_requiring_images_or_review": 48,
+    "remaining_questions_requiring_images_or_review": 29,
     "unreviewed_complete_trios": 0,
     "audio_references_next_stage": 0,
     "vocabulary_occurrences_final_stage": 1686,
@@ -2185,7 +2185,7 @@
           "asset": "044fcfc40aa9"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "grammar-import-20261104:file_00000000f61081f49ea299886cf3c8a6"
       ],
@@ -2198,16 +2198,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co57-salon-rouge-petit.webp",
+        "/lib/images/tcf/qcm-audit/co57-salon-bleu-grand.webp",
+        "/lib/images/tcf/qcm-audit/co57-salon-vert-musique.webp"
       ],
-      "missing_labels": [
-        "Le salon rouge et le petit salon",
-        "Le salon bleu et le grand salon",
-        "Le salon vert et le salon de musique"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-salon-rouge-petit.webp",
+        "/lib/images/tcf/qcm-audit/co57-salon-bleu-grand.webp",
+        "/lib/images/tcf/qcm-audit/co57-salon-vert-musique.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s24-co-4",
+        "question": 4,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co57-salon-rouge-petit.webp",
+          "/lib/images/tcf/qcm-audit/co57-salon-bleu-grand.webp",
+          "/lib/images/tcf/qcm-audit/co57-salon-vert-musique.webp"
+        ],
+        "support_quote": "Nous sommes aujourd'hui dans la maison de Victor Hugo au 6 place des Vosges à Paris et nous allons visiter ensemble le Salon Rouge, le petit salon et la chambre.",
+        "current_bank_transcription": "Nous sommes aujourd'hui dans la maison de Victor Hugo au 6 place des Vosges à Paris et nous allons visiter ensemble le salon rouge, le petit salon et la chambre.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trois paires complètes de salons : rouge et petit, bleu et grand, vert et musique. Couleurs et dimensions relatives visibles, piano et harpe dans la pièce musicale. La source nomme les deux salons attendus."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -2672,7 +2686,7 @@
           "asset": "ce3936889480"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "grammar-import-20261104:file_000000006acc81f4acfc723bdbe53bb2"
       ],
@@ -2685,16 +2699,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co57-crepes-bretonnes.webp",
+        "/lib/images/tcf/qcm-audit/co57-crepes-japonaises.webp",
+        "/lib/images/tcf/qcm-audit/co57-crepes-americaines.webp"
       ],
-      "missing_labels": [
-        "Des crêpes bretonnes",
-        "Des crêpes japonaises",
-        "Des crêpes américaines"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-crepes-bretonnes.webp",
+        "/lib/images/tcf/qcm-audit/co57-crepes-japonaises.webp",
+        "/lib/images/tcf/qcm-audit/co57-crepes-americaines.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s30-co-1",
+        "question": 4,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co57-crepes-bretonnes.webp",
+          "/lib/images/tcf/qcm-audit/co57-crepes-japonaises.webp",
+          "/lib/images/tcf/qcm-audit/co57-crepes-americaines.webp"
+        ],
+        "support_quote": "Vous adorez les croissants du Macaron doré ? Venez découvrir maintenant leurs tartes aux fruits, leurs gâteaux, leurs crêpes bretonnes, leurs macarons et leurs éclairs au café. Venez nombreux !",
+        "current_bank_transcription": "Vous adorez les croissants du Macaron doré ?\nVenez découvrir maintenant leurs tartes aux fruits, leurs gâteaux, leurs crêpes bretonnes, leurs macarons et leurs éclairs au café.\nVenez nombreux !",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Crêpes fines bretonnes, cônes japonais et pancakes américains sont distincts ; petits motifs d’origine sur papier alimentaire, technique peinte et 4:3 contrôlés. La source dit bretonnes, sans ajouter de précision à la question."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -2787,7 +2815,7 @@
           "asset": "2b354a77b8d1"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "grammar-import-20261104:file_000000008d8c81f4ac4702acec45b003"
       ],
@@ -2800,16 +2828,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co57-toux-gorge.webp",
+        "/lib/images/tcf/qcm-audit/co57-dos-brulures.webp",
+        "/lib/images/tcf/qcm-audit/co57-dents-otites.webp"
       ],
-      "missing_labels": [
-        "La toux et le mal de gorge",
-        "Le mal de dos et les brûlures",
-        "Les douleurs dentaires et les otites"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-toux-gorge.webp",
+        "/lib/images/tcf/qcm-audit/co57-dos-brulures.webp",
+        "/lib/images/tcf/qcm-audit/co57-dents-otites.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s31-co-2",
+        "question": 2,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co57-toux-gorge.webp",
+          "/lib/images/tcf/qcm-audit/co57-dos-brulures.webp",
+          "/lib/images/tcf/qcm-audit/co57-dents-otites.webp"
+        ],
+        "support_quote": "Vous toussez ? Achetez Calmatou pour toute la famille, adulte ou enfant. Des pastilles contre la toux et le mal de gorge à utiliser le jour et la nuit. Cet hiver, Calmatou est dans toutes les pharmacies.",
+        "current_bank_transcription": "Vous toussez ?\nAchetez Calmatoux pour toute la famille, adultes ou enfants.\nDes pastilles contre la toux et le mal de gorge, à utiliser le jour et la nuit…\nCet hiver, Calmatoux est dans toutes les pharmacies !",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Chaque image représente les deux symptômes : toux et gorge, dos et brûlure légère, dents et otite. Positions, zones et médaillons relus, personnages différents entre les choix, image composée conservée en 4:3."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -3513,7 +3555,7 @@
           "asset": "ab3130bc05cd"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "grammar-import-20261104:file_00000000d59081f4bc8d14cc896fa3c9"
       ],
@@ -3526,16 +3568,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co57-gorge-tete.webp",
+        "/lib/images/tcf/qcm-audit/co57-dos-dents.webp",
+        "/lib/images/tcf/qcm-audit/co57-ventre-bras.webp"
       ],
-      "missing_labels": [
-        "Un mal de gorge et un mal de tête",
-        "Un mal de dos et un mal de dents",
-        "Un mal de ventre et un mal au bras"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-gorge-tete.webp",
+        "/lib/images/tcf/qcm-audit/co57-dos-dents.webp",
+        "/lib/images/tcf/qcm-audit/co57-ventre-bras.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s38-co-3",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co57-gorge-tete.webp",
+          "/lib/images/tcf/qcm-audit/co57-dos-dents.webp",
+          "/lib/images/tcf/qcm-audit/co57-ventre-bras.webp"
+        ],
+        "support_quote": "Allô Mathilde, c'est Mathieu. Bonjour Mathieu. Tu es où ? Je suis à la maison. Je suis malade. Et je ne peux pas venir travailler aujourd'hui. Ah bon ? Mais qu'est-ce que tu as ? J'ai mal à la gorge. Et je tousse. C'est un gros rhume, je pense. Tu as de la fièvre ? Oui. J'ai 39 degrés. Et j'ai mal à la tête. Alors c'est la grippe. Oh là là. Je dois voir un médecin, alors. Oui. Prends un rendez-vous pour une téléconsultation. Ce soir je dois passer à la pharmacie. Je peux prendre ton ordonnance et acheter tes médicaments. Merci beaucoup Mathilde. Tu es vraiment très sympa.",
+        "current_bank_transcription": "- Allô Mathilde ?\nC'est Matthieu.\n- Bonjour Matthieu !\nTu es où ?\n- Je suis à la maison.\nJe suis malade et je ne peux pas venir travailler aujourd'hui.\n- Ah bon !\nMais qu'est-ce que tu as ?\n- J'ai mal à la gorge et je tousse.\nC'est un gros rhume, je pense…\n- Tu as de la fièvre ?\n- Oui, j'ai 39 °C…\net j'ai mal à la tête.\n- Alors c'est la grippe !\n- Ouh là là !\nJe dois voir un médecin alors ?\n- Oui !\nPrends un rendez-vous pour une téléconsultation.\nCe soir, je dois passer à la pharmacie, je peux prendre ton ordonnance et acheter tes médicaments.\n- Merci beaucoup Mathilde, tu es vraiment très sympa !",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Paires intégrales : gorge et tête, dos et dents, ventre et bras ; les zones sont distinctes, anatomie relue et style peint contrôlé. La source mentionne explicitement gorge et tête."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -3694,7 +3750,7 @@
           "asset": "77a7797629c4"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "grammar-import-20261104:file_000000004dfc81f98ce562d086ac6a06"
       ],
@@ -3707,16 +3763,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co57-appartement-calme.webp",
+        "/lib/images/tcf/qcm-audit/co57-maison-isolee.webp",
+        "/lib/images/tcf/qcm-audit/co306-studio-dessine.webp"
       ],
-      "missing_labels": [
-        "Un appartement calme",
-        "Une maison isolée",
-        "Un studio meublé"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-appartement-calme.webp",
+        "/lib/images/tcf/qcm-audit/co57-maison-isolee.webp",
+        "/lib/images/tcf/qcm-audit/co306-studio-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s41-co-1",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co57-appartement-calme.webp",
+          "/lib/images/tcf/qcm-audit/co57-maison-isolee.webp",
+          "/lib/images/tcf/qcm-audit/co306-studio-dessine.webp"
+        ],
+        "support_quote": "Bonjour monsieur. Je cherche un appartement dans un immeuble calme. Très bien. Et vous habitez où maintenant ? J'habite boulevard des charmes. Et il y a beaucoup de bruit. C'est vrai. Vous voulez combien de pièces ? Nous sommes un couple avec deux enfants. Et vous voulez deux ou trois chambres ? Trois chambres, c'est bien. Et une cuisine équipée et des pièces lumineuses. Bien sûr. Vous préférez un appartement à l'étage, avec une terrasse, ou au rez-de-chaussée avec un jardin. Un appartement avec un jardin ? C'est super. Nous avons un chien. Vous êtes libre aujourd'hui pour visiter un appartement ?",
+        "current_bank_transcription": "- Bonjour monsieur, je cherche un appartement dans un immeuble calme.\n- Très bien.\nEt vous habitez où maintenant ?\n- J'habite boulevard des Charmes et il y a beaucoup de bruit.\n- C'est vrai.\nVous voulez combien de pièces ?\n- Nous sommes un couple avec 2 enfants…\n- Et vous voulez 2 ou 3 chambres ?\n- 3 chambres, c'est bien.\nEt…\nune cuisine équipée et des pièces lumineuses !\n- Bien sûr !\nVous préférez un appartement à l'étage avec une terrasse ou au rez-de-chaussée avec un jardin ?\n- Un appartement avec un jardin ?\nC'est super !\nNous avons un chien.\n- Vous êtes libre aujourd'hui pour visiter un appartement ?",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Appartement paisible à plusieurs pièces, maison isolée sans voisins, studio meublé existant réutilisé après contrôle. Distinction appartement/studio et isolement visibles ; le calme est suggéré par la cour paisible sans trafic, le texte reste accessible."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -4243,7 +4313,7 @@
           "asset": "ffe7b67dbbd3"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "09035276:033:6a24bf2f6880",
         "additional-20261102:mdf-a1-abc-junior:33:6a24bf2f6880:41822d7e"
@@ -4257,16 +4327,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co57-fete-sport.webp",
+        "/lib/images/tcf/qcm-audit/co57-fete-musique.webp",
+        "/lib/images/tcf/qcm-audit/co57-fete-cinema.webp"
       ],
-      "missing_labels": [
-        "La fête du sport",
-        "La fête de la musique",
-        "La fête du cinéma"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-fete-sport.webp",
+        "/lib/images/tcf/qcm-audit/co57-fete-musique.webp",
+        "/lib/images/tcf/qcm-audit/co57-fete-cinema.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s46-co-3",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co57-fete-sport.webp",
+          "/lib/images/tcf/qcm-audit/co57-fete-musique.webp",
+          "/lib/images/tcf/qcm-audit/co57-fete-cinema.webp"
+        ],
+        "support_quote": "Aujourd'hui, c'est la fête du sport dans votre ville jusqu'à 18h. Venez apprendre à jouer au basket à 10h au gymnase. Vous préférez le rugby? C'est à 14h au stade. Une grande course à pied est organisée à 16h au parc des fleurs. Courez 5 kilomètres pour gagner des t-shirts.",
+        "current_bank_transcription": "Aujourd'hui, c'est la fête du sport dans votre ville jusqu'à 18 heures.\nVenez apprendre à jouer au basket à 10 heures au gymnase.\nVous préférez le rugby, c'est à 14 heures au stade.\nUne grande cour sapier est organisée à 16 heures au parc des fleurs.\nCourrez 5 kilomètres pour gagner des t-shirts.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trois fêtes concrètes et identifiables par le décor et les banderoles naturelles : sport, musique, cinéma. Trois images distinctes, diversité de personnages et anatomie relues, aucun prix ou date."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -4957,7 +5041,7 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "grammar-import-20261104:file_000000006e008243a9632eac8f4e89a0"
       ],
@@ -4970,16 +5054,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co57-voiture-bar.webp",
+        "/lib/images/tcf/qcm-audit/co57-fenetre.webp",
+        "/lib/images/tcf/qcm-audit/co57-radio.webp"
       ],
-      "missing_labels": [
-        "Une voiture-bar",
-        "Une fenêtre",
-        "Une radio"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-voiture-bar.webp",
+        "/lib/images/tcf/qcm-audit/co57-fenetre.webp",
+        "/lib/images/tcf/qcm-audit/co57-radio.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s55-co-2",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co57-voiture-bar.webp",
+          "/lib/images/tcf/qcm-audit/co57-fenetre.webp",
+          "/lib/images/tcf/qcm-audit/co57-radio.webp"
+        ],
+        "support_quote": "Alors Marianne, pourquoi tu ne prends pas le train ? J'adore le covoiturage. Les conducteurs et les passagers sont sympas. Et les voitures confortables. Mais il n'y a pas de voiture-bar. Et toi Antoine ? Tu n'aimes pas le train ? Si, mais les billets sont trop chers. Et il y a souvent du retard. Et quand il y a une grève, les trains sont annulés. Claire, tu voyages toujours en voiture, toi ? Non. Quand le trajet est long, je prends le train. Je réserve une place côté fenêtre et je dors. Et vous achetez vos billets sur l'appli de la SNCF ? Oui, c'est simple et pratique. Quelle application ? Montre moi.",
+        "current_bank_transcription": "- Alors Marianne, pourquoi tu ne prends pas le train ?\n- J'adore le covoiturage.\nLes conducteurs et les passagers sont sympas et les voitures confortables…\nmais il n'y a pas de voiture-bar !\n- Et toi Antoine, tu n'aimes pas le train ?\n- Si, mais les billets sont trop chers et il y a souvent du retard.\nEt quand il y a une grève, les trains sont annulés !\n- Claire, tu voyages toujours en voiture, toi ?\n- Non, quand le trajet est long, je prends le train.\nJe réserve une place côté fenêtre et je dors !\n- Et vous achetez vos billets sur l'appli de la SNCF ?\n- Oui, c'est simple et pratique.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Voiture-bar clairement dans un wagon ferroviaire, fenêtre et radio isolées peintes ; les trois concepts entiers correspondent aux réponses. Pas de chiffres ou prix ; aucun changement de texte."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -7698,7 +7796,7 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:094:70f2434fa347"
       ],
@@ -7711,16 +7809,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co57-fete-meres.webp",
+        "/lib/images/tcf/qcm-audit/co57-fete-peres.webp",
+        "/lib/images/tcf/qcm-audit/co57-fete-musique.webp"
       ],
-      "missing_labels": [
-        "La fête des mères",
-        "La fête des pères",
-        "La fête de la musique"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-fete-meres.webp",
+        "/lib/images/tcf/qcm-audit/co57-fete-peres.webp",
+        "/lib/images/tcf/qcm-audit/co57-fete-musique.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a1-2022-co-94",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co57-fete-meres.webp",
+          "/lib/images/tcf/qcm-audit/co57-fete-peres.webp",
+          "/lib/images/tcf/qcm-audit/co57-fete-musique.webp"
+        ],
+        "support_quote": "Ce week-end, c'est la fête des mères. Venez dans notre magasin. Nous sommes ouverts de 10h à 19h. Et il y a 15% de réduction sur tous les produits. Venez vite, il y a plein d'idées pour vos cadeaux. Nous avons beaucoup de parfums pour les mamans. Et on vous propose un prix spécial de 25 euros. Sur tous les chapeaux.",
+        "current_bank_transcription": "Ce week-end, c’est la fête des mères. Venez dans\nnotre magasin. Nous sommes ouverts de 10 h\nà 19 h. Et il y a 15 % de réduction sur tous les\nproduits ! Venez vite ! Il y a plein d’idées pour vos\ncadeaux. Nous avons beaucoup de parfums pour\nles mamans. Et on vous propose un prix spécial de\n25 euros sur tous les chapeaux.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Fêtes des mères et pères créées avec cartes naturelles, fête de la musique existante contrôlée et réutilisée. Trois occasions distinctes, aucun montant ou date, source dit fête des mères."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -8310,7 +8422,11 @@
         "Les caisses réservées aux groupes",
         "Les caisses à l’extérieur"
       ],
-      "ready_for_source_review": false
+      "ready_for_source_review": false,
+      "audio_review_issue": {
+        "status": "pending_source_audio_review",
+        "reason": "La réponse actuelle indique caisses automatiques, mais le support préparé dit seulement caisses situées au fond du magasin. Vérifier l’alignement et l’audio avant activation ; ne pas ajouter ce qualificatif par l’image."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -8341,7 +8457,7 @@
           "asset": "b0994714de30"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "9782090351958:066:3f7dc91934fc",
         "additional-20261102:mdf-a2-abc-junior-direct:66:3f7dc91934fc:580a125c"
@@ -8356,14 +8472,29 @@
       ],
       "resolved_images": [
         "/lib/images/tcf/qcm-audit/co834-accueil-dessine.webp",
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co57-cafeteria.webp",
+        "/lib/images/tcf/qcm-audit/co57-salles-musee.webp"
       ],
-      "missing_labels": [
-        "À la cafétéria",
-        "Dans les salles"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-accueil-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co57-cafeteria.webp",
+        "/lib/images/tcf/qcm-audit/co57-salles-musee.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-a2j-s2-co-1",
+        "question": 17,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co834-accueil-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co57-cafeteria.webp",
+          "/lib/images/tcf/qcm-audit/co57-salles-musee.webp"
+        ],
+        "support_quote": "Bienvenue au musée. Il est interdit de toucher les peintures, de manger, de boire et de courir dans les salles. Merci de déposer les audioguides à l'accueil à la fin de la visite.",
+        "current_bank_transcription": "Bienvenue au musée.\nIl est interdit de toucher les peintures, de manger, de boire et de courir dans les salles.\nMerci de déposer les audioguides à l’accueil à la fin de la visite.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Accueil existant réutilisé après contrôle visuel, cafétéria et salles de musée créées ; pas de dépôt d’audioguide ajouté aux distracteurs. La source nomme l’accueil, trois lieux distincts et peints en 4:3."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -8394,7 +8525,7 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a2_eb1w:001:7e749af22d6c"
       ],
@@ -8407,16 +8538,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co57-nourrir-animaux.webp",
+        "/lib/images/tcf/qcm-audit/co57-regarder-animaux.webp",
+        "/lib/images/tcf/qcm-audit/co57-visiter-zoo.webp"
       ],
-      "missing_labels": [
-        "Nourrir les animaux",
-        "Regarder les animaux",
-        "Visiter le zoo"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-nourrir-animaux.webp",
+        "/lib/images/tcf/qcm-audit/co57-regarder-animaux.webp",
+        "/lib/images/tcf/qcm-audit/co57-visiter-zoo.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-a2-sa-co-1",
+        "question": 16,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co57-nourrir-animaux.webp",
+          "/lib/images/tcf/qcm-audit/co57-regarder-animaux.webp",
+          "/lib/images/tcf/qcm-audit/co57-visiter-zoo.webp"
+        ],
+        "support_quote": "Cher parents. Les familles sont les bienvenues dans notre zoo. Mais attention à vos enfants. Ils ne sont pas autorisés à nourrir les animaux. Merci pour votre attention.",
+        "current_bank_transcription": "Chers parents, les familles sont les bienvenues dans notre zoo. Mais attention à vos enfants, ils ne sont pas autorisés à nourrir les animaux. Merci pour votre attention.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trois actions distinctes : nourrir, regarder et visiter le zoo. Pas de panneau d’interdiction ajouté pour donner la réponse, gestes et diversité relus ; source explicite."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -9111,7 +9256,7 @@
           "asset": "79029d6166d7"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a2-abc-direct:99:91431a2774b0:cb78f06b"
       ],
@@ -9124,15 +9269,30 @@
         }
       ],
       "resolved_images": [
-        null,
+        "/lib/images/tcf/qcm-audit/co57-magasin-disques.webp",
         "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp",
-        null
+        "/lib/images/tcf/qcm-audit/co57-salle-concert.webp"
       ],
-      "missing_labels": [
-        "Dans un magasin de disques",
-        "Dans une salle de concert"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-magasin-disques.webp",
+        "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co57-salle-concert.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s21-co-1",
+        "question": 9,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co57-magasin-disques.webp",
+          "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co57-salle-concert.webp"
+        ],
+        "support_quote": "Salut Karine. Tu sais ce qui m'est arrivé la semaine dernière? Non, vas-y, raconte. J'ai vu le chanteur du groupe Phénix dans un magasin de disques. Il m'a tenu la porte pour sortir du magasin et après, il m'a sourie.",
+        "current_bank_transcription": "Salut Carine !\nTu sais ce qui m’est arrivé la semaine dernière ?\n— Non, vas-y raconte !\n— J’ai vu le chanteur du groupe Phoenix dans un magasin de disques !\nIl m’a tenu la porte pour sortir du magasin, et après il m’a souri !",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Magasin avec vinyles et CD, gare peinte existante réutilisée après contrôle et vraie salle de concert. La source situe explicitement la rencontre dans le magasin de disques."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -9502,7 +9662,7 @@
           "asset": "3350954f3202"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "9782090351958:040:42a9a64a8955",
         "additional-20261102:mdf-a2-abc-junior-direct:40:42a9a64a8955:9635072f"
@@ -9516,16 +9676,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co57-tenue-courir.webp",
+        "/lib/images/tcf/qcm-audit/co57-tenue-pluie.webp",
+        "/lib/images/tcf/qcm-audit/co57-tenue-fete.webp"
       ],
-      "missing_labels": [
-        "Des vêtements adaptés pour courir",
-        "Des vêtements de pluie",
-        "Des vêtements de fête"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-tenue-courir.webp",
+        "/lib/images/tcf/qcm-audit/co57-tenue-pluie.webp",
+        "/lib/images/tcf/qcm-audit/co57-tenue-fete.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s48-co-3",
+        "question": 9,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co57-tenue-courir.webp",
+          "/lib/images/tcf/qcm-audit/co57-tenue-pluie.webp",
+          "/lib/images/tcf/qcm-audit/co57-tenue-fete.webp"
+        ],
+        "support_quote": "Demain, on va s'entraîner pour la course de la semaine prochaine contre les écoles de la ville. N'oubliez pas de prendre des vêtements adaptés pour courir.",
+        "current_bank_transcription": "On va s'entraîner pour la course de la semaine prochaine contre les écoles de la ville.\nN'oubliez pas de prendre des vêtements adaptés pour courir.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trois tenues complètes distinctes : course, pluie et fête, matériel entier et propriétés visibles, sans marque ou prix. Source confirme la course."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -9756,7 +9930,7 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a2-abc-direct:12:ca3672b6b147:fb68fd98"
       ],
@@ -9769,15 +9943,30 @@
         }
       ],
       "resolved_images": [
-        null,
+        "/lib/images/tcf/qcm-audit/co57-place-cinema.webp",
         "/lib/images/tcf/qcm-audit/c7b5c71ee5d5.webp",
-        null
+        "/lib/images/tcf/qcm-audit/co834-jus-orange-dessine.webp"
       ],
-      "missing_labels": [
-        "Une place de cinéma",
-        "Une boisson"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-place-cinema.webp",
+        "/lib/images/tcf/qcm-audit/c7b5c71ee5d5.webp",
+        "/lib/images/tcf/qcm-audit/co834-jus-orange-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ssx-a2-annonce-2-6-co-2",
+        "question": 2,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co57-place-cinema.webp",
+          "/lib/images/tcf/qcm-audit/c7b5c71ee5d5.webp",
+          "/lib/images/tcf/qcm-audit/co834-jus-orange-dessine.webp"
+        ],
+        "support_quote": "Votre cinéma préféré a décidé de vous faire plaisir. Aujourd'hui, pour une place achetée, vous avez 50% de réduction sur les bonbons.",
+        "current_bank_transcription": "Votre cinéma préféré a décidé de vous faire plaisir.\nAujourd’hui, pour une place achetée, vous avez 50% de réduction sur les bonbons.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Un seul billet de cinéma créé ; paquet de bonbons et verre de jus peints existants contrôlés et réutilisés. Billet sans date, horaire ou montant, trois produits distincts ; la source demande une place de cinéma."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -10009,7 +10198,7 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a2-abc-direct:33:31bdd69e1fc4:8aa455b2"
       ],
@@ -10022,15 +10211,30 @@
         }
       ],
       "resolved_images": [
-        null,
+        "/lib/images/tcf/qcm-audit/co57-salon-tourisme.webp",
         "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp",
-        null
+        "/lib/images/tcf/qcm-audit/co57-aeroport.webp"
       ],
-      "missing_labels": [
-        "Au salon du tourisme",
-        "À l’aéroport"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-salon-tourisme.webp",
+        "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co57-aeroport.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ssx-a2-annonce-6-3-co-2",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co57-salon-tourisme.webp",
+          "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co57-aeroport.webp"
+        ],
+        "support_quote": "A l'occasion du Salon du Tourisme, venez découvrir nos derniers séjours au soleil. Balade en bord de mer, baignade, palmier, découvrez nos destinations 100% relaxantes.",
+        "current_bank_transcription": "À l’occasion du salon du tourisme, venez découvrir nos derniers séjours au soleil !\nBalades en bord de mer, baignade, palmiers...\nDécouvrez nos destinations 100% relaxantes !",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Salon d’exposition touristique, gare existante réutilisée et terminal d’aéroport ; trois lieux entiers distincts, personnages et format 4:3 relus."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -10640,7 +10844,7 @@
           "asset": "79029d6166d7"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "9782090351958:057:0dc3afbbc24a",
         "additional-20261102:mdf-a2-abc-junior-direct:57:0dc3afbbc24a:eabc88c7"
@@ -10654,16 +10858,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co57-fete-musique.webp",
+        "/lib/images/tcf/qcm-audit/co57-concert-stade.webp",
+        "/lib/images/tcf/qcm-audit/co57-salle-concert.webp"
       ],
-      "missing_labels": [
-        "Dans les rues",
-        "Au stade",
-        "Dans une salle de concert"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-fete-musique.webp",
+        "/lib/images/tcf/qcm-audit/co57-concert-stade.webp",
+        "/lib/images/tcf/qcm-audit/co57-salle-concert.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ssx-a2-radio-fete-de-la-ville-co-3",
+        "question": 2,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co57-fete-musique.webp",
+          "/lib/images/tcf/qcm-audit/co57-concert-stade.webp",
+          "/lib/images/tcf/qcm-audit/co57-salle-concert.webp"
+        ],
+        "support_quote": "samedi, c'est la fête de la ville. Cette année encore, venez écouter des concerts dans les rues. Pop, électro, classique, il y en a pour tous les goûts. Une discothèque est même installée sur la place centrale.",
+        "current_bank_transcription": "Samedi, c'est la fête de la ville.\nCette année encore, venez écouter des concerts dans les rues.\nPop, électro, classique : il y en a pour tous les goûts.\nUne discothèque est même installée sur la place centrale.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Concert dans la rue et salle de concert réutilisés après contrôle, concert dans un stade créé ; trois lieux effectifs, pas de réponse abstraite."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -11642,7 +11860,7 @@
           "asset": "854cade7fbc7"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a2_2021:028:3e2e5885acb0"
       ],
@@ -11655,15 +11873,30 @@
         }
       ],
       "resolved_images": [
-        null,
+        "/lib/images/tcf/qcm-audit/co57-produits-dangereux.webp",
         "/lib/images/tcf/qcm-audit/co306-produits-alimentaires-dessine.webp",
-        null
+        "/lib/images/tcf/qcm-audit/co57-produits-promotion.webp"
       ],
-      "missing_labels": [
-        "Les produits dangereux",
-        "Les produits en promotion"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-produits-dangereux.webp",
+        "/lib/images/tcf/qcm-audit/co306-produits-alimentaires-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co57-produits-promotion.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a2-2021-co-ex4-28",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co57-produits-dangereux.webp",
+          "/lib/images/tcf/qcm-audit/co306-produits-alimentaires-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co57-produits-promotion.webp"
+        ],
+        "support_quote": "Qu'est-ce que je vous avais dit? Il ne faut pas ranger produits dangereux en bas des rayons. Vous ne comprenez rien.",
+        "current_bank_transcription": "Qu’est-ce que je vous avais dit ? Il ne faut pas ranger les produits dangereux en bas des rayons. Vous ne comprenez rien !",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Pictogrammes de danger pour les produits dangereux, denrées alimentaires peintes réutilisées, pancarte PROMOTION sans montant. Qualificatifs visibles, source confirme les produits dangereux."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -11828,7 +12061,7 @@
           "asset": "23cfe84f1cb8"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a2_2021:031:1cc6f6d1a00d"
       ],
@@ -11841,16 +12074,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co57-secretariat-pedagogique.webp",
+        "/lib/images/tcf/qcm-audit/co57-secretariat-administratif.webp",
+        "/lib/images/tcf/qcm-audit/co57-secretariat-medical.webp"
       ],
-      "missing_labels": [
-        "Le secrétariat pédagogique",
-        "Le secrétariat administratif",
-        "Le secrétariat médical"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-secretariat-pedagogique.webp",
+        "/lib/images/tcf/qcm-audit/co57-secretariat-administratif.webp",
+        "/lib/images/tcf/qcm-audit/co57-secretariat-medical.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a2-2021-co-ex4-31",
+        "question": 2,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co57-secretariat-pedagogique.webp",
+          "/lib/images/tcf/qcm-audit/co57-secretariat-administratif.webp",
+          "/lib/images/tcf/qcm-audit/co57-secretariat-medical.webp"
+        ],
+        "support_quote": "Bonjour madame, je viens m'inscrire en première année de licence. Ah, vous n'êtes pas au bon bureau. Ici c'est le secrétariat pédagogique. Vous devez aller au bureau 417, au secrétariat administratif.",
+        "current_bank_transcription": "– Bonjour madame, je viens m’inscrire en 1 re année de licence. – Ah ! vous n’êtes pas au bon bureau. Ici, c’est le secrétariat pédagogique. Vous devez aller au bureau 417, au secrétariat administratif.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Quatre illustrations de services partagées entre deux questions ; plaques naturelles relues, décors et personnes différents. Source situe le premier bureau au pédagogique."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -11881,7 +12128,7 @@
           "asset": "fee8fadefd2e"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a2_2021:031:1cc6f6d1a00d"
       ],
@@ -11894,16 +12141,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co57-secretariat-administratif.webp",
+        "/lib/images/tcf/qcm-audit/co57-secretariat-pedagogique.webp",
+        "/lib/images/tcf/qcm-audit/co57-secretariat-mairie.webp"
       ],
-      "missing_labels": [
-        "Le secrétariat administratif",
-        "Le secrétariat pédagogique",
-        "Le secrétariat de la mairie"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-secretariat-administratif.webp",
+        "/lib/images/tcf/qcm-audit/co57-secretariat-pedagogique.webp",
+        "/lib/images/tcf/qcm-audit/co57-secretariat-mairie.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a2-2021-co-ex4-31",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co57-secretariat-administratif.webp",
+          "/lib/images/tcf/qcm-audit/co57-secretariat-pedagogique.webp",
+          "/lib/images/tcf/qcm-audit/co57-secretariat-mairie.webp"
+        ],
+        "support_quote": "Bonjour madame, je viens m'inscrire en première année de licence. Ah, vous n'êtes pas au bon bureau. Ici c'est le secrétariat pédagogique. Vous devez aller au bureau 417, au secrétariat administratif.",
+        "current_bank_transcription": "– Bonjour madame, je viens m’inscrire en 1 re année de licence. – Ah ! vous n’êtes pas au bon bureau. Ici, c’est le secrétariat pédagogique. Vous devez aller au bureau 417, au secrétariat administratif.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Images de secrétariats administratif et pédagogique réutilisées pour cette seconde question, mairie distincte. Source demande d’aller à l’administratif, aucun texte ou corrigé modifié."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -12135,7 +12396,7 @@
           "asset": "2e5bf7d262f0"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a2_2021:038:9256c30fcdc0"
       ],
@@ -12148,16 +12409,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co57-magasin-jardinage.webp",
+        "/lib/images/tcf/qcm-audit/co834-rayon-vetements-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co57-magasin-musique.webp"
       ],
-      "missing_labels": [
-        "Un magasin de jardinage",
-        "Un magasin de vêtements",
-        "Un magasin de musique"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-magasin-jardinage.webp",
+        "/lib/images/tcf/qcm-audit/co834-rayon-vetements-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co57-magasin-musique.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a2-2021-co-ex2-38",
+        "question": 6,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co57-magasin-jardinage.webp",
+          "/lib/images/tcf/qcm-audit/co834-rayon-vetements-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co57-magasin-musique.webp"
+        ],
+        "support_quote": "Chers auditeurs, les soldes finissent ce week-end. Alors n'attendez plus! Venez vite dans votre magasin de jardinage préféré pour acheter vos plantes pour l'été. Chez Rosame, profitez de réductixelles, jusqu'à moins 70%.",
+        "current_bank_transcription": "Chers auditeurs, les soldes finissent ce weekend. Alors, n’attendez plus ! Venez vite dans votre magasin de jardinage préféré pour acheter vos plantes pour l’été ! Chez Rozam, profitez de réductions exceptionnelles : jusqu’à moins 70 % !",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Jardinage et instruments de musique en magasins créés ; magasin de vêtements peint existant réutilisé après contrôle. Trois commerces distincts, source dit jardinage."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -12589,12 +12864,11 @@
       "resolved_images": [
         null,
         null,
-        null
+        "/lib/images/tcf/qcm-audit/co57-cafeteria.webp"
       ],
       "missing_labels": [
         "Au bord du lac",
-        "À l'entrée du parking",
-        "Dans la cafétéria"
+        "À l'entrée du parking"
       ],
       "ready_for_source_review": false
     },
