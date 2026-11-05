@@ -394,12 +394,12 @@ export function AudioCadre({
         {questions.map((q) => {
           const formSelect = q.formSelect
           const active = formSelect?.active
-          const trailing =
+          const forms =
             onSelectForm && formSelect && active && q.formModeIndex != null ? (
               <TcfFormMarginIcons
                 filled={formSelect.filled}
                 active={active}
-                layout="inline"
+                layout="cadre"
                 onSelect={(form) => onSelectForm(q.formModeIndex!, form)}
               />
             ) : null
@@ -417,7 +417,6 @@ export function AudioCadre({
                   images={q.images}
                   points={q.points}
                   showNumero
-                  trailing={trailing}
                   mode={mode}
                 />
               ) : (
@@ -432,7 +431,6 @@ export function AudioCadre({
                   images={q.images}
                   points={q.points}
                   showNumero
-                  trailing={trailing}
                   mode={mode}
                 />
               )
@@ -449,12 +447,12 @@ export function AudioCadre({
                 images={q.images}
                 points={q.points}
                 showNumero
-                trailing={trailing}
                 mode={mode}
               />
             )
           return (
             <div key={q.numero} className="tcf-audio-cadre-q">
+              {forms}
               {body}
             </div>
           )

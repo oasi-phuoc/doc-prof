@@ -88,12 +88,13 @@ export function TcfFormMarginIcons({
   active: TcfTypeReponse
   onSelect: (form: TcfTypeReponse) => void
   forms?: readonly TcfTypeReponse[]
-  layout?: 'margin' | 'inline'
+  /** `cadre` : à gauche de chaque question d’un bandeau Audio N. */
+  layout?: 'margin' | 'inline' | 'cadre'
 }) {
   const className =
     layout === 'inline'
       ? 'no-print tcf-inline-form-icons'
-      : 'no-print draft-grid-chip-margin tcf-margin-form-icons'
+      : `no-print draft-grid-chip-margin tcf-margin-form-icons${layout === 'cadre' ? ' is-cadre-q' : ''}`
   return (
     <div className={className} role="group" aria-label="Forme de réponse">
       {forms.map((form) => {

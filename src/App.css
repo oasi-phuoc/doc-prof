@@ -1302,23 +1302,27 @@ html,body,#root{
 /* TCF : « Page » dans la marge droite (cette question et les suivantes → page suivante). */
 .a4-frame .worksheet-sheet .draft-grid-chip-margin.tcf-page-chip{
   left:calc(100% + 2px);right:auto;
-  /* Même diamètre que les icônes de format (22 px). */
+  /* Même diamètre que les icônes de format (22 px). Icône centrée dans le cercle. */
+  display:inline-flex;align-items:center;justify-content:center;
   width:22px;height:22px;max-width:none;padding:0;border-radius:999px;
   border:1.5px solid var(--ink);background:transparent;color:var(--ink);
-  font-size:0;letter-spacing:0;text-transform:none;overflow:visible
+  font-size:0;line-height:0;letter-spacing:0;text-transform:none;overflow:visible
 }
-.a4-frame .worksheet-sheet .draft-grid-chip-margin.tcf-page-chip svg{display:block}
+.a4-frame .worksheet-sheet .draft-grid-chip-margin.tcf-page-chip svg{display:block;margin:0}
 .a4-frame .worksheet-sheet .draft-grid-chip-margin.tcf-page-chip.on{
   border-color:var(--ink);background:var(--lavender);color:var(--ink);opacity:1
 }
 .a4-frame .worksheet-sheet .draft-grid-chip-margin.tcf-page-chip.off{opacity:1}
-/* Cadre Audio N : aligner format + Page sur le début de la question (sous le bandeau). */
+/* Cadre Audio N : le haut des boutons = le haut du texte, sous le bandeau. */
 .exercise-item.layout-tcf:has(.tcf-question.is-audio-frame){
-  --tcf-audio-head-h:8mm
+  --tcf-audio-head-h:8mm;
+  --tcf-audio-frame-gap:6px;
+  --tcf-audio-body-pad-y:2.5mm;
+  --tcf-audio-body-pad-x:3mm
 }
 .exercise-item.layout-tcf:has(.tcf-question.is-audio-frame) > .draft-grid-chip-margin.tcf-margin-form-icons,
 .exercise-item.layout-tcf:has(.tcf-question.is-audio-frame) > .draft-grid-chip-margin.tcf-page-chip{
-  top:calc(var(--ex-pad-y) + var(--tcf-audio-head-h))
+  top:calc(var(--ex-pad-y) + var(--tcf-audio-frame-gap) + var(--tcf-audio-head-h) + var(--tcf-audio-body-pad-y))
 }
 .draft-pad{
   /* 24 colonnes × 5 lignes en 1 col ; on multiplie les lignes par le nombre de colonnes
@@ -4325,11 +4329,12 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-audio-tag{display:inline-block;margin-right:6px;padding:0 6px;border:1px solid var(--ink);border-radius:4px;font-size:.8em;font-weight:700}
 /* Six courts / trois moyens : cadres Audio N (bandeau thème + corps). */
 .tcf-question.is-audio-frame{
-  position:relative;margin-top:6px;padding:0;overflow:hidden;
+  position:relative;margin-top:var(--tcf-audio-frame-gap, 6px);padding:0;overflow:hidden;
   border:1.5px solid var(--purple);box-sizing:border-box;width:100%;max-width:100%;
   display:flex;flex-direction:column;
   -webkit-print-color-adjust:exact;print-color-adjust:exact
 }
+.tcf-question.is-audio-frame.is-audio-cadre{overflow:visible}
 .tcf-audio-frame-head{
   flex:0 0 auto;height:var(--tcf-audio-head-h, 8mm);box-sizing:border-box;
   display:flex;align-items:center;padding:0 3mm;
@@ -4338,7 +4343,11 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
   letter-spacing:.04em;text-transform:uppercase;line-height:1;
   -webkit-print-color-adjust:exact;print-color-adjust:exact
 }
-.tcf-audio-frame-body{flex:1 1 auto;min-width:0;padding:2.5mm 3mm 3mm;display:flex;flex-direction:column;gap:6px}
+.tcf-audio-frame-body{
+  flex:1 1 auto;min-width:0;
+  padding:var(--tcf-audio-body-pad-y, 2.5mm) var(--tcf-audio-body-pad-x, 3mm) 3mm;
+  display:flex;flex-direction:column;gap:6px
+}
 /* Pastille flottante (situations / objets) — hors cadres Audio. */
 .tcf-audio-frame-tag{
   position:absolute;top:0;left:8px;right:auto;transform:translateY(-50%);
@@ -4351,7 +4360,12 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-question.is-audio-frame .tcf-qcm-texte li{gap:6px;font-size:.92em;line-height:1.25}
 /* Trois moyens : plusieurs questions dans le même cadre. */
 .tcf-audio-cadre-body{gap:8px}
-.tcf-audio-cadre-q{display:flex;flex-direction:column;gap:4px}
+.tcf-audio-cadre-q{position:relative;display:flex;flex-direction:column;gap:4px}
+/* Plusieurs questions : les 3 formats à gauche, le haut du premier = le haut du texte. */
+.a4-frame .worksheet-sheet .tcf-audio-cadre-q > .draft-grid-chip-margin.tcf-margin-form-icons{
+  top:0;left:auto;height:auto;
+  right:calc(100% + var(--tcf-audio-body-pad-x, 3mm) + 1.5px + var(--ex-pad-x) + 2px)
+}
 /* Icônes de format : à droite de la ligne d’énoncé (même hauteur). */
 .tcf-enonce .tcf-inline-form-icons{
   flex:0 0 auto;align-self:center;margin:0 0 0 8px

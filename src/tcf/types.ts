@@ -430,7 +430,7 @@ export type TcfSheetItem =
       formSelect?: TcfFormSelect
     }
   | {
-      /** Trois moyens : un cadre Audio N contenant plusieurs questions. */
+      /** Cadre Audio N : plusieurs questions sous le même bandeau (trois moyens, audio complet). */
       kind: 'audio_cadre'
       audioLabel: string
       questions: TcfCadreQuestion[]
