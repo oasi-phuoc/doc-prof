@@ -153,7 +153,11 @@ function allowedDomains(account: Account, env: Env): Set<string> {
   }
   if (account === 'full') {
     const fromEnv = parseDomainCsv(env.ACCESS_DOMAINS_FULL)
-    return new Set(fromEnv.length > 0 ? fromEnv : regularDomains())
+    const base = fromEnv.length > 0 ? fromEnv : regularDomains()
+    const allowed = new Set(base.filter((domain) => domain !== 'tpf' && domain !== 'tcf'))
+    allowed.add('tcf-csc')
+    allowed.add('tcf-cfr')
+    return allowed
   }
   return partialDomains(env)
 }
