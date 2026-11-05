@@ -21,9 +21,9 @@
     },
     "generated_reviewed_assets": 48,
     "activated_ce_questions_this_batch": 59,
-    "co_new_reviewed_images_this_batch": 670,
-    "co_activated_questions_this_batch": 215,
-    "association_scenes_restored_this_batch": 13
+    "co_new_reviewed_images_this_batch": 674,
+    "co_activated_questions_this_batch": 217,
+    "association_scenes_restored_this_batch": 6
   },
   "questions": [
     {
@@ -3081,7 +3081,12 @@
           "asset": "06bb33f69462"
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active_after_visual_and_source_text_review",
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-caisse-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-entree-magasin-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-librairie-municipale-dessine.webp"
+      ]
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -15127,7 +15132,12 @@
           "asset": "89634ece27ee"
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active_after_visual_and_source_text_review",
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-sortie-magasin-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-entree-musee-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-caisse-restaurant-dessine.webp"
+      ]
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",

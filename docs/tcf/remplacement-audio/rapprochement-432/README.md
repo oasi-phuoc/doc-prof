@@ -1,5 +1,7 @@
 # Reprise des 432 références audio
 
+**Mise à jour du 5 novembre : les 297 anciennes références sans original ont été retirées à la demande de l’utilisateur, ainsi que les 253 exercices associés. Les 14 nouveaux audios corrigés restent présents. Les chiffres de rapprochement ci-dessous constituent le registre historique avant retrait.** Le détail est dans `docs/tcf/remplacement-audio/retrait-297-references-20261104.json`.
+
 Les **432 fichiers actuellement servis ont été retranscrits directement**, avec leurs empreintes et leurs mots horodatés. La recherche initiale a couvert les **834 réceptions DELF conservées**, soit **644 fichiers sources aux octets distincts**. Les réceptions qui partagent les mêmes octets restent toutes conservées.
 
 **26 fichiers disposent aussi d’une seconde transcription imposée en français**, dont les 22 sorties contenant des fragments en anglais ou des tokens inconnus et les cas de liaison à contrôler. Les deux reconnaissances sont conservées côte à côte ; une sortie plus courte n’efface pas un passage reconnu par l’autre moteur.

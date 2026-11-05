@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "created_at_utc": "2026-11-04T12:25:01Z",
-  "status": "blocked_image_generation_quota",
+  "status": "in_progress",
   "provider_error": "usage_limit_reached",
   "provider_reset_estimate_utc": "2026-11-04T14:21:43+00:00",
   "provider_reset_estimate_europe_zurich": "2026-11-04T15:21:43+01:00",
-  "scope": "Prochain lot A1/A2 : 15 visuels supplémentaires pour compléter 7 trios, avec réutilisation des fichiers déjà disponibles.",
+  "scope": "Lot A1/A2 conservé après retrait des 297 anciennes références ; seules les questions encore présentes sont illustrées.",
   "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
   "required_format": "landscape_exact_4:3",
   "export_size": {
@@ -24,9 +24,10 @@
     "Terminer les illustrations avant la reprise des 432 références audio, puis les 1906 usages du vocabulaire."
   ],
   "summary": {
-    "pending_images": 15,
-    "pending_question_trios": 7,
-    "generated_images_in_this_file": 0
+    "pending_images": 7,
+    "pending_question_trios": 3,
+    "generated_images_in_this_file": 4,
+    "retired_image_requests": 4
   },
   "images": [
     {
@@ -52,7 +53,7 @@
         "/lib/images/tcf/qcm-audit/co834-entree-magasin-dessinee.webp",
         "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
       ],
-      "status": "pending_generation"
+      "status": "generated_and_visually_reviewed"
     },
     {
       "id": "co306-association-dessine",
@@ -76,7 +77,7 @@
         "/lib/images/tcf/qcm-audit/co306-entreprise-service-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
       ],
-      "status": "pending_generation"
+      "status": "retired_question_removed"
     },
     {
       "id": "co306-sortie-magasin-dessine",
@@ -101,7 +102,7 @@
         "/lib/images/tcf/qcm-audit/co834-rayon-vetements-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
       ],
-      "status": "pending_generation"
+      "status": "generated_and_visually_reviewed"
     },
     {
       "id": "co306-entree-musee-dessine",
@@ -126,7 +127,7 @@
         "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
       ],
-      "status": "pending_generation"
+      "status": "generated_and_visually_reviewed"
     },
     {
       "id": "co306-caisse-restaurant-dessine",
@@ -151,7 +152,7 @@
         "/lib/images/tcf/qcm-audit/co834-caisse-dessinee.webp",
         "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
       ],
-      "status": "pending_generation"
+      "status": "generated_and_visually_reviewed"
     },
     {
       "id": "co306-douches-vestiaires-dessine",
@@ -345,7 +346,7 @@
       "reference_images": [
         "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
       ],
-      "status": "pending_generation"
+      "status": "retired_question_removed"
     },
     {
       "id": "co306-lave-linge-neuf-dessine",
@@ -368,7 +369,7 @@
       "reference_images": [
         "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
       ],
-      "status": "pending_generation"
+      "status": "retired_question_removed"
     },
     {
       "id": "co306-seche-linge-neuf-dessine",
@@ -391,7 +392,7 @@
       "reference_images": [
         "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
       ],
-      "status": "pending_generation"
+      "status": "retired_question_removed"
     }
   ],
   "questions": [

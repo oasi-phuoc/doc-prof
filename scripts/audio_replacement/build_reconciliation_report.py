@@ -57,6 +57,9 @@ def main():
     parser.add_argument('--prepared-grammar',type=Path,help='Source-bound grammar cut delivery; identities alone do not count as cuts')
     args=parser.parse_args();repo=args.repo;work=args.work
     out=repo/'docs/tcf/remplacement-audio/rapprochement-432'
+    retirement_path=repo/'docs/tcf/remplacement-audio/retrait-297-references-20261104.json'
+    retirement=read(retirement_path) if retirement_path.exists() else {}
+    retired={r['old_ref']:r for r in retirement.get('audios',[])} if retirement.get('status')=='applied' else {}
     applied_path=repo/'docs/tcf/remplacement-audio/corrections-appliquees-20261104.json'
     applied=read(applied_path) if applied_path.exists() else {}
     current_exercises={e['id']:e for bank in (repo/'src/tcf/content').glob('*/co.json') for e in read(bank)}
@@ -115,7 +118,9 @@ def main():
     byref={r['old_ref']:r for r in refs}
     for ref in refs:
         data=actual[ref['sha256']]
-        assert sha(ref['current_file'])==ref['sha256'],'Current served audio changed'
+        if ref['old_ref'] in retired:
+            assert retired[ref['old_ref']]['sha256']==ref['sha256'] and not Path(ref['current_file']).exists()
+        else:assert sha(ref['current_file'])==ref['sha256'],'Current served audio changed'
         review=transcript_flags(ref['transcript_variants'][0],data['text'])
         item=dict(old_ref=ref['old_ref'],audio_sha256=ref['sha256'],
                   exercise_ids=list(dict.fromkeys(u['exercise_id'] for u in ref['uses'])),
@@ -127,6 +132,7 @@ def main():
         if ref['sha256'] in secondary:
             item['independent_french_asr']=dict(text=secondary[ref['sha256']]['text'],engine='sherpa-onnx Whisper small INT8, forced French',status='independent_automatic_draft_not_listening')
         transcriptions.append(item)
+        if ref['old_ref'] in retired:item.update(status='retired_at_user_request_historical_transcription_only',currently_in_library=False)
         lexical=native[ref['old_ref']]
         candidate_rows=[{k:c[k] for k in ['source_id','source_sha256','score','matched_text','plan_sha256'] if k in c}
                         for c in lexical['candidates'] if c['score']>=.6]
@@ -221,6 +227,7 @@ def main():
         if match['old_ref'] in merged:
             match['status']='received_source_identified_candidate_prepared'
             match['candidate_sha256']=merged[match['old_ref']]['candidate_sha256']
+        if match['old_ref'] in retired:match['status']='retired_at_user_request'
     unified.update(prepared_references=len(merged),proposals=list(merged.values()))
     write(unified_path,unified)
     # Register the extra assembly alongside the earlier immutable deliveries.
@@ -237,6 +244,7 @@ def main():
                          if c['source_sha256']==baseline_known[control['old_ref']]['source_sha256']),None) for control in controls]
     assert len(control_ranks)==48 and all(rank==1 for rank in control_ranks)
     all_identified=set(merged)|set(extended)
+    unresolved_active=set(byref)-all_identified-set(retired)
     pending_extended={key:value for key,value in extended.items() if key not in merged}
     write(repo/'docs/tcf/remplacement-audio/identites-sources-unifiees.json',dict(schema_version=1,
         identified_references=len(all_identified),prepared_references=len(merged),
@@ -249,8 +257,9 @@ def main():
         additional_read_only_grammar_source_entries=extension['source_entries'],
         additional_source_identities=len(extended),new_source_identities_total=len(proposals)+len(extended),
         prepared_reference_links_total=len(merged),identified_reference_links_total=len(all_identified),
-        identified_references_pending_segmentation=len(pending_extended),remaining_without_received_source=1318-len(all_identified),
-        remaining_with_direct_current_audio_transcription=432-len(proposals)-len(extended),
+        identified_references_pending_segmentation=len(pending_extended),remaining_without_received_source=len(unresolved_active),
+        remaining_with_direct_current_audio_transcription=len(unresolved_active),
+        historical_unmatched_references_retired=len(retired),
         source_receipts_searched=834+extension['source_entries'],distinct_source_files_searched=len(source_hashes),
         known_positive_controls=48,controls_retrieved_at_rank_one=48,
         candidate_pairs_examined=len(evidence['evidence'])+len(extra_attempts),
@@ -277,12 +286,12 @@ def main():
         old_refs_identified_with_internal_edits=len(proposals)-constant,
         old_refs_with_identified_source=len(all_identified),old_refs_with_prepared_candidate=len(merged),
         old_refs_identified_pending_segmentation=len(pending_extended),
-        old_refs_remaining_unmatched=1318-len(all_identified),assembled_mp3_candidates=14,
+        old_refs_remaining_unmatched=len(unresolved_active),assembled_mp3_candidates=14,
         initial_signal_confirmed_refs=672+sum(p['source_batch']=='initial' and p['signal_status']=='signal_source_confirmed' for p in proposals),
         additional_signal_confirmed_refs=451+sum(p['source_batch']=='additional' and p['signal_status']=='signal_source_confirmed' for p in proposals),
         additional_refs_not_in_initial=214+sum(p['source_batch']=='additional' for p in proposals),
         current_audio_refs_directly_retranscribed=432,current_audio_retranscription_failures=0,
-        current_audio_refs_retranscribed_without_received_source=432-len(proposals)-len(extended),
+        current_audio_refs_retranscribed_without_received_source=len(unresolved_active),
         shared_grammar_sources_consulted_read_only=extension['source_entries'],
         shared_grammar_signal_confirmed_refs=len(extended),
         reconciliation_432_report='rapprochement-432/etat.json')
@@ -302,6 +311,12 @@ def main():
             planned_segments=1681,prepared_flac_segments=1681,prepared_mp3_segments=1681,
             received_source_prepared_segments=1679,
             applied_corrections_report='corrections-appliquees-20261104.json')
+    if retired:
+        active={ref for e in current_exercises.values() for ref in (e['support'].get('audios') or [e['support'].get('audio')]) if ref}
+        progress.update(historical_unmatched_refs_retired=len(retired),
+            retired_exercises=retirement['summary']['exercises_removed'],
+            retired_questions=retirement['summary']['questions_removed'],
+            active_current_library_audio_refs=len(active),retirement_report='retrait-297-references-20261104.json')
     write(progress_path,progress)
     print(json.dumps(summary,ensure_ascii=False))
 

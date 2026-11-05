@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-04T18:01:53.308306+00:00",
+  "updated_at": "2026-11-05T04:36:52.505219+00:00",
   "received_source_file_entries": 836,
   "copyright_tracks_removed_at_user_request": 2,
   "active_source_entries": 834,
@@ -17,7 +17,7 @@
   "current_old_refs": 1318,
   "signal_confirmed_old_refs": 1020,
   "old_refs_with_prepared_candidate": 1021,
-  "old_refs_remaining_unmatched": 297,
+  "old_refs_remaining_unmatched": 0,
   "initial_signal_confirmed_refs": 674,
   "additional_signal_confirmed_refs": 452,
   "additional_refs_not_in_initial": 215,
@@ -49,21 +49,22 @@
     "production_modified": false
   },
   "current_bank_audit": {
-    "supports": 1262,
-    "questions_before": 5104,
-    "questions_after": 9490,
-    "questions_net_added": 4386,
+    "supports": 1009,
+    "questions_before": null,
+    "questions_after": 7821,
+    "questions_net_added": null,
     "supports_ce_below_minimum": 3,
-    "audio_pools_by_level": 1319,
-    "audio_pools_below_minimum": 97,
+    "audio_pools_by_level": 1026,
+    "audio_pools_below_minimum": 60,
     "errors": 0,
-    "warnings": 0
+    "warnings": 0,
+    "report": "audit-banque-apres-retrait-297.json"
   },
   "old_refs_identified_with_internal_edits": 1,
   "old_refs_with_identified_source": 1021,
   "current_audio_refs_directly_retranscribed": 432,
   "current_audio_retranscription_failures": 0,
-  "current_audio_refs_retranscribed_without_received_source": 297,
+  "current_audio_refs_retranscribed_without_received_source": 0,
   "reconciliation_432_report": "rapprochement-432/etat.json",
   "old_refs_identified_pending_segmentation": 0,
   "shared_grammar_sources_consulted_read_only": 127,
@@ -80,5 +81,10 @@
   "grammar_cut_automatic_technical_checks_passed": 131,
   "grammar_cut_post_encoding_recognitions": 131,
   "grammar_co_transcripts_integrated": 127,
-  "targeted_tcf_questions_text_reviewed": 57
+  "targeted_tcf_questions_text_reviewed": 57,
+  "historical_unmatched_refs_retired": 297,
+  "retired_exercises": 253,
+  "retired_questions": 1669,
+  "active_current_library_audio_refs": 1025,
+  "retirement_report": "retrait-297-references-20261104.json"
 }

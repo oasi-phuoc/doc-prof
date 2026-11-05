@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-04T18:01:53.308306+00:00",
+  "updated_at": "2026-11-05T04:36:52.505219+00:00",
   "summary": {
     "initial_unmatched_references": 432,
     "direct_transcriptions_completed": 432,
@@ -15,8 +15,9 @@
     "prepared_reference_links_total": 1021,
     "identified_reference_links_total": 1021,
     "identified_references_pending_segmentation": 0,
-    "remaining_without_received_source": 297,
-    "remaining_with_direct_current_audio_transcription": 297,
+    "remaining_without_received_source": 0,
+    "remaining_with_direct_current_audio_transcription": 0,
+    "historical_unmatched_references_retired": 297,
     "source_receipts_searched": 961,
     "distinct_source_files_searched": 771,
     "known_positive_controls": 48,
@@ -385,7 +386,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/les-objets-du-quotidien.mp3",
       "audio_sha256": "b6319aa7e4877a73e57629c1674ddd70b191a4cc1b9f70249b97e779f49f332e",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -406,7 +407,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/loisirs/le-club-de-sport.mp3",
       "audio_sha256": "73954048fbce13b7a075be3f9874ea00d76be1beab8b73ee7279d6e21cd7457b",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -421,7 +422,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/radio/a-l-aeroport-1.mp3",
       "audio_sha256": "6711944c72d7b4b5c72ed354b8b07baade37a63dd76dd879a241cf6efe05e06f",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -436,7 +437,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/travail/la-reunion.mp3",
       "audio_sha256": "11a9c652b86438e058dbeac3e88bdf4442c0148586e2c3abc02e0d0df1b33b22",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -451,7 +452,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/au-telephone.mp3",
       "audio_sha256": "39bcdae3a27bf60e27384260e87e4f61baacf41a2ec3b0c9bcff598ab79d99ef",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -466,7 +467,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/fetes/20-fêtes-confirmation-du-repas-entre-amis.mp3",
       "audio_sha256": "8330dbafa5635052bed7d31e6d941afd38d45bc480c2f6e4546000a357128fb8",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -481,7 +482,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/radio/a-l-aeroport-2.mp3",
       "audio_sha256": "86e5f5b22c2e4c931f3079cc0ab26bf2a85bf89a15c1a0efaec6c42b6a891579",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -496,7 +497,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/travail/au-bureau-1.mp3",
       "audio_sha256": "fe7f2aa0f0c051221c7dcf139bd80283cda3001a508ea5d944dce5168990db79",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -511,7 +512,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/ecole/les-etudes-1-1.mp3",
       "audio_sha256": "20ae4ab524e7fb9f463ec4d4ccc431a2842a584dc763b1a4e666bf7a63b126d4",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -526,7 +527,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/ecole/les-etudes-1-2.mp3",
       "audio_sha256": "53a3184d7016ed712081b530f2e3b3fda56fa92e03a6b7bef58e10af51b2ceac",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -541,7 +542,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/ecole/les-etudes-1-3.mp3",
       "audio_sha256": "e8c47ed8764a77aad5f34690cee148ad0dd87d1c167fbb81d7f56f5b91f1796a",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -562,7 +563,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/ecole/les-etudes-1-4.mp3",
       "audio_sha256": "38d0404c6defb0d77f142dc1c564d004da24b464bab381b1eefdcbf1b17ab5db",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -577,7 +578,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/ecole/les-etudes-1-5.mp3",
       "audio_sha256": "946fbdee695a8d3f41a259e5bbfc7e5cd50cc07c6b78333fbbe923c55ca99a36",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -721,7 +722,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-1.mp3",
       "audio_sha256": "91ad00aa51e3cf7fc202a6efa20e4acb588fea97220886fdd1bf24b4ec02e322",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -736,7 +737,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-2.mp3",
       "audio_sha256": "9fe258df408b51b923f1af30af256f7eddcd0da39717b84a3d8654943323347c",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -751,7 +752,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-3.mp3",
       "audio_sha256": "1f81e0411716ad08147d758795181a8cd6d8f925e234b405cf68445ecb689864",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -772,7 +773,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-4.mp3",
       "audio_sha256": "b0813f887ea109d1786ee437ce18653cbb20e90d9734ff96f178d449f9fc4c03",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -793,7 +794,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-3-1.mp3",
       "audio_sha256": "3633eaf95e37712f3e37b97df9718988bd176fde04448b576711f5cfd6373e74",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -814,7 +815,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-3-2.mp3",
       "audio_sha256": "56150b4bcfa92d7d2dceaf5eface2d2d7b9cdbf69faee234ba49c2a1a8703db5",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -851,7 +852,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-3-3.mp3",
       "audio_sha256": "43a42dbabee1db9d9ca4eb7ec3a2bef7ef4671ab98977577ba19909f14f2d3e9",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [],
       "listening_performed": false,
@@ -875,7 +876,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-3-4.mp3",
       "audio_sha256": "826e1d451fb86c5c42ba4c69572e9925f67abb27825b20c0e80b5322eb2b71db",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -912,7 +913,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/fetes/04-fêtes_anniversaire-de-Léa.mp3",
       "audio_sha256": "b7542c6521b1bcea2698859d3b7c8b1443eec2bba9612cf4bc9b7ce52a4be647",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -927,7 +928,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/radio/au-concert.mp3",
       "audio_sha256": "dea1d0e1b38e867480074b74eb6bfc70ceb2d303bf1b2b5d38dec7a8d4f7ef79",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -1917,7 +1918,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/tu-travailles-ou-1.mp3",
       "audio_sha256": "4e0e763af7759b9322a7a9e97b445d3f6fe399284e94b2d3d1c82b193980d393",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -1997,7 +1998,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vous-avez-ordonnance-2.mp3",
       "audio_sha256": "c75335653f8982fd7e58779eeac631e0bfe30973786663e83cc8545e8795439c",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -2012,7 +2013,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/maison/je-cherche-appartement-louer-1.mp3",
       "audio_sha256": "354966fe4b10b81783d1ab23fc69e04d248f5ba33640d20f083b99d5081cf23a",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -2358,7 +2359,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/maison/vous-avez-mal-ou-1.mp3",
       "audio_sha256": "3ebdf23d29ccd3568e9fd3c63f19c55317896042b6814ed4df12b2799a10fb60",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -2373,7 +2374,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/loisirs/je-peux-aider-1.mp3",
       "audio_sha256": "8fc7d6dd74f7e4e2350f7922952e2869d780f624c5ccf86111e64bf4e42b8cbc",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -2991,7 +2992,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/j-organise-apero-es-libre-1.mp3",
       "audio_sha256": "c1a45e007db06e536fa1151f93692fd50fd3a4e1d83d39198345c2e1ff6cd404",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -7281,7 +7282,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/salut-vincent-1.mp3",
       "audio_sha256": "0571f813870c940bac0873d20a4bebc347d5697ac24dc56d0e69226d73c0bc26",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -7556,7 +7557,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/sos-depannage-j-ecoute-3.mp3",
       "audio_sha256": "08cd1480ddec402fcc8092a8cbd86f2fefa2b8fb6ae4b8a8306200b492a922a8",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -7961,7 +7962,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/tu-te-couches-tard-1.mp3",
       "audio_sha256": "ec7aaf4264cadadc3bb37d741a5069f59c1d1a05c3ec8e3fb26637d26982d655",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -8449,7 +8450,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-sommes-combien-1.mp3",
       "audio_sha256": "01df5f4a2212875dcaaf3d94745603035f5a3733162d636cefad1d4a4346fb36",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -8594,7 +8595,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vous-avez-chambres-disponibles-1.mp3",
       "audio_sha256": "453dc650800196b263be21ffac50f759f258171f925d2c8a4c89b37f02edbd6f",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -8745,7 +8746,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/restaurant/07-restaurant-le-dejeuner.mp3",
       "audio_sha256": "74af17f38a9e6481117191adec9a60cf42c50fb14c8721c8edba77719cdae855",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -9077,7 +9078,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/transports/vous-avez-mal-ou-1.mp3",
       "audio_sha256": "413681ba62744280234b44f6e6c4f9f29ff22802d6020e7194715913020e06ed",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -9358,7 +9359,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/travail/les-passagers-vol-air-1.mp3",
       "audio_sha256": "dbfd7372a5ecf629db04ddb28c87069fbd60912dbea0b955db909cff376b9dd2",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -9574,7 +9575,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/magasins/c-est-qui-1.mp3",
       "audio_sha256": "fed469c3105918e091a71289262bac4c80a48d8a7acf691a78ce1022d9306281",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -9784,7 +9785,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/logement/01-logement-description-de-l-appartement-1.mp3",
       "audio_sha256": "9db8a2ac40de32136f5e29a8c7e32901f0c8906522e22ab210e8d58f3fd2e934",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -9805,7 +9806,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/scènes courtes/17-ville-le-métro-c-est-loin.mp3",
       "audio_sha256": "2689106cdcbe08a3d6f6e1c8964e12c7bc4d83f4c2f181f280b7e043e27cf74b",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -9826,7 +9827,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/scènes courtes/18-ville-comment-on-va-à-la-poste.mp3",
       "audio_sha256": "e77c130cc7cdbecbdca026d26f5506ae364f9b6dad7c0bdaaeacf874207c50e1",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -9847,7 +9848,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/scènes courtes/19-ville-abonnement-pour-les-vélos.mp3",
       "audio_sha256": "412bd53705325b0860877611c1cfe5254bddab66ceac4ad6b83faa168fe2ebcf",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -9862,7 +9863,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/scènes courtes/20-loisirs-quels-activités-sont-proposées.mp3",
       "audio_sha256": "3ffd50f04b5d0d7f76480365b665d1ad3c8a8b31866fb1cfcf2ba9959a70ad23",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -9883,7 +9884,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/scènes courtes/21-loisirs-apprendre-à-faire-du-surf.mp3",
       "audio_sha256": "fe945b2d961ce121d1c5a5a674d7686b4920e959fb246025b46c943f6e998d80",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -9904,7 +9905,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/scènes courtes/22-loisirs-prendre-des-cours-de-natation.mp3",
       "audio_sha256": "9e1c0a9f95922835eec16e32fe485f615c64f4dfc01fde85341914f1b821f85b",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -9919,7 +9920,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/scènes courtes/23-loisirs-location-de-vélos.mp3",
       "audio_sha256": "a9fb8b64bcd68fcecdc02e5ec44c9e3fbc47a25f8b8a14ed44680d4b6301a54f",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -9934,7 +9935,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/scènes courtes/24-temps-demander-la-météo-2.mp3",
       "audio_sha256": "55f735fc052f0dd9caf4349552b1af4f51fc7e4bf3ece3f7094e383c84425347",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -9949,7 +9950,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/scènes courtes/25-temps-demander-la-météo-1.mp3",
       "audio_sha256": "c6bcb8d492a3cc1549edc4b8608d3d537612651ad143f0b1a7c1de459020628e",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -9970,7 +9971,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/scènes courtes/26-loisirs-propositions-de-sorties.mp3",
       "audio_sha256": "1a0df383024f1dc1682c6ae7f5593740e481857510758ee2d3ea6fcd9ba26d8f",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -9991,7 +9992,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/scènes courtes/27-loisirs-propositions-aller-au-cinéma.mp3",
       "audio_sha256": "737cc66d1016ede046167d4b7ff7ef4c03221558cb1757b8688489615d4c9bd3",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10012,7 +10013,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/scènes courtes/28-loisirs-demande-disponibilité-place-de-concert.mp3",
       "audio_sha256": "2037e0e2da920e0c4b4d7dff0834e58a2f189770bac200fac6dd041b3ab55420",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10033,7 +10034,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/scènes courtes/29-loisirs-demande-de-reduction.mp3",
       "audio_sha256": "c5d4d6a4f91da6685267ec67deb33f085c705c5795b65ff66723f98e5dd60462",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10054,7 +10055,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/scènes courtes/30-loisirs-j-adore-cet-acteur.mp3",
       "audio_sha256": "e623cb2dd44f20722b4b0bade8ef6ce4e31a224ee32f7cfa6fffb3f9e3a7ec71",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10069,7 +10070,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/scènes courtes/31-école-où-est-le-cours-d-économie.mp3",
       "audio_sha256": "2bbba0826b748dbf3c8e076375671d6d7d9cbaf8664fc4f5bac242fd09e30a42",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10090,7 +10091,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/ecole/17-école-avez-vous-des-dictionnaires.mp3",
       "audio_sha256": "cdc8e0ed56b9bf99881379d41109fe57d91b0a116fe685d1beb63d3718cb83a2",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10105,7 +10106,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/ecole/18-école-nouvelle-professeure.mp3",
       "audio_sha256": "e42494c153aa5237145049fc00a7f05c05755b69d28a1230c5fb663b68053122",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10120,7 +10121,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/ecole/19-école-c-est-le-cours-d-anglais.mp3",
       "audio_sha256": "7e129b042226dc2e816b87868dc2927168eb576576a6afd67c13b5434cc0c681",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10141,7 +10142,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/ecole/20-école-exercice-de-math-difficile.mp3",
       "audio_sha256": "55d0840ae5412544bd0318a617965e69c37db5b015d4817f8282425b79e38c96",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10156,7 +10157,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-3-1.mp3",
       "audio_sha256": "a9a5a018c5b400b6a5548608fb2fbef93025386fff04389b12878fbcf42bc3f3",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10171,7 +10172,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-3-2.mp3",
       "audio_sha256": "06e15b519d9eb9f3d8b65852a318bbe4831efa06b9a99c5ce49a9cb2aa7e167e",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10186,7 +10187,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-3-3.mp3",
       "audio_sha256": "1b0e182c94c1183ee7179e20d797a67df65a6adc439c2edc4326c45fce5d87c3",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10201,7 +10202,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-3-4.mp3",
       "audio_sha256": "7b20242dcdd317c3333ebb501325fb56b1041018aaa2bbcfcf0690bee43bbc92",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10216,7 +10217,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-3-5.mp3",
       "audio_sha256": "496bda988dc7ea7d73a612e327826a44109e92b3964570d1aa4dde2f837c1f9d",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10231,7 +10232,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-3-6.mp3",
       "audio_sha256": "d955a2cd7dff2931a6f5d6bf243b922dc41a4d1277e219bd43fab63a039cd276",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10246,7 +10247,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-a-la-radio-3-1.mp3",
       "audio_sha256": "4ff27fe849fbb03c657d5c4686d20f21b26f5600cad8bc5767553a2941236261",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10261,7 +10262,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-a-la-radio-3-2.mp3",
       "audio_sha256": "116557c843ef19f7216b0ba5a2a8c77909228aa522e479d72586fc5551460e78",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10276,7 +10277,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-a-la-radio-3-3.mp3",
       "audio_sha256": "517ad5a4e4bc3c535fb139913fe0f6696211c1bbc3f49e469d312dd5320686ee",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10291,7 +10292,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/travail/au-bureau-2.mp3",
       "audio_sha256": "5c071faa342b31aa388b91bb3b146ea3b09547569bb0f5b6b3e9de20c2e78c07",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10306,7 +10307,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/les-dialogues-du-quotidien-1.mp3",
       "audio_sha256": "2911914f5c0ab415e4de1040eb07e45492a6a707f70f328cb339d87bec849810",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10321,7 +10322,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/les-dialogues-du-quotidien-2.mp3",
       "audio_sha256": "2382d5fecf88925f51d36340d93ebc8974443c1eb85fe09f37139361963644d7",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10336,7 +10337,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/les-dialogues-du-quotidien-3.mp3",
       "audio_sha256": "0dfb5ef2fecc3c844bef4764420c7b9af85b13030318ff3c0d9ad57420cf94c0",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10351,7 +10352,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/les-dialogues-du-quotidien-4.mp3",
       "audio_sha256": "8864d0140cda4dec5af70c5bbdb5b38bf141e778fa184d5919f481ba78cab406",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10366,7 +10367,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-4-1.mp3",
       "audio_sha256": "a8b2d34b0edef2d70de754713c3806529e23c9e0e37024f7d485d8523cd3862a",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10381,7 +10382,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-4-2.mp3",
       "audio_sha256": "92aa0a54c43bc715e29f48bc59e415325bb33bbe349c2cc34e3ca4dcfb8aa15f",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10396,7 +10397,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-4-3.mp3",
       "audio_sha256": "c67ee9f6e21d47ab67e76e021c690e42fb913146fa1f3316937c9e2ee30b3177",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10417,7 +10418,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-4-4.mp3",
       "audio_sha256": "51841ba325ca78a1c1a8acb4add6b15c7d881ef323ae13b92ff3d482efbacdc6",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10432,7 +10433,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-4-5.mp3",
       "audio_sha256": "048ac3a5f66f91e9e824f27f042e0c47eae6cac428625df58c6829147a8cc2b3",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10453,7 +10454,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-4-6.mp3",
       "audio_sha256": "c20dc0546fec2aaa6573f7bb297c3e67227ae2c8faddd911b61ee56374d559c5",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10468,7 +10469,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-a-la-radio-4-1.mp3",
       "audio_sha256": "7e9e464bd73ef3c8b5be800391b92b8ab4fae064f870be7d683339d1b3cbcc02",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10483,7 +10484,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-a-la-radio-4-2.mp3",
       "audio_sha256": "1d154489e89328f731a6d62cae97df9149126c34cd0552c03aafc006cb6f0ac0",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10498,7 +10499,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-a-la-radio-4-3.mp3",
       "audio_sha256": "a4832e96c9ab58554cd4485bf2dd0137ee54379aea4c637692d08a7f2e8c903e",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10513,7 +10514,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/loisirs/le-cours-de-theatre.mp3",
       "audio_sha256": "4d621c7ab9b93451f3a349ebf841c2914fc0479dfd9e3ba410463e05343060fb",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10528,7 +10529,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/loisirs/la-sortie-entre-amis-1.mp3",
       "audio_sha256": "0cf0dadd835751b1ab0035bf5a3515e48b4984810e21e3de8230edb84376fbf2",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10549,7 +10550,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/loisirs/la-sortie-entre-amis-2.mp3",
       "audio_sha256": "bf2c86b5b368169a47247e495c494071a68d332d501b6d809e0af7a04cf15209",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10564,7 +10565,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/loisirs/la-sortie-entre-amis-3.mp3",
       "audio_sha256": "9d367980bc198cd829eb62f302943d6625f8814fc185f0c5ebb65c75e807dc68",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10579,7 +10580,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/loisirs/la-sortie-entre-amis-4.mp3",
       "audio_sha256": "389530c6c368ca1be6df35af57a3b4bdbdbbbeece9773d2a60837a0129c4a375",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10594,7 +10595,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/loisirs/au-theatre.mp3",
       "audio_sha256": "b52519d3dfcd8ec66d45532fbbefbb26c5a72bfe5a4d24af36151a29eea401da",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10609,7 +10610,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/loisirs/au-cinema-2.mp3",
       "audio_sha256": "a5e27453d258257c1b7d0d0f273ee402182b13aa7e33dcd5906decfe9a65d5a4",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10624,7 +10625,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/fetes/19-fêtes-21-juin-fete-de-la-musique.mp3",
       "audio_sha256": "eaf4427b0d43e38b7485cedd4c07a52937f005c617158d29cee0f1c52f375485",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10639,7 +10640,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/la-famille-d-accueil-1.mp3",
       "audio_sha256": "5d61a2b5bc1bbabc430f4f1e4feed2d8f1ff78cb800665a351085cd20f8e031d",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10654,7 +10655,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/la-famille-d-accueil-2.mp3",
       "audio_sha256": "9ce056fe805b64f4b2e36d84e797b614f02ed983d49d9cef71986ae9e896a4ac",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10669,7 +10670,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/la-famille-d-accueil-3.mp3",
       "audio_sha256": "9693cee73b7bf08f8bdb761b4c681a1c41531aca701ccf44dd75e69a0d98a9f8",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10684,7 +10685,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/la-famille-d-accueil-4.mp3",
       "audio_sha256": "7f072b20bc2cf362f5f061454e304d998fb7297f7cffa980969f1bde6e8e00ef",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10699,7 +10700,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/transports/a-l-aeroport.mp3",
       "audio_sha256": "568c9186baea858f7ab3892305f8f18d8c389778a68d0249eef482f0f540ae63",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10720,7 +10721,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/magasins/au-magasin-de-meubles.mp3",
       "audio_sha256": "41e4eb1665f21e91264e58260488627cce55a8849b88b50f949f2f0ceeba6fb8",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10735,7 +10736,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/actualite/01-actualité-le-salon-de-la-patisserie.mp3",
       "audio_sha256": "0a840da38ced8840d1bddd764154e0ca33b391f69b6da2c61e0caf9fff5e4fe4",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10750,7 +10751,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/sante/01-santé-demander-numéro-docteur.mp3",
       "audio_sha256": "1acb2a86d70ffa68cee07e64854ac70836b88c4e7ee701e41e56f02a416e437d",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10771,7 +10772,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/famille/16-famille-où-sont-les-livres.mp3",
       "audio_sha256": "2b4d2b1662e6971c90434020ec89bd4a215fc1f41be7455cd4ae7ce3a16e9b83",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10786,7 +10787,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/famille/17-famille-pas-comprendre-site-internet.mp3",
       "audio_sha256": "02cc5d46281f912f552773b5d1840bdae0a418e66904f3f735424eb7138b8afc",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10801,7 +10802,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/famille/15-famille-oublier-acheter-de-la-viande.mp3",
       "audio_sha256": "31b330105d7f07ba3e29697127213f61947253a4f7ecdcaf46b435bfb08298de",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10822,7 +10823,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-7-1.mp3",
       "audio_sha256": "00f2b9fa2795e6ebf8b43a5b22f84a6f65f06ab3bf87a40cd28cd22150a6c6c6",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10843,7 +10844,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-7-2.mp3",
       "audio_sha256": "c3944db1c81593fd421cd891a1075552a7fcaa4b2a6f43f1c9508a4d70827dd7",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10858,7 +10859,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-7-3.mp3",
       "audio_sha256": "453b96e6c370ca30f24a11e04cb194b267f541aeb5b65d8b33bce07093fc60d5",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10873,7 +10874,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-7-4.mp3",
       "audio_sha256": "5e18eeed1bc69aca3f5069986c623c7a86a0e4ea9b7f02e82594957a757dcbc2",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10888,7 +10889,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-7-5.mp3",
       "audio_sha256": "48cf236ef60f87494bc7c790e3e35dc366c10a4ac7560e2c7f8c1566efbec993",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10903,7 +10904,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-7-6.mp3",
       "audio_sha256": "574fa76d4027f374589789febb55348e2c273d744e44f1bb1d760eaff55ed738",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10918,7 +10919,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-informations-3-1.mp3",
       "audio_sha256": "ebd6616f0efa8e05c4775640481a7889184b441fa99eccbeaada464024edb16f",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10933,7 +10934,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-informations-3-2.mp3",
       "audio_sha256": "9d9b12f0b28211ac39e5fb16871411c778c987c6b0f10ae84e0f575df71c783c",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10948,7 +10949,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-informations-3-3.mp3",
       "audio_sha256": "d4b09b97cce497eca46822a4901803757b66b363cb954902e4598e0064a0f416",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10963,7 +10964,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vacances/02-vacances-bord-de-la-mer-Miriam.mp3",
       "audio_sha256": "a2be8eaf50085a2a599cb759cbc625faae2980869f771877a85834cff6d834b9",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10978,7 +10979,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/la-famille-2-1.mp3",
       "audio_sha256": "4fc92be2cd7e31c2f54805b35f50b817bd8307e6fe4163db6a4bcbf86db27f38",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -10993,7 +10994,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/la-famille-2-2.mp3",
       "audio_sha256": "1b189418025f9233690c58b7370a94d40b53095ef5014288aadacff2f5bc2fba",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11008,7 +11009,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/la-famille-2-3.mp3",
       "audio_sha256": "bb36ed3f5ebd1e7272cb09220cef899023f56a701b351e1f55fa357437128539",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11023,7 +11024,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/la-famille-2-4.mp3",
       "audio_sha256": "0c7140a82e984c269ba93221b681fe9900f8a2f72b0c854837ec196aefc31095",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11038,7 +11039,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/magasins/achats.mp3",
       "audio_sha256": "4b2c5c66438d519e7fc447ca71dc5cefbd39edbadbc1dc2b31a11e032a88affb",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11053,7 +11054,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/magasins/bonjour-monsieur.mp3",
       "audio_sha256": "c40934db223ce3b18a9ce09be18c2746ca37b5b86a20af3fc33a9e000800caee",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11074,7 +11075,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/magasins/je-voudrais-renouveler-mon.mp3",
       "audio_sha256": "9bfc227ba30740fdc57bc22cff5ddaabd03a9b1ba8cd2a8c1ed04f41e60a9ddc",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11089,7 +11090,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/magasins/tu-as-pris-ton.mp3",
       "audio_sha256": "fc07c71a9240c4276e1248a943030110569b12e201e04de99032e015b90786bd",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11104,7 +11105,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/magasins/decouvrez-notre-offre-speciale.mp3",
       "audio_sha256": "550be1e850fc8be72961a63cefdcf20b41c5426319ff464253d6612024e56501",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11119,7 +11120,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/actualite/04-actualité-la-crise-économique.mp3",
       "audio_sha256": "442665974c080637d1df2f8609257bb63bb20e9751008d56e0b7e9ec6e57ccab",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11134,7 +11135,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/magasins/20-achats-de-magasines.mp3",
       "audio_sha256": "3a5256b668265492aa17000295aa611ece06e8ec42c174ff9d144c93fdc54683",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11149,7 +11150,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/actualite/05-actualité-les-français-et-internet.mp3",
       "audio_sha256": "0901cfe32919a84c05d43cac31bba14f148d7f2520aaed7ac5856415e21c6418",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11164,7 +11165,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/administration/01-administration-renouveler-titre-de-séjour.mp3",
       "audio_sha256": "f75678ad1c297230cb4de2e8e52ec888717acde5f55b6b514159ab4bffccc6c3",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11179,7 +11180,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/poste/01-poste-envoyer-lettre-recommandée.mp3",
       "audio_sha256": "c997c8fd8ffe62e6780226603bfbec4e14e95ba3086c65ac73530dc94abe2871",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11194,7 +11195,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/fetes/24-fêtes-publicité-organiser-fête-parfaite.mp3",
       "audio_sha256": "4a784106f6e59432f992d3dcf792bedc181f73e3e8ce6ed1a0803b9d83278cc4",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11209,7 +11210,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/travail/10-travail-tu-as-trouvé-un-job.mp3",
       "audio_sha256": "ddf1925c696b886ef1ecaa757c8f1fb214d9e7ec5dfead697a881e009a3c5e23",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11230,7 +11231,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/travail/05-travail-contrat-en-alternance.mp3",
       "audio_sha256": "f60535f5d59d1543e1adee1d81b5672d8489f80942f9ae705d7fee20e1a17021",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11251,7 +11252,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/travail/09-travail-stage-de-fin-d-étude.mp3",
       "audio_sha256": "0856426aef5317bf66a6810427feac654f56ed0b8e2f56c77265ec9258c46170",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11272,7 +11273,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/travail/03-travail-chercher-emploi-maître-nageur.mp3",
       "audio_sha256": "5d12bb9e131bbd810938b77c3f61a78eacddd6a43ae167a9f02d0ff4e5b95dfe",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11287,7 +11288,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/travail/08-travail-recherche-de-stage.mp3",
       "audio_sha256": "e52194d3bb7fa7ac0153b0b9cefaf810c22c985966f0e2aaada86f27a5211bb8",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11308,7 +11309,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/travail/06-travail-job-d-été.mp3",
       "audio_sha256": "6b015a08304f30b3f5eac37af6fbb1a6a5eecf89aaf8622b6dc65208d3fe7158",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11329,7 +11330,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/travail/07-travail-job-d-été-Max.mp3",
       "audio_sha256": "06026d4dde972c852fcbe339764ad9f7ab13462cc507cbb8d57c746418711b87",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11350,7 +11351,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/ecole/ecole-1.mp3",
       "audio_sha256": "b26fd7d5ee3e745e5150dde13ce72fff7f095f73b1311052a396482528a021f7",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11365,7 +11366,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/ecole/ecole-2.mp3",
       "audio_sha256": "2bb1cfb2eaaa832fde439e0a807c1f4f85bc4e18ecf666ae2781dbbde9a7c57c",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11458,7 +11459,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/regarde-j-ai-photo-mariage-2.mp3",
       "audio_sha256": "b879293290877b24996f339ed0f6682e467352f98072902992ed9c22506d16c5",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11479,7 +11480,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/lea-j-ai-question-c-est-2.mp3",
       "audio_sha256": "4f6df852a8c7d099e4bce21b96d46c782e9a0073b6fce6647e1a227f598d5218",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11494,7 +11495,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-1.mp3",
       "audio_sha256": "3284398fc4d99d5e60a196004de7ab05985894f9c677b1941a3235b74ce5ab5d",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11509,7 +11510,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/il-mot-cahier.mp3",
       "audio_sha256": "ca6da779667b2416561efaa05ae8f49663ff183e7f85be7151757d82204db1f6",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11524,7 +11525,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/allo-manon-c-est-flo-2.mp3",
       "audio_sha256": "9c109333279c96d98c5849562bab55541960814fc1066fa4864c4148f22914b6",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11539,7 +11540,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-nouvelle-1.mp3",
       "audio_sha256": "842afa9c634d04eb5b8d0e7e1804793768e0f1d7dc5335da7174a39ba0948b86",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11554,7 +11555,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/fetes/05-invitation-14-juillet.mp3",
       "audio_sha256": "7552c17d908274bdb09ef1dab5323544539264e00fd24b0db648f8fb367287f5",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11569,7 +11570,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/fetes/06-invitation-rencontre-Thérésa.mp3",
       "audio_sha256": "7d45d6036a86b96ad4fd859b5e74d85f23e76f0fe4a7cfea4381d9b59222cae9",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11584,7 +11585,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/fetes/07-invitation-rencentre-Théo.mp3",
       "audio_sha256": "20f8bae314a96857352352aef95c10cb394e9324dfd64f825b004d791c7c1d8d",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11599,7 +11600,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/fetes/08-fêtes-pendaison-de-crémaillère.mp3",
       "audio_sha256": "bd9e72f30286d0122c974152373d823c152094c9bc221c81d17f6fd755c256f6",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11614,7 +11615,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/fetes/09-fêtes-de-la-mer.mp3",
       "audio_sha256": "c614098d2ded128677ec9b82d963106d902d1de2aadbf2fc71c911a2b2b988bb",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11629,7 +11630,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/ca-te-dit-venir-2.mp3",
       "audio_sha256": "ff1215f8d3c93d0e74bca8fc0791c598cc72a946b924f3573d54cd7a70fedacf",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11644,7 +11645,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/inscrivez-l-association-etudiants-2.mp3",
       "audio_sha256": "fb437d2146c6f6b0fa85b2e2d11a4a44a2a5778fb277dcc6478c0cc7d23d9d46",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11659,7 +11660,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/tu-travailles-ou-2.mp3",
       "audio_sha256": "77620f6860787ea23a2b9f4ecfa4ce8b7ded59252985e3b6ef62fa0bc67d2744",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11680,7 +11681,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/aujourd-hui-ecoutons-recette-sandwich-2.mp3",
       "audio_sha256": "2fece50d8e94a77363172fdc6d209dd2af7ec02f39621ab454bd309a13946c34",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11695,7 +11696,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vous-avez-ordonnance-1.mp3",
       "audio_sha256": "a4529ab899b3255b3eee9c5ec90063b3cf241711dd7c56ca1833982d868dc24f",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11710,7 +11711,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-3.mp3",
       "audio_sha256": "984e7b846ceded75dd4c72bab35d42619662c511d3cc79e42a233593828b9f9c",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11725,7 +11726,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/maison/agence-rhone.mp3",
       "audio_sha256": "7c9f260582f1cfa0664ab3b0b2ce58cf6ab59bc65d3ec10bd5f8be24e742d17e",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11740,7 +11741,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/maison/je-cherche-appartement-louer-2.mp3",
       "audio_sha256": "e4a9491b0ac501056a88afa4f33507c7b24f1aa4f54e34b809bf83b5f46266d0",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11755,7 +11756,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/maison/maison-4.mp3",
       "audio_sha256": "84942b6af5eed44485b42f46439d309931ac0aad84be18b8e81954b867c17724",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11770,7 +11771,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/maison/bonjour-etes-norin-2.mp3",
       "audio_sha256": "1f674579e8380b21b134458293bf4d53940e25484417f5bc40a357b973f62c60",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11785,7 +11786,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/maison/une-visite-d-appartement-c-est-2.mp3",
       "audio_sha256": "ba734ba2a0cc7dd45d736c96155a7c2b072e0da4771e9634b035b9a473d104c9",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11800,7 +11801,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/maison/salut-flo-alors-cette-1.mp3",
       "audio_sha256": "fb8c76b317e0f2f7ab0272f7f485647b6a97c0cc18943d34d3d494fc0a14d511",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11815,7 +11816,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/maison/merci-bouquet-tulipes-2.mp3",
       "audio_sha256": "12d988b9529889196b872a93bed92b20db1b2a1d2496226c0ae2cb818d079fe0",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11830,7 +11831,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/maison/la-nouvelle-collection-printemps-2.mp3",
       "audio_sha256": "204718c456d24c3f2d80fab54c8a9fbb207dc03b6d052c86f668f9bc798c23ca",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11845,7 +11846,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/maison/vous-avez-mal-ou-2.mp3",
       "audio_sha256": "4c9f7359e9d1eae0cfb32c9861cc81c4369ee0d44c017f8302df573903419e35",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11860,7 +11861,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/maison/maman-venons-signer.mp3",
       "audio_sha256": "373e8fee02f2fccb2c376752cd100133b46229fd70e46a83b4c9206bfbee0a5c",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11875,7 +11876,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/loisirs/je-peux-aider-2.mp3",
       "audio_sha256": "1c191d659803171ed93b906b421439e3a0755935d66b3ee40ce4fb6deb9125bf",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11890,7 +11891,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/loisirs/bonjour-voudrais-voir-2.mp3",
       "audio_sha256": "9c00b4db67af793c54f155ba8c31baf86b39ec88e22b1bbc03e3231967d64529",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11911,7 +11912,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/loisirs/je-dejeune-tous-jours-2.mp3",
       "audio_sha256": "fe5c56fb666ab1a010b9b5debd709f6e99b51df88a5c6edc5e84f03b706f51d6",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11932,7 +11933,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/loisirs/loisirs-1.mp3",
       "audio_sha256": "562bd27d0ff2bc1fcc195f2e9ea8857f8760a038fc59f401776b2292dba92b28",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11953,7 +11954,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/loisirs/loisirs-2.mp3",
       "audio_sha256": "f857f1f739a9d15bf8956edf6e016948aca789b063496498ef4f11b1177780ec",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11968,7 +11969,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/loisirs/nature-2.mp3",
       "audio_sha256": "68042885c6ceb0a3593ca51f4a0a010d519d4053ea56eaa7a85cd864eb3edef0",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -11983,7 +11984,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/loisirs/nature-3.mp3",
       "audio_sha256": "93fe6cdad7ad7af3b939fda5622c8caa0547dc0dd27248477d8310be1ecb04bf",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12004,7 +12005,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/maison/bonjour-madame.mp3",
       "audio_sha256": "cd5572404b7624af403560e7b3ffb4b938bf975ac1a9a0e8b19d0696763b0e08",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12025,7 +12026,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/maison/il-super-sympa-ton.mp3",
       "audio_sha256": "25f8b1bf9510290f82cfd27f7d7d1ad4628f22f61e3ec660c5895033af038e05",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12040,7 +12041,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/maison/alors-chloe-peux-parler.mp3",
       "audio_sha256": "adfd695b044b0c2ae80d5ada4f3071dab06717015c583b24e9bceb070b191fe1",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12055,7 +12056,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/maison/bonjour-racine-2.mp3",
       "audio_sha256": "b4672092d287e6f63200e63f77f74b33af553ce493af903dfef5ed9950ca2438",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12076,7 +12077,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/maison/j-adore-cette-serie.mp3",
       "audio_sha256": "c548d8629a84f300ae0de9bcf6481eaa530136de34c3c20cab2ad016202ee4e0",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12091,7 +12092,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/maison/le-lundi-n-est-journee-2.mp3",
       "audio_sha256": "7e3d13c0b9fb1f8ea0bae8d4bc834c8eb5e4d56db717b0d8336713e8f1feb8fd",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12106,7 +12107,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/maison/bonjour-directeur-demain-votre-1.mp3",
       "audio_sha256": "ab4f706973e9d6018b4f839711158927e29b982ce6c8df2fbe2616e7bf1146d6",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12127,7 +12128,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/maison/le-restaurant-d-entreprise-mille-2.mp3",
       "audio_sha256": "c13bfe02c5d0549d4661d82f6fdae168e0059266f3ee44aea875ea5fd7407a22",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12148,7 +12149,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/maison/vous-avez-mal-ou-4.mp3",
       "audio_sha256": "3741dfeafc900aa0e8b5ac6f0a196d699b66422e886f97912f9a5971377deeb4",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12169,7 +12170,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/mon-lave-linge-tombe.mp3",
       "audio_sha256": "c20dd04b55f79b24588f66e7c0e736df6aa687fbdfa59902682043d490e5e331",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12184,7 +12185,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/service-apres-vente-matthieu.mp3",
       "audio_sha256": "62cd922a7747073d585d5131fef74dc9231ea8a5085eecc169223d1e1dc20924",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12199,7 +12200,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-bugier-2.mp3",
       "audio_sha256": "96731dc421dce0a80e39765d6af0d5908bcc5df13bd5077755a15dfba630dff5",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12220,7 +12221,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/j-organise-apero-es-libre-2.mp3",
       "audio_sha256": "e4b11af58227534f8904994795aa5038588f1237c80712cfd47e93f48d0d1aab",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12235,7 +12236,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/je-voudrais-envoyer-lettre.mp3",
       "audio_sha256": "c8e4a1c9ae22d6b629ae5b8a190a54db72364edbe0da4ae47d0a1b3e3cdb318f",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12250,7 +12251,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-nicolas-dimanche-octobre-2.mp3",
       "audio_sha256": "5d8bf36342e184bdbf1d00bff27e04ca48245cc59a59608351d1460d6168201d",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12265,7 +12266,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/ah-roxane-2.mp3",
       "audio_sha256": "d16f98ac72af2167ec82257c686ff29ed2ed3701de8cba395fb52afd941c021c",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12280,7 +12281,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/nous-sommes-aujourd-hui-maison-2.mp3",
       "audio_sha256": "d44fe6594d9e6ab188224fa02b4c78134602bc6c7f25d449b6783c30c888a056",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12301,7 +12302,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/la-societe-allo-paul-2.mp3",
       "audio_sha256": "28f403751ea8f70456955b73f834ad74c02633fe12f028eaeaaf869c54da5788",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12316,7 +12317,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-objet-3.mp3",
       "audio_sha256": "85fe3c00c03299d44ea58df2039c67f9638c134eb2806ab14407b0fd871c95bf",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12331,7 +12332,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/repar-serrure-2.mp3",
       "audio_sha256": "43841893232cad51a9549e8bd0b7246a6d521e929bca54ec5c484a9b27dcdbfb",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12346,7 +12347,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-objet-5.mp3",
       "audio_sha256": "2ce45b3a38902c01b04cc57f8559c3733e25ddf62fae1677b7a0234f4ee9e04c",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12361,7 +12362,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-signoret-c-est-blanc-2.mp3",
       "audio_sha256": "7f2338a91b2b83e84fe1ded118d50526e1dd970494504a59fbc99d3288c0d6d4",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12376,7 +12377,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/salut-cherche-bureau-2.mp3",
       "audio_sha256": "717f6fed3ed30d296620b0c46527450c634d5e17d0b40df667cc9b4804f5e33e",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12391,7 +12392,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/sacha-retard-2.mp3",
       "audio_sha256": "8d0a44299d4717005f128878b756cddcae3774e0d6c06dd34f94fd4f5510cdc3",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12406,7 +12407,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/d-habitude-fais-quoi-week-2.mp3",
       "audio_sha256": "8a27ebb5bb8d49d5c23a04766b9644c04623e3963ed11077765cb72263a4a4be",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12421,7 +12422,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/athletic-nouveau-club-sportif-2.mp3",
       "audio_sha256": "c748622544f57c994fb63a2013993e587dbb7c41192452d75e7c0e6da4eee6ca",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12436,7 +12437,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/salut-christian-toujours-l-heure-2.mp3",
       "audio_sha256": "1624ff9eba3216c7d517331e95e061eb2d7652461e5c886d8ac4006f60970b5d",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12457,7 +12458,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/catherine-prend-petit-dejeuner-2.mp3",
       "audio_sha256": "26a7c7fd3b0ed657efbed8a5033cdde7012ed182d9cb356750ace7f69ca83d10",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12472,7 +12473,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/oh-la-la-la-2.mp3",
       "audio_sha256": "661a9e8633f9d3436dced4483a9989692a49871302ff93d61631e88140a13566",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12487,7 +12488,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-4.mp3",
       "audio_sha256": "bfebbc15008f676d210102191d6c36590e8aaee92a043cc26ab745f17b237070",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12508,7 +12509,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-tous-philippe-hugon-2.mp3",
       "audio_sha256": "6bdd290691b55213bdf9b4463bd9770ddc05d297dc213e78cfb7803d901f7134",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12529,7 +12530,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-viens-reparer-2.mp3",
       "audio_sha256": "06729d4822bcc8ede44bfc97960472dc1ee6c2bf4d28382f530895007b0d02bc",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12550,7 +12551,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-peux-aider-2.mp3",
       "audio_sha256": "f9ce15562035b9afa73fa48cab109224dbe39de1529479d7df0807222fb063e7",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12571,7 +12572,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-objet-7.mp3",
       "audio_sha256": "0a3ee54c49bbe53eb8146a40c2686fb42099c69c7546924da39be40edb8a6470",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12586,7 +12587,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-c-est-dejeuner-2.mp3",
       "audio_sha256": "79bd686a8fba211e1751c8074800a393acd0cb4fcf9a1e90d1d6827db84636d2",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12601,7 +12602,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-5.mp3",
       "audio_sha256": "c72b1e505dbeb52ee4476068d1bb5bd63dfef0fec6b2ca344a81ffc728677df8",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12616,7 +12617,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/delideli-peux-prendre-votre-2.mp3",
       "audio_sha256": "64d3f8e9c543865fa8595d3e52b3bbaa660be4258baf48937c4017e227295865",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12631,7 +12632,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-messieurs-dames-voici-2.mp3",
       "audio_sha256": "1dda2d2baa1fc0da08f03db272189c9185538cc8e8ca79b8258fbfdee2345a63",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12646,7 +12647,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-avons-reservation-2.mp3",
       "audio_sha256": "6da75f99b2d5f4d72772400ea8270a439b281569d05a80b4b51d345d63c4f720",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12667,7 +12668,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vous-adorez-croissants-macaron-2.mp3",
       "audio_sha256": "b828eaa7eac4b4f5b556bab0b977611c71f2da586efbb192617bedf31d6a9b47",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12688,7 +12689,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/salut-lea-2.mp3",
       "audio_sha256": "95a8181ec5047ce86d76f7b4b7e76afa4dd3fd50754c0f2981fc5acb7a803945",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12709,7 +12710,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/allo-papa-ca-va-2.mp3",
       "audio_sha256": "62de2331607a955f4498d8c5a3cb970e4a74caa973c9c957fd316410c6092626",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12724,7 +12725,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-avez-ordonnance-2.mp3",
       "audio_sha256": "a31fcdd207a48b36e600c9b95d8d9c642577a3ab022715760a165c90adf44f62",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12739,7 +12740,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-6.mp3",
       "audio_sha256": "3fe2ed3b88268f0d87965bda8c6f9adb872f1d3f609d2a6e389c9826f6da6154",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12754,7 +12755,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/les-pharmaciens-sont-professionnels-2.mp3",
       "audio_sha256": "4c38c8bbfe6135dda40b618fdb1bac26d07687768604b7b4bd46d2a0dbfa064a",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12769,7 +12770,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vous-toussez-2.mp3",
       "audio_sha256": "a35ae58151b9320d531f526b2e1327f9ad9f71c4e7aef7414bd4d9843fccfdd2",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12784,7 +12785,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-monsieur-2.mp3",
       "audio_sha256": "21d4545152fd2bc525f788a1a427345652153b9f79682943ce562e6cc23d0494",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12799,7 +12800,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-7.mp3",
       "audio_sha256": "974eb233db59d5417b8d20afadeefbe0b48a4dd225eed11b0fe98859922927a1",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12814,7 +12815,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/pour-vacances-pensez-covoiturage-2.mp3",
       "audio_sha256": "09f827d2ed82fca82ed5753395d302dceb7f7534ad050698bbb3f4ae25aa3f77",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12835,7 +12836,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/salut-paul-2.mp3",
       "audio_sha256": "afd8205117a734d72d12e246bb690d9c66eb8f1239658852c13dc67e9296abc1",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12850,7 +12851,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-voudrais-prix-2.mp3",
       "audio_sha256": "4689b3f65d70742629c27b527663645a17e4767ee5303fce59d8f8d7aea4dbc4",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12871,7 +12872,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-8.mp3",
       "audio_sha256": "95869649dac7267fe6fc8fa5f62525dbc9588fa9521f6b4f25101817a40eaab8",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12886,7 +12887,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/mesdames-messieurs-votre-attention-2.mp3",
       "audio_sha256": "1bdeec65b61a0b778f246f97009645b92764376a9e451d1709382ef17b75123a",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12901,7 +12902,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-votre-passeport-s-il-2.mp3",
       "audio_sha256": "731afb85b27489cfbd2942d818f0b657b12329719cc14af7f15aa5aa06338204",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12922,7 +12923,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-votre-passeport-votre-2.mp3",
       "audio_sha256": "309c78ff8c35ff9f93f7764a384d03999e5bf5b00c9ddcea99265df75c04cb80",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12937,7 +12938,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/paolo-bonjour-2.mp3",
       "audio_sha256": "fa722c5c9a48140db849e3bf0eac0a3520db1130f86ec2ff999d871f8bbbc5b5",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12952,7 +12953,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/salut-vincent-2.mp3",
       "audio_sha256": "cc3e5f93a37b50fbd90780b2b8ce1cae227de21bbbc30d327b10d1457f4c2c50",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12973,7 +12974,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-monsieur-6.mp3",
       "audio_sha256": "40dfc7b7ec003ff771e6d282579d1f981d0718f10c7012f6345243f160169f59",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -12994,7 +12995,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/lea-viens-pique-nique.mp3",
       "audio_sha256": "3415bb998980f72b38719f6310420cea5dbdf31c877ed96083c17d525fb028f0",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13009,7 +13010,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-cherche-appartement-1.mp3",
       "audio_sha256": "de22a5d574f19a8e583f83390fae81aa0be7052038270fb16cd7e5aafd53ef37",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13024,7 +13025,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/sos-depannage-j-ecoute-2.mp3",
       "audio_sha256": "918648fdbdd65734e20963065b06c08c7a4103bcd8f8019f1121c88d31710724",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13039,7 +13040,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/sos-depannage-j-ecoute-4.mp3",
       "audio_sha256": "16d0d320fccdeb55bb341c22e9e569c526d0be3b8791ba1e53d84e7b3fd7b472",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13054,7 +13055,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/un-probleme-d-eau-ou-2.mp3",
       "audio_sha256": "2efb5f539ac35c511b7a41b9955ab837372e6f95181f5170e9eb607eb643433a",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13069,7 +13070,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-monsieur-4.mp3",
       "audio_sha256": "2855bf311cfddc142a777c954afca9c9ec0647f0155876d9f65f2eaef2549af9",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13084,7 +13085,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-viens-chercher-theodore.mp3",
       "audio_sha256": "cf4b65cbddcdaaba08066211989abfc227614c74366aaac2923d5e8ed6407382",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13105,7 +13106,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/mon-immeuble-tres-propre-2.mp3",
       "audio_sha256": "c3885d9591d6e4a85ffd6c783944e2fca3e586e869b38e0fa45a42e2c34740a0",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13120,7 +13121,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-garant-allez-bien-2.mp3",
       "audio_sha256": "6cad4472b9c36a8bbb6f8e60938d7b9b09fbe66226ec00549079ec2dfbc1d343",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13141,7 +13142,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-9.mp3",
       "audio_sha256": "d98eafd3580b172675de8d8eb232b9a645e457fe0f3642312ac401a1ca170e6d",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13156,7 +13157,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/maison-benevolat.mp3",
       "audio_sha256": "96b59c4bd9c42c9f76f35a8f08c1f553b9c829d350450971f1ad0f7831952baf",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13177,7 +13178,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-10.mp3",
       "audio_sha256": "3dce8094a66c2e726674fe046c29a00e0fd81a3a29a132be51a6f0d74b5ca725",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13192,7 +13193,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/en-france-beaucoup-d-etudiants-2.mp3",
       "audio_sha256": "848a70826234d5ca8ecd60c4872f632de193e6bfe2d892e638c987d902c60e52",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13207,7 +13208,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/maman-commence-fac-lundi-2.mp3",
       "audio_sha256": "dc3da805dbf3cc286ec1f5368282c446d8f1b5702b918467e979f89bb4f41c02",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13228,7 +13229,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-11.mp3",
       "audio_sha256": "63df5c8c89fc269bb710e6f0df407623467b489fc2ff4fc79a8a57a534860f98",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13243,7 +13244,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/tu-te-couches-tard-2.mp3",
       "audio_sha256": "9353a75cf2afe5d4f4f65782fb4acabd5598bd845df454fdf75f5e605725d0d6",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13264,7 +13265,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-12.mp3",
       "audio_sha256": "c23d1bb5a88fb8ea8eefed5fa0f06322300c62f00c47b21d45da55c7a8e0e988",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13279,7 +13280,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-13.mp3",
       "audio_sha256": "6bbd03bc05e17294a232ec5dc2f181f9d692bebe6c5abefc263e647e14e3f131",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13294,7 +13295,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/salut-louise.mp3",
       "audio_sha256": "7f3acfd815b79d2f061c558e26d4b60b54519641100dffcc1e3a4d1b07124966",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13315,7 +13316,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/c-est-qui-2.mp3",
       "audio_sha256": "3a926f032a0f4ca6c9df522ae78e860aace66e570ea639930c43dcc7e91b240a",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13330,7 +13331,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-14.mp3",
       "audio_sha256": "10935d22b3db5fd3f2a2297177c77ec7ab57dd35124313e918d841880b2c9727",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13345,7 +13346,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/c-est-qui-4.mp3",
       "audio_sha256": "686a804d4b0d69d8e9b64903baba8c26bd55f5e37ae5fecc48120e12a6771f05",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13360,7 +13361,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/cabinet-medical-docteurs-blanc-2.mp3",
       "audio_sha256": "6e5bc10b62e2a4d9e88b501269b2fd08f539976d6a0a2833a5772a04e089ffbf",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13375,7 +13376,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-15.mp3",
       "audio_sha256": "6ee5ea9dfed92015fbdc67976c3a437a6a193c8cfff2e0ae0f9ee35262f4a796",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13390,7 +13391,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-16.mp3",
       "audio_sha256": "649c7619985040d186cd928bc0939311ad07164285e7daec5c8e712738a5bfbe",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13405,7 +13406,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-j-ai-brulure-main-2.mp3",
       "audio_sha256": "ecd75b2e39a7e781f2cc400ec13f2b1dcccfdb552b9f3bd6dc669da2cee83931",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13426,7 +13427,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/excusez-moi-pourriez-m-aider-2.mp3",
       "audio_sha256": "c586c7521d55ec99fc0e2fa5474742a29804537d5fe628aaf2427e4b6edd9c23",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13447,7 +13448,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-17.mp3",
       "audio_sha256": "22d79d8ae6d9e619d6d64cc8c033ee1644d74b48fa6d5c58aed482d2590d621c",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13462,7 +13463,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-voudrais-tickets-2.mp3",
       "audio_sha256": "b2fb948edc0142752cb8b146a1323499f1453d1fc9d710fbc990a0a1649f34b5",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13477,7 +13478,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-avez-plan-2.mp3",
       "audio_sha256": "594924bc8111b4bab3eaf34d61c664752fbc7fd7628f42dbe2811b942c7b5412",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13492,7 +13493,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/j-ai-trouve-offre-parce.mp3",
       "audio_sha256": "0c1fc704d77eb75c0968d8b7db61c7e5ad9d2334c4c9d0284d02a7b2f8c05072",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [],
       "listening_performed": false
@@ -13500,7 +13501,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-sommes-combien-2.mp3",
       "audio_sha256": "3b464bd137ba26bfd2f7c30ee385f8c1cb211361e24845f1f42d172df11a3f71",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13515,7 +13516,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/pardon-j-ai-place-cote-2.mp3",
       "audio_sha256": "453f481ea5ca79a52ed4bf8789d7c59c7ebc3f51fc6390eba5ece349ef357255",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13536,7 +13537,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-quelle-votre-destination-2.mp3",
       "audio_sha256": "504511840086deb07f0612e117976dd785a8cee0822b2267601e4e3689b92157",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13557,7 +13558,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-18.mp3",
       "audio_sha256": "622870813da0df9becf0968e992f22c842c563bf415b7d1be24fab05366fcb7b",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13572,7 +13573,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vous-avez-chambres-disponibles-2.mp3",
       "audio_sha256": "3fd29f94be104515c537009f68934d1cfec52c4bebf04ee2a4f6ab5e96737d19",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13593,7 +13594,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-2.mp3",
       "audio_sha256": "fbe1287c03e0e8023ff7f7a5bd3afa948d5484ce9d265637d8789116fc20f106",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13614,7 +13615,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/actualite/09-actualité-titres-du-jour.mp3",
       "audio_sha256": "1c34737506a6ef5f1c3e8315d5e9ceb8d22bed1d45f6a7b0cbdf0d59cf7ccc24",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13629,7 +13630,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/sante/04-santé-Mme-Deballe-ma-fille-va-mal.mp3",
       "audio_sha256": "238ac344b0e8c2eb27aeb9d7c9524a7b32121c354eeac44936a27c8b1512d8ee",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [],
       "listening_performed": false
@@ -13637,7 +13638,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/sante/06-santé-fumer-c-est-pas-bien.mp3",
       "audio_sha256": "08174cddab0cf4e2bc40d1dd4eb0b63233229d6e543e1e21f1a641e5ae6cc73d",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13652,7 +13653,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/sante/05-santé-prise-de-sang.mp3",
       "audio_sha256": "b32d3b6e845e177a0b0674450a7f927edffe26ef667285790c53c75c5cfb5af3",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13667,7 +13668,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/sante/02-santéconsultation-chez-le-docteur-Abri.mp3",
       "audio_sha256": "0393fa9b9accb150e1a01b20efbb8176dc41d7708a63f1c32b4dd87dae6247f5",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13682,7 +13683,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/loisirs/15-loisirs-parcours-yoga-abonnement.mp3",
       "audio_sha256": "f89cc31b2ebb2a14c3c10e8d105046100b6119542ec4a9269c6b008cf44ef8b3",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13703,7 +13704,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/transports/je-viens-louer-voiture-2.mp3",
       "audio_sha256": "d988c7ebb0bfaad7d896484a41e443e9f8cf910c83d6c87316907da576eb2808",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13724,7 +13725,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/transports/chers-voyageurs-ameliorer-notre-2.mp3",
       "audio_sha256": "7d6d4682dc5182c4b7b4af651d2bdaf787771b1fb5e5e7f8d30bd67b8ec7ab19",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13739,7 +13740,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/transports/bonsoir-viens-d-entendre-l-annonce-2.mp3",
       "audio_sha256": "2b3c721c06c57c5c7f97fdc692ef9c8f89e3af4067217ff2573003d7b7e70621",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13760,7 +13761,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/transports/transports-2.mp3",
       "audio_sha256": "6b4f63a729b5c32779c947259e019d7b6d4fecd84ced0b6f39833d6ae5d27069",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13781,7 +13782,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/transports/bonjour-viens-l-emploi-2.mp3",
       "audio_sha256": "3ea01d1c898f4272f60a69cc47164aa4a730b74416482e2d47231a3342beb5fa",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13802,7 +13803,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/transports/transports-1.mp3",
       "audio_sha256": "c582b46dcd7da5e9bc77114b606f4e8b2ba09879cfa10b017965205134fe31d8",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13823,7 +13824,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/transports/vous-avez-mal-ou-2.mp3",
       "audio_sha256": "ec7366327691d017a4200a515f17d57a0f6a76e36cb0a4cddb3cc5bd5615b3b8",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13844,7 +13845,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/travail/bonjour-week-end-2.mp3",
       "audio_sha256": "801cc4bae2537b6f74990f8470ce775933eca2bcca8374c8bf94e57b7dbcfda3",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13865,7 +13866,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/travail/travail-3.mp3",
       "audio_sha256": "f32ef82e33f49fef3a25bfa5a3d970a264bee37d45432bdeb5ca459c0097deae",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13880,7 +13881,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/travail/vous-etes-france-2.mp3",
       "audio_sha256": "223106cd4968e4499f0d8f3c7f43358d5349d56b4b99a3a1f5a3ad8a7f8bfe16",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13895,7 +13896,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/travail/alors-marianne-pourquoi-prends-2.mp3",
       "audio_sha256": "a94ad2658863ed0cede5c54f3ebe288997ea736ea10c82196f1966f58eca68ca",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13910,7 +13911,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/travail/mesdames-messieurs-2.mp3",
       "audio_sha256": "0929494d7350d9bff2923e5314a89690017b5abcf25d5dfd7bbae5c6458e35fa",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13925,7 +13926,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/travail/travail-1.mp3",
       "audio_sha256": "d6f5d7c9f69f80e6a583d6898534ab17520c903623d390ffe69fbedb145f5130",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13940,7 +13941,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/travail/les-passagers-vol-air-2.mp3",
       "audio_sha256": "8b8555e0a0fc62ce61960f33a5ecc654ee5e669227f7b95a374e54bec3df71f6",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13955,7 +13956,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/travail/pardon-trouve-2.mp3",
       "audio_sha256": "dc00041a86dbdef2e569bce838b133cc5e85989c9bb713efa2cdd9189bd3ba97",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13970,7 +13971,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/travail/chloe-as-deja-ta-2.mp3",
       "audio_sha256": "00f6ce474d2494ec5943f2a42833276abce6242915e00d395777fdd0e15de93b",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -13985,7 +13986,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/travail/bonjour-bienvenue-camping-beau-2.mp3",
       "audio_sha256": "95ba83b22fef042593ef6daa076a6037c7e2a389fca665bac428d5e7b7d3e00a",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -14000,7 +14001,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/travail/travail-2.mp3",
       "audio_sha256": "212b41147846d0206445caf8f014cb9509e3fa5047d562bad9734406be3a4a97",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -14015,7 +14016,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/magasins/c-est-qui-2.mp3",
       "audio_sha256": "486636471f188efc33cc3ffbfcc8c9977fd46f5827a6bfa4658c3cb53fb26fa4",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -14036,7 +14037,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/magasins/c-est-question-d-equilibre-2.mp3",
       "audio_sha256": "c063914009347c5d3571d2b7247aca42624b1216da964f65fb6a37d59fd80b1c",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -14057,7 +14058,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/magasins/magasins-1.mp3",
       "audio_sha256": "88242cffe3883fbde742f7da655cde23682fb6d92dcb8428afb2cc524d48d814",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -14078,7 +14079,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/magasins/allo-docteur-roux-2.mp3",
       "audio_sha256": "590cd96b0be3d3d761d3954bf8fceaec5cb3f2120d2f2cf7de5d184509b43cd4",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -14093,7 +14094,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/magasins/le-nouveau-cabinet-medical-2.mp3",
       "audio_sha256": "a300d640c6ab083316511eaff7e03bd49c5be1ff9bbfaebb6e81bbf754814654",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -14114,7 +14115,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/magasins/tu-as-fait-ta.mp3",
       "audio_sha256": "990a552e6d4b62cab1a7467d3b990165a9e7fda9b4a5f361955cb01439fd1d65",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -14135,7 +14136,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/scènes courtes/12-quotidien-où-acheter-le-journal.mp3",
       "audio_sha256": "badd9821ebd62bd337a1d72ad6d994706672170c09b4880f292b752e73c4a346",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -14150,7 +14151,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/scènes courtes/13-maison-conversation-crise-économique.mp3",
       "audio_sha256": "61500bdbb667c41f85e12f66f2aaceac56125a4fc15dc56b856ef3f36eac3cdf",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -14171,7 +14172,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/scènes courtes/14-maison-conversation-musée-gratuit.mp3",
       "audio_sha256": "bcf596bbb8341c396875fc1f6c06f8e03bf769f0808387363ba2137288c551f3",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {
@@ -14186,7 +14187,7 @@
     {
       "old_ref": "/lib/audio/tcf/co/scènes courtes/15-maison-conversation-accident-camion.mp3",
       "audio_sha256": "6f7bd9304a26d1539a97cc8a2a7a7b0b7e8189533598f0df902ed246ab4b5e98",
-      "status": "received_source_not_found_current_audio_retranscribed",
+      "status": "retired_at_user_request",
       "native_text_candidates": [],
       "bank_to_current_recording_candidates": [
         {

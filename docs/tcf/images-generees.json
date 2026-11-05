@@ -26720,6 +26720,178 @@
       "bytes": 199144,
       "domain": "co",
       "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-librairie-municipale-dessine",
+      "label": "À la librairie municipale",
+      "path": "/lib/images/tcf/qcm-audit/co306-librairie-municipale-dessine.webp",
+      "prompt": "Recomposer les références dans le style habituel de DESSIN numérique PEINT semi-réaliste : contours fins discrets, modelé doux, couleurs naturelles chaleureuses, matières et visages peints. Pas de photo, de texture photographique de peau, de rendu 3D, de gros contour noir. PAYSAGE EXACT 4:3, 1448 pixels de large sur 1086 de haut. Une illustration claire, sujets principaux complets avec marges. Aucun prix, montant, date, jour, mois, horaire, chiffre, marque ou légende. Seules les courtes inscriptions naturelles explicitement demandées sont autorisées. Pas de copie des personnes ou des objets de la dernière référence de style, seulement sa technique peinte. Façade complète d’une petite LIBRAIRIE MUNICIPALE : vitrine avec livres en vente sur présentoirs et porte ouverte montrant rayonnages et petite caisse. Au-dessus, enseigne naturelle LIBRAIRIE MUNICIPALE correctement écrite. Ce n’est pas une bibliothèque de prêt. Aucun prix, montant, affiche d’événement, numéro, autre texte, personne ou boisson.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-a1-s1-co-2",
+          "question": 5,
+          "choice": "c",
+          "label": "À la librairie municipale",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-rayon-librairie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-entree-magasin-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "source_png": "/workspace/generated_images/exec-7aff2cc3-5765-450e-af20-94878250cf70.png",
+      "review_note": "Façade entière de librairie avec présentoirs de livres, rayonnages et caisse visibles, enseigne LIBRAIRIE MUNICIPALE lisible ; aucune personne, date ou prix. Trait peint doux et couleurs chaudes comparés aux références 48a753d8, sans contour noir appuyé ; rapport natif 1448 × 1086 exactement 4:3.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ],
+        "review_note": "Façade entière de librairie avec présentoirs de livres, rayonnages et caisse visibles, enseigne LIBRAIRIE MUNICIPALE lisible ; aucune personne, date ou prix. Trait peint doux et couleurs chaudes comparés aux références 48a753d8, sans contour noir appuyé ; rapport natif 1448 × 1086 exactement 4:3."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "7f042ebd61de55c7e98a0da1e04e5c7a12503303c2a6600faf93d827446490f0",
+      "sha256": "8d39e4ccd529afeb6e5442f3d7bad875ed5d7ee880e6d3f6a702c3479c8ddae2",
+      "bytes": 217952,
+      "status": "visually_reviewed",
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-sortie-magasin-dessine",
+      "label": "La sortie du magasin",
+      "path": "/lib/images/tcf/qcm-audit/co306-sortie-magasin-dessine.webp",
+      "prompt": "Recomposer les références dans le style habituel de DESSIN numérique PEINT semi-réaliste : contours fins discrets, modelé doux, couleurs naturelles chaleureuses, matières et visages peints. Pas de photo, de texture photographique de peau, de rendu 3D, de gros contour noir. PAYSAGE EXACT 4:3, 1448 pixels de large sur 1086 de haut. Une illustration claire, sujets principaux complets avec marges. Aucun prix, montant, date, jour, mois, horaire, chiffre, marque ou légende. Seules les courtes inscriptions naturelles explicitement demandées sont autorisées. Pas de copie des personnes ou des objets de la dernière référence de style, seulement sa technique peinte. Vue DEPUIS L’INTÉRIEUR d’un magasin de vêtements VERS LA SORTIE : portants et vêtements dans les marges, grandes portes vitrées ouvertes montrant trottoir et rue dehors. Au-dessus, panneau naturel SORTIE avec pictogramme de sortie et flèche pointant vers dehors. L’espace doit montrer clairement qu’on quitte le magasin, pas son entrée vue de la rue, un musée ou une caisse. Aucune personne, étiquette de prix, affiche, chiffre, autre inscription ou boisson.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a2-s14-co-4",
+          "question": 1,
+          "choice": "a",
+          "label": "La sortie du magasin",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-entree-magasin-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-rayon-vetements-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "status": "visually_reviewed",
+      "source_png": "/workspace/generated_images/exec-8f9ea6f0-accc-4e33-9912-dd7003b09f8e.png",
+      "review_note": "Vue depuis les portants intérieurs vers la rue, portes ouvertes et panneau SORTIE ; sens de sortie visible, sans prix ni date. Paysage natif exact 1448 × 1086, modelé doux, contours fins et couleurs chaudes comparés aux références validées 48a753d8.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ],
+        "review_note": "Vue depuis les portants intérieurs vers la rue, portes ouvertes et panneau SORTIE ; sens de sortie visible, sans prix ni date. Paysage natif exact 1448 × 1086, modelé doux, contours fins et couleurs chaudes comparés aux références validées 48a753d8."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "c7a4b2b546f456b70a201ee18e2f1777e0c394f49a9b3699c34868afedaf3f00",
+      "sha256": "7f44d679798a5a5e4da537d2a87a5ea770e0ac31d95fb68c39f862cade318012",
+      "bytes": 202534,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-entree-musee-dessine",
+      "label": "L’entrée du musée",
+      "path": "/lib/images/tcf/qcm-audit/co306-entree-musee-dessine.webp",
+      "prompt": "Recomposer les références dans le style habituel de DESSIN numérique PEINT semi-réaliste : contours fins discrets, modelé doux, couleurs naturelles chaleureuses, matières et visages peints. Pas de photo, de texture photographique de peau, de rendu 3D, de gros contour noir. PAYSAGE EXACT 4:3, 1448 pixels de large sur 1086 de haut. Une illustration claire, sujets principaux complets avec marges. Aucun prix, montant, date, jour, mois, horaire, chiffre, marque ou légende. Seules les courtes inscriptions naturelles explicitement demandées sont autorisées. Pas de copie des personnes ou des objets de la dernière référence de style, seulement sa technique peinte. Vue extérieure de L’ENTRÉE D’UN MUSÉE : façade classique entière, grandes portes ouvertes, seul mot MUSÉE correctement accentué sur la façade, tableaux encadrés et une sculpture visibles à l’intérieur. Petite allée menant aux portes, pas de sortie vue depuis le musée, pas de boutique ou caisse de restaurant. Aucun prix de billet, affiche, date, numéro, autre texte, boisson ou personne.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a2-s14-co-4",
+          "question": 1,
+          "choice": "b",
+          "label": "L’entrée du musée",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co306-musee-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "status": "visually_reviewed",
+      "source_png": "/workspace/generated_images/exec-40a9e71f-b563-49c9-9177-91f6a1a9d133.png",
+      "review_note": "Entrée extérieure entière, portes ouvertes, tableaux et sculpture visibles, inscription MUSÉE ; aucun visiteur ou prix. Paysage natif exact 1448 × 1086, modelé doux, contours fins et couleurs chaudes comparés aux références validées 48a753d8.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ],
+        "review_note": "Entrée extérieure entière, portes ouvertes, tableaux et sculpture visibles, inscription MUSÉE ; aucun visiteur ou prix. Paysage natif exact 1448 × 1086, modelé doux, contours fins et couleurs chaudes comparés aux références validées 48a753d8."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "cec9c5b85ab956faf8ce7bb6ed19684da7f98d95184fcd7766d0834bb0b7603e",
+      "sha256": "45b7d869883cb324424c1bf47b7756342fe5f20ac59ad34e27fc9be0cbad8b54",
+      "bytes": 260246,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-caisse-restaurant-dessine",
+      "label": "La caisse du restaurant",
+      "path": "/lib/images/tcf/qcm-audit/co306-caisse-restaurant-dessine.webp",
+      "prompt": "Recomposer les références dans le style habituel de DESSIN numérique PEINT semi-réaliste : contours fins discrets, modelé doux, couleurs naturelles chaleureuses, matières et visages peints. Pas de photo, de texture photographique de peau, de rendu 3D, de gros contour noir. PAYSAGE EXACT 4:3, 1448 pixels de large sur 1086 de haut. Une illustration claire, sujets principaux complets avec marges. Aucun prix, montant, date, jour, mois, horaire, chiffre, marque ou légende. Seules les courtes inscriptions naturelles explicitement demandées sont autorisées. Pas de copie des personnes ou des objets de la dernière référence de style, seulement sa technique peinte. Comptoir de CAISSE D’UN RESTAURANT avec caisse enregistreuse à écran vide et petit terminal à écran sans chiffres, dans salle à tables dressées, assiettes, couverts et verres. Une responsable fictive libanaise de 45 ans aux cheveux bruns bouclés et chemisier bleu est derrière le comptoir. Le seul mot CAISSE apparaît sur une petite plaque naturelle. Le cadre de restaurant est évident derrière la caisse, aucune allée de supermarché, prix, menu lisible, montant, ticket chiffré ou autre personne.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a2-s14-co-4",
+          "question": 1,
+          "choice": "c",
+          "label": "La caisse du restaurant",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-caisse-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "status": "visually_reviewed",
+      "source_png": "/workspace/generated_images/exec-6d154e3d-7906-4cb8-834b-b71a1e2c8fc2.png",
+      "review_note": "Caisse et terminal à écrans vides dans un restaurant aux tables dressées ; responsable aux cheveux bouclés, mains naturelles ; inscription CAISSE sans montant. Paysage natif exact 1448 × 1086, modelé doux, contours fins et couleurs chaudes comparés aux références validées 48a753d8.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+        ],
+        "review_note": "Caisse et terminal à écrans vides dans un restaurant aux tables dressées ; responsable aux cheveux bouclés, mains naturelles ; inscription CAISSE sans montant. Paysage natif exact 1448 × 1086, modelé doux, contours fins et couleurs chaudes comparés aux références validées 48a753d8."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "4210991791d17b898557bf371c7fea6c32907b1947b2d89642b4542c4c27b527",
+      "sha256": "0d7751946d4c7f6377fb75cb15424be1dab523b8c54f9bef40e6c9a551b4b038",
+      "bytes": 182772,
+      "domain": "co",
+      "batch": "active-audios-834"
     }
   ],
   "activated_questions": [
@@ -31846,6 +32018,47 @@
       "source_ids": [
         "delf_a2_2021:047:e87bc7820c88"
       ]
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-a1-s1-co-2",
+      "question": 5,
+      "enonce": "Où faut-il demander le bon de participation ?",
+      "images": [
+        "/lib/images/tcf/qcm-audit/co834-caisse-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-entree-magasin-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-librairie-municipale-dessine.webp"
+      ],
+      "source_batch": "active-audios-834",
+      "status": "active_after_visual_review",
+      "source_support_review": "Trio caisse, entrée du magasin et librairie municipale relu ; la caisse est explicitement indiquée. Style peint 48a753d8 et rapport 4:3 des trois images contrôlés. Transcription relue : Chers clients, courez vite au rayon librairies. Depuis 14 heures et jusqu'à 16 heures seulement pour un livre acheté, un deuxième offert. And n'oubliez pas de demander à la caisse un bond pour participer au grand tirage au sort à 19h. et gagner deux entrées gratuites pour le festival du livre qui commence demain.",
+      "source_old_refs": [
+        "/lib/audio/tcf/co/radio/a-la-librairie.mp3"
+      ],
+      "source_ids": [
+        "delf_a1_2022:089:d43462913b14"
+      ]
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-ss-a2-s14-co-4",
+      "question": 1,
+      "enonce": "Que cherche la personne ?",
+      "images": [
+        "/lib/images/tcf/qcm-audit/co306-sortie-magasin-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-entree-musee-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-caisse-restaurant-dessine.webp"
+      ],
+      "source_batch": "active-audios-834",
+      "status": "active_after_visual_review",
+      "source_support_review": "Trio sortie du magasin, entrée du musée et caisse du restaurant relu ; orientation intérieure vers extérieur clairement visible pour la sortie. Style peint 48a753d8 et rapport 4:3 des trois images contrôlés. Transcription relue : Excusez-moi, monsieur, je suis perdue. Où est la sortie du magasin? C'est au fond, à droite, derrière les vêtements. Ah, très bien, merci. Bonne journée.",
+      "source_old_refs": [
+        "/lib/audio/tcf/co/vie-quotidienne/alors-isabelle-week-end-2-1.mp3"
+      ],
+      "source_ids": [
+        "9782090351958:017:97a669e41198",
+        "additional-20261102:mdf-a2-abc-junior-direct:17:97a669e41198:1bf5e804"
+      ]
     }
   ],
   "pending": [],
@@ -31978,16 +32191,6 @@
   "activated_association_scenes": [
     {
       "bank": "src/tcf/content/a1-a2/co.json",
-      "exercise": "tcf-a2-s1-co-4",
-      "situation": "s1",
-      "dialogue": 1,
-      "image": "/lib/images/tcf/co/scenes/vie-quotidienne/les-dialogues-du-quotidien-1-audite.webp",
-      "sha256": "2470e8a0243f4b28d41290ffdfbe2926c5a14a430aa3d2a4ff4f47d6e25a4222",
-      "source_batch": "active-audios-834",
-      "review_note": "Deux personnes au bord d’une place, geste vers les rues de l’autre côté ; aucun bus ni numéro de ligne contradictoire."
-    },
-    {
-      "bank": "src/tcf/content/a1-a2/co.json",
       "exercise": "tcf-a2-sb-co-4",
       "situation": "s1",
       "dialogue": 1,
@@ -32045,66 +32248,6 @@
       "sha256": "b36d873ee8939ce4cc0b68d06ff360c540a076dbeac3500642b924814a7d15cb",
       "source_batch": "active-audios-834",
       "review_note": "Gonflage de roue de vélo dans un atelier ; distinct des quatre dialogues d’achat, cuisine et examens."
-    },
-    {
-      "bank": "src/tcf/content/a1-a2/co.json",
-      "exercise": "tcf-a2-sc-co-4",
-      "situation": "s1",
-      "dialogue": 1,
-      "image": "/lib/images/tcf/co/scenes/vie-quotidienne/la-famille-2-1.webp",
-      "sha256": "161d1b21807bc5eb9a4e45c516a8434846c0031fe4bb90e8856a12948eda9941",
-      "source_batch": "active-audios-834",
-      "review_note": "La femme demande le prêt du téléphone tenu par l’homme ; ils se parlent face à face, aucun appel déjà commencé."
-    },
-    {
-      "bank": "src/tcf/content/a1-a2/co.json",
-      "exercise": "tcf-a2-sc-co-4",
-      "situation": "s2",
-      "dialogue": 2,
-      "image": "/lib/images/tcf/co/scenes/vie-quotidienne/la-famille-2-2.webp",
-      "sha256": "c0c38116dc1c84aebd64da62455d709f9e65de39c2dec4f1d9d0ff11a982643e",
-      "source_batch": "active-audios-834",
-      "review_note": "Lycéen avec la main sur le front, mère inquiète et affaires scolaires ; scène fidèle au mal de tête avant les cours."
-    },
-    {
-      "bank": "src/tcf/content/a1-a2/co.json",
-      "exercise": "tcf-a2-sc-co-4",
-      "situation": "s3",
-      "dialogue": 3,
-      "image": "/lib/images/tcf/co/scenes/vie-quotidienne/la-famille-2-3.webp",
-      "sha256": "1334c559d0a618a05e156a3baefbda802502d4421cc906ae4c273c657c156a94",
-      "source_batch": "active-audios-834",
-      "review_note": "Deux garçons discutent devant une salle de musique ; cahier de portées vides et élève inquiet, aucun concert."
-    },
-    {
-      "bank": "src/tcf/content/a1-a2/co.json",
-      "exercise": "tcf-a2-sc-co-4",
-      "situation": "s4",
-      "dialogue": 4,
-      "image": "/lib/images/tcf/co/scenes/vie-quotidienne/la-famille-2-4.webp",
-      "sha256": "3b56f3566e1d67dbeaeaf3434bf97a6337fe47bfefbcd9de11d22f8756652932",
-      "source_batch": "active-audios-834",
-      "review_note": "Grand-mère au téléphone devant deux couverts dont une place vide, pour le déjeuner oublié ; aucun horaire visible."
-    },
-    {
-      "bank": "src/tcf/content/a1-a2/co.json",
-      "exercise": "tcf-a2-sc-co-4",
-      "situation": "l1",
-      "dialogue": null,
-      "image": "/lib/images/tcf/co/scenes/vie-quotidienne/la-famille-2-leurre-1.webp",
-      "sha256": "0d7a36ddf7969c2b35cf7bed0b03e7f1d960e49424e1b7e981348b84b2d9f661",
-      "source_batch": "active-audios-834",
-      "review_note": "Achat de légumes au marché, sans téléphone ni école ni repas familial ; ne correspond à aucun dialogue."
-    },
-    {
-      "bank": "src/tcf/content/a1-a2/co.json",
-      "exercise": "tcf-a2-sc-co-4",
-      "situation": "l2",
-      "dialogue": null,
-      "image": "/lib/images/tcf/co/scenes/vie-quotidienne/la-famille-2-leurre-2.webp",
-      "sha256": "2e91648e03ea1847d24ac46f663c2f631bc703ec064de001b4f371d1b082a094",
-      "source_batch": "active-audios-834",
-      "review_note": "Partie de tennis en plein air ; ne correspond à aucun dialogue de cette série."
     }
   ],
   "required_co_image_format": {
