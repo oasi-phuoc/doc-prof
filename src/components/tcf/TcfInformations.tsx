@@ -1,51 +1,66 @@
-import type { TcfCompetence } from '@/tcf/types'
+import type { TcfCompetence, TcfNiveau } from '@/tcf/types'
 import { CompetenceIcon } from './CompetenceIcon'
 
-const PARTIES: ReadonlyArray<{ id: TcfCompetence; titre: string; texte: string; deroulement: string }> = [
+type Partie = {
+  id: TcfCompetence
+  titre: string
+  slogan: string
+  exercices: (niveau: TcfNiveau) => number
+}
+
+const PARTIES: readonly Partie[] = [
   {
     id: 'CE',
-    titre: 'compréhension écrite',
-    texte: 'Lire et comprendre des textes (messages, consignes, articles) et répondre à des questions.',
-    deroulement: 'Lisez le document, puis répondez sur la fiche.',
+    titre: 'Compréhension écrite',
+    slogan: 'Je lis.',
+    exercices: () => 4,
   },
   {
     id: 'CO',
-    titre: 'compréhension orale',
-    texte: 'Écouter des documents audio et repérer les informations essentielles.',
-    deroulement: 'Scannez le QR code ou écoutez l’enregistrement diffusé en classe.',
+    titre: 'Compréhension orale',
+    slogan: 'J’écoute.',
+    exercices: (niveau) => (niveau === 'A0-A1' ? 5 : 4),
   },
   {
     id: 'PE',
-    titre: 'production écrite',
-    texte: 'Remplir un formulaire, compléter un dialogue, écrire un message et un e-mail.',
-    deroulement: 'Écrivez sur les lignes et respectez le nombre de mots indiqué.',
+    titre: 'Production écrite',
+    slogan: 'J’écris en français.',
+    exercices: () => 4,
   },
   {
     id: 'PO',
-    titre: 'production orale',
-    texte: 'Entretien dirigé, poser des questions sur un thème, décrire une image puis jouer une situation.',
-    deroulement: 'Face à l’examinateur·trice ; la fiche sert de support.',
+    titre: 'Production orale',
+    slogan: 'Je parle en français.',
+    exercices: () => 3,
   },
 ]
 
+function exercicesLabel(n: number): string {
+  return n <= 1 ? `${n} exercice` : `${n} exercices`
+}
+
 /** Page 1 du TPF / TCF : les quatre parties du test. */
-export function TcfInformations() {
+export function TcfInformations({ niveau }: { niveau: TcfNiveau }) {
   return (
     <div className="tcf-info">
-      <p className="tcf-info-lead">Il est organisé en quatre parties :</p>
       <ul className="tcf-info-parties">
-        {PARTIES.map((p) => (
-          <li key={p.id} className="tcf-info-partie">
-            <CompetenceIcon competence={p.id} />
-            <div>
-              <p className="tcf-info-partie-title">
-                <b>{p.id}</b> — {p.titre}
-              </p>
-              <p className="tcf-info-partie-text">{p.texte}</p>
-              <p className="tcf-info-partie-how">{p.deroulement}</p>
-            </div>
-          </li>
-        ))}
+        {PARTIES.map((p, i) => {
+          const n = p.exercices(niveau)
+          return (
+            <li key={p.id} className="tcf-info-partie">
+              <span className="tcf-info-num" aria-hidden="true">
+                {i + 1}
+              </span>
+              <CompetenceIcon competence={p.id} />
+              <div className="tcf-info-texte">
+                <p className="tcf-info-partie-title">{p.titre}</p>
+                <p className="tcf-info-partie-slogan">{p.slogan}</p>
+                <p className="tcf-info-partie-count">{exercicesLabel(n)}</p>
+              </div>
+              <span className="tcf-info-points">25 pts</span>
+            </li>
+          )
+        })}
       </ul>
     </div>
   )

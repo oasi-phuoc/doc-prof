@@ -4720,16 +4720,49 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-mail-label{text-align:center;font-size:calc(8.5pt * var(--app-font-scale, 1));padding-bottom:.5mm}
 .tcf-mail-value{min-height:5.5mm;display:flex;align-items:flex-end;padding:0 1mm .5mm;border-bottom:1px solid var(--ink);font-size:calc(9.5pt * var(--app-font-scale, 1))}
 
-/* —— TCF : page 1 Informations (icônes en couleur du thème) —— */
-.tcf-info{display:flex;flex-direction:column;gap:10px}
-.tcf-info-lead{margin:4px 0 0;font-weight:700}
-.tcf-info-parties{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
-.tcf-info-partie{display:flex;align-items:flex-start;gap:14px}
-.tcf-competence-icon{flex:0 0 auto;display:block;width:15mm;height:15mm;background:var(--purple);-webkit-mask:no-repeat center/contain;mask:no-repeat center/contain;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-.tcf-info-partie-title{margin:0 0 2px;font-size:1.05em}
-.tcf-info-partie-title b{color:var(--purple)}
-.tcf-info-partie-text{margin:0;text-align:justify;line-height:1.35}
-.tcf-info-partie-how{margin:2px 0 0;font-size:.85em;color:var(--muted);font-style:italic}
+/* —— TCF : page 1 Informations (cadres colorés, 4 parties) —— */
+.sheet-body:has(.tcf-info)>.exercise-block{flex:1 1 auto;min-height:0;display:flex;flex-direction:column}
+.sheet-body:has(.tcf-info) .exercise-grid{flex:1 1 auto;display:flex;flex-direction:column;grid-auto-rows:unset}
+.sheet-body:has(.tcf-info) .exercise-item.layout-tcf{flex:1 1 auto;min-height:0;display:flex;flex-direction:column}
+.tcf-info{display:flex;flex-direction:column;gap:0;flex:1;min-height:0;width:100%}
+.tcf-info-parties{
+  list-style:none;margin:0;padding:0;flex:1;min-height:0;
+  display:flex;flex-direction:column;gap:4mm
+}
+.tcf-info-partie{
+  flex:1;min-height:0;
+  display:grid;
+  grid-template-columns:14mm 18mm 1fr 28mm;
+  align-items:center;gap:3.5mm;
+  padding:3.5mm 4mm;
+  border:1.5px solid color-mix(in srgb,var(--purple) 45%,var(--line));
+  border-radius:3mm;
+  background:color-mix(in srgb,var(--purple) 8%,#fff);
+  -webkit-print-color-adjust:exact;print-color-adjust:exact
+}
+.tcf-info-num{
+  display:flex;align-items:center;justify-content:center;
+  font-size:calc(28pt * var(--app-font-scale, 1));font-weight:800;line-height:1;
+  color:var(--purple);font-variant-numeric:tabular-nums
+}
+.tcf-competence-icon{
+  flex:0 0 auto;display:block;width:16mm;height:16mm;justify-self:center;
+  background:var(--purple);-webkit-mask:no-repeat center/contain;mask:no-repeat center/contain;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact
+}
+.tcf-info-texte{min-width:0;display:flex;flex-direction:column;gap:1mm}
+.tcf-info-partie-title{margin:0;font-size:calc(13pt * var(--app-font-scale, 1));font-weight:700;color:var(--ink)}
+.tcf-info-partie-slogan{margin:0;font-size:calc(11pt * var(--app-font-scale, 1));line-height:1.25}
+.tcf-info-partie-count{margin:0;font-size:calc(10pt * var(--app-font-scale, 1));color:var(--muted)}
+.tcf-info-points{
+  display:flex;align-items:center;justify-content:center;align-self:stretch;
+  margin:-3.5mm -4mm -3.5mm 0;padding:0 3mm;
+  border-radius:0 2.2mm 2.2mm 0;
+  background:var(--purple);color:#fff;
+  font-size:calc(12pt * var(--app-font-scale, 1));font-weight:800;letter-spacing:.02em;
+  white-space:nowrap;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact
+}
 /* —— TCF : panneau admin —— */
 .tcf-editor{gap:8px}
 .tcf-bank-question-list{

@@ -519,7 +519,7 @@ export const TCF_EXERCISE_TYPES: ExerciseType[] = [
     id: TCF_CONSIGNES_TYPE,
     topic: TCF_INFO_TOPIC,
     label: 'Informations du test',
-    description: 'Page d’informations : les quatre parties du test.',
+    description: 'Page d’informations : quatre cadres (CE, CO, PE, PO), 25 pts chacun.',
     instruction: '',
     visual: 'texte',
     preferredColumns: 1,
