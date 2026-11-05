@@ -1,9 +1,9 @@
 {
   "priority": "Terminer ce lot avant les autres tâches",
   "initial_questions": 57,
-  "completed_questions": 40,
-  "new_images": 87,
-  "remaining_questions": 17,
+  "completed_questions": 49,
+  "new_images": 110,
+  "remaining_questions": 8,
   "remaining": [
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -56,60 +56,9 @@
         "Le petit déjeuner",
         "Le déjeuner du lendemain"
       ],
-      "ready_for_source_review": false
-    },
-    {
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "tcf-ss-a1-s35-co-4",
-      "question": 6,
-      "enonce": "Quel type de cours leur est alors proposé ?",
-      "audio": null,
-      "choices": [
-        {
-          "id": "a",
-          "texte": "Un cours pour débutants",
-          "correct": true,
-          "existing_image": null,
-          "asset": "a0b56de6696b"
-        },
-        {
-          "id": "b",
-          "texte": "Un cours pour professionnels",
-          "correct": false,
-          "existing_image": null,
-          "asset": "ecfb6029a38c"
-        },
-        {
-          "id": "c",
-          "texte": "Un cours réservé aux enfants",
-          "correct": false,
-          "existing_image": null,
-          "asset": "c0204049b589"
-        }
-      ],
-      "status": "pending_images",
-      "linked_source_ids": [
-        "grammar-import-20261104:file_00000000514081f4b4d0fd2f556774ac"
-      ],
-      "source_links": [
-        {
-          "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-fait.mp3",
-          "source_id": "grammar-import-20261104:file_00000000514081f4b4d0fd2f556774ac",
-          "candidate_cut_id": "grammar-import-20261104-file_00000000514081f4b4d0fd2f556774ac-d1",
-          "transcription": "Bonjour madame. Il ne fait pas très beau aujourd'hui et je voudrais savoir quelles activités vous proposez. Ce matin, il ne pleut pas, et je peux vous proposer une sortie en canoé kayak à 10 heures, ou un cours de voile à 11 heures. Les deux activités durent deux heures. Euh. Je ne sais pas. Je peux vous proposer aussi un cours d'escalade à 11 heures. Il dure deux heures aussi. Ah oui. C'est bien l'escalade, non ? Oui, c'est très bien. Mais nous ne savons pas faire d'escalade. Il y a un cours pour les débutants. Vous voulez vous inscrire ? Oui, s'il vous plaît."
-        }
-      ],
-      "resolved_images": [
-        null,
-        null,
-        null
-      ],
-      "missing_labels": [
-        "Un cours pour débutants",
-        "Un cours pour professionnels",
-        "Un cours réservé aux enfants"
-      ],
-      "ready_for_source_review": false
+      "ready_for_source_review": false,
+      "editorial_decision": "retain_text_answers",
+      "editorial_reason": "Le lendemain est une relation temporelle que les images de repas ne prouvent pas ; conserver les choix texte complets."
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -162,7 +111,9 @@
         "Dans le train suivant",
         "À l'office du tourisme"
       ],
-      "ready_for_source_review": false
+      "ready_for_source_review": false,
+      "editorial_decision": "retain_text_answers",
+      "editorial_reason": "Un train générique ne prouve pas le train suivant. Conserver la relation temporelle dans les choix texte."
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -215,7 +166,9 @@
         "Des départs trop tôt",
         "Des arrêts trop courts"
       ],
-      "ready_for_source_review": false
+      "ready_for_source_review": false,
+      "editorial_decision": "retain_text_answers",
+      "editorial_reason": "La fréquence des retards, des départs trop tôt et des arrêts trop courts ne se distingue pas fidèlement avec trois images seules."
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -268,60 +221,9 @@
         "Le repas de demain midi",
         "Le petit déjeuner"
       ],
-      "ready_for_source_review": false
-    },
-    {
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "delf-a1-2022-co-ex4-47",
-      "question": 5,
-      "enonce": "Pourquoi faut-il se dépêcher ?",
-      "audio": 2,
-      "choices": [
-        {
-          "id": "a",
-          "texte": "Le cours commence maintenant",
-          "correct": true,
-          "existing_image": null,
-          "asset": "ebb65953b89c"
-        },
-        {
-          "id": "b",
-          "texte": "Le cours est annulé",
-          "correct": false,
-          "existing_image": null,
-          "asset": "3eaa4d879a90"
-        },
-        {
-          "id": "c",
-          "texte": "Le cours est terminé",
-          "correct": false,
-          "existing_image": null,
-          "asset": "cde13aecb6d6"
-        }
-      ],
-      "status": "pending_images",
-      "linked_source_ids": [
-        "delf_a1_2022:047:93d18cf6dd78"
-      ],
-      "source_links": [
-        {
-          "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_47-2.mp3",
-          "source_id": "delf_a1_2022:047:93d18cf6dd78",
-          "candidate_cut_id": "delf_a1_2022-047-93d18cf6dd78-d2",
-          "transcription": "C'est à quelle heure le cours de dessin? A 2h30 Mais il est 2h30 Vite"
-        }
-      ],
-      "resolved_images": [
-        null,
-        null,
-        null
-      ],
-      "missing_labels": [
-        "Le cours commence maintenant",
-        "Le cours est annulé",
-        "Le cours est terminé"
-      ],
-      "ready_for_source_review": false
+      "ready_for_source_review": false,
+      "editorial_decision": "retain_text_answers",
+      "editorial_reason": "Ce soir et demain midi ne peuvent être distingués par des images de repas seules ; aucune date ou jour en image."
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -379,7 +281,8 @@
       "audio_review_issue": {
         "status": "pending_source_audio_review",
         "reason": "La réponse actuelle indique caisses automatiques, mais le support préparé dit seulement caisses situées au fond du magasin. Vérifier l’alignement et l’audio avant activation ; ne pas ajouter ce qualificatif par l’image."
-      }
+      },
+      "editorial_decision": "pending_source_audio_validation"
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -435,7 +338,8 @@
       "audio_review_issue": {
         "status": "pending_source_audio_review",
         "reason": "La bonne réponse actuelle est « À la caisse de la librairie » ; la transcription préparée indique « à l’accueil de la librairie ». Écouter le candidat et vérifier son alignement avant de corriger les choix et d’activer les images."
-      }
+      },
+      "editorial_decision": "pending_source_audio_validation"
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -501,378 +405,8 @@
             "transcription": "La salle informatique est fermée pour travaux. Si vous devez travailler sur les ordinateurs, vous pouvez aller à la bibliothèque. Profitez-en aussi pour visiter le nouveau rayon DVD."
           }
         ]
-      }
-    },
-    {
-      "bank": "src/tcf/content/a2-b1/co.json",
-      "exercise": "tcf-ss-b1-s1-co-1",
-      "question": 9,
-      "enonce": "Où faut-il déposer le bulletin de concours rempli ?",
-      "audio": null,
-      "choices": [
-        {
-          "id": "a",
-          "texte": "Dans la boîte à la sortie du magasin",
-          "correct": true,
-          "existing_image": null,
-          "asset": "0c34d452726a"
-        },
-        {
-          "id": "b",
-          "texte": "Au rayon informatique",
-          "correct": false,
-          "existing_image": null,
-          "asset": "ec8bb215ef52"
-        },
-        {
-          "id": "c",
-          "texte": "À l'entrée du parking",
-          "correct": false,
-          "existing_image": null,
-          "asset": "190b6defe6e6"
-        }
-      ],
-      "status": "pending_images",
-      "linked_source_ids": [
-        "09035196:033:d3440a21d221",
-        "additional-20261102:mdf-b1-abc-junior-direct:33:d3440a21d221:f36e64fe"
-      ],
-      "source_links": [
-        {
-          "old_ref": "/lib/audio/tcf/co/magasins/achats-annonce-3.mp3",
-          "source_id": "09035196:033:d3440a21d221",
-          "candidate_cut_id": "09035196-033-d3440a21d221-d1",
-          "transcription": "Chérie, quand est-ce qu'on achète une machine à laver? J'ai bien peur que ce mois-ci on ait pas le budget. Tu es sûr? Ils ont fait des promos de folie chez Toupa Cher. Eh oui, chez Toupa Cher nous portons bien notre nom. Cette semaine, pour vous satisfaire, de très nombreuses promotions au rayon jeux vidéo, électroménager et informatique. Vous bénéficiez de 30% sur tous les jeux vidéo. Vous pourrez acheter l'électroménager et les meilleures marques d'ordinateurs avec 20% de réduction et 10% pour la téléphonie. Pour vous permettre d'en profiter plus longtemps, nous ouvrirons jusqu'à 21h tous les soirs et nous avons prolongé la période de promotion de deux jours. Notre magasin tient à la qualité de l'accueil. Pour cela, vous avez la possibilité d'être accompagné et conseillés dans vos achats. Vous pourrez demander aux points, accueil et information, tout ce qui vous est utile. 15 hôtesse d'accueil peuvent vous répondre toute la journée dans les différents points du magasin. Elles vous accompagneront si nécessaire dans les rayons que vous cherchez et vous dirigeront vers les produits intéressants. N'hésitez pas, elles sont là pour vous! Du 1 au 30 juillet, grand concours. Un bulletin concours vous sera donné à la caisse pour tout achat de minimum 20€. Il vous suffit de le remplir et de l'insérer dans la boîte à la sortie du magasin. Attention, il n'est pas possible de remplir plusieurs bulletins. Tirage au sort le 1er août. A gagner, 5 jours dans un centre de remise en forme dans le sud de la France. Au programme, sérénité et relaxation, vie et alimentation saine et équilibrée. Alors venez nombreux dans nos supermarchés, vous serez gagnants à tous les coups. Chérie, laisse donc cette vaisselle dans l'évier et viens! On fonce chez tout pas cher, profitez de la promo. Il n'y a pas une seconde à perdre."
-        }
-      ],
-      "resolved_images": [
-        null,
-        null,
-        "/lib/images/tcf/qcm-audit/co57-entree-parking.webp"
-      ],
-      "missing_labels": [
-        "Dans la boîte à la sortie du magasin",
-        "Au rayon informatique"
-      ],
-      "ready_for_source_review": false
-    },
-    {
-      "bank": "src/tcf/content/a2-b1/co.json",
-      "exercise": "tcf-ss-b1-s3-co-1",
-      "question": 4,
-      "enonce": "Que doivent fermer les parents pendant la journée ?",
-      "audio": null,
-      "choices": [
-        {
-          "id": "a",
-          "texte": "Les volets",
-          "correct": true,
-          "existing_image": "/lib/images/vocabulaire/maison/volet.webp",
-          "asset": null
-        },
-        {
-          "id": "b",
-          "texte": "Les robinets",
-          "correct": false,
-          "existing_image": "/lib/images/vocabulaire/hygiene/robinet.webp",
-          "asset": null
-        },
-        {
-          "id": "c",
-          "texte": "Les portes du réfrigérateur",
-          "correct": false,
-          "existing_image": null,
-          "asset": "fad32162d8cc"
-        }
-      ],
-      "status": "pending_images",
-      "linked_source_ids": [
-        "additional-20261102:mdf-b1-abc-direct:16:a9c3c8627a50:b0a250af"
-      ],
-      "source_links": [
-        {
-          "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-thierry-deja.mp3",
-          "source_id": "additional-20261102:mdf-b1-abc-direct:16:a9c3c8627a50:b0a250af",
-          "candidate_cut_id": "additional-20261102-mdf-b1-abc-direct-16-a9c3c8627a50-b0a250af-d1",
-          "transcription": "Bonjour Madame Thierry. Déjà dans le parc avec votre petite fille, il est à peine 8 heures. Oui, il fait si chaud, depuis deux semaines. Elle a seulement 18 mois, Madame Bertet. Elle est encore bien petite. Les jeunes enfants sont fragiles. Vous avez raison. Il vaut mieux la sortir tôt le matin. Je la sors aussi un peu le soir. Et quand je suis obligée de la sortir dans la journée, je lui passe une crème solaire et je lui mets une petite robe ample et un chapeau en toile. Je fais en sorte de rester le moins longtemps possible dehors. Il ne fait pas trop chaud chez vous. Non, heureusement, l'appartement est frais. Et je la rafraîchis souvent avec un brumisateur. Je la fais boire aussi plus souvent. Je vois que vous êtes bien au courant de ce qu'il faut faire. It's not facile with my parents. They're âgés? They've 84 et 86 ans. I've the chance to habit près de chez eux, Isaac almoins the matin and the soir, en partant and en revenant du travail. And I appeal in the journey. Je vous comprends. My grandmother did not vote jamais show. The person la chaleur like me, and they ne boivent passe. Mes parents ont enfin compris qu'il fallait fermer les volets dans la journée and aérer pendant la nuit. Ils utilisent aussi plus souvent le ventilateur. But I do parfois insister tourne boivent plus souvent, mais sans exagérer. Je veille aussi à ce qu'ils continuent de s'alimenter normalement. But come my mère is assez gourmand, this is not really a problem. Elle prépare de grandes salades et plus de plats de poisson que de viande, parce que c'est plus léger. Ils ont de la chance de vous avoir. Quoi qu'il en soit, espérons qu'il va faire moins chaud."
-        }
-      ],
-      "resolved_images": [
-        null,
-        null,
-        null
-      ],
-      "missing_labels": [
-        "Les volets",
-        "Les robinets",
-        "Les portes du réfrigérateur"
-      ],
-      "ready_for_source_review": false
-    },
-    {
-      "bank": "src/tcf/content/a2-b1/co.json",
-      "exercise": "tcf-ss-b1-s3-co-2",
-      "question": 4,
-      "enonce": "Quel repas français a été inscrit au patrimoine Unesco ?",
-      "audio": null,
-      "choices": [
-        {
-          "id": "a",
-          "texte": "Le repas gastronomique français",
-          "correct": true,
-          "existing_image": null,
-          "asset": "f540e0b4a51a"
-        },
-        {
-          "id": "b",
-          "texte": "La baguette",
-          "correct": false,
-          "existing_image": "/lib/images/vocabulaire/aliments/baguette.webp",
-          "asset": null
-        },
-        {
-          "id": "c",
-          "texte": "Le fromage",
-          "correct": false,
-          "existing_image": "/lib/images/vocabulaire/aliments/fromage.webp",
-          "asset": null
-        }
-      ],
-      "status": "pending_images",
-      "linked_source_ids": [
-        "additional-20261102:mdf-b1-abc-direct:19:2bf9ce820ac5:796d7ba4"
-      ],
-      "source_links": [
-        {
-          "old_ref": "/lib/audio/tcf/co/vie-quotidienne/la-veille-premieres-assises.mp3",
-          "source_id": "additional-20261102:mdf-b1-abc-direct:19:2bf9ce820ac5:796d7ba4",
-          "candidate_cut_id": "additional-20261102-mdf-b1-abc-direct-19-2bf9ce820ac5-796d7ba4-d1",
-          "transcription": "A la veille des premières assises de la Fondation Nestlé France, le repas gastronomique français avait été inscrit au patrimoine culturel immatériel de l'humanité par l'UNESCO. Mais cette reconnaissance patrimoniale s'accompagne de ce qu'on appelle le devoir de transmission. Et dans les familles, La transmission passe d'abord par l'assiette. C'est ce que nous révèle l'enquête publiée en novembre 2011 par la Fondation Nestlé. 87% des personnes interrogées affirment manger des plats dont la recette vient de leurs grands-parents. Au cours des deuxièmes assises de la Fondation Nestlé, qui ont eu lieu sous sa présidence, Eric Orsena parle de la transmission en ces termes. Quand on parle de transmission, On pense tout de suite à cette forme de transmission verticale qu'est la succession. En général, pour ce qui concerne l'alimentation et dans tous les pays du monde, cette transmission des recettes ou des manières de cuisiner est assurée par un relais de mère en fille. Ce n'est toutefois pas toujours vrai. Quand je me demande ce que je laisserai à mes enfants, je suis presque sûr qu'ils garderont de moi certaines recettes de beurre blanc à l'échalote. Une manière particulière de faire pour l'été, un bœuf mod en gelée. Et un lait haillé qui accompagne particulièrement bien certaines recettes de coquelet. Ce qui montre que cette transmission n'est pas forcément le fait des femmes. A l'heure des familles éclatées et recomposées, la cuisine reste un élément qui rassemble, qui structure le clan. Une bonne dose de tradition. Un soupçon de nostalgie, un zeste de valeur. Les enfants en raffolent et tendent leur assiette."
-        }
-      ],
-      "resolved_images": [
-        null,
-        "/lib/images/tcf/qcm-audit/co306-baguette-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-fromages-dessines.webp"
-      ],
-      "missing_labels": [
-        "Le repas gastronomique français"
-      ],
-      "ready_for_source_review": false
-    },
-    {
-      "bank": "src/tcf/content/a2-b1/co.json",
-      "exercise": "tcf-ss-b1-s5-co-4",
-      "question": 8,
-      "enonce": "Quel outil permet de réaliser l'œuvre collective ?",
-      "audio": null,
-      "choices": [
-        {
-          "id": "a",
-          "texte": "Des ordinateurs reliés à une table de dessin",
-          "correct": true,
-          "existing_image": null,
-          "asset": "b8e3c0acfc06"
-        },
-        {
-          "id": "b",
-          "texte": "Des appareils photo jetables",
-          "correct": false,
-          "existing_image": null,
-          "asset": "dff3ca430742"
-        },
-        {
-          "id": "c",
-          "texte": "Des instruments de musique",
-          "correct": false,
-          "existing_image": null,
-          "asset": "8f3006705008"
-        }
-      ],
-      "status": "pending_images",
-      "linked_source_ids": [
-        "09035196:035:0a472f193258",
-        "additional-20261102:mdf-b1-abc-junior-direct:35:0a472f193258:d2e174eb"
-      ],
-      "source_links": [
-        {
-          "old_ref": "/lib/audio/tcf/co/loisirs/pour-faire-signer-vos.mp3",
-          "source_id": "09035196:035:0a472f193258",
-          "candidate_cut_id": "09035196-035-0a472f193258-d1",
-          "transcription": "Bienvenue au Salon de la Bande dessinée de Montréal. Nous sommes le samedi 26 mai. Voici le programme du jour. De 9h à 20h, vous pouvez visiter les stands de nos 150 exposants venus de 17 pays. Les plus grandes maisons d'édition francophone sont là pour vous présenter leur collection. Les auteurs et dessinateurs des bandes dessinées sont également présents. Pour faire signer vos albums préférés par leurs auteurs, rendez-vous tous les jours à partir de 18h dans le salon Obelix. Les festivités commenceront cet après-midi avec un spectacle de danse asiatique dans le hall principal à 15h. Les artistes nous viennent directement du Japon et ont été invités par la maison d'édition KRL spécialisée en manga japonais. L'artiste Paul Mugatti et sa bande nous présenteront ensuite leur spectacle original et émouvant intitulé Tout pour vos yeux. Ce spectacle mène dessin, théâtre, danse et musique. Je ne vous en dis pas plus pour garder la surprise car il s'agit d'un événement particulièrement original. Le café rencontre est ouvert tous les jours à partir de 10h. Vous y rencontrerez tous les professionnels de la bande dessinée dans un cadon convivial et détendu. Si vous êtes dessinateur ou auteur de BD, c'est le lieu idéal pour faire des rencontres et présenter vos créations. D'ailleurs, si vous aimez dessiner, vous pouvez participer à notre événement Décine-moi une histoire. A 19h ce soir, les personnes qui se seront inscrites seront invitées à réaliser un projet collectif de bande dessinée. Grâce à 10 ordinateurs équipés d'une table de dessin, vous pourrez réaliser en direct, sur un grand écran, une œuvre collective. Pour vous inscrire, présentez-vous à la réception avant 18h. Attention, les places sont limitées à 10 personnes par session. Il y aura une session à 19h et une autre à 21h. Enfin, demain, à 16h, nous présenterons les lauréats de notre concours à vos planches dans le hall principal. Les trois premiers prix recevront des cadeaux en récompense de leur travail et leurs œuvres seront éditées par notre maison d'édition partenaire, la plus mouvement. Rendez-vous donc demain à 16h pour ce grand moment attendu par tous ces jeunes d'hommes. Profitez de ces trois journées de festival et n'hésitez pas à contacter les Hôtesses si vous avez des questions."
-        }
-      ],
-      "resolved_images": [
-        null,
-        null,
-        null
-      ],
-      "missing_labels": [
-        "Des ordinateurs reliés à une table de dessin",
-        "Des appareils photo jetables",
-        "Des instruments de musique"
-      ],
-      "ready_for_source_review": false
-    },
-    {
-      "bank": "src/tcf/content/a2-b1/co.json",
-      "exercise": "tcf-ss-b1-s6-co-1",
-      "question": 1,
-      "enonce": "Quel type de parc est annoncé ?",
-      "audio": null,
-      "choices": [
-        {
-          "id": "a",
-          "texte": "Un parc d'attractions",
-          "correct": true,
-          "existing_image": "/lib/images/tcf/co/bg/parc-attractions.webp",
-          "asset": null
-        },
-        {
-          "id": "b",
-          "texte": "Un parc naturel",
-          "correct": false,
-          "existing_image": null,
-          "asset": "f7e209d1e226"
-        },
-        {
-          "id": "c",
-          "texte": "Un parc aquatique",
-          "correct": false,
-          "existing_image": null,
-          "asset": "4a68246d2aef"
-        }
-      ],
-      "status": "pending_images",
-      "linked_source_ids": [
-        "09035196:036:a79a2771f57e",
-        "additional-20261102:mdf-b1-abc-junior-direct:36:a79a2771f57e:7ada9500"
-      ],
-      "source_links": [
-        {
-          "old_ref": "/lib/audio/tcf/co/loisirs/plaisir-authenticite-emotion-venez.mp3",
-          "source_id": "09035196:036:a79a2771f57e",
-          "candidate_cut_id": "09035196-036-a79a2771f57e-d1",
-          "transcription": "Venez au parc Looping, l'aventure pour tous Ouvert pendant l'été de 1h à 23h, tous les jours du lundi au dimanche. Découvrez le plus grand parc d'attractions de la région à 45 minutes seulement de Marseille par l'autoroute A6. Le parc Looping est l'endroit idéal pour passer une journée de détente et de partage en famille. Le parc Looping rassemble plaisir, authenticité et émotion avec ses 35 attractions et trois spectacles extraordinaires, ainsi que deux points de restauration et des zones de pique-nique. Les grands classiques vous attendent, comme la grande roue ou le train fantôme, mais également de nombreuses nouveautés. Faites vibrer vos 5 sens avec le nouveau simulateur X-Max 3, unique en Europe! Vous pouvez désormais regarder nos films et documentaires en 3D. Les sièges bougent et vous sentez toutes sortes de sensations. Du vent, une tempête de neige, l'odeur du feu, de la forêt, une expérience unique à découvrir absolument! Pour les plus courageux, découvrez l'adrénaline. Vous êtes propulsés grâce à un élastique à plus de 30 mètres d'altitude. Tout simplement incroyable! Découvrez la sensation de grande vitesse avec cette nouvelle attraction hors du commun. Attention, ce manège est interdit au moins de 12 ans. Le parc Looping, c'est aussi des espaces verts dans un cadre naturel magnifique. Vous avez envie de reposer, profitez de nos zones de détente, équipées de hamac et de barbecue pour manger pendant la journée en famille ou avec les amis. La cafétéria Bon Appétit est ouverte à partir de 12h et jusqu'à 21h45. Vous y trouverez des menus à 8,50 euros et un grand choix de boissons chaudes et froides. Pour les petites fins, le snack Mini Loop est ouvert toute la journée. De l'ouverture à la fermeture du parc. Les spectacles du parc Looping, c'est tout simplement... Magique. A 14h, un spectacle inédit de magie vous surprendra. Les tours et les rebondissements se succèdent dans une ambiance chaleureuse et amicale. Devenez complice de l'illusionniste et perdez tout refaire. A ne pas manquer. Le soir, à partir de 21h30, Profitez du splendide spectacle de son et lumière au bord du lac. Des projections de vidéos et de lumière, ainsi que des acrobates et des danseurs, transforment chaque soir le lac en un espace féérique et merveilleux."
-        }
-      ],
-      "resolved_images": [
-        null,
-        null,
-        null
-      ],
-      "missing_labels": [
-        "Un parc d'attractions",
-        "Un parc naturel",
-        "Un parc aquatique"
-      ],
-      "ready_for_source_review": false
-    },
-    {
-      "bank": "src/tcf/content/a2-b1/co.json",
-      "exercise": "tcf-ss-b1-s9-co-3",
-      "question": 5,
-      "enonce": "Quelles boîtes faut-il aussi éviter selon le document ?",
-      "audio": null,
-      "choices": [
-        {
-          "id": "a",
-          "texte": "Les boîtes rayées, fondues ou décolorées",
-          "correct": true,
-          "existing_image": null,
-          "asset": "7f9ae76f1f04"
-        },
-        {
-          "id": "b",
-          "texte": "Les boîtes en verre intactes",
-          "correct": false,
-          "existing_image": null,
-          "asset": "82119570159e"
-        },
-        {
-          "id": "c",
-          "texte": "Les boîtes neuves en acier inoxydable",
-          "correct": false,
-          "existing_image": null,
-          "asset": "c1bd71aa0d80"
-        }
-      ],
-      "status": "pending_images",
-      "linked_source_ids": [
-        "additional-20261102:mdf-b1-abc-direct:29:6d6f32c4655c:72c9cbbc"
-      ],
-      "source_links": [
-        {
-          "old_ref": "/lib/audio/tcf/co/maison/moules-silicone-boites-film.mp3",
-          "source_id": "additional-20261102:mdf-b1-abc-direct:29:6d6f32c4655c:72c9cbbc",
-          "candidate_cut_id": "additional-20261102-mdf-b1-abc-direct-29-6d6f32c4655c-72c9cbbc-d1",
-          "transcription": "Moule en silicone, boîte, film alimentaire, très présents dans les cuisines jusqu'à ces dernières années, les plastiques n'ont plus la cote. Il y en a pourtant de meilleures que d'autres. Selon leur composition, les boîtes en plastique libèrent ou non des composés toxiques, surtout au contact de liquide chaud ou de corps gras. Pour vous y retrouver, cherchez les numéros peu visibles qui se trouvent sous ces récipients. N'hésitez pas, jetez les numéros 1 en PET, les 3 en PVC, les 6 en polystyrène, les 7 en polycarbonate, car leurs additifs ont tendance à migrer, à passer dans les aliments. Jetez aussi toute boîte rayée, fondue ou décolorée. Vous pouvez garder les numéros 2 et 4 en polyéthylène, qui supportent bien le froid du réfrigérateur, et le 5 en polypropylène, qu'il est préférable de ranger dans les placards à température ambiante. Préférez donc les boîtes en acier inoxydable ou encore les bocaux en verre. Le film alimentaire peut être à base de PVC. Il contient alors des phtalates qui migrent au contact des corps gras. Si il est en polyéthylène basse densité, il est moins nocif. Jetez tout produit gras en contact prolongé avec un film plastique, surtout s'il a été exposé à la chaleur. Préférez le papier sulfurisé non blanchi ou une assiette retournée pour servir de couvercle. Les moules en silicone sont également très utilisées par les cuisinières. Cependant, une enquête réalisée en 2004 a révélé que 44 échantillons analysés sur 81 posaient des problèmes de sécurité alimentaire. Jetez les moules qui contiennent du peroxy, substance souvent utilisée en Chine et encore autorisée en France, alors qu'elle est interdite en Suisse et en Allemagne. Pour savoir si vos moules en contiennent, pincez-les. Si une pliure blanche apparaît, c'est mauvais signe. Vous pouvez garder les modèles qui portent la mention silicone platinium, capables de résister à des températures de 260 ou 280 degrés Celsius sans lâcher de composés indésirables. Préférez les moules en porcelaine blanche, en pyrex non colorées ou encore les caissettes en papier."
-        }
-      ],
-      "resolved_images": [
-        null,
-        null,
-        null
-      ],
-      "missing_labels": [
-        "Les boîtes rayées, fondues ou décolorées",
-        "Les boîtes en verre intactes",
-        "Les boîtes neuves en acier inoxydable"
-      ],
-      "ready_for_source_review": false
-    },
-    {
-      "bank": "src/tcf/content/a2-b1/co.json",
-      "exercise": "tcf-ss-b1-s9-co-3",
-      "question": 8,
-      "enonce": "Que conseille le document pour remplacer un film plastique comme couvercle ?",
-      "audio": null,
-      "choices": [
-        {
-          "id": "a",
-          "texte": "Une assiette retournée",
-          "correct": true,
-          "existing_image": null,
-          "asset": "1737eb9dc5b0"
-        },
-        {
-          "id": "b",
-          "texte": "Une feuille de PVC chauffée",
-          "correct": false,
-          "existing_image": null,
-          "asset": "e3c9243c8b01"
-        },
-        {
-          "id": "c",
-          "texte": "Un moule en silicone plié",
-          "correct": false,
-          "existing_image": null,
-          "asset": "8296abcc6745"
-        }
-      ],
-      "status": "pending_images",
-      "linked_source_ids": [
-        "additional-20261102:mdf-b1-abc-direct:29:6d6f32c4655c:72c9cbbc"
-      ],
-      "source_links": [
-        {
-          "old_ref": "/lib/audio/tcf/co/maison/moules-silicone-boites-film.mp3",
-          "source_id": "additional-20261102:mdf-b1-abc-direct:29:6d6f32c4655c:72c9cbbc",
-          "candidate_cut_id": "additional-20261102-mdf-b1-abc-direct-29-6d6f32c4655c-72c9cbbc-d1",
-          "transcription": "Moule en silicone, boîte, film alimentaire, très présents dans les cuisines jusqu'à ces dernières années, les plastiques n'ont plus la cote. Il y en a pourtant de meilleures que d'autres. Selon leur composition, les boîtes en plastique libèrent ou non des composés toxiques, surtout au contact de liquide chaud ou de corps gras. Pour vous y retrouver, cherchez les numéros peu visibles qui se trouvent sous ces récipients. N'hésitez pas, jetez les numéros 1 en PET, les 3 en PVC, les 6 en polystyrène, les 7 en polycarbonate, car leurs additifs ont tendance à migrer, à passer dans les aliments. Jetez aussi toute boîte rayée, fondue ou décolorée. Vous pouvez garder les numéros 2 et 4 en polyéthylène, qui supportent bien le froid du réfrigérateur, et le 5 en polypropylène, qu'il est préférable de ranger dans les placards à température ambiante. Préférez donc les boîtes en acier inoxydable ou encore les bocaux en verre. Le film alimentaire peut être à base de PVC. Il contient alors des phtalates qui migrent au contact des corps gras. Si il est en polyéthylène basse densité, il est moins nocif. Jetez tout produit gras en contact prolongé avec un film plastique, surtout s'il a été exposé à la chaleur. Préférez le papier sulfurisé non blanchi ou une assiette retournée pour servir de couvercle. Les moules en silicone sont également très utilisées par les cuisinières. Cependant, une enquête réalisée en 2004 a révélé que 44 échantillons analysés sur 81 posaient des problèmes de sécurité alimentaire. Jetez les moules qui contiennent du peroxy, substance souvent utilisée en Chine et encore autorisée en France, alors qu'elle est interdite en Suisse et en Allemagne. Pour savoir si vos moules en contiennent, pincez-les. Si une pliure blanche apparaît, c'est mauvais signe. Vous pouvez garder les modèles qui portent la mention silicone platinium, capables de résister à des températures de 260 ou 280 degrés Celsius sans lâcher de composés indésirables. Préférez les moules en porcelaine blanche, en pyrex non colorées ou encore les caissettes en papier."
-        }
-      ],
-      "resolved_images": [
-        null,
-        null,
-        null
-      ],
-      "missing_labels": [
-        "Une assiette retournée",
-        "Une feuille de PVC chauffée",
-        "Un moule en silicone plié"
-      ],
-      "ready_for_source_review": false
+      },
+      "editorial_decision": "pending_source_audio_validation"
     },
     {
       "bank": "src/tcf/content/a2-b1/co.json",
@@ -926,7 +460,9 @@
         "Une usine automobile",
         "Une salle de cinéma"
       ],
-      "ready_for_source_review": false
+      "ready_for_source_review": false,
+      "editorial_decision": "retain_text_answers",
+      "editorial_reason": "Un atelier de couture ne prouve pas le lien amie couturière de sa mère ; ne pas réduire le sens du choix pour obtenir une image."
     }
   ],
   "audio_issues": {
@@ -966,5 +502,8 @@
       "status": "pending_source_audio_review",
       "reason": "La réponse actuelle indique caisses automatiques, mais le support préparé dit seulement caisses situées au fond du magasin. Vérifier l’alignement et l’audio avant activation ; ne pas ajouter ce qualificatif par l’image."
     }
-  }
+  },
+  "reused_image_usages": 37,
+  "retained_text_questions": 5,
+  "pending_audio_questions": 3
 }
