@@ -149,8 +149,8 @@ export function usePageNavigation({
       verbGroup: activeBlock.verbGroup,
       phrasePolarity: activeBlock.phrasePolarity,
       phraseCategories: activeBlock.phraseCategories,
-      grammarCoLevel: activeBlock.grammarCoLevel,
-      grammarCoAudioId: activeBlock.grammarCoAudioId,
+      grammarCoLevel: fields.grammarCoLevel,
+      grammarCoAudioId: fields.grammarCoAudioId,
       problemDraftGrids: isProblemExercise(nextType.id)
         ? Array.from({ length: count }, () => true)
         : undefined,

@@ -243,7 +243,7 @@ export const GRAM_EXERCISE_KINDS = [
   {
     id: 'co-theme',
     label: 'Compréhension orale',
-    description: 'Enregistrements du thème, niveau A1 ; A2 sera ajouté plus tard.',
+    description: 'Enregistrements du thème, niveaux A1 et A2 selon les pistes disponibles.',
     instruction: 'Écoutez l’enregistrement.',
     layout: 'qcm' as const,
   },

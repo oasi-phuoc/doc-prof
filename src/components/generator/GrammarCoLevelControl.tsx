@@ -1,7 +1,8 @@
 import type { GrammarCoLevel } from '@/grammaire/exercises/co-themes'
 
-export function GrammarCoLevelControl({ value, a2Available, onChange }: {
+export function GrammarCoLevelControl({ value, a1Available = true, a2Available, onChange }: {
   value: GrammarCoLevel
+  a1Available?: boolean
   a2Available: boolean
   onChange: (level: GrammarCoLevel) => void
 }) {
@@ -11,12 +12,13 @@ export function GrammarCoLevelControl({ value, a2Available, onChange }: {
       <div className="mode-toggle" role="group" aria-label="Niveau de compréhension orale">
         {(['A1','A2'] as const).map(level=>(
           <button key={level} type="button" className={value===level?'active':''}
-            aria-pressed={value===level} disabled={level==='A2'&&!a2Available}
-            title={level==='A2'&&!a2Available?'Audios A2 à venir':undefined}
+            aria-pressed={value===level} disabled={level==='A1'?!a1Available:!a2Available}
+            title={(level==='A1'?!a1Available:!a2Available)?`Aucun audio ${level} pour ce thème`:undefined}
             onClick={()=>{if(level!==value)onChange(level)}}>{level}</button>
         ))}
       </div>
       {!a2Available?<small>Les audios A2 seront ajoutés plus tard.</small>:null}
+      {!a1Available?<small>Ce thème contient actuellement uniquement des audios A2.</small>:null}
     </div>
   )
 }

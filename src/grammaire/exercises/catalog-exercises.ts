@@ -128,7 +128,7 @@ export function buildGrammairePracticeTypes(): ExerciseType[] {
     if (!hasGrammarCoTheme(theme.id)) continue
     const importedType: ExerciseType = {
       id:grammarCoTypeId(theme.subId),topic:theme.topic,label:'Compréhension orale',
-      description:`${theme.label} — enregistrements A1, A2 à venir.`,
+      description:`${theme.label} — enregistrements A1 / A2 selon les pistes disponibles.`,
       instruction:'Écoutez l’enregistrement.',visual:'texte',preferredColumns:1,
     }
     const familyWriting = theme.id==='famille' ? types.findIndex(type=>type.id==='gram-ex-famille-fam-pe') : -1

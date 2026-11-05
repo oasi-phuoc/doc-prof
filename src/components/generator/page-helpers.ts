@@ -35,7 +35,8 @@ import {
   isFamilleKind,
 } from '@/grammaire/exercises/famille'
 import { isGrammaireExerciseType, isGrammaireTheoryType } from '@/grammaire/types'
-import { isGrammarCoType } from '@/grammaire/exercises/co-themes'
+import { isGrammarCoType, grammarCoThemeForType } from '@/grammaire/exercises/co-themes'
+import { defaultGrammarCoLevel, grammarCoEntries } from '@/grammaire/exercises/co-bank'
 import { isGrammarReadingType } from '@/grammaire/exercises/reading-types'
 import { parseAlphaType } from '@/alphabetisation/kinds'
 import { parseSoutienType } from '@/francais/soutien/kinds'
@@ -111,6 +112,11 @@ export function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<Exe
   const isTheory = isGrammarTheoryType(type.id) || isGrammaireTheoryType(type.id)
   const isGramEx = isGrammaireExerciseType(type.id)
   const gramParsed = isGramEx ? parseGramExerciseType(type.id) : null
+  const grammarCoTheme = grammarCoThemeForType(type.id)
+  const grammarCoLevel = grammarCoTheme
+    ? prev?.grammarCoLevel && grammarCoEntries(grammarCoTheme.id,prev.grammarCoLevel).length>0
+      ? prev.grammarCoLevel : defaultGrammarCoLevel(grammarCoTheme.id)
+    : undefined
   const quiSuisJeCount =
     gramParsed && gramParsed.subId === 'a1' && isQuiSuisJeKind(gramParsed.kindId)
       ? QUI_SUIS_JE_DEFAULT_COUNT[gramParsed.kindId]
@@ -209,7 +215,7 @@ export function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<Exe
     track: type.track,
     phrasePolarity: isPhrase ? prev?.phrasePolarity : undefined,
     phraseCategories: isPhrase ? prev?.phraseCategories : undefined,
-    grammarCoLevel: isGrammarCoType(type.id) ? prev?.grammarCoLevel ?? 'A1' : undefined,
+    grammarCoLevel,
     grammarCoAudioId: isGrammarCoType(type.id) && prev?.exerciseType===type.id ? prev.grammarCoAudioId : undefined,
     columns: type.preferredColumns ?? 2,
     ...clearLibreContentFreeze(),

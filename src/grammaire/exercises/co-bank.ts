@@ -21,16 +21,19 @@ export function grammarCoEntries(theme: GrammarCoThemeId, level: GrammarCoLevel,
 export function hasGrammarCoTheme(theme: GrammarCoThemeId): boolean {
   return grammarCoEntries(theme,'A1').length>0||grammarCoEntries(theme,'A2').length>0
 }
-/** Recordings remain selectable while transcripts and questions are completed. */
+export function defaultGrammarCoLevel(theme: GrammarCoThemeId, bank: readonly GrammarCoEntry[] = GRAMMAR_CO_BANK): GrammarCoLevel {
+  return grammarCoEntries(theme,'A1',bank).length>0 ? 'A1' : grammarCoEntries(theme,'A2',bank).length>0 ? 'A2' : 'A1'
+}
+/** Audio-only lots are available immediately; transcripts/questions may be added later. */
 export function grammarCoSubthemes() {
   return GRAMMAR_CO_THEMES.filter(theme=>!('existing' in theme)&&hasGrammarCoTheme(theme.id)).map(theme=>({
     id:theme.subId,label:theme.label,topic:theme.topic,theoryTypeIds:[] as string[],
   }))
 }
-export function isAudioOnlyGrammarCo(typeId: string, level: GrammarCoLevel = 'A1', audioId?: string): boolean {
+export function isAudioOnlyGrammarCo(typeId: string, level?: GrammarCoLevel, audioId?: string): boolean {
   const theme=grammarCoThemeForType(typeId)
   if (!theme) return false
-  const entries=grammarCoEntries(theme.id,level)
+  const entries=grammarCoEntries(theme.id,level??defaultGrammarCoLevel(theme.id))
   const entry=entries.find(item=>item.exercise.id===audioId)??entries[0]
   return entry?.exercise.questions.length===0
 }
