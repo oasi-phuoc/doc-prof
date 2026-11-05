@@ -91,6 +91,11 @@ def main():
                     old_question = copy.deepcopy(question)
                     if 'enonce' in change:
                         question['enonce'] = change['enonce']
+                    if 'choices' in change:
+                        form = question if question['type_reponse'] == 'qcm_texte' else question['formes']['qcm_texte']
+                        assert len(change['choices']) == 3
+                        assert sum(bool(c.get('correct')) for c in change['choices']) == 1
+                        form['choix'] = copy.deepcopy(change['choices'])
                     if 'correct_answer' in change:
                         form = question if question['type_reponse'] == 'qcm_texte' else question['formes']['qcm_texte']
                         answer = next(c for c in form['choix'] if c.get('correct'))
@@ -120,6 +125,7 @@ def main():
                             validation='editorial_review_and_two_final_file_recognitions' if manual
                                        else 'unchanged_text_and_two_exact_final_file_recognitions',
                             editorial_reason=manual['reason'] if manual else None,
+                            numeric_resolution=manual.get('numeric_resolution') if manual else None,
                             previous_duration=durations.get(ref), previous_pool=pools.get(ref),
                             question_changes=edits, human_listening_performed=False))
         prepared.append((source, target))

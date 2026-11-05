@@ -1,0 +1,2466 @@
+{
+  "batch": 8,
+  "audio_replacements": [
+    {
+      "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_86-3.mp3",
+      "previous_sha256": "cc63e45a57f311c722f062e86295363d875d82e4173a405def9034cf6730613f",
+      "candidate_sha256": "8e7938ac0c941f70d39c1895a8c855991ca7df0418ecd732cf31d4b43a21a6f0",
+      "rollback_git_blob": "5f625a43e82056aec5eef501f2cdd52dd74558b1",
+      "source_id": "delf_a1_2022:086:c9d1659a97e4",
+      "source_sha256": "c9d1659a97e4a453228a7a970efb9ba7475b7ff1bc7e6212e3914f1ca0a91f31",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "8e7938ac0c941f70d39c1895a8c855991ca7df0418ecd732cf31d4b43a21a6f0",
+        "duration": 2.873469,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111817-c8f4c27343/manifest.json",
+          "manifest_sha256": "bb5f19bf03916315342b2b4ab2bea9a415d246c131089f3063bd2d6874855194",
+          "lossless_sha256": "03a51b2f142dbbdc9f83655d36e75ee0528881fd68e53e47028e2cc9865ef377"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.31,
+          "trailing_quiet_seconds": 0.38,
+          "relative_rms_threshold": 0.0104558,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "editorial_reason": "Variantes de ponctuation et mise en chiffres examinées ; texte courant conservé sous réserve des contrôles finaux.",
+      "numeric_resolution": null,
+      "previous_duration": 6.4,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_85-1.mp3",
+      "previous_sha256": "8d5d0c19e74e4b31cf0c1cde261d31f5f68c738e1005d99669097ab421d91be5",
+      "candidate_sha256": "509726f6d409f2deddd7e4581114d4580fe81dd9635e732f4dd39881567eeae4",
+      "rollback_git_blob": "4bc8716922573cf917aee725554e3f6a5be2ce4c",
+      "source_id": "delf_a1_2022:085:657006e9075c",
+      "source_sha256": "657006e9075c97fd854b23eba86a98a1c03f8cdec065912d8db82c74e99b1b33",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "509726f6d409f2deddd7e4581114d4580fe81dd9635e732f4dd39881567eeae4",
+        "duration": 2.873469,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111814-97713ae6a5/manifest.json",
+          "manifest_sha256": "2939c2968abe5a0cd4546407feebb26cc07166db06364c24db194d73a65896b3",
+          "lossless_sha256": "cc8e7ddda94ad87a89b075f1009bf122b94db7731934401bc9e238d46e20dcf9"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.28,
+          "trailing_quiet_seconds": 0.62,
+          "relative_rms_threshold": 0.0104692,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "editorial_reason": "Variantes de ponctuation et mise en chiffres examinées ; texte courant conservé sous réserve des contrôles finaux.",
+      "numeric_resolution": null,
+      "previous_duration": 11.99,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/maison/maison-1-1.mp3",
+      "previous_sha256": "9717a189c52ae53060e3b9bdee0b87a4b181fec211a2c49d3a06708ec59baf7f",
+      "candidate_sha256": "d57dff7378ee051464394aa8dd08e7b7c681c7ce86c4c9f38c85ef1c60d2b6cd",
+      "rollback_git_blob": "1887a7423c732d71a0586cdfd702506c45540b06",
+      "source_id": "9782090351958:053:1d81d8cc10b7",
+      "source_sha256": "1d81d8cc10b73ccf4e55d59b54af71dbf52ef303184e1a2736fd4cd5f86a5acf",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "d57dff7378ee051464394aa8dd08e7b7c681c7ce86c4c9f38c85ef1c60d2b6cd",
+        "duration": 12.773878,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T013705-a3bc696c52/manifest.json",
+          "manifest_sha256": "c89d2bf7bfc8efa6b23385a9adb0f4bf7db41ff89f25519811b4fb7cab5367c3",
+          "lossless_sha256": "f7bfe539be8ee8ffcc68c02c3620a3d70ad2573f19ea2295ec491c2102a83617"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "needs_boundary_review",
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.0,
+          "relative_rms_threshold": 0.0084281,
+          "safe_quiet_margins": false,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.32,
+          "trailing_non_speech_seconds": 0.376,
+          "speech_region_count": 7,
+          "safe_voiced_margins": true,
+          "method": "Silero VAD with no padding; supplementary speech-vs-music evidence, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "editorial_reason": "Consignes et répétition de lecture supprimées ; les deux reconnaissances finales confirment le contenu utile et toutes les réponses associées ont été relues.",
+      "numeric_resolution": null,
+      "previous_duration": 24.74,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_51.mp3",
+      "previous_sha256": "48d6fb79628362ce18d62b0cf6f48646152b78839b9ae6e2b2d24becc6b37abf",
+      "candidate_sha256": "ca2d959db7139275b4d341900c43390da0686f65c237121855d5c81b357040a9",
+      "rollback_git_blob": "27c38551b5b05f8e69299014056922ee0e91e5f4",
+      "source_id": "delf_a1_2022:051:82aa2ad382a4",
+      "source_sha256": "82aa2ad382a41698c91e764473934ef1840fb39d0f1f7d7315d0ed72ee8939b7",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "ca2d959db7139275b4d341900c43390da0686f65c237121855d5c81b357040a9",
+        "duration": 7.601633,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "assembled_source_slices",
+          "lossless_sha256": "e2a4e898a5b946b9cc1af02c90b483fce281d207a07cc3ab9b3296f793d8e005",
+          "pcm_sha256": "507565e8783ab02b52363f4efe42ef607b8f0d32100dc282d5c79a2f2c967efc"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.11,
+          "trailing_quiet_seconds": 0.09,
+          "relative_rms_threshold": 0.0138581,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "editorial_reason": "Les numéros techniques ont été retirés du fichier final. Les cinq anciennes questions demandaient ces numéros devenus inaudibles : elles portent maintenant sur les mots entendus et leur ordre, avec trois choix cohérents chacune. Les deux reconnaissances finales concordent sur les cinq aliments.",
+      "numeric_resolution": null,
+      "previous_duration": 33.54,
+      "previous_pool": null,
+      "question_changes": [
+        {
+          "exercise": "delf-a1-2022-co-ex5-51",
+          "question": 1,
+          "before": {
+            "enonce": "Quel numéro correspond aux fruits ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "3",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "1"
+              },
+              {
+                "id": "c",
+                "texte": "5"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "3"
+              }
+            }
+          },
+          "after": {
+            "enonce": "Quel groupe d’aliments est nommé en premier ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Des fruits",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Des légumes"
+              },
+              {
+                "id": "c",
+                "texte": "Des céréales"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Des fruits"
+              }
+            }
+          }
+        },
+        {
+          "exercise": "delf-a1-2022-co-ex5-51",
+          "question": 2,
+          "before": {
+            "enonce": "Quel numéro correspond au jus de fruits ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "1",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "2"
+              },
+              {
+                "id": "c",
+                "texte": "4"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "1"
+              }
+            }
+          },
+          "after": {
+            "enonce": "Quelle boisson est nommée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un jus de fruits",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Un verre d’eau"
+              },
+              {
+                "id": "c",
+                "texte": "Un verre de lait"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un jus de fruits"
+              }
+            }
+          }
+        },
+        {
+          "exercise": "delf-a1-2022-co-ex5-51",
+          "question": 3,
+          "before": {
+            "enonce": "Quel numéro correspond à la pomme ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "5",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "3"
+              },
+              {
+                "id": "c",
+                "texte": "1"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "5"
+              }
+            }
+          },
+          "after": {
+            "enonce": "Quel fruit est nommé ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Une pomme",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Une poire"
+              },
+              {
+                "id": "c",
+                "texte": "Une orange"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Une pomme"
+              }
+            }
+          }
+        },
+        {
+          "exercise": "delf-a1-2022-co-ex5-51",
+          "question": 4,
+          "before": {
+            "enonce": "Quel numéro correspond aux légumes ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "2",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "4"
+              },
+              {
+                "id": "c",
+                "texte": "5"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "2"
+              }
+            }
+          },
+          "after": {
+            "enonce": "Quel groupe d’aliments est nommé après la pomme ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Des légumes",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Des biscuits"
+              },
+              {
+                "id": "c",
+                "texte": "Des fromages"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Des légumes"
+              }
+            }
+          }
+        },
+        {
+          "exercise": "delf-a1-2022-co-ex5-51",
+          "question": 5,
+          "before": {
+            "enonce": "Quel numéro correspond à la tomate ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "4",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "2"
+              },
+              {
+                "id": "c",
+                "texte": "3"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "4"
+              }
+            }
+          },
+          "after": {
+            "enonce": "Quel aliment est nommé en dernier ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Une tomate",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Une carotte"
+              },
+              {
+                "id": "c",
+                "texte": "Une courgette"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Une tomate"
+              }
+            }
+          }
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/le-rendez-vous.mp3",
+      "previous_sha256": "4931a05f81cc1a7e2ce00f947d20c1ce7e6dc0e459f83a707c4f2f5d8a2830e3",
+      "candidate_sha256": "970dfc79829b85251de12ffd654787e7b10a86195d5dd678f8a17976b09e94ec",
+      "rollback_git_blob": "74c68a8286377e8e44ed01490911d620406355f1",
+      "source_id": "delf_a1_2022:088:4931a05f81cc",
+      "source_sha256": "4931a05f81cc1a7e2ce00f947d20c1ce7e6dc0e459f83a707c4f2f5d8a2830e3",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "970dfc79829b85251de12ffd654787e7b10a86195d5dd678f8a17976b09e94ec",
+        "duration": 25.521633,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T120923-75e2277133/manifest.json",
+          "manifest_sha256": "30723328fcd84f71fe269fd186f4aaaa1d42183c86c9ca653ac4b638636be98f",
+          "lossless_sha256": "1cb6402802a4024df880c03c889fc31c81d77631d6b278737bfd635fa77add28"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.36,
+          "trailing_quiet_seconds": 0.15,
+          "relative_rms_threshold": 0.0079223,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "editorial_reason": "Consignes et répétition de lecture supprimées ; les deux reconnaissances finales confirment le contenu utile et toutes les réponses associées ont été relues.",
+      "numeric_resolution": null,
+      "previous_duration": 129.69,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    }
+  ],
+  "exercise_changes": [
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-a1-s1-co-1",
+      "before": {
+        "id": "tcf-a1-s1-co-1",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Test blanc A1 · série 1 · Le message de Gilles",
+        "scenario": "vie-quotidienne",
+        "scene": "Le rendez-vous",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/vie-quotidienne/le-rendez-vous.mp3",
+          "transcription": "et preuve blanche 1, compréhension de l'oral.\nVous allez écouter plusieurs documents, il y a deux écoutes, avant chaque écoute, vous entendez le son suivant, exercice 1, lisez les questions, écoutez le document, puis répondez.\nBonjour, cher cousin, c'est Gilles, je suis dans ta ville pour mon travail avec mon directeur.\nOn peut se voir demain après 19h, je t'invite dans un petit restaurant sympa près de mon hôtel.\nEnvoie-moi un texto avant 17h, situé d'accord, et je réserve une table pour 20h.\nBisou, bonjour, cher cousin, c'est Gilles, je suis dans ta ville pour mon travail avec mon directeur.\nOn peut se voir demain après 19h, je t'invite dans un petit restaurant sympa près de mon hôtel.\nEnvoie-moi un texto avant 17h, situé d'accord, et je réserve une table pour 20h.\nBisou !"
+        },
+        "questions": [
+          {
+            "enonce": "Quel lien de famille unit Gilles à la personne appelée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "C’est son cousin",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "C’est son frère"
+              },
+              {
+                "id": "c",
+                "texte": "C’est son oncle"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "C’est son cousin"
+              }
+            }
+          },
+          {
+            "enonce": "Pourquoi Gilles se trouve-t-il dans cette ville ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Pour son travail",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Pour ses vacances"
+              },
+              {
+                "id": "c",
+                "texte": "Pour ses études"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Pour son travail"
+              }
+            }
+          },
+          {
+            "enonce": "Avec qui Gilles est-il venu ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Son directeur",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Son médecin"
+              },
+              {
+                "id": "c",
+                "texte": "Son voisin"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Son directeur"
+              }
+            }
+          },
+          {
+            "enonce": "Quel jour Gilles propose-t-il de se retrouver ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Demain",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Aujourd’hui"
+              },
+              {
+                "id": "c",
+                "texte": "Après-demain"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Demain"
+              }
+            }
+          },
+          {
+            "enonce": "Où Gilles propose-t-il de manger ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Dans un restaurant près de son hôtel",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Dans le restaurant de son entreprise"
+              },
+              {
+                "id": "c",
+                "texte": "Dans un café près de la gare"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Dans un restaurant près de son hôtel"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co306-restaurant-pres-hotel-dessine.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co306-restaurant-entreprise-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co306-cafe-pres-gare-dessine.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "Comment faut-il répondre à Gilles ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Par texto",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Par lettre"
+              },
+              {
+                "id": "c",
+                "texte": "Par téléphone"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Par texto"
+              }
+            }
+          },
+          {
+            "enonce": "Avant quelle heure faut-il lui répondre ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Avant 17 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Avant 18 h"
+              },
+              {
+                "id": "c",
+                "texte": "Avant 19 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Avant 17 h"
+              }
+            }
+          },
+          {
+            "enonce": "À quelle heure Gilles veut-il réserver une table ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "À 20 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "À 19 h"
+              },
+              {
+                "id": "c",
+                "texte": "À 21 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "À 20 h"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-2000-dessinee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1900-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-2100-dessinee.webp"
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null
+      },
+      "after": {
+        "id": "tcf-a1-s1-co-1",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Test blanc A1 · série 1 · Le message de Gilles",
+        "scenario": "vie-quotidienne",
+        "scene": "Le rendez-vous",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/vie-quotidienne/le-rendez-vous.mp3",
+          "transcription": "Bonjour, chère cousine. C'est Gilles. Je suis dans ta ville pour mon travail, avec mon directeur. On peut se voir demain après 19h. Je t'invite dans un petit restaurant sympa près de mon hôtel. Envoie-moi un texto avant 17h, si tu es d'accord, et je réserve une table pour 20h. Bisous!"
+        },
+        "questions": [
+          {
+            "enonce": "Quel lien de famille unit Gilles à la personne appelée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "C’est son cousin",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "C’est son frère"
+              },
+              {
+                "id": "c",
+                "texte": "C’est son oncle"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "C’est son cousin"
+              }
+            }
+          },
+          {
+            "enonce": "Pourquoi Gilles se trouve-t-il dans cette ville ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Pour son travail",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Pour ses vacances"
+              },
+              {
+                "id": "c",
+                "texte": "Pour ses études"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Pour son travail"
+              }
+            }
+          },
+          {
+            "enonce": "Avec qui Gilles est-il venu ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Son directeur",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Son médecin"
+              },
+              {
+                "id": "c",
+                "texte": "Son voisin"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Son directeur"
+              }
+            }
+          },
+          {
+            "enonce": "Quel jour Gilles propose-t-il de se retrouver ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Demain",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Aujourd’hui"
+              },
+              {
+                "id": "c",
+                "texte": "Après-demain"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Demain"
+              }
+            }
+          },
+          {
+            "enonce": "Où Gilles propose-t-il de manger ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Dans un restaurant près de son hôtel",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Dans le restaurant de son entreprise"
+              },
+              {
+                "id": "c",
+                "texte": "Dans un café près de la gare"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Dans un restaurant près de son hôtel"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co306-restaurant-pres-hotel-dessine.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co306-restaurant-entreprise-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co306-cafe-pres-gare-dessine.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "Comment faut-il répondre à Gilles ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Par texto",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Par lettre"
+              },
+              {
+                "id": "c",
+                "texte": "Par téléphone"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Par texto"
+              }
+            }
+          },
+          {
+            "enonce": "Avant quelle heure faut-il lui répondre ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Avant 17 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Avant 18 h"
+              },
+              {
+                "id": "c",
+                "texte": "Avant 19 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Avant 17 h"
+              }
+            }
+          },
+          {
+            "enonce": "À quelle heure Gilles veut-il réserver une table ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "À 20 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "À 19 h"
+              },
+              {
+                "id": "c",
+                "texte": "À 21 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "À 20 h"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-2000-dessinee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1900-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-2100-dessinee.webp"
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null
+      }
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "delf-a1-2022-co-ex5-51",
+      "before": {
+        "id": "delf-a1-2022-co-ex5-51",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "images_a_reconnaitre",
+        "theme": "Identifier des objets",
+        "scenario": "loisirs",
+        "scene": "Piste 51",
+        "consigne": "Écoutez le message. Cochez la case sous l’image si vous entendez le nom de l’objet (OUI) ; sinon, laissez-la vide (NON).",
+        "points": 5,
+        "support": {
+          "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_51.mp3",
+          "transcription": "Numéro 3 : des fruits. Numéro 1 : un jus de fruits. Numéro 5 : une pomme. Numéro 2 : des légumes. Numéro 4 : une tomate."
+        },
+        "questions": [
+          {
+            "enonce": "Quel numéro correspond aux fruits ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "3",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "1"
+              },
+              {
+                "id": "c",
+                "texte": "5"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "3"
+              }
+            }
+          },
+          {
+            "enonce": "Quel numéro correspond au jus de fruits ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "1",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "2"
+              },
+              {
+                "id": "c",
+                "texte": "4"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "1"
+              }
+            }
+          },
+          {
+            "enonce": "Quel numéro correspond à la pomme ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "5",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "3"
+              },
+              {
+                "id": "c",
+                "texte": "1"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "5"
+              }
+            }
+          },
+          {
+            "enonce": "Quel numéro correspond aux légumes ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "2",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "4"
+              },
+              {
+                "id": "c",
+                "texte": "5"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "2"
+              }
+            }
+          },
+          {
+            "enonce": "Quel numéro correspond à la tomate ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "4",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "2"
+              },
+              {
+                "id": "c",
+                "texte": "3"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "4"
+              }
+            }
+          }
+        ],
+        "melanger": true,
+        "score": "par_image",
+        "images": [
+          {
+            "id": "i1",
+            "image": "/lib/images/vocabulaire/fruits/corbeille-de-fruits.webp",
+            "correct": true
+          },
+          {
+            "id": "i2",
+            "image": "/lib/images/vocabulaire/boissons/jus.webp",
+            "correct": true
+          },
+          {
+            "id": "i3",
+            "image": "/lib/images/vocabulaire/legumes/tomate.webp",
+            "correct": true
+          },
+          {
+            "id": "i4",
+            "image": "/lib/images/vocabulaire/aliments/pain.webp",
+            "correct": false
+          },
+          {
+            "id": "i5",
+            "image": "/lib/images/vocabulaire/desserts/glace.webp",
+            "correct": false
+          }
+        ],
+        "consigne_supplementaire": null
+      },
+      "after": {
+        "id": "delf-a1-2022-co-ex5-51",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "images_a_reconnaitre",
+        "theme": "Identifier des objets",
+        "scenario": "loisirs",
+        "scene": "Piste 51",
+        "consigne": "Écoutez le message. Cochez la case sous l’image si vous entendez le nom de l’objet (OUI) ; sinon, laissez-la vide (NON).",
+        "points": 5,
+        "support": {
+          "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_51.mp3",
+          "transcription": "Des fruits. Un jus de fruits. Une pomme. Des légumes. Une tomate."
+        },
+        "questions": [
+          {
+            "enonce": "Quel groupe d’aliments est nommé en premier ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Des fruits",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Des légumes"
+              },
+              {
+                "id": "c",
+                "texte": "Des céréales"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Des fruits"
+              }
+            }
+          },
+          {
+            "enonce": "Quelle boisson est nommée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un jus de fruits",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Un verre d’eau"
+              },
+              {
+                "id": "c",
+                "texte": "Un verre de lait"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un jus de fruits"
+              }
+            }
+          },
+          {
+            "enonce": "Quel fruit est nommé ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Une pomme",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Une poire"
+              },
+              {
+                "id": "c",
+                "texte": "Une orange"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Une pomme"
+              }
+            }
+          },
+          {
+            "enonce": "Quel groupe d’aliments est nommé après la pomme ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Des légumes",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Des biscuits"
+              },
+              {
+                "id": "c",
+                "texte": "Des fromages"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Des légumes"
+              }
+            }
+          },
+          {
+            "enonce": "Quel aliment est nommé en dernier ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Une tomate",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Une carotte"
+              },
+              {
+                "id": "c",
+                "texte": "Une courgette"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Une tomate"
+              }
+            }
+          }
+        ],
+        "melanger": true,
+        "score": "par_image",
+        "images": [
+          {
+            "id": "i1",
+            "image": "/lib/images/vocabulaire/fruits/corbeille-de-fruits.webp",
+            "correct": true
+          },
+          {
+            "id": "i2",
+            "image": "/lib/images/vocabulaire/boissons/jus.webp",
+            "correct": true
+          },
+          {
+            "id": "i3",
+            "image": "/lib/images/vocabulaire/legumes/tomate.webp",
+            "correct": true
+          },
+          {
+            "id": "i4",
+            "image": "/lib/images/vocabulaire/aliments/pain.webp",
+            "correct": false
+          },
+          {
+            "id": "i5",
+            "image": "/lib/images/vocabulaire/desserts/glace.webp",
+            "correct": false
+          }
+        ],
+        "consigne_supplementaire": null
+      }
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-ss-a2-s26-co-1",
+      "before": {
+        "id": "tcf-ss-a2-s26-co-1",
+        "niveau": "A1-A2",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Radio 51",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "transcription": [
+            "Vous écoutez ces informations à la radio. Répondez aux questions. Document 1. Vous voulez voyager ou apprendre des langues étrangères sans dépenser d'argent ? Avec le site BlablaLangue, vous pouvez loger gratuitement un voyageur chez vous et parler avec lui dans sa langue.",
+            "Découvrez le restaurant Jules Verne situé au deuxième étage de la Tour Eiffel et profitez de la plus belle vue de Paris. Le restaurant est ouvert de midi à 13h30 puis de 18h à 21h30.",
+            "Aujourd'hui à 18h, le chef Martin, qui est aussi acteur de cinéma, vous donne des conseils pour cuisiner des plats sucrés très simplement. Ne ratez pas cette émission spéciale sur France FM."
+          ],
+          "audios": [
+            "/lib/audio/tcf/co/maison/maison-1-1.mp3",
+            "/lib/audio/tcf/co/maison/maison-1-2.mp3",
+            "/lib/audio/tcf/co/maison/maison-1-3.mp3"
+          ],
+          "images_descriptions": [
+            "Scénario vidéo (audio CO moyen, « Maison — dialogue 1 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Vous écoutez ces informations à la radio » ; B : « Répondez aux questions » ; A : « Document 1 » ; B : « Vous voulez voyager ou apprendre des langues étrangères sans dépenser d'argent ? » ; A : « Avec le site BlablaLangue, vous pouvez loger gratuitement un voyageur chez vous et parler avec lui dans sa langue ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Maison — dialogue 2 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Découvrez le restaurant Jules Verne situé au deuxième étage de la Tour Eiffel et profitez de la plus belle vue de Paris » ; B : « Le restaurant est ouvert de midi à 13h30 puis de 18h à 21h30 ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Maison — dialogue 3 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Aujourd'hui à 18h, le chef Martin, qui est aussi acteur de cinéma, vous donne des conseils pour cuisiner des plats sucrés très simplement » ; B : « Ne ratez pas cette émission spéciale sur France FM ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
+          ]
+        },
+        "questions": [
+          {
+            "enonce": "Quel objectif le site BlablaLangue aide-t-il à atteindre ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Voyager ou apprendre des langues sans dépenser d’argent",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Acheter des livres moins chers"
+              },
+              {
+                "id": "c",
+                "texte": "Trouver un emploi à l’étranger"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Voyager ou apprendre des langues sans dépenser d’argent"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Où peut-on héberger un voyageur grâce au site ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Chez soi",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Dans un hôtel payé par le site"
+              },
+              {
+                "id": "c",
+                "texte": "Dans une école"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Chez soi"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Dans quelle langue peut-on parler avec le voyageur ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Dans sa langue",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "En français uniquement"
+              },
+              {
+                "id": "c",
+                "texte": "En anglais obligatoirement"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Dans sa langue"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Quel est le prix de l’hébergement proposé ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Il est gratuit",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Il coûte dix euros par nuit"
+              },
+              {
+                "id": "c",
+                "texte": "Il coûte cinquante euros par nuit"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Il est gratuit"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Dans quel monument le restaurant Jules Verne se trouve-t-il ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La tour Eiffel",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "L’Arc de triomphe"
+              },
+              {
+                "id": "c",
+                "texte": "Le château de Versailles"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "La tour Eiffel"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "À quel étage se trouve-t-il ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Au deuxième étage",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Au premier étage"
+              },
+              {
+                "id": "c",
+                "texte": "Au troisième étage"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Au deuxième étage"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "À quelle heure ouvre-t-il pour le déjeuner ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Midi",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "11 h"
+              },
+              {
+                "id": "c",
+                "texte": "13 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Midi"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1200-dessinee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1100-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1300-dessinee.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "À quelle heure ferme-t-il après le déjeuner ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "13 h 30",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "14 h 30"
+              },
+              {
+                "id": "c",
+                "texte": "15 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "13 h 30"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1330-dessinee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1430-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1500-dessinee.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "À quelle heure ouvre-t-il le soir ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "18 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "19 h"
+              },
+              {
+                "id": "c",
+                "texte": "20 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "18 h"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1900-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-2000-dessinee.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "À quelle heure ferme-t-il le soir ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "21 h 30",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "21 h"
+              },
+              {
+                "id": "c",
+                "texte": "22 h 30"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "21 h 30"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/vocabulaire/heure-horloge/vingt-et-une-heures-trente.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/vocabulaire/heure-horloge/vingt-et-une-heures.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/vocabulaire/heure-horloge/vingt-deux-heures-trente.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Quelle autre profession le chef Martin exerce-t-il ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Acteur de cinéma",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Journaliste"
+              },
+              {
+                "id": "c",
+                "texte": "Chanteur"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Acteur de cinéma"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "À quelle heure l’émission spéciale est-elle prévue ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "18 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "16 h"
+              },
+              {
+                "id": "c",
+                "texte": "20 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "18 h"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1600-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-2000-dessinee.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quel type de plats le chef expliquera-t-il ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Des plats sucrés",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Des plats de poisson"
+              },
+              {
+                "id": "c",
+                "texte": "Des plats de viande"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Des plats sucrés"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co306-plats-sucres-dessine.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co306-plats-poisson-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co306-plats-viande-dessine.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Sur quelle station l’émission sera-t-elle diffusée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "France FM",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Radio-Musique"
+              },
+              {
+                "id": "c",
+                "texte": "Radio-Sport"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "France FM"
+              }
+            },
+            "audio": 3
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "maison",
+        "scene": "Maison"
+      },
+      "after": {
+        "id": "tcf-ss-a2-s26-co-1",
+        "niveau": "A1-A2",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Radio 51",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "transcription": [
+            "Vous voulez voyager ou apprendre des langues étrangères sans dépenser d'argent? Avec le site BlablaLangue, vous pouvez loger gratuitement un voyageur chez vous et parler avec lui dans sa langue.",
+            "Découvrez le restaurant Jules Verne situé au deuxième étage de la Tour Eiffel et profitez de la plus belle vue de Paris. Le restaurant est ouvert de midi à 13h30 puis de 18h à 21h30.",
+            "Aujourd'hui à 18h, le chef Martin, qui est aussi acteur de cinéma, vous donne des conseils pour cuisiner des plats sucrés très simplement. Ne ratez pas cette émission spéciale sur France FM."
+          ],
+          "audios": [
+            "/lib/audio/tcf/co/maison/maison-1-1.mp3",
+            "/lib/audio/tcf/co/maison/maison-1-2.mp3",
+            "/lib/audio/tcf/co/maison/maison-1-3.mp3"
+          ],
+          "images_descriptions": [
+            "Scénario vidéo (audio CO moyen, « Maison — dialogue 1 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Vous écoutez ces informations à la radio » ; B : « Répondez aux questions » ; A : « Document 1 » ; B : « Vous voulez voyager ou apprendre des langues étrangères sans dépenser d'argent ? » ; A : « Avec le site BlablaLangue, vous pouvez loger gratuitement un voyageur chez vous et parler avec lui dans sa langue ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Maison — dialogue 2 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Découvrez le restaurant Jules Verne situé au deuxième étage de la Tour Eiffel et profitez de la plus belle vue de Paris » ; B : « Le restaurant est ouvert de midi à 13h30 puis de 18h à 21h30 ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Maison — dialogue 3 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Aujourd'hui à 18h, le chef Martin, qui est aussi acteur de cinéma, vous donne des conseils pour cuisiner des plats sucrés très simplement » ; B : « Ne ratez pas cette émission spéciale sur France FM ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
+          ]
+        },
+        "questions": [
+          {
+            "enonce": "Quel objectif le site BlablaLangue aide-t-il à atteindre ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Voyager ou apprendre des langues sans dépenser d’argent",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Acheter des livres moins chers"
+              },
+              {
+                "id": "c",
+                "texte": "Trouver un emploi à l’étranger"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Voyager ou apprendre des langues sans dépenser d’argent"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Où peut-on héberger un voyageur grâce au site ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Chez soi",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Dans un hôtel payé par le site"
+              },
+              {
+                "id": "c",
+                "texte": "Dans une école"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Chez soi"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Dans quelle langue peut-on parler avec le voyageur ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Dans sa langue",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "En français uniquement"
+              },
+              {
+                "id": "c",
+                "texte": "En anglais obligatoirement"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Dans sa langue"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Quel est le prix de l’hébergement proposé ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Il est gratuit",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Il coûte dix euros par nuit"
+              },
+              {
+                "id": "c",
+                "texte": "Il coûte cinquante euros par nuit"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Il est gratuit"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Dans quel monument le restaurant Jules Verne se trouve-t-il ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La tour Eiffel",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "L’Arc de triomphe"
+              },
+              {
+                "id": "c",
+                "texte": "Le château de Versailles"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "La tour Eiffel"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "À quel étage se trouve-t-il ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Au deuxième étage",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Au premier étage"
+              },
+              {
+                "id": "c",
+                "texte": "Au troisième étage"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Au deuxième étage"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "À quelle heure ouvre-t-il pour le déjeuner ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Midi",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "11 h"
+              },
+              {
+                "id": "c",
+                "texte": "13 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Midi"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1200-dessinee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1100-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1300-dessinee.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "À quelle heure ferme-t-il après le déjeuner ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "13 h 30",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "14 h 30"
+              },
+              {
+                "id": "c",
+                "texte": "15 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "13 h 30"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1330-dessinee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1430-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1500-dessinee.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "À quelle heure ouvre-t-il le soir ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "18 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "19 h"
+              },
+              {
+                "id": "c",
+                "texte": "20 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "18 h"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1900-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-2000-dessinee.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "À quelle heure ferme-t-il le soir ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "21 h 30",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "21 h"
+              },
+              {
+                "id": "c",
+                "texte": "22 h 30"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "21 h 30"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/vocabulaire/heure-horloge/vingt-et-une-heures-trente.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/vocabulaire/heure-horloge/vingt-et-une-heures.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/vocabulaire/heure-horloge/vingt-deux-heures-trente.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Quelle autre profession le chef Martin exerce-t-il ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Acteur de cinéma",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Journaliste"
+              },
+              {
+                "id": "c",
+                "texte": "Chanteur"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Acteur de cinéma"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "À quelle heure l’émission spéciale est-elle prévue ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "18 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "16 h"
+              },
+              {
+                "id": "c",
+                "texte": "20 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "18 h"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1600-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-2000-dessinee.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quel type de plats le chef expliquera-t-il ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Des plats sucrés",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Des plats de poisson"
+              },
+              {
+                "id": "c",
+                "texte": "Des plats de viande"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Des plats sucrés"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co306-plats-sucres-dessine.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co306-plats-poisson-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co306-plats-viande-dessine.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Sur quelle station l’émission sera-t-elle diffusée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "France FM",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Radio-Musique"
+              },
+              {
+                "id": "c",
+                "texte": "Radio-Sport"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "France FM"
+              }
+            },
+            "audio": 3
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "maison",
+        "scene": "Maison"
+      }
+    }
+  ],
+  "status": "installed",
+  "received_originals_modified": 0,
+  "human_listening_performed": false
+}

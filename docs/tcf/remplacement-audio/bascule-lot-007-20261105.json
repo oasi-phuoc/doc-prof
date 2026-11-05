@@ -1,0 +1,315 @@
+{
+  "batch": 7,
+  "audio_replacements": [
+    {
+      "ref": "/lib/audio/tcf/co/radio/les-informations-1-1.mp3",
+      "previous_sha256": "2c905e7357cd0bc53c321e0fd2e40859fe09e06830d8562424e902623757b41c",
+      "candidate_sha256": "c2fe1019706114398a05d7862cb19946e885e8e4d14fa506509026c18d454de6",
+      "rollback_git_blob": "0b0012466060b6a780cd185ddddf6142cc630f25",
+      "source_id": "delf_a2_eb1w:002:f9e78fdea89a",
+      "source_sha256": "f9e78fdea89a11f07015651913c0d51ac0b9c1998cafe2ed0c68433bf0838f91",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "c2fe1019706114398a05d7862cb19946e885e8e4d14fa506509026c18d454de6",
+        "duration": 19.670204,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T120955-64eefc73e2/manifest.json",
+          "manifest_sha256": "82bb69355177f78e1937e8c394d058b1df5bd15d12fb338e03bc2d0c8dd9292d",
+          "lossless_sha256": "f69ade31a762461312be740b2549e46980eb3b3025b7984ef218ab5a3722d4ac"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.15,
+          "trailing_quiet_seconds": 0.1,
+          "relative_rms_threshold": 0.0172816,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "editorial_reason": "Écarts de ponctuation, accords, segmentation des nombres et graphies propres examinés ; faits et texte courant conservés avec contrôle des deux reconnaissances du fichier final, des nombres et des marges.",
+      "numeric_resolution": null,
+      "previous_duration": 22.65,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/radio/11-radio-prévision-météo-2.mp3",
+      "previous_sha256": "f56d555435d87f612f6d1240705202fa9b1126a169e4e439af743ef3b3e28348",
+      "candidate_sha256": "92c26ffc1b6b5591ca8752feeffea6b85ae1a1204006c88824fed50d3bb1ea4a",
+      "rollback_git_blob": "2dc824c37fa6079a85fe2458b3da1cabbf48f35a",
+      "source_id": "09035276:035:80d517bcdaf7",
+      "source_sha256": "80d517bcdaf7af492e0a294e3b83a9d2d8438150e447d52e22e33fad5bc952ac",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "92c26ffc1b6b5591ca8752feeffea6b85ae1a1204006c88824fed50d3bb1ea4a",
+        "duration": 20.009796,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T013517-c621cfddce/manifest.json",
+          "manifest_sha256": "606e080c9ca2e3cac8b7bccd191473e966dc6a8dfbe5bb381d6e60cfc81d98f0",
+          "lossless_sha256": "ef0ba628f20e2e1039dd1ee8fcdf6d32f1c127739cc30329086d0423b52f5631"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.28,
+          "trailing_quiet_seconds": 0.34,
+          "relative_rms_threshold": 0.0064289,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "editorial_reason": "Écarts de ponctuation, accords, segmentation des nombres et graphies propres examinés ; faits et texte courant conservés avec contrôle des deux reconnaissances du fichier final, des nombres et des marges.",
+      "numeric_resolution": null,
+      "previous_duration": 20.51,
+      "previous_pool": {
+        "tag": "moyen",
+        "questions": 4
+      },
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/travail/01-travail-répondeur-planning-du-jour.mp3",
+      "previous_sha256": "2f3b9e0134840763afef4aa3605f1da4199df24234b63a92aedfb0b8a712fccc",
+      "candidate_sha256": "6963c8a495169e4bcf50b68a1e0cbfe48321e3fd357d351307ae6df711d8f661",
+      "rollback_git_blob": "96215404fead5a641d496114982d5e4f9d8b062f",
+      "source_id": "additional-20261102:mdf-a1-abc:36:8509392fb7df:c7baaa0b",
+      "source_sha256": "8509392fb7df89a5bd69f06edae21786c14f0f5518d801f2b1f4a5e1d1868ad0",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "6963c8a495169e4bcf50b68a1e0cbfe48321e3fd357d351307ae6df711d8f661",
+        "duration": 25.051429,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014139-071ea4c25c/manifest.json",
+          "manifest_sha256": "a5342a06e26183a014fe922670b4c39c774a675e0209d0d6d473878d923550fe",
+          "lossless_sha256": "cd2d23817a40125a163a57a9a4dacbd6e6a6f6dce209befe46316f9dfecab58d"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.23,
+          "trailing_quiet_seconds": 0.47,
+          "relative_rms_threshold": 0.0071808,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "editorial_reason": "Écarts de ponctuation, accords, segmentation des nombres et graphies propres examinés ; faits et texte courant conservés avec contrôle des deux reconnaissances du fichier final, des nombres et des marges.",
+      "numeric_resolution": null,
+      "previous_duration": 27.08,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/presenter/moyen-a2__radio-20.1.mp3",
+      "previous_sha256": "e36ef6a68273342aa00a47123fa192e8e86132e8870065ef836a7383da881ae2",
+      "candidate_sha256": "85484fe100d77b60c6a741c817f3a92fe2c2d1123b4ed7aa2b24cc0481a1d5d9",
+      "rollback_git_blob": "22482a37f6a1ab916e5c46457ebb1e442fbba51f",
+      "source_id": "additional-20261102:mdf-a2-abc-direct:67:2589d43b0f5a:4b709d1d",
+      "source_sha256": "2589d43b0f5af27ed14888309ecffae5a786ccc94ba0d63aad76a1fb8bef697b",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "85484fe100d77b60c6a741c817f3a92fe2c2d1123b4ed7aa2b24cc0481a1d5d9",
+        "duration": 16.875102,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014109-0abbba970d/manifest.json",
+          "manifest_sha256": "0b8e1a1141a59cbb6ced7c672bc684b3de3a5ae9b0f582a59fa6f5bfdf04fcfa",
+          "lossless_sha256": "fa2baf04489269803ba8850e23845ddb0dfac826ca74a0fd486b916f24c1f271"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "needs_boundary_review",
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.4,
+          "relative_rms_threshold": 0.0108703,
+          "safe_quiet_margins": false,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.32,
+          "trailing_non_speech_seconds": 0.36,
+          "speech_region_count": 6,
+          "safe_voiced_margins": true,
+          "method": "Silero VAD with no padding; supplementary speech-vs-music evidence, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "editorial_reason": "Écarts de ponctuation, accords, segmentation des nombres et graphies propres examinés ; faits et texte courant conservés avec contrôle des deux reconnaissances du fichier final, des nombres et des marges.",
+      "numeric_resolution": null,
+      "previous_duration": 19.1,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_08-4.mp3",
+      "previous_sha256": "fc16cea4298b255d59bdaeae98d24f868f7e01b57d21b7e018be50cf19f087ef",
+      "candidate_sha256": "0a8a5a93f9e928bd7c160bab3f6ef168f1dca64218020d3a8f018444225af3af",
+      "rollback_git_blob": "5e6e89be7263e13585818718ff19e7f924ad1fa2",
+      "source_id": "delf_a2_2021:008:f50114d4eae2",
+      "source_sha256": "f50114d4eae2ed56ede1f1c49d602517171940eb19abe118839ce8864691c5cf",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "0a8a5a93f9e928bd7c160bab3f6ef168f1dca64218020d3a8f018444225af3af",
+        "duration": 4.571429,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111907-f5719a8717/manifest.json",
+          "manifest_sha256": "075849ae0bb3529842219bc23ca88d9ba051fdbe7919a23727e89f8715675a90",
+          "lossless_sha256": "3056494d76fd262933772f7f1ed4763119cc2d12f0e74ca85653f37bf04175f8"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.22,
+          "trailing_quiet_seconds": 0.35,
+          "relative_rms_threshold": 0.0125565,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "editorial_reason": "Écarts de ponctuation, accords, graphies et nombres examinés. Texte courant conservé sous réserve d’accord des deux reconnaissances finales, des nombres et des marges de parole ; aucune heure déduite du contexte.",
+      "numeric_resolution": null,
+      "previous_duration": 6.03,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_74-3.mp3",
+      "previous_sha256": "897a92ad0c3b3fed9cb761115367ddd21b2096c162da4ce2bb55cd289f3ae40e",
+      "candidate_sha256": "f4d0898182ace4b42dae22e96016ab86ab45448530da105ff13b15384105f3df",
+      "rollback_git_blob": "2b9699f3cd25e1a6f1a2d676d12f906ffacfcbb8",
+      "source_id": "delf_a1_2022:074:ca3dd2977475",
+      "source_sha256": "ca3dd297747506f8dbf5d8d7ef76c4983c0c48b57bd6e9a3f8f793fe09a5e56c",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "f4d0898182ace4b42dae22e96016ab86ab45448530da105ff13b15384105f3df",
+        "duration": 4.649796,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261103T014708-0d003216c7/manifest.json",
+          "manifest_sha256": "ba66c73cf4e64e6fcc26c19fcf7786c33a9347969bc80cd7d4621267912bcd2a",
+          "lossless_sha256": "78cd3d4b0e839a2fd4e8579460d53eade211399e90603b70fad25115bae46e74"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.3,
+          "trailing_quiet_seconds": 0.23,
+          "relative_rms_threshold": 0.0095759,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "editorial_reason": "Écarts de ponctuation, accords, graphies et nombres examinés. Texte courant conservé sous réserve d’accord des deux reconnaissances finales, des nombres et des marges de parole ; aucune heure déduite du contexte.",
+      "numeric_resolution": null,
+      "previous_duration": 7.84,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_27-2.mp3",
+      "previous_sha256": "ab8d379f87d0e937bb56695143eeea478e92407844f9ca2fcb7c9ffb3d54c892",
+      "candidate_sha256": "8b7232c48e3c110fcc06b91faa72017cf84b658a2485cdf9fc91e5151587fadf",
+      "rollback_git_blob": "38d4c859e3a53a464ef2647bc83ef3ce66e207c4",
+      "source_id": "delf_a1_2022:027:38fa96a2f6c8",
+      "source_sha256": "38fa96a2f6c84188ed16b0570810055a4d57051a3c3a03647a0b10f4a7c6acfa",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "8b7232c48e3c110fcc06b91faa72017cf84b658a2485cdf9fc91e5151587fadf",
+        "duration": 9.404082,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111618-773a73d6d5/manifest.json",
+          "manifest_sha256": "9dbeebb47dd1d00c3e0c6f828ff872f5fee6ed8bc2fa0534c7c8577a25047739",
+          "lossless_sha256": "a3aa147b8add69c8c5d5ad31db5fc9d088e8e789567d0e030f5da330ecb49118"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.33,
+          "trailing_quiet_seconds": 0.29,
+          "relative_rms_threshold": 0.0073944,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "editorial_reason": "Écarts de ponctuation, accords, graphies et nombres examinés. Texte courant conservé sous réserve d’accord des deux reconnaissances finales, des nombres et des marges de parole ; aucune heure déduite du contexte.",
+      "numeric_resolution": null,
+      "previous_duration": 12.38,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_17-2.mp3",
+      "previous_sha256": "7f248136701a0c8a541eb07ada49bb376f219ae19fb46d5192363fbb9a789393",
+      "candidate_sha256": "bc0169ec25919e5eb17775e2b5ea835a42ea1f74cc8d542cd0c8f2bf0e6ad656",
+      "rollback_git_blob": "d64f489d0b127836743918a743f8c9bed4d44d95",
+      "source_id": "delf_a2_2021:017:e80a87f00222",
+      "source_sha256": "e80a87f002221ec30e1c96a50d1183579cc9ef79d06e4a24f2aabbf43d75aabd",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "bc0169ec25919e5eb17775e2b5ea835a42ea1f74cc8d542cd0c8f2bf0e6ad656",
+        "duration": 5.511837,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111922-315b73d5b5/manifest.json",
+          "manifest_sha256": "7fdeb7c342b4739a9fd24f3890ae1b6eed972af89bf847323ca012f56ce155fe",
+          "lossless_sha256": "c03329fd465496ce8eb57fdb5eada4d88c5a3e6bb962b5b7ee60dfbf3cfb3b19"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.37,
+          "trailing_quiet_seconds": 0.48,
+          "relative_rms_threshold": 0.0116023,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "editorial_reason": "Écarts de ponctuation, accords, graphies et nombres examinés. Texte courant conservé sous réserve d’accord des deux reconnaissances finales, des nombres et des marges de parole ; aucune heure déduite du contexte.",
+      "numeric_resolution": null,
+      "previous_duration": 7.03,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    }
+  ],
+  "exercise_changes": [],
+  "status": "installed",
+  "received_originals_modified": 0,
+  "human_listening_performed": false
+}

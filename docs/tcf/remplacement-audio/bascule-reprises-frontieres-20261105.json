@@ -1,0 +1,2618 @@
+{
+  "status": "prepared_only_not_installed",
+  "human_listening_performed": false,
+  "summary": {
+    "boundaries_examined": 374,
+    "new_candidates_prepared": 155,
+    "needed_after_speech_vad_review": 80,
+    "requires_new_final_file_recognitions": true
+  },
+  "candidates": [
+    {
+      "previous_sha256": "a56f7e0b892548e752a4133788636188d1d1fbe1abf098ead34dcd8778099b6d",
+      "previous_file": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014656-f477263ea5/additional-20261102-mdf-b1-abc-direct-21-fc97a3fc8ce3-c6cdaff5-d1/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/a56f7e0b892548e752a4133788636188d1d1fbe1abf098ead34dcd8778099b6d-97725-4862025/candidate.mp3",
+      "sha256": "9ffecbb57796b548f34cf6b2d5d4f8c0b1e07cfbe3ae7b8c8a73f813192512d0",
+      "source_sha256": "fc97a3fc8ce3ebca2b0b9385260d97bab33c31c96acd6842614d4eb09fd50da2",
+      "source_file": "/workspace/attachments/2536fc65-9623-420b-a1a4-055798f65fa9/09035197_21_DELF_EMISSION_A3.mp3",
+      "source_decoded_pcm_sha256": "c3f48bb530cdfe9458d98da535dabe8b58382133ccecb6bc4f95e2249b5a4eb3",
+      "source_sample_rate": 44100,
+      "source_channels": 1,
+      "source_start_frame": 97725,
+      "source_end_frame": 4862025,
+      "source_start": 2.2159863945578233,
+      "source_end": 110.25,
+      "source_slice_pcm_sha256": "7bef9b2a02e5274805236b47fdc2d9c3b794e8c15bde6e802d444574087d54e3",
+      "previous_start": 2.2159863945578233,
+      "previous_end": 110.11201814058957,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            110.13,
+            110.99
+          ],
+          "last_word": "concerning.",
+          "next_word_start": 111.81448979591836
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "0ff3e140cd63d172bbd1cd0d896d20040ad82bb3bd7407d061e3402256e6e6ec",
+      "previous_file": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014842-59849123f8/additional-20261102-mdf-b1-abc-direct-50-6ae112e87e4a-67316fec-d1/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/0ff3e140cd63d172bbd1cd0d896d20040ad82bb3bd7407d061e3402256e6e6ec-106986-8142625/candidate.mp3",
+      "sha256": "29c380c763a7216885ee009199acee47953685b21108e16373de1c7e7a67d309",
+      "source_sha256": "6ae112e87e4afe2f5e6f3e0ef0c332e03724f7418b2693119ce00838ea764744",
+      "source_file": "/workspace/attachments/56995cc7-3792-492d-b370-fc5394f6bf2e/09035197_50_DELF_EMISSION_A32.mp3",
+      "source_decoded_pcm_sha256": "95da880c7a4b6440e8b87699816946f749d852bb0f33b593fe939d5aeb385fe2",
+      "source_sample_rate": 44100,
+      "source_channels": 1,
+      "source_start_frame": 106986,
+      "source_end_frame": 8142625,
+      "source_start": 2.4259863945578233,
+      "source_end": 184.64002267573696,
+      "source_slice_pcm_sha256": "da53975c0bae2d60cfe4d2ff3fc5faa7347380cd34b63dd6d072c7f8424b10fd",
+      "previous_start": 2.4259863945578233,
+      "previous_end": 184.39800453514738,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            184.52,
+            185.27
+          ],
+          "last_word": "CEDEX.",
+          "next_word_start": 185.76714285714286
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "fd0ac92ca06a9155647a3b0c68858141dc03f68ef028366e926bdd54be834dde",
+      "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111332-50cc2ea536/09035276-062-49e69d6e5e7f-d2/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/fd0ac92ca06a9155647a3b0c68858141dc03f68ef028366e926bdd54be834dde-698544-1131165/candidate.mp3",
+      "sha256": "308495ca2f68883697fa827117174d2b8aa8f96e84d36d7c6e26d4a712aeadcf",
+      "source_sha256": "49e69d6e5e7f1ad02fd4093c610c815a9f0cd625d294f42bf850c4f95f051785",
+      "source_file": "/workspace/work/tcf-audio-replacement/incoming/a1/09035276_62_Delf blanc 2- Ex 4.mp3",
+      "source_decoded_pcm_sha256": "0d3cb63d027441b5957fd000ce1198e9f7f3f93ded7b4cff0b6da8ffc94d42a8",
+      "source_sample_rate": 44100,
+      "source_channels": 1,
+      "source_start_frame": 698544,
+      "source_end_frame": 1131165,
+      "source_start": 15.84,
+      "source_end": 25.65,
+      "source_slice_pcm_sha256": "1e1b4a0a7b8d3c8933196bdf5a28a988c332a8f6e5d65d8695e0a3c4b627d7c0",
+      "previous_start": 15.84,
+      "previous_end": 25.4,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            25.529999999999998,
+            26.27
+          ],
+          "last_word": "chance.",
+          "next_word_start": 28.056
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "25dcae3ad56b3bdfd802e279acdd1cefc204823fc9376360cb5fb85cddc30c98",
+      "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111332-50cc2ea536/09035276-062-49e69d6e5e7f-d3/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/25dcae3ad56b3bdfd802e279acdd1cefc204823fc9376360cb5fb85cddc30c98-1307829-1747242/candidate.mp3",
+      "sha256": "1d59bc3cc3830a6c5836c877f8bc5554f15e1aab27c3fe5ddfe18aa8c309e8d6",
+      "source_sha256": "49e69d6e5e7f1ad02fd4093c610c815a9f0cd625d294f42bf850c4f95f051785",
+      "source_file": "/workspace/work/tcf-audio-replacement/incoming/a1/09035276_62_Delf blanc 2- Ex 4.mp3",
+      "source_decoded_pcm_sha256": "0d3cb63d027441b5957fd000ce1198e9f7f3f93ded7b4cff0b6da8ffc94d42a8",
+      "source_sample_rate": 44100,
+      "source_channels": 1,
+      "source_start_frame": 1307829,
+      "source_end_frame": 1747242,
+      "source_start": 29.65598639455782,
+      "source_end": 39.62,
+      "source_slice_pcm_sha256": "09d778efa2155324c5e7e157dc45475a123c273f56d292bd4ebf2344f91a7c75",
+      "previous_start": 29.65598639455782,
+      "previous_end": 39.696009070294785,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            39.5,
+            40.57
+          ],
+          "last_word": "là.",
+          "next_word_start": 41.336
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "ec2f3f4c4db3a722f23a0d5ce03100eece3b9ce381af5c92f46f8044ab5fcda1",
+      "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111338-ea1c089ef4/09035276-067-0f32d1f3511b-d2/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/ec2f3f4c4db3a722f23a0d5ce03100eece3b9ce381af5c92f46f8044ab5fcda1-696074-1033263/candidate.mp3",
+      "sha256": "8e29fabc3e26f73f1dd331187f7a084c2f4445556499f66d6a0fbad9b346b906",
+      "source_sha256": "0f32d1f3511bd0b4fa2c948360659d83e41f8c963ee11a2262080ee74ce087eb",
+      "source_file": "/workspace/work/tcf-audio-replacement/incoming/a1/09035276_67_Delf blanc 3- Ex 4.mp3",
+      "source_decoded_pcm_sha256": "1873dde967c76a509ef9f81ee61622f334ab325835409553f4f11421d40db689",
+      "source_sample_rate": 44100,
+      "source_channels": 1,
+      "source_start_frame": 696074,
+      "source_end_frame": 1033263,
+      "source_start": 15.783990929705215,
+      "source_end": 23.43,
+      "source_slice_pcm_sha256": "55e3d77fc37cd41e1b4b3428ebdacbcbfc8a8a38fa101ae6c07e41cc18c5fba7",
+      "previous_start": 15.783990929705215,
+      "previous_end": 23.504013605442175,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            23.31,
+            24.38
+          ],
+          "last_word": "monsieur.",
+          "next_word_start": 25.143999
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "014ae9f55b8aa06940610554808018f063af9016a07d4cdf5232e50ac279b127",
+      "previous_file": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014434-adc5d56b78/additional-20261102-mdf-a2-abc-direct-89-bd98123eea96-e4d4b672-d4/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/014ae9f55b8aa06940610554808018f063af9016a07d4cdf5232e50ac279b127-2489709-3029230/candidate.mp3",
+      "sha256": "f10cfd6ffebbb89eeaa89bd46579c4b6adf8449a123ee60ff05d9b0919473cc5",
+      "source_sha256": "bd98123eea964bd463443f31b930aa13a0ee7352a34dfe40b356228ced20f9c0",
+      "source_file": "/workspace/attachments/7fc92777-3369-4e3a-81ee-6d41084f6759/09035199_089_ACT 40.mp3",
+      "source_decoded_pcm_sha256": "f1a5d19ade42f07e8acbe559a33cfeed867be518b9505277d2e97a6bac505f95",
+      "source_sample_rate": 44100,
+      "source_channels": 1,
+      "source_start_frame": 2489709,
+      "source_end_frame": 3029230,
+      "source_start": 56.455986394557826,
+      "source_end": 68.69002267573696,
+      "source_slice_pcm_sha256": "ce95cbdc2fc9dc4857c55d4ca0a4f067a85ade1797c2a74f1e10ee06fb18eb3b",
+      "previous_start": 56.455986394557826,
+      "previous_end": 68.25600907029478,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            68.57000000000001,
+            69.13
+          ],
+          "last_word": "génial!",
+          "next_word_start": 69.70510204081631
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "499a16940e32c0dc9f7f31199f646a2034d1fe292f6def85d630f8a332fd96a0",
+      "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T120818-d2b8c1d8c6/9782090351958-042-d86fac163633-r2-d6/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/499a16940e32c0dc9f7f31199f646a2034d1fe292f6def85d630f8a332fd96a0-4122468-4832479/candidate.mp3",
+      "sha256": "c40a49f5dfaed41a91187f666a5402c51b15485e0e27977316daa24d1c71e2dc",
+      "source_sha256": "d86fac163633bb892d26155c1ca9120d69af6af10423cd026887c3dcbac391e1",
+      "source_file": "/workspace/work/tcf-audio-replacement/incoming/a2/9782090351958_42_CO_ex40.mp3",
+      "source_decoded_pcm_sha256": "85e7e808fe14a1d27688da37590375505fc80535124c6299606fa3f0628f53a9",
+      "source_sample_rate": 44100,
+      "source_channels": 1,
+      "source_start_frame": 4122468,
+      "source_end_frame": 4832479,
+      "source_start": 93.48,
+      "source_end": 109.58002267573696,
+      "source_slice_pcm_sha256": "151b4f0b6684655f7c8ea555967fadcd567b1c4e9e1204b8f8e3b1a5e7030568",
+      "previous_start": 93.48,
+      "previous_end": 108.7680045351474,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            109.46000000000001,
+            109.64
+          ],
+          "last_word": "16h.",
+          "next_word_start": 110.50836734693877
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "864bedb27a1569d106363da15a758325d3b8d92d9fe23cf45878e108b86cf168",
+      "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111431-5193fd5d20/9782090351958-032-13ecb3fcf81d-d3/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/864bedb27a1569d106363da15a758325d3b8d92d9fe23cf45878e108b86cf168-2239221-2939707/candidate.mp3",
+      "sha256": "3d2957e68a455d7462109402efb94da3edd0fd537ecb022ca59cf19c9dc4a650",
+      "source_sha256": "13ecb3fcf81d94cb597eeb336853e7b3b729b682d1cfbc0ae220de29c3e3d2df",
+      "source_file": "/workspace/work/tcf-audio-replacement/incoming/a2/9782090351958_32_CO_ex30.mp3",
+      "source_decoded_pcm_sha256": "fe2ad7515d450fcb17dd1401713f25760863da68af57651851ba8af33363cfc5",
+      "source_sample_rate": 44100,
+      "source_channels": 1,
+      "source_start_frame": 2239221,
+      "source_end_frame": 2939707,
+      "source_start": 50.775986394557826,
+      "source_end": 66.66002267573697,
+      "source_slice_pcm_sha256": "f5b239000d345f0c0e3503deba5367642674dedd8773f754efdeefa9232e0d87",
+      "previous_start": 50.775986394557826,
+      "previous_end": 66.73600907029478,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            66.54,
+            67.61
+          ],
+          "last_word": "sœur.",
+          "next_word_start": 68.215999
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "36d51fe7f26a7d7a3bd7ac6b8cf55f29d12db84a111d7bfc4d73c29c605e0afb",
+      "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T120958-01a293fc0c/delf_a2_eb1w-003-5a9ff0eb5c65-r2-d1/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/36d51fe7f26a7d7a3bd7ac6b8cf55f29d12db84a111d7bfc4d73c29c605e0afb-2049768-3447562/candidate.mp3",
+      "sha256": "ad2ed1d2a79b8a10f3d621669271116a9a13c9a2b2833c63d670d0c61e57f1f2",
+      "source_sha256": "5a9ff0eb5c65c99d8b3f0254e09d41d1383b33997d14488a921888b547f93286",
+      "source_file": "/workspace/work/tcf-audio-replacement/incoming/a2/delf_a2_2021_eb1w_piste_03.mp3",
+      "source_decoded_pcm_sha256": "94d3a10bb9fc41b855673b6d57c703c0c0896d283be0c53e73a18882fa209478",
+      "source_sample_rate": 44100,
+      "source_channels": 2,
+      "source_start_frame": 2049768,
+      "source_end_frame": 3447562,
+      "source_start": 46.48,
+      "source_end": 78.17600907029478,
+      "source_slice_pcm_sha256": "e898c604351e0c9a53783e25ad49d22598fbdc33d1a10dbef1f4bde5181c80cc",
+      "previous_start": 46.6,
+      "previous_end": 78.17600907029478,
+      "word_anchors_and_signal": [
+        {
+          "edge": "start",
+          "quiet_interval": [
+            45.8,
+            46.56
+          ],
+          "first_word": "Bonjour,",
+          "previous_word_end": 12.168
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "b377efb21140ab6c8157cc9aaafd307ac69502e0e03afc8a354e046bfdd62433",
+      "previous_file": "/workspace/work/tcf-audio-reconciliation-20261104/grammar-cuts-work/staged-boundaries-work/run-20261104T173715-11b41e5792/grammar-import-20261104-file_00000000589481f4aa6ff4e919606d63-d1/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/b377efb21140ab6c8157cc9aaafd307ac69502e0e03afc8a354e046bfdd62433-469576-2682603/candidate.mp3",
+      "sha256": "bb5bfb7c0dfd29796a8a60bda2c01eaa56d3edc8e2fb329d49a610190621fa9e",
+      "source_sha256": "a900fc89033c1e4e140a9000dcbdcc998ea3625763f8ce3256737441c08a84e1",
+      "source_file": "/workspace/doc-prof/public/lib/audio/grammaire/co/logement/piste038.mp3",
+      "source_decoded_pcm_sha256": "eb723fb3620fc7f5c0db16378f2597bf2b78740750d732388cd35c9ccbe3c51f",
+      "source_sample_rate": 44100,
+      "source_channels": 2,
+      "source_start_frame": 469576,
+      "source_end_frame": 2682603,
+      "source_start": 10.64798185941043,
+      "source_end": 60.83,
+      "source_slice_pcm_sha256": "2cfd2b9b3e396fd209f2bee9053dee06d0e4dcd39009a1956dd1e1f3741994d1",
+      "previous_start": 10.64798185941043,
+      "previous_end": 60.656009070294786,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            60.71,
+            61.51
+          ],
+          "last_word": "centre-ville.",
+          "next_word_start": 61.868367346938776
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "5cd34ce5689d8f98e655693d150d83e8da2a0e6c2c143007fba78d7df3735606",
+      "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111330-d70e6b9446/09035276-059-8deb4f887182-d1/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/5cd34ce5689d8f98e655693d150d83e8da2a0e6c2c143007fba78d7df3735606-210621-1270962/candidate.mp3",
+      "sha256": "79c1a40606d78ad7ecc9ee1646c94f6499778fd8f411303a0cc84eaaf8f932f9",
+      "source_sha256": "8deb4f8871825a6bd2bfcff52b5c8b66d9b5c06d9e78510b81e323720798cefd",
+      "source_file": "/workspace/work/tcf-audio-replacement/incoming/a1/09035276_59_Delf blanc 2- Ex 1.mp3",
+      "source_decoded_pcm_sha256": "7bc0ce687424a03814e311da699d3d7280f85e57137eeabe12cde8f470c63f7b",
+      "source_sample_rate": 44100,
+      "source_channels": 1,
+      "source_start_frame": 210621,
+      "source_end_frame": 1270962,
+      "source_start": 4.775986394557823,
+      "source_end": 28.82,
+      "source_slice_pcm_sha256": "488a0bef21aad6cbbb7e884a10af3aff79cd409c94583be250ef99ea5b4aeb8a",
+      "previous_start": 4.775986394557823,
+      "previous_end": 28.576009070294784,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            28.7,
+            29.36
+          ],
+          "last_word": "plus?",
+          "next_word_start": 29.711632653061226
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "25f309a445d9b0111e08eee235feb8b0c985545f6f784463fd757828dc87f907",
+      "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111337-f4f42e3dd6/09035276-065-07efb5a82e80-d1/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/25f309a445d9b0111e08eee235feb8b0c985545f6f784463fd757828dc87f907-99225-1119699/candidate.mp3",
+      "sha256": "19d8461aedf635bc04beefc1759f0b53f89b395f055b15f582d3f95763229bb2",
+      "source_sha256": "07efb5a82e80a75dbd6fa5db63e7c813b6edb68c9f2c13e9293fff386c7da5a0",
+      "source_file": "/workspace/work/tcf-audio-replacement/incoming/a1/09035276_65_Delf blanc 3- Ex 2.mp3",
+      "source_decoded_pcm_sha256": "412b796f58be8ff97d02fd09b85df0296cd2892c567da1e4a571228ec94a56a4",
+      "source_sample_rate": 44100,
+      "source_channels": 1,
+      "source_start_frame": 99225,
+      "source_end_frame": 1119699,
+      "source_start": 2.25,
+      "source_end": 25.39,
+      "source_slice_pcm_sha256": "e2f8a024f3d19e15b9692387a74476525e1de062bc922c5db45757458498dfc3",
+      "previous_start": 4.16,
+      "previous_end": 24.52,
+      "word_anchors_and_signal": [
+        {
+          "edge": "start",
+          "quiet_interval": [
+            1.84,
+            2.33
+          ],
+          "first_word": "Bonjour",
+          "previous_word_end": 1.76
+        },
+        {
+          "edge": "end",
+          "quiet_interval": [
+            25.27,
+            25.4
+          ],
+          "last_word": "sortie.",
+          "next_word_start": 26.08061224489796
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "6e9899fc378a450fcae1f3c552420409e11615d3c32bce50e7cf895ca2f696df",
+      "previous_file": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014225-167b5ae4df/additional-20261102-mdf-a1-abc-17-b89d875a0076-a0ca3b93-d1/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/6e9899fc378a450fcae1f3c552420409e11615d3c32bce50e7cf895ca2f696df-371763-1784727/candidate.mp3",
+      "sha256": "acd0c52baaad2436d2a6146e715de1cd07cb9ce27c38213f2f8628739edbb9c0",
+      "source_sha256": "b89d875a0076d8f343d485aad56f2fbab379e48cf7978daeaf5003a64886efe2",
+      "source_file": "/workspace/work/tcf-audio-additional-20261102-work/incoming/a1/mdf-a1-abc/MDF_A1_ABC-DELF_AUDIO/09035257_017.mp3",
+      "source_decoded_pcm_sha256": "56088e6f4d7f8848cd5e11d6bc163b3f553ed255d8eb2b1b9f7991b21b963a2a",
+      "source_sample_rate": 44100,
+      "source_channels": 1,
+      "source_start_frame": 371763,
+      "source_end_frame": 1784727,
+      "source_start": 8.43,
+      "source_end": 40.47,
+      "source_slice_pcm_sha256": "2ddfbe03bcd4c4ca9ef3c2f02f0b6f461873975d92746becc133968d1e320743",
+      "previous_start": 9.463990929705215,
+      "previous_end": 40.224013605442174,
+      "word_anchors_and_signal": [
+        {
+          "edge": "start",
+          "quiet_interval": [
+            6.99,
+            8.51
+          ],
+          "first_word": "Le",
+          "previous_word_end": 6.904
+        },
+        {
+          "edge": "end",
+          "quiet_interval": [
+            40.35,
+            40.47
+          ],
+          "last_word": "internet.",
+          "next_word_start": 41.9630612244898
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "79c888317109dcdfb823d85433b952c75964aa964abb47dead5c5e22603a765e",
+      "previous_file": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014236-05f637ca71/additional-20261102-mdf-a1-abc-20-0d5bb53c649a-518b6df5-d1/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/79c888317109dcdfb823d85433b952c75964aa964abb47dead5c5e22603a765e-123921-1866312/candidate.mp3",
+      "sha256": "ed2561b5521dab92e64ced8d5af4760804eaac8d8effacfcd26b19c69dd399cc",
+      "source_sha256": "0d5bb53c649a4bb4749c288548c93f9f9a0b3da06ab7773a3382fb400a5989d0",
+      "source_file": "/workspace/work/tcf-audio-additional-20261102-work/incoming/a1/mdf-a1-abc/MDF_A1_ABC-DELF_AUDIO/09035257_020.mp3",
+      "source_decoded_pcm_sha256": "712fd4ebf070da18de7020033e2954d587371fe1ea7730ce8502d8b9d03c3eb8",
+      "source_sample_rate": 44100,
+      "source_channels": 1,
+      "source_start_frame": 123921,
+      "source_end_frame": 1866312,
+      "source_start": 2.81,
+      "source_end": 42.32,
+      "source_slice_pcm_sha256": "f74294327ab38da9a730eea29e3775adc3439f05c48f499ef7e96abd637d6a33",
+      "previous_start": 4.44,
+      "previous_end": 42.32,
+      "word_anchors_and_signal": [
+        {
+          "edge": "start",
+          "quiet_interval": [
+            1.8,
+            2.89
+          ],
+          "first_word": "Radio",
+          "previous_word_end": 1.72
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "abee86bfad187739f4906515fa5d175634ea0261080bcde992e6a1b106662192",
+      "previous_file": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014223-41a88af307/additional-20261102-mdf-a1-abc-19-832672366feb-897a68a8-d1/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/abee86bfad187739f4906515fa5d175634ea0261080bcde992e6a1b106662192-100107-1775996/candidate.mp3",
+      "sha256": "917336a1ff5a505b85845c79950f06d5c3f36d19b123421eba8f7386be0e98f9",
+      "source_sha256": "832672366febfe50b7da1110a87285135b885333faa774ca8a0e880a8fe44997",
+      "source_file": "/workspace/work/tcf-audio-additional-20261102-work/incoming/a1/mdf-a1-abc/MDF_A1_ABC-DELF_AUDIO/09035257_019.mp3",
+      "source_decoded_pcm_sha256": "08d212156970ae8040a4e35be3015f0dd41d1509b5eeda6034bca28bdbbffee4",
+      "source_sample_rate": 44100,
+      "source_channels": 1,
+      "source_start_frame": 100107,
+      "source_end_frame": 1775996,
+      "source_start": 2.27,
+      "source_end": 40.272018140589566,
+      "source_slice_pcm_sha256": "4a8951b86a0d468bf5dc23e99b437c15dd790aa0849014340d2d13c95de24fcd",
+      "previous_start": 3.6239909297052155,
+      "previous_end": 40.272018140589566,
+      "word_anchors_and_signal": [
+        {
+          "edge": "start",
+          "quiet_interval": [
+            1.95,
+            2.35
+          ],
+          "first_word": "Radio",
+          "previous_word_end": 1.864
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "8b8f26a0d6f5ab2884dc74479340e85542c1bbaa19d1731e6da83cdbb815241c",
+      "previous_file": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014028-17554aa8b2/additional-20261102-mdf-a2-abc-direct-34-5474c0710359-e1eea890-d1/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/8b8f26a0d6f5ab2884dc74479340e85542c1bbaa19d1731e6da83cdbb815241c-111573-661941/candidate.mp3",
+      "sha256": "8e7440ee1cdf79343f4c271299bcfcc6299ab6ff1a3adb5244746ef055fa72af",
+      "source_sha256": "5474c07103593db2d1cb214aae7361249d41ae5ddf98334b0b849cfd2c43d961",
+      "source_file": "/workspace/attachments/8f706029-24f5-4abd-b081-1289e24935a4/09035199_034_ACT 6-4.mp3",
+      "source_decoded_pcm_sha256": "e18093240c33bd5ffd12adacf61e8155d309a0947795df3978dfc6d54abef2f3",
+      "source_sample_rate": 44100,
+      "source_channels": 1,
+      "source_start_frame": 111573,
+      "source_end_frame": 661941,
+      "source_start": 2.53,
+      "source_end": 15.01,
+      "source_slice_pcm_sha256": "d268558cb83945ed4714f8f6b0c7ec6833df473310e8717904065dd67eed792a",
+      "previous_start": 3.28,
+      "previous_end": 14.6,
+      "word_anchors_and_signal": [
+        {
+          "edge": "start",
+          "quiet_interval": [
+            2.33,
+            2.6100000000000003
+          ],
+          "first_word": "Chers",
+          "previous_word_end": 2.24
+        },
+        {
+          "edge": "end",
+          "quiet_interval": [
+            14.89,
+            15.33
+          ],
+          "last_word": "offert.",
+          "next_word_start": 15.683877551020407
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "ea3f1e46c897505628482373905ea8285c2bc079b6690467ff43a05ec957b9e1",
+      "previous_file": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014036-7b90f61e0f/additional-20261102-mdf-a2-abc-direct-40-c32e31bd638e-0ea2fc3d-d1/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/ea3f1e46c897505628482373905ea8285c2bc079b6690467ff43a05ec957b9e1-102312-725445/candidate.mp3",
+      "sha256": "56c854fc755fa6dfbea3267f6b04130e3b0649f746962f8cc4f5e41d2ba51019",
+      "source_sha256": "c32e31bd638e5b536df03e8ec11c1d7c13e408fc442416fbdc500663fa540d0b",
+      "source_file": "/workspace/attachments/b0b2270c-d638-496c-981d-73cbfcdf102d/09035199_040_ACT 7-4.mp3",
+      "source_decoded_pcm_sha256": "f8e15e92d6e4c357dc4335eb8fc900146735df807ee43c860fd1bb0d19aa50e9",
+      "source_sample_rate": 44100,
+      "source_channels": 1,
+      "source_start_frame": 102312,
+      "source_end_frame": 725445,
+      "source_start": 2.32,
+      "source_end": 16.45,
+      "source_slice_pcm_sha256": "1b38897ffc7afd21b20de703a71c81fe2586933bd1445b503f367d5cb979b02d",
+      "previous_start": 3.04,
+      "previous_end": 15.88,
+      "word_anchors_and_signal": [
+        {
+          "edge": "start",
+          "quiet_interval": [
+            2.16,
+            2.4000000000000004
+          ],
+          "first_word": "Aujourd'hui,",
+          "previous_word_end": 2.08
+        },
+        {
+          "edge": "end",
+          "quiet_interval": [
+            16.33,
+            16.64
+          ],
+          "last_word": "multimédia.",
+          "next_word_start": 16.990000000000002
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "896c91ad704db596ce6812a91762fe360bccf729cd00ec73c4405c9a3352e0ac",
+      "previous_file": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014135-9e13741c2b/additional-20261102-mdf-a1-abc-66-4414e4d25190-f3c00666-d1/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/896c91ad704db596ce6812a91762fe360bccf729cd00ec73c4405c9a3352e0ac-134064-1112202/candidate.mp3",
+      "sha256": "ff6c8b99ce192d450c793fcf76426773ce4021c0cd556e6b20d326105c078f9d",
+      "source_sha256": "4414e4d251903f697a0274d1cded541800a9db7aee40bbb047008d72d22b1f82",
+      "source_file": "/workspace/work/tcf-audio-additional-20261102-work/incoming/a1/mdf-a1-abc/MDF_A1_ABC-DELF_AUDIO/09035257_066.mp3",
+      "source_decoded_pcm_sha256": "ba083f15960052cf1a5bd2098e4e9ede10a3260ecd45a13d63c96b48bb9ff6bf",
+      "source_sample_rate": 44100,
+      "source_channels": 1,
+      "source_start_frame": 134064,
+      "source_end_frame": 1112202,
+      "source_start": 3.04,
+      "source_end": 25.22,
+      "source_slice_pcm_sha256": "c88eba441d2d5d73fdeb4601e0f62ed345bf17326d02ccc76f9cac23b815acb1",
+      "previous_start": 3.6,
+      "previous_end": 24.92,
+      "word_anchors_and_signal": [
+        {
+          "edge": "start",
+          "quiet_interval": [
+            1.93,
+            3.12
+          ],
+          "first_word": "Bonjour",
+          "previous_word_end": 1.84
+        },
+        {
+          "edge": "end",
+          "quiet_interval": [
+            25.099999999999998,
+            25.79
+          ],
+          "last_word": "revoir",
+          "next_word_start": 26.916530612244898
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "bc6d977ad403cce531738924771758c8cda2e15f74d855cc3fccbd9dd6c24f3a",
+      "previous_file": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014505-254e678760/additional-20261102-mdf-a2-abc-direct-97-bc8b8bdc0faf-44274348-d1/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/bc6d977ad403cce531738924771758c8cda2e15f74d855cc3fccbd9dd6c24f3a-234612-867448/candidate.mp3",
+      "sha256": "e0450ce8d2207cb73387c959736d4e78ebf5cb16a1ccc110ac492c5c3d69a16d",
+      "source_sha256": "bc8b8bdc0fafa24de645ba3a713bc735eb3c5f1658b33217100e0e1f233aba49",
+      "source_file": "/workspace/attachments/b6cbf0ed-77f0-4cda-975b-2c6a58b7f286/09035199_097_ACT 48.mp3",
+      "source_decoded_pcm_sha256": "253a9be8ba99ee3c25da9b6afa7a4b13b8bd729a289f6bc5d5fffd6567d672d6",
+      "source_sample_rate": 44100,
+      "source_channels": 1,
+      "source_start_frame": 234612,
+      "source_end_frame": 867448,
+      "source_start": 5.32,
+      "source_end": 19.670022675736963,
+      "source_slice_pcm_sha256": "c526e428bfae7f970b86685b33c538427115cdf683838d5f37a2ba72eae8e24f",
+      "previous_start": 5.32,
+      "previous_end": 18.8,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            19.55,
+            19.68
+          ],
+          "last_word": "euros",
+          "next_word_start": 20.759999
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "6c2182d432aa8f0df96ee25f7e70f41ad584251c8ae781bb200d36800d0fde76",
+      "previous_file": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014259-930a4964ac/additional-20261102-mdf-a1-abc-61-d5a97bdfcb26-29ce8685-d1/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/6c2182d432aa8f0df96ee25f7e70f41ad584251c8ae781bb200d36800d0fde76-160524-2078433/candidate.mp3",
+      "sha256": "f17f29a775dcdaf9ba9d31a25450a4e9b6b0a3cc1fd3d6462d99cb0b7762df40",
+      "source_sha256": "d5a97bdfcb2681cd6d3bb4b746d3f1262562428cd32e9c612f85ada4ca7fb637",
+      "source_file": "/workspace/work/tcf-audio-additional-20261102-work/incoming/a1/mdf-a1-abc/MDF_A1_ABC-DELF_AUDIO/09035257_061.mp3",
+      "source_decoded_pcm_sha256": "c992091535cfe11cf08e4570f51b0a626135189b2f1572b4b47f1f3ba7d43efe",
+      "source_sample_rate": 44100,
+      "source_channels": 1,
+      "source_start_frame": 160524,
+      "source_end_frame": 2078433,
+      "source_start": 3.64,
+      "source_end": 47.13,
+      "source_slice_pcm_sha256": "f7d92d9bc4b39f417166bc1be99851f6db9de6d0765d091afa68c81e0c6e17ea",
+      "previous_start": 4.263990929705216,
+      "previous_end": 46.976009070294786,
+      "word_anchors_and_signal": [
+        {
+          "edge": "start",
+          "quiet_interval": [
+            1.87,
+            3.72
+          ],
+          "first_word": "Bonjour,",
+          "previous_word_end": 1.784
+        },
+        {
+          "edge": "end",
+          "quiet_interval": [
+            47.01,
+            47.85
+          ],
+          "last_word": "revoir.",
+          "next_word_start": 48.51979591836735
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "18de1f6b93a828671c7e7e41f34d523396cb94fa5dde0095a2824481d16e6c45",
+      "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111205-96636f6462/09035196-034-9b8d87450cbf-d1/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/18de1f6b93a828671c7e7e41f34d523396cb94fa5dde0095a2824481d16e6c45-114660-5746407/candidate.mp3",
+      "sha256": "6106d85fdc1131e2709e46517942358cd6364f3e344d3f996a616102da840f45",
+      "source_sha256": "9b8d87450cbfe113ee68f3be65fdef4c3b815c0c58ae96886b14ebdf0516ea86",
+      "source_file": "/workspace/work/tcf-audio-replacement/incoming/b1/09035196_34_DELF_CO_E32.mp3",
+      "source_decoded_pcm_sha256": "4350960c2445ebde9fa145876b117111990a68019cc0991ba294592a27501fb5",
+      "source_sample_rate": 44100,
+      "source_channels": 1,
+      "source_start_frame": 114660,
+      "source_end_frame": 5746407,
+      "source_start": 2.6,
+      "source_end": 130.30401360544218,
+      "source_slice_pcm_sha256": "b7e1d2c35d30bfd9b143b3153ed455141c22ed515284635de831aa808e05fd9a",
+      "previous_start": 5.32,
+      "previous_end": 130.30401360544218,
+      "word_anchors_and_signal": [
+        {
+          "edge": "start",
+          "quiet_interval": [
+            2.41,
+            2.68
+          ],
+          "first_word": "Aujourd'hui",
+          "previous_word_end": 1.88
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "90ec9de726087f57e3c7095239a7f214bb77761213f9b6e230ca55d3f766e8c8",
+      "previous_file": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014218-011a3eaaec/additional-20261102-mdf-a2-abc-direct-82-74f71a085122-e74154b7-d1/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/90ec9de726087f57e3c7095239a7f214bb77761213f9b6e230ca55d3f766e8c8-145000-1662570/candidate.mp3",
+      "sha256": "cb98c2c67edb16be233e83dda728d6cf17f8d96bc20f9bc46d92065cdf99004f",
+      "source_sha256": "74f71a0851225b157ef57a97bbda5de80ea47eea6764646f0080281069ca27be",
+      "source_file": "/workspace/attachments/f501b4c3-9756-4800-9f69-925e045b59d4/09035199_082_ACT 33.mp3",
+      "source_decoded_pcm_sha256": "1b1b9605ea0d8b4a2eeee3408d593238023d003e35ef28f8808c8a0802687d4f",
+      "source_sample_rate": 44100,
+      "source_channels": 1,
+      "source_start_frame": 145000,
+      "source_end_frame": 1662570,
+      "source_start": 3.2879818594104306,
+      "source_end": 37.7,
+      "source_slice_pcm_sha256": "516f213943417b8bfa93b7bf8c5befc248f97ee6d8ac81a6f8fa5a49292c6e64",
+      "previous_start": 3.2879818594104306,
+      "previous_end": 37.29600907029479,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            37.58,
+            38.17
+          ],
+          "last_word": "plus!",
+          "next_word_start": 38.95897959183674
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "279ee2166f8fadac05b18f46f2330199cd2f57d3609caa447a2310d4a51b2bcf",
+      "previous_file": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014208-a81aa1605c/additional-20261102-mdf-a2-abc-direct-75-b95c4fe99c40-9d4809d4-d1/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/279ee2166f8fadac05b18f46f2330199cd2f57d3609caa447a2310d4a51b2bcf-264952-1550557/candidate.mp3",
+      "sha256": "3be15ca9ac1c090ad34042a3d09a940dc65fff58e69c0c227c869b48c29cd959",
+      "source_sha256": "b95c4fe99c4022bdfd4f8edaf37ae08b70a0d0fa521a4eedd6e6348b7fcc3489",
+      "source_file": "/workspace/attachments/457f39a9-89ec-481e-bf7c-761651da2ac9/09035199_075_ACT 26.mp3",
+      "source_decoded_pcm_sha256": "653bd4009f1cb2ec7c26853647f3e9079bb10798548b5cd68724c36ecc0f13ad",
+      "source_sample_rate": 44100,
+      "source_channels": 1,
+      "source_start_frame": 264952,
+      "source_end_frame": 1550557,
+      "source_start": 6.007981859410431,
+      "source_end": 35.16002267573696,
+      "source_slice_pcm_sha256": "3e83875cb8958828c035b5d21d936967b5af3269ee8a487171d226b74679ce47",
+      "previous_start": 6.007981859410431,
+      "previous_end": 34.96,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            35.040000000000006,
+            35.84
+          ],
+          "last_word": "beaucoup!",
+          "next_word_start": 36.268367346938774
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "6ab1b2f2fd6bb302c21fc0f82923036ebca5bc27b7f9f637969bcfc3a61f8948",
+      "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111300-b11f07a909/09035276-042-909bfbcce118-d1/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/6ab1b2f2fd6bb302c21fc0f82923036ebca5bc27b7f9f637969bcfc3a61f8948-115983-1137780/candidate.mp3",
+      "sha256": "67f82d803d2789ecb2f88d8c478654ea5ebbb1107a02ad941321c799f191e27d",
+      "source_sha256": "909bfbcce118bc911e28a9c59c3a1b0b7112899c2ef76818ec9c9d04aa41a806",
+      "source_file": "/workspace/work/tcf-audio-replacement/incoming/a1/09035276_42_Ex 39-2.mp3",
+      "source_decoded_pcm_sha256": "92d16927afad621dd75edaff3476e2f8c67101d074ac6ffa4b0e957a4be9502f",
+      "source_sample_rate": 44100,
+      "source_channels": 1,
+      "source_start_frame": 115983,
+      "source_end_frame": 1137780,
+      "source_start": 2.63,
+      "source_end": 25.8,
+      "source_slice_pcm_sha256": "3ff5a2cabbb45e9e05873244aa0c5f0480d45a9680fa8755ef50f4a5a0208393",
+      "previous_start": 5.2,
+      "previous_end": 25.8,
+      "word_anchors_and_signal": [
+        {
+          "edge": "start",
+          "quiet_interval": [
+            2.33,
+            2.71
+          ],
+          "first_word": "Un",
+          "previous_word_end": 2.24
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "fb58657e8e464fc51fe82f9fcf327e659b40b57dd115c24e0f5169478e840ef3",
+      "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T120807-b610f684c1/9782090351958-034-b2afb8e8dd81-r2-d3/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/fb58657e8e464fc51fe82f9fcf327e659b40b57dd115c24e0f5169478e840ef3-2359261-2768157/candidate.mp3",
+      "sha256": "5e649a7f06dbd0a629db5f004ff46bdb01fd51f6b04f8e984e4923ecde2860b3",
+      "source_sha256": "b2afb8e8dd81c76ad9758790fca3ccb71ddb300fa414c257676592b983b000e4",
+      "source_file": "/workspace/work/tcf-audio-replacement/incoming/a2/9782090351958_34_CO_ex32.mp3",
+      "source_decoded_pcm_sha256": "03ad83b25a832ec31b9148913a09aaf8b090299f9a9e60d58319c89aabfd7a2d",
+      "source_sample_rate": 44100,
+      "source_channels": 1,
+      "source_start_frame": 2359261,
+      "source_end_frame": 2768157,
+      "source_start": 53.49798185941043,
+      "source_end": 62.77,
+      "source_slice_pcm_sha256": "5beea9833388f8b5377922a7060cd0daa3f6723321d2c05a9bfe8d5a7dc74568",
+      "previous_start": 53.49798185941043,
+      "previous_end": 62.33800453514739,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            62.65,
+            62.85
+          ],
+          "last_word": "chambre.",
+          "next_word_start": 65.674
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "3341a067352a535c2ff34d17ef5f5a5051a266f28d995a4959dec3228b013c47",
+      "previous_file": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014100-4e6a1d6bbd/additional-20261102-mdf-a2-abc-direct-65-ae6b51fa1832-fffbe64d-d1/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/3341a067352a535c2ff34d17ef5f5a5051a266f28d995a4959dec3228b013c47-130536-827317/candidate.mp3",
+      "sha256": "c9b76c9495da6d4cd9dfa324fc601a39747b5d2cbebcea6ffe23a8097e6ffb0e",
+      "source_sha256": "ae6b51fa1832f4c0a3fc09e7c7ee27fd0428a8491d94d764dd1eb5485ec240f5",
+      "source_file": "/workspace/attachments/21ac963b-4d03-4ad1-9056-d149057661b0/09035199_065_ACT 19-2.mp3",
+      "source_decoded_pcm_sha256": "b841bb7799a6a21fb36bf3f5ff2e4f3b693e0502fd50dc2672d5dcf98da29153",
+      "source_sample_rate": 44100,
+      "source_channels": 1,
+      "source_start_frame": 130536,
+      "source_end_frame": 827317,
+      "source_start": 2.96,
+      "source_end": 18.760022675736963,
+      "source_slice_pcm_sha256": "8c31b00a014a96163f4c0683846dd2902b07905c560f2734bf0ca94bc0f80c3e",
+      "previous_start": 2.96,
+      "previous_end": 18.84,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            18.64,
+            19.09
+          ],
+          "last_word": "euros.",
+          "next_word_start": 19.445510204081636
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "8cfcdaab4d37534f2f5c016d4f00d125ad5ab32c4ef45fe95fe041ae4f9076b7",
+      "previous_file": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014205-f5662010ea/additional-20261102-mdf-a1-abc-65-578139bef04d-2b383621-d1/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/8cfcdaab4d37534f2f5c016d4f00d125ad5ab32c4ef45fe95fe041ae4f9076b7-102753-1463415/candidate.mp3",
+      "sha256": "519465e83d576fb521683d08cfb5830f628847eb91d3d4f0cddd65df19d6a3ac",
+      "source_sha256": "578139bef04d9f913919d65bf88248a3aef20a414ce943fa54774444403426a7",
+      "source_file": "/workspace/work/tcf-audio-additional-20261102-work/incoming/a1/mdf-a1-abc/MDF_A1_ABC-DELF_AUDIO/09035257_065.mp3",
+      "source_decoded_pcm_sha256": "31137906c8dce866b84730375f37b55a93c3b3444064c846195695fd7471225f",
+      "source_sample_rate": 44100,
+      "source_channels": 1,
+      "source_start_frame": 102753,
+      "source_end_frame": 1463415,
+      "source_start": 2.33,
+      "source_end": 33.184013605442175,
+      "source_slice_pcm_sha256": "4bf25af77183664fac76fb2efbce18925064abec00a3723cb7e26c6645fbf021",
+      "previous_start": 3.2879818594104306,
+      "previous_end": 33.184013605442175,
+      "word_anchors_and_signal": [
+        {
+          "edge": "start",
+          "quiet_interval": [
+            1.77,
+            2.41
+          ],
+          "first_word": "Radio",
+          "previous_word_end": 1.688
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "85b2a09f5598300a2a6831203a49c67106950b64e4e868dda3f211162dc29068",
+      "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T120955-64eefc73e2/delf_a2_eb1w-002-f9e78fdea89a-r2-d2/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/85b2a09f5598300a2a6831203a49c67106950b64e4e868dda3f211162dc29068-5279652-6050079/candidate.mp3",
+      "sha256": "086a2bd8658b861cc5a120afa84412e000cb999215548dbcbec74ef31ae79eeb",
+      "source_sha256": "f9e78fdea89a11f07015651913c0d51ac0b9c1998cafe2ed0c68433bf0838f91",
+      "source_file": "/workspace/work/tcf-audio-replacement/incoming/a2/delf_a2_2021_eb1w_piste_02.mp3",
+      "source_decoded_pcm_sha256": "84bc3f65e733478242a2589c916aa89cea4dd1f7a3ec10feb4a8c7bd68120c7c",
+      "source_sample_rate": 44100,
+      "source_channels": 2,
+      "source_start_frame": 5279652,
+      "source_end_frame": 6050079,
+      "source_start": 119.72,
+      "source_end": 137.19,
+      "source_slice_pcm_sha256": "7e3eecdbf419e18ed4c0f12929e415ff4b9f95cdd0fa31875dba3fd5ebd78e45",
+      "previous_start": 119.72,
+      "previous_end": 136.96,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            137.07,
+            137.82999999999998
+          ],
+          "last_word": "fromage.",
+          "next_word_start": 151.16
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "b33623b9fb0eba5e82d5de69e701a693ef00c3d8ed33593ee572ef9d706e41de",
+      "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111901-25ee4b719d/delf_a2_2021-003-2505cafdfeda-d2/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/b33623b9fb0eba5e82d5de69e701a693ef00c3d8ed33593ee572ef9d706e41de-1248471-1682151/candidate.mp3",
+      "sha256": "29999e25867a3822493d251a68d06fbeb1418f6c4e4ac17fd1f4e037aa8d2640",
+      "source_sha256": "2505cafdfeda63e039eed59a3d734231941d595e61941948500c9f9a3e06f18d",
+      "source_file": "/workspace/work/tcf-audio-replacement/incoming/a2/DELF_A2_2021_Piste_03.mp3",
+      "source_decoded_pcm_sha256": "8a2b796f5665f836630faae7e97cb41faaf20f6ee40fe25fda3a4a9afc90f59e",
+      "source_sample_rate": 44100,
+      "source_channels": 2,
+      "source_start_frame": 1248471,
+      "source_end_frame": 1682151,
+      "source_start": 28.31,
+      "source_end": 38.144013605442176,
+      "source_slice_pcm_sha256": "6df34f316c46576b199daa77f0c770b5f2dfb32d81bafe4a6ba35b5eaa1b3f47",
+      "previous_start": 28.423990929705216,
+      "previous_end": 38.144013605442176,
+      "word_anchors_and_signal": [
+        {
+          "edge": "start",
+          "quiet_interval": [
+            28.17,
+            28.39
+          ],
+          "first_word": "Le",
+          "previous_word_end": 21.735999
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "7982e79eb7aad5bf95a7f27bbc1e321df946aa37ed8c1055766bdaab83d14427",
+      "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111910-6c46abce23/delf_a2_2021-009-999b8647c0b5-d1/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/7982e79eb7aad5bf95a7f27bbc1e321df946aa37ed8c1055766bdaab83d14427-377143-911988/candidate.mp3",
+      "sha256": "8afed68093c4cb6992e65f34fabc30331c12a4fe680039ddf6262e4cf62a938e",
+      "source_sha256": "999b8647c0b5a96392f1ef7156d27ac901f5cc58d7574c2221b02d03b0ecd91c",
+      "source_file": "/workspace/work/tcf-audio-replacement/incoming/a2/DELF_A2_2021_Piste_09.mp3",
+      "source_decoded_pcm_sha256": "ac95f168015af0d5bbb8e628eb2fa2f201c42a164e08e40cb3c0051e9dc0829d",
+      "source_sample_rate": 44100,
+      "source_channels": 2,
+      "source_start_frame": 377143,
+      "source_end_frame": 911988,
+      "source_start": 8.551995464852608,
+      "source_end": 20.68,
+      "source_slice_pcm_sha256": "9d7b2b60a51b72272125bc6562e52b98dc29946f1f8a11a2ebb4c896ca006c8f",
+      "previous_start": 8.551995464852608,
+      "previous_end": 20.75201814058957,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            20.56,
+            21.4
+          ],
+          "last_word": "alimentaires.",
+          "next_word_start": 21.751999
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "a61bf7199b7bf84c8d83d146aec0ef7379791ca5dfb92a2299ccb585281e336a",
+      "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T120927-006fb67653/delf_a2_2021-019-7725befff9ae-r2-d1/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/a61bf7199b7bf84c8d83d146aec0ef7379791ca5dfb92a2299ccb585281e336a-185925-650034/candidate.mp3",
+      "sha256": "685921a6378484605397192a9fad086807aa92ac4a189a52d2f7503d96b8f746",
+      "source_sha256": "7725befff9ae0a3d7141698051874b54722658a09a96350bb6881459af81128e",
+      "source_file": "/workspace/work/tcf-audio-replacement/incoming/a2/DELF_A2_2021_Piste_19.mp3",
+      "source_decoded_pcm_sha256": "e10f32c769b8678b54d8f017e272c127b36a5512194e24d1ed2c00a1f68cb33a",
+      "source_sample_rate": 44100,
+      "source_channels": 2,
+      "source_start_frame": 185925,
+      "source_end_frame": 650034,
+      "source_start": 4.215986394557823,
+      "source_end": 14.74,
+      "source_slice_pcm_sha256": "6d6dfd8b3d4daf1e2e8405309c81532f91cfe8e7ec0e57afe654bf151a046d2f",
+      "previous_start": 4.215986394557823,
+      "previous_end": 14.816009070294784,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            14.620000000000001,
+            15.690000000000001
+          ],
+          "last_word": "bougies.",
+          "next_word_start": 16.296
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "b2e5ecfd3f9ff62693c4fde8e6002ce674ef34eba184a55fb81a00fe14bd6d6d",
+      "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111928-98bbd59835/delf_a2_2021-021-c9d13cfec4cd-d2/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/b2e5ecfd3f9ff62693c4fde8e6002ce674ef34eba184a55fb81a00fe14bd6d6d-616341-889938/candidate.mp3",
+      "sha256": "b58b367c5adf21305650129fa5c5bafa0678c7912a74a99cb65eca8e4283bfd2",
+      "source_sha256": "c9d13cfec4cd3c44b57be5d84012f65914c5fdef7f606f5feb60e5f1c56c0cde",
+      "source_file": "/workspace/work/tcf-audio-replacement/incoming/a2/DELF_A2_2021_Piste_21.mp3",
+      "source_decoded_pcm_sha256": "0f843a5af74b3211071af0578a944e009f76c55afcfea04e4ffa5118480614a8",
+      "source_sample_rate": 44100,
+      "source_channels": 2,
+      "source_start_frame": 616341,
+      "source_end_frame": 889938,
+      "source_start": 13.975986394557824,
+      "source_end": 20.18,
+      "source_slice_pcm_sha256": "c8e7bff1b715a0ef61bfe83d278aad37559c9606aa5e7260931d791684a6eca0",
+      "previous_start": 13.975986394557824,
+      "previous_end": 20.256009070294784,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            20.06,
+            21.13
+          ],
+          "last_word": "plaît.",
+          "next_word_start": 21.575999
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "ad67bd947cc234e1735130bbf00e5d9fae839682dec0fb06eda23ad985346f82",
+      "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111939-b38aec5ee4/delf_a2_2021-026-2adf9159d4db-d1/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/ad67bd947cc234e1735130bbf00e5d9fae839682dec0fb06eda23ad985346f82-123479-634599/candidate.mp3",
+      "sha256": "4d554c01be4fdaf74a31a85d8dd1aa0d1565744ca7ee6e9292a865bd249e6761",
+      "source_sha256": "2adf9159d4dbd20e02ef92e547305b04188998dc855e2ab8baae00d53179c35a",
+      "source_file": "/workspace/work/tcf-audio-replacement/incoming/a2/DELF_A2_2021_Piste_26.mp3",
+      "source_decoded_pcm_sha256": "172321f40eeee475b122cfc84eb90d807a128a04444000637ba4f10bf8220acf",
+      "source_sample_rate": 44100,
+      "source_channels": 2,
+      "source_start_frame": 123479,
+      "source_end_frame": 634599,
+      "source_start": 2.7999773242630384,
+      "source_end": 14.39,
+      "source_slice_pcm_sha256": "238c2c11e4080293ecaa928292bdf1cc898e13c7b2f2dc977043c3b72dd426fe",
+      "previous_start": 2.8,
+      "previous_end": 14.2,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            14.27,
+            15.07
+          ],
+          "last_word": "moment.",
+          "next_word_start": 16.206326530612245
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "17a96b9f1ff73afbba78a55d7526ce0c890f5a3dd799b8eebb96cb7e561ff5ee",
+      "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T112017-1530bd9115/delf_a2_2021-039-2ee8659e527d-d1/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/17a96b9f1ff73afbba78a55d7526ce0c890f5a3dd799b8eebb96cb7e561ff5ee-370087-1836324/candidate.mp3",
+      "sha256": "ced23a5a4743e3951cd78a088f7da04b66ffc93cf796446b7abd59be54b95b19",
+      "source_sha256": "2ee8659e527d0cf3f8a4bdc7c7a9228b0e6cb49f4d0f3a11041582f7fd09af0e",
+      "source_file": "/workspace/work/tcf-audio-replacement/incoming/a2/DELF_A2_2021_Piste_39.mp3",
+      "source_decoded_pcm_sha256": "f5380e30faa0e97a26ee579d49abc633f368935c7e2acb83b0e6eca31be7608e",
+      "source_sample_rate": 44100,
+      "source_channels": 2,
+      "source_start_frame": 370087,
+      "source_end_frame": 1836324,
+      "source_start": 8.391995464852608,
+      "source_end": 41.64,
+      "source_slice_pcm_sha256": "f798d5bf080aa2c4fcfe53ab7a74eb7123905b21a4c3641fb68a41d5d8a44d23",
+      "previous_start": 8.391995464852608,
+      "previous_end": 41.40800453514739,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            41.52,
+            42.28
+          ],
+          "last_word": "12.",
+          "next_word_start": 44.47081632653062
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "a0734f3348564509989678119e20f2792628e92c3740ffc06e73f04f23dd48b0",
+      "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T120846-3893fde1f3/delf_a1_2022-004-7aab1a073614-r2-d1/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/a0734f3348564509989678119e20f2792628e92c3740ffc06e73f04f23dd48b0-148176-667233/candidate.mp3",
+      "sha256": "03472ce05a52ccdbfb16ebc6e23c4e63938531348e06981c29ad746f71199a52",
+      "source_sha256": "7aab1a0736144ec38e099a92aa98d9751d24f83a3701eaeed02e5495f4d9ebad",
+      "source_file": "/workspace/work/tcf-audio-replacement/incoming/a1/delf_a1_2022_piste_04.mp3",
+      "source_decoded_pcm_sha256": "f82fd908e067a9e2a29fccb03bff22507d5efe4295886dabedb29aa4cf5361b8",
+      "source_sample_rate": 44100,
+      "source_channels": 2,
+      "source_start_frame": 148176,
+      "source_end_frame": 667233,
+      "source_start": 3.36,
+      "source_end": 15.13,
+      "source_slice_pcm_sha256": "c01e12a2cfc93f8e49ece694df74b128e8d07b14a3845bf6451e4a7d03002cd9",
+      "previous_start": 3.36,
+      "previous_end": 15.0,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            15.010000000000002,
+            15.870000000000001
+          ],
+          "last_word": "samedi.",
+          "next_word_start": 17.039999
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "95f4e74604df1a95a48e6a49d8885f990bd4895dd585510404022f9117d42197",
+      "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T112636-529d2bcc11/delf_a1_2022-008-b340f4303fa2-d3/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/95f4e74604df1a95a48e6a49d8885f990bd4895dd585510404022f9117d42197-1432015-1845144/candidate.mp3",
+      "sha256": "3f0b697eee9c861c261971c56eeb566d206595602006963b81904e3bf059cde5",
+      "source_sha256": "b340f4303fa275400d0dee8ca4cebe017727a06f213f56edc24dbc5f541271e9",
+      "source_file": "/workspace/work/tcf-audio-replacement/incoming/a1/delf_a1_2022_piste_08.mp3",
+      "source_decoded_pcm_sha256": "6c4843e6387b1dae4d7fd1118a29a32f4347d2f426bbeb709df77af00fdc9d4c",
+      "source_sample_rate": 44100,
+      "source_channels": 2,
+      "source_start_frame": 1432015,
+      "source_end_frame": 1845144,
+      "source_start": 32.47199546485261,
+      "source_end": 41.84,
+      "source_slice_pcm_sha256": "68e7b8470d1ea91e07936fe0d4fd728a142a03999a53b4113e5b5d5c5d97bceb",
+      "previous_start": 32.47199546485261,
+      "previous_end": 41.63201814058957,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            41.72,
+            42.51
+          ],
+          "last_word": "29",
+          "next_word_start": 44.13122448979592
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "f0b257df027979f28cbfaf0f86624f0b61b7c50f74268fc8649b8baa06035791",
+      "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T120848-e161d989f9/delf_a1_2022-009-cd426c4e83fe-r2-d2/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/f0b257df027979f28cbfaf0f86624f0b61b7c50f74268fc8649b8baa06035791-740879-1125433/candidate.mp3",
+      "sha256": "a151906dbfe35b83860e98ef274a80969033783242a19ce44bec02b52ccfd6ee",
+      "source_sha256": "cd426c4e83fe5091c31805fc0a9bb83731d2bd6b6e4559aab94f4c9fcc9ff8e0",
+      "source_file": "/workspace/work/tcf-audio-replacement/incoming/a1/delf_a1_2022_piste_09.mp3",
+      "source_decoded_pcm_sha256": "d7c9dc5230cdb34e26b3ee18304d333eb7232d14ad5eeb88f1f3bf731a5db377",
+      "source_sample_rate": 44100,
+      "source_channels": 2,
+      "source_start_frame": 740879,
+      "source_end_frame": 1125433,
+      "source_start": 16.79997732426304,
+      "source_end": 25.52002267573696,
+      "source_slice_pcm_sha256": "bb4ccb469808b4fbd10f0449f6fd1e39c84ff4ea71f3b3e4ca01cdb467ff8c42",
+      "previous_start": 16.79997732426304,
+      "previous_end": 25.32,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            25.400000000000002,
+            26.19
+          ],
+          "last_word": "00",
+          "next_word_start": 27.592
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "16fa791779baeefc72a31114e7cc8372613d2fea353e3b340d494736ad1e4c8d",
+      "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T120848-e161d989f9/delf_a1_2022-009-cd426c4e83fe-r2-d3/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/16fa791779baeefc72a31114e7cc8372613d2fea353e3b340d494736ad1e4c8d-1252087-1707552/candidate.mp3",
+      "sha256": "29875cf33eef213c3c6dabf365cf52fbbb410a8b40f490c3b236c81cde5df66e",
+      "source_sha256": "cd426c4e83fe5091c31805fc0a9bb83731d2bd6b6e4559aab94f4c9fcc9ff8e0",
+      "source_file": "/workspace/work/tcf-audio-replacement/incoming/a1/delf_a1_2022_piste_09.mp3",
+      "source_decoded_pcm_sha256": "d7c9dc5230cdb34e26b3ee18304d333eb7232d14ad5eeb88f1f3bf731a5db377",
+      "source_sample_rate": 44100,
+      "source_channels": 2,
+      "source_start_frame": 1252087,
+      "source_end_frame": 1707552,
+      "source_start": 28.39199546485261,
+      "source_end": 38.72,
+      "source_slice_pcm_sha256": "6ad724b2256688f4de27159a2984cea16f38a1eee4c19355f2aa984a4875bde3",
+      "previous_start": 28.39199546485261,
+      "previous_end": 38.592018140589566,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            38.6,
+            39.47
+          ],
+          "last_word": "11",
+          "next_word_start": 41.205510204081634
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "6f51a8af9c4dc43240a035603f7682a5ac344673ed2aa24ae9439c6350d9510b",
+      "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111544-3b5ef48810/delf_a1_2022-013-de72e54b394a-d2/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/6f51a8af9c4dc43240a035603f7682a5ac344673ed2aa24ae9439c6350d9510b-822023-1333143/candidate.mp3",
+      "sha256": "da3d4bb5e1d1790a679e31b850a1c71015342925b92aab65585162e08d826d7a",
+      "source_sha256": "de72e54b394afdf91fa8acf38e69b5d684c0189b2119fb2b4c58f0b0dbe7341a",
+      "source_file": "/workspace/work/tcf-audio-replacement/incoming/a1/delf_a1_2022_piste_13.mp3",
+      "source_decoded_pcm_sha256": "4931c8a2e5e033541f455d555f8f41496c5b463725b4ecd498041519098c0659",
+      "source_sample_rate": 44100,
+      "source_channels": 2,
+      "source_start_frame": 822023,
+      "source_end_frame": 1333143,
+      "source_start": 18.63997732426304,
+      "source_end": 30.23,
+      "source_slice_pcm_sha256": "90efcf53d8f61c78db69bbf041f9f98813c93abbfd7b46c7fac902e4faf3509f",
+      "previous_start": 18.63997732426304,
+      "previous_end": 30.304013605442176,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            30.11,
+            31.18
+          ],
+          "last_word": "Appelle-moi.",
+          "next_word_start": 31.704
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "4c0f4a853b6c57ff1549ecf12049c1421ce3ff63cfab8a876f7da4c874718c35",
+      "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111546-48536a4f8a/delf_a1_2022-014-cd05ca586933-d4/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/4c0f4a853b6c57ff1549ecf12049c1421ce3ff63cfab8a876f7da4c874718c35-1712138-1989351/candidate.mp3",
+      "sha256": "b3dbf6cb30efae5999f10d7a14263cf5013d2c3f59e53c2c051a689dc64287f2",
+      "source_sha256": "cd05ca5869337a467e1c65b94307e65ad6e36a3b9067c2354674656bb51e6ea6",
+      "source_file": "/workspace/work/tcf-audio-replacement/incoming/a1/delf_a1_2022_piste_14.mp3",
+      "source_decoded_pcm_sha256": "0a70a136ed14757131d2f33f4ea4b875f17bc8170941729230d0230c4ffdc7c8",
+      "source_sample_rate": 44100,
+      "source_channels": 2,
+      "source_start_frame": 1712138,
+      "source_end_frame": 1989351,
+      "source_start": 38.82399092970522,
+      "source_end": 45.11,
+      "source_slice_pcm_sha256": "6ef57915928ce32a3f28fa35e66d490a4ca67fb0d5a114af4098708380d2db16",
+      "previous_start": 38.82399092970522,
+      "previous_end": 44.94401360544218,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            44.99,
+            45.82
+          ],
+          "last_word": "sud.",
+          "next_word_start": 47.47489795918367
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "a88714e205f417283ffca2336055b47792eccec20382e8b5423deb56182f2475",
+      "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111549-d239d491e3/delf_a1_2022-015-49f970d16035-d2/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/a88714e205f417283ffca2336055b47792eccec20382e8b5423deb56182f2475-546840-832167/candidate.mp3",
+      "sha256": "f126b0e84254dc4e1127dfa9af29ab7fe6e116435a406436724cb214d4307f72",
+      "source_sha256": "49f970d160357b7ab159ab7f7b659190df452f9fcef2b524f7f0f1c896b06dc3",
+      "source_file": "/workspace/work/tcf-audio-replacement/incoming/a1/delf_a1_2022_piste_15.mp3",
+      "source_decoded_pcm_sha256": "37d5aab924831bfcf45aa71cf93333ba68ea0c063324063302a4e242c09bdcdd",
+      "source_sample_rate": 44100,
+      "source_channels": 2,
+      "source_start_frame": 546840,
+      "source_end_frame": 832167,
+      "source_start": 12.4,
+      "source_end": 18.87,
+      "source_slice_pcm_sha256": "fe6425b55143b1b29fd2ef303d4fc1aabce5ddb727133254b2c2c97fd4fdac88",
+      "previous_start": 12.4,
+      "previous_end": 18.68,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            18.75,
+            19.55
+          ],
+          "last_word": "Lille.",
+          "next_word_start": 20.879999
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "afd2adb9eae05106e861c1f7a53b5234e403ef7376fa6f8aca6b8e32e0c8be67",
+      "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111558-09c255dc61/delf_a1_2022-019-f956db0544b7-d3/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/afd2adb9eae05106e861c1f7a53b5234e403ef7376fa6f8aca6b8e32e0c8be67-1455741-1867724/candidate.mp3",
+      "sha256": "8221556fc9edcfd4f3bbb9ca1b0c718c865b9f71270ab11bac8b4bb45965e6a5",
+      "source_sha256": "f956db0544b7dd3fee1328d9a0bdbc5bb8875a734fd2c5528865e8e612fd0245",
+      "source_file": "/workspace/work/tcf-audio-replacement/incoming/a1/delf_a1_2022_piste_19.mp3",
+      "source_decoded_pcm_sha256": "31e9aab59021030eafde399804a5a2aa02c88c7a7a615c41eea4fc35aeaa9805",
+      "source_sample_rate": 44100,
+      "source_channels": 2,
+      "source_start_frame": 1455741,
+      "source_end_frame": 1867724,
+      "source_start": 33.01,
+      "source_end": 42.35201814058957,
+      "source_slice_pcm_sha256": "c19e775676523f1a06365f90c11473f8e49e97a328e3f44edf5b37e92d5ab9cd",
+      "previous_start": 33.83199546485261,
+      "previous_end": 42.35201814058957,
+      "word_anchors_and_signal": [
+        {
+          "edge": "start",
+          "quiet_interval": [
+            31.2,
+            33.089999999999996
+          ],
+          "first_word": "Allô?",
+          "previous_word_end": 31.112
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "b663599295b12f36a3ad7670a18a6e9a752c44b5ab9082cf1378d02089fdc402",
+      "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111621-62ad2d9203/delf_a1_2022-029-c647602bf84c-d3/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/b663599295b12f36a3ad7670a18a6e9a752c44b5ab9082cf1378d02089fdc402-1796809-2591757/candidate.mp3",
+      "sha256": "5fe4437f8c8e193ecdb58edd2e2cf5e686e57b94d9a1dbb32c0da41908bf9e5d",
+      "source_sha256": "c647602bf84c8e751b43e5307182f02d7e94c578b4956f30df3b54f2d6a274a8",
+      "source_file": "/workspace/work/tcf-audio-replacement/incoming/a1/delf_a1_2022_piste_29.mp3",
+      "source_decoded_pcm_sha256": "9824f2bde1d0f2a57a738217205c8bd7b5fb9fc9c31cd60661815e572f3109f7",
+      "source_sample_rate": 44100,
+      "source_channels": 2,
+      "source_start_frame": 1796809,
+      "source_end_frame": 2591757,
+      "source_start": 40.743968253968255,
+      "source_end": 58.77,
+      "source_slice_pcm_sha256": "6eb040993da2587b3ef486c05f727988a6bf8a579fe36be267f06ddea89b521d",
+      "previous_start": 40.74399092970521,
+      "previous_end": 58.57600907029479,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            58.650000000000006,
+            59.45
+          ],
+          "last_word": "revoir!",
+          "next_word_start": 61.26755102040816
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "b472e3abe63d64d1de1dc6a00c37fa58fc1c742e4917757a683408d3f8ef7696",
+      "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111631-a8366a4bf7/delf_a1_2022-034-4fdc4c092ad2-d2/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/b472e3abe63d64d1de1dc6a00c37fa58fc1c742e4917757a683408d3f8ef7696-666792-1114848/candidate.mp3",
+      "sha256": "150e70832b59b9ab595f2b2c4d13369dc8404b58a372752b84b4fe19d576c773",
+      "source_sha256": "4fdc4c092ad2c30be9136476b8e5c90dc7ea7186884cf50b6b6f4fbc8f1dd9ff",
+      "source_file": "/workspace/work/tcf-audio-replacement/incoming/a1/delf_a1_2022_piste_34.mp3",
+      "source_decoded_pcm_sha256": "4dea596e30caba1669cafe1df964e4d88976092f5b03d8b97af960fc6e11d056",
+      "source_sample_rate": 44100,
+      "source_channels": 2,
+      "source_start_frame": 666792,
+      "source_end_frame": 1114848,
+      "source_start": 15.12,
+      "source_end": 25.28,
+      "source_slice_pcm_sha256": "850f19e0dca12d4feb1313679d38799de66634a807d7ebce3cd3be24800ddfd4",
+      "previous_start": 15.12,
+      "previous_end": 25.16,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            25.16,
+            26.03
+          ],
+          "last_word": "revoir.",
+          "next_word_start": 27.544
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "ca515b653f89c048d1d56827899c5d9ab0aa03732ef3df25c2ec67c6bb242801",
+      "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T120855-ad760ca6f7/delf_a1_2022-035-67517411749a-r2-d2/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/ca515b653f89c048d1d56827899c5d9ab0aa03732ef3df25c2ec67c6bb242801-790272-1326528/candidate.mp3",
+      "sha256": "cea7478d391250c1d7de894a2bda5f43da0b8d1458b1764daa74a87d82a711c5",
+      "source_sha256": "67517411749a4c7514895d0924197d0cae81d372325cb08679913efda9ea0160",
+      "source_file": "/workspace/work/tcf-audio-replacement/incoming/a1/delf_a1_2022_piste_35.mp3",
+      "source_decoded_pcm_sha256": "f6b8e8bd2f499ea4603c99cf69a316acc587d01caaad0654ffbd5cbeb0ef8aa1",
+      "source_sample_rate": 44100,
+      "source_channels": 2,
+      "source_start_frame": 790272,
+      "source_end_frame": 1326528,
+      "source_start": 17.92,
+      "source_end": 30.08,
+      "source_slice_pcm_sha256": "dabba1b8904a1c74690e5b1a20796ade94115b818e033a1c24a9587d89827b9c",
+      "previous_start": 17.92,
+      "previous_end": 30.16,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            29.96,
+            31.04
+          ],
+          "last_word": "bientôt",
+          "next_word_start": 31.48
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "b6d3f83df96664ee8180768ec51164ca4bfc7fb561b911f236945268416e6e70",
+      "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111702-267c8a9980/delf_a1_2022-049-b02d6bac2289-d1/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/b6d3f83df96664ee8180768ec51164ca4bfc7fb561b911f236945268416e6e70-360914-927423/candidate.mp3",
+      "sha256": "49ca241d82bdd1857849567cd18634691879f1578402d28c9849df90d7cb1cc0",
+      "source_sha256": "b02d6bac22897e9a0eb9e41d01b79e09d689f8d929346b15cb9777232ef78ebc",
+      "source_file": "/workspace/work/tcf-audio-replacement/incoming/a1/delf_a1_2022_piste_49.mp3",
+      "source_decoded_pcm_sha256": "99bd4cb9a67fcba455cb055387bb63e9bc371dcf24438ffa0fdacae098427d5c",
+      "source_sample_rate": 44100,
+      "source_channels": 2,
+      "source_start_frame": 360914,
+      "source_end_frame": 927423,
+      "source_start": 8.183990929705216,
+      "source_end": 21.03,
+      "source_slice_pcm_sha256": "023466f8891787f19bf19819702337759082967fa3a4a661df9ecc167d6e703e",
+      "previous_start": 8.183990929705216,
+      "previous_end": 21.104013605442177,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            20.91,
+            21.98
+          ],
+          "last_word": "moi.",
+          "next_word_start": 23.543999
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "c0e610903e4ac440e0099a09701e9a4460b34f1e9e20b2c492ae9443a1a2ca0e",
+      "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111712-e8f107e2ff/delf_a1_2022-057-6b42b90efcfe-d1/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/c0e610903e4ac440e0099a09701e9a4460b34f1e9e20b2c492ae9443a1a2ca0e-109368-915517/candidate.mp3",
+      "sha256": "3088aacda8b688613e141d937784c7796245c62588db4ce230be40fad3eb1771",
+      "source_sha256": "6b42b90efcfe73660dce8d6ab117a0e5963eb315d5a4eb280d4f4d4f89ee0177",
+      "source_file": "/workspace/work/tcf-audio-replacement/incoming/a1/delf_a1_2022_piste_57.mp3",
+      "source_decoded_pcm_sha256": "70aac9401fd09b654cadd4de10f40edbadd2ddf3803b374985cf3d8a9ce77f7f",
+      "source_sample_rate": 44100,
+      "source_channels": 2,
+      "source_start_frame": 109368,
+      "source_end_frame": 915517,
+      "source_start": 2.48,
+      "source_end": 20.760022675736963,
+      "source_slice_pcm_sha256": "75062f1c9b4c4e735b6201e21e61866aa999e2571c9f0a896aac568c704d74b8",
+      "previous_start": 2.48,
+      "previous_end": 20.84,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            20.64,
+            21.72
+          ],
+          "last_word": "fruits",
+          "next_word_start": 23.572857142857146
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "0e1502736f15801c88248147132aaf47b7872032944afbf2324cdef142ceb6e3",
+      "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111814-97713ae6a5/delf_a1_2022-085-657006e9075c-d2/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/0e1502736f15801c88248147132aaf47b7872032944afbf2324cdef142ceb6e3-405719-1017829/candidate.mp3",
+      "sha256": "33a5baaef3cffd87bf460261500c8b6fa3b7d38ec28be9c0220a59a4d2503784",
+      "source_sha256": "657006e9075c97fd854b23eba86a98a1c03f8cdec065912d8db82c74e99b1b33",
+      "source_file": "/workspace/work/tcf-audio-replacement/incoming/a1/delf_a1_2022_piste_85.mp3",
+      "source_decoded_pcm_sha256": "2944d25862af4a01b43654ddb6fffa425f34e42daf5f3936d5855f37a4dcfce7",
+      "source_sample_rate": 44100,
+      "source_channels": 2,
+      "source_start_frame": 405719,
+      "source_end_frame": 1017829,
+      "source_start": 9.199977324263038,
+      "source_end": 23.080022675736963,
+      "source_slice_pcm_sha256": "a19d981e476806d9c1df3021fb9f7034e2d50c1e02fc1f9a9d73d25e04268746",
+      "previous_start": 9.2,
+      "previous_end": 23.16,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            22.96,
+            23.880000000000003
+          ],
+          "last_word": "plaît",
+          "next_word_start": 24.24
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "16eca13033898303a2c7d20401d08eaf1efc36bf7b8cc626af81e4e6cec40bcd",
+      "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111814-97713ae6a5/delf_a1_2022-085-657006e9075c-d3/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/16eca13033898303a2c7d20401d08eaf1efc36bf7b8cc626af81e4e6cec40bcd-1120845-1567314/candidate.mp3",
+      "sha256": "faf7241ad19dc19ffafdcca1a1972bac80ca7a3aff250d9d06ade65a6b84b311",
+      "source_sha256": "657006e9075c97fd854b23eba86a98a1c03f8cdec065912d8db82c74e99b1b33",
+      "source_file": "/workspace/work/tcf-audio-replacement/incoming/a1/delf_a1_2022_piste_85.mp3",
+      "source_decoded_pcm_sha256": "2944d25862af4a01b43654ddb6fffa425f34e42daf5f3936d5855f37a4dcfce7",
+      "source_sample_rate": 44100,
+      "source_channels": 2,
+      "source_start_frame": 1120845,
+      "source_end_frame": 1567314,
+      "source_start": 25.415986394557823,
+      "source_end": 35.54,
+      "source_slice_pcm_sha256": "cbdf56f6def9a0789e5403519428c324d87341d7e84c742d89ef7ffb6c67caf1",
+      "previous_start": 25.415986394557823,
+      "previous_end": 35.61600907029479,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            35.42,
+            36.49
+          ],
+          "last_word": "euros.",
+          "next_word_start": 36.936
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "ba1c520113b072bd9c89a831dd3beb1833b23338387bd1644b7100cf531ce4f0",
+      "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111817-c8f4c27343/delf_a1_2022-086-c9d1659a97e4-d2/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/ba1c520113b072bd9c89a831dd3beb1833b23338387bd1644b7100cf531ce4f0-508031-657972/candidate.mp3",
+      "sha256": "04738edb35178e8375bcba6b95555e30d003d6971667c3655649217f0ac27130",
+      "source_sha256": "c9d1659a97e4a453228a7a970efb9ba7475b7ff1bc7e6212e3914f1ca0a91f31",
+      "source_file": "/workspace/work/tcf-audio-replacement/incoming/a1/delf_a1_2022_piste_86.mp3",
+      "source_decoded_pcm_sha256": "6f3ae1f53c716364cc36eddab2dbc6872650f80c0dc6ab87b9f653cee756c258",
+      "source_sample_rate": 44100,
+      "source_channels": 2,
+      "source_start_frame": 508031,
+      "source_end_frame": 657972,
+      "source_start": 11.519977324263039,
+      "source_end": 14.92,
+      "source_slice_pcm_sha256": "6a52a1b1d1391552ad738e4902e40011f2a23e6d5964bd062ed0d8a4874f3413",
+      "previous_start": 11.519977324263039,
+      "previous_end": 15.0,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            14.8,
+            15.81
+          ],
+          "last_word": "plaît?",
+          "next_word_start": 16.16
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "d0ed8f160679170ff9b83bdfdd3fb69aa6daff57b75652caab6279c30894bb5b",
+      "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T120922-0b171c2160/delf_a1_2022-087-60a694bc4011-r2-d1/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/d0ed8f160679170ff9b83bdfdd3fb69aa6daff57b75652caab6279c30894bb5b-645623-3528883/candidate.mp3",
+      "sha256": "f7077fa074dc19825d1626b9078695bdcfb6c3ff4ebd1f5a4afc28660aab9642",
+      "source_sha256": "60a694bc4011a51b0bb8b573fdea1369d69a0d579d6204d0c36433924126c96b",
+      "source_file": "/workspace/work/tcf-audio-replacement/incoming/a1/delf_a1_2022_piste_87.mp3",
+      "source_decoded_pcm_sha256": "37ae589c3ada9b0c5ee9973de0c13ad2cfdb13bf7b400e4012f574af56d65b5a",
+      "source_sample_rate": 44100,
+      "source_channels": 2,
+      "source_start_frame": 645623,
+      "source_end_frame": 3528883,
+      "source_start": 14.639977324263038,
+      "source_end": 80.02002267573697,
+      "source_slice_pcm_sha256": "6fbd6fde2e3734c5a010513e5952fe146107da6102bd0bf278917e291e08f063",
+      "previous_start": 14.639977324263038,
+      "previous_end": 80.09600907029478,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            79.9,
+            80.74000000000001
+          ],
+          "last_word": "monsieur.",
+          "next_word_start": 81.096
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "057dd4e81584a93f480a3d8dfd3b7cb44856272d2eeb5ee3842de1e79f0050e5",
+      "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261103T015140-c0e717a9b5/delf_a1_2022-095-9276ab0bc6c8-d1/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/057dd4e81584a93f480a3d8dfd3b7cb44856272d2eeb5ee3842de1e79f0050e5-1124550-2907778/candidate.mp3",
+      "sha256": "bdc9023eea661a42e9133641c996be3f85917fe50e21bc90c2f3e91dba512032",
+      "source_sha256": "9276ab0bc6c854bef16a55702d9bcb2d9e3cb104c356e3da696f60f5bc208877",
+      "source_file": "/workspace/work/tcf-audio-replacement/incoming/a1/delf_a1_2022_piste_95.mp3",
+      "source_decoded_pcm_sha256": "9096f3c4ecb4ab7c5addbb0ec69418a6c376aa7ff8831d82909688bf8b685575",
+      "source_sample_rate": 44100,
+      "source_channels": 2,
+      "source_start_frame": 1124550,
+      "source_end_frame": 2907778,
+      "source_start": 25.5,
+      "source_end": 65.93600907029479,
+      "source_slice_pcm_sha256": "fd13910f23a1f4c8cc3fd54aaa9b32b9b1675ebf82e2066e1126e7abeef31eb8",
+      "previous_start": 25.623990929705215,
+      "previous_end": 65.93600907029479,
+      "word_anchors_and_signal": [
+        {
+          "edge": "start",
+          "quiet_interval": [
+            24.67,
+            25.580000000000002
+          ],
+          "first_word": "Bienvenue",
+          "previous_word_end": 7.04
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "32c03995302e157ff1ba4118e0980440c796ff4cf96015a17bd3e948a606f9fe",
+      "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T120800-2dc73c0ede/09035276-047-b3c0fdfac8a8-r2-d1/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/32c03995302e157ff1ba4118e0980440c796ff4cf96015a17bd3e948a606f9fe-369469-606375/candidate.mp3",
+      "sha256": "72ddbff44e178f8b8d283041024bd702e6435f0c940dfd6a3f3a18afc8ea83e0",
+      "source_sha256": "b3c0fdfac8a888811a5dc5fa965664349bbc43d5246439e8b2739e89424fb985",
+      "source_file": "/workspace/work/tcf-audio-replacement/incoming/a1/09035276_47_Ex 44-1.mp3",
+      "source_decoded_pcm_sha256": "79cca0a039956e3f2ea351a0d0ae56bc0db4cdc9fce46f80284249cd99dc1c0b",
+      "source_sample_rate": 44100,
+      "source_channels": 1,
+      "source_start_frame": 369469,
+      "source_end_frame": 606375,
+      "source_start": 8.377981859410431,
+      "source_end": 13.75,
+      "source_slice_pcm_sha256": "3f3be9b0746910b37f72bf7077b2523e36c49192174e602a9c41c662131ded88",
+      "previous_start": 8.377981859410431,
+      "previous_end": 13.434013605442177,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            13.63,
+            14.31
+          ],
+          "last_word": "j'arrive.",
+          "next_word_start": 16.01
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "730a7c656b4ad86be47ae15d55068f77f43ee953b76b5710aca5ebba1a4f1f86",
+      "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T120800-2dc73c0ede/09035276-047-b3c0fdfac8a8-r2-d2/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/730a7c656b4ad86be47ae15d55068f77f43ee953b76b5710aca5ebba1a4f1f86-791418-1116613/candidate.mp3",
+      "sha256": "bcbc8fbf1e370223a2b669a5472112080d7b553b575c31b436030fb03c1cabc2",
+      "source_sha256": "b3c0fdfac8a888811a5dc5fa965664349bbc43d5246439e8b2739e89424fb985",
+      "source_file": "/workspace/work/tcf-audio-replacement/incoming/a1/09035276_47_Ex 44-1.mp3",
+      "source_decoded_pcm_sha256": "79cca0a039956e3f2ea351a0d0ae56bc0db4cdc9fce46f80284249cd99dc1c0b",
+      "source_sample_rate": 44100,
+      "source_channels": 1,
+      "source_start_frame": 791418,
+      "source_end_frame": 1116613,
+      "source_start": 17.945986394557824,
+      "source_end": 25.32002267573696,
+      "source_slice_pcm_sha256": "e621d84b4e99593fee9072315f1390978f83888a7223c61cdf79abfa8930ac03",
+      "previous_start": 17.945986394557824,
+      "previous_end": 25.006009070294784,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            25.200000000000003,
+            25.880000000000003
+          ],
+          "last_word": "chose.",
+          "next_word_start": 27.338
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "093b7a7c7b1168b81bde5a1381fa8bfa21097928e8d0b15ab7ccceefe2844153",
+      "previous_file": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014338-df0373fa69/additional-20261102-mdf-a2-abc-direct-85-6f2842b225ef-5ebc5db9-d1/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/093b7a7c7b1168b81bde5a1381fa8bfa21097928e8d0b15ab7ccceefe2844153-185220-2666727/candidate.mp3",
+      "sha256": "cd33f27a94296657d6eace729e8c618721f0a77e37415584d9821f2a8ddaa6d1",
+      "source_sha256": "6f2842b225ef418987e0c8d877d44729bf0e476e0fac96e6f2d9475f74d6fb63",
+      "source_file": "/workspace/attachments/e5667ce2-9a94-4855-a526-36f9ff0dc91b/09035199_085_ACT 36.mp3",
+      "source_decoded_pcm_sha256": "6ddce641a75b42916e0ab7e382e2f86b2dffb4cbfb46c5a2d5002e9000cb1fac",
+      "source_sample_rate": 44100,
+      "source_channels": 1,
+      "source_start_frame": 185220,
+      "source_end_frame": 2666727,
+      "source_start": 4.2,
+      "source_end": 60.47,
+      "source_slice_pcm_sha256": "d32def24dcf319bb50b1635a32944deff68666a2116cdc6954fdbe9c389f12e7",
+      "previous_start": 4.473990929705216,
+      "previous_end": 60.47,
+      "word_anchors_and_signal": [
+        {
+          "edge": "start",
+          "quiet_interval": [
+            3.6100000000000003,
+            4.28
+          ],
+          "first_word": "Bonjour,",
+          "previous_word_end": 1.698
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "8f4272c0840f506b44196c03c7611c80b7fd29f7739d373b66fa78ba063b0466",
+      "previous_file": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014142-11744b29a9/additional-20261102-mdf-a1-abc-34-5259bb482d20-1000b471-d1/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/8f4272c0840f506b44196c03c7611c80b7fd29f7739d373b66fa78ba063b0466-281887-1342404/candidate.mp3",
+      "sha256": "e70547d7479100d2ad621d609672d16526383688769c9703acac93e75faaad3a",
+      "source_sha256": "5259bb482d2098fac3e3905c04f6183b2da58626ecf70770b32178690218021f",
+      "source_file": "/workspace/work/tcf-audio-additional-20261102-work/incoming/a1/mdf-a1-abc/MDF_A1_ABC-DELF_AUDIO/09035257_034.mp3",
+      "source_decoded_pcm_sha256": "12b8cc0d7555dde4a17f8cdc38afcd741640d05bc02e289bc91a4e6137ed75f9",
+      "source_sample_rate": 44100,
+      "source_channels": 1,
+      "source_start_frame": 281887,
+      "source_end_frame": 1342404,
+      "source_start": 6.391995464852608,
+      "source_end": 30.44,
+      "source_slice_pcm_sha256": "0712603f4091167019f7f97c09300a517ab38f739d20155f129432c3a96d6fd6",
+      "previous_start": 6.391995464852608,
+      "previous_end": 30.176009070294786,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            30.32,
+            31.05
+          ],
+          "last_word": "revoir.",
+          "next_word_start": 31.514081632653063
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "e838f22b43f7f888e22df0a069614f3905167af640812a5f994455994d140900",
+      "previous_file": "/workspace/work/tcf-audio-reconciliation-20261104/grammar-cuts-work/staged-boundaries-work/run-20261104T173640-49beeccd10/grammar-import-20261104-file_00000000a15881f4a286764cbf7d7e4c-d1/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/e838f22b43f7f888e22df0a069614f3905167af640812a5f994455994d140900-669261-1752534/candidate.mp3",
+      "sha256": "6855344a2e8f271868821adb6333ca6cc76f902e7b9738f5c8d9d5781ec29e92",
+      "source_sha256": "212c73c4bff216dd65fea7991df2b78b28dd12776a55d96dc871df3d8fe55d49",
+      "source_file": "/workspace/doc-prof/public/lib/audio/grammaire/co/presenter/piste014.mp3",
+      "source_decoded_pcm_sha256": "14ff3ae66ffd6944c1bcbc7df167efe6f14882942435d5121557ec240e85f713",
+      "source_sample_rate": 44100,
+      "source_channels": 2,
+      "source_start_frame": 669261,
+      "source_end_frame": 1752534,
+      "source_start": 15.175986394557823,
+      "source_end": 39.74,
+      "source_slice_pcm_sha256": "04663251a16c39b0ac194487ef3cafc8685c685b580796f17fa309febbdd08e7",
+      "previous_start": 15.175986394557823,
+      "previous_end": 39.47201814058957,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            39.620000000000005,
+            40.35
+          ],
+          "last_word": "ça?",
+          "next_word_start": 40.761428571428574
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "08bec596f5c2a0d6dfa876f0fa9598e35e6c17d0a270bc41af44ea664f7dc0f2",
+      "previous_file": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014032-27cb908d98/additional-20261102-mdf-a2-abc-direct-6-716264ffdb10-fd778c69-d1/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/08bec596f5c2a0d6dfa876f0fa9598e35e6c17d0a270bc41af44ea664f7dc0f2-119511-680904/candidate.mp3",
+      "sha256": "20e0a215a683145f8ab514e5f61a2870ab9c6283f9dde94451d7d5e6b195beb8",
+      "source_sha256": "716264ffdb10c03a24789bba2f8a3f409873be70087b20766dd76edc2454c542",
+      "source_file": "/workspace/attachments/daeeddeb-df42-4eca-9a46-3cc52a455614/09035199_006_ACT 1-6.mp3",
+      "source_decoded_pcm_sha256": "2157f5a11c43399f6ed78fd6b9ae47db46fa3bcdb06f31709bf5988d6e52895a",
+      "source_sample_rate": 44100,
+      "source_channels": 1,
+      "source_start_frame": 119511,
+      "source_end_frame": 680904,
+      "source_start": 2.71,
+      "source_end": 15.44,
+      "source_slice_pcm_sha256": "e3abaa73bbc46aaea3f01aca97348068853b490cb64912849fb547c2a7b4db86",
+      "previous_start": 4.32,
+      "previous_end": 14.68,
+      "word_anchors_and_signal": [
+        {
+          "edge": "start",
+          "quiet_interval": [
+            2.4,
+            2.79
+          ],
+          "first_word": "Chers",
+          "previous_word_end": 2.32
+        },
+        {
+          "edge": "end",
+          "quiet_interval": [
+            15.32,
+            15.56
+          ],
+          "last_word": "agents.",
+          "next_word_start": 16.232448979591837
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "1e9b7ace5bb7cfd44a45aacec92be77d6a3df637ad1dd7cdfaa9b464aa6e42a0",
+      "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261103T015112-aa3b268ad6/piste_a1-008-83a3c1c8cd2e-d1/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/1e9b7ace5bb7cfd44a45aacec92be77d6a3df637ad1dd7cdfaa9b464aa6e42a0-627984-1669185/candidate.mp3",
+      "sha256": "a502a4837dc30c5c2e3393ebcd0f191b54f52665ee3906a790241835247bba79",
+      "source_sha256": "83a3c1c8cd2ee82d2ba1efa754586bf05b5269de4f90baefa7f4cc04903240d6",
+      "source_file": "/workspace/work/tcf-audio-replacement/incoming/a1/piste_008.mp3",
+      "source_decoded_pcm_sha256": "f8417a70e6bfe83a8a0c128a321f5c7a7b9ea4c87b7ab704a730c28e9765959d",
+      "source_sample_rate": 44100,
+      "source_channels": 2,
+      "source_start_frame": 627984,
+      "source_end_frame": 1669185,
+      "source_start": 14.24,
+      "source_end": 37.85,
+      "source_slice_pcm_sha256": "3c32352f6f659b0bc1e910c62f3c25d090f8ffcbf9d3d5f6dcbe0b55e6de91d3",
+      "previous_start": 14.24,
+      "previous_end": 37.68,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            37.730000000000004,
+            38.550000000000004
+          ],
+          "last_word": "revoir.",
+          "next_word_start": 68.248
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "606f96ee9f4ed8736e43506b193ac355694169a48515bf86613e70b494ce545b",
+      "previous_file": "/workspace/work/tcf-audio-reconciliation-20261104/grammar-cuts-work/staged-boundaries-work/run-20261104T173725-6b5167b7c8/grammar-import-20261104-file_00000000ba6881f4ad8d2552949f4229-d1/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/606f96ee9f4ed8736e43506b193ac355694169a48515bf86613e70b494ce545b-349624-2717001/candidate.mp3",
+      "sha256": "8896b018d140223846335c55bf7c51e40ba4b1740deaf864ece62f151502fe4d",
+      "source_sha256": "c96ae792a7c8193246079495367dfcf05149c65bbdd31eda6decd87caaa46020",
+      "source_file": "/workspace/doc-prof/public/lib/audio/grammaire/co/hotel/piste233.mp3",
+      "source_decoded_pcm_sha256": "db679ec8a5019561a70b2a6a196d7366d7350830717e3bc3fe0e51c74f27ad39",
+      "source_sample_rate": 44100,
+      "source_channels": 2,
+      "source_start_frame": 349624,
+      "source_end_frame": 2717001,
+      "source_start": 7.927981859410431,
+      "source_end": 61.61,
+      "source_slice_pcm_sha256": "9f62d71b34586e150e6db967aafc3be379d81f103e32f41f36bbb6c532be30dd",
+      "previous_start": 7.927981859410431,
+      "previous_end": 61.21600907029478,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            61.49,
+            62.09
+          ],
+          "last_word": "super!",
+          "next_word_start": 62.86102040816327
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "7b1e9ea7533b7bb24ca434150ad69f544fe8d3e7a83bd9a1ce2c1767168c711f",
+      "previous_file": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014720-c522aacb30/additional-20261102-mdf-b1-abc-direct-15-d3e84b551ade-d9810199-d1/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/7b1e9ea7533b7bb24ca434150ad69f544fe8d3e7a83bd9a1ce2c1767168c711f-88200-5143383/candidate.mp3",
+      "sha256": "f1f85c9eb785b23eb4b93304ad965eba1a1cac2fddceb44f287e1273e6c8d71d",
+      "source_sha256": "d3e84b551ade99cd60a8e8fc0e588ed802612598f4f1e6ec6b916daf66a0f904",
+      "source_file": "/workspace/attachments/d6fd03ae-f192-4113-a8a5-9b3a845cff14/09035197_15_DELF_INTERACTION_A15.mp3",
+      "source_decoded_pcm_sha256": "9827cd825f8c310b2b6b39984ecd32dee5d7cb8cac5f2b14c7c880383e087457",
+      "source_sample_rate": 44100,
+      "source_channels": 1,
+      "source_start_frame": 88200,
+      "source_end_frame": 5143383,
+      "source_start": 2.0,
+      "source_end": 116.63,
+      "source_slice_pcm_sha256": "a5bf663fead3958e5cfed5fd3357e7a50a7f72b97d40c640038192d1a210302a",
+      "previous_start": 2.0,
+      "previous_end": 116.46401360544218,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            116.50999999999999,
+            117.33999999999999
+          ],
+          "last_word": "après-midi.",
+          "next_word_start": 118.03163265306122
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "3273179112a10a7f22e8f8104a4d22f842dca45055d4b9926539eeedf2b47519",
+      "previous_file": "/workspace/work/tcf-audio-reconciliation-20261104/grammar-cuts-work/staged-boundaries-work/run-20261104T173753-c04e6a6493/grammar-import-20261104-file_000000001e788246ab6dc2c13d6eea4f-d1/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/3273179112a10a7f22e8f8104a4d22f842dca45055d4b9926539eeedf2b47519-477603-3215331/candidate.mp3",
+      "sha256": "622180a81628bcc3a9f1198e713ce1b946ccf377baa3daa020729a77317ad06a",
+      "source_sha256": "fc2d44702384f361ef887f3b470ce777c4093832a6614b968ecf6cf3195e0db1",
+      "source_file": "/workspace/doc-prof/public/lib/audio/grammaire/co/fetes/piste027.mp3",
+      "source_decoded_pcm_sha256": "9350920b7ec7647c607f491960ee5663c4988a61d2ce8d1d72c3aa7a25213731",
+      "source_sample_rate": 44100,
+      "source_channels": 2,
+      "source_start_frame": 477603,
+      "source_end_frame": 3215331,
+      "source_start": 10.83,
+      "source_end": 72.91,
+      "source_slice_pcm_sha256": "560a96071472e167e13ae7b4998ebcdee2342bf07c719de981fdc5fadbfb6b49",
+      "previous_start": 12.615986394557822,
+      "previous_end": 72.60800453514739,
+      "word_anchors_and_signal": [
+        {
+          "edge": "start",
+          "quiet_interval": [
+            9.98,
+            10.91
+          ],
+          "first_word": "Bonjour,",
+          "previous_word_end": 9.896
+        },
+        {
+          "edge": "end",
+          "quiet_interval": [
+            72.78999999999999,
+            73.47999999999999
+          ],
+          "last_word": "samedi.",
+          "next_word_start": 74.04142857142857
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "8bda8574cdc809f48f27a859e8a53d9576668dc2779fc729d0e8bb3e047b1d52",
+      "previous_file": "/workspace/work/tcf-audio-reconciliation-20261104/grammar-cuts-work/staged-boundaries-work/run-20261104T173750-aca2aee042/grammar-import-20261104-file_00000000ecd8824694c3abfb6fe682aa-d1/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/8bda8574cdc809f48f27a859e8a53d9576668dc2779fc729d0e8bb3e047b1d52-444528-3196810/candidate.mp3",
+      "sha256": "dd600b2e1d318e7c6163d06b0b5496f2534f96aee318ab79505fc093314b7f5d",
+      "source_sha256": "5ec0dcbcd6e8e0e8d9b6e443c23acf4288a3d3af9e6882c7f2d0e35962dc68ce",
+      "source_file": "/workspace/doc-prof/public/lib/audio/grammaire/co/magasin-vetements/piste105.mp3",
+      "source_decoded_pcm_sha256": "65bce4833dfd6ba67e453c34d90f194cdc15cbdb0d612bbe0c0c515d93c97a43",
+      "source_sample_rate": 44100,
+      "source_channels": 2,
+      "source_start_frame": 444528,
+      "source_end_frame": 3196810,
+      "source_start": 10.08,
+      "source_end": 72.49002267573697,
+      "source_slice_pcm_sha256": "be7637071976b658436b830e88a76a7ea06a3b01df23526e7ba99d23a9db371f",
+      "previous_start": 11.655986394557823,
+      "previous_end": 72.01600907029479,
+      "word_anchors_and_signal": [
+        {
+          "edge": "start",
+          "quiet_interval": [
+            9.34,
+            10.16
+          ],
+          "first_word": "Bonjour",
+          "previous_word_end": 9.256
+        },
+        {
+          "edge": "end",
+          "quiet_interval": [
+            72.37,
+            72.89
+          ],
+          "last_word": "internet.",
+          "next_word_start": 73.5973469387755
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "36ff9409a58b461e4596836a373d6b3dc1782af6098ed01f01c580c14771c514",
+      "previous_file": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014248-ce9445f4e7/additional-20261102-mdf-a1-abc-10-964f0054c4b4-53afc99e-d1/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/36ff9409a58b461e4596836a373d6b3dc1782af6098ed01f01c580c14771c514-166874-1919232/candidate.mp3",
+      "sha256": "9b2dd5ab5f1900f486d574a1743c2475cfc311a80ccf717b0a96403f6b891d1c",
+      "source_sha256": "964f0054c4b466805a25ed8a6f724dc7a6f4d2ec48dc289d372bba6dec116ed5",
+      "source_file": "/workspace/work/tcf-audio-additional-20261102-work/incoming/a1/mdf-a1-abc/MDF_A1_ABC-DELF_AUDIO/09035257_010.mp3",
+      "source_decoded_pcm_sha256": "91a4cc0d4caec60c65c79b1356f9c56313a23c46da109ef3b4e924477c60f241",
+      "source_sample_rate": 44100,
+      "source_channels": 1,
+      "source_start_frame": 166874,
+      "source_end_frame": 1919232,
+      "source_start": 3.7839909297052152,
+      "source_end": 43.52,
+      "source_slice_pcm_sha256": "b599bd1e0b99781995c2ee4742911ee46b1e1966f3451fffd8904e43b2d7ba9f",
+      "previous_start": 3.7839909297052152,
+      "previous_end": 43.23201814058957,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            43.4,
+            44.11
+          ],
+          "last_word": "Bise.",
+          "next_word_start": 44.75816326530612
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "676130ef605cc2952284cb8028efd7e029a520c4fa47eab1c8c57a49d34cdcf0",
+      "previous_file": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014341-af5a4e9d8d/additional-20261102-mdf-a2-abc-direct-92-13977bdd8c90-a0d8314f-d4/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/676130ef605cc2952284cb8028efd7e029a520c4fa47eab1c8c57a49d34cdcf0-2231901-2769921/candidate.mp3",
+      "sha256": "5f5e7a79ad5da82960464e069a11aef8a979d91b8eeb0d755db308854ac2d09a",
+      "source_sha256": "13977bdd8c90106e28e0c0a4b6e826fb0a97f32d2b9bad9ef8fb0331168ec249",
+      "source_file": "/workspace/attachments/083feeaf-f2ed-45fb-ac2c-c50982816fde/09035199_092_ACT 43.mp3",
+      "source_decoded_pcm_sha256": "df3d09b8fc3f1a620aa66e4fe57633cf29ba22fd1b0a7a80348461aa48a45f3e",
+      "source_sample_rate": 44100,
+      "source_channels": 1,
+      "source_start_frame": 2231901,
+      "source_end_frame": 2769921,
+      "source_start": 50.61,
+      "source_end": 62.81,
+      "source_slice_pcm_sha256": "97312b2a8b67c247a28adc0cb8b7d209e6b8172830ff0e990f33a63c4e0e384c",
+      "previous_start": 51.111995464852605,
+      "previous_end": 62.03201814058957,
+      "word_anchors_and_signal": [
+        {
+          "edge": "start",
+          "quiet_interval": [
+            50.56,
+            50.690000000000005
+          ],
+          "first_word": "Attendez,",
+          "previous_word_end": 50.471999
+        },
+        {
+          "edge": "end",
+          "quiet_interval": [
+            62.690000000000005,
+            62.910000000000004
+          ],
+          "last_word": "madame.",
+          "next_word_start": 63.7230612244898
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "759634045f956c50ba8dded53a328a365c06c861924e6359b4da30c135f961e6",
+      "previous_file": "/workspace/work/tcf-audio-reconciliation-20261104/grammar-cuts-work/staged-boundaries-work/run-20261104T173655-2e96e3e6fa/grammar-import-20261104-file_00000000d630820a8b1e5af6f190a63e-d1/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/759634045f956c50ba8dded53a328a365c06c861924e6359b4da30c135f961e6-296793-2274678/candidate.mp3",
+      "sha256": "adf118453ae19fa9a294dc2466b96756fe58e9a50ec7389277cc7cfe1eafc1ea",
+      "source_sha256": "0580aab6bba84132ff36c3dc6ee1d2915d6014aafcc6e7be777f7820148471d6",
+      "source_file": "/workspace/doc-prof/public/lib/audio/grammaire/co/lieux-culturels/piste226.mp3",
+      "source_decoded_pcm_sha256": "9160a6f17aa927d3725f3218ad3065d9eb48477f1bcc6ece716447d8ca235111",
+      "source_sample_rate": 44100,
+      "source_channels": 2,
+      "source_start_frame": 296793,
+      "source_end_frame": 2274678,
+      "source_start": 6.73,
+      "source_end": 51.58,
+      "source_slice_pcm_sha256": "4862eda94117643e95eda1247ff4ea7b420abff78446ee4f12f2420a65b43f64",
+      "previous_start": 7.031995464852607,
+      "previous_end": 51.44,
+      "word_anchors_and_signal": [
+        {
+          "edge": "start",
+          "quiet_interval": [
+            5.05,
+            6.81
+          ],
+          "first_word": "Je",
+          "previous_word_end": 4.792
+        },
+        {
+          "edge": "end",
+          "quiet_interval": [
+            51.46,
+            52.27
+          ],
+          "last_word": "beaucoup.",
+          "next_word_start": 52.62102040816327
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "66675265cfa2b78571a09552a30452e81d62233bb9c6de7400a8b7becb79bcbf",
+      "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111302-6695e80922/09035276-044-6f1e71a5d8e3-d4/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/66675265cfa2b78571a09552a30452e81d62233bb9c6de7400a8b7becb79bcbf-2364112-2780505/candidate.mp3",
+      "sha256": "015b61c9eaed015c6d598c4b3dae91fedca794a24247242990c1ab910cece66a",
+      "source_sha256": "6f1e71a5d8e3ac6bfec9c2c240b714385e061f5c4ca83b3ba67d8dfcb9953b5f",
+      "source_file": "/workspace/work/tcf-audio-replacement/incoming/a1/09035276_44_Ex 41-1.mp3",
+      "source_decoded_pcm_sha256": "a4229f84c438c0917857503b806d0a2d1a6f7ed7e6bbe691ac2da20dc9a9b7d7",
+      "source_sample_rate": 44100,
+      "source_channels": 1,
+      "source_start_frame": 2364112,
+      "source_end_frame": 2780505,
+      "source_start": 53.60798185941043,
+      "source_end": 63.05,
+      "source_slice_pcm_sha256": "d722450f513a91002c2909c2c6ff4be0493102206592204386b59ca19e5cd788",
+      "previous_start": 53.60798185941043,
+      "previous_end": 62.84800453514739,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            62.93,
+            63.72
+          ],
+          "last_word": "problème.",
+          "next_word_start": 64.16714285714285
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "fa3fc61ad290ad74967ef40a451e903f2aa1ad634ea424aeb379b0f4fe8cb0cf",
+      "previous_file": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014408-391b7b5dc0/additional-20261102-mdf-a2-abc-direct-90-1ae5c01e041b-4048350c-d4/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/fa3fc61ad290ad74967ef40a451e903f2aa1ad634ea424aeb379b0f4fe8cb0cf-2410682-2907954/candidate.mp3",
+      "sha256": "fafcafeab0415d7f9068b5658c7be9991a8ca5a170f738d61e22c44df4522560",
+      "source_sha256": "1ae5c01e041bef2e61da44392e732d0c4ad84cb665b5b4f70f97114ce6f9f41d",
+      "source_file": "/workspace/attachments/6ea943cd-d9d7-4925-94a4-fbfba61b0aa0/09035199_090_ACT 41.mp3",
+      "source_decoded_pcm_sha256": "283c9e958a0a444b052f3112fa7368a5aa43ccbc2b804285c90983f1e64907c2",
+      "source_sample_rate": 44100,
+      "source_channels": 1,
+      "source_start_frame": 2410682,
+      "source_end_frame": 2907954,
+      "source_start": 54.663990929705214,
+      "source_end": 65.94,
+      "source_slice_pcm_sha256": "e8299902688f7df9d71e432d46aab4a3dd1489c37609eb2ca5f64af8c3b300a5",
+      "previous_start": 54.663990929705214,
+      "previous_end": 65.74401360544218,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            65.82,
+            66.61999999999999
+          ],
+          "last_word": "dommage.",
+          "next_word_start": 67.2495918367347
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "619075b142572615273f3be026237317109e841099b4e3fdbe10f18cc0e235b3",
+      "previous_file": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014320-7c39dce8b1/additional-20261102-mdf-a2-abc-direct-72-57bdaf288e8e-b97a0463-d1/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/619075b142572615273f3be026237317109e841099b4e3fdbe10f18cc0e235b3-101871-2334831/candidate.mp3",
+      "sha256": "7c49d9abe0d828773de094dc65443d85a580d2e482071c18b9a67aebd3ac4f54",
+      "source_sha256": "57bdaf288e8e3689a50d599060fab267095e882abe9aa6c47063a8668b7bf6fc",
+      "source_file": "/workspace/attachments/9809578b-84d4-47d3-8b97-d898728ce056/09035199_072_ACT 23.mp3",
+      "source_decoded_pcm_sha256": "14fb2a6ae0e6bf4133d2d9849c9f1ecc9b5e0fcefa17c2f55fa8bc62c68e64ff",
+      "source_sample_rate": 44100,
+      "source_channels": 1,
+      "source_start_frame": 101871,
+      "source_end_frame": 2334831,
+      "source_start": 2.31,
+      "source_end": 52.94401360544218,
+      "source_slice_pcm_sha256": "bae24fbbfad4263cd95c409fc82356b6f13cd24855822578b934697919806770",
+      "previous_start": 3.1439909297052155,
+      "previous_end": 52.94401360544218,
+      "word_anchors_and_signal": [
+        {
+          "edge": "start",
+          "quiet_interval": [
+            1.87,
+            2.39
+          ],
+          "first_word": "Bonjour",
+          "previous_word_end": 1.784
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "dd90d9ae64c09125683a0c2084a3aec681454cd3a50b6815629b3a8cbd190653",
+      "previous_file": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014523-582d335526/additional-20261102-mdf-a1-abc-62-cdfafe749af2-cf61c1c3-d4/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/dd90d9ae64c09125683a0c2084a3aec681454cd3a50b6815629b3a8cbd190653-2921536-3438477/candidate.mp3",
+      "sha256": "c036506b352bf0ac218e6c86dac144fcdc9ad28e8f616b613f14879dd2ff01f1",
+      "source_sha256": "cdfafe749af20ad007dd5d66f9b170f1cf44516c39b64d0ca15fd2051a8e2550",
+      "source_file": "/workspace/work/tcf-audio-additional-20261102-work/incoming/a1/mdf-a1-abc/MDF_A1_ABC-DELF_AUDIO/09035257_062.mp3",
+      "source_decoded_pcm_sha256": "c1b6e232e7e1f8212d892b9d8323c14d6692eb08da072760b5d13eccf1980e99",
+      "source_sample_rate": 44100,
+      "source_channels": 1,
+      "source_start_frame": 2921536,
+      "source_end_frame": 3438477,
+      "source_start": 66.24798185941043,
+      "source_end": 77.97,
+      "source_slice_pcm_sha256": "5f4b77ffa911c971be417d3814c03d428d9e3672ade5997a62845944e519f47b",
+      "previous_start": 66.24798185941043,
+      "previous_end": 77.80800453514739,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            77.85,
+            78.67999999999999
+          ],
+          "last_word": "motivé.",
+          "next_word_start": 80.31081632653061
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "ac91e18a427e62f922e41ccb43ba9180f5d986f6bc8555b8e75e02c313225408",
+      "previous_file": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014149-c86d5565dd/additional-20261102-mdf-a1-abc-21-9d63b76876e1-a27d4dd0-d1/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/ac91e18a427e62f922e41ccb43ba9180f5d986f6bc8555b8e75e02c313225408-126567-1390473/candidate.mp3",
+      "sha256": "9ff5fb66c13ec911ff92bdc3b2cb315f88854a646b25910a961eb28b9d5fa96c",
+      "source_sha256": "9d63b76876e1b7326ed6132b22d519104ac72d9f4773d5ebf31490e4ba01c0b2",
+      "source_file": "/workspace/work/tcf-audio-additional-20261102-work/incoming/a1/mdf-a1-abc/MDF_A1_ABC-DELF_AUDIO/09035257_021.mp3",
+      "source_decoded_pcm_sha256": "fbafc1d3de766aec8615ece532f827609fc979f06f57c9d9244e226de4aba88d",
+      "source_sample_rate": 44100,
+      "source_channels": 1,
+      "source_start_frame": 126567,
+      "source_end_frame": 1390473,
+      "source_start": 2.87,
+      "source_end": 31.53,
+      "source_slice_pcm_sha256": "e1df1cbe3f4329988b7e96e3205801fdac854378a060051a7c44ae6b88bf90b3",
+      "previous_start": 4.04,
+      "previous_end": 31.328004535147393,
+      "word_anchors_and_signal": [
+        {
+          "edge": "start",
+          "quiet_interval": [
+            1.8800000000000001,
+            2.95
+          ],
+          "first_word": "Radio",
+          "previous_word_end": 1.8
+        },
+        {
+          "edge": "end",
+          "quiet_interval": [
+            31.41,
+            32.199999999999996
+          ],
+          "last_word": "quinze.",
+          "next_word_start": 33.081428571428575
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "b9d2d5400af1662775a32ff0ab75108a78e27185a2d74d0fb4107d715dfc9f11",
+      "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111238-af377d7de8/09035276-016-6b09b42afbaf-d1/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/b9d2d5400af1662775a32ff0ab75108a78e27185a2d74d0fb4107d715dfc9f11-134064-1051785/candidate.mp3",
+      "sha256": "6a84725b1daa2b8f26733d7b8146060149dab27ecf4b67a8ee82a9df165f805f",
+      "source_sha256": "6b09b42afbaf89dfed2f2dce05947ac57fa215cb7e4cf031405ce5257eac668a",
+      "source_file": "/workspace/work/tcf-audio-replacement/incoming/a1/09035276_16_Ex 13-1.mp3",
+      "source_decoded_pcm_sha256": "ede102687dd513e4478f7ddf34e685567762ff3ec687d4792cf3b6545520ab2a",
+      "source_sample_rate": 44100,
+      "source_channels": 1,
+      "source_start_frame": 134064,
+      "source_end_frame": 1051785,
+      "source_start": 3.04,
+      "source_end": 23.85,
+      "source_slice_pcm_sha256": "f3100f9e3e35ad656b38d96636a2a5d0647fddc119939bcc88257167ade11420",
+      "previous_start": 3.04,
+      "previous_end": 23.72,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            23.73,
+            24.52
+          ],
+          "last_word": "10!",
+          "next_word_start": 24.878979591836735
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "2b9fcb644e405f1edcdec733b45e2c1c91355ac83efd7fad02b45d1be9bdaf02",
+      "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111312-3950e77415/09035276-048-44c1253827eb-d1/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/2b9fcb644e405f1edcdec733b45e2c1c91355ac83efd7fad02b45d1be9bdaf02-210621-583002/candidate.mp3",
+      "sha256": "c1d37c91df54bc1a3d9caac5938a20b556dd2467ea0e51056ac5c081c8d7698f",
+      "source_sha256": "44c1253827ebb52c5706d4c4fa31159901b25093ae21dbaebac7b26a8c83a315",
+      "source_file": "/workspace/work/tcf-audio-replacement/incoming/a1/09035276_48_Ex 45-1.mp3",
+      "source_decoded_pcm_sha256": "dc754f0048e943708a518fd8c148fb221222d3f88d1262e1a1ba9938efae8124",
+      "source_sample_rate": 44100,
+      "source_channels": 1,
+      "source_start_frame": 210621,
+      "source_end_frame": 583002,
+      "source_start": 4.775986394557823,
+      "source_end": 13.22,
+      "source_slice_pcm_sha256": "cee0b3424381d267c4430787842284104415da1ae467d03e3408cf66bc17029a",
+      "previous_start": 4.775986394557823,
+      "previous_end": 13.296009070294785,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            13.1,
+            14.17
+          ],
+          "last_word": "plaît.",
+          "next_word_start": 14.695999
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "85e6813e55b62e80fcb496d36f5fc9771aceed6e35a9640ecca1739359f8410c",
+      "previous_file": "/workspace/work/tcf-audio-reconciliation-20261104/grammar-cuts-work/staged-boundaries-work/run-20261104T173509-683ed3b73b/grammar-import-20261104-file_00000000ae2c81f9b18c2115650264c0-d1/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/85e6813e55b62e80fcb496d36f5fc9771aceed6e35a9640ecca1739359f8410c-271656-879795/candidate.mp3",
+      "sha256": "9aa38268790c81ae337c97267d7166ff0ec90971c56a6cddc01b62dd25fd21c2",
+      "source_sha256": "c186f7f6012365cc84e5a73b167415aa189466072bb3d462c11d65cbfc40aea9",
+      "source_file": "/workspace/doc-prof/public/lib/audio/grammaire/co/gare/piste180.mp3",
+      "source_decoded_pcm_sha256": "7b8757a2d1998435ac63a05b494350f9b3777af015283df6323c13d40cc59d4c",
+      "source_sample_rate": 44100,
+      "source_channels": 2,
+      "source_start_frame": 271656,
+      "source_end_frame": 879795,
+      "source_start": 6.16,
+      "source_end": 19.95,
+      "source_slice_pcm_sha256": "45aeeab2a658fd5ac845b5d2589d27dd8ddfced2330d0512c6928a7deea87ec2",
+      "previous_start": 6.16,
+      "previous_end": 19.8,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            19.83,
+            20.68
+          ],
+          "last_word": "euros.",
+          "next_word_start": 21.038979591836735
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "4a3204009673a48ef487fe867417ca6fa9fe86cc3e3be17a9bfff3737b1ad405",
+      "previous_file": "/workspace/work/tcf-audio-reconciliation-20261104/grammar-cuts-work/staged-boundaries-work/run-20261104T173746-7e207adabd/grammar-import-20261104-file_0000000061508243b9a4220e31c582c4-d1/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/4a3204009673a48ef487fe867417ca6fa9fe86cc3e3be17a9bfff3737b1ad405-664410-3068919/candidate.mp3",
+      "sha256": "ba4d945a7bf3df5ce036b6cbfeef0da1c104f546d5179dd7add9dd25fb176989",
+      "source_sha256": "fb7776e5767fe980edf88d1101b2c0863e2e4e6a284656f3469b9accc35c88e6",
+      "source_file": "/workspace/doc-prof/public/lib/audio/grammaire/co/problemes-domestiques/piste049.mp3",
+      "source_decoded_pcm_sha256": "243dda271946d90b1af420486e73b01a797fb9293165410992b8f5af96d507b5",
+      "source_sample_rate": 44100,
+      "source_channels": 2,
+      "source_start_frame": 664410,
+      "source_end_frame": 3068919,
+      "source_start": 15.065986394557823,
+      "source_end": 69.59,
+      "source_slice_pcm_sha256": "cf275b82d1fd0d8edb93da00daff974ae3cd8b570a4e2caeb6bd9a3f9b85d770",
+      "previous_start": 15.065986394557823,
+      "previous_end": 69.05,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            69.47,
+            69.92999999999999
+          ],
+          "last_word": "merci.",
+          "next_word_start": 70.59326530612245
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "78f9ef209a517f91576152b178f654b1db0db5b38d4ebaf3e044ac168f571ef2",
+      "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T120814-b127f4586a/9782090351958-040-42a9a64a8955-r2-d1/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/78f9ef209a517f91576152b178f654b1db0db5b38d4ebaf3e044ac168f571ef2-649151-1108675/candidate.mp3",
+      "sha256": "0bb2a656483c7f621e364bde9f606f160646a2552ff3158e50f661304ccb4230",
+      "source_sha256": "42a9a64a8955779c29d69bb885962d29516f1e44dc49c864205697e967b67640",
+      "source_file": "/workspace/work/tcf-audio-replacement/incoming/a2/9782090351958_40_CO_ex38.mp3",
+      "source_decoded_pcm_sha256": "53e455fa075ca410a6fcf14d68f9aff8a78b39f0cea7a1f6855718a1569b20d7",
+      "source_sample_rate": 44100,
+      "source_channels": 1,
+      "source_start_frame": 649151,
+      "source_end_frame": 1108675,
+      "source_start": 14.719977324263038,
+      "source_end": 25.14002267573696,
+      "source_slice_pcm_sha256": "ce2069ce9ec8900771750e15c8bf1a15d6159932238344cb10cccd267b9713f7",
+      "previous_start": 14.719977324263038,
+      "previous_end": 24.28,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            25.020000000000003,
+            25.160000000000004
+          ],
+          "last_word": "bus.",
+          "next_word_start": 27.688
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "3973d4e701641d8f8f520b49c08d43ce48204e087dafdf67a10e8afe4a536036",
+      "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T120814-b127f4586a/9782090351958-040-42a9a64a8955-r2-d3/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/3973d4e701641d8f8f520b49c08d43ce48204e087dafdf67a10e8afe4a536036-1954864-2346120/candidate.mp3",
+      "sha256": "580a788bd7ba413cd7a3900155edd26be71c187dfdf3b0fd588818169c8c3226",
+      "source_sha256": "42a9a64a8955779c29d69bb885962d29516f1e44dc49c864205697e967b67640",
+      "source_file": "/workspace/work/tcf-audio-replacement/incoming/a2/9782090351958_40_CO_ex38.mp3",
+      "source_decoded_pcm_sha256": "53e455fa075ca410a6fcf14d68f9aff8a78b39f0cea7a1f6855718a1569b20d7",
+      "source_sample_rate": 44100,
+      "source_channels": 1,
+      "source_start_frame": 1954864,
+      "source_end_frame": 2346120,
+      "source_start": 44.32798185941043,
+      "source_end": 53.2,
+      "source_slice_pcm_sha256": "4c14de20522614a4f1445e74840b6b6510e72ed6901a26dc1c334694b18c0cd8",
+      "previous_start": 44.32798185941043,
+      "previous_end": 52.44800453514739,
+      "word_anchors_and_signal": [
+        {
+          "edge": "end",
+          "quiet_interval": [
+            53.08,
+            53.32
+          ],
+          "last_word": "courir.",
+          "next_word_start": 55.528
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "a09207e1ee90f791e306b1434b4dc1ce440a4ecfd85aac80223d445a28b49dd4",
+      "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261103T014534-ddcd7565fd/9782090351958-043-cae491191637-d1/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/a09207e1ee90f791e306b1434b4dc1ce440a4ecfd85aac80223d445a28b49dd4-801297-1491462/candidate.mp3",
+      "sha256": "168ac66ff17cf4401385786ca81d3b4832f953b0b6e9c5e80cdd448c2a0e19ec",
+      "source_sha256": "cae491191637a4269bb79ebc7e0e1d5188833123ed68cf5041d6ebfb9d10fca3",
+      "source_file": "/workspace/work/tcf-audio-replacement/incoming/a2/9782090351958_43_CO_ex41.mp3",
+      "source_decoded_pcm_sha256": "5af32c4e6ebbc28a9022f37901439d7ad198ae50ac4cf15d40863c81b015147d",
+      "source_sample_rate": 44100,
+      "source_channels": 1,
+      "source_start_frame": 801297,
+      "source_end_frame": 1491462,
+      "source_start": 18.17,
+      "source_end": 33.82,
+      "source_slice_pcm_sha256": "2f7e012c7e47be0ad234edbfbb5ce59ae33bc3438eb7d14af40bac05717ee4e8",
+      "previous_start": 19.335986394557825,
+      "previous_end": 33.61600907029479,
+      "word_anchors_and_signal": [
+        {
+          "edge": "start",
+          "quiet_interval": [
+            17.03,
+            18.25
+          ],
+          "first_word": "The",
+          "previous_word_end": 16.823999
+        },
+        {
+          "edge": "end",
+          "quiet_interval": [
+            33.7,
+            34.14
+          ],
+          "last_word": "only.",
+          "next_word_start": 43.45204081632653
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "42f30f37b2e5e3670d4ea46d0136692a8b728fb961efbdfc5bdb64b2c67cc447",
+      "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261103T014857-48865f7c72/9782090351958-036-449228fbaf9b-d1/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/42f30f37b2e5e3670d4ea46d0136692a8b728fb961efbdfc5bdb64b2c67cc447-668556-3134276/candidate.mp3",
+      "sha256": "7c8ef2c72204f67f49b40eb688c3de25156bc1e8065dccb0dfdd47951712f8ef",
+      "source_sha256": "449228fbaf9b6bb979789b6aca0a9740052fad0fd985b205aca79e4a89143352",
+      "source_file": "/workspace/work/tcf-audio-replacement/incoming/a2/9782090351958_36_CO_ex34.mp3",
+      "source_decoded_pcm_sha256": "1ae1c91bc2b67e58ea3e3f28ba1a2a62b1b30f620675ac13cdd91ce485930a9e",
+      "source_sample_rate": 44100,
+      "source_channels": 1,
+      "source_start_frame": 668556,
+      "source_end_frame": 3134276,
+      "source_start": 15.16,
+      "source_end": 71.07201814058956,
+      "source_slice_pcm_sha256": "48de83db32a1ee980c0da9d2ba8412c9556779bc1641e85a55054c3cef9e6466",
+      "previous_start": 16.487981859410432,
+      "previous_end": 71.07201814058956,
+      "word_anchors_and_signal": [
+        {
+          "edge": "start",
+          "quiet_interval": [
+            14.33,
+            15.24
+          ],
+          "first_word": "Aujourd'hui",
+          "previous_word_end": 14.248
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "previous_sha256": "9f75c518c964f55e5790a31fa5e154e352516ec10fb6d7e0a9e4a9aeb1a768ba",
+      "previous_file": "/workspace/work/tcf-audio-reconciliation-20261104/grammar-cuts-work/staged-boundaries-work/run-20261104T173741-19e95d5c5b/grammar-import-20261104-file_00000000fa608243a84f0d1121bc919c-d1/candidate.mp3",
+      "status": "new_candidate_requires_two_recognitions",
+      "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/9f75c518c964f55e5790a31fa5e154e352516ec10fb6d7e0a9e4a9aeb1a768ba-289737-2933091/candidate.mp3",
+      "sha256": "38d8e7d0ad8a1604d8eccb8ec8ee8e8a8454a32b2f9d2314757fdd475952bf6d",
+      "source_sha256": "683c7a22cb62d192db5eb73a3f1fef306b0621d53d97117cfb9ab4a910861456",
+      "source_file": "/workspace/doc-prof/public/lib/audio/grammaire/co/magasin-vetements/piste115.mp3",
+      "source_decoded_pcm_sha256": "acddb297b8d003080d80fa32fc7ce14273d75bb27852be0fe2efc5b2b3407a1b",
+      "source_sample_rate": 44100,
+      "source_channels": 2,
+      "source_start_frame": 289737,
+      "source_end_frame": 2933091,
+      "source_start": 6.57,
+      "source_end": 66.51,
+      "source_slice_pcm_sha256": "de9cc5ab77c2b67acef4b852a41437fb29c58d15488ba1a9a000d11472b3d923",
+      "previous_start": 8.263990929705216,
+      "previous_end": 65.82401360544218,
+      "word_anchors_and_signal": [
+        {
+          "edge": "start",
+          "quiet_interval": [
+            5.87,
+            6.65
+          ],
+          "first_word": "Regarde",
+          "previous_word_end": 5.784
+        },
+        {
+          "edge": "end",
+          "quiet_interval": [
+            66.39,
+            66.52
+          ],
+          "last_word": "vendeuse?",
+          "next_word_start": 69.49612244897959
+        }
+      ],
+      "human_listening_performed": false
+    }
+  ]
+}
