@@ -224,19 +224,19 @@
     "Les contours noirs appuyés, hachures et volumes fortement simplifiés des dernières reprises ne correspondent pas à la référence validée."
   ],
   "summary": {
-    "reviewed_co_images": 800,
+    "reviewed_co_images": 803,
     "reviewed_other_images": 59,
-    "reviewed_total_images": 859,
+    "reviewed_total_images": 862,
     "user_approved_reference_images": 35,
     "initial_redraw_required": 11,
     "initial_co_redraw_required": 11,
     "initial_other_redraw_required": 0,
-    "already_aligned": 848,
+    "already_aligned": 851,
     "redrawn_images": 11,
     "remaining_redraws": 0,
     "restored_previous_images": 14,
     "rejected_unpublished_previews": 12,
-    "new_images_compared_to_reference": 541
+    "new_images_compared_to_reference": 544
   },
   "superseded_review": {
     "commit": "f6f2a521",
@@ -11630,6 +11630,51 @@
       "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
       "references": [
         "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "vocab-rugby",
+      "label": "Le rugby",
+      "path": "/lib/images/tcf/qcm-audit/vocab-rugby.webp",
+      "sha256": "72eb2cf8c8f4002ea7eab0e4301c99ed438ffbfffd9d1a7b456af7d5df953704",
+      "status": "aligned",
+      "review_note": "Deux joueuses distinctes, peaux et morphologies variées, ballon ovale et poteaux en H sans filet visibles. Peinture douce et contours fins comparés au club musique validé.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "vocab-crepe",
+      "label": "Une crêpe",
+      "path": "/lib/images/tcf/qcm-audit/vocab-crepe.webp",
+      "sha256": "9d52de3287243f60f8641e75fde8c2334e007bb1435c31cde809d5e2ae0c56e0",
+      "status": "aligned",
+      "review_note": "Une seule crêpe fine dorée pliée en triangle sur une assiette entière, sans empilement. Fond crème, modelé peint et trait discret conformes à la référence.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-bouquet-fleurs-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "vocab-horloge-0000",
+      "label": "Minuit",
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-0000.webp",
+      "sha256": "ff6fcd7713a267bfd42b9ae3835f555e4d97c85d305c26c0a0f786b03cf975c0",
+      "status": "aligned",
+      "review_note": "Affichage relu : 00:00, quatre zéros blancs et deux-points sur écran noir. Boîtier bois et fond crème peints, image entière au format 4:3.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-bouquet-fleurs-dessine.webp"
       ],
       "review_origin": "new_generation_after_reference48",
       "user_approved_reference": false

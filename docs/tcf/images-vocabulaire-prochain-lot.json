@@ -220,6 +220,84 @@
         "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
       ],
       "status": "generated_and_visually_reviewed"
+    },
+    {
+      "id": "vocab-rugby",
+      "label": "Le rugby",
+      "path": "/lib/images/tcf/qcm-audit/vocab-rugby.webp",
+      "prompt": "Create exactly one landscape 4:3 illustration, native size 1448x1086 if supported. Match approved reference images: semi-realistic hand-painted digital educational illustration, softly modeled volumes, fine discreet contours, warm natural colours, subtle painterly texture. No thick black cartoon outlines, no 3D render or photorealism. Subject: On a rugby pitch, two adult women playing touch rugby. Foreground woman medium brown skin, short curly black hair, athletic stocky build, green rugby jersey and black shorts running holding a clearly OVAL rugby ball in two hands. Second woman lighter olive skin, short auburn hair, blue jersey in natural defensive stance without contact. Clear rugby H shaped goalposts in background, no net, no helmets, no numbers or lettering. Entire anatomically correct people visible, distinct new faces, natural inclusive sports scene.",
+      "references": [],
+      "source_png": "/workspace/generated_images/vocab-rugby.png",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-football-dessine.webp"
+      ],
+      "review_note": "Deux joueuses distinctes, peaux et morphologies variées, ballon ovale et poteaux en H sans filet visibles. Peinture douce et contours fins comparés au club musique validé.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+        ],
+        "review_note": "Deux joueuses distinctes, peaux et morphologies variées, ballon ovale et poteaux en H sans filet visibles. Peinture douce et contours fins comparés au club musique validé."
+      },
+      "status": "generated_visually_reviewed"
+    },
+    {
+      "id": "vocab-crepe",
+      "label": "Une crêpe",
+      "path": "/lib/images/tcf/qcm-audit/vocab-crepe.webp",
+      "prompt": "Create exactly one landscape 4:3 illustration, native size 1448x1086 if supported. Match approved reference images: semi-realistic hand-painted digital educational illustration, softly modeled volumes, fine discreet contours, warm natural colours, subtle painterly texture. No thick black cartoon outlines, no 3D render or photorealism. Subject: Exactly ONE thin golden French sweet crepe, folded in a triangle on a simple ivory ceramic plate, delicate browned spots, a tiny sprinkle of sugar. Empty warm cream background and gentle shadow. Whole plate visible, no stack, no other food, no writing. Recognizably a thin French crepe rather than an American thick pancake.",
+      "references": [],
+      "source_png": "/workspace/generated_images/vocab-crepe.png",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-bouquet-fleurs-dessine.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-bouquet-fleurs-dessine.webp"
+      ],
+      "review_note": "Une seule crêpe fine dorée pliée en triangle sur une assiette entière, sans empilement. Fond crème, modelé peint et trait discret conformes à la référence.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-bouquet-fleurs-dessine.webp"
+        ],
+        "review_note": "Une seule crêpe fine dorée pliée en triangle sur une assiette entière, sans empilement. Fond crème, modelé peint et trait discret conformes à la référence."
+      },
+      "status": "generated_visually_reviewed"
+    },
+    {
+      "id": "vocab-horloge-0000",
+      "label": "Minuit",
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-0000.webp",
+      "prompt": "Create exactly one landscape 4:3 illustration, native size 1448x1086 if supported. Match approved reference images: semi-realistic hand-painted digital educational illustration, softly modeled volumes, fine discreet contours, warm natural colours, subtle painterly texture. No thick black cartoon outlines, no 3D render or photorealism. Subject: Same wooden digital bedside clock as reference, fully visible on warm cream tabletop. The black display shows exactly 00:00 in very large clean WHITE DIGITS, four zeros with colon. No other characters, numbers, labels or decorations. Front three-quarter view with exact legible 00:00. Clock is painted, softly modeled wood, not a photograph.",
+      "references": [],
+      "clock_time": "00:00",
+      "source_png": "/workspace/generated_images/vocab-horloge-0000.png",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-bouquet-fleurs-dessine.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-bouquet-fleurs-dessine.webp"
+      ],
+      "review_note": "Affichage relu : 00:00, quatre zéros blancs et deux-points sur écran noir. Boîtier bois et fond crème peints, image entière au format 4:3.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-bouquet-fleurs-dessine.webp"
+        ],
+        "review_note": "Affichage relu : 00:00, quatre zéros blancs et deux-points sur écran noir. Boîtier bois et fond crème peints, image entière au format 4:3."
+      },
+      "status": "generated_visually_reviewed"
     }
   ]
 }

@@ -1,0 +1,397 @@
+{
+  "date": "2026-11-05",
+  "method": "Deux reconnaissances locales sur les sept candidats exacts, empreintes vérifiées, puis comparaison éditoriale ; aucune écoute humaine revendiquée.",
+  "summary": {
+    "candidates": 7,
+    "recognitions": 14,
+    "active_audio_changes": 0,
+    "active_answer_changes": 0
+  },
+  "reviews": [
+    {
+      "question": "tcf-ss-a1-s53-co-3#4",
+      "active_audio_ref": "/lib/audio/tcf/co/transports/mesdames-messieurs-train-destination.mp3",
+      "source_id": "09035276:027:10f0dd53bf08",
+      "source_sha256": "10f0dd53bf08601b1714f8355c5e7b1c7d0a2eeef0b2fbf22c233e171812ec6e",
+      "candidate_cut_id": "09035276-027-10f0dd53bf08-d1",
+      "candidate_sha256": "f8323d2ae48ebdf9a915d935317cfba4e966054e6ad344867e1b58ceff8f8b42",
+      "source_start": 6.295986394557823,
+      "source_end": 31.824013605442175,
+      "recognitions": {
+        "parakeet": {
+          "text": "Mesdames et messieurs, le train à destination de Paris va partir voie numéro 17. Il s'arrête à la gare de Bordeaux et arrive à Paris à 1h25. Merci de mettre une étiquette sur vos bagages avec vos nom et adresses. Gardez bien votre billet avec vous pendant tout le voyage.",
+          "parameters": {
+            "pipeline_version": 4,
+            "engine": "sherpa-onnx",
+            "version": "2.0.1",
+            "model": "nemo-parakeet-tdt-0.6b-v3-int8",
+            "language": "multilingual_auto_includes_fr",
+            "model_files_sha256": {
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/encoder.int8.onnx": "acfc2b4456377e15d04f0243af540b7fe7c992f8d898d751cf134c3a55fd2247",
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/decoder.int8.onnx": "179e50c43d1a9de79c8a24149a2f9bac6eb5981823f2a2ed88d655b24248db4e",
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/joiner.int8.onnx": "3164c13fc2821009440d20fcb5fdc78bff28b4db2f8d0f0b329101719c0948b3",
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/tokens.txt": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
+            },
+            "provider": "cpu",
+            "decoding_method": "greedy_search",
+            "native_tdt_frame_step_seconds": 0.08,
+            "processing_windows": "Silero VAD utterances merged into <=27s processing windows for inputs >=29s; max 26s speech, 350ms silence, 200ms padding"
+          }
+        },
+        "whisper": {
+          "text": "Mesdames et messieurs, le train à destination de Paris va partir voie numéro 17. Il s'arrête à la gare de Bordeaux et arrive à Paris à 15h25. Merci de mettre une étiquette sur vos bagages avec vos noms et adresses. Gardez bien votre billet avec vous pendant tout le voyage.",
+          "parameters": {
+            "engine": "sherpa-onnx",
+            "version": "2.0.1",
+            "model_files_sha256": {
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-whisper-small/small-encoder.int8.onnx": "4cbe7b22fa9026b843b60a68640c747de05bafb1a11b57edc0e66c232d9f33a9",
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-whisper-small/small-decoder.int8.onnx": "acad50b5c782696e91b55914cc5ab4f756f1532f76e22aa6fc615f39fb69a8ee",
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-whisper-small/small-tokens.txt": "b34b360dbb493e781e479794586d661700670d65564001f23024971d1f2fa126"
+            },
+            "language": "fr",
+            "task": "transcribe",
+            "provider": "cpu",
+            "decoding_method": "greedy_search",
+            "enable_segment_timestamps": false,
+            "enable_token_timestamps": false,
+            "long_audio_segmentation": "Silero VAD utterances merged into <=27s processing windows; max 26s speech, 350ms silence, 200ms padding"
+          }
+        }
+      },
+      "finding": "discrepancy_confirmed_hour_uncertain",
+      "review_note": "Les deux moteurs indiquent voie 17 et Bordeaux, différents du support actuel (voie 3, Lyon). Whisper donne 15 h 25 ; Parakeet 1 h 25. Reprendre tout le support et toutes ses questions ensemble, sans activer le trio 12 h 03.",
+      "listening_performed": false,
+      "production_modified": false
+    },
+    {
+      "question": "delf-a1-2022-co-ex3-31#3",
+      "active_audio_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_31-1.mp3",
+      "source_id": "delf_a1_2022:031:6cfe44cdaf17",
+      "source_sha256": "6cfe44cdaf17877ebafae102fae765a5411fe94f809fc19074b485c9cd6a57e8",
+      "candidate_cut_id": "delf_a1_2022-031-6cfe44cdaf17-d1",
+      "candidate_sha256": "a9df27ecb1f5d84c1c210fb7c6c8bff17105f4ef7cda203fa4288d2cc38d0605",
+      "source_start": 3.44,
+      "source_end": 9.48,
+      "recognitions": {
+        "parakeet": {
+          "text": "Votre rendez-vous est lundi avec Monsieur Denis. Il vous attend à 3h40.",
+          "parameters": {
+            "pipeline_version": 4,
+            "engine": "sherpa-onnx",
+            "version": "2.0.1",
+            "model": "nemo-parakeet-tdt-0.6b-v3-int8",
+            "language": "multilingual_auto_includes_fr",
+            "model_files_sha256": {
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/encoder.int8.onnx": "acfc2b4456377e15d04f0243af540b7fe7c992f8d898d751cf134c3a55fd2247",
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/decoder.int8.onnx": "179e50c43d1a9de79c8a24149a2f9bac6eb5981823f2a2ed88d655b24248db4e",
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/joiner.int8.onnx": "3164c13fc2821009440d20fcb5fdc78bff28b4db2f8d0f0b329101719c0948b3",
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/tokens.txt": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
+            },
+            "provider": "cpu",
+            "decoding_method": "greedy_search",
+            "native_tdt_frame_step_seconds": 0.08,
+            "processing_windows": "Silero VAD utterances merged into <=27s processing windows for inputs >=29s; max 26s speech, 350ms silence, 200ms padding"
+          }
+        },
+        "whisper": {
+          "text": "Votre rendez-vous est lundi avec Monsieur Denis. Il vous attend à 3h40.",
+          "parameters": {
+            "engine": "sherpa-onnx",
+            "version": "2.0.1",
+            "model_files_sha256": {
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-whisper-small/small-encoder.int8.onnx": "4cbe7b22fa9026b843b60a68640c747de05bafb1a11b57edc0e66c232d9f33a9",
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-whisper-small/small-decoder.int8.onnx": "acad50b5c782696e91b55914cc5ab4f756f1532f76e22aa6fc615f39fb69a8ee",
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-whisper-small/small-tokens.txt": "b34b360dbb493e781e479794586d661700670d65564001f23024971d1f2fa126"
+            },
+            "language": "fr",
+            "task": "transcribe",
+            "provider": "cpu",
+            "decoding_method": "greedy_search",
+            "enable_segment_timestamps": false,
+            "enable_token_timestamps": false,
+            "long_audio_segmentation": "Silero VAD utterances merged into <=27s processing windows; max 26s speech, 350ms silence, 200ms padding"
+          }
+        }
+      },
+      "finding": "oral_hour_requires_context",
+      "review_note": "Les deux moteurs donnent 3 h 40. Le passage à 15 h 40 ne peut pas être certifié par ces seuls résultats sans contexte horaire. Garder le trio en attente.",
+      "listening_performed": false,
+      "production_modified": false
+    },
+    {
+      "question": "delf-a1-2022-co-85#14",
+      "active_audio_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_85-4.mp3",
+      "source_id": "delf_a1_2022:085:657006e9075c",
+      "source_sha256": "657006e9075c97fd854b23eba86a98a1c03f8cdec065912d8db82c74e99b1b33",
+      "candidate_cut_id": "delf_a1_2022-085-657006e9075c-d4",
+      "candidate_sha256": "dff5153fa33514f2a7b916ec8efea389984fbf561ecd6a3d76b5ef5e749544e4",
+      "source_start": 38.135986394557825,
+      "source_end": 49.61600907029479,
+      "recognitions": {
+        "parakeet": {
+          "text": "Il y a un départ pour Paris dans 30 minutes. Le billet coûte 68 euros. Ensuite, le prochain départ est à 1h58. C'est le même prix.",
+          "parameters": {
+            "pipeline_version": 4,
+            "engine": "sherpa-onnx",
+            "version": "2.0.1",
+            "model": "nemo-parakeet-tdt-0.6b-v3-int8",
+            "language": "multilingual_auto_includes_fr",
+            "model_files_sha256": {
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/encoder.int8.onnx": "acfc2b4456377e15d04f0243af540b7fe7c992f8d898d751cf134c3a55fd2247",
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/decoder.int8.onnx": "179e50c43d1a9de79c8a24149a2f9bac6eb5981823f2a2ed88d655b24248db4e",
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/joiner.int8.onnx": "3164c13fc2821009440d20fcb5fdc78bff28b4db2f8d0f0b329101719c0948b3",
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/tokens.txt": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
+            },
+            "provider": "cpu",
+            "decoding_method": "greedy_search",
+            "native_tdt_frame_step_seconds": 0.08,
+            "processing_windows": "Silero VAD utterances merged into <=27s processing windows for inputs >=29s; max 26s speech, 350ms silence, 200ms padding"
+          }
+        },
+        "whisper": {
+          "text": "Il y a un départ pour Paris dans 30 minutes. Le billet coûte 68 euros. Ensuite, le prochain départ est à 11h58. C'est le même prix.",
+          "parameters": {
+            "engine": "sherpa-onnx",
+            "version": "2.0.1",
+            "model_files_sha256": {
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-whisper-small/small-encoder.int8.onnx": "4cbe7b22fa9026b843b60a68640c747de05bafb1a11b57edc0e66c232d9f33a9",
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-whisper-small/small-decoder.int8.onnx": "acad50b5c782696e91b55914cc5ab4f756f1532f76e22aa6fc615f39fb69a8ee",
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-whisper-small/small-tokens.txt": "b34b360dbb493e781e479794586d661700670d65564001f23024971d1f2fa126"
+            },
+            "language": "fr",
+            "task": "transcribe",
+            "provider": "cpu",
+            "decoding_method": "greedy_search",
+            "enable_segment_timestamps": false,
+            "enable_token_timestamps": false,
+            "long_audio_segmentation": "Silero VAD utterances merged into <=27s processing windows; max 26s speech, 350ms silence, 200ms padding"
+          }
+        }
+      },
+      "finding": "secondary_recognition_supports_existing_answer",
+      "review_note": "Whisper retrouve 11 h 58 ; Parakeet donne 1 h 58. Ce résultat réduit le doute, sans constituer une validation par écoute.",
+      "listening_performed": false,
+      "production_modified": false
+    },
+    {
+      "question": "tcf-a2j-s2-co-1#13",
+      "active_audio_ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-2-4.mp3",
+      "source_id": "9782090351958:066:3f7dc91934fc",
+      "source_sha256": "3f7dc91934fcda040e1f79211916750bd1fe1393428d2c26c18c9d1c0cc2ef3a",
+      "candidate_cut_id": "9782090351958-066-3f7dc91934fc-r2-d4",
+      "candidate_sha256": "1195a43e59b746551ffe59cb28405daf230dc931beabc7d1b8061c3b9665d5ec",
+      "source_start": 50.42399092970521,
+      "source_end": 59.49600907029478,
+      "recognitions": {
+        "parakeet": {
+          "text": "The magazine va fermer ses portes in 20 minutes. Merci de terminer vos achats and you rapprocher des caisses automatiques situées au fond du magazine.",
+          "parameters": {
+            "pipeline_version": 4,
+            "engine": "sherpa-onnx",
+            "version": "2.0.1",
+            "model": "nemo-parakeet-tdt-0.6b-v3-int8",
+            "language": "multilingual_auto_includes_fr",
+            "model_files_sha256": {
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/encoder.int8.onnx": "acfc2b4456377e15d04f0243af540b7fe7c992f8d898d751cf134c3a55fd2247",
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/decoder.int8.onnx": "179e50c43d1a9de79c8a24149a2f9bac6eb5981823f2a2ed88d655b24248db4e",
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/joiner.int8.onnx": "3164c13fc2821009440d20fcb5fdc78bff28b4db2f8d0f0b329101719c0948b3",
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/tokens.txt": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
+            },
+            "provider": "cpu",
+            "decoding_method": "greedy_search",
+            "native_tdt_frame_step_seconds": 0.08,
+            "processing_windows": "Silero VAD utterances merged into <=27s processing windows for inputs >=29s; max 26s speech, 350ms silence, 200ms padding"
+          }
+        },
+        "whisper": {
+          "text": "Le magasin va fermer ses portes dans 20 minutes. Merci de terminer vos achats et de vous rapprocher des caisses automatiques situées au fond du magasin.",
+          "parameters": {
+            "engine": "sherpa-onnx",
+            "version": "2.0.1",
+            "model_files_sha256": {
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-whisper-small/small-encoder.int8.onnx": "4cbe7b22fa9026b843b60a68640c747de05bafb1a11b57edc0e66c232d9f33a9",
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-whisper-small/small-decoder.int8.onnx": "acad50b5c782696e91b55914cc5ab4f756f1532f76e22aa6fc615f39fb69a8ee",
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-whisper-small/small-tokens.txt": "b34b360dbb493e781e479794586d661700670d65564001f23024971d1f2fa126"
+            },
+            "language": "fr",
+            "task": "transcribe",
+            "provider": "cpu",
+            "decoding_method": "greedy_search",
+            "enable_segment_timestamps": false,
+            "enable_token_timestamps": false,
+            "long_audio_segmentation": "Silero VAD utterances merged into <=27s processing windows; max 26s speech, 350ms silence, 200ms padding"
+          }
+        }
+      },
+      "finding": "qualifier_supported_by_two_engines",
+      "review_note": "Les deux moteurs retrouvent caisses automatiques situées au fond du magasin. Le premier brouillon omettait automatiques. La réponse actuelle est soutenue ; vérifier le segment entier avant la bascule.",
+      "listening_performed": false,
+      "production_modified": false
+    },
+    {
+      "question": "tcf-ss-a2-s3-co-3#6",
+      "active_audio_ref": "/lib/audio/tcf/co/magasins/magasins-3-2.mp3",
+      "source_id": "9782090351958:049:a4431f87ae61",
+      "source_sha256": "a4431f87ae61175f42764e9be38995308b7ae8812677b3cdda5c291cfb632b6a",
+      "candidate_cut_id": "9782090351958-049-a4431f87ae61-r2-d2",
+      "candidate_sha256": "404f5842bd61242e92b5c2311ebf29212eade0a94667553a4c657ed019a5cd8f",
+      "source_start": 31.12798185941043,
+      "source_end": 43.888004535147395,
+      "recognitions": {
+        "parakeet": {
+          "text": "Ojo in your supermarket reduction for the tomates and the carottes. Venez vite en profiter and fait aussi un petit tour au rayon boulangerie. Valérie vous fera goûter nos parféties.",
+          "parameters": {
+            "pipeline_version": 4,
+            "engine": "sherpa-onnx",
+            "version": "2.0.1",
+            "model": "nemo-parakeet-tdt-0.6b-v3-int8",
+            "language": "multilingual_auto_includes_fr",
+            "model_files_sha256": {
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/encoder.int8.onnx": "acfc2b4456377e15d04f0243af540b7fe7c992f8d898d751cf134c3a55fd2247",
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/decoder.int8.onnx": "179e50c43d1a9de79c8a24149a2f9bac6eb5981823f2a2ed88d655b24248db4e",
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/joiner.int8.onnx": "3164c13fc2821009440d20fcb5fdc78bff28b4db2f8d0f0b329101719c0948b3",
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/tokens.txt": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
+            },
+            "provider": "cpu",
+            "decoding_method": "greedy_search",
+            "native_tdt_frame_step_seconds": 0.08,
+            "processing_windows": "Silero VAD utterances merged into <=27s processing windows for inputs >=29s; max 26s speech, 350ms silence, 200ms padding"
+          }
+        },
+        "whisper": {
+          "text": "Aujourd'hui, dans votre supermarché, des rédictions sur les tomates et les carottes. Venez vite en profiter ! Et faites aussi un petit tour au rayon boulangerie. Valérie, vous fera goûter nos pastéciaux.",
+          "parameters": {
+            "engine": "sherpa-onnx",
+            "version": "2.0.1",
+            "model_files_sha256": {
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-whisper-small/small-encoder.int8.onnx": "4cbe7b22fa9026b843b60a68640c747de05bafb1a11b57edc0e66c232d9f33a9",
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-whisper-small/small-decoder.int8.onnx": "acad50b5c782696e91b55914cc5ab4f756f1532f76e22aa6fc615f39fb69a8ee",
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-whisper-small/small-tokens.txt": "b34b360dbb493e781e479794586d661700670d65564001f23024971d1f2fa126"
+            },
+            "language": "fr",
+            "task": "transcribe",
+            "provider": "cpu",
+            "decoding_method": "greedy_search",
+            "enable_segment_timestamps": false,
+            "enable_token_timestamps": false,
+            "long_audio_segmentation": "Silero VAD utterances merged into <=27s processing windows; max 26s speech, 350ms silence, 200ms padding"
+          }
+        }
+      },
+      "finding": "product_still_unresolved",
+      "review_note": "Parakeet produit parféties, Whisper pastéciaux. Aucun ne certifie pâtisseries. Ne pas illustrer ou corriger en devinant le produit.",
+      "listening_performed": false,
+      "production_modified": false
+    },
+    {
+      "question": "tcf-ss-a2-s3-co-3#3",
+      "active_audio_ref": "/lib/audio/tcf/co/magasins/magasins-3-1.mp3",
+      "source_id": "9782090351958:049:a4431f87ae61",
+      "source_sha256": "a4431f87ae61175f42764e9be38995308b7ae8812677b3cdda5c291cfb632b6a",
+      "candidate_cut_id": "9782090351958-049-a4431f87ae61-r2-d1",
+      "candidate_sha256": "d47528b9b67765a7dc9cba6d16de10df3c3cab56b8afc3b26d2d5382676afcc7",
+      "source_start": 15.44,
+      "source_end": 26.12,
+      "recognitions": {
+        "parakeet": {
+          "text": "The library Les pages organise a grand jeu for his anniversaire. Gagner des cadeaux en respondant town. The bulletin de participation se trouve à l'accueil de la librerie.",
+          "parameters": {
+            "pipeline_version": 4,
+            "engine": "sherpa-onnx",
+            "version": "2.0.1",
+            "model": "nemo-parakeet-tdt-0.6b-v3-int8",
+            "language": "multilingual_auto_includes_fr",
+            "model_files_sha256": {
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/encoder.int8.onnx": "acfc2b4456377e15d04f0243af540b7fe7c992f8d898d751cf134c3a55fd2247",
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/decoder.int8.onnx": "179e50c43d1a9de79c8a24149a2f9bac6eb5981823f2a2ed88d655b24248db4e",
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/joiner.int8.onnx": "3164c13fc2821009440d20fcb5fdc78bff28b4db2f8d0f0b329101719c0948b3",
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/tokens.txt": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
+            },
+            "provider": "cpu",
+            "decoding_method": "greedy_search",
+            "native_tdt_frame_step_seconds": 0.08,
+            "processing_windows": "Silero VAD utterances merged into <=27s processing windows for inputs >=29s; max 26s speech, 350ms silence, 200ms padding"
+          }
+        },
+        "whisper": {
+          "text": "La librairie Lepage organise un grand jeu pour son anniversaire. Gagnez des cadeaux en répondant à deux questions. Le bulletin de participation se trouve à l'accueil de la librairie.",
+          "parameters": {
+            "engine": "sherpa-onnx",
+            "version": "2.0.1",
+            "model_files_sha256": {
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-whisper-small/small-encoder.int8.onnx": "4cbe7b22fa9026b843b60a68640c747de05bafb1a11b57edc0e66c232d9f33a9",
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-whisper-small/small-decoder.int8.onnx": "acad50b5c782696e91b55914cc5ab4f756f1532f76e22aa6fc615f39fb69a8ee",
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-whisper-small/small-tokens.txt": "b34b360dbb493e781e479794586d661700670d65564001f23024971d1f2fa126"
+            },
+            "language": "fr",
+            "task": "transcribe",
+            "provider": "cpu",
+            "decoding_method": "greedy_search",
+            "enable_segment_timestamps": false,
+            "enable_token_timestamps": false,
+            "long_audio_segmentation": "Silero VAD utterances merged into <=27s processing windows; max 26s speech, 350ms silence, 200ms padding"
+          }
+        }
+      },
+      "finding": "candidate_answer_correction_prepared",
+      "review_note": "Les deux moteurs donnent accueil de la librairie. Préparer la réponse À l’accueil de la librairie avec le candidat audio ; ne pas changer la banque active seule.",
+      "listening_performed": false,
+      "production_modified": false
+    },
+    {
+      "question": "tcf-ss-a2-s48-co-3#12",
+      "active_audio_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-21-4.mp3",
+      "source_id": "9782090351958:040:42a9a64a8955",
+      "source_sha256": "42a9a64a8955779c29d69bb885962d29516f1e44dc49c864205697e967b67640",
+      "candidate_cut_id": "9782090351958-040-42a9a64a8955-r2-d4",
+      "candidate_sha256": "a59d896a6bf13969a64f94f35506fb3327898d6f4290676be6417e84c29fa176",
+      "source_start": 57.52798185941043,
+      "source_end": 69.16800453514739,
+      "recognitions": {
+        "parakeet": {
+          "text": "La salle informatique est fermée pour travaux. Si vous devez travailler sur les ordinateurs, vous pouvez aller à la bibliothèque. Profitez-en aussi pour visiter le nouveau rayon DVD.",
+          "parameters": {
+            "pipeline_version": 4,
+            "engine": "sherpa-onnx",
+            "version": "2.0.1",
+            "model": "nemo-parakeet-tdt-0.6b-v3-int8",
+            "language": "multilingual_auto_includes_fr",
+            "model_files_sha256": {
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/encoder.int8.onnx": "acfc2b4456377e15d04f0243af540b7fe7c992f8d898d751cf134c3a55fd2247",
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/decoder.int8.onnx": "179e50c43d1a9de79c8a24149a2f9bac6eb5981823f2a2ed88d655b24248db4e",
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/joiner.int8.onnx": "3164c13fc2821009440d20fcb5fdc78bff28b4db2f8d0f0b329101719c0948b3",
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/tokens.txt": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
+            },
+            "provider": "cpu",
+            "decoding_method": "greedy_search",
+            "native_tdt_frame_step_seconds": 0.08,
+            "processing_windows": "Silero VAD utterances merged into <=27s processing windows for inputs >=29s; max 26s speech, 350ms silence, 200ms padding"
+          }
+        },
+        "whisper": {
+          "text": "La salle informatique est fermée pour travaux. Si vous devez travailler sur les ordinateurs, vous pouvez aller à la bibliothèque. Profitez-en aussi pour visiter le nouveau rayon DVD.",
+          "parameters": {
+            "engine": "sherpa-onnx",
+            "version": "2.0.1",
+            "model_files_sha256": {
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-whisper-small/small-encoder.int8.onnx": "4cbe7b22fa9026b843b60a68640c747de05bafb1a11b57edc0e66c232d9f33a9",
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-whisper-small/small-decoder.int8.onnx": "acad50b5c782696e91b55914cc5ab4f756f1532f76e22aa6fc615f39fb69a8ee",
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-whisper-small/small-tokens.txt": "b34b360dbb493e781e479794586d661700670d65564001f23024971d1f2fa126"
+            },
+            "language": "fr",
+            "task": "transcribe",
+            "provider": "cpu",
+            "decoding_method": "greedy_search",
+            "enable_segment_timestamps": false,
+            "enable_token_timestamps": false,
+            "long_audio_segmentation": "Silero VAD utterances merged into <=27s processing windows; max 26s speech, 350ms silence, 200ms padding"
+          }
+        }
+      },
+      "finding": "candidate_answer_correction_prepared",
+      "review_note": "Les deux moteurs donnent le nouveau rayon DVD. Préparer la réponse Le rayon DVD avec le candidat audio ; ne pas changer la banque active seule.",
+      "listening_performed": false,
+      "production_modified": false
+    }
+  ]
+}
