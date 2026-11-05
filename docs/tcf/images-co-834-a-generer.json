@@ -31,20 +31,20 @@
     "received_source_entries": 836,
     "copyright_removed": 2,
     "planned_question_candidates": 324,
-    "activated_planned_questions": 217,
-    "pending_question_candidates": 107,
+    "activated_planned_questions": 219,
+    "pending_question_candidates": 105,
     "original_missing_concepts": 577,
-    "original_concepts_now_generated_or_reused": 460,
-    "remaining_original_concepts": 117,
-    "new_co_images_this_batch": 674,
+    "original_concepts_now_generated_or_reused": 462,
+    "remaining_original_concepts": 115,
+    "new_co_images_this_batch": 676,
     "activated_association_scenes_this_batch": 6,
     "pending_association_scenes": 0,
-    "sources_with_pending_question_candidates": 63,
+    "sources_with_pending_question_candidates": 61,
     "sources_with_new_active_question_or_scene": 202,
     "sources_without_current_bank_reference": 229,
     "remaining_audio_references_to_match": 0,
     "co_images_needing_style_correction": 0,
-    "co_images_style_aligned": 674,
+    "co_images_style_aligned": 676,
     "co_style_redraws_completed": 11
   },
   "instructions": [
@@ -5145,14 +5145,13 @@
         "/lib/audio/tcf/co/loisirs/loisirs-3-2.mp3",
         "/lib/audio/tcf/co/loisirs/loisirs-3-3.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a2-s21-co-3",
           "question": 1
-        }
-      ],
-      "new_active_visual_questions": [
+        },
         {
           "exercise": "tcf-ss-a2-s21-co-3",
           "question": 9
@@ -5164,7 +5163,7 @@
       ],
       "new_active_association_scenes": [],
       "current_linked_questions": 16,
-      "current_linked_image_variants": 6,
+      "current_linked_image_variants": 7,
       "complete_image_audit_certified": false
     },
     {
@@ -14390,14 +14389,13 @@
         "/lib/audio/tcf/co/loisirs/loisirs-3-2.mp3",
         "/lib/audio/tcf/co/loisirs/loisirs-3-3.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a2-s21-co-3",
           "question": 1
-        }
-      ],
-      "new_active_visual_questions": [
+        },
         {
           "exercise": "tcf-ss-a2-s21-co-3",
           "question": 9
@@ -14409,7 +14407,7 @@
       ],
       "new_active_association_scenes": [],
       "current_linked_questions": 16,
-      "current_linked_image_variants": 6,
+      "current_linked_image_variants": 7,
       "complete_image_audit_certified": false
     },
     {
@@ -18043,7 +18041,7 @@
           "asset": null
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "grammar-import-20261104:file_000000007c64824396c21eeef5b1c2ab"
       ],
@@ -18055,25 +18053,11 @@
           "transcription": "Au revoir, l'achat au distributeur. Bonjour, l'eTicket. Avec votre téléphone portable et un numéro français, vous pouvez payer par SMS et télécharger votre ticket."
         }
       ],
-      "image_preparation_status": "images_prepared_pending_activation",
-      "prepared_images": [
+      "active_images": [
         "/lib/images/tcf/qcm-audit/co834-telephone-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-ordinateur-dessine.webp",
         "/lib/images/tcf/qcm-audit/co306-imprimante-dessine.webp"
-      ],
-      "editorial_review": {
-        "exercise": "tcf-ss-a1-s4-co-1",
-        "question": 1,
-        "images": [
-          "/lib/images/tcf/qcm-audit/co834-telephone-dessine.webp",
-          "/lib/images/tcf/qcm-audit/co834-ordinateur-dessine.webp",
-          "/lib/images/tcf/qcm-audit/co306-imprimante-dessine.webp"
-        ],
-        "support_quote": "Au revoir l'achat au distributeur, bonjour l'e-ticket !\nAvec votre téléphone portable et un numéro français, vous pouvez payer par SMS et télécharger votre ticket.",
-        "current_bank_transcription": "Au revoir l'achat au distributeur, bonjour l'e-ticket !\nAvec votre téléphone portable et un numéro français, vous pouvez payer par SMS et télécharger votre ticket.",
-        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
-        "review_note": "Trois images relues ensemble sur la planche de contrôle, concept complet, format exact 4:3 et style du commit 48a753d8. Téléphone mobile, ordinateur de bureau avec unité centrale et imprimante seule ; les trois appareils sont entiers et distincts. La transcription actuelle indique le téléphone portable pour acheter le e-ticket."
-      }
+      ]
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -28329,7 +28313,7 @@
           "asset": "f84b97e2c8a8"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "9782090351958:055:6b088a9bc9dd",
         "additional-20261102:mdf-a2-abc-junior-direct:55:6b088a9bc9dd:e9b3b277"
@@ -28341,6 +28325,11 @@
           "candidate_cut_id": "9782090351958-055-6b088a9bc9dd-d1",
           "transcription": "Vous ne savez pas quoi faire ce week-end? Le musée des jeux vidéo vous attend de 9h à 20h. Venez rencontrer des créateurs de jeux, jouer seuls ou en équipe. Plein d'imation de 1h à 18h et aussi une cafétéria ouverte jusqu'à 19h."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-musee-jeu-video-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-musee-sport-dessine.webp",
+        "/lib/images/tcf/qcm-audit/f84b97e2c8a8.webp"
       ]
     },
     {
@@ -35753,7 +35742,7 @@
       "label": "Un musée du sport",
       "path_after_generation": "/lib/images/tcf/qcm-audit/2342bfcb960c.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un musée du sport ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s21-co-3",
@@ -35761,8 +35750,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-musee-sport-dessine.webp",
+      "sha256": "65b302de54fc70dcd54181e1e98a274d89f37615c792eb8a91b59fe362a7bb71",
+      "review_note": "Vitrines de ballons, raquettes, chaussures et trophées, maillot encadré sans numéro ; contexte muséal distinct d’une boutique. Visiteuse vietnamienne aux cheveux courts et homme plus âgé aux cheveux gris, sans copie des personnages du premier musée. Personnages et anatomie relus, paysage natif exact 1448 × 1086 ; modelé peint doux et contours fins comparés au style validé 48a753d8.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "a279c81fbba7",
@@ -41473,7 +41467,7 @@
       "label": "Un musée du jeu vidéo",
       "path_after_generation": "/lib/images/tcf/qcm-audit/386ebd24640c.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un musée du jeu vidéo ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s21-co-3",
@@ -41481,8 +41475,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-musee-jeu-video-dessine.webp",
+      "sha256": "8775bc15da4444916b89df2964728a45621a9639a01c86c08dcc64d30c39545d",
+      "review_note": "Vitrines de consoles, manettes et cartouches, écran de jeu ; musée identifiable, sans tableaux de peinture, prix ou dates. Deux visiteurs différents : homme indien aux cheveux attachés et femme noire plus âgée. Personnages et anatomie relus, paysage natif exact 1448 × 1086 ; modelé peint doux et contours fins comparés au style validé 48a753d8.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "71d0c8ba6c08",
@@ -44617,19 +44616,19 @@
   "pending_association_images": [],
   "visual_style_review": {
     "audit": "recontrole-style-images.json",
-    "reviewed_co_images": 674,
+    "reviewed_co_images": 676,
     "reviewed_other_images": 59,
-    "reviewed_total_images": 733,
+    "reviewed_total_images": 735,
     "user_approved_reference_images": 35,
     "initial_redraw_required": 11,
     "initial_co_redraw_required": 11,
     "initial_other_redraw_required": 0,
-    "already_aligned": 722,
+    "already_aligned": 724,
     "redrawn_images": 11,
     "remaining_redraws": 0,
     "restored_previous_images": 14,
     "rejected_unpublished_previews": 12,
-    "new_images_compared_to_reference": 415
+    "new_images_compared_to_reference": 417
   },
   "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
   "workflow_order": [

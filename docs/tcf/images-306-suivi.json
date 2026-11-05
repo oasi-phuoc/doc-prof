@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "scope": "306 questions historiques : 99 retirées avec leurs exercices, 207 conservées après retrait des 297 anciens audios.",
+  "scope": "Les 306 questions candidates restantes au commit 73139773, à illustrer avant la reprise des 432 références audio puis des 1906 usages du vocabulaire.",
   "workflow_order": [
-    "complete_58_remaining_active_question_trios",
-    "review_prepared_image_trios",
-    "harmonize_1686_vocabulary_image_uses"
+    "images_for_remaining_306_questions",
+    "match_remaining_432_audio_references",
+    "replace_remaining_1906_vocabulary_image_occurrences"
   ],
   "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
   "required_format": "landscape_4:3",
@@ -15,17 +15,17 @@
   ],
   "summary": {
     "initial_question_candidates": 306,
-    "questions_illustrated_or_prepared": 149,
-    "newly_activated": 100,
+    "questions_illustrated_or_prepared": 150,
+    "newly_activated": 102,
     "prepared_pending_audio_link": 1,
     "prepared_pending_audio_validation": 4,
-    "remaining_questions_requiring_images_or_review": 58,
+    "remaining_questions_requiring_images_or_review": 57,
     "unreviewed_complete_trios": 0,
     "audio_references_next_stage": 0,
     "vocabulary_occurrences_final_stage": 1686,
     "active_question_candidates": 207,
     "retired_question_candidates": 99,
-    "prepared_pending_activation": 44
+    "prepared_pending_activation": 43
   },
   "questions": [
     {
@@ -700,7 +700,7 @@
           "asset": null
         }
       ],
-      "status": "images_prepared_pending_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "grammar-import-20261104:file_000000007c64824396c21eeef5b1c2ab"
       ],
@@ -719,6 +719,11 @@
       ],
       "missing_labels": [],
       "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-telephone-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-ordinateur-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-imprimante-dessine.webp"
+      ],
       "editorial_review": {
         "exercise": "tcf-ss-a1-s4-co-1",
         "question": 1,
@@ -9073,7 +9078,7 @@
           "asset": "f84b97e2c8a8"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "9782090351958:055:6b088a9bc9dd",
         "additional-20261102:mdf-a2-abc-junior-direct:55:6b088a9bc9dd:e9b3b277"
@@ -9087,15 +9092,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
+        "/lib/images/tcf/qcm-audit/co306-musee-jeu-video-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-musee-sport-dessine.webp",
         "/lib/images/tcf/qcm-audit/f84b97e2c8a8.webp"
       ],
-      "missing_labels": [
-        "Un musée du jeu vidéo",
-        "Un musée du sport"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-musee-jeu-video-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-musee-sport-dessine.webp",
+        "/lib/images/tcf/qcm-audit/f84b97e2c8a8.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s21-co-3",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-musee-jeu-video-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-musee-sport-dessine.webp",
+          "/lib/images/tcf/qcm-audit/f84b97e2c8a8.webp"
+        ],
+        "support_quote": "Vous ne savez pas quoi faire ce week-end? Le musée des jeux vidéo vous attend de 9h à 20h. Venez rencontrer des créateurs de jeux, jouer seuls ou en équipe. Plein d'imation de 1h à 18h et aussi une cafétéria ouverte jusqu'à 19h.",
+        "current_bank_transcription": "Vous ne savez pas quoi faire ce week-end ?\nLe musée du jeu vidéo vous attend de 9 heures à 20 heures.\nVenez rencontrer des créateurs de jeux, jouez seul ou en équipe.\nL'animation est de 10 heures à 18 heures et il y a aussi une cafétéria ouverte jusqu'à 19 heures.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trois contextes muséaux complets et distincts : jeu vidéo, sport, peinture. Deux créations peintes 4:3 et une image de peinture déjà disponible réutilisée après comparaison visuelle. Le support nomme explicitement le musée des jeux vidéo ; aucune réponse ni corrigé texte modifié."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",

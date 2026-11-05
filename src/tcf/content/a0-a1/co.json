@@ -13565,6 +13565,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Un téléphone portable"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/tcf/qcm-audit/co834-telephone-dessine.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/co834-ordinateur-dessine.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/co306-imprimante-dessine.webp"
+              }
+            ]
           }
         }
       },
