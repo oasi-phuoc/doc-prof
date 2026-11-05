@@ -59,6 +59,7 @@ def main():
     records, prepared = [], []
     for state in selected:
         ref = state['ref']
+        assert not decisions.get(ref, {}).get('blocked_reasons'), ref
         assert ref.startswith('/lib/audio/tcf/co/') and '..' not in Path(ref).parts
         item, plan = inventory[ref], queue[ref]
         digest = item['proposal']['candidate_sha256']

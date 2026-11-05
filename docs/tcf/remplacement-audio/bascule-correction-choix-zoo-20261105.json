@@ -1,0 +1,62 @@
+[
+  {
+    "bank": "src/tcf/content/a0-a1/co.json",
+    "exercise": "tcf-ss-a1-s12-co-1",
+    "question": 4,
+    "before": {
+      "enonce": "Quel bébé animal peut-on voir ?",
+      "type_reponse": "qcm_texte",
+      "points": 1,
+      "melanger": true,
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Un bébé tigre",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "texte": "Un tigre"
+        },
+        {
+          "id": "c",
+          "texte": "Un veau"
+        }
+      ],
+      "formes": {
+        "lignes": {
+          "nb_lignes": 1,
+          "reponse_modele": "Un bébé tigre"
+        }
+      }
+    },
+    "after": {
+      "enonce": "Quel bébé animal peut-on voir ?",
+      "type_reponse": "qcm_texte",
+      "points": 1,
+      "melanger": true,
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Un bébé tigre",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "texte": "Un bébé éléphant"
+        },
+        {
+          "id": "c",
+          "texte": "Un veau"
+        }
+      ],
+      "formes": {
+        "lignes": {
+          "nb_lignes": 1,
+          "reponse_modele": "Un bébé tigre"
+        }
+      }
+    },
+    "reason": "Un tigre restait un distracteur équivalent au nouveau corrigé Un bébé tigre ; le remplacer par Un bébé éléphant."
+  }
+]

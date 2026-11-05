@@ -1,0 +1,1914 @@
+{
+  "batch": 10,
+  "audio_replacements": [
+    {
+      "ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-6-2.mp3",
+      "previous_sha256": "c6f33c58ed9e989db677478602ea4ddaabd00010bf8fc0932c14d91e4709adc1",
+      "candidate_sha256": "3a5946f05fe5e28fe508c2e7062cd4600bee36e04dbc96db6fa1c1976a5b09d0",
+      "rollback_git_blob": "730ecd924d082a4a040e6b69e6ecce05086aea58",
+      "source_id": "delf_a2_eb2w:001:e636083d0158",
+      "source_sha256": "e636083d0158d53bd2eb37477c35cbe5174464858b07b37cc0a66b61ff0a6481",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "3a5946f05fe5e28fe508c2e7062cd4600bee36e04dbc96db6fa1c1976a5b09d0",
+        "duration": 11.833469,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T120959-aa0b30767f/manifest.json",
+          "manifest_sha256": "73015a58e40c2ec641e94d8b8ec697984b0a71146fc145a1957bddc3b3148c73",
+          "lossless_sha256": "9a5fa70a211f9fbb5b509c44012bd0c6f2cff9d997c0121fd5cba1be9a5dfde7"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.25,
+          "trailing_quiet_seconds": 0.02,
+          "relative_rms_threshold": 0.0116728,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "editorial_reason": "Transcription et réponses confrontées aux deux reconnaissances finales concordantes ; les références dont les frontières restent incertaines attendent la reprise des coupes.",
+      "numeric_resolution": null,
+      "previous_duration": 15.83,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/mesdames-messieurs-bonsoir.mp3",
+      "previous_sha256": "96d6df6d60915cd53a67c15fe3c92cc72a9feb49622474ec614cc852514b7aea",
+      "candidate_sha256": "951a3d9e2de88e475f648248dff1f95294417326473b9e25f55ab185a93c2fc9",
+      "rollback_git_blob": "fc9eecbe3cc01c8141dc93b9c2092afe3b234fab",
+      "source_id": "09035276:026:cc7467b0c6d3",
+      "source_sha256": "cc7467b0c6d38b01b1a2e7dd7c2d78be96a06fd142354b6d331a2e6a62bcef2b",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "951a3d9e2de88e475f648248dff1f95294417326473b9e25f55ab185a93c2fc9",
+        "duration": 19.356735,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T013530-3c9d63d38b/manifest.json",
+          "manifest_sha256": "3ae32e3a50b1c8191f4e7910d9984826681b59584028ae9ae8e361eaeb47573c",
+          "lossless_sha256": "8e47f9bd1b1a91a9a566f07c6f371731c935970f76e6994550c06e24347e3204"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "needs_boundary_review",
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.0,
+          "relative_rms_threshold": 0.0053985,
+          "safe_quiet_margins": false,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.384,
+          "trailing_non_speech_seconds": 0.088,
+          "speech_region_count": 7,
+          "safe_voiced_margins": true,
+          "method": "Silero VAD with no padding; supplementary speech-vs-music evidence, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "editorial_reason": "Transcription et réponses confrontées aux deux reconnaissances finales concordantes ; les références dont les frontières restent incertaines attendent la reprise des coupes.",
+      "numeric_resolution": null,
+      "previous_duration": 20.66,
+      "previous_pool": null,
+      "question_changes": [
+        {
+          "exercise": "tcf-ss-a1-s46-co-2",
+          "question": 1,
+          "before": {
+            "enonce": "Dans combien de temps le film commence-t-il ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Dix minutes",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Cinq minutes"
+              },
+              {
+                "id": "c",
+                "texte": "Vingt minutes"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Dix minutes"
+              }
+            }
+          },
+          "after": {
+            "enonce": "Dans combien de temps le film commence-t-il ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Quinze minutes",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Dix minutes"
+              },
+              {
+                "id": "c",
+                "texte": "Vingt minutes"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Quinze minutes"
+              }
+            }
+          }
+        }
+      ],
+      "human_listening_performed": false
+    }
+  ],
+  "exercise_changes": [
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s46-co-2",
+      "before": {
+        "id": "tcf-ss-a1-s46-co-2",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Annonce 23",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/vie-quotidienne/mesdames-messieurs-bonsoir.mp3",
+          "transcription": "Mesdames, messieurs, bonsoir.\nLe film va commencer dans 10 minutes.\nLes boissons sont disponibles au bar.\nLes toilettes se trouvent au deuxième étage.\nÀ la fin du film, veuillez sortir par la porte de droite.\nBonne séance !"
+        },
+        "questions": [
+          {
+            "enonce": "Dans combien de temps le film commence-t-il ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Dix minutes",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Cinq minutes"
+              },
+              {
+                "id": "c",
+                "texte": "Vingt minutes"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Dix minutes"
+              }
+            }
+          },
+          {
+            "enonce": "Où peut-on acheter des boissons ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Au bar",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "À l'accueil"
+              },
+              {
+                "id": "c",
+                "texte": "Dans les toilettes"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Au bar"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/co/bg/bar.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/co/bg/secretariat.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/vocabulaire/maison/toilettes.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "À quel étage se trouvent les toilettes ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Au deuxième",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Au premier"
+              },
+              {
+                "id": "c",
+                "texte": "Au troisième"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Au deuxième"
+              }
+            }
+          },
+          {
+            "enonce": "Par quelle porte faut-il sortir à la fin ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La porte de droite",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "La porte de gauche"
+              },
+              {
+                "id": "c",
+                "texte": "La porte du fond"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "La porte de droite"
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "vie-quotidienne",
+        "scene": "Mesdames messieurs bonsoir"
+      },
+      "after": {
+        "id": "tcf-ss-a1-s46-co-2",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Annonce 23",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/vie-quotidienne/mesdames-messieurs-bonsoir.mp3",
+          "transcription": "Bonjour, votre film va commencer dans 15 minutes. Vous pouvez acheter des boissons au bar du premier étage. Les toilettes sont au deuxième étage, à côté de la salle 10. A la fin du film, vous devez sortir par la porte située à droite de l'écran. Bon film à tous !"
+        },
+        "questions": [
+          {
+            "enonce": "Dans combien de temps le film commence-t-il ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Quinze minutes",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Dix minutes"
+              },
+              {
+                "id": "c",
+                "texte": "Vingt minutes"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Quinze minutes"
+              }
+            }
+          },
+          {
+            "enonce": "Où peut-on acheter des boissons ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Au bar",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "À l'accueil"
+              },
+              {
+                "id": "c",
+                "texte": "Dans les toilettes"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Au bar"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/co/bg/bar.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/co/bg/secretariat.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/vocabulaire/maison/toilettes.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "À quel étage se trouvent les toilettes ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Au deuxième",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Au premier"
+              },
+              {
+                "id": "c",
+                "texte": "Au troisième"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Au deuxième"
+              }
+            }
+          },
+          {
+            "enonce": "Par quelle porte faut-il sortir à la fin ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La porte de droite",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "La porte de gauche"
+              },
+              {
+                "id": "c",
+                "texte": "La porte du fond"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "La porte de droite"
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "vie-quotidienne",
+        "scene": "Mesdames messieurs bonsoir"
+      }
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-a2-sb-co-1",
+      "before": {
+        "id": "tcf-a2-sb-co-1",
+        "niveau": "A1-A2",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Test blanc A2 · série B · Annonces publiques",
+        "scenario": "radio",
+        "scene": "Les annonces publiques",
+        "consigne": "Vous écoutez des annonces publiques. Il y a 6 documents et 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "transcription": [
+            "Chers clients, êtes-vous contents des services de votre magasin ? Nos assistants vont venir vers vous pour connaître votre avis.",
+            "Aujourd'hui seulement dans votre supermarché : grande promotion sur les carottes, salades et haricots.",
+            "Mesdames, messieurs, votre librairie est ouverte jusqu'à samedi. La semaine prochaine, pour cause de travaux, elle sera fermée.",
+            "Chers visiteurs, notre musée est heureux de vous présenter l'exposition de la photographe Magali Soubra. Venez voir ces magnifiques photos sur les sportifs français des Jeux Olympiques.",
+            "Les guichets 11 et 13 sont fermés. Allez au guichet 12 pour acheter vos places. Le bar du théâtre vous accueille de 11 à 19h. Bonne journée.",
+            "Venez nombreux le samedi 22 mars pour écouter le groupe de musique Dingo."
+          ],
+          "audios": [
+            "/lib/audio/tcf/co/radio/les-annonces-publiques-6-1.mp3",
+            "/lib/audio/tcf/co/radio/les-annonces-publiques-6-2.mp3",
+            "/lib/audio/tcf/co/radio/les-annonces-publiques-6-3.mp3",
+            "/lib/audio/tcf/co/radio/les-annonces-publiques-6-4.mp3",
+            "/lib/audio/tcf/co/radio/les-annonces-publiques-6-5.mp3",
+            "/lib/audio/tcf/co/radio/les-annonces-publiques-6-6.mp3"
+          ],
+          "images_descriptions": [
+            "Scénario vidéo (audio CO moyen, « Les annonces publiques — dialogue 1 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un contexte d’annonce ou de conversation du quotidien. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Chers clients, êtes-vous contents des services de votre magasin ? » ; B : « Nos assistants vont venir vers vous pour connaître votre avis ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Les annonces publiques — dialogue 2 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un contexte d’annonce ou de conversation du quotidien. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Aujourd'hui seulement dans votre supermarché : grande promotion sur les carottes, salades et haricots ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Les annonces publiques — dialogue 3 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un contexte d’annonce ou de conversation du quotidien. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Mesdames, messieurs, votre librairie est ouverte jusqu'à samedi » ; B : « La semaine prochaine, pour cause de travaux, elle sera fermée ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Les annonces publiques — dialogue 4 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un contexte d’annonce ou de conversation du quotidien. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Chers visiteurs, notre musée est heureux de vous présenter l'exposition de la photographe Magali Soubra ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Les annonces publiques — dialogue 5 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un contexte d’annonce ou de conversation du quotidien. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Les guichets 11 et 13 sont fermés » ; B : « Allez au guichet 12 pour acheter vos places ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Les annonces publiques — dialogue 6 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un contexte d’annonce ou de conversation du quotidien. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Venez nombreux le samedi 22 mars pour écouter le groupe de musique Dingo ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
+          ]
+        },
+        "questions": [
+          {
+            "enonce": "À qui l’annonce s’adresse-t-elle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Aux clients du magasin",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Aux passagers du train"
+              },
+              {
+                "id": "c",
+                "texte": "Aux élèves du lycée"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Aux clients du magasin"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Qui viendra vers les clients ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Les assistants du magasin",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Les policiers"
+              },
+              {
+                "id": "c",
+                "texte": "Les professeurs"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Les assistants du magasin"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Que veulent connaître les assistants ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "L’avis des clients sur les services",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "L’adresse des clients"
+              },
+              {
+                "id": "c",
+                "texte": "Le numéro de carte bancaire des clients"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "L’avis des clients sur les services"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Dans quel commerce les promotions sont-elles proposées ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un supermarché",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Une pharmacie"
+              },
+              {
+                "id": "c",
+                "texte": "Une librairie"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un supermarché"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/co/bg/supermarche.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/co/bg/pharmacie.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/co/bg/librairie.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Quels produits sont en promotion ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Des légumes",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Des fruits"
+              },
+              {
+                "id": "c",
+                "texte": "Des poissons"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Des légumes"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-legumes-dessines.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-fruits-dessines.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-poissons-dessines.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Quel légume est cité dans l’annonce ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La carotte",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "La pomme de terre"
+              },
+              {
+                "id": "c",
+                "texte": "La courgette"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "La carotte"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/vocabulaire/legumes/carotte.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/vocabulaire/legumes/pomme-de-terre.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/vocabulaire/legumes/courgette.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Pendant combien de temps la promotion est-elle annoncée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Aujourd’hui seulement",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Toute la semaine"
+              },
+              {
+                "id": "c",
+                "texte": "Tout le mois"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Aujourd’hui seulement"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Quel commerce sera fermé la semaine prochaine ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La librairie",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "La boulangerie"
+              },
+              {
+                "id": "c",
+                "texte": "La pharmacie"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "La librairie"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/co/bg/librairie.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/co/bg/boulangerie.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/co/bg/pharmacie.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Jusqu’à quel jour la librairie est-elle ouverte ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Samedi",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Vendredi"
+              },
+              {
+                "id": "c",
+                "texte": "Dimanche"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Samedi"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quand la fermeture est-elle prévue ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La semaine prochaine",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Aujourd’hui"
+              },
+              {
+                "id": "c",
+                "texte": "Le mois prochain"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "La semaine prochaine"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Pourquoi la librairie sera-t-elle fermée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Pour des travaux",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Pour des vacances"
+              },
+              {
+                "id": "c",
+                "texte": "Pour un inventaire"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Pour des travaux"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quel établissement présente une exposition ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un musée",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Un cinéma"
+              },
+              {
+                "id": "c",
+                "texte": "Un stade"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un musée"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/co/bg/musee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/co/bg/cinema.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/co/bg/stade.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Quel est le métier de Magali Soubra ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Photographe",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Peintre"
+              },
+              {
+                "id": "c",
+                "texte": "Sculptrice"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Photographe"
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Quel événement est proposé aux visiteurs ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Une exposition de photographies",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Un concert de musique"
+              },
+              {
+                "id": "c",
+                "texte": "Une compétition sportive"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Une exposition de photographies"
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Quels guichets sont fermés ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Les guichets 11 et 13",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Les guichets 10 et 12"
+              },
+              {
+                "id": "c",
+                "texte": "Les guichets 12 et 14"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Les guichets 11 et 13"
+              }
+            },
+            "audio": 5
+          },
+          {
+            "enonce": "À quel guichet faut-il aller ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Au guichet 12",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Au guichet 11"
+              },
+              {
+                "id": "c",
+                "texte": "Au guichet 13"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Au guichet 12"
+              }
+            },
+            "audio": 5
+          },
+          {
+            "enonce": "Que peut-on acheter au guichet ouvert ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Des places",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Des livres"
+              },
+              {
+                "id": "c",
+                "texte": "Des vêtements"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Des places"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-vetements-dessines.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 5
+          },
+          {
+            "enonce": "Quel groupe peut-on écouter le 22 mars ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Dingo",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Mango"
+              },
+              {
+                "id": "c",
+                "texte": "Tango"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Dingo"
+              }
+            },
+            "audio": 6
+          },
+          {
+            "enonce": "Quel événement est annoncé ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un concert",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Une exposition"
+              },
+              {
+                "id": "c",
+                "texte": "Un match"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un concert"
+              }
+            },
+            "audio": 6
+          },
+          {
+            "enonce": "Quel jour le concert a-t-il lieu ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Samedi",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Vendredi"
+              },
+              {
+                "id": "c",
+                "texte": "Dimanche"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Samedi"
+              }
+            },
+            "audio": 6
+          },
+          {
+            "enonce": "À quelle date le concert a-t-il lieu ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Le 22 mars",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Le 12 mars"
+              },
+              {
+                "id": "c",
+                "texte": "Le 22 avril"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Le 22 mars"
+              }
+            },
+            "audio": 6
+          }
+        ],
+        "consigne_supplementaire": null
+      },
+      "after": {
+        "id": "tcf-a2-sb-co-1",
+        "niveau": "A1-A2",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Test blanc A2 · série B · Annonces publiques",
+        "scenario": "radio",
+        "scene": "Les annonces publiques",
+        "consigne": "Vous écoutez des annonces publiques. Il y a 6 documents et 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "transcription": [
+            "Chers clients, êtes-vous contents des services de votre magasin ? Nos assistants vont venir vers vous pour connaître votre avis.",
+            "Aujourd'hui seulement dans votre supermarché, grande promotion sur les carottes, salades et haricots. Rendez-vous dans le rayon fruits et légumes, près de la poissonnerie. A tout de suite !",
+            "Mesdames, messieurs, votre librairie est ouverte jusqu'à samedi. La semaine prochaine, pour cause de travaux, elle sera fermée.",
+            "Chers visiteurs, notre musée est heureux de vous présenter l'exposition de la photographe Magali Soubra. Venez voir ces magnifiques photos sur les sportifs français des Jeux Olympiques.",
+            "Les guichets 11 et 13 sont fermés. Allez au guichet 12 pour acheter vos places. Le bar du théâtre vous accueille de 11 à 19h. Bonne journée.",
+            "Venez nombreux le samedi 22 mars pour écouter le groupe de musique Dingo."
+          ],
+          "audios": [
+            "/lib/audio/tcf/co/radio/les-annonces-publiques-6-1.mp3",
+            "/lib/audio/tcf/co/radio/les-annonces-publiques-6-2.mp3",
+            "/lib/audio/tcf/co/radio/les-annonces-publiques-6-3.mp3",
+            "/lib/audio/tcf/co/radio/les-annonces-publiques-6-4.mp3",
+            "/lib/audio/tcf/co/radio/les-annonces-publiques-6-5.mp3",
+            "/lib/audio/tcf/co/radio/les-annonces-publiques-6-6.mp3"
+          ],
+          "images_descriptions": [
+            "Scénario vidéo (audio CO moyen, « Les annonces publiques — dialogue 1 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un contexte d’annonce ou de conversation du quotidien. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Chers clients, êtes-vous contents des services de votre magasin ? » ; B : « Nos assistants vont venir vers vous pour connaître votre avis ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Les annonces publiques — dialogue 2 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un contexte d’annonce ou de conversation du quotidien. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Aujourd'hui seulement dans votre supermarché : grande promotion sur les carottes, salades et haricots ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Les annonces publiques — dialogue 3 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un contexte d’annonce ou de conversation du quotidien. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Mesdames, messieurs, votre librairie est ouverte jusqu'à samedi » ; B : « La semaine prochaine, pour cause de travaux, elle sera fermée ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Les annonces publiques — dialogue 4 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un contexte d’annonce ou de conversation du quotidien. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Chers visiteurs, notre musée est heureux de vous présenter l'exposition de la photographe Magali Soubra ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Les annonces publiques — dialogue 5 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un contexte d’annonce ou de conversation du quotidien. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Les guichets 11 et 13 sont fermés » ; B : « Allez au guichet 12 pour acheter vos places ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Les annonces publiques — dialogue 6 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un contexte d’annonce ou de conversation du quotidien. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Venez nombreux le samedi 22 mars pour écouter le groupe de musique Dingo ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
+          ]
+        },
+        "questions": [
+          {
+            "enonce": "À qui l’annonce s’adresse-t-elle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Aux clients du magasin",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Aux passagers du train"
+              },
+              {
+                "id": "c",
+                "texte": "Aux élèves du lycée"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Aux clients du magasin"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Qui viendra vers les clients ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Les assistants du magasin",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Les policiers"
+              },
+              {
+                "id": "c",
+                "texte": "Les professeurs"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Les assistants du magasin"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Que veulent connaître les assistants ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "L’avis des clients sur les services",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "L’adresse des clients"
+              },
+              {
+                "id": "c",
+                "texte": "Le numéro de carte bancaire des clients"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "L’avis des clients sur les services"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Dans quel commerce les promotions sont-elles proposées ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un supermarché",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Une pharmacie"
+              },
+              {
+                "id": "c",
+                "texte": "Une librairie"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un supermarché"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/co/bg/supermarche.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/co/bg/pharmacie.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/co/bg/librairie.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Quels produits sont en promotion ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Des légumes",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Des fruits"
+              },
+              {
+                "id": "c",
+                "texte": "Des poissons"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Des légumes"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-legumes-dessines.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-fruits-dessines.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-poissons-dessines.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Quel légume est cité dans l’annonce ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La carotte",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "La pomme de terre"
+              },
+              {
+                "id": "c",
+                "texte": "La courgette"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "La carotte"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/vocabulaire/legumes/carotte.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/vocabulaire/legumes/pomme-de-terre.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/vocabulaire/legumes/courgette.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Pendant combien de temps la promotion est-elle annoncée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Aujourd’hui seulement",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Toute la semaine"
+              },
+              {
+                "id": "c",
+                "texte": "Tout le mois"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Aujourd’hui seulement"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Quel commerce sera fermé la semaine prochaine ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La librairie",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "La boulangerie"
+              },
+              {
+                "id": "c",
+                "texte": "La pharmacie"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "La librairie"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/co/bg/librairie.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/co/bg/boulangerie.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/co/bg/pharmacie.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Jusqu’à quel jour la librairie est-elle ouverte ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Samedi",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Vendredi"
+              },
+              {
+                "id": "c",
+                "texte": "Dimanche"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Samedi"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quand la fermeture est-elle prévue ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La semaine prochaine",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Aujourd’hui"
+              },
+              {
+                "id": "c",
+                "texte": "Le mois prochain"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "La semaine prochaine"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Pourquoi la librairie sera-t-elle fermée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Pour des travaux",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Pour des vacances"
+              },
+              {
+                "id": "c",
+                "texte": "Pour un inventaire"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Pour des travaux"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quel établissement présente une exposition ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un musée",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Un cinéma"
+              },
+              {
+                "id": "c",
+                "texte": "Un stade"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un musée"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/co/bg/musee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/co/bg/cinema.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/co/bg/stade.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Quel est le métier de Magali Soubra ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Photographe",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Peintre"
+              },
+              {
+                "id": "c",
+                "texte": "Sculptrice"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Photographe"
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Quel événement est proposé aux visiteurs ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Une exposition de photographies",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Un concert de musique"
+              },
+              {
+                "id": "c",
+                "texte": "Une compétition sportive"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Une exposition de photographies"
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Quels guichets sont fermés ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Les guichets 11 et 13",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Les guichets 10 et 12"
+              },
+              {
+                "id": "c",
+                "texte": "Les guichets 12 et 14"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Les guichets 11 et 13"
+              }
+            },
+            "audio": 5
+          },
+          {
+            "enonce": "À quel guichet faut-il aller ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Au guichet 12",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Au guichet 11"
+              },
+              {
+                "id": "c",
+                "texte": "Au guichet 13"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Au guichet 12"
+              }
+            },
+            "audio": 5
+          },
+          {
+            "enonce": "Que peut-on acheter au guichet ouvert ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Des places",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Des livres"
+              },
+              {
+                "id": "c",
+                "texte": "Des vêtements"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Des places"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-vetements-dessines.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 5
+          },
+          {
+            "enonce": "Quel groupe peut-on écouter le 22 mars ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Dingo",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Mango"
+              },
+              {
+                "id": "c",
+                "texte": "Tango"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Dingo"
+              }
+            },
+            "audio": 6
+          },
+          {
+            "enonce": "Quel événement est annoncé ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un concert",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Une exposition"
+              },
+              {
+                "id": "c",
+                "texte": "Un match"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un concert"
+              }
+            },
+            "audio": 6
+          },
+          {
+            "enonce": "Quel jour le concert a-t-il lieu ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Samedi",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Vendredi"
+              },
+              {
+                "id": "c",
+                "texte": "Dimanche"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Samedi"
+              }
+            },
+            "audio": 6
+          },
+          {
+            "enonce": "À quelle date le concert a-t-il lieu ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Le 22 mars",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Le 12 mars"
+              },
+              {
+                "id": "c",
+                "texte": "Le 22 avril"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Le 22 mars"
+              }
+            },
+            "audio": 6
+          }
+        ],
+        "consigne_supplementaire": null
+      }
+    }
+  ],
+  "status": "installed",
+  "received_originals_modified": 0,
+  "human_listening_performed": false
+}
