@@ -8,7 +8,7 @@ import shutil
 import subprocess
 import sys
 
-from tcf_replace_vocabulary_images import vocabulary_paths
+from tcf_replace_vocabulary_images import vocabulary_paths, preserve_object_audio_images
 
 
 def read(path):return json.loads(Path(path).read_text())
@@ -54,7 +54,9 @@ def main():
         write(file,data)
     # The vocabulary library itself stays intact. Count uses in the retained banks.
     file=docs/'remplacement-images-vocabulaire.json';vocab=read(file)
-    uses=[dict(bank=bank,exercise=eid,node=list(node),image=image) for eid,(bank,e) in banks.items() for node,image in vocabulary_paths(e)]
+    uses=[dict(bank=bank,exercise=eid,node=list(node),image=image,
+               excluded_object_audio=preserve_object_audio_images(e))
+          for eid,(bank,e) in banks.items() for node,image in vocabulary_paths(e)]
     byimage=collections.defaultdict(list)
     for u in uses:byimage[u['image']].append(u)
     vocab['remaining_uses']=uses
@@ -64,6 +66,8 @@ def main():
         asset['remaining_occurrences']=len(byimage[asset['image']])
         if not asset['remaining_occurrences']:asset['status']='no_remaining_usage_in_current_banks'
     summary=vocab['summary'];summary.update(remaining_occurrences=len(uses),remaining_original_images=len(byimage),
+        excluded_object_audio_occurrences=sum(u['excluded_object_audio'] for u in uses),
+        remaining_occurrences_to_harmonize=sum(not u['excluded_object_audio'] for u in uses),
         completed_question_trios=len(vocab['completed_question_trios']),
         style_aligned_question_trios=len(vocab['completed_question_trios']),
         replaced_occurrences=sum(r['replaced_occurrences'] for r in vocab['completed_question_trios']))

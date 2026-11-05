@@ -43,6 +43,12 @@ def vocabulary_paths(value, node=()):
             yield from vocabulary_paths(child, node + (key,))
 
 
+def preserve_object_audio_images(exercise):
+    """CSC object listening exercises draw these five-image banks across levels."""
+    return (exercise.get('competence') == 'CO'
+            and exercise.get('type_exercice') == 'images_a_reconnaitre')
+
+
 def checked_images(manifest):
     result = {}
     for row in manifest['images']:
@@ -121,6 +127,8 @@ def main():
         content = json.loads(bank.read_text())
         dirty = False
         for exercise in content:
+            if preserve_object_audio_images(exercise):
+                continue
             for qi, question in enumerate(exercise.get('questions', []), 1):
                 image_form = question if question.get('type_reponse') == 'qcm_image' else question.get('formes', {}).get('qcm_image')
                 text_form = question if question.get('type_reponse') == 'qcm_texte' else question.get('formes', {}).get('qcm_texte')
@@ -153,7 +161,8 @@ def main():
     for bank, content in banks.items():
         for exercise in content:
             for node, path in vocabulary_paths(exercise):
-                remaining.append(dict(bank=str(bank.relative_to(ROOT)), exercise=exercise['id'], node=list(node), image=path))
+                remaining.append(dict(bank=str(bank.relative_to(ROOT)), exercise=exercise['id'], node=list(node), image=path,
+                                      excluded_object_audio=preserve_object_audio_images(exercise)))
     if args.report:
         args.report.write_text(json.dumps(changes, ensure_ascii=False, indent=2) + '\n')
     if args.apply:
@@ -164,7 +173,9 @@ def main():
             asset['remaining_occurrences'] = counts[asset['image']]
             asset['status'] = 'replacement_complete' if counts[asset['image']] == 0 else 'pending_complete_reviewed_trios_or_support_review'
         plan['summary'].update(remaining_occurrences=len(remaining), remaining_original_images=len(counts),
-                               replaced_occurrences=plan['summary']['original_occurrences'] - len(remaining),
+                               replaced_occurrences=sum(row['replaced_occurrences'] for row in plan['completed_question_trios']),
+                               excluded_object_audio_occurrences=sum(row['excluded_object_audio'] for row in remaining),
+                               remaining_occurrences_to_harmonize=sum(not row['excluded_object_audio'] for row in remaining),
                                completed_question_trios=len(plan['completed_question_trios']))
         aligned = sum(all(path in checked for path in trio['after'])
                       for trio in plan['completed_question_trios'])
@@ -173,6 +184,8 @@ def main():
         PLAN.write_text(json.dumps(plan, ensure_ascii=False, indent=2) + '\n')
     print(json.dumps(dict(applied=args.apply, ready_question_trios=len(changes),
                           occurrences_replaced=sum(c['replaced_occurrences'] for c in changes),
+                          excluded_object_audio_occurrences=sum(row['excluded_object_audio'] for row in remaining),
+                          remaining_occurrences_to_harmonize=sum(not row['excluded_object_audio'] for row in remaining),
                           remaining_occurrences=len(remaining)), ensure_ascii=False))
 
 

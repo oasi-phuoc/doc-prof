@@ -8,11 +8,13 @@ Dans le thème/sous-thème convenu, choisir **Compréhension orale**, puis la pi
 
 Se présenter et Famille réutilisent les sous-thèmes existants. Les autres lots sont classés dans leurs contextes dédiés sous les parties convenues : temps, décrire, demander/proposer, conseiller, activités, présent, aliments, espace, questions, faits divers, argumentation et entrer en contact. Les corrections A2 convenues sont conservées : « Centres d’intérêt » avec les loisirs, « Ville ou campagne » dans argumenter, « Prendre soin de soi » dans conseiller, « Entretien d’embauche » et « S’intégrer dans l’entreprise » dans demander/proposer. La table complète est dans `src/grammaire/exercises/co-themes.ts`.
 
-Chaque piste est liée au support CO du rendu TCF. **Les 127 transcriptions A1 déjà ajoutées sur main sont conservées. Les 125 pistes A2 restent sans transcription.** Les questions restent vides et leur nombre est masqué. Les anciennes recettes identité/famille sont reconnues et migrées vers le type commun.
+Chaque piste est liée au support CO du rendu TCF. **Les 127 transcriptions A1 sont conservées et les 125 transcriptions A2 sont intégrées.** Les questions restent vides et leur nombre est masqué. Les anciennes recettes identité/famille sont reconnues et migrées vers le type commun.
 
 ## Transcriptions et questions
 
-Deux moteurs locaux, Parakeet et Whisper en français, ont traité les 127 originaux A1. Une lecture supplémentaire de Whisper sans jetons d’horodatage a permis de retrouver des débuts de dialogues omis. Les textes ont été relus et corrigés par comparaison, notamment les nombres et les mots français reconnus en anglais. Les annonces parlées de page et d’exercice restent transcrites pour correspondre aux originaux de grammaire.
+Deux moteurs locaux, Parakeet et Whisper en français, ont traité les 127 originaux A1 et les 125 originaux A2. Une lecture supplémentaire de Whisper sans jetons d’horodatage a permis de retrouver des débuts de dialogues omis. Les textes ont été relus et corrigés par comparaison, notamment les nombres et les mots français reconnus en anglais. Les annonces parlées de page et d’exercice restent transcrites pour correspondre aux originaux de grammaire.
+
+Le 5 novembre, les 125 pistes A2 ont été comparées entre les deux moteurs et relues. Vingt-deux ont reçu une reconnaissance supplémentaire. Les débuts omis, passages anglais parasites, erreurs de segmentation, orthographe et accords ont été corrigés à partir des lectures disponibles. 34 pistes A2 gardent un point à confirmer, surtout un nom propre, un horaire ou un numéro. Ces incertitudes figurent dans le registre et ne doivent pas être transformées en réponses certaines à de futures questions. Aucun audio n’a été modifié.
 
 Le rapport [transcriptions.json](transcriptions.json) conserve, pour chaque identifiant et empreinte audio, le texte retenu, les reconnaissances brutes, les corrections et les points incertains. Les graphies de certains noms propres et une source à la fin tronquée restent signalées. Ce travail est une transcription automatique recoupée et relue ; aucune écoute humaine n’est attestée. Les découpes des versions TCF sont suivies séparément.
 
@@ -33,4 +35,4 @@ Les trois formats de réponse (QCM texte, réponse sur trait et QCM images) sont
 node scripts/audit-grammar-co-import.cjs
 ```
 
-Le contrôle vérifie les 252 fichiers et empreintes, les 38 liens du catalogue, l’accès à chaque piste, le rendu du bon audio, son niveau A1 ou A2, la conservation des transcriptions A1 et l’absence de transcription A2 ou de question ajoutée, la sauvegarde de la sélection et l’absence de repli entre les niveaux.
+Le contrôle vérifie les 252 fichiers et empreintes, les 38 liens du catalogue, l’accès à chaque piste, le rendu du bon audio, son niveau A1 ou A2, la conservation des transcriptions A1, la liaison des 125 transcriptions A2 à leurs originaux et l’absence de question ajoutée, la sauvegarde de la sélection et l’absence de repli entre les niveaux.

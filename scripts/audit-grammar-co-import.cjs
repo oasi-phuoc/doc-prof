@@ -22,6 +22,7 @@ check(GRAMMAR_CO_BANK.length===report.source_count&&report.sources.length===repo
 check(new Set(GRAMMAR_CO_BANK.map(e=>e.exercise.id)).size===GRAMMAR_CO_BANK.length,'distinct stable ids')
 for(const level of ['A1','A2'])check(GRAMMAR_CO_BANK.filter(e=>e.level===level).length===report[level.toLowerCase()+'_sources'],'level count '+level)
 check(report.a1_sources===127&&report.a2_sources===125,'all 127 original A1 and 125 new A2 sources')
+check(transcripts.transcriptions.length===252&&new Set(transcripts.transcriptions.map(r=>r.exercise_id)).size===252,'one transcript per original A1 or A2 recording')
 check(new Set(report.sources.filter(s=>s.level==='A2').map(s=>s.source_lot)).size===24,'all 24 A2 source lots retained')
 check(grammarCoEntries('loisirs','A2').length===11,'leisure and interests share one subtheme')
 for(const [id,topic]of [['ville-campagne','gram-argumenter'],['prendre-soin','gram-conseiller'],['entretien-embauche','gram-demander'],['integration-entreprise','gram-demander']])check(GRAMMAR_CO_THEMES.find(t=>t.id===id).topic===topic,'agreed correction '+id)
@@ -43,17 +44,16 @@ for(const theme of GRAMMAR_CO_THEMES){
   }
   for(const entry of entries){
    const audio=entry.exercise.support.audio
-   check(entry.status===(level==='A1'?'transcribed':'audio-only')&&entry.audioChecked,'source checked')
+   check(entry.status==='transcribed'&&entry.audioChecked,'source checked and transcribed')
    check(entry.exercise.questions.length===0,'no questions added')
-   if(level==='A2')check(entry.exercise.support.transcription==='','A2 transcription deferred')
-   else check(entry.exercise.support.transcription.length>0&&entry.transcriptionReview?.sourceSha256===entry.source.sha256,'A1 transcription retained with source review')
+   check(entry.exercise.support.transcription.length>0&&entry.transcriptionReview?.sourceSha256===entry.source.sha256,'transcription bound to original source '+level)
    check(entry.exercise.niveau===(level==='A1'?'A0-A1':'A1-A2'),'TCF renderer level')
    check(audio.startsWith('/lib/audio/grammaire/co/'+theme.id+'/')&&(level!=='A2'||audio.includes('/a2/')),'correct folder, A2 separated')
    const file=path.join(root,'public',audio)
    check(fs.existsSync(file),'linked audio exists '+audio)
    const hash=crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex')
    check(hash===entry.source.sha256,'source bytes unchanged '+audio)
-   if(level==='A1'){
+   {
     const transcript=transcripts.transcriptions.find(row=>row.exercise_id===entry.exercise.id)
     check(transcript&&transcript.source_sha256===hash&&transcript.selected_text===entry.exercise.support.transcription,'transcript bound to original bytes')
     check(transcript.human_listening_performed===false&&entry.transcriptionReview.humanListening===false,'no false listening attestation')
@@ -87,4 +87,4 @@ for(const [a1Available,a2Available]of [[true,false],[false,true],[true,true]]){
  const html=renderToStaticMarkup(React.createElement(GrammarCoLevelControl,{value:a1Available?'A1':'A2',a1Available,a2Available,onChange:()=>{}}))
  check((html.match(/<button/g)||[]).length===2&&(html.match(/disabled/g)||[]).length===Number(!a1Available)+Number(!a2Available),'only available levels enabled')
 }
-console.log(`${checks} contrôles réussis ; ${report.a1_sources} audios A1 et ${report.a2_sources} audios A2 ; ${GRAMMAR_CO_THEMES.length} thèmes ; transcriptions A1 conservées ; transcriptions A2 et questions en attente.`)
+console.log(`${checks} contrôles réussis ; ${report.a1_sources} transcriptions A1 et ${report.a2_sources} transcriptions A2 ; ${GRAMMAR_CO_THEMES.length} thèmes ; originaux conservés ; aucune question ajoutée.`)
