@@ -403,54 +403,54 @@
     "theme": "Test blanc A2 · série A · À la boulangerie",
     "scenario": "magasins",
     "scene": "À la boulangerie",
-    "consigne": "Vous entrez dans une boulangerie pour acheter du pain. Complétez le dialogue.",
+    "consigne": "Vous entrez dans une boulangerie. Vous voulez du pain et vous n’avez pas d’espèces. Complétez le dialogue.",
     "points": 10,
     "support": {
-      "situation": "Vous voulez acheter des croissants et des baguettes. Vous n’avez pas d’espèces.\nLe dialogue commence ainsi :\nEmployé : « Bonjour. Est-ce que je peux vous aider ? »\nVous : « Bonjour. J’aimerais acheter du pain, s’il vous plaît. »",
+      "situation": "Vous voulez acheter des baguettes et des croissants. Vous n’avez pas d’espèces.",
       "interlocuteur": "L’employé",
       "repliques": [
         {
           "locuteur": "examinateur",
-          "texte": "Qu’est-ce que vous aimeriez acheter ?"
+          "texte": "Bonjour. Je peux vous aider ?"
         },
         {
           "locuteur": "eleve",
-          "texte": "Je voudrais deux baguettes et quatre croissants, s’il vous plaît.",
+          "texte": "Bonjour. Je voudrais du pain, s’il vous plaît.",
+          "variantes": [
+            "Bonjour. Est-ce que je peux acheter du pain ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Qu’est-ce que vous voulez exactement ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Deux baguettes et quatre croissants, s’il vous plaît.",
           "variantes": [
             "Une baguette et trois croissants, s’il vous plaît."
           ]
         },
         {
           "locuteur": "examinateur",
-          "texte": "Vous avez des allergies ?"
-        },
-        {
-          "locuteur": "eleve",
-          "texte": "Non, je n’ai pas d’allergies, merci.",
-          "variantes": [
-            "Oui, je suis allergique aux noix. Il n’y a pas de noix dans les croissants ?"
-          ]
-        },
-        {
-          "locuteur": "examinateur",
-          "texte": "Cela fera 10 CHF, s’il vous plaît. Comment vous payez ?"
+          "texte": "Cela fait 10 francs. Comment est-ce que vous payez ?"
         },
         {
           "locuteur": "eleve",
           "texte": "Je n’ai pas d’espèces. Je peux payer par carte ?",
           "variantes": [
-            "Par carte bancaire, s’il vous plaît."
+            "Par carte, s’il vous plaît."
           ]
         },
         {
           "locuteur": "examinateur",
-          "texte": "Merci. Bonne dégustation !"
+          "texte": "Oui, bien sûr. Bonne dégustation !"
         },
         {
           "locuteur": "eleve",
           "texte": "Merci beaucoup. Au revoir et bonne journée !",
           "variantes": [
-            "Merci, à bientôt !"
+            "Merci. À bientôt !"
           ]
         }
       ]
@@ -513,21 +513,21 @@
     "theme": "Test blanc A2 · série B · Au restaurant",
     "scenario": "loisirs",
     "scene": "Au restaurant",
-    "consigne": "Vous entrez dans un restaurant avec votre ami. Complétez le dialogue.",
+    "consigne": "Vous entrez dans un restaurant avec un ami. Complétez le dialogue.",
     "points": 10,
     "support": {
-      "situation": "Vous désirez manger un steak et un poisson grillé. Vous n’aimez pas l’alcool.\nLe dialogue commence ainsi :\nEmployé : « Bonjour. Bienvenue dans notre restaurant. »\nVous : « Bonjour. Est-ce que vous avez de la place pour ce soir ? »",
-      "interlocuteur": "L’employé",
+      "situation": "Vous êtes au restaurant avec un ami. Vous voulez un steak et un poisson. Vous ne buvez pas d’alcool.",
+      "interlocuteur": "Le serveur",
       "repliques": [
         {
           "locuteur": "examinateur",
-          "texte": "Oui. Pour combien de personnes ?"
+          "texte": "Bonjour. Bienvenue. Vous êtes combien ?"
         },
         {
           "locuteur": "eleve",
-          "texte": "Pour deux personnes, s’il vous plaît. Je suis avec un ami.",
+          "texte": "Bonjour. Nous sommes deux, s’il vous plaît.",
           "variantes": [
-            "Nous sommes deux."
+            "Bonjour. Une table pour deux, s’il vous plaît."
           ]
         },
         {
@@ -536,20 +536,20 @@
         },
         {
           "locuteur": "eleve",
-          "texte": "Oui. Je voudrais un steak, et mon ami prend le poisson grillé, s’il vous plaît.",
+          "texte": "Oui. Un steak et un poisson grillé, s’il vous plaît.",
           "variantes": [
-            "Un steak et un poisson grillé, s’il vous plaît."
+            "Oui. Je prends le steak, et mon ami prend le poisson."
           ]
         },
         {
           "locuteur": "examinateur",
-          "texte": "Vous désirez du vin pour accompagner vos plats ?"
+          "texte": "Vous désirez du vin ?"
         },
         {
           "locuteur": "eleve",
           "texte": "Non merci, nous ne buvons pas d’alcool. Une carafe d’eau, s’il vous plaît.",
           "variantes": [
-            "Non, je n’aime pas l’alcool. Je voudrais un jus d’orange."
+            "Non, je n’aime pas l’alcool. Un jus d’orange, s’il vous plaît."
           ]
         },
         {
@@ -558,9 +558,9 @@
         },
         {
           "locuteur": "eleve",
-          "texte": "Oui, c’était très bon, merci ! L’addition, s’il vous plaît.",
+          "texte": "Oui, c’était très bon. L’addition, s’il vous plaît. Au revoir !",
           "variantes": [
-            "Oui, tout était parfait. Merci beaucoup et bonne soirée !"
+            "Oui, tout était parfait. Merci et bonne soirée !"
           ]
         }
       ]
@@ -622,16 +622,27 @@
     "type_exercice": "dialogue_a_completer",
     "theme": "Test blanc A2 · série C · Réserver une chambre d’hôtel",
     "scenario": "vacances",
-    "scene": "À l’hôtel",
-    "consigne": "Vous appelez un hôtel pour réserver une chambre. Complétez le dialogue.",
+    "scene": "Réserver une chambre",
+    "consigne": "Vous téléphonez à un hôtel pour réserver une chambre. Complétez le dialogue.",
     "points": 10,
     "support": {
-      "situation": "Vous êtes en vacances les 10, 11 et 12 mars. Vous ne prenez pas le petit-déjeuner à l’hôtel.\nLe dialogue commence ainsi :\nEmployé : « Bonjour, hôtel du Soleil. Que puis-je faire pour vous ? »\nVous : « Bonjour. J’aimerais réserver une chambre pour deux nuits, s’il vous plaît. »",
+      "situation": "Vous téléphonez à un hôtel. Vous voulez une chambre du 10 au 12 mars, sans petit-déjeuner.",
       "interlocuteur": "L’employé",
       "repliques": [
         {
           "locuteur": "examinateur",
-          "texte": "Pour quelle date ?"
+          "texte": "Bonjour, hôtel du Soleil. Que puis-je faire pour vous ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. Je voudrais réserver une chambre, s’il vous plaît.",
+          "variantes": [
+            "Bonjour. Est-ce que vous avez une chambre libre ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Pour quelles dates ?"
         },
         {
           "locuteur": "eleve",
@@ -642,35 +653,24 @@
         },
         {
           "locuteur": "examinateur",
-          "texte": "La chambre disponible est à 80 francs la nuit. Cela vous convient ?"
+          "texte": "La chambre est à 80 francs la nuit. Vous voulez le petit-déjeuner ?"
         },
         {
           "locuteur": "eleve",
-          "texte": "Oui, cela me convient. Je la prends.",
-          "variantes": [
-            "Oui, c’est parfait, merci."
-          ]
-        },
-        {
-          "locuteur": "examinateur",
-          "texte": "Souhaitez-vous le petit-déjeuner inclus ?"
-        },
-        {
-          "locuteur": "eleve",
-          "texte": "Non merci, je ne prends pas de petit-déjeuner.",
+          "texte": "Non merci, je ne prends pas le petit-déjeuner.",
           "variantes": [
             "Non, je ne mange pas le matin."
           ]
         },
         {
           "locuteur": "examinateur",
-          "texte": "J’aurais besoin de votre courriel pour confirmer la réservation, s’il vous plaît."
+          "texte": "J’ai besoin de votre courriel pour confirmer."
         },
         {
           "locuteur": "eleve",
-          "texte": "Bien sûr : c’est samira.haddad@mail.ch. Merci et au revoir !",
+          "texte": "Bien sûr : lina.rossi@mail.ch. Merci et au revoir !",
           "variantes": [
-            "Mon adresse est paul.martin@gmail.com."
+            "Mon adresse est karim.benali@mail.ch. Bonne journée !"
           ]
         }
       ]
@@ -2689,5 +2689,1391 @@
     },
     "questions": [],
     "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2-dlg-marche",
+    "niveau": "A1-A2",
+    "competence": "PE",
+    "type_exercice": "dialogue_a_completer",
+    "theme": "Dialogue · Au marché",
+    "scenario": "magasins",
+    "scene": "Au marché",
+    "consigne": "Vous êtes au marché. Vous voulez des légumes et vous comparez le prix. Complétez le dialogue.",
+    "points": 10,
+    "support": {
+      "situation": "Vous êtes au marché. Vous voulez des tomates et des salades.",
+      "interlocuteur": "Le vendeur",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour ! Qu’est-ce que je vous sers ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. Je voudrais des tomates, s’il vous plaît.",
+          "variantes": [
+            "Bonjour. Est-ce que les tomates sont mûres ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Elles sont à 4 francs le kilo. Vous en voulez combien ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Un kilo, s’il vous plaît. Et deux salades.",
+          "variantes": [
+            "Deux kilos, et une salade aussi."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Ça fait 8 francs. Vous payez comment ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Par carte, s’il vous plaît. Je n’ai pas assez d’espèces.",
+          "variantes": [
+            "En espèces, voilà 10 francs."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Merci. Bonne journée et bon appétit !"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci beaucoup. Au revoir !",
+          "variantes": [
+            "Merci. Bonne journée !"
+          ]
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "Grille (10 points) : chaque réplique répond à la question et respecte la situation (4 × 1,5) ; politesse et registre (2) ; langue et orthographe (2)."
+  },
+  {
+    "id": "tcf-a2-dlg-medecin",
+    "niveau": "A1-A2",
+    "competence": "PE",
+    "type_exercice": "dialogue_a_completer",
+    "theme": "Dialogue · Chez le médecin",
+    "scenario": "sante",
+    "scene": "Chez le médecin",
+    "consigne": "Vous êtes chez le médecin parce que vous êtes malade depuis trois jours. Complétez le dialogue.",
+    "points": 10,
+    "support": {
+      "situation": "Vous êtes chez le médecin. Vous toussez et vous avez de la fièvre depuis trois jours.",
+      "interlocuteur": "Le médecin",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour. Qu’est-ce qui vous amène ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. Je tousse et j’ai de la fièvre.",
+          "variantes": [
+            "Bonjour. Je ne me sens pas bien depuis trois jours."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Depuis quand exactement ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Depuis lundi. Je tousse beaucoup le soir.",
+          "variantes": [
+            "Depuis trois jours, et je dors mal."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Vous prenez déjà un médicament ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Non, pas encore. Qu’est-ce que je dois prendre ?",
+          "variantes": [
+            "Oui, un sirop, mais ça ne va pas mieux."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Reposez-vous quelques jours. Revenez si la fièvre continue."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "D’accord, merci docteur. Au revoir.",
+          "variantes": [
+            "Merci beaucoup. Bonne journée."
+          ]
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "Grille (10 points) : chaque réplique répond à la question et respecte la situation (4 × 1,5) ; politesse et registre (2) ; langue et orthographe (2)."
+  },
+  {
+    "id": "tcf-a2-dlg-fete",
+    "niveau": "A1-A2",
+    "competence": "PE",
+    "type_exercice": "dialogue_a_completer",
+    "theme": "Dialogue · Invitation à une fête",
+    "scenario": "fetes",
+    "scene": "Invitation à une fête",
+    "consigne": "Un ami vous invite à sa fête samedi. Complétez le dialogue.",
+    "points": 10,
+    "support": {
+      "situation": "Un ami vous invite à une fête chez lui samedi soir.",
+      "interlocuteur": "Votre ami",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Salut ! Tu es libre samedi soir ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Salut ! Oui, je ne travaille pas. Pourquoi ?",
+          "variantes": [
+            "Salut ! Oui, je suis libre après 18 heures."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Je fais une fête à la maison. Tu veux venir ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, avec plaisir ! Ça commence à quelle heure ?",
+          "variantes": [
+            "Oui, je viens. C’est à quelle heure ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "À 19 heures. Tu peux apporter un dessert ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, j’apporte un gâteau au chocolat.",
+          "variantes": [
+            "D’accord, j’apporte une salade de fruits."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Super ! À samedi alors."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "À samedi ! Merci pour l’invitation.",
+          "variantes": [
+            "À bientôt ! J’ai hâte."
+          ]
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "Grille (10 points) : chaque réplique répond à la question et respecte la situation (4 × 1,5) ; politesse et registre (2) ; langue et orthographe (2)."
+  },
+  {
+    "id": "tcf-a2-dlg-diner",
+    "niveau": "A1-A2",
+    "competence": "PE",
+    "type_exercice": "dialogue_a_completer",
+    "theme": "Dialogue · Inviter un ami à dîner",
+    "scenario": "fetes",
+    "scene": "Dîner entre amis",
+    "consigne": "Vous invitez un ami à dîner chez vous vendredi. Complétez le dialogue.",
+    "points": 10,
+    "support": {
+      "situation": "Vous voulez inviter un ami à dîner chez vous vendredi soir.",
+      "interlocuteur": "Votre ami",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Salut ! Tu fais quoi vendredi soir ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Salut ! Rien de spécial. Et toi ?",
+          "variantes": [
+            "Salut ! Je suis libre. Pourquoi ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Tu veux venir dîner à la maison ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, avec plaisir ! À quelle heure ?",
+          "variantes": [
+            "Oui, bonne idée. Je dois apporter quelque chose ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Vers 19 h 30. Tu manges de tout ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, je mange de tout. Merci !",
+          "variantes": [
+            "Je ne mange pas de porc, mais le reste, oui."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Parfait. À vendredi !"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "À vendredi ! Au revoir.",
+          "variantes": [
+            "À bientôt ! Merci pour l’invitation."
+          ]
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "Grille (10 points) : chaque réplique répond à la question et respecte la situation (4 × 1,5) ; politesse et registre (2) ; langue et orthographe (2)."
+  },
+  {
+    "id": "tcf-a2-dlg-gare",
+    "niveau": "A1-A2",
+    "competence": "PE",
+    "type_exercice": "dialogue_a_completer",
+    "theme": "Dialogue · Un train à la gare",
+    "scenario": "transports",
+    "scene": "À la gare",
+    "consigne": "Vous êtes à la gare. Votre train a du retard. Complétez le dialogue.",
+    "points": 10,
+    "support": {
+      "situation": "Vous êtes à la gare. Le train pour Genève a du retard et vous demandez des informations.",
+      "interlocuteur": "L’employé",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour. Je peux vous renseigner ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. Le train de 16 h 20 pour Genève a du retard ?",
+          "variantes": [
+            "Bonjour. Est-ce que le train pour Genève est à l’heure ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, il part à 16 h 50, quai 4."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "D’accord. Il y a une correspondance à Lausanne ?",
+          "variantes": [
+            "Merci. Je peux prendre le train suivant ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "La correspondance est à 17 h 40. Vous avez assez de temps."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Très bien, merci pour l’information.",
+          "variantes": [
+            "D’accord, je prends celui-là."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Bon voyage !"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci beaucoup. Au revoir !",
+          "variantes": [
+            "Merci. Bonne journée !"
+          ]
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "Grille (10 points) : chaque réplique répond à la question et respecte la situation (4 × 1,5) ; politesse et registre (2) ; langue et orthographe (2)."
+  },
+  {
+    "id": "tcf-a2-dlg-pharmacie",
+    "niveau": "A1-A2",
+    "competence": "PE",
+    "type_exercice": "dialogue_a_completer",
+    "theme": "Dialogue · Conseil à la pharmacie",
+    "scenario": "sante",
+    "scene": "Conseil à la pharmacie",
+    "consigne": "Vous avez mal au ventre. Vous demandez un conseil à la pharmacie. Complétez le dialogue.",
+    "points": 10,
+    "support": {
+      "situation": "Vous avez mal au ventre depuis hier. Vous demandez un conseil à la pharmacie.",
+      "interlocuteur": "Le pharmacien",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour. Qu’est-ce que je peux faire pour vous ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. J’ai mal au ventre depuis hier.",
+          "variantes": [
+            "Bonjour. Vous avez quelque chose pour le mal de ventre ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Vous avez de la fièvre ou des allergies ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Non, je n’ai pas de fièvre et je n’ai pas d’allergie.",
+          "variantes": [
+            "J’ai un peu de fièvre, mais pas d’allergie."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Prenez ce médicament après le repas, trois fois par jour."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "D’accord. Pendant combien de jours ?",
+          "variantes": [
+            "Merci. Je dois aller chez le médecin ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Deux ou trois jours. Si ça continue, allez chez le médecin."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Très bien. Merci et au revoir.",
+          "variantes": [
+            "D’accord, merci. Bonne journée."
+          ]
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "Grille (10 points) : chaque réplique répond à la question et respecte la situation (4 × 1,5) ; politesse et registre (2) ; langue et orthographe (2)."
+  },
+  {
+    "id": "tcf-a2-dlg-echange",
+    "niveau": "A1-A2",
+    "competence": "PE",
+    "type_exercice": "dialogue_a_completer",
+    "theme": "Dialogue · Échanger un vêtement",
+    "scenario": "magasins",
+    "scene": "Échanger un vêtement",
+    "consigne": "Vous rapportez un pull trop petit au magasin. Complétez le dialogue.",
+    "points": 10,
+    "support": {
+      "situation": "Vous avez acheté un pull trop petit. Vous voulez l’échanger.",
+      "interlocuteur": "L’employé",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour. Vous avez un problème ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. Oui, ce pull est trop petit. Je peux l’échanger ?",
+          "variantes": [
+            "Bonjour. J’ai acheté ce pull hier, mais la taille ne va pas."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Vous avez le ticket de caisse ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, le voilà.",
+          "variantes": [
+            "Oui, je l’ai gardé."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Vous voulez la taille au-dessus ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, la taille L, s’il vous plaît.",
+          "variantes": [
+            "Oui, un peu plus grand, s’il vous plaît."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Voilà. Bonne journée !"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci beaucoup. Au revoir !",
+          "variantes": [
+            "Merci. Bonne journée !"
+          ]
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "Grille (10 points) : chaque réplique répond à la question et respecte la situation (4 × 1,5) ; politesse et registre (2) ; langue et orthographe (2)."
+  },
+  {
+    "id": "tcf-a2-dlg-cinema",
+    "niveau": "A1-A2",
+    "competence": "PE",
+    "type_exercice": "dialogue_a_completer",
+    "theme": "Dialogue · Des places de cinéma",
+    "scenario": "loisirs",
+    "scene": "Des places de cinéma",
+    "consigne": "Vous voulez deux places pour le film de 20 h 30. Complétez le dialogue.",
+    "points": 10,
+    "support": {
+      "situation": "Vous êtes au cinéma. Vous voulez deux places pour le film de 20 h 30.",
+      "interlocuteur": "L’employé",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour. Bienvenue. Vous venez pour quel film ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. Deux places pour le film de 20 h 30, s’il vous plaît.",
+          "variantes": [
+            "Bonjour. Est-ce qu’il reste des places pour 20 h 30 ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui. Vous préférez le milieu ou le fond de la salle ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Au milieu, s’il vous plaît.",
+          "variantes": [
+            "Au fond, s’il vous plaît."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Ça fait 32 francs pour deux."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Je paie par carte.",
+          "variantes": [
+            "Voilà 40 francs."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Voici vos billets. Bon film !"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci. Au revoir !",
+          "variantes": [
+            "Merci beaucoup. Bonne soirée !"
+          ]
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "Grille (10 points) : chaque réplique répond à la question et respecte la situation (4 × 1,5) ; politesse et registre (2) ; langue et orthographe (2)."
+  },
+  {
+    "id": "tcf-a2-dlg-sport",
+    "niveau": "A1-A2",
+    "competence": "PE",
+    "type_exercice": "dialogue_a_completer",
+    "theme": "Dialogue · S’inscrire à un club de sport",
+    "scenario": "loisirs",
+    "scene": "Au club de sport",
+    "consigne": "Vous voulez vous inscrire à un cours de natation. Complétez le dialogue.",
+    "points": 10,
+    "support": {
+      "situation": "Vous voulez vous inscrire à un cours de natation le mardi soir.",
+      "interlocuteur": "L’employé",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour. Vous voulez des informations ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. Oui, je voudrais m’inscrire à la natation.",
+          "variantes": [
+            "Bonjour. Est-ce qu’il y a un cours le mardi soir ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Le cours du mardi est à 19 heures. Ça vous convient ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, c’est parfait, parce que je travaille avant.",
+          "variantes": [
+            "Oui, je finis le travail à 18 heures."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "L’abonnement est à 40 francs par mois. Vous commencez quand ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "La semaine prochaine, s’il vous plaît.",
+          "variantes": [
+            "Mardi prochain, si c’est possible."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Très bien. Bienvenue au club !"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci beaucoup. Au revoir !",
+          "variantes": [
+            "Merci. Bonne journée !"
+          ]
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "Grille (10 points) : chaque réplique répond à la question et respecte la situation (4 × 1,5) ; politesse et registre (2) ; langue et orthographe (2)."
+  },
+  {
+    "id": "tcf-a2-dlg-pique-nique",
+    "niveau": "A1-A2",
+    "competence": "PE",
+    "type_exercice": "dialogue_a_completer",
+    "theme": "Dialogue · Invitation à un pique-nique",
+    "scenario": "fetes",
+    "scene": "Le pique-nique",
+    "consigne": "Des amis vous invitent à un pique-nique dimanche. Complétez le dialogue.",
+    "points": 10,
+    "support": {
+      "situation": "Un ami vous invite à un pique-nique au parc dimanche.",
+      "interlocuteur": "Votre ami",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Salut ! Dimanche, on fait un pique-nique au parc. Tu viens ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Salut ! Oui, je viens avec plaisir.",
+          "variantes": [
+            "Salut ! Oui, je suis libre dimanche."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "On se retrouve à 11 heures devant la gare. Tu peux ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, je peux. J’apporte quoi ?",
+          "variantes": [
+            "D’accord. Je viens en bus."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Apporte quelque chose à boire, s’il te plaît."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "D’accord, j’apporte du jus et de l’eau.",
+          "variantes": [
+            "Je peux apporter une salade aussi ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, super. À dimanche !"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "À dimanche ! Au revoir.",
+          "variantes": [
+            "À bientôt ! Merci pour l’invitation."
+          ]
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "Grille (10 points) : chaque réplique répond à la question et respecte la situation (4 × 1,5) ; politesse et registre (2) ; langue et orthographe (2)."
+  },
+  {
+    "id": "tcf-a2-dlg-tourisme",
+    "niveau": "A1-A2",
+    "competence": "PE",
+    "type_exercice": "dialogue_a_completer",
+    "theme": "Dialogue · À l’office du tourisme",
+    "scenario": "vacances",
+    "scene": "À l’office du tourisme",
+    "consigne": "Vous voulez visiter la ville aujourd’hui. Complétez le dialogue.",
+    "points": 10,
+    "support": {
+      "situation": "Vous êtes à l’office du tourisme. Vous voulez visiter le centre-ville à pied.",
+      "interlocuteur": "L’employé",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour. Vous cherchez une visite ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. Oui, qu’est-ce qu’on peut visiter aujourd’hui ?",
+          "variantes": [
+            "Bonjour. Est-ce qu’il y a une visite du centre à pied ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "La visite à pied commence à 14 heures, devant l’office."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "C’est combien pour une personne ?",
+          "variantes": [
+            "D’accord. Elle dure combien de temps ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "15 francs, et elle dure une heure et demie."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Je prends une place, s’il vous plaît.",
+          "variantes": [
+            "Très bien, je viens à 14 heures."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Voilà votre ticket. Bonne visite !"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci beaucoup. Au revoir !",
+          "variantes": [
+            "Merci. Bonne journée !"
+          ]
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "Grille (10 points) : chaque réplique répond à la question et respecte la situation (4 × 1,5) ; politesse et registre (2) ; langue et orthographe (2)."
+  },
+  {
+    "id": "tcf-a2-dlg-taxi",
+    "niveau": "A1-A2",
+    "competence": "PE",
+    "type_exercice": "dialogue_a_completer",
+    "theme": "Dialogue · Prendre un taxi",
+    "scenario": "transports",
+    "scene": "Dans un taxi",
+    "consigne": "Vous prenez un taxi pour aller à la gare. Complétez le dialogue.",
+    "points": 10,
+    "support": {
+      "situation": "Vous montez dans un taxi. Vous devez être à la gare avant 18 heures.",
+      "interlocuteur": "Le chauffeur",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour. Où est-ce que je vous emmène ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. À la gare, s’il vous plaît.",
+          "variantes": [
+            "Bonjour. Je vais à la gare, j’ai un train à 18 heures."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "D’accord. Vous êtes pressé ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, parce que mon train part à 18 heures.",
+          "variantes": [
+            "Oui, un peu. On a le temps ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, on arrive vers 17 h 40. Ça va ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, parfait. Merci.",
+          "variantes": [
+            "Oui, c’est bien."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Nous y sommes. Ça fait 22 francs."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Voilà. Merci et au revoir !",
+          "variantes": [
+            "Je paie par carte. Bonne soirée !"
+          ]
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "Grille (10 points) : chaque réplique répond à la question et respecte la situation (4 × 1,5) ; politesse et registre (2) ; langue et orthographe (2)."
+  },
+  {
+    "id": "tcf-a2-dlg-bibliotheque",
+    "niveau": "A1-A2",
+    "competence": "PE",
+    "type_exercice": "dialogue_a_completer",
+    "theme": "Dialogue · S’inscrire à la bibliothèque",
+    "scenario": "ecole",
+    "scene": "S’inscrire à la bibliothèque",
+    "consigne": "Vous voulez une carte de bibliothèque. Complétez le dialogue.",
+    "points": 10,
+    "support": {
+      "situation": "Vous voulez vous inscrire à la bibliothèque pour emprunter des livres.",
+      "interlocuteur": "La bibliothécaire",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour. Je peux vous aider ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. Je voudrais une carte de bibliothèque, s’il vous plaît.",
+          "variantes": [
+            "Bonjour. Est-ce que je peux m’inscrire aujourd’hui ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui. Vous avez une pièce d’identité et une adresse ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, voici ma carte d’identité. J’habite à Sion.",
+          "variantes": [
+            "Oui, j’ai mon passeport et mon adresse."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "La carte est gratuite. Vous pouvez emprunter cinq livres."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Très bien. Je peux prendre un livre aujourd’hui ?",
+          "variantes": [
+            "D’accord. Pendant combien de temps ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, pendant trois semaines. Bonne lecture !"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci beaucoup. Au revoir !",
+          "variantes": [
+            "Merci. Bonne journée !"
+          ]
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "Grille (10 points) : chaque réplique répond à la question et respecte la situation (4 × 1,5) ; politesse et registre (2) ; langue et orthographe (2)."
+  },
+  {
+    "id": "tcf-a2-dlg-travail",
+    "niveau": "A1-A2",
+    "competence": "PE",
+    "type_exercice": "dialogue_a_completer",
+    "theme": "Dialogue · Une pause avec un collègue",
+    "scenario": "travail",
+    "scene": "Au travail",
+    "consigne": "Un collègue vous propose de prendre un café. Complétez le dialogue.",
+    "points": 10,
+    "support": {
+      "situation": "Un collègue vous propose une pause café avant la réunion de 15 heures.",
+      "interlocuteur": "Votre collègue",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Salut ! Tu as cinq minutes pour un café ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Salut ! Oui, je viens. La réunion est à quelle heure ?",
+          "variantes": [
+            "Salut ! Oui, avec plaisir. On a le temps ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "À 15 heures, en salle 2. Tu as lu le message ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Pas encore. C’est à propos de quoi ?",
+          "variantes": [
+            "Non, je vais le lire maintenant."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "On parle du planning de la semaine prochaine."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "D’accord, merci. Je prends un café et j’arrive.",
+          "variantes": [
+            "Très bien. Je prépare mes questions."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Parfait. À tout à l’heure en salle 2 !"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "À tout à l’heure !",
+          "variantes": [
+            "À bientôt !"
+          ]
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "Grille (10 points) : chaque réplique répond à la question et respecte la situation (4 × 1,5) ; politesse et registre (2) ; langue et orthographe (2)."
+  },
+  {
+    "id": "tcf-a2-dlg-secretariat",
+    "niveau": "A1-A2",
+    "competence": "PE",
+    "type_exercice": "dialogue_a_completer",
+    "theme": "Dialogue · Au secrétariat de l’école",
+    "scenario": "ecole",
+    "scene": "Au secrétariat",
+    "consigne": "Vous n’avez pas pu venir au cours d’hier. Vous expliquez pourquoi. Complétez le dialogue.",
+    "points": 10,
+    "support": {
+      "situation": "Vous allez au secrétariat. Vous étiez absent au cours d’hier parce que vous étiez malade.",
+      "interlocuteur": "La secrétaire",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour. Vous vouliez me voir ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. Oui, j’étais absent hier au cours de français.",
+          "variantes": [
+            "Bonjour. Je voudrais expliquer mon absence d’hier."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Qu’est-ce qui s’est passé ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "J’étais malade. J’avais de la fièvre.",
+          "variantes": [
+            "Je suis allé chez le médecin, j’avais mal à la gorge."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Vous avez un mot du médecin ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, le voilà.",
+          "variantes": [
+            "Pas encore. Je peux l’apporter demain ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Très bien. Bon rétablissement, et à demain."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci. Au revoir !",
+          "variantes": [
+            "Merci beaucoup. Bonne journée !"
+          ]
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "Grille (10 points) : chaque réplique répond à la question et respecte la situation (4 × 1,5) ; politesse et registre (2) ; langue et orthographe (2)."
+  },
+  {
+    "id": "tcf-a2-dlg-velo",
+    "niveau": "A1-A2",
+    "competence": "PE",
+    "type_exercice": "dialogue_a_completer",
+    "theme": "Dialogue · Louer un vélo",
+    "scenario": "vacances",
+    "scene": "Louer un vélo",
+    "consigne": "Vous voulez louer un vélo pour l’après-midi. Complétez le dialogue.",
+    "points": 10,
+    "support": {
+      "situation": "Vous voulez louer un vélo de 14 heures à 18 heures.",
+      "interlocuteur": "L’employé",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour. Vous voulez louer un vélo ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. Oui, pour cet après-midi, s’il vous plaît.",
+          "variantes": [
+            "Bonjour. Est-ce qu’il vous reste un vélo ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Jusqu’à quelle heure ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Jusqu’à 18 heures. C’est possible ?",
+          "variantes": [
+            "De 14 heures à 18 heures."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui. C’est 20 francs, et il faut une pièce d’identité."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Voilà ma carte. Je paie maintenant ?",
+          "variantes": [
+            "D’accord. Voici mon passeport."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui. Voici le cadenas. Bonne promenade !"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci beaucoup. Au revoir !",
+          "variantes": [
+            "Merci. Bonne journée !"
+          ]
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "Grille (10 points) : chaque réplique répond à la question et respecte la situation (4 × 1,5) ; politesse et registre (2) ; langue et orthographe (2)."
+  },
+  {
+    "id": "tcf-a2-dlg-banque",
+    "niveau": "A1-A2",
+    "competence": "PE",
+    "type_exercice": "dialogue_a_completer",
+    "theme": "Dialogue · Un rendez-vous à la banque",
+    "scenario": "lieux-publics",
+    "scene": "À la banque",
+    "consigne": "Vous voulez un rendez-vous à la banque pour ouvrir un compte. Complétez le dialogue.",
+    "points": 10,
+    "support": {
+      "situation": "Vous entrez dans une banque. Vous voulez prendre rendez-vous pour ouvrir un compte.",
+      "interlocuteur": "L’employé",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour. Qu’est-ce que je peux faire pour vous ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. Je voudrais ouvrir un compte. C’est possible aujourd’hui ?",
+          "variantes": [
+            "Bonjour. Est-ce que je peux prendre rendez-vous ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Pas aujourd’hui, mais demain à 10 heures. Ça vous va ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, demain à 10 heures, c’est parfait.",
+          "variantes": [
+            "Est-ce qu’il y a une place jeudi matin ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Apportez une pièce d’identité et un justificatif d’adresse."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "D’accord. Une facture, ça va ?",
+          "variantes": [
+            "Très bien. J’apporte mon passeport."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui. À demain, alors."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci. Au revoir !",
+          "variantes": [
+            "Merci beaucoup. Bonne journée !"
+          ]
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "Grille (10 points) : chaque réplique répond à la question et respecte la situation (4 × 1,5) ; politesse et registre (2) ; langue et orthographe (2)."
+  },
+  {
+    "id": "tcf-a2-dlg-musee",
+    "niveau": "A1-A2",
+    "competence": "PE",
+    "type_exercice": "dialogue_a_completer",
+    "theme": "Dialogue · Au musée",
+    "scenario": "loisirs",
+    "scene": "Au musée",
+    "consigne": "Vous voulez entrer au musée. Complétez le dialogue.",
+    "points": 10,
+    "support": {
+      "situation": "Vous êtes à l’entrée du musée. Vous voulez un billet et vous demandez les horaires.",
+      "interlocuteur": "L’employé",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour. Un billet pour aujourd’hui ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. Oui, un billet, s’il vous plaît. Vous fermez à quelle heure ?",
+          "variantes": [
+            "Bonjour. C’est combien l’entrée ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Nous fermons à 18 heures. Le billet est à 12 francs."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "D’accord, je le prends.",
+          "variantes": [
+            "Très bien. Il y a un tarif réduit ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, pour les étudiants. Vous avez une carte ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, la voilà.",
+          "variantes": [
+            "Non, je paie le tarif normal."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Voilà. Bonne visite !"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci. Au revoir !",
+          "variantes": [
+            "Merci beaucoup. Bonne journée !"
+          ]
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "Grille (10 points) : chaque réplique répond à la question et respecte la situation (4 × 1,5) ; politesse et registre (2) ; langue et orthographe (2)."
+  },
+  {
+    "id": "tcf-a2-dlg-coiffeur",
+    "niveau": "A1-A2",
+    "competence": "PE",
+    "type_exercice": "dialogue_a_completer",
+    "theme": "Dialogue · Un rendez-vous chez le coiffeur",
+    "scenario": "vie-quotidienne",
+    "scene": "Rendez-vous chez le coiffeur",
+    "consigne": "Vous téléphonez pour prendre rendez-vous chez le coiffeur. Complétez le dialogue.",
+    "points": 10,
+    "support": {
+      "situation": "Vous téléphonez chez le coiffeur. Vous voulez un rendez-vous samedi matin.",
+      "interlocuteur": "L’employé",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour, salon Léman. Je vous écoute."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. Je voudrais un rendez-vous samedi matin, s’il vous plaît.",
+          "variantes": [
+            "Bonjour. Est-ce que vous avez une place samedi ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Samedi à 9 h 30 ou à 11 heures. Vous préférez quand ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "À 9 h 30, s’il vous plaît.",
+          "variantes": [
+            "À 11 heures, parce que je travaille avant."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Pour une coupe seulement ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, une coupe, pas une couleur.",
+          "variantes": [
+            "Oui, juste couper un peu, s’il vous plaît."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "C’est noté au nom de qui ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Lina Rossi. Merci et au revoir !",
+          "variantes": [
+            "Karim Benali. Bonne journée !"
+          ]
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "Grille (10 points) : chaque réplique répond à la question et respecte la situation (4 × 1,5) ; politesse et registre (2) ; langue et orthographe (2)."
+  },
+  {
+    "id": "tcf-a2-dlg-rayon",
+    "niveau": "A1-A2",
+    "competence": "PE",
+    "type_exercice": "dialogue_a_completer",
+    "theme": "Dialogue · Chercher un produit",
+    "scenario": "magasins",
+    "scene": "Chercher un produit",
+    "consigne": "Au supermarché, vous ne trouvez pas l’huile. Complétez le dialogue.",
+    "points": 10,
+    "support": {
+      "situation": "Vous êtes au supermarché. Vous ne trouvez pas l’huile d’olive.",
+      "interlocuteur": "L’employé",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour. Vous avez besoin d’aide ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. Oui, où est l’huile d’olive, s’il vous plaît ?",
+          "variantes": [
+            "Bonjour. Je cherche l’huile, je ne la trouve pas."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Au rayon 5, à côté des pâtes."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci. Vous avez aussi du riz ?",
+          "variantes": [
+            "D’accord. Et le riz, c’est le même rayon ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, juste en face. Autre chose ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Non, c’est tout. Merci.",
+          "variantes": [
+            "Oui, le sel aussi, s’il vous plaît."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Je vous en prie. Bonne journée !"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci. Au revoir !",
+          "variantes": [
+            "Merci beaucoup. Bonne journée !"
+          ]
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "Grille (10 points) : chaque réplique répond à la question et respecte la situation (4 × 1,5) ; politesse et registre (2) ; langue et orthographe (2)."
+  },
+  {
+    "id": "tcf-a2-dlg-restaurant-ami",
+    "niveau": "A1-A2",
+    "competence": "PE",
+    "type_exercice": "dialogue_a_completer",
+    "theme": "Dialogue · Invité au restaurant",
+    "scenario": "fetes",
+    "scene": "Invité au restaurant",
+    "consigne": "Un ami vous invite au restaurant ce soir. Complétez le dialogue.",
+    "points": 10,
+    "support": {
+      "situation": "Un ami vous invite au restaurant ce soir. Vous pouvez venir, mais pas avant 19 h 30.",
+      "interlocuteur": "Votre ami",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Salut ! Tu veux dîner avec moi ce soir ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Salut ! Oui, avec plaisir. À quelle heure ?",
+          "variantes": [
+            "Salut ! Oui, je suis libre. Où est-ce qu’on va ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Au restaurant du port, à 19 heures. Tu peux ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Je peux venir, mais pas avant 19 h 30.",
+          "variantes": [
+            "19 heures, c’est un peu tôt. 19 h 30, ça va ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "D’accord, 19 h 30. Tu aimes le poisson ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, beaucoup. Je prends le poisson.",
+          "variantes": [
+            "Oui. Je ne mange pas de viande, le poisson c’est parfait."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Super. On se retrouve devant le restaurant. À ce soir !"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "À ce soir ! Merci pour l’invitation.",
+          "variantes": [
+            "À tout à l’heure ! Au revoir."
+          ]
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "Grille (10 points) : chaque réplique répond à la question et respecte la situation (4 × 1,5) ; politesse et registre (2) ; langue et orthographe (2)."
+  },
+  {
+    "id": "tcf-a2-dlg-appartement",
+    "niveau": "A1-A2",
+    "competence": "PE",
+    "type_exercice": "dialogue_a_completer",
+    "theme": "Dialogue · Visiter un appartement",
+    "scenario": "maison",
+    "scene": "Visiter un appartement",
+    "consigne": "Vous visitez un appartement. Vous posez des questions simples. Complétez le dialogue.",
+    "points": 10,
+    "support": {
+      "situation": "Vous visitez un appartement de deux pièces. Vous voulez savoir le loyer et les charges.",
+      "interlocuteur": "Le propriétaire",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour. Entrez, je vous montre l’appartement."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. Merci. Il y a combien de pièces ?",
+          "variantes": [
+            "Bonjour. C’est un appartement pour deux personnes ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Deux pièces et une cuisine. Le loyer est de 1 200 francs."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Les charges sont comprises ?",
+          "variantes": [
+            "D’accord. Et les charges, c’est combien ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Non, les charges sont de 150 francs par mois."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "C’est disponible quand ?",
+          "variantes": [
+            "Je peux emménager le 1er du mois prochain ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "À partir du 1er avril. Réfléchissez et rappelez-moi."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Très bien. Merci pour la visite. Au revoir !",
+          "variantes": [
+            "D’accord, je vous rappelle. Bonne journée !"
+          ]
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "Grille (10 points) : chaque réplique répond à la question et respecte la situation (4 × 1,5) ; politesse et registre (2) ; langue et orthographe (2)."
   }
 ]
