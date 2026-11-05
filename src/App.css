@@ -1301,7 +1301,21 @@ html,body,#root{
 }
 /* TCF : « Page » dans la marge droite (cette question et les suivantes → page suivante). */
 .a4-frame .worksheet-sheet .draft-grid-chip-margin.tcf-page-chip{
-  left:calc(100% + 2px);right:auto
+  left:calc(100% + 2px);right:auto;
+  /* Même diamètre que les icônes de format (22 px). */
+  width:22px;height:22px;max-width:none;padding:0;border-radius:999px;
+  border:1.5px solid var(--ink);background:transparent;color:var(--ink);
+  font-size:0;letter-spacing:0;text-transform:none;overflow:visible
+}
+.a4-frame .worksheet-sheet .draft-grid-chip-margin.tcf-page-chip svg{display:block}
+.a4-frame .worksheet-sheet .draft-grid-chip-margin.tcf-page-chip.on{
+  border-color:var(--ink);background:var(--lavender);color:var(--ink);opacity:1
+}
+.a4-frame .worksheet-sheet .draft-grid-chip-margin.tcf-page-chip.off{opacity:1}
+/* Cadre Audio N : aligner format + Page sur le trait noir du haut (pas sur le label). */
+.exercise-item.layout-tcf:has(.tcf-question.is-audio-frame) > .draft-grid-chip-margin.tcf-margin-form-icons,
+.exercise-item.layout-tcf:has(.tcf-question.is-audio-frame) > .draft-grid-chip-margin.tcf-page-chip{
+  top:calc(var(--ex-pad-y) + 20px)
 }
 .draft-pad{
   /* 24 colonnes × 5 lignes en 1 col ; on multiplie les lignes par le nombre de colonnes
@@ -4361,7 +4375,7 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-yn-option{display:inline-flex;align-items:center;gap:5px}
 .tcf-yn-label{font-weight:700;font-size:.95em}
 .tcf-score-note{margin:0;font-size:.85em;color:var(--muted)}
-.tcf-lignes{display:flex;flex-direction:column;gap:2px}
+.tcf-lignes{display:flex;flex-direction:column;gap:2px;padding-bottom:10px}
 .tcf-ligne{height:9mm;min-height:9mm}
 .tcf-ligne.is-plain{border-bottom-color:transparent}
 .tcf-ligne.filled.is-plain{color:var(--purple);font-weight:600}
