@@ -1,4 +1,5 @@
 import { useState, type ReactNode } from 'react'
+import { SheetCopy } from '@/components/sheet-copy'
 import type { PreviewMode } from '@/math/types'
 import {
   associationAnswersFromExercise,
@@ -16,7 +17,7 @@ function Paragraphs({ text }: { text: string }) {
         .filter((p) => p.trim())
         .map((p, i) => (
           <p key={i} className="tcf-text">
-            {p}
+            <SheetCopy text={p} />
           </p>
         ))}
     </>
@@ -302,7 +303,11 @@ export function TexteSupport({ exercise: ex, mode }: { exercise: TcfExercise; mo
           ) : (
             <TcfImage src={ex.support.image} alt="Image de l’exercice" />
           )}
-          {ex.support.consigne.trim() ? <p className="tcf-question-text">{ex.support.consigne}</p> : null}
+          {ex.support.consigne.trim() ? (
+            <p className="tcf-question-text">
+              <SheetCopy text={ex.support.consigne} />
+            </p>
+          ) : null}
         </div>
       )
     }
@@ -310,18 +315,26 @@ export function TexteSupport({ exercise: ex, mode }: { exercise: TcfExercise; mo
       return (
         <div>
           <SmsBubble from={ex.support.expediteur} text={ex.support.sms_recu} />
-          <p className="tcf-question-text">{ex.support.consigne}</p>
+          <p className="tcf-question-text">
+            <SheetCopy text={ex.support.consigne} />
+          </p>
         </div>
       )
     case 'email_reponse':
       return (
         <div>
           <EmailBox {...ex.support.email_recu} />
-          <p className="tcf-question-text">{ex.support.consigne}</p>
+          <p className="tcf-question-text">
+            <SheetCopy text={ex.support.consigne} />
+          </p>
         </div>
       )
     case 'question_texte':
-      return <p className="tcf-question-text is-large">{ex.support.consigne}</p>
+      return (
+        <p className="tcf-question-text is-large">
+          <SheetCopy text={ex.support.consigne} />
+        </p>
+      )
     case 'entretien': {
       if (mode !== 'answers') return null
       const echanges =

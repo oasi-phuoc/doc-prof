@@ -1,4 +1,5 @@
-import { type CSSProperties, type ReactNode } from 'react'
+import { type CSSProperties } from 'react'
+import { renderSheetCopy } from '@/components/sheet-copy'
 import { ItemView, tokenizeAlgebra } from '@/components/ItemView'
 import {
   ALPHA_SOUTIEN_REFERENCE,
@@ -56,63 +57,6 @@ export function fallbackBlocks(page: WorksheetPage): WorksheetBlock[] {
       oralAnswerModes: page.oralAnswerModes,
     },
   ]
-}
-
-/** Icône sonnerie (consignes CO TCF : [[bell]]). */
-function InstructionBellIcon() {
-  return (
-    <svg
-      className="tcf-bell-icon"
-      viewBox="0 0 24 24"
-      width="1.15em"
-      height="1.15em"
-      aria-hidden
-      focusable="false"
-    >
-      <path
-        fill="currentColor"
-        d="M12 22a2.5 2.5 0 0 0 2.45-2h-4.9A2.5 2.5 0 0 0 12 22zm8-6v-5a8 8 0 1 0-16 0v5l-2 2v1h20v-1l-2-2z"
-      />
-    </svg>
-  )
-}
-
-/**
- * Consigne fiche : déterminants Soutien (type 10) + marqueurs TCF
- * `[[em]]…[[/em]]` (gras couleur thème) et `[[bell]]` (sonnerie).
- */
-export function renderSoutienInstruction(text: string): ReactNode {
-  const marker = 'Complétez avec les déterminants '
-  if (text.startsWith(marker) && !text.includes('[[')) {
-    return (
-      <>
-        {marker}
-        <span className="det-choice">l’</span>, <span className="det-choice">le</span>,{' '}
-        <span className="det-choice">la</span> ou <span className="det-choice">les</span>.
-      </>
-    )
-  }
-  if (!text.includes('[[')) return text
-  const parts: ReactNode[] = []
-  const re = /\[\[em\]\]([\s\S]*?)\[\[\/em\]\]|\[\[bell\]\]/g
-  let last = 0
-  let match: RegExpExecArray | null
-  let key = 0
-  while ((match = re.exec(text)) !== null) {
-    if (match.index > last) parts.push(text.slice(last, match.index))
-    if (match[0] === '[[bell]]') {
-      parts.push(<InstructionBellIcon key={`bell-${key++}`} />)
-    } else {
-      parts.push(
-        <span className="det-choice" key={`em-${key++}`}>
-          {match[1]}
-        </span>,
-      )
-    }
-    last = match.index + match[0].length
-  }
-  if (last < text.length) parts.push(text.slice(last))
-  return <>{parts}</>
 }
 
 export function RefreshIcon() {
@@ -400,7 +344,7 @@ export function WorksheetSheet({
                     ) : null}
                   </div>
                   {block.instruction ? (
-                    <p className="exercise-instruction">{renderSoutienInstruction(block.instruction)}</p>
+                    <p className="exercise-instruction">{renderSheetCopy(block.instruction)}</p>
                   ) : null}
                   {block.exerciseType === 'addition-decompose' ? <DecomposeExample op="+" /> : null}
                   {block.exerciseType === 'soustraction-decompose' ? <DecomposeExample op="−" /> : null}
@@ -428,7 +372,7 @@ export function WorksheetSheet({
                     </audio>
                   ) : null}
                   {block.document.kind === 'written' || mode === 'answers' ? (
-                    <p className="exercise-document-text">{block.document.text}</p>
+                    <p className="exercise-document-text">{renderSheetCopy(block.document.text)}</p>
                   ) : (
                     <p className="exercise-document-listen">Écoutez le dialogue. La transcription figure au corrigé.</p>
                   )}

@@ -2063,6 +2063,16 @@ html,body,#root{
 .exercise-heading p{margin:3px 0 0;font-size:calc(13pt * var(--app-font-scale, 1));line-height:1.45;text-align:justify;white-space:pre-line}
 /* Consigne pleine largeur (points dans la title-row, plus de retrait à droite). */
 .exercise-heading .exercise-instruction{width:100%;max-width:100%;text-align:justify;white-space:pre-line}
+/* Numérotation et puces : colonne du repère, texte au même taquet, retour sous le texte. */
+.sheet-copy-line{display:block;white-space:pre-line}
+.sheet-num-list{display:block;margin:0;white-space:normal}
+.sheet-num-li{
+  display:grid;grid-template-columns:2.4em minmax(0,1fr);column-gap:.45em;align-items:baseline
+}
+.sheet-num-marker{
+  text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap
+}
+.sheet-num-text{min-width:0;text-align:justify}
 .exercise-heading .exercise-instruction .tcf-bell-icon{
   display:inline-block;vertical-align:-0.2em;margin:0 0.15em;color:var(--purple)
 }
