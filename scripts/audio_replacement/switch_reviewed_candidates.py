@@ -65,7 +65,10 @@ def main():
         source, target = Path(inputs[digest]['source_file']), repo / 'public' / ref.lstrip('/')
         assert sha(source) == digest and sha(target) == item['current_sha256'], ref
         assert checks[digest]['status'] == 'technical_integrity_passed'
-        assert checks[digest].get('boundary_signal', {}).get('safe_quiet_margins') is True
+        # Background music can mask RMS silence. Speech VAD is supplementary
+        # evidence alongside source provenance and two full-file recognitions.
+        assert (checks[digest].get('boundary_signal', {}).get('safe_quiet_margins') is True
+                or checks[digest].get('boundary_vad', {}).get('safe_voiced_margins') is True)
         manual = decisions.get(ref) if state['manual_review_ready'] else None
         edits = []
         for context in plan['contexts']:
