@@ -127,15 +127,24 @@ export function parseAccessDomainList(raw: string | undefined): Domain[] {
 }
 
 /**
+ * Compte full (`jebosseplus`) : TCF CSC et TCF CFR, jamais TPF
+ * (TPF reste réservé au compte admin).
+ */
+const FULL_TCF_DOMAINS: readonly Domain[] = ['tcf-csc', 'tcf-cfr']
+
+/**
  * Domaines FULL / PARTIAL d’après l’env (source de vérité).
- * - **full** : `VITE_ACCESS_DOMAINS_FULL` (TCF / TCM autorisés s’ils y figurent).
- *   Liste vide ou absente → domaines réguliers seulement.
+ * - **full** : `VITE_ACCESS_DOMAINS_FULL`, plus TCF CSC et TCF CFR.
+ *   TPF est retiré même s’il figure dans la liste. Liste vide ou absente
+ *   → domaines réguliers + TCF CSC / CFR.
  * - **partial** : `VITE_ACCESS_DOMAINS_PARTIAL` (défaut algèbre + géométrie).
  */
 function domainsFromEnv(account: 'full' | 'partial'): Domain[] {
   if (account === 'full') {
     const fromEnv = parseDomainList(import.meta.env.VITE_ACCESS_DOMAINS_FULL, [])
-    return fromEnv.length > 0 ? fromEnv : [...REGULAR_DOMAIN_IDS]
+    const base = fromEnv.length > 0 ? fromEnv : [...REGULAR_DOMAIN_IDS]
+    const withoutTpf = base.filter((domain) => domain !== 'tpf')
+    return [...new Set<Domain>([...withoutTpf, ...FULL_TCF_DOMAINS])]
   }
   return parseDomainList(import.meta.env.VITE_ACCESS_DOMAINS_PARTIAL, [
     'algèbre',
