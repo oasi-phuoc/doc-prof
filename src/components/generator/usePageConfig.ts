@@ -7,6 +7,7 @@ import {
   resizeDraftGrids,
   resizeOralAnswerModes,
 } from '@/components/generator/page-helpers'
+import { blockItemsForConfig } from '@/components/generator/sheet-items'
 import { defaultCoordQuestionReply } from '@/components/generator/WorksheetSheet'
 import { isPhraseLibreEditable } from '@/francais/PhraseLibreEditor'
 import {
@@ -348,14 +349,17 @@ export function usePageConfig({
     if (isPhraseDomain && isPhraseLibreEditable(activeBlock.exerciseType)) return
     if (isCalliDomain || isJeuxDomain || isTcf) return
     if (activeBlock.libreItems && activeBlock.libreItems.length > 0) return
+    const full = blockItemsForConfig(worksheets, pageIndex, safeBlockIndex)
     const block = activeSheet?.blocks[safeBlockIndex]
-    if (!block?.items?.length) return
+    const items = full?.items?.length ? full.items : block?.items
+    if (!items?.length) return
+    const instruction = full?.instruction || block?.instruction || ''
     setPages((current) =>
       current.map((page, index) =>
         index === pageIndex
           ? setPageBlock(page, safeBlockIndex, {
-              libreItems: block.items,
-              libreInstruction: block.instruction,
+              libreItems: items,
+              libreInstruction: instruction,
             })
           : page,
       ),
@@ -371,6 +375,7 @@ export function usePageConfig({
     activeBlock.contentSeed,
     seed,
     activeSheet,
+    worksheets,
     safeBlockIndex,
     pageIndex,
     setPages,

@@ -396,8 +396,16 @@ export function buildPage(
     const isTheory = isGrammarTheoryType(block.exerciseType) || isGrammaireTheoryType(block.exerciseType)
     const isJeux = block.exerciseType.startsWith('jeux-')
     const isTpmConsignes = isInfoPageType(block.exerciseType)
+    // Une feuille « suite » ne doit pas figer seulement sa tranche : sinon le mode
+    // libre efface la page des premières questions.
+    const libreIsPartialSlice =
+      isTpfFamilyDomain(page.domain) &&
+      Boolean(block.tcfPageBreakAfter?.some((on, i) => on && i < result.items.length - 1)) &&
+      Array.isArray(block.libreItems) &&
+      block.libreItems.length > 0 &&
+      block.libreItems.length < result.items.length
     const libre =
-      Array.isArray(block.libreItems) && block.libreItems.length > 0
+      !libreIsPartialSlice && Array.isArray(block.libreItems) && block.libreItems.length > 0
         ? {
             items: block.libreItems,
             instruction: block.libreInstruction ?? result.instruction,

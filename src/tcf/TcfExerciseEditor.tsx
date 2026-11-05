@@ -3,6 +3,7 @@ import { SelectBox } from '@/components/generator/SelectBox'
 import { RefreshIcon } from '@/components/generator/WorksheetSheet'
 import {
   applyAssociationDialogueSlot,
+  applyAudioSlotFromEntry,
   applyExerciseFromAudioBank,
   TCF_AUDIO_TAG_SCENARIO,
   tcfAudioEntries,
@@ -241,6 +242,8 @@ function SupportEditor({
   audioEntries?: readonly TcfAudioEntry[]
 }) {
   const pickAudio = (entry: TcfAudioEntry) => set(applyExerciseFromAudioBank(ex, entry.exercise))
+  const pickSlot = (slotIndex: number) => (entry: TcfAudioEntry) =>
+    set(applyAudioSlotFromEntry(ex, entry, slotIndex))
   const audioBank = audioEntries && audioEntries.length > 0 ? audioEntries : undefined
 
   switch (ex.type_exercice) {
@@ -368,7 +371,7 @@ function SupportEditor({
                 set(withSupport(ex, { audios: ex.support.audios.map((a, k) => (k === i ? next : a)) }))
               }
               bankEntries={audioBank}
-              onPickFromBank={pickAudio}
+              onPickFromBank={pickSlot(i)}
             />
           ))}
         </>
@@ -388,7 +391,7 @@ function SupportEditor({
                   set(withSupport(ex, { audios: ex.support.audios!.map((a, k) => (k === i ? next : a)), audio: undefined }))
                 }
                 bankEntries={audioBank}
-                onPickFromBank={pickAudio}
+                onPickFromBank={pickSlot(i)}
               />
             ))}
             {ex.support.audios!.map((_, i) => (
@@ -1081,7 +1084,7 @@ export function TcfExerciseEditor({
   const fallback = useMemo(() => {
     if (isGrammaire) return fallbackExercise ? structuredClone(fallbackExercise) : undefined
     if (!slot) return undefined
-    const source = [tcfExerciseById(bankId), tcfExerciseById(shownId), bank[0]].find(
+    const source = [tcfExerciseById(bankId), fallbackExercise, tcfExerciseById(shownId), bank[0]].find(
       (ex) => ex != null && ex.competence === slot.competence,
     )
     if (source) {

@@ -54,6 +54,8 @@ export type LibreSidePanelProps = {
   jeuxTemplate: GameTemplate | null | undefined
   jeuxText: string
   tcfNiveau: TcfNiveau
+  /** Exercice réellement affiché, même s’il est sur une autre feuille de la suite. */
+  renderedExercise?: TcfExercise
   updatePage: (patch: Partial<ExerciseBlock>) => void
   onClose: () => void
   /** Régénère l’exercice actif (autres nombres / autre tirage banque). */
@@ -86,6 +88,7 @@ export function LibreSidePanel({
   jeuxTemplate,
   jeuxText,
   tcfNiveau,
+  renderedExercise,
   updatePage,
   onRegenerateBlock,
   onClose,
@@ -258,6 +261,7 @@ export function LibreSidePanel({
             bankId={activeBlock.tcfBankId}
             shownId={activeSheet?.blocks[safeBlockIndex]?.items.find((item) => item.tcfExerciseId)?.tcfExerciseId}
             questionCount={activeBlock.tcfQuestionCount}
+            fallbackExercise={renderedExercise ?? tcfSupportExercise(activeSheet?.blocks[safeBlockIndex]?.items)}
             onChange={(patch) => updatePage(patch)}
           />
         ) : null}
@@ -267,7 +271,9 @@ export function LibreSidePanel({
             niveau={tcfNiveau}
             typeId={activeBlock.exerciseType}
             exercise={activeBlock.tcfExercise}
-            fallbackExercise={tcfSupportExercise(activeSheet?.blocks[safeBlockIndex]?.items)}
+            fallbackExercise={
+              renderedExercise ?? tcfSupportExercise(activeSheet?.blocks[safeBlockIndex]?.items)
+            }
             onChange={(patch) => updatePage(patch)}
             onReroll={() => onRegenerateBlock?.(safeBlockIndex)}
           />

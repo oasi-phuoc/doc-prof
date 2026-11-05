@@ -24,6 +24,7 @@ import {
   pageForA5Half,
   type SheetFormat,
 } from '@/components/generator/sheet-format'
+import { blockItemsForConfig, tcfExerciseOnConfig } from '@/components/generator/sheet-items'
 import {
   ALPHA_SOUTIEN_REFERENCE,
   isAlphaSoutienDomain,
@@ -583,15 +584,21 @@ export function GeneratorPage({
                 setLibreSnapshot(next ? pages : null)
                 if (next) {
                   const sheetBlock = activeSheet?.blocks[safeBlockIndex]
+                  const full = blockItemsForConfig(worksheets, pageIndex, safeBlockIndex)
                   const seedItems = activeBlock.libreItems?.length
                     ? activeBlock.libreItems
-                    : (sheetBlock?.items ?? [])
+                    : (full?.items ?? sheetBlock?.items ?? [])
                   const seedInstruction =
-                    activeBlock.libreInstruction ?? sheetBlock?.instruction ?? ''
-                  const patch: Partial<typeof activeBlock> = {
-                    libreItems: seedItems,
-                    libreInstruction: seedInstruction,
-                  }
+                    activeBlock.libreInstruction ?? full?.instruction ?? sheetBlock?.instruction ?? ''
+                  // TCF / grammaire : l’éditeur porte l’exercice entier. Figer la feuille
+                  // visible (souvent la suite) effaçait la page des premières questions.
+                  const patch: Partial<typeof activeBlock> =
+                    ctx.isTcf || ctx.isGrammaireExercise
+                      ? { libreItems: undefined, libreInstruction: undefined }
+                      : {
+                          libreItems: seedItems,
+                          libreInstruction: seedInstruction,
+                        }
                   if (ctx.isFormes || ctx.isCadrans || ctx.isDroites || ctx.isConstruire || ctx.isTransform) {
                     patch.coordLibre = true
                   }
@@ -665,6 +672,7 @@ export function GeneratorPage({
               jeuxTemplate={ctx.jeuxTemplate}
               jeuxText={ctx.jeuxText}
               tcfNiveau={ctx.tcfNiveau}
+              renderedExercise={tcfExerciseOnConfig(worksheets, pageIndex)}
               updatePage={updatePage}
               onRegenerateBlock={regenerateBlock}
               onClose={() => {

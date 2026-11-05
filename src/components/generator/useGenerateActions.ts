@@ -22,6 +22,7 @@ import type {
 } from '@/math/types'
 import type { InstitutionalHeader } from '@/components/math/PrintDocumentChrome'
 import { clearLibreContentFreeze } from '@/components/generator/page-helpers'
+import { blockItemsForConfig } from '@/components/generator/sheet-items'
 import { patchBlockSeedForHalf } from '@/components/generator/sheet-format'
 import { isTpmFamilyExercise, recalcTpmLibreItems } from '@/tpm/libre-recalc'
 
@@ -145,12 +146,12 @@ export function useGenerateActions({
       if (!libreMode) {
         return current.map((p, i) => (i !== pageIndex ? p : cleared))
       }
-      const built = buildWorksheets(
+      const builtSheets = buildWorksheets(
         current.map((p, i) => (i !== pageIndex ? p : cleared)),
         seed,
-      )[pageIndex]
-      const builtBlock = built?.blocks[safeBlockIndex]
-      if (!builtBlock) {
+      )
+      const builtBlock = blockItemsForConfig(builtSheets, pageIndex, safeBlockIndex)
+      if (!builtBlock || builtBlock.items.length === 0) {
         return current.map((p, i) => (i !== pageIndex ? p : cleared))
       }
       return current.map((p, i) =>
