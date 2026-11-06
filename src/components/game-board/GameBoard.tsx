@@ -51,9 +51,14 @@ function SlotBox({
   )
 }
 
-export function GameBoard({ sheet }: { sheet: WorksheetPage | undefined }) {
+export function GameBoard({
+  sheet,
+  onNewQuestion,
+}: {
+  sheet: WorksheetPage | undefined
+  onNewQuestion: () => void
+}) {
   const rounds = useMemo(() => buildPlayRounds(sheet), [sheet])
-  const [index, setIndex] = useState(0)
   const [placed, setPlaced] = useState<Record<string, string>>({})
   const [choice, setChoice] = useState<string | null>(null)
   const [circled, setCircled] = useState<string[]>([])
@@ -62,8 +67,9 @@ export function GameBoard({ sheet }: { sheet: WorksheetPage | undefined }) {
   const [status, setStatus] = useState<'idle' | 'ok' | 'retry'>('idle')
   const [ghost, setGhost] = useState<{ id: string; x: number; y: number } | null>(null)
   const drag = useRef<Drag | null>(null)
-  const safeIndex = Math.min(index, Math.max(0, rounds.length - 1))
-  const round = rounds[safeIndex]
+  const refresh = useRef(onNewQuestion)
+  refresh.current = onNewQuestion
+  const round = rounds[0]
 
   useEffect(() => {
     setPlaced({})
@@ -75,6 +81,12 @@ export function GameBoard({ sheet }: { sheet: WorksheetPage | undefined }) {
     setGhost(null)
   }, [round?.key])
 
+  useEffect(() => {
+    if (status === 'idle') return
+    const timer = window.setTimeout(() => refresh.current(), 900)
+    return () => window.clearTimeout(timer)
+  }, [status, round?.key])
+
   const chipById = useMemo(() => {
     const map = new Map<string, PlayChip>()
     for (const chip of round?.chips ?? []) map.set(chip.id, chip)
@@ -83,20 +95,22 @@ export function GameBoard({ sheet }: { sheet: WorksheetPage | undefined }) {
   }, [round])
 
   const place = (chipId: string, slotId: string) => {
-    setStatus('idle')
-    setPlaced((prev) => {
-      const next = { ...prev }
-      for (const [slot, id] of Object.entries(next)) {
-        if (id === chipId) delete next[slot]
-      }
-      const occupant = next[slotId]
-      const previous = Object.entries(next).find(([, id]) => id === chipId)?.[0]
-      if (occupant && previous) next[previous] = occupant
-      else if (occupant) delete next[slotId]
-      next[slotId] = chipId
-      return next
-    })
+    if (status !== 'idle' || !round) return
+    const next = { ...placed }
+    for (const [slot, id] of Object.entries(next)) {
+      if (id === chipId) delete next[slot]
+    }
+    next[slotId] = chipId
+    setPlaced(next)
     setPicked(null)
+    const slots = round.slots ?? []
+    if (slots.length > 0 && slots.every((slot) => next[slot.id])) {
+      const good = slots.every((slot) => {
+        const chip = (round.chips ?? []).find((item) => item.id === next[slot.id])
+        return chip ? sameAnswer(chip.label, slot.expected) : false
+      })
+      setStatus(good ? 'ok' : 'retry')
+    }
   }
 
   const release = (chipId: string) => {
@@ -135,55 +149,11 @@ export function GameBoard({ sheet }: { sheet: WorksheetPage | undefined }) {
     else release(current.id)
   }
 
-  const check = () => {
-    if (!round) return
-    if (round.mode === 'choice') {
-      const pickedChip = round.choices?.find((chip) => chip.id === choice)
-      setStatus(pickedChip && sameAnswer(pickedChip.label, round.correctChoice ?? '') ? 'ok' : 'retry')
-      return
-    }
-    if (round.mode === 'slots') {
-      const slots = round.slots ?? []
-      const good = slots.every((slot) => {
-        const chip = chipById.get(placed[slot.id] ?? '')
-        return chip ? sameAnswer(chip.label, slot.expected) : false
-      })
-      setStatus(good ? 'ok' : 'retry')
-      return
-    }
-    if (round.mode === 'circle') {
-      const wanted = new Set((round.pictures ?? []).filter((picture) => picture.correct).map((picture) => picture.id))
-      const got = new Set(circled)
-      const good = wanted.size === got.size && [...wanted].every((id) => got.has(id))
-      setStatus(good ? 'ok' : 'retry')
-      return
-    }
-    if (round.mode === 'color') {
-      setStatus(colored.length === (round.colorTarget ?? 0) ? 'ok' : 'retry')
-    }
-  }
-
-  const reveal = () => {
-    if (!round) return
-    setStatus('ok')
-    if (round.mode === 'choice') {
-      const match = round.choices?.find((chip) => sameAnswer(chip.label, round.correctChoice ?? ''))
-      setChoice(match?.id ?? null)
-    } else if (round.mode === 'slots') {
-      const used = new Set<string>()
-      const next: Record<string, string> = {}
-      for (const slot of round.slots ?? []) {
-        const chip = (round.chips ?? []).find((item) => !used.has(item.id) && sameAnswer(item.label, slot.expected))
-        if (!chip) continue
-        used.add(chip.id)
-        next[slot.id] = chip.id
-      }
-      setPlaced(next)
-    } else if (round.mode === 'circle') {
-      setCircled((round.pictures ?? []).filter((picture) => picture.correct).map((picture) => picture.id))
-    } else if (round.mode === 'color') {
-      setColored(Array.from({ length: round.colorTarget ?? 0 }, (_, i) => i))
-    }
+  const choose = (id: string) => {
+    if (status !== 'idle' || round?.mode !== 'choice') return
+    setChoice(id)
+    const chip = round.choices?.find((item) => item.id === id)
+    setStatus(chip && sameAnswer(chip.label, round.correctChoice ?? '') ? 'ok' : 'retry')
   }
 
   if (!round) {
@@ -204,6 +174,52 @@ export function GameBoard({ sheet }: { sheet: WorksheetPage | undefined }) {
   const used = new Set(Object.values(placed))
   const tray = (round.chips ?? []).filter((chip) => !used.has(chip.id))
   const ghostChip = ghost ? chipById.get(ghost.id) : undefined
+  const verdict = status === 'ok' ? 'C’est juste.' : status === 'retry' ? 'Ce n’est pas juste.' : ''
+
+  if (round.mode === 'choice' && (round.scene.type === 'calc' || round.scene.type === 'column')) {
+    return (
+      <section className={`game-card-play${status !== 'idle' ? ' is-locked' : ''}`} aria-label="Tableau interactif">
+        <div className="game-card-play-expression">
+          {round.scene.type === 'calc' ? (
+            <p className="game-calc-text">{round.scene.text}</p>
+          ) : (
+            <div className="game-column" aria-label="Opération">
+              <span>{round.scene.a}</span>
+              <span>
+                {round.scene.op} {round.scene.b}
+              </span>
+            </div>
+          )}
+        </div>
+        <div className="game-card-play-choices">
+          {(round.choices ?? []).map((chip) => {
+            const selected = choice === chip.id
+            const mark =
+              status !== 'idle' && selected
+                ? sameAnswer(chip.label, round.correctChoice ?? '')
+                  ? 'ok'
+                  : 'bad'
+                : undefined
+            return (
+              <button
+                key={chip.id}
+                type="button"
+                className={`game-chip${selected ? ' is-circled' : ''}${mark ? ` is-${mark}` : ''}`}
+                data-tone={chip.tone}
+                aria-pressed={selected}
+                onClick={() => choose(chip.id)}
+              >
+                <ChipFace chip={chip} />
+              </button>
+            )
+          })}
+        </div>
+        <p className={`game-verdict is-${status}`} role="status">
+          {verdict}
+        </p>
+      </section>
+    )
+  }
 
   return (
     <section className="game-board" aria-label="Tableau interactif">
@@ -212,9 +228,6 @@ export function GameBoard({ sheet }: { sheet: WorksheetPage | undefined }) {
           <p className="game-kicker">{round.exerciseTitle}</p>
           <p className="game-instruction">{round.instruction}</p>
         </div>
-        <p className="game-progress">
-          Question {safeIndex + 1} / {rounds.length}
-        </p>
       </header>
       <div className="game-board-stage">
         <div className="game-zone game-zone-prompt">
@@ -237,10 +250,7 @@ export function GameBoard({ sheet }: { sheet: WorksheetPage | undefined }) {
           <Answer
             round={round}
             choice={choice}
-            setChoice={(id) => {
-              setChoice(id)
-              setStatus('idle')
-            }}
+            setChoice={choose}
             circled={circled}
             toggleCircle={(id) => {
               setCircled((prev) => (prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]))
@@ -275,42 +285,9 @@ export function GameBoard({ sheet }: { sheet: WorksheetPage | undefined }) {
           </div>
         </div>
       ) : null}
-      <footer className="game-board-foot">
-        <button type="button" className="button secondary" onClick={() => setIndex(Math.max(0, safeIndex - 1))} disabled={safeIndex === 0}>
-          Précédent
-        </button>
-        <button type="button" className="button" onClick={check} disabled={round.mode === 'look'}>
-          Vérifier
-        </button>
-        <button
-          type="button"
-          className="button secondary"
-          onClick={() => {
-            setPlaced({})
-            setChoice(null)
-            setCircled([])
-            setColored([])
-            setPicked(null)
-            setStatus('idle')
-          }}
-        >
-          Effacer
-        </button>
-        <button type="button" className="button secondary" onClick={reveal} disabled={round.mode === 'look'}>
-          Montrer la réponse
-        </button>
-        <button
-          type="button"
-          className="button"
-          onClick={() => setIndex(Math.min(rounds.length - 1, safeIndex + 1))}
-          disabled={safeIndex >= rounds.length - 1}
-        >
-          Suivant
-        </button>
-        <p className={`game-status is-${status}`} role="status">
-          {status === 'ok' ? 'C’est juste.' : status === 'retry' ? 'Regardez encore une pièce.' : ''}
-        </p>
-      </footer>
+      <p className={`game-verdict is-${status}`} role="status">
+        {verdict}
+      </p>
       {ghost && ghostChip ? (
         <div className="game-ghost" data-tone={ghostChip.tone} style={{ left: ghost.x, top: ghost.y }}>
           <ChipFace chip={ghostChip} />

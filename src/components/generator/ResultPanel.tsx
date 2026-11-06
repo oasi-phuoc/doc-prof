@@ -262,10 +262,11 @@ export function ResultPanel({
 
   return (
           <section className="result-panel">
+            {boardMode === 'jeu' ? null : (
             <div className="result-head">
               <div>
-                <p className="eyebrow">{boardMode === 'jeu' ? 'Tableau' : 'Aperçu'}</p>
-                <h2>{boardMode === 'jeu' ? 'Projetez l’exercice.' : 'Votre activité est prête.'}</h2>
+                <p className="eyebrow">Aperçu</p>
+                <h2>Votre activité est prête.</h2>
                 {libreMode ? <p className="no-print">Cliquez sur une image de la fiche pour la remplacer.</p> : null}
               </div>
               <div className="result-head-actions no-print">
@@ -440,11 +441,13 @@ export function ResultPanel({
                 ) : null}
               </div>
             </div>
+            )}
             <div className="sheet-preview-wrap no-print-nav">
               {boardMode === 'jeu' ? (
                 <GameBoard
                   key={`${seed}-${safeSheetIndex}-${previewSheet?.exerciseType ?? ''}`}
                   sheet={previewSheet}
+                  onNewQuestion={generate}
                 />
               ) : (
               <div className="sheet-preview-cluster">

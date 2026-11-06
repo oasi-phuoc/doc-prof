@@ -47,6 +47,7 @@ export type PlayScene =
     }
   | { type: 'lines'; prompt: string; lines: Array<{ label: string; slotId: string }> }
   | { type: 'prompt'; text: string }
+  | { type: 'calc'; text: string }
   | { type: 'images'; prompt: string }
   | { type: 'fraction'; kind: 'color' | 'read'; shape: NonNullable<MathItem['fracShape']> }
 
@@ -168,6 +169,26 @@ function choiceLabels(answer: string, siblings: string[], seed: string): string[
   const pool = unique([answer, ...wrong])
   if (pool.length < 2) pool.push(sameAnswer(answer, 'oui') ? 'non' : 'oui')
   return mix(pool.slice(0, 4), seed)
+}
+
+/** Six cartes, une par couleur : la bonne réponse et cinq autres nombres. */
+function sixChoices(answer: string, seed: string): string[] {
+  const wrong: string[] = []
+  const push = (value: string | null | undefined) => {
+    if (!value || sameAnswer(value, answer) || wrong.some((item) => sameAnswer(item, value))) return
+    wrong.push(value)
+  }
+  const deltas = [1, -1, 2, -2, 3, -3, 4, 5, 10, -10, 6, -4, 7, 8, 9, 20, -5, 11, -6, 12]
+  for (const delta of deltas) {
+    push(tweak(answer, delta))
+    if (wrong.length >= 5) break
+  }
+  let step = 13
+  while (wrong.length < 5 && step < 80) {
+    push(tweak(answer, step))
+    step += 1
+  }
+  return mix([answer, ...wrong.slice(0, 5)], seed)
 }
 
 function wordsOf(answer: string): string[] {
@@ -641,15 +662,18 @@ function mathRound(
     const aText = missing === 'a' ? '' : fmt(item.a)
     const bText = missing === 'b' ? '' : fmt(item.b)
     const resultText = missing === 'result' ? '' : fmt(item.result ?? item.a)
+    const labels = sixChoices(item.answer, key)
+    if (missing === 'result') {
+      const scene =
+        item.layout === 'column' || item.layout === 'column-empty' || item.layout === 'division-column'
+          ? ({ type: 'column', a: fmt(item.a), op: item.op, b: fmt(item.b) } as const)
+          : ({ type: 'calc', text: `${fmt(item.a)}${item.op}${fmt(item.b)}` } as const)
+      return [asChoice(key, block, scene, item.answer, siblings, visual, labels)]
+    }
     const scene =
-      item.layout === 'column' || item.layout === 'column-empty' || item.layout === 'division-column'
-        ? ({ type: 'column', a: fmt(item.a), op: item.op, b: fmt(item.b) } as const)
-        : missing === 'a'
-          ? { type: 'stem' as const, before: '', after: `${item.op} ${bText} = ${resultText}`.trim() }
-          : missing === 'b'
-            ? { type: 'stem' as const, before: `${aText} ${item.op}`, after: `= ${resultText}`.trim() }
-            : { type: 'stem' as const, before: `${aText} ${item.op} ${bText} =`, after: '' }
-    const labels = choiceLabels(item.answer, siblings, key)
+      missing === 'a'
+        ? { type: 'stem' as const, before: '', after: `${item.op} ${bText} = ${resultText}`.trim() }
+        : { type: 'stem' as const, before: `${aText} ${item.op}`, after: `= ${resultText}`.trim() }
     return [
       asSlots(
         key,

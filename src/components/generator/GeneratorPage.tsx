@@ -14,6 +14,7 @@ import {
 import { SaveFicheDialog } from '@/components/generator/SaveFicheDialog'
 import { TopbarTools } from '@/components/generator/TopbarTools'
 import { FooterSidePanel } from '@/components/generator/FooterSidePanel'
+import { GameSetupBar } from '@/components/game-board/GameSetupBar'
 import { Header } from '@/components/generator/Header'
 import { LibreSidePanel } from '@/components/generator/LibreSidePanel'
 import { SettingsPanel } from '@/components/generator/SettingsPanel'
@@ -575,6 +576,24 @@ export function GeneratorPage({
             </button>
           </div>
         }
+        centerSlot={
+          boardMode === 'jeu' ? (
+            <GameSetupBar
+              domain={activePage.domain}
+              domains={allowedDomains}
+              topic={activeBlock.topic}
+              topics={available}
+              exerciseType={activeBlock.exerciseType}
+              exercises={typeChoices}
+              difficulty={activeBlock.difficulty}
+              block={activeBlock}
+              onDomain={changeDomain}
+              onTopic={changeTopic}
+              onExercise={updatePage}
+              onDifficulty={updatePage}
+            />
+          ) : null
+        }
         rightSlot={
           <>
             <button
@@ -670,11 +689,11 @@ export function GeneratorPage({
         <div
           className={`workspace${libreMode ? ' has-libre-panel' : ''}${footerPanelOpen ? ' has-footer-panel' : ''}`}
         >
-          <SettingsPanel {...settingsPanelProps} />
+          {boardMode === 'jeu' ? null : <SettingsPanel {...settingsPanelProps} />}
           <WorksheetImageProvider enabled={libreMode} overrides={imageOverrides} onChange={setImageOverrides}>
             <ResultPanel {...resultPanelProps} />
           </WorksheetImageProvider>
-          {libreMode ? (
+          {boardMode === 'jeu' || !libreMode ? null : (
             <LibreSidePanel
               activeBlock={activeBlock}
               activeSheet={activeSheet}
@@ -710,8 +729,8 @@ export function GeneratorPage({
                 setLibreSnapshot(null)
               }}
             />
-          ) : null}
-          {footerPanelOpen ? (
+          )}
+          {boardMode === 'jeu' || !footerPanelOpen ? null : (
             <FooterSidePanel
               institutional={institutional}
               setInstitutional={setInstitutional}
@@ -722,7 +741,7 @@ export function GeneratorPage({
               referenceLocked={referenceLocked}
               onClose={() => setFooterPanelOpen(false)}
             />
-          ) : null}
+          )}
         </div>
       </main>
       {saveOpen ? (

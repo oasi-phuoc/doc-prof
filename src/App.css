@@ -6372,7 +6372,28 @@ textarea.pill-input,
 .board-mode-toggle{width:auto;grid-template-columns:auto auto;flex-shrink:0}
 .board-mode-toggle button{min-height:42px;padding:8px 18px}
 .generator-page.is-game-board .generator-intro{display:none}
-.generator-page.is-game-board{padding-top:16px}
+.generator-page.is-game-board{padding:0}
+.topbar.is-game{gap:16px;padding-left:24px;padding-right:24px}
+.game-setup{display:flex;flex:1 1 auto;flex-wrap:wrap;justify-content:center;align-items:flex-end;gap:8px;min-width:0}
+.game-setup label{display:flex;flex-direction:column;gap:2px;color:var(--muted);font-size:calc(11px * var(--app-font-scale, 1));font-weight:700}
+.game-setup select{max-width:190px;min-height:34px;padding:4px 8px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink);font-size:calc(13px * var(--app-font-scale, 1));font-weight:700}
+.generator-page.is-game-board .workspace{justify-content:stretch}
+.generator-page.is-game-board .result-panel{flex:1 1 auto;width:auto;max-width:none;border-radius:0;background:#fff}
+.generator-page.is-game-board .sheet-preview-wrap{padding:0;overflow:hidden;height:100%}
+.game-card-play{
+  display:flex;align-items:center;justify-content:center;gap:clamp(24px,4vw,64px);
+  flex:1 1 auto;width:100%;height:100%;min-height:100%;padding:32px 40px 88px;position:relative;background:#fff
+}
+.game-calc-text{margin:0;font-size:clamp(72px,9vw,128px);font-weight:800;letter-spacing:-.04em;line-height:1}
+.game-card-play-choices{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;max-width:760px}
+.game-card-play .game-chip{min-width:128px;min-height:112px;font-size:calc(36px * var(--app-font-scale, 1));cursor:pointer}
+.game-card-play.is-locked .game-chip{pointer-events:none}
+.game-verdict{
+  position:absolute;left:0;right:0;bottom:24px;margin:0;text-align:center;
+  font-size:calc(40px * var(--app-font-scale, 1));font-weight:800;min-height:1.2em
+}
+.game-verdict.is-ok{color:var(--green)}
+.game-verdict.is-retry{color:var(--red)}
 .game-board{
   display:flex;flex-direction:column;gap:14px;min-height:calc(100dvh - 180px);
   user-select:none
@@ -6452,5 +6473,7 @@ textarea.pill-input,
   .game-board-stage{grid-template-columns:1fr}
   .game-stem,.game-column{font-size:calc(32px * var(--app-font-scale, 1))}
   .topbar-brand{gap:8px}
+  .game-card-play{flex-direction:column;height:auto;min-height:calc(100dvh - 68px);padding:24px 16px 80px}
+  .game-calc-text{font-size:clamp(56px,16vw,88px)}
   .board-mode-toggle button{padding:8px 12px}
 }
