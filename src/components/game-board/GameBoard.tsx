@@ -8,6 +8,14 @@ import { buildPlayRounds, cardTone, PLAY_CARDS, sameAnswer, type PlayChip, type 
 
 type Drag = { id: string; x: number; y: number; moved: boolean }
 
+function isNegativeSubtraction(round: PlayRound | undefined): boolean {
+  if (!round || round.scene.type !== 'calc') return false
+  const text = round.scene.text
+  if (text.includes('(') || !/\d\s+[−-]\s+/.test(text)) return false
+  const value = Number(String(round.correctChoice ?? '').replace(/\s/g, '').replace(',', '.'))
+  return Number.isFinite(value) && value < 0
+}
+
 function VerdictMark({ status }: { status: 'idle' | 'ok' | 'retry' }) {
   const label = status === 'ok' ? 'Juste' : status === 'retry' ? 'Faux' : ''
   return (
@@ -97,6 +105,17 @@ export function GameBoard({
   scored.current = onScored
   const counted = useRef<string | null>(null)
   const round = rounds[0]
+  const redraws = useRef(0)
+
+  useEffect(() => {
+    if (!isNegativeSubtraction(round)) {
+      redraws.current = 0
+      return
+    }
+    if (redraws.current >= 8) return
+    redraws.current += 1
+    refresh.current()
+  }, [round])
 
   useEffect(() => {
     setPlaced({})
@@ -210,25 +229,16 @@ export function GameBoard({
   const used = new Set(Object.values(placed))
   const tray = (round.chips ?? []).filter((chip) => !used.has(chip.id))
   const ghostChip = ghost ? chipById.get(ghost.id) : undefined
-  if (round.mode === 'choice' && (round.scene.type === 'calc' || round.scene.type === 'column')) {
+  if (round.mode === 'choice') {
     return (
       <section className={`game-card-play${status !== 'idle' ? ' is-locked' : ''}`} aria-label="Tableau interactif">
         <div className="game-card-play-expression">
           <div className="game-question-card">
-            {round.scene.type === 'calc' ? (
-              <p className="game-calc-text">{round.scene.text}</p>
-            ) : (
-              <div className="game-column" aria-label="Opération">
-                <span>{round.scene.a}</span>
-                <span>
-                  {round.scene.op} {round.scene.b}
-                </span>
-              </div>
-            )}
+            <QuestionFace round={round} />
           </div>
           <VerdictMark status={status} />
         </div>
-        <div className="game-card-play-choices">
+        <div className="game-card-play-choices" data-count={round.choices?.length ?? 0}>
           {(round.choices ?? []).map((chip) => {
             const selected = choice === chip.id
             const mark =
@@ -283,7 +293,7 @@ export function GameBoard({
           </div>
         </div>
         <div className="game-zone game-zone-answer">
-          <p className="game-zone-label">{round.mode === 'circle' ? 'Entourez' : round.mode === 'choice' ? 'Entourez' : 'Réponse'}</p>
+          <p className="game-zone-label">{round.mode === 'circle' ? 'Entourez' : 'Réponse'}</p>
           <Answer
             round={round}
             choice={choice}
@@ -328,6 +338,50 @@ export function GameBoard({
         </div>
       ) : null}
     </section>
+  )
+}
+
+function QuestionFace({ round }: { round: PlayRound }) {
+  const scene = round.scene
+  if (scene.type === 'calc' || scene.type === 'column') {
+    const text = scene.type === 'calc' ? scene.text : `${scene.a} ${scene.op} ${scene.b}`
+    return <p className="game-calc-text">{text}</p>
+  }
+  if (scene.type === 'compare') {
+    return <p className="game-calc-text is-long">{`${scene.left} ? ${scene.right}`}</p>
+  }
+  if (scene.type === 'fraction') {
+    return (
+      <div className="game-fraction">
+        <FractionShape
+          kind={scene.shape.kind}
+          d={scene.shape.d}
+          colored={new Set(Array.from({ length: scene.shape.n }, (_, index) => index))}
+          fillVariant="light"
+          scale={1.6}
+        />
+      </div>
+    )
+  }
+  const text =
+    scene.type === 'prompt'
+      ? scene.text
+      : scene.type === 'images'
+        ? scene.prompt
+        : scene.type === 'stem'
+          ? `${scene.before} □ ${scene.after}`.replace(/\s+/g, ' ').trim()
+          : scene.type === 'sequence'
+            ? scene.cells.map((cell) => cell.text ?? '□').join('  ')
+            : scene.type === 'order' || scene.type === 'lines'
+              ? scene.prompt
+              : scene.type === 'table'
+                ? `Tableau ${scene.op}`
+                : ''
+  return (
+    <>
+      <Visual round={round} />
+      {text ? <p className={`game-calc-text${text.length > 18 ? ' is-long' : ''}`}>{text}</p> : null}
+    </>
   )
 }
 

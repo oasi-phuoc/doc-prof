@@ -659,31 +659,15 @@ function mathRound(
 
   if (item.a != null && item.b != null && item.op) {
     const missing = item.missing ?? 'result'
-    const aText = missing === 'a' ? '' : fmt(item.a)
-    const bText = missing === 'b' ? '' : fmt(item.b)
+    const aText = missing === 'a' ? '□' : fmt(item.a)
+    const bText = missing === 'b' ? '□' : fmt(item.b)
     const resultText = missing === 'result' ? '' : fmt(item.result ?? item.a)
     const labels = sixChoices(item.answer, key)
-    if (missing === 'result') {
-      const scene =
-        item.layout === 'column' || item.layout === 'column-empty' || item.layout === 'division-column'
-          ? ({ type: 'column', a: fmt(item.a), op: item.op, b: fmt(item.b) } as const)
-          : ({ type: 'calc', text: `${fmt(item.a)}${item.op}${fmt(item.b)}` } as const)
-      return [asChoice(key, block, scene, item.answer, siblings, visual, labels)]
-    }
-    const scene =
-      missing === 'a'
-        ? { type: 'stem' as const, before: '', after: `${item.op} ${bText} = ${resultText}`.trim() }
-        : { type: 'stem' as const, before: `${aText} ${item.op}`, after: `= ${resultText}`.trim() }
-    return [
-      asSlots(
-        key,
-        block,
-        scene,
-        [{ id: 'answer', expected: item.answer }],
-        labels,
-        visual,
-      ),
-    ]
+    const text =
+      missing === 'result'
+        ? `${fmt(item.a)} ${item.op} ${fmt(item.b)}`
+        : `${aText} ${item.op} ${bText} = ${resultText}`.trim()
+    return [asChoice(key, block, { type: 'calc', text }, item.answer, siblings, visual, labels)]
   }
 
   if (item.calcAnswer || item.calcAnswerSecondary) {
@@ -747,5 +731,115 @@ export function buildPlayRounds(sheet: WorksheetPage | undefined): PlayRound[] {
       )
     })
   })
-  return rounds.map((round, index) => ({ ...round, key: `${round.key}-${index}` }))
+  return rounds.flatMap(asClick).map((round, index) => ({ ...round, key: `${round.key}-${index}` }))
+}
+
+function blockOf(round: PlayRound): Pick<WorksheetBlock, 'title' | 'instruction'> {
+  return { title: round.exerciseTitle, instruction: round.instruction }
+}
+
+function sceneLead(scene: PlayScene): string {
+  switch (scene.type) {
+    case 'calc':
+      return scene.text
+    case 'column':
+      return `${scene.a} ${scene.op} ${scene.b}`
+    case 'stem':
+      return `${scene.before} □ ${scene.after}`.replace(/\s+/g, ' ').trim()
+    case 'compare':
+      return `${scene.left} ? ${scene.right}`
+    case 'prompt':
+      return scene.text
+    case 'images':
+      return scene.prompt
+    case 'order':
+    case 'lines':
+      return scene.prompt
+    case 'sequence':
+      return scene.cells.map((cell) => cell.text ?? '□').join('  ')
+    case 'table':
+      return `Tableau ${scene.op}`
+    case 'fraction':
+      return scene.kind === 'read' ? 'Quelle fraction est coloriée ?' : `Coloriez ${scene.shape.n}/${scene.shape.d}`
+  }
+}
+
+function answerLabels(answer: string, seed: string, pool: string[]): string[] {
+  if (/^-?\d+(?:[.,]\d+)?$/.test(answer.trim())) return sixChoices(answer, seed)
+  const labels = unique([answer, ...pool.filter((value) => !sameAnswer(value, answer))])
+  if (labels.length >= 2) return mix(labels.slice(0, 6), seed)
+  return choiceLabels(answer, pool, seed)
+}
+
+/** Tous les jeux se jouent au clic, comme une addition en ligne. */
+function asClick(round: PlayRound): PlayRound[] {
+  if (round.mode === 'choice' && round.correctChoice && round.choices?.length) {
+    if (round.scene.type === 'column') {
+      return [
+        {
+          ...round,
+          scene: { type: 'calc', text: `${round.scene.a} ${round.scene.op} ${round.scene.b}` },
+        },
+      ]
+    }
+    return [round]
+  }
+  if (round.mode === 'slots' && round.slots?.length) {
+    const pool = round.chips?.map((chip) => chip.label) ?? round.slots.map((slot) => slot.expected)
+    return round.slots.map((slot, index) => {
+      const lead = sceneLead(round.scene)
+      const text = slot.label && slot.label !== lead ? `${lead} — ${slot.label}` : lead
+      return asChoice(
+        round.slots!.length > 1 ? `${round.key}-${index}` : round.key,
+        blockOf(round),
+        { type: 'prompt', text },
+        slot.expected,
+        [],
+        round.visual,
+        answerLabels(slot.expected, `${round.key}-${index}`, pool),
+      )
+    })
+  }
+  if (round.mode === 'circle' && round.pictures?.length) {
+    const correct = round.pictures.find((picture) => picture.correct) ?? round.pictures[0]
+    if (!correct) return []
+    const prompt = round.scene.type === 'images' ? round.scene.prompt : 'Choisissez la bonne image.'
+    return [
+      base(
+        {
+          key: round.key,
+          scene: { type: 'images', prompt },
+          visual: round.visual,
+          mode: 'choice',
+          correctChoice: correct.label,
+          choices: round.pictures.map((picture, index) => ({
+            id: picture.id,
+            label: picture.label,
+            image: picture.image,
+            tone: cardTone(index, round.key),
+          })),
+        },
+        blockOf(round),
+      ),
+    ]
+  }
+  if (round.mode === 'color' && round.scene.type === 'fraction') {
+    const shape = round.scene.shape
+    const answer = `${shape.n}/${shape.d}`
+    const alts = [1, 2, 3, 4, 5].map(
+      (delta) => `${Math.min(shape.d, Math.max(0, shape.n + (delta % 2 === 0 ? delta : -delta)))}/${shape.d}`,
+    )
+    return [
+      asChoice(
+        round.key,
+        blockOf(round),
+        { type: 'fraction', kind: 'read', shape },
+        answer,
+        [],
+        round.visual,
+        unique([answer, ...alts]),
+      ),
+    ]
+  }
+  return []
 }

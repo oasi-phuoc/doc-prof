@@ -6416,23 +6416,31 @@ textarea.pill-input,
 .game-mark.is-ok{color:var(--green)}
 .game-mark.is-retry{color:var(--red)}
 .game-question-card{
-  display:flex;align-items:center;justify-content:center;
-  min-width:min(100%,240px);min-height:clamp(150px,28vh,280px);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;
+  min-width:min(100%,240px);max-width:100%;min-height:clamp(150px,28vh,280px);
   padding:clamp(20px,4cqw,48px) clamp(28px,6cqw,72px);
   border-radius:28px;background:#fff;border:4px solid var(--ink);
   box-shadow:0 10px 0 color-mix(in srgb, var(--ink) 16%, #fff)
 }
-.game-calc-text{margin:0;font-size:clamp(64px,14cqw,128px);font-weight:800;letter-spacing:-.04em;line-height:1}
+.game-calc-text{margin:0;font-size:clamp(64px,14cqw,128px);font-weight:800;letter-spacing:-.04em;line-height:1;text-align:center}
+.game-calc-text.is-long{font-size:clamp(28px,5cqw,52px);letter-spacing:0;line-height:1.2}
 .game-question-card .game-column{font-size:clamp(48px,8cqw,88px)}
 .game-card-play-choices{
   display:grid;grid-template-columns:repeat(6,minmax(0,1fr));
   gap:clamp(8px,1.2cqw,16px);width:100%
 }
+.game-card-play-choices[data-count="4"]{grid-template-columns:repeat(2,minmax(0,1fr))}
+.game-card-play-choices[data-count="3"]{grid-template-columns:repeat(3,minmax(0,1fr))}
+.game-card-play-choices[data-count="2"]{grid-template-columns:repeat(2,minmax(0,1fr))}
+.game-card-play-choices[data-count="1"]{grid-template-columns:minmax(0,1fr)}
 @container (max-width:980px){
-  .game-card-play-choices{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .game-card-play-choices[data-count="6"],
+  .game-card-play-choices[data-count="5"]{grid-template-columns:repeat(3,minmax(0,1fr))}
 }
 @container (max-width:560px){
-  .game-card-play-choices{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .game-card-play-choices[data-count="6"],
+  .game-card-play-choices[data-count="5"],
+  .game-card-play-choices[data-count="4"]{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 .game-card-play .game-chip{
   width:100%;min-width:0;min-height:clamp(72px,11cqw,128px);
