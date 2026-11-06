@@ -4,6 +4,7 @@ import { Fragment, useMemo, type RefObject } from 'react'
 import { PeEvaluationSheet } from '@/components/tcf/PeEvaluationSheet'
 import { peEvaluationsOf, type PeEvaluation } from '@/tcf/pe-evaluation'
 import { isGrammarReadingType } from '@/grammaire/exercises/reading-types'
+import { GameBoard } from '@/components/game-board/GameBoard'
 import { A4Frame } from '@/components/generator/A4Frame'
 import { FormesPalette } from '@/components/generator/FormesPalette'
 import { isA5DoubleFormat, type SheetFormat } from '@/components/generator/sheet-format'
@@ -100,6 +101,7 @@ export type ResultPanelProps = {
   placeCoordMark: (x: number, y: number, kind: CoordShape) => void
   placeOrigin: (col: number, row: number) => void
   removeCoordMark: (x: number, y: number) => void
+  boardMode: 'fiche' | 'jeu'
 }
 
 export function ResultPanel({
@@ -161,6 +163,7 @@ export function ResultPanel({
   placeCoordMark,
   placeOrigin,
   removeCoordMark,
+  boardMode,
 }: ResultPanelProps) {
   const transcriptionPacks = useMemo(
     () => paginateTranscriptions(collectWorksheetTranscriptions(previewWorksheets)),
@@ -261,8 +264,8 @@ export function ResultPanel({
           <section className="result-panel">
             <div className="result-head">
               <div>
-                <p className="eyebrow">Aperçu</p>
-                <h2>Votre activité est prête.</h2>
+                <p className="eyebrow">{boardMode === 'jeu' ? 'Tableau' : 'Aperçu'}</p>
+                <h2>{boardMode === 'jeu' ? 'Projetez l’exercice.' : 'Votre activité est prête.'}</h2>
                 {libreMode ? <p className="no-print">Cliquez sur une image de la fiche pour la remplacer.</p> : null}
               </div>
               <div className="result-head-actions no-print">
@@ -438,6 +441,12 @@ export function ResultPanel({
               </div>
             </div>
             <div className="sheet-preview-wrap no-print-nav">
+              {boardMode === 'jeu' ? (
+                <GameBoard
+                  key={`${seed}-${safeSheetIndex}-${previewSheet?.exerciseType ?? ''}`}
+                  sheet={previewSheet}
+                />
+              ) : (
               <div className="sheet-preview-cluster">
                 <div className={`sheet-preview-row${jeuxPreviewSheets && jeuxPreviewSheets.length > 1 ? ' is-jeux-duplex' : ''}${showCorrectionFollow || showTranscriptionPreview ? ' is-po-stack' : ''}${showPageStack ? ' is-page-stack' : ''}`}>
                   {jeuxPreviewSheets && jeuxPreviewSheets.length > 1 ? (
@@ -548,6 +557,7 @@ export function ResultPanel({
                   ) : null}
                 </div>
               </div>
+              )}
             </div>
             {/* Impression : fiches élèves ; corrigés seulement s’il y en a */}
             <div className="sheet-stage print-only-sheets" aria-hidden>

@@ -117,6 +117,7 @@ export function GeneratorPage({
   )
   const [saveOpen, setSaveOpen] = useState(false)
   const [bookRequest, setBookRequest] = useState<BookRequest | null>(null)
+  const [boardMode, setBoardMode] = useState<'fiche' | 'jeu'>('fiche')
   const previewFrameRef = useRef<HTMLDivElement>(null)
 
   const applyThemeColor = (color: string) => {
@@ -534,6 +535,7 @@ export function GeneratorPage({
     placeCoordMark,
     placeOrigin,
     removeCoordMark,
+    boardMode,
   }
 
   return (
@@ -553,6 +555,26 @@ export function GeneratorPage({
       <Header
         onCreate={() => undefined}
         generator
+        afterBrand={
+          <div className="mode-toggle board-mode-toggle" role="group" aria-label="Affichage">
+            <button
+              type="button"
+              className={boardMode === 'fiche' ? 'active' : ''}
+              aria-pressed={boardMode === 'fiche'}
+              onClick={() => setBoardMode('fiche')}
+            >
+              Fiche
+            </button>
+            <button
+              type="button"
+              className={boardMode === 'jeu' ? 'active' : ''}
+              aria-pressed={boardMode === 'jeu'}
+              onClick={() => setBoardMode('jeu')}
+            >
+              Jeu
+            </button>
+          </div>
+        }
         rightSlot={
           <>
             <button
@@ -632,7 +654,7 @@ export function GeneratorPage({
           </>
         }
       />
-      <main className="generator-page" id="top">
+      <main className={`generator-page${boardMode === 'jeu' ? ' is-game-board' : ''}`} id="top">
         <div className="generator-intro">
           <a className="back-link" href="/">
             ← Retour à l’accueil
