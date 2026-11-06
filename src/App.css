@@ -6545,4 +6545,22 @@ textarea.pill-input,
   .topbar-brand{gap:8px}
   .game-card-play{height:auto;min-height:calc(100dvh - 68px);padding:8px 16px 64px}
   .board-mode-toggle button{padding:8px 12px}
+  /* Fiche / Jeu sur sa propre ligne : les icônes de droite ne le recouvrent plus. */
+  .topbar:has(.board-mode-toggle){
+    height:auto;min-height:68px;
+    display:grid;grid-template-columns:minmax(0,1fr) auto;
+    align-items:center;column-gap:8px;row-gap:8px;
+    padding:8px 12px 10px
+  }
+  .topbar:has(.board-mode-toggle) .topbar-brand{display:contents}
+  .topbar:has(.board-mode-toggle) .brand{grid-column:1;grid-row:1;min-width:0}
+  .topbar:has(.board-mode-toggle) .topbar-right{grid-column:2;grid-row:1}
+  .topbar:has(.board-mode-toggle) .board-mode-toggle{
+    grid-column:1 / -1;grid-row:2;width:100%;
+    grid-template-columns:1fr 1fr
+  }
+  .topbar:has(.board-mode-toggle) .board-mode-toggle button{min-height:44px}
+  .topbar:has(.board-mode-toggle) .game-score-bar{
+    grid-column:1 / -1;grid-row:3;width:100%;flex-wrap:wrap
+  }
 }
