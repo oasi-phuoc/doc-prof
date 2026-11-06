@@ -1,4 +1,5 @@
 import type { WorksheetBlock, WorksheetPage } from '@/math/types'
+import { headingForSlice } from '@/math/page-break-heading'
 import { isGrammarReadingType } from './reading-types'
 
 /** Split existing items without drawing a different text or resetting question numbers. */
@@ -14,11 +15,10 @@ export function splitGrammarReadingPages(page: WorksheetPage): WorksheetPage[] |
     for (const end of [...cuts, block.items.length]) {
       current.push({
         ...block,
+        ...headingForSlice(block, start, block.items),
         sourceBlockIndex,
         items: block.items.slice(start, end),
         itemOffset: start,
-        title: start ? `${block.title} (suite)` : block.title,
-        instruction: start ? 'Continuez. Répondez aux questions suivantes.' : block.instruction,
       })
       if (end < block.items.length) {
         groups.push(current)
@@ -30,7 +30,6 @@ export function splitGrammarReadingPages(page: WorksheetPage): WorksheetPage[] |
   if (current.length) groups.push(current)
   return groups.map((blocks, index) => ({
     ...page,
-    title: index ? `${page.title} — suite` : page.title,
     blocks,
     items: blocks.flatMap(block => block.items),
     isContinuation: index > 0,

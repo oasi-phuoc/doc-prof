@@ -2578,7 +2578,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/heure-horloge/huit-heures-moins-vingt.webp"
       },
       {
-        "label": "huit heures numerique",
+        "label": "huit heures (à aiguilles)",
         "src": "/lib/images/vocabulaire/heure-horloge/huit-heures-numerique.webp"
       },
       {
@@ -2598,7 +2598,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/heure-horloge/midi.webp"
       },
       {
-        "label": "minuit numerique",
+        "label": "minuit (à aiguilles)",
         "src": "/lib/images/vocabulaire/heure-horloge/minuit-numerique.webp"
       },
       {
@@ -2626,7 +2626,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/heure-horloge/onze-heures-et-demie.webp"
       },
       {
-        "label": "onze heures numerique",
+        "label": "onze heures (à aiguilles)",
         "src": "/lib/images/vocabulaire/heure-horloge/onze-heures-numerique.webp"
       },
       {
@@ -2662,7 +2662,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/heure-horloge/quinze-heures.webp"
       },
       {
-        "label": "réveil numérique",
+        "label": "horloge à aiguilles",
         "src": "/lib/images/vocabulaire/heure-horloge/réveil-numérique.webp"
       },
       {
@@ -8141,6 +8141,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
 
 /** label (minuscule) → src, première occurrence. */
 export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
+  "huit heures (à aiguilles)": "/lib/images/vocabulaire/heure-horloge/huit-heures-numerique.webp",
+  "onze heures (à aiguilles)": "/lib/images/vocabulaire/heure-horloge/onze-heures-numerique.webp",
+  "minuit (à aiguilles)": "/lib/images/vocabulaire/heure-horloge/minuit-numerique.webp",
+  "horloge à aiguilles": "/lib/images/vocabulaire/heure-horloge/réveil-numérique.webp",
   "caille": "/lib/images/vocabulaire/oiseaux/caille.webp",
   "tour eiffel": "/lib/images/vocabulaire/ville/tour-eiffel.webp",
   "eiffel": "/lib/images/vocabulaire/ville/tour-eiffel.webp",

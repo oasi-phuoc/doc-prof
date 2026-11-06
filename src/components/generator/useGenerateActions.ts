@@ -11,7 +11,8 @@ import {
 import { parseCalliLines } from '@/calligraphie/defaults'
 import { reshuffleGameContent } from '@/jeux/bank'
 import { isJeuxType } from '@/jeux/templates'
-import { buildTpfFamilyTestPages } from '@/tcf/generate'
+import { tcfNiveauForConfig } from '@/tcf/catalog'
+import { buildTpfFamilyTestPages, nextLastPoExercise } from '@/tcf/generate'
 import { buildWorksheets } from '@/math/generate'
 import { pageBlocks, setPageBlock } from '@/math/page-model'
 import { randomSeed } from '@/math/rng'
@@ -295,6 +296,33 @@ export function useGenerateActions({
           ...seedPatch,
           // Repérage : reprend un tirage banque (les marques figées bloqueraient le refresh).
           coordLibre: false,
+        }
+        const isLastCscCfrPo =
+          !half &&
+          (page.domain === 'tcf-csc' || page.domain === 'tcf-cfr') &&
+          block.exerciseType === 'tcf-po' &&
+          !current.some(
+            (other, otherIndex) =>
+              otherIndex > index && other.domain === page.domain && other.exerciseType === 'tcf-po',
+          )
+        if (isLastCscCfrPo) {
+          const avoid = current.flatMap((other, otherIndex) =>
+            otherIndex === index || !other.tcfBankId ? [] : [other.tcfBankId],
+          )
+          if (block.tcfBankId) avoid.push(block.tcfBankId)
+          const next = nextLastPoExercise(
+            tcfNiveauForConfig(page.domain, block.difficulty),
+            nextSeed,
+            avoid,
+          )
+          if (next) {
+            patch = {
+              ...patch,
+              tcfBankId: next.id,
+              tcfScenario: next.scenario,
+              tcfExercise: undefined,
+            }
+          }
         }
         // Contenu figé (calli / jeux / phrase libre) : ne retirer que la moitié touchée.
         const shouldReshuffleContent = !half || half === 'left'

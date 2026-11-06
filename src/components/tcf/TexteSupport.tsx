@@ -384,16 +384,7 @@ export function TexteSupport({ exercise: ex, mode }: { exercise: TcfExercise; mo
                     </li>
                   ))}
                 </ul>
-                {mode === 'answers' && t.exemples_questions.some((q) => q.trim()) ? (
-                  <ul className="tcf-modele tcf-exemples is-two-cols">
-                    {t.exemples_questions
-                      .filter((q) => q.trim())
-                      .slice(0, 8)
-                      .map((q, k) => (
-                        <li key={k}>{q}</li>
-                      ))}
-                  </ul>
-                ) : null}
+                {/* Exemples de questions sur une deuxième page du corrigé. */}
               </div>
             </section>
           ))}

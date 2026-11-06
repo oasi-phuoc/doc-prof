@@ -145,6 +145,8 @@ function Enonce({
   blankStyle?: 'line' | 'dots'
   /** Afficher le numéro (désactivé pour six courts seul dans le cadre). */
   showNumero?: boolean
+  /** Piste lue dans le bandeau du corrigé. */
+  audioSrc?: string
   /** Icônes de format (cadre multi-questions) : à droite de l’énoncé. */
   trailing?: ReactNode
 }) {
@@ -164,8 +166,17 @@ function Enonce({
   )
 }
 
-function AudioFrameHead({ label }: { label: string }) {
-  return <div className="tcf-audio-frame-head">{label}</div>
+function AudioFrameHead({ label, audioSrc }: { label: string; audioSrc?: string }) {
+  return (
+    <div className={`tcf-audio-frame-head${audioSrc ? ' has-player' : ''}`}>
+      <span className="tcf-audio-frame-label">{label}</span>
+      {audioSrc ? (
+        <audio className="tcf-audio-frame-player no-print" controls preload="none" src={audioSrc}>
+          Écoutez l’enregistrement.
+        </audio>
+      ) : null}
+    </div>
+  )
 }
 
 /** Énoncé au-dessus ; image(s) à gauche des réponses. */
@@ -176,6 +187,7 @@ function QuestionShell({
   enonceSlot,
   audioLabel,
   audioFrame,
+  audioSrc,
   children,
 }: {
   image?: string
@@ -184,13 +196,15 @@ function QuestionShell({
   enonceSlot?: ReactNode
   audioLabel?: string
   audioFrame?: boolean
+  /** Lecteur du corrigé, dans le bandeau. */
+  audioSrc?: string
   children: ReactNode
 }) {
   const pics = (images?.length ? images : image ? [image] : [])
     .map((src) => src.trim())
     .filter(Boolean)
   const framed = Boolean(audioFrame)
-  const head = framed && audioLabel ? <AudioFrameHead label={audioLabel} /> : null
+  const head = framed && audioLabel ? <AudioFrameHead label={audioLabel} audioSrc={audioSrc} /> : null
   const answers = pics.length ? (
     <div className="tcf-q-beside">
       <div className={`tcf-q-beside-images${pics.length > 1 ? ' is-multi' : ''}`}>
@@ -242,6 +256,8 @@ type QuestionHead = {
   images?: string[]
   showNumero?: boolean
   blankStyle?: 'line' | 'dots'
+  /** Piste lue dans le bandeau du corrigé. */
+  audioSrc?: string
   /** Icônes Texte / Image / Phrase à droite de l’énoncé (cadre multi-questions). */
   trailing?: ReactNode
 }
@@ -262,6 +278,7 @@ export function QuestionQCMTexte({
       numero={head.numero}
       audioLabel={head.audioLabel}
       audioFrame={head.audioFrame}
+      audioSrc={mode === 'answers' ? head.audioSrc : undefined}
       enonceSlot={
         <Enonce
           {...head}
@@ -299,6 +316,7 @@ export function QuestionQCMImage({
       numero={head.numero}
       audioLabel={head.audioLabel}
       audioFrame={head.audioFrame}
+      audioSrc={mode === 'answers' ? head.audioSrc : undefined}
       enonceSlot={
         <Enonce
           {...head}
@@ -344,6 +362,7 @@ export function QuestionLignes({
       numero={head.numero}
       audioLabel={head.audioLabel}
       audioFrame={head.audioFrame}
+      audioSrc={mode === 'answers' ? head.audioSrc : undefined}
       enonceSlot={
         <Enonce
           {...head}
@@ -376,6 +395,7 @@ export function QuestionLignes({
 /** Cadre Audio N contenant plusieurs questions (trois audios moyens). */
 export function AudioCadre({
   audioLabel,
+  audioSrc,
   questions,
   mode,
   onSelectForm,
@@ -383,13 +403,14 @@ export function AudioCadre({
 }: {
   blankStyle?: 'line' | 'dots'
   audioLabel: string
+  audioSrc?: string
   questions: TcfCadreQuestion[]
   mode: PreviewMode
   onSelectForm?: (modeIndex: number, form: TcfTypeReponse) => void
 }) {
   return (
     <div className="tcf-question is-audio-frame is-audio-cadre">
-      <AudioFrameHead label={audioLabel} />
+      <AudioFrameHead label={audioLabel} audioSrc={mode === 'answers' ? audioSrc : undefined} />
       <div className="tcf-audio-frame-body tcf-audio-cadre-body">
         {questions.map((q) => {
           const formSelect = q.formSelect

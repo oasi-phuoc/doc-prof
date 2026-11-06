@@ -770,6 +770,8 @@ export type MathItem = {
   tcf?: import('@/tcf/types').TcfSheetItem
   /** TCF : id de l’exercice de banque affiché (copie modifiable en mode libre). */
   tcfExerciseId?: string
+  /** Grille du corrigé PE, portée par le dernier item pour suivre les pages de suite. */
+  tcfPeEvaluation?: import('@/tcf/pe-evaluation').PeEvaluation
   /** Domaine Logique : puzzle SVG (suite, intrus, matrice, cubes…). */
   logique?: import('@/logique/types').LogiquePuzzle
   /** Item non compté dans le total de points (support, message). */
@@ -1079,6 +1081,13 @@ export type WorksheetBlock = {
   exerciseType: string
   /** Points par question (propagé depuis ExerciseBlock). */
   pointsPerQuestion?: number
+  /**
+   * Poids de toutes les questions de l’exercice, posé sur la première feuille
+   * d’un saut de page. Le badge affiche cette somme ; les feuilles suivantes
+   * ne répètent ni le total, ni le titre, ni la consigne.
+   * `undefined` dans le tableau = barème courant.
+   */
+  pointsWeights?: Array<number | undefined>
   givens?: AlgebraGiven[]
   document?: WorksheetDocument
   problemDraftGrids?: boolean[]

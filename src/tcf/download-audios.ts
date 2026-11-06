@@ -115,8 +115,8 @@ type CorrigeAudioItem = TcfAudioItemSource & {
 }
 
 /**
- * Audios à coller à droite du titre « Exercice N » sur le corrigé
- * (support TCF, document, items, QRs soutien / alphabétisation).
+ * Audios du corrigé (support TCF, document, items, QRs soutien / alphabétisation).
+ * Les CO à bandeau Audio N les montrent dans le bandeau, pas à côté du titre.
  */
 export function collectCorrigeAudioSrcs(
   items: readonly CorrigeAudioItem[],

@@ -1334,6 +1334,17 @@ html,body,#root{
     + var(--tcf-audio-text-nudge)
   )
 }
+/* Corrigé : le lecteur agrandit le bandeau ; les boutons de marge suivent. */
+.exercise-item.layout-tcf:has(.tcf-audio-frame-head.has-player){
+  --tcf-audio-head-h:calc(28px + 3mm)
+}
+/* CE (question sans bandeau Audio) : même hauteur que l’énoncé, comme en CO.
+   .tcf-question a 4 px de marge ; le demi-interligne (line-height 1.55) amène
+   le haut des boutons au haut des lettres. */
+.exercise-item.layout-tcf:has(.tcf-question):not(:has(.is-audio-frame)) > .draft-grid-chip-margin.tcf-margin-form-icons,
+.exercise-item.layout-tcf:has(.tcf-question):not(:has(.is-audio-frame)) > .draft-grid-chip-margin.tcf-page-chip{
+  top:calc(var(--ex-pad-y) + 4px + 0.275 * 13pt * var(--app-font-scale, 1))
+}
 .draft-pad{
   /* 24 colonnes × 5 lignes en 1 col ; on multiplie les lignes par le nombre de colonnes
      (2 col → 10 lignes) pour garder la même hauteur de cases une fois la largeur coupée. */
@@ -2117,6 +2128,20 @@ html,body,#root{
 .sheet-stage.is-jeux-stack .a4-frame{
   flex:0 0 auto;
   width:min(420px, calc((100% - 18px) / 2));
+}
+/* Saut de page et corrigé : la feuille suivante est sous la principale, le cadre défile. */
+.sheet-preview-wrap:has(.is-page-stack) .sheet-preview-cluster,
+.sheet-preview-wrap:has(.is-po-stack) .sheet-preview-cluster{
+  flex:0 0 auto;
+  min-height:auto;
+}
+.sheet-preview-wrap .sheet-stage.is-page-stack,
+.sheet-preview-wrap:has(.is-po-stack) .sheet-stage{
+  overflow:visible;
+  flex:0 0 auto;
+  min-height:auto;
+  height:auto;
+  align-items:stretch;
 }
 .coord-page-palette{
   flex:0 0 auto;width:148px;display:flex;flex-direction:column;gap:8px;
@@ -4379,11 +4404,23 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-question.is-audio-frame.is-audio-cadre{overflow:visible}
 .tcf-audio-frame-head{
   flex:0 0 auto;height:var(--tcf-audio-head-h, 8mm);box-sizing:border-box;
-  display:flex;align-items:center;padding:0 3mm;
+  display:flex;align-items:center;gap:8px;padding:0 3mm;
   background:var(--purple);color:#fff;
   font-size:calc(9.5pt * var(--app-font-scale, 1));font-weight:800;
   letter-spacing:.04em;text-transform:uppercase;line-height:1;
   -webkit-print-color-adjust:exact;print-color-adjust:exact
+}
+.tcf-audio-frame-label{flex:0 0 auto;white-space:nowrap}
+.tcf-audio-frame-head.has-player{
+  height:auto;min-height:var(--tcf-audio-head-h, 8mm);
+  padding-top:1.5mm;padding-bottom:1.5mm
+}
+.tcf-audio-frame-player{
+  flex:1 1 auto;min-width:0;width:auto;max-width:100%;
+  height:28px;margin:0
+}
+@media print{
+  .tcf-audio-frame-head.has-player{height:8mm;min-height:0;padding-top:0;padding-bottom:0}
 }
 .tcf-audio-frame-body{
   flex:1 1 auto;min-width:0;
@@ -4477,6 +4514,45 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-portrait-fields>div{display:grid;grid-template-columns:auto 1fr;gap:6px;align-items:baseline}
 .tcf-portrait-fields dt{margin:0;font-weight:400;color:var(--ink)}
 .tcf-portrait-fields dd{margin:0;font-weight:700;color:var(--purple)}
+.worksheet-sheet.tcf-pe-evaluation-sheet{padding:12mm 16mm 10mm}
+.tcf-pe-evaluation-sheet .sheet-body{
+  display:flex;flex-direction:column;gap:3mm;
+  font-size:calc(13pt * var(--app-font-scale, 1));line-height:1.35
+}
+.tcf-pe-evaluation-top{display:flex;justify-content:space-between;align-items:flex-start;gap:4mm}
+.tcf-pe-evaluation-sheet h2{
+  display:flex;align-items:baseline;flex-wrap:wrap;gap:2mm 4mm;min-width:0;margin:0;
+  font-size:calc(16pt * var(--app-font-scale, 1));font-weight:800;letter-spacing:-.02em
+}
+.tcf-pe-evaluation-title{
+  font-size:calc(13pt * var(--app-font-scale, 1));font-weight:700
+}
+.tcf-pe-evaluation-total{
+  flex:0 0 auto;margin:0;padding:1.5mm 3mm;border:1.5px solid var(--purple);color:var(--purple);
+  font-weight:800;text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact
+}
+.tcf-pe-evaluation-note{margin:0}
+.tcf-pe-identity{display:grid;grid-template-columns:1fr 1fr 1fr;gap:4mm;margin:0;padding:0;list-style:none}
+.tcf-pe-identity li{display:flex;align-items:baseline;gap:2mm;margin:0}
+.tcf-pe-identity-line{flex:1 1 auto;min-width:0;border-bottom:1.5px solid var(--purple);min-height:1.15em}
+.tcf-pe-criteria{display:flex;flex-direction:column;gap:3mm}
+.tcf-pe-criterion-frame{
+  border:1.5px solid var(--purple);overflow:hidden;break-inside:avoid;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact
+}
+.tcf-pe-criterion-head{
+  display:flex;align-items:center;justify-content:space-between;gap:3mm;
+  min-height:8mm;padding:1.5mm 3mm;box-sizing:border-box;
+  background:var(--purple);color:#fff;font-weight:800;line-height:1.2;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact
+}
+.tcf-pe-levels{padding:2mm 3mm 2.5mm}
+.tcf-pe-level{
+  display:grid;grid-template-columns:minmax(0,1fr) 22mm;column-gap:4mm;align-items:baseline
+}
+.tcf-pe-level-points{text-align:right;font-variant-numeric:tabular-nums;font-weight:700}
+.tcf-pe-level + .tcf-pe-level{margin-top:1mm}
 .tcf-ecriture{display:flex;flex-direction:column;gap:6px}
 .tcf-ecriture.is-fill{flex:1 1 auto;min-height:0;gap:0}
 .tcf-ecriture.is-fill .tcf-compteur{margin-top:8px}
@@ -4743,10 +4819,7 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
   border:2px solid var(--purple);background:transparent;padding:0;margin:0;
   -webkit-print-color-adjust:exact;print-color-adjust:exact
 }
-/* Corrigé : même largeur et mêmes écarts de 50px ; hauteur réduite pour le modèle. */
-.tcf-po:has(.tcf-modele) .tcf-timeline-step .tcf-image{
-  aspect-ratio:auto;height:36mm
-}
+/* PO : mêmes dimensions d’images sur la fiche et le corrigé ; modèle sous les images. */
 .tcf-timeline-num{
   position:absolute;top:-2mm;left:-2mm;z-index:1;width:6mm;height:6mm;border-radius:50%;
   background:#fff;border:1.5px solid var(--purple);color:var(--purple);
@@ -6228,3 +6301,11 @@ textarea.pill-input,
 .logique-block.is-cube .logique-stem .logique-img{max-height:100px}
 .logique-block .answer-line-field{margin-top:4px;width:100%}
 /* End */
+
+/* PO trois thèmes : corrigé sur une page séparée, sans modifier les images. */
+.tcf-themes-corrige-sheet .sheet-body{display:flex;flex-direction:column;gap:5mm}
+.tcf-themes-corrige-sheet h2{font-size:15pt;margin:0}
+.tcf-themes-corrige-sheet h3{font-size:12pt;margin:0 0 3mm}
+.tcf-themes-corrige-sheet section{flex:1 1 auto;break-inside:avoid}
+.tcf-themes-corrige-sheet ul{margin:0;padding-left:1.2em;font-size:11pt;line-height:1.45}
+.tcf-themes-corrige-sheet li{margin-bottom:1.5mm}
