@@ -1,6 +1,6 @@
 import { Fragment, useMemo, type RefObject } from 'react'
 import { PeEvaluationSheet } from '@/components/tcf/PeEvaluationSheet'
-import { peEvaluationsOf } from '@/tcf/pe-evaluation'
+import { peEvaluationsOf, type PeEvaluation } from '@/tcf/pe-evaluation'
 import { isGrammarReadingType } from '@/grammaire/exercises/reading-types'
 import { A4Frame } from '@/components/generator/A4Frame'
 import { FormesPalette } from '@/components/generator/FormesPalette'
@@ -9,6 +9,7 @@ import { DualA5Sheet, WorksheetSheet } from '@/components/generator/WorksheetShe
 import { InteractionCorrigeSheet } from '@/components/tcf/InteractionCorrigeSheet'
 import { TranscriptionAppendixSheet } from '@/components/tcf/TranscriptionAppendixSheet'
 import { imageInteractionsOf } from '@/tcf/interaction-lines'
+import type { TcfPoImageInteraction } from '@/tcf/types'
 import {
   collectWorksheetTranscriptions,
   paginateTranscriptions,
@@ -164,11 +165,40 @@ export function ResultPanel({
     [previewWorksheets],
   )
   const answersBaseCount = isCalliDomain || isJeuxDomain ? 0 : previewWorksheets.length
-  /** Corrigé : pages exercices + pages transcriptions (interactions PO sans pied numéroté). */
-  const corrigeTotalPages = answersBaseCount + transcriptionPacks.length
+  const useA5Double = isA5DoubleFormat(sheetFormat) && Boolean(a5LeftSheet && a5RightSheet)
+  /** Corrigés PE et PO : une page par exercice, après la dernière feuille. */
+  const correctionFollow = useMemo(() => {
+    const sheets =
+      useA5Double && a5LeftWorksheets && a5RightWorksheets
+        ? a5LeftWorksheets.flatMap((left, index) => {
+            const right = a5RightWorksheets[index]
+            return right && right !== left ? [left, right] : [left]
+          })
+        : previewWorksheets
+    const seen = new Set<string>()
+    const pages: Array<
+      { kind: 'pe'; evaluation: PeEvaluation } | { kind: 'po'; exercise: TcfPoImageInteraction }
+    > = []
+    for (const sheet of sheets) {
+      for (const evaluation of peEvaluationsOf(sheet)) {
+        const key = `pe:${evaluation.id}:${evaluation.title}`
+        if (seen.has(key)) continue
+        seen.add(key)
+        pages.push({ kind: 'pe', evaluation })
+      }
+      for (const exercise of imageInteractionsOf(sheet)) {
+        const key = `po:${exercise.id}`
+        if (seen.has(key)) continue
+        seen.add(key)
+        pages.push({ kind: 'po', exercise })
+      }
+    }
+    return pages
+  }, [a5LeftWorksheets, a5RightWorksheets, previewWorksheets, useA5Double])
+  /** Corrigé : pages exercices + pages PE/PO + transcriptions. */
+  const corrigeTotalPages = answersBaseCount + correctionFollow.length + transcriptionPacks.length
   const includeCorrections = printCorrections && !isCalliDomain && !isJeuxDomain
   const printLabel = includeCorrections ? 'Imprimer la fiche et le corrigé' : 'Imprimer la fiche'
-  const useA5Double = isA5DoubleFormat(sheetFormat) && Boolean(a5LeftSheet && a5RightSheet)
   const activePreviewIndex = Math.min(safeSheetIndex, Math.max(0, previewWorksheets.length - 1))
   const activePreview = previewWorksheets[activePreviewIndex]
   const activeConfig = activePreview?.configIndex ?? activePreviewIndex
@@ -181,21 +211,9 @@ export function ResultPanel({
   const onLastPage =
     previewWorksheets.length > 0 &&
     (lastPreview?.configIndex ?? previewWorksheets.length - 1) === activeConfig
+  const showCorrectionFollow = sheetProps.mode === 'answers' && onLastPage && correctionFollow.length > 0
   const showTranscriptionPreview =
     sheetProps.mode === 'answers' && transcriptionPacks.length > 0 && onLastPage
-  const stackedSources = showPageStack ? pageGroup.map(({ sheet }) => sheet) : [previewSheet]
-  const stackedInteractions = stackedSources
-    .flatMap((sheet) => (sheetProps.mode === 'answers' ? imageInteractionsOf(sheet) : []))
-    .filter((exercise, i, all) => all.findIndex((other) => other.id === exercise.id) === i)
-  const stackedEvaluations =
-    sheetProps.mode === 'answers'
-      ? useA5Double
-        ? [
-            ...peEvaluationsOf(a5LeftSheet),
-            ...(a5RightSheet !== a5LeftSheet ? peEvaluationsOf(a5RightSheet) : []),
-          ]
-        : stackedSources.flatMap((sheet) => peEvaluationsOf(sheet))
-      : []
   const coordEdit =
     (isFormes && activeBlock.coordLibre) ||
     (isCadrans && activeBlock.coordLibre) ||
@@ -412,7 +430,7 @@ export function ResultPanel({
             </div>
             <div className="sheet-preview-wrap no-print-nav">
               <div className="sheet-preview-cluster">
-                <div className={`sheet-preview-row${jeuxPreviewSheets && jeuxPreviewSheets.length > 1 ? ' is-jeux-duplex' : ''}${stackedInteractions.length || stackedEvaluations.length ? ' is-po-stack' : ''}${showPageStack ? ' is-page-stack' : ''}`}>
+                <div className={`sheet-preview-row${jeuxPreviewSheets && jeuxPreviewSheets.length > 1 ? ' is-jeux-duplex' : ''}${showCorrectionFollow || showTranscriptionPreview ? ' is-po-stack' : ''}${showPageStack ? ' is-page-stack' : ''}`}>
                   {jeuxPreviewSheets && jeuxPreviewSheets.length > 1 ? (
                     <div className="sheet-stage is-jeux-stack">
                       {jeuxPreviewSheets.map(({ sheet, index }, stackIdx) => (
@@ -474,22 +492,29 @@ export function ResultPanel({
                         {previewSheet ? renderEditableSheet(previewSheet, safeSheetIndex) : null}
                       </A4Frame>
                     )}
-                    {stackedEvaluations.map((evaluation, i) => (
-                      <A4Frame key={`pe-evaluation-${evaluation.id}-${i}`}>
-                        <PeEvaluationSheet evaluation={evaluation} />
-                      </A4Frame>
-                    ))}
-                    {stackedInteractions.map((exercise) => (
-                      <A4Frame key={`po-interaction-${exercise.id}`}>
-                        <InteractionCorrigeSheet exercise={exercise} />
-                      </A4Frame>
-                    ))}
+                    {showCorrectionFollow
+                      ? correctionFollow.map((page, i) => (
+                          <A4Frame
+                            key={
+                              page.kind === 'pe'
+                                ? `pe-follow-${page.evaluation.id}-${i}`
+                                : `po-follow-${page.exercise.id}`
+                            }
+                          >
+                            {page.kind === 'pe' ? (
+                              <PeEvaluationSheet evaluation={page.evaluation} />
+                            ) : (
+                              <InteractionCorrigeSheet exercise={page.exercise} />
+                            )}
+                          </A4Frame>
+                        ))
+                      : null}
                     {showTranscriptionPreview
                       ? transcriptionPacks.map((entries, i) => (
                           <A4Frame key={`transcription-prev-${i}`}>
                             <TranscriptionAppendixSheet
                               entries={entries}
-                              pageNumber={answersBaseCount + i + 1}
+                              pageNumber={answersBaseCount + correctionFollow.length + i + 1}
                               totalPages={corrigeTotalPages}
                               institutional={chromeProps.institutional}
                               appendixIndex={i + 1}
@@ -558,9 +583,6 @@ export function ResultPanel({
                             {...chromeProps}
                             mode="answers"
                           />
-                          {[...peEvaluationsOf(leftPage), ...(rightPage !== leftPage ? peEvaluationsOf(rightPage) : [])].map((evaluation, i) => (
-                            <PeEvaluationSheet key={`pe-a5-${evaluation.id}-${i}`} evaluation={evaluation} />
-                          ))}
                           </Fragment>
                         )
                       })
@@ -574,21 +596,20 @@ export function ResultPanel({
                           {...chromeProps}
                           mode="answers"
                         />
-                        {peEvaluationsOf(page).map((evaluation, i) => (
-                          <PeEvaluationSheet key={`pe-${evaluation.id}-${i}`} evaluation={evaluation} />
-                        ))}
                       </Fragment>
                       ))}
-                  {previewWorksheets.flatMap((page) =>
-                    imageInteractionsOf(page).map((exercise) => (
-                      <InteractionCorrigeSheet key={`print-interaction-${exercise.id}`} exercise={exercise} />
-                    )),
+                  {correctionFollow.map((page, i) =>
+                    page.kind === 'pe' ? (
+                      <PeEvaluationSheet key={`print-pe-${page.evaluation.id}-${i}`} evaluation={page.evaluation} />
+                    ) : (
+                      <InteractionCorrigeSheet key={`print-po-${page.exercise.id}`} exercise={page.exercise} />
+                    ),
                   )}
                   {transcriptionPacks.map((entries, i) => (
                     <TranscriptionAppendixSheet
                       key={`print-transcription-${i}`}
                       entries={entries}
-                      pageNumber={answersBaseCount + i + 1}
+                      pageNumber={answersBaseCount + correctionFollow.length + i + 1}
                       totalPages={corrigeTotalPages}
                       institutional={chromeProps.institutional}
                       appendixIndex={i + 1}
