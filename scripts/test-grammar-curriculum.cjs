@@ -46,7 +46,7 @@ const illustrations = load(path.join(root, 'docs/grammaire/illustrations.json'))
 let checks = 0
 function check(condition, message) { assert.ok(condition, message); checks++ }
 const normalize = text => text.normalize('NFC').toLocaleLowerCase('fr').replace(/[’']/g, "'").replace(/\s+/g, ' ').trim()
-check(theory.length === 113, 'all theory ids retained')
+check(theory.length === 99, 'all theory ids retained')
 for (const [file, hash] of Object.entries(load(path.join(root, 'scripts/grammar_curriculum/protected-theory-hashes.json')))) {
   check(crypto.createHash('sha256').update(fs.readFileSync(path.join(root, file))).digest('hex') === hash, 'protected theory ' + file)
 }
@@ -64,7 +64,7 @@ const audioSubthemes = new Set(get('exercises/co-bank.ts').grammarCoSubthemes().
 const subthemes = ALL_GRAM_SUBTHEMES.filter(s => !protectedTopics.has(s.topic) && !audioSubthemes.has(s.id))
 assert.deepEqual(new Set(lessons.map(l => l.subId)), new Set(subthemes.map(s => s.id)))
 const catalog = buildGrammairePracticeTypes()
-check(lessons.length === 104, '104 rewritten subthemes')
+check(lessons.length === 90, '90 rewritten subthemes')
 check(protectedLessons.length === 7 && protectedLessons.every(l => l.items.length === 50), 'seven retained introductory banks of 50')
 for (const les of [...lessons, ...protectedLessons]) {
   if (['c1', 'c2', 'c3'].includes(les.subId)) continue // Superseded by the two full-sentence question banks.
@@ -164,7 +164,6 @@ check(find('pc-pronominaux').items.some(r => r.answer === 'se sont écrit'), 're
 check(find('c1').items.some(r => r.answer.startsWith('Regarde-t-elle')), 'question inversion with linking t')
 check(find('i1').items.some(r => r.answer === 'où'), 'relative location covered')
 check(find('k10').items.some(r => r.answer === 'prenne'), 'visible irregular subjunctive')
-check(find('l8').items.find(r => r.answer === 'goût').options.every(o => o !== 'gout'), 'admitted spelling not a distractor')
 const personal = generate({ exerciseType: 'gram-ex-a1-infos-perso', count: 50 }, 2)
 check(personal.items.filter(i => i.tcf?.kind === 'lignes').length === 7, 'personal information retains all seven fields')
 check(!personal.items.some(i => i.tcf?.kind === 'qcm'), 'personal answers are not arbitrarily graded by QCM')

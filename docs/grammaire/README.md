@@ -4,9 +4,9 @@ La théorie a été rétablie dans son état antérieur au commit `b04247cb`. Le
 
 | Contenu | Résultat |
 |---|---:|
-| Fiches de théorie antérieures conservées | 113 |
-| Sous-thèmes avec une nouvelle banque de 50 phrases | 104 |
-| Phrases dans les nouvelles banques | 5 200 |
+| Fiches de théorie antérieures conservées | 99 |
+| Sous-thèmes avec une nouvelle banque de 50 phrases | 90 |
+| Phrases dans les nouvelles banques | 4 500 |
 | Banques d’introduction complétées à 50 phrases | 7 |
 | Phrases dans ces banques d’introduction | 350 |
 | Thèmes avec des activités de communication | 16 |
@@ -19,7 +19,7 @@ La théorie a été rétablie dans son état antérieur au commit `b04247cb`. Le
 
 ## Théorie
 
-Les 113 fiches retrouvent leur contenu antérieur, avec leurs identifiants et leur mise en forme. La reconstruction des banques d’exercices ne modifie plus la théorie.
+Les 99 fiches retrouvent leur contenu antérieur, avec leurs identifiants et leur mise en forme. Le thème Aide-mémoire n’est plus proposé. La reconstruction des banques d’exercices ne modifie plus la théorie.
 
 ## Exercices
 
