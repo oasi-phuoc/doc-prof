@@ -119,6 +119,11 @@ export function GeneratorPage({
   const [saveOpen, setSaveOpen] = useState(false)
   const [bookRequest, setBookRequest] = useState<BookRequest | null>(null)
   const [boardMode, setBoardMode] = useState<'fiche' | 'jeu'>('fiche')
+  const [scoreMode, setScoreMode] = useState<'normal' | 'points'>('normal')
+  const [scoreCorrect, setScoreCorrect] = useState(0)
+  const [scoreTotal, setScoreTotal] = useState(0)
+  const scoreModeRef = useRef(scoreMode)
+  scoreModeRef.current = scoreMode
   const previewFrameRef = useRef<HTMLDivElement>(null)
 
   const applyThemeColor = (color: string) => {
@@ -537,6 +542,12 @@ export function GeneratorPage({
     placeOrigin,
     removeCoordMark,
     boardMode,
+    onScored: (correct: boolean) => {
+      if (scoreModeRef.current !== 'points') return
+      setScoreTotal((total) => total + 1)
+      if (correct) setScoreCorrect((count) => count + 1)
+    },
+    score: scoreMode === 'points' ? { correct: scoreCorrect, total: scoreTotal } : null,
   }
 
   return (
@@ -606,14 +617,90 @@ export function GeneratorPage({
               }
               sounds={ctx.soutienSelection?.letter.sounds.map((sound) => ({ id: sound.id, label: sound.label })) ?? []}
               soundId={ctx.soutienSelection?.sound.id}
-              onDomain={changeDomain}
-              onTopic={changeTopic}
-              onExercise={updatePage}
+              onDomain={(next) => {
+                if (scoreModeRef.current === 'points') {
+                  setScoreCorrect(0)
+                  setScoreTotal(0)
+                }
+                changeDomain(next)
+              }}
+              onTopic={(next) => {
+                if (scoreModeRef.current === 'points') {
+                  setScoreCorrect(0)
+                  setScoreTotal(0)
+                }
+                changeTopic(next)
+              }}
+              onExercise={(patch) => {
+                if (scoreModeRef.current === 'points') {
+                  setScoreCorrect(0)
+                  setScoreTotal(0)
+                }
+                updatePage(patch)
+              }}
               onChange={updatePage}
-              onSubtheme={changeGramSubtheme}
-              onLetter={changeSoutienLetter}
-              onSound={changeSoutienSound}
+              onSubtheme={(id) => {
+                if (scoreModeRef.current === 'points') {
+                  setScoreCorrect(0)
+                  setScoreTotal(0)
+                }
+                changeGramSubtheme(id)
+              }}
+              onLetter={(id) => {
+                if (scoreModeRef.current === 'points') {
+                  setScoreCorrect(0)
+                  setScoreTotal(0)
+                }
+                changeSoutienLetter(id)
+              }}
+              onSound={(id) => {
+                if (scoreModeRef.current === 'points') {
+                  setScoreCorrect(0)
+                  setScoreTotal(0)
+                }
+                changeSoutienSound(id)
+              }}
             />
+          ) : null}
+          {boardMode === 'jeu' ? (
+            <div className="game-score-bar">
+              <div className="mode-toggle score-mode-toggle" role="group" aria-label="Comptage">
+                <button
+                  type="button"
+                  className={scoreMode === 'normal' ? 'active' : ''}
+                  aria-pressed={scoreMode === 'normal'}
+                  onClick={() => setScoreMode('normal')}
+                >
+                  Normal
+                </button>
+                <button
+                  type="button"
+                  className={scoreMode === 'points' ? 'active' : ''}
+                  aria-pressed={scoreMode === 'points'}
+                  onClick={() => setScoreMode('points')}
+                >
+                  Points
+                </button>
+              </div>
+              {scoreMode === 'points' ? (
+                <>
+                  <p
+                    className="game-score"
+                    aria-live="polite"
+                    aria-label={`${scoreCorrect} ${scoreCorrect === 1 ? 'réponse juste' : 'réponses justes'} sur ${scoreTotal} ${scoreTotal === 1 ? 'question' : 'questions'}`}
+                  >
+                    <strong>{scoreCorrect}</strong>
+                    <span> / {scoreTotal}</span>
+                  </p>
+                  <button type="button" className="game-score-reset" onClick={() => {
+                    setScoreCorrect(0)
+                    setScoreTotal(0)
+                  }}>
+                    Remettre à zéro
+                  </button>
+                </>
+              ) : null}
+            </div>
           ) : null}
           </>
         }

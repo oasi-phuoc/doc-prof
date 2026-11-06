@@ -102,6 +102,8 @@ export type ResultPanelProps = {
   placeOrigin: (col: number, row: number) => void
   removeCoordMark: (x: number, y: number) => void
   boardMode: 'fiche' | 'jeu'
+  onScored: (correct: boolean) => void
+  score: { correct: number; total: number } | null
 }
 
 export function ResultPanel({
@@ -164,6 +166,8 @@ export function ResultPanel({
   placeOrigin,
   removeCoordMark,
   boardMode,
+  onScored,
+  score,
 }: ResultPanelProps) {
   const transcriptionPacks = useMemo(
     () => paginateTranscriptions(collectWorksheetTranscriptions(previewWorksheets)),
@@ -448,6 +452,8 @@ export function ResultPanel({
                   key={`${seed}-${safeSheetIndex}-${previewSheet?.exerciseType ?? ''}`}
                   sheet={previewSheet}
                   onNewQuestion={generate}
+                  onScored={onScored}
+                  score={score}
                 />
               ) : (
               <div className="sheet-preview-cluster">

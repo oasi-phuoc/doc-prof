@@ -6375,6 +6375,23 @@ textarea.pill-input,
 .generator-page.is-game-board{padding:0}
 .topbar.is-game{gap:16px;padding-left:24px;padding-right:24px}
 .game-menu-wrap{position:relative;flex:0 0 auto}
+.game-score-bar{display:flex;align-items:center;gap:8px;min-width:0}
+.score-mode-toggle{width:auto;grid-template-columns:auto auto;flex-shrink:0}
+.score-mode-toggle button{min-height:42px;padding:8px 14px}
+.game-score{margin:0;font-weight:800;font-size:calc(18px * var(--app-font-scale, 1));white-space:nowrap}
+.game-score strong{color:var(--purple)}
+.game-score-reset{
+  min-height:42px;padding:0 12px;border:1px solid var(--line);border-radius:999px;background:#fff;
+  color:var(--ink);font-size:calc(13px * var(--app-font-scale, 1));font-weight:700;white-space:nowrap
+}
+.game-score-board{
+  margin:0;text-align:center;font-weight:800;font-size:clamp(28px,4vw,48px);line-height:1
+}
+.game-score-board strong{color:var(--purple)}
+.game-score-caption{
+  display:block;margin-top:4px;color:var(--muted);
+  font-size:calc(14px * var(--app-font-scale, 1));font-weight:700;letter-spacing:.04em
+}
 .game-menu{
   position:absolute;top:calc(100% + 8px);left:0;z-index:90;width:min(320px,calc(100vw - 24px));
   max-height:min(80vh,640px);overflow:auto;

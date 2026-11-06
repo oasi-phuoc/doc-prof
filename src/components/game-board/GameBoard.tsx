@@ -8,6 +8,20 @@ import { buildPlayRounds, cardTone, PLAY_CARDS, sameAnswer, type PlayChip, type 
 
 type Drag = { id: string; x: number; y: number; moved: boolean }
 
+function ScoreLine({ correct, total }: { correct: number; total: number }) {
+  return (
+    <p
+      className="game-score-board"
+      aria-live="polite"
+      aria-label={`${correct} ${correct === 1 ? 'réponse juste' : 'réponses justes'} sur ${total} ${total === 1 ? 'question' : 'questions'}`}
+    >
+      <strong>{correct}</strong>
+      <span> / {total}</span>
+      <span className="game-score-caption">justes</span>
+    </p>
+  )
+}
+
 function ChipFace({ chip }: { chip: PlayChip }) {
   return (
     <>
@@ -54,9 +68,13 @@ function SlotBox({
 export function GameBoard({
   sheet,
   onNewQuestion,
+  onScored,
+  score,
 }: {
   sheet: WorksheetPage | undefined
   onNewQuestion: () => void
+  onScored: (correct: boolean) => void
+  score: { correct: number; total: number } | null
 }) {
   const rounds = useMemo(() => buildPlayRounds(sheet), [sheet])
   const [placed, setPlaced] = useState<Record<string, string>>({})
@@ -69,6 +87,9 @@ export function GameBoard({
   const drag = useRef<Drag | null>(null)
   const refresh = useRef(onNewQuestion)
   refresh.current = onNewQuestion
+  const scored = useRef(onScored)
+  scored.current = onScored
+  const counted = useRef<string | null>(null)
   const round = rounds[0]
 
   useEffect(() => {
@@ -80,6 +101,15 @@ export function GameBoard({
     setStatus('idle')
     setGhost(null)
   }, [round?.key])
+
+  useEffect(() => {
+    if (status === 'idle') return
+    const mark = `${round?.key ?? ''}:${status}`
+    if (counted.current !== mark) {
+      counted.current = mark
+      scored.current(status === 'ok')
+    }
+  }, [status, round?.key])
 
   useEffect(() => {
     if (status === 'idle') return
@@ -179,6 +209,7 @@ export function GameBoard({
   if (round.mode === 'choice' && (round.scene.type === 'calc' || round.scene.type === 'column')) {
     return (
       <section className={`game-card-play${status !== 'idle' ? ' is-locked' : ''}`} aria-label="Tableau interactif">
+        {score ? <ScoreLine correct={score.correct} total={score.total} /> : null}
         <div className="game-card-play-expression">
           <div className="game-question-card">
             {round.scene.type === 'calc' ? (
@@ -225,6 +256,7 @@ export function GameBoard({
 
   return (
     <section className="game-board" aria-label="Tableau interactif">
+      {score ? <ScoreLine correct={score.correct} total={score.total} /> : null}
       <header className="game-board-bar">
         <div>
           <p className="game-kicker">{round.exerciseTitle}</p>
