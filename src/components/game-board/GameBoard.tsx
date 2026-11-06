@@ -180,17 +180,22 @@ export function GameBoard({
     return (
       <section className={`game-card-play${status !== 'idle' ? ' is-locked' : ''}`} aria-label="Tableau interactif">
         <div className="game-card-play-expression">
-          {round.scene.type === 'calc' ? (
-            <p className="game-calc-text">{round.scene.text}</p>
-          ) : (
-            <div className="game-column" aria-label="Opération">
-              <span>{round.scene.a}</span>
-              <span>
-                {round.scene.op} {round.scene.b}
-              </span>
-            </div>
-          )}
+          <div className="game-question-card">
+            {round.scene.type === 'calc' ? (
+              <p className="game-calc-text">{round.scene.text}</p>
+            ) : (
+              <div className="game-column" aria-label="Opération">
+                <span>{round.scene.a}</span>
+                <span>
+                  {round.scene.op} {round.scene.b}
+                </span>
+              </div>
+            )}
+          </div>
         </div>
+        <p className={`game-verdict is-${status}`} role="status">
+          {verdict}
+        </p>
         <div className="game-card-play-choices">
           {(round.choices ?? []).map((chip) => {
             const selected = choice === chip.id
@@ -214,9 +219,6 @@ export function GameBoard({
             )
           })}
         </div>
-        <p className={`game-verdict is-${status}`} role="status">
-          {verdict}
-        </p>
       </section>
     )
   }

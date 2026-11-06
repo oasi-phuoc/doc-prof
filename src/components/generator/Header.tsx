@@ -7,7 +7,6 @@ export function Header({
   rightSlot,
   endSlot,
   afterBrand,
-  centerSlot,
 }: {
   onCreate: () => void
   generator?: boolean
@@ -17,12 +16,10 @@ export function Header({
   endSlot?: ReactNode
   /** À droite du titre ClairFLE. */
   afterBrand?: ReactNode
-  /** Au centre du menu, en mode jeu. */
-  centerSlot?: ReactNode
 }) {
   const createVisible = showCreate ?? !generator
   return (
-    <header className={`topbar no-print${centerSlot ? ' is-game' : ''}`}>
+    <header className="topbar no-print">
       <div className="topbar-brand">
         <a className="brand" href={generator || !createVisible ? '/' : '#top'}>
           <span className="brand-mark">
@@ -34,7 +31,6 @@ export function Header({
         </a>
         {afterBrand}
       </div>
-      {centerSlot}
       <div className="topbar-right">
         {rightSlot}
         {createVisible ? (

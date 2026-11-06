@@ -4,7 +4,7 @@ import { DIFFICULTY_OPTIONS } from '@/math/difficulty'
 import { exerciseTypeById } from '@/math/catalog'
 import type { Difficulty, Domain, ExerciseBlock } from '@/math/types'
 
-/** Listes compactes du mode jeu : domaine, thème, exercice, niveau. */
+/** Réglages du mode jeu, dans le menu « … » à droite. */
 export function GameSetupBar({
   domain,
   domains,
@@ -13,11 +13,12 @@ export function GameSetupBar({
   exerciseType,
   exercises,
   difficulty,
+  showValues,
   block,
   onDomain,
   onTopic,
   onExercise,
-  onDifficulty,
+  onChange,
 }: {
   domain: Domain
   domains: Domain[]
@@ -26,14 +27,16 @@ export function GameSetupBar({
   exerciseType: string
   exercises: Array<{ id: string; label: string }>
   difficulty: Difficulty
+  /** Algèbre et géométrie : bouton Valeurs à la place du niveau. */
+  showValues: boolean
   block: ExerciseBlock
   onDomain: (domain: Domain) => void
   onTopic: (topic: string) => void
   onExercise: (patch: Partial<ExerciseBlock>) => void
-  onDifficulty: (patch: Partial<ExerciseBlock>) => void
+  onChange: (patch: Partial<ExerciseBlock>) => void
 }) {
   return (
-    <div className="game-setup" aria-label="Choix de l’exercice">
+    <div className="game-setup" role="group" aria-label="Choix de l’exercice">
       <label>
         Domaine
         <select value={domain} onChange={(event) => onDomain(event.target.value as Domain)}>
@@ -75,24 +78,81 @@ export function GameSetupBar({
           </select>
         </label>
       ) : null}
-      <label>
-        Niveau
-        <select
-          value={difficulty}
-          onChange={(event) =>
-            onDifficulty({
-              ...clearLibreContentFreeze(),
-              difficulty: event.target.value as Difficulty,
-            })
-          }
-        >
-          {DIFFICULTY_OPTIONS.map((item) => (
-            <option key={item.value} value={item.value}>
-              {item.label}
-            </option>
-          ))}
-        </select>
-      </label>
+      {showValues ? (
+        <div className={`game-values${block.numberLibre ? ' is-on' : ''}`}>
+          <button
+            type="button"
+            className={`game-values-btn${block.numberLibre ? ' active' : ''}`}
+            aria-pressed={!!block.numberLibre}
+            title="Saisir les valeurs à la place du niveau"
+            onClick={() =>
+              onChange({
+                ...clearLibreContentFreeze(),
+                numberLibre: !block.numberLibre,
+                numberMin: block.numberMin ?? 1,
+                numberMax: block.numberMax ?? 100,
+              })
+            }
+          >
+            Valeurs
+          </button>
+          {block.numberLibre ? (
+            <>
+              <label>
+                De
+                <input
+                  type="number"
+                  inputMode="decimal"
+                  step={block.numberDecimals ? 0.1 : 1}
+                  value={block.numberMin ?? 1}
+                  onChange={(event) =>
+                    onChange({
+                      ...clearLibreContentFreeze(),
+                      numberLibre: true,
+                      numberMin: Number(event.target.value),
+                    })
+                  }
+                />
+              </label>
+              <label>
+                À
+                <input
+                  type="number"
+                  inputMode="decimal"
+                  step={block.numberDecimals ? 0.1 : 1}
+                  value={block.numberMax ?? 100}
+                  onChange={(event) =>
+                    onChange({
+                      ...clearLibreContentFreeze(),
+                      numberLibre: true,
+                      numberMax: Number(event.target.value),
+                    })
+                  }
+                />
+              </label>
+            </>
+          ) : null}
+        </div>
+      ) : (
+        <label>
+          Niveau
+          <select
+            value={difficulty}
+            onChange={(event) =>
+              onChange({
+                ...clearLibreContentFreeze(),
+                difficulty: event.target.value as Difficulty,
+              })
+            }
+          >
+            {DIFFICULTY_OPTIONS.map((item) => (
+              <option key={item.value} value={item.value}>
+                {item.label}
+              </option>
+            ))}
+          </select>
+        </label>
+      )}
     </div>
   )
 }

@@ -576,26 +576,9 @@ export function GeneratorPage({
             </button>
           </div>
         }
-        centerSlot={
-          boardMode === 'jeu' ? (
-            <GameSetupBar
-              domain={activePage.domain}
-              domains={allowedDomains}
-              topic={activeBlock.topic}
-              topics={available}
-              exerciseType={activeBlock.exerciseType}
-              exercises={typeChoices}
-              difficulty={activeBlock.difficulty}
-              block={activeBlock}
-              onDomain={changeDomain}
-              onTopic={changeTopic}
-              onExercise={updatePage}
-              onDifficulty={updatePage}
-            />
-          ) : null
-        }
         rightSlot={
           <>
+            {boardMode === 'jeu' ? null : (
             <button
               className="topbar-icon-btn"
               type="button"
@@ -610,6 +593,7 @@ export function GeneratorPage({
                 />
               </svg>
             </button>
+            )}
             <TopbarTools
             themeColor={themeColor}
             onThemeColor={applyThemeColor}
@@ -669,6 +653,26 @@ export function GeneratorPage({
             }
             showPreviewToggle={!(ctx.isCalliDomain || ctx.isJeuxDomain)}
             onLogout={onLogout}
+            menuOnly={boardMode === 'jeu'}
+            leading={
+              boardMode === 'jeu' ? (
+                <GameSetupBar
+                  domain={activePage.domain}
+                  domains={allowedDomains}
+                  topic={activeBlock.topic}
+                  topics={available}
+                  exerciseType={activeBlock.exerciseType}
+                  exercises={typeChoices}
+                  difficulty={activeBlock.difficulty}
+                  showValues={ctx.isNumberLibreDomain}
+                  block={activeBlock}
+                  onDomain={changeDomain}
+                  onTopic={changeTopic}
+                  onExercise={updatePage}
+                  onChange={updatePage}
+                />
+              ) : null
+            }
           />
           </>
         }
