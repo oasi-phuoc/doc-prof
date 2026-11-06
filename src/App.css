@@ -6428,7 +6428,10 @@ textarea.pill-input,
   display:grid;grid-template-columns:repeat(6,minmax(0,1fr));
   gap:clamp(8px,1.2cqw,16px);width:100%
 }
-@container (max-width:720px){
+@container (max-width:980px){
+  .game-card-play-choices{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@container (max-width:560px){
   .game-card-play-choices{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 .game-card-play .game-chip{
