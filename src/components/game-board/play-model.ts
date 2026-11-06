@@ -1,4 +1,5 @@
 import { fmt } from '@/math/column-arith'
+import { createRng, shuffle } from '@/math/rng'
 import { opTableCell } from '@/math/op-table'
 import type {
   CompositeScene,
@@ -99,19 +100,11 @@ function hash(seed: string): number {
 }
 
 function mix<T>(items: T[], seed: string): T[] {
-  const out = [...items]
-  let x = hash(seed) || 1
-  for (let i = out.length - 1; i > 0; i--) {
-    x = (Math.imul(x, 1664525) + 1013904223) >>> 0
-    const j = x % (i + 1)
-    const tmp = out[i]!
-    out[i] = out[j]!
-    out[j] = tmp
-  }
-  return out
+  return shuffle(createRng(hash(seed) || 1), items)
 }
 
 function chipsOf(labels: string[], seed: string, images?: Array<string | undefined>): PlayChip[] {
+  const orderSeed = `${seed}\n${labels.join('\n')}`
   return mix(
     labels.map((label, index) => ({
       id: `${seed}-${index}`,
@@ -119,7 +112,7 @@ function chipsOf(labels: string[], seed: string, images?: Array<string | undefin
       image: images?.[index],
       tone: 0,
     })),
-    seed,
+    orderSeed,
   ).map((chip, index) => ({ ...chip, tone: cardTone(index, seed) }))
 }
 
@@ -218,6 +211,32 @@ function base(
   }
 }
 
+function sceneStamp(scene: PlayScene): string {
+  switch (scene.type) {
+    case 'calc':
+      return scene.text
+    case 'column':
+      return `${scene.a} ${scene.op} ${scene.b}`
+    case 'compare':
+      return `${scene.left} ${scene.right}`
+    case 'prompt':
+      return scene.text
+    case 'images':
+      return scene.prompt
+    case 'stem':
+      return `${scene.before} ${scene.after}`
+    case 'order':
+    case 'lines':
+      return scene.prompt
+    case 'sequence':
+      return scene.cells.map((cell) => cell.text ?? '□').join(' ')
+    case 'table':
+      return scene.op
+    case 'fraction':
+      return `${scene.shape.n}/${scene.shape.d}`
+  }
+}
+
 function asChoice(
   key: string,
   block: Pick<WorksheetBlock, 'title' | 'instruction'>,
@@ -235,7 +254,7 @@ function asChoice(
       visual,
       mode: 'choice',
       correctChoice: answer,
-      choices: chipsOf(labels, key),
+      choices: chipsOf(labels, `${key}\n${sceneStamp(scene)}`),
     },
     block,
   )
