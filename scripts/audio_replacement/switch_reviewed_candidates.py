@@ -85,6 +85,9 @@ def main():
                 support['transcription'] = text
             if manual:
                 exercise.update(manual.get('exercise_metadata', {}).get(exercise['id'], {}))
+                for description in manual.get('support_description_changes', []):
+                    if description['exercise'] == exercise['id'] and description['audio'] == ai:
+                        support['images_descriptions'][ai - 1] = description['description']
                 for change in manual.get('question_changes', []):
                     if change['exercise'] != exercise['id']:
                         continue
