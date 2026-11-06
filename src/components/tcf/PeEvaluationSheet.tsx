@@ -8,13 +8,11 @@ export function PeEvaluationSheet({ evaluation }: { evaluation: PeEvaluation }) 
     <article className="worksheet-sheet tcf-pe-evaluation-sheet">
       <div className="sheet-body">
         <header className="tcf-pe-evaluation-top">
-          <div>
-            <h2>PE — Grille d’évaluation</h2>
-            <p className="tcf-pe-evaluation-title">{evaluation.title}</p>
-          </div>
-          <p className="tcf-pe-evaluation-total">
-            Total …… /{score(evaluation.points)}
-          </p>
+          <h2>
+            PE — Grille d’évaluation
+            {evaluation.title ? <span className="tcf-pe-evaluation-title">{evaluation.title}</span> : null}
+          </h2>
+          <p className="tcf-pe-evaluation-total">Total …… /{score(evaluation.points)}</p>
         </header>
         <ul className="tcf-pe-identity">
           <li>

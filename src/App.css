@@ -4496,13 +4496,18 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
   display:flex;flex-direction:column;gap:3mm;
   font-size:calc(13pt * var(--app-font-scale, 1));line-height:1.35
 }
-.tcf-pe-evaluation-top{display:flex;justify-content:space-between;align-items:flex-start;gap:6mm}
+.tcf-pe-evaluation-top{display:flex;justify-content:space-between;align-items:flex-start;gap:4mm}
 .tcf-pe-evaluation-sheet h2{
-  margin:0;font-size:calc(16pt * var(--app-font-scale, 1));font-weight:800;letter-spacing:-.02em
+  display:flex;align-items:baseline;flex-wrap:wrap;gap:2mm 4mm;min-width:0;margin:0;
+  font-size:calc(16pt * var(--app-font-scale, 1));font-weight:800;letter-spacing:-.02em
 }
-.tcf-pe-evaluation-title{margin:1mm 0 0;font-weight:700}
+.tcf-pe-evaluation-title{
+  font-size:calc(13pt * var(--app-font-scale, 1));font-weight:700
+}
 .tcf-pe-evaluation-total{
-  margin:0;font-weight:800;text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums
+  flex:0 0 auto;margin:0;padding:1.5mm 3mm;border:1.5px solid var(--purple);color:var(--purple);
+  font-weight:800;text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact
 }
 .tcf-pe-evaluation-note{margin:0}
 .tcf-pe-identity{display:grid;grid-template-columns:1fr 1fr 1fr;gap:4mm;margin:0;padding:0;list-style:none}
