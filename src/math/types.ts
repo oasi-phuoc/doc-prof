@@ -1081,6 +1081,13 @@ export type WorksheetBlock = {
   exerciseType: string
   /** Points par question (propagé depuis ExerciseBlock). */
   pointsPerQuestion?: number
+  /**
+   * Poids de toutes les questions de l’exercice, posé sur la première feuille
+   * d’un saut de page. Le badge affiche cette somme ; les feuilles suivantes
+   * ne répètent ni le total, ni le titre, ni la consigne.
+   * `undefined` dans le tableau = barème courant.
+   */
+  pointsWeights?: Array<number | undefined>
   givens?: AlgebraGiven[]
   document?: WorksheetDocument
   problemDraftGrids?: boolean[]

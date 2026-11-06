@@ -49,6 +49,7 @@ import type {
   WorksheetPage,
 } from './types'
 import { generateItems } from './generate-items'
+import { headingForSlice } from './page-break-heading'
 
 /** CE instructions multi-docs → un bloc Exercice par document. */
 function expandTcfInstructionDocuments(page: PageConfig, seed: number): PageConfig {
@@ -648,6 +649,7 @@ export function buildWorksheets(pages: PageConfig[], seed: number): WorksheetPag
             blocks: [
               {
                 ...sourceBlock,
+                ...headingForSlice(sourceBlock, offset, items),
                 items: sliceItems,
                 itemOffset: offset,
                 // Tableaux complets : les callbacks UI rajoutent itemOffset.
@@ -689,15 +691,21 @@ export function buildWorksheets(pages: PageConfig[], seed: number): WorksheetPag
         })
         return
       }
+      const keptItems = sheets.flat()
+      let itemStart = 0
       sheets.forEach((sliceItems, part) => {
+        const offset = itemStart
+        itemStart += sliceItems.length
         out.push({
           ...worksheet,
           items: sliceItems,
           blocks: [
             {
               ...sourceBlock,
+              ...headingForSlice(sourceBlock, offset, keptItems),
               document: part === 0 ? sourceBlock.document : undefined,
               items: sliceItems,
+              itemOffset: offset,
             },
           ],
           configIndex: index,
@@ -721,8 +729,10 @@ export function buildWorksheets(pages: PageConfig[], seed: number): WorksheetPag
       const headBlocks = worksheet.blocks
         .map((block) => ({
           ...block,
+          ...headingForSlice(block, offset, block.items),
           document: part === 0 ? block.document : undefined,
           items: block.items.slice(offset, sliceEnd),
+          itemOffset: offset,
           oralAnswerModes: block.oralAnswerModes?.slice(offset, sliceEnd),
           problemDraftGrids: block.problemDraftGrids?.slice(offset, sliceEnd),
         }))

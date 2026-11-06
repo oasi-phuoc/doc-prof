@@ -1,4 +1,5 @@
 import type { WorksheetBlock, WorksheetPage } from '@/math/types'
+import { headingForSlice } from '@/math/page-break-heading'
 import { isGrammarReadingType } from './reading-types'
 
 /** Split existing items without drawing a different text or resetting question numbers. */
@@ -14,6 +15,7 @@ export function splitGrammarReadingPages(page: WorksheetPage): WorksheetPage[] |
     for (const end of [...cuts, block.items.length]) {
       current.push({
         ...block,
+        ...headingForSlice(block, start, block.items),
         sourceBlockIndex,
         items: block.items.slice(start, end),
         itemOffset: start,

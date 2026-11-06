@@ -11,7 +11,7 @@ import {
 } from '@/components/math/PrintDocumentChrome'
 import { DecomposeExample } from '@/components/item-view/decompose'
 import { isDraftPadExercise } from '@/math/catalog'
-import { blockPointsTotal, formatPointsLabel } from '@/tpm/test'
+import { blockPointsTotal, formatPointsLabel, sumPointWeights } from '@/tpm/test'
 import { isReperageConstruire } from '@/math/coord-reperage'
 import type {
   CoordReply,
@@ -220,8 +220,11 @@ export function WorksheetSheet({
           const blockHeading = block.title
           const isTheoryBlock = block.items.some((item) => item.layout === 'theory')
           const perQ = block.pointsPerQuestion ?? pointsPerQuestion
-          const blockPts = blockPointsTotal(block.items, perQ)
+          const blockPts = block.pointsWeights
+            ? sumPointWeights(block.pointsWeights, perQ)
+            : blockPointsTotal(block.items, perQ)
           const pointsBadge = formatPointsLabel(blockPts)
+          const continuedSlice = (block.itemOffset ?? 0) > 0
           const dualForm = isGramDualFormExercise(block.exerciseType)
           const marginForm = isGramMarginFormExercise(block.exerciseType)
           const firstQuestion = block.items.find(
@@ -266,7 +269,7 @@ export function WorksheetSheet({
                   : undefined
               }
             >
-              {isJeuxSheet || isTheoryBlock ? null : (
+              {isJeuxSheet || isTheoryBlock || continuedSlice ? null : (
               <header className="exercise-heading">
                 <div className="exercise-heading-main">
                   <div className="exercise-heading-title-row">
