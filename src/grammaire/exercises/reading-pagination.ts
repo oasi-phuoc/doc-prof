@@ -17,8 +17,6 @@ export function splitGrammarReadingPages(page: WorksheetPage): WorksheetPage[] |
         sourceBlockIndex,
         items: block.items.slice(start, end),
         itemOffset: start,
-        title: start ? `${block.title} (suite)` : block.title,
-        instruction: start ? 'Continuez. Répondez aux questions suivantes.' : block.instruction,
       })
       if (end < block.items.length) {
         groups.push(current)
@@ -30,7 +28,6 @@ export function splitGrammarReadingPages(page: WorksheetPage): WorksheetPage[] |
   if (current.length) groups.push(current)
   return groups.map((blocks, index) => ({
     ...page,
-    title: index ? `${page.title} — suite` : page.title,
     blocks,
     items: blocks.flatMap(block => block.items),
     isContinuation: index > 0,

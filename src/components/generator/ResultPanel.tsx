@@ -82,11 +82,11 @@ export type ResultPanelProps = {
   pageExerciseBlocks: ExerciseBlock[]
   activeBlock: ExerciseBlock
   toggleDraftGrid: (itemIndex: number, targetBlock?: number) => void
-  cycleOralAnswerMode: (itemIndex: number, targetBlock?: number) => void
-  selectTcfForm: (itemIndex: number, form: TcfTypeReponse, targetBlock?: number) => void
-  selectTcfFormForExercise: (form: TcfTypeReponse, targetBlock?: number) => void
+  cycleOralAnswerMode: (itemIndex: number, targetBlock?: number, sheetIndex?: number) => void
+  selectTcfForm: (itemIndex: number, form: TcfTypeReponse, targetBlock?: number, sheetIndex?: number) => void
+  selectTcfFormForExercise: (form: TcfTypeReponse, targetBlock?: number, sheetIndex?: number) => void
   toggleFormulaireLetterGrid: (targetBlock?: number) => void
-  toggleTcfPageBreak: (itemIndex: number, targetBlock?: number) => void
+  toggleTcfPageBreak: (itemIndex: number, targetBlock?: number, sheetIndex?: number) => void
   isFormes: boolean
   isCadrans: boolean
   isTransform: boolean
@@ -169,10 +169,67 @@ export function ResultPanel({
   const includeCorrections = printCorrections && !isCalliDomain && !isJeuxDomain
   const printLabel = includeCorrections ? 'Imprimer la fiche et le corrigé' : 'Imprimer la fiche'
   const useA5Double = isA5DoubleFormat(sheetFormat) && Boolean(a5LeftSheet && a5RightSheet)
+  const activePreviewIndex = Math.min(safeSheetIndex, Math.max(0, previewWorksheets.length - 1))
+  const activePreview = previewWorksheets[activePreviewIndex]
+  const activeConfig = activePreview?.configIndex ?? activePreviewIndex
+  /** Feuilles physiques du bouton de page (principale, puis sauts de page). */
+  const pageGroup = previewWorksheets
+    .map((sheet, index) => ({ sheet, index }))
+    .filter(({ sheet, index }) => (sheet.configIndex ?? index) === activeConfig)
+  const showPageStack = !useA5Double && pageGroup.some(({ sheet }) => sheet.isContinuation)
+  const lastPreview = previewWorksheets[previewWorksheets.length - 1]
+  const onLastPage =
+    previewWorksheets.length > 0 &&
+    (lastPreview?.configIndex ?? previewWorksheets.length - 1) === activeConfig
   const showTranscriptionPreview =
-    sheetProps.mode === 'answers' &&
-    transcriptionPacks.length > 0 &&
-    safeSheetIndex >= Math.max(0, previewWorksheets.length - 1)
+    sheetProps.mode === 'answers' && transcriptionPacks.length > 0 && onLastPage
+  const stackedSources = showPageStack ? pageGroup.map(({ sheet }) => sheet) : [previewSheet]
+  const stackedInteractions = stackedSources
+    .flatMap((sheet) => (sheetProps.mode === 'answers' ? imageInteractionsOf(sheet) : []))
+    .filter((exercise, i, all) => all.findIndex((other) => other.id === exercise.id) === i)
+  const stackedEvaluations =
+    sheetProps.mode === 'answers'
+      ? useA5Double
+        ? [
+            ...peEvaluationsOf(a5LeftSheet),
+            ...(a5RightSheet !== a5LeftSheet ? peEvaluationsOf(a5RightSheet) : []),
+          ]
+        : stackedSources.flatMap((sheet) => peEvaluationsOf(sheet))
+      : []
+  const coordEdit =
+    (isFormes && activeBlock.coordLibre) ||
+    (isCadrans && activeBlock.coordLibre) ||
+    (isTransform && activeBlock.coordLibre)
+      ? {
+          selectedKind: selectedCoordShape,
+          placingOrigin: isComposer && coordTool === 'origin',
+          onPlace: placeCoordMark,
+          onPlaceOrigin: placeOrigin,
+          onRemove: removeCoordMark,
+        }
+      : undefined
+  const renderEditableSheet = (sheet: WorksheetPage, index: number) => (
+    <WorksheetSheet
+      page={sheet}
+      pageNumber={index + 1}
+      sheetIndex={index + 1}
+      total={previewWorksheets.length}
+      interactiveDraftGrids={pageExerciseBlocks.some((block) => isProblemExercise(block.exerciseType))}
+      onToggleDraftGrid={toggleDraftGrid}
+      interactiveOralModes={isOralComprehensionExercise(activeBlock.exerciseType)}
+      onCycleOralAnswerMode={(itemIndex, block) => cycleOralAnswerMode(itemIndex, block, index)}
+      interactiveTcfOptions={isTcf || Boolean(isGrammaireExercise)}
+      interactiveTcfPageBreaks={
+        isTcf || pageExerciseBlocks.some((block) => isGrammarReadingType(block.exerciseType))
+      }
+      onSelectTcfForm={(itemIndex, form, block) => selectTcfForm(itemIndex, form, block, index)}
+      onSelectTcfFormForExercise={(form, block) => selectTcfFormForExercise(form, block, index)}
+      onToggleFormulaireLetterGrid={toggleFormulaireLetterGrid}
+      onToggleTcfPageBreak={(itemIndex, block) => toggleTcfPageBreak(itemIndex, block, index)}
+      coordEdit={coordEdit}
+      {...sheetProps}
+    />
+  )
 
   return (
           <section className="result-panel">
@@ -355,7 +412,7 @@ export function ResultPanel({
             </div>
             <div className="sheet-preview-wrap no-print-nav">
               <div className="sheet-preview-cluster">
-                <div className={`sheet-preview-row${jeuxPreviewSheets && jeuxPreviewSheets.length > 1 ? ' is-jeux-duplex' : ''}${sheetProps.mode === 'answers' && (imageInteractionsOf(previewSheet).length || peEvaluationsOf(previewSheet).length) ? ' is-po-stack' : ''}`}>
+                <div className={`sheet-preview-row${jeuxPreviewSheets && jeuxPreviewSheets.length > 1 ? ' is-jeux-duplex' : ''}${stackedInteractions.length || stackedEvaluations.length ? ' is-po-stack' : ''}${showPageStack ? ' is-page-stack' : ''}`}>
                   {jeuxPreviewSheets && jeuxPreviewSheets.length > 1 ? (
                     <div className="sheet-stage is-jeux-stack">
                       {jeuxPreviewSheets.map(({ sheet, index }, stackIdx) => (
@@ -374,12 +431,9 @@ export function ResultPanel({
                       ))}
                     </div>
                   ) : (
-                  <div className={`sheet-stage${useA5Double ? ' is-a5-double' : ''}`}>
-                    <A4Frame
-                      ref={previewFrameRef}
-                      className={useA5Double ? 'is-landscape' : undefined}
-                    >
-                      {useA5Double && a5LeftSheet && a5RightSheet ? (
+                  <div className={`sheet-stage${useA5Double ? ' is-a5-double' : ''}${showPageStack ? ' is-page-stack' : ''}`}>
+                    {useA5Double && a5LeftSheet && a5RightSheet ? (
+                      <A4Frame ref={previewFrameRef} className="is-landscape">
                         <DualA5Sheet
                           key={`a5-${a5LeftSheet.exerciseType}-${seed}-${safeSheetIndex}-${pageExerciseBlocks.length}`}
                           leftPage={a5LeftSheet}
@@ -399,71 +453,37 @@ export function ResultPanel({
                           onSelectTcfFormForExercise={selectTcfFormForExercise}
                           onToggleFormulaireLetterGrid={toggleFormulaireLetterGrid}
                           onToggleTcfPageBreak={toggleTcfPageBreak}
-                          coordEdit={
-                            (isFormes && activeBlock.coordLibre) ||
-                            (isCadrans && activeBlock.coordLibre) ||
-                            (isTransform && activeBlock.coordLibre)
-                              ? {
-                                  selectedKind: selectedCoordShape,
-                                  placingOrigin: isComposer && coordTool === 'origin',
-                                  onPlace: placeCoordMark,
-                                  onPlaceOrigin: placeOrigin,
-                                  onRemove: removeCoordMark,
-                                }
-                              : undefined
-                          }
+                          coordEdit={coordEdit}
                           {...sheetProps}
                         />
-                      ) : (
-                        <WorksheetSheet
-                          key={`${previewSheet?.exerciseType}-${seed}-${safeSheetIndex}-${pageExerciseBlocks.length}`}
-                          page={previewSheet!}
-                          pageNumber={safeSheetIndex + 1}
-                          sheetIndex={safeSheetIndex + 1}
-                          total={previewWorksheets.length}
-                          interactiveDraftGrids={pageExerciseBlocks.some((b) =>
-                            isProblemExercise(b.exerciseType),
-                          )}
-                          onToggleDraftGrid={toggleDraftGrid}
-                          interactiveOralModes={isOralComprehensionExercise(activeBlock.exerciseType)}
-                          onCycleOralAnswerMode={cycleOralAnswerMode}
-                          interactiveTcfOptions={isTcf || Boolean(isGrammaireExercise)}
-                          interactiveTcfPageBreaks={isTcf || pageExerciseBlocks.some(block => isGrammarReadingType(block.exerciseType))}
-                          onSelectTcfForm={selectTcfForm}
-                          onSelectTcfFormForExercise={selectTcfFormForExercise}
-                          onToggleFormulaireLetterGrid={toggleFormulaireLetterGrid}
-                          onToggleTcfPageBreak={toggleTcfPageBreak}
-                          coordEdit={
-                            (isFormes && activeBlock.coordLibre) ||
-                            (isCadrans && activeBlock.coordLibre) ||
-                            (isTransform && activeBlock.coordLibre)
-                              ? {
-                                  selectedKind: selectedCoordShape,
-                                  placingOrigin: isComposer && coordTool === 'origin',
-                                  onPlace: placeCoordMark,
-                                  onPlaceOrigin: placeOrigin,
-                                  onRemove: removeCoordMark,
-                                }
-                              : undefined
-                          }
-                          {...sheetProps}
-                        />
-                      )}
-                    </A4Frame>
-                    {sheetProps.mode === 'answers' ? (useA5Double
-                      ? [...peEvaluationsOf(a5LeftSheet), ...(a5RightSheet !== a5LeftSheet ? peEvaluationsOf(a5RightSheet) : [])]
-                      : peEvaluationsOf(previewSheet)).map((evaluation, i) => (
+                      </A4Frame>
+                    ) : showPageStack ? (
+                      pageGroup.map(({ sheet, index }, stackIdx) => (
+                        <A4Frame
+                          key={`page-stack-${sheet.exerciseType}-${seed}-${index}`}
+                          ref={stackIdx === 0 ? previewFrameRef : undefined}
+                        >
+                          {renderEditableSheet(sheet, index)}
+                        </A4Frame>
+                      ))
+                    ) : (
+                      <A4Frame
+                        ref={previewFrameRef}
+                        key={`${previewSheet?.exerciseType}-${seed}-${safeSheetIndex}-${pageExerciseBlocks.length}`}
+                      >
+                        {previewSheet ? renderEditableSheet(previewSheet, safeSheetIndex) : null}
+                      </A4Frame>
+                    )}
+                    {stackedEvaluations.map((evaluation, i) => (
                       <A4Frame key={`pe-evaluation-${evaluation.id}-${i}`}>
                         <PeEvaluationSheet evaluation={evaluation} />
                       </A4Frame>
-                    )) : null}
-                    {sheetProps.mode === 'answers'
-                      ? imageInteractionsOf(previewSheet).map((exercise) => (
-                          <A4Frame key={`po-interaction-${exercise.id}`}>
-                            <InteractionCorrigeSheet exercise={exercise} />
-                          </A4Frame>
-                        ))
-                      : null}
+                    ))}
+                    {stackedInteractions.map((exercise) => (
+                      <A4Frame key={`po-interaction-${exercise.id}`}>
+                        <InteractionCorrigeSheet exercise={exercise} />
+                      </A4Frame>
+                    ))}
                     {showTranscriptionPreview
                       ? transcriptionPacks.map((entries, i) => (
                           <A4Frame key={`transcription-prev-${i}`}>

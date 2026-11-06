@@ -2118,6 +2118,20 @@ html,body,#root{
   flex:0 0 auto;
   width:min(420px, calc((100% - 18px) / 2));
 }
+/* Saut de page et corrigé : la feuille suivante est sous la principale, le cadre défile. */
+.sheet-preview-wrap:has(.is-page-stack) .sheet-preview-cluster,
+.sheet-preview-wrap:has(.is-po-stack) .sheet-preview-cluster{
+  flex:0 0 auto;
+  min-height:auto;
+}
+.sheet-preview-wrap .sheet-stage.is-page-stack,
+.sheet-preview-wrap:has(.is-po-stack) .sheet-stage{
+  overflow:visible;
+  flex:0 0 auto;
+  min-height:auto;
+  height:auto;
+  align-items:stretch;
+}
 .coord-page-palette{
   flex:0 0 auto;width:148px;display:flex;flex-direction:column;gap:8px;
   padding-top:4px;max-height:min(90vh,720px);overflow:auto

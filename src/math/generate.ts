@@ -644,21 +644,10 @@ export function buildWorksheets(pages: PageConfig[], seed: number): WorksheetPag
           const offset = indexes[0] ?? 0
           out.push({
             ...worksheet,
-            title: part === 0 ? worksheet.title : `${worksheet.title} — suite`,
-            instruction:
-              part === 0 ? worksheet.instruction : 'Continuez. Répondez aux questions suivantes.',
             items: sliceItems,
             blocks: [
               {
                 ...sourceBlock,
-                title:
-                  part === 0
-                    ? sourceBlock.title
-                    : `${sourceBlock.title.replace(/ \(suite\)$/, '')} (suite)`,
-                instruction:
-                  part === 0
-                    ? sourceBlock.instruction
-                    : 'Continuez. Répondez aux questions suivantes.',
                 items: sliceItems,
                 itemOffset: offset,
                 // Tableaux complets : les callbacks UI rajoutent itemOffset.
@@ -667,6 +656,7 @@ export function buildWorksheets(pages: PageConfig[], seed: number): WorksheetPag
               },
             ],
             configIndex: index,
+            // Même bouton de page : feuille physique en plus, pas un onglet « suite ».
             isContinuation: part > 0,
           })
         })
@@ -699,18 +689,13 @@ export function buildWorksheets(pages: PageConfig[], seed: number): WorksheetPag
         })
         return
       }
-      const suiteInstruction = 'Suite de la théorie.'
       sheets.forEach((sliceItems, part) => {
         out.push({
           ...worksheet,
-          title: part === 0 ? worksheet.title : `${worksheet.title} — suite`,
-          instruction: part === 0 ? worksheet.instruction : suiteInstruction,
           items: sliceItems,
           blocks: [
             {
               ...sourceBlock,
-              title: part === 0 ? sourceBlock.title : `${sourceBlock.title.replace(/ \(suite\)$/, '')} (suite)`,
-              instruction: part === 0 ? sourceBlock.instruction : suiteInstruction,
               document: part === 0 ? sourceBlock.document : undefined,
               items: sliceItems,
             },
@@ -729,9 +714,6 @@ export function buildWorksheets(pages: PageConfig[], seed: number): WorksheetPag
       return
     }
 
-    const suiteInstruction = 'Continuez. Répondez aux questions suivantes.'
-    const suiteTitleSuffix = 'Suite des questions.'
-
     let offset = 0
     let part = 0
     while (offset < totalItems) {
@@ -739,8 +721,6 @@ export function buildWorksheets(pages: PageConfig[], seed: number): WorksheetPag
       const headBlocks = worksheet.blocks
         .map((block) => ({
           ...block,
-          title: part === 0 ? block.title : `${block.title.replace(/ \(suite\)$/, '')} (suite)`,
-          instruction: part === 0 ? block.instruction : suiteInstruction,
           document: part === 0 ? block.document : undefined,
           items: block.items.slice(offset, sliceEnd),
           oralAnswerModes: block.oralAnswerModes?.slice(offset, sliceEnd),
@@ -750,8 +730,6 @@ export function buildWorksheets(pages: PageConfig[], seed: number): WorksheetPag
 
       out.push({
         ...worksheet,
-        title: part === 0 ? worksheet.title : `${worksheet.title} — suite`,
-        instruction: part === 0 ? worksheet.instruction : suiteTitleSuffix,
         items: headBlocks.flatMap((block) => block.items),
         blocks: headBlocks,
         configIndex: index,
