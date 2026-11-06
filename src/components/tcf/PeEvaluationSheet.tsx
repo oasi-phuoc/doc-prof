@@ -7,24 +7,44 @@ export function PeEvaluationSheet({ evaluation }: { evaluation: PeEvaluation }) 
   return (
     <article className="worksheet-sheet tcf-pe-evaluation-sheet">
       <div className="sheet-body">
-        <h2>PE — Grille d’évaluation</h2>
-        <p className="tcf-pe-evaluation-title">{evaluation.title}</p>
-        <p>Nom / Prénom / Classe : ……………………………………………</p>
+        <header className="tcf-pe-evaluation-top">
+          <div>
+            <h2>PE — Grille d’évaluation</h2>
+            <p className="tcf-pe-evaluation-title">{evaluation.title}</p>
+          </div>
+          <p className="tcf-pe-evaluation-total">
+            Total …… /{score(evaluation.points)}
+          </p>
+        </header>
+        <p className="tcf-pe-evaluation-name">Nom / Prénom / Classe : ……………………………………………</p>
         {evaluation.task ? <p className="tcf-pe-evaluation-task">{evaluation.task}</p> : null}
-        <table className="tcf-pe-evaluation-table">
-          <caption>{evaluation.reference}{evaluation.points !== evaluation.referencePoints ? ` · barème adapté de ${score(evaluation.referencePoints)} à ${score(evaluation.points)} points` : ''}</caption>
-          <thead><tr><th scope="col">Critères et indicateurs</th><th scope="col">Points</th><th scope="col">Note</th></tr></thead>
+        <div className="tcf-pe-criteria">
           {evaluation.criteria.map((criterion, i) => (
-            <tbody key={i}>
-              <tr className="tcf-pe-criterion"><th scope="row">{i + 1}. {criterion.title}</th><td>/{score(criterion.levels[0].points)}</td><td>……</td></tr>
-              {criterion.levels.map((level, j) => (
-                <tr key={j}><td>{level.description}</td><td>{score(level.points)}</td><td /></tr>
-              ))}
-            </tbody>
+            <section key={i} className="tcf-pe-criterion-frame">
+              <div className="tcf-pe-criterion-head">
+                <span>
+                  {i + 1}. {criterion.title}
+                </span>
+                <span className="tcf-pe-criterion-points">/{score(criterion.levels[0]?.points ?? 0)}</span>
+              </div>
+              <div className="tcf-pe-levels">
+                <div className="tcf-pe-level-head">
+                  <span />
+                  <span>Points</span>
+                </div>
+                {criterion.levels.map((level, j) => (
+                  <div key={j} className="tcf-pe-level">
+                    <span>{level.description}</span>
+                    <span className="tcf-pe-level-points">{score(level.points)}</span>
+                  </div>
+                ))}
+              </div>
+            </section>
           ))}
-          <tfoot><tr><th scope="row">Total</th><td>/{score(evaluation.points)}</td><td>……</td></tr></tfoot>
-        </table>
-        <p className="tcf-pe-evaluation-note">Les points sont attribués par le correcteur selon la production de l’élève. Une réponse modèle n’est pas la seule réponse possible.</p>
+        </div>
+        <p className="tcf-pe-evaluation-note">
+          Les points sont attribués par le correcteur selon la production de l’élève. Une réponse modèle n’est pas la seule réponse possible.
+        </p>
       </div>
     </article>
   )

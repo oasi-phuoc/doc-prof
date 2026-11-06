@@ -4491,18 +4491,42 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-portrait-fields>div{display:grid;grid-template-columns:auto 1fr;gap:6px;align-items:baseline}
 .tcf-portrait-fields dt{margin:0;font-weight:400;color:var(--ink)}
 .tcf-portrait-fields dd{margin:0;font-weight:700;color:var(--purple)}
-.tcf-pe-evaluation-sheet .sheet-body{display:block;font-size:10pt;line-height:1.25}
-.tcf-pe-evaluation-sheet h2{font-size:16pt;margin:0 0 3mm}
-.tcf-pe-evaluation-title{font-weight:700;margin:0 0 4mm}
-.tcf-pe-evaluation-task{font-size:9pt;margin:3mm 0}
-.tcf-pe-evaluation-table{width:100%;border-collapse:collapse;font-size:9pt}
-.tcf-pe-evaluation-table caption{text-align:left;font-size:8pt;margin-bottom:3mm}
-.tcf-pe-evaluation-table th,.tcf-pe-evaluation-table td{padding:1mm 2mm;text-align:left;vertical-align:top;border-bottom:1px solid var(--ink)}
-.tcf-pe-evaluation-table th:first-child,.tcf-pe-evaluation-table td:first-child{width:82%}
-.tcf-pe-evaluation-table td:not(:first-child),.tcf-pe-evaluation-table thead th:not(:first-child){white-space:nowrap;text-align:right}
-.tcf-pe-criterion{font-weight:700}
-.tcf-pe-evaluation-table tbody{break-inside:avoid}
-.tcf-pe-evaluation-note{font-size:8pt;margin-top:4mm}
+.worksheet-sheet.tcf-pe-evaluation-sheet{padding:12mm 16mm 10mm}
+.tcf-pe-evaluation-sheet .sheet-body{
+  display:flex;flex-direction:column;gap:3mm;
+  font-size:calc(13pt * var(--app-font-scale, 1));line-height:1.35
+}
+.tcf-pe-evaluation-top{display:flex;justify-content:space-between;align-items:flex-start;gap:6mm}
+.tcf-pe-evaluation-sheet h2{
+  margin:0;font-size:calc(16pt * var(--app-font-scale, 1));font-weight:800;letter-spacing:-.02em
+}
+.tcf-pe-evaluation-title{margin:1mm 0 0;font-weight:700}
+.tcf-pe-evaluation-total{
+  margin:0;font-weight:800;text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums
+}
+.tcf-pe-evaluation-name,.tcf-pe-evaluation-task,.tcf-pe-evaluation-note{margin:0}
+.tcf-pe-evaluation-task{text-align:justify}
+.tcf-pe-criteria{display:flex;flex-direction:column;gap:3mm}
+.tcf-pe-criterion-frame{
+  border:1.5px solid var(--purple);overflow:hidden;break-inside:avoid;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact
+}
+.tcf-pe-criterion-head{
+  display:flex;align-items:center;justify-content:space-between;gap:3mm;
+  min-height:8mm;padding:1.5mm 3mm;box-sizing:border-box;
+  background:var(--purple);color:#fff;font-weight:800;line-height:1.2;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact
+}
+.tcf-pe-criterion-points{font-variant-numeric:tabular-nums;white-space:nowrap}
+.tcf-pe-levels{padding:2mm 3mm 2.5mm}
+.tcf-pe-level-head,.tcf-pe-level{
+  display:grid;grid-template-columns:minmax(0,1fr) 22mm;column-gap:4mm;align-items:baseline
+}
+.tcf-pe-level-head{font-weight:700;margin-bottom:1mm}
+.tcf-pe-level-head span:last-child,.tcf-pe-level-points{
+  text-align:right;font-variant-numeric:tabular-nums;font-weight:700
+}
+.tcf-pe-level + .tcf-pe-level{margin-top:1mm}
 .tcf-ecriture{display:flex;flex-direction:column;gap:6px}
 .tcf-ecriture.is-fill{flex:1 1 auto;min-height:0;gap:0}
 .tcf-ecriture.is-fill .tcf-compteur{margin-top:8px}
