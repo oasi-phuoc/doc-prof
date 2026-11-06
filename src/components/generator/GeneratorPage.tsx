@@ -547,7 +547,6 @@ export function GeneratorPage({
       setScoreTotal((total) => total + 1)
       if (correct) setScoreCorrect((count) => count + 1)
     },
-    score: scoreMode === 'points' ? { correct: scoreCorrect, total: scoreTotal } : null,
   }
 
   return (
