@@ -325,7 +325,6 @@ function AccountMenu({
   hideChrome,
   onHideChromeChange,
   onLogout,
-  leading,
 }: {
   themeColor: string
   onThemeColor: (color: string) => void
@@ -338,8 +337,6 @@ function AccountMenu({
   hideChrome: boolean
   onHideChromeChange: (hide: boolean) => void
   onLogout: () => void
-  /** Réglages d’exercice, en tête du menu (mode jeu). */
-  leading?: ReactNode
 }) {
   const [open, setOpen] = useState(false)
   const boxRef = useRef<HTMLDivElement>(null)
@@ -381,8 +378,6 @@ function AccountMenu({
       {open ? (
         <div className="topbar-account-menu" role="menu" aria-label="Menu">
           <p className="settings-menu-heading">Paramètres</p>
-          {leading}
-          {leading ? <div className="settings-menu-divider" /> : null}
           <FontSizeSection fontSize={fontSize} onChange={onFontSizeChange} />
           <ColorSection themeColor={themeColor} onChange={onThemeColor} />
           <FormatSection sheetFormat={sheetFormat} onChange={onSheetFormatChange} />
@@ -431,8 +426,6 @@ export function TopbarTools({
   onTogglePreviewMode,
   showPreviewToggle = true,
   onLogout,
-  leading,
-  menuOnly = false,
 }: {
   themeColor: string
   onThemeColor: (color: string) => void
@@ -454,15 +447,11 @@ export function TopbarTools({
   /** Masqué pour calligraphie / jeux (pas de corrigé). */
   showPreviewToggle?: boolean
   onLogout: () => void
-  /** Réglages d’exercice, en tête du menu (mode jeu). */
-  leading?: ReactNode
-  /** Mode jeu : seul le menu « … » reste à droite. */
-  menuOnly?: boolean
 }) {
   const isCorrige = previewMode === 'answers'
   return (
     <div className="topbar-tools">
-      {menuOnly || !showPreviewToggle ? null : (
+      {showPreviewToggle ? (
         <IconBtn
           label={isCorrige ? 'Corrigé (cliquer pour fiche élève)' : 'Fiche élève (cliquer pour corrigé)'}
           active={isCorrige}
@@ -484,9 +473,7 @@ export function TopbarTools({
             </svg>
           )}
         </IconBtn>
-      )}
-      {menuOnly ? null : (
-      <>
+      ) : null}
       <IconBtn label="En-tête et pied de page" active={footerOpen} onClick={onToggleFooter}>
         <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>
           <path
@@ -503,8 +490,6 @@ export function TopbarTools({
           />
         </svg>
       </IconBtn>
-      </>
-      )}
       <AccountMenu
         themeColor={themeColor}
         onThemeColor={onThemeColor}
@@ -517,7 +502,6 @@ export function TopbarTools({
         hideChrome={hideChrome}
         onHideChromeChange={onHideChromeChange}
         onLogout={onLogout}
-        leading={leading}
       />
     </div>
   )

@@ -557,6 +557,7 @@ export function GeneratorPage({
         onCreate={() => undefined}
         generator
         afterBrand={
+          <>
           <div className="mode-toggle board-mode-toggle" role="group" aria-label="Affichage">
             <button
               type="button"
@@ -575,10 +576,49 @@ export function GeneratorPage({
               Jeu
             </button>
           </div>
+          {boardMode === 'jeu' ? (
+            <GameSetupBar
+              domain={activePage.domain}
+              domains={allowedDomains}
+              topic={ctx.soutienSelection?.theme.id ?? activeBlock.topic}
+              topics={ctx.isTpmLike ? [] : available}
+              topicLabel={ctx.isTcf ? 'Compétence' : 'Thème'}
+              exerciseType={activeBlock.exerciseType}
+              exercises={typeChoices}
+              difficulty={activeBlock.difficulty}
+              showValues={ctx.isNumberLibreDomain}
+              block={activeBlock}
+              subthemes={ctx.gramSubthemes}
+              subthemeId={ctx.gramSubtheme?.id}
+              letters={
+                ctx.soutienSelection?.theme.letters.map((letter) => ({
+                  id: letter.id,
+                  label: ctx.isAlphabetisation ? letter.label : letter.letterUpper,
+                })) ?? []
+              }
+              letterId={ctx.soutienSelection?.letter.id}
+              letterLabel={
+                ctx.isAlphabetisation && activePage.topic === 'alpha-phrases'
+                  ? 'Histoire'
+                  : ctx.isAlphabetisation && activePage.topic === 'alpha-mots'
+                    ? 'Leçon'
+                    : 'Lettre'
+              }
+              sounds={ctx.soutienSelection?.letter.sounds.map((sound) => ({ id: sound.id, label: sound.label })) ?? []}
+              soundId={ctx.soutienSelection?.sound.id}
+              onDomain={changeDomain}
+              onTopic={changeTopic}
+              onExercise={updatePage}
+              onChange={updatePage}
+              onSubtheme={changeGramSubtheme}
+              onLetter={changeSoutienLetter}
+              onSound={changeSoutienSound}
+            />
+          ) : null}
+          </>
         }
         rightSlot={
           <>
-            {boardMode === 'jeu' ? null : (
             <button
               className="topbar-icon-btn"
               type="button"
@@ -593,7 +633,6 @@ export function GeneratorPage({
                 />
               </svg>
             </button>
-            )}
             <TopbarTools
             themeColor={themeColor}
             onThemeColor={applyThemeColor}
@@ -653,26 +692,6 @@ export function GeneratorPage({
             }
             showPreviewToggle={!(ctx.isCalliDomain || ctx.isJeuxDomain)}
             onLogout={onLogout}
-            menuOnly={boardMode === 'jeu'}
-            leading={
-              boardMode === 'jeu' ? (
-                <GameSetupBar
-                  domain={activePage.domain}
-                  domains={allowedDomains}
-                  topic={activeBlock.topic}
-                  topics={available}
-                  exerciseType={activeBlock.exerciseType}
-                  exercises={typeChoices}
-                  difficulty={activeBlock.difficulty}
-                  showValues={ctx.isNumberLibreDomain}
-                  block={activeBlock}
-                  onDomain={changeDomain}
-                  onTopic={changeTopic}
-                  onExercise={updatePage}
-                  onChange={updatePage}
-                />
-              ) : null
-            }
           />
           </>
         }
