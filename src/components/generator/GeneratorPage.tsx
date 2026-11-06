@@ -617,11 +617,22 @@ export function GeneratorPage({
                     <strong>{scoreCorrect}</strong>
                     <span> / {scoreTotal}</span>
                   </p>
-                  <button type="button" className="game-score-reset" onClick={() => {
-                    setScoreCorrect(0)
-                    setScoreTotal(0)
-                  }}>
-                    Remettre à zéro
+                  <button
+                    type="button"
+                    className="topbar-icon-btn"
+                    aria-label="Remettre à zéro"
+                    title="Remettre à zéro"
+                    onClick={() => {
+                      setScoreCorrect(0)
+                      setScoreTotal(0)
+                    }}
+                  >
+                    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>
+                      <path
+                        fill="currentColor"
+                        d="M12 5V2L7 6l5 4V7a5 5 0 1 1-4.5 2.8l-1.8 1A7 7 0 1 0 12 5z"
+                      />
+                    </svg>
                   </button>
                 </>
               ) : null}
