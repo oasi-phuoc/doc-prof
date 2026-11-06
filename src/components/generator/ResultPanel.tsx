@@ -1,3 +1,5 @@
+import { ThreeThemesCorrigeSheet } from '@/components/tcf/ThreeThemesCorrigeSheet'
+import { threeThemesOf } from '@/tcf/three-themes-corrige'
 import { Fragment, useMemo, type RefObject } from 'react'
 import { PeEvaluationSheet } from '@/components/tcf/PeEvaluationSheet'
 import { peEvaluationsOf, type PeEvaluation } from '@/tcf/pe-evaluation'
@@ -9,7 +11,7 @@ import { DualA5Sheet, WorksheetSheet } from '@/components/generator/WorksheetShe
 import { InteractionCorrigeSheet } from '@/components/tcf/InteractionCorrigeSheet'
 import { TranscriptionAppendixSheet } from '@/components/tcf/TranscriptionAppendixSheet'
 import { imageInteractionsOf } from '@/tcf/interaction-lines'
-import type { TcfPoImageInteraction } from '@/tcf/types'
+import type { TcfPoImageInteraction, TcfPoTroisThemes } from '@/tcf/types'
 import {
   collectWorksheetTranscriptions,
   paginateTranscriptions,
@@ -177,7 +179,7 @@ export function ResultPanel({
         : previewWorksheets
     const seen = new Set<string>()
     const pages: Array<
-      { kind: 'pe'; evaluation: PeEvaluation } | { kind: 'po'; exercise: TcfPoImageInteraction }
+      { kind: 'pe'; evaluation: PeEvaluation } | { kind: 'po'; exercise: TcfPoImageInteraction } | { kind: 'themes'; exercise: TcfPoTroisThemes }
     > = []
     for (const sheet of sheets) {
       for (const evaluation of peEvaluationsOf(sheet)) {
@@ -185,6 +187,12 @@ export function ResultPanel({
         if (seen.has(key)) continue
         seen.add(key)
         pages.push({ kind: 'pe', evaluation })
+      }
+      for (const exercise of threeThemesOf(sheet)) {
+        const key = `themes:${exercise.id}`
+        if (seen.has(key)) continue
+        seen.add(key)
+        pages.push({ kind: 'themes', exercise })
       }
       for (const exercise of imageInteractionsOf(sheet)) {
         const key = `po:${exercise.id}`
@@ -498,11 +506,13 @@ export function ResultPanel({
                             key={
                               page.kind === 'pe'
                                 ? `pe-follow-${page.evaluation.id}-${i}`
-                                : `po-follow-${page.exercise.id}`
+                                : `${page.kind}-follow-${page.exercise.id}`
                             }
                           >
                             {page.kind === 'pe' ? (
                               <PeEvaluationSheet evaluation={page.evaluation} />
+                            ) : page.kind === 'themes' ? (
+                              <ThreeThemesCorrigeSheet exercise={page.exercise} />
                             ) : (
                               <InteractionCorrigeSheet exercise={page.exercise} />
                             )}
@@ -601,6 +611,8 @@ export function ResultPanel({
                   {correctionFollow.map((page, i) =>
                     page.kind === 'pe' ? (
                       <PeEvaluationSheet key={`print-pe-${page.evaluation.id}-${i}`} evaluation={page.evaluation} />
+                    ) : page.kind === 'themes' ? (
+                      <ThreeThemesCorrigeSheet key={`print-themes-${page.exercise.id}`} exercise={page.exercise} />
                     ) : (
                       <InteractionCorrigeSheet key={`print-po-${page.exercise.id}`} exercise={page.exercise} />
                     ),
