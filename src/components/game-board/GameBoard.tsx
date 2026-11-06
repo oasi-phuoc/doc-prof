@@ -12,7 +12,20 @@ function VerdictMark({ status }: { status: 'idle' | 'ok' | 'retry' }) {
   const label = status === 'ok' ? 'Juste' : status === 'retry' ? 'Faux' : ''
   return (
     <p className={`game-mark is-${status}`} role="status" aria-label={label || undefined}>
-      {status === 'ok' ? 'V' : status === 'retry' ? 'X' : ''}
+      {status === 'ok' ? (
+        <svg viewBox="0 0 24 24" aria-hidden>
+          <circle cx="12" cy="12" r="11" fill="currentColor" />
+          <path fill="#fff" d="M10.1 16.3 6.2 12.4l1.5-1.5 2.4 2.4 6.2-6.2 1.5 1.5z" />
+        </svg>
+      ) : status === 'retry' ? (
+        <svg viewBox="0 0 24 24" aria-hidden>
+          <circle cx="12" cy="12" r="11" fill="currentColor" />
+          <path
+            fill="#fff"
+            d="M8.2 6.7 12 10.5l3.8-3.8 1.5 1.5-3.8 3.8 3.8 3.8-1.5 1.5L12 13.5l-3.8 3.8-1.5-1.5 3.8-3.8-3.8-3.8z"
+          />
+        </svg>
+      ) : null}
     </p>
   )
 }

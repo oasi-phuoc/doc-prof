@@ -6409,10 +6409,11 @@ textarea.pill-input,
 }
 .game-card-play-expression{flex:1 1 auto;display:flex;align-items:center;justify-content:center;gap:clamp(16px,3cqw,40px);min-height:0}
 .game-mark{
-  margin:0;flex:0 0 auto;min-width:1.1em;text-align:center;
-  font-size:clamp(48px,8vw,80px);font-weight:800;line-height:1
+  margin:0;flex:0 0 auto;display:flex;align-items:center;justify-content:center;
+  width:clamp(56px,8vw,88px);height:clamp(56px,8vw,88px)
 }
-.game-card-play .game-mark{font-size:clamp(72px,12cqw,140px)}
+.game-mark svg{display:block;width:100%;height:100%}
+.game-card-play .game-mark{width:clamp(88px,14cqw,150px);height:clamp(88px,14cqw,150px)}
 .game-prompt-with-mark{display:flex;align-items:center;gap:16px}
 .game-mark.is-ok{color:var(--green)}
 .game-mark.is-retry{color:var(--red)}
