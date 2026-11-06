@@ -770,6 +770,8 @@ export type MathItem = {
   tcf?: import('@/tcf/types').TcfSheetItem
   /** TCF : id de l’exercice de banque affiché (copie modifiable en mode libre). */
   tcfExerciseId?: string
+  /** Grille du corrigé PE, portée par le dernier item pour suivre les pages de suite. */
+  tcfPeEvaluation?: import('@/tcf/pe-evaluation').PeEvaluation
   /** Domaine Logique : puzzle SVG (suite, intrus, matrice, cubes…). */
   logique?: import('@/logique/types').LogiquePuzzle
   /** Item non compté dans le total de points (support, message). */

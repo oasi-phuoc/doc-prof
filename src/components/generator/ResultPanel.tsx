@@ -1,4 +1,6 @@
-import { useMemo, type RefObject } from 'react'
+import { Fragment, useMemo, type RefObject } from 'react'
+import { PeEvaluationSheet } from '@/components/tcf/PeEvaluationSheet'
+import { peEvaluationsOf } from '@/tcf/pe-evaluation'
 import { isGrammarReadingType } from '@/grammaire/exercises/reading-types'
 import { A4Frame } from '@/components/generator/A4Frame'
 import { FormesPalette } from '@/components/generator/FormesPalette'
@@ -353,7 +355,7 @@ export function ResultPanel({
             </div>
             <div className="sheet-preview-wrap no-print-nav">
               <div className="sheet-preview-cluster">
-                <div className={`sheet-preview-row${jeuxPreviewSheets && jeuxPreviewSheets.length > 1 ? ' is-jeux-duplex' : ''}${sheetProps.mode === 'answers' && imageInteractionsOf(previewSheet).length ? ' is-po-stack' : ''}`}>
+                <div className={`sheet-preview-row${jeuxPreviewSheets && jeuxPreviewSheets.length > 1 ? ' is-jeux-duplex' : ''}${sheetProps.mode === 'answers' && (imageInteractionsOf(previewSheet).length || peEvaluationsOf(previewSheet).length) ? ' is-po-stack' : ''}`}>
                   {jeuxPreviewSheets && jeuxPreviewSheets.length > 1 ? (
                     <div className="sheet-stage is-jeux-stack">
                       {jeuxPreviewSheets.map(({ sheet, index }, stackIdx) => (
@@ -448,6 +450,13 @@ export function ResultPanel({
                         />
                       )}
                     </A4Frame>
+                    {sheetProps.mode === 'answers' ? (useA5Double
+                      ? [...peEvaluationsOf(a5LeftSheet), ...(a5RightSheet !== a5LeftSheet ? peEvaluationsOf(a5RightSheet) : [])]
+                      : peEvaluationsOf(previewSheet)).map((evaluation, i) => (
+                      <A4Frame key={`pe-evaluation-${evaluation.id}-${i}`}>
+                        <PeEvaluationSheet evaluation={evaluation} />
+                      </A4Frame>
+                    )) : null}
                     {sheetProps.mode === 'answers'
                       ? imageInteractionsOf(previewSheet).map((exercise) => (
                           <A4Frame key={`po-interaction-${exercise.id}`}>
@@ -519,8 +528,8 @@ export function ResultPanel({
                     ? a5LeftWorksheets.map((leftPage, index) => {
                         const rightPage = a5RightWorksheets[index] ?? leftPage
                         return (
+                          <Fragment key={`print-answers-a5-${leftPage.exerciseType}-${seed}-${index}`}>
                           <DualA5Sheet
-                            key={`print-answers-a5-${leftPage.exerciseType}-${seed}-${index}`}
                             leftPage={leftPage}
                             rightPage={rightPage}
                             pageNumber={index + 1}
@@ -529,11 +538,15 @@ export function ResultPanel({
                             {...chromeProps}
                             mode="answers"
                           />
+                          {[...peEvaluationsOf(leftPage), ...(rightPage !== leftPage ? peEvaluationsOf(rightPage) : [])].map((evaluation, i) => (
+                            <PeEvaluationSheet key={`pe-a5-${evaluation.id}-${i}`} evaluation={evaluation} />
+                          ))}
+                          </Fragment>
                         )
                       })
                     : previewWorksheets.map((page, index) => (
+                      <Fragment key={`print-answers-${page.exerciseType}-${seed}-${index}`}>
                         <WorksheetSheet
-                          key={`print-answers-${page.exerciseType}-${seed}-${index}`}
                           page={page}
                           pageNumber={index + 1}
                           sheetIndex={previewWorksheets.length + index + 1}
@@ -541,6 +554,10 @@ export function ResultPanel({
                           {...chromeProps}
                           mode="answers"
                         />
+                        {peEvaluationsOf(page).map((evaluation, i) => (
+                          <PeEvaluationSheet key={`pe-${evaluation.id}-${i}`} evaluation={evaluation} />
+                        ))}
+                      </Fragment>
                       ))}
                   {previewWorksheets.flatMap((page) =>
                     imageInteractionsOf(page).map((exercise) => (

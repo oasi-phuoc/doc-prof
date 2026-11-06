@@ -33,6 +33,7 @@ import { filledForms, isTcfBaremeConsigne, resolveQuestionForm } from './formes'
 import { tcfBank, tcfExerciseById, tcfSlotBank } from './loader'
 import { melangerChoix } from './melanger'
 import { tcfPeSlotDefaults } from './pe-defaults'
+import { peEvaluation } from './pe-evaluation'
 import { TCF_PO_GROUPS, tcfGroupId } from './sources'
 import { emptyTcfExercise, TCF_LETTRES, TCF_LETTRES_SITUATIONS, tcfExerciseId } from './templates'
 import type {
@@ -709,10 +710,12 @@ export function tryGenerateTcfBlock(
       return { ...item, points: item.points === 0 ? 0 : 0 }
     })
   }
-  return {
-    instruction,
-    items,
+  if (ex.competence === 'PE' && items.length) {
+    const last = items.length - 1
+    const total = config.pointsPerQuestion ?? ex.points ?? (ex.type_exercice === 'formulaire' ? 5 : 10)
+    items[last] = { ...items[last], tcfPeEvaluation: peEvaluation(ex, total) }
   }
+  return { instruction, items }
 }
 
 /** Page 1 : informations du test (non notée). */

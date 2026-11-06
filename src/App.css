@@ -4477,6 +4477,18 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-portrait-fields>div{display:grid;grid-template-columns:auto 1fr;gap:6px;align-items:baseline}
 .tcf-portrait-fields dt{margin:0;font-weight:400;color:var(--ink)}
 .tcf-portrait-fields dd{margin:0;font-weight:700;color:var(--purple)}
+.tcf-pe-evaluation-sheet .sheet-body{display:block;font-size:10pt;line-height:1.25}
+.tcf-pe-evaluation-sheet h2{font-size:16pt;margin:0 0 3mm}
+.tcf-pe-evaluation-title{font-weight:700;margin:0 0 4mm}
+.tcf-pe-evaluation-task{font-size:9pt;margin:3mm 0}
+.tcf-pe-evaluation-table{width:100%;border-collapse:collapse;font-size:9pt}
+.tcf-pe-evaluation-table caption{text-align:left;font-size:8pt;margin-bottom:3mm}
+.tcf-pe-evaluation-table th,.tcf-pe-evaluation-table td{padding:1mm 2mm;text-align:left;vertical-align:top;border-bottom:1px solid var(--ink)}
+.tcf-pe-evaluation-table th:first-child,.tcf-pe-evaluation-table td:first-child{width:82%}
+.tcf-pe-evaluation-table td:not(:first-child),.tcf-pe-evaluation-table thead th:not(:first-child){white-space:nowrap;text-align:right}
+.tcf-pe-criterion{font-weight:700}
+.tcf-pe-evaluation-table tbody{break-inside:avoid}
+.tcf-pe-evaluation-note{font-size:8pt;margin-top:4mm}
 .tcf-ecriture{display:flex;flex-direction:column;gap:6px}
 .tcf-ecriture.is-fill{flex:1 1 auto;min-height:0;gap:0}
 .tcf-ecriture.is-fill .tcf-compteur{margin-top:8px}
