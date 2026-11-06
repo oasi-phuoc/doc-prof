@@ -1,16 +1,17 @@
 {
   "summary": {
-    "remaining_references": 308,
+    "remaining_references": 299,
     "reasons": {
-      "editorial_transcript_and_question_review_required": 162,
+      "editorial_transcript_and_question_review_required": 148,
       "source_boundary_review_required": 110,
-      "whisper_end_difference": 7,
-      "parakeet_numeric_difference": 43,
+      "whisper_end_difference": 8,
+      "parakeet_numeric_difference": 45,
       "parakeet_start_difference": 8,
       "whisper_text_difference": 28,
-      "parakeet_end_difference": 6,
+      "parakeet_end_difference": 7,
       "whisper_start_difference": 15,
       "parakeet_text_difference": 23,
+      "final_word_autochtones_requires_source_end_review": 1,
       "whisper_numeric_difference": 25,
       "technical_object_numbering_still_present": 1
     },
@@ -21,8 +22,8 @@
       "french_whisper_recognitions": 933,
       "technical_files_checked": 1002,
       "exact_equivalence_ready": 225,
-      "editorial_decisions": 585,
-      "manual_reviews_ready": 439,
+      "editorial_decisions": 599,
+      "manual_reviews_ready": 448,
       "instruction_flags": 0
     }
   },
@@ -623,9 +624,17 @@
       "source_id": "additional-20261102:mdf-b1-abc-direct:28:636adb9e1973:d3cdf6fd",
       "candidate_sha256": "e21d34dc3e152aa73e1dd181f76e25ae2c92bddb6482a9d308e7e3c709fa5d9a",
       "reasons": [
-        "editorial_transcript_and_question_review_required"
+        "final_word_autochtones_requires_source_end_review"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Nous recevons aujourd'hui dans notre studio Pierre Lavergne, un des participants du mondial de la pétanque en juillet dernier à Marseille. Il va nous parler de ce jeu populaire. Tu tires ou tu pointes ? C'est la question capitale dans le jeu de la pétanque. Dans une équipe, peu importe si c'est une doublette ou une triplette, il faut avoir des spécialistes. Le pointeur lance sa boule pour la rapprocher le plus possible du but. Le geste n'est pas très spectaculaire, mais ô combien important. Le tireur lance sa boule pour chasser une boule adverse qui se trouve trop près du cochonnet. Un claquement de métal retentit quand la boule tirée prend la place de la boule adverse. C'est le carreau. Le tir le plus remarquable et le plus admiré qui puisse se faire. La pétanque a été inventée en 1907 à La Ciotat près de Marseille. Jules Lenoir, souffrant de rhumatismes, n'arrive plus à jouer au jeu provençal, qui demande aux joueurs de faire trois pas de course avant de lancer leur boule à une distance comprise entre 15 et 21 mètres. Il trace un cercle devant le café, garde les pieds tanqués, c'est-à-dire joints, et joue tranquillement les sphères en bois sur un terrain réduit à 15 mètres au maximum. Les propriétaires de l'établissement, les frères Ernest et Joseph Pitiot, comprirent vite l'intérêt du jeu simplifié. En 1910, le premier concours officiel de Pétanque est organisé à La Ciotat. Les règles n’ont guère changé par rapport à la \"longue\", le jeu provençal, qui est toujours pratiqué dans le sud de la France. Prenons le mondial La Marseillaise, le plus grand concours du monde qui rassemble aujourd'hui plus de 14 000 joueurs du monde entier. Cette fête populaire, qui réunit amateurs et professionnels à Marseille début juillet, se joue en triplette. Trois joueurs contre trois, chacun avec deux boules. Le pointeur envoie le bouchon, de préférence en bois de buis, à une distance de 6 à 10 mètres du cercle tracé, et lance sa première boule. L'équipe adverse doit placer la boule en métal d'un poids entre 650 et 800 g le plus près du cochonnet pour reprendre le point. Tu tires ou tu pointes ? C'est là que la question capitale se pose. Les professionnels écartent tout de suite une boule dangereuse d'un tir puissant. Les amateurs se contentent de glisser la boule plus près du but par un pointage astucieux en roulant ou en plombant la boule. La partie se gagne en 13 points. Une belle finale du mondial La Marseillaise peut durer facilement 3, 4 ou 5 heures. Mais la question, tu tires ou tu pointes, ne se pose pas seulement à Marseille. Loin de là, la pétanque est un sport populaire qui se pratique partout, dans toutes les villes et les villages du sud de la France, sur des boulodromes, des places, des parcs ou même des chemins. Les terrains de légende existent toujours. comme la place des Lices à Saint-Tropez où Henri Salvador s'adonnait à son jeu préféré. Comme le berceau de la pétanque à La Ciotat qui a été grignoté par les promoteurs de l'immobilier, mais qui sert toujours le pastis pour les compétitions des autochtones",
+        "reason": "Reconnaissances finales comparées ; transcription et questions relues. Graphies des noms non épelés retenues à titre éditorial.",
+        "question_changes": [],
+        "blocked_reasons": [
+          "final_word_autochtones_requires_source_end_review"
+        ]
+      },
       "exercises": [
         "tcf-ss-b1-s6-co-3"
       ]
@@ -801,9 +810,14 @@
       "source_id": "additional-20261102:mdf-a2-abc-direct:41:85643fceeeb1:e1abe367",
       "candidate_sha256": "254db67677cccfe0e11f98e89f47f4527e05710a5ff1682999cc9bcb71667d28",
       "reasons": [
-        "editorial_transcript_and_question_review_required"
+        "parakeet_numeric_difference"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "A l'occasion du printemps du cinéma, les places sont au prix de 5,50 euros pour les moins de 18 ans et 7,50 euros pour les adultes au lieu de 10,50 euros.",
+        "reason": "Reconnaissances finales comparées ; transcription et questions relues. Graphies des noms non épelés retenues à titre éditorial.",
+        "question_changes": []
+      },
       "exercises": [
         "tcf-ssx-a2-annonce-7-5-co-2"
       ]
@@ -998,9 +1012,14 @@
       "source_id": "9782090351958:049:a4431f87ae61",
       "candidate_sha256": "017fb872b80db3c47288eaf391dc9b6fdad6bb1dc2abbba7360c70f69a44c142",
       "reasons": [
-        "editorial_transcript_and_question_review_required"
+        "parakeet_end_difference"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Vous ne savez pas quoi offrir à votre mère pour sa fête ? Achetez-lui une carte cadeau. Elle pourra choisir parmi des centaines d'articles. Vêtements, bijoux, parfums, chapeaux.",
+        "reason": "Reconnaissances finales comparées ; transcription et questions relues. Graphies des noms non épelés retenues à titre éditorial.",
+        "question_changes": []
+      },
       "exercises": [
         "tcf-ss-a2-s3-co-3"
       ]
@@ -1101,18 +1120,6 @@
       },
       "exercises": [
         "tcf-ss-a1-s21-co-3"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/maison/bonjour-fruits-legumes-par-1.mp3",
-      "source_id": "09035196:008:b099aeb5181a",
-      "candidate_sha256": "d001d359290556fc358baf354ddbf514893bcda4af8768c37be8a42f6cbad709",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "tcf-ss-b1-s9-co-2"
       ]
     },
     {
@@ -1630,18 +1637,6 @@
       ]
     },
     {
-      "ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-1-4.mp3",
-      "source_id": "9782090351958:062:a14e3edb351f",
-      "candidate_sha256": "e4e9377a12c8c9ab5d9f1eeb039cf402479d2e03f885a1bef7af9a42f6b728a8",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "tcf-a2j-s1-co-1"
-      ]
-    },
-    {
       "ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-1-5.mp3",
       "source_id": "9782090351958:062:a14e3edb351f",
       "candidate_sha256": "5ac30f8f1be6457685b9d60b2f2620efcc5dd5bc03162e026489f21d2d7bef0f",
@@ -1759,25 +1754,18 @@
       ]
     },
     {
-      "ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-6-1.mp3",
-      "source_id": "delf_a2_eb2w:001:e636083d0158",
-      "candidate_sha256": "7197d9134ba4588a9589a203bf3cf116441289d9873f9a79e3c2902c8f47228a",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "tcf-a2-sb-co-1"
-      ]
-    },
-    {
       "ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-6-6.mp3",
       "source_id": "delf_a2_eb2w:001:e636083d0158",
       "candidate_sha256": "37037829ccdda5926195e0781382dc020612f59fc9595500a95ae3b082244fc8",
       "reasons": [
-        "editorial_transcript_and_question_review_required"
+        "whisper_end_difference"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Venez nombreux le samedi 22 mars pour écouter le groupe de musique Dingo. Rendez-vous à la salle des fêtes à 21h00. Entrée : 5 euros.",
+        "reason": "Reconnaissances finales comparées ; transcription et questions relues. Graphies des noms non épelés retenues à titre éditorial.",
+        "question_changes": []
+      },
       "exercises": [
         "tcf-a2-sb-co-1"
       ]
@@ -2198,18 +2186,6 @@
       },
       "exercises": [
         "delf-a2-2021-co-ex4-29"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_32.mp3",
-      "source_id": "delf_a2_2021:032:bdb63b52b033",
-      "candidate_sha256": "e27a20e9c01d0d687c96e49fb0758d8a291f05719b00190ee233005d7b86bcf7",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "delf-a2-2021-co-ex4-32"
       ]
     },
     {
@@ -2661,18 +2637,6 @@
       ]
     },
     {
-      "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_22-1.mp3",
-      "source_id": "delf_a1_2022:022:60e05a9083eb",
-      "candidate_sha256": "dcfc3c425a432aa70468850236db082961e6f8530f9e22142e76e780d61e8e39",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "delf-a1-2022-co-ex2-22"
-      ]
-    },
-    {
       "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_22-2.mp3",
       "source_id": "delf_a1_2022:022:60e05a9083eb",
       "candidate_sha256": "24e8cd3af6260763cd88191fd2b6eaf1a4cb4f059594dff323bbfc0d50ccd885",
@@ -2733,18 +2697,6 @@
       },
       "exercises": [
         "delf-a1-2022-co-ex2-25"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_27-1.mp3",
-      "source_id": "delf_a1_2022:027:38fa96a2f6c8",
-      "candidate_sha256": "75e4795611c1e9f413b97122e8b17935f21461cae25acbb456add278a65b6c79",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "delf-a1-2022-co-ex3-27"
       ]
     },
     {
@@ -3201,9 +3153,55 @@
       "source_id": "additional-20261102:mdf-b1-abc-direct:26:1a431f268dfa:8c6701a2",
       "candidate_sha256": "8669f284b283ad9a6b8483e3300ffbb7a2566da137621064bc4cf694d661fc4c",
       "reasons": [
-        "editorial_transcript_and_question_review_required"
+        "parakeet_numeric_difference"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Et maintenant notre rubrique, idées pour le week-end. Alors Miriam, qu'est-ce que vous nous proposez ? Une visite dans un lieu de prestige, un lieu merveilleux. Le buffet de la Gare de Lyon, le train bleu, inauguré le 7 avril 1901 par le président de la République, Émile Loubet. La Gare de Lyon fait partie de l'immense effort d'urbanisme qui a accompagné l'exposition de 1900. Si l'extérieur évoque discrètement la belle époque, c'est à l'intérieur, dans les salles du buffet, que subsiste le témoignage le plus intact, le plus saisissant du style 1900. Offert par la compagnie PLM à la Gare de Lyon, ce buffet qu'elle voulait sublime est à l'image du Paris de ces années-là, où le luxe s'affichait comme un art. Les salles immenses, aux lambris dorés, aux banquettes et fauteuils de cuir et aux tentures pourpres ainsi que les lustres de cristal constituent un décor représentatif de l'art pompier. Mais ce sont les peintures qui frappent surtout le visiteur. Au nombre de 41, elles illustrent les sites du réseau PLM et aussi des événements de 1900. Tout naturellement, les trois plafonds de la Grande Salle représentent les trois villes les plus importantes. Celles dont les initiales forment le nom de la compagnie et du réseau ferroviaire, Paris, Lyon et Marseille. Les deux grandes salles, Réjane et Dorée, ainsi que les salons tunisiens et algériens classés monuments historiques, en 1972 par André Malraux, ministre de la Culture, ont pu ainsi échapper de justesse à la démolition. C'est en 1963 que le buffet de la gare a été rebaptisé train bleu, en l'honneur du mythique train Paris-Vintimille. Ce n'est pas un hasard si beaucoup de personnalités célèbres des arts et des lettres ont été des habitués de l'endroit. Pour un brunch le dimanche matin, un thé ou un café gourmand l'après-midi, un bon déjeuner ou un dîner, rendez-vous au train bleu. Régalez-vous de son excellente cuisine de brasserie et de son merveilleux décor.",
+        "reason": "Reconnaissances finales comparées ; transcription et questions relues. Graphies des noms non épelés retenues à titre éditorial. Les deux reconnaissances concordent sur 1963 et Paris-Vintimille ; les anciens corrigés 1973 et Paris-Nice sont remplacés.",
+        "question_changes": [
+          {
+            "exercise": "tcf-ss-b1-s14-co-2",
+            "question": 5,
+            "correct_answer": "En 1963",
+            "choices": [
+              {
+                "id": "a",
+                "texte": "En 1963",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "En 1973"
+              },
+              {
+                "id": "c",
+                "texte": "En 1983"
+              }
+            ]
+          },
+          {
+            "exercise": "tcf-ss-b1-s14-co-2",
+            "question": 10,
+            "correct_answer": "Le Paris-Vintimille",
+            "choices": [
+              {
+                "id": "a",
+                "texte": "Le Paris-Vintimille",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Le Paris-Nice"
+              },
+              {
+                "id": "c",
+                "texte": "Le Paris-Lyon"
+              }
+            ]
+          }
+        ]
+      },
       "exercises": [
         "tcf-ss-b1-s14-co-2"
       ]
@@ -3351,18 +3349,6 @@
       ]
     },
     {
-      "ref": "/lib/audio/tcf/co/transports/moyen-a2__annonce-5.2.mp3",
-      "source_id": "additional-20261102:mdf-a2-abc-direct:26:9c333dbb36c8:36535e06",
-      "candidate_sha256": "9b21fa57b9ea687628ed6f0322577acc559a17c963884bac86b07806d0211267",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "tcf-ssx-a2-annonce-5-2-co-2"
-      ]
-    },
-    {
       "ref": "/lib/audio/tcf/co/transports/moyen-a2__radio-18.3.mp3",
       "source_id": "additional-20261102:mdf-a2-abc-direct:63:e8a39f601d19:38745a2a",
       "candidate_sha256": "1e10990fa438c9c3290f2b64447343b8469777738350279d948bbf0d37840add",
@@ -3490,18 +3476,6 @@
       "ref": "/lib/audio/tcf/co/vie-quotidienne/alors-cette-fete-anniversaire-2-2.mp3",
       "source_id": "additional-20261102:mdf-a2-abc-direct:95:b95d20d0713a:ac7750fa",
       "candidate_sha256": "a5695b7568f94556b3d941c2b6a6d1dbdfbe403c2ca9787120a46350bd0aceb4",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "tcf-ss-a2-s10-co-1"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/vie-quotidienne/alors-cette-fete-anniversaire-2-3.mp3",
-      "source_id": "additional-20261102:mdf-a2-abc-direct:95:b95d20d0713a:ac7750fa",
-      "candidate_sha256": "3b8f62192ac67252dfffd193bdbf12cad8d627c15f63b7c7b2e6330a902ed349",
       "reasons": [
         "editorial_transcript_and_question_review_required"
       ],
@@ -4149,18 +4123,6 @@
       "editorial_decision": null,
       "exercises": [
         "tcf-ss-b1-s3-co-2"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/vie-quotidienne/le-philosophe-emmanuel-jaffelin.mp3",
-      "source_id": "additional-20261102:mdf-b1-abc-direct:25:1524d2ceec61:7c91f315",
-      "candidate_sha256": "d4d825c3457070a2fd23040c28ac0dd9e45cd5e824581054aec46639c5644f9d",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "tcf-ss-b1-s5-co-3"
       ]
     },
     {

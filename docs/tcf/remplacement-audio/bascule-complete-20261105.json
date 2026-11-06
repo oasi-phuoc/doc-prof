@@ -29047,6 +29047,419 @@
         }
       ],
       "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-1-4.mp3",
+      "previous_sha256": "fa280dc35ace31df2c6dd37cb38ed7cf62b2bfcafa399b8b05e6f00940e9668d",
+      "candidate_sha256": "e4e9377a12c8c9ab5d9f1eeb039cf402479d2e03f885a1bef7af9a42f6b728a8",
+      "rollback_git_blob": "ae17ce2e37aaf6ee2e7a6794c3dd0e98e8502ed5",
+      "source_id": "9782090351958:062:a14e3edb351f",
+      "source_sha256": "a14e3edb351fc36ed0dac7868834df4f5c8a0c27ba91fe21e9a369ff6fca13f1",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "e4e9377a12c8c9ab5d9f1eeb039cf402479d2e03f885a1bef7af9a42f6b728a8",
+        "duration": 11.128163,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T013811-a66f3cf8e4/manifest.json",
+          "manifest_sha256": "b78f4a7f5dfcc6337bfa501ff076da54eb8d78c79980ab42689aec0b29fbab98",
+          "lossless_sha256": "a93236bafd5266cb7e4a3f160dc43fd3a082ba5e1008c5232f1aef61b7d69fd8"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "needs_boundary_review",
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.0,
+          "relative_rms_threshold": 0.0070217,
+          "safe_quiet_margins": false,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.256,
+          "trailing_non_speech_seconds": 0.552,
+          "speech_region_count": 6,
+          "safe_voiced_margins": true,
+          "method": "Silero VAD with no padding; supplementary speech-vs-music evidence, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "editorial_reason": "Reconnaissances finales comparées ; transcription et questions relues. Graphies des noms non épelés retenues à titre éditorial.",
+      "numeric_resolution": null,
+      "previous_duration": 11.73,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_22-1.mp3",
+      "previous_sha256": "7674a224e0d857c81b6f50c83c6adb1c62fceb990b0018edce5cdcb6195f9160",
+      "candidate_sha256": "dcfc3c425a432aa70468850236db082961e6f8530f9e22142e76e780d61e8e39",
+      "rollback_git_blob": "d3cafb0329d0c9b1f8d9efeee615780e5a55a307",
+      "source_id": "delf_a1_2022:022:60e05a9083eb",
+      "source_sha256": "60e05a9083ebb4e489fa3842754dbb731dbff54480b36d6b422a10793f97f893",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "dcfc3c425a432aa70468850236db082961e6f8530f9e22142e76e780d61e8e39",
+        "duration": 9.848163,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111607-2489e1bd67/manifest.json",
+          "manifest_sha256": "a73b189c39c0b264e4afbe8ad995f06a6ad39b294070fbe10bb6415411b3fff7",
+          "lossless_sha256": "79a642b2b49fa991043d045625d66c4342a0f0a7f9e0834647015dc8d4f83cee"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.28,
+          "trailing_quiet_seconds": 0.51,
+          "relative_rms_threshold": 0.0057676,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "editorial_reason": "Reconnaissances finales comparées ; transcription et questions relues. Graphies des noms non épelés retenues à titre éditorial.",
+      "numeric_resolution": null,
+      "previous_duration": 10.95,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/transports/moyen-a2__annonce-5.2.mp3",
+      "previous_sha256": "4112ab3b20b03ee81334a6834d53fc5f213d1848e33635c933aaf6ec9f4e0b64",
+      "candidate_sha256": "9b21fa57b9ea687628ed6f0322577acc559a17c963884bac86b07806d0211267",
+      "rollback_git_blob": "ab665e2120f29678f935f2a8c42d7295082021bd",
+      "source_id": "additional-20261102:mdf-a2-abc-direct:26:9c333dbb36c8:36535e06",
+      "source_sha256": "9c333dbb36c8f2eabd5b603b3ff4a94f0f0c99dfcd08016eeb00928a978da3d9",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "9b21fa57b9ea687628ed6f0322577acc559a17c963884bac86b07806d0211267",
+        "duration": 13.113469,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014048-5e4a8704b1/manifest.json",
+          "manifest_sha256": "2ab07315b27272223713dfa620ca009f7f4a110a34cfed052230afe02844530b",
+          "lossless_sha256": "aa312e5373cba85b399d2a11b586fe7bd07507e4737a86edd59589434cd1e4d6"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "needs_boundary_review",
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.0,
+          "relative_rms_threshold": 0.0065913,
+          "safe_quiet_margins": false,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.288,
+          "trailing_non_speech_seconds": 0.472,
+          "speech_region_count": 7,
+          "safe_voiced_margins": true,
+          "method": "Silero VAD with no padding; supplementary speech-vs-music evidence, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "editorial_reason": "Reconnaissances finales comparées ; transcription et questions relues. Graphies des noms non épelés retenues à titre éditorial.",
+      "numeric_resolution": null,
+      "previous_duration": 14.37,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_32.mp3",
+      "previous_sha256": "29f35fe887e2d82b7dfbe8e53ce478d3a21e666c8f9ad079d14d4638e72bd66a",
+      "candidate_sha256": "e27a20e9c01d0d687c96e49fb0758d8a291f05719b00190ee233005d7b86bcf7",
+      "rollback_git_blob": "f4a1cdb02e8866a6a3de9be52d3e9aa491403015",
+      "source_id": "delf_a2_2021:032:bdb63b52b033",
+      "source_sha256": "bdb63b52b033ab2122e188e7fb29927ba883966af634f100c63964d2616abf08",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "e27a20e9c01d0d687c96e49fb0758d8a291f05719b00190ee233005d7b86bcf7",
+        "duration": 22.648163,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111954-e0f0428123/manifest.json",
+          "manifest_sha256": "1ae16209701d6f32253e207f0c63a8ae03d4ad51ea5c0fb3a7e2d2cf74f9fe83",
+          "lossless_sha256": "46b7667e45a4ce5b000dfd92f44b9a62ec470d3d09f47b7729a8ae081a0520ef"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.37,
+          "trailing_quiet_seconds": 0.59,
+          "relative_rms_threshold": 0.0105412,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "editorial_reason": "Reconnaissances finales comparées ; transcription et questions relues. Graphies des noms non épelés retenues à titre éditorial.",
+      "numeric_resolution": null,
+      "previous_duration": 23.38,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/maison/bonjour-fruits-legumes-par-1.mp3",
+      "previous_sha256": "ddb0b3f521d74d918f9e9243e14c4c8d135f845b3cadee9e68c772cbfe0a2d27",
+      "candidate_sha256": "d001d359290556fc358baf354ddbf514893bcda4af8768c37be8a42f6cbad709",
+      "rollback_git_blob": "ca720603edf59b1ce8f1a49044f1b1e2d85ec8db",
+      "source_id": "09035196:008:b099aeb5181a",
+      "source_sha256": "b099aeb5181a9a9e173a49a1f8b2be9fe97fcad9468a53a9e0ecf69c832894bc",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "d001d359290556fc358baf354ddbf514893bcda4af8768c37be8a42f6cbad709",
+        "duration": 88.973061,
+        "category": "long",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T013806-a0d178e39f/manifest.json",
+          "manifest_sha256": "b0755d764dded100daf4a83c9dade429ed0fed73a9e078c4fde72707c62251ee",
+          "lossless_sha256": "15b35633d61b207925c83b495034382eeb7d99cb1fec7b926008b723e6339ea6"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.38,
+          "trailing_quiet_seconds": 0.15,
+          "relative_rms_threshold": 0.0068781,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "editorial_reason": "Reconnaissances finales comparées ; transcription et questions relues. Graphies des noms non épelés retenues à titre éditorial.",
+      "numeric_resolution": null,
+      "previous_duration": 90.93,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_27-1.mp3",
+      "previous_sha256": "cd41a688dbd5e530ae69befbb7f1b84f9ee903eaae9e34aacd3333621f21741d",
+      "candidate_sha256": "75e4795611c1e9f413b97122e8b17935f21461cae25acbb456add278a65b6c79",
+      "rollback_git_blob": "c648c67b49741c20618eac786f46842315b3a557",
+      "source_id": "delf_a1_2022:027:38fa96a2f6c8",
+      "source_sha256": "38fa96a2f6c84188ed16b0570810055a4d57051a3c3a03647a0b10f4a7c6acfa",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "75e4795611c1e9f413b97122e8b17935f21461cae25acbb456add278a65b6c79",
+        "duration": 13.923265,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111618-773a73d6d5/manifest.json",
+          "manifest_sha256": "9dbeebb47dd1d00c3e0c6f828ff872f5fee6ed8bc2fa0534c7c8577a25047739",
+          "lossless_sha256": "9c808dcf80230b884588e62ad238b18977fc308923ef5c499542558cec4aea7a"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "needs_boundary_review",
+          "leading_quiet_seconds": 0.35,
+          "trailing_quiet_seconds": 0.73,
+          "relative_rms_threshold": 0.0068071,
+          "safe_quiet_margins": false,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.384,
+          "trailing_non_speech_seconds": 0.696,
+          "speech_region_count": 8,
+          "safe_voiced_margins": true,
+          "method": "Silero VAD with no padding; supplementary speech-vs-music evidence, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "editorial_reason": "Reconnaissances finales comparées ; transcription et questions relues. Graphies des noms non épelés retenues à titre éditorial.",
+      "numeric_resolution": null,
+      "previous_duration": 16.38,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/alors-cette-fete-anniversaire-2-3.mp3",
+      "previous_sha256": "6b971fcfbcac922da3860bf99076784c353d00b02577a74be74996213b125e07",
+      "candidate_sha256": "3b8f62192ac67252dfffd193bdbf12cad8d627c15f63b7c7b2e6330a902ed349",
+      "rollback_git_blob": "056b1d7b8d5444ab6e6a716d790436d30d2f9972",
+      "source_id": "additional-20261102:mdf-a2-abc-direct:95:b95d20d0713a:ac7750fa",
+      "source_sha256": "b95d20d0713abcff0016f342512922e61e582b85cb976f89f56b60102f85dfab",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "3b8f62192ac67252dfffd193bdbf12cad8d627c15f63b7c7b2e6330a902ed349",
+        "duration": 16.378776,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014540-165f308dd8/manifest.json",
+          "manifest_sha256": "ef4390c6301318551dc628bbd939e081996c279e160d7dffe93b48594e41c091",
+          "lossless_sha256": "219a05724d2264f0c2328ccd5f9f9fa1c60e89eac3b4e776236b29b277f18cf2"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.35,
+          "trailing_quiet_seconds": 0.62,
+          "relative_rms_threshold": 0.0095211,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "editorial_reason": "Reconnaissances finales comparées ; transcription et questions relues. Graphies des noms non épelés retenues à titre éditorial.",
+      "numeric_resolution": null,
+      "previous_duration": 21.73,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/le-philosophe-emmanuel-jaffelin.mp3",
+      "previous_sha256": "34fa069cd022d00006befca821be748ca10318c2b7752142c75661aeeb8669b2",
+      "candidate_sha256": "d4d825c3457070a2fd23040c28ac0dd9e45cd5e824581054aec46639c5644f9d",
+      "rollback_git_blob": "e725559e8bd21509fb2dabc4fafb46b304d7dd23",
+      "source_id": "additional-20261102:mdf-b1-abc-direct:25:1524d2ceec61:7c91f315",
+      "source_sha256": "1524d2ceec617b21488dd371b6d6b7fc0c1a7da6de35bfd9aaca4c0fdecf97d6",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "d4d825c3457070a2fd23040c28ac0dd9e45cd5e824581054aec46639c5644f9d",
+        "duration": 88.894694,
+        "category": "long",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014618-00f8445796/manifest.json",
+          "manifest_sha256": "6c6b895f1d1cb51450570474edddbbf232676e8dc8f6952f67fda3846281d3d2",
+          "lossless_sha256": "1860cb4e0fa8146a523b8c1a7ca3adb0e0ecedf91a45cbc71d27eb4ec1abb6b6"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.37,
+          "trailing_quiet_seconds": 0.06,
+          "relative_rms_threshold": 0.0047929,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "editorial_reason": "Reconnaissances finales comparées ; transcription et questions relues. Graphies des noms non épelés retenues à titre éditorial.",
+      "numeric_resolution": null,
+      "previous_duration": 89.78,
+      "previous_pool": null,
+      "question_changes": [
+        {
+          "exercise": "tcf-ss-b1-s5-co-3",
+          "question": 8,
+          "before": {
+            "enonce": "Quelle attitude envers autrui permet de pratiquer la gentillesse selon l'auteur ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Oublier son ego et sourire aux autres",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Chercher à dominer les autres"
+              },
+              {
+                "id": "c",
+                "texte": "Ignorer systématiquement les autres"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Oublier son ego et sourire aux autres"
+              }
+            }
+          },
+          "after": {
+            "enonce": "Quelle attitude envers autrui permet de pratiquer la gentillesse selon l'auteur ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Oublier son ego et s’ouvrir aux autres",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Ignorer les autres pour se protéger"
+              },
+              {
+                "id": "c",
+                "texte": "Rechercher la perfection à tout prix"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Oublier son ego et s’ouvrir aux autres"
+              }
+            }
+          }
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-6-1.mp3",
+      "previous_sha256": "06df4cf8760c1cb38dcce4cf6e67a6858bc3072ff6b1fdf65d09d7f930edd71a",
+      "candidate_sha256": "7197d9134ba4588a9589a203bf3cf116441289d9873f9a79e3c2902c8f47228a",
+      "rollback_git_blob": "ea0905547a8f1ecfb1942c210aa999bb953d4a40",
+      "source_id": "delf_a2_eb2w:001:e636083d0158",
+      "source_sha256": "e636083d0158d53bd2eb37477c35cbe5174464858b07b37cc0a66b61ff0a6481",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "7197d9134ba4588a9589a203bf3cf116441289d9873f9a79e3c2902c8f47228a",
+        "duration": 9.848163,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T120959-aa0b30767f/manifest.json",
+          "manifest_sha256": "73015a58e40c2ec641e94d8b8ec697984b0a71146fc145a1957bddc3b3148c73",
+          "lossless_sha256": "ff16138c1f079c019e1d1fa2205c8e526532631de587cc9ad44cc41e19a98ddb"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.18,
+          "trailing_quiet_seconds": 0.2,
+          "relative_rms_threshold": 0.0102905,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "editorial_reason": "Reconnaissances finales comparées ; transcription et questions relues. Graphies des noms non épelés retenues à titre éditorial.",
+      "numeric_resolution": null,
+      "previous_duration": 14.79,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
     }
   ],
   "batches": [
@@ -29134,6 +29547,11 @@
       "batch": 17,
       "report": "bascule-lot-017-20261105.json",
       "files": 23
+    },
+    {
+      "batch": 18,
+      "report": "bascule-lot-018-20261105.json",
+      "files": 9
     }
   ],
   "human_listening_performed": false,
@@ -29142,9 +29560,9 @@
   "policy": "Existing exercise IDs and audio URLs retained. Received sources and git rollback objects preserved. Unchecked candidates are not installed.",
   "summary": {
     "installed_before_this_switch": 80,
-    "installed_this_switch": 637,
-    "total_installed": 717,
-    "remaining_references": 308,
+    "installed_this_switch": 646,
+    "total_installed": 726,
+    "remaining_references": 299,
     "active_library_references": 1025,
     "full_switch_complete": false
   }
