@@ -4504,8 +4504,10 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-pe-evaluation-total{
   margin:0;font-weight:800;text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums
 }
-.tcf-pe-evaluation-name,.tcf-pe-evaluation-task,.tcf-pe-evaluation-note{margin:0}
-.tcf-pe-evaluation-task{text-align:justify}
+.tcf-pe-evaluation-note{margin:0}
+.tcf-pe-identity{display:grid;grid-template-columns:1fr 1fr 1fr;gap:4mm;margin:0;padding:0;list-style:none}
+.tcf-pe-identity li{display:flex;align-items:baseline;gap:2mm;margin:0}
+.tcf-pe-identity-line{flex:1 1 auto;min-width:0;border-bottom:1.5px solid var(--purple);min-height:1.15em}
 .tcf-pe-criteria{display:flex;flex-direction:column;gap:3mm}
 .tcf-pe-criterion-frame{
   border:1.5px solid var(--purple);overflow:hidden;break-inside:avoid;
@@ -4517,15 +4519,11 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
   background:var(--purple);color:#fff;font-weight:800;line-height:1.2;
   -webkit-print-color-adjust:exact;print-color-adjust:exact
 }
-.tcf-pe-criterion-points{font-variant-numeric:tabular-nums;white-space:nowrap}
 .tcf-pe-levels{padding:2mm 3mm 2.5mm}
-.tcf-pe-level-head,.tcf-pe-level{
+.tcf-pe-level{
   display:grid;grid-template-columns:minmax(0,1fr) 22mm;column-gap:4mm;align-items:baseline
 }
-.tcf-pe-level-head{font-weight:700;margin-bottom:1mm}
-.tcf-pe-level-head span:last-child,.tcf-pe-level-points{
-  text-align:right;font-variant-numeric:tabular-nums;font-weight:700
-}
+.tcf-pe-level-points{text-align:right;font-variant-numeric:tabular-nums;font-weight:700}
 .tcf-pe-level + .tcf-pe-level{margin-top:1mm}
 .tcf-ecriture{display:flex;flex-direction:column;gap:6px}
 .tcf-ecriture.is-fill{flex:1 1 auto;min-height:0;gap:0}

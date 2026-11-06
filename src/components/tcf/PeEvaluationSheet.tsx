@@ -16,8 +16,20 @@ export function PeEvaluationSheet({ evaluation }: { evaluation: PeEvaluation }) 
             Total …… /{score(evaluation.points)}
           </p>
         </header>
-        <p className="tcf-pe-evaluation-name">Nom / Prénom / Classe : ……………………………………………</p>
-        {evaluation.task ? <p className="tcf-pe-evaluation-task">{evaluation.task}</p> : null}
+        <ul className="tcf-pe-identity">
+          <li>
+            <span>Nom :</span>
+            <span className="tcf-pe-identity-line" />
+          </li>
+          <li>
+            <span>Prénom :</span>
+            <span className="tcf-pe-identity-line" />
+          </li>
+          <li>
+            <span>Classe :</span>
+            <span className="tcf-pe-identity-line" />
+          </li>
+        </ul>
         <div className="tcf-pe-criteria">
           {evaluation.criteria.map((criterion, i) => (
             <section key={i} className="tcf-pe-criterion-frame">
@@ -25,13 +37,8 @@ export function PeEvaluationSheet({ evaluation }: { evaluation: PeEvaluation }) 
                 <span>
                   {i + 1}. {criterion.title}
                 </span>
-                <span className="tcf-pe-criterion-points">/{score(criterion.levels[0]?.points ?? 0)}</span>
               </div>
               <div className="tcf-pe-levels">
-                <div className="tcf-pe-level-head">
-                  <span />
-                  <span>Points</span>
-                </div>
                 {criterion.levels.map((level, j) => (
                   <div key={j} className="tcf-pe-level">
                     <span>{level.description}</span>

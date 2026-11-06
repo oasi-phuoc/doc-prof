@@ -688,7 +688,10 @@ export function tryGenerateTcfBlock(
         (slot?.competence === 'CO' ? tcfCoConsigneForSlot(slot.numero) : undefined)
       : undefined
   const customConsigne = config.tcfExercise != null ? ex.consigne?.trim() : undefined
+  // PE : la situation (« Vous allez en vacances… ») est le texte élève, pas la grille.
+  const peConsigne = ex.competence === 'PE' ? ex.consigne?.trim() : undefined
   const instruction =
+    peConsigne ||
     customConsigne ||
     typeConsigne ||
     tcfTypeMeta(ex.competence, ex.type_exercice)?.instruction ||
