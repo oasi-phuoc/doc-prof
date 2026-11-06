@@ -1334,6 +1334,13 @@ html,body,#root{
     + var(--tcf-audio-text-nudge)
   )
 }
+/* CE (question sans bandeau Audio) : même hauteur que l’énoncé, comme en CO.
+   .tcf-question a 4 px de marge ; le demi-interligne (line-height 1.55) amène
+   le haut des boutons au haut des lettres. */
+.exercise-item.layout-tcf:has(.tcf-question):not(:has(.is-audio-frame)) > .draft-grid-chip-margin.tcf-margin-form-icons,
+.exercise-item.layout-tcf:has(.tcf-question):not(:has(.is-audio-frame)) > .draft-grid-chip-margin.tcf-page-chip{
+  top:calc(var(--ex-pad-y) + 4px + 0.275 * 13pt * var(--app-font-scale, 1))
+}
 .draft-pad{
   /* 24 colonnes × 5 lignes en 1 col ; on multiplie les lignes par le nombre de colonnes
      (2 col → 10 lignes) pour garder la même hauteur de cases une fois la largeur coupée. */
