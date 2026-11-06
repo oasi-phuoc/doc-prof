@@ -662,7 +662,7 @@ function Answer({
               key={picture.id}
               type="button"
               className={`game-chip game-choice${selected ? ' is-circled' : ''}`}
-              data-tone={cardTone(index, round.key)}
+              data-tone={cardTone(index)}
               aria-pressed={selected}
               onClick={() => toggleCircle(picture.id)}
             >

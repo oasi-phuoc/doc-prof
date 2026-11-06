@@ -73,9 +73,9 @@ export type PlayRound = {
 /** Cartes de réponse, dans cet ordre : jaune, rouge, orange, bleu, vert, violet. */
 export const PLAY_CARDS = ['Jaune', 'Rouge', 'Orange', 'Bleu', 'Vert', 'Violet'] as const
 
-export function cardTone(index: number, seed = ''): number {
-  const start = seed ? hash(seed) % PLAY_CARDS.length : 0
-  return (start + index) % PLAY_CARDS.length
+/** La couleur suit la place de la carte, pas la réponse. */
+export function cardTone(index: number): number {
+  return index % PLAY_CARDS.length
 }
 
 export function sameAnswer(a: string, b: string): boolean {
@@ -145,7 +145,7 @@ function chipsOf(labels: string[], seed: string, images?: Array<string | undefin
       tone: 0,
     })),
     orderSeed,
-  ).map((chip, index) => ({ ...chip, tone: cardTone(index, seed) }))
+  ).map((chip, index) => ({ ...chip, tone: cardTone(index) }))
 }
 
 function unique(values: string[]): string[] {
@@ -382,7 +382,7 @@ function tcfItemRounds(
             id: `${key}-${index}`,
             label: choice.texte || choice.lettre,
             image: choice.image,
-            tone: cardTone(index, key),
+            tone: cardTone(index),
           })),
         },
         block,
@@ -866,7 +866,7 @@ function asClick(round: PlayRound): PlayRound[] {
             id: picture.id,
             label: picture.label,
             image: picture.image,
-            tone: cardTone(index, round.key),
+            tone: cardTone(index),
           })),
         },
         blockOf(round),
