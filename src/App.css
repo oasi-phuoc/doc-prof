@@ -6395,7 +6395,7 @@ textarea.pill-input,
   container-type:inline-size;
   display:flex;flex-direction:column;align-items:stretch;justify-content:flex-end;
   gap:18px;flex:1 1 auto;width:100%;height:100%;min-height:100%;
-  padding:28px 32px 28px;position:relative;background:#fff
+  padding:8px 32px 80px;position:relative;background:#fff
 }
 .game-card-play-expression{flex:1 1 auto;display:flex;align-items:center;justify-content:center;min-height:0}
 .game-question-card{
@@ -6505,6 +6505,6 @@ textarea.pill-input,
   .game-board-stage{grid-template-columns:1fr}
   .game-stem,.game-column{font-size:calc(32px * var(--app-font-scale, 1))}
   .topbar-brand{gap:8px}
-  .game-card-play{height:auto;min-height:calc(100dvh - 68px);padding:20px 16px 20px}
+  .game-card-play{height:auto;min-height:calc(100dvh - 68px);padding:8px 16px 64px}
   .board-mode-toggle button{padding:8px 12px}
 }
