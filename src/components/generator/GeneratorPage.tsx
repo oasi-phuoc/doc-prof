@@ -15,6 +15,7 @@ import { SaveFicheDialog } from '@/components/generator/SaveFicheDialog'
 import { TopbarTools } from '@/components/generator/TopbarTools'
 import { FooterSidePanel } from '@/components/generator/FooterSidePanel'
 import { GameSetupBar } from '@/components/game-board/GameSetupBar'
+import { GameTimer } from '@/components/game-board/GameTimer'
 import { Header } from '@/components/generator/Header'
 import { LibreSidePanel } from '@/components/generator/LibreSidePanel'
 import { SettingsPanel } from '@/components/generator/SettingsPanel'
@@ -69,28 +70,6 @@ import type {
   PreviewMode,
 } from '@/math/types'
 
-function formatTimer(ms: number): string {
-  const total = Math.max(0, Math.floor(ms / 1000))
-  const hours = Math.floor(total / 3600)
-  const minutes = Math.floor((total % 3600) / 60)
-  const seconds = total % 60
-  const ss = String(seconds).padStart(2, '0')
-  if (hours > 0) return `${hours}:${String(minutes).padStart(2, '0')}:${ss}`
-  return `${minutes}:${ss}`
-}
-
-function timerLabel(ms: number): string {
-  const total = Math.max(0, Math.floor(ms / 1000))
-  const hours = Math.floor(total / 3600)
-  const minutes = Math.floor((total % 3600) / 60)
-  const seconds = total % 60
-  const parts = []
-  if (hours > 0) parts.push(`${hours} ${hours > 1 ? 'heures' : 'heure'}`)
-  if (minutes > 0) parts.push(`${minutes} ${minutes > 1 ? 'minutes' : 'minute'}`)
-  parts.push(`${seconds} ${seconds > 1 ? 'secondes' : 'seconde'}`)
-  return parts.join(' ')
-}
-
 export function GeneratorPage({
   onLogout,
   onOpenFiches,
@@ -144,8 +123,6 @@ export function GeneratorPage({
   const [scoreMode, setScoreMode] = useState<'normal' | 'points'>('normal')
   const [scoreCorrect, setScoreCorrect] = useState(0)
   const [scoreTotal, setScoreTotal] = useState(0)
-  const [timerOn, setTimerOn] = useState(false)
-  const [timerMs, setTimerMs] = useState(0)
   const [questionCountOn, setQuestionCountOn] = useState(false)
   const [questionCount, setQuestionCount] = useState(0)
   const scoreModeRef = useRef(scoreMode)
@@ -153,13 +130,6 @@ export function GeneratorPage({
   scoreModeRef.current = scoreMode
   questionCountOnRef.current = questionCountOn
   const previewFrameRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    if (!timerOn) return
-    const origin = Date.now()
-    const id = window.setInterval(() => setTimerMs(Date.now() - origin), 200)
-    return () => window.clearInterval(id)
-  }, [timerOn])
 
   const applyThemeColor = (color: string) => {
     setThemeColor(color)
@@ -639,29 +609,7 @@ export function GeneratorPage({
                   />
                 </svg>
               </button>
-              <button
-                type="button"
-                className={`topbar-icon-btn${timerOn ? ' active' : ''}`}
-                aria-pressed={timerOn}
-                aria-label={timerOn ? 'Arrêter le minuteur' : 'Démarrer le minuteur'}
-                title={timerOn ? 'Arrêter le minuteur' : 'Démarrer le minuteur'}
-                onClick={() => {
-                  setTimerOn((on) => !on)
-                  setTimerMs(0)
-                }}
-              >
-                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>
-                  <path
-                    fill="currentColor"
-                    d="M9 2h6v2h-1.2v1.05A8 8 0 1 1 10.2 5.05V4H9V2zm3 5a6 6 0 1 0 .01 12.01A6 6 0 0 0 12 7zm-1 2h2v4.2l2.6 1.6-1 1.6L11 14V9z"
-                  />
-                </svg>
-              </button>
-              {timerOn ? (
-                <p className="game-score" aria-label={timerLabel(timerMs)}>
-                  {formatTimer(timerMs)}
-                </p>
-              ) : null}
+              <GameTimer />
               <button
                 type="button"
                 className={`topbar-icon-btn${questionCountOn ? ' active' : ''}`}
