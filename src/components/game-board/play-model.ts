@@ -48,7 +48,7 @@ export type PlayScene =
     }
   | { type: 'lines'; prompt: string; lines: Array<{ label: string; slotId: string }> }
   | { type: 'prompt'; text: string }
-  | { type: 'calc'; text: string }
+  | { type: 'calc'; a: string; op: string; b: string; result?: string; tail?: '≈' }
   | { type: 'images'; prompt: string }
   | { type: 'fraction'; kind: 'color' | 'read'; shape: NonNullable<MathItem['fracShape']> }
 
@@ -88,6 +88,38 @@ export function sameAnswer(a: string, b: string): boolean {
       .trim()
       .toLocaleLowerCase('fr')
   return n(a) === n(b)
+}
+
+function calcStamp(scene: { a: string; op: string; b: string; result?: string; tail?: '≈' }): string {
+  const parts = [scene.a || '□', scene.op, scene.b || '□']
+  if (scene.result != null) parts.push('=', scene.result)
+  else if (scene.tail) parts.push(scene.tail)
+  return parts.join(' ')
+}
+
+function calcFromItem(item: MathItem): PlayScene {
+  const missing = item.missing ?? 'result'
+  return {
+    type: 'calc',
+    a: missing === 'a' ? '' : fmt(item.a ?? 0),
+    op: item.op ?? '+',
+    b: missing === 'b' ? '' : fmt(item.b ?? 0),
+    result: missing === 'result' ? undefined : fmt(item.result ?? 0),
+  }
+}
+
+/** Énoncé du type « 3 + 4 = » ou « □ + 4 = 7 », même ligne que l’addition simple. */
+function parseCalcPrompt(prompt: string): { a: string; op: string; b: string; result?: string; tail?: '≈' } | null {
+  const token = String.raw`(?:□|-?\d+(?:[.,]\d+)?(?:\s*/\s*-?\d+(?:[.,]\d+)?)?)`
+  const source = prompt.trim().replace(/[()]/g, '').replace(/−/g, '-')
+  const match = source.match(new RegExp(`^(${token})\\s*([+×÷\\-])\\s*(${token})(?:\\s*(=|≈)\\s*(${token})?)?\\s*$`, 'u'))
+  if (!match) return null
+  const slot = (value: string | undefined) => (!value || value === '□' ? '' : value.replace(/\s+/g, ''))
+  const a = slot(match[1])
+  const b = slot(match[3])
+  const result = match[5] == null || match[5] === '□' ? undefined : slot(match[5])
+  const tail = match[4] === '≈' && result == null ? '≈' : undefined
+  return { a, op: match[2] === '-' ? '−' : match[2]!, b, result, tail }
 }
 
 function hash(seed: string): number {
@@ -214,7 +246,7 @@ function base(
 function sceneStamp(scene: PlayScene): string {
   switch (scene.type) {
     case 'calc':
-      return scene.text
+      return calcStamp(scene)
     case 'column':
       return `${scene.a} ${scene.op} ${scene.b}`
     case 'compare':
@@ -677,16 +709,8 @@ function mathRound(
   }
 
   if (item.a != null && item.b != null && item.op) {
-    const missing = item.missing ?? 'result'
-    const aText = missing === 'a' ? '□' : fmt(item.a)
-    const bText = missing === 'b' ? '□' : fmt(item.b)
-    const resultText = missing === 'result' ? '' : fmt(item.result ?? item.a)
     const labels = sixChoices(item.answer, key)
-    const text =
-      missing === 'result'
-        ? `${fmt(item.a)} ${item.op} ${fmt(item.b)}`
-        : `${aText} ${item.op} ${bText} = ${resultText}`.trim()
-    return [asChoice(key, block, { type: 'calc', text }, item.answer, siblings, visual, labels)]
+    return [asChoice(key, block, calcFromItem(item), item.answer, siblings, visual, labels)]
   }
 
   if (item.calcAnswer || item.calcAnswerSecondary) {
@@ -714,6 +738,13 @@ function mathRound(
   }
 
   if (item.answer?.trim()) {
+    const parsed = parseCalcPrompt(prompt)
+    if (parsed) {
+      const labels = /^-?\d+(?:[.,]\d+)?$/.test(item.answer.trim())
+        ? sixChoices(item.answer, key)
+        : choiceLabels(item.answer, siblings, key)
+      return [asChoice(key, block, { type: 'calc', ...parsed }, item.answer, siblings, visual, labels)]
+    }
     const text = prompt || block.instruction || 'Choisissez la réponse.'
     return [adaptAnswer(key, block, text, item.answer, siblings, visual)]
   }
@@ -760,7 +791,7 @@ function blockOf(round: PlayRound): Pick<WorksheetBlock, 'title' | 'instruction'
 function sceneLead(scene: PlayScene): string {
   switch (scene.type) {
     case 'calc':
-      return scene.text
+      return calcStamp(scene)
     case 'column':
       return `${scene.a} ${scene.op} ${scene.b}`
     case 'stem':
@@ -797,7 +828,7 @@ function asClick(round: PlayRound): PlayRound[] {
       return [
         {
           ...round,
-          scene: { type: 'calc', text: `${round.scene.a} ${round.scene.op} ${round.scene.b}` },
+          scene: { type: 'calc', a: round.scene.a, op: round.scene.op, b: round.scene.b },
         },
       ]
     }

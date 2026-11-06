@@ -9,9 +9,8 @@ import { buildPlayRounds, cardTone, PLAY_CARDS, sameAnswer, type PlayChip, type 
 type Drag = { id: string; x: number; y: number; moved: boolean }
 
 function isNegativeSubtraction(round: PlayRound | undefined): boolean {
-  if (!round || round.scene.type !== 'calc') return false
-  const text = round.scene.text
-  if (text.includes('(') || !/\d\s+[−-]\s+/.test(text)) return false
+  if (!round || round.scene.type !== 'calc' || round.scene.result != null) return false
+  if (round.scene.op !== '−' && round.scene.op !== '-') return false
   const value = Number(String(round.correctChoice ?? '').replace(/\s/g, '').replace(',', '.'))
   return Number.isFinite(value) && value < 0
 }
@@ -341,11 +340,37 @@ export function GameBoard({
   )
 }
 
+function CalcLine({ calc }: { calc: { a: string; op: string; b: string; result?: string; tail?: '≈' } }) {
+  return (
+    <p className="game-calc-text game-calc-line">
+      <CalcSlot value={calc.a} />
+      <span className="game-calc-op">{calc.op}</span>
+      <CalcSlot value={calc.b} />
+      {calc.result != null ? (
+        <>
+          <span className="game-calc-op">=</span>
+          <CalcSlot value={calc.result} />
+        </>
+      ) : calc.tail ? (
+        <span className="game-calc-op">{calc.tail}</span>
+      ) : null}
+    </p>
+  )
+}
+
+function CalcSlot({ value }: { value: string }) {
+  if (!value) return <span className="game-calc-slot is-blank" aria-hidden />
+  return <span className="game-calc-slot">{value}</span>
+}
+
 function QuestionFace({ round }: { round: PlayRound }) {
   const scene = round.scene
   if (scene.type === 'calc' || scene.type === 'column') {
-    const text = scene.type === 'calc' ? scene.text : `${scene.a} ${scene.op} ${scene.b}`
-    return <p className="game-calc-text">{text}</p>
+    const calc =
+      scene.type === 'calc'
+        ? scene
+        : { a: scene.a, op: scene.op, b: scene.b }
+    return <CalcLine calc={calc} />
   }
   if (scene.type === 'compare') {
     return <p className="game-calc-text is-long">{`${scene.left} ? ${scene.right}`}</p>

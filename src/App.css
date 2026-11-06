@@ -6437,6 +6437,9 @@ textarea.pill-input,
   box-shadow:0 10px 0 color-mix(in srgb, var(--ink) 16%, #fff)
 }
 .game-calc-text{margin:0;font-size:clamp(64px,14cqw,128px);font-weight:800;letter-spacing:-.04em;line-height:1;text-align:center}
+.game-calc-line{display:flex;align-items:center;justify-content:center;gap:.35em;flex-wrap:nowrap;letter-spacing:0;max-width:100%}
+.game-calc-op{flex:0 0 auto}
+.game-calc-slot.is-blank{display:inline-block;width:1.15em;height:.72em;border-bottom:.08em solid currentColor}
 .game-calc-text.is-long{font-size:clamp(28px,5cqw,52px);letter-spacing:0;line-height:1.2}
 .game-question-card .game-column{font-size:clamp(48px,8cqw,88px)}
 .game-card-play-choices{
