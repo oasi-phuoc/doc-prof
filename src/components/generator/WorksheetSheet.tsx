@@ -43,6 +43,7 @@ function coAudioInBanner(block: WorksheetBlock): boolean {
     const tcf = item.tcf
     if (!tcf) return false
     if (tcf.kind === 'audio_cadre') return true
+    if (tcf.kind === 'association' && tcf.situations.some((situation) => situation.audioSrc)) return true
     if ((tcf.kind === 'qcm' || tcf.kind === 'lignes') && tcf.audioFrame) return true
     if (tcf.kind === 'support' && tcf.exercise.competence === 'CO') {
       const type = tcf.exercise.type_exercice

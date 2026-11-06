@@ -149,6 +149,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
     "id": "actions",
     "label": "Actions et situations",
     "words": [
+      { "label": "faire du vélo", "src": "/lib/images/vocabulaire/actions/faire-du-velo.webp" },
       {
         "label": "acheter un billet au guichet",
         "src": "/lib/images/vocabulaire/actions/acheter-un-billet-au-guichet.webp"
@@ -6775,6 +6776,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
     "id": "transports",
     "label": "Transports",
     "words": [
+      { "label": "vélo (moyen de transport)", "src": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp" },
       {
         "label": "ambulance",
         "src": "/lib/images/vocabulaire/transports/ambulance.webp"
@@ -8141,6 +8143,9 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
 
 /** label (minuscule) → src, première occurrence. */
 export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
+  "faire du vélo": "/lib/images/vocabulaire/actions/faire-du-velo.webp",
+  "faire-du-velo": "/lib/images/vocabulaire/actions/faire-du-velo.webp",
+  "vélo (moyen de transport)": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp",
   "huit heures (à aiguilles)": "/lib/images/vocabulaire/heure-horloge/huit-heures-numerique.webp",
   "onze heures (à aiguilles)": "/lib/images/vocabulaire/heure-horloge/onze-heures-numerique.webp",
   "minuit (à aiguilles)": "/lib/images/vocabulaire/heure-horloge/minuit-numerique.webp",

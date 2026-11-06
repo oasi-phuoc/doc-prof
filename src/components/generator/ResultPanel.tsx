@@ -263,6 +263,7 @@ export function ResultPanel({
               <div>
                 <p className="eyebrow">Aperçu</p>
                 <h2>Votre activité est prête.</h2>
+                {libreMode ? <p className="no-print">Cliquez sur une image de la fiche pour la remplacer.</p> : null}
               </div>
               <div className="result-head-actions no-print">
                 <button

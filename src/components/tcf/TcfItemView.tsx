@@ -27,6 +27,7 @@ function withActiveForm(tcf: TcfSheetItem, formMode?: TcfTypeReponse): TcfSheetI
     enonce: tcf.enonce,
     audioLabel: tcf.audioLabel,
     audioFrame: tcf.audioFrame,
+    audioSrc: tcf.audioSrc,
     showNumero: tcf.showNumero,
     image: tcf.image,
     images: tcf.images,
@@ -121,7 +122,7 @@ export function TcfItemView({
         hideMotsBanque && tcf.exercise.mots_banque
           ? { ...tcf.exercise, mots_banque: undefined }
           : tcf.exercise
-      return <TexteSupport exercise={exercise} mode={mode} />
+      return <TexteSupport exercise={exercise} mode={mode} ceFormat={tcf.ceFormat} />
     }
     case 'qcm':
       return tcf.mode === 'image' ? (
@@ -176,6 +177,6 @@ export function TcfItemView({
     case 'vide':
       return <p className="tcf-vide">{tcf.message}</p>
     case 'informations':
-      return <TcfInformations niveau={tcf.niveau} />
+      return <TcfInformations niveau={tcf.niveau} pointsByCompetence={tcf.pointsByCompetence} />
   }
 }

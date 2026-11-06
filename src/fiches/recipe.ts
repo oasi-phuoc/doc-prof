@@ -22,6 +22,8 @@ export type FicheRecipe = {
   hideChrome?: boolean
   /** Inclut le corrigé à l’impression ; activé par défaut pour les anciennes fiches. */
   printCorrections?: boolean
+  /** Remplacements d’images provenant de la banque ; fichiers temporaires exclus. */
+  imageOverrides?: Record<string, string>
 }
 
 export type SavedFiche = {
@@ -144,6 +146,9 @@ export function parseFicheRecipe(value: unknown): FicheRecipe | null {
     sheetFormat,
     hideChrome,
     printCorrections: value.printCorrections !== false,
+    imageOverrides: isRecord(value.imageOverrides)
+      ? Object.fromEntries(Object.entries(value.imageOverrides).filter(([key, image]) => key && typeof image === 'string' && image.startsWith('/lib/images/'))) as Record<string, string>
+      : undefined,
   }
 }
 
@@ -167,6 +172,8 @@ export function buildFicheRecipe(input: {
   sheetFormat?: SheetFormat
   hideChrome?: boolean
   printCorrections?: boolean
+  /** Remplacements d’images provenant de la banque ; fichiers temporaires exclus. */
+  imageOverrides?: Record<string, string>
 }): FicheRecipe {
   return { version: 1, ...input }
 }

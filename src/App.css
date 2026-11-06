@@ -6309,3 +6309,27 @@ textarea.pill-input,
 .tcf-themes-corrige-sheet section{flex:1 1 auto;break-inside:avoid}
 .tcf-themes-corrige-sheet ul{margin:0;padding-left:1.2em;font-size:11pt;line-height:1.45}
 .tcf-themes-corrige-sheet li{margin-bottom:1.5mm}
+
+/* CE CSC : même document, accompagné d’illustrations en format Image. */
+.tcf-ce-illustrated{display:flex;flex-direction:column;gap:2mm;min-width:0;flex:1}
+.tcf-ce-passage{min-width:0;break-inside:avoid}
+.tcf-ce-passage.has-illustration{display:grid;grid-template-columns:22mm minmax(0,1fr);gap:3mm;align-items:start}
+.tcf-ce-illustrated .tcf-ce-illustration{display:block;width:22mm;height:18mm;object-fit:contain;background:#fff}
+.tcf-ce-passage .tcf-text{margin:0;white-space:pre-line}
+
+/* Remplacement des images de mots, sans changer leur place sur la fiche. */
+.is-editable-word-image{cursor:pointer}
+.is-editable-word-image:hover,.is-editable-word-image:focus-visible{outline:2px dashed var(--purple);outline-offset:2px}
+.worksheet-image-upload{display:flex;flex-direction:column;gap:8px;padding:12px;border:1px dashed var(--purple)}
+.worksheet-image-upload label{display:flex;flex-direction:column;gap:8px;font-weight:700}
+.worksheet-image-upload small{font-size:.85em}
+@media print{.is-editable-word-image{outline:none!important}.tcf-vocab-picker-backdrop{display:none!important}}
+
+/* CO situations : même bandeau que les mini-audios, ensemble sur une A4. */
+.tcf-situations{gap:3mm}
+.tcf-situations.is-many{grid-template-columns:repeat(2,minmax(0,1fr));--situation-image-height:22mm}
+.tcf-situations>li.tcf-situation-frame{margin:0;padding:0;gap:0;border-color:var(--purple);break-inside:avoid}
+.tcf-situation-body{display:flex;flex:1;flex-direction:column;gap:1.5mm;padding:2mm;min-width:0}
+.tcf-situations .tcf-situation-body .tcf-image{flex:0 0 var(--situation-image-height,26mm);height:var(--situation-image-height,26mm);max-height:var(--situation-image-height,26mm)}
+.tcf-situation-body .tcf-situation-foot{margin-top:auto}
+.tcf-situation-frame .tcf-audio-frame-head{padding-left:2mm;padding-right:2mm;gap:4px;font-size:9pt;letter-spacing:0}

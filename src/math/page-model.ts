@@ -70,6 +70,7 @@ export function blockFromPage(page: PageConfig): ExerciseBlock {
     calliSize: page.calliSize,
     tcfExercise: page.tcfExercise,
     tcfBankId: page.tcfBankId,
+    tcfCeFormat: page.tcfCeFormat,
     tcfScenario: page.tcfScenario,
     tcfAudioSlots: page.tcfAudioSlots,
     tcfQuestionCount: page.tcfQuestionCount,

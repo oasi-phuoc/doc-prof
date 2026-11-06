@@ -171,7 +171,7 @@ function AudioFrameHead({ label, audioSrc }: { label: string; audioSrc?: string 
     <div className={`tcf-audio-frame-head${audioSrc ? ' has-player' : ''}`}>
       <span className="tcf-audio-frame-label">{label}</span>
       {audioSrc ? (
-        <audio className="tcf-audio-frame-player no-print" controls preload="none" src={audioSrc}>
+        <audio className="tcf-audio-frame-player no-print" aria-label={`Enregistrement — ${label}`} controls preload="none" src={audioSrc}>
           Écoutez l’enregistrement.
         </audio>
       ) : null}
@@ -505,22 +505,23 @@ export function LignesReponse({ nbLignes, texte }: { nbLignes: number; texte?: s
   )
 }
 
-/** CO : scènes illustrées en cadre, pastille Situation A–F, « Audio n° : ___ » (50 px). */
+/** CO : bandeau Situation A–F ; au corrigé, la piste du dialogue correspondant. */
 export function AssociationSituations({
   situations,
   mode,
 }: {
-  situations: Array<{ lettre: string; image: string; dialogue: number | null }>
+  situations: Array<{ lettre: string; image: string; dialogue: number | null; audioSrc?: string }>
   mode: PreviewMode
 }) {
   const show = mode === 'answers'
   const n = situations.length
   const gridClass = n >= 8 ? 'is-8' : n >= 6 ? 'is-6' : n === 4 ? 'is-4' : ''
   return (
-    <ul className={`tcf-situations${gridClass ? ` ${gridClass}` : ''}`}>
+    <ul className={`tcf-situations${gridClass ? ` ${gridClass}` : ''}${n > 6 ? ' is-many' : ''}`}>
       {situations.map((s, i) => (
-        <li key={`${s.lettre}-${i}`}>
-          <span className="tcf-audio-frame-tag">Situation {s.lettre}</span>
+        <li key={`${s.lettre}-${i}`} className="tcf-question is-audio-frame tcf-situation-frame">
+          <AudioFrameHead label={`Situation ${s.lettre}`} audioSrc={show && s.dialogue != null ? s.audioSrc : undefined} />
+          <div className="tcf-situation-body">
           <TcfImage src={s.image} alt={`Scène ${s.lettre}`} />
           <span className="tcf-situation-foot">
             <span className="tcf-dialogue-label">Audio n°&nbsp;:</span>
@@ -528,6 +529,7 @@ export function AssociationSituations({
               {show ? (s.dialogue != null ? String(s.dialogue) : '—') : ''}
             </span>
           </span>
+          </div>
         </li>
       ))}
     </ul>

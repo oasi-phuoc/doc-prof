@@ -1,3 +1,4 @@
+import { WorksheetImageProvider } from '@/components/WorksheetImage'
 import {
   useEffect,
   useMemo,
@@ -107,6 +108,7 @@ export function GeneratorPage({
   const [printCorrections, setPrintCorrections] = useState(
     () => openedFiche?.recipe.printCorrections ?? true,
   )
+  const [imageOverrides, setImageOverrides] = useState<Record<string, string>>(() => openedFiche?.recipe.imageOverrides ?? {})
   const theoryColors = theorySectionColors(themeColor)
   const [footerPanelOpen, setFooterPanelOpen] = useState(false)
   const [libreMode, setLibreMode] = useState(() => openedFiche?.recipe.libreMode ?? false)
@@ -125,7 +127,7 @@ export function GeneratorPage({
     setFontSize(applyBaseFontSize(size))
   }
 
-  const worksheets = useMemo(() => buildWorksheets(pages, seed), [pages, seed])
+  const worksheets = useMemo(() => buildWorksheets(pages, seed, pointsPerQuestion), [pages, seed, pointsPerQuestion])
   const [libreSnapshot, setLibreSnapshot] = useState<PageConfig[] | null>(
     () => openedFiche?.recipe.libreSnapshot ?? null,
   )
@@ -154,8 +156,8 @@ export function GeneratorPage({
       ? libreSnapshot
       : null
   const previewWorksheets = useMemo(
-    () => (previewSource ? buildWorksheets(previewSource, seed) : worksheets),
-    [previewSource, seed, worksheets],
+    () => (previewSource ? buildWorksheets(previewSource, seed, pointsPerQuestion) : worksheets),
+    [previewSource, seed, worksheets, pointsPerQuestion],
   )
   const a5SourcePages = previewSource ?? pages
   const a5LeftWorksheets = useMemo(() => {
@@ -163,15 +165,17 @@ export function GeneratorPage({
     return buildWorksheets(
       a5SourcePages.map((page) => pageForA5Half(page, 'left')),
       seed,
+      pointsPerQuestion,
     )
-  }, [sheetFormat, a5SourcePages, seed])
+  }, [sheetFormat, a5SourcePages, seed, pointsPerQuestion])
   const a5RightWorksheets = useMemo(() => {
     if (!isA5DoubleFormat(sheetFormat)) return null
     return buildWorksheets(
       a5SourcePages.map((page) => pageForA5Half(page, 'right')),
       seed,
+      pointsPerQuestion,
     )
-  }, [sheetFormat, a5SourcePages, seed])
+  }, [sheetFormat, a5SourcePages, seed, pointsPerQuestion])
   const previewSheet = previewWorksheets[Math.min(safeSheetIndex, previewWorksheets.length - 1)]
   const a5LeftSheet = a5LeftWorksheets?.[Math.min(safeSheetIndex, a5LeftWorksheets.length - 1)]
   const a5RightSheet = a5RightWorksheets?.[Math.min(safeSheetIndex, a5RightWorksheets.length - 1)]
@@ -392,6 +396,7 @@ export function GeneratorPage({
       sheetFormat,
       hideChrome,
       printCorrections,
+      imageOverrides,
     })
     const saved =
       !input.asNew && ficheRef
@@ -644,7 +649,9 @@ export function GeneratorPage({
           className={`workspace${libreMode ? ' has-libre-panel' : ''}${footerPanelOpen ? ' has-footer-panel' : ''}`}
         >
           <SettingsPanel {...settingsPanelProps} />
-          <ResultPanel {...resultPanelProps} />
+          <WorksheetImageProvider enabled={libreMode} overrides={imageOverrides} onChange={setImageOverrides}>
+            <ResultPanel {...resultPanelProps} />
+          </WorksheetImageProvider>
           {libreMode ? (
             <LibreSidePanel
               activeBlock={activeBlock}

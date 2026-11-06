@@ -1,3 +1,4 @@
+import { withTcfInformationTotals } from '@/tcf/information-totals'
 /**
  * Orchestrateur de fiches : buildPage / buildWorksheets.
  * Tirage maths purs → `./generate-items` ; colonnes → `./column-arith`.
@@ -524,7 +525,7 @@ function collectSoutienReservedWords(pages: PageConfig[], seed: number): {
   return { reserved: [...reserved], type1Words, type5Words }
 }
 
-export function buildWorksheets(pages: PageConfig[], seed: number): WorksheetPage[] {
+export function buildWorksheets(pages: PageConfig[], seed: number, defaultPoints = 1): WorksheetPage[] {
   let exerciseNo = 1
   const out: WorksheetPage[] = []
   const { reserved, type1Words, type5Words } = collectSoutienReservedWords(pages, seed)
@@ -750,5 +751,5 @@ export function buildWorksheets(pages: PageConfig[], seed: number): WorksheetPag
     }
   })
 
-  return out
+  return withTcfInformationTotals(out, defaultPoints)
 }

@@ -1,3 +1,5 @@
+import { WorksheetImage } from '@/components/WorksheetImage'
+import { CeIllustratedText } from './CeIllustratedText'
 import { useState, type ReactNode } from 'react'
 import { SheetCopy } from '@/components/sheet-copy'
 import type { PreviewMode } from '@/math/types'
@@ -24,18 +26,18 @@ function Paragraphs({ text }: { text: string }) {
   )
 }
 
-function SmsBubble({ from, text }: { from?: string; text: string }) {
+function SmsBubble({ from, text, illustrated = false }: { from?: string; text: string; illustrated?: boolean }) {
   return (
     <div className="tcf-sms">
       {from ? <p className="tcf-sms-from">{from}</p> : null}
       <div className="tcf-sms-bubble">
-        <Paragraphs text={text} />
+        {illustrated ? <CeIllustratedText text={text} /> : <Paragraphs text={text} />}
       </div>
     </div>
   )
 }
 
-function EmailBox({ de, a, objet, texte }: { de: string; a?: string; objet: string; texte: string }) {
+function EmailBox({ de, a, objet, texte, illustrated = false }: { de: string; a?: string; objet: string; texte: string; illustrated?: boolean }) {
   return (
     <div className="tcf-email">
       <dl className="tcf-email-head">
@@ -51,7 +53,7 @@ function EmailBox({ de, a, objet, texte }: { de: string; a?: string; objet: stri
         <dd>{objet}</dd>
       </dl>
       <div className="tcf-email-body">
-        <Paragraphs text={texte} />
+        {illustrated ? <CeIllustratedText text={texte} context={objet} /> : <Paragraphs text={texte} />}
       </div>
     </div>
   )
@@ -99,7 +101,7 @@ function TcfImage({
     )
   }
   return (
-    <img
+    <WorksheetImage
       className={className}
       src={resolved}
       alt={alt}
@@ -139,21 +141,22 @@ function ceDoc(children: ReactNode) {
 }
 
 /** Support de l’exercice : document à lire, audio, images, consignes de production. */
-export function TexteSupport({ exercise: ex, mode }: { exercise: TcfExercise; mode: PreviewMode }) {
+export function TexteSupport({ exercise: ex, mode, ceFormat = 'texte' }: { exercise: TcfExercise; mode: PreviewMode; ceFormat?: 'texte' | 'image' }) {
+  const illustrated = ex.competence === 'CE' && ceFormat === 'image'
   const banque = <MotsBanque mots={ex.mots_banque} />
   switch (ex.type_exercice) {
     case 'sms':
       return ceDoc(
         <>
           {banque}
-          <SmsBubble from={ex.support.expediteur} text={ex.support.texte} />
+          <SmsBubble from={ex.support.expediteur} text={ex.support.texte} illustrated={illustrated} />
         </>,
       )
     case 'email':
       return ceDoc(
         <>
           {banque}
-          <EmailBox {...ex.support} />
+          <EmailBox {...ex.support} illustrated={illustrated} />
         </>,
       )
     case 'annonce': {
@@ -176,7 +179,7 @@ export function TexteSupport({ exercise: ex, mode }: { exercise: TcfExercise; mo
                       {doc.numero}
                     </span>
                     {doc.titre ? <p className="tcf-assoc-doc-title">{doc.titre}</p> : null}
-                    <Paragraphs text={doc.texte} />
+                    {illustrated ? <CeIllustratedText text={doc.texte} context={doc.titre} /> : <Paragraphs text={doc.texte} />}
                   </li>
                 ))}
               </ul>
@@ -217,7 +220,9 @@ export function TexteSupport({ exercise: ex, mode }: { exercise: TcfExercise; mo
             {ex.support.titre ? <p className="tcf-annonce-title">{ex.support.titre}</p> : null}
             <div className="tcf-annonce-body">
               {ex.support.image ? <TcfImage src={ex.support.image} alt={ex.support.titre} /> : null}
-              {ex.support.presentation === 'image-bullets' ? (
+              {illustrated ? (
+                <CeIllustratedText text={ex.support.texte} context={ex.support.titre} />
+              ) : ex.support.presentation === 'image-bullets' ? (
                 <ul className="tcf-annonce-points">
                   {ex.support.texte.split('\n').filter(Boolean).map((line, index) => <li key={index}>{line}</li>)}
                 </ul>

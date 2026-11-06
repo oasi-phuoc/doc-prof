@@ -1,3 +1,4 @@
+import { WorksheetImage } from '@/components/WorksheetImage'
 import { Fragment, useEffect, useState, type CSSProperties } from 'react'
 import QRCode from 'qrcode'
 import type { CountIconToken, MathItem, PreviewMode } from '@/math/types'
@@ -330,7 +331,7 @@ export function PhraseScrambleBlock({ item, mode }: { item: MathItem; mode: Prev
                 <td className="phrase-scramble-num">{index + 1}.</td>
                 <td className="phrase-scramble-image">
                   {row.imageSrc ? (
-                    <img src={row.imageSrc} alt="" />
+                    <WorksheetImage src={row.imageSrc} alt="" />
                   ) : (
                     <span className="vocab-card-empty" aria-hidden />
                   )}
@@ -428,7 +429,7 @@ export function SyllablePronounceBlock({ item }: { item: MathItem }) {
           <span className="syllable-pronounce-num">{row.index}.</span>
           <div className="syllable-pronounce-qr">
             {qrSrcs[index] ? (
-              <img src={qrSrcs[index]} alt="" />
+              <WorksheetImage editable={false} src={qrSrcs[index]} alt="" />
             ) : (
               <span className="audio-order-qr-ph" aria-hidden />
             )}
@@ -502,12 +503,12 @@ export function SyllableSoundBlock({ item, mode }: { item: MathItem; mode: Previ
             <div className="syllable-sound-image">
               {qrOnly ? (
                 qrSrcs[index] ? (
-                  <img src={qrSrcs[index]} alt="" className="syllable-sound-qr-img" />
+                  <WorksheetImage editable={false} src={qrSrcs[index]} alt="" className="syllable-sound-qr-img" />
                 ) : (
                   <span className="vocab-card-empty" aria-hidden />
                 )
               ) : row.imageSrc ? (
-                <img src={row.imageSrc} alt="" />
+                <WorksheetImage src={row.imageSrc} alt="" />
               ) : (
                 <span className="vocab-card-empty" aria-hidden />
               )}
@@ -619,7 +620,7 @@ export function ListenCheckBlock({ item, mode }: { item: MathItem; mode: Preview
               >
                 <div className="listen-check-image">
                   {images[index] ? (
-                    <img src={images[index]} alt="" />
+                    <WorksheetImage src={images[index]} alt="" />
                   ) : (
                     <span className="vocab-card-empty" aria-hidden />
                   )}
@@ -653,7 +654,7 @@ export function ListenCheckBlock({ item, mode }: { item: MathItem; mode: Preview
               {withAudio ? (
                 <span className="listen-check-qr">
                   {qrSrcs[index] ? (
-                    <img src={qrSrcs[index]} alt={`Audio ${index + 1}`} />
+                    <WorksheetImage editable={false} src={qrSrcs[index]} alt={`Audio ${index + 1}`} />
                   ) : (
                     <span className="listen-check-qr-ph" aria-hidden />
                   )}
@@ -729,7 +730,7 @@ export function SyllableCompleteBlock({ item, mode }: { item: MathItem; mode: Pr
             <div className="syllable-complete-card" key={`sc-${index}-${row.word}`}>
               <div className="syllable-complete-image">
                 {row.imageSrc ? (
-                  <img src={row.imageSrc} alt="" />
+                  <WorksheetImage src={row.imageSrc} alt="" />
                 ) : (
                   <span className="vocab-card-empty" aria-hidden />
                 )}
@@ -751,7 +752,7 @@ export function SyllableCompleteBlock({ item, mode }: { item: MathItem; mode: Pr
               </div>
               <div className="syllable-complete-qr">
                 {qrSrcs[index] ? (
-                  <img src={qrSrcs[index]} alt={row.word ? `Audio ${row.word}` : ''} />
+                  <WorksheetImage editable={false} src={qrSrcs[index]} alt={row.word ? `Audio ${row.word}` : ''} />
                 ) : (
                   <span className="syllable-complete-qr-ph" aria-hidden />
                 )}
@@ -816,7 +817,7 @@ export function AudioOrderBlock({ item, mode }: { item: MathItem; mode: PreviewM
             <span className="audio-order-qr-num">{index + 1}</span>
             <div className="audio-order-qr">
               {qrSrcs[index] ? (
-                <img src={qrSrcs[index]} alt={`Audio ${index + 1}`} />
+                <WorksheetImage editable={false} src={qrSrcs[index]} alt={`Audio ${index + 1}`} />
               ) : (
                 <span className="audio-order-qr-ph" aria-hidden />
               )}
@@ -830,7 +831,7 @@ export function AudioOrderBlock({ item, mode }: { item: MathItem; mode: PreviewM
             {modeKind === 'images' ? (
               <div className="audio-order-slot-image">
                 {slot.imageSrc ? (
-                  <img src={slot.imageSrc} alt="" />
+                  <WorksheetImage src={slot.imageSrc} alt="" />
                 ) : (
                   <span className="vocab-card-empty" aria-hidden />
                 )}

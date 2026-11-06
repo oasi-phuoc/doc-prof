@@ -1024,6 +1024,8 @@ export type ExerciseBlock = {
   tcfExercise?: import('@/tcf/types').TcfExercise
   /** TCF : exercice choisi dans la banque (sinon tirage selon la graine). */
   tcfBankId?: string
+  /** TCF CSC CE : présentation du document à lire. */
+  tcfCeFormat?: 'texte' | 'image'
   /** TCF : scénario qui limite la banque (id de `TCF_SCENARIOS`). */
   tcfScenario?: string
   /**

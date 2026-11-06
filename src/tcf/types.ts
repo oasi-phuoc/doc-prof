@@ -392,7 +392,7 @@ export type TcfCadreQuestion =
     }
 
 export type TcfSheetItem =
-  | { kind: 'support'; exercise: TcfExercise }
+  | { kind: 'support'; exercise: TcfExercise; ceFormat?: 'texte' | 'image' }
   | {
       kind: 'qcm'
       numero: number
@@ -444,7 +444,7 @@ export type TcfSheetItem =
   | {
       kind: 'association'
       nbDialogues: number
-      situations: Array<{ lettre: string; image: string; dialogue: number | null }>
+      situations: Array<{ lettre: string; image: string; dialogue: number | null; audioSrc?: string }>
     }
   | { kind: 'grille'; grille: TcfGrille }
   | {
@@ -480,4 +480,4 @@ export type TcfSheetItem =
       bulles?: boolean
     }
   | { kind: 'vide'; message: string }
-  | { kind: 'informations'; niveau: TcfNiveau }
+  | { kind: 'informations'; niveau: TcfNiveau; pointsByCompetence?: Record<TcfCompetence, number> }

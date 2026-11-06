@@ -1,3 +1,4 @@
+import { WorksheetImage } from '@/components/WorksheetImage'
 import { Fragment } from 'react'
 import { theorySpacerDivisor, type GrammarTheoryBlock } from '@/francais/grammar-theory'
 import {
@@ -62,7 +63,7 @@ export function SelectPillsRow({ item, mode }: { item: MathItem; mode: PreviewMo
             const src = item.optionImages?.[index]
             return (
               <div key={`${option}-${index}`} className={`oral-qcm-option ${selected ? 'selected' : ''}`}>
-                {src ? <img className="oral-qcm-img" src={src} alt={option} /> : null}
+                {src ? <WorksheetImage className="oral-qcm-img" src={src} alt={option} /> : null}
                 <span className="oral-qcm-option-label">{option}</span>
                 <span className="oral-qcm-check">
                   {letters[index] ?? String(index + 1)}{' '}
