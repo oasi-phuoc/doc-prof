@@ -763,6 +763,27 @@ function numberedBank(n: TcfNiveau, slot: TcfSlotMeta) {
   return tcfSlotBank(n, slot).filter((ex) => !/^tcf-[a-z0-9]+-(?:co|ce|pe|po)-\d{3}$/.test(ex.id))
 }
 
+/**
+ * Dernier exercice PO (CSC / CFR), au rafraîchissement :
+ * seulement les thèmes en images et les interactions.
+ */
+export function nextLastPoExercise(
+  niveau: TcfNiveau,
+  seed: number,
+  avoidIds: readonly string[] = [],
+): { id: string; scenario: string } | undefined {
+  const slot = TCF_SLOTS.find((entry) => entry.typeId === 'tcf-po')
+  if (!slot) return undefined
+  const avoid = new Set(avoidIds)
+  const pool = numberedBank(niveau, slot).filter(
+    (ex) => ex.type_exercice === 'trois_themes' || ex.type_exercice === 'image_interaction',
+  )
+  if (pool.length === 0) return undefined
+  const fresh = pool.filter((ex) => !avoid.has(ex.id))
+  const chosen = pick(createRng(seed), fresh.length > 0 ? fresh : pool)
+  return { id: chosen.id, scenario: tcfGroupId(chosen) }
+}
+
 function appendNiveauExercisePages(
   pages: PageConfig[],
   niveau: TcfNiveau,
