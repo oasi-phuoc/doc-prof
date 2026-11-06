@@ -8,6 +8,15 @@ import { buildPlayRounds, cardTone, PLAY_CARDS, sameAnswer, type PlayChip, type 
 
 type Drag = { id: string; x: number; y: number; moved: boolean }
 
+function VerdictMark({ status }: { status: 'idle' | 'ok' | 'retry' }) {
+  const label = status === 'ok' ? 'Juste' : status === 'retry' ? 'Faux' : ''
+  return (
+    <p className={`game-mark is-${status}`} role="status" aria-label={label || undefined}>
+      {status === 'ok' ? 'V' : status === 'retry' ? 'X' : ''}
+    </p>
+  )
+}
+
 function ScoreLine({ correct, total }: { correct: number; total: number }) {
   return (
     <p
@@ -204,8 +213,6 @@ export function GameBoard({
   const used = new Set(Object.values(placed))
   const tray = (round.chips ?? []).filter((chip) => !used.has(chip.id))
   const ghostChip = ghost ? chipById.get(ghost.id) : undefined
-  const verdict = status === 'ok' ? 'C’est juste.' : status === 'retry' ? 'Ce n’est pas juste.' : ''
-
   if (round.mode === 'choice' && (round.scene.type === 'calc' || round.scene.type === 'column')) {
     return (
       <section className={`game-card-play${status !== 'idle' ? ' is-locked' : ''}`} aria-label="Tableau interactif">
@@ -223,10 +230,8 @@ export function GameBoard({
               </div>
             )}
           </div>
+          <VerdictMark status={status} />
         </div>
-        <p className={`game-verdict is-${status}`} role="status">
-          {verdict}
-        </p>
         <div className="game-card-play-choices">
           {(round.choices ?? []).map((chip) => {
             const selected = choice === chip.id
@@ -266,6 +271,7 @@ export function GameBoard({
       <div className="game-board-stage">
         <div className="game-zone game-zone-prompt">
           <p className="game-zone-label">Énoncé</p>
+          <div className="game-prompt-with-mark">
           <Prompt
             round={round}
             placed={placed}
@@ -278,6 +284,8 @@ export function GameBoard({
               setStatus('idle')
             }}
           />
+          <VerdictMark status={status} />
+          </div>
         </div>
         <div className="game-zone game-zone-answer">
           <p className="game-zone-label">{round.mode === 'circle' ? 'Entourez' : round.mode === 'choice' ? 'Entourez' : 'Réponse'}</p>
@@ -319,9 +327,6 @@ export function GameBoard({
           </div>
         </div>
       ) : null}
-      <p className={`game-verdict is-${status}`} role="status">
-        {verdict}
-      </p>
       {ghost && ghostChip ? (
         <div className="game-ghost" data-tone={ghostChip.tone} style={{ left: ghost.x, top: ghost.y }}>
           <ChipFace chip={ghostChip} />
