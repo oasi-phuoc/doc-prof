@@ -588,6 +588,49 @@ export function GeneratorPage({
             </button>
           </div>
           {boardMode === 'jeu' ? (
+            <div className="game-score-bar">
+              <div className="mode-toggle score-mode-toggle" role="group" aria-label="Comptage">
+                <button
+                  type="button"
+                  className={scoreMode === 'normal' ? 'active' : ''}
+                  aria-pressed={scoreMode === 'normal'}
+                  onClick={() => setScoreMode('normal')}
+                >
+                  Normal
+                </button>
+                <button
+                  type="button"
+                  className={scoreMode === 'points' ? 'active' : ''}
+                  aria-pressed={scoreMode === 'points'}
+                  onClick={() => setScoreMode('points')}
+                >
+                  Points
+                </button>
+              </div>
+              {scoreMode === 'points' ? (
+                <>
+                  <p
+                    className="game-score"
+                    aria-live="polite"
+                    aria-label={`${scoreCorrect} ${scoreCorrect === 1 ? 'réponse juste' : 'réponses justes'} sur ${scoreTotal} ${scoreTotal === 1 ? 'question' : 'questions'}`}
+                  >
+                    <strong>{scoreCorrect}</strong>
+                    <span> / {scoreTotal}</span>
+                  </p>
+                  <button type="button" className="game-score-reset" onClick={() => {
+                    setScoreCorrect(0)
+                    setScoreTotal(0)
+                  }}>
+                    Remettre à zéro
+                  </button>
+                </>
+              ) : null}
+            </div>
+          ) : null}
+          </>
+        }
+        rightSlot={
+          boardMode === 'jeu' ? (
             <GameSetupBar
               domain={activePage.domain}
               domains={allowedDomains}
@@ -661,50 +704,7 @@ export function GeneratorPage({
                 changeSoutienSound(id)
               }}
             />
-          ) : null}
-          {boardMode === 'jeu' ? (
-            <div className="game-score-bar">
-              <div className="mode-toggle score-mode-toggle" role="group" aria-label="Comptage">
-                <button
-                  type="button"
-                  className={scoreMode === 'normal' ? 'active' : ''}
-                  aria-pressed={scoreMode === 'normal'}
-                  onClick={() => setScoreMode('normal')}
-                >
-                  Normal
-                </button>
-                <button
-                  type="button"
-                  className={scoreMode === 'points' ? 'active' : ''}
-                  aria-pressed={scoreMode === 'points'}
-                  onClick={() => setScoreMode('points')}
-                >
-                  Points
-                </button>
-              </div>
-              {scoreMode === 'points' ? (
-                <>
-                  <p
-                    className="game-score"
-                    aria-live="polite"
-                    aria-label={`${scoreCorrect} ${scoreCorrect === 1 ? 'réponse juste' : 'réponses justes'} sur ${scoreTotal} ${scoreTotal === 1 ? 'question' : 'questions'}`}
-                  >
-                    <strong>{scoreCorrect}</strong>
-                    <span> / {scoreTotal}</span>
-                  </p>
-                  <button type="button" className="game-score-reset" onClick={() => {
-                    setScoreCorrect(0)
-                    setScoreTotal(0)
-                  }}>
-                    Remettre à zéro
-                  </button>
-                </>
-              ) : null}
-            </div>
-          ) : null}
-          </>
-        }
-        rightSlot={
+          ) : (
           <>
             <button
               className="topbar-icon-btn"
@@ -781,6 +781,7 @@ export function GeneratorPage({
             onLogout={onLogout}
           />
           </>
+          )
         }
       />
       <main className={`generator-page${boardMode === 'jeu' ? ' is-game-board' : ''}`} id="top">
