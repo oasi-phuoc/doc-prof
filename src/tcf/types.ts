@@ -404,6 +404,8 @@ export type TcfSheetItem =
       audioLabel?: string
       /** Cadre autour de la question avec pastille Audio N (six courts). */
       audioFrame?: boolean
+      /** Piste du bandeau, lue dans le corrigé. */
+      audioSrc?: string
       /** Forcer l’affichage du n° dans un cadre Audio (ex. 2 : 2 Q / audio). */
       showNumero?: boolean
       image?: string
@@ -422,6 +424,8 @@ export type TcfSheetItem =
       audioLabel?: string
       /** Cadre autour de la question avec pastille Audio N (six courts). */
       audioFrame?: boolean
+      /** Piste du bandeau, lue dans le corrigé. */
+      audioSrc?: string
       /** Forcer l’affichage du n° dans un cadre Audio (ex. 2 : 2 Q / audio). */
       showNumero?: boolean
       image?: string
@@ -433,6 +437,8 @@ export type TcfSheetItem =
       /** Cadre Audio N : plusieurs questions sous le même bandeau (trois moyens, audio complet). */
       kind: 'audio_cadre'
       audioLabel: string
+      /** Piste du bandeau, lue dans le corrigé. */
+      audioSrc?: string
       questions: TcfCadreQuestion[]
     }
   | {

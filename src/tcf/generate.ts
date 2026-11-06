@@ -19,6 +19,7 @@ import {
   type TcfSlotMeta,
 } from './catalog'
 import { isAssociationAnnonce } from './association-documents'
+import { tcfAudioSrc } from './media'
 import { limitTcfCeQuestions } from './ce-questions'
 import { tcfCoConsigneForSlot, tcfCoConsigneForType } from './consignes'
 import {
@@ -121,6 +122,16 @@ function defaultQuestionForm(
   return q.type_reponse
 }
 
+/** Piste du bandeau « Audio N » (index 1-based). */
+function coFrameAudioSrc(ex: TcfExercise, audioNumber: number): string | undefined {
+  if (ex.competence !== 'CO') return undefined
+  const support = ex.support as { audio?: string; audios?: string[] }
+  const list = (support.audios ?? []).map((src) => src.trim()).filter(Boolean)
+  const ref = list.length > 0 ? list[Math.max(0, audioNumber - 1)] : support.audio?.trim()
+  const src = ref ? tcfAudioSrc(ref) : ''
+  return src || undefined
+}
+
 function questionItem(
   q: TcfQuestion,
   numero: number,
@@ -130,6 +141,7 @@ function questionItem(
   exerciseId?: string,
   /** Cadre « Audio N » (six audios courts). */
   audioFrame = false,
+  audioSrc?: string,
 ): MathItem {
   const filled = filledForms(q)
   const active =
@@ -155,6 +167,7 @@ function questionItem(
         reponseModele: variant.reponseModele,
         audioLabel,
         audioFrame: audioFrame && Boolean(audioLabel),
+        audioSrc: audioFrame && audioLabel ? audioSrc : undefined,
         image: resolved.image,
         images: resolved.images,
         tableau: variant.tableau,
@@ -175,6 +188,7 @@ function questionItem(
       choix: variant.choix ?? [],
       audioLabel,
       audioFrame: audioFrame && Boolean(audioLabel),
+      audioSrc: audioFrame && audioLabel ? audioSrc : undefined,
       image: resolved.image,
       images: resolved.images,
       formSelect,
@@ -264,10 +278,12 @@ function audioCadreItems(
     })
     const answer = inner.map((q) => q.answer).filter(Boolean).join(' · ')
     const points = inner.reduce((sum, q) => sum + (q.points ?? 0), 0) || undefined
+    const audioSrc = coFrameAudioSrc(ex, group.audio)
     return tcfItem(
       {
         kind: 'audio_cadre',
         audioLabel: `Audio ${group.audio}`,
+        audioSrc,
         questions: inner,
       },
       true,
@@ -328,7 +344,16 @@ export function tcfExerciseItems(
       return [
         support(),
         ...ex.questions.map((q, i) =>
-          questionItem(q, i + 1, rng, formModes?.[i + 1], ex.competence, ex.id, framed),
+          questionItem(
+            q,
+            i + 1,
+            rng,
+            formModes?.[i + 1],
+            ex.competence,
+            ex.id,
+            framed,
+            framed ? coFrameAudioSrc(ex, q.audio ?? i + 1) : undefined,
+          ),
         ),
       ]
     }

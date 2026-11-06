@@ -140,6 +140,7 @@ export function TcfItemView({
       return (
         <AudioCadre
           audioLabel={tcf.audioLabel}
+          audioSrc={tcf.audioSrc}
           blankStyle={blankStyle}
           questions={questions}
           mode={mode}
