@@ -1,7 +1,8 @@
 """Replace vocabulary artwork in CE/CO using reviewed, complete answer images.
 
-Only complete QCM trios are changed. The inventory also retains support and
-association images, which require their own review before replacement.
+By default only complete reviewed QCM trios are changed. Incremental mode can
+replace reviewed choices in existing image trios, keeping unresolved artwork.
+Support and object-bank replacements require explicit source mappings.
 """
 from __future__ import annotations
 
@@ -20,6 +21,7 @@ from tcf_qcm_images import clock_time
 ROOT = Path(__file__).resolve().parents[1]
 PLAN = ROOT / 'docs/tcf/remplacement-images-vocabulaire.json'
 PREFIX = '/lib/images/vocabulaire/'
+PRESERVE_OBJECT_IMAGES = json.loads(PLAN.read_text())['policy'].get('preserve_csc_object_audio_images', True)
 BANKS = [ROOT / f'src/tcf/content/{level}/{skill}.json'
          for level in ('a0-a1', 'a1-a2', 'a2-b1') for skill in ('ce', 'co')]
 
@@ -45,7 +47,8 @@ def vocabulary_paths(value, node=()):
 
 def preserve_object_audio_images(exercise):
     """CSC object listening exercises draw these five-image banks across levels."""
-    return (exercise.get('competence') == 'CO'
+    return (PRESERVE_OBJECT_IMAGES
+            and exercise.get('competence') == 'CO'
             and exercise.get('type_exercice') == 'images_a_reconnaitre')
 
 
@@ -67,9 +70,47 @@ def checked_images(manifest):
     return result
 
 
+def compatible_reuse(label, target, checked):
+    """Reject context-specific aliases and singular/plural subject mismatches."""
+    if target not in checked:
+        return False
+    blocked = {
+        'creme': 'co306-creme-medicale-dessine.webp',
+        'poulet': 'co306-pates-poulet-dessine.webp',
+        'fromage': 'co306-pates-fromage-dessine.webp',
+        'avion': 'passagers-d-avion.webp',
+        'stade': 'co57-concert-stade.webp',
+        'violon': '79c78f62683b.webp',
+        'piano': '58eb70256485.webp',
+    }
+    if target.endswith(blocked.get(normalise(label), '\0')) and not label.lower().startswith('dans '):
+        return False
+    target_label = checked[target].get('label', '').lower()
+    requested = label.lower()
+    if re.match(r'^(un |une )', requested) and re.match(r'^(des |les )', target_label):
+        return False
+    # These reviewed scenes depict a plural group or a generic activity class.
+    # Numerical questions remain excluded by resolve(); physical objects still
+    # require their requested singular/plural composition.
+    reviewed_plurals = {
+        'co834-bouquet-fleurs-dessine.webp': {'fleurs'},
+        'co57-voyage.webp': {'voyageurs'},
+        'co834-concert-dessine.webp': {'concerts'},
+        'co306-cours-cuisine-dessine.webp': {'cours de cuisine'},
+    }
+    plural_scene = any(target.endswith(filename) and normalise(label) in concepts
+                       for filename, concepts in reviewed_plurals.items())
+    if (re.match(r'^(des |les )', requested) and re.match(r'^(un |une )', target_label)
+            and not plural_scene):
+        return False
+    return True
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--apply', action='store_true')
+    parser.add_argument('--incremental', action='store_true',
+                        help='Replace reviewed choices in existing complete image trios; retain unresolved images')
     parser.add_argument('--report', type=Path, help='Write complete proposed trios for editorial review')
     parser.add_argument('--pending-report', type=Path, help='List incomplete trios and missing whole answer concepts')
     args = parser.parse_args()
@@ -146,7 +187,12 @@ def main():
                 if not image_form or not text_form:
                     continue
                 choices = image_form.get('choix', [])
-                if len(choices) != 3 or not any(c.get('image', '').startswith(PREFIX) for c in choices):
+                legacy_objects = '/lib/images/tcf/co/objets/'
+                if len(choices) != 3 or not any(
+                    c.get('image', '').startswith(PREFIX)
+                    or (c.get('image', '').startswith(legacy_objects) and c['image'] not in checked)
+                    for c in choices
+                ):
                     continue
                 texts = {c['id']: c.get('texte', '') for c in text_form.get('choix', [])}
                 contextual = plan.get('question_image_overrides', {}).get(exercise['id'] + '#' + str(qi), {})
@@ -155,19 +201,33 @@ def main():
                     old = choice.get('image', '')
                     label = texts.get(choice['id'], '')
                     override = contextual.get(label)
-                    paths.append(old if old in checked else override if override in checked else resolve(label, question['enonce']))
-                if not all(p in checked for p in paths) or len(set(paths)) != 3:
-                    pending.append(dict(bank=str(bank.relative_to(ROOT)), exercise=exercise['id'], question=qi,
-                                        enonce=question['enonce'], labels=[texts[c['id']] for c in choices],
-                                        before=[c['image'] for c in choices], resolved=paths,
-                                        missing_labels=[texts[c['id']] for c, p in zip(choices, paths) if p not in checked]))
+                    candidate = old if old in checked else override if override in checked else resolve(label, question['enonce'])
+                    paths.append(candidate if old == candidate or compatible_reuse(label, candidate, checked) else None)
+                def pending_entry(resolved):
+                    return dict(bank=str(bank.relative_to(ROOT)), exercise=exercise['id'], question=qi,
+                                enonce=question['enonce'], labels=[texts[c['id']] for c in choices],
+                                before=[c['image'] for c in choices], resolved=resolved,
+                                missing_labels=[texts[c['id']] for c, p in zip(choices, resolved) if p not in checked])
+                unresolved = not all(p in checked for p in paths)
+                if args.incremental and unresolved:
+                    pending.append(pending_entry(paths))
+                if args.incremental:
+                    paths = [new if new in checked else old['image'] for new, old in zip(paths, choices)]
+                complete = all(p in checked or (args.incremental and (ROOT / 'public' / p.lstrip('/')).is_file())
+                               for p in paths if p)
+                if not all(paths) or not complete or len(set(paths)) != 3:
+                    if not args.incremental or not unresolved:
+                        pending.append(pending_entry(paths))
                     continue
                 before = [c['image'] for c in choices]
+                if before == paths:
+                    continue
                 changes.append(dict(bank=str(bank.relative_to(ROOT)), exercise=exercise['id'], question=qi,
                                     enonce=question['enonce'], labels=[texts[c['id']] for c in choices],
                                     before=before, after=paths,
-                                    replaced_occurrences=sum(p.startswith(PREFIX) for p in before),
-                                    review='Réutilisation de concepts entiers relus, trio distinct et contrôlé en 4:3 ; seuls les chemins image changent.'))
+                                    replaced_occurrences=sum(old.startswith(PREFIX) and old != new for old, new in zip(before, paths)),
+                                    incremental=args.incremental,
+                                    review='Seuls les chemins des choix relus changent ; trio existant complet et distinct, choix non résolus conservés.' if args.incremental else 'Réutilisation de concepts entiers relus, trio distinct et contrôlé en 4:3 ; seuls les chemins image changent.'))
                 for choice, path in zip(choices, paths):
                     choice['image'] = path
                 dirty = True
@@ -186,14 +246,15 @@ def main():
     if args.pending_report:
         args.pending_report.write_text(json.dumps(pending, ensure_ascii=False, indent=2) + '\n')
     if args.apply:
-        plan['completed_question_trios'].extend(changes)
+        plan['completed_question_trios'].extend(c for c in changes if all(p in checked for p in c['after']))
+        plan.setdefault('incremental_question_updates', []).extend(c for c in changes if not all(p in checked for p in c['after']))
         plan['remaining_uses'] = remaining
         counts = collections.Counter(row['image'] for row in remaining)
         for asset in plan['assets']:
             asset['remaining_occurrences'] = counts[asset['image']]
             asset['status'] = 'replacement_complete' if counts[asset['image']] == 0 else 'pending_complete_reviewed_trios_or_support_review'
         plan['summary'].update(remaining_occurrences=len(remaining), remaining_original_images=len(counts),
-                               replaced_occurrences=sum(row['replaced_occurrences'] for row in plan['completed_question_trios']),
+                               replaced_occurrences=sum(row['replaced_occurrences'] for row in plan['completed_question_trios'] + plan['incremental_question_updates']),
                                excluded_object_audio_occurrences=sum(row['excluded_object_audio'] for row in remaining),
                                remaining_occurrences_to_harmonize=sum(not row['excluded_object_audio'] for row in remaining),
                                completed_question_trios=len(plan['completed_question_trios']))
