@@ -341,8 +341,10 @@ export function GameBoard({
 }
 
 function CalcLine({ calc }: { calc: { a: string; op: string; b: string; result?: string; tail?: '≈' } }) {
+  const length = `${calc.a || '0'}${calc.op}${calc.b || '0'}${calc.result ?? ''}${calc.tail ?? ''}`.length
+  const size = length > 12 ? ' is-long' : length > 8 ? ' is-mid' : ''
   return (
-    <p className="game-calc-text game-calc-line">
+    <p className={`game-calc-text game-calc-line${size}`}>
       <CalcSlot value={calc.a} />
       <span className="game-calc-op">{calc.op}</span>
       <CalcSlot value={calc.b} />
