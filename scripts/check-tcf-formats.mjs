@@ -2,6 +2,7 @@ import {createServer} from 'vite';
 import {fileURLToPath} from 'node:url';
 import {readFileSync,existsSync} from 'node:fs';
 import assert from 'node:assert/strict';
+import {createHash} from 'node:crypto';
 const root=fileURLToPath(new URL('../', import.meta.url)).replace(/\/$/, '');
 const server=await createServer({root,server:{middlewareMode:true},appType:'custom'});
 try {
@@ -30,6 +31,30 @@ try {
   assert.equal(blockFromPage({...config,tcfCeFormat:'image'}).tcfCeFormat,'image');
  }
  console.log(`${exercises.length} documents CE : texte intégral conservé, illustrations existantes, questions et réponses identiques dans les deux formats.`);
+ const posters=JSON.parse(readFileSync(`${root}/src/tcf/content/ce-posters.json`));
+ assert.equal(posters.length,exercises.length);
+ assert.equal(new Set(posters.map(p=>p.src)).size,posters.length);
+ for(const poster of posters){
+  const ex=exercises.find(ex=>ex.id===poster.id);assert(ex);
+  assert.equal(poster.sourceHash,createHash('sha256').update(JSON.stringify(ex.support)).digest('hex'));
+  assert(existsSync(`${root}/public${poster.src}`));assert.equal(poster.width,1000);assert(poster.height>=600);
+ }
+ console.log(`${posters.length} affiches : fichiers présents et correspondance exacte avec la version actuelle des textes sources.`);
+ for(const ex of exercises){
+  const config={domain:'tcf-csc',topic:'tcf-ce',exerciseType:'tcf-ce-ex-1',difficulty:'facile',count:1,columns:1,pointsPerQuestion:1,tcfExercise:ex};
+  const plain=buildWorksheets([config],42);
+  const illustrated=buildWorksheets([{...config,tcfCeFormat:'image'}],42);
+  const questions=sheets=>sheets.flatMap(sheet=>sheet.items).filter(item=>item.tcf?.kind!=='support');
+  assert.deepEqual(questions(illustrated),questions(plain),ex.id);
+  const support=illustrated.flatMap(sheet=>sheet.items).filter(item=>item.tcf?.kind==='support');
+  if(support.every(item=>item.tcf.cePosterText!==undefined))assert.equal(norm(support.map(item=>item.tcf.cePosterText).join(' ')),norm(ex.support.texte));
+  for(const sheet of illustrated)if(sheet.items.some(item=>item.tcf?.kind==='qcm'||item.tcf?.kind==='lignes')){
+   assert(!sheet.items.some(item=>item.tcf?.kind==='support'));assert(sheet.items.length<=3);
+  }
+ }
+ console.log('Affiches et questions séparées : texte complet, ordre des questions, barèmes et index des formats conservés.');
+
+
  const ce={id:'test-ce',competence:'CE',niveau:'A0-A1',type_exercice:'sms',support:{expediteur:'Ami',texte:'Bonjour ! Le rendez-vous est à la gare.'},questions:[{type_reponse:'lignes',enonce:'Où ?',points:2.5},{type_reponse:'lignes',enonce:'Quand ?',points:1.25}]};
  const pe={id:'test-pe',competence:'PE',niveau:'A0-A1',type_exercice:'formulaire',points:8,support:{champs:[{label:'Nom',type:'texte',corrige:'Libre'}]},questions:[]};
  const make=(domain,ex,points)=>({domain,topic:`tcf-${ex.competence.toLowerCase()}`,exerciseType:`tcf-${ex.competence.toLowerCase()}-ex-1`,difficulty:domain==='tcf-cfr'?'moyen':'facile',count:1,columns:1,tcfExercise:ex,pointsPerQuestion:points});

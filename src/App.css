@@ -6333,3 +6333,36 @@ textarea.pill-input,
 .tcf-situations .tcf-situation-body .tcf-image{flex:0 0 var(--situation-image-height,26mm);height:var(--situation-image-height,26mm);max-height:var(--situation-image-height,26mm)}
 .tcf-situation-body .tcf-situation-foot{margin-top:auto}
 .tcf-situation-frame .tcf-audio-frame-head{padding-left:2mm;padding-right:2mm;gap:4px;font-size:9pt;letter-spacing:0}
+
+/* Affiches CE : titres lisibles, texte source intégral et illustrations associées. */
+.tcf-ce-poster{--ce-poster-accent:var(--purple);border:1.5px solid var(--ink);background:#fff;color:var(--ink);padding:3mm;min-width:0}
+.tcf-ce-poster-head{display:flex;align-items:center;justify-content:space-between;gap:4mm;border-bottom:2px solid var(--ink);padding-bottom:3mm;margin-bottom:3mm}
+.tcf-ce-poster-head>div{min-width:0;flex:1}
+.tcf-ce-poster-label{margin:0 0 1.5mm;font-weight:800;font-size:.8em;text-transform:uppercase;letter-spacing:.08em}
+.tcf-ce-poster h3{margin:0!important;font-size:var(--ce-poster-title-size,14pt);line-height:1.2!important;color:var(--ink)}
+.tcf-ce-poster-meta{font-size:.78em;overflow-wrap:anywhere;margin:2mm 0 0}
+.tcf-ce-poster .tcf-ce-poster-hero{display:block;flex:0 0 30mm;width:30mm;height:24mm;object-fit:contain}
+.tcf-ce-poster-passages{display:grid;grid-template-columns:minmax(0,1fr);gap:3mm}
+.tcf-ce-poster-passages.is-columns{grid-template-columns:repeat(2,minmax(0,1fr))}
+.tcf-ce-poster-passage{min-width:0;break-inside:avoid;padding-bottom:2mm;border-bottom:1px solid var(--line)}
+.tcf-ce-poster-passage:last-child{border-bottom:0}
+.tcf-ce-poster-passage.has-picture{display:grid;grid-template-columns:18mm minmax(0,1fr);gap:2mm;align-items:start}
+.tcf-ce-poster .tcf-ce-poster-picture{display:block;width:18mm;height:16mm;object-fit:contain}
+.tcf-ce-poster-text{white-space:pre-line;line-height:1.4;font-size:var(--ce-poster-font-size,10.5pt);overflow-wrap:break-word;text-align:left}
+.tcf-ce-poster.is-compact{padding:2mm;border:0}
+.tcf-ce-poster.is-compact .tcf-ce-poster-head{margin-bottom:2mm;padding-bottom:2mm}
+.tcf-ce-poster.is-compact h3{font-size:11pt}
+.ce-poster-export{width:1000px;min-height:600px;padding:48px;--ce-poster-font-size:22px;--ce-poster-title-size:38px;display:flex;flex-direction:column}
+.ce-poster-export .tcf-ce-poster-head{min-height:250px;margin-bottom:32px;padding-bottom:24px}
+.ce-poster-export .tcf-ce-poster-hero{flex-basis:270px;width:270px;height:230px}
+.ce-poster-export .tcf-ce-poster-passages{gap:28px}
+.ce-poster-export .tcf-ce-poster-passage{padding-bottom:20px}
+.ce-poster-export .tcf-ce-poster-passage.has-picture{grid-template-columns:110px minmax(0,1fr);gap:20px}
+.ce-poster-export .tcf-ce-poster-picture{width:110px;height:100px}
+
+.tcf-ce-poster-visuals{display:flex;gap:4mm;margin:0 0 3mm;align-items:center}
+.tcf-ce-poster-visuals figure{margin:0;text-align:center}
+.tcf-ce-poster-visuals img{display:block;width:24mm;height:18mm;object-fit:contain}
+.tcf-ce-poster-visuals figcaption{font-size:.75em}
+.ce-poster-export .tcf-ce-poster-visuals{gap:32px;margin-bottom:24px}
+.ce-poster-export .tcf-ce-poster-visuals img{width:140px;height:100px}

@@ -392,7 +392,7 @@ export type TcfCadreQuestion =
     }
 
 export type TcfSheetItem =
-  | { kind: 'support'; exercise: TcfExercise; ceFormat?: 'texte' | 'image' }
+  | { kind: 'support'; exercise: TcfExercise; ceFormat?: 'texte' | 'image'; cePosterText?: string; cePosterPart?: { index: number; total: number } }
   | {
       kind: 'qcm'
       numero: number

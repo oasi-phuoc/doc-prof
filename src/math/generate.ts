@@ -1,3 +1,4 @@
+import { paginateCePosters } from '@/tcf/ce-poster-pages'
 import { withTcfInformationTotals } from '@/tcf/information-totals'
 /**
  * Orchestrateur de fiches : buildPage / buildWorksheets.
@@ -618,6 +619,12 @@ export function buildWorksheets(pages: PageConfig[], seed: number, defaultPoints
     const grammarReadingPages = splitGrammarReadingPages(worksheet)
     if (grammarReadingPages) {
       out.push(...grammarReadingPages.map(sheet => ({ ...sheet, configIndex: index })))
+      return
+    }
+
+    const cePosterPages = paginateCePosters(worksheet)
+    if (cePosterPages) {
+      out.push(...cePosterPages.map((sheet) => ({ ...sheet, configIndex: index })))
       return
     }
 

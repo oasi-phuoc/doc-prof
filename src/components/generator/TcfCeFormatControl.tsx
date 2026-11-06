@@ -12,7 +12,7 @@ export function TcfCeFormatControl({ value, onChange }: {
           </button>
         ))}
       </div>
-      <small>Image : le texte est accompagné d’illustrations.</small>
+      <small>Image : une affiche illustrée avec les informations du texte.</small>
     </div>
   )
 }

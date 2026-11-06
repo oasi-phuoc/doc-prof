@@ -1,3 +1,4 @@
+import { CePoster } from './CePoster'
 import { WorksheetImage } from '@/components/WorksheetImage'
 import { CeIllustratedText } from './CeIllustratedText'
 import { useState, type ReactNode } from 'react'
@@ -141,9 +142,17 @@ function ceDoc(children: ReactNode) {
 }
 
 /** Support de l’exercice : document à lire, audio, images, consignes de production. */
-export function TexteSupport({ exercise: ex, mode, ceFormat = 'texte' }: { exercise: TcfExercise; mode: PreviewMode; ceFormat?: 'texte' | 'image' }) {
+export function TexteSupport({ exercise: ex, mode, ceFormat = 'texte', cePosterText, cePosterPart }: { exercise: TcfExercise; mode: PreviewMode; ceFormat?: 'texte' | 'image'; cePosterText?: string; cePosterPart?: { index: number; total: number } }) {
   const illustrated = ex.competence === 'CE' && ceFormat === 'image'
   const banque = <MotsBanque mots={ex.mots_banque} />
+  if (illustrated && ex.competence === 'CE' && !(ex.type_exercice === 'annonce' && parseAssociationDocuments(ex.support.texte))) {
+    const title = ex.type_exercice === 'annonce' ? ex.support.titre : ex.type_exercice === 'email' ? ex.support.objet : ex.scene || ex.theme || 'Message'
+    const metadata = ex.type_exercice === 'sms' ? `De : ${ex.support.expediteur}`
+      : ex.type_exercice === 'email' ? `De : ${ex.support.de} — À : ${ex.support.a}` : undefined
+    return ceDoc(<>{banque}<CePoster title={title || 'Document à lire'} text={cePosterText ?? ex.support.texte}
+      label={cePosterPart && cePosterPart.total > 1 ? `Affiche — ${cePosterPart.index}/${cePosterPart.total}` : ex.type_exercice === 'sms' ? 'Message' : ex.type_exercice === 'email' ? 'Courriel' : 'Annonce'}
+      metadata={metadata} image={ex.type_exercice === 'annonce' ? ex.support.image : undefined} /></>)
+  }
   switch (ex.type_exercice) {
     case 'sms':
       return ceDoc(
@@ -179,7 +188,7 @@ export function TexteSupport({ exercise: ex, mode, ceFormat = 'texte' }: { exerc
                       {doc.numero}
                     </span>
                     {doc.titre ? <p className="tcf-assoc-doc-title">{doc.titre}</p> : null}
-                    {illustrated ? <CeIllustratedText text={doc.texte} context={doc.titre} /> : <Paragraphs text={doc.texte} />}
+                    {illustrated ? <CePoster title={doc.titre || `Document ${doc.numero}`} text={doc.texte} compact label={`Document ${doc.numero}`} /> : <Paragraphs text={doc.texte} />}
                   </li>
                 ))}
               </ul>

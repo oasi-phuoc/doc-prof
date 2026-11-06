@@ -8,8 +8,9 @@ const RULES: Array<{ words: RegExp; image: CeIllustration }> = [
   { words: /foret/, image: image('nature/forêt', 'Forêt') },
   { words: /fromag/, image: image('aliments/fromage', 'Fromage') },
   { words: /\bski\b/, image: image('sports/ski', 'Ski') },
-  { words: /camping|tente/, image: image('loisirs/camping', 'Camping') },
+  { words: /\bcamping\b|\btente\b/, image: image('loisirs/camping', 'Camping') },
   { words: /plage|baignade|\bmer\b/, image: image('nature/plage', 'Plage') },
+  { words: /boulangerie/, image: image('ville/boulangerie', 'Boulangerie') },
   { words: /petit.dejeuner|cereales|pain grille/, image: image('aliments/petit-dejeuner', 'Petit-déjeuner') },
   { words: /pharmaci|medicament/, image: image('ville/pharmacie', 'Pharmacie') },
   { words: /cafeteria|pause.cafe|croissant|\bcafe\b/, image: image('boissons/café', 'Café') },
@@ -28,24 +29,31 @@ const RULES: Array<{ words: RegExp; image: CeIllustration }> = [
   { words: /anniversaire|invitation|\bfete/, image: image('temps-calendrier/anniversaire', 'Fête') },
   { words: /entreprise|bureau|reunion|atelier|directeur/, image: image('ecole-bureau/bureau', 'Bureau') },
   { words: /magasin|supermarche|achat|courses/, image: image('ville/magasin', 'Magasin') },
-  { words: /parc|jardin|promenade/, image: image('ville/parc', 'Parc') },
-  { words: /telephone|appeler|appel/, image: image('technologie/téléphone', 'Téléphone') },
+  { words: /\bparc\b|jardin|promenade/, image: image('ville/parc', 'Parc') },
+  { words: /telephone|appeler|\bappels?\b/, image: image('technologie/téléphone', 'Téléphone') },
 ]
 const normalize = (text: string) => text.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase()
+export function ceIllustrationsFor(text: string): CeIllustration[] {
+  const normalized = normalize(text).replace(/\ben train de\b/g, '')
+  const matches = RULES.flatMap((rule) => {
+    const match = rule.words.exec(normalized)
+    return match ? [{ image: rule.image, index: match.index }] : []
+  }).sort((a, b) => a.index - b.index)
+  return matches.filter((entry, i) => matches.findIndex((other) => other.image.src === entry.image.src) === i).map((entry) => entry.image)
+}
 export function ceIllustrationFor(text: string): CeIllustration | undefined {
-  const normalized = normalize(text)
-  return RULES.find((rule) => rule.words.test(normalized))?.image
+  return ceIllustrationsFor(text)[0]
 }
 
 /** Découpe sans réécriture : toutes les phrases, dates et informations sont conservées. */
-export function ceIllustratedPassages(text: string, context = ''): Array<{ text: string; illustration?: CeIllustration }> {
+export function ceIllustratedPassages(text: string, context = '', maxBlockLength = 340): Array<{ text: string; illustration?: CeIllustration }> {
   const paragraphs = text.split(/\n\s*\n/).filter((part) => part.trim())
   const parts = paragraphs.flatMap((part) => {
-    if (part.length <= 340) return [part]
+    if (part.length <= maxBlockLength) return [part]
     const lines = part.split(/\n|(?<=[.!?])\s+(?=[A-ZÀ-Ÿ])/u)
     const groups: string[] = []
     for (const line of lines) {
-      if (!groups.length || groups[groups.length - 1].length + line.length > 280) groups.push(line)
+      if (!groups.length || groups[groups.length - 1].length + line.length > Math.max(120, maxBlockLength - 60)) groups.push(line)
       else groups[groups.length - 1] += `\n${line}`
     }
     return groups.filter((group) => group.trim())

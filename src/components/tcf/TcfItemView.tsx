@@ -122,7 +122,7 @@ export function TcfItemView({
         hideMotsBanque && tcf.exercise.mots_banque
           ? { ...tcf.exercise, mots_banque: undefined }
           : tcf.exercise
-      return <TexteSupport exercise={exercise} mode={mode} ceFormat={tcf.ceFormat} />
+      return <TexteSupport exercise={exercise} mode={mode} ceFormat={tcf.ceFormat} cePosterText={tcf.cePosterText} cePosterPart={tcf.cePosterPart} />
     }
     case 'qcm':
       return tcf.mode === 'image' ? (

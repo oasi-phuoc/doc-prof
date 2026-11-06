@@ -1,3 +1,4 @@
+import CE_POSTERS from './content/ce-posters.json'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { VOCAB_IMAGE_THEMES } from '@/jeux/vocab-images'
 import { tcfImageSrc } from './media'
@@ -12,9 +13,10 @@ function norm(s: string) {
     .trim()
 }
 
-const ALL_WORDS: VocabHit[] = VOCAB_IMAGE_THEMES.flatMap((theme) =>
-  theme.words.map((w) => ({ label: w.label, src: w.src, theme: theme.label })),
-)
+const ALL_WORDS: VocabHit[] = [
+  ...VOCAB_IMAGE_THEMES.flatMap((theme) => theme.words.map((word) => ({ label: word.label, src: word.src, theme: theme.label }))),
+  ...CE_POSTERS.map((poster) => ({ label: poster.label, src: poster.src, theme: 'Affiches CE — TCF CSC' })),
+]
 
 /**
  * Fenêtre de recherche d’images vocabulaire : tapez un mot → chemin
