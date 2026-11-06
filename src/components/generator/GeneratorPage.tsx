@@ -69,6 +69,28 @@ import type {
   PreviewMode,
 } from '@/math/types'
 
+function formatTimer(ms: number): string {
+  const total = Math.max(0, Math.floor(ms / 1000))
+  const hours = Math.floor(total / 3600)
+  const minutes = Math.floor((total % 3600) / 60)
+  const seconds = total % 60
+  const ss = String(seconds).padStart(2, '0')
+  if (hours > 0) return `${hours}:${String(minutes).padStart(2, '0')}:${ss}`
+  return `${minutes}:${ss}`
+}
+
+function timerLabel(ms: number): string {
+  const total = Math.max(0, Math.floor(ms / 1000))
+  const hours = Math.floor(total / 3600)
+  const minutes = Math.floor((total % 3600) / 60)
+  const seconds = total % 60
+  const parts = []
+  if (hours > 0) parts.push(`${hours} ${hours > 1 ? 'heures' : 'heure'}`)
+  if (minutes > 0) parts.push(`${minutes} ${minutes > 1 ? 'minutes' : 'minute'}`)
+  parts.push(`${seconds} ${seconds > 1 ? 'secondes' : 'seconde'}`)
+  return parts.join(' ')
+}
+
 export function GeneratorPage({
   onLogout,
   onOpenFiches,
@@ -122,9 +144,22 @@ export function GeneratorPage({
   const [scoreMode, setScoreMode] = useState<'normal' | 'points'>('normal')
   const [scoreCorrect, setScoreCorrect] = useState(0)
   const [scoreTotal, setScoreTotal] = useState(0)
+  const [timerOn, setTimerOn] = useState(false)
+  const [timerMs, setTimerMs] = useState(0)
+  const [questionCountOn, setQuestionCountOn] = useState(false)
+  const [questionCount, setQuestionCount] = useState(0)
   const scoreModeRef = useRef(scoreMode)
+  const questionCountOnRef = useRef(questionCountOn)
   scoreModeRef.current = scoreMode
+  questionCountOnRef.current = questionCountOn
   const previewFrameRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (!timerOn) return
+    const origin = Date.now()
+    const id = window.setInterval(() => setTimerMs(Date.now() - origin), 200)
+    return () => window.clearInterval(id)
+  }, [timerOn])
 
   const applyThemeColor = (color: string) => {
     setThemeColor(color)
@@ -543,6 +578,7 @@ export function GeneratorPage({
     removeCoordMark,
     boardMode,
     onScored: (correct: boolean) => {
+      if (questionCountOnRef.current) setQuestionCount((count) => count + 1)
       if (scoreModeRef.current !== 'points') return
       setScoreTotal((total) => total + 1)
       if (correct) setScoreCorrect((count) => count + 1)
@@ -603,6 +639,56 @@ export function GeneratorPage({
                   />
                 </svg>
               </button>
+              <button
+                type="button"
+                className={`topbar-icon-btn${timerOn ? ' active' : ''}`}
+                aria-pressed={timerOn}
+                aria-label={timerOn ? 'Arrêter le minuteur' : 'Démarrer le minuteur'}
+                title={timerOn ? 'Arrêter le minuteur' : 'Démarrer le minuteur'}
+                onClick={() => {
+                  setTimerOn((on) => !on)
+                  setTimerMs(0)
+                }}
+              >
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>
+                  <path
+                    fill="currentColor"
+                    d="M9 2h6v2h-1.2v1.05A8 8 0 1 1 10.2 5.05V4H9V2zm3 5a6 6 0 1 0 .01 12.01A6 6 0 0 0 12 7zm-1 2h2v4.2l2.6 1.6-1 1.6L11 14V9z"
+                  />
+                </svg>
+              </button>
+              {timerOn ? (
+                <p className="game-score" aria-label={timerLabel(timerMs)}>
+                  {formatTimer(timerMs)}
+                </p>
+              ) : null}
+              <button
+                type="button"
+                className={`topbar-icon-btn${questionCountOn ? ' active' : ''}`}
+                aria-pressed={questionCountOn}
+                aria-label={questionCountOn ? 'Désactiver le nombre de questions' : 'Activer le nombre de questions'}
+                title={questionCountOn ? 'Désactiver le nombre de questions' : 'Activer le nombre de questions'}
+                onClick={() => {
+                  setQuestionCountOn((on) => !on)
+                  setQuestionCount(0)
+                }}
+              >
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>
+                  <path
+                    fill="currentColor"
+                    d="M6 4h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm1 4h10v2H7V8zm0 4h10v2H7v-2zm0 4h6v2H7v-2z"
+                  />
+                </svg>
+              </button>
+              {questionCountOn ? (
+                <p
+                  className="game-score"
+                  aria-live="polite"
+                  aria-label={`${questionCount} ${questionCount === 1 ? 'question' : 'questions'}`}
+                >
+                  {questionCount}
+                </p>
+              ) : null}
               {scoreMode === 'points' ? (
                 <>
                   <p
@@ -672,6 +758,7 @@ export function GeneratorPage({
                   setScoreCorrect(0)
                   setScoreTotal(0)
                 }
+                setQuestionCount(0)
                 changeDomain(next)
               }}
               onTopic={(next) => {
@@ -679,6 +766,7 @@ export function GeneratorPage({
                   setScoreCorrect(0)
                   setScoreTotal(0)
                 }
+                setQuestionCount(0)
                 changeTopic(next)
               }}
               onExercise={(patch) => {
@@ -686,6 +774,7 @@ export function GeneratorPage({
                   setScoreCorrect(0)
                   setScoreTotal(0)
                 }
+                setQuestionCount(0)
                 updatePage(patch)
               }}
               onChange={updatePage}
@@ -694,6 +783,7 @@ export function GeneratorPage({
                   setScoreCorrect(0)
                   setScoreTotal(0)
                 }
+                setQuestionCount(0)
                 changeGramSubtheme(id)
               }}
               onLetter={(id) => {
@@ -701,6 +791,7 @@ export function GeneratorPage({
                   setScoreCorrect(0)
                   setScoreTotal(0)
                 }
+                setQuestionCount(0)
                 changeSoutienLetter(id)
               }}
               onSound={(id) => {
@@ -708,6 +799,7 @@ export function GeneratorPage({
                   setScoreCorrect(0)
                   setScoreTotal(0)
                 }
+                setQuestionCount(0)
                 changeSoutienSound(id)
               }}
             />
