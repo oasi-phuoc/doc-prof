@@ -588,24 +588,21 @@ export function GeneratorPage({
           </div>
           {boardMode === 'jeu' ? (
             <div className="game-score-bar">
-              <div className="mode-toggle score-mode-toggle" role="group" aria-label="Comptage">
-                <button
-                  type="button"
-                  className={scoreMode === 'normal' ? 'active' : ''}
-                  aria-pressed={scoreMode === 'normal'}
-                  onClick={() => setScoreMode('normal')}
-                >
-                  Normal
-                </button>
-                <button
-                  type="button"
-                  className={scoreMode === 'points' ? 'active' : ''}
-                  aria-pressed={scoreMode === 'points'}
-                  onClick={() => setScoreMode('points')}
-                >
-                  Points
-                </button>
-              </div>
+              <button
+                type="button"
+                className={`topbar-icon-btn${scoreMode === 'points' ? ' active' : ''}`}
+                aria-pressed={scoreMode === 'points'}
+                aria-label={scoreMode === 'points' ? 'Désactiver les points' : 'Activer les points'}
+                title={scoreMode === 'points' ? 'Désactiver les points' : 'Activer les points'}
+                onClick={() => setScoreMode((mode) => (mode === 'points' ? 'normal' : 'points'))}
+              >
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>
+                  <path
+                    fill="currentColor"
+                    d="M12 3.2 14.6 8.7l6 .5-4.6 4 1.4 5.9L12 16.3 6.6 19.1l1.4-5.9-4.6-4 6-.5L12 3.2z"
+                  />
+                </svg>
+              </button>
               {scoreMode === 'points' ? (
                 <>
                   <p
