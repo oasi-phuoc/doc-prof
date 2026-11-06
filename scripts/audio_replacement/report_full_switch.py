@@ -5,6 +5,7 @@ import collections
 import hashlib
 import json
 from pathlib import Path
+import re
 
 
 def read(path):
@@ -33,10 +34,10 @@ def main():
     recognitions = {}
     for digest, engines in read(work / 'existing-recognitions.json').items():
         recognitions[digest] = {engine: Path(path) for engine, path in engines.items()}
-    for engine in ('parakeet', 'whisper'):
+    for engine in ('parakeet', 'whisper', 'ctc'):
         for path in (work / engine).glob('*.json'):
             data = read(path)
-            if data.get('status') == 'transcribed':
+            if data.get('status') == 'transcribed' or (engine == 'ctc' and data.get('engine') and data.get('source_sha256') and isinstance(data.get('text'), str)):
                 recognitions.setdefault(data['source_sha256'], {})[engine] = path
     evidence = {}
     pending = []
@@ -55,7 +56,8 @@ def main():
             records[engine] = dict(
                 file_sha256=hashlib.sha256(path.read_bytes()).hexdigest(),
                 source_sha256=digest, text=data['text'],
-                parameters=data.get('parameters'), provenance=data.get('provenance'))
+                parameters=data.get('parameters') or dict(engine=data.get('engine'), model_sha256=data.get('model_sha256')),
+                provenance=data.get('provenance'))
         evidence[digest] = records
         if ref in installed:
             continue
@@ -95,6 +97,22 @@ def main():
         pending_report='bascule-restant-20261105.json',
         recognition_evidence='bascule-preuves-reconnaissances-20261105.json')
     write(progression_path, progression)
+    total, current, remaining = (summary['total_installed'],
+                                 summary['installed_this_switch'],
+                                 summary['remaining_references'])
+    readme = output / 'README.md'
+    text = readme.read_text()
+    text = re.sub(r'atteint \d+ fichiers installés sur 1 025, dont \d+ dans la reprise actuelle ; \d+ références',
+                  f'atteint {total} fichiers installés sur 1 025, dont {current} dans la reprise actuelle ; {remaining} références', text)
+    readme.write_text(text)
+    progress_note = repo / 'docs/tcf/avancement-images.md'
+    text = progress_note.read_text()
+    text = re.sub(r'\*\*\d+ fichiers installés sur 1 025\*\*, dont \d+ dans la reprise actuelle ; \*\*\d+ références restent à traiter\*\*',
+                  f'**{total} fichiers installés sur 1 025**, dont {current} dans la reprise actuelle ; **{remaining} références restent à traiter**', text)
+    text = re.sub(r'détail des \d+ références restantes', f'détail des {remaining} références restantes', text)
+    text = re.sub(r'\*\*\d+ fichiers sur 1 025 sont maintenant remplacés\*\*, avec leurs transcriptions et corrections associées ; \d+ restent à traiter',
+                  f'**{total} fichiers sur 1 025 sont maintenant remplacés**, avec leurs transcriptions et corrections associées ; {remaining} restent à traiter', text)
+    progress_note.write_text(text)
     print(json.dumps(summary))
 
 

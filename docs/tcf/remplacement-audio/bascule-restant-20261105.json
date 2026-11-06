@@ -1,46 +1,41 @@
 {
   "summary": {
-    "remaining_references": 299,
+    "remaining_references": 245,
     "reasons": {
-      "editorial_transcript_and_question_review_required": 148,
+      "editorial_transcript_and_question_review_required": 86,
+      "parakeet_text_difference": 26,
+      "parakeet_numeric_difference": 49,
+      "checked_waiting_installation": 3,
       "source_boundary_review_required": 110,
-      "whisper_end_difference": 8,
-      "parakeet_numeric_difference": 45,
-      "parakeet_start_difference": 8,
-      "whisper_text_difference": 28,
-      "parakeet_end_difference": 7,
-      "whisper_start_difference": 15,
-      "parakeet_text_difference": 23,
-      "final_word_autochtones_requires_source_end_review": 1,
-      "whisper_numeric_difference": 25,
-      "technical_object_numbering_still_present": 1
+      "whisper_end_difference": 7,
+      "ctc_text_difference": 35,
+      "whisper_text_difference": 30,
+      "whisper_start_difference": 14,
+      "parakeet_start_difference": 9,
+      "ctc_end_difference": 24,
+      "parakeet_end_difference": 5,
+      "ctc_numeric_difference": 44,
+      "ctc_start_difference": 15,
+      "whisper_numeric_difference": 27,
+      "technical_object_numbering_still_present": 1,
+      "parakeet_instruction_flag": 1,
+      "whisper_instruction_flag": 1
     },
     "recognition_progress": {
       "pending_references_initial": 945,
       "unique_candidates": 933,
       "parakeet_recognitions": 933,
       "french_whisper_recognitions": 933,
+      "third_ctc_recognitions": 136,
       "technical_files_checked": 1002,
-      "exact_equivalence_ready": 225,
-      "editorial_decisions": 599,
-      "manual_reviews_ready": 448,
-      "instruction_flags": 0
+      "exact_equivalence_ready": 198,
+      "editorial_decisions": 651,
+      "manual_reviews_ready": 502,
+      "instruction_flags": 1
     }
   },
   "human_listening_performed": false,
   "items": [
-    {
-      "ref": "/lib/audio/tcf/co/actualite/02-actualité-la-grève-hôtesse-de-l-air.mp3",
-      "source_id": "additional-20261102:mdf-a2-abc-direct:62:5ff17bc17e64:73db8c02",
-      "candidate_sha256": "7ca5a5a3e8afd68c4891011c946def748f27df74774f151b20ddf939a9d110aa",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "tcf-ssx-a2-radio-18-2-co-3"
-      ]
-    },
     {
       "ref": "/lib/audio/tcf/co/actualite/06-actualité-les-étiquettes-vertes.mp3",
       "source_id": "additional-20261102:mdf-b1-abc-direct:21:fc97a3fc8ce3:c6cdaff5",
@@ -58,9 +53,16 @@
       "source_id": "09035196:030:8f132405caaf",
       "candidate_sha256": "630f5f981f938ee146e24ba64b7f79895ad0cef428a7266a2376ed5e2b32370d",
       "reasons": [
-        "editorial_transcript_and_question_review_required"
+        "parakeet_text_difference",
+        "parakeet_numeric_difference",
+        "checked_waiting_installation"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Bienvenue dans notre émission \"Parlons peu, parlons bien\". Aujourd'hui nous allons traiter d'un thème qui revient souvent dans les forums et sur le net, celui de l'anonymat sur Internet. Un projet de loi pour interdire l'anonymat en ligne va peut-être voir le jour en France dans les prochains mois. Est-ce une bonne chose ? On en parle tout de suite avec Hervé Lacroix, sociologue et Stéphanie Blanchard, spécialiste des comportements humains sur Internet. Stéphanie, bonjour. Alors pour vous, être anonyme sur Internet, est-ce manquer de courage ? Bonjour. Non, ce n'est pas une question de courage, il me semble. C'est souvent un moyen de ne pas mélanger vie privée et vie professionnelle. En étant visible sur Internet, ne serait-ce qu'en publiant vos photos privées, cela peut avoir des conséquences graves sur votre vie professionnelle. C'est la raison pour laquelle beaucoup d'internautes s'inscrivent avec un faux nom sur Facebook ou Instagram, par exemple. - Et Hervé, vous êtes du même avis ? - Tout à fait. D'ailleurs, j'ai moi-même un compte Facebook qui n'est pas à mon nom. Ne pas être visible est un droit de chaque citoyen. Le problème est que l'anonymat encourage assez souvent la violence en ligne et le cyberharcèlement. Les personnes se sentent protégées et se défoulent sur Internet en insultes et messages de haine. Ce qu'il faut, c'est appliquer et augmenter les procédures contre les violences sur le net. que l'utilisateur soit ou non anonyme, car les services de renseignement et la police ont presque toujours les moyens de retrouver son identité. Il ne faut pas oublier que certaines personnes sont anonymes par nécessité pour veiller à leur sécurité. C'est le cas par exemple de personnes résidant dans une dictature où les libertés d'expression n'existent pas. Sans aller très loin, des femmes victimes de violence s'expriment sans montrer leur identité pour éviter les représailles futures. Pour ces personnes, l'anonymat peut être un moyen de s'exprimer sur Internet et de dénoncer des violences tout en préservant leur sécurité ou leur emploi.",
+        "reason": "Reconnaissances finales comparées ; transcription, questions et corrigés relus. Noms non épelés : graphies éditoriales documentées.",
+        "question_changes": []
+      },
       "exercises": [
         "tcf-ss-b1-s1-co-3"
       ]
@@ -95,7 +97,8 @@
       "source_id": "09035276:067:0f32d1f3511b",
       "candidate_sha256": "ee3b69be8a25b55add28df17ff264b675ee54a3f87d05947be94589dc4659662",
       "reasons": [
-        "whisper_end_difference"
+        "whisper_end_difference",
+        "ctc_text_difference"
       ],
       "editorial_decision": {
         "status": "editorial_review",
@@ -122,23 +125,6 @@
       },
       "exercises": [
         "tcf-ssx-a1-ecole-ne-pas-jouer-ici-co-4"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/ecole/16-école-comment-renter-à-la-maison.mp3",
-      "source_id": "09035276:067:0f32d1f3511b",
-      "candidate_sha256": "a9afa216b3484d516b80c72bb0fdde03310a4f2561ba4a07c52ebff39107bede",
-      "reasons": [
-        "parakeet_numeric_difference"
-      ],
-      "editorial_decision": {
-        "status": "editorial_review",
-        "selected_text": "- Tu rentres comment de l'école ?\n- En bus, et toi ?\n- Moi, à pied.\nJ'habite juste à côté.",
-        "reason": "Écarts de ponctuation, accords, orthographe et graphies propres examinés. Texte courant conservé sous réserve de concordance des deux reconnaissances du fichier final, des nombres et des limites de parole.",
-        "question_changes": []
-      },
-      "exercises": [
-        "tcf-ssx-a1-ecole-rentrer-de-l-ecole-co-4"
       ]
     },
     {
@@ -226,9 +212,14 @@
       "source_id": "9782090351958:042:d86fac163633",
       "candidate_sha256": "cc1e5f8067d26973c0cb5f236813cc05f21d7a8caaabf5776bab573d9c834633",
       "reasons": [
-        "editorial_transcript_and_question_review_required"
+        "parakeet_numeric_difference"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Tous les jours après le repas, le collège vous propose des activités de 13h à 14h. Vous pourrez faire du badminton, du foot ou du basket. Pour plus de renseignements, venez au secrétariat.",
+        "reason": "Reconnaissances finales comparées, transcriptions et questions relues ; homophones et accords corrigés.",
+        "question_changes": []
+      },
       "exercises": [
         "tcf-ss-a2-s7-co-3"
       ]
@@ -264,9 +255,15 @@
       "source_id": "additional-20261102:mdf-a1-abc:46:0e87b5589d43:3e586f0e",
       "candidate_sha256": "d27f86009fb5858819c223c89a4223f6c11704ba71e7958ce8a7b633abc9f273",
       "reasons": [
-        "editorial_transcript_and_question_review_required"
+        "whisper_text_difference",
+        "whisper_start_difference"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Oh là là, où sont mes clés? Elles sont sur la table. Comme d'habitude.",
+        "reason": "Reconnaissances finales comparées ; transcription et questions relues, graphies éditoriales et homophones corrigés.",
+        "question_changes": []
+      },
       "exercises": [
         "tcf-ss-a1-s5b-co-1"
       ]
@@ -276,7 +273,9 @@
       "source_id": "grammar-import-20261104:file_000000007fe881f48e6c02913de9834b",
       "candidate_sha256": "e966458c84bd5e4b025c7c9a06aa14905b26d40d70287e6546cdf4ff610fd7fe",
       "reasons": [
-        "parakeet_start_difference"
+        "parakeet_start_difference",
+        "ctc_text_difference",
+        "ctc_end_difference"
       ],
       "editorial_decision": {
         "status": "editorial_text_reviewed_waiting_final_checks",
@@ -302,23 +301,12 @@
       ]
     },
     {
-      "ref": "/lib/audio/tcf/co/fetes/17-fêtes_anniversaire-de-Margot-objets.mp3",
-      "source_id": "additional-20261102:mdf-a1-abc:48:b71e48ec4f9a:25e1a588",
-      "candidate_sha256": "ffb84d28f7fc99ee347732ad354178aced5e39a0e99e5d6cdec2954af8237a17",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "tcf-ss-a1-s10-co-2"
-      ]
-    },
-    {
       "ref": "/lib/audio/tcf/co/fetes/22-invitation-apéro-à-la-maison.mp3",
       "source_id": "grammar-import-20261104:file_00000000ef7c8243b9a259844f5d9180",
       "candidate_sha256": "eb4cd4849735379dfec2544f45a4e367a69199bb8e5b4460ef5287d368cd7d8d",
       "reasons": [
-        "whisper_text_difference"
+        "whisper_text_difference",
+        "ctc_text_difference"
       ],
       "editorial_decision": {
         "status": "editorial_text_reviewed_waiting_final_checks",
@@ -364,7 +352,8 @@
       "source_id": "additional-20261102:mdf-a2-abc-direct:27:23dc1f3d383a:964bef8b",
       "candidate_sha256": "bd8de79af97dbe4c3a55678a9fd3991c94d009f045be2148339ec0fbf1c9702f",
       "reasons": [
-        "parakeet_end_difference"
+        "parakeet_end_difference",
+        "ctc_numeric_difference"
       ],
       "editorial_decision": {
         "status": "editorial_review",
@@ -377,28 +366,12 @@
       ]
     },
     {
-      "ref": "/lib/audio/tcf/co/loisirs/05-loisirs-annonce-interdiction-photo-concert.mp3",
-      "source_id": "additional-20261102:mdf-a2-abc-direct:8:aface355a3c9:cbb208ff",
-      "candidate_sha256": "e48382d4ee1c408e9f6bce6aa7b2e75e9c2b68cb7fa74730d2e7b7fbb533dffd",
-      "reasons": [
-        "whisper_start_difference"
-      ],
-      "editorial_decision": {
-        "status": "editorial_review",
-        "selected_text": "Chers spectateurs, nous vous rappelons qu’il est interdit de prendre des photos durant le concert.\nMerci pour votre compréhension.\nProfitez bien de votre soirée !",
-        "reason": "Ponctuation, accords, hésitations, orthographe et graphies propres examinés. Texte courant conservé sous réserve de concordance des deux reconnaissances finales, des nombres et des marges de parole.",
-        "question_changes": []
-      },
-      "exercises": [
-        "tcf-ssx-a2-annonce-2-2-co-2"
-      ]
-    },
-    {
       "ref": "/lib/audio/tcf/co/loisirs/au-musee.mp3",
       "source_id": "09035276:065:07efb5a82e80",
       "candidate_sha256": "19d8461aedf635bc04beefc1759f0b53f89b395f055b15f582d3f95763229bb2",
       "reasons": [
-        "parakeet_numeric_difference"
+        "parakeet_numeric_difference",
+        "ctc_numeric_difference"
       ],
       "editorial_decision": {
         "status": "editorial_text_reviewed_waiting_final_checks",
@@ -412,24 +385,6 @@
       ]
     },
     {
-      "ref": "/lib/audio/tcf/co/loisirs/elisa-peux-me-preter-1.mp3",
-      "source_id": "additional-20261102:mdf-a2-abc-direct:99:91431a2774b0:cb78f06b",
-      "candidate_sha256": "751b3080f194649495b6010687132c25333acd6a48d8c9f1005f98f4a39323c6",
-      "reasons": [
-        "parakeet_text_difference",
-        "parakeet_start_difference"
-      ],
-      "editorial_decision": {
-        "status": "editorial_review",
-        "selected_text": "Élisa, tu peux me prêter le DVD du film Amour ?\n— Euh, non, désolée.\n— Mais pourquoi ?\n— Je voudrais le regarder ce week-end.\nEt puis, la dernière fois que je t’ai prêté un DVD, tu l’as gardé pendant 6 mois !\nAlors non, je ne préfère pas !",
-        "reason": "Ponctuation, accords, hésitations, orthographe et graphies propres examinés. Texte courant conservé sous réserve de concordance des deux reconnaissances finales, des nombres et des marges de parole.",
-        "question_changes": []
-      },
-      "exercises": [
-        "tcf-ss-a2-s21-co-1"
-      ]
-    },
-    {
       "ref": "/lib/audio/tcf/co/loisirs/elisa-peux-me-preter-3.mp3",
       "source_id": "additional-20261102:mdf-a2-abc-direct:99:91431a2774b0:cb78f06b",
       "candidate_sha256": "2f3d137e3887ec52190b529051dfe6eada66c9b5f868adebacc325a304ce1c0c",
@@ -437,7 +392,8 @@
         "parakeet_text_difference",
         "parakeet_numeric_difference",
         "parakeet_start_difference",
-        "parakeet_end_difference"
+        "parakeet_end_difference",
+        "ctc_start_difference"
       ],
       "editorial_decision": {
         "status": "editorial_review",
@@ -467,18 +423,6 @@
       ]
     },
     {
-      "ref": "/lib/audio/tcf/co/loisirs/la-fete-du-sport.mp3",
-      "source_id": "09035276:060:6a61f1e938f4",
-      "candidate_sha256": "d273eeaeb58db28d5191ca6065a60a248b3dc710e83bcdeea40093552bc7d56d",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "tcf-a1j-s2-co-2"
-      ]
-    },
-    {
       "ref": "/lib/audio/tcf/co/loisirs/le-cours-de-musique.mp3",
       "source_id": "09035276:064:e8762935d3ba",
       "candidate_sha256": "fe851292d64e584f2bafe9c60db7406e208bebd34f1de943d3885b39f3e7bee9",
@@ -491,30 +435,18 @@
       ]
     },
     {
-      "ref": "/lib/audio/tcf/co/loisirs/le-festival-theatre-val.mp3",
-      "source_id": "additional-20261102:mdf-a1-abc:17:b89d875a0076:a0ca3b93",
-      "candidate_sha256": "acd0c52baaad2436d2a6146e715de1cd07cb9ce27c38213f2f8628739edbb9c0",
+      "ref": "/lib/audio/tcf/co/loisirs/loisirs-3-1.mp3",
+      "source_id": "9782090351958:055:6b088a9bc9dd",
+      "candidate_sha256": "c2b1958172ea59ce1b271f3b636e30c39947506aa659b631faf656e053fb1fe0",
       "reasons": [
         "parakeet_numeric_difference"
       ],
       "editorial_decision": {
         "status": "editorial_review",
-        "selected_text": "Le festival de théâtre « En val de Lugnes » fête ses dix ans le 20 juillet prochain.\nAu programme, il y a 6 pièces de théâtre.\nChaque année, le festival a beaucoup de succès : 3 000 personnes assistent au spectacle.\nVous pouvez réserver vos places à partir de maintenant, par téléphone ou sur Internet.",
-        "reason": "Variantes de ponctuation, accords, homophones et graphies non épelées examinées. Texte courant conservé ; concordance des deux reconnaissances finales, des nombres et des frontières de parole requise.",
+        "selected_text": "Vous ne savez pas quoi faire ce week-end ? Le Musée du jeu vidéo vous attend de 9h à 20h. Venez rencontrer des créateurs de jeux, jouer seul ou en équipe. Plein d'animations de 10h à 18h et aussi une cafétéria ouverte jusqu'à 19h.",
+        "reason": "Reconnaissances finales comparées, transcriptions et questions relues ; homophones et accords corrigés.",
         "question_changes": []
       },
-      "exercises": [
-        "tcf-ss-a1-s18-co-1"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/loisirs/loisirs-3-1.mp3",
-      "source_id": "9782090351958:055:6b088a9bc9dd",
-      "candidate_sha256": "c2b1958172ea59ce1b271f3b636e30c39947506aa659b631faf656e053fb1fe0",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
       "exercises": [
         "tcf-ss-a2-s21-co-3"
       ]
@@ -570,25 +502,20 @@
       ]
     },
     {
-      "ref": "/lib/audio/tcf/co/loisirs/moyen-a2__annonce-2.1.mp3",
-      "source_id": "additional-20261102:mdf-a2-abc-direct:7:9ca97be9c9d3:34b75eac",
-      "candidate_sha256": "bc32643e25f4eefdc79fb9de88bd6923690f5e4cc9ca5ddf152c820abebd608d",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "tcf-ssx-a2-annonce-2-1-co-2"
-      ]
-    },
-    {
       "ref": "/lib/audio/tcf/co/loisirs/nature-conversation-1.mp3",
       "source_id": "09035196:006:327578f20bb2",
       "candidate_sha256": "f94ef833918de8fe6eef96a7ddc4c40b3261aa8a16c84a869d3d53b10a96417f",
       "reasons": [
-        "editorial_transcript_and_question_review_required"
+        "parakeet_text_difference",
+        "parakeet_numeric_difference",
+        "ctc_numeric_difference"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Salut, comment tu t'appelles ? Je suis Noémie, et toi ? Je m'appelle Théo. Tu es nouvelle ici ? Je ne t'ai jamais vue avant. Oui, l'an dernier, j'étais à l'école Marie Curie. Cette année, j'ai changé parce qu'il n'y avait pas allemand. Comme j'ai de la famille en Allemagne, ma mère voulait que je change d'école. Et elle était comment, ton ancienne école ? En fait, je n'aimais pas vraiment. Les profs étaient très stricts et les élèves toujours en compétition. Il n'y avait pas un prof que tu aimais bien ? Si, un seul, le prof d'histoire, M. Leroy, il était passionné et il savait écouter les élèves. Mais les autres, ils nous punissaient toujours de manière injuste. Ici, je ne dis pas que c'est l'école parfaite, mais tu verras, c'est très différent. L'ambiance est plutôt sympa, et il y a des professeurs vraiment géniaux. Et il y a des ateliers l'après-midi ? Oui, tu peux faire de la musique, du chant, du théâtre et même du karaté. Moi, je suis en théâtre. À la fin de l'année, on va jouer notre pièce dans un festival à Toulouse. Ah c'est super ça ! J'ai toujours rêvé de faire du théâtre. Tu crois que je peux encore m'inscrire ? Je pense que oui. En plus, on n'a pas encore distribué les rôles pour la pièce. C'est le prof de français qui organise l'atelier. Tu devrais lui en parler.",
+        "reason": "Reconnaissances finales comparées ; transcription, questions et corrigés relus. Noms non épelés : graphies éditoriales documentées.",
+        "question_changes": []
+      },
       "exercises": [
         "tcf-ss-b1-s7-co-4"
       ]
@@ -617,26 +544,6 @@
       "editorial_decision": null,
       "exercises": [
         "tcf-ss-a1-s20-co-3"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/loisirs/nous-recevons-aujourd-hui-notre.mp3",
-      "source_id": "additional-20261102:mdf-b1-abc-direct:28:636adb9e1973:d3cdf6fd",
-      "candidate_sha256": "e21d34dc3e152aa73e1dd181f76e25ae2c92bddb6482a9d308e7e3c709fa5d9a",
-      "reasons": [
-        "final_word_autochtones_requires_source_end_review"
-      ],
-      "editorial_decision": {
-        "status": "editorial_review",
-        "selected_text": "Nous recevons aujourd'hui dans notre studio Pierre Lavergne, un des participants du mondial de la pétanque en juillet dernier à Marseille. Il va nous parler de ce jeu populaire. Tu tires ou tu pointes ? C'est la question capitale dans le jeu de la pétanque. Dans une équipe, peu importe si c'est une doublette ou une triplette, il faut avoir des spécialistes. Le pointeur lance sa boule pour la rapprocher le plus possible du but. Le geste n'est pas très spectaculaire, mais ô combien important. Le tireur lance sa boule pour chasser une boule adverse qui se trouve trop près du cochonnet. Un claquement de métal retentit quand la boule tirée prend la place de la boule adverse. C'est le carreau. Le tir le plus remarquable et le plus admiré qui puisse se faire. La pétanque a été inventée en 1907 à La Ciotat près de Marseille. Jules Lenoir, souffrant de rhumatismes, n'arrive plus à jouer au jeu provençal, qui demande aux joueurs de faire trois pas de course avant de lancer leur boule à une distance comprise entre 15 et 21 mètres. Il trace un cercle devant le café, garde les pieds tanqués, c'est-à-dire joints, et joue tranquillement les sphères en bois sur un terrain réduit à 15 mètres au maximum. Les propriétaires de l'établissement, les frères Ernest et Joseph Pitiot, comprirent vite l'intérêt du jeu simplifié. En 1910, le premier concours officiel de Pétanque est organisé à La Ciotat. Les règles n’ont guère changé par rapport à la \"longue\", le jeu provençal, qui est toujours pratiqué dans le sud de la France. Prenons le mondial La Marseillaise, le plus grand concours du monde qui rassemble aujourd'hui plus de 14 000 joueurs du monde entier. Cette fête populaire, qui réunit amateurs et professionnels à Marseille début juillet, se joue en triplette. Trois joueurs contre trois, chacun avec deux boules. Le pointeur envoie le bouchon, de préférence en bois de buis, à une distance de 6 à 10 mètres du cercle tracé, et lance sa première boule. L'équipe adverse doit placer la boule en métal d'un poids entre 650 et 800 g le plus près du cochonnet pour reprendre le point. Tu tires ou tu pointes ? C'est là que la question capitale se pose. Les professionnels écartent tout de suite une boule dangereuse d'un tir puissant. Les amateurs se contentent de glisser la boule plus près du but par un pointage astucieux en roulant ou en plombant la boule. La partie se gagne en 13 points. Une belle finale du mondial La Marseillaise peut durer facilement 3, 4 ou 5 heures. Mais la question, tu tires ou tu pointes, ne se pose pas seulement à Marseille. Loin de là, la pétanque est un sport populaire qui se pratique partout, dans toutes les villes et les villages du sud de la France, sur des boulodromes, des places, des parcs ou même des chemins. Les terrains de légende existent toujours. comme la place des Lices à Saint-Tropez où Henri Salvador s'adonnait à son jeu préféré. Comme le berceau de la pétanque à La Ciotat qui a été grignoté par les promoteurs de l'immobilier, mais qui sert toujours le pastis pour les compétitions des autochtones",
-        "reason": "Reconnaissances finales comparées ; transcription et questions relues. Graphies des noms non épelés retenues à titre éditorial.",
-        "question_changes": [],
-        "blocked_reasons": [
-          "final_word_autochtones_requires_source_end_review"
-        ]
-      },
-      "exercises": [
-        "tcf-ss-b1-s6-co-3"
       ]
     },
     {
@@ -701,7 +608,9 @@
       "candidate_sha256": "ed2561b5521dab92e64ced8d5af4760804eaac8d8effacfcd26b19c69dd399cc",
       "reasons": [
         "parakeet_numeric_difference",
-        "whisper_numeric_difference"
+        "whisper_numeric_difference",
+        "ctc_numeric_difference",
+        "ctc_start_difference"
       ],
       "editorial_decision": {
         "status": "editorial_text_reviewed_waiting_final_checks",
@@ -721,7 +630,8 @@
       "reasons": [
         "parakeet_numeric_difference",
         "whisper_numeric_difference",
-        "whisper_start_difference"
+        "whisper_start_difference",
+        "ctc_start_difference"
       ],
       "editorial_decision": {
         "status": "editorial_review",
@@ -764,7 +674,8 @@
       "candidate_sha256": "e9962fe8c101407e00cacbd16ababb9992d7927bfbef79428361c69688d6df30",
       "reasons": [
         "source_boundary_review_required",
-        "whisper_start_difference"
+        "whisper_start_difference",
+        "ctc_numeric_difference"
       ],
       "editorial_decision": {
         "status": "editorial_review",
@@ -781,28 +692,19 @@
       "source_id": "additional-20261102:mdf-a2-abc-direct:32:ff0e003a88b9:fa42b31e",
       "candidate_sha256": "6b52f2c0a39f3ad73110a7939b6f790b4ef0f18b9db6e6fd20dd8b8691f34a9e",
       "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "tcf-ssx-a2-annonce-6-2-co-2"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/magasins/06-magasin-annonce-offre-petit-déjeuner.mp3",
-      "source_id": "additional-20261102:mdf-a2-abc-direct:34:5474c0710359:e1eea890",
-      "candidate_sha256": "8e7440ee1cdf79343f4c271299bcfcc6299ab6ff1a3adb5244746ef055fa72af",
-      "reasons": [
-        "whisper_start_difference"
+        "whisper_text_difference",
+        "whisper_numeric_difference",
+        "whisper_start_difference",
+        "ctc_numeric_difference"
       ],
       "editorial_decision": {
         "status": "editorial_review",
-        "selected_text": "Chers clients, après une offre sur les sandwichs la semaine dernière, nous vous proposons aujourd’hui une offre spéciale petit-déjeuner !\nPour l’achat de trois viennoiseries, un grand café vous est offert !",
-        "reason": "Écarts de ponctuation, accords, segmentation des nombres et graphies propres examinés ; faits et texte courant conservés avec contrôle des deux reconnaissances du fichier final, des nombres et des marges.",
+        "selected_text": "Chères clientes, à l’occasion de la journée de la femme, pour deux vêtements achetés, bénéficiez d’une remise de 70 % sur nos bijoux. Allez vite découvrir nos nouveaux sacs à main.",
+        "reason": "Reconnaissances finales comparées ; transcription et questions relues, graphies éditoriales et homophones corrigés.",
         "question_changes": []
       },
       "exercises": [
-        "tcf-ssx-a2-annonce-6-4-co-2"
+        "tcf-ssx-a2-annonce-6-2-co-2"
       ]
     },
     {
@@ -810,7 +712,10 @@
       "source_id": "additional-20261102:mdf-a2-abc-direct:41:85643fceeeb1:e1abe367",
       "candidate_sha256": "254db67677cccfe0e11f98e89f47f4527e05710a5ff1682999cc9bcb71667d28",
       "reasons": [
-        "parakeet_numeric_difference"
+        "parakeet_numeric_difference",
+        "ctc_text_difference",
+        "ctc_numeric_difference",
+        "ctc_end_difference"
       ],
       "editorial_decision": {
         "status": "editorial_review",
@@ -846,30 +751,6 @@
       "editorial_decision": null,
       "exercises": [
         "tcf-ssx-a2-annonce-3-3-co-2"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/magasins/15-magasin-annonce-clé-retrouvé.mp3",
-      "source_id": "additional-20261102:mdf-a2-abc-direct:30:d6ab3c10c7c8:3c74436b",
-      "candidate_sha256": "a1d5c35508f32309bdd4305a31e16588a85a863224c67c86e420a4e53dde0db5",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "tcf-ssx-a2-annonce-cles-retrouvees-co-2"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/magasins/17-magasin-annonce-offre-électroménager.mp3",
-      "source_id": "additional-20261102:mdf-a2-abc-direct:10:80a46fef865c:719028f3",
-      "candidate_sha256": "b81b4f1dad36b46debac1504bd245b6615655c788f490c4e1eb7c2aa48469f7b",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "tcf-ssx-a2-annonce-2-4-co-2"
       ]
     },
     {
@@ -910,10 +791,13 @@
       "ref": "/lib/audio/tcf/co/magasins/allo-annie.mp3",
       "source_id": "additional-20261102:mdf-b1-abc-direct:17:93a2294ea475:60bf1612",
       "candidate_sha256": "b83b3147fff135c0841e5c1c25ff409ebb1eff1ee5e89a97e3787c81f8b5825b",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
+      "reasons": [],
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Allô Annie, tu viens avec moi courir autour du lac ? À 10h, ça te va ? Je suis désolée, ce matin je ne peux pas. Je suis en plein rangement de mes placards. Je ne sais plus où mettre mes vêtements. J'en ai que je ne porte plus. Il y en a même que je viens de retrouver et que j'avais oublié. Qu'est-ce que tu fais des tiens, Chantal ? Ça dépend. S'ils sont en bon état, je les vends et avec l'argent, je renouvelle un peu ma garde-robe. Tu les vends en ligne ? J'ai entendu parler de quelques sites, mais ça ne m'attire pas. Une de mes amies a eu des problèmes avec son acheteur. Oui, ça arrive parfois, même si c'est plutôt rare. Je connais un site sérieux où je vends quelquefois. Je vais aussi dans un dépôt-vente qui s'occupe de vendre à ma place. C'est assez pratique. Il existe aussi des friperies, mais je n'aime pas beaucoup. En fait, c'est peut-être le nom qui ne me plaît pas. Pour moi, ce ne sont pas des fripes que je vends mais des vêtements, même s'ils ne sont plus à la mode. Quand ils sont un peu ou trop usés, je les mets dans un sac et je les dépose dans une borne de collecte. Ils sont alors recyclés. Moi, je n'en ai jamais vendu. Je préfère donner. La plupart du temps, je les propose à des personnes que je connais et qui n'ont pas beaucoup de moyens. Si ces vêtements leur plaisent et leur vont, je les leur donne. Mais j'y pense, tu vas bien à la recyclerie ? Quand je vais à la déchetterie, je leur laisse les objets qui peuvent être recyclés, mais pas de vêtements. Tu sais, comme Claude, notre ami du club de gym, s’occupe du Secours populaire, Je lui remets les vêtements que je ne porte plus, ou encore je les donne à la Croix-Rouge. Je reconnais là ta générosité. Allez, je te quitte, je vais courir. Et bon rangement.",
+        "reason": "Reconnaissances finales comparées ; transcription, attribution des informations, questions et réponses relues.",
+        "question_changes": []
+      },
       "exercises": [
         "tcf-ss-b1-s14-co-4"
       ]
@@ -954,18 +838,6 @@
       },
       "exercises": [
         "tcf-ss-a1-s1-co-3"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/magasins/chers-clients-magasin-vetimarche.mp3",
-      "source_id": "09035276:036:f45c6c284909",
-      "candidate_sha256": "a86f7df03b46d6fe79e39d1f8c508019846a3e91abdc6b31276e156a35d9b92c",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "tcf-ss-a1-s2-co-2"
       ]
     },
     {
@@ -1029,9 +901,14 @@
       "source_id": "9782090351958:049:a4431f87ae61",
       "candidate_sha256": "1f427abdf33856e218dc60721327aa8624ef7a2726d75eb4b8fc2ed75683fb71",
       "reasons": [
-        "editorial_transcript_and_question_review_required"
+        "parakeet_start_difference"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Le magasin va fermer. Merci de venir régler vos achats. Des caisses rapides sont disponibles au premier étage. Si vous payez en carte bancaire, utilisez la caisse numéro 2.",
+        "reason": "Reconnaissances finales comparées, transcriptions et questions relues. Les noms non épelés sont normalisés comme graphies éditoriales.",
+        "question_changes": []
+      },
       "exercises": [
         "tcf-ss-a2-s3-co-3"
       ]
@@ -1040,34 +917,28 @@
       "ref": "/lib/audio/tcf/co/magasins/magasins-3-6.mp3",
       "source_id": "9782090351958:049:a4431f87ae61",
       "candidate_sha256": "3b6fe975c96c492d6d5badb68b0286e0288e3b5676d0505fd2e833b85fa4251e",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
+      "reasons": [],
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Ton magasin Tipeee te propose tout ce dont tu as besoin pour une rentrée réussie. Cahier, cartable, stylo et si tu présentes ta carte de fidélité au vendeur, il t'offrira une trousse.",
+        "reason": "Reconnaissances finales comparées ; transcription, attribution des informations, questions et réponses relues. Tipeee non épelé : graphie éditoriale.",
+        "question_changes": []
+      },
       "exercises": [
         "tcf-ss-a2-s3-co-3"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/magasins/profitez-promotions-exceptionnelles-chez.mp3",
-      "source_id": "additional-20261102:mdf-a1-abc:18:4ddb2cc80e3b:5d18e835",
-      "candidate_sha256": "3ae897d1907f0a133105224af0303373da56152b0ee1c196799d5186e177505d",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "tcf-ss-a1-s1-co-2"
       ]
     },
     {
       "ref": "/lib/audio/tcf/co/magasins/tiens-jacqueline-comment-vas-1.mp3",
       "source_id": "09035196:004:9d0be3cae519",
       "candidate_sha256": "43f8dec44fef32e8a18315d50212375da0e1e1a27c2aec15235475deaeb5fdd0",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
+      "reasons": [],
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Laura, j'ai une nouvelle à t'annoncer. Raconte, Ophélie, qu'est-ce qu'il y a ? Eh bien je pars au Mexique avec ma famille. Wouah, la chance ! Tu pars en vacances ? Non, je vais y vivre. L'entreprise de mon père l'a envoyé là-bas. C'est une super opportunité pour lui. On part d'abord, mon père et mes frères et sœurs. Ma mère nous rejoindra dans deux mois car elle ne peut pas quitter tout de suite son travail. C'est génial pour toi. Tu vas faire plein de nouvelles expériences et de nouvelles rencontres. Vous allez y rester combien de temps ? Je ne sais pas. Mon père pense rester trois ans, et moi, dans deux ans après mon bac, je rentrerai sans doute en France. Tu sais, je veux aller à l'université à Paris. Il va falloir que tu apprennes bien l'espagnol pour étudier dans un lycée mexicain. Je vais aller dans un lycée français, en fait. Je pourrais même passer mon baccalauréat, là-bas. Tous les profs sont français et le programme est le même qu'en France. Mais bon, je vais quand même avoir des camarades de classe mexicains, certainement, et je vais devoir savoir bien parler la langue. Bon, tu as l’air contente de partir. Ben oui et non. Le Mexique, ça a l'air génial, mais je suis aussi un peu triste parce qu'on ne va plus se voir. Toi aussi, tu vas beaucoup me manquer. Mais tu as de la chance. Moi, j'aimerais bien partir comme ça à l'autre bout du monde.",
+        "reason": "Reconnaissances finales comparées ; transcription, attribution des informations, questions et réponses relues.",
+        "question_changes": []
+      },
       "exercises": [
         "tcf-ss-b1-s15-co-1"
       ]
@@ -1093,7 +964,8 @@
         "source_boundary_review_required",
         "parakeet_text_difference",
         "parakeet_numeric_difference",
-        "parakeet_end_difference"
+        "parakeet_end_difference",
+        "ctc_start_difference"
       ],
       "editorial_decision": {
         "status": "editorial_review",
@@ -1103,23 +975,6 @@
       },
       "exercises": [
         "tcf-ss-a2-s2-co-4"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/maison/bonjour-directeur-demain-votre-2.mp3",
-      "source_id": "grammar-import-20261104:file_0000000093a482438211932f0641dd77",
-      "candidate_sha256": "c08fbeddead2a34ebd230794b4aa5ecfec3aeac1b3d9b6af157fc2c98c2dcdbc",
-      "reasons": [
-        "whisper_text_difference"
-      ],
-      "editorial_decision": {
-        "status": "editorial_text_reviewed_waiting_final_checks",
-        "selected_text": "Bonjour monsieur le directeur, demain votre journée commence à 9 heures.\nVous avez une visioconférence avec les employés de Sigec.\nÀ 11 heures, rendez-vous avec les informaticiens et à midi, vous déjeunez avec madame Tapie, directrice de Sigec.",
-        "reason": "Différences relues : ponctuation, graphie phonétiquement identique, nombres écrits en lettres ou chiffres, accords ou hésitations ; les faits utilisés par les questions sont conservés.",
-        "question_changes": []
-      },
-      "exercises": [
-        "tcf-ss-a1-s21-co-3"
       ]
     },
     {
@@ -1157,7 +1012,8 @@
       "source_id": "additional-20261102:mdf-a1-abc:61:d5a97bdfcb26:29ce8685",
       "candidate_sha256": "f17f29a775dcdaf9ba9d31a25450a4e9b6b0a3cc1fd3d6462d99cb0b7762df40",
       "reasons": [
-        "whisper_numeric_difference"
+        "whisper_numeric_difference",
+        "ctc_numeric_difference"
       ],
       "editorial_decision": {
         "status": "editorial_review",
@@ -1191,9 +1047,15 @@
       "source_id": "additional-20261102:mdf-b1-abc-direct:49:2b27cb1a80cb:d31316e9",
       "candidate_sha256": "e2aa8c47de2b29f539065f5df66a93b01bddd7191e7bc1d8fc255af63be8c3de",
       "reasons": [
-        "editorial_transcript_and_question_review_required"
+        "parakeet_text_difference",
+        "parakeet_numeric_difference"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Le secret, c'est l'anticipation. Établir ses menus pour la semaine et consacrer un soir à préparer plusieurs plats est une méthode particulièrement adaptée aux célibataires. C'est aussi retrouver l'art d'accommoder les restes qu'on appelle aujourd'hui le \"slash cooking\". Le congélateur est l'allié du solo. Savez-vous que la soupe ou le camembert se congèle ? Un bouillon de pot-au-feu congelé réchauffé en 5 minutes parfumera des ravioles ou sera utilisé pour pocher un poisson. Les sauces, tomates, crème citron peuvent être coulées dans un bac à glaçons, chaque compartiment correspondant à une portion. Des bananes coupées en cubes et congelées, mixées avec un yaourt, feront un délicieux sorbet. Garnissez vos placards d'une base gourmande et d'aide culinaire. Huile parfumée, noix, sésame, chanvre, moutarde, épices et herbes aromatiques. Saupoudrez les carottes crues d'estragon ou les carottes cuites de curry, par exemple. Votre poisson de ciboulette ou de curcuma. Les fruits secs, graines de courge, de lin, pignons de pin, etc. améliorent le quotidien, introduisent du croquant. Des tomates séchées en bocal, mixées, deviennent un pesto minute. La cuisine est un jeu. Plus on pratique, plus on prend du plaisir à marier les saveurs, les textures. Faites simple et savourez. Certains desserts se réalisent en 10 minutes, telles le pavlova, une meringue émiettée dans un bol, des fruits et une crème chantilly, ou une crème au lait d'amande avec des graines de chia. Quand on s'y met, cela devient grisant. Le bénéfice d'une cuisine plus saine, sans conservateur, se fait vite ressentir. On dort mieux, on est plus en forme, c'est un cercle vertueux. Votre plat réchauffe doucement, ce qui éveille les sens et met en appétit. Soignez l'art de la table, lâchez les écrans et savourez. Cuisiner revient à prendre soin de soi et nourrit l'estime de soi.",
+        "reason": "Reconnaissances finales comparées ; transcription et questions relues, graphies éditoriales et homophones corrigés.",
+        "question_changes": []
+      },
       "exercises": [
         "tcf-ss-b1-s10-co-2"
       ]
@@ -1242,42 +1104,6 @@
       ]
     },
     {
-      "ref": "/lib/audio/tcf/co/maison/maison-3.mp3",
-      "source_id": "9782090351958:037:41d12e4b673d",
-      "candidate_sha256": "1a095905ff7087a760f390dd686a5427a7e379bc439c5af26fc310d1a00c8a46",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "tcf-ss-a2-s25-co-4"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/maison/mesdames-messieurs-bienvenue-bord.mp3",
-      "source_id": "09035276:028:c036003c1c6c",
-      "candidate_sha256": "b583fad5f58c0ebcbf442b15b79570878790ef5e6bf4d90c7c24e2c580275a75",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "tcf-ss-a1-s22-co-2"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/maison/moules-silicone-boites-film.mp3",
-      "source_id": "additional-20261102:mdf-b1-abc-direct:29:6d6f32c4655c:72c9cbbc",
-      "candidate_sha256": "26c243a238d2cc89c8745a9c7b625cd1ddb16398da749d283db68c3f30c04eb9",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "tcf-ss-b1-s9-co-3"
-      ]
-    },
-    {
       "ref": "/lib/audio/tcf/co/maison/nourriture-annonce.mp3",
       "source_id": "09035196:034:9b8d87450cbf",
       "candidate_sha256": "18de1f6b93a828671c7e7e41f34d523396cb94fa5dde0095a2824481d16e6c45",
@@ -1294,10 +1120,13 @@
       "ref": "/lib/audio/tcf/co/maison/nourriture-conversation-1.mp3",
       "source_id": "09035196:014:b08dee45e775",
       "candidate_sha256": "c2ed31fd5d163f3d73ac4d1ae36c94d5f1e1ef1ff0afedac8d335f6efe29683e",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
+      "reasons": [],
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Salut Antoine, tu as l'air pensif. Salut Margot. Oui, comme j'ai eu mon examen, mes parents m'ont dit que je pouvais organiser une fête chez moi, mais je dois tout faire tout seul et je ne sais pas par où commencer. Je peux t'aider si tu veux. Alors avant d'organiser, il faut te poser plusieurs questions. Combien de personnes tu veux inviter ? Est-ce que tu veux faire manger tes invités ? Si oui, assis ou debout ? Est-ce que tu veux qu'on danse le jour, l'horaire et quel est ton budget ? Je voudrais inviter toute la classe vendredi prochain et faire une soirée barbecue dans le jardin. J'espère qu'il fera beau. Ok. Tout d'abord, tu dois envoyer les invitations. Dès que tu rentres chez toi, envoie un message à tous. Après, si tu tiens à faire un barbecue, il faut que tu trouves un volontaire pour s'en occuper. C’est ta fête, tu ne peux pas rester devant le feu toute la soirée. Il faut que tu t'occupes des invités. Sinon, autre solution. Tu fais appel à un restaurant traiteur. Tu commandes des salades de riz, de pâtes, des toasts, les boissons. Ils te préparent tout et te livrent dans l'après-midi. Comme ça, tu es tranquille. Chacun se sert et mange où il veut, assis, debout. Tu as peut-être raison. Ça m'évitera de cuisiner ou de demander à ma mère de cuisiner. Je vais m'informer chez les traiteurs du quartier. Et pour danser ? J’avais pensé mettre de la musique. J'ai beaucoup de CD et j'ai aussi plein de musique sur mon ordinateur. Ça, si tu veux, je m'en occupe. J'ai l'habitude et ça me plaît. Je te prépare une super compilation avec ta musique et la mienne. Tu verras, ce sera une réussite. Oh super, tu es géniale. Bon allez, je te laisse. Je vais commencer à organiser tout ça. Et merci pour tes conseils. Tu m'as donné du courage.",
+        "reason": "Reconnaissances finales comparées ; transcription, attribution des informations, questions et réponses relues.",
+        "question_changes": []
+      },
       "exercises": [
         "tcf-ss-b1-s9-co-1"
       ]
@@ -1333,18 +1162,6 @@
       ]
     },
     {
-      "ref": "/lib/audio/tcf/co/maison/quarante-ans-apres-l-ouverture-1.mp3",
-      "source_id": "09035196:026:6e0681770440",
-      "candidate_sha256": "3a418d534b3eeda9faaf655f0a4184e8e5bab1fa709bb357c504701c146e38fc",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "tcf-ss-b1-s10-co-1"
-      ]
-    },
-    {
       "ref": "/lib/audio/tcf/co/maison/salut-lucie.mp3",
       "source_id": "additional-20261102:mdf-a2-abc-direct:75:b95c4fe99c40:9d4809d4",
       "candidate_sha256": "3be15ca9ac1c090ad34042a3d09a940dc65fff58e69c0c227c869b48c29cd959",
@@ -1375,7 +1192,10 @@
       "candidate_sha256": "24e225c5022834f050e30319f059c8eba989a07a231d6a6b3f10d8e002c12491",
       "reasons": [
         "source_boundary_review_required",
-        "parakeet_text_difference"
+        "parakeet_text_difference",
+        "ctc_text_difference",
+        "ctc_start_difference",
+        "ctc_end_difference"
       ],
       "editorial_decision": {
         "status": "editorial_review",
@@ -1432,10 +1252,13 @@
       "ref": "/lib/audio/tcf/co/radio/01-radio-importance-du-look-vestimentaire.mp3",
       "source_id": "09035196:020:b1b4e9c355f7",
       "candidate_sha256": "8b226cb2a58112bb2a89a3d67f81322ff502923d7256ab8206a5f01b30598a87",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
+      "reasons": [],
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Ce soir, sur notre antenne, nous allons parler du look. Nous avons comme invités deux jeunes gens, Élodie, 16 ans, vivant à Tours et Guillaume, 15 ans, habitant à Paris. Merci d'être parmi nous. Alors, quelle est l'importance du look vestimentaire dans votre vie? Élodie? Pour moi, strictement aucune. Je ne cherche pas à avoir un look ou à appartenir à un groupe en particulier. Je veux être moi-même tout simplement. Et vous, Guillaume ? C'est vrai que je fais attention à mon image. Pour moi, c'est important. Je veux garder mon style. Pourquoi ? Parce que c'est mon identité. Si vous changez de look, vous pensez que vous auriez une autre identité ? Oui, bien sûr. Enfin, je veux dire, les gens me regarderaient différemment. Même moi, il faudrait que je m'accepte comme je suis. Je ne dis pas que je serai punk toute ma vie. Je pense qu'il y a un âge pour tout. Peut-être un jour je changerai de style, de mode de vie. Mais aujourd'hui, c'est moi et c'est mon image. Et vous, Élodie, vous arrivez à avoir une identité sans avoir un look précis ? Oui, bien sûr. Je pense qu'on n'a pas besoin de faire partie d'un groupe pour exister aux yeux des autres. Je ne suis pas d'accord. Tu fais toujours partie d'un groupe. Même quand tu veux être neutre, Alors, tu fais partie du groupe de ceux qui ne veulent appartenir à aucun groupe.",
+        "reason": "Reconnaissances finales comparées ; transcription, attribution des informations, questions et réponses relues.",
+        "question_changes": []
+      },
       "exercises": [
         "tcf-ss-b1-s4-co-2"
       ]
@@ -1493,7 +1316,8 @@
       "candidate_sha256": "431ac3e579d08e317f3ba4341bf9172485108c4c807fe0c2eda5fa12d46e5250",
       "reasons": [
         "whisper_text_difference",
-        "whisper_end_difference"
+        "whisper_end_difference",
+        "ctc_end_difference"
       ],
       "editorial_decision": {
         "status": "editorial_text_reviewed_waiting_final_checks",
@@ -1506,28 +1330,14 @@
       ]
     },
     {
-      "ref": "/lib/audio/tcf/co/radio/08-radio-prévision-météo.mp3",
-      "source_id": "additional-20261102:mdf-a2-abc-direct:66:3a5af2e5438e:2dbdc8b1",
-      "candidate_sha256": "d8fc12c026f9dc2852fc9ab433b65f43278b76f50e6f5f2cd6f6d3ffb433c540",
-      "reasons": [
-        "parakeet_text_difference"
-      ],
-      "editorial_decision": {
-        "status": "editorial_text_reviewed_waiting_final_checks",
-        "selected_text": "Tout de suite, les prévisions météo.\nAujourd’hui, le temps sera magnifique, avec un grand soleil et des températures douces.\nMais demain, la pluie arrivera, accompagnée de vent très fort.\nIl faudra sortir son parapluie !",
-        "reason": "Comparaison détaillée relue : ponctuation, graphies, accords et formats de nombres ; les éventuelles divergences chiffrées restent soumises au contrôle indépendant des fichiers finaux avant installation.",
-        "question_changes": []
-      },
-      "exercises": [
-        "tcf-ssx-a2-radio-19-3-co-3"
-      ]
-    },
-    {
       "ref": "/lib/audio/tcf/co/radio/09-radio-concert-rock-guitariste.mp3",
       "source_id": "additional-20261102:mdf-a2-abc-direct:54:8686995ea14b:e0756dfa",
       "candidate_sha256": "3bfbeb79ea00dfa4785fc5460ae462af9d53ff1f4631c6e175bcf9b65a895794",
       "reasons": [
-        "whisper_numeric_difference"
+        "whisper_numeric_difference",
+        "ctc_text_difference",
+        "ctc_numeric_difference",
+        "ctc_start_difference"
       ],
       "editorial_decision": {
         "status": "editorial_text_reviewed_waiting_final_checks",
@@ -1582,23 +1392,6 @@
       ]
     },
     {
-      "ref": "/lib/audio/tcf/co/radio/la-meteo.mp3",
-      "source_id": "additional-20261102:mdf-a1-abc:60:dd946440779f:5449dcd8",
-      "candidate_sha256": "2d78c84245269efbfb38798169439073d68e2ed8e93769cd285dc1bbf311824d",
-      "reasons": [
-        "parakeet_numeric_difference"
-      ],
-      "editorial_decision": {
-        "status": "editorial_review",
-        "selected_text": "Aujourd’hui, le vent souffle sur la Belgique, environ 25 km par heure sur tout le pays.\nLe soleil brille, mais il y a des nuages à l’est.\nCe matin, il fait 11 degrés à Bruxelles et à Liège, 12 degrés à Namur, 13 degrés à Anvers et 10 degrés à Ostende.\nLa qualité de l’air est bonne.",
-        "reason": "Écarts de ponctuation, accords, orthographe et graphies propres examinés. Texte courant conservé sous réserve de concordance des deux reconnaissances du fichier final, des nombres et des limites de parole.",
-        "question_changes": []
-      },
-      "exercises": [
-        "tcf-a1-s3-co-2"
-      ]
-    },
-    {
       "ref": "/lib/audio/tcf/co/radio/les-annonces-a-la-radio-1-1.mp3",
       "source_id": "9782090351958:063:707f08c2e451",
       "candidate_sha256": "2df1a42690e9a19628f7dd3845a8151ab3157105673b0e1734b66a3f0ff334f4",
@@ -1609,18 +1402,6 @@
       "editorial_decision": null,
       "exercises": [
         "tcf-a2j-s1-co-2"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/radio/les-annonces-a-la-radio-2-3.mp3",
-      "source_id": "9782090351958:067:b60c1f3cd8b2",
-      "candidate_sha256": "f72354dcb9ff08c4d739debcb891b0d7e9c638689f4543e6293d5b29d5b923a7",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "tcf-a2j-s2-co-2"
       ]
     },
     {
@@ -1654,7 +1435,8 @@
       "source_id": "9782090351958:062:a14e3edb351f",
       "candidate_sha256": "03a08d49b6cfeddcf91ffb6e5da7812ad1bfc52e2f6e43cd6c0a97c6db2f3b67",
       "reasons": [
-        "parakeet_numeric_difference"
+        "parakeet_numeric_difference",
+        "ctc_text_difference"
       ],
       "editorial_decision": {
         "status": "editorial_review",
@@ -1671,40 +1453,13 @@
       "source_id": "9782090351958:066:3f7dc91934fc",
       "candidate_sha256": "ea7362728d8ea058cec9f46c80ed3be001ed51a158fbb15eea9a0ca7d7c097cb",
       "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "tcf-a2j-s2-co-1"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-2-3.mp3",
-      "source_id": "9782090351958:066:3f7dc91934fc",
-      "candidate_sha256": "deb8cd0525e13db05d3f6030549057d4f197b96299ad10f07c4e771e88941737",
-      "reasons": [
-        "parakeet_end_difference"
+        "parakeet_start_difference"
       ],
       "editorial_decision": {
         "status": "editorial_review",
-        "selected_text": "Écoutez, s’il vous plaît : notre avion pour Paris a 40 minutes de retard.\nVous pouvez visiter les magasins de l’aéroport.\nOn se retrouve à la porte B35 à 20 h.",
-        "reason": "Écarts de ponctuation, accords, segmentation des nombres et graphies propres examinés ; faits et texte courant conservés avec contrôle des deux reconnaissances du fichier final, des nombres et des marges.",
-        "question_changes": [],
-        "numeric_resolution": {
-          "candidate_sha256": "deb8cd0525e13db05d3f6030549057d4f197b96299ad10f07c4e771e88941737",
-          "engine": "sherpa-nemo-fast-conformer-ctc-en-de-es-fr-14288-int8",
-          "evidence_file": "/workspace/work/tcf-bascule-complete-20261105/ctc/deb8cd0525e13db05d3f6030549057d4f197b96299ad10f07c4e771e88941737.json",
-          "evidence_sha256": "c2b4e57b89ef53261aafbb4c19e65a77638c841873731b8ba087d3bf6d23666d",
-          "raw_third_transcription": "Écoutez, s'il vous plaît, notre avion pour Paris a quarante minutes de retard. Vous vez visiter les magasins de l'aéroport. On se retrouve à la porte B trente - cinq à vingt heures",
-          "reviewed_numbers": [
-            "40",
-            "35",
-            "20",
-            "00"
-          ],
-          "reason": "Nombres relus dans la troisième reconnaissance (nombres en lettres) et recoupés avec une des deux reconnaissances finales ; toutes les autres barrières de validation restent actives.",
-          "human_listening_performed": false
-        }
+        "selected_text": "Le rendez-vous pour la visite du Mont-Saint-Michel est à 8h30 devant l'école. Le voyage se fait en bus. Merci de prendre une casquette et une bouteille d'eau.",
+        "reason": "Reconnaissances finales comparées ; transcription, questions et corrigés relus. Noms non épelés : graphies éditoriales documentées.",
+        "question_changes": []
       },
       "exercises": [
         "tcf-a2j-s2-co-1"
@@ -1789,7 +1544,9 @@
       "candidate_sha256": "0352ca8c8f1071b89096ca9c058580161207e7d48dc931a808f620f74f9c8399",
       "reasons": [
         "parakeet_numeric_difference",
-        "whisper_numeric_difference"
+        "whisper_numeric_difference",
+        "ctc_text_difference",
+        "ctc_numeric_difference"
       ],
       "editorial_decision": {
         "status": "editorial_review",
@@ -1820,7 +1577,8 @@
       "candidate_sha256": "a121c77b1d1355c331eb76cea3f0f374ee6b13dba6a8ee1c8b0e632b16ded027",
       "reasons": [
         "source_boundary_review_required",
-        "whisper_end_difference"
+        "whisper_end_difference",
+        "ctc_end_difference"
       ],
       "editorial_decision": {
         "status": "editorial_review",
@@ -1850,7 +1608,9 @@
       "source_id": "delf_a2_2021:001:4e668a33cf71",
       "candidate_sha256": "0ae9f0ed326391e71222109972b21ec746175607dacd2bd7cadbc7aaa49d563c",
       "reasons": [
-        "parakeet_numeric_difference"
+        "parakeet_numeric_difference",
+        "ctc_text_difference",
+        "ctc_end_difference"
       ],
       "editorial_decision": {
         "status": "editorial_review",
@@ -1868,7 +1628,9 @@
       "candidate_sha256": "d073dd5e828cd055f06cfe803bb9ed5b75b57a551cbaa2aa399aab41067be3d8",
       "reasons": [
         "parakeet_text_difference",
-        "whisper_text_difference"
+        "whisper_text_difference",
+        "ctc_text_difference",
+        "ctc_end_difference"
       ],
       "editorial_decision": {
         "status": "editorial_review",
@@ -1887,7 +1649,10 @@
       "reasons": [
         "parakeet_text_difference",
         "parakeet_numeric_difference",
-        "whisper_text_difference"
+        "whisper_text_difference",
+        "ctc_text_difference",
+        "ctc_numeric_difference",
+        "ctc_start_difference"
       ],
       "editorial_decision": {
         "status": "editorial_review",
@@ -1915,10 +1680,13 @@
       "ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_03-3.mp3",
       "source_id": "delf_a2_2021:003:2505cafdfeda",
       "candidate_sha256": "ab9d24ec7846f1f0e1d4189ce68d0d97cc5b500adfe34de6a60db6d0c36adaa2",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
+      "reasons": [],
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Le train 5957, en provenance de Paris-Gare de Lyon, à destination de Clermont-Ferrand, partira quai A à 17 heures.",
+        "reason": "Reconnaissances finales comparées ; transcription, attribution des informations, questions et réponses relues.",
+        "question_changes": []
+      },
       "exercises": [
         "delf-a2-2021-co-ex1-03"
       ]
@@ -1929,7 +1697,10 @@
       "candidate_sha256": "067983ed13878f5038e7203ac3961d9b43dc4bd852219fae1c4c0fdab88a4231",
       "reasons": [
         "source_boundary_review_required",
-        "parakeet_numeric_difference"
+        "parakeet_numeric_difference",
+        "ctc_text_difference",
+        "ctc_numeric_difference",
+        "ctc_end_difference"
       ],
       "editorial_decision": {
         "status": "editorial_review",
@@ -1948,7 +1719,9 @@
       "reasons": [
         "parakeet_text_difference",
         "whisper_text_difference",
-        "whisper_start_difference"
+        "whisper_start_difference",
+        "ctc_numeric_difference",
+        "ctc_start_difference"
       ],
       "editorial_decision": {
         "status": "editorial_review",
@@ -1982,7 +1755,10 @@
       "source_id": "delf_a2_2021:011:6fe9cfd44eb3",
       "candidate_sha256": "85071922b27e2e2bf175df27a0db3dba355b79cdf003f7989db6e48bdd36dedf",
       "reasons": [
-        "whisper_numeric_difference"
+        "whisper_numeric_difference",
+        "ctc_text_difference",
+        "ctc_numeric_difference",
+        "ctc_end_difference"
       ],
       "editorial_decision": {
         "status": "editorial_text_reviewed_waiting_final_checks",
@@ -1995,29 +1771,14 @@
       ]
     },
     {
-      "ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_12-1.mp3",
-      "source_id": "delf_a2_2021:012:5a4f5fdd8557",
-      "candidate_sha256": "44a4245c2dfd064583f7da8b2143810812876367b1e80570f2148f67791e9d86",
-      "reasons": [
-        "whisper_numeric_difference"
-      ],
-      "editorial_decision": {
-        "status": "editorial_text_reviewed_waiting_final_checks",
-        "selected_text": "Les températures sont très basses pour la saison : en dessous de zéro sur la moitié du territoire. On n’avait pas vu cela depuis 1995. 5 450 personnes sont privées d’électricité.",
-        "reason": "Comparaison détaillée relue : ponctuation, graphies, accords et formats de nombres ; les éventuelles divergences chiffrées restent soumises au contrôle indépendant des fichiers finaux avant installation.",
-        "question_changes": []
-      },
-      "exercises": [
-        "delf-a2-2021-co-ex2-12"
-      ]
-    },
-    {
       "ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_12-2.mp3",
       "source_id": "delf_a2_2021:012:5a4f5fdd8557",
       "candidate_sha256": "4cecf942deebc65836c751d4fdf56ceddaf98637a8b0aa64888a96d7336d7212",
       "reasons": [
         "parakeet_numeric_difference",
-        "whisper_numeric_difference"
+        "whisper_numeric_difference",
+        "ctc_text_difference",
+        "ctc_numeric_difference"
       ],
       "editorial_decision": {
         "status": "editorial_review",
@@ -2035,28 +1796,12 @@
       "candidate_sha256": "c0ebdcdb13bf7cd3394748930911247d9727cc84e187744424bd9f03374121d7",
       "reasons": [
         "parakeet_text_difference",
-        "whisper_text_difference"
+        "whisper_text_difference",
+        "ctc_text_difference"
       ],
       "editorial_decision": {
         "status": "editorial_review",
         "selected_text": "Les résultats des analyses médicales de M me Chapry sont disponibles à partir de 17 h.",
-        "reason": "Écarts de ponctuation, accords, segmentation des nombres et graphies propres examinés ; faits et texte courant conservés avec contrôle des deux reconnaissances du fichier final, des nombres et des marges.",
-        "question_changes": []
-      },
-      "exercises": [
-        "delf-a2-2021-co-ex3-17"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_17-4.mp3",
-      "source_id": "delf_a2_2021:017:e80a87f00222",
-      "candidate_sha256": "0ecd3cda147f4705d216ea3f9d4cd98b57a1fea569791fee4597cb3472ac9014",
-      "reasons": [
-        "parakeet_text_difference"
-      ],
-      "editorial_decision": {
-        "status": "editorial_review",
-        "selected_text": "L’assuré doit prendre un ticket à l’entrée du bureau des réclamations.",
         "reason": "Écarts de ponctuation, accords, segmentation des nombres et graphies propres examinés ; faits et texte courant conservés avec contrôle des deux reconnaissances du fichier final, des nombres et des marges.",
         "question_changes": []
       },
@@ -2077,36 +1822,13 @@
       ]
     },
     {
-      "ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_19-2.mp3",
-      "source_id": "delf_a2_2021:019:7725befff9ae",
-      "candidate_sha256": "cd18e2fc51854ea689f1f357fe96f11bd2f936a7a7a65737b1e0f8687a918c4a",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "delf-a2-2021-co-ex3-19"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_21-4.mp3",
-      "source_id": "delf_a2_2021:021:c9d13cfec4cd",
-      "candidate_sha256": "2096c1e459ffd15fdd86938b126628b326f906f07a31c5fec98cbbc3c4a39110",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "delf-a2-2021-co-ex3-21"
-      ]
-    },
-    {
       "ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_22.mp3",
       "source_id": "delf_a2_2021:022:68e95c6a17d5",
       "candidate_sha256": "c2845b32b1e6776df961eb798241bc33c6dcfed0e6c083c7e140ba6f9ab32fa3",
       "reasons": [
         "parakeet_start_difference",
-        "whisper_start_difference"
+        "whisper_start_difference",
+        "ctc_start_difference"
       ],
       "editorial_decision": {
         "status": "editorial_review",
@@ -2137,46 +1859,14 @@
       ]
     },
     {
-      "ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_28-3.mp3",
-      "source_id": "delf_a2_2021:028:3e2e5885acb0",
-      "candidate_sha256": "eea01f583237a7b2388e2bf5c0c519853b1db632272e64e28c9597b948fd8948",
-      "reasons": [
-        "whisper_text_difference"
-      ],
-      "editorial_decision": {
-        "status": "editorial_review",
-        "selected_text": "Je ne veux plus vous voir dans ma classe. Allezvous-en ! Je fais un rapport au proviseur. Prenez vos affaires et sortez !",
-        "reason": "Comparaison éditoriale des variantes : ponctuation, accords, graphies non épelées et segmentation des nombres. Texte courant conservé ; installation conditionnée aux deux reconnaissances du fichier final et à la concordance numérique.",
-        "question_changes": []
-      },
-      "exercises": [
-        "delf-a2-2021-co-ex4-28"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_29-3.mp3",
-      "source_id": "delf_a2_2021:029:b65709561615",
-      "candidate_sha256": "aa9be1564132585f9e4766c5f6c4fc4821c6045a6be93c2c64a508a160f86254",
-      "reasons": [
-        "parakeet_end_difference"
-      ],
-      "editorial_decision": {
-        "status": "editorial_review",
-        "selected_text": "– J’espère que tu n’as pas oublié de lui donner une bouteille d’eau. C’est long quatre heures sans bouger. – Je lui ai donné aussi une pomme, en attendant de passer l’oral, s’il a faim.",
-        "reason": "Écarts de ponctuation, accords, graphies et nombres examinés. Texte courant conservé sous réserve d’accord des deux reconnaissances finales, des nombres et des marges de parole ; aucune heure déduite du contexte.",
-        "question_changes": []
-      },
-      "exercises": [
-        "delf-a2-2021-co-ex4-29"
-      ]
-    },
-    {
       "ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_29-4.mp3",
       "source_id": "delf_a2_2021:029:b65709561615",
       "candidate_sha256": "43e2d8c525ad1519356d11c0aafbb246f355f944ee102d215d4aab6d1eb3f0b1",
       "reasons": [
         "whisper_text_difference",
-        "whisper_numeric_difference"
+        "whisper_numeric_difference",
+        "ctc_text_difference",
+        "ctc_numeric_difference"
       ],
       "editorial_decision": {
         "status": "editorial_review",
@@ -2193,7 +1883,10 @@
       "source_id": "delf_a2_2021:033:ced9a35ddb5a",
       "candidate_sha256": "9e4d8bb8ae74351f8b39ccf972fd3a0daccb7a6d42e732e23e88830ac73ef01a",
       "reasons": [
-        "whisper_start_difference"
+        "whisper_start_difference",
+        "ctc_text_difference",
+        "ctc_numeric_difference",
+        "ctc_start_difference"
       ],
       "editorial_decision": {
         "status": "editorial_review",
@@ -2228,7 +1921,8 @@
       "candidate_sha256": "012cf1aa9f68a4f395fee6c73eade8d7577fbc5edd6eef0092acb7ee06c66ea3",
       "reasons": [
         "parakeet_text_difference",
-        "whisper_text_difference"
+        "whisper_text_difference",
+        "ctc_text_difference"
       ],
       "editorial_decision": {
         "status": "editorial_review",
@@ -2258,23 +1952,6 @@
       ]
     },
     {
-      "ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_37-2.mp3",
-      "source_id": "delf_a2_2021:037:4c04751c8451",
-      "candidate_sha256": "77604166c4159bb6a8a4eb4bdf38def70316fd201e5c66aa6edc8f7c8a65ef04",
-      "reasons": [
-        "parakeet_numeric_difference"
-      ],
-      "editorial_decision": {
-        "status": "editorial_review",
-        "selected_text": "Du 10 au 18 mars, venez à Saulgé pour découvrir son festival du livre ancien. Vous pouvez visiter ses expositions et rencontrer les auteurs présents. L’entrée est payante. Rendez-vous sur le site de la mairie pour en savoir plus.",
-        "reason": "Variantes de ponctuation, accords, homophones et graphies non épelées examinées. Texte courant conservé ; concordance des deux reconnaissances finales, des nombres et des frontières de parole requise.",
-        "question_changes": []
-      },
-      "exercises": [
-        "delf-a2-2021-co-ex2-37"
-      ]
-    },
-    {
       "ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_37-3.mp3",
       "source_id": "delf_a2_2021:037:4c04751c8451",
       "candidate_sha256": "9571eacfdc793cfec0d7bf14682930198e437ee314aae135a4ba4f49bd9835c5",
@@ -2296,7 +1973,8 @@
       "source_id": "delf_a2_2021:038:9256c30fcdc0",
       "candidate_sha256": "be88d4ec406de9a3a40983c7ffd40051b58bc8c624bbf0de6c479706a45bf3b0",
       "reasons": [
-        "parakeet_start_difference"
+        "parakeet_start_difference",
+        "ctc_end_difference"
       ],
       "editorial_decision": {
         "status": "editorial_review",
@@ -2315,7 +1993,10 @@
       "reasons": [
         "source_boundary_review_required",
         "whisper_text_difference",
-        "whisper_numeric_difference"
+        "whisper_numeric_difference",
+        "ctc_text_difference",
+        "ctc_numeric_difference",
+        "ctc_end_difference"
       ],
       "editorial_decision": {
         "status": "editorial_review",
@@ -2332,7 +2013,9 @@
       "source_id": "delf_a2_2021:039:2ee8659e527d",
       "candidate_sha256": "ced23a5a4743e3951cd78a088f7da04b66ffc93cf796446b7abd59be54b95b19",
       "reasons": [
-        "parakeet_numeric_difference"
+        "parakeet_numeric_difference",
+        "ctc_numeric_difference",
+        "ctc_end_difference"
       ],
       "editorial_decision": {
         "status": "editorial_review",
@@ -2350,7 +2033,8 @@
       "candidate_sha256": "da0ac541d5b0b27276c63e46e97a0163cd590e41d50a36e522c29f1e5fea48b3",
       "reasons": [
         "parakeet_numeric_difference",
-        "whisper_numeric_difference"
+        "whisper_numeric_difference",
+        "ctc_numeric_difference"
       ],
       "editorial_decision": {
         "status": "editorial_review",
@@ -2384,9 +2068,16 @@
       "source_id": "delf_a1_2022:006:d73730380380",
       "candidate_sha256": "1179743c9784cc86dbdf391fefa7c29f91b1e37f8cdbac3aac294d8c6dac125a",
       "reasons": [
-        "editorial_transcript_and_question_review_required"
+        "parakeet_numeric_difference",
+        "ctc_text_difference",
+        "ctc_numeric_difference"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "C'est Alexandre, je suis au magasin et j'achète 2,5 kg de pommes de terre. Est-ce que c'est bien ça ?",
+        "reason": "Reconnaissances finales comparées, transcriptions et questions relues. Les noms non épelés sont normalisés comme graphies éditoriales.",
+        "question_changes": []
+      },
       "exercises": [
         "delf-a1-2022-co-ex1-06"
       ]
@@ -2416,9 +2107,15 @@
       "source_id": "delf_a1_2022:007:44d3ef02faab",
       "candidate_sha256": "3df8df92903031280484ad993ffd22f7e1808007a7a7542aed12674298715452",
       "reasons": [
-        "editorial_transcript_and_question_review_required"
+        "parakeet_numeric_difference",
+        "ctc_numeric_difference"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Je suis né le 28 août 1978. Et toi, Audrey ? Moi ? Le 1er mars 1982. Tu es plus jeune que moi. Et toi, Alexandra ? Je suis née la même année, le 30 mai 1982.",
+        "reason": "Reconnaissances finales comparées, transcriptions et questions relues. Les noms non épelés sont normalisés comme graphies éditoriales.",
+        "question_changes": []
+      },
       "exercises": [
         "delf-a1-2022-co-ex1-07"
       ]
@@ -2429,7 +2126,9 @@
       "candidate_sha256": "045e8b1d6500878c1391c9804b909c8ad697a7faba27f76d0486b451ed1eeb8e",
       "reasons": [
         "parakeet_numeric_difference",
-        "whisper_numeric_difference"
+        "whisper_numeric_difference",
+        "ctc_text_difference",
+        "ctc_numeric_difference"
       ],
       "editorial_decision": {
         "status": "editorial_review",
@@ -2449,7 +2148,10 @@
         "parakeet_text_difference",
         "parakeet_numeric_difference",
         "whisper_text_difference",
-        "whisper_numeric_difference"
+        "whisper_numeric_difference",
+        "ctc_text_difference",
+        "ctc_numeric_difference",
+        "ctc_end_difference"
       ],
       "editorial_decision": {
         "status": "editorial_review",
@@ -2462,18 +2164,6 @@
       ]
     },
     {
-      "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_09-1.mp3",
-      "source_id": "delf_a1_2022:009:cd426c4e83fe",
-      "candidate_sha256": "b018aa962f6ec5a9ae5cd910fc92b0900b9f863acba7fd3b87f0c2c2ae850bab",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "delf-a1-2022-co-ex1-09"
-      ]
-    },
-    {
       "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_09-2.mp3",
       "source_id": "delf_a1_2022:009:cd426c4e83fe",
       "candidate_sha256": "a151906dbfe35b83860e98ef274a80969033783242a19ce44bec02b52ccfd6ee",
@@ -2481,7 +2171,10 @@
         "parakeet_text_difference",
         "parakeet_numeric_difference",
         "whisper_text_difference",
-        "whisper_numeric_difference"
+        "whisper_numeric_difference",
+        "ctc_text_difference",
+        "ctc_numeric_difference",
+        "ctc_end_difference"
       ],
       "editorial_decision": {
         "status": "editorial_review",
@@ -2499,7 +2192,10 @@
       "candidate_sha256": "29875cf33eef213c3c6dabf365cf52fbbb410a8b40f490c3b236c81cde5df66e",
       "reasons": [
         "parakeet_numeric_difference",
-        "whisper_numeric_difference"
+        "whisper_numeric_difference",
+        "ctc_text_difference",
+        "ctc_numeric_difference",
+        "ctc_end_difference"
       ],
       "editorial_decision": {
         "status": "editorial_review",
@@ -2512,23 +2208,13 @@
       ]
     },
     {
-      "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_11-2.mp3",
-      "source_id": "delf_a1_2022:011:a99cd8478f3d",
-      "candidate_sha256": "b53af2f50a1a1c6bff8bffc9a25e36adedfe5fabee27735bea9aa88e06a5089a",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "delf-a1-2022-co-ex1-11"
-      ]
-    },
-    {
       "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_11-3.mp3",
       "source_id": "delf_a1_2022:011:a99cd8478f3d",
       "candidate_sha256": "79aedc8b6b9109a0282703289042c201148d3dac7ae9084581de5b585e18cc64",
       "reasons": [
-        "whisper_text_difference"
+        "whisper_text_difference",
+        "ctc_text_difference",
+        "ctc_start_difference"
       ],
       "editorial_decision": {
         "status": "editorial_review",
@@ -2538,18 +2224,6 @@
       },
       "exercises": [
         "delf-a1-2022-co-ex1-11"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_15-1.mp3",
-      "source_id": "delf_a1_2022:015:49f970d16035",
-      "candidate_sha256": "c5a9320589e7475607ec9223ed9dacac98cb0ed3be2d09a1930ec56437ba5206",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "delf-a1-2022-co-ex2-15"
       ]
     },
     {
@@ -2569,9 +2243,14 @@
       "source_id": "delf_a1_2022:015:49f970d16035",
       "candidate_sha256": "1a3efe2723917bfff0cd6405d28c9ce2403cdd5c624a79f92bfb35cc1d426c7d",
       "reasons": [
-        "editorial_transcript_and_question_review_required"
+        "whisper_text_difference"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Aujourd'hui, un climat agréable avec 15 degrés à Paris, 19 degrés à Lyon et 23 degrés à Bordeaux.",
+        "reason": "Reconnaissances finales comparées ; transcription et questions relues, graphies éditoriales et homophones corrigés.",
+        "question_changes": []
+      },
       "exercises": [
         "delf-a1-2022-co-ex2-15"
       ]
@@ -2582,7 +2261,8 @@
       "candidate_sha256": "22fe9b64b9557ade041d553071e7ab5bf7ff0ec44583c430db16c6887396232e",
       "reasons": [
         "parakeet_numeric_difference",
-        "whisper_text_difference"
+        "whisper_text_difference",
+        "ctc_text_difference"
       ],
       "editorial_decision": {
         "status": "editorial_review",
@@ -2592,18 +2272,6 @@
       },
       "exercises": [
         "delf-a1-2022-co-ex2-18"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_19-1.mp3",
-      "source_id": "delf_a1_2022:019:f956db0544b7",
-      "candidate_sha256": "7686de52b174a9e45e3010363be368ce6964b1c491d7fc9a1d5ce6bc158914a7",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "delf-a1-2022-co-ex2-19"
       ]
     },
     {
@@ -2641,9 +2309,14 @@
       "source_id": "delf_a1_2022:022:60e05a9083eb",
       "candidate_sha256": "24e8cd3af6260763cd88191fd2b6eaf1a4cb4f059594dff323bbfc0d50ccd885",
       "reasons": [
-        "editorial_transcript_and_question_review_required"
+        "whisper_text_difference"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Salut ! Je vais au Brésil pendant les vacances. C'est super ! Je te raconte samedi.",
+        "reason": "Reconnaissances finales comparées, transcriptions et questions relues. Les noms non épelés sont normalisés comme graphies éditoriales.",
+        "question_changes": []
+      },
       "exercises": [
         "delf-a1-2022-co-ex2-22"
       ]
@@ -2653,7 +2326,10 @@
       "source_id": "delf_a1_2022:023:823660913714",
       "candidate_sha256": "3987973e8d665dac1a7bd44913339b978d1b7e14e47efcb0adf9f122a2172d59",
       "reasons": [
-        "whisper_start_difference"
+        "whisper_start_difference",
+        "ctc_text_difference",
+        "ctc_numeric_difference",
+        "ctc_start_difference"
       ],
       "editorial_decision": {
         "status": "editorial_review",
@@ -2700,25 +2376,18 @@
       ]
     },
     {
-      "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_27-3.mp3",
-      "source_id": "delf_a1_2022:027:38fa96a2f6c8",
-      "candidate_sha256": "78f5c992dbff0739b0ebbcb758e2bdf479580e257da063e482e266abe0ffbee7",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "delf-a1-2022-co-ex3-27"
-      ]
-    },
-    {
       "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_30-3.mp3",
       "source_id": "delf_a1_2022:030:abd914d309ec",
       "candidate_sha256": "a442a31803600769a41fceafb4510ed5e02aa908aabe62c28cede487eadc2461",
       "reasons": [
-        "editorial_transcript_and_question_review_required"
+        "whisper_text_difference"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Votre rendez-vous avec le médecin est à 10h15.",
+        "reason": "Reconnaissances finales comparées ; transcription, questions et corrigés relus. Noms non épelés : graphies éditoriales documentées.",
+        "question_changes": []
+      },
       "exercises": [
         "delf-a1-2022-co-ex3-30"
       ]
@@ -2728,9 +2397,36 @@
       "source_id": "delf_a1_2022:030:abd914d309ec",
       "candidate_sha256": "3e8b5b1976d5f42ffc535131d57ebf31e33d8a1d54382765b05e85379e65c849",
       "reasons": [
-        "editorial_transcript_and_question_review_required"
+        "whisper_text_difference",
+        "ctc_text_difference"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Votre entretien commence à dix heures moins le quart.",
+        "reason": "Reconnaissances finales comparées ; transcription et questions relues, graphies éditoriales et homophones corrigés.",
+        "question_changes": [
+          {
+            "exercise": "delf-a1-2022-co-ex3-30",
+            "question": 8,
+            "correct_answer": "Dix heures moins le quart",
+            "choices": [
+              {
+                "id": "a",
+                "texte": "Dix heures moins le quart",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Dix heures et quart"
+              },
+              {
+                "id": "c",
+                "texte": "Dix heures et demie"
+              }
+            ]
+          }
+        ]
+      },
       "exercises": [
         "delf-a1-2022-co-ex3-30"
       ]
@@ -2753,7 +2449,8 @@
       "candidate_sha256": "5b68fc2b2464c1bb1ba95b1a93bfc87fedf816b879f672d178e87fded6bcc92a",
       "reasons": [
         "parakeet_text_difference",
-        "whisper_text_difference"
+        "whisper_text_difference",
+        "ctc_end_difference"
       ],
       "editorial_decision": {
         "status": "editorial_review",
@@ -2763,74 +2460,6 @@
       },
       "exercises": [
         "delf-a1-2022-co-ex4-43"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_44-2.mp3",
-      "source_id": "delf_a1_2022:044:b96a35fe2cd3",
-      "candidate_sha256": "e8a501af511290f18368f1f5c82964dbd2a1a9638e23fe6b9ffe19245a7b50e7",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "delf-a1-2022-co-ex4-44"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_44-3.mp3",
-      "source_id": "delf_a1_2022:044:b96a35fe2cd3",
-      "candidate_sha256": "1cd1c0edfcb6d4014589694bd57ecb35a96c0e3176a498f2380865cee3ef2994",
-      "reasons": [
-        "parakeet_text_difference"
-      ],
-      "editorial_decision": {
-        "status": "editorial_review",
-        "selected_text": "– Monsieur Lemaître, pouvez-vous m’envoyer les résultats de votre classe ? – Bien sûr monsieur le directeur. Je vous envoie les résultats tout de suite.",
-        "reason": "Écarts de ponctuation, accords, segmentation des nombres et graphies propres examinés ; faits et texte courant conservés avec contrôle des deux reconnaissances du fichier final, des nombres et des marges.",
-        "question_changes": []
-      },
-      "exercises": [
-        "delf-a1-2022-co-ex4-44"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_47-1.mp3",
-      "source_id": "delf_a1_2022:047:93d18cf6dd78",
-      "candidate_sha256": "78d6a9134c97d6aeae2722917154beb283077a645ff2705f7488a828260b23d7",
-      "reasons": [
-        "whisper_text_difference",
-        "whisper_start_difference"
-      ],
-      "editorial_decision": {
-        "status": "editorial_review",
-        "selected_text": "Ils sortent à quelle heure, les élèves ? À quatre heures et demie. Regarde, les voilà !",
-        "reason": "Les trois reconnaissances donnent l’heure sur douze heures. Le corrigé reprend les mots prononcés, sans extrapoler un horaire de l’après-midi.",
-        "question_changes": [
-          {
-            "exercise": "delf-a1-2022-co-ex4-47",
-            "question": 2,
-            "correct_answer": "Quatre heures et demie",
-            "choices": [
-              {
-                "id": "a",
-                "texte": "Quatre heures et demie",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "texte": "Trois heures et demie"
-              },
-              {
-                "id": "c",
-                "texte": "Cinq heures et demie"
-              }
-            ]
-          }
-        ]
-      },
-      "exercises": [
-        "delf-a1-2022-co-ex4-47"
       ]
     },
     {
@@ -2858,8 +2487,12 @@
         "technical_object_numbering_still_present",
         "parakeet_text_difference",
         "parakeet_numeric_difference",
+        "parakeet_instruction_flag",
         "whisper_text_difference",
-        "whisper_numeric_difference"
+        "whisper_numeric_difference",
+        "whisper_instruction_flag",
+        "ctc_text_difference",
+        "ctc_numeric_difference"
       ],
       "editorial_decision": {
         "status": "source_boundary_or_content_review_required",
@@ -2880,7 +2513,8 @@
       "candidate_sha256": "bfc9d69126aae55e55c0c82fbb7549c5f1dcb0578ee72aecd7177ed7683ad608",
       "reasons": [
         "parakeet_numeric_difference",
-        "whisper_numeric_difference"
+        "whisper_numeric_difference",
+        "ctc_numeric_difference"
       ],
       "editorial_decision": {
         "status": "editorial_text_reviewed_waiting_final_checks",
@@ -2915,7 +2549,9 @@
       "candidate_sha256": "296c4f0e50385c36cdd08d036f8b562b40d4cec82454247a6898a6bbc051e2d0",
       "reasons": [
         "parakeet_numeric_difference",
-        "whisper_numeric_difference"
+        "whisper_numeric_difference",
+        "ctc_text_difference",
+        "ctc_numeric_difference"
       ],
       "editorial_decision": {
         "status": "editorial_review",
@@ -2932,9 +2568,15 @@
       "source_id": "delf_a1_2022:074:ca3dd2977475",
       "candidate_sha256": "04102d01036a4ba0c1a52bdef0eb2feab15b24385252b03245b1970efc732948",
       "reasons": [
-        "editorial_transcript_and_question_review_required"
+        "whisper_text_difference",
+        "whisper_end_difference"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "J'ai un frère et deux sœurs.",
+        "reason": "Reconnaissances finales comparées ; transcription, questions et corrigés relus. Noms non épelés : graphies éditoriales documentées.",
+        "question_changes": []
+      },
       "exercises": [
         "delf-a1-2022-co-74"
       ]
@@ -2952,25 +2594,18 @@
       ]
     },
     {
-      "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_77.mp3",
-      "source_id": "delf_a1_2022:077:1eb6ed7efb0d",
-      "candidate_sha256": "8920544134e7c03ecdc42114f687db1d89112b8fdabf55f91d0cf263aa00d73a",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "delf-a1-2022-co-77"
-      ]
-    },
-    {
       "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_79-3.mp3",
       "source_id": "delf_a1_2022:079:171161d1919f",
       "candidate_sha256": "f85f23bbb2eb1bf2c72976fd4284773ca964ee259583b941b98f2937c24096a3",
       "reasons": [
-        "editorial_transcript_and_question_review_required"
+        "whisper_text_difference"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Est-ce que vous aimez la plage ? Où allez-vous en vacances ? Quelle est votre plage préférée ?",
+        "reason": "Reconnaissances finales comparées ; transcription, questions et corrigés relus. Noms non épelés : graphies éditoriales documentées.",
+        "question_changes": []
+      },
       "exercises": [
         "delf-a1-2022-co-79"
       ]
@@ -2981,7 +2616,9 @@
       "candidate_sha256": "a667e58d947ebd702a96ad831c0fc37ae776310a945fb74ee219d6bef3100725",
       "reasons": [
         "parakeet_text_difference",
-        "whisper_text_difference"
+        "whisper_text_difference",
+        "ctc_text_difference",
+        "ctc_end_difference"
       ],
       "editorial_decision": {
         "status": "editorial_review",
@@ -3021,23 +2658,6 @@
       },
       "exercises": [
         "delf-a1-2022-co-85"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_86-1.mp3",
-      "source_id": "delf_a1_2022:086:c9d1659a97e4",
-      "candidate_sha256": "faaef08d09304f1ffc2b269bce72b6ad29335cbbc4126747595de5eb6f614101",
-      "reasons": [
-        "whisper_text_difference"
-      ],
-      "editorial_decision": {
-        "status": "editorial_review",
-        "selected_text": "Bonjour Monsieur. Je voudrais une boîte de chocolats. C’est pour un anniversaire.",
-        "reason": "Revue des écarts de ponctuation, accords et graphies non épelées. Faits et questions conservés ; accord des deux reconnaissances finales et des nombres requis avant installation.",
-        "question_changes": []
-      },
-      "exercises": [
-        "delf-a1-2022-co-86"
       ]
     },
     {
@@ -3088,25 +2708,18 @@
       ]
     },
     {
-      "ref": "/lib/audio/tcf/co/transports/01-transport-comment-tu-rentres.mp3",
-      "source_id": "9782090351958:022:7f8bd4692577",
-      "candidate_sha256": "782987b458aedb18da9fae96c502777a424ec830c5955eb03913331f57b2b292",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "tcf-ssx-a2-transport-comment-tu-rentres-co-4"
-      ]
-    },
-    {
       "ref": "/lib/audio/tcf/co/transports/aujourd-hui-cours-portera.mp3",
       "source_id": "09035196:012:e73f53259514",
       "candidate_sha256": "fdef5d70c237a614ea6f8c32f174cf6005b5a79a2b75b6bb65376b4a8052b78b",
       "reasons": [
-        "editorial_transcript_and_question_review_required"
+        "parakeet_text_difference"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Loïc, montre-moi ton bulletin de notes. Tiens maman, regarde. J'ai eu 16 en anglais, 7 points de plus que le trimestre dernier. C'est très bien Loïc, continue comme ça. Je vois que tes cours particuliers avec Mme Walter t'ont été utiles. Par contre, en physique, ça ne va pas du tout. Regarde, tu as 4/20 ! Oui, je sais. Mais c'est à cause du prof, il est super sévère. Dans la classe, presque personne n'a la moyenne. Ce qui m’intéresse, ce sont tes notes, pas celles de tes camarades. Je te le répète tout le temps. Mais maman... Je sais que tu n'aimes pas les sciences, mais il faut faire un effort. À côté de qui es-tu assis en physique ? à côté de Matthias. C'est bien ce que je pensais. Qu'est-ce que tu veux dire par là ? J'imagine que vous n'écoutez pas vraiment le professeur. Non, ce n'est pas vrai ! J'écoute et je reste silencieux pendant tout le cours. De toute façon, personne ne parle dans la classe de M. Pasteur. Il est trop sévère. Même Matthias. Même Matthias. D'ailleurs, il est super fort en sciences. C'est vrai ? Ah ben, tu devrais prendre exemple sur lui. Invite-le à la maison, comme ça vous réviserez ensemble.",
+        "reason": "Reconnaissances finales comparées ; transcription et questions relues, graphies éditoriales et homophones corrigés.",
+        "question_changes": []
+      },
       "exercises": [
         "tcf-ss-b1-s13-co-2"
       ]
@@ -3207,30 +2820,6 @@
       ]
     },
     {
-      "ref": "/lib/audio/tcf/co/transports/les-passagers-vol-air-1.mp3",
-      "source_id": "additional-20261102:mdf-a1-abc:26:4fb5f6de6eaa:37a7f3bc",
-      "candidate_sha256": "5dc367b9c66bbb18ae26931eca26a1623c677bce59260e5e6f02a476a343e838",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "tcf-ss-a1-s52-co-3"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/transports/madame-etes-arrive-1.mp3",
-      "source_id": "additional-20261102:mdf-a1-abc:25:548e28a5530c:19d35262",
-      "candidate_sha256": "082192c7ca32c70925a29e8f5159e8e864382e77910c1c4fc65b7b2a9d6ce9d9",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "tcf-ss-a1-s54-co-1"
-      ]
-    },
-    {
       "ref": "/lib/audio/tcf/co/transports/mesdames-messieurs-l-embarquement-vol.mp3",
       "source_id": "additional-20261102:mdf-a1-abc:33:fb6104e10980:026ec85a",
       "candidate_sha256": "9a5ea399d27c4c4e5299385dc1a72518fd0d38f6f9b0a8f1f683e948301f8e0c",
@@ -3253,7 +2842,8 @@
       "source_id": "09035276:032:819605add0b0",
       "candidate_sha256": "8e09ef780b3dc9a96bc1e5f8e6a7513ea76fafb3d78cdee244c1c666fa14ac42",
       "reasons": [
-        "parakeet_numeric_difference"
+        "parakeet_numeric_difference",
+        "ctc_numeric_difference"
       ],
       "editorial_decision": {
         "status": "editorial_review",
@@ -3270,7 +2860,8 @@
       "source_id": "additional-20261102:mdf-a1-abc:32:f71ff141da9e:82fae981",
       "candidate_sha256": "67aede307fe1f642a9f147fb2c87914bbe3e8eaa5557c332ec1a62b6a5877c6c",
       "reasons": [
-        "parakeet_numeric_difference"
+        "parakeet_numeric_difference",
+        "ctc_numeric_difference"
       ],
       "editorial_decision": {
         "status": "editorial_text_reviewed_waiting_final_checks",
@@ -3288,7 +2879,8 @@
       "source_id": "additional-20261102:mdf-a2-abc-direct:1:93f59b8eca5c:d80a6bc9",
       "candidate_sha256": "82471488be83bf878bae312488977f7fcf856c6330bb04359d4775ead3e55f41",
       "reasons": [
-        "whisper_start_difference"
+        "whisper_start_difference",
+        "ctc_numeric_difference"
       ],
       "editorial_decision": {
         "status": "editorial_review",
@@ -3336,7 +2928,9 @@
       "reasons": [
         "whisper_text_difference",
         "whisper_start_difference",
-        "whisper_end_difference"
+        "whisper_end_difference",
+        "ctc_numeric_difference",
+        "ctc_end_difference"
       ],
       "editorial_decision": {
         "status": "editorial_review",
@@ -3413,7 +3007,10 @@
       "source_id": "grammar-import-20261104:file_000000003ed4820cad7d03a034738ac8",
       "candidate_sha256": "225641df928e4c572cbc669596b48b7610bdbf1b94bdcf82156f1dbb2020a757",
       "reasons": [
-        "parakeet_numeric_difference"
+        "parakeet_numeric_difference",
+        "whisper_numeric_difference",
+        "ctc_numeric_difference",
+        "ctc_end_difference"
       ],
       "editorial_decision": {
         "status": "editorial_text_reviewed_waiting_final_checks",
@@ -3436,7 +3033,8 @@
       "source_id": "additional-20261102:mdf-a1-abc:12:d390bb9670de:80753130",
       "candidate_sha256": "ad3ec745d2f17b0abca61e05832d335d2a99ab37f64cf716cfd8c706844b35da",
       "reasons": [
-        "whisper_numeric_difference"
+        "whisper_numeric_difference",
+        "ctc_numeric_difference"
       ],
       "editorial_decision": {
         "status": "editorial_review",
@@ -3449,37 +3047,16 @@
       ]
     },
     {
-      "ref": "/lib/audio/tcf/co/travail/energie-propre-traitement-dechets.mp3",
-      "source_id": "additional-20261102:mdf-b1-abc-direct:23:bfa0cda3b6d2:f57d3a12",
-      "candidate_sha256": "0efee99088e688a3083db454c6dae8db1e594c92e02c01a32cb86943aee6c8fa",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "tcf-ss-b1-s14-co-3"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/travail/moyen-a2__radio-16.1.mp3",
-      "source_id": "additional-20261102:mdf-a2-abc-direct:55:81b0945f6d8e:0fcfaf40",
-      "candidate_sha256": "22f8360e61c80906b4c3d057639261b69f333fe97a65534026b04b74d0cea157",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "tcf-ssx-a2-radio-16-1-co-3"
-      ]
-    },
-    {
       "ref": "/lib/audio/tcf/co/vie-quotidienne/alors-cette-fete-anniversaire-2-2.mp3",
       "source_id": "additional-20261102:mdf-a2-abc-direct:95:b95d20d0713a:ac7750fa",
       "candidate_sha256": "a5695b7568f94556b3d941c2b6a6d1dbdfbe403c2ca9787120a46350bd0aceb4",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
+      "reasons": [],
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Salut Hugo, j'ai deux places pour le match de basket de samedi. Tu veux venir avec moi ? C'est vrai ? Oh c'est terrible, je ne peux pas y aller. C'est l'anniversaire de ma mère. Oh non, c'est dommage.",
+        "reason": "Reconnaissances finales comparées ; transcription, attribution des informations, questions et réponses relues.",
+        "question_changes": []
+      },
       "exercises": [
         "tcf-ss-a2-s10-co-1"
       ]
@@ -3515,7 +3092,9 @@
       "candidate_sha256": "c844294d62c35483f5c12e6e1d3bf8aef655fc48cbc9055fbda314a237c3352f",
       "reasons": [
         "parakeet_numeric_difference",
-        "whisper_numeric_difference"
+        "whisper_numeric_difference",
+        "ctc_text_difference",
+        "ctc_numeric_difference"
       ],
       "editorial_decision": {
         "status": "editorial_text_reviewed_waiting_final_checks",
@@ -3534,7 +3113,8 @@
       "reasons": [
         "source_boundary_review_required",
         "whisper_text_difference",
-        "whisper_start_difference"
+        "whisper_start_difference",
+        "ctc_end_difference"
       ],
       "editorial_decision": {
         "status": "editorial_text_reviewed_waiting_final_checks",
@@ -3544,40 +3124,6 @@
       },
       "exercises": [
         "tcf-ss-a1-s27-co-1"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/vie-quotidienne/aujourd-hui-ecoutons-recette-sandwich-1.mp3",
-      "source_id": "grammar-import-20261104:file_00000000e5f481f4aebd48f71aacb343",
-      "candidate_sha256": "15cba992d5949eb8c68a53e0865a33052810280258483927c80b425eaec07c0f",
-      "reasons": [
-        "parakeet_start_difference"
-      ],
-      "editorial_decision": {
-        "status": "editorial_text_reviewed_waiting_final_checks",
-        "selected_text": "- Aujourd'hui, écoutons la recette du sandwich « Le Bocase ».\n- C'est très simple.\nDans une demi-baguette, mettez beaucoup de beurre, un œuf dur, 150 g de fromage, trois tranches de tomates avec un peu de sel et un morceau de poulet.",
-        "reason": "Différences relues : ponctuation, graphie phonétiquement identique, nombres écrits en lettres ou chiffres, accords ou hésitations ; les faits utilisés par les questions sont conservés.",
-        "question_changes": []
-      },
-      "exercises": [
-        "tcf-ss-a1-s11-co-2"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/vie-quotidienne/aujourd-hui-l-actualite-musicale-parlons.mp3",
-      "source_id": "additional-20261102:mdf-a1-abc:23:dc12970c1d8f:6837cada",
-      "candidate_sha256": "be36442526ff0fa1c7132ed3a2de234b00af834152ca963ca07f362213571502",
-      "reasons": [
-        "parakeet_numeric_difference"
-      ],
-      "editorial_decision": {
-        "status": "editorial_review",
-        "selected_text": "Aujourd'hui, dans l'actualité musicale, nous parlons du festival Solidays.\nCette année, le festival dure trois jours, du vendredi 28 au dimanche 30 juin.\nPlus de 170 000 personnes vont assister aux concerts de cinquante artistes.\nSi vous allez les voir, amusez-vous bien !",
-        "reason": "Écarts de ponctuation, accords, segmentation des nombres et graphies propres examinés ; faits et texte courant conservés avec contrôle des deux reconnaissances du fichier final, des nombres et des marges.",
-        "question_changes": []
-      },
-      "exercises": [
-        "tcf-ss-a1-s12-co-3"
       ]
     },
     {
@@ -3714,7 +3260,9 @@
       "source_id": "additional-20261102:mdf-a2-abc-direct:83:abce5622de39:e3c1927b",
       "candidate_sha256": "2cb3a690966938a93e17a6bf10d6805cf7f02aa46b1884f27e1169f365f52fc2",
       "reasons": [
-        "parakeet_numeric_difference"
+        "parakeet_numeric_difference",
+        "ctc_numeric_difference",
+        "ctc_end_difference"
       ],
       "editorial_decision": {
         "status": "editorial_review",
@@ -3761,7 +3309,8 @@
       "candidate_sha256": "a07be9d5d3b8092dea662b062938007c9e5043dc5a7d88d64f3255ef5b35f904",
       "reasons": [
         "parakeet_numeric_difference",
-        "whisper_numeric_difference"
+        "whisper_numeric_difference",
+        "ctc_numeric_difference"
       ],
       "editorial_decision": {
         "status": "editorial_text_reviewed_waiting_final_checks",
@@ -3811,10 +3360,24 @@
       "ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-thierry-deja.mp3",
       "source_id": "additional-20261102:mdf-b1-abc-direct:16:a9c3c8627a50:b0a250af",
       "candidate_sha256": "0cff0fe6bf2a216b2e29e278b52981eae294af8dc6fc205123481f0322332859",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
+      "reasons": [],
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Bonjour Madame Thierry, déjà dans le parc avec votre petite fille, il est à peine 8h. Oui, il fait si chaud depuis deux semaines. Elle a seulement 18 mois Madame Berthet. Elle est encore bien petite. Les jeunes enfants sont fragiles. Vous avez raison, il vaut mieux la sortir tôt le matin. Je la sors aussi un peu le soir. Et quand je suis obligée de la sortir dans la journée, Je lui passe une crème solaire et je lui mets une petite robe ample et un chapeau en toile. Je fais en sorte de rester le moins longtemps possible dehors. Il ne fait pas trop chaud chez vous ? Non. Heureusement, l'appartement est frais et je la rafraîchis souvent avec un brumisateur. Je la fais boire aussi plus souvent. Je vois que vous êtes bien au courant de ce qu'il faut faire. Ce n'est pas aussi facile avec mes parents. Ils sont âgés ? Ils ont 84 et 86 ans. J'ai la chance d'habiter près de chez eux. Je peux passer les voir au moins le matin et le soir en partant et en revenant du travail. Et je les appelle dans la journée. Mais je dois parfois me fâcher. Je vous comprends. Ma grand-mère dit n'avoir jamais chaud. Les personnes âgées ne ressentent pas la chaleur comme nous et ils ne boivent pas assez. Mes parents ont enfin compris qu'il fallait fermer les volets dans la journée et aérer pendant la nuit. Ils utilisent aussi plus souvent le ventilateur. Mais je dois parfois insister pour qu'ils boivent plus souvent, mais sans exagérer. Je veille aussi à ce qu’ils continuent de s'alimenter normalement. Mais comme ma mère est assez gourmande, ce n'est pas vraiment un problème. Elle prépare de grandes salades et plus de plats de poisson que de viande, parce que c'est plus léger. Ils ont de la chance de vous avoir. Quoi qu'il en soit, espérons qu'il va faire moins chaud.",
+        "reason": "Reconnaissances finales comparées ; transcription, attribution des informations, questions et réponses relues.",
+        "question_changes": [
+          {
+            "exercise": "tcf-ss-b1-s3-co-1",
+            "question": 2,
+            "enonce": "Quel âge ont les parents évoqués dans la conversation ?"
+          },
+          {
+            "exercise": "tcf-ss-b1-s3-co-1",
+            "question": 9,
+            "enonce": "Quand la personne rend-elle visite à ses parents ?"
+          }
+        ]
+      },
       "exercises": [
         "tcf-ss-b1-s3-co-1"
       ]
@@ -3842,7 +3405,8 @@
       "candidate_sha256": "f1158c768d66d92ec8a152e14d2ebf77571e8085464143a300c23bedd4b5e0ee",
       "reasons": [
         "source_boundary_review_required",
-        "parakeet_numeric_difference"
+        "parakeet_numeric_difference",
+        "ctc_numeric_difference"
       ],
       "editorial_decision": {
         "status": "editorial_text_reviewed_waiting_final_checks",
@@ -3872,30 +3436,34 @@
       ]
     },
     {
-      "ref": "/lib/audio/tcf/co/vie-quotidienne/cabinet-medical-docteurs-blanc-1.mp3",
-      "source_id": "grammar-import-20261104:file_00000000e9bc81f4a47b27ff185a6b34",
-      "candidate_sha256": "32ad1a03e5b7b66ddda51e0839697cbfad7c4eb034469da62dda5a13bde637de",
-      "reasons": [
-        "whisper_start_difference"
-      ],
-      "editorial_decision": {
-        "status": "editorial_text_reviewed_waiting_final_checks",
-        "selected_text": "Cabinet médical des docteurs Blanc et Truc, pédiatres.\nNous recevons les enfants du lundi au vendredi de 9 h à 19 h.\nSi votre enfant est malade le week-end, appelez le 15 pour les urgences.",
-        "reason": "Transcription source et questions comparées ; les écarts sont de ponctuation, de segmentation ou de graphie sans changement de fait ni de réponse.",
-        "question_changes": []
-      },
-      "exercises": [
-        "tcf-ss-a1-s44-co-1"
-      ]
-    },
-    {
       "ref": "/lib/audio/tcf/co/vie-quotidienne/cette-semaine-encore-cinema-1.mp3",
       "source_id": "09035196:032:06ca883daec9",
       "candidate_sha256": "b72c13cb1c46d67c8eb3e9beb70fedadc46a168a4638565bc4d57c663d19216b",
       "reasons": [
-        "editorial_transcript_and_question_review_required"
+        "parakeet_numeric_difference"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Cette semaine, au cinéma Le Studio de la ville de Tours, une super programmation. Le studio est ouvert tous les jours de 14h à minuit. Pour connaître les horaires et les résumés des films à l’affiche, visitez notre site www.lestudiotour.com Voici une sélection parmi les films actuellement à l’affiche. Hors normes, durée 1h55. Une comédie d’Éric Toledano, Olivier Nakache. Résumé du film, Bruno et Malik vivent depuis 20 ans dans un monde à part, celui des enfants et adolescents autistes. Au sein de leurs deux associations respectives, ils forment des jeunes issus des quartiers difficiles pour encadrer ces cas qualifiés d'hypercomplex. Une alliance hors du commun pour des personnalités hors normes. Edmond. Durée : une heure 53, comédie historique d’Alexis Michalik. Résumé du film. Décembre 1897, Paris. Edmond Rostand n'a pas encore 30 ans, mais déjà 2 enfants et beaucoup d'angoisse. Il n'a rien écrit depuis 2 ans. En désespoir de cause, il propose au grand Constant Coquelin une pièce nouvelle, une comédie héroïque en vers pour les fêtes. Seul souci, elle n'est pas encore écrite. Edmond décide d'ignorer le manque d'enthousiasme de l'ensemble de son entourage. Il se met à écrire cette pièce à laquelle personne ne croit. Pour l'instant, il n'a que le titre \"Cyrano de Bergerac\". Une sirène à Paris, durée 1h42. Film fantastique, drame de Mathias Malzieu, avec Nicolas Duvauchelle, Marilyn Lima, Rossy de Palma. Résumé du film. Chanteur de variété au cœur brisé, Gaspard s'était juré de ne plus retomber amoureux. Quant à Lula, jolie sirène, elle n'a que le chant pour se défendre des hommes en faisant s'emballer leur cœur jusqu'à l'explosion. Lorsque la Seine en crue vient déposer Lula au pied du Flower Burger, la péniche cabaret où chante Gaspard, c'est un mini tsunami qui va bouleverser leur existence. Lui, l'homme qui a souffert d'avoir trop aimé, et elle, la créature qui n'a jamais connu l'amour, vont apprendre à se connaître et à chanter d'une même voix.",
+        "reason": "Reconnaissances finales comparées, transcriptions et questions relues. Les noms non épelés sont normalisés comme graphies éditoriales.",
+        "question_changes": [
+          {
+            "exercise": "tcf-ss-b1-s11-co-2",
+            "question": 3,
+            "enonce": "Quel type de film est Hors normes ?"
+          },
+          {
+            "exercise": "tcf-ss-b1-s11-co-2",
+            "question": 4,
+            "enonce": "De quoi parle le film Hors normes ?"
+          },
+          {
+            "exercise": "tcf-ss-b1-s11-co-2",
+            "question": 10,
+            "enonce": "Quel métier Gaspard exerce-t-il dans Une sirène à Paris ?"
+          }
+        ]
+      },
       "exercises": [
         "tcf-ss-b1-s11-co-2"
       ]
@@ -3905,9 +3473,36 @@
       "source_id": "additional-20261102:mdf-b1-abc-direct:31:f55560376dbf:251303e8",
       "candidate_sha256": "db699158f4ec777d1bb7481212f38906e79feaed09d2b7323ed2bd450cbbea6a",
       "reasons": [
-        "editorial_transcript_and_question_review_required"
+        "parakeet_text_difference",
+        "checked_waiting_installation"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "De Greta à Anita, il n’y a qu’un pas. L'ombre de la militante suédoise Greta Thunberg plane sur #Anita, un court métrage réalisé par Félicien Bogaerts, présentateur du JT Terre, émission web indépendante sur l'actualité environnementale, Ilias Sfar et Arnaud Huck, qui a été mis en ligne dimanche 15 septembre sur la chaîne YouTube du Biais Vert et la plateforme Imago TV. Même visage poupin, même fragilité à fleurs de peau et surtout ce même regard grave, inquiet, qui personnifie à lui seul l'urgence du réchauffement climatique. Si elle n’a pas les nattes de Greta Thunberg, son double de fiction, interprété par la jeune actrice belge, Fantine Harduin, partage son combat. Le film, de 13 minutes, déroule le quotidien de sa jeune icône sur moins de 24 heures, de son entretien avec le think tank Thinkerview, à son allocution devant un parterre de décideurs politiques. Cette unité de temps empruntée aux tragédies classiques, tout comme le choix de personnifier à l'écran le Fatum, rend d'autant plus perméable le mal-être de cette vraie petite fille épuisée par son exposition médiatique. Face à des adultes caricaturaux, au mieux profiteurs, au pire indifférents, Anita semble prêcher dans le vide avant d'opter pour une solution aussi radicale que choquante pour enfin transmettre son message. L'idée n'était pas, et l'équipe du film s'en défend, de basculer dans le journalisme de fiction ou la chronique moralisatrice. #Anita se trouve dans la zone grise entre réel et fiction. précisent Félicien Bogaerts et Arnaud Huck. Le court-métrage fait écho à ce que nous avons pu observer au sein des mouvements pour le climat, comme leur instrumentalisation et leur récupération par des partis politiques ou certaines ONG. Nous voulions aussi montrer la violence du système qui fait reposer le poids du combat écologique sur les plus jeunes.",
+        "reason": "Reconnaissances finales comparées ; transcription, questions et corrigés relus. Noms non épelés : graphies éditoriales documentées.",
+        "question_changes": [
+          {
+            "exercise": "tcf-ss-b1-s5-co-1",
+            "question": 6,
+            "correct_answer": "La chaîne YouTube Le Biais Vert et Imago.tv",
+            "choices": [
+              {
+                "id": "a",
+                "texte": "La chaîne YouTube Le Biais Vert et Imago.tv",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "La chaîne YouTube Le Biais Vert et Netflix"
+              },
+              {
+                "id": "c",
+                "texte": "Dailymotion et Arte.tv"
+              }
+            ]
+          }
+        ]
+      },
       "exercises": [
         "tcf-ss-b1-s5-co-1"
       ]
@@ -3922,23 +3517,6 @@
       "editorial_decision": null,
       "exercises": [
         "tcf-ss-a2-s38-co-2"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/vie-quotidienne/et-voici-meteo.mp3",
-      "source_id": "grammar-import-20261104:file_000000000a408246af1b0274181fbd67",
-      "candidate_sha256": "62cf063257852fe52d8b1c31d90fa613dd381ea6731bcb9c9a7d518e50cebaf2",
-      "reasons": [
-        "whisper_text_difference"
-      ],
-      "editorial_decision": {
-        "status": "editorial_text_reviewed_waiting_final_checks",
-        "selected_text": "Et voici la météo de ce jour de printemps.\nÀ Paris, temps beau et chaud.\nÀ Bordeaux, nuages et vent.\nÀ Strasbourg, pluie et vent.\nÀ Nice, du soleil et 32 °C.\nEt enfin à Lille, 12 °C et des nuages.",
-        "reason": "Différences relues : ponctuation, graphie phonétiquement identique, nombres écrits en lettres ou chiffres, accords ou hésitations ; les faits utilisés par les questions sont conservés.",
-        "question_changes": []
-      },
-      "exercises": [
-        "tcf-ss-a1-s34-co-4"
       ]
     },
     {
@@ -4015,9 +3593,15 @@
       "source_id": "09035196:016:919ecc7fa151",
       "candidate_sha256": "6e7256f4c1b94ca429217cdc88f3e02e40795b3b76074d86ae251ba1eade6649",
       "reasons": [
-        "editorial_transcript_and_question_review_required"
+        "parakeet_text_difference",
+        "checked_waiting_installation"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Salut papa ! Bonjour Léa ! Alors raconte-moi comment s'est passée cette première journée d'école ! Bien, mes profs sont sympas. Par contre, j'ai Monsieur Barthélemy en histoire. J'espérais avoir Madame Gauthier elle est moins sévère. En sport, je suis hyper contente. J'ai la même prof que l'année dernière, Madame Dupont, avec elle on fait beaucoup de sports collectifs, en particulier du basket et j'adore ça. Et tu as retrouvé tous tes camarades de classe ? Oui, sauf Thomas. Il est parti dans un autre collège. Ah ! Et il y a une nouvelle élève aussi. Elle s'appelle Sarah. On a bien sympathisé. À midi, je lui ai proposé de manger à notre table avec les copines. Elle a 15 ans et elle a voyagé partout dans le monde. Elle a vécu deux ans en Australie, deux au Gabon et trois en Chine et au Brésil. Ah oui, ça fait beaucoup ! Que font ses parents pour déménager aussi souvent ? Sa mère est prof et son père travaille dans une ambassade. À la sortie des cours, je lui ai fait visiter le quartier. Elle n'est ici que depuis une semaine et elle ne connaît personne. Si tu veux, tu peux l'inviter à venir avec nous à la montagne ce week-end. Il y aura aussi tes cousins qui viendront. C'est une bonne idée, mais je ne suis pas sûre qu'elle accepte. Je crois que ce week-end, elle va voir sa grand-mère qui habite à Lyon. On lui proposera de venir à la maison le samedi suivant, ok ?",
+        "reason": "Reconnaissances finales comparées ; transcription, questions et corrigés relus. Noms non épelés : graphies éditoriales documentées.",
+        "question_changes": []
+      },
       "exercises": [
         "tcf-ss-b1-s11-co-4"
       ]
@@ -4032,18 +3616,6 @@
       "editorial_decision": null,
       "exercises": [
         "tcf-ss-b1-s10-co-4"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/vie-quotidienne/jacques-as-petite-1.mp3",
-      "source_id": "additional-20261102:mdf-b1-abc-direct:18:816016d231af:d5337d42",
-      "candidate_sha256": "e681120e62b2c294929aa3465043e5e05719ce47a7f586617007e4480955a8f7",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "tcf-ss-b1-s12-co-1"
       ]
     },
     {
@@ -4087,10 +3659,13 @@
       "ref": "/lib/audio/tcf/co/vie-quotidienne/julie-dois-aller-nouveau-1-1.mp3",
       "source_id": "09035276:044:6f1e71a5d8e3",
       "candidate_sha256": "5cb364b1ca36a48b668603d7d34d71edb2bf1d92a372ae69522dbf90949a60a2",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
+      "reasons": [],
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Quelle heure il est s'il te plaît ? Il est 10h35. Oh là là je suis en retard, j'ai mon cours de musique maintenant.",
+        "reason": "Reconnaissances finales comparées ; transcription, attribution des informations, questions et réponses relues.",
+        "question_changes": []
+      },
       "exercises": [
         "tcf-ss-a1-s47-co-1"
       ]
@@ -4101,7 +3676,8 @@
       "candidate_sha256": "d034d0c47b689a4f78276c87f268520929eddfe8670cd388e113ff51b1cda65a",
       "reasons": [
         "parakeet_text_difference",
-        "whisper_text_difference"
+        "whisper_text_difference",
+        "ctc_text_difference"
       ],
       "editorial_decision": {
         "status": "editorial_text_reviewed_waiting_final_checks",
@@ -4118,9 +3694,23 @@
       "source_id": "additional-20261102:mdf-b1-abc-direct:19:2bf9ce820ac5:796d7ba4",
       "candidate_sha256": "faf0493727ad55b137b76cec685f7d8db829e4f72a1907bcf9f6608481c40f04",
       "reasons": [
-        "editorial_transcript_and_question_review_required"
+        "whisper_start_difference",
+        "ctc_numeric_difference"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "À la veille des premières assises de la Fondation Nestlé France, le repas gastronomique français avait été inscrit au patrimoine culturel immatériel de l'humanité par l'UNESCO. Mais cette reconnaissance patrimoniale s'accompagne de ce qu'on appelle le devoir de transmission. Et dans les familles, la transmission passe d'abord par l'assiette. C'est ce que nous révèle l'enquête publiée en novembre 2011 par la Fondation Nestlé. 87% des personnes interrogées affirment manger des plats dont la recette vient de leurs grands-parents. Au cours des 2e assises de la Fondation Nestlé qui ont eu lieu sous sa présidence, Erik Orsenna parle de la transmission en ces termes. Quand on parle de transmission, on pense tout de suite à cette forme de transmission verticale qu'est la succession. En général, Pour ce qui concerne l'alimentation et dans tous les pays du monde, cette transmission des recettes ou des manières de cuisiner est assurée par un relais de mère en fille. Ce n'est toutefois pas toujours vrai. Quand je me demande ce que je laisserai à mes enfants, je suis presque sûr qu'ils garderont de moi certaines recettes de beurre blanc à l'échalote. Une manière particulière de faire pour l'été, un bœuf mode en gelée, et un lait aillé qui accompagne particulièrement bien certaines recettes de coquelets, ce qui montre que cette transmission n'est pas forcément le fait des femmes. À l'heure des familles éclatées et recomposées, la cuisine reste un élément qui rassemble, qui structure le clan. Une bonne dose de tradition, un soupçon de nostalgie, un zeste de valeur. Les enfants raffolent et tendent leur assiette.",
+        "reason": "Les trois reconnaissances concordent sur les recettes : beurre blanc à l’échalote, bœuf mode en gelée pour l’été et lait aillé accompagnant des coquelets. L’ancien texte avec épeautre et œuf mollet est écarté. Toutes les questions restent vérifiables dans le document.",
+        "question_changes": [],
+        "additional_recognition_evidence": {
+          "candidate_sha256": "faf0493727ad55b137b76cec685f7d8db829e4f72a1907bcf9f6608481c40f04",
+          "engine": "sherpa-nemo-fast-conformer-ctc-en-de-es-fr-14288-int8",
+          "evidence_file": "/workspace/work/tcf-bascule-complete-20261105/ctc/faf0493727ad55b137b76cec685f7d8db829e4f72a1907bcf9f6608481c40f04.json",
+          "evidence_sha256": "24d0ba158a6345d5da771fa550fd55bb9d4c49d87a836f47072eabf33319bb48",
+          "raw_third_transcription": "À la veille des premières assises de la Fondation Nesley France, le repas gastronomique français avait été inscrit au patrimoine culturel etimatériel de l'humanité par l'Unescot. Mais cette reconnaissance patrimoniale s'accompagne de ce qu'on appelle le devoir de transmission. Et dans les familles, la transmission passe d'abord par l'assiette. C'est ce que nous révèle l'enquête publiée en novembre deux mille onze par la Fondation Nesly. Quatre vingt - sept c des personnes interrogées affirment manger des plats dont la recette vient de leurs grands parents. Au cours des deuxième assises de la Fondation Nestly qui ont eu lieu sous sa présidence, Éric rséna parle de la transmission en ces termes. Quand on parle de transmission, on pense tout de suite à cette forme de transmission verticale qu'est la succession. En général, pour ce qui concerne l'alimentation et dans tous les pays du monde, cette transmission des recettes ou des manières de cuisiner est assurée par un relais de mère en fille. Ce n'est toutefois pas toujours vrai. Quand je me demande ce que je laisserai à mes enfants, je suis presque sûr qu'ils garderont de moi certaines recettes de beurre blanc à l'échalotte. Une manière particulière de faire pour l'été un bœuf mode en gelée, et un laitaillé qui accompagne particulièrement bien certaines recettes de coclet, ce qui montre que cette transmission n'est pas forcément le fait des femmes. À l'heure des familles éclatées et recomposé, la cuisine reste un élément qui rassemble, qui structure le clan. Une bonne dose de tradition, un soupçon de nostalgie, un zeste de valeur. Les enfants raffolent et tendent leur assiette",
+          "human_listening_performed": false
+        }
+      },
       "exercises": [
         "tcf-ss-b1-s3-co-2"
       ]
@@ -4130,7 +3720,8 @@
       "source_id": "09035196:025:1e73ef1401c6",
       "candidate_sha256": "5ad92511c40bff5003bb2f147bee0dd6798c4289c0665e3b33b6b5b00d6e90b8",
       "reasons": [
-        "parakeet_numeric_difference"
+        "parakeet_numeric_difference",
+        "ctc_numeric_difference"
       ],
       "editorial_decision": {
         "status": "editorial_review",
@@ -4159,9 +3750,16 @@
       "source_id": "09035196:031:1cb92145fa2e",
       "candidate_sha256": "26329e40556fb53d75b68c70eb083eb2323bab3a4efae28e85480978fb01fc5c",
       "reasons": [
-        "editorial_transcript_and_question_review_required"
+        "parakeet_text_difference",
+        "parakeet_numeric_difference",
+        "whisper_numeric_difference"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Nous sommes chez notre styliste, Anne-Laure Béché. Dans son atelier, il y a des tissus, des dessins, les machines à coudre. Partout, il y a des vêtements d'une originalité extrême, des mannequins. Bonjour, Anne-Laure. Bonjour. Entrez donc. Soyez les bienvenus. Installez-vous. Je vous écoute. Qu'est-ce qui vous a donné l'envie de faire du stylisme ? Ça a commencé quand j'étais adolescente. Nous allions souvent chez une amie de ma mère qui était couturière. J'adorais son atelier. Il me fascinait et j'ai eu envie d'en faire mon métier. Mais je me souviens aussi que, quand j'étais petite, je fabriquais déjà des vêtements miniatures pour mes poupées. J'ai donc fait des études de couture et deux ans d'apprentissage chez une styliste, car je voulais devenir styliste plutôt que couturière. Parlez-nous de votre carrière. Après mes deux années d'apprentissage, j'ai eu une bourse d'un an pour étudier à Paris et approfondir le métier. Cela m'a beaucoup aidée car j'ai fait des rencontres intéressantes qui m'ont permis ensuite de participer à des congrès, des séminaires, des salons internationaux. Pourquoi le stylisme, plus que la couture ? Un styliste est plus un artiste qui crée de nouvelles figures, des modèles. Le couturier est moins dans la création. C'est le client qui lui dicte davantage la ligne à suivre. Même si le couturier aime toujours apporter sa touche personnelle, forcément. Moi, j'ai besoin de l'art dans mon quotidien. Le stylisme est mon moyen d'assouvir ce besoin. Comment définiriez-vous la styliste que vous êtes ? Je suis curieuse, comme tous les stylistes. Je suis curieuse de découvrir de nouvelles formes, de faire des mélanges, aller vers le jamais vu, ne jamais se ressembler, mais ne pas choquer. Comment travaillez-vous au quotidien ? Je crée d'abord les vêtements, puis je fais des expos, des défilés, et c'est là que les gens voient ce que je fais. Après, j'ai des demandes. Je dois souvent adapter les modèles, les tissus, les couleurs, mais j'adore ça. Je vais plus loin encore dans la création. Si je peux me permettre, vous arrivez à bien vivre de votre métier. Je n'ai jamais eu de grandes difficultés. Quand on est styliste, créatif, flexible et motivé, il n'est pas difficile de se créer une petite clientèle fidèle. Et voilà. Puis il faut dire que les clients sont prêts à payer le coût de la création et de l'originalité, même si moi, j'ai toujours du mal à appliquer des prix très élevés. Certains collègues n'hésitent pas en tout cas.",
+        "reason": "Reconnaissances finales comparées ; transcription, questions et corrigés relus. Noms non épelés : graphies éditoriales documentées.",
+        "question_changes": []
+      },
       "exercises": [
         "tcf-ss-b1-s12-co-4"
       ]
@@ -4219,7 +3817,9 @@
       "candidate_sha256": "b48c8c3d2dcd84a2b415fefd705a52002d09716137c955384d94a527016282c6",
       "reasons": [
         "source_boundary_review_required",
-        "parakeet_end_difference"
+        "parakeet_end_difference",
+        "ctc_text_difference",
+        "ctc_end_difference"
       ],
       "editorial_decision": {
         "status": "editorial_text_reviewed_waiting_final_checks",
@@ -4288,7 +3888,9 @@
       "source_id": "grammar-import-20261104:file_000000001fac8210888a8f71ad10c7e9",
       "candidate_sha256": "63d30472aa05173d09f43c17df7fc060475a8589b96c07f4b70eafe8f5a7a944",
       "reasons": [
-        "parakeet_numeric_difference"
+        "parakeet_numeric_difference",
+        "ctc_numeric_difference",
+        "ctc_end_difference"
       ],
       "editorial_decision": {
         "status": "editorial_text_reviewed_waiting_final_checks",
@@ -4315,23 +3917,6 @@
       },
       "exercises": [
         "tcf-ss-a1-s45-co-3"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/vie-quotidienne/pour-vacances-pensez-covoiturage-1.mp3",
-      "source_id": "grammar-import-20261104:file_000000005cd881f486d3e82d2eb3c46d",
-      "candidate_sha256": "9b6950116dde742f2117ec1379890771a8525a5579a9855167b8f7359859bff8",
-      "reasons": [
-        "parakeet_text_difference"
-      ],
-      "editorial_decision": {
-        "status": "editorial_text_reviewed_waiting_final_checks",
-        "selected_text": "Pour les vacances, pensez au covoiturage avec l'application Covoit'.\nChoisissez votre trajet, votre horaire et votre conducteur.\nRéservez et payez.\nVoyager avec Covoit, c'est simple !",
-        "reason": "Différences relues : ponctuation, graphie phonétiquement identique, nombres écrits en lettres ou chiffres, accords ou hésitations ; les faits utilisés par les questions sont conservés.",
-        "question_changes": []
-      },
-      "exercises": [
-        "tcf-ss-a1-s31-co-4"
       ]
     },
     {
@@ -4393,30 +3978,14 @@
       ]
     },
     {
-      "ref": "/lib/audio/tcf/co/vie-quotidienne/salut-cherche-bureau-1.mp3",
-      "source_id": "grammar-import-20261104:file_00000000914482119206b8b4e0abf334",
-      "candidate_sha256": "9c6aa17caf04e9c2b7536cf2e177282a923700c15bcd9e644c1d62e49ba8a0ac",
-      "reasons": [
-        "whisper_end_difference"
-      ],
-      "editorial_decision": {
-        "status": "editorial_text_reviewed_waiting_final_checks",
-        "selected_text": "- Salut, je cherche le bureau du professeur Martin.\nIl est où ?\nTu peux m'aider ?\n- Euh…\nnon désolé, je suis nouveau à la fac.\nDemande au secrétariat.",
-        "reason": "Le texte de la source préparée et celui du support sont équivalents ; questions et réponses précédemment auditées conservées. La validation du MP3 final reste distincte.",
-        "question_changes": []
-      },
-      "exercises": [
-        "tcf-ss-a1-s26-co-2"
-      ]
-    },
-    {
       "ref": "/lib/audio/tcf/co/vie-quotidienne/salut-emilie.mp3",
       "source_id": "grammar-import-20261104:file_0000000010708246acdf74e57b38bda1",
       "candidate_sha256": "c1a4d45d9a838f4b79fde9f23294f160eb7669f521443c067e0f3361730be80f",
       "reasons": [
         "source_boundary_review_required",
         "parakeet_text_difference",
-        "parakeet_numeric_difference"
+        "parakeet_numeric_difference",
+        "ctc_end_difference"
       ],
       "editorial_decision": {
         "status": "editorial_text_reviewed_waiting_final_checks",
@@ -4460,7 +4029,8 @@
       "candidate_sha256": "ba4d945a7bf3df5ce036b6cbfeef0da1c104f546d5179dd7add9dd25fb176989",
       "reasons": [
         "parakeet_numeric_difference",
-        "parakeet_start_difference"
+        "parakeet_start_difference",
+        "ctc_start_difference"
       ],
       "editorial_decision": {
         "status": "editorial_text_reviewed_waiting_final_checks",
@@ -4531,23 +4101,6 @@
       ]
     },
     {
-      "ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-24.mp3",
-      "source_id": "09035276:037:a756503117b6",
-      "candidate_sha256": "7253502c5c8fc0a579dd44ffcfb6f9d2502e3b01a298f4d9d7754ff53a294f0e",
-      "reasons": [
-        "whisper_end_difference"
-      ],
-      "editorial_decision": {
-        "status": "editorial_text_reviewed_waiting_final_checks",
-        "selected_text": "Aujourd'hui c'est la nuit des musées, venez visiter tous les musées toute la nuit gratuitement.\nAu musée du l'ouvre il y a une visite guidée des plus belles peintures et une séance de cinéma spéciale.\nDevant le musée d'Orsay, vous pouvez écouter les musiciens du groupe Tandem jouer leurs plus belles chansons.",
-        "reason": "Comparaison détaillée relue : ponctuation, graphies, accords et formats de nombres ; les éventuelles divergences chiffrées restent soumises au contrôle indépendant des fichiers finaux avant installation.",
-        "question_changes": []
-      },
-      "exercises": [
-        "tcf-ss-a1-s49-co-4"
-      ]
-    },
-    {
       "ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-25.mp3",
       "source_id": "9782090351958:036:449228fbaf9b",
       "candidate_sha256": "7c8ef2c72204f67f49b40eb688c3de25156bc1e8065dccb0dfdd47951712f8ef",
@@ -4577,7 +4130,8 @@
       "source_id": "9782090351958:046:3d5953e058fc",
       "candidate_sha256": "1078cdd22a797144962844aad50ca32af829a45a1b2a0ed95d3b6452e0a45d45",
       "reasons": [
-        "whisper_numeric_difference"
+        "whisper_numeric_difference",
+        "ctc_start_difference"
       ],
       "editorial_decision": {
         "status": "editorial_review",
@@ -4606,10 +4160,39 @@
       "ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-29.mp3",
       "source_id": "9782090351958:054:ea3062ec1e3e",
       "candidate_sha256": "280676464bb65955f95d025c29343b441226130f9ada17523207899bcb1832f5",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
+      "reasons": [],
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Le nouveau centre sportif de La Plaine va ouvrir à l'Ouest de Marseille dans une semaine. Vous pourrez y pratiquer de nombreux sports, participer à des événements et voir des compétitions du mardi au dimanche de 9h à 21h. Pour demander votre carte d’abonné à prix réduit, venez le jour de l'ouverture, samedi, 10 mai. L'équipe sera là pour vous donner des informations sur le calendrier des matchs, les horaires des différents cours et les tarifs.",
+        "reason": "Reconnaissances finales comparées ; transcription, attribution des informations, questions et réponses relues.",
+        "question_changes": [
+          {
+            "exercise": "tcf-ss-a2-s16-co-1",
+            "question": 8,
+            "correct_answer": "L’équipe du centre",
+            "choices": [
+              {
+                "id": "a",
+                "texte": "L’équipe du centre",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Les anciens abonnés"
+              },
+              {
+                "id": "c",
+                "texte": "Les arbitres des compétitions"
+              }
+            ]
+          },
+          {
+            "exercise": "tcf-ss-a2-s16-co-1",
+            "question": 9,
+            "enonce": "Quelles informations pourra-t-on obtenir à l’ouverture ?"
+          }
+        ]
+      },
       "exercises": [
         "tcf-ss-a2-s16-co-1"
       ]
@@ -4619,28 +4202,18 @@
       "source_id": "9782090351958:056:3991f29fac0a",
       "candidate_sha256": "885ac13fb9b82571da98cb7cc4dc450b8394b5d0797b23d5403567bf6f9b8851",
       "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "tcf-ss-a2-s16-co-2"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/vie-quotidienne/vous-adorez-croissants-macaron-1.mp3",
-      "source_id": "grammar-import-20261104:file_000000006acc81f4acfc723bdbe53bb2",
-      "candidate_sha256": "a5c06f51bc6d6d323b13a4e108d4458ffe538adf7a78185bcda6362750086e83",
-      "reasons": [
-        "whisper_text_difference"
+        "parakeet_text_difference",
+        "parakeet_start_difference",
+        "ctc_numeric_difference"
       ],
       "editorial_decision": {
-        "status": "editorial_text_reviewed_waiting_final_checks",
-        "selected_text": "Vous adorez les croissants du Macaron doré ?\nVenez découvrir maintenant leurs tartes aux fruits, leurs gâteaux, leurs crêpes bretonnes, leurs macarons et leurs éclairs au café.\nVenez nombreux !",
-        "reason": "Le texte de la source préparée et celui du support sont équivalents ; questions et réponses précédemment auditées conservées. La validation du MP3 final reste distincte.",
+        "status": "editorial_review",
+        "selected_text": "Et tout de suite, le programme des concerts en région. L'événement le plus important est à Bercy, avec le concert de David Guetta samedi à 21h. Le prix de l'entrée est de 55€. Nous vous conseillons de réserver rapidement car il reste très peu de places. Nos auditeurs de Nice pourront profiter gratuitement d'un très beau concert de jazz ce soir sur la promenade des Anglais en face de l'hôtel Negresco. A Toulouse, le groupe de rock Dionysos, se produira sur la scène de la grande Halle jusqu'à vendredi soir. Venez nombreux les applaudir, ils sont devenus incontournables.",
+        "reason": "Reconnaissances finales comparées ; transcription, questions et corrigés relus. Noms non épelés : graphies éditoriales documentées.",
         "question_changes": []
       },
       "exercises": [
-        "tcf-ss-a1-s30-co-1"
+        "tcf-ss-a2-s16-co-2"
       ]
     },
     {
@@ -4682,7 +4255,9 @@
       "source_id": "grammar-import-20261104:file_000000008d8c81f4ac4702acec45b003",
       "candidate_sha256": "6e4cffc057e4d0cc182ccda722a9bf12c45d00defcbf9fe66396ceb74c566881",
       "reasons": [
-        "whisper_text_difference"
+        "whisper_text_difference",
+        "ctc_text_difference",
+        "ctc_start_difference"
       ],
       "editorial_decision": {
         "status": "editorial_text_reviewed_waiting_final_checks",
