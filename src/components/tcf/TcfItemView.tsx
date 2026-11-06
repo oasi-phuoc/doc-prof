@@ -175,6 +175,6 @@ export function TcfItemView({
     case 'vide':
       return <p className="tcf-vide">{tcf.message}</p>
     case 'informations':
-      return <TcfInformations />
+      return <TcfInformations niveau={tcf.niveau} />
   }
 }

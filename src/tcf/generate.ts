@@ -240,6 +240,42 @@ function cadreQuestionInner(
   }
 }
 
+/** Un cadre « Audio N » par groupe, questions numérotées dans le cadre. */
+function audioCadreItems(
+  ex: TcfExercise,
+  groups: ReadonlyArray<{ audio: number; questions: readonly TcfQuestion[] }>,
+  rng: Rng,
+  formModes?: Array<TcfTypeReponse | undefined>,
+): MathItem[] {
+  let globalIndex = 0
+  return groups.map((group) => {
+    const inner = group.questions.map((q, local) => {
+      globalIndex += 1
+      return cadreQuestionInner(
+        q,
+        local + 1,
+        rng,
+        formModes?.[globalIndex],
+        ex.competence,
+        ex.id,
+        globalIndex,
+      )
+    })
+    const answer = inner.map((q) => q.answer).filter(Boolean).join(' · ')
+    const points = inner.reduce((sum, q) => sum + (q.points ?? 0), 0) || undefined
+    return tcfItem(
+      {
+        kind: 'audio_cadre',
+        audioLabel: `Audio ${group.audio}`,
+        questions: inner,
+      },
+      true,
+      answer,
+      points,
+    )
+  })
+}
+
 /** Grouper les questions par n° d’audio (ordre d’apparition). */
 function groupQuestionsByAudio(questions: readonly TcfQuestion[]): Array<{
   audio: number
@@ -285,8 +321,7 @@ export function tcfExerciseItems(
     }
     case 'sms':
     case 'email':
-    case 'six_courts':
-    case 'complet': {
+    case 'six_courts': {
       // formModes indexés sur les items complets (0 = support) → questions à partir de 1.
       const framed = ex.type_exercice === 'six_courts'
       return [
@@ -296,39 +331,19 @@ export function tcfExerciseItems(
         ),
       ]
     }
+    case 'complet': {
+      // Un audio : toutes les questions dans le cadre « Audio 1 ».
+      // Plusieurs pistes : un cadre « Audio N » par piste, comme les trois moyens.
+      const audios = (ex.support.audios ?? []).map((src) => src.trim()).filter(Boolean)
+      const groups =
+        audios.length > 1
+          ? groupQuestionsByAudio(ex.questions)
+          : [{ audio: 1, questions: ex.questions }]
+      return [support(), ...audioCadreItems(ex, groups, rng, formModes)]
+    }
     case 'trois_moyens': {
       // Un cadre Audio N = 2 questions (3 cadres). formModes indexés sur les questions globales.
-      const groups = groupQuestionsByAudio(ex.questions)
-      let globalIndex = 0
-      return [
-        support(),
-        ...groups.map((group) => {
-          const inner = group.questions.map((q, local) => {
-            globalIndex += 1
-            return cadreQuestionInner(
-              q,
-              local + 1,
-              rng,
-              formModes?.[globalIndex],
-              ex.competence,
-              ex.id,
-              globalIndex,
-            )
-          })
-          const answer = inner.map((q) => q.answer).filter(Boolean).join(' · ')
-          const points = inner.reduce((sum, q) => sum + (q.points ?? 0), 0) || undefined
-          return tcfItem(
-            {
-              kind: 'audio_cadre',
-              audioLabel: `Audio ${group.audio}`,
-              questions: inner,
-            },
-            true,
-            answer,
-            points,
-          )
-        }),
-      ]
+      return [support(), ...audioCadreItems(ex, groupQuestionsByAudio(ex.questions), rng, formModes)]
     }
     case 'images_a_reconnaitre': {
       const images = melangerChoix(ex.images, rng, ex.melanger !== false).map((img) => ({

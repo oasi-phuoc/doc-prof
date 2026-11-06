@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState, type ReactNode } from 'react'
+import { SheetCopy } from '@/components/sheet-copy'
 import type { PreviewMode } from '@/math/types'
 import {
   associationAnswersFromExercise,
@@ -16,7 +17,7 @@ function Paragraphs({ text }: { text: string }) {
         .filter((p) => p.trim())
         .map((p, i) => (
           <p key={i} className="tcf-text">
-            {p}
+            <SheetCopy text={p} />
           </p>
         ))}
     </>
@@ -132,30 +133,35 @@ function MotsBanque({ mots }: { mots?: string[] }) {
   )
 }
 
+/** Document CE : noir et blanc, comme l’annonce et le courriel. */
+function ceDoc(children: ReactNode) {
+  return <div className="tcf-ce-doc">{children}</div>
+}
+
 /** Support de l’exercice : document à lire, audio, images, consignes de production. */
 export function TexteSupport({ exercise: ex, mode }: { exercise: TcfExercise; mode: PreviewMode }) {
   const banque = <MotsBanque mots={ex.mots_banque} />
   switch (ex.type_exercice) {
     case 'sms':
-      return (
+      return ceDoc(
         <>
           {banque}
           <SmsBubble from={ex.support.expediteur} text={ex.support.texte} />
-        </>
+        </>,
       )
     case 'email':
-      return (
+      return ceDoc(
         <>
           {banque}
           <EmailBox {...ex.support} />
-        </>
+        </>,
       )
     case 'annonce': {
       const association = parseAssociationDocuments(ex.support.texte)
       if (association) {
         const answers = associationAnswersFromExercise(ex as TcfCeAnnonce)
         const show = mode === 'answers'
-        return (
+        return ceDoc(
           <>
             {banque}
             <div className="tcf-assoc">
@@ -201,10 +207,10 @@ export function TexteSupport({ exercise: ex, mode }: { exercise: TcfExercise; mo
                 </tbody>
               </table>
             </div>
-          </>
+          </>,
         )
       }
-      return (
+      return ceDoc(
         <>
           {banque}
           <div className={`tcf-annonce${ex.support.presentation === 'image-bullets' ? ' is-image-bullets' : ''}`}>
@@ -220,7 +226,7 @@ export function TexteSupport({ exercise: ex, mode }: { exercise: TcfExercise; mo
               )}
             </div>
           </div>
-        </>
+        </>,
       )
     }
     case 'images_a_reconnaitre':
@@ -297,7 +303,11 @@ export function TexteSupport({ exercise: ex, mode }: { exercise: TcfExercise; mo
           ) : (
             <TcfImage src={ex.support.image} alt="Image de l’exercice" />
           )}
-          {ex.support.consigne.trim() ? <p className="tcf-question-text">{ex.support.consigne}</p> : null}
+          {ex.support.consigne.trim() ? (
+            <p className="tcf-question-text">
+              <SheetCopy text={ex.support.consigne} />
+            </p>
+          ) : null}
         </div>
       )
     }
@@ -305,18 +315,26 @@ export function TexteSupport({ exercise: ex, mode }: { exercise: TcfExercise; mo
       return (
         <div>
           <SmsBubble from={ex.support.expediteur} text={ex.support.sms_recu} />
-          <p className="tcf-question-text">{ex.support.consigne}</p>
+          <p className="tcf-question-text">
+            <SheetCopy text={ex.support.consigne} />
+          </p>
         </div>
       )
     case 'email_reponse':
       return (
         <div>
           <EmailBox {...ex.support.email_recu} />
-          <p className="tcf-question-text">{ex.support.consigne}</p>
+          <p className="tcf-question-text">
+            <SheetCopy text={ex.support.consigne} />
+          </p>
         </div>
       )
     case 'question_texte':
-      return <p className="tcf-question-text is-large">{ex.support.consigne}</p>
+      return (
+        <p className="tcf-question-text is-large">
+          <SheetCopy text={ex.support.consigne} />
+        </p>
+      )
     case 'entretien': {
       if (mode !== 'answers') return null
       const echanges =
@@ -355,27 +373,28 @@ export function TexteSupport({ exercise: ex, mode }: { exercise: TcfExercise; mo
       return (
         <div className="tcf-po tcf-trois-themes">
           {ex.support.themes.map((t, i) => (
-            <section key={i} className="tcf-po-theme-block">
-              <p className="tcf-po-theme">
-                Thème {i + 1} : {t.theme}
-              </p>
-              <ul className="tcf-po-images is-4">
-                {t.images.map((src, k) => (
-                  <li key={k}>
-                    <TcfImage src={src} alt="" />
-                  </li>
-                ))}
-              </ul>
-              {mode === 'answers' && t.exemples_questions.some((q) => q.trim()) ? (
-                <ul className="tcf-modele tcf-exemples is-two-cols">
-                  {t.exemples_questions
-                    .filter((q) => q.trim())
-                    .slice(0, 8)
-                    .map((q, k) => (
-                      <li key={k}>{q}</li>
-                    ))}
+            <section key={i} className="tcf-theme-frame">
+              <div className="tcf-theme-frame-head">Thème {i + 1}</div>
+              <div className="tcf-theme-frame-body">
+                <p className="tcf-po-theme">{t.theme}</p>
+                <ul className="tcf-po-images is-4">
+                  {t.images.map((src, k) => (
+                    <li key={k}>
+                      <TcfImage src={src} alt="" />
+                    </li>
+                  ))}
                 </ul>
-              ) : null}
+                {mode === 'answers' && t.exemples_questions.some((q) => q.trim()) ? (
+                  <ul className="tcf-modele tcf-exemples is-two-cols">
+                    {t.exemples_questions
+                      .filter((q) => q.trim())
+                      .slice(0, 8)
+                      .map((q, k) => (
+                        <li key={k}>{q}</li>
+                      ))}
+                  </ul>
+                ) : null}
+              </div>
             </section>
           ))}
         </div>

@@ -290,7 +290,7 @@ export const TCF_TYPES: readonly TcfTypeMeta[] = [
     typeExercice: 'trois_themes',
     label: '3 thèmes en images : poser des questions',
     description: 'Trois thèmes tirés au hasard, 4 images chacun : l’élève pose des questions à l’examinateur·trice.',
-    instruction: 'Voici trois thèmes. Choisissez un thème et posez des questions à l’examinateur sur ce sujet.',
+    instruction: 'Vous avez 3 thèmes. Posez une question par thème. Aidez-vous avec les images.',
     reponses: [],
   },
   {
@@ -519,7 +519,7 @@ export const TCF_EXERCISE_TYPES: ExerciseType[] = [
     id: TCF_CONSIGNES_TYPE,
     topic: TCF_INFO_TOPIC,
     label: 'Informations du test',
-    description: 'Page d’informations : les quatre parties du test.',
+    description: 'Page d’informations : quatre cadres (CE, CO, PE, PO), 25 pts chacun.',
     instruction: '',
     visual: 'texte',
     preferredColumns: 1,

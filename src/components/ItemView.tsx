@@ -251,6 +251,11 @@ export function ItemView({
             tcfPageBreakBefore ? 'on' : 'off'
           }`}
           aria-pressed={Boolean(tcfPageBreakBefore)}
+          aria-label={
+            tcfPageBreakBefore
+              ? 'Remettre cette question et les suivantes sur la page précédente'
+              : 'Passer cette question et les suivantes sur une nouvelle page'
+          }
           title={
             tcfPageBreakBefore
               ? 'Remettre cette question et les suivantes sur la page précédente'
@@ -258,7 +263,29 @@ export function ItemView({
           }
           onClick={onToggleTcfPageBreak}
         >
-          Page
+          <svg viewBox="0 0 16 16" width="12" height="12" aria-hidden>
+            <path
+              d="M4 2.5h5.2L12 5.3V13.5H4Z"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M9.2 2.5V5.3H12"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M6 8.2h4M6 10.8h4"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.4"
+              strokeLinecap="round"
+            />
+          </svg>
         </button>
       ) : null}
       {item.coordScene || hideNumber ? null : <div className="item-number">{index + 1}.</div>}

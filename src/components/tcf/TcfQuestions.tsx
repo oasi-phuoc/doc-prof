@@ -130,6 +130,7 @@ function Enonce({
   blankAnswers,
   blankStyle = 'line',
   showNumero = true,
+  trailing,
 }: {
   numero: number
   /** Remplace le numéro (ex. « a » → « a. »). */
@@ -144,6 +145,8 @@ function Enonce({
   blankStyle?: 'line' | 'dots'
   /** Afficher le numéro (désactivé pour six courts seul dans le cadre). */
   showNumero?: boolean
+  /** Icônes de format (cadre multi-questions) : à droite de l’énoncé. */
+  trailing?: ReactNode
 }) {
   const fills = answersForInlineBlanks(blankAnswers, countInlineBlanks(enonce))
   const fillBlank = blankStyle === 'line' && isLabelBlankPrompt(enonce)
@@ -156,8 +159,13 @@ function Enonce({
         {renderEnonceText(enonce, fills, blankStyle)}
       </span>
       <TcfPoints points={points} />
+      {trailing}
     </p>
   )
+}
+
+function AudioFrameHead({ label }: { label: string }) {
+  return <div className="tcf-audio-frame-head">{label}</div>
 }
 
 /** Énoncé au-dessus ; image(s) à gauche des réponses. */
@@ -181,35 +189,39 @@ function QuestionShell({
   const pics = (images?.length ? images : image ? [image] : [])
     .map((src) => src.trim())
     .filter(Boolean)
-  const frameClass = audioFrame ? ' is-audio-frame' : ''
-  const corner =
-    audioFrame && audioLabel ? <span className="tcf-audio-frame-tag">{audioLabel}</span> : null
-  if (!pics.length) {
-    return (
-      <div className={`tcf-question${frameClass}`}>
-        {corner}
-        {enonceSlot}
-        {children}
+  const framed = Boolean(audioFrame)
+  const head = framed && audioLabel ? <AudioFrameHead label={audioLabel} /> : null
+  const answers = pics.length ? (
+    <div className="tcf-q-beside">
+      <div className={`tcf-q-beside-images${pics.length > 1 ? ' is-multi' : ''}`}>
+        {pics.map((src, i) => (
+          <TcfImage
+            key={`${src}-${i}`}
+            src={src}
+            alt={`Image ${i + 1} de la question ${numero}`}
+            className="tcf-image is-question is-beside"
+          />
+        ))}
       </div>
-    )
-  }
-  return (
-    <div className={`tcf-question tcf-q-enonce-above${frameClass}`}>
-      {corner}
+      <div className="tcf-q-beside-body">{children}</div>
+    </div>
+  ) : (
+    children
+  )
+  const body = (
+    <>
       {enonceSlot}
-      <div className="tcf-q-beside">
-        <div className={`tcf-q-beside-images${pics.length > 1 ? ' is-multi' : ''}`}>
-          {pics.map((src, i) => (
-            <TcfImage
-              key={`${src}-${i}`}
-              src={src}
-              alt={`Image ${i + 1} de la question ${numero}`}
-              className="tcf-image is-question is-beside"
-            />
-          ))}
-        </div>
-        <div className="tcf-q-beside-body">{children}</div>
-      </div>
+      {answers}
+    </>
+  )
+  return (
+    <div
+      className={`tcf-question${pics.length ? ' tcf-q-enonce-above' : ''}${
+        framed ? ' is-audio-frame' : ''
+      }`}
+    >
+      {head}
+      {framed ? <div className="tcf-audio-frame-body">{body}</div> : body}
     </div>
   )
 }
@@ -230,6 +242,8 @@ type QuestionHead = {
   images?: string[]
   showNumero?: boolean
   blankStyle?: 'line' | 'dots'
+  /** Icônes Texte / Image / Phrase à droite de l’énoncé (cadre multi-questions). */
+  trailing?: ReactNode
 }
 
 export function QuestionQCMTexte({
@@ -375,17 +389,17 @@ export function AudioCadre({
 }) {
   return (
     <div className="tcf-question is-audio-frame is-audio-cadre">
-      <span className="tcf-audio-frame-tag">{audioLabel}</span>
-      <div className="tcf-audio-cadre-body">
+      <AudioFrameHead label={audioLabel} />
+      <div className="tcf-audio-frame-body tcf-audio-cadre-body">
         {questions.map((q) => {
           const formSelect = q.formSelect
           const active = formSelect?.active
-          const formIcons =
+          const forms =
             onSelectForm && formSelect && active && q.formModeIndex != null ? (
               <TcfFormMarginIcons
                 filled={formSelect.filled}
                 active={active}
-                layout="inline"
+                layout="cadre"
                 onSelect={(form) => onSelectForm(q.formModeIndex!, form)}
               />
             ) : null
@@ -438,7 +452,7 @@ export function AudioCadre({
             )
           return (
             <div key={q.numero} className="tcf-audio-cadre-q">
-              {formIcons}
+              {forms}
               {body}
             </div>
           )

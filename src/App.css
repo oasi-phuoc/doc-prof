@@ -1301,7 +1301,38 @@ html,body,#root{
 }
 /* TCF : « Page » dans la marge droite (cette question et les suivantes → page suivante). */
 .a4-frame .worksheet-sheet .draft-grid-chip-margin.tcf-page-chip{
-  left:calc(100% + 2px);right:auto
+  left:calc(100% + 2px);right:auto;
+  /* Même diamètre que les icônes de format (22 px). Icône centrée dans le cercle. */
+  display:inline-flex;align-items:center;justify-content:center;
+  width:22px;height:22px;max-width:none;padding:0;border-radius:999px;
+  border:1.5px solid var(--ink);background:transparent;color:var(--ink);
+  font-size:0;line-height:0;letter-spacing:0;text-transform:none;overflow:visible
+}
+.a4-frame .worksheet-sheet .draft-grid-chip-margin.tcf-page-chip svg{display:block;margin:0}
+.a4-frame .worksheet-sheet .draft-grid-chip-margin.tcf-page-chip.on{
+  border-color:var(--ink);background:var(--lavender);color:var(--ink);opacity:1
+}
+.a4-frame .worksheet-sheet .draft-grid-chip-margin.tcf-page-chip.off{opacity:1}
+/* Cadre Audio N : le haut des boutons = le haut du texte, sous le bandeau.
+   Le cadre garde le gap de .tcf-question (6 px) entre le bandeau et le corps,
+   plus la bordure : les boutons en marge doivent descendre d’autant. */
+.exercise-item.layout-tcf:has(.tcf-question.is-audio-frame){
+  --tcf-audio-head-h:8mm;
+  --tcf-audio-frame-gap:6px;
+  --tcf-audio-head-gap:6px;
+  --tcf-audio-frame-border:1.5px;
+  --tcf-audio-body-pad-y:2.5mm;
+  --tcf-audio-body-pad-x:3mm;
+  /* Demi-interligne de l’énoncé (.95em, line-height 1.3) : haut des lettres. */
+  --tcf-audio-text-nudge:calc(0.15 * 0.95 * 13pt * var(--app-font-scale, 1))
+}
+.exercise-item.layout-tcf:has(.tcf-question.is-audio-frame) > .draft-grid-chip-margin.tcf-margin-form-icons,
+.exercise-item.layout-tcf:has(.tcf-question.is-audio-frame) > .draft-grid-chip-margin.tcf-page-chip{
+  top:calc(
+    var(--ex-pad-y) + var(--tcf-audio-frame-gap) + var(--tcf-audio-frame-border)
+    + var(--tcf-audio-head-h) + var(--tcf-audio-head-gap) + var(--tcf-audio-body-pad-y)
+    + var(--tcf-audio-text-nudge)
+  )
 }
 .draft-pad{
   /* 24 colonnes × 5 lignes en 1 col ; on multiplie les lignes par le nombre de colonnes
@@ -2032,6 +2063,16 @@ html,body,#root{
 .exercise-heading p{margin:3px 0 0;font-size:calc(13pt * var(--app-font-scale, 1));line-height:1.45;text-align:justify;white-space:pre-line}
 /* Consigne pleine largeur (points dans la title-row, plus de retrait à droite). */
 .exercise-heading .exercise-instruction{width:100%;max-width:100%;text-align:justify;white-space:pre-line}
+/* Numérotation et puces : colonne du repère, texte au même taquet, retour sous le texte. */
+.sheet-copy-line{display:block;white-space:pre-line}
+.sheet-num-list{display:block;margin:0;white-space:normal}
+.sheet-num-li{
+  display:grid;grid-template-columns:2.4em minmax(0,1fr);column-gap:.45em;align-items:baseline
+}
+.sheet-num-marker{
+  text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap
+}
+.sheet-num-text{min-width:0;text-align:justify}
 .exercise-heading .exercise-instruction .tcf-bell-icon{
   display:inline-block;vertical-align:-0.2em;margin:0 0.15em;color:var(--purple)
 }
@@ -4180,6 +4221,28 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
   grid-template-columns:repeat(var(--sheet-columns, 1), minmax(0, 1fr))!important;
 }
 .tcf-text{margin:0 0 6px;text-align:justify;line-height:1.4;max-width:100%;overflow-wrap:break-word;word-wrap:break-word}
+/* CE : le document à lire est en noir et blanc (cadre noir, fond blanc, texte noir). */
+.tcf-ce-doc{color:var(--ink)}
+.tcf-ce-doc .tcf-text,
+.tcf-ce-doc .tcf-annonce,
+.tcf-ce-doc .tcf-annonce-title,
+.tcf-ce-doc .tcf-annonce-points,
+.tcf-ce-doc .tcf-email,
+.tcf-ce-doc .tcf-email-head,
+.tcf-ce-doc .tcf-sms-from,
+.tcf-ce-doc .tcf-assoc-doc-title,
+.tcf-ce-doc .tcf-assoc-people,
+.tcf-ce-doc .tcf-assoc-people-title{color:var(--ink)}
+.tcf-ce-doc .tcf-sms{max-width:100%}
+.tcf-ce-doc .tcf-sms-bubble{
+  border:1.5px solid var(--ink);border-radius:0;background:#fff;color:var(--ink)
+}
+.tcf-ce-doc .tcf-assoc-doc-num,
+.tcf-ce-doc .tcf-assoc-letter,
+.tcf-ce-doc .tcf-assoc-num-label{color:var(--ink)}
+.tcf-ce-doc .tcf-mots.is-theme .tcf-mot{
+  color:var(--ink);border-color:var(--ink);border-radius:0
+}
 .tcf-sms{max-width:78%;margin-bottom:6px}
 .tcf-sms-from{margin:0 0 4px;font-size:.85em;font-weight:700;color:var(--muted)}
 .tcf-sms-bubble{padding:8px 12px;border:1.5px solid var(--purple);border-radius:14px 14px 14px 3px;background:var(--lavender)}
@@ -4306,11 +4369,28 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 }
 .tcf-q-beside-images.is-multi .tcf-image.is-beside{width:26mm;height:20mm}
 .tcf-audio-tag{display:inline-block;margin-right:6px;padding:0 6px;border:1px solid var(--ink);border-radius:4px;font-size:.8em;font-weight:700}
-/* Six courts / trois moyens : cadres Audio N. */
+/* Six courts / trois moyens : cadres Audio N (bandeau thème + corps). */
 .tcf-question.is-audio-frame{
-  position:relative;margin-top:20px;padding:10px 8px 8px;
-  border:1.5px solid var(--ink);box-sizing:border-box;width:100%;max-width:100%
+  position:relative;margin-top:var(--tcf-audio-frame-gap, 6px);padding:0;overflow:hidden;
+  border:1.5px solid var(--purple);box-sizing:border-box;width:100%;max-width:100%;
+  display:flex;flex-direction:column;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact
 }
+.tcf-question.is-audio-frame.is-audio-cadre{overflow:visible}
+.tcf-audio-frame-head{
+  flex:0 0 auto;height:var(--tcf-audio-head-h, 8mm);box-sizing:border-box;
+  display:flex;align-items:center;padding:0 3mm;
+  background:var(--purple);color:#fff;
+  font-size:calc(9.5pt * var(--app-font-scale, 1));font-weight:800;
+  letter-spacing:.04em;text-transform:uppercase;line-height:1;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact
+}
+.tcf-audio-frame-body{
+  flex:1 1 auto;min-width:0;
+  padding:var(--tcf-audio-body-pad-y, 2.5mm) var(--tcf-audio-body-pad-x, 3mm) 3mm;
+  display:flex;flex-direction:column;gap:6px
+}
+/* Pastille flottante (situations / objets) — hors cadres Audio. */
 .tcf-audio-frame-tag{
   position:absolute;top:0;left:8px;right:auto;transform:translateY(-50%);
   display:inline-block;padding:0 7px;border:1.5px solid var(--purple);background:#fff;
@@ -4321,11 +4401,19 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-question.is-audio-frame .tcf-qcm-texte{gap:3px}
 .tcf-question.is-audio-frame .tcf-qcm-texte li{gap:6px;font-size:.92em;line-height:1.25}
 /* Trois moyens : plusieurs questions dans le même cadre. */
-.tcf-audio-cadre-body{display:flex;flex-direction:column;gap:8px}
-.tcf-audio-cadre-q{display:flex;flex-direction:column;gap:4px}
-.tcf-audio-cadre-q .tcf-inline-form-icons{align-self:flex-start;margin:0 0 2px}
-.tcf-question.is-audio-cadre .tcf-question{margin-top:0;border:0;padding:0}
-.tcf-question.is-audio-cadre .tcf-question .tcf-audio-frame-tag{display:none}
+.tcf-audio-cadre-body{gap:8px}
+.tcf-audio-cadre-q{position:relative;display:flex;flex-direction:column;gap:4px}
+/* Plusieurs questions : les 3 formats à gauche, alignés sur le haut des lettres. */
+.a4-frame .worksheet-sheet .tcf-audio-cadre-q > .draft-grid-chip-margin.tcf-margin-form-icons{
+  top:var(--tcf-audio-text-nudge, 0);left:auto;height:auto;
+  right:calc(100% + var(--tcf-audio-body-pad-x, 3mm) + 1.5px + var(--ex-pad-x) + 2px)
+}
+/* Icônes de format : à droite de la ligne d’énoncé (même hauteur). */
+.tcf-enonce .tcf-inline-form-icons{
+  flex:0 0 auto;align-self:center;margin:0 0 0 8px
+}
+.tcf-question.is-audio-cadre .tcf-question{margin-top:0;border:0;padding:0;overflow:visible}
+.tcf-question.is-audio-cadre .tcf-question.is-audio-frame{border:0}
 /* Paramètres : points CO Identiques / Différents. */
 .tcf-question-points{display:flex;flex-direction:column;gap:8px;margin:0 0 12px}
 .tcf-question-points>b,.tcf-question-points .mode-toggle-block>b{font-size:.92em}
@@ -4361,7 +4449,7 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-yn-option{display:inline-flex;align-items:center;gap:5px}
 .tcf-yn-label{font-weight:700;font-size:.95em}
 .tcf-score-note{margin:0;font-size:.85em;color:var(--muted)}
-.tcf-lignes{display:flex;flex-direction:column;gap:2px}
+.tcf-lignes{display:flex;flex-direction:column;gap:2px;padding-bottom:10px}
 .tcf-ligne{height:9mm;min-height:9mm}
 .tcf-ligne.is-plain{border-bottom-color:transparent}
 .tcf-ligne.filled.is-plain{color:var(--purple);font-weight:600}
@@ -4411,9 +4499,9 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-champ.is-adresse{align-items:start}
 .tcf-champ.is-adresse .tcf-champ-label{padding-top:1.5mm}
 .tcf-champ-label{
-  width:100%;max-width:none;min-width:0;font-weight:600;white-space:normal;line-height:1.25
+  width:100%;max-width:none;min-width:0;font-weight:600;white-space:normal;line-height:1.25;
+  font-size:inherit
 }
-.tcf-formulaire.is-letter-grid .tcf-champ-label{font-size:.92em;line-height:1.2}
 .tcf-champ-line{min-width:0;min-height:7mm;max-width:100%;width:100%}
 .tcf-champ-line.is-date{
   width:auto;max-width:100%;min-width:0;border-bottom:0;
@@ -4450,7 +4538,7 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
   display:inline-flex;align-items:center;justify-content:center;
   width:100%;min-width:0;max-width:none;height:var(--tcf-box,6mm);
   border:1.1px solid var(--ink);box-sizing:border-box;
-  font-weight:700;color:var(--purple);line-height:1;overflow:hidden
+  font-size:inherit;font-weight:700;color:var(--purple);line-height:1;overflow:hidden
 }
 .tcf-champ-line.is-boxes{
   border-bottom:0;display:flex;align-items:center;justify-content:stretch;
@@ -4480,7 +4568,7 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 }
 .tcf-champ-options{display:flex;flex-wrap:wrap;gap:6px 16px}
 .tcf-champ-option{display:inline-flex;align-items:center;gap:6px}
-.tcf-inline-form-icons{display:inline-flex;align-items:center;gap:4px;margin:0 0 1px}
+.tcf-inline-form-icons{display:inline-flex;align-items:center;gap:4px;margin:0}
 .tcf-inline-form-icons .tcf-form-icon-btn{width:22px;height:22px}
 .tcf-dialogue{display:flex;flex-direction:column;gap:6px}
 .tcf-dialogue.is-fill{flex:1 1 auto;min-height:0}
@@ -4588,15 +4676,36 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-po-images.is-1{grid-template-columns:1fr}
 .tcf-po-images.is-1 .tcf-image{height:60mm}
 .tcf-trois-themes{
-  gap:6mm;flex:1 1 auto;min-height:0;
+  gap:4mm;flex:0 0 auto;min-height:0;
   display:flex;flex-direction:column;justify-content:flex-start
 }
-.tcf-po-theme-block{
-  display:flex;flex-direction:column;gap:4px;justify-content:flex-start;
-  flex:0 0 auto;min-height:0;padding:50px 4mm;border:1.5px solid var(--ink);box-sizing:border-box
+/* Même cadre que les audios CO : bandeau Thème N, nom, images bordées. */
+.tcf-theme-frame{
+  display:flex;flex-direction:column;flex:0 0 auto;min-width:0;width:100%;
+  border:1.5px solid var(--purple);box-sizing:border-box;overflow:hidden;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact
 }
-.tcf-po-theme-block .tcf-po-theme{margin-bottom:26px}
-.tcf-trois-themes .tcf-po-images .tcf-image{height:28mm;object-fit:contain}
+.tcf-theme-frame-head{
+  flex:0 0 auto;height:var(--tcf-audio-head-h, 8mm);box-sizing:border-box;
+  display:flex;align-items:center;padding:0 3mm;
+  background:var(--purple);color:#fff;
+  font-size:calc(9.5pt * var(--app-font-scale, 1));font-weight:800;
+  letter-spacing:.04em;text-transform:uppercase;line-height:1;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact
+}
+.tcf-theme-frame-body{
+  display:flex;flex-direction:column;gap:3mm;min-width:0;
+  padding:var(--tcf-audio-body-pad-y, 2.5mm) var(--tcf-audio-body-pad-x, 3mm) 3mm
+}
+.tcf-theme-frame .tcf-po-theme{
+  margin:0;color:var(--ink);font-weight:700;text-align:left
+}
+.tcf-trois-themes .tcf-po-images{gap:3mm}
+.tcf-trois-themes .tcf-po-images .tcf-image{
+  height:28mm;object-fit:contain;background:#fff;
+  border:2px solid var(--purple);box-sizing:border-box;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact
+}
 .tcf-exemples{margin:2px 0 0;padding:4px 10px 4px 2em;font-size:.88em}
 .tcf-exemples.is-two-cols{columns:2;column-gap:8mm}
 .tcf-exemples.is-two-cols li{break-inside:avoid}
@@ -4720,16 +4829,49 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-mail-label{text-align:center;font-size:calc(8.5pt * var(--app-font-scale, 1));padding-bottom:.5mm}
 .tcf-mail-value{min-height:5.5mm;display:flex;align-items:flex-end;padding:0 1mm .5mm;border-bottom:1px solid var(--ink);font-size:calc(9.5pt * var(--app-font-scale, 1))}
 
-/* —— TCF : page 1 Informations (icônes en couleur du thème) —— */
-.tcf-info{display:flex;flex-direction:column;gap:10px}
-.tcf-info-lead{margin:4px 0 0;font-weight:700}
-.tcf-info-parties{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
-.tcf-info-partie{display:flex;align-items:flex-start;gap:14px}
-.tcf-competence-icon{flex:0 0 auto;display:block;width:15mm;height:15mm;background:var(--purple);-webkit-mask:no-repeat center/contain;mask:no-repeat center/contain;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-.tcf-info-partie-title{margin:0 0 2px;font-size:1.05em}
-.tcf-info-partie-title b{color:var(--purple)}
-.tcf-info-partie-text{margin:0;text-align:justify;line-height:1.35}
-.tcf-info-partie-how{margin:2px 0 0;font-size:.85em;color:var(--muted);font-style:italic}
+/* —— TCF : page 1 Informations (cadres colorés, 4 parties) —— */
+.sheet-body:has(.tcf-info)>.exercise-block{flex:1 1 auto;min-height:0;display:flex;flex-direction:column}
+.sheet-body:has(.tcf-info) .exercise-grid{flex:1 1 auto;display:flex;flex-direction:column;grid-auto-rows:unset}
+.sheet-body:has(.tcf-info) .exercise-item.layout-tcf{flex:1 1 auto;min-height:0;display:flex;flex-direction:column}
+.tcf-info{display:flex;flex-direction:column;gap:0;flex:1;min-height:0;width:100%}
+.tcf-info-parties{
+  list-style:none;margin:0;padding:0;flex:1;min-height:0;
+  display:flex;flex-direction:column;gap:4mm
+}
+.tcf-info-partie{
+  flex:1;min-height:0;
+  display:grid;
+  grid-template-columns:14mm 18mm 1fr 28mm;
+  align-items:center;gap:3.5mm;
+  padding:3.5mm 4mm;
+  border:1.5px solid color-mix(in srgb,var(--purple) 45%,var(--line));
+  border-radius:3mm;
+  background:color-mix(in srgb,var(--purple) 8%,#fff);
+  -webkit-print-color-adjust:exact;print-color-adjust:exact
+}
+.tcf-info-num{
+  display:flex;align-items:center;justify-content:center;
+  font-size:calc(28pt * var(--app-font-scale, 1));font-weight:800;line-height:1;
+  color:var(--purple);font-variant-numeric:tabular-nums
+}
+.tcf-competence-icon{
+  flex:0 0 auto;display:block;width:16mm;height:16mm;justify-self:center;
+  background:var(--purple);-webkit-mask:no-repeat center/contain;mask:no-repeat center/contain;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact
+}
+.tcf-info-texte{min-width:0;display:flex;flex-direction:column;gap:1mm}
+.tcf-info-partie-title{margin:0;font-size:calc(13pt * var(--app-font-scale, 1));font-weight:700;color:var(--ink)}
+.tcf-info-partie-slogan{margin:0;font-size:calc(11pt * var(--app-font-scale, 1));line-height:1.25}
+.tcf-info-partie-count{margin:0;font-size:calc(10pt * var(--app-font-scale, 1));color:var(--muted)}
+.tcf-info-points{
+  display:flex;align-items:center;justify-content:center;align-self:stretch;
+  margin:-3.5mm -4mm -3.5mm 0;padding:0 3mm;
+  border-radius:0 2.2mm 2.2mm 0;
+  background:var(--purple);color:#fff;
+  font-size:calc(12pt * var(--app-font-scale, 1));font-weight:800;letter-spacing:.02em;
+  white-space:nowrap;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact
+}
 /* —— TCF : panneau admin —— */
 .tcf-editor{gap:8px}
 .tcf-bank-question-list{

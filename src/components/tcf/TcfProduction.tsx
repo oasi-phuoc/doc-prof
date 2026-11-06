@@ -3,6 +3,7 @@ import { isTcfBaremeConsigne } from '@/tcf/formes'
 import type { TcfChampFormulaire, TcfMotImage, TcfNbMots, TcfReplique } from '@/tcf/types'
 import { countInlineBlanks } from '@/tcf/inline-blank'
 import { LignesReponse, renderEnonceText } from './TcfQuestions'
+import { SheetCopy } from '@/components/sheet-copy'
 import { TcfImage } from './TexteSupport'
 
 function nbMotsLabel({ min = 0, max = 0 }: TcfNbMots): string {
@@ -70,7 +71,11 @@ export function ZoneEcriture({
   const fillPage = cadre === 'message' || cadre === 'email'
   return (
     <div className={`tcf-ecriture${fillPage ? ' is-fill' : ''}`}>
-      {showConsigne ? <p className="tcf-consigne-supp">{consigneSupplementaire}</p> : null}
+      {showConsigne ? (
+        <p className="tcf-consigne-supp">
+          <SheetCopy text={consigneSupplementaire ?? ''} />
+        </p>
+      ) : null}
       {cadre === 'message' ? (
         <div className="tcf-phone is-fill">
           <span className="tcf-phone-speaker" aria-hidden />
@@ -342,7 +347,11 @@ export function DialoguePO({
   if (bulles) {
     return (
       <div className="tcf-dialogue is-fill is-chat">
-        {situation.trim() ? <p className="tcf-question-text">{situation}</p> : null}
+        {situation.trim() ? (
+          <p className="tcf-question-text">
+            <SheetCopy text={situation} />
+          </p>
+        ) : null}
         <ol className="tcf-chat">
           {repliques.map((r, i) => (
             <li key={i} className={`tcf-chat-row is-${r.locuteur}`}>
@@ -367,7 +376,11 @@ export function DialoguePO({
   }
   return (
     <div className="tcf-dialogue">
-      {situation.trim() ? <p className="tcf-question-text">{situation}</p> : null}
+      {situation.trim() ? (
+          <p className="tcf-question-text">
+            <SheetCopy text={situation} />
+          </p>
+        ) : null}
       {auCorrige && !show ? null : (
         <ol className={`tcf-repliques${auCorrige ? ' is-compact' : ''}`}>
           {repliques.map((r, i) => (
