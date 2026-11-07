@@ -241,7 +241,9 @@ export function ResultPanel({
       onToggleDraftGrid={toggleDraftGrid}
       interactiveOralModes={isOralComprehensionExercise(activeBlock.exerciseType)}
       onCycleOralAnswerMode={(itemIndex, block) => cycleOralAnswerMode(itemIndex, block, index)}
-      interactiveTcfOptions={isTcf || Boolean(isGrammaireExercise)}
+      interactiveTcfOptions={
+        (isTcf || Boolean(isGrammaireExercise)) && activeBlock.tcfExercise == null
+      }
       interactiveTcfPageBreaks={
         isTcf || pageExerciseBlocks.some((block) => isGrammarReadingType(block.exerciseType))
       }
@@ -481,7 +483,9 @@ export function ResultPanel({
                           onToggleDraftGrid={toggleDraftGrid}
                           interactiveOralModes={isOralComprehensionExercise(activeBlock.exerciseType)}
                           onCycleOralAnswerMode={cycleOralAnswerMode}
-                          interactiveTcfOptions={isTcf || Boolean(isGrammaireExercise)}
+                          interactiveTcfOptions={
+                            (isTcf || Boolean(isGrammaireExercise)) && activeBlock.tcfExercise == null
+                          }
                           interactiveTcfPageBreaks={isTcf || pageExerciseBlocks.some(block => isGrammarReadingType(block.exerciseType))}
                           onSelectTcfForm={selectTcfForm}
                           onSelectTcfFormForExercise={selectTcfFormForExercise}
