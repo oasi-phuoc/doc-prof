@@ -401,18 +401,6 @@ function SupportEditor({
                     onRemove={() => setQuestions(questions.filter((_, index) => index !== questionIndex))}
                   />
                 ))}
-                <button
-                  type="button"
-                  className="tcf-btn"
-                  onClick={() =>
-                    setQuestions([
-                      ...questions,
-                      { ...emptyTcfQuestion(tcfDefaultTypeReponse(ex.competence)), audio: audioNumber },
-                    ])
-                  }
-                >
-                  + ajouter une question à l’audio {audioNumber}
-                </button>
               </fieldset>
             )
           })}
@@ -1465,59 +1453,63 @@ export function TcfExerciseEditor({
             </>
           ) : null}
 
-          {validation && validation.errors.length > 0 ? (
-            <ul className="tcf-errors" role="alert">
-              {validation.errors.map((e, i) => (
-                <li key={i}>{e}</li>
-              ))}
-            </ul>
-          ) : (
-            <p className="tcf-ok">Exercice valide.</p>
-          )}
-          {validation && validation.warnings.length > 0 ? (
-            <ul className="tcf-warnings">
-              {validation.warnings.map((w, i) => (
-                <li key={i}>{w}</li>
-              ))}
-            </ul>
+          {!isSixCourts ? (
+            <>
+              {validation && validation.errors.length > 0 ? (
+                <ul className="tcf-errors" role="alert">
+                  {validation.errors.map((e, i) => (
+                    <li key={i}>{e}</li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="tcf-ok">Exercice valide.</p>
+              )}
+              {validation && validation.warnings.length > 0 ? (
+                <ul className="tcf-warnings">
+                  {validation.warnings.map((w, i) => (
+                    <li key={i}>{w}</li>
+                  ))}
+                </ul>
+              ) : null}
+              {mediaErrors ? (
+                mediaErrors.length > 0 ? (
+                  <ul className="tcf-errors" role="alert">
+                    {mediaErrors.map((e, i) => (
+                      <li key={i}>{e}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="tcf-ok">Tous les fichiers référencés existent.</p>
+                )
+              ) : null}
+              <div className="tcf-row">
+                <button type="button" className="tcf-btn" onClick={() => void checkTcfMedia(exercise).then((errors) => setMediaCheck({ for: exercise, errors }))}>
+                  Vérifier les fichiers
+                </button>
+                <button
+                  type="button"
+                  className="tcf-btn"
+                  disabled={(validation?.errors.length ?? 0) > 0}
+                  onClick={() => void exportJson('copy')}
+                >
+                  {copied ? 'JSON copié' : 'Copier le JSON'}
+                </button>
+                <button
+                  type="button"
+                  className="tcf-btn"
+                  disabled={(validation?.errors.length ?? 0) > 0}
+                  onClick={() => void exportJson('download')}
+                >
+                  Télécharger
+                </button>
+              </div>
+              <small className="muted">
+                {isGrammaire
+                  ? 'L’export est bloqué tant qu’il reste des erreurs.'
+                  : `L’export est bloqué tant qu’il reste des erreurs. Collez le JSON dans src/tcf/content/${niveau.toLowerCase()}/${slot?.competence.toLowerCase()}.json.`}
+              </small>
+            </>
           ) : null}
-          {mediaErrors ? (
-            mediaErrors.length > 0 ? (
-              <ul className="tcf-errors" role="alert">
-                {mediaErrors.map((e, i) => (
-                  <li key={i}>{e}</li>
-                ))}
-              </ul>
-            ) : (
-              <p className="tcf-ok">Tous les fichiers référencés existent.</p>
-            )
-          ) : null}
-          <div className="tcf-row">
-            <button type="button" className="tcf-btn" onClick={() => void checkTcfMedia(exercise).then((errors) => setMediaCheck({ for: exercise, errors }))}>
-              Vérifier les fichiers
-            </button>
-            <button
-              type="button"
-              className="tcf-btn"
-              disabled={(validation?.errors.length ?? 0) > 0}
-              onClick={() => void exportJson('copy')}
-            >
-              {copied ? 'JSON copié' : 'Copier le JSON'}
-            </button>
-            <button
-              type="button"
-              className="tcf-btn"
-              disabled={(validation?.errors.length ?? 0) > 0}
-              onClick={() => void exportJson('download')}
-            >
-              Télécharger
-            </button>
-          </div>
-          <small className="muted">
-            {isGrammaire
-              ? 'L’export est bloqué tant qu’il reste des erreurs.'
-              : `L’export est bloqué tant qu’il reste des erreurs. Collez le JSON dans src/tcf/content/${niveau.toLowerCase()}/${slot?.competence.toLowerCase()}.json.`}
-          </small>
       </>
     </div>
   )
