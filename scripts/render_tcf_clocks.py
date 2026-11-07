@@ -54,7 +54,7 @@ def capsule(draw, angle, length, width):
         draw.ellipse((x-radius, y-radius, x+radius, y+radius), fill=MODEL['color'])
 
 
-def render(hour=0, minute=0, elapsed=None, unit='min'):
+def render(hour=0, minute=0, elapsed=None, unit='min', unit_left=False):
     image = Image.open(BASE).convert('RGB').resize(
         (SIZE[0] * SCALE, SIZE[1] * SCALE), Image.Resampling.LANCZOS)
     draw = ImageDraw.Draw(image)
@@ -82,7 +82,7 @@ def render(hour=0, minute=0, elapsed=None, unit='min'):
         capsule(draw, hour_angle, MODEL['hour_length'], MODEL['hour_width'])
     else:
         minute_angle = elapsed * 6
-        draw.text((cx, (CENTER[1]-145)*SCALE), unit,
+        draw.text((cx-(100*SCALE if unit_left else 0), (CENTER[1]-145)*SCALE), unit,
                   font=ImageFont.truetype(FONT, 36*SCALE), fill='#5c3b35', anchor='mm')
     capsule(draw, minute_angle, MODEL['minute_length'], MODEL['minute_width'])
     radius = MODEL['pivot_radius'] * SCALE
@@ -106,8 +106,8 @@ def inventory():
                        ('minuit-numerique', 0), ('réveil-numérique', 7)]:
         targets.append(dict(path=f'/lib/images/vocabulaire/heure-horloge/{name}.webp', hour=hour, minute=0))
     targets.append(dict(path='/lib/images/tcf/qcm-audit/vocab-reveil.webp', hour=7, minute=0, alarm=True))
-    targets.extend(dict(path=f'/lib/images/tcf/qcm-audit/duree-{m}-minutes.webp', elapsed_minutes=m) for m in (5, 10, 15, 20, 30, 45, 60))
-    targets.extend(dict(path=f'/lib/images/tcf/qcm-audit/duree-{m}-secondes.webp', elapsed_seconds=m) for m in (3, 30))
+    targets.extend(dict(path=f'/lib/images/tcf/qcm-audit/duree-{m}-minutes.webp', elapsed_minutes=m, unit_left=True) for m in (1, 2, 2.5, 5, 10, 14, 15, 20, 25, 30, 40, 45, 60))
+    targets.extend(dict(path=f'/lib/images/tcf/qcm-audit/duree-{m}-secondes.webp', elapsed_seconds=m, unit_left=True) for m in (3, 5, 10, 30, 60))
     assert len(targets) == len({r['path'] for r in targets})
     return targets
 
@@ -128,7 +128,7 @@ def main():
             if entry['path'] in by_path:
                 entry['status'] = 'visually_reviewed'
                 entry['style_review']['status'] = 'aligned'
-        report['visual_review'] = dict(status='completed', method='Inspection des planches, des trois durées rouges et du réveil ; angles vérifiés par calcul.')
+        report['visual_review'] = dict(status='completed', method='Inspection visuelle des cadrans, minuteurs rouges et du réveil ; unités dégagées des aiguilles et angles vérifiés par calcul.')
         MANIFEST.write_text(json.dumps(manifest, ensure_ascii=False, indent=2)+'\n')
         REPORT.write_text(json.dumps(report, ensure_ascii=False, indent=2)+'\n')
         print(f"{len(by_path)} cadrans approuvés après revue visuelle.")
@@ -158,6 +158,7 @@ def main():
         path = PUBLIC / target['path'].lstrip('/')
         old = prior.get(target['path'])
         if (old and path.exists() and sha(path) == old['sha256']
+                and all(old.get(k)==v for k,v in target.items())
                 and previous.get('hand_model') == MODEL
                 and previous.get('base_sha256') == sha(BASE)):
             results.append(old)
@@ -177,7 +178,7 @@ def main():
         else:
             image = render(target.get('hour', 0), target.get('minute', 0),
                            target.get('elapsed_minutes', target.get('elapsed_seconds')),
-                           'sec' if 'elapsed_seconds' in target else 'min')
+                           'sec' if 'elapsed_seconds' in target else 'min', target.get('unit_left',False))
             if image.size != dimensions:
                 fitted = ImageOps.contain(image, dimensions, Image.Resampling.LANCZOS)
                 image = Image.new('RGB', dimensions, '#fff5df')
@@ -215,6 +216,8 @@ def main():
                   base='/'+str(BASE.relative_to(PUBLIC)), base_sha256=sha(BASE), hand_model=MODEL,
                   formulas=dict(hour='30*(hour%12)+0.5*minute', minute='6*minute'),
                   scope='Cadrans TCF, quatre alias historiques du vocabulaire et réveil bleu ; les documents horaires restent distincts.', images=results)
+    if previous.get('base_generation'):report['base_generation']=previous['base_generation']
+    report['last_extension']='2026-11-07 : neuf minuteurs supplémentaires pour la revue des 763 questions.'
     REPORT.write_text(json.dumps(report, ensure_ascii=False, indent=2)+'\n')
     print(f"{len(results)} cadrans rendus ; modèle d’aiguilles unique.")
 

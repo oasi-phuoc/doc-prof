@@ -46,7 +46,9 @@ for bank in BANKS:
             key=f"{ex['id']}#{i}";p=plans[key]
             if not q.get('formes',{}).get('qcm_image'):
                 source,audio=source_for(ex,q)
-                status=text_status(q)
+                decision=p.get('review_763_decision','')
+                status=('reviewed_visual_artwork_pending' if decision.startswith('artwork_needed') else
+                        decision if decision.startswith('keep_text') else text_status(q))
                 item=dict(key=key,bank=relative,exercise=ex['id'],question=i,enonce=q['enonce'],labels=[c['texte'] for c in text_form(q)['choix']],status=status,source_sha256=digest(source),audio=audio)
                 text_tasks.append(item)
             if ex['id'] in priorities:

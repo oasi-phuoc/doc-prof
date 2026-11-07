@@ -80,6 +80,24 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Un hypermarché"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/co306-supermarche-dessine.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/co834-boulangerie-dessinee.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/co834-pharmacie-dessinee.webp"
+              }
+            ]
           }
         }
       },
