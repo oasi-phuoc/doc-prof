@@ -342,35 +342,14 @@ export function TexteSupport({ exercise: ex, mode, ceFormat = 'texte' }: { exerc
       )
     case 'entretien': {
       if (mode !== 'answers') return null
-      const echanges =
-        ex.support.echanges?.filter((e) => e.question.trim() && e.reponse.trim()) ?? []
-      if (echanges.length) {
-        return (
-          <div className="tcf-modele tcf-entretien-dialogue">
-            <b>Exemple d’entretien</b>
-            <ol>
-              {echanges.map((e, i) => (
-                <li key={i}>
-                  <p>
-                    <b>Examinateur·trice :</b> {e.question}
-                  </p>
-                  <p>
-                    <b>Candidat·e :</b> {e.reponse}
-                  </p>
-                </li>
-              ))}
-            </ol>
-          </div>
-        )
-      }
       return (
         <div className="tcf-modele">
-          <b>Questions possibles de l’examinateur :</b>
-          <ul className="tcf-entretien-questions">
+          <b>Questions possibles :</b>
+          <ol className="tcf-entretien-questions">
             {ex.support.questions.filter((q) => q.trim()).map((q, i) => (
               <li key={i}>{q}</li>
             ))}
-          </ul>
+          </ol>
         </div>
       )
     }
