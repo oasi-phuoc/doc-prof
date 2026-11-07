@@ -352,7 +352,71 @@ function SupportEditor({
           </div>
         </>
       )
-    case 'six_courts':
+    case 'six_courts': {
+      const questions = ex.questions.map((question, index) => ({
+        ...question,
+        audio: question.audio ?? Math.min(index + 1, ex.support.audios.length),
+      }))
+      const reponses = TCF_TYPES.find((type) => type.typeExercice === 'six_courts')?.reponses ?? []
+      const setQuestions = (next: typeof questions) =>
+        set({
+          ...ex,
+          questions: [...next].sort((a, b) => (a.audio ?? 1) - (b.audio ?? 1)),
+        })
+
+      return (
+        <div className="tcf-six-courts-audios">
+          {ex.support.audios.map((audio, audioIndex) => {
+            const audioNumber = audioIndex + 1
+            const group = questions.flatMap((question, questionIndex) =>
+              question.audio === audioNumber ? [{ question, questionIndex }] : [],
+            )
+            return (
+              <fieldset className="tcf-six-courts-audio" key={audioIndex}>
+                <legend>Audio {audioNumber}</legend>
+                <AudioField
+                  label={`Piste audio ${audioNumber}`}
+                  value={audio}
+                  onChange={(next) =>
+                    set(withSupport(ex, { audios: ex.support.audios.map((source, index) => (index === audioIndex ? next : source)) }))
+                  }
+                  bankEntries={audioBank}
+                  onPickFromBank={(entry) =>
+                    set(applyAudioSlotFromEntry({ ...ex, questions }, entry, audioIndex))
+                  }
+                />
+                {group.map(({ question, questionIndex }) => (
+                  <QuestionEditor
+                    key={questionIndex}
+                    index={questionIndex}
+                    question={question}
+                    reponses={reponses}
+                    onChange={(next) => setQuestions(
+                      questions.map((current, index) =>
+                        index === questionIndex ? { ...next, audio: audioNumber } : current,
+                      ),
+                    )}
+                    onRemove={() => setQuestions(questions.filter((_, index) => index !== questionIndex))}
+                  />
+                ))}
+                <button
+                  type="button"
+                  className="tcf-btn"
+                  onClick={() =>
+                    setQuestions([
+                      ...questions,
+                      { ...emptyTcfQuestion(tcfDefaultTypeReponse(ex.competence)), audio: audioNumber },
+                    ])
+                  }
+                >
+                  + ajouter une question à l’audio {audioNumber}
+                </button>
+              </fieldset>
+            )
+          })}
+        </div>
+      )
+    }
     case 'trois_moyens':
       return (
         <>
@@ -1368,7 +1432,7 @@ export function TcfExerciseEditor({
               </button>
             </>
           ) : null}
-          {usesQuestions && !isCeBankPicker ? (
+          {usesQuestions && !isCeBankPicker && !isSixCourts ? (
             <>
               <b>Questions ({exercise.questions.length})</b>
               {exercise.questions.map((q, i) => (

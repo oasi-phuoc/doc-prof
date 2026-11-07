@@ -5027,6 +5027,12 @@ textarea.pill-input,
 .tcf-audio-row{display:flex;align-items:center;gap:6px}
 .tcf-audio-row>.pill-input{flex:1;min-width:0}
 .tcf-question-editor{display:flex;flex-direction:column;gap:6px;margin:0;padding:8px;border:1px solid var(--line);border-radius:8px}
+.tcf-six-courts-audios{display:flex;flex-direction:column;gap:10px;min-width:0}
+.tcf-six-courts-audio{
+  display:flex;flex-direction:column;gap:8px;min-width:0;margin:0;padding:10px;
+  border:1px solid var(--line);border-radius:10px
+}
+.tcf-six-courts-audio legend{padding:0 5px;font-weight:800}
 .tcf-question-editor legend{
   display:flex;align-items:center;flex-wrap:wrap;gap:6px 8px;width:100%;
   font-size:calc(12px * var(--app-font-scale, 1));font-weight:700;box-sizing:border-box
