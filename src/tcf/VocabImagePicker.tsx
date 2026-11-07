@@ -1,4 +1,4 @@
-import CE_POSTERS from './content/ce-posters.json'
+import { CE_ARTWORKS } from './ce-art'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { VOCAB_IMAGE_THEMES } from '@/jeux/vocab-images'
 import { tcfImageSrc } from './media'
@@ -15,7 +15,7 @@ function norm(s: string) {
 
 const ALL_WORDS: VocabHit[] = [
   ...VOCAB_IMAGE_THEMES.flatMap((theme) => theme.words.map((word) => ({ label: word.label, src: word.src, theme: theme.label }))),
-  ...CE_POSTERS.map((poster) => ({ label: poster.label, src: poster.src, theme: 'Affiches CE — TCF CSC' })),
+  ...CE_ARTWORKS.map((poster) => ({ label: poster.label, src: poster.src, theme: 'Affiches CE — TCF CSC' })),
 ]
 
 /**

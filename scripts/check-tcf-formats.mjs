@@ -2,11 +2,11 @@ import {createServer} from 'vite';
 import {fileURLToPath} from 'node:url';
 import {readFileSync,existsSync} from 'node:fs';
 import assert from 'node:assert/strict';
-import {createHash} from 'node:crypto';
 const root=fileURLToPath(new URL('../', import.meta.url)).replace(/\/$/, '');
-const server=await createServer({root,server:{middlewareMode:true},appType:'custom'});
+const server=await createServer({root,server:{middlewareMode:true,hmr:false,ws:false},appType:'custom'});
 try {
- const {ceIllustratedPassages}=await server.ssrLoadModule('/src/tcf/ce-illustrations.ts');
+ const {CE_ARTWORKS,ceArtKey,ceArtFor}=await server.ssrLoadModule('/src/tcf/ce-art.ts');
+ const {tcfCeTagsOf}=await server.ssrLoadModule('/src/tcf/content-tags.ts');
  const {TexteSupport}=await server.ssrLoadModule('/src/components/tcf/TexteSupport.tsx');
  const {tryGenerateTcfBlock,tcfConsignesPage}=await server.ssrLoadModule('/src/tcf/generate.ts');
  const {buildWorksheets}=await server.ssrLoadModule('/src/math/generate.ts');
@@ -15,45 +15,91 @@ try {
  const {createElement:h}=await import('react');
  const {renderToStaticMarkup:render}=await import('react-dom/server');
  const exercises=JSON.parse(readFileSync(`${root}/src/tcf/content/a0-a1/ce.json`));
- const norm=s=>s.replace(/\s+/g,' ').trim();
+ const formats=JSON.parse(readFileSync(`${root}/src/tcf/content/ce-document-formats.json`));
+ const plan=JSON.parse(readFileSync(`${root}/docs/tcf/ce-art-prompts.json`));
+ const {WorksheetSheet}=await server.ssrLoadModule('/src/components/generator/WorksheetSheet.tsx');
+ const {DEFAULT_INSTITUTIONAL}=await server.ssrLoadModule('/src/components/math/PrintDocumentChrome.tsx');
+ const {isAssociationAnnonce}=await server.ssrLoadModule('/src/tcf/association-documents.ts');
+ const {blockPointsTotal}=await server.ssrLoadModule('/src/tpm/test.ts');
+ assert.equal(new Set(CE_ARTWORKS.map(p=>p.id)).size,CE_ARTWORKS.length);
+ assert.equal(new Set(CE_ARTWORKS.map(p=>p.src)).size,CE_ARTWORKS.length);
+ assert.equal(Object.keys(formats).length,exercises.length);
+ assert.equal(plan.documents.length,exercises.length);
+ assert(!/€|\beuros?\b|\bfrancs?(?: suisses?)?\b/i.test(JSON.stringify(exercises)));
+ for(const ex of exercises)for(const q of ex.questions){
+  const choices=q.choix||q.formes?.qcm_texte?.choix;
+  if(!choices||!choices.every(c=>typeof c.texte==='string'))continue;
+  assert.equal(choices.filter(c=>c.correct).length,1,ex.id+': '+q.enonce);
+  const labels=choices.map(c=>c.texte.toLocaleLowerCase().replaceAll('’',"'").trim());
+  assert.equal(new Set(labels).size,labels.length,ex.id+': choix identiques');
+ }
+ const swiss=exercises.find(ex=>ex.id==='tcf-a1j-s3-ce-4');
+ assert(swiss.support.texte.includes('Kunsthaus de Zurich'));assert(swiss.support.texte.includes('Kybourg'));
+ assert(!JSON.stringify(exercises.map(ex=>({support:ex.support,questions:ex.questions}))).match(/Paris|Lille|Bretagne|Bruxelles|Carnavalet|Louvre|Versailles|Eiffel|\bFrance\b/));
  for(const ex of exercises) {
-  const text=ex.support.texte,parts=ceIllustratedPassages(text,ex.theme);
-  assert.equal(norm(parts.map(p=>p.text).join(' ')),norm(text),ex.id);
-  assert(parts.some(p=>p.illustration));
-  for(const p of parts)if(p.illustration)assert(existsSync(`${root}/public${p.illustration.src}`),p.illustration.src);
-  const config={domain:'tcf-csc',topic:'tcf-ce',exerciseType:'tcf-ce-ex-1',difficulty:'facile',count:1,columns:1,tcfExercise:ex};
+  assert(formats[ex.id]);
+  if(tcfCeTagsOf(ex).includes('informations'))assert.equal(formats[ex.id].genre,'informative',ex.id);
+  const job=plan.documents.find(j=>j.id===ex.id);assert.deepEqual(job.source.texte,ex.support.texte);
+  assert.equal(job.genre,formats[ex.id].genre);
+  const config={domain:'tcf-csc',topic:'tcf-ce',exerciseType:'tcf-ce-ex-1',difficulty:'facile',count:1,columns:1,pointsPerQuestion:1,tcfExercise:ex};
   const plain=tryGenerateTcfBlock({...config,tcfCeFormat:'texte'},createRng(42));
   const images=tryGenerateTcfBlock({...config,tcfCeFormat:'image'},createRng(42));
   assert.deepEqual(plain.items.filter(x=>x.tcf?.kind!=='support'),images.items.filter(x=>x.tcf?.kind!=='support'));
   assert.equal(images.items[0].tcf.ceFormat,'image');
-  assert(!render(h(TexteSupport,{exercise:ex,mode:'student',ceFormat:'texte'})).includes('tcf-ce-illustrated'));
-  assert(render(h(TexteSupport,{exercise:ex,mode:'student',ceFormat:'image'})).includes('tcf-ce-illustrated'));
+  const textMarkup=render(h(TexteSupport,{exercise:ex,mode:'student',ceFormat:'texte'}));
+  const imageMarkup=render(h(TexteSupport,{exercise:ex,mode:'student',ceFormat:'image'}));
+  assert(!textMarkup.includes('tcf-ce-art'));
+  assert.equal(imageMarkup.includes('class="tcf-ce-art"'),Boolean(ceArtFor(ex)),ex.id);
   assert.equal(blockFromPage({...config,tcfCeFormat:'image'}).tcfCeFormat,'image');
- }
- console.log(`${exercises.length} documents CE : texte intégral conservé, illustrations existantes, questions et réponses identiques dans les deux formats.`);
- const posters=JSON.parse(readFileSync(`${root}/src/tcf/content/ce-posters.json`));
- assert.equal(posters.length,exercises.length);
- assert.equal(new Set(posters.map(p=>p.src)).size,posters.length);
- for(const poster of posters){
-  const ex=exercises.find(ex=>ex.id===poster.id);assert(ex);
-  assert.equal(poster.sourceHash,createHash('sha256').update(JSON.stringify(ex.support)).digest('hex'));
-  assert(existsSync(`${root}/public${poster.src}`));assert.equal(poster.width,1000);assert(poster.height>=600);
- }
- console.log(`${posters.length} affiches : fichiers présents et correspondance exacte avec la version actuelle des textes sources.`);
- for(const ex of exercises){
-  const config={domain:'tcf-csc',topic:'tcf-ce',exerciseType:'tcf-ce-ex-1',difficulty:'facile',count:1,columns:1,pointsPerQuestion:1,tcfExercise:ex};
-  const plain=buildWorksheets([config],42);
-  const illustrated=buildWorksheets([{...config,tcfCeFormat:'image'}],42);
-  const questions=sheets=>sheets.flatMap(sheet=>sheet.items).filter(item=>item.tcf?.kind!=='support');
-  assert.deepEqual(questions(illustrated),questions(plain),ex.id);
-  const support=illustrated.flatMap(sheet=>sheet.items).filter(item=>item.tcf?.kind==='support');
-  if(support.every(item=>item.tcf.cePosterText!==undefined))assert.equal(norm(support.map(item=>item.tcf.cePosterText).join(' ')),norm(ex.support.texte));
-  for(const sheet of illustrated)if(sheet.items.some(item=>item.tcf?.kind==='qcm'||item.tcf?.kind==='lignes')){
-   assert(!sheet.items.some(item=>item.tcf?.kind==='support'));assert(sheet.items.length<=3);
+  const worksheets=buildWorksheets([{...config,tcfCeFormat:'image'}],42);
+  if(ceArtFor(ex)) {
+   const art=ceArtFor(ex);assert.equal(art.sourceKey,ceArtKey(ex));assert(existsSync(`${root}/public${art.src}`));
+   assert(art.width>=1000&&art.height>=1000);
+   if(art.engine==='document-render')assert.equal(art.fontFamily,'URW Gothic');
+   assert.equal(worksheets.filter(sheet=>sheet.cePosterSheet).length,1,ex.id);
+   const poster=worksheets.find(sheet=>sheet.cePosterSheet);
+   assert.equal(poster.items.length,1);
+   for(const mode of ['student','answers']) {
+    const markup=render(h(WorksheetSheet,{page:poster,mode,institutional:DEFAULT_INSTITUTIONAL,evalMode:true,pageNumber:1,total:worksheets.length,sheetIndex:1,documentTotalPoints:20}));
+    assert(!markup.includes('doc-header'));assert(!markup.includes('doc-student-block'));assert(!markup.includes('sheet-instruction'));
+    assert(markup.includes('exercise-heading'));assert(markup.includes('exercise-instruction'));
+    assert(markup.includes('sheet-footer doc-footer'));assert(markup.includes(`src="${art.src}"`));
+   }
+   const changed={...ex,support:{...ex.support,texte:ex.support.texte+' Nouveau message.'}};
+   assert.equal(ceArtFor(changed),undefined);
+   const plainQuestions=plain.items.filter(item=>item.tcf?.kind!=='support');
+   const imageQuestions=worksheets.flatMap(sheet=>sheet.items).filter(item=>item.tcf?.kind!=='support');
+   assert.deepEqual(imageQuestions,plainQuestions,ex.id);
+   assert.equal(worksheets.length,2,ex.id);
+   assert.equal(worksheets[1].blocks[0].tcfPageBreakAfter[0],true);
+   const questionsMarkup=render(h(WorksheetSheet,{page:worksheets[1],mode:'student',institutional:DEFAULT_INSTITUTIONAL,evalMode:false,pageNumber:2,total:2,sheetIndex:2,documentTotalPoints:10,interactiveTcfPageBreaks:true,onToggleTcfPageBreak:()=>{}}));
+   assert(questionsMarkup.includes('Remettre cette question et les suivantes sur la page précédente'));
+   const joined=buildWorksheets([{...config,tcfCeFormat:'image',tcfPageBreakAfter:[false]}],42);
+   assert.equal(joined.length,1);assert(!joined[0].cePosterSheet);
+   assert.deepEqual(joined[0].items,images.items,ex.id);
+   const manual=buildWorksheets([{...config,tcfCeFormat:'image',tcfPageBreakAfter:[true,false,false,true]}],42);
+   assert.equal(manual.length,3);assert.equal(manual[1].blocks[0].itemOffset,1);assert.equal(manual[2].blocks[0].itemOffset,4);
+   assert.deepEqual(manual.flatMap(sheet=>sheet.items),images.items,ex.id);
+  } else {
+   assert.equal(imageMarkup,textMarkup,ex.id);
+   const fallbackQuestions=sheets=>sheets.flatMap(sheet=>sheet.items).map(item=>item.tcf?.kind==='support'?{...item,tcf:{...item.tcf,ceFormat:'texte'}}:item);
+   assert.deepEqual(fallbackQuestions(worksheets),fallbackQuestions(buildWorksheets([{...config,tcfCeFormat:'texte'}],42)),ex.id);
+   assert(!worksheets.some(sheet=>sheet.cePosterSheet),ex.id);
   }
  }
- console.log('Affiches et questions séparées : texte complet, ordre des questions, barèmes et index des formats conservés.');
-
+ // Les personnes et leur barème restent disponibles après une affiche d’association.
+ const association={...exercises[0],type_exercice:'annonce',points:3.5,support:{titre:'Petites annonces',texte:'Document 1 — Théâtre\nAtelier du mercredi.\n\nDocument 2 — Vélo\nSortie du samedi.\n\nLes personnes :\nA. Amine aime le vélo.\nB. Myriam aime le théâtre.'},questions:[{type_reponse:'lignes',enonce:'Associez les personnes aux documents.',tableau:[{label:'Document 1',reponse:'B. Myriam'},{label:'Document 2',reponse:'A. Amine'}]}]};
+ assert(isAssociationAnnonce(association));
+ CE_ARTWORKS.push({id:association.id,sourceKey:ceArtKey(association),genre:formats[association.id].genre,src:CE_ARTWORKS[0].src});
+ try {
+  const sheets=buildWorksheets([{domain:'tcf-csc',topic:'tcf-ce',exerciseType:'tcf-ce-ex-3',difficulty:'facile',count:1,columns:1,tcfExercise:association,tcfCeFormat:'image'}],42);
+  assert.equal(sheets.length,2);
+  assert(sheets[0].cePosterSheet);assert.equal(sheets[1].items[0].tcf.kind,'ce_association_answers');
+  assert.equal(sheets.reduce((n,s)=>n+s.blocks.reduce((sum,b)=>sum+blockPointsTotal(b.items,1),0),0),3.5);
+  const markup=render(h(WorksheetSheet,{page:sheets[1],mode:'answers',institutional:DEFAULT_INSTITUTIONAL,evalMode:true,pageNumber:2,total:2,sheetIndex:2,documentTotalPoints:3.5}));
+  assert(markup.includes('Document n°'));assert(markup.includes('tcf-assoc-people'));
+ } finally {CE_ARTWORKS.pop()}
+ console.log(`${exercises.length} textes suisses et questions vérifiés (CHF), ${CE_ARTWORKS.length} images disponibles : titre, consigne, image puis questions ; coupure Page annulable et pied conservé ; texte original pour les images manquantes ou périmées.`);
 
  const ce={id:'test-ce',competence:'CE',niveau:'A0-A1',type_exercice:'sms',support:{expediteur:'Ami',texte:'Bonjour ! Le rendez-vous est à la gare.'},questions:[{type_reponse:'lignes',enonce:'Où ?',points:2.5},{type_reponse:'lignes',enonce:'Quand ?',points:1.25}]};
  const pe={id:'test-pe',competence:'PE',niveau:'A0-A1',type_exercice:'formulaire',points:8,support:{champs:[{label:'Nom',type:'texte',corrige:'Libre'}]},questions:[]};

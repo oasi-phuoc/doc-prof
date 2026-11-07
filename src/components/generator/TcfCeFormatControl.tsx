@@ -12,7 +12,8 @@ export function TcfCeFormatControl({ value, onChange }: {
           </button>
         ))}
       </div>
-      <small>Image : une affiche illustrée avec les informations du texte.</small>
+      <small>Image : affiche, message, lettre ou autre document adapté au texte. Si son image n’est pas encore disponible, le texte est conservé.</small>
+      {value === 'image' ? <small>Le bouton « Page » de la première question permet d’annuler le saut de page après l’image.</small> : null}
     </div>
   )
 }

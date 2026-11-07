@@ -1,4 +1,5 @@
 import { paginateCePosters } from '@/tcf/ce-poster-pages'
+import { ceArtFor } from '@/tcf/ce-art'
 import { withTcfInformationTotals } from '@/tcf/information-totals'
 /**
  * Orchestrateur de fiches : buildPage / buildWorksheets.
@@ -63,6 +64,10 @@ function expandTcfInstructionDocuments(page: PageConfig, seed: number): PageConf
     const local = block.contentSeed ?? 0
     const rng = createRng(seed + index * 10007 + local)
     const ex = resolveTcfExercise(pageAsConfig(page, block), rng)
+    if (page.domain === 'tcf-csc' && block.tcfCeFormat === 'image' && ex?.competence === 'CE' && ceArtFor(ex)) {
+      out.push(block)
+      return
+    }
     const parts = ex ? splitMultiDocumentAnnonce(ex) : null
     if (!parts) {
       out.push(block)

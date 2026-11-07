@@ -1,6 +1,6 @@
+import { ceArtFor } from '@/tcf/ce-art'
 import { CePoster } from './CePoster'
 import { WorksheetImage } from '@/components/WorksheetImage'
-import { CeIllustratedText } from './CeIllustratedText'
 import { useState, type ReactNode } from 'react'
 import { SheetCopy } from '@/components/sheet-copy'
 import type { PreviewMode } from '@/math/types'
@@ -27,18 +27,18 @@ function Paragraphs({ text }: { text: string }) {
   )
 }
 
-function SmsBubble({ from, text, illustrated = false }: { from?: string; text: string; illustrated?: boolean }) {
+function SmsBubble({ from, text }: { from?: string; text: string }) {
   return (
     <div className="tcf-sms">
       {from ? <p className="tcf-sms-from">{from}</p> : null}
       <div className="tcf-sms-bubble">
-        {illustrated ? <CeIllustratedText text={text} /> : <Paragraphs text={text} />}
+        <Paragraphs text={text} />
       </div>
     </div>
   )
 }
 
-function EmailBox({ de, a, objet, texte, illustrated = false }: { de: string; a?: string; objet: string; texte: string; illustrated?: boolean }) {
+function EmailBox({ de, a, objet, texte }: { de: string; a?: string; objet: string; texte: string }) {
   return (
     <div className="tcf-email">
       <dl className="tcf-email-head">
@@ -54,7 +54,7 @@ function EmailBox({ de, a, objet, texte, illustrated = false }: { de: string; a?
         <dd>{objet}</dd>
       </dl>
       <div className="tcf-email-body">
-        {illustrated ? <CeIllustratedText text={texte} context={objet} /> : <Paragraphs text={texte} />}
+        <Paragraphs text={texte} />
       </div>
     </div>
   )
@@ -142,30 +142,22 @@ function ceDoc(children: ReactNode) {
 }
 
 /** Support de l’exercice : document à lire, audio, images, consignes de production. */
-export function TexteSupport({ exercise: ex, mode, ceFormat = 'texte', cePosterText, cePosterPart }: { exercise: TcfExercise; mode: PreviewMode; ceFormat?: 'texte' | 'image'; cePosterText?: string; cePosterPart?: { index: number; total: number } }) {
-  const illustrated = ex.competence === 'CE' && ceFormat === 'image'
+export function TexteSupport({ exercise: ex, mode, ceFormat = 'texte' }: { exercise: TcfExercise; mode: PreviewMode; ceFormat?: 'texte' | 'image' }) {
   const banque = <MotsBanque mots={ex.mots_banque} />
-  if (illustrated && ex.competence === 'CE' && !(ex.type_exercice === 'annonce' && parseAssociationDocuments(ex.support.texte))) {
-    const title = ex.type_exercice === 'annonce' ? ex.support.titre : ex.type_exercice === 'email' ? ex.support.objet : ex.scene || ex.theme || 'Message'
-    const metadata = ex.type_exercice === 'sms' ? `De : ${ex.support.expediteur}`
-      : ex.type_exercice === 'email' ? `De : ${ex.support.de} — À : ${ex.support.a}` : undefined
-    return ceDoc(<>{banque}<CePoster title={title || 'Document à lire'} text={cePosterText ?? ex.support.texte}
-      label={cePosterPart && cePosterPart.total > 1 ? `Affiche — ${cePosterPart.index}/${cePosterPart.total}` : ex.type_exercice === 'sms' ? 'Message' : ex.type_exercice === 'email' ? 'Courriel' : 'Annonce'}
-      metadata={metadata} image={ex.type_exercice === 'annonce' ? ex.support.image : undefined} /></>)
-  }
+  if (ceFormat === 'image' && ex.competence === 'CE' && ceArtFor(ex)) return <CePoster exercise={ex} />
   switch (ex.type_exercice) {
     case 'sms':
       return ceDoc(
         <>
           {banque}
-          <SmsBubble from={ex.support.expediteur} text={ex.support.texte} illustrated={illustrated} />
+          <SmsBubble from={ex.support.expediteur} text={ex.support.texte} />
         </>,
       )
     case 'email':
       return ceDoc(
         <>
           {banque}
-          <EmailBox {...ex.support} illustrated={illustrated} />
+          <EmailBox {...ex.support} />
         </>,
       )
     case 'annonce': {
@@ -188,7 +180,7 @@ export function TexteSupport({ exercise: ex, mode, ceFormat = 'texte', cePosterT
                       {doc.numero}
                     </span>
                     {doc.titre ? <p className="tcf-assoc-doc-title">{doc.titre}</p> : null}
-                    {illustrated ? <CePoster title={doc.titre || `Document ${doc.numero}`} text={doc.texte} compact label={`Document ${doc.numero}`} /> : <Paragraphs text={doc.texte} />}
+                    <Paragraphs text={doc.texte} />
                   </li>
                 ))}
               </ul>
@@ -229,9 +221,7 @@ export function TexteSupport({ exercise: ex, mode, ceFormat = 'texte', cePosterT
             {ex.support.titre ? <p className="tcf-annonce-title">{ex.support.titre}</p> : null}
             <div className="tcf-annonce-body">
               {ex.support.image ? <TcfImage src={ex.support.image} alt={ex.support.titre} /> : null}
-              {illustrated ? (
-                <CeIllustratedText text={ex.support.texte} context={ex.support.titre} />
-              ) : ex.support.presentation === 'image-bullets' ? (
+              {ex.support.presentation === 'image-bullets' ? (
                 <ul className="tcf-annonce-points">
                   {ex.support.texte.split('\n').filter(Boolean).map((line, index) => <li key={index}>{line}</li>)}
                 </ul>
