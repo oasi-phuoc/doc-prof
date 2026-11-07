@@ -169,7 +169,7 @@ function Enonce({
 function AudioFrameHead({ label, audioSrc }: { label: string; audioSrc?: string }) {
   return (
     <div className={`tcf-audio-frame-head${audioSrc ? ' has-player' : ''}`}>
-      <span className="tcf-audio-frame-label">{label}</span>
+      <span className={`tcf-audio-frame-label${label.startsWith('Audio ') ? ' is-audio' : ''}`}>{label}</span>
       {audioSrc ? (
         <audio className="tcf-audio-frame-player no-print" aria-label={`Enregistrement — ${label}`} controls preload="none" src={audioSrc}>
           Écoutez l’enregistrement.
