@@ -391,6 +391,7 @@ function SupportEditor({
                     index={questionIndex}
                     question={question}
                     reponses={reponses}
+                    hideQuestionImage
                     onChange={(next) => setQuestions(
                       questions.map((current, index) =>
                         index === questionIndex ? { ...next, audio: audioNumber } : current,

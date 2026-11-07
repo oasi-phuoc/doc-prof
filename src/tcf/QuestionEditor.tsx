@@ -18,6 +18,7 @@ export function QuestionEditor({
   question: q,
   reponses,
   audioCount,
+  hideQuestionImage = false,
   onChange,
   onRemove,
 }: {
@@ -26,6 +27,8 @@ export function QuestionEditor({
   reponses: readonly TcfTypeReponse[]
   /** CO 6 / 3 audios : choix du n° d’audio. */
   audioCount?: number
+  /** Exclure l’image commune au format six audios courts. */
+  hideQuestionImage?: boolean
   onChange: (next: TcfQuestion) => void
   onRemove: () => void
 }) {
@@ -98,11 +101,13 @@ export function QuestionEditor({
           step={0.5}
           onChange={(points) => onChange({ ...q, points: points > 0 ? points : undefined })}
         />
-        <ImageField
-          label="Image sous l’énoncé (optionnelle)"
-          value={q.image ?? ''}
-          onChange={(image) => onChange({ ...q, image: image || undefined })}
-        />
+        {!hideQuestionImage ? (
+          <ImageField
+            label="Image sous l’énoncé (optionnelle)"
+            value={q.image ?? ''}
+            onChange={(image) => onChange({ ...q, image: image || undefined })}
+          />
+        ) : null}
       </div>
 
       {q.type_reponse === 'lignes' ? (
