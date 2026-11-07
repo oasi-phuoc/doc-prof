@@ -20,6 +20,7 @@ export function QuestionEditor({
   audioCount,
   hideQuestionImage = false,
   hideFormsHint = false,
+  hideQuestionRemove = false,
   onChange,
   onRemove,
 }: {
@@ -32,6 +33,8 @@ export function QuestionEditor({
   hideQuestionImage?: boolean
   /** Masquer l’aide sur les formes de réponse dans les blocs CO. */
   hideFormsHint?: boolean
+  /** Pour garder une question obligatoire par audio. */
+  hideQuestionRemove?: boolean
   onChange: (next: TcfQuestion) => void
   onRemove: () => void
 }) {
@@ -46,14 +49,16 @@ export function QuestionEditor({
       <legend>
         <span className="tcf-q-legend-title">
           Question {index + 1}
-          <button
-            type="button"
-            className="calli-field-remove"
-            aria-label={`Supprimer la question ${index + 1}`}
-            onClick={onRemove}
-          >
-            ×
-          </button>
+          {!hideQuestionRemove ? (
+            <button
+              type="button"
+              className="calli-field-remove"
+              aria-label={`Supprimer la question ${index + 1}`}
+              onClick={onRemove}
+            >
+              ×
+            </button>
+          ) : null}
         </span>
         <div className="mode-toggle is-3" role="group" aria-label="Type de réponse">
           {TCF_REPONSES.filter((r) => reponses.includes(r.id)).map((r) => (

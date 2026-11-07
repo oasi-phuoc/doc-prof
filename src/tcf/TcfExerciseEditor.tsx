@@ -363,6 +363,31 @@ function SupportEditor({
           ...ex,
           questions: [...next].sort((a, b) => (a.audio ?? 1) - (b.audio ?? 1)),
         })
+      const addAudio = () => {
+        const audioNumber = ex.support.audios.length + 1
+        set({
+          ...ex,
+          support: { ...ex.support, audios: [...ex.support.audios, ''] },
+          questions: [
+            ...questions,
+            { ...emptyTcfQuestion(tcfDefaultTypeReponse(ex.competence)), audio: audioNumber },
+          ],
+        })
+      }
+      const removeAudio = (audioIndex: number) => {
+        const audioNumber = audioIndex + 1
+        const audios = ex.support.audios.filter((_, index) => index !== audioIndex)
+        const remainingQuestions = questions.flatMap((question) => {
+          if (question.audio === audioNumber) return []
+          return [{
+            ...question,
+            audio: question.audio != null && question.audio > audioNumber
+              ? question.audio - 1
+              : question.audio,
+          }]
+        })
+        set({ ...ex, support: { ...ex.support, audios }, questions: remainingQuestions })
+      }
 
       return (
         <div className="tcf-six-courts-audios">
@@ -385,6 +410,16 @@ function SupportEditor({
                     set(applyAudioSlotFromEntry({ ...ex, questions }, entry, audioIndex))
                   }
                 />
+                {ex.support.audios.length > 1 ? (
+                  <button
+                    type="button"
+                    className="tcf-six-courts-remove"
+                    aria-label={`Supprimer l’audio ${audioNumber} et ses questions`}
+                    onClick={() => removeAudio(audioIndex)}
+                  >
+                    Supprimer cet audio
+                  </button>
+                ) : null}
                 {group.map(({ question, questionIndex }) => (
                   <QuestionEditor
                     key={questionIndex}
@@ -393,6 +428,7 @@ function SupportEditor({
                     reponses={reponses}
                     hideQuestionImage
                     hideFormsHint
+                    hideQuestionRemove
                     onChange={(next) => setQuestions(
                       questions.map((current, index) =>
                         index === questionIndex ? { ...next, audio: audioNumber } : current,
@@ -404,6 +440,9 @@ function SupportEditor({
               </fieldset>
             )
           })}
+          <button type="button" className="tcf-btn tcf-six-courts-add" onClick={addAudio}>
+            + ajouter un audio et sa question
+          </button>
         </div>
       )
     }
@@ -1169,11 +1208,12 @@ export function TcfExerciseEditor({
     () =>
       current
         ? validateTcfExercise(current, {
+            allowVariableAudioCount: isSixCourts && edited,
             scenarioAudioPaths:
               current.type_exercice === 'association_images' ? scenarioAudioPaths : undefined,
           })
         : null,
-    [current, scenarioAudioPaths],
+    [current, scenarioAudioPaths, isSixCourts, edited],
   )
 
   if (!current || (!isGrammaire && !slot)) return null
