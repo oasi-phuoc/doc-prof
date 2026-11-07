@@ -16,6 +16,11 @@ try {
  const {renderToStaticMarkup:render}=await import('react-dom/server');
  const exercises=JSON.parse(readFileSync(`${root}/src/tcf/content/a0-a1/ce.json`));
  const formats=JSON.parse(readFileSync(`${root}/src/tcf/content/ce-document-formats.json`));
+ for (const artwork of CE_ARTWORKS) {
+  const exercise=exercises.find(ex=>ex.id===artwork.id);
+  assert(exercise,`${artwork.id}: exercice absent de la banque CE`);
+  assert(ceArtFor(exercise),`${artwork.id}: image active périmée ou format incompatible`);
+ }
  const plan=JSON.parse(readFileSync(`${root}/docs/tcf/ce-art-prompts.json`));
  const {WorksheetSheet}=await server.ssrLoadModule('/src/components/generator/WorksheetSheet.tsx');
  const {DEFAULT_INSTITUTIONAL}=await server.ssrLoadModule('/src/components/math/PrintDocumentChrome.tsx');

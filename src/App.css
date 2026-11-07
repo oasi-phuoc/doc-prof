@@ -1317,7 +1317,7 @@ html,body,#root{
    Le cadre garde le gap de .tcf-question (6 px) entre le bandeau et le corps,
    plus la bordure : les boutons en marge doivent descendre d’autant. */
 .exercise-item.layout-tcf:has(.tcf-question.is-audio-frame){
-  --tcf-audio-head-h:8mm;
+  --tcf-audio-head-h:calc(28px + 3mm);
   --tcf-audio-frame-gap:6px;
   --tcf-audio-head-gap:6px;
   --tcf-audio-frame-border:1.5px;
@@ -1333,10 +1333,6 @@ html,body,#root{
     + var(--tcf-audio-head-h) + var(--tcf-audio-head-gap) + var(--tcf-audio-body-pad-y)
     + var(--tcf-audio-text-nudge)
   )
-}
-/* Corrigé : le lecteur agrandit le bandeau ; les boutons de marge suivent. */
-.exercise-item.layout-tcf:has(.tcf-audio-frame-head.has-player){
-  --tcf-audio-head-h:calc(28px + 3mm)
 }
 /* CE (question sans bandeau Audio) : même hauteur que l’énoncé, comme en CO.
    .tcf-question a 4 px de marge ; le demi-interligne (line-height 1.55) amène
@@ -4403,7 +4399,7 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 }
 .tcf-question.is-audio-frame.is-audio-cadre{overflow:visible}
 .tcf-audio-frame-head{
-  flex:0 0 auto;height:var(--tcf-audio-head-h, 8mm);box-sizing:border-box;
+  flex:0 0 auto;height:var(--tcf-audio-head-h, calc(28px + 3mm));box-sizing:border-box;
   display:flex;align-items:center;gap:8px;padding:0 3mm;
   background:var(--purple);color:#fff;
   font-size:calc(9.5pt * var(--app-font-scale, 1));font-weight:800;
@@ -4411,16 +4407,10 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
   -webkit-print-color-adjust:exact;print-color-adjust:exact
 }
 .tcf-audio-frame-label{flex:0 0 auto;white-space:nowrap}
-.tcf-audio-frame-head.has-player{
-  height:auto;min-height:var(--tcf-audio-head-h, 8mm);
-  padding-top:1.5mm;padding-bottom:1.5mm
-}
+.tcf-audio-frame-label.is-audio{font-size:calc(11pt * var(--app-font-scale, 1))}
 .tcf-audio-frame-player{
   flex:1 1 auto;min-width:0;width:auto;max-width:100%;
   height:28px;margin:0
-}
-@media print{
-  .tcf-audio-frame-head.has-player{height:8mm;min-height:0;padding-top:0;padding-bottom:0}
 }
 .tcf-audio-frame-body{
   flex:1 1 auto;min-width:0;
@@ -4776,6 +4766,11 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-theme-frame .tcf-po-theme{
   margin:0;color:var(--ink);font-weight:700;text-align:left
 }
+.tcf-theme-questions{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:6mm;
+  margin:0;padding:0 0 0 6mm;list-style:decimal;font-size:.88em;line-height:1.35
+}
+.tcf-theme-questions li{padding-left:1mm;break-inside:avoid}
 .tcf-trois-themes .tcf-po-images{gap:3mm}
 .tcf-trois-themes .tcf-po-images .tcf-image{
   height:28mm;object-fit:contain;background:#fff;
@@ -5032,6 +5027,14 @@ textarea.pill-input,
 .tcf-audio-row{display:flex;align-items:center;gap:6px}
 .tcf-audio-row>.pill-input{flex:1;min-width:0}
 .tcf-question-editor{display:flex;flex-direction:column;gap:6px;margin:0;padding:8px;border:1px solid var(--line);border-radius:8px}
+.tcf-six-courts-audios{display:flex;flex-direction:column;gap:10px;min-width:0}
+.tcf-six-courts-audio{
+  display:flex;flex-direction:column;gap:8px;min-width:0;margin:0;padding:10px;
+  border:1px solid var(--line);border-radius:10px
+}
+.tcf-six-courts-audio legend{padding:0 5px;font-weight:800}
+.tcf-six-courts-remove{align-self:flex-start;border:0;background:none;color:var(--red);font:inherit;text-decoration:underline;cursor:pointer}
+.tcf-six-courts-add{width:100%;min-height:40px}
 .tcf-question-editor legend{
   display:flex;align-items:center;flex-wrap:wrap;gap:6px 8px;width:100%;
   font-size:calc(12px * var(--app-font-scale, 1));font-weight:700;box-sizing:border-box
@@ -5722,6 +5725,15 @@ textarea.pill-input,
 .side-tool-panel.is-libre .tcf-editor{
   display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:10px 12px;align-items:start
 }
+.side-tool-panel.is-libre .tcf-editor.is-six-courts>.select-shell,
+.side-tool-panel.is-libre .tcf-editor.is-six-courts>.tcf-six-courts-consigne{
+  grid-column:1 / -1
+}
+.side-tool-panel.is-libre .tcf-six-courts-consigne{width:100%}
+.side-tool-panel.is-libre .tcf-six-courts-consigne .tcf-field,
+.side-tool-panel.is-libre .tcf-six-courts-consigne .tcf-textarea{
+  width:100%;max-width:none
+}
 .side-tool-panel.is-libre .tcf-editor>:not(.tcf-question-editor){grid-column:1 / -1}
 .side-tool-panel.is-libre .tcf-row>.tcf-field{flex:1 1 200px}
 .side-tool-panel.is-libre .libre-textarea,
@@ -6301,14 +6313,6 @@ textarea.pill-input,
 .logique-block.is-cube .logique-stem .logique-img{max-height:100px}
 .logique-block .answer-line-field{margin-top:4px;width:100%}
 /* End */
-
-/* PO trois thèmes : corrigé sur une page séparée, sans modifier les images. */
-.tcf-themes-corrige-sheet .sheet-body{display:flex;flex-direction:column;gap:5mm}
-.tcf-themes-corrige-sheet h2{font-size:15pt;margin:0}
-.tcf-themes-corrige-sheet h3{font-size:12pt;margin:0 0 3mm}
-.tcf-themes-corrige-sheet section{flex:1 1 auto;break-inside:avoid}
-.tcf-themes-corrige-sheet ul{margin:0;padding-left:1.2em;font-size:11pt;line-height:1.45}
-.tcf-themes-corrige-sheet li{margin-bottom:1.5mm}
 
 /* CE CSC : même document, accompagné d’illustrations en format Image. */
 

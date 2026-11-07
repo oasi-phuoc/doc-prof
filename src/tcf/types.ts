@@ -295,7 +295,7 @@ export type TcfPoMotsTheme = TcfBase<
   'mots_theme',
   { theme: string; mots: string[]; exemples_questions: string[]; audio?: string }
 >
-/** Entretien dirigé : questions sur la fiche, échange examinateur / candidat au corrigé. */
+/** Entretien dirigé : questions possibles affichées au corrigé. */
 export type TcfPoEntretien = TcfBase<
   'PO',
   'entretien',

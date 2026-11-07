@@ -17,6 +17,8 @@ export type TcfValidation = { errors: string[]; warnings: string[] }
 export type TcfValidateOptions = {
   /** Chemins autorisés pour association (tag `scenario`). */
   scenarioAudioPaths?: ReadonlySet<string>
+  /** Autorise un nombre libre de pistes pour une version éditée de six audios courts. */
+  allowVariableAudioCount?: boolean
 }
 
 const NIVEAUX = new Set(['A0-A1', 'A1-A2', 'A2-B1'])
@@ -119,13 +121,17 @@ export function validateTcfExercise(ex: TcfExercise, options?: TcfValidateOption
     case 'six_courts':
     case 'trois_moyens': {
       const attendu = ex.type_exercice === 'six_courts' ? 6 : 3
-      if (ex.support.audios.length !== attendu) errors.push(`${attendu} audios attendus.`)
+      if (ex.type_exercice === 'six_courts' && options?.allowVariableAudioCount) {
+        if (ex.support.audios.length === 0) errors.push('Ajoutez au moins un audio.')
+      } else if (ex.support.audios.length !== attendu) {
+        errors.push(`${attendu} audios attendus.`)
+      }
       ex.support.audios.forEach((a, i) => {
         if (blank(a)) errors.push(`Audio ${i + 1} manquant.`)
       })
       ex.questions.forEach((q, i) => {
-        if (q.audio != null && (q.audio < 1 || q.audio > attendu)) {
-          errors.push(`Question ${i + 1} : n° d’audio entre 1 et ${attendu}.`)
+        if (q.audio != null && (q.audio < 1 || q.audio > ex.support.audios.length)) {
+          errors.push(`Question ${i + 1} : n° d’audio entre 1 et ${ex.support.audios.length}.`)
         }
       })
       break

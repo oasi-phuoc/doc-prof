@@ -76,7 +76,13 @@ export function usePageConfig({
         if (patch.domain != null && patch.exerciseType != null) {
           return { ...page, ...patch, extraBlocks: undefined }
         }
-        const merged = setPageBlock(page, safeBlockIndex, patch)
+        const mergedBlock = setPageBlock(
+          page,
+          safeBlockIndex,
+          patch.tcfExercise != null ? { ...patch, tcfFormModes: undefined } : patch,
+        )
+        const merged =
+          patch.tcfExercise != null ? { ...mergedBlock, tcfFormModes: undefined } : mergedBlock
         const nextBlock = pageBlocks(merged)[safeBlockIndex] ?? blockFromPage(merged)
         let fixed = nextBlock
         if (

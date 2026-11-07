@@ -342,35 +342,14 @@ export function TexteSupport({ exercise: ex, mode, ceFormat = 'texte' }: { exerc
       )
     case 'entretien': {
       if (mode !== 'answers') return null
-      const echanges =
-        ex.support.echanges?.filter((e) => e.question.trim() && e.reponse.trim()) ?? []
-      if (echanges.length) {
-        return (
-          <div className="tcf-modele tcf-entretien-dialogue">
-            <b>Exemple d’entretien</b>
-            <ol>
-              {echanges.map((e, i) => (
-                <li key={i}>
-                  <p>
-                    <b>Examinateur·trice :</b> {e.question}
-                  </p>
-                  <p>
-                    <b>Candidat·e :</b> {e.reponse}
-                  </p>
-                </li>
-              ))}
-            </ol>
-          </div>
-        )
-      }
       return (
         <div className="tcf-modele">
-          <b>Questions possibles de l’examinateur :</b>
-          <ul className="tcf-entretien-questions">
+          <b>Questions possibles :</b>
+          <ol className="tcf-entretien-questions">
             {ex.support.questions.filter((q) => q.trim()).map((q, i) => (
               <li key={i}>{q}</li>
             ))}
-          </ul>
+          </ol>
         </div>
       )
     }
@@ -382,6 +361,13 @@ export function TexteSupport({ exercise: ex, mode, ceFormat = 'texte' }: { exerc
               <div className="tcf-theme-frame-head">Thème {i + 1}</div>
               <div className="tcf-theme-frame-body">
                 <p className="tcf-po-theme">{t.theme}</p>
+                {mode === 'answers' && t.exemples_questions.some((q) => q.trim()) ? (
+                  <ol className="tcf-theme-questions">
+                    {t.exemples_questions.filter((q) => q.trim()).slice(0, 4).map((q, questionIndex) => (
+                      <li key={questionIndex}>{q}</li>
+                    ))}
+                  </ol>
+                ) : null}
                 <ul className="tcf-po-images is-4">
                   {t.images.map((src, k) => (
                     <li key={k}>
@@ -389,7 +375,6 @@ export function TexteSupport({ exercise: ex, mode, ceFormat = 'texte' }: { exerc
                     </li>
                   ))}
                 </ul>
-                {/* Exemples de questions sur une deuxième page du corrigé. */}
               </div>
             </section>
           ))}

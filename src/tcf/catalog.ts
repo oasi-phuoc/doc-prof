@@ -281,7 +281,7 @@ export const TCF_TYPES: readonly TcfTypeMeta[] = [
     label: 'Entretien dirigé',
     description: 'Répondre aux questions de l’examinateur·trice sur soi (questions au corrigé).',
     instruction:
-      'Entretien dirigé. Vous saluez l’examinateur et vous répondez à ses questions sur vous : votre identité, votre famille, votre logement, vos activités et vos goûts.',
+      'Répondez aux questions de l’examinateur. Si vous ne comprenez pas, vous pouvez demander de répéter.',
     reponses: [],
   },
   {
