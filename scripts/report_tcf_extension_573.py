@@ -32,7 +32,10 @@ lines = ['# Avancement des 573 trios TCF', '',
          f"Blocage constaté : HTTP 429 `usage_limit_reached` du service d’images. Réinitialisation annoncée : {phase.get('generation_blocker', {}).get('resets_at_utc', 'non précisée')}. Les productions non lancées et les trois échecs sont conservés dans le registre JSON.", '',
          '## Répartition du travail restant', '', '| Catégorie | Trios |', '|---|---:|']
 for category, number in phase['progress']['pending_categories'].items():
-    lines.append(f'| {category} | {number} |')
+    label = {'artwork_needed_contextual_locations': 'Lieux et positions dans leur contexte',
+             'artwork_needed_whole_answer_concepts': 'Concepts et réponses entières',
+             'artwork_needed_distinct_document_types': 'Documents seuls ou composés'}.get(category, category)
+    lines.append(f'| {label} | {number} |')
 if text:
     lines += ['', '## Questions conservées en texte', '']
     lines += [f"- `{q['key']}` : {q['reason']}" for q in text]

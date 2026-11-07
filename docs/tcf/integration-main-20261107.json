@@ -11709,8 +11709,20 @@
       "old_source_sha256": "699367e81e2b8a0033014f9ffcf6062959f398e1bf4aef306d8878fbe3559939",
       "source_sha256": "2c47d1aae988a829e1b483ba354f47addc38225676d4c0536a270566e07246c9",
       "old_semantic_sha256": "484dc58075a3136a4b878e64d6e1945c9de3a47c0b323d9c107a4735f5b2fee9",
-      "semantic_sha256": "484dc58075a3136a4b878e64d6e1945c9de3a47c0b323d9c107a4735f5b2fee9",
-      "review": "retained_review_after_exact_swiss_localization"
+      "semantic_sha256": "4b874a0d534854272408c3ca447c9fc06c9eca9c78caa3b7027fd48cb81d442b",
+      "review": "manually_reviewed_integrated_source",
+      "previous_integration_binding": {
+        "bank": "src/tcf/content/a0-a1/ce.json",
+        "exercise": "delf-a1s-ce-027",
+        "question": 3,
+        "key": "delf-a1s-ce-027#3",
+        "old_source_sha256": "699367e81e2b8a0033014f9ffcf6062959f398e1bf4aef306d8878fbe3559939",
+        "source_sha256": "2c47d1aae988a829e1b483ba354f47addc38225676d4c0536a270566e07246c9",
+        "old_semantic_sha256": "484dc58075a3136a4b878e64d6e1945c9de3a47c0b323d9c107a4735f5b2fee9",
+        "semantic_sha256": "484dc58075a3136a4b878e64d6e1945c9de3a47c0b323d9c107a4735f5b2fee9",
+        "review": "retained_review_after_exact_swiss_localization"
+      },
+      "followup_commit": "e268922be39fc4d19a39728b9c57e3c3e64943af"
     },
     {
       "bank": "src/tcf/content/a0-a1/ce.json",
@@ -13003,15 +13015,18 @@
     "manually_checked_operations": 22,
     "rebound_questions": 618,
     "review_methods": {
-      "manually_reviewed_integrated_source": 60,
-      "retained_review_after_exact_swiss_localization": 558
+      "manually_reviewed_integrated_source": 61,
+      "retained_review_after_exact_swiss_localization": 557
     },
     "legacy_vocabulary_action_images_replaced": 4,
     "written_models_synchronized": 3,
-    "upstream_assets_preserved_with_archive": 1
+    "upstream_assets_preserved_with_archive": 1,
+    "followup_upstream_operations": 3,
+    "total_non_image_inherited_operations": 461
   },
   "manual_source_reviews": [
     "delf-a1-2022-ce-ex4-voisins",
+    "delf-a1s-ce-027",
     "tcf-a1-s4-ce-4",
     "tcf-a1j-s1-ce-1",
     "tcf-a1j-s2-ce-3",
@@ -13023,7 +13038,8 @@
     "Exposition du 28 mai au 12 juin et période du club au 28 février : questions relues, aucune réponse fondée sur les anciennes dates impossibles.",
     "Fête des voisins : texte genevois, nombreux habitants, 2003, vendredi 19 h et dix questions relus.",
     "Neuf distracteurs de pays/région réparés relus contre leur source ; Suisse reste correcte, alternatives Autriche/centre distinctes.",
-    "Quatre questions de vélo relues : action réelle représentée ; sentier alpin pour le dialogue VTT."
+    "Quatre questions de vélo relues : action réelle représentée ; sentier alpin pour le dialogue VTT.",
+    "Suivi main e268922b : l’adresse source est 22, rue du Mont-Blanc, 1201 Genève ; les deux choix et le modèle écrit ont été alignés sans changer l’identifiant correct a. Aucun changement de source ni d’image de réponse."
   ],
   "human_audio_listening_performed": false,
   "upstream_asset_updates": [
@@ -13095,6 +13111,57 @@
     {
       "commit": "e522267a8f4390ec30237f6a70738b9caeaa10c5",
       "scope": "18 documents CE complets et registre associés ; aucune modification des banques de questions ou de leurs sources."
+    },
+    {
+      "commit": "e268922be39fc4d19a39728b9c57e3c3e64943af",
+      "scope": "61 documents CE complets supplémentaires (161 prêts, un restant), formats et interface du mode audio libre ; trois corrections d’adresse dans une question CE, relues et consignées exactement."
+    }
+  ],
+  "followup_upstream_operations": [
+    {
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "delf-a1s-ce-027",
+      "node": [
+        "questions",
+        2,
+        "choix",
+        0,
+        "texte"
+      ],
+      "before": "22, rue du Mayotte",
+      "after": "22, rue du Mont-Blanc",
+      "review": "manually_checked_upstream_editorial_change",
+      "commit": "e268922be39fc4d19a39728b9c57e3c3e64943af"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "delf-a1s-ce-027",
+      "node": [
+        "questions",
+        2,
+        "choix",
+        1,
+        "texte"
+      ],
+      "before": "12, rue du Mayotte",
+      "after": "12, rue du Mont-Blanc",
+      "review": "manually_checked_upstream_editorial_change",
+      "commit": "e268922be39fc4d19a39728b9c57e3c3e64943af"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "delf-a1s-ce-027",
+      "node": [
+        "questions",
+        2,
+        "formes",
+        "lignes",
+        "reponse_modele"
+      ],
+      "before": "22, rue du Mayotte",
+      "after": "22, rue du Mont-Blanc",
+      "review": "manually_checked_upstream_editorial_change",
+      "commit": "e268922be39fc4d19a39728b9c57e3c3e64943af"
     }
   ]
 }

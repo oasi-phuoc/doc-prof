@@ -2,6 +2,7 @@
 import unittest
 
 from render_tcf_clocks import angles, point
+from tcf_visual_durations import exact_duration_seconds
 
 
 class ClockGeometryTests(unittest.TestCase):
@@ -26,6 +27,19 @@ class ClockGeometryTests(unittest.TestCase):
         for hour, minute in [(-1, 0), (24, 0), (10, 60), (10, -1)]:
             with self.assertRaises(ValueError):
                 angles(hour, minute)
+
+    def test_durations_preserve_hours_and_minutes(self):
+        for label, seconds in [('Une heure trente', 5400), ('1 h 34', 5640),
+                               ('Deux heures dix', 7800), ('125 minutes', 7500),
+                               ('Une demi-heure', 1800), ('Deux minutes trente', 150)]:
+            with self.subTest(label=label):
+                self.assertEqual(exact_duration_seconds(label), seconds)
+
+    def test_calendar_times_and_unquantified_scopes_are_not_durations(self):
+        for label in ['À 2 h', 'Toute la représentation', 'L’entracte uniquement',
+                      'Deux jours', '1 h 75', '13 heures']:
+            with self.subTest(label=label):
+                self.assertIsNone(exact_duration_seconds(label))
 
 
 if __name__ == '__main__':

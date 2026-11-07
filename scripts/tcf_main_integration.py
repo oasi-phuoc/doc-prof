@@ -27,7 +27,9 @@ def differences(before,after,node=()):
 
 def verify():
  if not REPORT.exists():return []
- report=json.loads(REPORT.read_text());ops=report['bank_operations'];corrections=report.get('local_model_corrections',[]);expected={}
+ report=json.loads(REPORT.read_text());ops=report['bank_operations'];corrections=report.get('local_model_corrections',[]);followups=report.get('followup_upstream_operations',[]);expected={}
+ followup_map={(r['bank'],r['exercise'],tuple(r['node'])):r for r in followups}
+ followup_banks={(r['commit'],r['bank']):git_bank(r['commit'],r['bank']) for r in followups}
  correction_map={(r['bank'],r['exercise'],tuple(r['node'])):r for r in corrections}
  script=ROOT/'scripts/localize-tcf-ce-switzerland.py'
  assert script.read_bytes()==subprocess.check_output(['git','show',report['remote_commit']+':scripts/localize-tcf-ce-switzerland.py'],cwd=ROOT)
@@ -39,8 +41,11 @@ def verify():
   assert old.keys()==remote.keys()==current.keys(),relative
   for key in old:
    for node,before,after in differences(old[key],current[key]):
-    correction=correction_map.get((relative,key,node))
-    if correction:
+    token=(relative,key,node);correction=correction_map.get(token);followup=followup_map.get(token)
+    if followup:
+     assert at(remote[key],node)==before==followup['before']
+     assert at(followup_banks[(followup['commit'],relative)][key],node)==after==followup['after']
+    elif correction:
      assert node[-3:]==('formes','lignes','reponse_modele')
      assert at(remote[key],node)==correction['before']==before
      q=current[key]['questions'][node[1]]
@@ -48,7 +53,7 @@ def verify():
      assert after==correction['after']==next(c['texte'] for c in text_form(q)['choix'] if c.get('correct'))=='Faire du vélo'
     else:assert at(remote[key],node)==after,(key,node,'must match the recorded upstream commit')
     expected[(relative,key,node)]=(before,after)
- for op in ops+corrections:
+ for op in ops+corrections+followups:
   key=(op['bank'],op['exercise'],tuple(op['node']))
   assert expected.pop(key)==(op['before'],op['after']),key
  assert not expected,expected
@@ -59,7 +64,7 @@ def verify():
   assert hashlib.sha256(new).hexdigest()==asset['sha256']
   assert (ROOT/'public'/asset['path'].lstrip('/')).read_bytes()==new
   assert (ROOT/'public'/asset['archive'].lstrip('/')).read_bytes()==old
- return ops+corrections
+ return ops+corrections+followups
 
 def original_preserved(path,expected):
  if (ROOT/'public'/path.lstrip('/')).read_bytes()==expected:return True

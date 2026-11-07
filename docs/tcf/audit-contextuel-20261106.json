@@ -7,8 +7,8 @@
     "total_questions": 7851,
     "statuses": {
       "retained_editorial_review_exact_content": 6140,
-      "manually_reviewed_integrated_source": 60,
-      "retained_review_after_exact_swiss_localization": 558,
+      "manually_reviewed_integrated_source": 61,
+      "retained_review_after_exact_swiss_localization": 557,
       "manually_reviewed_against_active_source": 1093
     },
     "fresh_review_groups": 213,
@@ -25749,14 +25749,14 @@
       "bank": "src/tcf/content/a0-a1/ce.json",
       "exercise": "delf-a1s-ce-027",
       "question": 3,
-      "semantic_sha256": "484dc58075a3136a4b878e64d6e1945c9de3a47c0b323d9c107a4735f5b2fee9",
+      "semantic_sha256": "4b874a0d534854272408c3ca447c9fc06c9eca9c78caa3b7027fd48cb81d442b",
       "source_sha256": "2c47d1aae988a829e1b483ba354f47addc38225676d4c0536a270566e07246c9",
       "source_words_sha256": "36078944c5c3252c0759dbb1a78b7f021b0c96c43aeff2f0025be60734654d3e",
       "audio": null,
       "correct_choice_ids": [
         "a"
       ],
-      "status": "retained_review_after_exact_swiss_localization",
+      "status": "manually_reviewed_integrated_source",
       "prior_evidence": {
         "bank": "src/tcf/content/a0-a1/ce.json",
         "exercise": "delf-a1s-ce-027",
@@ -25768,7 +25768,13 @@
         "status": "retained_editorial_review_exact_content"
       },
       "integration_review": "docs/tcf/integration-main-20261107.json",
-      "note": "Adaptation suisse amont vérifiée ; exceptions de source, dates corrigées, distracteurs réparés et quatre libellés de vélo relus explicitement."
+      "note": "Correction amont de trois libellés d’adresse vérifiée contre le texte source : 22, rue du Mont-Blanc, 1201 Genève. Identifiants et bonne réponse a conservés.",
+      "before_followup_upstream_integration": {
+        "semantic_sha256": "484dc58075a3136a4b878e64d6e1945c9de3a47c0b323d9c107a4735f5b2fee9",
+        "semantic_before_sha256": null,
+        "semantic_after_sha256": null,
+        "labels": null
+      }
     },
     {
       "key": "delf-a1s-ce-027#4",
