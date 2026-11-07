@@ -1163,6 +1163,7 @@ export function TcfExerciseEditor({
 
   const exercise = current
   const usesQuestions = (meta?.reponses.length ?? 0) > 0
+  const isSixCourts = exercise.type_exercice === 'six_courts'
   const audioCount =
     exercise.type_exercice === 'six_courts' || exercise.type_exercice === 'trois_moyens'
       ? exercise.support.audios.length
@@ -1175,7 +1176,7 @@ export function TcfExerciseEditor({
     exercise.type_exercice === 'question_texte'
 
   return (
-    <div className="quad-libre-block tcf-editor">
+    <div className={`quad-libre-block tcf-editor${isSixCourts ? ' is-six-courts' : ''}`}>
       <div className="libre-item-num-col" style={{ alignItems: 'flex-start', marginBottom: 8 }}>
         <b>{isGrammaire ? 'Mode libre' : 'Exercice TCF'}</b>
         <button
@@ -1195,21 +1196,25 @@ export function TcfExerciseEditor({
           <RefreshIcon />
         </button>
       </div>
-      <div className="tcf-row">
-        <button type="button" className="tcf-btn" disabled={!edited} onClick={() => onChange({ tcfExercise: undefined })}>
-          Revenir à la banque
-        </button>
-        <button type="button" className="tcf-btn" onClick={() => startBlank()}>
-          Nouvel exercice vide
-        </button>
-      </div>
-      <small className="muted">
-        {edited
-          ? 'Exercice modifié : la fiche affiche cette version.'
-          : isGrammaire
-            ? 'Exercice de la banque Grammaire : toute modification crée une version libre.'
-            : 'Exercice de la banque : toute modification crée une version libre.'}
-      </small>
+      {!isSixCourts ? (
+        <>
+          <div className="tcf-row">
+            <button type="button" className="tcf-btn" disabled={!edited} onClick={() => onChange({ tcfExercise: undefined })}>
+              Revenir à la banque
+            </button>
+            <button type="button" className="tcf-btn" onClick={() => startBlank()}>
+              Nouvel exercice vide
+            </button>
+          </div>
+          <small className="muted">
+            {edited
+              ? 'Exercice modifié : la fiche affiche cette version.'
+              : isGrammaire
+                ? 'Exercice de la banque Grammaire : toute modification crée une version libre.'
+                : 'Exercice de la banque : toute modification crée une version libre.'}
+          </small>
+        </>
+      ) : null}
       <>
           <SelectBox
             label="Type d’exercice"
@@ -1232,16 +1237,33 @@ export function TcfExerciseEditor({
               </option>
             ))}
           </SelectBox>
-          <small className="muted">Choisissez un type : un audio est tiré au hasard, avec ses questions.</small>
+          {!isSixCourts ? (
+            <small className="muted">Choisissez un type : un audio est tiré au hasard, avec ses questions.</small>
+          ) : null}
           {exercise.type_exercice !== 'images_a_reconnaitre' ? (
-            <TextField
-              label="Consigne (sinon consigne du type)"
-              value={exercise.consigne ?? ''}
-              placeholder={
-                meta?.instruction ?? slot?.instruction ?? 'Consigne liée au type d’exercice'
-              }
-              onChange={(consigne) => set({ ...exercise, consigne: consigne || undefined })}
-            />
+            isSixCourts ? (
+              <div className="tcf-six-courts-consigne">
+                <TextField
+                  label="Consigne (sinon consigne du type)"
+                  value={exercise.consigne ?? ''}
+                  multiline
+                  rows={2}
+                  placeholder={
+                    meta?.instruction ?? slot?.instruction ?? 'Consigne liée au type d’exercice'
+                  }
+                  onChange={(consigne) => set({ ...exercise, consigne: consigne || undefined })}
+                />
+              </div>
+            ) : (
+              <TextField
+                label="Consigne (sinon consigne du type)"
+                value={exercise.consigne ?? ''}
+                placeholder={
+                  meta?.instruction ?? slot?.instruction ?? 'Consigne liée au type d’exercice'
+                }
+                onChange={(consigne) => set({ ...exercise, consigne: consigne || undefined })}
+              />
+            )
           ) : null}
 
           {!usesQuestions ? (
