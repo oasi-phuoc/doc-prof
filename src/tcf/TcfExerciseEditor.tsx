@@ -392,6 +392,7 @@ function SupportEditor({
                     question={question}
                     reponses={reponses}
                     hideQuestionImage
+                    hideFormsHint
                     onChange={(next) => setQuestions(
                       questions.map((current, index) =>
                         index === questionIndex ? { ...next, audio: audioNumber } : current,

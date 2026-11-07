@@ -19,6 +19,7 @@ export function QuestionEditor({
   reponses,
   audioCount,
   hideQuestionImage = false,
+  hideFormsHint = false,
   onChange,
   onRemove,
 }: {
@@ -29,6 +30,8 @@ export function QuestionEditor({
   audioCount?: number
   /** Exclure l’image commune au format six audios courts. */
   hideQuestionImage?: boolean
+  /** Masquer l’aide sur les formes de réponse dans les blocs CO. */
+  hideFormsHint?: boolean
   onChange: (next: TcfQuestion) => void
   onRemove: () => void
 }) {
@@ -71,10 +74,12 @@ export function QuestionEditor({
           ))}
         </div>
       </legend>
-      <p className="muted" style={{ margin: 0, fontSize: 'calc(11px * var(--app-font-scale, 1))' }}>
-        Trois formes (Texte / Image / Phrase) : basculez pour les remplir. Sur la fiche, les
-        icônes sont en colonne dans la marge gauche ; seules les formes remplies sont actives.
-      </p>
+      {!hideFormsHint ? (
+        <p className="muted" style={{ margin: 0, fontSize: 'calc(11px * var(--app-font-scale, 1))' }}>
+          Trois formes (Texte / Image / Phrase) : basculez pour les remplir. Sur la fiche, les
+          icônes sont en colonne dans la marge gauche ; seules les formes remplies sont actives.
+        </p>
+      ) : null}
       {audioCount ? (
         <label className="tcf-field is-number">
           <span>Audio n°</span>
