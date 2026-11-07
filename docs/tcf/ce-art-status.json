@@ -1,7 +1,7 @@
 {
   "scope": "CE TCF CSC uniquement",
-  "readyCount": 148,
-  "pendingCount": 14,
+  "readyCount": 161,
+  "pendingCount": 1,
   "font": {
     "family": "URW Gothic",
     "scope": "Texte dans les images CE uniquement",
@@ -9,99 +9,8 @@
   },
   "pending": [
     {
-      "id": "delf-a1s-ce-034",
-      "label": "À la cantine",
-      "engine": "imagegen",
-      "genre": "notice",
-      "reason": "Refaire selon les critères : Suisse, CHF, police proche de Century Gothic, personnages renouvelés, sans surlignage."
-    },
-    {
-      "id": "delf-a1s-ce-035",
-      "label": "La sortie scolaire",
-      "engine": "imagegen",
-      "genre": "notice",
-      "reason": "Refaire selon les critères : Suisse, CHF, police proche de Century Gothic, personnages renouvelés, sans surlignage."
-    },
-    {
-      "id": "delf-a1s-ce-036",
-      "label": "Les activités de l’école",
-      "engine": "imagegen",
-      "genre": "notice",
-      "reason": "Refaire selon les critères : Suisse, CHF, police proche de Century Gothic, personnages renouvelés, sans surlignage."
-    },
-    {
-      "id": "delf-a1s-ce-037",
-      "label": "Le stage en entreprise",
-      "engine": "imagegen",
-      "genre": "notice",
-      "reason": "Refaire selon les critères : Suisse, CHF, police proche de Century Gothic, personnages renouvelés, sans surlignage."
-    },
-    {
-      "id": "delf-a1s-ce-038",
-      "label": "Au cinéma",
-      "engine": "imagegen",
-      "genre": "notice",
-      "reason": "Refaire selon les critères : Suisse, CHF, police proche de Century Gothic, personnages renouvelés, sans surlignage."
-    },
-    {
-      "id": "delf-a1s-ce-039",
-      "label": "Les jeux vidéo",
-      "engine": "imagegen",
-      "genre": "notice",
-      "reason": "Refaire selon les critères : Suisse, CHF, police proche de Century Gothic, personnages renouvelés, sans surlignage."
-    },
-    {
-      "id": "delf-a1s-ce-040",
-      "label": "Le parc aquatique",
-      "engine": "imagegen",
-      "genre": "notice",
-      "reason": "Refaire selon les critères : Suisse, CHF, police proche de Century Gothic, personnages renouvelés, sans surlignage."
-    },
-    {
-      "id": "delf-a1s-ce-041",
-      "label": "Le voyage",
-      "engine": "imagegen",
-      "genre": "notice",
-      "reason": "Refaire selon les critères : Suisse, CHF, police proche de Century Gothic, personnages renouvelés, sans surlignage."
-    },
-    {
-      "id": "delf-a1s-ce-042",
-      "label": "Le portrait d’un chanteur",
-      "engine": "imagegen",
-      "genre": "notice",
-      "reason": "Refaire selon les critères : Suisse, CHF, police proche de Century Gothic, personnages renouvelés, sans surlignage."
-    },
-    {
-      "id": "delf-a1s-ce-043",
-      "label": "Le salon des métiers",
-      "engine": "imagegen",
-      "genre": "notice",
-      "reason": "Refaire selon les critères : Suisse, CHF, police proche de Century Gothic, personnages renouvelés, sans surlignage."
-    },
-    {
-      "id": "delf-a1s-ce-044",
-      "label": "Au musée",
-      "engine": "imagegen",
-      "genre": "notice",
-      "reason": "Refaire selon les critères : Suisse, CHF, police proche de Century Gothic, personnages renouvelés, sans surlignage."
-    },
-    {
       "id": "delf-a1s-ce-045",
       "label": "Le magasin de musique",
-      "engine": "imagegen",
-      "genre": "notice",
-      "reason": "Refaire selon les critères : Suisse, CHF, police proche de Century Gothic, personnages renouvelés, sans surlignage."
-    },
-    {
-      "id": "delf-a1s-ce-046",
-      "label": "À la bibliothèque",
-      "engine": "imagegen",
-      "genre": "notice",
-      "reason": "Refaire selon les critères : Suisse, CHF, police proche de Century Gothic, personnages renouvelés, sans surlignage."
-    },
-    {
-      "id": "delf-a1s-ce-049",
-      "label": "La fête de la musique",
       "engine": "imagegen",
       "genre": "notice",
       "reason": "Refaire selon les critères : Suisse, CHF, police proche de Century Gothic, personnages renouvelés, sans surlignage."
@@ -230,5 +139,16 @@
     "delf-a1s-ce-045",
     "delf-a1s-ce-046",
     "delf-a1s-ce-049"
-  ]
+  ],
+  "generationBlocker": {
+    "code": "usage_limit_reached",
+    "httpStatus": 429,
+    "resetsAt": "2026-11-08T06:51:55Z",
+    "resetsAtEuropeZurich": "2026-11-08T07:51:55+01:00",
+    "remainingCeIds": [
+      "delf-a1s-ce-045"
+    ],
+    "remainingCoJobs": 10,
+    "nextAction": "Générer La clé de sol selon ce-art-prompts.json, contrôler et intégrer ; puis reprendre les dix scènes de co-character-refresh.json."
+  }
 }

@@ -41,3 +41,7 @@ node scripts/check-ce-page-toggle.mjs /chemin/vers/playwright/index.mjs
 Le script d’export conserve les messages dont le texte, le genre et la police correspondent déjà. Un ou plusieurs identifiants peuvent suivre le chemin de Playwright pour cibler des messages. La vérification compare le texte caractère par caractère et contrôle son emplacement sur le support.
 
 Pour les CO TCF, `co-character-refresh.json` prépare séparément la reprise des quatre anciennes scènes de bibliothèque et des six situations de « Les achats » avec des personnages distincts. Les objets, couleurs pertinentes, situations et audios restent cohérents avec les supports. La demande de police concerne uniquement les images CE.
+
+## Point de reprise du 7 novembre 2026
+
+161 documents sur 162 sont actifs après génération ou réexport et contrôle visuel. Il reste uniquement « La clé de sol » (`delf-a1s-ce-045`), puis les dix scènes CO du registre dédié. Le service de génération a répondu `429 usage_limit_reached` ; réinitialisation annoncée le 8 novembre 2026 à 7 h 51 min 55 s, heure suisse. Les textes originaux restent disponibles en attendant.

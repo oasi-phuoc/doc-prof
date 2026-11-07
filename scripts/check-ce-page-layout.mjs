@@ -33,7 +33,7 @@ try {
     const ex = bank.find(ex => ex.id === art.id)
     const sheets = buildWorksheets([{ domain: 'tcf-csc', topic: 'tcf-ce', exerciseType: 'tcf-ce-ex-1', difficulty: 'facile', count: 1, columns: 1, tcfExercise: ex, tcfCeFormat: 'image' }], 42)
     const sheet = sheets.find(sheet => sheet.cePosterSheet)
-    assert(sheet)
+    assert(sheet, `${art.id}: aucune page de document CE générée`)
     const markup = renderToStaticMarkup(h(WorksheetSheet, { page: sheet, mode: 'student', institutional: DEFAULT_INSTITUTIONAL, evalMode: false, pageNumber: 1, total: sheets.length, sheetIndex: 1, documentTotalPoints: 10 }))
     for (const media of ['screen', 'print']) {
       await page.emulateMedia({ media })

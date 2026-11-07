@@ -1208,12 +1208,12 @@ export function TcfExerciseEditor({
     () =>
       current
         ? validateTcfExercise(current, {
-            allowVariableAudioCount: isSixCourts && edited,
+            allowVariableAudioCount: current.type_exercice === 'six_courts' && edited,
             scenarioAudioPaths:
               current.type_exercice === 'association_images' ? scenarioAudioPaths : undefined,
           })
         : null,
-    [current, scenarioAudioPaths, isSixCourts, edited],
+    [current, scenarioAudioPaths, edited],
   )
 
   if (!current || (!isGrammaire && !slot)) return null
