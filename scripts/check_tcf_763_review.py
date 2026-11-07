@@ -3,7 +3,7 @@ from collections import Counter
 import json
 from tcf_context_audit import ROOT,BANKS,source_for,digest,semantic_question,text_form
 from tcf_replace_vocabulary_images import checked_images
-from tcf_visual_durations import duration
+from tcf_visual_durations import duration,exact_duration_seconds
 
 def verify():
  review=json.loads((ROOT/'docs/tcf/revue-763-20261107.json').read_text())
@@ -29,9 +29,14 @@ def verify():
    for path,sha in zip(row['selected_images'],row['selected_sha256']):assert approved[path]['sha256']==sha
    if 'temps' in q['enonce'].lower():
     for label,path in zip(row['labels'],row['selected_images']):
-     value,unit=duration(label);render=approved[path]['clock_render']
-     assert render['elapsed_seconds' if unit=='secondes' else 'elapsed_minutes']==value,(row['key'],label,path)
-     assert render.get('unit_left'),(row['key'],'unit must not be hidden by the hand')
+     render=approved[path]['clock_render']
+     if 'duration_seconds' in render:
+      assert render['duration_seconds']==exact_duration_seconds(label),(row['key'],label,path)
+      assert render['duration_unit']=='h:min' and render['duration_caption_revision']==2
+     else:
+      value,unit=duration(label)
+      assert render['elapsed_seconds' if unit=='secondes' else 'elapsed_minutes']==value,(row['key'],label,path)
+      assert render.get('unit_left'),(row['key'],'unit must not be hidden by the hand')
   else:
    assert not form,row['key']
    if row['status'].startswith('artwork_needed'):assert row['brief']['choices_to_illustrate']==row['labels']
@@ -39,6 +44,7 @@ def verify():
  assert sum(counts.values())==763
  # These source words do not justify an arbitrary helmet or bank-card picture.
  for index in [150,330,671]:assert review['questions'][index]['status']=='keep_text_source_referent_unspecified'
- assert review['questions'][310]['status']!='active_reviewed_trio','red clothing cannot be replaced with blue clothing'
+ if review['questions'][310]['status']=='active_reviewed_trio':
+  assert all(approved[p].get('subject_colour')=='red' for p in review['questions'][310]['selected_images']),'red clothing cannot be replaced with blue clothing'
  print(f"763 décisions vérifiées : {review['activated_total']} trios actifs, {review['retained_text_total']} textes conservés, {review['artwork_pending_total']} trios à préparer.")
 if __name__=='__main__':verify()

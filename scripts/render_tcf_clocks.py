@@ -54,18 +54,20 @@ def capsule(draw, angle, length, width):
         draw.ellipse((x-radius, y-radius, x+radius, y+radius), fill=MODEL['color'])
 
 
-def render(hour=0, minute=0, elapsed=None, unit='min', unit_left=False):
+def render(hour=0, minute=0, elapsed=None, unit='min', unit_left=False, duration_seconds=None):
     image = Image.open(BASE).convert('RGB').resize(
         (SIZE[0] * SCALE, SIZE[1] * SCALE), Image.Resampling.LANCZOS)
     draw = ImageDraw.Draw(image)
     cx, cy = (v * SCALE for v in CENTER)
-    if elapsed is not None:
-        if not 0 < elapsed <= 60:
+    if duration_seconds is not None:
+        assert duration_seconds%60==0 and 0<duration_seconds<=43200
+    if elapsed is not None or duration_seconds is not None:
+        if elapsed is not None and not 0 < elapsed <= 60:
             raise ValueError(elapsed)
         wash = Image.new('RGBA', image.size)
         ImageDraw.Draw(wash).pieslice(
             (cx-365*SCALE, cy-365*SCALE, cx+365*SCALE, cy+365*SCALE),
-            -90, -90 + elapsed * 6, fill=(215, 49, 44, 95))
+            -90, -90 + (duration_seconds/120 if duration_seconds is not None else elapsed*6), fill=(215, 49, 44, 95))
         image = Image.alpha_composite(image.convert('RGBA'), wash).convert('RGB')
         draw = ImageDraw.Draw(image)
     for tick in range(60):
@@ -84,6 +86,8 @@ def render(hour=0, minute=0, elapsed=None, unit='min', unit_left=False):
         minute_angle = elapsed * 6
         draw.text((cx-(100*SCALE if unit_left else 0), (CENTER[1]-145)*SCALE), unit,
                   font=ImageFont.truetype(FONT, 36*SCALE), fill='#5c3b35', anchor='mm')
+    if duration_seconds is not None:
+        draw.text((cx, 928*SCALE), 'durée · h:min', font=ImageFont.truetype(FONT, 40*SCALE), fill='#5c3b35', anchor='mm')
     capsule(draw, minute_angle, MODEL['minute_length'], MODEL['minute_width'])
     radius = MODEL['pivot_radius'] * SCALE
     draw.ellipse((cx-radius, cy-radius, cx+radius, cy+radius),
@@ -108,6 +112,11 @@ def inventory():
     targets.append(dict(path='/lib/images/tcf/qcm-audit/vocab-reveil.webp', hour=7, minute=0, alarm=True))
     targets.extend(dict(path=f'/lib/images/tcf/qcm-audit/duree-{m}-minutes.webp', elapsed_minutes=m, unit_left=True) for m in (1, 2, 2.5, 5, 10, 14, 15, 20, 25, 30, 40, 45, 60))
     targets.extend(dict(path=f'/lib/images/tcf/qcm-audit/duree-{m}-secondes.webp', elapsed_seconds=m, unit_left=True) for m in (3, 5, 10, 30, 60))
+    duration_plan=ROOT/'docs/tcf/extension573-durations-20261107.json'
+    if duration_plan.exists():
+        for seconds in json.loads(duration_plan.read_text())['values_seconds']:
+            h,m=seconds//3600,seconds%3600//60
+            targets.append(dict(path=f'/lib/images/tcf/qcm-audit/duree-hm-{h:02d}{m:02d}.webp',hour=h,minute=m,duration_seconds=seconds,duration_unit='h:min',duration_caption_revision=2))
     assert len(targets) == len({r['path'] for r in targets})
     return targets
 
@@ -178,7 +187,7 @@ def main():
         else:
             image = render(target.get('hour', 0), target.get('minute', 0),
                            target.get('elapsed_minutes', target.get('elapsed_seconds')),
-                           'sec' if 'elapsed_seconds' in target else 'min', target.get('unit_left',False))
+                           'sec' if 'elapsed_seconds' in target else 'min', target.get('unit_left',False), target.get('duration_seconds'))
             if image.size != dimensions:
                 fitted = ImageOps.contain(image, dimensions, Image.Resampling.LANCZOS)
                 image = Image.new('RGB', dimensions, '#fff5df')
@@ -194,9 +203,9 @@ def main():
         if not entries and target['path'].startswith('/lib/images/tcf/'):
             label = (f"{target['elapsed_minutes']} minutes" if 'elapsed_minutes' in target else
                      f"{target['elapsed_seconds']} secondes" if 'elapsed_seconds' in target else
-                     f"{target['hour']:02d} h {target['minute']:02d}")
+                     (f"Durée {target['hour']:02d} h {target['minute']:02d}" if 'duration_seconds' in target else f"{target['hour']:02d} h {target['minute']:02d}"))
             entry = dict(id=path.stem, label=label, path=target['path'], domain='ce-co', batch='reprise-20261106-objets-inclus')
-            if 'elapsed_minutes' not in target and 'elapsed_seconds' not in target:
+            if 'elapsed_minutes' not in target and 'elapsed_seconds' not in target and 'duration_seconds' not in target:
                 entry['clock_time'] = f"{target['hour']:02d}:{target['minute']:02d}"
             manifest['images'].append(entry)
             entries = [entry]
@@ -221,7 +230,7 @@ def main():
                   formulas=dict(hour='30*(hour%12)+0.5*minute', minute='6*minute'),
                   scope='Cadrans TCF, quatre alias historiques du vocabulaire et réveil bleu ; les documents horaires restent distincts.', images=results)
     if previous.get('base_generation'):report['base_generation']=previous['base_generation']
-    report['last_extension']='2026-11-07 : neuf minuteurs supplémentaires pour la revue des 763 questions.'
+    report['last_extension']='2026-11-07 : neuf minuteurs supplémentaires puis vingt durées h:min, même modèle d’aiguilles ; unités et durée explicites.'
     REPORT.write_text(json.dumps(report, ensure_ascii=False, indent=2)+'\n')
     print(f"{len(results)} cadrans rendus ; modèle d’aiguilles unique.")
 

@@ -10,3 +10,22 @@ def duration(label):
  if not m:return None
  n=words.get(m[1],int(m[1]) if m[1].isdigit() else 0)
  if 0<n<=60:return(n,'secondes' if m[2].startswith('seconde') else 'minutes')
+
+
+def exact_duration_seconds(label):
+ """Read a stated duration, including h/min forms; never interpret a time of day."""
+ s=''.join(c for c in unicodedata.normalize('NFD',label.lower()) if not unicodedata.combining(c)).replace('-',' ')
+ s=re.sub(r'^(?:dans |environ |pendant )','',s).strip()
+ if s=='une demi heure':return 1800
+ if s=='deux minutes trente':return 150
+ number=r'(?:\d+|'+ '|'.join(sorted(words,key=len,reverse=True))+r')'
+ def value(v):return int(v) if v.isdigit() else words[v]
+ m=re.fullmatch(r'('+number+r')\s*(?:heures?|h)(?:\s*('+number+r')(?:\s*(?:minutes?|min))?)?',s)
+ if m:
+  h=value(m[1]);minutes=value(m[2]) if m[2] else 0
+  return h*3600+minutes*60 if 0<=minutes<60 and 0<h*3600+minutes*60<=43200 else None
+ m=re.fullmatch(r'('+number+r')\s*(minutes?|min|secondes?|sec)',s)
+ if m:
+  n=value(m[1]);seconds=n*(1 if m[2].startswith('sec') else 60)
+  return seconds if 0<seconds<=43200 else None
+ return None

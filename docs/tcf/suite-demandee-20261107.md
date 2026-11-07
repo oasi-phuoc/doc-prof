@@ -1,4 +1,4 @@
-> Instruction actualisée du 7 novembre : la revue des 763 candidates est achevée (79 variantes activées, 111 textes conservés, 573 trios à préparer) ; envoyer sur origin/main après intégration et contrôles. Les audios restent en attente des sources recherchées par l’utilisateur.
+> Instruction actualisée du 7 novembre : la revue des 763 candidates est achevée (218 variantes activées, 112 textes conservés, 433 trios à préparer) ; envoyer sur origin/main après intégration et contrôles. Les audios restent en attente des sources recherchées par l’utilisateur.
 
 # Suite demandée — 7 novembre 2026
 
@@ -9,7 +9,7 @@ Ordre utilisateur : pictogrammes de communication et thèmes PO ; puis 299 réf�
 - Quatre pictogrammes de communication générés et relus : même téléphone pour appel/message ; même enveloppe ouverte pour courriel/lettre. 85 usages CE/CO remplacés. Registre : `communication-pictogrammes-20261107.json`.
 - Quinze thèmes PO sur deux niveaux : 238 références remplacées, 119 emplacements par niveau. Les anciens supports enregistrés sont redirigés ; 64 tirages vérifiés. Registre : `po-trois-themes-images-20261107.json`.
 - Revue CE/CO du 6 novembre : 7 851 questions liées à leur source ; 1 187 usages du vocabulaire remplacés et 42 retirés de variantes ambiguës, questions conservées en texte ; aucun usage restant du dossier vocabulaire dans CE/CO.
-- Horloges : 120 horloges et neuf minuteurs rendus avec le même modèle et des angles calculés, selon la méthode explicitement approuvée.
+- Horloges : 120 horloges, 18 minuteurs et 20 affichages de durée h:min rendus avec le même modèle et des angles calculés, selon la méthode explicitement approuvée.
 
 ## Blocage constaté sur les 299 audios
 
@@ -19,7 +19,7 @@ Une demande d’emplacement accessible a été envoyée à l’utilisateur. Aucu
 
 ## Mise à jour finale
 
-Les quatre corrections PO, les 254 usages CE/CO et le tirage objet sont achevés et vérifiés. Catalogue de 211 concepts ; 107 pistes éligibles ; tirage de trois OUI et deux NON. Voir le [rapport global](rapport-global-20261107.md). Aucun envoi sur main tant que les remplacements audio restent bloqués.
+Les quatre corrections PO, les 254 usages CE/CO et le tirage objet sont achevés et vérifiés. Catalogue de 211 concepts ; 107 pistes éligibles ; tirage de trois OUI et deux NON. Voir le [rapport global](rapport-global-20261107.md). Selon la nouvelle instruction utilisateur, les travaux visuels vérifiés sont publiables sur origin/main pendant l’attente des sources audio. La limite de génération d’images bloque les 433 trios restants ; voir le bilan des 573.
 
 ## Plan de travail initial conservé
 

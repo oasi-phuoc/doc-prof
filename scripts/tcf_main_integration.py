@@ -13,8 +13,11 @@ def git_bank(commit,bank):
 def differences(before,after,node=()):
  if before==after:return
  if isinstance(before,dict) and isinstance(after,dict):
-  assert before.keys()==after.keys(),node
-  for k in before:yield from differences(before[k],after[k],node+(k,))
+  # Image variants are audited by the exact contextual journal; their addition
+  # does not change the inherited source, text choices or written answer.
+  assert before.keys()^after.keys() <= {'qcm_image'},node
+  for k in before.keys()&after.keys():
+   if k!='qcm_image':yield from differences(before[k],after[k],node+(k,))
  elif isinstance(before,list) and isinstance(after,list):
   assert len(before)==len(after),node
   for i,(a,b) in enumerate(zip(before,after)):yield from differences(a,b,node+(i,))

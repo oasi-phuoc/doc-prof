@@ -1,15 +1,15 @@
 {
   "date": "2026-11-06",
   "summary": {
-    "total_active_image_usages": 5630,
-    "reviewed_image_usages": 5630,
+    "total_active_image_usages": 6047,
+    "reviewed_image_usages": 6047,
     "remaining_image_usages": 0,
     "remaining_distinct_images": 0,
     "text_questions_by_review_category": {
       "text_required_person_role_or_diagnosis": 545,
       "editorial_visual_screening_needed": 3622,
       "text_required_amount_measure_or_rate": 417,
-      "reviewed_visual_artwork_pending": 573,
+      "reviewed_visual_artwork_pending": 433,
       "text_required_calendar_identity_or_language": 782,
       "keep_text_named_identity_or_location": 39,
       "keep_text_calendar_or_temporal_scope": 49,
@@ -17,7 +17,8 @@
       "keep_text_private_home_identity": 3,
       "keep_text_source_referent_unspecified": 3,
       "keep_text_nonvisual_or_quantified_claim": 9,
-      "keep_text_arbitrary_identifier": 8
+      "keep_text_arbitrary_identifier": 8,
+      "keep_text_rule_temporal_scope": 1
     },
     "priority_questions": 124,
     "priority_active_image_variants": 72
@@ -551,21 +552,6 @@
       "audio": null
     },
     {
-      "key": "tcf-a1j-s2-ce-3#3",
-      "bank": "src/tcf/content/a0-a1/ce.json",
-      "exercise": "tcf-a1j-s2-ce-3",
-      "question": 3,
-      "enonce": "Où a lieu l'exposition « La vie, demain » ?",
-      "labels": [
-        "À la médiathèque",
-        "Au gymnase",
-        "À la cantine"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "e6abfde1ecd2d0f59abb4de2bddf1df8b700d9989c2ddd1d52ab3084ac27f525",
-      "audio": null
-    },
-    {
       "key": "tcf-a1j-s2-ce-3#4",
       "bank": "src/tcf/content/a0-a1/ce.json",
       "exercise": "tcf-a1j-s2-ce-3",
@@ -611,21 +597,6 @@
       "audio": null
     },
     {
-      "key": "tcf-a1j-s2-ce-3#8",
-      "bank": "src/tcf/content/a0-a1/ce.json",
-      "exercise": "tcf-a1j-s2-ce-3",
-      "question": 8,
-      "enonce": "Où se retrouve-t-on pour le ciné-club ?",
-      "labels": [
-        "Au gymnase",
-        "À la médiathèque",
-        "À la cantine"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "e6abfde1ecd2d0f59abb4de2bddf1df8b700d9989c2ddd1d52ab3084ac27f525",
-      "audio": null
-    },
-    {
       "key": "tcf-a1j-s2-ce-3#9",
       "bank": "src/tcf/content/a0-a1/ce.json",
       "exercise": "tcf-a1j-s2-ce-3",
@@ -667,21 +638,6 @@
         "Six joueurs"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "b608eedbbefb757f831096ab107566d5cf57c021e4a3f58f73f760acc70c938e",
-      "audio": null
-    },
-    {
-      "key": "tcf-a1j-s2-ce-4#3",
-      "bank": "src/tcf/content/a0-a1/ce.json",
-      "exercise": "tcf-a1j-s2-ce-4",
-      "question": 3,
-      "enonce": "Combien de temps dure le match ?",
-      "labels": [
-        "Environ deux heures",
-        "Environ une heure",
-        "Environ trois heures"
-      ],
-      "status": "reviewed_visual_artwork_pending",
       "source_sha256": "b608eedbbefb757f831096ab107566d5cf57c021e4a3f58f73f760acc70c938e",
       "audio": null
     },
@@ -832,21 +788,6 @@
         "Dimanche"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "1900be6dcb9989c7af7d4507e55ed5bc314f30a73d69b763c20da96273c0ff83",
-      "audio": null
-    },
-    {
-      "key": "tcf-a1j-s3-ce-3#3",
-      "bank": "src/tcf/content/a0-a1/ce.json",
-      "exercise": "tcf-a1j-s3-ce-3",
-      "question": 3,
-      "enonce": "Combien de temps dure la visite de nuit ?",
-      "labels": [
-        "1 h 30",
-        "1 heure",
-        "2 heures"
-      ],
-      "status": "reviewed_visual_artwork_pending",
       "source_sha256": "1900be6dcb9989c7af7d4507e55ed5bc314f30a73d69b763c20da96273c0ff83",
       "audio": null
     },
@@ -2051,21 +1992,6 @@
       "audio": null
     },
     {
-      "key": "tcf-a1-s3-ce-1#2",
-      "bank": "src/tcf/content/a0-a1/ce.json",
-      "exercise": "tcf-a1-s3-ce-1",
-      "question": 2,
-      "enonce": "Quel sport Léa devait-elle pratiquer jeudi ?",
-      "labels": [
-        "Le badminton",
-        "Le tennis",
-        "Le volleyball"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "b791e36143130c8652789acd639bef86f84111380e301c9ea7e0fcb36fac6243",
-      "audio": null
-    },
-    {
       "key": "tcf-a1-s3-ce-1#3",
       "bank": "src/tcf/content/a0-a1/ce.json",
       "exercise": "tcf-a1-s3-ce-1",
@@ -2741,21 +2667,6 @@
       "audio": null
     },
     {
-      "key": "tcf-a1-s4-ce-4#4",
-      "bank": "src/tcf/content/a0-a1/ce.json",
-      "exercise": "tcf-a1-s4-ce-4",
-      "question": 4,
-      "enonce": "Entre combien de livres peut-on choisir ?",
-      "labels": [
-        "Quatre livres",
-        "Trois livres",
-        "Cinq livres"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "aa711557f586ff263a179b8d73b4d0a90a91fd62b696f561961a2a64a5c1a32c",
-      "audio": null
-    },
-    {
       "key": "tcf-a1-s4-ce-4#5",
       "bank": "src/tcf/content/a0-a1/ce.json",
       "exercise": "tcf-a1-s4-ce-4",
@@ -2996,21 +2907,6 @@
       "audio": null
     },
     {
-      "key": "tcf-a1p-s4-ce-2#6",
-      "bank": "src/tcf/content/a0-a1/ce.json",
-      "exercise": "tcf-a1p-s4-ce-2",
-      "question": 6,
-      "enonce": "Quel document faut-il apporter au premier cours ?",
-      "labels": [
-        "Une pièce d'identité",
-        "Un certificat médical",
-        "Une carte bancaire"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "d0232dc62f27332ce6d19eab4e421581cf4fadae73b29ccc1a85049c8fbf38cb",
-      "audio": null
-    },
-    {
       "key": "tcf-a1p-s4-ce-2#7",
       "bank": "src/tcf/content/a0-a1/ce.json",
       "exercise": "tcf-a1p-s4-ce-2",
@@ -3067,21 +2963,6 @@
         "Les dimanches"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "be72bf7b86ee5ec5c55c5d6afeb2894e0fdcfbae8f513e95931b55b0a6c04f8e",
-      "audio": null
-    },
-    {
-      "key": "tcf-a1p-s4-ce-3#8",
-      "bank": "src/tcf/content/a0-a1/ce.json",
-      "exercise": "tcf-a1p-s4-ce-3",
-      "question": 8,
-      "enonce": "Combien de temps dure une visite d'appartement ?",
-      "labels": [
-        "Une heure",
-        "Une demi-heure",
-        "Deux heures"
-      ],
-      "status": "reviewed_visual_artwork_pending",
       "source_sha256": "be72bf7b86ee5ec5c55c5d6afeb2894e0fdcfbae8f513e95931b55b0a6c04f8e",
       "audio": null
     },
@@ -5411,21 +5292,6 @@
       "audio": null
     },
     {
-      "key": "delf-a1v-ce-012#7",
-      "bank": "src/tcf/content/a0-a1/ce.json",
-      "exercise": "delf-a1v-ce-012",
-      "question": 7,
-      "enonce": "Quel document les jeunes doivent-ils avoir ?",
-      "labels": [
-        "L'autorisation écrite de leurs parents",
-        "Un certificat de leur école",
-        "Une carte de bibliothèque"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "96a213e93acbfeabf2eadfaa4ac716a3bc7e665f5fc40233eb595574a61fd6bd",
-      "audio": null
-    },
-    {
       "key": "delf-a1v-ce-012#8",
       "bank": "src/tcf/content/a0-a1/ce.json",
       "exercise": "delf-a1v-ce-012",
@@ -5996,21 +5862,6 @@
       "audio": null
     },
     {
-      "key": "delf-a1v-ce-019#2",
-      "bank": "src/tcf/content/a0-a1/ce.json",
-      "exercise": "delf-a1v-ce-019",
-      "question": 2,
-      "enonce": "Quel lieu va-t-on visiter ?",
-      "labels": [
-        "La cathédrale",
-        "Le château",
-        "Le musée"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "48db5dc05b84be676c42db7665b82a2da874245fdeb97d62d13ccd1d96b1259c",
-      "audio": null
-    },
-    {
       "key": "delf-a1v-ce-019#3",
       "bank": "src/tcf/content/a0-a1/ce.json",
       "exercise": "delf-a1v-ce-019",
@@ -6140,21 +5991,6 @@
         "Une pièce d'identité et la convocation",
         "Un permis de conduire et une photo",
         "Une carte de transport et un diplôme"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "7f92d50fea5f5a29de4651ee7cd1d9344703cf32bf04db5ef06c8aba37b503de",
-      "audio": null
-    },
-    {
-      "key": "delf-a1v-ce-020#7",
-      "bank": "src/tcf/content/a0-a1/ce.json",
-      "exercise": "delf-a1v-ce-020",
-      "question": 7,
-      "enonce": "Combien de temps dure l'examen ?",
-      "labels": [
-        "Environ une heure",
-        "Environ deux heures",
-        "Environ trente minutes"
       ],
       "status": "reviewed_visual_artwork_pending",
       "source_sha256": "7f92d50fea5f5a29de4651ee7cd1d9344703cf32bf04db5ef06c8aba37b503de",
@@ -6292,21 +6128,6 @@
         "Avant-hier matin"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "c7cfaca3d5c5f23f2e127cf1447009a984c0fe062e4dd376e6916008486cd1fb",
-      "audio": null
-    },
-    {
-      "key": "delf-a1v-ce-022#3",
-      "bank": "src/tcf/content/a0-a1/ce.json",
-      "exercise": "delf-a1v-ce-022",
-      "question": 3,
-      "enonce": "Quel lieu Ana propose-t-elle de visiter demain ?",
-      "labels": [
-        "Le château",
-        "Le musée",
-        "La cathédrale"
-      ],
-      "status": "reviewed_visual_artwork_pending",
       "source_sha256": "c7cfaca3d5c5f23f2e127cf1447009a984c0fe062e4dd376e6916008486cd1fb",
       "audio": null
     },
@@ -6875,21 +6696,6 @@
         "Au comptoir du rez-de-chaussée",
         "Au bureau du premier étage",
         "À l'accueil du deuxième étage"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "fbfebfc13d7da5eeffa6b448ad2048346cd858cd50aa4b6bf3da2f58201fb4cc",
-      "audio": null
-    },
-    {
-      "key": "delf-a1v-ce-029#2",
-      "bank": "src/tcf/content/a0-a1/ce.json",
-      "exercise": "delf-a1v-ce-029",
-      "question": 2,
-      "enonce": "Quels documents faut-il apporter ?",
-      "labels": [
-        "Une pièce d'identité et une photo",
-        "Une carte de transport et une facture",
-        "Un diplôme et une photo"
       ],
       "status": "reviewed_visual_artwork_pending",
       "source_sha256": "fbfebfc13d7da5eeffa6b448ad2048346cd858cd50aa4b6bf3da2f58201fb4cc",
@@ -7522,21 +7328,6 @@
         "32 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "9a2477fc5d7eeadf1db6baffa9203a79cebc2aab0980ba41d65686262ed86f77",
-      "audio": null
-    },
-    {
-      "key": "delf-a1v-ce-036#7",
-      "bank": "src/tcf/content/a0-a1/ce.json",
-      "exercise": "delf-a1v-ce-036",
-      "question": 7,
-      "enonce": "Quel document faut-il envoyer pour cet emploi ?",
-      "labels": [
-        "Un CV",
-        "Une pièce d'identité",
-        "Un certificat médical"
-      ],
-      "status": "reviewed_visual_artwork_pending",
       "source_sha256": "9a2477fc5d7eeadf1db6baffa9203a79cebc2aab0980ba41d65686262ed86f77",
       "audio": null
     },
@@ -8647,21 +8438,6 @@
         "En anglais"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "8a9c2e8b9670b6387d037241ac8d6de3b65e25d0bbfeba14f4c57b1bd17246e7",
-      "audio": null
-    },
-    {
-      "key": "delf-a1v-ce-049#8",
-      "bank": "src/tcf/content/a0-a1/ce.json",
-      "exercise": "delf-a1v-ce-049",
-      "question": 8,
-      "enonce": "Combien de temps dure l'atelier de conversation ?",
-      "labels": [
-        "1 h 30",
-        "1 heure",
-        "2 heures"
-      ],
-      "status": "reviewed_visual_artwork_pending",
       "source_sha256": "8a9c2e8b9670b6387d037241ac8d6de3b65e25d0bbfeba14f4c57b1bd17246e7",
       "audio": null
     },
@@ -10031,21 +9807,6 @@
       "audio": null
     },
     {
-      "key": "delf-a1v-ce-062#5",
-      "bank": "src/tcf/content/a0-a1/ce.json",
-      "exercise": "delf-a1v-ce-062",
-      "question": 5,
-      "enonce": "Quel document faut-il envoyer avec l'enveloppe ?",
-      "labels": [
-        "Le formulaire de demande",
-        "Une copie du certificat",
-        "Une carte de bibliothèque"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "f9a72dbbf0472ba8f9e1f0be25943f6266f7f19cd97fa35d33567defbb3e9e20",
-      "audio": null
-    },
-    {
       "key": "delf-a1v-ce-062#6",
       "bank": "src/tcf/content/a0-a1/ce.json",
       "exercise": "delf-a1v-ce-062",
@@ -10541,21 +10302,6 @@
       "audio": null
     },
     {
-      "key": "delf-a1s-ce-004#7",
-      "bank": "src/tcf/content/a0-a1/ce.json",
-      "exercise": "delf-a1s-ce-004",
-      "question": 7,
-      "enonce": "Quel document faut-il apporter ?",
-      "labels": [
-        "L'autorisation signée des parents",
-        "Un certificat médical",
-        "Une carte de transport"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "7e00c2b1233e27dc36360639431bb5ee6bfa24883b53d143250de3bf1e161531",
-      "audio": null
-    },
-    {
       "key": "delf-a1s-ce-004#8",
       "bank": "src/tcf/content/a0-a1/ce.json",
       "exercise": "delf-a1s-ce-004",
@@ -10732,21 +10478,6 @@
         "Le 10 mars"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "c90a9f5f5bccb985c02eeb33552cc552de2b86fd4226167cb45ae5618a8088f0",
-      "audio": null
-    },
-    {
-      "key": "delf-a1s-ce-006#5",
-      "bank": "src/tcf/content/a0-a1/ce.json",
-      "exercise": "delf-a1s-ce-006",
-      "question": 5,
-      "enonce": "Quel document faut-il remplir ?",
-      "labels": [
-        "Le formulaire d'inscription",
-        "Un contrat de travail",
-        "Une demande de passeport"
-      ],
-      "status": "reviewed_visual_artwork_pending",
       "source_sha256": "c90a9f5f5bccb985c02eeb33552cc552de2b86fd4226167cb45ae5618a8088f0",
       "audio": null
     },
@@ -11107,21 +10838,6 @@
         "Seulement les professionnels"
       ],
       "status": "text_required_person_role_or_diagnosis",
-      "source_sha256": "428924f328c5f79d1891568bc1f425b7a70e2fc2a7f8fcc447198c1498bff481",
-      "audio": null
-    },
-    {
-      "key": "delf-a1s-ce-010#3",
-      "bank": "src/tcf/content/a0-a1/ce.json",
-      "exercise": "delf-a1s-ce-010",
-      "question": 3,
-      "enonce": "Quel document faut-il envoyer pour s'inscrire ?",
-      "labels": [
-        "Un formulaire d'inscription",
-        "Un certificat de travail",
-        "Un bulletin de notes"
-      ],
-      "status": "reviewed_visual_artwork_pending",
       "source_sha256": "428924f328c5f79d1891568bc1f425b7a70e2fc2a7f8fcc447198c1498bff481",
       "audio": null
     },
@@ -11711,21 +11427,6 @@
       "audio": null
     },
     {
-      "key": "delf-a1s-ce-015#6",
-      "bank": "src/tcf/content/a0-a1/ce.json",
-      "exercise": "delf-a1s-ce-015",
-      "question": 6,
-      "enonce": "Où se déroule le nouvel atelier de hip-hop ?",
-      "labels": [
-        "Au gymnase",
-        "À l'aula",
-        "À la bibliothèque"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "cf21b7551e60990cdcd8fa290a71ae48618a377cb245d1bc445cfb118f36d289",
-      "audio": null
-    },
-    {
       "key": "delf-a1s-ce-015#7",
       "bank": "src/tcf/content/a0-a1/ce.json",
       "exercise": "delf-a1s-ce-015",
@@ -11891,21 +11592,6 @@
       "audio": null
     },
     {
-      "key": "delf-a1s-ce-017#2",
-      "bank": "src/tcf/content/a0-a1/ce.json",
-      "exercise": "delf-a1s-ce-017",
-      "question": 2,
-      "enonce": "Où aura lieu l'exposition ?",
-      "labels": [
-        "Dans le hall",
-        "Dans la cour",
-        "Au gymnase"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "71e691d953f15c516a12047ea80e9ab676a0217dd99473eed5081288c5c4c8f2",
-      "audio": null
-    },
-    {
       "key": "delf-a1s-ce-017#3",
       "bank": "src/tcf/content/a0-a1/ce.json",
       "exercise": "delf-a1s-ce-017",
@@ -11992,21 +11678,6 @@
         "La salle 230"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "71e691d953f15c516a12047ea80e9ab676a0217dd99473eed5081288c5c4c8f2",
-      "audio": null
-    },
-    {
-      "key": "delf-a1s-ce-017#9",
-      "bank": "src/tcf/content/a0-a1/ce.json",
-      "exercise": "delf-a1s-ce-017",
-      "question": 9,
-      "enonce": "Où a lieu l'atelier « L'Univers et nous » ?",
-      "labels": [
-        "Au laboratoire",
-        "Dans l'aula",
-        "Au gymnase"
-      ],
-      "status": "reviewed_visual_artwork_pending",
       "source_sha256": "71e691d953f15c516a12047ea80e9ab676a0217dd99473eed5081288c5c4c8f2",
       "audio": null
     },
@@ -12187,21 +11858,6 @@
         "Le 12 novembre"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "94336b8e4d23565bb75f6fd0e9f9fe9481b9929d94938c3951bc1737647af010",
-      "audio": null
-    },
-    {
-      "key": "delf-a1s-ce-019#6",
-      "bank": "src/tcf/content/a0-a1/ce.json",
-      "exercise": "delf-a1s-ce-019",
-      "question": 6,
-      "enonce": "Où le repas de fête a-t-il lieu ?",
-      "labels": [
-        "À la cantine",
-        "Au gymnase",
-        "Dans le hall"
-      ],
-      "status": "reviewed_visual_artwork_pending",
       "source_sha256": "94336b8e4d23565bb75f6fd0e9f9fe9481b9929d94938c3951bc1737647af010",
       "audio": null
     },
@@ -12502,21 +12158,6 @@
         "Une année sur Mars"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "c40c12cddc116cafd81a05a387b4610e402e616b9974163fc995d8e0446df9ab",
-      "audio": null
-    },
-    {
-      "key": "delf-a1s-ce-022#8",
-      "bank": "src/tcf/content/a0-a1/ce.json",
-      "exercise": "delf-a1s-ce-022",
-      "question": 8,
-      "enonce": "Combien de temps dure « Secret de famille » ?",
-      "labels": [
-        "45 minutes",
-        "1 h 34",
-        "1 h 40"
-      ],
-      "status": "reviewed_visual_artwork_pending",
       "source_sha256": "c40c12cddc116cafd81a05a387b4610e402e616b9974163fc995d8e0446df9ab",
       "audio": null
     },
@@ -13586,21 +13227,6 @@
       "audio": null
     },
     {
-      "key": "delf-a1s-ce-033#2",
-      "bank": "src/tcf/content/a0-a1/ce.json",
-      "exercise": "delf-a1s-ce-033",
-      "question": 2,
-      "enonce": "Combien de livres de mathématiques sont à vendre ?",
-      "labels": [
-        "Trois livres",
-        "Deux livres",
-        "Quatre livres"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "1bf91e5fa399c53f1865bce186be75d0e003dda8af34387323b5a606540c0124",
-      "audio": null
-    },
-    {
       "key": "delf-a1s-ce-033#3",
       "bank": "src/tcf/content/a0-a1/ce.json",
       "exercise": "delf-a1s-ce-033",
@@ -13901,21 +13527,6 @@
       "audio": null
     },
     {
-      "key": "delf-a1s-ce-035#5",
-      "bank": "src/tcf/content/a0-a1/ce.json",
-      "exercise": "delf-a1s-ce-035",
-      "question": 5,
-      "enonce": "Combien de temps dure le jeu ?",
-      "labels": [
-        "Une heure",
-        "Deux heures",
-        "Une demi-heure"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "45e8f083fff44bf50ae4a27fb242baaf6145facae424436894d67ad51d68ed05",
-      "audio": null
-    },
-    {
       "key": "delf-a1s-ce-035#6",
       "bank": "src/tcf/content/a0-a1/ce.json",
       "exercise": "delf-a1s-ce-035",
@@ -14077,21 +13688,6 @@
         "Un instrument de musique"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "cfdc37a5af3fa72e6562b2039643c1f74d66a95b734c11c3161545f1f339b2a7",
-      "audio": null
-    },
-    {
-      "key": "delf-a1s-ce-036#9",
-      "bank": "src/tcf/content/a0-a1/ce.json",
-      "exercise": "delf-a1s-ce-036",
-      "question": 9,
-      "enonce": "Où faut-il s'inscrire ?",
-      "labels": [
-        "Au secrétariat",
-        "Au laboratoire",
-        "À la bibliothèque"
-      ],
-      "status": "reviewed_visual_artwork_pending",
       "source_sha256": "cfdc37a5af3fa72e6562b2039643c1f74d66a95b734c11c3161545f1f339b2a7",
       "audio": null
     },
@@ -14302,21 +13898,6 @@
         "La semaine prochaine"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "9c15e71ebdd85f36e009a99124ac0338b65192ce9602c0cdce3fd704218e636e",
-      "audio": null
-    },
-    {
-      "key": "delf-a1s-ce-038#5",
-      "bank": "src/tcf/content/a0-a1/ce.json",
-      "exercise": "delf-a1s-ce-038",
-      "question": 5,
-      "enonce": "Combien de temps dure le film ?",
-      "labels": [
-        "125 minutes",
-        "105 minutes",
-        "150 minutes"
-      ],
-      "status": "reviewed_visual_artwork_pending",
       "source_sha256": "9c15e71ebdd85f36e009a99124ac0338b65192ce9602c0cdce3fd704218e636e",
       "audio": null
     },
@@ -14602,21 +14183,6 @@
         "25 °C"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "c0b4e04cf77f643a7fb0d5a12424a2fb51732d1f683a677267f90eedea83bded",
-      "audio": null
-    },
-    {
-      "key": "delf-a1s-ce-040#7",
-      "bank": "src/tcf/content/a0-a1/ce.json",
-      "exercise": "delf-a1s-ce-040",
-      "question": 7,
-      "enonce": "Où peut-on manger dans le parc ?",
-      "labels": [
-        "Au restaurant",
-        "Au musée",
-        "Au laboratoire"
-      ],
-      "status": "reviewed_visual_artwork_pending",
       "source_sha256": "c0b4e04cf77f643a7fb0d5a12424a2fb51732d1f683a677267f90eedea83bded",
       "audio": null
     },
@@ -17336,21 +16902,6 @@
       "audio": "/lib/audio/tcf/co/travail/le-nouveau-travail.mp3"
     },
     {
-      "key": "tcf-a1-s2-co-3#7",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "tcf-a1-s2-co-3",
-      "question": 7,
-      "enonce": "Quel document est disponible au service du personnel ?",
-      "labels": [
-        "Le contrat",
-        "Le diplôme",
-        "Le passeport"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "f90eeac5bf69683274aee1d80ee3a5813e433c23bc0c15212e1f2bdde61a2a93",
-      "audio": "/lib/audio/tcf/co/travail/le-nouveau-travail.mp3"
-    },
-    {
       "key": "tcf-a1-s2-co-5#1",
       "bank": "src/tcf/content/a0-a1/co.json",
       "exercise": "tcf-a1-s2-co-5",
@@ -17360,21 +16911,6 @@
         "Sur le menu du restaurant",
         "Sur le site d’un supermarché",
         "Dans un livre de cuisine"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "9e3d233f7e5afb860168687e46195a2b7dc5725c348d125fb701416dbefe1273",
-      "audio": "/lib/audio/tcf/co/loisirs/au-restaurant.mp3"
-    },
-    {
-      "key": "tcf-a1-s2-co-5#2",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "tcf-a1-s2-co-5",
-      "question": 2,
-      "enonce": "Quel plat principal est proposé ?",
-      "labels": [
-        "Du poisson avec du riz",
-        "Du poulet avec des pâtes",
-        "Du bœuf avec des frites"
       ],
       "status": "reviewed_visual_artwork_pending",
       "source_sha256": "9e3d233f7e5afb860168687e46195a2b7dc5725c348d125fb701416dbefe1273",
@@ -18011,21 +17547,6 @@
       "audio": "/lib/audio/tcf/co/magasins/a-la-librairie.mp3"
     },
     {
-      "key": "tcf-a1-s4-co-3#2",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "tcf-a1-s4-co-3",
-      "question": 2,
-      "enonce": "Quel objet le client peut-il venir chercher ?",
-      "labels": [
-        "Un dictionnaire",
-        "Un agenda",
-        "Un roman"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "568cff6d42455f4b3f7aaa756f8dbe017b3bbe556606e4199c0ba05daebd2636",
-      "audio": "/lib/audio/tcf/co/magasins/a-la-librairie.mp3"
-    },
-    {
       "key": "tcf-a1-s4-co-3#3",
       "bank": "src/tcf/content/a0-a1/co.json",
       "exercise": "tcf-a1-s4-co-3",
@@ -18382,21 +17903,6 @@
         "Avant le 18 juillet"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "0b83127ac4313706cf663c16673ae099c86050ec951aa1398f350c7d4ca7aa56",
-      "audio": "/lib/audio/tcf/co/travail/l-entretien-d-embauche.mp3"
-    },
-    {
-      "key": "tcf-a1-tpa-co-3#5",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "tcf-a1-tpa-co-3",
-      "question": 5,
-      "enonce": "Quel document faut-il envoyer ?",
-      "labels": [
-        "Un CV",
-        "Une carte d’identité",
-        "Une ordonnance"
-      ],
-      "status": "reviewed_visual_artwork_pending",
       "source_sha256": "0b83127ac4313706cf663c16673ae099c86050ec951aa1398f350c7d4ca7aa56",
       "audio": "/lib/audio/tcf/co/travail/l-entretien-d-embauche.mp3"
     },
@@ -18761,21 +18267,6 @@
       "audio": "/lib/audio/tcf/co/travail/l-offre-d-emploi.mp3"
     },
     {
-      "key": "tcf-a1-tpb-co-3#8",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "tcf-a1-tpb-co-3",
-      "question": 8,
-      "enonce": "Quel document faut-il envoyer pour le dossier ?",
-      "labels": [
-        "Une photocopie du dernier diplôme",
-        "Une carte postale",
-        "Une ordonnance"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "6651a4c07b879e4f100ea4fce0d4ff6f180c4bbc3dbb2cf2494244ca79a4c8f1",
-      "audio": "/lib/audio/tcf/co/travail/l-offre-d-emploi.mp3"
-    },
-    {
       "key": "tcf-a1-tpb-co-4#3",
       "bank": "src/tcf/content/a0-a1/co.json",
       "exercise": "tcf-a1-tpb-co-4",
@@ -18879,21 +18370,6 @@
       "status": "editorial_visual_screening_needed",
       "source_sha256": "27194dea3183a18f18dcff49a5ffbc0eef8f10ab9fc93cee04fb1239f25ab5c1",
       "audio": "/lib/audio/tcf/co/ecole/46-école-rendez-vous-professeur-de-français.mp3"
-    },
-    {
-      "key": "tcf-a1-tpbb-co-2#1",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "tcf-a1-tpbb-co-2",
-      "question": 1,
-      "enonce": "Quel objet Sammy cherche-t-il ?",
-      "labels": [
-        "Son livre de mathématiques",
-        "Ses clés",
-        "Son téléphone"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "06edabaea51532ad2f512152f618c661f0fd282d88b731833f67b519ee4a31ef",
-      "audio": "/lib/audio/tcf/co/ecole/47-école-chercher-livre-de-mathématiques.mp3"
     },
     {
       "key": "tcf-a1-tpbb-co-2#2",
@@ -19074,21 +18550,6 @@
       "status": "editorial_visual_screening_needed",
       "source_sha256": "35e2e9ce13a0c2976ceecdccb6901acd2407a99fad1b5a5e973c8e866693023a",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/restaurant-entreprise.mp3"
-    },
-    {
-      "key": "tcf-a1-sem1-co-2#13",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "tcf-a1-sem1-co-2",
-      "question": 13,
-      "enonce": "Quel fruit le client achète-t-il ?",
-      "labels": [
-        "Des cerises",
-        "Des pommes",
-        "Des poires"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "df17b6258179c47939a27830bdb2d358460cf636bb222c0b25cc4bbf47ad0447",
-      "audio": "/lib/audio/tcf/co/vie-quotidienne/achat-cerises.mp3"
     },
     {
       "key": "tcf-a1-sem1-co-2#15",
@@ -19601,21 +19062,6 @@
       "audio": "/lib/audio/tcf/co/magasins/chers-clients-magasin-vetimarche.mp3"
     },
     {
-      "key": "tcf-ss-a1-s2-co-2#5",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "tcf-ss-a1-s2-co-2",
-      "question": 5,
-      "enonce": "Quels vêtements bénéficient de réductions ?",
-      "labels": [
-        "Des pantalons",
-        "Des manteaux",
-        "Des chemises"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "12c0629e918cabd5583a1c521fd77b9ad0e0a5a9dc3d0c1e71453b50bba6ef82",
-      "audio": "/lib/audio/tcf/co/magasins/chers-clients-magasin-vetimarche.mp3"
-    },
-    {
       "key": "tcf-ss-a1-s2-co-2#6",
       "bank": "src/tcf/content/a0-a1/co.json",
       "exercise": "tcf-ss-a1-s2-co-2",
@@ -19852,21 +19298,6 @@
         "La cousine"
       ],
       "status": "text_required_person_role_or_diagnosis",
-      "source_sha256": "000f86109b5f00ab0f75d69ed99d1686ec1b5e425e82b836d13340770a4260f6",
-      "audio": "/lib/audio/tcf/co/fetes/21-fêtes-ouf-c-est-bon.mp3"
-    },
-    {
-      "key": "tcf-ss-a1-s3-co-2#5",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "tcf-ss-a1-s3-co-2",
-      "question": 5,
-      "enonce": "Quel dessert Angela apporte-t-elle ?",
-      "labels": [
-        "Une salade de fruits",
-        "Une mousse au chocolat",
-        "Une tarte aux pommes"
-      ],
-      "status": "reviewed_visual_artwork_pending",
       "source_sha256": "000f86109b5f00ab0f75d69ed99d1686ec1b5e425e82b836d13340770a4260f6",
       "audio": "/lib/audio/tcf/co/fetes/21-fêtes-ouf-c-est-bon.mp3"
     },
@@ -20576,36 +20007,6 @@
       "audio": "/lib/audio/tcf/co/fetes/23-fêtes-anniversaire-Bastien.mp3"
     },
     {
-      "key": "tcf-ss-a1-s5-co-3#2",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "tcf-ss-a1-s5-co-3",
-      "question": 2,
-      "enonce": "Quel document présentant les résultats scolaires faut-il apporter ?",
-      "labels": [
-        "Les relevés de notes",
-        "Le carnet de correspondance",
-        "Le programme des cours"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "996071529c6e07372ac0e3463cf63953db87e24510fe71b309c0586e96f7e188",
-      "audio": "/lib/audio/tcf/co/ecole/03-école-inscription-à-l-université.mp3"
-    },
-    {
-      "key": "tcf-ss-a1-s5-co-3#3",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "tcf-ss-a1-s5-co-3",
-      "question": 3,
-      "enonce": "Quel document d’identité est demandé ?",
-      "labels": [
-        "Une carte d’identité",
-        "Un permis de conduire",
-        "Un livret de famille"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "996071529c6e07372ac0e3463cf63953db87e24510fe71b309c0586e96f7e188",
-      "audio": "/lib/audio/tcf/co/ecole/03-école-inscription-à-l-université.mp3"
-    },
-    {
       "key": "tcf-ss-a1-s5-co-3#5",
       "bank": "src/tcf/content/a0-a1/co.json",
       "exercise": "tcf-ss-a1-s5-co-3",
@@ -20966,21 +20367,6 @@
       "audio": "/lib/audio/tcf/co/vie-quotidienne/bonjour-nouvelle-2.mp3"
     },
     {
-      "key": "tcf-ss-a1-s6-co-3#2",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "tcf-ss-a1-s6-co-3",
-      "question": 2,
-      "enonce": "Quel document l’étudiante possède-t-elle déjà ?",
-      "labels": [
-        "Le formulaire de demande",
-        "La carte d’étudiant",
-        "Le diplôme universitaire"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "fed5ec52e2e98e1acd69a85b00da1599e7db9ae79ceb4a496f00b4d6916fba61",
-      "audio": "/lib/audio/tcf/co/vie-quotidienne/bonjour-nouvelle-2.mp3"
-    },
-    {
       "key": "tcf-ss-a1-s6-co-3#5",
       "bank": "src/tcf/content/a0-a1/co.json",
       "exercise": "tcf-ss-a1-s6-co-3",
@@ -21131,21 +20517,6 @@
       "audio": "/lib/audio/tcf/co/vie-quotidienne/l-anniversaire-chanez-lieu-samedi.mp3"
     },
     {
-      "key": "tcf-ss-a1-s7-co-2#1",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "tcf-ss-a1-s7-co-2",
-      "question": 1,
-      "enonce": "Avec quel appareil le client a-t-il un problème ?",
-      "labels": [
-        "Sa box",
-        "Sa télévision",
-        "Son ordinateur"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "0b1d372ff1191b828bc385ee1b31560987d73fa416f96fd72eabe4e16cc7d62d",
-      "audio": "/lib/audio/tcf/co/vie-quotidienne/01-quotidien-problème-avec-la-box.mp3"
-    },
-    {
       "key": "tcf-ss-a1-s7-co-2#2",
       "bank": "src/tcf/content/a0-a1/co.json",
       "exercise": "tcf-ss-a1-s7-co-2",
@@ -21172,21 +20543,6 @@
         "Il encaisse la facture"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "0b1d372ff1191b828bc385ee1b31560987d73fa416f96fd72eabe4e16cc7d62d",
-      "audio": "/lib/audio/tcf/co/vie-quotidienne/01-quotidien-problème-avec-la-box.mp3"
-    },
-    {
-      "key": "tcf-ss-a1-s7-co-2#4",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "tcf-ss-a1-s7-co-2",
-      "question": 4,
-      "enonce": "Quel document prépare-t-il avant de réparer ?",
-      "labels": [
-        "Un devis",
-        "Une ordonnance",
-        "Un contrat de location"
-      ],
-      "status": "reviewed_visual_artwork_pending",
       "source_sha256": "0b1d372ff1191b828bc385ee1b31560987d73fa416f96fd72eabe4e16cc7d62d",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/01-quotidien-problème-avec-la-box.mp3"
     },
@@ -22091,21 +21447,6 @@
       "audio": "/lib/audio/tcf/co/vie-quotidienne/aujourd-hui-ecoutons-recette-sandwich-1.mp3"
     },
     {
-      "key": "tcf-ss-a1-s11-co-2#5",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "tcf-ss-a1-s11-co-2",
-      "question": 5,
-      "enonce": "Combien de tranches de tomates faut-il mettre ?",
-      "labels": [
-        "Trois",
-        "Deux",
-        "Cinq"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "77e5861fc0eb760bb0a68aa3aa7b70506976b0647bb22fd7b8f26b1714f78321",
-      "audio": "/lib/audio/tcf/co/vie-quotidienne/aujourd-hui-ecoutons-recette-sandwich-1.mp3"
-    },
-    {
       "key": "tcf-ss-a1-s11-co-2#6",
       "bank": "src/tcf/content/a0-a1/co.json",
       "exercise": "tcf-ss-a1-s11-co-2",
@@ -22119,36 +21460,6 @@
       "status": "editorial_visual_screening_needed",
       "source_sha256": "77e5861fc0eb760bb0a68aa3aa7b70506976b0647bb22fd7b8f26b1714f78321",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/aujourd-hui-ecoutons-recette-sandwich-1.mp3"
-    },
-    {
-      "key": "tcf-ss-a1-s11-co-4#2",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "tcf-ss-a1-s11-co-4",
-      "question": 2,
-      "enonce": "Où les usagers doivent-ils se rendre ?",
-      "labels": [
-        "Vers les douches",
-        "Vers les vestiaires",
-        "Vers la cafétéria"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "73723850f5e802e35b7f3bc4957834b33414b447eb8988d69db7a09aaa07136b",
-      "audio": "/lib/audio/tcf/co/vie-quotidienne/mesdames-messieurs-piscine-ferme.mp3"
-    },
-    {
-      "key": "tcf-ss-a1-s11-co-4#5",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "tcf-ss-a1-s11-co-4",
-      "question": 5,
-      "enonce": "Quel document faut-il prendre en sortant ?",
-      "labels": [
-        "Le programme des activités",
-        "Un formulaire médical",
-        "Un plan de la ville"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "73723850f5e802e35b7f3bc4957834b33414b447eb8988d69db7a09aaa07136b",
-      "audio": "/lib/audio/tcf/co/vie-quotidienne/mesdames-messieurs-piscine-ferme.mp3"
     },
     {
       "key": "tcf-ss-a1-s12-co-1#3",
@@ -22826,21 +22137,6 @@
       "audio": "/lib/audio/tcf/co/maison/bonjour-etes-norin-1.mp3"
     },
     {
-      "key": "tcf-ss-a1-s15-co-3#1",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "tcf-ss-a1-s15-co-3",
-      "question": 1,
-      "enonce": "Quel document la narratrice montre-t-elle ?",
-      "labels": [
-        "Une photo",
-        "Une lettre",
-        "Une carte postale"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "f63156d5710178f96bb9e23ef2db64b8e786bb2f5ff64a9b5d541d9ceacef8d5",
-      "audio": "/lib/audio/tcf/co/maison/une-visite-d-appartement-c-est-1.mp3"
-    },
-    {
       "key": "tcf-ss-a1-s15-co-3#2",
       "bank": "src/tcf/content/a0-a1/co.json",
       "exercise": "tcf-ss-a1-s15-co-3",
@@ -22897,21 +22193,6 @@
         "Fabien"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "f63156d5710178f96bb9e23ef2db64b8e786bb2f5ff64a9b5d541d9ceacef8d5",
-      "audio": "/lib/audio/tcf/co/maison/une-visite-d-appartement-c-est-1.mp3"
-    },
-    {
-      "key": "tcf-ss-a1-s15-co-3#6",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "tcf-ss-a1-s15-co-3",
-      "question": 6,
-      "enonce": "Quelle est la couleur des cheveux du frère décrit ?",
-      "labels": [
-        "Rousse",
-        "Blonde",
-        "Brune"
-      ],
-      "status": "reviewed_visual_artwork_pending",
       "source_sha256": "f63156d5710178f96bb9e23ef2db64b8e786bb2f5ff64a9b5d541d9ceacef8d5",
       "audio": "/lib/audio/tcf/co/maison/une-visite-d-appartement-c-est-1.mp3"
     },
@@ -23062,21 +22343,6 @@
         "À l’hiver et au printemps"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "2ebda2751a629e46ec7d827deebf13eb0def54e5a11d534344df17028f36a61f",
-      "audio": "/lib/audio/tcf/co/maison/la-nouvelle-collection-printemps-1.mp3"
-    },
-    {
-      "key": "tcf-ss-a1-s16-co-2#3",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "tcf-ss-a1-s16-co-2",
-      "question": 3,
-      "enonce": "Quels vêtements sont proposés dans de nombreuses couleurs ?",
-      "labels": [
-        "Des T-shirts",
-        "Des robes",
-        "Des manteaux"
-      ],
-      "status": "reviewed_visual_artwork_pending",
       "source_sha256": "2ebda2751a629e46ec7d827deebf13eb0def54e5a11d534344df17028f36a61f",
       "audio": "/lib/audio/tcf/co/maison/la-nouvelle-collection-printemps-1.mp3"
     },
@@ -24746,21 +24012,6 @@
       "audio": "/lib/audio/tcf/co/maison/pour-repas-soir.mp3"
     },
     {
-      "key": "tcf-ss-a1-s22-co-4#2",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "tcf-ss-a1-s22-co-4",
-      "question": 2,
-      "enonce": "Quel plat de viande est déjà préparé ?",
-      "labels": [
-        "Un poulet rôti",
-        "Un steak-frites",
-        "Un rôti de bœuf"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "ce16e983a671570d5fe16f0723fb79c49e40500d21202471e66c4c73231f7828",
-      "audio": "/lib/audio/tcf/co/maison/pour-repas-soir.mp3"
-    },
-    {
       "key": "tcf-ss-a1-s22-co-4#3",
       "bank": "src/tcf/content/a0-a1/co.json",
       "exercise": "tcf-ss-a1-s22-co-4",
@@ -24967,21 +24218,6 @@
         "Elle part en voyage"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "f54c80d0c90231f27ebcbd6da9f2d3c0e00f7f5970befbc93108bfa03e94a3dc",
-      "audio": "/lib/audio/tcf/co/vie-quotidienne/bonjour-bugier-1.mp3"
-    },
-    {
-      "key": "tcf-ss-a1-s23-co-4#7",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "tcf-ss-a1-s23-co-4",
-      "question": 7,
-      "enonce": "Quel dessert madame Bugier propose-t-elle à Thomas d’apporter ?",
-      "labels": [
-        "Une salade de fruits",
-        "Une tarte au citron",
-        "Une mousse au chocolat"
-      ],
-      "status": "reviewed_visual_artwork_pending",
       "source_sha256": "f54c80d0c90231f27ebcbd6da9f2d3c0e00f7f5970befbc93108bfa03e94a3dc",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/bonjour-bugier-1.mp3"
     },
@@ -25646,21 +24882,6 @@
       "audio": "/lib/audio/tcf/co/vie-quotidienne/sacha-retard-1.mp3"
     },
     {
-      "key": "tcf-ss-a1-s26-co-3#6",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "tcf-ss-a1-s26-co-3",
-      "question": 6,
-      "enonce": "Combien de temps Anaïs met-elle pour se préparer ?",
-      "labels": [
-        "Une heure",
-        "Dix minutes",
-        "Deux heures"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "807e6e586678057ae0d9a90247939bbd14ec300b81f36f05cba3014a3b8fb65d",
-      "audio": "/lib/audio/tcf/co/vie-quotidienne/sacha-retard-1.mp3"
-    },
-    {
       "key": "tcf-ss-a1-s26-co-4#1",
       "bank": "src/tcf/content/a0-a1/co.json",
       "exercise": "tcf-ss-a1-s26-co-4",
@@ -26261,21 +25482,6 @@
       "audio": "/lib/audio/tcf/co/vie-quotidienne/bonjour-c-est-dejeuner-1.mp3"
     },
     {
-      "key": "tcf-ss-a1-s29-co-1#4",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "tcf-ss-a1-s29-co-1",
-      "question": 4,
-      "enonce": "Quel plat de viande est commandé pour l’autre client ?",
-      "labels": [
-        "Un steak-frites",
-        "Un poulet rôti",
-        "Un rôti de veau"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "42d6ac6fe3e3a530478155d6bfdccdfacddd01a699b63b2b5308e682de42006c",
-      "audio": "/lib/audio/tcf/co/vie-quotidienne/bonjour-c-est-dejeuner-1.mp3"
-    },
-    {
       "key": "tcf-ss-a1-s29-co-1#5",
       "bank": "src/tcf/content/a0-a1/co.json",
       "exercise": "tcf-ss-a1-s29-co-1",
@@ -26437,21 +25643,6 @@
         "Méditerranée"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "e17a2530d2977d07463d5081a8f54fa9c85c3209d5e17af69361239b3df29a53",
-      "audio": "/lib/audio/tcf/co/vie-quotidienne/bonjour-messieurs-dames-voici-1.mp3"
-    },
-    {
-      "key": "tcf-ss-a1-s29-co-3#4",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "tcf-ss-a1-s29-co-3",
-      "question": 4,
-      "enonce": "Quel aliment principal compose ce menu ?",
-      "labels": [
-        "Du poisson",
-        "Du poulet",
-        "Du bœuf"
-      ],
-      "status": "reviewed_visual_artwork_pending",
       "source_sha256": "e17a2530d2977d07463d5081a8f54fa9c85c3209d5e17af69361239b3df29a53",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/bonjour-messieurs-dames-voici-1.mp3"
     },
@@ -27326,21 +26517,6 @@
       "audio": "/lib/audio/tcf/co/vie-quotidienne/bonjour-voudrais-prix-1.mp3"
     },
     {
-      "key": "tcf-ss-a1-s32-co-2#8",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "tcf-ss-a1-s32-co-2",
-      "question": 8,
-      "enonce": "Combien de temps le trajet en TGV dure-t-il ?",
-      "labels": [
-        "1 h 45",
-        "3 h 45",
-        "2 h 45"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "94ae6daca75853e4a07e57f1656eec6773e3f8406a89e427ac6b73a71ab27d59",
-      "audio": "/lib/audio/tcf/co/vie-quotidienne/bonjour-voudrais-prix-1.mp3"
-    },
-    {
       "key": "tcf-ss-a1-s32-co-2#9",
       "bank": "src/tcf/content/a0-a1/co.json",
       "exercise": "tcf-ss-a1-s32-co-2",
@@ -27431,21 +26607,6 @@
       "audio": "/lib/audio/tcf/co/vie-quotidienne/mesdames-messieurs-votre-attention-1.mp3"
     },
     {
-      "key": "tcf-ss-a1-s32-co-4#1",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "tcf-ss-a1-s32-co-4",
-      "question": 1,
-      "enonce": "Quel document l’agent demande-t-il au début ?",
-      "labels": [
-        "Le passeport",
-        "La carte d’embarquement",
-        "Le permis de conduire"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "ba87303588a5710b36c4574ba219f15a814677f49885298761f4c80c9db366b6",
-      "audio": "/lib/audio/tcf/co/vie-quotidienne/bonjour-votre-passeport-s-il-1.mp3"
-    },
-    {
       "key": "tcf-ss-a1-s32-co-4#2",
       "bank": "src/tcf/content/a0-a1/co.json",
       "exercise": "tcf-ss-a1-s32-co-4",
@@ -27489,21 +26650,6 @@
       "status": "editorial_visual_screening_needed",
       "source_sha256": "ba87303588a5710b36c4574ba219f15a814677f49885298761f4c80c9db366b6",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/bonjour-votre-passeport-s-il-1.mp3"
-    },
-    {
-      "key": "tcf-ss-a1-s33-co-1#1",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "tcf-ss-a1-s33-co-1",
-      "question": 1,
-      "enonce": "Quels documents l’agent demande-t-il au début ?",
-      "labels": [
-        "Le passeport et la carte d’embarquement",
-        "Le permis et la carte bancaire",
-        "La carte d’identité et une ordonnance"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "31147df6a6193300d189fd1190fbe1a02060a3630f2d5d8d25929d10984e0d89",
-      "audio": "/lib/audio/tcf/co/vie-quotidienne/bonjour-votre-passeport-votre-1.mp3"
     },
     {
       "key": "tcf-ss-a1-s33-co-1#3",
@@ -27791,21 +26937,6 @@
       "audio": "/lib/audio/tcf/co/vie-quotidienne/vous-etes-aussi-camping.mp3"
     },
     {
-      "key": "tcf-ss-a1-s34-co-3#1",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "tcf-ss-a1-s34-co-3",
-      "question": 1,
-      "enonce": "Quel sport est proposé en premier ?",
-      "labels": [
-        "Le tennis",
-        "Le VTT",
-        "L’escalade"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "4a0376de55fc66c2ecd1cad1115d972aeea5a1655d45738bdc69ed0f353bd0c6",
-      "audio": "/lib/audio/tcf/co/vie-quotidienne/ah-fait-beau-aujourd-hui.mp3"
-    },
-    {
       "key": "tcf-ss-a1-s34-co-3#2",
       "bank": "src/tcf/content/a0-a1/co.json",
       "exercise": "tcf-ss-a1-s34-co-3",
@@ -28076,21 +27207,6 @@
       "audio": "/lib/audio/tcf/co/vie-quotidienne/des-francais-font-sport.mp3"
     },
     {
-      "key": "tcf-ss-a1-s35-co-2#3",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "tcf-ss-a1-s35-co-2",
-      "question": 3,
-      "enonce": "Quel sport les jeunes aiment-ils faire selon le message ?",
-      "labels": [
-        "Le canoé-kayak",
-        "La voile",
-        "L’escalade"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "c3581958f217ce51f9aeee11d065cee4a49fa8ad98e6c9cfdd51032abc5d1889",
-      "audio": "/lib/audio/tcf/co/vie-quotidienne/des-francais-font-sport.mp3"
-    },
-    {
       "key": "tcf-ss-a1-s35-co-2#4",
       "bank": "src/tcf/content/a0-a1/co.json",
       "exercise": "tcf-ss-a1-s35-co-2",
@@ -28209,21 +27325,6 @@
       "status": "editorial_visual_screening_needed",
       "source_sha256": "289faac7ace167c4ea1347523ac9b394956ff319f73881cd66571badcc23ccc3",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/allo-lea.mp3"
-    },
-    {
-      "key": "tcf-ss-a1-s35-co-4#3",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "tcf-ss-a1-s35-co-4",
-      "question": 3,
-      "enonce": "Combien de temps les activités proposées durent-elles ?",
-      "labels": [
-        "Deux heures",
-        "Une heure",
-        "Trois heures"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "5f9cc6ffac7a82e171901599cdfab33b3c09a919a8a589801176c6a193e58d66",
-      "audio": "/lib/audio/tcf/co/vie-quotidienne/bonjour-fait.mp3"
     },
     {
       "key": "tcf-ss-a1-s35-co-4#5",
@@ -29381,21 +28482,6 @@
       "audio": "/lib/audio/tcf/co/vie-quotidienne/alors-notre-voyage-prend.mp3"
     },
     {
-      "key": "tcf-ss-a1-s38-co-4#5",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "tcf-ss-a1-s38-co-4",
-      "question": 5,
-      "enonce": "Combien de temps le vol Paris-Porto dure-t-il ?",
-      "labels": [
-        "Deux heures",
-        "Cinq heures",
-        "Dix heures"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "55550f6b2fb31b476e80495634e8fcc99397c290f3fec6bfbfd3bb98d3409626",
-      "audio": "/lib/audio/tcf/co/vie-quotidienne/alors-notre-voyage-prend.mp3"
-    },
-    {
       "key": "tcf-ss-a1-s38-co-4#6",
       "bank": "src/tcf/content/a0-a1/co.json",
       "exercise": "tcf-ss-a1-s38-co-4",
@@ -29842,21 +28928,6 @@
         "45 ans"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "bfd1b1be65f0d8739cd3e608fdc42bd104867a349c69ec2529d02f1b39fcaf50",
-      "audio": "/lib/audio/tcf/co/vie-quotidienne/paolo-bonjour-1.mp3"
-    },
-    {
-      "key": "tcf-ss-a1-s40-co-1#7",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "tcf-ss-a1-s40-co-1",
-      "question": 7,
-      "enonce": "Quel document les deux personnes échangent-elles ?",
-      "labels": [
-        "Leur carte de visite",
-        "Leur passeport",
-        "Leur carte d’étudiant"
-      ],
-      "status": "reviewed_visual_artwork_pending",
       "source_sha256": "bfd1b1be65f0d8739cd3e608fdc42bd104867a349c69ec2529d02f1b39fcaf50",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/paolo-bonjour-1.mp3"
     },
@@ -31061,21 +30132,6 @@
       "audio": "/lib/audio/tcf/co/vie-quotidienne/tickets-metro-bordeaux.mp3"
     },
     {
-      "key": "tcf-ss-a1-s45-co-1#1",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "tcf-ss-a1-s45-co-1",
-      "question": 1,
-      "enonce": "Quel document le client demande-t-il ?",
-      "labels": [
-        "Un plan de la ville",
-        "Un horaire de train",
-        "Un ticket de métro"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "03adcfb9e6b37a33b0b05e8fe4c404e0b092ef57c54f8ad4b11042d3e77d4cb3",
-      "audio": "/lib/audio/tcf/co/vie-quotidienne/bonjour-avez-plan-1.mp3"
-    },
-    {
       "key": "tcf-ss-a1-s45-co-1#2",
       "bank": "src/tcf/content/a0-a1/co.json",
       "exercise": "tcf-ss-a1-s45-co-1",
@@ -31286,21 +30342,6 @@
       "audio": "/lib/audio/tcf/co/vie-quotidienne/bonjour-quelle-votre-destination-1.mp3"
     },
     {
-      "key": "tcf-ss-a1-s45-co-4#6",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "tcf-ss-a1-s45-co-4",
-      "question": 6,
-      "enonce": "Quel document lui remet l'agent ?",
-      "labels": [
-        "Une carte d'embarquement",
-        "Un passeport",
-        "Une facture d'hôtel"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "2d2982d39a1819be707fbde4453c9470d679dffd7a1a7c0f4a5b9f905cd0c1e5",
-      "audio": "/lib/audio/tcf/co/vie-quotidienne/bonjour-quelle-votre-destination-1.mp3"
-    },
-    {
       "key": "tcf-ss-a1-s45-co-4#7",
       "bank": "src/tcf/content/a0-a1/co.json",
       "exercise": "tcf-ss-a1-s45-co-4",
@@ -31374,21 +30415,6 @@
       "status": "editorial_visual_screening_needed",
       "source_sha256": "1e616c12f17b35c34b63c85a971b456a5fbb528422eeffcf0bcd212485e76bd6",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/mesdames-messieurs-bonsoir.mp3"
-    },
-    {
-      "key": "tcf-ss-a1-s46-co-3#5",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "tcf-ss-a1-s46-co-3",
-      "question": 5,
-      "enonce": "Quel cadeau peut-on gagner en courant ?",
-      "labels": [
-        "Des tee-shirts",
-        "Des ballons",
-        "Des baskets"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "528c51fa51c63053bed16be1c42b266e2d89d0caa906841cf8c7864eb9895df1",
-      "audio": "/lib/audio/tcf/co/vie-quotidienne/cette-semaine-encore-cinema-2.mp3"
     },
     {
       "key": "tcf-ss-a1-s46-co-4#1",
@@ -33671,21 +32697,6 @@
       "audio": "/lib/audio/tcf/co/travail/chloe-as-deja-ta-1.mp3"
     },
     {
-      "key": "tcf-ss-a1-s56-co-2#2",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "tcf-ss-a1-s56-co-2",
-      "question": 2,
-      "enonce": "Quel document Chloé n'a-t-elle pas encore ?",
-      "labels": [
-        "Sa carte d'embarquement",
-        "Son passeport",
-        "Son permis de conduire"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "5301207c62b5ce217f7328cc4810cead7225788b77a85bb12e1e545286019ebc",
-      "audio": "/lib/audio/tcf/co/travail/chloe-as-deja-ta-1.mp3"
-    },
-    {
       "key": "tcf-ss-a1-s56-co-2#3",
       "bank": "src/tcf/content/a0-a1/co.json",
       "exercise": "tcf-ss-a1-s56-co-2",
@@ -33712,21 +32723,6 @@
         "Trois"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "5301207c62b5ce217f7328cc4810cead7225788b77a85bb12e1e545286019ebc",
-      "audio": "/lib/audio/tcf/co/travail/chloe-as-deja-ta-1.mp3"
-    },
-    {
-      "key": "tcf-ss-a1-s56-co-2#5",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "tcf-ss-a1-s56-co-2",
-      "question": 5,
-      "enonce": "Combien de temps avant le départ doit-elle arriver ?",
-      "labels": [
-        "Deux heures",
-        "Une heure",
-        "Trois heures"
-      ],
-      "status": "reviewed_visual_artwork_pending",
       "source_sha256": "5301207c62b5ce217f7328cc4810cead7225788b77a85bb12e1e545286019ebc",
       "audio": "/lib/audio/tcf/co/travail/chloe-as-deja-ta-1.mp3"
     },
@@ -34239,21 +33235,6 @@
       "status": "editorial_visual_screening_needed",
       "source_sha256": "d1741af6f0218bd8b28b5960d5e0b561e21f9d0e2d5ca8c90bab7a603da5ff75",
       "audio": "/lib/audio/tcf/co/scènes courtes/03-maison-demander-un-café.mp3"
-    },
-    {
-      "key": "tcf-sc-04-horaire-du-musee-co-4#3",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "tcf-sc-04-horaire-du-musee-co-4",
-      "question": 3,
-      "enonce": "Combien de temps reste-t-il avant la fermeture ?",
-      "labels": [
-        "Une heure",
-        "Une demi-heure",
-        "Deux heures"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "d572ff846fbc56068a9f5775f35f3377e15c30f82e673400652154959cf110dd",
-      "audio": "/lib/audio/tcf/co/scènes courtes/04-quotidien-horaire-du-musée.mp3"
     },
     {
       "key": "tcf-ssx-a1-ecole-livre-de-maths-co-4#1",
@@ -35184,21 +34165,6 @@
       "status": "editorial_visual_screening_needed",
       "source_sha256": "439eef399015363fc8080420966d7684770d0dfd5ca3e041cfd295ad84663952",
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_05-2.mp3"
-    },
-    {
-      "key": "delf-a1-2022-co-ex1-05#6",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "delf-a1-2022-co-ex1-05",
-      "question": 6,
-      "enonce": "Combien de tomates faut-il acheter ?",
-      "labels": [
-        "10",
-        "5",
-        "15"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "5acc779b7612d34a4bb007ff9c532c9346fff34a802068d6c353c56b1dbe9994",
-      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_05-3.mp3"
     },
     {
       "key": "delf-a1-2022-co-ex1-05#7",
@@ -36911,21 +35877,6 @@
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_23-1.mp3"
     },
     {
-      "key": "delf-a1-2022-co-ex2-23#3",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "delf-a1-2022-co-ex2-23",
-      "question": 3,
-      "enonce": "Combien de temps dure la promotion ?",
-      "labels": [
-        "30 minutes",
-        "Une heure",
-        "Deux heures"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "daed7c1234862f3fe72c7bd63b07c894eebe6aad41eac9881b606f9e454ca40a",
-      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_23-1.mp3"
-    },
-    {
       "key": "delf-a1-2022-co-ex2-23#4",
       "bank": "src/tcf/content/a0-a1/co.json",
       "exercise": "delf-a1-2022-co-ex2-23",
@@ -36999,21 +35950,6 @@
       "status": "text_required_person_role_or_diagnosis",
       "source_sha256": "daed7c1234862f3fe72c7bd63b07c894eebe6aad41eac9881b606f9e454ca40a",
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_23-1.mp3"
-    },
-    {
-      "key": "delf-a1-2022-co-ex2-23#10",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "delf-a1-2022-co-ex2-23",
-      "question": 10,
-      "enonce": "Quels vêtements étaient en promotion avant les jouets ?",
-      "labels": [
-        "Les pantalons",
-        "Les chemises",
-        "Les manteaux"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "ee5fd75434c9e71ca71e51eb5457920f92825070b1436ccaf907597a74103ce5",
-      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_23-2.mp3"
     },
     {
       "key": "delf-a1-2022-co-ex2-23#11",
@@ -37496,51 +36432,6 @@
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_28-1.mp3"
     },
     {
-      "key": "delf-a1-2022-co-ex3-28#3",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "delf-a1-2022-co-ex3-28",
-      "question": 3,
-      "enonce": "Quel document faut-il envoyer ?",
-      "labels": [
-        "Une photocopie de la carte d'identité",
-        "Une facture d'électricité",
-        "Un certificat médical"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "3d0effec0d53114478e4b76a309d8de07ea162de1c97f7cc52b7119cc1c3e358",
-      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_28-1.mp3"
-    },
-    {
-      "key": "delf-a1-2022-co-ex3-28#4",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "delf-a1-2022-co-ex3-28",
-      "question": 4,
-      "enonce": "Quel document Monsieur Dumont possède-t-il déjà ?",
-      "labels": [
-        "Le CV",
-        "La lettre de motivation",
-        "La carte d'identité"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "4552d4502480f47108815bb498c101e35480903abaeb6a15252928d0b91cf743",
-      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_28-2.mp3"
-    },
-    {
-      "key": "delf-a1-2022-co-ex3-28#5",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "delf-a1-2022-co-ex3-28",
-      "question": 5,
-      "enonce": "Quel document manque-t-il ?",
-      "labels": [
-        "La lettre de motivation",
-        "Le CV",
-        "Le passeport"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "4552d4502480f47108815bb498c101e35480903abaeb6a15252928d0b91cf743",
-      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_28-2.mp3"
-    },
-    {
       "key": "delf-a1-2022-co-ex3-28#6",
       "bank": "src/tcf/content/a0-a1/co.json",
       "exercise": "delf-a1-2022-co-ex3-28",
@@ -37571,21 +36462,6 @@
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_28-3.mp3"
     },
     {
-      "key": "delf-a1-2022-co-ex3-28#8",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "delf-a1-2022-co-ex3-28",
-      "question": 8,
-      "enonce": "Quel document faut-il apporter ?",
-      "labels": [
-        "Le programme du concert",
-        "Le plan du théâtre",
-        "Le menu du restaurant"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "20e57dffa40929da9c274d407c914ac531511e712cf764b7f66ec3e0653334ed",
-      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_28-3.mp3"
-    },
-    {
       "key": "delf-a1-2022-co-ex3-28#9",
       "bank": "src/tcf/content/a0-a1/co.json",
       "exercise": "delf-a1-2022-co-ex3-28",
@@ -37597,21 +36473,6 @@
         "La liste des employés"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "20e57dffa40929da9c274d407c914ac531511e712cf764b7f66ec3e0653334ed",
-      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_28-3.mp3"
-    },
-    {
-      "key": "delf-a1-2022-co-ex3-28#10",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "delf-a1-2022-co-ex3-28",
-      "question": 10,
-      "enonce": "Combien de temps la réunion doit-elle durer au maximum ?",
-      "labels": [
-        "30 minutes",
-        "Une heure",
-        "Deux heures"
-      ],
-      "status": "reviewed_visual_artwork_pending",
       "source_sha256": "20e57dffa40929da9c274d407c914ac531511e712cf764b7f66ec3e0653334ed",
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_28-3.mp3"
     },
@@ -37762,21 +36623,6 @@
         "Mercredi"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "e7c677813c83683d39514de990b8a2a1ec9d639fbe5412f412e549cb92af1015",
-      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_29-3.mp3"
-    },
-    {
-      "key": "delf-a1-2022-co-ex3-29#11",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "delf-a1-2022-co-ex3-29",
-      "question": 11,
-      "enonce": "Quel document faut-il envoyer ?",
-      "labels": [
-        "Le CV",
-        "Le passeport",
-        "La carte bancaire"
-      ],
-      "status": "reviewed_visual_artwork_pending",
       "source_sha256": "e7c677813c83683d39514de990b8a2a1ec9d639fbe5412f412e549cb92af1015",
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_29-3.mp3"
     },
@@ -38182,21 +37028,6 @@
         "Maxime"
       ],
       "status": "text_required_person_role_or_diagnosis",
-      "source_sha256": "d1cd3fd7cc4aefeaf983e0cdf43502b9059706ff4a19d44f7515fd4370a5a8fa",
-      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_34-3.mp3"
-    },
-    {
-      "key": "delf-a1-2022-co-ex3-34#8",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "delf-a1-2022-co-ex3-34",
-      "question": 8,
-      "enonce": "Quel document ne trouve-t-il pas ?",
-      "labels": [
-        "Le dossier de réunion",
-        "Le programme du concert",
-        "Le journal"
-      ],
-      "status": "reviewed_visual_artwork_pending",
       "source_sha256": "d1cd3fd7cc4aefeaf983e0cdf43502b9059706ff4a19d44f7515fd4370a5a8fa",
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_34-3.mp3"
     },
@@ -39131,21 +37962,6 @@
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_40-1.mp3"
     },
     {
-      "key": "delf-a1-2022-co-ex4-40#7",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "delf-a1-2022-co-ex4-40",
-      "question": 7,
-      "enonce": "De quelle couleur les cheveux de Monique sont-ils ?",
-      "labels": [
-        "Blonds",
-        "Bruns",
-        "Gris"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "7c8e7c859d4dcde47e6f682e854bc0dff3dae763eb40965426f017d99766c34c",
-      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_40-1.mp3"
-    },
-    {
       "key": "delf-a1-2022-co-ex4-40#8",
       "bank": "src/tcf/content/a0-a1/co.json",
       "exercise": "delf-a1-2022-co-ex4-40",
@@ -39412,21 +38228,6 @@
         "L'histoire"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "61a8fb31242897ab6756d4f1233891be71da70b73cb5b34103157d16d00ae644",
-      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_42.mp3"
-    },
-    {
-      "key": "delf-a1-2022-co-ex4-42#3",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "delf-a1-2022-co-ex4-42",
-      "question": 3,
-      "enonce": "Quel vêtement rouge Alexandre porte-t-il ?",
-      "labels": [
-        "Un pull",
-        "Un manteau",
-        "Un pantalon"
-      ],
-      "status": "reviewed_visual_artwork_pending",
       "source_sha256": "61a8fb31242897ab6756d4f1233891be71da70b73cb5b34103157d16d00ae644",
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_42.mp3"
     },
@@ -40912,36 +39713,6 @@
         "Le bureau 122"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "10fb2250f2c83cfd62df677c43ea864df54def8166e41ccadd68148ea5d70062",
-      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_67.mp3"
-    },
-    {
-      "key": "delf-a1-2022-co-ex3-67#5",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "delf-a1-2022-co-ex3-67",
-      "question": 5,
-      "enonce": "Quel document faut-il apporter ?",
-      "labels": [
-        "Une lettre de motivation",
-        "Un passeport",
-        "Un certificat médical"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "10fb2250f2c83cfd62df677c43ea864df54def8166e41ccadd68148ea5d70062",
-      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_67.mp3"
-    },
-    {
-      "key": "delf-a1-2022-co-ex3-67#6",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "delf-a1-2022-co-ex3-67",
-      "question": 6,
-      "enonce": "Quel document l'agence possède-t-elle déjà ?",
-      "labels": [
-        "Le CV",
-        "La lettre de motivation",
-        "La carte d'identité"
-      ],
-      "status": "reviewed_visual_artwork_pending",
       "source_sha256": "10fb2250f2c83cfd62df677c43ea864df54def8166e41ccadd68148ea5d70062",
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_67.mp3"
     },
@@ -42701,21 +41472,6 @@
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_85-4.mp3"
     },
     {
-      "key": "delf-a1-2022-co-86#3",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "delf-a1-2022-co-86",
-      "question": 3,
-      "enonce": "Sur quel objet la personne demande-t-elle le prix ?",
-      "labels": [
-        "Une enveloppe",
-        "Une carte postale",
-        "Un timbre"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "391367a809103e5f866427898bd1d0c1e1f0aa0e9d2db0688849739892faa069",
-      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_86-2.mp3"
-    },
-    {
       "key": "delf-a1-2022-co-86#4",
       "bank": "src/tcf/content/a0-a1/co.json",
       "exercise": "delf-a1-2022-co-86",
@@ -43166,21 +41922,6 @@
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_90.mp3"
     },
     {
-      "key": "delf-a1-2022-co-90#8",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "delf-a1-2022-co-90",
-      "question": 8,
-      "enonce": "Quel document faut-il montrer ?",
-      "labels": [
-        "Son ordonnance",
-        "Son CV",
-        "Sa facture"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "99673ff8182474a8c42b9edafad0552e11c01d828552ebe86a9925e9357ea221",
-      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_90.mp3"
-    },
-    {
       "key": "delf-a1-2022-co-90#9",
       "bank": "src/tcf/content/a0-a1/co.json",
       "exercise": "delf-a1-2022-co-90",
@@ -43209,51 +41950,6 @@
       "status": "editorial_visual_screening_needed",
       "source_sha256": "4bf177aa1043f9692787e867c0f372a6e7fc54716bd85e6d1ebf6f56e4767348",
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_91-1.mp3"
-    },
-    {
-      "key": "delf-a1-2022-co-91#2",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "delf-a1-2022-co-91",
-      "question": 2,
-      "enonce": "Quel document lui demande-t-on ?",
-      "labels": [
-        "Une pièce d'identité",
-        "Un certificat médical",
-        "Un CV"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "4bf177aa1043f9692787e867c0f372a6e7fc54716bd85e6d1ebf6f56e4767348",
-      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_91-1.mp3"
-    },
-    {
-      "key": "delf-a1-2022-co-91#4",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "delf-a1-2022-co-91",
-      "question": 4,
-      "enonce": "Combien de livres peut-on emprunter ?",
-      "labels": [
-        "Six",
-        "Trois",
-        "Neuf"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "d4e270cfaeeecef4f55849c001fb0179c689d01674cc1a11b86bc5ecde87fea1",
-      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_91-2.mp3"
-    },
-    {
-      "key": "delf-a1-2022-co-91#5",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "delf-a1-2022-co-91",
-      "question": 5,
-      "enonce": "Combien de DVD peut-on emprunter ?",
-      "labels": [
-        "Trois",
-        "Six",
-        "Neuf"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "d4e270cfaeeecef4f55849c001fb0179c689d01674cc1a11b86bc5ecde87fea1",
-      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_91-2.mp3"
     },
     {
       "key": "delf-a1-2022-co-91#6",
@@ -43676,21 +42372,6 @@
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_95.mp3"
     },
     {
-      "key": "delf-a1-2022-co-95#7",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "delf-a1-2022-co-95",
-      "question": 7,
-      "enonce": "Quel document est disponible au service du personnel ?",
-      "labels": [
-        "Le contrat",
-        "Le passeport",
-        "L'ordonnance"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "b97411cdf10bc5fd679781a506820be5061ead549d047dc23ed2d2829e71722b",
-      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_95.mp3"
-    },
-    {
       "key": "delf-a1-2022-co-95#8",
       "bank": "src/tcf/content/a0-a1/co.json",
       "exercise": "delf-a1-2022-co-95",
@@ -43841,21 +42522,6 @@
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_97.mp3"
     },
     {
-      "key": "delf-a1-2022-co-97#2",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "delf-a1-2022-co-97",
-      "question": 2,
-      "enonce": "Quel aliment est proposé pour le plat ?",
-      "labels": [
-        "Du poisson",
-        "Du poulet",
-        "Du bœuf"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "6f8c73e2f3e2814166db6fb9d12d58d584448ece96ff16eef9aebfe1357f112c",
-      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_97.mp3"
-    },
-    {
       "key": "delf-a1-2022-co-97#8",
       "bank": "src/tcf/content/a0-a1/co.json",
       "exercise": "delf-a1-2022-co-97",
@@ -43991,21 +42657,6 @@
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_50.mp3"
     },
     {
-      "key": "delf-a1-2022-co-ex5-50#3",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "delf-a1-2022-co-ex5-50",
-      "question": 3,
-      "enonce": "Quel document scolaire est nommé ?",
-      "labels": [
-        "Un diplôme",
-        "Un bulletin",
-        "Un cahier"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "11fed8005fcc44bd669410bec5c3168b1155edc03ecc1ac85a3b3b74dcc44bbb",
-      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_50.mp3"
-    },
-    {
       "key": "delf-a1-2022-co-ex5-50#4",
       "bank": "src/tcf/content/a0-a1/co.json",
       "exercise": "delf-a1-2022-co-ex5-50",
@@ -44051,21 +42702,6 @@
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_51.mp3"
     },
     {
-      "key": "delf-a1-2022-co-ex5-51#3",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "delf-a1-2022-co-ex5-51",
-      "question": 3,
-      "enonce": "Quel fruit est nommé ?",
-      "labels": [
-        "Une pomme",
-        "Une poire",
-        "Une orange"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "8263bbae35e908010c182b52e4d1a1b10abcfc22f92b860e2378a91c9b299233",
-      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_51.mp3"
-    },
-    {
       "key": "delf-a1-2022-co-ex5-51#4",
       "bank": "src/tcf/content/a0-a1/co.json",
       "exercise": "delf-a1-2022-co-ex5-51",
@@ -44079,36 +42715,6 @@
       "status": "editorial_visual_screening_needed",
       "source_sha256": "8263bbae35e908010c182b52e4d1a1b10abcfc22f92b860e2378a91c9b299233",
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_51.mp3"
-    },
-    {
-      "key": "delf-a1-2022-co-ex5-52#2",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "delf-a1-2022-co-ex5-52",
-      "question": 2,
-      "enonce": "Quel document de restaurant est nommé au début ?",
-      "labels": [
-        "Un menu",
-        "Une facture",
-        "Une réservation"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "7221c5887cf7510575b84a4cd9f4f6260c1c83894e4df9996fdcc0aa2dc492ce",
-      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_52.mp3"
-    },
-    {
-      "key": "delf-a1-2022-co-ex5-52#4",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "delf-a1-2022-co-ex5-52",
-      "question": 4,
-      "enonce": "Quel produit en papier est nommé ?",
-      "labels": [
-        "Du papier toilette",
-        "Du papier cadeau",
-        "Du papier journal"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "7221c5887cf7510575b84a4cd9f4f6260c1c83894e4df9996fdcc0aa2dc492ce",
-      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_52.mp3"
     },
     {
       "key": "delf-a1-2022-co-ex5-52#5",
@@ -44306,36 +42912,6 @@
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_57.mp3"
     },
     {
-      "key": "delf-a1-2022-co-ex5-57#4",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "delf-a1-2022-co-ex5-57",
-      "question": 4,
-      "enonce": "Quel plat la deuxième personne souhaite-t-elle ?",
-      "labels": [
-        "Du poisson",
-        "Du poulet",
-        "Du bœuf"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "19c71a0139a28a88a6bfdb264fbfe4cda4647c5b4c556469dd45df26835fd217",
-      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_57.mp3"
-    },
-    {
-      "key": "delf-a1-2022-co-ex5-58-2#1",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "delf-a1-2022-co-ex5-58-2",
-      "question": 1,
-      "enonce": "Quel objet faut-il payer ?",
-      "labels": [
-        "Une carte postale",
-        "Un billet de train",
-        "Un journal"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "73bfaa6298e13bd8cc2b00a7fdb6a5bffa4466847c1fb042872f1a9207b0617e",
-      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_58-2.mp3"
-    },
-    {
       "key": "delf-a1-2022-co-ex5-58-2#3",
       "bank": "src/tcf/content/a0-a1/co.json",
       "exercise": "delf-a1-2022-co-ex5-58-2",
@@ -44422,21 +42998,6 @@
         "La semaine prochaine"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "2ca095a5aac8432ea594c4dcd416a9e2fc0a4e0b1b7b5e70869102b86eecec9d",
-      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_72.mp3"
-    },
-    {
-      "key": "delf-a1-2022-co-ex5-72#3",
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "delf-a1-2022-co-ex5-72",
-      "question": 3,
-      "enonce": "Quel document faut-il apporter ?",
-      "labels": [
-        "Une pièce d'identité",
-        "Un diplôme",
-        "Un certificat médical"
-      ],
-      "status": "reviewed_visual_artwork_pending",
       "source_sha256": "2ca095a5aac8432ea594c4dcd416a9e2fc0a4e0b1b7b5e70869102b86eecec9d",
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_72.mp3"
     },
@@ -44981,21 +43542,6 @@
       "audio": null
     },
     {
-      "key": "tcf-a2j-s2-ce-1#5",
-      "bank": "src/tcf/content/a1-a2/ce.json",
-      "exercise": "tcf-a2j-s2-ce-1",
-      "question": 5,
-      "enonce": "Document 3 — Combien de temps peut-on utiliser Internet gratuitement chaque jour ?",
-      "labels": [
-        "Deux heures",
-        "Une heure",
-        "Trois heures"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "fe03d2e6a53fc24d05d1ac0f3d09744c9005df6542643feab4575cbc16d91950",
-      "audio": null
-    },
-    {
       "key": "tcf-a2j-s2-ce-1#6",
       "bank": "src/tcf/content/a1-a2/ce.json",
       "exercise": "tcf-a2j-s2-ce-1",
@@ -45476,21 +44022,6 @@
       "audio": null
     },
     {
-      "key": "tcf-a2-s1-ce-2#7",
-      "bank": "src/tcf/content/a1-a2/ce.json",
-      "exercise": "tcf-a2-s1-ce-2",
-      "question": 7,
-      "enonce": "Quel document fournit-elle pour permettre le remboursement ?",
-      "labels": [
-        "Un relevé d’identité bancaire",
-        "Une carte d’assurance",
-        "Un acte de naissance"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "12ae2a453d2f4527486eddb160fa65283a9523a24ff698c6f651cc330bb23b0c",
-      "audio": null
-    },
-    {
       "key": "tcf-a2-s1-ce-2#8",
       "bank": "src/tcf/content/a1-a2/ce.json",
       "exercise": "tcf-a2-s1-ce-2",
@@ -45950,21 +44481,6 @@
         "Au réfrigérateur",
         "Au four",
         "Sur le radiateur"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "1a86e2845a43de51af05d007dcde39f0442736495e181886e1fd1395b7daf336",
-      "audio": null
-    },
-    {
-      "key": "tcf-a2p-s1-ce-3#6",
-      "bank": "src/tcf/content/a1-a2/ce.json",
-      "exercise": "tcf-a2p-s1-ce-3",
-      "question": 6,
-      "enonce": "Document 2 — Combien de temps faut-il laisser les boules au frais ?",
-      "labels": [
-        "Deux heures",
-        "Trente minutes",
-        "Quatre heures"
       ],
       "status": "reviewed_visual_artwork_pending",
       "source_sha256": "1a86e2845a43de51af05d007dcde39f0442736495e181886e1fd1395b7daf336",
@@ -47467,21 +45983,6 @@
         "Une paire de jumelles"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "ebd97588127146364ec2c7947463afeffc25aa7ef9ecf3c160c455980c13395c",
-      "audio": null
-    },
-    {
-      "key": "tcf-a2-sb-ce-1#8",
-      "bank": "src/tcf/content/a1-a2/ce.json",
-      "exercise": "tcf-a2-sb-ce-1",
-      "question": 8,
-      "enonce": "Document 6 — Combien de temps dure la marche ?",
-      "labels": [
-        "2 h 30",
-        "1 h",
-        "4 h"
-      ],
-      "status": "reviewed_visual_artwork_pending",
       "source_sha256": "ebd97588127146364ec2c7947463afeffc25aa7ef9ecf3c160c455980c13395c",
       "audio": null
     },
@@ -49931,21 +48432,6 @@
       "audio": null
     },
     {
-      "key": "delf-a2j-ce-017#6",
-      "bank": "src/tcf/content/a1-a2/ce.json",
-      "exercise": "delf-a2j-ce-017",
-      "question": 6,
-      "enonce": "Quel plat vaudois est proposé chez Régions ?",
-      "labels": [
-        "Le papet",
-        "La pizza",
-        "Le couscous"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "c3cb600ab5aa5815b3c6c8b6587987d2b2ff7d6e25f90d63fd10a48a14c9a447",
-      "audio": null
-    },
-    {
       "key": "delf-a2j-ce-017#7",
       "bank": "src/tcf/content/a1-a2/ce.json",
       "exercise": "delf-a2j-ce-017",
@@ -50135,21 +48621,6 @@
         "Sur le lac près de Lausanne",
         "Sur une rivière à Genève",
         "En mer près de Marseille"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "218e0ffd52f748885cdcb0370bdbb8b9587c3c85746ccd362920eb8b8b320e24",
-      "audio": null
-    },
-    {
-      "key": "delf-a2j-ce-019#4",
-      "bank": "src/tcf/content/a1-a2/ce.json",
-      "exercise": "delf-a2j-ce-019",
-      "question": 4,
-      "enonce": "Combien de temps dure la sortie ?",
-      "labels": [
-        "Deux heures",
-        "Une heure",
-        "Trois heures"
       ],
       "status": "reviewed_visual_artwork_pending",
       "source_sha256": "218e0ffd52f748885cdcb0370bdbb8b9587c3c85746ccd362920eb8b8b320e24",
@@ -50546,21 +49017,6 @@
       "audio": null
     },
     {
-      "key": "delf-a2j-ce-024#2",
-      "bank": "src/tcf/content/a1-a2/ce.json",
-      "exercise": "delf-a2j-ce-024",
-      "question": 2,
-      "enonce": "De quelle couleur sont ses cheveux ?",
-      "labels": [
-        "Bruns",
-        "Blonds",
-        "Roux"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "e03b3486a3a4559db15fec4baa7bcfea46a139c4fe50330eff43d0b6d7fd26b6",
-      "audio": null
-    },
-    {
       "key": "delf-a2j-ce-024#4",
       "bank": "src/tcf/content/a1-a2/ce.json",
       "exercise": "delf-a2j-ce-024",
@@ -50738,21 +49194,6 @@
       ],
       "status": "editorial_visual_screening_needed",
       "source_sha256": "37102dcc9343c2e44322245a405451304dc51458481bd7bdea03b10a0bb1d019",
-      "audio": null
-    },
-    {
-      "key": "delf-a2j-ce-026#1",
-      "bank": "src/tcf/content/a1-a2/ce.json",
-      "exercise": "delf-a2j-ce-026",
-      "question": 1,
-      "enonce": "Combien de livres le lecteur a-t-il empruntés ?",
-      "labels": [
-        "Cinq",
-        "Trois",
-        "Sept"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "016cc76ad76a23dfb98751369fe539e0eeb0c9c730ca5be3d08ac77d76cfb0d6",
       "audio": null
     },
     {
@@ -51037,21 +49478,6 @@
         "Dix"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "398a81c49a0127ef5dae5a27335c4d7d6dbd52dcdde7d36338282f2775084e2e",
-      "audio": null
-    },
-    {
-      "key": "delf-a2j-ce-028#6",
-      "bank": "src/tcf/content/a1-a2/ce.json",
-      "exercise": "delf-a2j-ce-028",
-      "question": 6,
-      "enonce": "Combien de temps dure la pièce ?",
-      "labels": [
-        "45 minutes",
-        "30 minutes",
-        "90 minutes"
-      ],
-      "status": "reviewed_visual_artwork_pending",
       "source_sha256": "398a81c49a0127ef5dae5a27335c4d7d6dbd52dcdde7d36338282f2775084e2e",
       "audio": null
     },
@@ -51671,21 +50097,6 @@
       "audio": null
     },
     {
-      "key": "delf-a2j-ce-034#3",
-      "bank": "src/tcf/content/a1-a2/ce.json",
-      "exercise": "delf-a2j-ce-034",
-      "question": 3,
-      "enonce": "Combien de livres peut-on emprunter avec la carte ordinaire ?",
-      "labels": [
-        "Six",
-        "Quatre",
-        "Huit"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "a87945820f380bc87507f7ba846bfd2cf442cb1ca9f6cfcceffb01a549ccfde0",
-      "audio": null
-    },
-    {
       "key": "delf-a2j-ce-034#4",
       "bank": "src/tcf/content/a1-a2/ce.json",
       "exercise": "delf-a2j-ce-034",
@@ -51877,21 +50288,6 @@
         "Huit"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "ab32267c5c536ccda23667654b1f7885ca222810318cf5d8c936345c04d31d8c",
-      "audio": null
-    },
-    {
-      "key": "delf-a2j-ce-036#2",
-      "bank": "src/tcf/content/a1-a2/ce.json",
-      "exercise": "delf-a2j-ce-036",
-      "question": 2,
-      "enonce": "Combien d’œufs faut-il ?",
-      "labels": [
-        "Un",
-        "Deux",
-        "Trois"
-      ],
-      "status": "reviewed_visual_artwork_pending",
       "source_sha256": "ab32267c5c536ccda23667654b1f7885ca222810318cf5d8c936345c04d31d8c",
       "audio": null
     },
@@ -52271,21 +50667,6 @@
       "audio": null
     },
     {
-      "key": "delf-a2j-ce-039#6",
-      "bank": "src/tcf/content/a1-a2/ce.json",
-      "exercise": "delf-a2j-ce-039",
-      "question": 6,
-      "enonce": "Quel document faut-il envoyer par e-mail ?",
-      "labels": [
-        "Le formulaire d’inscription",
-        "La confirmation",
-        "Un justificatif de paiement"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "f78793ac09990f8f8e952749d00eccbbd2b9bf1e829de2a915aea6f09cf8cc82",
-      "audio": null
-    },
-    {
       "key": "delf-a2j-ce-039#7",
       "bank": "src/tcf/content/a1-a2/ce.json",
       "exercise": "delf-a2j-ce-039",
@@ -52361,21 +50742,6 @@
       "audio": null
     },
     {
-      "key": "delf-a2j-ce-040#5",
-      "bank": "src/tcf/content/a1-a2/ce.json",
-      "exercise": "delf-a2j-ce-040",
-      "question": 5,
-      "enonce": "Avec quel ustensile mélange-t-on le sucre, les œufs et la farine ?",
-      "labels": [
-        "Une fourchette",
-        "Un batteur électrique",
-        "Une louche"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "3e04f32ef9a76c647b201a328040cd33d1182da9e687b8f4a1ddd502a8a41401",
-      "audio": null
-    },
-    {
       "key": "delf-a2j-ce-040#6",
       "bank": "src/tcf/content/a1-a2/ce.json",
       "exercise": "delf-a2j-ce-040",
@@ -52432,21 +50798,6 @@
         "Le 19 février"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "e0d5e219bac4ee96826a643cac8232a513c8b7551db53ef389dfb8d641857b2b",
-      "audio": null
-    },
-    {
-      "key": "delf-a2j-ce-041#5",
-      "bank": "src/tcf/content/a1-a2/ce.json",
-      "exercise": "delf-a2j-ce-041",
-      "question": 5,
-      "enonce": "Quel document des parents faut-il fournir ?",
-      "labels": [
-        "Une autorisation",
-        "Une facture",
-        "Un certificat de travail"
-      ],
-      "status": "reviewed_visual_artwork_pending",
       "source_sha256": "e0d5e219bac4ee96826a643cac8232a513c8b7551db53ef389dfb8d641857b2b",
       "audio": null
     },
@@ -52841,21 +51192,6 @@
       "audio": null
     },
     {
-      "key": "delf-a2j-ce-045#5",
-      "bank": "src/tcf/content/a1-a2/ce.json",
-      "exercise": "delf-a2j-ce-045",
-      "question": 5,
-      "enonce": "Combien de temps dure l’examen ?",
-      "labels": [
-        "1 h 40",
-        "1 h",
-        "2 h 30"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "821c9a734c6d566701fa46bf916cef8b85751421cdff153281c77ffb3c88e5fd",
-      "audio": null
-    },
-    {
       "key": "delf-a2j-ce-045#6",
       "bank": "src/tcf/content/a1-a2/ce.json",
       "exercise": "delf-a2j-ce-045",
@@ -52898,21 +51234,6 @@
       ],
       "status": "text_required_calendar_identity_or_language",
       "source_sha256": "821c9a734c6d566701fa46bf916cef8b85751421cdff153281c77ffb3c88e5fd",
-      "audio": null
-    },
-    {
-      "key": "delf-a2j-ce-046#1",
-      "bank": "src/tcf/content/a1-a2/ce.json",
-      "exercise": "delf-a2j-ce-046",
-      "question": 1,
-      "enonce": "Où faut-il demander la carte de cantine ?",
-      "labels": [
-        "Au secrétariat",
-        "À la bibliothèque",
-        "À l’infirmerie"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "e2b3963a220db261139f443152c21a3eae5d49a7b8e7a0a334c97b489740b3c5",
       "audio": null
     },
     {
@@ -52972,21 +51293,6 @@
         "Uniquement une entrée"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "e2b3963a220db261139f443152c21a3eae5d49a7b8e7a0a334c97b489740b3c5",
-      "audio": null
-    },
-    {
-      "key": "delf-a2j-ce-046#6",
-      "bank": "src/tcf/content/a1-a2/ce.json",
-      "exercise": "delf-a2j-ce-046",
-      "question": 6,
-      "enonce": "Quel récipient d’eau se trouve sur chaque table ?",
-      "labels": [
-        "Une carafe",
-        "Une bouteille fermée",
-        "Un thermos"
-      ],
-      "status": "reviewed_visual_artwork_pending",
       "source_sha256": "e2b3963a220db261139f443152c21a3eae5d49a7b8e7a0a334c97b489740b3c5",
       "audio": null
     },
@@ -54431,21 +52737,6 @@
       "audio": null
     },
     {
-      "key": "delf-a2j-ce-060#2",
-      "bank": "src/tcf/content/a1-a2/ce.json",
-      "exercise": "delf-a2j-ce-060",
-      "question": 2,
-      "enonce": "Combien de temps dure le jeu ?",
-      "labels": [
-        "60 minutes",
-        "30 minutes",
-        "90 minutes"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "bff2829d3136ca46c3a77d85bebb6b462a567e41f69d7d2423898766297b9882",
-      "audio": null
-    },
-    {
       "key": "delf-a2j-ce-060#3",
       "bank": "src/tcf/content/a1-a2/ce.json",
       "exercise": "delf-a2j-ce-060",
@@ -54757,21 +53048,6 @@
         "Uniquement le soir"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "19d604daeaf46b6de354720539d210afa392b39d8e5d2c9103e851ad25ac6cab",
-      "audio": null
-    },
-    {
-      "key": "delf-a2j-ce-063#4",
-      "bank": "src/tcf/content/a1-a2/ce.json",
-      "exercise": "delf-a2j-ce-063",
-      "question": 4,
-      "enonce": "Combien de livres peut-on emprunter ?",
-      "labels": [
-        "Trois",
-        "Cinq",
-        "Six"
-      ],
-      "status": "reviewed_visual_artwork_pending",
       "source_sha256": "19d604daeaf46b6de354720539d210afa392b39d8e5d2c9103e851ad25ac6cab",
       "audio": null
     },
@@ -55702,21 +53978,6 @@
         "Genève"
       ],
       "status": "keep_text_named_identity_or_location",
-      "source_sha256": "39fef83989d7d9f65aac777b1f167dd69fdcbcf8cc56ce67bb1d30d6413bd85d",
-      "audio": null
-    },
-    {
-      "key": "delf-a2r-ce-001#7",
-      "bank": "src/tcf/content/a1-a2/ce.json",
-      "exercise": "delf-a2r-ce-001",
-      "question": 7,
-      "enonce": "Document 2 — Combien de temps dure la balade ?",
-      "labels": [
-        "Une heure",
-        "Deux heures",
-        "Trente minutes"
-      ],
-      "status": "reviewed_visual_artwork_pending",
       "source_sha256": "39fef83989d7d9f65aac777b1f167dd69fdcbcf8cc56ce67bb1d30d6413bd85d",
       "audio": null
     },
@@ -57191,21 +55452,6 @@
       "audio": null
     },
     {
-      "key": "delf-a2r-ce-015#4",
-      "bank": "src/tcf/content/a1-a2/ce.json",
-      "exercise": "delf-a2r-ce-015",
-      "question": 4,
-      "enonce": "Quel dessert la pizzeria propose-t-elle ?",
-      "labels": [
-        "Un fondant au chocolat",
-        "Une tarte aux pommes",
-        "Une glace à la vanille"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "81ead4d445f096b8c3ba15a367115ed248e4419642f6fc2d12897251303d0321",
-      "audio": null
-    },
-    {
       "key": "delf-a2r-ce-015#5",
       "bank": "src/tcf/content/a1-a2/ce.json",
       "exercise": "delf-a2r-ce-015",
@@ -57386,21 +55632,6 @@
       "audio": null
     },
     {
-      "key": "delf-a2r-ce-017#1",
-      "bank": "src/tcf/content/a1-a2/ce.json",
-      "exercise": "delf-a2r-ce-017",
-      "question": 1,
-      "enonce": "Quel plat contient de la viande ?",
-      "labels": [
-        "L’émincé de bœuf",
-        "Le fondant au chocolat",
-        "Les spaghetti au pesto"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "4f1fda6e974020134d129f689018c24ee141ddc170ed20ae5a0a13387d2ca0e6",
-      "audio": null
-    },
-    {
       "key": "delf-a2r-ce-017#2",
       "bank": "src/tcf/content/a1-a2/ce.json",
       "exercise": "delf-a2r-ce-017",
@@ -57410,21 +55641,6 @@
         "Du bœuf",
         "Du poulet",
         "Du porc"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "4f1fda6e974020134d129f689018c24ee141ddc170ed20ae5a0a13387d2ca0e6",
-      "audio": null
-    },
-    {
-      "key": "delf-a2r-ce-017#5",
-      "bank": "src/tcf/content/a1-a2/ce.json",
-      "exercise": "delf-a2r-ce-017",
-      "question": 5,
-      "enonce": "Quel plat est un gâteau ?",
-      "labels": [
-        "Le fondant au chocolat",
-        "Les spaghetti au pesto",
-        "L’émincé de bœuf"
       ],
       "status": "reviewed_visual_artwork_pending",
       "source_sha256": "4f1fda6e974020134d129f689018c24ee141ddc170ed20ae5a0a13387d2ca0e6",
@@ -57461,21 +55677,6 @@
       "audio": null
     },
     {
-      "key": "delf-a2r-ce-018#1",
-      "bank": "src/tcf/content/a1-a2/ce.json",
-      "exercise": "delf-a2r-ce-018",
-      "question": 1,
-      "enonce": "Quel plat est à base de pâtes ?",
-      "labels": [
-        "Les spaghetti au pesto",
-        "Le sorbet au cassis",
-        "Le risotto aux crevettes"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "0cb1b93097ed4f07c2ab9285f7d26527ac218d93fe4a077e12e2c0a9b0c45a3f",
-      "audio": null
-    },
-    {
       "key": "delf-a2r-ce-018#3",
       "bank": "src/tcf/content/a1-a2/ce.json",
       "exercise": "delf-a2r-ce-018",
@@ -57487,21 +55688,6 @@
         "Chinoise"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "0cb1b93097ed4f07c2ab9285f7d26527ac218d93fe4a077e12e2c0a9b0c45a3f",
-      "audio": null
-    },
-    {
-      "key": "delf-a2r-ce-018#4",
-      "bank": "src/tcf/content/a1-a2/ce.json",
-      "exercise": "delf-a2r-ce-018",
-      "question": 4,
-      "enonce": "Quel plat est une glace ?",
-      "labels": [
-        "Le sorbet au cassis",
-        "Les spaghetti au pesto",
-        "Le risotto aux crevettes"
-      ],
-      "status": "reviewed_visual_artwork_pending",
       "source_sha256": "0cb1b93097ed4f07c2ab9285f7d26527ac218d93fe4a077e12e2c0a9b0c45a3f",
       "audio": null
     },
@@ -57562,21 +55748,6 @@
         "Tout le mois de juillet"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "9c91b8db2c2367bf13ddfe53a10dc5ff540486a14e1553b2e6661940803b8135",
-      "audio": null
-    },
-    {
-      "key": "delf-a2r-ce-019#4",
-      "bank": "src/tcf/content/a1-a2/ce.json",
-      "exercise": "delf-a2r-ce-019",
-      "question": 4,
-      "enonce": "Quel vêtement bénéficie de la deuxième offre ?",
-      "labels": [
-        "Les pantalons",
-        "Les manteaux",
-        "Les chaussures"
-      ],
-      "status": "reviewed_visual_artwork_pending",
       "source_sha256": "9c91b8db2c2367bf13ddfe53a10dc5ff540486a14e1553b2e6661940803b8135",
       "audio": null
     },
@@ -60626,21 +58797,6 @@
       "audio": null
     },
     {
-      "key": "delf-a2r-ce-048#8",
-      "bank": "src/tcf/content/a1-a2/ce.json",
-      "exercise": "delf-a2r-ce-048",
-      "question": 8,
-      "enonce": "Combien de temps peut-elle jouer avant le musée ?",
-      "labels": [
-        "Une heure",
-        "Deux heures",
-        "Trente minutes"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "e3b4018f815b81856fa50d981a2f12aa10af9f93151f23ec6818e542efa98ba4",
-      "audio": null
-    },
-    {
       "key": "delf-a2r-ce-049#1",
       "bank": "src/tcf/content/a1-a2/ce.json",
       "exercise": "delf-a2r-ce-049",
@@ -61072,21 +59228,6 @@
         "15 km"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "b91baed555230875c06cc0008a6f2488384cf43370e767d1a601a37f5718bd0f",
-      "audio": null
-    },
-    {
-      "key": "delf-a2r-ce-053#5",
-      "bank": "src/tcf/content/a1-a2/ce.json",
-      "exercise": "delf-a2r-ce-053",
-      "question": 5,
-      "enonce": "Combien de temps la marche doit-elle durer ?",
-      "labels": [
-        "Deux heures",
-        "Trente minutes",
-        "Cinq heures"
-      ],
-      "status": "reviewed_visual_artwork_pending",
       "source_sha256": "b91baed555230875c06cc0008a6f2488384cf43370e767d1a601a37f5718bd0f",
       "audio": null
     },
@@ -65561,21 +63702,6 @@
       "audio": "/lib/audio/tcf/co/radio/les-informations-2-2.mp3"
     },
     {
-      "key": "tcf-a2-sb-co-2#8",
-      "bank": "src/tcf/content/a1-a2/co.json",
-      "exercise": "tcf-a2-sb-co-2",
-      "question": 8,
-      "enonce": "Combien de temps les départs ont-ils été retardés ?",
-      "labels": [
-        "Six heures",
-        "Deux heures",
-        "Quatre heures"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "bd89e6b87ab4d89b0223b7128097a88c899ba4e5a369adeafc43f8474f6ed516",
-      "audio": "/lib/audio/tcf/co/radio/les-informations-2-2.mp3"
-    },
-    {
       "key": "tcf-a2-sb-co-2#9",
       "bank": "src/tcf/content/a1-a2/co.json",
       "exercise": "tcf-a2-sb-co-2",
@@ -66131,21 +64257,6 @@
       "audio": "/lib/audio/tcf/co/magasins/waouh-sympa-ton-nouveau-3.mp3"
     },
     {
-      "key": "tcf-ss-a2-s2-co-4#11",
-      "bank": "src/tcf/content/a1-a2/co.json",
-      "exercise": "tcf-ss-a2-s2-co-4",
-      "question": 11,
-      "enonce": "Quel document du magasin propose-t-on à la cliente ?",
-      "labels": [
-        "Une carte de fidélité",
-        "Un contrat de travail",
-        "Une carte de transport"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "9753a4db1418b92e3d2fc8d31991f849c408255bd08a5645fa864db51d3fde88",
-      "audio": "/lib/audio/tcf/co/magasins/waouh-sympa-ton-nouveau-4.mp3"
-    },
-    {
       "key": "tcf-ss-a2-s2-co-4#12",
       "bank": "src/tcf/content/a1-a2/co.json",
       "exercise": "tcf-ss-a2-s2-co-4",
@@ -66491,21 +64602,6 @@
       "audio": "/lib/audio/tcf/co/magasins/magasins-3-4.mp3"
     },
     {
-      "key": "tcf-ss-a2-s3-co-3#12",
-      "bank": "src/tcf/content/a1-a2/co.json",
-      "exercise": "tcf-ss-a2-s3-co-3",
-      "question": 12,
-      "enonce": "Quel cadeau l’annonce conseille-t-elle d’acheter ?",
-      "labels": [
-        "Une carte cadeau",
-        "Un billet de train",
-        "Un abonnement sportif"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "21e420aa2f3e5971004bdd0a27fcb8ecd3764e4b115e64e320c3a563a8b9e800",
-      "audio": "/lib/audio/tcf/co/magasins/magasins-3-4.mp3"
-    },
-    {
       "key": "tcf-ss-a2-s3-co-3#13",
       "bank": "src/tcf/content/a1-a2/co.json",
       "exercise": "tcf-ss-a2-s3-co-3",
@@ -66682,21 +64778,6 @@
         "Uniquement en espèces"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "177ce3dde1fc7e95a7a8d160a5542d92838d7cc639f57b6838864486e0416758",
-      "audio": "/lib/audio/tcf/co/travail/04-travail-confirmation-cours-d-informatique.mp3"
-    },
-    {
-      "key": "tcf-ss-a2-s6-co-2#7",
-      "bank": "src/tcf/content/a1-a2/co.json",
-      "exercise": "tcf-ss-a2-s6-co-2",
-      "question": 7,
-      "enonce": "Quel document faut-il apporter ?",
-      "labels": [
-        "Une pièce d’identité",
-        "Un certificat médical",
-        "Une carte de transport"
-      ],
-      "status": "reviewed_visual_artwork_pending",
       "source_sha256": "177ce3dde1fc7e95a7a8d160a5542d92838d7cc639f57b6838864486e0416758",
       "audio": "/lib/audio/tcf/co/travail/04-travail-confirmation-cours-d-informatique.mp3"
     },
@@ -68786,21 +66867,6 @@
       "audio": "/lib/audio/tcf/co/loisirs/bienvenue-parc-asterix-2.mp3"
     },
     {
-      "key": "tcf-ss-a2-s20-co-4#3",
-      "bank": "src/tcf/content/a1-a2/co.json",
-      "exercise": "tcf-ss-a2-s20-co-4",
-      "question": 3,
-      "enonce": "Quel dessert ajoute-t-elle ?",
-      "labels": [
-        "Une tarte aux fraises",
-        "Une mousse au chocolat",
-        "Une glace à la vanille"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "b1530c7857f7cbf88017d7f71853e691d20161b09c85b1db74e7e967202224e1",
-      "audio": "/lib/audio/tcf/co/loisirs/bonjour-voudrais-sandwich-2-1.mp3"
-    },
-    {
       "key": "tcf-ss-a2-s20-co-4#4",
       "bank": "src/tcf/content/a1-a2/co.json",
       "exercise": "tcf-ss-a2-s20-co-4",
@@ -69356,36 +67422,6 @@
       "audio": "/lib/audio/tcf/co/loisirs/loisirs-3-3.mp3"
     },
     {
-      "key": "tcf-ss-a2-s24-co-3#1",
-      "bank": "src/tcf/content/a1-a2/co.json",
-      "exercise": "tcf-ss-a2-s24-co-3",
-      "question": 1,
-      "enonce": "Quel aliment principal est au menu ?",
-      "labels": [
-        "Du poisson",
-        "Du poulet",
-        "Du bœuf"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "26b13c00da1f0cfa27107a3ff5fb067641c02451a0557b1d1f0010ef3851ac71",
-      "audio": "/lib/audio/tcf/co/maison/nourriture-conversation-2-1.mp3"
-    },
-    {
-      "key": "tcf-ss-a2-s24-co-3#3",
-      "bank": "src/tcf/content/a1-a2/co.json",
-      "exercise": "tcf-ss-a2-s24-co-3",
-      "question": 3,
-      "enonce": "Quel dessert est proposé ?",
-      "labels": [
-        "Une mousse au chocolat",
-        "Une tarte aux pommes",
-        "Une glace à la vanille"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "26b13c00da1f0cfa27107a3ff5fb067641c02451a0557b1d1f0010ef3851ac71",
-      "audio": "/lib/audio/tcf/co/maison/nourriture-conversation-2-1.mp3"
-    },
-    {
       "key": "tcf-ss-a2-s24-co-3#4",
       "bank": "src/tcf/content/a1-a2/co.json",
       "exercise": "tcf-ss-a2-s24-co-3",
@@ -69611,21 +67647,6 @@
       "audio": "/lib/audio/tcf/co/maison/bonjour-fruits-legumes-par-3-3.mp3"
     },
     {
-      "key": "tcf-ss-a2-s24-co-4#11",
-      "bank": "src/tcf/content/a1-a2/co.json",
-      "exercise": "tcf-ss-a2-s24-co-4",
-      "question": 11,
-      "enonce": "Où doit-elle aller ?",
-      "labels": [
-        "Au secrétariat",
-        "Au gymnase",
-        "À l’infirmerie"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "ebec6304943e2a5f04e2d36845397057591f97d04f154e4b36b5e335f7fe6e04",
-      "audio": "/lib/audio/tcf/co/maison/bonjour-fruits-legumes-par-3-4.mp3"
-    },
-    {
       "key": "tcf-ss-a2-s24-co-4#12",
       "bank": "src/tcf/content/a1-a2/co.json",
       "exercise": "tcf-ss-a2-s24-co-4",
@@ -69637,21 +67658,6 @@
         "100 euros"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "ebec6304943e2a5f04e2d36845397057591f97d04f154e4b36b5e335f7fe6e04",
-      "audio": "/lib/audio/tcf/co/maison/bonjour-fruits-legumes-par-3-4.mp3"
-    },
-    {
-      "key": "tcf-ss-a2-s24-co-4#13",
-      "bank": "src/tcf/content/a1-a2/co.json",
-      "exercise": "tcf-ss-a2-s24-co-4",
-      "question": 13,
-      "enonce": "Quel document doit-elle présenter ?",
-      "labels": [
-        "Sa carte d’identité",
-        "Son carnet de santé",
-        "Son bulletin de notes"
-      ],
-      "status": "reviewed_visual_artwork_pending",
       "source_sha256": "ebec6304943e2a5f04e2d36845397057591f97d04f154e4b36b5e335f7fe6e04",
       "audio": "/lib/audio/tcf/co/maison/bonjour-fruits-legumes-par-3-4.mp3"
     },
@@ -70777,21 +68783,6 @@
         "Des livres gratuits"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "0e4cb5b6c95928a2fa3b2490b0165a3fa55fb801d3cc7cfc8e725bcd52637be6",
-      "audio": "/lib/audio/tcf/co/vie-quotidienne/presenter-conversation-3-3.mp3"
-    },
-    {
-      "key": "tcf-ss-a2-s48-co-4#10",
-      "bank": "src/tcf/content/a1-a2/co.json",
-      "exercise": "tcf-ss-a2-s48-co-4",
-      "question": 10,
-      "enonce": "De quelle couleur sont ses cheveux ?",
-      "labels": [
-        "Blonds",
-        "Bruns",
-        "Roux"
-      ],
-      "status": "reviewed_visual_artwork_pending",
       "source_sha256": "0e4cb5b6c95928a2fa3b2490b0165a3fa55fb801d3cc7cfc8e725bcd52637be6",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/presenter-conversation-3-3.mp3"
     },
@@ -74021,21 +72012,6 @@
       "audio": "/lib/audio/tcf/co/loisirs/04-loisirs-annonce-cirque.mp3"
     },
     {
-      "key": "tcf-ssx-a2-annonce-4-1-co-2#2",
-      "bank": "src/tcf/content/a1-a2/co.json",
-      "exercise": "tcf-ssx-a2-annonce-4-1-co-2",
-      "question": 2,
-      "enonce": "Combien de temps dure le spectacle ?",
-      "labels": [
-        "1 h 30",
-        "30 minutes",
-        "2 heures"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "d66f53b788f46d6f43a9f830b7f00807693dd653ac81c4b6edda461f0d8929e2",
-      "audio": "/lib/audio/tcf/co/loisirs/04-loisirs-annonce-cirque.mp3"
-    },
-    {
       "key": "tcf-ssx-a2-annonce-4-1-co-2#3",
       "bank": "src/tcf/content/a1-a2/co.json",
       "exercise": "tcf-ssx-a2-annonce-4-1-co-2",
@@ -74966,21 +72942,6 @@
       "audio": "/lib/audio/tcf/co/presenter/moyen-a2__conversation-25-2.mp3"
     },
     {
-      "key": "tcf-ssx-a2-conversation-25-co-4#6",
-      "bank": "src/tcf/content/a1-a2/co.json",
-      "exercise": "tcf-ssx-a2-conversation-25-co-4",
-      "question": 6,
-      "enonce": "Combien de temps le film dure-t-il ?",
-      "labels": [
-        "Deux heures dix",
-        "Une heure trente",
-        "Deux heures"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "c9ebfc06d6749ab59db957e3299b8f262bb09c0e089380ee0276ba2d2439b093",
-      "audio": "/lib/audio/tcf/co/presenter/moyen-a2__conversation-25-2.mp3"
-    },
-    {
       "key": "tcf-ssx-a2-conversation-25-co-4#7",
       "bank": "src/tcf/content/a1-a2/co.json",
       "exercise": "tcf-ssx-a2-conversation-25-co-4",
@@ -75264,21 +73225,6 @@
       "status": "editorial_visual_screening_needed",
       "source_sha256": "6f53de512bc321b424d06f3aef2e7a1d8d7c65fb6c83f4d1228f0f9eefd78eab",
       "audio": "/lib/audio/tcf/co/presenter/moyen-a2__conversation-32-4.mp3"
-    },
-    {
-      "key": "tcf-ssx-a2-radio-17-1-co-3#1",
-      "bank": "src/tcf/content/a1-a2/co.json",
-      "exercise": "tcf-ssx-a2-radio-17-1-co-3",
-      "question": 1,
-      "enonce": "Combien de temps faut-il marcher ?",
-      "labels": [
-        "20 minutes",
-        "2 heures",
-        "10 minutes"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "9a225432eaa371e374be415d33bb7891a77f8f1d1accd531f14af6e91fabf6ea",
-      "audio": "/lib/audio/tcf/co/presenter/moyen-a2__radio-17.1.mp3"
     },
     {
       "key": "tcf-ssx-a2-radio-17-1-co-3#4",
@@ -78276,7 +76222,7 @@
         "Les cinq premières minutes",
         "L'entracte uniquement"
       ],
-      "status": "reviewed_visual_artwork_pending",
+      "status": "keep_text_rule_temporal_scope",
       "source_sha256": "bfbeda22d1c6669fb9f2d83d3a8e7eb3ca9cdf8493864baf00859b6c4239a086",
       "audio": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_07.mp3"
     },
@@ -81881,21 +79827,6 @@
       "audio": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_42-2.mp3"
     },
     {
-      "key": "delf-a2-2021-co-ex4-42#7",
-      "bank": "src/tcf/content/a1-a2/co.json",
-      "exercise": "delf-a2-2021-co-ex4-42",
-      "question": 7,
-      "enonce": "Depuis combien de temps la première personne attend-elle ?",
-      "labels": [
-        "Une demi-heure",
-        "Dix minutes",
-        "Deux heures"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "f1a16b6d9a50c01d3e2079b961fb6c54587550b4a96afafb0fe8712264316670",
-      "audio": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_42-3.mp3"
-    },
-    {
       "key": "delf-a2-2021-co-ex4-42#8",
       "bank": "src/tcf/content/a1-a2/co.json",
       "exercise": "delf-a2-2021-co-ex4-42",
@@ -82134,21 +80065,6 @@
       "status": "editorial_visual_screening_needed",
       "source_sha256": "d0fb9f1bd466aa3ad526b6eeff2f2aa4ec60638b7144513a9fc2d99a1cda3111",
       "audio": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_44-2.mp3"
-    },
-    {
-      "key": "delf-a2-2021-co-ex4-44#8",
-      "bank": "src/tcf/content/a1-a2/co.json",
-      "exercise": "delf-a2-2021-co-ex4-44",
-      "question": 8,
-      "enonce": "Quel document faut-il remplir ?",
-      "labels": [
-        "Un formulaire en ligne",
-        "Une lettre de motivation manuscrite",
-        "Un ticket de caisse"
-      ],
-      "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "c8c32fa582f4ffec3756ea2c2981a0a06fd7f2290c12469140db21748cff8964",
-      "audio": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_44-3.mp3"
     },
     {
       "key": "delf-a2-2021-co-ex4-44#9",
