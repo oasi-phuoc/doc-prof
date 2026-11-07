@@ -5985,28 +5985,34 @@
     {
       "id": "co834-velo-dessine",
       "label": "Le vélo",
-      "prompt": "FORMAT PAYSAGE EXACT 4:3, quatre de large pour trois de haut. Illustration pédagogique DESSINÉE semi-réaliste chaleureuse, peinture numérique douce, fins contours, couleurs naturelles, style habituel CE/CO. Sujet entier avec marges et action nette. Aucun texte, chiffre, logo, prix, montant, date, jour ou mois. Pas de photo ni 3D. Anatomie naturelle, mains simples et cohérentes. Un adolescent noir de seize ans, cheveux crépus courts, lunettes rondes et casque jaune, roule à vélo sur une piste dans un parc. Tenue de sport couvrante, vélo classique entier avec deux roues cohérentes et pieds aux pédales. Aucun autre sport. Personnages fictifs distincts des autres scènes : visages, coiffures et silhouettes renouvelés. Diversité naturelle des origines et nationalités, genres et expressions de genre, âges et morphologies ; sans caricature, drapeau ni tenue folklorique pour représenter une origine. ",
+      "prompt": "Version existante du commit amont conservée après inspection ; aucune nouvelle génération locale de ce fichier.",
       "character_diversity_plan": "Un adolescent noir de seize ans, cheveux crépus courts, lunettes rondes et casque jaune, roule à vélo sur une piste dans un parc. Tenue de sport couvrante, vélo classique entier avec deux roues cohérentes et pieds aux pédales. Aucun autre sport.",
       "source_review": "Distracteur du surf, A2 s51 co4 Q1.",
       "path": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp",
-      "source_png": "/workspace/generated_images/exec-c13dbbe3-6e2b-42d8-bb17-6c244dae7072.png",
       "status": "visually_reviewed",
       "domain": "co",
       "batch": "active-audios-834",
-      "review_note": "Contrôle visuel individuel : format natif 4:3, style dessiné CE/CO chaleureux, action complète et reconnaissable, sans texte, montant ni date. Personnages renouvelés dans le lot : carnations, visages, coiffures, âges, morphologies et expressions variés ; handicap intégré naturellement quand prévu. Références d’origine et de genre du prompt décrivent des personnages fictifs.",
+      "review_note": "Vélo entier, proportions et mécanique crédibles, peinture douce à contours fins, sans texte, montant, date ou élément coupé ; version amont conservée et ancien fichier archivé à l’octet près.",
       "width": 1280,
       "height": 960,
       "aspect_ratio": "4:3",
-      "source_sha256": "a625ea52b1707949aa1f18dea725188bc7962fab4cb879efbf2e95a1e5ab9cbc",
-      "sha256": "d9544af7c45927a1d02474225d5a26c63c0c97afeb1a3652445da5fde90a20b9",
-      "bytes": 285024,
+      "sha256": "abcd1da9a37a79008268c7f3bc97f7caf39ba675ff00b0219b6bfaf4117af41b",
+      "bytes": 403004,
       "style_review": {
         "status": "aligned",
         "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
         "reference": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
         "review_note": "Comparaison visuelle avec les objets et scènes du commit 48a753d8 : modelé peint semi-réaliste et trait fin compatibles. La validation du format reste distincte.",
         "user_approved_reference": false
-      }
+      },
+      "before_upstream_asset_update": {
+        "sha256": "d9544af7c45927a1d02474225d5a26c63c0c97afeb1a3652445da5fde90a20b9",
+        "source_png": "/workspace/generated_images/exec-c13dbbe3-6e2b-42d8-bb17-6c244dae7072.png",
+        "source_sha256": "a625ea52b1707949aa1f18dea725188bc7962fab4cb879efbf2e95a1e5ab9cbc",
+        "prompt": "FORMAT PAYSAGE EXACT 4:3, quatre de large pour trois de haut. Illustration pédagogique DESSINÉE semi-réaliste chaleureuse, peinture numérique douce, fins contours, couleurs naturelles, style habituel CE/CO. Sujet entier avec marges et action nette. Aucun texte, chiffre, logo, prix, montant, date, jour ou mois. Pas de photo ni 3D. Anatomie naturelle, mains simples et cohérentes. Un adolescent noir de seize ans, cheveux crépus courts, lunettes rondes et casque jaune, roule à vélo sur une piste dans un parc. Tenue de sport couvrante, vélo classique entier avec deux roues cohérentes et pieds aux pédales. Aucun autre sport. Personnages fictifs distincts des autres scènes : visages, coiffures et silhouettes renouvelés. Diversité naturelle des origines et nationalités, genres et expressions de genre, âges et morphologies ; sans caricature, drapeau ni tenue folklorique pour représenter une origine. "
+      },
+      "source_commit": "e19566d4a8169236633fd276d964f821594807a5",
+      "generation_method": "upstream-asset-retained-after-visual-review"
     },
     {
       "id": "co834-bus-dessine",
@@ -53303,6 +53309,37 @@
         "height": 960,
         "before_sha256": "6f6965a15c5cb2e31f0df7085448a95cc30ed6fa3127e2205e7f4c461e8967d5",
         "sha256": "6c7f7212d925794eb0a305fc07ed4bc12f4f22768e9ae88192358918672749d4"
+      }
+    },
+    {
+      "id": "integration-20261107-velo-montagne",
+      "label": "Faire du VTT en montagne",
+      "path": "/lib/images/tcf/qcm-audit/integration-20261107-velo-montagne.webp",
+      "prompt": "Reprendre le style peint de cette illustration de cyclisme et créer une scène distincte de VTT en montagne pour un QCM pédagogique TCF. PAYSAGE EXACTEMENT 4:3. Un homme noir adulte d'environ trente ans, portant un casque de vélo et une veste bleu-vert, pédale sur un vrai VTT sur un chemin de montagne suisse. Son corps et le vélo entier, y compris les deux roues, restent dans le cadre avec des marges. Le VTT est vu de trois quarts latéral ; gestes, pédales, chaîne, roues et proportions naturels et crédibles. Sentier alpin paisible, prairie, conifères et montagnes au loin ; pas de rue urbaine, pas de circulation automobile. Une seule scène continue, pas de montage. Peinture numérique semi-réaliste douce en couleur, contours fins et discrets, couleurs chaleureuses naturelles, sans rendu photo, 3D ni gros contours BD. Ne pas reprendre le visage ou la tenue de la cycliste de référence : varier naturellement les personnages comme demandé dans le projet. Aucun texte, numéro, logo, signature, montant, date ou bulle.",
+      "source_png": "/workspace/generated_images/exec-82962e70-ac5f-486e-9668-91a48c3c30e3.png",
+      "source_sha256": "ec0b69191628e73be65c4071ffa5c0c341c6ceee47a14f51032e1b81d2f1ecff",
+      "sha256": "b23ae0662d4547cc07235f6ce2f4189f10e0acd4caefb8e197caefc1073dfae0",
+      "bytes": 516428,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "reprise-20261106-objets-inclus",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co306-faire-velo-dessine.webp"
+      ],
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co306-faire-velo-dessine.webp"
+      ],
+      "review_note": "Homme adulte distinct, casque et VTT entiers, pédalage crédible sur sentier de montagne, peinture douce en 4:3 ; contexte de la piste tcf-ss-a1-s34-co-3 respecté.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co306-faire-velo-dessine.webp"
+        ]
       }
     }
   ],

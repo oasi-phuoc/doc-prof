@@ -31,6 +31,8 @@ def main():
     reviewed=checked_images(json.loads((ROOT/'docs/tcf/images-generees.json').read_text()))
     journal_path=ROOT/'docs/tcf/operations-contexte-20261106.json'
     operations=json.loads(journal_path.read_text())['operations'] if journal_path.exists() else []
+    from tcf_main_integration import verify as verify_upstream, reverse as reverse_upstream, original_preserved
+    upstream_operations=verify_upstream()
     if operations:
         from check_tcf_context_review import verify
         verify()
@@ -48,11 +50,12 @@ def main():
             assert isinstance(before,str) and before.startswith('/lib/images/') and isinstance(after,str) and after.startswith('/lib/images/'),(exercise,node)
             assert after in reviewed,(exercise,after)
             old_bytes=subprocess.check_output(['git','show',f'{baseline}:public{before}'],cwd=ROOT)
-            assert (ROOT/'public'/before.lstrip('/')).read_bytes()==old_bytes,before
+            assert original_preserved(before,old_bytes),before
     for bank in BANKS:
         relative=str(bank.relative_to(ROOT))
         before=json.loads(subprocess.check_output(['git','show',f'{baseline}:{relative}'],cwd=ROOT,text=True))
         after=json.loads(bank.read_text());projected=deepcopy(after)
+        reverse_upstream(projected,[op for op in upstream_operations if op['bank']==relative])
         byid={e['id']:e for e in projected}
         for op in reversed(operations):
             if op['bank']!=relative:continue
@@ -76,7 +79,7 @@ def main():
                     retired.append(item);continue
                 assert target in reviewed,(old['id'],node,target)
                 original_bytes=subprocess.check_output(['git','show',f'{baseline}:public{path}'],cwd=ROOT)
-                assert (ROOT/'public'/path.lstrip('/')).read_bytes()==original_bytes,path
+                assert original_preserved(path,original_bytes),path
                 item.update(source_sha256=hashlib.sha256(original_bytes).hexdigest(),target_sha256=reviewed[target]['sha256'])
                 changes.append(item)
             for node,path in active.items():
@@ -98,8 +101,8 @@ def main():
                              new_images_generated_and_reviewed=len(generated),new_images_used=len(targets&generated),
                              existing_reviewed_images_reused=len(targets-generated),usages_using_new_images=sum(r['after'] in generated for r in changes+added),
                              remaining_vocabulary_usages=len(remaining),remaining_distinct_vocabulary_images=len(counts)),
-                invariants='Hors opérations contextuelles exactes consignées, seuls les champs image changent. IDs, sources CE, transcriptions et liens audio conservés. Ajouts de variantes complets et synchronisés ; remplacements relus et vérifiés par empreinte en 4:3. Originaux conservés ; harmonisation autorisée des horloges vérifiée séparément.',
-                contextual_operations='docs/tcf/operations-contexte-20261106.json',replacements=changes,added_image_uses=added,retired_image_uses=retired,remaining_uses=remaining)
+                invariants='Hors intégration amont exacte et opérations contextuelles consignées, seuls les champs image changent. IDs, sources CE, transcriptions et liens audio conservés. Ajouts de variantes complets et synchronisés ; remplacements relus et vérifiés par empreinte en 4:3. Originaux conservés ; harmonisation autorisée des horloges vérifiée séparément.',
+                contextual_operations='docs/tcf/operations-contexte-20261106.json',upstream_integration='docs/tcf/integration-main-20261107.json' if upstream_operations else None,replacements=changes,added_image_uses=added,retired_image_uses=retired,remaining_uses=remaining)
     assert report['summary']['initial_vocabulary_usages']==report['summary']['replaced_vocabulary_usages']+report['summary']['retired_vocabulary_usages']+len(remaining)
     if args.write_report:args.write_report.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
     print(json.dumps(report['summary'],ensure_ascii=False))

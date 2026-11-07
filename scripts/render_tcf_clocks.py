@@ -211,6 +211,10 @@ def main():
                          style_review=dict(status='pending_visual_review', reference_commit=COMMIT, references=[STYLE]),
                          review_note='Même modèle d’aiguilles et angles calculés ; approbation après inspection des planches.',
                          clock_render=row)
+    if (results==previous.get('images') and previous.get('hand_model')==MODEL
+            and previous.get('base_sha256')==sha(BASE)):
+        print(f"{len(results)} cadrans déjà conformes ; fichiers et revue conservés.")
+        return
     MANIFEST.write_text(json.dumps(manifest, ensure_ascii=False, indent=2)+'\n')
     report = dict(date='2026-11-06', authorization='Modèle peint commun et aiguilles calculées explicitement approuvés par l’utilisateur ; durées rouges 20/30/45 également demandées.',
                   base='/'+str(BASE.relative_to(PUBLIC)), base_sha256=sha(BASE), hand_model=MODEL,

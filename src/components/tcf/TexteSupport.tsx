@@ -1,3 +1,6 @@
+import { ceArtFor } from '@/tcf/ce-art'
+import { CePoster } from './CePoster'
+import { WorksheetImage } from '@/components/WorksheetImage'
 import { useState, type ReactNode } from 'react'
 import { SheetCopy } from '@/components/sheet-copy'
 import type { PreviewMode } from '@/math/types'
@@ -100,7 +103,7 @@ function TcfImage({
     )
   }
   return (
-    <img
+    <WorksheetImage
       className={className}
       src={resolved}
       alt={alt}
@@ -140,8 +143,9 @@ function ceDoc(children: ReactNode) {
 }
 
 /** Support de l’exercice : document à lire, audio, images, consignes de production. */
-export function TexteSupport({ exercise: ex, mode }: { exercise: TcfExercise; mode: PreviewMode }) {
+export function TexteSupport({ exercise: ex, mode, ceFormat = 'texte' }: { exercise: TcfExercise; mode: PreviewMode; ceFormat?: 'texte' | 'image' }) {
   const banque = <MotsBanque mots={ex.mots_banque} />
+  if (ceFormat === 'image' && ex.competence === 'CE' && ceArtFor(ex)) return <CePoster exercise={ex} />
   switch (ex.type_exercice) {
     case 'sms':
       return ceDoc(

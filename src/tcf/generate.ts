@@ -150,7 +150,8 @@ function questionItem(
       ? activeOverride
       : defaultQuestionForm(q, filled, competence, exerciseId)
   const resolved = resolveQuestionForm(q, active)
-  const audioLabel = resolved.audio != null ? `Audio ${resolved.audio}` : undefined
+  const audioNumber = resolved.audio ?? (audioFrame ? numero : undefined)
+  const audioLabel = audioNumber != null ? `Audio ${audioNumber}` : undefined
   const variants = questionFormVariants(q, filled, rng)
   const formSelect: TcfFormSelect | undefined =
     filled.length > 0
@@ -400,6 +401,8 @@ export function tcfExerciseItems(
             lettre: TCF_LETTRES_SITUATIONS[i] ?? String(i + 1),
             image: s.image_pending ? '' : s.image,
             dialogue: s.dialogue,
+            audioSrc: s.dialogue != null && ((ex.support.audios?.length ?? 0) > 1 || ex.support.nb_dialogues === 1)
+              ? coFrameAudioSrc(ex, s.dialogue) : undefined,
           })),
         }),
       ]
@@ -725,6 +728,8 @@ export function tryGenerateTcfBlock(
   let items = tcfExerciseItems(ex, rng, config.tcfFormModes).map((item) => ({
     ...item,
     tcfExerciseId: ex.id,
+    ...(config.domain === 'tcf-csc' && ex.competence === 'CE' && item.tcf?.kind === 'support'
+      ? { tcf: { ...item.tcf, ceFormat: config.tcfCeFormat ?? 'texte' } } : {}),
   }))
   // PE : points = total de l’exercice (un seul barème), pas par question.
   if (ex.competence === 'PE' && config.pointsPerQuestion != null) {

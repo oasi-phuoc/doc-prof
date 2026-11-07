@@ -6,19 +6,20 @@
     "initial_vocabulary_usages": 1229,
     "replaced_vocabulary_usages": 1187,
     "retired_vocabulary_usages": 42,
-    "total_changed_image_usages": 1954,
+    "total_changed_image_usages": 1958,
     "added_image_usages": 606,
     "retired_image_usages": 42,
     "object_bank_main_images": 130,
-    "new_images_generated_and_reviewed": 526,
-    "new_images_used": 515,
+    "new_images_generated_and_reviewed": 527,
+    "new_images_used": 516,
     "existing_reviewed_images_reused": 240,
-    "usages_using_new_images": 1321,
+    "usages_using_new_images": 1322,
     "remaining_vocabulary_usages": 0,
     "remaining_distinct_vocabulary_images": 0
   },
-  "invariants": "Hors opérations contextuelles exactes consignées, seuls les champs image changent. IDs, sources CE, transcriptions et liens audio conservés. Ajouts de variantes complets et synchronisés ; remplacements relus et vérifiés par empreinte en 4:3. Originaux conservés ; harmonisation autorisée des horloges vérifiée séparément.",
+  "invariants": "Hors intégration amont exacte et opérations contextuelles consignées, seuls les champs image changent. IDs, sources CE, transcriptions et liens audio conservés. Ajouts de variantes complets et synchronisés ; remplacements relus et vérifiés par empreinte en 4:3. Originaux conservés ; harmonisation autorisée des horloges vérifiée séparément.",
   "contextual_operations": "docs/tcf/operations-contexte-20261106.json",
+  "upstream_integration": "docs/tcf/integration-main-20261107.json",
   "replacements": [
     {
       "bank": "src/tcf/content/a0-a1/ce.json",
@@ -6174,6 +6175,23 @@
       "exercise": "delf-a1-2022-ce-ex1-carte",
       "node": [
         "questions",
+        5,
+        "formes",
+        "qcm_image",
+        "choix",
+        0,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp",
+      "after": "/lib/images/tcf/qcm-audit/co306-faire-velo-dessine.webp",
+      "source_sha256": "d9544af7c45927a1d02474225d5a26c63c0c97afeb1a3652445da5fde90a20b9",
+      "target_sha256": "cf547a08822a952696ecd9be9719aeaf66a72544d715419293e1aef4e158cf77"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "delf-a1-2022-ce-ex1-carte",
+      "node": [
+        "questions",
         6,
         "formes",
         "qcm_image",
@@ -6609,7 +6627,7 @@
       "before": "/lib/images/vocabulaire/transports/velo.webp",
       "after": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp",
       "source_sha256": "5dbd9c1ae9489b8e55e30572070a9c74f23d0e6eb144ec6d5764adda735d6cf9",
-      "target_sha256": "d9544af7c45927a1d02474225d5a26c63c0c97afeb1a3652445da5fde90a20b9"
+      "target_sha256": "abcd1da9a37a79008268c7f3bc97f7caf39ba675ff00b0219b6bfaf4117af41b"
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -10968,7 +10986,7 @@
       "before": "/lib/images/vocabulaire/transports/velo.webp",
       "after": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp",
       "source_sha256": "5dbd9c1ae9489b8e55e30572070a9c74f23d0e6eb144ec6d5764adda735d6cf9",
-      "target_sha256": "d9544af7c45927a1d02474225d5a26c63c0c97afeb1a3652445da5fde90a20b9"
+      "target_sha256": "abcd1da9a37a79008268c7f3bc97f7caf39ba675ff00b0219b6bfaf4117af41b"
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -11087,7 +11105,7 @@
       "before": "/lib/images/vocabulaire/transports/velo.webp",
       "after": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp",
       "source_sha256": "5dbd9c1ae9489b8e55e30572070a9c74f23d0e6eb144ec6d5764adda735d6cf9",
-      "target_sha256": "d9544af7c45927a1d02474225d5a26c63c0c97afeb1a3652445da5fde90a20b9"
+      "target_sha256": "abcd1da9a37a79008268c7f3bc97f7caf39ba675ff00b0219b6bfaf4117af41b"
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -12040,6 +12058,23 @@
       "after": "/lib/images/tcf/qcm-audit/co306-piscine-dessine.webp",
       "source_sha256": "10ad81d11dd482af44090a8d1f4ba88e96ac74a6645646caa240ef71deaf283a",
       "target_sha256": "7eea2d44d3db8813a295363e6e8a1537fc5bea87b2945c07a5a477b7a241f456"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s34-co-3",
+      "node": [
+        "questions",
+        5,
+        "formes",
+        "qcm_image",
+        "choix",
+        0,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp",
+      "after": "/lib/images/tcf/qcm-audit/integration-20261107-velo-montagne.webp",
+      "source_sha256": "d9544af7c45927a1d02474225d5a26c63c0c97afeb1a3652445da5fde90a20b9",
+      "target_sha256": "b23ae0662d4547cc07235f6ce2f4189f10e0acd4caefb8e197caefc1073dfae0"
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -17599,6 +17634,23 @@
       "exercise": "delf-a1-2022-co-75",
       "node": [
         "questions",
+        4,
+        "formes",
+        "qcm_image",
+        "choix",
+        0,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp",
+      "after": "/lib/images/tcf/qcm-audit/co306-faire-velo-dessine.webp",
+      "source_sha256": "d9544af7c45927a1d02474225d5a26c63c0c97afeb1a3652445da5fde90a20b9",
+      "target_sha256": "cf547a08822a952696ecd9be9719aeaf66a72544d715419293e1aef4e158cf77"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "delf-a1-2022-co-75",
+      "node": [
+        "questions",
         5,
         "formes",
         "qcm_image",
@@ -20496,7 +20548,7 @@
       "before": "/lib/images/vocabulaire/transports/velo.webp",
       "after": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp",
       "source_sha256": "5dbd9c1ae9489b8e55e30572070a9c74f23d0e6eb144ec6d5764adda735d6cf9",
-      "target_sha256": "d9544af7c45927a1d02474225d5a26c63c0c97afeb1a3652445da5fde90a20b9"
+      "target_sha256": "abcd1da9a37a79008268c7f3bc97f7caf39ba675ff00b0219b6bfaf4117af41b"
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -22446,7 +22498,7 @@
       "before": "/lib/images/vocabulaire/transports/velo.webp",
       "after": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp",
       "source_sha256": "5dbd9c1ae9489b8e55e30572070a9c74f23d0e6eb144ec6d5764adda735d6cf9",
-      "target_sha256": "d9544af7c45927a1d02474225d5a26c63c0c97afeb1a3652445da5fde90a20b9"
+      "target_sha256": "abcd1da9a37a79008268c7f3bc97f7caf39ba675ff00b0219b6bfaf4117af41b"
     },
     {
       "bank": "src/tcf/content/a1-a2/ce.json",
@@ -28684,7 +28736,7 @@
       "before": "/lib/images/vocabulaire/transports/velo.webp",
       "after": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp",
       "source_sha256": "5dbd9c1ae9489b8e55e30572070a9c74f23d0e6eb144ec6d5764adda735d6cf9",
-      "target_sha256": "d9544af7c45927a1d02474225d5a26c63c0c97afeb1a3652445da5fde90a20b9"
+      "target_sha256": "abcd1da9a37a79008268c7f3bc97f7caf39ba675ff00b0219b6bfaf4117af41b"
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -29263,6 +29315,23 @@
       "after": "/lib/images/tcf/qcm-audit/co306-mer-plages-dessine.webp",
       "source_sha256": "7a1140e47436cfe2fa63bfd37063b59659e06acf99f221f98e04a4645c6ec5a3",
       "target_sha256": "81a240394b5c1baae22b65aee7cee28b53a130f811bea908ee1a43415b0b6883"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-ss-a2-s51-co-4",
+      "node": [
+        "questions",
+        0,
+        "formes",
+        "qcm_image",
+        "choix",
+        2,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp",
+      "after": "/lib/images/tcf/qcm-audit/co306-faire-velo-dessine.webp",
+      "source_sha256": "d9544af7c45927a1d02474225d5a26c63c0c97afeb1a3652445da5fde90a20b9",
+      "target_sha256": "cf547a08822a952696ecd9be9719aeaf66a72544d715419293e1aef4e158cf77"
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -39299,7 +39368,7 @@
         "image"
       ],
       "after": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp",
-      "target_sha256": "d9544af7c45927a1d02474225d5a26c63c0c97afeb1a3652445da5fde90a20b9"
+      "target_sha256": "abcd1da9a37a79008268c7f3bc97f7caf39ba675ff00b0219b6bfaf4117af41b"
     },
     {
       "bank": "src/tcf/content/a1-a2/ce.json",

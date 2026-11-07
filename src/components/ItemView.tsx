@@ -155,6 +155,7 @@ export function ItemView({
       (item.tcf?.kind === 'qcm' ||
         item.tcf?.kind === 'lignes' ||
         item.tcf?.kind === 'audio_cadre' ||
+        item.tcf?.kind === 'ce_association_answers' ||
         item.tcf?.kind === 'dialogue'),
   )
   const hideNumber =

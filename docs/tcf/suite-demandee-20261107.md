@@ -1,3 +1,5 @@
+> Instruction actualisée du 7 novembre : la revue des 763 candidates est achevée (79 variantes activées, 111 textes conservés, 573 trios à préparer) ; envoyer sur origin/main après intégration et contrôles. Les audios restent en attente des sources recherchées par l’utilisateur.
+
 # Suite demandée — 7 novembre 2026
 
 Ordre utilisateur : pictogrammes de communication et thèmes PO ; puis 299 références audio ; puis quatre corrections de style PO ; puis revue des 254 usages CE/CO ; enfin élargissement du tag `objet`, avec trois objets entendus, deux absents et positions mélangées à chaque régénération. Rapport global puis envoi sur `origin/main` lorsque le travail est terminé.

@@ -1,3 +1,6 @@
+import { paginateCePosters } from '@/tcf/ce-poster-pages'
+import { ceArtFor } from '@/tcf/ce-art'
+import { withTcfInformationTotals } from '@/tcf/information-totals'
 /**
  * Orchestrateur de fiches : buildPage / buildWorksheets.
  * Tirage maths purs → `./generate-items` ; colonnes → `./column-arith`.
@@ -61,6 +64,10 @@ function expandTcfInstructionDocuments(page: PageConfig, seed: number): PageConf
     const local = block.contentSeed ?? 0
     const rng = createRng(seed + index * 10007 + local)
     const ex = resolveTcfExercise(pageAsConfig(page, block), rng)
+    if (page.domain === 'tcf-csc' && block.tcfCeFormat === 'image' && ex?.competence === 'CE' && ceArtFor(ex)) {
+      out.push(block)
+      return
+    }
     const parts = ex ? splitMultiDocumentAnnonce(ex) : null
     if (!parts) {
       out.push(block)
@@ -524,7 +531,7 @@ function collectSoutienReservedWords(pages: PageConfig[], seed: number): {
   return { reserved: [...reserved], type1Words, type5Words }
 }
 
-export function buildWorksheets(pages: PageConfig[], seed: number): WorksheetPage[] {
+export function buildWorksheets(pages: PageConfig[], seed: number, defaultPoints = 1): WorksheetPage[] {
   let exerciseNo = 1
   const out: WorksheetPage[] = []
   const { reserved, type1Words, type5Words } = collectSoutienReservedWords(pages, seed)
@@ -617,6 +624,12 @@ export function buildWorksheets(pages: PageConfig[], seed: number): WorksheetPag
     const grammarReadingPages = splitGrammarReadingPages(worksheet)
     if (grammarReadingPages) {
       out.push(...grammarReadingPages.map(sheet => ({ ...sheet, configIndex: index })))
+      return
+    }
+
+    const cePosterPages = paginateCePosters(worksheet)
+    if (cePosterPages) {
+      out.push(...cePosterPages.map((sheet) => ({ ...sheet, configIndex: index })))
       return
     }
 
@@ -750,5 +763,5 @@ export function buildWorksheets(pages: PageConfig[], seed: number): WorksheetPag
     }
   })
 
-  return out
+  return withTcfInformationTotals(out, defaultPoints)
 }

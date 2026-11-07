@@ -40,7 +40,7 @@ function exercicesLabel(n: number): string {
 }
 
 /** Page 1 du TPF / TCF : les quatre parties du test. */
-export function TcfInformations({ niveau }: { niveau: TcfNiveau }) {
+export function TcfInformations({ niveau, pointsByCompetence }: { niveau: TcfNiveau; pointsByCompetence?: Record<TcfCompetence, number> }) {
   return (
     <div className="tcf-info">
       <ul className="tcf-info-parties">
@@ -57,7 +57,7 @@ export function TcfInformations({ niveau }: { niveau: TcfNiveau }) {
                 <p className="tcf-info-partie-slogan">{p.slogan}</p>
                 <p className="tcf-info-partie-count">{exercicesLabel(n)}</p>
               </div>
-              <span className="tcf-info-points">25 pts</span>
+              <span className="tcf-info-points">{(pointsByCompetence?.[p.id] ?? 25).toLocaleString('fr-CH', { maximumFractionDigits: 2 })} pts</span>
             </li>
           )
         })}

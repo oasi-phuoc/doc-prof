@@ -1,3 +1,4 @@
+import { WorksheetImageProvider } from '@/components/WorksheetImage'
 import {
   useEffect,
   useMemo,
@@ -13,6 +14,8 @@ import {
 import { SaveFicheDialog } from '@/components/generator/SaveFicheDialog'
 import { TopbarTools } from '@/components/generator/TopbarTools'
 import { FooterSidePanel } from '@/components/generator/FooterSidePanel'
+import { GameSetupBar } from '@/components/game-board/GameSetupBar'
+import { GameTimer } from '@/components/game-board/GameTimer'
 import { Header } from '@/components/generator/Header'
 import { LibreSidePanel } from '@/components/generator/LibreSidePanel'
 import { SettingsPanel } from '@/components/generator/SettingsPanel'
@@ -107,6 +110,7 @@ export function GeneratorPage({
   const [printCorrections, setPrintCorrections] = useState(
     () => openedFiche?.recipe.printCorrections ?? true,
   )
+  const [imageOverrides, setImageOverrides] = useState<Record<string, string>>(() => openedFiche?.recipe.imageOverrides ?? {})
   const theoryColors = theorySectionColors(themeColor)
   const [footerPanelOpen, setFooterPanelOpen] = useState(false)
   const [libreMode, setLibreMode] = useState(() => openedFiche?.recipe.libreMode ?? false)
@@ -115,6 +119,16 @@ export function GeneratorPage({
   )
   const [saveOpen, setSaveOpen] = useState(false)
   const [bookRequest, setBookRequest] = useState<BookRequest | null>(null)
+  const [boardMode, setBoardMode] = useState<'fiche' | 'jeu'>('fiche')
+  const [scoreMode, setScoreMode] = useState<'normal' | 'points'>('normal')
+  const [scoreCorrect, setScoreCorrect] = useState(0)
+  const [scoreTotal, setScoreTotal] = useState(0)
+  const [questionCountOn, setQuestionCountOn] = useState(false)
+  const [questionCount, setQuestionCount] = useState(0)
+  const scoreModeRef = useRef(scoreMode)
+  const questionCountOnRef = useRef(questionCountOn)
+  scoreModeRef.current = scoreMode
+  questionCountOnRef.current = questionCountOn
   const previewFrameRef = useRef<HTMLDivElement>(null)
 
   const applyThemeColor = (color: string) => {
@@ -125,7 +139,7 @@ export function GeneratorPage({
     setFontSize(applyBaseFontSize(size))
   }
 
-  const worksheets = useMemo(() => buildWorksheets(pages, seed), [pages, seed])
+  const worksheets = useMemo(() => buildWorksheets(pages, seed, pointsPerQuestion), [pages, seed, pointsPerQuestion])
   const [libreSnapshot, setLibreSnapshot] = useState<PageConfig[] | null>(
     () => openedFiche?.recipe.libreSnapshot ?? null,
   )
@@ -154,8 +168,8 @@ export function GeneratorPage({
       ? libreSnapshot
       : null
   const previewWorksheets = useMemo(
-    () => (previewSource ? buildWorksheets(previewSource, seed) : worksheets),
-    [previewSource, seed, worksheets],
+    () => (previewSource ? buildWorksheets(previewSource, seed, pointsPerQuestion) : worksheets),
+    [previewSource, seed, worksheets, pointsPerQuestion],
   )
   const a5SourcePages = previewSource ?? pages
   const a5LeftWorksheets = useMemo(() => {
@@ -163,15 +177,17 @@ export function GeneratorPage({
     return buildWorksheets(
       a5SourcePages.map((page) => pageForA5Half(page, 'left')),
       seed,
+      pointsPerQuestion,
     )
-  }, [sheetFormat, a5SourcePages, seed])
+  }, [sheetFormat, a5SourcePages, seed, pointsPerQuestion])
   const a5RightWorksheets = useMemo(() => {
     if (!isA5DoubleFormat(sheetFormat)) return null
     return buildWorksheets(
       a5SourcePages.map((page) => pageForA5Half(page, 'right')),
       seed,
+      pointsPerQuestion,
     )
-  }, [sheetFormat, a5SourcePages, seed])
+  }, [sheetFormat, a5SourcePages, seed, pointsPerQuestion])
   const previewSheet = previewWorksheets[Math.min(safeSheetIndex, previewWorksheets.length - 1)]
   const a5LeftSheet = a5LeftWorksheets?.[Math.min(safeSheetIndex, a5LeftWorksheets.length - 1)]
   const a5RightSheet = a5RightWorksheets?.[Math.min(safeSheetIndex, a5RightWorksheets.length - 1)]
@@ -392,6 +408,7 @@ export function GeneratorPage({
       sheetFormat,
       hideChrome,
       printCorrections,
+      imageOverrides,
     })
     const saved =
       !input.asNew && ficheRef
@@ -529,6 +546,13 @@ export function GeneratorPage({
     placeCoordMark,
     placeOrigin,
     removeCoordMark,
+    boardMode,
+    onScored: (correct: boolean) => {
+      if (questionCountOnRef.current) setQuestionCount((count) => count + 1)
+      if (scoreModeRef.current !== 'points') return
+      setScoreTotal((total) => total + 1)
+      if (correct) setScoreCorrect((count) => count + 1)
+    },
   }
 
   return (
@@ -548,7 +572,186 @@ export function GeneratorPage({
       <Header
         onCreate={() => undefined}
         generator
+        afterBrand={
+          <>
+          <div className="mode-toggle board-mode-toggle" role="group" aria-label="Affichage">
+            <button
+              type="button"
+              className={boardMode === 'fiche' ? 'active' : ''}
+              aria-pressed={boardMode === 'fiche'}
+              onClick={() => setBoardMode('fiche')}
+            >
+              Fiche
+            </button>
+            <button
+              type="button"
+              className={boardMode === 'jeu' ? 'active' : ''}
+              aria-pressed={boardMode === 'jeu'}
+              onClick={() => setBoardMode('jeu')}
+            >
+              Jeu
+            </button>
+          </div>
+          {boardMode === 'jeu' ? (
+            <div className="game-score-bar">
+              <button
+                type="button"
+                className={`topbar-icon-btn${scoreMode === 'points' ? ' active' : ''}`}
+                aria-pressed={scoreMode === 'points'}
+                aria-label={scoreMode === 'points' ? 'Désactiver les points' : 'Activer les points'}
+                title={scoreMode === 'points' ? 'Désactiver les points' : 'Activer les points'}
+                onClick={() => setScoreMode((mode) => (mode === 'points' ? 'normal' : 'points'))}
+              >
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>
+                  <path
+                    fill="currentColor"
+                    d="M12 3.2 14.6 8.7l6 .5-4.6 4 1.4 5.9L12 16.3 6.6 19.1l1.4-5.9-4.6-4 6-.5L12 3.2z"
+                  />
+                </svg>
+              </button>
+              <GameTimer />
+              <button
+                type="button"
+                className={`topbar-icon-btn${questionCountOn ? ' active' : ''}`}
+                aria-pressed={questionCountOn}
+                aria-label={questionCountOn ? 'Désactiver le nombre de questions' : 'Activer le nombre de questions'}
+                title={questionCountOn ? 'Désactiver le nombre de questions' : 'Activer le nombre de questions'}
+                onClick={() => {
+                  setQuestionCountOn((on) => !on)
+                  setQuestionCount(0)
+                }}
+              >
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>
+                  <path
+                    fill="currentColor"
+                    d="M6 4h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm1 4h10v2H7V8zm0 4h10v2H7v-2zm0 4h6v2H7v-2z"
+                  />
+                </svg>
+              </button>
+              {questionCountOn ? (
+                <p
+                  className="game-score"
+                  aria-live="polite"
+                  aria-label={`${questionCount} ${questionCount === 1 ? 'question' : 'questions'}`}
+                >
+                  {questionCount}
+                </p>
+              ) : null}
+              {scoreMode === 'points' ? (
+                <>
+                  <p
+                    className="game-score"
+                    aria-live="polite"
+                    aria-label={`${scoreCorrect} ${scoreCorrect === 1 ? 'réponse juste' : 'réponses justes'} sur ${scoreTotal} ${scoreTotal === 1 ? 'question' : 'questions'}`}
+                  >
+                    <strong>{scoreCorrect}</strong>
+                    <span> / {scoreTotal}</span>
+                  </p>
+                  <button
+                    type="button"
+                    className="topbar-icon-btn"
+                    aria-label="Remettre à zéro"
+                    title="Remettre à zéro"
+                    onClick={() => {
+                      setScoreCorrect(0)
+                      setScoreTotal(0)
+                    }}
+                  >
+                    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>
+                      <path
+                        fill="currentColor"
+                        d="M12 5V2L7 6l5 4V7a5 5 0 1 1-4.5 2.8l-1.8 1A7 7 0 1 0 12 5z"
+                      />
+                    </svg>
+                  </button>
+                </>
+              ) : null}
+            </div>
+          ) : null}
+          </>
+        }
         rightSlot={
+          boardMode === 'jeu' ? (
+            <GameSetupBar
+              domain={activePage.domain}
+              domains={allowedDomains}
+              topic={ctx.soutienSelection?.theme.id ?? activeBlock.topic}
+              topics={ctx.isTpmLike ? [] : available}
+              topicLabel={ctx.isTcf ? 'Compétence' : 'Thème'}
+              exerciseType={activeBlock.exerciseType}
+              exercises={typeChoices}
+              difficulty={activeBlock.difficulty}
+              showValues={ctx.isNumberLibreDomain}
+              block={activeBlock}
+              subthemes={ctx.gramSubthemes}
+              subthemeId={ctx.gramSubtheme?.id}
+              letters={
+                ctx.soutienSelection?.theme.letters.map((letter) => ({
+                  id: letter.id,
+                  label: ctx.isAlphabetisation ? letter.label : letter.letterUpper,
+                })) ?? []
+              }
+              letterId={ctx.soutienSelection?.letter.id}
+              letterLabel={
+                ctx.isAlphabetisation && activePage.topic === 'alpha-phrases'
+                  ? 'Histoire'
+                  : ctx.isAlphabetisation && activePage.topic === 'alpha-mots'
+                    ? 'Leçon'
+                    : 'Lettre'
+              }
+              sounds={ctx.soutienSelection?.letter.sounds.map((sound) => ({ id: sound.id, label: sound.label })) ?? []}
+              soundId={ctx.soutienSelection?.sound.id}
+              onDomain={(next) => {
+                if (scoreModeRef.current === 'points') {
+                  setScoreCorrect(0)
+                  setScoreTotal(0)
+                }
+                setQuestionCount(0)
+                changeDomain(next)
+              }}
+              onTopic={(next) => {
+                if (scoreModeRef.current === 'points') {
+                  setScoreCorrect(0)
+                  setScoreTotal(0)
+                }
+                setQuestionCount(0)
+                changeTopic(next)
+              }}
+              onExercise={(patch) => {
+                if (scoreModeRef.current === 'points') {
+                  setScoreCorrect(0)
+                  setScoreTotal(0)
+                }
+                setQuestionCount(0)
+                updatePage(patch)
+              }}
+              onChange={updatePage}
+              onSubtheme={(id) => {
+                if (scoreModeRef.current === 'points') {
+                  setScoreCorrect(0)
+                  setScoreTotal(0)
+                }
+                setQuestionCount(0)
+                changeGramSubtheme(id)
+              }}
+              onLetter={(id) => {
+                if (scoreModeRef.current === 'points') {
+                  setScoreCorrect(0)
+                  setScoreTotal(0)
+                }
+                setQuestionCount(0)
+                changeSoutienLetter(id)
+              }}
+              onSound={(id) => {
+                if (scoreModeRef.current === 'points') {
+                  setScoreCorrect(0)
+                  setScoreTotal(0)
+                }
+                setQuestionCount(0)
+                changeSoutienSound(id)
+              }}
+            />
+          ) : (
           <>
             <button
               className="topbar-icon-btn"
@@ -625,9 +828,10 @@ export function GeneratorPage({
             onLogout={onLogout}
           />
           </>
+          )
         }
       />
-      <main className="generator-page" id="top">
+      <main className={`generator-page${boardMode === 'jeu' ? ' is-game-board' : ''}`} id="top">
         <div className="generator-intro">
           <a className="back-link" href="/">
             ← Retour à l’accueil
@@ -643,9 +847,11 @@ export function GeneratorPage({
         <div
           className={`workspace${libreMode ? ' has-libre-panel' : ''}${footerPanelOpen ? ' has-footer-panel' : ''}`}
         >
-          <SettingsPanel {...settingsPanelProps} />
-          <ResultPanel {...resultPanelProps} />
-          {libreMode ? (
+          {boardMode === 'jeu' ? null : <SettingsPanel {...settingsPanelProps} />}
+          <WorksheetImageProvider enabled={libreMode} overrides={imageOverrides} onChange={setImageOverrides}>
+            <ResultPanel {...resultPanelProps} />
+          </WorksheetImageProvider>
+          {boardMode === 'jeu' || !libreMode ? null : (
             <LibreSidePanel
               activeBlock={activeBlock}
               activeSheet={activeSheet}
@@ -681,8 +887,8 @@ export function GeneratorPage({
                 setLibreSnapshot(null)
               }}
             />
-          ) : null}
-          {footerPanelOpen ? (
+          )}
+          {boardMode === 'jeu' || !footerPanelOpen ? null : (
             <FooterSidePanel
               institutional={institutional}
               setInstitutional={setInstitutional}
@@ -693,7 +899,7 @@ export function GeneratorPage({
               referenceLocked={referenceLocked}
               onClose={() => setFooterPanelOpen(false)}
             />
-          ) : null}
+          )}
         </div>
       </main>
       {saveOpen ? (

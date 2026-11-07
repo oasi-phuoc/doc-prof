@@ -7,7 +7,7 @@ Domaine dédié pour les **fiches de théorie** FALC et les **exercices** liés 
 | `catalog.ts` | Thèmes SCAI + types théorie + types exercices |
 | `theory/*.ts` | Contenu FALC français |
 | `exercises/` | kinds, sous-thèmes, banques, générateur |
-| `exercises/bank/lessons-revised.ts` | 104 banques de 50 phrases, une par sous-thème repris |
+| `exercises/bank/lessons-revised.ts` | 90 banques de 50 phrases, une par sous-thème repris |
 | `exercises/bank/lessons-protected.ts` | 7 banques d’introduction conservées et complétées à 50 |
 | `exercises/communication-data.json` | 160 situations, dix variantes de CE/PE/PO par thème communicatif |
 | `scripts/grammar_curriculum/` | Sources éditoriales et reconstruction des contenus |
@@ -19,7 +19,7 @@ Domaine dédié pour les **fiches de théorie** FALC et les **exercices** liés 
 2. **Sous-thème** = notion (Être, Avoir, -er… / Passé composé… / fiche théorie)
 3. **Type** = **Théorie** + exercices du sous-thème (libellés de leçon)
 
-Les 113 fiches de théorie sont conservées dans leur état antérieur au commit `b04247cb`. La reconstruction des exercices ne les modifie plus. Chaque sous-thème repris a une banque de 50 phrases distinctes avec une seule réponse, trois choix et une variante inline dans le même type d’exercice. Les activités communicatives proposent dix situations par type CE, PE et PO. Les modules particuliers de présentation restent disponibles. Le [rapport de reprise](../../docs/grammaire/README.md) décrit la couverture et la validation.
+Les 99 fiches de théorie sont conservées dans leur état antérieur au commit `b04247cb`, hors ancien thème Aide-mémoire. La reconstruction des exercices ne les modifie plus. Chaque sous-thème repris a une banque de 50 phrases distinctes avec une seule réponse, trois choix et une variante inline dans le même type d’exercice. Les activités communicatives proposent dix situations par type CE, PE et PO. Les modules particuliers de présentation restent disponibles. Le [rapport de reprise](../../docs/grammaire/README.md) décrit la couverture et la validation.
 
 ## Types d’exercice (kinds)
 

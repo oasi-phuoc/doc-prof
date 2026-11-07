@@ -26,7 +26,6 @@ export const GRAMMAIRE_TOPICS: Topic[] = [
   { id: 'gram-faits', label: 'Parler des faits divers', domain: 'grammaire' },
   { id: 'gram-argumenter', label: 'S’expliquer et argumenter', domain: 'grammaire' },
   { id: 'gram-exprimer', label: 'Exprimer quelque chose', domain: 'grammaire' },
-  { id: 'gram-aide', label: 'Aide-mémoire', domain: 'grammaire' },
 ]
 
 /** Types « Théorie » (fiches FALC) — une entrée par fiche de src/grammaire/theory. */

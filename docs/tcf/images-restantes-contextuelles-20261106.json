@@ -7,12 +7,13 @@
     "remaining_distinct_images": 0,
     "text_questions_by_review_category": {
       "text_required_person_role_or_diagnosis": 545,
-      "editorial_visual_screening_needed": 3612,
-      "text_required_amount_measure_or_rate": 428,
+      "editorial_visual_screening_needed": 3622,
+      "text_required_amount_measure_or_rate": 417,
       "reviewed_visual_artwork_pending": 573,
       "text_required_calendar_identity_or_language": 782,
       "keep_text_named_identity_or_location": 39,
       "keep_text_calendar_or_temporal_scope": 49,
+      "concrete_visual_trio_to_prepare_or_review": 1,
       "keep_text_private_home_identity": 3,
       "keep_text_source_referent_unspecified": 3,
       "keep_text_nonvisual_or_quantified_claim": 9,
@@ -76,12 +77,12 @@
       "question": 1,
       "enonce": "Combien coûte l'entrée au tarif normal ?",
       "labels": [
-        "12 €",
-        "8 €",
-        "16 €"
+        "12 CHF",
+        "8 CHF",
+        "16 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "0326d7effd577018432e12cc67b8d53dda9e7feb0bf37eede5114f945c7458c8",
+      "source_sha256": "2da246eb676a6b79e0a9980547b60c7b3ed60f6b9f3e104f6682efe0db880ae0",
       "audio": null
     },
     {
@@ -91,12 +92,12 @@
       "question": 2,
       "enonce": "Combien coûte l'entrée pour les moins de 16 ans ?",
       "labels": [
-        "8 €",
-        "12 €",
-        "16 €"
+        "8 CHF",
+        "12 CHF",
+        "16 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "0326d7effd577018432e12cc67b8d53dda9e7feb0bf37eede5114f945c7458c8",
+      "source_sha256": "2da246eb676a6b79e0a9980547b60c7b3ed60f6b9f3e104f6682efe0db880ae0",
       "audio": null
     },
     {
@@ -111,7 +112,7 @@
         "Votre numéro de téléphone"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "0326d7effd577018432e12cc67b8d53dda9e7feb0bf37eede5114f945c7458c8",
+      "source_sha256": "2da246eb676a6b79e0a9980547b60c7b3ed60f6b9f3e104f6682efe0db880ae0",
       "audio": null
     },
     {
@@ -126,7 +127,7 @@
         "Des espèces"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "0326d7effd577018432e12cc67b8d53dda9e7feb0bf37eede5114f945c7458c8",
+      "source_sha256": "2da246eb676a6b79e0a9980547b60c7b3ed60f6b9f3e104f6682efe0db880ae0",
       "audio": null
     },
     {
@@ -141,7 +142,7 @@
         "Le renvoyer"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "0326d7effd577018432e12cc67b8d53dda9e7feb0bf37eede5114f945c7458c8",
+      "source_sha256": "2da246eb676a6b79e0a9980547b60c7b3ed60f6b9f3e104f6682efe0db880ae0",
       "audio": null
     },
     {
@@ -156,7 +157,7 @@
         "Au restaurant du musée"
       ],
       "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "0326d7effd577018432e12cc67b8d53dda9e7feb0bf37eede5114f945c7458c8",
+      "source_sha256": "2da246eb676a6b79e0a9980547b60c7b3ed60f6b9f3e104f6682efe0db880ae0",
       "audio": null
     },
     {
@@ -171,7 +172,7 @@
         "L'heure, la langue et le menu"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "0326d7effd577018432e12cc67b8d53dda9e7feb0bf37eede5114f945c7458c8",
+      "source_sha256": "2da246eb676a6b79e0a9980547b60c7b3ed60f6b9f3e104f6682efe0db880ae0",
       "audio": null
     },
     {
@@ -181,12 +182,12 @@
       "question": 10,
       "enonce": "Dans quelle ville se trouve le musée de la magie ?",
       "labels": [
-        "À Lille",
-        "À Lyon",
-        "À Paris"
+        "À Fribourg",
+        "À Berne",
+        "À Zurich"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "0326d7effd577018432e12cc67b8d53dda9e7feb0bf37eede5114f945c7458c8",
+      "source_sha256": "2da246eb676a6b79e0a9980547b60c7b3ed60f6b9f3e104f6682efe0db880ae0",
       "audio": null
     },
     {
@@ -306,7 +307,7 @@
         "Seulement aux étudiants"
       ],
       "status": "text_required_person_role_or_diagnosis",
-      "source_sha256": "5090f0066408ce95355d36f4b174e611cbfa285f2e29848818d7fdd16880c799",
+      "source_sha256": "3e6d32deb9c75992f1133d1c805a8b5c72f84bb925f68328d1e7796a294b3c98",
       "audio": null
     },
     {
@@ -321,7 +322,7 @@
         "Dans la salle 211"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "5090f0066408ce95355d36f4b174e611cbfa285f2e29848818d7fdd16880c799",
+      "source_sha256": "3e6d32deb9c75992f1133d1c805a8b5c72f84bb925f68328d1e7796a294b3c98",
       "audio": null
     },
     {
@@ -331,12 +332,12 @@
       "question": 4,
       "enonce": "Combien coûte l'inscription annuelle ?",
       "labels": [
-        "23 euros",
-        "12 euros",
-        "32 euros"
+        "23 CHF",
+        "12 CHF",
+        "32 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "5090f0066408ce95355d36f4b174e611cbfa285f2e29848818d7fdd16880c799",
+      "source_sha256": "3e6d32deb9c75992f1133d1c805a8b5c72f84bb925f68328d1e7796a294b3c98",
       "audio": null
     },
     {
@@ -351,7 +352,7 @@
         "2 rue de la Gare"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "5090f0066408ce95355d36f4b174e611cbfa285f2e29848818d7fdd16880c799",
+      "source_sha256": "3e6d32deb9c75992f1133d1c805a8b5c72f84bb925f68328d1e7796a294b3c98",
       "audio": null
     },
     {
@@ -426,7 +427,7 @@
         "Dimanche"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "b563370375645e56aa2f49f32c08a2ba469475b501509ec895c7810c53bebc53",
+      "source_sha256": "e79adb7aa57f34e8247c6e2e2e78b2512f9df39773f025d5b415b29dedf2b80c",
       "audio": null
     },
     {
@@ -441,7 +442,7 @@
         "Avec sa sœur"
       ],
       "status": "text_required_person_role_or_diagnosis",
-      "source_sha256": "b563370375645e56aa2f49f32c08a2ba469475b501509ec895c7810c53bebc53",
+      "source_sha256": "e79adb7aa57f34e8247c6e2e2e78b2512f9df39773f025d5b415b29dedf2b80c",
       "audio": null
     },
     {
@@ -456,7 +457,7 @@
         "Au restaurant Chez Marie"
       ],
       "status": "keep_text_named_identity_or_location",
-      "source_sha256": "b563370375645e56aa2f49f32c08a2ba469475b501509ec895c7810c53bebc53",
+      "source_sha256": "e79adb7aa57f34e8247c6e2e2e78b2512f9df39773f025d5b415b29dedf2b80c",
       "audio": null
     },
     {
@@ -471,7 +472,7 @@
         "Le bus 10"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "b563370375645e56aa2f49f32c08a2ba469475b501509ec895c7810c53bebc53",
+      "source_sha256": "e79adb7aa57f34e8247c6e2e2e78b2512f9df39773f025d5b415b29dedf2b80c",
       "audio": null
     },
     {
@@ -486,7 +487,7 @@
         "À l'arrêt Centre"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "b563370375645e56aa2f49f32c08a2ba469475b501509ec895c7810c53bebc53",
+      "source_sha256": "e79adb7aa57f34e8247c6e2e2e78b2512f9df39773f025d5b415b29dedf2b80c",
       "audio": null
     },
     {
@@ -501,7 +502,7 @@
         "Tout droit"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "b563370375645e56aa2f49f32c08a2ba469475b501509ec895c7810c53bebc53",
+      "source_sha256": "e79adb7aa57f34e8247c6e2e2e78b2512f9df39773f025d5b415b29dedf2b80c",
       "audio": null
     },
     {
@@ -511,12 +512,12 @@
       "question": 9,
       "enonce": "Quelle avenue faut-il suivre ?",
       "labels": [
-        "L'avenue Jean Jaurès",
+        "L'avenue du Lac",
         "L'avenue Victor Hugo",
         "L'avenue de la Gare"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "b563370375645e56aa2f49f32c08a2ba469475b501509ec895c7810c53bebc53",
+      "source_sha256": "e79adb7aa57f34e8247c6e2e2e78b2512f9df39773f025d5b415b29dedf2b80c",
       "audio": null
     },
     {
@@ -531,7 +532,7 @@
         "La première à gauche"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "b563370375645e56aa2f49f32c08a2ba469475b501509ec895c7810c53bebc53",
+      "source_sha256": "e79adb7aa57f34e8247c6e2e2e78b2512f9df39773f025d5b415b29dedf2b80c",
       "audio": null
     },
     {
@@ -546,7 +547,7 @@
         "Le jeudi et le vendredi"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "5f0f18a70e19d748ebb2899d67b9ff3820176db891080220a1398734d55cce12",
+      "source_sha256": "e6abfde1ecd2d0f59abb4de2bddf1df8b700d9989c2ddd1d52ab3084ac27f525",
       "audio": null
     },
     {
@@ -561,7 +562,7 @@
         "À la cantine"
       ],
       "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "5f0f18a70e19d748ebb2899d67b9ff3820176db891080220a1398734d55cce12",
+      "source_sha256": "e6abfde1ecd2d0f59abb4de2bddf1df8b700d9989c2ddd1d52ab3084ac27f525",
       "audio": null
     },
     {
@@ -571,12 +572,12 @@
       "question": 4,
       "enonce": "Quelle classe présente l'exposition ?",
       "labels": [
-        "La 4e B",
+        "La 10e B",
         "La 4e A",
         "La 3e B"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "5f0f18a70e19d748ebb2899d67b9ff3820176db891080220a1398734d55cce12",
+      "source_sha256": "e6abfde1ecd2d0f59abb4de2bddf1df8b700d9989c2ddd1d52ab3084ac27f525",
       "audio": null
     },
     {
@@ -591,7 +592,7 @@
         "Trois films"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "5f0f18a70e19d748ebb2899d67b9ff3820176db891080220a1398734d55cce12",
+      "source_sha256": "e6abfde1ecd2d0f59abb4de2bddf1df8b700d9989c2ddd1d52ab3084ac27f525",
       "audio": null
     },
     {
@@ -606,7 +607,7 @@
         "Le vendredi"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "5f0f18a70e19d748ebb2899d67b9ff3820176db891080220a1398734d55cce12",
+      "source_sha256": "e6abfde1ecd2d0f59abb4de2bddf1df8b700d9989c2ddd1d52ab3084ac27f525",
       "audio": null
     },
     {
@@ -621,7 +622,7 @@
         "À la cantine"
       ],
       "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "5f0f18a70e19d748ebb2899d67b9ff3820176db891080220a1398734d55cce12",
+      "source_sha256": "e6abfde1ecd2d0f59abb4de2bddf1df8b700d9989c2ddd1d52ab3084ac27f525",
       "audio": null
     },
     {
@@ -636,7 +637,7 @@
         "Le mercredi matin"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "5f0f18a70e19d748ebb2899d67b9ff3820176db891080220a1398734d55cce12",
+      "source_sha256": "e6abfde1ecd2d0f59abb4de2bddf1df8b700d9989c2ddd1d52ab3084ac27f525",
       "audio": null
     },
     {
@@ -651,7 +652,7 @@
         "Les échecs et la danse"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "1b0b95743860c62894b11732cdff3a9529233e105fa94cc15443c74e80af819c",
+      "source_sha256": "b608eedbbefb757f831096ab107566d5cf57c021e4a3f58f73f760acc70c938e",
       "audio": null
     },
     {
@@ -666,7 +667,7 @@
         "Six joueurs"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "1b0b95743860c62894b11732cdff3a9529233e105fa94cc15443c74e80af819c",
+      "source_sha256": "b608eedbbefb757f831096ab107566d5cf57c021e4a3f58f73f760acc70c938e",
       "audio": null
     },
     {
@@ -681,7 +682,7 @@
         "Environ trois heures"
       ],
       "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "1b0b95743860c62894b11732cdff3a9529233e105fa94cc15443c74e80af819c",
+      "source_sha256": "b608eedbbefb757f831096ab107566d5cf57c021e4a3f58f73f760acc70c938e",
       "audio": null
     },
     {
@@ -696,7 +697,7 @@
         "Après 20 minutes"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "1b0b95743860c62894b11732cdff3a9529233e105fa94cc15443c74e80af819c",
+      "source_sha256": "b608eedbbefb757f831096ab107566d5cf57c021e4a3f58f73f760acc70c938e",
       "audio": null
     },
     {
@@ -711,7 +712,7 @@
         "Seulement des compétitions scolaires"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "1b0b95743860c62894b11732cdff3a9529233e105fa94cc15443c74e80af819c",
+      "source_sha256": "b608eedbbefb757f831096ab107566d5cf57c021e4a3f58f73f760acc70c938e",
       "audio": null
     },
     {
@@ -726,7 +727,7 @@
         "En écrivant au collège"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "1b0b95743860c62894b11732cdff3a9529233e105fa94cc15443c74e80af819c",
+      "source_sha256": "b608eedbbefb757f831096ab107566d5cf57c021e4a3f58f73f760acc70c938e",
       "audio": null
     },
     {
@@ -741,7 +742,7 @@
         "Vendredi"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "68f9088df76fc6fade85383b92d4eca2351ddc02d2406f577611d57196c2d503",
+      "source_sha256": "266af4fad8b3ef006b4c86685872d794e1c0efbeaa68bcfea693f7b03280c4c3",
       "audio": null
     },
     {
@@ -751,12 +752,12 @@
       "question": 2,
       "enonce": "Quel lieu Emma veut-elle visiter ?",
       "labels": [
-        "L'île aux Pirates",
+        "L’île Saint-Pierre",
         "Le château des Pirates",
         "Le musée des Pirates"
       ],
       "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "68f9088df76fc6fade85383b92d4eca2351ddc02d2406f577611d57196c2d503",
+      "source_sha256": "266af4fad8b3ef006b4c86685872d794e1c0efbeaa68bcfea693f7b03280c4c3",
       "audio": null
     },
     {
@@ -771,7 +772,7 @@
         "Sa grand-mère"
       ],
       "status": "text_required_person_role_or_diagnosis",
-      "source_sha256": "68f9088df76fc6fade85383b92d4eca2351ddc02d2406f577611d57196c2d503",
+      "source_sha256": "266af4fad8b3ef006b4c86685872d794e1c0efbeaa68bcfea693f7b03280c4c3",
       "audio": null
     },
     {
@@ -786,7 +787,7 @@
         "B16"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "68f9088df76fc6fade85383b92d4eca2351ddc02d2406f577611d57196c2d503",
+      "source_sha256": "266af4fad8b3ef006b4c86685872d794e1c0efbeaa68bcfea693f7b03280c4c3",
       "audio": null
     },
     {
@@ -801,7 +802,7 @@
         "Du musée"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "68f9088df76fc6fade85383b92d4eca2351ddc02d2406f577611d57196c2d503",
+      "source_sha256": "266af4fad8b3ef006b4c86685872d794e1c0efbeaa68bcfea693f7b03280c4c3",
       "audio": null
     },
     {
@@ -816,7 +817,7 @@
         "Un parapluie et des bottes"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "68f9088df76fc6fade85383b92d4eca2351ddc02d2406f577611d57196c2d503",
+      "source_sha256": "266af4fad8b3ef006b4c86685872d794e1c0efbeaa68bcfea693f7b03280c4c3",
       "audio": null
     },
     {
@@ -831,7 +832,7 @@
         "Dimanche"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "2f94e9aa2e3e4ea84a76051fb5bc879232ef81e98055844278f54b9f961ec481",
+      "source_sha256": "1900be6dcb9989c7af7d4507e55ed5bc314f30a73d69b763c20da96273c0ff83",
       "audio": null
     },
     {
@@ -846,7 +847,7 @@
         "2 heures"
       ],
       "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "2f94e9aa2e3e4ea84a76051fb5bc879232ef81e98055844278f54b9f961ec481",
+      "source_sha256": "1900be6dcb9989c7af7d4507e55ed5bc314f30a73d69b763c20da96273c0ff83",
       "audio": null
     },
     {
@@ -861,7 +862,7 @@
         "Au 10e étage"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "2f94e9aa2e3e4ea84a76051fb5bc879232ef81e98055844278f54b9f961ec481",
+      "source_sha256": "1900be6dcb9989c7af7d4507e55ed5bc314f30a73d69b763c20da96273c0ff83",
       "audio": null
     },
     {
@@ -876,7 +877,7 @@
         "De septembre à décembre"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "2f94e9aa2e3e4ea84a76051fb5bc879232ef81e98055844278f54b9f961ec481",
+      "source_sha256": "1900be6dcb9989c7af7d4507e55ed5bc314f30a73d69b763c20da96273c0ff83",
       "audio": null
     },
     {
@@ -891,7 +892,7 @@
         "29 degrés"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "2f94e9aa2e3e4ea84a76051fb5bc879232ef81e98055844278f54b9f961ec481",
+      "source_sha256": "1900be6dcb9989c7af7d4507e55ed5bc314f30a73d69b763c20da96273c0ff83",
       "audio": null
     },
     {
@@ -906,7 +907,7 @@
         "Le lundi et le vendredi"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "2f94e9aa2e3e4ea84a76051fb5bc879232ef81e98055844278f54b9f961ec481",
+      "source_sha256": "1900be6dcb9989c7af7d4507e55ed5bc314f30a73d69b763c20da96273c0ff83",
       "audio": null
     },
     {
@@ -914,14 +915,14 @@
       "bank": "src/tcf/content/a0-a1/ce.json",
       "exercise": "tcf-a1j-s3-ce-4",
       "question": 1,
-      "enonce": "À qui le pass Paris s'adresse-t-il ?",
+      "enonce": "À qui le pass Zurich s'adresse-t-il ?",
       "labels": [
         "Aux touristes",
         "Aux conducteurs de bus",
         "Aux commerçants"
       ],
       "status": "text_required_person_role_or_diagnosis",
-      "source_sha256": "51ea5560297ecdb7474a25a4daf8276c3494d366d49d338fd88ef6694563ade7",
+      "source_sha256": "d12c1cea5a18d3c60c09e241b71741780b3493bafcc0924b14d31e81676fbf99",
       "audio": null
     },
     {
@@ -931,12 +932,12 @@
       "question": 2,
       "enonce": "Quel musée peut-on visiter avec le pass ?",
       "labels": [
-        "Le musée du Louvre",
-        "Le musée d'Orsay",
-        "Le musée Carnavalet"
+        "Le Kunsthaus de Zurich",
+        "Le musée Rietberg",
+        "Le Musée national suisse"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "51ea5560297ecdb7474a25a4daf8276c3494d366d49d338fd88ef6694563ade7",
+      "source_sha256": "d12c1cea5a18d3c60c09e241b71741780b3493bafcc0924b14d31e81676fbf99",
       "audio": null
     },
     {
@@ -946,12 +947,12 @@
       "question": 3,
       "enonce": "Quel château peut-on visiter avec le pass ?",
       "labels": [
-        "Le château de Versailles",
-        "Le château de Chambord",
-        "Le château de Fontainebleau"
+        "Le château de Kybourg",
+        "Le château de Chillon",
+        "Le château de Gruyères"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "51ea5560297ecdb7474a25a4daf8276c3494d366d49d338fd88ef6694563ade7",
+      "source_sha256": "d12c1cea5a18d3c60c09e241b71741780b3493bafcc0924b14d31e81676fbf99",
       "audio": null
     },
     {
@@ -961,12 +962,12 @@
       "question": 4,
       "enonce": "Quel monument peut-on visiter avec le pass ?",
       "labels": [
-        "L'Arc de Triomphe",
-        "La tour Eiffel",
-        "Le Sacré-Cœur"
+        "L’église du Grossmünster",
+        "L’église Fraumünster",
+        "L’église Saint-Pierre de Zurich"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "51ea5560297ecdb7474a25a4daf8276c3494d366d49d338fd88ef6694563ade7",
+      "source_sha256": "d12c1cea5a18d3c60c09e241b71741780b3493bafcc0924b14d31e81676fbf99",
       "audio": null
     },
     {
@@ -981,7 +982,7 @@
         "Dans 50 magasins"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "51ea5560297ecdb7474a25a4daf8276c3494d366d49d338fd88ef6694563ade7",
+      "source_sha256": "d12c1cea5a18d3c60c09e241b71741780b3493bafcc0924b14d31e81676fbf99",
       "audio": null
     },
     {
@@ -996,7 +997,7 @@
         "6 langues"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "51ea5560297ecdb7474a25a4daf8276c3494d366d49d338fd88ef6694563ade7",
+      "source_sha256": "d12c1cea5a18d3c60c09e241b71741780b3493bafcc0924b14d31e81676fbf99",
       "audio": null
     },
     {
@@ -1011,7 +1012,7 @@
         "8 jours"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "51ea5560297ecdb7474a25a4daf8276c3494d366d49d338fd88ef6694563ade7",
+      "source_sha256": "d12c1cea5a18d3c60c09e241b71741780b3493bafcc0924b14d31e81676fbf99",
       "audio": null
     },
     {
@@ -1026,7 +1027,7 @@
         "3 jours"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "51ea5560297ecdb7474a25a4daf8276c3494d366d49d338fd88ef6694563ade7",
+      "source_sha256": "d12c1cea5a18d3c60c09e241b71741780b3493bafcc0924b14d31e81676fbf99",
       "audio": null
     },
     {
@@ -1036,12 +1037,12 @@
       "question": 10,
       "enonce": "Comment peut-on obtenir plus d'informations ?",
       "labels": [
-        "Sur le site www.tourisme-paris.fr",
+        "Sur le site www.tourisme-zurich.ch",
         "À une adresse postale",
         "Par un appel téléphonique"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "51ea5560297ecdb7474a25a4daf8276c3494d366d49d338fd88ef6694563ade7",
+      "source_sha256": "d12c1cea5a18d3c60c09e241b71741780b3493bafcc0924b14d31e81676fbf99",
       "audio": null
     },
     {
@@ -1056,7 +1057,7 @@
         "Thomas"
       ],
       "status": "text_required_person_role_or_diagnosis",
-      "source_sha256": "d783690db99891dfac6441a5e6c029fe860bb700e3a11020bc16af16b42dbdb5",
+      "source_sha256": "8b7480e270829cbeecf516b08e537c42e4c9efc264576429af574184549cd13a",
       "audio": null
     },
     {
@@ -1066,12 +1067,12 @@
       "question": 2,
       "enonce": "Dans quelle ville arrivez-vous ?",
       "labels": [
-        "À Paris",
-        "À Lyon",
-        "À Lille"
+        "À Zurich",
+        "À Berne",
+        "À Fribourg"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "d783690db99891dfac6441a5e6c029fe860bb700e3a11020bc16af16b42dbdb5",
+      "source_sha256": "8b7480e270829cbeecf516b08e537c42e4c9efc264576429af574184549cd13a",
       "audio": null
     },
     {
@@ -1086,7 +1087,7 @@
         "Quand vous arrivez chez lui"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "d783690db99891dfac6441a5e6c029fe860bb700e3a11020bc16af16b42dbdb5",
+      "source_sha256": "8b7480e270829cbeecf516b08e537c42e4c9efc264576429af574184549cd13a",
       "audio": null
     },
     {
@@ -1101,7 +1102,7 @@
         "La porte C"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "d783690db99891dfac6441a5e6c029fe860bb700e3a11020bc16af16b42dbdb5",
+      "source_sha256": "8b7480e270829cbeecf516b08e537c42e4c9efc264576429af574184549cd13a",
       "audio": null
     },
     {
@@ -1116,7 +1117,7 @@
         "Derrière la porte B"
       ],
       "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "d783690db99891dfac6441a5e6c029fe860bb700e3a11020bc16af16b42dbdb5",
+      "source_sha256": "8b7480e270829cbeecf516b08e537c42e4c9efc264576429af574184549cd13a",
       "audio": null
     },
     {
@@ -1131,7 +1132,7 @@
         "Au 3e étage"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "d783690db99891dfac6441a5e6c029fe860bb700e3a11020bc16af16b42dbdb5",
+      "source_sha256": "8b7480e270829cbeecf516b08e537c42e4c9efc264576429af574184549cd13a",
       "audio": null
     },
     {
@@ -1146,7 +1147,7 @@
         "La sortie 3"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "d783690db99891dfac6441a5e6c029fe860bb700e3a11020bc16af16b42dbdb5",
+      "source_sha256": "8b7480e270829cbeecf516b08e537c42e4c9efc264576429af574184549cd13a",
       "audio": null
     },
     {
@@ -1161,7 +1162,7 @@
         "En panne"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "d783690db99891dfac6441a5e6c029fe860bb700e3a11020bc16af16b42dbdb5",
+      "source_sha256": "8b7480e270829cbeecf516b08e537c42e4c9efc264576429af574184549cd13a",
       "audio": null
     },
     {
@@ -1176,7 +1177,7 @@
         "6 places"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "339cb6db2901e90bd1452e2dcea862efa7f8af6d87511c79cd9b5da241ca9b14",
+      "source_sha256": "220b1ff4b56f4bc1bffb3a5afab00510e03cc3f98d7c2649c9c1ebd545a77261",
       "audio": null
     },
     {
@@ -1191,7 +1192,7 @@
         "Une pièce de théâtre"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "339cb6db2901e90bd1452e2dcea862efa7f8af6d87511c79cd9b5da241ca9b14",
+      "source_sha256": "220b1ff4b56f4bc1bffb3a5afab00510e03cc3f98d7c2649c9c1ebd545a77261",
       "audio": null
     },
     {
@@ -1206,7 +1207,7 @@
         "Dimanche prochain"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "339cb6db2901e90bd1452e2dcea862efa7f8af6d87511c79cd9b5da241ca9b14",
+      "source_sha256": "220b1ff4b56f4bc1bffb3a5afab00510e03cc3f98d7c2649c9c1ebd545a77261",
       "audio": null
     },
     {
@@ -1221,7 +1222,7 @@
         "L'envoi des billets"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "339cb6db2901e90bd1452e2dcea862efa7f8af6d87511c79cd9b5da241ca9b14",
+      "source_sha256": "220b1ff4b56f4bc1bffb3a5afab00510e03cc3f98d7c2649c9c1ebd545a77261",
       "audio": null
     },
     {
@@ -1236,7 +1237,7 @@
         "Les billets sont perdus"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "339cb6db2901e90bd1452e2dcea862efa7f8af6d87511c79cd9b5da241ca9b14",
+      "source_sha256": "220b1ff4b56f4bc1bffb3a5afab00510e03cc3f98d7c2649c9c1ebd545a77261",
       "audio": null
     },
     {
@@ -1251,7 +1252,7 @@
         "Téléphoner au concert"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "339cb6db2901e90bd1452e2dcea862efa7f8af6d87511c79cd9b5da241ca9b14",
+      "source_sha256": "220b1ff4b56f4bc1bffb3a5afab00510e03cc3f98d7c2649c9c1ebd545a77261",
       "audio": null
     },
     {
@@ -1266,7 +1267,7 @@
         "Avant lundi"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "339cb6db2901e90bd1452e2dcea862efa7f8af6d87511c79cd9b5da241ca9b14",
+      "source_sha256": "220b1ff4b56f4bc1bffb3a5afab00510e03cc3f98d7c2649c9c1ebd545a77261",
       "audio": null
     },
     {
@@ -1281,7 +1282,7 @@
         "Concert"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "339cb6db2901e90bd1452e2dcea862efa7f8af6d87511c79cd9b5da241ca9b14",
+      "source_sha256": "220b1ff4b56f4bc1bffb3a5afab00510e03cc3f98d7c2649c9c1ebd545a77261",
       "audio": null
     },
     {
@@ -1296,7 +1297,7 @@
         "Rue de la Gare"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "339cb6db2901e90bd1452e2dcea862efa7f8af6d87511c79cd9b5da241ca9b14",
+      "source_sha256": "220b1ff4b56f4bc1bffb3a5afab00510e03cc3f98d7c2649c9c1ebd545a77261",
       "audio": null
     },
     {
@@ -1311,7 +1312,7 @@
         "Au numéro 13"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "339cb6db2901e90bd1452e2dcea862efa7f8af6d87511c79cd9b5da241ca9b14",
+      "source_sha256": "220b1ff4b56f4bc1bffb3a5afab00510e03cc3f98d7c2649c9c1ebd545a77261",
       "audio": null
     },
     {
@@ -1446,7 +1447,7 @@
         "Les sportifs"
       ],
       "status": "text_required_person_role_or_diagnosis",
-      "source_sha256": "51624002f81fd55ab01bc2eedbee9e6e25a7c6aec0d33d8e789bcd169fb36e16",
+      "source_sha256": "8fbf03f1adad81f82472d79f24d890e8dc11ff3310ee53c698993d78496c44ab",
       "audio": null
     },
     {
@@ -1461,7 +1462,7 @@
         "Des billets de concert"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "51624002f81fd55ab01bc2eedbee9e6e25a7c6aec0d33d8e789bcd169fb36e16",
+      "source_sha256": "8fbf03f1adad81f82472d79f24d890e8dc11ff3310ee53c698993d78496c44ab",
       "audio": null
     },
     {
@@ -1476,7 +1477,7 @@
         "À son patron"
       ],
       "status": "text_required_person_role_or_diagnosis",
-      "source_sha256": "51624002f81fd55ab01bc2eedbee9e6e25a7c6aec0d33d8e789bcd169fb36e16",
+      "source_sha256": "8fbf03f1adad81f82472d79f24d890e8dc11ff3310ee53c698993d78496c44ab",
       "audio": null
     },
     {
@@ -1491,7 +1492,7 @@
         "Des bijoux"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "51624002f81fd55ab01bc2eedbee9e6e25a7c6aec0d33d8e789bcd169fb36e16",
+      "source_sha256": "8fbf03f1adad81f82472d79f24d890e8dc11ff3310ee53c698993d78496c44ab",
       "audio": null
     },
     {
@@ -1506,7 +1507,7 @@
         "Avec leur patron uniquement"
       ],
       "status": "text_required_person_role_or_diagnosis",
-      "source_sha256": "51624002f81fd55ab01bc2eedbee9e6e25a7c6aec0d33d8e789bcd169fb36e16",
+      "source_sha256": "8fbf03f1adad81f82472d79f24d890e8dc11ff3310ee53c698993d78496c44ab",
       "audio": null
     },
     {
@@ -1521,7 +1522,7 @@
         "Marion et Mathieu"
       ],
       "status": "text_required_person_role_or_diagnosis",
-      "source_sha256": "15c384f5447cf5844eb1381858dfafb5686864871af3e3a2ab7b3c72d607c7cc",
+      "source_sha256": "ee8c06569fe9f219b2fe956df8f145405a240e922fd2f23f60bfd4d730b522bf",
       "audio": null
     },
     {
@@ -1536,7 +1537,7 @@
         "Un départ en retraite"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "15c384f5447cf5844eb1381858dfafb5686864871af3e3a2ab7b3c72d607c7cc",
+      "source_sha256": "ee8c06569fe9f219b2fe956df8f145405a240e922fd2f23f60bfd4d730b522bf",
       "audio": null
     },
     {
@@ -1551,7 +1552,7 @@
         "Le 21 mai"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "15c384f5447cf5844eb1381858dfafb5686864871af3e3a2ab7b3c72d607c7cc",
+      "source_sha256": "ee8c06569fe9f219b2fe956df8f145405a240e922fd2f23f60bfd4d730b522bf",
       "audio": null
     },
     {
@@ -1561,12 +1562,12 @@
       "question": 6,
       "enonce": "Comment faut-il aller de la mairie à l'église ?",
       "labels": [
-        "Tout droit jusqu'à la rue Leclerc",
-        "À gauche après la rue Leclerc",
-        "À droite avant la rue Leclerc"
+        "Tout droit jusqu'à la rue Dufour",
+        "À gauche après la rue Dufour",
+        "À droite avant la rue Dufour"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "15c384f5447cf5844eb1381858dfafb5686864871af3e3a2ab7b3c72d607c7cc",
+      "source_sha256": "ee8c06569fe9f219b2fe956df8f145405a240e922fd2f23f60bfd4d730b522bf",
       "audio": null
     },
     {
@@ -1581,7 +1582,7 @@
         "Les voisins des mariés"
       ],
       "status": "text_required_person_role_or_diagnosis",
-      "source_sha256": "15c384f5447cf5844eb1381858dfafb5686864871af3e3a2ab7b3c72d607c7cc",
+      "source_sha256": "ee8c06569fe9f219b2fe956df8f145405a240e922fd2f23f60bfd4d730b522bf",
       "audio": null
     },
     {
@@ -1596,7 +1597,7 @@
         "La salle des Deux Étoiles"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "15c384f5447cf5844eb1381858dfafb5686864871af3e3a2ab7b3c72d607c7cc",
+      "source_sha256": "ee8c06569fe9f219b2fe956df8f145405a240e922fd2f23f60bfd4d730b522bf",
       "audio": null
     },
     {
@@ -1611,7 +1612,7 @@
         "Avant le 21 juin"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "15c384f5447cf5844eb1381858dfafb5686864871af3e3a2ab7b3c72d607c7cc",
+      "source_sha256": "ee8c06569fe9f219b2fe956df8f145405a240e922fd2f23f60bfd4d730b522bf",
       "audio": null
     },
     {
@@ -2151,7 +2152,7 @@
         "Max"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "b880abfedc531dfe6f909f7393d7701fa9695801a3cf6633ee8b79bfff37b122",
+      "source_sha256": "e04ebb82811716e57b6d55ad0e8732edd254c2a37003264a48d17e91f246f481",
       "audio": null
     },
     {
@@ -2166,7 +2167,7 @@
         "Le vendredi 9 août"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "b880abfedc531dfe6f909f7393d7701fa9695801a3cf6633ee8b79bfff37b122",
+      "source_sha256": "e04ebb82811716e57b6d55ad0e8732edd254c2a37003264a48d17e91f246f481",
       "audio": null
     },
     {
@@ -2181,7 +2182,7 @@
         "6 ans"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "b880abfedc531dfe6f909f7393d7701fa9695801a3cf6633ee8b79bfff37b122",
+      "source_sha256": "e04ebb82811716e57b6d55ad0e8732edd254c2a37003264a48d17e91f246f481",
       "audio": null
     },
     {
@@ -2196,7 +2197,7 @@
         "Blanc et gris"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "b880abfedc531dfe6f909f7393d7701fa9695801a3cf6633ee8b79bfff37b122",
+      "source_sha256": "e04ebb82811716e57b6d55ad0e8732edd254c2a37003264a48d17e91f246f481",
       "audio": null
     },
     {
@@ -2211,7 +2212,7 @@
         "Bleu et marron"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "b880abfedc531dfe6f909f7393d7701fa9695801a3cf6633ee8b79bfff37b122",
+      "source_sha256": "e04ebb82811716e57b6d55ad0e8732edd254c2a37003264a48d17e91f246f481",
       "audio": null
     },
     {
@@ -2226,7 +2227,7 @@
         "Aller au stade"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "b880abfedc531dfe6f909f7393d7701fa9695801a3cf6633ee8b79bfff37b122",
+      "source_sha256": "e04ebb82811716e57b6d55ad0e8732edd254c2a37003264a48d17e91f246f481",
       "audio": null
     },
     {
@@ -2238,10 +2239,10 @@
       "labels": [
         "4 impasse des Jacinthes",
         "4 rue de la Poterne",
-        "8 place Foch"
+        "8 place de la Gare"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "b880abfedc531dfe6f909f7393d7701fa9695801a3cf6633ee8b79bfff37b122",
+      "source_sha256": "e04ebb82811716e57b6d55ad0e8732edd254c2a37003264a48d17e91f246f481",
       "audio": null
     },
     {
@@ -2256,7 +2257,7 @@
         "Huit clients"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "39a1a9a390b40ad3b65df42a832839c419a68cee94862f9b587a785dd4a2b61d",
+      "source_sha256": "5df020ad517f6e201d827535e8ad1d9f5c40b707d39a1648c4b50cf8f9b7e8a4",
       "audio": null
     },
     {
@@ -2271,7 +2272,7 @@
         "Le jeudi 4 décembre"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "39a1a9a390b40ad3b65df42a832839c419a68cee94862f9b587a785dd4a2b61d",
+      "source_sha256": "5df020ad517f6e201d827535e8ad1d9f5c40b707d39a1648c4b50cf8f9b7e8a4",
       "audio": null
     },
     {
@@ -2286,7 +2287,7 @@
         "Dans la salle de pause"
       ],
       "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "39a1a9a390b40ad3b65df42a832839c419a68cee94862f9b587a785dd4a2b61d",
+      "source_sha256": "5df020ad517f6e201d827535e8ad1d9f5c40b707d39a1648c4b50cf8f9b7e8a4",
       "audio": null
     },
     {
@@ -2301,7 +2302,7 @@
         "Du jus et des biscuits"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "39a1a9a390b40ad3b65df42a832839c419a68cee94862f9b587a785dd4a2b61d",
+      "source_sha256": "5df020ad517f6e201d827535e8ad1d9f5c40b707d39a1648c4b50cf8f9b7e8a4",
       "audio": null
     },
     {
@@ -2316,7 +2317,7 @@
         "Un client étranger"
       ],
       "status": "text_required_person_role_or_diagnosis",
-      "source_sha256": "39a1a9a390b40ad3b65df42a832839c419a68cee94862f9b587a785dd4a2b61d",
+      "source_sha256": "5df020ad517f6e201d827535e8ad1d9f5c40b707d39a1648c4b50cf8f9b7e8a4",
       "audio": null
     },
     {
@@ -2326,12 +2327,12 @@
       "question": 8,
       "enonce": "Où les visiteurs déjeunent-ils ?",
       "labels": [
-        "Au Septime",
+        "Au Restaurant des Alpes",
         "À la cantine",
         "Dans la salle de pause"
       ],
       "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "39a1a9a390b40ad3b65df42a832839c419a68cee94862f9b587a785dd4a2b61d",
+      "source_sha256": "5df020ad517f6e201d827535e8ad1d9f5c40b707d39a1648c4b50cf8f9b7e8a4",
       "audio": null
     },
     {
@@ -2343,10 +2344,10 @@
       "labels": [
         "Monsieur Django",
         "Monsieur Funès",
-        "Monsieur Septime"
+        "Monsieur Restaurant des Alpes"
       ],
       "status": "text_required_person_role_or_diagnosis",
-      "source_sha256": "39a1a9a390b40ad3b65df42a832839c419a68cee94862f9b587a785dd4a2b61d",
+      "source_sha256": "5df020ad517f6e201d827535e8ad1d9f5c40b707d39a1648c4b50cf8f9b7e8a4",
       "audio": null
     },
     {
@@ -2556,7 +2557,7 @@
         "Une sortie en bateau"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "df06daf5422b4b386e8f54e51377ebbc565057bad98a4c2b8926b8cb546f1181",
+      "source_sha256": "8c502c7e7eb8595e8833943de34ca5ba91d793df3a47fa387731b519ad50a89a",
       "audio": null
     },
     {
@@ -2571,7 +2572,7 @@
         "Le 6 juillet"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "df06daf5422b4b386e8f54e51377ebbc565057bad98a4c2b8926b8cb546f1181",
+      "source_sha256": "8c502c7e7eb8595e8833943de34ca5ba91d793df3a47fa387731b519ad50a89a",
       "audio": null
     },
     {
@@ -2581,12 +2582,12 @@
       "question": 3,
       "enonce": "Où a lieu la sortie ?",
       "labels": [
-        "À Rhode-Saint-Genèse",
-        "À Bruxelles",
-        "À Lille"
+        "À Aubonne",
+        "À Lausanne",
+        "À Fribourg"
       ],
       "status": "keep_text_named_identity_or_location",
-      "source_sha256": "df06daf5422b4b386e8f54e51377ebbc565057bad98a4c2b8926b8cb546f1181",
+      "source_sha256": "8c502c7e7eb8595e8833943de34ca5ba91d793df3a47fa387731b519ad50a89a",
       "audio": null
     },
     {
@@ -2594,14 +2595,14 @@
       "bank": "src/tcf/content/a0-a1/ce.json",
       "exercise": "tcf-a1-s4-ce-3",
       "question": 4,
-      "enonce": "À quelle distance de Bruxelles se trouve le lieu de la sortie ?",
+      "enonce": "À quelle distance de Lausanne se trouve le lieu de la sortie ?",
       "labels": [
         "25 km",
         "15 km",
         "50 km"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "df06daf5422b4b386e8f54e51377ebbc565057bad98a4c2b8926b8cb546f1181",
+      "source_sha256": "8c502c7e7eb8595e8833943de34ca5ba91d793df3a47fa387731b519ad50a89a",
       "audio": null
     },
     {
@@ -2616,7 +2617,7 @@
         "Avant le 6 juin"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "df06daf5422b4b386e8f54e51377ebbc565057bad98a4c2b8926b8cb546f1181",
+      "source_sha256": "8c502c7e7eb8595e8833943de34ca5ba91d793df3a47fa387731b519ad50a89a",
       "audio": null
     },
     {
@@ -2631,7 +2632,7 @@
         "De l'office du tourisme"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "df06daf5422b4b386e8f54e51377ebbc565057bad98a4c2b8926b8cb546f1181",
+      "source_sha256": "8c502c7e7eb8595e8833943de34ca5ba91d793df3a47fa387731b519ad50a89a",
       "audio": null
     },
     {
@@ -2641,12 +2642,12 @@
       "question": 7,
       "enonce": "Combien coûte la sortie ?",
       "labels": [
-        "55 €",
-        "25 €",
-        "65 €"
+        "55 CHF",
+        "25 CHF",
+        "65 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "df06daf5422b4b386e8f54e51377ebbc565057bad98a4c2b8926b8cb546f1181",
+      "source_sha256": "8c502c7e7eb8595e8833943de34ca5ba91d793df3a47fa387731b519ad50a89a",
       "audio": null
     },
     {
@@ -2661,7 +2662,7 @@
         "En espèces"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "df06daf5422b4b386e8f54e51377ebbc565057bad98a4c2b8926b8cb546f1181",
+      "source_sha256": "8c502c7e7eb8595e8833943de34ca5ba91d793df3a47fa387731b519ad50a89a",
       "audio": null
     },
     {
@@ -2676,7 +2677,7 @@
         "Une cagoule"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "df06daf5422b4b386e8f54e51377ebbc565057bad98a4c2b8926b8cb546f1181",
+      "source_sha256": "8c502c7e7eb8595e8833943de34ca5ba91d793df3a47fa387731b519ad50a89a",
       "audio": null
     },
     {
@@ -2691,7 +2692,7 @@
         "À tous les habitants de la ville"
       ],
       "status": "text_required_person_role_or_diagnosis",
-      "source_sha256": "df06daf5422b4b386e8f54e51377ebbc565057bad98a4c2b8926b8cb546f1181",
+      "source_sha256": "8c502c7e7eb8595e8833943de34ca5ba91d793df3a47fa387731b519ad50a89a",
       "audio": null
     },
     {
@@ -2701,12 +2702,12 @@
       "question": 1,
       "enonce": "Qui propose de recevoir un livre gratuit ?",
       "labels": [
-        "La Région Centre",
+        "Le canton du Valais",
         "Une librairie",
         "Une école"
       ],
       "status": "text_required_person_role_or_diagnosis",
-      "source_sha256": "f688cb14f67984891bc5119a5e7a60c4a84a0e3a5c98f37d71a63b375d8a8f9f",
+      "source_sha256": "aa711557f586ff263a179b8d73b4d0a90a91fd62b696f561961a2a64a5c1a32c",
       "audio": null
     },
     {
@@ -2721,7 +2722,7 @@
         "De 25 à 40 ans"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "f688cb14f67984891bc5119a5e7a60c4a84a0e3a5c98f37d71a63b375d8a8f9f",
+      "source_sha256": "aa711557f586ff263a179b8d73b4d0a90a91fd62b696f561961a2a64a5c1a32c",
       "audio": null
     },
     {
@@ -2736,7 +2737,7 @@
         "En décembre"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "f688cb14f67984891bc5119a5e7a60c4a84a0e3a5c98f37d71a63b375d8a8f9f",
+      "source_sha256": "aa711557f586ff263a179b8d73b4d0a90a91fd62b696f561961a2a64a5c1a32c",
       "audio": null
     },
     {
@@ -2751,7 +2752,7 @@
         "Cinq livres"
       ],
       "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "f688cb14f67984891bc5119a5e7a60c4a84a0e3a5c98f37d71a63b375d8a8f9f",
+      "source_sha256": "aa711557f586ff263a179b8d73b4d0a90a91fd62b696f561961a2a64a5c1a32c",
       "audio": null
     },
     {
@@ -2766,7 +2767,7 @@
         "Au bonheur des ogres"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "f688cb14f67984891bc5119a5e7a60c4a84a0e3a5c98f37d71a63b375d8a8f9f",
+      "source_sha256": "aa711557f586ff263a179b8d73b4d0a90a91fd62b696f561961a2a64a5c1a32c",
       "audio": null
     },
     {
@@ -2781,7 +2782,7 @@
         "Molière"
       ],
       "status": "text_required_person_role_or_diagnosis",
-      "source_sha256": "f688cb14f67984891bc5119a5e7a60c4a84a0e3a5c98f37d71a63b375d8a8f9f",
+      "source_sha256": "aa711557f586ff263a179b8d73b4d0a90a91fd62b696f561961a2a64a5c1a32c",
       "audio": null
     },
     {
@@ -2796,7 +2797,7 @@
         "Le Tour du monde en 80 jours"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "f688cb14f67984891bc5119a5e7a60c4a84a0e3a5c98f37d71a63b375d8a8f9f",
+      "source_sha256": "aa711557f586ff263a179b8d73b4d0a90a91fd62b696f561961a2a64a5c1a32c",
       "audio": null
     },
     {
@@ -2811,7 +2812,7 @@
         "Daniel Pennac"
       ],
       "status": "text_required_person_role_or_diagnosis",
-      "source_sha256": "f688cb14f67984891bc5119a5e7a60c4a84a0e3a5c98f37d71a63b375d8a8f9f",
+      "source_sha256": "aa711557f586ff263a179b8d73b4d0a90a91fd62b696f561961a2a64a5c1a32c",
       "audio": null
     },
     {
@@ -2826,7 +2827,7 @@
         "La poésie moderne"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "f688cb14f67984891bc5119a5e7a60c4a84a0e3a5c98f37d71a63b375d8a8f9f",
+      "source_sha256": "aa711557f586ff263a179b8d73b4d0a90a91fd62b696f561961a2a64a5c1a32c",
       "audio": null
     },
     {
@@ -2841,7 +2842,7 @@
         "En allant à la bibliothèque"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "f688cb14f67984891bc5119a5e7a60c4a84a0e3a5c98f37d71a63b375d8a8f9f",
+      "source_sha256": "aa711557f586ff263a179b8d73b4d0a90a91fd62b696f561961a2a64a5c1a32c",
       "audio": null
     },
     {
@@ -2931,7 +2932,7 @@
         "Du 1er novembre"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "7d4ec2bb879ecb9f47e0d9ba1223479cf1385432c9e558236ba6d337b1f9228f",
+      "source_sha256": "d0232dc62f27332ce6d19eab4e421581cf4fadae73b29ccc1a85049c8fbf38cb",
       "audio": null
     },
     {
@@ -2941,12 +2942,12 @@
       "question": 2,
       "enonce": "Quelle est la nouvelle adresse du bureau ?",
       "labels": [
-        "35 rue Pierre Dupré",
-        "15 rue Pierre Dupré",
-        "53 rue Pierre Dupré"
+        "35 rue Dufour",
+        "15 rue Dufour",
+        "53 rue Dufour"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "7d4ec2bb879ecb9f47e0d9ba1223479cf1385432c9e558236ba6d337b1f9228f",
+      "source_sha256": "d0232dc62f27332ce6d19eab4e421581cf4fadae73b29ccc1a85049c8fbf38cb",
       "audio": null
     },
     {
@@ -2961,7 +2962,7 @@
         "Vers l'arrière"
       ],
       "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "7d4ec2bb879ecb9f47e0d9ba1223479cf1385432c9e558236ba6d337b1f9228f",
+      "source_sha256": "d0232dc62f27332ce6d19eab4e421581cf4fadae73b29ccc1a85049c8fbf38cb",
       "audio": null
     },
     {
@@ -2976,7 +2977,7 @@
         "La deuxième à gauche"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "7d4ec2bb879ecb9f47e0d9ba1223479cf1385432c9e558236ba6d337b1f9228f",
+      "source_sha256": "d0232dc62f27332ce6d19eab4e421581cf4fadae73b29ccc1a85049c8fbf38cb",
       "audio": null
     },
     {
@@ -2991,7 +2992,7 @@
         "En envoyant un courrier postal"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "7d4ec2bb879ecb9f47e0d9ba1223479cf1385432c9e558236ba6d337b1f9228f",
+      "source_sha256": "d0232dc62f27332ce6d19eab4e421581cf4fadae73b29ccc1a85049c8fbf38cb",
       "audio": null
     },
     {
@@ -3006,7 +3007,7 @@
         "Une carte bancaire"
       ],
       "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "7d4ec2bb879ecb9f47e0d9ba1223479cf1385432c9e558236ba6d337b1f9228f",
+      "source_sha256": "d0232dc62f27332ce6d19eab4e421581cf4fadae73b29ccc1a85049c8fbf38cb",
       "audio": null
     },
     {
@@ -3021,7 +3022,7 @@
         "Du lundi au dimanche"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "7d4ec2bb879ecb9f47e0d9ba1223479cf1385432c9e558236ba6d337b1f9228f",
+      "source_sha256": "d0232dc62f27332ce6d19eab4e421581cf4fadae73b29ccc1a85049c8fbf38cb",
       "audio": null
     },
     {
@@ -3036,7 +3037,7 @@
         "Le dimanche matin"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "728026deb4ab5a2d4d44fef34665b63f00f8952fea258501276c7d024678f196",
+      "source_sha256": "be72bf7b86ee5ec5c55c5d6afeb2894e0fdcfbae8f513e95931b55b0a6c04f8e",
       "audio": null
     },
     {
@@ -3051,7 +3052,7 @@
         "Tous les samedis"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "728026deb4ab5a2d4d44fef34665b63f00f8952fea258501276c7d024678f196",
+      "source_sha256": "be72bf7b86ee5ec5c55c5d6afeb2894e0fdcfbae8f513e95931b55b0a6c04f8e",
       "audio": null
     },
     {
@@ -3066,7 +3067,7 @@
         "Les dimanches"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "728026deb4ab5a2d4d44fef34665b63f00f8952fea258501276c7d024678f196",
+      "source_sha256": "be72bf7b86ee5ec5c55c5d6afeb2894e0fdcfbae8f513e95931b55b0a6c04f8e",
       "audio": null
     },
     {
@@ -3081,7 +3082,7 @@
         "Deux heures"
       ],
       "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "728026deb4ab5a2d4d44fef34665b63f00f8952fea258501276c7d024678f196",
+      "source_sha256": "be72bf7b86ee5ec5c55c5d6afeb2894e0fdcfbae8f513e95931b55b0a6c04f8e",
       "audio": null
     },
     {
@@ -3096,7 +3097,7 @@
         "L'allemand"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "728026deb4ab5a2d4d44fef34665b63f00f8952fea258501276c7d024678f196",
+      "source_sha256": "be72bf7b86ee5ec5c55c5d6afeb2894e0fdcfbae8f513e95931b55b0a6c04f8e",
       "audio": null
     },
     {
@@ -3111,7 +3112,7 @@
         "Le vendredi de 10 h à 15 h"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "728026deb4ab5a2d4d44fef34665b63f00f8952fea258501276c7d024678f196",
+      "source_sha256": "be72bf7b86ee5ec5c55c5d6afeb2894e0fdcfbae8f513e95931b55b0a6c04f8e",
       "audio": null
     },
     {
@@ -3216,7 +3217,7 @@
         "Faire le ménage"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "a20158f08a662539110536d8a23433606d30f47c2900f60e50e3a5906582d4b3",
+      "source_sha256": "ad73947b6d584dc4b6e1e19120af219563781ad90f2a9a61d7400aaf73369b44",
       "audio": null
     },
     {
@@ -3231,7 +3232,7 @@
         "Trois enfants"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "a20158f08a662539110536d8a23433606d30f47c2900f60e50e3a5906582d4b3",
+      "source_sha256": "ad73947b6d584dc4b6e1e19120af219563781ad90f2a9a61d7400aaf73369b44",
       "audio": null
     },
     {
@@ -3246,7 +3247,7 @@
         "4 et 6 ans"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "a20158f08a662539110536d8a23433606d30f47c2900f60e50e3a5906582d4b3",
+      "source_sha256": "ad73947b6d584dc4b6e1e19120af219563781ad90f2a9a61d7400aaf73369b44",
       "audio": null
     },
     {
@@ -3261,7 +3262,7 @@
         "Vendredi, samedi et dimanche"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "a20158f08a662539110536d8a23433606d30f47c2900f60e50e3a5906582d4b3",
+      "source_sha256": "ad73947b6d584dc4b6e1e19120af219563781ad90f2a9a61d7400aaf73369b44",
       "audio": null
     },
     {
@@ -3271,12 +3272,12 @@
       "question": 6,
       "enonce": "Dans quelle ville faut-il habiter ou pouvoir se déplacer ?",
       "labels": [
-        "Limoges",
-        "Lille",
-        "Lyon"
+        "Lausanne",
+        "Fribourg",
+        "Berne"
       ],
       "status": "keep_text_named_identity_or_location",
-      "source_sha256": "a20158f08a662539110536d8a23433606d30f47c2900f60e50e3a5906582d4b3",
+      "source_sha256": "ad73947b6d584dc4b6e1e19120af219563781ad90f2a9a61d7400aaf73369b44",
       "audio": null
     },
     {
@@ -3286,12 +3287,12 @@
       "question": 7,
       "enonce": "Combien gagne-t-on pour une soirée ?",
       "labels": [
-        "45 €",
-        "35 €",
-        "55 €"
+        "45 CHF",
+        "35 CHF",
+        "55 CHF"
       ],
-      "status": "editorial_visual_screening_needed",
-      "source_sha256": "a20158f08a662539110536d8a23433606d30f47c2900f60e50e3a5906582d4b3",
+      "status": "text_required_amount_measure_or_rate",
+      "source_sha256": "ad73947b6d584dc4b6e1e19120af219563781ad90f2a9a61d7400aaf73369b44",
       "audio": null
     },
     {
@@ -3306,7 +3307,7 @@
         "Vendeur de fleurs"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "41794145e3912194d1df90b6659b8ff17633d7556cf19a878937f3f5a91cc5c2",
+      "source_sha256": "5e25c65d2fdda21927ded5ffe65d4dc730ad51772899b31a74988f08bcd37b66",
       "audio": null
     },
     {
@@ -3321,7 +3322,7 @@
         "Juin"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "41794145e3912194d1df90b6659b8ff17633d7556cf19a878937f3f5a91cc5c2",
+      "source_sha256": "5e25c65d2fdda21927ded5ffe65d4dc730ad51772899b31a74988f08bcd37b66",
       "audio": null
     },
     {
@@ -3336,7 +3337,7 @@
         "De janvier à mars"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "41794145e3912194d1df90b6659b8ff17633d7556cf19a878937f3f5a91cc5c2",
+      "source_sha256": "5e25c65d2fdda21927ded5ffe65d4dc730ad51772899b31a74988f08bcd37b66",
       "audio": null
     },
     {
@@ -3351,7 +3352,7 @@
         "Un restaurateur"
       ],
       "status": "text_required_person_role_or_diagnosis",
-      "source_sha256": "41794145e3912194d1df90b6659b8ff17633d7556cf19a878937f3f5a91cc5c2",
+      "source_sha256": "5e25c65d2fdda21927ded5ffe65d4dc730ad51772899b31a74988f08bcd37b66",
       "audio": null
     },
     {
@@ -3366,7 +3367,7 @@
         "Trois mois"
       ],
       "status": "keep_text_calendar_or_temporal_scope",
-      "source_sha256": "41794145e3912194d1df90b6659b8ff17633d7556cf19a878937f3f5a91cc5c2",
+      "source_sha256": "5e25c65d2fdda21927ded5ffe65d4dc730ad51772899b31a74988f08bcd37b66",
       "audio": null
     },
     {
@@ -3381,7 +3382,7 @@
         "Le tango"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "41794145e3912194d1df90b6659b8ff17633d7556cf19a878937f3f5a91cc5c2",
+      "source_sha256": "5e25c65d2fdda21927ded5ffe65d4dc730ad51772899b31a74988f08bcd37b66",
       "audio": null
     },
     {
@@ -3396,7 +3397,7 @@
         "De 18 à 20 ans"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "41794145e3912194d1df90b6659b8ff17633d7556cf19a878937f3f5a91cc5c2",
+      "source_sha256": "5e25c65d2fdda21927ded5ffe65d4dc730ad51772899b31a74988f08bcd37b66",
       "audio": null
     },
     {
@@ -3406,12 +3407,12 @@
       "question": 1,
       "enonce": "Où peut-on aller l'après-midi quand il fait beau ?",
       "labels": [
-        "Au jardin du Luxembourg",
-        "Au musée Carnavalet",
-        "À la Comédie-Française"
+        "Au parc du Zürichhorn",
+        "Au Musée national suisse",
+        "Au Schauspielhaus"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "ee88d03c9a3f5344d38441f440c86e1fa813121ec1617f136ef332cf8753d6bc",
+      "source_sha256": "11f33cfaa4023affbf4ac77d1d1820896686dd303a52f5c6590ef56639f895f0",
       "audio": null
     },
     {
@@ -3421,12 +3422,12 @@
       "question": 3,
       "enonce": "Jusqu'à quel monument peut-on aller en bateau ?",
       "labels": [
-        "La tour Eiffel",
-        "L'Arc de Triomphe",
-        "Le château de Versailles"
+        "L’église Fraumünster",
+        "L’église du Grossmünster",
+        "Le château de Kybourg"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "ee88d03c9a3f5344d38441f440c86e1fa813121ec1617f136ef332cf8753d6bc",
+      "source_sha256": "11f33cfaa4023affbf4ac77d1d1820896686dd303a52f5c6590ef56639f895f0",
       "audio": null
     },
     {
@@ -3436,12 +3437,12 @@
       "question": 4,
       "enonce": "Quel musée est conseillé s'il pleut ?",
       "labels": [
-        "Le musée Carnavalet",
-        "Le musée du Louvre",
-        "Le musée d'Orsay"
+        "Le Musée national suisse",
+        "Le Kunsthaus de Zurich",
+        "Le musée Rietberg"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "ee88d03c9a3f5344d38441f440c86e1fa813121ec1617f136ef332cf8753d6bc",
+      "source_sha256": "11f33cfaa4023affbf4ac77d1d1820896686dd303a52f5c6590ef56639f895f0",
       "audio": null
     },
     {
@@ -3449,14 +3450,14 @@
       "bank": "src/tcf/content/a0-a1/ce.json",
       "exercise": "tcf-a1p-s3-ce-4",
       "question": 5,
-      "enonce": "Quel est le thème du musée Carnavalet ?",
+      "enonce": "Quel est le thème du Musée national suisse ?",
       "labels": [
-        "L'histoire de Paris",
+        "L'histoire de la Suisse",
         "L'histoire de la musique",
         "L'histoire du sport"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "ee88d03c9a3f5344d38441f440c86e1fa813121ec1617f136ef332cf8753d6bc",
+      "source_sha256": "11f33cfaa4023affbf4ac77d1d1820896686dd303a52f5c6590ef56639f895f0",
       "audio": null
     },
     {
@@ -3466,12 +3467,12 @@
       "question": 6,
       "enonce": "Où peut-on voir une pièce de théâtre ?",
       "labels": [
-        "À la Comédie-Française",
-        "Au jardin du Luxembourg",
+        "Au Schauspielhaus",
+        "Au parc du Zürichhorn",
         "À l'université"
       ],
-      "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "ee88d03c9a3f5344d38441f440c86e1fa813121ec1617f136ef332cf8753d6bc",
+      "status": "concrete_visual_trio_to_prepare_or_review",
+      "source_sha256": "11f33cfaa4023affbf4ac77d1d1820896686dd303a52f5c6590ef56639f895f0",
       "audio": null
     },
     {
@@ -3479,14 +3480,14 @@
       "bank": "src/tcf/content/a0-a1/ce.json",
       "exercise": "tcf-a1p-s3-ce-4",
       "question": 7,
-      "enonce": "Combien coûte le repas avec spectacle au Paris Musical ?",
+      "enonce": "Combien coûte le repas avec spectacle au Zurich Musical ?",
       "labels": [
-        "21 €",
-        "12 €",
-        "31 €"
+        "21 CHF",
+        "12 CHF",
+        "31 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "ee88d03c9a3f5344d38441f440c86e1fa813121ec1617f136ef332cf8753d6bc",
+      "source_sha256": "11f33cfaa4023affbf4ac77d1d1820896686dd303a52f5c6590ef56639f895f0",
       "audio": null
     },
     {
@@ -3501,7 +3502,7 @@
         "Le bureau 172"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "ee88d03c9a3f5344d38441f440c86e1fa813121ec1617f136ef332cf8753d6bc",
+      "source_sha256": "11f33cfaa4023affbf4ac77d1d1820896686dd303a52f5c6590ef56639f895f0",
       "audio": null
     },
     {
@@ -3602,11 +3603,11 @@
       "enonce": "Dans quel pays se trouve Porrentruy ?",
       "labels": [
         "En Suisse",
-        "En France",
+        "En Autriche",
         "En Belgique"
       ],
-      "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "d948ebee3ccdc164e1d5464708b48ae158c2931b2c4b742aca5edc8b210e364a",
+      "status": "editorial_visual_screening_needed",
+      "source_sha256": "9d826e830da8da19fb3dd2888dbd30debe22ef2ab0d89473be36b96dea25b9e5",
       "audio": null
     },
     {
@@ -3621,7 +3622,7 @@
         "Genève"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "d948ebee3ccdc164e1d5464708b48ae158c2931b2c4b742aca5edc8b210e364a",
+      "source_sha256": "9d826e830da8da19fb3dd2888dbd30debe22ef2ab0d89473be36b96dea25b9e5",
       "audio": null
     },
     {
@@ -3636,7 +3637,7 @@
         "9 600"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "d948ebee3ccdc164e1d5464708b48ae158c2931b2c4b742aca5edc8b210e364a",
+      "source_sha256": "9d826e830da8da19fb3dd2888dbd30debe22ef2ab0d89473be36b96dea25b9e5",
       "audio": null
     },
     {
@@ -3651,7 +3652,7 @@
         "9200"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "d948ebee3ccdc164e1d5464708b48ae158c2931b2c4b742aca5edc8b210e364a",
+      "source_sha256": "9d826e830da8da19fb3dd2888dbd30debe22ef2ab0d89473be36b96dea25b9e5",
       "audio": null
     },
     {
@@ -3666,7 +3667,7 @@
         "La place du Marché"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "d948ebee3ccdc164e1d5464708b48ae158c2931b2c4b742aca5edc8b210e364a",
+      "source_sha256": "9d826e830da8da19fb3dd2888dbd30debe22ef2ab0d89473be36b96dea25b9e5",
       "audio": null
     },
     {
@@ -3681,7 +3682,7 @@
         "Madame Dubois"
       ],
       "status": "text_required_person_role_or_diagnosis",
-      "source_sha256": "d948ebee3ccdc164e1d5464708b48ae158c2931b2c4b742aca5edc8b210e364a",
+      "source_sha256": "9d826e830da8da19fb3dd2888dbd30debe22ef2ab0d89473be36b96dea25b9e5",
       "audio": null
     },
     {
@@ -3696,7 +3697,7 @@
         "Le mercredi après-midi"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "ab1782dc95b311b84b66e4ac107eec743e5c798bf3f04f06396d1db0c50bc1bd",
+      "source_sha256": "fee7707d2ce0a2ccad879b824e4a7f56615b0b024e7f2222eaeffef96fc157fb",
       "audio": null
     },
     {
@@ -3711,7 +3712,7 @@
         "15 heures"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "ab1782dc95b311b84b66e4ac107eec743e5c798bf3f04f06396d1db0c50bc1bd",
+      "source_sha256": "fee7707d2ce0a2ccad879b824e4a7f56615b0b024e7f2222eaeffef96fc157fb",
       "audio": null
     },
     {
@@ -3726,7 +3727,7 @@
         "L'espagnol"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "ab1782dc95b311b84b66e4ac107eec743e5c798bf3f04f06396d1db0c50bc1bd",
+      "source_sha256": "fee7707d2ce0a2ccad879b824e4a7f56615b0b024e7f2222eaeffef96fc157fb",
       "audio": null
     },
     {
@@ -3741,7 +3742,7 @@
         "Le dimanche matin"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "ab1782dc95b311b84b66e4ac107eec743e5c798bf3f04f06396d1db0c50bc1bd",
+      "source_sha256": "fee7707d2ce0a2ccad879b824e4a7f56615b0b024e7f2222eaeffef96fc157fb",
       "audio": null
     },
     {
@@ -3756,7 +3757,7 @@
         "15 heures"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "ab1782dc95b311b84b66e4ac107eec743e5c798bf3f04f06396d1db0c50bc1bd",
+      "source_sha256": "fee7707d2ce0a2ccad879b824e4a7f56615b0b024e7f2222eaeffef96fc157fb",
       "audio": null
     },
     {
@@ -3771,7 +3772,7 @@
         "Anna"
       ],
       "status": "text_required_person_role_or_diagnosis",
-      "source_sha256": "ab1782dc95b311b84b66e4ac107eec743e5c798bf3f04f06396d1db0c50bc1bd",
+      "source_sha256": "fee7707d2ce0a2ccad879b824e4a7f56615b0b024e7f2222eaeffef96fc157fb",
       "audio": null
     },
     {
@@ -3781,12 +3782,12 @@
       "question": 1,
       "enonce": "Dans quelle ville se trouve le restaurant universitaire ?",
       "labels": [
-        "Lille",
-        "Lyon",
-        "Paris"
+        "Fribourg",
+        "Berne",
+        "Zurich"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "cbdb1dc059ec34d79081ab5876e2831a81d92a356b550485fe13097dec745931",
+      "source_sha256": "222f5ca1fce5139d8f57d4dd9d8113499ad5a4a38884170f47fa2652743d38ce",
       "audio": null
     },
     {
@@ -3796,12 +3797,12 @@
       "question": 4,
       "enonce": "Combien coûte le repas complet du midi ?",
       "labels": [
-        "4 €",
-        "6 €",
-        "8 €"
+        "4 CHF",
+        "6 CHF",
+        "8 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "cbdb1dc059ec34d79081ab5876e2831a81d92a356b550485fe13097dec745931",
+      "source_sha256": "222f5ca1fce5139d8f57d4dd9d8113499ad5a4a38884170f47fa2652743d38ce",
       "audio": null
     },
     {
@@ -3816,7 +3817,7 @@
         "Des livres et des cahiers"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "cbdb1dc059ec34d79081ab5876e2831a81d92a356b550485fe13097dec745931",
+      "source_sha256": "222f5ca1fce5139d8f57d4dd9d8113499ad5a4a38884170f47fa2652743d38ce",
       "audio": null
     },
     {
@@ -3918,9 +3919,9 @@
       "labels": [
         "Dans le nord de la Suisse",
         "Dans le sud de la Suisse",
-        "Dans l'ouest de la France"
+        "Dans le centre de la Suisse"
       ],
-      "status": "text_required_amount_measure_or_rate",
+      "status": "editorial_visual_screening_needed",
       "source_sha256": "2c410f35bf1589c7f30ba3edea0e783e5ad3708e9a69f91cab25ea17bc1e2016",
       "audio": null
     },
@@ -4142,8 +4143,8 @@
       "enonce": "Combien coûte l'accès à Internet ?",
       "labels": [
         "Il est gratuit",
-        "Il coûte 5 euros",
-        "Il coûte 10 euros"
+        "Il coûte 5 CHF",
+        "Il coûte 10 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
       "source_sha256": "f8991f2726d44a41ebf9083b955510802789388a1fdbe3cc6ea53de4e303cb2e",
@@ -4161,7 +4162,7 @@
         "L'automne"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "512a3e0028a6f673428238e76218dec08a0b6d9a0a91118605cba235a80ecb9c",
+      "source_sha256": "d4d8ed48be35bea6e52c7120e62fe1ecb9a27cea97d556c651aaf420fba80de0",
       "audio": null
     },
     {
@@ -4176,7 +4177,7 @@
         "Quinze"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "512a3e0028a6f673428238e76218dec08a0b6d9a0a91118605cba235a80ecb9c",
+      "source_sha256": "d4d8ed48be35bea6e52c7120e62fe1ecb9a27cea97d556c651aaf420fba80de0",
       "audio": null
     },
     {
@@ -4186,12 +4187,12 @@
       "question": 3,
       "enonce": "Dans quel pays se trouvent les festivals présentés ?",
       "labels": [
-        "En France",
         "En Suisse",
+        "En Autriche",
         "En Belgique"
       ],
-      "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "512a3e0028a6f673428238e76218dec08a0b6d9a0a91118605cba235a80ecb9c",
+      "status": "editorial_visual_screening_needed",
+      "source_sha256": "d4d8ed48be35bea6e52c7120e62fe1ecb9a27cea97d556c651aaf420fba80de0",
       "audio": null
     },
     {
@@ -4206,7 +4207,7 @@
         "Le jazz"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "512a3e0028a6f673428238e76218dec08a0b6d9a0a91118605cba235a80ecb9c",
+      "source_sha256": "d4d8ed48be35bea6e52c7120e62fe1ecb9a27cea97d556c651aaf420fba80de0",
       "audio": null
     },
     {
@@ -4221,7 +4222,7 @@
         "Sur une affiche"
       ],
       "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "512a3e0028a6f673428238e76218dec08a0b6d9a0a91118605cba235a80ecb9c",
+      "source_sha256": "d4d8ed48be35bea6e52c7120e62fe1ecb9a27cea97d556c651aaf420fba80de0",
       "audio": null
     },
     {
@@ -4236,7 +4237,7 @@
         "Le numéro de chaque salle"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "512a3e0028a6f673428238e76218dec08a0b6d9a0a91118605cba235a80ecb9c",
+      "source_sha256": "d4d8ed48be35bea6e52c7120e62fe1ecb9a27cea97d556c651aaf420fba80de0",
       "audio": null
     },
     {
@@ -4251,7 +4252,7 @@
         "Les jours de fermeture des musées"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "512a3e0028a6f673428238e76218dec08a0b6d9a0a91118605cba235a80ecb9c",
+      "source_sha256": "d4d8ed48be35bea6e52c7120e62fe1ecb9a27cea97d556c651aaf420fba80de0",
       "audio": null
     },
     {
@@ -4266,7 +4267,7 @@
         "Un repas offert"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "512a3e0028a6f673428238e76218dec08a0b6d9a0a91118605cba235a80ecb9c",
+      "source_sha256": "d4d8ed48be35bea6e52c7120e62fe1ecb9a27cea97d556c651aaf420fba80de0",
       "audio": null
     },
     {
@@ -4536,7 +4537,7 @@
         "Des chaussures de ski"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "ac313d9f8c3ea281e682c20b6d4812e521c417de8b6422cf33755ac799641c6a",
+      "source_sha256": "e354374cf55c4f61c95ba317dc3607a4a3543b2b4d1db20fa2691603441bf581",
       "audio": null
     },
     {
@@ -4546,12 +4547,12 @@
       "question": 3,
       "enonce": "Combien coûte la location des chaussons ?",
       "labels": [
-        "5 francs",
-        "10 francs",
-        "15 francs"
+        "5 CHF",
+        "10 CHF",
+        "15 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "ac313d9f8c3ea281e682c20b6d4812e521c417de8b6422cf33755ac799641c6a",
+      "source_sha256": "e354374cf55c4f61c95ba317dc3607a4a3543b2b4d1db20fa2691603441bf581",
       "audio": null
     },
     {
@@ -4566,7 +4567,7 @@
         "Une robe de soirée"
       ],
       "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "ac313d9f8c3ea281e682c20b6d4812e521c417de8b6422cf33755ac799641c6a",
+      "source_sha256": "e354374cf55c4f61c95ba317dc3607a4a3543b2b4d1db20fa2691603441bf581",
       "audio": null
     },
     {
@@ -4581,7 +4582,7 @@
         "Les sacs et les téléphones"
       ],
       "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "ac313d9f8c3ea281e682c20b6d4812e521c417de8b6422cf33755ac799641c6a",
+      "source_sha256": "e354374cf55c4f61c95ba317dc3607a4a3543b2b4d1db20fa2691603441bf581",
       "audio": null
     },
     {
@@ -4592,11 +4593,11 @@
       "enonce": "Combien coûtent les casiers ?",
       "labels": [
         "Ils sont gratuits",
-        "Ils coûtent 5 francs",
-        "Ils coûtent 10 francs"
+        "Ils coûtent 5 CHF",
+        "Ils coûtent 10 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "ac313d9f8c3ea281e682c20b6d4812e521c417de8b6422cf33755ac799641c6a",
+      "source_sha256": "e354374cf55c4f61c95ba317dc3607a4a3543b2b4d1db20fa2691603441bf581",
       "audio": null
     },
     {
@@ -4611,7 +4612,7 @@
         "Le lundi"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "ac313d9f8c3ea281e682c20b6d4812e521c417de8b6422cf33755ac799641c6a",
+      "source_sha256": "e354374cf55c4f61c95ba317dc3607a4a3543b2b4d1db20fa2691603441bf581",
       "audio": null
     },
     {
@@ -4626,7 +4627,7 @@
         "Julie et Karim"
       ],
       "status": "text_required_person_role_or_diagnosis",
-      "source_sha256": "00622b14392decec40771abcbff111dcd6629c55ab66dd4d17aca775604be073",
+      "source_sha256": "80c6418c331ddf90b4cbc576857bd82fd17791a16eb8545e96a1819aff312ef1",
       "audio": null
     },
     {
@@ -4641,7 +4642,7 @@
         "Une pizza au fromage"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "00622b14392decec40771abcbff111dcd6629c55ab66dd4d17aca775604be073",
+      "source_sha256": "80c6418c331ddf90b4cbc576857bd82fd17791a16eb8545e96a1819aff312ef1",
       "audio": null
     },
     {
@@ -4656,7 +4657,7 @@
         "Rue des Fleurs"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "00622b14392decec40771abcbff111dcd6629c55ab66dd4d17aca775604be073",
+      "source_sha256": "80c6418c331ddf90b4cbc576857bd82fd17791a16eb8545e96a1819aff312ef1",
       "audio": null
     },
     {
@@ -4671,7 +4672,7 @@
         "De la musique classique"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "00622b14392decec40771abcbff111dcd6629c55ab66dd4d17aca775604be073",
+      "source_sha256": "80c6418c331ddf90b4cbc576857bd82fd17791a16eb8545e96a1819aff312ef1",
       "audio": null
     },
     {
@@ -4686,7 +4687,7 @@
         "À côté du musée, près du parc"
       ],
       "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "00622b14392decec40771abcbff111dcd6629c55ab66dd4d17aca775604be073",
+      "source_sha256": "80c6418c331ddf90b4cbc576857bd82fd17791a16eb8545e96a1819aff312ef1",
       "audio": null
     },
     {
@@ -4696,12 +4697,12 @@
       "question": 7,
       "enonce": "Combien coûte une place de concert ?",
       "labels": [
-        "15 francs",
-        "10 francs",
-        "20 francs"
+        "15 CHF",
+        "10 CHF",
+        "20 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "00622b14392decec40771abcbff111dcd6629c55ab66dd4d17aca775604be073",
+      "source_sha256": "80c6418c331ddf90b4cbc576857bd82fd17791a16eb8545e96a1819aff312ef1",
       "audio": null
     },
     {
@@ -5091,7 +5092,7 @@
         "L'arrivée de Mme Dubois"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "f6d57f298aa39c0ce0acca2e96d64e5033ed232714677a0851b0028bb09d4d22",
+      "source_sha256": "879065ce2667d8614e7cbc9581204062f94afa389785c01ffc057bf3f6f77a92",
       "audio": null
     },
     {
@@ -5106,7 +5107,7 @@
         "Un livre d'art et des chocolats"
       ],
       "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "f6d57f298aa39c0ce0acca2e96d64e5033ed232714677a0851b0028bb09d4d22",
+      "source_sha256": "879065ce2667d8614e7cbc9581204062f94afa389785c01ffc057bf3f6f77a92",
       "audio": null
     },
     {
@@ -5116,12 +5117,12 @@
       "question": 3,
       "enonce": "Combien chacun doit-il donner ?",
       "labels": [
-        "10 francs",
-        "15 francs",
-        "20 francs"
+        "10 CHF",
+        "15 CHF",
+        "20 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "f6d57f298aa39c0ce0acca2e96d64e5033ed232714677a0851b0028bb09d4d22",
+      "source_sha256": "879065ce2667d8614e7cbc9581204062f94afa389785c01ffc057bf3f6f77a92",
       "audio": null
     },
     {
@@ -5136,7 +5137,7 @@
         "Mme Dubois"
       ],
       "status": "text_required_person_role_or_diagnosis",
-      "source_sha256": "f6d57f298aa39c0ce0acca2e96d64e5033ed232714677a0851b0028bb09d4d22",
+      "source_sha256": "879065ce2667d8614e7cbc9581204062f94afa389785c01ffc057bf3f6f77a92",
       "audio": null
     },
     {
@@ -5151,7 +5152,7 @@
         "Il a un rendez-vous médical"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "f6d57f298aa39c0ce0acca2e96d64e5033ed232714677a0851b0028bb09d4d22",
+      "source_sha256": "879065ce2667d8614e7cbc9581204062f94afa389785c01ffc057bf3f6f77a92",
       "audio": null
     },
     {
@@ -5166,7 +5167,7 @@
         "La mairie de Fribourg"
       ],
       "status": "text_required_person_role_or_diagnosis",
-      "source_sha256": "28d81654bcbb31d1d90f54fbff29e100bf47f52d785ebc08bf5c5cad8f586845",
+      "source_sha256": "0098c30da2e43427d0b2b44fb304bc57feab743f249ee4024acf8e416a3926ee",
       "audio": null
     },
     {
@@ -5181,7 +5182,7 @@
         "Les animaux de la forêt"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "28d81654bcbb31d1d90f54fbff29e100bf47f52d785ebc08bf5c5cad8f586845",
+      "source_sha256": "0098c30da2e43427d0b2b44fb304bc57feab743f249ee4024acf8e416a3926ee",
       "audio": null
     },
     {
@@ -5191,12 +5192,12 @@
       "question": 3,
       "enonce": "Quel est le premier prix ?",
       "labels": [
-        "300 francs",
-        "200 francs",
-        "100 francs"
+        "300 CHF",
+        "200 CHF",
+        "100 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "28d81654bcbb31d1d90f54fbff29e100bf47f52d785ebc08bf5c5cad8f586845",
+      "source_sha256": "0098c30da2e43427d0b2b44fb304bc57feab743f249ee4024acf8e416a3926ee",
       "audio": null
     },
     {
@@ -5211,7 +5212,7 @@
         "Trois photos"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "28d81654bcbb31d1d90f54fbff29e100bf47f52d785ebc08bf5c5cad8f586845",
+      "source_sha256": "0098c30da2e43427d0b2b44fb304bc57feab743f249ee4024acf8e416a3926ee",
       "audio": null
     },
     {
@@ -5226,7 +5227,7 @@
         "Des photos sépia"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "28d81654bcbb31d1d90f54fbff29e100bf47f52d785ebc08bf5c5cad8f586845",
+      "source_sha256": "0098c30da2e43427d0b2b44fb304bc57feab743f249ee4024acf8e416a3926ee",
       "audio": null
     },
     {
@@ -5241,7 +5242,7 @@
         "Avant le 20 décembre"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "28d81654bcbb31d1d90f54fbff29e100bf47f52d785ebc08bf5c5cad8f586845",
+      "source_sha256": "0098c30da2e43427d0b2b44fb304bc57feab743f249ee4024acf8e416a3926ee",
       "audio": null
     },
     {
@@ -5256,7 +5257,7 @@
         "Sa classe et son école"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "28d81654bcbb31d1d90f54fbff29e100bf47f52d785ebc08bf5c5cad8f586845",
+      "source_sha256": "0098c30da2e43427d0b2b44fb304bc57feab743f249ee4024acf8e416a3926ee",
       "audio": null
     },
     {
@@ -5451,7 +5452,7 @@
         "Un vélo d'enfant"
       ],
       "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "ccf552675af7ee09a0de5f0e98fc084157d47bd198df6cd75d8050260ed1512f",
+      "source_sha256": "58c18321822f6a07e218e010873a2d9464f60b1317a0fc177531be5592578f46",
       "audio": null
     },
     {
@@ -5466,7 +5467,7 @@
         "Une remorque"
       ],
       "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "ccf552675af7ee09a0de5f0e98fc084157d47bd198df6cd75d8050260ed1512f",
+      "source_sha256": "58c18321822f6a07e218e010873a2d9464f60b1317a0fc177531be5592578f46",
       "audio": null
     },
     {
@@ -5476,12 +5477,12 @@
       "question": 4,
       "enonce": "Combien coûte le vélo ?",
       "labels": [
-        "150 francs",
-        "100 francs",
-        "250 francs"
+        "150 CHF",
+        "100 CHF",
+        "250 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "ccf552675af7ee09a0de5f0e98fc084157d47bd198df6cd75d8050260ed1512f",
+      "source_sha256": "58c18321822f6a07e218e010873a2d9464f60b1317a0fc177531be5592578f46",
       "audio": null
     },
     {
@@ -5496,7 +5497,7 @@
         "Trois ans"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "ccf552675af7ee09a0de5f0e98fc084157d47bd198df6cd75d8050260ed1512f",
+      "source_sha256": "58c18321822f6a07e218e010873a2d9464f60b1317a0fc177531be5592578f46",
       "audio": null
     },
     {
@@ -5511,7 +5512,7 @@
         "La pompe"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "ccf552675af7ee09a0de5f0e98fc084157d47bd198df6cd75d8050260ed1512f",
+      "source_sha256": "58c18321822f6a07e218e010873a2d9464f60b1317a0fc177531be5592578f46",
       "audio": null
     },
     {
@@ -5526,7 +5527,7 @@
         "Après 20 h"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "ccf552675af7ee09a0de5f0e98fc084157d47bd198df6cd75d8050260ed1512f",
+      "source_sha256": "58c18321822f6a07e218e010873a2d9464f60b1317a0fc177531be5592578f46",
       "audio": null
     },
     {
@@ -5541,7 +5542,7 @@
         "Le samedi"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "ccf552675af7ee09a0de5f0e98fc084157d47bd198df6cd75d8050260ed1512f",
+      "source_sha256": "58c18321822f6a07e218e010873a2d9464f60b1317a0fc177531be5592578f46",
       "audio": null
     },
     {
@@ -5676,7 +5677,7 @@
         "Le droit"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "fc819e8fe995366e0802bb8e7eace4969292eb43f29ebb15076997f9bbf33126",
+      "source_sha256": "4e45861fa3d6552d9d4f0f9a6f4638d10f578e60aabd263d36f9af748f96fbcb",
       "audio": null
     },
     {
@@ -5691,7 +5692,7 @@
         "Dans un studio de radio"
       ],
       "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "fc819e8fe995366e0802bb8e7eace4969292eb43f29ebb15076997f9bbf33126",
+      "source_sha256": "4e45861fa3d6552d9d4f0f9a6f4638d10f578e60aabd263d36f9af748f96fbcb",
       "audio": null
     },
     {
@@ -5706,7 +5707,7 @@
         "Berne"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "fc819e8fe995366e0802bb8e7eace4969292eb43f29ebb15076997f9bbf33126",
+      "source_sha256": "4e45861fa3d6552d9d4f0f9a6f4638d10f578e60aabd263d36f9af748f96fbcb",
       "audio": null
     },
     {
@@ -5721,7 +5722,7 @@
         "8 ans"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "fc819e8fe995366e0802bb8e7eace4969292eb43f29ebb15076997f9bbf33126",
+      "source_sha256": "4e45861fa3d6552d9d4f0f9a6f4638d10f578e60aabd263d36f9af748f96fbcb",
       "audio": null
     },
     {
@@ -5736,7 +5737,7 @@
         "Le mercredi et le samedi"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "fc819e8fe995366e0802bb8e7eace4969292eb43f29ebb15076997f9bbf33126",
+      "source_sha256": "4e45861fa3d6552d9d4f0f9a6f4638d10f578e60aabd263d36f9af748f96fbcb",
       "audio": null
     },
     {
@@ -5746,12 +5747,12 @@
       "question": 8,
       "enonce": "Combien coûte un cours ?",
       "labels": [
-        "30 francs",
-        "20 francs",
-        "45 francs"
+        "30 CHF",
+        "20 CHF",
+        "45 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "fc819e8fe995366e0802bb8e7eace4969292eb43f29ebb15076997f9bbf33126",
+      "source_sha256": "4e45861fa3d6552d9d4f0f9a6f4638d10f578e60aabd263d36f9af748f96fbcb",
       "audio": null
     },
     {
@@ -6077,8 +6078,8 @@
       "enonce": "Combien coûte l'entrée ?",
       "labels": [
         "Elle est gratuite",
-        "Elle coûte 5 francs",
-        "Elle coûte 10 francs"
+        "Elle coûte 5 CHF",
+        "Elle coûte 10 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
       "source_sha256": "48db5dc05b84be676c42db7665b82a2da874245fdeb97d62d13ccd1d96b1259c",
@@ -6591,7 +6592,7 @@
         "Vendredi"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "2a8712fa6e4c8f151b7368ff688fa56dd9afa0b33a24c29d67d7e2ad1047e4e6",
+      "source_sha256": "4f321d9481666da70c0e8bde5a7847ec3ebd7be96b3888e7b33054cf53004885",
       "audio": null
     },
     {
@@ -6606,7 +6607,7 @@
         "Le stand de livres"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "2a8712fa6e4c8f151b7368ff688fa56dd9afa0b33a24c29d67d7e2ad1047e4e6",
+      "source_sha256": "4f321d9481666da70c0e8bde5a7847ec3ebd7be96b3888e7b33054cf53004885",
       "audio": null
     },
     {
@@ -6621,7 +6622,7 @@
         "La porte ouest"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "2a8712fa6e4c8f151b7368ff688fa56dd9afa0b33a24c29d67d7e2ad1047e4e6",
+      "source_sha256": "4f321d9481666da70c0e8bde5a7847ec3ebd7be96b3888e7b33054cf53004885",
       "audio": null
     },
     {
@@ -6632,11 +6633,11 @@
       "enonce": "Combien coûte l'entrée du marché ?",
       "labels": [
         "Elle est gratuite",
-        "Elle coûte 5 francs",
-        "Elle coûte 10 francs"
+        "Elle coûte 5 CHF",
+        "Elle coûte 10 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "2a8712fa6e4c8f151b7368ff688fa56dd9afa0b33a24c29d67d7e2ad1047e4e6",
+      "source_sha256": "4f321d9481666da70c0e8bde5a7847ec3ebd7be96b3888e7b33054cf53004885",
       "audio": null
     },
     {
@@ -6646,12 +6647,12 @@
       "question": 7,
       "enonce": "Combien coûte le parking ?",
       "labels": [
-        "5 francs",
-        "10 francs",
-        "15 francs"
+        "5 CHF",
+        "10 CHF",
+        "15 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "2a8712fa6e4c8f151b7368ff688fa56dd9afa0b33a24c29d67d7e2ad1047e4e6",
+      "source_sha256": "4f321d9481666da70c0e8bde5a7847ec3ebd7be96b3888e7b33054cf53004885",
       "audio": null
     },
     {
@@ -6666,7 +6667,7 @@
         "L'entrée est payante"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "2a8712fa6e4c8f151b7368ff688fa56dd9afa0b33a24c29d67d7e2ad1047e4e6",
+      "source_sha256": "4f321d9481666da70c0e8bde5a7847ec3ebd7be96b3888e7b33054cf53004885",
       "audio": null
     },
     {
@@ -6681,7 +6682,7 @@
         "Seulement aux enfants"
       ],
       "status": "text_required_person_role_or_diagnosis",
-      "source_sha256": "3d6099804b21257daa23f788927606a234c2416d51e46b034e82f8535676cf01",
+      "source_sha256": "0bba8c7bab0ea4a0b862d51e7890f1a8b2b409ddc78c7bb508b7b7ccd4a39b8b",
       "audio": null
     },
     {
@@ -6696,7 +6697,7 @@
         "Le samedi"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "3d6099804b21257daa23f788927606a234c2416d51e46b034e82f8535676cf01",
+      "source_sha256": "0bba8c7bab0ea4a0b862d51e7890f1a8b2b409ddc78c7bb508b7b7ccd4a39b8b",
       "audio": null
     },
     {
@@ -6706,12 +6707,12 @@
       "question": 4,
       "enonce": "Combien coûte le judo par trimestre au tarif normal ?",
       "labels": [
-        "80 francs",
-        "40 francs",
-        "30 francs"
+        "80 CHF",
+        "40 CHF",
+        "30 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "3d6099804b21257daa23f788927606a234c2416d51e46b034e82f8535676cf01",
+      "source_sha256": "0bba8c7bab0ea4a0b862d51e7890f1a8b2b409ddc78c7bb508b7b7ccd4a39b8b",
       "audio": null
     },
     {
@@ -6721,12 +6722,12 @@
       "question": 5,
       "enonce": "Combien coûte le judo pour les 6-12 ans ?",
       "labels": [
-        "40 francs",
-        "80 francs",
-        "20 francs"
+        "40 CHF",
+        "80 CHF",
+        "20 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "3d6099804b21257daa23f788927606a234c2416d51e46b034e82f8535676cf01",
+      "source_sha256": "0bba8c7bab0ea4a0b862d51e7890f1a8b2b409ddc78c7bb508b7b7ccd4a39b8b",
       "audio": null
     },
     {
@@ -6741,7 +6742,7 @@
         "Aux enfants et aux adultes"
       ],
       "status": "text_required_person_role_or_diagnosis",
-      "source_sha256": "3d6099804b21257daa23f788927606a234c2416d51e46b034e82f8535676cf01",
+      "source_sha256": "0bba8c7bab0ea4a0b862d51e7890f1a8b2b409ddc78c7bb508b7b7ccd4a39b8b",
       "audio": null
     },
     {
@@ -6756,7 +6757,7 @@
         "Une cuisinière"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "3d6099804b21257daa23f788927606a234c2416d51e46b034e82f8535676cf01",
+      "source_sha256": "0bba8c7bab0ea4a0b862d51e7890f1a8b2b409ddc78c7bb508b7b7ccd4a39b8b",
       "audio": null
     },
     {
@@ -6766,12 +6767,12 @@
       "question": 8,
       "enonce": "Combien coûte la gym du jeudi pour un adulte ?",
       "labels": [
-        "3 francs",
-        "1 franc",
-        "5 francs"
+        "3 CHF",
+        "1 CHF",
+        "5 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "3d6099804b21257daa23f788927606a234c2416d51e46b034e82f8535676cf01",
+      "source_sha256": "0bba8c7bab0ea4a0b862d51e7890f1a8b2b409ddc78c7bb508b7b7ccd4a39b8b",
       "audio": null
     },
     {
@@ -7041,7 +7042,7 @@
         "Le Chat perché"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "ecfba7be89f3ead26c3ac93f6ac47e5f0020f20e365ea63a7c49be263e4d1633",
+      "source_sha256": "ba762f04e58620954dfe942da1a2e55478ad4efc4e16b64ac020da41e96be102",
       "audio": null
     },
     {
@@ -7051,12 +7052,12 @@
       "question": 3,
       "enonce": "Combien coûte une place pour « La Maison du lac » ?",
       "labels": [
-        "14 francs",
-        "16 francs",
-        "10 francs"
+        "14 CHF",
+        "16 CHF",
+        "10 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "ecfba7be89f3ead26c3ac93f6ac47e5f0020f20e365ea63a7c49be263e4d1633",
+      "source_sha256": "ba762f04e58620954dfe942da1a2e55478ad4efc4e16b64ac020da41e96be102",
       "audio": null
     },
     {
@@ -7071,7 +7072,7 @@
         "En italien"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "ecfba7be89f3ead26c3ac93f6ac47e5f0020f20e365ea63a7c49be263e4d1633",
+      "source_sha256": "ba762f04e58620954dfe942da1a2e55478ad4efc4e16b64ac020da41e96be102",
       "audio": null
     },
     {
@@ -7086,7 +7087,7 @@
         "En italien"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "ecfba7be89f3ead26c3ac93f6ac47e5f0020f20e365ea63a7c49be263e4d1633",
+      "source_sha256": "ba762f04e58620954dfe942da1a2e55478ad4efc4e16b64ac020da41e96be102",
       "audio": null
     },
     {
@@ -7101,7 +7102,7 @@
         "Notre dernière valse"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "ecfba7be89f3ead26c3ac93f6ac47e5f0020f20e365ea63a7c49be263e4d1633",
+      "source_sha256": "ba762f04e58620954dfe942da1a2e55478ad4efc4e16b64ac020da41e96be102",
       "audio": null
     },
     {
@@ -7116,7 +7117,7 @@
         "Notre dernière valse"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "ecfba7be89f3ead26c3ac93f6ac47e5f0020f20e365ea63a7c49be263e4d1633",
+      "source_sha256": "ba762f04e58620954dfe942da1a2e55478ad4efc4e16b64ac020da41e96be102",
       "audio": null
     },
     {
@@ -7131,7 +7132,7 @@
         "En anglais"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "ecfba7be89f3ead26c3ac93f6ac47e5f0020f20e365ea63a7c49be263e4d1633",
+      "source_sha256": "ba762f04e58620954dfe942da1a2e55478ad4efc4e16b64ac020da41e96be102",
       "audio": null
     },
     {
@@ -7221,7 +7222,7 @@
         "Le samedi"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "9eb14aef4a9eb393627c75211d3c360f96c665e2b10f53ec5459a3f9da4d76b4",
+      "source_sha256": "9da307f99d618c7286506279fc76b613be24036501f8bd8a5888766f47e1466a",
       "audio": null
     },
     {
@@ -7236,7 +7237,7 @@
         "En écrivant à guitare@musique.ch"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "9eb14aef4a9eb393627c75211d3c360f96c665e2b10f53ec5459a3f9da4d76b4",
+      "source_sha256": "9da307f99d618c7286506279fc76b613be24036501f8bd8a5888766f47e1466a",
       "audio": null
     },
     {
@@ -7251,7 +7252,7 @@
         "Le lundi"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "9eb14aef4a9eb393627c75211d3c360f96c665e2b10f53ec5459a3f9da4d76b4",
+      "source_sha256": "9da307f99d618c7286506279fc76b613be24036501f8bd8a5888766f47e1466a",
       "audio": null
     },
     {
@@ -7266,7 +7267,7 @@
         "De 9 h à 11 h"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "9eb14aef4a9eb393627c75211d3c360f96c665e2b10f53ec5459a3f9da4d76b4",
+      "source_sha256": "9da307f99d618c7286506279fc76b613be24036501f8bd8a5888766f47e1466a",
       "audio": null
     },
     {
@@ -7276,12 +7277,12 @@
       "question": 6,
       "enonce": "Combien coûte le cours de cuisine ?",
       "labels": [
-        "60 francs",
-        "35 francs",
-        "45 francs"
+        "60 CHF",
+        "35 CHF",
+        "45 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "9eb14aef4a9eb393627c75211d3c360f96c665e2b10f53ec5459a3f9da4d76b4",
+      "source_sha256": "9da307f99d618c7286506279fc76b613be24036501f8bd8a5888766f47e1466a",
       "audio": null
     },
     {
@@ -7296,7 +7297,7 @@
         "Le samedi soir"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "9eb14aef4a9eb393627c75211d3c360f96c665e2b10f53ec5459a3f9da4d76b4",
+      "source_sha256": "9da307f99d618c7286506279fc76b613be24036501f8bd8a5888766f47e1466a",
       "audio": null
     },
     {
@@ -7306,12 +7307,12 @@
       "question": 9,
       "enonce": "Combien coûte un cours de guitare ?",
       "labels": [
-        "35 francs",
-        "45 francs",
-        "60 francs"
+        "35 CHF",
+        "45 CHF",
+        "60 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "9eb14aef4a9eb393627c75211d3c360f96c665e2b10f53ec5459a3f9da4d76b4",
+      "source_sha256": "9da307f99d618c7286506279fc76b613be24036501f8bd8a5888766f47e1466a",
       "audio": null
     },
     {
@@ -7326,7 +7327,7 @@
         "Une villa"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "08b2c2f2b0cbf8b7651d3c29eebd554c5e054a7c9b9a1c6165f1070b0458ceaa",
+      "source_sha256": "99e95b4e1f040547d252fadd11e6fb325246e3e8b395ae586cf583fa036d0a4f",
       "audio": null
     },
     {
@@ -7341,7 +7342,7 @@
         "Le jeudi"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "08b2c2f2b0cbf8b7651d3c29eebd554c5e054a7c9b9a1c6165f1070b0458ceaa",
+      "source_sha256": "99e95b4e1f040547d252fadd11e6fb325246e3e8b395ae586cf583fa036d0a4f",
       "audio": null
     },
     {
@@ -7356,7 +7357,7 @@
         "Les Colombes"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "08b2c2f2b0cbf8b7651d3c29eebd554c5e054a7c9b9a1c6165f1070b0458ceaa",
+      "source_sha256": "99e95b4e1f040547d252fadd11e6fb325246e3e8b395ae586cf583fa036d0a4f",
       "audio": null
     },
     {
@@ -7371,7 +7372,7 @@
         "Un plateau en chambre"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "08b2c2f2b0cbf8b7651d3c29eebd554c5e054a7c9b9a1c6165f1070b0458ceaa",
+      "source_sha256": "99e95b4e1f040547d252fadd11e6fb325246e3e8b395ae586cf583fa036d0a4f",
       "audio": null
     },
     {
@@ -7381,12 +7382,12 @@
       "question": 8,
       "enonce": "Combien coûte le petit-déjeuner ?",
       "labels": [
-        "12 francs",
-        "10 francs",
-        "17 francs"
+        "12 CHF",
+        "10 CHF",
+        "17 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "08b2c2f2b0cbf8b7651d3c29eebd554c5e054a7c9b9a1c6165f1070b0458ceaa",
+      "source_sha256": "99e95b4e1f040547d252fadd11e6fb325246e3e8b395ae586cf583fa036d0a4f",
       "audio": null
     },
     {
@@ -7401,7 +7402,7 @@
         "La pharmacie des Alpes"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "0403d24018ffe983cca59c286e1d7fcb694bb42a7a669a944ce4ab19276d036c",
+      "source_sha256": "1f7535402b982a19d183fa08b73d754a9e66a700332d9e5c3f84ae536ef34bf3",
       "audio": null
     },
     {
@@ -7416,7 +7417,7 @@
         "Un demi-kilo"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "0403d24018ffe983cca59c286e1d7fcb694bb42a7a669a944ce4ab19276d036c",
+      "source_sha256": "1f7535402b982a19d183fa08b73d754a9e66a700332d9e5c3f84ae536ef34bf3",
       "audio": null
     },
     {
@@ -7431,7 +7432,7 @@
         "Lundi"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "0403d24018ffe983cca59c286e1d7fcb694bb42a7a669a944ce4ab19276d036c",
+      "source_sha256": "1f7535402b982a19d183fa08b73d754a9e66a700332d9e5c3f84ae536ef34bf3",
       "audio": null
     },
     {
@@ -7441,12 +7442,12 @@
       "question": 8,
       "enonce": "Combien coûte la réparation du téléphone ?",
       "labels": [
-        "60 francs",
-        "30 francs",
-        "90 francs"
+        "60 CHF",
+        "30 CHF",
+        "90 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "0403d24018ffe983cca59c286e1d7fcb694bb42a7a669a944ce4ab19276d036c",
+      "source_sha256": "1f7535402b982a19d183fa08b73d754a9e66a700332d9e5c3f84ae536ef34bf3",
       "audio": null
     },
     {
@@ -7461,7 +7462,7 @@
         "De 12 à 16 ans"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "b47c9de896c9c59b22511eeaaa35a23244fd6d63e74f0bd2ce1e7cf7c2b29af8",
+      "source_sha256": "9a2477fc5d7eeadf1db6baffa9203a79cebc2aab0980ba41d65686262ed86f77",
       "audio": null
     },
     {
@@ -7476,7 +7477,7 @@
         "Le samedi après-midi"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "b47c9de896c9c59b22511eeaaa35a23244fd6d63e74f0bd2ce1e7cf7c2b29af8",
+      "source_sha256": "9a2477fc5d7eeadf1db6baffa9203a79cebc2aab0980ba41d65686262ed86f77",
       "audio": null
     },
     {
@@ -7491,7 +7492,7 @@
         "Par courriel à resto@lac.ch"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "b47c9de896c9c59b22511eeaaa35a23244fd6d63e74f0bd2ce1e7cf7c2b29af8",
+      "source_sha256": "9a2477fc5d7eeadf1db6baffa9203a79cebc2aab0980ba41d65686262ed86f77",
       "audio": null
     },
     {
@@ -7506,7 +7507,7 @@
         "Vendeur ou vendeuse"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "b47c9de896c9c59b22511eeaaa35a23244fd6d63e74f0bd2ce1e7cf7c2b29af8",
+      "source_sha256": "9a2477fc5d7eeadf1db6baffa9203a79cebc2aab0980ba41d65686262ed86f77",
       "audio": null
     },
     {
@@ -7516,12 +7517,12 @@
       "question": 6,
       "enonce": "Quel est le salaire horaire de cet emploi ?",
       "labels": [
-        "22 francs",
-        "12 francs",
-        "32 francs"
+        "22 CHF",
+        "12 CHF",
+        "32 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "b47c9de896c9c59b22511eeaaa35a23244fd6d63e74f0bd2ce1e7cf7c2b29af8",
+      "source_sha256": "9a2477fc5d7eeadf1db6baffa9203a79cebc2aab0980ba41d65686262ed86f77",
       "audio": null
     },
     {
@@ -7536,7 +7537,7 @@
         "Un certificat médical"
       ],
       "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "b47c9de896c9c59b22511eeaaa35a23244fd6d63e74f0bd2ce1e7cf7c2b29af8",
+      "source_sha256": "9a2477fc5d7eeadf1db6baffa9203a79cebc2aab0980ba41d65686262ed86f77",
       "audio": null
     },
     {
@@ -7551,7 +7552,7 @@
         "emploi@lac.ch"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "b47c9de896c9c59b22511eeaaa35a23244fd6d63e74f0bd2ce1e7cf7c2b29af8",
+      "source_sha256": "9a2477fc5d7eeadf1db6baffa9203a79cebc2aab0980ba41d65686262ed86f77",
       "audio": null
     },
     {
@@ -7566,7 +7567,7 @@
         "2020"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "4899ac17d2cdac41cb08ca09fe056a931589cc62c6bd3e8d55827206bad67cec",
+      "source_sha256": "7541eb05b0f5bb726d09eafb7e16e620fed9d561c89557a8b9ecb76ece824b9b",
       "audio": null
     },
     {
@@ -7581,7 +7582,7 @@
         "20 000 km"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "4899ac17d2cdac41cb08ca09fe056a931589cc62c6bd3e8d55827206bad67cec",
+      "source_sha256": "7541eb05b0f5bb726d09eafb7e16e620fed9d561c89557a8b9ecb76ece824b9b",
       "audio": null
     },
     {
@@ -7591,12 +7592,12 @@
       "question": 4,
       "enonce": "Combien coûte le véhicule ?",
       "labels": [
-        "1 200 francs",
-        "2 100 francs",
-        "12 000 francs"
+        "1 200 CHF",
+        "2 100 CHF",
+        "12 000 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "4899ac17d2cdac41cb08ca09fe056a931589cc62c6bd3e8d55827206bad67cec",
+      "source_sha256": "7541eb05b0f5bb726d09eafb7e16e620fed9d561c89557a8b9ecb76ece824b9b",
       "audio": null
     },
     {
@@ -7611,7 +7612,7 @@
         "Genève"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "4899ac17d2cdac41cb08ca09fe056a931589cc62c6bd3e8d55827206bad67cec",
+      "source_sha256": "7541eb05b0f5bb726d09eafb7e16e620fed9d561c89557a8b9ecb76ece824b9b",
       "audio": null
     },
     {
@@ -7626,7 +7627,7 @@
         "Un lapereau"
       ],
       "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "4899ac17d2cdac41cb08ca09fe056a931589cc62c6bd3e8d55827206bad67cec",
+      "source_sha256": "7541eb05b0f5bb726d09eafb7e16e620fed9d561c89557a8b9ecb76ece824b9b",
       "audio": null
     },
     {
@@ -7641,7 +7642,7 @@
         "6 mois"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "4899ac17d2cdac41cb08ca09fe056a931589cc62c6bd3e8d55827206bad67cec",
+      "source_sha256": "7541eb05b0f5bb726d09eafb7e16e620fed9d561c89557a8b9ecb76ece824b9b",
       "audio": null
     },
     {
@@ -7651,12 +7652,12 @@
       "question": 8,
       "enonce": "Combien coûte une heure de piano ?",
       "labels": [
-        "28 francs",
-        "18 francs",
-        "38 francs"
+        "28 CHF",
+        "18 CHF",
+        "38 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "4899ac17d2cdac41cb08ca09fe056a931589cc62c6bd3e8d55827206bad67cec",
+      "source_sha256": "7541eb05b0f5bb726d09eafb7e16e620fed9d561c89557a8b9ecb76ece824b9b",
       "audio": null
     },
     {
@@ -7821,7 +7822,7 @@
         "Nourrir un chat"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "ee347d72ed1a5a999d4ba083d9bb3e2d46256a9debc06b248412153bb28b0875",
+      "source_sha256": "2ac21ace739677e95e85faa0f7ef500e0997a7d5f902118309bab4a72298438f",
       "audio": null
     },
     {
@@ -7836,7 +7837,7 @@
         "Genève"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "ee347d72ed1a5a999d4ba083d9bb3e2d46256a9debc06b248412153bb28b0875",
+      "source_sha256": "2ac21ace739677e95e85faa0f7ef500e0997a7d5f902118309bab4a72298438f",
       "audio": null
     },
     {
@@ -7846,12 +7847,12 @@
       "question": 3,
       "enonce": "Quel est le salaire pour une heure de travail ?",
       "labels": [
-        "20 francs",
-        "10 francs",
-        "30 francs"
+        "20 CHF",
+        "10 CHF",
+        "30 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "ee347d72ed1a5a999d4ba083d9bb3e2d46256a9debc06b248412153bb28b0875",
+      "source_sha256": "2ac21ace739677e95e85faa0f7ef500e0997a7d5f902118309bab4a72298438f",
       "audio": null
     },
     {
@@ -7866,7 +7867,7 @@
         "Pour vacances"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "ee347d72ed1a5a999d4ba083d9bb3e2d46256a9debc06b248412153bb28b0875",
+      "source_sha256": "2ac21ace739677e95e85faa0f7ef500e0997a7d5f902118309bab4a72298438f",
       "audio": null
     },
     {
@@ -7881,7 +7882,7 @@
         "Mercredi"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "ee347d72ed1a5a999d4ba083d9bb3e2d46256a9debc06b248412153bb28b0875",
+      "source_sha256": "2ac21ace739677e95e85faa0f7ef500e0997a7d5f902118309bab4a72298438f",
       "audio": null
     },
     {
@@ -7896,7 +7897,7 @@
         "90 m²"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "b61e5ff8e9f621d13fde5a9a1d23c288bce80edb3da059e6f7d57518de70c95d",
+      "source_sha256": "ac447eb522f7e43e5bca212c5a62c2bc0e1c022da3b8844cb2d9e14ae8ba6206",
       "audio": null
     },
     {
@@ -7906,12 +7907,12 @@
       "question": 3,
       "enonce": "Combien coûte l'appartement ?",
       "labels": [
-        "450 000 francs",
-        "350 000 francs",
-        "540 000 francs"
+        "450 000 CHF",
+        "350 000 CHF",
+        "540 000 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "b61e5ff8e9f621d13fde5a9a1d23c288bce80edb3da059e6f7d57518de70c95d",
+      "source_sha256": "ac447eb522f7e43e5bca212c5a62c2bc0e1c022da3b8844cb2d9e14ae8ba6206",
       "audio": null
     },
     {
@@ -7926,7 +7927,7 @@
         "Le dimanche"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "b61e5ff8e9f621d13fde5a9a1d23c288bce80edb3da059e6f7d57518de70c95d",
+      "source_sha256": "ac447eb522f7e43e5bca212c5a62c2bc0e1c022da3b8844cb2d9e14ae8ba6206",
       "audio": null
     },
     {
@@ -7936,12 +7937,12 @@
       "question": 6,
       "enonce": "Quel est le salaire pour une soirée de baby-sitting ?",
       "labels": [
-        "25 francs",
-        "20 francs",
-        "35 francs"
+        "25 CHF",
+        "20 CHF",
+        "35 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "b61e5ff8e9f621d13fde5a9a1d23c288bce80edb3da059e6f7d57518de70c95d",
+      "source_sha256": "ac447eb522f7e43e5bca212c5a62c2bc0e1c022da3b8844cb2d9e14ae8ba6206",
       "audio": null
     },
     {
@@ -7956,7 +7957,7 @@
         "Tous les samedis"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "b61e5ff8e9f621d13fde5a9a1d23c288bce80edb3da059e6f7d57518de70c95d",
+      "source_sha256": "ac447eb522f7e43e5bca212c5a62c2bc0e1c022da3b8844cb2d9e14ae8ba6206",
       "audio": null
     },
     {
@@ -7966,12 +7967,12 @@
       "question": 8,
       "enonce": "Combien coûte la réparation d'un jouet ?",
       "labels": [
-        "5 francs",
-        "10 francs",
-        "15 francs"
+        "5 CHF",
+        "10 CHF",
+        "15 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "b61e5ff8e9f621d13fde5a9a1d23c288bce80edb3da059e6f7d57518de70c95d",
+      "source_sha256": "ac447eb522f7e43e5bca212c5a62c2bc0e1c022da3b8844cb2d9e14ae8ba6206",
       "audio": null
     },
     {
@@ -8031,7 +8032,7 @@
         "Les Chamois"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "287c6ad992bafea585a25daccead7f5fb557808421308f54fc3011e4b259e7d4",
+      "source_sha256": "fda2187e520b02fa8867eb0a0c3e52f5b4fd5b7a81d9b517526c9f229bf3a8a5",
       "audio": null
     },
     {
@@ -8046,7 +8047,7 @@
         "Le rock"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "287c6ad992bafea585a25daccead7f5fb557808421308f54fc3011e4b259e7d4",
+      "source_sha256": "fda2187e520b02fa8867eb0a0c3e52f5b4fd5b7a81d9b517526c9f229bf3a8a5",
       "audio": null
     },
     {
@@ -8061,7 +8062,7 @@
         "Le samedi 19 septembre"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "287c6ad992bafea585a25daccead7f5fb557808421308f54fc3011e4b259e7d4",
+      "source_sha256": "fda2187e520b02fa8867eb0a0c3e52f5b4fd5b7a81d9b517526c9f229bf3a8a5",
       "audio": null
     },
     {
@@ -8071,12 +8072,12 @@
       "question": 5,
       "enonce": "Combien coûte une place ?",
       "labels": [
-        "18 francs",
-        "12 francs",
-        "28 francs"
+        "18 CHF",
+        "12 CHF",
+        "28 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "287c6ad992bafea585a25daccead7f5fb557808421308f54fc3011e4b259e7d4",
+      "source_sha256": "fda2187e520b02fa8867eb0a0c3e52f5b4fd5b7a81d9b517526c9f229bf3a8a5",
       "audio": null
     },
     {
@@ -8091,7 +8092,7 @@
         "Le Lac"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "287c6ad992bafea585a25daccead7f5fb557808421308f54fc3011e4b259e7d4",
+      "source_sha256": "fda2187e520b02fa8867eb0a0c3e52f5b4fd5b7a81d9b517526c9f229bf3a8a5",
       "audio": null
     },
     {
@@ -8106,7 +8107,7 @@
         "Le dimanche"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "287c6ad992bafea585a25daccead7f5fb557808421308f54fc3011e4b259e7d4",
+      "source_sha256": "fda2187e520b02fa8867eb0a0c3e52f5b4fd5b7a81d9b517526c9f229bf3a8a5",
       "audio": null
     },
     {
@@ -8121,7 +8122,7 @@
         "L'italien"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "7d949526f9241772be87e02169aff9e0d084476603151cd535bb8779ffe3e91a",
+      "source_sha256": "3231220382798ab2c16321e59caac62f3161bd84ff916fddc0acba624a68590d",
       "audio": null
     },
     {
@@ -8136,7 +8137,7 @@
         "Le mercredi et le samedi"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "7d949526f9241772be87e02169aff9e0d084476603151cd535bb8779ffe3e91a",
+      "source_sha256": "3231220382798ab2c16321e59caac62f3161bd84ff916fddc0acba624a68590d",
       "audio": null
     },
     {
@@ -8146,12 +8147,12 @@
       "question": 4,
       "enonce": "Combien coûte une heure de cours ?",
       "labels": [
-        "20 francs",
-        "12 francs",
-        "30 francs"
+        "20 CHF",
+        "12 CHF",
+        "30 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "7d949526f9241772be87e02169aff9e0d084476603151cd535bb8779ffe3e91a",
+      "source_sha256": "3231220382798ab2c16321e59caac62f3161bd84ff916fddc0acba624a68590d",
       "audio": null
     },
     {
@@ -8166,7 +8167,7 @@
         "Le lac de Bienne"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "7d949526f9241772be87e02169aff9e0d084476603151cd535bb8779ffe3e91a",
+      "source_sha256": "3231220382798ab2c16321e59caac62f3161bd84ff916fddc0acba624a68590d",
       "audio": null
     },
     {
@@ -8177,11 +8178,11 @@
       "enonce": "Combien coûtent les balades en bateau ?",
       "labels": [
         "Elles sont gratuites",
-        "Elles coûtent 12 francs",
-        "Elles coûtent 20 francs"
+        "Elles coûtent 12 CHF",
+        "Elles coûtent 20 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "7d949526f9241772be87e02169aff9e0d084476603151cd535bb8779ffe3e91a",
+      "source_sha256": "3231220382798ab2c16321e59caac62f3161bd84ff916fddc0acba624a68590d",
       "audio": null
     },
     {
@@ -8196,7 +8197,7 @@
         "Le 15 septembre"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "7d949526f9241772be87e02169aff9e0d084476603151cd535bb8779ffe3e91a",
+      "source_sha256": "3231220382798ab2c16321e59caac62f3161bd84ff916fddc0acba624a68590d",
       "audio": null
     },
     {
@@ -8211,7 +8212,7 @@
         "Uniquement sur place"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "7d949526f9241772be87e02169aff9e0d084476603151cd535bb8779ffe3e91a",
+      "source_sha256": "3231220382798ab2c16321e59caac62f3161bd84ff916fddc0acba624a68590d",
       "audio": null
     },
     {
@@ -8226,7 +8227,7 @@
         "Dimanche soir"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "e986154d4b94283701bf6bb0818b0147e94e8e30b9ac0f97cdc848d8a4cb4896",
+      "source_sha256": "f67bbef05c2050475c26d9ee513e8baf3697f11a5f1e6b1c65c3a727cf2997d7",
       "audio": null
     },
     {
@@ -8241,7 +8242,7 @@
         "20 conteurs"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "e986154d4b94283701bf6bb0818b0147e94e8e30b9ac0f97cdc848d8a4cb4896",
+      "source_sha256": "f67bbef05c2050475c26d9ee513e8baf3697f11a5f1e6b1c65c3a727cf2997d7",
       "audio": null
     },
     {
@@ -8252,11 +8253,11 @@
       "enonce": "Combien coûte la Nuit du conte ?",
       "labels": [
         "Elle est gratuite",
-        "Elle coûte 15 francs",
-        "Elle coûte 30 francs"
+        "Elle coûte 15 CHF",
+        "Elle coûte 30 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "e986154d4b94283701bf6bb0818b0147e94e8e30b9ac0f97cdc848d8a4cb4896",
+      "source_sha256": "f67bbef05c2050475c26d9ee513e8baf3697f11a5f1e6b1c65c3a727cf2997d7",
       "audio": null
     },
     {
@@ -8271,7 +8272,7 @@
         "Genève et Vevey"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "e986154d4b94283701bf6bb0818b0147e94e8e30b9ac0f97cdc848d8a4cb4896",
+      "source_sha256": "f67bbef05c2050475c26d9ee513e8baf3697f11a5f1e6b1c65c3a727cf2997d7",
       "audio": null
     },
     {
@@ -8281,12 +8282,12 @@
       "question": 6,
       "enonce": "Combien coûte l'entrée du match ?",
       "labels": [
-        "30 francs",
-        "15 francs",
-        "20 francs"
+        "30 CHF",
+        "15 CHF",
+        "20 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "e986154d4b94283701bf6bb0818b0147e94e8e30b9ac0f97cdc848d8a4cb4896",
+      "source_sha256": "f67bbef05c2050475c26d9ee513e8baf3697f11a5f1e6b1c65c3a727cf2997d7",
       "audio": null
     },
     {
@@ -8301,7 +8302,7 @@
         "Le samedi"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "e986154d4b94283701bf6bb0818b0147e94e8e30b9ac0f97cdc848d8a4cb4896",
+      "source_sha256": "f67bbef05c2050475c26d9ee513e8baf3697f11a5f1e6b1c65c3a727cf2997d7",
       "audio": null
     },
     {
@@ -8312,11 +8313,11 @@
       "enonce": "Combien coûte le cours d'informatique ?",
       "labels": [
         "Il est gratuit",
-        "Il coûte 15 francs",
-        "Il coûte 30 francs"
+        "Il coûte 15 CHF",
+        "Il coûte 30 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "e986154d4b94283701bf6bb0818b0147e94e8e30b9ac0f97cdc848d8a4cb4896",
+      "source_sha256": "f67bbef05c2050475c26d9ee513e8baf3697f11a5f1e6b1c65c3a727cf2997d7",
       "audio": null
     },
     {
@@ -8331,7 +8332,7 @@
         "Le Miracle"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "7a5514673265eb5b841d7487ed6da67f771efde00256fd976dbe206523861288",
+      "source_sha256": "4bc208fcd3faec9ff0ff685466e88b117a7c309bbe5828320b24d099e9f71c93",
       "audio": null
     },
     {
@@ -8341,12 +8342,12 @@
       "question": 2,
       "enonce": "Combien coûte le menu complet ?",
       "labels": [
-        "16 francs",
-        "12 francs",
-        "4 francs"
+        "16 CHF",
+        "12 CHF",
+        "4 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "7a5514673265eb5b841d7487ed6da67f771efde00256fd976dbe206523861288",
+      "source_sha256": "4bc208fcd3faec9ff0ff685466e88b117a7c309bbe5828320b24d099e9f71c93",
       "audio": null
     },
     {
@@ -8356,12 +8357,12 @@
       "question": 3,
       "enonce": "Combien coûte le plat seul ?",
       "labels": [
-        "12 francs",
-        "16 francs",
-        "4 francs"
+        "12 CHF",
+        "16 CHF",
+        "4 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "7a5514673265eb5b841d7487ed6da67f771efde00256fd976dbe206523861288",
+      "source_sha256": "4bc208fcd3faec9ff0ff685466e88b117a7c309bbe5828320b24d099e9f71c93",
       "audio": null
     },
     {
@@ -8371,12 +8372,12 @@
       "question": 4,
       "enonce": "Combien coûte le dessert ?",
       "labels": [
-        "4 francs",
-        "12 francs",
-        "16 francs"
+        "4 CHF",
+        "12 CHF",
+        "16 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "7a5514673265eb5b841d7487ed6da67f771efde00256fd976dbe206523861288",
+      "source_sha256": "4bc208fcd3faec9ff0ff685466e88b117a7c309bbe5828320b24d099e9f71c93",
       "audio": null
     },
     {
@@ -8391,7 +8392,7 @@
         "Les Alpes au printemps"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "7a5514673265eb5b841d7487ed6da67f771efde00256fd976dbe206523861288",
+      "source_sha256": "4bc208fcd3faec9ff0ff685466e88b117a7c309bbe5828320b24d099e9f71c93",
       "audio": null
     },
     {
@@ -8406,7 +8407,7 @@
         "Une émission de radio"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "7a5514673265eb5b841d7487ed6da67f771efde00256fd976dbe206523861288",
+      "source_sha256": "4bc208fcd3faec9ff0ff685466e88b117a7c309bbe5828320b24d099e9f71c93",
       "audio": null
     },
     {
@@ -8421,7 +8422,7 @@
         "La chaîne 4"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "7a5514673265eb5b841d7487ed6da67f771efde00256fd976dbe206523861288",
+      "source_sha256": "4bc208fcd3faec9ff0ff685466e88b117a7c309bbe5828320b24d099e9f71c93",
       "audio": null
     },
     {
@@ -8436,7 +8437,7 @@
         "Un mois"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "0fbd2614b819f5cef42cb1e716fe6c6b87be2366f010eeaefd2ffa58cef76ae8",
+      "source_sha256": "5d957fc8abd49a92b437f2655791217a7e0fa8a8a86d2aee46f39e56352caac7",
       "audio": null
     },
     {
@@ -8451,7 +8452,7 @@
         "Six personnes"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "0fbd2614b819f5cef42cb1e716fe6c6b87be2366f010eeaefd2ffa58cef76ae8",
+      "source_sha256": "5d957fc8abd49a92b437f2655791217a7e0fa8a8a86d2aee46f39e56352caac7",
       "audio": null
     },
     {
@@ -8461,12 +8462,12 @@
       "question": 5,
       "enonce": "Quel est le prix de la location ?",
       "labels": [
-        "480 francs",
-        "380 francs",
-        "580 francs"
+        "480 CHF",
+        "380 CHF",
+        "580 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "0fbd2614b819f5cef42cb1e716fe6c6b87be2366f010eeaefd2ffa58cef76ae8",
+      "source_sha256": "5d957fc8abd49a92b437f2655791217a7e0fa8a8a86d2aee46f39e56352caac7",
       "audio": null
     },
     {
@@ -8481,7 +8482,7 @@
         "Une armoire et deux chaises"
       ],
       "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "0fbd2614b819f5cef42cb1e716fe6c6b87be2366f010eeaefd2ffa58cef76ae8",
+      "source_sha256": "5d957fc8abd49a92b437f2655791217a7e0fa8a8a86d2aee46f39e56352caac7",
       "audio": null
     },
     {
@@ -8491,12 +8492,12 @@
       "question": 7,
       "enonce": "Quel est le prix des meubles ?",
       "labels": [
-        "300 francs",
-        "200 francs",
-        "400 francs"
+        "300 CHF",
+        "200 CHF",
+        "400 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "0fbd2614b819f5cef42cb1e716fe6c6b87be2366f010eeaefd2ffa58cef76ae8",
+      "source_sha256": "5d957fc8abd49a92b437f2655791217a7e0fa8a8a86d2aee46f39e56352caac7",
       "audio": null
     },
     {
@@ -8511,7 +8512,7 @@
         "Le 10 octobre"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "a5e1387255b0197fe6e5eaf28c9ca9edc717dca6a750a2e6437194cfceb737d3",
+      "source_sha256": "a84d9adda69f2fc49aa45cbb84163280bdb286d4271bbcd544e7128122169e3b",
       "audio": null
     },
     {
@@ -8526,7 +8527,7 @@
         "Le 3 septembre"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "a5e1387255b0197fe6e5eaf28c9ca9edc717dca6a750a2e6437194cfceb737d3",
+      "source_sha256": "a84d9adda69f2fc49aa45cbb84163280bdb286d4271bbcd544e7128122169e3b",
       "audio": null
     },
     {
@@ -8536,12 +8537,12 @@
       "question": 4,
       "enonce": "Combien coûte l'entrée de la patinoire pour un adulte ?",
       "labels": [
-        "8 francs",
-        "4 francs",
-        "13 francs"
+        "8 CHF",
+        "4 CHF",
+        "13 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "a5e1387255b0197fe6e5eaf28c9ca9edc717dca6a750a2e6437194cfceb737d3",
+      "source_sha256": "a84d9adda69f2fc49aa45cbb84163280bdb286d4271bbcd544e7128122169e3b",
       "audio": null
     },
     {
@@ -8551,12 +8552,12 @@
       "question": 5,
       "enonce": "Combien coûte l'entrée de la patinoire pour un enfant ?",
       "labels": [
-        "4 francs",
-        "8 francs",
-        "13 francs"
+        "4 CHF",
+        "8 CHF",
+        "13 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "a5e1387255b0197fe6e5eaf28c9ca9edc717dca6a750a2e6437194cfceb737d3",
+      "source_sha256": "a84d9adda69f2fc49aa45cbb84163280bdb286d4271bbcd544e7128122169e3b",
       "audio": null
     },
     {
@@ -8571,7 +8572,7 @@
         "Une brasserie"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "a5e1387255b0197fe6e5eaf28c9ca9edc717dca6a750a2e6437194cfceb737d3",
+      "source_sha256": "a84d9adda69f2fc49aa45cbb84163280bdb286d4271bbcd544e7128122169e3b",
       "audio": null
     },
     {
@@ -8586,7 +8587,7 @@
         "Le 10 octobre"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "a5e1387255b0197fe6e5eaf28c9ca9edc717dca6a750a2e6437194cfceb737d3",
+      "source_sha256": "a84d9adda69f2fc49aa45cbb84163280bdb286d4271bbcd544e7128122169e3b",
       "audio": null
     },
     {
@@ -8596,12 +8597,12 @@
       "question": 8,
       "enonce": "Combien coûte le menu spécial de la crêperie ?",
       "labels": [
-        "13 francs",
-        "8 francs",
-        "14 francs"
+        "13 CHF",
+        "8 CHF",
+        "14 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "a5e1387255b0197fe6e5eaf28c9ca9edc717dca6a750a2e6437194cfceb737d3",
+      "source_sha256": "a84d9adda69f2fc49aa45cbb84163280bdb286d4271bbcd544e7128122169e3b",
       "audio": null
     },
     {
@@ -8676,7 +8677,7 @@
         "Des fruits et des légumes"
       ],
       "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "7c5d3371c212a8dfa00f1bec8f9087f7aa1d8dcc5b97a4ddaae9cb0db01fefed",
+      "source_sha256": "a7a7a4594bc2a1d2a9ce9055fcf1c1104d4b68a2b6271e967a305e65f1f76416",
       "audio": null
     },
     {
@@ -8691,7 +8692,7 @@
         "Des prix uniques pour tous les produits"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "7c5d3371c212a8dfa00f1bec8f9087f7aa1d8dcc5b97a4ddaae9cb0db01fefed",
+      "source_sha256": "a7a7a4594bc2a1d2a9ce9055fcf1c1104d4b68a2b6271e967a305e65f1f76416",
       "audio": null
     },
     {
@@ -8706,7 +8707,7 @@
         "Delémont"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "7c5d3371c212a8dfa00f1bec8f9087f7aa1d8dcc5b97a4ddaae9cb0db01fefed",
+      "source_sha256": "a7a7a4594bc2a1d2a9ce9055fcf1c1104d4b68a2b6271e967a305e65f1f76416",
       "audio": null
     },
     {
@@ -8721,7 +8722,7 @@
         "Des paniers de fruits"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "7c5d3371c212a8dfa00f1bec8f9087f7aa1d8dcc5b97a4ddaae9cb0db01fefed",
+      "source_sha256": "a7a7a4594bc2a1d2a9ce9055fcf1c1104d4b68a2b6271e967a305e65f1f76416",
       "audio": null
     },
     {
@@ -8731,12 +8732,12 @@
       "question": 7,
       "enonce": "Quelle est la valeur des bons à gagner ?",
       "labels": [
-        "30 francs",
-        "10 francs",
-        "20 francs"
+        "30 CHF",
+        "10 CHF",
+        "20 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "7c5d3371c212a8dfa00f1bec8f9087f7aa1d8dcc5b97a4ddaae9cb0db01fefed",
+      "source_sha256": "a7a7a4594bc2a1d2a9ce9055fcf1c1104d4b68a2b6271e967a305e65f1f76416",
       "audio": null
     },
     {
@@ -8751,7 +8752,7 @@
         "Le 30"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "7c5d3371c212a8dfa00f1bec8f9087f7aa1d8dcc5b97a4ddaae9cb0db01fefed",
+      "source_sha256": "a7a7a4594bc2a1d2a9ce9055fcf1c1104d4b68a2b6271e967a305e65f1f76416",
       "audio": null
     },
     {
@@ -8826,7 +8827,7 @@
         "En panne"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "7d4de61bc629d910eb7e27c290cdecf7508e92a0d307357efc99c5f0c8e05a07",
+      "source_sha256": "96c8c3c0b43af2b1d00120cd8cf56aa885ae3a62a8011e732880002b49c2c31f",
       "audio": null
     },
     {
@@ -8836,12 +8837,12 @@
       "question": 3,
       "enonce": "Combien coûte l'appareil ?",
       "labels": [
-        "200 francs",
-        "100 francs",
-        "300 francs"
+        "200 CHF",
+        "100 CHF",
+        "300 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "7d4de61bc629d910eb7e27c290cdecf7508e92a0d307357efc99c5f0c8e05a07",
+      "source_sha256": "96c8c3c0b43af2b1d00120cd8cf56aa885ae3a62a8011e732880002b49c2c31f",
       "audio": null
     },
     {
@@ -8856,7 +8857,7 @@
         "Toby"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "7d4de61bc629d910eb7e27c290cdecf7508e92a0d307357efc99c5f0c8e05a07",
+      "source_sha256": "96c8c3c0b43af2b1d00120cd8cf56aa885ae3a62a8011e732880002b49c2c31f",
       "audio": null
     },
     {
@@ -8871,7 +8872,7 @@
         "Quatre ans"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "7d4de61bc629d910eb7e27c290cdecf7508e92a0d307357efc99c5f0c8e05a07",
+      "source_sha256": "96c8c3c0b43af2b1d00120cd8cf56aa885ae3a62a8011e732880002b49c2c31f",
       "audio": null
     },
     {
@@ -8886,7 +8887,7 @@
         "Sophie"
       ],
       "status": "text_required_person_role_or_diagnosis",
-      "source_sha256": "7d4de61bc629d910eb7e27c290cdecf7508e92a0d307357efc99c5f0c8e05a07",
+      "source_sha256": "96c8c3c0b43af2b1d00120cd8cf56aa885ae3a62a8011e732880002b49c2c31f",
       "audio": null
     },
     {
@@ -8901,7 +8902,7 @@
         "Le 3 novembre"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "dbf74eb1c89a5af8075d9729303da7a4246220d6e659bcb89f084bd4e5a8dcfc",
+      "source_sha256": "9dd5f2ca9635dc11c2c93d698e1484009802f13108eafb25d5f69ba8cc3feacd",
       "audio": null
     },
     {
@@ -8916,7 +8917,7 @@
         "Berne"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "dbf74eb1c89a5af8075d9729303da7a4246220d6e659bcb89f084bd4e5a8dcfc",
+      "source_sha256": "9dd5f2ca9635dc11c2c93d698e1484009802f13108eafb25d5f69ba8cc3feacd",
       "audio": null
     },
     {
@@ -8931,7 +8932,7 @@
         "Bleu et jaune"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "dbf74eb1c89a5af8075d9729303da7a4246220d6e659bcb89f084bd4e5a8dcfc",
+      "source_sha256": "9dd5f2ca9635dc11c2c93d698e1484009802f13108eafb25d5f69ba8cc3feacd",
       "audio": null
     },
     {
@@ -8946,7 +8947,7 @@
         "300 personnes"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "dbf74eb1c89a5af8075d9729303da7a4246220d6e659bcb89f084bd4e5a8dcfc",
+      "source_sha256": "9dd5f2ca9635dc11c2c93d698e1484009802f13108eafb25d5f69ba8cc3feacd",
       "audio": null
     },
     {
@@ -8961,7 +8962,7 @@
         "Aucun accès wifi"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "dbf74eb1c89a5af8075d9729303da7a4246220d6e659bcb89f084bd4e5a8dcfc",
+      "source_sha256": "9dd5f2ca9635dc11c2c93d698e1484009802f13108eafb25d5f69ba8cc3feacd",
       "audio": null
     },
     {
@@ -8976,7 +8977,7 @@
         "Son appareil ménager"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "dbf74eb1c89a5af8075d9729303da7a4246220d6e659bcb89f084bd4e5a8dcfc",
+      "source_sha256": "9dd5f2ca9635dc11c2c93d698e1484009802f13108eafb25d5f69ba8cc3feacd",
       "audio": null
     },
     {
@@ -8991,7 +8992,7 @@
         "La ligne 10"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "dbf74eb1c89a5af8075d9729303da7a4246220d6e659bcb89f084bd4e5a8dcfc",
+      "source_sha256": "9dd5f2ca9635dc11c2c93d698e1484009802f13108eafb25d5f69ba8cc3feacd",
       "audio": null
     },
     {
@@ -9001,12 +9002,12 @@
       "question": 8,
       "enonce": "Combien coûte un trajet ?",
       "labels": [
-        "3 francs",
-        "2 francs",
-        "5 francs"
+        "3 CHF",
+        "2 CHF",
+        "5 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "dbf74eb1c89a5af8075d9729303da7a4246220d6e659bcb89f084bd4e5a8dcfc",
+      "source_sha256": "9dd5f2ca9635dc11c2c93d698e1484009802f13108eafb25d5f69ba8cc3feacd",
       "audio": null
     },
     {
@@ -9021,7 +9022,7 @@
         "Un café"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "dbf74eb1c89a5af8075d9729303da7a4246220d6e659bcb89f084bd4e5a8dcfc",
+      "source_sha256": "9dd5f2ca9635dc11c2c93d698e1484009802f13108eafb25d5f69ba8cc3feacd",
       "audio": null
     },
     {
@@ -9036,7 +9037,7 @@
         "L'aéroport et l'université"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "dbf74eb1c89a5af8075d9729303da7a4246220d6e659bcb89f084bd4e5a8dcfc",
+      "source_sha256": "9dd5f2ca9635dc11c2c93d698e1484009802f13108eafb25d5f69ba8cc3feacd",
       "audio": null
     },
     {
@@ -9302,10 +9303,10 @@
       "enonce": "De quel pays vient ce programme ?",
       "labels": [
         "La Suisse",
-        "La France",
+        "L’Autriche",
         "L'Italie"
       ],
-      "status": "text_required_amount_measure_or_rate",
+      "status": "editorial_visual_screening_needed",
       "source_sha256": "bd1d728f1de9cdcc71efc0b16ccc8aaf45d018f0d5078a7cdc17603af47d38e8",
       "audio": null
     },
@@ -9557,10 +9558,10 @@
       "enonce": "Quel pays Piko traverse-t-il ?",
       "labels": [
         "La Suisse",
-        "La France",
+        "L’Autriche",
         "L'Italie"
       ],
-      "status": "text_required_amount_measure_or_rate",
+      "status": "editorial_visual_screening_needed",
       "source_sha256": "931e9738ff4af4dc6d8c8f4489ecf5d32d8a68503678ec6f6618a30dfaeca0d8",
       "audio": null
     },
@@ -9767,10 +9768,10 @@
       "enonce": "De quel pays vient le fauconnier ?",
       "labels": [
         "D'Italie",
-        "De France",
+        "De Suisse",
         "D'Espagne"
       ],
-      "status": "text_required_amount_measure_or_rate",
+      "status": "editorial_visual_screening_needed",
       "source_sha256": "8c97c823d05c9248fc2116ea1cb6d5ddda0400a736b41a005265e78618b6253e",
       "audio": null
     },
@@ -9996,7 +9997,7 @@
         "A3"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "72dc780fe219f6dbe76f4f8b02a33558afb709acac90bb198075c1418817dee3",
+      "source_sha256": "f9a72dbbf0472ba8f9e1f0be25943f6266f7f19cd97fa35d33567defbb3e9e20",
       "audio": null
     },
     {
@@ -10006,12 +10007,12 @@
       "question": 3,
       "enonce": "De combien faut-il affranchir l'enveloppe ?",
       "labels": [
-        "2 francs",
-        "1 franc",
-        "3 francs"
+        "2 CHF",
+        "1 CHF",
+        "3 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "72dc780fe219f6dbe76f4f8b02a33558afb709acac90bb198075c1418817dee3",
+      "source_sha256": "f9a72dbbf0472ba8f9e1f0be25943f6266f7f19cd97fa35d33567defbb3e9e20",
       "audio": null
     },
     {
@@ -10026,7 +10027,7 @@
         "Son niveau et sa note"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "72dc780fe219f6dbe76f4f8b02a33558afb709acac90bb198075c1418817dee3",
+      "source_sha256": "f9a72dbbf0472ba8f9e1f0be25943f6266f7f19cd97fa35d33567defbb3e9e20",
       "audio": null
     },
     {
@@ -10041,7 +10042,7 @@
         "Une carte de bibliothèque"
       ],
       "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "72dc780fe219f6dbe76f4f8b02a33558afb709acac90bb198075c1418817dee3",
+      "source_sha256": "f9a72dbbf0472ba8f9e1f0be25943f6266f7f19cd97fa35d33567defbb3e9e20",
       "audio": null
     },
     {
@@ -10056,7 +10057,7 @@
         "Le numéro de la salle"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "72dc780fe219f6dbe76f4f8b02a33558afb709acac90bb198075c1418817dee3",
+      "source_sha256": "f9a72dbbf0472ba8f9e1f0be25943f6266f7f19cd97fa35d33567defbb3e9e20",
       "audio": null
     },
     {
@@ -10071,7 +10072,7 @@
         "Mme Weber"
       ],
       "status": "text_required_person_role_or_diagnosis",
-      "source_sha256": "72dc780fe219f6dbe76f4f8b02a33558afb709acac90bb198075c1418817dee3",
+      "source_sha256": "f9a72dbbf0472ba8f9e1f0be25943f6266f7f19cd97fa35d33567defbb3e9e20",
       "audio": null
     },
     {
@@ -10086,7 +10087,7 @@
         "Le samedi, de 10 h à 12 h"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "72dc780fe219f6dbe76f4f8b02a33558afb709acac90bb198075c1418817dee3",
+      "source_sha256": "f9a72dbbf0472ba8f9e1f0be25943f6266f7f19cd97fa35d33567defbb3e9e20",
       "audio": null
     },
     {
@@ -10096,12 +10097,12 @@
       "question": 2,
       "enonce": "Combien coûtent les deux croissants ?",
       "labels": [
-        "4 francs",
-        "2 francs",
-        "6 francs"
+        "4 CHF",
+        "2 CHF",
+        "6 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "3b647c3aa8e91aa757bf9d6958d2b67157c56459bddda63ae401b31c65ba7484",
+      "source_sha256": "9cfe41faa76da5e40c37b26faf46addbf96efdf864fe0eb089f39eb60baf5bfb",
       "audio": null
     },
     {
@@ -10116,7 +10117,7 @@
         "Le 13 mars"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "3b647c3aa8e91aa757bf9d6958d2b67157c56459bddda63ae401b31c65ba7484",
+      "source_sha256": "9cfe41faa76da5e40c37b26faf46addbf96efdf864fe0eb089f39eb60baf5bfb",
       "audio": null
     },
     {
@@ -10131,7 +10132,7 @@
         "Délices"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "3b647c3aa8e91aa757bf9d6958d2b67157c56459bddda63ae401b31c65ba7484",
+      "source_sha256": "9cfe41faa76da5e40c37b26faf46addbf96efdf864fe0eb089f39eb60baf5bfb",
       "audio": null
     },
     {
@@ -10141,12 +10142,12 @@
       "question": 5,
       "enonce": "Quel montant minimum faut-il dépenser chez Globe-trotter ?",
       "labels": [
-        "80 francs",
-        "60 francs",
-        "100 francs"
+        "80 CHF",
+        "60 CHF",
+        "100 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "3b647c3aa8e91aa757bf9d6958d2b67157c56459bddda63ae401b31c65ba7484",
+      "source_sha256": "9cfe41faa76da5e40c37b26faf46addbf96efdf864fe0eb089f39eb60baf5bfb",
       "audio": null
     },
     {
@@ -10161,7 +10162,7 @@
         "Un livre et une carte"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "3b647c3aa8e91aa757bf9d6958d2b67157c56459bddda63ae401b31c65ba7484",
+      "source_sha256": "9cfe41faa76da5e40c37b26faf46addbf96efdf864fe0eb089f39eb60baf5bfb",
       "audio": null
     },
     {
@@ -10176,7 +10177,7 @@
         "Le dimanche 14 mars"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "3b647c3aa8e91aa757bf9d6958d2b67157c56459bddda63ae401b31c65ba7484",
+      "source_sha256": "9cfe41faa76da5e40c37b26faf46addbf96efdf864fe0eb089f39eb60baf5bfb",
       "audio": null
     },
     {
@@ -10506,7 +10507,7 @@
         "Les Amis de Lausanne"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "1107f250f8bff232287533eb35ca7dac84d1c423452771973bc9958794a06419",
+      "source_sha256": "7e00c2b1233e27dc36360639431bb5ee6bfa24883b53d143250de3bf1e161531",
       "audio": null
     },
     {
@@ -10521,7 +10522,7 @@
         "Vive Berne !"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "1107f250f8bff232287533eb35ca7dac84d1c423452771973bc9958794a06419",
+      "source_sha256": "7e00c2b1233e27dc36360639431bb5ee6bfa24883b53d143250de3bf1e161531",
       "audio": null
     },
     {
@@ -10536,7 +10537,7 @@
         "Samedi"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "1107f250f8bff232287533eb35ca7dac84d1c423452771973bc9958794a06419",
+      "source_sha256": "7e00c2b1233e27dc36360639431bb5ee6bfa24883b53d143250de3bf1e161531",
       "audio": null
     },
     {
@@ -10551,7 +10552,7 @@
         "Une carte de transport"
       ],
       "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "1107f250f8bff232287533eb35ca7dac84d1c423452771973bc9958794a06419",
+      "source_sha256": "7e00c2b1233e27dc36360639431bb5ee6bfa24883b53d143250de3bf1e161531",
       "audio": null
     },
     {
@@ -10566,7 +10567,7 @@
         "Tous les parents"
       ],
       "status": "text_required_person_role_or_diagnosis",
-      "source_sha256": "1107f250f8bff232287533eb35ca7dac84d1c423452771973bc9958794a06419",
+      "source_sha256": "7e00c2b1233e27dc36360639431bb5ee6bfa24883b53d143250de3bf1e161531",
       "audio": null
     },
     {
@@ -10576,12 +10577,12 @@
       "question": 9,
       "enonce": "Combien coûte normalement l'entrée ?",
       "labels": [
-        "5 francs",
-        "10 francs",
-        "15 francs"
+        "5 CHF",
+        "10 CHF",
+        "15 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "1107f250f8bff232287533eb35ca7dac84d1c423452771973bc9958794a06419",
+      "source_sha256": "7e00c2b1233e27dc36360639431bb5ee6bfa24883b53d143250de3bf1e161531",
       "audio": null
     },
     {
@@ -10817,10 +10818,10 @@
       "enonce": "Dans quel pays ont lieu les concerts ?",
       "labels": [
         "En Suisse",
-        "En France",
+        "En Autriche",
         "En Belgique"
       ],
-      "status": "text_required_amount_measure_or_rate",
+      "status": "editorial_visual_screening_needed",
       "source_sha256": "e070f9f05f9aafee5cf64ff72d257e3ba544d0bc291a1f4a338a74a7c467f8a3",
       "audio": null
     },
@@ -11328,7 +11329,7 @@
       "labels": [
         "Un week-end à Europa-Park",
         "Un week-end à Zermatt",
-        "Un week-end à Paris"
+        "Un week-end à Zurich"
       ],
       "status": "text_required_amount_measure_or_rate",
       "source_sha256": "1510027b7efaa65f2a6987c61c8c2af406dbc14a13c6e7d70f7264b4bea28692",
@@ -11406,7 +11407,7 @@
         "Genève"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "df234e5a742fe0328af3bfef4247c7e7e55afb581357e20ced73924078fa0b08",
+      "source_sha256": "81ec7938905994994cc771f85fec942d9ce4b9ed5bb9e743f9cc732a5342ab51",
       "audio": null
     },
     {
@@ -11421,7 +11422,7 @@
         "Jouer au ballon dans le bassin"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "df234e5a742fe0328af3bfef4247c7e7e55afb581357e20ced73924078fa0b08",
+      "source_sha256": "81ec7938905994994cc771f85fec942d9ce4b9ed5bb9e743f9cc732a5342ab51",
       "audio": null
     },
     {
@@ -11436,7 +11437,7 @@
         "Les lunettes et les maillots"
       ],
       "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "df234e5a742fe0328af3bfef4247c7e7e55afb581357e20ced73924078fa0b08",
+      "source_sha256": "81ec7938905994994cc771f85fec942d9ce4b9ed5bb9e743f9cc732a5342ab51",
       "audio": null
     },
     {
@@ -11451,7 +11452,7 @@
         "Dans les vestiaires"
       ],
       "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "df234e5a742fe0328af3bfef4247c7e7e55afb581357e20ced73924078fa0b08",
+      "source_sha256": "81ec7938905994994cc771f85fec942d9ce4b9ed5bb9e743f9cc732a5342ab51",
       "audio": null
     },
     {
@@ -11466,7 +11467,7 @@
         "Manger un repas"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "df234e5a742fe0328af3bfef4247c7e7e55afb581357e20ced73924078fa0b08",
+      "source_sha256": "81ec7938905994994cc771f85fec942d9ce4b9ed5bb9e743f9cc732a5342ab51",
       "audio": null
     },
     {
@@ -11481,7 +11482,7 @@
         "Tous les jours"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "df234e5a742fe0328af3bfef4247c7e7e55afb581357e20ced73924078fa0b08",
+      "source_sha256": "81ec7938905994994cc771f85fec942d9ce4b9ed5bb9e743f9cc732a5342ab51",
       "audio": null
     },
     {
@@ -11496,7 +11497,7 @@
         "De 8 h à 16 h"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "df234e5a742fe0328af3bfef4247c7e7e55afb581357e20ced73924078fa0b08",
+      "source_sha256": "81ec7938905994994cc771f85fec942d9ce4b9ed5bb9e743f9cc732a5342ab51",
       "audio": null
     },
     {
@@ -11506,12 +11507,12 @@
       "question": 10,
       "enonce": "Combien coûte l'entrée ?",
       "labels": [
-        "8 francs",
-        "6 francs",
-        "10 francs"
+        "8 CHF",
+        "6 CHF",
+        "10 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "df234e5a742fe0328af3bfef4247c7e7e55afb581357e20ced73924078fa0b08",
+      "source_sha256": "81ec7938905994994cc771f85fec942d9ce4b9ed5bb9e743f9cc732a5342ab51",
       "audio": null
     },
     {
@@ -11526,7 +11527,7 @@
         "Anaïs"
       ],
       "status": "text_required_person_role_or_diagnosis",
-      "source_sha256": "7f7e49e7d9c4e49857b539adf1f2b98db7fd6986a8bf80047d2a212ef58777fb",
+      "source_sha256": "05e8d4bd1c33130fb2c468b477212a8a4d9f956a96d95224e7305976dfa071b1",
       "audio": null
     },
     {
@@ -11541,7 +11542,7 @@
         "Le frère de Julie"
       ],
       "status": "text_required_person_role_or_diagnosis",
-      "source_sha256": "7f7e49e7d9c4e49857b539adf1f2b98db7fd6986a8bf80047d2a212ef58777fb",
+      "source_sha256": "05e8d4bd1c33130fb2c468b477212a8a4d9f956a96d95224e7305976dfa071b1",
       "audio": null
     },
     {
@@ -11556,7 +11557,7 @@
         "Revesto"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "7f7e49e7d9c4e49857b539adf1f2b98db7fd6986a8bf80047d2a212ef58777fb",
+      "source_sha256": "05e8d4bd1c33130fb2c468b477212a8a4d9f956a96d95224e7305976dfa071b1",
       "audio": null
     },
     {
@@ -11571,7 +11572,7 @@
         "14 ans"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "7f7e49e7d9c4e49857b539adf1f2b98db7fd6986a8bf80047d2a212ef58777fb",
+      "source_sha256": "05e8d4bd1c33130fb2c468b477212a8a4d9f956a96d95224e7305976dfa071b1",
       "audio": null
     },
     {
@@ -11586,7 +11587,7 @@
         "Les enseignants"
       ],
       "status": "text_required_person_role_or_diagnosis",
-      "source_sha256": "7f7e49e7d9c4e49857b539adf1f2b98db7fd6986a8bf80047d2a212ef58777fb",
+      "source_sha256": "05e8d4bd1c33130fb2c468b477212a8a4d9f956a96d95224e7305976dfa071b1",
       "audio": null
     },
     {
@@ -11597,11 +11598,11 @@
       "enonce": "Combien coûte le compte familial ?",
       "labels": [
         "Il est gratuit",
-        "Il coûte 5 francs",
-        "Il coûte 8 francs"
+        "Il coûte 5 CHF",
+        "Il coûte 8 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "7f7e49e7d9c4e49857b539adf1f2b98db7fd6986a8bf80047d2a212ef58777fb",
+      "source_sha256": "05e8d4bd1c33130fb2c468b477212a8a4d9f956a96d95224e7305976dfa071b1",
       "audio": null
     },
     {
@@ -11616,7 +11617,7 @@
         "Un numéro de téléphone et un certificat"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "7f7e49e7d9c4e49857b539adf1f2b98db7fd6986a8bf80047d2a212ef58777fb",
+      "source_sha256": "05e8d4bd1c33130fb2c468b477212a8a4d9f956a96d95224e7305976dfa071b1",
       "audio": null
     },
     {
@@ -11631,7 +11632,7 @@
         "Les apporter à l'école"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "7f7e49e7d9c4e49857b539adf1f2b98db7fd6986a8bf80047d2a212ef58777fb",
+      "source_sha256": "05e8d4bd1c33130fb2c468b477212a8a4d9f956a96d95224e7305976dfa071b1",
       "audio": null
     },
     {
@@ -11641,12 +11642,12 @@
       "question": 9,
       "enonce": "Quel prix est donné pour une jupe ?",
       "labels": [
-        "5 francs",
-        "8 francs",
-        "18 francs"
+        "5 CHF",
+        "8 CHF",
+        "18 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "7f7e49e7d9c4e49857b539adf1f2b98db7fd6986a8bf80047d2a212ef58777fb",
+      "source_sha256": "05e8d4bd1c33130fb2c468b477212a8a4d9f956a96d95224e7305976dfa071b1",
       "audio": null
     },
     {
@@ -11656,12 +11657,12 @@
       "question": 10,
       "enonce": "Quel prix est donné pour un pantalon ?",
       "labels": [
-        "8 francs",
-        "5 francs",
-        "18 francs"
+        "8 CHF",
+        "5 CHF",
+        "18 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "7f7e49e7d9c4e49857b539adf1f2b98db7fd6986a8bf80047d2a212ef58777fb",
+      "source_sha256": "05e8d4bd1c33130fb2c468b477212a8a4d9f956a96d95224e7305976dfa071b1",
       "audio": null
     },
     {
@@ -12621,7 +12622,7 @@
         "Le 12 février"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "1bc648b7a2d7975a7a50abfc2e52d579b3bea2fc639fdc8213ea94ef11f9559a",
+      "source_sha256": "f927b752183f3b30b53dbbb9036941451e8f2fa4dcc89e58951afaf2af1d087d",
       "audio": null
     },
     {
@@ -12636,7 +12637,7 @@
         "Le 8 mars"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "1bc648b7a2d7975a7a50abfc2e52d579b3bea2fc639fdc8213ea94ef11f9559a",
+      "source_sha256": "f927b752183f3b30b53dbbb9036941451e8f2fa4dcc89e58951afaf2af1d087d",
       "audio": null
     },
     {
@@ -12651,7 +12652,7 @@
         "Six semaines"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "1bc648b7a2d7975a7a50abfc2e52d579b3bea2fc639fdc8213ea94ef11f9559a",
+      "source_sha256": "f927b752183f3b30b53dbbb9036941451e8f2fa4dcc89e58951afaf2af1d087d",
       "audio": null
     },
     {
@@ -12666,7 +12667,7 @@
         "CyclePlus"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "1bc648b7a2d7975a7a50abfc2e52d579b3bea2fc639fdc8213ea94ef11f9559a",
+      "source_sha256": "f927b752183f3b30b53dbbb9036941451e8f2fa4dcc89e58951afaf2af1d087d",
       "audio": null
     },
     {
@@ -12676,12 +12677,12 @@
       "question": 6,
       "enonce": "Combien coûte une heure de location ?",
       "labels": [
-        "8 francs",
-        "25 francs",
-        "15 francs"
+        "8 CHF",
+        "25 CHF",
+        "15 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "1bc648b7a2d7975a7a50abfc2e52d579b3bea2fc639fdc8213ea94ef11f9559a",
+      "source_sha256": "f927b752183f3b30b53dbbb9036941451e8f2fa4dcc89e58951afaf2af1d087d",
       "audio": null
     },
     {
@@ -12691,12 +12692,12 @@
       "question": 7,
       "enonce": "Combien coûte une journée de location ?",
       "labels": [
-        "25 francs",
-        "8 francs",
-        "150 francs"
+        "25 CHF",
+        "8 CHF",
+        "150 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "1bc648b7a2d7975a7a50abfc2e52d579b3bea2fc639fdc8213ea94ef11f9559a",
+      "source_sha256": "f927b752183f3b30b53dbbb9036941451e8f2fa4dcc89e58951afaf2af1d087d",
       "audio": null
     },
     {
@@ -12706,12 +12707,12 @@
       "question": 8,
       "enonce": "Combien coûte une semaine de location ?",
       "labels": [
-        "150 francs",
-        "25 francs",
-        "80 francs"
+        "150 CHF",
+        "25 CHF",
+        "80 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "1bc648b7a2d7975a7a50abfc2e52d579b3bea2fc639fdc8213ea94ef11f9559a",
+      "source_sha256": "f927b752183f3b30b53dbbb9036941451e8f2fa4dcc89e58951afaf2af1d087d",
       "audio": null
     },
     {
@@ -12966,7 +12967,7 @@
         "Au plaisir de jouer"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "699367e81e2b8a0033014f9ffcf6062959f398e1bf4aef306d8878fbe3559939",
+      "source_sha256": "2c47d1aae988a829e1b483ba354f47addc38225676d4c0536a270566e07246c9",
       "audio": null
     },
     {
@@ -12981,7 +12982,7 @@
         "Morges"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "699367e81e2b8a0033014f9ffcf6062959f398e1bf4aef306d8878fbe3559939",
+      "source_sha256": "2c47d1aae988a829e1b483ba354f47addc38225676d4c0536a270566e07246c9",
       "audio": null
     },
     {
@@ -12996,7 +12997,7 @@
         "22, rue du Parc"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "699367e81e2b8a0033014f9ffcf6062959f398e1bf4aef306d8878fbe3559939",
+      "source_sha256": "2c47d1aae988a829e1b483ba354f47addc38225676d4c0536a270566e07246c9",
       "audio": null
     },
     {
@@ -13011,7 +13012,7 @@
         "Le samedi"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "699367e81e2b8a0033014f9ffcf6062959f398e1bf4aef306d8878fbe3559939",
+      "source_sha256": "2c47d1aae988a829e1b483ba354f47addc38225676d4c0536a270566e07246c9",
       "audio": null
     },
     {
@@ -13581,7 +13582,7 @@
         "Des instruments de musique"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "99056f2f519112d6c89005d3a5fdffad8026d1f7c8bfb6843b4181b5517cd2af",
+      "source_sha256": "1bf91e5fa399c53f1865bce186be75d0e003dda8af34387323b5a606540c0124",
       "audio": null
     },
     {
@@ -13596,7 +13597,7 @@
         "Quatre livres"
       ],
       "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "99056f2f519112d6c89005d3a5fdffad8026d1f7c8bfb6843b4181b5517cd2af",
+      "source_sha256": "1bf91e5fa399c53f1865bce186be75d0e003dda8af34387323b5a606540c0124",
       "audio": null
     },
     {
@@ -13611,7 +13612,7 @@
         "La 9e et la 10e"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "99056f2f519112d6c89005d3a5fdffad8026d1f7c8bfb6843b4181b5517cd2af",
+      "source_sha256": "1bf91e5fa399c53f1865bce186be75d0e003dda8af34387323b5a606540c0124",
       "audio": null
     },
     {
@@ -13621,12 +13622,12 @@
       "question": 4,
       "enonce": "Combien coûtent les livres de mathématiques ?",
       "labels": [
-        "6 francs",
-        "10 francs",
-        "16 francs"
+        "6 CHF",
+        "10 CHF",
+        "16 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "99056f2f519112d6c89005d3a5fdffad8026d1f7c8bfb6843b4181b5517cd2af",
+      "source_sha256": "1bf91e5fa399c53f1865bce186be75d0e003dda8af34387323b5a606540c0124",
       "audio": null
     },
     {
@@ -13634,14 +13635,14 @@
       "bank": "src/tcf/content/a0-a1/ce.json",
       "exercise": "delf-a1s-ce-033",
       "question": 5,
-      "enonce": "Quelle matière concerne le livre à 10 francs ?",
+      "enonce": "Quelle matière concerne le livre à 10 CHF ?",
       "labels": [
         "Les sciences",
         "L'histoire",
         "Les mathématiques"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "99056f2f519112d6c89005d3a5fdffad8026d1f7c8bfb6843b4181b5517cd2af",
+      "source_sha256": "1bf91e5fa399c53f1865bce186be75d0e003dda8af34387323b5a606540c0124",
       "audio": null
     },
     {
@@ -13656,7 +13657,7 @@
         "La 8e"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "99056f2f519112d6c89005d3a5fdffad8026d1f7c8bfb6843b4181b5517cd2af",
+      "source_sha256": "1bf91e5fa399c53f1865bce186be75d0e003dda8af34387323b5a606540c0124",
       "audio": null
     },
     {
@@ -13666,12 +13667,12 @@
       "question": 7,
       "enonce": "Combien coûte le livre d'histoire ?",
       "labels": [
-        "6 francs",
-        "10 francs",
-        "12 francs"
+        "6 CHF",
+        "10 CHF",
+        "12 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "99056f2f519112d6c89005d3a5fdffad8026d1f7c8bfb6843b4181b5517cd2af",
+      "source_sha256": "1bf91e5fa399c53f1865bce186be75d0e003dda8af34387323b5a606540c0124",
       "audio": null
     },
     {
@@ -13686,7 +13687,7 @@
         "Bleue et jaune"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "99056f2f519112d6c89005d3a5fdffad8026d1f7c8bfb6843b4181b5517cd2af",
+      "source_sha256": "1bf91e5fa399c53f1865bce186be75d0e003dda8af34387323b5a606540c0124",
       "audio": null
     },
     {
@@ -13701,7 +13702,7 @@
         "Rouge, noir et gris"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "99056f2f519112d6c89005d3a5fdffad8026d1f7c8bfb6843b4181b5517cd2af",
+      "source_sha256": "1bf91e5fa399c53f1865bce186be75d0e003dda8af34387323b5a606540c0124",
       "audio": null
     },
     {
@@ -13716,7 +13717,7 @@
         "Hugo"
       ],
       "status": "text_required_person_role_or_diagnosis",
-      "source_sha256": "99056f2f519112d6c89005d3a5fdffad8026d1f7c8bfb6843b4181b5517cd2af",
+      "source_sha256": "1bf91e5fa399c53f1865bce186be75d0e003dda8af34387323b5a606540c0124",
       "audio": null
     },
     {
@@ -13851,7 +13852,7 @@
         "L'association de parents"
       ],
       "status": "text_required_person_role_or_diagnosis",
-      "source_sha256": "ff9ef4eb06cd4ae4c2fe84003d41ad5f2e922ba3473020c303e43026e157b124",
+      "source_sha256": "45e8f083fff44bf50ae4a27fb242baaf6145facae424436894d67ad51d68ed05",
       "audio": null
     },
     {
@@ -13866,7 +13867,7 @@
         "Le vendredi 26 avril"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "ff9ef4eb06cd4ae4c2fe84003d41ad5f2e922ba3473020c303e43026e157b124",
+      "source_sha256": "45e8f083fff44bf50ae4a27fb242baaf6145facae424436894d67ad51d68ed05",
       "audio": null
     },
     {
@@ -13877,11 +13878,11 @@
       "enonce": "Quel château les élèves vont-ils visiter ?",
       "labels": [
         "Le château de Chillon",
-        "Le château de Versailles",
+        "Le château de Kybourg",
         "Le château de Gruyères"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "ff9ef4eb06cd4ae4c2fe84003d41ad5f2e922ba3473020c303e43026e157b124",
+      "source_sha256": "45e8f083fff44bf50ae4a27fb242baaf6145facae424436894d67ad51d68ed05",
       "audio": null
     },
     {
@@ -13896,7 +13897,7 @@
         "Un atelier de peinture"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "ff9ef4eb06cd4ae4c2fe84003d41ad5f2e922ba3473020c303e43026e157b124",
+      "source_sha256": "45e8f083fff44bf50ae4a27fb242baaf6145facae424436894d67ad51d68ed05",
       "audio": null
     },
     {
@@ -13911,7 +13912,7 @@
         "Une demi-heure"
       ],
       "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "ff9ef4eb06cd4ae4c2fe84003d41ad5f2e922ba3473020c303e43026e157b124",
+      "source_sha256": "45e8f083fff44bf50ae4a27fb242baaf6145facae424436894d67ad51d68ed05",
       "audio": null
     },
     {
@@ -13926,7 +13927,7 @@
         "Uniquement avec leurs parents"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "ff9ef4eb06cd4ae4c2fe84003d41ad5f2e922ba3473020c303e43026e157b124",
+      "source_sha256": "45e8f083fff44bf50ae4a27fb242baaf6145facae424436894d67ad51d68ed05",
       "audio": null
     },
     {
@@ -13941,7 +13942,7 @@
         "Le musée et sa bibliothèque"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "ff9ef4eb06cd4ae4c2fe84003d41ad5f2e922ba3473020c303e43026e157b124",
+      "source_sha256": "45e8f083fff44bf50ae4a27fb242baaf6145facae424436894d67ad51d68ed05",
       "audio": null
     },
     {
@@ -13951,12 +13952,12 @@
       "question": 9,
       "enonce": "Combien coûte la sortie ?",
       "labels": [
-        "10 francs",
-        "15 francs",
-        "20 francs"
+        "10 CHF",
+        "15 CHF",
+        "20 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "ff9ef4eb06cd4ae4c2fe84003d41ad5f2e922ba3473020c303e43026e157b124",
+      "source_sha256": "45e8f083fff44bf50ae4a27fb242baaf6145facae424436894d67ad51d68ed05",
       "audio": null
     },
     {
@@ -13971,7 +13972,7 @@
         "Le 18 avril"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "ff9ef4eb06cd4ae4c2fe84003d41ad5f2e922ba3473020c303e43026e157b124",
+      "source_sha256": "45e8f083fff44bf50ae4a27fb242baaf6145facae424436894d67ad51d68ed05",
       "audio": null
     },
     {
@@ -13997,8 +13998,8 @@
       "enonce": "Combien coûte la participation à l'atelier ?",
       "labels": [
         "Elle est gratuite",
-        "Elle coûte 10 francs",
-        "Elle coûte 20 francs"
+        "Elle coûte 10 CHF",
+        "Elle coûte 20 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
       "source_sha256": "cfdc37a5af3fa72e6562b2039643c1f74d66a95b734c11c3161545f1f339b2a7",
@@ -14117,10 +14118,10 @@
       "enonce": "Dans quel pays ces stages sont-ils présentés ?",
       "labels": [
         "La Suisse",
-        "La France",
+        "L’Autriche",
         "La Belgique"
       ],
-      "status": "text_required_amount_measure_or_rate",
+      "status": "editorial_visual_screening_needed",
       "source_sha256": "623f5e77af624c2008b4efdb6ce810a9f463a77b06e5ae95f1c33017aeb296b1",
       "audio": null
     },
@@ -14193,7 +14194,7 @@
       "labels": [
         "Ils ne sont pas payés",
         "Ils reçoivent un salaire normal",
-        "Ils reçoivent 100 francs par jour"
+        "Ils reçoivent 100 CHF par jour"
       ],
       "status": "text_required_amount_measure_or_rate",
       "source_sha256": "623f5e77af624c2008b4efdb6ce810a9f463a77b06e5ae95f1c33017aeb296b1",
@@ -14391,7 +14392,7 @@
         "Dans un mois"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "5c77d48901b101db5ecde389be32de0fa05727a8e60f66a92379b3c39d5d2b09",
+      "source_sha256": "d90d5240456d6f1bcbfb095455034e9d2f62d06552ca9c9b1e500a27d7813ad2",
       "audio": null
     },
     {
@@ -14406,7 +14407,7 @@
         "Des motos"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "5c77d48901b101db5ecde389be32de0fa05727a8e60f66a92379b3c39d5d2b09",
+      "source_sha256": "d90d5240456d6f1bcbfb095455034e9d2f62d06552ca9c9b1e500a27d7813ad2",
       "audio": null
     },
     {
@@ -14421,7 +14422,7 @@
         "Exactement 20"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "5c77d48901b101db5ecde389be32de0fa05727a8e60f66a92379b3c39d5d2b09",
+      "source_sha256": "d90d5240456d6f1bcbfb095455034e9d2f62d06552ca9c9b1e500a27d7813ad2",
       "audio": null
     },
     {
@@ -14436,7 +14437,7 @@
         "16 ans"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "5c77d48901b101db5ecde389be32de0fa05727a8e60f66a92379b3c39d5d2b09",
+      "source_sha256": "d90d5240456d6f1bcbfb095455034e9d2f62d06552ca9c9b1e500a27d7813ad2",
       "audio": null
     },
     {
@@ -14446,12 +14447,12 @@
       "question": 6,
       "enonce": "Combien coûte « Formule 1 » ?",
       "labels": [
-        "25 francs",
-        "30 francs",
-        "50 francs"
+        "25 CHF",
+        "30 CHF",
+        "50 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "5c77d48901b101db5ecde389be32de0fa05727a8e60f66a92379b3c39d5d2b09",
+      "source_sha256": "d90d5240456d6f1bcbfb095455034e9d2f62d06552ca9c9b1e500a27d7813ad2",
       "audio": null
     },
     {
@@ -14466,7 +14467,7 @@
         "Un jeu de sport"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "5c77d48901b101db5ecde389be32de0fa05727a8e60f66a92379b3c39d5d2b09",
+      "source_sha256": "d90d5240456d6f1bcbfb095455034e9d2f62d06552ca9c9b1e500a27d7813ad2",
       "audio": null
     },
     {
@@ -14481,7 +14482,7 @@
         "Une maison en ville"
       ],
       "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "5c77d48901b101db5ecde389be32de0fa05727a8e60f66a92379b3c39d5d2b09",
+      "source_sha256": "d90d5240456d6f1bcbfb095455034e9d2f62d06552ca9c9b1e500a27d7813ad2",
       "audio": null
     },
     {
@@ -14496,7 +14497,7 @@
         "18 ans"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "5c77d48901b101db5ecde389be32de0fa05727a8e60f66a92379b3c39d5d2b09",
+      "source_sha256": "d90d5240456d6f1bcbfb095455034e9d2f62d06552ca9c9b1e500a27d7813ad2",
       "audio": null
     },
     {
@@ -14506,12 +14507,12 @@
       "question": 10,
       "enonce": "Combien coûte « Fantôme 4 » ?",
       "labels": [
-        "30 francs",
-        "25 francs",
-        "50 francs"
+        "30 CHF",
+        "25 CHF",
+        "50 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "5c77d48901b101db5ecde389be32de0fa05727a8e60f66a92379b3c39d5d2b09",
+      "source_sha256": "d90d5240456d6f1bcbfb095455034e9d2f62d06552ca9c9b1e500a27d7813ad2",
       "audio": null
     },
     {
@@ -14646,7 +14647,7 @@
         "Apprendre à cuisiner"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "31dd9eabbb920e84cf9d4ba154c80b079bf1861415d3c70f8d8d8afdcac89eff",
+      "source_sha256": "5dfdb09d973cbe77f2be8161507cb72234c1315f0ddefe54c66b756236609ea4",
       "audio": null
     },
     {
@@ -14661,7 +14662,7 @@
         "Kévin"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "31dd9eabbb920e84cf9d4ba154c80b079bf1861415d3c70f8d8d8afdcac89eff",
+      "source_sha256": "5dfdb09d973cbe77f2be8161507cb72234c1315f0ddefe54c66b756236609ea4",
       "audio": null
     },
     {
@@ -14676,7 +14677,7 @@
         "Ses parents et son frère"
       ],
       "status": "text_required_person_role_or_diagnosis",
-      "source_sha256": "31dd9eabbb920e84cf9d4ba154c80b079bf1861415d3c70f8d8d8afdcac89eff",
+      "source_sha256": "5dfdb09d973cbe77f2be8161507cb72234c1315f0ddefe54c66b756236609ea4",
       "audio": null
     },
     {
@@ -14691,7 +14692,7 @@
         "Trois fils"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "31dd9eabbb920e84cf9d4ba154c80b079bf1861415d3c70f8d8d8afdcac89eff",
+      "source_sha256": "5dfdb09d973cbe77f2be8161507cb72234c1315f0ddefe54c66b756236609ea4",
       "audio": null
     },
     {
@@ -14701,12 +14702,12 @@
       "question": 5,
       "enonce": "Quel budget journalier par personne indique-t-il ?",
       "labels": [
-        "30 francs",
-        "20 francs",
-        "50 francs"
+        "30 CHF",
+        "20 CHF",
+        "50 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "31dd9eabbb920e84cf9d4ba154c80b079bf1861415d3c70f8d8d8afdcac89eff",
+      "source_sha256": "5dfdb09d973cbe77f2be8161507cb72234c1315f0ddefe54c66b756236609ea4",
       "audio": null
     },
     {
@@ -14721,7 +14722,7 @@
         "En métro"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "31dd9eabbb920e84cf9d4ba154c80b079bf1861415d3c70f8d8d8afdcac89eff",
+      "source_sha256": "5dfdb09d973cbe77f2be8161507cb72234c1315f0ddefe54c66b756236609ea4",
       "audio": null
     },
     {
@@ -14736,7 +14737,7 @@
         "Les musées privés uniquement"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "31dd9eabbb920e84cf9d4ba154c80b079bf1861415d3c70f8d8d8afdcac89eff",
+      "source_sha256": "5dfdb09d973cbe77f2be8161507cb72234c1315f0ddefe54c66b756236609ea4",
       "audio": null
     },
     {
@@ -14751,7 +14752,7 @@
         "Des salades uniquement"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "31dd9eabbb920e84cf9d4ba154c80b079bf1861415d3c70f8d8d8afdcac89eff",
+      "source_sha256": "5dfdb09d973cbe77f2be8161507cb72234c1315f0ddefe54c66b756236609ea4",
       "audio": null
     },
     {
@@ -14766,7 +14767,7 @@
         "Le 21 avril"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "31dd9eabbb920e84cf9d4ba154c80b079bf1861415d3c70f8d8d8afdcac89eff",
+      "source_sha256": "5dfdb09d973cbe77f2be8161507cb72234c1315f0ddefe54c66b756236609ea4",
       "audio": null
     },
     {
@@ -15036,7 +15037,7 @@
         "Le musée des fruits et des légumes"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "745baa1037169917a5036dded0d635c0fab8808b8dcd0c9b64df7031f2b6660c",
+      "source_sha256": "e5ba3b01fc0ef84ffe74143ddf6aa6348866b94dbed4ec3bf2460d136c4d6a2f",
       "audio": null
     },
     {
@@ -15051,7 +15052,7 @@
         "Morges"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "745baa1037169917a5036dded0d635c0fab8808b8dcd0c9b64df7031f2b6660c",
+      "source_sha256": "e5ba3b01fc0ef84ffe74143ddf6aa6348866b94dbed4ec3bf2460d136c4d6a2f",
       "audio": null
     },
     {
@@ -15066,7 +15067,7 @@
         "La fabrication du pain"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "745baa1037169917a5036dded0d635c0fab8808b8dcd0c9b64df7031f2b6660c",
+      "source_sha256": "e5ba3b01fc0ef84ffe74143ddf6aa6348866b94dbed4ec3bf2460d136c4d6a2f",
       "audio": null
     },
     {
@@ -15081,7 +15082,7 @@
         "Trois étages"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "745baa1037169917a5036dded0d635c0fab8808b8dcd0c9b64df7031f2b6660c",
+      "source_sha256": "e5ba3b01fc0ef84ffe74143ddf6aa6348866b94dbed4ec3bf2460d136c4d6a2f",
       "audio": null
     },
     {
@@ -15096,7 +15097,7 @@
         "Des voitures anciennes"
       ],
       "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "745baa1037169917a5036dded0d635c0fab8808b8dcd0c9b64df7031f2b6660c",
+      "source_sha256": "e5ba3b01fc0ef84ffe74143ddf6aa6348866b94dbed4ec3bf2460d136c4d6a2f",
       "audio": null
     },
     {
@@ -15111,7 +15112,7 @@
         "Par un téléphérique"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "745baa1037169917a5036dded0d635c0fab8808b8dcd0c9b64df7031f2b6660c",
+      "source_sha256": "e5ba3b01fc0ef84ffe74143ddf6aa6348866b94dbed4ec3bf2460d136c4d6a2f",
       "audio": null
     },
     {
@@ -15126,7 +15127,7 @@
         "Seulement les adultes"
       ],
       "status": "text_required_person_role_or_diagnosis",
-      "source_sha256": "745baa1037169917a5036dded0d635c0fab8808b8dcd0c9b64df7031f2b6660c",
+      "source_sha256": "e5ba3b01fc0ef84ffe74143ddf6aa6348866b94dbed4ec3bf2460d136c4d6a2f",
       "audio": null
     },
     {
@@ -15136,12 +15137,12 @@
       "question": 9,
       "enonce": "Combien coûte l'entrée ?",
       "labels": [
-        "9 francs",
-        "6 francs",
-        "12 francs"
+        "9 CHF",
+        "6 CHF",
+        "12 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "745baa1037169917a5036dded0d635c0fab8808b8dcd0c9b64df7031f2b6660c",
+      "source_sha256": "e5ba3b01fc0ef84ffe74143ddf6aa6348866b94dbed4ec3bf2460d136c4d6a2f",
       "audio": null
     },
     {
@@ -15156,7 +15157,7 @@
         "De 11 h à 21 h"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "745baa1037169917a5036dded0d635c0fab8808b8dcd0c9b64df7031f2b6660c",
+      "source_sha256": "e5ba3b01fc0ef84ffe74143ddf6aa6348866b94dbed4ec3bf2460d136c4d6a2f",
       "audio": null
     },
     {
@@ -15306,7 +15307,7 @@
         "Isabelle Grace"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "dbb710be4d6e0a7d5d95fb15c3cd1a05c767e696d1480d97fe8ce5b8248a3e1d",
+      "source_sha256": "693faec3fcdd00f9dbde7f0a77a4dcd6ac3aded2d45aea885c374683aa49264d",
       "audio": null
     },
     {
@@ -15321,7 +15322,7 @@
         "Du 12 au 26 décembre"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "dbb710be4d6e0a7d5d95fb15c3cd1a05c767e696d1480d97fe8ce5b8248a3e1d",
+      "source_sha256": "693faec3fcdd00f9dbde7f0a77a4dcd6ac3aded2d45aea885c374683aa49264d",
       "audio": null
     },
     {
@@ -15336,7 +15337,7 @@
         "7, rue de la Gare"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "dbb710be4d6e0a7d5d95fb15c3cd1a05c767e696d1480d97fe8ce5b8248a3e1d",
+      "source_sha256": "693faec3fcdd00f9dbde7f0a77a4dcd6ac3aded2d45aea885c374683aa49264d",
       "audio": null
     },
     {
@@ -15351,7 +15352,7 @@
         "Une salle de cuisine"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "dbb710be4d6e0a7d5d95fb15c3cd1a05c767e696d1480d97fe8ce5b8248a3e1d",
+      "source_sha256": "693faec3fcdd00f9dbde7f0a77a4dcd6ac3aded2d45aea885c374683aa49264d",
       "audio": null
     },
     {
@@ -15366,7 +15367,7 @@
         "190 ordinateurs"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "dbb710be4d6e0a7d5d95fb15c3cd1a05c767e696d1480d97fe8ce5b8248a3e1d",
+      "source_sha256": "693faec3fcdd00f9dbde7f0a77a4dcd6ac3aded2d45aea885c374683aa49264d",
       "audio": null
     },
     {
@@ -15381,7 +15382,7 @@
         "La bibliothèque ferme plus tard"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "dbb710be4d6e0a7d5d95fb15c3cd1a05c767e696d1480d97fe8ce5b8248a3e1d",
+      "source_sha256": "693faec3fcdd00f9dbde7f0a77a4dcd6ac3aded2d45aea885c374683aa49264d",
       "audio": null
     },
     {
@@ -15396,7 +15397,7 @@
         "De 10 h à 20 h"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "dbb710be4d6e0a7d5d95fb15c3cd1a05c767e696d1480d97fe8ce5b8248a3e1d",
+      "source_sha256": "693faec3fcdd00f9dbde7f0a77a4dcd6ac3aded2d45aea885c374683aa49264d",
       "audio": null
     },
     {
@@ -15406,12 +15407,12 @@
       "question": 9,
       "enonce": "Combien coûte l'abonnement annuel ?",
       "labels": [
-        "15 francs",
-        "12 francs",
-        "26 francs"
+        "15 CHF",
+        "12 CHF",
+        "26 CHF"
       ],
       "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "dbb710be4d6e0a7d5d95fb15c3cd1a05c767e696d1480d97fe8ce5b8248a3e1d",
+      "source_sha256": "693faec3fcdd00f9dbde7f0a77a4dcd6ac3aded2d45aea885c374683aa49264d",
       "audio": null
     },
     {
@@ -15426,7 +15427,7 @@
         "Le 26 novembre"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "dbb710be4d6e0a7d5d95fb15c3cd1a05c767e696d1480d97fe8ce5b8248a3e1d",
+      "source_sha256": "693faec3fcdd00f9dbde7f0a77a4dcd6ac3aded2d45aea885c374683aa49264d",
       "audio": null
     },
     {
@@ -15782,10 +15783,10 @@
       "enonce": "Dans quel pays est-elle en vacances ?",
       "labels": [
         "La Suisse",
-        "La France",
+        "L’Autriche",
         "L'Italie"
       ],
-      "status": "text_required_amount_measure_or_rate",
+      "status": "editorial_visual_screening_needed",
       "source_sha256": "64e012910dae550699f1b27753826e678e5e5c9ce644d3847de7e1f3f12ccdee",
       "audio": null
     },
@@ -15996,7 +15997,7 @@
         "Laurine"
       ],
       "status": "text_required_person_role_or_diagnosis",
-      "source_sha256": "1069d4c40ddf3003cd4adfc3bc51c3c06d768118dabcf0b8fc810e753b0e2d12",
+      "source_sha256": "a9c06a67d60e1ed0ad53e3165a2e28ee48209358c153e527abdd22c0fc06152b",
       "audio": null
     },
     {
@@ -16011,7 +16012,7 @@
         "Julie"
       ],
       "status": "text_required_person_role_or_diagnosis",
-      "source_sha256": "1069d4c40ddf3003cd4adfc3bc51c3c06d768118dabcf0b8fc810e753b0e2d12",
+      "source_sha256": "a9c06a67d60e1ed0ad53e3165a2e28ee48209358c153e527abdd22c0fc06152b",
       "audio": null
     },
     {
@@ -16021,12 +16022,12 @@
       "question": 3,
       "enonce": "Où Mélanie passe-t-elle ses vacances ?",
       "labels": [
-        "En Bretagne",
+        "À Zermatt",
         "En Suisse",
-        "À Paris"
+        "À Zurich"
       ],
       "status": "keep_text_named_identity_or_location",
-      "source_sha256": "1069d4c40ddf3003cd4adfc3bc51c3c06d768118dabcf0b8fc810e753b0e2d12",
+      "source_sha256": "a9c06a67d60e1ed0ad53e3165a2e28ee48209358c153e527abdd22c0fc06152b",
       "audio": null
     },
     {
@@ -16038,10 +16039,10 @@
       "labels": [
         "Genève",
         "Lausanne",
-        "Paris"
+        "Zurich"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "1069d4c40ddf3003cd4adfc3bc51c3c06d768118dabcf0b8fc810e753b0e2d12",
+      "source_sha256": "a9c06a67d60e1ed0ad53e3165a2e28ee48209358c153e527abdd22c0fc06152b",
       "audio": null
     },
     {
@@ -16056,7 +16057,7 @@
         "Un temps neigeux"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "1069d4c40ddf3003cd4adfc3bc51c3c06d768118dabcf0b8fc810e753b0e2d12",
+      "source_sha256": "a9c06a67d60e1ed0ad53e3165a2e28ee48209358c153e527abdd22c0fc06152b",
       "audio": null
     },
     {
@@ -16068,10 +16069,10 @@
       "labels": [
         "Lausanne",
         "Genève",
-        "Paris"
+        "Zurich"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "1069d4c40ddf3003cd4adfc3bc51c3c06d768118dabcf0b8fc810e753b0e2d12",
+      "source_sha256": "a9c06a67d60e1ed0ad53e3165a2e28ee48209358c153e527abdd22c0fc06152b",
       "audio": null
     },
     {
@@ -16086,7 +16087,7 @@
         "De lui envoyer de l'argent"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "1069d4c40ddf3003cd4adfc3bc51c3c06d768118dabcf0b8fc810e753b0e2d12",
+      "source_sha256": "a9c06a67d60e1ed0ad53e3165a2e28ee48209358c153e527abdd22c0fc06152b",
       "audio": null
     },
     {
@@ -16101,7 +16102,7 @@
         "Laurine et Mathieu"
       ],
       "status": "text_required_person_role_or_diagnosis",
-      "source_sha256": "ea323a36b57ef30f681a5097dadeb30ea32c89075db2e66a35b6d48ff7e32798",
+      "source_sha256": "17e640ea5033b827171f91ac7ae2a0b70fcf83bc1a34da83948e6ab1700643dc",
       "audio": null
     },
     {
@@ -16116,7 +16117,7 @@
         "Le samedi 28 mai"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "ea323a36b57ef30f681a5097dadeb30ea32c89075db2e66a35b6d48ff7e32798",
+      "source_sha256": "17e640ea5033b827171f91ac7ae2a0b70fcf83bc1a34da83948e6ab1700643dc",
       "audio": null
     },
     {
@@ -16126,12 +16127,12 @@
       "question": 5,
       "enonce": "À quelle adresse se trouve la mairie ?",
       "labels": [
-        "23 rue Auguste Renoir",
-        "32 rue Émile Zola",
-        "12 rue de Loire"
+        "23 rue des Alpes",
+        "32 rue du Lac",
+        "12 rue du Rhône"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "ea323a36b57ef30f681a5097dadeb30ea32c89075db2e66a35b6d48ff7e32798",
+      "source_sha256": "17e640ea5033b827171f91ac7ae2a0b70fcf83bc1a34da83948e6ab1700643dc",
       "audio": null
     },
     {
@@ -16146,7 +16147,7 @@
         "Ana et Mélanie"
       ],
       "status": "text_required_person_role_or_diagnosis",
-      "source_sha256": "ea323a36b57ef30f681a5097dadeb30ea32c89075db2e66a35b6d48ff7e32798",
+      "source_sha256": "17e640ea5033b827171f91ac7ae2a0b70fcf83bc1a34da83948e6ab1700643dc",
       "audio": null
     },
     {
@@ -16161,7 +16162,7 @@
         "Le 30 juillet"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "ea323a36b57ef30f681a5097dadeb30ea32c89075db2e66a35b6d48ff7e32798",
+      "source_sha256": "17e640ea5033b827171f91ac7ae2a0b70fcf83bc1a34da83948e6ab1700643dc",
       "audio": null
     },
     {
@@ -16176,7 +16177,7 @@
         "Aux clients d'un magasin"
       ],
       "status": "text_required_person_role_or_diagnosis",
-      "source_sha256": "6020d498573d1a6d9149642077817da1256f3b21546fecf1f81a26e658ffdb68",
+      "source_sha256": "a8a64723d9de78ac10f164be74f984a113c4c0508eef7438e4093173d1f37846",
       "audio": null
     },
     {
@@ -16191,7 +16192,7 @@
         "Un nouveau magasin s'y installe"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "6020d498573d1a6d9149642077817da1256f3b21546fecf1f81a26e658ffdb68",
+      "source_sha256": "a8a64723d9de78ac10f164be74f984a113c4c0508eef7438e4093173d1f37846",
       "audio": null
     },
     {
@@ -16206,7 +16207,7 @@
         "Demain matin"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "6020d498573d1a6d9149642077817da1256f3b21546fecf1f81a26e658ffdb68",
+      "source_sha256": "a8a64723d9de78ac10f164be74f984a113c4c0508eef7438e4093173d1f37846",
       "audio": null
     },
     {
@@ -16221,7 +16222,7 @@
         "Le bureau de la pharmacie"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "6020d498573d1a6d9149642077817da1256f3b21546fecf1f81a26e658ffdb68",
+      "source_sha256": "a8a64723d9de78ac10f164be74f984a113c4c0508eef7438e4093173d1f37846",
       "audio": null
     },
     {
@@ -16231,12 +16232,12 @@
       "question": 5,
       "enonce": "Par quelle rue faut-il entrer pour aller à la cafétéria ?",
       "labels": [
-        "La rue d'Arcole",
+        "La rue des Alpes",
         "La rue de la Cité",
-        "Le quai de la Corse"
+        "Le quai du Rhône"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "6020d498573d1a6d9149642077817da1256f3b21546fecf1f81a26e658ffdb68",
+      "source_sha256": "a8a64723d9de78ac10f164be74f984a113c4c0508eef7438e4093173d1f37846",
       "audio": null
     },
     {
@@ -16251,7 +16252,7 @@
         "Traverser le jardin"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "6020d498573d1a6d9149642077817da1256f3b21546fecf1f81a26e658ffdb68",
+      "source_sha256": "a8a64723d9de78ac10f164be74f984a113c4c0508eef7438e4093173d1f37846",
       "audio": null
     },
     {
@@ -16266,7 +16267,7 @@
         "De 10 h à 18 h"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "6020d498573d1a6d9149642077817da1256f3b21546fecf1f81a26e658ffdb68",
+      "source_sha256": "a8a64723d9de78ac10f164be74f984a113c4c0508eef7438e4093173d1f37846",
       "audio": null
     },
     {
@@ -16277,11 +16278,11 @@
       "enonce": "Par quelle rue faut-il entrer pour aller à la radiologie ?",
       "labels": [
         "La rue de la Cité",
-        "La rue d'Arcole",
-        "Le quai de la Corse"
+        "La rue des Alpes",
+        "Le quai du Rhône"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "6020d498573d1a6d9149642077817da1256f3b21546fecf1f81a26e658ffdb68",
+      "source_sha256": "a8a64723d9de78ac10f164be74f984a113c4c0508eef7438e4093173d1f37846",
       "audio": null
     },
     {
@@ -16296,7 +16297,7 @@
         "La galerie C"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "6020d498573d1a6d9149642077817da1256f3b21546fecf1f81a26e658ffdb68",
+      "source_sha256": "a8a64723d9de78ac10f164be74f984a113c4c0508eef7438e4093173d1f37846",
       "audio": null
     },
     {
@@ -16304,14 +16305,14 @@
       "bank": "src/tcf/content/a0-a1/ce.json",
       "exercise": "delf-a1-2022-ce-ex2-clinique",
       "question": 10,
-      "enonce": "Dans quelle direction faut-il tourner après l'entrée du quai de la Corse pour aller à la pharmacie ?",
+      "enonce": "Dans quelle direction faut-il tourner après l'entrée du quai du Rhône pour aller à la pharmacie ?",
       "labels": [
         "À droite",
         "À gauche",
         "Tout droit jusqu'au jardin"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "6020d498573d1a6d9149642077817da1256f3b21546fecf1f81a26e658ffdb68",
+      "source_sha256": "a8a64723d9de78ac10f164be74f984a113c4c0508eef7438e4093173d1f37846",
       "audio": null
     },
     {
@@ -16321,12 +16322,12 @@
       "question": 1,
       "enonce": "Dans quel pays cette fête est-elle présentée ?",
       "labels": [
-        "La France",
         "La Suisse",
+        "L’Autriche",
         "La Belgique"
       ],
-      "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "00fe5ce4b2cea7961364f780444935dd4e997f438307f294d186771a6fe170a8",
+      "status": "editorial_visual_screening_needed",
+      "source_sha256": "dcb307dd9cf4f42ff26fd68f958decd12f35d043a1893e2de06628389dd68c48",
       "audio": null
     },
     {
@@ -16341,7 +16342,7 @@
         "Organiser un voyage"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "00fe5ce4b2cea7961364f780444935dd4e997f438307f294d186771a6fe170a8",
+      "source_sha256": "dcb307dd9cf4f42ff26fd68f958decd12f35d043a1893e2de06628389dd68c48",
       "audio": null
     },
     {
@@ -16356,7 +16357,7 @@
         "Les stades"
       ],
       "status": "editorial_visual_screening_needed",
-      "source_sha256": "00fe5ce4b2cea7961364f780444935dd4e997f438307f294d186771a6fe170a8",
+      "source_sha256": "dcb307dd9cf4f42ff26fd68f958decd12f35d043a1893e2de06628389dd68c48",
       "audio": null
     },
     {
@@ -16371,7 +16372,7 @@
         "Sur le toit uniquement"
       ],
       "status": "reviewed_visual_artwork_pending",
-      "source_sha256": "00fe5ce4b2cea7961364f780444935dd4e997f438307f294d186771a6fe170a8",
+      "source_sha256": "dcb307dd9cf4f42ff26fd68f958decd12f35d043a1893e2de06628389dd68c48",
       "audio": null
     },
     {
@@ -16386,7 +16387,7 @@
         "Un seul voisin"
       ],
       "status": "text_required_person_role_or_diagnosis",
-      "source_sha256": "00fe5ce4b2cea7961364f780444935dd4e997f438307f294d186771a6fe170a8",
+      "source_sha256": "dcb307dd9cf4f42ff26fd68f958decd12f35d043a1893e2de06628389dd68c48",
       "audio": null
     },
     {
@@ -16394,14 +16395,14 @@
       "bank": "src/tcf/content/a0-a1/ce.json",
       "exercise": "delf-a1-2022-ce-ex4-voisins",
       "question": 7,
-      "enonce": "Combien de Français participent chaque année selon le texte ?",
+      "enonce": "Comment le texte décrit-il la participation à cette fête ?",
       "labels": [
-        "Des millions de personnes",
+        "De nombreux habitants participent",
         "Quelques centaines de personnes",
         "Moins de dix personnes"
       ],
-      "status": "text_required_amount_measure_or_rate",
-      "source_sha256": "00fe5ce4b2cea7961364f780444935dd4e997f438307f294d186771a6fe170a8",
+      "status": "editorial_visual_screening_needed",
+      "source_sha256": "dcb307dd9cf4f42ff26fd68f958decd12f35d043a1893e2de06628389dd68c48",
       "audio": null
     },
     {
@@ -16409,14 +16410,14 @@
       "bank": "src/tcf/content/a0-a1/ce.json",
       "exercise": "delf-a1-2022-ce-ex4-voisins",
       "question": 8,
-      "enonce": "Depuis quelle année cette fête existe-t-elle selon le texte ?",
+      "enonce": "Depuis quelle année cette fête est-elle organisée à Genève selon le texte ?",
       "labels": [
-        "1990",
+        "2003",
         "1980",
         "2000"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "00fe5ce4b2cea7961364f780444935dd4e997f438307f294d186771a6fe170a8",
+      "source_sha256": "dcb307dd9cf4f42ff26fd68f958decd12f35d043a1893e2de06628389dd68c48",
       "audio": null
     },
     {
@@ -16431,7 +16432,7 @@
         "Le samedi"
       ],
       "status": "text_required_calendar_identity_or_language",
-      "source_sha256": "00fe5ce4b2cea7961364f780444935dd4e997f438307f294d186771a6fe170a8",
+      "source_sha256": "dcb307dd9cf4f42ff26fd68f958decd12f35d043a1893e2de06628389dd68c48",
       "audio": null
     },
     {

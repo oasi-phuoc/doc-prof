@@ -43,6 +43,7 @@ function coAudioInBanner(block: WorksheetBlock): boolean {
     const tcf = item.tcf
     if (!tcf) return false
     if (tcf.kind === 'audio_cadre') return true
+    if (tcf.kind === 'association' && tcf.situations.some((situation) => situation.audioSrc)) return true
     if ((tcf.kind === 'qcm' || tcf.kind === 'lignes') && tcf.audioFrame) return true
     if (tcf.kind === 'support' && tcf.exercise.competence === 'CO') {
       const type = tcf.exercise.type_exercice
@@ -164,7 +165,7 @@ export function WorksheetSheet({
   const isJeuxSheet = page.domain === 'jeux'
   /** A5 : chaque moitié a toujours son en-tête (mini-contrôle autonome), sauf chrome masqué. */
   const showHeader =
-    !hideChrome && !isJeuxSheet && (Boolean(asHalf) || forceHeader || pageNumber === 1)
+    !page.cePosterSheet && !hideChrome && !isJeuxSheet && (Boolean(asHalf) || forceHeader || pageNumber === 1)
   const showFooter = !hideChrome && !isJeuxSheet
   const parity = sheetIndex % 2 === 1 ? 'sheet-odd' : 'sheet-even'
   const isDraftPadPage = page.items.some(
@@ -206,7 +207,7 @@ export function WorksheetSheet({
     : `worksheet-sheet ${parity}${isJeuxSheet ? ' is-jeux' : ''}${isSoutienFr ? ' is-soutien-fr' : ''}${isAlphabetisation ? ' is-alphabetisation' : ''}${evalMode ? ' is-eval' : ''}`
   return (
     <Root
-      className={rootClass}
+      className={`${rootClass}${page.cePosterSheet ? ' is-ce-art-page' : ''}${page.cePosterLandscape ? ' is-ce-art-landscape' : ''}`}
       style={{ '--sheet-columns': sheetColumns } as CSSProperties}
     >
       {showHeader ? (
@@ -458,7 +459,7 @@ export function WorksheetSheet({
                   const isTcfPageBreakable =
                     isTcfQuestion ||
                     isTcfAudioCadre ||
-                    (item.layout === 'tcf' && item.tcf?.kind === 'dialogue')
+                    (item.layout === 'tcf' && (item.tcf?.kind === 'dialogue' || item.tcf?.kind === 'ce_association_answers'))
                   const showMarginForms =
                     interactiveTcfOptions &&
                     isTcfQuestion &&

@@ -1,3 +1,4 @@
+import { TcfCeFormatControl } from './TcfCeFormatControl'
 import { PhrasePolarityControl } from './PhrasePolarityControl'
 import { PhraseCategoryControls } from './PhraseCategoryControls'
 import { GrammarCoLevelControl } from './GrammarCoLevelControl'
@@ -460,6 +461,10 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                     <option key={entry.exercise.id} value={entry.exercise.id}>{entry.source.filename.replace('.mp3','').replace(/^piste_?/,'Piste ')}</option>
                   ))}
                 </SelectBox>
+              ) : null}
+              {activePage.domain === 'tcf-csc' && activeBlock.exerciseType.startsWith('tcf-ce') ? (
+                <TcfCeFormatControl value={activeBlock.tcfCeFormat ?? 'texte'}
+                  onChange={(tcfCeFormat) => updatePage({ tcfCeFormat, libreItems: undefined })} />
               ) : null}
               {isTcf && tcfCoAudioSlotCount(activeBlock.exerciseType) != null ? (
                 <TcfCoAudioSlotsPicker

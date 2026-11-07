@@ -1,3 +1,4 @@
+import { CE_ARTWORKS } from './ce-art'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { VOCAB_IMAGE_THEMES } from '@/jeux/vocab-images'
 import { tcfImageSrc } from './media'
@@ -12,9 +13,10 @@ function norm(s: string) {
     .trim()
 }
 
-const ALL_WORDS: VocabHit[] = VOCAB_IMAGE_THEMES.flatMap((theme) =>
-  theme.words.map((w) => ({ label: w.label, src: w.src, theme: theme.label })),
-)
+const ALL_WORDS: VocabHit[] = [
+  ...VOCAB_IMAGE_THEMES.flatMap((theme) => theme.words.map((word) => ({ label: word.label, src: word.src, theme: theme.label }))),
+  ...CE_ARTWORKS.map((poster) => ({ label: poster.label, src: poster.src, theme: 'Affiches CE — TCF CSC' })),
+]
 
 /**
  * Fenêtre de recherche d’images vocabulaire : tapez un mot → chemin
@@ -24,27 +26,37 @@ export function VocabImagePicker({
   open,
   onClose,
   onPick,
+  initialQuery = '',
+  onUpload,
+  onReset,
+  uploadError,
 }: {
   open: boolean
   onClose: () => void
   onPick: (src: string) => void
+  initialQuery?: string
+  onUpload?: (file: File) => void | Promise<void>
+  onReset?: () => void
+  uploadError?: string
 }) {
   const [query, setQuery] = useState('')
   const inputRef = useRef<HTMLInputElement | null>(null)
+  const closeRef = useRef(onClose)
+  useEffect(() => { closeRef.current = onClose }, [onClose])
 
   useEffect(() => {
     if (!open) return
-    setQuery('')
+    setQuery(initialQuery)
     const t = window.setTimeout(() => inputRef.current?.focus(), 0)
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose()
+      if (e.key === 'Escape') closeRef.current()
     }
     window.addEventListener('keydown', onKey)
     return () => {
       window.clearTimeout(t)
       window.removeEventListener('keydown', onKey)
     }
-  }, [open, onClose])
+  }, [open, initialQuery])
 
   const hits = useMemo(() => {
     const q = norm(query)
@@ -74,6 +86,12 @@ export function VocabImagePicker({
         aria-modal="true"
         aria-label="Choisir une image vocabulaire"
         onClick={(e) => e.stopPropagation()}
+        onDragOver={onUpload ? (event) => event.preventDefault() : undefined}
+        onDrop={onUpload ? (event) => {
+          event.preventDefault()
+          const file = event.dataTransfer.files[0]
+          if (file) void onUpload(file)
+        } : undefined}
       >
         <header className="tcf-vocab-picker-head">
           <strong>Rechercher une image</strong>
@@ -81,6 +99,20 @@ export function VocabImagePicker({
             Fermer
           </button>
         </header>
+        {onUpload ? (
+          <div className="worksheet-image-upload">
+            <label>Importer une image temporaire
+              <input type="file" accept="image/jpeg,image/png,image/webp,image/svg+xml" onChange={(event) => {
+                const file = event.target.files?.[0]
+                if (file) void onUpload(file)
+                event.target.value = ''
+              }} />
+            </label>
+            <small>Ou déposez le fichier ici. Utilisable dans cette session et à l’impression ; non ajouté à la banque et non enregistré dans la fiche.</small>
+            {uploadError ? <p role="alert">{uploadError}</p> : null}
+          </div>
+        ) : null}
+        {onReset ? <button type="button" className="tcf-btn" onClick={onReset}>Rétablir l’image d’origine</button> : null}
         <input
           ref={inputRef}
           className="pill-input tcf-vocab-picker-search"

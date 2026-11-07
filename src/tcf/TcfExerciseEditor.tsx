@@ -1,3 +1,4 @@
+import { markMotATrouver, resetMotsATrouver } from './texte-images-editing'
 import { useMemo, useRef, useState } from 'react'
 import { SelectBox } from '@/components/generator/SelectBox'
 import { RefreshIcon } from '@/components/generator/WorksheetSheet'
@@ -61,33 +62,7 @@ function NbMotsFields({ value, onChange }: { value: TcfNbMots; onChange: (next: 
   )
 }
 
-const TEXTE_IMAGES_BLANK = '_____'
-
-/** Remplace la sélection par `_____ (n)` et enregistre le mot à l’index n−1. */
-function markMotATrouver(
-  texte: string,
-  start: number,
-  end: number,
-  mots: TcfMotImage[],
-): { texte: string; mots: TcfMotImage[]; caret: number } | null {
-  const raw = texte.slice(start, end)
-  const selected = raw.replace(/^[\s.,;:!?«»"']+|[\s.,;:!?«»"']+$/g, '')
-  if (!selected || /_{3,}/.test(selected)) return null
-  const index = mots.findIndex((m) => !m.mot.trim())
-  if (index < 0 || index >= 5) return null
-  const n = index + 1
-  const lead = raw.match(/^[\s.,;:!?«»"']*/)?.[0] ?? ''
-  const trail = raw.match(/[\s.,;:!?«»"']*$/)?.[0] ?? ''
-  const before = texte.slice(0, start) + lead
-  const after = trail + texte.slice(end)
-  const needsSpaceBefore = before.length > 0 && !/\s$/.test(before)
-  const needsSpaceAfter = after.length > 0 && !/^\s|[.,;:!?]/.test(after)
-  const blank = `${needsSpaceBefore ? ' ' : ''}${TEXTE_IMAGES_BLANK} (${n})${needsSpaceAfter ? ' ' : ''}`
-  const nextMots = mots.map((m, i) => (i === index ? { ...m, mot: selected } : m))
-  return { texte: before + blank + after, mots: nextMots, caret: before.length + blank.length }
-}
-
-function TexteImagesEditor({
+export function TexteImagesEditor({
   ex,
   set,
 }: {
@@ -95,6 +70,8 @@ function TexteImagesEditor({
   set: (next: TcfExercise) => void
 }) {
   const areaRef = useRef<HTMLTextAreaElement>(null)
+  const selection = useRef<{ start: number; end: number } | null>(null)
+  const [markError, setMarkError] = useState('')
   const mots = ex.support.mots.length === 5
     ? ex.support.mots
     : Array.from({ length: 5 }, (_, i) => ex.support.mots[i] ?? { mot: '', image: '' })
@@ -105,11 +82,19 @@ function TexteImagesEditor({
   const onMark = () => {
     const el = areaRef.current
     if (!el) return
-    const start = el.selectionStart
-    const end = el.selectionEnd
-    if (start === end) return
-    const next = markMotATrouver(ex.support.texte, start, end, mots)
-    if (!next) return
+    const selected = el.selectionEnd > el.selectionStart
+      ? { start: el.selectionStart, end: el.selectionEnd } : selection.current
+    if (!selected || selected.start === selected.end) {
+      setMarkError('Sélectionnez d’abord un mot dans le texte.')
+      return
+    }
+    const next = markMotATrouver(ex.support.texte, selected.start, selected.end, mots)
+    if (!next) {
+      setMarkError('Sélectionnez un mot sans blanc existant. Si les 5 mots sont déjà définis, réinitialisez-les pour recommencer.')
+      return
+    }
+    setMarkError('')
+    selection.current = null
     setSupport(next.texte, next.mots)
     requestAnimationFrame(() => {
       el.focus()
@@ -127,15 +112,24 @@ function TexteImagesEditor({
           className="pill-input tcf-textarea"
           rows={8}
           value={ex.support.texte}
-          onChange={(event) => setSupport(event.target.value, mots)}
+          onSelect={(event) => {
+            const el = event.currentTarget
+            if (el.selectionEnd > el.selectionStart) selection.current = { start: el.selectionStart, end: el.selectionEnd }
+          }}
+          onChange={(event) => { selection.current = null; setMarkError(''); setSupport(event.target.value, mots) }}
         />
       </label>
       <div className="tcf-row">
-        <button type="button" className="tcf-btn" onClick={onMark}>
+        <button type="button" className="tcf-btn" onMouseDown={(event) => event.preventDefault()} onClick={onMark}>
           Mot à trouver
         </button>
-        <small className="muted">Sélectionnez un mot dans le texte, puis cliquez.</small>
+        <button type="button" className="tcf-btn" onClick={() => {
+          const reset = resetMotsATrouver(ex.support.texte, mots)
+          selection.current = null; setMarkError(''); setSupport(reset.texte, reset.mots)
+        }}>Réinitialiser les mots à trouver</button>
+        <small className="muted">Sélectionnez jusqu’à 5 mots. Les numéros suivent leur position dans le texte.</small>
       </div>
+      {markError ? <p role="alert">{markError}</p> : null}
       {mots.map((m, i) => (
         <fieldset className="tcf-question-editor" key={i}>
           <legend>Mot {i + 1}</legend>

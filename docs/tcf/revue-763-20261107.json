@@ -15,7 +15,7 @@
         "Au restaurant du musée"
       ],
       "status": "artwork_needed_contextual_locations",
-      "source_sha256": "0326d7effd577018432e12cc67b8d53dda9e7feb0bf37eede5114f945c7458c8",
+      "source_sha256": "2da246eb676a6b79e0a9980547b60c7b3ed60f6b9f3e104f6682efe0db880ae0",
       "audio": null,
       "review_index": 0,
       "semantic_sha256": "953dfa9369eb4c3d0072a20525720747d6ad705ae60fd69f78c849a28d70160d",
@@ -32,7 +32,7 @@
         "source_bank": "src/tcf/content/a0-a1/ce.json",
         "source_exercise": "tcf-a1j-s1-ce-1",
         "source_question": 8,
-        "source_sha256": "0326d7effd577018432e12cc67b8d53dda9e7feb0bf37eede5114f945c7458c8",
+        "source_sha256": "2da246eb676a6b79e0a9980547b60c7b3ed60f6b9f3e104f6682efe0db880ae0",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -41,7 +41,18 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "before_upstream_integration": {
+        "source_sha256": "0326d7effd577018432e12cc67b8d53dda9e7feb0bf37eede5114f945c7458c8",
+        "semantic_sha256": "953dfa9369eb4c3d0072a20525720747d6ad705ae60fd69f78c849a28d70160d",
+        "enonce": "Où devez-vous présenter votre ticket ?",
+        "labels": [
+          "À l'accueil du musée",
+          "À la sortie du musée",
+          "Au restaurant du musée"
+        ]
+      },
+      "upstream_revalidation": "manually_reviewed_integrated_source"
     },
     {
       "key": "tcf-a1j-s2-ce-2#5",
@@ -55,13 +66,24 @@
         "Au restaurant Chez Marie"
       ],
       "status": "keep_text_named_identity_or_location",
-      "source_sha256": "b563370375645e56aa2f49f32c08a2ba469475b501509ec895c7810c53bebc53",
+      "source_sha256": "e79adb7aa57f34e8247c6e2e2e78b2512f9df39773f025d5b415b29dedf2b80c",
       "audio": null,
       "review_index": 1,
       "semantic_sha256": "2d0a88f559cc27b24715fcaebbcdd2d1b32ccf14fa3bc16e5fd755157848c1bc",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Les choix dépendent de noms propres, adresses ou identités exactes ; une architecture inventée ou un portrait générique ne prouve pas cette distinction."
+      "reason": "Les choix dépendent de noms propres, adresses ou identités exactes ; une architecture inventée ou un portrait générique ne prouve pas cette distinction.",
+      "before_upstream_integration": {
+        "source_sha256": "b563370375645e56aa2f49f32c08a2ba469475b501509ec895c7810c53bebc53",
+        "semantic_sha256": "2d0a88f559cc27b24715fcaebbcdd2d1b32ccf14fa3bc16e5fd755157848c1bc",
+        "enonce": "Où Amélie propose-t-elle de déjeuner ?",
+        "labels": [
+          "Au restaurant Chez Lulu",
+          "Au restaurant Chez Paul",
+          "Au restaurant Chez Marie"
+        ]
+      },
+      "upstream_revalidation": "retained_review_after_exact_swiss_localization"
     },
     {
       "key": "tcf-a1j-s2-ce-3#3",
@@ -75,7 +97,7 @@
         "À la cantine"
       ],
       "status": "artwork_needed_contextual_locations",
-      "source_sha256": "5f0f18a70e19d748ebb2899d67b9ff3820176db891080220a1398734d55cce12",
+      "source_sha256": "e6abfde1ecd2d0f59abb4de2bddf1df8b700d9989c2ddd1d52ab3084ac27f525",
       "audio": null,
       "review_index": 2,
       "semantic_sha256": "b76dd12981c3d8ff64fcb299ec68d1f367403fd5d8997baa086074f2146401b1",
@@ -92,7 +114,7 @@
         "source_bank": "src/tcf/content/a0-a1/ce.json",
         "source_exercise": "tcf-a1j-s2-ce-3",
         "source_question": 3,
-        "source_sha256": "5f0f18a70e19d748ebb2899d67b9ff3820176db891080220a1398734d55cce12",
+        "source_sha256": "e6abfde1ecd2d0f59abb4de2bddf1df8b700d9989c2ddd1d52ab3084ac27f525",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -101,7 +123,18 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "before_upstream_integration": {
+        "source_sha256": "5f0f18a70e19d748ebb2899d67b9ff3820176db891080220a1398734d55cce12",
+        "semantic_sha256": "b76dd12981c3d8ff64fcb299ec68d1f367403fd5d8997baa086074f2146401b1",
+        "enonce": "Où a lieu l'exposition « La vie, demain » ?",
+        "labels": [
+          "À la médiathèque",
+          "Au gymnase",
+          "À la cantine"
+        ]
+      },
+      "upstream_revalidation": "manually_reviewed_integrated_source"
     },
     {
       "key": "tcf-a1j-s2-ce-3#8",
@@ -115,7 +148,7 @@
         "À la cantine"
       ],
       "status": "artwork_needed_contextual_locations",
-      "source_sha256": "5f0f18a70e19d748ebb2899d67b9ff3820176db891080220a1398734d55cce12",
+      "source_sha256": "e6abfde1ecd2d0f59abb4de2bddf1df8b700d9989c2ddd1d52ab3084ac27f525",
       "audio": null,
       "review_index": 3,
       "semantic_sha256": "ee92311d3af645c6876fc968c8f7a76b23251935d66f4d5276a58fb44bbad97c",
@@ -132,7 +165,7 @@
         "source_bank": "src/tcf/content/a0-a1/ce.json",
         "source_exercise": "tcf-a1j-s2-ce-3",
         "source_question": 8,
-        "source_sha256": "5f0f18a70e19d748ebb2899d67b9ff3820176db891080220a1398734d55cce12",
+        "source_sha256": "e6abfde1ecd2d0f59abb4de2bddf1df8b700d9989c2ddd1d52ab3084ac27f525",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -141,7 +174,18 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "before_upstream_integration": {
+        "source_sha256": "5f0f18a70e19d748ebb2899d67b9ff3820176db891080220a1398734d55cce12",
+        "semantic_sha256": "ee92311d3af645c6876fc968c8f7a76b23251935d66f4d5276a58fb44bbad97c",
+        "enonce": "Où se retrouve-t-on pour le ciné-club ?",
+        "labels": [
+          "Au gymnase",
+          "À la médiathèque",
+          "À la cantine"
+        ]
+      },
+      "upstream_revalidation": "manually_reviewed_integrated_source"
     },
     {
       "key": "tcf-a1j-s2-ce-4#3",
@@ -155,7 +199,7 @@
         "Environ trois heures"
       ],
       "status": "artwork_needed_duration_or_scope",
-      "source_sha256": "1b0b95743860c62894b11732cdff3a9529233e105fa94cc15443c74e80af819c",
+      "source_sha256": "b608eedbbefb757f831096ab107566d5cf57c021e4a3f58f73f760acc70c938e",
       "audio": null,
       "review_index": 4,
       "semantic_sha256": "d78eb1c24b71c4cffaa485128ef40ada5ad7285ebe8cb20c350ab46bc774bde8",
@@ -172,7 +216,7 @@
         "source_bank": "src/tcf/content/a0-a1/ce.json",
         "source_exercise": "tcf-a1j-s2-ce-4",
         "source_question": 3,
-        "source_sha256": "1b0b95743860c62894b11732cdff3a9529233e105fa94cc15443c74e80af819c",
+        "source_sha256": "b608eedbbefb757f831096ab107566d5cf57c021e4a3f58f73f760acc70c938e",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -181,7 +225,18 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "before_upstream_integration": {
+        "source_sha256": "1b0b95743860c62894b11732cdff3a9529233e105fa94cc15443c74e80af819c",
+        "semantic_sha256": "d78eb1c24b71c4cffaa485128ef40ada5ad7285ebe8cb20c350ab46bc774bde8",
+        "enonce": "Combien de temps dure le match ?",
+        "labels": [
+          "Environ deux heures",
+          "Environ une heure",
+          "Environ trois heures"
+        ]
+      },
+      "upstream_revalidation": "retained_review_after_exact_swiss_localization"
     },
     {
       "key": "tcf-a1j-s2-ce-4#6",
@@ -195,7 +250,7 @@
         "Dix minutes"
       ],
       "status": "active_reviewed_trio",
-      "source_sha256": "1b0b95743860c62894b11732cdff3a9529233e105fa94cc15443c74e80af819c",
+      "source_sha256": "b608eedbbefb757f831096ab107566d5cf57c021e4a3f58f73f760acc70c938e",
       "audio": null,
       "review_index": 5,
       "selected_images": [
@@ -211,7 +266,18 @@
       "semantic_sha256": "99338fd5935b704c02b6d8bcb878d72d53f91b9ca67a1e05bf01675fe92f2f3a",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Trois illustrations contrôlées visuellement, distinctes et fidèles aux catégories, couleurs ou quantités demandées. Source et corrigé conservés."
+      "reason": "Trois illustrations contrôlées visuellement, distinctes et fidèles aux catégories, couleurs ou quantités demandées. Source et corrigé conservés.",
+      "before_upstream_integration": {
+        "source_sha256": "1b0b95743860c62894b11732cdff3a9529233e105fa94cc15443c74e80af819c",
+        "semantic_sha256": "99338fd5935b704c02b6d8bcb878d72d53f91b9ca67a1e05bf01675fe92f2f3a",
+        "enonce": "Combien de temps dure la pause ?",
+        "labels": [
+          "Une minute",
+          "Cinq minutes",
+          "Dix minutes"
+        ]
+      },
+      "upstream_revalidation": "retained_review_after_exact_swiss_localization"
     },
     {
       "key": "tcf-a1j-s3-ce-2#2",
@@ -220,29 +286,29 @@
       "question": 2,
       "enonce": "Quel lieu Emma veut-elle visiter ?",
       "labels": [
-        "L'île aux Pirates",
+        "L’île Saint-Pierre",
         "Le château des Pirates",
         "Le musée des Pirates"
       ],
       "status": "artwork_needed_whole_answer_concepts",
-      "source_sha256": "68f9088df76fc6fade85383b92d4eca2351ddc02d2406f577611d57196c2d503",
+      "source_sha256": "266af4fad8b3ef006b4c86685872d794e1c0efbeaa68bcfea693f7b03280c4c3",
       "audio": null,
       "review_index": 6,
-      "semantic_sha256": "aee13644c0daa9b266df54c638075fd6de4ceff8b7f38ed5133a70110aeb0dbc",
+      "semantic_sha256": "3eb440457b54182255c0aee22d30ea8d8cdb9c57e18cef43f13d66f8c75d9fd1",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
       "reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
       "brief": {
         "context_question": "Quel lieu Emma veut-elle visiter ?",
         "choices_to_illustrate": [
-          "L'île aux Pirates",
+          "L’île Saint-Pierre",
           "Le château des Pirates",
           "Le musée des Pirates"
         ],
         "source_bank": "src/tcf/content/a0-a1/ce.json",
         "source_exercise": "tcf-a1j-s3-ce-2",
         "source_question": 2,
-        "source_sha256": "68f9088df76fc6fade85383b92d4eca2351ddc02d2406f577611d57196c2d503",
+        "source_sha256": "266af4fad8b3ef006b4c86685872d794e1c0efbeaa68bcfea693f7b03280c4c3",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -251,7 +317,18 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "before_upstream_integration": {
+        "source_sha256": "68f9088df76fc6fade85383b92d4eca2351ddc02d2406f577611d57196c2d503",
+        "semantic_sha256": "aee13644c0daa9b266df54c638075fd6de4ceff8b7f38ed5133a70110aeb0dbc",
+        "enonce": "Quel lieu Emma veut-elle visiter ?",
+        "labels": [
+          "L'île aux Pirates",
+          "Le château des Pirates",
+          "Le musée des Pirates"
+        ]
+      },
+      "upstream_revalidation": "retained_review_after_exact_swiss_localization"
     },
     {
       "key": "tcf-a1j-s3-ce-3#3",
@@ -265,7 +342,7 @@
         "2 heures"
       ],
       "status": "artwork_needed_duration_or_scope",
-      "source_sha256": "2f94e9aa2e3e4ea84a76051fb5bc879232ef81e98055844278f54b9f961ec481",
+      "source_sha256": "1900be6dcb9989c7af7d4507e55ed5bc314f30a73d69b763c20da96273c0ff83",
       "audio": null,
       "review_index": 7,
       "semantic_sha256": "fad4c366dfa908aa5a77029c1b019b7a8973edc037b6c5aa8613b7928173e775",
@@ -282,7 +359,7 @@
         "source_bank": "src/tcf/content/a0-a1/ce.json",
         "source_exercise": "tcf-a1j-s3-ce-3",
         "source_question": 3,
-        "source_sha256": "2f94e9aa2e3e4ea84a76051fb5bc879232ef81e98055844278f54b9f961ec481",
+        "source_sha256": "1900be6dcb9989c7af7d4507e55ed5bc314f30a73d69b763c20da96273c0ff83",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -291,7 +368,18 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "before_upstream_integration": {
+        "source_sha256": "2f94e9aa2e3e4ea84a76051fb5bc879232ef81e98055844278f54b9f961ec481",
+        "semantic_sha256": "fad4c366dfa908aa5a77029c1b019b7a8973edc037b6c5aa8613b7928173e775",
+        "enonce": "Combien de temps dure la visite de nuit ?",
+        "labels": [
+          "1 h 30",
+          "1 heure",
+          "2 heures"
+        ]
+      },
+      "upstream_revalidation": "retained_review_after_exact_swiss_localization"
     },
     {
       "key": "tcf-a1-s1-ce-1#6",
@@ -305,7 +393,7 @@
         "Derrière la porte B"
       ],
       "status": "artwork_needed_contextual_locations",
-      "source_sha256": "d783690db99891dfac6441a5e6c029fe860bb700e3a11020bc16af16b42dbdb5",
+      "source_sha256": "8b7480e270829cbeecf516b08e537c42e4c9efc264576429af574184549cd13a",
       "audio": null,
       "review_index": 8,
       "semantic_sha256": "d3f3463871b9ffa4902e3662f98b9053cc21c07b98a0d25819725c655816413a",
@@ -322,7 +410,7 @@
         "source_bank": "src/tcf/content/a0-a1/ce.json",
         "source_exercise": "tcf-a1-s1-ce-1",
         "source_question": 6,
-        "source_sha256": "d783690db99891dfac6441a5e6c029fe860bb700e3a11020bc16af16b42dbdb5",
+        "source_sha256": "8b7480e270829cbeecf516b08e537c42e4c9efc264576429af574184549cd13a",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -331,7 +419,18 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "before_upstream_integration": {
+        "source_sha256": "d783690db99891dfac6441a5e6c029fe860bb700e3a11020bc16af16b42dbdb5",
+        "semantic_sha256": "d3f3463871b9ffa4902e3662f98b9053cc21c07b98a0d25819725c655816413a",
+        "enonce": "Où se trouve l'ascenseur ?",
+        "labels": [
+          "En face de la porte B",
+          "À gauche de la porte B",
+          "Derrière la porte B"
+        ]
+      },
+      "upstream_revalidation": "retained_review_after_exact_swiss_localization"
     },
     {
       "key": "tcf-a1-s1-ce-3#8",
@@ -365,7 +464,7 @@
         "Les fleurs"
       ],
       "status": "active_reviewed_trio",
-      "source_sha256": "51624002f81fd55ab01bc2eedbee9e6e25a7c6aec0d33d8e789bcd169fb36e16",
+      "source_sha256": "8fbf03f1adad81f82472d79f24d890e8dc11ff3310ee53c698993d78496c44ab",
       "audio": null,
       "review_index": 10,
       "selected_images": [
@@ -381,7 +480,18 @@
       "semantic_sha256": "b5b2cc8c6e1b8655a3b82e18ab2317a62f4ae523035e35df13695dd36ffb2a68",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Trois illustrations contrôlées visuellement, distinctes et fidèles aux catégories, couleurs ou quantités demandées. Source et corrigé conservés."
+      "reason": "Trois illustrations contrôlées visuellement, distinctes et fidèles aux catégories, couleurs ou quantités demandées. Source et corrigé conservés.",
+      "before_upstream_integration": {
+        "source_sha256": "51624002f81fd55ab01bc2eedbee9e6e25a7c6aec0d33d8e789bcd169fb36e16",
+        "semantic_sha256": "b5b2cc8c6e1b8655a3b82e18ab2317a62f4ae523035e35df13695dd36ffb2a68",
+        "enonce": "Quel cadeau a le plus de succès ?",
+        "labels": [
+          "Le parfum",
+          "Les bijoux",
+          "Les fleurs"
+        ]
+      },
+      "upstream_revalidation": "retained_review_after_exact_swiss_localization"
     },
     {
       "key": "tcf-a1-s2-ce-2#1",
@@ -555,7 +665,7 @@
         "Dans la salle de pause"
       ],
       "status": "artwork_needed_contextual_locations",
-      "source_sha256": "39a1a9a390b40ad3b65df42a832839c419a68cee94862f9b587a785dd4a2b61d",
+      "source_sha256": "5df020ad517f6e201d827535e8ad1d9f5c40b707d39a1648c4b50cf8f9b7e8a4",
       "audio": null,
       "review_index": 15,
       "semantic_sha256": "14e87d1e6cbc87c7575b81e55179e3eb439ed939b9bd6a4a6850798331ee88c6",
@@ -572,7 +682,7 @@
         "source_bank": "src/tcf/content/a0-a1/ce.json",
         "source_exercise": "tcf-a1-s3-ce-3",
         "source_question": 3,
-        "source_sha256": "39a1a9a390b40ad3b65df42a832839c419a68cee94862f9b587a785dd4a2b61d",
+        "source_sha256": "5df020ad517f6e201d827535e8ad1d9f5c40b707d39a1648c4b50cf8f9b7e8a4",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -581,7 +691,18 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "before_upstream_integration": {
+        "source_sha256": "39a1a9a390b40ad3b65df42a832839c419a68cee94862f9b587a785dd4a2b61d",
+        "semantic_sha256": "14e87d1e6cbc87c7575b81e55179e3eb439ed939b9bd6a4a6850798331ee88c6",
+        "enonce": "Où l'entreprise est-elle présentée ?",
+        "labels": [
+          "Dans la grande salle de réunion",
+          "Dans les ateliers",
+          "Dans la salle de pause"
+        ]
+      },
+      "upstream_revalidation": "retained_review_after_exact_swiss_localization"
     },
     {
       "key": "tcf-a1-s3-ce-3#8",
@@ -590,29 +711,29 @@
       "question": 8,
       "enonce": "Où les visiteurs déjeunent-ils ?",
       "labels": [
-        "Au Septime",
+        "Au Restaurant des Alpes",
         "À la cantine",
         "Dans la salle de pause"
       ],
       "status": "artwork_needed_contextual_locations",
-      "source_sha256": "39a1a9a390b40ad3b65df42a832839c419a68cee94862f9b587a785dd4a2b61d",
+      "source_sha256": "5df020ad517f6e201d827535e8ad1d9f5c40b707d39a1648c4b50cf8f9b7e8a4",
       "audio": null,
       "review_index": 16,
-      "semantic_sha256": "254b09420f344046ac51ff5866cb97f11149dd2f03e3deb7900a08e3ed60ba58",
+      "semantic_sha256": "22d7069b82e0d7929f648324f3852905247d26ae7ab851b8fc20e3d3d53622fb",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
       "reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
       "brief": {
         "context_question": "Où les visiteurs déjeunent-ils ?",
         "choices_to_illustrate": [
-          "Au Septime",
+          "Au Restaurant des Alpes",
           "À la cantine",
           "Dans la salle de pause"
         ],
         "source_bank": "src/tcf/content/a0-a1/ce.json",
         "source_exercise": "tcf-a1-s3-ce-3",
         "source_question": 8,
-        "source_sha256": "39a1a9a390b40ad3b65df42a832839c419a68cee94862f9b587a785dd4a2b61d",
+        "source_sha256": "5df020ad517f6e201d827535e8ad1d9f5c40b707d39a1648c4b50cf8f9b7e8a4",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -621,7 +742,18 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "before_upstream_integration": {
+        "source_sha256": "39a1a9a390b40ad3b65df42a832839c419a68cee94862f9b587a785dd4a2b61d",
+        "semantic_sha256": "254b09420f344046ac51ff5866cb97f11149dd2f03e3deb7900a08e3ed60ba58",
+        "enonce": "Où les visiteurs déjeunent-ils ?",
+        "labels": [
+          "Au Septime",
+          "À la cantine",
+          "Dans la salle de pause"
+        ]
+      },
+      "upstream_revalidation": "retained_review_after_exact_swiss_localization"
     },
     {
       "key": "tcf-a1-s4-ce-3#3",
@@ -630,18 +762,29 @@
       "question": 3,
       "enonce": "Où a lieu la sortie ?",
       "labels": [
-        "À Rhode-Saint-Genèse",
-        "À Bruxelles",
-        "À Lille"
+        "À Aubonne",
+        "À Lausanne",
+        "À Fribourg"
       ],
       "status": "keep_text_named_identity_or_location",
-      "source_sha256": "df06daf5422b4b386e8f54e51377ebbc565057bad98a4c2b8926b8cb546f1181",
+      "source_sha256": "8c502c7e7eb8595e8833943de34ca5ba91d793df3a47fa387731b519ad50a89a",
       "audio": null,
       "review_index": 17,
-      "semantic_sha256": "e6c632e19c583477a9bff218b958d0f645f0b3f0ba63e30d4563c5857392ee02",
+      "semantic_sha256": "921817d2b2d9ea9480e6d849e3b8338a75faf50c7172af449fdffaad7459be7c",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Les choix dépendent de noms propres, adresses ou identités exactes ; une architecture inventée ou un portrait générique ne prouve pas cette distinction."
+      "reason": "Les choix dépendent de noms propres, adresses ou identités exactes ; une architecture inventée ou un portrait générique ne prouve pas cette distinction.",
+      "before_upstream_integration": {
+        "source_sha256": "df06daf5422b4b386e8f54e51377ebbc565057bad98a4c2b8926b8cb546f1181",
+        "semantic_sha256": "e6c632e19c583477a9bff218b958d0f645f0b3f0ba63e30d4563c5857392ee02",
+        "enonce": "Où a lieu la sortie ?",
+        "labels": [
+          "À Rhode-Saint-Genèse",
+          "À Bruxelles",
+          "À Lille"
+        ]
+      },
+      "upstream_revalidation": "retained_review_after_exact_swiss_localization"
     },
     {
       "key": "tcf-a1-s4-ce-4#4",
@@ -655,7 +798,7 @@
         "Cinq livres"
       ],
       "status": "artwork_needed_exact_counts",
-      "source_sha256": "f688cb14f67984891bc5119a5e7a60c4a84a0e3a5c98f37d71a63b375d8a8f9f",
+      "source_sha256": "aa711557f586ff263a179b8d73b4d0a90a91fd62b696f561961a2a64a5c1a32c",
       "audio": null,
       "review_index": 18,
       "semantic_sha256": "70c1b0546970e05b4a59ad9e29a0f07766ff6f97e235ecaeafebed8f4bed2fee",
@@ -672,7 +815,7 @@
         "source_bank": "src/tcf/content/a0-a1/ce.json",
         "source_exercise": "tcf-a1-s4-ce-4",
         "source_question": 4,
-        "source_sha256": "f688cb14f67984891bc5119a5e7a60c4a84a0e3a5c98f37d71a63b375d8a8f9f",
+        "source_sha256": "aa711557f586ff263a179b8d73b4d0a90a91fd62b696f561961a2a64a5c1a32c",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -681,7 +824,18 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "before_upstream_integration": {
+        "source_sha256": "f688cb14f67984891bc5119a5e7a60c4a84a0e3a5c98f37d71a63b375d8a8f9f",
+        "semantic_sha256": "70c1b0546970e05b4a59ad9e29a0f07766ff6f97e235ecaeafebed8f4bed2fee",
+        "enonce": "Entre combien de livres peut-on choisir ?",
+        "labels": [
+          "Quatre livres",
+          "Trois livres",
+          "Cinq livres"
+        ]
+      },
+      "upstream_revalidation": "manually_reviewed_integrated_source"
     },
     {
       "key": "tcf-a1p-s4-ce-2#3",
@@ -695,7 +849,7 @@
         "Vers l'arrière"
       ],
       "status": "artwork_needed_contextual_locations",
-      "source_sha256": "7d4ec2bb879ecb9f47e0d9ba1223479cf1385432c9e558236ba6d337b1f9228f",
+      "source_sha256": "d0232dc62f27332ce6d19eab4e421581cf4fadae73b29ccc1a85049c8fbf38cb",
       "audio": null,
       "review_index": 19,
       "semantic_sha256": "cf931c634e02826c89c567e5fc7bd2c3e5e48834967e0ba683c1d2149e5b75e5",
@@ -712,7 +866,7 @@
         "source_bank": "src/tcf/content/a0-a1/ce.json",
         "source_exercise": "tcf-a1p-s4-ce-2",
         "source_question": 3,
-        "source_sha256": "7d4ec2bb879ecb9f47e0d9ba1223479cf1385432c9e558236ba6d337b1f9228f",
+        "source_sha256": "d0232dc62f27332ce6d19eab4e421581cf4fadae73b29ccc1a85049c8fbf38cb",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -721,7 +875,18 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "before_upstream_integration": {
+        "source_sha256": "7d4ec2bb879ecb9f47e0d9ba1223479cf1385432c9e558236ba6d337b1f9228f",
+        "semantic_sha256": "cf931c634e02826c89c567e5fc7bd2c3e5e48834967e0ba683c1d2149e5b75e5",
+        "enonce": "Où faut-il d'abord tourner à la sortie du bâtiment ?",
+        "labels": [
+          "À gauche",
+          "À droite",
+          "Vers l'arrière"
+        ]
+      },
+      "upstream_revalidation": "retained_review_after_exact_swiss_localization"
     },
     {
       "key": "tcf-a1p-s4-ce-2#6",
@@ -735,7 +900,7 @@
         "Une carte bancaire"
       ],
       "status": "artwork_needed_distinct_document_types",
-      "source_sha256": "7d4ec2bb879ecb9f47e0d9ba1223479cf1385432c9e558236ba6d337b1f9228f",
+      "source_sha256": "d0232dc62f27332ce6d19eab4e421581cf4fadae73b29ccc1a85049c8fbf38cb",
       "audio": null,
       "review_index": 20,
       "semantic_sha256": "9243a1bd6591c8381e5a1972fa1d9f6ff37db91705253f860aa028b01c80c19d",
@@ -752,7 +917,7 @@
         "source_bank": "src/tcf/content/a0-a1/ce.json",
         "source_exercise": "tcf-a1p-s4-ce-2",
         "source_question": 6,
-        "source_sha256": "7d4ec2bb879ecb9f47e0d9ba1223479cf1385432c9e558236ba6d337b1f9228f",
+        "source_sha256": "d0232dc62f27332ce6d19eab4e421581cf4fadae73b29ccc1a85049c8fbf38cb",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -761,7 +926,18 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "before_upstream_integration": {
+        "source_sha256": "7d4ec2bb879ecb9f47e0d9ba1223479cf1385432c9e558236ba6d337b1f9228f",
+        "semantic_sha256": "9243a1bd6591c8381e5a1972fa1d9f6ff37db91705253f860aa028b01c80c19d",
+        "enonce": "Quel document faut-il apporter au premier cours ?",
+        "labels": [
+          "Une pièce d'identité",
+          "Un certificat médical",
+          "Une carte bancaire"
+        ]
+      },
+      "upstream_revalidation": "retained_review_after_exact_swiss_localization"
     },
     {
       "key": "tcf-a1p-s4-ce-3#8",
@@ -775,7 +951,7 @@
         "Deux heures"
       ],
       "status": "artwork_needed_duration_or_scope",
-      "source_sha256": "728026deb4ab5a2d4d44fef34665b63f00f8952fea258501276c7d024678f196",
+      "source_sha256": "be72bf7b86ee5ec5c55c5d6afeb2894e0fdcfbae8f513e95931b55b0a6c04f8e",
       "audio": null,
       "review_index": 21,
       "semantic_sha256": "ae48f821aa00c10255345f886143502ace704c3e0f3496b70f3c2e30139b295d",
@@ -792,7 +968,7 @@
         "source_bank": "src/tcf/content/a0-a1/ce.json",
         "source_exercise": "tcf-a1p-s4-ce-3",
         "source_question": 8,
-        "source_sha256": "728026deb4ab5a2d4d44fef34665b63f00f8952fea258501276c7d024678f196",
+        "source_sha256": "be72bf7b86ee5ec5c55c5d6afeb2894e0fdcfbae8f513e95931b55b0a6c04f8e",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -801,7 +977,18 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "before_upstream_integration": {
+        "source_sha256": "728026deb4ab5a2d4d44fef34665b63f00f8952fea258501276c7d024678f196",
+        "semantic_sha256": "ae48f821aa00c10255345f886143502ace704c3e0f3496b70f3c2e30139b295d",
+        "enonce": "Combien de temps dure une visite d'appartement ?",
+        "labels": [
+          "Une heure",
+          "Une demi-heure",
+          "Deux heures"
+        ]
+      },
+      "upstream_revalidation": "retained_review_after_exact_swiss_localization"
     },
     {
       "key": "tcf-a1p-s3-ce-1#6",
@@ -810,18 +997,29 @@
       "question": 6,
       "enonce": "Dans quelle ville faut-il habiter ou pouvoir se déplacer ?",
       "labels": [
-        "Limoges",
-        "Lille",
-        "Lyon"
+        "Lausanne",
+        "Fribourg",
+        "Berne"
       ],
       "status": "keep_text_named_identity_or_location",
-      "source_sha256": "a20158f08a662539110536d8a23433606d30f47c2900f60e50e3a5906582d4b3",
+      "source_sha256": "ad73947b6d584dc4b6e1e19120af219563781ad90f2a9a61d7400aaf73369b44",
       "audio": null,
       "review_index": 22,
-      "semantic_sha256": "e098c16a471080ce5aee42a164d9eeb0ab0c87a89edb58b34e9215675edc727f",
+      "semantic_sha256": "8977968da008781867a97908aaf2385ca0f18362338fe2d315b944e59de92d89",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Les choix dépendent de noms propres, adresses ou identités exactes ; une architecture inventée ou un portrait générique ne prouve pas cette distinction."
+      "reason": "Les choix dépendent de noms propres, adresses ou identités exactes ; une architecture inventée ou un portrait générique ne prouve pas cette distinction.",
+      "before_upstream_integration": {
+        "source_sha256": "a20158f08a662539110536d8a23433606d30f47c2900f60e50e3a5906582d4b3",
+        "semantic_sha256": "e098c16a471080ce5aee42a164d9eeb0ab0c87a89edb58b34e9215675edc727f",
+        "enonce": "Dans quelle ville faut-il habiter ou pouvoir se déplacer ?",
+        "labels": [
+          "Limoges",
+          "Lille",
+          "Lyon"
+        ]
+      },
+      "upstream_revalidation": "retained_review_after_exact_swiss_localization"
     },
     {
       "key": "tcf-a1p-s3-ce-3#6",
@@ -835,13 +1033,24 @@
         "Trois mois"
       ],
       "status": "keep_text_calendar_or_temporal_scope",
-      "source_sha256": "41794145e3912194d1df90b6659b8ff17633d7556cf19a878937f3f5a91cc5c2",
+      "source_sha256": "5e25c65d2fdda21927ded5ffe65d4dc730ad51772899b31a74988f08bcd37b66",
       "audio": null,
       "review_index": 23,
       "semantic_sha256": "e0893d9b9c44eaf1f77096519d1ceb7f462b1212484b641087a6ec6f7bade191",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Durée calendaire ou portée relative : Trois semaines / Trois jours / Trois mois. Ne pas la remplacer par une heure de cadran ni par des dates inventées."
+      "reason": "Durée calendaire ou portée relative : Trois semaines / Trois jours / Trois mois. Ne pas la remplacer par une heure de cadran ni par des dates inventées.",
+      "before_upstream_integration": {
+        "source_sha256": "41794145e3912194d1df90b6659b8ff17633d7556cf19a878937f3f5a91cc5c2",
+        "semantic_sha256": "e0893d9b9c44eaf1f77096519d1ceb7f462b1212484b641087a6ec6f7bade191",
+        "enonce": "Combien de temps dure le travail de secrétaire ?",
+        "labels": [
+          "Trois semaines",
+          "Trois jours",
+          "Trois mois"
+        ]
+      },
+      "upstream_revalidation": "manually_reviewed_integrated_source"
     },
     {
       "key": "tcf-a1-tpb-ce-4#5",
@@ -855,7 +1064,7 @@
         "Sur une affiche"
       ],
       "status": "artwork_needed_contextual_locations",
-      "source_sha256": "512a3e0028a6f673428238e76218dec08a0b6d9a0a91118605cba235a80ecb9c",
+      "source_sha256": "d4d8ed48be35bea6e52c7120e62fe1ecb9a27cea97d556c651aaf420fba80de0",
       "audio": null,
       "review_index": 24,
       "semantic_sha256": "018d7d5f7c2a5ff921d86afcc3808ae75b775c4ab3e9ec3651d1442def83ea12",
@@ -872,7 +1081,7 @@
         "source_bank": "src/tcf/content/a0-a1/ce.json",
         "source_exercise": "tcf-a1-tpb-ce-4",
         "source_question": 5,
-        "source_sha256": "512a3e0028a6f673428238e76218dec08a0b6d9a0a91118605cba235a80ecb9c",
+        "source_sha256": "d4d8ed48be35bea6e52c7120e62fe1ecb9a27cea97d556c651aaf420fba80de0",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -881,7 +1090,18 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "before_upstream_integration": {
+        "source_sha256": "512a3e0028a6f673428238e76218dec08a0b6d9a0a91118605cba235a80ecb9c",
+        "semantic_sha256": "018d7d5f7c2a5ff921d86afcc3808ae75b775c4ab3e9ec3651d1442def83ea12",
+        "enonce": "Où peut-on lire les descriptions des festivals ?",
+        "labels": [
+          "Sur un site Internet",
+          "Dans un livre",
+          "Sur une affiche"
+        ]
+      },
+      "upstream_revalidation": "retained_review_after_exact_swiss_localization"
     },
     {
       "key": "tcf-a1-sem1-ce-2#3",
@@ -935,7 +1155,7 @@
         "Une robe de soirée"
       ],
       "status": "artwork_needed_whole_answer_concepts",
-      "source_sha256": "ac313d9f8c3ea281e682c20b6d4812e521c417de8b6422cf33755ac799641c6a",
+      "source_sha256": "e354374cf55c4f61c95ba317dc3607a4a3543b2b4d1db20fa2691603441bf581",
       "audio": null,
       "review_index": 26,
       "semantic_sha256": "2b9db26fc7cedc50506b1c9e58a84a1617d643be9434144af8232d8a00ba776f",
@@ -952,7 +1172,7 @@
         "source_bank": "src/tcf/content/a0-a1/ce.json",
         "source_exercise": "delf-a1v-ce-002",
         "source_question": 4,
-        "source_sha256": "ac313d9f8c3ea281e682c20b6d4812e521c417de8b6422cf33755ac799641c6a",
+        "source_sha256": "e354374cf55c4f61c95ba317dc3607a4a3543b2b4d1db20fa2691603441bf581",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -961,7 +1181,18 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "before_upstream_integration": {
+        "source_sha256": "ac313d9f8c3ea281e682c20b6d4812e521c417de8b6422cf33755ac799641c6a",
+        "semantic_sha256": "2b9db26fc7cedc50506b1c9e58a84a1617d643be9434144af8232d8a00ba776f",
+        "enonce": "Quel vêtement est conseillé ?",
+        "labels": [
+          "Un pantalon souple",
+          "Un costume",
+          "Une robe de soirée"
+        ]
+      },
+      "upstream_revalidation": "retained_review_after_exact_swiss_localization"
     },
     {
       "key": "delf-a1v-ce-002#5",
@@ -975,7 +1206,7 @@
         "Les sacs et les téléphones"
       ],
       "status": "artwork_needed_whole_answer_concepts",
-      "source_sha256": "ac313d9f8c3ea281e682c20b6d4812e521c417de8b6422cf33755ac799641c6a",
+      "source_sha256": "e354374cf55c4f61c95ba317dc3607a4a3543b2b4d1db20fa2691603441bf581",
       "audio": null,
       "review_index": 27,
       "semantic_sha256": "fa404e13ff59430ba4c44506f3620b44c8afd7923b16a4bda504ec624aae1daa",
@@ -992,7 +1223,7 @@
         "source_bank": "src/tcf/content/a0-a1/ce.json",
         "source_exercise": "delf-a1v-ce-002",
         "source_question": 5,
-        "source_sha256": "ac313d9f8c3ea281e682c20b6d4812e521c417de8b6422cf33755ac799641c6a",
+        "source_sha256": "e354374cf55c4f61c95ba317dc3607a4a3543b2b4d1db20fa2691603441bf581",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -1001,7 +1232,18 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "before_upstream_integration": {
+        "source_sha256": "ac313d9f8c3ea281e682c20b6d4812e521c417de8b6422cf33755ac799641c6a",
+        "semantic_sha256": "fa404e13ff59430ba4c44506f3620b44c8afd7923b16a4bda504ec624aae1daa",
+        "enonce": "Quels objets sont interdits ?",
+        "labels": [
+          "Les bijoux et les montres",
+          "Les lunettes et les chapeaux",
+          "Les sacs et les téléphones"
+        ]
+      },
+      "upstream_revalidation": "retained_review_after_exact_swiss_localization"
     },
     {
       "key": "delf-a1v-ce-003#6",
@@ -1015,7 +1257,7 @@
         "À côté du musée, près du parc"
       ],
       "status": "artwork_needed_contextual_locations",
-      "source_sha256": "00622b14392decec40771abcbff111dcd6629c55ab66dd4d17aca775604be073",
+      "source_sha256": "80c6418c331ddf90b4cbc576857bd82fd17791a16eb8545e96a1819aff312ef1",
       "audio": null,
       "review_index": 28,
       "semantic_sha256": "0f231d5e6a6fe1d5293382a9d834f3e2ad93d11aa0c68a4c81312a1738bda657",
@@ -1032,7 +1274,7 @@
         "source_bank": "src/tcf/content/a0-a1/ce.json",
         "source_exercise": "delf-a1v-ce-003",
         "source_question": 6,
-        "source_sha256": "00622b14392decec40771abcbff111dcd6629c55ab66dd4d17aca775604be073",
+        "source_sha256": "80c6418c331ddf90b4cbc576857bd82fd17791a16eb8545e96a1819aff312ef1",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -1041,7 +1283,18 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "before_upstream_integration": {
+        "source_sha256": "00622b14392decec40771abcbff111dcd6629c55ab66dd4d17aca775604be073",
+        "semantic_sha256": "0f231d5e6a6fe1d5293382a9d834f3e2ad93d11aa0c68a4c81312a1738bda657",
+        "enonce": "Où se trouve la salle de concert ?",
+        "labels": [
+          "Derrière la gare, près du pont",
+          "Devant la mairie, près du lac",
+          "À côté du musée, près du parc"
+        ]
+      },
+      "upstream_revalidation": "retained_review_after_exact_swiss_localization"
     },
     {
       "key": "delf-a1v-ce-007#6",
@@ -1135,7 +1388,7 @@
         "Un livre d'art et des chocolats"
       ],
       "status": "artwork_needed_whole_answer_concepts",
-      "source_sha256": "f6d57f298aa39c0ce0acca2e96d64e5033ed232714677a0851b0028bb09d4d22",
+      "source_sha256": "879065ce2667d8614e7cbc9581204062f94afa389785c01ffc057bf3f6f77a92",
       "audio": null,
       "review_index": 31,
       "semantic_sha256": "a29d33cd0d81cec72f28731ae5e8bf1082ba4bbc099a2d181ff70fb82705ef32",
@@ -1152,7 +1405,7 @@
         "source_bank": "src/tcf/content/a0-a1/ce.json",
         "source_exercise": "delf-a1v-ce-009",
         "source_question": 2,
-        "source_sha256": "f6d57f298aa39c0ce0acca2e96d64e5033ed232714677a0851b0028bb09d4d22",
+        "source_sha256": "879065ce2667d8614e7cbc9581204062f94afa389785c01ffc057bf3f6f77a92",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -1161,7 +1414,18 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "before_upstream_integration": {
+        "source_sha256": "f6d57f298aa39c0ce0acca2e96d64e5033ed232714677a0851b0028bb09d4d22",
+        "semantic_sha256": "a29d33cd0d81cec72f28731ae5e8bf1082ba4bbc099a2d181ff70fb82705ef32",
+        "enonce": "Quels cadeaux offre-t-on ?",
+        "labels": [
+          "Un livre de recettes et une plante",
+          "Un roman et des fleurs",
+          "Un livre d'art et des chocolats"
+        ]
+      },
+      "upstream_revalidation": "retained_review_after_exact_swiss_localization"
     },
     {
       "key": "delf-a1v-ce-012#1",
@@ -1235,7 +1499,7 @@
         "Un vélo d'enfant"
       ],
       "status": "artwork_needed_whole_answer_concepts",
-      "source_sha256": "ccf552675af7ee09a0de5f0e98fc084157d47bd198df6cd75d8050260ed1512f",
+      "source_sha256": "58c18321822f6a07e218e010873a2d9464f60b1317a0fc177531be5592578f46",
       "audio": null,
       "review_index": 34,
       "semantic_sha256": "c363b85cd0b9080cae3ff05dd0a916e90080e87f5b56eaed77f1f2fc3e9853b1",
@@ -1252,7 +1516,7 @@
         "source_bank": "src/tcf/content/a0-a1/ce.json",
         "source_exercise": "delf-a1v-ce-013",
         "source_question": 1,
-        "source_sha256": "ccf552675af7ee09a0de5f0e98fc084157d47bd198df6cd75d8050260ed1512f",
+        "source_sha256": "58c18321822f6a07e218e010873a2d9464f60b1317a0fc177531be5592578f46",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -1261,7 +1525,18 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "before_upstream_integration": {
+        "source_sha256": "ccf552675af7ee09a0de5f0e98fc084157d47bd198df6cd75d8050260ed1512f",
+        "semantic_sha256": "c363b85cd0b9080cae3ff05dd0a916e90080e87f5b56eaed77f1f2fc3e9853b1",
+        "enonce": "Quel objet Julien vend-il ?",
+        "labels": [
+          "Un vélo de ville",
+          "Un vélo de course",
+          "Un vélo d'enfant"
+        ]
+      },
+      "upstream_revalidation": "retained_review_after_exact_swiss_localization"
     },
     {
       "key": "delf-a1v-ce-013#3",
@@ -1275,7 +1550,7 @@
         "Une remorque"
       ],
       "status": "artwork_needed_whole_answer_concepts",
-      "source_sha256": "ccf552675af7ee09a0de5f0e98fc084157d47bd198df6cd75d8050260ed1512f",
+      "source_sha256": "58c18321822f6a07e218e010873a2d9464f60b1317a0fc177531be5592578f46",
       "audio": null,
       "review_index": 35,
       "semantic_sha256": "bf4a8de5e26b9291f98c1b8337fab9c346a7daff7cddf1f13f619044d6e1579c",
@@ -1292,7 +1567,7 @@
         "source_bank": "src/tcf/content/a0-a1/ce.json",
         "source_exercise": "delf-a1v-ce-013",
         "source_question": 3,
-        "source_sha256": "ccf552675af7ee09a0de5f0e98fc084157d47bd198df6cd75d8050260ed1512f",
+        "source_sha256": "58c18321822f6a07e218e010873a2d9464f60b1317a0fc177531be5592578f46",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -1301,7 +1576,18 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "before_upstream_integration": {
+        "source_sha256": "ccf552675af7ee09a0de5f0e98fc084157d47bd198df6cd75d8050260ed1512f",
+        "semantic_sha256": "bf4a8de5e26b9291f98c1b8337fab9c346a7daff7cddf1f13f619044d6e1579c",
+        "enonce": "Quel accessoire est fixé au vélo ?",
+        "labels": [
+          "Un panier",
+          "Un siège enfant",
+          "Une remorque"
+        ]
+      },
+      "upstream_revalidation": "retained_review_after_exact_swiss_localization"
     },
     {
       "key": "delf-a1v-ce-015#3",
@@ -1315,7 +1601,7 @@
         "Dans un studio de radio"
       ],
       "status": "artwork_needed_contextual_locations",
-      "source_sha256": "fc819e8fe995366e0802bb8e7eace4969292eb43f29ebb15076997f9bbf33126",
+      "source_sha256": "4e45861fa3d6552d9d4f0f9a6f4638d10f578e60aabd263d36f9af748f96fbcb",
       "audio": null,
       "review_index": 36,
       "semantic_sha256": "7b6e5072313e213dca0d4dfa19bf1e430a93464c9eb27546c1c6cba08190598b",
@@ -1332,7 +1618,7 @@
         "source_bank": "src/tcf/content/a0-a1/ce.json",
         "source_exercise": "delf-a1v-ce-015",
         "source_question": 3,
-        "source_sha256": "fc819e8fe995366e0802bb8e7eace4969292eb43f29ebb15076997f9bbf33126",
+        "source_sha256": "4e45861fa3d6552d9d4f0f9a6f4638d10f578e60aabd263d36f9af748f96fbcb",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -1341,7 +1627,18 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "before_upstream_integration": {
+        "source_sha256": "fc819e8fe995366e0802bb8e7eace4969292eb43f29ebb15076997f9bbf33126",
+        "semantic_sha256": "7b6e5072313e213dca0d4dfa19bf1e430a93464c9eb27546c1c6cba08190598b",
+        "enonce": "Où Sara donne-t-elle ses cours ?",
+        "labels": [
+          "Au domicile des élèves",
+          "Dans une école",
+          "Dans un studio de radio"
+        ]
+      },
+      "upstream_revalidation": "retained_review_after_exact_swiss_localization"
     },
     {
       "key": "delf-a1v-ce-016#2",
@@ -1955,7 +2252,7 @@
         "À la sortie"
       ],
       "status": "active_reviewed_trio",
-      "source_sha256": "2a8712fa6e4c8f151b7368ff688fa56dd9afa0b33a24c29d67d7e2ad1047e4e6",
+      "source_sha256": "4f321d9481666da70c0e8bde5a7847ec3ebd7be96b3888e7b33054cf53004885",
       "audio": null,
       "review_index": 53,
       "selected_images": [
@@ -1971,7 +2268,18 @@
       "semantic_sha256": "6f9e2f677dd0d060b125e8a81578093b646eb7e5eabaabf284d07195107321db",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Trois illustrations contrôlées visuellement, distinctes et fidèles aux catégories, couleurs ou quantités demandées. Source et corrigé conservés."
+      "reason": "Trois illustrations contrôlées visuellement, distinctes et fidèles aux catégories, couleurs ou quantités demandées. Source et corrigé conservés.",
+      "before_upstream_integration": {
+        "source_sha256": "2a8712fa6e4c8f151b7368ff688fa56dd9afa0b33a24c29d67d7e2ad1047e4e6",
+        "semantic_sha256": "6f9e2f677dd0d060b125e8a81578093b646eb7e5eabaabf284d07195107321db",
+        "enonce": "Où faut-il tourner à droite ?",
+        "labels": [
+          "À la fontaine",
+          "Au parking",
+          "À la sortie"
+        ]
+      },
+      "upstream_revalidation": "retained_review_after_exact_swiss_localization"
     },
     {
       "key": "delf-a1v-ce-029#1",
@@ -2145,7 +2453,7 @@
         "Un certificat médical"
       ],
       "status": "artwork_needed_distinct_document_types",
-      "source_sha256": "b47c9de896c9c59b22511eeaaa35a23244fd6d63e74f0bd2ce1e7cf7c2b29af8",
+      "source_sha256": "9a2477fc5d7eeadf1db6baffa9203a79cebc2aab0980ba41d65686262ed86f77",
       "audio": null,
       "review_index": 58,
       "semantic_sha256": "342c722801d3914d8f358924fa06a53705af558c7e7760a6211f278f2633470a",
@@ -2162,7 +2470,7 @@
         "source_bank": "src/tcf/content/a0-a1/ce.json",
         "source_exercise": "delf-a1v-ce-036",
         "source_question": 7,
-        "source_sha256": "b47c9de896c9c59b22511eeaaa35a23244fd6d63e74f0bd2ce1e7cf7c2b29af8",
+        "source_sha256": "9a2477fc5d7eeadf1db6baffa9203a79cebc2aab0980ba41d65686262ed86f77",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -2171,7 +2479,18 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "before_upstream_integration": {
+        "source_sha256": "b47c9de896c9c59b22511eeaaa35a23244fd6d63e74f0bd2ce1e7cf7c2b29af8",
+        "semantic_sha256": "342c722801d3914d8f358924fa06a53705af558c7e7760a6211f278f2633470a",
+        "enonce": "Quel document faut-il envoyer pour cet emploi ?",
+        "labels": [
+          "Un CV",
+          "Une pièce d'identité",
+          "Un certificat médical"
+        ]
+      },
+      "upstream_revalidation": "retained_review_after_exact_swiss_localization"
     },
     {
       "key": "delf-a1v-ce-037#6",
@@ -2185,7 +2504,7 @@
         "Un lapereau"
       ],
       "status": "artwork_needed_whole_answer_concepts",
-      "source_sha256": "4899ac17d2cdac41cb08ca09fe056a931589cc62c6bd3e8d55827206bad67cec",
+      "source_sha256": "7541eb05b0f5bb726d09eafb7e16e620fed9d561c89557a8b9ecb76ece824b9b",
       "audio": null,
       "review_index": 59,
       "semantic_sha256": "243df2f14d52fb4e75ac6fd89784521b64e83e210c210cae68c28ae867034d58",
@@ -2202,7 +2521,7 @@
         "source_bank": "src/tcf/content/a0-a1/ce.json",
         "source_exercise": "delf-a1v-ce-037",
         "source_question": 6,
-        "source_sha256": "4899ac17d2cdac41cb08ca09fe056a931589cc62c6bd3e8d55827206bad67cec",
+        "source_sha256": "7541eb05b0f5bb726d09eafb7e16e620fed9d561c89557a8b9ecb76ece824b9b",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -2211,7 +2530,18 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "before_upstream_integration": {
+        "source_sha256": "4899ac17d2cdac41cb08ca09fe056a931589cc62c6bd3e8d55827206bad67cec",
+        "semantic_sha256": "243df2f14d52fb4e75ac6fd89784521b64e83e210c210cae68c28ae867034d58",
+        "enonce": "Quel animal est proposé à l'adoption ?",
+        "labels": [
+          "Un chaton",
+          "Un chiot",
+          "Un lapereau"
+        ]
+      },
+      "upstream_revalidation": "retained_review_after_exact_swiss_localization"
     },
     {
       "key": "delf-a1v-ce-047#6",
@@ -2225,7 +2555,7 @@
         "Une armoire et deux chaises"
       ],
       "status": "artwork_needed_whole_answer_concepts",
-      "source_sha256": "0fbd2614b819f5cef42cb1e716fe6c6b87be2366f010eeaefd2ffa58cef76ae8",
+      "source_sha256": "5d957fc8abd49a92b437f2655791217a7e0fa8a8a86d2aee46f39e56352caac7",
       "audio": null,
       "review_index": 60,
       "semantic_sha256": "601e4c635a5a503b2ab32ad9430a2c050b27c29ae3a67fecda75c7f3206702fa",
@@ -2242,7 +2572,7 @@
         "source_bank": "src/tcf/content/a0-a1/ce.json",
         "source_exercise": "delf-a1v-ce-047",
         "source_question": 6,
-        "source_sha256": "0fbd2614b819f5cef42cb1e716fe6c6b87be2366f010eeaefd2ffa58cef76ae8",
+        "source_sha256": "5d957fc8abd49a92b437f2655791217a7e0fa8a8a86d2aee46f39e56352caac7",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -2251,7 +2581,18 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "before_upstream_integration": {
+        "source_sha256": "0fbd2614b819f5cef42cb1e716fe6c6b87be2366f010eeaefd2ffa58cef76ae8",
+        "semantic_sha256": "601e4c635a5a503b2ab32ad9430a2c050b27c29ae3a67fecda75c7f3206702fa",
+        "enonce": "Quels meubles sont à vendre ?",
+        "labels": [
+          "Un canapé et deux fauteuils",
+          "Un lit et deux tables",
+          "Une armoire et deux chaises"
+        ]
+      },
+      "upstream_revalidation": "retained_review_after_exact_swiss_localization"
     },
     {
       "key": "delf-a1v-ce-049#8",
@@ -2305,7 +2646,7 @@
         "Des fruits et des légumes"
       ],
       "status": "artwork_needed_whole_answer_concepts",
-      "source_sha256": "7c5d3371c212a8dfa00f1bec8f9087f7aa1d8dcc5b97a4ddaae9cb0db01fefed",
+      "source_sha256": "a7a7a4594bc2a1d2a9ce9055fcf1c1104d4b68a2b6271e967a305e65f1f76416",
       "audio": null,
       "review_index": 62,
       "semantic_sha256": "bf05ff62e96c2a176c3240c66935f069ac99986996de4349dfe9b81dac8e6338",
@@ -2322,7 +2663,7 @@
         "source_bank": "src/tcf/content/a0-a1/ce.json",
         "source_exercise": "delf-a1v-ce-050",
         "source_question": 1,
-        "source_sha256": "7c5d3371c212a8dfa00f1bec8f9087f7aa1d8dcc5b97a4ddaae9cb0db01fefed",
+        "source_sha256": "a7a7a4594bc2a1d2a9ce9055fcf1c1104d4b68a2b6271e967a305e65f1f76416",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -2331,7 +2672,18 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "before_upstream_integration": {
+        "source_sha256": "7c5d3371c212a8dfa00f1bec8f9087f7aa1d8dcc5b97a4ddaae9cb0db01fefed",
+        "semantic_sha256": "bf05ff62e96c2a176c3240c66935f069ac99986996de4349dfe9b81dac8e6338",
+        "enonce": "Quels produits vend-on à la ferme ?",
+        "labels": [
+          "Du fromage et du miel",
+          "Du pain et de la confiture",
+          "Des fruits et des légumes"
+        ]
+      },
+      "upstream_revalidation": "retained_review_after_exact_swiss_localization"
     },
     {
       "key": "delf-a1v-ce-059#2",
@@ -2525,7 +2877,7 @@
         "Une carte de transport"
       ],
       "status": "active_reviewed_trio",
-      "source_sha256": "72dc780fe219f6dbe76f4f8b02a33558afb709acac90bb198075c1418817dee3",
+      "source_sha256": "f9a72dbbf0472ba8f9e1f0be25943f6266f7f19cd97fa35d33567defbb3e9e20",
       "audio": null,
       "review_index": 68,
       "selected_images": [
@@ -2541,7 +2893,18 @@
       "semantic_sha256": "543e7fe678c21e497257fbad1bc67fa2bd1c83a9aa28cbe339da2b2cb03dee5c",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Trois illustrations contrôlées visuellement, distinctes et fidèles aux catégories, couleurs ou quantités demandées. Source et corrigé conservés."
+      "reason": "Trois illustrations contrôlées visuellement, distinctes et fidèles aux catégories, couleurs ou quantités demandées. Source et corrigé conservés.",
+      "before_upstream_integration": {
+        "source_sha256": "72dc780fe219f6dbe76f4f8b02a33558afb709acac90bb198075c1418817dee3",
+        "semantic_sha256": "543e7fe678c21e497257fbad1bc67fa2bd1c83a9aa28cbe339da2b2cb03dee5c",
+        "enonce": "Quel document permet de retirer le certificat au secrétariat ?",
+        "labels": [
+          "Une pièce d'identité",
+          "Une carte de bibliothèque",
+          "Une carte de transport"
+        ]
+      },
+      "upstream_revalidation": "retained_review_after_exact_swiss_localization"
     },
     {
       "key": "delf-a1v-ce-062#5",
@@ -2555,7 +2918,7 @@
         "Une carte de bibliothèque"
       ],
       "status": "artwork_needed_distinct_document_types",
-      "source_sha256": "72dc780fe219f6dbe76f4f8b02a33558afb709acac90bb198075c1418817dee3",
+      "source_sha256": "f9a72dbbf0472ba8f9e1f0be25943f6266f7f19cd97fa35d33567defbb3e9e20",
       "audio": null,
       "review_index": 69,
       "semantic_sha256": "82d24ebecc7a466e31e447f139d6de94c1242149e700511e81aa8614fc9d6d6e",
@@ -2572,7 +2935,7 @@
         "source_bank": "src/tcf/content/a0-a1/ce.json",
         "source_exercise": "delf-a1v-ce-062",
         "source_question": 5,
-        "source_sha256": "72dc780fe219f6dbe76f4f8b02a33558afb709acac90bb198075c1418817dee3",
+        "source_sha256": "f9a72dbbf0472ba8f9e1f0be25943f6266f7f19cd97fa35d33567defbb3e9e20",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -2581,7 +2944,18 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "before_upstream_integration": {
+        "source_sha256": "72dc780fe219f6dbe76f4f8b02a33558afb709acac90bb198075c1418817dee3",
+        "semantic_sha256": "82d24ebecc7a466e31e447f139d6de94c1242149e700511e81aa8614fc9d6d6e",
+        "enonce": "Quel document faut-il envoyer avec l'enveloppe ?",
+        "labels": [
+          "Le formulaire de demande",
+          "Une copie du certificat",
+          "Une carte de bibliothèque"
+        ]
+      },
+      "upstream_revalidation": "retained_review_after_exact_swiss_localization"
     },
     {
       "key": "delf-a1v-ce-064#2",
@@ -2755,7 +3129,7 @@
         "Une carte de transport"
       ],
       "status": "artwork_needed_distinct_document_types",
-      "source_sha256": "1107f250f8bff232287533eb35ca7dac84d1c423452771973bc9958794a06419",
+      "source_sha256": "7e00c2b1233e27dc36360639431bb5ee6bfa24883b53d143250de3bf1e161531",
       "audio": null,
       "review_index": 74,
       "semantic_sha256": "f2e68aa6be1532563109db87e9604dbe3f7700621d407a59678f3ca3068b4369",
@@ -2772,7 +3146,7 @@
         "source_bank": "src/tcf/content/a0-a1/ce.json",
         "source_exercise": "delf-a1s-ce-004",
         "source_question": 7,
-        "source_sha256": "1107f250f8bff232287533eb35ca7dac84d1c423452771973bc9958794a06419",
+        "source_sha256": "7e00c2b1233e27dc36360639431bb5ee6bfa24883b53d143250de3bf1e161531",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -2781,7 +3155,18 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "before_upstream_integration": {
+        "source_sha256": "1107f250f8bff232287533eb35ca7dac84d1c423452771973bc9958794a06419",
+        "semantic_sha256": "f2e68aa6be1532563109db87e9604dbe3f7700621d407a59678f3ca3068b4369",
+        "enonce": "Quel document faut-il apporter ?",
+        "labels": [
+          "L'autorisation signée des parents",
+          "Un certificat médical",
+          "Une carte de transport"
+        ]
+      },
+      "upstream_revalidation": "retained_review_after_exact_swiss_localization"
     },
     {
       "key": "delf-a1s-ce-005#7",
@@ -3155,7 +3540,7 @@
         "Les lunettes et les maillots"
       ],
       "status": "artwork_needed_whole_answer_concepts",
-      "source_sha256": "df234e5a742fe0328af3bfef4247c7e7e55afb581357e20ced73924078fa0b08",
+      "source_sha256": "81ec7938905994994cc771f85fec942d9ce4b9ed5bb9e743f9cc732a5342ab51",
       "audio": null,
       "review_index": 85,
       "semantic_sha256": "59d134dc56e80d1f038a5e7d74ae0ec5df3692b438ec99b6b77676460a2cf507",
@@ -3172,7 +3557,7 @@
         "source_bank": "src/tcf/content/a0-a1/ce.json",
         "source_exercise": "delf-a1s-ce-013",
         "source_question": 3,
-        "source_sha256": "df234e5a742fe0328af3bfef4247c7e7e55afb581357e20ced73924078fa0b08",
+        "source_sha256": "81ec7938905994994cc771f85fec942d9ce4b9ed5bb9e743f9cc732a5342ab51",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -3181,7 +3566,18 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "before_upstream_integration": {
+        "source_sha256": "df234e5a742fe0328af3bfef4247c7e7e55afb581357e20ced73924078fa0b08",
+        "semantic_sha256": "59d134dc56e80d1f038a5e7d74ae0ec5df3692b438ec99b6b77676460a2cf507",
+        "enonce": "Quels produits ne sont pas autorisés ?",
+        "labels": [
+          "La nourriture et les boissons",
+          "Les serviettes et les bonnets",
+          "Les lunettes et les maillots"
+        ]
+      },
+      "upstream_revalidation": "retained_review_after_exact_swiss_localization"
     },
     {
       "key": "delf-a1s-ce-013#4",
@@ -3195,7 +3591,7 @@
         "Dans les vestiaires"
       ],
       "status": "artwork_needed_contextual_locations",
-      "source_sha256": "df234e5a742fe0328af3bfef4247c7e7e55afb581357e20ced73924078fa0b08",
+      "source_sha256": "81ec7938905994994cc771f85fec942d9ce4b9ed5bb9e743f9cc732a5342ab51",
       "audio": null,
       "review_index": 86,
       "semantic_sha256": "922b2b4119441f6582faada101d628d765afaee1d22e447ef577c75e20253904",
@@ -3212,7 +3608,7 @@
         "source_bank": "src/tcf/content/a0-a1/ce.json",
         "source_exercise": "delf-a1s-ce-013",
         "source_question": 4,
-        "source_sha256": "df234e5a742fe0328af3bfef4247c7e7e55afb581357e20ced73924078fa0b08",
+        "source_sha256": "81ec7938905994994cc771f85fec942d9ce4b9ed5bb9e743f9cc732a5342ab51",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -3221,7 +3617,18 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "before_upstream_integration": {
+        "source_sha256": "df234e5a742fe0328af3bfef4247c7e7e55afb581357e20ced73924078fa0b08",
+        "semantic_sha256": "922b2b4119441f6582faada101d628d765afaee1d22e447ef577c75e20253904",
+        "enonce": "Où peut-on jouer au ballon ?",
+        "labels": [
+          "Dans le bassin seulement",
+          "Sur le bord du bassin",
+          "Dans les vestiaires"
+        ]
+      },
+      "upstream_revalidation": "retained_review_after_exact_swiss_localization"
     },
     {
       "key": "delf-a1s-ce-015#6",
@@ -3545,7 +3952,7 @@
         "Quatre livres"
       ],
       "status": "artwork_needed_exact_counts",
-      "source_sha256": "99056f2f519112d6c89005d3a5fdffad8026d1f7c8bfb6843b4181b5517cd2af",
+      "source_sha256": "1bf91e5fa399c53f1865bce186be75d0e003dda8af34387323b5a606540c0124",
       "audio": null,
       "review_index": 95,
       "semantic_sha256": "53f02258e667568e03f2770b63f65a97bfad72b043dd78975df4745af9a400a1",
@@ -3562,7 +3969,7 @@
         "source_bank": "src/tcf/content/a0-a1/ce.json",
         "source_exercise": "delf-a1s-ce-033",
         "source_question": 2,
-        "source_sha256": "99056f2f519112d6c89005d3a5fdffad8026d1f7c8bfb6843b4181b5517cd2af",
+        "source_sha256": "1bf91e5fa399c53f1865bce186be75d0e003dda8af34387323b5a606540c0124",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -3571,7 +3978,18 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "before_upstream_integration": {
+        "source_sha256": "99056f2f519112d6c89005d3a5fdffad8026d1f7c8bfb6843b4181b5517cd2af",
+        "semantic_sha256": "53f02258e667568e03f2770b63f65a97bfad72b043dd78975df4745af9a400a1",
+        "enonce": "Combien de livres de mathématiques sont à vendre ?",
+        "labels": [
+          "Trois livres",
+          "Deux livres",
+          "Quatre livres"
+        ]
+      },
+      "upstream_revalidation": "retained_review_after_exact_swiss_localization"
     },
     {
       "key": "delf-a1s-ce-034#8",
@@ -3625,7 +4043,7 @@
         "Une demi-heure"
       ],
       "status": "artwork_needed_duration_or_scope",
-      "source_sha256": "ff9ef4eb06cd4ae4c2fe84003d41ad5f2e922ba3473020c303e43026e157b124",
+      "source_sha256": "45e8f083fff44bf50ae4a27fb242baaf6145facae424436894d67ad51d68ed05",
       "audio": null,
       "review_index": 97,
       "semantic_sha256": "082c9ce9499af2ab4514e5d29c14a7691ec2f82118b519a85d3198ad0199e87f",
@@ -3642,7 +4060,7 @@
         "source_bank": "src/tcf/content/a0-a1/ce.json",
         "source_exercise": "delf-a1s-ce-035",
         "source_question": 5,
-        "source_sha256": "ff9ef4eb06cd4ae4c2fe84003d41ad5f2e922ba3473020c303e43026e157b124",
+        "source_sha256": "45e8f083fff44bf50ae4a27fb242baaf6145facae424436894d67ad51d68ed05",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -3651,7 +4069,18 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "before_upstream_integration": {
+        "source_sha256": "ff9ef4eb06cd4ae4c2fe84003d41ad5f2e922ba3473020c303e43026e157b124",
+        "semantic_sha256": "082c9ce9499af2ab4514e5d29c14a7691ec2f82118b519a85d3198ad0199e87f",
+        "enonce": "Combien de temps dure le jeu ?",
+        "labels": [
+          "Une heure",
+          "Deux heures",
+          "Une demi-heure"
+        ]
+      },
+      "upstream_revalidation": "retained_review_after_exact_swiss_localization"
     },
     {
       "key": "delf-a1s-ce-036#9",
@@ -3805,7 +4234,7 @@
         "Une maison en ville"
       ],
       "status": "artwork_needed_contextual_locations",
-      "source_sha256": "5c77d48901b101db5ecde389be32de0fa05727a8e60f66a92379b3c39d5d2b09",
+      "source_sha256": "d90d5240456d6f1bcbfb095455034e9d2f62d06552ca9c9b1e500a27d7813ad2",
       "audio": null,
       "review_index": 102,
       "semantic_sha256": "d6e538a187646993d8bbb6eebba1a2cc72020600b27df1874548a9e341d5a870",
@@ -3822,7 +4251,7 @@
         "source_bank": "src/tcf/content/a0-a1/ce.json",
         "source_exercise": "delf-a1s-ce-039",
         "source_question": 8,
-        "source_sha256": "5c77d48901b101db5ecde389be32de0fa05727a8e60f66a92379b3c39d5d2b09",
+        "source_sha256": "d90d5240456d6f1bcbfb095455034e9d2f62d06552ca9c9b1e500a27d7813ad2",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -3831,7 +4260,18 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "before_upstream_integration": {
+        "source_sha256": "5c77d48901b101db5ecde389be32de0fa05727a8e60f66a92379b3c39d5d2b09",
+        "semantic_sha256": "d6e538a187646993d8bbb6eebba1a2cc72020600b27df1874548a9e341d5a870",
+        "enonce": "Dans quel lieu se déroule « Fantôme 4 » ?",
+        "labels": [
+          "Un château dans les Alpes",
+          "Un bateau sur le lac",
+          "Une maison en ville"
+        ]
+      },
+      "upstream_revalidation": "retained_review_after_exact_swiss_localization"
     },
     {
       "key": "delf-a1s-ce-040#7",
@@ -3985,7 +4425,7 @@
         "Des voitures anciennes"
       ],
       "status": "artwork_needed_contextual_locations",
-      "source_sha256": "745baa1037169917a5036dded0d635c0fab8808b8dcd0c9b64df7031f2b6660c",
+      "source_sha256": "e5ba3b01fc0ef84ffe74143ddf6aa6348866b94dbed4ec3bf2460d136c4d6a2f",
       "audio": null,
       "review_index": 107,
       "semantic_sha256": "4c25394c26eeeb31e390e9e68c1f1a5b49c3fee4be474566d488951422400d70",
@@ -4002,7 +4442,7 @@
         "source_bank": "src/tcf/content/a0-a1/ce.json",
         "source_exercise": "delf-a1s-ce-044",
         "source_question": 6,
-        "source_sha256": "745baa1037169917a5036dded0d635c0fab8808b8dcd0c9b64df7031f2b6660c",
+        "source_sha256": "e5ba3b01fc0ef84ffe74143ddf6aa6348866b94dbed4ec3bf2460d136c4d6a2f",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -4011,7 +4451,18 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "before_upstream_integration": {
+        "source_sha256": "745baa1037169917a5036dded0d635c0fab8808b8dcd0c9b64df7031f2b6660c",
+        "semantic_sha256": "4c25394c26eeeb31e390e9e68c1f1a5b49c3fee4be474566d488951422400d70",
+        "enonce": "Devant quels objets peut-on se photographier ?",
+        "labels": [
+          "Des bonbons géants",
+          "Des gâteaux miniatures",
+          "Des voitures anciennes"
+        ]
+      },
+      "upstream_revalidation": "retained_review_after_exact_swiss_localization"
     },
     {
       "key": "delf-a1s-ce-050#5",
@@ -4140,18 +4591,29 @@
       "question": 3,
       "enonce": "Où Mélanie passe-t-elle ses vacances ?",
       "labels": [
-        "En Bretagne",
+        "À Zermatt",
         "En Suisse",
-        "À Paris"
+        "À Zurich"
       ],
       "status": "keep_text_named_identity_or_location",
-      "source_sha256": "1069d4c40ddf3003cd4adfc3bc51c3c06d768118dabcf0b8fc810e753b0e2d12",
+      "source_sha256": "a9c06a67d60e1ed0ad53e3165a2e28ee48209358c153e527abdd22c0fc06152b",
       "audio": null,
       "review_index": 111,
-      "semantic_sha256": "b4b9ddf782791d6fe127d3f7acb30a250df00fe9e99ccf63faed6f1fdd656f04",
+      "semantic_sha256": "83b4b94fc427b883e1531d951c02183fc307076f32fba175149754b6fe0f418a",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Les choix dépendent de noms propres, adresses ou identités exactes ; une architecture inventée ou un portrait générique ne prouve pas cette distinction."
+      "reason": "Les choix dépendent de noms propres, adresses ou identités exactes ; une architecture inventée ou un portrait générique ne prouve pas cette distinction.",
+      "before_upstream_integration": {
+        "source_sha256": "1069d4c40ddf3003cd4adfc3bc51c3c06d768118dabcf0b8fc810e753b0e2d12",
+        "semantic_sha256": "b4b9ddf782791d6fe127d3f7acb30a250df00fe9e99ccf63faed6f1fdd656f04",
+        "enonce": "Où Mélanie passe-t-elle ses vacances ?",
+        "labels": [
+          "En Bretagne",
+          "En Suisse",
+          "À Paris"
+        ]
+      },
+      "upstream_revalidation": "retained_review_after_exact_swiss_localization"
     },
     {
       "key": "delf-a1-2022-ce-ex4-voisins#5",
@@ -4165,7 +4627,7 @@
         "Sur le toit uniquement"
       ],
       "status": "artwork_needed_contextual_locations",
-      "source_sha256": "00fe5ce4b2cea7961364f780444935dd4e997f438307f294d186771a6fe170a8",
+      "source_sha256": "dcb307dd9cf4f42ff26fd68f958decd12f35d043a1893e2de06628389dd68c48",
       "audio": null,
       "review_index": 112,
       "semantic_sha256": "d55d0262ffe618767f2850bb23cf02807110465239b98a4198a7c63226528bb0",
@@ -4182,7 +4644,7 @@
         "source_bank": "src/tcf/content/a0-a1/ce.json",
         "source_exercise": "delf-a1-2022-ce-ex4-voisins",
         "source_question": 5,
-        "source_sha256": "00fe5ce4b2cea7961364f780444935dd4e997f438307f294d186771a6fe170a8",
+        "source_sha256": "dcb307dd9cf4f42ff26fd68f958decd12f35d043a1893e2de06628389dd68c48",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -4191,7 +4653,18 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "before_upstream_integration": {
+        "source_sha256": "00fe5ce4b2cea7961364f780444935dd4e997f438307f294d186771a6fe170a8",
+        "semantic_sha256": "d55d0262ffe618767f2850bb23cf02807110465239b98a4198a7c63226528bb0",
+        "enonce": "Où les habitants d'un immeuble peuvent-ils organiser la fête ?",
+        "labels": [
+          "Dans le jardin ou le hall",
+          "Dans l'ascenseur seulement",
+          "Sur le toit uniquement"
+        ]
+      },
+      "upstream_revalidation": "manually_reviewed_integrated_source"
     },
     {
       "key": "tcf-a1j-s3-co-2#7",

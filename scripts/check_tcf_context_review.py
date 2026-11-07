@@ -15,6 +15,8 @@ def at(value,node):
 
 
 def verify(refresh=False):
+    from tcf_main_integration import verify as verify_upstream
+    verify_upstream()
     editorial=json.loads(REPORT.read_text());rows={r['key']:r for r in editorial['questions']}
     plan=json.loads(PLAN.read_text());plans={r['key']:r for r in plan['questions']}
     journal=json.loads(JOURNAL.read_text());operations=journal['operations']
