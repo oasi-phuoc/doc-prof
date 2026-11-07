@@ -11,7 +11,10 @@ assert.equal(manifest.images.length, 407, '308 A1 images and 99 A2 images')
 const hashes = new Set()
 const counts = { generated: 0, prepared: 0, pending: 0 }
 for (const image of manifest.images) {
-  assert.equal(basename(image.original), basename(image.path), 'original filename retained')
+  // A1 scenes may be renumbered to repair narrative order. Their legacy URLs
+  // must still resolve to the matching scene, checked through media.ts below.
+  const family = (path) => basename(path).replace(/-\d+\.webp$/, '.webp')
+  assert.equal(family(image.original), family(image.path), 'original scene family retained')
   assert.match(image.path, /^\/lib\/images\/tcf\/po\/a[12]\/[^/]+\.webp$/)
   assert.ok(Object.hasOwn(counts, image.status), image.path)
   counts[image.status]++
@@ -83,7 +86,7 @@ const grammar = readFileSync('src/grammaire/exercises/qui-suis-je.ts', 'utf8')
 for (let i = 1; i <= 4; i++) assert.ok(grammar.includes(`/lib/images/tcf/po/a1/classe-presentation-${i}.webp`))
 
 // An existing saved worksheet must resolve the moved files too.
-const vite = await createServer({ server: { middlewareMode: true, hmr: false }, appType: 'custom' })
+const vite = await createServer({ server: { middlewareMode: true, hmr: false, ws: false }, appType: 'custom' })
 try {
   const { tcfImageSrc } = await vite.ssrLoadModule('/src/tcf/media.ts')
   for (const image of manifest.images) {

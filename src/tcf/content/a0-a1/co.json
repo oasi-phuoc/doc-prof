@@ -70,16 +70,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/restaurant.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/ecole.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-ecole-dessine.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/piscine.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-piscine-dessine.webp"
               }
             ]
           }
@@ -253,6 +253,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Dans le parc voisin"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/co306-parc-public-dessine.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-cour-ecole.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-jardin-terrasse.webp"
+              }
+            ]
           }
         }
       },
@@ -369,6 +387,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Les vêtements de tennis"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-tenue-tennis.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/co306-bonnet-combinaison-ski-dessine.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-tenue-danse.webp"
+              }
+            ]
           }
         }
       },
@@ -423,6 +459,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Un ballon de football"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/vocab-ballon-football.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/co306-raquette-tennis-dessine.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-paire-patins.webp"
+              }
+            ]
           }
         }
       },
@@ -450,6 +504,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "À l’accueil"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/co834-accueil-dessine.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/co306-douches-vestiaires-dessine.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/co306-sortie-magasin-dessine.webp"
+              }
+            ]
           }
         }
       },
@@ -527,16 +599,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/qcm-audit/a14ef527c4c4.webp"
+                "image": "/lib/images/tcf/qcm-audit/audit-context-gateau-citron.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/qcm-audit/40b742b7985d.webp"
+                "image": "/lib/images/tcf/qcm-audit/audit-context-gateau-chocolat.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/qcm-audit/8921a6017fbb.webp"
+                "image": "/lib/images/tcf/qcm-audit/audit-context-gateau-fraises.webp"
               }
             ]
           }
@@ -566,6 +638,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Trois"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/vocab-oeufs.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-compter-2-oeufs.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-compter-4-oeufs.webp"
+              }
+            ]
           }
         }
       },
@@ -647,6 +737,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "30 minutes"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/duree-30-minutes.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/duree-20-minutes.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/duree-45-minutes.webp"
+              }
+            ]
           }
         }
       },
@@ -674,6 +782,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Un yaourt"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/vocab-yaourt.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/vocab-glace-cornet.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-compote.webp"
+              }
+            ]
           }
         }
       }
@@ -724,16 +850,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/ferme.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-ferme-isolee-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/musee.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-musee-dessine.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/chateau.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-chateau-dessine.webp"
               }
             ]
           }
@@ -952,6 +1078,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "En le rappelant"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/communication-appeler.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/communication-courriel.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/communication-lettre.webp"
+              }
+            ]
           }
         }
       }
@@ -1023,6 +1167,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Place de la Mairie"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/co306-parc-public-dessine.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-cour-ecole.webp"
+              }
+            ]
           }
         }
       },
@@ -1262,8 +1424,8 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/qcm-audit/c52b42c054fb.webp"
+                "image": "/lib/images/tcf/qcm-audit/audit-context-poires-sirop.webp",
+                "correct": true
               },
               {
                 "id": "b",
@@ -1271,7 +1433,7 @@
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/qcm-audit/f694221012ff.webp"
+                "image": "/lib/images/tcf/qcm-audit/audit-context-peches-sirop.webp"
               }
             ]
           }
@@ -1301,6 +1463,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Deux"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-compter-2-poires.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/vocab-poires.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-compter-4-poires.webp"
+              }
+            ]
           }
         }
       },
@@ -1445,6 +1625,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "30 secondes"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/duree-30-secondes.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/duree-30-minutes.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/duree-3-secondes.webp"
+              }
+            ]
           }
         }
       },
@@ -1472,6 +1670,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Sur les poires"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-chocolat-poires.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-chocolat-pate.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-chocolat-glace.webp"
+              }
+            ]
           }
         }
       }
@@ -1598,6 +1814,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Un ballon et un jeu de cartes"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-ballon-cartes.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-raquette-ballon.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-echecs-puzzle.webp"
+              }
+            ]
           }
         }
       },
@@ -1631,16 +1865,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/qcm-audit/6feafff4fbbb.webp"
+                "image": "/lib/images/tcf/qcm-audit/6feafff4fbbb.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/qcm-audit/40b742b7985d.webp"
+                "image": "/lib/images/tcf/qcm-audit/audit-context-gateau-chocolat.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/qcm-audit/a14ef527c4c4.webp"
+                "image": "/lib/images/tcf/qcm-audit/audit-context-gateau-citron.webp"
               }
             ]
           }
@@ -1760,6 +1994,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Très beau"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/co834-soleil-ciel-degage.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/co834-pluie-dessinee.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/co834-neige-dessinee.webp"
+              }
+            ]
           }
         }
       }
@@ -1905,6 +2157,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "À l’école de musique"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-ecole-musique.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp"
+              }
+            ]
           }
         }
       },
@@ -2004,6 +2274,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "En envoyant un courriel à la mairie"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/communication-courriel.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/communication-appeler.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-ecole-musique.webp"
+              }
+            ]
           }
         }
       },
@@ -2109,11 +2397,11 @@
           },
           {
             "id": "b",
-            "texte": "À la boutique"
+            "texte": "Dans la classe"
           },
           {
             "id": "c",
-            "texte": "Au restaurant"
+            "texte": "Dans la bibliothèque"
           }
         ],
         "formes": {
@@ -2126,16 +2414,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/entree-maison.webp"
+                "image": "/lib/images/tcf/qcm-audit/audit-context-sac-entree-musee.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/magasin.webp"
+                "image": "/lib/images/tcf/qcm-audit/audit-context-sac-classe.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/restaurant.webp"
+                "image": "/lib/images/tcf/qcm-audit/audit-context-sac-bibliotheque.webp"
               }
             ]
           }
@@ -2264,6 +2552,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Le livre du musée"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-livre-musee.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-plan-ville.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/co306-dictionnaire-dessine.webp"
+              }
+            ]
           }
         }
       },
@@ -2369,17 +2675,35 @@
           },
           {
             "id": "b",
-            "texte": "À l’accueil de la mairie"
+            "texte": "À la caisse"
           },
           {
             "id": "c",
-            "texte": "Au rayon librairie"
+            "texte": "Au rayon laitier"
           }
         ],
         "formes": {
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Au service après-vente"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-service-apres-vente.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/co834-caisse-dessinee.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-rayon-laitier.webp"
+              }
+            ]
           }
         }
       },
@@ -2461,6 +2785,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Une carte d’identité"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/vocab-carte-identite.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/co306-carte-bibliotheque-dessine.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-permis-conduire.webp"
+              }
+            ]
           }
         }
       },
@@ -2560,6 +2902,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Elle part en vacances"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-depart-vacances.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-examen-reussi.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-cadeau-recu.webp"
+              }
+            ]
           }
         }
       },
@@ -3038,6 +3398,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Par texto"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/communication-message.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/communication-lettre.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/communication-appeler.webp"
+              }
+            ]
           }
         }
       },
@@ -3657,6 +4035,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "L’ordonnance"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/vocab-ordonnance.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-contrat-travail.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-billet-train.webp"
+              }
+            ]
           }
         }
       },
@@ -3702,7 +4098,7 @@
     "support": {
       "audio": "/lib/audio/tcf/co/bibliotheque/03-bibliothèque-inscription.mp3",
       "transcription": "Bonjour, je voudrais m'inscrire s'il vous plaît. Vous avez une pièce d'identité? Oui, et j'ai aussi une carte d'étudiant.",
-      "image": "/lib/images/tcf/co/scenes/bibliotheque/03-bibliotheque-inscription.webp",
+      "image": "/lib/images/tcf/qcm-audit/revue-20261107-6fff1a3418.webp",
       "image_description": "Scénario vidéo (audio CO court, « L'inscription », durée indicative 8–15 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans une bibliothèque municipale. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Bonjour, je voudrais m'inscrire, s'il vous plaît » ; B : « Vous avez une pièce d'identité ? » ; A : « Oui, et j'ai aussi une carte d'étudiant ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
     },
     "questions": [
@@ -3757,6 +4153,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Une pièce d’identité"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/vocab-carte-identite.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/vocab-ordonnance.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-billet-train.webp"
+              }
+            ]
           }
         }
       },
@@ -3784,6 +4198,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Une carte d’étudiant"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-carte-etudiant.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/co834-carte-bancaire-dessinee.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/co306-carte-transport-dessine.webp"
+              }
+            ]
           }
         }
       }
@@ -3802,7 +4234,7 @@
     "support": {
       "audio": "/lib/audio/tcf/co/bibliotheque/04-bibliothèque-règle-pour-emprunter.mp3",
       "transcription": "Vous ne pouvez pas emprunter six DVD.\nAh bon ?\nC’est écrit sur le panneau ?\nNon, c’est six livres et 3 DVD.",
-      "image": "/lib/images/tcf/co/scenes/bibliotheque/04-bibliotheque-regle-pour-emprunter.webp",
+      "image": "/lib/images/tcf/qcm-audit/revue-20261107-382db006b1.webp",
       "image_description": "Scénario vidéo (audio CO court, « L'emprunt », durée indicative 8–15 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans une bibliothèque municipale. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Vous ne pouvez pas emprunter six DVD » ; B : « Ah bon ? » ; A : « C’est écrit sur le panneau ? » ; B : « Non, c’est six livres et 3 DVD ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
     },
     "questions": [
@@ -3830,6 +4262,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Trois"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-compter-3-dvd.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-compter-6-dvd.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-compter-10-dvd.webp"
+              }
+            ]
           }
         }
       },
@@ -3857,6 +4307,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Six"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-compter-6-livres.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-compter-3-livres.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-compter-2-livres.webp"
+              }
+            ]
           }
         }
       },
@@ -3884,6 +4352,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Sur un panneau"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-panneau-information.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/communication-courriel.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/co834-livre-dessine.webp"
+              }
+            ]
           }
         }
       }
@@ -3902,7 +4388,7 @@
     "support": {
       "audio": "/lib/audio/tcf/co/bibliotheque/01-bibliothèque-chercher-méthode-apprendre-chinois.mp3",
       "transcription": "Bonjour, je cherche une méthode pour apprendre le chinois.\nToutes nos méthodes sont classées au rayon 25 derrière vous.\nAh, merci.\nJe n'avais pas fait attention.",
-      "image": "/lib/images/tcf/co/scenes/bibliotheque/01-bibliotheque-chercher-methode-apprendre-chinois.webp",
+      "image": "/lib/images/tcf/qcm-audit/revue-20261107-3fe7662fe9.webp",
       "image_description": "Scénario vidéo (audio CO court, « La méthode de chinois », durée indicative 8–15 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans une bibliothèque municipale. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Bonjour, je cherche une méthode pour apprendre le chinois » ; B : « Toutes nos méthodes sont classées au rayon 25 derrière vous » ; A : « Ah, merci » ; B : « Je n'avais pas fait attention ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
     },
     "questions": [
@@ -4002,7 +4488,7 @@
     "support": {
       "audio": "/lib/audio/tcf/co/bibliotheque/02-bibliothèque-fermeture-exceptionnelle.mp3",
       "transcription": "C'est fermé ?\nMais ça fait longtemps ?\nNon, regardez le panneau.\nC'est une fermeture exceptionnelle.\nAh bon, merci.\nJe reviendrai demain.",
-      "image": "/lib/images/tcf/co/scenes/bibliotheque/02-bibliotheque-fermeture-exceptionnelle.webp",
+      "image": "/lib/images/tcf/qcm-audit/revue-20261107-1e50f4d4de.webp",
       "image_description": "Scénario vidéo (audio CO court, « La fermeture », durée indicative 8–15 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans une bibliothèque municipale. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « C'est fermé ? » ; B : « Mais ça fait longtemps ? » ; A : « Non, regardez le panneau » ; B : « C'est une fermeture exceptionnelle » ; A : « Ah bon, merci ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
     },
     "questions": [
@@ -4057,6 +4543,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Sur le panneau"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-panneau-information.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/vocab-internet.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/vocab-ticket-caisse.webp"
+              }
+            ]
           }
         }
       },
@@ -4201,6 +4705,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Sur le lit dans la chambre"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-serviettes-lit.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-serviettes-armoire-bains.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-serviettes-table-cuisine.webp"
+              }
+            ]
           }
         }
       },
@@ -4234,8 +4756,8 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/qcm-audit/46205d9bab84.webp"
+                "image": "/lib/images/tcf/qcm-audit/46205d9bab84.webp",
+                "correct": true
               },
               {
                 "id": "b",
@@ -4243,7 +4765,7 @@
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/qcm-audit/8149d2f1ec7d.webp"
+                "image": "/lib/images/tcf/qcm-audit/audit-context-creme-parfum.webp"
               }
             ]
           }
@@ -4397,16 +4919,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/cinema.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/theatre.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-batiment-theatre-dessine.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/musee.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-musee-dessine.webp"
               }
             ]
           }
@@ -4436,6 +4958,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Sur le site Internet"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/vocab-internet.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-journal.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-affiche-gare.webp"
+              }
+            ]
           }
         }
       },
@@ -4463,6 +5003,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "En écrivant un message"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/communication-message.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/communication-appeler.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/communication-lettre.webp"
+              }
+            ]
           }
         }
       },
@@ -5287,16 +5845,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/restaurant.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/cinema.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/theatre.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-batiment-theatre-dessine.webp"
               }
             ]
           }
@@ -6330,16 +6888,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/piscine.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-piscine-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/cinema.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/bibliotheque.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp"
               }
             ]
           }
@@ -6510,16 +7068,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/maison.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/salle-de-sport.webp"
+                "image": "/lib/images/tcf/qcm-audit/vocab-salle-sport.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/stade.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-aller-stade-dessine.webp"
               }
             ]
           }
@@ -6790,16 +7348,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/parc.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-parc-public-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/plage.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-mer-plages-dessine.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/montagne.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-montagnes-forets-dessine.webp"
               }
             ]
           }
@@ -8142,16 +8700,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/boulangerie.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-boulangerie-dessinee.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/pharmacie.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-pharmacie-dessinee.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/bibliotheque.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp"
               }
             ]
           }
@@ -8396,6 +8954,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Par téléphone"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/communication-appeler.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/communication-courriel.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/communication-lettre.webp"
+              }
+            ]
           }
         }
       },
@@ -8674,6 +9250,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Par courrier postal"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/communication-lettre.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/communication-courriel.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/communication-message.webp"
+              }
+            ]
           }
         }
       },
@@ -8948,12 +9542,12 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/bibliotheque.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/piscine.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-piscine-dessine.webp"
               },
               {
                 "id": "c",
@@ -9371,16 +9965,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/parc.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-parc-public-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/gare.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/mairie.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp"
               }
             ]
           }
@@ -9966,7 +10560,7 @@
     "support": {
       "audio": "/lib/audio/tcf/co/ecole/45-école-chercher-où-est-la-piscine.mp3",
       "transcription": "Excuse-moi, j'ai cours de sport. Je cherche la piscine de l'université. Où est-ce qu'elle est? Derrière toi. Regarde. Oh merci.",
-      "image": "/lib/images/tcf/co/scenes/ecole/45-ecole-chercher-ou-est-la-piscine.webp",
+      "image": "/lib/images/tcf/qcm-audit/revue-20261107-e6e75ee11a.webp",
       "image_description": "Scénario vidéo (audio CO court, « La piscine », durée indicative 8–15 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un établissement scolaire (couloir, classe ou secrétariat). Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Excuse-moi, j'ai cours de sport » ; B : « Je cherche la piscine de l'université » ; A : « Où est-ce qu'elle est ? » ; B : « Derrière toi, regarde » ; A : « Oh, merci ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
     },
     "questions": [
@@ -10046,7 +10640,7 @@
               {
                 "id": "a",
                 "correct": true,
-                "image": "/lib/images/tcf/co/bg/gymnase.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-professeure-sport-dessine.webp"
               },
               {
                 "id": "b",
@@ -10054,7 +10648,7 @@
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/cours-musique.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-professeure-musique-dessine.webp"
               }
             ]
           }
@@ -11055,6 +11649,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Une veste"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/vocab-veste.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/vocab-pull.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/co834-manteau-dessine.webp"
+              }
+            ]
           }
         },
         "audio": 4
@@ -11622,6 +12234,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "15 minutes"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/duree-15-minutes.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/duree-10-minutes.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/duree-20-minutes.webp"
+              }
+            ]
           }
         }
       },
@@ -12142,6 +12772,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Environ 20 minutes"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/duree-20-minutes.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/duree-10-minutes.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/duree-30-minutes.webp"
+              }
+            ]
           }
         }
       },
@@ -14031,24 +14679,6 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Les enfants"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/qcm-audit/vocab-enfants.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/famille-personnes/voisins.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/famille-personnes/collègues.webp"
-              }
-            ]
           }
         }
       },
@@ -14556,7 +15186,7 @@
     "support": {
       "audio": "/lib/audio/tcf/co/cinema/02-cinéma-quel-film-voir.mp3",
       "transcription": "Tu veux voir quel film ? Je ne sais pas. Pourquoi pas une comédie ? Une comédie ? Pourquoi pas un film d'horreur ? Oh non ! Je vais mal dormir cette nuit.",
-      "image": "/lib/images/tcf/co/scenes/cinema/02-cinema-quel-film-voir.webp",
+      "image": "/lib/images/tcf/qcm-audit/revue-20261107-a913e5e4eb.webp",
       "image_description": "Scénario vidéo (audio CO court, « Quel film voir », durée indicative 8–15 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans le hall ou devant un cinéma. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Tu veux voir quel film ? » ; B : « Je ne sais pas » ; A : « Pourquoi pas une comédie ? » ; B : « Une comédie… Pourquoi pas un film d’horreur ? » ; A : « Ah non, je vais mal dormir cette nuit ! ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
     },
     "questions": [
@@ -15155,8 +15785,8 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/universite.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-universite-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
@@ -15164,7 +15794,7 @@
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/salle-de-sport.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-centre-sportif-dessine.webp"
               }
             ]
           }
@@ -17304,16 +17934,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/restaurant.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/bureau.webp"
+                "image": "/lib/images/tcf/qcm-audit/vocab-bureau.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/maison.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp"
               }
             ]
           }
@@ -17546,16 +18176,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/stade.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-aller-stade-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/gymnase.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-gymnase-municipal-dessine.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/piscine.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-piscine-dessine.webp"
               }
             ]
           }
@@ -18030,16 +18660,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/cinema.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/theatre.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-theatre-dessine.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/musee.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-musee-dessine.webp"
               }
             ]
           }
@@ -18757,11 +19387,11 @@
               {
                 "id": "a",
                 "correct": true,
-                "image": "/lib/images/tcf/co/bg/montagne.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-montagnes-forets-dessine.webp"
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/plage.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-mer-plages-dessine.webp"
               },
               {
                 "id": "c",
@@ -19787,16 +20417,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/bibliotheque.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/gymnase.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-gymnase-municipal-dessine.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/restaurant.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp"
               }
             ]
           }
@@ -20085,6 +20715,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "30 minutes"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/duree-30-minutes.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/duree-15-minutes.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/duree-45-minutes.webp"
+              }
+            ]
           }
         }
       },
@@ -21059,16 +21707,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/boulangerie.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-boulangerie-dessinee.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/pharmacie.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-pharmacie-dessinee.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/librairie.webp"
+                "image": "/lib/images/tcf/qcm-audit/vocab-librairie.webp"
               }
             ]
           }
@@ -22260,16 +22908,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/ecole.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-ecole-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/mairie.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/salle-de-sport.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-centre-sportif-dessine.webp"
               }
             ]
           }
@@ -22476,16 +23124,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/cantine.webp"
+                "image": "/lib/images/tcf/co/bg/cantine.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/restaurant.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/maison.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp"
               }
             ]
           }
@@ -22538,16 +23186,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/parc.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-parc-public-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/stade.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-aller-stade-dessine.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/plage.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-mer-plages-dessine.webp"
               }
             ]
           }
@@ -22780,16 +23428,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/ecole.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-ecole-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/mairie.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/bibliotheque.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp"
               }
             ]
           }
@@ -23103,16 +23751,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/piscine.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-piscine-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/gymnase.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-gymnase-municipal-dessine.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/stade.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-aller-stade-dessine.webp"
               }
             ]
           }
@@ -23426,8 +24074,8 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/universite.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-universite-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
@@ -23435,7 +24083,7 @@
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/salle-de-sport.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-centre-sportif-dessine.webp"
               }
             ]
           }
@@ -24330,8 +24978,8 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/cuisine.webp"
+                "image": "/lib/images/tcf/qcm-audit/vocab-cuisiner.webp",
+                "correct": true
               },
               {
                 "id": "b",
@@ -24339,7 +24987,7 @@
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/chambre.webp"
+                "image": "/lib/images/tcf/qcm-audit/vocab-chambre-simple.webp"
               }
             ]
           }
@@ -24733,12 +25381,12 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/qcm-audit/co834-montre-dessinee.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-montre-dessinee.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/vocabulaire/accessoires/bague.webp"
+                "image": "/lib/images/tcf/qcm-audit/audit-context-bague-singuliere.webp"
               },
               {
                 "id": "c",
@@ -25074,16 +25722,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/vocabulaire/fruits/fraise.webp"
+                "image": "/lib/images/tcf/qcm-audit/audit-context-glace-fraise.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/vocabulaire/desserts/chocolat.webp"
+                "image": "/lib/images/tcf/qcm-audit/audit-context-glace-chocolat.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/vocabulaire/epices-herbes/vanille.webp"
+                "image": "/lib/images/tcf/qcm-audit/audit-context-glace-vanille.webp"
               }
             ]
           }
@@ -25892,6 +26540,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Par téléphone"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/communication-appeler.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/communication-courriel.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/communication-message.webp"
+              }
+            ]
           }
         }
       },
@@ -26804,8 +27470,8 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/cinema.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp",
+                "correct": true
               },
               {
                 "id": "b",
@@ -26813,7 +27479,7 @@
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/theatre.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-theatre-dessine.webp"
               }
             ]
           }
@@ -26894,16 +27560,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/musee.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-musee-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/cinema.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/theatre.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-batiment-theatre-dessine.webp"
               }
             ]
           }
@@ -26987,6 +27653,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Par SMS"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/communication-message.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/communication-lettre.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/communication-courriel.webp"
+              }
+            ]
           }
         }
       }
@@ -27118,12 +27802,12 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/bureau.webp"
+                "image": "/lib/images/tcf/co/bg/bureau.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/pharmacie.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-pharmacie-dessinee.webp"
               },
               {
                 "id": "c",
@@ -27228,6 +27912,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Sur Internet"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/vocab-internet.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-journal.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-affiche-gare.webp"
+              }
+            ]
           }
         }
       },
@@ -27700,16 +28402,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/cinema.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/theatre.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-batiment-theatre-dessine.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/concert.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-concert-dessine.webp"
               }
             ]
           }
@@ -27766,6 +28468,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Par courriel"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/communication-courriel.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/communication-appeler.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/communication-message.webp"
+              }
+            ]
           }
         }
       },
@@ -28868,24 +29588,6 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "La grippe"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/vocabulaire/sante/grippe.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/sante/rhume.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/sante/allergie.webp"
-              }
-            ]
           }
         }
       },
@@ -29791,6 +30493,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Par téléphone"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/communication-appeler.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/communication-courriel.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/communication-message.webp"
+              }
+            ]
           }
         }
       },
@@ -30119,16 +30839,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/restaurant.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/piscine.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-piscine-dessine.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/bibliotheque.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp"
               }
             ]
           }
@@ -30379,12 +31099,12 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/apero.webp"
+                "image": "/lib/images/tcf/qcm-audit/revue-20261107-b14d037af2.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/concert.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-concert-dessine.webp"
               },
               {
                 "id": "c",
@@ -30895,7 +31615,7 @@
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/restaurant.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp"
               },
               {
                 "id": "c",
@@ -31223,7 +31943,7 @@
               {
                 "id": "a",
                 "correct": true,
-                "image": "/lib/images/tcf/co/bg/chambre.webp"
+                "image": "/lib/images/tcf/qcm-audit/vocab-chambre-simple.webp"
               },
               {
                 "id": "b",
@@ -31535,12 +32255,12 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/cuisine.webp"
+                "image": "/lib/images/tcf/qcm-audit/vocab-cuisiner.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/chambre.webp"
+                "image": "/lib/images/tcf/qcm-audit/vocab-chambre-simple.webp"
               },
               {
                 "id": "c",
@@ -31843,6 +32563,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Par téléphone"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/communication-appeler.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/communication-courriel.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/communication-lettre.webp"
+              }
+            ]
           }
         }
       }
@@ -31945,7 +32683,7 @@
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/balcon.webp"
+                "image": "/lib/images/tcf/qcm-audit/revue-20261107-944d67d242.webp"
               },
               {
                 "id": "c",
@@ -32514,8 +33252,8 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/secretariat.webp"
+                "image": "/lib/images/tcf/co/bg/secretariat.webp",
+                "correct": true
               },
               {
                 "id": "b",
@@ -32523,7 +33261,7 @@
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/librairie.webp"
+                "image": "/lib/images/tcf/qcm-audit/vocab-librairie.webp"
               }
             ]
           }
@@ -33069,16 +33807,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/salle-de-sport.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-centre-sportif-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/restaurant.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/magasin-vetements.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-rayon-vetements-dessine.webp"
               }
             ]
           }
@@ -34565,16 +35303,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/magasin-vetements.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-rayon-vetements-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/librairie.webp"
+                "image": "/lib/images/tcf/qcm-audit/vocab-librairie.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/boulangerie.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-boulangerie-dessinee.webp"
               }
             ]
           }
@@ -35982,16 +36720,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/vocabulaire/boissons/café.webp"
+                "image": "/lib/images/tcf/qcm-audit/audit-context-eclair-cafe.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/vocabulaire/desserts/chocolat.webp"
+                "image": "/lib/images/tcf/qcm-audit/audit-context-eclair-chocolat.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/vocabulaire/epices-herbes/vanille.webp"
+                "image": "/lib/images/tcf/qcm-audit/audit-context-eclair-vanille.webp"
               }
             ]
           }
@@ -36071,8 +36809,8 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/patisserie.webp"
+                "image": "/lib/images/tcf/co/bg/patisserie.webp",
+                "correct": true
               },
               {
                 "id": "b",
@@ -36080,7 +36818,7 @@
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/pharmacie.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-pharmacie-dessinee.webp"
               }
             ]
           }
@@ -36268,16 +37006,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/hopital.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-hopital-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/maison.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/pharmacie.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-pharmacie-dessinee.webp"
               }
             ]
           }
@@ -38732,16 +39470,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/plage.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-mer-plages-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/gare.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/foret.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-foret-dessine.webp"
               }
             ]
           }
@@ -39511,12 +40249,12 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/restaurant.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/piscine.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-piscine-dessine.webp"
               },
               {
                 "id": "c",
@@ -40470,15 +41208,15 @@
               {
                 "id": "a",
                 "correct": true,
-                "image": "/lib/images/tcf/co/bg/montagne.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-montagnes-forets-dessine.webp"
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/plage.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-mer-plages-dessine.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/campagne.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-campagne-rivieres-dessine.webp"
               }
             ]
           }
@@ -41133,16 +41871,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/cinema.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/concert.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-concert-dessine.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/restaurant.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp"
               }
             ]
           }
@@ -41759,16 +42497,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/cinema.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/theatre.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-batiment-theatre-dessine.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/musee.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-musee-dessine.webp"
               }
             ]
           }
@@ -42082,12 +42820,12 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/theatre.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-batiment-theatre-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/cinema.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp"
               },
               {
                 "id": "c",
@@ -42360,16 +43098,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/apero.webp"
+                "image": "/lib/images/tcf/qcm-audit/revue-20261107-b14d037af2.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/concert.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-concert-dessine.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/mariage.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-mariage-dessine.webp"
               }
             ]
           }
@@ -42530,12 +43268,12 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/cuisine.webp"
+                "image": "/lib/images/tcf/qcm-audit/vocab-cuisiner.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/chambre.webp"
+                "image": "/lib/images/tcf/qcm-audit/vocab-chambre-simple.webp"
               },
               {
                 "id": "c",
@@ -43283,16 +44021,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/maison.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/hopital.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-hopital-dessine.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/bureau.webp"
+                "image": "/lib/images/tcf/qcm-audit/vocab-bureau.webp"
               }
             ]
           }
@@ -43481,16 +44219,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/pharmacie.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-pharmacie-dessinee.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/gare.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/mairie.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp"
               }
             ]
           }
@@ -43911,16 +44649,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/lac.webp"
+                "image": "/lib/images/tcf/qcm-audit/co57-bord-lac.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/plage.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-mer-plages-dessine.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/foret.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-foret-dessine.webp"
               }
             ]
           }
@@ -44108,16 +44846,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/musee.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-musee-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/gare.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/cinema.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp"
               }
             ]
           }
@@ -44873,6 +45611,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Journaliste"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/co57-journaliste.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/vocab-professeure.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/co834-medecin-dessine.webp"
+              }
+            ]
           }
         }
       },
@@ -45984,6 +46740,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Par téléphone"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/communication-appeler.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/communication-lettre.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/communication-courriel.webp"
+              }
+            ]
           }
         }
       },
@@ -47226,16 +48000,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/vocabulaire/fruits/citron.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-tarte-citron-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/vocabulaire/fruits/fraise.webp"
+                "image": "/lib/images/tcf/qcm-audit/ac7f419dce8c.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/vocabulaire/fruits/pomme.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-tarte-pommes-4-3.webp"
               }
             ]
           }
@@ -49218,6 +49992,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Quinze minutes"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/duree-15-minutes.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/duree-10-minutes.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/duree-20-minutes.webp"
+              }
+            ]
           }
         }
       },
@@ -49910,7 +50702,7 @@
               {
                 "id": "a",
                 "correct": true,
-                "image": "/lib/images/vocabulaire/heure-horloge/dix-heures-trente-cinq.webp"
+                "image": "/lib/images/tcf/qcm-audit/vocab-horloge-1035.webp"
               },
               {
                 "id": "b",
@@ -49956,11 +50748,11 @@
               {
                 "id": "a",
                 "correct": true,
-                "image": "/lib/images/tcf/co/bg/cours-musique.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-professeure-musique-dessine.webp"
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/gymnase.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-professeure-sport-dessine.webp"
               },
               {
                 "id": "c",
@@ -50367,6 +51159,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Des lunettes"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/co306-lunettes-vue-dessine.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/co834-chapeau-dessine.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/vocab-echarpe.webp"
+              }
+            ]
           }
         },
         "audio": 1
@@ -50755,8 +51565,8 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/cuisine.webp"
+                "image": "/lib/images/tcf/qcm-audit/vocab-cuisiner.webp",
+                "correct": true
               },
               {
                 "id": "b",
@@ -50764,7 +51574,7 @@
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/chambre.webp"
+                "image": "/lib/images/tcf/qcm-audit/vocab-chambre-simple.webp"
               }
             ]
           }
@@ -51048,16 +51858,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/bureau.webp"
+                "image": "/lib/images/tcf/qcm-audit/vocab-bureau.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/gare.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/restaurant.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp"
               }
             ]
           }
@@ -51138,12 +51948,12 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/parc.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-parc-public-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/lac.webp"
+                "image": "/lib/images/tcf/qcm-audit/co57-bord-lac.webp"
               },
               {
                 "id": "c",
@@ -51281,16 +52091,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/bibliotheque.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/piscine.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-piscine-dessine.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/cinema.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp"
               }
             ]
           }
@@ -52051,16 +52861,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/piscine.webp"
+                "image": "/lib/images/tcf/co/bg/piscine.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/cinema.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/musee.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-musee-dessine.webp"
               }
             ]
           }
@@ -54148,6 +54958,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "11 h 48"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/co306-horloge-1148-dessinee.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/co306-horloge-1122-dessinee.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/co306-horloge-1203-dessinee.webp"
+              }
+            ]
           }
         }
       },
@@ -54559,6 +55387,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Quinze minutes"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/duree-15-minutes.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/duree-5-minutes.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/duree-30-minutes.webp"
+              }
+            ]
           }
         }
       },
@@ -57438,6 +58284,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Par téléphone"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/communication-appeler.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/communication-courriel.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/communication-lettre.webp"
+              }
+            ]
           }
         }
       }
@@ -57730,12 +58594,12 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/hotel.webp"
+                "image": "/lib/images/tcf/co/bg/hotel.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/restaurant.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp"
               },
               {
                 "id": "c",
@@ -58244,6 +59108,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Cinq minutes"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/duree-5-minutes.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/duree-10-minutes.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/duree-20-minutes.webp"
+              }
+            ]
           }
         }
       }
@@ -58472,16 +59354,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/musee.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-musee-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/cinema.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/theatre.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-batiment-theatre-dessine.webp"
               }
             ]
           }
@@ -58673,7 +59555,7 @@
     "support": {
       "audio": "/lib/audio/tcf/co/ecole/05-école-redonner-le-livre-d-anglais.mp3",
       "transcription": "- Tiens, je te redonne ton cahier d'anglais.\nMerci beaucoup !\n- De rien.\nTu comprends mieux le cours maintenant ?\n- Oui, merci.",
-      "image": "/lib/images/tcf/co/scenes/ecole/05-ecole-redonner-le-livre-d-anglais.webp",
+      "image": "/lib/images/tcf/qcm-audit/revue-20261107-52bd5190d0.webp",
       "image_description": "Scénario vidéo (audio CO moyen, « Le cahier d'anglais », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un établissement scolaire (couloir, classe ou secrétariat). Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Tiens, je te redonne ton cahier d'anglais » ; B : « Merci beaucoup ! » ; A : « De rien » ; B : « Tu comprends mieux le cours maintenant ? » ; A : « Oui, merci ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
     },
     "questions": [
@@ -58871,7 +59753,7 @@
     "support": {
       "audio": "/lib/audio/tcf/co/ecole/07-école-où-est-le-bureau-du-directeur.mp3",
       "transcription": "Madame, il est où le bureau du directeur s'il vous plaît ? Là-bas, regarde, à côté de la bibliothèque.",
-      "image": "/lib/images/tcf/co/scenes/ecole/07-ecole-ou-est-le-bureau-du-directeur.webp",
+      "image": "/lib/images/tcf/qcm-audit/revue-20261107-c8068c61a6.webp",
       "image_description": "Scénario vidéo (audio CO moyen, « Le bureau du directeur », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un établissement scolaire (couloir, classe ou secrétariat). Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Madame, il est où, le bureau du directeur, s'il vous plaît ? » ; B : « Là-bas, regarde, à côté de la bibliothèque ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
     },
     "questions": [
@@ -58980,7 +59862,7 @@
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/cours-musique.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-professeure-musique-dessine.webp"
               },
               {
                 "id": "c",
@@ -59137,16 +60019,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/piscine.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-piscine-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/musee.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-musee-dessine.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/stade.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-aller-stade-dessine.webp"
               }
             ]
           }
@@ -59381,6 +60263,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Un dictionnaire"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/co306-dictionnaire-dessine.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/co306-cahier-dessine.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/vocab-regle.webp"
+              }
+            ]
           }
         }
       },
@@ -59620,7 +60520,7 @@
               {
                 "id": "a",
                 "correct": true,
-                "image": "/lib/images/tcf/co/bg/cour-ecole.webp"
+                "image": "/lib/images/tcf/qcm-audit/audit-context-cour-ecole.webp"
               },
               {
                 "id": "b",
@@ -60419,16 +61319,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/piscine.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-piscine-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/cinema.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/musee.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-musee-dessine.webp"
               }
             ]
           }
@@ -60775,8 +61675,8 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/restaurant.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
@@ -60784,7 +61684,7 @@
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/maison.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp"
               }
             ]
           }
@@ -61913,16 +62813,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/parc.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-parc-public-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/cinema.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/piscine.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-piscine-dessine.webp"
               }
             ]
           }
@@ -62344,16 +63244,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/magasin.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-entree-magasin-dessinee.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/musee.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-musee-dessine.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/restaurant.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp"
               }
             ]
           }
@@ -62375,7 +63275,7 @@
     "support": {
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_07.mp3",
       "transcription": "– Je suis né le 28 août 1978. Et toi Audrey ?\n– Moi ? Le 1er mars 1982.\n– Tu es plus jeune que moi. Et toi Alexandra ?\n– Je suis née la même année, le 30 mai 1982.",
-      "image": "/lib/images/tcf/co/scenes/vie-quotidienne/comparer-les-dates-de-naissance.webp",
+      "image": "/lib/images/tcf/qcm-audit/revue-20261107-7b4cddf12a.webp",
       "image_description": "Scénario vidéo (audio CO court, « Piste 07 », durée indicative 8–15 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Je suis né le 28 août 1978 » ; B : « Et toi Audrey ? » ; A : « Moi ? » ; B : « Le 1er mars 1982 » ; A : « Tu es plus jeune que moi ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
     },
     "questions": [
@@ -63027,16 +63927,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/piscine.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-piscine-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/cinema.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/theatre.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-batiment-theatre-dessine.webp"
               }
             ]
           }
@@ -63129,16 +64029,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/cinema.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/theatre.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-batiment-theatre-dessine.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/piscine.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-piscine-dessine.webp"
               }
             ]
           }
@@ -63231,16 +64131,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/theatre.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-batiment-theatre-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/cinema.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/concert.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-concert-dessine.webp"
               }
             ]
           }
@@ -63586,8 +64486,8 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/centre-commercial.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-centre-commercial-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
@@ -63595,7 +64495,7 @@
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/bibliotheque.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp"
               }
             ]
           }
@@ -63826,16 +64726,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/marche.webp"
+                "image": "/lib/images/tcf/co/bg/marche.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/boulangerie.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-boulangerie-dessinee.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/magasin.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-entree-magasin-dessinee.webp"
               }
             ]
           }
@@ -63872,8 +64772,8 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/magasin.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-entree-magasin-dessinee.webp",
+                "correct": true
               },
               {
                 "id": "b",
@@ -63881,7 +64781,7 @@
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/poste.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-bureau-poste-dessine.webp"
               }
             ]
           }
@@ -63949,15 +64849,15 @@
               {
                 "id": "a",
                 "correct": true,
-                "image": "/lib/images/tcf/co/bg/plage.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-mer-plages-dessine.webp"
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/montagne.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-montagnes-forets-dessine.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/campagne.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-campagne-rivieres-dessine.webp"
               }
             ]
           }
@@ -64234,8 +65134,8 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/musee.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-musee-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
@@ -64243,7 +65143,7 @@
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/mairie.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp"
               }
             ]
           }
@@ -64616,16 +65516,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/restaurant.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/theatre.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-batiment-theatre-dessine.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/cinema.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp"
               }
             ]
           }
@@ -64662,8 +65562,8 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/centre-commercial.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-centre-commercial-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
@@ -64671,7 +65571,7 @@
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/gare.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp"
               }
             ]
           }
@@ -65423,16 +66323,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/magasin-vetements.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-rayon-vetements-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/boulangerie.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-boulangerie-dessinee.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/pharmacie.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-pharmacie-dessinee.webp"
               }
             ]
           }
@@ -66432,16 +67332,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/poste.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-bureau-poste-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/mairie.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/bibliotheque.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp"
               }
             ]
           }
@@ -67012,16 +67912,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/bar.webp"
+                "image": "/lib/images/tcf/co/bg/bar.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/bibliotheque.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/salle-de-sport.webp"
+                "image": "/lib/images/tcf/qcm-audit/vocab-salle-sport.webp"
               }
             ]
           }
@@ -68069,16 +68969,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/cinema.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/theatre.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-batiment-theatre-dessine.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/musee.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-musee-dessine.webp"
               }
             ]
           }
@@ -68590,16 +69490,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/centre-commercial.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-centre-commercial-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/gare.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/musee.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-musee-dessine.webp"
               }
             ]
           }
@@ -68987,6 +69887,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "10 minutes"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/duree-10-minutes.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/duree-20-minutes.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/duree-30-minutes.webp"
+              }
+            ]
           }
         },
         "audio": 2
@@ -69241,7 +70159,7 @@
         "Bonjour. Monsieur Legrand. Je vous appelle pour prendre un rendez-vous pour parler des notes de votre fils. Ses notes de mathématiques sont très basses. Merci.",
         "Allô ? C’est Madame Fournier de l’Agence pour l’emploi. Votre rendez-vous de jeudi à 10 h au restaurant est confirmé. N’oubliez pas vos documents. Merci."
       ],
-      "image": "/lib/images/tcf/co/scenes/travail/attendre-le-rappel-de-la-directrice.webp",
+      "image": "/lib/images/tcf/qcm-audit/revue-20261107-76ff4c5aaf.webp",
       "audios": [
         "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_26-1.mp3",
         "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_26-2.mp3",
@@ -69526,16 +70444,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/restaurant.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/mairie.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/bibliotheque.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp"
               }
             ]
           }
@@ -70550,6 +71468,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Par téléphone"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/communication-appeler.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/communication-lettre.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/communication-message.webp"
+              }
+            ]
           }
         },
         "audio": 2
@@ -71292,6 +72228,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "3 h 40"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/co306-horloge-1540-dessinee.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/co306-horloge-1514-dessinee.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/co306-horloge-1640-dessinee.webp"
+              }
+            ]
           }
         },
         "audio": 1
@@ -71348,6 +72302,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Dix heures moins le quart"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/vocab-horloge-0945.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/vocab-horloge-1015.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/co834-horloge-1030-dessinee.webp"
+              }
+            ]
           }
         },
         "audio": 2
@@ -71450,6 +72422,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "5 h 30"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/co834-horloge-1730-dessinee.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/co834-horloge-1330-dessinee.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/co834-horloge-1530-dessinee.webp"
+              }
+            ]
           }
         },
         "audio": 3
@@ -71515,7 +72505,7 @@
     "support": {
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_32.mp3",
       "transcription": "Allô ? C’est Justine. Ce midi, c’est le déjeuner pour\nfêter les 10 ans de l’entreprise. Pour le repas avec\nles collègues, est-ce que tu peux acheter le pain ?\nEt va chercher la viande s’il te plaît. Moi, je vais au\nsupermarché pour les boissons. Prends le journal\npour notre directeur, il y a un article sur notre\nanniversaire. Merci.",
-      "image": "/lib/images/tcf/co/scenes/travail/preparer-le-dejeuner-anniversaire-de-l-entreprise.webp",
+      "image": "/lib/images/tcf/qcm-audit/revue-20261107-4b1adf3cd2.webp",
       "image_description": "Scénario vidéo (audio CO moyen, « Piste 32 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Allô ? » ; B : « C’est Justine » ; A : « Ce midi, c’est le déjeuner pour » ; B : « Fêter les 10 ans de l’entreprise » ; A : « Pour le repas avec » ; B : « Les collègues, est-ce que tu peux acheter le pain ? » ; A : « Et va chercher la viande s’il te plaît » ; B : « Moi, je vais au ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
     },
     "questions": [
@@ -71624,24 +72614,6 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Les collègues"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/vocabulaire/famille-personnes/collègues.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/famille-personnes/voisins.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/famille-personnes/cousins.webp"
-              }
-            ]
           }
         }
       },
@@ -71804,7 +72776,7 @@
     "support": {
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_33.mp3",
       "transcription": "Bonjour, c'est Mme Lee. Je vous téléphone pour vous dire comment venir dans nos bureaux. C'est très facile à partir de la place de la République où vous travaillez. Prenez le boulevard Saint-Michel. Ensuite, tournez à droite, rue du Tournesol, et continuez tout droit. Tournez dans la rue avec l'école. Je ne sais plus le nom de cette rue. Quand vous voyez un cinéma, tournez à gauche. Nos bureaux sont face à la pharmacie. À tout à l'heure !",
-      "image": "/lib/images/tcf/co/scenes/vie-quotidienne/suivre-un-itineraire-vers-les-bureaux.webp",
+      "image": "/lib/images/tcf/qcm-audit/revue-20261107-5708756bba.webp",
       "image_description": "Scénario vidéo (audio CO moyen, « Piste 33 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Bonjour, c’est Mme Lee » ; B : « Je vous téléphone pour » ; A : « Vous dire comment venir dans nos bureaux » ; B : « C’est » ; A : « Très facile à partir de la place de la République où » ; B : « Vous travaillez » ; A : « Prenez le boulevard Saint-Michel » ; B : « Ensuite, tournez à droite, rue du Tournesol et ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
     },
     "questions": [
@@ -71973,16 +72945,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/ecole.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-ecole-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/hopital.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-hopital-dessine.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/theatre.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-batiment-theatre-dessine.webp"
               }
             ]
           }
@@ -72045,16 +73017,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/pharmacie.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-pharmacie-dessinee.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/boulangerie.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-boulangerie-dessinee.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/librairie.webp"
+                "image": "/lib/images/tcf/qcm-audit/vocab-librairie.webp"
               }
             ]
           }
@@ -72916,16 +73888,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/aeroport.webp"
+                "image": "/lib/images/tcf/qcm-audit/co57-aeroport.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/gare.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/musee.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-musee-dessine.webp"
               }
             ]
           }
@@ -73470,24 +74442,6 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Les élèves"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/qcm-audit/vocab-eleves.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/famille-personnes/voisins.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/famille-personnes/parents.webp"
-              }
-            ]
           }
         },
         "audio": 3
@@ -73591,7 +74545,7 @@
     "support": {
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_38.mp3",
       "transcription": "Nous allons faire le calendrier des anniversaires de la classe. David, c'est quand ton anniversaire ? Mon anniversaire, c'est le 13 février. C'est bientôt ! Tu vas avoir quel âge ? 14 ans. Merci. Et toi, Margot ? Moi, je suis née le 5 juillet. D'accord. J'écris ta date de naissance sur le calendrier. Et tu as quel âge ? J'ai 13 ans. Ma copine Emma, elle a 13 ans aussi. C'est vrai, nous avons le même âge. Mon anniversaire, c'est le 30 mars. Merci les filles. Victor, est-ce que je peux avoir ta date d'anniversaire et ton âge, s'il te plaît ? Mon anniversaire, c'est le 20 juin. J'ai 12 ans. Merci. Je vais mettre le calendrier au tableau et on continue demain.",
-      "image": "/lib/images/tcf/co/scenes/ecole/remplir-le-calendrier-des-anniversaires.webp",
+      "image": "/lib/images/tcf/qcm-audit/revue-20261107-61e1ae89d7.webp",
       "image_description": "Scénario vidéo (audio CO moyen, « Piste 38 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Professeur : Nous allons faire le calendrier des » ; B : « Anniversaires de la classe » ; A : « David, c’est quand ton » ; B : « Anniversaire ? » ; A : « David : Mon anniversaire, c’est le 13 février » ; B : « Professeur : C’est bientôt ! » ; A : « Tu vas avoir quel âge ? » ; B : « David : 14 ans ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
     },
     "questions": [
@@ -76369,8 +77323,8 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/bibliotheque.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
@@ -76378,7 +77332,7 @@
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/cinema.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp"
               }
             ]
           }
@@ -76808,24 +77762,6 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Des élèves"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/qcm-audit/vocab-eleves.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/tcf/qcm-audit/vocab-professeurs.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/famille-personnes/parents.webp"
-              }
-            ]
           }
         },
         "audio": 1
@@ -76928,6 +77864,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Deux heures et demie"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/co834-horloge-1430-dessinee.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/co834-horloge-1400-dessinee.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/co834-horloge-1530-dessinee.webp"
+              }
+            ]
           }
         },
         "audio": 2
@@ -78234,16 +79188,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/plage.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-mer-plages-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/piscine.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-piscine-dessine.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/montagne.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-montagnes-forets-dessine.webp"
               }
             ]
           }
@@ -78498,7 +79452,7 @@
     "support": {
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_62.mp3",
       "transcription": "Chers clients, aujourd’hui, vendredi, nous vous\nrappelons le début de la grande promotion\nsur tous les disques de notre magasin. 25 % de\nréduction ! Oui, 25 % de réduction ! Retrouvez les\ndisques à côté des livres. Attention, la réduction\nest valable jusqu’au 13 mai uniquement.",
-      "image": "/lib/images/tcf/co/scenes/magasins/promotion-sur-les-disques.webp",
+      "image": "/lib/images/tcf/qcm-audit/revue-20261107-7d4ad0272d.webp",
       "image_description": "Scénario vidéo (audio CO moyen, « Piste 62 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Chers clients, aujourd’hui, vendredi, nous vous » ; B : « Rappelons le début de la grande promotion » ; A : « Sur tous les disques de notre magasin » ; B : « 25 % de » ; A : « Réduction ! » ; B : « Oui, 25 % de réduction ! » ; A : « Retrouvez les » ; B : « Disques à côté des livres ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
     },
     "questions": [
@@ -79183,6 +80137,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "15 minutes"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/duree-15-minutes.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/duree-5-minutes.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/duree-30-minutes.webp"
+              }
+            ]
           }
         }
       },
@@ -80038,8 +81010,8 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/ecole.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-ecole-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
@@ -80047,7 +81019,7 @@
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/gare.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp"
               }
             ]
           }
@@ -80208,6 +81180,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "15 minutes"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/duree-15-minutes.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/duree-5-minutes.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/duree-30-minutes.webp"
+              }
+            ]
           }
         },
         "audio": 3
@@ -80242,8 +81232,8 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/bibliotheque.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
@@ -80251,7 +81241,7 @@
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/salle-de-sport.webp"
+                "image": "/lib/images/tcf/qcm-audit/vocab-salle-sport.webp"
               }
             ]
           }
@@ -80858,6 +81848,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "10 minutes"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/duree-10-minutes.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/duree-20-minutes.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/duree-30-minutes.webp"
+              }
+            ]
           }
         },
         "audio": 3
@@ -81612,16 +82620,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/cinema.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/musee.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-musee-dessine.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/restaurant.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp"
               }
             ]
           }
@@ -82176,16 +83184,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/cinema.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/theatre.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-batiment-theatre-dessine.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/restaurant.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp"
               }
             ]
           }
@@ -82894,24 +83902,6 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Les amis"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/vocabulaire/famille-personnes/ami.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/famille-personnes/parents.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/tcf/qcm-audit/vocab-professeurs.webp"
-              }
-            ]
           }
         },
         "audio": 2
@@ -83002,16 +83992,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/plage.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-mer-plages-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/montagne.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-montagnes-forets-dessine.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/foret.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-foret-dessine.webp"
               }
             ]
           }
@@ -83076,12 +84066,12 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/cinema.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp"
               },
               {
                 "id": "c",
@@ -83116,6 +84106,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "La radio"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/co57-radio.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/co834-television-dessinee.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-journal.webp"
+              }
+            ]
           }
         },
         "audio": 4
@@ -83517,16 +84525,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/cinema.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/theatre.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-cours-theatre-dessine.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/restaurant.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp"
               }
             ]
           }
@@ -83590,15 +84598,15 @@
               {
                 "id": "a",
                 "correct": true,
-                "image": "/lib/images/tcf/co/bg/plage.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-mer-plages-dessine.webp"
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/montagne.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-montagnes-forets-dessine.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/campagne.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-campagne-rivieres-dessine.webp"
               }
             ]
           }
@@ -84178,6 +85186,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "La télévision"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/co834-television-dessinee.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/co57-radio.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-journal.webp"
+              }
+            ]
           }
         }
       },
@@ -84292,16 +85318,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/parc.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-parc-public-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/cinema.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/piscine.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-piscine-dessine.webp"
               }
             ]
           }
@@ -85522,6 +86548,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "11 h 58"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/co306-horloge-1158-dessinee.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/co306-horloge-1148-dessinee.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/co306-horloge-1258-dessinee.webp"
+              }
+            ]
           }
         },
         "audio": 4
@@ -85993,7 +87037,7 @@
     "support": {
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_87.mp3",
       "transcription": "– L’exercice 3 est un dialogue simulé. Nous\nsommes dans une épicerie. Vous voulez acheter\ndes produits. Vous êtes le client et je suis la\nvendeuse. Nous commençons.\n– Bonjour Madame.\n– Bonjour Monsieur.\n– Je voudrais acheter du sucre et des tomates s’il\nvous plaît.\n– Oui, combien de kilos de sucre ?\n– 2 kilos de sucre s’il vous plaît.\n– D’accord et combien de tomates ?\n– 1 kilo de tomates s’il vous plaît. Quel est le prix\ndu kilo de tomates ?\n– 1,30 €.\n– Merci. Et combien coûte le sucre ?\n– Le sucre ? C’est 3 € pour les 2 kilos.\n– Merci.\n– Est-ce que vous voulez autre chose Monsieur ?\n– Oui, je voudrais aussi du pain s’il vous plaît. Est-ce\nque vous avez des baguettes ?\n– Oui, combien de baguettes est-ce que vous\nvoulez ?\n– Seulement 1 baguette. Quel est le prix ?\n– La baguette coûte 70 centimes.\n– Merci. Quel est le prix total pour le sucre, les\ntomates et la baguette s’il vous plaît ?\n– Alors, le prix total est de 5 €. Comment est-ce\nque vous payez Monsieur ?\n– Je paye en espèces. Et voilà 5 €.\n– Merci Monsieur. Et voilà vos produits.\n– Merci beaucoup. Au revoir Madame et bonne\njournée.\n– Au revoir Monsieur. Merci Youssef. L’épreuve\nest terminée.\nÉpreuve blanche 1",
-      "image": "/lib/images/tcf/co/scenes/magasins/acheter-sucre-tomates-et-baguette.webp",
+      "image": "/lib/images/tcf/qcm-audit/revue-20261107-2dd22ea9d8.webp",
       "image_description": "Scénario vidéo (audio CO moyen, « Piste 87 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « L’exercice 3 est un dialogue simulé » ; B : « Nous » ; A : « Sommes dans une épicerie » ; B : « Vous voulez acheter » ; A : « Des produits » ; B : « Vous êtes le client et je suis la » ; A : « Vendeuse » ; B : « Nous commençons ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
     },
     "questions": [
@@ -86950,7 +87994,7 @@
     "support": {
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_90.mp3",
       "transcription": "Bonjour, c’est José, le secrétaire du directeur.\nVous avez rendez-vous avec le médecin du travail lundi prochain.\nPour votre rendez-vous, venez à 10 heures au deuxième étage.\nVous pouvez parler de votre accident d’hier.\nRacontez votre visite à l’hôpital et montrez votre ordonnance.\nSi vous avez des questions, appelez-moi vendredi.\nBonne journée !",
-      "image": "/lib/images/tcf/co/scenes/travail/rendez-vous-chez-le-medecin-du-travail.webp",
+      "image": "/lib/images/tcf/qcm-audit/revue-20261107-a6120e9416.webp",
       "image_description": "Scénario vidéo (audio CO moyen, « Piste 90 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Bonjour, c’est José, le secrétaire du directeur » ; B : « Vous avez rendez-vous avec le médecin du travail » ; A : « Lundi prochain » ; B : « Pour votre rendez-vous, venez » ; A : « À 10 h au 2 étage » ; B : « Vous pouvez parler de votre » ; A : « Accident d’hier » ; B : « Racontez votre visite à l’hôpital ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
     },
     "questions": [
@@ -87328,6 +88372,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Une carte d'étudiant"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-carte-etudiant.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/co834-carte-bancaire-dessinee.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/co306-carte-transport-dessine.webp"
+              }
+            ]
           }
         },
         "audio": 1
@@ -87878,8 +88940,8 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/chambre.webp"
+                "image": "/lib/images/tcf/qcm-audit/vocab-chambre-simple.webp",
+                "correct": true
               },
               {
                 "id": "b",
@@ -87887,7 +88949,7 @@
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/bureau.webp"
+                "image": "/lib/images/tcf/qcm-audit/vocab-bureau.webp"
               }
             ]
           }
@@ -88095,16 +89157,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/cinema.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/theatre.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-batiment-theatre-dessine.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/restaurant.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp"
               }
             ]
           }
@@ -88233,7 +89295,7 @@
     "support": {
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_94.mp3",
       "transcription": "Ce week-end, c'est la fête des mères. Venez dans notre magasin. Nous sommes ouverts de 10h à 19h. Et il y a 15% de réduction sur tous les produits. Venez vite, il y a plein d'idées pour vos cadeaux. Nous avons beaucoup de parfums pour les mamans. Et on vous propose un prix spécial de 25€ sur tous les chapeaux.",
-      "image": "/lib/images/tcf/co/scenes/magasins/choisir-un-cadeau-pour-la-fete-des-meres.webp",
+      "image": "/lib/images/tcf/qcm-audit/revue-20261107-0012e35e86.webp",
       "image_description": "Scénario vidéo (audio CO moyen, « Piste 94 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Ce week-end, c’est la fête des mères » ; B : « Venez dans » ; A : « Notre magasin » ; B : « Nous sommes ouverts de 10 h » ; A : « À 19 h » ; B : « Et il y a 15 % de réduction sur tous les » ; A : « Produits ! » ; B : « Venez vite ! ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
     },
     "questions": [
@@ -88423,24 +89485,6 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Aux mamans"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/vocabulaire/famille-personnes/maman.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/tcf/qcm-audit/vocab-enfants.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/tcf/qcm-audit/vocab-professeurs.webp"
-              }
-            ]
           }
         }
       },
@@ -88558,7 +89602,7 @@
     "support": {
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_95.mp3",
       "transcription": "Bienvenue dans l’entreprise ! Vous êtes dans le\nbâtiment principal, rue Louis Pasteur. Pour le\nrestaurant du personnel, allez rue Napoléon.\nAvec le téléphone sur votre bureau, vous pouvez\nappeler le service informatique. Appelez le 6806.\nNotez cette information : l’entreprise est fermée\nen décembre. Pour terminer, votre contrat est\ndisponible au service du personnel. Bonne journée !",
-      "image": "/lib/images/tcf/co/scenes/travail/accueillir-un-nouveau-salarie.webp",
+      "image": "/lib/images/tcf/qcm-audit/revue-20261107-a1e0d0c29c.webp",
       "image_description": "Scénario vidéo (audio CO court, « Piste 95 », durée indicative 8–15 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Bienvenue dans l’entreprise ! » ; B : « Vous êtes dans le » ; A : « Bâtiment principal, rue Louis Pasteur » ; B : « Pour le » ; A : « Restaurant du personnel, allez rue Napoléon ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
     },
     "questions": [
@@ -89848,7 +90892,7 @@
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/chambre.webp"
+                "image": "/lib/images/tcf/qcm-audit/vocab-chambre-simple.webp"
               }
             ]
           }
@@ -90125,6 +91169,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Un passeport"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/co306-passeport-dessine.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-permis-conduire.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/co834-carte-bancaire-dessinee.webp"
+              }
+            ]
           }
         }
       },
@@ -90247,7 +91309,7 @@
       },
       {
         "id": "i2",
-        "image": "/lib/images/tcf/qcm-audit/vocab-enveloppe.webp",
+        "image": "/lib/images/tcf/qcm-audit/communication-lettre.webp",
         "correct": true
       },
       {
@@ -90334,6 +91396,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Un jus de fruits"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/co834-jus-orange-dessine.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/co834-verre-eau-dessine.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/fc08f12c7321.webp"
+              }
+            ]
           }
         }
       },
@@ -90415,6 +91495,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Une tomate"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/vocab-tomate.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/vocab-carotte.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/vocab-courgette.webp"
+              }
+            ]
           }
         }
       }
@@ -90489,6 +91587,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Un savon"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/co834-savon-dessine.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/co306-shampoing-dessine.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/co834-dentifrice-dessine.webp"
+              }
+            ]
           }
         }
       },
@@ -91406,6 +92522,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Un permis de conduire"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-permis-conduire.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/co306-passeport-dessine.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-carte-etudiant.webp"
+              }
+            ]
           }
         }
       },
@@ -91567,16 +92701,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/librairie.webp"
+                "image": "/lib/images/tcf/qcm-audit/vocab-librairie.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/boulangerie.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-boulangerie-dessinee.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/pharmacie.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-pharmacie-dessinee.webp"
               }
             ]
           }
@@ -91940,12 +93074,12 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/ville.webp"
+                "image": "/lib/images/tcf/co/bg/ville.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/ecole.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-ecole-dessine.webp"
               },
               {
                 "id": "c",
@@ -93156,7 +94290,7 @@
       {
         "id": "i2",
         "image": "/lib/images/tcf/qcm-audit/vocab-voiture-rouge.webp",
-        "correct": false
+        "correct": true
       },
       {
         "id": "i3",
@@ -93248,16 +94382,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/maison.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/cinema.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/restaurant.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp"
               }
             ]
           }
@@ -94179,16 +95313,16 @@
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/pharmacie.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-pharmacie-dessinee.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/boulangerie.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-boulangerie-dessinee.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/poste.webp"
+                "image": "/lib/images/tcf/qcm-audit/co306-bureau-poste-dessine.webp"
               }
             ]
           }

@@ -8,6 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 snapshot = json.loads((ROOT / 'docs/tcf/images-objet-csc-a-conserver.json').read_text())
 report_path = ROOT / 'docs/tcf/reprise-images-20261106.json'
 replacements = {}
+context_ops = json.loads((ROOT / 'docs/tcf/operations-contexte-20261106.json').read_text())['operations'] if (ROOT / 'docs/tcf/operations-contexte-20261106.json').exists() else []
 if report_path.exists():
     report = json.loads(report_path.read_text())
     replacements = {(r['bank'], r['exercise'], tuple(r['node'])): r for r in report['replacements']}
@@ -31,6 +32,10 @@ for saved in snapshot['exercises']:
     exercise = next(e for e in bank if e['id'] == saved['exercise'])
     expected_images = [dict(image, image=expected(saved, ['images', i, 'image'], image['image']))
                        for i, image in enumerate(saved['images'])]
+    for op in context_ops:
+        if op['bank'] == saved['bank'] and op['exercise'] == saved['exercise'] and op['node'][0] == 'images' and op['node'][-1] == 'correct':
+            assert expected_images[op['node'][1]]['correct'] == op['before']
+            expected_images[op['node'][1]]['correct'] = op['after']
     assert exercise['images'] == expected_images, saved['exercise']
     for ref in saved['protected_vocabulary_refs']:
         node = exercise

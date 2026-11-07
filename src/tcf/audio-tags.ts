@@ -6,7 +6,8 @@
  * `court` = mini-extrait pour « 6 audios courts » (1 question tirée du pool de la piste).
  * `moyen` = extrait moyen pour « 3 audios moyens » (2 questions tirées du pool de la piste).
  * `long` = document long pour « audio complet » (N questions, défaut 5).
- * `objet` = message « objets à reconnaître » (ex. 5, images Oui / Non).
+ * `objet` = piste dont la transcription nomme au moins trois concepts illustrés distincts
+ * (ex. 5 : tirage de trois OUI et deux NON, positions mélangées).
  *
  * `court` / `moyen` / `long` sont mutuellement exclusifs (tag pédagogique relu,
  * sinon durée de la piste) ;

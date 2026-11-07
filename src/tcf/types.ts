@@ -140,7 +140,7 @@ export type TcfCeExercise = TcfCeSms | TcfCeEmail | TcfCeAnnonce
 
 export type TcfImageACocher = { id: string; image: string; correct: boolean; fixe?: boolean }
 
-export type TcfCoImages = TcfBase<'CO', 'images_a_reconnaitre', { audio: string }> & {
+export type TcfCoImages = TcfBase<'CO', 'images_a_reconnaitre', { audio: string; transcription?: string }> & {
   melanger?: boolean
   /** par_image : 1 point par image juste ; tout_ou_rien : les 5 justes. */
   score?: 'par_image' | 'tout_ou_rien'

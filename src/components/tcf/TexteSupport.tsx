@@ -6,6 +6,7 @@ import {
   parseAssociationDocuments,
 } from '@/tcf/association-documents'
 import { tcfImageSrc } from '@/tcf/media'
+import { threeThemeImageSrc } from '@/tcf/three-themes-images'
 import type { TcfCeAnnonce, TcfExercise } from '@/tcf/types'
 
 /** Paragraphes : une ligne vide sépare deux paragraphes. */
@@ -380,7 +381,7 @@ export function TexteSupport({ exercise: ex, mode }: { exercise: TcfExercise; mo
                 <ul className="tcf-po-images is-4">
                   {t.images.map((src, k) => (
                     <li key={k}>
-                      <TcfImage src={src} alt="" />
+                      <TcfImage src={threeThemeImageSrc(src)} alt="" />
                     </li>
                   ))}
                 </ul>

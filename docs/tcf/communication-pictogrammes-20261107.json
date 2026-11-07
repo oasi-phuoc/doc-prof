@@ -1,0 +1,1287 @@
+{
+  "date": "2026-11-07",
+  "request": "Téléphone avec combiné pour appeler ; même téléphone avec bulle pour un message ; enveloppe ouverte avec @ pour le courriel ; même enveloppe avec feuille lignée pour la lettre.",
+  "review": "Quatre images contrôlées visuellement ; aucun personnage, aucune scène supplémentaire.",
+  "replacements": {
+    "/lib/images/tcf/qcm-audit/vocab-par-telephone.webp": "/lib/images/tcf/qcm-audit/communication-appeler.webp",
+    "/lib/images/tcf/qcm-audit/audit-context-envoyer-texto.webp": "/lib/images/tcf/qcm-audit/communication-message.webp",
+    "/lib/images/tcf/qcm-audit/audit-context-ecrire-courriel.webp": "/lib/images/tcf/qcm-audit/communication-courriel.webp",
+    "/lib/images/tcf/qcm-audit/audit-context-ecrire-lettre.webp": "/lib/images/tcf/qcm-audit/communication-lettre.webp"
+  },
+  "summary": {
+    "changed_usages": 85
+  },
+  "changes": [
+    {
+      "node": [
+        "questions",
+        2,
+        "formes",
+        "qcm_image",
+        "choix",
+        1,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/vocab-par-telephone.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-appeler.webp",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "tcf-a1j-s1-ce-1"
+    },
+    {
+      "node": [
+        "questions",
+        5,
+        "formes",
+        "qcm_image",
+        "choix",
+        0,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-ecrire-courriel.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-courriel.webp",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "tcf-a1j-s1-ce-1"
+    },
+    {
+      "node": [
+        "questions",
+        5,
+        "formes",
+        "qcm_image",
+        "choix",
+        1,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-ecrire-lettre.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-lettre.webp",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "tcf-a1j-s1-ce-1"
+    },
+    {
+      "node": [
+        "questions",
+        5,
+        "formes",
+        "qcm_image",
+        "choix",
+        2,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/vocab-par-telephone.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-appeler.webp",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "tcf-a1j-s1-ce-1"
+    },
+    {
+      "node": [
+        "questions",
+        8,
+        "formes",
+        "qcm_image",
+        "choix",
+        0,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/vocab-par-telephone.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-appeler.webp",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "tcf-a1p-s4-ce-4"
+    },
+    {
+      "node": [
+        "questions",
+        8,
+        "formes",
+        "qcm_image",
+        "choix",
+        1,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-ecrire-courriel.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-courriel.webp",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "tcf-a1p-s4-ce-4"
+    },
+    {
+      "node": [
+        "questions",
+        8,
+        "formes",
+        "qcm_image",
+        "choix",
+        2,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-ecrire-lettre.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-lettre.webp",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "tcf-a1p-s4-ce-4"
+    },
+    {
+      "node": [
+        "questions",
+        7,
+        "formes",
+        "qcm_image",
+        "choix",
+        0,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/vocab-par-telephone.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-appeler.webp",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "tcf-a1p-s3-ce-1"
+    },
+    {
+      "node": [
+        "questions",
+        7,
+        "formes",
+        "qcm_image",
+        "choix",
+        1,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-ecrire-courriel.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-courriel.webp",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "tcf-a1p-s3-ce-1"
+    },
+    {
+      "node": [
+        "questions",
+        7,
+        "formes",
+        "qcm_image",
+        "choix",
+        2,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-ecrire-lettre.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-lettre.webp",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "tcf-a1p-s3-ce-1"
+    },
+    {
+      "node": [
+        "questions",
+        7,
+        "formes",
+        "qcm_image",
+        "choix",
+        0,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-ecrire-courriel.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-courriel.webp",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "delf-a1v-ce-005"
+    },
+    {
+      "node": [
+        "questions",
+        7,
+        "formes",
+        "qcm_image",
+        "choix",
+        1,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/vocab-par-telephone.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-appeler.webp",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "delf-a1v-ce-005"
+    },
+    {
+      "node": [
+        "questions",
+        7,
+        "formes",
+        "qcm_image",
+        "choix",
+        2,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-ecrire-lettre.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-lettre.webp",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "delf-a1v-ce-005"
+    },
+    {
+      "node": [
+        "questions",
+        8,
+        "formes",
+        "qcm_image",
+        "choix",
+        0,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-ecrire-courriel.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-courriel.webp",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "delf-a1v-ce-010"
+    },
+    {
+      "node": [
+        "questions",
+        8,
+        "formes",
+        "qcm_image",
+        "choix",
+        1,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/vocab-par-telephone.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-appeler.webp",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "delf-a1v-ce-010"
+    },
+    {
+      "node": [
+        "questions",
+        8,
+        "formes",
+        "qcm_image",
+        "choix",
+        2,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-ecrire-lettre.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-lettre.webp",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "delf-a1v-ce-010"
+    },
+    {
+      "node": [
+        "questions",
+        3,
+        "formes",
+        "qcm_image",
+        "choix",
+        1,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/vocab-par-telephone.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-appeler.webp",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "delf-a1v-ce-039"
+    },
+    {
+      "node": [
+        "questions",
+        3,
+        "formes",
+        "qcm_image",
+        "choix",
+        2,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-ecrire-lettre.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-lettre.webp",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "delf-a1v-ce-039"
+    },
+    {
+      "node": [
+        "questions",
+        3,
+        "formes",
+        "qcm_image",
+        "choix",
+        0,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/vocab-par-telephone.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-appeler.webp",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "delf-a1v-ce-040"
+    },
+    {
+      "node": [
+        "questions",
+        3,
+        "formes",
+        "qcm_image",
+        "choix",
+        1,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-ecrire-courriel.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-courriel.webp",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "delf-a1v-ce-040"
+    },
+    {
+      "node": [
+        "questions",
+        3,
+        "formes",
+        "qcm_image",
+        "choix",
+        2,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-ecrire-lettre.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-lettre.webp",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "delf-a1v-ce-040"
+    },
+    {
+      "node": [
+        "questions",
+        7,
+        "formes",
+        "qcm_image",
+        "choix",
+        0,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-envoyer-texto.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-message.webp",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "delf-a1v-ce-047"
+    },
+    {
+      "node": [
+        "questions",
+        7,
+        "formes",
+        "qcm_image",
+        "choix",
+        1,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-ecrire-courriel.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-courriel.webp",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "delf-a1v-ce-047"
+    },
+    {
+      "node": [
+        "questions",
+        7,
+        "formes",
+        "qcm_image",
+        "choix",
+        2,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-ecrire-lettre.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-lettre.webp",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "delf-a1v-ce-047"
+    },
+    {
+      "node": [
+        "questions",
+        2,
+        "formes",
+        "qcm_image",
+        "choix",
+        0,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-ecrire-courriel.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-courriel.webp",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "delf-a1v-ce-051"
+    },
+    {
+      "node": [
+        "questions",
+        2,
+        "formes",
+        "qcm_image",
+        "choix",
+        1,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-envoyer-texto.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-message.webp",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "delf-a1v-ce-051"
+    },
+    {
+      "node": [
+        "questions",
+        2,
+        "formes",
+        "qcm_image",
+        "choix",
+        2,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-ecrire-lettre.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-lettre.webp",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "delf-a1v-ce-051"
+    },
+    {
+      "node": [
+        "questions",
+        7,
+        "formes",
+        "qcm_image",
+        "choix",
+        0,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/vocab-par-telephone.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-appeler.webp",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "delf-a1v-ce-051"
+    },
+    {
+      "node": [
+        "questions",
+        7,
+        "formes",
+        "qcm_image",
+        "choix",
+        1,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-ecrire-courriel.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-courriel.webp",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "delf-a1v-ce-051"
+    },
+    {
+      "node": [
+        "questions",
+        7,
+        "formes",
+        "qcm_image",
+        "choix",
+        2,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-envoyer-texto.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-message.webp",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "delf-a1v-ce-051"
+    },
+    {
+      "node": [
+        "questions",
+        3,
+        "formes",
+        "qcm_image",
+        "choix",
+        0,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-ecrire-courriel.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-courriel.webp",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "delf-a1v-ce-052"
+    },
+    {
+      "node": [
+        "questions",
+        3,
+        "formes",
+        "qcm_image",
+        "choix",
+        1,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/vocab-par-telephone.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-appeler.webp",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "delf-a1v-ce-052"
+    },
+    {
+      "node": [
+        "questions",
+        3,
+        "formes",
+        "qcm_image",
+        "choix",
+        2,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-ecrire-lettre.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-lettre.webp",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "delf-a1v-ce-052"
+    },
+    {
+      "node": [
+        "questions",
+        6,
+        "formes",
+        "qcm_image",
+        "choix",
+        0,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/vocab-par-telephone.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-appeler.webp",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-a1j-s2-co-1"
+    },
+    {
+      "node": [
+        "questions",
+        6,
+        "formes",
+        "qcm_image",
+        "choix",
+        1,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-ecrire-courriel.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-courriel.webp",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-a1j-s2-co-1"
+    },
+    {
+      "node": [
+        "questions",
+        6,
+        "formes",
+        "qcm_image",
+        "choix",
+        2,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-ecrire-lettre.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-lettre.webp",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-a1j-s2-co-1"
+    },
+    {
+      "node": [
+        "questions",
+        5,
+        "formes",
+        "qcm_image",
+        "choix",
+        0,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-ecrire-courriel.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-courriel.webp",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-a1j-s3-co-1"
+    },
+    {
+      "node": [
+        "questions",
+        5,
+        "formes",
+        "qcm_image",
+        "choix",
+        1,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/vocab-par-telephone.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-appeler.webp",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-a1j-s3-co-1"
+    },
+    {
+      "node": [
+        "questions",
+        5,
+        "formes",
+        "qcm_image",
+        "choix",
+        0,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-envoyer-texto.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-message.webp",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-a1-s1-co-1"
+    },
+    {
+      "node": [
+        "questions",
+        5,
+        "formes",
+        "qcm_image",
+        "choix",
+        1,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-ecrire-lettre.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-lettre.webp",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-a1-s1-co-1"
+    },
+    {
+      "node": [
+        "questions",
+        5,
+        "formes",
+        "qcm_image",
+        "choix",
+        2,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/vocab-par-telephone.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-appeler.webp",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-a1-s1-co-1"
+    },
+    {
+      "node": [
+        "questions",
+        2,
+        "formes",
+        "qcm_image",
+        "choix",
+        1,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-ecrire-courriel.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-courriel.webp",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-a1-s1b-co-2"
+    },
+    {
+      "node": [
+        "questions",
+        3,
+        "formes",
+        "qcm_image",
+        "choix",
+        0,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-envoyer-texto.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-message.webp",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-a1-s2-co-1"
+    },
+    {
+      "node": [
+        "questions",
+        3,
+        "formes",
+        "qcm_image",
+        "choix",
+        1,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/vocab-par-telephone.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-appeler.webp",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-a1-s2-co-1"
+    },
+    {
+      "node": [
+        "questions",
+        3,
+        "formes",
+        "qcm_image",
+        "choix",
+        2,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-ecrire-lettre.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-lettre.webp",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-a1-s2-co-1"
+    },
+    {
+      "node": [
+        "questions",
+        4,
+        "formes",
+        "qcm_image",
+        "choix",
+        0,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/vocab-par-telephone.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-appeler.webp",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-a1-tpa-co-2"
+    },
+    {
+      "node": [
+        "questions",
+        4,
+        "formes",
+        "qcm_image",
+        "choix",
+        1,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-ecrire-courriel.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-courriel.webp",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-a1-tpa-co-2"
+    },
+    {
+      "node": [
+        "questions",
+        4,
+        "formes",
+        "qcm_image",
+        "choix",
+        2,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-ecrire-lettre.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-lettre.webp",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-a1-tpa-co-2"
+    },
+    {
+      "node": [
+        "questions",
+        5,
+        "formes",
+        "qcm_image",
+        "choix",
+        0,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-ecrire-lettre.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-lettre.webp",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-a1-tpa-co-3"
+    },
+    {
+      "node": [
+        "questions",
+        5,
+        "formes",
+        "qcm_image",
+        "choix",
+        1,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-ecrire-courriel.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-courriel.webp",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-a1-tpa-co-3"
+    },
+    {
+      "node": [
+        "questions",
+        5,
+        "formes",
+        "qcm_image",
+        "choix",
+        2,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-envoyer-texto.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-message.webp",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-a1-tpa-co-3"
+    },
+    {
+      "node": [
+        "questions",
+        6,
+        "formes",
+        "qcm_image",
+        "choix",
+        0,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/vocab-par-telephone.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-appeler.webp",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s18-co-4"
+    },
+    {
+      "node": [
+        "questions",
+        6,
+        "formes",
+        "qcm_image",
+        "choix",
+        1,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-ecrire-courriel.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-courriel.webp",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s18-co-4"
+    },
+    {
+      "node": [
+        "questions",
+        6,
+        "formes",
+        "qcm_image",
+        "choix",
+        2,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-envoyer-texto.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-message.webp",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s18-co-4"
+    },
+    {
+      "node": [
+        "questions",
+        7,
+        "formes",
+        "qcm_image",
+        "choix",
+        0,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-envoyer-texto.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-message.webp",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s19-co-4"
+    },
+    {
+      "node": [
+        "questions",
+        7,
+        "formes",
+        "qcm_image",
+        "choix",
+        1,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-ecrire-lettre.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-lettre.webp",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s19-co-4"
+    },
+    {
+      "node": [
+        "questions",
+        7,
+        "formes",
+        "qcm_image",
+        "choix",
+        2,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-ecrire-courriel.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-courriel.webp",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s19-co-4"
+    },
+    {
+      "node": [
+        "questions",
+        3,
+        "formes",
+        "qcm_image",
+        "choix",
+        0,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-ecrire-courriel.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-courriel.webp",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s20-co-4"
+    },
+    {
+      "node": [
+        "questions",
+        3,
+        "formes",
+        "qcm_image",
+        "choix",
+        1,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/vocab-par-telephone.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-appeler.webp",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s20-co-4"
+    },
+    {
+      "node": [
+        "questions",
+        3,
+        "formes",
+        "qcm_image",
+        "choix",
+        2,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-envoyer-texto.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-message.webp",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s20-co-4"
+    },
+    {
+      "node": [
+        "questions",
+        3,
+        "formes",
+        "qcm_image",
+        "choix",
+        0,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/vocab-par-telephone.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-appeler.webp",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s23-co-1"
+    },
+    {
+      "node": [
+        "questions",
+        3,
+        "formes",
+        "qcm_image",
+        "choix",
+        1,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-ecrire-courriel.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-courriel.webp",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s23-co-1"
+    },
+    {
+      "node": [
+        "questions",
+        3,
+        "formes",
+        "qcm_image",
+        "choix",
+        2,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-envoyer-texto.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-message.webp",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s23-co-1"
+    },
+    {
+      "node": [
+        "questions",
+        7,
+        "formes",
+        "qcm_image",
+        "choix",
+        0,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/vocab-par-telephone.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-appeler.webp",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s25-co-3"
+    },
+    {
+      "node": [
+        "questions",
+        7,
+        "formes",
+        "qcm_image",
+        "choix",
+        1,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-ecrire-courriel.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-courriel.webp",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s25-co-3"
+    },
+    {
+      "node": [
+        "questions",
+        7,
+        "formes",
+        "qcm_image",
+        "choix",
+        2,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-ecrire-lettre.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-lettre.webp",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s25-co-3"
+    },
+    {
+      "node": [
+        "questions",
+        1,
+        "formes",
+        "qcm_image",
+        "choix",
+        0,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/vocab-par-telephone.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-appeler.webp",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s41-co-4"
+    },
+    {
+      "node": [
+        "questions",
+        1,
+        "formes",
+        "qcm_image",
+        "choix",
+        1,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-ecrire-lettre.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-lettre.webp",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s41-co-4"
+    },
+    {
+      "node": [
+        "questions",
+        1,
+        "formes",
+        "qcm_image",
+        "choix",
+        2,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-ecrire-courriel.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-courriel.webp",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s41-co-4"
+    },
+    {
+      "node": [
+        "questions",
+        4,
+        "formes",
+        "qcm_image",
+        "choix",
+        0,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/vocab-par-telephone.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-appeler.webp",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s57-co-3"
+    },
+    {
+      "node": [
+        "questions",
+        4,
+        "formes",
+        "qcm_image",
+        "choix",
+        1,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-ecrire-courriel.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-courriel.webp",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s57-co-3"
+    },
+    {
+      "node": [
+        "questions",
+        4,
+        "formes",
+        "qcm_image",
+        "choix",
+        2,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-ecrire-lettre.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-lettre.webp",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s57-co-3"
+    },
+    {
+      "node": [
+        "questions",
+        7,
+        "formes",
+        "qcm_image",
+        "choix",
+        0,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/vocab-par-telephone.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-appeler.webp",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "delf-a1-2022-co-ex3-29"
+    },
+    {
+      "node": [
+        "questions",
+        7,
+        "formes",
+        "qcm_image",
+        "choix",
+        1,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-ecrire-lettre.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-lettre.webp",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "delf-a1-2022-co-ex3-29"
+    },
+    {
+      "node": [
+        "questions",
+        7,
+        "formes",
+        "qcm_image",
+        "choix",
+        2,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-envoyer-texto.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-message.webp",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "delf-a1-2022-co-ex3-29"
+    },
+    {
+      "node": [
+        "images",
+        1,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-ecrire-lettre.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-lettre.webp",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "delf-a1-2022-co-ex5-50"
+    },
+    {
+      "node": [
+        "questions",
+        7,
+        "formes",
+        "qcm_image",
+        "choix",
+        0,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-ecrire-courriel.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-courriel.webp",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "exercise": "delf-a2j-ce-025"
+    },
+    {
+      "node": [
+        "questions",
+        7,
+        "formes",
+        "qcm_image",
+        "choix",
+        1,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-envoyer-texto.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-message.webp",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "exercise": "delf-a2j-ce-025"
+    },
+    {
+      "node": [
+        "questions",
+        7,
+        "formes",
+        "qcm_image",
+        "choix",
+        2,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-ecrire-lettre.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-lettre.webp",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "exercise": "delf-a2j-ce-025"
+    },
+    {
+      "node": [
+        "questions",
+        7,
+        "formes",
+        "qcm_image",
+        "choix",
+        0,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/vocab-par-telephone.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-appeler.webp",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "exercise": "delf-a2r-ce-050"
+    },
+    {
+      "node": [
+        "questions",
+        7,
+        "formes",
+        "qcm_image",
+        "choix",
+        1,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-ecrire-lettre.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-lettre.webp",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "exercise": "delf-a2r-ce-050"
+    },
+    {
+      "node": [
+        "questions",
+        7,
+        "formes",
+        "qcm_image",
+        "choix",
+        2,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-ecrire-courriel.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-courriel.webp",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "exercise": "delf-a2r-ce-050"
+    },
+    {
+      "node": [
+        "questions",
+        7,
+        "formes",
+        "qcm_image",
+        "choix",
+        0,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-ecrire-courriel.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-courriel.webp",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-a2-sb-co-3"
+    },
+    {
+      "node": [
+        "questions",
+        7,
+        "formes",
+        "qcm_image",
+        "choix",
+        1,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/vocab-par-telephone.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-appeler.webp",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-a2-sb-co-3"
+    },
+    {
+      "node": [
+        "questions",
+        7,
+        "formes",
+        "qcm_image",
+        "choix",
+        2,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/audit-context-ecrire-lettre.webp",
+      "after": "/lib/images/tcf/qcm-audit/communication-lettre.webp",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-a2-sb-co-3"
+    }
+  ]
+}

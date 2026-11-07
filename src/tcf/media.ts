@@ -18,6 +18,12 @@ export function tcfImageSrc(src: string | null | undefined): string {
   if (!src) return ''
   // Les fiches déjà enregistrées peuvent encore contenir l'ancien dossier PO.
   return resolve(src, TCF_IMAGE_DIR).replace(
+    // Cette série a été remise dans l'ordre narratif. Les anciennes fiches
+    // doivent retrouver la même scène malgré la nouvelle numérotation.
+    /^\/lib\/images\/comprehension\/po-a1\/pause-cafe-travail-([134])\.webp(?=$|[?#])/,
+    (_match, step: '1' | '3' | '4') =>
+      `/lib/images/tcf/po/a1/pause-cafe-travail-${({ '1': '4', '3': '1', '4': '3' })[step]}.webp`,
+  ).replace(
     /^\/lib\/images\/comprehension\/po-a([12])\//,
     '/lib/images/tcf/po/a$1/',
   ).replace(

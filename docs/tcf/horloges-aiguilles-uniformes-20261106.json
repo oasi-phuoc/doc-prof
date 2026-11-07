@@ -1,0 +1,1668 @@
+{
+  "date": "2026-11-06",
+  "authorization": "Modèle peint commun et aiguilles calculées explicitement approuvés par l’utilisateur ; durées rouges 20/30/45 également demandées.",
+  "base": "/lib/images/tcf/clock-assets/cadran-vierge-commun-20261106.webp",
+  "base_sha256": "ad927003b87c842fc42c7414e6bc3160ebf2833c3c62df60c76dfb7bdc6a1ef8",
+  "hand_model": {
+    "hour_length": 245,
+    "minute_length": 365,
+    "hour_width": 26,
+    "minute_width": 17,
+    "tail": 13,
+    "pivot_radius": 19,
+    "color": "#20201e"
+  },
+  "formulas": {
+    "hour": "30*(hour%12)+0.5*minute",
+    "minute": "6*minute"
+  },
+  "scope": "Cadrans TCF, quatre alias historiques du vocabulaire et réveil bleu ; les documents horaires restent distincts.",
+  "images": [
+    {
+      "path": "/lib/images/tcf/qcm-audit/co306-horloge-0806-dessinee.webp",
+      "hour": 8,
+      "minute": 6,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "64c544fc7046a5173be05c71809de273148f658163b94df63a4300ae7d87d9d6",
+      "sha256": "411465f395b4f19dfb91de0a9b023e1ec6293de15782385c52f1a3eb1611848e",
+      "angles_degrees": [
+        243.0,
+        36
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co306-horloge-0807-dessinee.webp",
+      "hour": 8,
+      "minute": 7,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "9119799c586ab098b93111c578523a254086bfb3751dc61ccefe285cb0ad4e21",
+      "sha256": "1e41c08bc6d4c4196513e89a4adc3651388e02063082ebcd8119eab90bd8b4b4",
+      "angles_degrees": [
+        243.5,
+        42
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co306-horloge-0817-dessinee.webp",
+      "hour": 8,
+      "minute": 17,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "1e3cd4e04c7faf29671ed23a5b35c45f099b986b7bc59f96f52c700e3b5a2119",
+      "sha256": "175e111b0cc705b2a900ee4f53b5f29fe156c6bfbecda975c41b417387d1f62d",
+      "angles_degrees": [
+        248.5,
+        102
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co306-horloge-0847-dessinee.webp",
+      "hour": 8,
+      "minute": 47,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "bc47182bc8a0d65977bc25c77c52e5d83d211df0e3f0375fbf8a9594f5da6acc",
+      "sha256": "399239b1a322355c77afcc76c08affa0fd97fce07baf9347883f270b2b5777a1",
+      "angles_degrees": [
+        263.5,
+        282
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co306-horloge-0903-dessinee.webp",
+      "hour": 9,
+      "minute": 3,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "2cd07d347a9679bef2a02faa4f0423766869d9948ae4a2961987a44662fbbd75",
+      "sha256": "e12ceeff37112b507e8492395ef856919c67ce7951112c09c5aa0f666e4b0b03",
+      "angles_degrees": [
+        271.5,
+        18
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co306-horloge-0906-dessinee.webp",
+      "hour": 9,
+      "minute": 6,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "ceff44330c76a5d685dc8e5dae553ac037b8bd09cf63dc5d88cfe3e70add82fe",
+      "sha256": "0723ece687e0eab90fdacd824dcd880ce761fea91271ea951b1121d5eddce23d",
+      "angles_degrees": [
+        273.0,
+        36
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co306-horloge-0910-dessinee.webp",
+      "hour": 9,
+      "minute": 10,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "7708de87d6cbc14164cec217efba19574bba5bb8fec7178e0e4e2cebce9cec0d",
+      "sha256": "4694ce1c0bccfc38ec8ef05c3cfdf203c9a00b4e6017b4f9e903fd25e342a474",
+      "angles_degrees": [
+        275.0,
+        60
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co306-horloge-0916-dessinee.webp",
+      "hour": 9,
+      "minute": 16,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "f3ca170efb75cbea84981dcd97fcfa1798b8096b4f31e5433bdcd548464cb165",
+      "sha256": "8d0a3e04335a4e9fd180a761af645e64cb01de3964d607f61dc3de5b5afe8c2a",
+      "angles_degrees": [
+        278.0,
+        96
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co306-horloge-1003-dessinee.webp",
+      "hour": 10,
+      "minute": 3,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "13a2847ccf2e47c7fbd14bd1df2bce30e4cd00ffdf8a39db4b5bcc33fc587006",
+      "sha256": "c44e5da25bb4abfd63c2803b1f7b6adbbf8d8d68003b3146d5806b32b02623ee",
+      "angles_degrees": [
+        301.5,
+        18
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co306-horloge-1006-dessinee.webp",
+      "hour": 10,
+      "minute": 6,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "077aa2800fb1d957ab14ce4cee757f4640e37bd5c55982e730e7810536bbf975",
+      "sha256": "05d500a8bd45efa69c9e0cd18159285a92652db15544fffcbc3b2aa17751cbff",
+      "angles_degrees": [
+        303.0,
+        36
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co306-horloge-1017-dessinee.webp",
+      "hour": 10,
+      "minute": 17,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "a2782af6bd2c54a104ae468bb09906fc356a9a31aed185fe62db2695cb621aaf",
+      "sha256": "0dbe8af83547fb7e107f1bffeb96330c04ca9f937dc0e7fe90bdd554983e49a3",
+      "angles_degrees": [
+        308.5,
+        102
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co306-horloge-1024-dessinee.webp",
+      "hour": 10,
+      "minute": 24,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "12c6a46af2cf206c47ead96a6c34d9b4f0d33b5aa0bae4d38b75379f2adff797",
+      "sha256": "ac6de55952a2b80cd3d6beee031e19dacfa35f4d4a40dc0277b5c72dc12acd86",
+      "angles_degrees": [
+        312.0,
+        144
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co306-horloge-1042-dessinee.webp",
+      "hour": 10,
+      "minute": 42,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "6f505e138bb4cd6794e081db705efae19e33746d395c1f28a8c49b2984d0b065",
+      "sha256": "0234d74a48abfdf91aa01c24a9355284ff57801c25a96f185675fbc2f261b5ff",
+      "angles_degrees": [
+        321.0,
+        252
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co306-horloge-1045-dessinee.webp",
+      "hour": 10,
+      "minute": 45,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "1b4546e2324b62fe350be6a9c9902b2e3c0c697bfad2ee5b372a0e60ed43064e",
+      "sha256": "d53dd99a41f0ae087da11d7425ff8f0c7a126ff4ea622559adc987f9a08e769d",
+      "angles_degrees": [
+        322.5,
+        270
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co306-horloge-1102-dessinee.webp",
+      "hour": 11,
+      "minute": 2,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "092c13b833e0e3515967953e128ea1722b55dccdbc6a02ff4887c54a2cd57501",
+      "sha256": "24e999c4179f966f49a377a1cc7089c87b51c98715e6cac19ce9fb80ca9c6b96",
+      "angles_degrees": [
+        331.0,
+        12
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co306-horloge-1107-dessinee.webp",
+      "hour": 11,
+      "minute": 7,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "e00adcf70167a854043720ba445f4f06af72d4c31250b014b836f403de90fad7",
+      "sha256": "6f0c8b42a2ee0db55be875441eba0668ef2ade20f8d5440a15ff11110af6df93",
+      "angles_degrees": [
+        333.5,
+        42
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co306-horloge-1117-dessinee.webp",
+      "hour": 11,
+      "minute": 17,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "1f7050e6629e256afa880edd776ce2a2cc20c4076c601eec142b20855d94e29c",
+      "sha256": "86bb3bd664c7e10bee3de3698ed1fec0921927b4a52036be1514b36f8592c37b",
+      "angles_degrees": [
+        338.5,
+        102
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co306-horloge-1120-dessinee.webp",
+      "hour": 11,
+      "minute": 20,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "809943ffcaf335e07ddc70db81fd4d5f14b34381c88022b1584e13d0f5d9f5a4",
+      "sha256": "7ecc9aa457853c4d434c2b1e2658e599ca5fc75f61af177713e4216ffc3baa7e",
+      "angles_degrees": [
+        340.0,
+        120
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co306-horloge-1122-dessinee.webp",
+      "hour": 11,
+      "minute": 22,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "3190c62ea4bb83cca6a0e6c3d15a0c19754497493692c40c9a6b096357f5170c",
+      "sha256": "1004fb7670322049187ddb023bf2f063bc2f579c5986c1e7f05886edfab019bb",
+      "angles_degrees": [
+        341.0,
+        132
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co306-horloge-1124-dessinee.webp",
+      "hour": 11,
+      "minute": 24,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "12b95d9aa2d8d5f1bee7d5e6b8c65fca489d4517c31bdbc63b424b4176d3d285",
+      "sha256": "7e03ebe8d956ce4b007c75f39910f6e4a3f414609119788f3ea6ac8ed7b1d163",
+      "angles_degrees": [
+        342.0,
+        144
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co306-horloge-1148-dessinee.webp",
+      "hour": 11,
+      "minute": 48,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "ca058fe87acc63ba78c225f7b8364453b26f8e17301a489901c184b73b37e5ac",
+      "sha256": "2b9b2b4404dacbfaf38f0ff49dcdbdeec2e0959d35897b1c458736e54ee8ed7c",
+      "angles_degrees": [
+        354.0,
+        288
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co306-horloge-1158-dessinee.webp",
+      "hour": 11,
+      "minute": 58,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "78345828fdd06080ee9363bffafbfbb3dad0427893d2222b28c138b54393cf43",
+      "sha256": "7a6af29aba01f4896e508340ff9aca7cff23dc6c4ebc7622d4921787cca4f3ee",
+      "angles_degrees": [
+        359.0,
+        348
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co306-horloge-1202-dessinee.webp",
+      "hour": 12,
+      "minute": 2,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "1267355a6aca220d8bb738c4db137ed255fc362ec96f2431d0505425d4828394",
+      "sha256": "1d4271721ff853433e58b909703fe29ce5a1756a48da714a2e8d0ab87a5e822a",
+      "angles_degrees": [
+        1.0,
+        12
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co306-horloge-1203-dessinee.webp",
+      "hour": 12,
+      "minute": 3,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "ccc7a71d46c164960f59b2db0e8c4972d5b167c02518fe843769ee8aa5115c99",
+      "sha256": "4aa2615468d7ec123900b6b9492cf7ea85d20871a3f1727548200b1ea4707880",
+      "angles_degrees": [
+        1.5,
+        18
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co306-horloge-1207-dessinee.webp",
+      "hour": 12,
+      "minute": 7,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "3eafda0b5ffb818cd8ad5069f9704fd964cddb59883fa7c3c068f6ea1cc3d32d",
+      "sha256": "bab9669ed92f750dd964226fec30f9e67a1f0fc83cc88cf0a8768d36bd116575",
+      "angles_degrees": [
+        3.5,
+        42
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co306-horloge-1213-dessinee.webp",
+      "hour": 12,
+      "minute": 13,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "2108462a8d3e553f7587817da4872fd0572fa6cf3c1d1d4c3969155c2ed831ed",
+      "sha256": "694764a50018cec4c2189910e5b9b4323d45431900819986389cf61ba9c1dc0f",
+      "angles_degrees": [
+        6.5,
+        78
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co306-horloge-1220-dessinee.webp",
+      "hour": 12,
+      "minute": 20,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "7fdd82181a66ab79820f1afb1b6d3008e2dbe47aff6494055a7a3fd4ac7275c8",
+      "sha256": "9f380f809a6589c5168a7d076ed82716b1149b4d37db9cbef34b3e8157c1a8e7",
+      "angles_degrees": [
+        10.0,
+        120
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co306-horloge-1258-dessinee.webp",
+      "hour": 12,
+      "minute": 58,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "f98f62145a5d1ebed67310e029b71cc33c8ea7134312991b1651c0676e733db5",
+      "sha256": "607996109241d25eb2683fd970d28e7adf61bf57906285c4bf5a995bd5d65735",
+      "angles_degrees": [
+        29.0,
+        348
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co306-horloge-1302-dessinee.webp",
+      "hour": 13,
+      "minute": 2,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "2c1e3b4ffcd3627639400b5a2c969e5088eb60789d8a28c9c9fbd9a8f4f4a2c9",
+      "sha256": "6e96d52619652bedb8d665b4d5de22176b8e8ddb0b91f975f73190cce6e7ce57",
+      "angles_degrees": [
+        31.0,
+        12
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co306-horloge-1312-dessinee.webp",
+      "hour": 13,
+      "minute": 12,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "6fc335178ba63995e8c6e1e1a3b78d462aeef7867e8bb7a4d3508b43f14fd5b8",
+      "sha256": "0055bc4321cfd07bc0743a5f91d3400228dfd7065a843ab906bcb65f66c4afbb",
+      "angles_degrees": [
+        36.0,
+        72
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co306-horloge-1412-dessinee.webp",
+      "hour": 14,
+      "minute": 12,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "554d78681b35afad45c3658b4163836b4105de8c3fb0ace96a23231f50f0a4bc",
+      "sha256": "44303f1c6e860859caf4100fa8248706280ab9eefb00d5a131ee5f892fe0ffd7",
+      "angles_degrees": [
+        66.0,
+        72
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co306-horloge-1418-dessinee.webp",
+      "hour": 14,
+      "minute": 18,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "b2a865d860dcb6f48df6f44319033dfbf1ad37cfff242c6f7a9747258d6ac910",
+      "sha256": "703e625abb83d163ac8f79dd2a8ff388e3456c1db3337c73fb3c92a18bf1aee3",
+      "angles_degrees": [
+        69.0,
+        108
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co306-horloge-1427-dessinee.webp",
+      "hour": 14,
+      "minute": 27,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "87a15f4a9f7f0f0428bf23407c2360c24a19e7574cac2ea4a7474a621057b4e1",
+      "sha256": "2cd0d4d0e126997ca670afe9f07d3102de02518c353f41728199ce895cec4eaa",
+      "angles_degrees": [
+        73.5,
+        162
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co306-horloge-1514-dessinee.webp",
+      "hour": 15,
+      "minute": 14,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "7fc70bd1b912065dce41fc7c47cb0e85c2ffec57d62a2230dc379fd4db339cea",
+      "sha256": "e25699358978cce27170ecaf7e9f6c1090ab85c7038118eff869d3169ac8cc21",
+      "angles_degrees": [
+        97.0,
+        84
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co306-horloge-1540-dessinee.webp",
+      "hour": 15,
+      "minute": 40,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "a960b4a3f134bf42ad9fc9481f4bb87ad2796594d4423055c0f3a8661722655d",
+      "sha256": "0c6ff3dae6fcc22581ff05c05199ccef018efb12f9d40112dd7bc8b84393712e",
+      "angles_degrees": [
+        110.0,
+        240
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co306-horloge-1618-dessinee.webp",
+      "hour": 16,
+      "minute": 18,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "3a0a17346b41726f6b3902884cb2f464fa4cd207fb1653c2b75f59ff7b2015ea",
+      "sha256": "ea8be338956971ecc295a672f2a54f655fa3d51e005980cb18df3ad029fd4b2a",
+      "angles_degrees": [
+        129.0,
+        108
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co306-horloge-1627-dessinee.webp",
+      "hour": 16,
+      "minute": 27,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "5ee05a8581d74589260c6674e8c2a7fe39f1a6fe83d0f9fce8accba5ff4884c6",
+      "sha256": "774c7f0dd61fd63adad055f14324bf58dca2870f2d672fcfde8eb50176366abd",
+      "angles_degrees": [
+        133.5,
+        162
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co306-horloge-1640-dessinee.webp",
+      "hour": 16,
+      "minute": 40,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "7109eb2e4d761e50522a471d0f9f2e12afe2ca4996b37f72f40201d2334d1a37",
+      "sha256": "d8371fa7a436a6a7cd9cdc6333057bec2f8db3aa383930b3018f82687f3933eb",
+      "angles_degrees": [
+        140.0,
+        240
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co834-horloge-0800-dessinee.webp",
+      "hour": 8,
+      "minute": 0,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "6a123c581f0b8d979e6f6de18def6535620210acb19aa88c6038121d5af357a4",
+      "sha256": "49641e5cf472668b45e0f691d0f413b1dcb148375092fa1ab3fb026d163a6cd2",
+      "angles_degrees": [
+        240.0,
+        0
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co834-horloge-0900-dessinee.webp",
+      "hour": 9,
+      "minute": 0,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "d7ee28e1f69c27734e3294af3799ffff8f3d22b4ba78d350f4f93fd63a1e69c3",
+      "sha256": "2e477603b58d88e5669e8dfa62c1bb65a1739908215e1a95ad63519f96c54578",
+      "angles_degrees": [
+        270.0,
+        0
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co834-horloge-0930-dessinee.webp",
+      "hour": 9,
+      "minute": 30,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "b76a6f1ec517195af46c132da341c82a224248aa323dd26252ea5045ad8a774a",
+      "sha256": "52b567ef84c95d185de13b257a797d669d7e759f88e5d15ebbb82490a33cf64b",
+      "angles_degrees": [
+        285.0,
+        180
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co834-horloge-1000-dessinee.webp",
+      "hour": 10,
+      "minute": 0,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "0cd6096e92fa70ec79029ba036de017272416fbcfddd9eb76fa03b1c404c42f4",
+      "sha256": "0c1601218e9bc381c274da62d6567ffe4b0523fd73dcdd0e7708ba43b308bdf7",
+      "angles_degrees": [
+        300.0,
+        0
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co834-horloge-1030-dessinee.webp",
+      "hour": 10,
+      "minute": 30,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "1797c5e556bdcd0f5df227f6e24291a118338cf3d3d46105c13565cb7c6805b8",
+      "sha256": "2d39a9be0aa5fe965709ad1e79052cf15346b875bf9c3041c80a4c04d30c8f01",
+      "angles_degrees": [
+        315.0,
+        180
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co834-horloge-1100-dessinee.webp",
+      "hour": 11,
+      "minute": 0,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "0fe44492ec60b0e3c5afb39153698bd3e47590d2231e99a1ace940b5c0bb3368",
+      "sha256": "68753f195e6283f8304bbfb75e3866de92204c3bbb7f227f739140e696549594",
+      "angles_degrees": [
+        330.0,
+        0
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co834-horloge-1200-dessinee.webp",
+      "hour": 12,
+      "minute": 0,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "62159bcdcb17fba61443910a6c3b70ace6e30c853226cce672d7845226f0bf1f",
+      "sha256": "0c8e2ca978ba89e27082f7ad7c9d26cbc67946eb61a617a5afeaf8e9f1d86d27",
+      "angles_degrees": [
+        0.0,
+        0
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co834-horloge-1230-dessinee.webp",
+      "hour": 12,
+      "minute": 30,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "c692df64210a11d53a9b2fe0b814cf481f85e0beafffb204fa2862fdc8e4b2b4",
+      "sha256": "59d586168e7fd5c437f218cd4ae9a79c82ff952a76bb7838769768068fcb62ee",
+      "angles_degrees": [
+        15.0,
+        180
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co834-horloge-1300-dessinee.webp",
+      "hour": 13,
+      "minute": 0,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "70189d955426440145ea61724dc196c37552ac405846157417b62d6185a0bb6f",
+      "sha256": "bdd7d75997db009faf2ce69bc9b12657532670a1538c41d08683527eb16bb53e",
+      "angles_degrees": [
+        30.0,
+        0
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co834-horloge-1330-dessinee.webp",
+      "hour": 13,
+      "minute": 30,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "4ecf8befb8b7ee0691e34f865f5bd12f175f5ee715a6e1bb075d68489c397e67",
+      "sha256": "5a4e4bfe42a0837d78b5f051e12593c37c4a1e698f5287f3cb45da7222905927",
+      "angles_degrees": [
+        45.0,
+        180
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co834-horloge-1400-dessinee.webp",
+      "hour": 14,
+      "minute": 0,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "ee0b5b5637127effffc4c9fa2054b5e3df67c4649395ad7631264e2dd3d6830e",
+      "sha256": "f00ba0da7654f85d959a5224b23dc3b27b34a31d3c8f6815ed98e33130643d92",
+      "angles_degrees": [
+        60.0,
+        0
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co834-horloge-1430-dessinee.webp",
+      "hour": 14,
+      "minute": 30,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "0704bf7ec6686cec4f9efd1c656408e7f11ec674a5bcb3158180a27603c81082",
+      "sha256": "268f57bab0c1d36c1846445e743cad2a1eeaa1761dd523682ed3425f1647ea63",
+      "angles_degrees": [
+        75.0,
+        180
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co834-horloge-1500-dessinee.webp",
+      "hour": 15,
+      "minute": 0,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "7daa7d92082b69e0bef0c8ec6659fc3100450a564c7d8a462340fef86b1bc277",
+      "sha256": "ffd5f71d22ebb14c724a3772acbfa354f17775d5823e5ca770b159ab029b0dd8",
+      "angles_degrees": [
+        90.0,
+        0
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co834-horloge-1530-dessinee.webp",
+      "hour": 15,
+      "minute": 30,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "55029221420b46dfe23e737c8efb6d750037b07825368b7e6afd5ef6beb32c4b",
+      "sha256": "f3f3ce0a0fd97bf9ec317ddbea59d5622c7794713ba55ef9b5654aceaf1526db",
+      "angles_degrees": [
+        105.0,
+        180
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co834-horloge-1600-dessinee.webp",
+      "hour": 16,
+      "minute": 0,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "684bd433dba5d856b14413f5ec83639ea8116aa7f00f66fc744c99b3004f6d73",
+      "sha256": "c49899115db9190c883a88a022df131beea6069b029ec11430576d24ae45aecc",
+      "angles_degrees": [
+        120.0,
+        0
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co834-horloge-1630-dessinee.webp",
+      "hour": 16,
+      "minute": 30,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "00273c814fe60081e949c0974a72875faed1920aa6e3d89a595e31c15b5c2a48",
+      "sha256": "83ca308f537697a47945d7fb7b5cf2ba96564a286a6301039c4efc1001924ee5",
+      "angles_degrees": [
+        135.0,
+        180
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co834-horloge-1700-dessinee.webp",
+      "hour": 17,
+      "minute": 0,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "5386db2723b61a523ea5e69a969e59a11273f2940f6cbd9c061327c5050971b0",
+      "sha256": "7fdff3a3f5b8ae246c4dfb9d2059e5739a26445fe1a2c1f36bc57f409ca99cd2",
+      "angles_degrees": [
+        150.0,
+        0
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co834-horloge-1730-dessinee.webp",
+      "hour": 17,
+      "minute": 30,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "826157df5349fd59122a1205ac8f11e04952b8d2aa3f4ea0ce4ea47f79091d9f",
+      "sha256": "9ab18c613d9d82105b396b1c2353762e538b2e6277c7c6ca237b89fd1450628c",
+      "angles_degrees": [
+        165.0,
+        180
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp",
+      "hour": 18,
+      "minute": 0,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "748a3e49abaf77a7fc6b7c2501543c42c79f0d1414633a27db08c7e21a5ff342",
+      "sha256": "081d5668cfcc8340b46d66eb9f44fdfb4af84bafa61e17e7a63fa18dd1f6393b",
+      "angles_degrees": [
+        180.0,
+        0
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co834-horloge-1830-dessinee.webp",
+      "hour": 18,
+      "minute": 30,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "d18a0009c65e3a32fffcee508bfa012f907606d16680055a49eaf95e0ad7f35f",
+      "sha256": "1f15d87455088b87723ef580301c53074b8e586819028b7afcd644d7a424df41",
+      "angles_degrees": [
+        195.0,
+        180
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co834-horloge-1900-dessinee.webp",
+      "hour": 19,
+      "minute": 0,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "a897b3d2f6f503510fb9ee59a7bf235ef1a2c29065e4f0f2f49dace05c206c41",
+      "sha256": "4ebf9c619b6f1182ae1a982235d8a29c414b79ceacede37067c7e8a2e53f69ce",
+      "angles_degrees": [
+        210.0,
+        0
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co834-horloge-1930-dessinee.webp",
+      "hour": 19,
+      "minute": 30,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "f23d631520af44c0b5883b4c932520fb5347e012e2663fa07b33549bd39aa835",
+      "sha256": "9ffca6ceebccfa674fe5c233e34ab1032356a477717a5d6e8a5fb7cb4e984a4b",
+      "angles_degrees": [
+        225.0,
+        180
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co834-horloge-2000-dessinee.webp",
+      "hour": 20,
+      "minute": 0,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "6a123c581f0b8d979e6f6de18def6535620210acb19aa88c6038121d5af357a4",
+      "sha256": "49641e5cf472668b45e0f691d0f413b1dcb148375092fa1ab3fb026d163a6cd2",
+      "angles_degrees": [
+        240.0,
+        0
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co834-horloge-2100-dessinee.webp",
+      "hour": 21,
+      "minute": 0,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "d7ee28e1f69c27734e3294af3799ffff8f3d22b4ba78d350f4f93fd63a1e69c3",
+      "sha256": "2e477603b58d88e5669e8dfa62c1bb65a1739908215e1a95ad63519f96c54578",
+      "angles_degrees": [
+        270.0,
+        0
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co834-horloge-2200-dessinee.webp",
+      "hour": 22,
+      "minute": 0,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "0cd6096e92fa70ec79029ba036de017272416fbcfddd9eb76fa03b1c404c42f4",
+      "sha256": "0c1601218e9bc381c274da62d6567ffe4b0523fd73dcdd0e7708ba43b308bdf7",
+      "angles_degrees": [
+        300.0,
+        0
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-0000.webp",
+      "hour": 0,
+      "minute": 0,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "62159bcdcb17fba61443910a6c3b70ace6e30c853226cce672d7845226f0bf1f",
+      "sha256": "0c8e2ca978ba89e27082f7ad7c9d26cbc67946eb61a617a5afeaf8e9f1d86d27",
+      "angles_degrees": [
+        0.0,
+        0
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-0600.webp",
+      "hour": 6,
+      "minute": 0,
+      "width": 1448,
+      "height": 1086,
+      "before_sha256": "899b675404e7e3dc9eb83a995b30dc9ee36278288fcf7795940ce96fb622aa89",
+      "sha256": "baef42e55ad9cbc927034cd41b22552a596cf91a398fbe0376402e48cf7e67f0",
+      "angles_degrees": [
+        180.0,
+        0
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-0630.webp",
+      "hour": 6,
+      "minute": 30,
+      "width": 1448,
+      "height": 1086,
+      "before_sha256": "1aa89923e32ed43f606c071aa8b1d2bf91ce738ca66c9944bc77810caf45831c",
+      "sha256": "ab7a91a9f4f91f09956203f0f86df68e3bafa03acebfc06a0ac2eee0c0b49f61",
+      "angles_degrees": [
+        195.0,
+        180
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-0645.webp",
+      "hour": 6,
+      "minute": 45,
+      "width": 1448,
+      "height": 1086,
+      "before_sha256": "eb5e0eff8add0e5d3458f761888834c4a4ff2dc03a474aa675faa5472c09ffb2",
+      "sha256": "68884dcf86d692dc03b11ffae7ff36fb3b0f3d656c17ad59940f41678cf158d6",
+      "angles_degrees": [
+        202.5,
+        270
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-0700.webp",
+      "hour": 7,
+      "minute": 0,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "a897b3d2f6f503510fb9ee59a7bf235ef1a2c29065e4f0f2f49dace05c206c41",
+      "sha256": "4ebf9c619b6f1182ae1a982235d8a29c414b79ceacede37067c7e8a2e53f69ce",
+      "angles_degrees": [
+        210.0,
+        0
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-0715.webp",
+      "hour": 7,
+      "minute": 15,
+      "width": 1448,
+      "height": 1086,
+      "before_sha256": "bab86a63de5bdcc35762ca0b8d4adbf0917ea9e8170dc161921fcfc6dbc31754",
+      "sha256": "ac29887b9ef9284489d46dba46f8b64beaf7d5f2fd059c0c6d8fdf371c33832f",
+      "angles_degrees": [
+        217.5,
+        90
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-0725.webp",
+      "hour": 7,
+      "minute": 25,
+      "width": 1448,
+      "height": 1086,
+      "before_sha256": "ed7ebd02b1d5c18cc9f11368e7acbcabf7b6fdbe70380e10b7645d88490df715",
+      "sha256": "d940bc83f84172fe6a85ec0ed1653994215496454b3a59cb194cff61b87473c5",
+      "angles_degrees": [
+        222.5,
+        150
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-0730.webp",
+      "hour": 7,
+      "minute": 30,
+      "width": 1448,
+      "height": 1086,
+      "before_sha256": "c073b1417c91f2c656a7bc0f04747d841ae4cb6f08e9e7870380b97aee4ab188",
+      "sha256": "513b6b33bc42475659b325bbffe2c1a02e06a306a0b3df08a45e39bd94555182",
+      "angles_degrees": [
+        225.0,
+        180
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-0815.webp",
+      "hour": 8,
+      "minute": 15,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "594597242532c5e0a8805b9e8213ce4442d32f1c6b1d00a77c45f81b5fdebbb6",
+      "sha256": "92e21437a5ddf67b060ec8347b23ea2ec6ec2318489debba0dd4525647d0f00a",
+      "angles_degrees": [
+        247.5,
+        90
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-0830.webp",
+      "hour": 8,
+      "minute": 30,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "64305d75f6237af6e819d9ee12a16bf3827a3d6cc58d319db820a8dc5fb8d798",
+      "sha256": "34e22c9ac3a9311c3fc802f9a9085c0762420efaa6de098f2d54a6715b5d3e68",
+      "angles_degrees": [
+        255.0,
+        180
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-0905.webp",
+      "hour": 9,
+      "minute": 5,
+      "width": 1448,
+      "height": 1086,
+      "before_sha256": "76140ad065217ccba0d2fd829c4572d9a6a232ff5feaf1a8f2edecd5f3bc9091",
+      "sha256": "422b0e6c2c12503807b0a323a87aff9e7480fcbd1d4f120ec4b9298f11935744",
+      "angles_degrees": [
+        272.5,
+        30
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-0915.webp",
+      "hour": 9,
+      "minute": 15,
+      "width": 1448,
+      "height": 1086,
+      "before_sha256": "365ec1a523df1c00cdafb1bb61d69aeff9d3508479c07e2c2500732cb74e8073",
+      "sha256": "8ed8061711c2dcd0ca99edfc09a4a2eef9b5c3e5be185468a1a03ed84cdb66d5",
+      "angles_degrees": [
+        277.5,
+        90
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-0925.webp",
+      "hour": 9,
+      "minute": 25,
+      "width": 1448,
+      "height": 1086,
+      "before_sha256": "2b76341cfcf4fa68c6b442ec091dd5339e664d44f6ae9aecfc526b1de8b4f915",
+      "sha256": "e0af5c582079f44ede1a7ac3753b2347189d0bd839749fc3876d9717a529a2b3",
+      "angles_degrees": [
+        282.5,
+        150
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-0935.webp",
+      "hour": 9,
+      "minute": 35,
+      "width": 1448,
+      "height": 1086,
+      "before_sha256": "7a950bbaf5c720d9aa481714ce9c5fa4d66fa1ac77c74308b08372f63541b59b",
+      "sha256": "37d1a98ed8a1027a9e6736b673aeee817c62ba7134b4b2f9db539c8fbf17ee80",
+      "angles_degrees": [
+        287.5,
+        210
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-0945.webp",
+      "hour": 9,
+      "minute": 45,
+      "width": 1448,
+      "height": 1086,
+      "before_sha256": "a2b82ebf1f5d1cf26888e03d712b9ef575c3add5d6d51eb31b8e9c445b31b1f8",
+      "sha256": "a4ce9ed3cba6a0fbd250cd5a4bb3942f87447181861f3287339d6cb05a270655",
+      "angles_degrees": [
+        292.5,
+        270
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-1010.webp",
+      "hour": 10,
+      "minute": 10,
+      "width": 1448,
+      "height": 1086,
+      "before_sha256": "37460b8f2f94bc8e9421931d5fbf34079a2be5126eb1c1b3e6dc882b1a282d7e",
+      "sha256": "78b635c094d2dbf5524c8f57b81476f8e3b9bd6b0b896016f7387273129b96b2",
+      "angles_degrees": [
+        305.0,
+        60
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-1015.webp",
+      "hour": 10,
+      "minute": 15,
+      "width": 1448,
+      "height": 1086,
+      "before_sha256": "5f089e6e2962f0132d5c70ab8139ebe0f9f36a32b0847dbfd113e222ac693624",
+      "sha256": "f42741796235c6df867e67d529714feb47ce4497a72228263ced6e1880b4dde1",
+      "angles_degrees": [
+        307.5,
+        90
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-1020.webp",
+      "hour": 10,
+      "minute": 20,
+      "width": 1448,
+      "height": 1086,
+      "before_sha256": "5d821f80ec29438279dc5dc150ce6cf956eb2920b2ff2bbff58bc7c59ec6ad9f",
+      "sha256": "9188815130c4a76d1b548aa1dd2212468b315749155c9d3493acb02eb47d99ac",
+      "angles_degrees": [
+        310.0,
+        120
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-1035.webp",
+      "hour": 10,
+      "minute": 35,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": null,
+      "sha256": "a9c1a4b117cd8cca67015c8ae4b8fac1d4107e6f62dfeda9268bf8d95d8c65f1",
+      "angles_degrees": [
+        317.5,
+        210
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-1050.webp",
+      "hour": 10,
+      "minute": 50,
+      "width": 1448,
+      "height": 1086,
+      "before_sha256": "fa9a3bb8e1184eda17c015efe823e80824ad40733a1b80ee210520cd6cd99705",
+      "sha256": "7ff0ccc0194223b9848e4b96f69ebbdd6280a7ef14fb72b69a076097e8bb84af",
+      "angles_degrees": [
+        325.0,
+        300
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-1115.webp",
+      "hour": 11,
+      "minute": 15,
+      "width": 1448,
+      "height": 1086,
+      "before_sha256": "c6bac513e48fdf2635793af39d1866ed3b49914b88ecdb8f26743e4e5154350a",
+      "sha256": "617aca92fb55d3fd77a7619457b5e6eadaa44c67a35630ad573ad2283e88839b",
+      "angles_degrees": [
+        337.5,
+        90
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-1125.webp",
+      "hour": 11,
+      "minute": 25,
+      "width": 1448,
+      "height": 1086,
+      "before_sha256": "085ce566b62c975ba6f9189ee9882b21e5c419493b75d9ca610ab95202620efa",
+      "sha256": "51915a2f5705acb0aaef17d04d15c2d84354ff0cded8bedf9bfc6448556d734a",
+      "angles_degrees": [
+        342.5,
+        150
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-1130.webp",
+      "hour": 11,
+      "minute": 30,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "82fddf310a67c302233aa062b4d602412bbfb31713cdba63c3304472647ef628",
+      "sha256": "2cc4b028d356e353b7fe78f929ea5eed2d556d830ddb42fe30396cd5fa5cd25b",
+      "angles_degrees": [
+        345.0,
+        180
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-1135.webp",
+      "hour": 11,
+      "minute": 35,
+      "width": 1448,
+      "height": 1086,
+      "before_sha256": "4f2134fa6a93ba7a466407892adabfff7654a5901000e61df4d39a88374c2513",
+      "sha256": "3761ef90522e1ca6cc19aaa424cb96a1e0068d243147137273ff185fea2195a9",
+      "angles_degrees": [
+        347.5,
+        210
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-1145.webp",
+      "hour": 11,
+      "minute": 45,
+      "width": 1448,
+      "height": 1086,
+      "before_sha256": "890c618378e18e5a53469049b905d3071dbdfd2d80920f2ea2d425f53b3e71c4",
+      "sha256": "2fba5b4d39f596118b01e09df1ecdb30a24ef2ae17f7232016443d2854baa827",
+      "angles_degrees": [
+        352.5,
+        270
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-1205.webp",
+      "hour": 12,
+      "minute": 5,
+      "width": 1448,
+      "height": 1086,
+      "before_sha256": "d1f0d572f361d7636d8028fd7134b0a984587caa0a6b7aa9556ab940ab5aa38e",
+      "sha256": "7cd1b1389d782a58748f47d85d6961ed2e024dc8579a346b6f0a595cbdbcc1e1",
+      "angles_degrees": [
+        2.5,
+        30
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-1215.webp",
+      "hour": 12,
+      "minute": 15,
+      "width": 1448,
+      "height": 1086,
+      "before_sha256": "12611d4a4b3f659e5cc94af9f989c16b96e391c50f8da9078973ef5c4c9d2b3f",
+      "sha256": "33527ca7238a4555052a08361af2ba6a7810dfdbd7d3c709dd4f2b25bf618813",
+      "angles_degrees": [
+        7.5,
+        90
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-1235.webp",
+      "hour": 12,
+      "minute": 35,
+      "width": 1448,
+      "height": 1086,
+      "before_sha256": "a5086264992018935f5d604502b8c184c89b140cc0ef0fa37a06f2357fe92289",
+      "sha256": "3835868f6013f8420e4c2f12359e0abc50596616632b7df6cab0e993f2b83362",
+      "angles_degrees": [
+        17.5,
+        210
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-1245.webp",
+      "hour": 12,
+      "minute": 45,
+      "width": 1448,
+      "height": 1086,
+      "before_sha256": "3fe72e1d844de8933cbd74ef09ab789811528904a664809130c7adc59895766a",
+      "sha256": "30af7d50af1e57370b5280996fda7aa4c3c675dfe1f8bea21e510f9c6dd2ae96",
+      "angles_degrees": [
+        22.5,
+        270
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-1345.webp",
+      "hour": 13,
+      "minute": 45,
+      "width": 1448,
+      "height": 1086,
+      "before_sha256": "90913b30fe394e5140de53563bd468ca6cbcbe75bb0f1903d8a027f39e18840a",
+      "sha256": "7299db383f2ff3ff36ade773a2a08cc332740eb2ddcda92979d1b380196a1a38",
+      "angles_degrees": [
+        52.5,
+        270
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-1350.webp",
+      "hour": 13,
+      "minute": 50,
+      "width": 1448,
+      "height": 1086,
+      "before_sha256": "30a35176577eda7e18a5503446157b931a5214672870394a4929ee75ab931da6",
+      "sha256": "e2b2287e843d22db19c864cd0715a46a171f4427f7018db1c4afad562eaec35c",
+      "angles_degrees": [
+        55.0,
+        300
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-1415.webp",
+      "hour": 14,
+      "minute": 15,
+      "width": 1448,
+      "height": 1086,
+      "before_sha256": "c7e862d8783e61be8b6c56647f9c24a113869739a6d02c777db23b62ede6dacb",
+      "sha256": "5eb9400997da248af478ddc9644b29a92ce0369d7bb4954e95feaf8cf2e5cb3c",
+      "angles_degrees": [
+        67.5,
+        90
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-1420.webp",
+      "hour": 14,
+      "minute": 20,
+      "width": 1448,
+      "height": 1086,
+      "before_sha256": "7f23b07ca13cb3b35bbb5003493b1f594c8253e4c377fbb3583f669f3a81e33c",
+      "sha256": "95e15075b9ea903edea4ad64d09229dc6fd7a362ea35d92dd8081eadf4371100",
+      "angles_degrees": [
+        70.0,
+        120
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-1510.webp",
+      "hour": 15,
+      "minute": 10,
+      "width": 1448,
+      "height": 1086,
+      "before_sha256": "8da3ae3f3e3cd52ffd5e6a191bd3b6370d9d0616b994ffe5554280cf96a70ef5",
+      "sha256": "bebd3db98aa3230a535126496921e0cf5c7e67302ecefde4ab656cb993e9b170",
+      "angles_degrees": [
+        95.0,
+        60
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-1515.webp",
+      "hour": 15,
+      "minute": 15,
+      "width": 1448,
+      "height": 1086,
+      "before_sha256": "46b9d691875509c4a26b4f4c27d8ce83f9a7d12dfb937a90ed73adc339338843",
+      "sha256": "e86d474876a75b9485d6fef4c12b2703d31da504fd7bfd58a5b838d72607a5a3",
+      "angles_degrees": [
+        97.5,
+        90
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-1520.webp",
+      "hour": 15,
+      "minute": 20,
+      "width": 1448,
+      "height": 1086,
+      "before_sha256": "46f9facfbc51dc5cf65a7ef789d61cee3fe0ab594c99c58fe93864378abbada5",
+      "sha256": "ab177eea974bc632e90d8089de0556c7a116f8fd61f14fb1878c65966f529224",
+      "angles_degrees": [
+        100.0,
+        120
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-1545.webp",
+      "hour": 15,
+      "minute": 45,
+      "width": 1448,
+      "height": 1086,
+      "before_sha256": "2486abccde16cae604494e179603cd5f1c60bd88dec926669ea18aa3d467f918",
+      "sha256": "ca08fd976af7b55af80aad9c74facaa8346e243cb51c0990d4e1c7081b749517",
+      "angles_degrees": [
+        112.5,
+        270
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-1550.webp",
+      "hour": 15,
+      "minute": 50,
+      "width": 1448,
+      "height": 1086,
+      "before_sha256": "ec4970aef45d2bb54ed19aba128962d509d8ca1b2819e28d31c8e3056c0943b3",
+      "sha256": "90fc850e42e95223cb76b19f8889a39f0896b62154174f8d59188cd794ac715a",
+      "angles_degrees": [
+        115.0,
+        300
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-1610.webp",
+      "hour": 16,
+      "minute": 10,
+      "width": 1448,
+      "height": 1086,
+      "before_sha256": "164e3dbad7e86c86e5374f9d62d9478451f70dbe05c0697d88b27797cec08277",
+      "sha256": "048859849400a9edb202f7a7f7817bb3769e66f81fd6e25f1864a35027d6bae4",
+      "angles_degrees": [
+        125.0,
+        60
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-1615.webp",
+      "hour": 16,
+      "minute": 15,
+      "width": 1448,
+      "height": 1086,
+      "before_sha256": "76ce67bc363441c79be8ca3f61f51c1de5b0ec0c2ead31ed6cc2607e107241bd",
+      "sha256": "e434a5119ed9b1abaf770edc8fcdc325a06ab37c07b021daf61323373ec67962",
+      "angles_degrees": [
+        127.5,
+        90
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-1620.webp",
+      "hour": 16,
+      "minute": 20,
+      "width": 1448,
+      "height": 1086,
+      "before_sha256": "f659cf283e1957b26cd8ab77914b94188c1e562e6fe62aa0edac56841b16ae7f",
+      "sha256": "71199208f82c0e6fa9eeafb65594c7acc0bb1160d8f48b6fdef02655a0e5fb26",
+      "angles_degrees": [
+        130.0,
+        120
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-1645.webp",
+      "hour": 16,
+      "minute": 45,
+      "width": 1448,
+      "height": 1086,
+      "before_sha256": "94d936e3440c79a8f26230b234058bf516889d5a94f83d69dd89a2970ffccaab",
+      "sha256": "550944f70049bb33d5803946d58c92f79816c65527033d2138998f876bcae7ff",
+      "angles_degrees": [
+        142.5,
+        270
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-1715.webp",
+      "hour": 17,
+      "minute": 15,
+      "width": 1448,
+      "height": 1086,
+      "before_sha256": "bc62b9859a3a9a1e46193568a6ae26b1908626e24d19fa807b9256ce0fec38c2",
+      "sha256": "3faa3645dccde23e48311d68f7b53d52dc66b28b09a0c47dee4ada6d4fd13e17",
+      "angles_degrees": [
+        157.5,
+        90
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-1815.webp",
+      "hour": 18,
+      "minute": 15,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "cf430108891535818642184a1b54e4670bf1bade34205973c8ba127b9bb73912",
+      "sha256": "9fd370165ab413c7ea29ef3a115d066a694f26b1ab93e54dabbfe31b0b6ae2e1",
+      "angles_degrees": [
+        187.5,
+        90
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-1940.webp",
+      "hour": 19,
+      "minute": 40,
+      "width": 1448,
+      "height": 1086,
+      "before_sha256": "5101a99f9f3a05a98004cd0f64711f5d15b479bd39d0e25981752f3b940331c0",
+      "sha256": "568e1a537d2769ccd63161057db6aa546b3ed181d0757775d5d76c6306ae88c1",
+      "angles_degrees": [
+        230.0,
+        240
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-1945.webp",
+      "hour": 19,
+      "minute": 45,
+      "width": 1448,
+      "height": 1086,
+      "before_sha256": "16e0a72f26d44f8cefe3b152f1bef167e44bcf925e29104d35ace09ac13b086b",
+      "sha256": "477998ab41855ea82fc544a491f72d8098b957197ab5c379757d61a400576e7a",
+      "angles_degrees": [
+        232.5,
+        270
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-2030.webp",
+      "hour": 20,
+      "minute": 30,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "64305d75f6237af6e819d9ee12a16bf3827a3d6cc58d319db820a8dc5fb8d798",
+      "sha256": "34e22c9ac3a9311c3fc802f9a9085c0762420efaa6de098f2d54a6715b5d3e68",
+      "angles_degrees": [
+        255.0,
+        180
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-2040.webp",
+      "hour": 20,
+      "minute": 40,
+      "width": 1448,
+      "height": 1086,
+      "before_sha256": "2731ace5497d978e13ab7cd970b383377b5554f7776c1b120397b2b6d0e7305b",
+      "sha256": "8fc1b1ab7c66b8c1a763b72d102de6af291420579315255a2f01e6d2af711f57",
+      "angles_degrees": [
+        260.0,
+        240
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-2130.webp",
+      "hour": 21,
+      "minute": 30,
+      "width": 1448,
+      "height": 1086,
+      "before_sha256": "b2f274431c49595d4bcc8c3b33d02ede746ccd2c9b6cdb106b609942ecce3459",
+      "sha256": "dc069296579d5ca00392cec5548065588fd839bf46576f8748e4e877bd0b421a",
+      "angles_degrees": [
+        285.0,
+        180
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-2230.webp",
+      "hour": 22,
+      "minute": 30,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "1797c5e556bdcd0f5df227f6e24291a118338cf3d3d46105c13565cb7c6805b8",
+      "sha256": "2d39a9be0aa5fe965709ad1e79052cf15346b875bf9c3041c80a4c04d30c8f01",
+      "angles_degrees": [
+        315.0,
+        180
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-2300.webp",
+      "hour": 23,
+      "minute": 0,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": "0fe44492ec60b0e3c5afb39153698bd3e47590d2231e99a1ace940b5c0bb3368",
+      "sha256": "68753f195e6283f8304bbfb75e3866de92204c3bbb7f227f739140e696549594",
+      "angles_degrees": [
+        330.0,
+        0
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-horloge-2330.webp",
+      "hour": 23,
+      "minute": 30,
+      "width": 1448,
+      "height": 1086,
+      "before_sha256": "8016262f8b494ba9e4426654979ecf8f3ae72149de5e757182bfa03b24d593d2",
+      "sha256": "e731a7fbcd39cffbcccf4223af184679c10934f9d4b950f0adb3e9cd658e28be",
+      "angles_degrees": [
+        345.0,
+        180
+      ]
+    },
+    {
+      "path": "/lib/images/vocabulaire/heure-horloge/huit-heures-numerique.webp",
+      "hour": 8,
+      "minute": 0,
+      "width": 800,
+      "height": 600,
+      "before_sha256": "52d579e00e48071a906c0e03d171910a8551c005cd2c10dd3f190c8686a279f0",
+      "sha256": "e9758a756122abb7fefb5545aa539d5f7c2ec085708d46e4c29387d318544887",
+      "angles_degrees": [
+        240.0,
+        0
+      ]
+    },
+    {
+      "path": "/lib/images/vocabulaire/heure-horloge/onze-heures-numerique.webp",
+      "hour": 11,
+      "minute": 0,
+      "width": 800,
+      "height": 600,
+      "before_sha256": "4e954f3c767fd5ffeeba108e7d56b5fc32ead54e7d98a302f91a08b1cbd38c7a",
+      "sha256": "3b6f7b0ee1bea6d11451e3f436abf8292fe323642819979fc994cf6fb69baf98",
+      "angles_degrees": [
+        330.0,
+        0
+      ]
+    },
+    {
+      "path": "/lib/images/vocabulaire/heure-horloge/minuit-numerique.webp",
+      "hour": 0,
+      "minute": 0,
+      "width": 800,
+      "height": 600,
+      "before_sha256": "832b8d6e9a88a4c14b62ce660187ec1873657de6edeef09cf087c8c2f131528b",
+      "sha256": "166e31a8c3548ff5fb8a63adda52fd573113933a9cef61b6c97274cb5e164174",
+      "angles_degrees": [
+        0.0,
+        0
+      ]
+    },
+    {
+      "path": "/lib/images/vocabulaire/heure-horloge/réveil-numérique.webp",
+      "hour": 7,
+      "minute": 0,
+      "width": 800,
+      "height": 600,
+      "before_sha256": "74556d96edcf49c52728d0452936a03e8cb2edbdedc23e1ecd2b19fa76a615ee",
+      "sha256": "cab584a50bfe3ed99ef41086ee0513ff47fae0ac245088928ca12f6bea0196f0",
+      "angles_degrees": [
+        210.0,
+        0
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-reveil.webp",
+      "hour": 7,
+      "minute": 0,
+      "alarm": true,
+      "width": 1448,
+      "height": 1086,
+      "before_sha256": "ffa9bb4a02d273d149872cc955cdbce2c5758ff4d4d37d296443725fb6b66e37",
+      "sha256": "1e48367ff177787169c730f799c7bbc18eb7cd9a81bb656f61acb94b59fa6ba6",
+      "angles_degrees": [
+        210.0,
+        0
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/duree-5-minutes.webp",
+      "elapsed_minutes": 5,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": null,
+      "sha256": "72e55ba289c547333943368621501027447f5d471601831d94242c567cf9ccb6"
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/duree-10-minutes.webp",
+      "elapsed_minutes": 10,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": null,
+      "sha256": "9e3c8cfe2c7b1165b5f6b3493e9455350c136a65b66ab43722aebe54b1a89807"
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/duree-15-minutes.webp",
+      "elapsed_minutes": 15,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": null,
+      "sha256": "628e08c94ca87ed9d47bf691419f4921eee367da9c3effe68b94274c99e3c3f2"
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/duree-20-minutes.webp",
+      "elapsed_minutes": 20,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": null,
+      "sha256": "823aa318187124239b718906e578804803def8e7126bbdc56507a287b118b560"
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/duree-30-minutes.webp",
+      "elapsed_minutes": 30,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": null,
+      "sha256": "a4b52bd84deb1c3f1f1312e10b65490a9b1f0f3fd2807c6414f628f4da2f5e84"
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/duree-45-minutes.webp",
+      "elapsed_minutes": 45,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": null,
+      "sha256": "71cfe919621914fd243fa50b8b77462218f6c78fa2943f91936d019fd29f59ff"
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/duree-60-minutes.webp",
+      "elapsed_minutes": 60,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": null,
+      "sha256": "543973ac5d5801d087dbf0ca492c09cb6d14dc4273423cf5ee5e5a5a62b950d1"
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/duree-3-secondes.webp",
+      "elapsed_seconds": 3,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": null,
+      "sha256": "f2b3de6749f98078d68f4c6108fc5751281a17f545d2de6960d690052d70bc88"
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/duree-30-secondes.webp",
+      "elapsed_seconds": 30,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": null,
+      "sha256": "e875050520704d42d7afd279f2a67983bd8cc7f775cb851a7e6e97394c5ebe62"
+    }
+  ],
+  "visual_review": {
+    "status": "completed",
+    "method": "Inspection des planches, des trois durées rouges et du réveil ; angles vérifiés par calcul."
+  },
+  "base_generation": {
+    "id": "clock-painted-common-base",
+    "refs": [
+      "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/vocab-horloge-1010.webp",
+      "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+    ],
+    "prompt": "Préparer le MODÈLE PEINT COMMUN des horloges TCF à partir de la première référence : une seule horloge murale ronde en bois clair, strictement vue de face et parfaitement circulaire, centrée dans une image paysage exactement 4:3. Garder le traitement peint doux du bois, couleurs chaudes naturelles et contours fins de la deuxième référence. Recomposer le cadrage pour que le centre du cercle soit exactement au centre de l’image et que la totalité du cadre en bois soit visible avec marges crème. Le cadran intérieur doit être entièrement crème ivoire CLAIR, vide, avec seulement une légère texture de peinture douce : retirer TOUTES les aiguilles, pivot, chiffres, graduations, lettres, reflets de verre, logos ou marques. Aucun élément dans le cadran. Pas de photo, 3D ou BD. L’image servira de fond à des chiffres et aiguilles uniformes ajoutés par programme, donc cadran clair libre et frontal impératif.",
+    "source": "/workspace/generated_images/exec-0d432ceb-132f-49d6-be04-c1851b41d17a.png"
+  }
+}

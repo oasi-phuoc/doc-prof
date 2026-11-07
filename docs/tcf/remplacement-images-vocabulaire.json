@@ -14,15 +14,15 @@
   "summary": {
     "original_occurrences": 3514,
     "original_images": 516,
-    "remaining_occurrences": 51,
-    "remaining_original_images": 27,
-    "replaced_occurrences": 2970,
-    "completed_question_trios": 976,
-    "style_aligned_question_trios": 976,
+    "remaining_occurrences": 43,
+    "remaining_original_images": 19,
+    "replaced_occurrences": 2971,
+    "completed_question_trios": 977,
+    "style_aligned_question_trios": 977,
     "question_trios_awaiting_style_correction": 0,
     "retired_occurrences": 355,
     "excluded_object_audio_occurrences": 0,
-    "remaining_occurrences_to_harmonize": 51
+    "remaining_occurrences_to_harmonize": 43
   },
   "approved_reuses": [
     {
@@ -1094,8 +1094,8 @@
     {
       "image": "/lib/images/vocabulaire/actions/cafe-entre-amis.webp",
       "original_occurrences": 1,
-      "remaining_occurrences": 1,
-      "status": "pending_complete_reviewed_trios_or_support_review",
+      "remaining_occurrences": 0,
+      "status": "replacement_complete",
       "uses": [
         {
           "bank": "src/tcf/content/a0-a1/co.json",
@@ -1282,8 +1282,8 @@
     {
       "image": "/lib/images/vocabulaire/actions/eleve-au-tableau.webp",
       "original_occurrences": 1,
-      "remaining_occurrences": 1,
-      "status": "pending_complete_reviewed_trios_or_support_review",
+      "remaining_occurrences": 0,
+      "status": "replacement_complete",
       "uses": [
         {
           "bank": "src/tcf/content/a0-a1/co.json",
@@ -1302,8 +1302,8 @@
     {
       "image": "/lib/images/vocabulaire/actions/faire-ses-devoirs.webp",
       "original_occurrences": 1,
-      "remaining_occurrences": 1,
-      "status": "pending_complete_reviewed_trios_or_support_review",
+      "remaining_occurrences": 0,
+      "status": "replacement_complete",
       "uses": [
         {
           "bank": "src/tcf/content/a0-a1/co.json",
@@ -1329,8 +1329,8 @@
     {
       "image": "/lib/images/vocabulaire/actions/lire-dans-un-fauteuil.webp",
       "original_occurrences": 1,
-      "remaining_occurrences": 1,
-      "status": "pending_complete_reviewed_trios_or_support_review",
+      "remaining_occurrences": 0,
+      "status": "replacement_complete",
       "uses": [
         {
           "bank": "src/tcf/content/a0-a1/co.json",
@@ -5848,8 +5848,8 @@
     {
       "image": "/lib/images/vocabulaire/animaux-sauvages/éléphant.webp",
       "original_occurrences": 5,
-      "remaining_occurrences": 1,
-      "status": "pending_complete_reviewed_trios_or_support_review",
+      "remaining_occurrences": 0,
+      "status": "replacement_complete",
       "uses": [
         {
           "bank": "src/tcf/content/a0-a1/co.json",
@@ -10519,8 +10519,8 @@
     {
       "image": "/lib/images/vocabulaire/cuisine/ustensiles-de-patisserie.webp",
       "original_occurrences": 1,
-      "remaining_occurrences": 1,
-      "status": "pending_complete_reviewed_trios_or_support_review",
+      "remaining_occurrences": 0,
+      "status": "replacement_complete",
       "uses": [
         {
           "bank": "src/tcf/content/a0-a1/ce.json",
@@ -15709,8 +15709,8 @@
     {
       "image": "/lib/images/vocabulaire/heure-horloge/dix-heures-trente-cinq.webp",
       "original_occurrences": 1,
-      "remaining_occurrences": 1,
-      "status": "pending_complete_reviewed_trios_or_support_review",
+      "remaining_occurrences": 0,
+      "status": "replacement_complete",
       "uses": [
         {
           "bank": "src/tcf/content/a0-a1/co.json",
@@ -39832,8 +39832,8 @@
     {
       "image": "/lib/images/vocabulaire/loisirs/marche-de-noel.webp",
       "original_occurrences": 1,
-      "remaining_occurrences": 1,
-      "status": "pending_complete_reviewed_trios_or_support_review",
+      "remaining_occurrences": 0,
+      "status": "replacement_complete",
       "uses": [
         {
           "bank": "src/tcf/content/a1-a2/ce.json",
@@ -77365,19 +77365,33 @@
       "replaced_occurrences": 1,
       "incremental": true,
       "review": "Seuls les chemins des choix relus changent ; trio existant complet et distinct, choix non résolus conservés."
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s47-co-1",
+      "question": 1,
+      "enonce": "Quelle heure est-il dans le premier dialogue ?",
+      "labels": [
+        "10 h 35",
+        "10 h 15",
+        "11 h 35"
+      ],
+      "before": [
+        "/lib/images/vocabulaire/heure-horloge/dix-heures-trente-cinq.webp",
+        "/lib/images/tcf/qcm-audit/vocab-horloge-1015.webp",
+        "/lib/images/tcf/qcm-audit/vocab-horloge-1135.webp"
+      ],
+      "after": [
+        "/lib/images/tcf/qcm-audit/vocab-horloge-1035.webp",
+        "/lib/images/tcf/qcm-audit/vocab-horloge-1015.webp",
+        "/lib/images/tcf/qcm-audit/vocab-horloge-1135.webp"
+      ],
+      "replaced_occurrences": 1,
+      "incremental": true,
+      "review": "Seuls les chemins des choix relus changent ; trio existant complet et distinct, choix non résolus conservés."
     }
   ],
   "remaining_uses": [
-    {
-      "bank": "src/tcf/content/a0-a1/ce.json",
-      "exercise": "tcf-a1j-s2-ce-1",
-      "node": [
-        "support",
-        "image"
-      ],
-      "image": "/lib/images/vocabulaire/cuisine/ustensiles-de-patisserie.webp",
-      "excluded_object_audio": false
-    },
     {
       "bank": "src/tcf/content/a0-a1/ce.json",
       "exercise": "tcf-a1-s4-ce-1",
@@ -77496,50 +77510,6 @@
         "image"
       ],
       "image": "/lib/images/vocabulaire/famille-personnes/voisins.webp",
-      "excluded_object_audio": false
-    },
-    {
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "tcf-a1-s3-co-4",
-      "node": [
-        "situations",
-        5,
-        "image"
-      ],
-      "image": "/lib/images/vocabulaire/actions/cafe-entre-amis.webp",
-      "excluded_object_audio": false
-    },
-    {
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "tcf-a1-s4-co-4",
-      "node": [
-        "situations",
-        4,
-        "image"
-      ],
-      "image": "/lib/images/vocabulaire/actions/lire-dans-un-fauteuil.webp",
-      "excluded_object_audio": false
-    },
-    {
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "tcf-a1-tpa-co-4",
-      "node": [
-        "situations",
-        3,
-        "image"
-      ],
-      "image": "/lib/images/vocabulaire/actions/eleve-au-tableau.webp",
-      "excluded_object_audio": false
-    },
-    {
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "tcf-a1-tpa-co-4",
-      "node": [
-        "situations",
-        4,
-        "image"
-      ],
-      "image": "/lib/images/vocabulaire/actions/faire-ses-devoirs.webp",
       "excluded_object_audio": false
     },
     {
@@ -77769,21 +77739,6 @@
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "tcf-ss-a1-s47-co-1",
-      "node": [
-        "questions",
-        0,
-        "formes",
-        "qcm_image",
-        "choix",
-        0,
-        "image"
-      ],
-      "image": "/lib/images/vocabulaire/heure-horloge/dix-heures-trente-cinq.webp",
-      "excluded_object_audio": false
-    },
-    {
-      "bank": "src/tcf/content/a0-a1/co.json",
       "exercise": "delf-a1-2022-co-ex3-32",
       "node": [
         "questions",
@@ -77915,26 +77870,6 @@
         "image"
       ],
       "image": "/lib/images/vocabulaire/famille-personnes/maman.webp",
-      "excluded_object_audio": false
-    },
-    {
-      "bank": "src/tcf/content/a1-a2/ce.json",
-      "exercise": "tcf-a2-sa-ce-4",
-      "node": [
-        "support",
-        "image"
-      ],
-      "image": "/lib/images/vocabulaire/animaux-sauvages/éléphant.webp",
-      "excluded_object_audio": false
-    },
-    {
-      "bank": "src/tcf/content/a1-a2/ce.json",
-      "exercise": "tcf-a2-sc-ce-4",
-      "node": [
-        "support",
-        "image"
-      ],
-      "image": "/lib/images/vocabulaire/loisirs/marche-de-noel.webp",
       "excluded_object_audio": false
     },
     {
@@ -92402,5 +92337,11 @@
       "after": "/lib/images/tcf/qcm-audit/vocab-cafe-entre-amis.webp",
       "review_note": "Trois amis conversent autour de trois cafés, sans jus d’orange ; distracteur distinct des quatre dialogues."
     }
-  ]
+  ],
+  "communication_icon_overrides": {
+    "/lib/images/tcf/qcm-audit/vocab-par-telephone.webp": "/lib/images/tcf/qcm-audit/communication-appeler.webp",
+    "/lib/images/tcf/qcm-audit/audit-context-envoyer-texto.webp": "/lib/images/tcf/qcm-audit/communication-message.webp",
+    "/lib/images/tcf/qcm-audit/audit-context-ecrire-courriel.webp": "/lib/images/tcf/qcm-audit/communication-courriel.webp",
+    "/lib/images/tcf/qcm-audit/audit-context-ecrire-lettre.webp": "/lib/images/tcf/qcm-audit/communication-lettre.webp"
+  }
 }

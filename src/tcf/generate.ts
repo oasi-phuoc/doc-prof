@@ -20,6 +20,7 @@ import {
 } from './catalog'
 import { isAssociationAnnonce } from './association-documents'
 import { tcfAudioSrc } from './media'
+import { threeThemeImageSrc } from './three-themes-images'
 import { limitTcfCeQuestions } from './ce-questions'
 import { tcfCoConsigneForSlot, tcfCoConsigneForType } from './consignes'
 import {
@@ -466,7 +467,7 @@ export function tcfExerciseItems(
       }
       const themes = shuffle(rng, pool)
         .slice(0, 3)
-        .map((t) => ({ ...t, images: shuffle(rng, t.images.filter((src) => src.trim())).slice(0, 4) }))
+        .map((t) => ({ ...t, images: shuffle(rng, t.images.filter((src) => src.trim()).map(threeThemeImageSrc)).slice(0, 4) }))
       return [tcfItem({ kind: 'support', exercise: { ...ex, support: { themes } } }, true, '', ex.points)]
     }
     case 'entretien':

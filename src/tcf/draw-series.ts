@@ -355,7 +355,7 @@ export function drawUnLongCompose(
 
 /**
  * Compose « objets » : 1 piste taguée `objet` + 5 images Oui / Non
- * (images reprises de l’exercice source).
+ * (3 objets nommés et 2 absents, sélectionnés dans les illustrations validées).
  */
 export function drawObjetsCompose(
   niveau: TcfNiveau,
@@ -368,15 +368,26 @@ export function drawObjetsCompose(
   if (!picked?.[0]) return null
   const entry = picked[0]
   const source = entry.exercise
-  if (source.type_exercice !== 'images_a_reconnaitre' || source.images.length !== 5) {
-    return null
-  }
-  const clone = withNiveau(source, niveau) as TcfCoImages
+  const objects = entry.objectPool
+  if (!objects) return null
+  const images = [
+    ...shuffle(rng, objects.heard).slice(0, 3).map((o) => ({ id: `objet-${o.id}`, image: o.image, correct: true })),
+    ...shuffle(rng, objects.absent).slice(0, 2).map((o) => ({ id: `objet-${o.id}`, image: o.image, correct: false })),
+  ]
   return {
-    ...clone,
+    id: `tcf-co-objets-draw-${niveau.toLowerCase()}`,
+    niveau,
+    competence: 'CO',
+    type_exercice: 'images_a_reconnaitre',
+    theme: source.theme,
+    scenario: source.scenario,
+    scene: entry.label,
     consigne: tcfCoConsigneForType('images_a_reconnaitre') ?? '',
-    support: { audio: entry.audio },
-    images: structuredClone(source.images),
+    points: 5,
+    support: { audio: entry.audio, transcription: objects.transcription },
+    questions: [],
+    melanger: true,
+    images: shuffle(rng, images),
   }
 }
 

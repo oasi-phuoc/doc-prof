@@ -1,5 +1,7 @@
 # Avancement des illustrations CE / CO
 
+> État actuel : voir le [rapport global du 7 novembre 2026](rapport-global-20261107.md). Les compteurs historiques ci-dessous sont conservés pour la traçabilité.
+
 ## Reprise du 6 novembre 2026 — objets CO inclus
 
 La nouvelle demande utilisateur reprend l’harmonisation des images et inclut désormais les 26 banques CO **OBJET**. Elle remplace les anciennes consignes de pause audio et d’exclusion des objets conservées ci-dessous pour l’historique. Le style validé du commit `48a753d8`, le paysage 4:3 et les réponses restent inchangés.
