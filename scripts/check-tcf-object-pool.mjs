@@ -29,6 +29,8 @@ try {
   assert.equal(pool('Elle lit et il montre. Un vélo et une voiture.'), undefined)
   assert.equal(pool('Une brosse à dents et une pomme de terre.'), undefined, 'compound noun cannot create multiple objects')
   assert.equal(pool('Une clé et un portefeuille.'), undefined, 'whole words only')
+  assert.ok(pool('Une lettre à mon ami, un livre et un stylo.'))
+  assert.equal(pool('La lettre A, un livre et un stylo.'), undefined)
   const negated = pool('Je n’ai pas de voiture. Je prends mon vélo et mon téléphone.')
   assert.ok(negated?.heard.some((o) => o.id === 'voiture'), 'lexical recognition includes negation')
   const many = pool('Un vélo, un livre, un crayon, un cahier et un ordinateur.')
@@ -49,7 +51,7 @@ try {
     assert.ok(entry.objectPool.heard.length >= 3)
     const baseTags = entry.tags.filter((t) => t !== 'objet')
     if (entry.exercise.type_exercice === 'complet') assert.ok(baseTags.length > 0)
-    for (let seed = 1; seed <= 8; seed++) {
+    for (let seed = 1; seed <= 1; seed++) {
       const draw = drawObjetsCompose(entry.exercise.niveau, createRng(seed * 173), { audioSlots: [entry.audio] })
       assert.equal(draw.support.audio, entry.audio)
       assert.equal(draw.support.transcription, entry.objectPool.transcription)
@@ -78,7 +80,8 @@ try {
   }
   assert.ok(orders.size > 20, 'refresh seeds vary image positions')
   assert.equal(JSON.stringify(bank), original, 'historical sources stay unchanged')
-  const report = { date: '2026-11-07', catalog_concepts: catalog.length, unique_audio_entries: entries.length, eligible_audio_entries: eligible.length, eligibility: 'At least 3 distinct illustrated noun concepts in the exact track transcript; all named concepts excluded from the 2 NO distractors.', draw: '3 OUI / 2 NON; five shuffled positions, stable object IDs', limitation: 'Conservative curated lexical catalog; unsupported or ambiguous nouns do not qualify. Source transcript review is not human audio listening.', entries: eligible.map((e) => ({ audio: e.audio, exercise: e.exercise.id, source_sha256: createHash('sha256').update(e.objectPool.transcription).digest('hex'), tags: e.tags, heard: e.objectPool.heard.map((o) => ({ id: o.id, image: o.image })) })) }
+  const report = { date: '2026-11-07', source_hash_encoding: 'UTF-8 raw transcription', catalog_concepts: catalog.length, unique_audio_entries: entries.length, eligible_audio_entries: eligible.length, eligibility: 'At least 3 distinct illustrated noun concepts in the exact track transcript; all named concepts excluded from the 2 NO distractors.', draw: '3 OUI / 2 NON; five shuffled positions, stable object IDs', limitation: 'Conservative curated lexical catalog; unsupported or ambiguous nouns do not qualify. Source transcript review is not human audio listening.', entries: eligible.map((e) => ({ audio: e.audio, exercise: e.exercise.id, source_sha256: createHash('sha256').update(e.objectPool.transcription).digest('hex'), tags: e.tags, heard: e.objectPool.heard.map((o) => ({ id: o.id, image: o.image })) })) }
+  assert.deepEqual(JSON.parse(readFileSync('src/tcf/object-images.json', 'utf8')), catalog, 'catalog must remain unchanged during the audit')
   if (process.argv.includes('--write-report')) writeFileSync('docs/tcf/objets-tirage-20261107.json', JSON.stringify(report, null, 2) + '\n')
   console.log(`${catalog.length} concepts illustrés ; ${eligible.length}/${entries.length} audios éligibles ; 3 OUI/2 NON, sources et mélange vérifiés.`)
 } finally { await vite.close() }

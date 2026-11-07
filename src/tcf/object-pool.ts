@@ -47,7 +47,7 @@ function computeObjectPool(transcription: string): TcfObjectPool | undefined {
         if (object.id === 'train' && /\ben$/.test(before) && /^ de\b/.test(after)) continue
         if (['telephone', 'montre', 'lit'].includes(object.id) && !nounPrefix && needle.trim().split(' ').length === 1) continue
         if (object.id === 'table' && /^ des matieres\b/.test(after)) continue
-        if (object.id === 'lettre' && (/^ [a-z](?: |$)/.test(after) || /alphabet|epeler|majuscule|orthographe/.test(text))) continue
+        if (object.id === 'lettre' && (/\blettres?\s+[«"']?[A-Z]\b/.test(transcription) || /alphabet|epeler|majuscule|orthographe/.test(text))) continue
         if (object.id === 'orange' && !/\b(fruit|fruits|manger|mange|manges|mangez|acheter|achete|jus|dessert|salade)\b/.test(text)) continue
         if (object.id === 'chat' && /\b(chat en ligne|forum|messagerie)\b/.test(text)) continue
         if (object.id === 'glace' && /\b(patinoire|verglas|gele|neige)\b/.test(text) && !/\b(dessert|manger|mange|chocolat|vanille)\b/.test(text)) continue

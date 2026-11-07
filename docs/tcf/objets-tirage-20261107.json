@@ -1,8 +1,9 @@
 {
   "date": "2026-11-07",
-  "catalog_concepts": 175,
+  "source_hash_encoding": "UTF-8 raw transcription",
+  "catalog_concepts": 211,
   "unique_audio_entries": 1025,
-  "eligible_audio_entries": 102,
+  "eligible_audio_entries": 107,
   "eligibility": "At least 3 distinct illustrated noun concepts in the exact track transcript; all named concepts excluded from the 2 NO distractors.",
   "draw": "3 OUI / 2 NON; five shuffled positions, stable object IDs",
   "limitation": "Conservative curated lexical catalog; unsupported or ambiguous nouns do not qualify. Source transcript review is not human audio listening.",
@@ -63,16 +64,16 @@
       ],
       "heard": [
         {
+          "id": "train",
+          "image": "/lib/images/tcf/qcm-audit/revue-20261107-36fb5f5b7e.webp"
+        },
+        {
           "id": "lunettes",
           "image": "/lib/images/tcf/qcm-audit/co306-lunettes-vue-dessine.webp"
         },
         {
           "id": "couteau",
           "image": "/lib/images/tcf/qcm-audit/vocab-couteau.webp"
-        },
-        {
-          "id": "train",
-          "image": "/lib/images/tcf/qcm-audit/vocab-train-isole.webp"
         }
       ]
     },
@@ -187,6 +188,10 @@
           "image": "/lib/images/tcf/qcm-audit/co306-lunettes-vue-dessine.webp"
         },
         {
+          "id": "bijou",
+          "image": "/lib/images/tcf/qcm-audit/vocab-bijou.webp"
+        },
+        {
           "id": "train",
           "image": "/lib/images/tcf/qcm-audit/vocab-train-isole.webp"
         },
@@ -206,12 +211,12 @@
       ],
       "heard": [
         {
-          "id": "medicament",
-          "image": "/lib/images/tcf/qcm-audit/vocab-medicament.webp"
-        },
-        {
           "id": "ordonnance",
           "image": "/lib/images/tcf/qcm-audit/vocab-ordonnance.webp"
+        },
+        {
+          "id": "comprime",
+          "image": "/lib/images/tcf/qcm-audit/vocab-comprimes.webp"
         },
         {
           "id": "cuillere",
@@ -266,6 +271,29 @@
         {
           "id": "cle",
           "image": "/lib/images/tcf/qcm-audit/vocab-cle.webp"
+        }
+      ]
+    },
+    {
+      "audio": "/lib/audio/tcf/co/vie-quotidienne/bonjour-c-est-thomas.mp3",
+      "exercise": "tcf-ss-a1-s48-co-4",
+      "source_sha256": "9837356aabbac03a17f5e3a71cd3a7d1ba4702d7cf03182e3199bf20affa2204",
+      "tags": [
+        "objet",
+        "moyen"
+      ],
+      "heard": [
+        {
+          "id": "baskets",
+          "image": "/lib/images/tcf/qcm-audit/vocab-baskets.webp"
+        },
+        {
+          "id": "ballon",
+          "image": "/lib/images/tcf/qcm-audit/vocab-ballon-rond.webp"
+        },
+        {
+          "id": "nouilles",
+          "image": "/lib/images/tcf/qcm-audit/vocab-nouilles.webp"
         }
       ]
     },
@@ -508,6 +536,18 @@
         {
           "id": "appareil-photo",
           "image": "/lib/images/tcf/qcm-audit/co834-appareil-photo-dessine.webp"
+        },
+        {
+          "id": "elephant",
+          "image": "/lib/images/tcf/qcm-audit/vocab-elephant.webp"
+        },
+        {
+          "id": "dauphin",
+          "image": "/lib/images/tcf/qcm-audit/vocab-dauphin.webp"
+        },
+        {
+          "id": "cochon",
+          "image": "/lib/images/tcf/qcm-audit/vocab-cochons.webp"
         },
         {
           "id": "cheval",
@@ -1201,6 +1241,14 @@
           "image": "/lib/images/tcf/qcm-audit/vocab-yaourt.webp"
         },
         {
+          "id": "soupe",
+          "image": "/lib/images/tcf/qcm-audit/vocab-soupes.webp"
+        },
+        {
+          "id": "curry",
+          "image": "/lib/images/tcf/qcm-audit/vocab-curry.webp"
+        },
+        {
           "id": "table",
           "image": "/lib/images/tcf/qcm-audit/co306-table-dessine.webp"
         },
@@ -1257,6 +1305,29 @@
         {
           "id": "chapeau",
           "image": "/lib/images/tcf/qcm-audit/co834-chapeau-dessine.webp"
+        }
+      ]
+    },
+    {
+      "audio": "/lib/audio/tcf/co/radio/les-annonces-publiques-1-6.mp3",
+      "exercise": "tcf-a2j-s1-co-1",
+      "source_sha256": "315b766e8bf9ea3d2a2070b2fe380131b12a4560510437a3bb18b5eb70c651ed",
+      "tags": [
+        "objet",
+        "court"
+      ],
+      "heard": [
+        {
+          "id": "dauphin",
+          "image": "/lib/images/tcf/qcm-audit/vocab-dauphin.webp"
+        },
+        {
+          "id": "girafe",
+          "image": "/lib/images/tcf/qcm-audit/vocab-girafe.webp"
+        },
+        {
+          "id": "lion",
+          "image": "/lib/images/tcf/qcm-audit/vocab-lion.webp"
         }
       ]
     },
@@ -1442,6 +1513,29 @@
       ]
     },
     {
+      "audio": "/lib/audio/tcf/co/magasins/magasins-3-4.mp3",
+      "exercise": "tcf-ss-a2-s3-co-3",
+      "source_sha256": "cfadb8a867cb6283a479a26f06d6779a6d614e2f0a4ef01135273413c75e9a47",
+      "tags": [
+        "objet",
+        "court"
+      ],
+      "heard": [
+        {
+          "id": "chapeau",
+          "image": "/lib/images/tcf/qcm-audit/co834-chapeau-dessine.webp"
+        },
+        {
+          "id": "cadeau",
+          "image": "/lib/images/tcf/qcm-audit/vocab-cadeau.webp"
+        },
+        {
+          "id": "bijou",
+          "image": "/lib/images/tcf/qcm-audit/vocab-bijou.webp"
+        }
+      ]
+    },
+    {
       "audio": "/lib/audio/tcf/co/magasins/magasins-3-6.mp3",
       "exercise": "tcf-ss-a2-s3-co-3",
       "source_sha256": "32e5dab7db6180c639f59fa6aa55b2d0ed4f0e14c12fc6c96bb1dec2139883a8",
@@ -1537,6 +1631,10 @@
           "image": "/lib/images/tcf/qcm-audit/vocab-poire.webp"
         },
         {
+          "id": "nouilles",
+          "image": "/lib/images/tcf/qcm-audit/vocab-nouilles.webp"
+        },
+        {
           "id": "pizza",
           "image": "/lib/images/tcf/qcm-audit/co834-pizza-dessinee.webp"
         },
@@ -1605,6 +1703,29 @@
       ]
     },
     {
+      "audio": "/lib/audio/tcf/co/maison/mouches-grillons-vers-ou.mp3",
+      "exercise": "tcf-ss-b1-s10-co-3",
+      "source_sha256": "f9305de98276bb0ea0cb04dc02c8c3708afc6c49c5af311bdccd58476b01df0a",
+      "tags": [
+        "objet",
+        "long"
+      ],
+      "heard": [
+        {
+          "id": "crevette",
+          "image": "/lib/images/tcf/qcm-audit/vocab-crevettes.webp"
+        },
+        {
+          "id": "biscuit",
+          "image": "/lib/images/tcf/qcm-audit/vocab-biscuits.webp"
+        },
+        {
+          "id": "farine",
+          "image": "/lib/images/tcf/qcm-audit/vocab-farine.webp"
+        }
+      ]
+    },
+    {
       "audio": "/lib/audio/tcf/co/maison/moules-silicone-boites-film.mp3",
       "exercise": "tcf-ss-b1-s9-co-3",
       "source_sha256": "7264b5b48f33870b591e85e9e2ff5cc2ea9a392cabc62e1135368e7b8c3eab87",
@@ -1624,10 +1745,6 @@
         {
           "id": "papier",
           "image": "/lib/images/tcf/qcm-audit/vocab-feuille-papier.webp"
-        },
-        {
-          "id": "verre",
-          "image": "/lib/images/tcf/qcm-audit/vocab-verre.webp"
         }
       ]
     },
@@ -1666,6 +1783,10 @@
         {
           "id": "ordinateur",
           "image": "/lib/images/tcf/qcm-audit/vocab-ordinateur-portable.webp"
+        },
+        {
+          "id": "nouilles",
+          "image": "/lib/images/tcf/qcm-audit/vocab-nouilles.webp"
         },
         {
           "id": "livre",
@@ -2047,6 +2168,10 @@
           "image": "/lib/images/tcf/qcm-audit/vocab-poulet.webp"
         },
         {
+          "id": "nouilles",
+          "image": "/lib/images/tcf/qcm-audit/vocab-nouilles.webp"
+        },
+        {
           "id": "glace",
           "image": "/lib/images/tcf/qcm-audit/vocab-glace-cornet.webp"
         },
@@ -2072,6 +2197,10 @@
         {
           "id": "tomate",
           "image": "/lib/images/tcf/qcm-audit/vocab-tomate.webp"
+        },
+        {
+          "id": "nouilles",
+          "image": "/lib/images/tcf/qcm-audit/vocab-nouilles.webp"
         },
         {
           "id": "pain",
@@ -2464,6 +2593,29 @@
         {
           "id": "poulet",
           "image": "/lib/images/tcf/qcm-audit/vocab-poulet.webp"
+        }
+      ]
+    },
+    {
+      "audio": "/lib/audio/tcf/co/famille/11-famille-préparer-des-pâtes-à-la-tomate.mp3",
+      "exercise": "tcf-ssx-a2-famille-pates-a-la-tomate-co-4",
+      "source_sha256": "1b56773f6da37fd08c9fb64571f4b8cedf99ddbb1441a3abf842971c020a68fd",
+      "tags": [
+        "objet",
+        "court"
+      ],
+      "heard": [
+        {
+          "id": "couteau",
+          "image": "/lib/images/tcf/qcm-audit/vocab-couteau.webp"
+        },
+        {
+          "id": "tomate",
+          "image": "/lib/images/tcf/qcm-audit/vocab-tomate.webp"
+        },
+        {
+          "id": "nouilles",
+          "image": "/lib/images/tcf/qcm-audit/vocab-nouilles.webp"
         }
       ]
     },
