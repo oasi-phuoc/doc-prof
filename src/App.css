@@ -4776,6 +4776,11 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-theme-frame .tcf-po-theme{
   margin:0;color:var(--ink);font-weight:700;text-align:left
 }
+.tcf-theme-questions{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:6mm;
+  margin:0;padding:0 0 0 6mm;list-style:decimal;font-size:.88em;line-height:1.35
+}
+.tcf-theme-questions li{padding-left:1mm;break-inside:avoid}
 .tcf-trois-themes .tcf-po-images{gap:3mm}
 .tcf-trois-themes .tcf-po-images .tcf-image{
   height:28mm;object-fit:contain;background:#fff;
@@ -6301,14 +6306,6 @@ textarea.pill-input,
 .logique-block.is-cube .logique-stem .logique-img{max-height:100px}
 .logique-block .answer-line-field{margin-top:4px;width:100%}
 /* End */
-
-/* PO trois thèmes : corrigé sur une page séparée, sans modifier les images. */
-.tcf-themes-corrige-sheet .sheet-body{display:flex;flex-direction:column;gap:5mm}
-.tcf-themes-corrige-sheet h2{font-size:15pt;margin:0}
-.tcf-themes-corrige-sheet h3{font-size:12pt;margin:0 0 3mm}
-.tcf-themes-corrige-sheet section{flex:1 1 auto;break-inside:avoid}
-.tcf-themes-corrige-sheet ul{margin:0;padding-left:1.2em;font-size:11pt;line-height:1.45}
-.tcf-themes-corrige-sheet li{margin-bottom:1.5mm}
 
 /* CE CSC : même document, accompagné d’illustrations en format Image. */
 

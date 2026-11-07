@@ -361,6 +361,13 @@ export function TexteSupport({ exercise: ex, mode, ceFormat = 'texte' }: { exerc
               <div className="tcf-theme-frame-head">Thème {i + 1}</div>
               <div className="tcf-theme-frame-body">
                 <p className="tcf-po-theme">{t.theme}</p>
+                {mode === 'answers' && t.exemples_questions.some((q) => q.trim()) ? (
+                  <ol className="tcf-theme-questions">
+                    {t.exemples_questions.filter((q) => q.trim()).slice(0, 4).map((q, questionIndex) => (
+                      <li key={questionIndex}>{q}</li>
+                    ))}
+                  </ol>
+                ) : null}
                 <ul className="tcf-po-images is-4">
                   {t.images.map((src, k) => (
                     <li key={k}>
@@ -368,7 +375,6 @@ export function TexteSupport({ exercise: ex, mode, ceFormat = 'texte' }: { exerc
                     </li>
                   ))}
                 </ul>
-                {/* Exemples de questions sur une deuxième page du corrigé. */}
               </div>
             </section>
           ))}
