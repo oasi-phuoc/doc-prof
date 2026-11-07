@@ -38,7 +38,7 @@ La revue contextuelle couvre **7 851 questions dans 1 009 supports** : 6 140 dé
 
 Compilation TypeScript et build Vite réussis. Contrôles réussis : 1 009 exercices / 1 025 pistes, 7 851 liaisons question/source, 1 800 variantes QCM et 12 régressions de mélange, 407 illustrations PO et anciens chemins, 15 thèmes PO et 64 tirages, 138 cadrans et quatre tests géométriques, dix tests de correspondance QCM et sept de réutilisation sémantique. Le tirage objet est vérifié pour chaque piste éligible : cinq images distinctes, trois vraies, deux fausses, exclusion de tous les concepts nommés des distracteurs, source de la bonne piste, stabilité du corrigé, reproductibilité avec la même graine et variation réelle des positions sur 64 graines. Aucun remplacement des 299 audios n’est déclaré validé.
 
-L’intégration conserve les nouveaux documents CE suisses, les changements de format et les modifications d’interface amont. Les contrôles des 162 textes CE suisses, des 82 documents disponibles, des formats, des lecteurs et des sauts de page passent. Le build signale toujours un paquet JavaScript volumineux ; il réussit. L’optimisation de ce paquet ne fait pas partie de ce lot.
+L’intégration conserve les nouveaux documents CE suisses, les changements de format et les modifications d’interface amont. Les contrôles des 162 textes CE suisses, des 100 documents disponibles, des formats, des lecteurs et des sauts de page passent. Le build signale toujours un paquet JavaScript volumineux ; il réussit. L’optimisation de ce paquet ne fait pas partie de ce lot.
 
 ## Registres de référence
 
@@ -53,7 +53,7 @@ La liste des **252 fichiers originaux distincts nécessaires aux 299 référence
 
 ## Compléments relevés sur le dernier main intégré
 
-Le manifeste amont `ce-art-status.json` indique **82 documents CE CSC complets disponibles et 80 encore à produire/reprendre**. Ces documents contiennent le texte source et suivent leurs critères propres (prix CHF et dates du texte autorisés) ; ils sont distincts des illustrations de réponses QCM dont les 5 630 usages sont contrôlés ici.
+Le manifeste amont `ce-art-status.json` indique **100 documents CE CSC complets disponibles et 62 encore à produire/reprendre**. Ces documents contiennent le texte source et suivent leurs critères propres (prix CHF et dates du texte autorisés) ; ils sont distincts des illustrations de réponses QCM dont les 5 630 usages sont contrôlés ici.
 
 Le plan amont `co-character-refresh.json` prévoit **10 reprises de personnages CO** (quatre scènes de bibliothèque et six scènes d’achats). Elles ne sont pas annoncées comme achevées. La correspondance avec les chemins actifs après harmonisation est dans `co-personnages-cibles-actuelles-20261107.json` ; utiliser ces cibles pour les prochaines reprises.
 
