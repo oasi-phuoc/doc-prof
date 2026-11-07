@@ -20,11 +20,11 @@ Les genres sont enregistrés dans `src/tcf/content/ce-document-formats.json`. Le
 
 ## Catalogue et avancement
 
-41 correspondances ont été réexportées en URW Gothic avec les textes suisses. Les 121 documents illustrés restent à générer ou refaire. Le détail et les éventuels blocages figurent dans `ce-art-status.json`. Les anciennes propositions sont conservées dans `ce-art-candidates/`, hors de la banque active. Elles ne doivent pas être réactivées sans reprise et contrôle.
+Les correspondances ont été réexportées en URW Gothic avec les textes suisses. Les documents illustrés sont intégrés progressivement dans l’ordre demandé après génération et contrôle visuel. Le détail et les éventuels blocages figurent dans `ce-art-status.json`. Les anciennes propositions sont conservées dans `ce-art-candidates/`, hors de la banque active. Elles ne doivent pas être réactivées sans reprise et contrôle.
 
 Le catalogue actif `src/tcf/content/ce-art.json` contient uniquement les images disponibles pour le texte et le format actuels. Modifier le texte ou le genre invalide l’ancienne image : la fiche utilise alors le texte mis à jour. Les anciennes compositions HTML avec de petites illustrations ne sont plus utilisées.
 
-La génération réelle des affiches a rencontré la limite du service (`usage_limit_reached`). Reprendre les documents en attente à partir de `ce-art-prompts.json`. Avant activation : vérifier le texte, chaque nombre et montant CHF, les lieux suisses, le genre demandé, la police, les noms d’activités, l’absence de surlignage, la lisibilité et la diversité des visages. L’OCR seul ne suffit pas à valider une image.
+La génération suit l’ordre des titres demandé : Lire des instructions, S’orienter dans le temps, S’orienter dans l’espace, S’informer, puis reprises CO. Si le service atteint une limite (`usage_limit_reached`), consigner le blocage dans le suivi et reprendre les documents en attente à partir de `ce-art-prompts.json`. Avant activation : vérifier le texte, chaque nombre et montant CHF, les lieux suisses, le genre demandé, la police, les noms d’activités, l’absence de surlignage, la lisibilité et la diversité des visages. L’OCR seul ne suffit pas à valider une image.
 
 ## Scripts de vérification
 

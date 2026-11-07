@@ -133,15 +133,11 @@
       "status": "pending"
     }
   ],
-  "generationBlocker": {
-    "type": "usage_limit_reached",
-    "service": "imagegen",
-    "resetAt": "2026-11-07T06:50:39Z"
-  },
   "review": {
     "activeSceneImagesInspected": 86,
     "readyToReplace": 0,
     "pendingReplacements": 10,
     "notes": "Les autres scènes sont conservées : aucun remplacement par une image qui ne correspond pas exactement au support."
-  }
+  },
+  "generationState": "En attente de la fin des documents CE, selon l’ordre demandé."
 }
