@@ -4702,10 +4702,7 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-tableau th,.tcf-tableau td{border:1px solid var(--ink);padding:0 10px;height:9mm;text-align:left}
 .tcf-tableau th{width:55%;font-weight:600}
 .tcf-tableau td{font-weight:600;color:var(--purple)}
-.tcf-situations{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:20px 12px}
-.tcf-situations.is-4{grid-template-columns:repeat(2,1fr)}
-.tcf-situations.is-6{grid-template-columns:repeat(2,1fr)} /* 2 images / ligne × 3 */
-.tcf-situations.is-8{grid-template-columns:repeat(4,1fr)}
+.tcf-situations{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 12px}
 .tcf-situations li{
   position:relative;display:flex;flex-direction:column;gap:6px;min-width:0;
   margin-top:16px;padding:12px 8px 8px;border:1.5px solid var(--ink);box-sizing:border-box
@@ -4716,13 +4713,10 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
   flex:0 0 36mm;width:100%;height:36mm;max-height:36mm;
   object-fit:contain;object-position:center
 }
-.tcf-situations.is-6 .tcf-image{
-  flex:0 0 42mm;height:42mm;max-height:42mm
-}
-.tcf-situation-foot{display:flex;align-items:flex-end;justify-content:center;gap:4px;width:100%}
+.tcf-situation-foot{display:flex;flex-direction:column;align-items:stretch;justify-content:center;gap:2mm;width:100%}
 .tcf-dialogue-label{flex:0 0 auto;font-size:.92em;font-weight:600;color:var(--ink);white-space:nowrap}
 .tcf-situation-num{
-  flex:0 0 50px;width:50px;min-width:50px;max-width:50px;
+  flex:0 0 auto;width:100%;min-width:0;max-width:none;
   font-weight:700;
   color:var(--purple);
   border-bottom:1.6px solid var(--purple);
@@ -6325,13 +6319,14 @@ textarea.pill-input,
 @media print{.is-editable-word-image{outline:none!important}.tcf-vocab-picker-backdrop{display:none!important}}
 
 /* CO situations : même bandeau que les mini-audios, ensemble sur une A4. */
-.tcf-situations{gap:3mm}
-.tcf-situations.is-many{grid-template-columns:repeat(2,minmax(0,1fr));--situation-image-height:22mm}
+.tcf-situations{gap:3mm;--situation-image-height:40mm}
+.tcf-situations.is-many{--situation-image-height:30mm}
 .tcf-situations>li.tcf-situation-frame{margin:0;padding:0;gap:0;border-color:var(--purple);break-inside:avoid}
-.tcf-situation-body{display:flex;flex:1;flex-direction:column;gap:1.5mm;padding:2mm;min-width:0}
-.tcf-situations .tcf-situation-body .tcf-image{flex:0 0 var(--situation-image-height,26mm);height:var(--situation-image-height,26mm);max-height:var(--situation-image-height,26mm)}
-.tcf-situation-body .tcf-situation-foot{margin-top:auto}
+.tcf-situation-body{display:grid;grid-template-columns:minmax(0,1fr) 26mm;align-items:center;gap:3mm;padding:2mm;min-width:0}
+.tcf-situations .tcf-situation-body .tcf-image{width:100%;height:var(--situation-image-height);max-height:var(--situation-image-height);object-fit:contain}
 .tcf-situation-frame .tcf-audio-frame-head{padding-left:2mm;padding-right:2mm;gap:4px;font-size:9pt;letter-spacing:0}
+.worksheet-sheet:has(.tcf-situations)>.sheet-body{overflow:hidden}
+.worksheet-sheet:has(.tcf-situations)>.doc-footer{margin-top:50px}
 
 /* CE en image : document pleine largeur, questions dessous avec le gap standard de la grille. */
 .tcf-ce-art{width:100%;min-width:0}

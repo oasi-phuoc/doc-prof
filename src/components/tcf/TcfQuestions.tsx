@@ -515,20 +515,19 @@ export function AssociationSituations({
 }) {
   const show = mode === 'answers'
   const n = situations.length
-  const gridClass = n >= 8 ? 'is-8' : n >= 6 ? 'is-6' : n === 4 ? 'is-4' : ''
   return (
-    <ul className={`tcf-situations${gridClass ? ` ${gridClass}` : ''}${n > 6 ? ' is-many' : ''}`}>
+    <ul className={`tcf-situations${n > 6 ? ' is-many' : ''}`}>
       {situations.map((s, i) => (
         <li key={`${s.lettre}-${i}`} className="tcf-question is-audio-frame tcf-situation-frame">
           <AudioFrameHead label={`Situation ${s.lettre}`} audioSrc={show && s.dialogue != null ? s.audioSrc : undefined} />
           <div className="tcf-situation-body">
-          <TcfImage src={s.image} alt={`Scène ${s.lettre}`} />
-          <span className="tcf-situation-foot">
-            <span className="tcf-dialogue-label">Audio n°&nbsp;:</span>
-            <span className="answer-line-field tcf-situation-num">
-              {show ? (s.dialogue != null ? String(s.dialogue) : '—') : ''}
+            <TcfImage src={s.image} alt={`Scène ${s.lettre}`} />
+            <span className="tcf-situation-foot">
+              <span className="tcf-dialogue-label">Audio n°&nbsp;:</span>
+              <span className="answer-line-field tcf-situation-num">
+                {show ? (s.dialogue != null ? String(s.dialogue) : '—') : ''}
+              </span>
             </span>
-          </span>
           </div>
         </li>
       ))}
