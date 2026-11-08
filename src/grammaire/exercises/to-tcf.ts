@@ -227,7 +227,7 @@ function regularGrammarQuestion(q: TcfQuestion, rng: Rng, numero: number): MathI
     const answer = choix.find((choice) => choice.correct)?.lettre ?? ''
     return {
       layout: 'tcf',
-      tcf: { kind: 'qcm', numero, enonce: q.enonce, mode: 'image', choix, answer },
+      tcf: { kind: 'qcm', numero, enonce: q.enonce, mode: 'image', choix },
       answer,
       ...(q.points != null ? { points: q.points } : {}),
     }
