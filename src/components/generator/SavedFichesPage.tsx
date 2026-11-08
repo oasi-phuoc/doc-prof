@@ -1,3 +1,4 @@
+import { openInteractive } from '@/interactive/navigation'
 import { useEffect, useMemo, useState, type FormEvent } from 'react'
 import { ACCESS_DOMAIN_OPTIONS, domainsForAccount, readAccessAccount } from '@/access'
 import { Header } from '@/components/generator/Header'
@@ -366,6 +367,7 @@ export function SavedFichesPage({
                             Ouvrir
                           </button>
                         )}
+                        <button className="button small" type="button" onClick={() => openInteractive(fiche.recipe, fiche.name, fiche.id)}>Jouer</button>
                         <button className="topbar-text-btn" type="button" onClick={() => setPendingDelete(fiche.id)}>
                           Supprimer
                         </button>

@@ -1,0 +1,32 @@
+{
+  "api": "mocked; no server security claim",
+  "results": [
+    {
+      "savedListLaunch": "passed"
+    },
+    {
+      "directSavedLink": "passed"
+    },
+    {
+      "deletedOrNotAuthorized": "clear error"
+    },
+    {
+      "apiStatus": 401,
+      "result": "clear error"
+    },
+    {
+      "apiStatus": 403,
+      "result": "clear error"
+    },
+    {
+      "apiStatus": 404,
+      "result": "clear error"
+    },
+    {
+      "missingImageAndAudio": "clear errors; session can continue"
+    },
+    {
+      "clientDomainRestriction": "preserved; server authorization remains authoritative"
+    }
+  ]
+}
