@@ -432,6 +432,10 @@ export function buildPage(
     const items = rawItems.map((item) => sanitizeItemNumberNoise(item as Record<string, unknown>) as MathItem)
     const libreGivens = givensFromEvaluerLibre(rawItems)
     const corrigeAudios = collectCorrigeAudioSrcs(items, result.document?.audioSrc)
+    const tcfPageBreakAfter =
+      block.tcfPageBreakAfter ??
+      page.tcfPageBreakAfter ??
+      (isTheory ? items.map((item) => Boolean(item.theoryPageBreakAfter)) : undefined)
     return {
       exerciseIndex,
       title: isTpmConsignes
@@ -454,7 +458,7 @@ export function buildPage(
       inlineBlankPx: block.inlineBlankPx,
       oralAnswerModes: block.oralAnswerModes,
       tcfFormModes: block.tcfFormModes,
-      tcfPageBreakAfter: block.tcfPageBreakAfter,
+      tcfPageBreakAfter,
       bankQuestionCap: result.bankQuestionCap,
       corrigeAudios: corrigeAudios.length ? corrigeAudios : undefined,
     }
@@ -683,15 +687,19 @@ export function buildWorksheets(pages: PageConfig[], seed: number, defaultPoints
     if (isTheory) {
       const sourceBlock = worksheet.blocks[0]
       const items = sourceBlock?.items ?? worksheet.items
-      const followBreaks = page.continueOnNextPage !== false
+      const breaks = sourceBlock?.tcfPageBreakAfter ?? page.tcfPageBreakAfter
       const segments: MathItem[][] = [[]]
-      for (const item of items) {
+      items.forEach((item, itemIndex) => {
         if (item.theoryBlock?.kind === 'page') {
-          if (followBreaks) segments.push([])
-          continue
+          if (page.continueOnNextPage !== false) segments.push([])
+          return
         }
         segments[segments.length - 1]!.push(item)
-      }
+        if (
+          itemIndex < items.length - 1 &&
+          (breaks?.[itemIndex] ?? item.theoryPageBreakAfter ?? false)
+        ) segments.push([])
+      })
       const sheets = segments.filter((slice) => slice.length > 0)
       if (!sourceBlock || sheets.length <= 1) {
         const kept = sheets[0] ?? items.filter((item) => item.theoryBlock?.kind !== 'page')

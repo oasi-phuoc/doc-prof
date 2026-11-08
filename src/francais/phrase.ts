@@ -160,9 +160,9 @@ const INSTRUCTIONS: Record<string, string> = {
   ecrire: 'Écrivez des phrases.',
 }
 
-/** Banque utilisée pour le tirage (Libre réutilise Simple). */
-export function phraseBankGroup(group: PhraseVerbGroup = 'er'): 'er' | 'autres' {
-  return group === 'autres' ? 'autres' : 'er'
+/** Un ancien mode « Libre » sans items enregistrés retombe sur le 1er groupe. */
+export function phraseBankGroup(group: PhraseVerbGroup = 'er'): Exclude<PhraseVerbGroup, 'libre'> {
+  return group === 'libre' ? 'er' : group
 }
 
 export function tryGeneratePhraseBatch(

@@ -2,6 +2,8 @@ import { Fragment, useMemo, type RefObject } from 'react'
 import { PeEvaluationSheet } from '@/components/tcf/PeEvaluationSheet'
 import { peEvaluationsOf, type PeEvaluation } from '@/tcf/pe-evaluation'
 import { isGrammarReadingType } from '@/grammaire/exercises/reading-types'
+import { isGrammarTheoryType } from '@/francais/grammar-theory'
+import { isGrammaireTheoryType } from '@/grammaire/types'
 import { GameBoard } from '@/components/game-board/GameBoard'
 import { A4Frame } from '@/components/generator/A4Frame'
 import { FormesPalette } from '@/components/generator/FormesPalette'
@@ -245,7 +247,13 @@ export function ResultPanel({
         (isTcf || Boolean(isGrammaireExercise)) && activeBlock.tcfExercise == null
       }
       interactiveTcfPageBreaks={
-        isTcf || pageExerciseBlocks.some((block) => isGrammarReadingType(block.exerciseType))
+        isTcf ||
+        pageExerciseBlocks.some(
+          (block) =>
+            isGrammarReadingType(block.exerciseType) ||
+            isGrammarTheoryType(block.exerciseType) ||
+            isGrammaireTheoryType(block.exerciseType),
+        )
       }
       onSelectTcfForm={(itemIndex, form, block) => selectTcfForm(itemIndex, form, block, index)}
       onSelectTcfFormForExercise={(form, block) => selectTcfFormForExercise(form, block, index)}

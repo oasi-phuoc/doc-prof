@@ -450,6 +450,19 @@ export function WorksheetSheet({
                     Boolean(
                       block.tcfPageBreakAfter?.[sourceIndex - 1] ?? page.tcfPageBreakAfter?.[sourceIndex - 1],
                     )
+                  const theoryBreakCount =
+                    block.tcfPageBreakAfter?.length ??
+                    page.tcfPageBreakAfter?.length ??
+                    block.items.length + (block.itemOffset ?? 0)
+                  const isTheoryPageBreakable =
+                    item.layout === 'theory' &&
+                    item.theoryBlock?.kind === 'section' &&
+                    sourceIndex < theoryBreakCount - 1
+                  const theoryPageBreakAfter = Boolean(
+                    block.tcfPageBreakAfter?.[sourceIndex] ??
+                      page.tcfPageBreakAfter?.[sourceIndex] ??
+                      item.theoryPageBreakAfter,
+                  )
                   const blockAllowsDraftGrid = isDraftPadExercise(block.exerciseType)
                   const isTcfQuestion =
                     item.layout === 'tcf' &&
@@ -516,6 +529,12 @@ export function WorksheetSheet({
                         sourceIndex > 0 &&
                         onToggleTcfPageBreak
                           ? () => onToggleTcfPageBreak(index, blockIndex)
+                          : undefined
+                      }
+                      theoryPageBreakAfter={isTheoryPageBreakable ? theoryPageBreakAfter : undefined}
+                      onToggleTheoryPageBreakAfter={
+                        interactiveTcfPageBreaks && isTheoryPageBreakable && onToggleTcfPageBreak
+                          ? () => onToggleTcfPageBreak(index + 1, blockIndex)
                           : undefined
                       }
                       formulaireLetterGrid={Boolean(block.formulaireLetterGrid)}

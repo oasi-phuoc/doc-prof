@@ -10,7 +10,7 @@ import {
 import { parseGramExerciseType } from './subthemes'
 import { bankForType, lessonForType } from './bank'
 import { gramItemsToTcfExercise, grammarExerciseItems } from './to-tcf'
-import { buildPresentOrder, isPresentSupplementSubtheme } from './present-supplement'
+import { buildPresentOrder, isPresentSupplementSubtheme, presentOrderQuestionCap } from './present-supplement'
 import { buildQuestionReading, QUESTION_READING_CAP } from './question-reading'
 import { isQuestionReadingType } from './reading-types'
 import { tryBuildModalCommunication } from './modal-communication'
@@ -136,11 +136,17 @@ export function tryGenerateGrammaireExerciseBlock(
     }
   }
 
-  const orderedItems = buildPresentOrder({ ...parsed, count: config.count, rng })
+  const orderedItems = buildPresentOrder({
+    ...parsed,
+    count: config.count,
+    rng,
+    polarity: config.phrasePolarity,
+    categories: config.phraseCategories,
+  })
   if (orderedItems) return {
     instruction: lessonForType(typeId)?.instruction ?? kind.instruction,
     items: orderedItems,
-    bankQuestionCap: 50,
+    bankQuestionCap: presentOrderQuestionCap(typeId, config.phrasePolarity, config.phraseCategories),
   }
 
   if (isCommunicationKind(parsed.kindId)) {

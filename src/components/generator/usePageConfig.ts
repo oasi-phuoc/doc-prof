@@ -320,7 +320,10 @@ export function usePageConfig({
           modeIndex + 1,
           sheetBlock?.items.length ?? 0,
         )
-        const breaks = Array.from({ length: totalItems }, (_, i) => block.tcfPageBreakAfter?.[i] ?? sheetBlock?.tcfPageBreakAfter?.[i] ?? false)
+        const breaks = Array.from(
+          { length: totalItems },
+          (_, i) => block.tcfPageBreakAfter?.[i] ?? sheetBlock?.tcfPageBreakAfter?.[i] ?? false,
+        )
         breaks[modeIndex] = !breaks[modeIndex]
         return setPageBlock(page, targetBlock, { tcfPageBreakAfter: breaks })
       }),

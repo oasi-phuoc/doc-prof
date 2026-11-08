@@ -113,7 +113,6 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
     isPhraseChart,
     isVocabLearn,
     isVocabPool,
-    isGramTheory,
     isGrammaireDomain,
     isGrammaireExercise,
     isLogique,
@@ -553,8 +552,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                 </label>
               ) : null}
               {isOralComprehensionExercise(activeBlock.exerciseType) ||
-              activeBlock.exerciseType.includes('-com-ecrite') ||
-              isGramTheory ? (
+              activeBlock.exerciseType.includes('-com-ecrite') ? (
                 <div className="mode-toggle-block">
                   <b>Saut de page</b>
                   <div className="mode-toggle" role="group" aria-label="Saut de page pour les questions">

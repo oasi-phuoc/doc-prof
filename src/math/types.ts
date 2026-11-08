@@ -341,8 +341,8 @@ export type Topic = {
 }
 
 export type FrenchTrack = 'voc' | 'gram' | 'com'
-/** Banque de verbes Gattegno, ou mode libre (édition des phrases générées). */
-export type PhraseVerbGroup = 'er' | 'autres' | 'libre'
+/** Gattegno : 1er (`er`), 2e (`ir`), 3e (`autres`) ou mixte ; `libre` est historique. */
+export type PhraseVerbGroup = 'er' | 'ir' | 'autres' | 'mixte' | 'libre'
 
 export type ExerciseType = {
   id: string
@@ -440,6 +440,8 @@ export type MathItem = {
   selectVariant?: 'pills' | 'oral' | 'cards'
   /** Bloc de théorie grammaticale (fiche lecture seule). */
   theoryBlock?: GrammarTheoryBlock
+  /** Coupure de page initiale après cette section de théorie, modifiable dans l’aperçu. */
+  theoryPageBreakAfter?: boolean
   /** Entrée de glossaire maths (mot + définition + schéma). */
   glossary?: {
     term: string
@@ -829,7 +831,7 @@ export type ExerciseBlock = {
   pointsPerQuestion?: number
   /** Voc / Gram / Com — domaine français uniquement. */
   track?: FrenchTrack
-  /** Phrase : Simple (er), Autres (2e/3e), ou Libre (édition). */
+  /** Groupe de verbes Gattegno ; `libre` reste lisible pour les anciennes fiches. */
   verbGroup?: PhraseVerbGroup
   /** Gattegno: affirmative, negative or a balanced mixture of both banks. */
   phrasePolarity?: import('@/francais/phrase-themes').PhrasePolarity

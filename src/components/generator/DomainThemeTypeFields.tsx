@@ -6,6 +6,7 @@ import { grammarCoThemeForType } from '@/grammaire/exercises/co-themes'
 import { defaultGrammarCoLevel, grammarCoEntries, hasGrammarCoTheme } from '@/grammaire/exercises/co-bank'
 import { isNegativePhraseTheme, isPhraseThemeId } from '@/francais/phrase-themes'
 import { phraseSelection } from '@/francais/phrase-options'
+import { isPresentSupplementOrderType, presentOrderQuestionCap } from '@/grammaire/exercises/present-supplement'
 import {
   ACCESS_DOMAIN_OPTIONS,
 } from '@/access'
@@ -151,6 +152,8 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
     quadPool,
   } = p
   const grammarCoTheme = grammarCoThemeForType(activeBlock.exerciseType)
+  const isPresentOrder = isGrammaireDomain && isPresentSupplementOrderType(activeBlock.exerciseType)
+  const showPhraseParameters = (isPhraseDomain && !isPhraseChart) || isPresentOrder
   const showGrammarCoLevel = grammarCoTheme && (activeBlock.exerciseType.endsWith('-co-theme') || hasGrammarCoTheme(grammarCoTheme.id))
   const grammarCoLevel = activeBlock.grammarCoLevel ?? (grammarCoTheme ? defaultGrammarCoLevel(grammarCoTheme.id) : 'A1')
   const grammarCoAudios = grammarCoTheme ? grammarCoEntries(grammarCoTheme.id,grammarCoLevel) : []
@@ -284,57 +287,68 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
               {isPhraseDomain && !isPhraseChart ? (
                 <div className="mode-toggle-block">
                   <b>Verbes</b>
-                  <div className="mode-toggle is-3" role="group" aria-label="Groupe de verbes">
+                  <div className="mode-toggle is-4" role="group" aria-label="Groupe de verbes">
                     <button
                       type="button"
-                      className={(activeBlock.verbGroup ?? 'er') === 'er' ? 'active' : ''}
+                      className={(!activeBlock.verbGroup || activeBlock.verbGroup === 'er' || activeBlock.verbGroup === 'libre') ? 'active' : ''}
                       onClick={() => setVerbGroup('er')}
                     >
-                      Simple
+                      1er
+                    </button>
+                    <button
+                      type="button"
+                      className={activeBlock.verbGroup === 'ir' ? 'active' : ''}
+                      onClick={() => setVerbGroup('ir')}
+                    >
+                      2e
                     </button>
                     <button
                       type="button"
                       className={activeBlock.verbGroup === 'autres' ? 'active' : ''}
                       onClick={() => setVerbGroup('autres')}
                     >
-                      Autres
+                      3e
                     </button>
-                    {libreMode ? null : (
-                      <button
-                        type="button"
-                        className={activeBlock.verbGroup === 'libre' ? 'active' : ''}
-                        onClick={() => setVerbGroup('libre')}
-                      >
-                        Libre
-                      </button>
-                    )}
+                    <button
+                      type="button"
+                      className={activeBlock.verbGroup === 'mixte' ? 'active' : ''}
+                      onClick={() => setVerbGroup('mixte')}
+                    >
+                      Mixte
+                    </button>
                   </div>
                 </div>
               ) : null}
-              {isPhraseDomain && !isPhraseChart ? (
+              {showPhraseParameters ? (
                 <PhrasePolarityControl
-                  value={activeBlock.phrasePolarity ?? (isNegativePhraseTheme(activeBlock.topic) ? 'negative' : 'positive')}
-                  onChange={phrasePolarity => updatePage({
-                    ...clearLibreContentFreeze(),
-                    phrasePolarity,
-                    phraseItems: undefined,
-                    phraseInstruction: undefined,
-                  })}
+                  value={activeBlock.phrasePolarity ?? (isPhraseDomain && isNegativePhraseTheme(activeBlock.topic) ? 'negative' : 'positive')}
+                  onChange={phrasePolarity => {
+                    const countCap = isPresentOrder
+                      ? presentOrderQuestionCap(activeBlock.exerciseType, phrasePolarity, activeBlock.phraseCategories)
+                      : activeBlock.count
+                    updatePage({
+                      ...clearLibreContentFreeze(),
+                      phrasePolarity,
+                      count: isPresentOrder ? Math.max(1, Math.min(activeBlock.count, countCap)) : activeBlock.count,
+                      ...(isPhraseDomain ? { phraseItems: undefined, phraseInstruction: undefined } : {}),
+                    })
+                  }}
                 />
               ) : null}
-              {isPhraseDomain && !isPhraseChart ? (
+              {showPhraseParameters ? (
                 <PhraseCategoryControls
                   value={activeBlock.phraseCategories}
                   onChange={phraseCategories => {
                     const cap = isPhraseThemeId(activeBlock.topic)
                       ? phraseSelection(activeBlock.topic, activeBlock.verbGroup ?? 'er', phraseCategories).frames.length
-                      : activeBlock.count
+                      : isPresentOrder
+                        ? presentOrderQuestionCap(activeBlock.exerciseType, activeBlock.phrasePolarity ?? 'positive', phraseCategories)
+                        : activeBlock.count
                     updatePage({
                       ...clearLibreContentFreeze(),
                       phraseCategories,
                       count: Math.max(1, Math.min(activeBlock.count, cap)),
-                      phraseItems: undefined,
-                      phraseInstruction: undefined,
+                      ...(isPhraseDomain ? { phraseItems: undefined, phraseInstruction: undefined } : {}),
                     })
                   }}
                 />

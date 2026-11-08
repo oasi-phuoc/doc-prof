@@ -51,6 +51,8 @@ import {
 import { defaultPage, exerciseTypeById } from '@/math/catalog'
 import { joinCalliLines } from '@/calligraphie/defaults'
 import { isPhraseLibreEditable } from '@/francais/PhraseLibreEditor'
+import { phraseSelection } from '@/francais/phrase-options'
+import { isPhraseThemeId } from '@/francais/phrase-themes'
 import type { VocabWordEntry } from '@/francais/vocab-learn'
 import { createFiche, storeSyncPassword, updateFiche } from '@/fiches/api'
 import { buildFicheRecipe, readStagedFiche, rememberFicheOnHistory } from '@/fiches/recipe'
@@ -362,8 +364,12 @@ export function GeneratorPage({
       })
       return
     }
+    const cap = isPhraseThemeId(activeBlock.topic)
+      ? phraseSelection(activeBlock.topic, next, activeBlock.phraseCategories).frames.length
+      : activeBlock.count
     updatePage({
       verbGroup: next,
+      count: Math.max(1, Math.min(activeBlock.count, cap)),
       phraseItems: undefined,
       phraseInstruction: undefined,
     })
