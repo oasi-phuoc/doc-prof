@@ -4714,7 +4714,7 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
   object-fit:contain;object-position:center
 }
 .tcf-situation-foot{display:flex;flex-direction:column;align-items:stretch;justify-content:center;gap:2mm;width:100%}
-.tcf-dialogue-label{flex:0 0 auto;font-size:.92em;font-weight:600;color:var(--ink);white-space:nowrap}
+.tcf-dialogue-label{display:block;flex:0 0 auto;width:100%;font-size:.92em;font-weight:600;color:var(--ink);white-space:nowrap;text-align:center}
 .tcf-situation-num{
   flex:0 0 auto;width:100%;min-width:0;max-width:none;
   font-weight:700;
@@ -6319,8 +6319,8 @@ textarea.pill-input,
 @media print{.is-editable-word-image{outline:none!important}.tcf-vocab-picker-backdrop{display:none!important}}
 
 /* CO situations : même bandeau que les mini-audios, ensemble sur une A4. */
-.tcf-situations{gap:3mm;--situation-image-height:40mm}
-.tcf-situations.is-many{--situation-image-height:30mm}
+.tcf-situations{row-gap:6mm;column-gap:3mm;--situation-image-height:42mm}
+.tcf-situations.is-many{--situation-image-height:32mm}
 .tcf-situations>li.tcf-situation-frame{margin:0;padding:0;gap:0;border-color:var(--purple);break-inside:avoid}
 .tcf-situation-body{display:grid;grid-template-columns:minmax(0,1fr) 26mm;align-items:center;gap:3mm;padding:2mm;min-width:0}
 .tcf-situations .tcf-situation-body .tcf-image{width:100%;height:var(--situation-image-height);max-height:var(--situation-image-height);object-fit:contain}
