@@ -165,7 +165,7 @@ export function WorksheetSheet({
   const isJeuxSheet = page.domain === 'jeux'
   /** A5 : chaque moitié a toujours son en-tête (mini-contrôle autonome), sauf chrome masqué. */
   const showHeader =
-    !page.cePosterSheet && !hideChrome && !isJeuxSheet && (Boolean(asHalf) || forceHeader || pageNumber === 1)
+    !hideChrome && !isJeuxSheet && (Boolean(asHalf) || forceHeader || pageNumber === 1)
   const showFooter = !hideChrome && !isJeuxSheet
   const parity = sheetIndex % 2 === 1 ? 'sheet-odd' : 'sheet-even'
   const isDraftPadPage = page.items.some(
@@ -207,7 +207,7 @@ export function WorksheetSheet({
     : `worksheet-sheet ${parity}${isJeuxSheet ? ' is-jeux' : ''}${isSoutienFr ? ' is-soutien-fr' : ''}${isAlphabetisation ? ' is-alphabetisation' : ''}${evalMode ? ' is-eval' : ''}`
   return (
     <Root
-      className={`${rootClass}${page.cePosterSheet ? ' is-ce-art-page' : ''}${page.cePosterLandscape ? ' is-ce-art-landscape' : ''}`}
+      className={rootClass}
       style={{ '--sheet-columns': sheetColumns } as CSSProperties}
     >
       {showHeader ? (

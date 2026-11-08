@@ -507,7 +507,6 @@ export function ResultPanel({
                       pageGroup.map(({ sheet, index }, stackIdx) => (
                         <A4Frame
                           key={`page-stack-${sheet.exerciseType}-${seed}-${index}`}
-                          className={sheet.cePosterLandscape ? 'is-landscape' : undefined}
                           ref={stackIdx === 0 ? previewFrameRef : undefined}
                         >
                           {renderEditableSheet(sheet, index)}
@@ -517,7 +516,6 @@ export function ResultPanel({
                       <A4Frame
                         ref={previewFrameRef}
                         key={`${previewSheet?.exerciseType}-${seed}-${safeSheetIndex}-${pageExerciseBlocks.length}`}
-                        className={previewSheet?.cePosterLandscape ? 'is-landscape' : undefined}
                       >
                         {previewSheet ? renderEditableSheet(previewSheet, safeSheetIndex) : null}
                       </A4Frame>

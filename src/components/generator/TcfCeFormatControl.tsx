@@ -13,7 +13,7 @@ export function TcfCeFormatControl({ value, onChange }: {
         ))}
       </div>
       <small>Image : affiche, message, lettre ou autre document adapté au texte. Si son image n’est pas encore disponible, le texte est conservé.</small>
-      {value === 'image' ? <small>Le bouton « Page » de la première question permet d’annuler le saut de page après l’image.</small> : null}
+      {value === 'image' ? <small>Le document s’adapte à la largeur de la page portrait ; les questions suivent sous l’image. Le bouton « Page » permet de les déplacer sur une nouvelle page.</small> : null}
     </div>
   )
 }

@@ -1116,10 +1116,6 @@ export type WorksheetBlock = {
 }
 
 export type WorksheetPage = PageConfig & {
-  /** CE CSC : image seule après le titre et la consigne ; saut de page annulable. */
-  cePosterSheet?: boolean
-  /** Une image horizontale conserve une feuille A4 paysage. */
-  cePosterLandscape?: boolean
   title: string
   instruction: string
   items: MathItem[]
