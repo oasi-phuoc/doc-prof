@@ -1,5 +1,4 @@
 import type { GrammaireTheoryDoc } from '../types'
-import { ex, ligne, p, sheet, table } from './falc-sheet'
 
 /**
  * Théorie FALC — thème gram-present.
