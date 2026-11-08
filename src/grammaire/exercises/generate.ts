@@ -1,6 +1,5 @@
 import { createRng, int, shuffle } from '@/math/rng'
 import type { MathItem, PageConfig } from '@/math/types'
-import { tcfExerciseItems } from '@/tcf/generate'
 import { gramKindById } from './kinds'
 import {
   instructionForSingleVerb,
@@ -10,7 +9,7 @@ import {
 } from './normalize-items'
 import { parseGramExerciseType } from './subthemes'
 import { bankForType, lessonForType } from './bank'
-import { gramItemsToTcfExercise } from './to-tcf'
+import { gramItemsToTcfExercise, grammarExerciseItems } from './to-tcf'
 import { buildPresentOrder, isPresentSupplementSubtheme } from './present-supplement'
 import { buildQuestionReading, QUESTION_READING_CAP } from './question-reading'
 import { isQuestionReadingType } from './reading-types'
@@ -71,10 +70,7 @@ export function tryGenerateGrammaireExerciseBlock(
     })
     return {
       instruction: exercise.consigne?.trim() || kind.instruction,
-      items: tcfExerciseItems(exercise, rng, config.tcfFormModes).map((item) => ({
-        ...item,
-        tcfExerciseId: exercise.id,
-      })),
+      items: grammarExerciseItems(exercise, rng, config.tcfFormModes),
       bankQuestionCap: quiSuisJeBankCap(parsed.kindId),
     }
   }
@@ -87,10 +83,7 @@ export function tryGenerateGrammaireExerciseBlock(
     })
     return {
       instruction: exercise.consigne?.trim() || kind.instruction,
-      items: tcfExerciseItems(exercise, rng, config.tcfFormModes).map((item) => ({
-        ...item,
-        tcfExerciseId: exercise.id,
-      })),
+      items: grammarExerciseItems(exercise, rng, config.tcfFormModes),
       bankQuestionCap: nationaliteBankCap(parsed.kindId),
     }
   }
@@ -103,10 +96,7 @@ export function tryGenerateGrammaireExerciseBlock(
     })
     return {
       instruction: exercise.consigne?.trim() || kind.instruction,
-      items: tcfExerciseItems(exercise, rng, config.tcfFormModes).map((item) => ({
-        ...item,
-        tcfExerciseId: exercise.id,
-      })),
+      items: grammarExerciseItems(exercise, rng, config.tcfFormModes),
       bankQuestionCap: provenanceBankCap(parsed.kindId),
     }
   }
@@ -119,10 +109,7 @@ export function tryGenerateGrammaireExerciseBlock(
     })
     return {
       instruction: exercise.consigne?.trim() || kind.instruction,
-      items: tcfExerciseItems(exercise, rng, config.tcfFormModes).map((item) => ({
-        ...item,
-        tcfExerciseId: exercise.id,
-      })),
+      items: grammarExerciseItems(exercise, rng, config.tcfFormModes),
       bankQuestionCap: familleBankCap(parsed.kindId),
     }
   }
@@ -130,10 +117,7 @@ export function tryGenerateGrammaireExerciseBlock(
     const ex = config.tcfExercise
     return {
       instruction: ex.consigne?.trim() || kind.instruction,
-      items: tcfExerciseItems(ex, rng, config.tcfFormModes).map((item) => ({
-        ...item,
-        tcfExerciseId: ex.id,
-      })),
+      items: grammarExerciseItems(ex, rng, config.tcfFormModes),
       bankQuestionCap: Math.max(ex.questions.length, 1),
     }
   }
@@ -147,9 +131,7 @@ export function tryGenerateGrammaireExerciseBlock(
     const exercise = buildQuestionReading({ typeId, rng, count: config.count })
     return {
       instruction: exercise.consigne ?? kind.instruction,
-      items: tcfExerciseItems(exercise, rng, config.tcfFormModes).map(item => ({
-        ...item, tcfExerciseId: exercise.id,
-      })),
+      items: grammarExerciseItems(exercise, rng, config.tcfFormModes),
       bankQuestionCap: QUESTION_READING_CAP,
     }
   }
@@ -167,9 +149,7 @@ export function tryGenerateGrammaireExerciseBlock(
     })
     if (exercise) return {
       instruction: exercise.consigne ?? kind.instruction,
-      items: tcfExerciseItems(exercise, rng, config.tcfFormModes).map((item) => ({
-        ...item, tcfExerciseId: exercise.id,
-      })),
+      items: grammarExerciseItems(exercise, rng, config.tcfFormModes),
       bankQuestionCap: communicationQuestionCap(parsed.subId, parsed.kindId),
     }
   }
@@ -217,10 +197,7 @@ export function tryGenerateGrammaireExerciseBlock(
 
   return {
     instruction,
-    items: tcfExerciseItems(exercise, rng, config.tcfFormModes).map((item) => ({
-      ...item,
-      tcfExerciseId: exercise.id,
-    })),
+    items: grammarExerciseItems(exercise, rng, config.tcfFormModes),
     bankQuestionCap: bank.length,
   }
 }

@@ -1,3 +1,6 @@
+import { shuffle, type Rng } from '@/math/rng'
+import type { MathItem } from '@/math/types'
+import { tcfExerciseItems } from '@/tcf/generate'
 import { countInlineBlanks } from '@/tcf/inline-blank'
 import type { TcfCompetence, TcfExercise, TcfQuestion, TcfTypeExercice } from '@/tcf/types'
 import type { GramExerciseKindId } from './kinds'
@@ -193,6 +196,60 @@ export function gramItemsToTcfExercise(opts: {
     support: { audios: padAudios([], 6) },
     questions,
   }
+}
+
+function hasCoAudio(exercise: TcfExercise): boolean {
+  if (exercise.competence !== 'CO') return false
+  const support = exercise.support as { audio?: string; audios?: string[] }
+  return [support.audio, ...(support.audios ?? [])].some((audio) => Boolean(audio?.trim()))
+}
+
+function regularGrammarQuestion(q: TcfQuestion, rng: Rng): MathItem {
+  if (q.type_reponse === 'qcm_texte') {
+    const choices = q.choix.filter((choice) => choice.texte)
+    const ordered = q.melanger === false ? choices : shuffle(rng, choices)
+    return {
+      layout: 'select',
+      prompt: q.enonce,
+      options: ordered.map((choice) => choice.texte),
+      answer: choices.filter((choice) => choice.correct).map((choice) => choice.texte).join(' · '),
+      ...(q.points != null ? { points: q.points } : {}),
+    }
+  }
+  return {
+    layout: 'text',
+    prompt: q.enonce,
+    answer: q.reponse_modele ?? '',
+    ...(q.points != null ? { points: q.points } : {}),
+  }
+}
+
+/** Garde le cadre audio TCF uniquement pour les CO qui ont une piste audio. */
+export function grammarExerciseItems(
+  exercise: TcfExercise,
+  rng: Rng,
+  formModes?: Array<TcfTypeReponse | undefined>,
+): MathItem[] {
+  if (hasCoAudio(exercise)) {
+    return tcfExerciseItems(exercise, rng, formModes).map((item) => ({
+      ...item,
+      tcfExerciseId: exercise.id,
+    }))
+  }
+  if (exercise.competence === 'CO') {
+    const items = exercise.questions.map((question) => regularGrammarQuestion(question, rng))
+    if (exercise.mots_banque?.length && items[0]) {
+      items[0] = {
+        ...items[0],
+        prompt: `Mots : ${exercise.mots_banque.join(' · ')}\n${items[0].prompt ?? ''}`,
+      }
+    }
+    return items
+  }
+  return tcfExerciseItems(exercise, rng, formModes).map((item) => ({
+    ...item,
+    tcfExerciseId: exercise.id,
+  }))
 }
 
 export function gramTcfCompetence(ex: TcfExercise): TcfCompetence {
