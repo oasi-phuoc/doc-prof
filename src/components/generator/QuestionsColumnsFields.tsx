@@ -113,6 +113,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
     isPhraseChart,
     isVocabLearn,
     isVocabPool,
+    isGramTheory,
     isGrammaireDomain,
     isGrammaireExercise,
     isLogique,

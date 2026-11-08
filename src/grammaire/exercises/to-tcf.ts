@@ -3,6 +3,7 @@ import type { MathItem } from '@/math/types'
 import { tcfExerciseItems } from '@/tcf/generate'
 import { countInlineBlanks } from '@/tcf/inline-blank'
 import type { TcfCompetence, TcfExercise, TcfQuestion, TcfTypeExercice } from '@/tcf/types'
+import { TCF_LETTRES } from '@/tcf/templates'
 import type { GramExerciseKindId } from './kinds'
 import type { GramBankItem } from './types'
 
@@ -204,7 +205,7 @@ function hasCoAudio(exercise: TcfExercise): boolean {
   return [support.audio, ...(support.audios ?? [])].some((audio) => Boolean(audio?.trim()))
 }
 
-function regularGrammarQuestion(q: TcfQuestion, rng: Rng): MathItem {
+function regularGrammarQuestion(q: TcfQuestion, rng: Rng, numero: number): MathItem {
   if (q.type_reponse === 'qcm_texte') {
     const choices = q.choix.filter((choice) => choice.texte)
     const ordered = q.melanger === false ? choices : shuffle(rng, choices)
@@ -213,6 +214,21 @@ function regularGrammarQuestion(q: TcfQuestion, rng: Rng): MathItem {
       prompt: q.enonce,
       options: ordered.map((choice) => choice.texte),
       answer: choices.filter((choice) => choice.correct).map((choice) => choice.texte).join(' · '),
+      ...(q.points != null ? { points: q.points } : {}),
+    }
+  }
+  if (q.type_reponse === 'qcm_image') {
+    const ordered = q.melanger === false ? q.choix : shuffle(rng, q.choix)
+    const choix = ordered.map((choice, index) => ({
+      lettre: TCF_LETTRES[index] ?? String(index + 1),
+      image: choice.image,
+      correct: choice.correct === true,
+    }))
+    const answer = choix.find((choice) => choice.correct)?.lettre ?? ''
+    return {
+      layout: 'tcf',
+      tcf: { kind: 'qcm', numero, enonce: q.enonce, mode: 'image', choix, answer },
+      answer,
       ...(q.points != null ? { points: q.points } : {}),
     }
   }
@@ -237,7 +253,7 @@ export function grammarExerciseItems(
     }))
   }
   if (exercise.competence === 'CO') {
-    const items = exercise.questions.map((question) => regularGrammarQuestion(question, rng))
+    const items = exercise.questions.map((question, index) => regularGrammarQuestion(question, rng, index + 1))
     if (exercise.mots_banque?.length && items[0]) {
       items[0] = {
         ...items[0],
