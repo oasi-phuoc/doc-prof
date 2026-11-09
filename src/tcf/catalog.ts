@@ -343,6 +343,15 @@ export function tcfTypeMeta(competence: TcfCompetence, typeExercice: TcfTypeExer
   return TCF_TYPES.find((m) => m.competence === competence && m.typeExercice === typeExercice)
 }
 
+export function tcfTypeReponses(
+  competence: TcfCompetence,
+  typeExercice: TcfTypeExercice,
+): readonly TcfTypeReponse[] {
+  const meta = tcfTypeMeta(competence, typeExercice)
+  if (competence === 'CO' && meta) return ALL_REPONSES
+  return meta?.reponses ?? []
+}
+
 /**
  * Emplacement du générateur : une compétence, et pour la CO le numéro
  * d’exercice annoncé dans l’audio (« Exercice 1 »…). Le contenu vient de la banque.

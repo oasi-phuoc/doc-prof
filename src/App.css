@@ -4427,8 +4427,8 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-question.is-audio-frame .tcf-enonce{font-weight:600;font-size:.95em;line-height:1.3}
 .tcf-question.is-audio-frame .tcf-qcm-texte{gap:3px}
 .tcf-question.is-audio-frame .tcf-qcm-texte li{gap:6px;font-size:.92em;line-height:1.25}
-/* Trois moyens : plusieurs questions dans le même cadre. */
-.tcf-audio-cadre-body{gap:8px}
+/* Plusieurs questions partageant le même audio. */
+.tcf-audio-cadre-body{gap:23px}
 .tcf-audio-cadre-q{position:relative;display:flex;flex-direction:column;gap:4px}
 /* Plusieurs questions : les 3 formats à gauche, alignés sur le haut des lettres. */
 .a4-frame .worksheet-sheet .tcf-audio-cadre-q > .draft-grid-chip-margin.tcf-margin-form-icons{

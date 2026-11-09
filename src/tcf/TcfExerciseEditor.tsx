@@ -11,7 +11,13 @@ import {
   tcfAudioHasTag,
   type TcfAudioEntry,
 } from './audio-bank'
-import { TCF_TYPES, tcfDefaultTypeReponse, tcfSlotByTypeId, tcfTypeMeta } from './catalog'
+import {
+  TCF_TYPES,
+  tcfDefaultTypeReponse,
+  tcfSlotByTypeId,
+  tcfTypeMeta,
+  tcfTypeReponses,
+} from './catalog'
 import { AudioField, ImageField, LinesField, NumberField, TextField } from './fields'
 import {
   limitTcfCeQuestions,
@@ -357,7 +363,7 @@ function SupportEditor({
         ...question,
         audio: question.audio ?? Math.min(index + 1, ex.support.audios.length),
       }))
-      const reponses = TCF_TYPES.find((type) => type.typeExercice === 'six_courts')?.reponses ?? []
+      const reponses = tcfTypeReponses(ex.competence, ex.type_exercice)
       const setQuestions = (next: typeof questions) =>
         set({
           ...ex,
@@ -1204,6 +1210,9 @@ export function TcfExerciseEditor({
   const mediaErrors = mediaCheck && mediaCheck.for === current ? mediaCheck.errors : null
   const copied = copiedFor != null && copiedFor === current
   const meta = current ? tcfTypeMeta(current.competence, current.type_exercice) : undefined
+  const questionReponses = current
+    ? tcfTypeReponses(current.competence, current.type_exercice)
+    : []
   const validation = useMemo(
     () =>
       current
@@ -1470,7 +1479,7 @@ export function TcfExerciseEditor({
                   key={i}
                   index={i}
                   question={q}
-                  reponses={meta?.reponses ?? []}
+                  reponses={questionReponses}
                   audioCount={audioCount}
                   onChange={(next) => set({ ...exercise, questions: exercise.questions.map((x, k) => (k === i ? next : x)) })}
                   onRemove={() => set({ ...exercise, questions: exercise.questions.filter((_, k) => k !== i) })}
