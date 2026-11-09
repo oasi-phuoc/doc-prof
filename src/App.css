@@ -4455,26 +4455,29 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-qcm-images.is-4{grid-template-columns:repeat(4,1fr)}
 .tcf-qcm-images li{display:flex;flex-direction:column;align-items:center;gap:4px}
 .tcf-qcm-image-foot{display:flex;align-items:center;gap:6px}
-/* CO objets A1 : 2 images / ligne, 5ᵉ centrée ; Oui / Non sous chaque image. */
+/* CO objets : cadres Objet A–E, image à gauche et réponses alignées à droite. */
 .tcf-images-cocher{
   list-style:none;margin:0;padding:0;width:100%;
   display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 14px;
   justify-items:stretch
 }
-.tcf-images-cocher li{
-  position:relative;display:flex;flex-direction:column;align-items:center;gap:6px;
-  margin-top:16px;padding:12px 8px 8px;border:1.5px solid var(--ink);box-sizing:border-box;min-width:0;width:100%
+.tcf-images-cocher li.tcf-objet-frame{
+  min-width:0;width:100%;margin:0;padding:0;gap:0;
+  border-color:var(--purple);break-inside:avoid
 }
 .tcf-images-cocher li:last-child:nth-child(odd){
   grid-column:1 / -1;justify-self:center;width:calc((100% - 14px) / 2);max-width:100%
 }
-.tcf-images-cocher li.is-correct{border-color:var(--green)}
-.tcf-images-cocher li.is-wrong{border-color:var(--red)}
-.tcf-images-cocher .tcf-image{width:100%;height:38mm;object-fit:contain}
-.tcf-images-cocher .tcf-audio-frame-tag{left:8px}
-.tcf-yn{display:flex;align-items:center;justify-content:center;gap:14px;width:100%}
-.tcf-yn-option{display:inline-flex;align-items:center;gap:5px}
+.tcf-objet-frame .tcf-audio-frame-head{padding-left:2mm;padding-right:2mm;gap:4px;font-size:9pt;letter-spacing:0}
+.tcf-objet-body{
+  display:grid;grid-template-columns:minmax(0,1fr) 22mm;align-items:center;gap:2mm;
+  min-width:0;padding:2mm
+}
+.tcf-objet-body .tcf-image{width:100%;height:36mm;max-height:36mm;object-fit:contain}
+.tcf-yn{display:flex;flex-direction:column;gap:3mm;width:100%}
+.tcf-yn-option{display:grid;grid-template-columns:minmax(0,1fr) 7mm;align-items:center;gap:1mm;width:100%}
 .tcf-yn-label{font-weight:700;font-size:.95em}
+.tcf-yn-option .tcf-case{justify-self:center}
 .tcf-score-note{margin:0;font-size:.85em;color:var(--muted)}
 .tcf-lignes{display:flex;flex-direction:column;gap:2px;padding-bottom:10px}
 .tcf-ligne{height:9mm;min-height:9mm}
@@ -5053,7 +5056,6 @@ textarea.pill-input,
 @media print{
   .tcf-sms-bubble{background:#fff!important}
   .tcf-chat-row.is-examinateur .tcf-chat-bubble{-webkit-print-color-adjust:exact;print-color-adjust:exact}
-  .tcf-images-cocher li.is-correct,.tcf-images-cocher li.is-wrong{border-color:#000!important}
 }
 
 /* —— Topbar : outils icônes (couleur, pied, mode libre, déconnexion) —— */

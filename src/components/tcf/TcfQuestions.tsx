@@ -557,7 +557,7 @@ export function GrilleOral({ grille }: { grille: TcfGrille }) {
 
 const OBJET_LETTRES = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'] as const
 
-/** CO objets A1 : 5 images cadrées (2 / ligne, 5ᵉ centrée), pastille Objet A–E, Oui / Non. */
+/** CO objets A1 : un cadre Objet A–E avec image et choix Oui / Non. */
 export function ImagesACocher({
   numero,
   consigne,
@@ -577,27 +577,26 @@ export function ImagesACocher({
       {consigne ? <Enonce numero={numero} enonce={consigne} /> : null}
       <ul className="tcf-images-cocher">
         {images.map((img, i) => (
-          <li
-            key={img.id}
-            className={show ? (img.correct ? 'is-correct' : 'is-wrong') : undefined}
-          >
-            <span className="tcf-audio-frame-tag">Objet {OBJET_LETTRES[i] ?? i + 1}</span>
-            <TcfImage src={img.image} alt={`Objet ${OBJET_LETTRES[i] ?? i + 1}`} />
-            <div className="tcf-yn" aria-label={show ? (img.correct ? 'Oui' : 'Non') : undefined}>
-              <span className="tcf-yn-option">
-                <span
-                  className={`tcf-case is-large${show && img.correct ? ' is-filled' : ''}`}
-                  aria-hidden
-                />
-                <span className="tcf-yn-label">Oui</span>
-              </span>
-              <span className="tcf-yn-option">
-                <span
-                  className={`tcf-case is-large${show && !img.correct ? ' is-filled' : ''}`}
-                  aria-hidden
-                />
-                <span className="tcf-yn-label">Non</span>
-              </span>
+          <li key={img.id} className="tcf-question is-audio-frame tcf-objet-frame">
+            <AudioFrameHead label={`Objet ${OBJET_LETTRES[i] ?? i + 1}`} />
+            <div className="tcf-objet-body">
+              <TcfImage src={img.image} alt={`Objet ${OBJET_LETTRES[i] ?? i + 1}`} />
+              <div className="tcf-yn" aria-label={show ? (img.correct ? 'Oui' : 'Non') : undefined}>
+                <span className="tcf-yn-option">
+                  <span className="tcf-yn-label">Oui</span>
+                  <span
+                    className={`tcf-case is-large${show && img.correct ? ' is-filled' : ''}`}
+                    aria-hidden
+                  />
+                </span>
+                <span className="tcf-yn-option">
+                  <span className="tcf-yn-label">Non</span>
+                  <span
+                    className={`tcf-case is-large${show && !img.correct ? ' is-filled' : ''}`}
+                    aria-hidden
+                  />
+                </span>
+              </div>
             </div>
           </li>
         ))}
