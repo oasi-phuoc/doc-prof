@@ -1,0 +1,40 @@
+# ClairFLE — jouer avec la classe
+
+Le mode interactif reprend le prototype `35934ad`, fusionné avec le `main` actuel puis adapté aux demandes de classe. Il remplace l’ancien jeu dans le générateur. Les fiches et leur format de sauvegarde v1 restent compatibles.
+
+Depuis le générateur : **Jouer avec la classe**, puis **Commencer la séance**. Depuis la bibliothèque : **Jouer**. `/interactif/demo` propose dix questions de la banque réelle avec un compte autorisé.
+
+## Installation et démarrage
+
+```sh
+npm ci --cache /tmp/clairfle-npm-cache --no-audit --no-fund
+npm run dev -- --host 0.0.0.0 --port 5180
+```
+
+Le cache explicite permet une installation dans les environnements où le dossier personnel est en lecture seule. Node 24.22 et npm 11.9 ont été utilisés. Les variables applicatives sont décrites dans `.env.example` ; ne pas placer de valeur confidentielle dans un fichier versionné.
+
+## Rituel et réglages
+
+Les six cartes pastel A–F utilisent des lettres et des formes de même taille. La palette se configure en grille de trois colonnes et deux rangées, comme le jeu et les cartes imprimées. Changer une forme échange sa place avec la forme existante pour conserver six repères distincts.
+
+Le minuteur démarre pendant **Je réfléchis**, à 30 secondes par défaut. Avec un audio, il attend la fin de l’écoute. Il se règle et se désactive avant ou pendant la séance. Il ne révèle rien et ne passe jamais automatiquement à la suite. La pause et le masquage de l’onglet suspendent le minuteur et l’audio.
+
+Pour un même enregistrement, deux questions au maximum sont retenues de façon reproductible parmi les questions cochées. Deux QCM sont projetés ensemble : A–C pour la première question, D–F pour la seconde. S’il y avait plus de trois choix, seuls deux distracteurs source sont conservés avec la bonne réponse ; cette adaptation est indiquée dans la préparation. Aucun faux choix n’est ajouté. Les productions ouvertes restent guidées par l’enseignant.
+
+Les QCM TCF privilégient les variantes en images de la banque, même si la fiche papier avait sélectionné la forme à écrire. Le document à lire est ouvert directement, avec réglage de police. Les images de réponse restent des images au corrigé.
+
+## Vérification reproductible
+
+```sh
+npm test
+npm run build
+npm run lint
+PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run test:interactive:browser
+PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run test:interactive:classroom
+```
+
+Chromium système évite tout téléchargement supplémentaire. À défaut, installer Chromium avec Playwright. `test:interactive:a4` compare à un checkout témoin sur le port 5181 (`A4_BASELINE_URL`). Le témoin de cette livraison est `af544f26`, le `main` avant fusion. `test:interactive:saved` utilise une instance sur 5182 démarrée avec `VITE_FICHES_API_URL=http://127.0.0.1:5182/__test_api` ; l’API est interceptée, aucune fiche réelle n’est modifiée.
+
+Les tests navigateur avec horloge simulée valident le minuteur ; la suite de démonstration vérifie également une lecture réelle dans Chromium. Les événements tactiles simulés ne constituent pas un essai sur ENI physique.
+
+Voir [acceptation](checklist-acceptation.md), [architecture](architecture.md), [audit](audit-compatibilite.md), [sécurité](audit-securite.md), [livraison](livraison-classe.md) et [captures](design-system.md). Le cahier V4 décrit une cible plus large : les fonctions P1/P2 et toutes les familles du catalogue ne sont pas annoncées terminées.

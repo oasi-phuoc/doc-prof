@@ -1,0 +1,162 @@
+import { useEffect, useRef, useState } from 'react'
+import { IconButton } from './Icons'
+
+export function SafeImage({
+  src,
+  alt,
+  zoom = false,
+  retryable = true,
+}: {
+  src: string
+  alt: string
+  zoom?: boolean
+  retryable?: boolean
+}) {
+  const [attempt, setAttempt] = useState(0)
+  const [failed, setFailed] = useState(false)
+  const [open, setOpen] = useState(false)
+  const [scale, setScale] = useState(1)
+  const dialog = useRef<HTMLDialogElement>(null)
+  useEffect(() => {
+    if (open) dialog.current?.showModal()
+    else dialog.current?.close()
+  }, [open])
+  if (failed)
+    return (
+      <span className="ci-media-error" role="status">
+        <span>Image indisponible : {alt}</span>
+        {retryable && (
+          <button
+            onClick={() => {
+              setFailed(false)
+              setAttempt((n) => n + 1)
+            }}
+          >
+            Réessayer
+          </button>
+        )}
+      </span>
+    )
+  const img = (
+    <img
+      key={`${src}:${attempt}`}
+      src={src}
+      alt={alt}
+      onError={() => setFailed(true)}
+    />
+  )
+  return (
+    <>
+      {zoom ? (
+        <button
+          className="ci-image-zoom"
+          aria-label={`Agrandir : ${alt}`}
+          onClick={() => {
+            setScale(1)
+            setOpen(true)
+          }}
+        >
+          {img}
+        </button>
+      ) : (
+        img
+      )}
+      {zoom && (
+        <dialog
+          ref={dialog}
+          className="ci-image-dialog"
+          onCancel={() => setOpen(false)}
+          onClose={() => setOpen(false)}
+        >
+          <div className="ci-toolbar">
+            <span>{alt}</span>
+            <IconButton
+              icon="minus"
+              label="Réduire l’image"
+              disabled={scale <= 1}
+              onClick={() => setScale((s) => Math.max(1, s - 0.5))}
+            />
+            <IconButton
+              icon="plus"
+              label="Agrandir l’image"
+              disabled={scale >= 3}
+              onClick={() => setScale((s) => Math.min(3, s + 0.5))}
+            />
+            <IconButton
+              icon="close"
+              label="Fermer l’image"
+              onClick={() => setOpen(false)}
+            />
+          </div>
+          <div
+            className="ci-image-pan"
+            tabIndex={0}
+            aria-label="Image agrandie, utilisez les flèches pour vous déplacer"
+          >
+            <img src={src} alt={alt} style={{ width: `${scale * 100}%` }} />
+          </div>
+        </dialog>
+      )}
+    </>
+  )
+}
+
+export type AudioStatus = 'waiting' | 'playing' | 'ended' | 'error'
+export function AudioPlayer({
+  src,
+  paused = false,
+  onStatus,
+}: {
+  src: string
+  paused?: boolean
+  onStatus?: (status: AudioStatus) => void
+}) {
+  const [failed, setFailed] = useState(false)
+  const [attempt, setAttempt] = useState(0)
+  const audio = useRef<HTMLAudioElement>(null)
+  useEffect(() => {
+    if (paused) audio.current?.pause()
+  }, [paused])
+  useEffect(() => {
+    const player = audio.current
+    return () => player?.pause()
+  }, [src, attempt])
+  return (
+    <div className="ci-audio">
+      <span>Écouter le document</span>
+      {failed ? (
+        <div className="ci-media-error" role="status">
+          <p>
+            Piste audio indisponible. Vous pouvez réessayer ou passer cette
+            question.
+          </p>
+          <button
+            onClick={() => {
+              setFailed(false)
+              setAttempt((n) => n + 1)
+              onStatus?.('waiting')
+            }}
+          >
+            Réessayer l’audio
+          </button>
+        </div>
+      ) : (
+        <audio
+          ref={audio}
+          key={`${src}:${attempt}`}
+          controls
+          preload="metadata"
+          src={src}
+          onPlay={() => onStatus?.('playing')}
+          onEnded={() => onStatus?.('ended')}
+          onError={() => {
+            setFailed(true)
+            onStatus?.('error')
+          }}
+        >
+          Votre navigateur ne permet pas la lecture audio.
+        </audio>
+      )}
+    </div>
+  )
+}
