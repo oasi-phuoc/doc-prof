@@ -1,16 +1,18 @@
-# Les cartes A–F
+# Les six cartes de la classe
 
-| Carte | Couleur proposée | Symbole |
+Disposition fixe : **A B C** en première rangée, **D E F** en seconde rangée. Cette disposition s’applique au jeu, à la palette de réglage et aux six cartes d’une feuille A4.
+
+| Carte | Couleur par défaut | Forme par défaut |
 |---|---|---|
-| A | Jaune `#F4C84B` | Cercle |
-| B | Rouge `#CC3456` | Carré |
-| C | Orange `#E98C2F` | Triangle |
-| D | Bleu `#2463C5` | Losange |
-| E | Vert `#188268` | Étoile |
-| F | Violet `#7643D6` | Croix |
+| A | Jaune pastel | Cercle |
+| B | Rose pastel | Carré |
+| C | Orange pastel | Triangle |
+| D | Bleu pastel | Losange |
+| E | Vert pastel | Étoile |
+| F | Violet pastel | Croix |
 
-La palette s’applique à toutes les questions et à l’impression. Avec trois propositions, seules A/B/C sont affichées. Les couleurs identifient les choix ; elles ne signifient pas « juste » ou « faux ».
+Lettres et formes noires de même taille sur les teintes pastel. Les couleurs personnalisées utilisent une encre contrastée. Les formes restent toutes distinctes : un changement échange les formes entre deux cartes. La version économie d’encre imprime les repères en noir sur blanc.
 
-Réfléchir → lever sa carte au signal → un élève choisit au tableau → discussion → l’enseignant révèle → l’enseignant passe à la suite. Il n’y a aucun passage automatique. Les cartes physiques ne sont pas numérisées et leurs votes ne sont pas comptés.
+Une question peut avoir de deux à six réponses réelles. Aucune réponse supplémentaire n’est inventée pour remplir les cartes. Avec deux questions d’un même audio, la première utilise A–C et la seconde D–F. Chacun des deux choix est demandé avant la discussion et les deux corrections restent indépendantes.
 
-Dans la préparation, imprimer de 1 à 40 jeux : une feuille A4 portrait par jeu, grille 2 × 3, contours pour la découpe, lettre et symbole sur chaque carte. Le mode économie d’encre garde un fond blanc, des lettres noires et un contour coloré ; même en noir et blanc, les six lettres et formes restent distinctes. Plastification facultative.
+Le rituel : réflexion, signal pour lever les cartes, choix au tableau, discussion, révélation par l’enseignant. Une couleur ne représente jamais « juste » ou « faux ». Le jugement est affiché séparément et aucun vote physique n’est comptabilisé automatiquement.

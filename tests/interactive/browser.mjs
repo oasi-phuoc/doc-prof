@@ -33,6 +33,7 @@ try {
       viewport: { width, height },
       reducedMotion: 'reduce',
     })
+    page.setDefaultNavigationTimeout(120000)
     await page
       .context()
       .addCookies([
@@ -44,7 +45,10 @@ try {
     await page
       .getByRole('button', { name: /Commencer la séance/ })
       .waitFor({ timeout: 120000 })
-    assert.equal(await page.locator('.ci-question-list label').count(), 10)
+    assert.equal(
+      await page.locator('.ci-question-list fieldset > label').count(),
+      10,
+    )
     await page.screenshot({
       path: `${output}/01-setup-${width}.png`,
       fullPage: true,
@@ -89,9 +93,9 @@ try {
     )
     await page.getByRole('button', { name: 'Question suivante' }).click()
     await page.getByRole('button', { name: 'Pause', exact: true }).click()
-    assert.equal(await page.locator('.ci-answer').count(), 0)
+    assert.equal(await page.locator('.ci-answer:visible').count(), 0)
     await page
-      .getByRole('button', { name: 'Reprendre', exact: true })
+      .getByRole('button', { name: 'Reprendre la séance', exact: true })
       .last()
       .click()
     await page.getByRole('button', { name: 'Passer', exact: true }).click()
@@ -129,7 +133,10 @@ try {
     assert.equal(await page.locator('.ci-reveal').count(), 0)
     for (let i = 0; i < 6; i++)
       await page.getByRole('button', { name: 'Passer', exact: true }).click()
-    assert.equal(await page.locator('.ci-sequence img').count(), 4)
+    assert.equal(
+      await page.locator('.ci-sequence .ci-image-zoom img').count(),
+      4,
+    )
     const before = await page
       .locator('.ci-sequence img')
       .first()

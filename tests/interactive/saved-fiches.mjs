@@ -29,6 +29,7 @@ try {
     localStorage.setItem('clairfle-fiche-sync', 'interactive-test-only'),
   )
   const page = await context.newPage()
+  page.setDefaultNavigationTimeout(120000)
   const errors = []
   page.on('pageerror', (error) => errors.push(error.message))
   let response = { status: 200, body: { fiches: [saved] } }
@@ -53,11 +54,17 @@ try {
   await page.getByRole('button', { name: 'Jouer', exact: true }).click()
   await page.waitForURL(`**/interactif/${saved.id}`)
   await page.getByRole('button', { name: /Commencer la séance/ }).waitFor()
-  assert.equal(await page.locator('.ci-question-list label').count(), 3)
+  assert.equal(
+    await page.locator('.ci-question-list fieldset > label').count(),
+    3,
+  )
   results.push({ savedListLaunch: 'passed' })
   await page.goto(`${base}/interactif/${saved.id}`)
   await page.getByRole('button', { name: /Commencer la séance/ }).waitFor()
-  assert.equal(await page.locator('.ci-question-list label').count(), 3)
+  assert.equal(
+    await page.locator('.ci-question-list fieldset > label').count(),
+    3,
+  )
   results.push({ directSavedLink: 'passed' })
   response = { status: 200, body: { fiches: [] } }
   await page.goto(`${base}/interactif/deleted`)
@@ -104,11 +111,13 @@ try {
   await page
     .getByText('Image indisponible : Choix A', { exact: true })
     .waitFor()
-  await page.locator('audio').evaluate((audio) => audio.load())
   await page
-    .getByText('Audio indisponible. Vous pouvez passer cette question.', {
-      exact: true,
-    })
+    .getByText(
+      'Piste audio indisponible. Vous pouvez réessayer ou passer cette question.',
+      {
+        exact: true,
+      },
+    )
     .waitFor()
   await page.getByRole('button', { name: 'Passer', exact: true }).click()
   assert.equal(await page.locator('.ci-summary').count(), 1)

@@ -1,7 +1,9 @@
-# Bascule progressive
+# Remplacement de l’ancien jeu
 
-La nouvelle expérience est indépendante de `GameBoard` et de `PlayRound`. Aucun composant de l’ancien moteur n’est importé dans `src/interactive`.
+La branche du prototype `35934ad` a été fusionnée dans le `main` actuel par un véritable commit de merge. Les évolutions de `main` sont conservées.
 
-Pour ce premier jalon, un bouton **Jouer avec la classe** dans le générateur et un bouton **Jouer** dans la bibliothèque conduisent au nouveau module. L’ancien affichage reste disponible pendant la revue, comme prévu avant la bascule finale. Les banques, les générateurs, les recettes v1 et le rendu A4 restent les mêmes.
+Le générateur propose désormais une seule entrée **Jouer avec la classe**, vers `src/interactive`. Le toggle Fiche/Jeu, les scores et chronomètres de l’ancien affichage, ainsi que les imports `GameBoard`, `GameSetupBar` et `GameTimer`, sont retirés. Le dossier `src/components/game-board` et ses styles inutilisés sont supprimés.
 
-Étapes restantes : revue visuelle, extension testée par familles, remédiation de sécurité, essais ENI, retrait des anciennes entrées et du code mort, puis bascule validée. Le premier prototype est conservé sur une branche dédiée ; le remplacement général n’est pas présenté comme terminé.
+`ResultPanel` conserve son aperçu et ses documents d’impression. Les banques imprimables de `src/jeux`, les recettes `FicheRecipe` v1, les fiches enregistrées et les actions d’impression sont conservées. Le nouveau jeu ne modifie pas leurs générateurs.
+
+La généralisation à toutes les familles et les fonctions P1/P2 du cahier V4 restent des travaux distincts. Le retrait du legacy ne vaut pas validation pédagogique ou matérielle de l’ensemble du catalogue.

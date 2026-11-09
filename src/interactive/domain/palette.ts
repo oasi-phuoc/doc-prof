@@ -1,47 +1,58 @@
 export const PALETTE = [
   {
     letter: 'A',
-    color: '#F4C84B',
+    color: '#F6E5A2',
     ink: '#182238',
     symbol: '●',
     shape: 'cercle',
   },
   {
     letter: 'B',
-    color: '#CC3456',
-    ink: '#FFFFFF',
+    color: '#F2C3D0',
+    ink: '#182238',
     symbol: '■',
     shape: 'carré',
   },
   {
     letter: 'C',
-    color: '#E98C2F',
+    color: '#F7D3B1',
     ink: '#182238',
     symbol: '▲',
     shape: 'triangle',
   },
   {
     letter: 'D',
-    color: '#2463C5',
-    ink: '#FFFFFF',
+    color: '#BFD7F2',
+    ink: '#182238',
     symbol: '◆',
     shape: 'losange',
   },
   {
     letter: 'E',
-    color: '#188268',
-    ink: '#FFFFFF',
+    color: '#BDE3D5',
+    ink: '#182238',
     symbol: '★',
     shape: 'étoile',
   },
   {
     letter: 'F',
-    color: '#7643D6',
-    ink: '#FFFFFF',
+    color: '#D6C9F1',
+    ink: '#182238',
     symbol: '✚',
     shape: 'croix',
   },
 ] as const
+
+export const SHAPES = [
+  { id: 'circle', label: 'Cercle' },
+  { id: 'square', label: 'Carré' },
+  { id: 'triangle', label: 'Triangle' },
+  { id: 'diamond', label: 'Losange' },
+  { id: 'star', label: 'Étoile' },
+  { id: 'cross', label: 'Croix' },
+] as const
+export type ShapeId = (typeof SHAPES)[number]['id']
+export const defaultShapes: ShapeId[] = SHAPES.map((s) => s.id)
 
 /** Keep letters readable when a teacher changes the shared palette. */
 export function inkForColor(color: string): string {

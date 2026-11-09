@@ -27,6 +27,7 @@ export type Question = {
   mode: 'choice' | 'oral' | 'sequence'
   choices: Choice[]
   compatibility: Exclude<Compatibility, 'unsupported'>
+  hints?: string[]
 }
 export type Correction = { choiceId?: string; text: string }
 export type Issue = { source: string; reason: string }
@@ -36,9 +37,15 @@ export type Game = {
   questions: Question[]
   corrections: Record<string, Correction>
   issues: Issue[]
+  rounds?: Round[]
 }
+export type Round = { id: string; questionIds: string[]; audio?: string }
 export type Phase =
-  'thinking' | 'cards-up' | 'selected' | 'discussion' | 'revealed'
+  | 'thinking'
+  | 'cards-up'
+  | 'selected'
+  | 'discussion'
+  | 'revealed'
 export type Attempt = {
   questionId: string
   selected?: string
@@ -51,14 +58,15 @@ export type Session = {
   index: number
   phase: Phase
   selected?: string
+  selections: Record<string, string>
   paused: boolean
   finished: boolean
   history: Attempt[]
 }
 export type Action =
   | { type: 'CARDS_UP' }
-  | { type: 'SELECT'; choiceId: string }
+  | { type: 'SELECT'; choiceId: string; questionId?: string }
   | { type: 'DISCUSS' }
   | { type: 'REVEAL' }
-  | { type: 'ASSESS'; value: 'acquired' | 'retry' }
+  | { type: 'ASSESS'; value: 'acquired' | 'retry'; questionId?: string }
   | { type: 'NEXT' | 'PREVIOUS' | 'SKIP' | 'PAUSE' | 'RESUME' }

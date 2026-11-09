@@ -1,8 +1,15 @@
 import { useState, type CSSProperties } from 'react'
 import { GeometryFigure } from '@/components/math/GeometryFigure'
-import { PALETTE, inkForColor } from '../domain/palette'
+import {
+  PALETTE,
+  defaultShapes,
+  inkForColor,
+  type ShapeId,
+} from '../domain/palette'
 import type { Phase, Question } from '../domain/types'
-import { AudioPlayer, SafeImage } from './Media'
+import { SafeImage } from './Media'
+import { CardBadge } from './CardBadge'
+import { IconButton } from './Icons'
 
 /** Only public question data enters this projection component. */
 export function QuestionStage({
@@ -10,41 +17,29 @@ export function QuestionStage({
   phase,
   selected,
   colors,
+  shapes = defaultShapes,
+  slotOffset = 0,
   onSelect,
 }: {
   q: Question
   phase: Phase
   selected?: string
   colors: string[]
+  shapes?: ShapeId[]
+  slotOffset?: number
   onSelect: (id: string) => void
 }) {
-  const phaseLabels = {
-    thinking: 'Je réfléchis',
-    'cards-up': 'Levez vos cartes',
-    selected: 'Un choix au tableau',
-    discussion: 'Discutons de la réponse',
-    revealed: 'La correction',
-  }
   return (
     <>
       <section className="ci-question">
-        <p className="ci-phase" role="status">
-          {phaseLabels[phase]}
-        </p>
         <h1>{q.prompt}</h1>
-        {q.context && (
-          <details className="ci-context">
-            <summary>Lire le document</summary>
-            <p>{q.context}</p>
-          </details>
-        )}
+        {q.context && <ReadingDocument text={q.context} />}
         {q.mode === 'sequence' && (
           <details className="ci-full-instruction">
             <summary>Consigne complète</summary>
             <p>{q.instruction}</p>
           </details>
         )}
-        {q.audio && <AudioPlayer key={q.audio} src={q.audio} />}
         {q.figure && (
           <div className="ci-figure">
             <GeometryFigure type={q.figure.type} dims={q.figure.dims} />
@@ -53,7 +48,12 @@ export function QuestionStage({
         {q.mode !== 'sequence' && !!q.images.length && (
           <div className="ci-stimulus-images">
             {q.images.map((image, i) => (
-              <SafeImage key={image} src={image} alt={`Document ${i + 1}`} />
+              <SafeImage
+                key={image}
+                src={image}
+                alt={`Document ${i + 1}`}
+                zoom
+              />
             ))}
           </div>
         )}
@@ -64,7 +64,8 @@ export function QuestionStage({
           aria-label="Choix de réponse"
         >
           {q.choices.map((choice, i) => {
-            const palette = PALETTE[i]!
+            const slot = slotOffset + i
+            const palette = PALETTE[slot]!
             const chosen = selected === choice.id
             return (
               <button
@@ -72,23 +73,22 @@ export function QuestionStage({
                 className={`ci-answer${chosen ? ' ci-chosen' : ''}`}
                 style={
                   {
-                    '--card-color': colors[i],
-                    '--card-ink': inkForColor(colors[i]!),
+                    '--card-color': colors[slot],
+                    '--card-ink': inkForColor(colors[slot]!),
                   } as CSSProperties
                 }
                 disabled={phase !== 'cards-up' && phase !== 'selected'}
                 aria-pressed={chosen}
                 onClick={() => onSelect(choice.id)}
               >
-                <span className="ci-answer-badge">
-                  <b>{palette.letter}</b>
-                  <span aria-label={palette.shape}>{palette.symbol}</span>
-                </span>
+                <CardBadge letter={palette.letter} shape={shapes[slot]!} />
                 <span className="ci-answer-content">
                   {choice.image && (
                     <SafeImage
+                      key={choice.image}
                       src={choice.image}
                       alt={`Choix ${palette.letter}`}
+                      retryable={false}
                     />
                   )}
                   {choice.text && <span>{choice.text}</span>}
@@ -134,7 +134,7 @@ function Sequence({ question }: { question: Question }) {
       <div className="ci-sequence">
         {images.map((image, i) => (
           <div key={image.index}>
-            <SafeImage src={image.src} alt={`Scène ${image.index + 1}`} />
+            <SafeImage src={image.src} alt={`Scène ${image.index + 1}`} zoom />
             <div className="ci-toolbar">
               <button
                 aria-label={`Déplacer la scène ${image.index + 1} à gauche`}
@@ -157,5 +157,32 @@ function Sequence({ question }: { question: Question }) {
       </div>
       <p>Aucune note automatique pour cette activité orale.</p>
     </>
+  )
+}
+
+function ReadingDocument({ text }: { text: string }) {
+  const [size, setSize] = useState(24)
+  return (
+    <section className="ci-context" aria-label="Document à lire">
+      <div className="ci-document-toolbar">
+        <span>Document à lire</span>
+        <div className="ci-toolbar">
+          <IconButton
+            icon="minus"
+            label="Réduire le texte du document"
+            disabled={size <= 18}
+            onClick={() => setSize((s) => s - 2)}
+          />
+          <output aria-label="Taille du texte">{size}</output>
+          <IconButton
+            icon="plus"
+            label="Agrandir le texte du document"
+            disabled={size >= 40}
+            onClick={() => setSize((s) => s + 2)}
+          />
+        </div>
+      </div>
+      <p style={{ fontSize: `${size}px` }}>{text}</p>
+    </section>
   )
 }

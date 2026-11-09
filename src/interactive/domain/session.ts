@@ -1,4 +1,5 @@
 import type { Action, Game, Session } from './types'
+import { questionsForRound, roundsFor } from './plan'
 
 export function startSession(game: Game): Session {
   return {
@@ -8,6 +9,7 @@ export function startSession(game: Game): Session {
     paused: false,
     finished: false,
     history: [],
+    selections: {},
   }
 }
 
@@ -21,18 +23,34 @@ export function transition(
   if (action.type === 'PAUSE') return { ...state, paused: true }
   if (action.type === 'RESUME') return { ...state, paused: false }
   if (state.paused) return state
-  const question = game.questions[state.index]
+  const questions = questionsForRound(game, state.index)
+  const question = questions[0]
+  const count = roundsFor(game).length
   if (!question) return state
   switch (action.type) {
     case 'CARDS_UP':
       return state.phase === 'thinking'
         ? { ...state, phase: 'cards-up' }
         : state
-    case 'SELECT':
-      return (state.phase === 'cards-up' || state.phase === 'selected') &&
-        question.choices.some((c) => c.id === action.choiceId)
-        ? { ...state, selected: action.choiceId, phase: 'selected' }
-        : state
+    case 'SELECT': {
+      const target = questions.find(
+        (q) => q.id === (action.questionId ?? question.id),
+      )
+      if (
+        !['cards-up', 'selected'].includes(state.phase) ||
+        !target?.choices.some((c) => c.id === action.choiceId)
+      )
+        return state
+      const selections = { ...state.selections, [target.id]: action.choiceId }
+      return {
+        ...state,
+        selections,
+        selected: selections[question.id],
+        phase: questions.every((q) => q.mode !== 'choice' || selections[q.id])
+          ? 'selected'
+          : 'cards-up',
+      }
+    }
     case 'DISCUSS':
       return state.phase === 'selected' ||
         (question.mode !== 'choice' && state.phase === 'cards-up')
@@ -40,21 +58,28 @@ export function transition(
         : state
     case 'REVEAL': {
       if (state.phase !== 'discussion') return state
-      const correction = game.corrections[question.id]
-      const attempt = {
-        questionId: question.id,
-        selected: state.selected,
-        correct:
-          question.mode === 'choice' && correction?.choiceId && state.selected
-            ? state.selected === correction.choiceId
-            : undefined,
-      }
+      const attempts = questions.map((q) => {
+        const selected =
+          state.selections[q.id] ??
+          (q.id === question.id ? state.selected : undefined)
+        const correctId = game.corrections[q.id]?.choiceId
+        return {
+          questionId: q.id,
+          selected,
+          correct:
+            q.mode === 'choice' && correctId && selected
+              ? selected === correctId
+              : undefined,
+        }
+      })
       return {
         ...state,
         phase: 'revealed',
         history: [
-          ...state.history.filter((a) => a.questionId !== question.id),
-          attempt,
+          ...state.history.filter(
+            (a) => !questions.some((q) => q.id === a.questionId),
+          ),
+          ...attempts,
         ],
       }
     }
@@ -63,7 +88,9 @@ export function transition(
         ? {
             ...state,
             history: state.history.map((a) =>
-              a.questionId === question.id ? { ...a, manual: action.value } : a,
+              a.questionId === (action.questionId ?? question.id)
+                ? { ...a, manual: action.value }
+                : a,
             ),
           }
         : state
@@ -71,10 +98,11 @@ export function transition(
       if (state.phase !== 'revealed') return state
       return {
         ...state,
-        index: Math.min(state.index + 1, game.questions.length - 1),
-        finished: state.index + 1 >= game.questions.length,
+        index: Math.min(state.index + 1, count - 1),
+        finished: state.index + 1 >= count,
         phase: 'thinking',
         selected: undefined,
+        selections: {},
       }
     case 'PREVIOUS':
       return state.index > 0
@@ -83,24 +111,29 @@ export function transition(
             index: state.index - 1,
             phase: 'thinking',
             selected: undefined,
+            selections: {},
           }
         : state
     case 'SKIP':
       if (state.phase === 'revealed') return state
       return {
         ...state,
-        history: state.history.some(
-          (a) => a.questionId === question.id && !a.skipped,
-        )
-          ? state.history
-          : [
-              ...state.history.filter((a) => a.questionId !== question.id),
-              { questionId: question.id, skipped: true },
-            ],
-        index: Math.min(state.index + 1, game.questions.length - 1),
-        finished: state.index + 1 >= game.questions.length,
+        history: [
+          ...state.history.filter(
+            (a) => !questions.some((q) => q.id === a.questionId),
+          ),
+          ...questions.map(
+            (q) =>
+              state.history.find(
+                (a) => a.questionId === q.id && !a.skipped,
+              ) ?? { questionId: q.id, skipped: true },
+          ),
+        ],
+        index: Math.min(state.index + 1, count - 1),
+        finished: state.index + 1 >= count,
         phase: 'thinking',
         selected: undefined,
+        selections: {},
       }
     default:
       return state

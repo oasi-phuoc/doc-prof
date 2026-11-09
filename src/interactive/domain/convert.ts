@@ -136,6 +136,11 @@ export function convertRecipe(
               (q.choices.length < 2 ||
                 q.choices.length > 6 ||
                 q.choices.some((c) => !c.text.trim() && !c.image) ||
+                new Set(
+                  q.choices.map(
+                    (c) => `${normalized(c.text)}|${c.image ?? ''}`,
+                  ),
+                ).size !== q.choices.length ||
                 !choiceId ||
                 !q.choices.some((c) => c.id === choiceId))
             ) {
@@ -163,24 +168,33 @@ export function convertRecipe(
             q.audio =
               audio ?? ('audioSrc' in t ? t.audioSrc : undefined) ?? q.audio
             q.images = [...(t.image ? [t.image] : []), ...(t.images ?? [])]
-            if (t.kind === 'qcm') {
-              if (t.choix.filter((c) => c.correct).length !== 1) {
+            // The paper form can be "write" while the bank still supplies a real
+            // image QCM. Preserve those images instead of turning them into text.
+            const variant =
+              t.formSelect?.variants.qcm_image ??
+              (t.kind === 'lignes'
+                ? t.formSelect?.variants.qcm_texte
+                : undefined)
+            const options =
+              variant?.choix ?? (t.kind === 'qcm' ? t.choix : undefined)
+            if (options) {
+              if (options.filter((c) => c.correct).length !== 1) {
                 reject('QCM sans réponse unique.')
                 return
               }
-              q.choices = t.choix.map((c, i) => ({
+              q.choices = options.map((c, i) => ({
                 id: `c${i}`,
                 text: c.texte ?? '',
                 image: c.image,
               }))
-              const index = t.choix.findIndex((c) => c.correct)
-              add(q, t.choix[index]?.texte ?? 'Réponse en image', `c${index}`)
+              const index = options.findIndex((c) => c.correct)
+              add(q, options[index]?.texte ?? '', `c${index}`)
             } else {
               q.mode = 'oral'
               q.compatibility = 'teacher-led'
               add(
                 q,
-                t.reponseModele ??
+                ('reponseModele' in t ? t.reponseModele : undefined) ??
                   item.answer ??
                   'Évaluation orale par l’enseignant.',
               )
@@ -200,6 +214,9 @@ export function convertRecipe(
                     ? 'sequence'
                     : 'oral'
                 q.compatibility = 'teacher-led'
+                q.hints = strings(media.questions).length
+                  ? strings(media.questions)
+                  : strings(media.exemples_questions)
                 q.prompt = block.instruction
                 q.images = strings(media.images)
                 if (q.images.length === 4) q.mode = 'sequence'

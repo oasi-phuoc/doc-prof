@@ -1,7 +1,19 @@
 import { useState, type CSSProperties } from 'react'
-import { PALETTE, inkForColor } from '../domain/palette'
+import {
+  PALETTE,
+  inkForColor,
+  defaultShapes,
+  type ShapeId,
+} from '../domain/palette'
+import { CardBadge } from './CardBadge'
 
-export function PrintCards({ colors }: { colors: string[] }) {
+export function PrintCards({
+  colors,
+  shapes = defaultShapes,
+}: {
+  colors: string[]
+  shapes?: ShapeId[]
+}) {
   const [sets, setSets] = useState(1)
   const [inkSaving, setInkSaving] = useState(false)
   return (
@@ -50,10 +62,7 @@ export function PrintCards({ colors }: { colors: string[] }) {
                   } as CSSProperties
                 }
               >
-                <span className="ci-paper-symbol" aria-label={entry.shape}>
-                  {entry.symbol}
-                </span>
-                <strong>{entry.letter}</strong>
+                <CardBadge letter={entry.letter} shape={shapes[i]!} />
                 <small>CLAIRFLE · carte réponse</small>
               </div>
             ))}

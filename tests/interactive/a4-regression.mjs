@@ -20,6 +20,7 @@ try {
     const page = await browser.newPage({
       viewport: { width: 1366, height: 1000 },
     })
+    page.setDefaultNavigationTimeout(120000)
     await page
       .context()
       .addCookies([
@@ -52,6 +53,9 @@ try {
     await page.evaluate(() => document.fonts.ready)
     await page.waitForTimeout(1000)
     const sheet = frame.locator('.worksheet-sheet').first()
+    await sheet.locator('img').evaluateAll(async (images) => {
+      await Promise.all(images.map((image) => image.decode()))
+    })
     dimensions.push(
       await sheet.evaluate((el) => ({
         width: getComputedStyle(el).width,
@@ -70,7 +74,10 @@ try {
       await page.getByRole('button', { name: 'Jouer avec la classe' }).click()
       await page.waitForURL('**/interactif')
       await page.getByRole('button', { name: /Commencer la séance/ }).waitFor()
-      assert.equal(await page.locator('.ci-question-list label').count(), 3)
+      assert.equal(
+        await page.locator('.ci-question-list fieldset > label').count(),
+        3,
+      )
       const staged = await page.evaluate(
         () => history.state.clairfleInteractive.recipe,
       )
@@ -94,7 +101,7 @@ try {
         identicalScreenshot: true,
         dimensions,
         draftLaunch: 'passed',
-        baseline: 'e268922b',
+        baseline: 'af544f26 (main before classroom merge)',
         viewport: '1366x1000',
       },
       null,

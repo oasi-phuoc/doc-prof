@@ -1,39 +1,42 @@
-# Acceptation — première tranche C0/C1/C2/C3/C4
+# Acceptation — évolution du jeu en classe
 
-Ce document décrit un prototype fonctionnel, pas la livraison finale de toutes les familles. Les résultats machine sont conservés dans `browser-results.json`, `a4-results.json` et `saved-fiches-results.json` ; les deux derniers parcours nécessitent les instances de test décrites dans le README.
+Les résultats machine sont versionnés dans `browser-results.json`, `classroom-results.json`, `a4-results.json` et `saved-fiches-results.json`. Les tests n’utilisent aucune bibliothèque réelle ni donnée élève.
 
-## Scénarios de la cible
+## Demandes de classe
 
-- [x] 01. Lancement depuis la bibliothèque et depuis un lien enregistré : API simulée, sans accès aux fiches réelles.
-- [x] 02. Lancement du brouillon depuis le véritable bouton du générateur ; graine et items libres conservés.
-- [x] 03. Capture de l’aperçu A4 identique octet pour octet à `e268922b`, sur la recette témoin, même après chargement du CSS interactif. Ce contrôle ne couvre pas chaque famille.
-- [x] 04. Palette A–F unique à l’écran et sur le kit papier.
-- [x] 05. Trois choix restent trois choix ; pas de remplissage artificiel.
-- [x] 06. Réflexion avant sélection : cartes lisibles, sélection désactivée.
-- [x] 07. Signal explicite « Levez vos cartes ».
-- [x] 08. Sélection sans révélation ; boutons natifs clavier et toucher.
-- [x] 09. Révélation réservée à l’action explicite enseignant, après discussion.
-- [x] 10. Corrigé neutre ; la couleur de la carte ne devient pas un jugement de valeur.
-- [x] 11. Séance de dix questions dont six mini-audios ; aucun passage automatique.
-- [x] 12. Retour précédent et historique cohérent ; reprise après refresh en phase réflexion.
-- [x] 13. Piste associée à la question ; pas d’autoplay ; décodage, lecture et pause vérifiés dans Chromium, sans écoute humaine de toutes les pistes.
-- [x] 14. Quatre images en rangée, déplacement par boutons, sans dépendre du glisser-déposer. Essai tactile sur ENI réel à faire.
-- [x] 15. Production orale sans score automatique, observation manuelle.
-- [x] 16. 788 + 771 = 1 559 et 349² = 121 801 cm² ; rejet d’une unité incohérente.
-- [x] 17. Distracteurs uniques, déterministes et corrigé vérifié pour les adaptateurs numériques couverts.
-- [x] 18. Parcours contrôlé à 1920×1080, 1366×768 et 1280×800 ; commandes géométrie/oral dans l’écran, sans débordement horizontal.
-- [x] 19. Aucun son imposé ; réduction du mouvement et contraste renforcé disponibles.
-- [x] 20. Images/audio absents : message explicite, séance poursuivable ; fiche absente et erreurs 401/403/404 gérées.
-- [x] 21. Bilan limité aux réponses au tableau et observations humaines ; aucun vote physique inventé.
-- [ ] 22. Direction artistique à faire valider par l’utilisateur sur les captures et l’aperçu.
+- [x] Six teintes pastel ; lettres et formes noires de même taille ; contraste texte des valeurs par défaut supérieur à 7:1.
+- [x] Couleurs et formes configurables, persistées séparément des fiches ; grille A–B–C / D–E–F identique à l’écran et aux cartes imprimées.
+- [x] Minuteur réglable avant et pendant la séance, 30 secondes par défaut, démarrage en réflexion.
+- [x] Avec un audio, attente de la fin de lecture puis décompte ; aucun changement automatique de phase à l’expiration.
+- [x] Pause et onglet masqué suspendent le minuteur et l’audio ; la position de lecture reste conservée.
+- [x] Pictogrammes des étapes ; deux actions distinctes au signal ; correction et statut juste/à retravailler séparés.
+- [x] Bonne réponse à gauche dans une carte à bandeau coloré, statut à droite ; les réponses en images restent en images.
+- [x] Commandes Passer, Pause et Quitter sous forme d’icônes accessibles centrées ; bouton précédent retiré ; progression et action principale centrées.
+- [x] Logo identique au générateur ; bouton Créer des fiches ; icônes contraste, plein écran et fiches ; mentions de prototype retirées.
+- [x] Deux questions au maximum par même enregistrement, choix déterministe à partir des questions sélectionnées.
+- [x] Deux QCM audio simultanés, une seule piste au-dessus, trois choix source par question, sélections et corrections indépendantes.
+- [x] Conservation systématique de la bonne réponse lorsque des distracteurs source sont retirés ; adaptation expliquée dans la préparation.
+- [x] Variantes en images TCF CE/CO reprises même si la forme papier sélectionnée était à écrire.
+- [x] Document à lire ouvert directement, taille de texte ajustable et pleine largeur des réponses.
+- [x] Écrans de classe vérifiés à 1366×768, 1920×1080 et 1280×800, plus absence de débordement horizontal à 390 px.
+- [x] Ancien moteur et anciennes entrées retirés, banques de jeux imprimables conservées.
 
-## Qualité et limites
+## Non-régression
 
-- Installation propre `npm ci` ; nouvelle dépendance de développement : Playwright.
-- Suite `npm test` : conversion, calculs, unités, choix, transitions, pause, reprise logique, évaluation manuelle et absence de mutation des données A4.
-- `npm run build` : TypeScript et Vite passent. Le build signale la taille importante de bundles déjà présents.
-- Le lint global présente une erreur préexistante de Hook conditionnel dans `src/tcf/tagged-picker.tsx`, ainsi que des avertissements anciens. Le nouveau module et ses tests font l’objet d’un contrôle séparé.
-- Aucun test physique ENI, essai avec élèves ou audit d’authentification de production n’a été réalisé.
-- Presets partagés, statistiques de groupe, modes de score/chrono facultatifs, indices avancés et couverture complète des familles restent hors de cette première tranche.
-- L’accès serveur et les secrets frontend préexistants demandent une remédiation avant production : voir `audit-securite.md`.
-- L’ancien jeu reste en place jusqu’à la bascule validée ; la branche de prototype ne remplace pas encore l’interface de production.
+- [x] Lancement depuis le générateur, recette et items libres conservés.
+- [x] Fiche enregistrée et lien direct : API simulée, sans écriture réelle.
+- [x] Aperçu A4 témoin identique octet pour octet au main `af544f26`, après chargement du CSS interactif ; taille 210×297 mm et découpage préservés.
+- [x] Choix bloqués avant le signal ; correction rendue uniquement sur commande enseignant ; navigation manuelle.
+- [x] Reprise après actualisation en réflexion, sans sélection ni corrigé révélés.
+- [x] Calculs et aire de carré vérifiés, unités incohérentes rejetées, distracteurs distincts et déterministes.
+- [x] Production orale guidée et évaluation humaine, sans score automatique inventé.
+- [x] Médias manquants et fiches absentes : erreur compréhensible et séance poursuivable ; cas 401/403/404.
+- [x] Bilan limité aux réponses au tableau et observations humaines.
+
+## Limites de la livraison
+
+La validation sur un véritable ENI et avec les élèves reste à faire. Les gestes tactiles sont simulés dans Chromium. Les tests de bibliothèque utilisent une API interceptée et ne prouvent pas la sécurité d’une instance de production.
+
+Le cahier V4 reste une cible plus large : adaptateurs de toutes les familles, associations/classements/grilles, presets et console enseignant, équipes et statistiques de groupe, précontrôle complet des médias et remédiation de l’authentification ne sont pas annoncés terminés. L’inventaire recalcule la compatibilité exacte du catalogue actuel et expose les formats non couverts.
+
+Le build conserve un avertissement sur la taille du bundle principal existant. Le Hook conditionnel TCF qui bloquait le lint a été corrigé ; les avertissements anciens hors module interactif restent visibles.

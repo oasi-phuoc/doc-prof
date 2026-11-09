@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
 import { createServer } from 'vite'
+import { classroomRecipe } from './classroom-fixture.mjs'
 const server = await createServer({
   server: { middlewareMode: true, hmr: { port: 0 } },
   appType: 'custom',
@@ -12,6 +13,12 @@ try {
   const { startSession, transition } = await server.ssrLoadModule(
     '/src/interactive/domain/session.ts',
   )
+  const { prepareGame, roundsFor } = await server.ssrLoadModule(
+    '/src/interactive/domain/plan.ts',
+  )
+  const { PALETTE, inkForColor } = await server.ssrLoadModule(
+    '/src/interactive/domain/palette.ts',
+  )
   const { demoRecipe } = await server.ssrLoadModule('/src/interactive/demo.ts')
   const { parseInteractiveDraft } = await server.ssrLoadModule(
     '/src/interactive/navigation.ts',
@@ -20,6 +27,23 @@ try {
     '/src/math/generate.ts',
   )
   const recipe = demoRecipe()
+  await test('default pastel cards provide black marks with at least AAA text contrast', () => {
+    for (const card of PALETTE) {
+      assert.equal(inkForColor(card.color), '#000000')
+      const channels = [1, 3, 5].map(
+        (i) => parseInt(card.color.slice(i, i + 2), 16) / 255,
+      )
+      const linear = channels.map((c) =>
+        c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4,
+      )
+      const luminance =
+        0.2126 * linear[0] + 0.7152 * linear[1] + 0.0722 * linear[2]
+      assert.ok(
+        (luminance + 0.05) / 0.05 >= 7,
+        `Insufficient contrast for card ${card.letter}`,
+      )
+    }
+  })
   await test('temporary uploads survive handoff without changing saved recipe parsing', () => {
     const result = parseInteractiveDraft({
       recipe,
@@ -215,6 +239,103 @@ try {
       JSON.stringify(buildWorksheets(recipe.pages, recipe.seed)),
       before,
     )
+  })
+  await test('TCF paper writing variants become real image choices and keep reading documents', async () => {
+    const source = await classroomRecipe()
+    const converted = convertRecipe(source)
+    assert.equal(
+      converted.questions.length,
+      7,
+      JSON.stringify(converted.issues),
+    )
+    assert.ok(converted.questions[0].context.includes('Le marché du quartier'))
+    for (const q of converted.questions) {
+      assert.equal(q.mode, 'choice')
+      assert.equal(q.choices.length, 3)
+      assert.ok(q.choices.every((choice) => choice.image.endsWith('.webp')))
+      const correct = q.choices.find(
+        (choice) => choice.id === converted.corrections[q.id].choiceId,
+      )
+      assert.match(correct.image, /5-tomates/)
+      assert.equal(converted.corrections[q.id].text, '')
+    }
+    assert.deepEqual(source, await classroomRecipe())
+  })
+  await test('one recording keeps at most two questions deterministically with separate selections and verdicts', async () => {
+    const source = await classroomRecipe()
+    const converted = convertRecipe(source)
+    const planned = prepareGame(converted)
+    assert.deepEqual(planned, prepareGame(converted))
+    assert.equal(planned.questions.length, 3)
+    assert.equal(roundsFor(planned).length, 2)
+    assert.equal(roundsFor(planned)[1].questionIds.length, 2)
+    assert.ok(
+      planned.issues.some((issue) =>
+        /2 questions retenues sur 6/.test(issue.reason),
+      ),
+    )
+    const pair = planned.questions.filter((q) => q.audio)
+    let state = { ...startSession(planned), index: 1 }
+    const send = (type, extra = {}) => {
+      state = transition(planned, state, { type, ...extra })
+    }
+    send('CARDS_UP')
+    send('SELECT', {
+      questionId: pair[0].id,
+      choiceId: planned.corrections[pair[0].id].choiceId,
+    })
+    assert.equal(state.phase, 'cards-up')
+    send('DISCUSS')
+    assert.equal(state.phase, 'cards-up')
+    send('SELECT', {
+      questionId: pair[1].id,
+      choiceId: pair[1].choices.find(
+        (c) => c.id !== planned.corrections[pair[1].id].choiceId,
+      ).id,
+    })
+    assert.equal(state.phase, 'selected')
+    send('DISCUSS')
+    send('REVEAL')
+    assert.equal(state.history.length, 2)
+    assert.equal(state.history[0].correct, true)
+    assert.equal(state.history[1].correct, false)
+    assert.notEqual(state.history[0].questionId, state.history[1].questionId)
+    send('NEXT')
+    assert.equal(state.finished, true)
+  })
+  await test('paired audio reduction preserves verified answers and original choice identities', async () => {
+    const converted = convertRecipe(await classroomRecipe())
+    const audio = converted.questions.filter((q) => q.audio)
+    for (const q of audio)
+      q.choices.push({ id: 'fourth', text: 'Autre proposition de la banque' })
+    const copy = structuredClone(converted)
+    const planned = prepareGame(converted)
+    for (const q of planned.questions.filter((q) => q.audio)) {
+      assert.equal(q.choices.length, 3)
+      assert.ok(
+        q.choices.some((c) => c.id === planned.corrections[q.id].choiceId),
+      )
+      assert.ok(
+        q.choices.every((c) =>
+          converted.questions
+            .find((source) => source.id === q.id)
+            .choices.some((original) => original.id === c.id),
+        ),
+      )
+    }
+    assert.deepEqual(converted, copy)
+  })
+  await test('skipping a paired screen records each source question exactly once', async () => {
+    const planned = prepareGame(convertRecipe(await classroomRecipe()))
+    let state = transition(planned, startSession(planned), { type: 'SKIP' })
+    state = transition(planned, state, { type: 'SKIP' })
+    assert.equal(state.finished, true)
+    assert.equal(state.history.length, planned.questions.length)
+    assert.equal(
+      new Set(state.history.map((a) => a.questionId)).size,
+      planned.questions.length,
+    )
+    assert.ok(state.history.every((a) => a.skipped && a.correct === undefined))
   })
 } finally {
   await server.close()

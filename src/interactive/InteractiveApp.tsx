@@ -1,18 +1,49 @@
-import { useEffect, useMemo, useReducer, useState } from 'react'
+import { useEffect, useMemo, useState, type CSSProperties } from 'react'
 import { listFiches } from '@/fiches/api'
 import { domainsForAccount, readAccessAccount } from '@/access'
 import type { FicheRecipe } from '@/fiches/recipe'
-import { convertRecipe, hash } from './domain/convert'
-import { PALETTE, inkForColor } from './domain/palette'
-import { startSession, transition } from './domain/session'
-import type { Game, Session } from './domain/types'
+import { convertRecipe } from './domain/convert'
+import { prepareGame } from './domain/plan'
+import {
+  PALETTE,
+  SHAPES,
+  defaultShapes,
+  inkForColor,
+  type ShapeId,
+} from './domain/palette'
 import { demoRecipe } from './demo'
 import { readInteractiveDraft } from './navigation'
-import { QuestionStage } from './components/QuestionStage'
+import { SessionView } from './SessionView'
+import { sessionKey } from './domain/persistence'
 import { PrintCards } from './components/PrintCards'
+import { PaletteSettings } from './components/PaletteSettings'
+import { CardBadge } from './components/CardBadge'
+import { IconButton } from './components/Icons'
+import {
+  DEFAULT_TIMER,
+  validSeconds,
+  type TimerSettings,
+} from './domain/settings'
 import './interactive.css'
 
 type Source = { recipe: FicheRecipe; name: string }
+const COLORS_KEY = 'clairfle.interactive.palette.v2'
+const SHAPES_KEY = 'clairfle.interactive.shapes.v1'
+const TIMER_KEY = 'clairfle.interactive.timer.v1'
+function readSetting(key: string): unknown {
+  try {
+    return JSON.parse(localStorage.getItem(key) ?? 'null')
+  } catch {
+    return null
+  }
+}
+function saveSetting(key: string, value: unknown) {
+  try {
+    localStorage.setItem(key, JSON.stringify(value))
+  } catch {
+    /* Preferences are optional. */
+  }
+}
 function savedIdFromPath(): string | null {
   if (window.location.pathname === '/interactif') return null
   try {
@@ -25,22 +56,36 @@ function savedIdFromPath(): string | null {
     return null
   }
 }
-const defaultColors = PALETTE.map((c) => c.color) as string[]
 function loadColors(): string[] {
-  try {
-    const parsed: unknown = JSON.parse(
-      localStorage.getItem('clairfle.interactive.palette.v1') ?? 'null',
-    )
-    if (
-      Array.isArray(parsed) &&
-      parsed.length === 6 &&
-      parsed.every((c) => typeof c === 'string' && /^#[0-9a-f]{6}$/i.test(c))
-    )
-      return parsed
-  } catch {
-    /* Storage is optional. */
-  }
-  return defaultColors
+  const value = readSetting(COLORS_KEY)
+  return Array.isArray(value) &&
+    value.length === 6 &&
+    value.every((c) => typeof c === 'string' && /^#[0-9a-f]{6}$/i.test(c))
+    ? value
+    : PALETTE.map((c) => c.color)
+}
+function loadShapes(): ShapeId[] {
+  const value = readSetting(SHAPES_KEY)
+  return Array.isArray(value) &&
+    value.length === 6 &&
+    new Set(value).size === 6 &&
+    value.every((s) => SHAPES.some((shape) => shape.id === s))
+    ? value
+    : [...defaultShapes]
+}
+function loadTimer(): TimerSettings {
+  const value = readSetting(TIMER_KEY)
+  if (
+    value &&
+    typeof value === 'object' &&
+    'enabled' in value &&
+    'seconds' in value &&
+    typeof value.enabled === 'boolean' &&
+    typeof value.seconds === 'number' &&
+    Number.isFinite(value.seconds)
+  )
+    return { enabled: value.enabled, seconds: validSeconds(value.seconds) }
+  return DEFAULT_TIMER
 }
 function returnToFiches() {
   window.history.pushState({}, '', '/fiches')
@@ -60,9 +105,12 @@ export default function InteractiveApp() {
   )
   const [loading, setLoading] = useState(!source && !!savedIdFromPath())
   const [colors, setColors] = useState(loadColors)
+  const [shapes, setShapes] = useState(loadShapes)
+  const [timer, setTimer] = useState(loadTimer)
   const [contrast, setContrast] = useState(false)
   const [playing, setPlaying] = useState(false)
   const [selection, setSelected] = useState<string[] | null>(null)
+  const [fullscreenMessage, setFullscreenMessage] = useState('')
   useEffect(() => {
     if (source) return
     const id = savedIdFromPath()
@@ -105,65 +153,82 @@ export default function InteractiveApp() {
     [selection, game],
   )
   const activeGame = useMemo(
-    () =>
-      game
-        ? {
-            ...game,
-            id: `${game.id}-${hash(selected.join(','))}`,
-            questions: game.questions.filter((q) => selected.includes(q.id)),
-          }
-        : null,
+    () => (game ? prepareGame(game, selected) : null),
     [game, selected],
   )
   let canResume = false
   try {
-    canResume =
-      !!activeGame &&
-      !!sessionStorage.getItem(`clairfle.interactive.session.${activeGame.id}`)
+    canResume = !!activeGame && !!sessionStorage.getItem(sessionKey(activeGame))
   } catch {
     /* Optional. */
   }
-  const changeColor = (index: number, color: string) => {
-    const next = colors.map((c, i) => (i === index ? color : c))
+  const changeColors = (next: string[]) => {
     setColors(next)
-    try {
-      localStorage.setItem(
-        'clairfle.interactive.palette.v1',
-        JSON.stringify(next),
-      )
-    } catch {
-      /* Optional preference. */
-    }
+    saveSetting(COLORS_KEY, next)
+  }
+  const changeShapes = (next: ShapeId[]) => {
+    setShapes(next)
+    saveSetting(SHAPES_KEY, next)
+  }
+  const changeTimer = (next: TimerSettings) => {
+    setTimer(next)
+    saveSetting(TIMER_KEY, next)
   }
   return (
     <div className={`ci-app${contrast ? ' ci-high-contrast' : ''}`}>
       <header className="ci-header ci-no-print">
-        <a href="/generateur" className="ci-brand">
-          ClairFLE<span>Le studio de la classe</span>
-        </a>
-        <span className="ci-prototype">Aperçu · nouvelle expérience</span>
-        <div className="ci-toolbar">
-          <button
+        <div className="ci-header-start">
+          <a href="/generateur" className="brand" aria-label="ClairFLE">
+            <span className="brand-mark" aria-hidden="true">
+              <i />
+              <i />
+              <i />
+            </span>
+            Clair<span className="brand-accent">FLE</span>
+          </a>
+          <a className="ci-create-link" href="/generateur">
+            Créer des fiches <span aria-hidden="true">→</span>
+          </a>
+        </div>
+        <nav className="ci-toolbar" aria-label="Affichage et navigation">
+          <IconButton
+            icon="contrast"
+            label="Contraste"
             aria-pressed={contrast}
             onClick={() => setContrast((c) => !c)}
-          >
-            Contraste
-          </button>
-          <button
+          />
+          <IconButton
+            icon="expand"
+            label="Plein écran"
             onClick={() => {
-              if (document.fullscreenElement)
-                void document.exitFullscreen().catch(() => {})
+              setFullscreenMessage('')
+              const request = document.fullscreenElement
+                ? document.exitFullscreen?.()
+                : document.documentElement.requestFullscreen?.()
+              if (request)
+                void request.catch(() =>
+                  setFullscreenMessage(
+                    'Utilisez la touche F11 de votre clavier pour le plein écran.',
+                  ),
+                )
               else
-                void document.documentElement
-                  .requestFullscreen()
-                  .catch(() => {})
+                setFullscreenMessage(
+                  'Utilisez la touche F11 de votre clavier pour le plein écran.',
+                )
             }}
-          >
-            Plein écran
-          </button>
-          <button onClick={returnToFiches}>Mes fiches</button>
-        </div>
+          />
+          <IconButton
+            icon="folder"
+            label="Mes fiches"
+            onClick={returnToFiches}
+          />
+        </nav>
       </header>
+      {fullscreenMessage && (
+        <p className="ci-notice ci-no-print" role="status">
+          {fullscreenMessage}
+        </p>
+      )}
       {loading ? (
         <main className="ci-container">
           <p role="status">Préparation de la séance…</p>
@@ -189,13 +254,16 @@ export default function InteractiveApp() {
                 key={activeGame.id}
                 game={activeGame}
                 colors={colors}
+                shapes={shapes}
+                timer={timer}
+                onTimer={changeTimer}
                 onExit={() => setPlaying(false)}
               />
             ) : (
               <main className="ci-container">
                 <div className="ci-intro ci-no-print">
                   <div>
-                    <p className="ci-eyebrow">ENSEMBLE, EN CLASSE</p>
+                    <p className="ci-eyebrow">Ensemble, en classe</p>
                     <h1>
                       Une question.
                       <br />
@@ -207,67 +275,120 @@ export default function InteractiveApp() {
                     </p>
                   </div>
                   <div className="ci-mini-cards" aria-hidden="true">
-                    {PALETTE.map((c, i) => (
-                      <span
-                        key={c.letter}
-                        style={{
-                          background: colors[i],
-                          color: inkForColor(colors[i]!),
-                        }}
+                    {PALETTE.map((card, i) => (
+                      <div
+                        key={card.letter}
+                        style={
+                          {
+                            '--card-color': colors[i],
+                            '--card-ink': inkForColor(colors[i]!),
+                          } as CSSProperties
+                        }
                       >
-                        {c.symbol}
-                        <b>{c.letter}</b>
-                      </span>
+                        <CardBadge letter={card.letter} shape={shapes[i]!} />
+                      </div>
                     ))}
                   </div>
                 </div>
                 <div className="ci-setup-grid ci-no-print">
                   <section className="ci-panel">
-                    <p className="ci-eyebrow">VOTRE SÉANCE</p>
+                    <p className="ci-eyebrow">Votre séance</p>
                     <h2>{game.title}</h2>
                     <p>
-                      {selected.length} question{selected.length > 1 ? 's' : ''}{' '}
-                      sélectionnée{selected.length > 1 ? 's' : ''} · sans
-                      chronomètre · sans classement
+                      {activeGame.questions.length} question
+                      {activeGame.questions.length > 1 ? 's' : ''} retenue
+                      {activeGame.questions.length > 1 ? 's' : ''} ·{' '}
+                      {activeGame.rounds?.length ?? 0} écran(s) · sans
+                      classement
                     </p>
+                    <div className="ci-toolbar">
+                      <button
+                        onClick={() =>
+                          setSelected(game.questions.map((q) => q.id))
+                        }
+                      >
+                        Tout sélectionner
+                      </button>
+                      <button onClick={() => setSelected([])}>
+                        Tout désélectionner
+                      </button>
+                    </div>
                     <div className="ci-question-list">
-                      {game.questions.map((q, i) => (
-                        <label key={q.id}>
-                          <input
-                            type="checkbox"
-                            checked={selected.includes(q.id)}
-                            onChange={(e) =>
-                              setSelected((current) =>
-                                e.target.checked
-                                  ? [...(current ?? selected), q.id]
-                                  : (current ?? selected).filter(
-                                      (id) => id !== q.id,
-                                    ),
-                              )
-                            }
-                          />
-                          <span>
-                            <b>
-                              {i + 1}. {q.prompt}
-                            </b>
-                            <small>
-                              {q.mode === 'choice'
-                                ? `${q.choices.length} cartes réponse`
-                                : 'Évaluation par l’enseignant'}
-                              {q.audio ? ' · audio' : ''}
-                            </small>
-                          </span>
-                        </label>
-                      ))}
+                      {[
+                        ...new Set(game.questions.map((q) => q.source.page)),
+                      ].map((page) => {
+                        const pageQuestions = game.questions.filter(
+                          (q) => q.source.page === page,
+                        )
+                        const ids = pageQuestions.map((q) => q.id)
+                        return (
+                          <fieldset key={page}>
+                            <legend>
+                              <label>
+                                <input
+                                  type="checkbox"
+                                  aria-label={`Sélectionner la page ${page + 1}`}
+                                  checked={ids.every((id) =>
+                                    selected.includes(id),
+                                  )}
+                                  onChange={(e) =>
+                                    setSelected(
+                                      e.target.checked
+                                        ? [...new Set([...selected, ...ids])]
+                                        : selected.filter(
+                                            (id) => !ids.includes(id),
+                                          ),
+                                    )
+                                  }
+                                />
+                                Page {page + 1}
+                              </label>
+                            </legend>
+                            {pageQuestions.map((q) => (
+                              <label key={q.id}>
+                                <input
+                                  type="checkbox"
+                                  checked={selected.includes(q.id)}
+                                  onChange={(e) =>
+                                    setSelected(
+                                      e.target.checked
+                                        ? [...selected, q.id]
+                                        : selected.filter((id) => id !== q.id),
+                                    )
+                                  }
+                                />
+                                <span>
+                                  <b>
+                                    {game.questions.indexOf(q) + 1}. {q.prompt}
+                                  </b>
+                                  <small>
+                                    {q.mode === 'choice'
+                                      ? `${q.choices.length} choix${q.choices.some((c) => c.image) ? ' en images' : ''}`
+                                      : 'Évaluation par l’enseignant'}
+                                    {q.audio ? ' · audio' : ''}
+                                    {selected.includes(q.id) &&
+                                    !activeGame.questions.some(
+                                      (retained) => retained.id === q.id,
+                                    )
+                                      ? ' · autre question de ce document retenue'
+                                      : ''}
+                                  </small>
+                                </span>
+                              </label>
+                            ))}
+                          </fieldset>
+                        )
+                      })}
                     </div>
                     {!game.questions.length && (
                       <p>
-                        Aucune question compatible dans ce premier prototype.
+                        Aucune question compatible dans cette fiche. Les
+                        éléments à adapter sont indiqués ci-dessous.
                       </p>
                     )}
                     <button
                       className="ci-primary ci-launch"
-                      disabled={!selected.length}
+                      disabled={!activeGame.questions.length}
                       onClick={() => setPlaying(true)}
                     >
                       {canResume
@@ -280,9 +401,7 @@ export default function InteractiveApp() {
                         className="ci-fresh-start"
                         onClick={() => {
                           try {
-                            sessionStorage.removeItem(
-                              `clairfle.interactive.session.${activeGame.id}`,
-                            )
+                            sessionStorage.removeItem(sessionKey(activeGame))
                           } catch {
                             /* Optional. */
                           }
@@ -294,7 +413,7 @@ export default function InteractiveApp() {
                     )}
                   </section>
                   <aside className="ci-panel">
-                    <h2>Le rituel en cinq temps</h2>
+                    <h2>Le rituel de la classe</h2>
                     <ol className="ci-ritual">
                       <li>Je réfléchis.</li>
                       <li>Au signal, je lève ma carte.</li>
@@ -306,49 +425,56 @@ export default function InteractiveApp() {
                       Les votes sur cartes ne sont pas enregistrés. Aucun
                       téléphone élève n’est nécessaire.
                     </p>
-                    <details>
-                      <summary>Palette de la classe</summary>
-                      <p>
-                        La même palette s’applique à toutes les questions et aux
-                        cartes imprimées.
-                      </p>
-                      <div className="ci-color-settings">
-                        {PALETTE.map((c, i) => (
-                          <label key={c.letter}>
-                            {c.letter} {c.symbol}
-                            <input
-                              aria-label={`Couleur de la carte ${c.letter}`}
-                              type="color"
-                              value={colors[i]}
-                              onChange={(e) => changeColor(i, e.target.value)}
-                            />
-                          </label>
-                        ))}
-                      </div>
-                      <button
-                        onClick={() => {
-                          setColors(defaultColors)
-                          try {
-                            localStorage.removeItem(
-                              'clairfle.interactive.palette.v1',
-                            )
-                          } catch {
-                            /* optional */
+                    <div className="ci-setup-timer">
+                      <label>
+                        <input
+                          type="checkbox"
+                          checked={timer.enabled}
+                          onChange={(e) =>
+                            changeTimer({ ...timer, enabled: e.target.checked })
                           }
-                        }}
-                      >
-                        Rétablir les couleurs
-                      </button>
-                    </details>
+                        />{' '}
+                        Activer le minuteur
+                      </label>
+                      <label>
+                        Temps de réflexion (secondes){' '}
+                        <input
+                          type="number"
+                          min="5"
+                          max="600"
+                          value={timer.seconds}
+                          onChange={(e) =>
+                            changeTimer({
+                              ...timer,
+                              seconds: validSeconds(Number(e.target.value)),
+                            })
+                          }
+                        />
+                      </label>
+                      <p>
+                        30 secondes par défaut. Avec un document audio, le
+                        décompte commence à la fin de l’écoute. Vous choisissez
+                        toujours quand continuer.
+                      </p>
+                    </div>
                   </aside>
                 </div>
-                {!!game.issues.length && (
+                <section className="ci-panel ci-no-print">
+                  <PaletteSettings
+                    colors={colors}
+                    shapes={shapes}
+                    onColors={changeColors}
+                    onShapes={changeShapes}
+                  />
+                </section>
+                {!!activeGame.issues.length && (
                   <details className="ci-panel ci-no-print">
                     <summary>
-                      {game.issues.length} élément(s) à adapter avant de jouer
+                      {activeGame.issues.length} élément(s) à vérifier avant de
+                      jouer
                     </summary>
                     <ul>
-                      {game.issues.map((issue, i) => (
+                      {activeGame.issues.map((issue, i) => (
                         <li key={i}>
                           <b>{issue.source}</b> : {issue.reason}
                         </li>
@@ -356,308 +482,12 @@ export default function InteractiveApp() {
                     </ul>
                   </details>
                 )}
-                <PrintCards colors={colors} />
+                <PrintCards colors={colors} shapes={shapes} />
               </main>
             )}
           </>
         )
       )}
     </div>
-  )
-}
-
-function restoreSession(game: Game): Session {
-  try {
-    const parsed: unknown = JSON.parse(
-      sessionStorage.getItem(`clairfle.interactive.session.${game.id}`) ??
-        'null',
-    )
-    if (parsed && typeof parsed === 'object') {
-      const s = parsed as Session
-      if (
-        s.gameId === game.id &&
-        Number.isInteger(s.index) &&
-        s.index >= 0 &&
-        s.index < game.questions.length &&
-        typeof s.paused === 'boolean' &&
-        typeof s.finished === 'boolean' &&
-        Array.isArray(s.history) &&
-        ['thinking', 'cards-up', 'selected', 'discussion', 'revealed'].includes(
-          s.phase,
-        )
-      ) {
-        // Resume at reflection: never expose a correction on reopening the projector.
-        return {
-          ...startSession(game),
-          index: s.index,
-          history: s.history.filter((a) =>
-            game.questions.some((q) => q.id === a.questionId),
-          ),
-        }
-      }
-    }
-  } catch {
-    /* No persistence when browser storage is unavailable. */
-  }
-  return startSession(game)
-}
-
-function SessionView({
-  game,
-  colors,
-  onExit,
-}: {
-  game: Game
-  colors: string[]
-  onExit: () => void
-}) {
-  const [state, dispatch] = useReducer(
-    (s: Session, action: Parameters<typeof transition>[2]) =>
-      transition(game, s, action),
-    game,
-    restoreSession,
-  )
-  const [retryGame, setRetryGame] = useState<Game | null>(null)
-  const q = game.questions[state.index]
-  useEffect(() => {
-    try {
-      sessionStorage.setItem(
-        `clairfle.interactive.session.${game.id}`,
-        JSON.stringify(state),
-      )
-    } catch {
-      /* Optional resume, no student identity stored. */
-    }
-  }, [state, game.id])
-  const exit = () => onExit()
-  if (retryGame)
-    return (
-      <SessionView
-        key={retryGame.id}
-        game={retryGame}
-        colors={colors}
-        onExit={onExit}
-      />
-    )
-  if (state.finished) {
-    const answered = state.history.filter((a) => !a.skipped)
-    const difficult = state.history
-      .filter((a) => a.correct === false || a.manual === 'retry' || a.skipped)
-      .map((a) => a.questionId)
-    return (
-      <main className="ci-container ci-summary">
-        <p className="ci-eyebrow">FIN DE SÉANCE</p>
-        <h1>Ce que nous avons travaillé</h1>
-        <p>
-          {answered.length} question(s) abordée(s) au tableau,{' '}
-          {state.history.filter((a) => a.skipped).length} passée(s).
-        </p>
-        <p>
-          Ce bilan décrit les actions au tableau. Il ne mesure pas les votes de
-          la classe.
-        </p>
-        <div className="ci-panel">
-          {state.history.map((a) => (
-            <p key={a.questionId}>
-              <b>
-                {
-                  game.questions.find(
-                    (question) => question.id === a.questionId,
-                  )?.prompt
-                }
-              </b>
-              <span>
-                {a.skipped
-                  ? ' · Passée'
-                  : a.correct === true
-                    ? ' · Réponse au tableau correcte'
-                    : a.correct === false
-                      ? ' · À retravailler'
-                      : a.manual === 'acquired'
-                        ? ' · Acquis selon l’enseignant'
-                        : a.manual === 'retry'
-                          ? ' · À retravailler selon l’enseignant'
-                          : ' · Sans évaluation automatique'}
-              </span>
-            </p>
-          ))}
-        </div>
-        <div className="ci-toolbar">
-          <button
-            className="ci-primary"
-            disabled={!difficult.length}
-            onClick={() =>
-              setRetryGame({
-                ...game,
-                id: `${game.id}-retry-${state.history.length}`,
-                questions: game.questions.filter((question) =>
-                  difficult.includes(question.id),
-                ),
-              })
-            }
-          >
-            Reprendre les questions difficiles ({difficult.length})
-          </button>
-          <button
-            onClick={() => {
-              try {
-                sessionStorage.removeItem(
-                  `clairfle.interactive.session.${game.id}`,
-                )
-              } catch {
-                /* optional */
-              }
-              exit()
-            }}
-          >
-            Terminer
-          </button>
-        </div>
-      </main>
-    )
-  }
-  if (!q)
-    return (
-      <main className="ci-container">
-        <p>Aucune question sélectionnée.</p>
-        <button onClick={exit}>Retour</button>
-      </main>
-    )
-  const reveal = state.phase === 'revealed'
-  return (
-    <main
-      className={`ci-session${q.mode === 'sequence' ? ' ci-sequence-session' : ''}`}
-    >
-      <div className="ci-session-top">
-        <span>{game.title}</span>
-        <b>
-          Question {state.index + 1} / {game.questions.length}
-        </b>
-        <div className="ci-toolbar">
-          <button
-            onClick={() =>
-              dispatch({ type: state.paused ? 'RESUME' : 'PAUSE' })
-            }
-          >
-            {state.paused ? 'Reprendre' : 'Pause'}
-          </button>
-          <button onClick={exit}>Quitter la séance</button>
-        </div>
-      </div>
-      {state.paused ? (
-        <section className="ci-pause">
-          <p className="ci-eyebrow">LA SÉANCE EST EN PAUSE</p>
-          <h1>On reprend dans un instant.</h1>
-          <button
-            className="ci-primary"
-            onClick={() => dispatch({ type: 'RESUME' })}
-          >
-            Reprendre
-          </button>
-        </section>
-      ) : (
-        <>
-          <QuestionStage
-            q={q}
-            phase={state.phase}
-            selected={state.selected}
-            colors={colors}
-            onSelect={(choiceId) => dispatch({ type: 'SELECT', choiceId })}
-          />
-          {reveal && (
-            <section className="ci-reveal" aria-live="polite">
-              <p className="ci-eyebrow">CORRECTION · ENSEIGNANT</p>
-              {game.corrections[q.id]?.choiceId && (
-                <b>
-                  Carte{' '}
-                  {
-                    PALETTE[
-                      q.choices.findIndex(
-                        (c) => c.id === game.corrections[q.id]?.choiceId,
-                      )
-                    ]?.letter
-                  }
-                </b>
-              )}
-              <p>{game.corrections[q.id]?.text}</p>
-              {q.mode !== 'choice' && (
-                <div className="ci-toolbar">
-                  <button
-                    onClick={() =>
-                      dispatch({ type: 'ASSESS', value: 'acquired' })
-                    }
-                  >
-                    Acquis
-                  </button>
-                  <button
-                    onClick={() => dispatch({ type: 'ASSESS', value: 'retry' })}
-                  >
-                    À retravailler
-                  </button>
-                </div>
-              )}
-            </section>
-          )}
-          <footer className="ci-controls">
-            <div className="ci-toolbar">
-              <button
-                disabled={state.index === 0}
-                onClick={() => dispatch({ type: 'PREVIOUS' })}
-              >
-                Précédente
-              </button>
-              <button
-                disabled={reveal}
-                onClick={() => dispatch({ type: 'SKIP' })}
-              >
-                Passer
-              </button>
-            </div>
-            <div className="ci-toolbar">
-              {state.phase === 'thinking' && (
-                <button
-                  className="ci-primary"
-                  onClick={() => dispatch({ type: 'CARDS_UP' })}
-                >
-                  {q.mode === 'choice'
-                    ? 'Signal : levez vos cartes'
-                    : 'Commencer l’échange'}
-                </button>
-              )}
-              {(state.phase === 'selected' ||
-                (q.mode !== 'choice' && state.phase === 'cards-up')) && (
-                <button
-                  className="ci-primary"
-                  onClick={() => dispatch({ type: 'DISCUSS' })}
-                >
-                  Discuter
-                </button>
-              )}
-              {state.phase === 'cards-up' && q.mode === 'choice' && (
-                <span>Un élève choisit au tableau.</span>
-              )}
-              {state.phase === 'discussion' && (
-                <button
-                  className="ci-primary"
-                  onClick={() => dispatch({ type: 'REVEAL' })}
-                >
-                  Enseignant : révéler
-                </button>
-              )}
-              {reveal && (
-                <button
-                  className="ci-primary"
-                  onClick={() => dispatch({ type: 'NEXT' })}
-                >
-                  {state.index === game.questions.length - 1
-                    ? 'Voir le bilan'
-                    : 'Question suivante'}
-                </button>
-              )}
-            </div>
-          </footer>
-        </>
-      )}
-    </main>
   )
 }

@@ -102,8 +102,6 @@ export function TcfTaggedExercisePicker({
     return lens.length > 0 ? Math.max(...lens) : 10
   }, [kind, bankId, pool])
 
-  if (!kind || !slot || pool.length === 0) return null
-
   const sorted = useMemo(
     () =>
       [...pool].sort((a, b) =>
@@ -113,6 +111,8 @@ export function TcfTaggedExercisePicker({
       ),
     [pool, labels],
   )
+
+  if (!kind || !slot || pool.length === 0) return null
 
   return (
     <div className="quad-libre-block tcf-editor tcf-tagged-picker">
