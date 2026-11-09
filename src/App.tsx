@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { lazy, Suspense, useEffect, useState } from 'react'
 import './App.css'
 import {
   clearAccessAccount,
@@ -13,11 +13,17 @@ import { Landing } from '@/components/generator/Landing'
 import { SavedFichesPage } from '@/components/generator/SavedFichesPage'
 import { navigateTo, resolveRoute } from '@/components/generator/routing'
 
+const InteractiveApp = lazy(() => import('@/interactive/InteractiveApp'))
+
 export default function App() {
   const [route, setRoute] = useState(resolveRoute)
+  const [navigationRevision, setNavigationRevision] = useState(0)
 
   useEffect(() => {
-    const sync = () => setRoute(resolveRoute())
+    const sync = () => {
+      setRoute(resolveRoute())
+      setNavigationRevision(value => value + 1)
+    }
     window.addEventListener('popstate', sync)
     return () => window.removeEventListener('popstate', sync)
   }, [])
@@ -55,6 +61,7 @@ export default function App() {
     setRoute('access')
   }
 
+  if (route === 'interactive') return <Suspense fallback={<p role="status">Chargement du studio…</p>}><InteractiveApp key={navigationRevision} /></Suspense>
   if (route === 'fiches') {
     return <SavedFichesPage onOpenGenerator={showGenerator} onLogout={logout} />
   }

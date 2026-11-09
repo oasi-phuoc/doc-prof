@@ -4,7 +4,25 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "rewrites": [
-    { "source": "/acces", "destination": "/index.html" },
-    { "source": "/generateur", "destination": "/index.html" }
+    {
+      "source": "/acces",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/generateur",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/fiches",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/interactif",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/interactif/:path*",
+      "destination": "/index.html"
+    }
   ]
 }

@@ -1,3 +1,4 @@
+import { openInteractive } from '@/interactive/navigation'
 import { WorksheetImageProvider } from '@/components/WorksheetImage'
 import {
   useEffect,
@@ -401,6 +402,11 @@ export function GeneratorPage({
     window.print()
   }
 
+  function playWithClass() {
+    const recipe = buildFicheRecipe({ pages, seed, institutional, evalMode, pointsPerQuestion, libreMode, libreSnapshot, sheetFormat, hideChrome, printCorrections, imageOverrides })
+    openInteractive(recipe, ficheRef?.name ?? 'Ma fiche')
+  }
+
   async function persistFiche(input: { name: string; asNew: boolean; password: string }) {
     if (input.password) storeSyncPassword(input.password)
     const recipe = buildFicheRecipe({
@@ -580,6 +586,7 @@ export function GeneratorPage({
         generator
         afterBrand={
           <>
+          <button type="button" className="button small" onClick={playWithClass}>Jouer avec la classe</button>
           <div className="mode-toggle board-mode-toggle" role="group" aria-label="Affichage">
             <button
               type="button"
