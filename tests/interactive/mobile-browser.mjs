@@ -28,8 +28,8 @@ try {
     }
     await page.getByRole('button', { name: 'Mascotte', exact: true }).click()
     const mascot = page.getByRole('combobox', { name: 'Mascotte' })
-    assert.equal(await mascot.locator('option').count(), 5)
-    for (const name of ['leaf', 'owl', 'octopus', 'hedgehog', 'rabbit']) {
+    assert.equal(await mascot.locator('option').count(), 6)
+    for (const name of ['leaf', 'owl', 'octopus', 'hedgehog', 'rabbit', 'dragon']) {
       if (!await mascot.isVisible()) await page.getByRole('button', { name: 'Mascotte', exact: true }).click()
       await mascot.selectOption(name)
       assert.equal(await page.locator('.ci-app').getAttribute('data-mascot'), name)
@@ -44,7 +44,7 @@ try {
     assert.ok(Math.abs(stage.x + stage.width / 2 - width / 2) < 2)
     assert.ok(Math.abs(timer.x + timer.width / 2 - width / 2) < 2)
     const sprite = await page.locator('.ci-phase-art .ci-mascot-sprite').evaluate((el) => getComputedStyle(el).backgroundImage)
-    assert.match(sprite, /rabbit-mascot/)
+    assert.match(sprite, /dragon-mascot/)
     await page.screenshot({ path: `${output}/mobile-thinking-${width}.png`, fullPage: true })
     await page.getByRole('button', { name: 'Mascotte', exact: true }).click()
     await page.getByRole('combobox', { name: 'Mascotte' }).selectOption('owl')
@@ -83,7 +83,7 @@ try {
     const generatorOptions = await page.locator('.topbar-right').boundingBox()
     assert.ok(generatorOptions.y >= generatorBrand.y + generatorBrand.height)
     assert.deepEqual(errors, [])
-    results.push({ width, header: 'identity and primary action aligned; options below', mascot: '5 choices; persisted and switchable in session', phaseAndTimer: 'centered', numbering: 'hanging indent verified on wrapped lines' })
+    results.push({ width, header: 'identity and primary action aligned; options below', mascot: '6 choices; persisted and switchable in session', phaseAndTimer: 'centered', numbering: 'hanging indent verified on wrapped lines' })
     await page.close()
   }
   console.log(JSON.stringify(results, null, 2))

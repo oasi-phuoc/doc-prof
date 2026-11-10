@@ -1,5 +1,7 @@
-# Illustrations du rituel de classe
+# Mascottes du jeu collectif
 
-Quatre illustrations originales générées pour ClairFLE le 10 novembre 2026 : réflexion, carte levée, choix au tableau et discussion. Style semi-réaliste cohérent avec les scènes pédagogiques TCF, jeunes adultes, fond blanc et composition prévue pour un affichage circulaire. Aucun texte ni logo dans les images.
+Les fichiers `leaf-mascot.webp`, `owl-mascot.webp`, `octopus-mascot.webp`, `hedgehog-mascot.webp`, `rabbit-mascot.webp` et `dragon-mascot.webp` sont des illustrations originales générées pour ClairFLE. Le dragon reprend le modèle asiatique choisi par le propriétaire.
 
-Les fichiers WebP sont les ressources de production. Le recadrage rond est appliqué par CSS (`.ci-phase-art`), avec un texte alternatif et un libellé de phase. Les PNG source ne font pas partie du chargement de l’application.
+Chaque planche contient six poses sur une grille de trois colonnes et deux rangées : réflexion, vote, discussion ; joie, tristesse, pause. `Mascot.tsx` et `projection.css` sélectionnent la pose et lui donnent un mouvement adapté. `ResultFeedback.tsx` ajoute les confettis et les larmes.
+
+Sur demande du propriétaire, ces mouvements restent actifs avec le réglage système de réduction des animations. Les quatre anciens portraits WebP sont conservés pour la compatibilité des anciennes versions et ne sont plus utilisés par le moteur actuel.

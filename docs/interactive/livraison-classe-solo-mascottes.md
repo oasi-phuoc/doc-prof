@@ -13,9 +13,9 @@ En Solo, toutes les questions audio sélectionnées sont conservées individuell
 
 ## Mascottes
 
-Cinq choix mémorisés localement : **Esprit feuille**, **Hibou**, **Pieuvre**, **Hérisson**, **Lapin lunaire**. Chaque personnage a six poses : réflexion, vote, discussion, juste, faux et pause. Les cinq planches WebP ont été générées pour cette évolution ; les poses sont affichées par coordonnées CSS dans la même planche, sans téléchargement d’un fichier par état.
+Six choix mémorisés localement : **Esprit feuille**, **Hibou**, **Pieuvre**, **Hérisson**, **Lapin lunaire**, **Dragon asiatique**. Chaque personnage a six poses : réflexion, vote, discussion, juste, faux et pause. Les six planches WebP ont été générées pour cette évolution ; les poses sont affichées par coordonnées CSS dans la même planche, sans téléchargement d’un fichier par état.
 
-Une réponse juste en Solo affiche la mascotte qui félicite et une explosion de confettis ; une réponse fausse affiche la mascotte triste et des larmes animées. Les animations sont décoratives, limitées à quelques secondes et désactivées avec `prefers-reduced-motion`. Le verdict reste écrit indépendamment de l’animation. Les douze animaux du zodiaque sont des propositions visuelles soumises au propriétaire, pas des choix intégrés.
+Une réponse juste en Solo affiche la mascotte qui félicite et une explosion de confettis ; une réponse fausse affiche la mascotte triste et des larmes animées. Chaque pose bouge : réflexion et pause respirent, le vote se soulève, la discussion se balance, la joie sautille et la tristesse oscille avec ses larmes. Les confettis et les larmes durent quelques secondes. Sur demande explicite du propriétaire, les mascottes et leurs effets restent animés indépendamment du réglage `prefers-reduced-motion`. Le verdict reste écrit indépendamment de l’animation. Le Dragon asiatique de la planche du zodiaque est intégré ; les onze autres animaux restent des propositions visuelles soumises au propriétaire.
 
 ## Mobile et numérotation
 
@@ -46,8 +46,11 @@ PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run test:interactive:m
 PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium node tests/interactive/solo-browser.mjs
 PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium node tests/interactive/mobile-browser.mjs
 PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium node tests/interactive/resume-browser.mjs
+PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium node tests/interactive/mascot-browser.mjs
 ```
 
-Les scénarios Solo couvrent la bonne réponse, l’absence de réponse, le délai de cinq secondes, les deux pauses, l’audio, les animations et le bilan. Les scénarios mobiles couvrent 360, 390 et 700 px, l’alignement des en-têtes, l’accès aux options, les cinq mascottes, la mémorisation et le retrait du texte sur plusieurs lignes. Les gestes et les horloges sont simulés dans Chromium ; aucun essai sur ENI ou téléphone physique n’est revendiqué.
+Les scénarios Solo couvrent la bonne réponse, l’absence de réponse, le délai de cinq secondes, les deux pauses, l’audio, les animations et le bilan. Les scénarios mobiles couvrent 360, 390 et 700 px, l’alignement des en-têtes, l’accès aux options, les six mascottes, la mémorisation et le retrait du texte sur plusieurs lignes. Les gestes et les horloges sont simulés dans Chromium ; aucun essai sur ENI ou téléphone physique n’est revendiqué.
 
 Le scénario `resume-browser.mjs` interrompt une réflexion puis une correction Solo après environ deux secondes, recharge la page et vérifie la reprise des seules trois secondes restantes, en conservant la pause, le mode et le verdict. Les instantanés sans minuteur de la première version restent lisibles. Un minuteur invalide est refusé sans écraser la sauvegarde.
+
+La vérification des mascottes affiche les six personnages dans leurs six poses et mesure les transformations produites par le moteur d’animation du navigateur. Les 36 poses bougent, les six planches se décodent, et les confettis/larmes restent actifs avec la préférence de réduction du mouvement activée, conformément à la demande du propriétaire.

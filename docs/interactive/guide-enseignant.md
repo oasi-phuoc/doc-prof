@@ -1,4 +1,4 @@
-> Mise à jour : les [modes Classe/Solo et les cinq mascottes](livraison-classe-solo-mascottes.md) remplacent le rituel avec sélection au tableau décrit dans ce guide. Les icônes Mode et Mascotte ouvrent leurs choix dans la barre du haut.
+> Mise à jour : les [modes Classe/Solo et les six mascottes](livraison-classe-solo-mascottes.md) remplacent le rituel avec sélection au tableau décrit dans ce guide. Les icônes Mode et Mascotte ouvrent leurs choix dans la barre du haut.
 
 # Jouer en classe
 

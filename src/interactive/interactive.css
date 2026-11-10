@@ -1058,7 +1058,7 @@
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .ci-app * {
+  .ci-app *:not([data-ci-motion]) {
     animation: none !important;
     transition: none !important;
     scroll-behavior: auto !important;

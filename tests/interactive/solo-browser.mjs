@@ -41,11 +41,14 @@ try {
     assert.equal(await page.locator('.ci-reveal').count(), 0)
     await page.getByRole('button', { name: 'Reprendre la séance', exact: true }).click()
     await page.clock.runFor(5100)
+    await page.locator('.ci-reveal').waitFor()
     assert.equal(await page.locator('.ci-reveal').count(), 1)
     assert.match(await page.locator('.ci-correction-status').innerText(), /sans réponse/)
     assert.equal(await page.locator('.ci-tears > i').count(), 4)
     await page.emulateMedia({ reducedMotion: 'reduce' })
-    assert.equal(await page.locator('.ci-tears').evaluate((element) => getComputedStyle(element).display), 'none')
+    assert.notEqual(await page.locator('.ci-tears').evaluate((element) => getComputedStyle(element).display), 'none')
+    assert.notEqual(await page.locator('.ci-tears > i').first().evaluate((element) => getComputedStyle(element).animationName), 'none')
+    assert.notEqual(await page.locator('.ci-mascot-incorrect').evaluate((element) => getComputedStyle(element).animationName), 'none')
     await page.emulateMedia({ reducedMotion: 'no-preference' })
     await page.screenshot({ path: `/tmp/clairfle-solo-incorrect-${width}.png`, fullPage: true })
     assert.equal(await page.locator('.ci-margin-answer').count(), 1)
@@ -66,6 +69,7 @@ try {
     assert.equal(await page.locator('audio').count(), 1)
     // Solo audio never prevents the countdown from starting.
     await page.clock.runFor(5100)
+    await page.locator('.ci-reveal').waitFor()
     assert.equal(await page.locator('.ci-reveal').count(), 1)
     for (let question = 5; question <= 10; question++) {
       await page.clock.runFor(5100)

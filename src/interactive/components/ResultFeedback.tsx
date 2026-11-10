@@ -9,10 +9,10 @@ export function ResultFeedback({ correct }: { correct: boolean }) {
       {correct ? (
         <div className="ci-confetti">
           {Array.from({ length: 24 }, (_, i) => (
-            <i key={i} style={{ '--i': i, '--x': `${Math.sin(i * 2.4) * 115}px`, '--y': `${-35 - (i % 5) * 24}px`, '--spin': `${(i % 2 ? 1 : -1) * (180 + i * 33)}deg`, '--confetti': ['#ffe27b', '#a6d7bc', '#c2b2ee', '#f7a1b9', '#91c5ee'][i % 5] } as CSSProperties} />
+            <i data-ci-motion key={i} style={{ '--i': i, '--x': `${Math.sin(i * 2.4) * 115}px`, '--y': `${-35 - (i % 5) * 24}px`, '--spin': `${(i % 2 ? 1 : -1) * (180 + i * 33)}deg`, '--confetti': ['#ffe27b', '#a6d7bc', '#c2b2ee', '#f7a1b9', '#91c5ee'][i % 5] } as CSSProperties} />
           ))}
         </div>
-      ) : <div className="ci-tears"><i /><i /><i /><i /></div>}
+      ) : <div className="ci-tears"><i data-ci-motion /><i data-ci-motion /><i data-ci-motion /><i data-ci-motion /></div>}
     </div>
   )
 }
