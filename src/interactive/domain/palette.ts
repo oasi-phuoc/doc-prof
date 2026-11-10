@@ -1,6 +1,7 @@
 export const PALETTE = [
   {
     letter: 'A',
+    name: 'Jaune',
     color: '#F6E5A2',
     ink: '#182238',
     symbol: '●',
@@ -8,6 +9,7 @@ export const PALETTE = [
   },
   {
     letter: 'B',
+    name: 'Rose',
     color: '#F2C3D0',
     ink: '#182238',
     symbol: '■',
@@ -15,6 +17,7 @@ export const PALETTE = [
   },
   {
     letter: 'C',
+    name: 'Orange',
     color: '#F7D3B1',
     ink: '#182238',
     symbol: '▲',
@@ -22,6 +25,7 @@ export const PALETTE = [
   },
   {
     letter: 'D',
+    name: 'Bleu',
     color: '#BFD7F2',
     ink: '#182238',
     symbol: '◆',
@@ -29,6 +33,7 @@ export const PALETTE = [
   },
   {
     letter: 'E',
+    name: 'Vert',
     color: '#BDE3D5',
     ink: '#182238',
     symbol: '★',
@@ -36,6 +41,7 @@ export const PALETTE = [
   },
   {
     letter: 'F',
+    name: 'Violet',
     color: '#D6C9F1',
     ink: '#182238',
     symbol: '✚',
@@ -57,6 +63,18 @@ export const SHAPES = [
   { id: 'moon', label: 'Lune' },
 ] as const
 export type ShapeId = (typeof SHAPES)[number]['id']
+/** Shared vector paths for screen, physical cards and teacher printouts. */
+export const SHAPE_PATHS = {
+  triangle: 'm12 2 11 20H1Z',
+  diamond: 'm12 1 11 11-11 11L1 12Z',
+  star: 'm12 1 3.4 7 7.6 1.1-5.5 5.4 1.3 7.5L12 18.4 5.2 22l1.3-7.5L1 9.1 8.6 8Z',
+  cross: 'M8 1h8v7h7v8h-7v7H8v-7H1V8h7Z',
+  pentagon: 'm12 1 11 8-4 13H5L1 9Z',
+  hexagon: 'M6 2h12l6 10-6 10H6L0 12Z',
+  heart: 'M12 22 2 12C-5 3 7-3 12 5 17-3 29 3 22 12Z',
+  moon: 'M17 2a10 10 0 1 0 5 15A11 11 0 0 1 17 2Z',
+} as const
+
 export const defaultShapes: ShapeId[] = [
   'circle',
   'square',

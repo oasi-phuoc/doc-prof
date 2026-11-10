@@ -10,7 +10,7 @@ Ce registre complète les anciennes checklists de livraison. Il distingue les fo
 | Moteur Classe / Solo | Navigation, correction, pause, minuterie, bilan ; tests de domaine, Classe et Solo | Garde enseignant, annulation de révélation et navigation conservant tous les états par question |
 | F25 diagnostic | Page et rapport local ; tests navigateur et document `diagnostic-eni.md` | Essai sur ENI réel à joindre au pilote |
 | F26 cartes et étalonnage | Palette, formes, planches et contraste déjà testés | Assistant d’étalonnage et contraste des contours complets |
-| F27 feuille enseignant | À réaliser | Document du plan résolu, corrigés et avertissement d’obsolescence |
+| F27 feuille enseignant | Fichier autonome A4, corrigés hors DOM, plan identique, obsolescence et images incorporées ; `teacher-sheet-results.json` | Essai d’impression sur l’équipement de classe |
 | F28 persistance | IndexedDB, journal, empreinte du plan, reprise des deux décomptes ; `resume-results.json` | Verrou entre onglets, compaction, gestion des brouillons et autres magasins du §63 |
 | F29 médias | Précontrôle, décodeurs, cache, annulation, préchargement suivant et tests | Journal et limites d’écoutes ; extension hors ligne P1 |
 | F30 comptage et observations | À réaliser | Compteurs validés, provenance, visibilité et bilan honnête |

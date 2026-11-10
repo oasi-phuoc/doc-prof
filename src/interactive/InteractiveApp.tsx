@@ -20,6 +20,7 @@ import { readInteractiveDraft } from './navigation'
 import { SessionView } from './SessionView'
 import { loadSession, deleteSession, type Resume } from './domain/persistence'
 import { PrintCards } from './components/PrintCards'
+import { TeacherSheet } from './components/TeacherSheet'
 import { PaletteSettings } from './components/PaletteSettings'
 import { CardBadge } from './components/CardBadge'
 import { ClassroomHeader } from './components/ClassroomHeader'
@@ -129,6 +130,7 @@ function GameApp() {
   const [selection, setSelected] = useState<string[] | null>(null)
   const [excludeUnavailable, setExcludeUnavailable] = useState(true)
   const [fullscreenMessage, setFullscreenMessage] = useState('')
+  const [teacherSheetExport, setTeacherSheetExport] = useState('')
   useEffect(() => {
     if (source) return
     const id = savedIdFromPath()
@@ -521,6 +523,7 @@ function GameApp() {
                     </ul>
                   </details>
                 )}
+                <TeacherSheet game={activeGame} colors={colors} shapes={shapes} disabled={!media.complete} lastSignature={teacherSheetExport} onExport={setTeacherSheetExport} />
                 <PrintCards colors={colors} shapes={shapes} />
                 <p className="ci-no-print"><a href="/interactif/diagnostic" target="_blank" rel="noreferrer">Diagnostic de l’écran</a></p>
               </main>
