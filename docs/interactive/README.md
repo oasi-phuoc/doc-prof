@@ -19,7 +19,7 @@ Le cache explicite permet une installation dans les environnements où le dossie
 
 ## Préparation et supports
 
-La préparation vérifie les images et les audios avant le lancement, avec rapport, réessai et exclusion des questions aux médias absents ou invalides sans décocher la sélection. Une nouvelle partie renouvelle la graine du générateur en conservant le modèle serveur. Une reprise garde la série en cours. Les propositions restent visibles après correction ; la réponse n’est pas répétée sous les cartes. Voir [nouvelles parties](nouvelles-parties.md) et [contrôle des médias](livraison-medias-word.md).
+La préparation vérifie les images et les audios avant le lancement, avec rapport, réessai et exclusion des questions aux médias absents ou invalides sans décocher la sélection. Une nouvelle partie renouvelle la graine du générateur en conservant le modèle serveur. Une reprise garde la série en cours. Après correction, la bonne réponse garde sa couleur parmi les cartes et porte une coche ; les autres cartes deviennent grises. La réponse n’est pas répétée près de la mascotte. Voir [correction dans les cartes](livraison-correction-cartes.md), [nouvelles parties](nouvelles-parties.md) et [contrôle des médias](livraison-medias-word.md).
 
 ## Rituel et réglages
 

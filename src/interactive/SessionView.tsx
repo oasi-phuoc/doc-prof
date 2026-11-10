@@ -434,22 +434,6 @@ function PlayingRound({
                   onRemaining={(remainingMs) => onClock({ roundId, phase: 'thinking', durationMs: timer.seconds * 1000, remainingMs })}
                 />
               )}
-              {reveal &&
-                questions.map((q, i) => (
-                  <CorrectionView
-                    key={q.id}
-                    collective={!solo}
-                    placement="left"
-                    number={questions.length === 2 ? i + 1 : undefined}
-                    question={q}
-                    correction={game.corrections[q.id]!}
-                    selected={state.selections[q.id]}
-                    colors={colors}
-                    shapes={shapes}
-                    offset={i * 3}
-                    onAssess={() => {}}
-                  />
-                ))}
             </aside>
             <div className="ci-round-questions">
               {questions.map((q, i) => (
@@ -481,9 +465,6 @@ function PlayingRound({
                       question={q}
                       correction={game.corrections[q.id]!}
                       selected={state.selections[q.id]}
-                      colors={colors}
-                      shapes={shapes}
-                      offset={i * 3}
                       assessment={
                         state.history.find((a) => a.questionId === q.id)?.manual
                       }
@@ -524,9 +505,6 @@ function PlayingRound({
                     question={q}
                     correction={game.corrections[q.id]!}
                     selected={state.selections[q.id]}
-                    colors={colors}
-                    shapes={shapes}
-                    offset={i * 3}
                     onAssess={() => {}}
                   />
                 ))}

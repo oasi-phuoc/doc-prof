@@ -207,11 +207,11 @@ try {
     assert.equal(await page.locator('.ci-reveal').count(), 0)
     await page.getByRole('button', { name: 'Enseignant : révéler' }).waitFor()
     await page.keyboard.press('Enter')
-    assert.equal(await page.locator('.ci-correction-answer img').count(), 1)
+    assert.equal(await page.locator('.ci-answer-key img').count(), 1)
     assert.equal(await page.locator('.ci-answer:visible').count(), 3)
     assert.equal(await page.locator('.ci-answer-incorrect').count(), 0)
     assert.match(
-      await page.locator('.ci-correction-answer img').getAttribute('src'),
+      await page.locator('.ci-answer-key img').getAttribute('src'),
       /5-tomates/,
     )
     assert.equal(await page.locator('.ci-correction-status').count(), 0)
@@ -297,7 +297,7 @@ try {
     await page.evaluate(() => document.activeElement?.blur())
     await page.keyboard.press('Enter')
     assert.equal(
-      await page.locator('.ci-margin-left .ci-phase-label').innerText(),
+      await page.locator('.ci-margin-left .ci-phase-banner').getAttribute('aria-label'),
       'Je réfléchis',
     )
     await page.getByRole('button', { name: 'Fermer les réglages' }).click()
@@ -321,7 +321,7 @@ try {
       ),
     )
     assert.equal(
-      await page.locator('.ci-margin-left .ci-phase-label').innerText(),
+      await page.locator('.ci-margin-left .ci-phase-banner').getAttribute('aria-label'),
       'Je réfléchis',
     )
     await page.clock.runFor(6000)
@@ -338,7 +338,7 @@ try {
     await page.getByRole('button', { name: 'Quitter la séance' }).click()
     await page.getByRole('button', { name: /Reprendre la séance/ }).waitFor()
     const savedJournals = await page.evaluate(async () => {
-      const db = await new Promise((resolve) => { const request = indexedDB.open('clairfle-interactive', 1); request.onsuccess = () => resolve(request.result) })
+      const db = await new Promise((resolve) => { const request = indexedDB.open('clairfle-interactive'); request.onsuccess = () => resolve(request.result) })
       const rows = await new Promise((resolve) => { const request = db.transaction('sessions').objectStore('sessions').getAll(); request.onsuccess = () => resolve(request.result) })
       db.close()
       return rows.map((row) => ({ mode: row.mode, events: row.events.map((event) => event.action.type) }))
@@ -352,7 +352,9 @@ try {
     await page.getByRole('button', { name: 'Enseignant : révéler' }).click()
     assert.equal(await page.locator('.ci-reveal').count(), 2)
     assert.equal(await page.locator('.ci-correction-status').count(), 0)
-    assert.equal(await page.locator('.ci-correction-answer img').count(), 2)
+    assert.equal(await page.locator('.ci-answer-key img').count(), 2)
+    assert.equal(await page.locator('.ci-answer-muted').count(), 4)
+    assert.equal(await page.locator('.ci-correction-answer').count(), 0)
     assert.equal(await page.locator('.ci-answer:visible').count(), 6)
     assert.equal(await page.locator('.ci-answer-correct').count(), 0)
     assert.equal(await page.locator('.ci-answer-incorrect').count(), 0)

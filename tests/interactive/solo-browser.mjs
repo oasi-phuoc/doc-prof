@@ -52,7 +52,9 @@ try {
     assert.notEqual(await page.locator('.ci-mascot-incorrect').evaluate((element) => getComputedStyle(element).animationName), 'none')
     await page.emulateMedia({ reducedMotion: 'no-preference' })
     await page.screenshot({ path: `/tmp/clairfle-solo-incorrect-${width}.png`, fullPage: true })
-    assert.equal(await page.locator('.ci-margin-answer').count(), 1)
+    assert.equal(await page.locator('.ci-margin-answer').count(), 0)
+    assert.equal(await page.locator('.ci-answer-key').count(), 1)
+    assert.equal(await page.locator('.ci-answer-muted').count(), 5)
     // Pause also freezes the five seconds of correction.
     await page.getByRole('button', { name: 'Pause', exact: true }).click()
     await page.clock.runFor(10000)

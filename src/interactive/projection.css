@@ -253,6 +253,7 @@
   right: 6px;
   top: 6px;
   background: #fff;
+  color: #182238;
   border-radius: 50%;
   padding: 2px;
 }
@@ -261,6 +262,25 @@
   height: 28px;
   display: block;
 }
+.ci-app .ci-answer.ci-answer-key {
+  background: var(--card-color);
+  border: 3px solid var(--card-ink);
+  color: var(--card-ink);
+  outline: none;
+  transform: none;
+}
+.ci-app .ci-answer.ci-answer-key .ci-answer-content { background: var(--card-color); color: var(--card-ink); padding-inline-end: 32px; }
+.ci-app .ci-answer.ci-answer-muted {
+  background: #e5e7eb;
+  border-color: #b8bec9;
+  color: #4b5563;
+  box-shadow: none;
+  filter: grayscale(1);
+  outline: none;
+  transform: none;
+}
+.ci-app .ci-answer-muted .ci-card-badge,
+.ci-app .ci-answer-muted .ci-answer-content { background: #e5e7eb; color: #4b5563; }
 .ci-sr-only {
   position: absolute;
   width: 1px;

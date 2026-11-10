@@ -36,6 +36,9 @@ export function QuestionStage({
   number?: number
   onSelect: (id: string) => void
 }) {
+  const showCorrection =
+    phase === 'revealed' &&
+    q.choices.some((entry) => entry.id === correctChoiceId)
   return (
     <>
       <section className="ci-question">
@@ -79,6 +82,7 @@ export function QuestionStage({
             const slot = slotOffset + i
             const palette = PALETTE[slot]!
             const chosen = selected === choice.id
+            const correctAnswer = showCorrection && choice.id === correctChoiceId
             const verdict =
               phase === 'revealed' && chosen
                 ? choice.id === correctChoiceId
@@ -88,7 +92,7 @@ export function QuestionStage({
             return (
               <button
                 key={choice.id}
-                className={`ci-answer${chosen ? ' ci-chosen' : ''}${verdict ? ` ci-answer-${verdict}` : ''}`}
+                className={`ci-answer${chosen ? ' ci-chosen' : ''}${verdict ? ` ci-answer-${verdict}` : ''}${showCorrection ? correctAnswer ? ' ci-answer-key' : ' ci-answer-muted' : ''}`}
                 style={
                   {
                     '--card-color': colors[slot],
@@ -111,12 +115,12 @@ export function QuestionStage({
                   )}
                   {choice.text && <span>{choice.text}</span>}
                 </span>
-                {verdict && (
+                {(verdict || correctAnswer) && (
                   <span className="ci-answer-verdict">
-                    <Icon name={verdict === 'correct' ? 'check' : 'wrong'} />
+                    <Icon name={correctAnswer ? 'check' : 'wrong'} />
                     <span className="ci-sr-only">
-                      {verdict === 'correct'
-                        ? 'Réponse correcte'
+                      {correctAnswer
+                        ? 'Bonne réponse'
                         : 'Réponse incorrecte'}
                     </span>
                   </span>
