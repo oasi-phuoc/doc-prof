@@ -24,8 +24,14 @@ export function QuestionStage({
   number,
   onSelect,
   canSelect = false,
+  imageOrder,
+  onImageOrder,
+  interactionsDisabled = false,
 }: {
   canSelect?: boolean
+  imageOrder?: number[]
+  onImageOrder?: (order: number[]) => void
+  interactionsDisabled?: boolean
   q: Question
   phase: Phase
   selected?: string
@@ -42,7 +48,7 @@ export function QuestionStage({
   return (
     <>
       <section className="ci-question">
-        <h1 className={number !== undefined ? 'ci-numbered-heading' : undefined}>
+        <h1 tabIndex={-1} className={number !== undefined ? 'ci-numbered-heading' : undefined}>
           {number !== undefined && (
             <span className="ci-question-number">{number}.</span>
           )}
@@ -132,7 +138,7 @@ export function QuestionStage({
       ) : (
         <section className="ci-manual">
           {q.mode === 'sequence' ? (
-            <Sequence key={q.id} question={q} />
+            <Sequence key={q.id} question={q} order={imageOrder} onOrder={onImageOrder} disabled={interactionsDisabled || phase === 'revealed'} />
           ) : (
             <p>
               Échange oral ou production libre. L’enseignant guide l’activité et
@@ -145,18 +151,15 @@ export function QuestionStage({
   )
 }
 
-function Sequence({ question }: { question: Question }) {
-  const [images, setImages] = useState(
-    question.images.map((src, index) => ({ src, index })),
-  )
-  const move = (position: number, delta: number) =>
-    setImages((current) => {
-      const next = [...current]
+function Sequence({ question, order, onOrder, disabled }: { question: Question; order?: number[]; onOrder?: (order: number[]) => void; disabled: boolean }) {
+  const images = (order ?? question.images.map((_, index) => index)).map((index) => ({ src: question.images[index]!, index }))
+  const move = (position: number, delta: number) => {
+      const next = images.map((image) => image.index)
       const target = position + delta
-      if (target < 0 || target >= next.length) return current
+      if (disabled || target < 0 || target >= next.length) return
       ;[next[position], next[target]] = [next[target]!, next[position]!]
-      return next
-    })
+      onOrder?.(next)
+  }
   return (
     <>
       <p>
@@ -170,7 +173,7 @@ function Sequence({ question }: { question: Question }) {
             <div className="ci-toolbar">
               <button
                 aria-label={`Déplacer la scène ${image.index + 1} à gauche`}
-                disabled={!i}
+                disabled={disabled || !i}
                 onClick={() => move(i, -1)}
               >
                 ←
@@ -178,7 +181,7 @@ function Sequence({ question }: { question: Question }) {
               <span>{i + 1}</span>
               <button
                 aria-label={`Déplacer la scène ${image.index + 1} à droite`}
-                disabled={i === images.length - 1}
+                disabled={disabled || i === images.length - 1}
                 onClick={() => move(i, 1)}
               >
                 →

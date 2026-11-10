@@ -1,5 +1,7 @@
 # ADR 0008 — Verrou enseignant et rétractation de correction
 
+Les écritures utilisent désormais le schéma 4 pour les [états par écran et tentatives](adr-0009-etats-et-tentatives.md). Le schéma 3 décrit ici reste lisible.
+
 Le schéma de séance 3 ajoute au moteur le verrou des commandes, l’instant de révélation injecté par le contrôleur et le nombre de rétractations par question. Le reducer reste sans lecture d’horloge : `transition` reçoit le temps de l’événement en quatrième argument ; la reprise utilise le même `at` du journal. Une rétractation exige le mode Classe, la phase révélée, un écran identique, une séance non suspendue et non verrouillée, et un délai strictement inférieur à dix secondes. Un doublon après la première rétractation n’a aucun effet.
 
 La rétractation retire les tentatives courantes du bilan et remet l’écran en discussion. Les activités antérieures, comptages et marques restent conservés. Une nouvelle révélation ne peut donc pas ajouter une seconde entrée de résultat pour la même question. Les rétractations de chaque question appariée sont comptées séparément. Les instantanés copient et valident ces champs, sans ajouter de texte de question ni de clé de réponse.

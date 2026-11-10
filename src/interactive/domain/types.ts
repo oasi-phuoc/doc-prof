@@ -58,6 +58,23 @@ export type Attempt = {
   skipped?: boolean
   manual?: 'acquired' | 'retry'
 }
+export type RoundRuntime = {
+  phase: Phase
+  selections: Record<string, string>
+  revealedAt?: number
+  attempt: number
+  hintsShown: Record<string, number>
+  imageOrders: Record<string, number[]>
+  audioComplete: boolean
+  audioOverride: boolean
+}
+export type PreviousAttempt = {
+  roundId: string
+  attempt: number
+  results: Attempt[]
+  manualVotes: Record<string, ManualVote>
+  teacherMarks: Record<string, 'success' | 'review' | 'unassessed'>
+}
 export type Session = {
   gameId: string
   mode: PlayMode
@@ -74,8 +91,10 @@ export type Session = {
   teacherLocked?: boolean
   revealedAt?: number
   revealRetractions?: Record<string, number>
+  roundStates?: Record<string, RoundRuntime>
+  previousAttempts?: PreviousAttempt[]
 }
-export type Action =
+export type Action = (
   | { type: 'TIMEOUT' }
   | { type: 'CARDS_UP' }
   | { type: 'SELECT'; choiceId: string; questionId?: string }
@@ -84,8 +103,14 @@ export type Action =
   | { type: 'UNREVEAL'; roundId: string }
   | { type: 'TEACHER_LOCK_SET'; locked: boolean }
   | { type: 'FINISH' }
+  | { type: 'NAVIGATE' | 'REOPEN'; index: number }
+  | { type: 'RETRY_QUESTION'; roundId: string }
+  | { type: 'HINT_SHOW'; questionId: string }
+  | { type: 'IMAGE_ORDER_SET'; questionId: string; order: number[] }
+  | { type: 'AUDIO_STATE'; roundId: string; status: 'started' | 'ended' | 'override' }
   | { type: 'ASSESS'; value: 'acquired' | 'retry'; questionId?: string }
   | { type: 'MANUAL_VOTE_SET'; questionId: string; vote: ManualVote | null }
   | { type: 'TEACHER_MARK_SET'; questionId: string; value: 'success' | 'review' | 'unassessed' }
   | { type: 'SESSION_NOTE_SET'; note: string }
   | { type: 'NEXT' | 'PREVIOUS' | 'SKIP' | 'PAUSE' | 'RESUME' }
+) & { roundId?: string }

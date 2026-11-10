@@ -17,9 +17,10 @@ export type SessionClock = {
   phase: 'thinking' | 'revealed'
   durationMs: number
   remainingMs: number
+  attempt?: number
 }
 export type SavedSession = {
-  schemaVersion: 1 | 2 | 3
+  schemaVersion: 1 | 2 | 3 | 4
   mode: PlayMode
   sessionId: string
   gameId: string
@@ -27,6 +28,7 @@ export type SavedSession = {
   updatedAt: number
   events: SessionEvent[]
   clock?: SessionClock
+  clocks?: Record<string, SessionClock>
   revision?: number
   checkpoint?: SessionCheckpoint
 }
@@ -44,6 +46,10 @@ function object(value: unknown): value is Record<string, unknown> {
 }
 function validAction(value: unknown): value is Action {
   if (!object(value)) return false
+  if ('roundId' in value && !['UNREVEAL', 'RETRY_QUESTION', 'AUDIO_STATE'].includes(value.type as string)) {
+    const { roundId, ...rest } = value
+    return typeof roundId === 'string' && validAction(rest)
+  }
   const type = value.type
   const keys = Object.keys(value)
   if (type === 'SELECT') return keys.every((key) => ['type', 'choiceId', 'questionId'].includes(key)) && typeof value.choiceId === 'string' && (value.questionId === undefined || typeof value.questionId === 'string')
@@ -53,6 +59,11 @@ function validAction(value: unknown): value is Action {
   if (type === 'SESSION_NOTE_SET') return keys.length === 2 && typeof value.note === 'string' && value.note.length <= 2000
   if (type === 'TEACHER_LOCK_SET') return keys.length === 2 && typeof value.locked === 'boolean'
   if (type === 'UNREVEAL') return keys.length === 2 && typeof value.roundId === 'string'
+  if (type === 'NAVIGATE' || type === 'REOPEN') return keys.length === 2 && typeof value.index === 'number' && Number.isInteger(value.index)
+  if (type === 'RETRY_QUESTION') return keys.length === 2 && typeof value.roundId === 'string'
+  if (type === 'HINT_SHOW') return keys.length === 2 && typeof value.questionId === 'string'
+  if (type === 'IMAGE_ORDER_SET') return keys.length === 3 && typeof value.questionId === 'string' && Array.isArray(value.order) && value.order.length <= 100 && value.order.every((n) => typeof n === 'number' && Number.isInteger(n))
+  if (type === 'AUDIO_STATE') return keys.length === 3 && typeof value.roundId === 'string' && ['started', 'ended', 'override'].includes(value.status as string)
   return keys.length === 1 && typeof type === 'string' && ['TIMEOUT', 'CARDS_UP', 'DISCUSS', 'REVEAL', 'FINISH', 'NEXT', 'PREVIOUS', 'SKIP', 'PAUSE', 'RESUME'].includes(type)
 }
 
@@ -64,23 +75,34 @@ function readClock(value: unknown): SessionClock | undefined {
     value.durationMs <= 0 || value.durationMs > 600_000 ||
     (value.phase === 'revealed' && (value.durationMs < 1000 || value.durationMs > 10000 || value.durationMs % 1000 !== 0)) ||
     typeof value.remainingMs !== 'number' || !Number.isFinite(value.remainingMs) ||
-    value.remainingMs < 0 || value.remainingMs > value.durationMs
+    value.remainingMs < 0 || value.remainingMs > value.durationMs ||
+    value.attempt !== undefined && (typeof value.attempt !== 'number' || !Number.isInteger(value.attempt) || value.attempt < 0 || value.attempt > 5000)
   ) throw new Error('Minuteur de séance invalide. La sauvegarde est conservée.')
-  return { roundId: value.roundId, phase: value.phase, durationMs: value.durationMs, remainingMs: value.remainingMs }
+  return { roundId: value.roundId, phase: value.phase, durationMs: value.durationMs, remainingMs: value.remainingMs, ...(value.attempt !== undefined ? { attempt: value.attempt as number } : {}) }
 }
 
-export function remainingFor(clock: SessionClock | undefined, roundId: string, phase: SessionClock['phase'], durationMs: number): number | undefined {
-  return clock?.roundId === roundId && clock.phase === phase && clock.durationMs === durationMs ? clock.remainingMs : undefined
+export function remainingFor(clock: SessionClock | undefined, roundId: string, phase: SessionClock['phase'], durationMs: number, attempt = 0): number | undefined {
+  return clock?.roundId === roundId && clock.phase === phase && clock.durationMs === durationMs && (clock.attempt ?? 0) === attempt ? clock.remainingMs : undefined
 }
 
 /** Replaying teacher actions preserves selections and reveal decisions exactly. */
 export function replaySession(game: Game, value: unknown, planId: string, now = Date.now(), mode: PlayMode = 'class'): Resume | null {
-  if (!object(value) || ![1, 2, 3].includes(value.schemaVersion as number) || value.schemaVersion === 1 && value.checkpoint !== undefined) throw new Error('Version de sauvegarde non prise en charge. La sauvegarde est conservée.')
+  if (!object(value) || ![1, 2, 3, 4].includes(value.schemaVersion as number) || value.schemaVersion === 1 && value.checkpoint !== undefined) throw new Error('Version de sauvegarde non prise en charge. La sauvegarde est conservée.')
   if (value.mode !== mode || value.gameId !== game.id || value.planId !== planId) throw new Error(PLAN_CHANGED)
   if (typeof value.sessionId !== 'string' || !value.sessionId || typeof value.updatedAt !== 'number' || !Number.isFinite(value.updatedAt) || value.updatedAt > now + 60_000 || !Array.isArray(value.events) || value.events.length > 5000) throw new Error('Sauvegarde de séance invalide. Elle est conservée.')
   if (value.revision !== undefined && (typeof value.revision !== 'number' || !Number.isSafeInteger(value.revision) || value.revision < 0)) throw new Error('Révision de sauvegarde invalide. Elle est conservée.')
   if (now - value.updatedAt > TTL) return null
   const clock = readClock(value.clock)
+  let clocks: Record<string, SessionClock> | undefined
+  if (value.clocks !== undefined) {
+    if (!object(value.clocks) || Object.keys(value.clocks).length > roundsFor(game).length) throw new Error('Minuteurs de séance invalides. La sauvegarde est conservée.')
+    clocks = {}
+    for (const [id, raw] of Object.entries(value.clocks)) {
+      const entry = readClock(raw)
+      if (!entry || id !== entry.roundId || !roundsFor(game).some((round) => round.id === id)) throw new Error('Minuteurs de séance invalides. La sauvegarde est conservée.')
+      clocks[id] = entry
+    }
+  }
   const checkpoint = readCheckpoint(game, value.checkpoint, mode)
   const seen = new Set<string>(checkpoint?.lastEventId ? [checkpoint.lastEventId] : [])
   let state = checkpoint?.state ?? startSession(game, mode)
@@ -92,7 +114,7 @@ export function replaySession(game: Game, value: unknown, planId: string, now = 
     events.push({ eventId: item.eventId, at: item.at, action: item.action })
     state = transition(game, state, item.action, item.at)
   }
-  return { record: { schemaVersion: value.schemaVersion as 1 | 2 | 3, mode, sessionId: value.sessionId, gameId: game.id, planId, updatedAt: value.updatedAt, events, clock, revision: (value.revision as number | undefined) ?? 0, ...(checkpoint ? { checkpoint } : {}) }, state }
+  return { record: { schemaVersion: value.schemaVersion as 1 | 2 | 3 | 4, mode, sessionId: value.sessionId, gameId: game.id, planId, updatedAt: value.updatedAt, events, clock, ...(clocks ? { clocks } : {}), revision: (value.revision as number | undefined) ?? 0, ...(checkpoint ? { checkpoint } : {}) }, state }
 }
 
 let maintenance: Promise<number> | undefined
@@ -125,7 +147,7 @@ export async function purgeExpiredSessions(now = Date.now()): Promise<number> {
         const cursor = request.result
         if (!cursor) return
         const value: unknown = cursor.value
-        if (object(value) && [1, 2, 3].includes(value.schemaVersion as number) && typeof value.updatedAt === 'number' && Number.isFinite(value.updatedAt) && now - value.updatedAt > TTL) { cursor.delete(); removed++ }
+        if (object(value) && [1, 2, 3, 4].includes(value.schemaVersion as number) && typeof value.updatedAt === 'number' && Number.isFinite(value.updatedAt) && now - value.updatedAt > TTL) { cursor.delete(); removed++ }
         cursor.continue()
       }
       tx.oncomplete = () => resolve(removed)
@@ -144,12 +166,12 @@ export async function loadSession(game: Game, mode: PlayMode = 'class'): Promise
   return replaySession(game, value, await planIdentity(game), Date.now(), mode)
 }
 export async function newRecord(game: Game, mode: PlayMode = 'class'): Promise<SavedSession> {
-  return { schemaVersion: 3, mode, sessionId: crypto.randomUUID(), gameId: game.id, planId: await planIdentity(game), updatedAt: Date.now(), events: [], revision: 0 }
+  return { schemaVersion: 4, mode, sessionId: crypto.randomUUID(), gameId: game.id, planId: await planIdentity(game), updatedAt: Date.now(), events: [], revision: 0 }
 }
 export function compactSession(record: SavedSession, state: Session): SavedSession {
   if (record.gameId !== state.gameId || record.mode !== state.mode) throw new Error(PLAN_CHANGED)
   const lastEventId = record.events.at(-1)?.eventId ?? record.checkpoint?.lastEventId
-  return { ...record, schemaVersion: 3, checkpoint: { state: copySession(state), ...(lastEventId ? { lastEventId } : {}) }, events: [] }
+  return { ...record, schemaVersion: 4, checkpoint: { state: copySession(state), ...(lastEventId ? { lastEventId } : {}) }, events: [] }
 }
 function sameRevision(value: unknown, expected: SavedSession): boolean {
   if (!object(value) || !Array.isArray(value.events)) return false
@@ -184,11 +206,11 @@ export async function saveSession(record: SavedSession, previous?: SavedSession)
       if (!sameRevision(existing, previous)) throw new Error(SESSION_CONFLICT)
     } else if (existing !== undefined) {
       if (object(existing) && canonicalJson({ ...existing, revision: existing.revision ?? 0 }) === canonicalJson(record)) return record
-      if (!object(existing) || ![1, 2, 3].includes(existing.schemaVersion as number) || typeof existing.updatedAt !== 'number' || Date.now() - existing.updatedAt <= TTL) throw new Error(SESSION_CONFLICT)
+      if (!object(existing) || ![1, 2, 3, 4].includes(existing.schemaVersion as number) || typeof existing.updatedAt !== 'number' || Date.now() - existing.updatedAt <= TTL) throw new Error(SESSION_CONFLICT)
     }
     const revision = previous ? (previous.revision ?? 0) + 1 : 0
     if (!Number.isSafeInteger(revision)) throw new Error(SESSION_CONFLICT)
-    const next: SavedSession = { ...record, schemaVersion: 3, revision }
+    const next: SavedSession = { ...record, schemaVersion: 4, revision }
     store.put(next)
     return next
   })

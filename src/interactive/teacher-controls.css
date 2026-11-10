@@ -19,6 +19,14 @@
 .ci-app .ci-teacher-confirm::backdrop { background: rgb(24 34 56 / .45); }
 .ci-app .ci-teacher-confirm h2 { font-size: 24px; }
 .ci-app .ci-teacher-confirm .ci-toolbar { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; }
+.ci-app .ci-header button.ci-progress { min-height: 0; padding: 4px; border: 1px solid transparent; border-radius: 8px; background: transparent; color: var(--ci-ink); }
+.ci-app .ci-header button.ci-progress:hover { border-color: var(--ci-accent); }
+.ci-app .ci-question-navigator ol { display: grid; gap: 8px; list-style: none; padding: 0; margin: 16px 0; max-height: 48dvh; overflow: auto; }
+.ci-app .ci-question-navigator li button { width: 100%; display: grid; gap: 4px; text-align: left; justify-content: stretch; }
+.ci-app .ci-question-navigator li button[aria-current='step'] { border: 2px solid var(--ci-accent); }
+.ci-app .ci-question-navigator li span { font-size: 14px; font-weight: 400; overflow-wrap: anywhere; }
+.ci-app .ci-question-navigator li small { color: var(--ci-muted); }
+.ci-app .ci-attempt-history section { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--ci-line); }
 @media screen and (max-width: 700px) {
   .ci-app.ci-playing .ci-class-controls { grid-template-columns: 84px minmax(0, 1fr) 84px; column-gap: 4px; }
   .ci-app.ci-playing .ci-class-controls > .ci-primary { min-width: 0; width: 100%; min-height: 44px; padding: 6px 8px; gap: 6px; font-size: 14px; line-height: 1.2; }

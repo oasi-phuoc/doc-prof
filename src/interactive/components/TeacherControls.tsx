@@ -70,7 +70,7 @@ export function RetractRevealButton({ revealedAt, disabled, onRetract }: { revea
   return <IconButton className="ci-teacher-action" icon="reset" label="Masquer à nouveau" aria-description={`Disponible encore ${Math.ceil(remaining / 1000)} secondes.`} disabled={disabled} onClick={onRetract} />
 }
 
-export function TeacherConfirmation({ action, remaining, questionCount, onConfirm, onCancel }: { action: 'skip' | 'finish'; remaining: number; questionCount: number; onConfirm: () => void; onCancel: () => void }) {
+export function TeacherConfirmation({ action, remaining, questionCount, onConfirm, onCancel }: { action: 'skip' | 'finish' | 'retry'; remaining: number; questionCount: number; onConfirm: () => void; onCancel: () => void }) {
   const dialog = useRef<HTMLDialogElement>(null)
   const cancel = useRef<HTMLButtonElement>(null)
   const title = useId()
@@ -82,8 +82,8 @@ export function TeacherConfirmation({ action, remaining, questionCount, onConfir
     return () => { if (previous instanceof HTMLElement && previous.isConnected) previous.focus() }
   }, [])
   return <dialog className="ci-teacher-confirm" ref={dialog} aria-labelledby={title} aria-describedby={description} onCancel={(event) => { event.preventDefault(); onCancel() }}>
-    <h2 id={title}>{action === 'skip' ? questionCount === 2 ? 'Passer ces deux questions ?' : 'Passer cette question ?' : 'Terminer la séance ?'}</h2>
-    <p id={description}>{action === 'skip' ? questionCount === 2 ? 'Les corrections ne seront pas affichées. Les deux questions de cet écran seront indiquées comme passées dans le bilan.' : 'La correction ne sera pas affichée. Cette question sera indiquée comme passée dans le bilan.' : `${remaining} question(s) restent sans correction. Elles seront indiquées comme passées. Les activités déjà corrigées et les observations seront conservées dans le bilan.`}</p>
-    <div className="ci-toolbar"><button type="button" ref={cancel} onClick={onCancel}>Annuler</button><button type="button" className="ci-primary" onClick={onConfirm}>{action === 'skip' ? 'Passer sans correction' : 'Terminer et voir le bilan'}</button></div>
+    <h2 id={title}>{action === 'retry' ? 'Réessayer cette question ?' : action === 'skip' ? questionCount === 2 ? 'Passer ces deux questions ?' : 'Passer cette question ?' : 'Terminer la séance ?'}</h2>
+    <p id={description}>{action === 'retry' ? 'L’essai précédent est conservé. Les votes sont remis à zéro et les cartes mélangées changent de place. Les cartes à ordre fixe gardent leur ordre. La feuille enseignant imprimée correspond à la première tentative.' : action === 'skip' ? questionCount === 2 ? 'Les corrections ne seront pas affichées. Les deux questions de cet écran seront indiquées comme passées dans le bilan.' : 'La correction ne sera pas affichée. Cette question sera indiquée comme passée dans le bilan.' : `${remaining} question(s) restent sans correction. Elles seront indiquées comme passées. Les activités déjà corrigées et les observations seront conservées dans le bilan.`}</p>
+    <div className="ci-toolbar"><button type="button" ref={cancel} onClick={onCancel}>Annuler</button><button type="button" className="ci-primary" onClick={onConfirm}>{action === 'retry' ? 'Nouvelle tentative' : action === 'skip' ? 'Passer sans correction' : 'Terminer et voir le bilan'}</button></div>
   </dialog>
 }

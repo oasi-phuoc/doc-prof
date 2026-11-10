@@ -5,6 +5,8 @@ import type { Action, Game, Session } from './domain/types'
 import type { ShapeId } from './domain/palette'
 import { Mascot } from './components/Mascot'
 import { QuestionStage } from './components/QuestionStage'
+import { QuestionNavigator } from './components/QuestionNavigator'
+import { questionsForAttempt, runtimeFor } from './domain/round-runtime'
 import { CorrectionView } from './components/CorrectionView'
 import { PhaseBanner } from './components/PhaseBanner'
 import {
@@ -98,6 +100,8 @@ function ActiveSessionView({
   const record = useRef<Promise<SavedSession>>(initialRecord)
   const writes = useRef(Promise.resolve())
   const clock = useRef<SessionClock | undefined>(resume?.record.clock)
+  const clocks = useRef<Record<string, SessionClock>>({ ...resume?.record.clocks, ...(resume?.record.clock ? { [resume.record.clock.roundId]: resume.record.clock } : {}) })
+  const [viewClock, setViewClock] = useState<SessionClock | undefined>(() => resume?.record.clock ?? resume?.record.clocks?.[roundsFor(game)[resume.state.index]?.id ?? ''])
   const clockSave = useRef<ReturnType<typeof setTimeout> | undefined>(undefined)
   const [storageWarning, setStorageWarning] = useState(initialWarning ?? '')
   const enabled = useRef(!initialWarning)
@@ -106,10 +110,11 @@ function ActiveSessionView({
     clockSave.current = undefined
     if (!enabled.current) return
     const snapshot = clock.current
+    const allClocks = { ...clocks.current }
     writes.current = writes.current.then(async () => {
       const previous = await record.current
       if (!ownership()) throw new Error(STORAGE_WARNING)
-      const updated = { ...previous, clock: snapshot, updatedAt: Date.now() }
+      const updated = { ...previous, clock: snapshot, clocks: allClocks, updatedAt: Date.now() }
       record.current = Promise.resolve(await saveSession(updated, previous))
     }).catch((error: unknown) => { enabled.current = false; setStorageWarning(error instanceof Error ? error.message : STORAGE_WARNING) })
   }, [ownership])
@@ -118,8 +123,10 @@ function ActiveSessionView({
   }, [registerDrain, flushClock])
   const onClock = useCallback((value: SessionClock) => {
     if (roundsFor(game)[current.current.index]?.id !== value.roundId || current.current.phase !== value.phase) return
-    if (clock.current?.remainingMs === value.remainingMs && clock.current?.durationMs === value.durationMs && clock.current?.roundId === value.roundId && clock.current?.phase === value.phase) return
+    if ((value.attempt ?? 0) !== runtimeFor(game, current.current).attempt) return
+    if (clock.current?.remainingMs === value.remainingMs && clock.current?.durationMs === value.durationMs && clock.current?.roundId === value.roundId && clock.current?.phase === value.phase && (clock.current.attempt ?? 0) === (value.attempt ?? 0)) return
     clock.current = value
+    clocks.current[value.roundId] = value
     if (enabled.current && clockSave.current === undefined) clockSave.current = setTimeout(flushClock, 300)
   }, [game, flushClock])
   useEffect(() => {
@@ -136,8 +143,14 @@ function ActiveSessionView({
     const at = Date.now()
     const next = transition(game, current.current, action, at)
     if (next === current.current) return
-    if (next.index !== current.current.index || next.phase !== current.current.phase) clock.current = undefined
+    if (next.index !== current.current.index) clock.current = clocks.current[roundsFor(game)[next.index]?.id ?? '']
+    else if (next.phase !== current.current.phase || runtimeFor(game, next).attempt !== runtimeFor(game, current.current).attempt) {
+      delete clocks.current[roundsFor(game)[next.index]?.id ?? '']
+      clock.current = undefined
+    }
     const actionClock = clock.current
+    setViewClock(actionClock)
+    const actionClocks = { ...clocks.current }
     current.current = next
     setState(next)
     if (!enabled.current) return
@@ -146,7 +159,7 @@ function ActiveSessionView({
       const previous = await record.current
       if (!ownership()) throw new Error(STORAGE_WARNING)
       const updated: SavedSession = {
-        ...previous, updatedAt: at, clock: actionClock,
+        ...previous, updatedAt: at, clock: actionClock, clocks: actionClocks,
         events: [...previous.events, { eventId: crypto.randomUUID(), at, action }],
       }
       record.current = Promise.resolve(await saveSession(next.finished || updated.events.length >= 5000 ? compactSession(updated, next) : updated, previous))
@@ -224,7 +237,9 @@ function ActiveSessionView({
             {state.mode === 'solo' ? 'Ce bilan décrit tes réponses. Une absence de réponse dans le temps compte comme fausse. Les activités ouvertes ne sont pas notées automatiquement.' : 'Ce bilan décrit les activités travaillées collectivement. Les éventuels comptages sont saisis par l’enseignant. Aucun résultat individuel n’est déduit des cartes de la classe.'}
           </p>
           <div className="ci-panel ci-summary-questions">
-            {game.questions.map((q) => {
+            {game.questions.map((original) => {
+              const position = rounds.findIndex((round) => round.questionIds.includes(original.id))
+              const q = questionsForAttempt(game, position, runtimeFor(game, state, position).attempt).find((q) => q.id === original.id) ?? original
               const a = state.history.find(
                 (attempt) => attempt.questionId === q.id,
               )
@@ -255,8 +270,10 @@ function ActiveSessionView({
               )
             })}
           </div>
+          {!!state.previousAttempts?.length && <details className="ci-panel ci-attempt-history"><summary>Tentatives précédentes ({state.previousAttempts.length})</summary>{state.previousAttempts.map((attempt, i) => <section key={`${attempt.roundId}:${attempt.attempt}`}><b>Tentative {attempt.attempt + 1} · écran {rounds.findIndex((round) => round.id === attempt.roundId) + 1}</b><p>{attempt.results.length ? attempt.results.map((result) => `${game.questions.find((q) => q.id === result.questionId)?.prompt} · ${result.skipped ? 'passée' : result.manual === 'retry' ? 'à revoir' : 'corrigée'}`).join(' ; ') : 'Tentative relancée avant correction.'}</p>{Object.keys(attempt.manualVotes).length > 0 && <p>Comptage de cet essai conservé.</p>}<span className="ci-sr-only">Essai archivé {i + 1}</span></section>)}</details>}
           {state.mode === 'class' && <SessionObservations note={state.note} onSave={(note) => dispatch({ type: 'SESSION_NOTE_SET', note })} />}
           <div className="ci-toolbar">
+            {state.mode === 'class' && <button onClick={() => dispatch({ type: 'REOPEN', index: 0 })}>Revoir les questions</button>}
             {onNewPart && <button className="ci-primary" onClick={() => finish(onNewPart)}>Nouvelle partie</button>}
             <button
               className="ci-primary"
@@ -294,17 +311,17 @@ function ActiveSessionView({
     <>
     {storageWarning && <p className="ci-notice" role="status">{storageWarning}</p>}
     <PlayingRound
-      key={round.id}
+      key={`${round.id}:${runtimeFor(game, state).attempt}`}
       game={game}
       state={state}
-      dispatch={dispatch}
+      dispatch={(action) => dispatch({ ...action, roundId: round.id })}
       colors={colors}
       shapes={shapes}
       timer={timer}
       header={header}
       onExit={() => { flushClock(); void writes.current.then(onExit) }}
       suspended={state.paused || hidden}
-      initialClock={resume?.record.clock}
+      initialClock={viewClock}
       onClock={onClock}
     />
     </>
@@ -336,7 +353,8 @@ function PlayingRound({
   onExit: () => void
   suspended: boolean
 }) {
-  const questions = questionsForRound(game, state.index)
+  const runtime = runtimeFor(game, state)
+  const questions = questionsForAttempt(game, state.index, runtime.attempt)
   const rounds = roundsFor(game)
   const number =
     rounds
@@ -344,18 +362,18 @@ function PlayingRound({
       .reduce((total, round) => total + round.questionIds.length, 0) + 1
   const progress = `${questions.length === 2 ? `Questions ${number} et ${number + 1}` : `Question ${number}`} / ${game.questions.length}`
   const audio = rounds[state.index]?.audio
-  const [audioStatus, setAudioStatus] = useState<AudioStatus>('waiting')
-  const [audioOverride, setAudioOverride] = useState(false)
+  const [audioStatus, setAudioStatus] = useState<AudioStatus>(runtime.audioComplete ? 'ended' : 'waiting')
   const [playback, setPlayback] = useState(0)
-  const [hintCount, setHintCount] = useState(0)
   const [counting, setCounting] = useState(false)
-  const [confirmation, setConfirmation] = useState<'skip' | 'finish' | null>(null)
+  const [confirmation, setConfirmation] = useState<'skip' | 'finish' | 'retry' | null>(null)
+  const [navigating, setNavigating] = useState(false)
   const controls = useRef<HTMLElement>(null)
   const locked = !!state.teacherLocked
-  const blocked = suspended || locked || confirmation !== null
+  const blocked = suspended || locked || confirmation !== null || navigating
   const reveal = state.phase === 'revealed'
   const solo = state.mode === 'solo'
   const roundId = rounds[state.index]!.id
+  useEffect(() => { document.querySelector<HTMLElement>('.ci-question h1')?.focus({ preventScroll: true }) }, [])
   useEffect(() => {
     const keydown = (event: KeyboardEvent) => {
       if (!isLessonEnter(event, state.phase !== 'cards-up') || blocked) return
@@ -376,13 +394,14 @@ function PlayingRound({
     <AudioPlayer
       key={audio}
       src={audio}
-      paused={suspended || locked || confirmation !== null}
+      paused={suspended || locked || confirmation !== null || navigating}
       onStatus={(status) => {
         setAudioStatus(status)
         if (status === 'playing') {
-          setAudioOverride(false)
+          dispatch({ type: 'AUDIO_STATE', roundId, status: 'started' })
           setPlayback((n) => n + 1)
         }
+        if (status === 'ended') dispatch({ type: 'AUDIO_STATE', roundId, status: 'ended' })
       }}
     />
   ) : undefined
@@ -399,6 +418,7 @@ function PlayingRound({
           onExit,
           audio: audioPlayer,
           teacherLocked: locked,
+          onNavigate: solo ? undefined : () => setNavigating(true),
         }}
       />
       <main
@@ -435,18 +455,18 @@ function PlayingRound({
               )}
               {state.phase === 'thinking' && (
                 <ReflectionTimer
-                  key={`${solo ? 0 : playback}:${timer.seconds}`}
+                  key={`${runtime.attempt}:${solo ? 0 : playback}:${timer.seconds}`}
                   settings={timer}
-                  running={!suspended && confirmation === null}
+                  running={!suspended && confirmation === null && !navigating}
                   controlsDisabled={locked}
                   waitingForAudio={
-                    !solo && !!audio && audioStatus !== 'ended' && !audioOverride
+                    !solo && !!audio && !runtime.audioComplete && audioStatus !== 'ended' && !runtime.audioOverride
                   }
                   audioFailed={audioStatus === 'error'}
-                  onAudioOverride={() => setAudioOverride(true)}
+                  onAudioOverride={() => dispatch({ type: 'AUDIO_STATE', roundId, status: 'override' })}
                   onElapsed={solo ? () => dispatch({ type: 'TIMEOUT' }) : undefined}
-                  initialRemainingMs={playback === 0 || solo ? remainingFor(initialClock, roundId, 'thinking', timer.seconds * 1000) : undefined}
-                  onRemaining={(remainingMs) => onClock({ roundId, phase: 'thinking', durationMs: timer.seconds * 1000, remainingMs })}
+                  initialRemainingMs={playback === 0 || solo ? remainingFor(initialClock, roundId, 'thinking', timer.seconds * 1000, runtime.attempt) : undefined}
+                  onRemaining={(remainingMs) => onClock({ roundId, phase: 'thinking', durationMs: timer.seconds * 1000, remainingMs, attempt: runtime.attempt })}
                 />
               )}
             </aside>
@@ -469,6 +489,9 @@ function PlayingRound({
                     correctChoiceId={
                       reveal ? game.corrections[q.id]?.choiceId : undefined
                     }
+                    imageOrder={runtime.imageOrders[q.id]}
+                    interactionsDisabled={blocked}
+                    onImageOrder={(order) => dispatch({ type: 'IMAGE_ORDER_SET', questionId: q.id, order })}
                     onSelect={(choiceId) =>
                       dispatch({ type: 'SELECT', questionId: q.id, choiceId })
                     }
@@ -493,12 +516,12 @@ function PlayingRound({
                     state.phase !== 'thinking' &&
                     !reveal && (
                       <div className="ci-oral-hints">
-                        {q.hints.slice(0, hintCount).map((hint, n) => (
+                        {q.hints.slice(0, runtime.hintsShown[q.id] ?? 0).map((hint, n) => (
                           <p key={n}>{hint}</p>
                         ))}
                         <button
-                          disabled={locked || hintCount >= q.hints.length}
-                          onClick={() => setHintCount((n) => n + 1)}
+                          disabled={locked || (runtime.hintsShown[q.id] ?? 0) >= q.hints.length}
+                          onClick={() => dispatch({ type: 'HINT_SHOW', questionId: q.id })}
                         >
                           Proposer une relance
                         </button>
@@ -565,24 +588,25 @@ function PlayingRound({
             )}
             {!solo && <div className="ci-control-end">{reveal && state.revealedAt !== undefined && <RetractRevealButton key={state.revealedAt} revealedAt={state.revealedAt} disabled={blocked} onRetract={() => dispatch({ type: 'UNREVEAL', roundId })} />}
             <IconButton className="ci-teacher-action" icon="finish" label="Terminer la séance" disabled={locked} onClick={() => setConfirmation('finish')} /></div>}
-            {solo && (reveal ? <BetweenQuestionsTimer key={timer.feedbackSeconds} seconds={timer.feedbackSeconds} roundId={roundId} initialClock={initialClock} suspended={suspended} onClock={onClock} onNext={() => dispatch({ type: 'NEXT' })} /> : questions[0]?.mode === 'choice' ? <p role="status">{timer.enabled ? 'Choisis une réponse avant la fin du temps.' : 'Choisis une réponse à ton rythme.'}</p> : <><p role="status">{timer.enabled ? 'Activité ouverte : compare ta réponse au modèle à la fin du temps.' : 'Activité ouverte : prépare ta réponse, puis compare-la au modèle.'}</p>{!timer.enabled && <button className="ci-primary" onClick={() => dispatch({ type: 'TIMEOUT' })}>Voir le modèle</button>}</>)}
+            {solo && (reveal ? <BetweenQuestionsTimer key={timer.feedbackSeconds} seconds={timer.feedbackSeconds} roundId={roundId} attempt={runtime.attempt} initialClock={initialClock} suspended={suspended} onClock={onClock} onNext={() => dispatch({ type: 'NEXT' })} /> : questions[0]?.mode === 'choice' ? <p role="status">{timer.enabled ? 'Choisis une réponse avant la fin du temps.' : 'Choisis une réponse à ton rythme.'}</p> : <><p role="status">{timer.enabled ? 'Activité ouverte : compare ta réponse au modèle à la fin du temps.' : 'Activité ouverte : prépare ta réponse, puis compare-la au modèle.'}</p>{!timer.enabled && <button className="ci-primary" onClick={() => dispatch({ type: 'TIMEOUT' })}>Voir le modèle</button>}</>)}
           </footer>
         </div>
         {counting && !state.paused && !locked && <ManualCountPanel questions={questions} votes={state.manualVotes} onSave={(questionId, vote) => dispatch({ type: 'MANUAL_VOTE_SET', questionId, vote })} onClose={() => setCounting(false)} />}
-        {confirmation && !locked && <TeacherConfirmation action={confirmation} questionCount={questions.length} remaining={game.questions.filter((q) => !state.history.some((attempt) => attempt.questionId === q.id && !attempt.skipped)).length} onCancel={() => setConfirmation(null)} onConfirm={() => { setConfirmation(null); dispatch({ type: confirmation === 'skip' ? 'SKIP' : 'FINISH' }) }} />}
+        {navigating && !locked && <QuestionNavigator game={game} state={state} onClose={() => setNavigating(false)} onGo={(index) => { setNavigating(false); dispatch({ type: 'NAVIGATE', index }) }} onRetry={() => { setNavigating(false); setConfirmation('retry') }} />}
+        {confirmation && !locked && <TeacherConfirmation action={confirmation} questionCount={questions.length} remaining={game.questions.filter((q) => !state.history.some((attempt) => attempt.questionId === q.id && !attempt.skipped)).length} onCancel={() => setConfirmation(null)} onConfirm={() => { setConfirmation(null); dispatch(confirmation === 'retry' ? { type: 'RETRY_QUESTION', roundId } : { type: confirmation === 'skip' ? 'SKIP' : 'FINISH' }) }} />}
       </main>
     </>
   )
 }
 
-function BetweenQuestionsTimer({ seconds, roundId, initialClock, suspended, onClock, onNext }: { seconds: number; roundId: string; initialClock?: SessionClock; suspended: boolean; onClock: (clock: SessionClock) => void; onNext: () => void }) {
+function BetweenQuestionsTimer({ seconds, roundId, attempt, initialClock, suspended, onClock, onNext }: { seconds: number; roundId: string; attempt: number; initialClock?: SessionClock; suspended: boolean; onClock: (clock: SessionClock) => void; onNext: () => void }) {
   const durationMs = seconds * 1000
   const remaining = useCountdown({
     durationMs,
-    initialRemainingMs: remainingFor(initialClock, roundId, 'revealed', durationMs),
+    initialRemainingMs: remainingFor(initialClock, roundId, 'revealed', durationMs, attempt),
     running: !suspended,
     onElapsed: onNext,
-    onRemaining: (remainingMs) => onClock({ roundId, phase: 'revealed', durationMs, remainingMs }),
+    onRemaining: (remainingMs) => onClock({ roundId, phase: 'revealed', durationMs, remainingMs, attempt }),
   })
   return <p role="status">Question suivante dans {Math.ceil(remaining / 1000)} s</p>
 }

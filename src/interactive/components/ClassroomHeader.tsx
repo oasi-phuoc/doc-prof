@@ -22,7 +22,7 @@ export type ClassroomHeaderProps = {
   toolbarGuard?: ToolbarGuard
 }
 export function ClassroomHeader({ mascot, onMascot, mode, onMode, contrast, onContrast, fullscreen, playing, onFullscreen, onFiches, timer, onTimer, session }: ClassroomHeaderProps & {
-  session?: { progress: string; paused: boolean; canSkip: boolean; onSkip: () => void; onPause: () => void; onExit: () => void; audio?: ReactNode; teacherLocked?: boolean }
+  session?: { progress: string; paused: boolean; canSkip: boolean; onSkip: () => void; onPause: () => void; onExit: () => void; audio?: ReactNode; teacherLocked?: boolean; onNavigate?: () => void }
 }) {
   const locked = !!session?.teacherLocked
   const [panel, setPanel] = useState<'mascot' | 'timer' | null>(null)
@@ -48,7 +48,7 @@ export function ClassroomHeader({ mascot, onMascot, mode, onMode, contrast, onCo
         {!playing && <a className="ci-primary ci-create-link" href="/generateur">Créer des fiches</a>}
       </div>
       {session && <>
-        <p className="ci-progress">{session.progress}</p>
+        {session.onNavigate ? <button className="ci-progress" type="button" aria-label={`Choisir une question · ${session.progress}`} disabled={locked || session.paused} onClick={session.onNavigate}>{session.progress}</button> : <p className="ci-progress">{session.progress}</p>}
         <div className="ci-toolbar ci-session-actions" aria-label="Commandes de la séance">
           <IconButton icon="skip" label="Passer" disabled={locked || !session.canSkip || session.paused} onClick={session.onSkip} />
           <IconButton icon={session.paused ? 'play' : 'pause'} label={session.paused ? 'Reprendre' : 'Pause'} disabled={locked} onClick={session.onPause} />

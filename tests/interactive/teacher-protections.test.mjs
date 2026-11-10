@@ -95,7 +95,7 @@ try {
     assert.deepEqual(replaySession(game, compacted, planId, at + 15_000).state, loaded.state)
     assert.equal(retractionRemaining(loaded.state.revealedAt, at + 15_000), 0)
     assert.ok(!JSON.stringify(compacted).includes('Corrigé privé'))
-    assert.equal((await newRecord(game)).schemaVersion, 3)
+    assert.equal((await newRecord(game)).schemaVersion, 4)
     for (const schemaVersion of [1, 2]) assert.equal(replaySession(game, { ...record, schemaVersion, events: record.events.slice(0, 3) }, planId, at + 5000).state.phase, 'revealed')
     const brokenStates = [{ teacherLocked: 'true' }, { revealedAt: Infinity }, { revealRetractions: { foreign: 1 } }, { revealRetractions: { q1: -1 } }]
     for (const patch of brokenStates) assert.throws(() => replaySession(game, { ...compacted, checkpoint: { ...compacted.checkpoint, state: { ...compacted.checkpoint.state, ...patch } } }, planId, at + 5000), /Instantané/)

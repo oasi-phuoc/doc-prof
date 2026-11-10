@@ -134,9 +134,10 @@ try {
     assert.equal(state.phase, 'thinking')
     state = step(state, 'PREVIOUS')
     assert.equal(state.index, 0)
-    assert.equal(state.phase, 'thinking')
+    assert.equal(state.phase, 'revealed')
     const priorHistory = state.history
-    state = step(state, 'SKIP')
+    assert.equal(step(state, 'SKIP'), state)
+    state = step(state, 'NEXT')
     assert.deepEqual(state.history, priorHistory)
     assert.equal(state.index, 1)
   })

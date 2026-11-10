@@ -78,7 +78,7 @@ try {
       db.close()
       return records.find((record) => record.checkpoint?.state.note === 'Revoir les retenues au prochain cours.')
     })
-    assert.equal(stored.schemaVersion, 3)
+    assert.equal(stored.schemaVersion, 4)
     assert.equal(stored.events.length, 0)
     assert.equal(stored.checkpoint.state.note, 'Revoir les retenues au prochain cours.')
     assert.ok(Object.values(stored.checkpoint.state.teacherMarks).includes('review'))

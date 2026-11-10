@@ -48,7 +48,7 @@ try {
   assert.equal(await page.locator('.ci-reveal').count(), 0)
   await page.getByRole('button', { name: 'Discuter', exact: true }).click()
   const running = await waitCheckpoint(page, fixture.gameId, (record) => record.checkpoint.state.phase === 'discussion')
-  assert.equal(running.schemaVersion, 3)
+  assert.equal(running.schemaVersion, 4)
   assert.equal(running.events.length, 0)
   assert.equal(running.checkpoint.state.finished, false)
   assert.ok(JSON.stringify(running).length < fixture.beforeBytes / 10)
@@ -73,7 +73,7 @@ try {
   assert.equal(await page.getByRole('textbox', { name: 'Observations', exact: true }).inputValue(), finished.checkpoint.state.note)
   assert.equal(await page.locator('.ci-summary-questions > p').count(), fixture.questions)
   assert.deepEqual(errors, [])
-  const result = { migration: 'schema 1 and 2 readable; new writes upgrade to schema 3', boundary: '5000 accepted actions compact into a resumable discussion, no reveal', beforeBytes: fixture.beforeBytes, compactedBytes: JSON.stringify(running).length, summary: 'finished checkpoint retains all attempts and later observations after reload', noAnswerKey: 'no source text or answer sheet in checkpoint', errors }
+  const result = { migration: 'schema 1–3 readable; new writes upgrade to schema 4', boundary: '5000 accepted actions compact into a resumable discussion, no reveal', beforeBytes: fixture.beforeBytes, compactedBytes: JSON.stringify(running).length, summary: 'finished checkpoint retains all attempts and later observations after reload', noAnswerKey: 'no source text or answer sheet in checkpoint', errors }
   await writeFile('docs/interactive/checkpoint-results.json', JSON.stringify(result, null, 2) + '\n')
   console.log(JSON.stringify(result, null, 2))
 } finally { await browser.close() }

@@ -17,6 +17,8 @@ La flèche **Masquer à nouveau** reste disponible dix secondes après la révé
 
 Au clavier, utilisez Tab pour rejoindre les boutons. Entrée ou Espace active le bouton ciblé. Avec le focus sur le groupe des commandes de phase, Entrée propose l’étape suivante ; si le maintien est activé, le focus va au bouton de révélation et il faut ensuite le maintenir.
 
+En Classe, touchez le compteur de questions pour retrouver un écran déjà visité ou aller à une autre question. L’étape, le temps restant, les images déplacées et les relances sont conservés. Une correction déjà révélée reste affichée ; une nouvelle question ne révèle rien. Dans cette fenêtre, **Réessayer cette question** conserve l’essai précédent et relance le temps avec de nouvelles positions pour les cartes mélangées. La feuille enseignant imprimée correspond à la première tentative. Le bilan distingue l’essai actuel des essais précédents et permet de **Revoir les questions**.
+
 En **Solo**, choisissez directement une réponse pendant le temps de réflexion. Le choix ou la fin du temps affiche la correction ; une absence de choix dans le temps compte comme fausse. La question suivante démarre après le battement réglé. Sans minuteur, choisissez à votre rythme. Pour une production ouverte, comparez votre proposition au modèle ; aucune note automatique n’est inventée.
 
 Les icônes du haut donnent accès à la pause, aux réglages et à la sortie vers la préparation. Le plein écran masque ces commandes, sauf sa propre sortie et le lecteur audio lorsqu’il est nécessaire. **Créer des fiches** apparaît uniquement dans la préparation.
