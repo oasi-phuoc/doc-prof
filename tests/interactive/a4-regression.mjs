@@ -26,6 +26,12 @@ try {
       .addCookies([
         { name: 'clairfle-fiche-access', value: 'admin', url: base },
       ])
+    // A pinned local font response makes the reference independent of Google
+    // availability while comparing the exact same typefaces on both versions.
+    if (label === 'baseline' && process.env.A4_FONT_CSS) {
+      const css = (await readFile(process.env.A4_FONT_CSS, 'utf8')).replaceAll("url('/fonts/", `url('${base}/fonts/`)
+      await page.route('https://fonts.googleapis.com/**', (route) => route.fulfill({ contentType: 'text/css', body: css }))
+    }
     // Load interactive CSS first on the new version: it must not affect a subsequent worksheet.
     await page.goto(
       `${base}${label === 'prototype' ? '/interactif/demo' : '/'}`,
@@ -102,7 +108,8 @@ try {
         identicalScreenshot: true,
         dimensions,
         draftLaunch: 'passed',
-        baseline: '726a9ec5 (main before media and Word changes)',
+        baseline: process.env.A4_BASELINE_REF ?? '726a9ec5 (main before media and Word changes)',
+        fonts: process.env.A4_FONT_CSS ? 'same pinned fonts; baseline Google CSS response served from local assets' : 'unchanged browser font loading',
         viewport: '1366x1000',
       },
       null,

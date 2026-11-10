@@ -18,7 +18,7 @@ Ce registre complète les anciennes checklists de livraison. Il distingue les fo
 | F32 routes / chargement / drapeau | Chargement paresseux, routes brouillon, fiche, démo ; diagnostic dédié | Drapeau réconcilié avec la bascule déjà demandée par le propriétaire |
 | F33 CI | Suites locales et résultats présents | Pipeline complet, budgets, détection de secrets et accessibilité automatisée |
 | F34 mélange équilibré | Graines par usage, identité canonique, quotas équilibrés et séquences maximales de deux ; 100 graines et 5 000 questions dans `slots.test.mjs` ; ADR 0004 | Presets d’ordre croissant et migration des anciens journaux avec F28 |
-| F35 tokens et polices | Palette et contrastes de texte testés | Polices du jeu auto-hébergées et vérification complète des tokens |
+| F35 tokens et polices | Palette et contrastes de texte testés ; polices locales, chiffres tabulaires, français et budget contrôlés ; `fonts-results.json` et ADR 0005 | Vérification complète des tokens et essai typographique sur ENI |
 | F46 lisibilité | Gabarits desktop/mobile testés | Précontrôle automatique des débordements avant lancement |
 | S1 / S4 / S5 sécurité | Politique de médias et rendu sûr du jeu ; audit existant | Remise à niveau de l’authentification existante et en-têtes ; ne pas annoncer ces points terminés |
 
