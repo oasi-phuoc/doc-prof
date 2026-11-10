@@ -3,6 +3,7 @@ import { roundsFor } from './plan'
 import type { Action, Game, Session, PlayMode } from './types'
 import { isVotePayload } from './votes'
 import { canonicalJson } from './seeds'
+import { copySession, readCheckpoint, type SessionCheckpoint } from './checkpoint'
 
 const DATABASE = 'clairfle-interactive'
 const STORE = 'sessions'
@@ -18,7 +19,7 @@ export type SessionClock = {
   remainingMs: number
 }
 export type SavedSession = {
-  schemaVersion: 1
+  schemaVersion: 1 | 2
   mode: PlayMode
   sessionId: string
   gameId: string
@@ -27,6 +28,7 @@ export type SavedSession = {
   events: SessionEvent[]
   clock?: SessionClock
   revision?: number
+  checkpoint?: SessionCheckpoint
 }
 export type Resume = { record: SavedSession; state: Session }
 
@@ -71,14 +73,15 @@ export function remainingFor(clock: SessionClock | undefined, roundId: string, p
 
 /** Replaying teacher actions preserves selections and reveal decisions exactly. */
 export function replaySession(game: Game, value: unknown, planId: string, now = Date.now(), mode: PlayMode = 'class'): Resume | null {
-  if (!object(value) || value.schemaVersion !== 1) throw new Error('Version de sauvegarde non prise en charge. La sauvegarde est conservée.')
+  if (!object(value) || ![1, 2].includes(value.schemaVersion as number) || value.schemaVersion === 1 && value.checkpoint !== undefined) throw new Error('Version de sauvegarde non prise en charge. La sauvegarde est conservée.')
   if (value.mode !== mode || value.gameId !== game.id || value.planId !== planId) throw new Error(PLAN_CHANGED)
   if (typeof value.sessionId !== 'string' || !value.sessionId || typeof value.updatedAt !== 'number' || !Number.isFinite(value.updatedAt) || value.updatedAt > now + 60_000 || !Array.isArray(value.events) || value.events.length > 5000) throw new Error('Sauvegarde de séance invalide. Elle est conservée.')
   if (value.revision !== undefined && (typeof value.revision !== 'number' || !Number.isSafeInteger(value.revision) || value.revision < 0)) throw new Error('Révision de sauvegarde invalide. Elle est conservée.')
   if (now - value.updatedAt > TTL) return null
   const clock = readClock(value.clock)
-  const seen = new Set<string>()
-  let state = startSession(game, mode)
+  const checkpoint = readCheckpoint(game, value.checkpoint, mode)
+  const seen = new Set<string>(checkpoint?.lastEventId ? [checkpoint.lastEventId] : [])
+  let state = checkpoint?.state ?? startSession(game, mode)
   const events: SessionEvent[] = []
   for (const item of value.events) {
     if (!object(item) || typeof item.eventId !== 'string' || !item.eventId || typeof item.at !== 'number' || !Number.isFinite(item.at) || !validAction(item.action)) throw new Error('Journal de séance invalide. Il est conservé.')
@@ -87,7 +90,7 @@ export function replaySession(game: Game, value: unknown, planId: string, now = 
     events.push({ eventId: item.eventId, at: item.at, action: item.action })
     state = transition(game, state, item.action)
   }
-  return { record: { schemaVersion: 1, mode, sessionId: value.sessionId, gameId: game.id, planId, updatedAt: value.updatedAt, events, clock, revision: (value.revision as number | undefined) ?? 0 }, state }
+  return { record: { schemaVersion: value.schemaVersion as 1 | 2, mode, sessionId: value.sessionId, gameId: game.id, planId, updatedAt: value.updatedAt, events, clock, revision: (value.revision as number | undefined) ?? 0, ...(checkpoint ? { checkpoint } : {}) }, state }
 }
 
 let connection: Promise<IDBDatabase> | undefined
@@ -147,13 +150,19 @@ export async function loadSession(game: Game, mode: PlayMode = 'class'): Promise
   return replaySession(game, value, await planIdentity(game), Date.now(), mode)
 }
 export async function newRecord(game: Game, mode: PlayMode = 'class'): Promise<SavedSession> {
-  return { schemaVersion: 1, mode, sessionId: crypto.randomUUID(), gameId: game.id, planId: await planIdentity(game), updatedAt: Date.now(), events: [], revision: 0 }
+  return { schemaVersion: 2, mode, sessionId: crypto.randomUUID(), gameId: game.id, planId: await planIdentity(game), updatedAt: Date.now(), events: [], revision: 0 }
+}
+export function compactSession(record: SavedSession, state: Session): SavedSession {
+  if (record.gameId !== state.gameId || record.mode !== state.mode) throw new Error(PLAN_CHANGED)
+  const lastEventId = record.events.at(-1)?.eventId ?? record.checkpoint?.lastEventId
+  return { ...record, schemaVersion: 2, checkpoint: { state: copySession(state), ...(lastEventId ? { lastEventId } : {}) }, events: [] }
 }
 function sameRevision(value: unknown, expected: SavedSession): boolean {
   if (!object(value) || !Array.isArray(value.events)) return false
   const last = value.events.at(-1) as SessionEvent | undefined
+  const previousCheckpoint = object(value.checkpoint) ? value.checkpoint : undefined
   return value.schemaVersion === expected.schemaVersion && value.gameId === expected.gameId && value.mode === expected.mode && value.sessionId === expected.sessionId && value.planId === expected.planId &&
-    (value.revision ?? 0) === (expected.revision ?? 0) && last?.eventId === expected.events.at(-1)?.eventId
+    (value.revision ?? 0) === (expected.revision ?? 0) && (last?.eventId ?? previousCheckpoint?.lastEventId) === (expected.events.at(-1)?.eventId ?? expected.checkpoint?.lastEventId)
 }
 
 /** Compare and mutate atomically, including writes of the remaining time only. */
@@ -181,11 +190,11 @@ export async function saveSession(record: SavedSession, previous?: SavedSession)
       if (!sameRevision(existing, previous)) throw new Error(SESSION_CONFLICT)
     } else if (existing !== undefined) {
       if (object(existing) && canonicalJson({ ...existing, revision: existing.revision ?? 0 }) === canonicalJson(record)) return record
-      if (!object(existing) || existing.schemaVersion !== 1 || typeof existing.updatedAt !== 'number' || Date.now() - existing.updatedAt <= TTL) throw new Error(SESSION_CONFLICT)
+      if (!object(existing) || ![1, 2].includes(existing.schemaVersion as number) || typeof existing.updatedAt !== 'number' || Date.now() - existing.updatedAt <= TTL) throw new Error(SESSION_CONFLICT)
     }
     const revision = previous ? (previous.revision ?? 0) + 1 : 0
     if (!Number.isSafeInteger(revision)) throw new Error(SESSION_CONFLICT)
-    const next = { ...record, revision }
+    const next: SavedSession = { ...record, schemaVersion: 2, revision }
     store.put(next)
     return next
   })

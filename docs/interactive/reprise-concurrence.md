@@ -6,7 +6,7 @@ Les messages BroadcastChannel contiennent uniquement un type de commande et un i
 
 Chaque écriture IndexedDB compare la révision précédente dans la même transaction que la modification. Cela couvre aussi les mises à jour du temps restant et les suppressions. Une version ancienne, un autre identifiant de séance, un journal remplacé ou une révision périmée sont refusés avec un message explicite ; la sauvegarde la plus récente est conservée. Deux écritures simultanées depuis une même révision ne peuvent pas réussir toutes les deux.
 
-Le champ de révision est rétrocompatible avec les journaux de schéma 1 : son absence vaut 0 en mémoire, sans réécriture lors de la lecture. Les versions de schéma inconnues restent refusées. Une création répétée à l’identique est idempotente ; une sauvegarde expirée peut être remplacée lors du démarrage d’une nouvelle séance.
+Le champ de révision est rétrocompatible avec les journaux de schéma 1 : son absence vaut 0 en mémoire, sans réécriture lors de la lecture. Le schéma 2 ajoute le compactage, décrit dans l’[ADR 0006](adr-0006-instantanes-de-seance.md). Les versions de schéma inconnues restent refusées. Une création répétée à l’identique est idempotente ; une sauvegarde expirée peut être remplacée lors du démarrage d’une nouvelle séance.
 
 « Supprimer la sauvegarde » dans la préparation exige également la propriété de la partie. « Nouvelle partie » crée une autre graine et conserve le journal d’une partie éventuellement active dans un autre onglet. Terminer son propre bilan attend les écritures puis supprime uniquement la révision détenue.
 

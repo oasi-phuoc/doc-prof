@@ -21,7 +21,7 @@ import { manualTotal } from './domain/votes'
 import './counting.css'
 import { useCountdown } from './useCountdown'
 import type { TimerSettings } from './domain/settings'
-import { loadSession, newRecord, saveSession, deleteSession, STORAGE_WARNING, remainingFor, type Resume, type SavedSession, type SessionClock } from './domain/persistence'
+import { compactSession, loadSession, newRecord, saveSession, deleteSession, STORAGE_WARNING, remainingFor, type Resume, type SavedSession, type SessionClock } from './domain/persistence'
 import type { MediaManager } from './media/manager'
 import { acquireSessionLease, type SessionLease } from './session-lease'
 
@@ -142,12 +142,11 @@ function ActiveSessionView({
     writes.current = writes.current.then(async () => {
       const previous = await record.current
       if (!ownership()) throw new Error(STORAGE_WARNING)
-      if (previous.events.length >= 5000) throw new Error(STORAGE_WARNING)
       const updated: SavedSession = {
         ...previous, updatedAt: Date.now(), clock: actionClock,
         events: [...previous.events, { eventId: crypto.randomUUID(), at: Date.now(), action }],
       }
-      record.current = Promise.resolve(await saveSession(updated, previous))
+      record.current = Promise.resolve(await saveSession(next.finished || updated.events.length >= 5000 ? compactSession(updated, next) : updated, previous))
     }).catch((error: unknown) => { enabled.current = false; setStorageWarning(error instanceof Error ? error.message : STORAGE_WARNING) })
   }, [game, ownership])
   useEffect(() => {
