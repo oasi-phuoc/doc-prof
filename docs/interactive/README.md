@@ -1,5 +1,7 @@
 # ClairFLE — jouer avec la classe
 
+[Suivi V4 et travaux restants](suivi-v4.md) · [Diagnostic de l’écran](diagnostic-eni.md)
+
 Mise à jour : [modes Classe/Solo, mobile et six mascottes](livraison-classe-solo-mascottes.md). Cette livraison remplace le rituel avec sélection au tableau décrit ci-dessous : en Classe, le vote est collectif sans clic ; en Solo, correction et passage après cinq secondes sont automatiques. Les menus Mode et Mascotte sont des icônes. La reprise de séance utilise désormais IndexedDB.
 
 Le mode interactif reprend le prototype `35934ad`, fusionné avec le `main` actuel puis adapté aux demandes de classe. Il remplace l’ancien jeu dans le générateur. Les fiches et leur format de sauvegarde v1 restent compatibles.

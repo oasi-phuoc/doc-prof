@@ -1,0 +1,24 @@
+.ci-diagnostic { max-width: 1000px; display: grid; gap: 24px; padding-bottom: 60px; }
+.ci-diagnostic > h1 { margin-bottom: 0; }
+.ci-diagnostic .ci-panel { min-width: 0; }
+.ci-diagnostic .ci-toolbar { flex-wrap: wrap; }
+.ci-diagnostic-facts { display: grid; grid-template-columns: minmax(130px, 1fr) minmax(0, 2fr); gap: 10px 20px; }
+.ci-diagnostic-fact { display: contents; }
+.ci-diagnostic-facts dt { font-weight: 700; }
+.ci-diagnostic-facts dd { margin: 0; overflow-wrap: anywhere; }
+.ci-app .ci-diagnostic-target { width: 100%; min-height: 120px; margin: 12px 0; font-size: 28px; background: #e6e4ff; touch-action: manipulation; }
+.ci-app .ci-diagnostic-target.ci-target-1 { background: #bde3d5; }
+.ci-diagnostic-contact { border: 3px dashed var(--ci-ink); border-radius: 16px; min-height: 160px; display: grid; place-items: center; padding: 20px; text-align: center; touch-action: none; user-select: none; }
+.ci-app .ci-diagnostic-color-buttons button { flex: 1; min-width: 60px; min-height: 75px; padding: 8px; }
+.ci-diagnostic-color-buttons .ci-card-badge { font-size: 28px; }
+.ci-diagnostic-swatch { margin-top: 20px; border-radius: 16px; min-height: 240px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; padding: 24px; }
+.ci-diagnostic-swatch > .ci-card-badge { font-size: 70px; }
+.ci-diagnostic-swatch:fullscreen { width: 100%; height: 100%; border-radius: 0; }
+.ci-diagnostic-swatch .ci-toolbar button { color: #182238; background: #fff; font-size: 16px; }
+.ci-diagnostic-numbers, .ci-diagnostic-digits { font-variant-numeric: tabular-nums; font-size: 28px; overflow-wrap: anywhere; }
+.ci-diagnostic textarea { width: 100%; min-width: 0; padding: 14px; resize: vertical; font: 13px/1.5 monospace; color: var(--ci-ink); background: var(--ci-paper); }
+@media (max-width: 600px) {
+  .ci-diagnostic { padding: 18px 12px 40px; }
+  .ci-diagnostic-facts { grid-template-columns: 1fr; gap: 6px; }
+  .ci-diagnostic-facts dd { margin-bottom: 10px; }
+}

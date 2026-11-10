@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState, type CSSProperties } from 'react'
+import { lazy, Suspense, useEffect, useMemo, useState, type CSSProperties } from 'react'
 import { listFiches } from '@/fiches/api'
 import { domainsForAccount, readAccessAccount } from '@/access'
 import { MASCOTS, type MascotKind } from './domain/mascot'
@@ -99,7 +99,13 @@ function returnToFiches() {
   window.dispatchEvent(new PopStateEvent('popstate'))
 }
 
+const DiagnosticPage = lazy(() => import('./DiagnosticPage'))
 export default function InteractiveApp() {
+  if (window.location.pathname.replace(/\/+$/, '') === '/interactif/diagnostic') return <Suspense fallback={<p role="status">Chargement du diagnostic…</p>}><DiagnosticPage colors={loadColors()} shapes={loadShapes()} /></Suspense>
+  return <GameApp />
+}
+
+function GameApp() {
   const [source, setSource] = useState<Source | null>(() =>
     window.location.pathname === '/interactif/demo'
       ? { recipe: demoRecipe(), name: 'Les cartes de la classe' }
@@ -516,6 +522,7 @@ export default function InteractiveApp() {
                   </details>
                 )}
                 <PrintCards colors={colors} shapes={shapes} />
+                <p className="ci-no-print"><a href="/interactif/diagnostic" target="_blank" rel="noreferrer">Diagnostic de l’écran</a></p>
               </main>
             )}
           </>
