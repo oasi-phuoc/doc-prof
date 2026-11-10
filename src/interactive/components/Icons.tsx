@@ -1,6 +1,9 @@
 import type { ButtonHTMLAttributes } from 'react'
 
 export type IconName =
+  | 'users'
+  | 'user'
+  | 'mascot'
   | 'contrast'
   | 'expand'
   | 'folder'
@@ -20,6 +23,9 @@ export type IconName =
   | 'minus'
   | 'close'
 const paths: Record<IconName, React.ReactNode> = {
+  users: <><circle cx="9" cy="7" r="3" /><path d="M3 21v-3a6 6 0 0 1 12 0v3M16 4a3 3 0 0 1 0 6m3 11v-3a6 6 0 0 0-3-5" /></>,
+  user: <><circle cx="12" cy="7" r="4" /><path d="M4 21v-2a8 8 0 0 1 16 0v2" /></>,
+  mascot: <><path d="M6 10C2 5 4 2 8 5m10 5c4-5 2-8-2-5M4 14a8 7 0 0 1 16 0c0 5-4 7-8 7s-8-2-8-7Z" /><path d="M8 12v1m8-1v1m-6 3q2 2 4 0" /></>,
   contrast: (
     <>
       <circle cx="12" cy="12" r="9" />

@@ -1,9 +1,10 @@
-import type { Action, Game, Session } from './types'
+import type { Action, Game, Session, PlayMode } from './types'
 import { questionsForRound, roundsFor } from './plan'
 
-export function startSession(game: Game): Session {
+export function startSession(game: Game, mode: PlayMode = 'class'): Session {
   return {
     gameId: game.id,
+    mode,
     index: 0,
     phase: 'thinking',
     paused: false,
@@ -13,7 +14,7 @@ export function startSession(game: Game): Session {
   }
 }
 
-/** The only transition that reveals an answer is the teacher's REVEAL action. */
+/** Classe: teacher reveal only. Solo: selection or timeout reveals the answer. */
 export function transition(
   game: Game,
   state: Session,
@@ -29,6 +30,7 @@ export function transition(
   if (!question) return state
   switch (action.type) {
     case 'CARDS_UP':
+      if (state.mode === 'solo') return state
       return state.phase === 'thinking'
         ? { ...state, phase: 'cards-up' }
         : state
@@ -37,51 +39,23 @@ export function transition(
         (q) => q.id === (action.questionId ?? question.id),
       )
       if (
-        !['cards-up', 'selected'].includes(state.phase) ||
+        state.mode !== 'solo' || state.phase !== 'thinking' ||
         !target?.choices.some((c) => c.id === action.choiceId)
       )
         return state
       const selections = { ...state.selections, [target.id]: action.choiceId }
-      return {
-        ...state,
-        selections,
-        selected: selections[question.id],
-        phase: questions.every((q) => q.mode !== 'choice' || selections[q.id])
-          ? 'selected'
-          : 'cards-up',
-      }
+      return revealRound(game, { ...state, selections, selected: selections[question.id] })
     }
+    case 'TIMEOUT':
+      return state.mode === 'solo' && state.phase === 'thinking' ? revealRound(game, state) : state
     case 'DISCUSS':
-      return state.phase === 'selected' ||
-        (question.mode !== 'choice' && state.phase === 'cards-up')
+      return state.mode === 'class' && (state.phase === 'selected' ||
+        state.phase === 'cards-up')
         ? { ...state, phase: 'discussion' }
         : state
     case 'REVEAL': {
       if (state.phase !== 'discussion') return state
-      const attempts = questions.map((q) => {
-        const selected =
-          state.selections[q.id] ??
-          (q.id === question.id ? state.selected : undefined)
-        const correctId = game.corrections[q.id]?.choiceId
-        return {
-          questionId: q.id,
-          selected,
-          correct:
-            q.mode === 'choice' && correctId && selected
-              ? selected === correctId
-              : undefined,
-        }
-      })
-      return {
-        ...state,
-        phase: 'revealed',
-        history: [
-          ...state.history.filter(
-            (a) => !questions.some((q) => q.id === a.questionId),
-          ),
-          ...attempts,
-        ],
-      }
+      return revealRound(game, state)
     }
     case 'ASSESS':
       return state.phase === 'revealed' && question.mode !== 'choice'
@@ -138,4 +112,17 @@ export function transition(
     default:
       return state
   }
+}
+
+function revealRound(game: Game, state: Session): Session {
+  const questions = questionsForRound(game, state.index)
+  const attempts = questions.map((q) => {
+    const selected = state.selections[q.id]
+    const correctId = game.corrections[q.id]?.choiceId
+    return {
+      questionId: q.id, selected,
+      correct: state.mode === 'solo' && q.mode === 'choice' && correctId ? selected === correctId : undefined,
+    }
+  })
+  return { ...state, phase: 'revealed', history: [...state.history.filter((a) => !questions.some((q) => q.id === a.questionId)), ...attempts] }
 }

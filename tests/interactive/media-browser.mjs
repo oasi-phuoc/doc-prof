@@ -141,6 +141,7 @@ try {
     await page.locator('.ci-setup-grid').innerText(),
     /1 question retenue/,
   )
+  await page.locator('.ci-launch:enabled').waitFor()
   assert.equal(await launch.isEnabled(), true)
   assert.equal(probes.get('/__media_missing.webp'), 1)
   assert.equal(probes.get('/__media_audio.mp3'), 1)
@@ -190,6 +191,7 @@ try {
     .locator('.ci-question-list fieldset > label input')
     .nth(2)
     .uncheck()
+  await page.locator('.ci-launch:enabled').waitFor()
   assert.equal(await launch.isEnabled(), true)
   releasePending()
   await page.evaluate(

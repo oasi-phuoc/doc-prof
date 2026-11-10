@@ -1,3 +1,5 @@
+> Mise à jour : les [modes Classe/Solo et les cinq mascottes](livraison-classe-solo-mascottes.md) remplacent le rituel avec sélection au tableau décrit dans ce guide. Les icônes Mode et Mascotte ouvrent leurs choix dans la barre du haut.
+
 # Jouer en classe
 
 1. Ouvrez ou créez une fiche, puis choisissez **Jouer avec la classe**. Dans les fiches enregistrées, choisissez **Jouer**.

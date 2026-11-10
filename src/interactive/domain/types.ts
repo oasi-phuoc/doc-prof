@@ -1,5 +1,6 @@
 import type { Figure, FigureDims } from '@/math/types'
 
+export type PlayMode = 'class' | 'solo'
 export type Compatibility = 'auto' | 'assisted' | 'teacher-led' | 'unsupported'
 export type Choice = {
   id: string
@@ -55,6 +56,7 @@ export type Attempt = {
 }
 export type Session = {
   gameId: string
+  mode: PlayMode
   index: number
   phase: Phase
   selected?: string
@@ -64,6 +66,7 @@ export type Session = {
   history: Attempt[]
 }
 export type Action =
+  | { type: 'TIMEOUT' }
   | { type: 'CARDS_UP' }
   | { type: 'SELECT'; choiceId: string; questionId?: string }
   | { type: 'DISCUSS' }

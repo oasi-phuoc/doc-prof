@@ -1,8 +1,9 @@
-import { useEffect, useReducer, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { prepareGame, questionsForRound, roundsFor } from './domain/plan'
 import { startSession, transition } from './domain/session'
-import type { Game, Session } from './domain/types'
+import type { Action, Game, Session } from './domain/types'
 import type { ShapeId } from './domain/palette'
+import { Mascot } from './components/Mascot'
 import { QuestionStage } from './components/QuestionStage'
 import { CorrectionView } from './components/CorrectionView'
 import { PhaseBanner } from './components/PhaseBanner'
@@ -14,47 +15,26 @@ import { advanceAction } from './domain/progression'
 import { isLessonEnter } from './keyboard'
 import { AudioPlayer, type AudioStatus } from './components/Media'
 import { ReflectionTimer } from './components/ReflectionTimer'
+import { useCountdown } from './useCountdown'
 import type { TimerSettings } from './domain/settings'
-import { sessionKey } from './domain/persistence'
+import { loadSession, newRecord, saveSession, deleteSession, STORAGE_WARNING, remainingFor, type Resume, type SavedSession, type SessionClock } from './domain/persistence'
 import type { MediaManager } from './media/manager'
 
-function restoreSession(game: Game): Session {
-  try {
-    const value: unknown = JSON.parse(
-      sessionStorage.getItem(sessionKey(game)) ?? 'null',
+export function SessionView(props: Parameters<typeof ActiveSessionView>[0]) {
+  const [loaded, setLoaded] = useState<{ resume: Resume | null; warning?: string } | null>(null)
+  useEffect(() => {
+    let active = true
+    void loadSession(props.game, props.header.mode).then(
+      (resume) => { if (active) setLoaded({ resume }) },
+      (error: unknown) => { if (active) setLoaded({ resume: null, warning: error instanceof Error ? error.message : STORAGE_WARNING }) },
     )
-    if (value && typeof value === 'object') {
-      const s = value as Session
-      if (
-        s.gameId === game.id &&
-        Number.isInteger(s.index) &&
-        s.index >= 0 &&
-        s.index < roundsFor(game).length &&
-        Array.isArray(s.history)
-      ) {
-        const history = s.history
-          .filter((a) => a && game.questions.some((q) => q.id === a.questionId))
-          .map((a) => ({
-            questionId: a.questionId,
-            selected: typeof a.selected === 'string' ? a.selected : undefined,
-            correct: typeof a.correct === 'boolean' ? a.correct : undefined,
-            skipped: a.skipped === true,
-            manual:
-              a.manual === 'acquired' || a.manual === 'retry'
-                ? a.manual
-                : undefined,
-          }))
-        // Reopening the projector always requires reflection and a fresh reveal.
-        return { ...startSession(game), index: s.index, history }
-      }
-    }
-  } catch {
-    /* Browser storage is optional. */
-  }
-  return startSession(game)
+    return () => { active = false }
+  }, [props.game, props.header.mode])
+  if (!loaded) return <main className="ci-container"><p role="status">Chargement de la séance…</p></main>
+  return <ActiveSessionView {...props} resume={loaded.resume} initialWarning={loaded.warning} />
 }
 
-export function SessionView({
+function ActiveSessionView({
   game,
   colors,
   shapes,
@@ -62,7 +42,11 @@ export function SessionView({
   onExit,
   mediaManager,
   header,
+  resume,
+  initialWarning,
 }: {
+  resume?: Resume | null
+  initialWarning?: string
   game: Game
   colors: string[]
   shapes: ShapeId[]
@@ -71,24 +55,77 @@ export function SessionView({
   mediaManager?: MediaManager
   header: ClassroomHeaderProps
 }) {
-  const [state, dispatch] = useReducer(
-    (s: Session, action: Parameters<typeof transition>[2]) =>
-      transition(game, s, action),
-    game,
-    restoreSession,
-  )
+  const [state, setState] = useState(() => resume?.state ?? startSession(game, header.mode))
+  const current = useRef(state)
+  const [initialRecord] = useState(() => resume ? Promise.resolve(resume.record) : newRecord(game, header.mode))
+  const record = useRef<Promise<SavedSession>>(initialRecord)
+  const writes = useRef(Promise.resolve())
+  const clock = useRef<SessionClock | undefined>(resume?.record.clock)
+  const clockSave = useRef<ReturnType<typeof setTimeout> | undefined>(undefined)
+  const [storageWarning, setStorageWarning] = useState(initialWarning ?? '')
+  const enabled = useRef(!initialWarning)
+  const flushClock = useCallback(() => {
+    clearTimeout(clockSave.current)
+    clockSave.current = undefined
+    if (!enabled.current) return
+    const snapshot = clock.current
+    writes.current = writes.current.then(async () => {
+      const previous = await record.current
+      const updated = { ...previous, clock: snapshot, updatedAt: Date.now() }
+      await saveSession(updated)
+      record.current = Promise.resolve(updated)
+    }).catch(() => { enabled.current = false; setStorageWarning(STORAGE_WARNING) })
+  }, [])
+  const onClock = useCallback((value: SessionClock) => {
+    if (roundsFor(game)[current.current.index]?.id !== value.roundId || current.current.phase !== value.phase) return
+    if (clock.current?.remainingMs === value.remainingMs && clock.current?.durationMs === value.durationMs && clock.current?.roundId === value.roundId && clock.current?.phase === value.phase) return
+    clock.current = value
+    if (enabled.current && clockSave.current === undefined) clockSave.current = setTimeout(flushClock, 300)
+  }, [game, flushClock])
+  useEffect(() => {
+    const visibility = () => { if (document.hidden) flushClock() }
+    document.addEventListener('visibilitychange', visibility)
+    window.addEventListener('pagehide', flushClock)
+    return () => {
+      document.removeEventListener('visibilitychange', visibility)
+      window.removeEventListener('pagehide', flushClock)
+      flushClock()
+    }
+  }, [flushClock])
+  const dispatch = useCallback((action: Action) => {
+    const next = transition(game, current.current, action)
+    if (next === current.current) return
+    if (next.index !== current.current.index || next.phase !== current.current.phase) clock.current = undefined
+    const actionClock = clock.current
+    current.current = next
+    setState(next)
+    if (!enabled.current) return
+    // Serialize every accepted action immediately, including pause and selection.
+    writes.current = writes.current.then(async () => {
+      const previous = await record.current
+      if (previous.events.length >= 5000) throw new Error(STORAGE_WARNING)
+      const updated: SavedSession = {
+        ...previous, updatedAt: Date.now(), clock: actionClock,
+        events: [...previous.events, { eventId: crypto.randomUUID(), at: Date.now(), action }],
+      }
+      await saveSession(updated)
+      record.current = Promise.resolve(updated)
+    }).catch(() => { enabled.current = false; setStorageWarning(STORAGE_WARNING) })
+  }, [game])
+  useEffect(() => {
+    if (resume || !enabled.current) return
+    writes.current = writes.current.then(async () => { await saveSession(await record.current) }).catch(() => {
+      enabled.current = false
+      setStorageWarning(STORAGE_WARNING)
+    })
+  }, [resume])
+  // Attach a rejection handler even if the browser cannot initialize storage.
+  useEffect(() => { void record.current.catch(() => { enabled.current = false; setStorageWarning(STORAGE_WARNING) }) }, [])
   const [retryGame, setRetryGame] = useState<Game | null>(null)
   const [hidden, setHidden] = useState(document.hidden)
   const rounds = roundsFor(game)
   const questions = questionsForRound(game, state.index)
   const round = rounds[state.index]
-  useEffect(() => {
-    try {
-      sessionStorage.setItem(sessionKey(game), JSON.stringify(state))
-    } catch {
-      /* Optional resume. */
-    }
-  }, [state, game])
   useEffect(() => {
     const changed = () => setHidden(document.hidden)
     document.addEventListener('visibilitychange', changed)
@@ -130,12 +167,11 @@ export function SessionView({
           <h1>Ce que nous avons travaillé</h1>
           <p>
             {state.history.filter((a) => !a.skipped).length} question(s)
-            abordée(s) au tableau,{' '}
+            abordée(s),{' '}
             {state.history.filter((a) => a.skipped).length} passée(s).
           </p>
           <p>
-            Ce bilan décrit les réponses au tableau et les observations de
-            l’enseignant. Les votes sur cartes de la classe ne sont pas comptés.
+            {state.mode === 'solo' ? 'Ce bilan décrit tes réponses. Une absence de réponse dans le temps compte comme fausse. Les activités ouvertes ne sont pas notées automatiquement.' : 'Ce bilan décrit les activités travaillées collectivement. Les votes sur cartes de la classe ne sont pas comptés ni évalués individuellement.'}
           </p>
           <div className="ci-panel">
             {game.questions.map((q) => {
@@ -146,9 +182,9 @@ export function SessionView({
               const label = a.skipped
                 ? 'Passée'
                 : a.correct === true
-                  ? 'Réponse au tableau correcte'
+                  ? 'Réponse correcte'
                   : a.correct === false
-                    ? 'À retravailler au tableau'
+                    ? 'À retravailler'
                     : a.manual === 'acquired'
                       ? 'Acquis selon l’enseignant'
                       : a.manual === 'retry'
@@ -171,6 +207,7 @@ export function SessionView({
                   prepareGame(
                     { ...game, id: `${game.id}-retry`, rounds: undefined },
                     difficult,
+                    state.mode,
                   ),
                 )
               }
@@ -179,12 +216,8 @@ export function SessionView({
             </button>
             <button
               onClick={() => {
-                try {
-                  sessionStorage.removeItem(sessionKey(game))
-                } catch {
-                  /* Optional. */
-                }
-                onExit()
+                enabled.current = false
+                void writes.current.then(() => deleteSession(game)).then(onExit).catch(() => setStorageWarning(STORAGE_WARNING))
               }}
             >
               Terminer
@@ -202,6 +235,8 @@ export function SessionView({
       </main>
     )
   return (
+    <>
+    {storageWarning && <p className="ci-notice" role="status">{storageWarning}</p>}
     <PlayingRound
       key={round.id}
       game={game}
@@ -211,9 +246,12 @@ export function SessionView({
       shapes={shapes}
       timer={timer}
       header={header}
-      onExit={onExit}
+      onExit={() => { flushClock(); void writes.current.then(onExit) }}
       suspended={state.paused || hidden}
+      initialClock={resume?.record.clock}
+      onClock={onClock}
     />
+    </>
   )
 }
 
@@ -227,7 +265,11 @@ function PlayingRound({
   header,
   onExit,
   suspended,
+  initialClock,
+  onClock,
 }: {
+  initialClock?: SessionClock
+  onClock: (clock: SessionClock) => void
   game: Game
   state: Session
   dispatch: (action: Parameters<typeof transition>[2]) => void
@@ -251,6 +293,15 @@ function PlayingRound({
   const [playback, setPlayback] = useState(0)
   const [hintCount, setHintCount] = useState(0)
   const reveal = state.phase === 'revealed'
+  const solo = state.mode === 'solo'
+  const roundId = rounds[state.index]!.id
+  const correctionRemaining = useCountdown({
+    durationMs: 5000,
+    initialRemainingMs: remainingFor(initialClock, roundId, 'revealed', 5000),
+    running: solo && reveal && !suspended,
+    onElapsed: () => dispatch({ type: 'NEXT' }),
+    onRemaining: (remainingMs) => onClock({ roundId, phase: 'revealed', durationMs: 5000, remainingMs }),
+  })
   useEffect(() => {
     const keydown = (event: KeyboardEvent) => {
       if (!isLessonEnter(event, state.phase !== 'cards-up') || suspended) return
@@ -292,10 +343,11 @@ function PlayingRound({
         }}
       />
       <main
-        className={`ci-session${questions[0]?.mode === 'sequence' ? ' ci-sequence-session' : ''}${questions.length === 2 ? ' ci-dual-session' : ''}`}
+        className={`ci-session${solo ? ' ci-solo-session' : ''}${reveal ? ' ci-is-revealed' : ''}${questions[0]?.mode === 'sequence' ? ' ci-sequence-session' : ''}${questions.length === 2 ? ' ci-dual-session' : ''}`}
       >
         {state.paused && (
           <section className="ci-pause">
+            <Mascot pose="pause" label="Pause" className="ci-pause-mascot" />
             <h1>On reprend dans un instant.</h1>
             <button
               className="ci-primary"
@@ -322,20 +374,24 @@ function PlayingRound({
               )}
               {state.phase === 'thinking' && (
                 <ReflectionTimer
-                  key={`${playback}:${timer.seconds}`}
-                  settings={timer}
+                  key={`${solo ? 0 : playback}:${timer.seconds}`}
+                  settings={solo ? { ...timer, enabled: true } : timer}
                   running={!suspended}
                   waitingForAudio={
-                    !!audio && audioStatus !== 'ended' && !audioOverride
+                    !solo && !!audio && audioStatus !== 'ended' && !audioOverride
                   }
                   audioFailed={audioStatus === 'error'}
                   onAudioOverride={() => setAudioOverride(true)}
+                  onElapsed={solo ? () => dispatch({ type: 'TIMEOUT' }) : undefined}
+                  initialRemainingMs={playback === 0 || solo ? remainingFor(initialClock, roundId, 'thinking', timer.seconds * 1000) : undefined}
+                  onRemaining={(remainingMs) => onClock({ roundId, phase: 'thinking', durationMs: timer.seconds * 1000, remainingMs })}
                 />
               )}
               {reveal &&
                 questions.map((q, i) => (
                   <CorrectionView
                     key={q.id}
+                    collective={!solo}
                     placement="left"
                     number={questions.length === 2 ? i + 1 : undefined}
                     question={q}
@@ -357,6 +413,7 @@ function PlayingRound({
                 >
                   <QuestionStage
                     q={q}
+                    canSelect={solo && state.phase === 'thinking' && !suspended}
                     phase={state.phase}
                     selected={state.selections[q.id]}
                     colors={colors}
@@ -409,17 +466,11 @@ function PlayingRound({
               className="ci-phase-margin ci-margin-right"
               aria-label={reveal ? 'Résultats au tableau' : 'Action au tableau'}
             >
-              {!reveal && (
-                <PhaseBanner
-                  phase={state.phase}
-                  choice={questions[0]?.mode === 'choice'}
-                  side="right"
-                />
-              )}
               {reveal &&
                 questions.map((q, i) => (
                   <CorrectionView
                     key={q.id}
+                    collective={!solo}
                     placement="right"
                     number={questions.length === 2 ? i + 1 : undefined}
                     question={q}
@@ -434,7 +485,7 @@ function PlayingRound({
             </aside>
           </div>
           <footer className="ci-controls">
-            {state.phase === 'thinking' && (
+            {!solo && state.phase === 'thinking' && (
               <button
                 className="ci-primary"
                 onClick={() => dispatch({ type: 'CARDS_UP' })}
@@ -444,9 +495,7 @@ function PlayingRound({
                   : 'Commencer l’échange'}
               </button>
             )}
-            {(state.phase === 'selected' ||
-              (questions[0]?.mode !== 'choice' &&
-                state.phase === 'cards-up')) && (
+            {!solo && (state.phase === 'selected' || state.phase === 'cards-up') && (
               <button
                 className="ci-primary"
                 onClick={() => dispatch({ type: 'DISCUSS' })}
@@ -454,14 +503,7 @@ function PlayingRound({
                 Discuter
               </button>
             )}
-            {state.phase === 'cards-up' && questions[0]?.mode === 'choice' && (
-              <p>
-                {questions.length === 2
-                  ? 'Choisissez une carte pour chaque question.'
-                  : 'Un élève choisit au tableau.'}
-              </p>
-            )}
-            {state.phase === 'discussion' && (
+            {!solo && state.phase === 'discussion' && (
               <button
                 className="ci-primary"
                 onClick={() => dispatch({ type: 'REVEAL' })}
@@ -469,7 +511,7 @@ function PlayingRound({
                 Enseignant : révéler
               </button>
             )}
-            {reveal && (
+            {!solo && reveal && (
               <button
                 className="ci-primary"
                 onClick={() => dispatch({ type: 'NEXT' })}
@@ -479,6 +521,7 @@ function PlayingRound({
                   : 'Question suivante'}
               </button>
             )}
+            {solo && <p role="status">{reveal ? `Question suivante dans ${Math.ceil(correctionRemaining / 1000)} s` : questions[0]?.mode === 'choice' ? 'Choisis une réponse avant la fin du temps.' : 'Activité ouverte : compare ta réponse au modèle à la fin du temps.'}</p>}
           </footer>
         </div>
       </main>

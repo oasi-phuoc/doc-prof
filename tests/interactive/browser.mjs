@@ -71,6 +71,7 @@ try {
       })
     await page.emulateMedia({ media: 'screen' })
     await page.getByRole('button', { name: /Commencer la séance/ }).click()
+    await page.locator('.ci-controls').waitFor()
     assert.equal(await page.locator('.ci-reveal').count(), 0)
     assert.equal(await page.getByRole('button', { name: /révéler/ }).count(), 0)
     assert.equal(await page.locator('.ci-answer:disabled').count(), 6)
@@ -78,7 +79,7 @@ try {
     await page
       .getByRole('button', { name: 'Signal : levez vos cartes' })
       .click()
-    await page.locator('.ci-answer').first().click()
+    assert.equal(await page.locator('.ci-answer:enabled').count(), 0)
     assert.equal(await page.locator('.ci-reveal').count(), 0)
     await page.getByRole('button', { name: 'Discuter', exact: true }).click()
     assert.equal(await page.locator('.ci-reveal').count(), 0)
@@ -126,6 +127,7 @@ try {
     // Reload requires an explicit launch and resumes at reflection, never at reveal.
     await page.reload()
     await page.getByRole('button', { name: /Reprendre la séance/ }).click()
+    await page.locator('.ci-controls').waitFor()
     assert.match(
       await page.locator('.ci-progress').innerText(),
       /Question 4 \/ 10/,
@@ -165,6 +167,7 @@ try {
     await page
       .getByRole('button', { name: /Reprendre les questions difficiles/ })
       .click()
+    await page.locator('.ci-question').waitFor()
     assert.equal(await page.locator('.ci-question').count(), 1)
     assert.equal(
       await page.evaluate(

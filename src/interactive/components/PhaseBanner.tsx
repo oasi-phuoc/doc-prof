@@ -1,3 +1,4 @@
+import { Mascot } from './Mascot'
 import type { Phase } from '../domain/types'
 const illustrations = {
   thinking: { image: 'thinking', text: 'Je réfléchis' },
@@ -23,19 +24,15 @@ export function PhaseBanner({
     return null
   const current =
     side === 'right'
-      ? { image: 'board-turn', text: 'L’élève choisit au tableau' }
+      ? { image: 'board-turn' as const, text: 'L’élève choisit au tableau' }
       : !choice && phase === 'cards-up'
-        ? { image: 'discussion', text: 'Nous échangeons' }
+        ? { image: 'discussion' as const, text: 'Nous échangeons' }
         : choice && phase === 'selected'
           ? illustrations['cards-up']
           : illustrations[phase]
   return (
     <div className="ci-phase-banner" role="status">
-      <img
-        className="ci-phase-art"
-        src={`/lib/images/interactive/${current.image}.webp`}
-        alt={current.text}
-      />
+      <Mascot className="ci-phase-art" pose={current.image === 'board-turn' ? 'cards-up' : current.image} label={current.text} />
       <span className="ci-phase-label">{current.text}</span>
     </div>
   )

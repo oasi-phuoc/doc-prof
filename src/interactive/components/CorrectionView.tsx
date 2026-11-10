@@ -3,7 +3,7 @@ import type { Correction, Question } from '../domain/types'
 import { PALETTE, inkForColor, type ShapeId } from '../domain/palette'
 import { CardBadge } from './CardBadge'
 import { SafeImage } from './Media'
-import { Icon } from './Icons'
+import { ResultFeedback } from './ResultFeedback'
 
 /** Mounted only after the teacher reveals. Every proposed answer stays visible. */
 export function CorrectionView({
@@ -17,7 +17,9 @@ export function CorrectionView({
   assessment,
   placement = 'model',
   number,
+  collective = false,
 }: {
+  collective?: boolean
   question: Question
   correction: Correction
   selected?: string
@@ -64,7 +66,7 @@ export function CorrectionView({
         </div>
       )
     if (placement === 'right')
-      return (
+      return collective ? null : (
         <div
           className="ci-correction-status"
           role="status"
@@ -73,8 +75,8 @@ export function CorrectionView({
           {number !== undefined && (
             <b className="ci-result-number">{number}.</b>
           )}
-          <Icon name={isCorrect ? 'check' : 'wrong'} />
-          <b>{isCorrect ? 'Réponse correcte' : 'À retravailler'}</b>
+          <ResultFeedback correct={isCorrect} />
+          <b>{isCorrect ? 'Félicitations, c’est juste !' : selected ? 'Faux · essaie encore' : 'Temps écoulé · sans réponse'}</b>
         </div>
       )
     return correction.text && correction.text !== correct.text ? (

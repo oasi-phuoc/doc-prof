@@ -97,6 +97,7 @@ try {
     await page.clock.install({ time: new Date('2026-11-09T12:00:00Z') })
     await page.clock.pauseAt(new Date('2026-11-09T12:01:00Z'))
     await page.getByRole('button', { name: /Commencer la séance/ }).click()
+    await page.locator('.ci-controls').waitFor()
     assert.equal(
       await page
         .getByRole('button', { name: 'Précédente', exact: true })
@@ -200,7 +201,7 @@ try {
     await page.screenshot({ path: `${output}/09-reading-${width}.png` })
     await page.evaluate(() => document.activeElement?.blur())
     await page.keyboard.press('Enter')
-    await page.locator('.ci-answer').first().tap()
+    assert.equal(await page.locator('.ci-answer:enabled').count(), 0)
     assert.equal(await page.locator('.ci-reveal').count(), 0)
     await page.keyboard.press('Enter')
     assert.equal(await page.locator('.ci-reveal').count(), 0)
@@ -208,18 +209,12 @@ try {
     await page.keyboard.press('Enter')
     assert.equal(await page.locator('.ci-correction-answer img').count(), 1)
     assert.equal(await page.locator('.ci-answer:visible').count(), 3)
-    assert.equal(await page.locator('.ci-answer-incorrect').count(), 1)
+    assert.equal(await page.locator('.ci-answer-incorrect').count(), 0)
     assert.match(
       await page.locator('.ci-correction-answer img').getAttribute('src'),
       /5-tomates/,
     )
-    assert.match(
-      await page.locator('.ci-correction-status').innerText(),
-      /À retravailler/,
-    )
-    const good = await page.locator('.ci-correction-card').boundingBox()
-    const verdict = await page.locator('.ci-correction-status').boundingBox()
-    assert.ok(good.x < verdict.x)
+    assert.equal(await page.locator('.ci-correction-status').count(), 0)
     await page.screenshot({
       path: `${output}/10-image-correction-${width}.png`,
     })
@@ -344,65 +339,29 @@ try {
     await page
       .getByRole('button', { name: 'Signal : levez vos cartes' })
       .click()
-    await page
-      .locator('.ci-round-question')
-      .nth(0)
-      .locator('.ci-answer')
-      .nth(1)
-      .tap()
-    assert.equal(
-      await page.getByRole('button', { name: 'Discuter', exact: true }).count(),
-      0,
-    )
-    await page
-      .locator('.ci-round-question')
-      .nth(1)
-      .locator('.ci-answer')
-      .nth(0)
-      .tap()
-    assert.equal(await page.locator('.ci-chosen').count(), 2)
-    await page.reload()
-    await page.clock.resume()
+    assert.equal(await page.locator('.ci-answer:enabled').count(), 0)
+    assert.equal(await page.locator('.ci-controls').isVisible(), true)
+    await page.getByRole('button', { name: 'Quitter la séance' }).click()
+    await page.getByRole('button', { name: /Reprendre la séance/ }).waitFor()
+    const savedJournals = await page.evaluate(async () => {
+      const db = await new Promise((resolve) => { const request = indexedDB.open('clairfle-interactive', 1); request.onsuccess = () => resolve(request.result) })
+      const rows = await new Promise((resolve) => { const request = db.transaction('sessions').objectStore('sessions').getAll(); request.onsuccess = () => resolve(request.result) })
+      db.close()
+      return rows.map((row) => ({ mode: row.mode, events: row.events.map((event) => event.action.type) }))
+    })
+    assert.ok(savedJournals.some((row) => row.mode === 'class' && ['PAUSE', 'RESUME', 'CARDS_UP', 'DISCUSS', 'REVEAL', 'NEXT'].every((type) => row.events.includes(type))))
     await page.getByRole('button', { name: /Reprendre la séance/ }).click()
-    assert.equal(await page.locator('.ci-reveal').count(), 0)
+    await page.locator('.ci-controls').waitFor()
     assert.equal(await page.locator('.ci-chosen').count(), 0)
-    assert.match(
-      await page.locator('.ci-progress').innerText(),
-      /Questions 2 et 3 \/ 3/,
-    )
-    await page
-      .getByRole('button', { name: 'Signal : levez vos cartes' })
-      .click()
-    await page
-      .locator('.ci-round-question')
-      .nth(0)
-      .locator('.ci-answer')
-      .nth(1)
-      .tap()
-    await page
-      .locator('.ci-round-question')
-      .nth(1)
-      .locator('.ci-answer')
-      .nth(0)
-      .tap()
+    assert.equal(await page.locator('.ci-reveal').count(), 0)
     await page.getByRole('button', { name: 'Discuter', exact: true }).click()
     await page.getByRole('button', { name: 'Enseignant : révéler' }).click()
     assert.equal(await page.locator('.ci-reveal').count(), 2)
-    assert.equal(
-      await page
-        .locator('.ci-correction-status')
-        .filter({ hasText: 'Réponse correcte' })
-        .count(),
-      1,
-    )
-    assert.equal(
-      await page.getByText('À retravailler', { exact: true }).count(),
-      1,
-    )
-    assert.equal(await page.locator('.ci-correction-answer img').count(), 1)
+    assert.equal(await page.locator('.ci-correction-status').count(), 0)
+    assert.equal(await page.locator('.ci-correction-answer img').count(), 2)
     assert.equal(await page.locator('.ci-answer:visible').count(), 6)
-    assert.equal(await page.locator('.ci-answer-correct').count(), 1)
-    assert.equal(await page.locator('.ci-answer-incorrect').count(), 1)
+    assert.equal(await page.locator('.ci-answer-correct').count(), 0)
+    assert.equal(await page.locator('.ci-answer-incorrect').count(), 0)
     await fit(page, height)
     await page.screenshot({
       path: `${output}/12-paired-correction-${width}.png`,
@@ -411,9 +370,9 @@ try {
     assert.equal(await page.locator('.ci-summary .ci-panel > p').count(), 3)
     assert.equal(
       await page
-        .getByText('À retravailler au tableau', { exact: false })
+        .locator('.ci-summary .ci-panel > p').filter({ hasText: 'Sans évaluation automatique' })
         .count(),
-      2,
+      3,
     )
     assert.deepEqual(errors, [])
     results.push({
@@ -427,7 +386,7 @@ try {
         'round illustrations, vertical badges, header order, two question columns passed',
       teacherEnter:
         'phase advancement and input/menu/repeat/composition guards passed',
-      resume: 'reflection without selected answers',
+      resume: 'collective voting phase preserved without selections',
       fit: 'passed',
       errors,
     })

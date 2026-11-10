@@ -1,5 +1,5 @@
 import { hash } from './convert'
-import type { Game, Question, Round } from './types'
+import type { Game, Question, Round, PlayMode } from './types'
 
 export function roundsFor(game: Game): Round[] {
   return (
@@ -51,6 +51,7 @@ export function excludeQuestions(
 export function prepareGame(
   game: Game,
   selected = game.questions.map((q) => q.id),
+  mode: PlayMode = 'class',
 ): Game {
   const source = game.questions.filter((q) => selected.includes(q.id))
   const audioGroups = new Map<string, Question[]>()
@@ -67,9 +68,9 @@ export function prepareGame(
           hash(`${game.id}:${a.id}`) - hash(`${game.id}:${b.id}`) ||
           a.id.localeCompare(b.id),
       )
-      .slice(0, 2)
+      .slice(0, mode === 'solo' ? group.length : 2)
     chosen.forEach((q) => keep.add(q.id))
-    if (group.length > 2)
+    if (mode === 'class' && group.length > 2)
       issues.push({
         source: 'Document audio',
         reason: `2 questions retenues sur ${group.length} pour écouter ce document une seule fois. Vous pouvez modifier la sélection avant de commencer.`,
@@ -90,7 +91,7 @@ export function prepareGame(
       : [q]
     // Open productions stay teacher-led; grouping never invents answer cards.
     const group =
-      peers.length === 2 && peers.every((other) => other.mode === 'choice')
+      mode === 'class' && peers.length === 2 && peers.every((other) => other.mode === 'choice')
         ? peers
         : [q]
     if (group.length === 2) {
@@ -132,7 +133,7 @@ export function prepareGame(
   }
   return {
     ...game,
-    id: `${game.id}-plan2-${hash(JSON.stringify(rounds))}`,
+    id: `${game.id}-${mode}-plan2-${hash(JSON.stringify(rounds))}`,
     questions,
     corrections: Object.fromEntries(
       questions.map((q) => [q.id, game.corrections[q.id]!]),

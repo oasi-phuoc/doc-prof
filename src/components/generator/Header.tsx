@@ -30,14 +30,14 @@ export function Header({
           Clair<span className="brand-accent">FLE</span>
         </a>
         {afterBrand}
+        {createVisible ? (
+          <button className="button small" type="button" onClick={onCreate}>
+            Créer une fiche
+          </button>
+        ) : null}
       </div>
       <div className="topbar-right">
         {rightSlot}
-        {createVisible ? (
-          <button className="button small" type="button" onClick={onCreate}>
-            Créer une fiche <span>→</span>
-          </button>
-        ) : null}
         {endSlot}
       </div>
     </header>

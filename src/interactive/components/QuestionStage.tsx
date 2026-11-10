@@ -23,7 +23,9 @@ export function QuestionStage({
   correctChoiceId,
   number,
   onSelect,
+  canSelect = false,
 }: {
+  canSelect?: boolean
   q: Question
   phase: Phase
   selected?: string
@@ -37,11 +39,11 @@ export function QuestionStage({
   return (
     <>
       <section className="ci-question">
-        <h1>
+        <h1 className={number !== undefined ? 'ci-numbered-heading' : undefined}>
           {number !== undefined && (
             <span className="ci-question-number">{number}.</span>
           )}
-          {q.prompt}
+          <span className="ci-question-prompt">{q.prompt}</span>
         </h1>
         {q.context && <ReadingDocument text={q.context} />}
         {q.mode === 'sequence' && (
@@ -93,7 +95,7 @@ export function QuestionStage({
                     '--card-ink': inkForColor(colors[slot]!),
                   } as CSSProperties
                 }
-                disabled={phase !== 'cards-up' && phase !== 'selected'}
+                disabled={!canSelect}
                 aria-pressed={chosen}
                 onClick={() => onSelect(choice.id)}
               >

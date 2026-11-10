@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState, type CSSProperties } from 'react'
 import { listFiches } from '@/fiches/api'
 import { domainsForAccount, readAccessAccount } from '@/access'
+import { MASCOTS, type MascotKind } from './domain/mascot'
+import type { PlayMode } from './domain/types'
 import type { FicheRecipe } from '@/fiches/recipe'
 import { convertRecipe } from './domain/convert'
 import { excludeQuestions, prepareGame } from './domain/plan'
@@ -16,7 +18,7 @@ import {
 import { demoRecipe } from './demo'
 import { readInteractiveDraft } from './navigation'
 import { SessionView } from './SessionView'
-import { sessionKey } from './domain/persistence'
+import { loadSession, deleteSession, type Resume } from './domain/persistence'
 import { PrintCards } from './components/PrintCards'
 import { PaletteSettings } from './components/PaletteSettings'
 import { CardBadge } from './components/CardBadge'
@@ -32,6 +34,8 @@ import './projection.css'
 type Source = { recipe: FicheRecipe; name: string }
 const COLORS_KEY = 'clairfle.interactive.palette.v2'
 const SHAPES_KEY = 'clairfle.interactive.shapes.v1'
+const MODE_KEY = 'clairfle.interactive.mode.v1'
+const MASCOT_KEY = 'clairfle.interactive.mascot.v1'
 const TIMER_KEY = 'clairfle.interactive.timer.v1'
 function readSetting(key: string): unknown {
   try {
@@ -111,6 +115,10 @@ export default function InteractiveApp() {
   const [shapes, setShapes] = useState(loadShapes)
   const [timer, setTimer] = useState(loadTimer)
   const [contrast, setContrast] = useState(false)
+  const [mascot, setMascot] = useState<MascotKind>(() => MASCOTS.find((item) => item.id === readSetting(MASCOT_KEY))?.id ?? 'leaf')
+  const [mode, setMode] = useState<PlayMode>(() => {
+    try { return sessionStorage.getItem(MODE_KEY) === 'solo' ? 'solo' : 'class' } catch { return 'class' }
+  })
   const [playing, setPlaying] = useState(false)
   const [selection, setSelected] = useState<string[] | null>(null)
   const [excludeUnavailable, setExcludeUnavailable] = useState(true)
@@ -157,8 +165,8 @@ export default function InteractiveApp() {
     [selection, game],
   )
   const selectedGame = useMemo(
-    () => (game ? prepareGame(game, selected) : null),
-    [game, selected],
+    () => (game ? prepareGame(game, selected, mode) : null),
+    [game, selected, mode],
   )
   const media = useMediaPreflight(selectedGame, !playing)
   const activeGame = useMemo(
@@ -168,12 +176,21 @@ export default function InteractiveApp() {
         : selectedGame,
     [selectedGame, excludeUnavailable, media.excluded],
   )
-  let canResume = false
-  try {
-    canResume = !!activeGame && !!sessionStorage.getItem(sessionKey(activeGame))
-  } catch {
-    /* Optional. */
-  }
+  const resumeKey = activeGame?.id ?? ''
+  const [resumeResult, setResumeResult] = useState<{ key: string; saved: Resume | null; warning: string } | null>(null)
+  const resumeChecked = resumeResult?.key === resumeKey
+  const saved = resumeChecked ? resumeResult.saved : null
+  const resumeWarning = resumeChecked ? resumeResult.warning : ''
+  useEffect(() => {
+    let active = true
+    if (!activeGame || playing) return
+    void loadSession(activeGame, mode).then(
+      (value) => { if (active) setResumeResult({ key: resumeKey, saved: value, warning: '' }) },
+      (error: unknown) => { if (active) setResumeResult({ key: resumeKey, saved: null, warning: error instanceof Error ? error.message : 'Sauvegarde indisponible.' }) },
+    )
+    return () => { active = false }
+  }, [activeGame, playing, mode, resumeKey])
+  const canResume = !!saved
   const changeColors = (next: string[]) => {
     setColors(next)
     saveSetting(COLORS_KEY, next)
@@ -187,6 +204,13 @@ export default function InteractiveApp() {
     saveSetting(TIMER_KEY, next)
   }
   const header = {
+    mascot,
+    onMascot: (next: MascotKind) => { setMascot(next); saveSetting(MASCOT_KEY, next) },
+    mode,
+    onMode: (next: PlayMode) => {
+      setMode(next)
+      try { sessionStorage.setItem(MODE_KEY, next) } catch { /* Optional preference. */ }
+    },
     contrast,
     onContrast: () => setContrast((c) => !c),
     onFiches: returnToFiches,
@@ -210,7 +234,7 @@ export default function InteractiveApp() {
     },
   }
   return (
-    <div className={`ci-app${contrast ? ' ci-high-contrast' : ''}`}>
+    <div className={`ci-app${contrast ? ' ci-high-contrast' : ''}`} data-mascot={mascot}>
       {!playing && <ClassroomHeader {...header} />}
       {fullscreenMessage && (
         <p className="ci-notice ci-no-print" role="status">
@@ -259,8 +283,8 @@ export default function InteractiveApp() {
                       Toute la classe participe.
                     </h1>
                     <p className="ci-lead">
-                      Chacun réfléchit, puis lève sa carte. Un élève choisit au
-                      tableau. Vous gardez la main sur la correction.
+                      Chacun réfléchit, puis lève sa carte. Toute la classe participe.
+                      Vous gardez la main sur la correction.
                     </p>
                   </div>
                   <div className="ci-mini-cards" aria-hidden="true">
@@ -395,9 +419,11 @@ export default function InteractiveApp() {
                         onRetry={media.retry}
                       />
                     )}
+                    {resumeWarning && <p role="status">{resumeWarning}</p>}
+                    {saved && <p>Reprendre la séance du {new Date(saved.record.updatedAt).toLocaleString('fr-CH')} (question {saved.state.index + 1} sur {activeGame.rounds?.length ?? activeGame.questions.length}) ?</p>}
                     <button
                       className="ci-primary ci-launch"
-                      disabled={!activeGame.questions.length || !media.complete}
+                      disabled={!activeGame.questions.length || !media.complete || !resumeChecked}
                       onClick={() => setPlaying(true)}
                     >
                       {canResume
@@ -406,31 +432,29 @@ export default function InteractiveApp() {
                       <span aria-hidden="true">→</span>
                     </button>
                     {canResume && (
+                      <>
                       <button
                         className="ci-fresh-start"
                         disabled={!media.complete}
                         onClick={() => {
-                          try {
-                            sessionStorage.removeItem(sessionKey(activeGame))
-                          } catch {
-                            /* Optional. */
-                          }
-                          setPlaying(true)
+                          void deleteSession(activeGame).then(() => { setResumeResult({ key: resumeKey, saved: null, warning: '' }); setPlaying(true) }).catch(() => setResumeResult({ key: resumeKey, saved, warning: 'Impossible de supprimer la sauvegarde.' }))
                         }}
                       >
                         Recommencer à zéro
                       </button>
+                      <button className="ci-fresh-start" onClick={() => { void deleteSession(activeGame).then(() => setResumeResult({ key: resumeKey, saved: null, warning: '' })).catch(() => setResumeResult({ key: resumeKey, saved, warning: 'Impossible de supprimer la sauvegarde.' })) }}>Supprimer la sauvegarde</button>
+                      </>
                     )}
                   </section>
                   <aside className="ci-panel">
-                    <h2>Le rituel de la classe</h2>
-                    <ol className="ci-ritual">
+                    <h2>{mode === 'class' ? 'Le rituel de la classe' : 'Le parcours solo'}</h2>
+                    {mode === 'solo' ? <p>Choisis une réponse avant la fin du compte à rebours. Sans réponse, la question est comptée comme fausse. La correction s’affiche pendant 5 secondes, puis la question suivante démarre. Les activités ouvertes restent sans note automatique.</p> : <ol className="ci-ritual">
                       <li>Je réfléchis.</li>
                       <li>Au signal, je lève ma carte.</li>
-                      <li>Un élève choisit au tableau.</li>
+
                       <li>Nous discutons de la réponse.</li>
                       <li>L’enseignant révèle la correction.</li>
-                    </ol>
+                    </ol>}
                     <p>
                       Les votes sur cartes ne sont pas enregistrés. Aucun
                       téléphone élève n’est nécessaire.
@@ -439,7 +463,8 @@ export default function InteractiveApp() {
                       <label>
                         <input
                           type="checkbox"
-                          checked={timer.enabled}
+                          checked={mode === 'solo' || timer.enabled}
+                        disabled={mode === 'solo'}
                           onChange={(e) =>
                             changeTimer({ ...timer, enabled: e.target.checked })
                           }
@@ -462,9 +487,7 @@ export default function InteractiveApp() {
                         />
                       </label>
                       <p>
-                        30 secondes par défaut. Avec un document audio, le
-                        décompte commence à la fin de l’écoute. Vous choisissez
-                        toujours quand continuer.
+                        {mode === 'solo' ? '30 secondes par défaut. Le compte à rebours démarre dès l’affichage de la question ; la correction et la suite sont automatiques.' : '30 secondes par défaut. Avec un document audio, le décompte commence à la fin de l’écoute. Vous choisissez toujours quand continuer.'}
                       </p>
                     </div>
                   </aside>
