@@ -1,5 +1,5 @@
 {
-  "migration": "schema 1 readable; first new writes upgrade to schema 2",
+  "migration": "schema 1 and 2 readable; new writes upgrade to schema 3",
   "boundary": "5000 accepted actions compact into a resumable discussion, no reveal",
   "beforeBytes": 356569,
   "compactedBytes": 534,

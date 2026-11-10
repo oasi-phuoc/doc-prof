@@ -1,3 +1,4 @@
+import { skipQuestion } from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import { mkdir, writeFile, readFile } from 'node:fs/promises'
 import { chromium } from 'playwright'
@@ -99,11 +100,11 @@ try {
       .getByRole('button', { name: 'Reprendre la séance', exact: true })
       .last()
       .click()
-    await page.getByRole('button', { name: 'Passer', exact: true }).click()
+    await skipQuestion(page)
     assert.equal(await page.locator('.ci-figure svg').count(), 1)
     await fitControls(page, height)
     await page.screenshot({ path: `${output}/04-geometry-${width}.png` })
-    await page.getByRole('button', { name: 'Passer', exact: true }).click()
+    await skipQuestion(page)
     const audio = page.locator('audio')
     assert.equal(await audio.count(), 1)
     assert.equal(await audio.evaluate((a) => a.paused && !a.autoplay), true)
@@ -134,7 +135,7 @@ try {
     )
     assert.equal(await page.locator('.ci-reveal').count(), 0)
     for (let i = 0; i < 6; i++)
-      await page.getByRole('button', { name: 'Passer', exact: true }).click()
+      await skipQuestion(page)
     assert.equal(
       await page.locator('.ci-sequence .ci-image-zoom img').count(),
       4,

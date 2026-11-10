@@ -22,6 +22,10 @@ export type IconName =
   | 'plus'
   | 'minus'
   | 'close'
+  | 'lock'
+  | 'unlock'
+  | 'finish'
+  | 'tally'
 const paths: Record<IconName, React.ReactNode> = {
   users: <><circle cx="9" cy="7" r="3" /><path d="M3 21v-3a6 6 0 0 1 12 0v3M16 4a3 3 0 0 1 0 6m3 11v-3a6 6 0 0 0-3-5" /></>,
   user: <><circle cx="12" cy="7" r="4" /><path d="M4 21v-2a8 8 0 0 1 16 0v2" /></>,
@@ -99,6 +103,10 @@ const paths: Record<IconName, React.ReactNode> = {
   plus: <path d="M12 4v16M4 12h16" />,
   minus: <path d="M4 12h16" />,
   close: <path d="m5 5 14 14m0-14L5 19" />,
+  lock: <><rect x="5" y="10" width="14" height="11" rx="2" /><path d="M8 10V6a4 4 0 0 1 8 0v4m-4 4v3" /></>,
+  unlock: <><rect x="5" y="10" width="14" height="11" rx="2" /><path d="M8 10V6a4 4 0 0 1 8 0m-4 8v3" /></>,
+  finish: <><path d="M5 22V3m0 1c5-4 9 4 15 0v11c-6 4-10-4-15 0" /></>,
+  tally: <path d="M5 5v14M10 5v14M15 5v14M20 5v14M2 17 22 7" />,
 }
 export function Icon({
   name,

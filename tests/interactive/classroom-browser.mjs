@@ -1,3 +1,4 @@
+import { skipQuestion } from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import { mkdir, writeFile } from 'node:fs/promises'
 import { chromium } from 'playwright'
@@ -199,7 +200,7 @@ try {
     )
     await fit(page, height)
     await page.screenshot({ path: `${output}/09-reading-${width}.png` })
-    await page.evaluate(() => document.activeElement?.blur())
+    await page.locator('.ci-controls').focus()
     await page.keyboard.press('Enter')
     assert.equal(await page.locator('.ci-answer:enabled').count(), 0)
     assert.equal(await page.locator('.ci-reveal').count(), 0)
@@ -409,7 +410,7 @@ try {
       'ci-high-contrast',
     ),
   )
-  await page.getByRole('button', { name: 'Passer', exact: true }).click()
+  await skipQuestion(page)
   assert.equal(await page.locator('.ci-answer').count(), 6)
   assert.equal(
     await page.evaluate(

@@ -1,0 +1,29 @@
+.ci-app .ci-setup-guard { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--ci-line); }
+.ci-app .ci-setup-guard label { display: flex; align-items: center; gap: 10px; font-weight: 700; }
+.ci-app .ci-setup-guard p { font-size: 14px; color: var(--ci-muted); margin: 10px 0 0; }
+.ci-app .ci-class-controls { display: grid; grid-template-columns: minmax(88px, 1fr) minmax(220px, auto) minmax(88px, 1fr); column-gap: 12px; }
+.ci-app .ci-class-controls > .ci-primary { grid-column: 2; grid-row: 1; }
+.ci-app .ci-control-start, .ci-app .ci-control-end { display: flex; align-items: center; gap: 6px; grid-row: 1; }
+.ci-app .ci-control-start { grid-column: 1; justify-self: end; }
+.ci-app .ci-control-end { grid-column: 3; justify-self: start; }
+.ci-app .ci-control-start .ci-teacher-action, .ci-app .ci-control-end .ci-teacher-action { width: 44px; height: 44px; min-height: 44px; padding: 8px; border-radius: 12px; flex-shrink: 0; }
+.ci-app .ci-teacher-action[aria-pressed='true'] { background: var(--ci-ink); color: var(--ci-paper); border-color: var(--ci-ink); }
+.ci-app .ci-header [aria-disabled='true'] { opacity: .55; }
+.ci-app .ci-reveal-button { touch-action: none; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; }
+.ci-app .ci-hold-ring { width: 24px; height: 24px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 2; transform: rotate(-90deg); }
+.ci-app .ci-hold-ring circle:first-child { opacity: .3; }
+.ci-app .ci-hold-progress { stroke-dasharray: 1; stroke-dashoffset: 1; }
+.ci-app .ci-holding .ci-hold-progress { animation: ci-hold-to-reveal 600ms linear forwards; }
+@keyframes ci-hold-to-reveal { to { stroke-dashoffset: 0; } }
+.ci-app .ci-teacher-confirm { width: min(500px, calc(100vw - 24px)); max-height: calc(100dvh - 24px); overflow: auto; border: 1px solid var(--ci-line); border-radius: 18px; padding: 24px; background: var(--ci-paper); color: var(--ci-ink); }
+.ci-app .ci-teacher-confirm::backdrop { background: rgb(24 34 56 / .45); }
+.ci-app .ci-teacher-confirm h2 { font-size: 24px; }
+.ci-app .ci-teacher-confirm .ci-toolbar { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; }
+@media screen and (max-width: 700px) {
+  .ci-app.ci-playing .ci-class-controls { grid-template-columns: 84px minmax(0, 1fr) 84px; column-gap: 4px; }
+  .ci-app.ci-playing .ci-class-controls > .ci-primary { min-width: 0; width: 100%; min-height: 44px; padding: 6px 8px; gap: 6px; font-size: 14px; line-height: 1.2; }
+  .ci-app .ci-control-start, .ci-app .ci-control-end { gap: 4px; }
+  .ci-app .ci-control-start .ci-teacher-action, .ci-app .ci-control-end .ci-teacher-action { width: 40px; height: 44px; min-height: 44px; padding: 8px; }
+  .ci-app .ci-hold-ring { width: 20px; height: 20px; }
+  .ci-app .ci-teacher-confirm { padding: 20px; }
+}

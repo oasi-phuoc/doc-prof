@@ -71,6 +71,9 @@ export type Session = {
   manualVotes: Record<string, ManualVote>
   teacherMarks: Record<string, 'success' | 'review' | 'unassessed'>
   note: string
+  teacherLocked?: boolean
+  revealedAt?: number
+  revealRetractions?: Record<string, number>
 }
 export type Action =
   | { type: 'TIMEOUT' }
@@ -78,6 +81,9 @@ export type Action =
   | { type: 'SELECT'; choiceId: string; questionId?: string }
   | { type: 'DISCUSS' }
   | { type: 'REVEAL' }
+  | { type: 'UNREVEAL'; roundId: string }
+  | { type: 'TEACHER_LOCK_SET'; locked: boolean }
+  | { type: 'FINISH' }
   | { type: 'ASSESS'; value: 'acquired' | 'retry'; questionId?: string }
   | { type: 'MANUAL_VOTE_SET'; questionId: string; vote: ManualVote | null }
   | { type: 'TEACHER_MARK_SET'; questionId: string; value: 'success' | 'review' | 'unassessed' }

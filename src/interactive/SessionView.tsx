@@ -17,6 +17,8 @@ import { AudioPlayer, type AudioStatus } from './components/Media'
 import { ReflectionTimer } from './components/ReflectionTimer'
 import { ManualCountPanel, ManualVoteView } from './components/ManualCountPanel'
 import { SessionObservations } from './components/SessionObservations'
+import { RevealButton, RetractRevealButton, TeacherConfirmation } from './components/TeacherControls'
+import { IconButton } from './components/Icons'
 import { manualTotal } from './domain/votes'
 import './counting.css'
 import { useCountdown } from './useCountdown'
@@ -131,7 +133,8 @@ function ActiveSessionView({
     }
   }, [flushClock])
   const dispatch = useCallback((action: Action) => {
-    const next = transition(game, current.current, action)
+    const at = Date.now()
+    const next = transition(game, current.current, action, at)
     if (next === current.current) return
     if (next.index !== current.current.index || next.phase !== current.current.phase) clock.current = undefined
     const actionClock = clock.current
@@ -143,8 +146,8 @@ function ActiveSessionView({
       const previous = await record.current
       if (!ownership()) throw new Error(STORAGE_WARNING)
       const updated: SavedSession = {
-        ...previous, updatedAt: Date.now(), clock: actionClock,
-        events: [...previous.events, { eventId: crypto.randomUUID(), at: Date.now(), action }],
+        ...previous, updatedAt: at, clock: actionClock,
+        events: [...previous.events, { eventId: crypto.randomUUID(), at, action }],
       }
       record.current = Promise.resolve(await saveSession(next.finished || updated.events.length >= 5000 ? compactSession(updated, next) : updated, previous))
     }).catch((error: unknown) => { enabled.current = false; setStorageWarning(error instanceof Error ? error.message : STORAGE_WARNING) })
@@ -346,26 +349,34 @@ function PlayingRound({
   const [playback, setPlayback] = useState(0)
   const [hintCount, setHintCount] = useState(0)
   const [counting, setCounting] = useState(false)
+  const [confirmation, setConfirmation] = useState<'skip' | 'finish' | null>(null)
+  const controls = useRef<HTMLElement>(null)
+  const locked = !!state.teacherLocked
+  const blocked = suspended || locked || confirmation !== null
   const reveal = state.phase === 'revealed'
   const solo = state.mode === 'solo'
   const roundId = rounds[state.index]!.id
   useEffect(() => {
     const keydown = (event: KeyboardEvent) => {
-      if (!isLessonEnter(event, state.phase !== 'cards-up') || suspended) return
+      if (!isLessonEnter(event, state.phase !== 'cards-up') || blocked) return
       const action = advanceAction(game, state)
       if (action) {
         event.preventDefault()
+        if (action.type === 'REVEAL' && header.toolbarGuard === 'hold-to-reveal') {
+          controls.current?.querySelector<HTMLButtonElement>('.ci-reveal-button')?.focus()
+          return
+        }
         dispatch(action)
       }
     }
     document.addEventListener('keydown', keydown)
     return () => document.removeEventListener('keydown', keydown)
-  }, [game, state, dispatch, suspended])
+  }, [game, state, dispatch, blocked, header.toolbarGuard])
   const audioPlayer = audio ? (
     <AudioPlayer
       key={audio}
       src={audio}
-      paused={suspended}
+      paused={suspended || locked || confirmation !== null}
       onStatus={(status) => {
         setAudioStatus(status)
         if (status === 'playing') {
@@ -383,10 +394,11 @@ function PlayingRound({
           progress,
           paused: state.paused,
           canSkip: !reveal,
-          onSkip: () => dispatch({ type: 'SKIP' }),
+          onSkip: () => { if (solo) dispatch({ type: 'SKIP' }); else setConfirmation('skip') },
           onPause: () => dispatch({ type: state.paused ? 'RESUME' : 'PAUSE' }),
           onExit,
           audio: audioPlayer,
+          teacherLocked: locked,
         }}
       />
       <main
@@ -398,10 +410,12 @@ function PlayingRound({
             <h1>On reprend dans un instant.</h1>
             <button
               className="ci-primary"
+              disabled={locked}
               onClick={() => dispatch({ type: 'RESUME' })}
             >
               Reprendre la séance
             </button>
+            {locked && <IconButton icon="unlock" label="Déverrouiller les commandes" onClick={() => dispatch({ type: 'TEACHER_LOCK_SET', locked: false })} />}
           </section>
         )}
         <div hidden={state.paused}>
@@ -423,7 +437,8 @@ function PlayingRound({
                 <ReflectionTimer
                   key={`${solo ? 0 : playback}:${timer.seconds}`}
                   settings={timer}
-                  running={!suspended}
+                  running={!suspended && confirmation === null}
+                  controlsDisabled={locked}
                   waitingForAudio={
                     !solo && !!audio && audioStatus !== 'ended' && !audioOverride
                   }
@@ -468,6 +483,7 @@ function PlayingRound({
                       assessment={
                         state.history.find((a) => a.questionId === q.id)?.manual
                       }
+                      disabled={locked}
                       onAssess={(value) =>
                         dispatch({ type: 'ASSESS', questionId: q.id, value })
                       }
@@ -481,7 +497,7 @@ function PlayingRound({
                           <p key={n}>{hint}</p>
                         ))}
                         <button
-                          disabled={hintCount >= q.hints.length}
+                          disabled={locked || hintCount >= q.hints.length}
                           onClick={() => setHintCount((n) => n + 1)}
                         >
                           Proposer une relance
@@ -510,11 +526,13 @@ function PlayingRound({
                 ))}
             </aside>
           </div>
-          <footer className="ci-controls">
-            {!solo && state.phase !== 'thinking' && questions.some((q) => q.mode === 'choice') && <button className="ci-count-trigger" onClick={() => setCounting(true)}>Compter</button>}
+          <footer ref={controls} className={`ci-controls${!solo ? ' ci-class-controls' : ''}`} role="group" tabIndex={solo ? undefined : 0} aria-label={solo ? 'Suivi de la question' : 'Commandes enseignant'} data-ci-toolbar data-ci-phase-controls>
+            {!solo && <div className="ci-control-start"><IconButton className="ci-teacher-action" icon={locked ? 'unlock' : 'lock'} label={locked ? 'Déverrouiller les commandes' : 'Verrouiller les commandes'} aria-pressed={locked} onClick={() => dispatch({ type: 'TEACHER_LOCK_SET', locked: !locked })} />
+            {state.phase !== 'thinking' && questions.some((q) => q.mode === 'choice') && <IconButton icon="tally" label="Compter" className="ci-teacher-action ci-count-trigger" disabled={locked} onClick={() => setCounting(true)} />}</div>}
             {!solo && state.phase === 'thinking' && (
               <button
                 className="ci-primary"
+                disabled={locked}
                 onClick={() => dispatch({ type: 'CARDS_UP' })}
               >
                 {questions[0]?.mode === 'choice'
@@ -525,22 +543,19 @@ function PlayingRound({
             {!solo && (state.phase === 'selected' || state.phase === 'cards-up') && (
               <button
                 className="ci-primary"
+                disabled={locked}
                 onClick={() => dispatch({ type: 'DISCUSS' })}
               >
                 Discuter
               </button>
             )}
             {!solo && state.phase === 'discussion' && (
-              <button
-                className="ci-primary"
-                onClick={() => dispatch({ type: 'REVEAL' })}
-              >
-                Enseignant : révéler
-              </button>
+              <RevealButton guard={header.toolbarGuard ?? 'none'} disabled={blocked} onReveal={() => dispatch({ type: 'REVEAL' })} />
             )}
             {!solo && reveal && (
               <button
                 className="ci-primary"
+                disabled={locked}
                 onClick={() => dispatch({ type: 'NEXT' })}
               >
                 {state.index === rounds.length - 1
@@ -548,10 +563,13 @@ function PlayingRound({
                   : 'Question suivante'}
               </button>
             )}
+            {!solo && <div className="ci-control-end">{reveal && state.revealedAt !== undefined && <RetractRevealButton key={state.revealedAt} revealedAt={state.revealedAt} disabled={blocked} onRetract={() => dispatch({ type: 'UNREVEAL', roundId })} />}
+            <IconButton className="ci-teacher-action" icon="finish" label="Terminer la séance" disabled={locked} onClick={() => setConfirmation('finish')} /></div>}
             {solo && (reveal ? <BetweenQuestionsTimer key={timer.feedbackSeconds} seconds={timer.feedbackSeconds} roundId={roundId} initialClock={initialClock} suspended={suspended} onClock={onClock} onNext={() => dispatch({ type: 'NEXT' })} /> : questions[0]?.mode === 'choice' ? <p role="status">{timer.enabled ? 'Choisis une réponse avant la fin du temps.' : 'Choisis une réponse à ton rythme.'}</p> : <><p role="status">{timer.enabled ? 'Activité ouverte : compare ta réponse au modèle à la fin du temps.' : 'Activité ouverte : prépare ta réponse, puis compare-la au modèle.'}</p>{!timer.enabled && <button className="ci-primary" onClick={() => dispatch({ type: 'TIMEOUT' })}>Voir le modèle</button>}</>)}
           </footer>
         </div>
-        {counting && !state.paused && <ManualCountPanel questions={questions} votes={state.manualVotes} onSave={(questionId, vote) => dispatch({ type: 'MANUAL_VOTE_SET', questionId, vote })} onClose={() => setCounting(false)} />}
+        {counting && !state.paused && !locked && <ManualCountPanel questions={questions} votes={state.manualVotes} onSave={(questionId, vote) => dispatch({ type: 'MANUAL_VOTE_SET', questionId, vote })} onClose={() => setCounting(false)} />}
+        {confirmation && !locked && <TeacherConfirmation action={confirmation} questionCount={questions.length} remaining={game.questions.filter((q) => !state.history.some((attempt) => attempt.questionId === q.id && !attempt.skipped)).length} onCancel={() => setConfirmation(null)} onConfirm={() => { setConfirmation(null); dispatch({ type: confirmation === 'skip' ? 'SKIP' : 'FINISH' }) }} />}
       </main>
     </>
   )

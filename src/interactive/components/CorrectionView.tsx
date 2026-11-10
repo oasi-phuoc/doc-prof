@@ -11,8 +11,10 @@ export function CorrectionView({
   placement = 'model',
   number,
   collective = false,
+  disabled = false,
 }: {
   collective?: boolean
+  disabled?: boolean
   question: Question
   correction: Correction
   selected?: string
@@ -55,12 +57,14 @@ export function CorrectionView({
       </p>
       <div className="ci-toolbar">
         <button
+          disabled={disabled}
           aria-pressed={assessment === 'acquired'}
           onClick={() => onAssess('acquired')}
         >
           Acquis
         </button>
         <button
+          disabled={disabled}
           aria-pressed={assessment === 'retry'}
           onClick={() => onAssess('retry')}
         >

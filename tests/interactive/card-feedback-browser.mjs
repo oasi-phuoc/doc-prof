@@ -2,6 +2,7 @@ import assert from 'node:assert/strict'
 import { writeFile } from 'node:fs/promises'
 import { chromium } from 'playwright'
 import { classroomRecipe } from './classroom-fixture.mjs'
+import { skipQuestion } from './browser-actions.mjs'
 const base = process.env.INTERACTIVE_TEST_URL ?? 'http://127.0.0.1:5180'
 const browser = await chromium.launch({ executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH || undefined, args: ['--no-sandbox'] })
 const results = []
@@ -59,7 +60,7 @@ try {
   await paired.evaluate((recipe) => { history.pushState({ clairfleInteractive: { recipe, name: 'Questions appariées' } }, '', '/interactif'); dispatchEvent(new PopStateEvent('popstate')) }, await classroomRecipe())
   await paired.locator('.ci-launch:enabled').waitFor({ timeout: 120000 })
   await paired.locator('.ci-launch').click()
-  await paired.getByRole('button', { name: 'Passer', exact: true }).click()
+  await skipQuestion(paired)
   await paired.getByRole('button', { name: 'Signal : levez vos cartes', exact: true }).click()
   await paired.getByRole('button', { name: 'Discuter', exact: true }).click()
   await paired.getByRole('button', { name: 'Enseignant : révéler', exact: true }).click()

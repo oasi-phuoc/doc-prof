@@ -1,7 +1,7 @@
 import type { Action, Game, Session } from './types'
 
 export function advanceAction(_game: Game, state: Session): Action | undefined {
-  if (state.finished || state.paused || state.mode === 'solo') return
+  if (state.finished || state.paused || state.teacherLocked || state.mode === 'solo') return
   switch (state.phase) {
     case 'thinking':
       return { type: 'CARDS_UP' }

@@ -1,19 +1,26 @@
-> Mise à jour : les [modes Classe/Solo et les six mascottes](livraison-classe-solo-mascottes.md) remplacent le rituel avec sélection au tableau décrit dans ce guide. L’icône Mode est un poussoir Classe/Solo ; l’icône Mascotte ouvre la grille de six portraits dans la barre du haut.
+# Jouer avec ClairFLE
 
-# Jouer en classe
+1. Ouvrez ou créez une fiche, puis choisissez **Jouer avec la classe**. Dans les fiches enregistrées, choisissez **Jouer**. Sélectionnez les questions et consultez les adaptations ou incompatibilités signalées.
+2. Attendez le contrôle des images et audios. Les questions aux médias absents sont écartées de la partie, en gardant votre sélection. **Réessayer la vérification** permet de refaire ce contrôle après réparation.
+3. L’icône **Mode de jeu** bascule directement entre **Classe** (par défaut) et **Solo**. L’icône **Mascotte** ouvre six portraits animés : touchez celui que vous voulez utiliser.
+4. Réglez le minuteur, ou désactivez-le. Le temps de réflexion est de 30 secondes par défaut. En Solo, le battement entre les questions est réglable de 1 à 10 secondes, 5 par défaut.
+5. En Classe, vous pouvez cocher **Maintenir le bouton pour révéler** avant de commencer. Il faudra maintenir le bouton, Entrée ou Espace pendant 600 ms ; relâcher plus tôt annule le geste. La préférence est conservée sur cet appareil.
+6. Dans **Palette de la classe**, adaptez couleurs et formes à vos cartes. L’impression donne six cartes carrées de 88 mm, en deux colonnes et trois lignes A4. La feuille enseignant indique les corrigés du même tirage ; elle est destinée à l’enseignant et ne doit pas être projetée.
 
-1. Ouvrez ou créez une fiche, puis choisissez **Jouer avec la classe**. Dans les fiches enregistrées, choisissez **Jouer**.
-2. Sélectionnez les questions ou les pages. Consultez les adaptations indiquées, notamment les deux questions retenues par document audio.
-3. Attendez la vérification des images et audios. Les questions aux fichiers absents ou invalides sont écartées, mais restent cochées. Utilisez **Réessayer la vérification** après une réparation, ou choisissez explicitement de les conserver.
-4. Réglez le temps de réflexion : 30 secondes par défaut, désactivable. Vous pourrez aussi le modifier pendant la séance. L’expiration laisse toujours le rythme à l’enseignant.
-5. Ouvrez **Palette de la classe** pour adapter les six couleurs et formes à vos cartes physiques. La disposition A–B–C / D–E–F reste identique à l’écran et à l’impression.
-6. Commencez la séance. **Je réfléchis** s’affiche avec son pictogramme. Avec un audio, utilisez le lecteur dans le menu du haut : le minuteur attend la fin de la lecture. Une réécoute relance le temps après sa fin.
-7. Donnez le **Signal : levez vos cartes**. Un élève choisit au tableau. Avec deux questions audio, il choisit une carte A–C puis une carte D–F ; la sélection de chacune reste indépendante.
-8. Choisissez **Discuter**, puis **Enseignant : révéler**. La bonne réponse apparaît à gauche avec sa lettre, sa forme et son repère pastel. Le statut juste/à retravailler se trouve à droite. Les réponses en images restent visibles en images.
-9. Pour les productions orales, révélez les relances progressivement si disponibles, agrandissez les documents et montrez un exemple de réponse lorsque vous le décidez. L’évaluation reste humaine.
-10. Les trois icônes centrées du haut permettent de **Passer**, **Pause/Reprendre** et **Quitter**. Une pause suspend le minuteur et l’audio sans perdre la position de lecture. Les icônes de l’en-tête règlent le contraste, le plein écran et l’accès à vos fiches.
-11. Au bilan, reprenez les questions difficiles. Les résultats concernent les réponses au tableau et vos observations, sans comptage inventé des cartes physiques.
+En **Classe**, chacun réfléchit puis lève sa carte au signal. Aucun élève ne sélectionne au tableau. Après **Discuter**, choisissez **Enseignant : révéler**. La bonne carte garde sa couleur et porte une coche ; les autres deviennent grises. Pour deux questions audio affichées ensemble, chaque question garde sa bonne réponse en couleur. Le corrigé n’est pas répété près de la mascotte. Vous choisissez quand passer à la question suivante.
 
-Le document à lire est affiché directement. Ses boutons +/− ajustent la taille du texte. Les images de document peuvent être agrandies, y compris au clavier. Une image ou un audio absent est signalé et vous pouvez passer la question. Après actualisation, **Reprendre la séance** retrouve l’écran et masque de nouveau le corrigé.
+Avec un enregistrement, le minuteur de Classe attend la fin de l’écoute. Une pause ou un onglet masqué suspend l’audio et le décompte. Les images s’agrandissent ; les boutons + et − du document à lire ajustent son texte. Une production orale conserve ses relances, son exemple et une appréciation humaine.
 
-Depuis les ajustements Word, les deux questions se présentent en colonnes et les réponses restent visibles pendant la correction. Les badges portent la lettre au-dessus du symbole, à gauche du contenu. Les illustrations rondes occupent les marges. Le réglage du timer se trouve à droite du contraste ; Quitter est à droite de Mes fiches. Entrée fait avancer les phases autorisées, sans remplacer la saisie ou la lecture audio.
+Le cadenas en pied **verrouille les commandes** et les réglages. Il reste verrouillé après actualisation ; déverrouillez-le pour reprendre les commandes. La sortie du plein écran reste disponible. Le verrou ne remplace pas la pause : le minuteur déjà lancé continue en Classe.
+
+La flèche **Masquer à nouveau** reste disponible dix secondes après la révélation. Elle revient à la discussion sans compter deux fois la question. **Passer** demande confirmation ; le drapeau **Terminer la séance** permet d’ouvrir le bilan plus tôt, après confirmation. Annuler ou Échap conserve la partie. L’audio et le décompte de réflexion sont suspendus pendant ces confirmations.
+
+Au clavier, utilisez Tab pour rejoindre les boutons. Entrée ou Espace active le bouton ciblé. Avec le focus sur le groupe des commandes de phase, Entrée propose l’étape suivante ; si le maintien est activé, le focus va au bouton de révélation et il faut ensuite le maintenir.
+
+En **Solo**, choisissez directement une réponse pendant le temps de réflexion. Le choix ou la fin du temps affiche la correction ; une absence de choix dans le temps compte comme fausse. La question suivante démarre après le battement réglé. Sans minuteur, choisissez à votre rythme. Pour une production ouverte, comparez votre proposition au modèle ; aucune note automatique n’est inventée.
+
+Les icônes du haut donnent accès à la pause, aux réglages et à la sortie vers la préparation. Le plein écran masque ces commandes, sauf sa propre sortie et le lecteur audio lorsqu’il est nécessaire. **Créer des fiches** apparaît uniquement dans la préparation.
+
+Après actualisation, **Reprendre la séance** retrouve l’état et le temps restants, y compris une correction déjà révélée ou un cadenas actif. Les brouillons lancés depuis le générateur restent disponibles par leur adresse locale pendant 24 heures après la dernière ouverture. Les images temporaires peuvent devoir être rechargées ; le contrôle des médias le signale. La graine et la sélection d’une partie restent actuellement liées à l’onglet : leur reprise après fermeture complète est encore à compléter.
+
+Le bilan distingue les activités traitées, passées et les appréciations humaines. Les comptages des cartes sont facultatifs et saisis par l’enseignant ; aucun résultat individuel n’est déduit des cartes physiques. Vous pouvez ajouter des observations locales et relancer les questions difficiles. **Nouvelle partie** renouvelle les tirages des exercices générés en conservant le modèle de fiche et les questions rédigées.

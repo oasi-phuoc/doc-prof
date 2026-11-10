@@ -1,3 +1,4 @@
+import { skipQuestion } from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import { writeFile } from 'node:fs/promises'
 import { chromium } from 'playwright'
@@ -55,7 +56,7 @@ try {
     await page.getByRole('button', { name: 'Discuter', exact: true }).click()
     await page.getByRole('button', { name: 'Enseignant : révéler', exact: true }).click()
     await page.getByRole('button', { name: 'Question suivante', exact: true }).click()
-    while (await page.getByRole('button', { name: 'Passer', exact: true }).count()) await page.getByRole('button', { name: 'Passer', exact: true }).click()
+    while (await page.getByRole('button', { name: 'Passer', exact: true }).count()) await skipQuestion(page)
     await page.locator('.ci-summary').waitFor()
     assert.equal(await page.locator('.ci-vote-summary').count(), 1, 'Questions with no counts must have no numeric placeholder')
     assert.match(await page.locator('.ci-vote-summary').innerText(), /D’après votre comptage : \d vote\(s\) sur 7/)
@@ -77,7 +78,7 @@ try {
       db.close()
       return records.find((record) => record.checkpoint?.state.note === 'Revoir les retenues au prochain cours.')
     })
-    assert.equal(stored.schemaVersion, 2)
+    assert.equal(stored.schemaVersion, 3)
     assert.equal(stored.events.length, 0)
     assert.equal(stored.checkpoint.state.note, 'Revoir les retenues au prochain cours.')
     assert.ok(Object.values(stored.checkpoint.state.teacherMarks).includes('review'))
@@ -92,7 +93,7 @@ try {
   await page.locator('.ci-launch:enabled').waitFor({ timeout: 120000 })
   await page.locator('.ci-launch').click()
   // Skip individual questions until the shared recording's paired round.
-  while (!/Questions /.test(await page.locator('.ci-progress').innerText())) await page.getByRole('button', { name: 'Passer', exact: true }).click()
+  while (!/Questions /.test(await page.locator('.ci-progress').innerText())) await skipQuestion(page)
   await page.getByRole('button', { name: 'Signal : levez vos cartes', exact: true }).click()
   await page.getByRole('button', { name: 'Compter', exact: true }).click()
   const panel = page.getByRole('dialog', { name: 'Comptage saisi par l’enseignant', exact: true })

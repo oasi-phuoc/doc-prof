@@ -1,3 +1,4 @@
+import { skipQuestion } from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import { chromium } from 'playwright'
 import { mkdir, writeFile } from 'node:fs/promises'
@@ -69,7 +70,7 @@ try {
     }, await classroomRecipe())
     await page.getByRole('button', { name: /Commencer la séance/ }).click()
     await page.locator('.ci-controls').waitFor()
-    await page.getByRole('button', { name: 'Passer', exact: true }).click()
+    await skipQuestion(page)
     assert.equal(await page.locator('.ci-numbered-heading').count(), 2)
     const headings = await page.locator('.ci-numbered-heading').evaluateAll((elements) => elements.map((element) => {
       const prompt = element.querySelector('.ci-question-prompt')

@@ -6,7 +6,7 @@ Vérification du 10 novembre 2026 sur le code actuel, avec suites de domaine et 
 |---|---|---|
 | Générateur et fiches v1 | Recettes, banques, rendu imprimable et navigation réutilisés | Huit erreurs de génération repérées dans l’inventaire ; aucun remaniement de banque fait pour les masquer |
 | Conversion vers le jeu | 190 variantes sur 2 081, recalculées par l’inventaire | Un tirage par type, deux items, niveau par défaut ; validation de toutes les graines et variantes non acquise |
-| Modes Classe et Solo | Vote collectif sans élève au tableau ; Solo avec choix, correction et suite automatiques | Mécaniques avancées M05–M08 et autres activités encore à étendre |
+| Modes Classe et Solo | Vote collectif sans élève au tableau ; maintien optionnel, cadenas et annulation de correction en Classe ; Solo avec choix, correction et suite automatiques | États à conserver par question, nouvelles tentatives et mécaniques avancées encore à étendre |
 | Minuteurs et médias | Minuteur facultatif, battement de 1 à 10 s, pause, reprise et précontrôle des médias | Limites et journal d’écoutes à compléter ; hors ligne intégral à venir |
 | Interface mobile | Question en gras et encadrée, mascotte agrandie sous les cartes, menu par icônes, immersion | Validation physique sur ENI encore nécessaire |
 | Cartes et corrigé enseignant | Six carrés A4 en deux colonnes et trois lignes ; feuille enseignant autonome avec plan identique | Étalonnage guidé de la palette à terminer |
@@ -26,6 +26,6 @@ La [revue des six PR](../maintenance/pr-review-2026-11-10.md) identifie cinq tra
 
 ## Vérifications récentes
 
-71 tests de domaine passent. Les parcours navigateur vérifient les modes, la correction dans les cartes, les médias, le mobile, l’impression PDF, les nouvelles graines depuis la bibliothèque, les compteurs, la reprise, les transferts entre onglets, le compactage à 5 000 actions et la conservation du bilan. Les brouillons sont vérifiés avec migration de l’ancienne base et ouverture sans historique. La capture A4 reste identique à la référence. Le typage, la compilation et le lint ont été exécutés sur les étapes correspondantes. Les avertissements préexistants du lint ne valent pas validation de sécurité de la production.
+78 tests de domaine passent. Les parcours navigateur vérifient les modes, les protections enseignant, la correction dans les cartes, les médias, le mobile, l’impression PDF, les nouvelles graines depuis la bibliothèque, les compteurs, la reprise, les transferts entre onglets, le compactage à 5 000 actions et la conservation du bilan. Les brouillons sont vérifiés avec migration de l’ancienne base et ouverture sans historique. La capture A4 reste identique à la référence. Le typage, la compilation et le lint ont été exécutés sur les étapes correspondantes. Les avertissements préexistants du lint ne valent pas validation de sécurité de la production.
 
 Le [suivi V4](suivi-v4.md) reste le registre des fonctionnalités manquantes. La configuration cloud publiée par le propriétaire est conservée ; aucune nouvelle publication de cette configuration n’est nécessaire pour réutiliser le code.

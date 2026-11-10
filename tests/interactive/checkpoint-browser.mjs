@@ -1,3 +1,4 @@
+import { skipQuestion } from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import { chromium } from 'playwright'
 import { writeFile } from 'node:fs/promises'
@@ -47,7 +48,7 @@ try {
   assert.equal(await page.locator('.ci-reveal').count(), 0)
   await page.getByRole('button', { name: 'Discuter', exact: true }).click()
   const running = await waitCheckpoint(page, fixture.gameId, (record) => record.checkpoint.state.phase === 'discussion')
-  assert.equal(running.schemaVersion, 2)
+  assert.equal(running.schemaVersion, 3)
   assert.equal(running.events.length, 0)
   assert.equal(running.checkpoint.state.finished, false)
   assert.ok(JSON.stringify(running).length < fixture.beforeBytes / 10)
@@ -59,7 +60,7 @@ try {
   await page.getByRole('button', { name: 'Enseignant : révéler', exact: true }).click()
   await page.locator('.ci-reveal').waitFor()
   await page.getByRole('button', { name: 'Question suivante', exact: true }).click()
-  while (await page.getByRole('button', { name: 'Passer', exact: true }).count()) await page.getByRole('button', { name: 'Passer', exact: true }).click()
+  while (await page.getByRole('button', { name: 'Passer', exact: true }).count()) await skipQuestion(page)
   await page.locator('.ci-summary').waitFor()
   await page.getByRole('textbox', { name: 'Observations', exact: true }).fill('Reprendre les retenues au prochain cours.')
   await page.getByRole('textbox', { name: 'Observations', exact: true }).blur()
@@ -72,7 +73,7 @@ try {
   assert.equal(await page.getByRole('textbox', { name: 'Observations', exact: true }).inputValue(), finished.checkpoint.state.note)
   assert.equal(await page.locator('.ci-summary-questions > p').count(), fixture.questions)
   assert.deepEqual(errors, [])
-  const result = { migration: 'schema 1 readable; first new writes upgrade to schema 2', boundary: '5000 accepted actions compact into a resumable discussion, no reveal', beforeBytes: fixture.beforeBytes, compactedBytes: JSON.stringify(running).length, summary: 'finished checkpoint retains all attempts and later observations after reload', noAnswerKey: 'no source text or answer sheet in checkpoint', errors }
+  const result = { migration: 'schema 1 and 2 readable; new writes upgrade to schema 3', boundary: '5000 accepted actions compact into a resumable discussion, no reveal', beforeBytes: fixture.beforeBytes, compactedBytes: JSON.stringify(running).length, summary: 'finished checkpoint retains all attempts and later observations after reload', noAnswerKey: 'no source text or answer sheet in checkpoint', errors }
   await writeFile('docs/interactive/checkpoint-results.json', JSON.stringify(result, null, 2) + '\n')
   console.log(JSON.stringify(result, null, 2))
 } finally { await browser.close() }

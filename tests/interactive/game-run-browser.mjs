@@ -1,3 +1,4 @@
+import { skipQuestion } from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import { readFile, writeFile } from 'node:fs/promises'
 import { createServer } from 'vite'
@@ -55,7 +56,7 @@ try {
   await page.locator('.ci-controls').waitFor()
   for (let question = 1; question <= 10; question++) {
     await page.locator('.ci-progress').filter({ hasText: `Question ${question} / 10` }).waitFor()
-    await page.getByRole('button', { name: 'Passer', exact: true }).click()
+    await skipQuestion(page)
   }
   await page.locator('.ci-summary').waitFor()
   await page.getByRole('button', { name: 'Nouvelle partie', exact: true }).click()

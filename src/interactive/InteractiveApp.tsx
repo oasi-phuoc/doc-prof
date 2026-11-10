@@ -7,6 +7,7 @@ import { createGameSource, renewGameSource, saveGameRun, questionSourceKey, type
 import { convertRecipe } from './domain/convert'
 import { excludeQuestions, prepareGame } from './domain/plan'
 import { useMediaPreflight } from './media/useMediaPreflight'
+import type { ToolbarGuard } from './domain/teacher'
 import { MediaCheck } from './components/MediaCheck'
 import {
   PALETTE,
@@ -34,6 +35,7 @@ import {
 } from './domain/settings'
 import './interactive.css'
 import './projection.css'
+import './teacher-controls.css'
 
 type Source = GameSource
 const COLORS_KEY = 'clairfle.interactive.palette.v2'
@@ -41,6 +43,7 @@ const SHAPES_KEY = 'clairfle.interactive.shapes.v1'
 const MODE_KEY = 'clairfle.interactive.mode.v1'
 const MASCOT_KEY = 'clairfle.interactive.mascot.v1'
 const TIMER_KEY = 'clairfle.interactive.timer.v1'
+const GUARD_KEY = 'clairfle.interactive.toolbar-guard.v1'
 function readSetting(key: string): unknown {
   try {
     return JSON.parse(localStorage.getItem(key) ?? 'null')
@@ -148,6 +151,7 @@ function GameApp() {
     try { return sessionStorage.getItem(MODE_KEY) === 'solo' ? 'solo' : 'class' } catch { return 'class' }
   })
   const [playing, setPlaying] = useState(false)
+  const [toolbarGuard, setToolbarGuard] = useState<ToolbarGuard>(() => readSetting(GUARD_KEY) === 'hold-to-reveal' ? 'hold-to-reveal' : 'none')
   const [selection, setSelected] = useState<string[] | null>(() => source?.selectedKeys ?? null)
   const [pendingStart, setPendingStart] = useState(false)
   useEffect(() => { if (source) saveGameRun(source, selection) }, [source, selection])
@@ -254,6 +258,7 @@ function GameApp() {
     saveSetting(TIMER_KEY, next)
   }
   const header = {
+    toolbarGuard,
     mascot,
     onMascot: (next: MascotKind) => { setMascot(next); saveSetting(MASCOT_KEY, next) },
     mode,
@@ -532,6 +537,10 @@ function GameApp() {
                         {mode === 'solo' ? '30 secondes par défaut, ou sans limite si le minuteur est désactivé. La correction et la suite sont automatiques après le choix.' : '30 secondes par défaut. Avec un document audio, le décompte commence à la fin de l’écoute. Vous choisissez toujours quand continuer.'}
                       </p>
                     </div>
+                    {mode === 'class' && <div className="ci-setup-guard"><label><input type="checkbox" checked={toolbarGuard === 'hold-to-reveal'} onChange={(event) => {
+                      const next = event.target.checked ? 'hold-to-reveal' : 'none'
+                      setToolbarGuard(next); saveSetting(GUARD_KEY, next)
+                    }} />Maintenir le bouton pour révéler</label><p>Un appui de 600 ms évite une correction affichée par erreur. Fonctionne aussi avec Entrée ou Espace.</p></div>}
                   </aside>
                 </div>
                 <section className="ci-panel ci-no-print">

@@ -4,6 +4,8 @@
 
 Le mode Classe est le mode par défaut : chacun répond avec ses cartes physiques, puis l’enseignant conduit la discussion et révèle la correction. Aucun élève ne sélectionne une réponse au tableau. Le bouton icône Classe/Solo change directement le mode.
 
+Les [protections enseignant](livraison-protections-enseignant.md) ajoutent un maintien optionnel pour révéler, un cadenas conservé après actualisation, une annulation de correction pendant dix secondes et une confirmation avant de passer ou terminer. Les raccourcis de phase s’utilisent avec le focus dans les commandes.
+
 Depuis le générateur, « Jouer avec la classe » conserve un brouillon local pendant 24 heures après sa dernière ouverture. Son adresse permet de retrouver la préparation après actualisation, dans le même navigateur. Voir [brouillons locaux](adr-0007-brouillons-locaux.md), notamment les limites des images temporaires et le repli lorsque le stockage est indisponible.
 
 En Solo, le choix déclenche la correction puis la question suivante après un battement réglable de 1 à 10 secondes (5 par défaut). Le minuteur est facultatif ; s’il est activé, son expiration compte comme une réponse incorrecte. Les productions ouvertes gardent un modèle et une appréciation humaine.

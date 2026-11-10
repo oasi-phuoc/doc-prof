@@ -1,6 +1,7 @@
 import type { Action, Game, Session, PlayMode } from './types'
 import { questionsForRound, roundsFor } from './plan'
 import { validateManualVote } from './votes'
+import { retractionRemaining } from './teacher'
 
 export function startSession(game: Game, mode: PlayMode = 'class'): Session {
   return {
@@ -23,7 +24,10 @@ export function transition(
   game: Game,
   state: Session,
   action: Action,
+  at?: number,
 ): Session {
+  if (action.type === 'TEACHER_LOCK_SET') return state.mode === 'class' && !state.finished && typeof action.locked === 'boolean' && !!state.teacherLocked !== action.locked ? { ...state, teacherLocked: action.locked } : state
+  if (state.teacherLocked) return state
   if (action.type === 'SESSION_NOTE_SET') return state.mode === 'class' && typeof action.note === 'string' && action.note.length <= 2000 && state.note !== action.note ? { ...state, note: action.note } : state
   if (action.type === 'TEACHER_MARK_SET') {
     const allowed = state.mode === 'class' && !state.paused && ['success', 'review', 'unassessed'].includes(action.value) &&
@@ -32,6 +36,14 @@ export function transition(
     return allowed && state.teacherMarks[action.questionId] !== action.value ? { ...state, teacherMarks: { ...state.teacherMarks, [action.questionId]: action.value } } : state
   }
   if (state.finished) return state
+  if (action.type === 'FINISH') {
+    if (state.mode !== 'class' || !game.questions.length) return state
+    return {
+      ...state, finished: true, paused: false, index: roundsFor(game).length - 1,
+      phase: 'thinking', selected: undefined, selections: {}, revealedAt: undefined,
+      history: game.questions.map((q) => state.history.find((attempt) => attempt.questionId === q.id) ?? { questionId: q.id, skipped: true }),
+    }
+  }
   if (action.type === 'PAUSE') return { ...state, paused: true }
   if (action.type === 'RESUME') return { ...state, paused: false }
   if (state.paused) return state
@@ -77,7 +89,15 @@ export function transition(
         : state
     case 'REVEAL': {
       if (state.phase !== 'discussion') return state
-      return revealRound(game, state)
+      return revealRound(game, state, at)
+    }
+    case 'UNREVEAL': {
+      if (state.mode !== 'class' || state.phase !== 'revealed' || action.roundId !== roundsFor(game)[state.index]?.id || at === undefined || retractionRemaining(state.revealedAt, at) <= 0) return state
+      const retractions = { ...state.revealRetractions }
+      for (const q of questions) retractions[q.id] = Math.min(Number.MAX_SAFE_INTEGER, (retractions[q.id] ?? 0) + 1)
+      return { ...state, phase: 'discussion', revealedAt: undefined,
+        history: state.history.filter((attempt) => !questions.some((q) => q.id === attempt.questionId)),
+        revealRetractions: retractions }
     }
     case 'ASSESS':
       return state.phase === 'revealed' && question.mode !== 'choice'
@@ -99,6 +119,7 @@ export function transition(
         phase: 'thinking',
         selected: undefined,
         selections: {},
+        revealedAt: undefined,
       }
     case 'PREVIOUS':
       return state.index > 0
@@ -108,6 +129,7 @@ export function transition(
             phase: 'thinking',
             selected: undefined,
             selections: {},
+            revealedAt: undefined,
           }
         : state
     case 'SKIP':
@@ -130,13 +152,14 @@ export function transition(
         phase: 'thinking',
         selected: undefined,
         selections: {},
+        revealedAt: undefined,
       }
     default:
       return state
   }
 }
 
-function revealRound(game: Game, state: Session): Session {
+function revealRound(game: Game, state: Session, at?: number): Session {
   const questions = questionsForRound(game, state.index)
   const attempts = questions.map((q) => {
     const selected = state.selections[q.id]
@@ -146,5 +169,5 @@ function revealRound(game: Game, state: Session): Session {
       correct: state.mode === 'solo' && q.mode === 'choice' && correctId ? selected === correctId : undefined,
     }
   })
-  return { ...state, phase: 'revealed', history: [...state.history.filter((a) => !questions.some((q) => q.id === a.questionId)), ...attempts] }
+  return { ...state, phase: 'revealed', revealedAt: state.mode === 'class' && at !== undefined && Number.isFinite(at) && at >= 0 ? at : undefined, history: [...state.history.filter((a) => !questions.some((q) => q.id === a.questionId)), ...attempts] }
 }

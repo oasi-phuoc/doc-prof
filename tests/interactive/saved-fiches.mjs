@@ -1,3 +1,4 @@
+import { skipQuestion } from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import { readFile, writeFile } from 'node:fs/promises'
 import { chromium } from 'playwright'
@@ -125,7 +126,7 @@ try {
       },
     )
     .waitFor()
-  await page.getByRole('button', { name: 'Passer', exact: true }).click()
+  await skipQuestion(page)
   assert.equal(await page.locator('.ci-summary').count(), 1)
   results.push({ missingImageAndAudio: 'clear errors; session can continue' })
   await context.addCookies([

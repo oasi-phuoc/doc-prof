@@ -4,6 +4,7 @@ import { Mascot } from './Mascot'
 import { MASCOTS, type MascotKind } from '../domain/mascot'
 import type { PlayMode } from '../domain/types'
 import { validSeconds, validFeedbackSeconds, type TimerSettings } from '../domain/settings'
+import type { ToolbarGuard } from '../domain/teacher'
 
 export type ClassroomHeaderProps = {
   mascot: MascotKind
@@ -18,10 +19,12 @@ export type ClassroomHeaderProps = {
   onFiches: () => void
   timer: TimerSettings
   onTimer: (settings: TimerSettings) => void
+  toolbarGuard?: ToolbarGuard
 }
 export function ClassroomHeader({ mascot, onMascot, mode, onMode, contrast, onContrast, fullscreen, playing, onFullscreen, onFiches, timer, onTimer, session }: ClassroomHeaderProps & {
-  session?: { progress: string; paused: boolean; canSkip: boolean; onSkip: () => void; onPause: () => void; onExit: () => void; audio?: ReactNode }
+  session?: { progress: string; paused: boolean; canSkip: boolean; onSkip: () => void; onPause: () => void; onExit: () => void; audio?: ReactNode; teacherLocked?: boolean }
 }) {
+  const locked = !!session?.teacherLocked
   const [panel, setPanel] = useState<'mascot' | 'timer' | null>(null)
   const tools = useRef<HTMLElement>(null)
   const trigger = useRef<HTMLButtonElement | null>(null)
@@ -38,7 +41,7 @@ export function ClassroomHeader({ mascot, onMascot, mode, onMode, contrast, onCo
   return (
     <header className="ci-header ci-no-print" data-ci-toolbar>
       <div className="ci-header-start">
-        <a href="/generateur" className="brand" aria-label="ClairFLE">
+        <a href="/generateur" className="brand" aria-label="ClairFLE" aria-disabled={locked || undefined} tabIndex={locked ? -1 : undefined} onClick={(event) => { if (locked) event.preventDefault() }}>
           <span className="brand-mark" aria-hidden="true"><i /><i /><i /></span>
           Clair<span className="brand-accent">FLE</span>
         </a>
@@ -47,23 +50,23 @@ export function ClassroomHeader({ mascot, onMascot, mode, onMode, contrast, onCo
       {session && <>
         <p className="ci-progress">{session.progress}</p>
         <div className="ci-toolbar ci-session-actions" aria-label="Commandes de la séance">
-          <IconButton icon="skip" label="Passer" disabled={!session.canSkip || session.paused} onClick={session.onSkip} />
-          <IconButton icon={session.paused ? 'play' : 'pause'} label={session.paused ? 'Reprendre' : 'Pause'} onClick={session.onPause} />
+          <IconButton icon="skip" label="Passer" disabled={locked || !session.canSkip || session.paused} onClick={session.onSkip} />
+          <IconButton icon={session.paused ? 'play' : 'pause'} label={session.paused ? 'Reprendre' : 'Pause'} disabled={locked} onClick={session.onPause} />
         </div>
-        <div className="ci-header-audio">{session.audio}</div>
+        <div className="ci-header-audio" inert={locked} aria-disabled={locked || undefined}>{session.audio}</div>
       </>}
       <nav ref={tools} onKeyDown={(event) => { if (event.key === 'Escape' && panel) { event.stopPropagation(); closePanel() } }} className="ci-toolbar ci-header-tools" aria-label="Affichage et navigation">
-        <IconButton icon="contrast" label="Contraste" aria-pressed={contrast} onClick={onContrast} />
-        <IconButton icon={mode === 'class' ? 'users' : 'user'} label="Mode de jeu" aria-description={`Mode actuel : ${mode === 'class' ? 'Classe' : 'Solo'}`} aria-pressed={mode === 'solo'} onClick={() => { setPanel(null); onMode(mode === 'class' ? 'solo' : 'class') }} />
+        <IconButton icon="contrast" label="Contraste" disabled={locked} aria-pressed={contrast} onClick={onContrast} />
+        <IconButton icon={mode === 'class' ? 'users' : 'user'} label="Mode de jeu" disabled={locked} aria-description={`Mode actuel : ${mode === 'class' ? 'Classe' : 'Solo'}`} aria-pressed={mode === 'solo'} onClick={() => { setPanel(null); onMode(mode === 'class' ? 'solo' : 'class') }} />
         <div className="ci-header-option">
-          <IconButton icon="mascot" label="Mascotte" aria-description={`Mascotte actuelle : ${MASCOTS.find((item) => item.id === mascot)?.label}`} aria-expanded={panel === 'mascot'} aria-haspopup="dialog" onClick={(event) => { trigger.current = event.currentTarget; setPanel(panel === 'mascot' ? null : 'mascot') }} />
-          {panel === 'mascot' && <div className="ci-toolbar-options ci-mascot-picker" role="dialog" aria-label="Choisir la mascotte">
+          <IconButton icon="mascot" label="Mascotte" disabled={locked} aria-description={`Mascotte actuelle : ${MASCOTS.find((item) => item.id === mascot)?.label}`} aria-expanded={!locked && panel === 'mascot'} aria-haspopup="dialog" onClick={(event) => { trigger.current = event.currentTarget; setPanel(panel === 'mascot' ? null : 'mascot') }} />
+          {panel === 'mascot' && !locked && <div className="ci-toolbar-options ci-mascot-picker" role="dialog" aria-label="Choisir la mascotte">
             {MASCOTS.map((item) => <button className="ci-mascot-pick" key={item.id} aria-label={item.label} title={item.label} aria-pressed={mascot === item.id} onClick={() => { onMascot(item.id); closePanel() }}><Mascot kind={item.id} pose="thinking" label={item.label} /></button>)}
           </div>}
         </div>
         <div className="ci-header-timer-settings">
-          <IconButton icon="timer" label="Régler le minuteur" aria-expanded={panel === 'timer'} aria-haspopup="dialog" onClick={(event) => { trigger.current = event.currentTarget; setPanel(panel === 'timer' ? null : 'timer') }} />
-          {panel === 'timer' && <div className="ci-timer-options" role="dialog" aria-label="Réglages du minuteur">
+          <IconButton icon="timer" label="Régler le minuteur" disabled={locked} aria-expanded={!locked && panel === 'timer'} aria-haspopup="dialog" onClick={(event) => { trigger.current = event.currentTarget; setPanel(panel === 'timer' ? null : 'timer') }} />
+          {panel === 'timer' && !locked && <div className="ci-timer-options" role="dialog" aria-label="Réglages du minuteur">
             <label className="ci-timer-enabled"><input type="checkbox" checked={timer.enabled} onChange={(event) => onTimer({ ...timer, enabled: event.target.checked })} />Activer le minuteur</label>
             <label>Temps de réflexion (secondes)<input type="number" min="5" max="600" value={timer.seconds} onChange={(event) => onTimer({ ...timer, seconds: validSeconds(Number(event.target.value)) })} /></label>
             <label>Temps entre les questions (secondes)<input type="number" min="1" max="10" value={timer.feedbackSeconds} onChange={(event) => onTimer({ ...timer, feedbackSeconds: validFeedbackSeconds(Number(event.target.value)) })} /></label>
@@ -72,8 +75,8 @@ export function ClassroomHeader({ mascot, onMascot, mode, onMode, contrast, onCo
           </div>}
         </div>
         <IconButton data-ci-fullscreen icon="expand" label={fullscreen ? 'Quitter le plein écran' : 'Plein écran'} aria-pressed={fullscreen} onClick={() => { setPanel(null); onFullscreen() }} />
-        <IconButton icon="folder" label="Mes fiches" onClick={onFiches} />
-        {session && <IconButton icon="exit" label="Quitter la séance" onClick={session.onExit} />}
+        <IconButton icon="folder" label="Mes fiches" disabled={locked} onClick={onFiches} />
+        {session && <IconButton icon="exit" label="Quitter la séance" disabled={locked} onClick={session.onExit} />}
       </nav>
     </header>
   )

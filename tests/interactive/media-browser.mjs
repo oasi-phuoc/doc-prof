@@ -1,3 +1,4 @@
+import { skipQuestion } from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import { readFile, writeFile } from 'node:fs/promises'
 import { chromium } from 'playwright'
@@ -234,7 +235,7 @@ try {
     /3 questions retenues/,
   )
   await launch.click()
-  await page.getByRole('button', { name: 'Passer', exact: true }).click()
+  await skipQuestion(page)
   await page
     .getByText('Image indisponible : Choix A', { exact: true })
     .waitFor()
@@ -260,7 +261,7 @@ try {
     .getByRole('checkbox', { name: 'Exclure les questions concernées' })
     .uncheck()
   await launch.click()
-  await page.getByRole('button', { name: 'Passer', exact: true }).click()
+  await skipQuestion(page)
   await page
     .getByText('Image indisponible : Choix A', { exact: true })
     .waitFor()

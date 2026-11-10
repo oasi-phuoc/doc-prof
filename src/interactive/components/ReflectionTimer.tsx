@@ -9,9 +9,11 @@ export function ReflectionTimer({
   onElapsed,
   initialRemainingMs,
   onRemaining,
+  controlsDisabled = false,
 }: {
   initialRemainingMs?: number
   onRemaining?: (remainingMs: number) => void
+  controlsDisabled?: boolean
   onElapsed?: () => void
   settings: TimerSettings
   running: boolean
@@ -38,7 +40,7 @@ export function ReflectionTimer({
           : 'Sans minuteur'}
       </output>
       {audioFailed && waitingForAudio && (
-        <button onClick={onAudioOverride}>
+        <button disabled={controlsDisabled} onClick={onAudioOverride}>
           Démarrer le temps de réflexion
         </button>
       )}

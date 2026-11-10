@@ -15,6 +15,7 @@ export function isLessonEnter(
     return false
   if (document.querySelector('dialog[open], [role="dialog"], [role="menu"]'))
     return false
+  if (!(event.target instanceof Element) || !event.target.closest('[data-ci-phase-controls]')) return false
   if (
     allowChosenAnswer &&
     event.target instanceof Element &&
@@ -24,7 +25,7 @@ export function isLessonEnter(
   return !(
     event.target instanceof Element &&
     event.target.closest(
-      'input, textarea, select, button, a, audio, video, summary, [contenteditable], [role="button"], [data-ci-toolbar]',
+      'input, textarea, select, button, a, audio, video, summary, [contenteditable], [role="button"]',
     )
   )
 }

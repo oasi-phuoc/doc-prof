@@ -1,3 +1,4 @@
+import { skipQuestion } from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import { chromium } from 'playwright'
 import { writeFile } from 'node:fs/promises'
@@ -67,7 +68,7 @@ try {
     assert.match(await page.locator('.ci-progress').innerText(), /Question 2 /)
     await page.clock.runFor(200)
     await page.locator('.ci-progress').filter({ hasText: /Question 3 / }).waitFor()
-    await page.getByRole('button', { name: 'Passer', exact: true }).click()
+    await skipQuestion(page)
     await page.locator('audio').waitFor()
     await page.locator('audio').evaluate((audio) => { audio.dataset.keep = 'same-player' })
     await page.getByRole('button', { name: 'Plein écran', exact: true }).click()

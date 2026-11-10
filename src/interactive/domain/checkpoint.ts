@@ -4,7 +4,7 @@ import type { Game, PlayMode, Session } from './types'
 
 export type SessionCheckpoint = { state: Session; lastEventId?: string }
 const object = (value: unknown): value is Record<string, unknown> => !!value && typeof value === 'object' && !Array.isArray(value)
-const stateFields = ['gameId', 'mode', 'index', 'phase', 'selected', 'selections', 'paused', 'finished', 'history', 'manualVotes', 'teacherMarks', 'note']
+const stateFields = ['gameId', 'mode', 'index', 'phase', 'selected', 'selections', 'paused', 'finished', 'history', 'manualVotes', 'teacherMarks', 'note', 'teacherLocked', 'revealedAt', 'revealRetractions']
 
 /** Copy only session data. No question text or answer key enters a checkpoint. */
 export function copySession(state: Session): Session {
@@ -12,7 +12,10 @@ export function copySession(state: Session): Session {
     ...('selected' in state ? { selected: state.selected } : {}), paused: state.paused, finished: state.finished, note: state.note,
     selections: { ...state.selections }, history: state.history.map((attempt) => ({ ...attempt })),
     manualVotes: Object.fromEntries(Object.entries(state.manualVotes).map(([id, vote]) => [id, { ...vote, counts: { ...vote.counts } }])),
-    teacherMarks: { ...state.teacherMarks } }
+    teacherMarks: { ...state.teacherMarks },
+    ...('teacherLocked' in state ? { teacherLocked: state.teacherLocked } : {}),
+    ...('revealedAt' in state ? { revealedAt: state.revealedAt } : {}),
+    ...(state.revealRetractions ? { revealRetractions: { ...state.revealRetractions } } : {}) }
 }
 
 function validState(game: Game, raw: unknown, mode: PlayMode): raw is Session {
@@ -24,6 +27,9 @@ function validState(game: Game, raw: unknown, mode: PlayMode): raw is Session {
   const current = questionsForRound(game, raw.index)
   const history = raw.history
   const selections = raw.selections
+  if (raw.teacherLocked !== undefined && (typeof raw.teacherLocked !== 'boolean' || mode !== 'class' || raw.finished && raw.teacherLocked) ||
+    raw.revealedAt !== undefined && (mode !== 'class' || raw.phase !== 'revealed' || typeof raw.revealedAt !== 'number' || !Number.isFinite(raw.revealedAt) || raw.revealedAt < 0) ||
+    raw.revealRetractions !== undefined && (mode !== 'class' || !object(raw.revealRetractions) || Object.entries(raw.revealRetractions).some(([id, count]) => !game.questions.some((q) => q.id === id) || typeof count !== 'number' || !Number.isSafeInteger(count) || count < 1))) return false
   if (Object.entries(selections).some(([id, selected]) => !current.some((q) => q.id === id && q.choices.some((choice) => choice.id === selected))) ||
     raw.selected !== selections[current[0]?.id ?? ''] ||
     mode === 'class' && (Object.keys(selections).length > 0 || raw.selected !== undefined)) return false
