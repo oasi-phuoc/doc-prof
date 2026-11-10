@@ -1,5 +1,6 @@
 import { hash } from './convert'
 import type { Game, Question, Round, PlayMode } from './types'
+import { assignChoicePositions } from './slots'
 
 export function roundsFor(game: Game): Round[] {
   return (
@@ -133,8 +134,8 @@ export function prepareGame(
   }
   return {
     ...game,
-    id: `${game.id}-${mode}-plan2-${hash(JSON.stringify(rounds))}`,
-    questions,
+    id: `${game.id}-${mode}-plan3-${hash(JSON.stringify(rounds))}`,
+    questions: assignChoicePositions(game, questions),
     corrections: Object.fromEntries(
       questions.map((q) => [q.id, game.corrections[q.id]!]),
     ),

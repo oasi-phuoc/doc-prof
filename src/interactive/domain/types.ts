@@ -2,6 +2,7 @@ import type { Figure, FigureDims } from '@/math/types'
 import type { ManualVote } from './votes'
 
 export type PlayMode = 'class' | 'solo'
+export type ChoiceOrderPolicy = 'shuffle' | 'fixed' | 'ascending' | 'pin-last'
 export type Compatibility = 'auto' | 'assisted' | 'teacher-led' | 'unsupported'
 export type Choice = {
   id: string
@@ -28,6 +29,7 @@ export type Question = {
   figure?: { type: Figure; dims?: FigureDims }
   mode: 'choice' | 'oral' | 'sequence'
   choices: Choice[]
+  choiceOrderPolicy?: ChoiceOrderPolicy
   compatibility: Exclude<Compatibility, 'unsupported'>
   hints?: string[]
 }
@@ -35,6 +37,7 @@ export type Correction = { choiceId?: string; text: string }
 export type Issue = { source: string; reason: string }
 export type Game = {
   id: string
+  seed?: number
   title: string
   questions: Question[]
   corrections: Record<string, Correction>

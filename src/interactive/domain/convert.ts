@@ -4,12 +4,8 @@ import type { FicheRecipe } from '@/fiches/recipe'
 import type { MathItem } from '@/math/types'
 import type { TcfCadreQuestion, TcfSheetItem } from '@/tcf/types'
 import type { Choice, Game, Question } from './types'
-
-export function hash(value: string): number {
-  let h = 2166136261
-  for (const c of value) h = Math.imul(h ^ c.charCodeAt(0), 16777619)
-  return h >>> 0
-}
+import { canonicalJson, deriveSeed, hash } from './seeds'
+export { hash } from './seeds'
 const normalized = (s: string) =>
   s
     .normalize('NFKC')
@@ -40,7 +36,8 @@ export function numberChoices(
   const distinct = [...new Set(candidates)].filter(
     (n) => Number.isSafeInteger(n) && (value < 0 || n >= 0),
   )
-  const ordered = shuffle(createRng(seed), distinct).slice(0, 6)
+  const rng = createRng(seed)
+  const ordered = shuffle(rng, [value, ...shuffle(rng, distinct.filter((n) => n !== value)).slice(0, 5)])
   return {
     choices: ordered.map((n) => ({
       id: `n${n}`,
@@ -65,7 +62,8 @@ export function convertRecipe(
   title = 'Séance collective',
 ): Game {
   const game: Game = {
-    id: `g${hash(JSON.stringify(recipe))}`,
+    id: `g${hash(canonicalJson(recipe))}`,
+    seed: recipe.seed,
     title,
     questions: [],
     corrections: {},
@@ -103,7 +101,7 @@ export function convertRecipe(
             : block.document?.audioSrc
         block.items.forEach((item, itemIndex) => {
           const base = (part = 0): Question => ({
-            id: `p${pageIndex}b${blockIndex}i${itemIndex}s${part}-${hash(`${recipe.seed}:${block.exerciseType}:${JSON.stringify(item)}`)}`,
+            id: `p${pageIndex}b${blockIndex}i${itemIndex}s${part}-${hash(`${recipe.seed}:${block.exerciseType}:${canonicalJson(item)}`)}`,
             source: {
               page: pageIndex,
               block: blockIndex,
@@ -296,7 +294,7 @@ export function convertRecipe(
             const q = base()
             q.prompt = `${item.a} ${item.op} ${item.b} = ?`
             q.compatibility = 'assisted'
-            const choices = numberChoices(result, hash(q.id))
+            const choices = numberChoices(result, deriveSeed({ originalSeed: recipe.seed, sourceKey: q.id, purpose: 'distractors' }))
             q.choices = choices.choices
             add(
               q,
@@ -330,7 +328,7 @@ export function convertRecipe(
               const side = item.dims.side
               const choices = numberChoices(
                 area,
-                hash(q.id),
+                deriveSeed({ originalSeed: recipe.seed, sourceKey: q.id, purpose: 'distractors' }),
                 `${item.dims.unit ?? 'cm'}²`,
                 [
                   side,

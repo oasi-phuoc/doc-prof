@@ -393,7 +393,7 @@ try {
     const planned = prepareGame(source, undefined, 'solo')
     assert.equal(planned.questions.length, source.questions.length)
     assert.equal(roundsFor(planned).length, source.questions.length)
-    for (const q of planned.questions) assert.deepEqual(q.choices, source.questions.find((item) => item.id === q.id).choices)
+    for (const q of planned.questions) assert.deepEqual([...q.choices].sort((a, b) => a.id.localeCompare(b.id)), [...source.questions.find((item) => item.id === q.id).choices].sort((a, b) => a.id.localeCompare(b.id)))
     assert.notEqual(planned.id, prepareGame(source).id)
   })
 } finally {

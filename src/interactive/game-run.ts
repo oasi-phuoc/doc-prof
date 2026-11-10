@@ -1,5 +1,5 @@
 import type { FicheRecipe } from '@/fiches/recipe'
-import { hash } from './domain/convert'
+import { canonicalJson, hash } from './domain/seeds'
 import type { Question } from './domain/types'
 
 export type GameSource = {
@@ -31,7 +31,7 @@ function readMetadata(key: string): RunMetadata | null {
   } catch { return null }
 }
 export function createGameSource(value: { recipe: FicheRecipe; name: string }, kind: 'demo' | 'draft' | 'saved', sourceId = ''): GameSource {
-  const sourceKey = `${kind}-${hash(JSON.stringify({ recipe: value.recipe, sourceId }))}`
+  const sourceKey = `${kind}-${hash(canonicalJson({ recipe: value.recipe, sourceId }))}`
   const metadata = readMetadata(sourceKey)
   const seed = metadata?.seed ?? (kind === 'saved' ? nextGameSeed(value.recipe.seed) : value.recipe.seed)
   return { name: value.name, template: value.recipe, recipe: { ...value.recipe, seed }, sourceKey, selectedKeys: metadata?.selectedKeys ?? null }
