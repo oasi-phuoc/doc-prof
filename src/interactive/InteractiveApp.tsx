@@ -27,6 +27,7 @@ import { ClassroomHeader } from './components/ClassroomHeader'
 import {
   DEFAULT_TIMER,
   validSeconds,
+  validFeedbackSeconds,
   type TimerSettings,
 } from './domain/settings'
 import './interactive.css'
@@ -92,7 +93,7 @@ function loadTimer(): TimerSettings {
     typeof value.seconds === 'number' &&
     Number.isFinite(value.seconds)
   )
-    return { enabled: value.enabled, seconds: validSeconds(value.seconds) }
+    return { enabled: value.enabled, seconds: validSeconds(value.seconds), feedbackSeconds: validFeedbackSeconds('feedbackSeconds' in value && typeof value.feedbackSeconds === 'number' ? value.feedbackSeconds : NaN) }
   return DEFAULT_TIMER
 }
 function returnToFiches() {
@@ -129,7 +130,14 @@ function GameApp() {
   const [playing, setPlaying] = useState(false)
   const [selection, setSelected] = useState<string[] | null>(null)
   const [excludeUnavailable, setExcludeUnavailable] = useState(true)
-  const [fullscreenMessage, setFullscreenMessage] = useState('')
+  const [fullscreen, setFullscreen] = useState(false)
+  useEffect(() => {
+    const changed = () => setFullscreen(!!document.fullscreenElement)
+    const escape = (event: KeyboardEvent) => { if (event.key === 'Escape' && !document.fullscreenElement) setFullscreen(false) }
+    document.addEventListener('fullscreenchange', changed)
+    document.addEventListener('keydown', escape)
+    return () => { document.removeEventListener('fullscreenchange', changed); document.removeEventListener('keydown', escape) }
+  }, [])
   const [teacherSheetExport, setTeacherSheetExport] = useState('')
   useEffect(() => {
     if (source) return
@@ -219,36 +227,27 @@ function GameApp() {
       setMode(next)
       try { sessionStorage.setItem(MODE_KEY, next) } catch { /* Optional preference. */ }
     },
+    fullscreen,
+    playing,
     contrast,
     onContrast: () => setContrast((c) => !c),
     onFiches: returnToFiches,
     timer,
     onTimer: changeTimer,
     onFullscreen: () => {
-      setFullscreenMessage('')
-      const request = document.fullscreenElement
-        ? document.exitFullscreen?.()
-        : document.documentElement.requestFullscreen?.()
-      if (request)
-        void request.catch(() =>
-          setFullscreenMessage(
-            'Utilisez la touche F11 de votre clavier pour le plein écran.',
-          ),
-        )
-      else
-        setFullscreenMessage(
-          'Utilisez la touche F11 de votre clavier pour le plein écran.',
-        )
+      if (fullscreen) {
+        setFullscreen(false)
+        if (document.fullscreenElement) void document.exitFullscreen().catch(() => setFullscreen(!!document.fullscreenElement))
+      } else {
+        setFullscreen(true)
+        try { void document.documentElement.requestFullscreen?.().catch(() => { /* Immersive layout remains available without native fullscreen. */ }) }
+        catch { /* Native fullscreen is optional in embedded mobile browsers. */ }
+      }
     },
   }
   return (
-    <div className={`ci-app${contrast ? ' ci-high-contrast' : ''}`} data-mascot={mascot}>
+    <div className={`ci-app${contrast ? ' ci-high-contrast' : ''}${playing ? ' ci-playing' : ''}${fullscreen ? ' ci-immersive' : ''}`} data-mascot={mascot}>
       {!playing && <ClassroomHeader {...header} />}
-      {fullscreenMessage && (
-        <p className="ci-notice ci-no-print" role="status">
-          {fullscreenMessage}
-        </p>
-      )}
       {loading ? (
         <main className="ci-container">
           <p role="status">Préparation de la séance…</p>
@@ -456,7 +455,7 @@ function GameApp() {
                   </section>
                   <aside className="ci-panel">
                     <h2>{mode === 'class' ? 'Le rituel de la classe' : 'Le parcours solo'}</h2>
-                    {mode === 'solo' ? <p>Choisis une réponse avant la fin du compte à rebours. Sans réponse, la question est comptée comme fausse. La correction s’affiche pendant 5 secondes, puis la question suivante démarre. Les activités ouvertes restent sans note automatique.</p> : <ol className="ci-ritual">
+                    {mode === 'solo' ? <p>Choisis une réponse avant la fin du compte à rebours. Sans réponse, la question est comptée comme fausse. La correction s’affiche pendant {timer.feedbackSeconds} seconde(s), puis la question suivante démarre. Les activités ouvertes restent sans note automatique.</p> : <ol className="ci-ritual">
                       <li>Je réfléchis.</li>
                       <li>Au signal, je lève ma carte.</li>
 

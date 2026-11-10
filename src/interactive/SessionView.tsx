@@ -295,13 +295,6 @@ function PlayingRound({
   const reveal = state.phase === 'revealed'
   const solo = state.mode === 'solo'
   const roundId = rounds[state.index]!.id
-  const correctionRemaining = useCountdown({
-    durationMs: 5000,
-    initialRemainingMs: remainingFor(initialClock, roundId, 'revealed', 5000),
-    running: solo && reveal && !suspended,
-    onElapsed: () => dispatch({ type: 'NEXT' }),
-    onRemaining: (remainingMs) => onClock({ roundId, phase: 'revealed', durationMs: 5000, remainingMs }),
-  })
   useEffect(() => {
     const keydown = (event: KeyboardEvent) => {
       if (!isLessonEnter(event, state.phase !== 'cards-up') || suspended) return
@@ -521,10 +514,22 @@ function PlayingRound({
                   : 'Question suivante'}
               </button>
             )}
-            {solo && <p role="status">{reveal ? `Question suivante dans ${Math.ceil(correctionRemaining / 1000)} s` : questions[0]?.mode === 'choice' ? 'Choisis une réponse avant la fin du temps.' : 'Activité ouverte : compare ta réponse au modèle à la fin du temps.'}</p>}
+            {solo && (reveal ? <BetweenQuestionsTimer key={timer.feedbackSeconds} seconds={timer.feedbackSeconds} roundId={roundId} initialClock={initialClock} suspended={suspended} onClock={onClock} onNext={() => dispatch({ type: 'NEXT' })} /> : <p role="status">{questions[0]?.mode === 'choice' ? 'Choisis une réponse avant la fin du temps.' : 'Activité ouverte : compare ta réponse au modèle à la fin du temps.'}</p>)}
           </footer>
         </div>
       </main>
     </>
   )
+}
+
+function BetweenQuestionsTimer({ seconds, roundId, initialClock, suspended, onClock, onNext }: { seconds: number; roundId: string; initialClock?: SessionClock; suspended: boolean; onClock: (clock: SessionClock) => void; onNext: () => void }) {
+  const durationMs = seconds * 1000
+  const remaining = useCountdown({
+    durationMs,
+    initialRemainingMs: remainingFor(initialClock, roundId, 'revealed', durationMs),
+    running: !suspended,
+    onElapsed: onNext,
+    onRemaining: (remainingMs) => onClock({ roundId, phase: 'revealed', durationMs, remainingMs }),
+  })
+  return <p role="status">Question suivante dans {Math.ceil(remaining / 1000)} s</p>
 }

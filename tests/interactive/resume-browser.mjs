@@ -33,7 +33,6 @@ try {
   await page.goto(`${base}/interactif/demo`)
   await page.getByRole('button', { name: /Commencer la séance/ }).waitFor({ timeout: 120000 })
   await page.getByRole('button', { name: 'Mode de jeu', exact: true }).click()
-  await page.getByRole('combobox', { name: 'Mode de jeu', exact: true }).selectOption('solo')
   await page.getByRole('spinbutton', { name: 'Temps de réflexion (secondes)' }).fill('5')
   await page.clock.install()
   await page.clock.pauseAt(new Date(Date.now() + 1000))

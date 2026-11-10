@@ -51,7 +51,7 @@ function readClock(value: unknown): SessionClock | undefined {
     (value.phase !== 'thinking' && value.phase !== 'revealed') ||
     typeof value.durationMs !== 'number' || !Number.isFinite(value.durationMs) ||
     value.durationMs <= 0 || value.durationMs > 600_000 ||
-    (value.phase === 'revealed' && value.durationMs !== 5000) ||
+    (value.phase === 'revealed' && (value.durationMs < 1000 || value.durationMs > 10000 || value.durationMs % 1000 !== 0)) ||
     typeof value.remainingMs !== 'number' || !Number.isFinite(value.remainingMs) ||
     value.remainingMs < 0 || value.remainingMs > value.durationMs
   ) throw new Error('Minuteur de séance invalide. La sauvegarde est conservée.')

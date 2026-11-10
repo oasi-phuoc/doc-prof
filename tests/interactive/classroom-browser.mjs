@@ -247,7 +247,6 @@ try {
       assert.ok(boxes[0].y < boxes[1].y && boxes[1].y < boxes[2].y)
     }
     const menuControls = [
-      page.getByRole('link', { name: /Créer des fiches/ }),
       page.locator('.ci-progress'),
       page.getByRole('button', { name: 'Passer', exact: true }),
       page.getByRole('button', { name: 'Pause', exact: true }),
@@ -264,12 +263,7 @@ try {
     assert.ok(
       menuBoxes.every((box, i) => i === 0 || box.x >= menuBoxes[i - 1].x),
     )
-    assert.equal(
-      await page
-        .getByRole('link', { name: /Créer des fiches/ })
-        .evaluate((el) => getComputedStyle(el).color),
-      'rgb(255, 255, 255)',
-    )
+    assert.equal(await page.getByRole('link', { name: /Créer des fiches/ }).count(), 0)
     const audioBox = await page.locator('.ci-header audio').boundingBox()
     const questionBox = await page.locator('.ci-round-questions').boundingBox()
     assert.ok(audioBox.y + audioBox.height <= questionBox.y)

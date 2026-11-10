@@ -4,10 +4,10 @@ Cette évolution applique les demandes du propriétaire intervenues après le ca
 
 ## Utilisation
 
-Deux boutons icônes, à côté du contraste, ouvrent les choix **Mode de jeu** et **Mascotte**. Leur nom reste accessible au clavier et aux lecteurs d’écran ; les panneaux se ferment par Échap, par leur bouton ou au clic extérieur. Les options n’affichent aucun texte dans la barre fermée.
+Le bouton icône **Mode de jeu**, à côté du contraste, passe directement de Classe à Solo. L’icône **Mascotte** ouvre une grille de six images, sans texte ni bouton Fermer ; le choix ferme le panneau. Les noms et états restent accessibles au clavier et aux lecteurs d’écran. Voir aussi [la livraison mobile et immersion](livraison-mobile-immersion.md).
 
 - **Classe**, par défaut : réflexion, signal pour lever les cartes, discussion, révélation enseignant, question suivante. Les cartes à l’écran ne demandent aucun clic. La correction montre la bonne réponse, sans inventer de verdict individuel pour les votes physiques.
-- **Solo** : une question par écran, choix possible dès son affichage ; le compte à rebours démarre immédiatement, même avec un audio. Un choix affiche sa correction immédiatement. Une absence de réponse dans le temps est fausse. Après cinq secondes de correction, la question suivante commence ; la dernière mène au bilan. La pause et l’onglet masqué suspendent les deux décomptes. Le minuteur est obligatoire en Solo, sa durée reste réglable (30 secondes par défaut). Les activités ouvertes montrent leur modèle sans note automatique.
+- **Solo** : une question par écran, choix possible dès son affichage ; le compte à rebours démarre immédiatement, même avec un audio. Un choix affiche sa correction immédiatement. Une absence de réponse dans le temps est fausse. Après le battement configuré de 1 à 10 secondes (5 par défaut), la question suivante commence ; la dernière mène au bilan. La pause et l’onglet masqué suspendent les deux décomptes. Le minuteur est obligatoire en Solo, sa durée reste réglable (30 secondes par défaut). Les activités ouvertes montrent leur modèle sans note automatique.
 
 En Solo, toutes les questions audio sélectionnées sont conservées individuellement, avec tous leurs choix source. Le regroupement des deux QCM audio sur six cartes reste réservé à Classe. Changer de mode ouvre le plan et la sauvegarde correspondants.
 

@@ -77,7 +77,7 @@ try {
     const restored = replaySession(game, saved, planId, now, 'solo')
     assert.equal(restored.state.phase, 'revealed')
     assert.equal(restored.record.clock.remainingMs, 0)
-    for (const invalid of [{ ...clock, remainingMs: -1 }, { ...clock, remainingMs: 5001 }, { ...clock, durationMs: 6000 }, { ...clock, durationMs: Infinity }, { ...clock, phase: 'cards-up' }]) {
+    for (const invalid of [{ ...clock, remainingMs: -1 }, { ...clock, remainingMs: 5001 }, { ...clock, durationMs: 11000 }, { ...clock, durationMs: Infinity }, { ...clock, phase: 'cards-up' }]) {
       assert.throws(() => replaySession(game, { ...saved, clock: invalid }, planId, now, 'solo'), /Minuteur/)
     }
   })
