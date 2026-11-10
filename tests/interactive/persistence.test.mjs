@@ -89,4 +89,11 @@ try {
     assert.ok(!json.includes('Question'))
     assert.equal(saved.events.length, 0)
   })
+  await test('legacy journals gain a zero revision in memory and invalid revisions are refused without rewriting', () => {
+    const legacy = record(selected)
+    assert.equal(legacy.revision, undefined)
+    assert.equal(replaySession(game, legacy, planId, now).record.revision, 0)
+    assert.equal(legacy.revision, undefined)
+    for (const revision of [-1, 1.2, '2', Infinity, Number.MAX_SAFE_INTEGER + 1]) assert.throws(() => replaySession(game, { ...legacy, revision }, planId, now), /Révision/)
+  })
 } finally { await server.close() }

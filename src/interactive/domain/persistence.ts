@@ -2,12 +2,14 @@ import { startSession, transition } from './session'
 import { roundsFor } from './plan'
 import type { Action, Game, Session, PlayMode } from './types'
 import { isVotePayload } from './votes'
+import { canonicalJson } from './seeds'
 
 const DATABASE = 'clairfle-interactive'
 const STORE = 'sessions'
 const TTL = 7 * 24 * 60 * 60 * 1000
 export const STORAGE_WARNING = 'Impossible de sauvegarder la séance sur cet appareil. Elle continue sans reprise automatique.'
 export const PLAN_CHANGED = 'La fiche ou le moteur a changé : la reprise à l’identique est impossible.'
+export const SESSION_CONFLICT = 'Cette séance a été modifiée dans une autre fenêtre. Revenez à la préparation pour reprendre sa dernière sauvegarde.'
 export type SessionEvent = { eventId: string; at: number; action: Action }
 export type SessionClock = {
   roundId: string
@@ -24,6 +26,7 @@ export type SavedSession = {
   updatedAt: number
   events: SessionEvent[]
   clock?: SessionClock
+  revision?: number
 }
 export type Resume = { record: SavedSession; state: Session }
 
@@ -71,6 +74,7 @@ export function replaySession(game: Game, value: unknown, planId: string, now = 
   if (!object(value) || value.schemaVersion !== 1) throw new Error('Version de sauvegarde non prise en charge. La sauvegarde est conservée.')
   if (value.mode !== mode || value.gameId !== game.id || value.planId !== planId) throw new Error(PLAN_CHANGED)
   if (typeof value.sessionId !== 'string' || !value.sessionId || typeof value.updatedAt !== 'number' || !Number.isFinite(value.updatedAt) || value.updatedAt > now + 60_000 || !Array.isArray(value.events) || value.events.length > 5000) throw new Error('Sauvegarde de séance invalide. Elle est conservée.')
+  if (value.revision !== undefined && (typeof value.revision !== 'number' || !Number.isSafeInteger(value.revision) || value.revision < 0)) throw new Error('Révision de sauvegarde invalide. Elle est conservée.')
   if (now - value.updatedAt > TTL) return null
   const clock = readClock(value.clock)
   const seen = new Set<string>()
@@ -83,7 +87,7 @@ export function replaySession(game: Game, value: unknown, planId: string, now = 
     events.push({ eventId: item.eventId, at: item.at, action: item.action })
     state = transition(game, state, item.action)
   }
-  return { record: { schemaVersion: 1, mode, sessionId: value.sessionId, gameId: game.id, planId, updatedAt: value.updatedAt, events, clock }, state }
+  return { record: { schemaVersion: 1, mode, sessionId: value.sessionId, gameId: game.id, planId, updatedAt: value.updatedAt, events, clock, revision: (value.revision as number | undefined) ?? 0 }, state }
 }
 
 let connection: Promise<IDBDatabase> | undefined
@@ -143,11 +147,52 @@ export async function loadSession(game: Game, mode: PlayMode = 'class'): Promise
   return replaySession(game, value, await planIdentity(game), Date.now(), mode)
 }
 export async function newRecord(game: Game, mode: PlayMode = 'class'): Promise<SavedSession> {
-  return { schemaVersion: 1, mode, sessionId: crypto.randomUUID(), gameId: game.id, planId: await planIdentity(game), updatedAt: Date.now(), events: [] }
+  return { schemaVersion: 1, mode, sessionId: crypto.randomUUID(), gameId: game.id, planId: await planIdentity(game), updatedAt: Date.now(), events: [], revision: 0 }
 }
-export async function saveSession(record: SavedSession): Promise<void> {
-  await transaction('readwrite', (store) => store.put(record))
+function sameRevision(value: unknown, expected: SavedSession): boolean {
+  if (!object(value) || !Array.isArray(value.events)) return false
+  const last = value.events.at(-1) as SessionEvent | undefined
+  return value.schemaVersion === expected.schemaVersion && value.gameId === expected.gameId && value.mode === expected.mode && value.sessionId === expected.sessionId && value.planId === expected.planId &&
+    (value.revision ?? 0) === (expected.revision ?? 0) && last?.eventId === expected.events.at(-1)?.eventId
 }
-export async function deleteSession(game: Game): Promise<void> {
-  await transaction('readwrite', (store) => store.delete(game.id))
+
+/** Compare and mutate atomically, including writes of the remaining time only. */
+async function mutateRecord<T>(gameId: string, change: (value: unknown, store: IDBObjectStore) => T): Promise<T> {
+  const db = await openDatabase()
+  return new Promise((resolve, reject) => {
+    let result: T
+    let failure: Error | undefined
+    try {
+      const tx = db.transaction(STORE, 'readwrite')
+      const store = tx.objectStore(STORE)
+      const request = store.get(gameId)
+      request.onsuccess = () => {
+        try { result = change(request.result, store) }
+        catch (error) { failure = error instanceof Error ? error : new Error(STORAGE_WARNING); tx.abort() }
+      }
+      tx.oncomplete = () => resolve(result)
+      tx.onerror = tx.onabort = () => reject(failure ?? new Error(STORAGE_WARNING))
+    } catch { reject(new Error(STORAGE_WARNING)) }
+  })
+}
+export async function saveSession(record: SavedSession, previous?: SavedSession): Promise<SavedSession> {
+  return mutateRecord(record.gameId, (existing, store) => {
+    if (previous) {
+      if (!sameRevision(existing, previous)) throw new Error(SESSION_CONFLICT)
+    } else if (existing !== undefined) {
+      if (object(existing) && canonicalJson({ ...existing, revision: existing.revision ?? 0 }) === canonicalJson(record)) return record
+      if (!object(existing) || existing.schemaVersion !== 1 || typeof existing.updatedAt !== 'number' || Date.now() - existing.updatedAt <= TTL) throw new Error(SESSION_CONFLICT)
+    }
+    const revision = previous ? (previous.revision ?? 0) + 1 : 0
+    if (!Number.isSafeInteger(revision)) throw new Error(SESSION_CONFLICT)
+    const next = { ...record, revision }
+    store.put(next)
+    return next
+  })
+}
+export async function deleteSession(game: Game, previous?: SavedSession): Promise<void> {
+  await mutateRecord(game.id, (existing, store) => {
+    if (previous && !sameRevision(existing, previous)) throw new Error(SESSION_CONFLICT)
+    store.delete(game.id)
+  })
 }

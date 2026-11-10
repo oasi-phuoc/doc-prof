@@ -23,19 +23,42 @@ import { useCountdown } from './useCountdown'
 import type { TimerSettings } from './domain/settings'
 import { loadSession, newRecord, saveSession, deleteSession, STORAGE_WARNING, remainingFor, type Resume, type SavedSession, type SessionClock } from './domain/persistence'
 import type { MediaManager } from './media/manager'
+import { acquireSessionLease, type SessionLease } from './session-lease'
 
-export function SessionView(props: Parameters<typeof ActiveSessionView>[0]) {
-  const [loaded, setLoaded] = useState<{ resume: Resume | null; warning?: string } | null>(null)
+export function SessionView(props: Omit<Parameters<typeof ActiveSessionView>[0], 'resume' | 'initialWarning' | 'ownership' | 'registerDrain'>) {
+  const [attempt, setAttempt] = useState({ number: 0, takeover: false })
+  const key = `${props.game.id}:${props.header.mode}:${attempt.number}`
+  const [loaded, setLoaded] = useState<{ key: string; lease: SessionLease; resume: Resume | null; warning?: string } | null>(null)
+  const [lostKey, setLostKey] = useState('')
+  const drain = useRef<() => Promise<void>>(() => Promise.resolve())
+  const registerDrain = useCallback((next: () => Promise<void>) => { drain.current = next }, [])
   useEffect(() => {
     let active = true
-    void loadSession(props.game, props.header.mode).then(
-      (resume) => { if (active) setLoaded({ resume }) },
-      (error: unknown) => { if (active) setLoaded({ resume: null, warning: error instanceof Error ? error.message : STORAGE_WARNING }) },
-    )
-    return () => { active = false }
-  }, [props.game, props.header.mode])
-  if (!loaded) return <main className="ci-container"><p role="status">Chargement de la séance…</p></main>
-  return <ActiveSessionView {...props} resume={loaded.resume} initialWarning={loaded.warning} />
+    const controller = new AbortController()
+    let lease: SessionLease | undefined
+    // Start after effect cleanup, so React's development probe cannot compete
+    // with the mounted window for its own lock.
+    void Promise.resolve().then(() => active ? acquireSessionLease(props.game.id, { signal: controller.signal, takeover: attempt.takeover, onYield: async () => { if (active) setLostKey(key); await drain.current() } }) : null).then(async (value) => {
+      if (!value) return
+      lease = value
+      if (!active) { await value.release(); return }
+      if (value.status === 'busy') { setLoaded({ key, lease: value, resume: null }); return }
+      try {
+        const resume = await loadSession(props.game, props.header.mode)
+        if (active) setLoaded({ key, lease: value, resume, ...(value.status === 'unavailable' ? { warning: 'Ce navigateur ne permet pas de protéger la sauvegarde entre onglets. La séance continue sans reprise automatique.' } : {}) })
+      } catch (error: unknown) {
+        if (active) setLoaded({ key, lease: value, resume: null, warning: error instanceof Error ? error.message : STORAGE_WARNING })
+      }
+    })
+    return () => {
+      active = false
+      controller.abort()
+      void drain.current().finally(() => lease?.release())
+    }
+  }, [props.game, props.header.mode, attempt, key])
+  if (!loaded || loaded.key !== key) return <main className="ci-container ci-session-loading"><p role="status">{attempt.takeover ? 'Attente de la libération de la séance…' : 'Chargement de la séance…'}</p><button onClick={props.onExit}>Retour à la préparation</button></main>
+  if (loaded.lease.status === 'busy' || lostKey === key) return <><ClassroomHeader {...props.header} /><main className="ci-container ci-session-busy"><h1>{lostKey === key ? 'La séance est maintenant active dans un autre onglet.' : 'Séance ouverte dans un autre onglet'}</h1><p>Une seule fenêtre pilote cette partie. Prendre la main termine la sauvegarde dans l’autre fenêtre avant de reprendre ici.</p><div className="ci-toolbar"><button className="ci-primary" onClick={() => setAttempt((value) => ({ number: value.number + 1, takeover: true }))}>Prendre la main</button><button onClick={() => setAttempt((value) => ({ number: value.number + 1, takeover: false }))}>Réessayer</button><button onClick={props.onExit}>Retour à la préparation</button></div></main></>
+  return <ActiveSessionView key={key} {...props} resume={loaded.resume} initialWarning={loaded.warning} ownership={loaded.lease.isOwner} registerDrain={registerDrain} />
 }
 
 function ActiveSessionView({
@@ -50,9 +73,13 @@ function ActiveSessionView({
   header,
   resume,
   initialWarning,
+  ownership,
+  registerDrain,
 }: {
   resume?: Resume | null
   initialWarning?: string
+  ownership: () => boolean
+  registerDrain: (drain: () => Promise<void>) => void
   game: Game
   colors: string[]
   shapes: ShapeId[]
@@ -79,11 +106,14 @@ function ActiveSessionView({
     const snapshot = clock.current
     writes.current = writes.current.then(async () => {
       const previous = await record.current
+      if (!ownership()) throw new Error(STORAGE_WARNING)
       const updated = { ...previous, clock: snapshot, updatedAt: Date.now() }
-      await saveSession(updated)
-      record.current = Promise.resolve(updated)
-    }).catch(() => { enabled.current = false; setStorageWarning(STORAGE_WARNING) })
-  }, [])
+      record.current = Promise.resolve(await saveSession(updated, previous))
+    }).catch((error: unknown) => { enabled.current = false; setStorageWarning(error instanceof Error ? error.message : STORAGE_WARNING) })
+  }, [ownership])
+  useEffect(() => {
+    registerDrain(() => { flushClock(); enabled.current = false; return writes.current })
+  }, [registerDrain, flushClock])
   const onClock = useCallback((value: SessionClock) => {
     if (roundsFor(game)[current.current.index]?.id !== value.roundId || current.current.phase !== value.phase) return
     if (clock.current?.remainingMs === value.remainingMs && clock.current?.durationMs === value.durationMs && clock.current?.roundId === value.roundId && clock.current?.phase === value.phase) return
@@ -111,22 +141,22 @@ function ActiveSessionView({
     // Serialize every accepted action immediately, including pause and selection.
     writes.current = writes.current.then(async () => {
       const previous = await record.current
+      if (!ownership()) throw new Error(STORAGE_WARNING)
       if (previous.events.length >= 5000) throw new Error(STORAGE_WARNING)
       const updated: SavedSession = {
         ...previous, updatedAt: Date.now(), clock: actionClock,
         events: [...previous.events, { eventId: crypto.randomUUID(), at: Date.now(), action }],
       }
-      await saveSession(updated)
-      record.current = Promise.resolve(updated)
-    }).catch(() => { enabled.current = false; setStorageWarning(STORAGE_WARNING) })
-  }, [game])
+      record.current = Promise.resolve(await saveSession(updated, previous))
+    }).catch((error: unknown) => { enabled.current = false; setStorageWarning(error instanceof Error ? error.message : STORAGE_WARNING) })
+  }, [game, ownership])
   useEffect(() => {
     if (resume || !enabled.current) return
-    writes.current = writes.current.then(async () => { await saveSession(await record.current) }).catch(() => {
+    writes.current = writes.current.then(async () => { const value = await record.current; if (!ownership()) throw new Error(STORAGE_WARNING); record.current = Promise.resolve(await saveSession(value)) }).catch((error: unknown) => {
       enabled.current = false
-      setStorageWarning(STORAGE_WARNING)
+      setStorageWarning(error instanceof Error ? error.message : STORAGE_WARNING)
     })
-  }, [resume])
+  }, [resume, ownership])
   // Attach a rejection handler even if the browser cannot initialize storage.
   useEffect(() => { void record.current.catch(() => { enabled.current = false; setStorageWarning(STORAGE_WARNING) }) }, [])
   const [retryGame, setRetryGame] = useState<Game | null>(null)
@@ -166,6 +196,13 @@ function ActiveSessionView({
       />
     )
   if (state.finished) {
+    const finish = (callback: () => void) => {
+      enabled.current = false
+      writes.current = writes.current.then(async () => {
+        if (!ownership()) throw new Error(STORAGE_WARNING)
+        await deleteSession(game, await record.current)
+      }).then(callback).catch((error: unknown) => setStorageWarning(error instanceof Error ? error.message : STORAGE_WARNING))
+    }
     const difficult = [...new Set([...state.history
       .filter((a) => a.correct === false || a.manual === 'retry' || a.skipped)
       .map((a) => a.questionId), ...game.questions.filter((q) => state.teacherMarks[q.id] === 'review' || state.manualVotes[q.id]?.quick === 'majority-review').map((q) => q.id)])]
@@ -218,7 +255,7 @@ function ActiveSessionView({
           </div>
           {state.mode === 'class' && <SessionObservations note={state.note} onSave={(note) => dispatch({ type: 'SESSION_NOTE_SET', note })} />}
           <div className="ci-toolbar">
-            {onNewPart && <button className="ci-primary" onClick={() => { enabled.current = false; void writes.current.then(() => deleteSession(game)).then(onNewPart).catch(() => setStorageWarning(STORAGE_WARNING)) }}>Nouvelle partie</button>}
+            {onNewPart && <button className="ci-primary" onClick={() => finish(onNewPart)}>Nouvelle partie</button>}
             <button
               className="ci-primary"
               disabled={!difficult.length}
@@ -235,10 +272,7 @@ function ActiveSessionView({
               Reprendre les questions difficiles ({difficult.length})
             </button>
             <button
-              onClick={() => {
-                enabled.current = false
-                void writes.current.then(() => deleteSession(game)).then(onFinish ?? onExit).catch(() => setStorageWarning(STORAGE_WARNING))
-              }}
+              onClick={() => finish(onFinish ?? onExit)}
             >
               Terminer
             </button>

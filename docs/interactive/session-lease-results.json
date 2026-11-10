@@ -1,0 +1,36 @@
+[
+  {
+    "backend": "locks",
+    "concurrentOpen": "second window blocks before controls mount",
+    "takeover": "owner drains its journal before handoff",
+    "preserved": "cards-up, manual counts and later teacher reveal",
+    "errors": []
+  },
+  {
+    "backend": "channel",
+    "concurrentOpen": "second window blocks before controls mount",
+    "takeover": "owner drains its journal before handoff",
+    "preserved": "cards-up, manual counts and later teacher reveal",
+    "errors": []
+  },
+  {
+    "fallbackRace": "simultaneous claims elect exactly one writer"
+  },
+  {
+    "unavailableAPIs": "play continues with explicit no-resume message and no journal writes"
+  },
+  {
+    "atomicJournal": {
+      "failures": [
+        "Cette séance a été modifiée dans une autre fenêtre. Revenez à la préparation pour reprendre sa dernière sauvegarde.",
+        "Cette séance a été modifiée dans une autre fenêtre. Revenez à la préparation pour reprendre sa dernière sauvegarde.",
+        "Cette séance a été modifiée dans une autre fenêtre. Revenez à la préparation pour reprendre sa dernière sauvegarde."
+      ],
+      "revision": 1,
+      "phase": "cards-up",
+      "lastEvent": "newest-vote",
+      "successfulConcurrentWriters": 1,
+      "finalRevision": 2
+    }
+  }
+]

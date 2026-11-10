@@ -11,7 +11,7 @@ Ce registre complète les anciennes checklists de livraison. Il distingue les fo
 | F25 diagnostic | Page et rapport local ; tests navigateur et document `diagnostic-eni.md` | Essai sur ENI réel à joindre au pilote |
 | F26 cartes et étalonnage | Palette, formes, contraste ; six carrés de 88 mm en deux colonnes et trois lignes A4 ; `mobile-layout-print-results.json` | Assistant d’étalonnage et contraste des contours complets |
 | F27 feuille enseignant | Fichier autonome A4, corrigés hors DOM, plan identique, obsolescence et images incorporées ; `teacher-sheet-results.json` | Essai d’impression sur l’équipement de classe |
-| F28 persistance | IndexedDB, journal, empreinte du plan, reprise des deux décomptes ; `resume-results.json` | Verrou entre onglets, compaction, gestion des brouillons et autres magasins du §63 |
+| F28 persistance | IndexedDB, journal, empreinte du plan, reprise des deux décomptes ; verrou Web Locks / BroadcastChannel et révisions atomiques ; `resume-results.json`, `session-lease-results.json` | Compaction, gestion des brouillons et autres magasins du §63 |
 | F29 médias | Précontrôle, décodeurs, cache, annulation, préchargement suivant et tests | Journal et limites d’écoutes ; extension hors ligne P1 |
 | F30 comptage et observations | Compteurs validés, provenance et partage explicite, bilan, marques et notes locales ; `manual-count-results.json` | Badges et archivage de plusieurs bilans |
 | F31 oral guidé | Scènes, zoom, relances, modèle et évaluation humaine présents | Recette complète S03 et extension de conversion prouvée |
@@ -29,5 +29,5 @@ M05–M08 et autres mécaniques, presets locaux puis serveur sécurisé, console
 ## Actions externes connues
 
 - Les fermetures des PR 42, 43, 44, 45 et 52 sont autorisées et justifiées, mais nécessitent l’accès réseau à `api.github.com`. La PR 51 est conservée. Voir `docs/maintenance/pr-review-2026-11-10.md`.
-- La sauvegarde du brouillon d’environnement cloud n’est pas confirmée : le backend renvoie `INVALID_ARGUMENT`. L’installation et les tests locaux restent utilisables ; publication de configuration et push Git sont deux opérations distinctes.
+- Le propriétaire a publié l’environnement cloud puis chargé un nouveau brouillon. La reprise utilise cet environnement ; les commits applicatifs ne modifient et ne publient pas sa configuration.
 - Le test ENI réel, la comparaison avec les cartes physiques et le pilote de classe ne peuvent pas être attestés par les seuls tests Chromium.

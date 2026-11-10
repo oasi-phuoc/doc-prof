@@ -2,7 +2,7 @@ import { lazy, Suspense, useEffect, useMemo, useState, type CSSProperties } from
 import { listFiches } from '@/fiches/api'
 import { domainsForAccount, readAccessAccount } from '@/access'
 import { MASCOTS, type MascotKind } from './domain/mascot'
-import type { PlayMode } from './domain/types'
+import type { Game, PlayMode } from './domain/types'
 import { createGameSource, renewGameSource, saveGameRun, questionSourceKey, type GameSource } from './game-run'
 import { convertRecipe } from './domain/convert'
 import { excludeQuestions, prepareGame } from './domain/plan'
@@ -19,6 +19,7 @@ import { demoRecipe } from './demo'
 import { readInteractiveDraft } from './navigation'
 import { SessionView } from './SessionView'
 import { loadSession, deleteSession, type Resume } from './domain/persistence'
+import { acquireSessionLease } from './session-lease'
 import { PrintCards } from './components/PrintCards'
 import { TeacherSheet } from './components/TeacherSheet'
 import { PaletteSettings } from './components/PaletteSettings'
@@ -99,6 +100,20 @@ function loadTimer(): TimerSettings {
 function returnToFiches() {
   window.history.pushState({}, '', '/fiches')
   window.dispatchEvent(new PopStateEvent('popstate'))
+}
+
+async function deletePreparedSession(game: Game, mode: PlayMode): Promise<void> {
+  let mutation = Promise.resolve()
+  const controller = new AbortController()
+  const lease = await acquireSessionLease(game.id, { signal: controller.signal, onYield: () => mutation })
+  if (lease.status !== 'owned') {
+    await lease.release()
+    throw new Error('La sauvegarde ne peut pas être effacée pendant que cette partie est ouverte dans un autre onglet, ou sans protection entre onglets.')
+  }
+  try {
+    mutation = (async () => { const latest = await loadSession(game, mode); await deleteSession(game, latest?.record) })()
+    await mutation
+  } finally { await lease.release(); controller.abort() }
 }
 
 const DiagnosticPage = lazy(() => import('./DiagnosticPage'))
@@ -463,13 +478,11 @@ function GameApp() {
                       <button
                         className="ci-fresh-start"
                         disabled={!media.complete}
-                        onClick={() => {
-                          void deleteSession(activeGame).then(() => newPart(true)).catch(() => setResumeResult({ key: resumeKey, saved, warning: 'Impossible de supprimer la sauvegarde.' }))
-                        }}
+                        onClick={() => newPart(true)}
                       >
                         Nouvelle partie
                       </button>
-                      <button className="ci-fresh-start" onClick={() => { void deleteSession(activeGame).then(() => setResumeResult({ key: resumeKey, saved: null, warning: '' })).catch(() => setResumeResult({ key: resumeKey, saved, warning: 'Impossible de supprimer la sauvegarde.' })) }}>Supprimer la sauvegarde</button>
+                      <button className="ci-fresh-start" onClick={() => { void deletePreparedSession(activeGame, mode).then(() => setResumeResult({ key: resumeKey, saved: null, warning: '' })).catch((error: unknown) => setResumeResult({ key: resumeKey, saved, warning: error instanceof Error ? error.message : 'Impossible de supprimer la sauvegarde.' })) }}>Supprimer la sauvegarde</button>
                       </>
                     )}
                   </section>

@@ -18,6 +18,12 @@
 .ci-app * {
   box-sizing: border-box;
 }
+.ci-app.ci-playing > .ci-session-busy,
+.ci-app.ci-playing > .ci-session-loading {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+}
 .ci-app [hidden] {
   display: none !important;
 }

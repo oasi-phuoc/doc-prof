@@ -1,0 +1,13 @@
+# Une seule fenêtre par partie
+
+La fenêtre de jeu acquiert un verrou Web Locks avant de monter les commandes et de charger le journal. Une seconde ouverture de la même partie affiche « Séance ouverte dans un autre onglet ». « Prendre la main » demande à la première fenêtre de terminer ses écritures, de fermer les commandes puis de libérer le verrou. La nouvelle fenêtre lit ensuite la dernière sauvegarde. « Réessayer » permet de reprendre après fermeture de la première fenêtre.
+
+Les messages BroadcastChannel contiennent uniquement un type de commande et un identifiant aléatoire de fenêtre : ni questions, ni réponses, ni comptages, ni observations. Sans Web Locks, une élection par sondage BroadcastChannel assure le repli. En cas de conflit au retour d’une fenêtre suspendue, les fenêtres relâchent leur propriété et l’utilisateur relance la prise de main. Sans ces deux API, le jeu reste utilisable avec un message indiquant l’absence de reprise automatique et aucune écriture de journal.
+
+Chaque écriture IndexedDB compare la révision précédente dans la même transaction que la modification. Cela couvre aussi les mises à jour du temps restant et les suppressions. Une version ancienne, un autre identifiant de séance, un journal remplacé ou une révision périmée sont refusés avec un message explicite ; la sauvegarde la plus récente est conservée. Deux écritures simultanées depuis une même révision ne peuvent pas réussir toutes les deux.
+
+Le champ de révision est rétrocompatible avec les journaux de schéma 1 : son absence vaut 0 en mémoire, sans réécriture lors de la lecture. Les versions de schéma inconnues restent refusées. Une création répétée à l’identique est idempotente ; une sauvegarde expirée peut être remplacée lors du démarrage d’une nouvelle séance.
+
+« Supprimer la sauvegarde » dans la préparation exige également la propriété de la partie. « Nouvelle partie » crée une autre graine et conserve le journal d’une partie éventuellement active dans un autre onglet. Terminer son propre bilan attend les écritures puis supprime uniquement la révision détenue.
+
+Vérifications : `session-lease-browser.mjs` couvre les deux API, les ouvertures simultanées, le transfert pendant un vote, la conservation du comptage et de la révélation, le refus de suppression pendant une partie active, le repli sans API et les écritures atomiques concurrentes. `resume-browser.mjs` vérifie les deux décomptes après rechargement ; `game-run-browser.mjs` contrôle les nouvelles graines et les modèles serveur inchangés. Résultats : `session-lease-results.json`. La suspension réelle des onglets et le matériel ENI restent à inclure au pilote.
