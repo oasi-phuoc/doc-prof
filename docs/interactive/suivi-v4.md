@@ -13,7 +13,7 @@ Ce registre complète les anciennes checklists de livraison. Il distingue les fo
 | F27 feuille enseignant | Fichier autonome A4, corrigés hors DOM, plan identique, obsolescence et images incorporées ; `teacher-sheet-results.json` | Essai d’impression sur l’équipement de classe |
 | F28 persistance | IndexedDB, journal, empreinte du plan, reprise des deux décomptes ; `resume-results.json` | Verrou entre onglets, compaction, gestion des brouillons et autres magasins du §63 |
 | F29 médias | Précontrôle, décodeurs, cache, annulation, préchargement suivant et tests | Journal et limites d’écoutes ; extension hors ligne P1 |
-| F30 comptage et observations | À réaliser | Compteurs validés, provenance, visibilité et bilan honnête |
+| F30 comptage et observations | Compteurs validés, provenance et partage explicite, bilan, marques et notes locales ; `manual-count-results.json` | Badges et archivage de plusieurs bilans |
 | F31 oral guidé | Scènes, zoom, relances, modèle et évaluation humaine présents | Recette complète S03 et extension de conversion prouvée |
 | F32 routes / chargement / drapeau | Chargement paresseux, routes brouillon, fiche, démo ; diagnostic dédié | Drapeau réconcilié avec la bascule déjà demandée par le propriétaire |
 | F33 CI | Suites locales et résultats présents | Pipeline complet, budgets, détection de secrets et accessibilité automatisée |

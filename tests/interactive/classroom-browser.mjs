@@ -361,7 +361,7 @@ try {
       path: `${output}/12-paired-correction-${width}.png`,
     })
     await page.getByRole('button', { name: 'Voir le bilan' }).click()
-    assert.equal(await page.locator('.ci-summary .ci-panel > p').count(), 3)
+    assert.equal(await page.locator('.ci-summary-questions > p').count(), 3)
     assert.equal(
       await page
         .locator('.ci-summary .ci-panel > p').filter({ hasText: 'Sans évaluation automatique' })

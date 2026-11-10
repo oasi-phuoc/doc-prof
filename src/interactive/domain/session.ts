@@ -1,5 +1,6 @@
 import type { Action, Game, Session, PlayMode } from './types'
 import { questionsForRound, roundsFor } from './plan'
+import { validateManualVote } from './votes'
 
 export function startSession(game: Game, mode: PlayMode = 'class'): Session {
   return {
@@ -11,6 +12,9 @@ export function startSession(game: Game, mode: PlayMode = 'class'): Session {
     finished: false,
     history: [],
     selections: {},
+    manualVotes: {},
+    teacherMarks: {},
+    note: '',
   }
 }
 
@@ -20,6 +24,13 @@ export function transition(
   state: Session,
   action: Action,
 ): Session {
+  if (action.type === 'SESSION_NOTE_SET') return state.mode === 'class' && typeof action.note === 'string' && action.note.length <= 2000 && state.note !== action.note ? { ...state, note: action.note } : state
+  if (action.type === 'TEACHER_MARK_SET') {
+    const allowed = state.mode === 'class' && !state.paused && ['success', 'review', 'unassessed'].includes(action.value) &&
+      game.questions.some((q) => q.id === action.questionId) &&
+      (state.finished || state.phase === 'revealed' && questionsForRound(game, state.index).some((q) => q.id === action.questionId))
+    return allowed && state.teacherMarks[action.questionId] !== action.value ? { ...state, teacherMarks: { ...state.teacherMarks, [action.questionId]: action.value } } : state
+  }
   if (state.finished) return state
   if (action.type === 'PAUSE') return { ...state, paused: true }
   if (action.type === 'RESUME') return { ...state, paused: false }
@@ -29,6 +40,17 @@ export function transition(
   const count = roundsFor(game).length
   if (!question) return state
   switch (action.type) {
+    case 'MANUAL_VOTE_SET': {
+      if (state.mode !== 'class' || !['cards-up', 'selected', 'discussion', 'revealed'].includes(state.phase)) return state
+      const target = questions.find((q) => q.id === action.questionId)
+      if (!target) return state
+      const validated = validateManualVote(target, action.vote)
+      if (!validated.ok) return state
+      const manualVotes = { ...state.manualVotes }
+      if (validated.vote) manualVotes[target.id] = validated.vote
+      else delete manualVotes[target.id]
+      return { ...state, manualVotes }
+    }
     case 'CARDS_UP':
       if (state.mode === 'solo') return state
       return state.phase === 'thinking'

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { Fragment, useCallback, useEffect, useRef, useState } from 'react'
 import { prepareGame, questionsForRound, roundsFor } from './domain/plan'
 import { startSession, transition } from './domain/session'
 import type { Action, Game, Session } from './domain/types'
@@ -15,6 +15,10 @@ import { advanceAction } from './domain/progression'
 import { isLessonEnter } from './keyboard'
 import { AudioPlayer, type AudioStatus } from './components/Media'
 import { ReflectionTimer } from './components/ReflectionTimer'
+import { ManualCountPanel, ManualVoteView } from './components/ManualCountPanel'
+import { SessionObservations } from './components/SessionObservations'
+import { manualTotal } from './domain/votes'
+import './counting.css'
 import { useCountdown } from './useCountdown'
 import type { TimerSettings } from './domain/settings'
 import { loadSession, newRecord, saveSession, deleteSession, STORAGE_WARNING, remainingFor, type Resume, type SavedSession, type SessionClock } from './domain/persistence'
@@ -162,12 +166,13 @@ function ActiveSessionView({
       />
     )
   if (state.finished) {
-    const difficult = state.history
+    const difficult = [...new Set([...state.history
       .filter((a) => a.correct === false || a.manual === 'retry' || a.skipped)
-      .map((a) => a.questionId)
+      .map((a) => a.questionId), ...game.questions.filter((q) => state.teacherMarks[q.id] === 'review' || state.manualVotes[q.id]?.quick === 'majority-review').map((q) => q.id)])]
     return (
       <>
         <ClassroomHeader {...header} />
+        {storageWarning && <p className="ci-notice" role="status">{storageWarning}</p>}
         <main className="ci-container ci-summary">
           <p className="ci-eyebrow">Fin de séance</p>
           <h1>Ce que nous avons travaillé</h1>
@@ -177,9 +182,9 @@ function ActiveSessionView({
             {state.history.filter((a) => a.skipped).length} passée(s).
           </p>
           <p>
-            {state.mode === 'solo' ? 'Ce bilan décrit tes réponses. Une absence de réponse dans le temps compte comme fausse. Les activités ouvertes ne sont pas notées automatiquement.' : 'Ce bilan décrit les activités travaillées collectivement. Les votes sur cartes de la classe ne sont pas comptés ni évalués individuellement.'}
+            {state.mode === 'solo' ? 'Ce bilan décrit tes réponses. Une absence de réponse dans le temps compte comme fausse. Les activités ouvertes ne sont pas notées automatiquement.' : 'Ce bilan décrit les activités travaillées collectivement. Les éventuels comptages sont saisis par l’enseignant. Aucun résultat individuel n’est déduit des cartes de la classe.'}
           </p>
-          <div className="ci-panel">
+          <div className="ci-panel ci-summary-questions">
             {game.questions.map((q) => {
               const a = state.history.find(
                 (attempt) => attempt.questionId === q.id,
@@ -196,14 +201,22 @@ function ActiveSessionView({
                       : a.manual === 'retry'
                         ? 'À retravailler selon l’enseignant'
                         : 'Sans évaluation automatique'
+              const vote = state.manualVotes[q.id]
+              const round = rounds.find((item) => item.questionIds.includes(q.id))
+              const offset = round?.questionIds.length === 2 ? round.questionIds.indexOf(q.id) * 3 : 0
+              const voteDetails = vote && <><ManualVoteView question={q} vote={vote} offset={offset} />{!a.skipped && manualTotal(vote) > 0 && game.corrections[q.id]?.choiceId && <p>D’après votre comptage : {vote.counts[game.corrections[q.id]!.choiceId!] ?? 0} vote(s) sur {manualTotal(vote)} sur la bonne carte.</p>}</>
               return (
-                <p key={q.id}>
+                <Fragment key={q.id}><p>
                   <b>{q.prompt}</b>
                   <span> · {label}</span>
                 </p>
+                {vote && (vote.shared ? <section className="ci-vote-summary" aria-label={`Vote compté manuellement : ${q.prompt}`}>{voteDetails}</section> : <details className="ci-vote-summary"><summary>Vote compté manuellement · afficher sur cet écran</summary>{voteDetails}</details>)}
+                {state.mode === 'class' && <div className="ci-teacher-marks" role="group" aria-label={`Marque enseignant : ${q.prompt}`}>{([{ value: 'success', label: 'Réussi' }, { value: 'review', label: 'À revoir' }, { value: 'unassessed', label: 'Non évalué' }] as const).map((mark) => <button key={mark.value} aria-pressed={state.teacherMarks[q.id] === mark.value} onClick={() => dispatch({ type: 'TEACHER_MARK_SET', questionId: q.id, value: mark.value })}>{mark.label}</button>)}</div>}
+                </Fragment>
               )
             })}
           </div>
+          {state.mode === 'class' && <SessionObservations note={state.note} onSave={(note) => dispatch({ type: 'SESSION_NOTE_SET', note })} />}
           <div className="ci-toolbar">
             {onNewPart && <button className="ci-primary" onClick={() => { enabled.current = false; void writes.current.then(() => deleteSession(game)).then(onNewPart).catch(() => setStorageWarning(STORAGE_WARNING)) }}>Nouvelle partie</button>}
             <button
@@ -299,6 +312,7 @@ function PlayingRound({
   const [audioOverride, setAudioOverride] = useState(false)
   const [playback, setPlayback] = useState(0)
   const [hintCount, setHintCount] = useState(0)
+  const [counting, setCounting] = useState(false)
   const reveal = state.phase === 'revealed'
   const solo = state.mode === 'solo'
   const roundId = rounds[state.index]!.id
@@ -427,6 +441,7 @@ function PlayingRound({
                       dispatch({ type: 'SELECT', questionId: q.id, choiceId })
                     }
                   />
+                  {!solo && state.manualVotes[q.id]?.shared && <ManualVoteView question={q} vote={state.manualVotes[q.id]!} offset={i * 3} />}
                   {reveal && q.mode !== 'choice' && (
                     <CorrectionView
                       placement="model"
@@ -485,6 +500,7 @@ function PlayingRound({
             </aside>
           </div>
           <footer className="ci-controls">
+            {!solo && state.phase !== 'thinking' && questions.some((q) => q.mode === 'choice') && <button className="ci-count-trigger" onClick={() => setCounting(true)}>Compter</button>}
             {!solo && state.phase === 'thinking' && (
               <button
                 className="ci-primary"
@@ -524,6 +540,7 @@ function PlayingRound({
             {solo && (reveal ? <BetweenQuestionsTimer key={timer.feedbackSeconds} seconds={timer.feedbackSeconds} roundId={roundId} initialClock={initialClock} suspended={suspended} onClock={onClock} onNext={() => dispatch({ type: 'NEXT' })} /> : questions[0]?.mode === 'choice' ? <p role="status">{timer.enabled ? 'Choisis une réponse avant la fin du temps.' : 'Choisis une réponse à ton rythme.'}</p> : <><p role="status">{timer.enabled ? 'Activité ouverte : compare ta réponse au modèle à la fin du temps.' : 'Activité ouverte : prépare ta réponse, puis compare-la au modèle.'}</p>{!timer.enabled && <button className="ci-primary" onClick={() => dispatch({ type: 'TIMEOUT' })}>Voir le modèle</button>}</>)}
           </footer>
         </div>
+        {counting && !state.paused && <ManualCountPanel questions={questions} votes={state.manualVotes} onSave={(questionId, vote) => dispatch({ type: 'MANUAL_VOTE_SET', questionId, vote })} onClose={() => setCounting(false)} />}
       </main>
     </>
   )

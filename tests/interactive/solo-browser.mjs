@@ -81,7 +81,7 @@ try {
     await page.clock.runFor(5100)
     await page.locator('.ci-summary').waitFor()
     assert.match(await page.locator('.ci-summary').innerText(), /absence de réponse/)
-    assert.equal(await page.locator('.ci-summary .ci-panel > p').count(), 10)
+    assert.equal(await page.locator('.ci-summary-questions > p').count(), 10)
     assert.deepEqual(errors, [])
     assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false)
     await mkdir('docs/interactive/screenshots', { recursive: true })

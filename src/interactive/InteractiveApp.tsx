@@ -457,6 +457,7 @@ function GameApp() {
                       {pendingStart ? 'Préparation de la nouvelle partie…' : saved?.state.finished ? 'Nouvelle partie' : canResume ? 'Reprendre la séance' : 'Commencer la séance'}{' '}
                       <span aria-hidden="true">→</span>
                     </button>
+                    {saved?.state.finished && <button className="ci-fresh-start" onClick={() => setPlaying(true)}>Revoir le bilan</button>}
                     {canResume && (
                       <>
                       <button
@@ -482,7 +483,7 @@ function GameApp() {
                       <li>L’enseignant révèle la correction.</li>
                     </ol>}
                     <p>
-                      Les votes sur cartes ne sont pas enregistrés. Aucun
+                      Les votes sur cartes ne sont pas captés automatiquement. Un comptage manuel est facultatif. Aucun
                       téléphone élève n’est nécessaire.
                     </p>
                     <div className="ci-setup-timer">

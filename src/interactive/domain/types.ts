@@ -1,4 +1,5 @@
 import type { Figure, FigureDims } from '@/math/types'
+import type { ManualVote } from './votes'
 
 export type PlayMode = 'class' | 'solo'
 export type Compatibility = 'auto' | 'assisted' | 'teacher-led' | 'unsupported'
@@ -64,6 +65,9 @@ export type Session = {
   paused: boolean
   finished: boolean
   history: Attempt[]
+  manualVotes: Record<string, ManualVote>
+  teacherMarks: Record<string, 'success' | 'review' | 'unassessed'>
+  note: string
 }
 export type Action =
   | { type: 'TIMEOUT' }
@@ -72,4 +76,7 @@ export type Action =
   | { type: 'DISCUSS' }
   | { type: 'REVEAL' }
   | { type: 'ASSESS'; value: 'acquired' | 'retry'; questionId?: string }
+  | { type: 'MANUAL_VOTE_SET'; questionId: string; vote: ManualVote | null }
+  | { type: 'TEACHER_MARK_SET'; questionId: string; value: 'success' | 'review' | 'unassessed' }
+  | { type: 'SESSION_NOTE_SET'; note: string }
   | { type: 'NEXT' | 'PREVIOUS' | 'SKIP' | 'PAUSE' | 'RESUME' }

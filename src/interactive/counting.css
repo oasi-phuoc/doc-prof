@@ -1,0 +1,57 @@
+.ci-count-dialog {
+  color: var(--ci-ink);
+  background: var(--ci-paper);
+  width: min(960px, calc(100vw - 24px));
+  max-height: calc(100dvh - 24px);
+  box-sizing: border-box;
+  border: 1px solid var(--ci-line);
+  border-radius: 20px;
+  padding: 24px;
+  overflow: auto;
+  position: fixed;
+  inset: auto 0 12px;
+  margin: auto;
+  box-shadow: 0 12px 60px #15213144;
+}
+.ci-count-dialog::backdrop { background: #15213166; }
+.ci-count-dialog h2 { margin-top: 0; font-size: 24px; }
+.ci-count-dialog label { display: grid; gap: 8px; font-weight: 700; }
+.ci-count-dialog select, .ci-count-dialog input[type="number"] { font: inherit; color: inherit; background: var(--ci-paper); border: 1px solid var(--ci-line); border-radius: 8px; padding: 8px; min-height: 48px; box-sizing: border-box; }
+.ci-count-dialog select { width: 100%; }
+.ci-count-dialog input[type="number"] { width: 100%; }
+.ci-vote-fields { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 20px 0; }
+.ci-vote-fields fieldset { padding: 8px; border: 1px solid var(--ci-line); border-radius: 12px; min-width: 0; }
+.ci-vote-fields fieldset:disabled { opacity: .45; }
+.ci-vote-fields legend { font-weight: 800; font-size: 16px; }
+.ci-vote-stepper { display: grid; grid-template-columns: 64px minmax(40px, 1fr) 64px; gap: 4px; }
+.ci-count-dialog .ci-vote-stepper button { min-width: 64px; min-height: 64px; padding: 4px; font-size: 30px; }
+.ci-count-dialog .ci-vote-stepper input { text-align: center; padding: 4px; }
+.ci-count-total { display: flex; flex-wrap: wrap; gap: 24px; align-items: end; }
+.ci-count-total label { max-width: 220px; }
+.ci-quick-reading { margin: 20px 0; padding: 12px; border: 1px solid var(--ci-line); border-radius: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+.ci-count-dialog .ci-quick-reading button { min-height: 64px; }
+.ci-app .ci-quick-reading button[aria-pressed="true"], .ci-app .ci-teacher-marks button[aria-pressed="true"] { border-color: var(--ci-accent); box-shadow: inset 0 0 0 2px var(--ci-accent); }
+.ci-count-dialog .ci-count-share { display: flex; align-items: center; gap: 12px; min-height: 48px; margin: 12px 0; }
+.ci-count-dialog .ci-toolbar { margin-top: 16px; }
+.ci-count-dialog .ci-toolbar button { min-height: 64px; }
+.ci-manual-vote { border: 1px solid var(--ci-line); border-radius: 12px; padding: 12px; margin: 12px 0; font-size: 16px; }
+.ci-manual-vote p { margin: 8px 0 0; }
+.ci-summary .ci-vote-summary { margin: 0 0 20px; }
+.ci-vote-summary summary { cursor: pointer; min-height: 44px; }
+.ci-teacher-marks { display: flex; gap: 8px; flex-wrap: wrap; padding: 4px 0 12px; }
+.ci-app .ci-teacher-marks button { min-height: 44px; font-size: 15px; }
+.ci-observations label { font-weight: 800; font-size: 22px; }
+.ci-observations textarea { display: block; width: 100%; box-sizing: border-box; font: inherit; padding: 12px; resize: vertical; border: 1px solid var(--ci-line); border-radius: 12px; color: var(--ci-ink); background: var(--ci-paper); }
+.ci-app .ci-controls:has(.ci-count-trigger) { gap: 12px; }
+@media (max-width: 700px) {
+  .ci-count-dialog { padding: 16px; }
+  .ci-vote-fields { grid-template-columns: 1fr; }
+  .ci-vote-fields fieldset { display: flex; gap: 16px; align-items: center; }
+  .ci-vote-fields legend { float: left; width: 64px; font-size: 14px; }
+  .ci-vote-stepper { flex: 1; }
+  .ci-count-dialog .ci-toolbar { display: grid; }
+  .ci-app .ci-controls .ci-count-trigger { min-height: 42px; padding: 8px; font-size: 15px; }
+  .ci-app.ci-playing .ci-controls:has(.ci-count-trigger) .ci-primary { width: auto; flex: 1; }
+  .ci-app.ci-playing .ci-manual-vote { flex: 0 0 auto; margin: 4px 0; padding: 4px 6px; font-size: 11px; line-height: 1.25; }
+  .ci-app.ci-playing .ci-manual-vote p { margin: 2px 0 0; }
+}

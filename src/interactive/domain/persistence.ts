@@ -1,6 +1,7 @@
 import { startSession, transition } from './session'
 import { roundsFor } from './plan'
 import type { Action, Game, Session, PlayMode } from './types'
+import { isVotePayload } from './votes'
 
 const DATABASE = 'clairfle-interactive'
 const STORE = 'sessions'
@@ -42,6 +43,9 @@ function validAction(value: unknown): value is Action {
   const keys = Object.keys(value)
   if (type === 'SELECT') return keys.every((key) => ['type', 'choiceId', 'questionId'].includes(key)) && typeof value.choiceId === 'string' && (value.questionId === undefined || typeof value.questionId === 'string')
   if (type === 'ASSESS') return keys.every((key) => ['type', 'value', 'questionId'].includes(key)) && ['acquired', 'retry'].includes(value.value as string) && (value.questionId === undefined || typeof value.questionId === 'string')
+  if (type === 'MANUAL_VOTE_SET') return keys.length === 3 && keys.every((key) => ['type', 'questionId', 'vote'].includes(key)) && typeof value.questionId === 'string' && isVotePayload(value.vote)
+  if (type === 'TEACHER_MARK_SET') return keys.length === 3 && keys.every((key) => ['type', 'questionId', 'value'].includes(key)) && typeof value.questionId === 'string' && ['success', 'review', 'unassessed'].includes(value.value as string)
+  if (type === 'SESSION_NOTE_SET') return keys.length === 2 && typeof value.note === 'string' && value.note.length <= 2000
   return keys.length === 1 && typeof type === 'string' && ['TIMEOUT', 'CARDS_UP', 'DISCUSS', 'REVEAL', 'NEXT', 'PREVIOUS', 'SKIP', 'PAUSE', 'RESUME'].includes(type)
 }
 
