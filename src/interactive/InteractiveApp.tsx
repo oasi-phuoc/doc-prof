@@ -3,7 +3,9 @@ import { listFiches } from '@/fiches/api'
 import { domainsForAccount, readAccessAccount } from '@/access'
 import type { FicheRecipe } from '@/fiches/recipe'
 import { convertRecipe } from './domain/convert'
-import { prepareGame } from './domain/plan'
+import { excludeQuestions, prepareGame } from './domain/plan'
+import { useMediaPreflight } from './media/useMediaPreflight'
+import { MediaCheck } from './components/MediaCheck'
 import {
   PALETTE,
   SHAPES,
@@ -18,13 +20,14 @@ import { sessionKey } from './domain/persistence'
 import { PrintCards } from './components/PrintCards'
 import { PaletteSettings } from './components/PaletteSettings'
 import { CardBadge } from './components/CardBadge'
-import { IconButton } from './components/Icons'
+import { ClassroomHeader } from './components/ClassroomHeader'
 import {
   DEFAULT_TIMER,
   validSeconds,
   type TimerSettings,
 } from './domain/settings'
 import './interactive.css'
+import './projection.css'
 
 type Source = { recipe: FicheRecipe; name: string }
 const COLORS_KEY = 'clairfle.interactive.palette.v2'
@@ -110,6 +113,7 @@ export default function InteractiveApp() {
   const [contrast, setContrast] = useState(false)
   const [playing, setPlaying] = useState(false)
   const [selection, setSelected] = useState<string[] | null>(null)
+  const [excludeUnavailable, setExcludeUnavailable] = useState(true)
   const [fullscreenMessage, setFullscreenMessage] = useState('')
   useEffect(() => {
     if (source) return
@@ -152,9 +156,17 @@ export default function InteractiveApp() {
     () => selection ?? game?.questions.map((q) => q.id) ?? [],
     [selection, game],
   )
-  const activeGame = useMemo(
+  const selectedGame = useMemo(
     () => (game ? prepareGame(game, selected) : null),
     [game, selected],
+  )
+  const media = useMediaPreflight(selectedGame, !playing)
+  const activeGame = useMemo(
+    () =>
+      selectedGame && excludeUnavailable
+        ? excludeQuestions(selectedGame, media.excluded)
+        : selectedGame,
+    [selectedGame, excludeUnavailable, media.excluded],
   )
   let canResume = false
   try {
@@ -174,56 +186,32 @@ export default function InteractiveApp() {
     setTimer(next)
     saveSetting(TIMER_KEY, next)
   }
+  const header = {
+    contrast,
+    onContrast: () => setContrast((c) => !c),
+    onFiches: returnToFiches,
+    timer,
+    onTimer: changeTimer,
+    onFullscreen: () => {
+      setFullscreenMessage('')
+      const request = document.fullscreenElement
+        ? document.exitFullscreen?.()
+        : document.documentElement.requestFullscreen?.()
+      if (request)
+        void request.catch(() =>
+          setFullscreenMessage(
+            'Utilisez la touche F11 de votre clavier pour le plein écran.',
+          ),
+        )
+      else
+        setFullscreenMessage(
+          'Utilisez la touche F11 de votre clavier pour le plein écran.',
+        )
+    },
+  }
   return (
     <div className={`ci-app${contrast ? ' ci-high-contrast' : ''}`}>
-      <header className="ci-header ci-no-print">
-        <div className="ci-header-start">
-          <a href="/generateur" className="brand" aria-label="ClairFLE">
-            <span className="brand-mark" aria-hidden="true">
-              <i />
-              <i />
-              <i />
-            </span>
-            Clair<span className="brand-accent">FLE</span>
-          </a>
-          <a className="ci-create-link" href="/generateur">
-            Créer des fiches <span aria-hidden="true">→</span>
-          </a>
-        </div>
-        <nav className="ci-toolbar" aria-label="Affichage et navigation">
-          <IconButton
-            icon="contrast"
-            label="Contraste"
-            aria-pressed={contrast}
-            onClick={() => setContrast((c) => !c)}
-          />
-          <IconButton
-            icon="expand"
-            label="Plein écran"
-            onClick={() => {
-              setFullscreenMessage('')
-              const request = document.fullscreenElement
-                ? document.exitFullscreen?.()
-                : document.documentElement.requestFullscreen?.()
-              if (request)
-                void request.catch(() =>
-                  setFullscreenMessage(
-                    'Utilisez la touche F11 de votre clavier pour le plein écran.',
-                  ),
-                )
-              else
-                setFullscreenMessage(
-                  'Utilisez la touche F11 de votre clavier pour le plein écran.',
-                )
-            }}
-          />
-          <IconButton
-            icon="folder"
-            label="Mes fiches"
-            onClick={returnToFiches}
-          />
-        </nav>
-      </header>
+      {!playing && <ClassroomHeader {...header} />}
       {fullscreenMessage && (
         <p className="ci-notice ci-no-print" role="status">
           {fullscreenMessage}
@@ -256,8 +244,9 @@ export default function InteractiveApp() {
                 colors={colors}
                 shapes={shapes}
                 timer={timer}
-                onTimer={changeTimer}
                 onExit={() => setPlaying(false)}
+                mediaManager={media.manager}
+                header={header}
               />
             ) : (
               <main className="ci-container">
@@ -367,10 +356,14 @@ export default function InteractiveApp() {
                                       : 'Évaluation par l’enseignant'}
                                     {q.audio ? ' · audio' : ''}
                                     {selected.includes(q.id) &&
-                                    !activeGame.questions.some(
+                                    !selectedGame?.questions.some(
                                       (retained) => retained.id === q.id,
                                     )
                                       ? ' · autre question de ce document retenue'
+                                      : ''}
+                                    {excludeUnavailable &&
+                                    media.excluded.has(q.id)
+                                      ? ' · média indisponible, question écartée'
                                       : ''}
                                   </small>
                                 </span>
@@ -386,9 +379,25 @@ export default function InteractiveApp() {
                         éléments à adapter sont indiqués ci-dessous.
                       </p>
                     )}
+                    {selectedGame && (
+                      <MediaCheck
+                        plan={selectedGame}
+                        assets={media.assets}
+                        results={media.results}
+                        complete={media.complete}
+                        error={media.error}
+                        exclude={excludeUnavailable}
+                        excludedCount={
+                          selectedGame.questions.length -
+                          activeGame.questions.length
+                        }
+                        onExclude={setExcludeUnavailable}
+                        onRetry={media.retry}
+                      />
+                    )}
                     <button
                       className="ci-primary ci-launch"
-                      disabled={!activeGame.questions.length}
+                      disabled={!activeGame.questions.length || !media.complete}
                       onClick={() => setPlaying(true)}
                     >
                       {canResume
@@ -399,6 +408,7 @@ export default function InteractiveApp() {
                     {canResume && (
                       <button
                         className="ci-fresh-start"
+                        disabled={!media.complete}
                         onClick={() => {
                           try {
                             sessionStorage.removeItem(sessionKey(activeGame))

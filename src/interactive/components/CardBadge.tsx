@@ -18,6 +18,15 @@ export function Shape({ shape }: { shape: ShapeId }) {
         <path d="m12 1 3.4 7 7.6 1.1-5.5 5.4 1.3 7.5L12 18.4 5.2 22l1.3-7.5L1 9.1 8.6 8Z" />
       )}
       {shape === 'cross' && <path d="M8 1h8v7h7v8h-7v7H8v-7H1V8h7Z" />}
+      {shape === 'pentagon' && <path d="m12 1 11 8-4 13H5L1 9Z" />}
+      {shape === 'hexagon' && <path d="M6 2h12l6 10-6 10H6L0 12Z" />}
+      {shape === 'heart' && (
+        <path d="M12 22 2 12C-5 3 7-3 12 5 17-3 29 3 22 12Z" />
+      )}
+      {shape === 'oval' && <ellipse cx="12" cy="12" rx="7" ry="11" />}
+      {shape === 'moon' && (
+        <path d="M17 2a10 10 0 1 0 5 15A11 11 0 0 1 17 2Z" />
+      )}
     </svg>
   )
 }

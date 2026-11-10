@@ -40,3 +40,16 @@ La validation sur un véritable ENI et avec les élèves reste à faire. Les ges
 Le cahier V4 reste une cible plus large : adaptateurs de toutes les familles, associations/classements/grilles, presets et console enseignant, équipes et statistiques de groupe, précontrôle complet des médias et remédiation de l’authentification ne sont pas annoncés terminés. L’inventaire recalcule la compatibilité exacte du catalogue actuel et expose les formats non couverts.
 
 Le build conserve un avertissement sur la taille du bundle principal existant. Le Hook conditionnel TCF qui bloquait le lint a été corrigé ; les avertissements anciens hors module interactif restent visibles.
+
+## Complément du 10 novembre — médias et Word
+
+- [x] Contrôle des URL uniques, quatre requêtes parallèles, huit secondes, décodage et six statuts distincts.
+- [x] Cache, réessai, exclusion explicite et sélection de l’enseignant préservée ; annulation des contrôles devenus inutiles.
+- [x] Préchargement du seul écran suivant, sans priorité liée à la bonne réponse.
+- [x] Cartes inclinées pastel, badges verticaux à gauche, palette en tableau aligné et formes étendues.
+- [x] Menu unique coloré, lecteur audio intégré, icône timer à droite du contraste et quitter à droite des fiches.
+- [x] Illustrations rondes originales dans les marges, timer sous réflexion et deux colonnes de questions numérotées.
+- [x] Toutes les propositions conservées à la correction, verdicts indépendants et bonne réponse en marge si faux.
+- [x] Entrée pour les phases autorisées, protections de saisie/menu/audio et maintien/composition ignorés.
+
+Voir [la livraison médias et Word](livraison-medias-word.md). La limitation historique concernant le précontrôle est levée pour le plan sélectionné ; le hors-ligne et le journal/limites d’écoutes restent ouverts.

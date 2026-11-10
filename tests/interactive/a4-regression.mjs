@@ -34,6 +34,7 @@ try {
       await page
         .getByRole('button', { name: /Commencer la séance/ })
         .waitFor({ timeout: 120000 })
+    else await page.locator('.landing-page').waitFor({ timeout: 120000 })
     await page.evaluate((recipe) => {
       history.pushState(
         {
@@ -101,7 +102,7 @@ try {
         identicalScreenshot: true,
         dimensions,
         draftLaunch: 'passed',
-        baseline: 'af544f26 (main before classroom merge)',
+        baseline: '726a9ec5 (main before media and Word changes)',
         viewport: '1366x1000',
       },
       null,

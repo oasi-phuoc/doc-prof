@@ -4,9 +4,9 @@ Fond calme, panneaux blancs, texte sombre, accent du thème ClairFLE. Les couleu
 
 La palette unique A–F vit dans `domain/palette.ts`. Les couleurs par défaut sont assez claires pour une encre noire à un contraste d’au moins 7:1. Les lettres et formes SVG ont exactement la même taille déclarée, vérifiée dans le navigateur. Les repères restent lisibles pendant la réflexion. Les formes sont configurables avec un échange qui préserve six formes distinctes.
 
-La grille garde trois colonnes et deux rangées dans le jeu, la palette et le kit papier. Pour deux QCM audio, chaque question occupe une rangée avec son propre énoncé : A–C puis D–F. La piste commune est placée au-dessus. Les cartes de correction présentent la couleur et les repères en bandeau supérieur, avec l’image ou le texte en dessous ; le statut se trouve à droite.
+La grille garde trois colonnes et deux rangées dans le jeu, la palette et le kit papier. Pour deux QCM audio, chaque question occupe une colonne avec son propre numéro : A–C empilés à gauche et D–F à droite. La piste commune est placée dans le menu supérieur. Les repères sont placés à gauche de chaque proposition, lettre en haut et symbole en bas. À la correction, les propositions restent visibles ; le choix sélectionné porte le signe de justesse. Une réponse fausse fait apparaître la bonne réponse dans la marge gauche, avec le statut à droite.
 
-Les commandes de séance et la progression ont leur centre propre, indépendant du titre à gauche. Les boutons icônes portent un nom accessible et un titre. Les étapes utilisent un pictogramme dessiné et un texte, avec une seconde illustration à droite quand deux actions se suivent. L’action de phase est centrée en pied de séance.
+Les commandes de séance et la progression ont leur centre propre, indépendant du titre à gauche. Les boutons icônes portent un nom accessible et un titre. Les étapes utilisent des illustrations originales rondes à fond blanc dans les marges, avec une seconde illustration à droite quand deux actions se suivent. L’action de phase est centrée en pied de séance.
 
 Les documents à lire sont ouverts directement avec réglage de taille. Les scènes disposent d’un zoom de 1× à 3×, d’une fermeture par Échap et de commandes clavier. Le contraste renforcé et `prefers-reduced-motion` sont pris en charge. Les contenus longs restent défilables ; aucune règle de hauteur ne les coupe.
 
@@ -23,3 +23,5 @@ Les documents à lire sont ouverts directement avec réglage de taille. Les scè
 - [Cartes A4, deux jeux](screenshots/cartes-classe-a4.pdf)
 
 Les résolutions 1920 et 1280 sont dans le même dossier. Ces captures et événements tactiles automatisés ne remplacent pas la validation sur l’ENI physique de la classe.
+
+Voir [les modifications du Word et le précontrôle](livraison-medias-word.md), avec la capture [des médias absents](screenshots/13-media-missing.png).

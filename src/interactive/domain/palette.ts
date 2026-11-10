@@ -50,9 +50,21 @@ export const SHAPES = [
   { id: 'diamond', label: 'Losange' },
   { id: 'star', label: 'Étoile' },
   { id: 'cross', label: 'Croix' },
+  { id: 'pentagon', label: 'Pentagone' },
+  { id: 'heart', label: 'Cœur' },
+  { id: 'hexagon', label: 'Hexagone' },
+  { id: 'oval', label: 'Ovale' },
+  { id: 'moon', label: 'Lune' },
 ] as const
 export type ShapeId = (typeof SHAPES)[number]['id']
-export const defaultShapes: ShapeId[] = SHAPES.map((s) => s.id)
+export const defaultShapes: ShapeId[] = [
+  'circle',
+  'square',
+  'triangle',
+  'diamond',
+  'star',
+  'cross',
+]
 
 /** Keep letters readable when a teacher changes the shared palette. */
 export function inkForColor(color: string): string {

@@ -5,7 +5,7 @@ import { CardBadge } from './CardBadge'
 import { SafeImage } from './Media'
 import { Icon } from './Icons'
 
-/** Only mounted after the teacher's reveal action. Vote components never receive a correction. */
+/** Mounted only after the teacher reveals. Every proposed answer stays visible. */
 export function CorrectionView({
   question,
   correction,
@@ -15,6 +15,8 @@ export function CorrectionView({
   offset,
   onAssess,
   assessment,
+  placement = 'model',
+  number,
 }: {
   question: Question
   correction: Correction
@@ -24,36 +26,30 @@ export function CorrectionView({
   offset: number
   onAssess: (value: 'acquired' | 'retry') => void
   assessment?: 'acquired' | 'retry'
+  placement?: 'left' | 'right' | 'model'
+  number?: number
 }) {
-  const [correct, chosen] = [correction.choiceId, selected].map((id) =>
-    question.choices.find((c) => c.id === id),
+  const correct = question.choices.find(
+    (choice) => choice.id === correction.choiceId,
   )
-  const slot =
-    offset +
-    question.choices.findIndex((choice) => choice.id === correction.choiceId)
-  const isCorrect = !!correct && correct.id === selected
-  return (
-    <section
-      className="ci-reveal"
-      aria-label={`Correction : ${question.prompt}`}
-      aria-live="polite"
-    >
-      <h2>{question.prompt}</h2>
-      {correct ? (
-        <div className="ci-correction-row">
-          <div
-            className="ci-correction-card"
-            style={
-              {
-                '--card-color': colors[slot],
-                '--card-ink': inkForColor(colors[slot]!),
-              } as CSSProperties
-            }
-          >
-            <div className="ci-correction-band">
-              <span>Bonne réponse</span>
-              <CardBadge letter={PALETTE[slot]!.letter} shape={shapes[slot]!} />
-            </div>
+  if (question.mode === 'choice') {
+    if (!correct) return null
+    const isCorrect = correct.id === selected
+    const slot = offset + question.choices.indexOf(correct)
+    if (placement === 'left')
+      return isCorrect ? null : (
+        <div
+          className="ci-margin-answer"
+          style={
+            {
+              '--card-color': colors[slot],
+              '--card-ink': inkForColor(colors[slot]!),
+            } as CSSProperties
+          }
+        >
+          <b>{number !== undefined ? `${number}. ` : ''}Bonne réponse</b>
+          <div className="ci-correction-card">
+            <CardBadge letter={PALETTE[slot]!.letter} shape={shapes[slot]!} />
             <div className="ci-correction-answer">
               {correct.image && (
                 <SafeImage
@@ -65,53 +61,50 @@ export function CorrectionView({
               {correct.text && <p>{correct.text}</p>}
             </div>
           </div>
-          <div className="ci-correction-status">
-            <Icon name={isCorrect ? 'check' : 'wrong'} />
-            <b>{isCorrect ? 'Réponse correcte' : 'À retravailler'}</b>
-            {!isCorrect && chosen && (
-              <div className="ci-selected-response">
-                <span>Réponse au tableau</span>
-                {chosen.image && (
-                  <SafeImage
-                    key={chosen.image}
-                    src={chosen.image}
-                    alt="Réponse choisie au tableau"
-                  />
-                )}
-                {chosen.text && <p>{chosen.text}</p>}
-              </div>
-            )}
-          </div>
         </div>
-      ) : (
-        <div className="ci-model-answer">
-          <p>
-            <b>Exemple de réponse</b>
-          </p>
-          <p>{correction.text}</p>
-          <p>
-            D’autres réponses peuvent convenir. L’enseignant apprécie la
-            production.
-          </p>
-          <div className="ci-toolbar">
-            <button
-              aria-pressed={assessment === 'acquired'}
-              onClick={() => onAssess('acquired')}
-            >
-              Acquis
-            </button>
-            <button
-              aria-pressed={assessment === 'retry'}
-              onClick={() => onAssess('retry')}
-            >
-              À retravailler
-            </button>
-          </div>
+      )
+    if (placement === 'right')
+      return (
+        <div
+          className="ci-correction-status"
+          role="status"
+          aria-label={`${number !== undefined ? `Question ${number} : ` : ''}${isCorrect ? 'Réponse correcte' : 'Réponse incorrecte'}`}
+        >
+          {number !== undefined && (
+            <b className="ci-result-number">{number}.</b>
+          )}
+          <Icon name={isCorrect ? 'check' : 'wrong'} />
+          <b>{isCorrect ? 'Réponse correcte' : 'À retravailler'}</b>
         </div>
-      )}
-      {correct && correction.text && correction.text !== correct.text && (
-        <p className="ci-explanation">{correction.text}</p>
-      )}
-    </section>
+      )
+    return correction.text && correction.text !== correct.text ? (
+      <p className="ci-explanation">{correction.text}</p>
+    ) : null
+  }
+  if (placement !== 'model') return null
+  return (
+    <div className="ci-model-answer">
+      <p>
+        <b>Exemple de réponse</b>
+      </p>
+      <p>{correction.text}</p>
+      <p>
+        D’autres réponses peuvent convenir. L’enseignant apprécie la production.
+      </p>
+      <div className="ci-toolbar">
+        <button
+          aria-pressed={assessment === 'acquired'}
+          onClick={() => onAssess('acquired')}
+        >
+          Acquis
+        </button>
+        <button
+          aria-pressed={assessment === 'retry'}
+          onClick={() => onAssess('retry')}
+        >
+          À retravailler
+        </button>
+      </div>
+    </div>
   )
 }

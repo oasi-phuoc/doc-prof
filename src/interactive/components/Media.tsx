@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { IconButton } from './Icons'
+import { browserMediaUrl } from '../media/policy'
 
 export function SafeImage({
   src,
@@ -17,11 +18,12 @@ export function SafeImage({
   const [open, setOpen] = useState(false)
   const [scale, setScale] = useState(1)
   const dialog = useRef<HTMLDialogElement>(null)
+  const allowedSrc = browserMediaUrl(src)
   useEffect(() => {
     if (open) dialog.current?.showModal()
     else dialog.current?.close()
   }, [open])
-  if (failed)
+  if (failed || !allowedSrc)
     return (
       <span className="ci-media-error" role="status">
         <span>Image indisponible : {alt}</span>
@@ -40,7 +42,7 @@ export function SafeImage({
   const img = (
     <img
       key={`${src}:${attempt}`}
-      src={src}
+      src={allowedSrc}
       alt={alt}
       onError={() => setFailed(true)}
     />
@@ -93,7 +95,11 @@ export function SafeImage({
             tabIndex={0}
             aria-label="Image agrandie, utilisez les flèches pour vous déplacer"
           >
-            <img src={src} alt={alt} style={{ width: `${scale * 100}%` }} />
+            <img
+              src={allowedSrc}
+              alt={alt}
+              style={{ width: `${scale * 100}%` }}
+            />
           </div>
         </dialog>
       )}
@@ -114,6 +120,7 @@ export function AudioPlayer({
   const [failed, setFailed] = useState(false)
   const [attempt, setAttempt] = useState(0)
   const audio = useRef<HTMLAudioElement>(null)
+  const allowedSrc = browserMediaUrl(src)
   useEffect(() => {
     if (paused) audio.current?.pause()
   }, [paused])
@@ -121,10 +128,12 @@ export function AudioPlayer({
     const player = audio.current
     return () => player?.pause()
   }, [src, attempt])
+  useEffect(() => {
+    if (!allowedSrc) onStatus?.('error')
+  }, [allowedSrc, onStatus])
   return (
     <div className="ci-audio">
-      <span>Écouter le document</span>
-      {failed ? (
+      {failed || !allowedSrc ? (
         <div className="ci-media-error" role="status">
           <p>
             Piste audio indisponible. Vous pouvez réessayer ou passer cette
@@ -146,8 +155,12 @@ export function AudioPlayer({
           key={`${src}:${attempt}`}
           controls
           preload="metadata"
-          src={src}
-          onPlay={() => onStatus?.('playing')}
+          aria-disabled={paused}
+          src={allowedSrc}
+          onPlay={() => {
+            if (paused) audio.current?.pause()
+            else onStatus?.('playing')
+          }}
           onEnded={() => onStatus?.('ended')}
           onError={() => {
             setFailed(true)

@@ -1,41 +1,42 @@
 import type { Phase } from '../domain/types'
-import { Icon, type IconName } from './Icons'
-
-const phases: Record<Phase, { icon: IconName; text: string }> = {
-  thinking: { icon: 'think', text: 'Je réfléchis' },
-  'cards-up': { icon: 'card', text: 'Je lève ma carte' },
-  selected: { icon: 'touch', text: 'Un choix au tableau' },
-  discussion: { icon: 'discuss', text: 'Discutons de la réponse' },
-  revealed: { icon: 'check', text: 'La correction' },
-}
+const illustrations = {
+  thinking: { image: 'thinking', text: 'Je réfléchis' },
+  'cards-up': { image: 'cards-up', text: 'Je lève ma carte' },
+  selected: { image: 'board-turn', text: 'Un choix au tableau' },
+  discussion: { image: 'discussion', text: 'Discutons de la réponse' },
+  revealed: { image: 'discussion', text: 'La correction' },
+} as const
 export function PhaseBanner({
   phase,
   choice,
+  side = 'left',
 }: {
   phase: Phase
   choice: boolean
+  side?: 'left' | 'right'
 }) {
-  const current = phases[phase]
+  if (phase === 'revealed') return null
+  if (
+    side === 'right' &&
+    (!['cards-up', 'selected'].includes(phase) || !choice)
+  )
+    return null
+  const current =
+    side === 'right'
+      ? { image: 'board-turn', text: 'L’élève choisit au tableau' }
+      : !choice && phase === 'cards-up'
+        ? { image: 'discussion', text: 'Nous échangeons' }
+        : choice && phase === 'selected'
+          ? illustrations['cards-up']
+          : illustrations[phase]
   return (
     <div className="ci-phase-banner" role="status">
-      <Icon
-        name={
-          choice
-            ? current.icon
-            : phase === 'cards-up'
-              ? 'discuss'
-              : current.icon
-        }
+      <img
+        className="ci-phase-art"
+        src={`/lib/images/interactive/${current.image}.webp`}
+        alt={current.text}
       />
-      <span>
-        {!choice && phase === 'cards-up' ? 'Nous échangeons' : current.text}
-      </span>
-      {choice && phase === 'cards-up' && (
-        <div className="ci-phase-next">
-          <span>L’élève choisit au tableau</span>
-          <Icon name="touch" />
-        </div>
-      )}
+      <span className="ci-phase-label">{current.text}</span>
     </div>
   )
 }

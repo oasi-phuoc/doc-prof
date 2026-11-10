@@ -10,6 +10,7 @@ import type { Phase, Question } from '../domain/types'
 import { SafeImage } from './Media'
 import { CardBadge } from './CardBadge'
 import { IconButton } from './Icons'
+import { Icon } from './Icons'
 
 /** Only public question data enters this projection component. */
 export function QuestionStage({
@@ -19,6 +20,8 @@ export function QuestionStage({
   colors,
   shapes = defaultShapes,
   slotOffset = 0,
+  correctChoiceId,
+  number,
   onSelect,
 }: {
   q: Question
@@ -27,12 +30,19 @@ export function QuestionStage({
   colors: string[]
   shapes?: ShapeId[]
   slotOffset?: number
+  correctChoiceId?: string
+  number?: number
   onSelect: (id: string) => void
 }) {
   return (
     <>
       <section className="ci-question">
-        <h1>{q.prompt}</h1>
+        <h1>
+          {number !== undefined && (
+            <span className="ci-question-number">{number}.</span>
+          )}
+          {q.prompt}
+        </h1>
         {q.context && <ReadingDocument text={q.context} />}
         {q.mode === 'sequence' && (
           <details className="ci-full-instruction">
@@ -67,10 +77,16 @@ export function QuestionStage({
             const slot = slotOffset + i
             const palette = PALETTE[slot]!
             const chosen = selected === choice.id
+            const verdict =
+              phase === 'revealed' && chosen
+                ? choice.id === correctChoiceId
+                  ? 'correct'
+                  : 'incorrect'
+                : undefined
             return (
               <button
                 key={choice.id}
-                className={`ci-answer${chosen ? ' ci-chosen' : ''}`}
+                className={`ci-answer${chosen ? ' ci-chosen' : ''}${verdict ? ` ci-answer-${verdict}` : ''}`}
                 style={
                   {
                     '--card-color': colors[slot],
@@ -93,6 +109,16 @@ export function QuestionStage({
                   )}
                   {choice.text && <span>{choice.text}</span>}
                 </span>
+                {verdict && (
+                  <span className="ci-answer-verdict">
+                    <Icon name={verdict === 'correct' ? 'check' : 'wrong'} />
+                    <span className="ci-sr-only">
+                      {verdict === 'correct'
+                        ? 'Réponse correcte'
+                        : 'Réponse incorrecte'}
+                    </span>
+                  </span>
+                )}
               </button>
             )
           })}

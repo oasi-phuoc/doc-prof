@@ -47,7 +47,10 @@ try {
       body: JSON.stringify(response.body),
     })
   })
+  const initialResponse = page.waitForResponse((response) => new URL(response.url()).pathname === '/__test_api/fiches' && response.status() === 200, { timeout: 120000 })
   await page.goto(`${base}/fiches`)
+  assert.equal((await (await initialResponse).json()).fiches.length, 1)
+  await page.getByRole('heading', { name: 'Fiches enregistrées', exact: true }).waitFor()
   await page
     .getByRole('button', { name: 'Jouer', exact: true })
     .waitFor({ timeout: 120000 })
@@ -107,6 +110,9 @@ try {
     )
     dispatchEvent(new PopStateEvent('popstate'))
   }, brokenMedia)
+  await page
+    .getByRole('checkbox', { name: 'Exclure les questions concernées' })
+    .uncheck()
   await page.getByRole('button', { name: /Commencer la séance/ }).click()
   await page
     .getByText('Image indisponible : Choix A', { exact: true })

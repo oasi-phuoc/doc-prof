@@ -88,7 +88,7 @@ try {
     await page.screenshot({ path: `${output}/03-reveal-${width}.png` })
     await page.waitForTimeout(1000)
     assert.match(
-      await page.locator('.ci-session-top').innerText(),
+      await page.locator('.ci-progress').innerText(),
       /Question 1 \/ 10/,
     )
     await page.getByRole('button', { name: 'Question suivante' }).click()
@@ -127,7 +127,7 @@ try {
     await page.reload()
     await page.getByRole('button', { name: /Reprendre la séance/ }).click()
     assert.match(
-      await page.locator('.ci-session-top').innerText(),
+      await page.locator('.ci-progress').innerText(),
       /Question 4 \/ 10/,
     )
     assert.equal(await page.locator('.ci-reveal').count(), 0)

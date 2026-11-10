@@ -8,10 +8,11 @@
     "build": "git config lfs.url https://github.com/oasi-phuoc/doc-prof.git/info/lfs >/dev/null 2>&1; git lfs pull || true; tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview",
-    "test": "node --test tests/interactive/*.test.mjs",
+    "test": "node --test --test-concurrency=1 tests/interactive/*.test.mjs",
     "interactive:inventory": "node scripts/interactive-inventory.mjs",
     "test:interactive:browser": "node tests/interactive/browser.mjs",
     "test:interactive:classroom": "node tests/interactive/classroom-browser.mjs",
+    "test:interactive:media": "node tests/interactive/media-browser.mjs",
     "test:interactive:a4": "node tests/interactive/a4-regression.mjs",
     "test:interactive:saved": "node tests/interactive/saved-fiches.mjs"
   },

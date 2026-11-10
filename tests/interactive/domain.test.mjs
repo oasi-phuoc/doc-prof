@@ -3,7 +3,7 @@ import { test } from 'node:test'
 import { createServer } from 'vite'
 import { classroomRecipe } from './classroom-fixture.mjs'
 const server = await createServer({
-  server: { middlewareMode: true, hmr: { port: 0 } },
+  server: { middlewareMode: true, hmr: false },
   appType: 'custom',
 })
 try {
@@ -13,9 +13,8 @@ try {
   const { startSession, transition } = await server.ssrLoadModule(
     '/src/interactive/domain/session.ts',
   )
-  const { prepareGame, roundsFor } = await server.ssrLoadModule(
-    '/src/interactive/domain/plan.ts',
-  )
+  const { prepareGame, roundsFor, excludeQuestions } =
+    await server.ssrLoadModule('/src/interactive/domain/plan.ts')
   const { PALETTE, inkForColor } = await server.ssrLoadModule(
     '/src/interactive/domain/palette.ts',
   )
@@ -25,6 +24,9 @@ try {
   )
   const { buildWorksheets } = await server.ssrLoadModule(
     '/src/math/generate.ts',
+  )
+  const { advanceAction } = await server.ssrLoadModule(
+    '/src/interactive/domain/progression.ts',
   )
   const recipe = demoRecipe()
   await test('default pastel cards provide black marks with at least AAA text contrast', () => {
@@ -336,6 +338,32 @@ try {
       planned.questions.length,
     )
     assert.ok(state.history.every((a) => a.skipped && a.correct === undefined))
+  })
+  await test('media exclusions filter the resolved plan without reselecting alternative questions', async () => {
+    const source = convertRecipe(await classroomRecipe())
+    const selected = source.questions.map((q) => q.id)
+    const planned = prepareGame(source, selected)
+    const snapshot = structuredClone(planned)
+    const audio = planned.questions.filter((q) => q.audio)
+    const filtered = excludeQuestions(planned, new Set([audio[0].id]))
+    assert.equal(filtered.questions.length, 2)
+    assert.deepEqual(filtered.rounds[1].questionIds, [audio[1].id])
+    assert.ok(!filtered.corrections[audio[0].id])
+    assert.notEqual(filtered.id, planned.id)
+    assert.deepEqual(planned, snapshot)
+    assert.equal(selected.length, source.questions.length)
+    assert.equal(excludeQuestions(planned, new Set()), planned)
+  })
+  await test('teacher progression waits for a selection and never advances while paused', () => {
+    let state = startSession(game)
+    assert.deepEqual(advanceAction(game, state), { type: 'CARDS_UP' })
+    state = step(state, 'CARDS_UP')
+    assert.equal(advanceAction(game, state), undefined)
+    state = step(state, 'SELECT', { choiceId: game.questions[0].choices[0].id })
+    assert.deepEqual(advanceAction(game, state), { type: 'DISCUSS' })
+    assert.equal(advanceAction(game, { ...state, paused: true }), undefined)
+    state = step(state, 'DISCUSS')
+    assert.deepEqual(advanceAction(game, state), { type: 'REVEAL' })
   })
 } finally {
   await server.close()

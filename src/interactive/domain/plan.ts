@@ -20,6 +20,30 @@ export function questionsForRound(game: Game, index: number): Question[] {
   })
 }
 
+/** Filter a resolved plan; never replace the teacher's selection with alternatives. */
+export function excludeQuestions(
+  game: Game,
+  excluded: ReadonlySet<string>,
+): Game {
+  const questions = game.questions.filter((q) => !excluded.has(q.id))
+  if (questions.length === game.questions.length) return game
+  const rounds = roundsFor(game)
+    .map((round) => ({
+      ...round,
+      questionIds: round.questionIds.filter((id) => !excluded.has(id)),
+    }))
+    .filter((round) => round.questionIds.length)
+  return {
+    ...game,
+    id: `${game.id}-media-${hash(JSON.stringify(rounds))}`,
+    questions,
+    rounds,
+    corrections: Object.fromEntries(
+      questions.map((q) => [q.id, game.corrections[q.id]!]),
+    ),
+  }
+}
+
 /** Select at most two source questions per recording, without changing the recipe.
  * With two questions, A–C belong to the first and D–F to the second.
  * A verified answer is always retained when reducing an existing bank to 3 choices.

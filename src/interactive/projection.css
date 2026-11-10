@@ -1,0 +1,559 @@
+/* Classroom layout requested in the teacher's Word notes. Scoped to the game. */
+.ci-app .ci-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  padding: 10px 18px;
+  min-height: 68px;
+}
+.ci-app .ci-header-start {
+  gap: 14px;
+  flex-shrink: 0;
+}
+.ci-app .ci-header .brand {
+  font-size: 21px;
+  gap: 4px;
+}
+.ci-app .ci-header .ci-create-link {
+  font-size: 13px;
+  padding: 10px 14px;
+  color: #fff;
+  white-space: nowrap;
+  background: linear-gradient(100deg, var(--blue, #5456c5), var(--ci-accent));
+  box-shadow: 0 7px 15px #5c49e526;
+}
+.ci-app .ci-header .ci-icon-button {
+  background: var(--ci-soft);
+  color: var(--ci-ink);
+  border-color: transparent;
+  width: 44px;
+  height: 44px;
+  min-height: 44px;
+}
+.ci-app .ci-header .ci-session-actions .ci-icon-button:first-child {
+  background: #f6e5a2;
+}
+.ci-app .ci-header .ci-session-actions .ci-icon-button:last-child {
+  background: #bfd7f2;
+}
+.ci-app .ci-header-tools > .ci-icon-button:last-child {
+  background: #f2c3d0;
+}
+.ci-app .ci-header .ci-icon-button[aria-pressed='true'] {
+  outline: 2px solid var(--ci-ink);
+  outline-offset: 2px;
+}
+.ci-app .ci-header .ci-toolbar {
+  flex-wrap: nowrap;
+  gap: 7px;
+}
+.ci-app .ci-progress {
+  margin: 0 !important;
+  font-size: 13px;
+  font-weight: 750;
+  line-height: 1.3;
+  flex-shrink: 0;
+  max-width: 140px;
+  text-align: center;
+}
+.ci-header-tools {
+  margin-left: auto;
+}
+.ci-header-audio {
+  min-width: 150px;
+  max-width: 310px;
+  flex: 1;
+}
+.ci-header-audio:empty {
+  display: none;
+}
+.ci-app .ci-header .ci-audio {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  min-width: 0;
+}
+.ci-app .ci-header audio {
+  width: 100%;
+  min-width: 150px;
+  height: 42px;
+  border-radius: 999px;
+  background: var(--ci-soft);
+}
+.ci-header audio::-webkit-media-controls-panel {
+  background: var(--ci-soft);
+}
+.ci-header audio::-webkit-media-controls-enclosure {
+  border-radius: 999px;
+}
+.ci-header-timer-settings {
+  position: relative;
+}
+.ci-header .ci-timer-options {
+  top: calc(100% + 12px);
+  right: 0;
+  width: 290px;
+  max-width: calc(100vw - 24px);
+  font-size: 15px;
+}
+.ci-header .ci-media-error {
+  font-size: 12px;
+}
+.ci-header .ci-media-error p {
+  margin: 0;
+}
+.ci-header .ci-media-error button {
+  padding: 4px;
+  min-height: 36px;
+  font-size: 12px;
+}
+.ci-app .ci-card-badge {
+  flex-direction: column;
+  gap: 10px;
+}
+.ci-app .ci-mini-cards {
+  transform: rotate(-5deg);
+  gap: 12px;
+}
+.ci-mini-cards > div:nth-child(2n) {
+  transform: rotate(2deg);
+}
+.ci-app .ci-mini-cards > div {
+  width: 100px;
+  height: 116px;
+}
+.ci-app .ci-palette-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
+  align-items: stretch;
+}
+.ci-app .ci-palette-card {
+  display: grid;
+  grid-template-rows: 122px 48px 48px;
+  gap: 12px;
+}
+.ci-app .ci-palette-card > .ci-card-badge {
+  font-size: 38px;
+}
+.ci-app .ci-palette-card label {
+  display: grid;
+  grid-template-columns: 80px minmax(0, 1fr);
+  gap: 8px;
+  align-items: center;
+}
+.ci-app .ci-palette-card select {
+  width: 100%;
+  min-width: 0;
+}
+.ci-app .ci-session {
+  max-width: 1800px;
+  padding: 24px 18px;
+}
+.ci-play-layout {
+  --ci-margin: clamp(110px, 11vw, 160px);
+  display: grid;
+  grid-template-columns: var(--ci-margin) minmax(0, 1fr) var(--ci-margin);
+  gap: 24px;
+  align-items: start;
+}
+.ci-app .ci-phase-margin {
+  min-width: 0;
+  padding-top: 34px;
+}
+.ci-app .ci-phase-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  min-height: 0;
+  font-size: 17px;
+  text-align: center;
+  line-height: 1.3;
+}
+.ci-phase-art {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
+  background: #fff;
+}
+.ci-phase-label {
+  font-weight: 750;
+}
+.ci-app .ci-timer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 18px 0 0;
+}
+.ci-app .ci-timer-value {
+  font-size: 36px;
+  line-height: 1.2;
+}
+.ci-app .ci-timer button {
+  font-size: 13px;
+  padding: 8px;
+}
+.ci-app .ci-round-questions {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  min-width: 0;
+}
+.ci-app .ci-round-question {
+  min-width: 0;
+}
+.ci-app .ci-question {
+  margin-bottom: 18px;
+}
+.ci-app .ci-question h1 {
+  font-size: clamp(28px, 2.8vw, 42px);
+  line-height: 1.25;
+  margin: 0 0 16px;
+  text-wrap: balance;
+}
+.ci-question-number {
+  color: var(--ci-accent);
+  font-weight: 850;
+  margin-right: 10px;
+}
+.ci-app .ci-answer-grid {
+  gap: 14px;
+}
+.ci-app .ci-answer {
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  min-height: 126px;
+  border-radius: 16px;
+}
+.ci-app .ci-answer > .ci-card-badge {
+  width: 74px;
+  min-width: 74px;
+  padding: 14px 8px;
+  font-size: 30px;
+}
+.ci-app .ci-answer-content {
+  font-size: clamp(23px, 2.4vw, 34px);
+  padding: 12px;
+  min-width: 0;
+}
+.ci-app .ci-answer-content img {
+  height: 86px;
+  width: 100%;
+  max-width: 180px;
+  object-fit: contain;
+}
+.ci-answer-verdict {
+  position: absolute;
+  right: 6px;
+  top: 6px;
+  background: #fff;
+  border-radius: 50%;
+  padding: 2px;
+}
+.ci-answer-verdict .ci-icon {
+  width: 28px;
+  height: 28px;
+  display: block;
+}
+.ci-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.ci-app .ci-reveal {
+  margin: 0;
+  width: 100%;
+  max-width: none;
+}
+.ci-app .ci-dual-session .ci-round-questions {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+.ci-app .ci-dual-session .ci-answer-grid {
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+.ci-app .ci-dual-session .ci-question h1 {
+  font-size: 25px;
+  min-height: 2.5em;
+  margin-bottom: 16px;
+}
+.ci-app .ci-dual-session .ci-answer {
+  min-height: 112px;
+}
+.ci-app .ci-dual-session .ci-answer > .ci-card-badge {
+  width: 68px;
+  min-width: 68px;
+  font-size: 28px;
+  padding: 12px 8px;
+}
+.ci-app .ci-dual-session .ci-answer-content {
+  font-size: 26px;
+  padding: 12px;
+}
+.ci-app .ci-dual-session .ci-answer-content img {
+  height: 80px;
+}
+.ci-app .ci-session:has(.ci-figure) .ci-answer {
+  min-height: 112px;
+}
+.ci-app .ci-question:has(.ci-figure) {
+  min-height: 150px;
+  padding-top: 12px;
+}
+.ci-app .ci-question .ci-figure {
+  height: 145px;
+  width: 200px;
+  right: 8px;
+}
+.ci-app .ci-correction-status {
+  font-size: 16px;
+  gap: 10px;
+  min-height: 140px;
+  margin-bottom: 20px;
+}
+.ci-app .ci-correction-status > .ci-icon {
+  height: 64px;
+  width: 64px;
+}
+.ci-result-number {
+  color: var(--ci-accent);
+  font-size: 24px;
+}
+.ci-margin-answer {
+  margin: 0 0 24px;
+  font-size: 14px;
+  text-align: center;
+}
+.ci-app .ci-correction-card {
+  display: flex;
+  align-items: stretch;
+  margin-top: 10px;
+  background: #fff;
+  border: 2px solid var(--card-color);
+}
+.ci-app .ci-correction-card > .ci-card-badge {
+  width: 40px;
+  min-width: 40px;
+  font-size: 23px;
+  padding: 12px 4px;
+  background: var(--card-color);
+}
+.ci-app .ci-correction-answer {
+  min-width: 0;
+  flex: 1;
+  padding: 8px;
+  font-size: 18px;
+  overflow-wrap: anywhere;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ci-app .ci-correction-answer img,
+.ci-app .ci-dual-session .ci-correction-answer img {
+  width: 100%;
+  height: 74px;
+  object-fit: contain;
+}
+.ci-app .ci-explanation {
+  font-size: 20px;
+  margin-top: 16px !important;
+}
+.ci-app .ci-controls {
+  margin-top: 22px;
+  padding-top: 16px;
+}
+.ci-media-check {
+  margin: 18px 0;
+  padding: 18px 0;
+  border-top: 1px solid var(--ci-line);
+}
+.ci-media-check-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.ci-media-check h3 {
+  margin: 0;
+  font-size: 20px;
+}
+.ci-media-check-head button {
+  font-size: 13px;
+}
+.ci-media-check p {
+  margin: 12px 0;
+}
+.ci-media-check progress {
+  width: 100%;
+  accent-color: var(--ci-accent);
+}
+.ci-media-exclude {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.ci-media-check-help,
+.ci-media-check-empty {
+  font-size: 14px;
+  color: var(--ci-muted);
+}
+.ci-media-check-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 300px;
+  overflow: auto;
+}
+.ci-media-check-list li {
+  padding: 12px 0;
+  border-top: 1px solid var(--ci-line);
+  display: grid;
+  gap: 6px;
+}
+.ci-media-check-list li > div {
+  display: flex;
+  flex-direction: column;
+  overflow-wrap: anywhere;
+  font-size: 14px;
+}
+.ci-media-check-list li[data-status='missing'],
+.ci-media-check-list li[data-status='blocked'],
+.ci-media-check-list li[data-status='invalid'] {
+  border-left: 3px solid var(--ci-ink);
+  padding-left: 12px;
+}
+@media (max-width: 1150px) {
+  .ci-app .ci-header {
+    gap: 8px;
+    padding: 8px 12px;
+    flex-wrap: wrap;
+  }
+  .ci-app .ci-header-start {
+    gap: 10px;
+  }
+  .ci-app .ci-header .ci-create-link {
+    padding: 10px;
+  }
+  .ci-app .ci-header .ci-icon-button {
+    width: 42px;
+    min-width: 42px;
+    height: 44px;
+  }
+  .ci-app .ci-header .ci-toolbar {
+    gap: 5px;
+  }
+  .ci-header-audio {
+    max-width: 220px;
+  }
+  .ci-play-layout {
+    --ci-margin: 108px;
+    gap: 16px;
+  }
+  .ci-app .ci-dual-session .ci-question h1 {
+    font-size: 22px;
+  }
+  .ci-app .ci-dual-session .ci-answer-content {
+    font-size: 22px;
+  }
+}
+@media (max-width: 700px) {
+  .ci-app .ci-header-start {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .ci-app .ci-header-audio {
+    max-width: none;
+    min-width: 170px;
+  }
+  .ci-app .ci-progress {
+    font-size: 12px;
+  }
+  .ci-app .ci-header-tools {
+    margin-left: auto;
+  }
+  .ci-play-layout {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .ci-margin-left {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .ci-margin-right {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .ci-app .ci-phase-margin {
+    padding-top: 0;
+  }
+  .ci-phase-art {
+    width: 90px;
+    height: 90px;
+  }
+  .ci-app .ci-phase-banner {
+    font-size: 14px;
+    gap: 6px;
+  }
+  .ci-app .ci-timer {
+    margin: 10px 0;
+  }
+  .ci-app .ci-timer-value {
+    font-size: 28px;
+  }
+  .ci-app .ci-round-questions {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+  .ci-app .ci-answer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .ci-app .ci-answer > .ci-card-badge,
+  .ci-app .ci-dual-session .ci-answer > .ci-card-badge {
+    width: 46px;
+    min-width: 46px;
+    font-size: 24px;
+    padding: 10px 4px;
+  }
+  .ci-app .ci-dual-session .ci-round-questions {
+    gap: 12px;
+  }
+  .ci-app .ci-dual-session .ci-question h1 {
+    font-size: 18px;
+  }
+  .ci-app .ci-answer-content,
+  .ci-app .ci-dual-session .ci-answer-content {
+    font-size: 18px;
+    padding: 8px;
+  }
+  .ci-app .ci-dual-session .ci-answer-content img {
+    height: 70px;
+  }
+  .ci-app .ci-palette-card {
+    grid-template-rows: 110px auto auto;
+  }
+  .ci-app .ci-palette-card label {
+    grid-template-columns: 1fr;
+    font-size: 12px;
+  }
+}
+@media print {
+  .ci-app .ci-paper-card .ci-card-badge {
+    flex-direction: column;
+    gap: 10mm;
+    font-size: 72pt;
+  }
+}

@@ -1,6 +1,6 @@
 # Architecture du jeu en classe
 
-`convertRecipe` reconstruit la recette v1 avec les mêmes graines et blocs que le générateur A4. Les questions publiques ne contiennent ni corrigé ni indicateur de justesse. Les corrections vivent dans une table séparée, jamais transmise à `QuestionStage` ; `CorrectionView` est monté uniquement après l’action enseignant `REVEAL`.
+`convertRecipe` reconstruit la recette v1 avec les mêmes graines et blocs que le générateur A4. Les questions publiques ne contiennent ni corrigé ni indicateur de justesse. Les corrections vivent dans une table séparée. Avant `REVEAL`, aucun indicateur de justesse n’est transmis à `QuestionStage`. Après cette action, seul l’identifiant correct est transmis pour marquer le choix sélectionné ; `CorrectionView` rend la bonne réponse en marge ou le modèle de réponse ouverte. Les propositions restent affichées.
 
 `domain/plan.ts` construit les écrans de séance sans modifier la recette ou le jeu source. Les questions cochées sont regroupées par URL audio exacte. Un classement dérivé de l’identifiant du jeu et des questions retient au plus deux questions par piste, puis conserve leur ordre source. Deux QCM audio partagent un écran et les six emplacements : A–C et D–F. Une réduction éventuelle à trois choix conserve toujours le choix correct et deux distracteurs de la banque, avec avertissement. Aucun distracteur n’est fabriqué pour atteindre trois cartes. Les productions ouvertes ne sont pas transformées en QCM.
 
@@ -15,3 +15,9 @@ Les préférences de palette v2 (pastel par défaut), formes v1 et minuteur v1 s
 Les variantes TCF `qcm_image` sont prises en priorité à partir de `formSelect.variants`, puis les QCM actifs ou les variantes texte valides. La sélection et la correction utilisent les identifiants des choix, pas leur texte. Une image correcte est affichée depuis le même objet de choix au corrigé.
 
 Aucun nouveau serveur de séance, endpoint, preset partagé ou permission n’est introduit. La remise à niveau de l’authentification reste décrite dans [l’audit sécurité](audit-securite.md).
+
+## Précontrôle et projections du Word
+
+`media/` collecte uniquement les références des questions publiques. Le gestionnaire traite les URL uniques par quatre, vérifie les en-têtes puis le décodage sous un délai commun de huit secondes, et conserve des résultats pendant cinq minutes. Le hook annule une campagne lorsqu’un autre plan est sélectionné. `excludeQuestions` filtre le plan résolu sans substituer une autre question ni muter la recette. Les anciens rapports ne filtrent pas un nouveau plan. Les trois statuts absent/bloqué/invalide sont exclus par défaut ; un délai dépassé reste une incertitude signalée.
+
+`ClassroomHeader` est partagé entre préparation et séance : il reçoit les commandes actives, la progression et le lecteur du tour courant. `PlayingRound` garde les phases et le minuteur du même écran. `PhaseBanner` rend les illustrations rondes dans les marges. Les deux questions audio sont des colonnes distinctes ; chaque sélection et verdict garde son identifiant source. `domain/progression.ts` dérive l’action autorisée et `keyboard.ts` protège les champs, commandes et menus avant de traiter Entrée.

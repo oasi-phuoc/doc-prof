@@ -84,6 +84,12 @@ try {
       'Étoile',
       'Cercle',
     ])
+    assert.notEqual(
+      await page
+        .locator('.ci-mini-cards')
+        .evaluate((el) => getComputedStyle(el).transform),
+      'none',
+    )
     await page.screenshot({
       path: `${output}/08-classroom-setup-${width}.png`,
       fullPage: true,
@@ -119,6 +125,41 @@ try {
       ),
       fontBefore + 2,
     )
+    const circular = await page
+      .locator('.ci-margin-left .ci-phase-art')
+      .evaluate((el) => ({
+        radius: getComputedStyle(el).borderRadius,
+        width: el.getBoundingClientRect().width,
+        height: el.getBoundingClientRect().height,
+      }))
+    assert.equal(circular.radius, '50%')
+    assert.ok(Math.abs(circular.width - circular.height) < 1)
+    assert.equal(
+      await page.getByRole('button', { name: 'Relancer le minuteur' }).count(),
+      0,
+    )
+    assert.equal(
+      await page.getByText('Temps de réflexion', { exact: true }).count(),
+      0,
+    )
+    const badgeBox = await page
+      .locator('.ci-answer > .ci-card-badge')
+      .first()
+      .boundingBox()
+    const contentBox = await page
+      .locator('.ci-answer-content')
+      .first()
+      .boundingBox()
+    assert.ok(badgeBox.x + badgeBox.width <= contentBox.x + 1)
+    const letterBox = await page
+      .locator('.ci-answer > .ci-card-badge b')
+      .first()
+      .boundingBox()
+    const shapeBox = await page
+      .locator('.ci-answer > .ci-card-badge .ci-shape')
+      .first()
+      .boundingBox()
+    assert.ok(letterBox.y + letterBox.height <= shapeBox.y)
     assert.equal(await page.locator('.ci-answer-content img').count(), 3)
     await page.waitForFunction(() =>
       [...document.querySelectorAll('.ci-answer-content img')].every(
@@ -135,7 +176,7 @@ try {
       shape: getComputedStyle(el.querySelector('svg')).width,
     }))
     assert.equal(dimensions.letter, dimensions.shape)
-    const center = await page.locator('.ci-progress').boundingBox()
+    const center = await page.locator('.ci-controls').boundingBox()
     assert.ok(Math.abs(center.x + center.width / 2 - width / 2) < 1)
     await page.clock.runFor(1100)
     assert.equal(await page.locator('.ci-timer-value').innerText(), '0:29')
@@ -157,15 +198,17 @@ try {
     )
     await fit(page, height)
     await page.screenshot({ path: `${output}/09-reading-${width}.png` })
-    await page
-      .getByRole('button', { name: 'Signal : levez vos cartes' })
-      .click()
+    await page.evaluate(() => document.activeElement?.blur())
+    await page.keyboard.press('Enter')
     await page.locator('.ci-answer').first().tap()
     assert.equal(await page.locator('.ci-reveal').count(), 0)
-    await page.getByRole('button', { name: 'Discuter', exact: true }).click()
+    await page.keyboard.press('Enter')
     assert.equal(await page.locator('.ci-reveal').count(), 0)
-    await page.getByRole('button', { name: 'Enseignant : révéler' }).click()
+    await page.getByRole('button', { name: 'Enseignant : révéler' }).waitFor()
+    await page.keyboard.press('Enter')
     assert.equal(await page.locator('.ci-correction-answer img').count(), 1)
+    assert.equal(await page.locator('.ci-answer:visible').count(), 3)
+    assert.equal(await page.locator('.ci-answer-incorrect').count(), 1)
     assert.match(
       await page.locator('.ci-correction-answer img').getAttribute('src'),
       /5-tomates/,
@@ -189,7 +232,50 @@ try {
       await page.locator('.ci-answer > .ci-card-badge b').allTextContents(),
       ['A', 'B', 'C', 'D', 'E', 'F'],
     )
-    const audioBox = await page.locator('.ci-audio').boundingBox()
+    const columns = await page.locator('.ci-round-question').all()
+    const [leftColumn, rightColumn] = await Promise.all(
+      columns.map((column) => column.boundingBox()),
+    )
+    assert.ok(leftColumn.x + leftColumn.width <= rightColumn.x)
+    assert.ok(Math.abs(leftColumn.y - rightColumn.y) < 1)
+    assert.deepEqual(
+      await page.locator('.ci-question-number').allTextContents(),
+      ['1.', '2.'],
+    )
+    for (const column of columns) {
+      const boxes = await Promise.all(
+        (await column.locator('.ci-answer').all()).map((answer) =>
+          answer.boundingBox(),
+        ),
+      )
+      assert.ok(boxes.every((box) => Math.abs(box.x - boxes[0].x) < 1))
+      assert.ok(boxes[0].y < boxes[1].y && boxes[1].y < boxes[2].y)
+    }
+    const menuControls = [
+      page.getByRole('link', { name: /Créer des fiches/ }),
+      page.locator('.ci-progress'),
+      page.getByRole('button', { name: 'Passer', exact: true }),
+      page.getByRole('button', { name: 'Pause', exact: true }),
+      page.locator('.ci-header audio'),
+      page.getByRole('button', { name: 'Contraste', exact: true }),
+      page.getByRole('button', { name: 'Régler le minuteur', exact: true }),
+      page.getByRole('button', { name: 'Plein écran', exact: true }),
+      page.getByRole('button', { name: 'Mes fiches', exact: true }),
+      page.getByRole('button', { name: 'Quitter la séance', exact: true }),
+    ]
+    const menuBoxes = await Promise.all(
+      menuControls.map((control) => control.boundingBox()),
+    )
+    assert.ok(
+      menuBoxes.every((box, i) => i === 0 || box.x >= menuBoxes[i - 1].x),
+    )
+    assert.equal(
+      await page
+        .getByRole('link', { name: /Créer des fiches/ })
+        .evaluate((el) => getComputedStyle(el).color),
+      'rgb(255, 255, 255)',
+    )
+    const audioBox = await page.locator('.ci-header audio').boundingBox()
     const questionBox = await page.locator('.ci-round-questions').boundingBox()
     assert.ok(audioBox.y + audioBox.height <= questionBox.y)
     await page.clock.runFor(60000)
@@ -206,11 +292,49 @@ try {
     assert.equal(await page.locator('.ci-timer-value').innerText(), '0:29')
     await fit(page, height)
     await page.screenshot({ path: `${output}/11-paired-audio-${width}.png` })
-    await page.getByRole('button', { name: 'Régler', exact: true }).click()
+    await page
+      .getByRole('button', { name: 'Régler le minuteur', exact: true })
+      .click()
     await page
       .getByRole('spinbutton', { name: 'Temps de réflexion (secondes)' })
       .fill('5')
-    await page.getByRole('button', { name: 'Régler', exact: true }).click()
+    await page
+      .getByRole('button', { name: 'Fermer les réglages', exact: true })
+      .click()
+    await page.getByRole('button', { name: 'Régler le minuteur' }).click()
+    await page
+      .getByRole('spinbutton', { name: 'Temps de réflexion (secondes)' })
+      .press('Enter')
+    await page.evaluate(() => document.activeElement?.blur())
+    await page.keyboard.press('Enter')
+    assert.equal(
+      await page.locator('.ci-margin-left .ci-phase-label').innerText(),
+      'Je réfléchis',
+    )
+    await page.getByRole('button', { name: 'Fermer les réglages' }).click()
+    await page.evaluate(() => document.activeElement?.blur())
+    await page.evaluate(() =>
+      document.body.dispatchEvent(
+        new KeyboardEvent('keydown', {
+          key: 'Enter',
+          bubbles: true,
+          repeat: true,
+        }),
+      ),
+    )
+    await page.evaluate(() =>
+      document.body.dispatchEvent(
+        new KeyboardEvent('keydown', {
+          key: 'Enter',
+          bubbles: true,
+          isComposing: true,
+        }),
+      ),
+    )
+    assert.equal(
+      await page.locator('.ci-margin-left .ci-phase-label').innerText(),
+      'Je réfléchis',
+    )
     await page.clock.runFor(6000)
     assert.equal(await page.locator('.ci-timer-value').innerText(), '0:00')
     assert.equal(
@@ -265,14 +389,20 @@ try {
     await page.getByRole('button', { name: 'Enseignant : révéler' }).click()
     assert.equal(await page.locator('.ci-reveal').count(), 2)
     assert.equal(
-      await page.getByText('Réponse correcte', { exact: true }).count(),
+      await page
+        .locator('.ci-correction-status')
+        .filter({ hasText: 'Réponse correcte' })
+        .count(),
       1,
     )
     assert.equal(
       await page.getByText('À retravailler', { exact: true }).count(),
       1,
     )
-    assert.equal(await page.locator('.ci-correction-answer img').count(), 2)
+    assert.equal(await page.locator('.ci-correction-answer img').count(), 1)
+    assert.equal(await page.locator('.ci-answer:visible').count(), 6)
+    assert.equal(await page.locator('.ci-answer-correct').count(), 1)
+    assert.equal(await page.locator('.ci-answer-incorrect').count(), 1)
     await fit(page, height)
     await page.screenshot({
       path: `${output}/12-paired-correction-${width}.png`,
@@ -292,7 +422,11 @@ try {
       timer: 'reflection, audio end, pause, expiry, configuration passed',
       imageVariants: 'passed',
       pairedAudio: '6 source questions → 2 simultaneous questions / 6 cards',
-      separateCorrections: 'passed',
+      separateCorrections: 'passed; all choices stay visible',
+      wordLayout:
+        'round illustrations, vertical badges, header order, two question columns passed',
+      teacherEnter:
+        'phase advancement and input/menu/repeat/composition guards passed',
       resume: 'reflection without selected answers',
       fit: 'passed',
       errors,
