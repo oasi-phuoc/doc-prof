@@ -1,26 +1,26 @@
-import { parseFicheRecipe, type FicheRecipe } from '@/fiches/recipe'
+import type { FicheRecipe } from '@/fiches/recipe'
+import { INTERACTIVE_DRAFT_KEY as KEY, draftNavigationData, parseInteractiveDraft } from './draft-data'
+import { createLocalDraft } from './drafts'
+export { parseInteractiveDraft } from './draft-data'
 
-const KEY = 'clairfleInteractive'
-export function openInteractive(
+export async function openInteractive(
   recipe: FicheRecipe,
   name: string,
   id?: string,
 ) {
+  const data = draftNavigationData(recipe, name)
+  let path = id ? `/interactif/${encodeURIComponent(id)}` : '/interactif'
+  let warning = ''
+  if (!id) {
+    try { path = `/interactif?d=${await createLocalDraft(data.recipe, data.name)}` }
+    catch { warning = 'Ce brouillon reste dans cet onglet : son enregistrement local est indisponible. Le jeu peut continuer.' }
+  }
   window.history.pushState(
     {
-      [KEY]: {
-        recipe,
-        name,
-        temporaryImages: Object.fromEntries(
-          Object.entries(recipe.imageOverrides ?? {}).filter(
-            ([, src]) =>
-              src.startsWith('blob:') || src.startsWith('data:image/'),
-          ),
-        ),
-      },
+      [KEY]: { ...data, warning },
     },
     '',
-    id ? `/interactif/${encodeURIComponent(id)}` : '/interactif',
+    path,
   )
   window.dispatchEvent(new PopStateEvent('popstate'))
 }
@@ -31,27 +31,7 @@ export function readInteractiveDraft(): {
   return parseInteractiveDraft(window.history.state?.[KEY])
 }
 
-export function parseInteractiveDraft(
-  value: unknown,
-): { recipe: FicheRecipe; name: string } | null {
-  if (!value || typeof value !== 'object') return null
-  const source = value as Record<string, unknown>
-  const recipe = parseFicheRecipe(source.recipe)
-  if (!recipe) return null
-  // Uploaded images remain transient navigation data, outside the saved v1 recipe contract.
-  if (source.temporaryImages && typeof source.temporaryImages === 'object') {
-    const temporary = Object.fromEntries(
-      Object.entries(source.temporaryImages).filter(
-        (entry): entry is [string, string] =>
-          typeof entry[1] === 'string' &&
-          (entry[1].startsWith('blob:') || entry[1].startsWith('data:image/')),
-      ),
-    )
-    if (Object.keys(temporary).length)
-      recipe.imageOverrides = { ...recipe.imageOverrides, ...temporary }
-  }
-  return {
-    recipe,
-    name: typeof source.name === 'string' ? source.name : 'Ma fiche',
-  }
+export function readDraftWarning(): string {
+  const value: unknown = window.history.state?.[KEY]?.warning
+  return typeof value === 'string' ? value : ''
 }

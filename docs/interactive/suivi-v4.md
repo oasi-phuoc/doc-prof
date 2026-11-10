@@ -6,12 +6,12 @@ Ce registre complète les anciennes checklists de livraison. Il distingue les fo
 
 | Travail | État et preuve | Reste à faire |
 |---|---|---|
-| Parcours brouillon / fiche enregistrée | Convertisseurs, préparation, sélection ; nouvelles parties à graine renouvelée sans modifier le modèle serveur, reprise identique ; `game-run-results.json` | Étendre les adaptateurs encore classés non compatibles par l’inventaire |
+| Parcours brouillon / fiche enregistrée | Convertisseurs, préparation, sélection ; brouillon local par adresse et rechargement ; graine renouvelée dès le clic bibliothèque sans modifier le modèle serveur ; `drafts-results.json`, `game-run-results.json` | Étendre les adaptateurs encore classés non compatibles par l’inventaire |
 | Moteur Classe / Solo | Navigation, correction dans les cartes sans doublon près de la mascotte (bonne en couleur, autres grises), pause, minuterie, bilan ; `card-feedback-results.json`, tests de domaine, Classe et Solo | Garde enseignant, annulation de révélation et navigation conservant tous les états par question |
 | F25 diagnostic | Page et rapport local ; tests navigateur et document `diagnostic-eni.md` | Essai sur ENI réel à joindre au pilote |
 | F26 cartes et étalonnage | Palette, formes, contraste ; six carrés de 88 mm en deux colonnes et trois lignes A4 ; `mobile-layout-print-results.json` | Assistant d’étalonnage et contraste des contours complets |
 | F27 feuille enseignant | Fichier autonome A4, corrigés hors DOM, plan identique, obsolescence et images incorporées ; `teacher-sheet-results.json` | Essai d’impression sur l’équipement de classe |
-| F28 persistance | IndexedDB, empreinte du plan, reprise des deux décomptes, verrou et révisions atomiques ; compactage et migration de schéma ; purge des séances de plus de sept jours ; `resume-results.json`, `session-lease-results.json`, `checkpoint-results.json`, `retention-results.json` | Gestion des brouillons et autres magasins du §63 |
+| F28 persistance | IndexedDB, empreinte du plan, reprise des deux décomptes, verrou et révisions atomiques ; compactage et migration de schéma ; purge des séances après sept jours ; brouillons de 24 h, base migrée sans perte ; `resume-results.json`, `session-lease-results.json`, `checkpoint-results.json`, `retention-results.json`, `drafts-results.json` | Migration des réglages, presets et métadonnées de partie encore propres à l’onglet ; sources de séance et accès par identifiant à compléter |
 | F29 médias | Précontrôle, décodeurs, cache, annulation, préchargement suivant et tests | Journal et limites d’écoutes ; extension hors ligne P1 |
 | F30 comptage et observations | Compteurs validés, provenance et partage explicite, bilan, marques et notes locales ; `manual-count-results.json` | Badges et archivage de plusieurs bilans |
 | F31 oral guidé | Scènes, zoom, relances, modèle et évaluation humaine présents | Recette complète S03 et extension de conversion prouvée |

@@ -79,7 +79,7 @@ try {
     // Draft launch is an actual generator action, preserving the working recipe.
     if (label === 'prototype') {
       await page.getByRole('button', { name: 'Jouer avec la classe' }).click()
-      await page.waitForURL('**/interactif')
+      await page.waitForURL('**/interactif?d=*')
       await page.getByRole('button', { name: /Commencer la séance/ }).waitFor()
       assert.equal(
         await page.locator('.ci-question-list fieldset > label').count(),

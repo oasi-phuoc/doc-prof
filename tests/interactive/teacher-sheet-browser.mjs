@@ -46,7 +46,7 @@ try {
   await page.getByRole('button', { name: 'Quitter la séance', exact: true }).click()
   await page.getByRole('button', { name: /Reprendre la séance/ }).waitFor()
   const stored = await page.evaluate(async () => {
-    const db = await new Promise((resolve) => { const request = indexedDB.open('clairfle-interactive', 1); request.onsuccess = () => resolve(request.result) })
+    const db = await new Promise((resolve) => { const request = indexedDB.open('clairfle-interactive'); request.onsuccess = () => resolve(request.result) })
     const rows = await new Promise((resolve) => { const request = db.transaction('sessions').objectStore('sessions').getAll(); request.onsuccess = () => resolve(request.result) })
     db.close(); return rows.map((row) => row.planId)
   })

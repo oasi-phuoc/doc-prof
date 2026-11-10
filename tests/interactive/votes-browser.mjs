@@ -72,7 +72,7 @@ try {
     assert.equal(await page.getByRole('textbox', { name: 'Observations', exact: true }).inputValue(), 'Revoir les retenues au prochain cours.')
     assert.equal(await page.getByRole('group', { name: /^Marque enseignant :/ }).first().getByRole('button', { name: 'À revoir', exact: true }).getAttribute('aria-pressed'), 'true')
     const stored = await page.evaluate(async () => {
-      const db = await new Promise((resolve) => { const request = indexedDB.open('clairfle-interactive', 1); request.onsuccess = () => resolve(request.result) })
+      const db = await new Promise((resolve) => { const request = indexedDB.open('clairfle-interactive'); request.onsuccess = () => resolve(request.result) })
       const records = await new Promise((resolve) => { const request = db.transaction('sessions').objectStore('sessions').getAll(); request.onsuccess = () => resolve(request.result) })
       db.close()
       return records.find((record) => record.checkpoint?.state.note === 'Revoir les retenues au prochain cours.')

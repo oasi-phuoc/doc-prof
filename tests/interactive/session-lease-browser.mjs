@@ -71,7 +71,7 @@ try {
   await page.getByRole('button', { name: 'Signal : levez vos cartes', exact: true }).click()
   await page.getByRole('button', { name: 'Discuter', exact: true }).waitFor()
   const records = await page.evaluate(async () => {
-    const db = await new Promise((resolve) => { const request = indexedDB.open('clairfle-interactive', 1); request.onsuccess = () => resolve(request.result) })
+    const db = await new Promise((resolve) => { const request = indexedDB.open('clairfle-interactive'); request.onsuccess = () => resolve(request.result) })
     const rows = await new Promise((resolve) => { const request = db.transaction('sessions').objectStore('sessions').getAll(); request.onsuccess = () => resolve(request.result) })
     db.close()
     return rows.length

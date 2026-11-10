@@ -37,8 +37,14 @@ try {
       assert.ok(operands.every((n) => n >= 1 && n <= 10), value)
     }
   }
-  await page.goto(`${base}/interactif/${saved.id}`)
+  await page.goto(`${base}/fiches`)
+  await page.getByRole('button', { name: 'Jouer', exact: true }).click()
+  await page.waitForURL(`${base}/interactif/${saved.id}`)
   await page.locator('.ci-launch:enabled').waitFor({ timeout: 120000 })
+  const run = await page.evaluate(() => Object.entries(sessionStorage).filter(([key]) => key.startsWith('clairfle.interactive.run.v1.')).map(([key, value]) => ({ key, ...JSON.parse(value) })))
+  assert.equal(run.length, 1)
+  assert.match(run[0].key, /\.saved-/)
+  assert.notEqual(run[0].seed, recipe.seed)
   const first = await prompts()
   validAdditions(first)
   await page.getByRole('spinbutton', { name: 'Temps de réflexion (secondes)', exact: true }).fill('20')
@@ -85,7 +91,7 @@ try {
   assert.ok(methods.every((method) => method === 'GET'))
   assert.deepEqual(recipe, original)
   assert.deepEqual(errors, [])
-  results.push({ template: 'saved server recipe fetched read-only', newGames: 'three different sets of ten additions, operands 1–10', resume: 'same questions and selection after reload', timing: '20 s reflection and 7 s feedback retained', serverWrites: 0, errors })
+  results.push({ template: 'library Play action loads the saved server recipe read-only, with a fresh first seed', newGames: 'three different sets of ten additions, operands 1–10', resume: 'same questions and selection after reload', timing: '20 s reflection and 7 s feedback retained', serverWrites: 0, errors })
   await writeFile('docs/interactive/game-run-results.json', JSON.stringify(results, null, 2) + '\n')
   console.log(JSON.stringify(results, null, 2))
 } finally { await browser.close(); await server.close() }

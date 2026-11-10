@@ -21,7 +21,7 @@ try {
       { ...record, gameId: 'future-schema', schemaVersion: 3, updatedAt: expiredAt },
       { ...record, gameId: 'invalid-date', updatedAt: 'unknown' },
     ]
-    const db = await new Promise((resolve) => { const request = indexedDB.open('clairfle-interactive', 1); request.onsuccess = () => resolve(request.result) })
+    const db = await new Promise((resolve) => { const request = indexedDB.open('clairfle-interactive'); request.onsuccess = () => resolve(request.result) })
     await new Promise((resolve) => { const tx = db.transaction('sessions', 'readwrite'); for (const record of records) tx.objectStore('sessions').put(record); tx.oncomplete = resolve })
     const removed = await purgeExpiredSessions(now)
     const remaining = await new Promise((resolve) => { const request = db.transaction('sessions').objectStore('sessions').getAll(); request.onsuccess = () => resolve(request.result) })

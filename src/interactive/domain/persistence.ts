@@ -4,8 +4,8 @@ import type { Action, Game, Session, PlayMode } from './types'
 import { isVotePayload } from './votes'
 import { canonicalJson } from './seeds'
 import { copySession, readCheckpoint, type SessionCheckpoint } from './checkpoint'
+import { openInteractiveDatabase as openDatabase } from '../storage'
 
-const DATABASE = 'clairfle-interactive'
 const STORE = 'sessions'
 const TTL = 7 * 24 * 60 * 60 * 1000
 export const STORAGE_WARNING = 'Impossible de sauvegarder la séance sur cet appareil. Elle continue sans reprise automatique.'
@@ -93,44 +93,8 @@ export function replaySession(game: Game, value: unknown, planId: string, now = 
   return { record: { schemaVersion: value.schemaVersion as 1 | 2, mode, sessionId: value.sessionId, gameId: game.id, planId, updatedAt: value.updatedAt, events, clock, revision: (value.revision as number | undefined) ?? 0, ...(checkpoint ? { checkpoint } : {}) }, state }
 }
 
-let connection: Promise<IDBDatabase> | undefined
 let maintenance: Promise<number> | undefined
 let maintenanceAt = 0
-
-/** Keep one connection; IndexedDB transactions report completion or abort natively. */
-function openDatabase(): Promise<IDBDatabase> {
-  if (connection) return connection
-  const opening = new Promise<IDBDatabase>((resolve, reject) => {
-    let settled = false
-    const fail = () => {
-      if (settled) return
-      settled = true
-      clearTimeout(timeout)
-      reject(new Error(STORAGE_WARNING))
-    }
-    const timeout = setTimeout(fail, 3000)
-    try {
-      const request = indexedDB.open(DATABASE, 1)
-      request.onupgradeneeded = () => {
-        if (!request.result.objectStoreNames.contains(STORE)) request.result.createObjectStore(STORE, { keyPath: 'gameId' })
-      }
-      request.onerror = fail
-      request.onblocked = fail
-      request.onsuccess = () => {
-        const db = request.result
-        if (settled) { db.close(); return }
-        settled = true
-        clearTimeout(timeout)
-        db.onversionchange = () => { connection = undefined; maintenance = undefined; db.close() }
-        db.onclose = () => { connection = undefined; maintenance = undefined }
-        resolve(db)
-      }
-    } catch { fail() }
-  })
-  connection = opening
-  void opening.catch(() => { if (connection === opening) connection = undefined })
-  return opening
-}
 
 async function transaction<T>(mode: IDBTransactionMode, run: (store: IDBObjectStore) => IDBRequest<T>): Promise<T> {
   const db = await openDatabase()

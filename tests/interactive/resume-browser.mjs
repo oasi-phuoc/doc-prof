@@ -7,7 +7,7 @@ async function savedClock(page, phase) {
   for (let i = 0; i < 100; i++) {
     const clock = await page.evaluate(async (phase) => {
       const db = await new Promise((resolve, reject) => {
-        const request = indexedDB.open('clairfle-interactive', 1)
+        const request = indexedDB.open('clairfle-interactive')
         request.onsuccess = () => resolve(request.result)
         request.onerror = reject
       })

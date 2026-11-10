@@ -16,7 +16,8 @@ import {
   type ShapeId,
 } from './domain/palette'
 import { demoRecipe } from './demo'
-import { readInteractiveDraft } from './navigation'
+import { readDraftWarning, readInteractiveDraft } from './navigation'
+import { loadLocalDraft, localDraftId } from './drafts'
 import { SessionView } from './SessionView'
 import { loadSession, deleteSession, type Resume } from './domain/persistence'
 import { acquireSessionLease } from './session-lease'
@@ -123,17 +124,21 @@ export default function InteractiveApp() {
 }
 
 function GameApp() {
+  const draftId = localDraftId()
+  const savedId = savedIdFromPath()
   const [source, setSource] = useState<Source | null>(() => {
     const demo = window.location.pathname === '/interactif/demo'
+    if (!demo && (draftId !== null || savedId)) return null
     const value = demo ? { recipe: demoRecipe(), name: 'Les cartes de la classe' } : readInteractiveDraft()
     return value ? createGameSource(value, demo ? 'demo' : 'draft') : null
   })
   const [error, setError] = useState(() =>
-    !source && !savedIdFromPath()
+    !source && !savedId && draftId === null
       ? 'Ouvrez une fiche puis choisissez « Jouer avec la classe ».'
       : '',
   )
-  const [loading, setLoading] = useState(!source && !!savedIdFromPath())
+  const [loading, setLoading] = useState(!source && (!!savedId || draftId !== null))
+  const [draftWarning] = useState(readDraftWarning)
   const [colors, setColors] = useState(loadColors)
   const [shapes, setShapes] = useState(loadShapes)
   const [timer, setTimer] = useState(loadTimer)
@@ -158,22 +163,19 @@ function GameApp() {
   const [teacherSheetExport, setTeacherSheetExport] = useState('')
   useEffect(() => {
     if (source) return
-    const id = savedIdFromPath()
-    if (!id) return
+    if (!savedId && draftId === null) return
     let active = true
-    listFiches()
-      .then((fiches) => {
+    const load = async () => {
+      if (draftId !== null) return createGameSource(await loadLocalDraft(draftId), 'draft', draftId)
+      const fiche = (await listFiches()).find((f) => f.id === savedId)
+      if (!fiche) throw new Error('Cette fiche est introuvable ou inaccessible pour votre compte.')
+      return createGameSource({ recipe: fiche.recipe, name: fiche.name }, 'saved', fiche.id)
+    }
+    void load()
+      .then((next) => {
         if (!active) return
-        const fiche = fiches.find((f) => f.id === id)
-        if (fiche) {
-          const next = createGameSource({ recipe: fiche.recipe, name: fiche.name }, 'saved', fiche.id)
-          setSource(next)
-          setSelected(next.selectedKeys)
-        }
-        else
-          setError(
-            'Cette fiche est introuvable ou inaccessible pour votre compte.',
-          )
+        setSource(next)
+        setSelected(next.selectedKeys)
       })
       .catch((e) => {
         if (active)
@@ -187,7 +189,7 @@ function GameApp() {
     return () => {
       active = false
     }
-  }, [source])
+  }, [source, draftId, savedId])
   const allowed = new Set(domainsForAccount(readAccessAccount()))
   const forbidden = source?.recipe.pages.some(
     (page) => !allowed.has(page.domain),
@@ -462,6 +464,7 @@ function GameApp() {
                       />
                     )}
                     <p className="ci-run-note">Une nouvelle partie renouvelle les tirages du générateur, avec les mêmes types, limites et durées. Les questions saisies manuellement sont conservées ; une reprise garde la partie en cours.</p>
+                    {draftWarning && <p role="status">{draftWarning}</p>}
                     {resumeWarning && <p role="status">{resumeWarning}</p>}
                     {canResume && saved && <p>Reprendre la séance du {new Date(saved.record.updatedAt).toLocaleString('fr-CH')} (question {saved.state.index + 1} sur {activeGame.rounds?.length ?? activeGame.questions.length}) ?</p>}
                     <button

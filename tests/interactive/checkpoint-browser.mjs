@@ -5,7 +5,7 @@ const base = process.env.INTERACTIVE_TEST_URL ?? 'http://127.0.0.1:5180'
 const browser = await chromium.launch({ executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH || undefined, args: ['--no-sandbox'] })
 async function storedRecord(page, gameId) {
   return page.evaluate(async (id) => {
-    const db = await new Promise((resolve) => { const request = indexedDB.open('clairfle-interactive', 1); request.onsuccess = () => resolve(request.result) })
+    const db = await new Promise((resolve) => { const request = indexedDB.open('clairfle-interactive'); request.onsuccess = () => resolve(request.result) })
     const record = await new Promise((resolve) => { const request = db.transaction('sessions').objectStore('sessions').get(id); request.onsuccess = () => resolve(request.result) })
     db.close()
     return record
@@ -37,7 +37,7 @@ try {
     delete record.revision
     record.events = Array.from({ length: 4998 }, (_, index) => ({ eventId: `legacy-${index}`, at: Date.now(), action: { type: index % 2 === 0 ? 'PAUSE' : 'RESUME' } }))
     record.events.push({ eventId: 'legacy-cards-up', at: Date.now(), action: { type: 'CARDS_UP' } })
-    const db = await new Promise((resolve) => { const request = indexedDB.open('clairfle-interactive', 1); request.onsuccess = () => resolve(request.result) })
+    const db = await new Promise((resolve) => { const request = indexedDB.open('clairfle-interactive'); request.onsuccess = () => resolve(request.result) })
     await new Promise((resolve) => { const transaction = db.transaction('sessions', 'readwrite'); transaction.objectStore('sessions').put(record); transaction.oncomplete = resolve })
     db.close()
     return { gameId: game.id, beforeBytes: JSON.stringify(record).length, questions: game.questions.length }
