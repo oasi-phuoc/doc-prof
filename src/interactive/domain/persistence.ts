@@ -94,6 +94,8 @@ export function replaySession(game: Game, value: unknown, planId: string, now = 
 }
 
 let connection: Promise<IDBDatabase> | undefined
+let maintenance: Promise<number> | undefined
+let maintenanceAt = 0
 
 /** Keep one connection; IndexedDB transactions report completion or abort natively. */
 function openDatabase(): Promise<IDBDatabase> {
@@ -119,8 +121,8 @@ function openDatabase(): Promise<IDBDatabase> {
         if (settled) { db.close(); return }
         settled = true
         clearTimeout(timeout)
-        db.onversionchange = () => { connection = undefined; db.close() }
-        db.onclose = () => { connection = undefined }
+        db.onversionchange = () => { connection = undefined; maintenance = undefined; db.close() }
+        db.onclose = () => { connection = undefined; maintenance = undefined }
         resolve(db)
       }
     } catch { fail() }
@@ -144,7 +146,33 @@ async function transaction<T>(mode: IDBTransactionMode, run: (store: IDBObjectSt
   })
 }
 
+/** Retention is enforced for supported records; future schemas remain untouched. */
+export async function purgeExpiredSessions(now = Date.now()): Promise<number> {
+  if (!Number.isFinite(now)) throw new Error('Date de nettoyage invalide.')
+  const db = await openDatabase()
+  return new Promise((resolve, reject) => {
+    let removed = 0
+    try {
+      const tx = db.transaction(STORE, 'readwrite')
+      const request = tx.objectStore(STORE).openCursor()
+      request.onsuccess = () => {
+        const cursor = request.result
+        if (!cursor) return
+        const value: unknown = cursor.value
+        if (object(value) && [1, 2].includes(value.schemaVersion as number) && typeof value.updatedAt === 'number' && Number.isFinite(value.updatedAt) && now - value.updatedAt > TTL) { cursor.delete(); removed++ }
+        cursor.continue()
+      }
+      tx.oncomplete = () => resolve(removed)
+      tx.onerror = tx.onabort = () => reject(new Error(STORAGE_WARNING))
+    } catch { reject(new Error(STORAGE_WARNING)) }
+  })
+}
+
 export async function loadSession(game: Game, mode: PlayMode = 'class'): Promise<Resume | null> {
+  const now = Date.now()
+  if (!maintenance || now < maintenanceAt || now - maintenanceAt > 60 * 60 * 1000) { maintenanceAt = now; maintenance = purgeExpiredSessions(now) }
+  const cleaning = maintenance
+  try { await cleaning } catch (error) { if (maintenance === cleaning) maintenance = undefined; throw error }
   const value: unknown = await transaction('readonly', (store) => store.get(game.id))
   if (value === undefined) return null
   return replaySession(game, value, await planIdentity(game), Date.now(), mode)
