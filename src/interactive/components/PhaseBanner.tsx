@@ -31,9 +31,8 @@ export function PhaseBanner({
           ? illustrations['cards-up']
           : illustrations[phase]
   return (
-    <div className="ci-phase-banner" role="status">
+    <div className="ci-phase-banner" role="status" aria-label={current.text}>
       <Mascot className="ci-phase-art" pose={current.image === 'board-turn' ? 'cards-up' : current.image} label={current.text} />
-      <span className="ci-phase-label">{current.text}</span>
     </div>
   )
 }

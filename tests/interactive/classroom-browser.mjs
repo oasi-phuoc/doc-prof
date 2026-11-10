@@ -194,7 +194,7 @@ try {
     assert.equal(await page.locator('.ci-timer-value').innerText(), '0:00')
     assert.equal(await page.locator('.ci-reveal').count(), 0)
     assert.equal(
-      await page.locator('.ci-phase-banner').innerText(),
+      await page.locator('.ci-phase-banner').getAttribute('aria-label'),
       'Je réfléchis',
     )
     await fit(page, height)
@@ -327,7 +327,7 @@ try {
     await page.clock.runFor(6000)
     assert.equal(await page.locator('.ci-timer-value').innerText(), '0:00')
     assert.equal(
-      await page.locator('.ci-phase-banner').innerText(),
+      await page.locator('.ci-phase-banner').getAttribute('aria-label'),
       'Je réfléchis',
     )
     await page

@@ -33,7 +33,7 @@ try {
   await page.getByRole('button', { name: 'Fermer les réglages', exact: true }).click()
   await page.clock.runFor(5100)
   await page.locator('.ci-reveal').waitFor()
-  assert.match(await page.locator('.ci-correction-status').innerText(), /sans réponse/)
+  assert.match(await page.locator('.ci-correction-status').innerText(), /Temps écoulé/)
   assert.equal(await page.locator('.ci-round-question .ci-explanation, .ci-round-question .ci-model-answer').count(), 0)
   await page.clock.runFor(5100)
   await page.locator('.ci-progress').filter({ hasText: 'Question 3 /' }).waitFor()

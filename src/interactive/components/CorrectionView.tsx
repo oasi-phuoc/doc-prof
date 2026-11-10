@@ -76,7 +76,7 @@ export function CorrectionView({
             <b className="ci-result-number">{number}.</b>
           )}
           <ResultFeedback correct={isCorrect} />
-          <b>{isCorrect ? 'Félicitations, c’est juste !' : selected ? 'Faux · essaie encore' : 'Temps écoulé · sans réponse'}</b>
+          <b>{isCorrect ? 'Félicitations, c’est juste !' : selected ? 'Faux · essaie encore' : 'Temps écoulé'}</b>
         </div>
       )
     return correction.text && correction.text !== correct.text ? (

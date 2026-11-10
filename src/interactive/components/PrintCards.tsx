@@ -21,7 +21,7 @@ export function PrintCards({
       <div className="ci-no-print">
         <h2>Les cartes de la classe</h2>
         <p>
-          Une feuille A4, six cartes à découper par élève. Les lettres et les
+          Une feuille A4, six cartes carrées à découper par élève : deux par ligne sur trois lignes. Les lettres et les
           formes restent identiques à l’écran.
         </p>
         <div className="ci-toolbar">

@@ -58,7 +58,7 @@ try {
   assert.equal(await page.locator('.ci-reveal').count(), 0)
   await page.clock.runFor(400)
   await page.locator('.ci-reveal').waitFor()
-  assert.match(await page.locator('.ci-correction-status').innerText(), /sans réponse/)
+  assert.match(await page.locator('.ci-correction-status').innerText(), /Temps écoulé/)
   await page.clock.runFor(2100)
   await page.getByRole('button', { name: 'Pause', exact: true }).click()
   await page.getByRole('button', { name: 'Quitter la séance', exact: true }).click()

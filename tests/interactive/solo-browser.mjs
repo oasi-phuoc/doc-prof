@@ -44,7 +44,7 @@ try {
     await page.clock.runFor(5100)
     await page.locator('.ci-reveal').waitFor()
     assert.equal(await page.locator('.ci-reveal').count(), 1)
-    assert.match(await page.locator('.ci-correction-status').innerText(), /sans réponse/)
+    assert.match(await page.locator('.ci-correction-status').innerText(), /Temps écoulé/)
     assert.equal(await page.locator('.ci-tears > i').count(), 4)
     await page.emulateMedia({ reducedMotion: 'reduce' })
     assert.notEqual(await page.locator('.ci-tears').evaluate((element) => getComputedStyle(element).display), 'none')
