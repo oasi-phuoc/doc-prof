@@ -64,7 +64,7 @@ export function ClassroomHeader({ mascot, onMascot, mode, onMode, contrast, onCo
         <div className="ci-header-timer-settings">
           <IconButton icon="timer" label="Régler le minuteur" aria-expanded={panel === 'timer'} aria-haspopup="dialog" onClick={(event) => { trigger.current = event.currentTarget; setPanel(panel === 'timer' ? null : 'timer') }} />
           {panel === 'timer' && <div className="ci-timer-options" role="dialog" aria-label="Réglages du minuteur">
-            <label className="ci-timer-enabled"><input type="checkbox" checked={mode === 'solo' || timer.enabled} disabled={mode === 'solo'} onChange={(event) => onTimer({ ...timer, enabled: event.target.checked })} />Activer le minuteur</label>
+            <label className="ci-timer-enabled"><input type="checkbox" checked={timer.enabled} onChange={(event) => onTimer({ ...timer, enabled: event.target.checked })} />Activer le minuteur</label>
             <label>Temps de réflexion (secondes)<input type="number" min="5" max="600" value={timer.seconds} onChange={(event) => onTimer({ ...timer, seconds: validSeconds(Number(event.target.value)) })} /></label>
             <label>Temps entre les questions (secondes)<input type="number" min="1" max="10" value={timer.feedbackSeconds} onChange={(event) => onTimer({ ...timer, feedbackSeconds: validFeedbackSeconds(Number(event.target.value)) })} /></label>
             <p>En Solo, la correction reste affichée pendant ce battement de 1 à 10 secondes.</p>

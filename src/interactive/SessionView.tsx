@@ -40,6 +40,8 @@ function ActiveSessionView({
   shapes,
   timer,
   onExit,
+  onFinish,
+  onNewPart,
   mediaManager,
   header,
   resume,
@@ -52,6 +54,8 @@ function ActiveSessionView({
   shapes: ShapeId[]
   timer: TimerSettings
   onExit: () => void
+  onFinish?: () => void
+  onNewPart?: () => void
   mediaManager?: MediaManager
   header: ClassroomHeaderProps
 }) {
@@ -151,6 +155,8 @@ function ActiveSessionView({
         shapes={shapes}
         timer={timer}
         onExit={onExit}
+        onFinish={onFinish}
+        onNewPart={onNewPart}
         mediaManager={mediaManager}
         header={header}
       />
@@ -199,6 +205,7 @@ function ActiveSessionView({
             })}
           </div>
           <div className="ci-toolbar">
+            {onNewPart && <button className="ci-primary" onClick={() => { enabled.current = false; void writes.current.then(() => deleteSession(game)).then(onNewPart).catch(() => setStorageWarning(STORAGE_WARNING)) }}>Nouvelle partie</button>}
             <button
               className="ci-primary"
               disabled={!difficult.length}
@@ -217,7 +224,7 @@ function ActiveSessionView({
             <button
               onClick={() => {
                 enabled.current = false
-                void writes.current.then(() => deleteSession(game)).then(onExit).catch(() => setStorageWarning(STORAGE_WARNING))
+                void writes.current.then(() => deleteSession(game)).then(onFinish ?? onExit).catch(() => setStorageWarning(STORAGE_WARNING))
               }}
             >
               Terminer
@@ -368,7 +375,7 @@ function PlayingRound({
               {state.phase === 'thinking' && (
                 <ReflectionTimer
                   key={`${solo ? 0 : playback}:${timer.seconds}`}
-                  settings={solo ? { ...timer, enabled: true } : timer}
+                  settings={timer}
                   running={!suspended}
                   waitingForAudio={
                     !solo && !!audio && audioStatus !== 'ended' && !audioOverride
@@ -420,7 +427,7 @@ function PlayingRound({
                       dispatch({ type: 'SELECT', questionId: q.id, choiceId })
                     }
                   />
-                  {reveal && (
+                  {reveal && q.mode !== 'choice' && (
                     <CorrectionView
                       placement="model"
                       question={q}
@@ -514,7 +521,7 @@ function PlayingRound({
                   : 'Question suivante'}
               </button>
             )}
-            {solo && (reveal ? <BetweenQuestionsTimer key={timer.feedbackSeconds} seconds={timer.feedbackSeconds} roundId={roundId} initialClock={initialClock} suspended={suspended} onClock={onClock} onNext={() => dispatch({ type: 'NEXT' })} /> : <p role="status">{questions[0]?.mode === 'choice' ? 'Choisis une réponse avant la fin du temps.' : 'Activité ouverte : compare ta réponse au modèle à la fin du temps.'}</p>)}
+            {solo && (reveal ? <BetweenQuestionsTimer key={timer.feedbackSeconds} seconds={timer.feedbackSeconds} roundId={roundId} initialClock={initialClock} suspended={suspended} onClock={onClock} onNext={() => dispatch({ type: 'NEXT' })} /> : questions[0]?.mode === 'choice' ? <p role="status">{timer.enabled ? 'Choisis une réponse avant la fin du temps.' : 'Choisis une réponse à ton rythme.'}</p> : <><p role="status">{timer.enabled ? 'Activité ouverte : compare ta réponse au modèle à la fin du temps.' : 'Activité ouverte : prépare ta réponse, puis compare-la au modèle.'}</p>{!timer.enabled && <button className="ci-primary" onClick={() => dispatch({ type: 'TIMEOUT' })}>Voir le modèle</button>}</>)}
           </footer>
         </div>
       </main>

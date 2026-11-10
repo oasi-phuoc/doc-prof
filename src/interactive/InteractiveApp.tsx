@@ -3,7 +3,7 @@ import { listFiches } from '@/fiches/api'
 import { domainsForAccount, readAccessAccount } from '@/access'
 import { MASCOTS, type MascotKind } from './domain/mascot'
 import type { PlayMode } from './domain/types'
-import type { FicheRecipe } from '@/fiches/recipe'
+import { createGameSource, renewGameSource, saveGameRun, questionSourceKey, type GameSource } from './game-run'
 import { convertRecipe } from './domain/convert'
 import { excludeQuestions, prepareGame } from './domain/plan'
 import { useMediaPreflight } from './media/useMediaPreflight'
@@ -33,7 +33,7 @@ import {
 import './interactive.css'
 import './projection.css'
 
-type Source = { recipe: FicheRecipe; name: string }
+type Source = GameSource
 const COLORS_KEY = 'clairfle.interactive.palette.v2'
 const SHAPES_KEY = 'clairfle.interactive.shapes.v1'
 const MODE_KEY = 'clairfle.interactive.mode.v1'
@@ -108,11 +108,11 @@ export default function InteractiveApp() {
 }
 
 function GameApp() {
-  const [source, setSource] = useState<Source | null>(() =>
-    window.location.pathname === '/interactif/demo'
-      ? { recipe: demoRecipe(), name: 'Les cartes de la classe' }
-      : readInteractiveDraft(),
-  )
+  const [source, setSource] = useState<Source | null>(() => {
+    const demo = window.location.pathname === '/interactif/demo'
+    const value = demo ? { recipe: demoRecipe(), name: 'Les cartes de la classe' } : readInteractiveDraft()
+    return value ? createGameSource(value, demo ? 'demo' : 'draft') : null
+  })
   const [error, setError] = useState(() =>
     !source && !savedIdFromPath()
       ? 'Ouvrez une fiche puis choisissez « Jouer avec la classe ».'
@@ -128,7 +128,9 @@ function GameApp() {
     try { return sessionStorage.getItem(MODE_KEY) === 'solo' ? 'solo' : 'class' } catch { return 'class' }
   })
   const [playing, setPlaying] = useState(false)
-  const [selection, setSelected] = useState<string[] | null>(null)
+  const [selection, setSelected] = useState<string[] | null>(() => source?.selectedKeys ?? null)
+  const [pendingStart, setPendingStart] = useState(false)
+  useEffect(() => { if (source) saveGameRun(source, selection) }, [source, selection])
   const [excludeUnavailable, setExcludeUnavailable] = useState(true)
   const [fullscreen, setFullscreen] = useState(false)
   useEffect(() => {
@@ -148,7 +150,11 @@ function GameApp() {
       .then((fiches) => {
         if (!active) return
         const fiche = fiches.find((f) => f.id === id)
-        if (fiche) setSource({ recipe: fiche.recipe, name: fiche.name })
+        if (fiche) {
+          const next = createGameSource({ recipe: fiche.recipe, name: fiche.name }, 'saved', fiche.id)
+          setSource(next)
+          setSelected(next.selectedKeys)
+        }
         else
           setError(
             'Cette fiche est introuvable ou inaccessible pour votre compte.',
@@ -176,10 +182,8 @@ function GameApp() {
       source && !forbidden ? convertRecipe(source.recipe, source.name) : null,
     [source, forbidden],
   )
-  const selected = useMemo(
-    () => selection ?? game?.questions.map((q) => q.id) ?? [],
-    [selection, game],
-  )
+  const selectedSources = useMemo(() => selection ?? game?.questions.map(questionSourceKey) ?? [], [selection, game])
+  const selected = useMemo(() => game?.questions.filter((question) => selectedSources.includes(questionSourceKey(question))).map((question) => question.id) ?? [], [selectedSources, game])
   const selectedGame = useMemo(
     () => (game ? prepareGame(game, selected, mode) : null),
     [game, selected, mode],
@@ -206,7 +210,20 @@ function GameApp() {
     )
     return () => { active = false }
   }, [activeGame, playing, mode, resumeKey])
-  const canResume = !!saved
+  const canResume = !!saved && !saved.state.finished
+  const newPart = (autoStart: boolean) => {
+    if (!source) return
+    setPlaying(false)
+    setSource(renewGameSource(source, selection))
+    setResumeResult(null)
+    setPendingStart(autoStart)
+  }
+  useEffect(() => {
+    if (!pendingStart || !activeGame || !media.complete || !resumeChecked) return
+    let active = true
+    void Promise.resolve().then(() => { if (active) { setPendingStart(false); if (activeGame.questions.length) setPlaying(true) } })
+    return () => { active = false }
+  }, [pendingStart, activeGame, media.complete, resumeChecked])
   const changeColors = (next: string[]) => {
     setColors(next)
     saveSetting(COLORS_KEY, next)
@@ -276,6 +293,8 @@ function GameApp() {
                 shapes={shapes}
                 timer={timer}
                 onExit={() => setPlaying(false)}
+                onFinish={() => newPart(false)}
+                onNewPart={() => newPart(true)}
                 mediaManager={media.manager}
                 header={header}
               />
@@ -324,7 +343,7 @@ function GameApp() {
                     <div className="ci-toolbar">
                       <button
                         onClick={() =>
-                          setSelected(game.questions.map((q) => q.id))
+                          setSelected(null)
                         }
                       >
                         Tout sélectionner
@@ -341,6 +360,7 @@ function GameApp() {
                           (q) => q.source.page === page,
                         )
                         const ids = pageQuestions.map((q) => q.id)
+                        const keys = pageQuestions.map(questionSourceKey)
                         return (
                           <fieldset key={page}>
                             <legend>
@@ -354,9 +374,9 @@ function GameApp() {
                                   onChange={(e) =>
                                     setSelected(
                                       e.target.checked
-                                        ? [...new Set([...selected, ...ids])]
-                                        : selected.filter(
-                                            (id) => !ids.includes(id),
+                                        ? [...new Set([...selectedSources, ...keys])]
+                                        : selectedSources.filter(
+                                            (key) => !keys.includes(key),
                                           ),
                                     )
                                   }
@@ -372,8 +392,8 @@ function GameApp() {
                                   onChange={(e) =>
                                     setSelected(
                                       e.target.checked
-                                        ? [...selected, q.id]
-                                        : selected.filter((id) => id !== q.id),
+                                        ? [...selectedSources, questionSourceKey(q)]
+                                        : selectedSources.filter((key) => key !== questionSourceKey(q)),
                                     )
                                   }
                                 />
@@ -426,16 +446,15 @@ function GameApp() {
                         onRetry={media.retry}
                       />
                     )}
+                    <p className="ci-run-note">Une nouvelle partie renouvelle les tirages du générateur, avec les mêmes types, limites et durées. Les questions saisies manuellement sont conservées ; une reprise garde la partie en cours.</p>
                     {resumeWarning && <p role="status">{resumeWarning}</p>}
-                    {saved && <p>Reprendre la séance du {new Date(saved.record.updatedAt).toLocaleString('fr-CH')} (question {saved.state.index + 1} sur {activeGame.rounds?.length ?? activeGame.questions.length}) ?</p>}
+                    {canResume && saved && <p>Reprendre la séance du {new Date(saved.record.updatedAt).toLocaleString('fr-CH')} (question {saved.state.index + 1} sur {activeGame.rounds?.length ?? activeGame.questions.length}) ?</p>}
                     <button
                       className="ci-primary ci-launch"
-                      disabled={!activeGame.questions.length || !media.complete || !resumeChecked}
-                      onClick={() => setPlaying(true)}
+                      disabled={!activeGame.questions.length || !media.complete || !resumeChecked || pendingStart}
+                      onClick={() => { if (saved?.state.finished) newPart(true); else setPlaying(true) }}
                     >
-                      {canResume
-                        ? 'Reprendre la séance'
-                        : 'Commencer la séance'}{' '}
+                      {pendingStart ? 'Préparation de la nouvelle partie…' : saved?.state.finished ? 'Nouvelle partie' : canResume ? 'Reprendre la séance' : 'Commencer la séance'}{' '}
                       <span aria-hidden="true">→</span>
                     </button>
                     {canResume && (
@@ -444,10 +463,10 @@ function GameApp() {
                         className="ci-fresh-start"
                         disabled={!media.complete}
                         onClick={() => {
-                          void deleteSession(activeGame).then(() => { setResumeResult({ key: resumeKey, saved: null, warning: '' }); setPlaying(true) }).catch(() => setResumeResult({ key: resumeKey, saved, warning: 'Impossible de supprimer la sauvegarde.' }))
+                          void deleteSession(activeGame).then(() => newPart(true)).catch(() => setResumeResult({ key: resumeKey, saved, warning: 'Impossible de supprimer la sauvegarde.' }))
                         }}
                       >
-                        Recommencer à zéro
+                        Nouvelle partie
                       </button>
                       <button className="ci-fresh-start" onClick={() => { void deleteSession(activeGame).then(() => setResumeResult({ key: resumeKey, saved: null, warning: '' })).catch(() => setResumeResult({ key: resumeKey, saved, warning: 'Impossible de supprimer la sauvegarde.' })) }}>Supprimer la sauvegarde</button>
                       </>
@@ -455,7 +474,7 @@ function GameApp() {
                   </section>
                   <aside className="ci-panel">
                     <h2>{mode === 'class' ? 'Le rituel de la classe' : 'Le parcours solo'}</h2>
-                    {mode === 'solo' ? <p>Choisis une réponse avant la fin du compte à rebours. Sans réponse, la question est comptée comme fausse. La correction s’affiche pendant {timer.feedbackSeconds} seconde(s), puis la question suivante démarre. Les activités ouvertes restent sans note automatique.</p> : <ol className="ci-ritual">
+                    {mode === 'solo' ? <p>{timer.enabled ? 'Choisis une réponse avant la fin du compte à rebours. Sans réponse, la question est comptée comme fausse.' : 'Le minuteur est désactivé : choisis une réponse à ton rythme.'} La correction s’affiche pendant {timer.feedbackSeconds} seconde(s), puis la question suivante démarre. Les activités ouvertes restent sans note automatique.</p> : <ol className="ci-ritual">
                       <li>Je réfléchis.</li>
                       <li>Au signal, je lève ma carte.</li>
 
@@ -470,8 +489,7 @@ function GameApp() {
                       <label>
                         <input
                           type="checkbox"
-                          checked={mode === 'solo' || timer.enabled}
-                        disabled={mode === 'solo'}
+                          checked={timer.enabled}
                           onChange={(e) =>
                             changeTimer({ ...timer, enabled: e.target.checked })
                           }
@@ -494,7 +512,7 @@ function GameApp() {
                         />
                       </label>
                       <p>
-                        {mode === 'solo' ? '30 secondes par défaut. Le compte à rebours démarre dès l’affichage de la question ; la correction et la suite sont automatiques.' : '30 secondes par défaut. Avec un document audio, le décompte commence à la fin de l’écoute. Vous choisissez toujours quand continuer.'}
+                        {mode === 'solo' ? '30 secondes par défaut, ou sans limite si le minuteur est désactivé. La correction et la suite sont automatiques après le choix.' : '30 secondes par défaut. Avec un document audio, le décompte commence à la fin de l’écoute. Vous choisissez toujours quand continuer.'}
                       </p>
                     </div>
                   </aside>

@@ -6,7 +6,7 @@ Ce registre complète les anciennes checklists de livraison. Il distingue les fo
 
 | Travail | État et preuve | Reste à faire |
 |---|---|---|
-| Parcours brouillon / fiche enregistrée | Convertisseurs, préparation, sélection et tests navigateur existants | Étendre les adaptateurs encore classés non compatibles par l’inventaire |
+| Parcours brouillon / fiche enregistrée | Convertisseurs, préparation, sélection ; nouvelles parties à graine renouvelée sans modifier le modèle serveur, reprise identique ; `game-run-results.json` | Étendre les adaptateurs encore classés non compatibles par l’inventaire |
 | Moteur Classe / Solo | Navigation, correction, pause, minuterie, bilan ; tests de domaine, Classe et Solo | Garde enseignant, annulation de révélation et navigation conservant tous les états par question |
 | F25 diagnostic | Page et rapport local ; tests navigateur et document `diagnostic-eni.md` | Essai sur ENI réel à joindre au pilote |
 | F26 cartes et étalonnage | Palette, formes, planches et contraste déjà testés | Assistant d’étalonnage et contraste des contours complets |
