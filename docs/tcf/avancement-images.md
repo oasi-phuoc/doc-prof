@@ -1,6 +1,6 @@
 # Avancement des illustrations CE / CO
 
-> État actuel : voir le [rapport global du 7 novembre 2026](rapport-global-20261107.md). Les compteurs historiques ci-dessous sont conservés pour la traçabilité.
+> État actuel : voir le [bilan du cahier des charges du 11 novembre 2026](bilan-cahier-des-charges-20261111.md). Les compteurs historiques ci-dessous sont conservés pour la traçabilité.
 
 ## Reprise du 6 novembre 2026 — objets CO inclus
 

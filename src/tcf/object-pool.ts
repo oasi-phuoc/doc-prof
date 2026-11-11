@@ -4,6 +4,19 @@ import type { TcfExercise } from './types'
 export type TcfObjectImage = { id: string; label: string; image: string; aliases: string[]; family: string; sha256: string; variants?: { image: string; sha256: string; aliases: string[] }[] }
 export type TcfObjectPool = { transcription: string; heard: TcfObjectImage[]; absent: TcfObjectImage[] }
 export const tcfObjectImages: readonly TcfObjectImage[] = catalogData
+/** Familles proches : les leurres restent plausibles dans le même thème. */
+const themes: readonly (readonly string[])[] = [
+  ['aliment', 'fruit', 'legume', 'ingredient', 'boisson'],
+  ['vetement', 'chaussure', 'tete'],
+  ['papeterie', 'document'],
+  ['telephone', 'electronique'],
+  ['mobilier', 'electromenager'],
+  ['toilette', 'cosmetique'],
+  ['carte', 'paiement'],
+]
+export function tcfObjectTheme(family: string): string {
+  return themes.find((group) => group.includes(family))?.[0] ?? family
+}
 const normalize = (s: string) => s.toLowerCase().replace(/œ/g, 'oe').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, ' ').trim()
 
 /** Select the transcript belonging to this exact track, never another dialogue. */
@@ -71,7 +84,7 @@ function computeObjectPool(transcription: string): TcfObjectPool | undefined {
     const index = heard.findIndex((o) => o.id === generic)
     if (index >= 0 && heard.some((o) => o.id !== generic && o.family === heard[index]!.family)) heard.splice(index, 1)
   }
-  const families = new Set(heard.map((o) => o.family))
-  const absent = tcfObjectImages.filter((o) => !named.has(o.id) && !families.has(o.family) && !heard.some((h) => h.image === o.image))
+  const heardThemes = new Set(heard.map((o) => tcfObjectTheme(o.family)))
+  const absent = tcfObjectImages.filter((o) => !named.has(o.id) && heardThemes.has(tcfObjectTheme(o.family)) && !heard.some((h) => h.image === o.image))
   return heard.length >= 3 && absent.length >= 2 ? { transcription, heard, absent } : undefined
 }

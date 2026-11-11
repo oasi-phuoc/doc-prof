@@ -4,7 +4,7 @@ import { readFileSync, writeFileSync } from 'node:fs'
 import { createServer } from 'vite'
 const vite = await createServer({ server: { middlewareMode: true, hmr: false, ws: false }, appType: 'custom' })
 try {
-  const { tcfObjectPool: pool, tcfObjectTranscription: transcript, tcfObjectImages: catalog } = await vite.ssrLoadModule('/src/tcf/object-pool.ts')
+  const { tcfObjectPool: pool, tcfObjectTranscription: transcript, tcfObjectImages: catalog, tcfObjectTheme: theme } = await vite.ssrLoadModule('/src/tcf/object-pool.ts')
   const { tcfAudioEntries, tcfObjetAudioEntries } = await vite.ssrLoadModule('/src/tcf/audio-bank.ts')
   const { tcfBankAllLevels } = await vite.ssrLoadModule('/src/tcf/loader.ts')
   const { drawObjetsCompose } = await vite.ssrLoadModule('/src/tcf/draw-series.ts')
@@ -29,6 +29,15 @@ try {
   assert.equal(pool('Elle lit et il montre. Un vélo et une voiture.'), undefined)
   assert.equal(pool('Une brosse à dents et une pomme de terre.'), undefined, 'compound noun cannot create multiple objects')
   assert.equal(pool('Une clé et un portefeuille.'), undefined, 'whole words only')
+  for (const [text, expected] of [
+    ['Je prépare une recette avec du beurre, de la farine et du sucre.', 'aliment'],
+    ['Je prends le train, le bus ou le vélo.', 'vehicule'],
+  ]) {
+    const themed = pool(text)
+    assert.ok(themed)
+    assert.ok(themed.absent.every((o) => theme(o.family) === expected), 'distractors must share the topic')
+    assert.ok(themed.absent.every((o) => !themed.heard.some((h) => h.id === o.id)), 'named concepts cannot be distractors')
+  }
   assert.ok(pool('Une lettre à mon ami, un livre et un stylo.'))
   assert.equal(pool('La lettre A, un livre et un stylo.'), undefined)
   const negated = pool('Je n’ai pas de voiture. Je prends mon vélo et mon téléphone.')
@@ -63,7 +72,14 @@ try {
       for (const image of draw.images) {
         const source = image.correct ? entry.objectPool.heard : entry.objectPool.absent
         assert.ok(source.some((o) => o.image === image.image))
-        if (!image.correct) assert.ok(!entry.objectPool.heard.some((o) => o.image === image.image))
+        if (!image.correct) {
+          assert.ok(!entry.objectPool.heard.some((o) => o.image === image.image))
+          const distractor = catalog.find((o) => `objet-${o.id}` === image.id)
+          assert.ok(draw.images.filter((i) => i.correct).some((i) => {
+            const heard = entry.objectPool.heard.find((o) => `objet-${o.id}` === i.id)
+            return theme(heard.family) === theme(distractor.family)
+          }), 'distractor shares a theme with a displayed correct choice')
+        }
       }
       assert.deepEqual(draw, drawObjetsCompose(entry.exercise.niveau, createRng(seed * 173), { audioSlots: [entry.audio] }))
     }
