@@ -71,6 +71,9 @@ def main():
         assert (checks[digest].get('boundary_signal', {}).get('safe_quiet_margins') is True
                 or checks[digest].get('boundary_vad', {}).get('safe_voiced_margins') is True)
         manual = decisions.get(ref) if state['manual_review_ready'] else None
+        validation_engines = state.get('selected_recognition_engines', ['parakeet', 'whisper'])
+        assert len(validation_engines) == 2 and len(set(validation_engines)) == 2
+        assert all(engine in state['recognitions'] for engine in validation_engines)
         edits = []
         for context in plan['contexts']:
             exercise = next(e for e in banks[context['bank']] if e['id'] == context['exercise'])
@@ -128,8 +131,10 @@ def main():
                             technical_check=checks[digest],
                             validation='editorial_review_and_two_final_file_recognitions' if manual
                                        else 'unchanged_text_and_two_exact_final_file_recognitions',
+                            validation_engines=validation_engines,
                             editorial_reason=manual['reason'] if manual else None,
                             numeric_resolution=manual.get('numeric_resolution') if manual else None,
+                            additional_recognition_evidence=manual.get('additional_recognition_evidence') if manual else None,
                             previous_duration=durations.get(ref), previous_pool=pools.get(ref),
                             question_changes=edits, human_listening_performed=False))
         prepared.append((source, target))

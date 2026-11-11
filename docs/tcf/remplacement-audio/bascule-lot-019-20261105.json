@@ -1,0 +1,4178 @@
+{
+  "batch": 19,
+  "audio_replacements": [
+    {
+      "ref": "/lib/audio/tcf/co/loisirs/la-fete-du-sport.mp3",
+      "previous_sha256": "c7db5fb2772289464a7c3964b030aeb2c231fb5bca8447c91b81ed8a4d903fdd",
+      "candidate_sha256": "d273eeaeb58db28d5191ca6065a60a248b3dc710e83bcdeea40093552bc7d56d",
+      "rollback_git_blob": "02cbe452453bae97fed5b5ed7e1579473b9c7a5e",
+      "source_id": "09035276:060:6a61f1e938f4",
+      "source_sha256": "6a61f1e938f4b66c63dafa88ec6f8a5ebb4b67d5a1e5cc4f18e0c096621294af",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "d273eeaeb58db28d5191ca6065a60a248b3dc710e83bcdeea40093552bc7d56d",
+        "duration": 21.681633,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T013533-a986e35c3d/manifest.json",
+          "manifest_sha256": "64190a1bd978a4f4c14d0e4b9dd9052025daca6dd107ee97bc4835ead98a2875",
+          "lossless_sha256": "5d959a412dd24beb1291db917a408f3a52da792332404847ce545e7692822130"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.27,
+          "trailing_quiet_seconds": 0.31,
+          "relative_rms_threshold": 0.0053544,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "editorial_reason": "Reconnaissances finales comparées ; questions, choix et corrigés relus ; segmentation et orthographe corrigées.",
+      "numeric_resolution": null,
+      "previous_duration": 21.92,
+      "previous_pool": {
+        "tag": "moyen",
+        "questions": 4
+      },
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/magasins/15-magasin-annonce-clé-retrouvé.mp3",
+      "previous_sha256": "a40bd344324e734f4248cce797586f470f4d9d499727bcb82c1ba108424c5c99",
+      "candidate_sha256": "a1d5c35508f32309bdd4305a31e16588a85a863224c67c86e420a4e53dde0db5",
+      "rollback_git_blob": "5809b39d67dcb16c11553c7cdc9045a4ce1c9438",
+      "source_id": "additional-20261102:mdf-a2-abc-direct:30:d6ab3c10c7c8:3c74436b",
+      "source_sha256": "d6ab3c10c7c84574260d0aeeb0d0c718aab4ad30f3b52f1b698d46f087ec8ab8",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "a1d5c35508f32309bdd4305a31e16588a85a863224c67c86e420a4e53dde0db5",
+        "duration": 11.128163,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014033-60306b7787/manifest.json",
+          "manifest_sha256": "09c729ba01ec063e022240bc530704bb817b5e791388ea8ccffc03e5386f07f5",
+          "lossless_sha256": "3c4ad88e5f2060b3b0e12367d513454bc7abb99975fe2f2247b6bb0967b3cf8d"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "needs_boundary_review",
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.0,
+          "relative_rms_threshold": 0.0064161,
+          "safe_quiet_margins": false,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.384,
+          "trailing_non_speech_seconds": 0.392,
+          "speech_region_count": 4,
+          "safe_voiced_margins": true,
+          "method": "Silero VAD with no padding; supplementary speech-vs-music evidence, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "editorial_reason": "Reconnaissances finales comparées ; questions, choix et corrigés relus ; segmentation et orthographe corrigées.",
+      "numeric_resolution": null,
+      "previous_duration": 13.59,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_09-1.mp3",
+      "previous_sha256": "030965deb0d9da32ebe17514ae11469f5dac1051fd2fb2938fa2aa52001f114c",
+      "candidate_sha256": "b018aa962f6ec5a9ae5cd910fc92b0900b9f863acba7fd3b87f0c2c2ae850bab",
+      "rollback_git_blob": "340bf73139bef813120e6a677a681be74b628080",
+      "source_id": "delf_a1_2022:009:cd426c4e83fe",
+      "source_sha256": "cd426c4e83fe5091c31805fc0a9bb83731d2bd6b6e4559aab94f4c9fcc9ff8e0",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "b018aa962f6ec5a9ae5cd910fc92b0900b9f863acba7fd3b87f0c2c2ae850bab",
+        "duration": 10.475102,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T120848-e161d989f9/manifest.json",
+          "manifest_sha256": "60aad128824761baaed5d6cba5322f241cd11f462034ca4386406e0a676abb36",
+          "lossless_sha256": "7f933095bd3acf8b844ccbb63fdde1ec05000396f3003d10072415ca0f3d2742"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.32,
+          "trailing_quiet_seconds": 0.23,
+          "relative_rms_threshold": 0.0068555,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "editorial_reason": "Reconnaissances finales comparées ; questions, choix et corrigés relus ; segmentation et orthographe corrigées.",
+      "numeric_resolution": null,
+      "previous_duration": 13.4,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_15-1.mp3",
+      "previous_sha256": "bcbe1d9aeb96d0245c1cc41e50b4a88e977578e95f375717d139371dc8fb7a12",
+      "candidate_sha256": "c5a9320589e7475607ec9223ed9dacac98cb0ed3be2d09a1930ec56437ba5206",
+      "rollback_git_blob": "bd01bbc298e893daea2aa228dd430fa70ace49d3",
+      "source_id": "delf_a1_2022:015:49f970d16035",
+      "source_sha256": "49f970d160357b7ab159ab7f7b659190df452f9fcef2b524f7f0f1c896b06dc3",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "c5a9320589e7475607ec9223ed9dacac98cb0ed3be2d09a1930ec56437ba5206",
+        "duration": 6.164898,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111549-d239d491e3/manifest.json",
+          "manifest_sha256": "ac08f9bcc6ea911a00002fccbc0838404577ae83e70e75e905e1205d778e20e3",
+          "lossless_sha256": "a967aee739b7061880f4b0efabea54a550dd0052b7e659b1cec768e21a388eb1"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.31,
+          "trailing_quiet_seconds": 0.5,
+          "relative_rms_threshold": 0.0083916,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "editorial_reason": "Reconnaissances finales comparées ; questions, choix et corrigés relus ; segmentation et orthographe corrigées.",
+      "numeric_resolution": null,
+      "previous_duration": 6.9,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_19-1.mp3",
+      "previous_sha256": "c408e5e4d9f4ae06c9372388cccdab430dc0eacfbdbdf15e7710b6fe6edbab87",
+      "candidate_sha256": "7686de52b174a9e45e3010363be368ce6964b1c491d7fc9a1d5ce6bc158914a7",
+      "rollback_git_blob": "dd38ddc24776c4d09a17f8aa8199f9357032c494",
+      "source_id": "delf_a1_2022:019:f956db0544b7",
+      "source_sha256": "f956db0544b7dd3fee1328d9a0bdbc5bb8875a734fd2c5528865e8e612fd0245",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "7686de52b174a9e45e3010363be368ce6964b1c491d7fc9a1d5ce6bc158914a7",
+        "duration": 10.318367,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111558-09c255dc61/manifest.json",
+          "manifest_sha256": "7bc2c4e7e29f945ab0fa310c4854987310a30d8223f402cde84e9fa1c394b940",
+          "lossless_sha256": "0e0394578f378163546f65d2c4f208d24ac7adb34d285fee679b71374de50ff5"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.2,
+          "trailing_quiet_seconds": 0.6,
+          "relative_rms_threshold": 0.006965,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "editorial_reason": "Reconnaissances finales comparées ; questions, choix et corrigés relus ; segmentation et orthographe corrigées.",
+      "numeric_resolution": null,
+      "previous_duration": 15.28,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/magasins/profitez-promotions-exceptionnelles-chez.mp3",
+      "previous_sha256": "738e7726ec8033753f17a40a75dfac444acfc1fc3b8f16b34b75315d8f0a30d2",
+      "candidate_sha256": "3ae897d1907f0a133105224af0303373da56152b0ee1c196799d5186e177505d",
+      "rollback_git_blob": "2e9bb67b46a0ae897668fcd970bb334e71b3036a",
+      "source_id": "additional-20261102:mdf-a1-abc:18:4ddb2cc80e3b:5d18e835",
+      "source_sha256": "4ddb2cc80e3b3745febf556445ed4bd90c67f8a3887910c7464e6f096b819ac6",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "3ae897d1907f0a133105224af0303373da56152b0ee1c196799d5186e177505d",
+        "duration": 29.309388,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014202-f76ce5c981/manifest.json",
+          "manifest_sha256": "65182f48f6339d2dc394ddb09e086390ebf0c1646d7e7ced9211a22be29eabdd",
+          "lossless_sha256": "ed69d24ae715bc77cfd7d471c4a84a11248dfbc623cd2d1bde9ff42f059ccf3d"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "needs_boundary_review",
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.0,
+          "relative_rms_threshold": 0.0071578,
+          "safe_quiet_margins": false,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.224,
+          "trailing_non_speech_seconds": 0.096,
+          "speech_region_count": 13,
+          "safe_voiced_margins": true,
+          "method": "Silero VAD with no padding; supplementary speech-vs-music evidence, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "editorial_reason": "Reconnaissances finales comparées ; questions, choix et corrigés relus ; segmentation et orthographe corrigées.",
+      "numeric_resolution": null,
+      "previous_duration": 32.31,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/fetes/17-fêtes_anniversaire-de-Margot-objets.mp3",
+      "previous_sha256": "fec146a1c3371d8ebc2dc92240eb1b920c3d1e36da2952a799a2735793d2ea97",
+      "candidate_sha256": "ffb84d28f7fc99ee347732ad354178aced5e39a0e99e5d6cdec2954af8237a17",
+      "rollback_git_blob": "89d595bfb2af8a9369536939df8e6269d70bc9c9",
+      "source_id": "additional-20261102:mdf-a1-abc:48:b71e48ec4f9a:25e1a588",
+      "source_sha256": "b71e48ec4f9ab64688c7aeef6617b6e3f3c6b820e69bb7c7dc1205c2a44ec84f",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "ffb84d28f7fc99ee347732ad354178aced5e39a0e99e5d6cdec2954af8237a17",
+        "duration": 24.555102,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014137-898abeb4aa/manifest.json",
+          "manifest_sha256": "91968034a8851c52af9821d5ca6843197a1c798635ebda3f4e0f8ca272a7617b",
+          "lossless_sha256": "4b90afb51d65e9b1ec5ec86bcc9ea812027e32a40ccedca16aeec848cebe8e5f"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.34,
+          "trailing_quiet_seconds": 0.29,
+          "relative_rms_threshold": 0.0055181,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "editorial_reason": "Reconnaissances finales comparées ; questions, choix et corrigés relus ; segmentation et orthographe corrigées. Graphie Michel non épelée conservée.",
+      "numeric_resolution": null,
+      "previous_duration": 26.18,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/magasins/chers-clients-magasin-vetimarche.mp3",
+      "previous_sha256": "9203fe3c749087330e978c9153428d2c63c48024436da89a4b4465c18cdc0874",
+      "candidate_sha256": "a86f7df03b46d6fe79e39d1f8c508019846a3e91abdc6b31276e156a35d9b92c",
+      "rollback_git_blob": "279fc3b2e57d24c8c931cce225f782818529c5c9",
+      "source_id": "09035276:036:f45c6c284909",
+      "source_sha256": "f45c6c284909c5f9de8aea32ccba5721f5fa414b63799962c89868c9af1cee39",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "a86f7df03b46d6fe79e39d1f8c508019846a3e91abdc6b31276e156a35d9b92c",
+        "duration": 20.48,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T013542-7316acc584/manifest.json",
+          "manifest_sha256": "13dc62a5a5b92b6f8e620f2997d9ab171bb46bf16bffd454ea0c09895c135d99",
+          "lossless_sha256": "745beb312838b1a2983618420f592c1b29efe205204d28b32fad599b997c3204"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "needs_boundary_review",
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.0,
+          "relative_rms_threshold": 0.0065722,
+          "safe_quiet_margins": false,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.32,
+          "trailing_non_speech_seconds": 0.568,
+          "speech_region_count": 9,
+          "safe_voiced_margins": true,
+          "method": "Silero VAD with no padding; supplementary speech-vs-music evidence, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "editorial_reason": "Reconnaissances finales comparées ; questions, choix et corrigés relus ; segmentation et orthographe corrigées.",
+      "numeric_resolution": null,
+      "previous_duration": 24.69,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    }
+  ],
+  "exercise_changes": [
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-a1j-s2-co-2",
+      "before": {
+        "id": "tcf-a1j-s2-co-2",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Test blanc A1 Junior · série 2 · La fête du sport",
+        "scenario": "loisirs",
+        "scene": "La fête du sport",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/loisirs/la-fete-du-sport.mp3",
+          "transcription": "Vous avez entre 12 et 17 ans et vous aimez le sport ?\nAujourd’hui, vous pouvez essayer tous les sports gratuitement à la fête de la ville, place de la Mairie : judo à 9 h avec Damien, tennis à 10 h avec Chloé, basket à 14 h avec Anne.\nEt vous pouvez gagner un ballon !"
+        },
+        "questions": [
+          {
+            "enonce": "Quel âge faut-il avoir pour participer aux activités ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Entre 12 et 17 ans",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Entre 6 et 11 ans"
+              },
+              {
+                "id": "c",
+                "texte": "Entre 18 et 25 ans"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Entre 12 et 17 ans"
+              }
+            }
+          },
+          {
+            "enonce": "Où se déroule la fête sportive ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Place de la Mairie",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Dans le parc municipal"
+              },
+              {
+                "id": "c",
+                "texte": "Dans la cour de l’école"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Place de la Mairie"
+              }
+            }
+          },
+          {
+            "enonce": "Combien coûte l’essai des sports ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Il est gratuit",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Il coûte 5 euros"
+              },
+              {
+                "id": "c",
+                "texte": "Il coûte 12 euros"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Il est gratuit"
+              }
+            }
+          },
+          {
+            "enonce": "Quel sport peut-on essayer à 9 h ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Le judo",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Le tennis"
+              },
+              {
+                "id": "c",
+                "texte": "Le basket"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Le judo"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/vocabulaire/sports/judo.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/co/bg/court-tennis.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/vocabulaire/sports/basket.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "Avec qui peut-on essayer le tennis ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Chloé",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Damien"
+              },
+              {
+                "id": "c",
+                "texte": "Anne"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Chloé"
+              }
+            }
+          },
+          {
+            "enonce": "À quelle heure commence le basket ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "À 14 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "À 10 h"
+              },
+              {
+                "id": "c",
+                "texte": "À 16 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "À 14 h"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1400-dessinee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1000-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1600-dessinee.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "Quel objet peut-on gagner ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un ballon",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Une raquette"
+              },
+              {
+                "id": "c",
+                "texte": "Un vélo"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un ballon"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/vocabulaire/sports/ballon-de-football.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/vocabulaire/sports/raquette.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/vocabulaire/transports/velo.webp"
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null
+      },
+      "after": {
+        "id": "tcf-a1j-s2-co-2",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Test blanc A1 Junior · série 2 · La fête du sport",
+        "scenario": "loisirs",
+        "scene": "La fête du sport",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/loisirs/la-fete-du-sport.mp3",
+          "transcription": "Vous avez entre 12 et 17 ans et vous aimez le sport? Aujourd'hui, vous pouvez essayer tous les sports gratuitement à la fête de la ville, Place de la mairie. Judo à 9h avec Damien, Tennis à 10h avec Chloé, Basket à 14h avec Anne et vous pouvez gagner un ballon!"
+        },
+        "questions": [
+          {
+            "enonce": "Quel âge faut-il avoir pour participer aux activités ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Entre 12 et 17 ans",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Entre 6 et 11 ans"
+              },
+              {
+                "id": "c",
+                "texte": "Entre 18 et 25 ans"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Entre 12 et 17 ans"
+              }
+            }
+          },
+          {
+            "enonce": "Où se déroule la fête sportive ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Place de la Mairie",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Dans le parc municipal"
+              },
+              {
+                "id": "c",
+                "texte": "Dans la cour de l’école"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Place de la Mairie"
+              }
+            }
+          },
+          {
+            "enonce": "Combien coûte l’essai des sports ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Il est gratuit",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Il coûte 5 euros"
+              },
+              {
+                "id": "c",
+                "texte": "Il coûte 12 euros"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Il est gratuit"
+              }
+            }
+          },
+          {
+            "enonce": "Quel sport peut-on essayer à 9 h ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Le judo",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Le tennis"
+              },
+              {
+                "id": "c",
+                "texte": "Le basket"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Le judo"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/vocabulaire/sports/judo.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/co/bg/court-tennis.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/vocabulaire/sports/basket.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "Avec qui peut-on essayer le tennis ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Chloé",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Damien"
+              },
+              {
+                "id": "c",
+                "texte": "Anne"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Chloé"
+              }
+            }
+          },
+          {
+            "enonce": "À quelle heure commence le basket ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "À 14 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "À 10 h"
+              },
+              {
+                "id": "c",
+                "texte": "À 16 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "À 14 h"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1400-dessinee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1000-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1600-dessinee.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "Quel objet peut-on gagner ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un ballon",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Une raquette"
+              },
+              {
+                "id": "c",
+                "texte": "Un vélo"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un ballon"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/vocabulaire/sports/ballon-de-football.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/vocabulaire/sports/raquette.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/vocabulaire/transports/velo.webp"
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null
+      }
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s1-co-2",
+      "before": {
+        "id": "tcf-ss-a1-s1-co-2",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Annonce 2",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/magasins/profitez-promotions-exceptionnelles-chez.mp3",
+          "transcription": "Profitez de promotions exceptionnelles chez « Mega Jeux » : moins 10 % sur les jeux vidéo et moins 20 % sur les accessoires.\nSi vous dépensez 150 euros dans notre magasin, nous vous offrons une remise de 25 euros.\nOffre valable jusqu'au 30 janvier.\nOuverture exceptionnelle le dimanche 29."
+        },
+        "questions": [
+          {
+            "enonce": "Quel magasin propose les promotions ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Mega Jeux",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Mega Sport"
+              },
+              {
+                "id": "c",
+                "texte": "Mega Livre"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Mega Jeux"
+              }
+            }
+          },
+          {
+            "enonce": "Quelle réduction concerne les jeux vidéo ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "10 %",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "20 %"
+              },
+              {
+                "id": "c",
+                "texte": "30 %"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "10 %"
+              }
+            }
+          },
+          {
+            "enonce": "Quelle réduction concerne les accessoires ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "20 %",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "10 %"
+              },
+              {
+                "id": "c",
+                "texte": "30 %"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "20 %"
+              }
+            }
+          },
+          {
+            "enonce": "Quel montant faut-il dépenser pour recevoir la remise ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "150 euros",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "100 euros"
+              },
+              {
+                "id": "c",
+                "texte": "200 euros"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "150 euros"
+              }
+            }
+          },
+          {
+            "enonce": "Quel est le montant de la remise offerte ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "25 euros",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "15 euros"
+              },
+              {
+                "id": "c",
+                "texte": "35 euros"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "25 euros"
+              }
+            }
+          },
+          {
+            "enonce": "Jusqu’à quelle date l’offre est-elle valable ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Jusqu’au 30 janvier",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Jusqu’au 20 janvier"
+              },
+              {
+                "id": "c",
+                "texte": "Jusqu’au 30 mars"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Jusqu’au 30 janvier"
+              }
+            }
+          },
+          {
+            "enonce": "Quel jour le magasin ouvre-t-il exceptionnellement ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Dimanche 29",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Samedi 28"
+              },
+              {
+                "id": "c",
+                "texte": "Lundi 30"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Dimanche 29"
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "magasins",
+        "scene": "Profitez promotions exceptionnelles chez"
+      },
+      "after": {
+        "id": "tcf-ss-a1-s1-co-2",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Annonce 2",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/magasins/profitez-promotions-exceptionnelles-chez.mp3",
+          "transcription": "Profitez de promotions exceptionnelles chez Mega Jeux, -10% sur les jeux vidéo et -20% sur les accessoires. Si vous dépensez 150 euros dans notre magasin, nous vous offrons une remise de 25 euros. Offre valable jusqu'au 30 janvier. Ouverture exceptionnelle le dimanche 29."
+        },
+        "questions": [
+          {
+            "enonce": "Quel magasin propose les promotions ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Mega Jeux",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Mega Sport"
+              },
+              {
+                "id": "c",
+                "texte": "Mega Livre"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Mega Jeux"
+              }
+            }
+          },
+          {
+            "enonce": "Quelle réduction concerne les jeux vidéo ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "10 %",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "20 %"
+              },
+              {
+                "id": "c",
+                "texte": "30 %"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "10 %"
+              }
+            }
+          },
+          {
+            "enonce": "Quelle réduction concerne les accessoires ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "20 %",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "10 %"
+              },
+              {
+                "id": "c",
+                "texte": "30 %"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "20 %"
+              }
+            }
+          },
+          {
+            "enonce": "Quel montant faut-il dépenser pour recevoir la remise ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "150 euros",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "100 euros"
+              },
+              {
+                "id": "c",
+                "texte": "200 euros"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "150 euros"
+              }
+            }
+          },
+          {
+            "enonce": "Quel est le montant de la remise offerte ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "25 euros",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "15 euros"
+              },
+              {
+                "id": "c",
+                "texte": "35 euros"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "25 euros"
+              }
+            }
+          },
+          {
+            "enonce": "Jusqu’à quelle date l’offre est-elle valable ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Jusqu’au 30 janvier",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Jusqu’au 20 janvier"
+              },
+              {
+                "id": "c",
+                "texte": "Jusqu’au 30 mars"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Jusqu’au 30 janvier"
+              }
+            }
+          },
+          {
+            "enonce": "Quel jour le magasin ouvre-t-il exceptionnellement ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Dimanche 29",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Samedi 28"
+              },
+              {
+                "id": "c",
+                "texte": "Lundi 30"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Dimanche 29"
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "magasins",
+        "scene": "Profitez promotions exceptionnelles chez"
+      }
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s2-co-2",
+      "before": {
+        "id": "tcf-ss-a1-s2-co-2",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Radio 33",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/magasins/chers-clients-magasin-vetimarche.mp3",
+          "transcription": "Votre magasin vétit marcher place des fleurs et tout vert dimanche pour la fête des maires de 10h à 15h offrez une robe, une jute, un chapeau et en plus des réduction sur des dizaines de portalons pour 20 euros d'achat vétit marcher vous offre une perne de gants"
+        },
+        "questions": [
+          {
+            "enonce": "Où se trouve le magasin ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Place des Fleurs",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Place de la Gare"
+              },
+              {
+                "id": "c",
+                "texte": "Place de la Mairie"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Place des Fleurs"
+              }
+            }
+          },
+          {
+            "enonce": "Quel jour le magasin ouvre-t-il exceptionnellement ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Dimanche",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Lundi"
+              },
+              {
+                "id": "c",
+                "texte": "Samedi"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Dimanche"
+              }
+            }
+          },
+          {
+            "enonce": "À quelle heure le magasin ouvre-t-il ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "À 10 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "À 9 h"
+              },
+              {
+                "id": "c",
+                "texte": "À 11 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "À 10 h"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1000-dessinee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-0900-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1100-dessinee.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "À quelle heure le magasin ferme-t-il ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "À 15 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "À 18 h"
+              },
+              {
+                "id": "c",
+                "texte": "À 20 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "À 15 h"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1500-dessinee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-2000-dessinee.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "Quels vêtements bénéficient de réductions ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Des pantalons",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Des manteaux"
+              },
+              {
+                "id": "c",
+                "texte": "Des chemises"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Des pantalons"
+              }
+            }
+          },
+          {
+            "enonce": "À partir de quel montant d’achat reçoit-on un cadeau ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "20 euros",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "30 euros"
+              },
+              {
+                "id": "c",
+                "texte": "50 euros"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "20 euros"
+              }
+            }
+          },
+          {
+            "enonce": "Quel cadeau le magasin offre-t-il ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Une paire de gants",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Un chapeau"
+              },
+              {
+                "id": "c",
+                "texte": "Une écharpe"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Une paire de gants"
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "magasins",
+        "scene": "Chers clients magasin Vêtimarché"
+      },
+      "after": {
+        "id": "tcf-ss-a1-s2-co-2",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Radio 33",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/magasins/chers-clients-magasin-vetimarche.mp3",
+          "transcription": "Votre magasin Véti Marché Place des Fleurs est ouvert dimanche pour la fête des mères de 10h à 15h. Offrez une robe, une jupe, un chapeau et en plus des réductions sur des dizaines de pantalons. Pour 20€ d'achat, Véti Marché vous offre une paire de gants."
+        },
+        "questions": [
+          {
+            "enonce": "Où se trouve le magasin ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Place des Fleurs",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Place de la Gare"
+              },
+              {
+                "id": "c",
+                "texte": "Place de la Mairie"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Place des Fleurs"
+              }
+            }
+          },
+          {
+            "enonce": "Quel jour le magasin ouvre-t-il exceptionnellement ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Dimanche",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Lundi"
+              },
+              {
+                "id": "c",
+                "texte": "Samedi"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Dimanche"
+              }
+            }
+          },
+          {
+            "enonce": "À quelle heure le magasin ouvre-t-il ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "À 10 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "À 9 h"
+              },
+              {
+                "id": "c",
+                "texte": "À 11 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "À 10 h"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1000-dessinee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-0900-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1100-dessinee.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "À quelle heure le magasin ferme-t-il ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "À 15 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "À 18 h"
+              },
+              {
+                "id": "c",
+                "texte": "À 20 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "À 15 h"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1500-dessinee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-2000-dessinee.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "Quels vêtements bénéficient de réductions ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Des pantalons",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Des manteaux"
+              },
+              {
+                "id": "c",
+                "texte": "Des chemises"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Des pantalons"
+              }
+            }
+          },
+          {
+            "enonce": "À partir de quel montant d’achat reçoit-on un cadeau ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "20 euros",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "30 euros"
+              },
+              {
+                "id": "c",
+                "texte": "50 euros"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "20 euros"
+              }
+            }
+          },
+          {
+            "enonce": "Quel cadeau le magasin offre-t-il ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Une paire de gants",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Un chapeau"
+              },
+              {
+                "id": "c",
+                "texte": "Une écharpe"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Une paire de gants"
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "magasins",
+        "scene": "Chers clients magasin Vêtimarché"
+      }
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s10-co-2",
+      "before": {
+        "id": "tcf-ss-a1-s10-co-2",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Objets 2",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/fetes/17-fêtes_anniversaire-de-Margot-objets.mp3",
+          "transcription": "J'ai acheté une jolie robe rouge avec un nœud en soie pour la fête d'anniversaire de Margot.\nSally m'a gentiment prêté ses chaussures.\nJe vais lui chanter une belle chanson, j'apporte ma guitare.\nAs-tu commandé le gâteau ?\nElle aime le chocolat blanc et les fruits rouges.\nMichel s'occupe de la décoration."
+        },
+        "questions": [
+          {
+            "enonce": "Quel vêtement la personne a-t-elle acheté ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Une robe rouge",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Une veste bleue"
+              },
+              {
+                "id": "c",
+                "texte": "Une jupe verte"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Une robe rouge"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/437924daf0f1.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/a840cdfdb301.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/88a6b997029d.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "De quelle matière est le nœud de la robe ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "De soie",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "De laine"
+              },
+              {
+                "id": "c",
+                "texte": "De coton"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "De soie"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/vocabulaire/materiaux/soie.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/vocabulaire/materiaux/laine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/vocabulaire/materiaux/coton.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "Pour quelle occasion a-t-elle acheté la robe ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "L’anniversaire de Margot",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Le mariage de Sally"
+              },
+              {
+                "id": "c",
+                "texte": "Un concert de Michel"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "L’anniversaire de Margot"
+              }
+            }
+          },
+          {
+            "enonce": "Qui lui a prêté des chaussures ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Sally",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Margot"
+              },
+              {
+                "id": "c",
+                "texte": "Marie"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Sally"
+              }
+            }
+          },
+          {
+            "enonce": "Quel instrument va-t-elle apporter ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Sa guitare",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Son violon"
+              },
+              {
+                "id": "c",
+                "texte": "Sa flûte"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Sa guitare"
+              }
+            }
+          },
+          {
+            "enonce": "Que va-t-elle faire pour Margot ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Chanter une chanson",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Danser un ballet"
+              },
+              {
+                "id": "c",
+                "texte": "Réciter un poème"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Chanter une chanson"
+              }
+            }
+          },
+          {
+            "enonce": "Quels goûts Margot aime-t-elle pour le gâteau ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Le chocolat blanc et les fruits rouges",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Le chocolat noir et les agrumes"
+              },
+              {
+                "id": "c",
+                "texte": "La vanille et la noix de coco"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Le chocolat blanc et les fruits rouges"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co306-chocolat-blanc-fruits-rouges-dessine.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co306-chocolat-noir-agrumes-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co306-vanille-noix-coco-dessine.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "Qui s’occupe de la décoration ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Michel",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Sally"
+              },
+              {
+                "id": "c",
+                "texte": "Margot"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Michel"
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "fetes",
+        "scene": "L'anniversaire de Margot"
+      },
+      "after": {
+        "id": "tcf-ss-a1-s10-co-2",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Objets 2",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/fetes/17-fêtes_anniversaire-de-Margot-objets.mp3",
+          "transcription": "J'ai acheté une jolie robe rouge avec un nœud en soie pour la fête d'anniversaire de Margot. Sally m'a gentiment prêté ses chaussures. Je vais lui chanter une belle chanson. J'apporte ma guitare. As-tu commandé le gâteau ? Elle aime le chocolat blanc et les fruits rouges. Michel s'occupe de la décoration."
+        },
+        "questions": [
+          {
+            "enonce": "Quel vêtement la personne a-t-elle acheté ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Une robe rouge",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Une veste bleue"
+              },
+              {
+                "id": "c",
+                "texte": "Une jupe verte"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Une robe rouge"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/437924daf0f1.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/a840cdfdb301.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/88a6b997029d.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "De quelle matière est le nœud de la robe ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "De soie",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "De laine"
+              },
+              {
+                "id": "c",
+                "texte": "De coton"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "De soie"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/vocabulaire/materiaux/soie.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/vocabulaire/materiaux/laine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/vocabulaire/materiaux/coton.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "Pour quelle occasion a-t-elle acheté la robe ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "L’anniversaire de Margot",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Le mariage de Sally"
+              },
+              {
+                "id": "c",
+                "texte": "Un concert de Michel"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "L’anniversaire de Margot"
+              }
+            }
+          },
+          {
+            "enonce": "Qui lui a prêté des chaussures ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Sally",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Margot"
+              },
+              {
+                "id": "c",
+                "texte": "Marie"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Sally"
+              }
+            }
+          },
+          {
+            "enonce": "Quel instrument va-t-elle apporter ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Sa guitare",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Son violon"
+              },
+              {
+                "id": "c",
+                "texte": "Sa flûte"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Sa guitare"
+              }
+            }
+          },
+          {
+            "enonce": "Que va-t-elle faire pour Margot ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Chanter une chanson",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Danser un ballet"
+              },
+              {
+                "id": "c",
+                "texte": "Réciter un poème"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Chanter une chanson"
+              }
+            }
+          },
+          {
+            "enonce": "Quels goûts Margot aime-t-elle pour le gâteau ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Le chocolat blanc et les fruits rouges",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Le chocolat noir et les agrumes"
+              },
+              {
+                "id": "c",
+                "texte": "La vanille et la noix de coco"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Le chocolat blanc et les fruits rouges"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co306-chocolat-blanc-fruits-rouges-dessine.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co306-chocolat-noir-agrumes-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co306-vanille-noix-coco-dessine.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "Qui s’occupe de la décoration ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Michel",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Sally"
+              },
+              {
+                "id": "c",
+                "texte": "Margot"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Michel"
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "fetes",
+        "scene": "L'anniversaire de Margot"
+      }
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "delf-a1-2022-co-ex1-09",
+      "before": {
+        "id": "delf-a1-2022-co-ex1-09",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Identifier un événement",
+        "scenario": "vie-quotidienne",
+        "scene": "Piste 09",
+        "consigne": "Écoutez les messages et cochez les bonnes réponses.",
+        "support": {
+          "transcription": [
+            "Bonjour. Pouvez-vous me rappeler au 01.47.72.33.09 ? Merci.",
+            "Le numéro de téléphone de la direction est le 03.20.90.01.00.",
+            "Peux-tu appeler Julia sur son téléphone portable ? C’est le 06.09.77.50.11."
+          ],
+          "audios": [
+            "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_09-1.mp3",
+            "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_09-2.mp3",
+            "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_09-3.mp3"
+          ],
+          "images_descriptions": [
+            "Scénario vidéo (audio CO moyen, « Piste 09 — dialogue 1 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Bonjour » ; B : « Pouvez-vous me rappeler au 01.47.72.33.09 ? » ; A : « Merci ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Piste 09 — dialogue 2 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Le numéro de téléphone de la direction est le 03.20.90.01.00 ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Piste 09 — dialogue 3 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Peux-tu appeler Julia sur son téléphone portable ? » ; B : « C’est le 06.09.77.50.11 ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
+          ]
+        },
+        "questions": [
+          {
+            "enonce": "Quel numéro faut-il rappeler ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "01 47 72 33 09",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "01 47 27 33 09"
+              },
+              {
+                "id": "c",
+                "texte": "01 47 72 09 33"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "01 47 72 33 09"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Que demande la personne ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "De la rappeler",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "De venir chez elle"
+              },
+              {
+                "id": "c",
+                "texte": "De lui envoyer un courrier"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "De la rappeler"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "À quel service appartient le numéro annoncé ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La direction",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Le secrétariat médical"
+              },
+              {
+                "id": "c",
+                "texte": "La bibliothèque"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "La direction"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Quel numéro permet de joindre ce service ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "03 20 90 01 00",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "03 20 09 01 00"
+              },
+              {
+                "id": "c",
+                "texte": "03 20 90 10 00"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "03 20 90 01 00"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Qui faut-il appeler ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Julia",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Julie"
+              },
+              {
+                "id": "c",
+                "texte": "Pauline"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Julia"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Sur quel téléphone faut-il l'appeler ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Son portable",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Son téléphone de bureau"
+              },
+              {
+                "id": "c",
+                "texte": "Son téléphone fixe"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Son portable"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quel est son numéro ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "06 09 77 50 11",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "06 09 77 15 11"
+              },
+              {
+                "id": "c",
+                "texte": "06 90 77 50 11"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "06 09 77 50 11"
+              }
+            },
+            "audio": 3
+          }
+        ],
+        "consigne_supplementaire": null
+      },
+      "after": {
+        "id": "delf-a1-2022-co-ex1-09",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Identifier un événement",
+        "scenario": "vie-quotidienne",
+        "scene": "Piste 09",
+        "consigne": "Écoutez les messages et cochez les bonnes réponses.",
+        "support": {
+          "transcription": [
+            "Bonjour, pouvez-vous me rappeler au 01 47 72 33 09 ? Merci.",
+            "Le numéro de téléphone de la direction est le 03.20.90.01.00.",
+            "Peux-tu appeler Julia sur son téléphone portable ? C’est le 06.09.77.50.11."
+          ],
+          "audios": [
+            "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_09-1.mp3",
+            "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_09-2.mp3",
+            "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_09-3.mp3"
+          ],
+          "images_descriptions": [
+            "Scénario vidéo (audio CO moyen, « Piste 09 — dialogue 1 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Bonjour » ; B : « Pouvez-vous me rappeler au 01.47.72.33.09 ? » ; A : « Merci ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Piste 09 — dialogue 2 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Le numéro de téléphone de la direction est le 03.20.90.01.00 ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Piste 09 — dialogue 3 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Peux-tu appeler Julia sur son téléphone portable ? » ; B : « C’est le 06.09.77.50.11 ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
+          ]
+        },
+        "questions": [
+          {
+            "enonce": "Quel numéro faut-il rappeler ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "01 47 72 33 09",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "01 47 27 33 09"
+              },
+              {
+                "id": "c",
+                "texte": "01 47 72 09 33"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "01 47 72 33 09"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Que demande la personne ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "De la rappeler",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "De venir chez elle"
+              },
+              {
+                "id": "c",
+                "texte": "De lui envoyer un courrier"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "De la rappeler"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "À quel service appartient le numéro annoncé ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La direction",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Le secrétariat médical"
+              },
+              {
+                "id": "c",
+                "texte": "La bibliothèque"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "La direction"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Quel numéro permet de joindre ce service ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "03 20 90 01 00",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "03 20 09 01 00"
+              },
+              {
+                "id": "c",
+                "texte": "03 20 90 10 00"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "03 20 90 01 00"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Qui faut-il appeler ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Julia",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Julie"
+              },
+              {
+                "id": "c",
+                "texte": "Pauline"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Julia"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Sur quel téléphone faut-il l'appeler ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Son portable",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Son téléphone de bureau"
+              },
+              {
+                "id": "c",
+                "texte": "Son téléphone fixe"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Son portable"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quel est son numéro ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "06 09 77 50 11",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "06 09 77 15 11"
+              },
+              {
+                "id": "c",
+                "texte": "06 90 77 50 11"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "06 09 77 50 11"
+              }
+            },
+            "audio": 3
+          }
+        ],
+        "consigne_supplementaire": null
+      }
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "delf-a1-2022-co-ex2-15",
+      "before": {
+        "id": "delf-a1-2022-co-ex2-15",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Identifier une activité",
+        "scenario": "actualite",
+        "scene": "Piste 15",
+        "consigne": "Écoutez les messages et cochez les bonnes réponses.",
+        "support": {
+          "transcription": [
+            "Après la pluie et les températures basses, enfin 18 degrés à Paris !",
+            "N’oubliez pas votre manteau, votre écharpe et vos gants ! Seulement 4 degrés à Lille !",
+            "Aujourd’hui, un climat agréable avec 15 degrés à Paris, 19 degrés à Lyon et 23 degrés à Bordeaux."
+          ],
+          "audios": [
+            "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_15-1.mp3",
+            "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_15-2.mp3",
+            "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_15-3.mp3"
+          ],
+          "images_descriptions": [
+            "Scénario vidéo (audio CO moyen, « Piste 15 — dialogue 1 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Après la pluie et les températures basses, enfin 18 degrés à Paris ! ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Piste 15 — dialogue 2 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « N’oubliez pas votre manteau, votre écharpe et vos gants ! » ; B : « Seulement 4 degrés à Lille ! ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Piste 15 — dialogue 3 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Aujourd’hui, un climat agréable avec 15 degrés à Paris, 19 degrés à Lyon et 23 degrés à Bordeaux ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
+          ]
+        },
+        "questions": [
+          {
+            "enonce": "Quelle température est annoncée à Paris ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "18 degrés",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "8 degrés"
+              },
+              {
+                "id": "c",
+                "texte": "28 degrés"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "18 degrés"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Quel temps y avait-il avant cette amélioration ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "De la pluie et des températures basses",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Du soleil et une forte chaleur"
+              },
+              {
+                "id": "c",
+                "texte": "Des orages et des températures élevées"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "De la pluie et des températures basses"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Quelle température est annoncée à Lille ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "4 degrés",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "14 degrés"
+              },
+              {
+                "id": "c",
+                "texte": "24 degrés"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "4 degrés"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Quels vêtements faut-il prendre ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un manteau, une écharpe et des gants",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Un short et un tee-shirt"
+              },
+              {
+                "id": "c",
+                "texte": "Une robe et des sandales"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un manteau, une écharpe et des gants"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Quelle température est annoncée à Paris ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "15 degrés",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "19 degrés"
+              },
+              {
+                "id": "c",
+                "texte": "23 degrés"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "15 degrés"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quelle température est annoncée à Lyon ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "19 degrés",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "15 degrés"
+              },
+              {
+                "id": "c",
+                "texte": "23 degrés"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "19 degrés"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quelle température est annoncée à Bordeaux ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "23 degrés",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "15 degrés"
+              },
+              {
+                "id": "c",
+                "texte": "19 degrés"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "23 degrés"
+              }
+            },
+            "audio": 3
+          }
+        ],
+        "consigne_supplementaire": null
+      },
+      "after": {
+        "id": "delf-a1-2022-co-ex2-15",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Identifier une activité",
+        "scenario": "actualite",
+        "scene": "Piste 15",
+        "consigne": "Écoutez les messages et cochez les bonnes réponses.",
+        "support": {
+          "transcription": [
+            "Après la pluie et les températures basses, enfin 18 degrés à Paris.",
+            "N’oubliez pas votre manteau, votre écharpe et vos gants ! Seulement 4 degrés à Lille !",
+            "Aujourd’hui, un climat agréable avec 15 degrés à Paris, 19 degrés à Lyon et 23 degrés à Bordeaux."
+          ],
+          "audios": [
+            "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_15-1.mp3",
+            "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_15-2.mp3",
+            "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_15-3.mp3"
+          ],
+          "images_descriptions": [
+            "Scénario vidéo (audio CO moyen, « Piste 15 — dialogue 1 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Après la pluie et les températures basses, enfin 18 degrés à Paris ! ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Piste 15 — dialogue 2 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « N’oubliez pas votre manteau, votre écharpe et vos gants ! » ; B : « Seulement 4 degrés à Lille ! ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Piste 15 — dialogue 3 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Aujourd’hui, un climat agréable avec 15 degrés à Paris, 19 degrés à Lyon et 23 degrés à Bordeaux ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
+          ]
+        },
+        "questions": [
+          {
+            "enonce": "Quelle température est annoncée à Paris ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "18 degrés",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "8 degrés"
+              },
+              {
+                "id": "c",
+                "texte": "28 degrés"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "18 degrés"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Quel temps y avait-il avant cette amélioration ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "De la pluie et des températures basses",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Du soleil et une forte chaleur"
+              },
+              {
+                "id": "c",
+                "texte": "Des orages et des températures élevées"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "De la pluie et des températures basses"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Quelle température est annoncée à Lille ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "4 degrés",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "14 degrés"
+              },
+              {
+                "id": "c",
+                "texte": "24 degrés"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "4 degrés"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Quels vêtements faut-il prendre ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un manteau, une écharpe et des gants",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Un short et un tee-shirt"
+              },
+              {
+                "id": "c",
+                "texte": "Une robe et des sandales"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un manteau, une écharpe et des gants"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Quelle température est annoncée à Paris ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "15 degrés",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "19 degrés"
+              },
+              {
+                "id": "c",
+                "texte": "23 degrés"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "15 degrés"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quelle température est annoncée à Lyon ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "19 degrés",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "15 degrés"
+              },
+              {
+                "id": "c",
+                "texte": "23 degrés"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "19 degrés"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quelle température est annoncée à Bordeaux ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "23 degrés",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "15 degrés"
+              },
+              {
+                "id": "c",
+                "texte": "19 degrés"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "23 degrés"
+              }
+            },
+            "audio": 3
+          }
+        ],
+        "consigne_supplementaire": null
+      }
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "delf-a1-2022-co-ex2-19",
+      "before": {
+        "id": "delf-a1-2022-co-ex2-19",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Identifier une activité",
+        "scenario": "ecole",
+        "scene": "Piste 19",
+        "consigne": "Écoutez les messages et cochez les bonnes réponses.",
+        "support": {
+          "transcription": [
+            "Oui, c’est Brigitte. Je suis avec Catherine. On mange. Est-ce que tu viens au concert samedi ? Appelle-moi ! À bientôt.",
+            "Salut, c’est Samuel. Je mange chez Amélie et on se demande comment s’appelle ton école de théâtre. Rappelle-nous. Merci !",
+            "Allô ! C’est Lucie. Je suis à la caisse. Est-ce que j’achète de la viande pour ce soir ? Appelle-moi vite ! Bisous."
+          ],
+          "audios": [
+            "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_19-1.mp3",
+            "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_19-2.mp3",
+            "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_19-3.mp3"
+          ],
+          "images_descriptions": [
+            "Scénario vidéo (audio CO moyen, « Piste 19 — dialogue 1 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Oui, c’est Brigitte » ; B : « Je suis avec Catherine » ; A : « On mange » ; B : « Est-ce que tu viens au concert samedi ? » ; A : « Appelle-moi ! » ; B : « À bientôt ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Piste 19 — dialogue 2 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Salut, c’est Samuel » ; B : « Je mange chez Amélie et on se demande comment s’appelle ton école de théâtre » ; A : « Rappelle-nous » ; B : « Merci ! ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Piste 19 — dialogue 3 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Allô ! » ; B : « C’est Lucie » ; A : « Je suis à la caisse » ; B : « Est-ce que j’achète de la viande pour ce soir ? » ; A : « Appelle-moi vite ! » ; B : « Bisous ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
+          ]
+        },
+        "questions": [
+          {
+            "enonce": "Qui appelle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Brigitte",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Catherine"
+              },
+              {
+                "id": "c",
+                "texte": "Lucie"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Brigitte"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Avec qui est-elle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Catherine",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Amélie"
+              },
+              {
+                "id": "c",
+                "texte": "Julie"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Catherine"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Quelle sortie est proposée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un concert samedi",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Un cinéma dimanche"
+              },
+              {
+                "id": "c",
+                "texte": "Une piscine mercredi"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un concert samedi"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Qui appelle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Samuel",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Jacques"
+              },
+              {
+                "id": "c",
+                "texte": "Julien"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Samuel"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Chez qui mange-t-il ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Amélie",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Catherine"
+              },
+              {
+                "id": "c",
+                "texte": "Brigitte"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Amélie"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Quelle information demande-t-il ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Le nom de l'école de théâtre",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "L'adresse de l'école de musique"
+              },
+              {
+                "id": "c",
+                "texte": "Le prix de l'école de danse"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Le nom de l'école de théâtre"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Qui appelle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Lucie",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Amélie"
+              },
+              {
+                "id": "c",
+                "texte": "Brigitte"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Lucie"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Où se trouve-t-elle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "À la caisse",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "À la maison"
+              },
+              {
+                "id": "c",
+                "texte": "À la gare"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "À la caisse"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-caisse-dessinee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quel achat veut-elle faire confirmer ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La viande pour ce soir",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Le pain pour demain"
+              },
+              {
+                "id": "c",
+                "texte": "Les fruits pour dimanche"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "La viande pour ce soir"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Que Brigitte et Catherine font-elles pendant l'appel ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Elles mangent",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Elles travaillent"
+              },
+              {
+                "id": "c",
+                "texte": "Elles voyagent"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Elles mangent"
+              }
+            },
+            "audio": 1
+          }
+        ],
+        "consigne_supplementaire": null
+      },
+      "after": {
+        "id": "delf-a1-2022-co-ex2-19",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Identifier une activité",
+        "scenario": "ecole",
+        "scene": "Piste 19",
+        "consigne": "Écoutez les messages et cochez les bonnes réponses.",
+        "support": {
+          "transcription": [
+            "Oui, c'est Brigitte. Je suis avec Catherine. On mange. Est-ce que tu viens au concert, samedi ? Appelle-moi. À bientôt !",
+            "Salut, c’est Samuel. Je mange chez Amélie et on se demande comment s’appelle ton école de théâtre. Rappelle-nous. Merci !",
+            "Allô ! C’est Lucie. Je suis à la caisse. Est-ce que j’achète de la viande pour ce soir ? Appelle-moi vite ! Bisous."
+          ],
+          "audios": [
+            "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_19-1.mp3",
+            "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_19-2.mp3",
+            "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_19-3.mp3"
+          ],
+          "images_descriptions": [
+            "Scénario vidéo (audio CO moyen, « Piste 19 — dialogue 1 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Oui, c’est Brigitte » ; B : « Je suis avec Catherine » ; A : « On mange » ; B : « Est-ce que tu viens au concert samedi ? » ; A : « Appelle-moi ! » ; B : « À bientôt ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Piste 19 — dialogue 2 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Salut, c’est Samuel » ; B : « Je mange chez Amélie et on se demande comment s’appelle ton école de théâtre » ; A : « Rappelle-nous » ; B : « Merci ! ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Piste 19 — dialogue 3 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Allô ! » ; B : « C’est Lucie » ; A : « Je suis à la caisse » ; B : « Est-ce que j’achète de la viande pour ce soir ? » ; A : « Appelle-moi vite ! » ; B : « Bisous ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
+          ]
+        },
+        "questions": [
+          {
+            "enonce": "Qui appelle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Brigitte",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Catherine"
+              },
+              {
+                "id": "c",
+                "texte": "Lucie"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Brigitte"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Avec qui est-elle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Catherine",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Amélie"
+              },
+              {
+                "id": "c",
+                "texte": "Julie"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Catherine"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Quelle sortie est proposée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un concert samedi",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Un cinéma dimanche"
+              },
+              {
+                "id": "c",
+                "texte": "Une piscine mercredi"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un concert samedi"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Qui appelle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Samuel",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Jacques"
+              },
+              {
+                "id": "c",
+                "texte": "Julien"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Samuel"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Chez qui mange-t-il ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Amélie",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Catherine"
+              },
+              {
+                "id": "c",
+                "texte": "Brigitte"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Amélie"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Quelle information demande-t-il ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Le nom de l'école de théâtre",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "L'adresse de l'école de musique"
+              },
+              {
+                "id": "c",
+                "texte": "Le prix de l'école de danse"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Le nom de l'école de théâtre"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Qui appelle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Lucie",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Amélie"
+              },
+              {
+                "id": "c",
+                "texte": "Brigitte"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Lucie"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Où se trouve-t-elle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "À la caisse",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "À la maison"
+              },
+              {
+                "id": "c",
+                "texte": "À la gare"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "À la caisse"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-caisse-dessinee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quel achat veut-elle faire confirmer ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La viande pour ce soir",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Le pain pour demain"
+              },
+              {
+                "id": "c",
+                "texte": "Les fruits pour dimanche"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "La viande pour ce soir"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Que Brigitte et Catherine font-elles pendant l'appel ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Elles mangent",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Elles travaillent"
+              },
+              {
+                "id": "c",
+                "texte": "Elles voyagent"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Elles mangent"
+              }
+            },
+            "audio": 1
+          }
+        ],
+        "consigne_supplementaire": null
+      }
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-ssx-a2-annonce-cles-retrouvees-co-2",
+      "before": {
+        "id": "tcf-ssx-a2-annonce-cles-retrouvees-co-2",
+        "niveau": "A1-A2",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Des clés retrouvées",
+        "scenario": "magasins",
+        "scene": "Des clés retrouvées",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/magasins/15-magasin-annonce-clé-retrouvé.mp3",
+          "transcription": "Mesdames, Messieurs, votre attention, s'il vous plaît.\nLe personnel du magasin a trouvé des clés.\nMerci à leur propriétaire de venir les récupérer à l'accueil avant la fermeture."
+        },
+        "questions": [
+          {
+            "enonce": "Qu'est-ce que le personnel a trouvé ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Des clés",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Un portefeuille"
+              },
+              {
+                "id": "c",
+                "texte": "Un téléphone"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Des clés"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/vocabulaire/objets/cle.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/vocabulaire/argent-administration/portefeuille.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/vocabulaire/technologie/téléphone.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "Où faut-il aller les chercher ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "À l'accueil",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "À la caisse"
+              },
+              {
+                "id": "c",
+                "texte": "Au parking"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "À l'accueil"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-accueil-dessine.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-caisse-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-parking-dessine.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "Avant quand faut-il venir ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Avant la fermeture",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Avant midi"
+              },
+              {
+                "id": "c",
+                "texte": "Demain matin"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Avant la fermeture"
+              }
+            }
+          }
+        ]
+      },
+      "after": {
+        "id": "tcf-ssx-a2-annonce-cles-retrouvees-co-2",
+        "niveau": "A1-A2",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Des clés retrouvées",
+        "scenario": "magasins",
+        "scene": "Des clés retrouvées",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/magasins/15-magasin-annonce-clé-retrouvé.mp3",
+          "transcription": "Mesdames, Messieurs, votre attention s'il vous plaît. Le personnel du magasin a trouvé des clés. Merci à leur propriétaire de venir les récupérer à l'accueil avant la fermeture."
+        },
+        "questions": [
+          {
+            "enonce": "Qu'est-ce que le personnel a trouvé ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Des clés",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Un portefeuille"
+              },
+              {
+                "id": "c",
+                "texte": "Un téléphone"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Des clés"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/vocabulaire/objets/cle.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/vocabulaire/argent-administration/portefeuille.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/vocabulaire/technologie/téléphone.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "Où faut-il aller les chercher ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "À l'accueil",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "À la caisse"
+              },
+              {
+                "id": "c",
+                "texte": "Au parking"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "À l'accueil"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-accueil-dessine.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-caisse-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-parking-dessine.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "Avant quand faut-il venir ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Avant la fermeture",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Avant midi"
+              },
+              {
+                "id": "c",
+                "texte": "Demain matin"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Avant la fermeture"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "status": "installed",
+  "received_originals_modified": 0,
+  "human_listening_performed": false
+}
