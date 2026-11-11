@@ -42,7 +42,7 @@ export default function CardsPage({ initial, initialWarning }: { initial: Classr
           </div>
         </div>{message && <p role="status">{message}</p>}
       </section>
-      <PrintCards colors={settings.colors} shapes={settings.shapes} paletteVersion={version} />
+      <PrintCards colors={settings.colors} shapes={settings.shapes} />
     </main>
   </div>
 }

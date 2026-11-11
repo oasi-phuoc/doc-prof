@@ -54,10 +54,10 @@ try {
       path: `${output}/01-setup-${width}.png`,
       fullPage: true,
     })
-    // The print kit remains six physical cards on each A4 portrait sheet.
+    // Each physical sheet has six cards, with adjacent front and back pages.
     await page.getByRole('spinbutton', { name: 'Jeux de cartes' }).fill('2')
     await page.emulateMedia({ media: 'print' })
-    assert.equal(await page.locator('.ci-card-sheet').count(), 2)
+    assert.equal(await page.locator('.ci-card-sheet').count(), 4)
     for (const sheet of await page.locator('.ci-card-sheet').all()) {
       const box = await sheet.boundingBox()
       assert.ok(Math.abs(box.width - (210 / 25.4) * 96) < 2)
@@ -181,7 +181,7 @@ try {
       viewport: `${width}x${height}`,
       questions: 10,
       ritual: 'passed',
-      print: '2 A4 sheets / 12 cards',
+      print: '4 A4 pages / 2 duplex sheets / 12 cards',
       resume: 'passed',
       errors,
     })

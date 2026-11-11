@@ -82,6 +82,7 @@ export function QuestionStage({
       {q.mode === 'choice' ? (
         <div
           className={`ci-answer-grid ci-count-${q.choices.length}`}
+          role="group"
           aria-label="Choix de réponse"
         >
           {q.choices.map((choice, i) => {

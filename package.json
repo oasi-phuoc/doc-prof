@@ -14,7 +14,11 @@
     "test:interactive:classroom": "node tests/interactive/classroom-browser.mjs",
     "test:interactive:media": "node tests/interactive/media-browser.mjs",
     "test:interactive:a4": "node tests/interactive/a4-regression.mjs",
-    "test:interactive:saved": "node tests/interactive/saved-fiches.mjs"
+    "test:interactive:saved": "node tests/interactive/saved-fiches.mjs",
+    "test:interactive:accessibility": "node tests/interactive/accessibility-browser.mjs",
+    "test:interactive:all": "node scripts/interactive-ci.mjs",
+    "check:interactive:budgets": "node scripts/interactive-budgets.mjs",
+    "check:interactive:secrets": "node scripts/interactive-secrets.mjs"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",
@@ -26,6 +30,7 @@
     "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
+    "@axe-core/playwright": "4.14.0",
     "@types/node": "^24.13.3",
     "@types/qrcode": "^1.5.6",
     "@types/react": "^19.2.18",

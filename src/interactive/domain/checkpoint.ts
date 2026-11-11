@@ -34,6 +34,11 @@ export function copySession(state: Session): Session {
 function validAttempt(game: Game, value: unknown, mode: PlayMode, ids = game.questions.map((q) => q.id)): boolean {
   if (!object(value) || Object.keys(value).some((key) => !['questionId', 'selected', 'correct', 'skipped', 'manual'].includes(key)) || typeof value.questionId !== 'string' || !ids.includes(value.questionId)) return false
   const question = game.questions.find((q) => q.id === value.questionId)
+  if (question && !value.skipped) {
+    const correctId = game.corrections[question.id]?.choiceId
+    const expected = mode === 'solo' && question.mode === 'choice' && correctId ? value.selected === correctId : undefined
+    if (value.correct !== expected) return false
+  }
   return !!question && !(value.selected !== undefined && (mode !== 'solo' || !question.choices.some((choice) => choice.id === value.selected)) ||
     value.correct !== undefined && (typeof value.correct !== 'boolean' || mode !== 'solo' || question.mode !== 'choice') ||
     value.skipped !== undefined && typeof value.skipped !== 'boolean' ||
@@ -78,6 +83,7 @@ function validState(game: Game, raw: unknown, mode: PlayMode): raw is Session {
   }
   if (raw.finished && (raw.index !== roundsFor(game).length - 1 || raw.phase !== 'thinking' || raw.paused || seen.size !== game.questions.length)) return false
   if (raw.phase === 'revealed' && current.some((q) => !history.some((attempt) => attempt.questionId === q.id && !attempt.skipped))) return false
+  if (raw.phase === 'revealed' && mode === 'solo' && current.some((q) => history.find((attempt) => attempt.questionId === q.id)?.selected !== selections[q.id])) return false
   for (const [id, vote] of Object.entries(raw.manualVotes)) {
     const question = game.questions.find((q) => q.id === id)
     if (!question || mode !== 'class') return false

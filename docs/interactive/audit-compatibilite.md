@@ -5,8 +5,8 @@
 - 2 049 types de catalogue ; 2 081 couples type/domaine après ajout des variantes TCF CSC et CFR.
 - 20 domaines déclarés : 19 présents dans les variantes du catalogue. `français` est un ancien domaine sans thème actif dans le catalogue actuel ; son fallback de configuration est une addition, ce qui ne constitue pas une couverture du français.
 - 50 layouts observés sur 52 déclarés. `vocab-write` et `audio-match` ne sortent pas dans ces tirages : couverture non démontrée.
-- 471 variantes produisent au moins une activité convertible : 343 uniquement en QCM source, 15 adaptations numériques vérifiées, 79 uniquement guidées et 34 mêlant QCM et activités guidées. Ce nombre décrit la conversion structurelle observée, pas une validation pédagogique de chaque famille, graine et niveau.
-- 1 610 variantes sont non prises en charge, y compris huit échecs de génération déjà présents : association de syllabes `alpha-x-gz` et sept exercices Soutien contenant un jeton sans catégorie. Les détails sont conservés dans l’inventaire ; aucune donnée de banque n’a été réécrite pour masquer ces erreurs.
+- 631 variantes produisent au moins une activité convertible : 503 uniquement en QCM source, 15 adaptations numériques vérifiées, 79 uniquement guidées et 34 mêlant QCM et activités guidées. Ce nombre décrit la conversion structurelle observée, pas une validation pédagogique de chaque famille, graine et niveau.
+- 1 450 variantes sont non prises en charge, y compris huit échecs de génération déjà présents : association de syllabes `alpha-x-gz` et sept exercices Soutien contenant un jeton sans catégorie. Les détails sont conservés dans l’inventaire ; aucune donnée de banque n’a été réécrite pour masquer ces erreurs.
 
 ## Contrats de conversion actuels
 
@@ -14,7 +14,8 @@
 |---|---|---|
 | Addition, soustraction, multiplication entières, résultat manquant | QCM adapté, calcul recalculé et comparé au corrigé source | Pas de division, fraction, décimal ou opérande manquant dans cette tranche |
 | Aire du carré | Côté positif, aire et unité vérifiées ; distracteurs géométriques distincts | Autres figures non prises en charge |
-| QCM `select` / `listen-check` | 2–6 choix source distincts ; réponse unique retrouvée | Choix audio individuels non pris en charge |
+| QCM `select` | 2–6 choix source distincts ; réponse unique retrouvée | Choix audio individuels non pris en charge dans ce layout |
+| Reconnaissance des sons `listen-check` | Une question Oui / Non par mot, son de la consigne conservé, audio et image source ; correspondance vérifiée entre cases cochées et corrigé | Piste absente ou partagée entre mots distincts signalée ; aucune phonétique déduite de l’orthographe ; ne remplace pas un QCM multi-réponses |
 | TCF QCM et cadres audio | Priorité aux variantes en images, même depuis une forme papier à écrire ; piste conservée | Deux QCM maximum par audio, projetés ensemble avec trois choix source chacun ; bonne réponse conservée |
 | Lignes / production écrite TCF | Activité guidée, modèle après révélation, observation humaine | Aucun score automatique |
 | PO à images, dont quatre scènes | Projection et déplacement par boutons ; modèle après révélation | Aucun ordre ou score automatique inventé |

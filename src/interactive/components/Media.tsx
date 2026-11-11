@@ -68,6 +68,7 @@ export function SafeImage({
         <dialog
           ref={dialog}
           className="ci-image-dialog"
+          aria-label={`Image agrandie : ${alt}`}
           onCancel={() => setOpen(false)}
           onClose={() => setOpen(false)}
         >

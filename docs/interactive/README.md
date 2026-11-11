@@ -61,6 +61,9 @@ La préparation liste plusieurs parties et bilans de la fiche. Les [archives et 
 npm test
 npm run build
 npm run lint
+PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium node tests/interactive/duplex-browser.mjs
+node scripts/interactive-budgets.mjs # après npx vite build --manifest
+node scripts/interactive-secrets.mjs
 PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run test:interactive:browser
 PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run test:interactive:classroom
 PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run test:interactive:media
@@ -70,4 +73,10 @@ Chromium système évite tout téléchargement supplémentaire. À défaut, inst
 
 Les tests navigateur avec horloge simulée valident le minuteur ; la suite de démonstration vérifie également une lecture réelle dans Chromium. Les événements tactiles simulés ne constituent pas un essai sur ENI physique.
 
+`npm run test:interactive:all` démarre et ferme ses serveurs sur 5180, 5181 et 5182, puis exécute les parcours, axe et la comparaison A4. Ces ports doivent être libres. Pour une autre instance principale, utiliser `INTERACTIVE_CI_PORT` et `INTERACTIVE_CI_BASELINE_PORT` ; les API simulées gardent 5182 et la mesure du build utilise 5192. Le checkout doit contenir la référence C0 ; aucun second checkout ni fichier d’environnement n’est créé. La CI sous Node 24 exécute les mêmes commandes. Voir [qualité et chargement](adr-0016-qualite-et-chargement.md) pour le périmètre des audits et les limites encore ouvertes.
+
 Voir [acceptation](checklist-acceptation.md), [architecture](architecture.md), [audit](audit-compatibilite.md), [sécurité](audit-securite.md), [livraison](livraison-classe.md) et [captures](design-system.md). Le cahier V4 décrit une cible plus large : les fonctions P1/P2 et toutes les familles du catalogue ne sont pas annoncées terminées.
+
+Les cartes A4 s’impriment désormais en [recto verso](adr-0017-cartes-recto-verso.md), avec six carrés sur chaque face et les mêmes repères des deux côtés. Le réglage par défaut est le bord long ; le même bord doit être choisi dans la fenêtre d’impression.
+
+Les exercices d’[écoute des sons](adr-0018-ecouter-les-sons.md) sont proposés mot par mot avec cartes Oui / Non, en gardant le son, les pistes, les images et les réponses de la fiche.

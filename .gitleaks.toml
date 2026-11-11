@@ -1,0 +1,14 @@
+title = "ClairFLE — détection de secrets"
+
+[extend]
+useDefault = true
+
+[[rules]]
+id = "generic-api-key"
+
+[[rules.allowlists]]
+description = "Empreintes SHA-256 de vocabulaires de modèles audio, vérifiées dans le rapport de reconnaissance (ADR 0019)."
+condition = "AND"
+paths = ['''(^|/)docs/tcf/remplacement-audio/bascule-preuves-reconnaissances-20261105\.json$''']
+regexTarget = "match"
+regexes = ['''^(?:small-)?tokens\.txt"\s*:\s*"[0-9a-f]{64}"?$''']

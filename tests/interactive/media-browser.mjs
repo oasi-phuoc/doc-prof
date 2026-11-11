@@ -70,6 +70,15 @@ async function ready(page) {
       'false',
   )
 }
+async function runtimeImageErrors(page) {
+  await page.getByText(/^Image indisponible : Choix [A-F]$/).first().waitFor()
+  const cards = page.locator('.ci-answer').filter({ has: page.locator('.ci-media-error') })
+  assert.equal(await cards.count(), 2)
+  for (const card of await cards.all()) {
+    const letter = await card.locator('.ci-card-badge b').innerText()
+    assert.equal((await card.locator('.ci-media-error').innerText()).trim(), `Image indisponible : Choix ${letter}`)
+  }
+}
 try {
   const page = await browser.newPage({ viewport: { width: 1366, height: 768 } })
   page.setDefaultNavigationTimeout(120000)
@@ -236,9 +245,7 @@ try {
   )
   await launch.click()
   await skipQuestion(page)
-  await page
-    .getByText('Image indisponible : Choix A', { exact: true })
-    .waitFor()
+  await runtimeImageErrors(page)
   assert.equal(await page.locator('.ci-answer:visible').count(), 4)
   await page.getByRole('button', { name: 'Quitter la séance' }).click()
   results.push({
@@ -262,9 +269,7 @@ try {
     .uncheck()
   await launch.click()
   await skipQuestion(page)
-  await page
-    .getByText('Image indisponible : Choix A', { exact: true })
-    .waitFor()
+  await runtimeImageErrors(page)
   assert.equal(externalRequests, 0)
   results.push({
     originPolicy:

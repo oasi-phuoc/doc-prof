@@ -69,7 +69,7 @@ try {
   await page.locator('.ci-launch:enabled').waitFor({ timeout: 120000 })
   await page.getByRole('spinbutton', { name: 'Jeux de cartes', exact: true }).fill('2')
   await page.emulateMedia({ media: 'print' })
-  assert.equal(await page.locator('.ci-card-sheet').count(), 2)
+  assert.equal(await page.locator('.ci-card-sheet').count(), 4)
   for (const sheet of await page.locator('.ci-card-sheet').all()) {
     const positions = await sheet.locator('.ci-paper-card').evaluateAll((cards) => cards.map((card) => { const r = card.getBoundingClientRect(); return { x: r.x, y: r.y, width: r.width, height: r.height } }))
     assert.equal(positions.length, 6)
@@ -79,9 +79,9 @@ try {
   }
   const pdf = await page.pdf({ path: '/tmp/clairfle-square-cards.pdf', preferCSSPageSize: true, printBackground: true })
   const content = pdf.toString('latin1')
-  assert.equal([...content.matchAll(/\/Type\s*\/Page\b/g)].length, 2)
+  assert.equal([...content.matchAll(/\/Type\s*\/Page\b/g)].length, 4)
   for (const [, width, height] of content.matchAll(/MediaBox\s*\[\s*0\s+0\s+([\d.]+)\s+([\d.]+)\s*\]/g)) { assert.ok(Math.abs(Number(width) - 595.28) < 1); assert.ok(Math.abs(Number(height) - 841.89) < 1) }
-  results.push({ print: 'six 88 mm square cards, two columns by three rows; two sets produce exactly two portrait A4 pages' })
+  results.push({ print: 'six 88 mm square cards, two columns by three rows; two sets produce four portrait A4 pages for two duplex sheets' })
   await writeFile('docs/interactive/mobile-layout-print-results.json', JSON.stringify(results, null, 2) + '\n')
   console.log(JSON.stringify(results, null, 2))
 } finally { await browser.close() }
