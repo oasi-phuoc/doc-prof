@@ -8,6 +8,7 @@ import { canonicalJson, deriveSeed, hash } from './seeds'
 import { adaptSourceItem } from './source-adapters'
 import { verifiedCscMath } from './csc-math'
 import { verifiedNumericAudio } from './audio-math'
+import { adaptNumeracy } from './numeracy'
 export { hash } from './seeds'
 const normalized = (s: string) =>
   s
@@ -203,6 +204,19 @@ export function convertRecipe(
           }
           if (item.libreError) {
             reject(item.libreError)
+            return
+          }
+          const numeracy = adaptNumeracy(item, (part) => deriveSeed({ originalSeed: recipe.seed, sourceKey: base(part).id, purpose: 'distractors' }))
+          if (numeracy) {
+            numeracy.issues.forEach(reject)
+            numeracy.items.forEach((entry) => {
+              const q = base(entry.part)
+              q.prompt = entry.prompt
+              q.choices = entry.choices
+              q.compatibility = entry.compatibility
+              if (entry.numberSequence) q.numberSequence = entry.numberSequence
+              add(q, entry.model, entry.correctId)
+            })
             return
           }
           const numericAudio = verifiedNumericAudio(item)

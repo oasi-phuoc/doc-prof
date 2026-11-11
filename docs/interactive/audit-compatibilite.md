@@ -5,14 +5,16 @@
 - 2 071 types de catalogue ; 2 103 couples type/domaine après ajout des variantes TCF CSC et CFR.
 - 20 domaines déclarés : 19 présents dans les variantes du catalogue. `français` est un ancien domaine sans thème actif dans le catalogue actuel ; son fallback de configuration est une addition, ce qui ne constitue pas une couverture du français.
 - 51 layouts observés sur 53 déclarés. `vocab-write` et `audio-match` ne sortent pas dans ces tirages : couverture non démontrée.
-- 640 variantes produisent au moins une activité convertible : 504 uniquement en QCM source, 23 adaptations numériques vérifiées, 79 uniquement guidées et 34 mêlant QCM et activités guidées. Ce nombre décrit la conversion structurelle observée, pas une validation pédagogique de chaque famille, graine et niveau.
-- 1 463 variantes sont non prises en charge, y compris huit échecs de génération déjà présents : association de syllabes `alpha-x-gz` et sept exercices Soutien contenant un jeton sans catégorie. Les détails sont conservés dans l’inventaire ; aucune donnée de banque n’a été réécrite pour masquer ces erreurs.
+- 656 variantes produisent au moins une activité convertible : 514 uniquement en QCM source ou comparaisons vérifiées, 29 adaptations numériques vérifiées, 79 uniquement guidées et 34 mêlant QCM et activités guidées. Ce nombre décrit la conversion structurelle observée, pas une validation pédagogique de chaque famille, graine et niveau.
+- 1 447 variantes sont non prises en charge, y compris huit échecs de génération déjà présents : association de syllabes `alpha-x-gz` et sept exercices Soutien contenant un jeton sans catégorie. Les détails sont conservés dans l’inventaire ; aucune donnée de banque n’a été réécrite pour masquer ces erreurs.
 
 ## Contrats de conversion actuels
 
 | Source | Traitement | Limite |
 |---|---|---|
 | Addition, soustraction, multiplication entières, résultat manquant | QCM adapté, calcul recalculé et comparé au corrigé source | Pas de division, fraction, décimal ou opérande manquant dans cette tranche |
+| Comparaisons numériques | Cartes `<`, `=` et `>` ; entiers, décimaux, fractions et calculs simples vérifiés exactement contre le corrigé ; dix types | Pas de parenthèses ni d’exposants ; valeurs bornées et division par zéro refusée ; ADR 0026 |
+| Suites numériques | Une question par case manquante, pas et corrigé vérifiés, six cartes numériques déterministes ; six types | Trois à douze termes, une à six cases manquantes, au moins deux termes visibles et pas constant ; tous les blancs restent masqués après révélation ; ADR 0026 |
 | Aire du carré | Côté positif, aire et unité vérifiées ; distracteurs géométriques distincts | Autres figures non prises en charge |
 | Signes et problèmes CSC | Signe unique recalculé ; problème, nombres et corrigé comparés à la banque ; contexte conservé et cartes numériques déterministes | Cinq types CSC observés avec les opérations posées ; les autres rendus demandent encore leur adaptation ; les signes ambigus sont signalés |
 | QCM `select` | 2–6 choix source distincts ; réponse unique retrouvée | Choix audio individuels non pris en charge dans ce layout |

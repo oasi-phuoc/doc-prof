@@ -10,6 +10,7 @@ export type Choice = {
   image?: string
   audio?: string
 }
+export type NumberSequence = { terms: Array<string | null>; target: number; hint?: string }
 /** Projection data never contains the solution or a correctness flag. */
 export type Question = {
   id: string
@@ -24,6 +25,7 @@ export type Question = {
   instruction: string
   prompt: string
   context?: string
+  numberSequence?: NumberSequence
   audio?: string
   /** Ordered source clips forming one recording and one listening allowance. */
   audioParts?: string[]

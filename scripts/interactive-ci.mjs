@@ -34,7 +34,7 @@ try {
   for (const name of ['browser', 'classroom-browser', 'solo-browser', 'untimed-browser', 'mobile-play-browser', 'mobile-layout-print-browser', 'duplex-browser', 'media-browser', 'card-feedback-browser', 'teacher-protections-browser', 'navigation-browser', 'resume-browser', 'session-lease-browser', 'checkpoint-browser', 'retention-browser', 'drafts-browser', 'votes-browser', 'teacher-sheet-browser', 'diagnostic-browser', 'fonts-browser', 'mascot-browser', 'calibration-browser', 'accessibility-browser']) await run(name)
 
   // These existing integration fixtures own port 5182 one after another.
-  for (const name of ['game-run-browser', 'durable-run-browser', 'presets-browser', 'listening-browser', 'audio-sequences-browser', 'loading-browser', 'archives-browser', 'source-adapters-browser', 'sound-check-browser', 'readability-browser', 'tcm-csc-browser', 'tcf-formats-browser', 'competition-browser']) await run(name)
+  for (const name of ['game-run-browser', 'durable-run-browser', 'presets-browser', 'listening-browser', 'audio-sequences-browser', 'loading-browser', 'archives-browser', 'source-adapters-browser', 'numeracy-browser', 'sound-check-browser', 'readability-browser', 'tcm-csc-browser', 'tcf-formats-browser', 'competition-browser']) await run(name)
   await run('competition-worker')
   const previousApi = process.env.VITE_FICHES_API_URL
   process.env.VITE_FICHES_API_URL = 'http://127.0.0.1:5182/__test_api'

@@ -2,6 +2,7 @@ import assert from 'node:assert/strict'
 import { readFile, writeFile } from 'node:fs/promises'
 import { createServer } from 'vite'
 import { chromium } from 'playwright'
+import { waitForBrowserValue } from './browser-actions.mjs'
 const base = 'http://127.0.0.1:5182'
 process.env.VITE_FICHES_API_URL = `${base}/__test_api`
 const server = await createServer({ cacheDir: '/tmp/clairfle-listening-vite', server: { host: '127.0.0.1', port: 5182, strictPort: true } })
@@ -66,7 +67,7 @@ try {
   await button(page, 'Réessayer cette question').click()
   await button(page, 'Nouvelle tentative').click()
   await count(page, 0)
-  await page.waitForFunction(async () => { const { requestLocal } = await import('/src/interactive/storage.ts'); const rows = await requestLocal('sessions', 'readonly', (store) => store.getAll()); return rows.some((record) => record.events.some((event) => event.action.type === 'RETRY_QUESTION')) })
+  await waitForBrowserValue(page, async () => { const { requestLocal } = await import('/src/interactive/storage.ts'); const rows = await requestLocal('sessions', 'readonly', (store) => store.getAll()); return rows.some((record) => record.events.some((event) => event.action.type === 'RETRY_QUESTION')) })
   const record = await page.evaluate(async () => { const { requestLocal } = await import('/src/interactive/storage.ts'); return (await requestLocal('sessions', 'readonly', (store) => store.getAll()))[0] })
   const runtimeState = record.checkpoint?.state
   assert.equal(record.schemaVersion, 5)

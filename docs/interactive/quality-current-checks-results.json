@@ -1,20 +1,15 @@
 {
-  "domainTestsPassed": 173,
-  "distinctBrowserStagesPassed": 20,
-  "fullPipelineStageCount": 40,
+  "domainTestsPassed": 181,
+  "distinctBrowserStagesPassed": 15,
+  "fullPipelineStageCount": 41,
   "fullPipelineRun": false,
   "passed": [
     "browser",
-    "classroom-browser",
-    "solo-browser",
-    "untimed-browser",
-    "media-browser",
-    "accessibility-browser",
+    "presets-browser",
+    "calibration-browser",
     "listening-browser",
-    "audio-sequences-browser",
-    "loading-browser",
-    "archives-browser",
     "source-adapters-browser",
+    "numeracy-browser",
     "sound-check-browser",
     "readability-browser",
     "tcm-csc-browser",
@@ -26,25 +21,62 @@
     "a4-regression"
   ],
   "reports": [
-    "quality-main-targeted-results.json",
-    "quality-browser-results.json"
+    "quality-numeracy-main-results.json",
+    "quality-browser-results.json",
+    "numeracy-results.json"
   ],
-  "scope": "Targeted main routes, Classroom/Solo, media and accessibility; integrations from listening through PDF and pixel A4 comparison. New animated loading and complete audio sequences have their own browser fixtures.",
-  "finalAdditionalCheck": "competition-browser repeated after the final room-connection loading panel was added.",
-  "postMergeValidation": {
-    "productionCodeCommit": "54c5f353",
-    "integratedOriginMain": "31abe85b",
+  "scope": "Exact numeric comparisons and arithmetic sequences; existing main route, presets, calibration, listening and integrations from source adapters through real competition Worker, production performance and pixel A4 comparison. Full hosted CI is not claimed.",
+  "newAdapter": {
+    "catalogTypes": 16,
+    "seedsPerType": 100,
+    "difficultyLevels": 3,
+    "configurationsChecked": 4800,
+    "domainTests": 8,
+    "sourceTemplates": "unchanged"
+  },
+  "testSynchronizationFix": "Four async IndexedDB assertions now poll awaited browser values on the Node clock; the audio report check reads the completed checkpoint itself instead of racing its save.",
+  "previousValidation": {
+    "sourceCommit": "f3d8c4a2",
     "domainTestsPassed": 173,
-    "browserStages": [
+    "distinctBrowserStagesPassed": 20,
+    "fullPipelineStageCount": 40,
+    "passed": [
       "browser",
-      "tcf-formats-browser"
+      "classroom-browser",
+      "solo-browser",
+      "untimed-browser",
+      "media-browser",
+      "accessibility-browser",
+      "listening-browser",
+      "audio-sequences-browser",
+      "loading-browser",
+      "archives-browser",
+      "source-adapters-browser",
+      "sound-check-browser",
+      "readability-browser",
+      "tcm-csc-browser",
+      "tcf-formats-browser",
+      "competition-browser",
+      "competition-worker",
+      "saved-fiches",
+      "performance-browser",
+      "a4-regression"
     ],
-    "additionalChecks": [
-      "check-tcf-co-playlists: 5 formats",
-      "check-tcf-object-pool: sources and same-theme distractors",
-      "application and API typecheck",
-      "production build and route budgets"
-    ],
-    "result": "passed"
+    "postMergeValidation": {
+      "productionCodeCommit": "54c5f353",
+      "integratedOriginMain": "31abe85b",
+      "domainTestsPassed": 173,
+      "browserStages": [
+        "browser",
+        "tcf-formats-browser"
+      ],
+      "additionalChecks": [
+        "check-tcf-co-playlists: 5 formats",
+        "check-tcf-object-pool: sources and same-theme distractors",
+        "application and API typecheck",
+        "production build and route budgets"
+      ],
+      "result": "passed"
+    }
   }
 }

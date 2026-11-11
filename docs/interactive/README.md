@@ -72,6 +72,7 @@ PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run test:interactive:b
 PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run test:interactive:classroom
 PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run test:interactive:media
 PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run test:interactive:competition
+PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run test:interactive:numeracy
 npm ci --prefix api/fiches --no-audit --no-fund
 npm run typecheck:api
 npm run test:interactive:competition-worker
@@ -94,3 +95,5 @@ Le [test TCM CSC](../tcm-csc/README.md) comprend 23 exercices imprimables et tro
 Dans le générateur, les [formats CO et corrigés CE](../tcf/formats-et-corriges.md) conservent les boutons Texte / Image / Phrase sur les tests assemblés et les coches imprimables, même sans arrière-plans.
 
 Les [nombres et calculs oraux](adr-0024-sequences-audio.md) lisent tous leurs extraits en une piste complète, avec les contrôles d’écoute existants. Les [chargements animés](adr-0025-chargements-animes.md) accompagnent l’ouverture des pages, des fiches et du jeu, dès le démarrage initial.
+
+Les [comparaisons et suites numériques](adr-0026-comparaisons-et-suites.md) proposent les signes `<`, `=` et `>` ou une question par case manquante. Les nombres de la fiche et son aide sont conservés ; la case demandée est encadrée, les autres blancs restent masqués et la correction apparaît uniquement dans les cartes. Entiers, décimaux et fractions sont vérifiés exactement ; les suites doivent avoir un pas constant. Ces activités fonctionnent aussi en compétition.
