@@ -4,6 +4,8 @@ import { tryGenerateGrammaireExerciseBlock } from './exercises/generate'
 import { isGrammaireExerciseType } from './exercises/types'
 import { theoryDocByTypeId } from './theory'
 import { isGrammaireTheoryType } from './types'
+import { generateGradedGrammarBlock } from './curriculum/generate'
+import { GrammarCurriculumError } from './curriculum/types'
 
 function blockToItem(docTitle: string, block: GrammarTheoryBlock, index: number): MathItem {
   return {
@@ -20,6 +22,13 @@ export function tryGenerateGrammaireBlock(
   seed: number,
 ): { instruction: string; items: MathItem[]; bankQuestionCap?: number } | null {
   const typeId = config.exerciseType
+  try {
+    const graded=generateGradedGrammarBlock(config,seed)
+    if (graded) return graded
+  } catch (error) {
+    if (!(error instanceof GrammarCurriculumError)) throw error
+    return {instruction:'Vérifiez les paramètres de cet exercice.',items:[{layout:'text',prompt:error.message,answer:''}],bankQuestionCap:0}
+  }
   if (isGrammaireExerciseType(typeId)) {
     return tryGenerateGrammaireExerciseBlock(config, seed)
   }

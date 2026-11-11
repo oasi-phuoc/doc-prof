@@ -1,0 +1,5835 @@
+[
+  {
+    "schemaVersion": 1,
+    "revision": "etre-a1-2026-11-11.1",
+    "subthemeId": "etre",
+    "level": "A1",
+    "objective": "Conjuguer être au présent, accorder le verbe avec son sujet et construire une phrase simple.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex",
+      "date": "2026-11-11",
+      "humanReview": "pending",
+      "note": "Relecture des 150 phrases reprises ; validation enseignant avant publication."
+    },
+    "activityId": "gram-ex-etre-qcm-conj",
+    "label": "Conjuguer être",
+    "presentations": [
+      "choice",
+      "gap"
+    ],
+    "instructions": {
+      "choice": "Choisissez la forme du verbe être qui convient.",
+      "gap": "Complétez avec le verbe être au présent."
+    },
+    "units": [
+      {
+        "id": "etre-a1-forme-001",
+        "kind": "completion",
+        "prompt": "Je ___ en avance.",
+        "answers": [
+          "suis"
+        ],
+        "options": [
+          {
+            "id": "etre-suis",
+            "text": "suis"
+          },
+          {
+            "id": "etre-es",
+            "text": "es"
+          },
+          {
+            "id": "etre-est",
+            "text": "est"
+          }
+        ],
+        "explanation": "La forme « suis » s’accorde avec le sujet de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 0
+        }
+      },
+      {
+        "id": "etre-a1-forme-002",
+        "kind": "completion",
+        "prompt": "Paul ___ en retard.",
+        "answers": [
+          "est"
+        ],
+        "options": [
+          {
+            "id": "etre-est",
+            "text": "est"
+          },
+          {
+            "id": "etre-suis",
+            "text": "suis"
+          },
+          {
+            "id": "etre-es",
+            "text": "es"
+          }
+        ],
+        "explanation": "La forme « est » s’accorde avec le sujet de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 1
+        }
+      },
+      {
+        "id": "etre-a1-forme-003",
+        "kind": "completion",
+        "prompt": "Les voisins ___ à la maison.",
+        "answers": [
+          "sont"
+        ],
+        "options": [
+          {
+            "id": "etre-sont",
+            "text": "sont"
+          },
+          {
+            "id": "etre-suis",
+            "text": "suis"
+          },
+          {
+            "id": "etre-es",
+            "text": "es"
+          }
+        ],
+        "explanation": "La forme « sont » s’accorde avec le sujet de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 2
+        }
+      },
+      {
+        "id": "etre-a1-forme-004",
+        "kind": "completion",
+        "prompt": "Tu ___ au travail.",
+        "answers": [
+          "es"
+        ],
+        "options": [
+          {
+            "id": "etre-es",
+            "text": "es"
+          },
+          {
+            "id": "etre-suis",
+            "text": "suis"
+          },
+          {
+            "id": "etre-est",
+            "text": "est"
+          }
+        ],
+        "explanation": "La forme « es » s’accorde avec le sujet de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 3
+        }
+      },
+      {
+        "id": "etre-a1-forme-005",
+        "kind": "completion",
+        "prompt": "Nous ___ à la gare.",
+        "answers": [
+          "sommes"
+        ],
+        "options": [
+          {
+            "id": "etre-sommes",
+            "text": "sommes"
+          },
+          {
+            "id": "etre-suis",
+            "text": "suis"
+          },
+          {
+            "id": "etre-es",
+            "text": "es"
+          }
+        ],
+        "explanation": "La forme « sommes » s’accorde avec le sujet de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 4
+        }
+      },
+      {
+        "id": "etre-a1-forme-006",
+        "kind": "completion",
+        "prompt": "Les voisines ___ en formation.",
+        "answers": [
+          "sont"
+        ],
+        "options": [
+          {
+            "id": "etre-sont",
+            "text": "sont"
+          },
+          {
+            "id": "etre-suis",
+            "text": "suis"
+          },
+          {
+            "id": "etre-es",
+            "text": "es"
+          }
+        ],
+        "explanation": "La forme « sont » s’accorde avec le sujet de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 5
+        }
+      },
+      {
+        "id": "etre-a1-forme-007",
+        "kind": "completion",
+        "prompt": "Lina ___ en vacances.",
+        "answers": [
+          "est"
+        ],
+        "options": [
+          {
+            "id": "etre-est",
+            "text": "est"
+          },
+          {
+            "id": "etre-suis",
+            "text": "suis"
+          },
+          {
+            "id": "etre-es",
+            "text": "es"
+          }
+        ],
+        "explanation": "La forme « est » s’accorde avec le sujet de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 6
+        }
+      },
+      {
+        "id": "etre-a1-forme-008",
+        "kind": "completion",
+        "prompt": "Vous ___ à l’accueil.",
+        "answers": [
+          "êtes"
+        ],
+        "options": [
+          {
+            "id": "etre-etes",
+            "text": "êtes"
+          },
+          {
+            "id": "etre-suis",
+            "text": "suis"
+          },
+          {
+            "id": "etre-es",
+            "text": "es"
+          }
+        ],
+        "explanation": "La forme « êtes » s’accorde avec le sujet de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 7
+        }
+      },
+      {
+        "id": "etre-a1-forme-009",
+        "kind": "completion",
+        "prompt": "Je ___ dans le jardin.",
+        "answers": [
+          "suis"
+        ],
+        "options": [
+          {
+            "id": "etre-suis",
+            "text": "suis"
+          },
+          {
+            "id": "etre-es",
+            "text": "es"
+          },
+          {
+            "id": "etre-est",
+            "text": "est"
+          }
+        ],
+        "explanation": "La forme « suis » s’accorde avec le sujet de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 8
+        }
+      },
+      {
+        "id": "etre-a1-forme-010",
+        "kind": "completion",
+        "prompt": "Paul ___ sur le balcon.",
+        "answers": [
+          "est"
+        ],
+        "options": [
+          {
+            "id": "etre-est",
+            "text": "est"
+          },
+          {
+            "id": "etre-suis",
+            "text": "suis"
+          },
+          {
+            "id": "etre-es",
+            "text": "es"
+          }
+        ],
+        "explanation": "La forme « est » s’accorde avec le sujet de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 9
+        }
+      },
+      {
+        "id": "etre-a1-forme-011",
+        "kind": "completion",
+        "prompt": "Les voisins ___ en classe.",
+        "answers": [
+          "sont"
+        ],
+        "options": [
+          {
+            "id": "etre-sont",
+            "text": "sont"
+          },
+          {
+            "id": "etre-suis",
+            "text": "suis"
+          },
+          {
+            "id": "etre-es",
+            "text": "es"
+          }
+        ],
+        "explanation": "La forme « sont » s’accorde avec le sujet de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 10
+        }
+      },
+      {
+        "id": "etre-a1-forme-012",
+        "kind": "completion",
+        "prompt": "Tu ___ à la bibliothèque.",
+        "answers": [
+          "es"
+        ],
+        "options": [
+          {
+            "id": "etre-es",
+            "text": "es"
+          },
+          {
+            "id": "etre-suis",
+            "text": "suis"
+          },
+          {
+            "id": "etre-est",
+            "text": "est"
+          }
+        ],
+        "explanation": "La forme « es » s’accorde avec le sujet de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 11
+        }
+      },
+      {
+        "id": "etre-a1-forme-013",
+        "kind": "completion",
+        "prompt": "Nous ___ au musée.",
+        "answers": [
+          "sommes"
+        ],
+        "options": [
+          {
+            "id": "etre-sommes",
+            "text": "sommes"
+          },
+          {
+            "id": "etre-suis",
+            "text": "suis"
+          },
+          {
+            "id": "etre-es",
+            "text": "es"
+          }
+        ],
+        "explanation": "La forme « sommes » s’accorde avec le sujet de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 12
+        }
+      },
+      {
+        "id": "etre-a1-forme-014",
+        "kind": "completion",
+        "prompt": "Les voisines ___ à l’arrêt du bus.",
+        "answers": [
+          "sont"
+        ],
+        "options": [
+          {
+            "id": "etre-sont",
+            "text": "sont"
+          },
+          {
+            "id": "etre-suis",
+            "text": "suis"
+          },
+          {
+            "id": "etre-es",
+            "text": "es"
+          }
+        ],
+        "explanation": "La forme « sont » s’accorde avec le sujet de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 13
+        }
+      },
+      {
+        "id": "etre-a1-forme-015",
+        "kind": "completion",
+        "prompt": "Lina ___ chez le médecin.",
+        "answers": [
+          "est"
+        ],
+        "options": [
+          {
+            "id": "etre-est",
+            "text": "est"
+          },
+          {
+            "id": "etre-suis",
+            "text": "suis"
+          },
+          {
+            "id": "etre-es",
+            "text": "es"
+          }
+        ],
+        "explanation": "La forme « est » s’accorde avec le sujet de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 14
+        }
+      },
+      {
+        "id": "etre-a1-forme-016",
+        "kind": "completion",
+        "prompt": "Vous ___ chez une amie.",
+        "answers": [
+          "êtes"
+        ],
+        "options": [
+          {
+            "id": "etre-etes",
+            "text": "êtes"
+          },
+          {
+            "id": "etre-suis",
+            "text": "suis"
+          },
+          {
+            "id": "etre-es",
+            "text": "es"
+          }
+        ],
+        "explanation": "La forme « êtes » s’accorde avec le sujet de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 15
+        }
+      },
+      {
+        "id": "etre-a1-forme-017",
+        "kind": "completion",
+        "prompt": "Je ___ près de la poste.",
+        "answers": [
+          "suis"
+        ],
+        "options": [
+          {
+            "id": "etre-suis",
+            "text": "suis"
+          },
+          {
+            "id": "etre-es",
+            "text": "es"
+          },
+          {
+            "id": "etre-est",
+            "text": "est"
+          }
+        ],
+        "explanation": "La forme « suis » s’accorde avec le sujet de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 16
+        }
+      },
+      {
+        "id": "etre-a1-forme-018",
+        "kind": "completion",
+        "prompt": "Paul ___ devant la pharmacie.",
+        "answers": [
+          "est"
+        ],
+        "options": [
+          {
+            "id": "etre-est",
+            "text": "est"
+          },
+          {
+            "id": "etre-suis",
+            "text": "suis"
+          },
+          {
+            "id": "etre-es",
+            "text": "es"
+          }
+        ],
+        "explanation": "La forme « est » s’accorde avec le sujet de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 17
+        }
+      },
+      {
+        "id": "etre-a1-forme-019",
+        "kind": "completion",
+        "prompt": "Les voisins ___ derrière la mairie.",
+        "answers": [
+          "sont"
+        ],
+        "options": [
+          {
+            "id": "etre-sont",
+            "text": "sont"
+          },
+          {
+            "id": "etre-suis",
+            "text": "suis"
+          },
+          {
+            "id": "etre-es",
+            "text": "es"
+          }
+        ],
+        "explanation": "La forme « sont » s’accorde avec le sujet de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 18
+        }
+      },
+      {
+        "id": "etre-a1-forme-020",
+        "kind": "completion",
+        "prompt": "Tu ___ en face du parc.",
+        "answers": [
+          "es"
+        ],
+        "options": [
+          {
+            "id": "etre-es",
+            "text": "es"
+          },
+          {
+            "id": "etre-suis",
+            "text": "suis"
+          },
+          {
+            "id": "etre-est",
+            "text": "est"
+          }
+        ],
+        "explanation": "La forme « es » s’accorde avec le sujet de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 19
+        }
+      },
+      {
+        "id": "etre-a1-forme-021",
+        "kind": "completion",
+        "prompt": "Nous ___ à côté du bureau.",
+        "answers": [
+          "sommes"
+        ],
+        "options": [
+          {
+            "id": "etre-sommes",
+            "text": "sommes"
+          },
+          {
+            "id": "etre-suis",
+            "text": "suis"
+          },
+          {
+            "id": "etre-es",
+            "text": "es"
+          }
+        ],
+        "explanation": "La forme « sommes » s’accorde avec le sujet de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 20
+        }
+      },
+      {
+        "id": "etre-a1-forme-022",
+        "kind": "completion",
+        "prompt": "Les voisines ___ dans la cuisine.",
+        "answers": [
+          "sont"
+        ],
+        "options": [
+          {
+            "id": "etre-sont",
+            "text": "sont"
+          },
+          {
+            "id": "etre-suis",
+            "text": "suis"
+          },
+          {
+            "id": "etre-es",
+            "text": "es"
+          }
+        ],
+        "explanation": "La forme « sont » s’accorde avec le sujet de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 21
+        }
+      },
+      {
+        "id": "etre-a1-forme-023",
+        "kind": "completion",
+        "prompt": "Lina ___ au deuxième étage.",
+        "answers": [
+          "est"
+        ],
+        "options": [
+          {
+            "id": "etre-est",
+            "text": "est"
+          },
+          {
+            "id": "etre-suis",
+            "text": "suis"
+          },
+          {
+            "id": "etre-es",
+            "text": "es"
+          }
+        ],
+        "explanation": "La forme « est » s’accorde avec le sujet de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 22
+        }
+      },
+      {
+        "id": "etre-a1-forme-024",
+        "kind": "completion",
+        "prompt": "Vous ___ en réunion.",
+        "answers": [
+          "êtes"
+        ],
+        "options": [
+          {
+            "id": "etre-etes",
+            "text": "êtes"
+          },
+          {
+            "id": "etre-suis",
+            "text": "suis"
+          },
+          {
+            "id": "etre-es",
+            "text": "es"
+          }
+        ],
+        "explanation": "La forme « êtes » s’accorde avec le sujet de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 23
+        }
+      },
+      {
+        "id": "etre-a1-forme-025",
+        "kind": "completion",
+        "prompt": "Je ___ en pause.",
+        "answers": [
+          "suis"
+        ],
+        "options": [
+          {
+            "id": "etre-suis",
+            "text": "suis"
+          },
+          {
+            "id": "etre-es",
+            "text": "es"
+          },
+          {
+            "id": "etre-est",
+            "text": "est"
+          }
+        ],
+        "explanation": "La forme « suis » s’accorde avec le sujet de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 24
+        }
+      },
+      {
+        "id": "etre-a1-forme-026",
+        "kind": "completion",
+        "prompt": "Paul ___ de bonne humeur.",
+        "answers": [
+          "est"
+        ],
+        "options": [
+          {
+            "id": "etre-est",
+            "text": "est"
+          },
+          {
+            "id": "etre-suis",
+            "text": "suis"
+          },
+          {
+            "id": "etre-es",
+            "text": "es"
+          }
+        ],
+        "explanation": "La forme « est » s’accorde avec le sujet de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 25
+        }
+      },
+      {
+        "id": "etre-a1-forme-027",
+        "kind": "completion",
+        "prompt": "Les voisins ___ d’accord avec toi.",
+        "answers": [
+          "sont"
+        ],
+        "options": [
+          {
+            "id": "etre-sont",
+            "text": "sont"
+          },
+          {
+            "id": "etre-suis",
+            "text": "suis"
+          },
+          {
+            "id": "etre-es",
+            "text": "es"
+          }
+        ],
+        "explanation": "La forme « sont » s’accorde avec le sujet de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 26
+        }
+      },
+      {
+        "id": "etre-a1-forme-028",
+        "kind": "completion",
+        "prompt": "Tu ___ sans nouvelles.",
+        "answers": [
+          "es"
+        ],
+        "options": [
+          {
+            "id": "etre-es",
+            "text": "es"
+          },
+          {
+            "id": "etre-suis",
+            "text": "suis"
+          },
+          {
+            "id": "etre-est",
+            "text": "est"
+          }
+        ],
+        "explanation": "La forme « es » s’accorde avec le sujet de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 27
+        }
+      },
+      {
+        "id": "etre-a1-forme-029",
+        "kind": "completion",
+        "prompt": "Nous ___ à l’heure.",
+        "answers": [
+          "sommes"
+        ],
+        "options": [
+          {
+            "id": "etre-sommes",
+            "text": "sommes"
+          },
+          {
+            "id": "etre-suis",
+            "text": "suis"
+          },
+          {
+            "id": "etre-es",
+            "text": "es"
+          }
+        ],
+        "explanation": "La forme « sommes » s’accorde avec le sujet de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 28
+        }
+      },
+      {
+        "id": "etre-a1-forme-030",
+        "kind": "completion",
+        "prompt": "Les voisines ___ au cinéma.",
+        "answers": [
+          "sont"
+        ],
+        "options": [
+          {
+            "id": "etre-sont",
+            "text": "sont"
+          },
+          {
+            "id": "etre-suis",
+            "text": "suis"
+          },
+          {
+            "id": "etre-es",
+            "text": "es"
+          }
+        ],
+        "explanation": "La forme « sont » s’accorde avec le sujet de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 29
+        }
+      },
+      {
+        "id": "etre-a1-forme-031",
+        "kind": "completion",
+        "prompt": "Lina ___ en déplacement.",
+        "answers": [
+          "est"
+        ],
+        "options": [
+          {
+            "id": "etre-est",
+            "text": "est"
+          },
+          {
+            "id": "etre-suis",
+            "text": "suis"
+          },
+          {
+            "id": "etre-es",
+            "text": "es"
+          }
+        ],
+        "explanation": "La forme « est » s’accorde avec le sujet de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 30
+        }
+      },
+      {
+        "id": "etre-a1-forme-032",
+        "kind": "completion",
+        "prompt": "Vous ___ en congé.",
+        "answers": [
+          "êtes"
+        ],
+        "options": [
+          {
+            "id": "etre-etes",
+            "text": "êtes"
+          },
+          {
+            "id": "etre-suis",
+            "text": "suis"
+          },
+          {
+            "id": "etre-es",
+            "text": "es"
+          }
+        ],
+        "explanation": "La forme « êtes » s’accorde avec le sujet de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 31
+        }
+      },
+      {
+        "id": "etre-a1-forme-033",
+        "kind": "completion",
+        "prompt": "Je ___ dans le train.",
+        "answers": [
+          "suis"
+        ],
+        "options": [
+          {
+            "id": "etre-suis",
+            "text": "suis"
+          },
+          {
+            "id": "etre-es",
+            "text": "es"
+          },
+          {
+            "id": "etre-est",
+            "text": "est"
+          }
+        ],
+        "explanation": "La forme « suis » s’accorde avec le sujet de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 32
+        }
+      },
+      {
+        "id": "etre-a1-forme-034",
+        "kind": "completion",
+        "prompt": "Paul ___ au guichet.",
+        "answers": [
+          "est"
+        ],
+        "options": [
+          {
+            "id": "etre-est",
+            "text": "est"
+          },
+          {
+            "id": "etre-suis",
+            "text": "suis"
+          },
+          {
+            "id": "etre-es",
+            "text": "es"
+          }
+        ],
+        "explanation": "La forme « est » s’accorde avec le sujet de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 33
+        }
+      },
+      {
+        "id": "etre-a1-forme-035",
+        "kind": "completion",
+        "prompt": "Les voisins ___ à la piscine.",
+        "answers": [
+          "sont"
+        ],
+        "options": [
+          {
+            "id": "etre-sont",
+            "text": "sont"
+          },
+          {
+            "id": "etre-suis",
+            "text": "suis"
+          },
+          {
+            "id": "etre-es",
+            "text": "es"
+          }
+        ],
+        "explanation": "La forme « sont » s’accorde avec le sujet de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 34
+        }
+      },
+      {
+        "id": "etre-a1-forme-036",
+        "kind": "completion",
+        "prompt": "Tu ___ chez le coiffeur.",
+        "answers": [
+          "es"
+        ],
+        "options": [
+          {
+            "id": "etre-es",
+            "text": "es"
+          },
+          {
+            "id": "etre-suis",
+            "text": "suis"
+          },
+          {
+            "id": "etre-est",
+            "text": "est"
+          }
+        ],
+        "explanation": "La forme « es » s’accorde avec le sujet de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 35
+        }
+      },
+      {
+        "id": "etre-a1-forme-037",
+        "kind": "completion",
+        "prompt": "Nous ___ dans le quartier.",
+        "answers": [
+          "sommes"
+        ],
+        "options": [
+          {
+            "id": "etre-sommes",
+            "text": "sommes"
+          },
+          {
+            "id": "etre-suis",
+            "text": "suis"
+          },
+          {
+            "id": "etre-es",
+            "text": "es"
+          }
+        ],
+        "explanation": "La forme « sommes » s’accorde avec le sujet de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 36
+        }
+      },
+      {
+        "id": "etre-a1-forme-038",
+        "kind": "completion",
+        "prompt": "Les voisines ___ sur la place.",
+        "answers": [
+          "sont"
+        ],
+        "options": [
+          {
+            "id": "etre-sont",
+            "text": "sont"
+          },
+          {
+            "id": "etre-suis",
+            "text": "suis"
+          },
+          {
+            "id": "etre-es",
+            "text": "es"
+          }
+        ],
+        "explanation": "La forme « sont » s’accorde avec le sujet de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 37
+        }
+      },
+      {
+        "id": "etre-a1-forme-039",
+        "kind": "completion",
+        "prompt": "Lina ___ à la montagne.",
+        "answers": [
+          "est"
+        ],
+        "options": [
+          {
+            "id": "etre-est",
+            "text": "est"
+          },
+          {
+            "id": "etre-suis",
+            "text": "suis"
+          },
+          {
+            "id": "etre-es",
+            "text": "es"
+          }
+        ],
+        "explanation": "La forme « est » s’accorde avec le sujet de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 38
+        }
+      },
+      {
+        "id": "etre-a1-forme-040",
+        "kind": "completion",
+        "prompt": "Vous ___ au bord du lac.",
+        "answers": [
+          "êtes"
+        ],
+        "options": [
+          {
+            "id": "etre-etes",
+            "text": "êtes"
+          },
+          {
+            "id": "etre-suis",
+            "text": "suis"
+          },
+          {
+            "id": "etre-es",
+            "text": "es"
+          }
+        ],
+        "explanation": "La forme « êtes » s’accorde avec le sujet de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 39
+        }
+      },
+      {
+        "id": "etre-a1-forme-041",
+        "kind": "completion",
+        "prompt": "Je ___ en visite.",
+        "answers": [
+          "suis"
+        ],
+        "options": [
+          {
+            "id": "etre-suis",
+            "text": "suis"
+          },
+          {
+            "id": "etre-es",
+            "text": "es"
+          },
+          {
+            "id": "etre-est",
+            "text": "est"
+          }
+        ],
+        "explanation": "La forme « suis » s’accorde avec le sujet de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 40
+        }
+      },
+      {
+        "id": "etre-a1-forme-042",
+        "kind": "completion",
+        "prompt": "Paul ___ au téléphone.",
+        "answers": [
+          "est"
+        ],
+        "options": [
+          {
+            "id": "etre-est",
+            "text": "est"
+          },
+          {
+            "id": "etre-suis",
+            "text": "suis"
+          },
+          {
+            "id": "etre-es",
+            "text": "es"
+          }
+        ],
+        "explanation": "La forme « est » s’accorde avec le sujet de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 41
+        }
+      },
+      {
+        "id": "etre-a1-forme-043",
+        "kind": "completion",
+        "prompt": "Les voisins ___ en sécurité.",
+        "answers": [
+          "sont"
+        ],
+        "options": [
+          {
+            "id": "etre-sont",
+            "text": "sont"
+          },
+          {
+            "id": "etre-suis",
+            "text": "suis"
+          },
+          {
+            "id": "etre-es",
+            "text": "es"
+          }
+        ],
+        "explanation": "La forme « sont » s’accorde avec le sujet de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 42
+        }
+      },
+      {
+        "id": "etre-a1-forme-044",
+        "kind": "completion",
+        "prompt": "Tu ___ en route.",
+        "answers": [
+          "es"
+        ],
+        "options": [
+          {
+            "id": "etre-es",
+            "text": "es"
+          },
+          {
+            "id": "etre-suis",
+            "text": "suis"
+          },
+          {
+            "id": "etre-est",
+            "text": "est"
+          }
+        ],
+        "explanation": "La forme « es » s’accorde avec le sujet de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 43
+        }
+      },
+      {
+        "id": "etre-a1-forme-045",
+        "kind": "completion",
+        "prompt": "Nous ___ à l’abri.",
+        "answers": [
+          "sommes"
+        ],
+        "options": [
+          {
+            "id": "etre-sommes",
+            "text": "sommes"
+          },
+          {
+            "id": "etre-suis",
+            "text": "suis"
+          },
+          {
+            "id": "etre-es",
+            "text": "es"
+          }
+        ],
+        "explanation": "La forme « sommes » s’accorde avec le sujet de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 44
+        }
+      },
+      {
+        "id": "etre-a1-forme-046",
+        "kind": "completion",
+        "prompt": "Les voisines ___ dans le salon.",
+        "answers": [
+          "sont"
+        ],
+        "options": [
+          {
+            "id": "etre-sont",
+            "text": "sont"
+          },
+          {
+            "id": "etre-suis",
+            "text": "suis"
+          },
+          {
+            "id": "etre-es",
+            "text": "es"
+          }
+        ],
+        "explanation": "La forme « sont » s’accorde avec le sujet de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 45
+        }
+      },
+      {
+        "id": "etre-a1-forme-047",
+        "kind": "completion",
+        "prompt": "Lina ___ à la boulangerie.",
+        "answers": [
+          "est"
+        ],
+        "options": [
+          {
+            "id": "etre-est",
+            "text": "est"
+          },
+          {
+            "id": "etre-suis",
+            "text": "suis"
+          },
+          {
+            "id": "etre-es",
+            "text": "es"
+          }
+        ],
+        "explanation": "La forme « est » s’accorde avec le sujet de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 46
+        }
+      },
+      {
+        "id": "etre-a1-forme-048",
+        "kind": "completion",
+        "prompt": "Vous ___ dans la salle d’attente.",
+        "answers": [
+          "êtes"
+        ],
+        "options": [
+          {
+            "id": "etre-etes",
+            "text": "êtes"
+          },
+          {
+            "id": "etre-suis",
+            "text": "suis"
+          },
+          {
+            "id": "etre-es",
+            "text": "es"
+          }
+        ],
+        "explanation": "La forme « êtes » s’accorde avec le sujet de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 47
+        }
+      },
+      {
+        "id": "etre-a1-forme-049",
+        "kind": "completion",
+        "prompt": "Je ___ au marché.",
+        "answers": [
+          "suis"
+        ],
+        "options": [
+          {
+            "id": "etre-suis",
+            "text": "suis"
+          },
+          {
+            "id": "etre-es",
+            "text": "es"
+          },
+          {
+            "id": "etre-est",
+            "text": "est"
+          }
+        ],
+        "explanation": "La forme « suis » s’accorde avec le sujet de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 48
+        }
+      },
+      {
+        "id": "etre-a1-forme-050",
+        "kind": "completion",
+        "prompt": "Paul ___ en promenade.",
+        "answers": [
+          "est"
+        ],
+        "options": [
+          {
+            "id": "etre-est",
+            "text": "est"
+          },
+          {
+            "id": "etre-suis",
+            "text": "suis"
+          },
+          {
+            "id": "etre-es",
+            "text": "es"
+          }
+        ],
+        "explanation": "La forme « est » s’accorde avec le sujet de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 49
+        }
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "revision": "etre-a1-2026-11-11.1",
+    "subthemeId": "etre",
+    "level": "A1",
+    "objective": "Conjuguer être au présent, accorder le verbe avec son sujet et construire une phrase simple.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex",
+      "date": "2026-11-11",
+      "humanReview": "pending",
+      "note": "Relecture des 150 phrases reprises ; validation enseignant avant publication."
+    },
+    "activityId": "gram-ex-etre-corriger-erreur",
+    "label": "Corriger l’erreur",
+    "presentations": [
+      "correct"
+    ],
+    "instructions": {
+      "correct": "Corrigez l’erreur et réécrivez la phrase entière."
+    },
+    "units": [
+      {
+        "id": "etre-a1-erreur-001",
+        "kind": "correct",
+        "prompt": "Je est français.",
+        "answers": [
+          "Je suis français."
+        ],
+        "explanation": "Le verbe être s’accorde avec le sujet : Je suis français.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-corriger-erreur",
+          "position": 0
+        }
+      },
+      {
+        "id": "etre-a1-erreur-002",
+        "kind": "correct",
+        "prompt": "Tu sommes à la maison.",
+        "answers": [
+          "Tu es à la maison."
+        ],
+        "explanation": "Le verbe être s’accorde avec le sujet : Tu es à la maison.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-corriger-erreur",
+          "position": 1
+        }
+      },
+      {
+        "id": "etre-a1-erreur-003",
+        "kind": "correct",
+        "prompt": "Il sont médecin.",
+        "answers": [
+          "Il est médecin."
+        ],
+        "explanation": "Le verbe être s’accorde avec le sujet : Il est médecin.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-corriger-erreur",
+          "position": 2
+        }
+      },
+      {
+        "id": "etre-a1-erreur-004",
+        "kind": "correct",
+        "prompt": "Elle sont infirmière.",
+        "answers": [
+          "Elle est infirmière."
+        ],
+        "explanation": "Le verbe être s’accorde avec le sujet : Elle est infirmière.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-corriger-erreur",
+          "position": 3
+        }
+      },
+      {
+        "id": "etre-a1-erreur-005",
+        "kind": "correct",
+        "prompt": "Nous suis en classe.",
+        "answers": [
+          "Nous sommes en classe."
+        ],
+        "explanation": "Le verbe être s’accorde avec le sujet : Nous sommes en classe.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-corriger-erreur",
+          "position": 4
+        }
+      },
+      {
+        "id": "etre-a1-erreur-006",
+        "kind": "correct",
+        "prompt": "Vous est au marché.",
+        "answers": [
+          "Vous êtes au marché."
+        ],
+        "explanation": "Le verbe être s’accorde avec le sujet : Vous êtes au marché.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-corriger-erreur",
+          "position": 5
+        }
+      },
+      {
+        "id": "etre-a1-erreur-007",
+        "kind": "correct",
+        "prompt": "Ils es étudiants.",
+        "answers": [
+          "Ils sont étudiants."
+        ],
+        "explanation": "Le verbe être s’accorde avec le sujet : Ils sont étudiants.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-corriger-erreur",
+          "position": 6
+        }
+      },
+      {
+        "id": "etre-a1-erreur-008",
+        "kind": "correct",
+        "prompt": "Elles es contentes.",
+        "answers": [
+          "Elles sont contentes."
+        ],
+        "explanation": "Le verbe être s’accorde avec le sujet : Elles sont contentes.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-corriger-erreur",
+          "position": 7
+        }
+      },
+      {
+        "id": "etre-a1-erreur-009",
+        "kind": "correct",
+        "prompt": "Mon père sont boulanger.",
+        "answers": [
+          "Mon père est boulanger."
+        ],
+        "explanation": "Le verbe être s’accorde avec le sujet : Mon père est boulanger.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-corriger-erreur",
+          "position": 8
+        }
+      },
+      {
+        "id": "etre-a1-erreur-010",
+        "kind": "correct",
+        "prompt": "Ma mère sont vendeuse.",
+        "answers": [
+          "Ma mère est vendeuse."
+        ],
+        "explanation": "Le verbe être s’accorde avec le sujet : Ma mère est vendeuse.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-corriger-erreur",
+          "position": 9
+        }
+      },
+      {
+        "id": "etre-a1-erreur-011",
+        "kind": "correct",
+        "prompt": "Je est à Paris.",
+        "answers": [
+          "Je suis à Paris."
+        ],
+        "explanation": "Le verbe être s’accorde avec le sujet : Je suis à Paris.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-corriger-erreur",
+          "position": 10
+        }
+      },
+      {
+        "id": "etre-a1-erreur-012",
+        "kind": "correct",
+        "prompt": "Tu sommes dans le bus.",
+        "answers": [
+          "Tu es dans le bus."
+        ],
+        "explanation": "Le verbe être s’accorde avec le sujet : Tu es dans le bus.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-corriger-erreur",
+          "position": 11
+        }
+      },
+      {
+        "id": "etre-a1-erreur-013",
+        "kind": "correct",
+        "prompt": "Il sont au travail.",
+        "answers": [
+          "Il est au travail."
+        ],
+        "explanation": "Le verbe être s’accorde avec le sujet : Il est au travail.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-corriger-erreur",
+          "position": 12
+        }
+      },
+      {
+        "id": "etre-a1-erreur-014",
+        "kind": "correct",
+        "prompt": "Elle sont à la gare.",
+        "answers": [
+          "Elle est à la gare."
+        ],
+        "explanation": "Le verbe être s’accorde avec le sujet : Elle est à la gare.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-corriger-erreur",
+          "position": 13
+        }
+      },
+      {
+        "id": "etre-a1-erreur-015",
+        "kind": "correct",
+        "prompt": "Nous suis dans le jardin.",
+        "answers": [
+          "Nous sommes dans le jardin."
+        ],
+        "explanation": "Le verbe être s’accorde avec le sujet : Nous sommes dans le jardin.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-corriger-erreur",
+          "position": 14
+        }
+      },
+      {
+        "id": "etre-a1-erreur-016",
+        "kind": "correct",
+        "prompt": "Vous est en vacances.",
+        "answers": [
+          "Vous êtes en vacances."
+        ],
+        "explanation": "Le verbe être s’accorde avec le sujet : Vous êtes en vacances.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-corriger-erreur",
+          "position": 15
+        }
+      },
+      {
+        "id": "etre-a1-erreur-017",
+        "kind": "correct",
+        "prompt": "Ils es au cinéma.",
+        "answers": [
+          "Ils sont au cinéma."
+        ],
+        "explanation": "Le verbe être s’accorde avec le sujet : Ils sont au cinéma.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-corriger-erreur",
+          "position": 16
+        }
+      },
+      {
+        "id": "etre-a1-erreur-018",
+        "kind": "correct",
+        "prompt": "Elles es à la piscine.",
+        "answers": [
+          "Elles sont à la piscine."
+        ],
+        "explanation": "Le verbe être s’accorde avec le sujet : Elles sont à la piscine.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-corriger-erreur",
+          "position": 17
+        }
+      },
+      {
+        "id": "etre-a1-erreur-019",
+        "kind": "correct",
+        "prompt": "Mon père sont dans la cuisine.",
+        "answers": [
+          "Mon père est dans la cuisine."
+        ],
+        "explanation": "Le verbe être s’accorde avec le sujet : Mon père est dans la cuisine.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-corriger-erreur",
+          "position": 18
+        }
+      },
+      {
+        "id": "etre-a1-erreur-020",
+        "kind": "correct",
+        "prompt": "Ma mère sont au magasin.",
+        "answers": [
+          "Ma mère est au magasin."
+        ],
+        "explanation": "Le verbe être s’accorde avec le sujet : Ma mère est au magasin.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-corriger-erreur",
+          "position": 19
+        }
+      },
+      {
+        "id": "etre-a1-erreur-021",
+        "kind": "correct",
+        "prompt": "Je est prêt.",
+        "answers": [
+          "Je suis prêt."
+        ],
+        "explanation": "Le verbe être s’accorde avec le sujet : Je suis prêt.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-corriger-erreur",
+          "position": 20
+        }
+      },
+      {
+        "id": "etre-a1-erreur-022",
+        "kind": "correct",
+        "prompt": "Tu sommes fatigué.",
+        "answers": [
+          "Tu es fatigué."
+        ],
+        "explanation": "Le verbe être s’accorde avec le sujet : Tu es fatigué.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-corriger-erreur",
+          "position": 21
+        }
+      },
+      {
+        "id": "etre-a1-erreur-023",
+        "kind": "correct",
+        "prompt": "Il sont grand.",
+        "answers": [
+          "Il est grand."
+        ],
+        "explanation": "Le verbe être s’accorde avec le sujet : Il est grand.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-corriger-erreur",
+          "position": 22
+        }
+      },
+      {
+        "id": "etre-a1-erreur-024",
+        "kind": "correct",
+        "prompt": "Elle sont petite.",
+        "answers": [
+          "Elle est petite."
+        ],
+        "explanation": "Le verbe être s’accorde avec le sujet : Elle est petite.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-corriger-erreur",
+          "position": 23
+        }
+      },
+      {
+        "id": "etre-a1-erreur-025",
+        "kind": "correct",
+        "prompt": "Nous suis contents.",
+        "answers": [
+          "Nous sommes contents."
+        ],
+        "explanation": "Le verbe être s’accorde avec le sujet : Nous sommes contents.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-corriger-erreur",
+          "position": 24
+        }
+      },
+      {
+        "id": "etre-a1-erreur-026",
+        "kind": "correct",
+        "prompt": "Vous est gentils.",
+        "answers": [
+          "Vous êtes gentils."
+        ],
+        "explanation": "Le verbe être s’accorde avec le sujet : Vous êtes gentils.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-corriger-erreur",
+          "position": 25
+        }
+      },
+      {
+        "id": "etre-a1-erreur-027",
+        "kind": "correct",
+        "prompt": "Ils es suisses.",
+        "answers": [
+          "Ils sont suisses."
+        ],
+        "explanation": "Le verbe être s’accorde avec le sujet : Ils sont suisses.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-corriger-erreur",
+          "position": 26
+        }
+      },
+      {
+        "id": "etre-a1-erreur-028",
+        "kind": "correct",
+        "prompt": "Elles es italiennes.",
+        "answers": [
+          "Elles sont italiennes."
+        ],
+        "explanation": "Le verbe être s’accorde avec le sujet : Elles sont italiennes.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-corriger-erreur",
+          "position": 27
+        }
+      },
+      {
+        "id": "etre-a1-erreur-029",
+        "kind": "correct",
+        "prompt": "Mon père sont calme.",
+        "answers": [
+          "Mon père est calme."
+        ],
+        "explanation": "Le verbe être s’accorde avec le sujet : Mon père est calme.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-corriger-erreur",
+          "position": 28
+        }
+      },
+      {
+        "id": "etre-a1-erreur-030",
+        "kind": "correct",
+        "prompt": "Ma mère sont contente.",
+        "answers": [
+          "Ma mère est contente."
+        ],
+        "explanation": "Le verbe être s’accorde avec le sujet : Ma mère est contente.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-corriger-erreur",
+          "position": 29
+        }
+      },
+      {
+        "id": "etre-a1-erreur-031",
+        "kind": "correct",
+        "prompt": "Je est avec ma sœur.",
+        "answers": [
+          "Je suis avec ma sœur."
+        ],
+        "explanation": "Le verbe être s’accorde avec le sujet : Je suis avec ma sœur.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-corriger-erreur",
+          "position": 30
+        }
+      },
+      {
+        "id": "etre-a1-erreur-032",
+        "kind": "correct",
+        "prompt": "Tu sommes avec ton frère.",
+        "answers": [
+          "Tu es avec ton frère."
+        ],
+        "explanation": "Le verbe être s’accorde avec le sujet : Tu es avec ton frère.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-corriger-erreur",
+          "position": 31
+        }
+      },
+      {
+        "id": "etre-a1-erreur-033",
+        "kind": "correct",
+        "prompt": "Il sont avec son père.",
+        "answers": [
+          "Il est avec son père."
+        ],
+        "explanation": "Le verbe être s’accorde avec le sujet : Il est avec son père.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-corriger-erreur",
+          "position": 32
+        }
+      },
+      {
+        "id": "etre-a1-erreur-034",
+        "kind": "correct",
+        "prompt": "Elle sont avec sa mère.",
+        "answers": [
+          "Elle est avec sa mère."
+        ],
+        "explanation": "Le verbe être s’accorde avec le sujet : Elle est avec sa mère.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-corriger-erreur",
+          "position": 33
+        }
+      },
+      {
+        "id": "etre-a1-erreur-035",
+        "kind": "correct",
+        "prompt": "Nous suis avec nos amis.",
+        "answers": [
+          "Nous sommes avec nos amis."
+        ],
+        "explanation": "Le verbe être s’accorde avec le sujet : Nous sommes avec nos amis.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-corriger-erreur",
+          "position": 34
+        }
+      },
+      {
+        "id": "etre-a1-erreur-036",
+        "kind": "correct",
+        "prompt": "Vous est avec votre famille.",
+        "answers": [
+          "Vous êtes avec votre famille."
+        ],
+        "explanation": "Le verbe être s’accorde avec le sujet : Vous êtes avec votre famille.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-corriger-erreur",
+          "position": 35
+        }
+      },
+      {
+        "id": "etre-a1-erreur-037",
+        "kind": "correct",
+        "prompt": "Ils es chez leurs parents.",
+        "answers": [
+          "Ils sont chez leurs parents."
+        ],
+        "explanation": "Le verbe être s’accorde avec le sujet : Ils sont chez leurs parents.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-corriger-erreur",
+          "position": 36
+        }
+      },
+      {
+        "id": "etre-a1-erreur-038",
+        "kind": "correct",
+        "prompt": "Elles es chez leur tante.",
+        "answers": [
+          "Elles sont chez leur tante."
+        ],
+        "explanation": "Le verbe être s’accorde avec le sujet : Elles sont chez leur tante.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-corriger-erreur",
+          "position": 37
+        }
+      },
+      {
+        "id": "etre-a1-erreur-039",
+        "kind": "correct",
+        "prompt": "Mon père sont chez mon oncle.",
+        "answers": [
+          "Mon père est chez mon oncle."
+        ],
+        "explanation": "Le verbe être s’accorde avec le sujet : Mon père est chez mon oncle.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-corriger-erreur",
+          "position": 38
+        }
+      },
+      {
+        "id": "etre-a1-erreur-040",
+        "kind": "correct",
+        "prompt": "Ma mère sont chez ma grand-mère.",
+        "answers": [
+          "Ma mère est chez ma grand-mère."
+        ],
+        "explanation": "Le verbe être s’accorde avec le sujet : Ma mère est chez ma grand-mère.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-corriger-erreur",
+          "position": 39
+        }
+      },
+      {
+        "id": "etre-a1-erreur-041",
+        "kind": "correct",
+        "prompt": "Je est près du lac.",
+        "answers": [
+          "Je suis près du lac."
+        ],
+        "explanation": "Le verbe être s’accorde avec le sujet : Je suis près du lac.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-corriger-erreur",
+          "position": 40
+        }
+      },
+      {
+        "id": "etre-a1-erreur-042",
+        "kind": "correct",
+        "prompt": "Tu sommes devant la porte.",
+        "answers": [
+          "Tu es devant la porte."
+        ],
+        "explanation": "Le verbe être s’accorde avec le sujet : Tu es devant la porte.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-corriger-erreur",
+          "position": 41
+        }
+      },
+      {
+        "id": "etre-a1-erreur-043",
+        "kind": "correct",
+        "prompt": "Il sont derrière le bureau.",
+        "answers": [
+          "Il est derrière le bureau."
+        ],
+        "explanation": "Le verbe être s’accorde avec le sujet : Il est derrière le bureau.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-corriger-erreur",
+          "position": 42
+        }
+      },
+      {
+        "id": "etre-a1-erreur-044",
+        "kind": "correct",
+        "prompt": "Elle sont sur la terrasse.",
+        "answers": [
+          "Elle est sur la terrasse."
+        ],
+        "explanation": "Le verbe être s’accorde avec le sujet : Elle est sur la terrasse.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-corriger-erreur",
+          "position": 43
+        }
+      },
+      {
+        "id": "etre-a1-erreur-045",
+        "kind": "correct",
+        "prompt": "Nous suis à côté du parc.",
+        "answers": [
+          "Nous sommes à côté du parc."
+        ],
+        "explanation": "Le verbe être s’accorde avec le sujet : Nous sommes à côté du parc.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-corriger-erreur",
+          "position": 44
+        }
+      },
+      {
+        "id": "etre-a1-erreur-046",
+        "kind": "correct",
+        "prompt": "Vous est en retard.",
+        "answers": [
+          "Vous êtes en retard."
+        ],
+        "explanation": "Le verbe être s’accorde avec le sujet : Vous êtes en retard.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-corriger-erreur",
+          "position": 45
+        }
+      },
+      {
+        "id": "etre-a1-erreur-047",
+        "kind": "correct",
+        "prompt": "Ils es en avance.",
+        "answers": [
+          "Ils sont en avance."
+        ],
+        "explanation": "Le verbe être s’accorde avec le sujet : Ils sont en avance.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-corriger-erreur",
+          "position": 46
+        }
+      },
+      {
+        "id": "etre-a1-erreur-048",
+        "kind": "correct",
+        "prompt": "Elles es dans la salle.",
+        "answers": [
+          "Elles sont dans la salle."
+        ],
+        "explanation": "Le verbe être s’accorde avec le sujet : Elles sont dans la salle.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-corriger-erreur",
+          "position": 47
+        }
+      },
+      {
+        "id": "etre-a1-erreur-049",
+        "kind": "correct",
+        "prompt": "Mon père sont au téléphone.",
+        "answers": [
+          "Mon père est au téléphone."
+        ],
+        "explanation": "Le verbe être s’accorde avec le sujet : Mon père est au téléphone.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-corriger-erreur",
+          "position": 48
+        }
+      },
+      {
+        "id": "etre-a1-erreur-050",
+        "kind": "correct",
+        "prompt": "Ma mère sont à l’école.",
+        "answers": [
+          "Ma mère est à l’école."
+        ],
+        "explanation": "Le verbe être s’accorde avec le sujet : Ma mère est à l’école.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-corriger-erreur",
+          "position": 49
+        }
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "revision": "etre-a1-2026-11-11.1",
+    "subthemeId": "etre",
+    "level": "A1",
+    "objective": "Conjuguer être au présent, accorder le verbe avec son sujet et construire une phrase simple.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex",
+      "date": "2026-11-11",
+      "humanReview": "pending",
+      "note": "Relecture des 150 phrases reprises ; validation enseignant avant publication."
+    },
+    "activityId": "gram-ex-etre-ordre",
+    "label": "Mots dans l’ordre",
+    "presentations": [
+      "order"
+    ],
+    "instructions": {
+      "order": "Remettez les mots dans l’ordre pour former une phrase avec être au présent."
+    },
+    "units": [
+      {
+        "id": "etre-a1-ordre-001",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Je suis français."
+        ],
+        "tokens": [
+          {
+            "id": "word-1",
+            "text": "Je",
+            "category": "pronom"
+          },
+          {
+            "id": "word-2",
+            "text": "suis",
+            "category": "verbe"
+          },
+          {
+            "id": "word-3",
+            "text": "français",
+            "category": "adjectif"
+          }
+        ],
+        "explanation": "Une phrase possible : Je suis français.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-ordre",
+          "partition": "a1",
+          "position": 0
+        }
+      },
+      {
+        "id": "etre-a1-ordre-002",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Tu es à la maison."
+        ],
+        "tokens": [
+          {
+            "id": "word-1",
+            "text": "Tu",
+            "category": "pronom"
+          },
+          {
+            "id": "word-2",
+            "text": "es",
+            "category": "verbe"
+          },
+          {
+            "id": "word-3",
+            "text": "à",
+            "category": "preposition"
+          },
+          {
+            "id": "word-4",
+            "text": "la",
+            "category": "determinant"
+          },
+          {
+            "id": "word-5",
+            "text": "maison",
+            "category": "nom"
+          }
+        ],
+        "explanation": "Une phrase possible : Tu es à la maison.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-ordre",
+          "partition": "a1",
+          "position": 1
+        }
+      },
+      {
+        "id": "etre-a1-ordre-003",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Il est médecin."
+        ],
+        "tokens": [
+          {
+            "id": "word-1",
+            "text": "Il",
+            "category": "pronom"
+          },
+          {
+            "id": "word-2",
+            "text": "est",
+            "category": "verbe"
+          },
+          {
+            "id": "word-3",
+            "text": "médecin",
+            "category": "nom"
+          }
+        ],
+        "explanation": "Une phrase possible : Il est médecin.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-ordre",
+          "partition": "a1",
+          "position": 2
+        }
+      },
+      {
+        "id": "etre-a1-ordre-004",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Elle est infirmière."
+        ],
+        "tokens": [
+          {
+            "id": "word-1",
+            "text": "Elle",
+            "category": "pronom"
+          },
+          {
+            "id": "word-2",
+            "text": "est",
+            "category": "verbe"
+          },
+          {
+            "id": "word-3",
+            "text": "infirmière",
+            "category": "nom"
+          }
+        ],
+        "explanation": "Une phrase possible : Elle est infirmière.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-ordre",
+          "partition": "a1",
+          "position": 3
+        }
+      },
+      {
+        "id": "etre-a1-ordre-005",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Nous sommes en classe."
+        ],
+        "tokens": [
+          {
+            "id": "word-1",
+            "text": "Nous",
+            "category": "pronom"
+          },
+          {
+            "id": "word-2",
+            "text": "sommes",
+            "category": "verbe"
+          },
+          {
+            "id": "word-3",
+            "text": "en",
+            "category": "preposition"
+          },
+          {
+            "id": "word-4",
+            "text": "classe",
+            "category": "nom"
+          }
+        ],
+        "explanation": "Une phrase possible : Nous sommes en classe.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-ordre",
+          "partition": "a1",
+          "position": 4
+        }
+      },
+      {
+        "id": "etre-a1-ordre-006",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Vous êtes au marché."
+        ],
+        "tokens": [
+          {
+            "id": "word-1",
+            "text": "Vous",
+            "category": "pronom"
+          },
+          {
+            "id": "word-2",
+            "text": "êtes",
+            "category": "verbe"
+          },
+          {
+            "id": "word-3",
+            "text": "au",
+            "category": "preposition"
+          },
+          {
+            "id": "word-4",
+            "text": "marché",
+            "category": "nom"
+          }
+        ],
+        "explanation": "Une phrase possible : Vous êtes au marché.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-ordre",
+          "partition": "a1",
+          "position": 5
+        }
+      },
+      {
+        "id": "etre-a1-ordre-007",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Ils sont étudiants."
+        ],
+        "tokens": [
+          {
+            "id": "word-1",
+            "text": "Ils",
+            "category": "pronom"
+          },
+          {
+            "id": "word-2",
+            "text": "sont",
+            "category": "verbe"
+          },
+          {
+            "id": "word-3",
+            "text": "étudiants",
+            "category": "nom"
+          }
+        ],
+        "explanation": "Une phrase possible : Ils sont étudiants.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-ordre",
+          "partition": "a1",
+          "position": 6
+        }
+      },
+      {
+        "id": "etre-a1-ordre-008",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Elles sont contentes."
+        ],
+        "tokens": [
+          {
+            "id": "word-1",
+            "text": "Elles",
+            "category": "pronom"
+          },
+          {
+            "id": "word-2",
+            "text": "sont",
+            "category": "verbe"
+          },
+          {
+            "id": "word-3",
+            "text": "contentes",
+            "category": "adjectif"
+          }
+        ],
+        "explanation": "Une phrase possible : Elles sont contentes.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-ordre",
+          "partition": "a1",
+          "position": 7
+        }
+      },
+      {
+        "id": "etre-a1-ordre-009",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Mon père est boulanger."
+        ],
+        "tokens": [
+          {
+            "id": "word-1",
+            "text": "Mon",
+            "category": "determinant"
+          },
+          {
+            "id": "word-2",
+            "text": "père",
+            "category": "nom"
+          },
+          {
+            "id": "word-3",
+            "text": "est",
+            "category": "verbe"
+          },
+          {
+            "id": "word-4",
+            "text": "boulanger",
+            "category": "nom"
+          }
+        ],
+        "explanation": "Une phrase possible : Mon père est boulanger.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-ordre",
+          "partition": "a1",
+          "position": 8
+        }
+      },
+      {
+        "id": "etre-a1-ordre-010",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Ma mère est vendeuse."
+        ],
+        "tokens": [
+          {
+            "id": "word-1",
+            "text": "Ma",
+            "category": "determinant"
+          },
+          {
+            "id": "word-2",
+            "text": "mère",
+            "category": "nom"
+          },
+          {
+            "id": "word-3",
+            "text": "est",
+            "category": "verbe"
+          },
+          {
+            "id": "word-4",
+            "text": "vendeuse",
+            "category": "nom"
+          }
+        ],
+        "explanation": "Une phrase possible : Ma mère est vendeuse.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-ordre",
+          "partition": "a1",
+          "position": 9
+        }
+      },
+      {
+        "id": "etre-a1-ordre-011",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Je suis à Paris."
+        ],
+        "tokens": [
+          {
+            "id": "word-1",
+            "text": "Je",
+            "category": "pronom"
+          },
+          {
+            "id": "word-2",
+            "text": "suis",
+            "category": "verbe"
+          },
+          {
+            "id": "word-3",
+            "text": "à",
+            "category": "preposition"
+          },
+          {
+            "id": "word-4",
+            "text": "Paris",
+            "category": "nom"
+          }
+        ],
+        "explanation": "Une phrase possible : Je suis à Paris.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-ordre",
+          "partition": "a1",
+          "position": 10
+        }
+      },
+      {
+        "id": "etre-a1-ordre-012",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Tu es dans le bus."
+        ],
+        "tokens": [
+          {
+            "id": "word-1",
+            "text": "Tu",
+            "category": "pronom"
+          },
+          {
+            "id": "word-2",
+            "text": "es",
+            "category": "verbe"
+          },
+          {
+            "id": "word-3",
+            "text": "dans",
+            "category": "preposition"
+          },
+          {
+            "id": "word-4",
+            "text": "le",
+            "category": "determinant"
+          },
+          {
+            "id": "word-5",
+            "text": "bus",
+            "category": "nom"
+          }
+        ],
+        "explanation": "Une phrase possible : Tu es dans le bus.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-ordre",
+          "partition": "a1",
+          "position": 11
+        }
+      },
+      {
+        "id": "etre-a1-ordre-013",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Il est au travail."
+        ],
+        "tokens": [
+          {
+            "id": "word-1",
+            "text": "Il",
+            "category": "pronom"
+          },
+          {
+            "id": "word-2",
+            "text": "est",
+            "category": "verbe"
+          },
+          {
+            "id": "word-3",
+            "text": "au",
+            "category": "preposition"
+          },
+          {
+            "id": "word-4",
+            "text": "travail",
+            "category": "nom"
+          }
+        ],
+        "explanation": "Une phrase possible : Il est au travail.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-ordre",
+          "partition": "a1",
+          "position": 12
+        }
+      },
+      {
+        "id": "etre-a1-ordre-014",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Elle est à la gare."
+        ],
+        "tokens": [
+          {
+            "id": "word-1",
+            "text": "Elle",
+            "category": "pronom"
+          },
+          {
+            "id": "word-2",
+            "text": "est",
+            "category": "verbe"
+          },
+          {
+            "id": "word-3",
+            "text": "à",
+            "category": "preposition"
+          },
+          {
+            "id": "word-4",
+            "text": "la",
+            "category": "determinant"
+          },
+          {
+            "id": "word-5",
+            "text": "gare",
+            "category": "nom"
+          }
+        ],
+        "explanation": "Une phrase possible : Elle est à la gare.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-ordre",
+          "partition": "a1",
+          "position": 13
+        }
+      },
+      {
+        "id": "etre-a1-ordre-015",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Nous sommes dans le jardin."
+        ],
+        "tokens": [
+          {
+            "id": "word-1",
+            "text": "Nous",
+            "category": "pronom"
+          },
+          {
+            "id": "word-2",
+            "text": "sommes",
+            "category": "verbe"
+          },
+          {
+            "id": "word-3",
+            "text": "dans",
+            "category": "preposition"
+          },
+          {
+            "id": "word-4",
+            "text": "le",
+            "category": "determinant"
+          },
+          {
+            "id": "word-5",
+            "text": "jardin",
+            "category": "nom"
+          }
+        ],
+        "explanation": "Une phrase possible : Nous sommes dans le jardin.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-ordre",
+          "partition": "a1",
+          "position": 14
+        }
+      },
+      {
+        "id": "etre-a1-ordre-016",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Vous êtes en vacances."
+        ],
+        "tokens": [
+          {
+            "id": "word-1",
+            "text": "Vous",
+            "category": "pronom"
+          },
+          {
+            "id": "word-2",
+            "text": "êtes",
+            "category": "verbe"
+          },
+          {
+            "id": "word-3",
+            "text": "en",
+            "category": "preposition"
+          },
+          {
+            "id": "word-4",
+            "text": "vacances",
+            "category": "nom"
+          }
+        ],
+        "explanation": "Une phrase possible : Vous êtes en vacances.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-ordre",
+          "partition": "a1",
+          "position": 15
+        }
+      },
+      {
+        "id": "etre-a1-ordre-017",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Ils sont au cinéma."
+        ],
+        "tokens": [
+          {
+            "id": "word-1",
+            "text": "Ils",
+            "category": "pronom"
+          },
+          {
+            "id": "word-2",
+            "text": "sont",
+            "category": "verbe"
+          },
+          {
+            "id": "word-3",
+            "text": "au",
+            "category": "preposition"
+          },
+          {
+            "id": "word-4",
+            "text": "cinéma",
+            "category": "nom"
+          }
+        ],
+        "explanation": "Une phrase possible : Ils sont au cinéma.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-ordre",
+          "partition": "a1",
+          "position": 16
+        }
+      },
+      {
+        "id": "etre-a1-ordre-018",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Elles sont à la piscine."
+        ],
+        "tokens": [
+          {
+            "id": "word-1",
+            "text": "Elles",
+            "category": "pronom"
+          },
+          {
+            "id": "word-2",
+            "text": "sont",
+            "category": "verbe"
+          },
+          {
+            "id": "word-3",
+            "text": "à",
+            "category": "preposition"
+          },
+          {
+            "id": "word-4",
+            "text": "la",
+            "category": "determinant"
+          },
+          {
+            "id": "word-5",
+            "text": "piscine",
+            "category": "nom"
+          }
+        ],
+        "explanation": "Une phrase possible : Elles sont à la piscine.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-ordre",
+          "partition": "a1",
+          "position": 17
+        }
+      },
+      {
+        "id": "etre-a1-ordre-019",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Mon père est dans la cuisine."
+        ],
+        "tokens": [
+          {
+            "id": "word-1",
+            "text": "Mon",
+            "category": "determinant"
+          },
+          {
+            "id": "word-2",
+            "text": "père",
+            "category": "nom"
+          },
+          {
+            "id": "word-3",
+            "text": "est",
+            "category": "verbe"
+          },
+          {
+            "id": "word-4",
+            "text": "dans",
+            "category": "preposition"
+          },
+          {
+            "id": "word-5",
+            "text": "la",
+            "category": "determinant"
+          },
+          {
+            "id": "word-6",
+            "text": "cuisine",
+            "category": "nom"
+          }
+        ],
+        "explanation": "Une phrase possible : Mon père est dans la cuisine.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-ordre",
+          "partition": "a1",
+          "position": 18
+        }
+      },
+      {
+        "id": "etre-a1-ordre-020",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Ma mère est au magasin."
+        ],
+        "tokens": [
+          {
+            "id": "word-1",
+            "text": "Ma",
+            "category": "determinant"
+          },
+          {
+            "id": "word-2",
+            "text": "mère",
+            "category": "nom"
+          },
+          {
+            "id": "word-3",
+            "text": "est",
+            "category": "verbe"
+          },
+          {
+            "id": "word-4",
+            "text": "au",
+            "category": "preposition"
+          },
+          {
+            "id": "word-5",
+            "text": "magasin",
+            "category": "nom"
+          }
+        ],
+        "explanation": "Une phrase possible : Ma mère est au magasin.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-ordre",
+          "partition": "a1",
+          "position": 19
+        }
+      },
+      {
+        "id": "etre-a1-ordre-021",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Je suis prêt."
+        ],
+        "tokens": [
+          {
+            "id": "word-1",
+            "text": "Je",
+            "category": "pronom"
+          },
+          {
+            "id": "word-2",
+            "text": "suis",
+            "category": "verbe"
+          },
+          {
+            "id": "word-3",
+            "text": "prêt",
+            "category": "adjectif"
+          }
+        ],
+        "explanation": "Une phrase possible : Je suis prêt.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-ordre",
+          "partition": "a1",
+          "position": 20
+        }
+      },
+      {
+        "id": "etre-a1-ordre-022",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Tu es fatigué."
+        ],
+        "tokens": [
+          {
+            "id": "word-1",
+            "text": "Tu",
+            "category": "pronom"
+          },
+          {
+            "id": "word-2",
+            "text": "es",
+            "category": "verbe"
+          },
+          {
+            "id": "word-3",
+            "text": "fatigué",
+            "category": "adjectif"
+          }
+        ],
+        "explanation": "Une phrase possible : Tu es fatigué.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-ordre",
+          "partition": "a1",
+          "position": 21
+        }
+      },
+      {
+        "id": "etre-a1-ordre-023",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Il est grand."
+        ],
+        "tokens": [
+          {
+            "id": "word-1",
+            "text": "Il",
+            "category": "pronom"
+          },
+          {
+            "id": "word-2",
+            "text": "est",
+            "category": "verbe"
+          },
+          {
+            "id": "word-3",
+            "text": "grand",
+            "category": "adjectif"
+          }
+        ],
+        "explanation": "Une phrase possible : Il est grand.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-ordre",
+          "partition": "a1",
+          "position": 22
+        }
+      },
+      {
+        "id": "etre-a1-ordre-024",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Elle est petite."
+        ],
+        "tokens": [
+          {
+            "id": "word-1",
+            "text": "Elle",
+            "category": "pronom"
+          },
+          {
+            "id": "word-2",
+            "text": "est",
+            "category": "verbe"
+          },
+          {
+            "id": "word-3",
+            "text": "petite",
+            "category": "adjectif"
+          }
+        ],
+        "explanation": "Une phrase possible : Elle est petite.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-ordre",
+          "partition": "a1",
+          "position": 23
+        }
+      },
+      {
+        "id": "etre-a1-ordre-025",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Nous sommes contents."
+        ],
+        "tokens": [
+          {
+            "id": "word-1",
+            "text": "Nous",
+            "category": "pronom"
+          },
+          {
+            "id": "word-2",
+            "text": "sommes",
+            "category": "verbe"
+          },
+          {
+            "id": "word-3",
+            "text": "contents",
+            "category": "adjectif"
+          }
+        ],
+        "explanation": "Une phrase possible : Nous sommes contents.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-ordre",
+          "partition": "a1",
+          "position": 24
+        }
+      },
+      {
+        "id": "etre-a1-ordre-026",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Vous êtes gentils."
+        ],
+        "tokens": [
+          {
+            "id": "word-1",
+            "text": "Vous",
+            "category": "pronom"
+          },
+          {
+            "id": "word-2",
+            "text": "êtes",
+            "category": "verbe"
+          },
+          {
+            "id": "word-3",
+            "text": "gentils",
+            "category": "adjectif"
+          }
+        ],
+        "explanation": "Une phrase possible : Vous êtes gentils.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-ordre",
+          "partition": "a1",
+          "position": 25
+        }
+      },
+      {
+        "id": "etre-a1-ordre-027",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Ils sont suisses."
+        ],
+        "tokens": [
+          {
+            "id": "word-1",
+            "text": "Ils",
+            "category": "pronom"
+          },
+          {
+            "id": "word-2",
+            "text": "sont",
+            "category": "verbe"
+          },
+          {
+            "id": "word-3",
+            "text": "suisses",
+            "category": "adjectif"
+          }
+        ],
+        "explanation": "Une phrase possible : Ils sont suisses.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-ordre",
+          "partition": "a1",
+          "position": 26
+        }
+      },
+      {
+        "id": "etre-a1-ordre-028",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Elles sont italiennes."
+        ],
+        "tokens": [
+          {
+            "id": "word-1",
+            "text": "Elles",
+            "category": "pronom"
+          },
+          {
+            "id": "word-2",
+            "text": "sont",
+            "category": "verbe"
+          },
+          {
+            "id": "word-3",
+            "text": "italiennes",
+            "category": "adjectif"
+          }
+        ],
+        "explanation": "Une phrase possible : Elles sont italiennes.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-ordre",
+          "partition": "a1",
+          "position": 27
+        }
+      },
+      {
+        "id": "etre-a1-ordre-029",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Mon père est calme."
+        ],
+        "tokens": [
+          {
+            "id": "word-1",
+            "text": "Mon",
+            "category": "determinant"
+          },
+          {
+            "id": "word-2",
+            "text": "père",
+            "category": "nom"
+          },
+          {
+            "id": "word-3",
+            "text": "est",
+            "category": "verbe"
+          },
+          {
+            "id": "word-4",
+            "text": "calme",
+            "category": "adjectif"
+          }
+        ],
+        "explanation": "Une phrase possible : Mon père est calme.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-ordre",
+          "partition": "a1",
+          "position": 28
+        }
+      },
+      {
+        "id": "etre-a1-ordre-030",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Ma mère est contente."
+        ],
+        "tokens": [
+          {
+            "id": "word-1",
+            "text": "Ma",
+            "category": "determinant"
+          },
+          {
+            "id": "word-2",
+            "text": "mère",
+            "category": "nom"
+          },
+          {
+            "id": "word-3",
+            "text": "est",
+            "category": "verbe"
+          },
+          {
+            "id": "word-4",
+            "text": "contente",
+            "category": "adjectif"
+          }
+        ],
+        "explanation": "Une phrase possible : Ma mère est contente.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-ordre",
+          "partition": "a1",
+          "position": 29
+        }
+      },
+      {
+        "id": "etre-a1-ordre-031",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Je suis avec ma sœur."
+        ],
+        "tokens": [
+          {
+            "id": "word-1",
+            "text": "Je",
+            "category": "pronom"
+          },
+          {
+            "id": "word-2",
+            "text": "suis",
+            "category": "verbe"
+          },
+          {
+            "id": "word-3",
+            "text": "avec",
+            "category": "preposition"
+          },
+          {
+            "id": "word-4",
+            "text": "ma",
+            "category": "determinant"
+          },
+          {
+            "id": "word-5",
+            "text": "sœur",
+            "category": "nom"
+          }
+        ],
+        "explanation": "Une phrase possible : Je suis avec ma sœur.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-ordre",
+          "partition": "a1",
+          "position": 30
+        }
+      },
+      {
+        "id": "etre-a1-ordre-032",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Tu es avec ton frère."
+        ],
+        "tokens": [
+          {
+            "id": "word-1",
+            "text": "Tu",
+            "category": "pronom"
+          },
+          {
+            "id": "word-2",
+            "text": "es",
+            "category": "verbe"
+          },
+          {
+            "id": "word-3",
+            "text": "avec",
+            "category": "preposition"
+          },
+          {
+            "id": "word-4",
+            "text": "ton",
+            "category": "determinant"
+          },
+          {
+            "id": "word-5",
+            "text": "frère",
+            "category": "nom"
+          }
+        ],
+        "explanation": "Une phrase possible : Tu es avec ton frère.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-ordre",
+          "partition": "a1",
+          "position": 31
+        }
+      },
+      {
+        "id": "etre-a1-ordre-033",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Il est avec son père."
+        ],
+        "tokens": [
+          {
+            "id": "word-1",
+            "text": "Il",
+            "category": "pronom"
+          },
+          {
+            "id": "word-2",
+            "text": "est",
+            "category": "verbe"
+          },
+          {
+            "id": "word-3",
+            "text": "avec",
+            "category": "preposition"
+          },
+          {
+            "id": "word-4",
+            "text": "son",
+            "category": "determinant"
+          },
+          {
+            "id": "word-5",
+            "text": "père",
+            "category": "nom"
+          }
+        ],
+        "explanation": "Une phrase possible : Il est avec son père.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-ordre",
+          "partition": "a1",
+          "position": 32
+        }
+      },
+      {
+        "id": "etre-a1-ordre-034",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Elle est avec sa mère."
+        ],
+        "tokens": [
+          {
+            "id": "word-1",
+            "text": "Elle",
+            "category": "pronom"
+          },
+          {
+            "id": "word-2",
+            "text": "est",
+            "category": "verbe"
+          },
+          {
+            "id": "word-3",
+            "text": "avec",
+            "category": "preposition"
+          },
+          {
+            "id": "word-4",
+            "text": "sa",
+            "category": "determinant"
+          },
+          {
+            "id": "word-5",
+            "text": "mère",
+            "category": "nom"
+          }
+        ],
+        "explanation": "Une phrase possible : Elle est avec sa mère.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-ordre",
+          "partition": "a1",
+          "position": 33
+        }
+      },
+      {
+        "id": "etre-a1-ordre-035",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Nous sommes avec nos amis."
+        ],
+        "tokens": [
+          {
+            "id": "word-1",
+            "text": "Nous",
+            "category": "pronom"
+          },
+          {
+            "id": "word-2",
+            "text": "sommes",
+            "category": "verbe"
+          },
+          {
+            "id": "word-3",
+            "text": "avec",
+            "category": "preposition"
+          },
+          {
+            "id": "word-4",
+            "text": "nos",
+            "category": "determinant"
+          },
+          {
+            "id": "word-5",
+            "text": "amis",
+            "category": "nom"
+          }
+        ],
+        "explanation": "Une phrase possible : Nous sommes avec nos amis.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-ordre",
+          "partition": "a1",
+          "position": 34
+        }
+      },
+      {
+        "id": "etre-a1-ordre-036",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Vous êtes avec votre famille."
+        ],
+        "tokens": [
+          {
+            "id": "word-1",
+            "text": "Vous",
+            "category": "pronom"
+          },
+          {
+            "id": "word-2",
+            "text": "êtes",
+            "category": "verbe"
+          },
+          {
+            "id": "word-3",
+            "text": "avec",
+            "category": "preposition"
+          },
+          {
+            "id": "word-4",
+            "text": "votre",
+            "category": "determinant"
+          },
+          {
+            "id": "word-5",
+            "text": "famille",
+            "category": "nom"
+          }
+        ],
+        "explanation": "Une phrase possible : Vous êtes avec votre famille.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-ordre",
+          "partition": "a1",
+          "position": 35
+        }
+      },
+      {
+        "id": "etre-a1-ordre-037",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Ils sont chez leurs parents."
+        ],
+        "tokens": [
+          {
+            "id": "word-1",
+            "text": "Ils",
+            "category": "pronom"
+          },
+          {
+            "id": "word-2",
+            "text": "sont",
+            "category": "verbe"
+          },
+          {
+            "id": "word-3",
+            "text": "chez",
+            "category": "preposition"
+          },
+          {
+            "id": "word-4",
+            "text": "leurs",
+            "category": "determinant"
+          },
+          {
+            "id": "word-5",
+            "text": "parents",
+            "category": "nom"
+          }
+        ],
+        "explanation": "Une phrase possible : Ils sont chez leurs parents.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-ordre",
+          "partition": "a1",
+          "position": 36
+        }
+      },
+      {
+        "id": "etre-a1-ordre-038",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Elles sont chez leur tante."
+        ],
+        "tokens": [
+          {
+            "id": "word-1",
+            "text": "Elles",
+            "category": "pronom"
+          },
+          {
+            "id": "word-2",
+            "text": "sont",
+            "category": "verbe"
+          },
+          {
+            "id": "word-3",
+            "text": "chez",
+            "category": "preposition"
+          },
+          {
+            "id": "word-4",
+            "text": "leur",
+            "category": "determinant"
+          },
+          {
+            "id": "word-5",
+            "text": "tante",
+            "category": "nom"
+          }
+        ],
+        "explanation": "Une phrase possible : Elles sont chez leur tante.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-ordre",
+          "partition": "a1",
+          "position": 37
+        }
+      },
+      {
+        "id": "etre-a1-ordre-039",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Mon père est chez mon oncle."
+        ],
+        "tokens": [
+          {
+            "id": "word-1",
+            "text": "Mon",
+            "category": "determinant"
+          },
+          {
+            "id": "word-2",
+            "text": "père",
+            "category": "nom"
+          },
+          {
+            "id": "word-3",
+            "text": "est",
+            "category": "verbe"
+          },
+          {
+            "id": "word-4",
+            "text": "chez",
+            "category": "preposition"
+          },
+          {
+            "id": "word-5",
+            "text": "mon",
+            "category": "determinant"
+          },
+          {
+            "id": "word-6",
+            "text": "oncle",
+            "category": "nom"
+          }
+        ],
+        "explanation": "Une phrase possible : Mon père est chez mon oncle.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-ordre",
+          "partition": "a1",
+          "position": 38
+        }
+      },
+      {
+        "id": "etre-a1-ordre-040",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Ma mère est chez ma grand-mère."
+        ],
+        "tokens": [
+          {
+            "id": "word-1",
+            "text": "Ma",
+            "category": "determinant"
+          },
+          {
+            "id": "word-2",
+            "text": "mère",
+            "category": "nom"
+          },
+          {
+            "id": "word-3",
+            "text": "est",
+            "category": "verbe"
+          },
+          {
+            "id": "word-4",
+            "text": "chez",
+            "category": "preposition"
+          },
+          {
+            "id": "word-5",
+            "text": "ma",
+            "category": "determinant"
+          },
+          {
+            "id": "word-6",
+            "text": "grand-mère",
+            "category": "nom"
+          }
+        ],
+        "explanation": "Une phrase possible : Ma mère est chez ma grand-mère.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-ordre",
+          "partition": "a1",
+          "position": 39
+        }
+      },
+      {
+        "id": "etre-a1-ordre-041",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Je suis près du lac."
+        ],
+        "tokens": [
+          {
+            "id": "word-1",
+            "text": "Je",
+            "category": "pronom"
+          },
+          {
+            "id": "word-2",
+            "text": "suis",
+            "category": "verbe"
+          },
+          {
+            "id": "word-3",
+            "text": "près",
+            "category": "preposition"
+          },
+          {
+            "id": "word-4",
+            "text": "du",
+            "category": "preposition"
+          },
+          {
+            "id": "word-5",
+            "text": "lac",
+            "category": "nom"
+          }
+        ],
+        "explanation": "Une phrase possible : Je suis près du lac.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-ordre",
+          "partition": "a1",
+          "position": 40
+        }
+      },
+      {
+        "id": "etre-a1-ordre-042",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Tu es devant la porte."
+        ],
+        "tokens": [
+          {
+            "id": "word-1",
+            "text": "Tu",
+            "category": "pronom"
+          },
+          {
+            "id": "word-2",
+            "text": "es",
+            "category": "verbe"
+          },
+          {
+            "id": "word-3",
+            "text": "devant",
+            "category": "preposition"
+          },
+          {
+            "id": "word-4",
+            "text": "la",
+            "category": "determinant"
+          },
+          {
+            "id": "word-5",
+            "text": "porte",
+            "category": "nom"
+          }
+        ],
+        "explanation": "Une phrase possible : Tu es devant la porte.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-ordre",
+          "partition": "a1",
+          "position": 41
+        }
+      },
+      {
+        "id": "etre-a1-ordre-043",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Il est derrière le bureau."
+        ],
+        "tokens": [
+          {
+            "id": "word-1",
+            "text": "Il",
+            "category": "pronom"
+          },
+          {
+            "id": "word-2",
+            "text": "est",
+            "category": "verbe"
+          },
+          {
+            "id": "word-3",
+            "text": "derrière",
+            "category": "preposition"
+          },
+          {
+            "id": "word-4",
+            "text": "le",
+            "category": "determinant"
+          },
+          {
+            "id": "word-5",
+            "text": "bureau",
+            "category": "nom"
+          }
+        ],
+        "explanation": "Une phrase possible : Il est derrière le bureau.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-ordre",
+          "partition": "a1",
+          "position": 42
+        }
+      },
+      {
+        "id": "etre-a1-ordre-044",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Elle est sur la terrasse."
+        ],
+        "tokens": [
+          {
+            "id": "word-1",
+            "text": "Elle",
+            "category": "pronom"
+          },
+          {
+            "id": "word-2",
+            "text": "est",
+            "category": "verbe"
+          },
+          {
+            "id": "word-3",
+            "text": "sur",
+            "category": "preposition"
+          },
+          {
+            "id": "word-4",
+            "text": "la",
+            "category": "determinant"
+          },
+          {
+            "id": "word-5",
+            "text": "terrasse",
+            "category": "nom"
+          }
+        ],
+        "explanation": "Une phrase possible : Elle est sur la terrasse.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-ordre",
+          "partition": "a1",
+          "position": 43
+        }
+      },
+      {
+        "id": "etre-a1-ordre-045",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Nous sommes à côté du parc."
+        ],
+        "tokens": [
+          {
+            "id": "word-1",
+            "text": "Nous",
+            "category": "pronom"
+          },
+          {
+            "id": "word-2",
+            "text": "sommes",
+            "category": "verbe"
+          },
+          {
+            "id": "word-3",
+            "text": "à",
+            "category": "preposition"
+          },
+          {
+            "id": "word-4",
+            "text": "côté",
+            "category": "nom"
+          },
+          {
+            "id": "word-5",
+            "text": "du",
+            "category": "preposition"
+          },
+          {
+            "id": "word-6",
+            "text": "parc",
+            "category": "nom"
+          }
+        ],
+        "explanation": "Une phrase possible : Nous sommes à côté du parc.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-ordre",
+          "partition": "a1",
+          "position": 44
+        }
+      },
+      {
+        "id": "etre-a1-ordre-046",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Vous êtes en retard."
+        ],
+        "tokens": [
+          {
+            "id": "word-1",
+            "text": "Vous",
+            "category": "pronom"
+          },
+          {
+            "id": "word-2",
+            "text": "êtes",
+            "category": "verbe"
+          },
+          {
+            "id": "word-3",
+            "text": "en",
+            "category": "preposition"
+          },
+          {
+            "id": "word-4",
+            "text": "retard",
+            "category": "nom"
+          }
+        ],
+        "explanation": "Une phrase possible : Vous êtes en retard.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-ordre",
+          "partition": "a1",
+          "position": 45
+        }
+      },
+      {
+        "id": "etre-a1-ordre-047",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Ils sont en avance."
+        ],
+        "tokens": [
+          {
+            "id": "word-1",
+            "text": "Ils",
+            "category": "pronom"
+          },
+          {
+            "id": "word-2",
+            "text": "sont",
+            "category": "verbe"
+          },
+          {
+            "id": "word-3",
+            "text": "en",
+            "category": "preposition"
+          },
+          {
+            "id": "word-4",
+            "text": "avance",
+            "category": "nom"
+          }
+        ],
+        "explanation": "Une phrase possible : Ils sont en avance.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-ordre",
+          "partition": "a1",
+          "position": 46
+        }
+      },
+      {
+        "id": "etre-a1-ordre-048",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Elles sont dans la salle."
+        ],
+        "tokens": [
+          {
+            "id": "word-1",
+            "text": "Elles",
+            "category": "pronom"
+          },
+          {
+            "id": "word-2",
+            "text": "sont",
+            "category": "verbe"
+          },
+          {
+            "id": "word-3",
+            "text": "dans",
+            "category": "preposition"
+          },
+          {
+            "id": "word-4",
+            "text": "la",
+            "category": "determinant"
+          },
+          {
+            "id": "word-5",
+            "text": "salle",
+            "category": "nom"
+          }
+        ],
+        "explanation": "Une phrase possible : Elles sont dans la salle.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-ordre",
+          "partition": "a1",
+          "position": 47
+        }
+      },
+      {
+        "id": "etre-a1-ordre-049",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Mon père est au téléphone."
+        ],
+        "tokens": [
+          {
+            "id": "word-1",
+            "text": "Mon",
+            "category": "determinant"
+          },
+          {
+            "id": "word-2",
+            "text": "père",
+            "category": "nom"
+          },
+          {
+            "id": "word-3",
+            "text": "est",
+            "category": "verbe"
+          },
+          {
+            "id": "word-4",
+            "text": "au",
+            "category": "preposition"
+          },
+          {
+            "id": "word-5",
+            "text": "téléphone",
+            "category": "nom"
+          }
+        ],
+        "explanation": "Une phrase possible : Mon père est au téléphone.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-ordre",
+          "partition": "a1",
+          "position": 48
+        }
+      },
+      {
+        "id": "etre-a1-ordre-050",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Ma mère est à l’école."
+        ],
+        "tokens": [
+          {
+            "id": "word-1",
+            "text": "Ma",
+            "category": "determinant"
+          },
+          {
+            "id": "word-2",
+            "text": "mère",
+            "category": "nom"
+          },
+          {
+            "id": "word-3",
+            "text": "est",
+            "category": "verbe"
+          },
+          {
+            "id": "word-4",
+            "text": "à",
+            "category": "preposition"
+          },
+          {
+            "id": "word-5",
+            "text": "l’",
+            "category": "determinant"
+          },
+          {
+            "id": "word-6",
+            "text": "école",
+            "category": "nom"
+          }
+        ],
+        "explanation": "Une phrase possible : Ma mère est à l’école.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-etre-ordre",
+          "partition": "a1",
+          "position": 49
+        }
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "revision": "etre-a1-2026-11-11.1",
+    "subthemeId": "etre",
+    "level": "A1",
+    "objective": "Conjuguer être au présent, accorder le verbe avec son sujet et construire une phrase simple.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex",
+      "date": "2026-11-11",
+      "humanReview": "pending",
+      "note": "Relecture des 150 phrases reprises ; validation enseignant avant publication."
+    },
+    "activityId": "gram-ex-etre-curriculum-a",
+    "label": "Associer les sujets et les formes",
+    "presentations": [
+      "match"
+    ],
+    "instructions": {
+      "match": "Associez chaque phrase à la forme du verbe être qui convient."
+    },
+    "units": [
+      {
+        "id": "etre-a1-association-001",
+        "kind": "match",
+        "prompt": "Associez chaque phrase à la forme du verbe être qui convient.",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "left": "Je ___ en avance.",
+            "right": "suis",
+            "sourceId": "etre-a1-forme-001"
+          },
+          {
+            "id": "pair-2",
+            "left": "Paul ___ en retard.",
+            "right": "est",
+            "sourceId": "etre-a1-forme-002"
+          },
+          {
+            "id": "pair-3",
+            "left": "Les voisins ___ à la maison.",
+            "right": "sont",
+            "sourceId": "etre-a1-forme-003"
+          }
+        ],
+        "answers": [
+          "Je suis en avance. ; Paul est en retard. ; Les voisins sont à la maison."
+        ],
+        "explanation": "Chaque forme s’accorde avec le sujet. Chaque proposition est utilisée une seule fois.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/etre.json",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 0
+        }
+      },
+      {
+        "id": "etre-a1-association-002",
+        "kind": "match",
+        "prompt": "Associez chaque phrase à la forme du verbe être qui convient.",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "left": "Paul ___ en retard.",
+            "right": "est",
+            "sourceId": "etre-a1-forme-002"
+          },
+          {
+            "id": "pair-2",
+            "left": "Les voisins ___ à la maison.",
+            "right": "sont",
+            "sourceId": "etre-a1-forme-003"
+          },
+          {
+            "id": "pair-3",
+            "left": "Tu ___ au travail.",
+            "right": "es",
+            "sourceId": "etre-a1-forme-004"
+          }
+        ],
+        "answers": [
+          "Paul est en retard. ; Les voisins sont à la maison. ; Tu es au travail."
+        ],
+        "explanation": "Chaque forme s’accorde avec le sujet. Chaque proposition est utilisée une seule fois.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/etre.json",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 1
+        }
+      },
+      {
+        "id": "etre-a1-association-003",
+        "kind": "match",
+        "prompt": "Associez chaque phrase à la forme du verbe être qui convient.",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "left": "Les voisins ___ à la maison.",
+            "right": "sont",
+            "sourceId": "etre-a1-forme-003"
+          },
+          {
+            "id": "pair-2",
+            "left": "Tu ___ au travail.",
+            "right": "es",
+            "sourceId": "etre-a1-forme-004"
+          },
+          {
+            "id": "pair-3",
+            "left": "Nous ___ à la gare.",
+            "right": "sommes",
+            "sourceId": "etre-a1-forme-005"
+          }
+        ],
+        "answers": [
+          "Les voisins sont à la maison. ; Tu es au travail. ; Nous sommes à la gare."
+        ],
+        "explanation": "Chaque forme s’accorde avec le sujet. Chaque proposition est utilisée une seule fois.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/etre.json",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 2
+        }
+      },
+      {
+        "id": "etre-a1-association-004",
+        "kind": "match",
+        "prompt": "Associez chaque phrase à la forme du verbe être qui convient.",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "left": "Tu ___ au travail.",
+            "right": "es",
+            "sourceId": "etre-a1-forme-004"
+          },
+          {
+            "id": "pair-2",
+            "left": "Nous ___ à la gare.",
+            "right": "sommes",
+            "sourceId": "etre-a1-forme-005"
+          },
+          {
+            "id": "pair-3",
+            "left": "Les voisines ___ en formation.",
+            "right": "sont",
+            "sourceId": "etre-a1-forme-006"
+          }
+        ],
+        "answers": [
+          "Tu es au travail. ; Nous sommes à la gare. ; Les voisines sont en formation."
+        ],
+        "explanation": "Chaque forme s’accorde avec le sujet. Chaque proposition est utilisée une seule fois.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/etre.json",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 3
+        }
+      },
+      {
+        "id": "etre-a1-association-005",
+        "kind": "match",
+        "prompt": "Associez chaque phrase à la forme du verbe être qui convient.",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "left": "Nous ___ à la gare.",
+            "right": "sommes",
+            "sourceId": "etre-a1-forme-005"
+          },
+          {
+            "id": "pair-2",
+            "left": "Les voisines ___ en formation.",
+            "right": "sont",
+            "sourceId": "etre-a1-forme-006"
+          },
+          {
+            "id": "pair-3",
+            "left": "Lina ___ en vacances.",
+            "right": "est",
+            "sourceId": "etre-a1-forme-007"
+          }
+        ],
+        "answers": [
+          "Nous sommes à la gare. ; Les voisines sont en formation. ; Lina est en vacances."
+        ],
+        "explanation": "Chaque forme s’accorde avec le sujet. Chaque proposition est utilisée une seule fois.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/etre.json",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 4
+        }
+      },
+      {
+        "id": "etre-a1-association-006",
+        "kind": "match",
+        "prompt": "Associez chaque phrase à la forme du verbe être qui convient.",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "left": "Les voisines ___ en formation.",
+            "right": "sont",
+            "sourceId": "etre-a1-forme-006"
+          },
+          {
+            "id": "pair-2",
+            "left": "Lina ___ en vacances.",
+            "right": "est",
+            "sourceId": "etre-a1-forme-007"
+          },
+          {
+            "id": "pair-3",
+            "left": "Vous ___ à l’accueil.",
+            "right": "êtes",
+            "sourceId": "etre-a1-forme-008"
+          }
+        ],
+        "answers": [
+          "Les voisines sont en formation. ; Lina est en vacances. ; Vous êtes à l’accueil."
+        ],
+        "explanation": "Chaque forme s’accorde avec le sujet. Chaque proposition est utilisée une seule fois.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/etre.json",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 5
+        }
+      },
+      {
+        "id": "etre-a1-association-007",
+        "kind": "match",
+        "prompt": "Associez chaque phrase à la forme du verbe être qui convient.",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "left": "Lina ___ en vacances.",
+            "right": "est",
+            "sourceId": "etre-a1-forme-007"
+          },
+          {
+            "id": "pair-2",
+            "left": "Vous ___ à l’accueil.",
+            "right": "êtes",
+            "sourceId": "etre-a1-forme-008"
+          },
+          {
+            "id": "pair-3",
+            "left": "Je ___ dans le jardin.",
+            "right": "suis",
+            "sourceId": "etre-a1-forme-009"
+          }
+        ],
+        "answers": [
+          "Lina est en vacances. ; Vous êtes à l’accueil. ; Je suis dans le jardin."
+        ],
+        "explanation": "Chaque forme s’accorde avec le sujet. Chaque proposition est utilisée une seule fois.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/etre.json",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 6
+        }
+      },
+      {
+        "id": "etre-a1-association-008",
+        "kind": "match",
+        "prompt": "Associez chaque phrase à la forme du verbe être qui convient.",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "left": "Vous ___ à l’accueil.",
+            "right": "êtes",
+            "sourceId": "etre-a1-forme-008"
+          },
+          {
+            "id": "pair-2",
+            "left": "Je ___ dans le jardin.",
+            "right": "suis",
+            "sourceId": "etre-a1-forme-009"
+          },
+          {
+            "id": "pair-3",
+            "left": "Paul ___ sur le balcon.",
+            "right": "est",
+            "sourceId": "etre-a1-forme-010"
+          }
+        ],
+        "answers": [
+          "Vous êtes à l’accueil. ; Je suis dans le jardin. ; Paul est sur le balcon."
+        ],
+        "explanation": "Chaque forme s’accorde avec le sujet. Chaque proposition est utilisée une seule fois.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/etre.json",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 7
+        }
+      },
+      {
+        "id": "etre-a1-association-009",
+        "kind": "match",
+        "prompt": "Associez chaque phrase à la forme du verbe être qui convient.",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "left": "Je ___ dans le jardin.",
+            "right": "suis",
+            "sourceId": "etre-a1-forme-009"
+          },
+          {
+            "id": "pair-2",
+            "left": "Paul ___ sur le balcon.",
+            "right": "est",
+            "sourceId": "etre-a1-forme-010"
+          },
+          {
+            "id": "pair-3",
+            "left": "Les voisins ___ en classe.",
+            "right": "sont",
+            "sourceId": "etre-a1-forme-011"
+          }
+        ],
+        "answers": [
+          "Je suis dans le jardin. ; Paul est sur le balcon. ; Les voisins sont en classe."
+        ],
+        "explanation": "Chaque forme s’accorde avec le sujet. Chaque proposition est utilisée une seule fois.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/etre.json",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 8
+        }
+      },
+      {
+        "id": "etre-a1-association-010",
+        "kind": "match",
+        "prompt": "Associez chaque phrase à la forme du verbe être qui convient.",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "left": "Paul ___ sur le balcon.",
+            "right": "est",
+            "sourceId": "etre-a1-forme-010"
+          },
+          {
+            "id": "pair-2",
+            "left": "Les voisins ___ en classe.",
+            "right": "sont",
+            "sourceId": "etre-a1-forme-011"
+          },
+          {
+            "id": "pair-3",
+            "left": "Tu ___ à la bibliothèque.",
+            "right": "es",
+            "sourceId": "etre-a1-forme-012"
+          }
+        ],
+        "answers": [
+          "Paul est sur le balcon. ; Les voisins sont en classe. ; Tu es à la bibliothèque."
+        ],
+        "explanation": "Chaque forme s’accorde avec le sujet. Chaque proposition est utilisée une seule fois.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/etre.json",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 9
+        }
+      },
+      {
+        "id": "etre-a1-association-011",
+        "kind": "match",
+        "prompt": "Associez chaque phrase à la forme du verbe être qui convient.",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "left": "Les voisins ___ en classe.",
+            "right": "sont",
+            "sourceId": "etre-a1-forme-011"
+          },
+          {
+            "id": "pair-2",
+            "left": "Tu ___ à la bibliothèque.",
+            "right": "es",
+            "sourceId": "etre-a1-forme-012"
+          },
+          {
+            "id": "pair-3",
+            "left": "Nous ___ au musée.",
+            "right": "sommes",
+            "sourceId": "etre-a1-forme-013"
+          }
+        ],
+        "answers": [
+          "Les voisins sont en classe. ; Tu es à la bibliothèque. ; Nous sommes au musée."
+        ],
+        "explanation": "Chaque forme s’accorde avec le sujet. Chaque proposition est utilisée une seule fois.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/etre.json",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 10
+        }
+      },
+      {
+        "id": "etre-a1-association-012",
+        "kind": "match",
+        "prompt": "Associez chaque phrase à la forme du verbe être qui convient.",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "left": "Tu ___ à la bibliothèque.",
+            "right": "es",
+            "sourceId": "etre-a1-forme-012"
+          },
+          {
+            "id": "pair-2",
+            "left": "Nous ___ au musée.",
+            "right": "sommes",
+            "sourceId": "etre-a1-forme-013"
+          },
+          {
+            "id": "pair-3",
+            "left": "Les voisines ___ à l’arrêt du bus.",
+            "right": "sont",
+            "sourceId": "etre-a1-forme-014"
+          }
+        ],
+        "answers": [
+          "Tu es à la bibliothèque. ; Nous sommes au musée. ; Les voisines sont à l’arrêt du bus."
+        ],
+        "explanation": "Chaque forme s’accorde avec le sujet. Chaque proposition est utilisée une seule fois.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/etre.json",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 11
+        }
+      },
+      {
+        "id": "etre-a1-association-013",
+        "kind": "match",
+        "prompt": "Associez chaque phrase à la forme du verbe être qui convient.",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "left": "Nous ___ au musée.",
+            "right": "sommes",
+            "sourceId": "etre-a1-forme-013"
+          },
+          {
+            "id": "pair-2",
+            "left": "Les voisines ___ à l’arrêt du bus.",
+            "right": "sont",
+            "sourceId": "etre-a1-forme-014"
+          },
+          {
+            "id": "pair-3",
+            "left": "Lina ___ chez le médecin.",
+            "right": "est",
+            "sourceId": "etre-a1-forme-015"
+          }
+        ],
+        "answers": [
+          "Nous sommes au musée. ; Les voisines sont à l’arrêt du bus. ; Lina est chez le médecin."
+        ],
+        "explanation": "Chaque forme s’accorde avec le sujet. Chaque proposition est utilisée une seule fois.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/etre.json",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 12
+        }
+      },
+      {
+        "id": "etre-a1-association-014",
+        "kind": "match",
+        "prompt": "Associez chaque phrase à la forme du verbe être qui convient.",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "left": "Les voisines ___ à l’arrêt du bus.",
+            "right": "sont",
+            "sourceId": "etre-a1-forme-014"
+          },
+          {
+            "id": "pair-2",
+            "left": "Lina ___ chez le médecin.",
+            "right": "est",
+            "sourceId": "etre-a1-forme-015"
+          },
+          {
+            "id": "pair-3",
+            "left": "Vous ___ chez une amie.",
+            "right": "êtes",
+            "sourceId": "etre-a1-forme-016"
+          }
+        ],
+        "answers": [
+          "Les voisines sont à l’arrêt du bus. ; Lina est chez le médecin. ; Vous êtes chez une amie."
+        ],
+        "explanation": "Chaque forme s’accorde avec le sujet. Chaque proposition est utilisée une seule fois.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/etre.json",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 13
+        }
+      },
+      {
+        "id": "etre-a1-association-015",
+        "kind": "match",
+        "prompt": "Associez chaque phrase à la forme du verbe être qui convient.",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "left": "Lina ___ chez le médecin.",
+            "right": "est",
+            "sourceId": "etre-a1-forme-015"
+          },
+          {
+            "id": "pair-2",
+            "left": "Vous ___ chez une amie.",
+            "right": "êtes",
+            "sourceId": "etre-a1-forme-016"
+          },
+          {
+            "id": "pair-3",
+            "left": "Je ___ près de la poste.",
+            "right": "suis",
+            "sourceId": "etre-a1-forme-017"
+          }
+        ],
+        "answers": [
+          "Lina est chez le médecin. ; Vous êtes chez une amie. ; Je suis près de la poste."
+        ],
+        "explanation": "Chaque forme s’accorde avec le sujet. Chaque proposition est utilisée une seule fois.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/etre.json",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 14
+        }
+      },
+      {
+        "id": "etre-a1-association-016",
+        "kind": "match",
+        "prompt": "Associez chaque phrase à la forme du verbe être qui convient.",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "left": "Vous ___ chez une amie.",
+            "right": "êtes",
+            "sourceId": "etre-a1-forme-016"
+          },
+          {
+            "id": "pair-2",
+            "left": "Je ___ près de la poste.",
+            "right": "suis",
+            "sourceId": "etre-a1-forme-017"
+          },
+          {
+            "id": "pair-3",
+            "left": "Paul ___ devant la pharmacie.",
+            "right": "est",
+            "sourceId": "etre-a1-forme-018"
+          }
+        ],
+        "answers": [
+          "Vous êtes chez une amie. ; Je suis près de la poste. ; Paul est devant la pharmacie."
+        ],
+        "explanation": "Chaque forme s’accorde avec le sujet. Chaque proposition est utilisée une seule fois.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/etre.json",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 15
+        }
+      },
+      {
+        "id": "etre-a1-association-017",
+        "kind": "match",
+        "prompt": "Associez chaque phrase à la forme du verbe être qui convient.",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "left": "Je ___ près de la poste.",
+            "right": "suis",
+            "sourceId": "etre-a1-forme-017"
+          },
+          {
+            "id": "pair-2",
+            "left": "Paul ___ devant la pharmacie.",
+            "right": "est",
+            "sourceId": "etre-a1-forme-018"
+          },
+          {
+            "id": "pair-3",
+            "left": "Les voisins ___ derrière la mairie.",
+            "right": "sont",
+            "sourceId": "etre-a1-forme-019"
+          }
+        ],
+        "answers": [
+          "Je suis près de la poste. ; Paul est devant la pharmacie. ; Les voisins sont derrière la mairie."
+        ],
+        "explanation": "Chaque forme s’accorde avec le sujet. Chaque proposition est utilisée une seule fois.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/etre.json",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 16
+        }
+      },
+      {
+        "id": "etre-a1-association-018",
+        "kind": "match",
+        "prompt": "Associez chaque phrase à la forme du verbe être qui convient.",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "left": "Paul ___ devant la pharmacie.",
+            "right": "est",
+            "sourceId": "etre-a1-forme-018"
+          },
+          {
+            "id": "pair-2",
+            "left": "Les voisins ___ derrière la mairie.",
+            "right": "sont",
+            "sourceId": "etre-a1-forme-019"
+          },
+          {
+            "id": "pair-3",
+            "left": "Tu ___ en face du parc.",
+            "right": "es",
+            "sourceId": "etre-a1-forme-020"
+          }
+        ],
+        "answers": [
+          "Paul est devant la pharmacie. ; Les voisins sont derrière la mairie. ; Tu es en face du parc."
+        ],
+        "explanation": "Chaque forme s’accorde avec le sujet. Chaque proposition est utilisée une seule fois.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/etre.json",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 17
+        }
+      },
+      {
+        "id": "etre-a1-association-019",
+        "kind": "match",
+        "prompt": "Associez chaque phrase à la forme du verbe être qui convient.",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "left": "Les voisins ___ derrière la mairie.",
+            "right": "sont",
+            "sourceId": "etre-a1-forme-019"
+          },
+          {
+            "id": "pair-2",
+            "left": "Tu ___ en face du parc.",
+            "right": "es",
+            "sourceId": "etre-a1-forme-020"
+          },
+          {
+            "id": "pair-3",
+            "left": "Nous ___ à côté du bureau.",
+            "right": "sommes",
+            "sourceId": "etre-a1-forme-021"
+          }
+        ],
+        "answers": [
+          "Les voisins sont derrière la mairie. ; Tu es en face du parc. ; Nous sommes à côté du bureau."
+        ],
+        "explanation": "Chaque forme s’accorde avec le sujet. Chaque proposition est utilisée une seule fois.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/etre.json",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 18
+        }
+      },
+      {
+        "id": "etre-a1-association-020",
+        "kind": "match",
+        "prompt": "Associez chaque phrase à la forme du verbe être qui convient.",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "left": "Tu ___ en face du parc.",
+            "right": "es",
+            "sourceId": "etre-a1-forme-020"
+          },
+          {
+            "id": "pair-2",
+            "left": "Nous ___ à côté du bureau.",
+            "right": "sommes",
+            "sourceId": "etre-a1-forme-021"
+          },
+          {
+            "id": "pair-3",
+            "left": "Les voisines ___ dans la cuisine.",
+            "right": "sont",
+            "sourceId": "etre-a1-forme-022"
+          }
+        ],
+        "answers": [
+          "Tu es en face du parc. ; Nous sommes à côté du bureau. ; Les voisines sont dans la cuisine."
+        ],
+        "explanation": "Chaque forme s’accorde avec le sujet. Chaque proposition est utilisée une seule fois.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/etre.json",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 19
+        }
+      },
+      {
+        "id": "etre-a1-association-021",
+        "kind": "match",
+        "prompt": "Associez chaque phrase à la forme du verbe être qui convient.",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "left": "Nous ___ à côté du bureau.",
+            "right": "sommes",
+            "sourceId": "etre-a1-forme-021"
+          },
+          {
+            "id": "pair-2",
+            "left": "Les voisines ___ dans la cuisine.",
+            "right": "sont",
+            "sourceId": "etre-a1-forme-022"
+          },
+          {
+            "id": "pair-3",
+            "left": "Lina ___ au deuxième étage.",
+            "right": "est",
+            "sourceId": "etre-a1-forme-023"
+          }
+        ],
+        "answers": [
+          "Nous sommes à côté du bureau. ; Les voisines sont dans la cuisine. ; Lina est au deuxième étage."
+        ],
+        "explanation": "Chaque forme s’accorde avec le sujet. Chaque proposition est utilisée une seule fois.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/etre.json",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 20
+        }
+      },
+      {
+        "id": "etre-a1-association-022",
+        "kind": "match",
+        "prompt": "Associez chaque phrase à la forme du verbe être qui convient.",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "left": "Les voisines ___ dans la cuisine.",
+            "right": "sont",
+            "sourceId": "etre-a1-forme-022"
+          },
+          {
+            "id": "pair-2",
+            "left": "Lina ___ au deuxième étage.",
+            "right": "est",
+            "sourceId": "etre-a1-forme-023"
+          },
+          {
+            "id": "pair-3",
+            "left": "Vous ___ en réunion.",
+            "right": "êtes",
+            "sourceId": "etre-a1-forme-024"
+          }
+        ],
+        "answers": [
+          "Les voisines sont dans la cuisine. ; Lina est au deuxième étage. ; Vous êtes en réunion."
+        ],
+        "explanation": "Chaque forme s’accorde avec le sujet. Chaque proposition est utilisée une seule fois.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/etre.json",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 21
+        }
+      },
+      {
+        "id": "etre-a1-association-023",
+        "kind": "match",
+        "prompt": "Associez chaque phrase à la forme du verbe être qui convient.",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "left": "Lina ___ au deuxième étage.",
+            "right": "est",
+            "sourceId": "etre-a1-forme-023"
+          },
+          {
+            "id": "pair-2",
+            "left": "Vous ___ en réunion.",
+            "right": "êtes",
+            "sourceId": "etre-a1-forme-024"
+          },
+          {
+            "id": "pair-3",
+            "left": "Je ___ en pause.",
+            "right": "suis",
+            "sourceId": "etre-a1-forme-025"
+          }
+        ],
+        "answers": [
+          "Lina est au deuxième étage. ; Vous êtes en réunion. ; Je suis en pause."
+        ],
+        "explanation": "Chaque forme s’accorde avec le sujet. Chaque proposition est utilisée une seule fois.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/etre.json",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 22
+        }
+      },
+      {
+        "id": "etre-a1-association-024",
+        "kind": "match",
+        "prompt": "Associez chaque phrase à la forme du verbe être qui convient.",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "left": "Vous ___ en réunion.",
+            "right": "êtes",
+            "sourceId": "etre-a1-forme-024"
+          },
+          {
+            "id": "pair-2",
+            "left": "Je ___ en pause.",
+            "right": "suis",
+            "sourceId": "etre-a1-forme-025"
+          },
+          {
+            "id": "pair-3",
+            "left": "Paul ___ de bonne humeur.",
+            "right": "est",
+            "sourceId": "etre-a1-forme-026"
+          }
+        ],
+        "answers": [
+          "Vous êtes en réunion. ; Je suis en pause. ; Paul est de bonne humeur."
+        ],
+        "explanation": "Chaque forme s’accorde avec le sujet. Chaque proposition est utilisée une seule fois.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/etre.json",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 23
+        }
+      },
+      {
+        "id": "etre-a1-association-025",
+        "kind": "match",
+        "prompt": "Associez chaque phrase à la forme du verbe être qui convient.",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "left": "Je ___ en pause.",
+            "right": "suis",
+            "sourceId": "etre-a1-forme-025"
+          },
+          {
+            "id": "pair-2",
+            "left": "Paul ___ de bonne humeur.",
+            "right": "est",
+            "sourceId": "etre-a1-forme-026"
+          },
+          {
+            "id": "pair-3",
+            "left": "Les voisins ___ d’accord avec toi.",
+            "right": "sont",
+            "sourceId": "etre-a1-forme-027"
+          }
+        ],
+        "answers": [
+          "Je suis en pause. ; Paul est de bonne humeur. ; Les voisins sont d’accord avec toi."
+        ],
+        "explanation": "Chaque forme s’accorde avec le sujet. Chaque proposition est utilisée une seule fois.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/etre.json",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 24
+        }
+      },
+      {
+        "id": "etre-a1-association-026",
+        "kind": "match",
+        "prompt": "Associez chaque phrase à la forme du verbe être qui convient.",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "left": "Paul ___ de bonne humeur.",
+            "right": "est",
+            "sourceId": "etre-a1-forme-026"
+          },
+          {
+            "id": "pair-2",
+            "left": "Les voisins ___ d’accord avec toi.",
+            "right": "sont",
+            "sourceId": "etre-a1-forme-027"
+          },
+          {
+            "id": "pair-3",
+            "left": "Tu ___ sans nouvelles.",
+            "right": "es",
+            "sourceId": "etre-a1-forme-028"
+          }
+        ],
+        "answers": [
+          "Paul est de bonne humeur. ; Les voisins sont d’accord avec toi. ; Tu es sans nouvelles."
+        ],
+        "explanation": "Chaque forme s’accorde avec le sujet. Chaque proposition est utilisée une seule fois.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/etre.json",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 25
+        }
+      },
+      {
+        "id": "etre-a1-association-027",
+        "kind": "match",
+        "prompt": "Associez chaque phrase à la forme du verbe être qui convient.",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "left": "Les voisins ___ d’accord avec toi.",
+            "right": "sont",
+            "sourceId": "etre-a1-forme-027"
+          },
+          {
+            "id": "pair-2",
+            "left": "Tu ___ sans nouvelles.",
+            "right": "es",
+            "sourceId": "etre-a1-forme-028"
+          },
+          {
+            "id": "pair-3",
+            "left": "Nous ___ à l’heure.",
+            "right": "sommes",
+            "sourceId": "etre-a1-forme-029"
+          }
+        ],
+        "answers": [
+          "Les voisins sont d’accord avec toi. ; Tu es sans nouvelles. ; Nous sommes à l’heure."
+        ],
+        "explanation": "Chaque forme s’accorde avec le sujet. Chaque proposition est utilisée une seule fois.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/etre.json",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 26
+        }
+      },
+      {
+        "id": "etre-a1-association-028",
+        "kind": "match",
+        "prompt": "Associez chaque phrase à la forme du verbe être qui convient.",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "left": "Tu ___ sans nouvelles.",
+            "right": "es",
+            "sourceId": "etre-a1-forme-028"
+          },
+          {
+            "id": "pair-2",
+            "left": "Nous ___ à l’heure.",
+            "right": "sommes",
+            "sourceId": "etre-a1-forme-029"
+          },
+          {
+            "id": "pair-3",
+            "left": "Les voisines ___ au cinéma.",
+            "right": "sont",
+            "sourceId": "etre-a1-forme-030"
+          }
+        ],
+        "answers": [
+          "Tu es sans nouvelles. ; Nous sommes à l’heure. ; Les voisines sont au cinéma."
+        ],
+        "explanation": "Chaque forme s’accorde avec le sujet. Chaque proposition est utilisée une seule fois.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/etre.json",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 27
+        }
+      },
+      {
+        "id": "etre-a1-association-029",
+        "kind": "match",
+        "prompt": "Associez chaque phrase à la forme du verbe être qui convient.",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "left": "Nous ___ à l’heure.",
+            "right": "sommes",
+            "sourceId": "etre-a1-forme-029"
+          },
+          {
+            "id": "pair-2",
+            "left": "Les voisines ___ au cinéma.",
+            "right": "sont",
+            "sourceId": "etre-a1-forme-030"
+          },
+          {
+            "id": "pair-3",
+            "left": "Lina ___ en déplacement.",
+            "right": "est",
+            "sourceId": "etre-a1-forme-031"
+          }
+        ],
+        "answers": [
+          "Nous sommes à l’heure. ; Les voisines sont au cinéma. ; Lina est en déplacement."
+        ],
+        "explanation": "Chaque forme s’accorde avec le sujet. Chaque proposition est utilisée une seule fois.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/etre.json",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 28
+        }
+      },
+      {
+        "id": "etre-a1-association-030",
+        "kind": "match",
+        "prompt": "Associez chaque phrase à la forme du verbe être qui convient.",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "left": "Les voisines ___ au cinéma.",
+            "right": "sont",
+            "sourceId": "etre-a1-forme-030"
+          },
+          {
+            "id": "pair-2",
+            "left": "Lina ___ en déplacement.",
+            "right": "est",
+            "sourceId": "etre-a1-forme-031"
+          },
+          {
+            "id": "pair-3",
+            "left": "Vous ___ en congé.",
+            "right": "êtes",
+            "sourceId": "etre-a1-forme-032"
+          }
+        ],
+        "answers": [
+          "Les voisines sont au cinéma. ; Lina est en déplacement. ; Vous êtes en congé."
+        ],
+        "explanation": "Chaque forme s’accorde avec le sujet. Chaque proposition est utilisée une seule fois.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/etre.json",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 29
+        }
+      },
+      {
+        "id": "etre-a1-association-031",
+        "kind": "match",
+        "prompt": "Associez chaque phrase à la forme du verbe être qui convient.",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "left": "Lina ___ en déplacement.",
+            "right": "est",
+            "sourceId": "etre-a1-forme-031"
+          },
+          {
+            "id": "pair-2",
+            "left": "Vous ___ en congé.",
+            "right": "êtes",
+            "sourceId": "etre-a1-forme-032"
+          },
+          {
+            "id": "pair-3",
+            "left": "Je ___ dans le train.",
+            "right": "suis",
+            "sourceId": "etre-a1-forme-033"
+          }
+        ],
+        "answers": [
+          "Lina est en déplacement. ; Vous êtes en congé. ; Je suis dans le train."
+        ],
+        "explanation": "Chaque forme s’accorde avec le sujet. Chaque proposition est utilisée une seule fois.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/etre.json",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 30
+        }
+      },
+      {
+        "id": "etre-a1-association-032",
+        "kind": "match",
+        "prompt": "Associez chaque phrase à la forme du verbe être qui convient.",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "left": "Vous ___ en congé.",
+            "right": "êtes",
+            "sourceId": "etre-a1-forme-032"
+          },
+          {
+            "id": "pair-2",
+            "left": "Je ___ dans le train.",
+            "right": "suis",
+            "sourceId": "etre-a1-forme-033"
+          },
+          {
+            "id": "pair-3",
+            "left": "Paul ___ au guichet.",
+            "right": "est",
+            "sourceId": "etre-a1-forme-034"
+          }
+        ],
+        "answers": [
+          "Vous êtes en congé. ; Je suis dans le train. ; Paul est au guichet."
+        ],
+        "explanation": "Chaque forme s’accorde avec le sujet. Chaque proposition est utilisée une seule fois.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/etre.json",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 31
+        }
+      },
+      {
+        "id": "etre-a1-association-033",
+        "kind": "match",
+        "prompt": "Associez chaque phrase à la forme du verbe être qui convient.",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "left": "Je ___ dans le train.",
+            "right": "suis",
+            "sourceId": "etre-a1-forme-033"
+          },
+          {
+            "id": "pair-2",
+            "left": "Paul ___ au guichet.",
+            "right": "est",
+            "sourceId": "etre-a1-forme-034"
+          },
+          {
+            "id": "pair-3",
+            "left": "Les voisins ___ à la piscine.",
+            "right": "sont",
+            "sourceId": "etre-a1-forme-035"
+          }
+        ],
+        "answers": [
+          "Je suis dans le train. ; Paul est au guichet. ; Les voisins sont à la piscine."
+        ],
+        "explanation": "Chaque forme s’accorde avec le sujet. Chaque proposition est utilisée une seule fois.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/etre.json",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 32
+        }
+      },
+      {
+        "id": "etre-a1-association-034",
+        "kind": "match",
+        "prompt": "Associez chaque phrase à la forme du verbe être qui convient.",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "left": "Paul ___ au guichet.",
+            "right": "est",
+            "sourceId": "etre-a1-forme-034"
+          },
+          {
+            "id": "pair-2",
+            "left": "Les voisins ___ à la piscine.",
+            "right": "sont",
+            "sourceId": "etre-a1-forme-035"
+          },
+          {
+            "id": "pair-3",
+            "left": "Tu ___ chez le coiffeur.",
+            "right": "es",
+            "sourceId": "etre-a1-forme-036"
+          }
+        ],
+        "answers": [
+          "Paul est au guichet. ; Les voisins sont à la piscine. ; Tu es chez le coiffeur."
+        ],
+        "explanation": "Chaque forme s’accorde avec le sujet. Chaque proposition est utilisée une seule fois.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/etre.json",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 33
+        }
+      },
+      {
+        "id": "etre-a1-association-035",
+        "kind": "match",
+        "prompt": "Associez chaque phrase à la forme du verbe être qui convient.",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "left": "Les voisins ___ à la piscine.",
+            "right": "sont",
+            "sourceId": "etre-a1-forme-035"
+          },
+          {
+            "id": "pair-2",
+            "left": "Tu ___ chez le coiffeur.",
+            "right": "es",
+            "sourceId": "etre-a1-forme-036"
+          },
+          {
+            "id": "pair-3",
+            "left": "Nous ___ dans le quartier.",
+            "right": "sommes",
+            "sourceId": "etre-a1-forme-037"
+          }
+        ],
+        "answers": [
+          "Les voisins sont à la piscine. ; Tu es chez le coiffeur. ; Nous sommes dans le quartier."
+        ],
+        "explanation": "Chaque forme s’accorde avec le sujet. Chaque proposition est utilisée une seule fois.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/etre.json",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 34
+        }
+      },
+      {
+        "id": "etre-a1-association-036",
+        "kind": "match",
+        "prompt": "Associez chaque phrase à la forme du verbe être qui convient.",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "left": "Tu ___ chez le coiffeur.",
+            "right": "es",
+            "sourceId": "etre-a1-forme-036"
+          },
+          {
+            "id": "pair-2",
+            "left": "Nous ___ dans le quartier.",
+            "right": "sommes",
+            "sourceId": "etre-a1-forme-037"
+          },
+          {
+            "id": "pair-3",
+            "left": "Les voisines ___ sur la place.",
+            "right": "sont",
+            "sourceId": "etre-a1-forme-038"
+          }
+        ],
+        "answers": [
+          "Tu es chez le coiffeur. ; Nous sommes dans le quartier. ; Les voisines sont sur la place."
+        ],
+        "explanation": "Chaque forme s’accorde avec le sujet. Chaque proposition est utilisée une seule fois.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/etre.json",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 35
+        }
+      },
+      {
+        "id": "etre-a1-association-037",
+        "kind": "match",
+        "prompt": "Associez chaque phrase à la forme du verbe être qui convient.",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "left": "Nous ___ dans le quartier.",
+            "right": "sommes",
+            "sourceId": "etre-a1-forme-037"
+          },
+          {
+            "id": "pair-2",
+            "left": "Les voisines ___ sur la place.",
+            "right": "sont",
+            "sourceId": "etre-a1-forme-038"
+          },
+          {
+            "id": "pair-3",
+            "left": "Lina ___ à la montagne.",
+            "right": "est",
+            "sourceId": "etre-a1-forme-039"
+          }
+        ],
+        "answers": [
+          "Nous sommes dans le quartier. ; Les voisines sont sur la place. ; Lina est à la montagne."
+        ],
+        "explanation": "Chaque forme s’accorde avec le sujet. Chaque proposition est utilisée une seule fois.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/etre.json",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 36
+        }
+      },
+      {
+        "id": "etre-a1-association-038",
+        "kind": "match",
+        "prompt": "Associez chaque phrase à la forme du verbe être qui convient.",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "left": "Les voisines ___ sur la place.",
+            "right": "sont",
+            "sourceId": "etre-a1-forme-038"
+          },
+          {
+            "id": "pair-2",
+            "left": "Lina ___ à la montagne.",
+            "right": "est",
+            "sourceId": "etre-a1-forme-039"
+          },
+          {
+            "id": "pair-3",
+            "left": "Vous ___ au bord du lac.",
+            "right": "êtes",
+            "sourceId": "etre-a1-forme-040"
+          }
+        ],
+        "answers": [
+          "Les voisines sont sur la place. ; Lina est à la montagne. ; Vous êtes au bord du lac."
+        ],
+        "explanation": "Chaque forme s’accorde avec le sujet. Chaque proposition est utilisée une seule fois.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/etre.json",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 37
+        }
+      },
+      {
+        "id": "etre-a1-association-039",
+        "kind": "match",
+        "prompt": "Associez chaque phrase à la forme du verbe être qui convient.",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "left": "Lina ___ à la montagne.",
+            "right": "est",
+            "sourceId": "etre-a1-forme-039"
+          },
+          {
+            "id": "pair-2",
+            "left": "Vous ___ au bord du lac.",
+            "right": "êtes",
+            "sourceId": "etre-a1-forme-040"
+          },
+          {
+            "id": "pair-3",
+            "left": "Je ___ en visite.",
+            "right": "suis",
+            "sourceId": "etre-a1-forme-041"
+          }
+        ],
+        "answers": [
+          "Lina est à la montagne. ; Vous êtes au bord du lac. ; Je suis en visite."
+        ],
+        "explanation": "Chaque forme s’accorde avec le sujet. Chaque proposition est utilisée une seule fois.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/etre.json",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 38
+        }
+      },
+      {
+        "id": "etre-a1-association-040",
+        "kind": "match",
+        "prompt": "Associez chaque phrase à la forme du verbe être qui convient.",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "left": "Vous ___ au bord du lac.",
+            "right": "êtes",
+            "sourceId": "etre-a1-forme-040"
+          },
+          {
+            "id": "pair-2",
+            "left": "Je ___ en visite.",
+            "right": "suis",
+            "sourceId": "etre-a1-forme-041"
+          },
+          {
+            "id": "pair-3",
+            "left": "Paul ___ au téléphone.",
+            "right": "est",
+            "sourceId": "etre-a1-forme-042"
+          }
+        ],
+        "answers": [
+          "Vous êtes au bord du lac. ; Je suis en visite. ; Paul est au téléphone."
+        ],
+        "explanation": "Chaque forme s’accorde avec le sujet. Chaque proposition est utilisée une seule fois.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/etre.json",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 39
+        }
+      },
+      {
+        "id": "etre-a1-association-041",
+        "kind": "match",
+        "prompt": "Associez chaque phrase à la forme du verbe être qui convient.",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "left": "Je ___ en visite.",
+            "right": "suis",
+            "sourceId": "etre-a1-forme-041"
+          },
+          {
+            "id": "pair-2",
+            "left": "Paul ___ au téléphone.",
+            "right": "est",
+            "sourceId": "etre-a1-forme-042"
+          },
+          {
+            "id": "pair-3",
+            "left": "Les voisins ___ en sécurité.",
+            "right": "sont",
+            "sourceId": "etre-a1-forme-043"
+          }
+        ],
+        "answers": [
+          "Je suis en visite. ; Paul est au téléphone. ; Les voisins sont en sécurité."
+        ],
+        "explanation": "Chaque forme s’accorde avec le sujet. Chaque proposition est utilisée une seule fois.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/etre.json",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 40
+        }
+      },
+      {
+        "id": "etre-a1-association-042",
+        "kind": "match",
+        "prompt": "Associez chaque phrase à la forme du verbe être qui convient.",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "left": "Paul ___ au téléphone.",
+            "right": "est",
+            "sourceId": "etre-a1-forme-042"
+          },
+          {
+            "id": "pair-2",
+            "left": "Les voisins ___ en sécurité.",
+            "right": "sont",
+            "sourceId": "etre-a1-forme-043"
+          },
+          {
+            "id": "pair-3",
+            "left": "Tu ___ en route.",
+            "right": "es",
+            "sourceId": "etre-a1-forme-044"
+          }
+        ],
+        "answers": [
+          "Paul est au téléphone. ; Les voisins sont en sécurité. ; Tu es en route."
+        ],
+        "explanation": "Chaque forme s’accorde avec le sujet. Chaque proposition est utilisée une seule fois.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/etre.json",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 41
+        }
+      },
+      {
+        "id": "etre-a1-association-043",
+        "kind": "match",
+        "prompt": "Associez chaque phrase à la forme du verbe être qui convient.",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "left": "Les voisins ___ en sécurité.",
+            "right": "sont",
+            "sourceId": "etre-a1-forme-043"
+          },
+          {
+            "id": "pair-2",
+            "left": "Tu ___ en route.",
+            "right": "es",
+            "sourceId": "etre-a1-forme-044"
+          },
+          {
+            "id": "pair-3",
+            "left": "Nous ___ à l’abri.",
+            "right": "sommes",
+            "sourceId": "etre-a1-forme-045"
+          }
+        ],
+        "answers": [
+          "Les voisins sont en sécurité. ; Tu es en route. ; Nous sommes à l’abri."
+        ],
+        "explanation": "Chaque forme s’accorde avec le sujet. Chaque proposition est utilisée une seule fois.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/etre.json",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 42
+        }
+      },
+      {
+        "id": "etre-a1-association-044",
+        "kind": "match",
+        "prompt": "Associez chaque phrase à la forme du verbe être qui convient.",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "left": "Tu ___ en route.",
+            "right": "es",
+            "sourceId": "etre-a1-forme-044"
+          },
+          {
+            "id": "pair-2",
+            "left": "Nous ___ à l’abri.",
+            "right": "sommes",
+            "sourceId": "etre-a1-forme-045"
+          },
+          {
+            "id": "pair-3",
+            "left": "Les voisines ___ dans le salon.",
+            "right": "sont",
+            "sourceId": "etre-a1-forme-046"
+          }
+        ],
+        "answers": [
+          "Tu es en route. ; Nous sommes à l’abri. ; Les voisines sont dans le salon."
+        ],
+        "explanation": "Chaque forme s’accorde avec le sujet. Chaque proposition est utilisée une seule fois.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/etre.json",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 43
+        }
+      },
+      {
+        "id": "etre-a1-association-045",
+        "kind": "match",
+        "prompt": "Associez chaque phrase à la forme du verbe être qui convient.",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "left": "Nous ___ à l’abri.",
+            "right": "sommes",
+            "sourceId": "etre-a1-forme-045"
+          },
+          {
+            "id": "pair-2",
+            "left": "Les voisines ___ dans le salon.",
+            "right": "sont",
+            "sourceId": "etre-a1-forme-046"
+          },
+          {
+            "id": "pair-3",
+            "left": "Lina ___ à la boulangerie.",
+            "right": "est",
+            "sourceId": "etre-a1-forme-047"
+          }
+        ],
+        "answers": [
+          "Nous sommes à l’abri. ; Les voisines sont dans le salon. ; Lina est à la boulangerie."
+        ],
+        "explanation": "Chaque forme s’accorde avec le sujet. Chaque proposition est utilisée une seule fois.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/etre.json",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 44
+        }
+      },
+      {
+        "id": "etre-a1-association-046",
+        "kind": "match",
+        "prompt": "Associez chaque phrase à la forme du verbe être qui convient.",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "left": "Les voisines ___ dans le salon.",
+            "right": "sont",
+            "sourceId": "etre-a1-forme-046"
+          },
+          {
+            "id": "pair-2",
+            "left": "Lina ___ à la boulangerie.",
+            "right": "est",
+            "sourceId": "etre-a1-forme-047"
+          },
+          {
+            "id": "pair-3",
+            "left": "Vous ___ dans la salle d’attente.",
+            "right": "êtes",
+            "sourceId": "etre-a1-forme-048"
+          }
+        ],
+        "answers": [
+          "Les voisines sont dans le salon. ; Lina est à la boulangerie. ; Vous êtes dans la salle d’attente."
+        ],
+        "explanation": "Chaque forme s’accorde avec le sujet. Chaque proposition est utilisée une seule fois.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/etre.json",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 45
+        }
+      },
+      {
+        "id": "etre-a1-association-047",
+        "kind": "match",
+        "prompt": "Associez chaque phrase à la forme du verbe être qui convient.",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "left": "Lina ___ à la boulangerie.",
+            "right": "est",
+            "sourceId": "etre-a1-forme-047"
+          },
+          {
+            "id": "pair-2",
+            "left": "Vous ___ dans la salle d’attente.",
+            "right": "êtes",
+            "sourceId": "etre-a1-forme-048"
+          },
+          {
+            "id": "pair-3",
+            "left": "Je ___ au marché.",
+            "right": "suis",
+            "sourceId": "etre-a1-forme-049"
+          }
+        ],
+        "answers": [
+          "Lina est à la boulangerie. ; Vous êtes dans la salle d’attente. ; Je suis au marché."
+        ],
+        "explanation": "Chaque forme s’accorde avec le sujet. Chaque proposition est utilisée une seule fois.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/etre.json",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 46
+        }
+      },
+      {
+        "id": "etre-a1-association-048",
+        "kind": "match",
+        "prompt": "Associez chaque phrase à la forme du verbe être qui convient.",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "left": "Vous ___ dans la salle d’attente.",
+            "right": "êtes",
+            "sourceId": "etre-a1-forme-048"
+          },
+          {
+            "id": "pair-2",
+            "left": "Je ___ au marché.",
+            "right": "suis",
+            "sourceId": "etre-a1-forme-049"
+          },
+          {
+            "id": "pair-3",
+            "left": "Paul ___ en promenade.",
+            "right": "est",
+            "sourceId": "etre-a1-forme-050"
+          }
+        ],
+        "answers": [
+          "Vous êtes dans la salle d’attente. ; Je suis au marché. ; Paul est en promenade."
+        ],
+        "explanation": "Chaque forme s’accorde avec le sujet. Chaque proposition est utilisée une seule fois.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/etre.json",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 47
+        }
+      },
+      {
+        "id": "etre-a1-association-049",
+        "kind": "match",
+        "prompt": "Associez chaque phrase à la forme du verbe être qui convient.",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "left": "Je ___ au marché.",
+            "right": "suis",
+            "sourceId": "etre-a1-forme-049"
+          },
+          {
+            "id": "pair-2",
+            "left": "Paul ___ en promenade.",
+            "right": "est",
+            "sourceId": "etre-a1-forme-050"
+          },
+          {
+            "id": "pair-3",
+            "left": "Les voisins ___ à la maison.",
+            "right": "sont",
+            "sourceId": "etre-a1-forme-003"
+          }
+        ],
+        "answers": [
+          "Je suis au marché. ; Paul est en promenade. ; Les voisins sont à la maison."
+        ],
+        "explanation": "Chaque forme s’accorde avec le sujet. Chaque proposition est utilisée une seule fois.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/etre.json",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 48
+        }
+      },
+      {
+        "id": "etre-a1-association-050",
+        "kind": "match",
+        "prompt": "Associez chaque phrase à la forme du verbe être qui convient.",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "left": "Paul ___ en promenade.",
+            "right": "est",
+            "sourceId": "etre-a1-forme-050"
+          },
+          {
+            "id": "pair-2",
+            "left": "Je ___ en avance.",
+            "right": "suis",
+            "sourceId": "etre-a1-forme-001"
+          },
+          {
+            "id": "pair-3",
+            "left": "Les voisins ___ à la maison.",
+            "right": "sont",
+            "sourceId": "etre-a1-forme-003"
+          }
+        ],
+        "answers": [
+          "Paul est en promenade. ; Je suis en avance. ; Les voisins sont à la maison."
+        ],
+        "explanation": "Chaque forme s’accorde avec le sujet. Chaque proposition est utilisée une seule fois.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/etre.json",
+          "typeId": "gram-ex-etre-qcm-conj",
+          "position": 49
+        }
+      }
+    ]
+  }
+]

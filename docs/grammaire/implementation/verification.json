@@ -48,11 +48,48 @@
         "overflow": false
       },
       {
+        "unavailableFilters": "clear notice, no broken session"
+      },
+      {
         "classroomLaunch": "passed",
         "selectedQuestions": 3
       }
     ],
     "errors": []
   },
-  "remaining": "This is the Être A1 pilot slice, not the whole curriculum."
+  "remaining": "This is the Être A1 pilot slice, not the whole curriculum.",
+  "validation": {
+    "typeScript": {
+      "command": "node node_modules/typescript/bin/tsc -b --pretty false",
+      "result": "passed"
+    },
+    "legacyAndCo": {
+      "command": "node scripts/grammar-baseline.cjs",
+      "result": "passed",
+      "fixtures": 735,
+      "protectedFiles": 256
+    },
+    "pilot": {
+      "command": "node scripts/test-grammar-levels.cjs",
+      "result": "passed",
+      "reviewedVariants": 250,
+      "paperAndBoardOptionOrder": "identical"
+    },
+    "existingInteractiveAdapters": {
+      "command": "node --test tests/interactive/source-adapters.test.mjs",
+      "result": "passed",
+      "tests": 7
+    },
+    "chrome": {
+      "command": "node tests/grammar/pilot-browser.mjs",
+      "result": "passed",
+      "printedQuestionsPerPresentation": 100,
+      "overflow": false,
+      "javascriptErrors": 0,
+      "emptyFilterPool": "clear notice; no broken session",
+      "classroomLaunch": "passed"
+    }
+  },
+  "upstreamIntegrated": "9fccae6fd197c287d31d93c114e3025446b96dd0",
+  "lastValidatedDate": "2026-11-12"
 }

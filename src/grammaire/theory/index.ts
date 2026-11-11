@@ -43,3 +43,6 @@ export const theoryDocByTypeId: Record<string, GrammaireTheoryDoc> = Object.from
   GRAMMAIRE_THEORY_DOCS.map((doc) => [doc.typeId, doc]),
 )
 
+/** Destinations were merged into Aller; saved a5 recipes keep resolving. */
+theoryDocByTypeId['gram-a5-theorie'] = theoryDocByTypeId['gram-a4-theorie']!
+

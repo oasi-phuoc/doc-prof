@@ -36,7 +36,7 @@ export const GRAM_SUBTHEMES: GramSubtheme[] = [
     id: 'aller-destination',
     label: 'Aller',
     topic: 'gram-present',
-    theoryTypeIds: ['gram-a4-theorie', 'gram-a5-theorie'],
+    theoryTypeIds: ['gram-a4-theorie'],
   },
   {
     id: 'er',

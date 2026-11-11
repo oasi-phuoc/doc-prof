@@ -19,7 +19,7 @@ Les nouvelles séries vont jusqu’à 50 questions et se répartissent sur plusi
 
 ## Tableau collectif et sauvegardes
 
-Le moteur interactif arrivé sur main depuis l’audit du plan est réutilisé. **Jouer avec la classe** reprend la sélection du pilote. Les QCM restent fermés ; lacunes et corrections sont guidées par l’enseignant ; les mots se déplacent avec les commandes existantes. L’association est proposée **paire par paire**, avec les mêmes propositions : un problème de trois associations donne trois étapes de jeu. Le déplacement de toutes les paires dans un tableau d’association reste à développer.
+Le moteur interactif arrivé sur main depuis l’audit du plan est réutilisé. L’ordre des propositions déjà tiré pour la fiche est conservé au tableau, afin que les lettres A–F correspondent au corrigé papier. **Jouer avec la classe** reprend la sélection du pilote. Les QCM restent fermés ; lacunes et corrections sont guidées par l’enseignant ; les mots se déplacent avec les commandes existantes. L’association est proposée **paire par paire**, avec les mêmes propositions : un problème de trois associations donne trois étapes de jeu. Le déplacement de toutes les paires dans un tableau d’association reste à développer.
 
 Les nouvelles recettes conservent explicitement activité, niveau, présentation et révision. Leur sélection est figée à la sauvegarde/export, avec options, mots et corrigés. Une sélection valide peut être relue sans la révision courante de la banque. Les paramètres incomplets ou snapshots incohérents sont refusés, sans revenir silencieusement à A1 ou à une autre banque. Les blocs voisins ne récupèrent pas le niveau du premier bloc.
 
@@ -45,3 +45,7 @@ Résultats du lot : [verification.json](verification.json). Les scénarios du ca
 G0 est capturé ; le socle G1 et le raccordement au tableau sont engagés. G2 comporte seulement cette première tranche verticale Être A1. Restent notamment les autres notions pilotes (-er particuliers, imparfait/passé composé, COD, subjonctif), les lectures multi-textes avec leurs 20 supports, les productions et rubriques enseignant, les supports images, l’ensemble des nouvelles activités et les extensions A2/B1. Les 98 notions / 123 couples notion-niveau du registre sont des cibles, pas une couverture livrée.
 
 Aucun audio, transcription, banque CO ou contenu des autres domaines n’est modifié par ce lot.
+
+Les commits TCF et interactifs arrivés jusqu’à `9fccae6f` ont été intégrés par rebase ; les références G0 sont toujours identiques après cette intégration. Si un filtre ne laisse aucune unité disponible, le lancement du jeu affiche le diagnostic et conserve la fiche au lieu de créer une séance vide.
+
+Le 12 novembre 2026, les contrôles TypeScript, G0, 250 variantes du pilote, sept tests des adaptateurs interactifs et Chrome (élève/corrigé/tableau) passent sur cette version fusionnée.

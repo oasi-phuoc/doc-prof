@@ -6361,3 +6361,19 @@ textarea.pill-input,
     justify-content: center;
   }
 }
+
+/* Additive graded grammar: same canonical questions on paper and at the board. */
+.grammar-question { min-width: 0; break-inside: avoid; }
+.grammar-question p { margin: 0 0 2mm; }
+.grammar-answer-inline { display: inline-block; min-width: 22mm; min-height: 1em; border-bottom: 1px solid var(--purple); color: var(--purple); text-align: center; margin: 0 .2em; }
+.grammar-choices { list-style: none; padding: 0; margin: 2mm 0; display: flex; flex-wrap: wrap; gap: 2mm 7mm; }
+.grammar-choice-box { display: inline-block; width: 3mm; height: 3mm; border: 1px solid var(--ink); font-size: 10px; line-height: 3mm; text-align: center; }
+.grammar-words { display: flex; flex-wrap: wrap; gap: 2mm 4mm; }
+.grammar-words span + span::before { content: '·'; color: var(--muted); margin-right: 4mm; }
+.grammar-explanation { color: var(--muted); font-size: .85em; margin-top: 2mm !important; }
+.grammar-match-columns { display: grid; grid-template-columns: minmax(0, 1fr) minmax(15mm, .35fr); gap: 6mm; }
+.grammar-match-columns ol { padding-left: 5mm; margin: 0; }
+.grammar-match-columns li { padding: 1mm 0; }
+.grammar-match-slot { color: var(--purple); margin-left: 3mm; }
+.grammar-match-answer { color: var(--purple); }
+.grammar-level-note { color: var(--muted); line-height: 1.5; }

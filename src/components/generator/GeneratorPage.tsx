@@ -1,4 +1,5 @@
 import { openInteractive } from '@/interactive/navigation'
+import { GrammarCurriculumError } from '@/grammaire/curriculum/types'
 import { WorksheetImageProvider } from '@/components/WorksheetImage'
 import {
   useEffect,
@@ -391,8 +392,13 @@ export function GeneratorPage({
   }
 
   function playWithClass() {
-    const recipe = buildFicheRecipe({ pages, seed, institutional, evalMode, pointsPerQuestion, libreMode, libreSnapshot, sheetFormat, hideChrome, printCorrections, imageOverrides })
-    openInteractive(recipe, ficheRef?.name ?? 'Ma fiche')
+    try {
+      const recipe = buildFicheRecipe({ pages, seed, institutional, evalMode, pointsPerQuestion, libreMode, libreSnapshot, sheetFormat, hideChrome, printCorrections, imageOverrides })
+      openInteractive(recipe, ficheRef?.name ?? 'Ma fiche')
+    } catch (error) {
+      if (!(error instanceof GrammarCurriculumError)) throw error
+      window.alert(error.message)
+    }
   }
 
   async function persistFiche(input: { name: string; asNew: boolean; password: string }) {

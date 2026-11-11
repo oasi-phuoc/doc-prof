@@ -29,7 +29,10 @@
     "test:interactive:competition-worker": "node tests/interactive/competition-worker.mjs",
     "typecheck:api": "tsc -b api/fiches/tsconfig.json",
     "check:interactive:budgets": "node scripts/interactive-budgets.mjs",
-    "check:interactive:secrets": "node scripts/interactive-secrets.mjs"
+    "check:interactive:secrets": "node scripts/interactive-secrets.mjs",
+    "test:grammar:baseline": "node scripts/grammar-baseline.cjs",
+    "test:grammar:levels": "node scripts/test-grammar-levels.cjs",
+    "test:grammar:browser": "node tests/grammar/pilot-browser.mjs"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",

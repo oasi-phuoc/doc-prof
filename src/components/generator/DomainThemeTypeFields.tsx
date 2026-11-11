@@ -2,6 +2,8 @@ import { TcfCeFormatControl } from './TcfCeFormatControl'
 import { PhrasePolarityControl } from './PhrasePolarityControl'
 import { PhraseCategoryControls } from './PhraseCategoryControls'
 import { GrammarCoLevelControl } from './GrammarCoLevelControl'
+import { GrammarLevelControl } from './GrammarLevelControl'
+import { grammarEligibleCount } from '@/grammaire/curriculum/generate'
 import { grammarCoThemeForType } from '@/grammaire/exercises/co-themes'
 import { defaultGrammarCoLevel, grammarCoEntries, hasGrammarCoTheme } from '@/grammaire/exercises/co-bank'
 import { isNegativePhraseTheme, isPhraseThemeId } from '@/francais/phrase-themes'
@@ -323,12 +325,14 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                 <PhrasePolarityControl
                   value={activeBlock.phrasePolarity ?? (isPhraseDomain && isNegativePhraseTheme(activeBlock.topic) ? 'negative' : 'positive')}
                   onChange={phrasePolarity => {
+                    if (activeBlock.grammarLevel && activeBlock.libreItems?.length && !window.confirm('Ces filtres remplaceront les modifications manuelles de cet exercice. Continuer ?')) return
                     const countCap = isPresentOrder
-                      ? presentOrderQuestionCap(activeBlock.exerciseType, phrasePolarity, activeBlock.phraseCategories)
+                      ? activeBlock.grammarLevel ? grammarEligibleCount({...activeBlock,phrasePolarity}) : presentOrderQuestionCap(activeBlock.exerciseType, phrasePolarity, activeBlock.phraseCategories)
                       : activeBlock.count
                     updatePage({
                       ...clearLibreContentFreeze(),
                       phrasePolarity,
+                      ...(activeBlock.grammarLevel?{grammarSnapshot:undefined}:{}),
                       count: isPresentOrder ? Math.max(1, Math.min(activeBlock.count, countCap)) : activeBlock.count,
                       ...(isPhraseDomain ? { phraseItems: undefined, phraseInstruction: undefined } : {}),
                     })
@@ -339,14 +343,16 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                 <PhraseCategoryControls
                   value={activeBlock.phraseCategories}
                   onChange={phraseCategories => {
+                    if (activeBlock.grammarLevel && activeBlock.libreItems?.length && !window.confirm('Ces filtres remplaceront les modifications manuelles de cet exercice. Continuer ?')) return
                     const cap = isPhraseThemeId(activeBlock.topic)
                       ? phraseSelection(activeBlock.topic, activeBlock.verbGroup ?? 'er', phraseCategories).frames.length
                       : isPresentOrder
-                        ? presentOrderQuestionCap(activeBlock.exerciseType, activeBlock.phrasePolarity ?? 'positive', phraseCategories)
+                        ? activeBlock.grammarLevel ? grammarEligibleCount({...activeBlock,phraseCategories}) : presentOrderQuestionCap(activeBlock.exerciseType, activeBlock.phrasePolarity ?? 'positive', phraseCategories)
                         : activeBlock.count
                     updatePage({
                       ...clearLibreContentFreeze(),
                       phraseCategories,
+                      ...(activeBlock.grammarLevel?{grammarSnapshot:undefined}:{}),
                       count: Math.max(1, Math.min(activeBlock.count, cap)),
                       ...(isPhraseDomain ? { phraseItems: undefined, phraseInstruction: undefined } : {}),
                     })
@@ -465,6 +471,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                   })}
                 />
               ) : null}
+              {isGrammaireDomain ? <GrammarLevelControl block={activeBlock} onChange={updatePage}/> : null}
               {isGrammaireDomain && showGrammarCoLevel && grammarCoAudios.length>0 ? (
                 <SelectBox label="Audio" value={activeBlock.grammarCoAudioId??grammarCoAudios[0]!.exercise.id}
                   onChange={grammarCoAudioId=>updatePage({
