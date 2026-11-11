@@ -1,5 +1,5 @@
 const DATABASE = 'clairfle-interactive'
-const VERSION = 2
+const VERSION = 3
 const stores = { sessions: 'gameId', drafts: 'draftId', settings: 'id', 'presets-local': 'presetId' } as const
 export type LocalStore = keyof typeof stores
 export const LOCAL_STORAGE_WARNING = 'Impossible de sauvegarder les données du jeu sur cet appareil.'
@@ -18,6 +18,11 @@ export function openInteractiveDatabase(): Promise<IDBDatabase> {
         for (const [name, keyPath] of Object.entries(stores)) if (!request.result.objectStoreNames.contains(name)) request.result.createObjectStore(name, { keyPath })
         const drafts = request.transaction!.objectStore('drafts')
         if (!drafts.indexNames.contains('lastOpenedAt')) drafts.createIndex('lastOpenedAt', 'lastOpenedAt')
+        const sessions = request.transaction!.objectStore('sessions')
+        if (!sessions.indexNames.contains('sessionId')) sessions.createIndex('sessionId', 'sessionId')
+        if (!sessions.indexNames.contains('sourceKey')) sessions.createIndex('sourceKey', 'source.sourceKey')
+        const presets = request.transaction!.objectStore('presets-local')
+        if (!presets.indexNames.contains('sourceKey')) presets.createIndex('sourceKey', 'sourceKey')
       }
       request.onerror = request.onblocked = fail
       request.onsuccess = () => {

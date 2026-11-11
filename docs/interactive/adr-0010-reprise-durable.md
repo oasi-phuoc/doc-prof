@@ -1,0 +1,15 @@
+# ADR 0010 — Réouverture de séance et réglages durables
+
+Les séances enregistrent maintenant une référence à la fiche serveur, au brouillon local ou à la démonstration, avec la graine de génération, les positions sélectionnées, le mode, le tirage de reprise et les durées. Ce contexte ne contient ni recette complète, ni texte de question, ni clé de correction. Il est écrit et révisé avec le journal détenu par la fenêtre propriétaire.
+
+La base IndexedDB passe de la version physique 2 à 3 et ajoute des index de séance et de source, sans changer les clés ou supprimer les anciens magasins. L’index des identifiants n’est pas unique pour que d’éventuelles anciennes données dupliquées ne fassent pas échouer la migration ; une recherche ambiguë par identifiant est refusée. Les enregistrements de séance restent de schéma 4.
+
+Au lancement, l’adresse reçoit `s={sessionId}`. Une ouverture directe résout cette séance et vérifie sa fiche source. Sans cache dans l’onglet, l’ouverture normale d’une fiche retrouve la dernière partie enregistrée de cette source, y compris son mode et son minuteur. Un cache de préparation existant dans l’onglet reste prioritaire lorsqu’aucune séance n’est demandée explicitement. Une modification de sélection, mode ou minuteur en préparation retire l’identifiant de séance de l’adresse ; elle n’écrase pas la partie existante.
+
+Une modification de la fiche serveur produit un plan différent : la reprise est bloquée et « Recommencer avec une nouvelle partie » prépare un nouveau tirage sans supprimer l’ancien journal. Les brouillons expirés restent signalés par leur mécanisme de conservation de 24 heures ; une adresse locale ne remplace pas la disponibilité de sa source. Une ancienne séance sans contexte devient réouvrable par référence après sa prochaine ouverture et écriture avec le moteur actuel.
+
+Les réglages de couleurs, formes, mascotte, contraste, protection et minuteur migrent vers le magasin `settings`, sous `classroom`. Les anciennes préférences du navigateur servent uniquement de point de départ lorsqu’aucun réglage moderne n’existe. Toute modification fusionne les seuls champs changés dans une transaction : deux onglets modifiant des préférences distinctes ne s’écrasent pas. Les versions inconnues ou données invalides sont conservées, avec message et jeu utilisable.
+
+La reprise des questions difficiles est reconstruite par une sélection de positions et un numéro de tirage distinct, sans nouvelle génération du texte ou des calculs. Le plan peut ainsi être retrouvé après fermeture de l’onglet, sans identifiant de partie artificiel impossible à reconstruire.
+
+Validation : 89 tests de domaine ; `durable-run-browser.mjs` ferme réellement le premier onglet et en ouvre un autre, vérifie questions, sélection, mode, temps, correction suspendue et préférences. Il couvre également l’adresse directe, la mauvaise fiche, le plan changé, les écritures de préférences concurrentes et les versions futures conservées. Voir [résultats](durable-run-results.json).

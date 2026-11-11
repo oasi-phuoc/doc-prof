@@ -63,7 +63,7 @@ try {
   assert.deepEqual(saved.recipe.pages.map((p) => p.libreItems), recipe.pages.map((p) => p.libreItems))
   assert.deepEqual(await rows(page, 'sessions'), [{ gameId: 'migration-sentinel', schemaVersion: 99, protected: true }])
   const stores = await page.evaluate(async () => { const { openInteractiveDatabase } = await import('/src/interactive/storage.ts'); const db = await openInteractiveDatabase(); return { version: db.version, names: [...db.objectStoreNames] } })
-  assert.deepEqual(stores, { version: 2, names: ['drafts', 'presets-local', 'sessions', 'settings'] })
+  assert.deepEqual(stores, { version: 3, names: ['drafts', 'presets-local', 'sessions', 'settings'] })
   const prompts = await page.locator('.ci-question-list fieldset > label b').allTextContents()
   assert.equal(prompts.length, 3)
   await page.evaluate(async (id) => {
@@ -88,7 +88,7 @@ try {
   assert.equal(await page.locator('.ci-answer-key, .ci-answer-muted').count(), 0)
   await page.getByRole('button', { name: 'Quitter la séance', exact: true }).click()
   await page.getByRole('button', { name: /Reprendre la séance/ }).waitFor()
-  results.push({ launch: 'real generator action creates a random draft URL and an exact snapshot', migration: 'database 1 → 2 retains sessions and adds drafts/settings/presets-local', reload: 'direct address with no history restores identical questions and renews lastOpenedAt', session: 'collective voting phase resumes without revealing answers' })
+  results.push({ launch: 'real generator action creates a random draft URL and an exact snapshot', migration: 'database 1 → 3 retains sessions and adds drafts/settings/presets-local and session indexes', reload: 'direct address with no history restores identical questions and renews lastOpenedAt', session: 'collective voting phase resumes without revealing answers' })
 
   const fixture = await page.evaluate(async (saved) => {
     const { requestLocal } = await import('/src/interactive/storage.ts')

@@ -5,6 +5,7 @@ import { isVotePayload } from './votes'
 import { canonicalJson } from './seeds'
 import { copySession, readCheckpoint, type SessionCheckpoint } from './checkpoint'
 import { openInteractiveDatabase as openDatabase } from '../storage'
+import { readSessionSource, type SessionSource } from './source'
 
 const STORE = 'sessions'
 const TTL = 7 * 24 * 60 * 60 * 1000
@@ -29,6 +30,7 @@ export type SavedSession = {
   events: SessionEvent[]
   clock?: SessionClock
   clocks?: Record<string, SessionClock>
+  source?: SessionSource
   revision?: number
   checkpoint?: SessionCheckpoint
 }
@@ -93,6 +95,7 @@ export function replaySession(game: Game, value: unknown, planId: string, now = 
   if (value.revision !== undefined && (typeof value.revision !== 'number' || !Number.isSafeInteger(value.revision) || value.revision < 0)) throw new Error('Révision de sauvegarde invalide. Elle est conservée.')
   if (now - value.updatedAt > TTL) return null
   const clock = readClock(value.clock)
+  const source = readSessionSource(value.source)
   let clocks: Record<string, SessionClock> | undefined
   if (value.clocks !== undefined) {
     if (!object(value.clocks) || Object.keys(value.clocks).length > roundsFor(game).length) throw new Error('Minuteurs de séance invalides. La sauvegarde est conservée.')
@@ -114,7 +117,7 @@ export function replaySession(game: Game, value: unknown, planId: string, now = 
     events.push({ eventId: item.eventId, at: item.at, action: item.action })
     state = transition(game, state, item.action, item.at)
   }
-  return { record: { schemaVersion: value.schemaVersion as 1 | 2 | 3 | 4, mode, sessionId: value.sessionId, gameId: game.id, planId, updatedAt: value.updatedAt, events, clock, ...(clocks ? { clocks } : {}), revision: (value.revision as number | undefined) ?? 0, ...(checkpoint ? { checkpoint } : {}) }, state }
+  return { record: { schemaVersion: value.schemaVersion as 1 | 2 | 3 | 4, mode, sessionId: value.sessionId, gameId: game.id, planId, updatedAt: value.updatedAt, events, clock, ...(source ? { source } : {}), ...(clocks ? { clocks } : {}), revision: (value.revision as number | undefined) ?? 0, ...(checkpoint ? { checkpoint } : {}) }, state }
 }
 
 let maintenance: Promise<number> | undefined
@@ -156,17 +159,17 @@ export async function purgeExpiredSessions(now = Date.now()): Promise<number> {
   })
 }
 
-export async function loadSession(game: Game, mode: PlayMode = 'class'): Promise<Resume | null> {
+export async function loadSession(game: Game, mode: PlayMode = 'class', sessionId?: string): Promise<Resume | null> {
   const now = Date.now()
   if (!maintenance || now < maintenanceAt || now - maintenanceAt > 60 * 60 * 1000) { maintenanceAt = now; maintenance = purgeExpiredSessions(now) }
   const cleaning = maintenance
   try { await cleaning } catch (error) { if (maintenance === cleaning) maintenance = undefined; throw error }
-  const value: unknown = await transaction('readonly', (store) => store.get(game.id))
+  const value: unknown = await transaction('readonly', (store) => sessionId ? store.index('sessionId').get(sessionId) : store.get(game.id))
   if (value === undefined) return null
   return replaySession(game, value, await planIdentity(game), Date.now(), mode)
 }
-export async function newRecord(game: Game, mode: PlayMode = 'class'): Promise<SavedSession> {
-  return { schemaVersion: 4, mode, sessionId: crypto.randomUUID(), gameId: game.id, planId: await planIdentity(game), updatedAt: Date.now(), events: [], revision: 0 }
+export async function newRecord(game: Game, mode: PlayMode = 'class', source?: SessionSource): Promise<SavedSession> {
+  return { schemaVersion: 4, mode, sessionId: crypto.randomUUID(), gameId: game.id, planId: await planIdentity(game), updatedAt: Date.now(), events: [], revision: 0, ...(source ? { source: readSessionSource(source) } : {}) }
 }
 export function compactSession(record: SavedSession, state: Session): SavedSession {
   if (record.gameId !== state.gameId || record.mode !== state.mode) throw new Error(PLAN_CHANGED)

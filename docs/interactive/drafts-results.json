@@ -1,7 +1,7 @@
 [
   {
     "launch": "real generator action creates a random draft URL and an exact snapshot",
-    "migration": "database 1 → 2 retains sessions and adds drafts/settings/presets-local",
+    "migration": "database 1 → 3 retains sessions and adds drafts/settings/presets-local and session indexes",
     "reload": "direct address with no history restores identical questions and renews lastOpenedAt",
     "session": "collective voting phase resumes without revealing answers"
   },

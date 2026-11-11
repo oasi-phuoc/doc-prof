@@ -10,6 +10,8 @@ Le compteur de questions ouvre la navigation en Classe. Chaque écran retrouve s
 
 Depuis le générateur, « Jouer avec la classe » conserve un brouillon local pendant 24 heures après sa dernière ouverture. Son adresse permet de retrouver la préparation après actualisation, dans le même navigateur. Voir [brouillons locaux](adr-0007-brouillons-locaux.md), notamment les limites des images temporaires et le repli lorsque le stockage est indisponible.
 
+Les parties et réglages se retrouvent après fermeture de l’onglet dans le même navigateur. Une adresse de séance porte son identifiant local ; les modèles serveur sont toujours chargés en lecture seule. Voir [reprise durable](adr-0010-reprise-durable.md).
+
 En Solo, le choix déclenche la correction puis la question suivante après un battement réglable de 1 à 10 secondes (5 par défaut). Le minuteur est facultatif ; s’il est activé, son expiration compte comme une réponse incorrecte. Les productions ouvertes gardent un modèle et une appréciation humaine.
 
 Depuis le générateur : **Jouer avec la classe**, puis **Commencer la séance**. Depuis la bibliothèque : **Jouer**. `/interactif/demo` propose dix questions de la banque réelle avec un compte autorisé.

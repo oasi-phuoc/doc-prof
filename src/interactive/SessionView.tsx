@@ -1,5 +1,5 @@
 import { Fragment, useCallback, useEffect, useRef, useState } from 'react'
-import { prepareGame, questionsForRound, roundsFor } from './domain/plan'
+import { questionsForRound, roundsFor } from './domain/plan'
 import { startSession, transition } from './domain/session'
 import type { Action, Game, Session } from './domain/types'
 import type { ShapeId } from './domain/palette'
@@ -28,6 +28,7 @@ import type { TimerSettings } from './domain/settings'
 import { compactSession, loadSession, newRecord, saveSession, deleteSession, STORAGE_WARNING, remainingFor, type Resume, type SavedSession, type SessionClock } from './domain/persistence'
 import type { MediaManager } from './media/manager'
 import { acquireSessionLease, type SessionLease } from './session-lease'
+import type { SessionSource } from './domain/source'
 
 export function SessionView(props: Omit<Parameters<typeof ActiveSessionView>[0], 'resume' | 'initialWarning' | 'ownership' | 'registerDrain'>) {
   const [attempt, setAttempt] = useState({ number: 0, takeover: false })
@@ -79,6 +80,9 @@ function ActiveSessionView({
   initialWarning,
   ownership,
   registerDrain,
+  source,
+  onSessionReady,
+  onRetryDifficult,
 }: {
   resume?: Resume | null
   initialWarning?: string
@@ -93,10 +97,15 @@ function ActiveSessionView({
   onNewPart?: () => void
   mediaManager?: MediaManager
   header: ClassroomHeaderProps
+  source?: SessionSource
+  onSessionReady?: (sessionId: string) => void
+  onRetryDifficult?: (questionIds: string[]) => void
 }) {
   const [state, setState] = useState(() => resume?.state ?? startSession(game, header.mode))
   const current = useRef(state)
-  const [initialRecord] = useState(() => resume ? Promise.resolve(resume.record) : newRecord(game, header.mode))
+  const [initialRecord] = useState(() => resume ? Promise.resolve(resume.record) : newRecord(game, header.mode, source))
+  const context = useRef(source)
+  useEffect(() => { context.current = source }, [source])
   const record = useRef<Promise<SavedSession>>(initialRecord)
   const writes = useRef(Promise.resolve())
   const clock = useRef<SessionClock | undefined>(resume?.record.clock)
@@ -114,7 +123,7 @@ function ActiveSessionView({
     writes.current = writes.current.then(async () => {
       const previous = await record.current
       if (!ownership()) throw new Error(STORAGE_WARNING)
-      const updated = { ...previous, clock: snapshot, clocks: allClocks, updatedAt: Date.now() }
+      const updated = { ...previous, clock: snapshot, clocks: allClocks, source: context.current ?? previous.source, updatedAt: Date.now() }
       record.current = Promise.resolve(await saveSession(updated, previous))
     }).catch((error: unknown) => { enabled.current = false; setStorageWarning(error instanceof Error ? error.message : STORAGE_WARNING) })
   }, [ownership])
@@ -159,22 +168,27 @@ function ActiveSessionView({
       const previous = await record.current
       if (!ownership()) throw new Error(STORAGE_WARNING)
       const updated: SavedSession = {
-        ...previous, updatedAt: at, clock: actionClock, clocks: actionClocks,
+        ...previous, updatedAt: at, clock: actionClock, clocks: actionClocks, source: context.current ?? previous.source,
         events: [...previous.events, { eventId: crypto.randomUUID(), at, action }],
       }
       record.current = Promise.resolve(await saveSession(next.finished || updated.events.length >= 5000 ? compactSession(updated, next) : updated, previous))
     }).catch((error: unknown) => { enabled.current = false; setStorageWarning(error instanceof Error ? error.message : STORAGE_WARNING) })
   }, [game, ownership])
   useEffect(() => {
-    if (resume || !enabled.current) return
-    writes.current = writes.current.then(async () => { const value = await record.current; if (!ownership()) throw new Error(STORAGE_WARNING); record.current = Promise.resolve(await saveSession(value)) }).catch((error: unknown) => {
+    if (!enabled.current) return
+    writes.current = writes.current.then(async () => {
+      const value = await record.current
+      if (!ownership()) throw new Error(STORAGE_WARNING)
+      const saved = await saveSession({ ...value, source: context.current ?? value.source }, resume ? value : undefined)
+      record.current = Promise.resolve(saved)
+      onSessionReady?.(saved.sessionId)
+    }).catch((error: unknown) => {
       enabled.current = false
       setStorageWarning(error instanceof Error ? error.message : STORAGE_WARNING)
     })
-  }, [resume, ownership])
+  }, [resume, ownership, onSessionReady])
   // Attach a rejection handler even if the browser cannot initialize storage.
   useEffect(() => { void record.current.catch(() => { enabled.current = false; setStorageWarning(STORAGE_WARNING) }) }, [])
-  const [retryGame, setRetryGame] = useState<Game | null>(null)
   const [hidden, setHidden] = useState(document.hidden)
   const rounds = roundsFor(game)
   const questions = questionsForRound(game, state.index)
@@ -195,21 +209,6 @@ function ActiveSessionView({
     )
     return () => controller.abort()
   }, [game, state.index, state.finished, state.paused, hidden, mediaManager])
-  if (retryGame)
-    return (
-      <SessionView
-        key={retryGame.id}
-        game={retryGame}
-        colors={colors}
-        shapes={shapes}
-        timer={timer}
-        onExit={onExit}
-        onFinish={onFinish}
-        onNewPart={onNewPart}
-        mediaManager={mediaManager}
-        header={header}
-      />
-    )
   if (state.finished) {
     const finish = (callback: () => void) => {
       enabled.current = false
@@ -277,16 +276,8 @@ function ActiveSessionView({
             {onNewPart && <button className="ci-primary" onClick={() => finish(onNewPart)}>Nouvelle partie</button>}
             <button
               className="ci-primary"
-              disabled={!difficult.length}
-              onClick={() =>
-                setRetryGame(
-                  prepareGame(
-                    { ...game, id: `${game.id}-retry`, rounds: undefined },
-                    difficult,
-                    state.mode,
-                  ),
-                )
-              }
+              disabled={!difficult.length || !onRetryDifficult}
+              onClick={() => onRetryDifficult?.(difficult)}
             >
               Reprendre les questions difficiles ({difficult.length})
             </button>

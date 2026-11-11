@@ -1,13 +1,17 @@
-import { lazy, Suspense, useEffect, useMemo, useState, type CSSProperties } from 'react'
+import { lazy, Suspense, useCallback, useEffect, useMemo, useState, type CSSProperties } from 'react'
 import { listFiches } from '@/fiches/api'
 import { domainsForAccount, readAccessAccount } from '@/access'
 import { MASCOTS, type MascotKind } from './domain/mascot'
 import type { Game, PlayMode } from './domain/types'
-import { createGameSource, renewGameSource, saveGameRun, questionSourceKey, type GameSource } from './game-run'
+import { createGameSource, loadGameSource, renewGameSource, saveGameRun, questionSourceKey, type GameSource } from './game-run'
+import { runById } from './local-runs'
+import { deriveSeed } from './domain/seeds'
+import { PLAN_CHANGED } from './domain/persistence'
 import { convertRecipe } from './domain/convert'
 import { excludeQuestions, prepareGame } from './domain/plan'
 import { useMediaPreflight } from './media/useMediaPreflight'
 import type { ToolbarGuard } from './domain/teacher'
+import { readClassroomPreferences, patchClassroomPreferences, type ClassroomPreferences } from './preferences'
 import { MediaCheck } from './components/MediaCheck'
 import {
   PALETTE,
@@ -49,13 +53,6 @@ function readSetting(key: string): unknown {
     return JSON.parse(localStorage.getItem(key) ?? 'null')
   } catch {
     return null
-  }
-}
-function saveSetting(key: string, value: unknown) {
-  try {
-    localStorage.setItem(key, JSON.stringify(value))
-  } catch {
-    /* Preferences are optional. */
   }
 }
 function savedIdFromPath(): string | null {
@@ -122,37 +119,51 @@ async function deletePreparedSession(game: Game, mode: PlayMode): Promise<void> 
 
 const DiagnosticPage = lazy(() => import('./DiagnosticPage'))
 export default function InteractiveApp() {
-  if (window.location.pathname.replace(/\/+$/, '') === '/interactif/diagnostic') return <Suspense fallback={<p role="status">Chargement du diagnostic…</p>}><DiagnosticPage colors={loadColors()} shapes={loadShapes()} /></Suspense>
-  return <GameApp />
+  const [loaded, setLoaded] = useState<{ preferences: ClassroomPreferences; warning: string } | null>(null)
+  useEffect(() => {
+    let active = true
+    const legacy: ClassroomPreferences = { colors: loadColors(), shapes: loadShapes(), timer: loadTimer(), mascot: MASCOTS.find((entry) => entry.id === readSetting(MASCOT_KEY))?.id ?? 'leaf', toolbarGuard: readSetting(GUARD_KEY) === 'hold-to-reveal' ? 'hold-to-reveal' : 'none', contrast: false }
+    void readClassroomPreferences(legacy).then(
+      (preferences) => { if (active) setLoaded({ preferences, warning: '' }) },
+      (error: unknown) => { if (active) setLoaded({ preferences: legacy, warning: error instanceof Error ? error.message : 'Réglages locaux indisponibles.' }) },
+    )
+    return () => { active = false }
+  }, [])
+  if (!loaded) return <p role="status">Chargement des réglages…</p>
+  if (window.location.pathname.replace(/\/+$/, '') === '/interactif/diagnostic') return <Suspense fallback={<p role="status">Chargement du diagnostic…</p>}><DiagnosticPage colors={loaded.preferences.colors} shapes={loaded.preferences.shapes} /></Suspense>
+  return <GameApp initialPreferences={loaded.preferences} initialWarning={loaded.warning} />
 }
 
-function GameApp() {
+function GameApp({ initialPreferences, initialWarning }: { initialPreferences: ClassroomPreferences; initialWarning: string }) {
   const draftId = localDraftId()
   const savedId = savedIdFromPath()
+  const demo = window.location.pathname === '/interactif/demo'
+  const requestedSession = new URLSearchParams(window.location.search).get('s')
   const [source, setSource] = useState<Source | null>(() => {
-    const demo = window.location.pathname === '/interactif/demo'
-    if (!demo && (draftId !== null || savedId)) return null
-    const value = demo ? { recipe: demoRecipe(), name: 'Les cartes de la classe' } : readInteractiveDraft()
-    return value ? createGameSource(value, demo ? 'demo' : 'draft') : null
+    if (demo || draftId !== null || savedId) return null
+    const value = readInteractiveDraft()
+    return value ? createGameSource(value, 'draft') : null
   })
   const [error, setError] = useState(() =>
-    !source && !savedId && draftId === null
+    !source && !demo && !savedId && draftId === null
       ? 'Ouvrez une fiche puis choisissez « Jouer avec la classe ».'
       : '',
   )
-  const [loading, setLoading] = useState(!source && (!!savedId || draftId !== null))
+  const [loading, setLoading] = useState(!source && (demo || !!savedId || draftId !== null))
   const [draftWarning] = useState(readDraftWarning)
-  const [colors, setColors] = useState(loadColors)
-  const [shapes, setShapes] = useState(loadShapes)
-  const [timer, setTimer] = useState(loadTimer)
-  const [contrast, setContrast] = useState(false)
-  const [mascot, setMascot] = useState<MascotKind>(() => MASCOTS.find((item) => item.id === readSetting(MASCOT_KEY))?.id ?? 'leaf')
+  const [colors, setColors] = useState(initialPreferences.colors)
+  const [shapes, setShapes] = useState(initialPreferences.shapes)
+  const [timer, setTimer] = useState(initialPreferences.timer)
+  const [contrast, setContrast] = useState(initialPreferences.contrast)
+  const [mascot, setMascot] = useState<MascotKind>(initialPreferences.mascot)
+  const [preferencesWarning, setPreferencesWarning] = useState(initialWarning)
   const [mode, setMode] = useState<PlayMode>(() => {
     try { return sessionStorage.getItem(MODE_KEY) === 'solo' ? 'solo' : 'class' } catch { return 'class' }
   })
   const [playing, setPlaying] = useState(false)
-  const [toolbarGuard, setToolbarGuard] = useState<ToolbarGuard>(() => readSetting(GUARD_KEY) === 'hold-to-reveal' ? 'hold-to-reveal' : 'none')
+  const [toolbarGuard, setToolbarGuard] = useState<ToolbarGuard>(initialPreferences.toolbarGuard)
   const [selection, setSelected] = useState<string[] | null>(() => source?.selectedKeys ?? null)
+  const [selectionModified, setSelectionModified] = useState(false)
   const [pendingStart, setPendingStart] = useState(false)
   useEffect(() => { if (source) saveGameRun(source, selection) }, [source, selection])
   const [excludeUnavailable, setExcludeUnavailable] = useState(true)
@@ -167,19 +178,28 @@ function GameApp() {
   const [teacherSheetExport, setTeacherSheetExport] = useState('')
   useEffect(() => {
     if (source) return
-    if (!savedId && draftId === null) return
+    if (!demo && !savedId && draftId === null) return
     let active = true
     const load = async () => {
-      if (draftId !== null) return createGameSource(await loadLocalDraft(draftId), 'draft', draftId)
-      const fiche = (await listFiches()).find((f) => f.id === savedId)
-      if (!fiche) throw new Error('Cette fiche est introuvable ou inaccessible pour votre compte.')
-      return createGameSource({ recipe: fiche.recipe, name: fiche.name }, 'saved', fiche.id)
+      const kind = demo ? 'demo' : draftId !== null ? 'draft' : 'saved'
+      const id = demo ? 'demo' : draftId ?? savedId!
+      const fiche = kind === 'saved' ? (await listFiches()).find((f) => f.id === id) : undefined
+      if (kind === 'saved' && !fiche) throw new Error('Cette fiche est introuvable ou inaccessible pour votre compte.')
+      const value = demo ? { recipe: demoRecipe(), name: 'Les cartes de la classe' } : kind === 'draft' ? await loadLocalDraft(id) : { recipe: fiche!.recipe, name: fiche!.name }
+      if (!requestedSession) return loadGameSource(value, kind, id)
+      const run = await runById(requestedSession)
+      const next = createGameSource(value, kind, id)
+      if (!run) return { ...next, storageWarning: 'Cette sauvegarde est introuvable ou expirée. Vous pouvez commencer une nouvelle partie.' }
+      if (run.source.reference.kind !== kind || run.source.reference.id !== id) throw new Error('Cette séance appartient à une autre fiche. Ouvrez son adresse d’origine.')
+      return { ...next, recipe: { ...next.recipe, seed: run.source.seed }, selectedKeys: run.source.selectedKeys, replay: run.source.replay, restoredMode: run.mode, restoredTimer: run.source.timer, sessionId: run.sessionId, restoredGameId: run.gameId }
     }
     void load()
       .then((next) => {
         if (!active) return
         setSource(next)
         setSelected(next.selectedKeys)
+        if (next.restoredMode) { setMode(next.restoredMode); try { sessionStorage.setItem(MODE_KEY, next.restoredMode) } catch { /* Optional cache. */ } }
+        if (next.restoredTimer) setTimer(next.restoredTimer)
       })
       .catch((e) => {
         if (active)
@@ -193,14 +213,17 @@ function GameApp() {
     return () => {
       active = false
     }
-  }, [source, draftId, savedId])
+  }, [source, draftId, savedId, demo, requestedSession])
   const allowed = new Set(domainsForAccount(readAccessAccount()))
   const forbidden = source?.recipe.pages.some(
     (page) => !allowed.has(page.domain),
   )
   const game = useMemo(
-    () =>
-      source && !forbidden ? convertRecipe(source.recipe, source.name) : null,
+    () => {
+      if (!source || forbidden) return null
+      const converted = convertRecipe(source.recipe, source.name)
+      return source.replay ? { ...converted, id: `${converted.id}-replay-${source.replay}`, seed: deriveSeed({ originalSeed: source.recipe.seed, sourceKey: source.sourceKey, purpose: 'replay', attempt: source.replay }) } : converted
+    },
     [source, forbidden],
   )
   const selectedSources = useMemo(() => selection ?? game?.questions.map(questionSourceKey) ?? [], [selection, game])
@@ -225,19 +248,41 @@ function GameApp() {
   useEffect(() => {
     let active = true
     if (!activeGame || playing) return
-    void loadSession(activeGame, mode).then(
+    void loadSession(activeGame, mode, selectionModified ? undefined : requestedSession ?? source?.sessionId).then(
       (value) => { if (active) setResumeResult({ key: resumeKey, saved: value, warning: '' }) },
       (error: unknown) => { if (active) setResumeResult({ key: resumeKey, saved: null, warning: error instanceof Error ? error.message : 'Sauvegarde indisponible.' }) },
     )
     return () => { active = false }
-  }, [activeGame, playing, mode, resumeKey])
+  }, [activeGame, playing, mode, resumeKey, requestedSession, source?.sessionId, selectionModified])
+  const clearPreparedSession = () => {
+    if (playing) return
+    setSelectionModified(true)
+    const url = new URL(window.location.href); url.searchParams.delete('s'); window.history.replaceState(window.history.state, '', url)
+  }
+  const changeSelection = (next: string[] | null) => { clearPreparedSession(); setSelected(next) }
   const canResume = !!saved && !saved.state.finished
   const newPart = (autoStart: boolean) => {
     if (!source) return
     setPlaying(false)
     setSource(renewGameSource(source, selection))
+    setSelectionModified(false)
+    const url = new URL(window.location.href); url.searchParams.delete('s'); window.history.replaceState(window.history.state, '', url)
     setResumeResult(null)
     setPendingStart(autoStart)
+  }
+  const sessionReady = useCallback((sessionId: string) => {
+    setSelectionModified(false)
+    const url = new URL(window.location.href)
+    url.searchParams.set('s', sessionId)
+    window.history.replaceState(window.history.state, '', url)
+  }, [])
+  const retryDifficult = (ids: string[]) => {
+    if (!source || !activeGame) return
+    setPlaying(false)
+    setSource({ ...source, replay: source.replay + 1, sessionId: undefined, restoredGameId: undefined })
+    setSelected(activeGame.questions.filter((q) => ids.includes(q.id)).map(questionSourceKey))
+    const url = new URL(window.location.href); url.searchParams.delete('s'); window.history.replaceState(window.history.state, '', url)
+    setResumeResult(null); setPendingStart(true)
   }
   useEffect(() => {
     if (!pendingStart || !activeGame || !media.complete || !resumeChecked) return
@@ -247,29 +292,32 @@ function GameApp() {
   }, [pendingStart, activeGame, media.complete, resumeChecked])
   const changeColors = (next: string[]) => {
     setColors(next)
-    saveSetting(COLORS_KEY, next)
+    savePreferences({ colors: next })
   }
   const changeShapes = (next: ShapeId[]) => {
     setShapes(next)
-    saveSetting(SHAPES_KEY, next)
+    savePreferences({ shapes: next })
   }
   const changeTimer = (next: TimerSettings) => {
+    clearPreparedSession()
     setTimer(next)
-    saveSetting(TIMER_KEY, next)
+    savePreferences({ timer: next })
   }
+  const savePreferences = (patch: Partial<ClassroomPreferences>) => { void patchClassroomPreferences(patch, initialPreferences).catch((error: unknown) => setPreferencesWarning(error instanceof Error ? error.message : 'Réglages non enregistrés.')) }
   const header = {
     toolbarGuard,
     mascot,
-    onMascot: (next: MascotKind) => { setMascot(next); saveSetting(MASCOT_KEY, next) },
+    onMascot: (next: MascotKind) => { setMascot(next); savePreferences({ mascot: next }) },
     mode,
     onMode: (next: PlayMode) => {
+      clearPreparedSession()
       setMode(next)
       try { sessionStorage.setItem(MODE_KEY, next) } catch { /* Optional preference. */ }
     },
     fullscreen,
     playing,
     contrast,
-    onContrast: () => setContrast((c) => !c),
+    onContrast: () => { setContrast(!contrast); savePreferences({ contrast: !contrast }) },
     onFiches: returnToFiches,
     timer,
     onTimer: changeTimer,
@@ -286,6 +334,7 @@ function GameApp() {
   }
   return (
     <div className={`ci-app${contrast ? ' ci-high-contrast' : ''}${playing ? ' ci-playing' : ''}${fullscreen ? ' ci-immersive' : ''}`} data-mascot={mascot}>
+      {preferencesWarning && <p className="ci-notice" role="status">{preferencesWarning} Le jeu reste utilisable.</p>}
       {!playing && <ClassroomHeader {...header} />}
       {loading ? (
         <main className="ci-container">
@@ -319,6 +368,9 @@ function GameApp() {
                 onNewPart={() => newPart(true)}
                 mediaManager={media.manager}
                 header={header}
+                source={source?.reference ? { reference: source.reference, sourceKey: source.sourceKey, seed: source.recipe.seed, replay: source.replay, selectedKeys: selectedSources, timer } : undefined}
+                onSessionReady={sessionReady}
+                onRetryDifficult={retryDifficult}
               />
             ) : (
               <main className="ci-container">
@@ -365,12 +417,12 @@ function GameApp() {
                     <div className="ci-toolbar">
                       <button
                         onClick={() =>
-                          setSelected(null)
+                          changeSelection(null)
                         }
                       >
                         Tout sélectionner
                       </button>
-                      <button onClick={() => setSelected([])}>
+                      <button onClick={() => changeSelection([])}>
                         Tout désélectionner
                       </button>
                     </div>
@@ -394,7 +446,7 @@ function GameApp() {
                                     selected.includes(id),
                                   )}
                                   onChange={(e) =>
-                                    setSelected(
+                                  changeSelection(
                                       e.target.checked
                                         ? [...new Set([...selectedSources, ...keys])]
                                         : selectedSources.filter(
@@ -412,7 +464,7 @@ function GameApp() {
                                   type="checkbox"
                                   checked={selected.includes(q.id)}
                                   onChange={(e) =>
-                                    setSelected(
+                                    changeSelection(
                                       e.target.checked
                                         ? [...selectedSources, questionSourceKey(q)]
                                         : selectedSources.filter((key) => key !== questionSourceKey(q)),
@@ -470,11 +522,13 @@ function GameApp() {
                     )}
                     <p className="ci-run-note">Une nouvelle partie renouvelle les tirages du générateur, avec les mêmes types, limites et durées. Les questions saisies manuellement sont conservées ; une reprise garde la partie en cours.</p>
                     {draftWarning && <p role="status">{draftWarning}</p>}
+                    {source?.storageWarning && <p role="status">{source.storageWarning}</p>}
                     {resumeWarning && <p role="status">{resumeWarning}</p>}
+                    {resumeWarning === PLAN_CHANGED && <button onClick={() => newPart(false)}>Recommencer avec une nouvelle partie</button>}
                     {canResume && saved && <p>Reprendre la séance du {new Date(saved.record.updatedAt).toLocaleString('fr-CH')} (question {saved.state.index + 1} sur {activeGame.rounds?.length ?? activeGame.questions.length}) ?</p>}
                     <button
                       className="ci-primary ci-launch"
-                      disabled={!activeGame.questions.length || !media.complete || !resumeChecked || pendingStart}
+                      disabled={!activeGame.questions.length || !media.complete || !resumeChecked || pendingStart || resumeWarning === PLAN_CHANGED}
                       onClick={() => { if (saved?.state.finished) newPart(true); else setPlaying(true) }}
                     >
                       {pendingStart ? 'Préparation de la nouvelle partie…' : saved?.state.finished ? 'Nouvelle partie' : canResume ? 'Reprendre la séance' : 'Commencer la séance'}{' '}
@@ -539,7 +593,7 @@ function GameApp() {
                     </div>
                     {mode === 'class' && <div className="ci-setup-guard"><label><input type="checkbox" checked={toolbarGuard === 'hold-to-reveal'} onChange={(event) => {
                       const next = event.target.checked ? 'hold-to-reveal' : 'none'
-                      setToolbarGuard(next); saveSetting(GUARD_KEY, next)
+                      setToolbarGuard(next); savePreferences({ toolbarGuard: next })
                     }} />Maintenir le bouton pour révéler</label><p>Un appui de 600 ms évite une correction affichée par erreur. Fonctionne aussi avec Entrée ou Espace.</p></div>}
                   </aside>
                 </div>
