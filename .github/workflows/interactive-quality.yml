@@ -26,11 +26,16 @@ jobs:
         with:
           node-version: 24
           cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            api/fiches/package-lock.json
       - run: npm ci --no-audit --no-fund
+      - run: npm ci --prefix api/fiches --no-audit --no-fund
       - name: Secrets dans les modifications (sortie masquée)
         run: npm run check:interactive:secrets
       - run: npm run lint
       - run: npx tsc -b
+      - run: npx tsc -b api/fiches/tsconfig.json
       - run: npm test
       - run: npx vite build --manifest
       - run: npm run check:interactive:budgets
