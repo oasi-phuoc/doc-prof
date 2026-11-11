@@ -19,6 +19,17 @@ compatibility_date = "2026-04-01"
 [vars]
 ACCESS_DOMAINS_PARTIAL = "algèbre,géométrie"
 ACCESS_DOMAINS_FULL = "algèbre,géométrie,gattegno,jeux,calligraphie,soutien-fr,grammaire,vocabulaire,société,santé,tcm-cfr,tcm-csc,acm,alphabetisation,tcf-csc,tcf-cfr"
+COMPETITION_ORIGINS = "https://doc-prof.vercel.app"
+
+# Secret serveur distinct des accès historiques, jamais préfixé VITE_ :
+# npx wrangler secret put COMPETITION_HOST_KEY
+[[durable_objects.bindings]]
+name = "COMPETITION_ROOMS"
+class_name = "ClassroomCompetitionRoom"
+
+[[migrations]]
+tag = "competition-v1"
+new_sqlite_classes = ["ClassroomCompetitionRoom"]
 
 [[d1_databases]]
 binding = "DB"

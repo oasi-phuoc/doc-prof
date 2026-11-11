@@ -6,6 +6,7 @@ import type { TcfCadreQuestion, TcfSheetItem } from '@/tcf/types'
 import type { Choice, Game, Question } from './types'
 import { canonicalJson, deriveSeed, hash } from './seeds'
 import { adaptSourceItem } from './source-adapters'
+import { verifiedCscMath } from './csc-math'
 export { hash } from './seeds'
 const normalized = (s: string) =>
   s
@@ -201,6 +202,25 @@ export function convertRecipe(
           }
           if (item.libreError) {
             reject(item.libreError)
+            return
+          }
+          const csc = verifiedCscMath(item)
+          if (csc) {
+            if (csc.kind === 'invalid') { reject(csc.reason); return }
+            const q = base()
+            q.prompt = csc.prompt
+            if (csc.kind === 'operator') {
+              q.instruction = 'Choisis le signe qui complète l’égalité.'
+              q.choices = csc.choices
+              add(q, csc.model, csc.correctId)
+            } else {
+              q.instruction = 'Lis la situation puis choisis le résultat.'
+              q.context = csc.context
+              q.compatibility = 'assisted'
+              const choices = numberChoices(csc.result, deriveSeed({ originalSeed: recipe.seed, sourceKey: q.id, purpose: 'distractors' }))
+              q.choices = choices.choices
+              add(q, csc.model, choices.correctId)
+            }
             return
           }
           const adapted = adaptSourceItem(item, block.exerciseType, block.instruction)

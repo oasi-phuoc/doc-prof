@@ -32,6 +32,7 @@ import { tryGenerateFigure } from './figures-school'
 import { tryGenerateMesure } from './mesures'
 import { makeWordProblem } from './problems'
 import { tryGenerateTcmCfrItems } from '@/tcm-cfr/items'
+import { tryGenerateTcmCscItems } from '@/tcm-csc/items'
 import { generateCountIcons } from '@/math/count-icons'
 import { int, pick, shuffle, type Rng } from './rng'
 import type {
@@ -71,6 +72,8 @@ export function generateItems(
 ): MathItem[] {
   const tpm = tryGenerateTpmItems(typeId, count, rng)
   if (tpm) return tpm
+  const tcmCsc = tryGenerateTcmCscItems(typeId, count, rng, worksheetSeed)
+  if (tcmCsc) return tcmCsc
   const tcmCfr = tryGenerateTcmCfrItems(typeId, count, rng, worksheetSeed)
   if (tcmCfr) return tcmCfr
   if (typeId === 'conversions-longueur' && count >= 2) {

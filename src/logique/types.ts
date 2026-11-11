@@ -18,6 +18,8 @@ export type LogiqueMode =
 
 /** Données de rendu d’un exercice logique (images de la banque Word). */
 export type LogiquePuzzle = {
+  /** Identifiant de la banque, conservé pour le choix explicite en mode libre. */
+  id?: string
   mode: LogiqueMode
   /** Images de l’énoncé (suite, modèle, grille…). */
   stem: string[]

@@ -1,0 +1,80 @@
+.ci-app.ci-competition { min-height: 100dvh; display: flex; flex-direction: column; }
+.ci-competition .ci-header { flex-shrink: 0; }
+.ci-competition-heading { font-weight: 800; font-size: 17px; }
+.ci-competition .ci-competition-portrait { display: inline-block; position: relative; width: 72px; height: 72px; flex: 0 0 auto; }
+.ci-competition .ci-competition-avatar { display: block; width: 100%; height: 100%; background-repeat: no-repeat; background-size: 400% 300%; animation: ci-competition-bob 3s ease-in-out infinite; }
+.ci-competition-seat { position: absolute; right: 0; bottom: -2px; min-width: 25px; padding: 3px 6px; border-radius: 20px; background: #182238; color: white; font-size: 15px; border: 2px solid white; }
+.ci-competition-avatars { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; max-width: 480px; margin: 20px auto; }
+.ci-competition-avatars > button { padding: 6px; min-width: 0; background: white; border: 2px solid #c6ccda; border-radius: 20px; }
+.ci-competition-avatars > button[aria-pressed='true'] { border-color: #6738d6; box-shadow: 0 0 0 3px white, 0 0 0 6px #6738d6; }
+.ci-competition-avatars .ci-competition-portrait { width: 100%; height: auto; aspect-ratio: 1; vertical-align: middle; }
+.ci-competition-join, .ci-competition-lobby, .ci-competition-setup, .ci-competition-finished { text-align: center; width: 100%; }
+.ci-competition-join { max-width: 600px; }
+.ci-competition-join > label, .ci-competition-modes label { display: flex; flex-direction: column; gap: 8px; max-width: 400px; margin: 16px auto; }
+.ci-competition-join input { text-align: center; font-size: 32px; font-weight: 800; letter-spacing: .15em; width: 100%; }
+.ci-competition-modes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin: 24px 0; }
+.ci-competition-modes .ci-panel { display: flex; flex-direction: column; align-items: center; }
+.ci-competition-modes .ci-primary { margin-top: auto; }
+.ci-competition-code { font-size: clamp(44px, 8vw, 80px); font-weight: 900; letter-spacing: .1em; margin: 20px 0; font-variant-numeric: tabular-nums; color: #5324b8; }
+.ci-competition-scores { list-style: none; padding: 0; margin: 20px auto; max-width: 620px; display: grid; gap: 8px; }
+.ci-competition-scores > li { display: flex; align-items: center; gap: 16px; padding: 8px 18px; background: white; border: 2px solid #c6ccda; border-radius: 18px; }
+.ci-competition-score { display: flex; flex-direction: column; text-align: right; margin-left: auto; font-variant-numeric: tabular-nums; }
+.ci-competition-rank { min-width: 24px; font-size: 24px; }
+.ci-competition-waiting > .ci-competition-portrait, .ci-competition-handoff > .ci-competition-portrait { width: 180px; height: 180px; }
+.ci-competition-handoff { text-align: center; margin: auto; }
+.ci-competition-handoff .ci-primary { min-height: 64px; min-width: 200px; }
+.ci-competition-playing { height: 100dvh; overflow: hidden; }
+.ci-competition-main { flex: 1; min-height: 0; width: 100%; max-width: 1500px; margin: 0 auto; padding: 10px 24px; display: flex; flex-direction: column; gap: 8px; position: relative; overflow: auto; }
+.ci-competition-round-head { display: flex; justify-content: space-between; gap: 12px; font-size: 14px; font-weight: 700; }
+.ci-competition-question { flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 10px; }
+.ci-competition-question .ci-question { flex: 0 0 auto; text-align: center; }
+.ci-competition-question .ci-question h1 { font-weight: 850; font-size: clamp(28px, 3.3vw, 46px); margin: 4px auto; padding: 10px 16px; border: 2px solid #8250dc; border-radius: 16px; max-width: 1100px; background: white; }
+.ci-competition-question .ci-answer-grid { flex: 1; min-height: 90px; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-auto-rows: minmax(80px, 1fr); }
+.ci-competition-question .ci-answer { min-height: 80px; }
+.ci-competition-question .ci-answer-content { min-width: 0; overflow: auto; }
+.ci-competition-question .ci-stimulus-images img { max-height: 16dvh; }
+.ci-competition-status { display: flex; flex-shrink: 0; align-items: center; justify-content: center; gap: 16px; text-align: center; min-height: 60px; }
+.ci-competition-status .ci-competition-portrait { width: 104px; height: 104px; }
+.ci-competition-status p { margin: 4px 0; font-weight: 750; }
+.ci-competition-clock { display: block; font-size: 36px; font-weight: 850; font-variant-numeric: tabular-nums; }
+.ci-competition-audio { max-width: 600px; width: 100%; margin: auto; }
+.ci-competition-audio audio { height: 34px; }
+.ci-competition-host-controls { flex-shrink: 0; justify-content: center; }
+.ci-competition-pause { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.ci-competition-dialog { border: 2px solid #b9bfd0; border-radius: 20px; padding: 24px; max-width: min(620px, calc(100vw - 24px)); max-height: calc(100dvh - 24px); overflow: auto; color: #182238; background: #f6f7fb; }
+.ci-competition-dialog::backdrop { background: #182238bb; }
+.ci-competition-restart { margin: 10px auto 30px; }
+.ci-competition .ci-competition-win .ci-competition-avatar { animation: ci-competition-cheer .8s ease-in-out infinite; }
+.ci-competition .ci-competition-miss .ci-competition-avatar { animation: ci-competition-sway 1.8s ease-in-out infinite; }
+.ci-competition-tears::before, .ci-competition-tears::after { content: ''; position: absolute; width: 8px; height: 14px; border-radius: 70% 70% 70% 10%; background: #5dacf2; top: 46%; left: 32%; animation: ci-competition-tear 1.3s ease-in infinite; }
+.ci-competition-tears::after { left: 66%; animation-delay: -.6s; }
+.ci-competition-confetti { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.ci-competition-confetti i { position: absolute; top: -20px; width: 10px; height: 18px; border: 1px solid #18223844; animation: ci-competition-confetti 2.2s ease-out infinite; }
+@keyframes ci-competition-bob { 50% { transform: translateY(-4px) rotate(2deg); } }
+@keyframes ci-competition-cheer { 50% { transform: translateY(-9px) rotate(-5deg) scale(1.06); } }
+@keyframes ci-competition-sway { 25% { transform: rotate(-4deg); } 75% { transform: rotate(4deg); } }
+@keyframes ci-competition-tear { from { transform: translateY(-5px); opacity: 1; } to { transform: translateY(22px); opacity: 0; } }
+@keyframes ci-competition-confetti { to { transform: translateY(90dvh) rotate(450deg); opacity: 0; } }
+@media (max-width: 700px) {
+  .ci-competition .ci-header { gap: 6px; padding: 6px 10px; }
+  .ci-competition .ci-header-start { flex: 1; width: auto; min-width: 0; gap: 6px; }
+  .ci-competition .ci-header-tools { width: auto; flex: 0 0 auto; order: 0; }
+  .ci-competition .ci-header .brand { font-size: 17px; }
+  .ci-competition-heading { font-size: 12px; }
+  .ci-competition-modes { grid-template-columns: 1fr; gap: 12px; }
+  .ci-competition-main { padding: 6px 10px; gap: 5px; }
+  .ci-competition-question { gap: 5px; }
+  .ci-competition-question .ci-question h1 { font-size: clamp(28px, 4.5dvh, 38px); line-height: 1.15; padding: 8px; }
+  .ci-competition-question .ci-answer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: minmax(44px, 1fr); gap: 6px; }
+  .ci-competition-question .ci-answer { min-height: 44px; }
+  .ci-competition-question .ci-answer-content { font-size: 22px; padding: 6px; }
+  .ci-competition-question .ci-answer .ci-card-badge { width: 36px; min-width: 36px; padding: 4px; font-size: 18px; }
+  .ci-competition-question .ci-answer-content img { max-height: 8dvh; }
+  .ci-competition-status { gap: 10px; }
+  .ci-competition-status .ci-competition-portrait { width: 88px; height: 88px; }
+  .ci-competition-status p { font-size: 14px; }
+  .ci-competition-clock { font-size: 30px; }
+  .ci-competition-host-controls { gap: 6px; }
+  .ci-competition-host-controls button { font-size: 13px; padding: 7px; }
+}
+.ci-app.ci-competition.ci-immersive .ci-competition-main { padding-top: 54px; }

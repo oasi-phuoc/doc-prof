@@ -19,7 +19,8 @@ export function navigateTo(path: string) {
 
 export function resolveRoute(): AppRoute {
   const initial = pathFromLocation()
-  if ((initial === 'generator' || initial === 'fiches' || initial === 'interactive') && !hasAccessCookie()) {
+  const publicCompetition = /^\/interactif\/rejoindre(?:\/\d{6})?\/?$/.test(window.location.pathname)
+  if ((initial === 'generator' || initial === 'fiches' || initial === 'interactive' && !publicCompetition) && !hasAccessCookie()) {
     if (typeof window !== 'undefined') {
       window.history.replaceState({}, '', '/acces')
     }

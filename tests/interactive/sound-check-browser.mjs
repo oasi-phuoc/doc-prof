@@ -91,7 +91,7 @@ try {
     await page.locator('.ci-summary').waitFor()
     await page.clock.resume()
     await page.waitForFunction(async () => { const { requestLocal } = await import('/src/interactive/storage.ts'); const rows = await requestLocal('sessions', 'readonly', (store) => store.getAll()); return rows.some((row) => row.mode === 'solo' && row.checkpoint?.state.finished) })
-    const history = await page.evaluate(async () => { const { requestLocal } = await import('/src/interactive/storage.ts'); const rows = await requestLocal('sessions', 'readonly', (store) => store.getAll()); return rows.find((row) => row.mode === 'solo').checkpoint.state.history })
+    const history = await page.evaluate(async () => { const { requestLocal } = await import('/src/interactive/storage.ts'); const rows = await requestLocal('sessions', 'readonly', (store) => store.getAll()); return rows.find((row) => row.mode === 'solo' && row.checkpoint?.state.finished).checkpoint.state.history })
     assert.deepEqual(history.map((attempt) => attempt.correct), [false, true, false])
     results.push({ viewport: `${width}x${height}`, class: 'three independent listening questions, source sound and image, two response cards, teacher-only reveal and exact negative-result reload', solo: 'wrong choice, correct negative choice and timeout; ten-second automatic progression and derived report', missing: 'fourth source word excluded with a visible reason', serverWrites: 0 })
     await context.close()

@@ -5,6 +5,7 @@ import {
 } from '@/tpm/test'
 import { isAudioOnlyGrammarCo } from '@/grammaire/exercises/co-bank'
 import { isTcmCfrConsignesType } from '@/tcm-cfr/test'
+import { isTcmCscConsignesType } from '@/tcm-csc/test'
 import {
   isTcfConsignesType,
   tcfNiveauFromDifficulty,
@@ -292,7 +293,8 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
               {isTpmLike &&
               !(
                 isTpmConsignesType(activeBlock.exerciseType) ||
-                isTcmCfrConsignesType(activeBlock.exerciseType)
+                isTcmCfrConsignesType(activeBlock.exerciseType) ||
+                isTcmCscConsignesType(activeBlock.exerciseType)
               ) ? (
                 <label className="select-shell">
                   <span>Points par question</span>

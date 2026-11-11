@@ -20,8 +20,9 @@ export type ClassroomHeaderProps = {
   timer: TimerSettings
   onTimer: (settings: TimerSettings) => void
   toolbarGuard?: ToolbarGuard
+  onCompetition?: () => void
 }
-export function ClassroomHeader({ mascot, onMascot, mode, onMode, contrast, onContrast, fullscreen, playing, onFullscreen, onFiches, timer, onTimer, session }: ClassroomHeaderProps & {
+export function ClassroomHeader({ mascot, onMascot, mode, onMode, contrast, onContrast, fullscreen, playing, onFullscreen, onFiches, timer, onTimer, onCompetition, session }: ClassroomHeaderProps & {
   session?: { progress: string; paused: boolean; canSkip: boolean; onSkip: () => void; onPause: () => void; onExit: () => void; audio?: ReactNode; teacherLocked?: boolean; onNavigate?: () => void }
 }) {
   const locked = !!session?.teacherLocked
@@ -58,6 +59,7 @@ export function ClassroomHeader({ mascot, onMascot, mode, onMode, contrast, onCo
       <nav ref={tools} onKeyDown={(event) => { if (event.key === 'Escape' && panel) { event.stopPropagation(); closePanel() } }} className="ci-toolbar ci-header-tools" aria-label="Affichage et navigation">
         <IconButton icon="contrast" label="Contraste" disabled={locked} aria-pressed={contrast} onClick={onContrast} />
         <IconButton icon={mode === 'class' ? 'users' : 'user'} label="Mode de jeu" disabled={locked} aria-description={`Mode actuel : ${mode === 'class' ? 'Classe' : 'Solo'}`} aria-pressed={mode === 'solo'} onClick={() => { setPanel(null); onMode(mode === 'class' ? 'solo' : 'class') }} />
+        {!playing && onCompetition && <IconButton icon="trophy" label="Compétition" onClick={onCompetition} />}
         <div className="ci-header-option">
           <IconButton icon="mascot" label="Mascotte" disabled={locked} aria-description={`Mascotte actuelle : ${MASCOTS.find((item) => item.id === mascot)?.label}`} aria-expanded={!locked && panel === 'mascot'} aria-haspopup="dialog" onClick={(event) => { trigger.current = event.currentTarget; setPanel(panel === 'mascot' ? null : 'mascot') }} />
           {panel === 'mascot' && !locked && <div className="ci-toolbar-options ci-mascot-picker" role="dialog" aria-label="Choisir la mascotte">

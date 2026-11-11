@@ -53,7 +53,7 @@ function specFor(variant: TpmInfoVariant, maxScore: number): InfoSpec {
       levels: [['CSC', 'Additions et soustractions, bases du calcul']],
       organisation: [
         'Test de connaissance de mathématiques — variante CSC',
-        'Les exercices seront ajoutés prochainement',
+        '23 exercices : écoute, calcul, nombres, logique, géométrie et problèmes',
         maxScore > 0 ? `Score maximum : ${points} points` : 'Barème communiqué avec les exercices',
       ],
       consignes,

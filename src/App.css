@@ -4449,7 +4449,9 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-qcm-texte li{display:flex;align-items:center;gap:8px}
 .tcf-case{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;border:1.5px solid var(--ink);font-size:.85em;line-height:1;flex:0 0 auto}
 .tcf-case.is-large{width:7mm;height:7mm;font-size:1.1em}
-.tcf-case.is-filled{background:var(--ink);border-color:var(--ink);color:transparent}
+/* Une coche tracée reste visible même sans impression des arrière-plans. */
+.tcf-case.is-filled{border-color:var(--ink);color:var(--ink)}
+.tcf-case.is-filled::after{content:"";width:.55em;height:.3em;border-left:2px solid currentColor;border-bottom:2px solid currentColor;transform:translateY(-.1em) rotate(-45deg)}
 .tcf-lettre{display:inline-flex;align-items:center;justify-content:center;width:1.5em;height:1.5em;font-weight:700;border-radius:50%;flex:0 0 auto}
 .tcf-qcm-images{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .tcf-qcm-images.is-4{grid-template-columns:repeat(4,1fr)}

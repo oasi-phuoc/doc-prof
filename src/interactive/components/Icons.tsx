@@ -26,7 +26,9 @@ export type IconName =
   | 'unlock'
   | 'finish'
   | 'tally'
+  | 'trophy'
 const paths: Record<IconName, React.ReactNode> = {
+  trophy: <><path d="M8 3h8v6a4 4 0 0 1-8 0Zm0 2H4v3a4 4 0 0 0 4 4m8-7h4v3a4 4 0 0 1-4 4m-4 1v6m-4 2h8m-6-2h4" /></>,
   users: <><circle cx="9" cy="7" r="3" /><path d="M3 21v-3a6 6 0 0 1 12 0v3M16 4a3 3 0 0 1 0 6m3 11v-3a6 6 0 0 0-3-5" /></>,
   user: <><circle cx="12" cy="7" r="4" /><path d="M4 21v-2a8 8 0 0 1 16 0v2" /></>,
   mascot: <><path d="M6 10C2 5 4 2 8 5m10 5c4-5 2-8-2-5M4 14a8 7 0 0 1 16 0c0 5-4 7-8 7s-8-2-8-7Z" /><path d="M8 12v1m8-1v1m-6 3q2 2 4 0" /></>,

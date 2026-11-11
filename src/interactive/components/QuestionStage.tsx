@@ -11,6 +11,9 @@ import { SafeImage } from './Media'
 import { CardBadge } from './CardBadge'
 import { IconButton } from './Icons'
 import { Icon } from './Icons'
+import { TextReadingDialog } from './TextReadingDialog'
+import { useReadableQuestion } from '../layout/useReadableQuestion'
+import '../layout/readability.css'
 
 /** Only public question data enters this projection component. */
 export function QuestionStage({
@@ -42,12 +45,15 @@ export function QuestionStage({
   number?: number
   onSelect: (id: string) => void
 }) {
+  const { section, report } = useReadableQuestion(JSON.stringify([q.id, q.prompt, q.context, q.choices, q.images, phase, number]))
+  const [reading, setReading] = useState<number | 'question' | null>(null)
   const showCorrection =
     phase === 'revealed' &&
     q.choices.some((entry) => entry.id === correctChoiceId)
   return (
     <>
-      <section className="ci-question">
+      <section ref={section} className="ci-question">
+        <div className="ci-question-body" tabIndex={report.questionScroll ? 0 : undefined} role={report.questionScroll ? 'region' : undefined} aria-label={report.questionScroll ? 'Question et document à faire défiler' : undefined}>
         <h1 tabIndex={-1} className={number !== undefined ? 'ci-numbered-heading' : undefined}>
           {number !== undefined && (
             <span className="ci-question-number">{number}.</span>
@@ -78,12 +84,15 @@ export function QuestionStage({
             ))}
           </div>
         )}
+        </div>
+        {report.questionScroll && <button className="ci-read-more" onClick={() => setReading('question')}>Suite ▾ <span className="ci-sr-only">Lire la question et le document</span></button>}
       </section>
       {q.mode === 'choice' ? (
         <div
           className={`ci-answer-grid ci-count-${q.choices.length}`}
           role="group"
-          aria-label="Choix de réponse"
+          aria-label={report.answersScroll ? 'Choix de réponse, faites défiler pour la suite' : 'Choix de réponse'}
+          tabIndex={report.answersScroll ? 0 : undefined}
         >
           {q.choices.map((choice, i) => {
             const slot = slotOffset + i
@@ -97,8 +106,8 @@ export function QuestionStage({
                   : 'incorrect'
                 : undefined
             return (
+              <div key={choice.id} className="ci-answer-wrap">
               <button
-                key={choice.id}
                 className={`ci-answer${chosen ? ' ci-chosen' : ''}${verdict ? ` ci-answer-${verdict}` : ''}${showCorrection ? correctAnswer ? ' ci-answer-key' : ' ci-answer-muted' : ''}`}
                 style={
                   {
@@ -133,11 +142,13 @@ export function QuestionStage({
                   </span>
                 )}
               </button>
+              {report.answersScroll && <button className="ci-read-more" aria-label={`Lire la proposition ${palette.letter} en entier`} onClick={() => setReading(i)}>Suite ▾</button>}
+              </div>
             )
           })}
         </div>
       ) : (
-        <section className="ci-manual">
+        <section className="ci-manual" tabIndex={report.manualScroll ? 0 : undefined} aria-label={report.manualScroll ? 'Activité à faire défiler' : undefined}>
           {q.mode === 'sequence' ? (
             q.words ? <WordSequence key={q.id} words={q.words} order={imageOrder} onOrder={onImageOrder} disabled={interactionsDisabled || phase === 'revealed'} /> : <Sequence key={q.id} question={q} order={imageOrder} onOrder={onImageOrder} disabled={interactionsDisabled || phase === 'revealed'} />
           ) : (
@@ -148,6 +159,8 @@ export function QuestionStage({
           )}
         </section>
       )}
+      {report.manualScroll && <button className="ci-read-more" onClick={() => setReading('question')}>Suite ▾ <span className="ci-sr-only">Lire la consigne complète</span></button>}
+      {reading !== null && <TextReadingDialog title={reading === 'question' ? 'Question et document' : `Proposition ${PALETTE[slotOffset + reading]!.letter}`} text={reading === 'question' ? [q.prompt, q.context, q.mode === 'choice' ? '' : q.instruction].filter(Boolean).join('\n\n') : q.choices[reading]?.text ?? ''} images={reading === 'question' ? q.images : q.choices[reading]?.image ? [q.choices[reading]!.image!] : []} figure={reading === 'question' ? q.figure : undefined} onClose={() => setReading(null)} />}
     </>
   )
 }

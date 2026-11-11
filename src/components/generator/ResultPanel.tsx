@@ -32,6 +32,10 @@ export type ResultPanelProps = {
   isTcf: boolean
   isGrammaireExercise?: boolean
   isTcmCfr: boolean
+  isTcmCsc?: boolean
+  cscAudioBusy?: boolean
+  cscAudioError?: string
+  downloadActiveTcmCscAudios: () => void | Promise<void>
   isSoutienFr: boolean
   isAlphabetisation: boolean
   isSoutienMots: boolean
@@ -108,6 +112,10 @@ export function ResultPanel({
   isTcf,
   isGrammaireExercise,
   isTcmCfr,
+  isTcmCsc,
+  cscAudioBusy,
+  cscAudioError,
+  downloadActiveTcmCscAudios,
   isSoutienFr,
   isAlphabetisation,
   isSoutienMots,
@@ -239,7 +247,7 @@ export function ResultPanel({
       interactiveOralModes={isOralComprehensionExercise(activeBlock.exerciseType)}
       onCycleOralAnswerMode={(itemIndex, block) => cycleOralAnswerMode(itemIndex, block, index)}
       interactiveTcfOptions={
-        (isTcf || Boolean(isGrammaireExercise)) && activeBlock.tcfExercise == null
+        isTcf || (Boolean(isGrammaireExercise) && activeBlock.tcfExercise == null)
       }
       interactiveTcfPageBreaks={
         isTcf ||
@@ -261,6 +269,8 @@ export function ResultPanel({
 
   return (
           <section className="result-panel">
+            {isTcmCsc && cscAudioBusy && <p role="status" className="no-print">Préparation des audios CSC…</p>}
+            {isTcmCsc && cscAudioError && <p role="alert" className="no-print">{cscAudioError}</p>}
             <div className="result-head">
               <div>
                 <p className="eyebrow">Aperçu</p>
@@ -301,6 +311,7 @@ export function ResultPanel({
                 {isTcf ||
                 isGrammaireExercise ||
                 isTcmCfr ||
+                isTcmCsc ||
                 ((isSoutienFr || isAlphabetisation) &&
                   (isSoutienMots || isSoutienCompleter || isSoutienEcouter)) ? (
                   <button
@@ -309,6 +320,8 @@ export function ResultPanel({
                     onClick={() =>
                       void (isTcf || isGrammaireExercise
                         ? downloadActiveTcfAudios()
+                        : isTcmCsc
+                          ? downloadActiveTcmCscAudios()
                         : isTcmCfr
                           ? downloadActiveTcmCfrAudios()
                           : isSoutienCompleter
@@ -318,9 +331,13 @@ export function ResultPanel({
                               : downloadActiveSoutienMotsAudio())
                     }
                     aria-label="Télécharger tous les audios de la fiche"
+                    disabled={!!isTcmCsc && cscAudioBusy}
+                    aria-busy={!!isTcmCsc && cscAudioBusy}
                     title={
                       isTcf || isGrammaireExercise
                         ? 'Télécharger les pistes groupées (consignes + audios)'
+                        : isTcmCsc
+                          ? 'Télécharger les audios CSC : nombres, calculs et nombres à entourer'
                         : isTcmCfr
                           ? 'Télécharger les audios (nombres et multiplications)'
                           : isSoutienCompleter
@@ -477,7 +494,7 @@ export function ResultPanel({
                           interactiveOralModes={isOralComprehensionExercise(activeBlock.exerciseType)}
                           onCycleOralAnswerMode={cycleOralAnswerMode}
                           interactiveTcfOptions={
-                            (isTcf || Boolean(isGrammaireExercise)) && activeBlock.tcfExercise == null
+                            isTcf || (Boolean(isGrammaireExercise) && activeBlock.tcfExercise == null)
                           }
                           interactiveTcfPageBreaks={isTcf || pageExerciseBlocks.some(block => isGrammarReadingType(block.exerciseType))}
                           onSelectTcfForm={selectTcfForm}

@@ -24,7 +24,7 @@ export function DraftGridControls({
 }: DraftGridControlsProps) {
   return (
     <>
-              {isTpmLike ? (
+              {isTpmLike && pages.some((page) => pageBlocks(page).some((block) => isDraftPadExercise(block.exerciseType))) ? (
                 <div className="mode-toggle-block">
                   <b>Grilles de calcul</b>
                   <div className="mode-toggle" role="group" aria-label="Grilles de calcul de toute la fiche">

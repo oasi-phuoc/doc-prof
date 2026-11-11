@@ -73,6 +73,7 @@ export type Layout =
   | 'geo'
   | 'coord'
   | 'audio-dictation'
+  | 'csc-task'
   | 'symmetry-grid'
   | 'segment-measure'
   | 'metro-map'
@@ -395,6 +396,7 @@ export type DivisionStep = {
 
 export type MathItem = {
   layout: Layout
+  cscTask?: import('@/tcm-csc/task-types').CscTask
   answer: string
   prompt?: string
   figure?: Figure

@@ -287,6 +287,7 @@ const questionsInputOverflow = questionsOverflow || bankOverflow
     isAlphabetisation,
     isTpm,
     isTcmCfr,
+    isTcmCsc,
     isTpmLike,
     isTcf,
     isTpmInfoPage,

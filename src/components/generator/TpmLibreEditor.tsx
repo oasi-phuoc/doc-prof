@@ -6,6 +6,8 @@
  * avec brouillon local (retour arrière OK ; vide → valeur précédente).
  */
 import { useEffect, useRef, useState, type ReactNode } from 'react'
+import { TcmCscFields } from './TcmCscFields'
+import { hasCscFields } from '@/tcm-csc/recalculate'
 import type { ArithOp, Figure, FigureDims, MathItem, MissingPos } from '@/math/types'
 import { fmt } from '@/math/column-arith'
 import type { ShapeKind } from '@/components/math/FractionShape'
@@ -674,6 +676,7 @@ function renderFields(
   onChangeItems: (items: MathItem[]) => void,
   items: MathItem[] = [],
 ) {
+  if (hasCscFields(item, exerciseType)) return <TcmCscFields item={item} typeId={exerciseType} change={(next) => patch(index, next)} />
   if (item.decompose) {
     const calc = item.decompose
     const applyNums = (a: number, b: number) => {

@@ -13,7 +13,7 @@ const results = [], errors = []
 try {
   const context = await browser.newContext({ viewport: { width: 390, height: 844 } })
   await context.addCookies([{ name: 'clairfle-fiche-access', value: 'admin', url: base }])
-  for (const [route, selector] of [['/', '.landing-page h1'], ['/interactif/cartes', '.ci-cards-page h1'], ['/interactif/diagnostic', '.ci-diagnostic h1']]) {
+  for (const [route, selector] of [['/', '.landing-page h1'], ['/interactif/cartes', '.ci-cards-page h1'], ['/interactif/diagnostic', '.ci-diagnostic h1'], ['/interactif/rejoindre', '.ci-competition-join h1']]) {
     const page = await context.newPage(); page.on('pageerror', (error) => errors.push(error.message))
     const scripts = []
     page.on('request', (request) => { const url = new URL(request.url()); if (url.pathname.endsWith('.js')) scripts.push(url.pathname.slice(1)) })

@@ -6,6 +6,8 @@ const base = 'http://127.0.0.1:5182'
 process.env.VITE_FICHES_API_URL = `${base}/__test_api`
 const server = await createServer({ cacheDir: '/tmp/clairfle-source-adapters-vite', server: { host: '127.0.0.1', port: 5182, strictPort: true } })
 await server.listen()
+const { buildCscProblem } = await server.ssrLoadModule('/src/tcm-csc/problems.ts')
+const cscProblem = buildCscProblem('soustraction-01', 98, 54)
 const recipe = JSON.parse(await readFile('docs/interactive/demo-source-recipe.json', 'utf8'))
 const images = ['/lib/images/tcf/co/objets/5-tomates.webp', '/lib/images/tcf/co/objets/8-tomates.webp', '/lib/images/tcf/co/objets/10-tomates.webp']
 const clips = ['cinq', 'huit', 'dix'].map((word, index) => ({ word, audioSrc: `/__adapter-${index}.mp3` }))
@@ -15,8 +17,12 @@ recipe.pages = [{ ...recipe.pages[0], libreItems: [
   { layout: 'vocab-match', labels: ['ama', 'va'], options: ['llee', 'zone'], vocabMatchMode: 'syllables', vocabPairs: [{ left: 'ama', right: 'zone' }, { left: 'va', right: 'llee' }], answer: 'ama + zone → amazone · va + llee → vallee' },
   { layout: 'phrase-order', tokens: [{ text: 'est' }, { text: 'petite' }, { text: 'Elle' }], labels: ['Elle', 'est', 'petite'], answer: 'Elle est petite.', responseAnswer: 'Elle est petite.' },
 ] }]
+recipe.pages.push({ ...recipe.pages[0], domain: 'tcm-csc', topic: 'tcm-csc-test', exerciseType: 'tcm-csc-ex22', count: 2, libreItems: [
+  { layout: 'csc-task', answer: '+', cscTask: { kind: 'operator', a: 12, b: 24, operation: '+', blank: 'operator' } },
+  { layout: 'algebra', prompt: cscProblem.statement, answer: cscProblem.answer, cscTask: { kind: 'problem', templateId: cscProblem.templateId, a: 98, b: 54 } },
+] })
 const original = structuredClone(recipe)
-const saved = { id: 'adapter-source', name: 'Écouter, associer, ordonner', domains: ['algèbre'], recipe, createdAt: '2026-11-11T00:00:00Z', updatedAt: '2026-11-11T00:00:00Z' }
+const saved = { id: 'adapter-source', name: 'Écouter, associer, ordonner', domains: ['algèbre', 'tcm-csc'], recipe, createdAt: '2026-11-11T00:00:00Z', updatedAt: '2026-11-11T00:00:00Z' }
 const fixture = JSON.parse(await readFile('docs/interactive/demo-fixture.json', 'utf8'))
 const audio = await readFile(`public${fixture.questions.find((q) => q.audio).audio}`)
 const browser = await chromium.launch({ executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH || undefined, args: ['--no-sandbox'] })
@@ -35,7 +41,7 @@ try {
     const page = await context.newPage(); page.on('pageerror', (error) => errors.push(error.message))
     await page.goto(`${base}/interactif/${saved.id}`)
     await page.locator('.ci-launch:enabled').waitFor({ timeout: 120000 })
-    assert.equal(await page.locator('.ci-question-list fieldset > label').count(), 9)
+    assert.equal(await page.locator('.ci-question-list fieldset > label').count(), 11)
     await page.locator('.ci-launch').click()
     await page.locator('.ci-answer').first().waitFor()
     assert.equal(await page.locator('.ci-answer').count(), 6)
@@ -51,6 +57,21 @@ try {
     assert.equal(await page.locator('.ci-answer').count(), 2)
     await reveal(page)
     assert.equal(await page.locator('.ci-answer-key .ci-answer-content').innerText(), 'zone')
+    await navigate(page, 'Complète : 12 □ 24 = 36')
+    assert.deepEqual((await page.locator('.ci-answer-content').allTextContents()).sort(), ['+', '=', '−'].sort())
+    assert.equal(await page.locator('.ci-answer-key').count(), 0)
+    await reveal(page)
+    assert.equal(await page.locator('.ci-answer-key .ci-answer-content').innerText(), '+')
+    assert.equal(await page.locator('.ci-answer-muted').count(), 2)
+    await navigate(page, cscProblem.statement.split('\n\n').pop())
+    assert.match(await page.locator('.ci-context').innerText(), /98 livres/)
+    assert.match(await page.locator('.ci-context').innerText(), /54/)
+    assert.equal(await page.locator('.ci-answer').count(), 6)
+    assert.equal(await page.locator('.ci-answer-key, .ci-model-answer').count(), 0)
+    await reveal(page)
+    assert.equal(await page.locator('.ci-answer-key .ci-answer-content').innerText(), '44')
+    assert.equal(await page.locator('.ci-answer-muted').count(), 5)
+    await page.screenshot({ path: `docs/interactive/screenshots/csc-problem-${width}.png` })
     await navigate(page, 'Remets les mots dans l’ordre.')
     assert.deepEqual(await words(page), ['est', 'petite', 'Elle'])
     assert.equal(await page.locator('.ci-model-answer').count(), 0)
@@ -89,7 +110,7 @@ try {
       assert.ok(bounds.y >= 0 && bounds.y + bounds.height <= height, `${selector}: ${JSON.stringify(bounds)}`)
     }
     await page.screenshot({ path: `docs/interactive/screenshots/word-order-${width}.png` })
-    results.push({ viewport: `${width}x${height}`, audio: 'source word and image associations become paired questions with separate correct cards', vocabulary: 'verified source completion uses original suffix choices', ordering: 'touch swap, undo, keyboard move, lock, navigation and reload preserve the proposal', evaluation: 'source sentence model only after teacher reveal; alternative orders receive human assessment', layout: 'word grid and commands remain within the viewport' })
+    results.push({ viewport: `${width}x${height}`, audio: 'source word and image associations become paired questions with separate correct cards', vocabulary: 'verified source completion uses original suffix choices', csc: 'three sign cards and six numeric problem cards; original story and numbers retained; correction remains hidden before teacher reveal and only colors the correct card afterwards', ordering: 'touch swap, undo, keyboard move, lock, navigation and reload preserve the proposal', evaluation: 'source sentence model only after teacher reveal; alternative orders receive human assessment', layout: 'word grid and commands remain within the viewport' })
     await context.close()
   }
   assert.deepEqual(recipe, original)

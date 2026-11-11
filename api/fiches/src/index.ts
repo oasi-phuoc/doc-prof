@@ -1,3 +1,6 @@
+import { handleCompetitionRequest, type CompetitionEnv } from './competition'
+export { ClassroomCompetitionRoom } from './competition'
+
 interface D1Prepared {
   bind(...values: unknown[]): D1Prepared
   run(): Promise<unknown>
@@ -9,7 +12,7 @@ interface D1Database {
   prepare(query: string): D1Prepared
 }
 
-interface Env {
+interface Env extends CompetitionEnv {
   DB: D1Database
   ACCESS_ADMIN?: string
   ACCESS_FULL?: string
@@ -255,6 +258,7 @@ function isResponse(value: unknown): value is Response {
 
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
+    if (new URL(request.url).pathname.startsWith('/competition')) return handleCompetitionRequest(request, env)
     if (request.method === 'OPTIONS') {
       return new Response(null, { status: 204, headers: corsHeaders(request) })
     }
