@@ -26,7 +26,8 @@ import { manualTotal } from './domain/votes'
 import './counting.css'
 import { useCountdown } from './useCountdown'
 import type { TimerSettings } from './domain/settings'
-import { compactSession, loadSession, newRecord, saveSession, deleteSession, STORAGE_WARNING, remainingFor, type Resume, type SavedSession, type SessionClock } from './domain/persistence'
+import { compactSession, loadSession, newRecord, saveSession, STORAGE_WARNING, remainingFor, type Resume, type SavedSession, type SessionClock } from './domain/persistence'
+import { makeTransfer, downloadTransfer } from './session-transfer'
 import type { MediaManager } from './media/manager'
 import { acquireSessionLease, type SessionLease } from './session-lease'
 import type { SessionSource } from './domain/source'
@@ -106,19 +107,20 @@ function ActiveSessionView({
   const current = useRef(state)
   const [initialRecord] = useState(() => resume ? Promise.resolve(resume.record) : newRecord(game, header.mode, source))
   const context = useRef(source)
-  useEffect(() => { context.current = source }, [source])
   const record = useRef<Promise<SavedSession>>(initialRecord)
   const writes = useRef(Promise.resolve())
   const clock = useRef<SessionClock | undefined>(resume?.record.clock)
   const clocks = useRef<Record<string, SessionClock>>({ ...resume?.record.clocks, ...(resume?.record.clock ? { [resume.record.clock.roundId]: resume.record.clock } : {}) })
   const [viewClock, setViewClock] = useState<SessionClock | undefined>(() => resume?.record.clock ?? resume?.record.clocks?.[roundsFor(game)[resume.state.index]?.id ?? ''])
   const clockSave = useRef<ReturnType<typeof setTimeout> | undefined>(undefined)
+  const clockDirty = useRef(false)
   const [storageWarning, setStorageWarning] = useState(initialWarning ?? '')
   const enabled = useRef(!initialWarning)
   const flushClock = useCallback(() => {
     clearTimeout(clockSave.current)
     clockSave.current = undefined
-    if (!enabled.current) return
+    if (!enabled.current || !clockDirty.current) return
+    clockDirty.current = false
     const snapshot = clock.current
     const allClocks = { ...clocks.current }
     writes.current = writes.current.then(async () => {
@@ -129,6 +131,12 @@ function ActiveSessionView({
     }).catch((error: unknown) => { enabled.current = false; setStorageWarning(error instanceof Error ? error.message : STORAGE_WARNING) })
   }, [ownership])
   useEffect(() => {
+    if (JSON.stringify(context.current) === JSON.stringify(source)) return
+    context.current = source
+    clockDirty.current = true
+    if (enabled.current && clockSave.current === undefined) clockSave.current = setTimeout(flushClock, 300)
+  }, [source, flushClock])
+  useEffect(() => {
     registerDrain(() => { flushClock(); enabled.current = false; return writes.current })
   }, [registerDrain, flushClock])
   const onClock = useCallback((value: SessionClock) => {
@@ -137,6 +145,7 @@ function ActiveSessionView({
     if (clock.current?.remainingMs === value.remainingMs && clock.current?.durationMs === value.durationMs && clock.current?.roundId === value.roundId && clock.current?.phase === value.phase && (clock.current.attempt ?? 0) === (value.attempt ?? 0)) return
     clock.current = value
     clocks.current[value.roundId] = value
+    clockDirty.current = true
     if (enabled.current && clockSave.current === undefined) clockSave.current = setTimeout(flushClock, 300)
   }, [game, flushClock])
   useEffect(() => {
@@ -212,12 +221,10 @@ function ActiveSessionView({
   }, [game, state.index, state.finished, state.paused, hidden, mediaManager])
   if (state.finished) {
     const finish = (callback: () => void) => {
-      enabled.current = false
-      writes.current = writes.current.then(async () => {
-        if (!ownership()) throw new Error(STORAGE_WARNING)
-        await deleteSession(game, await record.current)
-      }).then(callback).catch((error: unknown) => setStorageWarning(error instanceof Error ? error.message : STORAGE_WARNING))
+      flushClock()
+      void writes.current.then(callback).catch((error: unknown) => setStorageWarning(error instanceof Error ? error.message : STORAGE_WARNING))
     }
+    const exportSession = () => { flushClock(); void writes.current.then(async () => { const latest = await record.current; const transfer = await makeTransfer(game, { ...latest, source: context.current ?? latest.source }, current.current); downloadTransfer(transfer) }).catch((error: unknown) => setStorageWarning(error instanceof Error ? error.message : 'Export impossible.')) }
     const difficult = [...new Set([...state.history
       .filter((a) => a.correct === false || a.manual === 'retry' || a.skipped)
       .map((a) => a.questionId), ...game.questions.filter((q) => state.teacherMarks[q.id] === 'review' || state.manualVotes[q.id]?.quick === 'majority-review').map((q) => q.id)])]
@@ -272,7 +279,10 @@ function ActiveSessionView({
           </div>
           {!!state.previousAttempts?.length && <details className="ci-panel ci-attempt-history"><summary>Tentatives précédentes ({state.previousAttempts.length})</summary>{state.previousAttempts.map((attempt, i) => <section key={`${attempt.roundId}:${attempt.attempt}`}><b>Tentative {attempt.attempt + 1} · écran {rounds.findIndex((round) => round.id === attempt.roundId) + 1}</b><p>{attempt.results.length ? attempt.results.map((result) => `${game.questions.find((q) => q.id === result.questionId)?.prompt} · ${result.skipped ? 'passée' : result.manual === 'retry' ? 'à revoir' : 'corrigée'}`).join(' ; ') : 'Tentative relancée avant correction.'}</p>{Object.keys(attempt.manualVotes).length > 0 && <p>Comptage de cet essai conservé.</p>}<span className="ci-sr-only">Essai archivé {i + 1}</span></section>)}</details>}
           {state.mode === 'class' && <SessionObservations note={state.note} onSave={(note) => dispatch({ type: 'SESSION_NOTE_SET', note })} />}
+          <section className="ci-summary-print-only">{state.note && <><h2>Observations</h2><p>{state.note}</p></>}{game.questions.filter((q) => state.manualVotes[q.id]).map((q) => <div key={q.id}><h2>{q.prompt}</h2><ManualVoteView question={q} vote={state.manualVotes[q.id]!} /></div>)}</section>
           <div className="ci-toolbar">
+            <button onClick={exportSession}>Exporter la séance</button>
+            <button onClick={() => window.requestAnimationFrame(() => window.print())}>Imprimer le bilan</button>
             {state.mode === 'class' && <button onClick={() => dispatch({ type: 'REOPEN', index: 0 })}>Revoir les questions</button>}
             {onNewPart && <button className="ci-primary" onClick={() => finish(onNewPart)}>Nouvelle partie</button>}
             <button

@@ -11,9 +11,9 @@ Ce registre complète les anciennes checklists de livraison. Il distingue les fo
 | F25 diagnostic | Page et rapport local ; tests navigateur et document `diagnostic-eni.md` | Essai sur ENI réel à joindre au pilote |
 | F26 cartes et étalonnage | Palette, formes, contraste ; six carrés de 88 mm en deux colonnes et trois lignes A4 ; `mobile-layout-print-results.json` | Assistant d’étalonnage et contraste des contours complets |
 | F27 feuille enseignant | Fichier autonome A4, corrigés hors DOM, plan identique, obsolescence et images incorporées ; `teacher-sheet-results.json` | Essai d’impression sur l’équipement de classe |
-| F28 persistance | Références de source, graine et sélection durables ; reprise après fermeture d’onglet et accès par identifiant ; réglages migrés et fusionnés atomiquement ; minuteurs par écran et tentative, verrou et révisions ; schémas 1–5, compactage et purge ; préréglages locaux avec obsolescence et révisions ; `presets-results.json`, `durable-run-results.json`, `resume-results.json`, `navigation-results.json`, `session-lease-results.json`, `checkpoint-results.json`, `retention-results.json`, `drafts-results.json` | Archivage de plusieurs bilans et outils d’export/import/effacement ; extensions des préréglages aux nouvelles mécaniques |
+| F28 persistance | Références de source, graine et sélection durables ; reprise après fermeture d’onglet et accès par identifiant ; réglages migrés et fusionnés atomiquement ; minuteurs par écran et tentative, verrou et révisions ; schémas 1–5, compactage et purge ; plusieurs bilans, export/import validés et effacement ; `archives-results.json` ; préréglages locaux avec obsolescence et révisions ; `presets-results.json`, `durable-run-results.json`, `resume-results.json`, `navigation-results.json`, `session-lease-results.json`, `checkpoint-results.json`, `retention-results.json`, `drafts-results.json` | Étendre les préréglages aux nouvelles mécaniques ; les transferts exigent la fiche source inchangée |
 | F29 médias | Précontrôle, décodeurs, cache, préchargement suivant ; quotas de consigne, écoutes et autorisations journalisées, erreurs et blocage de huit secondes ; `listening-results.json`, ADR 0012 | Préchargement intégral hors ligne et transcriptions configurables |
-| F30 comptage et observations | Compteurs validés, provenance et partage explicite, bilan, marques et notes locales ; `manual-count-results.json` | Badges et archivage de plusieurs bilans |
+| F30 comptage et observations | Compteurs validés, provenance et partage explicite, bilan, marques et notes locales ; `manual-count-results.json` | Badges ; plusieurs bilans déjà conservés |
 | F31 oral guidé | Scènes, zoom, relances, modèle et évaluation humaine présents | Recette complète S03 et extension de conversion prouvée |
 | F32 routes / chargement / drapeau | Chargement paresseux, routes brouillon, fiche, démo ; diagnostic dédié | Drapeau réconcilié avec la bascule déjà demandée par le propriétaire |
 | F33 CI | Suites locales et résultats présents | Pipeline complet, budgets, détection de secrets et accessibilité automatisée |
@@ -24,7 +24,7 @@ Ce registre complète les anciennes checklists de livraison. Il distingue les fo
 
 ## P1 / P2 encore ouverts
 
-M05–M08 et autres mécaniques, extensions des préréglages puis stockage serveur sécurisé, console enseignant, export/import de séance, préchargement intégral, hors ligne, statistiques d’équipes, thème sombre, pilotes matériels et revue finale de sécurité restent à réaliser ou à étendre. Les fonctions partagées doivent attendre l’authentification serveur. Les suppressions ou refontes de banques imprimables ne font pas partie de cette migration.
+M05–M08 et autres mécaniques, extensions des préréglages puis stockage serveur sécurisé, console enseignant, transferts autonomes de fiches, préchargement intégral, hors ligne, statistiques d’équipes, thème sombre, pilotes matériels et revue finale de sécurité restent à réaliser ou à étendre. Les fonctions partagées doivent attendre l’authentification serveur. Les suppressions ou refontes de banques imprimables ne font pas partie de cette migration.
 
 ## Actions externes connues
 

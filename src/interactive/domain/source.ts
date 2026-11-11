@@ -4,7 +4,7 @@ import { readPlanOptions, type PlanOptions } from './plan-options'
 import { sourcePosition } from './source-position'
 
 export type SourceReference = { kind: 'saved' | 'draft' | 'demo'; id: string }
-export type SessionSource = { reference: SourceReference; sourceKey: string; seed: number; selectedKeys: string[]; replay: number; timer: TimerSettings; options?: PlanOptions; presetId?: string }
+export type SessionSource = { reference: SourceReference; sourceKey: string; seed: number; selectedKeys: string[]; replay: number; timer: TimerSettings; options?: PlanOptions; presetId?: string; resolvedKeys?: string[] }
 const object = (value: unknown): value is Record<string, unknown> => !!value && typeof value === 'object' && !Array.isArray(value)
 export function readSessionSource(value: unknown): SessionSource | undefined {
   if (value === undefined) return undefined
@@ -17,7 +17,8 @@ export function readSessionSource(value: unknown): SessionSource | undefined {
     !object(value.timer) || typeof value.timer.enabled !== 'boolean' || typeof value.timer.seconds !== 'number' || !Number.isInteger(value.timer.seconds) || value.timer.seconds < 5 || value.timer.seconds > 600 ||
     typeof value.timer.feedbackSeconds !== 'number' || !Number.isInteger(value.timer.feedbackSeconds) || value.timer.feedbackSeconds < 1 || value.timer.feedbackSeconds > 10) throw new Error('Source de séance invalide. La sauvegarde est conservée.')
   if (value.presetId !== undefined && (typeof value.presetId !== 'string' || value.presetId.length > 100)) throw new Error('Référence de préréglage invalide.')
-  return { reference: { kind: value.reference.kind as SourceReference['kind'], id: value.reference.id }, sourceKey: value.sourceKey, seed: value.seed, selectedKeys: [...value.selectedKeys] as string[], replay: value.replay, timer: { enabled: value.timer.enabled, seconds: value.timer.seconds, feedbackSeconds: value.timer.feedbackSeconds }, ...(value.options !== undefined ? { options: readPlanOptions(value.options) } : {}), ...(value.presetId ? { presetId: value.presetId as string } : {}) }
+  if (value.resolvedKeys !== undefined && (!Array.isArray(value.resolvedKeys) || value.resolvedKeys.length > 5000 || new Set(value.resolvedKeys).size !== value.resolvedKeys.length || value.resolvedKeys.some((key) => typeof key !== 'string' || !sourcePosition.test(key) || !(value.selectedKeys as string[]).includes(key)))) throw new Error('Plan de séance invalide. La sauvegarde est conservée.')
+  return { reference: { kind: value.reference.kind as SourceReference['kind'], id: value.reference.id }, sourceKey: value.sourceKey, seed: value.seed, selectedKeys: [...value.selectedKeys] as string[], replay: value.replay, timer: { enabled: value.timer.enabled, seconds: value.timer.seconds, feedbackSeconds: value.timer.feedbackSeconds }, ...(value.options !== undefined ? { options: readPlanOptions(value.options) } : {}), ...(value.presetId ? { presetId: value.presetId as string } : {}), ...(value.resolvedKeys ? { resolvedKeys: [...value.resolvedKeys] as string[] } : {}) }
 }
 
 export type StoredRun = { source: SessionSource; mode: PlayMode; sessionId: string; gameId: string; updatedAt: number }

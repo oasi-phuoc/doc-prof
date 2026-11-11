@@ -49,6 +49,8 @@ Le choix de mascotte propose six images animées : Esprit feuille, Hibou, Pieuvr
 
 Le [comptage manuel](comptage-manuel.md) est facultatif et étiqueté comme une saisie de l’enseignant. Les observations et les marques à revoir restent locales. La [protection entre onglets](reprise-concurrence.md), les [instantanés](adr-0006-instantanes-de-seance.md) et la [purge après sept jours](retention-locale.md) protègent les journaux. Les polices sont [hébergées localement](adr-0005-polices-locales.md). La feuille enseignant utilise le même plan résolu que la projection.
 
+La préparation liste plusieurs parties et bilans de la fiche. Les [archives et transferts](adr-0013-archives-et-transferts.md) permettent export JSON, import avec aperçu, suppression et effacement des données locales du jeu. Le fichier conserve état, comptages et observations ; la fiche d’origine reste nécessaire. Terminer ou lancer une nouvelle partie conserve le bilan précédent. L’impression du bilan inclut les observations enregistrées.
+
 ## Vérification reproductible
 
 ```sh

@@ -50,3 +50,17 @@
 .ci-app .ci-audio audio[aria-disabled="true"] { opacity: .65; }
 .ci-app .ci-audio-quota { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 4px; font-size: 12px; }
 .ci-app .ci-audio-quota button { min-height: 44px; padding: 4px 10px; font-size: 13px; }
+.ci-app .ci-archive-list { list-style: none; margin: 12px 0; padding: 0; }
+.ci-app .ci-archive-list > li { padding: 16px 0; border-bottom: 1px solid var(--ci-line); }
+.ci-app .ci-archive-list time { display: block; margin: 4px 0 8px; }
+.ci-app .ci-import-file { display: grid; gap: 4px; min-width: 0; }
+.ci-app .ci-import-file input { max-width: 100%; min-height: 44px; }
+.ci-app .ci-local-erase { margin-top: 24px; }
+.ci-app .ci-summary-print-only { display: none; }
+@media print {
+  body:has(.ci-summary), body:has(.ci-summary) #root, .ci-app:has(.ci-summary) { height: auto !important; overflow: visible !important; display: block !important; }
+  .ci-app.ci-playing > .ci-summary { height: auto !important; overflow: visible !important; padding: 10mm !important; }
+  .ci-app .ci-summary-print-only { display: block; }
+  .ci-summary .ci-toolbar, .ci-summary .ci-teacher-marks, .ci-summary .ci-observations, .ci-summary .ci-vote-summary { display: none !important; }
+  .ci-summary .ci-summary-questions > p { break-inside: avoid; }
+}

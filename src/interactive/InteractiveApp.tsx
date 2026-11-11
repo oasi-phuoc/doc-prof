@@ -9,6 +9,7 @@ import { deriveSeed } from './domain/seeds'
 import { canonicalJson, hash } from './domain/seeds'
 import { applyPlanOptions, readPlanOptions, type PlanOptions } from './domain/plan-options'
 import { PresetPanel } from './components/PresetPanel'
+import { SessionArchive } from './components/SessionArchive'
 import { presetOptions, type LocalPreset } from './presets'
 import { PLAN_CHANGED } from './domain/persistence'
 import { convertRecipe } from './domain/convert'
@@ -168,7 +169,7 @@ function GameApp({ initialPreferences, initialWarning }: { initialPreferences: C
   const [toolbarGuard, setToolbarGuard] = useState<ToolbarGuard>(initialPreferences.toolbarGuard)
   const [selection, setSelected] = useState<string[] | null>(() => source?.selectedKeys ?? null)
   const [selectionModified, setSelectionModified] = useState(false)
-  const [pendingStart, setPendingStart] = useState(false)
+  const [pendingStart, setPendingStart] = useState(() => !!requestedSession && window.history.state?.clairfleOpenSession === requestedSession)
   useEffect(() => { if (source) saveGameRun(source, selection) }, [source, selection])
   const [excludeUnavailable, setExcludeUnavailable] = useState(true)
   const [fullscreen, setFullscreen] = useState(false)
@@ -195,7 +196,7 @@ function GameApp({ initialPreferences, initialWarning }: { initialPreferences: C
       const next = createGameSource(value, kind, id)
       if (!run) return { ...next, storageWarning: 'Cette sauvegarde est introuvable ou expirée. Vous pouvez commencer une nouvelle partie.' }
       if (run.source.reference.kind !== kind || run.source.reference.id !== id) throw new Error('Cette séance appartient à une autre fiche. Ouvrez son adresse d’origine.')
-      return { ...next, recipe: { ...next.recipe, seed: run.source.seed }, selectedKeys: run.source.selectedKeys, replay: run.source.replay, options: readPlanOptions(run.source.options), presetId: run.source.presetId, restoredMode: run.mode, restoredTimer: run.source.timer, sessionId: run.sessionId, restoredGameId: run.gameId }
+      return { ...next, recipe: { ...next.recipe, seed: run.source.seed }, selectedKeys: run.source.selectedKeys, replay: run.source.replay, options: readPlanOptions(run.source.options), presetId: run.source.presetId, resolvedKeys: run.source.resolvedKeys, restoredMode: run.mode, restoredTimer: run.source.timer, sessionId: run.sessionId, restoredGameId: run.gameId }
     }
     void load()
       .then((next) => {
@@ -238,13 +239,11 @@ function GameApp({ initialPreferences, initialWarning }: { initialPreferences: C
     [game, selected, mode],
   )
   const media = useMediaPreflight(selectedGame, !playing)
-  const activeGame = useMemo(
-    () =>
-      selectedGame && excludeUnavailable
-        ? excludeQuestions(selectedGame, media.excluded)
-        : selectedGame,
-    [selectedGame, excludeUnavailable, media.excluded],
-  )
+  const activeGame = useMemo(() => {
+    if (!selectedGame) return null
+    if (source?.resolvedKeys && !selectionModified) return excludeQuestions(selectedGame, new Set(selectedGame.questions.filter((q) => !source.resolvedKeys!.includes(questionSourceKey(q))).map((q) => q.id)))
+    return excludeUnavailable ? excludeQuestions(selectedGame, media.excluded) : selectedGame
+  }, [selectedGame, excludeUnavailable, media.excluded, source, selectionModified])
   const resumeKey = activeGame?.id ?? ''
   const [resumeResult, setResumeResult] = useState<{ key: string; saved: Resume | null; warning: string } | null>(null)
   const resumeChecked = resumeResult?.key === resumeKey
@@ -293,7 +292,7 @@ function GameApp({ initialPreferences, initialWarning }: { initialPreferences: C
   const retryDifficult = (ids: string[]) => {
     if (!source || !activeGame) return
     setPlaying(false)
-    setSource({ ...source, replay: source.replay + 1, sessionId: undefined, restoredGameId: undefined })
+    setSource({ ...source, replay: source.replay + 1, sessionId: undefined, restoredGameId: undefined, resolvedKeys: undefined })
     setSelected(activeGame.questions.filter((q) => ids.includes(q.id)).map(questionSourceKey))
     const url = new URL(window.location.href); url.searchParams.delete('s'); window.history.replaceState(window.history.state, '', url)
     setResumeResult(null); setPendingStart(true)
@@ -301,9 +300,15 @@ function GameApp({ initialPreferences, initialWarning }: { initialPreferences: C
   useEffect(() => {
     if (!pendingStart || !activeGame || !media.complete || !resumeChecked) return
     let active = true
-    void Promise.resolve().then(() => { if (active) { setPendingStart(false); if (activeGame.questions.length) setPlaying(true) } })
+    void Promise.resolve().then(() => {
+      if (!active) return
+      const requested = window.history.state?.clairfleOpenSession
+      if (requested) { const next = { ...window.history.state }; delete next.clairfleOpenSession; window.history.replaceState(next, '', window.location.href) }
+      setPendingStart(false)
+      if (activeGame.questions.length && (!requested || saved && !resumeWarning)) setPlaying(true)
+    })
     return () => { active = false }
-  }, [pendingStart, activeGame, media.complete, resumeChecked])
+  }, [pendingStart, activeGame, media.complete, resumeChecked, saved, resumeWarning])
   const changeColors = (next: string[]) => {
     setColors(next)
     savePreferences({ colors: next })
@@ -382,7 +387,7 @@ function GameApp({ initialPreferences, initialWarning }: { initialPreferences: C
                 onNewPart={() => newPart(true)}
                 mediaManager={media.manager}
                 header={header}
-                source={source?.reference ? { reference: source.reference, sourceKey: source.sourceKey, seed: source.recipe.seed, replay: source.replay, selectedKeys: selectedSources, timer, options: source.options, presetId: source.presetId } : undefined}
+                source={source?.reference ? { reference: source.reference, sourceKey: source.sourceKey, seed: source.recipe.seed, replay: source.replay, selectedKeys: selectedSources, resolvedKeys: activeGame.questions.map(questionSourceKey), timer, options: source.options, presetId: source.presetId } : undefined}
                 onSessionReady={sessionReady}
                 onRetryDifficult={retryDifficult}
               />
@@ -612,6 +617,7 @@ function GameApp({ initialPreferences, initialWarning }: { initialPreferences: C
                   </aside>
                 </div>
                 {source && <PresetPanel key={source.reference ? `${source.reference.kind}:${source.reference.id}` : source.sourceKey} sourceKey={source.reference ? `${source.reference.kind}:${source.reference.id}` : source.sourceKey} contentHash={String(hash(canonicalJson(source.template)))} questions={game.questions} selected={selectedSources} options={source.options} timer={timer} mode={mode} onOptions={changePlanOptions} onApply={applyPreset} activePresetId={source.presetId} />}
+                {source?.reference && <SessionArchive reference={source.reference} template={source.template} title={source.name} onOpen={(run) => { const url = new URL(window.location.href); url.searchParams.set('s', run.sessionId); window.history.pushState({ ...window.history.state, clairfleOpenSession: run.sessionId }, '', url); window.dispatchEvent(new PopStateEvent('popstate')) }} onErased={() => { window.history.pushState({}, '', '/generateur'); window.dispatchEvent(new PopStateEvent('popstate')) }} />}
                 <section className="ci-panel ci-no-print">
                   <PaletteSettings
                     colors={colors}

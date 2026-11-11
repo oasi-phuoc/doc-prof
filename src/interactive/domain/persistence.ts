@@ -219,7 +219,7 @@ export async function saveSession(record: SavedSession, previous?: SavedSession)
     return next
   })
 }
-export async function deleteSession(game: Game, previous?: SavedSession): Promise<void> {
+export async function deleteSession(game: Pick<Game, 'id'>, previous?: SavedSession): Promise<void> {
   await mutateRecord(game.id, (existing, store) => {
     if (previous && !sameRevision(existing, previous)) throw new Error(SESSION_CONFLICT)
     store.delete(game.id)

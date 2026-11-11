@@ -21,6 +21,7 @@ export type GameSource = {
   storageWarning?: string
   options: PlanOptions
   presetId?: string
+  resolvedKeys?: string[]
 }
 type RunMetadata = { seed: number; selectedKeys: string[] | null; replay?: number; options?: PlanOptions; presetId?: string }
 const prefix = 'clairfle.interactive.run.v1.'
@@ -57,11 +58,11 @@ export async function loadGameSource(value: { recipe: FicheRecipe; name: string 
   try {
     const saved = await latestRun(source.sourceKey)
     if (!saved || saved.source.reference.kind !== source.reference.kind || saved.source.reference.id !== source.reference.id) return source
-    return { ...source, recipe: { ...source.recipe, seed: saved.source.seed }, selectedKeys: saved.source.selectedKeys, replay: saved.source.replay, options: readPlanOptions(saved.source.options), presetId: saved.source.presetId, restoredMode: saved.mode, restoredTimer: saved.source.timer, sessionId: saved.sessionId, restoredGameId: saved.gameId }
+    return { ...source, recipe: { ...source.recipe, seed: saved.source.seed }, selectedKeys: saved.source.selectedKeys, replay: saved.source.replay, options: readPlanOptions(saved.source.options), presetId: saved.source.presetId, resolvedKeys: saved.source.resolvedKeys, restoredMode: saved.mode, restoredTimer: saved.source.timer, sessionId: saved.sessionId, restoredGameId: saved.gameId }
   } catch (error) { return { ...source, storageWarning: error instanceof Error ? error.message : 'Reprise locale indisponible. Le jeu peut continuer.' } }
 }
 export function renewGameSource(source: GameSource, selectedKeys: string[] | null): GameSource {
-  return { ...source, recipe: { ...source.template, seed: nextGameSeed(source.recipe.seed) }, selectedKeys, replay: 0, sessionId: undefined, restoredGameId: undefined }
+  return { ...source, recipe: { ...source.template, seed: nextGameSeed(source.recipe.seed) }, selectedKeys, replay: 0, sessionId: undefined, restoredGameId: undefined, resolvedKeys: undefined }
 }
 export function saveGameRun(source: GameSource, selectedKeys: string[] | null): boolean {
   try { sessionStorage.setItem(prefix + source.sourceKey, JSON.stringify({ seed: source.recipe.seed, selectedKeys, replay: source.replay, options: source.options, presetId: source.presetId })); return true }
