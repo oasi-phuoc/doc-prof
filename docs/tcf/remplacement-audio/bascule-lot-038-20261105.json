@@ -1,0 +1,1066 @@
+{
+  "batch": 38,
+  "audio_replacements": [
+    {
+      "ref": "/lib/audio/tcf/co/magasins/05-magasin-annonce-journée-de-la-femme.mp3",
+      "previous_sha256": "bef1f84e670e1200916b9009b682bf89a3ed795e2ba49b8c90df7ad94e922b7a",
+      "candidate_sha256": "6b52f2c0a39f3ad73110a7939b6f790b4ef0f18b9db6e6fd20dd8b8691f34a9e",
+      "rollback_git_blob": "b63328e7f6095f15dda33d45ed18e7ca514cafc8",
+      "source_id": "additional-20261102:mdf-a2-abc-direct:32:ff0e003a88b9:fa42b31e",
+      "source_sha256": "ff0e003a88b98b48b52c9e20b0c5ac24bd71687dc155b394aeb8a47274e2282b",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "6b52f2c0a39f3ad73110a7939b6f790b4ef0f18b9db6e6fd20dd8b8691f34a9e",
+        "duration": 12.251429,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014038-4a45691bb3/manifest.json",
+          "manifest_sha256": "807b758cc0fc7d18bab6d958b6b34d8c1e090506ce4a9776e41b75dde886460f",
+          "lossless_sha256": "bcab6ddb9715e0e4942930e9ba61a56a33a9d2cbaf99dd870926381b24765a42"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "needs_boundary_review",
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.0,
+          "relative_rms_threshold": 0.0096669,
+          "safe_quiet_margins": false,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.48,
+          "trailing_non_speech_seconds": 0.2,
+          "speech_region_count": 5,
+          "safe_voiced_margins": true,
+          "method": "Silero VAD with no padding; supplementary speech-vs-music evidence, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "ctc"
+      ],
+      "editorial_reason": "Reconnaissances finales comparées ; transcription et questions relues, graphies éditoriales et homophones corrigés.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 15.01,
+      "previous_pool": {
+        "tag": "moyen",
+        "questions": 4
+      },
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/ecole/ecole-3.mp3",
+      "previous_sha256": "ab12e56af04a341c7df8df66c0af33d90f72f22d3e1566087da8bbd102bcd042",
+      "candidate_sha256": "5392eaf9977bb567ee9e4ff8c41f4c7638ae01f1f30782954c421745243c326d",
+      "rollback_git_blob": "4a72b0afedc6bf23b5ce801d05fb01a82aefac5c",
+      "source_id": "09035196:038:359323596792",
+      "source_sha256": "359323596792acaf82e3663eb81922519d4e7c7fb443bbc8382eb51401059ee6",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "5392eaf9977bb567ee9e4ff8c41f4c7638ae01f1f30782954c421745243c326d",
+        "duration": 126.424,
+        "category": "long",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "359323596792acaf82e3663eb81922519d4e7c7fb443bbc8382eb51401059ee6",
+          "proof": {
+            "previous_sha256": "2c9eb6395ca81934892212b1a35b17ed0b84a7b69520036698d7e6737467f594",
+            "sha256": "5392eaf9977bb567ee9e4ff8c41f4c7638ae01f1f30782954c421745243c326d",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/326-2c9eb6395ca8-262836-5838134/candidate.mp3",
+            "source_sha256": "359323596792acaf82e3663eb81922519d4e7c7fb443bbc8382eb51401059ee6",
+            "source_file": "/workspace/attachments/065bcc8f-7251-439a-bce2-75e32748a1a3/09035196_38_DELF_CO_E36.mp3",
+            "source_decoded_pcm_sha256": "64cd61875169c806d7ce248fe6b741cb4c408e732b424e9f29094e4845b9e2c1",
+            "source_sample_rate": 44100,
+            "source_channels": 1,
+            "source_start_frame": 262836,
+            "source_end_frame": 5838134,
+            "source_start": 5.96,
+            "source_end": 132.38399092970522,
+            "source_slice_pcm_sha256": "2b22825a4e2d2fc66792db9dba6b9fe08ebf5ef9efdf09deca02c19839d7af29",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/326-2c9eb6395ca8-262836-5838134/start_before.flac",
+                "sha256": "140c5447be9ede3fed81208052f5ad259f859d7899e99d77475564c5c964aeae",
+                "source_start_frame": 174636,
+                "source_end_frame": 262836,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/326-2c9eb6395ca8-262836-5838134/start_after.flac",
+                "sha256": "0db1290f72e75e8dae1865664856255d2eb3a3b444d46039d6d11e669f0367d2",
+                "source_start_frame": 262836,
+                "source_end_frame": 351036,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/326-2c9eb6395ca8-262836-5838134/end_before.flac",
+                "sha256": "e85a067d4e8318ff18d313546512cd16e78a736a43ab13c3e73a60d4b8637c36",
+                "source_start_frame": 5749934,
+                "source_end_frame": 5838134,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/326-2c9eb6395ca8-262836-5838134/end_after.flac",
+                "sha256": "a9773481e3056ba6cc574860fe499e439fa1ab556c5d28646f256b09d77532b2",
+                "source_start_frame": 5838134,
+                "source_end_frame": 5926334,
+                "available_seconds": 2.0
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Mesdames",
+                "start": 6.04,
+                "end": 6.6,
+                "kind": "dialogue",
+                "asr_word_index": 2,
+                "raw_start": 6.040000076293945,
+                "raw_end": 6.599999616742134,
+                "native_token_indices": [
+                  7,
+                  8,
+                  9,
+                  10
+                ]
+              },
+              "last": {
+                "text": "maison!",
+                "start": 131.832,
+                "end": 132.152,
+                "kind": "dialogue",
+                "asr_word_index": 295,
+                "raw_start": 131.83199980926514,
+                "raw_end": 132.31199990284443,
+                "native_token_indices": [
+                  18,
+                  19,
+                  21
+                ]
+              },
+              "previous_word_end": 1.96,
+              "next_word_start": 136.59428571428572,
+              "first_source_speech_region": [
+                6.24,
+                8.192
+              ],
+              "last_source_speech_region": [
+                128.832,
+                132.224
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/326-2c9eb6395ca8-262836-5838134/waveform.svg",
+              "sha256": "b3bd07fac280678802dd5a2817d84a65d2ceec5c65e899c5c9811a6f7ecfb593"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.0,
+          "relative_rms_threshold": 0.012622252553701401,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.224,
+          "trailing_non_speech_seconds": 0.12,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "ctc"
+      ],
+      "editorial_reason": "Reconnaissances Parakeet et Whisper comparées ; dix questions au maximum et trois propositions par question relues, réponses présentes et distracteurs distincts. Qualification des frontières et des deux fichiers de reconnaissance reste obligatoire. Les affirmations nutritionnelles et sanitaires sont attribuées au vendeur dans les questions. Les tomates viennent de « mon jardin » et le produit chiffré est « six œufs biologiques », conformément à Parakeet.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 131.63,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    }
+  ],
+  "exercise_changes": [
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-ssx-a2-annonce-6-2-co-2",
+      "before": {
+        "id": "tcf-ssx-a2-annonce-6-2-co-2",
+        "niveau": "A1-A2",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · La journée de la femme",
+        "scenario": "magasins",
+        "scene": "La journée de la femme",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/magasins/05-magasin-annonce-journée-de-la-femme.mp3",
+          "transcription": "Chères clientes, à l’occasion de la journée de la femme, pour deux vêtements achetés, bénéficiez d’une remise de 70% sur nos bijoux.\nAllez vite découvrir nos nouveaux sacs à main."
+        },
+        "questions": [
+          {
+            "enonce": "À quelle occasion a lieu cette offre ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La journée de la femme",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "La fête des mères"
+              },
+              {
+                "id": "c",
+                "texte": "Noël"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "La journée de la femme"
+              }
+            }
+          },
+          {
+            "enonce": "Que faut-il acheter pour avoir la remise ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Deux vêtements",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Deux bijoux"
+              },
+              {
+                "id": "c",
+                "texte": "Un sac à main"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Deux vêtements"
+              }
+            }
+          },
+          {
+            "enonce": "Quelle remise avez-vous sur les bijoux ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "70 %",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "17 %"
+              },
+              {
+                "id": "c",
+                "texte": "50 %"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "70 %"
+              }
+            }
+          },
+          {
+            "enonce": "Quels nouveaux accessoires la clientèle est-elle invitée à découvrir ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Des sacs à main",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Des ceintures"
+              },
+              {
+                "id": "c",
+                "texte": "Des chapeaux"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Des sacs à main"
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null
+      },
+      "after": {
+        "id": "tcf-ssx-a2-annonce-6-2-co-2",
+        "niveau": "A1-A2",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · La journée de la femme",
+        "scenario": "magasins",
+        "scene": "La journée de la femme",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/magasins/05-magasin-annonce-journée-de-la-femme.mp3",
+          "transcription": "Chères clientes, à l’occasion de la journée de la femme, pour deux vêtements achetés, bénéficiez d’une remise de 70 % sur nos bijoux. Allez vite découvrir nos nouveaux sacs à main."
+        },
+        "questions": [
+          {
+            "enonce": "À quelle occasion a lieu cette offre ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La journée de la femme",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "La fête des mères"
+              },
+              {
+                "id": "c",
+                "texte": "Noël"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "La journée de la femme"
+              }
+            }
+          },
+          {
+            "enonce": "Que faut-il acheter pour avoir la remise ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Deux vêtements",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Deux bijoux"
+              },
+              {
+                "id": "c",
+                "texte": "Un sac à main"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Deux vêtements"
+              }
+            }
+          },
+          {
+            "enonce": "Quelle remise avez-vous sur les bijoux ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "70 %",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "17 %"
+              },
+              {
+                "id": "c",
+                "texte": "50 %"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "70 %"
+              }
+            }
+          },
+          {
+            "enonce": "Quels nouveaux accessoires la clientèle est-elle invitée à découvrir ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Des sacs à main",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Des ceintures"
+              },
+              {
+                "id": "c",
+                "texte": "Des chapeaux"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Des sacs à main"
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null
+      }
+    },
+    {
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "exercise": "tcf-ss-b1-s2-co-2",
+      "before": {
+        "id": "tcf-ss-b1-s2-co-2",
+        "niveau": "A2-B1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Annonce 36",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/ecole/ecole-3.mp3",
+          "transcription": "Mes lames et messieurs, venez à proche et acheter mes légumes, ils sont 100% biologiques.\nVous demandez pourquoi j'étais bio mais c'est très simple, côté santé c'est ce qu'il y a de meilleures.\nRegardez ces courgettes, ces obérgines, ces carottes.\nD'abord, ces légumes de saison, rien à voir avec ce que vous le trouvez au supermarché.\nIci, pendant un peu l'expert, ces tomates, elles viennent directement de mon jardin.\nChoisir des produits bio, c'est choisir la sécurité alimentaire.\nVous êtes sûr de ne trouver aucun résidus chimique dans mes légumes.\nVous pouvez manger les fruits et les légumes bio sans les éplucher, sans aucun souci, d'autant que c'est sous la peau, que se concentre les vitamine et minéraux.\nSaviez-vous que les aliments biologiques ont une qualité nutritionnelle supérieure de 30% par rapport à ce issue de l'agriculture conventionnelle ?\nDonc, manger bio veut dire manger des aliments plus riches en vitamine et en minéraux.\nVoilà, mec la poussette, donner un manger bio à votre enfant et ces risques d'allerger alimentaires seront réduits.\nEn plus, les produits bio ont un goût tellement meilleur.\nVous vous demandez encore pourquoi choisir le bio ?\nVous voulez une autre raison ?\nL'agriculture biologique respecte de la nature.\nComment ?\nEn refusant d'utiliser les produits chimiques, le bio favorise la biodiversité.\nVoilà un petit geste écologique pour la planète qui ne coûte pas très cher.\nHT chez moi, si ce biologique vous coûte 2,45 euros contre 1,95 euros dans une bande sur face.\nIl y a une différence de 45 centimes.\nQu'est-ce que 45 centimes pourraient produire tellement plus savoureux et qui respectent l'équilibre de la nature ?\nRegardez madame cette photo derrière moi, vous voyez cette montagne, cette verdure ?\nVoilà vous sont élevé mes poules.\nVous pensez à elle en manger à votre omelette ce soir à la maison ?"
+        },
+        "questions": [
+          {
+            "enonce": "De quoi parle cette annonce ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Des légumes bio",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Des voitures"
+              },
+              {
+                "id": "c",
+                "texte": "Des vêtements"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Des légumes bio"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co57-legumes-bio.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-parking-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-vetements-dessines.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "Comment le vendeur dit-il que l'on peut manger les fruits et légumes bio ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Sans les éplucher",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Uniquement après cuisson"
+              },
+              {
+                "id": "c",
+                "texte": "Uniquement en les faisant frire"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Sans les éplucher"
+              }
+            }
+          },
+          {
+            "enonce": "Où les vitamines et minéraux se concentrent-ils selon le vendeur ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Sous la peau",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Dans l'eau de lavage"
+              },
+              {
+                "id": "c",
+                "texte": "Dans les emballages"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Sous la peau"
+              }
+            }
+          },
+          {
+            "enonce": "De combien la qualité nutritionnelle du bio serait-elle supérieure selon le vendeur ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "30 %",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "10 %"
+              },
+              {
+                "id": "c",
+                "texte": "50 %"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "30 %"
+              }
+            }
+          },
+          {
+            "enonce": "D'où viennent les tomates du vendeur ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "De son jardin",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "D'un supermarché"
+              },
+              {
+                "id": "c",
+                "texte": "D'un pays lointain"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "De son jardin"
+              }
+            }
+          },
+          {
+            "enonce": "Quel type de résidus le vendeur affirme-t-il absent de ses légumes ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Les résidus chimiques",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Les résidus de terre"
+              },
+              {
+                "id": "c",
+                "texte": "Les résidus de feuilles"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Les résidus chimiques"
+              }
+            }
+          },
+          {
+            "enonce": "Quel caractère saisonnier le vendeur attribue-t-il à ses légumes ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Ce sont des légumes de saison",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Ce sont uniquement des légumes d'hiver"
+              },
+              {
+                "id": "c",
+                "texte": "Ce sont uniquement des légumes d'été"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Ce sont des légumes de saison"
+              }
+            }
+          },
+          {
+            "enonce": "Quel bénéfice pour l'environnement le vendeur attribue-t-il au bio ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Il favorise la biodiversité",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Il augmente l'emploi de produits chimiques"
+              },
+              {
+                "id": "c",
+                "texte": "Il supprime toutes les cultures"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Il favorise la biodiversité"
+              }
+            }
+          },
+          {
+            "enonce": "À qui le vendeur conseille-t-il de donner du bio à son enfant ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "À une personne avec une poussette",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "À un serveur de restaurant"
+              },
+              {
+                "id": "c",
+                "texte": "À un chauffeur de bus"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "À une personne avec une poussette"
+              }
+            }
+          },
+          {
+            "enonce": "Quels animaux le vendeur élève-t-il dans le lieu montré sur la photo ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Ses poules",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Ses vaches"
+              },
+              {
+                "id": "c",
+                "texte": "Ses moutons"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Ses poules"
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "ecole",
+        "scene": "École"
+      },
+      "after": {
+        "id": "tcf-ss-b1-s2-co-2",
+        "niveau": "A2-B1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Annonce 36",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/ecole/ecole-3.mp3",
+          "transcription": "Mesdames et messieurs, venez approchez, achetez mes légumes, ils sont 100% biologiques! Vous vous demandez pourquoi acheter bio? Mais c'est très simple, côté santé, c'est ce qu'il y a de meilleur. Regardez ces courgettes, ces aubergines, ces carottes. D'abord, c'est des légumes de saison. Rien à voir avec ce que vous trouvez au supermarché, ici, pas d'import export, ces tomates, elles viennent directement de mon jardin. Choisir des produits bio, c'est choisir la sécurité alimentaire. Vous êtes sûr de ne trouver aucun résidu chimique dans mes légumes. Vous pouvez manger les fruits et les légumes bio sans les éplucher, sans aucun souci, d'autant que c'est sous la peau que se concentrent les vitamines et minéraux. Saviez-vous que les aliments biologiques ont une qualité nutritionnelle supérieure de 30% par rapport à ceux issus de l'agriculture conventionnelle? Donc, manger bio veut dire manger des aliments plus riches en vitamines et en minéraux. Madame, avec la poussette, donnez à manger bio à votre enfant et ses risques d'allergie alimentaire seront réduits. En plus, les produits bio ont un goût tellement meilleur. Vous vous demandez encore pourquoi choisir le bio? Vous voulez une autre raison? L'agriculture biologique respecte la nature. Comment? Eh bien, en refusant d'utiliser les produits chimiques, le bio favorise la biodiversité. Voilà un petit geste écologique pour la planète qui ne coûte pas très cher. Achetez chez moi 6 œufs biologiques vous coûtent 2,40 € contre 1,95€ dans une grande surface. Ça fait une différence de 45 centimes. Qu'est-ce que 45 centimes pour un produit tellement plus savoureux et qui respecte l'équilibre de la nature? Regardez, madame, cette photo derrière moi. Vous voyez cette montagne, cette verdure? Voilà où sont élevées mes poules! Vous penserez à elles en mangeant votre omelette ce soir à la maison!"
+        },
+        "questions": [
+          {
+            "enonce": "De quoi parle cette annonce ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Des légumes bio",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Des voitures"
+              },
+              {
+                "id": "c",
+                "texte": "Des vêtements"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Des légumes bio"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co57-legumes-bio.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-parking-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-vetements-dessines.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "Comment le vendeur dit-il que l'on peut manger les fruits et légumes bio ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Sans les éplucher",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Uniquement après cuisson"
+              },
+              {
+                "id": "c",
+                "texte": "Uniquement en les faisant frire"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Sans les éplucher"
+              }
+            }
+          },
+          {
+            "enonce": "Où les vitamines et minéraux se concentrent-ils selon le vendeur ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Sous la peau",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Dans l'eau de lavage"
+              },
+              {
+                "id": "c",
+                "texte": "Dans les emballages"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Sous la peau"
+              }
+            }
+          },
+          {
+            "enonce": "De combien la qualité nutritionnelle du bio serait-elle supérieure selon le vendeur ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "30 %",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "10 %"
+              },
+              {
+                "id": "c",
+                "texte": "50 %"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "30 %"
+              }
+            }
+          },
+          {
+            "enonce": "D'où viennent les tomates du vendeur ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "De son jardin",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "D'un supermarché"
+              },
+              {
+                "id": "c",
+                "texte": "D'un pays lointain"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "De son jardin"
+              }
+            }
+          },
+          {
+            "enonce": "Quel type de résidus le vendeur affirme-t-il absent de ses légumes ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Les résidus chimiques",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Les résidus de terre"
+              },
+              {
+                "id": "c",
+                "texte": "Les résidus de feuilles"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Les résidus chimiques"
+              }
+            }
+          },
+          {
+            "enonce": "Quel caractère saisonnier le vendeur attribue-t-il à ses légumes ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Ce sont des légumes de saison",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Ce sont uniquement des légumes d'hiver"
+              },
+              {
+                "id": "c",
+                "texte": "Ce sont uniquement des légumes d'été"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Ce sont des légumes de saison"
+              }
+            }
+          },
+          {
+            "enonce": "Quel bénéfice pour l'environnement le vendeur attribue-t-il au bio ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Il favorise la biodiversité",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Il augmente l'emploi de produits chimiques"
+              },
+              {
+                "id": "c",
+                "texte": "Il supprime toutes les cultures"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Il favorise la biodiversité"
+              }
+            }
+          },
+          {
+            "enonce": "À qui le vendeur conseille-t-il de donner du bio à son enfant ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "À une personne avec une poussette",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "À un serveur de restaurant"
+              },
+              {
+                "id": "c",
+                "texte": "À un chauffeur de bus"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "À une personne avec une poussette"
+              }
+            }
+          },
+          {
+            "enonce": "Quels animaux le vendeur élève-t-il dans le lieu montré sur la photo ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Ses poules",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Ses vaches"
+              },
+              {
+                "id": "c",
+                "texte": "Ses moutons"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Ses poules"
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "ecole",
+        "scene": "École"
+      }
+    }
+  ],
+  "status": "installed",
+  "received_originals_modified": 0,
+  "human_listening_performed": false
+}

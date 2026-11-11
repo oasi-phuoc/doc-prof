@@ -88,9 +88,30 @@ def main():
         human_listening_performed=False, items=pending))
     summary = ledger['summary']
     assert len(pending) == summary['remaining_references']
+    final_review = []
+    for ref, record in installed.items():
+        state = states[ref]
+        deferred = record.get('final_transcript_review_pending', False)
+        recheck = bool(state['editorial_decision_present'] and not state['manual_review_ready'])
+        if deferred or recheck:
+            final_review.append(dict(ref=ref, source_id=record['source_id'],
+                                     candidate_sha256=record['candidate_sha256'],
+                                     priority='deferred_final_transcript_validation' if deferred else 'targeted_recheck_with_latest_recognitions',
+                                     reasons=state.get('manual_flags', []),
+                                     exercises=[c['exercise'] for c in queue[ref]['contexts']]))
+    write(output / 'bascule-relecture-finale-20261111.json', dict(
+        audio_switch_complete=summary['full_switch_complete'],
+        final_validation_complete=False, human_listening_performed=False,
+        final_check_scope='All 1025 active audio references; priority list does not replace the complete final check with supplied transcripts.',
+        total_active_references=1025,
+        deferred_transcript_validations=sum(bool(r.get('final_transcript_review_pending')) for r in installed.values()),
+        priority_items=final_review))
     progression_path = output / 'progression-unifiee.json'
     progression = read(progression_path)
     progression['audio_replacements_applied'] = summary['total_installed']
+    progression['audio_switch_complete'] = summary['full_switch_complete']
+    progression['final_validation_complete'] = False
+    progression['final_transcript_reviews_pending'] = summary.get('final_transcript_reviews_pending', 0)
     progression['full_switch_progress'].update(
         installed_in_current_switch=summary['installed_this_switch'],
         remaining=summary['remaining_references'],

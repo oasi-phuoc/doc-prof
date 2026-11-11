@@ -1,0 +1,1379 @@
+{
+  "batch": 31,
+  "audio_replacements": [
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-2-2.mp3",
+      "previous_sha256": "1fa4cc9f17feedf0b941ee5c10862702f31a2b23c8349eeb0a9048e519bec868",
+      "candidate_sha256": "02d9f4798bdf13bef2e48de784f138face70a9766a1dd38479bd58ad6b1b1c0c",
+      "rollback_git_blob": "9ee5fc1029140228fbf229f3e270a902b92a379b",
+      "source_id": "additional-20261102:mdf-a1-abc:67:ae11cd6cbd15:ae8d6a4f",
+      "source_sha256": "ae11cd6cbd15626127e4fb7640fbf466a81ac0a8f3c07f427fe9de9e07e2f159",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "02d9f4798bdf13bef2e48de784f138face70a9766a1dd38479bd58ad6b1b1c0c",
+        "duration": 10.816,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "ae11cd6cbd15626127e4fb7640fbf466a81ac0a8f3c07f427fe9de9e07e2f159",
+          "proof": {
+            "previous_sha256": "3f03d097ad66ec8070a08d136f7c1a6ec7fd94e2372f885c3cc521f081dae533",
+            "sha256": "02d9f4798bdf13bef2e48de784f138face70a9766a1dd38479bd58ad6b1b1c0c",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/63-3f03d097ad66-987840-1464826/candidate.mp3",
+            "source_sha256": "ae11cd6cbd15626127e4fb7640fbf466a81ac0a8f3c07f427fe9de9e07e2f159",
+            "source_file": "/workspace/work/tcf-audio-additional-20261102-work/incoming/a1/mdf-a1-abc/MDF_A1_ABC-DELF_AUDIO/09035257_067.mp3",
+            "source_decoded_pcm_sha256": "2f54d3f101c92dea61468318506f6c3e7a6510e2c2106258c0b633c4e3b4e8da",
+            "source_sample_rate": 44100,
+            "source_channels": 1,
+            "source_start_frame": 987840,
+            "source_end_frame": 1464826,
+            "source_start": 22.4,
+            "source_end": 33.21600907029478,
+            "source_slice_pcm_sha256": "7fef27fc6af2c5241b22bbe8d79d3d89ab73ebd743496caf096683b84624c461",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/63-3f03d097ad66-987840-1464826/start_before.flac",
+                "sha256": "67dafe1abba5a237a18c778224362521c2c799825bbda55e2ee16d5893941d80",
+                "source_start_frame": 899640,
+                "source_end_frame": 987840,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/63-3f03d097ad66-987840-1464826/start_after.flac",
+                "sha256": "02a7297bf23e33c81b64550986ebc41ead78d518c269302fdbc20cb625d71b32",
+                "source_start_frame": 987840,
+                "source_end_frame": 1076040,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/63-3f03d097ad66-987840-1464826/end_before.flac",
+                "sha256": "220ba966ef0543de7b47acd6dea893b7642f9b931899da92211c3143ed4c3bf9",
+                "source_start_frame": 1376626,
+                "source_end_frame": 1464826,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/63-3f03d097ad66-987840-1464826/end_after.flac",
+                "sha256": "ebf7bede7b878618e4301052464f96a916f5ca84aec04290e58b1b4ed2e3915c",
+                "source_start_frame": 1464826,
+                "source_end_frame": 1553026,
+                "available_seconds": 2.0
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Pardon",
+                "start": 22.552,
+                "end": 23.111999,
+                "kind": "dialogue",
+                "asr_word_index": 29,
+                "raw_start": 22.551999618530274,
+                "raw_end": 23.11199923348427,
+                "native_token_indices": [
+                  65,
+                  66,
+                  67
+                ]
+              },
+              "last": {
+                "text": "merci.",
+                "start": 32.424,
+                "end": 33.064,
+                "kind": "dialogue",
+                "asr_word_index": 44,
+                "raw_start": 32.424000114440915,
+                "raw_end": 36.02399961674213,
+                "native_token_indices": [
+                  13,
+                  14,
+                  15
+                ]
+              },
+              "previous_word_end": 21.111999,
+              "next_word_start": 36.344,
+              "first_source_speech_region": [
+                22.56,
+                23.776
+              ],
+              "last_source_speech_region": [
+                32.576,
+                33.056
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/63-3f03d097ad66-987840-1464826/waveform.svg",
+              "sha256": "d7619543057b4b5dc2479eaabaec9e12b474bbf7c62d7f45a7b278ec751604fc"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.14,
+          "trailing_quiet_seconds": 0.0,
+          "relative_rms_threshold": 0.005894514918327332,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.128,
+          "trailing_non_speech_seconds": 0.16,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
+      "editorial_reason": "Texte, questions et réponses relus en regard des reconnaissances finales ; frontières incertaines maintenues en attente.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 11.55,
+      "previous_pool": {
+        "tag": "court",
+        "questions": 2
+      },
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_64.mp3",
+      "previous_sha256": "6bfb29a5a08c67a42338393d3482f25bf6c10b894b212b93011062803a3a419d",
+      "candidate_sha256": "0a9d85b29a7b3af26078ae83a40bf6c4f115a463edfbc33b721ebaf4258d95f6",
+      "rollback_git_blob": "d638f525fd79c4bd013046726a04dcb8b1c64cd3",
+      "source_id": "delf_a1_2022:064:ed6bd842d6ff",
+      "source_sha256": "ed6bd842d6ff59ffaae139611c2e9811e20d761606f1480e746048f921cc258a",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "0a9d85b29a7b3af26078ae83a40bf6c4f115a463edfbc33b721ebaf4258d95f6",
+        "duration": 26.56,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "ed6bd842d6ff59ffaae139611c2e9811e20d761606f1480e746048f921cc258a",
+          "proof": {
+            "previous_sha256": "3176a8bbcf7e86ae7b1a83a84038c463e6511decd0a691f6aa5bd9711e025498",
+            "sha256": "0a9d85b29a7b3af26078ae83a40bf6c4f115a463edfbc33b721ebaf4258d95f6",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/485-3176a8bbcf7e-310464-1481760/candidate.mp3",
+            "source_sha256": "ed6bd842d6ff59ffaae139611c2e9811e20d761606f1480e746048f921cc258a",
+            "source_file": "/workspace/work/tcf-audio-replacement/incoming/a1/delf_a1_2022_piste_64.mp3",
+            "source_decoded_pcm_sha256": "f55516f5581ce6b6406f2c56cb96392d9d503e18ba9a08c44f3091d5b34f5edf",
+            "source_sample_rate": 44100,
+            "source_channels": 2,
+            "source_start_frame": 310464,
+            "source_end_frame": 1481760,
+            "source_start": 7.04,
+            "source_end": 33.6,
+            "source_slice_pcm_sha256": "bae5608c9238ea2984799a4d40a9c5de60f2c2fba04bfff3171785b7281d7267",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/485-3176a8bbcf7e-310464-1481760/start_before.flac",
+                "sha256": "823ecd2e720713eb589e49850534c8076279f1515c04a374446e7a84968e59cd",
+                "source_start_frame": 222264,
+                "source_end_frame": 310464,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/485-3176a8bbcf7e-310464-1481760/start_after.flac",
+                "sha256": "c50e858991dc1afaf03f7e6878d7b13222110b09e7fd0ee33bd92b09c3359ff0",
+                "source_start_frame": 310464,
+                "source_end_frame": 398664,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/485-3176a8bbcf7e-310464-1481760/end_before.flac",
+                "sha256": "bfe531e8772eb778334cb54337958fc7a9fe46968f91ca9d39e3f7793a035f97",
+                "source_start_frame": 1393560,
+                "source_end_frame": 1481760,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/485-3176a8bbcf7e-310464-1481760/end_after.flac",
+                "sha256": "802d28b3508fd03c04fa0bcb3b0b533bb86e536b2fdfbeb61729deb5b44aeef9",
+                "source_start_frame": 1481760,
+                "source_end_frame": 1569960,
+                "available_seconds": 2.0
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Mesdames",
+                "start": 7.12,
+                "end": 7.84,
+                "kind": "dialogue",
+                "asr_word_index": 2,
+                "raw_start": 7.119999885559082,
+                "raw_end": 7.839999824762344,
+                "native_token_indices": [
+                  6,
+                  7,
+                  8,
+                  9
+                ]
+              },
+              "last": {
+                "text": "voyage!",
+                "start": 32.856,
+                "end": 33.336,
+                "kind": "dialogue",
+                "asr_word_index": 51,
+                "raw_start": 32.85599965667724,
+                "raw_end": 33.49599959766864,
+                "native_token_indices": [
+                  40,
+                  41,
+                  42,
+                  44
+                ]
+              },
+              "previous_word_end": 1.68,
+              "next_word_start": 36.414693877551024,
+              "first_source_speech_region": [
+                7.52,
+                10.24
+              ],
+              "last_source_speech_region": [
+                32.672,
+                33.44
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/485-3176a8bbcf7e-310464-1481760/waveform.svg",
+              "sha256": "1e4229393f3521f5b63e32e0ead47f2ba86b47f4e0a85fa5cf73663d0046531d"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.09,
+          "relative_rms_threshold": 0.007776005119085313,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.384,
+          "trailing_non_speech_seconds": 0.16,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
+      "editorial_reason": "Ponctuation, accords, hésitations, orthographe et graphies propres examinés. Texte courant conservé sous réserve de concordance des deux reconnaissances finales, des nombres et des marges de parole.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 32.39,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    }
+  ],
+  "exercise_changes": [
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-a1-s4-co-4",
+      "before": {
+        "id": "tcf-a1-s4-co-4",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "association_images",
+        "theme": "Test blanc A1 · série 4 · Petits dialogues",
+        "scenario": "vie-quotidienne",
+        "scene": "Les situations du quotidien",
+        "consigne": "Vous allez entendre 5 petits dialogues, correspondant à 5 situations différentes. Associez chaque dialogue à une image. Attention : il y a 6 images mais seulement 5 dialogues. Notez le numéro du dialogue sous chaque image (Dialogue n° : ___).",
+        "points": 10,
+        "support": {
+          "nb_dialogues": 5,
+          "transcription": [
+            "Tu as vu mon nouveau sac ?\n— Oui, il est joli !\n— Joli et pratique : je peux mettre beaucoup de choses à l’intérieur.",
+            "Pardon, monsieur, le cours d’italien, c’est dans quelle salle ?\n— Salle 12, au premier étage.\n— Merci.",
+            "Bonjour, j'ai rendez-vous avec le docteur Charpentier à 11h00. Vous pouvez vous asseoir. Le docteur va vous voir dans quelques minutes.",
+            "Bonjour, je m’appelle Célia Leblanc.\nJe suis la nouvelle secrétaire.\n— Bienvenue !\nJe m’appelle Charlotte Colombe, je suis la comptable.\n— Enchantée.",
+            "Je peux prendre un roman ?\nJe veux lire un nouveau livre.\n— Bien sûr, prends deux livres si tu veux."
+          ],
+          "audios": [
+            "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-2-1.mp3",
+            "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-2-2.mp3",
+            "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-2-3.mp3",
+            "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-2-4.mp3",
+            "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-2-5.mp3"
+          ]
+        },
+        "questions": [
+          {
+            "enonce": "Quel objet est nouveau ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un sac",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Un manteau"
+              },
+              {
+                "id": "c",
+                "texte": "Un téléphone"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un sac"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/b48c69f2021e.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-manteau-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-telephone-dessine.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Comment l’autre personne trouve-t-elle cet objet ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Joli",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Abîmé"
+              },
+              {
+                "id": "c",
+                "texte": "Trop grand"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Joli"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Pourquoi le sac est-il pratique ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "On peut y mettre beaucoup de choses",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Il se transforme en valise"
+              },
+              {
+                "id": "c",
+                "texte": "Il contient un téléphone"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "On peut y mettre beaucoup de choses"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Quelle langue est enseignée dans le cours recherché ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "L’italien",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "L’anglais"
+              },
+              {
+                "id": "c",
+                "texte": "Le chinois"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "L’italien"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Dans quelle salle a lieu le cours ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La salle 12",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "La salle 20"
+              },
+              {
+                "id": "c",
+                "texte": "La salle 21"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "La salle 12"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "À quel étage se trouve la salle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Au premier étage",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Au deuxième étage"
+              },
+              {
+                "id": "c",
+                "texte": "Au rez-de-chaussée"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Au premier étage"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Avec qui la personne a-t-elle rendez-vous ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Le docteur Charpentier",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Le professeur Duquesnes"
+              },
+              {
+                "id": "c",
+                "texte": "La comptable Colombe"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Le docteur Charpentier"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "À quelle heure est son rendez-vous ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "À 11 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "À 10 h"
+              },
+              {
+                "id": "c",
+                "texte": "À midi"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "À 11 h"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1100-dessinee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1000-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1200-dessinee.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Que lui propose-t-on de faire en attendant ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "S’asseoir",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Sortir"
+              },
+              {
+                "id": "c",
+                "texte": "Remplir un formulaire"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "S’asseoir"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Comment s’appelle la nouvelle secrétaire ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Célia Leblanc",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Charlotte Colombe"
+              },
+              {
+                "id": "c",
+                "texte": "Catherine Laurent"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Célia Leblanc"
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Quel métier exerce Célia ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Secrétaire",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Comptable"
+              },
+              {
+                "id": "c",
+                "texte": "Professeure"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Secrétaire"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/vocab-secretaire.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/vocab-comptable.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/vocab-professeure.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Quel métier exerce Charlotte ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Comptable",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Secrétaire"
+              },
+              {
+                "id": "c",
+                "texte": "Médecin"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Comptable"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/vocab-comptable.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/vocab-secretaire.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-medecin-dessine.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Quel type de livre la personne veut-elle lire ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un roman",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Un dictionnaire"
+              },
+              {
+                "id": "c",
+                "texte": "Un livre de cuisine"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un roman"
+              }
+            },
+            "audio": 5
+          },
+          {
+            "enonce": "Combien de livres peut-elle prendre si elle veut ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Deux",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Un seul"
+              },
+              {
+                "id": "c",
+                "texte": "Trois"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Deux"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "image": "/lib/images/tcf/qcm-audit/audit-context-compter-2-livres.webp",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-livre-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/audit-context-compter-3-livres.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 5
+          }
+        ],
+        "situations": [
+          {
+            "id": "s1",
+            "image": "/lib/images/tcf/co/scenes/ecole/demander-une-salle.webp",
+            "dialogue": 2
+          },
+          {
+            "id": "s2",
+            "image": "/lib/images/tcf/co/scenes/travail/se-serrer-la-main.webp",
+            "dialogue": 4
+          },
+          {
+            "id": "s3",
+            "image": "/lib/images/tcf/co/scenes/sante/demander-a-l-accueil.webp",
+            "dialogue": 3
+          },
+          {
+            "id": "s4",
+            "image": "/lib/images/tcf/co/scenes/vie-quotidienne/montrer-son-sac.webp",
+            "dialogue": 1
+          },
+          {
+            "id": "s5",
+            "image": "/lib/images/tcf/qcm-audit/vocab-lecture.webp",
+            "dialogue": null
+          },
+          {
+            "id": "s6",
+            "image": "/lib/images/tcf/co/scenes/bibliotheque/prendre-un-livre.webp",
+            "dialogue": 5
+          }
+        ],
+        "consigne_supplementaire": null
+      },
+      "after": {
+        "id": "tcf-a1-s4-co-4",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "association_images",
+        "theme": "Test blanc A1 · série 4 · Petits dialogues",
+        "scenario": "vie-quotidienne",
+        "scene": "Les situations du quotidien",
+        "consigne": "Vous allez entendre 5 petits dialogues, correspondant à 5 situations différentes. Associez chaque dialogue à une image. Attention : il y a 6 images mais seulement 5 dialogues. Notez le numéro du dialogue sous chaque image (Dialogue n° : ___).",
+        "points": 10,
+        "support": {
+          "nb_dialogues": 5,
+          "transcription": [
+            "Tu as vu mon nouveau sac ?\n— Oui, il est joli !\n— Joli et pratique : je peux mettre beaucoup de choses à l’intérieur.",
+            "Pardon, monsieur. Le cours d'italien, c'est dans quelle salle ? Salle 12, au premier étage. Ah, merci.",
+            "Bonjour, j'ai rendez-vous avec le docteur Charpentier à 11h00. Vous pouvez vous asseoir. Le docteur va vous voir dans quelques minutes.",
+            "Bonjour, je m’appelle Célia Leblanc.\nJe suis la nouvelle secrétaire.\n— Bienvenue !\nJe m’appelle Charlotte Colombe, je suis la comptable.\n— Enchantée.",
+            "Je peux prendre un roman ?\nJe veux lire un nouveau livre.\n— Bien sûr, prends deux livres si tu veux."
+          ],
+          "audios": [
+            "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-2-1.mp3",
+            "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-2-2.mp3",
+            "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-2-3.mp3",
+            "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-2-4.mp3",
+            "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-2-5.mp3"
+          ]
+        },
+        "questions": [
+          {
+            "enonce": "Quel objet est nouveau ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un sac",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Un manteau"
+              },
+              {
+                "id": "c",
+                "texte": "Un téléphone"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un sac"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/b48c69f2021e.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-manteau-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-telephone-dessine.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Comment l’autre personne trouve-t-elle cet objet ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Joli",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Abîmé"
+              },
+              {
+                "id": "c",
+                "texte": "Trop grand"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Joli"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Pourquoi le sac est-il pratique ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "On peut y mettre beaucoup de choses",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Il se transforme en valise"
+              },
+              {
+                "id": "c",
+                "texte": "Il contient un téléphone"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "On peut y mettre beaucoup de choses"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Quelle langue est enseignée dans le cours recherché ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "L’italien",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "L’anglais"
+              },
+              {
+                "id": "c",
+                "texte": "Le chinois"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "L’italien"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Dans quelle salle a lieu le cours ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La salle 12",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "La salle 20"
+              },
+              {
+                "id": "c",
+                "texte": "La salle 21"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "La salle 12"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "À quel étage se trouve la salle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Au premier étage",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Au deuxième étage"
+              },
+              {
+                "id": "c",
+                "texte": "Au rez-de-chaussée"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Au premier étage"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Avec qui la personne a-t-elle rendez-vous ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Le docteur Charpentier",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Le professeur Duquesnes"
+              },
+              {
+                "id": "c",
+                "texte": "La comptable Colombe"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Le docteur Charpentier"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "À quelle heure est son rendez-vous ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "À 11 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "À 10 h"
+              },
+              {
+                "id": "c",
+                "texte": "À midi"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "À 11 h"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1100-dessinee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1000-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1200-dessinee.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Que lui propose-t-on de faire en attendant ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "S’asseoir",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Sortir"
+              },
+              {
+                "id": "c",
+                "texte": "Remplir un formulaire"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "S’asseoir"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Comment s’appelle la nouvelle secrétaire ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Célia Leblanc",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Charlotte Colombe"
+              },
+              {
+                "id": "c",
+                "texte": "Catherine Laurent"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Célia Leblanc"
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Quel métier exerce Célia ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Secrétaire",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Comptable"
+              },
+              {
+                "id": "c",
+                "texte": "Professeure"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Secrétaire"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/vocab-secretaire.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/vocab-comptable.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/vocab-professeure.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Quel métier exerce Charlotte ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Comptable",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Secrétaire"
+              },
+              {
+                "id": "c",
+                "texte": "Médecin"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Comptable"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/vocab-comptable.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/vocab-secretaire.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-medecin-dessine.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Quel type de livre la personne veut-elle lire ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un roman",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Un dictionnaire"
+              },
+              {
+                "id": "c",
+                "texte": "Un livre de cuisine"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un roman"
+              }
+            },
+            "audio": 5
+          },
+          {
+            "enonce": "Combien de livres peut-elle prendre si elle veut ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Deux",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Un seul"
+              },
+              {
+                "id": "c",
+                "texte": "Trois"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Deux"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "image": "/lib/images/tcf/qcm-audit/audit-context-compter-2-livres.webp",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-livre-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/audit-context-compter-3-livres.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 5
+          }
+        ],
+        "situations": [
+          {
+            "id": "s1",
+            "image": "/lib/images/tcf/co/scenes/ecole/demander-une-salle.webp",
+            "dialogue": 2
+          },
+          {
+            "id": "s2",
+            "image": "/lib/images/tcf/co/scenes/travail/se-serrer-la-main.webp",
+            "dialogue": 4
+          },
+          {
+            "id": "s3",
+            "image": "/lib/images/tcf/co/scenes/sante/demander-a-l-accueil.webp",
+            "dialogue": 3
+          },
+          {
+            "id": "s4",
+            "image": "/lib/images/tcf/co/scenes/vie-quotidienne/montrer-son-sac.webp",
+            "dialogue": 1
+          },
+          {
+            "id": "s5",
+            "image": "/lib/images/tcf/qcm-audit/vocab-lecture.webp",
+            "dialogue": null
+          },
+          {
+            "id": "s6",
+            "image": "/lib/images/tcf/co/scenes/bibliotheque/prendre-un-livre.webp",
+            "dialogue": 5
+          }
+        ],
+        "consigne_supplementaire": null
+      }
+    }
+  ],
+  "status": "installed",
+  "received_originals_modified": 0,
+  "human_listening_performed": false
+}

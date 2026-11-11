@@ -27,6 +27,8 @@ def main():
     parser.add_argument('--repo', type=Path, default=Path(__file__).resolve().parents[2])
     parser.add_argument('--limit', type=int, default=50)
     parser.add_argument('--apply', action='store_true')
+    parser.add_argument('--defer-final-transcript-review', action='store_true',
+                        help='Install source/boundary checked files with two recorded ASR outputs; keep final transcript validation explicitly pending.')
     args = parser.parse_args()
     repo, work = args.repo, args.work
     inventory = {r['ref']: r for r in read(work / 'active-inventory.json')}
@@ -44,8 +46,15 @@ def main():
         policy='Existing exercise IDs and audio URLs retained. Received sources '
                'and git rollback objects preserved. Unchecked candidates are not installed.')
     done = {r['ref'] for r in ledger['installed']}
+    def deferred_ready(r):
+        t = checks[r['candidate_sha256']]
+        return (args.defer_final_transcript_review and r['editorial_decision_present']
+                and len(r['recognitions']) >= 2 and r['coverage_sufficient']
+                and not r['instruction_flag'] and t['status'] == 'technical_integrity_passed'
+                and (t.get('boundary_signal', {}).get('safe_quiet_margins')
+                     or t.get('boundary_vad', {}).get('safe_voiced_margins')))
     eligible = [r for r in readiness['rows'] if r['ref'] not in done
-                and (r['automatic_equivalence_ready'] or r['manual_review_ready'])]
+                and (r['automatic_equivalence_ready'] or r['manual_review_ready'] or deferred_ready(r))]
     selected = eligible[:args.limit]
     print(json.dumps(dict(ready=len(eligible), selected=len(selected), apply=args.apply)))
     if not args.apply or not selected:
@@ -59,7 +68,9 @@ def main():
     records, prepared = [], []
     for state in selected:
         ref = state['ref']
-        assert not decisions.get(ref, {}).get('blocked_reasons'), ref
+        provisional = not (state['automatic_equivalence_ready'] or state['manual_review_ready'])
+        assert not provisional or deferred_ready(state), ref
+        assert provisional or not decisions.get(ref, {}).get('blocked_reasons'), ref
         assert ref.startswith('/lib/audio/tcf/co/') and '..' not in Path(ref).parts
         item, plan = inventory[ref], queue[ref]
         digest = item['proposal']['candidate_sha256']
@@ -70,8 +81,8 @@ def main():
         # evidence alongside source provenance and two full-file recognitions.
         assert (checks[digest].get('boundary_signal', {}).get('safe_quiet_margins') is True
                 or checks[digest].get('boundary_vad', {}).get('safe_voiced_margins') is True)
-        manual = decisions.get(ref) if state['manual_review_ready'] else None
-        validation_engines = state.get('selected_recognition_engines', ['parakeet', 'whisper'])
+        manual = decisions.get(ref) if state['manual_review_ready'] or provisional else None
+        validation_engines = state['recognitions'][:2] if provisional else state.get('selected_recognition_engines', ['parakeet', 'whisper'])
         assert len(validation_engines) == 2 and len(set(validation_engines)) == 2
         assert all(engine in state['recognitions'] for engine in validation_engines)
         edits = []
@@ -129,9 +140,12 @@ def main():
                             source_id=item['proposal']['source_id'],
                             source_sha256=item['proposal']['source_sha256'],
                             technical_check=checks[digest],
-                            validation='editorial_review_and_two_final_file_recognitions' if manual
+                            validation='native_source_and_boundaries_checked_final_transcript_review_deferred' if provisional else 'editorial_review_and_two_final_file_recognitions' if manual
                                        else 'unchanged_text_and_two_exact_final_file_recognitions',
-                            validation_engines=validation_engines,
+                            validation_engines=[] if provisional else validation_engines,
+                            recognition_engines=validation_engines,
+                            final_transcript_review_pending=provisional,
+                            pending_final_review_reasons=state.get('manual_flags', []) if provisional else [],
                             editorial_reason=manual['reason'] if manual else None,
                             numeric_resolution=manual.get('numeric_resolution') if manual else None,
                             additional_recognition_evidence=manual.get('additional_recognition_evidence') if manual else None,
@@ -173,6 +187,10 @@ def main():
                              remaining_references=945 - len(ledger['installed']),
                              active_library_references=1025,
                              full_switch_complete=len(ledger['installed']) == 945)
+    ledger['summary']['final_transcript_reviews_pending'] = sum(bool(r.get('final_transcript_review_pending')) for r in ledger['installed'])
+    ledger['summary']['final_validation_complete'] = False
+    if args.defer_final_transcript_review:
+        ledger['final_review_policy'] = 'User requested audio switch now, official transcripts and final check later. Pending records are installations, not completed transcript validations.'
     write(destination, ledger)
     print(json.dumps(ledger['summary']))
 

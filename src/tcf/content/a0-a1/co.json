@@ -8026,7 +8026,7 @@
       "nb_dialogues": 5,
       "transcription": [
         "Tu as vu mon nouveau sac ?\n— Oui, il est joli !\n— Joli et pratique : je peux mettre beaucoup de choses à l’intérieur.",
-        "Pardon, monsieur, le cours d’italien, c’est dans quelle salle ?\n— Salle 12, au premier étage.\n— Merci.",
+        "Pardon, monsieur. Le cours d'italien, c'est dans quelle salle ? Salle 12, au premier étage. Ah, merci.",
         "Bonjour, j'ai rendez-vous avec le docteur Charpentier à 11h00. Vous pouvez vous asseoir. Le docteur va vous voir dans quelques minutes.",
         "Bonjour, je m’appelle Célia Leblanc.\nJe suis la nouvelle secrétaire.\n— Bienvenue !\nJe m’appelle Charlotte Colombe, je suis la comptable.\n— Enchantée.",
         "Je peux prendre un roman ?\nJe veux lire un nouveau livre.\n— Bien sûr, prends deux livres si tu veux."
@@ -12441,7 +12441,7 @@
     "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
     "support": {
       "audio": "/lib/audio/tcf/co/magasins/chers-clients-magasin-ferme.mp3",
-      "transcription": "Chers clients, le magasin ferme dans quinze minutes.\nMerci de vous diriger vers les caisses pour régler vos achats.\nLe magasin est fermé le dimanche.\nLundi, le magasin ouvre à 10 heures.\nBonne journée."
+      "transcription": "Mesdames, Messieurs, notre magasin ferme ses portes dans 15 minutes. Merci d'aller à la caisse pour payer vos achats. Le magasin est fermé dimanche. Nous vous accueillons lundi de 9h à 20h. Nous vous souhaitons un bon week-end."
     },
     "questions": [
       {
@@ -12578,12 +12578,12 @@
         "choix": [
           {
             "id": "a",
-            "texte": "À 10 h",
+            "texte": "À 9 h",
             "correct": true
           },
           {
             "id": "b",
-            "texte": "À 9 h"
+            "texte": "À 10 h"
           },
           {
             "id": "c",
@@ -12593,25 +12593,7 @@
         "formes": {
           "lignes": {
             "nb_lignes": 1,
-            "reponse_modele": "À 10 h"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/qcm-audit/co834-horloge-1000-dessinee.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/tcf/qcm-audit/co834-horloge-0900-dessinee.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/tcf/qcm-audit/co834-horloge-1100-dessinee.webp"
-              }
-            ]
+            "reponse_modele": "À 9 h"
           }
         }
       }
@@ -13427,7 +13409,7 @@
     "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
     "support": {
       "audio": "/lib/audio/tcf/co/magasins/demain-venez-participer-grande.mp3",
-      "transcription": "Demain, venez participer à la grande fête de la lecture à la librairie du parc.\nÀ 14 heures, vous pouvez écouter des histoires racontées par Maya.\nÀ 16 heures, venez découvrir le groupe Orquestra et ses chansons.\nEt pour l'achat d'un livre, on vous offre un stylo."
+      "transcription": "Demain, venez participer à la grande fête de la lecture à la Librairie du Parc. A 14h, vous pouvez écouter des histoires racontées par Maya. A 16h, venez découvrir le groupe Orchestra et ses chansons pour danser. Et pour l'achat de livres, on vous offre un postillo."
     },
     "questions": [
       {
@@ -15373,7 +15355,7 @@
     "consigne": "Écoutez le document, puis répondez à la question.",
     "support": {
       "audio": "/lib/audio/tcf/co/famille/19-maison-où-sont-clés.mp3",
-      "transcription": "— Oh là là, où sont mes clés ?\n— Elles sont sur la table, comme d’habitude.",
+      "transcription": "Oh là là, où sont mes clés? Elles sont sur la table. Comme d'habitude.",
       "image": "/lib/images/tcf/co/scenes/famille/19-maison-ou-sont-cles.webp",
       "image_description": "Scénario vidéo (audio CO court, « Les clés », durée indicative 8–15 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un intérieur familial (salon ou cuisine). Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Oh là là, où sont mes clés ? » ; B : « Elles sont sur la table, comme d’habitude ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
     },
@@ -20502,7 +20484,7 @@
     "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
     "support": {
       "audio": "/lib/audio/tcf/co/vie-quotidienne/ca-te-dit-venir-1.mp3",
-      "transcription": "Vous voulez habiter dans un quartier calme ?\nVenez visiter les pièces lumineuses des studios avec terrasse et des appartements de 4 pièces de notre immeuble avec jardin.\nNous sommes ouverts…"
+      "transcription": "Vous voulez habiter dans un quartier calme ? Venez visiter les pièces lumineuses des studios avec terrasses et des appartements de 4 pièces de notre immeuble avec jardin."
     },
     "questions": [
       {
@@ -23621,7 +23603,7 @@
     "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
     "support": {
       "audio": "/lib/audio/tcf/co/vie-quotidienne/salut-c-est-hugo.mp3",
-      "transcription": "En jour, c'est homme, je vais au parc pour courir avec mon frère tout à l'heure, après le goûter.\nOn a rendez-vous à 16h, on va courir 30 minutes.\nTu veux venir ?\nPrends de l'eau, il fait chaud, et à 17h, je vais chez mon cousin."
+      "transcription": "Bonjour, c'est Tom. Je vais au parc pour courir avec mon frère tout à l'heure après le goûter. On a rendez-vous à 16h. On va courir 30 minutes. Tu veux venir ? Prends de l'eau, il fait chaud. Et à 17h, je vais chez mon cousin."
     },
     "questions": [
       {
@@ -28622,7 +28604,7 @@
     "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
     "support": {
       "audio": "/lib/audio/tcf/co/loisirs/nature-conversation-4.mp3",
-      "transcription": "Situation numéro un Je m'amuse beaucoup !\nMoi aussi !\nJ'adore danser !\nSituation numéro deux Qu'est-ce que tu fais ?\nUn gâteau chocolat Tu veux de l'aide ?\nSituation numéro 3 On regarde un film ?\nNon, je préfère regarder un documentaire D'accord, ça me convient Situation numéro 4 Bonjour madame Bonjour, je voudrais trois pots de miel s'il vous plaît Et voilà !\nSituation numéro 5 A qui est le CD ?\nC'est le lien Je l'ai acheté ce matin On peut l'écouter maintenant ?"
+      "transcription": "Je m'amuse beaucoup ! Moi aussi ! J'adore danser ! Qu'est-ce que tu fais ? Un gâteau au chocolat. Tu veux de l'aide ? On regarde un film ? Non, je préfère regarder un documentaire. D'accord, ça me convient. Bonjour, madame. Bonjour, je voudrais trois pots de miel, s'il vous plaît. Et voilà ! A qui est le CD? C'est le mien. Je l'ai acheté ce matin. On peut l'écouter maintenant?"
     },
     "questions": [
       {
@@ -30979,7 +30961,7 @@
     "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
     "support": {
       "audio": "/lib/audio/tcf/co/maison/le-secret-c-est-l-anticipation-2.mp3",
-      "transcription": "2.\nÀ l'Aradio.\nExercice 31.\nBonjour à tous!\nAujourd'hui, sur Radio-Jean, vous pouvez gagner deux places pour le concert de Mado.\nPour gagner, c'est facile.\nVous entendez une chanson de Mado et vous nous appelez aux 08, 40, 65, 30, 40 avant midi.\nAlors, vite!\nA vos téléphones!"
+      "transcription": "Bonjour à tous ! Aujourd'hui, sur Radio Jeune, vous pouvez gagner deux places pour le concert de Mado. Pour gagner, c'est facile. Vous entendez une chanson de Mado et vous nous appelez au 08 40 65 30 40 avant midi. Alors vite, à vos téléphones !"
     },
     "questions": [
       {
@@ -40891,7 +40873,7 @@
     "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
     "support": {
       "audio": "/lib/audio/tcf/co/vie-quotidienne/vous-etes-aussi-camping.mp3",
-      "transcription": "- Vous êtes aussi au camping derrière la plage ?\n- Non, nous sommes à l'hôtel entre la piscine et le parc.\n- Et les chambres sont comment ?\n- Elles sont grandes avec un minibar.\nIl y a une baignoire et un sèche-cheveux dans la salle de bain, c'est parfait !\nEt vous le camping, c'est comment ?\n- Il est très bien aussi.\nMais notre tente est à côté du restaurant et c'est bruyant…\n- Nous sommes en pension complète, les vraies vacances !"
+      "transcription": "Vous êtes aussi au camping derrière la plage ? Non, nous sommes à l'hôtel entre la piscine et le parc. Et les chambres sont comment ? Elles sont grandes, avec un mini-bar. Il y a une baignoire et un sèche-cheveux dans la salle de bain. C'est parfait. Et vous, le camping, c'est comment ? Il est très bien aussi. Mais notre tente est à côté du restaurant et c'est bruyant. C'est dommage. Oui. Mais les enfants ont plein d'amis et sont très contents. Et vous mangez au restaurant du camping ? Non. Nous mangeons devant la tente. Et vous ? Nous sommes en pension complète. Les vraies vacances."
     },
     "questions": [
       {
@@ -42244,7 +42226,7 @@
     "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
     "support": {
       "audio": "/lib/audio/tcf/co/vie-quotidienne/bonjour-fait.mp3",
-      "transcription": "- Bonjour madame, il ne fait pas très beau aujourd'hui et je voudrais savoir quelles activités vous proposez.\n- Ce matin, il ne pleut pas et je peux vous proposer une sortie en canoé-kayak à 10 heures ou un cours de voile à 11 heures.\nLes deux activités durent 2 heures.\n- Je peux vous proposer aussi un cours d'escalade à 11 heures.\nIl dure 2 heures aussi.\n- Ah oui !\nC'est bien l'escalade, non ?\n- Oui c'est très bien, mais nous ne savons pas faire d'escalade !\n- Il y a un cours pour les débutants, vous voulez vous inscrire ?\n- Oui s'il vous plaît !"
+      "transcription": "Bonjour madame. Il ne fait pas très beau aujourd'hui et je voudrais savoir quelles activités vous proposez. Ce matin, il ne pleut pas, et je peux vous proposer une sortie en canoé kayak à 10 heures, ou un cours de voile à 11 heures. Les deux activités durent deux heures. Euh. Je ne sais pas. Je peux vous proposer aussi un cours d'escalade à 11 heures. Il dure deux heures aussi. Ah oui. C'est bien l'escalade, non ? Oui, c'est très bien. Mais nous ne savons pas faire d'escalade. Il y a un cours pour les débutants. Vous voulez vous inscrire ? Oui, s'il vous plaît."
     },
     "questions": [
       {
@@ -42567,7 +42549,7 @@
     "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
     "support": {
       "audio": "/lib/audio/tcf/co/vie-quotidienne/on-journee-libre.mp3",
-      "transcription": "- On a une journée libre.\nOn fait quoi ?\n- Ce matin, on peut aller au musée Granet voir cette grande exposition de Paul Cézanne !\n- Super !\nJ'adore Cézanne !\n- Et après on peut aller visiter le château d'Arnajon.\nBonne idée !\nIl y a des visites guidées et on peut acheter les billets en ligne.\n- Et ce soir, qu'est-ce qu'on fait ?\n- On peut aller voir le film avec cet acteur de la Comédie française, tu sais…\n?\n- Oui, Guillaume Gallienne…\n- Quel beau programme !"
+      "transcription": "On a une journée libre, on fait quoi ? Ce matin on peut aller au musée Granet voir cette grande exposition de Paul Cézanne Super, j'adore Cézanne Et après, on peut aller visiter le château de... Euh... C'est quoi son nom ? Le château d'Arnajon. Bonne idée ! Il y a des visites guidées, et on peut acheter les billets en ligne. Et ce soir, qu'est-ce qu'on fait ? On peut aller voir le film avec cet acteur de la comédie française, tu sais... Oui ! Guillaume Gallienne. Quel beau programme !"
     },
     "questions": [
       {
@@ -45695,7 +45677,7 @@
     "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
     "support": {
       "audio": "/lib/audio/tcf/co/vie-quotidienne/bonjour-bienvenue-musee.mp3",
-      "transcription": "Bonjour et bienvenue au musée !\nLa visite guidée va commencer dans quelques minutes.\nMerci de vous rendre à la porte numéro 1 pour retrouver votre guide.\nLa visite dure quarante-cinq minutes.\nVous devez laisser votre sac à dos à l'accueil avant d'entrer.\nIl est interdit de prendre des photos dans les salles.\nBonne visite !"
+      "transcription": "Mesdames et Messieurs, la visite du musée va bientôt commencer. Vous devez laisser vos sacs à l'accueil. Vous devez aller porte 1 pour retrouver votre guide. La visite dure 45 minutes. Vous pouvez prendre des photos, mais il est interdit de manger. Il y a un restaurant au premier étage. Bonne visite !"
     },
     "questions": [
       {
@@ -45816,47 +45798,29 @@
         }
       },
       {
-        "enonce": "Quel objet faut-il laisser à l’accueil ?",
+        "enonce": "Quels objets faut-il laisser à l’accueil ?",
         "type_reponse": "qcm_texte",
         "points": 1,
         "melanger": true,
         "choix": [
           {
             "id": "a",
-            "texte": "Son sac à dos",
+            "texte": "Ses sacs",
             "correct": true
           },
           {
             "id": "b",
-            "texte": "Son manteau"
+            "texte": "Ses vêtements"
           },
           {
             "id": "c",
-            "texte": "Ses lunettes"
+            "texte": "Ses chaussures"
           }
         ],
         "formes": {
           "lignes": {
             "nb_lignes": 1,
-            "reponse_modele": "Son sac à dos"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/tcf/qcm-audit/vocab-sac-dos.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/tcf/qcm-audit/co834-manteau-dessine.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/tcf/qcm-audit/co306-lunettes-vue-dessine.webp"
-              }
-            ]
+            "reponse_modele": "Ses sacs"
           }
         }
       },
@@ -45868,22 +45832,22 @@
         "choix": [
           {
             "id": "a",
-            "texte": "Prendre des photos",
+            "texte": "Manger",
             "correct": true
           },
           {
             "id": "b",
-            "texte": "Poser des questions"
+            "texte": "Prendre des photos"
           },
           {
             "id": "c",
-            "texte": "Marcher"
+            "texte": "Écouter le guide"
           }
         ],
         "formes": {
           "lignes": {
             "nb_lignes": 1,
-            "reponse_modele": "Prendre des photos"
+            "reponse_modele": "Manger"
           }
         }
       }
@@ -46367,7 +46331,7 @@
     "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
     "support": {
       "audio": "/lib/audio/tcf/co/vie-quotidienne/paolo-bonjour-1.mp3",
-      "transcription": "Paolo — Bonjour !\nMoi, c'est Paolo.\nEt vous ?\nVous vous appelez comment ?\nNicole — Je m'appelle Nicole.\nTu peux dire « tu ».\nPaolo — Enchanté Nicole !\nTu as un prénom français.\nTu es française, non ?\nNicole — Non, je suis allemande.\nEt toi ?\nPaolo — Je suis italien.\nNicole — Et tu as quel âge ?\nPaolo — J'ai 25 ans.\nNicole — Moi, j'ai 35 ans.\nPaolo — Quelle est ta profession ?\nNicole — Je suis journaliste.\nVoici ma carte de visite.\nPaolo — Voici ma carte aussi.\nNicole — Merci !\nC'est ton numéro de portable sur la carte ?\nPaolo — Non, mon portable, c'est le 06 18 14 33 11.\nNicole — Euh…\ntu peux répéter, s'il te plaît ?"
+      "transcription": "Bonjour. Moi, c'est Paolo. Et vous, vous vous appelez comment ? Je m'appelle Nicole. Tu peux dire tu. Enchanté, Nicole. Tu as un prénom français. Tu es française, non ? Non, je suis allemande. Et toi ? Je suis italien. Et tu as quel âge ? J'ai 25 ans. Moi, j'ai 35 ans. Quelle est ta profession ? Je suis journaliste. Voici ma carte de visite. Voici ma carte aussi. Merci. C'est ton numéro de portable sur la carte ? Non. Mon portable, c'est le 06 18 14 33 11. Euh. Tu peux répéter, s'il te plaît ?"
     },
     "questions": [
       {
@@ -52397,7 +52361,7 @@
     "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
     "support": {
       "transcription": [
-        "Qu'est-ce que tu fais ?\nJe prépare une salade d'automate pour ce soir.\nTu veux de l'aide ?\nOui, tu peux couper ces tomates s'il te plaît ?",
+        "Qu'est-ce que tu fais ? Je prépare une salade de tomates pour ce soir. Tu veux de l'aide ? Oui. Tu peux couper ces tomates s'il te plaît.",
         "- Sarah, tu as vu mon parapluie ? - Oui, je l'ai mis dans la cuisine. - Dans la cuisine ? Oh non, regarde, il y a de l'eau partout. - Ah oui, désolée.",
         "Où tu vas ?\nJe vais chez ma copine Elisa.\nJe dois lui apporter son livre de français.\nAh, très bien.\nTu prends ton vélo ?\nOui.\nD'accord, mais fais attention."
       ],
@@ -54507,7 +54471,7 @@
     "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
     "support": {
       "audio": "/lib/audio/tcf/co/vie-quotidienne/vous-voulez-apprendre-langue.mp3",
-      "transcription": "Vous voulez apprendre une langue étrangère ?\nL'école de langues Abécée vous propose des cours d'anglais, d'espagnol, d'italien et d'allemand pour enfants, adolescents et adultes, du lundi au samedi.\nL'école est située boulevard de la République.\nPour plus d'informations, téléphonez au 05 43 98 76 54 ou consultez notre site Internet."
+      "transcription": "Vous voulez apprendre une langue étrangère ? L'école de langue ABC vous propose des cours d’anglais, d’espagnol, d’italien et d’allemand pour enfants, adolescents et adultes, du lundi au samedi. L'école est située boulevard de la République. Pour plus d'informations, téléphonez au 05-43-98-66-54. ou allez sur notre site internet www.ecole-abc.fr"
     },
     "questions": [
       {
@@ -56780,7 +56744,7 @@
     "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
     "support": {
       "audio": "/lib/audio/tcf/co/transports/mesdames-messieurs-station-republique.mp3",
-      "transcription": "Mesdames et messieurs, la station République est fermée pour travaux sur la ligne 8 du métro, du lundi au vendredi à partir de 20 heures.\nVous pouvez prendre le bus de remplacement numéro 10.\nLa ligne 9 reste ouverte jusqu'à 23 heures.\nLa ligne 11 est ouverte toute la nuit.\nMerci de votre compréhension."
+      "transcription": "Mesdames et messieurs, la station République est fermée pour travaux sur la ligne 8 du métro du lundi au vendredi à partir de 20h. Vous pouvez prendre le bus de remplacement numéro 10. La ligne 9 reste ouverte jusqu'à 23h. La ligne 11 est ouverte toute la nuit."
     },
     "questions": [
       {
@@ -57102,7 +57066,7 @@
     "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
     "support": {
       "transcription": [
-        "Mikael, tu mets d'assortir les courses de la voiture s'il te plaît ?\nOui, j'arrive !",
+        "Mickaël, tu m’aides à sortir les courses de la voiture, s’il te plaît ? Oui, j’arrive.",
         "Qu'est-ce que tu regardes ?\nUne émission sur les voitures Oh non, on ne peut pas regarder autre chose"
       ],
       "audios": [
@@ -57769,7 +57733,7 @@
     "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
     "support": {
       "audio": "/lib/audio/tcf/co/travail/alors-marianne-pourquoi-prends-1.mp3",
-      "transcription": "- Alors Marianne, pourquoi tu ne prends pas le train ?\n- J'adore le covoiturage.\nLes conducteurs et les passagers sont sympas et les voitures confortables…\nmais il n'y a pas de voiture-bar !\n- Et toi Antoine, tu n'aimes pas le train ?\n- Si, mais les billets sont trop chers et il y a souvent du retard.\nEt quand il y a une grève, les trains sont annulés !\n- Claire, tu voyages toujours en voiture, toi ?\n- Non, quand le trajet est long, je prends le train.\nJe réserve une place côté fenêtre et je dors !\n- Et vous achetez vos billets sur l'appli de la SNCF ?\n- Oui, c'est simple et pratique."
+      "transcription": "- Alors Marianne, pourquoi tu ne prends pas le train ?\n- J'adore le covoiturage.\nLes conducteurs et les passagers sont sympas et les voitures confortables…\nmais il n'y a pas de voiture-bar !\n- Et toi Antoine, tu n'aimes pas le train ?\n- Si, mais les billets sont trop chers et il y a souvent du retard.\nEt quand il y a une grève, les trains sont annulés !\n- Claire, tu voyages toujours en voiture, toi ?\n- Non, quand le trajet est long, je prends le train.\nJe réserve une place côté fenêtre et je dors !\n- Et vous achetez vos billets sur l'appli de la SNCF ?\n- Oui, c'est simple et pratique.\n- Quelle application ? Montre-moi."
     },
     "questions": [
       {
@@ -58584,7 +58548,7 @@
     "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
     "support": {
       "audio": "/lib/audio/tcf/co/travail/bonjour-bienvenue-camping-beau-1.mp3",
-      "transcription": "- Bonjour et bienvenue au camping Beau-Val.\n- Bonjour, on voudrait réserver pour deux nuits s'il vous plaît.\n- Vous avez une tente, un camping-car…\nune caravane peut-être ?\n- Non, on voudrait un bungalow pour 4.\n- Un moment, je regarde les disponibilités…\nIl me reste deux bungalows pour 4.\nJe vous montre sur le plan : un ici, devant la rivière, et un autre à droite de la forêt.\nQu'est-ce que vous préférez ?\n- La rivière, la rivière !\n- Bon d'accord, à côté de la rivière…\nEt c'est combien s'il vous plaît ?\n- 160 € pour deux nuits.\nC'est à quel nom ?\n- Nocella.\nVoilà ma carte…\n- Merci…\net la clé du bungalow n° 23."
+      "transcription": "Bonjour et bienvenue au camping Beauval Bonjour, on voudrait réserver pour deux nuits s'il vous plaît Vous avez une tente, un camping-car, une caravane peut-être ? Non ! On voudrait un bungalow pour quatre. Un moment, je regarde les disponibilités. Il me reste deux bungalows pour quatre. Je vous montre sur le plan. Un ici, devant la rivière, et un autre à droite de la forêt. Qu'est-ce que vous préférez ? La rivière ! La rivière ! - Devant la forêt, non ? - La rivière ! La rivière ! - Bon, d'accord, à côté de la rivière. Et, c'est combien, s'il vous plaît ? - 160 euros pour deux nuits. C'est à quel nom ? - Nocella. Voilà ma carte. - Merci. Et voilà la clé du bungalow numéro 23."
     },
     "questions": [
       {
@@ -58595,7 +58559,7 @@
         "choix": [
           {
             "id": "a",
-            "texte": "Beau-Val",
+            "texte": "Beauval",
             "correct": true
           },
           {
@@ -58610,7 +58574,7 @@
         "formes": {
           "lignes": {
             "nb_lignes": 1,
-            "reponse_modele": "Beau-Val"
+            "reponse_modele": "Beauval"
           }
         }
       },
@@ -60259,7 +60223,7 @@
     "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
     "support": {
       "audio": "/lib/audio/tcf/co/scènes courtes/02-transport-guichet-de-train.mp3",
-      "transcription": "- Bonjour, Madame.\nÀ quelle heure part le train pour Montréal ?\n- À 6 h 15, Monsieur.\n- Merci beaucoup."
+      "transcription": "Bonjour madame, à quelle heure part le train pour Montréal ? À 6h15, monsieur. Merci beaucoup."
     },
     "questions": [
       {
@@ -61181,7 +61145,7 @@
     "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
     "support": {
       "audio": "/lib/audio/tcf/co/ecole/10-école-nouveau-téléphone.mp3",
-      "transcription": "- Ouah, il est super, ton téléphone !\nIl est nouveau ?\n- Oui, c'est mon cadeau d'anniversaire.\n- Tu as de la chance.",
+      "transcription": "Waah ! Il est super ton téléphone ! Il est nouveau ? Oui, c'est mon cadeau d'anniversaire. Tu as de la chance.",
       "image": "/lib/images/tcf/co/scenes/ecole/10-ecole-nouveau-telephone.webp",
       "image_description": "Scénario vidéo (audio CO moyen, « Le nouveau téléphone », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un établissement scolaire (couloir, classe ou secrétariat). Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Ouah, il est super, ton téléphone ! » ; B : « Il est nouveau ? » ; A : « Oui, c'est mon cadeau d'anniversaire » ; B : « Tu as de la chance ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
     },
@@ -64181,7 +64145,7 @@
     "consigne": "Écoutez les messages et cochez les bonnes réponses.",
     "support": {
       "transcription": [
-        "C’est Alexandre. Je suis au magasin et j’achète deux kilos et demi de pommes de terre. Est-ce que c’est bien ça ?",
+        "C'est Alexandre, je suis au magasin et j'achète 2,5 kg de pommes de terre. Est-ce que c'est bien ça ?",
         "J’ai vingt et une paires de chaussures. C’est beaucoup !",
         "Je veux entrer dans ce magasin. Il y a 75 % de réduction !"
       ],
@@ -64444,7 +64408,7 @@
     "consigne": "Écoutez la conversation et reliez les informations.",
     "support": {
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_07.mp3",
-      "transcription": "– Je suis né le 28 août 1978. Et toi Audrey ?\n– Moi ? Le 1er mars 1982.\n– Tu es plus jeune que moi. Et toi Alexandra ?\n– Je suis née la même année, le 30 mai 1982.",
+      "transcription": "Je suis né le 28 août 1978. Et toi, Audrey ? Moi ? Le 1er mars 1982. Tu es plus jeune que moi. Et toi, Alexandra ? Je suis née la même année, le 30 mai 1982.",
       "image": "/lib/images/tcf/qcm-audit/revue-20261107-7b4cddf12a.webp",
       "image_description": "Scénario vidéo (audio CO court, « Piste 07 », durée indicative 8–15 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Je suis né le 28 août 1978 » ; B : « Et toi Audrey ? » ; A : « Moi ? » ; B : « Le 1er mars 1982 » ; A : « Tu es plus jeune que moi ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
     },
@@ -67222,8 +67186,8 @@
     "support": {
       "transcription": [
         "Après la pluie et les températures basses, enfin 18 degrés à Paris.",
-        "N’oubliez pas votre manteau, votre écharpe et vos gants ! Seulement 4 degrés à Lille !",
-        "Aujourd’hui, un climat agréable avec 15 degrés à Paris, 19 degrés à Lyon et 23 degrés à Bordeaux."
+        "N'oubliez pas votre manteau, votre écharpe et vos gants. Seulement 4°C à Lille.",
+        "Aujourd'hui, un climat agréable avec 15 degrés à Paris, 19 degrés à Lyon et 23 degrés à Bordeaux."
       ],
       "audios": [
         "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_15-1.mp3",
@@ -68935,7 +68899,7 @@
     "support": {
       "transcription": [
         "Mesdames, messieurs, nous vous rappelons que le poids maximum des bagages à main est de 12 kilos. Les autres bagages doivent être enregistrés avant de monter dans l'avion. Merci.",
-        "Mesdames, Messieurs. Tous nos trains ont un bar pour acheter des boissons et des biscuits pendant votre voyage. Merci de votre attention et bon voyage.",
+        "Mesdames, messieurs, tous nos trains ont un bar pour acheter des boissons et des biscuits pendant votre voyage. Merci de votre attention et bon voyage !",
         "Mesdames, Messieurs, les quais 3 et 5 sont exceptionnellement fermés. Tous les trains partent des quais 2 et 4. Merci de votre attention."
       ],
       "audios": [
@@ -72960,8 +72924,8 @@
       "transcription": [
         "Le rendez-vous de mercredi est à 11 h 30.",
         "Le déjeuner avec le directeur est à midi.",
-        "Votre rendez-vous avec le médecin est à 10 h 15.",
-        "Votre entretien commence à 9 h 45.",
+        "Votre rendez-vous avec le médecin est à 10h15.",
+        "Votre entretien commence à dix heures moins le quart.",
         "Le dentiste confirme votre rendez-vous de mercredi à 14 h 20."
       ],
       "audios": [
@@ -73274,40 +73238,22 @@
         "choix": [
           {
             "id": "a",
-            "texte": "9 h 45",
+            "texte": "Dix heures moins le quart",
             "correct": true
           },
           {
             "id": "b",
-            "texte": "9 h 15"
+            "texte": "Dix heures et quart"
           },
           {
             "id": "c",
-            "texte": "10 h 45"
+            "texte": "Dix heures et demie"
           }
         ],
         "formes": {
           "lignes": {
             "nb_lignes": 1,
-            "reponse_modele": "9 h 45"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/qcm-audit/vocab-horloge-0945.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/tcf/qcm-audit/vocab-horloge-0915.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/tcf/qcm-audit/co306-horloge-1045-dessinee.webp"
-              }
-            ]
+            "reponse_modele": "Dix heures moins le quart"
           }
         },
         "audio": 4
@@ -77828,7 +77774,7 @@
       "transcription": [
         "Bonjour. Je vous souhaite la bienvenue. Je suis contente de vous rencontrer. Asseyez-vous.",
         "Samuel, qu’est-ce que tu penses de cette note ? Pour toi, est-ce que c’est une bonne note ?",
-        "Monsieur et Madame Leroy ? Bonjour. Je suis Monsieur Dumont, le professeur de français de votre fils. Comment allez-vous ?",
+        "Monsieur et madame Leroy ? Bonjour, je suis Monsieur Dumont, le professeur de français de votre fils. Comment allez-vous ?",
         "Aurélie et Adrien, est-ce que vous pouvez lire s’il vous plaît ? Aurélie, toi, tu lis la page 4 et toi, Adrien, tu lis la page 5."
       ],
       "audios": [
@@ -87582,7 +87528,7 @@
     "support": {
       "transcription": [
         "Le manteau coûte 115 €.",
-        "Alors, 1 kilo de fraises, 2,50 €, 2 kilos de pommes, 3,20 € et 1 litre de jus d’orange, 2 €, ça fait 7,70 € s’il vous plaît.",
+        "Alors, 1 kilo de fraises, 2,50 € 2 kilos de pommes, 3,20 € Et 1 litre de jus d'orange, 2 € Ça fait 7,70 € s'il vous plaît",
         "Le menu du jour coûte 24 €. Le plat principal seul coûte 16 €. Avec le dessert, c’est 21 €.",
         "Il y a un départ pour Paris dans 30 minutes. Le billet coûte 68 euros. Ensuite, le prochain départ est à 11 h 58. C'est le même prix."
       ],
@@ -88548,7 +88494,7 @@
     "consigne": "Écoutez le document. Lisez les questions, puis répondez.",
     "support": {
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_87.mp3",
-      "transcription": "– L’exercice 3 est un dialogue simulé. Nous\nsommes dans une épicerie. Vous voulez acheter\ndes produits. Vous êtes le client et je suis la\nvendeuse. Nous commençons.\n– Bonjour Madame.\n– Bonjour Monsieur.\n– Je voudrais acheter du sucre et des tomates s’il\nvous plaît.\n– Oui, combien de kilos de sucre ?\n– 2 kilos de sucre s’il vous plaît.\n– D’accord et combien de tomates ?\n– 1 kilo de tomates s’il vous plaît. Quel est le prix\ndu kilo de tomates ?\n– 1,30 €.\n– Merci. Et combien coûte le sucre ?\n– Le sucre ? C’est 3 € pour les 2 kilos.\n– Merci.\n– Est-ce que vous voulez autre chose Monsieur ?\n– Oui, je voudrais aussi du pain s’il vous plaît. Est-ce\nque vous avez des baguettes ?\n– Oui, combien de baguettes est-ce que vous\nvoulez ?\n– Seulement 1 baguette. Quel est le prix ?\n– La baguette coûte 70 centimes.\n– Merci. Quel est le prix total pour le sucre, les\ntomates et la baguette s’il vous plaît ?\n– Alors, le prix total est de 5 €. Comment est-ce\nque vous payez Monsieur ?\n– Je paye en espèces. Et voilà 5 €.\n– Merci Monsieur. Et voilà vos produits.\n– Merci beaucoup. Au revoir Madame et bonne\njournée.\n– Au revoir Monsieur. Merci Youssef. L’épreuve\nest terminée.\nÉpreuve blanche 1",
+      "transcription": "Bonjour madame. Bonjour monsieur. Je voudrais acheter du sucre et des tomates s'il vous plaît. Oui ? Combien de kilos de sucre ? Deux kilos de sucre s'il vous plaît. D'accord. Et combien de tomates ? Un kilo de tomates s'il vous plaît. Quel est le prix du kilo de tomates ? Un euro trente. Merci. Et combien coûte le sucre ? Le sucre, c'est trois euros pour les deux kilos. Merci. Est-ce que vous voulez autre chose, monsieur ? Oui, je voudrais aussi du pain, s'il vous plaît. Est-ce que vous avez des baguettes ? Oui. Combien de baguettes est-ce que vous voulez ? Seulement une baguette. Quel est le prix ? La baguette coûte 70 centimes. Merci. Quel est le prix total pour le sucre, les tomates et la baguette, s'il vous plaît ? Alors, le prix total est de 5 euros. Comment est-ce que vous payez, monsieur ? Je paye en espèces. Et voilà, 5 euros. Merci, monsieur. Et voilà vos produits. Merci beaucoup. Au revoir, madame et bonne journée. Au revoir, monsieur.",
       "image": "/lib/images/tcf/qcm-audit/revue-20261107-2dd22ea9d8.webp",
       "image_description": "Scénario vidéo (audio CO moyen, « Piste 87 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « L’exercice 3 est un dialogue simulé » ; B : « Nous » ; A : « Sommes dans une épicerie » ; B : « Vous voulez acheter » ; A : « Des produits » ; B : « Vous êtes le client et je suis la » ; A : « Vendeuse » ; B : « Nous commençons ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
     },

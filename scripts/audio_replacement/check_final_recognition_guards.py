@@ -34,4 +34,8 @@ row=assess('Le train part à 15 h 40.','Le train part à 3 h 40.','Le train part
 assert row['manual_review_ready'] and row['selected_recognition_engines']==['whisper','ctc']
 assert not assess('Le train part à 17 h 40.','Le train part à 3 h 40.','Le train part à 3 h 40.','Le train part à 17 h 40.',bad_resolution=True)['manual_review_ready']
 assert not assess('Le train part à 15 h 40.','Le train part à 15 h 40.','Page 1. Le train part à 15 h 40.')['manual_review_ready']
-print('Six factual and provenance guard regressions passed.')
+assert not assess('Astrid, tu veux réviser cet examen avec moi demain ?', 'Tu veux réviser cet examen avec moi demain ?', 'Tu veux réviser cet examen avec moi demain ?')['manual_review_ready']
+assert not assess('Nous avons rendez-vous demain dans la bibliothèque.', 'Nous avons rendez-vous demain dans la', 'Nous avons rendez-vous demain dans la')['manual_review_ready']
+assert assess('Salut Carine, tu viens avec moi au cinéma ?', 'Salucarine, tu viens avec moi au cinéma ?', 'Salut Carine, tu viens avec moi au cinéma ?')['manual_review_ready']
+assert not assess('La remise est de 30 pour cent.', 'La remise est de 50 pour cent.', 'La remise est de 50 pour cent.')['manual_review_ready']
+print('Ten factual, boundary, tokenization and provenance guard regressions passed.')
