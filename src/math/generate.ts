@@ -37,7 +37,7 @@ import { tryGenerateSanteBlock } from '@/sante/generate'
 import { tryGenerateSocieteBlock } from '@/societe/generate'
 import { isTcmCfrConsignesType, TCM_CFR_MAX_SCORE } from '@/tcm-cfr/test'
 import { tryGenerateTcmCscBlock } from '@/tcm-csc/generate'
-import { isTcmCscConsignesType } from '@/tcm-csc/test'
+import { isTcmCscConsignesType, TCM_CSC_MAX_SCORE } from '@/tcm-csc/test'
 import { tryGenerateVocabulaireBlock } from '@/vocabulaire/generate'
 import { isGrammarTheoryType } from '@/francais/grammar-theory'
 import { sanitizeItemNumberNoise } from './column-arith'
@@ -122,7 +122,7 @@ function buildSingleBlock(
     return {
       title: 'Informations',
       instruction: type?.instruction ?? 'Lisez les consignes avant de commencer le test.',
-      items: generateTpmInformations('tcm-csc', 0),
+      items: generateTpmInformations('tcm-csc', TCM_CSC_MAX_SCORE),
     }
   }
   const tcf = tryGenerateTcfBlock(config, rng)
@@ -178,7 +178,7 @@ function buildSingleBlock(
       items: logique.items,
     }
   }
-  const tcmCsc = tryGenerateTcmCscBlock(config)
+  const tcmCsc = tryGenerateTcmCscBlock(config, seed)
   if (tcmCsc) {
     return {
       title: fallbackTitle,

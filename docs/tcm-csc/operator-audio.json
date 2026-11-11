@@ -1,0 +1,30 @@
+{
+  "engine": "eSpeak NG, French voice fr, through espeakng-loader 0.2.4",
+  "rateWordsPerMinute": 150,
+  "source": "scripts/generate-csc-operator-audio.py",
+  "note": "The mathematical final s in plus is explicitly pronounced. Existing number recordings are reused unchanged.",
+  "clips": [
+    {
+      "file": "public/lib/audio/nombre/plus.mp3",
+      "spoken": "plusse",
+      "phonemes": "plˈys",
+      "bytes": 5493,
+      "sha256": "79d8c830cda523d4f9e30388166d6d9fca26156f2611c630f0f38e6d25f07f09",
+      "codec_name": "mp3",
+      "sample_rate": "22050",
+      "channels": 1,
+      "duration": "0.496327"
+    },
+    {
+      "file": "public/lib/audio/nombre/moins.mp3",
+      "spoken": "moins",
+      "phonemes": "mwˈɛ̃",
+      "bytes": 4109,
+      "sha256": "64e74759074e7757293ab8814e15fd7f9c7bf37a80c337a4c16b4b845810465d",
+      "codec_name": "mp3",
+      "sample_rate": "22050",
+      "channels": 1,
+      "duration": "0.417959"
+    }
+  ]
+}

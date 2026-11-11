@@ -37,6 +37,8 @@ import {
 import { parseAlphaType } from '@/alphabetisation/kinds'
 import { resolveAlphaSelection } from '@/alphabetisation/themes'
 import type { ExerciseBlock, WorksheetPage } from '@/math/types'
+import { useState } from 'react'
+import { downloadCscAudios } from '@/tcm-csc/audio'
 
 export type UseGeneratorAudioParams = {
   activeBlock: ExerciseBlock
@@ -63,6 +65,14 @@ export function useGeneratorAudio({
   domain,
   soutienType1Words,
 }: UseGeneratorAudioParams) {
+  const [cscAudioBusy, setCscAudioBusy] = useState(false), [cscAudioError, setCscAudioError] = useState('')
+  async function downloadActiveTcmCscAudios() {
+    if (cscAudioBusy) return
+    setCscAudioBusy(true); setCscAudioError('')
+    try { await downloadCscAudios(worksheets) }
+    catch { setCscAudioError('Un audio n’a pas pu être préparé. Vérifiez la connexion et réessayez le téléchargement.') }
+    finally { setCscAudioBusy(false) }
+  }
   /** Exercice TCF courant (banque / édition) pour télécharger ses audios. */
   function currentTcfExercise(): TcfExercise | undefined {
     if (activeBlock.tcfExercise) return activeBlock.tcfExercise
@@ -299,6 +309,7 @@ export function useGeneratorAudio({
   }
 
   return {
+    downloadActiveTcmCscAudios, cscAudioBusy, cscAudioError,
     downloadActiveTcfAudios,
     downloadActiveTcmCfrAudios,
     downloadActiveSoutienMotsAudio,

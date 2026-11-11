@@ -1002,7 +1002,7 @@ export function firstTypeFor(domain: Domain, topic?: string, track?: FrenchTrack
                       : domain === 'logique'
                         ? 'logique-suite-graphique'
                         : domain === 'tcm-csc'
-                        ? 'tcm-csc-a-venir'
+                        ? 'tcm-csc-test'
                         : domain === 'tcm-cfr'
                           ? 'tcm-cfr-info'
                           : domain === 'jeux'

@@ -12,6 +12,7 @@ import { TcfItemView } from './tcf/TcfItemView'
 import { AlgebraRow } from './item-view/algebra'
 import { ColumnOp, DivisionColumn } from './item-view/columns'
 import { DecomposeBlock } from './item-view/decompose'
+import { CscTaskBlock, CscProblemBlock } from './item-view/tcm-csc'
 import { OpTableBlock } from './item-view/op-table'
 import { CompareRow, EncadrementRow, OrderRow, SequenceRow } from './item-view/compare'
 import { CoordBlock, GeoBlock } from './item-view/geo-coord'
@@ -203,6 +204,7 @@ export function ItemView({
     item.layout === 'symmetry-grid' ||
     item.layout === 'segment-measure' ||
     item.layout === 'audio-dictation'
+    || item.layout === 'csc-task' && item.cscTask?.kind !== 'operator'
   return (
     <div
       className={`exercise-item layout-${item.layout}${isDraftPad ? ' is-problem' : ''}${
@@ -302,6 +304,7 @@ export function ItemView({
         {item.layout === 'division-column' && <DivisionColumn item={item} mode={mode} />}
         {item.layout === 'op-table' && <OpTableBlock item={item} mode={mode} />}
         {item.layout === 'decompose' && <DecomposeBlock item={item} mode={mode} />}
+        {item.layout === 'csc-task' && <CscTaskBlock item={item} mode={mode} />}
         {item.layout === 'compare' && <CompareRow item={item} mode={mode} />}
         {item.layout === 'encadrement' && <EncadrementRow item={item} mode={mode} />}
         {item.layout === 'select' && <SelectPillsRow item={oralItem} mode={mode} />}
@@ -324,7 +327,8 @@ export function ItemView({
         {item.layout === 'fraction-shape' && <FractionShapeBlock item={item} mode={mode} />}
         {item.layout === 'geo' && <GeoBlock item={item} mode={mode} draftGrid={draftGrid} />}
         {item.layout === 'coord' && <CoordBlock item={item} mode={mode} coordEdit={coordEdit} />}
-        {item.layout === 'algebra' && (
+        {item.layout === 'algebra' && item.cscTask?.kind === 'problem' && <CscProblemBlock item={item} mode={mode} />}
+        {item.layout === 'algebra' && item.cscTask?.kind !== 'problem' && (
           <AlgebraRow item={item} mode={mode} padLeft={algebraPadLeft} draftGrid={draftGrid} />
         )}
         {item.layout === 'equation' && <EquationBlock item={item} mode={mode} draftGrid={draftGrid} />}

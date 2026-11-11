@@ -202,7 +202,7 @@ export function CoordBlock({
     <div
       className={`coord-block${scene ? ' has-scene' : ''}${hasLines || isConstruct ? ' has-lines' : ''}${
         (hasLines || isConstruct) && questions.length >= 7 ? ' is-dense' : ''
-      }${scene ? ' is-centered' : ''}${useCfrPlan ? ' is-cfr-plan' : ''}`}
+      }${scene ? ' is-centered' : ''}${useCfrPlan ? ' is-cfr-plan' : ''}${item.cscTask?.kind === 'coordinates-left' ? ' is-csc-left' : ''}`}
     >
       {useCfrPlan ? (
         <div className="coord-cfr-briefing">

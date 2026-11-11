@@ -43,6 +43,7 @@ function toItem(entry: BankEntry, mode: LogiqueMode, rng: Rng): MathItem {
       ? undefined
       : Math.max(0, choices.indexOf(correctSrc))
   const puzzle: LogiquePuzzle = {
+    id: entry.id,
     mode,
     stem: entry.stem ?? [],
     choices,
@@ -61,6 +62,15 @@ function toItem(entry: BankEntry, mode: LogiqueMode, rng: Rng): MathItem {
           : labels[correctIndex ?? 0] ?? 'A',
     logique: puzzle,
   }
+}
+
+export function logiqueBankOptions(typeId: string): { id: string; stem: string[] }[] {
+  return (BANK[typeId] ?? []).map((entry) => ({ id: entry.id, stem: [...entry.stem] }))
+}
+export function logiqueItemById(typeId: string, id: string, rng: Rng): MathItem {
+  const entry = (BANK[typeId] ?? []).find((candidate) => candidate.id === id)
+  if (!entry) throw new Error('Choisissez une question de la banque de logique.')
+  return toItem(entry, modeOf(typeId), rng)
 }
 
 const DEFAULT_COUNT: Record<string, number> = {

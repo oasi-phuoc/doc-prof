@@ -1,6 +1,7 @@
 import { useMemo } from 'react'
 import type { MathItem, PreviewMode } from '@/math/types'
 import { mirrorPoint, type GridPt } from '@/tcm-cfr/symetrie'
+import { CscCopyBlock } from './tcm-csc'
 
 /**
  * Dictée audio TCM CFR (ex. 1–2) : uniquement la zone de réponse sur la fiche.
@@ -48,6 +49,7 @@ export function SymmetryGridBlock({
     if (!tpl?.dots) return []
     return tpl.dots.map((p) => mirrorPoint(p, tpl.axisX))
   }, [tpl])
+  if (item.cscTask?.kind === 'copy') return <CscCopyBlock item={item} mode={mode} />
   if (!tpl) return null
   const size = 280
   const pad = 12
@@ -146,7 +148,7 @@ export function SegmentMeasureBlock({
       <div className="tcm-cfr-segment-frame">
         {segments.map((seg, i) => {
           const widthMm = Math.min(160, seg.mm)
-          const letter = SEGMENT_LETTERS[i] ?? String.fromCharCode(97 + i)
+          const letter = item.cscTask?.kind === 'length-table' ? String.fromCharCode(65 + i) : SEGMENT_LETTERS[i] ?? String.fromCharCode(97 + i)
           return (
             <div className="tcm-cfr-segment-row" key={`seg-${i}`}>
               <span className="tcm-cfr-segment-num">{letter}.</span>
@@ -163,7 +165,8 @@ export function SegmentMeasureBlock({
           )
         })}
       </div>
-      {qPrompts.map((q, qi) => (
+      {item.cscTask?.kind === 'length-table' && <table className="csc-length-table"><thead><tr><th scope="col">Segment</th>{segments.map((_, i) => <th scope="col" key={i}>{String.fromCharCode(65 + i)}</th>)}</tr></thead><tbody>{['Le plus long', 'Le plus court'].map((label, row) => <tr key={label}><th scope="row">{label}</th>{segments.map((_, i) => <td key={i}><span className="csc-length-check">{show && answers[row] === String.fromCharCode(65 + i) ? '✓' : '\u00a0'}</span></td>)}</tr>)}</tbody></table>}
+      {item.cscTask?.kind !== 'length-table' && qPrompts.map((q, qi) => (
         <div className="tcm-cfr-segment-q-line" key={`q-${qi}`}>
           <span className="tcm-cfr-segment-q-num" aria-hidden>
             {qi + 1}.

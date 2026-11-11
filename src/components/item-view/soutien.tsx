@@ -158,7 +158,7 @@ export function CountIconsBlock({ item, mode }: { item: MathItem; mode: PreviewM
   const show = mode === 'answers'
   if (!scene) return null
   return (
-    <div className="count-icons-block" aria-label="Compter les formes">
+    <div className={`count-icons-block${item.cscTask?.kind === 'large-count' ? ' is-csc-large' : ''}`} aria-label="Compter les formes">
       <div className="count-icons-frame" role="img" aria-label={`Cadre avec ${scene.label}`}>
         {scene.tokens.map((token, index) => (
           <span

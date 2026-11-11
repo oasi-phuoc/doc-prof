@@ -1,4 +1,4 @@
-/** Domaine TCM CSC — page Informations ; exercices à venir (hors recette TCM). */
+/** Domaine TCM CSC : informations, 23 exercices et banque de problèmes. */
 export { TCM_CSC_DOMAIN, TCM_CSC_TOPICS, TCM_CSC_EXERCISE_TYPES } from './catalog'
 export { tryGenerateTcmCscBlock } from './generate'
 export {
@@ -6,5 +6,7 @@ export {
   buildTcmCscTestPages,
   isTcmCscConsignesType,
   isTcmCscDomain,
+  TCM_CSC_STEPS,
+  TCM_CSC_MAX_SCORE,
 } from './test'
 export { isTcmCscType } from './types'

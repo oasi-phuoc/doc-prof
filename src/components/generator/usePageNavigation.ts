@@ -28,6 +28,7 @@ import {
   isTcmCfrDomain,
   TCM_CFR_DOCUMENT_TITLE,
 } from '@/tcm-cfr/test'
+import { buildTcmCscTestPages, isTcmCscDomain, TCM_CSC_DOCUMENT_TITLE } from '@/tcm-csc/test'
 import {
   isCalliPhrasesType,
 } from '@/calligraphie/defaults'
@@ -278,6 +279,15 @@ export function usePageNavigation({
       }))
       return
     }
+    if (isTcmCscDomain(next)) {
+      setSheetIndex(0)
+      setPages(buildTcmCscTestPages())
+      setEvalMode(true)
+      setPointsPerQuestion(1)
+      setMode('student')
+      setInstitutional((current) => ({ ...current, course: 'Mathématiques', documentTitle: TCM_CSC_DOCUMENT_TITLE }))
+      return
+    }
     if (isTcmCfrDomain(next)) {
       setSheetIndex(0)
       setPages(buildTcmCfrTestPages())
@@ -298,6 +308,7 @@ export function usePageNavigation({
     const type = firstTypeFor(next)
     const leavingTpm =
       isTpmDomain(activePage.domain) ||
+      isTcmCscDomain(activePage.domain) ||
       isTcmCfrDomain(activePage.domain) ||
       isTpfFamilyDomain(activePage.domain)
     if (leavingTpm) {
