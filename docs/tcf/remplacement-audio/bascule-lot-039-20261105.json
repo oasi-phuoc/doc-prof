@@ -1,0 +1,5164 @@
+{
+  "batch": 39,
+  "audio_replacements": [
+    {
+      "ref": "/lib/audio/tcf/co/scènes courtes/11-magasin-annonce-sortie-nouvel-album.mp3",
+      "previous_sha256": "58634ede81cf32c42b01fcf6188c007028caef704fe41478b7262095a7b5ad26",
+      "candidate_sha256": "e10354a5c3d9382f33fda000e4badfeed01d04b0ae286cedf359be2d429e428a",
+      "rollback_git_blob": "e402175481f1a7c7748a6f79f4e10a0e47fda88f",
+      "source_id": "9782090351958:052:5f5797e2f308",
+      "source_sha256": "5f5797e2f30866a335ccc3d9e63ae54333b4aed91c614dcd6bb64de5d3307231",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "e10354a5c3d9382f33fda000e4badfeed01d04b0ae286cedf359be2d429e428a",
+        "duration": 16.312,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "5f5797e2f30866a335ccc3d9e63ae54333b4aed91c614dcd6bb64de5d3307231",
+          "proof": {
+            "previous_sha256": "a69d40bd36fe6bf41e369d2aa02c0b210c0c60bba82473da79d0d923f84c156f",
+            "sha256": "e10354a5c3d9382f33fda000e4badfeed01d04b0ae286cedf359be2d429e428a",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/345-a69d40bd36fe-2453018-3172378/candidate.mp3",
+            "source_sha256": "5f5797e2f30866a335ccc3d9e63ae54333b4aed91c614dcd6bb64de5d3307231",
+            "source_file": "/workspace/attachments/967edda1-c97d-481d-9107-2a886e029621/9782090351958_52_CO_ex50.mp3",
+            "source_decoded_pcm_sha256": "88300c2a20cac97442629ea88b41169918014470dceff1c9710e2686511c14bd",
+            "source_sample_rate": 44100,
+            "source_channels": 1,
+            "source_start_frame": 2453018,
+            "source_end_frame": 3172378,
+            "source_start": 55.623990929705215,
+            "source_end": 71.93600907029479,
+            "source_slice_pcm_sha256": "295caac4f0846d3fdccd2ebae4add76f3585462bc626dbbcac4a9a04c74c6109",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/345-a69d40bd36fe-2453018-3172378/start_before.flac",
+                "sha256": "a91ae77d8d0d53fd1941dc66e02072f4e93ac57695b115616898dea1521abe38",
+                "source_start_frame": 2364818,
+                "source_end_frame": 2453018,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/345-a69d40bd36fe-2453018-3172378/start_after.flac",
+                "sha256": "bdcb68efd14095510d0d45f9ed47220318446736358d10cb9e952f962a0ba49f",
+                "source_start_frame": 2453018,
+                "source_end_frame": 2541218,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/345-a69d40bd36fe-2453018-3172378/end_before.flac",
+                "sha256": "6259c6648cc43bcfccdf6eacb00ad6231f5b5ab3984492104d962b51a9063581",
+                "source_start_frame": 3084178,
+                "source_end_frame": 3172378,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/345-a69d40bd36fe-2453018-3172378/end_after.flac",
+                "sha256": "249f29e4f10baffe9dc15bf19b3bd85ebb1a9889965e3f906e0a173e62490f41",
+                "source_start_frame": 3172378,
+                "source_end_frame": 3256704,
+                "available_seconds": 1.9121541950113379
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Le",
+                "start": 55.704,
+                "end": 55.944,
+                "kind": "dialogue",
+                "asr_word_index": 98,
+                "raw_start": 55.70400002861023,
+                "raw_end": 55.94400002324581,
+                "native_token_indices": [
+                  5
+                ]
+              },
+              "last": {
+                "text": "invitation.",
+                "start": 71.144,
+                "end": 71.783999,
+                "kind": "dialogue",
+                "asr_word_index": 137,
+                "raw_start": 71.14399984741212,
+                "raw_end": 71.86399923527242,
+                "native_token_indices": [
+                  88,
+                  89,
+                  90,
+                  91
+                ]
+              },
+              "previous_word_end": 54.264,
+              "next_word_start": 73.84816326530613,
+              "first_source_speech_region": [
+                56.192,
+                60.48
+              ],
+              "last_source_speech_region": [
+                70.432,
+                71.776
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. Natural native margins up to one second are retained to avoid trimming a quiet first word or its final decay. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/345-a69d40bd36fe-2453018-3172378/waveform.svg",
+              "sha256": "60c4a4fffe6e9126c803041fe97c2af23d06bb359246c2252997e2f466bbd1b4"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.0,
+          "relative_rms_threshold": 0.008061735853552819,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.544,
+          "trailing_non_speech_seconds": 0.184,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
+      "editorial_reason": "Revue éditoriale du dialogue, des questions et de leurs trois propositions. Corrections des faits uniquement lorsque les reconnaissances les étayent ; deux reconnaissances finales et marges qualifiées restent requises avant bascule.",
+      "numeric_resolution": {
+        "candidate_sha256": "e10354a5c3d9382f33fda000e4badfeed01d04b0ae286cedf359be2d429e428a",
+        "evidence_file": "/workspace/work/tcf-bascule-complete-20261105/numeric-article-evidence/e10354a5c3d9382f33fda000e4badfeed01d04b0ae286cedf359be2d429e428a.json",
+        "evidence_sha256": "ce8f40174269c7be02183712eb9861531587dadb92f6677fda9f5dc0ce41843e",
+        "reviewed_numbers": [
+          "10",
+          "20",
+          "30",
+          "15",
+          "1"
+        ],
+        "reason": "Whisper dit jouez à notre jeu, Parakeet projette jouez un autre jeu ; le un du comparateur ne constitue pas un fait chiffré. Les quinze invitations sont confirmées dans les deux transcriptions."
+      },
+      "additional_recognition_evidence": null,
+      "previous_duration": 20.04,
+      "previous_pool": null,
+      "question_changes": [
+        {
+          "exercise": "tcf-sc-11-nouvel-album-co-2",
+          "question": 1,
+          "before": {
+            "enonce": "Pourquoi Saïa vient-elle au magasin ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Pour la sortie de son nouvel album",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Pour signer des livres"
+              },
+              {
+                "id": "c",
+                "texte": "Pour un défilé de mode"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Pour la sortie de son nouvel album"
+              }
+            }
+          },
+          "after": {
+            "enonce": "Pourquoi Zaya vient-elle au magasin ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Pour la sortie de son nouvel album",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Pour signer des livres"
+              },
+              {
+                "id": "c",
+                "texte": "Pour un défilé de mode"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Pour la sortie de son nouvel album"
+              }
+            }
+          }
+        },
+        {
+          "exercise": "tcf-sc-11-nouvel-album-co-2",
+          "question": 5,
+          "before": {
+            "enonce": "Quel magasin reçoit Saïa ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Joli Culture",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Belle Musique"
+              },
+              {
+                "id": "c",
+                "texte": "Tout Loisirs"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Joli Culture"
+              }
+            }
+          },
+          "after": {
+            "enonce": "Quel magasin reçoit Zaya ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Joli Culture",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Belle Musique"
+              },
+              {
+                "id": "c",
+                "texte": "Tout Loisirs"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Joli Culture"
+              }
+            }
+          }
+        },
+        {
+          "exercise": "tcf-sc-11-nouvel-album-co-2",
+          "question": 3,
+          "before": {
+            "enonce": "Quel mot faut-il envoyer ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "SAÏA",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "ALBUM"
+              },
+              {
+                "id": "c",
+                "texte": "CONCERT"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "SAÏA"
+              }
+            }
+          },
+          "after": {
+            "enonce": "Quel mot faut-il envoyer ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "ZAYA",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "ALBUM"
+              },
+              {
+                "id": "c",
+                "texte": "CONCERT"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "ZAYA"
+              }
+            }
+          }
+        },
+        {
+          "exercise": "tcf-sc-11-nouvel-album-co-2",
+          "question": 4,
+          "before": {
+            "enonce": "Combien de participants reçoivent une invitation ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Dix",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Cinq"
+              },
+              {
+                "id": "c",
+                "texte": "Vingt"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Dix"
+              }
+            }
+          },
+          "after": {
+            "enonce": "Combien de participants reçoivent une invitation ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Quinze",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Cinq"
+              },
+              {
+                "id": "c",
+                "texte": "Vingt"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Quinze"
+              }
+            }
+          }
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_20-2.mp3",
+      "previous_sha256": "d9a7ad79feb8b59ed47c994fc29e18f109a298f203e225f71019623fcacd04ae",
+      "candidate_sha256": "bcb5cd2c39e1f5e2f325632c83b93c41bc67c77b96ec98adc73b3d106723db33",
+      "rollback_git_blob": "2888aa4984d665f7c2ae984f7a65729364dd7f43",
+      "source_id": "delf_a1_2022:020:2c1a47878cfe",
+      "source_sha256": "2c1a47878cfe95342d0b2b0ac8b6bf0a9827ff26571ef0f77d75b5edd84ea274",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "bcb5cd2c39e1f5e2f325632c83b93c41bc67c77b96ec98adc73b3d106723db33",
+        "duration": 10.29,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "2c1a47878cfe95342d0b2b0ac8b6bf0a9827ff26571ef0f77d75b5edd84ea274",
+          "proof": {
+            "previous_sha256": "024b73daf3647d1da25ae3c17ab7c35865dd85e823c386801b7937e79e7c88e4",
+            "sha256": "bcb5cd2c39e1f5e2f325632c83b93c41bc67c77b96ec98adc73b3d106723db33",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/train-361-native/candidate.mp3",
+            "source_sha256": "2c1a47878cfe95342d0b2b0ac8b6bf0a9827ff26571ef0f77d75b5edd84ea274",
+            "source_file": "/workspace/work/tcf-audio-replacement/incoming/a1/delf_a1_2022_piste_20.mp3",
+            "source_decoded_pcm_sha256": "3ae9f7338aae1a374576e89f885cd8240730ed008568984fe83a01bb04c8aa66",
+            "source_sample_rate": 44100,
+            "source_channels": 2,
+            "source_start_frame": 1241856,
+            "source_end_frame": 1695645,
+            "source_start": 28.16,
+            "source_end": 38.45,
+            "source_slice_pcm_sha256": "4086848b520ecbbd447c491da4e27a51ff87d1b08f8b8a3954b9b10dee1231d5",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/train-361-native/start_before.flac",
+                "sha256": "95f90e42622566a34e929d09fcded10603903a2b4f8a4884300afed0a76f4da6",
+                "source_start_frame": 1153656,
+                "source_end_frame": 1241856,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/train-361-native/start_after.flac",
+                "sha256": "abe38c260473bf32d5fb6c2fc93c0ff5b191476ed91020ee937f8aa6fc048782",
+                "source_start_frame": 1241856,
+                "source_end_frame": 1330056,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/train-361-native/end_before.flac",
+                "sha256": "d6e6baba71702804d62a21751862e5c37fdab9a0c9d6052dc0bb79014c61aa76",
+                "source_start_frame": 1607445,
+                "source_end_frame": 1695645,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/train-361-native/end_after.flac",
+                "sha256": "5ccaaf0014d97f721b691183794de3db3cd90c0cd1f23db3de0d1de7e8da4747",
+                "source_start_frame": 1695645,
+                "source_end_frame": 1783845,
+                "available_seconds": 2.0
+              }
+            },
+            "human_listening_performed": false,
+            "reason": "The old proposal started at ont un bar. Source-context CTC confirms the preceding Mesdames, messieurs, tous nos trains; native range restored before the complete utterance and after the numbered label, without touching speech. No synthetic padding.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/train-361-native/waveform.svg",
+              "sha256": "b45ab1f58ace2f9a575452b0c0a71741f4e1196805e8902a29d9c548713c47be"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.0,
+          "relative_rms_threshold": 0.004811368882656098,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.704,
+          "trailing_non_speech_seconds": 0.434,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "ctc"
+      ],
+      "editorial_reason": "Début complet restauré dans le PCM source : Mesdames, messieurs, tous nos trains. Le brouillon précédent commençait au milieu de la phrase. Parakeet et CTC reconnaissent le nouveau fichier complet, fenêtres natives et marges contrôlées. Les quatre questions sont étayées par ce message.",
+      "numeric_resolution": {
+        "candidate_sha256": "bcb5cd2c39e1f5e2f325632c83b93c41bc67c77b96ec98adc73b3d106723db33",
+        "evidence_file": "/workspace/work/tcf-bascule-complete-20261105/numeric-article-evidence/bcb5cd2c39e1f5e2f325632c83b93c41bc67c77b96ec98adc73b3d106723db33.json",
+        "evidence_sha256": "5d69425c9ea5b1ac66cf6904acb772ca138366dd5aaf86fb8b19b3432035e3ca",
+        "reviewed_numbers": [
+          "1"
+        ],
+        "reason": "Parakeet confirme un bar ; CTC reconnaît unt bard. Le début Mesdames messieurs tous nos trains est complet dans les deux nouvelles reconnaissances."
+      },
+      "additional_recognition_evidence": null,
+      "previous_duration": 17.4,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/radio/10-radio-loisirs-préférés-des-adolescents.mp3",
+      "previous_sha256": "7f2edf9b43e51365260d6e5a066b6cfeadbd00fcf7bf16d2fd824f992467add5",
+      "candidate_sha256": "f891f9158220de7a78ad6cf3037df107df62c4c00c13ab3eecc68eacd1e66237",
+      "rollback_git_blob": "2b41777293f76d56893f0cb123def27e0fc8076c",
+      "source_id": "09035196:029:cbe1b9e8fa3c",
+      "source_sha256": "cbe1b9e8fa3c00793482e50fceff1e8b0ecd300257bdb11d66e269b79b0c9561",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "f891f9158220de7a78ad6cf3037df107df62c4c00c13ab3eecc68eacd1e66237",
+        "duration": 122.344,
+        "category": "long",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "cbe1b9e8fa3c00793482e50fceff1e8b0ecd300257bdb11d66e269b79b0c9561",
+          "proof": {
+            "previous_sha256": "5f3d18413262ae9c1f863d72bbb52bb3b76fdbec4a3a3c45a26bbdca8856090d",
+            "sha256": "f891f9158220de7a78ad6cf3037df107df62c4c00c13ab3eecc68eacd1e66237",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/367-5f3d18413262-262130-5657501/candidate.mp3",
+            "source_sha256": "cbe1b9e8fa3c00793482e50fceff1e8b0ecd300257bdb11d66e269b79b0c9561",
+            "source_file": "/workspace/attachments/142f1b8d-7802-4399-b078-9cc15ef6fbf9/09035196_29_DELF_CO_E27.mp3",
+            "source_decoded_pcm_sha256": "db9da314ec35a8512d05e7211acb22d0c844a471bb1bd4fca8070a4a13e7bda5",
+            "source_sample_rate": 44100,
+            "source_channels": 1,
+            "source_start_frame": 262130,
+            "source_end_frame": 5657501,
+            "source_start": 5.943990929705215,
+            "source_end": 128.2880045351474,
+            "source_slice_pcm_sha256": "fe4550578df0affd78609fc14baf18f179ebe8966cfc4d952b294206fce4b501",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/367-5f3d18413262-262130-5657501/start_before.flac",
+                "sha256": "be47da8549fe2b00e8704b115c2306940e8a51da2cb2acc535516f1eb7304b80",
+                "source_start_frame": 173930,
+                "source_end_frame": 262130,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/367-5f3d18413262-262130-5657501/start_after.flac",
+                "sha256": "13c256567453c3b6d96a6d8350e4ad4bb2655b425e6d9f7dd66375eb24988816",
+                "source_start_frame": 262130,
+                "source_end_frame": 350330,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/367-5f3d18413262-262130-5657501/end_before.flac",
+                "sha256": "ff10743f022fb0f8b03de3f41fb6752b4720e8c5d6085a23f85a1f7bc402c61a",
+                "source_start_frame": 5569301,
+                "source_end_frame": 5657501,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/367-5f3d18413262-262130-5657501/end_after.flac",
+                "sha256": "a13abaf918ff34c32df37846abd2794fdb8d63b014498b0795cf80803f6f6689",
+                "source_start_frame": 5657501,
+                "source_end_frame": 5705856,
+                "available_seconds": 1.096485260770975
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Bonjour",
+                "start": 6.024,
+                "end": 6.744,
+                "kind": "dialogue",
+                "asr_word_index": 2,
+                "raw_start": 6.024,
+                "raw_end": 6.743999939203262,
+                "native_token_indices": [
+                  7,
+                  8,
+                  9,
+                  10
+                ]
+              },
+              "last": {
+                "text": "l'avance.",
+                "start": 127.735999,
+                "end": 128.135999,
+                "kind": "dialogue",
+                "asr_word_index": 284,
+                "raw_start": 127.73599923706055,
+                "raw_end": 128.2159988538027,
+                "native_token_indices": [
+                  98,
+                  99,
+                  100,
+                  101,
+                  102
+                ]
+              },
+              "previous_word_end": 1.944,
+              "next_word_start": 129.38448979591837,
+              "first_source_speech_region": [
+                6.432,
+                8.576
+              ],
+              "last_source_speech_region": [
+                127.008,
+                128.128
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. Natural native margins up to one second are retained to avoid trimming a quiet first word or its final decay. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/367-5f3d18413262-262130-5657501/waveform.svg",
+              "sha256": "a1cefce57ef37166576abb376babe96e0f1b3ac8cc523e1db71419cc496ec1a5"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.19,
+          "relative_rms_threshold": 0.005548601523041726,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.544,
+          "trailing_non_speech_seconds": 0.136,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "whisper",
+        "ctc"
+      ],
+      "editorial_reason": "Questions et trois réponses relues, informations comparées aux transcriptions. Les pourcentages et affirmations sont rapportés au document. Vérification des frontières et deux reconnaissances du fichier final requises. Détail lexical réexaminé avec CTC ; les contrôles de couverture du début et de la fin restent obligatoires.",
+      "numeric_resolution": {
+        "candidate_sha256": "f891f9158220de7a78ad6cf3037df107df62c4c00c13ab3eecc68eacd1e66237",
+        "evidence_file": "/workspace/work/tcf-bascule-complete-20261105/numeric-article-evidence/f891f9158220de7a78ad6cf3037df107df62c4c00c13ab3eecc68eacd1e66237.json",
+        "evidence_sha256": "dbde2a11665a72f0ed92809d6cfd1762272fa24dce9b56cf1aab439dbbf0c452",
+        "reviewed_numbers": [
+          "12",
+          "18",
+          "76",
+          "53",
+          "47",
+          "5",
+          "2",
+          "17",
+          "3",
+          "1",
+          "1",
+          "1",
+          "1"
+        ],
+        "reason": "La journée idéale est un jour entier pour sortir ; CTC transcrit u jour entier, Whisper restitue un jour entier. Aucun chiffre du sondage ne diffère."
+      },
+      "additional_recognition_evidence": null,
+      "previous_duration": 127.42,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-19.mp3",
+      "previous_sha256": "d7a67e6b6a07f1496d26cc64add2577c8b203b11d736df92bd785ce14238eff2",
+      "candidate_sha256": "561e2d3e3ce2052ceeecd283745c2072f8e478b9a9a3b58ec5fb4f54ae280f7b",
+      "rollback_git_blob": "092209f8b1dae5da5f03360a3e3703fec0349806",
+      "source_id": "9782090351958:039:ec78c0555d13",
+      "source_sha256": "ec78c0555d130a9f9089422a2283885089124557a074ecd1dc096374a0745db0",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "561e2d3e3ce2052ceeecd283745c2072f8e478b9a9a3b58ec5fb4f54ae280f7b",
+        "duration": 33.656,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "ec78c0555d130a9f9089422a2283885089124557a074ecd1dc096374a0745db0",
+          "proof": {
+            "previous_sha256": "fcf533672ecfa29b6349e4129cbec275b7f802528c7430154142e13d0d706d04",
+            "sha256": "561e2d3e3ce2052ceeecd283745c2072f8e478b9a9a3b58ec5fb4f54ae280f7b",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/352-fcf533672ecf-782157-2266387/candidate.mp3",
+            "source_sha256": "ec78c0555d130a9f9089422a2283885089124557a074ecd1dc096374a0745db0",
+            "source_file": "/workspace/attachments/766045f4-9fde-426a-b823-3a612cd880c6/9782090351958_39_CO_ex37.mp3",
+            "source_decoded_pcm_sha256": "ab2d6df0fc3ca20c6733594767fc4c140bc05125dc756d4ff3991590203f5db7",
+            "source_sample_rate": 44100,
+            "source_channels": 1,
+            "source_start_frame": 782157,
+            "source_end_frame": 2266387,
+            "source_start": 17.735986394557823,
+            "source_end": 51.391995464852606,
+            "source_slice_pcm_sha256": "3c9e327d23a30f7273017edf4b00ae17d79c757f9aac1c6049fb7829e1c2095f",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/352-fcf533672ecf-782157-2266387/start_before.flac",
+                "sha256": "145c42dd7df8722aaa863263257a77e32b38addc5bbc93e700e242fbf3f31bc2",
+                "source_start_frame": 693957,
+                "source_end_frame": 782157,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/352-fcf533672ecf-782157-2266387/start_after.flac",
+                "sha256": "fba7d7f6d3b9c75f7f7769ffc2885c42efcf028c8566a292f175b112a3d99a3e",
+                "source_start_frame": 782157,
+                "source_end_frame": 870357,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/352-fcf533672ecf-782157-2266387/end_before.flac",
+                "sha256": "aea583a0271ed0cdb90da765102fe1d8168a60ebe7ac1d8bdad7350648c87f8e",
+                "source_start_frame": 2178187,
+                "source_end_frame": 2266387,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/352-fcf533672ecf-782157-2266387/end_after.flac",
+                "sha256": "27812dbce2286c7234ae9b25bf8b9083bb018ff0b85bcbae0a0deb0ed09695c8",
+                "source_start_frame": 2266387,
+                "source_end_frame": 2354587,
+                "available_seconds": 2.0
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Pour",
+                "start": 17.816,
+                "end": 18.136,
+                "kind": "dialogue",
+                "asr_word_index": 21,
+                "raw_start": 17.816000228881837,
+                "raw_end": 18.136000072717668,
+                "native_token_indices": [
+                  56,
+                  57
+                ]
+              },
+              "last": {
+                "text": "marredi.",
+                "start": 50.535999,
+                "end": 51.175999,
+                "kind": "dialogue",
+                "asr_word_index": 94,
+                "raw_start": 50.5359991607666,
+                "raw_end": 51.33599847233295,
+                "native_token_indices": [
+                  125,
+                  126,
+                  127,
+                  128
+                ]
+              },
+              "previous_word_end": 15.496,
+              "next_word_start": 54.33469387755102,
+              "first_source_speech_region": [
+                18.176,
+                19.296
+              ],
+              "last_source_speech_region": [
+                50.56,
+                51.232
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/352-fcf533672ecf-782157-2266387/waveform.svg",
+              "sha256": "965a5ebe56f1c6a5e274497582d586a7031bce936c130474368c2eaed200a5ab"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.0,
+          "relative_rms_threshold": 0.00654533714056015,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.416,
+          "trailing_non_speech_seconds": 0.088,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
+      "editorial_reason": "Revue éditoriale du dialogue, des questions et de leurs trois propositions. Corrections des faits uniquement lorsque les reconnaissances les étayent ; deux reconnaissances finales et marges qualifiées restent requises avant bascule.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 45.71,
+      "previous_pool": null,
+      "question_changes": [
+        {
+          "exercise": "tcf-ss-a2-s14-co-2",
+          "question": 2,
+          "before": {
+            "enonce": "À quelle heure le départ est-il prévu ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "8 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "10 h"
+              },
+              {
+                "id": "c",
+                "texte": "16 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "8 h"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-0800-dessinee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1000-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1600-dessinee.webp"
+                  }
+                ]
+              }
+            }
+          },
+          "after": {
+            "enonce": "À quelle heure le départ est-il prévu ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "7 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "10 h"
+              },
+              {
+                "id": "c",
+                "texte": "16 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "7 h"
+              }
+            }
+          }
+        },
+        {
+          "exercise": "tcf-ss-a2-s14-co-2",
+          "question": 8,
+          "before": {
+            "enonce": "À quelle heure les parents pourront-ils venir chercher les élèves ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "18 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "16 h"
+              },
+              {
+                "id": "c",
+                "texte": "20 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "18 h"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1600-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-2000-dessinee.webp"
+                  }
+                ]
+              }
+            }
+          },
+          "after": {
+            "enonce": "À quelle heure les parents pourront-ils venir chercher les élèves ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "19 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "16 h"
+              },
+              {
+                "id": "c",
+                "texte": "20 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "19 h"
+              }
+            }
+          }
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/magasins/chers-clients-magasin-ferme.mp3",
+      "previous_sha256": "7ff061620ce869cf311866be5c95578ed043bce2c3ff2a168dddc33340c4caed",
+      "candidate_sha256": "657cc76b3f3707883c8beb94dcc40b00c8664bca9c8f1e7592ed1ad70ff7760f",
+      "rollback_git_blob": "35e05e9afa26edda1cc49773417d9cfda8383253",
+      "source_id": "09035276:024:a96cd1d778d8",
+      "source_sha256": "a96cd1d778d8d8e2f9cc5a90289f04c614ec98ecfba3789189d8b96a1714d94d",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "657cc76b3f3707883c8beb94dcc40b00c8664bca9c8f1e7592ed1ad70ff7760f",
+        "duration": 15.688,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "a96cd1d778d8d8e2f9cc5a90289f04c614ec98ecfba3789189d8b96a1714d94d",
+          "proof": {
+            "previous_sha256": "421aff953ba92e6238c989fa8934e6f08f26ad50465fdde055d7364de7318ade",
+            "sha256": "657cc76b3f3707883c8beb94dcc40b00c8664bca9c8f1e7592ed1ad70ff7760f",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/71-421aff953ba9-528847-1220688/candidate.mp3",
+            "source_sha256": "a96cd1d778d8d8e2f9cc5a90289f04c614ec98ecfba3789189d8b96a1714d94d",
+            "source_file": "/workspace/work/tcf-audio-additional-20261102-work/incoming/a1/mdf-a1-abc-junior/MDF_A1_ABC-DELF-Junior-Scolaire_AUDIO/09035276_24_Ex 21-2.mp3",
+            "source_decoded_pcm_sha256": "b3df62ce85bddba095e0801a51734a73a0096e522276ad070376baaa93c16795",
+            "source_sample_rate": 44100,
+            "source_channels": 1,
+            "source_start_frame": 528847,
+            "source_end_frame": 1220688,
+            "source_start": 11.991995464852607,
+            "source_end": 27.68,
+            "source_slice_pcm_sha256": "85f7983b1b894d0b1b89080312a8c15d9714fa3242f96a8b5203880edd122be1",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/71-421aff953ba9-528847-1220688/start_before.flac",
+                "sha256": "64b92b732996b39b0420c6651178d68e5fd0a83893d995a6eb6f0ce2af4e678e",
+                "source_start_frame": 440647,
+                "source_end_frame": 528847,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/71-421aff953ba9-528847-1220688/start_after.flac",
+                "sha256": "2297b29c905c71d4cdb3cb296042087daa581222f9c82ab95ae0b273ee64a9ae",
+                "source_start_frame": 528847,
+                "source_end_frame": 617047,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/71-421aff953ba9-528847-1220688/end_before.flac",
+                "sha256": "83b4ade9b9a636d59650691227b539e31aff06f6f58cd872eaa6bc3619c41fb3",
+                "source_start_frame": 1132488,
+                "source_end_frame": 1220688,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/71-421aff953ba9-528847-1220688/end_after.flac",
+                "sha256": "7fc84dc2837c8d6de34c7dbc3a93666bb1799d234edf6e9786ced35d26466378",
+                "source_start_frame": 1220688,
+                "source_end_frame": 1308888,
+                "available_seconds": 2.0
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Mesdames",
+                "start": 12.072,
+                "end": 12.712,
+                "kind": "dialogue",
+                "asr_word_index": 12,
+                "raw_start": 12.072000076293945,
+                "raw_end": 12.711999540448188,
+                "native_token_indices": [
+                  29,
+                  30,
+                  31,
+                  32
+                ]
+              },
+              "last": {
+                "text": "week-end.",
+                "start": 27.08,
+                "end": 27.4,
+                "kind": "dialogue",
+                "asr_word_index": 49,
+                "raw_start": 27.079999961853026,
+                "raw_end": 27.639999979138373,
+                "native_token_indices": [
+                  8,
+                  9,
+                  10,
+                  11,
+                  12
+                ]
+              },
+              "previous_word_end": 9.432,
+              "next_word_start": 29.962448979591837,
+              "first_source_speech_region": [
+                12.416,
+                13.344
+              ],
+              "last_source_speech_region": [
+                26.24,
+                27.52
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/71-421aff953ba9-528847-1220688/waveform.svg",
+              "sha256": "a19177a90976f88274d2dc353b7035ca5f13d5e4910243f212eea82279e7cc0f"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.0,
+          "relative_rms_threshold": 0.005024883970618248,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.384,
+          "trailing_non_speech_seconds": 0.2,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
+      "editorial_reason": "Texte, questions et réponses relus en regard des reconnaissances finales ; frontières incertaines maintenues en attente.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 18.31,
+      "previous_pool": null,
+      "question_changes": [
+        {
+          "exercise": "tcf-ss-a1-s1-co-3",
+          "question": 5,
+          "before": {
+            "enonce": "À quelle heure le magasin ouvre-t-il lundi ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "À 10 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "À 9 h"
+              },
+              {
+                "id": "c",
+                "texte": "À 11 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "À 10 h"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1000-dessinee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-0900-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1100-dessinee.webp"
+                  }
+                ]
+              }
+            }
+          },
+          "after": {
+            "enonce": "À quelle heure le magasin ouvre-t-il lundi ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "À 9 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "À 10 h"
+              },
+              {
+                "id": "c",
+                "texte": "À 11 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "À 9 h"
+              }
+            }
+          }
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/magasins/magasins-2.mp3",
+      "previous_sha256": "47fb66740058b32472b8136d3ac7623428309cf09a70e523ae69b3599d3450ae",
+      "candidate_sha256": "8df96d2f9ad73e89489b243689909c20069574a1500e681c9067f1d95e04b2c4",
+      "rollback_git_blob": "3d52fc11c2af8b14342eb3fdbfff08369a230001",
+      "source_id": "9782090351958:048:47fb66740058",
+      "source_sha256": "47fb66740058b32472b8136d3ac7623428309cf09a70e523ae69b3599d3450ae",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "8df96d2f9ad73e89489b243689909c20069574a1500e681c9067f1d95e04b2c4",
+        "duration": 29.464,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "47fb66740058b32472b8136d3ac7623428309cf09a70e523ae69b3599d3450ae",
+          "proof": {
+            "previous_sha256": "9874a7b85f4cb15be0719661c69acdd1220f961ef45cd1b93d44a91392d4fff5",
+            "sha256": "8df96d2f9ad73e89489b243689909c20069574a1500e681c9067f1d95e04b2c4",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/360-9874a7b85f4c-940211-2239574/candidate.mp3",
+            "source_sha256": "47fb66740058b32472b8136d3ac7623428309cf09a70e523ae69b3599d3450ae",
+            "source_file": "/workspace/attachments/fbe1eab7-6cc3-42db-8a10-cfe6cf7b459a/9782090351958_48_CO_ex46.mp3",
+            "source_decoded_pcm_sha256": "b11084c8b742dd79e0f35e4ead308385f458a351cbf95dec7108d6e11ac867ee",
+            "source_sample_rate": 44100,
+            "source_channels": 1,
+            "source_start_frame": 940211,
+            "source_end_frame": 2239574,
+            "source_start": 21.31997732426304,
+            "source_end": 50.78399092970522,
+            "source_slice_pcm_sha256": "2a426d808cb1433e02ddace88882fc3ed0c8f969d964609c715f55c16e6e777c",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/360-9874a7b85f4c-940211-2239574/start_before.flac",
+                "sha256": "56173684b8dc928ebc393b124d5576333126f8c191a72d66824089cd1adc3ba1",
+                "source_start_frame": 852011,
+                "source_end_frame": 940211,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/360-9874a7b85f4c-940211-2239574/start_after.flac",
+                "sha256": "a5e3cbfbf4f06311999165286044de975838055971282a4a36d0b5371d475d31",
+                "source_start_frame": 940211,
+                "source_end_frame": 1028411,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/360-9874a7b85f4c-940211-2239574/end_before.flac",
+                "sha256": "3710976b61c1d92011ffa9214601a82ef6bc5ad424fb9d26c7cb1fbbb597e590",
+                "source_start_frame": 2151374,
+                "source_end_frame": 2239574,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/360-9874a7b85f4c-940211-2239574/end_after.flac",
+                "sha256": "8a007ddfdc4ae4aa4391f23b7f477f8c86e03b9e1cb24c2687112933b9cf6994",
+                "source_start_frame": 2239574,
+                "source_end_frame": 2318976,
+                "available_seconds": 1.800498866213152
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "C'est",
+                "start": 21.399999,
+                "end": 21.719999,
+                "kind": "dialogue",
+                "asr_word_index": 29,
+                "raw_start": 21.399998931884767,
+                "raw_end": 21.71999870121479,
+                "native_token_indices": [
+                  78,
+                  79,
+                  80
+                ]
+              },
+              "last": {
+                "text": "attend.",
+                "start": 50.152,
+                "end": 50.472,
+                "kind": "dialogue",
+                "asr_word_index": 73,
+                "raw_start": 50.152,
+                "raw_end": 50.71199954044819,
+                "native_token_indices": [
+                  73,
+                  74,
+                  75
+                ]
+              },
+              "previous_word_end": 18.52,
+              "next_word_start": 52.584489795918365,
+              "first_source_speech_region": [
+                21.76,
+                23.68
+              ],
+              "last_source_speech_region": [
+                49.312,
+                50.624
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/360-9874a7b85f4c-940211-2239574/waveform.svg",
+              "sha256": "61d9db33a7450e070772b8598b634d8e9414bac5cefa118d3af8148aeba20688"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.0,
+          "relative_rms_threshold": 0.004711262807250024,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.448,
+          "trailing_non_speech_seconds": 0.12,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "whisper",
+        "ctc"
+      ],
+      "editorial_reason": "Questions et trois réponses relues, informations comparées aux transcriptions. Les pourcentages et affirmations sont rapportés au document. Vérification des frontières et deux reconnaissances du fichier final requises.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 52.6,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-bienvenue-musee.mp3",
+      "previous_sha256": "b193a42634e9724c2cfd57dc53ce00db8a31dc6b0e78bb13cc35c7cf85bcf440",
+      "candidate_sha256": "6986436ecae56d91c4a115fef2c4d472c667db0c287b27f4396ebde9df3a057d",
+      "rollback_git_blob": "2a9271130b2e01eb677b57a4fea8b348b4920696",
+      "source_id": "09035276:029:212c234101fd",
+      "source_sha256": "212c234101fd0c08c938e376ea8edf81970765aaf22c98f9ab54d98548d96821",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "6986436ecae56d91c4a115fef2c4d472c667db0c287b27f4396ebde9df3a057d",
+        "duration": 23.416,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "212c234101fd0c08c938e376ea8edf81970765aaf22c98f9ab54d98548d96821",
+          "proof": {
+            "previous_sha256": "34cecddcc7285143ff298352e190578e92bbea97c20b095d0b3b7987044a5da7",
+            "sha256": "6986436ecae56d91c4a115fef2c4d472c667db0c287b27f4396ebde9df3a057d",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/73-34cecddcc728-188042-1220688/candidate.mp3",
+            "source_sha256": "212c234101fd0c08c938e376ea8edf81970765aaf22c98f9ab54d98548d96821",
+            "source_file": "/workspace/work/tcf-audio-additional-20261102-work/incoming/a1/mdf-a1-abc-junior/MDF_A1_ABC-DELF-Junior-Scolaire_AUDIO/09035276_29_Ex 26-2.mp3",
+            "source_decoded_pcm_sha256": "5d61807703558a8bc83e26e33c0838f13ec6ef0c17a12aa7b46f9b55b77b0417",
+            "source_sample_rate": 44100,
+            "source_channels": 1,
+            "source_start_frame": 188042,
+            "source_end_frame": 1220688,
+            "source_start": 4.263990929705216,
+            "source_end": 27.68,
+            "source_slice_pcm_sha256": "72db0cc9fb44e19290de8da3ecbbbe42be550e51a904e0bcf3c6bf81aebe8962",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/73-34cecddcc728-188042-1220688/start_before.flac",
+                "sha256": "0017bce37d723b8bb6c214560bf2131ff9ce29857626159bb0f76ce83c8dda63",
+                "source_start_frame": 99842,
+                "source_end_frame": 188042,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/73-34cecddcc728-188042-1220688/start_after.flac",
+                "sha256": "87e7cba2e7acf062688463c1b3ad07d0f9d3a4f65eade0b206fbe48e77112275",
+                "source_start_frame": 188042,
+                "source_end_frame": 276242,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/73-34cecddcc728-188042-1220688/end_before.flac",
+                "sha256": "18c0cc0ec8801eb2a2193d8f30144f827081891c1e3b1935a4d9ca54f132e2ae",
+                "source_start_frame": 1132488,
+                "source_end_frame": 1220688,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/73-34cecddcc728-188042-1220688/end_after.flac",
+                "sha256": "44134fab18acf3c4a61c847bb10055b2a7ecaf74bf47511d90ad6154bcf958ce",
+                "source_start_frame": 1220688,
+                "source_end_frame": 1294848,
+                "available_seconds": 1.6816326530612244
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Mesdames",
+                "start": 4.344,
+                "end": 4.984,
+                "kind": "dialogue",
+                "asr_word_index": 2,
+                "raw_start": 4.343999694824219,
+                "raw_end": 4.984000112652779,
+                "native_token_indices": [
+                  7,
+                  8,
+                  9,
+                  10
+                ]
+              },
+              "last": {
+                "text": "visite!",
+                "start": 27.112,
+                "end": 27.432,
+                "kind": "dialogue",
+                "asr_word_index": 53,
+                "raw_start": 27.111999976158142,
+                "raw_end": 27.591999995231628,
+                "native_token_indices": [
+                  3,
+                  4,
+                  6
+                ]
+              },
+              "previous_word_end": 1.944,
+              "next_word_start": 29.361632653061225,
+              "first_source_speech_region": [
+                4.64,
+                5.664
+              ],
+              "last_source_speech_region": [
+                26.912,
+                27.52
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/73-34cecddcc728-188042-1220688/waveform.svg",
+              "sha256": "0e191e7df54b4c3792abec5cff04561b4d515725f9d0751d4b71a1cd61474090"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.0,
+          "relative_rms_threshold": 0.004004380181431771,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.352,
+          "trailing_non_speech_seconds": 0.152,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
+      "editorial_reason": "Texte, questions et réponses relus en regard des reconnaissances finales ; frontières incertaines maintenues en attente.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 24.79,
+      "previous_pool": null,
+      "question_changes": [
+        {
+          "exercise": "tcf-ss-a1-s39-co-2",
+          "question": 4,
+          "before": {
+            "enonce": "Quel objet faut-il laisser à l’accueil ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Son sac à dos",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Son manteau"
+              },
+              {
+                "id": "c",
+                "texte": "Ses lunettes"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Son sac à dos"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "image": "/lib/images/tcf/qcm-audit/vocab-sac-dos.webp",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-manteau-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co306-lunettes-vue-dessine.webp"
+                  }
+                ]
+              }
+            }
+          },
+          "after": {
+            "enonce": "Quels objets faut-il laisser à l’accueil ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Ses sacs",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Ses vêtements"
+              },
+              {
+                "id": "c",
+                "texte": "Ses chaussures"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Ses sacs"
+              }
+            }
+          }
+        },
+        {
+          "exercise": "tcf-ss-a1-s39-co-2",
+          "question": 5,
+          "before": {
+            "enonce": "Quelle activité est interdite dans les salles ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Prendre des photos",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Poser des questions"
+              },
+              {
+                "id": "c",
+                "texte": "Marcher"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Prendre des photos"
+              }
+            }
+          },
+          "after": {
+            "enonce": "Quelle activité est interdite dans les salles ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Manger",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Prendre des photos"
+              },
+              {
+                "id": "c",
+                "texte": "Écouter le guide"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Manger"
+              }
+            }
+          }
+        }
+      ],
+      "human_listening_performed": false
+    }
+  ],
+  "exercise_changes": [
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s1-co-3",
+      "before": {
+        "id": "tcf-ss-a1-s1-co-3",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Annonce 21",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/magasins/chers-clients-magasin-ferme.mp3",
+          "transcription": "Chers clients, le magasin ferme dans quinze minutes.\nMerci de vous diriger vers les caisses pour régler vos achats.\nLe magasin est fermé le dimanche.\nLundi, le magasin ouvre à 10 heures.\nBonne journée."
+        },
+        "questions": [
+          {
+            "enonce": "Dans combien de temps le magasin ferme-t-il ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "15 minutes",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "10 minutes"
+              },
+              {
+                "id": "c",
+                "texte": "20 minutes"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "15 minutes"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "image": "/lib/images/tcf/qcm-audit/duree-15-minutes.webp",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/duree-10-minutes.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/duree-20-minutes.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "Où les clients doivent-ils se diriger ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Vers les caisses",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Vers les cabines"
+              },
+              {
+                "id": "c",
+                "texte": "Vers l’accueil"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Vers les caisses"
+              }
+            }
+          },
+          {
+            "enonce": "Pourquoi les clients doivent-ils aller aux caisses ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Pour régler leurs achats",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Pour recevoir un cadeau"
+              },
+              {
+                "id": "c",
+                "texte": "Pour participer à un concours"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Pour régler leurs achats"
+              }
+            }
+          },
+          {
+            "enonce": "Quel jour le magasin est-il fermé ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Le dimanche",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Le samedi"
+              },
+              {
+                "id": "c",
+                "texte": "Le lundi"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Le dimanche"
+              }
+            }
+          },
+          {
+            "enonce": "À quelle heure le magasin ouvre-t-il lundi ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "À 10 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "À 9 h"
+              },
+              {
+                "id": "c",
+                "texte": "À 11 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "À 10 h"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1000-dessinee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-0900-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1100-dessinee.webp"
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "magasins",
+        "scene": "Chers clients magasin ferme"
+      },
+      "after": {
+        "id": "tcf-ss-a1-s1-co-3",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Annonce 21",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/magasins/chers-clients-magasin-ferme.mp3",
+          "transcription": "Mesdames, Messieurs, notre magasin ferme ses portes dans 15 minutes. Merci d'aller à la caisse pour payer vos achats. Le magasin est fermé dimanche. Nous vous accueillons lundi de 9h à 20h. Nous vous souhaitons un bon week-end."
+        },
+        "questions": [
+          {
+            "enonce": "Dans combien de temps le magasin ferme-t-il ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "15 minutes",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "10 minutes"
+              },
+              {
+                "id": "c",
+                "texte": "20 minutes"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "15 minutes"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "image": "/lib/images/tcf/qcm-audit/duree-15-minutes.webp",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/duree-10-minutes.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/duree-20-minutes.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "Où les clients doivent-ils se diriger ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Vers les caisses",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Vers les cabines"
+              },
+              {
+                "id": "c",
+                "texte": "Vers l’accueil"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Vers les caisses"
+              }
+            }
+          },
+          {
+            "enonce": "Pourquoi les clients doivent-ils aller aux caisses ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Pour régler leurs achats",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Pour recevoir un cadeau"
+              },
+              {
+                "id": "c",
+                "texte": "Pour participer à un concours"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Pour régler leurs achats"
+              }
+            }
+          },
+          {
+            "enonce": "Quel jour le magasin est-il fermé ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Le dimanche",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Le samedi"
+              },
+              {
+                "id": "c",
+                "texte": "Le lundi"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Le dimanche"
+              }
+            }
+          },
+          {
+            "enonce": "À quelle heure le magasin ouvre-t-il lundi ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "À 9 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "À 10 h"
+              },
+              {
+                "id": "c",
+                "texte": "À 11 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "À 9 h"
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "magasins",
+        "scene": "Chers clients magasin ferme"
+      }
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s39-co-2",
+      "before": {
+        "id": "tcf-ss-a1-s39-co-2",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Annonce 26",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/vie-quotidienne/bonjour-bienvenue-musee.mp3",
+          "transcription": "Bonjour et bienvenue au musée !\nLa visite guidée va commencer dans quelques minutes.\nMerci de vous rendre à la porte numéro 1 pour retrouver votre guide.\nLa visite dure quarante-cinq minutes.\nVous devez laisser votre sac à dos à l'accueil avant d'entrer.\nIl est interdit de prendre des photos dans les salles.\nBonne visite !"
+        },
+        "questions": [
+          {
+            "enonce": "Dans quel lieu l’annonce est-elle diffusée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un musée",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Une gare"
+              },
+              {
+                "id": "c",
+                "texte": "Un cinéma"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un musée"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "image": "/lib/images/tcf/qcm-audit/co306-musee-dessine.webp",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "Où faut-il retrouver le guide ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "À la porte numéro 1",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Au premier étage"
+              },
+              {
+                "id": "c",
+                "texte": "Devant la boutique"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "À la porte numéro 1"
+              }
+            }
+          },
+          {
+            "enonce": "Combien de temps la visite dure-t-elle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "45 minutes",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "30 minutes"
+              },
+              {
+                "id": "c",
+                "texte": "Une heure"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "45 minutes"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "image": "/lib/images/tcf/qcm-audit/duree-45-minutes.webp",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/duree-30-minutes.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/duree-60-minutes.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "Quel objet faut-il laisser à l’accueil ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Son sac à dos",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Son manteau"
+              },
+              {
+                "id": "c",
+                "texte": "Ses lunettes"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Son sac à dos"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "image": "/lib/images/tcf/qcm-audit/vocab-sac-dos.webp",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-manteau-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co306-lunettes-vue-dessine.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "Quelle activité est interdite dans les salles ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Prendre des photos",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Poser des questions"
+              },
+              {
+                "id": "c",
+                "texte": "Marcher"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Prendre des photos"
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "vie-quotidienne",
+        "scene": "Bonjour bienvenue musée"
+      },
+      "after": {
+        "id": "tcf-ss-a1-s39-co-2",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Annonce 26",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/vie-quotidienne/bonjour-bienvenue-musee.mp3",
+          "transcription": "Mesdames et Messieurs, la visite du musée va bientôt commencer. Vous devez laisser vos sacs à l'accueil. Vous devez aller porte 1 pour retrouver votre guide. La visite dure 45 minutes. Vous pouvez prendre des photos, mais il est interdit de manger. Il y a un restaurant au premier étage. Bonne visite !"
+        },
+        "questions": [
+          {
+            "enonce": "Dans quel lieu l’annonce est-elle diffusée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un musée",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Une gare"
+              },
+              {
+                "id": "c",
+                "texte": "Un cinéma"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un musée"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "image": "/lib/images/tcf/qcm-audit/co306-musee-dessine.webp",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "Où faut-il retrouver le guide ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "À la porte numéro 1",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Au premier étage"
+              },
+              {
+                "id": "c",
+                "texte": "Devant la boutique"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "À la porte numéro 1"
+              }
+            }
+          },
+          {
+            "enonce": "Combien de temps la visite dure-t-elle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "45 minutes",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "30 minutes"
+              },
+              {
+                "id": "c",
+                "texte": "Une heure"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "45 minutes"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "image": "/lib/images/tcf/qcm-audit/duree-45-minutes.webp",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/duree-30-minutes.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/duree-60-minutes.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "Quels objets faut-il laisser à l’accueil ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Ses sacs",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Ses vêtements"
+              },
+              {
+                "id": "c",
+                "texte": "Ses chaussures"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Ses sacs"
+              }
+            }
+          },
+          {
+            "enonce": "Quelle activité est interdite dans les salles ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Manger",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Prendre des photos"
+              },
+              {
+                "id": "c",
+                "texte": "Écouter le guide"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Manger"
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "vie-quotidienne",
+        "scene": "Bonjour bienvenue musée"
+      }
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "delf-a1-2022-co-ex2-20",
+      "before": {
+        "id": "delf-a1-2022-co-ex2-20",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Identifier une activité",
+        "scenario": "transports",
+        "scene": "Piste 20",
+        "consigne": "Écoutez les messages et remplissez le tableau.",
+        "support": {
+          "transcription": [
+            "Mesdames, messieurs, nous vous rappelons que le poids maximum des bagages à main est de 12 kilos. Les autres bagages doivent être enregistrés avant de monter dans l'avion. Merci.",
+            "Mesdames, Messieurs. Tous nos trains ont un bar pour acheter des boissons et des biscuits pendant votre voyage. Merci de votre attention et bon voyage.",
+            "Mesdames, Messieurs, les quais 3 et 5 sont exceptionnellement fermés. Tous les trains partent des quais 2 et 4. Merci de votre attention."
+          ],
+          "audios": [
+            "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_20-1.mp3",
+            "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_20-2.mp3",
+            "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_20-3.mp3"
+          ],
+          "images_descriptions": [
+            "Scénario vidéo (audio CO moyen, « Piste 20 — dialogue 1 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Mesdames, Messieurs » ; B : « Nous vous rappelons que le poids maximum des bagages à main est de 12 kg » ; A : « Les autres bagages doivent être enregistrés avant de monter dans l’avion » ; B : « Merci ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Piste 20 — dialogue 2 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Mesdames, Messieurs » ; B : « Tous nos trains ont un bar pour acheter des boissons et des biscuits pendant votre voyage » ; A : « Merci de votre attention et bon voyage ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Piste 20 — dialogue 3 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Mesdames, Messieurs » ; B : « Les quais 3 et 5 sont exceptionnellement fermés » ; A : « Tous les trains partent des quais 2 et 4 » ; B : « Merci de votre attention ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
+          ]
+        },
+        "questions": [
+          {
+            "enonce": "Quel est le poids maximum d'un bagage à main ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "12 kilos",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "10 kilos"
+              },
+              {
+                "id": "c",
+                "texte": "20 kilos"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "12 kilos"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Que faut-il faire des autres bagages ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Les enregistrer",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Les laisser à la maison"
+              },
+              {
+                "id": "c",
+                "texte": "Les garder sur ses genoux"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Les enregistrer"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Dans quel transport les voyageurs vont-ils monter ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un avion",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Un train"
+              },
+              {
+                "id": "c",
+                "texte": "Un bateau"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un avion"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/co/scenes/voyages/passagers-d-avion.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Quel espace trouve-t-on dans tous les trains annoncés ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un bar",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Une bibliothèque"
+              },
+              {
+                "id": "c",
+                "texte": "Une salle de sport"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un bar"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "image": "/lib/images/tcf/co/bg/bar.webp",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/vocab-salle-sport.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Que peut-on y acheter ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Des boissons et des biscuits",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Des livres et des journaux"
+              },
+              {
+                "id": "c",
+                "texte": "Des vêtements et des chaussures"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Des boissons et des biscuits"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co306-boissons-biscuits-dessine.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co306-livres-journaux-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co306-vetements-chaussures-dessine.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Quels quais sont fermés ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Les quais 3 et 5",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Les quais 2 et 4"
+              },
+              {
+                "id": "c",
+                "texte": "Les quais 1 et 6"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Les quais 3 et 5"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "De quels quais les trains partent-ils ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Les quais 2 et 4",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Les quais 3 et 5"
+              },
+              {
+                "id": "c",
+                "texte": "Les quais 1 et 6"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Les quais 2 et 4"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quand faut-il enregistrer les autres bagages ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Avant de monter dans l'avion",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Après l'atterrissage"
+              },
+              {
+                "id": "c",
+                "texte": "Pendant le vol"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Avant de monter dans l'avion"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Dans quel moyen de transport ce service est-il proposé ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Le train",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "L'avion"
+              },
+              {
+                "id": "c",
+                "texte": "Le bateau"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Le train"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/co/scenes/voyages/passagers-d-avion.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "À quel moment peut-on acheter ces produits ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Pendant le voyage",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Uniquement avant le départ"
+              },
+              {
+                "id": "c",
+                "texte": "Uniquement après l'arrivée"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Pendant le voyage"
+              }
+            },
+            "audio": 2
+          }
+        ],
+        "consigne_supplementaire": null
+      },
+      "after": {
+        "id": "delf-a1-2022-co-ex2-20",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Identifier une activité",
+        "scenario": "transports",
+        "scene": "Piste 20",
+        "consigne": "Écoutez les messages et remplissez le tableau.",
+        "support": {
+          "transcription": [
+            "Mesdames, messieurs, nous vous rappelons que le poids maximum des bagages à main est de 12 kilos. Les autres bagages doivent être enregistrés avant de monter dans l'avion. Merci.",
+            "Mesdames, messieurs, tous nos trains ont un bar pour acheter des boissons et des biscuits pendant votre voyage. Merci de votre attention et bon voyage !",
+            "Mesdames, Messieurs, les quais 3 et 5 sont exceptionnellement fermés. Tous les trains partent des quais 2 et 4. Merci de votre attention."
+          ],
+          "audios": [
+            "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_20-1.mp3",
+            "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_20-2.mp3",
+            "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_20-3.mp3"
+          ],
+          "images_descriptions": [
+            "Scénario vidéo (audio CO moyen, « Piste 20 — dialogue 1 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Mesdames, Messieurs » ; B : « Nous vous rappelons que le poids maximum des bagages à main est de 12 kg » ; A : « Les autres bagages doivent être enregistrés avant de monter dans l’avion » ; B : « Merci ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Piste 20 — dialogue 2 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Mesdames, Messieurs » ; B : « Tous nos trains ont un bar pour acheter des boissons et des biscuits pendant votre voyage » ; A : « Merci de votre attention et bon voyage ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Piste 20 — dialogue 3 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Mesdames, Messieurs » ; B : « Les quais 3 et 5 sont exceptionnellement fermés » ; A : « Tous les trains partent des quais 2 et 4 » ; B : « Merci de votre attention ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
+          ]
+        },
+        "questions": [
+          {
+            "enonce": "Quel est le poids maximum d'un bagage à main ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "12 kilos",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "10 kilos"
+              },
+              {
+                "id": "c",
+                "texte": "20 kilos"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "12 kilos"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Que faut-il faire des autres bagages ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Les enregistrer",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Les laisser à la maison"
+              },
+              {
+                "id": "c",
+                "texte": "Les garder sur ses genoux"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Les enregistrer"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Dans quel transport les voyageurs vont-ils monter ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un avion",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Un train"
+              },
+              {
+                "id": "c",
+                "texte": "Un bateau"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un avion"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/co/scenes/voyages/passagers-d-avion.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Quel espace trouve-t-on dans tous les trains annoncés ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un bar",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Une bibliothèque"
+              },
+              {
+                "id": "c",
+                "texte": "Une salle de sport"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un bar"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "image": "/lib/images/tcf/co/bg/bar.webp",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/vocab-salle-sport.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Que peut-on y acheter ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Des boissons et des biscuits",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Des livres et des journaux"
+              },
+              {
+                "id": "c",
+                "texte": "Des vêtements et des chaussures"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Des boissons et des biscuits"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co306-boissons-biscuits-dessine.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co306-livres-journaux-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co306-vetements-chaussures-dessine.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Quels quais sont fermés ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Les quais 3 et 5",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Les quais 2 et 4"
+              },
+              {
+                "id": "c",
+                "texte": "Les quais 1 et 6"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Les quais 3 et 5"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "De quels quais les trains partent-ils ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Les quais 2 et 4",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Les quais 3 et 5"
+              },
+              {
+                "id": "c",
+                "texte": "Les quais 1 et 6"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Les quais 2 et 4"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quand faut-il enregistrer les autres bagages ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Avant de monter dans l'avion",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Après l'atterrissage"
+              },
+              {
+                "id": "c",
+                "texte": "Pendant le vol"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Avant de monter dans l'avion"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Dans quel moyen de transport ce service est-il proposé ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Le train",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "L'avion"
+              },
+              {
+                "id": "c",
+                "texte": "Le bateau"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Le train"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/co/scenes/voyages/passagers-d-avion.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "À quel moment peut-on acheter ces produits ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Pendant le voyage",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Uniquement avant le départ"
+              },
+              {
+                "id": "c",
+                "texte": "Uniquement après l'arrivée"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Pendant le voyage"
+              }
+            },
+            "audio": 2
+          }
+        ],
+        "consigne_supplementaire": null
+      }
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-ss-a2-s2-co-3",
+      "before": {
+        "id": "tcf-ss-a2-s2-co-3",
+        "niveau": "A1-A2",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Annonce 46",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/magasins/magasins-2.mp3",
+          "transcription": "Vous êtes dans un grand magasin en France.\nVous entendez cette annonce.\nRépondez aux questions.\nC'est la semaine européenne du sport.\nAujourd'hui, de 14 heures à 20 heures, au rayon sport et nature de notre magasin, vous pourrez avoir des réductions exceptionnelles.\nPour tous les vêtements de sport, une réduction de 30 %.\nLes équipements de montagne sont à moins 40 % et les chaussures de sport pour enfants à moitié prix.\nEn plus, si vous achetez quatre articles, le cinquième est offert.\nNos vendeurs vous attendent."
+        },
+        "questions": [
+          {
+            "enonce": "À quelle occasion le magasin propose-t-il des réductions ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La semaine européenne du sport",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "La fête de la musique"
+              },
+              {
+                "id": "c",
+                "texte": "L’anniversaire du magasin"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "La semaine européenne du sport"
+              }
+            }
+          },
+          {
+            "enonce": "Dans quel rayon les promotions ont-elles lieu ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Sport et nature",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Cuisine et maison"
+              },
+              {
+                "id": "c",
+                "texte": "Livres et musique"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Sport et nature"
+              }
+            }
+          },
+          {
+            "enonce": "À quelle heure les promotions commencent-elles ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "À 14 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "À 10 h"
+              },
+              {
+                "id": "c",
+                "texte": "À 16 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "À 14 h"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1400-dessinee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1000-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1600-dessinee.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "À quelle heure les promotions se terminent-elles ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "À 20 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "À 18 h"
+              },
+              {
+                "id": "c",
+                "texte": "À 22 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "À 20 h"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-2000-dessinee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-2200-dessinee.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "Quelle réduction s’applique aux vêtements de sport ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "30 %",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "20 %"
+              },
+              {
+                "id": "c",
+                "texte": "50 %"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "30 %"
+              }
+            }
+          },
+          {
+            "enonce": "Quelle réduction s’applique aux équipements de montagne ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "40 %",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "10 %"
+              },
+              {
+                "id": "c",
+                "texte": "30 %"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "40 %"
+              }
+            }
+          },
+          {
+            "enonce": "Quels articles sont à moitié prix ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Les chaussures de sport pour enfants",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Les chaussures de sport pour adultes"
+              },
+              {
+                "id": "c",
+                "texte": "Les sacs de randonnée"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Les chaussures de sport pour enfants"
+              }
+            }
+          },
+          {
+            "enonce": "Combien d’articles faut-il acheter pour recevoir le suivant gratuitement ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Quatre",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Trois"
+              },
+              {
+                "id": "c",
+                "texte": "Cinq"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Quatre"
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "magasins",
+        "scene": "Magasins"
+      },
+      "after": {
+        "id": "tcf-ss-a2-s2-co-3",
+        "niveau": "A1-A2",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Annonce 46",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/magasins/magasins-2.mp3",
+          "transcription": "C'est la semaine européenne du sport. Aujourd'hui, de 14h à 20h au rayon sport et nature de notre magasin, vous pourrez avoir des réductions exceptionnelles. Pour tous les vêtements de sport, une réduction de 30%. Les équipements de montagne sont à -40%, et les chaussures de sport pour enfants à moitié prix. En plus, si vous achetez quatre articles, le cinquième est offert. Nos vendeurs vous attendent."
+        },
+        "questions": [
+          {
+            "enonce": "À quelle occasion le magasin propose-t-il des réductions ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La semaine européenne du sport",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "La fête de la musique"
+              },
+              {
+                "id": "c",
+                "texte": "L’anniversaire du magasin"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "La semaine européenne du sport"
+              }
+            }
+          },
+          {
+            "enonce": "Dans quel rayon les promotions ont-elles lieu ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Sport et nature",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Cuisine et maison"
+              },
+              {
+                "id": "c",
+                "texte": "Livres et musique"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Sport et nature"
+              }
+            }
+          },
+          {
+            "enonce": "À quelle heure les promotions commencent-elles ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "À 14 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "À 10 h"
+              },
+              {
+                "id": "c",
+                "texte": "À 16 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "À 14 h"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1400-dessinee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1000-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1600-dessinee.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "À quelle heure les promotions se terminent-elles ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "À 20 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "À 18 h"
+              },
+              {
+                "id": "c",
+                "texte": "À 22 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "À 20 h"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-2000-dessinee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-2200-dessinee.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "Quelle réduction s’applique aux vêtements de sport ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "30 %",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "20 %"
+              },
+              {
+                "id": "c",
+                "texte": "50 %"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "30 %"
+              }
+            }
+          },
+          {
+            "enonce": "Quelle réduction s’applique aux équipements de montagne ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "40 %",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "10 %"
+              },
+              {
+                "id": "c",
+                "texte": "30 %"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "40 %"
+              }
+            }
+          },
+          {
+            "enonce": "Quels articles sont à moitié prix ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Les chaussures de sport pour enfants",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Les chaussures de sport pour adultes"
+              },
+              {
+                "id": "c",
+                "texte": "Les sacs de randonnée"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Les chaussures de sport pour enfants"
+              }
+            }
+          },
+          {
+            "enonce": "Combien d’articles faut-il acheter pour recevoir le suivant gratuitement ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Quatre",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Trois"
+              },
+              {
+                "id": "c",
+                "texte": "Cinq"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Quatre"
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "magasins",
+        "scene": "Magasins"
+      }
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-ss-a2-s14-co-2",
+      "before": {
+        "id": "tcf-ss-a2-s14-co-2",
+        "niveau": "A1-A2",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Annonce 37",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-19.mp3",
+          "transcription": "Vous êtes chez votre correspondant en France.\nVous entendez cette annonce dans son école.\nPour les élèves qui participent à la sortie de ce mercredi, je vous informe que le départ est à 8 heures.\nL'autobus vous attendra sur le parking de l'école.\nN'oubliez pas vos bonbons et surtout vos gants.\nPour le déjeuner, apportez votre pique-nique : nous voulons un pique-nique.\nNous commençons à 10 heures et nous arrêtons à 16 heures.\nLe soir, vos parents pourront venir vous chercher à 18 heures."
+        },
+        "questions": [
+          {
+            "enonce": "Quel jour la sortie scolaire a-t-elle lieu ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Mercredi",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Lundi"
+              },
+              {
+                "id": "c",
+                "texte": "Vendredi"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Mercredi"
+              }
+            }
+          },
+          {
+            "enonce": "À quelle heure le départ est-il prévu ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "8 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "10 h"
+              },
+              {
+                "id": "c",
+                "texte": "16 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "8 h"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-0800-dessinee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1000-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1600-dessinee.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "Où l’autobus attendra-t-il les élèves ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Sur le parking de l’école",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Devant la gare"
+              },
+              {
+                "id": "c",
+                "texte": "À côté de la mairie"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Sur le parking de l’école"
+              }
+            }
+          },
+          {
+            "enonce": "Quel accessoire faut-il surtout penser à apporter ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Des gants",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Des lunettes de soleil"
+              },
+              {
+                "id": "c",
+                "texte": "Une cravate"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Des gants"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/vocab-gants.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/vocab-lunettes-soleil.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/vocab-cravate.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "Que faut-il apporter pour le déjeuner ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un pique-nique",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "De l’argent pour le restaurant"
+              },
+              {
+                "id": "c",
+                "texte": "Un repas à réchauffer chez soi"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un pique-nique"
+              }
+            }
+          },
+          {
+            "enonce": "À quelle heure l’activité commencera-t-elle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "10 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "8 h"
+              },
+              {
+                "id": "c",
+                "texte": "12 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "10 h"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1000-dessinee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-0800-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1200-dessinee.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "À quelle heure l’activité s’arrêtera-t-elle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "16 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "14 h"
+              },
+              {
+                "id": "c",
+                "texte": "18 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "16 h"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1600-dessinee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1400-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "À quelle heure les parents pourront-ils venir chercher les élèves ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "18 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "16 h"
+              },
+              {
+                "id": "c",
+                "texte": "20 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "18 h"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1600-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-2000-dessinee.webp"
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "vie-quotidienne",
+        "scene": "Vie quotidienne"
+      },
+      "after": {
+        "id": "tcf-ss-a2-s14-co-2",
+        "niveau": "A1-A2",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Annonce 37",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-19.mp3",
+          "transcription": "Pour les élèves qui participent à la sortie de ski de mercredi, je vous informe que le départ est à 7h. L'autobus vous attendra sur le parking de l'école. N'oubliez pas vos écharpes, vos bonnets et surtout vos gants. Pour le déjeuner, apportez votre repas, nous ferons un pique-nique. Nous commencerons à skier à 10h et nous nous arrêterons à 16h. Le soir, vos parents pourront venir vous chercher à 19h. À mercredi !"
+        },
+        "questions": [
+          {
+            "enonce": "Quel jour la sortie scolaire a-t-elle lieu ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Mercredi",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Lundi"
+              },
+              {
+                "id": "c",
+                "texte": "Vendredi"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Mercredi"
+              }
+            }
+          },
+          {
+            "enonce": "À quelle heure le départ est-il prévu ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "7 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "10 h"
+              },
+              {
+                "id": "c",
+                "texte": "16 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "7 h"
+              }
+            }
+          },
+          {
+            "enonce": "Où l’autobus attendra-t-il les élèves ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Sur le parking de l’école",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Devant la gare"
+              },
+              {
+                "id": "c",
+                "texte": "À côté de la mairie"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Sur le parking de l’école"
+              }
+            }
+          },
+          {
+            "enonce": "Quel accessoire faut-il surtout penser à apporter ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Des gants",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Des lunettes de soleil"
+              },
+              {
+                "id": "c",
+                "texte": "Une cravate"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Des gants"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/vocab-gants.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/vocab-lunettes-soleil.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/vocab-cravate.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "Que faut-il apporter pour le déjeuner ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un pique-nique",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "De l’argent pour le restaurant"
+              },
+              {
+                "id": "c",
+                "texte": "Un repas à réchauffer chez soi"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un pique-nique"
+              }
+            }
+          },
+          {
+            "enonce": "À quelle heure l’activité commencera-t-elle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "10 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "8 h"
+              },
+              {
+                "id": "c",
+                "texte": "12 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "10 h"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1000-dessinee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-0800-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1200-dessinee.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "À quelle heure l’activité s’arrêtera-t-elle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "16 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "14 h"
+              },
+              {
+                "id": "c",
+                "texte": "18 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "16 h"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1600-dessinee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1400-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "À quelle heure les parents pourront-ils venir chercher les élèves ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "19 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "16 h"
+              },
+              {
+                "id": "c",
+                "texte": "20 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "19 h"
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "vie-quotidienne",
+        "scene": "Vie quotidienne"
+      }
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-sc-11-nouvel-album-co-2",
+      "before": {
+        "id": "tcf-sc-11-nouvel-album-co-2",
+        "niveau": "A1-A2",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Scènes courtes · Sortie d'un nouvel album",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/scènes courtes/11-magasin-annonce-sortie-nouvel-album.mp3",
+          "transcription": "Le magasin Joli Culture reçoit Saïa pour la sortie de son nouvel album.\nSi vous voulez assister à son concert, jouez à notre jeu.\nEnvoyez le mot SAÏA par SMS au 10 20 30.\nLes dix premiers reçoivent une invitation."
+        },
+        "questions": [
+          {
+            "enonce": "Pourquoi Saïa vient-elle au magasin ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Pour la sortie de son nouvel album",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Pour signer des livres"
+              },
+              {
+                "id": "c",
+                "texte": "Pour un défilé de mode"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Pour la sortie de son nouvel album"
+              }
+            }
+          },
+          {
+            "enonce": "Que faut-il faire pour assister au concert ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Jouer à un jeu par SMS",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Acheter l'album"
+              },
+              {
+                "id": "c",
+                "texte": "Appeler le magasin"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Jouer à un jeu par SMS"
+              }
+            }
+          },
+          {
+            "enonce": "Quel mot faut-il envoyer ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "SAÏA",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "ALBUM"
+              },
+              {
+                "id": "c",
+                "texte": "CONCERT"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "SAÏA"
+              }
+            }
+          },
+          {
+            "enonce": "Combien de participants reçoivent une invitation ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Dix",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Cinq"
+              },
+              {
+                "id": "c",
+                "texte": "Vingt"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Dix"
+              }
+            }
+          },
+          {
+            "enonce": "Quel magasin reçoit Saïa ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Joli Culture",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Belle Musique"
+              },
+              {
+                "id": "c",
+                "texte": "Tout Loisirs"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Joli Culture"
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "magasins",
+        "scene": "Sortie d'un nouvel album"
+      },
+      "after": {
+        "id": "tcf-sc-11-nouvel-album-co-2",
+        "niveau": "A1-A2",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Scènes courtes · Sortie d'un nouvel album",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/scènes courtes/11-magasin-annonce-sortie-nouvel-album.mp3",
+          "transcription": "Le magasin Joli Culture reçoit Zaya pour la sortie de son nouvel album. Si vous voulez assister à son concert, jouez à notre jeu. Envoyez le mot Zaya par SMS au 10/20/30. Les 15 premiers reçoivent une invitation."
+        },
+        "questions": [
+          {
+            "enonce": "Pourquoi Zaya vient-elle au magasin ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Pour la sortie de son nouvel album",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Pour signer des livres"
+              },
+              {
+                "id": "c",
+                "texte": "Pour un défilé de mode"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Pour la sortie de son nouvel album"
+              }
+            }
+          },
+          {
+            "enonce": "Que faut-il faire pour assister au concert ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Jouer à un jeu par SMS",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Acheter l'album"
+              },
+              {
+                "id": "c",
+                "texte": "Appeler le magasin"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Jouer à un jeu par SMS"
+              }
+            }
+          },
+          {
+            "enonce": "Quel mot faut-il envoyer ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "ZAYA",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "ALBUM"
+              },
+              {
+                "id": "c",
+                "texte": "CONCERT"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "ZAYA"
+              }
+            }
+          },
+          {
+            "enonce": "Combien de participants reçoivent une invitation ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Quinze",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Cinq"
+              },
+              {
+                "id": "c",
+                "texte": "Vingt"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Quinze"
+              }
+            }
+          },
+          {
+            "enonce": "Quel magasin reçoit Zaya ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Joli Culture",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Belle Musique"
+              },
+              {
+                "id": "c",
+                "texte": "Tout Loisirs"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Joli Culture"
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "magasins",
+        "scene": "Sortie d'un nouvel album"
+      }
+    },
+    {
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "exercise": "tcf-ss-b1-s2-co-4",
+      "before": {
+        "id": "tcf-ss-b1-s2-co-4",
+        "niveau": "A2-B1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Radio 27",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/radio/10-radio-loisirs-préférés-des-adolescents.mp3",
+          "transcription": "Bonjour et bienvenue sur Radio zigzag.\nAujourd'hui nous allons parler de vos loisirs préférés à vous les ados.\nSelon des sondages récents, c'est le football qui est en tête chez les garçons de 12 à 18 ans avec 76% de préférence.\nEt les sorties entre copines chez les filles avec 53% de préférence, juste devant les activités artistiques en général 47,5%.\nEst-ce que ces sondages reflètent la réalité des jeunes de aujourd'hui ?\nPour en parler, nous avons deux invités sur le plateau, Miriam et Christopher.\nMiriam, tu as 17 ans, c'est ça ?\nOui, je suis en terminale au lycée Gauté et qu'elles sont les loisirs préférés ?\nMoi, ce que je préfère, c'est les soirées avec les copains, faire du shopping, tout ça.\nQuand j'étais petit, je faisais de la g d'une, du ballet, du piano, la totale, mais après, j'ai arrêté.\nMaintenant, il n'y a que la gymnastique acrobatique que je continue.\nAvec trois copines, parfois on fait un petit spectacle au lycée quand il y a une fête.\nEt pourquoi tu as arrêté toutes les autres activités ?\nJe n'avais le temps de rien faire.\nEt puis le ballet, le piano, tout ça, c'est un peu comme à l'école.\nDes activités encadrées, on ne peut pas vraiment faire ce qu'on veut.\nMoi, je préfère avoir plus de liberté.\nEt toi, Christopher ?\nQuelles sont les loisirs préférés et que pensent-tu de l'opinion de Miriam ?\nJe suis complètement d'accord avec elle.\nJe pense qu'il y a une grosse différence entre le temps livre qui est à nous et ce qu'on nous impose comme activité.\nMoi, par exemple, j'éténise tous les lundis et mercredis.\nC'est une activité extra scolaire, mais je ne considère pas que ce soit du loisir.\nEt quelle serait vos loisirs idéaux, ou bien que foriez-vous avec plus de temps libre pour vous ?\nPour moi, sans hésitation, un jour entier pour sortir, allez voir les copains et faire ce que je veux sans les parents.\nEt pour toi, Christopher ?\nPas de cours de tennis et un après-midi et une soirée en plus, complètement libre.\nPeut-être avec la famille, mais pas planifier à l'avance."
+        },
+        "questions": [
+          {
+            "enonce": "À quel public est destinée cette émission ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Aux adolescents",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Aux retraités"
+              },
+              {
+                "id": "c",
+                "texte": "Aux enfants"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Aux adolescents"
+              }
+            }
+          },
+          {
+            "enonce": "D'après les sondages, quel est le loisir préféré des filles ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Les sorties entre amies",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Les activités artistiques"
+              },
+              {
+                "id": "c",
+                "texte": "Les activités sportives"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Les sorties entre amies"
+              }
+            }
+          },
+          {
+            "enonce": "Quel sport Myriam pratique-t-elle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La gymnastique",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Le ballet"
+              },
+              {
+                "id": "c",
+                "texte": "Le tennis"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "La gymnastique"
+              }
+            }
+          },
+          {
+            "enonce": "Pourquoi Myriam a-t-elle arrêté plusieurs activités ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Pour avoir davantage de temps libre et de liberté",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Pour partir vivre à l'étranger"
+              },
+              {
+                "id": "c",
+                "texte": "Pour changer de lycée"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Pour avoir davantage de temps libre et de liberté"
+              }
+            }
+          },
+          {
+            "enonce": "Pourquoi Christopher ne considère-t-il pas le tennis comme un loisir ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Il le distingue du temps libre dont il dispose librement",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Il doit obligatoirement faire de la compétition"
+              },
+              {
+                "id": "c",
+                "texte": "Il trouve ce sport trop difficile"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Il le distingue du temps libre dont il dispose librement"
+              }
+            }
+          },
+          {
+            "enonce": "Quelle serait la journée idéale de Myriam ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Sortir et voir ses copains librement",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Rester chez elle toute la journée"
+              },
+              {
+                "id": "c",
+                "texte": "Suivre davantage de cours de ballet"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Sortir et voir ses copains librement"
+              }
+            }
+          },
+          {
+            "enonce": "Quel loisir arrive en tête chez les garçons interrogés dans le sondage ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Le football",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Le tennis"
+              },
+              {
+                "id": "c",
+                "texte": "Le basketball"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Le football"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-football-dessine.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/26876e2318ce.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-basketball-dessine.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "Quel âge Myriam annonce-t-elle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "17 ans",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "15 ans"
+              },
+              {
+                "id": "c",
+                "texte": "19 ans"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "17 ans"
+              }
+            }
+          },
+          {
+            "enonce": "À quels moments Christopher joue-t-il au tennis ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Le lundi et le mercredi",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Le mardi et le jeudi"
+              },
+              {
+                "id": "c",
+                "texte": "Le samedi et le dimanche"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Le lundi et le mercredi"
+              }
+            }
+          },
+          {
+            "enonce": "Avec qui Myriam fait-elle parfois des spectacles au lycée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Trois copines",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Ses parents"
+              },
+              {
+                "id": "c",
+                "texte": "Son professeur de piano"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Trois copines"
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "radio",
+        "scene": "Comment se souviendra notre"
+      },
+      "after": {
+        "id": "tcf-ss-b1-s2-co-4",
+        "niveau": "A2-B1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Radio 27",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/radio/10-radio-loisirs-préférés-des-adolescents.mp3",
+          "transcription": "Bonjour et bienvenue sur Radio Zigzag. Aujourd'hui, nous allons parler de vos loisirs préférés à vous les ados. Selon des sondages récents, c'est le football qui est en tête chez les garçons de 12 à 18 ans avec 76% de préférence. Et les sorties entre copines chez les filles avec 53% de préférence, juste devant les activités artistiques en général, 47,5%. Est-ce que ces sondages reflètent la réalité des jeunes d'aujourd'hui ? Pour en parler, nous avons deux invités sur le plateau. Myriam et Christopher. Myriam, tu as 17 ans, c'est ça ? Oui, je suis en terminale au lycée Goethe. Et quels sont tes loisirs préférés ? Bah moi, ce que je préfère, c'est les soirées avec les copains, faire du shopping, tout ça. Quand j'étais petite, je faisais de la gymnastique acrobatique, du ballet, du piano, la totale, quoi. Mais après, j'ai arrêté. Maintenant, il n'y a que la gymnastique acrobatique que je continue. Avec trois copines, parfois, on fait un petit spectacle au lycée quand il y a une fête. Et pourquoi tu as arrêté toutes les autres activités ? Je n'avais le temps de rien faire. Et puis le ballet, le piano, tout ça, c'est un peu comme à l'école. Des activités encadrées où on ne peut pas vraiment faire ce qu'on veut. Moi, je préfère avoir plus de liberté. Et toi, Christopher, quels sont tes loisirs préférés et que penses-tu de l'opinion de Myriam ? Je suis complètement d'accord avec elle. Je pense qu'il y a une grosse différence entre le temps libre qui est à nous et ce qu'on nous impose comme activité. Moi, par exemple, j'ai tennis tous les lundis et mercredi. C'est une activité extrascolaire, mais je ne considère pas que ce soit du loisir. Et quels seraient vos loisirs idéaux ou bien que feriez-vous avec plus de temps libre pour vous ? Pour moi, sans hésitation, un jour entier pour sortir, aller voir les copains et faire ce que je veux sans mes parents. Et pour toi, Christopher. Pas de cours de tennis et un après-midi et une soirée en plus complètement libre. Peut-être avec la famille, mais pas planifié à l'avance."
+        },
+        "questions": [
+          {
+            "enonce": "À quel public est destinée cette émission ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Aux adolescents",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Aux retraités"
+              },
+              {
+                "id": "c",
+                "texte": "Aux enfants"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Aux adolescents"
+              }
+            }
+          },
+          {
+            "enonce": "D'après les sondages, quel est le loisir préféré des filles ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Les sorties entre amies",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Les activités artistiques"
+              },
+              {
+                "id": "c",
+                "texte": "Les activités sportives"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Les sorties entre amies"
+              }
+            }
+          },
+          {
+            "enonce": "Quel sport Myriam pratique-t-elle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La gymnastique",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Le ballet"
+              },
+              {
+                "id": "c",
+                "texte": "Le tennis"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "La gymnastique"
+              }
+            }
+          },
+          {
+            "enonce": "Pourquoi Myriam a-t-elle arrêté plusieurs activités ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Pour avoir davantage de temps libre et de liberté",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Pour partir vivre à l'étranger"
+              },
+              {
+                "id": "c",
+                "texte": "Pour changer de lycée"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Pour avoir davantage de temps libre et de liberté"
+              }
+            }
+          },
+          {
+            "enonce": "Pourquoi Christopher ne considère-t-il pas le tennis comme un loisir ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Il le distingue du temps libre dont il dispose librement",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Il doit obligatoirement faire de la compétition"
+              },
+              {
+                "id": "c",
+                "texte": "Il trouve ce sport trop difficile"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Il le distingue du temps libre dont il dispose librement"
+              }
+            }
+          },
+          {
+            "enonce": "Quelle serait la journée idéale de Myriam ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Sortir et voir ses copains librement",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Rester chez elle toute la journée"
+              },
+              {
+                "id": "c",
+                "texte": "Suivre davantage de cours de ballet"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Sortir et voir ses copains librement"
+              }
+            }
+          },
+          {
+            "enonce": "Quel loisir arrive en tête chez les garçons interrogés dans le sondage ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Le football",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Le tennis"
+              },
+              {
+                "id": "c",
+                "texte": "Le basketball"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Le football"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-football-dessine.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/26876e2318ce.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-basketball-dessine.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "Quel âge Myriam annonce-t-elle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "17 ans",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "15 ans"
+              },
+              {
+                "id": "c",
+                "texte": "19 ans"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "17 ans"
+              }
+            }
+          },
+          {
+            "enonce": "À quels moments Christopher joue-t-il au tennis ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Le lundi et le mercredi",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Le mardi et le jeudi"
+              },
+              {
+                "id": "c",
+                "texte": "Le samedi et le dimanche"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Le lundi et le mercredi"
+              }
+            }
+          },
+          {
+            "enonce": "Avec qui Myriam fait-elle parfois des spectacles au lycée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Trois copines",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Ses parents"
+              },
+              {
+                "id": "c",
+                "texte": "Son professeur de piano"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Trois copines"
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "radio",
+        "scene": "Comment se souviendra notre"
+      }
+    }
+  ],
+  "status": "installed",
+  "received_originals_modified": 0,
+  "human_listening_performed": false
+}

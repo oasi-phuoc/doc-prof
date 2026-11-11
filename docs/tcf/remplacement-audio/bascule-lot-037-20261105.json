@@ -1,0 +1,1661 @@
+{
+  "batch": 37,
+  "audio_replacements": [
+    {
+      "ref": "/lib/audio/tcf/co/maison/le-secret-c-est-l-anticipation-2.mp3",
+      "previous_sha256": "85242a1a610fab1e282e26a2729379a8f2cc27dafabcc171c188e8734ac5e1ec",
+      "candidate_sha256": "191cfdb3566bcc23e21655541456dabaa113d0044c17bbc6f4aaddee101a6b32",
+      "rollback_git_blob": "ee5660427d15731e953a3a0a3fc32199fd4af061",
+      "source_id": "09035276:034:85242a1a610f",
+      "source_sha256": "85242a1a610fab1e282e26a2729379a8f2cc27dafabcc171c188e8734ac5e1ec",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "191cfdb3566bcc23e21655541456dabaa113d0044c17bbc6f4aaddee101a6b32",
+        "duration": 25.4965625,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "85242a1a610fab1e282e26a2729379a8f2cc27dafabcc171c188e8734ac5e1ec",
+          "proof": {
+            "previous_sha256": "f34750154d9a15452400ed01e6949fadf6b942814bec5a4bfff49f47940c8373",
+            "sha256": "191cfdb3566bcc23e21655541456dabaa113d0044c17bbc6f4aaddee101a6b32",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/69-f34750154d9a-381376-1505750/candidate.mp3",
+            "source_sha256": "85242a1a610fab1e282e26a2729379a8f2cc27dafabcc171c188e8734ac5e1ec",
+            "source_file": "/workspace/work/tcf-audio-additional-20261102-work/incoming/a1/mdf-a1-abc-junior/MDF_A1_ABC-DELF-Junior-Scolaire_AUDIO/09035276_34_Ex 31-2.mp3",
+            "source_decoded_pcm_sha256": "ecd53f8b5484d15c23147dd796e389247cb0a00ae7fb126c6530d18e0ab8ee52",
+            "source_sample_rate": 44100,
+            "source_channels": 1,
+            "source_start_frame": 381376,
+            "source_end_frame": 1505750,
+            "source_start": 8.64798185941043,
+            "source_end": 34.14399092970522,
+            "source_slice_pcm_sha256": "dc8949f318bb60566cc740f85c7c54d685707eff44d27542923f069019803543",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/69-f34750154d9a-381376-1505750/start_before.flac",
+                "sha256": "de5b4ec5166b6137983369e7561c8e3dadec6150e4866c37914654dd654e6a52",
+                "source_start_frame": 293176,
+                "source_end_frame": 381376,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/69-f34750154d9a-381376-1505750/start_after.flac",
+                "sha256": "d4436a6e35818f9de2403abddfe83084ea1c9d64fdcbd0beefb01a3c276949ec",
+                "source_start_frame": 381376,
+                "source_end_frame": 469576,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/69-f34750154d9a-381376-1505750/end_before.flac",
+                "sha256": "48815255bf820e5877d2afe5587abc9a547e8301e85bdf8f631c988d66b83947",
+                "source_start_frame": 1417550,
+                "source_end_frame": 1505750,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/69-f34750154d9a-381376-1505750/end_after.flac",
+                "sha256": "f3b1ead5f1eb78079eb7f117cd7d652f489a4e0675ac7b61756fa7ff59926ce5",
+                "source_start_frame": 1505750,
+                "source_end_frame": 1593950,
+                "available_seconds": 2.0
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Bonjour",
+                "start": 8.727999,
+                "end": 9.528,
+                "kind": "dialogue",
+                "asr_word_index": 6,
+                "raw_start": 8.727999389648437,
+                "raw_end": 9.527999729394912,
+                "native_token_indices": [
+                  13,
+                  14,
+                  15,
+                  16
+                ]
+              },
+              "last": {
+                "text": "téléphones!",
+                "start": 33.24,
+                "end": 33.8,
+                "kind": "dialogue",
+                "asr_word_index": 48,
+                "raw_start": 33.239999790191646,
+                "raw_end": 34.03999998092651,
+                "native_token_indices": [
+                  24,
+                  25,
+                  26,
+                  27,
+                  28,
+                  30
+                ]
+              },
+              "previous_word_end": 4.808,
+              "next_word_start": 36.96326530612245,
+              "first_source_speech_region": [
+                9.056,
+                10.4
+              ],
+              "last_source_speech_region": [
+                32.992,
+                33.984
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/69-f34750154d9a-381376-1505750/waveform.svg",
+              "sha256": "6cc5acf1db9705509447db210b8a71c6dd0e4c152182873820b0a48706b55651"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.0,
+          "relative_rms_threshold": 0.00711585357785225,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.416,
+          "trailing_non_speech_seconds": 0.1845625,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
+      "editorial_reason": "Texte, questions et réponses relus en regard des reconnaissances finales ; frontières incertaines maintenues en attente.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 36.97,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_85-2.mp3",
+      "previous_sha256": "4a4120160b044b1eb2d09c34c7002814bf2c169f34db9826231038616da05776",
+      "candidate_sha256": "5052e20ffdb556bb504b8d7d41164f425a4bd9495414d4fe7ec041b775e07591",
+      "rollback_git_blob": "ce881a78fea31f807b6b5a1eb9967c3f416bea1c",
+      "source_id": "delf_a1_2022:085:657006e9075c",
+      "source_sha256": "657006e9075c97fd854b23eba86a98a1c03f8cdec065912d8db82c74e99b1b33",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "5052e20ffdb556bb504b8d7d41164f425a4bd9495414d4fe7ec041b775e07591",
+        "duration": 13.96,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "657006e9075c97fd854b23eba86a98a1c03f8cdec065912d8db82c74e99b1b33",
+          "proof": {
+            "previous_sha256": "0e1502736f15801c88248147132aaf47b7872032944afbf2324cdef142ceb6e3",
+            "sha256": "5052e20ffdb556bb504b8d7d41164f425a4bd9495414d4fe7ec041b775e07591",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/356-0e1502736f15-405720-1021356/candidate.mp3",
+            "source_sha256": "657006e9075c97fd854b23eba86a98a1c03f8cdec065912d8db82c74e99b1b33",
+            "source_file": "/workspace/work/tcf-audio-replacement/incoming/a1/delf_a1_2022_piste_85.mp3",
+            "source_decoded_pcm_sha256": "2944d25862af4a01b43654ddb6fffa425f34e42daf5f3936d5855f37a4dcfce7",
+            "source_sample_rate": 44100,
+            "source_channels": 2,
+            "source_start_frame": 405720,
+            "source_end_frame": 1021356,
+            "source_start": 9.2,
+            "source_end": 23.16,
+            "source_slice_pcm_sha256": "caa1f9337969c52ba316c930094384300cf03c548e66bc65f3903caf0cba71a7",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/356-0e1502736f15-405720-1021356/start_before.flac",
+                "sha256": "4e464b23cc67f12a402c940758107fa047e63797acc7032ae54a47ef752cdbad",
+                "source_start_frame": 317520,
+                "source_end_frame": 405720,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/356-0e1502736f15-405720-1021356/start_after.flac",
+                "sha256": "02effe6630ecc4c87ee8e93266442bcbba51680dd1ff6e91d808936d681294cd",
+                "source_start_frame": 405720,
+                "source_end_frame": 493920,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/356-0e1502736f15-405720-1021356/end_before.flac",
+                "sha256": "140eab5d0b754683440cf91e208d22a2cb26e1bd3d3b7c837bc592cfeaeac141",
+                "source_start_frame": 933156,
+                "source_end_frame": 1021356,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/356-0e1502736f15-405720-1021356/end_after.flac",
+                "sha256": "80973cfa0da76640527238b0d50f16fd4cbe25143f2575bd65074bab19cddb2a",
+                "source_start_frame": 1021356,
+                "source_end_frame": 1109556,
+                "available_seconds": 2.0
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Alors",
+                "start": 9.28,
+                "end": 9.759999,
+                "kind": "dialogue",
+                "asr_word_index": 9,
+                "raw_start": 9.279999732971191,
+                "raw_end": 9.759999498724937,
+                "native_token_indices": [
+                  24,
+                  25
+                ]
+              },
+              "last": {
+                "text": "plaît",
+                "start": 22.16,
+                "end": 23.039999,
+                "kind": "dialogue",
+                "asr_word_index": 37,
+                "raw_start": 22.15999984741211,
+                "raw_end": 23.039999306201935,
+                "native_token_indices": [
+                  85,
+                  86,
+                  87
+                ]
+              },
+              "previous_word_end": 8.32,
+              "next_word_start": 24.24,
+              "first_source_speech_region": [
+                9.568,
+                10.08
+              ],
+              "last_source_speech_region": [
+                19.712,
+                22.24
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. Natural native margins up to one second are retained to avoid trimming a quiet first word or its final decay. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/356-0e1502736f15-405720-1021356/waveform.svg",
+              "sha256": "e56649e41ebeb1152380e9ac842f8ab1807ac49a171a5b5b7e79d223a4a56c28"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.3,
+          "trailing_quiet_seconds": 0.98,
+          "relative_rms_threshold": 0.005738073065876962,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.384,
+          "trailing_non_speech_seconds": 0.936,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
+      "editorial_reason": "Revue éditoriale du dialogue, des questions et de leurs trois propositions. Corrections des faits uniquement lorsque les reconnaissances les étayent ; deux reconnaissances finales et marges qualifiées restent requises avant bascule.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 10.4,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    }
+  ],
+  "exercise_changes": [
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s23-co-1",
+      "before": {
+        "id": "tcf-ss-a1-s23-co-1",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Radio 31",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/maison/le-secret-c-est-l-anticipation-2.mp3",
+          "transcription": "2.\nÀ l'Aradio.\nExercice 31.\nBonjour à tous!\nAujourd'hui, sur Radio-Jean, vous pouvez gagner deux places pour le concert de Mado.\nPour gagner, c'est facile.\nVous entendez une chanson de Mado et vous nous appelez aux 08, 40, 65, 30, 40 avant midi.\nAlors, vite!\nA vos téléphones!"
+        },
+        "questions": [
+          {
+            "enonce": "Combien de places peut-on gagner ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Deux",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Une"
+              },
+              {
+                "id": "c",
+                "texte": "Trois"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Deux"
+              }
+            }
+          },
+          {
+            "enonce": "Pour quelle sortie les places sont-elles proposées ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un concert",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Une pièce de théâtre"
+              },
+              {
+                "id": "c",
+                "texte": "Une séance de cinéma"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un concert"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-concert-dessine.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/d8953c7ddfe7.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "Quel artiste est annoncé ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Mado",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Angèle"
+              },
+              {
+                "id": "c",
+                "texte": "Stromae"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Mado"
+              }
+            }
+          },
+          {
+            "enonce": "Comment faut-il contacter la radio ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Par téléphone",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Par courriel"
+              },
+              {
+                "id": "c",
+                "texte": "Par SMS"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Par téléphone"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "image": "/lib/images/tcf/qcm-audit/communication-appeler.webp",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/communication-courriel.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/communication-message.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "Avant quelle heure faut-il appeler ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Avant midi",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Avant 10 h"
+              },
+              {
+                "id": "c",
+                "texte": "Avant 18 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Avant midi"
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "maison",
+        "scene": "Le secret c'est l'anticipation"
+      },
+      "after": {
+        "id": "tcf-ss-a1-s23-co-1",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Radio 31",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/maison/le-secret-c-est-l-anticipation-2.mp3",
+          "transcription": "Bonjour à tous ! Aujourd'hui, sur Radio Jeune, vous pouvez gagner deux places pour le concert de Mado. Pour gagner, c'est facile. Vous entendez une chanson de Mado et vous nous appelez au 08 40 65 30 40 avant midi. Alors vite, à vos téléphones !"
+        },
+        "questions": [
+          {
+            "enonce": "Combien de places peut-on gagner ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Deux",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Une"
+              },
+              {
+                "id": "c",
+                "texte": "Trois"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Deux"
+              }
+            }
+          },
+          {
+            "enonce": "Pour quelle sortie les places sont-elles proposées ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un concert",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Une pièce de théâtre"
+              },
+              {
+                "id": "c",
+                "texte": "Une séance de cinéma"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un concert"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-concert-dessine.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/d8953c7ddfe7.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "Quel artiste est annoncé ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Mado",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Angèle"
+              },
+              {
+                "id": "c",
+                "texte": "Stromae"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Mado"
+              }
+            }
+          },
+          {
+            "enonce": "Comment faut-il contacter la radio ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Par téléphone",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Par courriel"
+              },
+              {
+                "id": "c",
+                "texte": "Par SMS"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Par téléphone"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "image": "/lib/images/tcf/qcm-audit/communication-appeler.webp",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/communication-courriel.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/communication-message.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "Avant quelle heure faut-il appeler ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Avant midi",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Avant 10 h"
+              },
+              {
+                "id": "c",
+                "texte": "Avant 18 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Avant midi"
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "maison",
+        "scene": "Le secret c'est l'anticipation"
+      }
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "delf-a1-2022-co-85",
+      "before": {
+        "id": "delf-a1-2022-co-85",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Piste 85",
+        "scenario": "magasins",
+        "scene": "Piste 85",
+        "consigne": "Écoutez le document. Lisez les questions, puis répondez.",
+        "support": {
+          "transcription": [
+            "Le manteau coûte 115 €.",
+            "Alors, 1 kilo de fraises, 2,50 €, 2 kilos de pommes, 3,20 € et 1 litre de jus d’orange, 2 €, ça fait 7,70 € s’il vous plaît.",
+            "Le menu du jour coûte 24 €. Le plat principal seul coûte 16 €. Avec le dessert, c’est 21 €.",
+            "Il y a un départ pour Paris dans 30 minutes. Le billet coûte 68 euros. Ensuite, le prochain départ est à 11 h 58. C'est le même prix."
+          ],
+          "audios": [
+            "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_85-1.mp3",
+            "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_85-2.mp3",
+            "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_85-3.mp3",
+            "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_85-4.mp3"
+          ],
+          "images_descriptions": [
+            "Scénario vidéo (audio CO moyen, « Piste 85 — dialogue 1 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Le manteau coûte 115 € ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Piste 85 — dialogue 2 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Alors, 1 kilo de fraises, 2,50 €, 2 kilos de pommes, 3,20 € et 1 litre de jus d’orange, 2 €, ça fait 7,70 € s’il vous plaît ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Piste 85 — dialogue 3 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Le menu du jour coûte 24 € » ; B : « Le plat principal seul coûte 16 € » ; A : « Avec le dessert, c’est 21 € ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Piste 85 — dialogue 4 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Il y a un départ pour Paris dans 30 minutes » ; B : « Le billet coûte 68 € » ; A : « Ensuite, le prochain départ est à 11 h 58 » ; B : « C’est le même prix ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
+          ]
+        },
+        "questions": [
+          {
+            "enonce": "Quel vêtement coûte 115 euros ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Le manteau",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Le pantalon"
+              },
+              {
+                "id": "c",
+                "texte": "La chemise"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Le manteau"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-manteau-dessine.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-pantalons-dessines.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/vocab-chemise.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Combien coûte ce vêtement ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "115 euros",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "150 euros"
+              },
+              {
+                "id": "c",
+                "texte": "105 euros"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "115 euros"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Quelle quantité de fraises est achetée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un kilo",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Deux kilos"
+              },
+              {
+                "id": "c",
+                "texte": "Trois kilos"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un kilo"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Combien coûtent les fraises ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "2,50 euros",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "3,20 euros"
+              },
+              {
+                "id": "c",
+                "texte": "2 euros"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "2,50 euros"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Quelle quantité de pommes est achetée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Deux kilos",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Un kilo"
+              },
+              {
+                "id": "c",
+                "texte": "Trois kilos"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Deux kilos"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Quelle boisson est achetée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Du jus d'orange",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Du jus de pomme"
+              },
+              {
+                "id": "c",
+                "texte": "Du lait"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Du jus d'orange"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-jus-orange-dessine.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-jus-pomme-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/fc08f12c7321.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Quel est le prix total ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "7,70 euros",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "7,20 euros"
+              },
+              {
+                "id": "c",
+                "texte": "8,70 euros"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "7,70 euros"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Combien coûte le menu du jour ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "24 euros",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "16 euros"
+              },
+              {
+                "id": "c",
+                "texte": "21 euros"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "24 euros"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Combien coûte le plat principal seul ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "16 euros",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "21 euros"
+              },
+              {
+                "id": "c",
+                "texte": "24 euros"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "16 euros"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Combien coûtent le plat et le dessert ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "21 euros",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "24 euros"
+              },
+              {
+                "id": "c",
+                "texte": "16 euros"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "21 euros"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quelle est la destination annoncée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Paris",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Lyon"
+              },
+              {
+                "id": "c",
+                "texte": "Lille"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Paris"
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Dans combien de temps a lieu le premier départ annoncé ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "30 minutes",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "15 minutes"
+              },
+              {
+                "id": "c",
+                "texte": "Une heure"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "30 minutes"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "image": "/lib/images/tcf/qcm-audit/duree-30-minutes.webp",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/duree-15-minutes.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/duree-60-minutes.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Combien coûte le billet ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "68 euros",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "58 euros"
+              },
+              {
+                "id": "c",
+                "texte": "78 euros"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "68 euros"
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "À quelle heure a lieu le départ suivant ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "11 h 58",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "11 h 48"
+              },
+              {
+                "id": "c",
+                "texte": "12 h 58"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "11 h 58"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "image": "/lib/images/tcf/qcm-audit/co306-horloge-1158-dessinee.webp",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co306-horloge-1148-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co306-horloge-1258-dessinee.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 4
+          }
+        ],
+        "consigne_supplementaire": null
+      },
+      "after": {
+        "id": "delf-a1-2022-co-85",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Piste 85",
+        "scenario": "magasins",
+        "scene": "Piste 85",
+        "consigne": "Écoutez le document. Lisez les questions, puis répondez.",
+        "support": {
+          "transcription": [
+            "Le manteau coûte 115 €.",
+            "Alors, 1 kilo de fraises, 2,50 € 2 kilos de pommes, 3,20 € Et 1 litre de jus d'orange, 2 € Ça fait 7,70 € s'il vous plaît",
+            "Le menu du jour coûte 24 €. Le plat principal seul coûte 16 €. Avec le dessert, c’est 21 €.",
+            "Il y a un départ pour Paris dans 30 minutes. Le billet coûte 68 euros. Ensuite, le prochain départ est à 11 h 58. C'est le même prix."
+          ],
+          "audios": [
+            "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_85-1.mp3",
+            "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_85-2.mp3",
+            "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_85-3.mp3",
+            "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_85-4.mp3"
+          ],
+          "images_descriptions": [
+            "Scénario vidéo (audio CO moyen, « Piste 85 — dialogue 1 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Le manteau coûte 115 € ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Piste 85 — dialogue 2 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Alors, 1 kilo de fraises, 2,50 €, 2 kilos de pommes, 3,20 € et 1 litre de jus d’orange, 2 €, ça fait 7,70 € s’il vous plaît ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Piste 85 — dialogue 3 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Le menu du jour coûte 24 € » ; B : « Le plat principal seul coûte 16 € » ; A : « Avec le dessert, c’est 21 € ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Piste 85 — dialogue 4 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Il y a un départ pour Paris dans 30 minutes » ; B : « Le billet coûte 68 € » ; A : « Ensuite, le prochain départ est à 11 h 58 » ; B : « C’est le même prix ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
+          ]
+        },
+        "questions": [
+          {
+            "enonce": "Quel vêtement coûte 115 euros ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Le manteau",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Le pantalon"
+              },
+              {
+                "id": "c",
+                "texte": "La chemise"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Le manteau"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-manteau-dessine.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-pantalons-dessines.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/vocab-chemise.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Combien coûte ce vêtement ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "115 euros",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "150 euros"
+              },
+              {
+                "id": "c",
+                "texte": "105 euros"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "115 euros"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Quelle quantité de fraises est achetée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un kilo",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Deux kilos"
+              },
+              {
+                "id": "c",
+                "texte": "Trois kilos"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un kilo"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Combien coûtent les fraises ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "2,50 euros",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "3,20 euros"
+              },
+              {
+                "id": "c",
+                "texte": "2 euros"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "2,50 euros"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Quelle quantité de pommes est achetée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Deux kilos",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Un kilo"
+              },
+              {
+                "id": "c",
+                "texte": "Trois kilos"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Deux kilos"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Quelle boisson est achetée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Du jus d'orange",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Du jus de pomme"
+              },
+              {
+                "id": "c",
+                "texte": "Du lait"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Du jus d'orange"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-jus-orange-dessine.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-jus-pomme-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/fc08f12c7321.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Quel est le prix total ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "7,70 euros",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "7,20 euros"
+              },
+              {
+                "id": "c",
+                "texte": "8,70 euros"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "7,70 euros"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Combien coûte le menu du jour ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "24 euros",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "16 euros"
+              },
+              {
+                "id": "c",
+                "texte": "21 euros"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "24 euros"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Combien coûte le plat principal seul ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "16 euros",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "21 euros"
+              },
+              {
+                "id": "c",
+                "texte": "24 euros"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "16 euros"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Combien coûtent le plat et le dessert ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "21 euros",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "24 euros"
+              },
+              {
+                "id": "c",
+                "texte": "16 euros"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "21 euros"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quelle est la destination annoncée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Paris",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Lyon"
+              },
+              {
+                "id": "c",
+                "texte": "Lille"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Paris"
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Dans combien de temps a lieu le premier départ annoncé ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "30 minutes",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "15 minutes"
+              },
+              {
+                "id": "c",
+                "texte": "Une heure"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "30 minutes"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "image": "/lib/images/tcf/qcm-audit/duree-30-minutes.webp",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/duree-15-minutes.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/duree-60-minutes.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Combien coûte le billet ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "68 euros",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "58 euros"
+              },
+              {
+                "id": "c",
+                "texte": "78 euros"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "68 euros"
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "À quelle heure a lieu le départ suivant ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "11 h 58",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "11 h 48"
+              },
+              {
+                "id": "c",
+                "texte": "12 h 58"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "11 h 58"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "image": "/lib/images/tcf/qcm-audit/co306-horloge-1158-dessinee.webp",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co306-horloge-1148-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co306-horloge-1258-dessinee.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 4
+          }
+        ],
+        "consigne_supplementaire": null
+      }
+    }
+  ],
+  "status": "installed",
+  "received_originals_modified": 0,
+  "human_listening_performed": false
+}

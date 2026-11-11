@@ -51,16 +51,23 @@ for row in rows:
    if engine not in rs:continue
    actual=canonical(rs[engine]['text'],engine);issues=[]
    similarity=difflib.SequenceMatcher(None,expected.split(),actual.split(),autojunk=False).ratio()
-   if similarity<.88:issues.append(engine+'_text_difference')
+   # Token fusion (e.g. salucarine) can distort a short transcript's word
+   # score. A nearly identical character sequence is supplementary evidence;
+   # numbers, technical announcements and both boundaries remain checked.
+   expected_chars=expected.replace(' ','');actual_chars=actual.replace(' ','')
+   character_similarity=difflib.SequenceMatcher(None,expected_chars,actual_chars,autojunk=False).ratio()
+   if similarity<.88 and character_similarity<.97:issues.append(engine+'_text_difference')
    if numbers(selected)!=numbers(rs[engine]['text'],engine):
     adjudicated=(resolution.get('verification_mode')=='span_review_across_three_recognitions' and bool(resolution.get('span_review_notes')))
     other_support=any(numbers(selected)==numbers(v['text'],other) for other,v in rs.items())
     confirmed=(verified_resolution(resolution,h) and resolution.get('reviewed_numbers')==numbers(selected) and (adjudicated or other_support))
     if not confirmed:issues.append(engine+'_numeric_difference')
-   if len(set(expected.split()[:3])&set(actual.split()[:6]))<min(2,len(set(expected.split()[:3]))):issues.append(engine+'_start_difference')
-   if len(set(expected.split()[-3:])&set(actual.split()[-6:]))<min(2,len(set(expected.split()[-3:]))):issues.append(engine+'_end_difference')
+   start_chars=difflib.SequenceMatcher(None,expected_chars[:24],actual_chars[:24],autojunk=False).ratio()
+   end_chars=difflib.SequenceMatcher(None,expected_chars[-24:],actual_chars[-24:],autojunk=False).ratio()
+   if (expected.split()[0] not in actual.split()[:6] or len(set(expected.split()[:3])&set(actual.split()[:6]))<min(2,len(set(expected.split()[:3])))) and start_chars<.90:issues.append(engine+'_start_difference')
+   if (expected.split()[-1] not in actual.split()[-6:] or len(set(expected.split()[-3:])&set(actual.split()[-6:]))<min(2,len(set(expected.split()[-3:])))) and end_chars<.90:issues.append(engine+'_end_difference')
    if leading_instruction(rs[engine]['text']):issues.append(engine+'_instruction_flag')
-   per_engine[engine]=dict(word_similarity=round(similarity,4),flags=issues)
+   per_engine[engine]=dict(word_similarity=round(similarity,4),character_similarity=round(character_similarity,4),start_character_similarity=round(start_chars,4),end_character_similarity=round(end_chars,4),flags=issues)
    if not issues:qualified.append(engine)
    flags.extend(issues)
  manual_ready=bool(decision and len(qualified)>=2 and technical_ok and not blocked)

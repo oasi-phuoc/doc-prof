@@ -1,0 +1,3225 @@
+{
+  "batch": 30,
+  "audio_replacements": [
+    {
+      "ref": "/lib/audio/tcf/co/presenter/moyen-a2__conversation-25-4.mp3",
+      "previous_sha256": "2b86e309fb29da12b3b36a96680d5f405840b5e21ddb974d99305d25b066340e",
+      "candidate_sha256": "e555687d113a0e9e24c12019a80855eb32df7c1c61626950dda290db3082f34a",
+      "rollback_git_blob": "9104e4c57458fb507e8545cab4c6651b37a8ae38",
+      "source_id": "9782090351958:027:4a747c2214c3",
+      "source_sha256": "4a747c2214c3a4ecc7f1c132fb5e5453c84a50bb6dfc79151413d2cc26ab849a",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "e555687d113a0e9e24c12019a80855eb32df7c1c61626950dda290db3082f34a",
+        "duration": 11.688,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "4a747c2214c3a4ecc7f1c132fb5e5453c84a50bb6dfc79151413d2cc26ab849a",
+          "proof": {
+            "previous_sha256": "1a02483b9142d70a5789c257aa175f9c8f3e501bfb90222ac914526a7bb768c4",
+            "sha256": "e555687d113a0e9e24c12019a80855eb32df7c1c61626950dda290db3082f34a",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/384-1a02483b9142-3922783-4438224/candidate.mp3",
+            "source_sha256": "4a747c2214c3a4ecc7f1c132fb5e5453c84a50bb6dfc79151413d2cc26ab849a",
+            "source_file": "/workspace/attachments/a671c870-31f4-452b-b4ef-2bd453cb4370/9782090351958_27_CO_ex25.mp3",
+            "source_decoded_pcm_sha256": "71a6c8be870514166d53b90f93d9f5d745ca01bf95a4b82b8dab4b876695ad97",
+            "source_sample_rate": 44100,
+            "source_channels": 1,
+            "source_start_frame": 3922783,
+            "source_end_frame": 4438224,
+            "source_start": 88.9519954648526,
+            "source_end": 100.64,
+            "source_slice_pcm_sha256": "7f11e467674e4565ce79011e12459fb0e6878d29194c31f3ed23238535799629",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/384-1a02483b9142-3922783-4438224/start_before.flac",
+                "sha256": "dae80295e454110a9470e98aa5ae3eabe0e2d566c3852ad2b64c87abdff9ddb5",
+                "source_start_frame": 3834583,
+                "source_end_frame": 3922783,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/384-1a02483b9142-3922783-4438224/start_after.flac",
+                "sha256": "f8d6e7b9e82809848e9f42842e481bbddc0bb9edffca5428379484819624f419",
+                "source_start_frame": 3922783,
+                "source_end_frame": 4010983,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/384-1a02483b9142-3922783-4438224/end_before.flac",
+                "sha256": "847b21d36d64ae8dae76f2d22b5c1b0f2c2eb8549db99f3e7dbedb048f427c3c",
+                "source_start_frame": 4350024,
+                "source_end_frame": 4438224,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/384-1a02483b9142-3922783-4438224/end_after.flac",
+                "sha256": "400d16bd3cd57115db490e5d4c1ffaa614b354e3630212a9f398f798b7defa0a",
+                "source_start_frame": 4438224,
+                "source_end_frame": 4523904,
+                "available_seconds": 1.9428571428571428
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Tu",
+                "start": 89.032,
+                "end": 89.352,
+                "kind": "dialogue",
+                "asr_word_index": 168,
+                "raw_start": 89.03199977111817,
+                "raw_end": 89.35199976396561,
+                "native_token_indices": [
+                  20
+                ]
+              },
+              "last": {
+                "text": "lent.",
+                "start": 99.991999,
+                "end": 100.311999,
+                "kind": "dialogue",
+                "asr_word_index": 197,
+                "raw_start": 99.99199885559082,
+                "raw_end": 100.4720004541874,
+                "native_token_indices": [
+                  84,
+                  85,
+                  86
+                ]
+              },
+              "previous_word_end": 86.392,
+              "next_word_start": 102.58285714285714,
+              "first_source_speech_region": [
+                89.472,
+                90.848
+              ],
+              "last_source_speech_region": [
+                99.424,
+                100.48
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. Natural native margins up to one second are retained to avoid trimming a quiet first word or its final decay. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/384-1a02483b9142-3922783-4438224/waveform.svg",
+              "sha256": "7667ccb15d4c09a2d86057001b3d692faa7990204e39e36cf32171449b202717"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.0,
+          "relative_rms_threshold": 0.0063835948705673225,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.512,
+          "trailing_non_speech_seconds": 0.168,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
+      "editorial_reason": "Comparaison détaillée relue : ponctuation, graphies, accords et formats de nombres ; les éventuelles divergences chiffrées restent soumises au contrôle indépendant des fichiers finaux avant installation.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 15.18,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_09-1.mp3",
+      "previous_sha256": "0d2c0d236bda6fad2f9c4e5be1323f4c35e6d6b3abac804ec91534d73feee40b",
+      "candidate_sha256": "36923afcfdad791105b70712b8db68b2e2fc0d9c4e6e4a68ee3011c433d7aa51",
+      "rollback_git_blob": "8ffe02a4e5f32411df014b9ad8e8bda603a5ffc8",
+      "source_id": "delf_a2_2021:009:999b8647c0b5",
+      "source_sha256": "999b8647c0b5a96392f1ef7156d27ac901f5cc58d7574c2221b02d03b0ecd91c",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "36923afcfdad791105b70712b8db68b2e2fc0d9c4e6e4a68ee3011c433d7aa51",
+        "duration": 12.20025,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "999b8647c0b5a96392f1ef7156d27ac901f5cc58d7574c2221b02d03b0ecd91c",
+          "proof": {
+            "previous_sha256": "7982e79eb7aad5bf95a7f27bbc1e321df946aa37ed8c1055766bdaab83d14427",
+            "sha256": "36923afcfdad791105b70712b8db68b2e2fc0d9c4e6e4a68ee3011c433d7aa51",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/504-7982e79eb7aa-377143-915164/candidate.mp3",
+            "source_sha256": "999b8647c0b5a96392f1ef7156d27ac901f5cc58d7574c2221b02d03b0ecd91c",
+            "source_file": "/workspace/work/tcf-audio-replacement/incoming/a2/DELF_A2_2021_Piste_09.mp3",
+            "source_decoded_pcm_sha256": "ac95f168015af0d5bbb8e628eb2fa2f201c42a164e08e40cb3c0051e9dc0829d",
+            "source_sample_rate": 44100,
+            "source_channels": 2,
+            "source_start_frame": 377143,
+            "source_end_frame": 915164,
+            "source_start": 8.551995464852608,
+            "source_end": 20.75201814058957,
+            "source_slice_pcm_sha256": "400d0c6f5d76417d1eb95c485a27ad740c596b2e931a38d0cb2a87f1855d2341",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/504-7982e79eb7aa-377143-915164/start_before.flac",
+                "sha256": "faf9c2d42e50f1088dcf35dd75c38a66a3406f5b0a9826da0232ca68e4d209d9",
+                "source_start_frame": 288943,
+                "source_end_frame": 377143,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/504-7982e79eb7aa-377143-915164/start_after.flac",
+                "sha256": "d5a3b9461e239cf9c8c463909b9280689a5f8bf755c19fc5a06afeed81039f6d",
+                "source_start_frame": 377143,
+                "source_end_frame": 465343,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/504-7982e79eb7aa-377143-915164/end_before.flac",
+                "sha256": "5938bedd7f5500f71560893bb2d65d46be9e8bf6fe865b86b450249b11f191af",
+                "source_start_frame": 826964,
+                "source_end_frame": 915164,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/504-7982e79eb7aa-377143-915164/end_after.flac",
+                "sha256": "bfc2ae4b2ad17db7cbe5ccefc1ac74a8ba5a6c8b2767d19f2ae6d92f05b57b62",
+                "source_start_frame": 915164,
+                "source_end_frame": 1003364,
+                "available_seconds": 2.0
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Vous",
+                "start": 8.632,
+                "end": 8.872,
+                "kind": "dialogue",
+                "asr_word_index": 9,
+                "raw_start": 8.631999847412109,
+                "raw_end": 8.87199984204769,
+                "native_token_indices": [
+                  21
+                ]
+              },
+              "last": {
+                "text": "alimentaires.",
+                "start": 19.271999,
+                "end": 20.632,
+                "kind": "dialogue",
+                "asr_word_index": 33,
+                "raw_start": 19.271999237060548,
+                "raw_end": 20.951999840259553,
+                "native_token_indices": [
+                  77,
+                  78,
+                  79,
+                  80,
+                  81,
+                  82
+                ]
+              },
+              "previous_word_end": 7.992,
+              "next_word_start": 21.751999,
+              "first_source_speech_region": [
+                8.896,
+                10.688
+              ],
+              "last_source_speech_region": [
+                16.544,
+                20.0
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. Natural native margins up to one second are retained to avoid trimming a quiet first word or its final decay. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/504-7982e79eb7aa-377143-915164/waveform.svg",
+              "sha256": "4397dac8483815dae1fcd0c5add9db644ba0a1a1242a61591290f7a4f3d534aa"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.32,
+          "trailing_quiet_seconds": 0.78,
+          "relative_rms_threshold": 0.007805114910006524,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.32,
+          "trailing_non_speech_seconds": 0.80825,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
+      "editorial_reason": "Revue des écarts de ponctuation, accords et graphies non épelées. Faits et questions conservés ; accord des deux reconnaissances finales et des nombres requis avant installation.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 20.43,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/presenter-conversation-3-4.mp3",
+      "previous_sha256": "b5161079328e71fc4a06048c9efb2064c9be13e387bc7ea49658fd88f98e74df",
+      "candidate_sha256": "99a0b19c1b8da23d25965aeee8f2f25c15a016630469e94e60abfa13ed25c1c5",
+      "rollback_git_blob": "1517d726e487d456b7373ef4ad9a0563f1771247",
+      "source_id": "9782090351958:003:01a4a88d9f8f",
+      "source_sha256": "01a4a88d9f8fa975464ffc894d9bdbf6890a39a45481ada53d2a983e7ad9fa8e",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "99a0b19c1b8da23d25965aeee8f2f25c15a016630469e94e60abfa13ed25c1c5",
+        "duration": 11.608,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "01a4a88d9f8fa975464ffc894d9bdbf6890a39a45481ada53d2a983e7ad9fa8e",
+          "proof": {
+            "previous_sha256": "713254f4d3cddd2ba24451cc2eda408584f20afc4fec8318f8a30a0397ce5cd3",
+            "sha256": "99a0b19c1b8da23d25965aeee8f2f25c15a016630469e94e60abfa13ed25c1c5",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/388-713254f4d3cd-3270103-3782016/candidate.mp3",
+            "source_sha256": "01a4a88d9f8fa975464ffc894d9bdbf6890a39a45481ada53d2a983e7ad9fa8e",
+            "source_file": "/workspace/attachments/87826c20-3b35-418e-84f5-c1cb50dbdd7b/9782090351958_03_CO_ex01.mp3",
+            "source_decoded_pcm_sha256": "ccc65f63f41c24a0978929a0be68bc5a19e53cc7ceae6f0e564649fc19d73aaa",
+            "source_sample_rate": 44100,
+            "source_channels": 1,
+            "source_start_frame": 3270103,
+            "source_end_frame": 3782016,
+            "source_start": 74.1519954648526,
+            "source_end": 85.76,
+            "source_slice_pcm_sha256": "0a9903a9a0e35d5410524fb8ebbbaeeed3463630eab5ab2a59a8b4884c895957",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/388-713254f4d3cd-3270103-3782016/start_before.flac",
+                "sha256": "8d4c6f03a1a449611ade74e63a1ded3fb858db706137c5b48acef3f5f64378fd",
+                "source_start_frame": 3181903,
+                "source_end_frame": 3270103,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/388-713254f4d3cd-3270103-3782016/start_after.flac",
+                "sha256": "09b8d08fd06645ca5b8d3409688073e838c7e61f8fe45c94db156e9d9e927abe",
+                "source_start_frame": 3270103,
+                "source_end_frame": 3358303,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/388-713254f4d3cd-3270103-3782016/end_before.flac",
+                "sha256": "876f946d1e0b207dbd64ff57ebdc4a40f11a003048bb5a476303f2113a33942b",
+                "source_start_frame": 3693816,
+                "source_end_frame": 3782016,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/388-713254f4d3cd-3270103-3782016/end_after.flac",
+                "sha256": "750e849ebb28098d6eab0131e9cc8aacd8faf0e6d9f1c6121099741e6c6e9289",
+                "source_start_frame": 3782016,
+                "source_end_frame": 3856896,
+                "available_seconds": 1.6979591836734693
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Je",
+                "start": 74.232,
+                "end": 74.472,
+                "kind": "dialogue",
+                "asr_word_index": 136,
+                "raw_start": 74.23200038146973,
+                "raw_end": 74.47200037610531,
+                "native_token_indices": [
+                  93
+                ]
+              },
+              "last": {
+                "text": "merci.",
+                "start": 85.112,
+                "end": 85.512,
+                "kind": "dialogue",
+                "asr_word_index": 167,
+                "raw_start": 85.11199988555909,
+                "raw_end": 85.67199997735024,
+                "native_token_indices": [
+                  29,
+                  30,
+                  31
+                ]
+              },
+              "previous_word_end": 72.712,
+              "next_word_start": 87.45795918367347,
+              "first_source_speech_region": [
+                74.56,
+                76.096
+              ],
+              "last_source_speech_region": [
+                85.184,
+                85.6
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/388-713254f4d3cd-3270103-3782016/waveform.svg",
+              "sha256": "3f7145082d469f67e6c7d213c9aec3eaa6b9284c558e782a6fd272271ee75a85"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.0,
+          "relative_rms_threshold": 0.007668599039316178,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.416,
+          "trailing_non_speech_seconds": 0.152,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
+      "editorial_reason": "Écart confirmé par les deux reconnaissances françaises du fichier final ; transcription corrigée et toutes les questions associées relues.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 13.79,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/ecole/10-école-nouveau-téléphone.mp3",
+      "previous_sha256": "339f818a569a91c92c9c56b62f98e66ee6d2a07fd75d60e116958404c373b810",
+      "candidate_sha256": "da23b1fe14e1fa3799efc2e793fe3fbe3a610dfb1cbe4404855ee0e037a37cb0",
+      "rollback_git_blob": "45b1c0ebe5c3d349e1fc83016248e834c1912f2d",
+      "source_id": "09035276:062:49e69d6e5e7f",
+      "source_sha256": "49e69d6e5e7f1ad02fd4093c610c815a9f0cd625d294f42bf850c4f95f051785",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "da23b1fe14e1fa3799efc2e793fe3fbe3a610dfb1cbe4404855ee0e037a37cb0",
+        "duration": 9.856,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "49e69d6e5e7f1ad02fd4093c610c815a9f0cd625d294f42bf850c4f95f051785",
+          "proof": {
+            "previous_sha256": "fd0ac92ca06a9155647a3b0c68858141dc03f68ef028366e926bdd54be834dde",
+            "sha256": "da23b1fe14e1fa3799efc2e793fe3fbe3a610dfb1cbe4404855ee0e037a37cb0",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/366-fd0ac92ca06a-698544-1133194/candidate.mp3",
+            "source_sha256": "49e69d6e5e7f1ad02fd4093c610c815a9f0cd625d294f42bf850c4f95f051785",
+            "source_file": "/workspace/work/tcf-audio-additional-20261102-work/incoming/a1/mdf-a1-abc-junior/MDF_A1_ABC-DELF-Junior-Scolaire_AUDIO/09035276_62_Delf blanc 2- Ex 4.mp3",
+            "source_decoded_pcm_sha256": "0d3cb63d027441b5957fd000ce1198e9f7f3f93ded7b4cff0b6da8ffc94d42a8",
+            "source_sample_rate": 44100,
+            "source_channels": 1,
+            "source_start_frame": 698544,
+            "source_end_frame": 1133194,
+            "source_start": 15.84,
+            "source_end": 25.696009070294785,
+            "source_slice_pcm_sha256": "6355f80adc74b6e8cc78f607def39e498ceeb6a817ad8abda7c6febdd225ed43",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/366-fd0ac92ca06a-698544-1133194/start_before.flac",
+                "sha256": "c2e0f16717d3e01d7c1d015c56c13e38fccec8b82c724c5b18cb8bc24f40f163",
+                "source_start_frame": 610344,
+                "source_end_frame": 698544,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/366-fd0ac92ca06a-698544-1133194/start_after.flac",
+                "sha256": "2a8efe43c3e9029b64c34b50d50f25e55e1785dbc99f51b8da82d0a889b68922",
+                "source_start_frame": 698544,
+                "source_end_frame": 786744,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/366-fd0ac92ca06a-698544-1133194/end_before.flac",
+                "sha256": "aba4037d1a32946de7a383602ee67d89b52d6d6cb8c49cd7b7a1e88b012f198d",
+                "source_start_frame": 1044994,
+                "source_end_frame": 1133194,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/366-fd0ac92ca06a-698544-1133194/end_after.flac",
+                "sha256": "7bf4b6e4087dc83b33e1b24f388a8a2e03f6de429c3bf91f656ab66a3faaba85",
+                "source_start_frame": 1133194,
+                "source_end_frame": 1221394,
+                "available_seconds": 2.0
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Woua!",
+                "start": 15.92,
+                "end": 16.48,
+                "kind": "dialogue",
+                "asr_word_index": 23,
+                "raw_start": 15.920000076293945,
+                "raw_end": 17.279998779296875,
+                "native_token_indices": [
+                  56,
+                  57,
+                  58,
+                  60
+                ]
+              },
+              "last": {
+                "text": "chance.",
+                "start": 24.64,
+                "end": 25.279999,
+                "kind": "dialogue",
+                "asr_word_index": 41,
+                "raw_start": 24.639999389648438,
+                "raw_end": 25.599998772144318,
+                "native_token_indices": [
+                  96,
+                  97,
+                  98
+                ]
+              },
+              "previous_word_end": 14.799999,
+              "next_word_start": 28.056,
+              "first_source_speech_region": [
+                16.032,
+                16.448
+              ],
+              "last_source_speech_region": [
+                24.0,
+                25.536
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/366-fd0ac92ca06a-698544-1133194/waveform.svg",
+              "sha256": "7d553cab4eb944d767a3e05c4e907e55eeb5feafe1a0ca0f0fa53ab3fd235ad6"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.18,
+          "trailing_quiet_seconds": 0.2,
+          "relative_rms_threshold": 0.005609467402100564,
+          "safe_quiet_margins": true
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.192,
+          "trailing_non_speech_seconds": 0.16,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
+      "editorial_reason": "Questions et trois réponses relues, informations comparées aux transcriptions. Les pourcentages et affirmations sont rapportés au document. Vérification des frontières et deux reconnaissances du fichier final requises.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 11.24,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/radio/a-la-librairie.mp3",
+      "previous_sha256": "546e1241eff3fbdfd1d6b9bb613af57efb3a8a13354a2144c191781603cb00c1",
+      "candidate_sha256": "e7279f4317e3cdd9d4b916d6dda24441a707159776211af6b883ecd538871e9d",
+      "rollback_git_blob": "c7798cf67f3e155f8d819ced8cc95738b2ca595e",
+      "source_id": "delf_a1_2022:089:d43462913b14",
+      "source_sha256": "d43462913b147659e438c1f20395cec7be18c058f8f4842f0d36120bd013b51f",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "e7279f4317e3cdd9d4b916d6dda24441a707159776211af6b883ecd538871e9d",
+        "duration": 31.48,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "d43462913b147659e438c1f20395cec7be18c058f8f4842f0d36120bd013b51f",
+          "proof": {
+            "previous_sha256": "78993175b37aabf7a8eab731abb4327ab6465125250f4443865af606b84b7f99",
+            "sha256": "e7279f4317e3cdd9d4b916d6dda24441a707159776211af6b883ecd538871e9d",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/487-78993175b37a-1168826-2557094/candidate.mp3",
+            "source_sha256": "d43462913b147659e438c1f20395cec7be18c058f8f4842f0d36120bd013b51f",
+            "source_file": "/workspace/work/tcf-audio-replacement/incoming/a1/delf_a1_2022_piste_89.mp3",
+            "source_decoded_pcm_sha256": "0d96d13f68170c4ad3abd2a55835c994fbba0e0d5da1a4bc8df08059b482cd11",
+            "source_sample_rate": 44100,
+            "source_channels": 2,
+            "source_start_frame": 1168826,
+            "source_end_frame": 2557094,
+            "source_start": 26.503990929705214,
+            "source_end": 57.983990929705215,
+            "source_slice_pcm_sha256": "74cb0766d2768fa914e2dc0fff593c27d320be172bc424096494443b3e146395",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/487-78993175b37a-1168826-2557094/start_before.flac",
+                "sha256": "ee29fd425e9f0ddcd9e84763b299e53aa0adc3db6f790b01413fe2b0e4bf63f4",
+                "source_start_frame": 1080626,
+                "source_end_frame": 1168826,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/487-78993175b37a-1168826-2557094/start_after.flac",
+                "sha256": "9bb1a96cf450ad7c4be4e7f733b063af25977bb293dce4e66ee1cf095949e81c",
+                "source_start_frame": 1168826,
+                "source_end_frame": 1257026,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/487-78993175b37a-1168826-2557094/end_before.flac",
+                "sha256": "ba743543ccc940a81221e5d2bbc4fbb907e361e4f19037b1796c0b2bf8170041",
+                "source_start_frame": 2468894,
+                "source_end_frame": 2557094,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/487-78993175b37a-1168826-2557094/end_after.flac",
+                "sha256": "07ec34d9a62baf995dd4d29c124077190090f32ab6ce9b50f59da0f69a9b1be1",
+                "source_start_frame": 2557094,
+                "source_end_frame": 2645294,
+                "available_seconds": 2.0
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Chers",
+                "start": 26.584,
+                "end": 26.984,
+                "kind": "dialogue",
+                "asr_word_index": 10,
+                "raw_start": 26.584,
+                "raw_end": 26.983999991059303,
+                "native_token_indices": [
+                  0,
+                  1
+                ]
+              },
+              "last": {
+                "text": "demain.",
+                "start": 57.304,
+                "end": 57.784,
+                "kind": "dialogue",
+                "asr_word_index": 63,
+                "raw_start": 57.30399994277954,
+                "raw_end": 57.86399996006489,
+                "native_token_indices": [
+                  24,
+                  25,
+                  26,
+                  27
+                ]
+              },
+              "previous_word_end": 7.12,
+              "next_word_start": 79.064,
+              "first_source_speech_region": [
+                26.784,
+                27.68
+              ],
+              "last_source_speech_region": [
+                56.512,
+                57.824
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/487-78993175b37a-1168826-2557094/waveform.svg",
+              "sha256": "5e9f247c221216c5836c0adb10f78b162d49dd914e29840e709b0991ac9bb2aa"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.11,
+          "trailing_quiet_seconds": 0.0,
+          "relative_rms_threshold": 0.005998630598187447,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.288,
+          "trailing_non_speech_seconds": 0.152,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
+      "editorial_reason": "Variantes de ponctuation, accords, homophones et graphies non épelées examinées. Texte courant conservé ; concordance des deux reconnaissances finales, des nombres et des frontières de parole requise.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 120.08,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_89.mp3",
+      "previous_sha256": "546e1241eff3fbdfd1d6b9bb613af57efb3a8a13354a2144c191781603cb00c1",
+      "candidate_sha256": "e7279f4317e3cdd9d4b916d6dda24441a707159776211af6b883ecd538871e9d",
+      "rollback_git_blob": "c7798cf67f3e155f8d819ced8cc95738b2ca595e",
+      "source_id": "delf_a1_2022:089:d43462913b14",
+      "source_sha256": "d43462913b147659e438c1f20395cec7be18c058f8f4842f0d36120bd013b51f",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "e7279f4317e3cdd9d4b916d6dda24441a707159776211af6b883ecd538871e9d",
+        "duration": 31.48,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "d43462913b147659e438c1f20395cec7be18c058f8f4842f0d36120bd013b51f",
+          "proof": {
+            "previous_sha256": "78993175b37aabf7a8eab731abb4327ab6465125250f4443865af606b84b7f99",
+            "sha256": "e7279f4317e3cdd9d4b916d6dda24441a707159776211af6b883ecd538871e9d",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/487-78993175b37a-1168826-2557094/candidate.mp3",
+            "source_sha256": "d43462913b147659e438c1f20395cec7be18c058f8f4842f0d36120bd013b51f",
+            "source_file": "/workspace/work/tcf-audio-replacement/incoming/a1/delf_a1_2022_piste_89.mp3",
+            "source_decoded_pcm_sha256": "0d96d13f68170c4ad3abd2a55835c994fbba0e0d5da1a4bc8df08059b482cd11",
+            "source_sample_rate": 44100,
+            "source_channels": 2,
+            "source_start_frame": 1168826,
+            "source_end_frame": 2557094,
+            "source_start": 26.503990929705214,
+            "source_end": 57.983990929705215,
+            "source_slice_pcm_sha256": "74cb0766d2768fa914e2dc0fff593c27d320be172bc424096494443b3e146395",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/487-78993175b37a-1168826-2557094/start_before.flac",
+                "sha256": "ee29fd425e9f0ddcd9e84763b299e53aa0adc3db6f790b01413fe2b0e4bf63f4",
+                "source_start_frame": 1080626,
+                "source_end_frame": 1168826,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/487-78993175b37a-1168826-2557094/start_after.flac",
+                "sha256": "9bb1a96cf450ad7c4be4e7f733b063af25977bb293dce4e66ee1cf095949e81c",
+                "source_start_frame": 1168826,
+                "source_end_frame": 1257026,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/487-78993175b37a-1168826-2557094/end_before.flac",
+                "sha256": "ba743543ccc940a81221e5d2bbc4fbb907e361e4f19037b1796c0b2bf8170041",
+                "source_start_frame": 2468894,
+                "source_end_frame": 2557094,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/487-78993175b37a-1168826-2557094/end_after.flac",
+                "sha256": "07ec34d9a62baf995dd4d29c124077190090f32ab6ce9b50f59da0f69a9b1be1",
+                "source_start_frame": 2557094,
+                "source_end_frame": 2645294,
+                "available_seconds": 2.0
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Chers",
+                "start": 26.584,
+                "end": 26.984,
+                "kind": "dialogue",
+                "asr_word_index": 10,
+                "raw_start": 26.584,
+                "raw_end": 26.983999991059303,
+                "native_token_indices": [
+                  0,
+                  1
+                ]
+              },
+              "last": {
+                "text": "demain.",
+                "start": 57.304,
+                "end": 57.784,
+                "kind": "dialogue",
+                "asr_word_index": 63,
+                "raw_start": 57.30399994277954,
+                "raw_end": 57.86399996006489,
+                "native_token_indices": [
+                  24,
+                  25,
+                  26,
+                  27
+                ]
+              },
+              "previous_word_end": 7.12,
+              "next_word_start": 79.064,
+              "first_source_speech_region": [
+                26.784,
+                27.68
+              ],
+              "last_source_speech_region": [
+                56.512,
+                57.824
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/487-78993175b37a-1168826-2557094/waveform.svg",
+              "sha256": "5e9f247c221216c5836c0adb10f78b162d49dd914e29840e709b0991ac9bb2aa"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.11,
+          "trailing_quiet_seconds": 0.0,
+          "relative_rms_threshold": 0.005998630598187447,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.288,
+          "trailing_non_speech_seconds": 0.152,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
+      "editorial_reason": "Variantes de ponctuation, accords, homophones et graphies non épelées examinées. Texte courant conservé ; concordance des deux reconnaissances finales, des nombres et des frontières de parole requise.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 120.08,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/salut-julie-1-1.mp3",
+      "previous_sha256": "bbe859a3cd15ba7360338b392b6965dba758bcd30cf32d583700d66db043eb9e",
+      "candidate_sha256": "f8fd70d775dfa730dd763746b6684ebb3118d55b2e38005d902e40ffacdc5fca",
+      "rollback_git_blob": "b4c0f7c7a1dae345e0090d063d1dcc91ca1d0277",
+      "source_id": "09035276:048:44c1253827eb",
+      "source_sha256": "44c1253827ebb52c5706d4c4fa31159901b25093ae21dbaebac7b26a8c83a315",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "f8fd70d775dfa730dd763746b6684ebb3118d55b2e38005d902e40ffacdc5fca",
+        "duration": 8.5200625,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "44c1253827ebb52c5706d4c4fa31159901b25093ae21dbaebac7b26a8c83a315",
+          "proof": {
+            "previous_sha256": "2b9fcb644e405f1edcdec733b45e2c1c91355ac83efd7fad02b45d1be9bdaf02",
+            "sha256": "f8fd70d775dfa730dd763746b6684ebb3118d55b2e38005d902e40ffacdc5fca",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/316-2b9fcb644e40-210621-586354/candidate.mp3",
+            "source_sha256": "44c1253827ebb52c5706d4c4fa31159901b25093ae21dbaebac7b26a8c83a315",
+            "source_file": "/workspace/work/tcf-audio-additional-20261102-work/incoming/a1/mdf-a1-abc-junior/MDF_A1_ABC-DELF-Junior-Scolaire_AUDIO/09035276_48_Ex 45-1.mp3",
+            "source_decoded_pcm_sha256": "dc754f0048e943708a518fd8c148fb221222d3f88d1262e1a1ba9938efae8124",
+            "source_sample_rate": 44100,
+            "source_channels": 1,
+            "source_start_frame": 210621,
+            "source_end_frame": 586354,
+            "source_start": 4.775986394557823,
+            "source_end": 13.296009070294785,
+            "source_slice_pcm_sha256": "e5a5031c8a72808c9a21e57e4668f00492c6acca5511200aff70d2c79b8c62c3",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/316-2b9fcb644e40-210621-586354/start_before.flac",
+                "sha256": "b786f5e8afe305f7845ecedcb6b324ab0883bb4a1222278cd9628125c3bef74c",
+                "source_start_frame": 122421,
+                "source_end_frame": 210621,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/316-2b9fcb644e40-210621-586354/start_after.flac",
+                "sha256": "1a40a763c6838792a314fd6fdfe999449dbe9eb46619f9ab011bfe0e900206ca",
+                "source_start_frame": 210621,
+                "source_end_frame": 298821,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/316-2b9fcb644e40-210621-586354/end_before.flac",
+                "sha256": "0c5b7b06cefbebd5e39437af3b9fa19e2820a069698f92d1b0436558d81396c7",
+                "source_start_frame": 498154,
+                "source_end_frame": 586354,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/316-2b9fcb644e40-210621-586354/end_after.flac",
+                "sha256": "f75a84d977318e961404fb768f009b0983a9231535231d125823b3622a9e6a9b",
+                "source_start_frame": 586354,
+                "source_end_frame": 674554,
+                "available_seconds": 2.0
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Qu'est-ce",
+                "start": 4.856,
+                "end": 5.256,
+                "kind": "dialogue",
+                "asr_word_index": 4,
+                "raw_start": 4.855999713897705,
+                "raw_end": 5.255999883770943,
+                "native_token_indices": [
+                  13,
+                  14,
+                  15,
+                  16,
+                  17
+                ]
+              },
+              "last": {
+                "text": "plaît.",
+                "start": 12.376,
+                "end": 13.175999,
+                "kind": "dialogue",
+                "asr_word_index": 29,
+                "raw_start": 12.375999694824218,
+                "raw_end": 13.495999878406524,
+                "native_token_indices": [
+                  64,
+                  65,
+                  66,
+                  67
+                ]
+              },
+              "previous_word_end": 4.456,
+              "next_word_start": 14.695999,
+              "first_source_speech_region": [
+                5.184,
+                5.92
+              ],
+              "last_source_speech_region": [
+                10.976,
+                12.416
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. Natural native margins up to one second are retained to avoid trimming a quiet first word or its final decay. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/316-2b9fcb644e40-210621-586354/waveform.svg",
+              "sha256": "159ed3fa608182046751fc9b7df78aecdb8b9a2a5ef416054d539d27c2aea2e1"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.39,
+          "trailing_quiet_seconds": 0.89,
+          "relative_rms_threshold": 0.003903242759406567,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.416,
+          "trailing_non_speech_seconds": 0.8720625,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
+      "editorial_reason": "Questions et trois propositions relues dans le contexte : une réponse correcte et présente dans le dialogue. Transcriptions finales comparées ; conserver en attente tant que les frontières ou les deux reconnaissances finales ne sont pas qualifiées.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 12.15,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_34-2.mp3",
+      "previous_sha256": "813cd47d112540dbb3205fae8ed760efe0e750caa68e115999c7d59c96683a17",
+      "candidate_sha256": "5993d70b3cc6efcfef3846e0aeefb3e0f2e26bfcd500a03ec180ac5b354981b4",
+      "rollback_git_blob": "6812a672274f2634ad75f0d4100996ab6fa11569",
+      "source_id": "delf_a2_2021:034:4c482707a98f",
+      "source_sha256": "4c482707a98ff3147581fda344cba863b0315ec01ac8bcb5ce5bd2f744d7292c",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "5993d70b3cc6efcfef3846e0aeefb3e0f2e26bfcd500a03ec180ac5b354981b4",
+        "duration": 11.496,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "4c482707a98ff3147581fda344cba863b0315ec01ac8bcb5ce5bd2f744d7292c",
+          "proof": {
+            "previous_sha256": "7fc373f127124c49858dca5b4a99eef834b8ecc25e68f491c135ea86ba1fbb16",
+            "sha256": "5993d70b3cc6efcfef3846e0aeefb3e0f2e26bfcd500a03ec180ac5b354981b4",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/508-7fc373f12712-1117317-1624291/candidate.mp3",
+            "source_sha256": "4c482707a98ff3147581fda344cba863b0315ec01ac8bcb5ce5bd2f744d7292c",
+            "source_file": "/workspace/work/tcf-audio-replacement/incoming/a2/DELF_A2_2021_Piste_34.mp3",
+            "source_decoded_pcm_sha256": "726e22aa81465a0ec9ce5b70acb0a520c69903551080104b5bd1ab1395060426",
+            "source_sample_rate": 44100,
+            "source_channels": 2,
+            "source_start_frame": 1117317,
+            "source_end_frame": 1624291,
+            "source_start": 25.335986394557825,
+            "source_end": 36.83199546485261,
+            "source_slice_pcm_sha256": "e7f1a321f4f4837b40b00bb4bd93c7fb31dd9ae64d7b9ad502ce9a4b67cce896",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/508-7fc373f12712-1117317-1624291/start_before.flac",
+                "sha256": "f19e99830ec64a0d97a7b1829626f05beae1331966f260626f322d2e61927fa6",
+                "source_start_frame": 1029117,
+                "source_end_frame": 1117317,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/508-7fc373f12712-1117317-1624291/start_after.flac",
+                "sha256": "ab1e5645b9fa6510e54f6482504ab7c5ce3d48fc5c764924c54dd7fe299fa8d8",
+                "source_start_frame": 1117317,
+                "source_end_frame": 1205517,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/508-7fc373f12712-1117317-1624291/end_before.flac",
+                "sha256": "f69464d288159ad100bf154dfba673208438532ef9733220056a27f49d970f24",
+                "source_start_frame": 1536091,
+                "source_end_frame": 1624291,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/508-7fc373f12712-1117317-1624291/end_after.flac",
+                "sha256": "493e14cc82869f46a3c5233426c7cc3026d9010067e897d3172e39274439fa7c",
+                "source_start_frame": 1624291,
+                "source_end_frame": 1712491,
+                "available_seconds": 2.0
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Mesdames",
+                "start": 25.415999,
+                "end": 26.215998,
+                "kind": "dialogue",
+                "asr_word_index": 30,
+                "raw_start": 25.415999160766603,
+                "raw_end": 26.215998472332956,
+                "native_token_indices": [
+                  64,
+                  65,
+                  66,
+                  67
+                ]
+              },
+              "last": {
+                "text": "22h.",
+                "start": 35.976,
+                "end": 36.616,
+                "kind": "dialogue",
+                "asr_word_index": 53,
+                "raw_start": 35.975999599456784,
+                "raw_end": 42.21600014543533,
+                "native_token_indices": [
+                  41,
+                  42,
+                  43,
+                  44
+                ]
+              },
+              "previous_word_end": 22.215999,
+              "next_word_start": 42.216,
+              "first_source_speech_region": [
+                25.568,
+                27.136
+              ],
+              "last_source_speech_region": [
+                35.744,
+                36.672
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/508-7fc373f12712-1117317-1624291/waveform.svg",
+              "sha256": "64c796d15a462c8098efe3ba6f8d94e2f7a3cd8dd916b3dcfc375c16814e9d6c"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.0,
+          "relative_rms_threshold": 0.007065273001790048,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.224,
+          "trailing_non_speech_seconds": 0.168,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
+      "editorial_reason": "Variantes de ponctuation, accords, homophones et graphies non épelées examinées. Texte courant conservé ; concordance des deux reconnaissances finales, des nombres et des frontières de parole requise.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 18.23,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_39.mp3",
+      "previous_sha256": "2ee8659e527d0cf3f8a4bdc7c7a9228b0e6cb49f4d0f3a11041582f7fd09af0e",
+      "candidate_sha256": "ced23a5a4743e3951cd78a088f7da04b66ffc93cf796446b7abd59be54b95b19",
+      "rollback_git_blob": "53230d31ccf5a771ecc91f8131621ec1e1570b86",
+      "source_id": "delf_a2_2021:039:2ee8659e527d",
+      "source_sha256": "2ee8659e527d0cf3f8a4bdc7c7a9228b0e6cb49f4d0f3a11041582f7fd09af0e",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "ced23a5a4743e3951cd78a088f7da04b66ffc93cf796446b7abd59be54b95b19",
+        "duration": 33.248,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "2ee8659e527d0cf3f8a4bdc7c7a9228b0e6cb49f4d0f3a11041582f7fd09af0e",
+          "proof": {
+            "previous_sha256": "17a96b9f1ff73afbba78a55d7526ce0c890f5a3dd799b8eebb96cb7e561ff5ee",
+            "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T112017-1530bd9115/delf_a2_2021-039-2ee8659e527d-d1/candidate.mp3",
+            "status": "new_candidate_requires_two_recognitions",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/17a96b9f1ff73afbba78a55d7526ce0c890f5a3dd799b8eebb96cb7e561ff5ee-370087-1836324/candidate.mp3",
+            "sha256": "ced23a5a4743e3951cd78a088f7da04b66ffc93cf796446b7abd59be54b95b19",
+            "source_sha256": "2ee8659e527d0cf3f8a4bdc7c7a9228b0e6cb49f4d0f3a11041582f7fd09af0e",
+            "source_file": "/workspace/work/tcf-audio-replacement/incoming/a2/DELF_A2_2021_Piste_39.mp3",
+            "source_decoded_pcm_sha256": "f5380e30faa0e97a26ee579d49abc633f368935c7e2acb83b0e6eca31be7608e",
+            "source_sample_rate": 44100,
+            "source_channels": 2,
+            "source_start_frame": 370087,
+            "source_end_frame": 1836324,
+            "source_start": 8.391995464852608,
+            "source_end": 41.64,
+            "source_slice_pcm_sha256": "f798d5bf080aa2c4fcfe53ab7a74eb7123905b21a4c3641fb68a41d5d8a44d23",
+            "previous_start": 8.391995464852608,
+            "previous_end": 41.40800453514739,
+            "word_anchors_and_signal": [
+              {
+                "edge": "end",
+                "quiet_interval": [
+                  41.52,
+                  42.28
+                ],
+                "last_word": "12.",
+                "next_word_start": 44.47081632653062
+              }
+            ],
+            "human_listening_performed": false
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.22,
+          "trailing_quiet_seconds": 0.13,
+          "relative_rms_threshold": 0.0064471738040447245,
+          "safe_quiet_margins": true
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.384,
+          "trailing_non_speech_seconds": 0.128,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
+      "editorial_reason": "Variantes de ponctuation, accords, homophones et graphies non épelées examinées. Texte courant conservé ; concordance des deux reconnaissances finales, des nombres et des frontières de parole requise.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 44.02,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    }
+  ],
+  "exercise_changes": [
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s47-co-3",
+      "before": {
+        "id": "tcf-ss-a1-s47-co-3",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Conversation 45",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "transcription": [
+            "Qu'est-ce que tu fais ?\nJe prépare une salade d'automate pour ce soir.\nTu veux de l'aide ?\nOui, tu peux couper ces tomates s'il te plaît ?",
+            "- Sarah, tu as vu mon parapluie ? - Oui, je l'ai mis dans la cuisine. - Dans la cuisine ? Oh non, regarde, il y a de l'eau partout. - Ah oui, désolée.",
+            "Où tu vas ?\nJe vais chez ma copine Elisa.\nJe dois lui apporter son livre de français.\nAh, très bien.\nTu prends ton vélo ?\nOui.\nD'accord, mais fais attention."
+          ],
+          "audios": [
+            "/lib/audio/tcf/co/vie-quotidienne/salut-julie-1-1.mp3",
+            "/lib/audio/tcf/co/vie-quotidienne/salut-julie-1-2.mp3",
+            "/lib/audio/tcf/co/vie-quotidienne/salut-julie-1-3.mp3"
+          ],
+          "images_descriptions": [
+            "Scénario vidéo (audio CO moyen, « Salut Julie — dialogue 1 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans une situation de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Qu'est-ce que tu fais ? » ; B : « Je prépare une salade d'automate pour ce soir » ; A : « Tu veux de l'aide ? » ; B : « Oui, tu peux couper ces tomates s'il te plaît ? ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Salut Julie — dialogue 2 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans une situation de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Sarah, tu as vu mon parapluie ? » ; B : « Oui, je l'ai mis dans la cuisine » ; A : « Dans la cuisine ? » ; B : « En en regarde » ; A : « Il y a de l'eau partout » ; B : « Ah oui, désolé ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Salut Julie — dialogue 3 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans une situation de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Où tu vas ? » ; B : « Je vais chez ma copine Elisa » ; A : « Je dois lui apporter son livre de français » ; B : « Ah, très bien » ; A : « Tu prends ton vélo ? » ; B : « Oui » ; A : « D'accord, mais fais attention ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
+          ]
+        },
+        "questions": [
+          {
+            "enonce": "Quel plat la personne prépare-t-elle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Une salade",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Une soupe"
+              },
+              {
+                "id": "c",
+                "texte": "Un gâteau"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Une salade"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/ffb4171c4e3e.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-soupe-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/40b742b7985d.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Quel légume faut-il couper ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Des tomates",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Des carottes"
+              },
+              {
+                "id": "c",
+                "texte": "Des pommes de terre"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Des tomates"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-tomates-dessinees.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-carottes-dessinees.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-pommes-terre-dessinees.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Pour quand le plat est-il préparé ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Ce soir",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Demain midi"
+              },
+              {
+                "id": "c",
+                "texte": "Dimanche"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Ce soir"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Quel objet cherche-t-on ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un parapluie",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Un manteau"
+              },
+              {
+                "id": "c",
+                "texte": "Un sac"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un parapluie"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-parapluie-dessine.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-manteau-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/b48c69f2021e.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Où Sarah l'a-t-elle mis ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Dans la cuisine",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Dans l'entrée"
+              },
+              {
+                "id": "c",
+                "texte": "Dans la chambre"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Dans la cuisine"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "image": "/lib/images/tcf/qcm-audit/vocab-cuisiner.webp",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/co/bg/entree-maison.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/vocab-chambre-simple.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Que trouve-t-on partout à cet endroit ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "De l'eau",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Du sable"
+              },
+              {
+                "id": "c",
+                "texte": "Des papiers"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "De l'eau"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Chez qui la personne va-t-elle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Chez Elisa",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Chez Sarah"
+              },
+              {
+                "id": "c",
+                "texte": "Chez Julie"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Chez Elisa"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quel objet doit-elle apporter ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un livre de français",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Un cahier de musique"
+              },
+              {
+                "id": "c",
+                "texte": "Un dictionnaire anglais"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un livre de français"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co306-livre-francais-dessine.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co306-cahier-musique-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co306-dictionnaire-anglais-dessine.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Comment va-t-elle s'y rendre ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "À vélo",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "En bus"
+              },
+              {
+                "id": "c",
+                "texte": "À pied"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "À vélo"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-marche-pied-dessinee.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quelle recommandation la personne reçoit-elle avant de partir ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Faire attention",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Partir plus vite"
+              },
+              {
+                "id": "c",
+                "texte": "Changer de vélo"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Faire attention"
+              }
+            },
+            "audio": 3
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "vie-quotidienne",
+        "scene": "Salut Julie"
+      },
+      "after": {
+        "id": "tcf-ss-a1-s47-co-3",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Conversation 45",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "transcription": [
+            "Qu'est-ce que tu fais ? Je prépare une salade de tomates pour ce soir. Tu veux de l'aide ? Oui. Tu peux couper ces tomates s'il te plaît.",
+            "- Sarah, tu as vu mon parapluie ? - Oui, je l'ai mis dans la cuisine. - Dans la cuisine ? Oh non, regarde, il y a de l'eau partout. - Ah oui, désolée.",
+            "Où tu vas ?\nJe vais chez ma copine Elisa.\nJe dois lui apporter son livre de français.\nAh, très bien.\nTu prends ton vélo ?\nOui.\nD'accord, mais fais attention."
+          ],
+          "audios": [
+            "/lib/audio/tcf/co/vie-quotidienne/salut-julie-1-1.mp3",
+            "/lib/audio/tcf/co/vie-quotidienne/salut-julie-1-2.mp3",
+            "/lib/audio/tcf/co/vie-quotidienne/salut-julie-1-3.mp3"
+          ],
+          "images_descriptions": [
+            "Scénario vidéo (audio CO moyen, « Salut Julie — dialogue 1 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans une situation de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Qu'est-ce que tu fais ? » ; B : « Je prépare une salade d'automate pour ce soir » ; A : « Tu veux de l'aide ? » ; B : « Oui, tu peux couper ces tomates s'il te plaît ? ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Salut Julie — dialogue 2 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans une situation de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Sarah, tu as vu mon parapluie ? » ; B : « Oui, je l'ai mis dans la cuisine » ; A : « Dans la cuisine ? » ; B : « En en regarde » ; A : « Il y a de l'eau partout » ; B : « Ah oui, désolé ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Salut Julie — dialogue 3 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans une situation de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Où tu vas ? » ; B : « Je vais chez ma copine Elisa » ; A : « Je dois lui apporter son livre de français » ; B : « Ah, très bien » ; A : « Tu prends ton vélo ? » ; B : « Oui » ; A : « D'accord, mais fais attention ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
+          ]
+        },
+        "questions": [
+          {
+            "enonce": "Quel plat la personne prépare-t-elle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Une salade",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Une soupe"
+              },
+              {
+                "id": "c",
+                "texte": "Un gâteau"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Une salade"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/ffb4171c4e3e.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-soupe-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/40b742b7985d.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Quel légume faut-il couper ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Des tomates",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Des carottes"
+              },
+              {
+                "id": "c",
+                "texte": "Des pommes de terre"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Des tomates"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-tomates-dessinees.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-carottes-dessinees.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-pommes-terre-dessinees.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Pour quand le plat est-il préparé ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Ce soir",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Demain midi"
+              },
+              {
+                "id": "c",
+                "texte": "Dimanche"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Ce soir"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Quel objet cherche-t-on ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un parapluie",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Un manteau"
+              },
+              {
+                "id": "c",
+                "texte": "Un sac"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un parapluie"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-parapluie-dessine.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-manteau-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/b48c69f2021e.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Où Sarah l'a-t-elle mis ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Dans la cuisine",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Dans l'entrée"
+              },
+              {
+                "id": "c",
+                "texte": "Dans la chambre"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Dans la cuisine"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "image": "/lib/images/tcf/qcm-audit/vocab-cuisiner.webp",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/co/bg/entree-maison.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/vocab-chambre-simple.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Que trouve-t-on partout à cet endroit ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "De l'eau",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Du sable"
+              },
+              {
+                "id": "c",
+                "texte": "Des papiers"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "De l'eau"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Chez qui la personne va-t-elle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Chez Elisa",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Chez Sarah"
+              },
+              {
+                "id": "c",
+                "texte": "Chez Julie"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Chez Elisa"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quel objet doit-elle apporter ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un livre de français",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Un cahier de musique"
+              },
+              {
+                "id": "c",
+                "texte": "Un dictionnaire anglais"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un livre de français"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co306-livre-francais-dessine.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co306-cahier-musique-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co306-dictionnaire-anglais-dessine.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Comment va-t-elle s'y rendre ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "À vélo",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "En bus"
+              },
+              {
+                "id": "c",
+                "texte": "À pied"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "À vélo"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-marche-pied-dessinee.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quelle recommandation la personne reçoit-elle avant de partir ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Faire attention",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Partir plus vite"
+              },
+              {
+                "id": "c",
+                "texte": "Changer de vélo"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Faire attention"
+              }
+            },
+            "audio": 3
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "vie-quotidienne",
+        "scene": "Salut Julie"
+      }
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ssx-a1-ecole-nouveau-telephone-co-4",
+      "before": {
+        "id": "tcf-ssx-a1-ecole-nouveau-telephone-co-4",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Le nouveau téléphone",
+        "scenario": "ecole",
+        "scene": "Le nouveau téléphone",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/ecole/10-école-nouveau-téléphone.mp3",
+          "transcription": "- Ouah, il est super, ton téléphone !\nIl est nouveau ?\n- Oui, c'est mon cadeau d'anniversaire.\n- Tu as de la chance.",
+          "image": "/lib/images/tcf/co/scenes/ecole/10-ecole-nouveau-telephone.webp",
+          "image_description": "Scénario vidéo (audio CO moyen, « Le nouveau téléphone », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un établissement scolaire (couloir, classe ou secrétariat). Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Ouah, il est super, ton téléphone ! » ; B : « Il est nouveau ? » ; A : « Oui, c'est mon cadeau d'anniversaire » ; B : « Tu as de la chance ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
+        },
+        "questions": [
+          {
+            "enonce": "Quel objet les personnes regardent-elles ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un téléphone",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Un ordinateur"
+              },
+              {
+                "id": "c",
+                "texte": "Une montre"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un téléphone"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-telephone-dessine.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-ordinateur-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-montre-dessinee.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "Pour quelle occasion cet objet a-t-il été offert ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un anniversaire",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Noël"
+              },
+              {
+                "id": "c",
+                "texte": "Une réussite à un examen"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un anniversaire"
+              }
+            }
+          }
+        ]
+      },
+      "after": {
+        "id": "tcf-ssx-a1-ecole-nouveau-telephone-co-4",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Le nouveau téléphone",
+        "scenario": "ecole",
+        "scene": "Le nouveau téléphone",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/ecole/10-école-nouveau-téléphone.mp3",
+          "transcription": "Waah ! Il est super ton téléphone ! Il est nouveau ? Oui, c'est mon cadeau d'anniversaire. Tu as de la chance.",
+          "image": "/lib/images/tcf/co/scenes/ecole/10-ecole-nouveau-telephone.webp",
+          "image_description": "Scénario vidéo (audio CO moyen, « Le nouveau téléphone », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un établissement scolaire (couloir, classe ou secrétariat). Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Ouah, il est super, ton téléphone ! » ; B : « Il est nouveau ? » ; A : « Oui, c'est mon cadeau d'anniversaire » ; B : « Tu as de la chance ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
+        },
+        "questions": [
+          {
+            "enonce": "Quel objet les personnes regardent-elles ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un téléphone",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Un ordinateur"
+              },
+              {
+                "id": "c",
+                "texte": "Une montre"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un téléphone"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-telephone-dessine.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-ordinateur-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-montre-dessinee.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "Pour quelle occasion cet objet a-t-il été offert ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un anniversaire",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Noël"
+              },
+              {
+                "id": "c",
+                "texte": "Une réussite à un examen"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un anniversaire"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-ss-a2-s48-co-4",
+      "before": {
+        "id": "tcf-ss-a2-s48-co-4",
+        "niveau": "A1-A2",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Conversation 1",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "transcription": [
+            "Tu as vu la pièce de théâtre du collège hier ? Oui, c'était super ! L'histoire était très drôle, les costumes magnifiques et les élèves jouaient vraiment bien. Moi aussi, j'ai adoré !",
+            "Le terrain de basket est libre. Tu veux venir jouer avec nous ? On va faire un match. Ah oui, super, j'arrive ! Je vais chercher un ballon et je te retrouve là-bas. D'accord.",
+            "Elle est comment, la nouvelle prof de maths ? Elle est très sympa, mais elle donne beaucoup de devoirs. Elle ressemble à quoi ? Elle est grande, blonde, avec les cheveux bouclés. Ah ben, regarde, elle est assise là-bas.",
+            "Je ne trouve pas mon emploi du temps.\nTu peux me dire à quelle heure est le cours d'histoire aujourd'hui ?\nC'est un midi.\nEt le cours de musique ?\nÀ 14h30.\nSuper !\nMerci !"
+          ],
+          "audios": [
+            "/lib/audio/tcf/co/vie-quotidienne/presenter-conversation-3-1.mp3",
+            "/lib/audio/tcf/co/vie-quotidienne/presenter-conversation-3-2.mp3",
+            "/lib/audio/tcf/co/vie-quotidienne/presenter-conversation-3-3.mp3",
+            "/lib/audio/tcf/co/vie-quotidienne/presenter-conversation-3-4.mp3"
+          ],
+          "images_descriptions": [
+            "Scénario vidéo (audio CO moyen, « Présenter · Conversation — dialogue 1 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans une situation de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Tu as vu la pièce de théâtre du collège hier ? » ; B : « Oui, c'était super ! » ; A : « L'histoire était très drôle, les costumes magnifiques et les élèves jouaient vraiment bien ! » ; B : « Moi aussi, j'ai adoré ! ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Présenter · Conversation — dialogue 2 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans une situation de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Le terrain de basquette est libre » ; B : « Tu veux venir jouer avec nous ? » ; A : « On va faire un match » ; B : « Ah oui, super ! » ; A : « J'arrive ! » ; B : « Je vais chercher un ballon et je te retrouve là-bas » ; A : « D'accord ? ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Présenter · Conversation — dialogue 3 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans une situation de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Elle est commande la nouvelle prof de match » ; B : « Elle est très sympa, mais elle donne beaucoup de devoir » ; A : « Elle ressemble à quoi ? » ; B : « Elle est grande, blonde, avec les cheveux bouclés » ; A : « Regarde, elle est assise là-bas ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Présenter · Conversation — dialogue 4 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans une situation de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Je ne trouve pas mon emploi du temps » ; B : « Tu peux me dire à quelle heure est le cours d'histoire aujourd'hui ? » ; A : « C'est un midi » ; B : « Et le cours de musique ? » ; A : « À 14h30 » ; B : « Super ! » ; A : « Merci ! ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
+          ]
+        },
+        "questions": [
+          {
+            "enonce": "Quel spectacle les élèves ont-ils vu ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Une pièce de théâtre",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Un spectacle de danse"
+              },
+              {
+                "id": "c",
+                "texte": "Un concert"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Une pièce de théâtre"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/d8953c7ddfe7.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-spectacle-danse-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-concert-dessine.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Quand ont-ils vu ce spectacle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Hier",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "La semaine dernière"
+              },
+              {
+                "id": "c",
+                "texte": "Ce matin"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Hier"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Comment était l'histoire ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Très drôle",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Très triste"
+              },
+              {
+                "id": "c",
+                "texte": "Très compliquée"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Très drôle"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Que pensent-ils des costumes ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Ils étaient magnifiques",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Ils étaient trop grands"
+              },
+              {
+                "id": "c",
+                "texte": "Ils étaient ordinaires"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Ils étaient magnifiques"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Quel sport les amis vont-ils pratiquer ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Le basket",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Le football"
+              },
+              {
+                "id": "c",
+                "texte": "Le tennis"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Le basket"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-basketball-dessine.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-football-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/26876e2318ce.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Que vont-ils organiser sur le terrain ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un match",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Une répétition"
+              },
+              {
+                "id": "c",
+                "texte": "Un pique-nique"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un match"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Quel objet l'ami va-t-il chercher ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un ballon",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Une raquette"
+              },
+              {
+                "id": "c",
+                "texte": "Un casque"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un ballon"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/vocab-ballon-basket.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/vocab-raquette.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/vocab-casque-audio.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Comment la nouvelle professeure est-elle décrite ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Très sympathique",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Très sévère"
+              },
+              {
+                "id": "c",
+                "texte": "Très timide"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Très sympathique"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Que donne-t-elle en grande quantité ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Des devoirs",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Des cadeaux"
+              },
+              {
+                "id": "c",
+                "texte": "Des livres gratuits"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Des devoirs"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "De quelle couleur sont ses cheveux ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Blonds",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Bruns"
+              },
+              {
+                "id": "c",
+                "texte": "Roux"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Blonds"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "image": "/lib/images/tcf/qcm-audit/extension573-cheveux-blonds.webp",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/extension573-cheveux-bruns.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/extension573-cheveux-roux.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quelle forme ont ses cheveux ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Ils sont bouclés",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Ils sont raides"
+              },
+              {
+                "id": "c",
+                "texte": "Ils sont rasés"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Ils sont bouclés"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quel document l'élève ne trouve-t-il pas ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Son emploi du temps",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Son carnet de notes"
+              },
+              {
+                "id": "c",
+                "texte": "Sa carte de cantine"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Son emploi du temps"
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Quel cours a lieu à 14 h 30 ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Le cours de musique",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Le cours d'histoire"
+              },
+              {
+                "id": "c",
+                "texte": "Le cours de sport"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Le cours de musique"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co306-professeure-musique-dessine.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/co/bg/cours-histoire.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co306-professeure-sport-dessine.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Pourquoi l'élève pose-t-il des questions ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Pour connaître les horaires des cours",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Pour changer d'école"
+              },
+              {
+                "id": "c",
+                "texte": "Pour acheter un instrument"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Pour connaître les horaires des cours"
+              }
+            },
+            "audio": 4
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "vie-quotidienne",
+        "scene": "Présenter · Conversation"
+      },
+      "after": {
+        "id": "tcf-ss-a2-s48-co-4",
+        "niveau": "A1-A2",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Conversation 1",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "transcription": [
+            "Tu as vu la pièce de théâtre du collège hier ? Oui, c'était super ! L'histoire était très drôle, les costumes magnifiques et les élèves jouaient vraiment bien. Moi aussi, j'ai adoré !",
+            "Le terrain de basket est libre. Tu veux venir jouer avec nous ? On va faire un match. Ah oui, super, j'arrive ! Je vais chercher un ballon et je te retrouve là-bas. D'accord.",
+            "Elle est comment, la nouvelle prof de maths ? Elle est très sympa, mais elle donne beaucoup de devoirs. Elle ressemble à quoi ? Elle est grande, blonde, avec les cheveux bouclés. Ah ben, regarde, elle est assise là-bas.",
+            "Je ne trouve pas mon emploi du temps.\nTu peux me dire à quelle heure est le cours d'histoire aujourd'hui ?\nC'est à midi.\nEt le cours de musique ?\nÀ 14h30.\nSuper !\nMerci !"
+          ],
+          "audios": [
+            "/lib/audio/tcf/co/vie-quotidienne/presenter-conversation-3-1.mp3",
+            "/lib/audio/tcf/co/vie-quotidienne/presenter-conversation-3-2.mp3",
+            "/lib/audio/tcf/co/vie-quotidienne/presenter-conversation-3-3.mp3",
+            "/lib/audio/tcf/co/vie-quotidienne/presenter-conversation-3-4.mp3"
+          ],
+          "images_descriptions": [
+            "Scénario vidéo (audio CO moyen, « Présenter · Conversation — dialogue 1 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans une situation de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Tu as vu la pièce de théâtre du collège hier ? » ; B : « Oui, c'était super ! » ; A : « L'histoire était très drôle, les costumes magnifiques et les élèves jouaient vraiment bien ! » ; B : « Moi aussi, j'ai adoré ! ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Présenter · Conversation — dialogue 2 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans une situation de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Le terrain de basquette est libre » ; B : « Tu veux venir jouer avec nous ? » ; A : « On va faire un match » ; B : « Ah oui, super ! » ; A : « J'arrive ! » ; B : « Je vais chercher un ballon et je te retrouve là-bas » ; A : « D'accord ? ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Présenter · Conversation — dialogue 3 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans une situation de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Elle est commande la nouvelle prof de match » ; B : « Elle est très sympa, mais elle donne beaucoup de devoir » ; A : « Elle ressemble à quoi ? » ; B : « Elle est grande, blonde, avec les cheveux bouclés » ; A : « Regarde, elle est assise là-bas ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Présenter · Conversation — dialogue 4 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans une situation de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Je ne trouve pas mon emploi du temps » ; B : « Tu peux me dire à quelle heure est le cours d'histoire aujourd'hui ? » ; A : « C'est un midi » ; B : « Et le cours de musique ? » ; A : « À 14h30 » ; B : « Super ! » ; A : « Merci ! ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
+          ]
+        },
+        "questions": [
+          {
+            "enonce": "Quel spectacle les élèves ont-ils vu ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Une pièce de théâtre",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Un spectacle de danse"
+              },
+              {
+                "id": "c",
+                "texte": "Un concert"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Une pièce de théâtre"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/d8953c7ddfe7.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-spectacle-danse-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-concert-dessine.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Quand ont-ils vu ce spectacle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Hier",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "La semaine dernière"
+              },
+              {
+                "id": "c",
+                "texte": "Ce matin"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Hier"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Comment était l'histoire ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Très drôle",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Très triste"
+              },
+              {
+                "id": "c",
+                "texte": "Très compliquée"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Très drôle"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Que pensent-ils des costumes ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Ils étaient magnifiques",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Ils étaient trop grands"
+              },
+              {
+                "id": "c",
+                "texte": "Ils étaient ordinaires"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Ils étaient magnifiques"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Quel sport les amis vont-ils pratiquer ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Le basket",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Le football"
+              },
+              {
+                "id": "c",
+                "texte": "Le tennis"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Le basket"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-basketball-dessine.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-football-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/26876e2318ce.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Que vont-ils organiser sur le terrain ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un match",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Une répétition"
+              },
+              {
+                "id": "c",
+                "texte": "Un pique-nique"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un match"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Quel objet l'ami va-t-il chercher ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un ballon",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Une raquette"
+              },
+              {
+                "id": "c",
+                "texte": "Un casque"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un ballon"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/vocab-ballon-basket.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/vocab-raquette.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/vocab-casque-audio.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Comment la nouvelle professeure est-elle décrite ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Très sympathique",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Très sévère"
+              },
+              {
+                "id": "c",
+                "texte": "Très timide"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Très sympathique"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Que donne-t-elle en grande quantité ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Des devoirs",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Des cadeaux"
+              },
+              {
+                "id": "c",
+                "texte": "Des livres gratuits"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Des devoirs"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "De quelle couleur sont ses cheveux ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Blonds",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Bruns"
+              },
+              {
+                "id": "c",
+                "texte": "Roux"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Blonds"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "image": "/lib/images/tcf/qcm-audit/extension573-cheveux-blonds.webp",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/extension573-cheveux-bruns.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/extension573-cheveux-roux.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quelle forme ont ses cheveux ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Ils sont bouclés",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Ils sont raides"
+              },
+              {
+                "id": "c",
+                "texte": "Ils sont rasés"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Ils sont bouclés"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quel document l'élève ne trouve-t-il pas ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Son emploi du temps",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Son carnet de notes"
+              },
+              {
+                "id": "c",
+                "texte": "Sa carte de cantine"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Son emploi du temps"
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Quel cours a lieu à 14 h 30 ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Le cours de musique",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Le cours d'histoire"
+              },
+              {
+                "id": "c",
+                "texte": "Le cours de sport"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Le cours de musique"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co306-professeure-musique-dessine.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/co/bg/cours-histoire.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co306-professeure-sport-dessine.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Pourquoi l'élève pose-t-il des questions ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Pour connaître les horaires des cours",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Pour changer d'école"
+              },
+              {
+                "id": "c",
+                "texte": "Pour acheter un instrument"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Pour connaître les horaires des cours"
+              }
+            },
+            "audio": 4
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "vie-quotidienne",
+        "scene": "Présenter · Conversation"
+      }
+    }
+  ],
+  "status": "installed",
+  "received_originals_modified": 0,
+  "human_listening_performed": false
+}

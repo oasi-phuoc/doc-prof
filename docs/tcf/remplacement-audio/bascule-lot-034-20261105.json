@@ -1,0 +1,3593 @@
+{
+  "batch": 34,
+  "audio_replacements": [
+    {
+      "ref": "/lib/audio/tcf/co/loisirs/03-loisirs-annonce-tarifs-centre-aquatique.mp3",
+      "previous_sha256": "562882329a8c98246f2e86e3cef115b155bca2a07e9e1e5a5da535a935398784",
+      "candidate_sha256": "bd8de79af97dbe4c3a55678a9fd3991c94d009f045be2148339ec0fbf1c9702f",
+      "rollback_git_blob": "229824078df59d9fdbada8e21bb6007817c58f77",
+      "source_id": "additional-20261102:mdf-a2-abc-direct:27:23dc1f3d383a:964bef8b",
+      "source_sha256": "23dc1f3d383a7ab9eea1cac38ff24d098cd13958f861b62e5ee903d8c45eae00",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "bd8de79af97dbe4c3a55678a9fd3991c94d009f045be2148339ec0fbf1c9702f",
+        "duration": 13.191837,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014056-341088b420/manifest.json",
+          "manifest_sha256": "fd65ad2d0d1226466902cfa80926af8a3a4a3aef4f4cd2d9fe8291cc4655ec4a",
+          "lossless_sha256": "6f4416bda921598ed0dc6120e24347c5758d7e57fea457a5af0cd7ff508157a3"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "needs_boundary_review",
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.0,
+          "relative_rms_threshold": 0.0057775,
+          "safe_quiet_margins": false,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.352,
+          "trailing_non_speech_seconds": 0.68,
+          "speech_region_count": 4,
+          "safe_voiced_margins": true,
+          "method": "Silero VAD with no padding; supplementary speech-vs-music evidence, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "whisper",
+        "ctc"
+      ],
+      "editorial_reason": "Variantes de ponctuation, accords, homophones et graphies non épelées examinées. Texte courant conservé ; concordance des deux reconnaissances finales, des nombres et des frontières de parole requise.",
+      "numeric_resolution": {
+        "candidate_sha256": "bd8de79af97dbe4c3a55678a9fd3991c94d009f045be2148339ec0fbf1c9702f",
+        "evidence_file": "/workspace/work/tcf-bascule-complete-20261105/ctc/bd8de79af97dbe4c3a55678a9fd3991c94d009f045be2148339ec0fbf1c9702f.json",
+        "evidence_sha256": "ea652319cad465bd4b35cc060ed240bdce056920dd7ffde47ba089fd8c02326a",
+        "reviewed_numbers": [
+          "2",
+          "25"
+        ],
+        "reason": "Les tarifs adultes augmentent de deux euros et la remise adolescents est de vingt-cinq pour cent. Whisper et CTC concordent ; graphie espace/pourcentage normalisée, aucun chiffre modifié."
+      },
+      "additional_recognition_evidence": null,
+      "previous_duration": 16.75,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/famille/19-maison-où-sont-clés.mp3",
+      "previous_sha256": "11d016cddcf69273ad25df0d5007b7a5a624f61f56abd43f3a657cfa47dfd4ce",
+      "candidate_sha256": "d27f86009fb5858819c223c89a4223f6c11704ba71e7958ce8a7b633abc9f273",
+      "rollback_git_blob": "a8e27bea8d6ae695a6ed4b18dfab054afd9d5dd1",
+      "source_id": "additional-20261102:mdf-a1-abc:46:0e87b5589d43:3e586f0e",
+      "source_sha256": "0e87b5589d435d0403f6d978683a9a3cd58f9525b71e9e976bbd697c5578465c",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "d27f86009fb5858819c223c89a4223f6c11704ba71e7958ce8a7b633abc9f273",
+        "duration": 7.288163,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014535-c3c29a34e0/manifest.json",
+          "manifest_sha256": "5f27ac83cec51a86b2193f57d73b7156cf345227c13c8517aa86f6af11bf537c",
+          "lossless_sha256": "2435ab628e1cdd34d68a1f3d1565264684213ceedefdc4f9b0d8e6e233e18400"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.32,
+          "trailing_quiet_seconds": 0.05,
+          "relative_rms_threshold": 0.0056145,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
+      "editorial_reason": "Reconnaissances finales comparées ; transcription et questions relues, graphies éditoriales et homophones corrigés.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 9.43,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/loisirs/loisirs-3-1.mp3",
+      "previous_sha256": "8e55056db7409a26023fd7b0db6d412f6b1e73f2e64ef00e95d3eb973df0b1c7",
+      "candidate_sha256": "c2b1958172ea59ce1b271f3b636e30c39947506aa659b631faf656e053fb1fe0",
+      "rollback_git_blob": "80d4257ab550b47f12a6bb2ab5c76c5f8f513edd",
+      "source_id": "9782090351958:055:6b088a9bc9dd",
+      "source_sha256": "6b088a9bc9dd95737fcc4e1bcf3e2773db9817f28d5cb0db4916e38b3bcf2c51",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "c2b1958172ea59ce1b271f3b636e30c39947506aa659b631faf656e053fb1fe0",
+        "duration": 15.777959,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T013723-026c643c22/manifest.json",
+          "manifest_sha256": "2b7fc6474585e7fe5eb752b386cbc1fe6a3d79e86c90a00489a65a182cd4fa61",
+          "lossless_sha256": "9afa5f9f435f38d632782dc8c3033704593f7953a1386cbe09f82642beaa45f7"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "needs_boundary_review",
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.0,
+          "relative_rms_threshold": 0.00851,
+          "safe_quiet_margins": false,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.256,
+          "trailing_non_speech_seconds": 0.312,
+          "speech_region_count": 6,
+          "safe_voiced_margins": true,
+          "method": "Silero VAD with no padding; supplementary speech-vs-music evidence, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
+      "editorial_reason": "Reconnaissances finales comparées, transcriptions et questions relues ; homophones et accords corrigés.",
+      "numeric_resolution": {
+        "candidate_sha256": "c2b1958172ea59ce1b271f3b636e30c39947506aa659b631faf656e053fb1fe0",
+        "evidence_file": "/workspace/work/tcf-bascule-complete-20261105/ctc/c2b1958172ea59ce1b271f3b636e30c39947506aa659b631faf656e053fb1fe0.json",
+        "evidence_sha256": "cbbe35cca04c0e6c70ce80dc913ac04bf799880d53992cb9fb750586d0d29d9e",
+        "reviewed_numbers": [
+          "9",
+          "00",
+          "20",
+          "00",
+          "10",
+          "00",
+          "18",
+          "00",
+          "19",
+          "00"
+        ],
+        "reason": "Ouverture 9 h–20 h, animations 10 h–18 h, cafétéria jusqu’à 19 h confirmées par Whisper et CTC ; 1 h dans Parakeet est rejeté pour ce fait."
+      },
+      "additional_recognition_evidence": null,
+      "previous_duration": 25.55,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_87.mp3",
+      "previous_sha256": "14c0f9d55d7a17f1d9efa54d2665be5d2c7c5d687e09f9ebb75dcb78812108b0",
+      "candidate_sha256": "5274c2dd540c3ca3956d953bb40d651296797525c502cbc2f88d50fae2b08545",
+      "rollback_git_blob": "0107496599ad4d323b28dd3a5d3f97703034323b",
+      "source_id": "delf_a1_2022:087:60a694bc4011",
+      "source_sha256": "60a694bc4011a51b0bb8b573fdea1369d69a0d579d6204d0c36433924126c96b",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "5274c2dd540c3ca3956d953bb40d651296797525c502cbc2f88d50fae2b08545",
+        "duration": 65.4560625,
+        "category": "long",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "60a694bc4011a51b0bb8b573fdea1369d69a0d579d6204d0c36433924126c96b",
+          "proof": {
+            "previous_sha256": "d0ed8f160679170ff9b83bdfdd3fb69aa6daff57b75652caab6279c30894bb5b",
+            "sha256": "5274c2dd540c3ca3956d953bb40d651296797525c502cbc2f88d50fae2b08545",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/306-d0ed8f160679-645623-3532234/candidate.mp3",
+            "source_sha256": "60a694bc4011a51b0bb8b573fdea1369d69a0d579d6204d0c36433924126c96b",
+            "source_file": "/workspace/work/tcf-audio-replacement/incoming/a1/delf_a1_2022_piste_87.mp3",
+            "source_decoded_pcm_sha256": "37ae589c3ada9b0c5ee9973de0c13ad2cfdb13bf7b400e4012f574af56d65b5a",
+            "source_sample_rate": 44100,
+            "source_channels": 2,
+            "source_start_frame": 645623,
+            "source_end_frame": 3532234,
+            "source_start": 14.639977324263038,
+            "source_end": 80.09600907029478,
+            "source_slice_pcm_sha256": "8aeeaf5f0042c25608906790ca197f475664fd4067d7ac63799466db09d8817f",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/306-d0ed8f160679-645623-3532234/start_before.flac",
+                "sha256": "04e4cd67f12864a0be086b7dc4376ee0e950d2a5a2027e01cc21fa9e4e724f81",
+                "source_start_frame": 557423,
+                "source_end_frame": 645623,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/306-d0ed8f160679-645623-3532234/start_after.flac",
+                "sha256": "4490bb93aaaa859eee2c0cdd15e31241660ef131cf59a6a6353d0c9b9bde69fd",
+                "source_start_frame": 645623,
+                "source_end_frame": 733823,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/306-d0ed8f160679-645623-3532234/end_before.flac",
+                "sha256": "74d485c50af1aa152f65cf291c4e397230bb57d63ccd0caf95b780cc12fb34e4",
+                "source_start_frame": 3444034,
+                "source_end_frame": 3532234,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/306-d0ed8f160679-645623-3532234/end_after.flac",
+                "sha256": "92be5868c6a44455bdc78ca5b09e0f6b1cf515d66e9010a414e228bb578bad15",
+                "source_start_frame": 3532234,
+                "source_end_frame": 3620434,
+                "available_seconds": 2.0
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Bonjour",
+                "start": 14.719999,
+                "end": 15.28,
+                "kind": "dialogue",
+                "asr_word_index": 29,
+                "raw_start": 14.719999313354492,
+                "raw_end": 15.279999807476997,
+                "native_token_indices": [
+                  65,
+                  66,
+                  67,
+                  68
+                ]
+              },
+              "last": {
+                "text": "monsieur.",
+                "start": 78.935999,
+                "end": 79.975999,
+                "kind": "dialogue",
+                "asr_word_index": 190,
+                "raw_start": 78.93599923706054,
+                "raw_end": 80.29600014543533,
+                "native_token_indices": [
+                  74,
+                  75,
+                  76,
+                  77,
+                  78
+                ]
+              },
+              "previous_word_end": 14.16,
+              "next_word_start": 81.096,
+              "first_source_speech_region": [
+                14.944,
+                15.904
+              ],
+              "last_source_speech_region": [
+                78.368,
+                79.264
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. Natural native margins up to one second are retained to avoid trimming a quiet first word or its final decay. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/306-d0ed8f160679-645623-3532234/waveform.svg",
+              "sha256": "f7ad68f5181acab865890058ed84dcac963bd4beb3782234eb0961fe25f9cbc7"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.29,
+          "trailing_quiet_seconds": 0.86,
+          "relative_rms_threshold": 0.004277058579027653,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.32,
+          "trailing_non_speech_seconds": 0.8480625,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "ctc"
+      ],
+      "editorial_reason": "Questions et trois propositions relues dans le contexte : une réponse correcte et présente dans le dialogue. Transcriptions finales comparées ; conserver en attente tant que les frontières ou les deux reconnaissances finales ne sont pas qualifiées. Quantités et prix concordants : deux kilos de sucre à trois euros, un kilo de tomates à 1,30 euro, une baguette à 70 centimes, total cinq euros.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 81.01,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/maison/bonjour-fruits-legumes-par-3-1.mp3",
+      "previous_sha256": "871976bbf789ec0b9b5379e36ecb91deb2c14f4995654e358969c5296765bd99",
+      "candidate_sha256": "f4cc50ae09cd8a75289deaac15b253c130a10ccf72862715295195d8ce1248c1",
+      "rollback_git_blob": "8b4afe277523033df6804898f2b5834c655e4cf7",
+      "source_id": "9782090351958:008:bbec346152c1",
+      "source_sha256": "bbec346152c15793411245efa4719780bc5d3d42f29c7f43021424e865e9c2d8",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "f4cc50ae09cd8a75289deaac15b253c130a10ccf72862715295195d8ce1248c1",
+        "duration": 10.288,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "bbec346152c15793411245efa4719780bc5d3d42f29c7f43021424e865e9c2d8",
+          "proof": {
+            "previous_sha256": "258c6544b4ca249dbe1db54a6b58cd7537ab113e967de22ba80a827da9fea1b5",
+            "sha256": "f4cc50ae09cd8a75289deaac15b253c130a10ccf72862715295195d8ce1248c1",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/351-258c6544b4ca-659736-1113437/candidate.mp3",
+            "source_sha256": "bbec346152c15793411245efa4719780bc5d3d42f29c7f43021424e865e9c2d8",
+            "source_file": "/workspace/attachments/1ea6e8ac-df68-48b4-927b-183830027a09/9782090351958_08_CO_ex06.mp3",
+            "source_decoded_pcm_sha256": "a5d715e8b116464d96055a8d387f38ebcaa776711087be7c7fbff7300fd88584",
+            "source_sample_rate": 44100,
+            "source_channels": 1,
+            "source_start_frame": 659736,
+            "source_end_frame": 1113437,
+            "source_start": 14.96,
+            "source_end": 25.24800453514739,
+            "source_slice_pcm_sha256": "fc43014a3e71e424fd7483164ec5ed3f096f6beb3323dd86dc37b68b7b791e22",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/351-258c6544b4ca-659736-1113437/start_before.flac",
+                "sha256": "e5662c7396919d709434f57f9b0cd2dbeb2b7ea7007fc7d06a29fa200f1a44dc",
+                "source_start_frame": 571536,
+                "source_end_frame": 659736,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/351-258c6544b4ca-659736-1113437/start_after.flac",
+                "sha256": "95966ac9c6598aa2fb04d066042b212dccd1aff52ec8f40b0631cca352d7aab2",
+                "source_start_frame": 659736,
+                "source_end_frame": 747936,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/351-258c6544b4ca-659736-1113437/end_before.flac",
+                "sha256": "9c25f2206db9a1148107ea504e780769ce48d9cd48d49a2c77cc8daf659b0192",
+                "source_start_frame": 1025237,
+                "source_end_frame": 1113437,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/351-258c6544b4ca-659736-1113437/end_after.flac",
+                "sha256": "c19a45b352f555b12266496ad8c2031a21b4515c1ff58c91f975006eff23d73d",
+                "source_start_frame": 1113437,
+                "source_end_frame": 1201637,
+                "available_seconds": 2.0
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Je",
+                "start": 15.04,
+                "end": 15.28,
+                "kind": "dialogue",
+                "asr_word_index": 23,
+                "raw_start": 15.039999961853027,
+                "raw_end": 15.27999995648861,
+                "native_token_indices": [
+                  53
+                ]
+              },
+              "last": {
+                "text": "Julien.",
+                "start": 24.639999,
+                "end": 25.119999,
+                "kind": "dialogue",
+                "asr_word_index": 56,
+                "raw_start": 24.639999389648438,
+                "raw_end": 25.199998930096626,
+                "native_token_indices": [
+                  115,
+                  116,
+                  117,
+                  118
+                ]
+              },
+              "previous_word_end": 13.52,
+              "next_word_start": 28.472,
+              "first_source_speech_region": [
+                15.52,
+                17.152
+              ],
+              "last_source_speech_region": [
+                24.48,
+                25.088
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. Natural native margins up to one second are retained to avoid trimming a quiet first word or its final decay. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/351-258c6544b4ca-659736-1113437/waveform.svg",
+              "sha256": "d97bbc06179c7593c42539c81695076e17a100f3c17693c89120c2da697f2324"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.52,
+          "trailing_quiet_seconds": 0.0,
+          "relative_rms_threshold": 0.006241602301597596,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.544,
+          "trailing_non_speech_seconds": 0.176,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "ctc"
+      ],
+      "editorial_reason": "Revue éditoriale du dialogue, des questions et de leurs trois propositions. Corrections des faits uniquement lorsque les reconnaissances les étayent ; deux reconnaissances finales et marges qualifiées restent requises avant bascule. Détail lexical réexaminé avec CTC ; les contrôles de couverture du début et de la fin restent obligatoires.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 14.71,
+      "previous_pool": null,
+      "question_changes": [
+        {
+          "exercise": "tcf-ss-a2-s24-co-4",
+          "question": 3,
+          "before": {
+            "enonce": "Qui donne le renseignement ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Julien",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Jules"
+              },
+              {
+                "id": "c",
+                "texte": "Camille"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Julien"
+              }
+            },
+            "audio": 1
+          },
+          "after": {
+            "enonce": "À côté de quel commerce le photographe se trouve-t-il ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "À côté du coiffeur",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "À côté du boulanger"
+              },
+              {
+                "id": "c",
+                "texte": "À côté du libraire"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "À côté du coiffeur"
+              }
+            },
+            "audio": 1
+          }
+        }
+      ],
+      "human_listening_performed": false
+    }
+  ],
+  "exercise_changes": [
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s5b-co-1",
+      "before": {
+        "id": "tcf-ss-a1-s5b-co-1",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Conversation 8",
+        "scenario": "maison",
+        "scene": "Les clés",
+        "consigne": "Écoutez le document, puis répondez à la question.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/famille/19-maison-où-sont-clés.mp3",
+          "transcription": "— Oh là là, où sont mes clés ?\n— Elles sont sur la table, comme d’habitude.",
+          "image": "/lib/images/tcf/co/scenes/famille/19-maison-ou-sont-cles.webp",
+          "image_description": "Scénario vidéo (audio CO court, « Les clés », durée indicative 8–15 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un intérieur familial (salon ou cuisine). Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Oh là là, où sont mes clés ? » ; B : « Elles sont sur la table, comme d’habitude ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
+        },
+        "questions": [
+          {
+            "enonce": "Quel objet la personne cherche-t-elle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Ses clés",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Son téléphone"
+              },
+              {
+                "id": "c",
+                "texte": "Ses lunettes"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Ses clés"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "image": "/lib/images/tcf/qcm-audit/vocab-cles.webp",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-telephone-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co306-lunettes-vue-dessine.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "Où se trouve cet objet ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Sur la table",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Dans le sac"
+              },
+              {
+                "id": "c",
+                "texte": "Sous la chaise"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Sur la table"
+              }
+            }
+          },
+          {
+            "enonce": "Que dit l’autre personne à propos de cet emplacement ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "C’est l’emplacement habituel",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "C’est un nouvel emplacement"
+              },
+              {
+                "id": "c",
+                "texte": "C’est un endroit interdit"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "C’est l’emplacement habituel"
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null
+      },
+      "after": {
+        "id": "tcf-ss-a1-s5b-co-1",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Conversation 8",
+        "scenario": "maison",
+        "scene": "Les clés",
+        "consigne": "Écoutez le document, puis répondez à la question.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/famille/19-maison-où-sont-clés.mp3",
+          "transcription": "Oh là là, où sont mes clés? Elles sont sur la table. Comme d'habitude.",
+          "image": "/lib/images/tcf/co/scenes/famille/19-maison-ou-sont-cles.webp",
+          "image_description": "Scénario vidéo (audio CO court, « Les clés », durée indicative 8–15 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un intérieur familial (salon ou cuisine). Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Oh là là, où sont mes clés ? » ; B : « Elles sont sur la table, comme d’habitude ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
+        },
+        "questions": [
+          {
+            "enonce": "Quel objet la personne cherche-t-elle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Ses clés",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Son téléphone"
+              },
+              {
+                "id": "c",
+                "texte": "Ses lunettes"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Ses clés"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "image": "/lib/images/tcf/qcm-audit/vocab-cles.webp",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-telephone-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co306-lunettes-vue-dessine.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "Où se trouve cet objet ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Sur la table",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Dans le sac"
+              },
+              {
+                "id": "c",
+                "texte": "Sous la chaise"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Sur la table"
+              }
+            }
+          },
+          {
+            "enonce": "Que dit l’autre personne à propos de cet emplacement ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "C’est l’emplacement habituel",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "C’est un nouvel emplacement"
+              },
+              {
+                "id": "c",
+                "texte": "C’est un endroit interdit"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "C’est l’emplacement habituel"
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null
+      }
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "delf-a1-2022-co-87",
+      "before": {
+        "id": "delf-a1-2022-co-87",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Piste 87",
+        "scenario": "magasins",
+        "scene": "Piste 87",
+        "consigne": "Écoutez le document. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_87.mp3",
+          "transcription": "– L’exercice 3 est un dialogue simulé. Nous\nsommes dans une épicerie. Vous voulez acheter\ndes produits. Vous êtes le client et je suis la\nvendeuse. Nous commençons.\n– Bonjour Madame.\n– Bonjour Monsieur.\n– Je voudrais acheter du sucre et des tomates s’il\nvous plaît.\n– Oui, combien de kilos de sucre ?\n– 2 kilos de sucre s’il vous plaît.\n– D’accord et combien de tomates ?\n– 1 kilo de tomates s’il vous plaît. Quel est le prix\ndu kilo de tomates ?\n– 1,30 €.\n– Merci. Et combien coûte le sucre ?\n– Le sucre ? C’est 3 € pour les 2 kilos.\n– Merci.\n– Est-ce que vous voulez autre chose Monsieur ?\n– Oui, je voudrais aussi du pain s’il vous plaît. Est-ce\nque vous avez des baguettes ?\n– Oui, combien de baguettes est-ce que vous\nvoulez ?\n– Seulement 1 baguette. Quel est le prix ?\n– La baguette coûte 70 centimes.\n– Merci. Quel est le prix total pour le sucre, les\ntomates et la baguette s’il vous plaît ?\n– Alors, le prix total est de 5 €. Comment est-ce\nque vous payez Monsieur ?\n– Je paye en espèces. Et voilà 5 €.\n– Merci Monsieur. Et voilà vos produits.\n– Merci beaucoup. Au revoir Madame et bonne\njournée.\n– Au revoir Monsieur. Merci Youssef. L’épreuve\nest terminée.\nÉpreuve blanche 1",
+          "image": "/lib/images/tcf/qcm-audit/revue-20261107-2dd22ea9d8.webp",
+          "image_description": "Scénario vidéo (audio CO moyen, « Piste 87 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « L’exercice 3 est un dialogue simulé » ; B : « Nous » ; A : « Sommes dans une épicerie » ; B : « Vous voulez acheter » ; A : « Des produits » ; B : « Vous êtes le client et je suis la » ; A : « Vendeuse » ; B : « Nous commençons ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
+        },
+        "questions": [
+          {
+            "enonce": "Dans quel commerce se déroule le dialogue simulé ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Une épicerie",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Une librairie"
+              },
+              {
+                "id": "c",
+                "texte": "Une pharmacie"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Une épicerie"
+              }
+            }
+          },
+          {
+            "enonce": "Quelle est la quantité de sucre demandée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Deux kilos",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Un kilo"
+              },
+              {
+                "id": "c",
+                "texte": "Trois kilos"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Deux kilos"
+              }
+            }
+          },
+          {
+            "enonce": "Quelle est la quantité de tomates demandée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un kilo",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Deux kilos"
+              },
+              {
+                "id": "c",
+                "texte": "Trois kilos"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un kilo"
+              }
+            }
+          },
+          {
+            "enonce": "Quel est le prix du kilo de tomates ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "1,30 euro",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "3 euros"
+              },
+              {
+                "id": "c",
+                "texte": "70 centimes"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "1,30 euro"
+              }
+            }
+          },
+          {
+            "enonce": "Combien coûtent les deux kilos de sucre ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "3 euros",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "2 euros"
+              },
+              {
+                "id": "c",
+                "texte": "4 euros"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "3 euros"
+              }
+            }
+          },
+          {
+            "enonce": "Quel produit le client demande-t-il ensuite ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Du pain",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Du lait"
+              },
+              {
+                "id": "c",
+                "texte": "Du fromage"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Du pain"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-pain-dessine.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/fc08f12c7321.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-fromages-dessines.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "Combien de baguettes le client achète-t-il ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Une",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Deux"
+              },
+              {
+                "id": "c",
+                "texte": "Trois"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Une"
+              }
+            }
+          },
+          {
+            "enonce": "Combien coûte la baguette ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "70 centimes",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "1,30 euro"
+              },
+              {
+                "id": "c",
+                "texte": "1 euro"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "70 centimes"
+              }
+            }
+          },
+          {
+            "enonce": "Quel est le prix total annoncé ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "5 euros",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "4 euros"
+              },
+              {
+                "id": "c",
+                "texte": "6 euros"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "5 euros"
+              }
+            }
+          },
+          {
+            "enonce": "Comment le client paie-t-il ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "En espèces",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Par carte bancaire"
+              },
+              {
+                "id": "c",
+                "texte": "Par chèque"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "En espèces"
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null
+      },
+      "after": {
+        "id": "delf-a1-2022-co-87",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Piste 87",
+        "scenario": "magasins",
+        "scene": "Piste 87",
+        "consigne": "Écoutez le document. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_87.mp3",
+          "transcription": "Bonjour madame. Bonjour monsieur. Je voudrais acheter du sucre et des tomates s'il vous plaît. Oui ? Combien de kilos de sucre ? Deux kilos de sucre s'il vous plaît. D'accord. Et combien de tomates ? Un kilo de tomates s'il vous plaît. Quel est le prix du kilo de tomates ? Un euro trente. Merci. Et combien coûte le sucre ? Le sucre, c'est trois euros pour les deux kilos. Merci. Est-ce que vous voulez autre chose, monsieur ? Oui, je voudrais aussi du pain, s'il vous plaît. Est-ce que vous avez des baguettes ? Oui. Combien de baguettes est-ce que vous voulez ? Seulement une baguette. Quel est le prix ? La baguette coûte 70 centimes. Merci. Quel est le prix total pour le sucre, les tomates et la baguette, s'il vous plaît ? Alors, le prix total est de 5 euros. Comment est-ce que vous payez, monsieur ? Je paye en espèces. Et voilà, 5 euros. Merci, monsieur. Et voilà vos produits. Merci beaucoup. Au revoir, madame et bonne journée. Au revoir, monsieur.",
+          "image": "/lib/images/tcf/qcm-audit/revue-20261107-2dd22ea9d8.webp",
+          "image_description": "Scénario vidéo (audio CO moyen, « Piste 87 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « L’exercice 3 est un dialogue simulé » ; B : « Nous » ; A : « Sommes dans une épicerie » ; B : « Vous voulez acheter » ; A : « Des produits » ; B : « Vous êtes le client et je suis la » ; A : « Vendeuse » ; B : « Nous commençons ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
+        },
+        "questions": [
+          {
+            "enonce": "Dans quel commerce se déroule le dialogue simulé ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Une épicerie",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Une librairie"
+              },
+              {
+                "id": "c",
+                "texte": "Une pharmacie"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Une épicerie"
+              }
+            }
+          },
+          {
+            "enonce": "Quelle est la quantité de sucre demandée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Deux kilos",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Un kilo"
+              },
+              {
+                "id": "c",
+                "texte": "Trois kilos"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Deux kilos"
+              }
+            }
+          },
+          {
+            "enonce": "Quelle est la quantité de tomates demandée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un kilo",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Deux kilos"
+              },
+              {
+                "id": "c",
+                "texte": "Trois kilos"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un kilo"
+              }
+            }
+          },
+          {
+            "enonce": "Quel est le prix du kilo de tomates ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "1,30 euro",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "3 euros"
+              },
+              {
+                "id": "c",
+                "texte": "70 centimes"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "1,30 euro"
+              }
+            }
+          },
+          {
+            "enonce": "Combien coûtent les deux kilos de sucre ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "3 euros",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "2 euros"
+              },
+              {
+                "id": "c",
+                "texte": "4 euros"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "3 euros"
+              }
+            }
+          },
+          {
+            "enonce": "Quel produit le client demande-t-il ensuite ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Du pain",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Du lait"
+              },
+              {
+                "id": "c",
+                "texte": "Du fromage"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Du pain"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-pain-dessine.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/fc08f12c7321.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-fromages-dessines.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "Combien de baguettes le client achète-t-il ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Une",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Deux"
+              },
+              {
+                "id": "c",
+                "texte": "Trois"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Une"
+              }
+            }
+          },
+          {
+            "enonce": "Combien coûte la baguette ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "70 centimes",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "1,30 euro"
+              },
+              {
+                "id": "c",
+                "texte": "1 euro"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "70 centimes"
+              }
+            }
+          },
+          {
+            "enonce": "Quel est le prix total annoncé ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "5 euros",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "4 euros"
+              },
+              {
+                "id": "c",
+                "texte": "6 euros"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "5 euros"
+              }
+            }
+          },
+          {
+            "enonce": "Comment le client paie-t-il ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "En espèces",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Par carte bancaire"
+              },
+              {
+                "id": "c",
+                "texte": "Par chèque"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "En espèces"
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null
+      }
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-ss-a2-s21-co-3",
+      "before": {
+        "id": "tcf-ss-a2-s21-co-3",
+        "niveau": "A1-A2",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Radio 53",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "transcription": [
+            "Vous ne savez pas quoi faire ce week-end ?\nLe musée du jeu vidéo vous attend de 9 heures à 20 heures.\nVenez rencontrer des créateurs de jeux, jouez seul ou en équipe.\nL'animation est de 10 heures à 18 heures et il y a aussi une cafétéria ouverte jusqu'à 19 heures.",
+            "Aujourd'hui, nous recevons Samia, professeure de sport. Elle va nous expliquer comment rester en forme en faisant du sport chez soi. Pas besoin de grand-chose. Un tapis de gym, une bouteille d'eau, de la musique, et c'est parti !",
+            "Si vous voulez connaître la culture indienne, venez vite au salon Inde Culture, vendredi et samedi, de 9 heures à 18 heures et de 10 heures à 14 heures.\nL'entrée du salon est à 10 euros, mais ensuite vous pourrez goûter différents plats, participer à des ateliers de danse et voir des films gratuitement."
+          ],
+          "audios": [
+            "/lib/audio/tcf/co/loisirs/loisirs-3-1.mp3",
+            "/lib/audio/tcf/co/loisirs/loisirs-3-2.mp3",
+            "/lib/audio/tcf/co/loisirs/loisirs-3-3.mp3"
+          ],
+          "images_descriptions": [
+            "Scénario vidéo (audio CO moyen, « Loisirs — dialogue 1 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de loisir du quotidien. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Vous ne savez pas quoi faire ce week-end ? » ; B : « Le musée du jeu vidéo vous attend de 9 heures à 20 heures » ; A : « Venez rencontrer des créateurs de jeux, jouez seul ou en équipe » ; B : « L'animation est de 10 heures à 18 heures et il y a aussi une cafétéria ouverte jusqu'à 19 heures ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Loisirs — dialogue 2 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de loisir du quotidien. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Aujourd'hui, nous recevons une ancienne professeure de sport » ; B : « Elle va nous expliquer comment rester en forme en faisant du sport chez soi » ; A : « Pas besoin de grand-chose » ; B : « Un tapis de gym, une bouteille d'eau, de la musique et c'est parti ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Loisirs — dialogue 3 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de loisir du quotidien. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Si vous voulez connaître la culture indienne, venez vite au salon Inde Culture, vendredi et samedi, de 9 heures à 18 heures et de 10 heures à 14 heures » ; B : « L'entrée du salon est à 10 euros, mais ensuite vous pourrez goûter différents plats, participer à des ateliers de danse et voir des films gratuitement ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
+          ]
+        },
+        "questions": [
+          {
+            "enonce": "À quel type de musée les visiteurs sont-ils invités ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un musée du jeu vidéo",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Un musée du sport"
+              },
+              {
+                "id": "c",
+                "texte": "Un musée de peinture"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un musée du jeu vidéo"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co306-musee-jeu-video-dessine.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co306-musee-sport-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/f84b97e2c8a8.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "À quelle heure le musée ouvre-t-il ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "9 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "10 h"
+              },
+              {
+                "id": "c",
+                "texte": "11 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "9 h"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-0900-dessinee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1000-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1100-dessinee.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "À quelle heure le musée ferme-t-il ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "20 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "18 h"
+              },
+              {
+                "id": "c",
+                "texte": "19 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "20 h"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-2000-dessinee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1900-dessinee.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Qui peut-on rencontrer au musée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Des créateurs de jeux",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Des sportifs professionnels"
+              },
+              {
+                "id": "c",
+                "texte": "Des acteurs de cinéma"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Des créateurs de jeux"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Jusqu’à quelle heure les animations durent-elles ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "18 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "19 h"
+              },
+              {
+                "id": "c",
+                "texte": "20 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "18 h"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1900-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-2000-dessinee.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Jusqu’à quelle heure la cafétéria reste-t-elle ouverte ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "19 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "18 h"
+              },
+              {
+                "id": "c",
+                "texte": "20 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "19 h"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1900-dessinee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-2000-dessinee.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Quelle est la profession de l’invitée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Professeure de sport",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Professeure de musique"
+              },
+              {
+                "id": "c",
+                "texte": "Professeure de dessin"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Professeure de sport"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "image": "/lib/images/tcf/qcm-audit/co306-professeure-sport-dessine.webp",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co306-professeure-musique-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co306-professeure-dessin-dessine.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Où propose-t-elle de faire du sport ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Chez soi",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "À l’école"
+              },
+              {
+                "id": "c",
+                "texte": "Dans la rue"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Chez soi"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Quel équipement de sol est conseillé ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un tapis de gym",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Une couverture de pique-nique"
+              },
+              {
+                "id": "c",
+                "texte": "Une planche de surf"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un tapis de gym"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/86bde69ed810.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/b5e107d80468.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/801037e2d80f.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Quelle boisson faut-il prévoir ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Une bouteille d’eau",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Une bouteille de soda"
+              },
+              {
+                "id": "c",
+                "texte": "Une tasse de café"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Une bouteille d’eau"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-bouteille-eau-dessinee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/95a8867c2af0.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-cafe-dessine.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Quel accompagnement sonore est proposé ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "De la musique",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Un cours de langue"
+              },
+              {
+                "id": "c",
+                "texte": "Un journal d’informations"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "De la musique"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Quelle culture le salon présente-t-il ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La culture indienne",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "La culture chinoise"
+              },
+              {
+                "id": "c",
+                "texte": "La culture japonaise"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "La culture indienne"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quels jours le salon a-t-il lieu ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Vendredi et samedi",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Samedi et dimanche"
+              },
+              {
+                "id": "c",
+                "texte": "Jeudi et vendredi"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Vendredi et samedi"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quel jour le salon ferme-t-il à 14 h ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Samedi",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Vendredi"
+              },
+              {
+                "id": "c",
+                "texte": "Dimanche"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Samedi"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quel est le prix de l’entrée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "10 euros",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "5 euros"
+              },
+              {
+                "id": "c",
+                "texte": "15 euros"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "10 euros"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quelles activités sont ensuite accessibles gratuitement ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Goûter des plats, danser et voir des films",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Acheter des vêtements et des bijoux"
+              },
+              {
+                "id": "c",
+                "texte": "Réserver un voyage et un hôtel"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Goûter des plats, danser et voir des films"
+              }
+            },
+            "audio": 3
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "loisirs",
+        "scene": "Loisirs"
+      },
+      "after": {
+        "id": "tcf-ss-a2-s21-co-3",
+        "niveau": "A1-A2",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Radio 53",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "transcription": [
+            "Vous ne savez pas quoi faire ce week-end ? Le Musée du jeu vidéo vous attend de 9h à 20h. Venez rencontrer des créateurs de jeux, jouer seul ou en équipe. Plein d'animations de 10h à 18h et aussi une cafétéria ouverte jusqu'à 19h.",
+            "Aujourd'hui, nous recevons Samia, professeure de sport. Elle va nous expliquer comment rester en forme en faisant du sport chez soi. Pas besoin de grand-chose. Un tapis de gym, une bouteille d'eau, de la musique, et c'est parti !",
+            "Si vous voulez connaître la culture indienne, venez vite au salon Inde Culture, vendredi et samedi, de 9 heures à 18 heures et de 10 heures à 14 heures.\nL'entrée du salon est à 10 euros, mais ensuite vous pourrez goûter différents plats, participer à des ateliers de danse et voir des films gratuitement."
+          ],
+          "audios": [
+            "/lib/audio/tcf/co/loisirs/loisirs-3-1.mp3",
+            "/lib/audio/tcf/co/loisirs/loisirs-3-2.mp3",
+            "/lib/audio/tcf/co/loisirs/loisirs-3-3.mp3"
+          ],
+          "images_descriptions": [
+            "Scénario vidéo (audio CO moyen, « Loisirs — dialogue 1 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de loisir du quotidien. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Vous ne savez pas quoi faire ce week-end ? » ; B : « Le musée du jeu vidéo vous attend de 9 heures à 20 heures » ; A : « Venez rencontrer des créateurs de jeux, jouez seul ou en équipe » ; B : « L'animation est de 10 heures à 18 heures et il y a aussi une cafétéria ouverte jusqu'à 19 heures ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Loisirs — dialogue 2 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de loisir du quotidien. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Aujourd'hui, nous recevons une ancienne professeure de sport » ; B : « Elle va nous expliquer comment rester en forme en faisant du sport chez soi » ; A : « Pas besoin de grand-chose » ; B : « Un tapis de gym, une bouteille d'eau, de la musique et c'est parti ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Loisirs — dialogue 3 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de loisir du quotidien. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Si vous voulez connaître la culture indienne, venez vite au salon Inde Culture, vendredi et samedi, de 9 heures à 18 heures et de 10 heures à 14 heures » ; B : « L'entrée du salon est à 10 euros, mais ensuite vous pourrez goûter différents plats, participer à des ateliers de danse et voir des films gratuitement ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
+          ]
+        },
+        "questions": [
+          {
+            "enonce": "À quel type de musée les visiteurs sont-ils invités ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un musée du jeu vidéo",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Un musée du sport"
+              },
+              {
+                "id": "c",
+                "texte": "Un musée de peinture"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un musée du jeu vidéo"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co306-musee-jeu-video-dessine.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co306-musee-sport-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/f84b97e2c8a8.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "À quelle heure le musée ouvre-t-il ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "9 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "10 h"
+              },
+              {
+                "id": "c",
+                "texte": "11 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "9 h"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-0900-dessinee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1000-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1100-dessinee.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "À quelle heure le musée ferme-t-il ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "20 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "18 h"
+              },
+              {
+                "id": "c",
+                "texte": "19 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "20 h"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-2000-dessinee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1900-dessinee.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Qui peut-on rencontrer au musée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Des créateurs de jeux",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Des sportifs professionnels"
+              },
+              {
+                "id": "c",
+                "texte": "Des acteurs de cinéma"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Des créateurs de jeux"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Jusqu’à quelle heure les animations durent-elles ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "18 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "19 h"
+              },
+              {
+                "id": "c",
+                "texte": "20 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "18 h"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1900-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-2000-dessinee.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Jusqu’à quelle heure la cafétéria reste-t-elle ouverte ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "19 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "18 h"
+              },
+              {
+                "id": "c",
+                "texte": "20 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "19 h"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1900-dessinee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-2000-dessinee.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Quelle est la profession de l’invitée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Professeure de sport",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Professeure de musique"
+              },
+              {
+                "id": "c",
+                "texte": "Professeure de dessin"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Professeure de sport"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "image": "/lib/images/tcf/qcm-audit/co306-professeure-sport-dessine.webp",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co306-professeure-musique-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co306-professeure-dessin-dessine.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Où propose-t-elle de faire du sport ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Chez soi",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "À l’école"
+              },
+              {
+                "id": "c",
+                "texte": "Dans la rue"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Chez soi"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Quel équipement de sol est conseillé ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un tapis de gym",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Une couverture de pique-nique"
+              },
+              {
+                "id": "c",
+                "texte": "Une planche de surf"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un tapis de gym"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/86bde69ed810.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/b5e107d80468.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/801037e2d80f.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Quelle boisson faut-il prévoir ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Une bouteille d’eau",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Une bouteille de soda"
+              },
+              {
+                "id": "c",
+                "texte": "Une tasse de café"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Une bouteille d’eau"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-bouteille-eau-dessinee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/95a8867c2af0.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-cafe-dessine.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Quel accompagnement sonore est proposé ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "De la musique",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Un cours de langue"
+              },
+              {
+                "id": "c",
+                "texte": "Un journal d’informations"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "De la musique"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Quelle culture le salon présente-t-il ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La culture indienne",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "La culture chinoise"
+              },
+              {
+                "id": "c",
+                "texte": "La culture japonaise"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "La culture indienne"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quels jours le salon a-t-il lieu ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Vendredi et samedi",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Samedi et dimanche"
+              },
+              {
+                "id": "c",
+                "texte": "Jeudi et vendredi"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Vendredi et samedi"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quel jour le salon ferme-t-il à 14 h ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Samedi",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Vendredi"
+              },
+              {
+                "id": "c",
+                "texte": "Dimanche"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Samedi"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quel est le prix de l’entrée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "10 euros",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "5 euros"
+              },
+              {
+                "id": "c",
+                "texte": "15 euros"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "10 euros"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quelles activités sont ensuite accessibles gratuitement ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Goûter des plats, danser et voir des films",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Acheter des vêtements et des bijoux"
+              },
+              {
+                "id": "c",
+                "texte": "Réserver un voyage et un hôtel"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Goûter des plats, danser et voir des films"
+              }
+            },
+            "audio": 3
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "loisirs",
+        "scene": "Loisirs"
+      }
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-ss-a2-s24-co-4",
+      "before": {
+        "id": "tcf-ss-a2-s24-co-4",
+        "niveau": "A1-A2",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Conversation 6",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "transcription": [
+            "Vous entendez ces conversations à la sortie d'une école, en France.\nDialogue A.\nJe dois aller chez le photographe des clics, mais je ne sais pas où il magasin.\nIl n'est pas très loin.\nIl est près du jardin public, à côté du pofeur.\nOk, merci Julien.",
+            "Jules, tu pars en Italie avec l'école cette année? Oui, je me suis inscrit. Et combien de temps dure le voyage? Dix jours. On va au lac de Côme et à Venise.",
+            "Je n'arrive pas à faire cet exercice de maths. Si tu veux, je peux t'expliquer l'exercice cet après-midi. Oui, je veux bien. Mais tu viens chez moi, alors. D'accord. Je viens vers 4 h.",
+            "Camille, pour avoir ta carte de cantine, tu dois aller au secretariat.\nEt combien je dois payer ?\nTu dois payer 50 euros et présenter ta carte d'identité.\nMerci."
+          ],
+          "audios": [
+            "/lib/audio/tcf/co/maison/bonjour-fruits-legumes-par-3-1.mp3",
+            "/lib/audio/tcf/co/maison/bonjour-fruits-legumes-par-3-2.mp3",
+            "/lib/audio/tcf/co/maison/bonjour-fruits-legumes-par-3-3.mp3",
+            "/lib/audio/tcf/co/maison/bonjour-fruits-legumes-par-3-4.mp3"
+          ],
+          "images_descriptions": [
+            "Scénario vidéo (audio CO moyen, « Bonjour fruits légumes par — dialogue 1 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Vous entendez ces conversations à la sortie d'une école, en France » ; B : « Dialogue A » ; A : « Je dois aller chez le photographe des clics, mais je ne sais pas où il magasin » ; B : « Il n'est pas très loin » ; A : « Il est près du jardin public, à côté du pofeur » ; B : « Ok, merci Julien ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Bonjour fruits légumes par — dialogue 2 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Jules, tu pars en Italie avec l'école cette année ? » ; B : « Oui, je me suis inscrit » ; A : « Et combien de temps, durant le voyage ? » ; B : « 10 jours » ; A : « On va au lab de Combe et à Venice ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Bonjour fruits légumes par — dialogue 3 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Je n'arrive pas à faire cette exercice de maths » ; B : « Si tu veux, je peux t'expliquer l'exercice cet après-midi ? » ; A : « Oui, je veux bien, mais tu viens chez moi alors » ; B : « D'accord, je viens vers quatre heures ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Bonjour fruits légumes par — dialogue 4 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Camille, pour avoir ta carte de cantine, tu dois aller au secretariat » ; B : « Et combien je dois payer ? » ; A : « Tu dois payer 50 euros et présenter ta carte d'identité » ; B : « Merci ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
+          ]
+        },
+        "questions": [
+          {
+            "enonce": "Quel commerce la personne cherche-t-elle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un photographe",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Un boulanger"
+              },
+              {
+                "id": "c",
+                "texte": "Un libraire"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un photographe"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Près de quel lieu ce commerce se trouve-t-il ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Le jardin public",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "La gare"
+              },
+              {
+                "id": "c",
+                "texte": "Le collège"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Le jardin public"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co306-parc-public-dessine.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co306-college-dessine.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Qui donne le renseignement ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Julien",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Jules"
+              },
+              {
+                "id": "c",
+                "texte": "Camille"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Julien"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Dans quel pays Jules part-il avec l’école ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "L’Italie",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "L’Espagne"
+              },
+              {
+                "id": "c",
+                "texte": "L’Allemagne"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "L’Italie"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Combien de temps le voyage durera-t-il ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Dix jours",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Cinq jours"
+              },
+              {
+                "id": "c",
+                "texte": "Un mois"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Dix jours"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Quelle ville italienne est citée parmi les destinations ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Venise",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Rome"
+              },
+              {
+                "id": "c",
+                "texte": "Naples"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Venise"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Dans quelle matière la personne a-t-elle besoin d’aide ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Les maths",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "L’histoire"
+              },
+              {
+                "id": "c",
+                "texte": "Le français"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Les maths"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Où les personnes vont-elles travailler ensemble ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Chez la personne qui demande de l’aide",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "À la bibliothèque"
+              },
+              {
+                "id": "c",
+                "texte": "Au café"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Chez la personne qui demande de l’aide"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Vers quelle heure la visite est-elle prévue ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "16 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "14 h"
+              },
+              {
+                "id": "c",
+                "texte": "18 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "16 h"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1600-dessinee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1400-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quel document Camille souhaite-t-elle obtenir ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Une carte de cantine",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Une carte de bibliothèque"
+              },
+              {
+                "id": "c",
+                "texte": "Une carte de transport"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Une carte de cantine"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co306-carte-cantine-dessine.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co306-carte-bibliotheque-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co306-carte-transport-dessine.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Où doit-elle aller ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Au secrétariat",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Au gymnase"
+              },
+              {
+                "id": "c",
+                "texte": "À l’infirmerie"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Au secrétariat"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "image": "/lib/images/tcf/co/bg/secretariat.webp",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co306-gymnase-municipal-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/extension573-infirmerie.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Combien doit-elle payer ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "50 euros",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "15 euros"
+              },
+              {
+                "id": "c",
+                "texte": "100 euros"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "50 euros"
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Quel document doit-elle présenter ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Sa carte d’identité",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Son carnet de santé"
+              },
+              {
+                "id": "c",
+                "texte": "Son bulletin de notes"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Sa carte d’identité"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "image": "/lib/images/tcf/qcm-audit/vocab-carte-identite.webp",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/extension573-carnet-sante.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/extension573-bulletin-notes.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 4
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "maison",
+        "scene": "Bonjour fruits légumes par"
+      },
+      "after": {
+        "id": "tcf-ss-a2-s24-co-4",
+        "niveau": "A1-A2",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Conversation 6",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "transcription": [
+            "Je dois aller chez le photographe Déclic, mais je ne sais pas où est le magasin. Il n'est pas très loin. Il est près du jardin public, à côté du coiffeur. Ok, merci, Julien.",
+            "Jules, tu pars en Italie avec l'école cette année? Oui, je me suis inscrit. Et combien de temps dure le voyage? Dix jours. On va au lac de Côme et à Venise.",
+            "Je n'arrive pas à faire cet exercice de maths. Si tu veux, je peux t'expliquer l'exercice cet après-midi. Oui, je veux bien. Mais tu viens chez moi, alors. D'accord. Je viens vers 4 h.",
+            "Camille, pour avoir ta carte de cantine, tu dois aller au secretariat.\nEt combien je dois payer ?\nTu dois payer 50 euros et présenter ta carte d'identité.\nMerci."
+          ],
+          "audios": [
+            "/lib/audio/tcf/co/maison/bonjour-fruits-legumes-par-3-1.mp3",
+            "/lib/audio/tcf/co/maison/bonjour-fruits-legumes-par-3-2.mp3",
+            "/lib/audio/tcf/co/maison/bonjour-fruits-legumes-par-3-3.mp3",
+            "/lib/audio/tcf/co/maison/bonjour-fruits-legumes-par-3-4.mp3"
+          ],
+          "images_descriptions": [
+            "Scénario vidéo (audio CO moyen, « Bonjour fruits légumes par — dialogue 1 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Vous entendez ces conversations à la sortie d'une école, en France » ; B : « Dialogue A » ; A : « Je dois aller chez le photographe des clics, mais je ne sais pas où il magasin » ; B : « Il n'est pas très loin » ; A : « Il est près du jardin public, à côté du pofeur » ; B : « Ok, merci Julien ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Bonjour fruits légumes par — dialogue 2 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Jules, tu pars en Italie avec l'école cette année ? » ; B : « Oui, je me suis inscrit » ; A : « Et combien de temps, durant le voyage ? » ; B : « 10 jours » ; A : « On va au lab de Combe et à Venice ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Bonjour fruits légumes par — dialogue 3 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Je n'arrive pas à faire cette exercice de maths » ; B : « Si tu veux, je peux t'expliquer l'exercice cet après-midi ? » ; A : « Oui, je veux bien, mais tu viens chez moi alors » ; B : « D'accord, je viens vers quatre heures ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Bonjour fruits légumes par — dialogue 4 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Camille, pour avoir ta carte de cantine, tu dois aller au secretariat » ; B : « Et combien je dois payer ? » ; A : « Tu dois payer 50 euros et présenter ta carte d'identité » ; B : « Merci ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
+          ]
+        },
+        "questions": [
+          {
+            "enonce": "Quel commerce la personne cherche-t-elle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un photographe",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Un boulanger"
+              },
+              {
+                "id": "c",
+                "texte": "Un libraire"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un photographe"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Près de quel lieu ce commerce se trouve-t-il ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Le jardin public",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "La gare"
+              },
+              {
+                "id": "c",
+                "texte": "Le collège"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Le jardin public"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co306-parc-public-dessine.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co306-college-dessine.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "À côté de quel commerce le photographe se trouve-t-il ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "À côté du coiffeur",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "À côté du boulanger"
+              },
+              {
+                "id": "c",
+                "texte": "À côté du libraire"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "À côté du coiffeur"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Dans quel pays Jules part-il avec l’école ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "L’Italie",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "L’Espagne"
+              },
+              {
+                "id": "c",
+                "texte": "L’Allemagne"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "L’Italie"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Combien de temps le voyage durera-t-il ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Dix jours",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Cinq jours"
+              },
+              {
+                "id": "c",
+                "texte": "Un mois"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Dix jours"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Quelle ville italienne est citée parmi les destinations ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Venise",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Rome"
+              },
+              {
+                "id": "c",
+                "texte": "Naples"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Venise"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Dans quelle matière la personne a-t-elle besoin d’aide ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Les maths",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "L’histoire"
+              },
+              {
+                "id": "c",
+                "texte": "Le français"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Les maths"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Où les personnes vont-elles travailler ensemble ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Chez la personne qui demande de l’aide",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "À la bibliothèque"
+              },
+              {
+                "id": "c",
+                "texte": "Au café"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Chez la personne qui demande de l’aide"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Vers quelle heure la visite est-elle prévue ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "16 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "14 h"
+              },
+              {
+                "id": "c",
+                "texte": "18 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "16 h"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1600-dessinee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1400-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quel document Camille souhaite-t-elle obtenir ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Une carte de cantine",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Une carte de bibliothèque"
+              },
+              {
+                "id": "c",
+                "texte": "Une carte de transport"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Une carte de cantine"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co306-carte-cantine-dessine.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co306-carte-bibliotheque-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co306-carte-transport-dessine.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Où doit-elle aller ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Au secrétariat",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Au gymnase"
+              },
+              {
+                "id": "c",
+                "texte": "À l’infirmerie"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Au secrétariat"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "image": "/lib/images/tcf/co/bg/secretariat.webp",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co306-gymnase-municipal-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/extension573-infirmerie.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Combien doit-elle payer ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "50 euros",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "15 euros"
+              },
+              {
+                "id": "c",
+                "texte": "100 euros"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "50 euros"
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Quel document doit-elle présenter ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Sa carte d’identité",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Son carnet de santé"
+              },
+              {
+                "id": "c",
+                "texte": "Son bulletin de notes"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Sa carte d’identité"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "image": "/lib/images/tcf/qcm-audit/vocab-carte-identite.webp",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/extension573-carnet-sante.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/extension573-bulletin-notes.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 4
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "maison",
+        "scene": "Bonjour fruits légumes par"
+      }
+    }
+  ],
+  "status": "installed",
+  "received_originals_modified": 0,
+  "human_listening_performed": false
+}

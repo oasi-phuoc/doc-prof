@@ -1,0 +1,902 @@
+{
+  "batch": 33,
+  "audio_replacements": [
+    {
+      "ref": "/lib/audio/tcf/co/famille/03-famille-comment-est-la-copine-de-Nathan.mp3",
+      "previous_sha256": "69c4f593447c9beca2ada58606212871ecb6e5fd8544764e6823bff66d8821c0",
+      "candidate_sha256": "44308659755fa1d8cdb82999fbaa083531bfb15b850081481b74aff8d76e9b91",
+      "rollback_git_blob": "096205c3fc0a8465c32a24499430ee58aac101e7",
+      "source_id": "9782090351958:032:13ecb3fcf81d",
+      "source_sha256": "13ecb3fcf81d94cb597eeb336853e7b3b729b682d1cfbc0ae220de29c3e3d2df",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "44308659755fa1d8cdb82999fbaa083531bfb15b850081481b74aff8d76e9b91",
+        "duration": 15.9600625,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "13ecb3fcf81d94cb597eeb336853e7b3b729b682d1cfbc0ae220de29c3e3d2df",
+          "proof": {
+            "previous_sha256": "864bedb27a1569d106363da15a758325d3b8d92d9fe23cf45878e108b86cf168",
+            "sha256": "44308659755fa1d8cdb82999fbaa083531bfb15b850081481b74aff8d76e9b91",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/312-864bedb27a15-2239221-2943058/candidate.mp3",
+            "source_sha256": "13ecb3fcf81d94cb597eeb336853e7b3b729b682d1cfbc0ae220de29c3e3d2df",
+            "source_file": "/workspace/attachments/52ff0494-418d-4b33-bd3b-0ca2ee946b79/9782090351958_32_CO_ex30.mp3",
+            "source_decoded_pcm_sha256": "fe2ad7515d450fcb17dd1401713f25760863da68af57651851ba8af33363cfc5",
+            "source_sample_rate": 44100,
+            "source_channels": 1,
+            "source_start_frame": 2239221,
+            "source_end_frame": 2943058,
+            "source_start": 50.775986394557826,
+            "source_end": 66.73600907029478,
+            "source_slice_pcm_sha256": "781741decd28367a892fc888923783c50f5ad3de17565760fdac0141fc2110f1",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/312-864bedb27a15-2239221-2943058/start_before.flac",
+                "sha256": "1007bad4f5f7b580259bbe3fffb8246d18161db0ef933d3aa176fb1ee55e5ddc",
+                "source_start_frame": 2151021,
+                "source_end_frame": 2239221,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/312-864bedb27a15-2239221-2943058/start_after.flac",
+                "sha256": "e3f29a91585958444179b8ddf513d2d8ace420c21881deca15535e2479a3dc69",
+                "source_start_frame": 2239221,
+                "source_end_frame": 2327421,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/312-864bedb27a15-2239221-2943058/end_before.flac",
+                "sha256": "be0e53d57648d154e4ec5992b26594c0bc9298182dd70fd6be78cf044821d55d",
+                "source_start_frame": 2854858,
+                "source_end_frame": 2943058,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/312-864bedb27a15-2239221-2943058/end_after.flac",
+                "sha256": "11e4aae272f6196590f3e0aeca8e2893d69d6f60c0d5505aac40db6df1092349",
+                "source_start_frame": 2943058,
+                "source_end_frame": 3031258,
+                "available_seconds": 2.0
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Elle",
+                "start": 50.856,
+                "end": 51.176,
+                "kind": "dialogue",
+                "asr_word_index": 94,
+                "raw_start": 50.85599998092651,
+                "raw_end": 51.17599994397163,
+                "native_token_indices": [
+                  6,
+                  7
+                ]
+              },
+              "last": {
+                "text": "sœur.",
+                "start": 65.736,
+                "end": 66.615999,
+                "kind": "dialogue",
+                "asr_word_index": 133,
+                "raw_start": 65.73599961853027,
+                "raw_end": 66.93599877214432,
+                "native_token_indices": [
+                  83,
+                  84,
+                  85,
+                  86
+                ]
+              },
+              "previous_word_end": 50.456,
+              "next_word_start": 68.215999,
+              "first_source_speech_region": [
+                51.168,
+                52.768
+              ],
+              "last_source_speech_region": [
+                64.64,
+                65.856
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. Natural native margins up to one second are retained to avoid trimming a quiet first word or its final decay. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/312-864bedb27a15-2239221-2943058/waveform.svg",
+              "sha256": "f84f009a30fca5719543ec989e03fc50662d78c29ca407c644efc03628e151e0"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.32,
+          "trailing_quiet_seconds": 0.92,
+          "relative_rms_threshold": 0.004247052259743214,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.32,
+          "trailing_non_speech_seconds": 0.8880625,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "ctc"
+      ],
+      "editorial_reason": "Questions et trois propositions relues dans le contexte : une réponse correcte et présente dans le dialogue. Transcriptions finales comparées ; conserver en attente tant que les frontières ou les deux reconnaissances finales ne sont pas qualifiées.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 16.57,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/scènes courtes/02-transport-guichet-de-train.mp3",
+      "previous_sha256": "d6f626131a8b523693940ceb81a9fbbf07358b39da2beefae32f0c9c60157657",
+      "candidate_sha256": "47acded871f227d05001d4785d462d3741136b4c96f35b0b34c0df07ad360256",
+      "rollback_git_blob": "e1c5dab48b6a38327ebf327bd3106e1b1e022a52",
+      "source_id": "additional-20261102:mdf-a1-abc:41:4215c39103a5:c9e70a7a",
+      "source_sha256": "4215c39103a5da5cd38d31a6253269831c268f249d6b6c1585d7634fb2eacb74",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "47acded871f227d05001d4785d462d3741136b4c96f35b0b34c0df07ad360256",
+        "duration": 6.936,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "4215c39103a5da5cd38d31a6253269831c268f249d6b6c1585d7634fb2eacb74",
+          "proof": {
+            "previous_sha256": "0027e39b0d1e90e03e5df964cba61665118ac7e955b6b68b984e09aaebdd390c",
+            "sha256": "47acded871f227d05001d4785d462d3741136b4c96f35b0b34c0df07ad360256",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/359-0027e39b0d1e-879530-1185408/candidate.mp3",
+            "source_sha256": "4215c39103a5da5cd38d31a6253269831c268f249d6b6c1585d7634fb2eacb74",
+            "source_file": "/workspace/work/tcf-audio-additional-20261102-work/incoming/a1/mdf-a1-abc/MDF_A1_ABC-DELF_AUDIO/09035257_041.mp3",
+            "source_decoded_pcm_sha256": "ff700c38dfad20eedfd2fb4141702010b406e161e29515b895768dbe99ebd01c",
+            "source_sample_rate": 44100,
+            "source_channels": 1,
+            "source_start_frame": 879530,
+            "source_end_frame": 1185408,
+            "source_start": 19.943990929705215,
+            "source_end": 26.88,
+            "source_slice_pcm_sha256": "0bf0b78447290bf2c2cef6f66e4d3bdb5f291ed9a9173f04fc675117e898ff7f",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/359-0027e39b0d1e-879530-1185408/start_before.flac",
+                "sha256": "0536ca31409bb67e41d24db44b13764838bfbb62915a20ae953d6da84de858cc",
+                "source_start_frame": 791330,
+                "source_end_frame": 879530,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/359-0027e39b0d1e-879530-1185408/start_after.flac",
+                "sha256": "ff84b32df6000c130ba4c71802ebedf804f6624823a9e4db0aa12a4dbb8d9e25",
+                "source_start_frame": 879530,
+                "source_end_frame": 967730,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/359-0027e39b0d1e-879530-1185408/end_before.flac",
+                "sha256": "b0657d3ffdc85f864edb0ddd87c39bcefe6a4ffcda276b962a8ac4d316c64997",
+                "source_start_frame": 1097208,
+                "source_end_frame": 1185408,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/359-0027e39b0d1e-879530-1185408/end_after.flac",
+                "sha256": "be4dcd2cfe021fea4d4efece2cdf811fc40214162147275cbdbb9037f021911e",
+                "source_start_frame": 1185408,
+                "source_end_frame": 1273608,
+                "available_seconds": 2.0
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Bonjour",
+                "start": 20.024,
+                "end": 20.504,
+                "kind": "dialogue",
+                "asr_word_index": 30,
+                "raw_start": 20.024,
+                "raw_end": 20.503999616742135,
+                "native_token_indices": [
+                  74,
+                  75,
+                  76,
+                  77
+                ]
+              },
+              "last": {
+                "text": "beaucoup.",
+                "start": 26.344,
+                "end": 26.584,
+                "kind": "dialogue",
+                "asr_word_index": 41,
+                "raw_start": 26.34399969482422,
+                "raw_end": 26.743999462366105,
+                "native_token_indices": [
+                  99,
+                  100
+                ]
+              },
+              "previous_word_end": 18.824,
+              "next_word_start": 30.616,
+              "first_source_speech_region": [
+                20.352,
+                21.088
+              ],
+              "last_source_speech_region": [
+                26.08,
+                26.72
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/359-0027e39b0d1e-879530-1185408/waveform.svg",
+              "sha256": "094c15bd2804637fae7bb1c21eafb08fd0f2c91cbd21c50a5e6a65a0c219a19f"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.0,
+          "relative_rms_threshold": 0.006174857094883919,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.384,
+          "trailing_non_speech_seconds": 0.12,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "ctc"
+      ],
+      "editorial_reason": "Revue éditoriale du dialogue, des questions et de leurs trois propositions. Corrections des faits uniquement lorsque les reconnaissances les étayent ; deux reconnaissances finales et marges qualifiées restent requises avant bascule.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 11.08,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_85-3.mp3",
+      "previous_sha256": "034d05a0fbd39bcec9f8fedd005cc281a17a9b66605fea1254d929bc72748d4c",
+      "candidate_sha256": "68b71edafc86c0a2f285e3f1391c34cef94b858cc88da8f2ac2d82daf41f749c",
+      "rollback_git_blob": "6c2a9e213564b991da56fd1a8acb5c75bac4abc0",
+      "source_id": "delf_a1_2022:085:657006e9075c",
+      "source_sha256": "657006e9075c97fd854b23eba86a98a1c03f8cdec065912d8db82c74e99b1b33",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "68b71edafc86c0a2f285e3f1391c34cef94b858cc88da8f2ac2d82daf41f749c",
+        "duration": 10.2000625,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "657006e9075c97fd854b23eba86a98a1c03f8cdec065912d8db82c74e99b1b33",
+          "proof": {
+            "previous_sha256": "16eca13033898303a2c7d20401d08eaf1efc36bf7b8cc626af81e4e6cec40bcd",
+            "sha256": "68b71edafc86c0a2f285e3f1391c34cef94b858cc88da8f2ac2d82daf41f749c",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/394-16eca1303389-1120845-1570666/candidate.mp3",
+            "source_sha256": "657006e9075c97fd854b23eba86a98a1c03f8cdec065912d8db82c74e99b1b33",
+            "source_file": "/workspace/work/tcf-audio-replacement/incoming/a1/delf_a1_2022_piste_85.mp3",
+            "source_decoded_pcm_sha256": "2944d25862af4a01b43654ddb6fffa425f34e42daf5f3936d5855f37a4dcfce7",
+            "source_sample_rate": 44100,
+            "source_channels": 2,
+            "source_start_frame": 1120845,
+            "source_end_frame": 1570666,
+            "source_start": 25.415986394557823,
+            "source_end": 35.61600907029479,
+            "source_slice_pcm_sha256": "19d65adeb61d84b363e3dc4a4627533fe4e1ed5b02179f97f54abe03dfb62a57",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/394-16eca1303389-1120845-1570666/start_before.flac",
+                "sha256": "ced892888d4dfca9c145ddb14ef0fa5e3a4740cb43d5d78dc17aa010f007e897",
+                "source_start_frame": 1032645,
+                "source_end_frame": 1120845,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/394-16eca1303389-1120845-1570666/start_after.flac",
+                "sha256": "55a3bdfe0526ad2568c2d7c60e7dd2c855f376b5629257ae1204912a369dddca",
+                "source_start_frame": 1120845,
+                "source_end_frame": 1209045,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/394-16eca1303389-1120845-1570666/end_before.flac",
+                "sha256": "2621c0d841bbb8025bc87fb745c8e29b2aa9c7319aff2794d620a6398c667409",
+                "source_start_frame": 1482466,
+                "source_end_frame": 1570666,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/394-16eca1303389-1120845-1570666/end_after.flac",
+                "sha256": "e430ade5bc254529614ac5a6aee2ea0d75269e87b4134ed235fe255433a9972a",
+                "source_start_frame": 1570666,
+                "source_end_frame": 1658866,
+                "available_seconds": 2.0
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Le",
+                "start": 25.496,
+                "end": 25.736,
+                "kind": "dialogue",
+                "asr_word_index": 39,
+                "raw_start": 25.496,
+                "raw_end": 25.73599999463558,
+                "native_token_indices": [
+                  0
+                ]
+              },
+              "last": {
+                "text": "euros.",
+                "start": 34.616,
+                "end": 35.495999,
+                "kind": "dialogue",
+                "asr_word_index": 58,
+                "raw_start": 34.61599988555908,
+                "raw_end": 35.81599999284744,
+                "native_token_indices": [
+                  45,
+                  46,
+                  47,
+                  48
+                ]
+              },
+              "previous_word_end": 24.48,
+              "next_word_start": 36.936,
+              "first_source_speech_region": [
+                25.696,
+                26.624
+              ],
+              "last_source_speech_region": [
+                33.568,
+                34.784
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. Natural native margins up to one second are retained to avoid trimming a quiet first word or its final decay. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/394-16eca1303389-1120845-1570666/waveform.svg",
+              "sha256": "2ea947ee7a51c39f5b1643bebee921c00714a3ddb6574473c6c143b62e888f56"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.24,
+          "trailing_quiet_seconds": 0.86,
+          "relative_rms_threshold": 0.006286438629031182,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.256,
+          "trailing_non_speech_seconds": 0.8240625,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "ctc"
+      ],
+      "editorial_reason": "Variantes de ponctuation et mise en chiffres examinées ; texte courant conservé sous réserve des contrôles finaux.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 13.4,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    }
+  ],
+  "exercise_changes": [
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-sc-02-guichet-de-train-co-4",
+      "before": {
+        "id": "tcf-sc-02-guichet-de-train-co-4",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Scènes courtes · Au guichet de la gare",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/scènes courtes/02-transport-guichet-de-train.mp3",
+          "transcription": "- Bonjour, Madame.\nÀ quelle heure part le train pour Montréal ?\n- À 6 h 15, Monsieur.\n- Merci beaucoup."
+        },
+        "questions": [
+          {
+            "enonce": "Quelle est la destination du train ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Montréal",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Québec"
+              },
+              {
+                "id": "c",
+                "texte": "Toronto"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Montréal"
+              }
+            }
+          },
+          {
+            "enonce": "À quelle heure part le train ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "6 h 15",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "6 h 30"
+              },
+              {
+                "id": "c",
+                "texte": "7 h 15"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "6 h 15"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/vocab-horloge-1815.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/vocab-horloge-0630.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/vocab-horloge-0715.webp"
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "transports",
+        "scene": "Au guichet de la gare"
+      },
+      "after": {
+        "id": "tcf-sc-02-guichet-de-train-co-4",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Scènes courtes · Au guichet de la gare",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/scènes courtes/02-transport-guichet-de-train.mp3",
+          "transcription": "Bonjour madame, à quelle heure part le train pour Montréal ? À 6h15, monsieur. Merci beaucoup."
+        },
+        "questions": [
+          {
+            "enonce": "Quelle est la destination du train ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Montréal",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Québec"
+              },
+              {
+                "id": "c",
+                "texte": "Toronto"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Montréal"
+              }
+            }
+          },
+          {
+            "enonce": "À quelle heure part le train ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "6 h 15",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "6 h 30"
+              },
+              {
+                "id": "c",
+                "texte": "7 h 15"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "6 h 15"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/vocab-horloge-1815.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/vocab-horloge-0630.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/vocab-horloge-0715.webp"
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "transports",
+        "scene": "Au guichet de la gare"
+      }
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-ssx-a2-famille-copine-de-nathan-co-4",
+      "before": {
+        "id": "tcf-ssx-a2-famille-copine-de-nathan-co-4",
+        "niveau": "A1-A2",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · La copine de Nathan",
+        "scenario": "maison",
+        "scene": "La copine de Nathan",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/famille/03-famille-comment-est-la-copine-de-Nathan.mp3",
+          "transcription": "- Elle est comment, la copine de Nathan ?\nElle est blonde ?\n- Non, elle est brune, avec les cheveux longs.\nElle est très jolie.\n- Elle a quel âge ?\n- Dix-sept ou dix-huit ans, je pense.\nElle est au lycée avec ma sœur."
+        },
+        "questions": [
+          {
+            "enonce": "De qui parlent-ils ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "De la copine de Nathan",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "De la sœur de Nathan"
+              },
+              {
+                "id": "c",
+                "texte": "De la mère de Nathan"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "De la copine de Nathan"
+              }
+            }
+          },
+          {
+            "enonce": "Comment sont ses cheveux ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Bruns et longs",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Blonds et courts"
+              },
+              {
+                "id": "c",
+                "texte": "Bruns et courts"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Bruns et longs"
+              }
+            }
+          },
+          {
+            "enonce": "Quel âge a-t-elle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "17 ou 18 ans",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "15 ou 16 ans"
+              },
+              {
+                "id": "c",
+                "texte": "20 ans"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "17 ou 18 ans"
+              }
+            }
+          },
+          {
+            "enonce": "Avec qui est-elle au lycée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Avec la sœur de la personne qui parle",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Avec Nathan"
+              },
+              {
+                "id": "c",
+                "texte": "Avec son frère"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Avec la sœur de la personne qui parle"
+              }
+            }
+          },
+          {
+            "enonce": "Comment son apparence générale est-elle jugée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Très jolie",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Très fatiguée"
+              },
+              {
+                "id": "c",
+                "texte": "Très triste"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Très jolie"
+              }
+            }
+          }
+        ]
+      },
+      "after": {
+        "id": "tcf-ssx-a2-famille-copine-de-nathan-co-4",
+        "niveau": "A1-A2",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · La copine de Nathan",
+        "scenario": "maison",
+        "scene": "La copine de Nathan",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/famille/03-famille-comment-est-la-copine-de-Nathan.mp3",
+          "transcription": "Elle est comment la copine de Nathan ? Elle est blonde ? Non ! Elle est brune avec les cheveux longs. Elle est très jolie. Elle a quel âge ? Euh... 17 ou 18 ans, je pense. Elle est au lycée avec ma sœur."
+        },
+        "questions": [
+          {
+            "enonce": "De qui parlent-ils ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "De la copine de Nathan",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "De la sœur de Nathan"
+              },
+              {
+                "id": "c",
+                "texte": "De la mère de Nathan"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "De la copine de Nathan"
+              }
+            }
+          },
+          {
+            "enonce": "Comment sont ses cheveux ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Bruns et longs",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Blonds et courts"
+              },
+              {
+                "id": "c",
+                "texte": "Bruns et courts"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Bruns et longs"
+              }
+            }
+          },
+          {
+            "enonce": "Quel âge a-t-elle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "17 ou 18 ans",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "15 ou 16 ans"
+              },
+              {
+                "id": "c",
+                "texte": "20 ans"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "17 ou 18 ans"
+              }
+            }
+          },
+          {
+            "enonce": "Avec qui est-elle au lycée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Avec la sœur de la personne qui parle",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Avec Nathan"
+              },
+              {
+                "id": "c",
+                "texte": "Avec son frère"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Avec la sœur de la personne qui parle"
+              }
+            }
+          },
+          {
+            "enonce": "Comment son apparence générale est-elle jugée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Très jolie",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Très fatiguée"
+              },
+              {
+                "id": "c",
+                "texte": "Très triste"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Très jolie"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "status": "installed",
+  "received_originals_modified": 0,
+  "human_listening_performed": false
+}

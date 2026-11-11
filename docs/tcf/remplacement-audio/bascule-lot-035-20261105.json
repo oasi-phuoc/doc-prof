@@ -1,0 +1,682 @@
+{
+  "batch": 35,
+  "audio_replacements": [
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/mesdames-messieurs-votre-attention-1.mp3",
+      "previous_sha256": "3a12f2cfec8efca40ede06449ce89c6a5ed7b5146e063d2ad01759b1b2d4622a",
+      "candidate_sha256": "f7a902dcef1df1085d7e5eb693f19639fedd1470df5de1705aced944025afe1d",
+      "rollback_git_blob": "37a21253e93910b9953070628d5e088185476cc8",
+      "source_id": "grammar-import-20261104:file_00000000cc688243b075ec50445a1254",
+      "source_sha256": "3a12f2cfec8efca40ede06449ce89c6a5ed7b5146e063d2ad01759b1b2d4622a",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "f7a902dcef1df1085d7e5eb693f19639fedd1470df5de1705aced944025afe1d",
+        "duration": 18.8,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "3a12f2cfec8efca40ede06449ce89c6a5ed7b5146e063d2ad01759b1b2d4622a",
+          "proof": {
+            "previous_sha256": "5eb297261ae40e8d7a1627e375b9d6beebf855423cc6cedaf0d96a418f776f17",
+            "sha256": "f7a902dcef1df1085d7e5eb693f19639fedd1470df5de1705aced944025afe1d",
+            "file": "/tmp/tcf-native-margins-20261111/493-5eb297261ae4-299880-1128960/candidate.mp3",
+            "source_sha256": "3a12f2cfec8efca40ede06449ce89c6a5ed7b5146e063d2ad01759b1b2d4622a",
+            "source_file": "/workspace/doc-prof/public/lib/audio/grammaire/co/aeroport/piste188.mp3",
+            "source_decoded_pcm_sha256": "b13f57318822e0c68852525aea3774fce014c0bc848810c9aca55d1071ffb4d2",
+            "source_sample_rate": 44100,
+            "source_channels": 2,
+            "source_start_frame": 299880,
+            "source_end_frame": 1128960,
+            "source_start": 6.8,
+            "source_end": 25.6,
+            "source_slice_pcm_sha256": "3648151fa897ed62c34ae15efec685c26f58e008a463277135b90697f1e63f43",
+            "windows": {
+              "start_before": {
+                "file": "/tmp/tcf-native-margins-20261111/493-5eb297261ae4-299880-1128960/start_before.flac",
+                "sha256": "16e016a5cea1607c868799e73a4bf55389d4053449e533ce795331b9f22ac62d",
+                "source_start_frame": 211680,
+                "source_end_frame": 299880,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/tmp/tcf-native-margins-20261111/493-5eb297261ae4-299880-1128960/start_after.flac",
+                "sha256": "9b52654822646c36a3e252b89192d7470ab504354550d571748d0380b1010b96",
+                "source_start_frame": 299880,
+                "source_end_frame": 388080,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/tmp/tcf-native-margins-20261111/493-5eb297261ae4-299880-1128960/end_before.flac",
+                "sha256": "5dde259c26cd2a82a83504d097c3052c8680460b27c22e0223d6398e72363f29",
+                "source_start_frame": 1040760,
+                "source_end_frame": 1128960,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/tmp/tcf-native-margins-20261111/493-5eb297261ae4-299880-1128960/end_after.flac",
+                "sha256": "4181229eff661cbbbc6b9ccaaddc66c0579133461d97dad88c3ea1306e7d3dbd",
+                "source_start_frame": 1128960,
+                "source_end_frame": 1177344,
+                "available_seconds": 1.0971428571428572
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Mesdames",
+                "start": 6.88,
+                "end": 7.68,
+                "kind": "dialogue",
+                "asr_word_index": 4,
+                "raw_start": 6.87999963760376,
+                "raw_end": 7.679999977350235,
+                "native_token_indices": [
+                  12,
+                  13,
+                  14,
+                  15
+                ]
+              },
+              "last": {
+                "text": "passeport.",
+                "start": 24.719999,
+                "end": 25.279999,
+                "kind": "dialogue",
+                "asr_word_index": 31,
+                "raw_start": 24.719999313354492,
+                "raw_end": 26.240000069141388,
+                "native_token_indices": [
+                  73,
+                  74,
+                  75,
+                  76
+                ]
+              },
+              "previous_word_end": 4.96,
+              "next_word_start": 26.697142857142858,
+              "first_source_speech_region": [
+                7.04,
+                10.592
+              ],
+              "last_source_speech_region": [
+                24.064,
+                25.44
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. Natural native margins up to one second are retained to avoid trimming a quiet first word or its final decay. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/tmp/tcf-native-margins-20261111/493-5eb297261ae4-299880-1128960/waveform.svg",
+              "sha256": "d73907aa2642192ec46b99d1f84ec835b04f146a6750a864e525e3ff8d85cd8f"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.0,
+          "relative_rms_threshold": 0.004093187339603901,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.224,
+          "trailing_non_speech_seconds": 0.176,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
+      "editorial_reason": "Le texte de la source préparée et celui du support sont équivalents ; questions et réponses précédemment auditées conservées. La validation du MP3 final reste distincte.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 26.68,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/salut-emilie.mp3",
+      "previous_sha256": "8e1db336b0cc811a7086913b46387eca8b9f554ce066705344bc2052c9bf14e6",
+      "candidate_sha256": "e865f151e16dab7b357228ab0c1d78fae455a69b926f4da3198202639c527815",
+      "rollback_git_blob": "f2ffa98c3c99980d0c17d420c848cc334c880f1a",
+      "source_id": "grammar-import-20261104:file_0000000010708246acdf74e57b38bda1",
+      "source_sha256": "8e1db336b0cc811a7086913b46387eca8b9f554ce066705344bc2052c9bf14e6",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "e865f151e16dab7b357228ab0c1d78fae455a69b926f4da3198202639c527815",
+        "duration": 60.44,
+        "category": "long",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "8e1db336b0cc811a7086913b46387eca8b9f554ce066705344bc2052c9bf14e6",
+          "proof": {
+            "previous_sha256": "c1a4d45d9a838f4b79fde9f23294f160eb7669f521443c067e0f3361730be80f",
+            "sha256": "e865f151e16dab7b357228ab0c1d78fae455a69b926f4da3198202639c527815",
+            "file": "/tmp/tcf-native-margins-20261111/515-c1a4d45d9a83-312228-2977632/candidate.mp3",
+            "source_sha256": "8e1db336b0cc811a7086913b46387eca8b9f554ce066705344bc2052c9bf14e6",
+            "source_file": "/workspace/doc-prof/public/lib/audio/grammaire/co/restaurant/piste230.mp3",
+            "source_decoded_pcm_sha256": "a5b180ece16193179d857e64e8286a3b38a64bfcf7b9b93fe4411aebc3dbf199",
+            "source_sample_rate": 44100,
+            "source_channels": 2,
+            "source_start_frame": 312228,
+            "source_end_frame": 2977632,
+            "source_start": 7.08,
+            "source_end": 67.52,
+            "source_slice_pcm_sha256": "70dd295c8a520e1d46c8d240ea98aebd36f851142e0656b48556bd1e77af48b3",
+            "windows": {
+              "start_before": {
+                "file": "/tmp/tcf-native-margins-20261111/515-c1a4d45d9a83-312228-2977632/start_before.flac",
+                "sha256": "9099623cb85e81d8938324c0c04616dd6a5de229dfe4eb672d301292bbaf1d8b",
+                "source_start_frame": 224028,
+                "source_end_frame": 312228,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/tmp/tcf-native-margins-20261111/515-c1a4d45d9a83-312228-2977632/start_after.flac",
+                "sha256": "226d85ad2a934a02c39a2c15fece5d21124b735fabf13f1f31aa314849622181",
+                "source_start_frame": 312228,
+                "source_end_frame": 400428,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/tmp/tcf-native-margins-20261111/515-c1a4d45d9a83-312228-2977632/end_before.flac",
+                "sha256": "b778fc0e1d53bf8a1b51227d023db5b758706bdf813fdfa2761997fa9cab6457",
+                "source_start_frame": 2889432,
+                "source_end_frame": 2977632,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/tmp/tcf-native-margins-20261111/515-c1a4d45d9a83-312228-2977632/end_after.flac",
+                "sha256": "f12dad75ffdc100565f164491a8893705f774849e8ee51cb8de6fef5ef949242",
+                "source_start_frame": 2977632,
+                "source_end_frame": 3065832,
+                "available_seconds": 2.0
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Salut",
+                "start": 7.16,
+                "end": 7.72,
+                "kind": "dialogue",
+                "asr_word_index": 5,
+                "raw_start": 7.1600000762939455,
+                "raw_end": 7.719999765753746,
+                "native_token_indices": [
+                  16,
+                  17
+                ]
+              },
+              "last": {
+                "text": "revoir.",
+                "start": 66.855999,
+                "end": 67.176,
+                "kind": "dialogue",
+                "asr_word_index": 143,
+                "raw_start": 66.85599870300294,
+                "raw_end": 67.41600015079976,
+                "native_token_indices": [
+                  86,
+                  87,
+                  88
+                ]
+              },
+              "previous_word_end": 5.64,
+              "next_word_start": 70.24326530612245,
+              "first_source_speech_region": [
+                7.392,
+                8.448
+              ],
+              "last_source_speech_region": [
+                66.784,
+                67.36
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. Natural native margins up to one second are retained to avoid trimming a quiet first word or its final decay. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/tmp/tcf-native-margins-20261111/515-c1a4d45d9a83-312228-2977632/waveform.svg",
+              "sha256": "79e18142d1f2e708c65b7bf964eb1caad52c4e793fd6a7395755f7274cd0d9ef"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.23,
+          "trailing_quiet_seconds": 0.0,
+          "relative_rms_threshold": 0.004856771603226662,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.288,
+          "trailing_non_speech_seconds": 0.152,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "whisper",
+        "ctc"
+      ],
+      "editorial_reason": "Le texte de la source préparée et celui du support sont équivalents ; questions et réponses précédemment auditées conservées. La validation du MP3 final reste distincte.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 70.19,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-nouvelle-2.mp3",
+      "previous_sha256": "71c96e3cbf9a24fae490326ff8d9a9fe358ebe5a3e2d3c10a303d703465fd069",
+      "candidate_sha256": "6ba78931793ffde314a3b0b3e8fd0d9cb99ed62351dd5a602f79ea9410e5fe18",
+      "rollback_git_blob": "8b472eeab01dfeadbf65e34087890b5a8e8f7263",
+      "source_id": "grammar-import-20261104:file_0000000059ec81f48d882da32d2bf865",
+      "source_sha256": "71c96e3cbf9a24fae490326ff8d9a9fe358ebe5a3e2d3c10a303d703465fd069",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "6ba78931793ffde314a3b0b3e8fd0d9cb99ed62351dd5a602f79ea9410e5fe18",
+        "duration": 61.496,
+        "category": "long",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "71c96e3cbf9a24fae490326ff8d9a9fe358ebe5a3e2d3c10a303d703465fd069",
+          "proof": {
+            "previous_sha256": "80b4870d3c63fef136b32417bd8f5051fe929c37e4c8c2230d0b2649ea85f067",
+            "sha256": "6ba78931793ffde314a3b0b3e8fd0d9cb99ed62351dd5a602f79ea9410e5fe18",
+            "file": "/tmp/tcf-native-margins-20261111/472-80b4870d3c63-495684-3207658/candidate.mp3",
+            "source_sha256": "71c96e3cbf9a24fae490326ff8d9a9fe358ebe5a3e2d3c10a303d703465fd069",
+            "source_file": "/workspace/doc-prof/public/lib/audio/grammaire/co/universite-ecole/piste072.mp3",
+            "source_decoded_pcm_sha256": "2923c779fc9ef58a74616d55503d095090a91f325a7036b292eb590777de7e14",
+            "source_sample_rate": 44100,
+            "source_channels": 2,
+            "source_start_frame": 495684,
+            "source_end_frame": 3207658,
+            "source_start": 11.24,
+            "source_end": 72.73600907029478,
+            "source_slice_pcm_sha256": "0f585d33f40c6a2d2761b8a53f1cc74e3a068013037a222b3391d87d7e6f181d",
+            "windows": {
+              "start_before": {
+                "file": "/tmp/tcf-native-margins-20261111/472-80b4870d3c63-495684-3207658/start_before.flac",
+                "sha256": "40527d53f2d08895037d2ef2b295f9a3339880e0a74c66dca131c12350acca22",
+                "source_start_frame": 407484,
+                "source_end_frame": 495684,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/tmp/tcf-native-margins-20261111/472-80b4870d3c63-495684-3207658/start_after.flac",
+                "sha256": "c2e0901e1b2815dc36f1ab8656a08b9fa372705307139f92478cc0a9e8e4d74d",
+                "source_start_frame": 495684,
+                "source_end_frame": 583884,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/tmp/tcf-native-margins-20261111/472-80b4870d3c63-495684-3207658/end_before.flac",
+                "sha256": "0307913fe5bc82cdf68b84948916fca1dfc5b95160414aa526567186202ce742",
+                "source_start_frame": 3119458,
+                "source_end_frame": 3207658,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/tmp/tcf-native-margins-20261111/472-80b4870d3c63-495684-3207658/end_after.flac",
+                "sha256": "2ad43d4e4f6fda30a49bd5df0675ee88ad2b6717d1357fcceddd789090588288",
+                "source_start_frame": 3207658,
+                "source_end_frame": 3295858,
+                "available_seconds": 2.0
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Bonjour",
+                "start": 11.32,
+                "end": 11.959999,
+                "kind": "dialogue",
+                "asr_word_index": 8,
+                "raw_start": 11.319999923706055,
+                "raw_end": 11.959999387860298,
+                "native_token_indices": [
+                  21,
+                  22,
+                  23,
+                  24
+                ]
+              },
+              "last": {
+                "text": "alors.",
+                "start": 72.232,
+                "end": 72.472,
+                "kind": "dialogue",
+                "asr_word_index": 107,
+                "raw_start": 72.23200015258789,
+                "raw_end": 72.63199992012977,
+                "native_token_indices": [
+                  72,
+                  73,
+                  74
+                ]
+              },
+              "previous_word_end": 9.24,
+              "next_word_start": 75.59836734693877,
+              "first_source_speech_region": [
+                11.584,
+                12.608
+              ],
+              "last_source_speech_region": [
+                71.04,
+                72.576
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. Natural native margins up to one second are retained to avoid trimming a quiet first word or its final decay. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/tmp/tcf-native-margins-20261111/472-80b4870d3c63-495684-3207658/waveform.svg",
+              "sha256": "0940b8ae562296bcbfc19774700f31d652be9d0f2d29e3cfc99e85d978656c81"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.27,
+          "trailing_quiet_seconds": 0.0,
+          "relative_rms_threshold": 0.004237623848021031,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.32,
+          "trailing_non_speech_seconds": 0.152,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "whisper",
+        "ctc"
+      ],
+      "editorial_reason": "Différences relues : ponctuation, graphie phonétiquement identique, nombres écrits en lettres ou chiffres, accords ou hésitations ; les faits utilisés par les questions sont conservés.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 75.54,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/pardon-j-ai-place-cote-1.mp3",
+      "previous_sha256": "1a62c13e14075e43cf5faf4f77e485b083e4734d926eccd85a49d5307cef68a8",
+      "candidate_sha256": "52d7163c104ed5cdf0d18f9e09166a8a17acd145efd6593a37962c47a735e332",
+      "rollback_git_blob": "3f800f4f977ae349bd15e86cac1ba5fdcffd18c4",
+      "source_id": "grammar-import-20261104:file_000000005fdc8210a03296f61d0963cd",
+      "source_sha256": "1a62c13e14075e43cf5faf4f77e485b083e4734d926eccd85a49d5307cef68a8",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "52d7163c104ed5cdf0d18f9e09166a8a17acd145efd6593a37962c47a735e332",
+        "duration": 22.5200625,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "1a62c13e14075e43cf5faf4f77e485b083e4734d926eccd85a49d5307cef68a8",
+          "proof": {
+            "previous_sha256": "6f7f8b6fd0c62d8a0d02aa8b23c3d7688db56ce3f21afea44577b99d1a17be8b",
+            "sha256": "52d7163c104ed5cdf0d18f9e09166a8a17acd145efd6593a37962c47a735e332",
+            "file": "/tmp/tcf-native-margins-20261111/476-6f7f8b6fd0c6-252957-1246090/candidate.mp3",
+            "source_sha256": "1a62c13e14075e43cf5faf4f77e485b083e4734d926eccd85a49d5307cef68a8",
+            "source_file": "/workspace/doc-prof/public/lib/audio/grammaire/co/gare/piste179.mp3",
+            "source_decoded_pcm_sha256": "cc2230c950318f10b764939d30bf8de8f06de5262be691c588119bce57426be9",
+            "source_sample_rate": 44100,
+            "source_channels": 2,
+            "source_start_frame": 252957,
+            "source_end_frame": 1246090,
+            "source_start": 5.735986394557823,
+            "source_end": 28.256009070294784,
+            "source_slice_pcm_sha256": "34140d5a0c0e8616448c725a104cfc5f7cdcdf42511edd394031fc977b4a6755",
+            "windows": {
+              "start_before": {
+                "file": "/tmp/tcf-native-margins-20261111/476-6f7f8b6fd0c6-252957-1246090/start_before.flac",
+                "sha256": "a862bda7ac8248f2ed926e73a215d1e1962f15283534cc098624269e40145e16",
+                "source_start_frame": 164757,
+                "source_end_frame": 252957,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/tmp/tcf-native-margins-20261111/476-6f7f8b6fd0c6-252957-1246090/start_after.flac",
+                "sha256": "8a29b747f03209c08711cc2920b8f090a8e62755b6e7ac30b353d3cf408ab68e",
+                "source_start_frame": 252957,
+                "source_end_frame": 341157,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/tmp/tcf-native-margins-20261111/476-6f7f8b6fd0c6-252957-1246090/end_before.flac",
+                "sha256": "b9351575172a27b80eddd456bf4f3d27b9713db5d3da9b9b7ae1108945446235",
+                "source_start_frame": 1157890,
+                "source_end_frame": 1246090,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/tmp/tcf-native-margins-20261111/476-6f7f8b6fd0c6-252957-1246090/end_after.flac",
+                "sha256": "641ac01991ce57ef6499e2adc1ac068e3eba28f5365f70de856774fb69f48fc9",
+                "source_start_frame": 1246090,
+                "source_end_frame": 1334290,
+                "available_seconds": 2.0
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Pardon",
+                "start": 5.816,
+                "end": 6.376,
+                "kind": "dialogue",
+                "asr_word_index": 4,
+                "raw_start": 5.815999866485596,
+                "raw_end": 6.375999958276749,
+                "native_token_indices": [
+                  13,
+                  14,
+                  15
+                ]
+              },
+              "last": {
+                "text": "5.",
+                "start": 27.624,
+                "end": 27.944,
+                "kind": "dialogue",
+                "asr_word_index": 33,
+                "raw_start": 27.623999866485597,
+                "raw_end": 28.184000032782556,
+                "native_token_indices": [
+                  25,
+                  26
+                ]
+              },
+              "previous_word_end": 4.136,
+              "next_word_start": 30.955102040816328,
+              "first_source_speech_region": [
+                6.144,
+                6.944
+              ],
+              "last_source_speech_region": [
+                26.08,
+                28.096
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. Natural native margins up to one second are retained to avoid trimming a quiet first word or its final decay. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/tmp/tcf-native-margins-20261111/476-6f7f8b6fd0c6-252957-1246090/waveform.svg",
+              "sha256": "bfcf80a74b8624ce4782a7e5ce7914df59570c208931cc5acf012e7235ac34ba"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.16,
+          "trailing_quiet_seconds": 0.0,
+          "relative_rms_threshold": 0.004549285843968392,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.384,
+          "trailing_non_speech_seconds": 0.1840625,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
+      "editorial_reason": "Différences relues : ponctuation, graphie phonétiquement identique, nombres écrits en lettres ou chiffres, accords ou hésitations ; les faits utilisés par les questions sont conservés.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 30.93,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/oh-la-la-la-1.mp3",
+      "previous_sha256": "01b359cc4b46fe3b770dd2381fc7fd59fd3e7ec8fd962c0c79d3396daa2da5a9",
+      "candidate_sha256": "508f14be0f03adea7ff6b40277972c908e77f4e6b9ac8dc94bcbb18d2cd25167",
+      "rollback_git_blob": "0b361c3e927a161fce534c5239f1b911227f0146",
+      "source_id": "grammar-import-20261104:file_0000000025cc81f4b2126cd32ae5e865",
+      "source_sha256": "01b359cc4b46fe3b770dd2381fc7fd59fd3e7ec8fd962c0c79d3396daa2da5a9",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "508f14be0f03adea7ff6b40277972c908e77f4e6b9ac8dc94bcbb18d2cd25167",
+        "duration": 53.094,
+        "category": "long",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "01b359cc4b46fe3b770dd2381fc7fd59fd3e7ec8fd962c0c79d3396daa2da5a9",
+          "proof": {
+            "previous_sha256": "d1d4e43e96d6916b4b99302d739a8282f092a89d0c5eeac2e03bce9f93512406",
+            "sha256": "508f14be0f03adea7ff6b40277972c908e77f4e6b9ac8dc94bcbb18d2cd25167",
+            "file": "/tmp/tcf-native-margins-20261111/494-d1d4e43e96d6-578327-2919773/candidate.mp3",
+            "source_sha256": "01b359cc4b46fe3b770dd2381fc7fd59fd3e7ec8fd962c0c79d3396daa2da5a9",
+            "source_file": "/workspace/doc-prof/public/lib/audio/grammaire/co/travail/piste094.mp3",
+            "source_decoded_pcm_sha256": "053c441b7b7b3b7b0827b6ee23cea2e632f8362526d0ba9618cb1ba2a26ff001",
+            "source_sample_rate": 44100,
+            "source_channels": 2,
+            "source_start_frame": 578327,
+            "source_end_frame": 2919773,
+            "source_start": 13.113990929705215,
+            "source_end": 66.2080045351474,
+            "source_slice_pcm_sha256": "314883005fd3fe1d024b71962299b56ab52f767928c9c5c19c1248237a451c7f",
+            "windows": {
+              "start_before": {
+                "file": "/tmp/tcf-native-margins-20261111/494-d1d4e43e96d6-578327-2919773/start_before.flac",
+                "sha256": "cf42542d56f88184a39a5e17ad2febbca55035712d1089b1191f0d7270814fb2",
+                "source_start_frame": 490127,
+                "source_end_frame": 578327,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/tmp/tcf-native-margins-20261111/494-d1d4e43e96d6-578327-2919773/start_after.flac",
+                "sha256": "a1cf0d75c7697ae65fd43c2b79247a2f1b547d8e00462dc7a122879cf09daf39",
+                "source_start_frame": 578327,
+                "source_end_frame": 666527,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/tmp/tcf-native-margins-20261111/494-d1d4e43e96d6-578327-2919773/end_before.flac",
+                "sha256": "be4501e3b4c7bec8eb91ec3fc0037b2cfe8ed79a6ac2ba56d89815595d41d4e6",
+                "source_start_frame": 2831573,
+                "source_end_frame": 2919773,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/tmp/tcf-native-margins-20261111/494-d1d4e43e96d6-578327-2919773/end_after.flac",
+                "sha256": "fa198413f7384e0b89bbd911a69b9191f318ae39b5ad35472a3695ec3d4b4a46",
+                "source_start_frame": 2919773,
+                "source_end_frame": 2954880,
+                "available_seconds": 0.7960770975056689
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "la",
+                "start": 13.767999,
+                "end": 13.927999,
+                "kind": "dialogue",
+                "asr_word_index": 8,
+                "raw_start": 13.767999465942383,
+                "raw_end": 13.927999462366104,
+                "native_token_indices": [
+                  20
+                ]
+              },
+              "last": {
+                "text": "important.",
+                "start": 65.503999,
+                "end": 65.823999,
+                "kind": "dialogue",
+                "asr_word_index": 95,
+                "raw_start": 65.50399938964844,
+                "raw_end": 66.143999807477,
+                "native_token_indices": [
+                  53,
+                  54
+                ]
+              },
+              "previous_word_end": 7.928,
+              "next_word_start": 67.00408163265305,
+              "first_source_speech_region": [
+                13.344,
+                15.104
+              ],
+              "last_source_speech_region": [
+                65.344,
+                66.048
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. Natural native margins up to one second are retained to avoid trimming a quiet first word or its final decay. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/tmp/tcf-native-margins-20261111/494-d1d4e43e96d6-578327-2919773/waveform.svg",
+              "sha256": "d676e400a0763bd690093cbcda117112f0ce04511470f17f5f7c1df97fac19bf"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.2,
+          "relative_rms_threshold": 0.004943938255310059,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.192,
+          "trailing_non_speech_seconds": 0.134,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
+      "editorial_reason": "Différences relues : ponctuation, graphie phonétiquement identique, nombres écrits en lettres ou chiffres, accords ou hésitations ; les faits utilisés par les questions sont conservés.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 66.95,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    }
+  ],
+  "exercise_changes": [],
+  "status": "installed",
+  "received_originals_modified": 0,
+  "human_listening_performed": false
+}
