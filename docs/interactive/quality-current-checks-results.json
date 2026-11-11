@@ -30,5 +30,21 @@
     "quality-browser-results.json"
   ],
   "scope": "Targeted main routes, Classroom/Solo, media and accessibility; integrations from listening through PDF and pixel A4 comparison. New animated loading and complete audio sequences have their own browser fixtures.",
-  "finalAdditionalCheck": "competition-browser repeated after the final room-connection loading panel was added."
+  "finalAdditionalCheck": "competition-browser repeated after the final room-connection loading panel was added.",
+  "postMergeValidation": {
+    "productionCodeCommit": "54c5f353",
+    "integratedOriginMain": "31abe85b",
+    "domainTestsPassed": 173,
+    "browserStages": [
+      "browser",
+      "tcf-formats-browser"
+    ],
+    "additionalChecks": [
+      "check-tcf-co-playlists: 5 formats",
+      "check-tcf-object-pool: sources and same-theme distractors",
+      "application and API typecheck",
+      "production build and route budgets"
+    ],
+    "result": "passed"
+  }
 }
