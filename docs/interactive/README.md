@@ -33,6 +33,8 @@ Le cache explicite permet une installation dans les environnements où le dossie
 
 La préparation vérifie les images et les audios avant le lancement, avec rapport, réessai et exclusion des questions aux médias absents ou invalides sans décocher la sélection. Une nouvelle partie renouvelle la graine du générateur en conservant le modèle serveur. Une reprise garde la série en cours. Après correction, la bonne réponse garde sa couleur parmi les cartes et porte une coche ; les autres cartes deviennent grises. La réponse n’est pas répétée près de la mascotte. Voir [correction dans les cartes](livraison-correction-cartes.md), [nouvelles parties](nouvelles-parties.md) et [contrôle des médias](livraison-medias-word.md).
 
+Le [contrôle de lisibilité](adr-0022-lisibilite-mesuree.md) mesure aussi les questions à 1 920 × 1 080 et 1 366 × 768 et signale les textes longs. Pendant le jeu, l’affichage s’adapte à la place disponible ; **Suite** ouvre le texte complet lorsque le défilement est nécessaire. Cette lecture conserve la réponse choisie et la phase.
+
 ## Rituel et réglages
 
 Les six cartes pastel A–F utilisent des lettres et des formes de même taille. La palette se configure en trois colonnes et deux rangées ; l’impression produit des carrés de 88 mm sur deux colonnes et trois lignes A4. Dans un écran à deux questions, A–C sont empilés à gauche et D–F à droite. Changer une forme échange sa place avec la forme existante pour conserver six repères distincts.

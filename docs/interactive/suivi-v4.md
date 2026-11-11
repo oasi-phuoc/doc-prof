@@ -19,7 +19,7 @@ Ce registre complète les anciennes checklists de livraison. Il distingue les fo
 | F33 CI | Workflow, orchestration des parcours et A4, axe (26 vues), budgets par route et Gitleaks sur les modifications ; ADR 0016 | Observer la CI hébergée ; réduire les banques du jeu ; sécurité globale après F22 et mesures ENI |
 | F34 mélange équilibré | Graines par usage, identité canonique, quotas équilibrés et séquences maximales de deux ; 100 graines et 5 000 questions dans `slots.test.mjs` ; ordre source, mélangé, personnalisé et numérique croissant ; ADR 0004 et 0011 | Étendre ces politiques aux nouvelles mécaniques |
 | F35 tokens et polices | Palette et contrastes de texte testés ; polices locales, chiffres tabulaires, français et budget contrôlés ; `fonts-results.json` et ADR 0005 | Vérification complète des tokens et essai typographique sur ENI |
-| F46 lisibilité | Gabarits desktop/mobile testés | Précontrôle automatique des débordements avant lancement |
+| F46 lisibilité | Mesure hors écran à 1 920 × 1 080 et 1 366 × 768, plus téléphone ; police adaptée par dichotomie, liste verticale, accès « Suite » au texte complet ; resize, clavier et axe ; `readability-results.json`, ADR 0022 | Essai ENI réel ; étendre les fixtures aux modèles ouverts et aux nouveaux adaptateurs |
 | S1 / S4 / S5 sécurité | Politique de médias et rendu sûr du jeu ; audit existant | Remise à niveau de l’authentification existante et en-têtes ; ne pas annoncer ces points terminés |
 
 ## P1 / P2 encore ouverts

@@ -2,6 +2,7 @@
 
 1. Ouvrez ou créez une fiche, puis choisissez **Jouer avec la classe**. Dans les fiches enregistrées, choisissez **Jouer**. Sélectionnez les questions et consultez les adaptations ou incompatibilités signalées.
 2. Attendez le contrôle des images et audios. Les questions aux médias absents sont écartées de la partie, en gardant votre sélection. **Réessayer la vérification** permet de refaire ce contrôle après réparation.
+   Le contrôle de lisibilité vérifie ensuite les écrans à 1 920 × 1 080 et 1 366 × 768, et la taille actuelle sur téléphone. Les questions nécessitant une liste verticale ou du défilement sont signalées. Vous pouvez raccourcir les textes dans la fiche ou conserver les adaptations. Pendant le jeu, **Suite** permet de lire la question ou une proposition en entier ; Échap ferme la lecture et retrouve le bouton utilisé, sans choisir de réponse. Le minuteur continue selon ses réglages : mettez la partie en pause si nécessaire.
 3. L’icône **Mode de jeu** bascule directement entre **Classe** (par défaut) et **Solo**. L’icône **Mascotte** ouvre six portraits animés : touchez celui que vous voulez utiliser.
 4. Réglez le minuteur, ou désactivez-le. Le temps de réflexion est de 30 secondes par défaut. En Solo, le battement entre les questions est réglable de 1 à 10 secondes, 5 par défaut.
 5. En Classe, vous pouvez cocher **Maintenir le bouton pour révéler** avant de commencer. Il faudra maintenir le bouton, Entrée ou Espace pendant 600 ms ; relâcher plus tôt annule le geste. La préférence est conservée sur cet appareil.
