@@ -12,6 +12,8 @@ Depuis le générateur, « Jouer avec la classe » conserve un brouillon local p
 
 Les parties et réglages se retrouvent après fermeture de l’onglet dans le même navigateur. Une adresse de séance porte son identifiant local ; les modèles serveur sont toujours chargés en lecture seule. Voir [reprise durable](adr-0010-reprise-durable.md).
 
+La préparation peut être enregistrée dans un [préréglage local](adr-0011-prereglages-locaux.md) : sélection, ordre personnalisé ou mélangé, plafond de choix, classement numérique, mode et durées. Une fiche modifiée déclenche une proposition d’adaptation. La reprise d’une partie conserve ses options même si le préréglage a été supprimé.
+
 En Solo, le choix déclenche la correction puis la question suivante après un battement réglable de 1 à 10 secondes (5 par défaut). Le minuteur est facultatif ; s’il est activé, son expiration compte comme une réponse incorrecte. Les productions ouvertes gardent un modèle et une appréciation humaine.
 
 Depuis le générateur : **Jouer avec la classe**, puis **Commencer la séance**. Depuis la bibliothèque : **Jouer**. `/interactif/demo` propose dix questions de la banque réelle avec un compte autorisé.

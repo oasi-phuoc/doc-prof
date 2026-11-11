@@ -1,0 +1,18 @@
+[
+  {
+    "preset": "version 2 stores two selected positions, custom order, three choices, numeric order, Solo and timing",
+    "launch": "custom first question and ascending source choices applied; server template unchanged",
+    "deletion": "cancel preserves the preset; explicit confirmation removes it"
+  },
+  {
+    "durablePlan": "session resumes exact custom order and choice limit after original preset is deleted and original tab closed"
+  },
+  {
+    "stalePreset": "source edit warned; ignore leaves data untouched; duplicate preserves original; update retains available source positions and increments revision"
+  },
+  {
+    "concurrency": "one atomic update wins; stale deletion rejected",
+    "futureSchema": "unknown preset reported and preserved",
+    "serverWrites": 0
+  }
+]

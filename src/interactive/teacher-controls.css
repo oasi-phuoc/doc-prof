@@ -27,6 +27,16 @@
 .ci-app .ci-question-navigator li span { font-size: 14px; font-weight: 400; overflow-wrap: anywhere; }
 .ci-app .ci-question-navigator li small { color: var(--ci-muted); }
 .ci-app .ci-attempt-history section { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--ci-line); }
+.ci-app .ci-presets { margin: 20px 0; }
+.ci-app .ci-preset-options, .ci-app .ci-preset-form { display: flex; flex-wrap: wrap; align-items: end; gap: 12px; margin: 16px 0; }
+.ci-app .ci-preset-options label, .ci-app .ci-preset-form label { display: grid; gap: 6px; max-width: 100%; }
+.ci-app .ci-preset-options label:has(input[type='checkbox']) { display: flex; align-items: center; }
+.ci-app .ci-preset-form input[type='text'] { min-height: 44px; width: min(280px, 100%); border: 1px solid var(--ci-line); border-radius: 8px; padding: 8px; font: inherit; color: var(--ci-ink); background: var(--ci-paper); }
+.ci-app .ci-presets select { max-width: 100%; min-height: 44px; }
+.ci-app .ci-preset-order { max-height: 320px; overflow: auto; padding: 0; list-style: none; }
+.ci-app .ci-preset-order li { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 8px; border-bottom: 1px solid var(--ci-line); }
+.ci-app .ci-preset-order li > span { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.ci-app .ci-preset-order li > div { display: flex; gap: 4px; }
 @media screen and (max-width: 700px) {
   .ci-app.ci-playing .ci-class-controls { grid-template-columns: 84px minmax(0, 1fr) 84px; column-gap: 4px; }
   .ci-app.ci-playing .ci-class-controls > .ci-primary { min-width: 0; width: 100%; min-height: 44px; padding: 6px 8px; gap: 6px; font-size: 14px; line-height: 1.2; }

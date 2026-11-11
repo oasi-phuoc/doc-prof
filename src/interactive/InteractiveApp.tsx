@@ -6,6 +6,10 @@ import type { Game, PlayMode } from './domain/types'
 import { createGameSource, loadGameSource, renewGameSource, saveGameRun, questionSourceKey, type GameSource } from './game-run'
 import { runById } from './local-runs'
 import { deriveSeed } from './domain/seeds'
+import { canonicalJson, hash } from './domain/seeds'
+import { applyPlanOptions, readPlanOptions, type PlanOptions } from './domain/plan-options'
+import { PresetPanel } from './components/PresetPanel'
+import { presetOptions, type LocalPreset } from './presets'
 import { PLAN_CHANGED } from './domain/persistence'
 import { convertRecipe } from './domain/convert'
 import { excludeQuestions, prepareGame } from './domain/plan'
@@ -191,7 +195,7 @@ function GameApp({ initialPreferences, initialWarning }: { initialPreferences: C
       const next = createGameSource(value, kind, id)
       if (!run) return { ...next, storageWarning: 'Cette sauvegarde est introuvable ou expirée. Vous pouvez commencer une nouvelle partie.' }
       if (run.source.reference.kind !== kind || run.source.reference.id !== id) throw new Error('Cette séance appartient à une autre fiche. Ouvrez son adresse d’origine.')
-      return { ...next, recipe: { ...next.recipe, seed: run.source.seed }, selectedKeys: run.source.selectedKeys, replay: run.source.replay, restoredMode: run.mode, restoredTimer: run.source.timer, sessionId: run.sessionId, restoredGameId: run.gameId }
+      return { ...next, recipe: { ...next.recipe, seed: run.source.seed }, selectedKeys: run.source.selectedKeys, replay: run.source.replay, options: readPlanOptions(run.source.options), presetId: run.source.presetId, restoredMode: run.mode, restoredTimer: run.source.timer, sessionId: run.sessionId, restoredGameId: run.gameId }
     }
     void load()
       .then((next) => {
@@ -222,7 +226,8 @@ function GameApp({ initialPreferences, initialWarning }: { initialPreferences: C
     () => {
       if (!source || forbidden) return null
       const converted = convertRecipe(source.recipe, source.name)
-      return source.replay ? { ...converted, id: `${converted.id}-replay-${source.replay}`, seed: deriveSeed({ originalSeed: source.recipe.seed, sourceKey: source.sourceKey, purpose: 'replay', attempt: source.replay }) } : converted
+      const replayed = source.replay ? { ...converted, id: `${converted.id}-replay-${source.replay}`, seed: deriveSeed({ originalSeed: source.recipe.seed, sourceKey: source.sourceKey, purpose: 'replay', attempt: source.replay }) } : converted
+      return applyPlanOptions(replayed, source.options)
     },
     [source, forbidden],
   )
@@ -260,6 +265,15 @@ function GameApp({ initialPreferences, initialWarning }: { initialPreferences: C
     const url = new URL(window.location.href); url.searchParams.delete('s'); window.history.replaceState(window.history.state, '', url)
   }
   const changeSelection = (next: string[] | null) => { clearPreparedSession(); setSelected(next) }
+  const changePlanOptions = (options: PlanOptions) => { clearPreparedSession(); setSource((source) => source ? { ...source, options: readPlanOptions(options), presetId: undefined } : source) }
+  const applyPreset = (preset: LocalPreset) => {
+    clearPreparedSession()
+    setSource((source) => source ? { ...source, options: presetOptions(preset), presetId: preset.presetId, sessionId: undefined, restoredGameId: undefined } : source)
+    setSelected(preset.selectedQuestionIds)
+    setMode(preset.playMode)
+    try { sessionStorage.setItem(MODE_KEY, preset.playMode) } catch { /* Optional cache. */ }
+    changeTimer({ enabled: preset.timer.enabled, seconds: preset.timer.defaultSec, feedbackSeconds: preset.timer.feedbackSec })
+  }
   const canResume = !!saved && !saved.state.finished
   const newPart = (autoStart: boolean) => {
     if (!source) return
@@ -368,7 +382,7 @@ function GameApp({ initialPreferences, initialWarning }: { initialPreferences: C
                 onNewPart={() => newPart(true)}
                 mediaManager={media.manager}
                 header={header}
-                source={source?.reference ? { reference: source.reference, sourceKey: source.sourceKey, seed: source.recipe.seed, replay: source.replay, selectedKeys: selectedSources, timer } : undefined}
+                source={source?.reference ? { reference: source.reference, sourceKey: source.sourceKey, seed: source.recipe.seed, replay: source.replay, selectedKeys: selectedSources, timer, options: source.options, presetId: source.presetId } : undefined}
                 onSessionReady={sessionReady}
                 onRetryDifficult={retryDifficult}
               />
@@ -597,6 +611,7 @@ function GameApp({ initialPreferences, initialWarning }: { initialPreferences: C
                     }} />Maintenir le bouton pour révéler</label><p>Un appui de 600 ms évite une correction affichée par erreur. Fonctionne aussi avec Entrée ou Espace.</p></div>}
                   </aside>
                 </div>
+                {source && <PresetPanel key={source.reference ? `${source.reference.kind}:${source.reference.id}` : source.sourceKey} sourceKey={source.reference ? `${source.reference.kind}:${source.reference.id}` : source.sourceKey} contentHash={String(hash(canonicalJson(source.template)))} questions={game.questions} selected={selectedSources} options={source.options} timer={timer} mode={mode} onOptions={changePlanOptions} onApply={applyPreset} activePresetId={source.presetId} />}
                 <section className="ci-panel ci-no-print">
                   <PaletteSettings
                     colors={colors}

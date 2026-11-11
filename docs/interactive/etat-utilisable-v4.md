@@ -1,6 +1,6 @@
 # État utilisable et réutilisation — V4
 
-Vérification du 10 novembre 2026 sur le code actuel, avec suites de domaine et parcours Chromium. Le cahier V4 décrit encore des travaux à terminer ; cet état couvre les fonctions effectivement présentes.
+Vérification du 11 novembre 2026 sur le code actuel, avec suites de domaine et parcours Chromium. Le cahier V4 décrit encore des travaux à terminer ; cet état couvre les fonctions effectivement présentes.
 
 | Élément existant | Utilisable / réutilisable | Limites connues |
 |---|---|---|
@@ -10,7 +10,7 @@ Vérification du 10 novembre 2026 sur le code actuel, avec suites de domaine et 
 | Minuteurs et médias | Minuteur facultatif, battement de 1 à 10 s, pause, reprise et précontrôle des médias | Limites et journal d’écoutes à compléter ; hors ligne intégral à venir |
 | Interface mobile | Question en gras et encadrée, mascotte agrandie sous les cartes, menu par icônes, immersion | Validation physique sur ENI encore nécessaire |
 | Cartes et corrigé enseignant | Six carrés A4 en deux colonnes et trois lignes ; feuille enseignant autonome avec plan identique | Étalonnage guidé de la palette à terminer |
-| État de séance et brouillons | IndexedDB, reprise après fermeture d’onglet, adresse de séance, réglages durables, révisions atomiques et propriétaire unique ; instantanés et purge après sept jours ; brouillons de 24 h | Presets locaux, archivage et export/import à compléter ; images temporaires non garanties après rechargement |
+| État de séance et brouillons | IndexedDB, reprise après fermeture d’onglet, adresse de séance, réglages durables, révisions atomiques et propriétaire unique ; instantanés et purge après sept jours ; brouillons de 24 h | Préréglages locaux disponibles ; archivage et export/import à compléter ; images temporaires non garanties après rechargement |
 | Comptage et bilan | Saisie manuelle validée, partage explicite, observations et marques à revoir | Archivage de plusieurs bilans et badges encore ouverts |
 | Accès aux fiches enregistrées | Client API et contrôles existants conservés, tests d’intégration avec API simulée | Authentification historique à sécuriser avant fonctions partagées ; pas de certification du serveur réel par ces tests |
 
@@ -26,6 +26,6 @@ La [revue des six PR](../maintenance/pr-review-2026-11-10.md) identifie cinq tra
 
 ## Vérifications récentes
 
-89 tests de domaine passent. Les parcours navigateur vérifient les modes, les protections enseignant, la navigation et les tentatives, la correction dans les cartes, les médias, le mobile, l’impression PDF, les nouvelles graines depuis la bibliothèque, les compteurs, la reprise, les transferts entre onglets, le compactage à 5 000 actions et la conservation du bilan. Les brouillons sont vérifiés avec migration de l’ancienne base et ouverture sans historique. La capture A4 reste identique à la référence. Le typage, la compilation et le lint ont été exécutés sur les étapes correspondantes. Les avertissements préexistants du lint ne valent pas validation de sécurité de la production.
+96 tests de domaine passent. Les préréglages locaux sont vérifiés avec ordre personnalisé, choix limités, adaptation après changement de fiche, révisions concurrentes et reprise indépendante du préréglage supprimé. Les parcours navigateur vérifient les modes, les protections enseignant, la navigation et les tentatives, la correction dans les cartes, les médias, le mobile, l’impression PDF, les nouvelles graines depuis la bibliothèque, les compteurs, la reprise, les transferts entre onglets, le compactage à 5 000 actions et la conservation du bilan. Les brouillons sont vérifiés avec migration de l’ancienne base et ouverture sans historique. La capture A4 reste identique à la référence. Le typage, la compilation et le lint ont été exécutés sur les étapes correspondantes. Les avertissements préexistants du lint ne valent pas validation de sécurité de la production.
 
 Le [suivi V4](suivi-v4.md) reste le registre des fonctionnalités manquantes. La configuration cloud publiée par le propriétaire est conservée ; aucune nouvelle publication de cette configuration n’est nécessaire pour réutiliser le code.

@@ -93,7 +93,7 @@ export function assignChoicePositions(game: Game, source: Question[]): Question[
     } else if (policy === 'pin-last') choices = [...shuffle(rng, choices.filter((choice) => !isAggregate(choice.text))), ...choices.filter((choice) => isAggregate(choice.text))]
     else if (policy === 'ascending') {
       if (choices.some((choice) => !/^n-?\d+$/.test(choice.id))) throw new Error('Le tri croissant nécessite des choix numériques vérifiés.')
-      choices.sort((a, b) => Number(a.id.slice(1)) - Number(b.id.slice(1)))
+      choices.sort((a, b) => BigInt(a.id.slice(1)) < BigInt(b.id.slice(1)) ? -1 : BigInt(a.id.slice(1)) > BigInt(b.id.slice(1)) ? 1 : 0)
     }
     return { ...q, choices, choiceOrderPolicy: isTrueFalse(q) ? 'fixed' : policy, ...(referencesLetters(q) ? { compatibility: 'assisted' as const } : {}) }
   })

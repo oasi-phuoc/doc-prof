@@ -1,6 +1,6 @@
 import { hash } from './convert'
 import type { Game, Question, Round, PlayMode } from './types'
-import { assignChoicePositions } from './slots'
+import { assignChoicePositions, choiceOrderPolicy } from './slots'
 
 export function roundsFor(game: Game): Round[] {
   return (
@@ -92,9 +92,10 @@ export function prepareGame(
       : [q]
     // Open productions stay teacher-led; grouping never invents answer cards.
     const group =
-      mode === 'class' && peers.length === 2 && peers.every((other) => other.mode === 'choice')
+      mode === 'class' && peers.length === 2 && peers.every((other) => other.mode === 'choice' && (other.choices.length <= 3 || !['fixed', 'pin-last'].includes(choiceOrderPolicy(other))))
         ? peers
         : [q]
+    if (mode === 'class' && peers.length === 2 && group.length === 1 && q.id === peers[0]?.id && peers.every((other) => other.mode === 'choice')) issues.push({ source: 'Document audio', reason: 'Ces questions restent séparées pour conserver leurs références et tous leurs choix source.' })
     if (group.length === 2) {
       for (const member of group) {
         if (member.choices.length <= 3) continue
