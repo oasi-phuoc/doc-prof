@@ -1,37 +1,33 @@
 {
   "summary": {
-    "remaining_references": 245,
+    "remaining_references": 222,
     "reasons": {
-      "editorial_transcript_and_question_review_required": 86,
-      "parakeet_text_difference": 26,
-      "parakeet_numeric_difference": 49,
-      "checked_waiting_installation": 3,
+      "editorial_transcript_and_question_review_required": 71,
       "source_boundary_review_required": 110,
       "whisper_end_difference": 7,
       "ctc_text_difference": 35,
+      "parakeet_numeric_difference": 49,
       "whisper_text_difference": 30,
       "whisper_start_difference": 14,
-      "parakeet_start_difference": 9,
+      "parakeet_start_difference": 10,
       "ctc_end_difference": 24,
-      "parakeet_end_difference": 5,
-      "ctc_numeric_difference": 44,
-      "ctc_start_difference": 15,
-      "whisper_numeric_difference": 27,
-      "technical_object_numbering_still_present": 1,
-      "parakeet_instruction_flag": 1,
-      "whisper_instruction_flag": 1
+      "parakeet_end_difference": 7,
+      "ctc_numeric_difference": 46,
+      "parakeet_text_difference": 27,
+      "ctc_start_difference": 17,
+      "whisper_numeric_difference": 27
     },
     "recognition_progress": {
       "pending_references_initial": 945,
       "unique_candidates": 933,
-      "parakeet_recognitions": 933,
+      "parakeet_recognitions": 932,
       "french_whisper_recognitions": 933,
-      "third_ctc_recognitions": 136,
-      "technical_files_checked": 1002,
+      "third_ctc_recognitions": 166,
+      "technical_files_checked": 1003,
       "exact_equivalence_ready": 198,
-      "editorial_decisions": 651,
-      "manual_reviews_ready": 502,
-      "instruction_flags": 1
+      "editorial_decisions": 676,
+      "manual_reviews_ready": 522,
+      "instruction_flags": 0
     }
   },
   "human_listening_performed": false,
@@ -46,25 +42,6 @@
       "editorial_decision": null,
       "exercises": [
         "tcf-ss-b1-s1-co-4"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/actualite/07-actualité-annonymat-sur-internet.mp3",
-      "source_id": "09035196:030:8f132405caaf",
-      "candidate_sha256": "630f5f981f938ee146e24ba64b7f79895ad0cef428a7266a2376ed5e2b32370d",
-      "reasons": [
-        "parakeet_text_difference",
-        "parakeet_numeric_difference",
-        "checked_waiting_installation"
-      ],
-      "editorial_decision": {
-        "status": "editorial_review",
-        "selected_text": "Bienvenue dans notre émission \"Parlons peu, parlons bien\". Aujourd'hui nous allons traiter d'un thème qui revient souvent dans les forums et sur le net, celui de l'anonymat sur Internet. Un projet de loi pour interdire l'anonymat en ligne va peut-être voir le jour en France dans les prochains mois. Est-ce une bonne chose ? On en parle tout de suite avec Hervé Lacroix, sociologue et Stéphanie Blanchard, spécialiste des comportements humains sur Internet. Stéphanie, bonjour. Alors pour vous, être anonyme sur Internet, est-ce manquer de courage ? Bonjour. Non, ce n'est pas une question de courage, il me semble. C'est souvent un moyen de ne pas mélanger vie privée et vie professionnelle. En étant visible sur Internet, ne serait-ce qu'en publiant vos photos privées, cela peut avoir des conséquences graves sur votre vie professionnelle. C'est la raison pour laquelle beaucoup d'internautes s'inscrivent avec un faux nom sur Facebook ou Instagram, par exemple. - Et Hervé, vous êtes du même avis ? - Tout à fait. D'ailleurs, j'ai moi-même un compte Facebook qui n'est pas à mon nom. Ne pas être visible est un droit de chaque citoyen. Le problème est que l'anonymat encourage assez souvent la violence en ligne et le cyberharcèlement. Les personnes se sentent protégées et se défoulent sur Internet en insultes et messages de haine. Ce qu'il faut, c'est appliquer et augmenter les procédures contre les violences sur le net. que l'utilisateur soit ou non anonyme, car les services de renseignement et la police ont presque toujours les moyens de retrouver son identité. Il ne faut pas oublier que certaines personnes sont anonymes par nécessité pour veiller à leur sécurité. C'est le cas par exemple de personnes résidant dans une dictature où les libertés d'expression n'existent pas. Sans aller très loin, des femmes victimes de violence s'expriment sans montrer leur identité pour éviter les représailles futures. Pour ces personnes, l'anonymat peut être un moyen de s'exprimer sur Internet et de dénoncer des violences tout en préservant leur sécurité ou leur emploi.",
-        "reason": "Reconnaissances finales comparées ; transcription, questions et corrigés relus. Noms non épelés : graphies éditoriales documentées.",
-        "question_changes": []
-      },
-      "exercises": [
-        "tcf-ss-b1-s1-co-3"
       ]
     },
     {
@@ -167,18 +144,6 @@
       "editorial_decision": null,
       "exercises": [
         "tcf-ss-a2-s8b-co-2"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/ecole/29-école-tournoi-basketball.mp3",
-      "source_id": "9782090351958:010:fa08edbcc754",
-      "candidate_sha256": "a8aacf8ddb54464e2a45bc5367f6fe2f34f8fa4f9918e60ce2b83cab9401f1fe",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "tcf-ss-a2-s8b-co-3"
       ]
     },
     {
@@ -478,30 +443,6 @@
       ]
     },
     {
-      "ref": "/lib/audio/tcf/co/loisirs/loisirs-annonce.mp3",
-      "source_id": "09035196:037:662ea39af90e",
-      "candidate_sha256": "f3700fe221dfc781a1752b4c23bf638a7ff303ea2d7f2aec1ae8e00413391da9",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "tcf-ss-b1-s6-co-2"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/loisirs/loisirs-radio.mp3",
-      "source_id": "09035196:019:8b277774cb0a",
-      "candidate_sha256": "c144588d3d34a6360cd227e62d9f75ca406c0191045b059462cf4dc3ff1a8a31",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "tcf-ss-b1-s7-co-1"
-      ]
-    },
-    {
       "ref": "/lib/audio/tcf/co/loisirs/nature-conversation-1.mp3",
       "source_id": "09035196:006:327578f20bb2",
       "candidate_sha256": "f94ef833918de8fe6eef96a7ddc4c40b3261aa8a16c84a869d3d53b10a96417f",
@@ -644,18 +585,6 @@
       ]
     },
     {
-      "ref": "/lib/audio/tcf/co/loisirs/remi-bezancon-possede-son.mp3",
-      "source_id": "additional-20261102:mdf-b1-abc-direct:30:840c422aaff5:d7b147a3",
-      "candidate_sha256": "9ff847ccf97f2f422e0dc3c2a620ae844258415ef428b4d24739f7300f2dd6a9",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "tcf-ss-b1-s6-co-4"
-      ]
-    },
-    {
       "ref": "/lib/audio/tcf/co/magasins/01-magasin-annonce-gagner-billet-cinéma.mp3",
       "source_id": "additional-20261102:mdf-a2-abc-direct:18:3451d68784af:12ff904b",
       "candidate_sha256": "fde6bf8811f9f7223a78354e1d95f3393dda7960030916aaa14c713f4dc8b417",
@@ -791,7 +720,12 @@
       "ref": "/lib/audio/tcf/co/magasins/allo-annie.mp3",
       "source_id": "additional-20261102:mdf-b1-abc-direct:17:93a2294ea475:60bf1612",
       "candidate_sha256": "b83b3147fff135c0841e5c1c25ff409ebb1eff1ee5e89a97e3787c81f8b5825b",
-      "reasons": [],
+      "reasons": [
+        "parakeet_text_difference",
+        "parakeet_numeric_difference",
+        "ctc_numeric_difference",
+        "ctc_start_difference"
+      ],
       "editorial_decision": {
         "status": "editorial_review",
         "selected_text": "Allô Annie, tu viens avec moi courir autour du lac ? À 10h, ça te va ? Je suis désolée, ce matin je ne peux pas. Je suis en plein rangement de mes placards. Je ne sais plus où mettre mes vêtements. J'en ai que je ne porte plus. Il y en a même que je viens de retrouver et que j'avais oublié. Qu'est-ce que tu fais des tiens, Chantal ? Ça dépend. S'ils sont en bon état, je les vends et avec l'argent, je renouvelle un peu ma garde-robe. Tu les vends en ligne ? J'ai entendu parler de quelques sites, mais ça ne m'attire pas. Une de mes amies a eu des problèmes avec son acheteur. Oui, ça arrive parfois, même si c'est plutôt rare. Je connais un site sérieux où je vends quelquefois. Je vais aussi dans un dépôt-vente qui s'occupe de vendre à ma place. C'est assez pratique. Il existe aussi des friperies, mais je n'aime pas beaucoup. En fait, c'est peut-être le nom qui ne me plaît pas. Pour moi, ce ne sont pas des fripes que je vends mais des vêtements, même s'ils ne sont plus à la mode. Quand ils sont un peu ou trop usés, je les mets dans un sac et je les dépose dans une borne de collecte. Ils sont alors recyclés. Moi, je n'en ai jamais vendu. Je préfère donner. La plupart du temps, je les propose à des personnes que je connais et qui n'ont pas beaucoup de moyens. Si ces vêtements leur plaisent et leur vont, je les leur donne. Mais j'y pense, tu vas bien à la recyclerie ? Quand je vais à la déchetterie, je leur laisse les objets qui peuvent être recyclés, mais pas de vêtements. Tu sais, comme Claude, notre ami du club de gym, s’occupe du Secours populaire, Je lui remets les vêtements que je ne porte plus, ou encore je les donne à la Croix-Rouge. Je reconnais là ta générosité. Allez, je te quitte, je vais courir. Et bon rangement.",
@@ -911,36 +845,6 @@
       },
       "exercises": [
         "tcf-ss-a2-s3-co-3"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/magasins/magasins-3-6.mp3",
-      "source_id": "9782090351958:049:a4431f87ae61",
-      "candidate_sha256": "3b6fe975c96c492d6d5badb68b0286e0288e3b5676d0505fd2e833b85fa4251e",
-      "reasons": [],
-      "editorial_decision": {
-        "status": "editorial_review",
-        "selected_text": "Ton magasin Tipeee te propose tout ce dont tu as besoin pour une rentrée réussie. Cahier, cartable, stylo et si tu présentes ta carte de fidélité au vendeur, il t'offrira une trousse.",
-        "reason": "Reconnaissances finales comparées ; transcription, attribution des informations, questions et réponses relues. Tipeee non épelé : graphie éditoriale.",
-        "question_changes": []
-      },
-      "exercises": [
-        "tcf-ss-a2-s3-co-3"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/magasins/tiens-jacqueline-comment-vas-1.mp3",
-      "source_id": "09035196:004:9d0be3cae519",
-      "candidate_sha256": "43f8dec44fef32e8a18315d50212375da0e1e1a27c2aec15235475deaeb5fdd0",
-      "reasons": [],
-      "editorial_decision": {
-        "status": "editorial_review",
-        "selected_text": "Laura, j'ai une nouvelle à t'annoncer. Raconte, Ophélie, qu'est-ce qu'il y a ? Eh bien je pars au Mexique avec ma famille. Wouah, la chance ! Tu pars en vacances ? Non, je vais y vivre. L'entreprise de mon père l'a envoyé là-bas. C'est une super opportunité pour lui. On part d'abord, mon père et mes frères et sœurs. Ma mère nous rejoindra dans deux mois car elle ne peut pas quitter tout de suite son travail. C'est génial pour toi. Tu vas faire plein de nouvelles expériences et de nouvelles rencontres. Vous allez y rester combien de temps ? Je ne sais pas. Mon père pense rester trois ans, et moi, dans deux ans après mon bac, je rentrerai sans doute en France. Tu sais, je veux aller à l'université à Paris. Il va falloir que tu apprennes bien l'espagnol pour étudier dans un lycée mexicain. Je vais aller dans un lycée français, en fait. Je pourrais même passer mon baccalauréat, là-bas. Tous les profs sont français et le programme est le même qu'en France. Mais bon, je vais quand même avoir des camarades de classe mexicains, certainement, et je vais devoir savoir bien parler la langue. Bon, tu as l’air contente de partir. Ben oui et non. Le Mexique, ça a l'air génial, mais je suis aussi un peu triste parce qu'on ne va plus se voir. Toi aussi, tu vas beaucoup me manquer. Mais tu as de la chance. Moi, j'aimerais bien partir comme ça à l'autre bout du monde.",
-        "reason": "Reconnaissances finales comparées ; transcription, attribution des informations, questions et réponses relues.",
-        "question_changes": []
-      },
-      "exercises": [
-        "tcf-ss-b1-s15-co-1"
       ]
     },
     {
@@ -1120,7 +1024,10 @@
       "ref": "/lib/audio/tcf/co/maison/nourriture-conversation-1.mp3",
       "source_id": "09035196:014:b08dee45e775",
       "candidate_sha256": "c2ed31fd5d163f3d73ac4d1ae36c94d5f1e1ef1ff0afedac8d335f6efe29683e",
-      "reasons": [],
+      "reasons": [
+        "parakeet_text_difference",
+        "ctc_numeric_difference"
+      ],
       "editorial_decision": {
         "status": "editorial_review",
         "selected_text": "Salut Antoine, tu as l'air pensif. Salut Margot. Oui, comme j'ai eu mon examen, mes parents m'ont dit que je pouvais organiser une fête chez moi, mais je dois tout faire tout seul et je ne sais pas par où commencer. Je peux t'aider si tu veux. Alors avant d'organiser, il faut te poser plusieurs questions. Combien de personnes tu veux inviter ? Est-ce que tu veux faire manger tes invités ? Si oui, assis ou debout ? Est-ce que tu veux qu'on danse le jour, l'horaire et quel est ton budget ? Je voudrais inviter toute la classe vendredi prochain et faire une soirée barbecue dans le jardin. J'espère qu'il fera beau. Ok. Tout d'abord, tu dois envoyer les invitations. Dès que tu rentres chez toi, envoie un message à tous. Après, si tu tiens à faire un barbecue, il faut que tu trouves un volontaire pour s'en occuper. C’est ta fête, tu ne peux pas rester devant le feu toute la soirée. Il faut que tu t'occupes des invités. Sinon, autre solution. Tu fais appel à un restaurant traiteur. Tu commandes des salades de riz, de pâtes, des toasts, les boissons. Ils te préparent tout et te livrent dans l'après-midi. Comme ça, tu es tranquille. Chacun se sert et mange où il veut, assis, debout. Tu as peut-être raison. Ça m'évitera de cuisiner ou de demander à ma mère de cuisiner. Je vais m'informer chez les traiteurs du quartier. Et pour danser ? J’avais pensé mettre de la musique. J'ai beaucoup de CD et j'ai aussi plein de musique sur mon ordinateur. Ça, si tu veux, je m'en occupe. J'ai l'habitude et ça me plaît. Je te prépare une super compilation avec ta musique et la mienne. Tu verras, ce sera une réussite. Oh super, tu es géniale. Bon allez, je te laisse. Je vais commencer à organiser tout ça. Et merci pour tes conseils. Tu m'as donné du courage.",
@@ -1234,33 +1141,6 @@
       "editorial_decision": null,
       "exercises": [
         "tcf-ssx-a2-conversation-32-co-4"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/presenter/moyen-a2__radio-17.1.mp3",
-      "source_id": "additional-20261102:mdf-a2-abc-direct:58:39f4143a409d:ffcb8219",
-      "candidate_sha256": "96cfc15719ebbf673af35efcc7421a8260272e1cac370bebcfe7a7c7c016e38f",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "tcf-ssx-a2-radio-17-1-co-3"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/radio/01-radio-importance-du-look-vestimentaire.mp3",
-      "source_id": "09035196:020:b1b4e9c355f7",
-      "candidate_sha256": "8b226cb2a58112bb2a89a3d67f81322ff502923d7256ab8206a5f01b30598a87",
-      "reasons": [],
-      "editorial_decision": {
-        "status": "editorial_review",
-        "selected_text": "Ce soir, sur notre antenne, nous allons parler du look. Nous avons comme invités deux jeunes gens, Élodie, 16 ans, vivant à Tours et Guillaume, 15 ans, habitant à Paris. Merci d'être parmi nous. Alors, quelle est l'importance du look vestimentaire dans votre vie? Élodie? Pour moi, strictement aucune. Je ne cherche pas à avoir un look ou à appartenir à un groupe en particulier. Je veux être moi-même tout simplement. Et vous, Guillaume ? C'est vrai que je fais attention à mon image. Pour moi, c'est important. Je veux garder mon style. Pourquoi ? Parce que c'est mon identité. Si vous changez de look, vous pensez que vous auriez une autre identité ? Oui, bien sûr. Enfin, je veux dire, les gens me regarderaient différemment. Même moi, il faudrait que je m'accepte comme je suis. Je ne dis pas que je serai punk toute ma vie. Je pense qu'il y a un âge pour tout. Peut-être un jour je changerai de style, de mode de vie. Mais aujourd'hui, c'est moi et c'est mon image. Et vous, Élodie, vous arrivez à avoir une identité sans avoir un look précis ? Oui, bien sûr. Je pense qu'on n'a pas besoin de faire partie d'un groupe pour exister aux yeux des autres. Je ne suis pas d'accord. Tu fais toujours partie d'un groupe. Même quand tu veux être neutre, Alors, tu fais partie du groupe de ceux qui ne veulent appartenir à aucun groupe.",
-        "reason": "Reconnaissances finales comparées ; transcription, attribution des informations, questions et réponses relues.",
-        "question_changes": []
-      },
-      "exercises": [
-        "tcf-ss-b1-s4-co-2"
       ]
     },
     {
@@ -1672,21 +1552,6 @@
         "editorial_transcript_and_question_review_required"
       ],
       "editorial_decision": null,
-      "exercises": [
-        "delf-a2-2021-co-ex1-03"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_03-3.mp3",
-      "source_id": "delf_a2_2021:003:2505cafdfeda",
-      "candidate_sha256": "ab9d24ec7846f1f0e1d4189ce68d0d97cc5b500adfe34de6a60db6d0c36adaa2",
-      "reasons": [],
-      "editorial_decision": {
-        "status": "editorial_review",
-        "selected_text": "Le train 5957, en provenance de Paris-Gare de Lyon, à destination de Clermont-Ferrand, partira quai A à 17 heures.",
-        "reason": "Reconnaissances finales comparées ; transcription, attribution des informations, questions et réponses relues.",
-        "question_changes": []
-      },
       "exercises": [
         "delf-a2-2021-co-ex1-03"
       ]
@@ -2480,34 +2345,6 @@
       ]
     },
     {
-      "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_52.mp3",
-      "source_id": "delf_a1_2022:052:bc4e91cb6629",
-      "candidate_sha256": "8925025848da9a96b93d71bdb96ddae91cec3ed18d076adce6a65557cc951d97",
-      "reasons": [
-        "technical_object_numbering_still_present",
-        "parakeet_text_difference",
-        "parakeet_numeric_difference",
-        "parakeet_instruction_flag",
-        "whisper_text_difference",
-        "whisper_numeric_difference",
-        "whisper_instruction_flag",
-        "ctc_text_difference",
-        "ctc_numeric_difference"
-      ],
-      "editorial_decision": {
-        "status": "source_boundary_or_content_review_required",
-        "selected_text": "Un savon. Un menu. Une chemise. Du papier toilette. Une addition. Une jupe.",
-        "reason": "technical_object_numbering_still_present",
-        "question_changes": [],
-        "blocked_reasons": [
-          "technical_object_numbering_still_present"
-        ]
-      },
-      "exercises": [
-        "delf-a1-2022-co-ex5-52"
-      ]
-    },
-    {
       "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_63.mp3",
       "source_id": "delf_a1_2022:063:3d059bf42971",
       "candidate_sha256": "bfc9d69126aae55e55c0c82fbb7549c5f1dcb0578ee72aecd7177ed7683ad608",
@@ -2579,18 +2416,6 @@
       },
       "exercises": [
         "delf-a1-2022-co-74"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_75-3.mp3",
-      "source_id": "delf_a1_2022:075:37157834c836",
-      "candidate_sha256": "8cb497413a3a345ae1d777cd1e3c31e108d018f49c610ee4cfe6302812af4bc8",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "delf-a1-2022-co-75"
       ]
     },
     {
@@ -3047,21 +2872,6 @@
       ]
     },
     {
-      "ref": "/lib/audio/tcf/co/vie-quotidienne/alors-cette-fete-anniversaire-2-2.mp3",
-      "source_id": "additional-20261102:mdf-a2-abc-direct:95:b95d20d0713a:ac7750fa",
-      "candidate_sha256": "a5695b7568f94556b3d941c2b6a6d1dbdfbe403c2ca9787120a46350bd0aceb4",
-      "reasons": [],
-      "editorial_decision": {
-        "status": "editorial_review",
-        "selected_text": "Salut Hugo, j'ai deux places pour le match de basket de samedi. Tu veux venir avec moi ? C'est vrai ? Oh c'est terrible, je ne peux pas y aller. C'est l'anniversaire de ma mère. Oh non, c'est dommage.",
-        "reason": "Reconnaissances finales comparées ; transcription, attribution des informations, questions et réponses relues.",
-        "question_changes": []
-      },
-      "exercises": [
-        "tcf-ss-a2-s10-co-1"
-      ]
-    },
-    {
       "ref": "/lib/audio/tcf/co/vie-quotidienne/alors-isabelle-week-end-1.mp3",
       "source_id": "additional-20261102:mdf-b1-abc-direct:15:d3e84b551ade:d9810199",
       "candidate_sha256": "f1f85c9eb785b23eb4b93304ad965eba1a1cac2fddceb44f287e1273e6c8d71d",
@@ -3296,9 +3106,17 @@
       "source_id": "additional-20261102:mdf-a2-abc-direct:96:ed99e8540717:8fd67f4b",
       "candidate_sha256": "dcd8809c10dbcf657b994b38b8b4cfb514eb600ed6fcc6ebf5055a219858b084",
       "reasons": [
-        "editorial_transcript_and_question_review_required"
+        "parakeet_text_difference",
+        "parakeet_start_difference",
+        "parakeet_end_difference",
+        "ctc_text_difference"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Ah, ma veste est toute sale ! Oups, pardon ! J'ai mis ta veste pour aller dans le jardin ce matin. Je suis vraiment désolée.",
+        "reason": "Transcriptions finales Whisper et CTC comparées ; questions et trois propositions relues : informations présentes dans le message, une réponse correcte par question. Parakeet comporte des changements de langue et ne constitue pas la seconde validation.",
+        "question_changes": []
+      },
       "exercises": [
         "tcf-ss-a2-s50-co-2"
       ]
@@ -3354,32 +3172,6 @@
       },
       "exercises": [
         "tcf-ss-a1-s6-co-3"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-thierry-deja.mp3",
-      "source_id": "additional-20261102:mdf-b1-abc-direct:16:a9c3c8627a50:b0a250af",
-      "candidate_sha256": "0cff0fe6bf2a216b2e29e278b52981eae294af8dc6fc205123481f0322332859",
-      "reasons": [],
-      "editorial_decision": {
-        "status": "editorial_review",
-        "selected_text": "Bonjour Madame Thierry, déjà dans le parc avec votre petite fille, il est à peine 8h. Oui, il fait si chaud depuis deux semaines. Elle a seulement 18 mois Madame Berthet. Elle est encore bien petite. Les jeunes enfants sont fragiles. Vous avez raison, il vaut mieux la sortir tôt le matin. Je la sors aussi un peu le soir. Et quand je suis obligée de la sortir dans la journée, Je lui passe une crème solaire et je lui mets une petite robe ample et un chapeau en toile. Je fais en sorte de rester le moins longtemps possible dehors. Il ne fait pas trop chaud chez vous ? Non. Heureusement, l'appartement est frais et je la rafraîchis souvent avec un brumisateur. Je la fais boire aussi plus souvent. Je vois que vous êtes bien au courant de ce qu'il faut faire. Ce n'est pas aussi facile avec mes parents. Ils sont âgés ? Ils ont 84 et 86 ans. J'ai la chance d'habiter près de chez eux. Je peux passer les voir au moins le matin et le soir en partant et en revenant du travail. Et je les appelle dans la journée. Mais je dois parfois me fâcher. Je vous comprends. Ma grand-mère dit n'avoir jamais chaud. Les personnes âgées ne ressentent pas la chaleur comme nous et ils ne boivent pas assez. Mes parents ont enfin compris qu'il fallait fermer les volets dans la journée et aérer pendant la nuit. Ils utilisent aussi plus souvent le ventilateur. Mais je dois parfois insister pour qu'ils boivent plus souvent, mais sans exagérer. Je veille aussi à ce qu’ils continuent de s'alimenter normalement. Mais comme ma mère est assez gourmande, ce n'est pas vraiment un problème. Elle prépare de grandes salades et plus de plats de poisson que de viande, parce que c'est plus léger. Ils ont de la chance de vous avoir. Quoi qu'il en soit, espérons qu'il va faire moins chaud.",
-        "reason": "Reconnaissances finales comparées ; transcription, attribution des informations, questions et réponses relues.",
-        "question_changes": [
-          {
-            "exercise": "tcf-ss-b1-s3-co-1",
-            "question": 2,
-            "enonce": "Quel âge ont les parents évoqués dans la conversation ?"
-          },
-          {
-            "exercise": "tcf-ss-b1-s3-co-1",
-            "question": 9,
-            "enonce": "Quand la personne rend-elle visite à ses parents ?"
-          }
-        ]
-      },
-      "exercises": [
-        "tcf-ss-b1-s3-co-1"
       ]
     },
     {
@@ -3469,52 +3261,23 @@
       ]
     },
     {
-      "ref": "/lib/audio/tcf/co/vie-quotidienne/de-greta-anita-n-y.mp3",
-      "source_id": "additional-20261102:mdf-b1-abc-direct:31:f55560376dbf:251303e8",
-      "candidate_sha256": "db699158f4ec777d1bb7481212f38906e79feaed09d2b7323ed2bd450cbbea6a",
-      "reasons": [
-        "parakeet_text_difference",
-        "checked_waiting_installation"
-      ],
-      "editorial_decision": {
-        "status": "editorial_review",
-        "selected_text": "De Greta à Anita, il n’y a qu’un pas. L'ombre de la militante suédoise Greta Thunberg plane sur #Anita, un court métrage réalisé par Félicien Bogaerts, présentateur du JT Terre, émission web indépendante sur l'actualité environnementale, Ilias Sfar et Arnaud Huck, qui a été mis en ligne dimanche 15 septembre sur la chaîne YouTube du Biais Vert et la plateforme Imago TV. Même visage poupin, même fragilité à fleurs de peau et surtout ce même regard grave, inquiet, qui personnifie à lui seul l'urgence du réchauffement climatique. Si elle n’a pas les nattes de Greta Thunberg, son double de fiction, interprété par la jeune actrice belge, Fantine Harduin, partage son combat. Le film, de 13 minutes, déroule le quotidien de sa jeune icône sur moins de 24 heures, de son entretien avec le think tank Thinkerview, à son allocution devant un parterre de décideurs politiques. Cette unité de temps empruntée aux tragédies classiques, tout comme le choix de personnifier à l'écran le Fatum, rend d'autant plus perméable le mal-être de cette vraie petite fille épuisée par son exposition médiatique. Face à des adultes caricaturaux, au mieux profiteurs, au pire indifférents, Anita semble prêcher dans le vide avant d'opter pour une solution aussi radicale que choquante pour enfin transmettre son message. L'idée n'était pas, et l'équipe du film s'en défend, de basculer dans le journalisme de fiction ou la chronique moralisatrice. #Anita se trouve dans la zone grise entre réel et fiction. précisent Félicien Bogaerts et Arnaud Huck. Le court-métrage fait écho à ce que nous avons pu observer au sein des mouvements pour le climat, comme leur instrumentalisation et leur récupération par des partis politiques ou certaines ONG. Nous voulions aussi montrer la violence du système qui fait reposer le poids du combat écologique sur les plus jeunes.",
-        "reason": "Reconnaissances finales comparées ; transcription, questions et corrigés relus. Noms non épelés : graphies éditoriales documentées.",
-        "question_changes": [
-          {
-            "exercise": "tcf-ss-b1-s5-co-1",
-            "question": 6,
-            "correct_answer": "La chaîne YouTube Le Biais Vert et Imago.tv",
-            "choices": [
-              {
-                "id": "a",
-                "texte": "La chaîne YouTube Le Biais Vert et Imago.tv",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "texte": "La chaîne YouTube Le Biais Vert et Netflix"
-              },
-              {
-                "id": "c",
-                "texte": "Dailymotion et Arte.tv"
-              }
-            ]
-          }
-        ]
-      },
-      "exercises": [
-        "tcf-ss-b1-s5-co-1"
-      ]
-    },
-    {
       "ref": "/lib/audio/tcf/co/vie-quotidienne/en-moins-d-une-dizaine-2.mp3",
       "source_id": "additional-20261102:mdf-a2-abc-direct:71:3e819d9c67bf:d715ccaa",
       "candidate_sha256": "5194f20044dadc0044536e1ef3c716ebc0814947b725bfe0e93705f68bcdab68",
       "reasons": [
-        "editorial_transcript_and_question_review_required"
+        "parakeet_text_difference",
+        "parakeet_numeric_difference",
+        "parakeet_end_difference",
+        "whisper_text_difference",
+        "whisper_numeric_difference",
+        "ctc_start_difference"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Radio France, il est 8 heures. La grève des transports continue dans toute la France. Au niveau national, un train sur cinq circulera. Pour connaître les horaires des trains, consultez le site www.sncf.com, rubrique Grève nationale. À Paris, le métro circule toutes les 30 minutes. Certaines lignes seront fermées toute la journée. Dans le reste du pays, les transports en commun sont annulés dans certaines villes. Par exemple, pas de bus à Perpignan. Dans d'autres villes, comme Tours ou Nantes, le tramway sera l'unique moyen de transport ouvert. Il y aura un tramway toutes les heures. Les négociations entre le gouvernement et les syndicats de transport sont difficiles. On pense que la grève va durer encore cinq jours.",
+        "reason": "Whisper omet le début sur les trains, confirmé par Parakeet et CTC ; fin cinq jours confirmée par Whisper et CTC. Les dix questions et leurs distracteurs correspondent au contenu. Conserver en attente de deux reconnaissances finales qualifiées, sans modifier les questions sur les trains.",
+        "question_changes": []
+      },
       "exercises": [
         "tcf-ss-a2-s38-co-2"
       ]
@@ -3589,60 +3352,6 @@
       ]
     },
     {
-      "ref": "/lib/audio/tcf/co/vie-quotidienne/hmm-ca-sent-bon.mp3",
-      "source_id": "09035196:016:919ecc7fa151",
-      "candidate_sha256": "6e7256f4c1b94ca429217cdc88f3e02e40795b3b76074d86ae251ba1eade6649",
-      "reasons": [
-        "parakeet_text_difference",
-        "checked_waiting_installation"
-      ],
-      "editorial_decision": {
-        "status": "editorial_review",
-        "selected_text": "Salut papa ! Bonjour Léa ! Alors raconte-moi comment s'est passée cette première journée d'école ! Bien, mes profs sont sympas. Par contre, j'ai Monsieur Barthélemy en histoire. J'espérais avoir Madame Gauthier elle est moins sévère. En sport, je suis hyper contente. J'ai la même prof que l'année dernière, Madame Dupont, avec elle on fait beaucoup de sports collectifs, en particulier du basket et j'adore ça. Et tu as retrouvé tous tes camarades de classe ? Oui, sauf Thomas. Il est parti dans un autre collège. Ah ! Et il y a une nouvelle élève aussi. Elle s'appelle Sarah. On a bien sympathisé. À midi, je lui ai proposé de manger à notre table avec les copines. Elle a 15 ans et elle a voyagé partout dans le monde. Elle a vécu deux ans en Australie, deux au Gabon et trois en Chine et au Brésil. Ah oui, ça fait beaucoup ! Que font ses parents pour déménager aussi souvent ? Sa mère est prof et son père travaille dans une ambassade. À la sortie des cours, je lui ai fait visiter le quartier. Elle n'est ici que depuis une semaine et elle ne connaît personne. Si tu veux, tu peux l'inviter à venir avec nous à la montagne ce week-end. Il y aura aussi tes cousins qui viendront. C'est une bonne idée, mais je ne suis pas sûre qu'elle accepte. Je crois que ce week-end, elle va voir sa grand-mère qui habite à Lyon. On lui proposera de venir à la maison le samedi suivant, ok ?",
-        "reason": "Reconnaissances finales comparées ; transcription, questions et corrigés relus. Noms non épelés : graphies éditoriales documentées.",
-        "question_changes": []
-      },
-      "exercises": [
-        "tcf-ss-b1-s11-co-4"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/vie-quotidienne/j-aimerais-beaucoup-creer-livre.mp3",
-      "source_id": "09035196:015:575a005b1b0a",
-      "candidate_sha256": "be2ec3248a61a778edc9a4fe580dd60233fcc8ee99810ab02109d79a01a5d273",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "tcf-ss-b1-s10-co-4"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/vie-quotidienne/jacques-as-petite-2-2.mp3",
-      "source_id": "9782090351958:020:ed311afde286",
-      "candidate_sha256": "ed6bad2edc284c92c5eee6e98e31d5f47f4f08da46e08525e61b7f2b1b3fd03f",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "tcf-ss-a2-s49-co-1"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/vie-quotidienne/journee-conversation.mp3",
-      "source_id": "09035196:013:44d439fabe9d",
-      "candidate_sha256": "a3a50e17423dabfed8e64d1666db0c5a21dec5f4e555c1027669eaa494671252",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "tcf-ss-b1-s4-co-3"
-      ]
-    },
-    {
       "ref": "/lib/audio/tcf/co/vie-quotidienne/journee-radio-1.mp3",
       "source_id": "09035196:018:f8ff3289739f",
       "candidate_sha256": "d0c88f559597cc03dc32f9e884dcd03d2ce93394855f1667ed08374d0a64a6cd",
@@ -3653,21 +3362,6 @@
       "editorial_decision": null,
       "exercises": [
         "tcf-ss-b1-s5-co-2"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/vie-quotidienne/julie-dois-aller-nouveau-1-1.mp3",
-      "source_id": "09035276:044:6f1e71a5d8e3",
-      "candidate_sha256": "5cb364b1ca36a48b668603d7d34d71edb2bf1d92a372ae69522dbf90949a60a2",
-      "reasons": [],
-      "editorial_decision": {
-        "status": "editorial_review",
-        "selected_text": "Quelle heure il est s'il te plaît ? Il est 10h35. Oh là là je suis en retard, j'ai mon cours de musique maintenant.",
-        "reason": "Reconnaissances finales comparées ; transcription, attribution des informations, questions et réponses relues.",
-        "question_changes": []
-      },
-      "exercises": [
-        "tcf-ss-a1-s47-co-1"
       ]
     },
     {
@@ -3937,18 +3631,6 @@
       ]
     },
     {
-      "ref": "/lib/audio/tcf/co/vie-quotidienne/presenter-radio.mp3",
-      "source_id": "09035196:017:dbf36c7a1874",
-      "candidate_sha256": "412a3c1c3df610073eee27502d217d32a452f85ea9419fa8926f3518e9dbe318",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "tcf-ss-b1-s12-co-2"
-      ]
-    },
-    {
       "ref": "/lib/audio/tcf/co/vie-quotidienne/salut-c-est-hugo.mp3",
       "source_id": "09035276:006:25d6b5b6a951",
       "candidate_sha256": "482d32c0b2c725fb828438cb808b49869de4fb4122c1a2425dab10944a58a525",
@@ -3963,18 +3645,6 @@
       },
       "exercises": [
         "tcf-ss-a1-s14-co-2"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/vie-quotidienne/salut-c-est-lea.mp3",
-      "source_id": "09035276:016:6b09b42afbaf",
-      "candidate_sha256": "6a84725b1daa2b8f26733d7b8146060149dab27ecf4b67a8ee82a9df165f805f",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "tcf-ss-a1-s13-co-2"
       ]
     },
     {
@@ -4059,18 +3729,6 @@
       ]
     },
     {
-      "ref": "/lib/audio/tcf/co/vie-quotidienne/une-bonne-cuisine-se.mp3",
-      "source_id": "additional-20261102:mdf-b1-abc-direct:27:66cb51385784:6925c93c",
-      "candidate_sha256": "2b5e75cffb14679005ef221a8ff7b2ca953afdf3b53d5f39a36fd3a0dfa6efa0",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "tcf-ss-b1-s13-co-1"
-      ]
-    },
-    {
       "ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-19.mp3",
       "source_id": "9782090351958:039:ec78c0555d13",
       "candidate_sha256": "fcf533672ecfa29b6349e4129cbec275b7f802528c7430154142e13d0d706d04",
@@ -4117,10 +3775,34 @@
       "source_id": "9782090351958:041:da5b8ef94663",
       "candidate_sha256": "88d2f82cfebb8de23ba476018f564cf33733eab0a0b75ab053f30951e3ec1df0",
       "reasons": [
-        "source_boundary_review_required",
-        "editorial_transcript_and_question_review_required"
+        "source_boundary_review_required"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Bonjour, je vous annonce que les pompiers de la ville vont venir dans notre collège mercredi pour expliquer ce qu'il faut faire s'il y a le feu. La présence de tous les élèves est obligatoire. Cet événement est organisé par l'association \"Apprendre, c'est agir\" qui aide les citoyens à devenir responsables. Vous allez aussi voir des films sur le travail des pompiers et apprendre les gestes qui peuvent sauver des vies en cas de danger. A la fin de cette journée, vous recevrez un diplôme de citoyen responsable. Merci de votre attention.",
+        "reason": "Transcriptions finales Whisper et CTC comparées ; questions et trois propositions relues : informations présentes dans le message, une réponse correcte par question. Parakeet comporte des changements de langue et ne constitue pas la seconde validation. Nom de l’association corrigé conformément à Parakeet et Whisper, frontières encore soumises aux contrôles techniques.",
+        "question_changes": [
+          {
+            "exercise": "tcf-ss-a2-s14-co-3",
+            "question": 5,
+            "choices": [
+              {
+                "id": "a",
+                "texte": "Apprendre, c’est agir",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Manger et bouger"
+              },
+              {
+                "id": "c",
+                "texte": "Lire et voyager"
+              }
+            ]
+          }
+        ]
+      },
       "exercises": [
         "tcf-ss-a2-s14-co-3"
       ]
@@ -4160,7 +3842,10 @@
       "ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-29.mp3",
       "source_id": "9782090351958:054:ea3062ec1e3e",
       "candidate_sha256": "280676464bb65955f95d025c29343b441226130f9ada17523207899bcb1832f5",
-      "reasons": [],
+      "reasons": [
+        "parakeet_text_difference",
+        "ctc_numeric_difference"
+      ],
       "editorial_decision": {
         "status": "editorial_review",
         "selected_text": "Le nouveau centre sportif de La Plaine va ouvrir à l'Ouest de Marseille dans une semaine. Vous pourrez y pratiquer de nombreux sports, participer à des événements et voir des compétitions du mardi au dimanche de 9h à 21h. Pour demander votre carte d’abonné à prix réduit, venez le jour de l'ouverture, samedi, 10 mai. L'équipe sera là pour vous donner des informations sur le calendrier des matchs, les horaires des différents cours et les tarifs.",

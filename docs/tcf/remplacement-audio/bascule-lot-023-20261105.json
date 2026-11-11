@@ -1,0 +1,2776 @@
+{
+  "batch": 23,
+  "audio_replacements": [
+    {
+      "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_75-3.mp3",
+      "previous_sha256": "13f5ef9971b07931e282643ecf390a61325cc672260afa4404381be73be358b7",
+      "candidate_sha256": "8cb497413a3a345ae1d777cd1e3c31e108d018f49c610ee4cfe6302812af4bc8",
+      "rollback_git_blob": "0ce749c6c0f66d79f3900bff204e77b414567310",
+      "source_id": "delf_a1_2022:075:37157834c836",
+      "source_sha256": "37157834c8361b8a03d95c07f1f41aff1427cd799f03aed960886e5cc5087f2a",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "8cb497413a3a345ae1d777cd1e3c31e108d018f49c610ee4cfe6302812af4bc8",
+        "duration": 6.243265,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111738-519f074cfe/manifest.json",
+          "manifest_sha256": "66616cab48a6b73df078db9fc3368343908d9690f9b835fbce320384e0d1d151",
+          "lossless_sha256": "2163ce8953c86955ac2d952761daa2130b303650700051e27323bd094bab2082"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.36,
+          "trailing_quiet_seconds": 0.19,
+          "relative_rms_threshold": 0.0087706,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "ctc"
+      ],
+      "editorial_reason": "Parakeet et CTC reconnaissent la réponse complète : mère Louise, père André. Whisper omet la réponse et est exclu du couple de validation. Les deux questions et leurs trois propositions ont été relues.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 9.38,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/loisirs/remi-bezancon-possede-son.mp3",
+      "previous_sha256": "c453120c306d5bb7b5692cf2e8d39118a4a81062104df95fa7b0c4ef51b4677c",
+      "candidate_sha256": "9ff847ccf97f2f422e0dc3c2a620ae844258415ef428b4d24739f7300f2dd6a9",
+      "rollback_git_blob": "1cb75e70dc652305a6e458e1c7aa0a55fcf4263a",
+      "source_id": "additional-20261102:mdf-b1-abc-direct:30:840c422aaff5:d7b147a3",
+      "source_sha256": "840c422aaff5b147abf57f85e35e4937508dc8e705e2cab36037a3d11f82f449",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "9ff847ccf97f2f422e0dc3c2a620ae844258415ef428b4d24739f7300f2dd6a9",
+        "duration": 142.001633,
+        "category": "long",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014825-9aa70ba8c5/manifest.json",
+          "manifest_sha256": "a4f970e667f05de3d3f43a448216abe84a9c8e5177d9ce7b041ad9f696caa95c",
+          "lossless_sha256": "bcbdf99680a1ca5627daec57a84fec063b2ac474e77ac3eacee98a8340de74b7"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.32,
+          "trailing_quiet_seconds": 0.03,
+          "relative_rms_threshold": 0.0052944,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "whisper",
+        "ctc"
+      ],
+      "editorial_reason": "Transcriptions finales Whisper et CTC comparées ; questions et trois propositions relues : informations présentes dans le message, une réponse correcte par question. Parakeet comporte des changements de langue et ne constitue pas la seconde validation. Noms propres non épelés rétablis dans leur graphie éditoriale ; aucune attestation humaine d’écoute. CTC dit mille neuf cent quatre-vingt-dix : 1990, confirmé par Whisper. alpha2digit transforme fautivement la graphie CTC espacée « mille neuf cent quatre vingt - dix » en 1904 ; aucun changement du nombre entendu.",
+      "numeric_resolution": {
+        "candidate_sha256": "9ff847ccf97f2f422e0dc3c2a620ae844258415ef428b4d24739f7300f2dd6a9",
+        "evidence_file": "/workspace/work/tcf-bascule-complete-20261105/ctc/9ff847ccf97f2f422e0dc3c2a620ae844258415ef428b4d24739f7300f2dd6a9.json",
+        "evidence_sha256": "c99794786430ddc6cf18efa8e48de6e1bf7e8ec2944cac029963d0e559a4aa99",
+        "reviewed_numbers": [
+          "1",
+          "1990",
+          "1",
+          "1",
+          "00",
+          "1",
+          "1"
+        ],
+        "reason": "CTC dit mille neuf cent quatre-vingt-dix : 1990, confirmé par Whisper. alpha2digit transforme fautivement la graphie CTC espacée « mille neuf cent quatre vingt - dix » en 1904 ; aucun changement du nombre entendu."
+      },
+      "additional_recognition_evidence": null,
+      "previous_duration": 143.07,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/presenter-radio.mp3",
+      "previous_sha256": "e111f495f099048a6f36653f6cdb75e71434d3a661da68f76a34099d54e67a39",
+      "candidate_sha256": "412a3c1c3df610073eee27502d217d32a452f85ea9419fa8926f3518e9dbe318",
+      "rollback_git_blob": "30b88121bb670b8fd70d89f597384b2793495476",
+      "source_id": "09035196:017:dbf36c7a1874",
+      "source_sha256": "dbf36c7a1874dd6d767d6f851cb748b54f40b5130f37e117165ecff65a898656",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "412a3c1c3df610073eee27502d217d32a452f85ea9419fa8926f3518e9dbe318",
+        "duration": 121.469388,
+        "category": "long",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T013928-5e1d0dd2c1/manifest.json",
+          "manifest_sha256": "aa91f580f362d60c331de9bc348a921d29c49e8e76d40b33fa0e1644ba9ecb5c",
+          "lossless_sha256": "6d00ed1b243054e9d15d1d2d944749e8bee1c3105d7f6aace76f629f5c04f2a1"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "needs_boundary_review",
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.14,
+          "relative_rms_threshold": 0.0055811,
+          "safe_quiet_margins": false,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.288,
+          "trailing_non_speech_seconds": 0.144,
+          "speech_region_count": 58,
+          "safe_voiced_margins": true,
+          "method": "Silero VAD with no padding; supplementary speech-vs-music evidence, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "whisper",
+        "ctc"
+      ],
+      "editorial_reason": "Transcriptions finales Whisper et CTC comparées ; questions et trois propositions relues : informations présentes dans le message, une réponse correcte par question. Parakeet comporte des changements de langue et ne constitue pas la seconde validation. Deux mois, seize titres, 600 000 ventes et trois minutes concordent entre Whisper et CTC. CTC et Whisper confirment 600 000 exemplaires, un an annoncé, seize titres, deux mois réels et trois minutes ; la différence numérique automatique porte sur un article « un » dans une phrase.",
+      "numeric_resolution": {
+        "candidate_sha256": "412a3c1c3df610073eee27502d217d32a452f85ea9419fa8926f3518e9dbe318",
+        "evidence_file": "/workspace/work/tcf-bascule-complete-20261105/ctc/412a3c1c3df610073eee27502d217d32a452f85ea9419fa8926f3518e9dbe318.json",
+        "evidence_sha256": "cc8f0c9a5e9f349052709f6b00fa678f3fb2156890c8936aadc5d59f25d98d08",
+        "reviewed_numbers": [
+          "600000",
+          "1",
+          "16",
+          "1",
+          "1",
+          "1",
+          "2",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "3",
+          "1"
+        ],
+        "reason": "CTC et Whisper confirment 600 000 exemplaires, un an annoncé, seize titres, deux mois réels et trois minutes ; la différence numérique automatique porte sur un article « un » dans une phrase."
+      },
+      "additional_recognition_evidence": null,
+      "previous_duration": 125.96,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/loisirs/loisirs-annonce.mp3",
+      "previous_sha256": "fda22c07315a1b1af012b8ac0d2e2ff4623e86451aefc9ba1b13e9781a71d2e6",
+      "candidate_sha256": "f3700fe221dfc781a1752b4c23bf638a7ff303ea2d7f2aec1ae8e00413391da9",
+      "rollback_git_blob": "9540b5240845591612fe6e1d22c7fc3350aced05",
+      "source_id": "09035196:037:662ea39af90e",
+      "source_sha256": "662ea39af90e9720637926a6fc9a57313bbac8cf3837a16d9d2a09ca051ad3f6",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "f3700fe221dfc781a1752b4c23bf638a7ff303ea2d7f2aec1ae8e00413391da9",
+        "duration": 93.126531,
+        "category": "long",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T013810-cd9b58212f/manifest.json",
+          "manifest_sha256": "897c2f17fe7671032b0963eaf005fec2838e3f7436f8f8bf321ff3f83f709d2d",
+          "lossless_sha256": "52a6df570a3dfe900866f78aa0dee96445e4d9ffe94bf18bccfcff8f7e306c35"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.32,
+          "trailing_quiet_seconds": 0.13,
+          "relative_rms_threshold": 0.0063077,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "whisper",
+        "ctc"
+      ],
+      "editorial_reason": "Transcriptions finales Whisper et CTC comparées ; questions et trois propositions relues : informations présentes dans le message, une réponse correcte par question. Parakeet comporte des changements de langue et ne constitue pas la seconde validation. Les nombres 2019, trois catégories, quatre concerts les 18 à 21 février, trois ans et 20 000 personnes sont confirmés par Whisper et CTC. CTC et Whisper confirment 2019, trois catégories, quatre concerts, les 18/19/20/21 février, trois ans et 20 000 personnes fois quatre ; seules des reconnaissances du mot « un » hors faits chiffrés diffèrent.",
+      "numeric_resolution": {
+        "candidate_sha256": "f3700fe221dfc781a1752b4c23bf638a7ff303ea2d7f2aec1ae8e00413391da9",
+        "evidence_file": "/workspace/work/tcf-bascule-complete-20261105/ctc/f3700fe221dfc781a1752b4c23bf638a7ff303ea2d7f2aec1ae8e00413391da9.json",
+        "evidence_sha256": "2ebd27a3a947c871b5dd1743ca1d5b8da222a10c2235bee37eca743e8f5b5b85",
+        "reviewed_numbers": [
+          "2019",
+          "3",
+          "4",
+          "18",
+          "19",
+          "20",
+          "21",
+          "1",
+          "3",
+          "20000",
+          "4",
+          "1",
+          "1"
+        ],
+        "reason": "CTC et Whisper confirment 2019, trois catégories, quatre concerts, les 18/19/20/21 février, trois ans et 20 000 personnes fois quatre ; seules des reconnaissances du mot « un » hors faits chiffrés diffèrent."
+      },
+      "additional_recognition_evidence": null,
+      "previous_duration": 94.85,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    }
+  ],
+  "exercise_changes": [
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "delf-a1-2022-co-75",
+      "before": {
+        "id": "delf-a1-2022-co-75",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Piste 75",
+        "scenario": "loisirs",
+        "scene": "Piste 75",
+        "consigne": "Écoutez le document. Lisez les questions, puis répondez.",
+        "support": {
+          "transcription": [
+            "Quel âge avez-vous? J'ai 50 ans.",
+            "Quel animal avez-vous? J'ai des oiseaux.",
+            "– Parlez-moi de vos parents. / – Ma mère s’appelle Louise et mon père, lui, s’appelle André.",
+            "Quelles sont vos activités préférées ? Je fais du vélo le samedi et après je vais au cinéma avec mes amis.",
+            "Quelle est votre profession? Je suis chirurgien."
+          ],
+          "audios": [
+            "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_75-1.mp3",
+            "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_75-2.mp3",
+            "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_75-3.mp3",
+            "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_75-4.mp3",
+            "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_75-5.mp3"
+          ],
+          "images_descriptions": [
+            "Scénario vidéo (audio CO moyen, « Piste 75 — dialogue 1 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Quel âge avez-vous ? » ; B : « J’ai 50 ans ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Piste 75 — dialogue 2 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Quel animal avez-vous ? » ; B : « J’ai des oiseaux ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Piste 75 — dialogue 3 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Parlez-moi de vos parents » ; B : « Ma mère s’appelle Louise et mon père, lui, s’appelle André ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Piste 75 — dialogue 4 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Quelles sont vos activités préférées ? » ; B : « Je fais du vélo le samedi et après, je vais au cinéma avec mes amis ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Piste 75 — dialogue 5 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Quelle est votre profession ? » ; B : « Je suis chirurgien ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
+          ]
+        },
+        "questions": [
+          {
+            "enonce": "Quel âge la personne a-t-elle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "50 ans",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "40 ans"
+              },
+              {
+                "id": "c",
+                "texte": "60 ans"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "50 ans"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Quels animaux possède-t-elle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Des oiseaux",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Des chats"
+              },
+              {
+                "id": "c",
+                "texte": "Des chiens"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Des oiseaux"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Comment sa mère s'appelle-t-elle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Louise",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Angelina"
+              },
+              {
+                "id": "c",
+                "texte": "Sara"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Louise"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Comment son père s'appelle-t-il ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "André",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Thomas"
+              },
+              {
+                "id": "c",
+                "texte": "Ahmed"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "André"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quelle activité fait-elle le samedi avant le cinéma ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Du vélo",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Du tennis"
+              },
+              {
+                "id": "c",
+                "texte": "De la natation"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Du vélo"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/26876e2318ce.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/eb82d6d99458.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Où va-t-elle après cette activité ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Au cinéma",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Au musée"
+              },
+              {
+                "id": "c",
+                "texte": "Au restaurant"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Au cinéma"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/co/bg/cinema.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/co/bg/musee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/co/bg/restaurant.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Avec qui y va-t-elle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Ses amis",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Ses parents"
+              },
+              {
+                "id": "c",
+                "texte": "Ses collègues"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Ses amis"
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Quelle profession exerce-t-elle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Chirurgien",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Enseignant"
+              },
+              {
+                "id": "c",
+                "texte": "Cuisinier"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Chirurgien"
+              }
+            },
+            "audio": 5
+          },
+          {
+            "enonce": "Quel mot la première personne utilise-t-elle pour s’adresser à l’autre ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Vous",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Tu"
+              },
+              {
+                "id": "c",
+                "texte": "Nous"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Vous"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Quelle expression la personne utilise-t-elle pour dire qu’elle possède des animaux ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "J’ai",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Je suis"
+              },
+              {
+                "id": "c",
+                "texte": "Je vais"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "J’ai"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Quelle expression introduit le métier dans la réponse ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Je suis",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "J’ai"
+              },
+              {
+                "id": "c",
+                "texte": "Je vais"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Je suis"
+              }
+            },
+            "audio": 5
+          }
+        ],
+        "consigne_supplementaire": null
+      },
+      "after": {
+        "id": "delf-a1-2022-co-75",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Piste 75",
+        "scenario": "loisirs",
+        "scene": "Piste 75",
+        "consigne": "Écoutez le document. Lisez les questions, puis répondez.",
+        "support": {
+          "transcription": [
+            "Quel âge avez-vous? J'ai 50 ans.",
+            "Quel animal avez-vous? J'ai des oiseaux.",
+            "Parlez-moi de vos parents. Ma mère s'appelle Louise et mon père, lui, s'appelle André.",
+            "Quelles sont vos activités préférées ? Je fais du vélo le samedi et après je vais au cinéma avec mes amis.",
+            "Quelle est votre profession? Je suis chirurgien."
+          ],
+          "audios": [
+            "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_75-1.mp3",
+            "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_75-2.mp3",
+            "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_75-3.mp3",
+            "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_75-4.mp3",
+            "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_75-5.mp3"
+          ],
+          "images_descriptions": [
+            "Scénario vidéo (audio CO moyen, « Piste 75 — dialogue 1 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Quel âge avez-vous ? » ; B : « J’ai 50 ans ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Piste 75 — dialogue 2 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Quel animal avez-vous ? » ; B : « J’ai des oiseaux ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Piste 75 — dialogue 3 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Parlez-moi de vos parents » ; B : « Ma mère s’appelle Louise et mon père, lui, s’appelle André ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Piste 75 — dialogue 4 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Quelles sont vos activités préférées ? » ; B : « Je fais du vélo le samedi et après, je vais au cinéma avec mes amis ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Piste 75 — dialogue 5 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Quelle est votre profession ? » ; B : « Je suis chirurgien ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
+          ]
+        },
+        "questions": [
+          {
+            "enonce": "Quel âge la personne a-t-elle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "50 ans",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "40 ans"
+              },
+              {
+                "id": "c",
+                "texte": "60 ans"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "50 ans"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Quels animaux possède-t-elle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Des oiseaux",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Des chats"
+              },
+              {
+                "id": "c",
+                "texte": "Des chiens"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Des oiseaux"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Comment sa mère s'appelle-t-elle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Louise",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Angelina"
+              },
+              {
+                "id": "c",
+                "texte": "Sara"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Louise"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Comment son père s'appelle-t-il ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "André",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Thomas"
+              },
+              {
+                "id": "c",
+                "texte": "Ahmed"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "André"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quelle activité fait-elle le samedi avant le cinéma ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Du vélo",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Du tennis"
+              },
+              {
+                "id": "c",
+                "texte": "De la natation"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Du vélo"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/26876e2318ce.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/eb82d6d99458.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Où va-t-elle après cette activité ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Au cinéma",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Au musée"
+              },
+              {
+                "id": "c",
+                "texte": "Au restaurant"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Au cinéma"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/co/bg/cinema.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/co/bg/musee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/co/bg/restaurant.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Avec qui y va-t-elle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Ses amis",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Ses parents"
+              },
+              {
+                "id": "c",
+                "texte": "Ses collègues"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Ses amis"
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Quelle profession exerce-t-elle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Chirurgien",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Enseignant"
+              },
+              {
+                "id": "c",
+                "texte": "Cuisinier"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Chirurgien"
+              }
+            },
+            "audio": 5
+          },
+          {
+            "enonce": "Quel mot la première personne utilise-t-elle pour s’adresser à l’autre ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Vous",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Tu"
+              },
+              {
+                "id": "c",
+                "texte": "Nous"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Vous"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Quelle expression la personne utilise-t-elle pour dire qu’elle possède des animaux ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "J’ai",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Je suis"
+              },
+              {
+                "id": "c",
+                "texte": "Je vais"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "J’ai"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Quelle expression introduit le métier dans la réponse ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Je suis",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "J’ai"
+              },
+              {
+                "id": "c",
+                "texte": "Je vais"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Je suis"
+              }
+            },
+            "audio": 5
+          }
+        ],
+        "consigne_supplementaire": null
+      }
+    },
+    {
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "exercise": "tcf-ss-b1-s6-co-2",
+      "before": {
+        "id": "tcf-ss-b1-s6-co-2",
+        "niveau": "A2-B1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Annonce 35",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/loisirs/loisirs-annonce.mp3",
+          "transcription": "Journaliste : — Elle a été en tête des ventes en 2019 et, à quelques jours des Victoires de la musique où elle a été nommée dans trois catégories, à quelques jours aussi de quatre grands concerts les 18, 19, 20 et 21 février, voici Angèle.\nBonjour Angèle !\nAngèle : — Bonjour !\nJournaliste : — Après la super tournée, qu'est-ce que vous allez faire ?\nAngèle : — Je vais faire des festivals parce que je me suis dit que j'allais regretter de ne pas les faire.\nEt puis après, je vais m'occuper…\nmais je vais passer plus de temps à Bruxelles, finalement.\nLa suite, on verra, comme vous dites dans la chanson !\nJournaliste : — Dans cette chanson, d'ailleurs, vous dites : « J'ai commencé sur Instagram des petits concerts dans des bars vides, et ma babysitter, la première à me suivre…\n» — c'était il n'y a pas si longtemps ?\nAngèle : — Non, c'était il y a trois ans.\nJournaliste : — Et là, vous vous apprêtez à chanter devant vingt mille personnes, fois quatre.\nC'est un truc de fou !\nAngèle : — En même temps, je me suis habituée à cette rapidité ; ça a été vraiment vite.\nJe n'aurais jamais imaginé arriver là en si peu de temps, donc je profite.\nJournaliste : — C'est ça qui est nouveau : avant, la génération d'artistes mettait des années à s'installer, à devenir célèbre, à conquérir leur indépendance — et vous, vous avez tout de suite connu le succès et vous avez tout de suite imposé votre style, votre liberté.\nVous travaillez avec qui vous voulez, vous avez la maîtrise artistique sur ce que vous faites.\nAngèle : — Ça, c'est une chance, et j'ai un certain nombre de privilèges.\nLe milieu dans lequel j'ai grandi, mais aussi la musique, et mon frère rappeur, m'ont apporté beaucoup de soutien et de connaissances du travail, qui demande énormément de sérieux, énormément de rigueur — et ça m'a aidée, en voyant mes parents."
+        },
+        "questions": [
+          {
+            "enonce": "Quelle chanteuse est interviewée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Angèle",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Aya Nakamura"
+              },
+              {
+                "id": "c",
+                "texte": "Louane"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Angèle"
+              }
+            }
+          },
+          {
+            "enonce": "Dans combien de catégories Angèle est-elle nommée aux Victoires de la musique ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Trois",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Deux"
+              },
+              {
+                "id": "c",
+                "texte": "Cinq"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Trois"
+              }
+            }
+          },
+          {
+            "enonce": "Combien de grands concerts Angèle donne-t-elle en février ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Quatre",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Deux"
+              },
+              {
+                "id": "c",
+                "texte": "Six"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Quatre"
+              }
+            }
+          },
+          {
+            "enonce": "Que va faire Angèle après sa tournée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Des festivals",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Une pause totale"
+              },
+              {
+                "id": "c",
+                "texte": "Un film"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Des festivals"
+              }
+            }
+          },
+          {
+            "enonce": "Dans quelle ville Angèle va-t-elle passer plus de temps ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Bruxelles",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Paris"
+              },
+              {
+                "id": "c",
+                "texte": "Genève"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Bruxelles"
+              }
+            }
+          },
+          {
+            "enonce": "Sur quel réseau Angèle a-t-elle commencé à se faire connaître ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Instagram",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "TikTok"
+              },
+              {
+                "id": "c",
+                "texte": "Facebook"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Instagram"
+              }
+            }
+          },
+          {
+            "enonce": "Combien de personnes sont attendues à chacun des quatre grands concerts ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Vingt mille personnes",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Deux mille personnes"
+              },
+              {
+                "id": "c",
+                "texte": "Deux cents personnes"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Vingt mille personnes"
+              }
+            }
+          },
+          {
+            "enonce": "Combien de temps s'est écoulé depuis les débuts évoqués sur Instagram ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Trois ans",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Dix ans"
+              },
+              {
+                "id": "c",
+                "texte": "Six mois"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Trois ans"
+              }
+            }
+          },
+          {
+            "enonce": "Comment Angèle décrit-elle la vitesse de son succès ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Elle a été très rapide",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Elle a été très lente"
+              },
+              {
+                "id": "c",
+                "texte": "Elle n'a pas encore commencé"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Elle a été très rapide"
+              }
+            }
+          },
+          {
+            "enonce": "Quel métier son frère exerce-t-il dans la musique ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Rappeur",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Chef d'orchestre"
+              },
+              {
+                "id": "c",
+                "texte": "Luthier"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Rappeur"
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "loisirs",
+        "scene": "Loisirs · Annonce"
+      },
+      "after": {
+        "id": "tcf-ss-b1-s6-co-2",
+        "niveau": "A2-B1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Annonce 35",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/loisirs/loisirs-annonce.mp3",
+          "transcription": "Elle était en tête des ventes en 2019 et à quelques jours des victoires de la musique où elle a été nommée dans trois catégories, à quelques jours aussi de quatre grands concerts, les 18, 19, 20 et 21 février. Voici Angèle. Bonjour Angèle. Bonjour. Après la super tournée, qu'est-ce que vous allez faire ? Je vais faire des festivals parce que je me suis dit que j'allais regretter de ne pas les faire. Et puis après, je vais m'occuper et je vais passer plus de temps à Bruxelles en fait. La suite, on verra, comme vous dites dans la chanson. Dans cette chanson d'ailleurs, vous dites \"j'ai commencé sur Instagram des petits concerts dans des bars vides et ma baby-sitter, la première à me suivre. C'était-il n'y a pas si longtemps ? Non, c'était il y a trois ans. Et là, vous vous apprêtez à chanter devant 20 000 personnes x 4. C'est un truc de fou ! En même temps, je me suis habituée à cette rapidité. Ça a été vraiment vite. J'aurais jamais imaginé déjà en arriver là en si peu de temps. Donc je profite. C'est ça qui est étonnant, parce qu'avant la génération d'artistes, ils mettaient des années à s'installer, à devenir célèbres, conquérir leur indépendance et vous, vous avez tout de suite connu le succès et vous avez tout de suite imposé votre style, votre liberté. Vous travaillez avec qui vous voulez, vous avez la maîtrise artistique sur ce que vous faites. Ça c'est une chance et j'ai un certain nombre de privilèges. Le milieu dans lequel j'ai grandi, mes parents musiciens et mon frère rappeur m'ont apporté beaucoup de soutien et de connaissance du travail qui demande énormément de sérieux, énormément de rigueur et ça je l'ai appris en voyant mes parents."
+        },
+        "questions": [
+          {
+            "enonce": "Quelle chanteuse est interviewée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Angèle",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Aya Nakamura"
+              },
+              {
+                "id": "c",
+                "texte": "Louane"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Angèle"
+              }
+            }
+          },
+          {
+            "enonce": "Dans combien de catégories Angèle est-elle nommée aux Victoires de la musique ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Trois",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Deux"
+              },
+              {
+                "id": "c",
+                "texte": "Cinq"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Trois"
+              }
+            }
+          },
+          {
+            "enonce": "Combien de grands concerts Angèle donne-t-elle en février ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Quatre",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Deux"
+              },
+              {
+                "id": "c",
+                "texte": "Six"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Quatre"
+              }
+            }
+          },
+          {
+            "enonce": "Que va faire Angèle après sa tournée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Des festivals",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Une pause totale"
+              },
+              {
+                "id": "c",
+                "texte": "Un film"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Des festivals"
+              }
+            }
+          },
+          {
+            "enonce": "Dans quelle ville Angèle va-t-elle passer plus de temps ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Bruxelles",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Paris"
+              },
+              {
+                "id": "c",
+                "texte": "Genève"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Bruxelles"
+              }
+            }
+          },
+          {
+            "enonce": "Sur quel réseau Angèle a-t-elle commencé à se faire connaître ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Instagram",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "TikTok"
+              },
+              {
+                "id": "c",
+                "texte": "Facebook"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Instagram"
+              }
+            }
+          },
+          {
+            "enonce": "Combien de personnes sont attendues à chacun des quatre grands concerts ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Vingt mille personnes",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Deux mille personnes"
+              },
+              {
+                "id": "c",
+                "texte": "Deux cents personnes"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Vingt mille personnes"
+              }
+            }
+          },
+          {
+            "enonce": "Combien de temps s'est écoulé depuis les débuts évoqués sur Instagram ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Trois ans",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Dix ans"
+              },
+              {
+                "id": "c",
+                "texte": "Six mois"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Trois ans"
+              }
+            }
+          },
+          {
+            "enonce": "Comment Angèle décrit-elle la vitesse de son succès ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Elle a été très rapide",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Elle a été très lente"
+              },
+              {
+                "id": "c",
+                "texte": "Elle n'a pas encore commencé"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Elle a été très rapide"
+              }
+            }
+          },
+          {
+            "enonce": "Quel métier son frère exerce-t-il dans la musique ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Rappeur",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Chef d'orchestre"
+              },
+              {
+                "id": "c",
+                "texte": "Luthier"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Rappeur"
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "loisirs",
+        "scene": "Loisirs · Annonce"
+      }
+    },
+    {
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "exercise": "tcf-ss-b1-s6-co-4",
+      "before": {
+        "id": "tcf-ss-b1-s6-co-4",
+        "niveau": "A2-B1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Radio 12",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/loisirs/remi-bezancon-possede-son.mp3",
+          "transcription": "Rémi Bezançon possède à son actif un regard gentiment sarcastique sur le monde de la littérature en adaptant librement le livre éponyme de David Foenkinos.\nC'est d'abord l'existence du littéraire, qui est la bibliothèque des livres refusés, créée en 1990 à Vancouver par le Canadien Richard Brautigan, celui-ci l'utilise comme toile de fond de son roman.\nC'est à Crozon, situé dans ce bout de terre du Finistère, qu'il l'installe.\nLe réalisateur et sa co-scénariste prennent toutefois quelques libertés avec l'histoire originale en concentrant leur récit autour du personnage principal, le critique littéraire Jean-Michel Rouche.\nDelphine Despero, jeune éditrice, vient passer quelques jours de vacances dans cette sereine bourgade bretonne en compagnie de son compagnon, un écrivain en quête de reconnaissance.\nElle vient rendre visite à ses parents.\nSon père lui suggère alors la visite d'un bâtiment qui fait la gloire de la petite ville, une bibliothèque avec pour particularité de proposer aux lecteurs des ouvrages recalés par les éditeurs.\nParmi tous ces textes, l'un d'eux retient l'attention de la jeune femme.\nIl s'agit de Les Dernières heures d'une histoire d'amour, signé Henri Pick.\nPlus connu pour les pizzas qu'il confectionnait toute sa vie que pour ses talents d'écrivain, et que sa femme Madeleine décrit comme un homme taciturne et peu enclin à la lecture.\nPourtant, elle décide de croire au miracle, jusqu'à ce que son acharnement à défendre cette découverte insensée se heurte au scepticisme d'un célèbre critique lors d'une émission télévisée.\nJouant avec les codes du polar, le récit nous entraîne dans une enquête sans cadavre renversante.\nLe but n'est pas de trouver qui a tué, mais qui a écrit.\nL'enquêteur, Fabrice Luchini, qui n'y apporte sa légèreté, n'est pas un professionnel.\nCette imposture littéraire excite son imagination, qui l'embarque dans de nombreuses situations cocasses.\nLa mise en scène au rythme alerte et des dialogues percutants parsèment le film d'un humour primeautier.\nLe duo comique Fabrice Luchini fait le sel de cette comédie, qui s'il rend hommage aux amoureux de livres et célèbre le pouvoir des mots, reste avant tout un divertissement intelligent."
+        },
+        "questions": [
+          {
+            "enonce": "Quel est le titre du livre refusé au centre du récit ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Les Dernières heures d'une histoire d'amour",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Les Souvenirs"
+              },
+              {
+                "id": "c",
+                "texte": "Henri Pick"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Les Dernières heures d'une histoire d'amour"
+              }
+            }
+          },
+          {
+            "enonce": "À quel nom le manuscrit découvert est-il signé ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Henri Pick",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Jean-Michel Rouche"
+              },
+              {
+                "id": "c",
+                "texte": "Richard Brautigan"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Henri Pick"
+              }
+            }
+          },
+          {
+            "enonce": "Dans quelle ville bretonne se situe la bibliothèque ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Crozon",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Brest"
+              },
+              {
+                "id": "c",
+                "texte": "Rennes"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Crozon"
+              }
+            }
+          },
+          {
+            "enonce": "Que contient cette bibliothèque particulière ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Des livres refusés par les éditeurs",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Des manuscrits anciens du roi"
+              },
+              {
+                "id": "c",
+                "texte": "Des bandes dessinées"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Des livres refusés par les éditeurs"
+              }
+            }
+          },
+          {
+            "enonce": "Quel métier exerçait Henri Pick ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Pizzaiolo",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Critique littéraire"
+              },
+              {
+                "id": "c",
+                "texte": "Éditeur"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Pizzaiolo"
+              }
+            }
+          },
+          {
+            "enonce": "Quel personnage enquête sur l'auteur du manuscrit ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Le critique Jean-Michel Rouche",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "L'éditrice Delphine Despero"
+              },
+              {
+                "id": "c",
+                "texte": "La veuve Madeleine Pick"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Le critique Jean-Michel Rouche"
+              }
+            }
+          },
+          {
+            "enonce": "Quel est le métier de Delphine Despero ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Éditrice",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Pizzaiola"
+              },
+              {
+                "id": "c",
+                "texte": "Enseignante"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Éditrice"
+              }
+            }
+          },
+          {
+            "enonce": "Qui conseille à Delphine de visiter la bibliothèque ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Son père",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Sa mère"
+              },
+              {
+                "id": "c",
+                "texte": "Son voisin"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Son père"
+              }
+            }
+          },
+          {
+            "enonce": "Qui a réalisé l'adaptation cinématographique évoquée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Rémi Bezançon",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "David Foenkinos"
+              },
+              {
+                "id": "c",
+                "texte": "Richard Brautigan"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Rémi Bezançon"
+              }
+            }
+          },
+          {
+            "enonce": "Quel est le but de l'enquête racontée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Découvrir qui a écrit le manuscrit",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Retrouver un objet volé"
+              },
+              {
+                "id": "c",
+                "texte": "Identifier l'auteur d'un meurtre"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Découvrir qui a écrit le manuscrit"
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "loisirs",
+        "scene": "Rémi Bezançon possède son"
+      },
+      "after": {
+        "id": "tcf-ss-b1-s6-co-4",
+        "niveau": "A2-B1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Radio 12",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/loisirs/remi-bezancon-possede-son.mp3",
+          "transcription": "Rémi Bezançon pose cette fois un regard gentiment sarcastique sur le monde de la littérature en adaptant librement le livre éponyme de David Foenkinos. Séduit par l'existence du lieu littéraire qu'est la bibliothèque des livres refusés créé en 1990 à Vancouver par le canadien Richard Brautigan, celui-ci l'utilise comme toile de fond de son roman. C'est à Crozon, situé dans ce bout de terre du Finistère, qui l'installe. Le réalisateur et sa coscénariste prennent toutefois quelques libertés avec l'histoire originale en concentrant leur récit autour du personnage principal, le critique littéraire Jean-Michel Rouche. Delphine Despero, jeune éditrice, vient passer quelques jours de vacances dans cette sereine bourgade bretonne, en compagnie de son compagnon, un écrivain en quête de reconnaissance. Elle vient rendre visite à ses parents. Son père lui suggère alors la visite d'un bâtiment qui fait la gloire de la petite ville, une bibliothèque, avec pour particularité, de proposer au lecteur des ouvrages recalés par les éditeurs. Parmi tous ces textes, l'un d'eux retient l'attention de la jeune femme. Il s'agit de \"les dernières heures d'une histoire d'amour\", signé \"Henri Pick\", plus connu pour les pizzas qu'il a confectionnées toute sa vie que pour ses talents d’écrivain et que sa femme Madeleine décrit comme un homme taciturne et peu enclin à la lecture. Pourtant... Elle décide de croire au miracle, jusqu'à ce que son acharnement à défendre cette découverte insensée se heurte au scepticisme d'un célèbre critique lors d'une émission télévisée. Jouant avec les codes du polar, le récit nous entraîne dans une enquête sans cadavre ni flic. Le but n'est pas de trouver qui a tué, mais qui a écrit. L'enquêteur à qui Fabrice Luchini apporte sa légèreté n'est pas un professionnel. Cette imposture littéraire excite son imagination qui l'embarque dans de nombreuses situations cocasses. La mise en scène au rythme alerte et des dialogues percutants parsèment le film d'un humour primesautier. Le duo Camille Cottin Fabrice Luchini fait le sel de cette comédie, qui, si elle rend hommage aux amoureux des livres et célèbre le pouvoir des mots, reste avant tout un divertissement intelligent."
+        },
+        "questions": [
+          {
+            "enonce": "Quel est le titre du livre refusé au centre du récit ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Les Dernières heures d'une histoire d'amour",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Les Souvenirs"
+              },
+              {
+                "id": "c",
+                "texte": "Henri Pick"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Les Dernières heures d'une histoire d'amour"
+              }
+            }
+          },
+          {
+            "enonce": "À quel nom le manuscrit découvert est-il signé ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Henri Pick",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Jean-Michel Rouche"
+              },
+              {
+                "id": "c",
+                "texte": "Richard Brautigan"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Henri Pick"
+              }
+            }
+          },
+          {
+            "enonce": "Dans quelle ville bretonne se situe la bibliothèque ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Crozon",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Brest"
+              },
+              {
+                "id": "c",
+                "texte": "Rennes"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Crozon"
+              }
+            }
+          },
+          {
+            "enonce": "Que contient cette bibliothèque particulière ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Des livres refusés par les éditeurs",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Des manuscrits anciens du roi"
+              },
+              {
+                "id": "c",
+                "texte": "Des bandes dessinées"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Des livres refusés par les éditeurs"
+              }
+            }
+          },
+          {
+            "enonce": "Quel métier exerçait Henri Pick ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Pizzaiolo",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Critique littéraire"
+              },
+              {
+                "id": "c",
+                "texte": "Éditeur"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Pizzaiolo"
+              }
+            }
+          },
+          {
+            "enonce": "Quel personnage enquête sur l'auteur du manuscrit ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Le critique Jean-Michel Rouche",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "L'éditrice Delphine Despero"
+              },
+              {
+                "id": "c",
+                "texte": "La veuve Madeleine Pick"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Le critique Jean-Michel Rouche"
+              }
+            }
+          },
+          {
+            "enonce": "Quel est le métier de Delphine Despero ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Éditrice",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Pizzaiola"
+              },
+              {
+                "id": "c",
+                "texte": "Enseignante"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Éditrice"
+              }
+            }
+          },
+          {
+            "enonce": "Qui conseille à Delphine de visiter la bibliothèque ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Son père",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Sa mère"
+              },
+              {
+                "id": "c",
+                "texte": "Son voisin"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Son père"
+              }
+            }
+          },
+          {
+            "enonce": "Qui a réalisé l'adaptation cinématographique évoquée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Rémi Bezançon",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "David Foenkinos"
+              },
+              {
+                "id": "c",
+                "texte": "Richard Brautigan"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Rémi Bezançon"
+              }
+            }
+          },
+          {
+            "enonce": "Quel est le but de l'enquête racontée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Découvrir qui a écrit le manuscrit",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Retrouver un objet volé"
+              },
+              {
+                "id": "c",
+                "texte": "Identifier l'auteur d'un meurtre"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Découvrir qui a écrit le manuscrit"
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "loisirs",
+        "scene": "Rémi Bezançon possède son"
+      }
+    },
+    {
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "exercise": "tcf-ss-b1-s12-co-2",
+      "before": {
+        "id": "tcf-ss-b1-s12-co-2",
+        "niveau": "A2-B1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Radio 15",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/vie-quotidienne/presenter-radio.mp3",
+          "transcription": "Journaliste : — Nous avons aujourd'hui le plaisir et la chance d'avoir avec nous le chanteur M.\nPokora pour une interview exclusive.\nM.\nPokora bonjour.\nM.\nPokora : — Bonjour.\nLe plaisir est pour moi.\nJournaliste : — Après l'immense succès de ton album « My Way », plus de 600 000 exemplaires vendus, tu as décidé de faire un an de pause.\nMoi, quand je fais une pause, je reste devant la télé toute la journée à ne rien faire !\nToi, tu dis que tu fais une pause, mais pendant ce temps tu as quand même créé 16 titres et un nouvel album !\nNe serais-tu pas un peu hyper actif ?\nM.\nPokora : — Oui, c'est vrai, il y a un peu de ça.\nHonnêtement, j'ai fait une pause deux mois.\nEnsuite, j'ai commencé à m'ennuyer, je ne savais plus quoi faire.\nÇa ne me ressemblait pas.\nJournaliste : — Et comment tu as eu l'idée de ton nouvel album Pyramide ?\nM.\nPokora : — Ben justement, j'étais devant la télé, je regardais un documentaire qui s'appelle « Dans le secret des pyramides ».\nJuste après, j'ai regardé plusieurs films Marvel avec des super-héros parce que c'est un style que j'aime bien.\nEt là, bam !\nL'idée m'est venue : faire l'album Pyramide avec un monde fantastique, un peu futuriste.\nJ'ai eu des images dans ma tête et j'ai appelé mon équipe pour qu'on commence à travailler.\nJournaliste : — C'est un univers que l'on retrouve dans tes concerts ?\nM.\nPokora : — Oui, les décors sont impressionnants.\nIl y a des feux d'artifice, des lasers et beaucoup de danse parce que c'est quelque chose qui me manquait.\nJournaliste : — Pyramide a été un immense succès, tu es arrivé premier au classement des albums français les plus vendus.\nOn sent que tu as mis beaucoup de toi dans cet album.\nTu parles vrai, tu parles sans filtre, tu parles de tes doutes.\nM.\nPokora : — Oui, c'est vrai, j'ai cherché à me retrouver après avoir chanté longtemps les textes des autres, j'avais envie de quelque chose de plus personnel.\nEt puis, pendant cette pause, je me suis posé beaucoup de questions, notamment de savoir si j'allais ou non arrêter ma carrière de chanteur.\nJe me suis dit « s'il me restait trois minutes là pour dire ce que je veux et qu'ensuite c'est terminé, je dis quoi ?\n».\nÇa a donné la première chanson : Pyramide, qui est également devenue le titre de l'album."
+        },
+        "questions": [
+          {
+            "enonce": "Combien de temps a réellement duré la pause de M. Pokora, selon lui ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "2 mois",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "1 an"
+              },
+              {
+                "id": "c",
+                "texte": "2 ans"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "2 mois"
+              }
+            }
+          },
+          {
+            "enonce": "Combien de titres M. Pokora a-t-il créés pendant sa pause selon le journaliste ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "16 titres",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "12 titres"
+              },
+              {
+                "id": "c",
+                "texte": "20 titres"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "16 titres"
+              }
+            }
+          },
+          {
+            "enonce": "Quelle activité a donné à M. Pokora l'idée de Pyramide ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Regarder un documentaire puis des films à la télévision",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Voyager en Égypte"
+              },
+              {
+                "id": "c",
+                "texte": "Lire une bande dessinée"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Regarder un documentaire puis des films à la télévision"
+              }
+            }
+          },
+          {
+            "enonce": "Quels effets spéciaux sont présents dans ses concerts ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Des feux d'artifice et des lasers",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "De la pluie et de la neige artificielles"
+              },
+              {
+                "id": "c",
+                "texte": "Des bulles et des jets d'eau"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Des feux d'artifice et des lasers"
+              }
+            }
+          },
+          {
+            "enonce": "Qu'est-ce qui manquait à M. Pokora ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La danse",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Le théâtre"
+              },
+              {
+                "id": "c",
+                "texte": "Les films futuristes"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "La danse"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-cours-danse-dessine.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co306-cours-theatre-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co57-films-futuristes.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "De quoi M. Pokora souhaite-t-il parler dans Pyramide ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "De lui-même et de ses doutes",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Uniquement de personnages historiques"
+              },
+              {
+                "id": "c",
+                "texte": "Uniquement de la vie d'autres chanteurs"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "De lui-même et de ses doutes"
+              }
+            }
+          },
+          {
+            "enonce": "Quel album a été vendu à plus de 600 000 exemplaires avant sa pause ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "My Way",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Pyramide"
+              },
+              {
+                "id": "c",
+                "texte": "Thriller"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "My Way"
+              }
+            }
+          },
+          {
+            "enonce": "Pourquoi sa pause réelle a-t-elle été plus courte que prévu ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Il a commencé à s'ennuyer",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Il a perdu sa télévision"
+              },
+              {
+                "id": "c",
+                "texte": "Il a dû reprendre des études"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Il a commencé à s'ennuyer"
+              }
+            }
+          },
+          {
+            "enonce": "Quel genre de films a contribué à l'univers de Pyramide ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Les films de super-héros Marvel",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Les documentaires animaliers uniquement"
+              },
+              {
+                "id": "c",
+                "texte": "Les comédies romantiques uniquement"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Les films de super-héros Marvel"
+              }
+            }
+          },
+          {
+            "enonce": "Quel classement l'album Pyramide a-t-il atteint en France ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La première place des ventes d'albums",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "La dixième place uniquement"
+              },
+              {
+                "id": "c",
+                "texte": "La dernière place du classement"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "La première place des ventes d'albums"
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "vie-quotidienne",
+        "scene": "Présenter · Radio"
+      },
+      "after": {
+        "id": "tcf-ss-b1-s12-co-2",
+        "niveau": "A2-B1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Radio 15",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/vie-quotidienne/presenter-radio.mp3",
+          "transcription": "Nous avons aujourd'hui le plaisir et la chance d'avoir avec nous le chanteur M. Pokora pour une interview exclusive. M. Pokora, bonjour. Bonjour, le plaisir est pour moi. Après l'immense succès de ton album My Way, plus de 600 000 exemplaires vendus, tu as décidé de faire un an de pause. Moi, quand je fais une pause, je reste devant la télé toute la journée à ne rien faire. Toi, tu dis que tu fais une pause, mais pendant ce temps tu as quand même créé 16 titres et un nouvel album. Ne serais-tu pas un peu hyperactif ? Oui, c'est vrai. Il y a un peu de ça. Honnêtement, j'ai fait une pause deux mois. Ensuite, j'ai commencé à m'ennuyer. Je ne savais plus quoi faire. Ça ne me ressemblait pas. Et comment tu as eu l'idée de ton nouvel album Pyramide ? Ben justement, j'étais devant la télé, je regardais un documentaire qui s'appelle \"Dans le secret des pyramides\". Juste après, j'ai regardé plusieurs films Marvel avec des super-héros parce que c'est un style que j'aime bien. Et là, bam, l'idée m'est venue. Faire l'album Pyramide avec un monde fantastique un peu futuriste. J'ai eu des images dans ma tête et j'ai appelé mon équipe pour qu'on commence à travailler. C'est un univers que l'on retrouve dans tes concerts ? Oui, les décors sont impressionnants. Il y a des feux d'artifice, des lasers et beaucoup de danse parce que c'est quelque chose qui me manquait. Pyramide a été un immense succès. Tu es arrivé premier au classement des albums français les plus vendus. On sent que tu as mis beaucoup de toi dans cet album. Tu parles vrai, tu parles sans filtre, tu parles de tes doutes. Oui, c'est vrai. J'ai cherché à me retrouver après avoir chanté longtemps les textes des autres. J'avais envie de quelque chose de plus personnel. Et puis pendant cette pause, je me suis posé beaucoup de questions, notamment de savoir si j'allais ou non arrêter ma carrière de chanteur. Je me suis dit, s'il me restait trois minutes là pour dire ce que je veux, et qu'ensuite c'est terminé, je dis quoi ? Ça a donné la première chanson. Pyramide, qui est également devenue le titre de l'album."
+        },
+        "questions": [
+          {
+            "enonce": "Combien de temps a réellement duré la pause de M. Pokora, selon lui ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "2 mois",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "1 an"
+              },
+              {
+                "id": "c",
+                "texte": "2 ans"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "2 mois"
+              }
+            }
+          },
+          {
+            "enonce": "Combien de titres M. Pokora a-t-il créés pendant sa pause selon le journaliste ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "16 titres",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "12 titres"
+              },
+              {
+                "id": "c",
+                "texte": "20 titres"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "16 titres"
+              }
+            }
+          },
+          {
+            "enonce": "Quelle activité a donné à M. Pokora l'idée de Pyramide ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Regarder un documentaire puis des films à la télévision",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Voyager en Égypte"
+              },
+              {
+                "id": "c",
+                "texte": "Lire une bande dessinée"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Regarder un documentaire puis des films à la télévision"
+              }
+            }
+          },
+          {
+            "enonce": "Quels effets spéciaux sont présents dans ses concerts ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Des feux d'artifice et des lasers",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "De la pluie et de la neige artificielles"
+              },
+              {
+                "id": "c",
+                "texte": "Des bulles et des jets d'eau"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Des feux d'artifice et des lasers"
+              }
+            }
+          },
+          {
+            "enonce": "Qu'est-ce qui manquait à M. Pokora ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La danse",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Le théâtre"
+              },
+              {
+                "id": "c",
+                "texte": "Les films futuristes"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "La danse"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-cours-danse-dessine.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co306-cours-theatre-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co57-films-futuristes.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "De quoi M. Pokora souhaite-t-il parler dans Pyramide ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "De lui-même et de ses doutes",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Uniquement de personnages historiques"
+              },
+              {
+                "id": "c",
+                "texte": "Uniquement de la vie d'autres chanteurs"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "De lui-même et de ses doutes"
+              }
+            }
+          },
+          {
+            "enonce": "Quel album a été vendu à plus de 600 000 exemplaires avant sa pause ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "My Way",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Pyramide"
+              },
+              {
+                "id": "c",
+                "texte": "Thriller"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "My Way"
+              }
+            }
+          },
+          {
+            "enonce": "Pourquoi sa pause réelle a-t-elle été plus courte que prévu ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Il a commencé à s'ennuyer",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Il a perdu sa télévision"
+              },
+              {
+                "id": "c",
+                "texte": "Il a dû reprendre des études"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Il a commencé à s'ennuyer"
+              }
+            }
+          },
+          {
+            "enonce": "Quel genre de films a contribué à l'univers de Pyramide ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Les films de super-héros Marvel",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Les documentaires animaliers uniquement"
+              },
+              {
+                "id": "c",
+                "texte": "Les comédies romantiques uniquement"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Les films de super-héros Marvel"
+              }
+            }
+          },
+          {
+            "enonce": "Quel classement l'album Pyramide a-t-il atteint en France ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La première place des ventes d'albums",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "La dixième place uniquement"
+              },
+              {
+                "id": "c",
+                "texte": "La dernière place du classement"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "La première place des ventes d'albums"
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "vie-quotidienne",
+        "scene": "Présenter · Radio"
+      }
+    }
+  ],
+  "status": "installed",
+  "received_originals_modified": 0,
+  "human_listening_performed": false
+}

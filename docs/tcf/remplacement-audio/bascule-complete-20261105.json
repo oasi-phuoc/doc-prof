@@ -32213,6 +32213,1720 @@
       "previous_pool": null,
       "question_changes": [],
       "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/presenter/moyen-a2__radio-17.1.mp3",
+      "previous_sha256": "e47166bd008ee38c4298c335f9ef1896c51eeca3fc4004ee7b4158d001254a1a",
+      "candidate_sha256": "96cfc15719ebbf673af35efcc7421a8260272e1cac370bebcfe7a7c7c016e38f",
+      "rollback_git_blob": "9838dc89e5237751c69efe966c5ee9306a67e9de",
+      "source_id": "additional-20261102:mdf-a2-abc-direct:58:39f4143a409d:ffcb8219",
+      "source_sha256": "39f4143a409df74473cc5894d48b6f55569c0b0a427858706000bdd3fc4edeb8",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "96cfc15719ebbf673af35efcc7421a8260272e1cac370bebcfe7a7c7c016e38f",
+        "duration": 14.628571,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014049-c3136d5d92/manifest.json",
+          "manifest_sha256": "e541d59a6bcb891fa4af7d056d99576abb9174c3532b983329b1e718c906809e",
+          "lossless_sha256": "c1719aaaaad8d2aa6f13b46aac57acc50d67a634c34118fe0c3cedb512f165b9"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.21,
+          "trailing_quiet_seconds": 0.38,
+          "relative_rms_threshold": 0.0095682,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "whisper",
+        "ctc"
+      ],
+      "editorial_reason": "Transcriptions finales Whisper et CTC comparées ; questions et trois propositions relues : informations présentes dans le message, une réponse correcte par question. Parakeet comporte des changements de langue et ne constitue pas la seconde validation.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 15.23,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_03-3.mp3",
+      "previous_sha256": "d289209f8178a1e9122cbbf3b1e6a23ada712fbb4db71e0b305ba33ec0ac6359",
+      "candidate_sha256": "ab9d24ec7846f1f0e1d4189ce68d0d97cc5b500adfe34de6a60db6d0c36adaa2",
+      "rollback_git_blob": "d62926d445c386fc78c7e20c933d811e2df6f3ec",
+      "source_id": "delf_a2_2021:003:2505cafdfeda",
+      "source_sha256": "2505cafdfeda63e039eed59a3d734231941d595e61941948500c9f9a3e06f18d",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "ab9d24ec7846f1f0e1d4189ce68d0d97cc5b500adfe34de6a60db6d0c36adaa2",
+        "duration": 12.617143,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111901-25ee4b719d/manifest.json",
+          "manifest_sha256": "0c2a8037f6f82686d9b598ec1b67a94f16545f63502678248f3ba6f1c26a8da9",
+          "lossless_sha256": "2a6fd8384777b9aaa6703fd67405fe0421acd37e769fcccc4edb3007b1ecd14c"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.25,
+          "trailing_quiet_seconds": 0.03,
+          "relative_rms_threshold": 0.0101829,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "ctc"
+      ],
+      "editorial_reason": "Reconnaissances finales comparées ; transcription, attribution des informations, questions et réponses relues.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 22.54,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/salut-c-est-lea.mp3",
+      "previous_sha256": "945cfbef094550d2e05d2d8aa56f6ee2c84948681ec78cc534ccbbd92fadc57b",
+      "candidate_sha256": "6a84725b1daa2b8f26733d7b8146060149dab27ecf4b67a8ee82a9df165f805f",
+      "rollback_git_blob": "697700b78c1fee3bbeac3c05179e4012b3450747",
+      "source_id": "09035276:016:6b09b42afbaf",
+      "source_sha256": "6b09b42afbaf89dfed2f2dce05947ac57fa215cb7e4cf031405ce5257eac668a",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "6a84725b1daa2b8f26733d7b8146060149dab27ecf4b67a8ee82a9df165f805f",
+        "duration": 20.81,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "6b09b42afbaf89dfed2f2dce05947ac57fa215cb7e4cf031405ce5257eac668a",
+          "proof": {
+            "previous_sha256": "b9d2d5400af1662775a32ff0ab75108a78e27185a2d74d0fb4107d715dfc9f11",
+            "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111238-af377d7de8/09035276-016-6b09b42afbaf-d1/candidate.mp3",
+            "status": "new_candidate_requires_two_recognitions",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/b9d2d5400af1662775a32ff0ab75108a78e27185a2d74d0fb4107d715dfc9f11-134064-1051785/candidate.mp3",
+            "sha256": "6a84725b1daa2b8f26733d7b8146060149dab27ecf4b67a8ee82a9df165f805f",
+            "source_sha256": "6b09b42afbaf89dfed2f2dce05947ac57fa215cb7e4cf031405ce5257eac668a",
+            "source_file": "/workspace/work/tcf-audio-replacement/incoming/a1/09035276_16_Ex 13-1.mp3",
+            "source_decoded_pcm_sha256": "ede102687dd513e4478f7ddf34e685567762ff3ec687d4792cf3b6545520ab2a",
+            "source_sample_rate": 44100,
+            "source_channels": 1,
+            "source_start_frame": 134064,
+            "source_end_frame": 1051785,
+            "source_start": 3.04,
+            "source_end": 23.85,
+            "source_slice_pcm_sha256": "f3100f9e3e35ad656b38d96636a2a5d0647fddc119939bcc88257167ade11420",
+            "previous_start": 3.04,
+            "previous_end": 23.72,
+            "word_anchors_and_signal": [
+              {
+                "edge": "end",
+                "quiet_interval": [
+                  23.73,
+                  24.52
+                ],
+                "last_word": "10!",
+                "next_word_start": 24.878979591836735
+              }
+            ],
+            "human_listening_performed": false
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.28,
+          "trailing_quiet_seconds": 0.14,
+          "relative_rms_threshold": 0.006319383308291436,
+          "safe_quiet_margins": true
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.384,
+          "trailing_non_speech_seconds": 0.106,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
+      "editorial_reason": "Transcriptions finales Whisper et CTC comparées ; questions et trois propositions relues : informations présentes dans le message, une réponse correcte par question. Parakeet comporte des changements de langue et ne constitue pas la seconde validation.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 21.97,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/julie-dois-aller-nouveau-1-1.mp3",
+      "previous_sha256": "7d2286947ce63546cd02fa6e7f474c28d383e93a861d81e99df6ee56e56726a4",
+      "candidate_sha256": "5cb364b1ca36a48b668603d7d34d71edb2bf1d92a372ae69522dbf90949a60a2",
+      "rollback_git_blob": "a186079872f6ecc2913cd41650a93f98e65efb16",
+      "source_id": "09035276:044:6f1e71a5d8e3",
+      "source_sha256": "6f1e71a5d8e3ac6bfec9c2c240b714385e061f5c4ca83b3ba67d8dfcb9953b5f",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "5cb364b1ca36a48b668603d7d34d71edb2bf1d92a372ae69522dbf90949a60a2",
+        "duration": 7.758367,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T013647-050084cd91/manifest.json",
+          "manifest_sha256": "f01ef756b41527ef5603997d862e4fce51f151b7983ec43f4ca675483a4091af",
+          "lossless_sha256": "cdcb163c0cd46744fc9f3705de2be27b5e101aff2f0cbf73cd12421577133973"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.23,
+          "trailing_quiet_seconds": 0.09,
+          "relative_rms_threshold": 0.0068805,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "whisper",
+        "ctc"
+      ],
+      "editorial_reason": "Reconnaissances finales comparées ; transcription, attribution des informations, questions et réponses relues.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 11.74,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/alors-cette-fete-anniversaire-2-2.mp3",
+      "previous_sha256": "654926a9870942bd1e1167baade2e130ea50b9ef35c5a5ca585b326845fd447c",
+      "candidate_sha256": "a5695b7568f94556b3d941c2b6a6d1dbdfbe403c2ca9787120a46350bd0aceb4",
+      "rollback_git_blob": "ace00e89165aeeb2a1fba55768a54221017a0ef1",
+      "source_id": "additional-20261102:mdf-a2-abc-direct:95:b95d20d0713a:ac7750fa",
+      "source_sha256": "b95d20d0713abcff0016f342512922e61e582b85cb976f89f56b60102f85dfab",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "a5695b7568f94556b3d941c2b6a6d1dbdfbe403c2ca9787120a46350bd0aceb4",
+        "duration": 13.426939,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014540-165f308dd8/manifest.json",
+          "manifest_sha256": "ef4390c6301318551dc628bbd939e081996c279e160d7dffe93b48594e41c091",
+          "lossless_sha256": "ce38236ae9ca7c73db957827a371d39a503dc8c2607f13c5128f8ff5db75fe86"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.19,
+          "trailing_quiet_seconds": 0.04,
+          "relative_rms_threshold": 0.008764,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "whisper",
+        "ctc"
+      ],
+      "editorial_reason": "Reconnaissances finales comparées ; transcription, attribution des informations, questions et réponses relues.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 18.39,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/radio/01-radio-importance-du-look-vestimentaire.mp3",
+      "previous_sha256": "88ef13c3169fdbc853507c78d6115e8e6f7cc98d2708a6644c81323fe2e08cbf",
+      "candidate_sha256": "8b226cb2a58112bb2a89a3d67f81322ff502923d7256ab8206a5f01b30598a87",
+      "rollback_git_blob": "798348b08b864c8cfa5c945585651a12fe2285f0",
+      "source_id": "09035196:020:b1b4e9c355f7",
+      "source_sha256": "b1b4e9c355f74f24cd08d02bd447bcef1fe855421aac4eeb0452da8a5e9476e2",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "8b226cb2a58112bb2a89a3d67f81322ff502923d7256ab8206a5f01b30598a87",
+        "duration": 79.647347,
+        "category": "long",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T013752-57bf906427/manifest.json",
+          "manifest_sha256": "ff8786907cfde38f447dac8dae083bc5360eeb81aa9b83295f47d3c328599ef8",
+          "lossless_sha256": "320287eb6abb46f9a234a72b3f5776b7ba02ea483f8133a7c45d0d0302d1e10e"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "needs_boundary_review",
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.19,
+          "relative_rms_threshold": 0.0057203,
+          "safe_quiet_margins": false,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.384,
+          "trailing_non_speech_seconds": 0.112,
+          "speech_region_count": 41,
+          "safe_voiced_margins": true,
+          "method": "Silero VAD with no padding; supplementary speech-vs-music evidence, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "whisper",
+        "ctc"
+      ],
+      "editorial_reason": "Reconnaissances finales comparées ; transcription, attribution des informations, questions et réponses relues.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 87.07,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/actualite/07-actualité-annonymat-sur-internet.mp3",
+      "previous_sha256": "bd797c96eb3c26a5e52048fbdab40ca1fece664180a99d033c545153e0ccc6d2",
+      "candidate_sha256": "630f5f981f938ee146e24ba64b7f79895ad0cef428a7266a2376ed5e2b32370d",
+      "rollback_git_blob": "87f472094b5f37232e931942d3b388869b1406bb",
+      "source_id": "09035196:030:8f132405caaf",
+      "source_sha256": "8f132405caaf3cf0817a5c3f2804c1791557c4cb2eff9f60aedf9a39f3c30344",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "630f5f981f938ee146e24ba64b7f79895ad0cef428a7266a2376ed5e2b32370d",
+        "duration": 114.808163,
+        "category": "long",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T013920-b6415afbce/manifest.json",
+          "manifest_sha256": "446caa8c701fe70540aedfefeab4c36628379246f22d7cbc897d9e0981b8ac2d",
+          "lossless_sha256": "2e4e9bfefb30cf6e7581ae69ac4d18cf52164a101f9efd69f8e3362f114d69be"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "needs_boundary_review",
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.23,
+          "relative_rms_threshold": 0.0051155,
+          "safe_quiet_margins": false,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.416,
+          "trailing_non_speech_seconds": 0.104,
+          "speech_region_count": 29,
+          "safe_voiced_margins": true,
+          "method": "Silero VAD with no padding; supplementary speech-vs-music evidence, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "whisper",
+        "ctc"
+      ],
+      "editorial_reason": "Reconnaissances finales comparées ; transcription, questions et corrigés relus. Noms non épelés : graphies éditoriales documentées.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 120.47,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/de-greta-anita-n-y.mp3",
+      "previous_sha256": "311ac89530b7af256f071ecb2255f6bfe512d1fa13d9e2e4e624af34ec91ea89",
+      "candidate_sha256": "db699158f4ec777d1bb7481212f38906e79feaed09d2b7323ed2bd450cbbea6a",
+      "rollback_git_blob": "e6915d7743b26b5cd11fc89a653c751ddc8ab5c5",
+      "source_id": "additional-20261102:mdf-b1-abc-direct:31:f55560376dbf:251303e8",
+      "source_sha256": "f55560376dbfa13f4a526f79ec2cc3c348d444015644bb8423809737f82957eb",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "db699158f4ec777d1bb7481212f38906e79feaed09d2b7323ed2bd450cbbea6a",
+        "duration": 128.417959,
+        "category": "long",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014749-bf3d7a77ea/manifest.json",
+          "manifest_sha256": "a2d14705dd8e34b538902dcfdef419ad80a0cd02c29b50686db2817ec3711069",
+          "lossless_sha256": "921620d09624a1eef4fee631f3fdb96f80ec01663841bc3935e88fc40bb430c8"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.4,
+          "trailing_quiet_seconds": 0.13,
+          "relative_rms_threshold": 0.004728,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "whisper",
+        "ctc"
+      ],
+      "editorial_reason": "Reconnaissances finales comparées ; transcription, questions et corrigés relus. Noms non épelés : graphies éditoriales documentées.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 128.99,
+      "previous_pool": null,
+      "question_changes": [
+        {
+          "exercise": "tcf-ss-b1-s5-co-1",
+          "question": 6,
+          "before": {
+            "enonce": "Sur quels services le film a-t-il été mis en ligne ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "YouTube B-Voir et Imago.tv",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Netflix et Prime Video"
+              },
+              {
+                "id": "c",
+                "texte": "France.tv et Arte.tv"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "YouTube B-Voir et Imago.tv"
+              }
+            }
+          },
+          "after": {
+            "enonce": "Sur quels services le film a-t-il été mis en ligne ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La chaîne YouTube Le Biais Vert et Imago.tv",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "La chaîne YouTube Le Biais Vert et Netflix"
+              },
+              {
+                "id": "c",
+                "texte": "Dailymotion et Arte.tv"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "La chaîne YouTube Le Biais Vert et Imago.tv"
+              }
+            }
+          }
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/jacques-as-petite-2-2.mp3",
+      "previous_sha256": "7982c5433e3b66738e1ba00caae2b8d587b06f73d3e4ee54537f852134827b60",
+      "candidate_sha256": "ed6bad2edc284c92c5eee6e98e31d5f47f4f08da46e08525e61b7f2b1b3fd03f",
+      "rollback_git_blob": "25370454e4acd2bdbca939690ff7c78da6a29c0f",
+      "source_id": "9782090351958:020:ed311afde286",
+      "source_sha256": "ed311afde286c056dcc3c26c6dcdb90eeedefc6b91335addf8525e6df2265b83",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "ed6bad2edc284c92c5eee6e98e31d5f47f4f08da46e08525e61b7f2b1b3fd03f",
+        "duration": 11.650612,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T013821-0688c307ed/manifest.json",
+          "manifest_sha256": "a1a800258468ac4d32099c4aa2f8a6688ac4e4c404c5f8c38dad87546f7aa248",
+          "lossless_sha256": "ab1bdd98dea398f46b68a042b5380fb2aeaa084389c5f2f7615c341f81c6b9e3"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "needs_boundary_review",
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.02,
+          "relative_rms_threshold": 0.0087495,
+          "safe_quiet_margins": false,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.448,
+          "trailing_non_speech_seconds": 0.52,
+          "speech_region_count": 6,
+          "safe_voiced_margins": true,
+          "method": "Silero VAD with no padding; supplementary speech-vs-music evidence, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "whisper",
+        "ctc"
+      ],
+      "editorial_reason": "Transcriptions finales Whisper et CTC comparées ; questions et trois propositions relues : informations présentes dans le message, une réponse correcte par question. Parakeet comporte des changements de langue et ne constitue pas la seconde validation.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 16.27,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/magasins/magasins-3-6.mp3",
+      "previous_sha256": "a37a51145f60e5cb7e21a549e6a37a293795a8c80935aca90c44cc6f0b62d23b",
+      "candidate_sha256": "3b6fe975c96c492d6d5badb68b0286e0288e3b5676d0505fd2e833b85fa4251e",
+      "rollback_git_blob": "4b48925e379f0d86bb052420b89cd973ea48c5f0",
+      "source_id": "9782090351958:049:a4431f87ae61",
+      "source_sha256": "a4431f87ae61175f42764e9be38995308b7ae8812677b3cdda5c291cfb632b6a",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "3b6fe975c96c492d6d5badb68b0286e0288e3b5676d0505fd2e833b85fa4251e",
+        "duration": 11.990204,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T013857-37b532402c/manifest.json",
+          "manifest_sha256": "21a69a4f7aaf8541a2bec18c1f750ae2b011e6c92ba56a2c4a2609f15b7c95f8",
+          "lossless_sha256": "ed4a7483cc7ecf7cfac2b85431c085185ef98dbd447a86e6b5896bd34f043068"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "needs_boundary_review",
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.0,
+          "relative_rms_threshold": 0.0080724,
+          "safe_quiet_margins": false,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.416,
+          "trailing_non_speech_seconds": 0.152,
+          "speech_region_count": 4,
+          "safe_voiced_margins": true,
+          "method": "Silero VAD with no padding; supplementary speech-vs-music evidence, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "whisper",
+        "ctc"
+      ],
+      "editorial_reason": "Reconnaissances finales comparées ; transcription, attribution des informations, questions et réponses relues. Tipeee non épelé : graphie éditoriale.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 12.83,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/ecole/29-école-tournoi-basketball.mp3",
+      "previous_sha256": "758ea2e181227b33a7a01da9f7af59f5c23f02389d8f8189ff6cbec300221add",
+      "candidate_sha256": "a8aacf8ddb54464e2a45bc5367f6fe2f34f8fa4f9918e60ce2b83cab9401f1fe",
+      "rollback_git_blob": "19dae6f473c818cc1ce588c50ec0214748304f17",
+      "source_id": "9782090351958:010:fa08edbcc754",
+      "source_sha256": "fa08edbcc75481fc2fd4bdb4cf44d28cc3d9d212af85afeece97a2e9d3d8ebde",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "a8aacf8ddb54464e2a45bc5367f6fe2f34f8fa4f9918e60ce2b83cab9401f1fe",
+        "duration": 10.631837,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T013743-fbd055b5a5/manifest.json",
+          "manifest_sha256": "7b7b508a67874c7a4d0a200db512eb0fb46ab32658083c6b4e8777a9aa332a05",
+          "lossless_sha256": "b075b925aac8e2cb893cf963ad997f63ef78822a9c6a44fc0f1b8ed51669a5ff"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.26,
+          "trailing_quiet_seconds": 0.04,
+          "relative_rms_threshold": 0.0052038,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "whisper",
+        "ctc"
+      ],
+      "editorial_reason": "Transcriptions finales Whisper et CTC comparées ; questions et trois propositions relues : informations présentes dans le message, une réponse correcte par question. Parakeet comporte des changements de langue et ne constitue pas la seconde validation.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 12.59,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/hmm-ca-sent-bon.mp3",
+      "previous_sha256": "2f74e93b30509a9a74559670725c264dedd7f39ceaea6b53665e2c4116118eb1",
+      "candidate_sha256": "6e7256f4c1b94ca429217cdc88f3e02e40795b3b76074d86ae251ba1eade6649",
+      "rollback_git_blob": "a57ca325013537af1701f5ede107e50b9f3bd262",
+      "source_id": "09035196:016:919ecc7fa151",
+      "source_sha256": "919ecc7fa15151c60fb7818de6992b8ad279cfe649b47b5792dbc7bb4eb62ff6",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "6e7256f4c1b94ca429217cdc88f3e02e40795b3b76074d86ae251ba1eade6649",
+        "duration": 82.390204,
+        "category": "long",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T013751-147714e7b8/manifest.json",
+          "manifest_sha256": "8821d6753361e77b751cfd1a900230bdf76dbec8d61731e35a67bee61f1ec4e1",
+          "lossless_sha256": "d94c6f9aa8d1a5094c61b04bcc1222a6d338e39190651c45a122fbd879f60af8"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.34,
+          "trailing_quiet_seconds": 0.14,
+          "relative_rms_threshold": 0.0061035,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "whisper",
+        "ctc"
+      ],
+      "editorial_reason": "Reconnaissances finales comparées ; transcription, questions et corrigés relus. Noms non épelés : graphies éditoriales documentées.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 83.41,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-thierry-deja.mp3",
+      "previous_sha256": "86a477031cce35c66e76b1ae8a1a4360edea64cdd13827fd96101dda0f7c5248",
+      "candidate_sha256": "0cff0fe6bf2a216b2e29e278b52981eae294af8dc6fc205123481f0322332859",
+      "rollback_git_blob": "b5fdf3f274369e0949f08aba94ef3e933328263a",
+      "source_id": "additional-20261102:mdf-b1-abc-direct:16:a9c3c8627a50:b0a250af",
+      "source_sha256": "a9c3c8627a50fc7532bca80e293f2d36702d4ca704ae2dbefb43cde8aa11f950",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "0cff0fe6bf2a216b2e29e278b52981eae294af8dc6fc205123481f0322332859",
+        "duration": 107.389388,
+        "category": "long",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014705-c19db8c2eb/manifest.json",
+          "manifest_sha256": "a51d22422d00d1c368230202301d655db63567f004cc084cc59233deb01f9f93",
+          "lossless_sha256": "323db7fc25bd7f48ed6768aeb7efab0d6f9b2417fae6518b02fbbb492d54f711"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.19,
+          "trailing_quiet_seconds": 0.08,
+          "relative_rms_threshold": 0.0051445,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "whisper",
+        "ctc"
+      ],
+      "editorial_reason": "Reconnaissances finales comparées ; transcription, attribution des informations, questions et réponses relues.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 112.22,
+      "previous_pool": null,
+      "question_changes": [
+        {
+          "exercise": "tcf-ss-b1-s3-co-1",
+          "question": 2,
+          "before": {
+            "enonce": "Quel âge ont les parents de Madame Thierry ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "84 et 86 ans",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "70 et 72 ans"
+              },
+              {
+                "id": "c",
+                "texte": "90 et 92 ans"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "84 et 86 ans"
+              }
+            }
+          },
+          "after": {
+            "enonce": "Quel âge ont les parents évoqués dans la conversation ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "84 et 86 ans",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "70 et 72 ans"
+              },
+              {
+                "id": "c",
+                "texte": "90 et 92 ans"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "84 et 86 ans"
+              }
+            }
+          }
+        },
+        {
+          "exercise": "tcf-ss-b1-s3-co-1",
+          "question": 9,
+          "before": {
+            "enonce": "Quand Madame Thierry rend-elle visite à ses parents ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Le matin et le soir",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Une fois par mois"
+              },
+              {
+                "id": "c",
+                "texte": "Seulement le dimanche"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Le matin et le soir"
+              }
+            }
+          },
+          "after": {
+            "enonce": "Quand la personne rend-elle visite à ses parents ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Le matin et le soir",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Une fois par mois"
+              },
+              {
+                "id": "c",
+                "texte": "Seulement le dimanche"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Le matin et le soir"
+              }
+            }
+          }
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/j-aimerais-beaucoup-creer-livre.mp3",
+      "previous_sha256": "0e80918676e4d0af63b265fffad2365e2ce4f88be14a5eaedbbf4936f432f16b",
+      "candidate_sha256": "be2ec3248a61a778edc9a4fe580dd60233fcc8ee99810ab02109d79a01a5d273",
+      "rollback_git_blob": "165075e4ad31b827570f335341f7539ffc36a9a5",
+      "source_id": "09035196:015:575a005b1b0a",
+      "source_sha256": "575a005b1b0a203d35c63f2038cbc2879b91ca89b8e23fe18f6ecf6923388c32",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "be2ec3248a61a778edc9a4fe580dd60233fcc8ee99810ab02109d79a01a5d273",
+        "duration": 90.253061,
+        "category": "long",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T013808-ae97c96f08/manifest.json",
+          "manifest_sha256": "30a7ba1e59198e42331fa98c77547d060b3bf257c183acc23a598a2d299e2296",
+          "lossless_sha256": "dbe8b736c06e072d46c981672f0bff978990736af0603064fa0584dfe711c1e7"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.3,
+          "trailing_quiet_seconds": 0.19,
+          "relative_rms_threshold": 0.0062449,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "whisper",
+        "ctc"
+      ],
+      "editorial_reason": "Transcriptions finales Whisper et CTC comparées ; questions et trois propositions relues : informations présentes dans le message, une réponse correcte par question. Parakeet comporte des changements de langue et ne constitue pas la seconde validation.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 90.78,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/une-bonne-cuisine-se.mp3",
+      "previous_sha256": "2e1d23003f2bd06d2b1446f3b0476a18714b4f000f26c19d58d43899d5e91c43",
+      "candidate_sha256": "2b5e75cffb14679005ef221a8ff7b2ca953afdf3b53d5f39a36fd3a0dfa6efa0",
+      "rollback_git_blob": "3a51c605cc2ec908f2f39ed172c16efa10ef31e5",
+      "source_id": "additional-20261102:mdf-b1-abc-direct:27:66cb51385784:6925c93c",
+      "source_sha256": "66cb5138578418948724584a77e8e6cb0a84fe38a6baab17e5fc2ee39e0a593d",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "2b5e75cffb14679005ef221a8ff7b2ca953afdf3b53d5f39a36fd3a0dfa6efa0",
+        "duration": 122.853878,
+        "category": "long",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014737-bc6ef57f2d/manifest.json",
+          "manifest_sha256": "44e457e7006f8ca27f2563f77cd1a8a0fcc082e81b5c770cc91ea5e9c5454e68",
+          "lossless_sha256": "a7e790f0689c315079fd64ecfbecb2b9b4f7a3132354580b750a1f99faf651b5"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.32,
+          "trailing_quiet_seconds": 0.17,
+          "relative_rms_threshold": 0.0051023,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "whisper",
+        "ctc"
+      ],
+      "editorial_reason": "Transcriptions finales Whisper et CTC comparées ; questions et trois propositions relues : informations présentes dans le message, une réponse correcte par question. Parakeet comporte des changements de langue et ne constitue pas la seconde validation. Les sigles AOC/AOP/IGP/STG/AB sont explicités dans le document ; orthographe rétablie sans changer les garanties énoncées.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 114.1,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/journee-conversation.mp3",
+      "previous_sha256": "b970c903821532ccb45929418c3f3854150bea76453589caebd85a8810306718",
+      "candidate_sha256": "a3a50e17423dabfed8e64d1666db0c5a21dec5f4e555c1027669eaa494671252",
+      "rollback_git_blob": "82f5042cdf10a3673de9a1af9644086f0d577a4b",
+      "source_id": "09035196:013:44d439fabe9d",
+      "source_sha256": "44d439fabe9df4d18d5c959607fb40e3af1fed871ecdb9cfd8f84b2cfbc16911",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "a3a50e17423dabfed8e64d1666db0c5a21dec5f4e555c1027669eaa494671252",
+        "duration": 98.220408,
+        "category": "long",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T013832-a5e9337eea/manifest.json",
+          "manifest_sha256": "587e21ba1ebcda1fe3a90673f32271be2d44ae1053b7f0d15573497f1ebd1487",
+          "lossless_sha256": "5397df7b04825234196d0e8551d07005249169a2b021d6b584219f55498728c4"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.29,
+          "trailing_quiet_seconds": 0.12,
+          "relative_rms_threshold": 0.0065882,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "whisper",
+        "ctc"
+      ],
+      "editorial_reason": "Transcriptions finales Whisper et CTC comparées ; questions et trois propositions relues : informations présentes dans le message, une réponse correcte par question. Parakeet comporte des changements de langue et ne constitue pas la seconde validation.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 98.66,
+      "previous_pool": null,
+      "question_changes": [
+        {
+          "exercise": "tcf-ss-b1-s4-co-3",
+          "question": 1,
+          "before": {
+            "enonce": "Comment Élisa juge-t-elle son stage d'escalade ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Elle l'a trouvé génial",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Elle l'a trouvé ennuyeux"
+              },
+              {
+                "id": "c",
+                "texte": "Elle l'a trouvé inutile"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Elle l'a trouvé génial"
+              }
+            }
+          },
+          "after": {
+            "enonce": "Comment la jeune participante juge-t-elle son stage d'escalade ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Elle l'a trouvé génial",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Elle l'a trouvé ennuyeux"
+              },
+              {
+                "id": "c",
+                "texte": "Elle l'a trouvé inutile"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Elle l'a trouvé génial"
+              }
+            }
+          }
+        },
+        {
+          "exercise": "tcf-ss-b1-s4-co-3",
+          "question": 2,
+          "before": {
+            "enonce": "Pourquoi Élisa n'a-t-elle pas donné beaucoup de nouvelles ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Elle n'avait pas une minute de libre",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Elle avait perdu son téléphone"
+              },
+              {
+                "id": "c",
+                "texte": "Elle était fâchée avec ses parents"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Elle n'avait pas une minute de libre"
+              }
+            }
+          },
+          "after": {
+            "enonce": "Pourquoi la jeune participante n'a-t-elle pas donné beaucoup de nouvelles ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Elle n'avait pas une minute de libre",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Elle avait perdu son téléphone"
+              },
+              {
+                "id": "c",
+                "texte": "Elle était fâchée avec ses parents"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Elle n'avait pas une minute de libre"
+              }
+            }
+          }
+        },
+        {
+          "exercise": "tcf-ss-b1-s4-co-3",
+          "question": 4,
+          "before": {
+            "enonce": "Pourquoi Élisa n'a-t-elle parfois pas pu escalader ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Le niveau était trop élevé",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Elle était trop fatiguée"
+              },
+              {
+                "id": "c",
+                "texte": "Il faisait trop chaud"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Le niveau était trop élevé"
+              }
+            }
+          },
+          "after": {
+            "enonce": "Pourquoi la jeune participante n'a-t-elle parfois pas pu escalader ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Le niveau était trop élevé",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Elle était trop fatiguée"
+              },
+              {
+                "id": "c",
+                "texte": "Il faisait trop chaud"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Le niveau était trop élevé"
+              }
+            }
+          }
+        },
+        {
+          "exercise": "tcf-ss-b1-s4-co-3",
+          "question": 5,
+          "before": {
+            "enonce": "Dans quelle année d'apprentissage de l'escalade Élisa se trouve-t-elle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Sa deuxième année",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Sa sixième année"
+              },
+              {
+                "id": "c",
+                "texte": "Sa septième année"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Sa deuxième année"
+              }
+            }
+          },
+          "after": {
+            "enonce": "Dans quelle année d'apprentissage de l'escalade la jeune participante se trouve-t-elle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Sa deuxième année",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Sa sixième année"
+              },
+              {
+                "id": "c",
+                "texte": "Sa septième année"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "Sa deuxième année"
+              }
+            }
+          }
+        },
+        {
+          "exercise": "tcf-ss-b1-s4-co-3",
+          "question": 8,
+          "before": {
+            "enonce": "Comment Élisa a-t-elle aussi appris pendant le stage ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "En observant ses camarades plus expérimentés",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "En regardant des vidéos chez elle"
+              },
+              {
+                "id": "c",
+                "texte": "En lisant seule un manuel"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "En observant ses camarades plus expérimentés"
+              }
+            }
+          },
+          "after": {
+            "enonce": "Comment la jeune participante a-t-elle aussi appris pendant le stage ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "En observant ses camarades plus expérimentés",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "En regardant des vidéos chez elle"
+              },
+              {
+                "id": "c",
+                "texte": "En lisant seule un manuel"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 2,
+                "reponse_modele": "En observant ses camarades plus expérimentés"
+              }
+            }
+          }
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/loisirs/loisirs-radio.mp3",
+      "previous_sha256": "24c090ed48a0d1a4f45d4dc6911a510a8cc1a027d132d503b8a69fd2f29b0f83",
+      "candidate_sha256": "c144588d3d34a6360cd227e62d9f75ca406c0191045b059462cf4dc3ff1a8a31",
+      "rollback_git_blob": "da70c15d7a68c9c00365bad800afa3713b9b6be1",
+      "source_id": "09035196:019:8b277774cb0a",
+      "source_sha256": "8b277774cb0a3775428e5b559ae90708bf32f7d47c5c6e15004843e83ce7b6ed",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "c144588d3d34a6360cd227e62d9f75ca406c0191045b059462cf4dc3ff1a8a31",
+        "duration": 119.013878,
+        "category": "long",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T013926-29a1390d01/manifest.json",
+          "manifest_sha256": "ca96e40217720182005f096ecbeb5109ef690639b537c4e65cce0677bd3f0b6c",
+          "lossless_sha256": "5f94faff45f2719ad9605bf61f9a19defd8901fc3b4ec896310116c070296d8a"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "needs_boundary_review",
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.16,
+          "relative_rms_threshold": 0.006127,
+          "safe_quiet_margins": false,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.48,
+          "trailing_non_speech_seconds": 0.128,
+          "speech_region_count": 49,
+          "safe_voiced_margins": true,
+          "method": "Silero VAD with no padding; supplementary speech-vs-music evidence, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "whisper",
+        "ctc"
+      ],
+      "editorial_reason": "Transcriptions finales Whisper et CTC comparées ; questions et trois propositions relues : informations présentes dans le message, une réponse correcte par question. Parakeet comporte des changements de langue et ne constitue pas la seconde validation. La question sur la croissance rapporte explicitement le propos de Julia, sans en faire une affirmation médicale générale.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 123.01,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/magasins/tiens-jacqueline-comment-vas-1.mp3",
+      "previous_sha256": "7727d8562abdd73b159ad82a3b7ca6cf04d12c4d87fcbb6176ba5bd6e77faffb",
+      "candidate_sha256": "43f8dec44fef32e8a18315d50212375da0e1e1a27c2aec15235475deaeb5fdd0",
+      "rollback_git_blob": "b04724f0a27a139da388407376b5a31be1841d49",
+      "source_id": "09035196:004:9d0be3cae519",
+      "source_sha256": "9d0be3cae519f50301db44ed79c35642033f2ef13a99254cbd00e4af7a21a72f",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "43f8dec44fef32e8a18315d50212375da0e1e1a27c2aec15235475deaeb5fdd0",
+        "duration": 78.158367,
+        "category": "long",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T013736-9b4289e110/manifest.json",
+          "manifest_sha256": "73c223a4e5fc5ababfb9fd8f042c41448f275493a33fc70e8d54f59558d6c05d",
+          "lossless_sha256": "943a3fad007413e4be36470da568eb93315f38a6a7f43b5b70db4c251ea7a44f"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.32,
+          "trailing_quiet_seconds": 0.12,
+          "relative_rms_threshold": 0.005518,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "whisper",
+        "ctc"
+      ],
+      "editorial_reason": "Reconnaissances finales comparées ; transcription, attribution des informations, questions et réponses relues.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 79.41,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_52.mp3",
+      "previous_sha256": "650d120fe00eddf2106f8fb182cdc5c3b748357c153d5694a4a9c745d4065832",
+      "candidate_sha256": "d64dbf84065ea9f4572748854e15986e5bcf4be2f4ba0b8dad65b83c1b8a8c87",
+      "rollback_git_blob": "1990507afa152cd1dda42f302a1a2588eb1bf8b3",
+      "source_id": "delf_a1_2022:052:bc4e91cb6629",
+      "source_sha256": "bc4e91cb6629724c737fd7533e8e27dc3e94d38b429241f61e136ed8b75738db",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "d64dbf84065ea9f4572748854e15986e5bcf4be2f4ba0b8dad65b83c1b8a8c87",
+        "duration": 10.4,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "native_pcm_concatenation_without_numbering",
+          "source_file": "/workspace/work/tcf-audio-replacement/incoming/a1/delf_a1_2022_piste_52.mp3",
+          "source_sha256": "bc4e91cb6629724c737fd7533e8e27dc3e94d38b429241f61e136ed8b75738db",
+          "source_decoded_pcm_sha256": "6c1a15b765dd52670f063280d17681ed1f7e7629c3ff3ddd8610845098bbc604",
+          "source_sample_rate": 44100,
+          "source_channels": 2,
+          "source_manifest": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111706-f0010992fb/manifest.json",
+          "source_manifest_sha256": "817a93d93d08daa46759be01c3dfdd21a3792d1f16a4af423d51222967dae7ef",
+          "parts": [
+            {
+              "text": "Un savon",
+              "source_start_frame": 224028,
+              "source_end_frame": 296352,
+              "source_slice_pcm_sha256": "22c7138b3d5421f822403dd811dcac3042686735d46fd7309a298033f3c4a54a",
+              "context_windows": {
+                "start_before": {
+                  "file": "/workspace/work/tcf-bascule-complete-20261105/objet52-clean-native/part-1-start_before.flac",
+                  "sha256": "82b3e1cceaf882d019e9b98f4cd09615c89d126084da35c8e2cec89276c29685"
+                },
+                "start_after": {
+                  "file": "/workspace/work/tcf-bascule-complete-20261105/objet52-clean-native/part-1-start_after.flac",
+                  "sha256": "8029f296d6aa6a91795f99101081ab21490aa11811c867066ef432d7d0b60eac"
+                },
+                "end_before": {
+                  "file": "/workspace/work/tcf-bascule-complete-20261105/objet52-clean-native/part-1-end_before.flac",
+                  "sha256": "0e07f548f9620243eec1f45cd6e2dbd261f07b7a6437061289e7de7ddff1fea8"
+                },
+                "end_after": {
+                  "file": "/workspace/work/tcf-bascule-complete-20261105/objet52-clean-native/part-1-end_after.flac",
+                  "sha256": "1e2029ce67c892504f426e9a1c038b731990ea716c7a7c50982ba2781d22ea86"
+                }
+              }
+            },
+            {
+              "text": "Un menu",
+              "source_start_frame": 488628,
+              "source_end_frame": 560952,
+              "source_slice_pcm_sha256": "373988c769ebec3706fc6a07d2b728717bed24aceeda6ac928e4b2a07d7b0d5a",
+              "context_windows": {
+                "start_before": {
+                  "file": "/workspace/work/tcf-bascule-complete-20261105/objet52-clean-native/part-2-start_before.flac",
+                  "sha256": "7e736cfe75c0710ef189bc44f8a6f7961c50766c7468aff7b8c16f3e389f5f94"
+                },
+                "start_after": {
+                  "file": "/workspace/work/tcf-bascule-complete-20261105/objet52-clean-native/part-2-start_after.flac",
+                  "sha256": "cbef70fcfe131357204a85a009b20ff5b7b8986b6b78d18b475bd1fbbad21ec9"
+                },
+                "end_before": {
+                  "file": "/workspace/work/tcf-bascule-complete-20261105/objet52-clean-native/part-2-end_before.flac",
+                  "sha256": "b5517c736b2c2d3530cabf4537de81805f749a52d8b12bc8b42d0f0c0d10d9f5"
+                },
+                "end_after": {
+                  "file": "/workspace/work/tcf-bascule-complete-20261105/objet52-clean-native/part-2-end_after.flac",
+                  "sha256": "1e2029ce67c892504f426e9a1c038b731990ea716c7a7c50982ba2781d22ea86"
+                }
+              }
+            },
+            {
+              "text": "Une chemise",
+              "source_start_frame": 760284,
+              "source_end_frame": 846720,
+              "source_slice_pcm_sha256": "1aa2d8124ab4a3ddf119685d4acc632466cefc098df5775bd4665b9f1bb321f5",
+              "context_windows": {
+                "start_before": {
+                  "file": "/workspace/work/tcf-bascule-complete-20261105/objet52-clean-native/part-3-start_before.flac",
+                  "sha256": "3f30c95f6b2e6fc73950f32820b2994541c515da0a12aac162bcdd82c54c5a49"
+                },
+                "start_after": {
+                  "file": "/workspace/work/tcf-bascule-complete-20261105/objet52-clean-native/part-3-start_after.flac",
+                  "sha256": "813c183826d68ad25c313947d6e60ce1e2ea11ff537ea9796906cb5d1e89d60a"
+                },
+                "end_before": {
+                  "file": "/workspace/work/tcf-bascule-complete-20261105/objet52-clean-native/part-3-end_before.flac",
+                  "sha256": "2e2901fec6498515ddfaa5b66c0053089dd79ab29a88663f629fe43721faa89b"
+                },
+                "end_after": {
+                  "file": "/workspace/work/tcf-bascule-complete-20261105/objet52-clean-native/part-3-end_after.flac",
+                  "sha256": "1e2029ce67c892504f426e9a1c038b731990ea716c7a7c50982ba2781d22ea86"
+                }
+              }
+            },
+            {
+              "text": "Du papier toilette",
+              "source_start_frame": 1053108,
+              "source_end_frame": 1150128,
+              "source_slice_pcm_sha256": "786b4786be41a075bc7091d8818e7dd1944d2775f23d2468d14bc3a9b671c75e",
+              "context_windows": {
+                "start_before": {
+                  "file": "/workspace/work/tcf-bascule-complete-20261105/objet52-clean-native/part-4-start_before.flac",
+                  "sha256": "b9f0472936910657bbdb65d98cf9fb5036256f7990907201ed3c2b0f99c27239"
+                },
+                "start_after": {
+                  "file": "/workspace/work/tcf-bascule-complete-20261105/objet52-clean-native/part-4-start_after.flac",
+                  "sha256": "fa591c5290efcca4f9adc30acabab9265f9dae5808359b08c606d42460050475"
+                },
+                "end_before": {
+                  "file": "/workspace/work/tcf-bascule-complete-20261105/objet52-clean-native/part-4-end_before.flac",
+                  "sha256": "103dd9ad5d1b05f09d3fb203ec1d1deb9c36e0af8881748467e5210fc10b1d2b"
+                },
+                "end_after": {
+                  "file": "/workspace/work/tcf-bascule-complete-20261105/objet52-clean-native/part-4-end_after.flac",
+                  "sha256": "1e2029ce67c892504f426e9a1c038b731990ea716c7a7c50982ba2781d22ea86"
+                }
+              }
+            },
+            {
+              "text": "Une addition",
+              "source_start_frame": 1368864,
+              "source_end_frame": 1437660,
+              "source_slice_pcm_sha256": "1c1925c902cdfe9387b8db77cdf9c36439df8f34ab3c712175d6f058b457e45f",
+              "context_windows": {
+                "start_before": {
+                  "file": "/workspace/work/tcf-bascule-complete-20261105/objet52-clean-native/part-5-start_before.flac",
+                  "sha256": "c66ebe1ae87e3e0044ccae2939cc8d32fdc2beac73bf242d3335568b0cc3ae42"
+                },
+                "start_after": {
+                  "file": "/workspace/work/tcf-bascule-complete-20261105/objet52-clean-native/part-5-start_after.flac",
+                  "sha256": "6c88c78bef04d5848772e901b55c2a8835e055294e604b492a4d925aefd244b0"
+                },
+                "end_before": {
+                  "file": "/workspace/work/tcf-bascule-complete-20261105/objet52-clean-native/part-5-end_before.flac",
+                  "sha256": "475035494e1d2d695af80f936c0c6abe84833162f56482cc1ce3bb42cbfe5ddd"
+                },
+                "end_after": {
+                  "file": "/workspace/work/tcf-bascule-complete-20261105/objet52-clean-native/part-5-end_after.flac",
+                  "sha256": "1e2029ce67c892504f426e9a1c038b731990ea716c7a7c50982ba2781d22ea86"
+                }
+              }
+            },
+            {
+              "text": "Une jupe",
+              "source_start_frame": 1661688,
+              "source_end_frame": 1723428,
+              "source_slice_pcm_sha256": "b25b0f95939696bfc866f5ed100b44c6c1a2d41446f3f663400490a9b1f5f022",
+              "context_windows": {
+                "start_before": {
+                  "file": "/workspace/work/tcf-bascule-complete-20261105/objet52-clean-native/part-6-start_before.flac",
+                  "sha256": "d02d28c44388409421386b6e849ae8f35255974da48160dc83a45904821d1496"
+                },
+                "start_after": {
+                  "file": "/workspace/work/tcf-bascule-complete-20261105/objet52-clean-native/part-6-start_after.flac",
+                  "sha256": "383aa4f5a8f000bf41a616d9b9e8d28ac373618c9a626b718eb312280b520349"
+                },
+                "end_before": {
+                  "file": "/workspace/work/tcf-bascule-complete-20261105/objet52-clean-native/part-6-end_before.flac",
+                  "sha256": "838aeb83e954f75e9bee81d25ae1bb1c0727b71f891c469d853ef0fb9aff7c80"
+                },
+                "end_after": {
+                  "file": "/workspace/work/tcf-bascule-complete-20261105/objet52-clean-native/part-6-end_after.flac",
+                  "sha256": "51deed8965029d7181a86ecf8faa8d6d05a3c9585081593955819d4cabfb078a"
+                }
+              }
+            }
+          ],
+          "assembled_pcm_sha256": "122e8c9ac4b0cacc2358616953443f1061ef7c97d18eee01e089c2d08ae6d498",
+          "human_listening_performed": false
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.49,
+          "trailing_quiet_seconds": 0.05,
+          "relative_rms_threshold": 0.007277813330292702,
+          "safe_quiet_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "whisper",
+        "ctc"
+      ],
+      "editorial_reason": "Six énoncés remontés depuis les trames PCM natives, annonces numérotées exclues. Les six objets et les six trios de réponses sont confirmés par Whisper et CTC sur le nouveau fichier final ; illustrations OBJET conservées.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 37.75,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_75-3.mp3",
+      "previous_sha256": "13f5ef9971b07931e282643ecf390a61325cc672260afa4404381be73be358b7",
+      "candidate_sha256": "8cb497413a3a345ae1d777cd1e3c31e108d018f49c610ee4cfe6302812af4bc8",
+      "rollback_git_blob": "0ce749c6c0f66d79f3900bff204e77b414567310",
+      "source_id": "delf_a1_2022:075:37157834c836",
+      "source_sha256": "37157834c8361b8a03d95c07f1f41aff1427cd799f03aed960886e5cc5087f2a",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "8cb497413a3a345ae1d777cd1e3c31e108d018f49c610ee4cfe6302812af4bc8",
+        "duration": 6.243265,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111738-519f074cfe/manifest.json",
+          "manifest_sha256": "66616cab48a6b73df078db9fc3368343908d9690f9b835fbce320384e0d1d151",
+          "lossless_sha256": "2163ce8953c86955ac2d952761daa2130b303650700051e27323bd094bab2082"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.36,
+          "trailing_quiet_seconds": 0.19,
+          "relative_rms_threshold": 0.0087706,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "ctc"
+      ],
+      "editorial_reason": "Parakeet et CTC reconnaissent la réponse complète : mère Louise, père André. Whisper omet la réponse et est exclu du couple de validation. Les deux questions et leurs trois propositions ont été relues.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 9.38,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/loisirs/remi-bezancon-possede-son.mp3",
+      "previous_sha256": "c453120c306d5bb7b5692cf2e8d39118a4a81062104df95fa7b0c4ef51b4677c",
+      "candidate_sha256": "9ff847ccf97f2f422e0dc3c2a620ae844258415ef428b4d24739f7300f2dd6a9",
+      "rollback_git_blob": "1cb75e70dc652305a6e458e1c7aa0a55fcf4263a",
+      "source_id": "additional-20261102:mdf-b1-abc-direct:30:840c422aaff5:d7b147a3",
+      "source_sha256": "840c422aaff5b147abf57f85e35e4937508dc8e705e2cab36037a3d11f82f449",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "9ff847ccf97f2f422e0dc3c2a620ae844258415ef428b4d24739f7300f2dd6a9",
+        "duration": 142.001633,
+        "category": "long",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014825-9aa70ba8c5/manifest.json",
+          "manifest_sha256": "a4f970e667f05de3d3f43a448216abe84a9c8e5177d9ce7b041ad9f696caa95c",
+          "lossless_sha256": "bcbdf99680a1ca5627daec57a84fec063b2ac474e77ac3eacee98a8340de74b7"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.32,
+          "trailing_quiet_seconds": 0.03,
+          "relative_rms_threshold": 0.0052944,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "whisper",
+        "ctc"
+      ],
+      "editorial_reason": "Transcriptions finales Whisper et CTC comparées ; questions et trois propositions relues : informations présentes dans le message, une réponse correcte par question. Parakeet comporte des changements de langue et ne constitue pas la seconde validation. Noms propres non épelés rétablis dans leur graphie éditoriale ; aucune attestation humaine d’écoute. CTC dit mille neuf cent quatre-vingt-dix : 1990, confirmé par Whisper. alpha2digit transforme fautivement la graphie CTC espacée « mille neuf cent quatre vingt - dix » en 1904 ; aucun changement du nombre entendu.",
+      "numeric_resolution": {
+        "candidate_sha256": "9ff847ccf97f2f422e0dc3c2a620ae844258415ef428b4d24739f7300f2dd6a9",
+        "evidence_file": "/workspace/work/tcf-bascule-complete-20261105/ctc/9ff847ccf97f2f422e0dc3c2a620ae844258415ef428b4d24739f7300f2dd6a9.json",
+        "evidence_sha256": "c99794786430ddc6cf18efa8e48de6e1bf7e8ec2944cac029963d0e559a4aa99",
+        "reviewed_numbers": [
+          "1",
+          "1990",
+          "1",
+          "1",
+          "00",
+          "1",
+          "1"
+        ],
+        "reason": "CTC dit mille neuf cent quatre-vingt-dix : 1990, confirmé par Whisper. alpha2digit transforme fautivement la graphie CTC espacée « mille neuf cent quatre vingt - dix » en 1904 ; aucun changement du nombre entendu."
+      },
+      "additional_recognition_evidence": null,
+      "previous_duration": 143.07,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/presenter-radio.mp3",
+      "previous_sha256": "e111f495f099048a6f36653f6cdb75e71434d3a661da68f76a34099d54e67a39",
+      "candidate_sha256": "412a3c1c3df610073eee27502d217d32a452f85ea9419fa8926f3518e9dbe318",
+      "rollback_git_blob": "30b88121bb670b8fd70d89f597384b2793495476",
+      "source_id": "09035196:017:dbf36c7a1874",
+      "source_sha256": "dbf36c7a1874dd6d767d6f851cb748b54f40b5130f37e117165ecff65a898656",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "412a3c1c3df610073eee27502d217d32a452f85ea9419fa8926f3518e9dbe318",
+        "duration": 121.469388,
+        "category": "long",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T013928-5e1d0dd2c1/manifest.json",
+          "manifest_sha256": "aa91f580f362d60c331de9bc348a921d29c49e8e76d40b33fa0e1644ba9ecb5c",
+          "lossless_sha256": "6d00ed1b243054e9d15d1d2d944749e8bee1c3105d7f6aace76f629f5c04f2a1"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "needs_boundary_review",
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.14,
+          "relative_rms_threshold": 0.0055811,
+          "safe_quiet_margins": false,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.288,
+          "trailing_non_speech_seconds": 0.144,
+          "speech_region_count": 58,
+          "safe_voiced_margins": true,
+          "method": "Silero VAD with no padding; supplementary speech-vs-music evidence, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "whisper",
+        "ctc"
+      ],
+      "editorial_reason": "Transcriptions finales Whisper et CTC comparées ; questions et trois propositions relues : informations présentes dans le message, une réponse correcte par question. Parakeet comporte des changements de langue et ne constitue pas la seconde validation. Deux mois, seize titres, 600 000 ventes et trois minutes concordent entre Whisper et CTC. CTC et Whisper confirment 600 000 exemplaires, un an annoncé, seize titres, deux mois réels et trois minutes ; la différence numérique automatique porte sur un article « un » dans une phrase.",
+      "numeric_resolution": {
+        "candidate_sha256": "412a3c1c3df610073eee27502d217d32a452f85ea9419fa8926f3518e9dbe318",
+        "evidence_file": "/workspace/work/tcf-bascule-complete-20261105/ctc/412a3c1c3df610073eee27502d217d32a452f85ea9419fa8926f3518e9dbe318.json",
+        "evidence_sha256": "cc8f0c9a5e9f349052709f6b00fa678f3fb2156890c8936aadc5d59f25d98d08",
+        "reviewed_numbers": [
+          "600000",
+          "1",
+          "16",
+          "1",
+          "1",
+          "1",
+          "2",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "3",
+          "1"
+        ],
+        "reason": "CTC et Whisper confirment 600 000 exemplaires, un an annoncé, seize titres, deux mois réels et trois minutes ; la différence numérique automatique porte sur un article « un » dans une phrase."
+      },
+      "additional_recognition_evidence": null,
+      "previous_duration": 125.96,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/loisirs/loisirs-annonce.mp3",
+      "previous_sha256": "fda22c07315a1b1af012b8ac0d2e2ff4623e86451aefc9ba1b13e9781a71d2e6",
+      "candidate_sha256": "f3700fe221dfc781a1752b4c23bf638a7ff303ea2d7f2aec1ae8e00413391da9",
+      "rollback_git_blob": "9540b5240845591612fe6e1d22c7fc3350aced05",
+      "source_id": "09035196:037:662ea39af90e",
+      "source_sha256": "662ea39af90e9720637926a6fc9a57313bbac8cf3837a16d9d2a09ca051ad3f6",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "f3700fe221dfc781a1752b4c23bf638a7ff303ea2d7f2aec1ae8e00413391da9",
+        "duration": 93.126531,
+        "category": "long",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T013810-cd9b58212f/manifest.json",
+          "manifest_sha256": "897c2f17fe7671032b0963eaf005fec2838e3f7436f8f8bf321ff3f83f709d2d",
+          "lossless_sha256": "52a6df570a3dfe900866f78aa0dee96445e4d9ffe94bf18bccfcff8f7e306c35"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.32,
+          "trailing_quiet_seconds": 0.13,
+          "relative_rms_threshold": 0.0063077,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "whisper",
+        "ctc"
+      ],
+      "editorial_reason": "Transcriptions finales Whisper et CTC comparées ; questions et trois propositions relues : informations présentes dans le message, une réponse correcte par question. Parakeet comporte des changements de langue et ne constitue pas la seconde validation. Les nombres 2019, trois catégories, quatre concerts les 18 à 21 février, trois ans et 20 000 personnes sont confirmés par Whisper et CTC. CTC et Whisper confirment 2019, trois catégories, quatre concerts, les 18/19/20/21 février, trois ans et 20 000 personnes fois quatre ; seules des reconnaissances du mot « un » hors faits chiffrés diffèrent.",
+      "numeric_resolution": {
+        "candidate_sha256": "f3700fe221dfc781a1752b4c23bf638a7ff303ea2d7f2aec1ae8e00413391da9",
+        "evidence_file": "/workspace/work/tcf-bascule-complete-20261105/ctc/f3700fe221dfc781a1752b4c23bf638a7ff303ea2d7f2aec1ae8e00413391da9.json",
+        "evidence_sha256": "2ebd27a3a947c871b5dd1743ca1d5b8da222a10c2235bee37eca743e8f5b5b85",
+        "reviewed_numbers": [
+          "2019",
+          "3",
+          "4",
+          "18",
+          "19",
+          "20",
+          "21",
+          "1",
+          "3",
+          "20000",
+          "4",
+          "1",
+          "1"
+        ],
+        "reason": "CTC et Whisper confirment 2019, trois catégories, quatre concerts, les 18/19/20/21 février, trois ans et 20 000 personnes fois quatre ; seules des reconnaissances du mot « un » hors faits chiffrés diffèrent."
+      },
+      "additional_recognition_evidence": null,
+      "previous_duration": 94.85,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
     }
   ],
   "batches": [
@@ -32320,6 +34034,16 @@
       "batch": 21,
       "report": "bascule-lot-021-20261105.json",
       "files": 29
+    },
+    {
+      "batch": 22,
+      "report": "bascule-lot-022-20261105.json",
+      "files": 19
+    },
+    {
+      "batch": 23,
+      "report": "bascule-lot-023-20261105.json",
+      "files": 4
     }
   ],
   "human_listening_performed": false,
@@ -32328,9 +34052,9 @@
   "policy": "Existing exercise IDs and audio URLs retained. Received sources and git rollback objects preserved. Unchecked candidates are not installed.",
   "summary": {
     "installed_before_this_switch": 80,
-    "installed_this_switch": 700,
-    "total_installed": 780,
-    "remaining_references": 245,
+    "installed_this_switch": 723,
+    "total_installed": 803,
+    "remaining_references": 222,
     "active_library_references": 1025,
     "full_switch_complete": false
   }
