@@ -1,0 +1,34 @@
+{
+  "domainTestsPassed": 173,
+  "distinctBrowserStagesPassed": 20,
+  "fullPipelineStageCount": 40,
+  "fullPipelineRun": false,
+  "passed": [
+    "browser",
+    "classroom-browser",
+    "solo-browser",
+    "untimed-browser",
+    "media-browser",
+    "accessibility-browser",
+    "listening-browser",
+    "audio-sequences-browser",
+    "loading-browser",
+    "archives-browser",
+    "source-adapters-browser",
+    "sound-check-browser",
+    "readability-browser",
+    "tcm-csc-browser",
+    "tcf-formats-browser",
+    "competition-browser",
+    "competition-worker",
+    "saved-fiches",
+    "performance-browser",
+    "a4-regression"
+  ],
+  "reports": [
+    "quality-main-targeted-results.json",
+    "quality-browser-results.json"
+  ],
+  "scope": "Targeted main routes, Classroom/Solo, media and accessibility; integrations from listening through PDF and pixel A4 comparison. New animated loading and complete audio sequences have their own browser fixtures.",
+  "finalAdditionalCheck": "competition-browser repeated after the final room-connection loading panel was added."
+}

@@ -92,3 +92,5 @@ Les exercices d’[écoute des sons](adr-0018-ecouter-les-sons.md) sont proposé
 Le [test TCM CSC](../tcm-csc/README.md) comprend 23 exercices imprimables et trois pistes audio ; l’exercice 21 reste réservé. Les signes à compléter, les opérations posées et les problèmes rejoignent le jeu Classe / Solo. Les [103 contextes de problèmes](adr-0023-problemes-csc.md) conservent leurs énoncés et leurs nombres, avec des propositions numériques vérifiées ; les nouvelles parties des modèles générés renouvellent leurs valeurs.
 
 Dans le générateur, les [formats CO et corrigés CE](../tcf/formats-et-corriges.md) conservent les boutons Texte / Image / Phrase sur les tests assemblés et les coches imprimables, même sans arrière-plans.
+
+Les [nombres et calculs oraux](adr-0024-sequences-audio.md) lisent tous leurs extraits en une piste complète, avec les contrôles d’écoute existants. Les [chargements animés](adr-0025-chargements-animes.md) accompagnent l’ouverture des pages, des fiches et du jeu, dès le démarrage initial.

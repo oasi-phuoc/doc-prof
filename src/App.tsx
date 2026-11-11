@@ -10,6 +10,7 @@ import { clearAccessPassword } from '@/fiches/password'
 import { AccessPage } from '@/components/generator/AccessPage'
 import { Landing } from '@/components/generator/Landing'
 import { navigateTo, resolveRoute } from '@/components/generator/routing'
+import { LoadingScreen } from '@/components/LoadingScreen'
 
 const InteractiveApp = lazy(() => import('@/interactive/InteractiveApp'))
 const GeneratorPage = lazy(() => import('@/components/generator/GeneratorPage').then((module) => ({ default: module.GeneratorPage })))
@@ -61,11 +62,13 @@ export default function App() {
     setRoute('access')
   }
 
-  if (route === 'interactive') return <Suspense fallback={<p role="status">Chargement du studio…</p>}><InteractiveApp key={navigationRevision} /></Suspense>
+  const path = window.location.pathname.replace(/\/+$/, '')
+  const interactiveTitle = path === '/interactif/cartes' ? 'Préparation des cartes' : path === '/interactif/diagnostic' ? 'Ouverture du diagnostic' : path.startsWith('/interactif/rejoindre') ? 'Ouverture de la compétition' : path.startsWith('/interactif/salle/') ? 'Ouverture de la salle' : 'Préparation du jeu'
+  if (route === 'interactive') return <Suspense fallback={<LoadingScreen title={interactiveTitle} description="Votre séance arrive…" />}><InteractiveApp key={navigationRevision} /></Suspense>
   if (route === 'fiches') {
-    return <Suspense fallback={<p role="status">Chargement des fiches…</p>}><SavedFichesPage onOpenGenerator={showGenerator} onLogout={logout} /></Suspense>
+    return <Suspense fallback={<LoadingScreen title="Ouverture des fiches" description="Votre bibliothèque se prépare." />}><SavedFichesPage onOpenGenerator={showGenerator} onLogout={logout} /></Suspense>
   }
-  if (route === 'generator') return <Suspense fallback={<p role="status">Chargement des fiches…</p>}><GeneratorPage onLogout={logout} onOpenFiches={showFiches} /></Suspense>
+  if (route === 'generator') return <Suspense fallback={<LoadingScreen title="Ouverture du créateur de fiches" description="Votre espace de création arrive…" />}><GeneratorPage onLogout={logout} onOpenFiches={showFiches} /></Suspense>
   if (route === 'access') return <AccessPage onSuccess={openGenerator} />
   return <Landing onCreate={goAccess} />
 }

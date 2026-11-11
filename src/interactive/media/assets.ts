@@ -19,6 +19,7 @@ export function collectMedia(
       } else assets.set(url, { id: url, url, kind, questionIds: [q.id] })
     }
     add(q.audio, 'audio')
+    q.audioParts?.forEach((part) => add(part, 'audio'))
     q.images.forEach((image) => add(image, 'image'))
     q.choices.forEach((choice) => {
       add(choice.image, 'image')

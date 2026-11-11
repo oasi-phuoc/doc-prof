@@ -25,6 +25,9 @@ export type Question = {
   prompt: string
   context?: string
   audio?: string
+  /** Ordered source clips forming one recording and one listening allowance. */
+  audioParts?: string[]
+  audioGrouping?: 'individual'
   audioMaxListens?: number
   images: string[]
   words?: string[]
@@ -46,7 +49,7 @@ export type Game = {
   issues: Issue[]
   rounds?: Round[]
 }
-export type Round = { id: string; questionIds: string[]; audio?: string }
+export type Round = { id: string; questionIds: string[]; audio?: string; audioParts?: string[] }
 export type Phase =
   | 'thinking'
   | 'cards-up'

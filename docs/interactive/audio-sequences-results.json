@@ -1,0 +1,42 @@
+{
+  "results": [
+    {
+      "viewport": "390x844",
+      "realDecodedSeconds": [
+        5.62,
+        5.62,
+        4.72,
+        5.69
+      ],
+      "recording": "full number, addition and multiplication clips form one seekable WAV; shared prefixes retain four independent screens",
+      "listens": "pause/resume costs one allowance; limit, explicit extra listen and reload persist",
+      "accessibility": "axe: no automatic violations; no horizontal overflow",
+      "cleanup": "temporary audio URLs revoked on exit"
+    },
+    {
+      "viewport": "1366x768",
+      "realDecodedSeconds": [
+        5.62,
+        5.62,
+        4.72,
+        5.69
+      ],
+      "recording": "full number, addition and multiplication clips form one seekable WAV; shared prefixes retain four independent screens",
+      "listens": "pause/resume costs one allowance; limit, explicit extra listen and reload persist",
+      "accessibility": "axe: no automatic violations; no horizontal overflow",
+      "cleanup": "temporary audio URLs revoked on exit"
+    },
+    {
+      "missingSuffix": "whole recording unavailable, no partial audio or consumed allowance; explicit retry recovers the complete sequence"
+    },
+    {
+      "staleNavigation": "leaving while a suffix is pending aborts the old recording; its late response cannot replace the next question or create a leaked WAV URL"
+    },
+    {
+      "solo": "one complete listen and immediate correct verdict, then automatic next question after one second",
+      "localCompetition": "all four ordered recordings compose from fully preloaded blobs with the network disabled; no cold-start offline claim"
+    }
+  ],
+  "errors": [],
+  "serverWrites": 0
+}

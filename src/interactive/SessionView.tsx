@@ -22,6 +22,7 @@ import { ManualCountPanel, ManualVoteView } from './components/ManualCountPanel'
 import { SessionObservations } from './components/SessionObservations'
 import { RevealButton, RetractRevealButton, TeacherConfirmation } from './components/TeacherControls'
 import { IconButton } from './components/Icons'
+import { LoadingScreen } from '@/components/LoadingScreen'
 import { manualTotal } from './domain/votes'
 import './counting.css'
 import { useCountdown } from './useCountdown'
@@ -63,7 +64,7 @@ export function SessionView(props: Omit<Parameters<typeof ActiveSessionView>[0],
       void drain.current().finally(() => lease?.release())
     }
   }, [props.game, props.header.mode, attempt, key])
-  if (!loaded || loaded.key !== key) return <main className="ci-container ci-session-loading"><p role="status">{attempt.takeover ? 'Attente de la libération de la séance…' : 'Chargement de la séance…'}</p><button onClick={props.onExit}>Retour à la préparation</button></main>
+  if (!loaded || loaded.key !== key) return <main className="ci-container ci-session-loading"><LoadingScreen variant="panel" title={attempt.takeover ? 'Attente de l’autre fenêtre' : 'Ouverture de la séance'} description="Votre activité arrive…" /><button onClick={props.onExit}>Retour à la préparation</button></main>
   if (loaded.lease.status === 'busy' || lostKey === key) return <><ClassroomHeader {...props.header} /><main className="ci-container ci-session-busy"><h1>{lostKey === key ? 'La séance est maintenant active dans un autre onglet.' : 'Séance ouverte dans un autre onglet'}</h1><p>Une seule fenêtre pilote cette partie. Prendre la main termine la sauvegarde dans l’autre fenêtre avant de reprendre ici.</p><div className="ci-toolbar"><button className="ci-primary" onClick={() => setAttempt((value) => ({ number: value.number + 1, takeover: true }))}>Prendre la main</button><button onClick={() => setAttempt((value) => ({ number: value.number + 1, takeover: false }))}>Réessayer</button><button onClick={props.onExit}>Retour à la préparation</button></div></main></>
   return <ActiveSessionView key={key} {...props} resume={loaded.resume} initialWarning={loaded.warning} ownership={loaded.lease.isOwner} registerDrain={registerDrain} />
 }
@@ -396,6 +397,7 @@ function PlayingRound({
     <AudioPlayer
       key={audio}
       src={audio}
+      parts={rounds[state.index]?.audioParts}
       paused={suspended || locked || confirmation !== null || navigating}
       listens={runtime.audioListens}
       extraListens={runtime.extraListens}

@@ -4,10 +4,24 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/components/LoadingScreen.css" />
     <title>ClairFLE — Fiches et jeu en classe</title>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <main class="cfl-loading cfl-loading--page" data-loading-screen="page">
+        <div class="cfl-loading-body" role="status" aria-live="polite" aria-atomic="true" aria-label="Ouverture de ClairFLE">
+          <div class="cfl-loading-scene" aria-hidden="true">
+            <span data-ci-motion class="cfl-loading-orbit"></span>
+            <span data-ci-motion class="cfl-loading-dot cfl-loading-dot--one"></span><span data-ci-motion class="cfl-loading-dot cfl-loading-dot--two"></span><span data-ci-motion class="cfl-loading-dot cfl-loading-dot--three"></span>
+            <span data-ci-motion class="cfl-loading-logo"><span class="cfl-loading-mark"><i></i><i></i><i></i></span></span>
+          </div>
+          <span class="cfl-loading-brand">Clair<span>FLE</span></span>
+          <h1>Ouverture de ClairFLE</h1><p>Votre espace arrive…</p>
+          <div class="cfl-loading-track" aria-hidden="true"><span data-ci-motion></span></div>
+        </div>
+      </main>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

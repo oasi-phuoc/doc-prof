@@ -1,5 +1,6 @@
 import { lazy, Suspense, useCallback, useEffect, useMemo, useState, type CSSProperties } from 'react'
 import { listFiches } from '@/fiches/api'
+import { LoadingScreen } from '@/components/LoadingScreen'
 import { domainsForAccount, readAccessAccount } from '@/access'
 import type { MascotKind } from './domain/mascot'
 import type { Game, PlayMode } from './domain/types'
@@ -295,15 +296,15 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
       }
     },
   }
-  if (competitionOpen && activeGame && !media.complete) return <div className="ci-app"><p role="status">Préparation des médias de la nouvelle compétition…</p></div>
-  if (competitionOpen && activeGame) return <Suspense fallback={<p role="status">Chargement de la compétition…</p>}><CompetitionSetup key={activeGame.id} game={activeGame} timer={timer} colors={colors} shapes={shapes} onNewPart={() => newPart(false)} onExit={() => setCompetitionOpen(false)} /></Suspense>
+  if (competitionOpen && activeGame && !media.complete) return <div className="ci-app"><LoadingScreen title="Préparation de la compétition" description="Vos questions et leurs médias se préparent." /></div>
+  if (competitionOpen && activeGame) return <Suspense fallback={<LoadingScreen title="Ouverture de la compétition" />}><CompetitionSetup key={activeGame.id} game={activeGame} timer={timer} colors={colors} shapes={shapes} onNewPart={() => newPart(false)} onExit={() => setCompetitionOpen(false)} /></Suspense>
   return (
     <div className={`ci-app${contrast ? ' ci-high-contrast' : ''}${playing ? ' ci-playing' : ''}${fullscreen ? ' ci-immersive' : ''}`} data-mascot={mascot}>
       {preferencesWarning && <p className="ci-notice" role="status">{preferencesWarning} Le jeu reste utilisable.</p>}
       {!playing && <ClassroomHeader {...header} />}
       {loading ? (
         <main className="ci-container">
-          <p role="status">Préparation de la séance…</p>
+          <LoadingScreen variant="panel" title="Préparation de la séance" description="Votre activité arrive…" />
         </main>
       ) : error || forbidden ? (
         <main className="ci-container">
@@ -486,6 +487,7 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
                       />
                     )}
                     {media.complete && <ReadabilityCheck questions={activeGame.questions} {...readability} />}
+                    {(!media.complete || !readability.complete || !resumeChecked || pendingStart) && <LoadingScreen variant="inline" title={mode === 'solo' ? 'Préparation du mode Solo…' : 'Préparation du mode Classe…'} />}
                     <p className="ci-run-note">Une nouvelle partie renouvelle les tirages du générateur, avec les mêmes types, limites et durées. Les questions saisies manuellement sont conservées ; une reprise garde la partie en cours.</p>
                     {draftWarning && <p role="status">{draftWarning}</p>}
                     {source?.storageWarning && <p role="status">{source.storageWarning}</p>}

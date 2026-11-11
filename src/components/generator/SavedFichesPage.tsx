@@ -15,6 +15,7 @@ import {
 import { readAccessPassword } from '@/fiches/password'
 import { stageFicheNavigation, type SavedFiche } from '@/fiches/recipe'
 import type { Domain } from '@/math/types'
+import { LoadingScreen } from '@/components/LoadingScreen'
 
 type Library = 'fiches' | 'tcf' | 'tpm' | 'alpha' | 'soutien'
 
@@ -317,7 +318,7 @@ export function SavedFichesPage({
                 </button>
               </p>
             ) : null}
-            {loading ? <p className="fiches-empty">Chargement des fiches…</p> : null}
+            {loading ? <LoadingScreen variant="panel" title="Chargement des fiches" description="Votre bibliothèque arrive…" /> : null}
             {!loading && visible.length === 0 ? (
               <p className="fiches-empty">
                 {emptyCopy(library, fiches, query)}

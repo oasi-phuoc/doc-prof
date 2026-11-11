@@ -34,7 +34,7 @@ Le barème par défaut vaut 79 points et se modifie dans le générateur. Les gr
 
 ## Jeu interactif
 
-Les signes à compléter (exercice 9), les opérations posées avec résultat manquant (10) et les problèmes (22 à 24) peuvent être repris dans le jeu Classe ou Solo. Les problèmes gardent leur énoncé et leurs valeurs ; une nouvelle partie d’un modèle généré renouvelle les nombres en conservant le contexte. Les éditions libres restent associées au texte validé. Les 103 contextes sont vérifiés, avec des propositions numériques déterministes et une correction affichée uniquement dans les cartes après révélation.
+Les dictées de nombres et calculs oraux (exercices 1 et 2), les signes à compléter (9), les opérations posées avec résultat manquant (10) et les problèmes (22 à 24) peuvent être repris dans le jeu Classe ou Solo. Les problèmes gardent leur énoncé et leurs valeurs ; une nouvelle partie d’un modèle généré renouvelle les nombres en conservant le contexte. Les éditions libres restent associées au texte validé. Les 103 contextes sont vérifiés, avec des propositions numériques déterministes et une correction affichée uniquement dans les cartes après révélation.
 
 Une incohérence entre énoncé, nombres et corrigé, ou une égalité admettant plusieurs signes, est signalée pendant la préparation. Les autres exercices CSC demandent encore une adaptation au jeu. Voir [le contrat et les vérifications](../interactive/adr-0023-problemes-csc.md).
 

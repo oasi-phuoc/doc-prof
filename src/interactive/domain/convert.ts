@@ -7,6 +7,7 @@ import type { Choice, Game, Question } from './types'
 import { canonicalJson, deriveSeed, hash } from './seeds'
 import { adaptSourceItem } from './source-adapters'
 import { verifiedCscMath } from './csc-math'
+import { verifiedNumericAudio } from './audio-math'
 export { hash } from './seeds'
 const normalized = (s: string) =>
   s
@@ -202,6 +203,20 @@ export function convertRecipe(
           }
           if (item.libreError) {
             reject(item.libreError)
+            return
+          }
+          const numericAudio = verifiedNumericAudio(item)
+          if (numericAudio) {
+            if ('reason' in numericAudio) { reject(numericAudio.reason); return }
+            const q = base()
+            q.prompt = numericAudio.prompt
+            q.audio = numericAudio.parts[0]
+            q.audioGrouping = 'individual'
+            if (numericAudio.parts.length > 1) q.audioParts = numericAudio.parts
+            q.compatibility = 'assisted'
+            const choices = numberChoices(numericAudio.value, deriveSeed({ originalSeed: recipe.seed, sourceKey: q.id, purpose: 'distractors' }))
+            q.choices = choices.choices
+            add(q, numericAudio.model, choices.correctId)
             return
           }
           const csc = verifiedCscMath(item)

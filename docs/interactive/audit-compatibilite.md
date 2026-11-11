@@ -5,8 +5,8 @@
 - 2 071 types de catalogue ; 2 103 couples type/domaine après ajout des variantes TCF CSC et CFR.
 - 20 domaines déclarés : 19 présents dans les variantes du catalogue. `français` est un ancien domaine sans thème actif dans le catalogue actuel ; son fallback de configuration est une addition, ce qui ne constitue pas une couverture du français.
 - 51 layouts observés sur 53 déclarés. `vocab-write` et `audio-match` ne sortent pas dans ces tirages : couverture non démontrée.
-- 636 variantes produisent au moins une activité convertible : 504 uniquement en QCM source, 19 adaptations numériques vérifiées, 79 uniquement guidées et 34 mêlant QCM et activités guidées. Ce nombre décrit la conversion structurelle observée, pas une validation pédagogique de chaque famille, graine et niveau.
-- 1 467 variantes sont non prises en charge, y compris huit échecs de génération déjà présents : association de syllabes `alpha-x-gz` et sept exercices Soutien contenant un jeton sans catégorie. Les détails sont conservés dans l’inventaire ; aucune donnée de banque n’a été réécrite pour masquer ces erreurs.
+- 640 variantes produisent au moins une activité convertible : 504 uniquement en QCM source, 23 adaptations numériques vérifiées, 79 uniquement guidées et 34 mêlant QCM et activités guidées. Ce nombre décrit la conversion structurelle observée, pas une validation pédagogique de chaque famille, graine et niveau.
+- 1 463 variantes sont non prises en charge, y compris huit échecs de génération déjà présents : association de syllabes `alpha-x-gz` et sept exercices Soutien contenant un jeton sans catégorie. Les détails sont conservés dans l’inventaire ; aucune donnée de banque n’a été réécrite pour masquer ces erreurs.
 
 ## Contrats de conversion actuels
 
@@ -16,6 +16,7 @@
 | Aire du carré | Côté positif, aire et unité vérifiées ; distracteurs géométriques distincts | Autres figures non prises en charge |
 | Signes et problèmes CSC | Signe unique recalculé ; problème, nombres et corrigé comparés à la banque ; contexte conservé et cartes numériques déterministes | Cinq types CSC observés avec les opérations posées ; les autres rendus demandent encore leur adaptation ; les signes ambigus sont signalés |
 | QCM `select` | 2–6 choix source distincts ; réponse unique retrouvée | Choix audio individuels non pris en charge dans ce layout |
+| Dictées et calculs oraux CSC/CFR | Tous les extraits vérifiés contre le lexique et le corrigé ; une piste complète, une question par dictée | Nombres de 0 à 1 000 et calculs explicitement vérifiables ; extrait manquant ou incohérent signalé |
 | Reconnaissance des sons `listen-check` | Une question Oui / Non par mot, son de la consigne conservé, audio et image source ; correspondance vérifiée entre cases cochées et corrigé | Piste absente ou partagée entre mots distincts signalée ; aucune phonétique déduite de l’orthographe ; ne remplace pas un QCM multi-réponses |
 | TCF QCM et cadres audio | Priorité aux variantes en images, même depuis une forme papier à écrire ; piste conservée | Deux QCM maximum par audio, projetés ensemble avec trois choix source chacun ; bonne réponse conservée |
 | Lignes / production écrite TCF | Activité guidée, modèle après révélation, observation humaine | Aucun score automatique |
