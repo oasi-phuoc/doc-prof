@@ -13,6 +13,8 @@ En **Classe**, chacun réfléchit puis lève sa carte au signal. Aucun élève n
 
 Avec un enregistrement, le minuteur de Classe attend la fin de l’écoute. Une pause ou un onglet masqué suspend l’audio et le décompte. Les images s’agrandissent ; les boutons + et − du document à lire ajustent son texte. Une production orale conserve ses relances, son exemple et une appréciation humaine.
 
+Le lecteur affiche le nombre d’écoutes et le temps de lecture. Quand la consigne fixe une limite, par exemple deux écoutes, une nouvelle lecture est bloquée après ce nombre de passages. Une pause puis reprise ne compte pas deux fois. En Classe, **Accorder une écoute de plus** autorise un passage supplémentaire ; en Solo cette commande est absente. Sans limite dans la consigne, les écoutes sont libres. Le compteur est conservé après rechargement. Une erreur ou un son bloqué propose **Réessayer l’audio**.
+
 Le cadenas en pied **verrouille les commandes** et les réglages. Il reste verrouillé après actualisation ; déverrouillez-le pour reprendre les commandes. La sortie du plein écran reste disponible. Le verrou ne remplace pas la pause : le minuteur déjà lancé continue en Classe.
 
 La flèche **Masquer à nouveau** reste disponible dix secondes après la révélation. Elle revient à la discussion sans compter deux fois la question. **Passer** demande confirmation ; le drapeau **Terminer la séance** permet d’ouvrir le bilan plus tôt, après confirmation. Annuler ou Échap conserve la partie. L’audio et le décompte de réflexion sont suspendus pendant ces confirmations.

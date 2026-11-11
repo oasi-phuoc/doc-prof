@@ -6,7 +6,7 @@ function parseRun(value: unknown): StoredRun | null {
   if (!value || typeof value !== 'object') return null
   const raw = value as Record<string, unknown>
   if (typeof raw.updatedAt !== 'number' || !Number.isFinite(raw.updatedAt) || Date.now() - raw.updatedAt > WEEK) return null
-  if (![1, 2, 3, 4].includes(raw.schemaVersion as number)) throw new Error('Une version plus récente du jeu a enregistré cette séance. Ses données sont conservées.')
+  if (![1, 2, 3, 4, 5].includes(raw.schemaVersion as number)) throw new Error('Une version plus récente du jeu a enregistré cette séance. Ses données sont conservées.')
   const source = readSessionSource(raw.source)
   return source && (raw.mode === 'class' || raw.mode === 'solo') && typeof raw.sessionId === 'string' && typeof raw.gameId === 'string' ? { source, mode: raw.mode, sessionId: raw.sessionId, gameId: raw.gameId, updatedAt: raw.updatedAt } : null
 }

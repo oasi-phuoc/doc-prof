@@ -2,11 +2,20 @@ import { questionsForRound, roundsFor } from './plan'
 import { validateManualVote } from './votes'
 import type { Game, PlayMode, Session, RoundRuntime } from './types'
 import { copyRuntime } from './round-runtime'
+import { maxListensFor } from './listening'
 
 export type SessionCheckpoint = { state: Session; lastEventId?: string }
 const object = (value: unknown): value is Record<string, unknown> => !!value && typeof value === 'object' && !Array.isArray(value)
 const stateFields = ['gameId', 'mode', 'index', 'phase', 'selected', 'selections', 'paused', 'finished', 'history', 'manualVotes', 'teacherMarks', 'note', 'teacherLocked', 'revealedAt', 'revealRetractions', 'roundStates', 'previousAttempts']
 const copyVotes = (votes: Session['manualVotes']) => Object.fromEntries(Object.entries(votes).map(([id, vote]) => [id, { ...vote, counts: { ...vote.counts } }]))
+function validListening(value: Record<string, unknown>, questions: Game['questions'], mode: PlayMode, hasAudio: boolean): boolean {
+  const maximum = maxListensFor(questions)
+  const listens = value.audioListens ?? 0, extra = value.extraListens ?? 0
+  return typeof listens === 'number' && Number.isInteger(listens) && listens >= 0 && listens <= 10_000 &&
+    typeof extra === 'number' && Number.isInteger(extra) && extra >= 0 && extra <= 1000 &&
+    (hasAudio || listens === 0 && extra === 0) && (mode === 'class' || extra === 0) &&
+    (maximum === undefined ? extra === 0 : listens <= maximum + extra)
+}
 
 /** Copy only session data. No question text or answer key enters a checkpoint. */
 export function copySession(state: Session): Session {
@@ -34,12 +43,13 @@ function validAttempt(game: Game, value: unknown, mode: PlayMode, ids = game.que
 
 function validRuntime(game: Game, id: string, value: unknown, mode: PlayMode): value is RoundRuntime {
   const round = roundsFor(game).find((round) => round.id === id)
-  if (!round || !object(value) || Object.keys(value).some((key) => !['phase', 'selections', 'revealedAt', 'attempt', 'hintsShown', 'imageOrders', 'audioComplete', 'audioOverride'].includes(key)) ||
+  if (!round || !object(value) || Object.keys(value).some((key) => !['phase', 'selections', 'revealedAt', 'attempt', 'hintsShown', 'imageOrders', 'audioComplete', 'audioOverride', 'audioListens', 'extraListens'].includes(key)) ||
     !['thinking', 'cards-up', 'selected', 'discussion', 'revealed'].includes(value.phase as string) || !object(value.selections) || !object(value.hintsShown) || !object(value.imageOrders) ||
     typeof value.attempt !== 'number' || !Number.isInteger(value.attempt) || value.attempt < 0 || value.attempt > 5000 ||
     typeof value.audioComplete !== 'boolean' || typeof value.audioOverride !== 'boolean' || !round.audio && (value.audioComplete || value.audioOverride) ||
     value.revealedAt !== undefined && (mode !== 'class' || value.phase !== 'revealed' || typeof value.revealedAt !== 'number' || !Number.isFinite(value.revealedAt) || value.revealedAt < 0)) return false
   const questions = game.questions.filter((q) => round.questionIds.includes(q.id))
+  if (!validListening(value, questions, mode, !!round.audio)) return false
   if (Object.entries(value.selections).some(([id, selected]) => mode !== 'solo' || !questions.some((q) => q.id === id && q.choices.some((choice) => choice.id === selected)))) return false
   if (Object.entries(value.hintsShown).some(([id, count]) => typeof count !== 'number' || !Number.isInteger(count) || count < 0 || !questions.some((q) => q.id === id && count <= (q.hints?.length ?? 0)))) return false
   if (Object.entries(value.imageOrders).some(([id, order]) => !questions.some((q) => q.id === id && q.mode === 'sequence' && Array.isArray(order) && order.length === q.images.length && new Set(order).size === order.length && order.every((n) => Number.isInteger(n) && n >= 0 && n < q.images.length)))) return false
@@ -89,9 +99,9 @@ function validState(game: Game, raw: unknown, mode: PlayMode): raw is Session {
     if (!Array.isArray(raw.previousAttempts) || raw.previousAttempts.length > 5000 || mode !== 'class') return false
     const previousByRound = new Map<string, number>()
     for (const attempt of raw.previousAttempts) {
-      if (!object(attempt) || Object.keys(attempt).some((key) => !['roundId', 'attempt', 'results', 'manualVotes', 'teacherMarks'].includes(key)) || typeof attempt.roundId !== 'string' || attempt.attempt !== (previousByRound.get(attempt.roundId) ?? 0) || !Array.isArray(attempt.results) || !object(attempt.manualVotes) || !object(attempt.teacherMarks)) return false
+      if (!object(attempt) || Object.keys(attempt).some((key) => !['roundId', 'attempt', 'results', 'manualVotes', 'teacherMarks', 'audioListens', 'extraListens'].includes(key)) || typeof attempt.roundId !== 'string' || attempt.attempt !== (previousByRound.get(attempt.roundId) ?? 0) || !Array.isArray(attempt.results) || !object(attempt.manualVotes) || !object(attempt.teacherMarks)) return false
       const round = roundsFor(game).find((round) => round.id === attempt.roundId)
-      if (!round || attempt.results.length > round.questionIds.length || !attempt.results.every((result) => validAttempt(game, result, mode, round.questionIds)) || new Set(attempt.results.map((a) => a.questionId)).size !== attempt.results.length ||
+      if (!round || !validListening(attempt, game.questions.filter((q) => round.questionIds.includes(q.id)), mode, !!round.audio) || attempt.results.length > round.questionIds.length || !attempt.results.every((result) => validAttempt(game, result, mode, round.questionIds)) || new Set(attempt.results.map((a) => a.questionId)).size !== attempt.results.length ||
         Object.entries(attempt.manualVotes).some(([id, vote]) => { if (!round.questionIds.includes(id)) return true; const checked = validateManualVote(game.questions.find((q) => q.id === id)!, vote); return !checked.ok || !checked.vote }) ||
         Object.entries(attempt.teacherMarks).some(([id, mark]) => !round.questionIds.includes(id) || !['success', 'review', 'unassessed'].includes(mark as string))) return false
       previousByRound.set(attempt.roundId, (attempt.attempt as number) + 1)

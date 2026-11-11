@@ -16,6 +16,7 @@ import {
 import { advanceAction } from './domain/progression'
 import { isLessonEnter } from './keyboard'
 import { AudioPlayer, type AudioStatus } from './components/Media'
+import { maxListensFor } from './domain/listening'
 import { ReflectionTimer } from './components/ReflectionTimer'
 import { ManualCountPanel, ManualVoteView } from './components/ManualCountPanel'
 import { SessionObservations } from './components/SessionObservations'
@@ -386,12 +387,16 @@ function PlayingRound({
       key={audio}
       src={audio}
       paused={suspended || locked || confirmation !== null || navigating}
+      listens={runtime.audioListens}
+      extraListens={runtime.extraListens}
+      maxListens={maxListensFor(questions)}
+      onListenStarted={() => {
+        dispatch({ type: 'AUDIO_LISTEN_STARTED', roundId })
+        setPlayback((n) => n + 1)
+      }}
+      onExtraListen={solo ? undefined : () => dispatch({ type: 'AUDIO_EXTRA_LISTEN_GRANTED', roundId })}
       onStatus={(status) => {
         setAudioStatus(status)
-        if (status === 'playing') {
-          dispatch({ type: 'AUDIO_STATE', roundId, status: 'started' })
-          setPlayback((n) => n + 1)
-        }
         if (status === 'ended') dispatch({ type: 'AUDIO_STATE', roundId, status: 'ended' })
       }}
     />

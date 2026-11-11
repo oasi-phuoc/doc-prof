@@ -37,6 +37,8 @@ Les six cartes pastel A–F utilisent des lettres et des formes de même taille.
 
 Le minuteur vaut 30 secondes par défaut. En Classe, avec un audio, il attend la fin de l’écoute et la suite reste manuelle ; en Solo, il démarre à l’affichage de la question. Il se règle et se désactive avant ou pendant la séance. La pause et le masquage de l’onglet suspendent le minuteur et l’audio. Sur mobile, la question est agrandie et encadrée, puis les cartes sont suivies de la mascotte et du minuteur centrés.
 
+Le [compteur audio](adr-0012-ecoutes-audio.md) respecte la limite explicite de la consigne. Pause et reprise comptent comme un seul passage ; les écoutes consommées et les autorisations supplémentaires de l’enseignant sont conservées dans le journal. Une erreur avant lecture ne compte pas. Un blocage de plus de huit secondes propose un réessai.
+
 En Classe, pour un même enregistrement, deux questions au maximum sont retenues de façon reproductible parmi les questions cochées. Deux QCM sont projetés ensemble : A–C pour la première question, D–F pour la seconde. S’il y avait plus de trois choix, seuls deux distracteurs source sont conservés avec la bonne réponse ; cette adaptation est indiquée dans la préparation. En Solo, toutes les questions sélectionnées et leurs choix sont conservés, un écran par question.
 
 Les QCM TCF privilégient les variantes en images de la banque, même si la fiche papier avait sélectionné la forme à écrire. Le document à lire est ouvert directement, avec réglage de police. Les images de réponse restent des images au corrigé.

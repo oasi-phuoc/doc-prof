@@ -13,7 +13,7 @@ try {
     const original = record([{ type: 'CARDS_UP' }, count, { type: 'PAUSE' }])
     const { state } = replaySession(game, original, planId, now)
     const compacted = compactSession(original, state)
-    assert.equal(compacted.schemaVersion, 4)
+    assert.equal(compacted.schemaVersion, 5)
     assert.equal(compacted.events.length, 0)
     assert.deepEqual(replaySession(game, compacted, planId, now).state, state)
     assert.equal(compacted.checkpoint.state.phase, 'cards-up')
@@ -54,7 +54,7 @@ try {
       assert.throws(() => replaySession(game, broken, planId, now), /Instantané/)
     }
     assert.equal(compacted.checkpoint.state.phase, 'cards-up')
-    assert.throws(() => replaySession(game, { ...compacted, schemaVersion: 5 }, planId, now), /Version/)
+    assert.throws(() => replaySession(game, { ...compacted, schemaVersion: 6 }, planId, now), /Version/)
     assert.throws(() => compactSession(original, { ...compacted.checkpoint.state, gameId: 'other-game' }), /changé/)
   })
   await test('new journal segment deduplicates repeated events and the checkpoint boundary', () => {

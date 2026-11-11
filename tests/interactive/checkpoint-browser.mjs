@@ -48,7 +48,7 @@ try {
   assert.equal(await page.locator('.ci-reveal').count(), 0)
   await page.getByRole('button', { name: 'Discuter', exact: true }).click()
   const running = await waitCheckpoint(page, fixture.gameId, (record) => record.checkpoint.state.phase === 'discussion')
-  assert.equal(running.schemaVersion, 4)
+  assert.equal(running.schemaVersion, 5)
   assert.equal(running.events.length, 0)
   assert.equal(running.checkpoint.state.finished, false)
   assert.ok(JSON.stringify(running).length < fixture.beforeBytes / 10)

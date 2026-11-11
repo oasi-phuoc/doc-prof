@@ -3,6 +3,7 @@ import { questionsForRound, roundsFor } from './plan'
 import { validateManualVote } from './votes'
 import { retractionRemaining } from './teacher'
 import { captureRound, navigateToRound, runtimeFor } from './round-runtime'
+import { canListen, maxListensFor } from './listening'
 
 export function startSession(game: Game, mode: PlayMode = 'class'): Session {
   return captureRound(game, {
@@ -77,10 +78,19 @@ function reduce(game: Game, state: Session, action: Action, at?: number): Sessio
     }
     case 'AUDIO_STATE':
       return action.roundId !== roundId || !roundsFor(game)[state.index]?.audio || !['started', 'ended', 'override'].includes(action.status) ? state : updateRuntime({ ...runtime, audioComplete: action.status === 'ended', audioOverride: action.status === 'override' })
+    case 'AUDIO_LISTEN_STARTED': {
+      if (!roundsFor(game)[state.index]?.audio || !canListen(runtime.audioListens ?? 0, runtime.extraListens ?? 0, maxListensFor(questions))) return state
+      return updateRuntime({ ...runtime, audioListens: (runtime.audioListens ?? 0) + 1, audioComplete: false, audioOverride: false })
+    }
+    case 'AUDIO_EXTRA_LISTEN_GRANTED': {
+      const maximum = maxListensFor(questions)
+      if (state.mode !== 'class' || !roundsFor(game)[state.index]?.audio || maximum === undefined || canListen(runtime.audioListens ?? 0, runtime.extraListens ?? 0, maximum) || (runtime.extraListens ?? 0) >= 1000) return state
+      return updateRuntime({ ...runtime, extraListens: (runtime.extraListens ?? 0) + 1 })
+    }
     case 'RETRY_QUESTION': {
       if (state.mode !== 'class' || action.roundId !== roundId || !['discussion', 'revealed'].includes(state.phase) || (state.previousAttempts?.length ?? 0) >= 5000) return state
       const ids = new Set(questions.map((q) => q.id))
-      const previous = { roundId, attempt: runtime.attempt, results: state.history.filter((a) => ids.has(a.questionId)).map((a) => ({ ...a })), manualVotes: Object.fromEntries(Object.entries(state.manualVotes).filter(([id]) => ids.has(id)).map(([id, vote]) => [id, { ...vote, counts: { ...vote.counts } }])), teacherMarks: Object.fromEntries(Object.entries(state.teacherMarks).filter(([id]) => ids.has(id))) }
+      const previous = { roundId, attempt: runtime.attempt, results: state.history.filter((a) => ids.has(a.questionId)).map((a) => ({ ...a })), manualVotes: Object.fromEntries(Object.entries(state.manualVotes).filter(([id]) => ids.has(id)).map(([id, vote]) => [id, { ...vote, counts: { ...vote.counts } }])), teacherMarks: Object.fromEntries(Object.entries(state.teacherMarks).filter(([id]) => ids.has(id))), ...(runtime.audioListens !== undefined ? { audioListens: runtime.audioListens, extraListens: runtime.extraListens ?? 0 } : {}) }
       return { ...state, phase: 'thinking', selections: {}, selected: undefined, revealedAt: undefined,
         history: state.history.filter((a) => !ids.has(a.questionId)),
         manualVotes: Object.fromEntries(Object.entries(state.manualVotes).filter(([id]) => !ids.has(id))), teacherMarks: Object.fromEntries(Object.entries(state.teacherMarks).filter(([id]) => !ids.has(id))),

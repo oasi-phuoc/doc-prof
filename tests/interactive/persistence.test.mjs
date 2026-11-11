@@ -45,7 +45,7 @@ try {
     const changed = await planIdentity({ ...game, corrections: { q1: { choiceId: 'a', text: 'Autre solution' } } })
     assert.notEqual(changed, planId)
     assert.throws(() => replaySession(game, saved, changed, now), /changé/)
-    assert.throws(() => replaySession(game, { ...saved, schemaVersion: 5 }, planId, now), /Version/)
+    assert.throws(() => replaySession(game, { ...saved, schemaVersion: 6 }, planId, now), /Version/)
     assert.throws(() => replaySession(game, record([{ type: 'SELECT', choiceId: 2 }]), planId, now), /invalide/)
     assert.throws(() => replaySession(game, record([{ type: 'REVEAL', secret: 'extra' }]), planId, now), /invalide/)
     assert.equal(saved.events.length, 1)

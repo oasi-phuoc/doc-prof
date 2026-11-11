@@ -25,6 +25,7 @@ export type Question = {
   prompt: string
   context?: string
   audio?: string
+  audioMaxListens?: number
   images: string[]
   figure?: { type: Figure; dims?: FigureDims }
   mode: 'choice' | 'oral' | 'sequence'
@@ -67,6 +68,8 @@ export type RoundRuntime = {
   imageOrders: Record<string, number[]>
   audioComplete: boolean
   audioOverride: boolean
+  audioListens?: number
+  extraListens?: number
 }
 export type PreviousAttempt = {
   roundId: string
@@ -74,6 +77,8 @@ export type PreviousAttempt = {
   results: Attempt[]
   manualVotes: Record<string, ManualVote>
   teacherMarks: Record<string, 'success' | 'review' | 'unassessed'>
+  audioListens?: number
+  extraListens?: number
 }
 export type Session = {
   gameId: string
@@ -108,6 +113,7 @@ export type Action = (
   | { type: 'HINT_SHOW'; questionId: string }
   | { type: 'IMAGE_ORDER_SET'; questionId: string; order: number[] }
   | { type: 'AUDIO_STATE'; roundId: string; status: 'started' | 'ended' | 'override' }
+  | { type: 'AUDIO_LISTEN_STARTED' | 'AUDIO_EXTRA_LISTEN_GRANTED'; roundId: string }
   | { type: 'ASSESS'; value: 'acquired' | 'retry'; questionId?: string }
   | { type: 'MANUAL_VOTE_SET'; questionId: string; vote: ManualVote | null }
   | { type: 'TEACHER_MARK_SET'; questionId: string; value: 'success' | 'review' | 'unassessed' }

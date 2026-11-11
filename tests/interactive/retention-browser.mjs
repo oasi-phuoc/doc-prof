@@ -19,8 +19,9 @@ try {
       { ...record, gameId: 'expired-schema-2', schemaVersion: 2, updatedAt: expiredAt },
       { ...record, gameId: 'expired-schema-3', schemaVersion: 3, updatedAt: expiredAt },
       { ...record, gameId: 'expired-schema-4', schemaVersion: 4, updatedAt: expiredAt },
+      { ...record, gameId: 'expired-schema-5', schemaVersion: 5, updatedAt: expiredAt },
       { ...record, gameId: 'recent', updatedAt: now },
-      { ...record, gameId: 'future-schema', schemaVersion: 5, updatedAt: expiredAt },
+      { ...record, gameId: 'future-schema', schemaVersion: 6, updatedAt: expiredAt },
       { ...record, gameId: 'invalid-date', updatedAt: 'unknown' },
     ]
     const db = await new Promise((resolve) => { const request = indexedDB.open('clairfle-interactive'); request.onsuccess = () => resolve(request.result) })
@@ -32,7 +33,7 @@ try {
     db.close()
     return { removed, ids: remaining.map((record) => record.gameId).sort(), futureUnchanged: JSON.stringify(remaining.find((record) => record.gameId === 'future-schema')) === JSON.stringify(records.find((record) => record.gameId === 'future-schema')), staleWrite }
   })
-  assert.equal(result.removed, 4)
+  assert.equal(result.removed, 5)
   assert.deepEqual(result.ids, ['future-schema', 'invalid-date', 'recent'])
   assert.equal(result.futureUnchanged, true)
   assert.match(result.staleWrite, /modifiée dans une autre fenêtre/)
@@ -40,7 +41,7 @@ try {
   await page.locator('.ci-launch:enabled').waitFor()
   await page.locator('.ci-launch').click()
   await page.getByRole('button', { name: 'Signal : levez vos cartes', exact: true }).waitFor()
-  const report = { retention: 'expired schema 1–4 sessions purged after seven days', preserved: 'recent sessions, unknown schemas and unverifiable dates', futureSchemaUnchanged: result.futureUnchanged, staleWriter: 'cannot recreate a purged journal', playAfterCleanup: 'passed' }
+  const report = { retention: 'expired schema 1–5 sessions purged after seven days', preserved: 'recent sessions, unknown schemas and unverifiable dates', futureSchemaUnchanged: result.futureUnchanged, staleWriter: 'cannot recreate a purged journal', playAfterCleanup: 'passed' }
   await writeFile('docs/interactive/retention-results.json', JSON.stringify(report, null, 2) + '\n')
   console.log(JSON.stringify(report, null, 2))
 } finally { await browser.close() }
