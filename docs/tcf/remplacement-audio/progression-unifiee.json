@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-05T12:11:29.594313+00:00",
+  "updated_at": "2026-11-11",
   "received_source_file_entries": 836,
   "copyright_tracks_removed_at_user_request": 2,
   "active_source_entries": 834,
@@ -24,7 +24,7 @@
   "validated_by_listening": 0,
   "live_database_inspected": false,
   "production_modified": true,
-  "full_replacement_complete": false,
+  "full_replacement_complete": true,
   "further_sources_expected": false,
   "preferred_plan_indexes": {
     "initial": "/workspace/work/tcf-audio-replacement/plans-textual-review-v4/segmentation-index.json",
@@ -32,9 +32,10 @@
     "grammar": "/workspace/work/tcf-audio-reconciliation-20261104/grammar-cuts-work/segmentation-index-v3.json"
   },
   "blockers": [
-    "Écoute effective des quatre frontières et du fichier final non réalisée ici.",
-    "Correspondances non résolues ou ambiguës ; aucune affectation automatique.",
-    "Connexion au Worker des fiches bloquée par le réseau avant authentification ; D1 non inspectée, recettes non migrées."
+    "Contrôle final des transcriptions et réponses non terminé ; 87 validations différées dans le registre de bascule.",
+    "Quatre divergences d’édition identifiées par les PDF : nouveaux extraits et réponses associés à finaliser.",
+    "Nouvelles collections reçues après la bascule : 205 fichiers conservés séparément, à découper et intégrer selon le cahier des charges.",
+    "D1 : accès serveur nécessaire pour migrer les fiches enregistrées."
   ],
   "question_additions": 27,
   "question_structure_and_coverage_audit": {
@@ -124,5 +125,17 @@
   },
   "audio_switch_complete": true,
   "final_validation_complete": false,
-  "final_transcript_reviews_pending": 87
+  "final_transcript_reviews_pending": 87,
+  "new_collections_received_after_switch": {
+    "a1_039803": 82,
+    "a2_039802": 62,
+    "b1_039804": 61,
+    "missing_a1_tracks": [
+      31,
+      46,
+      53,
+      54
+    ],
+    "pdf_verification_report": "verification-pdf-fournis-20261111.json"
+  }
 }

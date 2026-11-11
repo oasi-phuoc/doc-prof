@@ -41,7 +41,8 @@ function docUrl(ref: string): string {
 /**
  * Ex. 1 (6 docs) / Ex. 2 (3 docs) :
  * intro → mélodie (démo) → « Lisez… » → battement 25 s →
- * pour chaque doc × 2 : mélodie → Audio n° → document → silence 15 s.
+ * pour chaque doc : Audio n° → mélodie → document → pause 15 s →
+ * mélodie → document → pause 15 s.
  */
 export function buildCoMultiDocsPlaylist(docs: readonly string[], variant: 1 | 2): string[] {
   const intro = variant === 1 ? TCF_EX1_INTRO : TCF_EX2_INTRO
@@ -50,9 +51,9 @@ export function buildCoMultiDocsPlaylist(docs: readonly string[], variant: 1 | 2
     const doc = docUrl(docs[i]!)
     if (!doc) continue
     const n = i + 1
+    if (n <= 6) urls.push(tcfAudioNumeroSrc(n))
     for (let listen = 0; listen < 2; listen++) {
       urls.push(TCF_SON_MELODIE)
-      if (n <= 6) urls.push(tcfAudioNumeroSrc(n))
       urls.push(doc, tcfSilenceSrc(15))
     }
   }
@@ -62,7 +63,7 @@ export function buildCoMultiDocsPlaylist(docs: readonly string[], variant: 1 | 2
 /**
  * Ex. 3 (1 doc long) :
  * intro → mélodie → « Lisez… » → battement 30 s →
- * 2× (mélodie → Audio n° 1 → document → silence 30 s).
+ * 2× (mélodie → document → pause 30 s), sans numéro pour ce document unique.
  */
 export function buildCoLongPlaylist(doc: string): string[] {
   const src = docUrl(doc)
@@ -73,11 +74,9 @@ export function buildCoLongPlaylist(doc: string): string[] {
     TCF_EX3_LISEZ,
     tcfBattementSrc(30),
     TCF_SON_MELODIE,
-    tcfAudioNumeroSrc(1),
     src,
     tcfSilenceSrc(30),
     TCF_SON_MELODIE,
-    tcfAudioNumeroSrc(1),
     src,
     tcfSilenceSrc(30),
   ]
@@ -85,34 +84,31 @@ export function buildCoLongPlaylist(doc: string): string[] {
 
 /**
  * Ex. 4 (4 dialogues / situations) :
- * intro → silence 30 s → mélodie →
- * tour 1 : Audio n° 1…4 + doc + 15 s →
- * mélodie → tour 2 identique.
+ * intro → lecture 30 s → pour chaque dialogue :
+ * Audio n° → bip → écoute 1 → pause 15 s → bip → écoute 2 → pause 15 s.
  */
 export function buildCoAssociationPlaylist(docs: readonly string[]): string[] {
-  const urls: string[] = [TCF_EX4_INTRO, tcfSilenceSrc(30), TCF_SON_MELODIE]
-  const pushRound = () => {
-    for (let i = 0; i < docs.length; i++) {
-      const doc = docUrl(docs[i]!)
-      if (!doc) continue
-      urls.push(tcfAudioNumeroSrc(i + 1), doc, tcfSilenceSrc(15))
+  const urls: string[] = [TCF_EX4_INTRO, tcfSilenceSrc(30)]
+  for (let i = 0; i < docs.length; i++) {
+    const doc = docUrl(docs[i]!)
+    if (!doc) continue
+    urls.push(tcfAudioNumeroSrc(i + 1))
+    for (let listen = 0; listen < 2; listen++) {
+      urls.push(TCF_SON_MELODIE, doc, tcfSilenceSrc(15))
     }
   }
-  pushRound()
-  urls.push(TCF_SON_MELODIE)
-  pushRound()
   return urls
 }
 
 /**
  * Ex. 5 (objets / images à reconnaître) :
- * intro → silence 15 s → mélodie → message → mélodie → message.
+ * intro → lecture 15 s → bip → message → pause 15 s → bip → message → pause 15 s.
  */
 export function buildCoObjetsPlaylist(doc: string): string[] {
   const src = docUrl(doc)
   const urls: string[] = [TCF_EX5_INTRO, tcfSilenceSrc(15)]
   if (!src) return urls
-  urls.push(TCF_SON_MELODIE, src, TCF_SON_MELODIE, src)
+  urls.push(TCF_SON_MELODIE, src, tcfSilenceSrc(15), TCF_SON_MELODIE, src, tcfSilenceSrc(15))
   return urls
 }
 

@@ -1,0 +1,3671 @@
+{
+  "summary": {
+    "pdf_files": 208,
+    "collections": [
+      {
+        "collection": "A1 tout public",
+        "files": 85,
+        "text_extracted": 85
+      },
+      {
+        "collection": "A2 tout public",
+        "files": 62,
+        "text_extracted": 62
+      },
+      {
+        "collection": "B1 tout public",
+        "files": 61,
+        "text_extracted": 61
+      }
+    ],
+    "active_audio_scope": 1025,
+    "exact_normalized_text_matches": 103,
+    "strong_candidates_to_review": 45,
+    "possible_candidates_to_review": 7,
+    "recording_pdf_version_conflicts": 4,
+    "reviewed_spelling_corrections": 9,
+    "new_b1_sources": {
+      "received": 61,
+      "unique_hashes": 61,
+      "previously_catalogued_byte_identical": 0,
+      "total_bytes": 122106709,
+      "total_duration_seconds": 7627.62,
+      "production_modified": false,
+      "content_pairs_confirmed_with_two_recognizers": 61
+    },
+    "audio_files_modified": 0,
+    "final_check_complete": false,
+    "human_listening_performed": false,
+    "reviewed_correction_records": 10,
+    "reviewed_question_formatting_corrections": 1,
+    "new_a1_sources": {
+      "received": 82,
+      "expected_track_range": [
+        1,
+        86
+      ],
+      "missing_track_numbers": [
+        31,
+        46,
+        53,
+        54
+      ],
+      "unique_hashes": 82,
+      "previously_catalogued_byte_identical": 0,
+      "total_bytes": 74624147,
+      "total_duration_seconds": 3105.7,
+      "production_modified": false
+    },
+    "new_a2_sources": {
+      "received": 62,
+      "expected_track_range": [
+        1,
+        62
+      ],
+      "missing_track_numbers": [],
+      "unique_hashes": 62,
+      "previously_catalogued_byte_identical": 0,
+      "total_bytes": 114126901,
+      "total_duration_seconds": 4752.54,
+      "production_modified": false
+    }
+  },
+  "scope_note": "Les PDF concernent des éditions précises. Les 61 nouvelles sources B1 039804 ont été appariées aux 61 PDF par comparaison de contenu avec deux moteurs de reconnaissance ; elles ne sont pas encore intégrées aux exercices actifs. Les 82 sources A1 039803 et 62 sources A2 039802 sont conservées séparément. Aucun rapprochement ne vaut attestation d’écoute humaine ni validation de toutes les questions.",
+  "matches": [
+    {
+      "ref": "/lib/audio/tcf/co/fetes/02-fêtes_anniversaire-de-Gerald.mp3",
+      "status": "strong_match_requires_review",
+      "similarity": 0.9691,
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 72,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "b3856240467836de1418636f438b5a089d11b9b05d7968ea62a463dfe56ab37a",
+      "file_id": "file_00000000c22081f4bc86b74b83f43830",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a0-a1/co.json",
+          "exercise": "tcf-a1-s3-co-1",
+          "audio": 1
+        }
+      ],
+      "differences": [
+        {
+          "kind": "replace",
+          "current": "charline",
+          "official": "charlene"
+        },
+        {
+          "kind": "delete",
+          "current": "euros",
+          "official": ""
+        }
+      ]
+    },
+    {
+      "ref": "/lib/audio/tcf/co/radio/la-meteo.mp3",
+      "status": "strong_match_requires_review",
+      "similarity": 0.9076,
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 73,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "d3616608bed069078e95da22e266f9e6d62dfd6f00622378f3abc8875a8bd38e",
+      "file_id": "file_00000000e03081f4bf91225bed27e4aa",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a0-a1/co.json",
+          "exercise": "tcf-a1-s3-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": [
+        {
+          "kind": "replace",
+          "current": "par heure",
+          "official": "h"
+        },
+        {
+          "kind": "replace",
+          "current": "degres",
+          "official": "c"
+        },
+        {
+          "kind": "replace",
+          "current": "degres",
+          "official": "c"
+        },
+        {
+          "kind": "replace",
+          "current": "degres",
+          "official": "c"
+        },
+        {
+          "kind": "replace",
+          "current": "degres",
+          "official": "c"
+        }
+      ]
+    },
+    {
+      "ref": "/lib/audio/tcf/co/maison/dans-l-immeuble.mp3",
+      "status": "strong_match_requires_review",
+      "similarity": 0.9846,
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 74,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "6ee461d2c084fec47cecae468be3b42c65162215fd4c05a1b9b9b37ad3860fde",
+      "file_id": "file_000000000ddc81f4985f64a0e970610e",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a0-a1/co.json",
+          "exercise": "tcf-a1-s3-co-3",
+          "audio": 1
+        }
+      ],
+      "differences": [
+        {
+          "kind": "replace",
+          "current": "demi",
+          "official": "demie"
+        }
+      ]
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-1-1.mp3",
+      "status": "strong_match_requires_review",
+      "similarity": 0.9524,
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 75,
+      "pdf_section": "Situation n° 1",
+      "pdf_sha256": "a752f7193edbdb3a89ade5b8401fc97a4d728d9d0f518d7a69f32fd701ff89c2",
+      "file_id": "file_00000000b58c82109dcdfa42bfe6cd83",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a0-a1/co.json",
+          "exercise": "tcf-a1-s3-co-4",
+          "audio": 1
+        }
+      ],
+      "differences": [
+        {
+          "kind": "insert",
+          "current": "",
+          "official": "p"
+        },
+        {
+          "kind": "insert",
+          "current": "",
+          "official": "oh"
+        }
+      ]
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-1-2.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 75,
+      "pdf_section": "Situation n° 2",
+      "pdf_sha256": "a752f7193edbdb3a89ade5b8401fc97a4d728d9d0f518d7a69f32fd701ff89c2",
+      "file_id": "file_00000000b58c82109dcdfa42bfe6cd83",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a0-a1/co.json",
+          "exercise": "tcf-a1-s3-co-4",
+          "audio": 2
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-1-3.mp3",
+      "status": "strong_match_requires_review",
+      "similarity": 0.9615,
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 75,
+      "pdf_section": "Situation n° 3",
+      "pdf_sha256": "a752f7193edbdb3a89ade5b8401fc97a4d728d9d0f518d7a69f32fd701ff89c2",
+      "file_id": "file_00000000b58c82109dcdfa42bfe6cd83",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a0-a1/co.json",
+          "exercise": "tcf-a1-s3-co-4",
+          "audio": 3
+        }
+      ],
+      "differences": [
+        {
+          "kind": "replace",
+          "current": "degres",
+          "official": "c"
+        }
+      ]
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-1-4.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 75,
+      "pdf_section": "Situation n° 4",
+      "pdf_sha256": "a752f7193edbdb3a89ade5b8401fc97a4d728d9d0f518d7a69f32fd701ff89c2",
+      "file_id": "file_00000000b58c82109dcdfa42bfe6cd83",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a0-a1/co.json",
+          "exercise": "tcf-a1-s3-co-4",
+          "audio": 4
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/magasins/achats-annonce-1.mp3",
+      "status": "strong_match_requires_review",
+      "similarity": 0.9811,
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 28,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "6e133d883378384fff535c8b079a120aaf1436f3afeeeeb17a360e0eda5e1eca",
+      "file_id": "file_00000000bec481f484c40750f99e62a1",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a0-a1/co.json",
+          "exercise": "tcf-ss-a1-s1-co-1",
+          "audio": 1
+        }
+      ],
+      "differences": [
+        {
+          "kind": "replace",
+          "current": "bienvenue",
+          "official": "bienvenus"
+        }
+      ]
+    },
+    {
+      "ref": "/lib/audio/tcf/co/magasins/tu-viens-moi-limons-2.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 50,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "eb11140f515391bd37161cf90e0ac8062fe5a1dbd23917d51bf373f4310a8f4f",
+      "file_id": "file_00000000912481f48c0c830df6a6b97c",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a0-a1/co.json",
+          "exercise": "tcf-ss-a1-s2-co-1",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/couleurs-objet.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 62,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "4411d3cfbc0f6cd6a7dde5f4592bb891fda5815cc3c4234939adffdeca70ec69",
+      "file_id": "file_00000000a4f881f48540d430b8314243",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a0-a1/co.json",
+          "exercise": "tcf-ss-a1-s4-co-3",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/travail/01-travail-répondeur-planning-du-jour.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 36,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "b914ef5eec58c65bec36f039dea1ef93e99a92b6a15605867dae541c351c74f1",
+      "file_id": "file_000000003a6881f49ca4262195eafbfa",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a0-a1/co.json",
+          "exercise": "tcf-ss-a1-s8-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/fetes/13-invitation-nouveau-cinéma.mp3",
+      "status": "possible_match_requires_review",
+      "similarity": 0.7481,
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 5,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "006923d15a7e7b42d5b7c4a9bf3b1c73ec963df7b758143fc203519d496803cc",
+      "file_id": "file_000000006c148210b3a37d990e4b590a",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a0-a1/co.json",
+          "exercise": "tcf-ss-a1-s9-co-3",
+          "audio": 1
+        }
+      ],
+      "differences": [
+        {
+          "kind": "delete",
+          "current": "je suis en retard",
+          "official": ""
+        },
+        {
+          "kind": "insert",
+          "current": "",
+          "official": "finalement"
+        },
+        {
+          "kind": "delete",
+          "current": "nouveau",
+          "official": ""
+        },
+        {
+          "kind": "delete",
+          "current": "numero",
+          "official": ""
+        },
+        {
+          "kind": "replace",
+          "current": "en direction du centre commercial des fontaines",
+          "official": "et"
+        },
+        {
+          "kind": "delete",
+          "current": "nouveau",
+          "official": ""
+        },
+        {
+          "kind": "replace",
+          "current": "le cinema",
+          "official": "il"
+        },
+        {
+          "kind": "delete",
+          "current": "est ce que",
+          "official": ""
+        },
+        {
+          "kind": "replace",
+          "current": "a tout a l heure bisous",
+          "official": "je ramene des bonbons bises"
+        }
+      ]
+    },
+    {
+      "ref": "/lib/audio/tcf/co/fetes/17-fêtes_anniversaire-de-Margot-objets.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 60,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "d4d0fa56e94f10d9763c5ae2096578c4f1316d5798417fb0e3ebd22537a930e8",
+      "file_id": "file_00000000d0b881f48a7ef1b1edb360fa",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a0-a1/co.json",
+          "exercise": "tcf-ss-a1-s10-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/radio-france.mp3",
+      "status": "strong_match_requires_review",
+      "similarity": 0.967,
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 21,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "1e4bf004210f4172237ec217dc8de06114075ef43014d6d4d4f9296d252b53ae",
+      "file_id": "file_00000000434c8210bf153d5f832cec03",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a0-a1/co.json",
+          "exercise": "tcf-ss-a1-s12-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": [
+        {
+          "kind": "delete",
+          "current": "et le dimanche",
+          "official": ""
+        }
+      ]
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/aujourd-hui-l-actualite-musicale-parlons.mp3",
+      "status": "possible_match_requires_review",
+      "similarity": 0.8222,
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 23,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "1a7025095717ccfecee2851a401d877c2ce4a7b0270a9c24119919e69edf789b",
+      "file_id": "file_00000000a69082108e1db5ed302d9f35",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a0-a1/co.json",
+          "exercise": "tcf-ss-a1-s12-co-3",
+          "audio": 1
+        }
+      ],
+      "differences": [
+        {
+          "kind": "replace",
+          "current": "si",
+          "official": "rendez"
+        },
+        {
+          "kind": "replace",
+          "current": "allez les voir amusez vous bien",
+          "official": "sur le site web pour reserver vos places"
+        }
+      ]
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/bonsoir-votre-commande-prete.mp3",
+      "status": "strong_match_requires_review",
+      "similarity": 0.9011,
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 38,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "e6afb0a3bc1f4eaa02d9e49398f13fc843db9dd00162fdc504d97d9bfeb2cbab",
+      "file_id": "file_00000000adc482108741d59ba35eca38",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a0-a1/co.json",
+          "exercise": "tcf-ss-a1-s12-co-4",
+          "audio": 1
+        }
+      ],
+      "differences": [
+        {
+          "kind": "delete",
+          "current": "n",
+          "official": ""
+        },
+        {
+          "kind": "replace",
+          "current": "pas les cheques",
+          "official": "seulement le paiement en especes"
+        }
+      ]
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/bonsoir-c-est-cristina.mp3",
+      "status": "possible_match_requires_review",
+      "similarity": 0.7586,
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 10,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "e4e67d3af0fb6f05cb81a6d7b5c28d9b9be116d0cd35d25e6da6612f5cd823c2",
+      "file_id": "file_000000003e6c821082d484a6c5408037",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a0-a1/co.json",
+          "exercise": "tcf-ss-a1-s13-co-1",
+          "audio": 1
+        }
+      ],
+      "differences": [
+        {
+          "kind": "replace",
+          "current": "cristina",
+          "official": "christina"
+        },
+        {
+          "kind": "replace",
+          "current": "peintures",
+          "official": "peinture"
+        },
+        {
+          "kind": "delete",
+          "current": "est ce que",
+          "official": ""
+        },
+        {
+          "kind": "replace",
+          "current": "6h00",
+          "official": "16h00"
+        },
+        {
+          "kind": "replace",
+          "current": "y aller",
+          "official": "venir"
+        },
+        {
+          "kind": "replace",
+          "current": "112",
+          "official": "114 je vais venir en taxi"
+        },
+        {
+          "kind": "replace",
+          "current": "virgule 50 euros rappelle",
+          "official": "envoie"
+        },
+        {
+          "kind": "insert",
+          "current": "",
+          "official": "1 message"
+        },
+        {
+          "kind": "replace",
+          "current": "14",
+          "official": "30"
+        }
+      ]
+    },
+    {
+      "ref": "/lib/audio/tcf/co/maison/les-cles-voiture-sont.mp3",
+      "status": "strong_match_requires_review",
+      "similarity": 0.9808,
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 70,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "28c6a0972bd4f29eab815b0f974b1074cd0313291b45c31f7b9447d91502fe65",
+      "file_id": "file_000000000b7881f48602bc36a60d0a91",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a0-a1/co.json",
+          "exercise": "tcf-ss-a1-s16-co-4",
+          "audio": 1
+        }
+      ],
+      "differences": [
+        {
+          "kind": "replace",
+          "current": "cles",
+          "official": "clefs"
+        }
+      ]
+    },
+    {
+      "ref": "/lib/audio/tcf/co/loisirs/le-festival-theatre-val.mp3",
+      "status": "strong_match_requires_review",
+      "similarity": 0.9615,
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 17,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "5ca8d2de1674b53df33e2ce0ac7e444fba787bc92fe0b98b576f1d79636c363c",
+      "file_id": "file_0000000071dc81f486a94921f7647d64",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a0-a1/co.json",
+          "exercise": "tcf-ss-a1-s18-co-1",
+          "audio": 1
+        }
+      ],
+      "differences": [
+        {
+          "kind": "replace",
+          "current": "au spectacle",
+          "official": "aux spectacles"
+        }
+      ]
+    },
+    {
+      "ref": "/lib/audio/tcf/co/loisirs/la-bibliotheque-ferme-minutes-1.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 27,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "5c58665510f38f01404085d9e84fc95fafb74415a170a4d3ff0a06c517694c00",
+      "file_id": "file_000000009ba482108c81ac87e5ded984",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a0-a1/co.json",
+          "exercise": "tcf-ss-a1-s18-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/loisirs/bienvenue-parc-asterix-1.mp3",
+      "status": "strong_match_requires_review",
+      "similarity": 0.9302,
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 29,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "7c2b3d6dfeb3fda04aa773715a6e1137a5d49be46f998beeb03d689059b93822",
+      "file_id": "file_00000000d1fc8246b3004c0c2caab8d7",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a0-a1/co.json",
+          "exercise": "tcf-ss-a1-s18-co-3",
+          "audio": 1
+        }
+      ],
+      "differences": [
+        {
+          "kind": "replace",
+          "current": "le",
+          "official": "votre"
+        },
+        {
+          "kind": "insert",
+          "current": "",
+          "official": "de chaussures"
+        },
+        {
+          "kind": "replace",
+          "current": "30",
+          "official": "20"
+        }
+      ]
+    },
+    {
+      "ref": "/lib/audio/tcf/co/loisirs/rts-bonjour.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 22,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "2158d1586390a1791ef77dd132ed5b0cc7d04fbe5b452a81997d15deb4811a92",
+      "file_id": "file_00000000fde4821084797a85a41523ed",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a0-a1/co.json",
+          "exercise": "tcf-ss-a1-s19-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/loisirs/loisirs-instruction.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 35,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "cd4e1ee9c5f799687dc8b8f02bd8560a3e73876ccfacc029a6c58da38bd22328",
+      "file_id": "file_00000000432081f4b5d62aaf4dbd2c73",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a0-a1/co.json",
+          "exercise": "tcf-ss-a1-s19-co-4",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/loisirs/nature-conversation-2.mp3",
+      "status": "possible_match_requires_review",
+      "similarity": 0.8108,
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 49,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "bb1f37d63319ba5a6511eb7f0b5901d1825fd2d862af334ec8440b4265ed7f7d",
+      "file_id": "file_00000000882481f484dc5b23e1ead7a3",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a0-a1/co.json",
+          "exercise": "tcf-ss-a1-s20-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": [
+        {
+          "kind": "insert",
+          "current": "",
+          "official": "quentin quel est notre numero de vol c est le af340 l avion decolle dans 2h00 tres bien j ai le temps d aller me chercher 1 cafe"
+        }
+      ]
+    },
+    {
+      "ref": "/lib/audio/tcf/co/maison/bonjour-fruits-legumes-par-2.mp3",
+      "status": "strong_match_requires_review",
+      "similarity": 0.9735,
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 51,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "c1008c0be88e92980558ac353b05236c44967a3afd025eea5139ae627eb781d6",
+      "file_id": "file_00000000a2b881f48d746aa7676a12dd",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a0-a1/co.json",
+          "exercise": "tcf-ss-a1-s22-co-3",
+          "audio": 1
+        }
+      ],
+      "differences": [
+        {
+          "kind": "replace",
+          "current": "virgule",
+          "official": "euros"
+        },
+        {
+          "kind": "delete",
+          "current": "euros",
+          "official": ""
+        },
+        {
+          "kind": "replace",
+          "current": "radio fm",
+          "official": "radiofm"
+        }
+      ]
+    },
+    {
+      "ref": "/lib/audio/tcf/co/maison/pour-repas-soir.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 63,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "9ad1fb65a966d782baec6c88fb433f83e117c9fe9c47543f6ccda1a93458da87",
+      "file_id": "file_0000000080548246b7b53eb2da5e02ac",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a0-a1/co.json",
+          "exercise": "tcf-ss-a1-s22-co-4",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/madame-bienvenue-train-1.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 24,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "216b79494fde8d4b9c1345f33be4541e353697c6a397f7149f98a64949015c53",
+      "file_id": "file_000000005cc482109d29c4d22e33e808",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a0-a1/co.json",
+          "exercise": "tcf-ss-a1-s39-co-3",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/j-ai-mal-dos-cause.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 64,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "4c4dbcbe6879989f11757687fa7178797d4875869d7df14a16716e412d1f824c",
+      "file_id": "file_00000000f50081f4a03d37b7295731c0",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a0-a1/co.json",
+          "exercise": "tcf-ss-a1-s39-co-4",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/presenter-conversation-2.mp3",
+      "status": "strong_match_requires_review",
+      "similarity": 0.9458,
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 46,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "085408f7533c4bb15ad1b53d1ae009a43a9ee6a853b42edeab89c91071ff722d",
+      "file_id": "file_00000000f7c08246be7c75cca897bc2d",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a0-a1/co.json",
+          "exercise": "tcf-ss-a1-s46-co-4",
+          "audio": 1
+        }
+      ],
+      "differences": [
+        {
+          "kind": "replace",
+          "current": "bande dessinee",
+          "official": "bandes dessinees"
+        },
+        {
+          "kind": "replace",
+          "current": "autobiographie",
+          "official": "autobiographies"
+        },
+        {
+          "kind": "replace",
+          "current": "virgule",
+          "official": "euros"
+        },
+        {
+          "kind": "delete",
+          "current": "euros",
+          "official": ""
+        },
+        {
+          "kind": "replace",
+          "current": "sympas",
+          "official": "sympa"
+        }
+      ]
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/presenter-instruction.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 37,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "305b7009ef6d13cad308c700edb5fc888a8ec6dc92eaf4736ef403fa2d157771",
+      "file_id": "file_000000004ddc81f48d93ef5d52bd6692",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a0-a1/co.json",
+          "exercise": "tcf-ss-a1-s47-co-4",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/pour-nouveau-projet-dois.mp3",
+      "status": "strong_match_requires_review",
+      "similarity": 0.9623,
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 61,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "45ffe4bf534c3004b161b89467356d7e0f7e29cc1f1f1dbf9bc057856c45aae5",
+      "file_id": "file_000000006db481f4bb1e6f2f72369290",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a0-a1/co.json",
+          "exercise": "tcf-ss-a1-s49-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": [
+        {
+          "kind": "replace",
+          "current": "organise",
+          "official": "organisee"
+        },
+        {
+          "kind": "replace",
+          "current": "couleurs",
+          "official": "couleur"
+        }
+      ]
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/pour-mariage-sophie.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 71,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "3768c47a27952919a555e02912f36fc05b4d0525cc81ba168651fe37443d2dd7",
+      "file_id": "file_000000001dd081f48d72473602af7b53",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a0-a1/co.json",
+          "exercise": "tcf-ss-a1-s49-co-3",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/transports/madame-ligne-tramway.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 30,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "9c194b32192e60febbb19b86512ec5622742053e9de4ee3896045a55dafd8e21",
+      "file_id": "file_0000000097e88243aa934a752dd7ee77",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a0-a1/co.json",
+          "exercise": "tcf-ss-a1-s52-co-4",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/transports/mesdames-messieurs-train-numero.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 32,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "8770fe3c109444f2a2c7680db296d507d43c97d8ab8460573a692c7b0d5f9b79",
+      "file_id": "file_00000000ae108243880de1934bb7f917",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a0-a1/co.json",
+          "exercise": "tcf-ss-a1-s53-co-1",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/transports/mesdames-messieurs-l-embarquement-vol.mp3",
+      "status": "possible_match_requires_review",
+      "similarity": 0.7455,
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 33,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "f49c27f128f01cdcc4c4e96d00b0b4893238a0f0679e8c052c33b9bf9de763d3",
+      "file_id": "file_00000000ac488243a7dc50c30953b6bd",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a0-a1/co.json",
+          "exercise": "tcf-ss-a1-s53-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": [
+        {
+          "kind": "delete",
+          "current": "est",
+          "official": ""
+        },
+        {
+          "kind": "delete",
+          "current": "il",
+          "official": ""
+        },
+        {
+          "kind": "replace",
+          "current": "8h17",
+          "official": "8h20"
+        },
+        {
+          "kind": "replace",
+          "current": "environ 2h00et 20",
+          "official": "une heure et 30"
+        },
+        {
+          "kind": "delete",
+          "current": "votre billet et",
+          "official": ""
+        },
+        {
+          "kind": "insert",
+          "current": "",
+          "official": "nous offrons a boire dans l avion mais pas a manger ou de divertissement"
+        }
+      ]
+    },
+    {
+      "ref": "/lib/audio/tcf/co/transports/madame-etes-arrive-1.mp3",
+      "status": "strong_match_requires_review",
+      "similarity": 0.9,
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 25,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "d6eac32b07ef1a14335f6244863a8f91e129d29af0708bb043bb0e88dab1852d",
+      "file_id": "file_00000000957c81f4bb7b4c7f304bcbed",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a0-a1/co.json",
+          "exercise": "tcf-ss-a1-s54-co-1",
+          "audio": 1
+        }
+      ],
+      "differences": [
+        {
+          "kind": "replace",
+          "current": "superj",
+          "official": "super j"
+        },
+        {
+          "kind": "replace",
+          "current": "19h00sans",
+          "official": "19h00 sans"
+        },
+        {
+          "kind": "insert",
+          "current": "",
+          "official": "euros"
+        },
+        {
+          "kind": "replace",
+          "current": "superj",
+          "official": "super j"
+        }
+      ]
+    },
+    {
+      "ref": "/lib/audio/tcf/co/transports/bonjour-ici-cabinet-dentaire.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 34,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "0d4b521e4b817787effcded15fbb39d60f2b7d7f6df114d3ed5118cfa0e103e3",
+      "file_id": "file_00000000f5c081f4bb87234ecaf56bff",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a0-a1/co.json",
+          "exercise": "tcf-ss-a1-s54-co-3",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/magasins/tiens-jacqueline-comment-vas-2.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 47,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "632d3e3fed4e69d3684bdbca8bb381d4bf369a9b0c54d1979a1841064588fc12",
+      "file_id": "file_0000000073f882108c20fe9039d15ffd",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a0-a1/co.json",
+          "exercise": "tcf-ss-a1-s58-co-1",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/scènes courtes/01-transport-arrêt-de-bus.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 48,
+      "pdf_section": "Situation n° 1",
+      "pdf_sha256": "9fdd4441b09dd5cad4dd86f73485636560c69539562d605600a87a47c5bd9fa2",
+      "file_id": "file_0000000057448210a7b65c52cd59f9c2",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a0-a1/co.json",
+          "exercise": "tcf-sc-01-arret-de-bus-co-4",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/scènes courtes/02-transport-guichet-de-train.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 48,
+      "pdf_section": "Situation n° 2",
+      "pdf_sha256": "9fdd4441b09dd5cad4dd86f73485636560c69539562d605600a87a47c5bd9fa2",
+      "file_id": "file_0000000057448210a7b65c52cd59f9c2",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a0-a1/co.json",
+          "exercise": "tcf-sc-02-guichet-de-train-co-4",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/scènes courtes/03-maison-demander-un-café.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 48,
+      "pdf_section": "Situation n° 3",
+      "pdf_sha256": "9fdd4441b09dd5cad4dd86f73485636560c69539562d605600a87a47c5bd9fa2",
+      "file_id": "file_0000000057448210a7b65c52cd59f9c2",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a0-a1/co.json",
+          "exercise": "tcf-sc-03-demander-un-cafe-co-4",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/scènes courtes/04-quotidien-horaire-du-musée.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 48,
+      "pdf_section": "Situation n° 4",
+      "pdf_sha256": "9fdd4441b09dd5cad4dd86f73485636560c69539562d605600a87a47c5bd9fa2",
+      "file_id": "file_0000000057448210a7b65c52cd59f9c2",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a0-a1/co.json",
+          "exercise": "tcf-sc-04-horaire-du-musee-co-4",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/magasins/waouh-sympa-ton-nouveau-1.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 48,
+      "pdf_section": "Dialogue 1",
+      "pdf_sha256": "09a6f9cabbe1c1686872c792118138f4ef36f359266f6cb1ce21741130994d08",
+      "file_id": "file_000000004b7c81f4b19ea3e53b74edca",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ss-a2-s2-co-4",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/magasins/waouh-sympa-ton-nouveau-2.mp3",
+      "status": "strong_match_requires_review",
+      "similarity": 0.96,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 48,
+      "pdf_section": "Dialogue 2",
+      "pdf_sha256": "09a6f9cabbe1c1686872c792118138f4ef36f359266f6cb1ce21741130994d08",
+      "file_id": "file_000000004b7c81f4b19ea3e53b74edca",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ss-a2-s2-co-4",
+          "audio": 2
+        }
+      ],
+      "differences": [
+        {
+          "kind": "replace",
+          "current": "oh",
+          "official": "ah"
+        }
+      ]
+    },
+    {
+      "ref": "/lib/audio/tcf/co/magasins/waouh-sympa-ton-nouveau-3.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 48,
+      "pdf_section": "Dialogue 3",
+      "pdf_sha256": "09a6f9cabbe1c1686872c792118138f4ef36f359266f6cb1ce21741130994d08",
+      "file_id": "file_000000004b7c81f4b19ea3e53b74edca",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ss-a2-s2-co-4",
+          "audio": 3
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/magasins/waouh-sympa-ton-nouveau-4.mp3",
+      "status": "strong_match_requires_review",
+      "similarity": 0.9885,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 48,
+      "pdf_section": "Dialogue 4",
+      "pdf_sha256": "09a6f9cabbe1c1686872c792118138f4ef36f359266f6cb1ce21741130994d08",
+      "file_id": "file_000000004b7c81f4b19ea3e53b74edca",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ss-a2-s2-co-4",
+          "audio": 4
+        }
+      ],
+      "differences": [
+        {
+          "kind": "insert",
+          "current": "",
+          "official": "de"
+        }
+      ]
+    },
+    {
+      "ref": "/lib/audio/tcf/co/magasins/bonjour-ici-service-client.mp3",
+      "status": "strong_match_requires_review",
+      "similarity": 0.982,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 30,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "9bcfae5b9dd7d162a3b6b1f8236090b545e78d5278acebf360aadaef31d805ef",
+      "file_id": "file_000000002fb081f49dad5d6d3c4dadc1",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ss-a2-s3-co-1",
+          "audio": 1
+        }
+      ],
+      "differences": [
+        {
+          "kind": "replace",
+          "current": "500g",
+          "official": "500 grammes"
+        }
+      ]
+    },
+    {
+      "ref": "/lib/audio/tcf/co/magasins/bonjour-societe-fmac.mp3",
+      "status": "strong_match_requires_review",
+      "similarity": 0.9221,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 37,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "9934291935374d8fabecfddf3cc118c8871599f4f71a44853ae861b1e5fa4fba",
+      "file_id": "file_000000004f6081f48837683fdb4fd007",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ss-a2-s3-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": [
+        {
+          "kind": "replace",
+          "current": "02 50 88 23 40",
+          "official": "3912"
+        },
+        {
+          "kind": "insert",
+          "current": "",
+          "official": "postale"
+        },
+        {
+          "kind": "replace",
+          "current": "lecteurs dvd",
+          "official": "imprimantes"
+        },
+        {
+          "kind": "replace",
+          "current": "29",
+          "official": "16"
+        }
+      ]
+    },
+    {
+      "ref": "/lib/audio/tcf/co/travail/04-travail-confirmation-cours-d-informatique.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 29,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "f2e3e5f420b42e83f3782445930da0278c452cd9d44b419ffe5fdaee5ef04577",
+      "file_id": "file_00000000f33c81f4aefe73cb664048b0",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ss-a2-s6-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/alors-cette-fete-anniversaire-2-1.mp3",
+      "status": "strong_match_requires_review",
+      "similarity": 0.9589,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 46,
+      "pdf_section": "Dialogue 1",
+      "pdf_sha256": "e1ae4b628c03bca311cac99a36a64dcbe99badbbe039183a3ffcf2acdf4f546a",
+      "file_id": "file_00000000493482468b7b8fea3e87d453",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ss-a2-s10-co-1",
+          "audio": 1
+        }
+      ],
+      "differences": [
+        {
+          "kind": "replace",
+          "current": "oh lala",
+          "official": "ohlala"
+        }
+      ]
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/alors-cette-fete-anniversaire-2-2.mp3",
+      "status": "strong_match_requires_review",
+      "similarity": 0.9882,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 46,
+      "pdf_section": "Dialogue 2",
+      "pdf_sha256": "e1ae4b628c03bca311cac99a36a64dcbe99badbbe039183a3ffcf2acdf4f546a",
+      "file_id": "file_00000000493482468b7b8fea3e87d453",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ss-a2-s10-co-1",
+          "audio": 2
+        }
+      ],
+      "differences": [
+        {
+          "kind": "delete",
+          "current": "oh",
+          "official": ""
+        }
+      ]
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/alors-cette-fete-anniversaire-2-3.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 46,
+      "pdf_section": "Dialogue 3",
+      "pdf_sha256": "e1ae4b628c03bca311cac99a36a64dcbe99badbbe039183a3ffcf2acdf4f546a",
+      "file_id": "file_00000000493482468b7b8fea3e87d453",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ss-a2-s10-co-1",
+          "audio": 3
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/alors-cette-fete-anniversaire-2-4.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 46,
+      "pdf_section": "Dialogue 4",
+      "pdf_sha256": "e1ae4b628c03bca311cac99a36a64dcbe99badbbe039183a3ffcf2acdf4f546a",
+      "file_id": "file_00000000493482468b7b8fea3e87d453",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ss-a2-s10-co-1",
+          "audio": 4
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/fetes/16-invitation-confirmation-du-concert.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 27,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "6a23e884e23bc40b07eaf78e8680d6b44c447813e3d08c872cb7d2c02581569b",
+      "file_id": "file_00000000a1f481f9b54e505b7cfb83bf",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ss-a2-s12-co-1",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/travail/02-travail-demander-un-service.mp3",
+      "status": "possible_match_requires_review",
+      "similarity": 0.75,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 32,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "f370364c67390b56f7ccb179d22cbb525c39491d16f766c33643417c52ec5a74",
+      "file_id": "file_00000000d88c8243b27f74edf3846f12",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ss-a2-s12-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": [
+        {
+          "kind": "replace",
+          "current": "a mon travail olga",
+          "official": "au magasin elle"
+        },
+        {
+          "kind": "replace",
+          "current": "est ce que ce serait possible aussi de",
+          "official": "peux tu"
+        },
+        {
+          "kind": "insert",
+          "current": "",
+          "official": "il faut aussi prendre 1 colis a la poste c est juste a cote"
+        },
+        {
+          "kind": "delete",
+          "current": "de danse",
+          "official": ""
+        },
+        {
+          "kind": "replace",
+          "current": "je te redonne mon numero de telephone c est le 06",
+          "official": "au 07"
+        },
+        {
+          "kind": "delete",
+          "current": "bonne journee",
+          "official": ""
+        }
+      ]
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/excuse-moi-eric-ai-1.mp3",
+      "status": "strong_match_requires_review",
+      "similarity": 0.9589,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 49,
+      "pdf_section": "Dialogue 1",
+      "pdf_sha256": "ec36664d616ab7da570b5528f88fe307de46f0cd2377d767d4a97586f74e1334",
+      "file_id": "file_00000000d8e48210bb492b76caacc547",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ss-a2-s15-co-1",
+          "audio": 1
+        }
+      ],
+      "differences": [
+        {
+          "kind": "insert",
+          "current": "",
+          "official": "la"
+        },
+        {
+          "kind": "delete",
+          "current": "la date",
+          "official": ""
+        }
+      ]
+    },
+    {
+      "ref": "/lib/audio/tcf/co/loisirs/bonjour-voudrais-sandwich-2-1.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 42,
+      "pdf_section": "Dialogue 1",
+      "pdf_sha256": "b087a1bdd2e3e8e995752ddeec2cb1d3ec43700f8b362d43dcab0e124fc3c136",
+      "file_id": "file_00000000956081f4ab72c90c6d0ea1e0",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ss-a2-s20-co-4",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/loisirs/bonjour-voudrais-sandwich-2-2.mp3",
+      "status": "strong_match_requires_review",
+      "similarity": 0.9744,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 42,
+      "pdf_section": "Dialogue 2",
+      "pdf_sha256": "b087a1bdd2e3e8e995752ddeec2cb1d3ec43700f8b362d43dcab0e124fc3c136",
+      "file_id": "file_00000000956081f4ab72c90c6d0ea1e0",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ss-a2-s20-co-4",
+          "audio": 2
+        }
+      ],
+      "differences": [
+        {
+          "kind": "replace",
+          "current": "eh",
+          "official": "et"
+        }
+      ]
+    },
+    {
+      "ref": "/lib/audio/tcf/co/loisirs/bonjour-voudrais-sandwich-2-3.mp3",
+      "status": "strong_match_requires_review",
+      "similarity": 0.9783,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 42,
+      "pdf_section": "Dialogue 3",
+      "pdf_sha256": "b087a1bdd2e3e8e995752ddeec2cb1d3ec43700f8b362d43dcab0e124fc3c136",
+      "file_id": "file_00000000956081f4ab72c90c6d0ea1e0",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ss-a2-s20-co-4",
+          "audio": 3
+        }
+      ],
+      "differences": [
+        {
+          "kind": "replace",
+          "current": "eh",
+          "official": "et"
+        }
+      ]
+    },
+    {
+      "ref": "/lib/audio/tcf/co/loisirs/bonjour-voudrais-sandwich-2-4.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 42,
+      "pdf_section": "Dialogue 4",
+      "pdf_sha256": "b087a1bdd2e3e8e995752ddeec2cb1d3ec43700f8b362d43dcab0e124fc3c136",
+      "file_id": "file_00000000956081f4ab72c90c6d0ea1e0",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ss-a2-s20-co-4",
+          "audio": 4
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/loisirs/elisa-peux-me-preter-1.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 50,
+      "pdf_section": "Dialogue 1",
+      "pdf_sha256": "dfe48ac3778179e2abb596d26b8d3ae475ecd3a492cd55e59f6b38892df7deaa",
+      "file_id": "file_00000000bcf481f481c38b0f9759f74c",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ss-a2-s21-co-1",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/loisirs/elisa-peux-me-preter-2.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 50,
+      "pdf_section": "Dialogue 2",
+      "pdf_sha256": "dfe48ac3778179e2abb596d26b8d3ae475ecd3a492cd55e59f6b38892df7deaa",
+      "file_id": "file_00000000bcf481f481c38b0f9759f74c",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ss-a2-s21-co-1",
+          "audio": 2
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/loisirs/elisa-peux-me-preter-3.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 50,
+      "pdf_section": "Dialogue 3",
+      "pdf_sha256": "dfe48ac3778179e2abb596d26b8d3ae475ecd3a492cd55e59f6b38892df7deaa",
+      "file_id": "file_00000000bcf481f481c38b0f9759f74c",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ss-a2-s21-co-1",
+          "audio": 3
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/maison/salut-lucie.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 26,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "2506abdf3b7f9f79d22dadba7e7822a9c19550339699a8dbf89611c8f234b948",
+      "file_id": "file_00000000754c8210a5833e7e3d4ea232",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ss-a2-s25-co-1",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/excusez-moi-1.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 38,
+      "pdf_section": "Dialogue 1",
+      "pdf_sha256": "08d7e82db29d2089e25ded508f23c4b8f56330bba15377e90dfd7c7cba455df6",
+      "file_id": "file_000000002a8c81f4813e68b21690aa95",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ss-a2-s49-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/excusez-moi-2.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 38,
+      "pdf_section": "Dialogue 2",
+      "pdf_sha256": "08d7e82db29d2089e25ded508f23c4b8f56330bba15377e90dfd7c7cba455df6",
+      "file_id": "file_000000002a8c81f4813e68b21690aa95",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ss-a2-s49-co-2",
+          "audio": 2
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/excusez-moi-3.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 38,
+      "pdf_section": "Dialogue 3",
+      "pdf_sha256": "08d7e82db29d2089e25ded508f23c4b8f56330bba15377e90dfd7c7cba455df6",
+      "file_id": "file_000000002a8c81f4813e68b21690aa95",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ss-a2-s49-co-2",
+          "audio": 3
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/excusez-moi-4.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 38,
+      "pdf_section": "Dialogue 4",
+      "pdf_sha256": "08d7e82db29d2089e25ded508f23c4b8f56330bba15377e90dfd7c7cba455df6",
+      "file_id": "file_000000002a8c81f4813e68b21690aa95",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ss-a2-s49-co-2",
+          "audio": 4
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/julie-dois-aller-nouveau-2-1.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 41,
+      "pdf_section": "Dialogue 1",
+      "pdf_sha256": "718034a0daddc62c14a2bf8729e3331b052a26af4f053cbbfde4ed2bbbfdcab5",
+      "file_id": "file_00000000463481f4b2fa35d12fbeb90f",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ss-a2-s49-co-3",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/julie-dois-aller-nouveau-2-2.mp3",
+      "status": "strong_match_requires_review",
+      "similarity": 0.9767,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 41,
+      "pdf_section": "Dialogue 2",
+      "pdf_sha256": "718034a0daddc62c14a2bf8729e3331b052a26af4f053cbbfde4ed2bbbfdcab5",
+      "file_id": "file_00000000463481f4b2fa35d12fbeb90f",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ss-a2-s49-co-3",
+          "audio": 2
+        }
+      ],
+      "differences": [
+        {
+          "kind": "replace",
+          "current": "eh",
+          "official": "et"
+        }
+      ]
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/julie-dois-aller-nouveau-2-3.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 41,
+      "pdf_section": "Dialogue 3",
+      "pdf_sha256": "718034a0daddc62c14a2bf8729e3331b052a26af4f053cbbfde4ed2bbbfdcab5",
+      "file_id": "file_00000000463481f4b2fa35d12fbeb90f",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ss-a2-s49-co-3",
+          "audio": 3
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/julie-dois-aller-nouveau-2-4.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 41,
+      "pdf_section": "Dialogue 4",
+      "pdf_sha256": "718034a0daddc62c14a2bf8729e3331b052a26af4f053cbbfde4ed2bbbfdcab5",
+      "file_id": "file_00000000463481f4b2fa35d12fbeb90f",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ss-a2-s49-co-3",
+          "audio": 4
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/excusez-moi-essaie-retirer-2-1.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 43,
+      "pdf_section": "Dialogue 1",
+      "pdf_sha256": "3be47d25c0b0221a682865d9967ad050d70e5d844963c45c9a7c40cac94ea5bd",
+      "file_id": "file_00000000a30481f48dcc5ebb2e12d27b",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ss-a2-s49-co-4",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/excusez-moi-essaie-retirer-2-2.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 43,
+      "pdf_section": "Dialogue 2",
+      "pdf_sha256": "3be47d25c0b0221a682865d9967ad050d70e5d844963c45c9a7c40cac94ea5bd",
+      "file_id": "file_00000000a30481f48dcc5ebb2e12d27b",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ss-a2-s49-co-4",
+          "audio": 2
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/excusez-moi-essaie-retirer-2-3.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 43,
+      "pdf_section": "Dialogue 3",
+      "pdf_sha256": "3be47d25c0b0221a682865d9967ad050d70e5d844963c45c9a7c40cac94ea5bd",
+      "file_id": "file_00000000a30481f48dcc5ebb2e12d27b",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ss-a2-s49-co-4",
+          "audio": 3
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/excusez-moi-essaie-retirer-2-4.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 43,
+      "pdf_section": "Dialogue 4",
+      "pdf_sha256": "3be47d25c0b0221a682865d9967ad050d70e5d844963c45c9a7c40cac94ea5bd",
+      "file_id": "file_00000000a30481f48dcc5ebb2e12d27b",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ss-a2-s49-co-4",
+          "audio": 4
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/salut-julie-2-1.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 45,
+      "pdf_section": "Dialogue 1",
+      "pdf_sha256": "4637df7abe3d01da0e8f84945eb7695e192bdf50d96a73ab27e7a52300120027",
+      "file_id": "file_00000000d294820c8b698621ee5c0e07",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ss-a2-s50-co-1",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/salut-julie-2-2.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 45,
+      "pdf_section": "Dialogue 2",
+      "pdf_sha256": "4637df7abe3d01da0e8f84945eb7695e192bdf50d96a73ab27e7a52300120027",
+      "file_id": "file_00000000d294820c8b698621ee5c0e07",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ss-a2-s50-co-1",
+          "audio": 2
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/salut-julie-2-3.mp3",
+      "status": "strong_match_requires_review",
+      "similarity": 0.9846,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 45,
+      "pdf_section": "Dialogue 3",
+      "pdf_sha256": "4637df7abe3d01da0e8f84945eb7695e192bdf50d96a73ab27e7a52300120027",
+      "file_id": "file_00000000d294820c8b698621ee5c0e07",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ss-a2-s50-co-1",
+          "audio": 3
+        }
+      ],
+      "differences": [
+        {
+          "kind": "delete",
+          "current": "oh",
+          "official": ""
+        }
+      ]
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/salut-julie-2-4.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 45,
+      "pdf_section": "Dialogue 4",
+      "pdf_sha256": "4637df7abe3d01da0e8f84945eb7695e192bdf50d96a73ab27e7a52300120027",
+      "file_id": "file_00000000d294820c8b698621ee5c0e07",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ss-a2-s50-co-1",
+          "audio": 4
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-leila-1.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 47,
+      "pdf_section": "Dialogue 1",
+      "pdf_sha256": "2da657904254aa20f247e9cd935142d642a39e2debf38bccd17b381c261deabf",
+      "file_id": "file_0000000087988211bb33bdbc69965ff8",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ss-a2-s50-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-leila-2.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 47,
+      "pdf_section": "Dialogue 2",
+      "pdf_sha256": "2da657904254aa20f247e9cd935142d642a39e2debf38bccd17b381c261deabf",
+      "file_id": "file_0000000087988211bb33bdbc69965ff8",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ss-a2-s50-co-2",
+          "audio": 2
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-leila-3.mp3",
+      "status": "strong_match_requires_review",
+      "similarity": 0.9697,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 47,
+      "pdf_section": "Dialogue 3",
+      "pdf_sha256": "2da657904254aa20f247e9cd935142d642a39e2debf38bccd17b381c261deabf",
+      "file_id": "file_0000000087988211bb33bdbc69965ff8",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ss-a2-s50-co-2",
+          "audio": 3
+        }
+      ],
+      "differences": [
+        {
+          "kind": "insert",
+          "current": "",
+          "official": "ah"
+        },
+        {
+          "kind": "insert",
+          "current": "",
+          "official": "euh"
+        }
+      ]
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-leila-4.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 47,
+      "pdf_section": "Dialogue 4",
+      "pdf_sha256": "2da657904254aa20f247e9cd935142d642a39e2debf38bccd17b381c261deabf",
+      "file_id": "file_0000000087988211bb33bdbc69965ff8",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ss-a2-s50-co-2",
+          "audio": 4
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-ici-cabinet-dentaire.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 28,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "fc7866b3351c72a76b52b85b9c1612faf550bc549c52cdc81a7265659397c058",
+      "file_id": "file_0000000088008243b452de12dbfe51d9",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ss-a2-s50-co-3",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/salut-thomas.mp3",
+      "status": "possible_match_requires_review",
+      "similarity": 0.7849,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 31,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "30bbe1bee17f55eb4b148d772a5580abcaeae4d41c43427055fe8af83c52552d",
+      "file_id": "file_00000000ab20821098f8a733ea88f389",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ss-a2-s50-co-4",
+          "audio": 1
+        }
+      ],
+      "differences": [
+        {
+          "kind": "delete",
+          "current": "j espere que tu vas bien",
+          "official": ""
+        },
+        {
+          "kind": "replace",
+          "current": "portugais",
+          "official": "francais"
+        },
+        {
+          "kind": "insert",
+          "current": "",
+          "official": "les pages 15 a 18 du livre"
+        },
+        {
+          "kind": "replace",
+          "current": "dans la",
+          "official": "en"
+        },
+        {
+          "kind": "replace",
+          "current": "numero 112",
+          "official": "b115"
+        },
+        {
+          "kind": "replace",
+          "current": "donne",
+          "official": "donnera"
+        },
+        {
+          "kind": "delete",
+          "current": "demain",
+          "official": ""
+        },
+        {
+          "kind": "replace",
+          "current": "8h00pour",
+          "official": "8h00demain pour"
+        },
+        {
+          "kind": "replace",
+          "current": "a demain",
+          "official": "et n oublie pas mon cahier s il te plait salut"
+        }
+      ]
+    },
+    {
+      "ref": "/lib/audio/tcf/co/transports/bonjour-desirez-2-1.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 44,
+      "pdf_section": "Dialogue 1",
+      "pdf_sha256": "f9227c7aeadd4938360845ae4c58fdedf94fb4570ac21ea379671a52ef359f86",
+      "file_id": "file_00000000404481f4b069113fea874210",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ss-a2-s55-co-4",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/transports/bonjour-desirez-2-2.mp3",
+      "status": "strong_match_requires_review",
+      "similarity": 0.9859,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 44,
+      "pdf_section": "Dialogue 2",
+      "pdf_sha256": "f9227c7aeadd4938360845ae4c58fdedf94fb4570ac21ea379671a52ef359f86",
+      "file_id": "file_00000000404481f4b069113fea874210",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ss-a2-s55-co-4",
+          "audio": 2
+        }
+      ],
+      "differences": [
+        {
+          "kind": "insert",
+          "current": "",
+          "official": "oh"
+        }
+      ]
+    },
+    {
+      "ref": "/lib/audio/tcf/co/transports/bonjour-desirez-2-3.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 44,
+      "pdf_section": "Dialogue 3",
+      "pdf_sha256": "f9227c7aeadd4938360845ae4c58fdedf94fb4570ac21ea379671a52ef359f86",
+      "file_id": "file_00000000404481f4b069113fea874210",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ss-a2-s55-co-4",
+          "audio": 3
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/magasins/11-magasin-annonce-remise-sur-les-bijoux.mp3",
+      "status": "strong_match_requires_review",
+      "similarity": 0.9,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 1,
+      "pdf_section": "Document 2",
+      "pdf_sha256": "660902d4ee057348eceb2214f52a5079f20d47153c9b3f9c5391f6cba62f5f32",
+      "file_id": "file_00000000d76881f49ef5f2adec3067f3",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-annonce-1-2-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": [
+        {
+          "kind": "replace",
+          "current": "cher client",
+          "official": "chers clients"
+        }
+      ]
+    },
+    {
+      "ref": "/lib/audio/tcf/co/magasins/12-magasin-annonce-enfant-perdu.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 1,
+      "pdf_section": "Document 5",
+      "pdf_sha256": "660902d4ee057348eceb2214f52a5079f20d47153c9b3f9c5391f6cba62f5f32",
+      "file_id": "file_00000000d76881f49ef5f2adec3067f3",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-annonce-1-5-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/cinema/01-cinéma-annonce-réduction-bonbon.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 2,
+      "pdf_section": "Document 6",
+      "pdf_sha256": "5e4299e3b6beb6d0450df68e3a0f9dab1d5f9cd661dcabd24a5e8ca5f2043a95",
+      "file_id": "file_00000000fa0482108da9fcd764db9758",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-annonce-2-6-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/magasins/13-magasin-annonce-problème-de-caisse.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 3,
+      "pdf_section": "Document 3",
+      "pdf_sha256": "c1e144ae27c813957105db15a54f7f5fcb2570b7260939c1a7d8630f44c0b58c",
+      "file_id": "file_0000000052188210aa0c78480c9969e5",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-annonce-3-3-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/magasins/02-magasin-annonce-promotion-télévision.mp3",
+      "status": "strong_match_requires_review",
+      "similarity": 0.9706,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 4,
+      "pdf_section": "Document 4",
+      "pdf_sha256": "c194f3ef3d79e675e312376a699d2ba150eda40a47c186cb40d878871b048e35",
+      "file_id": "file_00000000eaa881f4a8441a193f2842cc",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-annonce-4-4-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": [
+        {
+          "kind": "replace",
+          "current": "autoprix",
+          "official": "atoutprix"
+        }
+      ]
+    },
+    {
+      "ref": "/lib/audio/tcf/co/magasins/03-magasin-annonce-promotion-livres-de-recette.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 5,
+      "pdf_section": "Document 1",
+      "pdf_sha256": "eca8bd138a50d806dce3b4c63492e9c894c18eb7094f7c394d6d9d2878a9c075",
+      "file_id": "file_000000003fac81f48424769527d3882c",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-annonce-5-1-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/magasins/04-magasin-annonce-fermeture-de-la-poste.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 5,
+      "pdf_section": "Document 5",
+      "pdf_sha256": "eca8bd138a50d806dce3b4c63492e9c894c18eb7094f7c394d6d9d2878a9c075",
+      "file_id": "file_000000003fac81f48424769527d3882c",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-annonce-5-5-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/magasins/05-magasin-annonce-journée-de-la-femme.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 6,
+      "pdf_section": "Document 2",
+      "pdf_sha256": "7e1ff5b926987d8365c9c5b38e9fdcbc28b5814ee7dcdc36d8f950fc04c2c42b",
+      "file_id": "file_00000000d5d882438d223384efdd5740",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-annonce-6-2-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/magasins/06-magasin-annonce-offre-petit-déjeuner.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 6,
+      "pdf_section": "Document 4",
+      "pdf_sha256": "7e1ff5b926987d8365c9c5b38e9fdcbc28b5814ee7dcdc36d8f950fc04c2c42b",
+      "file_id": "file_00000000d5d882438d223384efdd5740",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-annonce-6-4-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/magasins/09-magasin-annonce-printemps-du-cinéma.mp3",
+      "status": "strong_match_requires_review",
+      "similarity": 0.9589,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 7,
+      "pdf_section": "Document 5",
+      "pdf_sha256": "59a6b4d1597c52f3080f493cc06f661c28f689b011a5aa03e3cdd569f4f24c7f",
+      "file_id": "file_000000006210822f94ef57df3b04cb52",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-annonce-7-5-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": [
+        {
+          "kind": "delete",
+          "current": "euros",
+          "official": ""
+        },
+        {
+          "kind": "delete",
+          "current": "euros",
+          "official": ""
+        },
+        {
+          "kind": "delete",
+          "current": "euros",
+          "official": ""
+        }
+      ]
+    },
+    {
+      "ref": "/lib/audio/tcf/co/magasins/10-magasin-annonce-nouveau-moyen-de-paiement.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 7,
+      "pdf_section": "Document 6",
+      "pdf_sha256": "59a6b4d1597c52f3080f493cc06f661c28f689b011a5aa03e3cdd569f4f24c7f",
+      "file_id": "file_000000006210822f94ef57df3b04cb52",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-annonce-7-6-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/radio/05-radio-météo-de-la-semaine.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 14,
+      "pdf_section": "Document 1",
+      "pdf_sha256": "9f44f5d07a52f4ed94dfcb4f6c76e4b0d8862c909dd53d811bacc61a6e615943",
+      "file_id": "file_00000000e0ac81f4999e5506ccc89d06",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-radio-14-1-co-3",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/actualite/02-actualité-la-grève-hôtesse-de-l-air.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 18,
+      "pdf_section": "Document 2",
+      "pdf_sha256": "30024a48c0e69c73c73e62cdb252ace62b32eb6a2b653dbfcc619f499469a2e7",
+      "file_id": "file_0000000057f081f48b1ea107a9750a68",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-radio-18-2-co-3",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/ecole/31-école-montrer-carte-d-identité.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 3,
+      "pdf_section": "Document 4",
+      "pdf_sha256": "c1e144ae27c813957105db15a54f7f5fcb2570b7260939c1a7d8630f44c0b58c",
+      "file_id": "file_0000000052188210aa0c78480c9969e5",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-annonce-3-4-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/loisirs/03-loisirs-annonce-tarifs-centre-aquatique.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 5,
+      "pdf_section": "Document 3",
+      "pdf_sha256": "eca8bd138a50d806dce3b4c63492e9c894c18eb7094f7c394d6d9d2878a9c075",
+      "file_id": "file_000000003fac81f48424769527d3882c",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-annonce-5-3-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/radio/06-radio-promotion-fleurs-grands-parents.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 16,
+      "pdf_section": "Document 2",
+      "pdf_sha256": "8f478e2daf0a22b3114ac5dcf0ed78fdfb45342002f2e283b53caa5c74acca97",
+      "file_id": "file_0000000035ac81f98af1a495d4f8fe3d",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-radio-16-2-co-3",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/loisirs/05-loisirs-annonce-interdiction-photo-concert.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 2,
+      "pdf_section": "Document 2",
+      "pdf_sha256": "5e4299e3b6beb6d0450df68e3a0f9dab1d5f9cd661dcabd24a5e8ca5f2043a95",
+      "file_id": "file_00000000fa0482108da9fcd764db9758",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-annonce-2-2-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/loisirs/04-loisirs-annonce-cirque.mp3",
+      "status": "strong_match_requires_review",
+      "similarity": 0.9062,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 4,
+      "pdf_section": "Document 1",
+      "pdf_sha256": "c194f3ef3d79e675e312376a699d2ba150eda40a47c186cb40d878871b048e35",
+      "file_id": "file_00000000eaa881f4a8441a193f2842cc",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-annonce-4-1-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": [
+        {
+          "kind": "replace",
+          "current": "pinder",
+          "official": "pindet"
+        },
+        {
+          "kind": "replace",
+          "current": "une heure 30",
+          "official": "1h30"
+        }
+      ]
+    },
+    {
+      "ref": "/lib/audio/tcf/co/radio/08-radio-prévision-météo.mp3",
+      "status": "strong_match_requires_review",
+      "similarity": 0.9429,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 19,
+      "pdf_section": "Document 3",
+      "pdf_sha256": "dc33bbeed5804dbecdc729fe696c7a2519b43e14183163182e57d43b7120b6b2",
+      "file_id": "file_000000002e1881f4933abd2becaedc68",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-radio-19-3-co-3",
+          "audio": 1
+        }
+      ],
+      "differences": [
+        {
+          "kind": "replace",
+          "current": "vent",
+          "official": "vents"
+        },
+        {
+          "kind": "replace",
+          "current": "fort",
+          "official": "forts"
+        }
+      ]
+    },
+    {
+      "ref": "/lib/audio/tcf/co/magasins/16-magasin-annonce-les-étages.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 4,
+      "pdf_section": "Document 5",
+      "pdf_sha256": "c194f3ef3d79e675e312376a699d2ba150eda40a47c186cb40d878871b048e35",
+      "file_id": "file_00000000eaa881f4a8441a193f2842cc",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-annonce-4-5-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/loisirs/06-loisirs-zoo-spectacle-de-félins.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 6,
+      "pdf_section": "Document 6",
+      "pdf_sha256": "7e1ff5b926987d8365c9c5b38e9fdcbc28b5814ee7dcdc36d8f950fc04c2c42b",
+      "file_id": "file_00000000d5d882438d223384efdd5740",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-annonce-6-6-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/loisirs/moyen-a2__annonce-1.3.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 1,
+      "pdf_section": "Document 3",
+      "pdf_sha256": "660902d4ee057348eceb2214f52a5079f20d47153c9b3f9c5391f6cba62f5f32",
+      "file_id": "file_00000000d76881f49ef5f2adec3067f3",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-annonce-1-3-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/loisirs/moyen-a2__annonce-2.1.mp3",
+      "status": "strong_match_requires_review",
+      "similarity": 0.961,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 2,
+      "pdf_section": "Document 1",
+      "pdf_sha256": "5e4299e3b6beb6d0450df68e3a0f9dab1d5f9cd661dcabd24a5e8ca5f2043a95",
+      "file_id": "file_00000000fa0482108da9fcd764db9758",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-annonce-2-1-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": [
+        {
+          "kind": "replace",
+          "current": "virgule",
+          "official": "m"
+        },
+        {
+          "kind": "delete",
+          "current": "m",
+          "official": ""
+        }
+      ]
+    },
+    {
+      "ref": "/lib/audio/tcf/co/loisirs/moyen-a2__annonce-2.3.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 2,
+      "pdf_section": "Document 3",
+      "pdf_sha256": "5e4299e3b6beb6d0450df68e3a0f9dab1d5f9cd661dcabd24a5e8ca5f2043a95",
+      "file_id": "file_00000000fa0482108da9fcd764db9758",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-annonce-2-3-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/loisirs/moyen-a2__radio-14.2.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 14,
+      "pdf_section": "Document 2",
+      "pdf_sha256": "9f44f5d07a52f4ed94dfcb4f6c76e4b0d8862c909dd53d811bacc61a6e615943",
+      "file_id": "file_00000000e0ac81f4999e5506ccc89d06",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-radio-14-2-co-3",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/loisirs/moyen-a2__radio-15.2.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 15,
+      "pdf_section": "Document 2",
+      "pdf_sha256": "e4032c617fc61e07a8b1523eb75c8fec482186047ea96f31e4bf81bad7528e06",
+      "file_id": "file_0000000053a48243a994217712ec6ab0",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-radio-15-2-co-3",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/loisirs/moyen-a2__radio-17.3.mp3",
+      "status": "strong_match_requires_review",
+      "similarity": 0.9318,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 17,
+      "pdf_section": "Document 3",
+      "pdf_sha256": "e29a9689dce218d521ec7d5ced5fca186fd066fadbcee536093ca20b574d0e4b",
+      "file_id": "file_00000000f92c81f4b433ee8234b526b9",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-radio-17-3-co-3",
+          "audio": 1
+        }
+      ],
+      "differences": [
+        {
+          "kind": "replace",
+          "current": "sport radio",
+          "official": "sportradio"
+        },
+        {
+          "kind": "replace",
+          "current": "basketball",
+          "official": "basket ball"
+        }
+      ]
+    },
+    {
+      "ref": "/lib/audio/tcf/co/ville/01-ville-annonce-salon-du-tourisme.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 6,
+      "pdf_section": "Document 3",
+      "pdf_sha256": "7e1ff5b926987d8365c9c5b38e9fdcbc28b5814ee7dcdc36d8f950fc04c2c42b",
+      "file_id": "file_00000000d5d882438d223384efdd5740",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-annonce-6-3-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/magasins/17-magasin-annonce-offre-électroménager.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 2,
+      "pdf_section": "Document 4",
+      "pdf_sha256": "5e4299e3b6beb6d0450df68e3a0f9dab1d5f9cd661dcabd24a5e8ca5f2043a95",
+      "file_id": "file_00000000fa0482108da9fcd764db9758",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-annonce-2-4-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/piscine/01-piscine-annonce-rappel-du-règlement.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 5,
+      "pdf_section": "Document 4",
+      "pdf_sha256": "eca8bd138a50d806dce3b4c63492e9c894c18eb7094f7c394d6d9d2878a9c075",
+      "file_id": "file_000000003fac81f48424769527d3882c",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-annonce-5-4-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/magasins/18-magasin-annoncer-service-de-laverie.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 6,
+      "pdf_section": "Document 5",
+      "pdf_sha256": "7e1ff5b926987d8365c9c5b38e9fdcbc28b5814ee7dcdc36d8f950fc04c2c42b",
+      "file_id": "file_00000000d5d882438d223384efdd5740",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-annonce-6-5-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/musee/01-musée-annonce-rappel-du-règlement.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 7,
+      "pdf_section": "Document 2",
+      "pdf_sha256": "59a6b4d1597c52f3080f493cc06f661c28f689b011a5aa03e3cdd569f4f24c7f",
+      "file_id": "file_000000006210822f94ef57df3b04cb52",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-annonce-7-2-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/presenter/moyen-a2__annonce-4.2.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 4,
+      "pdf_section": "Document 2",
+      "pdf_sha256": "c194f3ef3d79e675e312376a699d2ba150eda40a47c186cb40d878871b048e35",
+      "file_id": "file_00000000eaa881f4a8441a193f2842cc",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-annonce-4-2-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/presenter/moyen-a2__annonce-7.1.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 7,
+      "pdf_section": "Document 1",
+      "pdf_sha256": "59a6b4d1597c52f3080f493cc06f661c28f689b011a5aa03e3cdd569f4f24c7f",
+      "file_id": "file_000000006210822f94ef57df3b04cb52",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-annonce-7-1-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/presenter/moyen-a2__radio-17.1.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 17,
+      "pdf_section": "Document 1",
+      "pdf_sha256": "e29a9689dce218d521ec7d5ced5fca186fd066fadbcee536093ca20b574d0e4b",
+      "file_id": "file_00000000f92c81f4b433ee8234b526b9",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-radio-17-1-co-3",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/presenter/moyen-a2__radio-18.1.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 18,
+      "pdf_section": "Document 1",
+      "pdf_sha256": "30024a48c0e69c73c73e62cdb252ace62b32eb6a2b653dbfcc619f499469a2e7",
+      "file_id": "file_0000000057f081f48b1ea107a9750a68",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-radio-18-1-co-3",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/presenter/moyen-a2__radio-19.1.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 19,
+      "pdf_section": "Document 1",
+      "pdf_sha256": "dc33bbeed5804dbecdc729fe696c7a2519b43e14183163182e57d43b7120b6b2",
+      "file_id": "file_000000002e1881f4933abd2becaedc68",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-radio-19-1-co-3",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/presenter/moyen-a2__radio-19.2.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 19,
+      "pdf_section": "Document 2",
+      "pdf_sha256": "dc33bbeed5804dbecdc729fe696c7a2519b43e14183163182e57d43b7120b6b2",
+      "file_id": "file_000000002e1881f4933abd2becaedc68",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-radio-19-2-co-3",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/presenter/moyen-a2__radio-20.1.mp3",
+      "status": "strong_match_requires_review",
+      "similarity": 0.9783,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 20,
+      "pdf_section": "Document 1",
+      "pdf_sha256": "9a5143944208cc45eba7045a1370af660610da9f655199843f124f8a0db0091b",
+      "file_id": "file_0000000005ac8210b656d006690d2235",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-radio-20-1-co-3",
+          "audio": 1
+        }
+      ],
+      "differences": [
+        {
+          "kind": "insert",
+          "current": "",
+          "official": "degres"
+        },
+        {
+          "kind": "insert",
+          "current": "",
+          "official": "degres"
+        }
+      ]
+    },
+    {
+      "ref": "/lib/audio/tcf/co/presenter/moyen-a2__radio-20.2.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 20,
+      "pdf_section": "Document 2",
+      "pdf_sha256": "9a5143944208cc45eba7045a1370af660610da9f655199843f124f8a0db0091b",
+      "file_id": "file_0000000005ac8210b656d006690d2235",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-radio-20-2-co-3",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/transports/moyen-a2__annonce-1.1.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 1,
+      "pdf_section": "Document 1",
+      "pdf_sha256": "660902d4ee057348eceb2214f52a5079f20d47153c9b3f9c5391f6cba62f5f32",
+      "file_id": "file_00000000d76881f49ef5f2adec3067f3",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-annonce-1-1-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/transports/moyen-a2__annonce-1.4.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 1,
+      "pdf_section": "Document 4",
+      "pdf_sha256": "660902d4ee057348eceb2214f52a5079f20d47153c9b3f9c5391f6cba62f5f32",
+      "file_id": "file_00000000d76881f49ef5f2adec3067f3",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-annonce-1-4-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/transports/moyen-a2__annonce-1.6.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 1,
+      "pdf_section": "Document 6",
+      "pdf_sha256": "660902d4ee057348eceb2214f52a5079f20d47153c9b3f9c5391f6cba62f5f32",
+      "file_id": "file_00000000d76881f49ef5f2adec3067f3",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-annonce-1-6-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/transports/moyen-a2__annonce-3.5.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 3,
+      "pdf_section": "Document 5",
+      "pdf_sha256": "c1e144ae27c813957105db15a54f7f5fcb2570b7260939c1a7d8630f44c0b58c",
+      "file_id": "file_0000000052188210aa0c78480c9969e5",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-annonce-3-5-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/transports/moyen-a2__annonce-4.3.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 4,
+      "pdf_section": "Document 3",
+      "pdf_sha256": "c194f3ef3d79e675e312376a699d2ba150eda40a47c186cb40d878871b048e35",
+      "file_id": "file_00000000eaa881f4a8441a193f2842cc",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-annonce-4-3-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/transports/moyen-a2__annonce-5.2.mp3",
+      "status": "strong_match_requires_review",
+      "similarity": 0.931,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 5,
+      "pdf_section": "Document 2",
+      "pdf_sha256": "eca8bd138a50d806dce3b4c63492e9c894c18eb7094f7c394d6d9d2878a9c075",
+      "file_id": "file_000000003fac81f48424769527d3882c",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-annonce-5-2-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": [
+        {
+          "kind": "replace",
+          "current": "ag 56 kl",
+          "official": "ag56kl"
+        }
+      ]
+    },
+    {
+      "ref": "/lib/audio/tcf/co/transports/moyen-a2__radio-14.3.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 14,
+      "pdf_section": "Document 3",
+      "pdf_sha256": "9f44f5d07a52f4ed94dfcb4f6c76e4b0d8862c909dd53d811bacc61a6e615943",
+      "file_id": "file_00000000e0ac81f4999e5506ccc89d06",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-radio-14-3-co-3",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/transports/moyen-a2__radio-15.1.mp3",
+      "status": "strong_match_requires_review",
+      "similarity": 0.9873,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 15,
+      "pdf_section": "Document 1",
+      "pdf_sha256": "e4032c617fc61e07a8b1523eb75c8fec482186047ea96f31e4bf81bad7528e06",
+      "file_id": "file_0000000053a48243a994217712ec6ab0",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-radio-15-1-co-3",
+          "audio": 1
+        }
+      ],
+      "differences": [
+        {
+          "kind": "delete",
+          "current": "c",
+          "official": ""
+        }
+      ]
+    },
+    {
+      "ref": "/lib/audio/tcf/co/transports/moyen-a2__radio-17.2.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 17,
+      "pdf_section": "Document 2",
+      "pdf_sha256": "e29a9689dce218d521ec7d5ced5fca186fd066fadbcee536093ca20b574d0e4b",
+      "file_id": "file_00000000f92c81f4b433ee8234b526b9",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-radio-17-2-co-3",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/transports/moyen-a2__radio-18.3.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 18,
+      "pdf_section": "Document 3",
+      "pdf_sha256": "30024a48c0e69c73c73e62cdb252ace62b32eb6a2b653dbfcc619f499469a2e7",
+      "file_id": "file_0000000057f081f48b1ea107a9750a68",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-radio-18-3-co-3",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/transports/moyen-a2__radio-20.3.mp3",
+      "status": "strong_match_requires_review",
+      "similarity": 0.963,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 20,
+      "pdf_section": "Document 3",
+      "pdf_sha256": "9a5143944208cc45eba7045a1370af660610da9f655199843f124f8a0db0091b",
+      "file_id": "file_0000000005ac8210b656d006690d2235",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-radio-20-3-co-3",
+          "audio": 1
+        }
+      ],
+      "differences": [
+        {
+          "kind": "replace",
+          "current": "radio trafic",
+          "official": "radiotraffic"
+        }
+      ]
+    },
+    {
+      "ref": "/lib/audio/tcf/co/travail/moyen-a2__annonce-4.6.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 4,
+      "pdf_section": "Document 6",
+      "pdf_sha256": "c194f3ef3d79e675e312376a699d2ba150eda40a47c186cb40d878871b048e35",
+      "file_id": "file_00000000eaa881f4a8441a193f2842cc",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-annonce-4-6-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/travail/moyen-a2__radio-16.1.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 16,
+      "pdf_section": "Document 1",
+      "pdf_sha256": "8f478e2daf0a22b3114ac5dcf0ed78fdfb45342002f2e283b53caa5c74acca97",
+      "file_id": "file_0000000035ac81f98af1a495d4f8fe3d",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-radio-16-1-co-3",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/scènes courtes/05-invitation-exposition-Fil.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 39,
+      "pdf_section": "Dialogue 1",
+      "pdf_sha256": "98ab1b2776207beed130841793e261a96b452c48a0d930bda56322dc1cc70064",
+      "file_id": "file_000000004d24824399b3176272b7bda8",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-sc-05-exposition-phil-co-4",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/scènes courtes/06-travail-Thibaud-malade.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 39,
+      "pdf_section": "Dialogue 2",
+      "pdf_sha256": "98ab1b2776207beed130841793e261a96b452c48a0d930bda56322dc1cc70064",
+      "file_id": "file_000000004d24824399b3176272b7bda8",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-sc-06-thibault-malade-co-4",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/scènes courtes/07-santé-ne-pas-se-sentire-bien.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 39,
+      "pdf_section": "Dialogue 3",
+      "pdf_sha256": "98ab1b2776207beed130841793e261a96b452c48a0d930bda56322dc1cc70064",
+      "file_id": "file_000000004d24824399b3176272b7bda8",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-sc-07-ne-pas-se-sentir-bien-co-4",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/scènes courtes/08-quotidien-description-nouvelle-voisine.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 39,
+      "pdf_section": "Dialogue 4",
+      "pdf_sha256": "98ab1b2776207beed130841793e261a96b452c48a0d930bda56322dc1cc70064",
+      "file_id": "file_000000004d24824399b3176272b7bda8",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-sc-08-nouvelle-voisine-co-4",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/magasins/01-magasin-annonce-gagner-billet-cinéma.mp3",
+      "status": "strong_match_requires_review",
+      "similarity": 0.8929,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 3,
+      "pdf_section": "Document 6",
+      "pdf_sha256": "c1e144ae27c813957105db15a54f7f5fcb2570b7260939c1a7d8630f44c0b58c",
+      "file_id": "file_0000000052188210aa0c78480c9969e5",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-place-de-cinema-offerte-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": [
+        {
+          "kind": "replace",
+          "current": "cher client",
+          "official": "chers clients"
+        },
+        {
+          "kind": "replace",
+          "current": "cd",
+          "official": "cds"
+        }
+      ]
+    },
+    {
+      "ref": "/lib/audio/tcf/co/magasins/07-magasin-annonce-livraison-des-courses.mp3",
+      "status": "strong_match_requires_review",
+      "similarity": 0.9688,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 7,
+      "pdf_section": "Document 3",
+      "pdf_sha256": "59a6b4d1597c52f3080f493cc06f661c28f689b011a5aa03e3cdd569f4f24c7f",
+      "file_id": "file_000000006210822f94ef57df3b04cb52",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-livraison-des-courses-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": [
+        {
+          "kind": "delete",
+          "current": "euros",
+          "official": ""
+        },
+        {
+          "kind": "delete",
+          "current": "euros",
+          "official": ""
+        }
+      ]
+    },
+    {
+      "ref": "/lib/audio/tcf/co/magasins/08-magasin-annonce-offre-incroyable.mp3",
+      "status": "strong_match_requires_review",
+      "similarity": 0.9688,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 7,
+      "pdf_section": "Document 4",
+      "pdf_sha256": "59a6b4d1597c52f3080f493cc06f661c28f689b011a5aa03e3cdd569f4f24c7f",
+      "file_id": "file_000000006210822f94ef57df3b04cb52",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-offres-incroyables-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": [
+        {
+          "kind": "replace",
+          "current": "multimedias",
+          "official": "multimedia"
+        }
+      ]
+    },
+    {
+      "ref": "/lib/audio/tcf/co/magasins/15-magasin-annonce-clé-retrouvé.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 5,
+      "pdf_section": "Document 6",
+      "pdf_sha256": "eca8bd138a50d806dce3b4c63492e9c894c18eb7094f7c394d6d9d2878a9c075",
+      "file_id": "file_000000003fac81f48424769527d3882c",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-annonce-cles-retrouvees-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/radio/09-radio-concert-rock-guitariste.mp3",
+      "status": "strong_match_requires_review",
+      "similarity": 0.961,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 15,
+      "pdf_section": "Document 3",
+      "pdf_sha256": "e4032c617fc61e07a8b1523eb75c8fec482186047ea96f31e4bf81bad7528e06",
+      "file_id": "file_0000000053a48243a994217712ec6ab0",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-radio-concert-rock-co-3",
+          "audio": 1
+        }
+      ],
+      "differences": [
+        {
+          "kind": "replace",
+          "current": "rock fm",
+          "official": "rockfm"
+        }
+      ]
+    },
+    {
+      "ref": "/lib/audio/tcf/co/ecole/25-école-résultat-du-concours.mp3",
+      "status": "strong_match_requires_review",
+      "similarity": 0.9744,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 40,
+      "pdf_section": "Dialogue 4",
+      "pdf_sha256": "bd624bc8b34bbbe87c9f775c2b264b1d4cf3c5faf5c4b14d03f9662a4f7e5ac3",
+      "file_id": "file_00000000257c81f6aedbbc922a1256be",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-ecole-resultat-du-concours-co-4",
+          "audio": 1
+        }
+      ],
+      "differences": [
+        {
+          "kind": "insert",
+          "current": "",
+          "official": "ah"
+        },
+        {
+          "kind": "insert",
+          "current": "",
+          "official": "ca"
+        }
+      ]
+    },
+    {
+      "ref": "/lib/audio/tcf/co/famille/13-famille-s-occuper-du-chat.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 40,
+      "pdf_section": "Dialogue 3",
+      "pdf_sha256": "bd624bc8b34bbbe87c9f775c2b264b1d4cf3c5faf5c4b14d03f9662a4f7e5ac3",
+      "file_id": "file_00000000257c81f6aedbbc922a1256be",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-famille-s-occuper-du-chat-co-4",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    },
+    {
+      "ref": "/lib/audio/tcf/co/famille/14-famille-trouver-un-cadeau.mp3",
+      "status": "strong_match_requires_review",
+      "similarity": 0.988,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 40,
+      "pdf_section": "Dialogue 2",
+      "pdf_sha256": "bd624bc8b34bbbe87c9f775c2b264b1d4cf3c5faf5c4b14d03f9662a4f7e5ac3",
+      "file_id": "file_00000000257c81f6aedbbc922a1256be",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-famille-trouver-un-cadeau-co-4",
+          "audio": 1
+        }
+      ],
+      "differences": [
+        {
+          "kind": "insert",
+          "current": "",
+          "official": "ah"
+        }
+      ]
+    },
+    {
+      "ref": "/lib/audio/tcf/co/restaurant/01-restaurant-commander-le-menu.mp3",
+      "status": "exact_normalized_match",
+      "similarity": 1.0,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 40,
+      "pdf_section": "Dialogue 1",
+      "pdf_sha256": "bd624bc8b34bbbe87c9f775c2b264b1d4cf3c5faf5c4b14d03f9662a4f7e5ac3",
+      "file_id": "file_00000000257c81f6aedbbc922a1256be",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ssx-a2-restaurant-commander-le-menu-co-4",
+          "audio": 1
+        }
+      ],
+      "differences": []
+    }
+  ],
+  "version_conflicts": [
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/radio-france.mp3",
+      "status": "recording_pdf_version_difference_not_overwritten",
+      "similarity": 0.967,
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 21,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "1e4bf004210f4172237ec217dc8de06114075ef43014d6d4d4f9296d252b53ae",
+      "file_id": "file_00000000434c8210bf153d5f832cec03",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a0-a1/co.json",
+          "exercise": "tcf-ss-a1-s12-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": [
+        {
+          "kind": "delete",
+          "current": "et le dimanche",
+          "official": ""
+        }
+      ],
+      "facts": {
+        "installed": "Samedi et dimanche",
+        "pdf": "Samedi uniquement"
+      },
+      "source_evidence": "Installed recording reconfirmed in saved Parakeet/Whisper outputs; CTC also available for first three references."
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/bonsoir-votre-commande-prete.mp3",
+      "status": "recording_pdf_version_difference_not_overwritten",
+      "similarity": 0.9011,
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 38,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "e6afb0a3bc1f4eaa02d9e49398f13fc843db9dd00162fdc504d97d9bfeb2cbab",
+      "file_id": "file_00000000adc482108741d59ba35eca38",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a0-a1/co.json",
+          "exercise": "tcf-ss-a1-s12-co-4",
+          "audio": 1
+        }
+      ],
+      "differences": [
+        {
+          "kind": "delete",
+          "current": "n",
+          "official": ""
+        },
+        {
+          "kind": "replace",
+          "current": "pas les cheques",
+          "official": "seulement le paiement en especes"
+        }
+      ],
+      "facts": {
+        "installed": "Chèques non acceptés",
+        "pdf": "Paiement en espèces uniquement"
+      },
+      "source_evidence": "Installed recording reconfirmed in saved Parakeet/Whisper outputs; CTC also available for first three references."
+    },
+    {
+      "ref": "/lib/audio/tcf/co/loisirs/bienvenue-parc-asterix-1.mp3",
+      "status": "recording_pdf_version_difference_not_overwritten",
+      "similarity": 0.9302,
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 29,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "7c2b3d6dfeb3fda04aa773715a6e1137a5d49be46f998beeb03d689059b93822",
+      "file_id": "file_00000000d1fc8246b3004c0c2caab8d7",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a0-a1/co.json",
+          "exercise": "tcf-ss-a1-s18-co-3",
+          "audio": 1
+        }
+      ],
+      "differences": [
+        {
+          "kind": "replace",
+          "current": "le",
+          "official": "votre"
+        },
+        {
+          "kind": "insert",
+          "current": "",
+          "official": "de chaussures"
+        },
+        {
+          "kind": "replace",
+          "current": "30",
+          "official": "20"
+        }
+      ],
+      "facts": {
+        "installed": "Fermeture dans 30 minutes",
+        "pdf": "Magasin de chaussures ; fermeture dans 20 minutes"
+      },
+      "source_evidence": "Installed recording reconfirmed in saved Parakeet/Whisper outputs; CTC also available for first three references."
+    },
+    {
+      "ref": "/lib/audio/tcf/co/magasins/bonjour-societe-fmac.mp3",
+      "status": "recording_pdf_version_difference_not_overwritten",
+      "similarity": 0.9221,
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 37,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "9934291935374d8fabecfddf3cc118c8871599f4f71a44853ae861b1e5fa4fba",
+      "file_id": "file_000000004f6081f48837683fdb4fd007",
+      "contexts": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ss-a2-s3-co-2",
+          "audio": 1
+        }
+      ],
+      "differences": [
+        {
+          "kind": "replace",
+          "current": "02 50 88 23 40",
+          "official": "3912"
+        },
+        {
+          "kind": "insert",
+          "current": "",
+          "official": "postale"
+        },
+        {
+          "kind": "replace",
+          "current": "lecteurs dvd",
+          "official": "imprimantes"
+        },
+        {
+          "kind": "replace",
+          "current": "29",
+          "official": "16"
+        }
+      ],
+      "facts": {
+        "installed": "02 50 88 23 40 ; lecteurs DVD ; du 9 au 29 mars",
+        "pdf": "3912 ; imprimantes ; du 9 au 16 mars"
+      },
+      "source_evidence": "Installed recording reconfirmed in saved Parakeet/Whisper outputs; CTC also available for first three references."
+    }
+  ]
+}

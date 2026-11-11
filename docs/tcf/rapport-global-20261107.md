@@ -1,5 +1,7 @@
 # Avancement TCF — 7 novembre 2026
 
+> Archive : la bascule technique et la réception de nouvelles collections ont avancé depuis ce rapport. Consulter le [bilan du 11 novembre](bilan-cahier-des-charges-20261111.md) pour les tâches restantes actuelles.
+
 Les lots initiaux de pictogrammes, PO, 254 usages, horloges et tirage « objet » sont terminés. La revue des 763 candidates est achevée ; 218 trios sont activés, 112 questions restent en texte avec motif, et 433 trios restent à préparer. Depuis la reprise des 573 : 139 activations, un cas conservé en texte, 118 nouvelles illustrations peintes et 20 affichages de durée h:min. La génération a atteint la limite du service (HTTP 429 `usage_limit_reached`), réinitialisation annoncée le 8 novembre 2026 à 06:51:55 UTC. **Les 299 remplacements audio restent bloqués par les fichiers sources manquants. La consigne utilisateur a été actualisée : envoyer les changements sur `origin/main` après la revue des 763 questions, les audios restant en attente des sources.**
 
 Ce bilan reprend les critères de `style-images.md`, des illustrations CO et PO, et les dernières demandes utilisateur. Les anciens plans datés des 2–5 novembre restent des archives ; leurs compteurs ne décrivent plus la banque actuelle. Aucun pourcentage global n’est calculé à partir de périmètres différents.

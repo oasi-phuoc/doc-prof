@@ -14,6 +14,7 @@ import {
 } from './consignes'
 import { filledForms, switchQuestionForm } from './formes'
 import { tcfBank, tcfBankAllLevels } from './loader'
+import { tcfObjectTheme } from './object-pool'
 import { emptyTcfExercise, tcfExerciseId } from './templates'
 import type {
   TcfCoAssociation,
@@ -370,9 +371,17 @@ export function drawObjetsCompose(
   const source = entry.exercise
   const objects = entry.objectPool
   if (!objects) return null
+  let heard = shuffle(rng, objects.heard).slice(0, 3)
+  const themedAbsent = () => objects.absent.filter((o) => heard.some((h) => tcfObjectTheme(h.family) === tcfObjectTheme(o.family)))
+  if (themedAbsent().length < 2) {
+    // Include a heard concept from the theme supplying the distractors.
+    const anchor = objects.heard.find((h) => objects.absent.filter((o) => tcfObjectTheme(h.family) === tcfObjectTheme(o.family)).length >= 2)
+    if (!anchor) return null
+    heard = [anchor, ...shuffle(rng, objects.heard.filter((o) => o.id !== anchor.id)).slice(0, 2)]
+  }
   const images = [
-    ...shuffle(rng, objects.heard).slice(0, 3).map((o) => ({ id: `objet-${o.id}`, image: o.image, correct: true })),
-    ...shuffle(rng, objects.absent).slice(0, 2).map((o) => ({ id: `objet-${o.id}`, image: o.image, correct: false })),
+    ...heard.map((o) => ({ id: `objet-${o.id}`, image: o.image, correct: true })),
+    ...shuffle(rng, themedAbsent()).slice(0, 2).map((o) => ({ id: `objet-${o.id}`, image: o.image, correct: false })),
   ]
   return {
     id: `tcf-co-objets-draw-${niveau.toLowerCase()}`,
