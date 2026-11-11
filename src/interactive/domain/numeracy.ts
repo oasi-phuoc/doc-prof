@@ -1,19 +1,11 @@
 import type { MathItem } from '@/math/types'
-import { createRng, shuffle } from '@/math/rng'
 import type { Choice, NumberSequence } from './types'
-import { compareExact, exactDecimal, exactExpression, formatDecimal, scaledDecimal } from './exact-math'
+import { compareExact, exactDecimal, exactExpression, scaledDecimal } from './exact-math'
+import { decimalChoices } from './decimal-choices'
 
 type Adaptation = { part: number; prompt: string; choices: Choice[]; correctId: string; model: string; numberSequence?: NumberSequence; compatibility: 'auto' | 'assisted' }
 type Result = { items: Adaptation[]; issues: string[] }
 const reject = (message: string): Result => ({ items: [], issues: [message] })
-
-function sequenceChoices(value: bigint, precision: number, step: bigint, correctText: string, seed: number) {
-  const offsets = [step, -step, 1n, -1n, 10n, -10n, 2n, -2n, 100n, -100n, step * 2n, -step * 2n, 3n, 4n, 5n]
-  const values = [...new Set([value, ...offsets.map((offset) => value + offset)])].filter((n) => value < 0n || n >= 0n)
-  const rng = createRng(seed)
-  const candidates = shuffle(rng, [value, ...shuffle(rng, values.filter((n) => n !== value)).slice(0, 5)])
-  return { correctId: `n${value}`, choices: candidates.map((n) => ({ id: `n${n}`, text: n === value ? correctText : formatDecimal(n, precision) })) }
-}
 
 /** Verify the worksheet itself before creating any answer or masking its blanks. */
 export function adaptNumeracy(item: MathItem, seedFor: (part: number) => number): Result | undefined {
@@ -52,5 +44,5 @@ export function adaptNumeracy(item: MathItem, seedFor: (part: number) => number)
     if (!delta || scaledDecimal(delta, Math.max(delta.precision, precision)) !== step * 10n ** BigInt(Math.max(delta.precision, precision) - precision)) return reject('L’aide de la suite ne correspond pas à son pas. Validez la fiche avant de jouer.')
   }
   const masked = terms.map((term, index) => blanks.includes(index) ? null : term)
-  return { items: blanks.map((position, index) => ({ part: position, prompt: `Quel nombre manque à la position ${position + 1} ?`, ...sequenceChoices(values[position]!, precision, step, answers[index]!, seedFor(position)), model: `Position ${position + 1} : ${answers[index]}.`, compatibility: 'assisted', numberSequence: { terms: [...masked], target: position, ...(item.prompt?.trim() ? { hint: item.prompt.trim() } : {}) } })), issues: [] }
+  return { items: blanks.map((position, index) => ({ part: position, prompt: `Quel nombre manque à la position ${position + 1} ?`, ...decimalChoices(values[position]!, precision, step, answers[index]!, seedFor(position)), model: `Position ${position + 1} : ${answers[index]}.`, compatibility: 'assisted', numberSequence: { terms: [...masked], target: position, ...(item.prompt?.trim() ? { hint: item.prompt.trim() } : {}) } })), issues: [] }
 }

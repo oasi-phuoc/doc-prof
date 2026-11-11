@@ -73,6 +73,7 @@ PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run test:interactive:c
 PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run test:interactive:media
 PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run test:interactive:competition
 PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run test:interactive:numeracy
+PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run test:interactive:arithmetic
 npm ci --prefix api/fiches --no-audit --no-fund
 npm run typecheck:api
 npm run test:interactive:competition-worker
@@ -97,3 +98,5 @@ Dans le générateur, les [formats CO et corrigés CE](../tcf/formats-et-corrige
 Les [nombres et calculs oraux](adr-0024-sequences-audio.md) lisent tous leurs extraits en une piste complète, avec les contrôles d’écoute existants. Les [chargements animés](adr-0025-chargements-animes.md) accompagnent l’ouverture des pages, des fiches et du jeu, dès le démarrage initial.
 
 Les [comparaisons et suites numériques](adr-0026-comparaisons-et-suites.md) proposent les signes `<`, `=` et `>` ou une question par case manquante. Les nombres de la fiche et son aide sont conservés ; la case demandée est encadrée, les autres blancs restent masqués et la correction apparaît uniquement dans les cartes. Entiers, décimaux et fractions sont vérifiés exactement ; les suites doivent avoir un pas constant. Ces activités fonctionnent aussi en compétition.
+
+Les [calculs à trou, divisions et décimaux](adr-0027-calculs-a-trou-et-decimaux.md) gardent l’équation de la fiche et sa case manquante. Les résultats décimaux sont exacts, les calculs ambigus ou incohérents sont signalés, et le jeu conserve ses parcours Classe, Solo et compétition. Les fractions non décimales, les quotients arrondis et les divisions avec reste demandent encore une adaptation.

@@ -9,6 +9,8 @@ import { adaptSourceItem } from './source-adapters'
 import { verifiedCscMath } from './csc-math'
 import { verifiedNumericAudio } from './audio-math'
 import { adaptNumeracy } from './numeracy'
+import { verifiedWrittenArithmetic } from './written-arithmetic'
+import { decimalChoices } from './decimal-choices'
 export { hash } from './seeds'
 const normalized = (s: string) =>
   s
@@ -364,6 +366,17 @@ export function convertRecipe(
               `${item.a} ${item.op} ${item.b} = ${result.toLocaleString('fr-CH')}`,
               choices.correctId,
             )
+            return
+          }
+          const written = verifiedWrittenArithmetic(item)
+          if (written) {
+            if ('reason' in written) { reject(written.reason); return }
+            const q = base()
+            q.prompt = written.prompt
+            q.compatibility = 'assisted'
+            const choices = decimalChoices(written.value.units, written.value.precision, 10n ** BigInt(written.value.precision), written.correctText, deriveSeed({ originalSeed: recipe.seed, sourceKey: q.id, purpose: 'distractors' }), written.signed)
+            q.choices = choices.choices
+            add(q, written.model, choices.correctId)
             return
           }
           if (
