@@ -14,7 +14,32 @@ function capChoices(choices: Choice[], correctId: string, key: string): Choice[]
 }
 
 /** Explicit source relations only. Each audio/association gets its own stable source part. */
-export function adaptSourceItem(item: MathItem, exerciseType: string): Result | undefined {
+export function adaptSourceItem(item: MathItem, exerciseType: string, sourceInstruction = ''): Result | undefined {
+  if (item.layout === 'listen-check') {
+    const options = item.options ?? [], checked = item.labels
+    const keys = options.map(textKey), checkedKeys = checked?.map(textKey)
+    if (!sourceInstruction.trim() || !options.length || options.length > 64 || keys.some((key) => !key) || new Set(keys).size !== keys.length ||
+      !checkedKeys || new Set(checkedKeys).size !== checkedKeys.length || checkedKeys.some((key) => !keys.includes(key)) ||
+      !sameBag(checked ?? [], item.answer.split(' · ').filter((word) => word.trim()))) return { items: [], issues: ['Écoute des sons : les mots cochés et le corrigé de la fiche doivent être cohérents.'] }
+    const items: Adaptation[] = [], issues: string[] = []
+    // Keep the source phonetic target verbatim; never infer a sound from spelling.
+    const sound = /^Écoutez les mots et cochez quand vous entendez le son (.+?)\.$/u.exec(sourceInstruction.trim())?.[1]
+    const prompt = sound ? `Entends-tu le son ${sound} ?` : `${sourceInstruction.trim()} Réponds oui ou non pour ce mot.`
+    options.forEach((word, part) => {
+      const audio = item.optionAudioSrcs?.[part]
+      if (!audio) { issues.push(`Mot ${part + 1} : enregistrement absent, question non retenue.`); return }
+      if (item.optionAudioSrcs?.some((other, index) => index !== part && other === audio && keys[index] !== keys[part])) {
+        issues.push(`Mot ${part + 1} : une même piste désigne plusieurs mots, écoute à vérifier.`); return
+      }
+      const correctId = checkedKeys.includes(keys[part]!) ? 'yes' : 'no'
+      items.push({ part, prompt, instruction: 'Écoutez ce mot puis choisissez Oui ou Non.', audio,
+        choices: [{ id: 'yes', text: 'Oui' }, { id: 'no', text: 'Non' }], correctId,
+        model: `${word} : ${correctId === 'yes' ? 'Oui' : 'Non'}.`,
+        images: item.optionImages?.[part] ? [item.optionImages[part]!] : [] })
+    })
+    issues.push('La reconnaissance du son est proposée en une question Oui / Non par mot ; le corrigé vient des cases cochées dans la fiche.')
+    return { items, issues }
+  }
   if (item.layout === 'audio-order' && item.audioOrder) {
     const { clips, slots, mode } = item.audioOrder
     const issues: string[] = [], items: Adaptation[] = []

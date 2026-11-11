@@ -203,7 +203,7 @@ export function convertRecipe(
             reject(item.libreError)
             return
           }
-          const adapted = adaptSourceItem(item, block.exerciseType)
+          const adapted = adaptSourceItem(item, block.exerciseType, block.instruction)
           if (adapted) {
             adapted.issues.forEach(reject)
             adapted.items.forEach((item) => {
@@ -272,7 +272,7 @@ export function convertRecipe(
           }
           if (
             item.options &&
-            ['select', 'listen-check'].includes(item.layout)
+            item.layout === 'select'
           ) {
             const q = base()
             if (item.optionAudioSrcs?.some(Boolean)) {
