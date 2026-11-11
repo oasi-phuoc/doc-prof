@@ -428,7 +428,7 @@ function PlayingRound({
         }}
       />
       <main
-        className={`ci-session${solo ? ' ci-solo-session' : ''}${reveal ? ' ci-is-revealed' : ''}${questions[0]?.mode === 'sequence' ? ' ci-sequence-session' : ''}${questions.length === 2 ? ' ci-dual-session' : ''}`}
+        className={`ci-session${solo ? ' ci-solo-session' : ''}${reveal ? ' ci-is-revealed' : ''}${questions[0]?.mode === 'sequence' ? ' ci-sequence-session' : ''}${questions[0]?.words ? ' ci-word-session' : ''}${questions.length === 2 ? ' ci-dual-session' : ''}`}
       >
         {state.paused && (
           <section className="ci-pause">

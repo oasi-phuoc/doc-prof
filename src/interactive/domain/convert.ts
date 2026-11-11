@@ -5,6 +5,7 @@ import type { MathItem } from '@/math/types'
 import type { TcfCadreQuestion, TcfSheetItem } from '@/tcf/types'
 import type { Choice, Game, Question } from './types'
 import { canonicalJson, deriveSeed, hash } from './seeds'
+import { adaptSourceItem } from './source-adapters'
 export { hash } from './seeds'
 const normalized = (s: string) =>
   s
@@ -200,6 +201,19 @@ export function convertRecipe(
           }
           if (item.libreError) {
             reject(item.libreError)
+            return
+          }
+          const adapted = adaptSourceItem(item, block.exerciseType)
+          if (adapted) {
+            adapted.issues.forEach(reject)
+            adapted.items.forEach((item) => {
+              const q = base(item.part)
+              q.prompt = item.prompt; q.instruction = `${block.instruction}\n${item.instruction}`; q.choices = item.choices
+              q.mode = item.mode ?? 'choice'; q.audio = item.audio ?? q.audio; q.images = item.images ?? []
+              if (item.words) q.words = item.words
+              if (item.teacherLed) q.compatibility = 'teacher-led'
+              add(q, item.model, item.correctId)
+            })
             return
           }
           const t = item.tcf

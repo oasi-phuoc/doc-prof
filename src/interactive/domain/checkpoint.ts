@@ -1,7 +1,7 @@
 import { questionsForRound, roundsFor } from './plan'
 import { validateManualVote } from './votes'
 import type { Game, PlayMode, Session, RoundRuntime } from './types'
-import { copyRuntime } from './round-runtime'
+import { copyRuntime, sequenceLength } from './round-runtime'
 import { maxListensFor } from './listening'
 
 export type SessionCheckpoint = { state: Session; lastEventId?: string }
@@ -52,7 +52,7 @@ function validRuntime(game: Game, id: string, value: unknown, mode: PlayMode): v
   if (!validListening(value, questions, mode, !!round.audio)) return false
   if (Object.entries(value.selections).some(([id, selected]) => mode !== 'solo' || !questions.some((q) => q.id === id && q.choices.some((choice) => choice.id === selected)))) return false
   if (Object.entries(value.hintsShown).some(([id, count]) => typeof count !== 'number' || !Number.isInteger(count) || count < 0 || !questions.some((q) => q.id === id && count <= (q.hints?.length ?? 0)))) return false
-  if (Object.entries(value.imageOrders).some(([id, order]) => !questions.some((q) => q.id === id && q.mode === 'sequence' && Array.isArray(order) && order.length === q.images.length && new Set(order).size === order.length && order.every((n) => Number.isInteger(n) && n >= 0 && n < q.images.length)))) return false
+  if (Object.entries(value.imageOrders).some(([id, order]) => !questions.some((q) => q.id === id && q.mode === 'sequence' && Array.isArray(order) && order.length === sequenceLength(q) && new Set(order).size === order.length && order.every((n) => Number.isInteger(n) && n >= 0 && n < sequenceLength(q))))) return false
   return true
 }
 

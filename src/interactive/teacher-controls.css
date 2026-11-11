@@ -64,3 +64,13 @@
   .ci-summary .ci-toolbar, .ci-summary .ci-teacher-marks, .ci-summary .ci-observations, .ci-summary .ci-vote-summary { display: none !important; }
   .ci-summary .ci-summary-questions > p { break-inside: avoid; }
 }
+.ci-app .ci-word-sequence { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 12px 0; }
+.ci-app .ci-word-sequence button { display: flex; flex-direction: column; justify-content: center; min-height: 72px; padding: 6px 12px; background: var(--ci-soft); border: 2px solid var(--ci-line); font-size: clamp(24px, 2.8vw, 44px); overflow-wrap: anywhere; touch-action: manipulation; }
+.ci-app .ci-word-sequence button small { font-size: 12px; }
+.ci-app .ci-word-sequence button[aria-pressed="true"] { border-color: var(--ci-accent); box-shadow: 0 0 0 2px var(--ci-accent); }
+.ci-app .ci-word-order > p { margin: 0; font-size: 16px; }
+.ci-app .ci-word-undo { min-height: 44px; }
+@media (min-width: 901px) {
+  .ci-app .ci-word-session .ci-model-answer { padding: 12px 18px; }
+  .ci-app .ci-word-session .ci-model-answer p { margin: 8px 0; }
+}

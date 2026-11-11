@@ -1,4 +1,4 @@
-import { useState, type CSSProperties } from 'react'
+import { useId, useState, type CSSProperties } from 'react'
 import { GeometryFigure } from '@/components/math/GeometryFigure'
 import {
   PALETTE,
@@ -138,7 +138,7 @@ export function QuestionStage({
       ) : (
         <section className="ci-manual">
           {q.mode === 'sequence' ? (
-            <Sequence key={q.id} question={q} order={imageOrder} onOrder={onImageOrder} disabled={interactionsDisabled || phase === 'revealed'} />
+            q.words ? <WordSequence key={q.id} words={q.words} order={imageOrder} onOrder={onImageOrder} disabled={interactionsDisabled || phase === 'revealed'} /> : <Sequence key={q.id} question={q} order={imageOrder} onOrder={onImageOrder} disabled={interactionsDisabled || phase === 'revealed'} />
           ) : (
             <p>
               Échange oral ou production libre. L’enseignant guide l’activité et
@@ -149,6 +149,35 @@ export function QuestionStage({
       )}
     </>
   )
+}
+
+function WordSequence({ words, order, onOrder, disabled }: { words: string[]; order?: number[]; onOrder?: (order: number[]) => void; disabled: boolean }) {
+  const positions = order ?? words.map((_, index) => index)
+  const [selected, setSelected] = useState<number | undefined>(undefined)
+  const [previous, setPrevious] = useState<number[] | undefined>(undefined)
+  const [announcement, setAnnouncement] = useState('')
+  const help = useId()
+  const update = (next: number[], message: string) => { setPrevious([...positions]); onOrder?.(next); setAnnouncement(message) }
+  const choose = (index: number) => {
+    if (disabled) return
+    if (selected === undefined) { setSelected(index); setAnnouncement(`Mot sélectionné : ${words[index]}. Choisissez sa place.`); return }
+    if (selected === index) { setSelected(undefined); return }
+    const next = [...positions], from = next.indexOf(selected), to = next.indexOf(index)
+    ;[next[from], next[to]] = [next[to]!, next[from]!]
+    update(next, `Mot déplacé à la place ${to + 1}.`); setSelected(undefined)
+  }
+  const move = (index: number, delta: number) => {
+    const next = [...positions], from = next.indexOf(index), to = from + delta
+    if (disabled || to < 0 || to >= next.length) return
+    ;[next[from], next[to]] = [next[to]!, next[from]!]
+    update(next, `Mot déplacé à la place ${to + 1}.`); setSelected(undefined)
+  }
+  return <div className="ci-word-order">
+    <p id={help}>Choisissez un mot, puis sa place. Au clavier, utilisez les flèches.</p>
+    <div className="ci-word-sequence" role="group" aria-label="Mots à remettre dans l’ordre" aria-describedby={help}>{positions.map((index, position) => <button type="button" key={index} disabled={disabled} aria-label={`Mot ${position + 1} : ${words[index]}`} aria-pressed={selected === index} onClick={() => choose(index)} onKeyDown={(event) => { if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') { event.preventDefault(); move(index, event.key === 'ArrowLeft' ? -1 : 1) } }}><small aria-hidden="true">{position + 1}</small><b>{words[index]}</b></button>)}</div>
+    <button type="button" className="ci-word-undo" disabled={disabled || !previous} onClick={() => { if (previous) { onOrder?.(previous); setPrevious(undefined); setSelected(undefined); setAnnouncement('Dernier déplacement annulé.') } }}>Annuler le déplacement</button>
+    <span className="ci-sr-only" role="status">{announcement}</span>
+  </div>
 }
 
 function Sequence({ question, order, onOrder, disabled }: { question: Question; order?: number[]; onOrder?: (order: number[]) => void; disabled: boolean }) {

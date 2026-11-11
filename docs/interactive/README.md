@@ -43,6 +43,8 @@ En Classe, pour un même enregistrement, deux questions au maximum sont retenues
 
 Les QCM TCF privilégient les variantes en images de la banque, même si la fiche papier avait sélectionné la forme à écrire. Le document à lire est ouvert directement, avec réglage de police. Les images de réponse restent des images au corrigé.
 
+Les [nouveaux adaptateurs](adr-0014-associer-et-ordonner.md) couvrent aussi les associations audio, les paires de vocabulaire et les phrases courtes à ordonner. Ils conservent les alternatives source et proposent une appréciation humaine lorsque la réponse n’est pas unique ou que l’audio est un repli sur un mot entier. Les phrases se déplacent au toucher ou au clavier, avec annulation et reprise de l’ordre proposé.
+
 Le choix de mascotte propose six images animées : Esprit feuille, Hibou, Pieuvre, Hérisson, Lapin lunaire et Dragon. Les animations restent actives selon la demande du propriétaire. Le mode immersif masque les commandes du menu, avec un bouton de sortie et le lecteur audio nécessaire au jeu.
 
 ## Suivi local

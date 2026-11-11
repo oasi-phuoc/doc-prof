@@ -27,6 +27,7 @@ export type Question = {
   audio?: string
   audioMaxListens?: number
   images: string[]
+  words?: string[]
   figure?: { type: Figure; dims?: FigureDims }
   mode: 'choice' | 'oral' | 'sequence'
   choices: Choice[]

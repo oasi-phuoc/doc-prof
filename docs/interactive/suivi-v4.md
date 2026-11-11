@@ -6,7 +6,7 @@ Ce registre complète les anciennes checklists de livraison. Il distingue les fo
 
 | Travail | État et preuve | Reste à faire |
 |---|---|---|
-| Parcours brouillon / fiche enregistrée | Convertisseurs, préparation, sélection ; brouillon local par adresse et rechargement ; graine renouvelée dès le clic bibliothèque sans modifier le modèle serveur ; `drafts-results.json`, `game-run-results.json` | Étendre les adaptateurs encore classés non compatibles par l’inventaire |
+| Parcours brouillon / fiche enregistrée | Convertisseurs, préparation, sélection ; brouillon local par adresse et rechargement ; graine renouvelée dès le clic bibliothèque sans modifier le modèle serveur ; `drafts-results.json`, `game-run-results.json` | 471 variantes avec activité sur 2 081 ; poursuivre les familles restantes et les variantes non échantillonnées |
 | Moteur Classe / Solo | Correction dans les cartes, protections enseignant ; navigation conservant phases, minuteurs, relances et images ; nouvelles tentatives et essais archivés ; `navigation-results.json`, `teacher-protections-results.json`, tests de domaine, Classe et Solo | Étendre les mécaniques avancées et leurs états spécifiques |
 | F25 diagnostic | Page et rapport local ; tests navigateur et document `diagnostic-eni.md` | Essai sur ENI réel à joindre au pilote |
 | F26 cartes et étalonnage | Palette, formes, contraste ; six carrés de 88 mm en deux colonnes et trois lignes A4 ; `mobile-layout-print-results.json` | Assistant d’étalonnage et contraste des contours complets |
@@ -24,7 +24,7 @@ Ce registre complète les anciennes checklists de livraison. Il distingue les fo
 
 ## P1 / P2 encore ouverts
 
-M05–M08 et autres mécaniques, extensions des préréglages puis stockage serveur sécurisé, console enseignant, transferts autonomes de fiches, préchargement intégral, hors ligne, statistiques d’équipes, thème sombre, pilotes matériels et revue finale de sécurité restent à réaliser ou à étendre. Les fonctions partagées doivent attendre l’authentification serveur. Les suppressions ou refontes de banques imprimables ne font pas partie de cette migration.
+M05 / M06 étendus par micro-questions et M07 par phrases guidées ; leurs variantes complètes, M08 et autres mécaniques, extensions des préréglages puis stockage serveur sécurisé, console enseignant, transferts autonomes de fiches, préchargement intégral, hors ligne, statistiques d’équipes, thème sombre, pilotes matériels et revue finale de sécurité restent à réaliser ou à étendre. Les fonctions partagées doivent attendre l’authentification serveur. Les suppressions ou refontes de banques imprimables ne font pas partie de cette migration.
 
 ## Actions externes connues
 

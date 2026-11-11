@@ -1,0 +1,78 @@
+import type { MathItem } from '@/math/types'
+import { soutienAudioFor } from '@/francais/soutien/audio'
+import type { Choice, Question } from './types'
+import { hash } from './seeds'
+
+type Adaptation = { part: number; prompt: string; instruction: string; choices: Choice[]; correctId?: string; model: string; mode?: Question['mode']; audio?: string; images?: string[]; words?: string[]; teacherLed?: boolean }
+type Result = { items: Adaptation[]; issues: string[] }
+const textKey = (value: string) => value.normalize('NFC').trim().replace(/\s+/g, ' ').toLocaleLowerCase('fr')
+const letters = (value: string) => textKey(value).replace(/[^\p{L}\p{N}]/gu, '')
+const sameBag = (a: string[], b: string[]) => JSON.stringify(a.map(textKey).sort()) === JSON.stringify(b.map(textKey).sort())
+function capChoices(choices: Choice[], correctId: string, key: string): Choice[] {
+  const kept = new Set([correctId, ...choices.filter((choice) => choice.id !== correctId).sort((a, b) => hash(`${key}:${a.id}`) - hash(`${key}:${b.id}`)).slice(0, 5).map((choice) => choice.id)])
+  return choices.filter((choice) => kept.has(choice.id))
+}
+
+/** Explicit source relations only. Each audio/association gets its own stable source part. */
+export function adaptSourceItem(item: MathItem, exerciseType: string): Result | undefined {
+  if (item.layout === 'audio-order' && item.audioOrder) {
+    const { clips, slots, mode } = item.audioOrder
+    const issues: string[] = [], items: Adaptation[] = []
+    if (!['words', 'images'].includes(mode) || clips.length < 2 || clips.length > 64 || slots.length !== clips.length || new Set(slots.map((slot) => slot.correctNum)).size !== clips.length || slots.some((slot) => !Number.isInteger(slot.correctNum) || slot.correctNum < 1 || slot.correctNum > clips.length)) return { items, issues: ['Association audio incohérente : chaque case doit désigner un enregistrement distinct.'] }
+    const choices: Choice[] = slots.map((slot, index) => ({ id: `s${index}`, text: mode === 'words' ? slot.word?.trim() ?? '' : '', ...(mode === 'images' ? { image: slot.imageSrc } : {}) }))
+    const labels = choices.map((choice) => mode === 'words' ? textKey(choice.text) : choice.image?.split('#')[0])
+    if (labels.some((label) => !label) || new Set(labels).size !== labels.length) return { items, issues: ['Deux réponses audio sont identiques ou absentes : association à vérifier.'] }
+    clips.forEach((clip, part) => {
+      const slotIndex = slots.findIndex((slot) => slot.correctNum === part + 1)
+      const slot = slots[slotIndex]!
+      if (!clip.audioSrc || !clip.word.trim() || mode === 'words' && textKey(slot.word ?? '') !== textKey(clip.word)) { issues.push(`Audio ${part + 1} : piste ou correspondance source non vérifiable.`); return }
+      // The alphabet generator sometimes substitutes a whole-word recording for
+      // an unavailable syllable. Preserve that as an open activity, never grade it.
+      const wholeWordFallback = exerciseType.startsWith('alpha-') && clip.audioSrc !== soutienAudioFor(clip.word)
+      const sharedRecording = clips.some((other, index) => index !== part && other.audioSrc === clip.audioSrc && textKey(other.word) !== textKey(clip.word))
+      if (wholeWordFallback || sharedRecording) {
+        items.push({ part, prompt: 'Écoute et propose une réponse.', instruction: 'Écoutez puis échangez avec l’enseignant.', choices: [], model: clip.word, mode: 'oral', audio: clip.audioSrc, teacherLed: true })
+        issues.push(`Audio ${part + 1} : activité guidée, car la piste ne permet pas de garantir une seule réponse parmi les propositions.`)
+        return
+      }
+      const correctId = choices[slotIndex]!.id
+      items.push({ part, prompt: mode === 'words' ? 'Quel mot ou quelle syllabe entends-tu ?' : 'Quelle image correspond à ce que tu entends ?', instruction: 'Écoutez puis choisissez une carte.', choices: capChoices(choices, correctId, `${exerciseType}:${part}:${clip.audioSrc}`), correctId, model: clip.word, audio: clip.audioSrc })
+    })
+    issues.push('L’association audio est proposée en une question par enregistrement, avec uniquement les réponses de la fiche.')
+    if (choices.length > 6) issues.push('Six propositions source au maximum sont conservées par enregistrement, avec la réponse prévue par la fiche.')
+    return { items, issues }
+  }
+  if (item.layout === 'vocab-match' && item.vocabPairs?.length) {
+    const items: Adaptation[] = [], issues: string[] = []
+    const right = [...new Map((item.options ?? []).filter((value) => value.trim()).map((value) => [textKey(value), value.trim()])).values()]
+    const choices = right.map((text, index) => ({ id: `r${index}`, text }))
+    const pairs = item.vocabPairs
+    if (!['syllables', 'image', 'text'].includes(item.vocabMatchMode ?? '') || pairs.length > 64 || pairs.some((pair) => !pair.left.trim() || !pair.right.trim() || !item.labels?.some((label) => textKey(label) === textKey(pair.left)) || !right.some((value) => textKey(value) === textKey(pair.right)))) return { items, issues: ['Paires de vocabulaire absentes ou incohérentes avec les éléments de la fiche.'] }
+    const seen = new Set<string>()
+    pairs.forEach((pair, part) => {
+      const correctId = choices.find((choice) => textKey(choice.text) === textKey(pair.right))!.id
+      const ambiguous = new Set(pairs.filter((other) => textKey(other.left) === textKey(pair.left)).map((other) => textKey(other.right))).size > 1
+      let prompt = item.vocabMatchMode === 'image' ? 'Quel mot correspond à cette image ?' : `Que faut-il associer à « ${pair.left} » ?`
+      if (item.vocabMatchMode === 'syllables') {
+        const targets = item.answer.split(' · ').flatMap((segment) => { const match = /^(.+?)\s*\+\s*(.+?)\s*→\s*(.+)$/.exec(segment); return match && textKey(match[1]!) === textKey(pair.left) && textKey(match[2]!) === textKey(pair.right) && letters(match[3]!) === letters(pair.left + pair.right) ? [match[3]!.trim()] : [] })
+        if (targets.length !== 1) { issues.push(`Paire ${part + 1} : mot complet non vérifiable dans la source.`); return }
+        prompt = `Complète « ${targets[0]} » : ${pair.left}___`
+      }
+      const identity = item.vocabMatchMode === 'syllables' ? prompt : textKey(pair.left)
+      if (seen.has(identity)) return
+      seen.add(identity)
+      const teacherLed = choices.length < 2 || ambiguous && item.vocabMatchMode !== 'syllables'
+      items.push({ part, prompt, instruction: 'Choisissez la proposition qui complète ou correspond à l’élément affiché.', choices: teacherLed ? [] : capChoices(choices, correctId, `${exerciseType}:${part}`), ...(teacherLed ? {} : { correctId }), model: teacherLed ? [...new Set(pairs.filter((other) => textKey(other.left) === textKey(pair.left)).map((other) => other.right))].join(' / ') : pair.right, images: item.vocabMatchMode === 'image' ? [pair.left] : [], ...(teacherLed ? { mode: 'oral', teacherLed: true } : {}) })
+      if (teacherLed) issues.push(`Paire ${part + 1} : association à guider sans verdict automatique.`)
+    })
+    issues.push('L’association est proposée en micro-questions indépendantes ; aucune réponse déjà utilisée n’est retirée automatiquement. Les mots à compléter montrent le mot source complet.')
+    return { items, issues }
+  }
+  if (item.layout === 'phrase-order') {
+    const words = item.tokens?.map((token) => token.text.trim()) ?? []
+    const ordered = item.labels ?? []
+    const model = item.responseAnswer?.trim() || item.answer.trim()
+    if (words.length < 2 || words.length > 6 || words.some((word) => !word) || new Set(words.map(textKey)).size < 2 || !sameBag(words, ordered) || !model || letters(model) !== letters(ordered.join(' '))) return { items: [], issues: ['Phrase à ordonner non vérifiable ou hors limite de deux à six éléments.'] }
+    return { items: [{ part: 0, prompt: 'Remets les mots dans l’ordre.', instruction: 'Choisissez un mot puis une autre place, ou utilisez les flèches du clavier.', choices: [], model, mode: 'sequence', words: sameBag(words, ordered) && words.every((word, index) => word === ordered[index]) ? [...words.slice(1), words[0]!] : words, teacherLed: true }], issues: ['Phrase manipulable avec modèle source ; les autres ordres possibles sont appréciés par l’enseignant, sans verdict automatique.'] }
+  }
+}

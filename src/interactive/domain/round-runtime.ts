@@ -2,7 +2,9 @@ import { createRng, shuffle } from '@/math/rng'
 import { questionsForRound, roundsFor } from './plan'
 import { assignChoicePositions, choiceOrderPolicy } from './slots'
 import { deriveSeed, hash } from './seeds'
-import type { Game, RoundRuntime, Session } from './types'
+import type { Game, Question, RoundRuntime, Session } from './types'
+
+export const sequenceLength = (question: Question) => question.words?.length ?? question.images.length
 
 export function copyRuntime(value: RoundRuntime): RoundRuntime {
   return { ...value, selections: { ...value.selections }, hintsShown: { ...value.hintsShown }, imageOrders: Object.fromEntries(Object.entries(value.imageOrders).map(([id, order]) => [id, [...order]])) }

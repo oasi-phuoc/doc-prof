@@ -2,7 +2,7 @@ import type { Action, Game, Session, PlayMode } from './types'
 import { questionsForRound, roundsFor } from './plan'
 import { validateManualVote } from './votes'
 import { retractionRemaining } from './teacher'
-import { captureRound, navigateToRound, runtimeFor } from './round-runtime'
+import { captureRound, navigateToRound, runtimeFor, sequenceLength } from './round-runtime'
 import { canListen, maxListensFor } from './listening'
 
 export function startSession(game: Game, mode: PlayMode = 'class'): Session {
@@ -73,7 +73,7 @@ function reduce(game: Game, state: Session, action: Action, at?: number): Sessio
     }
     case 'IMAGE_ORDER_SET': {
       const q = questions.find((entry) => entry.id === action.questionId)
-      if (!q || q.mode !== 'sequence' || state.phase === 'revealed' || !Array.isArray(action.order) || action.order.length !== q.images.length || new Set(action.order).size !== q.images.length || action.order.some((n) => !Number.isInteger(n) || n < 0 || n >= q.images.length)) return state
+      if (!q || q.mode !== 'sequence' || state.phase === 'revealed' || !Array.isArray(action.order) || action.order.length !== sequenceLength(q) || new Set(action.order).size !== sequenceLength(q) || action.order.some((n) => !Number.isInteger(n) || n < 0 || n >= sequenceLength(q))) return state
       return updateRuntime({ ...runtime, imageOrders: { ...runtime.imageOrders, [q.id]: [...action.order] } })
     }
     case 'AUDIO_STATE':
