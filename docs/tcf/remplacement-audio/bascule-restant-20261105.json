@@ -1,32 +1,33 @@
 {
   "summary": {
-    "remaining_references": 222,
+    "remaining_references": 213,
     "reasons": {
-      "editorial_transcript_and_question_review_required": 71,
-      "source_boundary_review_required": 110,
+      "editorial_transcript_and_question_review_required": 46,
+      "source_boundary_review_required": 105,
       "whisper_end_difference": 7,
-      "ctc_text_difference": 35,
-      "parakeet_numeric_difference": 49,
+      "ctc_text_difference": 38,
+      "ctc_end_difference": 27,
+      "whisper_numeric_difference": 29,
+      "ctc_numeric_difference": 51,
+      "parakeet_numeric_difference": 52,
       "whisper_text_difference": 30,
       "whisper_start_difference": 14,
       "parakeet_start_difference": 10,
-      "ctc_end_difference": 24,
       "parakeet_end_difference": 7,
-      "ctc_numeric_difference": 46,
       "parakeet_text_difference": 27,
-      "ctc_start_difference": 17,
-      "whisper_numeric_difference": 27
+      "ctc_start_difference": 18,
+      "final_gift_word_requires_native_recrop_and_confirmation": 1
     },
     "recognition_progress": {
       "pending_references_initial": 945,
       "unique_candidates": 933,
-      "parakeet_recognitions": 932,
+      "parakeet_recognitions": 927,
       "french_whisper_recognitions": 933,
-      "third_ctc_recognitions": 166,
-      "technical_files_checked": 1003,
+      "third_ctc_recognitions": 186,
+      "technical_files_checked": 1016,
       "exact_equivalence_ready": 198,
-      "editorial_decisions": 676,
-      "manual_reviews_ready": 522,
+      "editorial_decisions": 701,
+      "manual_reviews_ready": 531,
       "instruction_flags": 0
     }
   },
@@ -139,9 +140,15 @@
       "candidate_sha256": "04c782cfe2210ad2aa719dd57bc8a017aa53b04c3f6f6f2dc8be90b209a3d4c0",
       "reasons": [
         "source_boundary_review_required",
-        "editorial_transcript_and_question_review_required"
+        "ctc_text_difference",
+        "ctc_end_difference"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Monsieur, excusez-moi, pour quand devons nous faire ces exercices? Pour mercredi. Nous devons les faire sur le livre ou sur le cahier? Sur le cahier, bien sûr.",
+        "reason": "Reconnaissances Parakeet et Whisper comparées ; dix questions au maximum et trois propositions par question relues, réponses présentes et distracteurs distincts. Qualification des frontières et des deux fichiers de reconnaissance reste obligatoire. La question initiale porte sur l’échéance (« pour quand ») et non la raison (« pourquoi »), confirmée par la réponse mercredi.",
+        "question_changes": []
+      },
       "exercises": [
         "tcf-ss-a2-s8b-co-2"
       ]
@@ -152,9 +159,15 @@
       "candidate_sha256": "2c9eb6395ca81934892212b1a35b17ed0b84a7b69520036698d7e6737467f594",
       "reasons": [
         "source_boundary_review_required",
-        "editorial_transcript_and_question_review_required"
+        "whisper_numeric_difference",
+        "ctc_numeric_difference"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Mesdames et messieurs, venez approchez, achetez mes légumes, ils sont 100% biologiques! Vous vous demandez pourquoi acheter bio? Mais c'est très simple, côté santé, c'est ce qu'il y a de meilleur. Regardez ces courgettes, ces aubergines, ces carottes. D'abord, c'est des légumes de saison. Rien à voir avec ce que vous trouvez au supermarché, ici, pas d'import export, ces tomates, elles viennent directement de mon jardin. Choisir des produits bio, c'est choisir la sécurité alimentaire. Vous êtes sûr de ne trouver aucun résidu chimique dans mes légumes. Vous pouvez manger les fruits et les légumes bio sans les éplucher, sans aucun souci, d'autant que c'est sous la peau que se concentrent les vitamines et minéraux. Saviez-vous que les aliments biologiques ont une qualité nutritionnelle supérieure de 30% par rapport à ceux issus de l'agriculture conventionnelle? Donc, manger bio veut dire manger des aliments plus riches en vitamines et en minéraux. Madame, avec la poussette, donnez à manger bio à votre enfant et ses risques d'allergie alimentaire seront réduits. En plus, les produits bio ont un goût tellement meilleur. Vous vous demandez encore pourquoi choisir le bio? Vous voulez une autre raison? L'agriculture biologique respecte la nature. Comment? Eh bien, en refusant d'utiliser les produits chimiques, le bio favorise la biodiversité. Voilà un petit geste écologique pour la planète qui ne coûte pas très cher. Achetez chez moi 6 œufs biologiques vous coûtent 2,40 € contre 1,95€ dans une grande surface. Ça fait une différence de 45 centimes. Qu'est-ce que 45 centimes pour un produit tellement plus savoureux et qui respecte l'équilibre de la nature? Regardez, madame, cette photo derrière moi. Vous voyez cette montagne, cette verdure? Voilà où sont élevées mes poules! Vous penserez à elles en mangeant votre omelette ce soir à la maison!",
+        "reason": "Reconnaissances Parakeet et Whisper comparées ; dix questions au maximum et trois propositions par question relues, réponses présentes et distracteurs distincts. Qualification des frontières et des deux fichiers de reconnaissance reste obligatoire. Les affirmations nutritionnelles et sanitaires sont attribuées au vendeur dans les questions. Les tomates viennent de « mon jardin » et le produit chiffré est « six œufs biologiques », conformément à Parakeet.",
+        "question_changes": []
+      },
       "exercises": [
         "tcf-ss-b1-s2-co-2"
       ]
@@ -194,10 +207,20 @@
       "source_id": "9782090351958:042:d86fac163633",
       "candidate_sha256": "499a16940e32c0dc9f7f31199f646a2034d1fe292f6def85d630f8a332fd96a0",
       "reasons": [
-        "source_boundary_review_required",
-        "editorial_transcript_and_question_review_required"
+        "source_boundary_review_required"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "La bibliothèque du collège sera fermée la semaine prochaine car la bibliothécaire accompagne la classe de cinquième quatre en séjour linguistique. Si vous devez prendre ou rapporter des livres, rendez-vous à la bibliothèque avant ce soir à 16h00.",
+        "reason": "Reconnaissances Parakeet et Whisper comparées ; dix questions au maximum et trois propositions par question relues, réponses présentes et distracteurs distincts. Qualification des frontières et des deux fichiers de reconnaissance reste obligatoire. La classe est la cinquième quatre ; réponse précisée.",
+        "question_changes": [
+          {
+            "exercise": "tcf-ss-a2-s7-co-3",
+            "question": 18,
+            "correct_answer": "La classe de 5e 4"
+          }
+        ]
+      },
       "exercises": [
         "tcf-ss-a2-s7-co-3"
       ]
@@ -208,9 +231,14 @@
       "candidate_sha256": "864bedb27a1569d106363da15a758325d3b8d92d9fe23cf45878e108b86cf168",
       "reasons": [
         "source_boundary_review_required",
-        "editorial_transcript_and_question_review_required"
+        "ctc_end_difference"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Elle est comment la copine de Nathan ? Elle est blonde ? Non ! Elle est brune avec les cheveux longs. Elle est très jolie. Elle a quel âge ? Euh... 17 ou 18 ans, je pense. Elle est au lycée avec ma sœur.",
+        "reason": "Questions et trois propositions relues dans le contexte : une réponse correcte et présente dans le dialogue. Transcriptions finales comparées ; conserver en attente tant que les frontières ou les deux reconnaissances finales ne sont pas qualifiées.",
+        "question_changes": []
+      },
       "exercises": [
         "tcf-ssx-a2-famille-copine-de-nathan-co-4"
       ]
@@ -298,18 +326,6 @@
       },
       "exercises": [
         "tcf-a2j-s2b-co-2"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/hotel/01-hôtel-réservation-chambres-Langloi.mp3",
-      "source_id": "delf_a2_eb1w:003:5a9ff0eb5c65",
-      "candidate_sha256": "ad2ed1d2a79b8a10f3d621669271116a9a13c9a2b2833c63d670d0c61e57f1f2",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "tcf-a2-sa-co-3"
       ]
     },
     {
@@ -419,12 +435,23 @@
     {
       "ref": "/lib/audio/tcf/co/loisirs/loisirs-3-2.mp3",
       "source_id": "9782090351958:055:6b088a9bc9dd",
-      "candidate_sha256": "90a5030221018ad14864df6a41dd874bbf3d08955e14a63ee25dfc32e58c0a7d",
+      "candidate_sha256": "3863625a95d64cf842137dca042784c3a1e48d32796e708db08e504c6c20f222",
       "reasons": [
-        "source_boundary_review_required",
-        "editorial_transcript_and_question_review_required"
+        "ctc_text_difference",
+        "ctc_numeric_difference"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Aujourd'hui, nous recevons Samia, professeure de sport. Elle va nous expliquer comment rester en forme en faisant du sport chez soi. Pas besoin de grand-chose. Un tapis de gym, une bouteille d'eau, de la musique, et c'est parti !",
+        "reason": "Questions et trois propositions relues dans le contexte : une réponse correcte et présente dans le dialogue. Transcriptions finales comparées ; conserver en attente tant que les frontières ou les deux reconnaissances finales ne sont pas qualifiées.",
+        "question_changes": [
+          {
+            "exercise": "tcf-ss-a2-s21-co-3",
+            "question": 7,
+            "enonce": "Quelle est la profession de l’invitée ?"
+          }
+        ]
+      },
       "exercises": [
         "tcf-ss-a2-s21-co-3"
       ]
@@ -480,9 +507,14 @@
       "candidate_sha256": "e983f6f361a0650b649a92b130af90282f664dcf8e9724020716461b971e47a1",
       "reasons": [
         "source_boundary_review_required",
-        "editorial_transcript_and_question_review_required"
+        "parakeet_numeric_difference"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Je m'amuse beaucoup ! Moi aussi ! J'adore danser ! Qu'est-ce que tu fais ? Un gâteau au chocolat. Tu veux de l'aide ? On regarde un film ? Non, je préfère regarder un documentaire. D'accord, ça me convient. Bonjour, madame. Bonjour, je voudrais trois pots de miel, s'il vous plaît. Et voilà ! A qui est le CD? C'est le mien. Je l'ai acheté ce matin. On peut l'écouter maintenant?",
+        "reason": "Questions et trois propositions relues dans le contexte : une réponse correcte et présente dans le dialogue. Transcriptions finales comparées ; conserver en attente tant que les frontières ou les deux reconnaissances finales ne sont pas qualifiées.",
+        "question_changes": []
+      },
       "exercises": [
         "tcf-ss-a1-s20-co-3"
       ]
@@ -777,12 +809,19 @@
     {
       "ref": "/lib/audio/tcf/co/magasins/demain-venez-participer-grande.mp3",
       "source_id": "09035276:040:7908c3de2630",
-      "candidate_sha256": "c6dd266f67bc12616ebdf8bcdeee8bb91ce2f0cc7de956c17eee07c22297f6d0",
+      "candidate_sha256": "9e1725f0bb65761e2d33ca32c4cc59c0ef1c7b616e20bac65ec54ffbd9ecd209",
       "reasons": [
-        "source_boundary_review_required",
-        "editorial_transcript_and_question_review_required"
+        "final_gift_word_requires_native_recrop_and_confirmation"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Demain, venez participer à la grande fête de la lecture à la Librairie du Parc. A 14h, vous pouvez écouter des histoires racontées par Maya. A 16h, venez découvrir le groupe Orchestra et ses chansons pour danser. Et pour l'achat de livres, on vous offre un postillo.",
+        "reason": "Questions et trois propositions relues dans le contexte : une réponse correcte et présente dans le dialogue. Transcriptions finales comparées ; conserver en attente tant que les frontières ou les deux reconnaissances finales ne sont pas qualifiées. Le cadeau final est mal reconnu et possiblement tronqué ; ne pas installer avant nouvelle coupe et confirmation de « stylo ».",
+        "question_changes": [],
+        "blocked_reasons": [
+          "final_gift_word_requires_native_recrop_and_confirmation"
+        ]
+      },
       "exercises": [
         "tcf-ss-a1-s2-co-3"
       ]
@@ -995,19 +1034,6 @@
       ]
     },
     {
-      "ref": "/lib/audio/tcf/co/maison/maison-2.mp3",
-      "source_id": "09035276:038:39cc6bb2e5a3",
-      "candidate_sha256": "4bc2c310c13e0bd37d163b602a3764372120229f5e95f51e4b2c8a6195b969cc",
-      "reasons": [
-        "source_boundary_review_required",
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "tcf-ss-a1-s23-co-2"
-      ]
-    },
-    {
       "ref": "/lib/audio/tcf/co/maison/nourriture-annonce.mp3",
       "source_id": "09035196:034:9b8d87450cbf",
       "candidate_sha256": "18de1f6b93a828671c7e7e41f34d523396cb94fa5dde0095a2824481d16e6c45",
@@ -1073,9 +1099,15 @@
       "source_id": "additional-20261102:mdf-a2-abc-direct:75:b95c4fe99c40:9d4809d4",
       "candidate_sha256": "3be15ca9ac1c090ad34042a3d09a940dc65fff58e69c0c227c869b48c29cd959",
       "reasons": [
-        "editorial_transcript_and_question_review_required"
+        "parakeet_numeric_difference",
+        "ctc_start_difference"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Salut, c'est Lucie. Je pars en vacances deux semaines et j'ai besoin de toi pour garder mon chat. Tu pourrais venir chaque jour à 9h pour lui donner à manger ? Il mange de la pâtée et des croquettes. Il ne faut surtout pas lui donner de lait. Sa nourriture est dans le placard de l'entrée. Attention à bien fermer la porte de la cuisine. Ses jeux sont dans le salon. Voici le code de mon immeuble. 69, 91. C'est au deuxième étage. Merci beaucoup.",
+        "reason": "Questions et trois propositions relues dans le contexte : une réponse correcte et présente dans le dialogue. Transcriptions finales comparées ; conserver en attente tant que les frontières ou les deux reconnaissances finales ne sont pas qualifiées. Code 69, 91 confirmé par Whisper et CTC (« soixante-neuf quatre-vingt-onze »), Parakeet 6911 exclu pour ce nombre.",
+        "question_changes": []
+      },
       "exercises": [
         "tcf-ss-a2-s25-co-1"
       ]
@@ -1129,18 +1161,6 @@
       },
       "exercises": [
         "tcf-ssx-a2-conversation-25-co-4"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/presenter/moyen-a2__conversation-32-3.mp3",
-      "source_id": "9782090351958:034:b2afb8e8dd81",
-      "candidate_sha256": "5e649a7f06dbd0a629db5f004ff46bdb01fd51f6b04f8e984e4923ecde2860b3",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "tcf-ssx-a2-conversation-32-co-4"
       ]
     },
     {
@@ -1302,10 +1322,14 @@
       "source_id": "9782090351958:062:a14e3edb351f",
       "candidate_sha256": "5ac30f8f1be6457685b9d60b2f2620efcc5dd5bc03162e026489f21d2d7bef0f",
       "reasons": [
-        "source_boundary_review_required",
-        "editorial_transcript_and_question_review_required"
+        "source_boundary_review_required"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Bienvenue au parc Aquatica. Avant d'accéder aux piscines, merci de vous changer dans les vestiaires et de prendre une douche. Le port du bonnet de bain est obligatoire.",
+        "reason": "Reconnaissances Parakeet et Whisper comparées ; dix questions au maximum et trois propositions par question relues, réponses présentes et distracteurs distincts. Qualification des frontières et des deux fichiers de reconnaissance reste obligatoire. ",
+        "question_changes": []
+      },
       "exercises": [
         "tcf-a2j-s1-co-1"
       ]
@@ -1376,19 +1400,6 @@
       ]
     },
     {
-      "ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-5-6.mp3",
-      "source_id": "delf_a2_eb1w:001:7e749af22d6c",
-      "candidate_sha256": "d3bf75709d458858b620347f8562bd5988aa08ef44ce51b4e4d7db2179d6353b",
-      "reasons": [
-        "source_boundary_review_required",
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "tcf-a2-sa-co-1"
-      ]
-    },
-    {
       "ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-6-6.mp3",
       "source_id": "delf_a2_eb2w:001:e636083d0158",
       "candidate_sha256": "37037829ccdda5926195e0781382dc020612f59fc9595500a95ae3b082244fc8",
@@ -1411,9 +1422,14 @@
       "candidate_sha256": "346f3417821e75cd2bce27a0cc9dd391ef8e38da1f53c8867fc6b642cd540fb8",
       "reasons": [
         "source_boundary_review_required",
-        "editorial_transcript_and_question_review_required"
+        "ctc_numeric_difference"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Alors, voici l'addition. Merci. Alors voyons, ça fait pour nous trois... 40 euros en tout. Tiens, regarde, Aurore. Bon, on divise en trois, non ? Ah non ! Moi, j'ai pris qu'une salade verte à 6 euros et de l'eau. Pardon, Ludivine, c'est vrai. Faisons les calculs, donc. Toi, Nicolas, qu'est-ce que tu as pris déjà ? J'ai pris un steak-frites, ça coûtait 10 euros. Plus un jus de fruit à 3,50 euros. Ok. Moi, j'ai pris un plat de pâtes à 7 euros et un dessert à 4 euros. 7 + 4 + 10 +... On n'a pas dépensé autant. Ils ont fait une erreur à la caisse, apparemment. Attends, Aurore, j'ai pas compté mon dessert. Finalement, tu as dépensé autant que nous. Je calcule à nouveau. Il coûtait combien ton dessert ? Dans les 5 euros ? Bon, mais ils ont quand même compté trop. Je rappelle le serveur. S'il vous plaît ? Oui, mademoiselle. Je crois que vous avez fait une petite erreur dans l'addition. Il y a 4,50 euros en plus. Attendez, donnez-moi votre ticket. Je vais vérifier tout de suite avec le patron à la caisse. Heureusement qu'on a refait nos comptes. Si on avait divisé par 3, on ne s'en serait pas aperçu. Voilà voilà, je vous explique tout. Les 4 euros 50 en plus correspondent exactement au prix du couvert 1,50 euros par personne. Et qu'est-ce que c'est le prix du couvert ? Ce sont des frais pour le service et pour le pain, etc. Ah, très bien, merci. Alors récapitulons, moi je dois 15 euros, Ludivine 12,50 euros et Aurore... 12,50€ aussi. Voilà monsieur, 40€. Merci. Au revoir et à bientôt.",
+        "reason": "Reconnaissances Parakeet et Whisper comparées ; dix questions au maximum et trois propositions par question relues, réponses présentes et distracteurs distincts. Qualification des frontières et des deux fichiers de reconnaissance reste obligatoire. Les prix et les couvertures ne doivent pas être illustrés. Montant final quarante euros et prix du couvert 1,50 euro par personne cohérents avec le dialogue.",
+        "question_changes": []
+      },
       "exercises": [
         "tcf-ss-b1-s2-co-3"
       ]
@@ -1672,18 +1688,6 @@
       },
       "exercises": [
         "delf-a2-2021-co-ex3-17"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_19-1.mp3",
-      "source_id": "delf_a2_2021:019:7725befff9ae",
-      "candidate_sha256": "685921a6378484605397192a9fad086807aa92ac4a189a52d2f7503d96b8f746",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "delf-a2-2021-co-ex3-19"
       ]
     },
     {
@@ -2297,18 +2301,6 @@
       ]
     },
     {
-      "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_34-2.mp3",
-      "source_id": "delf_a1_2022:034:4fdc4c092ad2",
-      "candidate_sha256": "150e70832b59b9ab595f2b2c4d13369dc8404b58a372752b84b4fe19d576c773",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "delf-a1-2022-co-ex3-34"
-      ]
-    },
-    {
       "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_43-3.mp3",
       "source_id": "delf_a1_2022:043:c219016ad093",
       "candidate_sha256": "5b68fc2b2464c1bb1ba95b1a93bfc87fedf816b879f672d178e87fded6bcc92a",
@@ -2507,10 +2499,14 @@
       "source_id": "delf_a1_2022:087:60a694bc4011",
       "candidate_sha256": "d0ed8f160679170ff9b83bdfdd3fb69aa6daff57b75652caab6279c30894bb5b",
       "reasons": [
-        "source_boundary_review_required",
-        "editorial_transcript_and_question_review_required"
+        "source_boundary_review_required"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Bonjour madame. Bonjour monsieur. Je voudrais acheter du sucre et des tomates s'il vous plaît. Oui ? Combien de kilos de sucre ? Deux kilos de sucre s'il vous plaît. D'accord. Et combien de tomates ? Un kilo de tomates s'il vous plaît. Quel est le prix du kilo de tomates ? Un euro trente. Merci. Et combien coûte le sucre ? Le sucre, c'est trois euros pour les deux kilos. Merci. Est-ce que vous voulez autre chose, monsieur ? Oui, je voudrais aussi du pain, s'il vous plaît. Est-ce que vous avez des baguettes ? Oui. Combien de baguettes est-ce que vous voulez ? Seulement une baguette. Quel est le prix ? La baguette coûte 70 centimes. Merci. Quel est le prix total pour le sucre, les tomates et la baguette, s'il vous plaît ? Alors, le prix total est de 5 euros. Comment est-ce que vous payez, monsieur ? Je paye en espèces. Et voilà, 5 euros. Merci, monsieur. Et voilà vos produits. Merci beaucoup. Au revoir, madame et bonne journée. Au revoir, monsieur.",
+        "reason": "Questions et trois propositions relues dans le contexte : une réponse correcte et présente dans le dialogue. Transcriptions finales comparées ; conserver en attente tant que les frontières ou les deux reconnaissances finales ne sont pas qualifiées. Quantités et prix concordants : deux kilos de sucre à trois euros, un kilo de tomates à 1,30 euro, une baguette à 70 centimes, total cinq euros.",
+        "question_changes": []
+      },
       "exercises": [
         "delf-a1-2022-co-87"
       ]
@@ -2566,9 +2562,15 @@
       "source_id": "additional-20261102:mdf-a2-abc-direct:85:6f2842b225ef:5ebc5db9",
       "candidate_sha256": "cd33f27a94296657d6eace729e8c618721f0a77e37415584d9821f2a8ddaa6d1",
       "reasons": [
-        "editorial_transcript_and_question_review_required"
+        "whisper_numeric_difference",
+        "ctc_numeric_difference"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Bonjour, ici l'agence de voyages Lacrosse. Je vous appelle à propos de deux changements pour votre voyage en Turquie. Le premier changement concerne votre vol. Vous partirez le mardi 16 comme prévu. Mais le départ sera 2 heures plus tôt, à 9h25. Le numéro de vol ne change pas, c'est le vol AF 0305. Le deuxième changement concerne l'hôtel. Vous occuperez la chambre 23B, au lieu de la 24B. Pour aller de l'aéroport à l'hôtel, vous pouvez prendre un taxi ou le bus numéro 13. En cas de doute, n'hésitez pas à nous contacter par téléphone au 04 97 22 63 13. Au revoir.",
+        "reason": "Reconnaissances Parakeet et Whisper comparées ; dix questions au maximum et trois propositions par question relues, réponses présentes et distracteurs distincts. Qualification des frontières et des deux fichiers de reconnaissance reste obligatoire. Vol AF 0305, chambres 23B et 24B, départ mardi 16 à 9 h 25, bus 13 et téléphone comparés aux deux sorties. Nom propre de l’agence non épelé, graphie non attestée par écoute humaine. Le troisième moteur CTC confirme Lacrosse, comme Whisper.",
+        "question_changes": []
+      },
       "exercises": [
         "tcf-ss-a2-s56-co-2"
       ]
@@ -2773,9 +2775,14 @@
       "candidate_sha256": "1e10990fa438c9c3290f2b64447343b8469777738350279d948bbf0d37840add",
       "reasons": [
         "source_boundary_review_required",
-        "editorial_transcript_and_question_review_required"
+        "ctc_end_difference"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Ne manquez pas ce week-end, le plus grand festival de gastronomie au monde, qui aura lieu à Paris du 20 au 25 juillet. Vous pouvez dès à présent réserver vos billets en ligne sur www.festivalculinaire.fr.",
+        "reason": "Reconnaissances Parakeet et Whisper comparées ; dix questions au maximum et trois propositions par question relues, réponses présentes et distracteurs distincts. Qualification des frontières et des deux fichiers de reconnaissance reste obligatoire. « Dès à présent » est confirmé par Parakeet, contrairement à la mauvaise segmentation « dés appréhend » de Whisper.",
+        "question_changes": []
+      },
       "exercises": [
         "tcf-ssx-a2-radio-18-3-co-3"
       ]
@@ -3288,9 +3295,14 @@
       "candidate_sha256": "2bed69511e2fe4175856b44c5de890ae8aaee2d65653fd19f2eac512caeab349",
       "reasons": [
         "source_boundary_review_required",
-        "editorial_transcript_and_question_review_required"
+        "parakeet_numeric_difference"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Astrid, tu veux réviser l'examen de mercredi avec moi ? D'accord. On peut se voir ce soir si tu veux. Je suis libre à partir de 17h. Je ne suis pas disponible ce soir. Demain après-midi, ça te va ? D'accord. Mais à 15h alors. Rendez-vous à la bibliothèque.",
+        "reason": "Questions et trois propositions relues dans le contexte : une réponse correcte et présente dans le dialogue. Transcriptions finales comparées ; conserver en attente tant que les frontières ou les deux reconnaissances finales ne sont pas qualifiées.",
+        "question_changes": []
+      },
       "exercises": [
         "tcf-ss-a2-s15-co-1"
       ]
@@ -3300,10 +3312,14 @@
       "source_id": "additional-20261102:mdf-a2-abc-direct:87:8ee567589532:102fea99",
       "candidate_sha256": "d0df075f7e2654acc64a3bfbeeed7b1439f5cfc1419b78de42e426093a1e70cb",
       "reasons": [
-        "source_boundary_review_required",
-        "editorial_transcript_and_question_review_required"
+        "source_boundary_review_required"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Allô bonjour, ici le cabinet du docteur Robichet. Je vous appelle pour vous confirmer votre consultation de 16h aujourd'hui. Ah, très bien, merci. N'oubliez pas de vous présenter au cabinet 15 minutes avant le rendez-vous. D'accord.",
+        "reason": "Questions et trois propositions relues dans le contexte : une réponse correcte et présente dans le dialogue. Transcriptions finales comparées ; conserver en attente tant que les frontières ou les deux reconnaissances finales ne sont pas qualifiées.",
+        "question_changes": []
+      },
       "exercises": [
         "tcf-ss-a2-s49-co-2"
       ]
@@ -3425,18 +3441,6 @@
       },
       "exercises": [
         "tcf-ss-b1-s12-co-3"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/vie-quotidienne/le-premier-film-d-edouard-2.mp3",
-      "source_id": "additional-20261102:mdf-a2-abc-direct:72:57bdaf288e8e:b97a0463",
-      "candidate_sha256": "7c49d9abe0d828773de094dc65443d85a580d2e482071c18b9a67aebd3ac4f54",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "tcf-ss-a2-s51-co-3"
       ]
     },
     {
@@ -3672,10 +3676,14 @@
       "source_id": "09035276:048:44c1253827eb",
       "candidate_sha256": "2b9fcb644e405f1edcdec733b45e2c1c91355ac83efd7fad02b45d1be9bdaf02",
       "reasons": [
-        "source_boundary_review_required",
-        "editorial_transcript_and_question_review_required"
+        "source_boundary_review_required"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Qu'est-ce que tu fais ? Je prépare une salade de tomates pour ce soir. Tu veux de l'aide ? Oui. Tu peux couper ces tomates s'il te plaît.",
+        "reason": "Questions et trois propositions relues dans le contexte : une réponse correcte et présente dans le dialogue. Transcriptions finales comparées ; conserver en attente tant que les frontières ou les deux reconnaissances finales ne sont pas qualifiées.",
+        "question_changes": []
+      },
       "exercises": [
         "tcf-ss-a1-s47-co-3"
       ]
@@ -3686,9 +3694,15 @@
       "candidate_sha256": "e3ba69667cc1a73ba8f3becb238cdc856c1bd66ac76a0d5b8f802c07a00310a3",
       "reasons": [
         "source_boundary_review_required",
-        "editorial_transcript_and_question_review_required"
+        "ctc_text_difference",
+        "ctc_numeric_difference"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Dis, ça te dit de venir au cinéma avec Lucie et moi ? Oui, pourquoi pas ? Quand ? Vendredi soir, la séance est à 21h. Désolée, mais je suis déjà prise vendredi. Dommage, ce sera pour une autre fois.",
+        "reason": "Reconnaissances Parakeet et Whisper comparées ; dix questions au maximum et trois propositions par question relues, réponses présentes et distracteurs distincts. Qualification des frontières et des deux fichiers de reconnaissance reste obligatoire. ",
+        "question_changes": []
+      },
       "exercises": [
         "tcf-ss-a2-s50-co-1"
       ]
@@ -3756,55 +3770,6 @@
       },
       "exercises": [
         "tcf-ss-a2-s48-co-3"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-25.mp3",
-      "source_id": "9782090351958:036:449228fbaf9b",
-      "candidate_sha256": "7c8ef2c72204f67f49b40eb688c3de25156bc1e8065dccb0dfdd47951712f8ef",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "tcf-ss-a2-s51-co-4"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-26.mp3",
-      "source_id": "9782090351958:041:da5b8ef94663",
-      "candidate_sha256": "88d2f82cfebb8de23ba476018f564cf33733eab0a0b75ab053f30951e3ec1df0",
-      "reasons": [
-        "source_boundary_review_required"
-      ],
-      "editorial_decision": {
-        "status": "editorial_review",
-        "selected_text": "Bonjour, je vous annonce que les pompiers de la ville vont venir dans notre collège mercredi pour expliquer ce qu'il faut faire s'il y a le feu. La présence de tous les élèves est obligatoire. Cet événement est organisé par l'association \"Apprendre, c'est agir\" qui aide les citoyens à devenir responsables. Vous allez aussi voir des films sur le travail des pompiers et apprendre les gestes qui peuvent sauver des vies en cas de danger. A la fin de cette journée, vous recevrez un diplôme de citoyen responsable. Merci de votre attention.",
-        "reason": "Transcriptions finales Whisper et CTC comparées ; questions et trois propositions relues : informations présentes dans le message, une réponse correcte par question. Parakeet comporte des changements de langue et ne constitue pas la seconde validation. Nom de l’association corrigé conformément à Parakeet et Whisper, frontières encore soumises aux contrôles techniques.",
-        "question_changes": [
-          {
-            "exercise": "tcf-ss-a2-s14-co-3",
-            "question": 5,
-            "choices": [
-              {
-                "id": "a",
-                "texte": "Apprendre, c’est agir",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "texte": "Manger et bouger"
-              },
-              {
-                "id": "c",
-                "texte": "Lire et voyager"
-              }
-            ]
-          }
-        ]
-      },
-      "exercises": [
-        "tcf-ss-a2-s14-co-3"
       ]
     },
     {

@@ -33927,6 +33927,874 @@
       "previous_pool": null,
       "question_changes": [],
       "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/presenter/moyen-a2__conversation-32-3.mp3",
+      "previous_sha256": "f17867aee76b64f4aed06dfca4bd2b47481306a73116c6eb88bb654706cd5f24",
+      "candidate_sha256": "5e649a7f06dbd0a629db5f004ff46bdb01fd51f6b04f8e984e4923ecde2860b3",
+      "rollback_git_blob": "5d7902a273ad09baf8561e399da1df74ec5b45ad",
+      "source_id": "9782090351958:034:b2afb8e8dd81",
+      "source_sha256": "b2afb8e8dd81c76ad9758790fca3ccb71ddb300fa414c257676592b983b000e4",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "5e649a7f06dbd0a629db5f004ff46bdb01fd51f6b04f8e984e4923ecde2860b3",
+        "duration": 9.272,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "b2afb8e8dd81c76ad9758790fca3ccb71ddb300fa414c257676592b983b000e4",
+          "proof": {
+            "previous_sha256": "fb58657e8e464fc51fe82f9fcf327e659b40b57dd115c24e0f5169478e840ef3",
+            "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T120807-b610f684c1/9782090351958-034-b2afb8e8dd81-r2-d3/candidate.mp3",
+            "status": "new_candidate_requires_two_recognitions",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/fb58657e8e464fc51fe82f9fcf327e659b40b57dd115c24e0f5169478e840ef3-2359261-2768157/candidate.mp3",
+            "sha256": "5e649a7f06dbd0a629db5f004ff46bdb01fd51f6b04f8e984e4923ecde2860b3",
+            "source_sha256": "b2afb8e8dd81c76ad9758790fca3ccb71ddb300fa414c257676592b983b000e4",
+            "source_file": "/workspace/work/tcf-audio-replacement/incoming/a2/9782090351958_34_CO_ex32.mp3",
+            "source_decoded_pcm_sha256": "03ad83b25a832ec31b9148913a09aaf8b090299f9a9e60d58319c89aabfd7a2d",
+            "source_sample_rate": 44100,
+            "source_channels": 1,
+            "source_start_frame": 2359261,
+            "source_end_frame": 2768157,
+            "source_start": 53.49798185941043,
+            "source_end": 62.77,
+            "source_slice_pcm_sha256": "5beea9833388f8b5377922a7060cd0daa3f6723321d2c05a9bfe8d5a7dc74568",
+            "previous_start": 53.49798185941043,
+            "previous_end": 62.33800453514739,
+            "word_anchors_and_signal": [
+              {
+                "edge": "end",
+                "quiet_interval": [
+                  62.65,
+                  62.85
+                ],
+                "last_word": "chambre.",
+                "next_word_start": 65.674
+              }
+            ],
+            "human_listening_performed": false
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.19,
+          "trailing_quiet_seconds": 0.41,
+          "relative_rms_threshold": 0.009542758464813233,
+          "safe_quiet_margins": true
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.224,
+          "trailing_non_speech_seconds": 0.408,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
+      "editorial_reason": "Questions et trois propositions relues dans le contexte : une réponse correcte et présente dans le dialogue. Transcriptions finales comparées ; conserver en attente tant que les frontières ou les deux reconnaissances finales ne sont pas qualifiées.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 14.99,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_19-1.mp3",
+      "previous_sha256": "ef80f9541c65a1b77ca8a462a137f700fe68ec27ad81273b2f83fd8382f05fc3",
+      "candidate_sha256": "685921a6378484605397192a9fad086807aa92ac4a189a52d2f7503d96b8f746",
+      "rollback_git_blob": "33877c856149ce8ce661303ef0ad60f213d36ab6",
+      "source_id": "delf_a2_2021:019:7725befff9ae",
+      "source_sha256": "7725befff9ae0a3d7141698051874b54722658a09a96350bb6881459af81128e",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "685921a6378484605397192a9fad086807aa92ac4a189a52d2f7503d96b8f746",
+        "duration": 10.524,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "7725befff9ae0a3d7141698051874b54722658a09a96350bb6881459af81128e",
+          "proof": {
+            "previous_sha256": "a61bf7199b7bf84c8d83d146aec0ef7379791ca5dfb92a2299ccb585281e336a",
+            "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T120927-006fb67653/delf_a2_2021-019-7725befff9ae-r2-d1/candidate.mp3",
+            "status": "new_candidate_requires_two_recognitions",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/a61bf7199b7bf84c8d83d146aec0ef7379791ca5dfb92a2299ccb585281e336a-185925-650034/candidate.mp3",
+            "sha256": "685921a6378484605397192a9fad086807aa92ac4a189a52d2f7503d96b8f746",
+            "source_sha256": "7725befff9ae0a3d7141698051874b54722658a09a96350bb6881459af81128e",
+            "source_file": "/workspace/work/tcf-audio-replacement/incoming/a2/DELF_A2_2021_Piste_19.mp3",
+            "source_decoded_pcm_sha256": "e10f32c769b8678b54d8f017e272c127b36a5512194e24d1ed2c00a1f68cb33a",
+            "source_sample_rate": 44100,
+            "source_channels": 2,
+            "source_start_frame": 185925,
+            "source_end_frame": 650034,
+            "source_start": 4.215986394557823,
+            "source_end": 14.74,
+            "source_slice_pcm_sha256": "6d6dfd8b3d4daf1e2e8405309c81532f91cfe8e7ec0e57afe654bf151a046d2f",
+            "previous_start": 4.215986394557823,
+            "previous_end": 14.816009070294784,
+            "word_anchors_and_signal": [
+              {
+                "edge": "end",
+                "quiet_interval": [
+                  14.620000000000001,
+                  15.690000000000001
+                ],
+                "last_word": "bougies.",
+                "next_word_start": 16.296
+              }
+            ],
+            "human_listening_performed": false
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.35,
+          "trailing_quiet_seconds": 0.74,
+          "relative_rms_threshold": 0.004509930387139321,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.352,
+          "trailing_non_speech_seconds": 0.7,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
+      "editorial_reason": "Questions et trois propositions relues dans le contexte : une réponse correcte et présente dans le dialogue. Transcriptions finales comparées ; conserver en attente tant que les frontières ou les deux reconnaissances finales ne sont pas qualifiées.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 11.83,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_34-2.mp3",
+      "previous_sha256": "dad3ae9c8bfacadd6e553aa726e7d4b37069257c6f1cd2843fd9380f80bd2a96",
+      "candidate_sha256": "150e70832b59b9ab595f2b2c4d13369dc8404b58a372752b84b4fe19d576c773",
+      "rollback_git_blob": "1d3a03c922eec732fe109808740a92de9bc09529",
+      "source_id": "delf_a1_2022:034:4fdc4c092ad2",
+      "source_sha256": "4fdc4c092ad2c30be9136476b8e5c90dc7ea7186884cf50b6b6f4fbc8f1dd9ff",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "150e70832b59b9ab595f2b2c4d13369dc8404b58a372752b84b4fe19d576c773",
+        "duration": 10.16,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "4fdc4c092ad2c30be9136476b8e5c90dc7ea7186884cf50b6b6f4fbc8f1dd9ff",
+          "proof": {
+            "previous_sha256": "b472e3abe63d64d1de1dc6a00c37fa58fc1c742e4917757a683408d3f8ef7696",
+            "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111631-a8366a4bf7/delf_a1_2022-034-4fdc4c092ad2-d2/candidate.mp3",
+            "status": "new_candidate_requires_two_recognitions",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/b472e3abe63d64d1de1dc6a00c37fa58fc1c742e4917757a683408d3f8ef7696-666792-1114848/candidate.mp3",
+            "sha256": "150e70832b59b9ab595f2b2c4d13369dc8404b58a372752b84b4fe19d576c773",
+            "source_sha256": "4fdc4c092ad2c30be9136476b8e5c90dc7ea7186884cf50b6b6f4fbc8f1dd9ff",
+            "source_file": "/workspace/work/tcf-audio-replacement/incoming/a1/delf_a1_2022_piste_34.mp3",
+            "source_decoded_pcm_sha256": "4dea596e30caba1669cafe1df964e4d88976092f5b03d8b97af960fc6e11d056",
+            "source_sample_rate": 44100,
+            "source_channels": 2,
+            "source_start_frame": 666792,
+            "source_end_frame": 1114848,
+            "source_start": 15.12,
+            "source_end": 25.28,
+            "source_slice_pcm_sha256": "850f19e0dca12d4feb1313679d38799de66634a807d7ebce3cd3be24800ddfd4",
+            "previous_start": 15.12,
+            "previous_end": 25.16,
+            "word_anchors_and_signal": [
+              {
+                "edge": "end",
+                "quiet_interval": [
+                  25.16,
+                  26.03
+                ],
+                "last_word": "revoir.",
+                "next_word_start": 27.544
+              }
+            ],
+            "human_listening_performed": false
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.29,
+          "trailing_quiet_seconds": 0.13,
+          "relative_rms_threshold": 0.0038398124650120737,
+          "safe_quiet_margins": true
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.48,
+          "trailing_non_speech_seconds": 0.112,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
+      "editorial_reason": "Reconnaissances Parakeet et Whisper comparées ; dix questions au maximum et trois propositions par question relues, réponses présentes et distracteurs distincts. Qualification des frontières et des deux fichiers de reconnaissance reste obligatoire. ",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 13.4,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/le-premier-film-d-edouard-2.mp3",
+      "previous_sha256": "ecb47f6eac0f48883b572d57a789f3dcf735ebded00214bf0392920a280dda79",
+      "candidate_sha256": "7c49d9abe0d828773de094dc65443d85a580d2e482071c18b9a67aebd3ac4f54",
+      "rollback_git_blob": "ae265cc982b89c0db8a17e4b53ea0b810ce5483c",
+      "source_id": "additional-20261102:mdf-a2-abc-direct:72:57bdaf288e8e:b97a0463",
+      "source_sha256": "57bdaf288e8e3689a50d599060fab267095e882abe9aa6c47063a8668b7bf6fc",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "7c49d9abe0d828773de094dc65443d85a580d2e482071c18b9a67aebd3ac4f54",
+        "duration": 50.634,
+        "category": "long",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "57bdaf288e8e3689a50d599060fab267095e882abe9aa6c47063a8668b7bf6fc",
+          "proof": {
+            "previous_sha256": "619075b142572615273f3be026237317109e841099b4e3fdbe10f18cc0e235b3",
+            "previous_file": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014320-7c39dce8b1/additional-20261102-mdf-a2-abc-direct-72-57bdaf288e8e-b97a0463-d1/candidate.mp3",
+            "status": "new_candidate_requires_two_recognitions",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/619075b142572615273f3be026237317109e841099b4e3fdbe10f18cc0e235b3-101871-2334831/candidate.mp3",
+            "sha256": "7c49d9abe0d828773de094dc65443d85a580d2e482071c18b9a67aebd3ac4f54",
+            "source_sha256": "57bdaf288e8e3689a50d599060fab267095e882abe9aa6c47063a8668b7bf6fc",
+            "source_file": "/workspace/attachments/9809578b-84d4-47d3-8b97-d898728ce056/09035199_072_ACT 23.mp3",
+            "source_decoded_pcm_sha256": "14fb2a6ae0e6bf4133d2d9849c9f1ecc9b5e0fcefa17c2f55fa8bc62c68e64ff",
+            "source_sample_rate": 44100,
+            "source_channels": 1,
+            "source_start_frame": 101871,
+            "source_end_frame": 2334831,
+            "source_start": 2.31,
+            "source_end": 52.94401360544218,
+            "source_slice_pcm_sha256": "bae24fbbfad4263cd95c409fc82356b6f13cd24855822578b934697919806770",
+            "previous_start": 3.1439909297052155,
+            "previous_end": 52.94401360544218,
+            "word_anchors_and_signal": [
+              {
+                "edge": "start",
+                "quiet_interval": [
+                  1.87,
+                  2.39
+                ],
+                "first_word": "Bonjour",
+                "previous_word_end": 1.784
+              }
+            ],
+            "human_listening_performed": false
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.09,
+          "trailing_quiet_seconds": 0.1,
+          "relative_rms_threshold": 0.009835475236177445,
+          "safe_quiet_margins": true
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 1.184,
+          "trailing_non_speech_seconds": 0.0,
+          "safe_voiced_margins": false
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
+      "editorial_reason": "Reconnaissances Parakeet et Whisper comparées ; dix questions au maximum et trois propositions par question relues, réponses présentes et distracteurs distincts. Qualification des frontières et des deux fichiers de reconnaissance reste obligatoire. Les promotions jusqu’au 20 mai et la participation avant le 15 mars sont deux échéances distinctes explicitement énoncées ; ne pas les intervertir.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 53.16,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/maison/maison-2.mp3",
+      "previous_sha256": "453ada93ed3ae1229567c08f80a85b9e663f3227438b129eeb477bf5651c0181",
+      "candidate_sha256": "2654a4490611600f9c6fd6207f9348ff724f286e527403ae8d7d725a453cb38c",
+      "rollback_git_blob": "6f00d8d43b8d8f024d61076cc061df06c1684954",
+      "source_id": "09035276:038:39cc6bb2e5a3",
+      "source_sha256": "39cc6bb2e5a34eb1180256973dad8b275a50eaafd71d6e97e76555e409ac9f41",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "2654a4490611600f9c6fd6207f9348ff724f286e527403ae8d7d725a453cb38c",
+        "duration": 23.384,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "39cc6bb2e5a34eb1180256973dad8b275a50eaafd71d6e97e76555e409ac9f41",
+          "proof": {
+            "previous_sha256": "4bc2c310c13e0bd37d163b602a3764372120229f5e95f51e4b2c8a6195b969cc",
+            "sha256": "2654a4490611600f9c6fd6207f9348ff724f286e527403ae8d7d725a453cb38c",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/318-4bc2c310c13e/candidate.mp3",
+            "source_sha256": "39cc6bb2e5a34eb1180256973dad8b275a50eaafd71d6e97e76555e409ac9f41",
+            "source_file": "/workspace/work/tcf-audio-additional-20261102-work/incoming/a1/mdf-a1-abc-junior/MDF_A1_ABC-DELF-Junior-Scolaire_AUDIO/09035276_38_Ex 35-2.mp3",
+            "source_decoded_pcm_sha256": "f13210822abe713f67419981f0a4d193a70637b22e6cc5633d1591b458923029",
+            "source_sample_rate": 44100,
+            "source_channels": 1,
+            "source_start_frame": 267069,
+            "source_end_frame": 1298304,
+            "source_start": 6.055986394557823,
+            "source_end": 29.44,
+            "source_slice_pcm_sha256": "2a7a00061e1c7217b13c4afcfaa170a473142934e04de84f4e74ae0ff2c93a5f",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/318-4bc2c310c13e/start_before.flac",
+                "sha256": "6b8a5be881dd28100804fa5fd46de6f349eb0f94ff3333cf027e3fceeac79573",
+                "source_start_frame": 178869,
+                "source_end_frame": 267069,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/318-4bc2c310c13e/start_after.flac",
+                "sha256": "6e1f8a8dfe41954ea1fb26b95c68e489f7e80bdbd71dae702e2fdd6a797480ab",
+                "source_start_frame": 267069,
+                "source_end_frame": 355269,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/318-4bc2c310c13e/end_before.flac",
+                "sha256": "9367e1b79ac1d3176bcd6fa596cd49fa1d3067cb33959117cc8db4d1fb7665a7",
+                "source_start_frame": 1210104,
+                "source_end_frame": 1298304,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/318-4bc2c310c13e/end_after.flac",
+                "sha256": "09bcb9159c3c0dcd346000084e6823436aecd90139df727c38a1c1bde70a05bf",
+                "source_start_frame": 1298304,
+                "source_end_frame": 1386504,
+                "available_seconds": 2.0
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Pour",
+                "start": 6.136,
+                "end": 6.616,
+                "kind": "dialogue",
+                "asr_word_index": 2,
+                "raw_start": 6.135999923706055,
+                "raw_end": 6.615999689459801,
+                "native_token_indices": [
+                  7,
+                  8
+                ]
+              },
+              "last": {
+                "text": "internet.",
+                "start": 28.664,
+                "end": 28.984,
+                "kind": "dialogue",
+                "asr_word_index": 54,
+                "raw_start": 28.663999876022338,
+                "raw_end": 29.383999979138373,
+                "native_token_indices": [
+                  14,
+                  15
+                ]
+              },
+              "previous_word_end": 2.136,
+              "next_word_start": 32.0,
+              "first_source_speech_region": [
+                6.528,
+                7.104
+              ],
+              "last_source_speech_region": [
+                27.776,
+                29.28
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/318-4bc2c310c13e/waveform.svg",
+              "sha256": "6ace7a134c01c386055c1183166e002ca7842319ee819ae28cf102f3243b0dd0"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.0,
+          "relative_rms_threshold": 0.006296786516904832,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.448,
+          "trailing_non_speech_seconds": 0.28,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "whisper",
+        "ctc"
+      ],
+      "editorial_reason": "Questions et trois propositions relues dans le contexte : une réponse correcte et présente dans le dialogue. Transcriptions finales comparées ; conserver en attente tant que les frontières ou les deux reconnaissances finales ne sont pas qualifiées.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 28.94,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-5-6.mp3",
+      "previous_sha256": "48acb70c7771ff08662b1ee2ca379d18d2c336fcf45cff302884bc0cf0bffd56",
+      "candidate_sha256": "ad726ca06d66e7014fb4e23ecc1b3e4bd81306a86c997548d3e9f4588647964b",
+      "rollback_git_blob": "e99fd3f34efba406635159bfa0c75c06aabf2baa",
+      "source_id": "delf_a2_eb1w:001:7e749af22d6c",
+      "source_sha256": "7e749af22d6c33aeb01a42e88d9d4968c2efac67a1461e5f3cb90ac7f0f18f5a",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "ad726ca06d66e7014fb4e23ecc1b3e4bd81306a86c997548d3e9f4588647964b",
+        "duration": 10.08,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "7e749af22d6c33aeb01a42e88d9d4968c2efac67a1461e5f3cb90ac7f0f18f5a",
+          "proof": {
+            "previous_sha256": "d3bf75709d458858b620347f8562bd5988aa08ef44ce51b4e4d7db2179d6353b",
+            "sha256": "ad726ca06d66e7014fb4e23ecc1b3e4bd81306a86c997548d3e9f4588647964b",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/310-d3bf75709d45/candidate.mp3",
+            "source_sha256": "7e749af22d6c33aeb01a42e88d9d4968c2efac67a1461e5f3cb90ac7f0f18f5a",
+            "source_file": "/workspace/work/tcf-audio-replacement/incoming/a2/delf_a2_2021_eb1w_piste_01.mp3",
+            "source_decoded_pcm_sha256": "34e3aa9bf3574bff432965c7f7121ec889c7859669fcb370729e8bc7d98dba87",
+            "source_sample_rate": 44100,
+            "source_channels": 2,
+            "source_start_frame": 20833546,
+            "source_end_frame": 21278074,
+            "source_start": 472.41600907029476,
+            "source_end": 482.4960090702948,
+            "source_slice_pcm_sha256": "32972a7fec5d19a8dd587a632cbc3ff8d2c28fe15120bded95b3318afac4e2dd",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/310-d3bf75709d45/start_before.flac",
+                "sha256": "f11895e165ed597f376b6bd670be18ad9383186171eb1e3455ef1fe58ec2382a",
+                "source_start_frame": 20745346,
+                "source_end_frame": 20833546,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/310-d3bf75709d45/start_after.flac",
+                "sha256": "d5c6601e2d72744b194c685bc10ddd3bf7150bf9facfe86d3adae0c53d6a43ae",
+                "source_start_frame": 20833546,
+                "source_end_frame": 20921746,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/310-d3bf75709d45/end_before.flac",
+                "sha256": "d93ec4ddd73e51d0948b005f6b9fb78882d556c2db04714fbb067ae247ce2740",
+                "source_start_frame": 21189874,
+                "source_end_frame": 21278074,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/310-d3bf75709d45/end_after.flac",
+                "sha256": "5782ef777a63d82e2790aeceffb081c8d2c6e9afdc9ded1de9f10c11260c1215",
+                "source_start_frame": 21278074,
+                "source_end_frame": 21366274,
+                "available_seconds": 2.0
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Fête",
+                "start": 472.536,
+                "end": 472.856,
+                "kind": "dialogue",
+                "asr_word_index": 375,
+                "raw_start": 472.5359999964237,
+                "raw_end": 472.85599997437,
+                "native_token_indices": [
+                  0,
+                  1,
+                  2
+                ]
+              },
+              "last": {
+                "text": "concert.",
+                "start": 481.816,
+                "end": 482.135999,
+                "kind": "dialogue",
+                "asr_word_index": 396,
+                "raw_start": 481.8159995803833,
+                "raw_end": 482.3760000745058,
+                "native_token_indices": [
+                  51,
+                  52,
+                  53
+                ]
+              },
+              "previous_word_end": 452.248,
+              "next_word_start": 501.624,
+              "first_source_speech_region": [
+                472.576,
+                475.328
+              ],
+              "last_source_speech_region": [
+                481.568,
+                482.336
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/310-d3bf75709d45/waveform.svg",
+              "sha256": "c373cc5194a6a52c87b8ab62959da4d9147a7eaafb43b4c69bf6cbdf0bc881bd"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.0,
+          "relative_rms_threshold": 0.007343581169843675,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.096,
+          "trailing_non_speech_seconds": 0.16,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "whisper",
+        "ctc"
+      ],
+      "editorial_reason": "Questions et trois propositions relues dans le contexte : une réponse correcte et présente dans le dialogue. Transcriptions finales comparées ; conserver en attente tant que les frontières ou les deux reconnaissances finales ne sont pas qualifiées.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 14.18,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-25.mp3",
+      "previous_sha256": "449228fbaf9b6bb979789b6aca0a9740052fad0fd985b205aca79e4a89143352",
+      "candidate_sha256": "7c8ef2c72204f67f49b40eb688c3de25156bc1e8065dccb0dfdd47951712f8ef",
+      "rollback_git_blob": "b91f6c8a4dcb57f946260381bc86355ad7eb0928",
+      "source_id": "9782090351958:036:449228fbaf9b",
+      "source_sha256": "449228fbaf9b6bb979789b6aca0a9740052fad0fd985b205aca79e4a89143352",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "7c8ef2c72204f67f49b40eb688c3de25156bc1e8065dccb0dfdd47951712f8ef",
+        "duration": 55.912,
+        "category": "long",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "449228fbaf9b6bb979789b6aca0a9740052fad0fd985b205aca79e4a89143352",
+          "proof": {
+            "previous_sha256": "42f30f37b2e5e3670d4ea46d0136692a8b728fb961efbdfc5bdb64b2c67cc447",
+            "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261103T014857-48865f7c72/9782090351958-036-449228fbaf9b-d1/candidate.mp3",
+            "status": "new_candidate_requires_two_recognitions",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/42f30f37b2e5e3670d4ea46d0136692a8b728fb961efbdfc5bdb64b2c67cc447-668556-3134276/candidate.mp3",
+            "sha256": "7c8ef2c72204f67f49b40eb688c3de25156bc1e8065dccb0dfdd47951712f8ef",
+            "source_sha256": "449228fbaf9b6bb979789b6aca0a9740052fad0fd985b205aca79e4a89143352",
+            "source_file": "/workspace/work/tcf-audio-replacement/incoming/a2/9782090351958_36_CO_ex34.mp3",
+            "source_decoded_pcm_sha256": "1ae1c91bc2b67e58ea3e3f28ba1a2a62b1b30f620675ac13cdd91ce485930a9e",
+            "source_sample_rate": 44100,
+            "source_channels": 1,
+            "source_start_frame": 668556,
+            "source_end_frame": 3134276,
+            "source_start": 15.16,
+            "source_end": 71.07201814058956,
+            "source_slice_pcm_sha256": "48de83db32a1ee980c0da9d2ba8412c9556779bc1641e85a55054c3cef9e6466",
+            "previous_start": 16.487981859410432,
+            "previous_end": 71.07201814058956,
+            "word_anchors_and_signal": [
+              {
+                "edge": "start",
+                "quiet_interval": [
+                  14.33,
+                  15.24
+                ],
+                "first_word": "Aujourd'hui",
+                "previous_word_end": 14.248
+              }
+            ],
+            "human_listening_performed": false
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.08,
+          "trailing_quiet_seconds": 0.11,
+          "relative_rms_threshold": 0.007023615986108781,
+          "safe_quiet_margins": true
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 1.696,
+          "trailing_non_speech_seconds": 0.072,
+          "safe_voiced_margins": false
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
+      "editorial_reason": "Questions et trois propositions relues dans le contexte : une réponse correcte et présente dans le dialogue. Transcriptions finales comparées ; conserver en attente tant que les frontières ou les deux reconnaissances finales ne sont pas qualifiées.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 72.06,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-26.mp3",
+      "previous_sha256": "da5b8ef94663ea48e06249ae60ba034f45c57c2b2f6515d8d707f4e4acbb0ffa",
+      "candidate_sha256": "f27976fa1c1758d223c89dbcdbc5bdfe83bae07eaf39d144e5480b2af914d741",
+      "rollback_git_blob": "e70d77ae801685abf80c2d19f71b495ed16a4a51",
+      "source_id": "9782090351958:041:da5b8ef94663",
+      "source_sha256": "da5b8ef94663ea48e06249ae60ba034f45c57c2b2f6515d8d707f4e4acbb0ffa",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "f27976fa1c1758d223c89dbcdbc5bdfe83bae07eaf39d144e5480b2af914d741",
+        "duration": 34.484,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "da5b8ef94663ea48e06249ae60ba034f45c57c2b2f6515d8d707f4e4acbb0ffa",
+          "proof": {
+            "previous_sha256": "88d2f82cfebb8de23ba476018f564cf33733eab0a0b75ab053f30951e3ec1df0",
+            "sha256": "f27976fa1c1758d223c89dbcdbc5bdfe83bae07eaf39d144e5480b2af914d741",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/pompiers-303-native/candidate.mp3",
+            "source_sha256": "da5b8ef94663ea48e06249ae60ba034f45c57c2b2f6515d8d707f4e4acbb0ffa",
+            "source_file": "/workspace/work/tcf-audio-replacement/incoming/a2/9782090351958_41_CO_ex39.mp3",
+            "source_decoded_pcm_sha256": "6abcc95e384f1339c662adda67310e332efa34edef51f2cfaa4d9a0dbd17a294",
+            "source_sample_rate": 44100,
+            "source_channels": 1,
+            "source_start_frame": 690429,
+            "source_end_frame": 2211174,
+            "source_start": 15.655986394557823,
+            "source_end": 50.14,
+            "source_slice_pcm_sha256": "520e5fc38e2d26066034222cb9a881d833f40fe02ea16a0e2a7c880b41d9b8ea",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/pompiers-303-native/start_before.flac",
+                "sha256": "410f192f645042dca6cc219a0cc73ce5d0a8cbd033df35da513e2677197d3e36",
+                "source_start_frame": 602229,
+                "source_end_frame": 690429,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/pompiers-303-native/start_after.flac",
+                "sha256": "1ab7b0d0719a0de80f6fd65ac4382fc6c89db794ee026ce89d7a2a88783b9360",
+                "source_start_frame": 690429,
+                "source_end_frame": 778629,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/pompiers-303-native/end_before.flac",
+                "sha256": "f212dfae324d391260497ada96d6591ccb8d23a20f50fb4cf33cbc317bc742ca",
+                "source_start_frame": 2122974,
+                "source_end_frame": 2211174,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/pompiers-303-native/end_after.flac",
+                "sha256": "6d4a7aa1b4ab32e20073dacd57aefe0d356a709bd95c01760fb17f9ba5c89c97",
+                "source_start_frame": 2211174,
+                "source_end_frame": 2286720,
+                "available_seconds": 1.7130612244897958
+              }
+            },
+            "human_listening_performed": false,
+            "reason": "The original end at 49.984 s left only about 64 ms after source speech VAD. Native extension to 50.14 s preserves the final attention and its decay, with no following utterance in the source word plan. Speech ends at about 49.92 s in the original; native source lasts 51.853 s. No silence synthesis or speech transformation.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/pompiers-303-native/waveform.svg",
+              "sha256": "e6cb60d642c76dfb196192af6981253624c0121b22e83af2cbd4d5d73418a1b0"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.0,
+          "relative_rms_threshold": 0.006906703785061837,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.384,
+          "trailing_non_speech_seconds": 0.212,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "whisper",
+        "ctc"
+      ],
+      "editorial_reason": "Transcriptions finales Whisper et CTC comparées ; questions et trois propositions relues : informations présentes dans le message, une réponse correcte par question. Parakeet comporte des changements de langue et ne constitue pas la seconde validation. Nom de l’association corrigé conformément à Parakeet et Whisper, frontières encore soumises aux contrôles techniques.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 51.86,
+      "previous_pool": null,
+      "question_changes": [
+        {
+          "exercise": "tcf-ss-a2-s14-co-3",
+          "question": 5,
+          "before": {
+            "enonce": "Quelle association organise l’événement ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Apprendre et agir",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Manger et bouger"
+              },
+              {
+                "id": "c",
+                "texte": "Lire et voyager"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Apprendre et agir"
+              }
+            }
+          },
+          "after": {
+            "enonce": "Quelle association organise l’événement ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Apprendre, c’est agir",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Manger et bouger"
+              },
+              {
+                "id": "c",
+                "texte": "Lire et voyager"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Apprendre, c’est agir"
+              }
+            }
+          }
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/hotel/01-hôtel-réservation-chambres-Langloi.mp3",
+      "previous_sha256": "181077f480234186d8ae9cff85eb4ced6dcc2be934cae268ed730acb59c0f964",
+      "candidate_sha256": "ad2ed1d2a79b8a10f3d621669271116a9a13c9a2b2833c63d670d0c61e57f1f2",
+      "rollback_git_blob": "9c7c6b10d92cf74e4b183e0a8a88392e5f4bf32c",
+      "source_id": "delf_a2_eb1w:003:5a9ff0eb5c65",
+      "source_sha256": "5a9ff0eb5c65c99d8b3f0254e09d41d1383b33997d14488a921888b547f93286",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "ad2ed1d2a79b8a10f3d621669271116a9a13c9a2b2833c63d670d0c61e57f1f2",
+        "duration": 31.696,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "5a9ff0eb5c65c99d8b3f0254e09d41d1383b33997d14488a921888b547f93286",
+          "proof": {
+            "previous_sha256": "36d51fe7f26a7d7a3bd7ac6b8cf55f29d12db84a111d7bfc4d73c29c605e0afb",
+            "previous_file": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T120958-01a293fc0c/delf_a2_eb1w-003-5a9ff0eb5c65-r2-d1/candidate.mp3",
+            "status": "new_candidate_requires_two_recognitions",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/36d51fe7f26a7d7a3bd7ac6b8cf55f29d12db84a111d7bfc4d73c29c605e0afb-2049768-3447562/candidate.mp3",
+            "sha256": "ad2ed1d2a79b8a10f3d621669271116a9a13c9a2b2833c63d670d0c61e57f1f2",
+            "source_sha256": "5a9ff0eb5c65c99d8b3f0254e09d41d1383b33997d14488a921888b547f93286",
+            "source_file": "/workspace/work/tcf-audio-replacement/incoming/a2/delf_a2_2021_eb1w_piste_03.mp3",
+            "source_decoded_pcm_sha256": "94d3a10bb9fc41b855673b6d57c703c0c0896d283be0c53e73a18882fa209478",
+            "source_sample_rate": 44100,
+            "source_channels": 2,
+            "source_start_frame": 2049768,
+            "source_end_frame": 3447562,
+            "source_start": 46.48,
+            "source_end": 78.17600907029478,
+            "source_slice_pcm_sha256": "e898c604351e0c9a53783e25ad49d22598fbdc33d1a10dbef1f4bde5181c80cc",
+            "previous_start": 46.6,
+            "previous_end": 78.17600907029478,
+            "word_anchors_and_signal": [
+              {
+                "edge": "start",
+                "quiet_interval": [
+                  45.8,
+                  46.56
+                ],
+                "first_word": "Bonjour,",
+                "previous_word_end": 12.168
+              }
+            ],
+            "human_listening_performed": false
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.08,
+          "trailing_quiet_seconds": 0.17,
+          "relative_rms_threshold": 0.0051196682453155526,
+          "safe_quiet_margins": true
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.128,
+          "trailing_non_speech_seconds": 0.144,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
+      "editorial_reason": "Questions et trois propositions relues dans le contexte : une réponse correcte et présente dans le dialogue. Transcriptions finales comparées ; conserver en attente tant que les frontières ou les deux reconnaissances finales ne sont pas qualifiées. Numéro téléphonique final encore incomplet dans CTC ; préserver la transcription Whisper et attendre la confirmation sur une nouvelle coupe.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 34.76,
+      "previous_pool": {
+        "tag": "long",
+        "questions": 10
+      },
+      "question_changes": [],
+      "human_listening_performed": false
     }
   ],
   "batches": [
@@ -34044,6 +34912,11 @@
       "batch": 23,
       "report": "bascule-lot-023-20261105.json",
       "files": 4
+    },
+    {
+      "batch": 24,
+      "report": "bascule-lot-024-20261105.json",
+      "files": 9
     }
   ],
   "human_listening_performed": false,
@@ -34052,9 +34925,9 @@
   "policy": "Existing exercise IDs and audio URLs retained. Received sources and git rollback objects preserved. Unchecked candidates are not installed.",
   "summary": {
     "installed_before_this_switch": 80,
-    "installed_this_switch": 723,
-    "total_installed": 803,
-    "remaining_references": 222,
+    "installed_this_switch": 732,
+    "total_installed": 812,
+    "remaining_references": 213,
     "active_library_references": 1025,
     "full_switch_complete": false
   }
