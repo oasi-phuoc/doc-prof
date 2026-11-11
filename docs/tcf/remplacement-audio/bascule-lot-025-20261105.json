@@ -1,0 +1,4266 @@
+{
+  "batch": 25,
+  "audio_replacements": [
+    {
+      "ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-1-5.mp3",
+      "previous_sha256": "b41416c935deca8f655ccdeb48b1a95cfd472c95f56ccfbe7e5ff032610a94e3",
+      "candidate_sha256": "b0111a7dc952a396dad692dbc8c7b648637647482f1e3d9b0cae9b1fa9312467",
+      "rollback_git_blob": "30d1058a9193ff6326061a3d66e0bb6c4a42fb51",
+      "source_id": "9782090351958:062:a14e3edb351f",
+      "source_sha256": "a14e3edb351fc36ed0dac7868834df4f5c8a0c27ba91fe21e9a369ff6fca13f1",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "b0111a7dc952a396dad692dbc8c7b648637647482f1e3d9b0cae9b1fa9312467",
+        "duration": 10.4400625,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "a14e3edb351fc36ed0dac7868834df4f5c8a0c27ba91fe21e9a369ff6fca13f1",
+          "proof": {
+            "previous_sha256": "5ac30f8f1be6457685b9d60b2f2620efcc5dd5bc03162e026489f21d2d7bef0f",
+            "sha256": "b0111a7dc952a396dad692dbc8c7b648637647482f1e3d9b0cae9b1fa9312467",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/327-5ac30f8f1be6-3023848-3484253/candidate.mp3",
+            "source_sha256": "a14e3edb351fc36ed0dac7868834df4f5c8a0c27ba91fe21e9a369ff6fca13f1",
+            "source_file": "/workspace/attachments/1a7ef70c-8ea4-499c-9854-a17d098f8b22/9782090351958_62_DELF1_ex1.mp3",
+            "source_decoded_pcm_sha256": "a590d93ef506c031844665225bf02febb68a3f1412f5108cdde85829ffb3f8bb",
+            "source_sample_rate": 44100,
+            "source_channels": 1,
+            "source_start_frame": 3023848,
+            "source_end_frame": 3484253,
+            "source_start": 68.56798185941044,
+            "source_end": 79.00800453514739,
+            "source_slice_pcm_sha256": "b7a082c0825e7ada039ef393efed53bfa806433b260e7cf947aa8904305ad182",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/327-5ac30f8f1be6-3023848-3484253/start_before.flac",
+                "sha256": "75d1e30410796859ba729d5372065b7e08c626e4f3e9c64b78775870e24c0d1d",
+                "source_start_frame": 2935648,
+                "source_end_frame": 3023848,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/327-5ac30f8f1be6-3023848-3484253/start_after.flac",
+                "sha256": "9aa95c78c44f2017e0ce681397998de68e39fd7dbdb58f609a636811f318d331",
+                "source_start_frame": 3023848,
+                "source_end_frame": 3112048,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/327-5ac30f8f1be6-3023848-3484253/end_before.flac",
+                "sha256": "8ed7b0da1be448ec73453da87cb8bd3ef202381dabc0f48c9318b10488f49e20",
+                "source_start_frame": 3396053,
+                "source_end_frame": 3484253,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/327-5ac30f8f1be6-3023848-3484253/end_after.flac",
+                "sha256": "8f8b616c23b76c57c84597b7c14d405413bcaa494881a480d144420500ef1790",
+                "source_start_frame": 3484253,
+                "source_end_frame": 3572453,
+                "available_seconds": 2.0
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Bienvenue",
+                "start": 68.648,
+                "end": 69.287999,
+                "kind": "dialogue",
+                "asr_word_index": 113,
+                "raw_start": 68.64800007629395,
+                "raw_end": 69.287999614954,
+                "native_token_indices": [
+                  74,
+                  75,
+                  76,
+                  77
+                ]
+              },
+              "last": {
+                "text": "obligatoire.",
+                "start": 78.087999,
+                "end": 78.808,
+                "kind": "dialogue",
+                "asr_word_index": 140,
+                "raw_start": 78.08799870300294,
+                "raw_end": 78.88799992191792,
+                "native_token_indices": [
+                  129,
+                  130,
+                  131,
+                  132,
+                  133
+                ]
+              },
+              "previous_word_end": 67.528,
+              "next_word_start": 82.232,
+              "first_source_speech_region": [
+                68.992,
+                70.56
+              ],
+              "last_source_speech_region": [
+                78.048,
+                78.848
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/327-5ac30f8f1be6-3023848-3484253/waveform.svg",
+              "sha256": "a80515f05471de6263964494f63a688020fce2031be7b3de51697eb2e8f6d48c"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.0,
+          "relative_rms_threshold": 0.00869594544172287,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.384,
+          "trailing_non_speech_seconds": 0.1360625,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "whisper",
+        "ctc"
+      ],
+      "editorial_reason": "Reconnaissances Parakeet et Whisper comparées ; dix questions au maximum et trois propositions par question relues, réponses présentes et distracteurs distincts. Qualification des frontières et des deux fichiers de reconnaissance reste obligatoire. ",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 14.03,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/ecole/ecole-5-6.mp3",
+      "previous_sha256": "ad78574319de4e6d3892d2a46e77ad52da0e5e949efd274fd7f3309a03430048",
+      "candidate_sha256": "1b2cbb983647d2462dc6616d68a069b3092259d0700dd2795b17f5df3a21df69",
+      "rollback_git_blob": "71f8a4b8902b1503236c8633b0dd125e3a1999b9",
+      "source_id": "9782090351958:042:d86fac163633",
+      "source_sha256": "d86fac163633bb892d26155c1ca9120d69af6af10423cd026887c3dcbac391e1",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "1b2cbb983647d2462dc6616d68a069b3092259d0700dd2795b17f5df3a21df69",
+        "duration": 15.512,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "d86fac163633bb892d26155c1ca9120d69af6af10423cd026887c3dcbac391e1",
+          "proof": {
+            "previous_sha256": "499a16940e32c0dc9f7f31199f646a2034d1fe292f6def85d630f8a332fd96a0",
+            "sha256": "1b2cbb983647d2462dc6616d68a069b3092259d0700dd2795b17f5df3a21df69",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/320-499a16940e32-4122468-4806547/candidate.mp3",
+            "source_sha256": "d86fac163633bb892d26155c1ca9120d69af6af10423cd026887c3dcbac391e1",
+            "source_file": "/workspace/attachments/c0724cde-5e32-40d3-b51b-78d12228701f/9782090351958_42_CO_ex40.mp3",
+            "source_decoded_pcm_sha256": "85e7e808fe14a1d27688da37590375505fc80535124c6299606fa3f0628f53a9",
+            "source_sample_rate": 44100,
+            "source_channels": 1,
+            "source_start_frame": 4122468,
+            "source_end_frame": 4806547,
+            "source_start": 93.48,
+            "source_end": 108.99199546485261,
+            "source_slice_pcm_sha256": "57869603b179b419e7f36716c3676cb7763c41700c8e63a9bd0bc808a8ec24dd",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/320-499a16940e32-4122468-4806547/start_before.flac",
+                "sha256": "709979e817c3888d9d816671a4cde2e6cf27fb6b7db99bc310d5045b6aac6d2a",
+                "source_start_frame": 4034268,
+                "source_end_frame": 4122468,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/320-499a16940e32-4122468-4806547/start_after.flac",
+                "sha256": "1ce94c4bb4729cbdf7fcda20524996f2ddb14704f2ed992913c793d19f68a7b3",
+                "source_start_frame": 4122468,
+                "source_end_frame": 4210668,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/320-499a16940e32-4122468-4806547/end_before.flac",
+                "sha256": "ce7a633bce735840b5db2b4104529be99f66fd2bede1fc5fabe6049501d9ba4b",
+                "source_start_frame": 4718347,
+                "source_end_frame": 4806547,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/320-499a16940e32-4122468-4806547/end_after.flac",
+                "sha256": "7a711c2e25e4ac3010c9c1295a414114ead3a9d251e09b70617d9f8125067a43",
+                "source_start_frame": 4806547,
+                "source_end_frame": 4857984,
+                "available_seconds": 1.1663718820861677
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "La",
+                "start": 93.560001,
+                "end": 93.8,
+                "kind": "dialogue",
+                "asr_word_index": 177,
+                "raw_start": 93.56000053405762,
+                "raw_end": 93.8000005286932,
+                "native_token_indices": [
+                  78
+                ]
+              },
+              "last": {
+                "text": "16h.",
+                "start": 108.168,
+                "end": 108.648,
+                "kind": "dialogue",
+                "asr_word_index": 213,
+                "raw_start": 108.16799998092651,
+                "raw_end": 108.88799984562397,
+                "native_token_indices": [
+                  32,
+                  33,
+                  34,
+                  35
+                ]
+              },
+              "previous_word_end": 92.6,
+              "next_word_start": 110.15836734693877,
+              "first_source_speech_region": [
+                93.856,
+                96.928
+              ],
+              "last_source_speech_region": [
+                107.936,
+                108.832
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/320-499a16940e32-4122468-4806547/waveform.svg",
+              "sha256": "d89a34f8d7bab826c19a52aa332867eb44f87d43546a1267f97e3e4ed4e28d42"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.09,
+          "trailing_quiet_seconds": 0.0,
+          "relative_rms_threshold": 0.007452949807047845,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.352,
+          "trailing_non_speech_seconds": 0.184,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "whisper",
+        "ctc"
+      ],
+      "editorial_reason": "Reconnaissances Parakeet et Whisper comparées ; dix questions au maximum et trois propositions par question relues, réponses présentes et distracteurs distincts. Qualification des frontières et des deux fichiers de reconnaissance reste obligatoire. La classe est la cinquième quatre ; réponse précisée.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 16.25,
+      "previous_pool": null,
+      "question_changes": [
+        {
+          "exercise": "tcf-ss-a2-s7-co-3",
+          "question": 18,
+          "before": {
+            "enonce": "Quelle classe part en séjour linguistique ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La classe de 5e",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "La classe de 4e"
+              },
+              {
+                "id": "c",
+                "texte": "La classe de 3e"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "La classe de 5e"
+              }
+            },
+            "audio": 6
+          },
+          "after": {
+            "enonce": "Quelle classe part en séjour linguistique ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La classe de 5e 4",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "La classe de 4e"
+              },
+              {
+                "id": "c",
+                "texte": "La classe de 3e"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "La classe de 5e 4"
+              }
+            },
+            "audio": 6
+          }
+        }
+      ],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/transports/bonjour-ici-agence-voyages.mp3",
+      "previous_sha256": "39095697cc50daacf37be6976c1080e43cfa00c7c12b7fb074a08de48bcea9ff",
+      "candidate_sha256": "cd33f27a94296657d6eace729e8c618721f0a77e37415584d9821f2a8ddaa6d1",
+      "rollback_git_blob": "c7533510b16009d7c4b46f9c6be9d06aececa1b8",
+      "source_id": "additional-20261102:mdf-a2-abc-direct:85:6f2842b225ef:5ebc5db9",
+      "source_sha256": "6f2842b225ef418987e0c8d877d44729bf0e476e0fac96e6f2d9475f74d6fb63",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "cd33f27a94296657d6eace729e8c618721f0a77e37415584d9821f2a8ddaa6d1",
+        "duration": 56.27,
+        "category": "long",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "6f2842b225ef418987e0c8d877d44729bf0e476e0fac96e6f2d9475f74d6fb63",
+          "proof": {
+            "previous_sha256": "093b7a7c7b1168b81bde5a1381fa8bfa21097928e8d0b15ab7ccceefe2844153",
+            "previous_file": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014338-df0373fa69/additional-20261102-mdf-a2-abc-direct-85-6f2842b225ef-5ebc5db9-d1/candidate.mp3",
+            "status": "new_candidate_requires_two_recognitions",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/093b7a7c7b1168b81bde5a1381fa8bfa21097928e8d0b15ab7ccceefe2844153-185220-2666727/candidate.mp3",
+            "sha256": "cd33f27a94296657d6eace729e8c618721f0a77e37415584d9821f2a8ddaa6d1",
+            "source_sha256": "6f2842b225ef418987e0c8d877d44729bf0e476e0fac96e6f2d9475f74d6fb63",
+            "source_file": "/workspace/attachments/e5667ce2-9a94-4855-a526-36f9ff0dc91b/09035199_085_ACT 36.mp3",
+            "source_decoded_pcm_sha256": "6ddce641a75b42916e0ab7e382e2f86b2dffb4cbfb46c5a2d5002e9000cb1fac",
+            "source_sample_rate": 44100,
+            "source_channels": 1,
+            "source_start_frame": 185220,
+            "source_end_frame": 2666727,
+            "source_start": 4.2,
+            "source_end": 60.47,
+            "source_slice_pcm_sha256": "d32def24dcf319bb50b1635a32944deff68666a2116cdc6954fdbe9c389f12e7",
+            "previous_start": 4.473990929705216,
+            "previous_end": 60.47,
+            "word_anchors_and_signal": [
+              {
+                "edge": "start",
+                "quiet_interval": [
+                  3.6100000000000003,
+                  4.28
+                ],
+                "first_word": "Bonjour,",
+                "previous_word_end": 1.698
+              }
+            ],
+            "human_listening_performed": false
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.09,
+          "trailing_quiet_seconds": 0.07,
+          "relative_rms_threshold": 0.005292409285902977,
+          "safe_quiet_margins": true
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.384,
+          "trailing_non_speech_seconds": 0.078,
+          "safe_voiced_margins": false
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
+      "editorial_reason": "Reconnaissances Parakeet et Whisper comparées ; dix questions au maximum et trois propositions par question relues, réponses présentes et distracteurs distincts. Qualification des frontières et des deux fichiers de reconnaissance reste obligatoire. Vol AF 0305, chambres 23B et 24B, départ mardi 16 à 9 h 25, bus 13 et téléphone comparés aux deux sorties. Nom propre de l’agence non épelé, graphie non attestée par écoute humaine. Le troisième moteur CTC confirme Lacrosse, comme Whisper.",
+      "numeric_resolution": {
+        "candidate_sha256": "cd33f27a94296657d6eace729e8c618721f0a77e37415584d9821f2a8ddaa6d1",
+        "evidence_file": "/workspace/work/tcf-bascule-complete-20261105/ctc/cd33f27a94296657d6eace729e8c618721f0a77e37415584d9821f2a8ddaa6d1.json",
+        "evidence_sha256": "b1832d2fbb707fe5d3f0022b25b660f7840ad9f9e9f4e763d5fb27e46d6b1a2f",
+        "reviewed_numbers": [
+          "2",
+          "1",
+          "16",
+          "2",
+          "00",
+          "9",
+          "25",
+          "0305",
+          "2",
+          "23",
+          "24",
+          "1",
+          "13",
+          "0497226313"
+        ],
+        "reason": "AF 0305 est énoncé zéro trois zéro cinq dans CTC, écrit AF0305 par Parakeet et AF-03-05 par Whisper : même identifiant, segmentation automatique différente. Mardi 16, avance deux heures, 9 h 25, chambres 23B/24B, bus 13 et 04 97 22 63 13 concordent. Aucun chiffre corrigé par supposition."
+      },
+      "additional_recognition_evidence": null,
+      "previous_duration": 59.87,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/radio/l-info-trafic.mp3",
+      "previous_sha256": "0daf536d6047a92e3c932549997667235f6b1a5ae3824a3ed566680798fbbc42",
+      "candidate_sha256": "519465e83d576fb521683d08cfb5830f628847eb91d3d4f0cddd65df19d6a3ac",
+      "rollback_git_blob": "decf289579c05e4366b936a76e4829a4eaa12836",
+      "source_id": "additional-20261102:mdf-a1-abc:65:578139bef04d:2b383621",
+      "source_sha256": "578139bef04d9f913919d65bf88248a3aef20a414ce943fa54774444403426a7",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "519465e83d576fb521683d08cfb5830f628847eb91d3d4f0cddd65df19d6a3ac",
+        "duration": 30.854,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "578139bef04d9f913919d65bf88248a3aef20a414ce943fa54774444403426a7",
+          "proof": {
+            "previous_sha256": "8cfcdaab4d37534f2f5c016d4f00d125ad5ab32c4ef45fe95fe041ae4f9076b7",
+            "previous_file": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014205-f5662010ea/additional-20261102-mdf-a1-abc-65-578139bef04d-2b383621-d1/candidate.mp3",
+            "status": "new_candidate_requires_two_recognitions",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/8cfcdaab4d37534f2f5c016d4f00d125ad5ab32c4ef45fe95fe041ae4f9076b7-102753-1463415/candidate.mp3",
+            "sha256": "519465e83d576fb521683d08cfb5830f628847eb91d3d4f0cddd65df19d6a3ac",
+            "source_sha256": "578139bef04d9f913919d65bf88248a3aef20a414ce943fa54774444403426a7",
+            "source_file": "/workspace/work/tcf-audio-additional-20261102-work/incoming/a1/mdf-a1-abc/MDF_A1_ABC-DELF_AUDIO/09035257_065.mp3",
+            "source_decoded_pcm_sha256": "31137906c8dce866b84730375f37b55a93c3b3444064c846195695fd7471225f",
+            "source_sample_rate": 44100,
+            "source_channels": 1,
+            "source_start_frame": 102753,
+            "source_end_frame": 1463415,
+            "source_start": 2.33,
+            "source_end": 33.184013605442175,
+            "source_slice_pcm_sha256": "4bf25af77183664fac76fb2efbce18925064abec00a3723cb7e26c6645fbf021",
+            "previous_start": 3.2879818594104306,
+            "previous_end": 33.184013605442175,
+            "word_anchors_and_signal": [
+              {
+                "edge": "start",
+                "quiet_interval": [
+                  1.77,
+                  2.41
+                ],
+                "first_word": "Radio",
+                "previous_word_end": 1.688
+              }
+            ],
+            "human_listening_performed": false
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.09,
+          "trailing_quiet_seconds": 0.07,
+          "relative_rms_threshold": 0.006580524966120721,
+          "safe_quiet_margins": true
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 1.248,
+          "trailing_non_speech_seconds": 0.07,
+          "safe_voiced_margins": false
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
+      "editorial_reason": "Autoroute A1, neige à Lille, 100 km/h sur 9 km, téléphone 09 10 80 13 72 confirmés par Parakeet et Whisper. CTC tronque le numéro et ne peut pas certifier cette fin.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 32.68,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    }
+  ],
+  "exercise_changes": [
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-a1-s4-co-2",
+      "before": {
+        "id": "tcf-a1-s4-co-2",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Test blanc A1 · série 4 · Info trafic",
+        "scenario": "radio",
+        "scene": "L’info trafic",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/radio/l-info-trafic.mp3",
+          "transcription": "Radio Trafic, message aux conducteurs.\nIl faut faire attention sur l’autoroute A1.\nIl y a beaucoup de neige à Lille.\nLa vitesse est limitée à 100 km/h sur 9 km.\nPour plus d’informations, appelez le 09 10 80 13 72."
+        },
+        "questions": [
+          {
+            "enonce": "À qui s’adresse le message de Radio Trafic ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Aux conducteurs",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Aux passagers d’un avion"
+              },
+              {
+                "id": "c",
+                "texte": "Aux cyclistes"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Aux conducteurs"
+              }
+            }
+          },
+          {
+            "enonce": "Sur quelle autoroute faut-il être prudent ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "L’A1",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "L’A6"
+              },
+              {
+                "id": "c",
+                "texte": "L’A10"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "L’A1"
+              }
+            }
+          },
+          {
+            "enonce": "Pourquoi faut-il faire attention ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "À cause de la neige",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "À cause du brouillard"
+              },
+              {
+                "id": "c",
+                "texte": "À cause d’un accident"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "À cause de la neige"
+              }
+            }
+          },
+          {
+            "enonce": "Dans quelle ville y a-t-il beaucoup de neige ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Lille",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Lyon"
+              },
+              {
+                "id": "c",
+                "texte": "Nice"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Lille"
+              }
+            }
+          },
+          {
+            "enonce": "À quelle vitesse la circulation est-elle limitée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "100 km/h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "80 km/h"
+              },
+              {
+                "id": "c",
+                "texte": "120 km/h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "100 km/h"
+              }
+            }
+          },
+          {
+            "enonce": "Sur quelle distance s’applique la limitation ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "9 km",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "5 km"
+              },
+              {
+                "id": "c",
+                "texte": "12 km"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "9 km"
+              }
+            }
+          },
+          {
+            "enonce": "Quel numéro faut-il appeler pour en savoir plus ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "09 10 80 13 72",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "09 10 80 13 27"
+              },
+              {
+                "id": "c",
+                "texte": "09 10 80 31 72"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "09 10 80 13 72"
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null
+      },
+      "after": {
+        "id": "tcf-a1-s4-co-2",
+        "niveau": "A0-A1",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Test blanc A1 · série 4 · Info trafic",
+        "scenario": "radio",
+        "scene": "L’info trafic",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/radio/l-info-trafic.mp3",
+          "transcription": "Radiotrafic. Message aux conducteurs. Il faut faire attention sur l'autoroute A1. Il y a beaucoup de neige à Lille. La vitesse est limitée à 100 km/h sur 9 km. Pour plus d'informations, appelez le 09, 10, 80, 13, 72."
+        },
+        "questions": [
+          {
+            "enonce": "À qui s’adresse le message de Radio Trafic ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Aux conducteurs",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Aux passagers d’un avion"
+              },
+              {
+                "id": "c",
+                "texte": "Aux cyclistes"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Aux conducteurs"
+              }
+            }
+          },
+          {
+            "enonce": "Sur quelle autoroute faut-il être prudent ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "L’A1",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "L’A6"
+              },
+              {
+                "id": "c",
+                "texte": "L’A10"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "L’A1"
+              }
+            }
+          },
+          {
+            "enonce": "Pourquoi faut-il faire attention ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "À cause de la neige",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "À cause du brouillard"
+              },
+              {
+                "id": "c",
+                "texte": "À cause d’un accident"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "À cause de la neige"
+              }
+            }
+          },
+          {
+            "enonce": "Dans quelle ville y a-t-il beaucoup de neige ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Lille",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Lyon"
+              },
+              {
+                "id": "c",
+                "texte": "Nice"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Lille"
+              }
+            }
+          },
+          {
+            "enonce": "À quelle vitesse la circulation est-elle limitée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "100 km/h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "80 km/h"
+              },
+              {
+                "id": "c",
+                "texte": "120 km/h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "100 km/h"
+              }
+            }
+          },
+          {
+            "enonce": "Sur quelle distance s’applique la limitation ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "9 km",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "5 km"
+              },
+              {
+                "id": "c",
+                "texte": "12 km"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "9 km"
+              }
+            }
+          },
+          {
+            "enonce": "Quel numéro faut-il appeler pour en savoir plus ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "09 10 80 13 72",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "09 10 80 13 27"
+              },
+              {
+                "id": "c",
+                "texte": "09 10 80 31 72"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "09 10 80 13 72"
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null
+      }
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-a2j-s1-co-1",
+      "before": {
+        "id": "tcf-a2j-s1-co-1",
+        "niveau": "A1-A2",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Test blanc A2 Junior · série 1 · Annonces dans des lieux publics",
+        "scenario": "radio",
+        "scene": "Les annonces publiques",
+        "consigne": "Vous allez écouter des annonces dans des lieux publics. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "transcription": [
+            "Le spectacle va bientôt commencer.\nMerci de présenter votre billet à l’hôtesse, puis d’entrer dans la salle.\nFermeture des portes dans 10 minutes.",
+            "La ligne 9 du métro est fermée pour travaux ce week-end.\nDes bus de remplacement circulent gratuitement de samedi 7 h à dimanche 23 h.",
+            "Chers élèves, bienvenue au musée de la Mer.\nNous allons commencer par visiter l’exposition sur les bateaux.\nAttention, vous ne pouvez pas prendre de photos.",
+            "Aujourd'hui, notre librairie est en fête. Gagnez des dizaines de livres en répondant à des questions. Pour jouer, inscrivez-vous à l'accueil derrière les caisses du magasin.",
+            "Bienvenue au parc Aquatica.\nAvant d’accéder aux piscines, merci de vous changer dans les vestiaires et de prendre une douche.\nLe port du bonnet de bain est obligatoire.",
+            "Le zoo est ouvert jusqu’à 20 h.\nÀ 10 h, venez voir les bébés girafes.\nÀ 11 h, c’est le repas des lions.\nEt à 14 h, venez voir danser les dauphins."
+          ],
+          "audios": [
+            "/lib/audio/tcf/co/radio/les-annonces-publiques-1-1.mp3",
+            "/lib/audio/tcf/co/radio/les-annonces-publiques-1-2.mp3",
+            "/lib/audio/tcf/co/radio/les-annonces-publiques-1-3.mp3",
+            "/lib/audio/tcf/co/radio/les-annonces-publiques-1-4.mp3",
+            "/lib/audio/tcf/co/radio/les-annonces-publiques-1-5.mp3",
+            "/lib/audio/tcf/co/radio/les-annonces-publiques-1-6.mp3"
+          ],
+          "images_descriptions": [
+            "Scénario vidéo (audio CO moyen, « Les annonces publiques — dialogue 1 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un contexte d’annonce ou de conversation du quotidien. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Le spectacle va bientôt commencer » ; B : « Merci de présenter votre billet à l’hôtesse, puis d’entrer dans la salle » ; A : « Fermeture des portes dans 10 minutes ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Les annonces publiques — dialogue 2 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un contexte d’annonce ou de conversation du quotidien. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « La ligne 9 du métro est fermée pour travaux ce week-end » ; B : « Des bus de remplacement circulent gratuitement de samedi 7 h à dimanche 23 h ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Les annonces publiques — dialogue 3 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un contexte d’annonce ou de conversation du quotidien. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Chers élèves, bienvenue au musée de la Mer » ; B : « Nous allons commencer par visiter l’exposition sur les bateaux » ; A : « Attention, vous ne pouvez pas prendre de photos ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Les annonces publiques — dialogue 4 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un contexte d’annonce ou de conversation du quotidien. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Aujourd’hui, notre librairie est en fête » ; B : « Gagnez des dizaines de livres en répondant à des questions » ; A : « Pour jouer, inscrivez-vous à l’accueil, derrière les caisses du magasin ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Les annonces publiques — dialogue 5 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un contexte d’annonce ou de conversation du quotidien. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Bienvenue au parc Aquatica » ; B : « Avant d’accéder aux piscines, merci de vous changer dans les vestiaires et de prendre une douche » ; A : « Le port du bonnet de bain est obligatoire ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Les annonces publiques — dialogue 6 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un contexte d’annonce ou de conversation du quotidien. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Le zoo est ouvert jusqu’à 20 h » ; B : « À 10 h, venez voir les bébés girafes » ; A : « À 11 h, c’est le repas des lions » ; B : « Et à 14 h, venez voir danser les dauphins ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
+          ]
+        },
+        "questions": [
+          {
+            "enonce": "Que faut-il présenter à l’hôtesse ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Son billet",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Sa carte d’identité"
+              },
+              {
+                "id": "c",
+                "texte": "Son passeport"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Son billet"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Où faut-il entrer après avoir présenté son billet ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Dans la salle",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Dans les vestiaires"
+              },
+              {
+                "id": "c",
+                "texte": "Dans le restaurant"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Dans la salle"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Dans combien de temps les portes ferment-elles ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Dans dix minutes",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Dans vingt minutes"
+              },
+              {
+                "id": "c",
+                "texte": "Dans trente minutes"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Dans dix minutes"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "image": "/lib/images/tcf/qcm-audit/duree-10-minutes.webp",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/duree-20-minutes.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/duree-30-minutes.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Quelle ligne de métro est fermée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La ligne 9",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "La ligne 3"
+              },
+              {
+                "id": "c",
+                "texte": "La ligne 6"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "La ligne 9"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Pourquoi la ligne de métro est-elle fermée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Pour des travaux",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Pour une fête"
+              },
+              {
+                "id": "c",
+                "texte": "Pour une compétition"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Pour des travaux"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Quels véhicules remplacent le métro ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Des bus",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Des tramways"
+              },
+              {
+                "id": "c",
+                "texte": "Des taxis"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Des bus"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/vocab-tramways.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/vocab-taxis.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Combien coûte le transport de remplacement ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Il est gratuit",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Il coûte un euro"
+              },
+              {
+                "id": "c",
+                "texte": "Il coûte deux euros"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Il est gratuit"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Dans quel musée les élèves arrivent-ils ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Au musée de la Mer",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Au musée du Jouet"
+              },
+              {
+                "id": "c",
+                "texte": "Au musée du Cinéma"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Au musée de la Mer"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Sur quoi porte la première exposition visitée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Sur les bateaux",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Sur les poissons"
+              },
+              {
+                "id": "c",
+                "texte": "Sur les avions"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Sur les bateaux"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quelle activité est interdite dans le musée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Prendre des photos",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Poser des questions"
+              },
+              {
+                "id": "c",
+                "texte": "Regarder les bateaux"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Prendre des photos"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quel magasin organise un jeu ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Une librairie",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Une boulangerie"
+              },
+              {
+                "id": "c",
+                "texte": "Une pharmacie"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Une librairie"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "image": "/lib/images/tcf/qcm-audit/vocab-librairie.webp",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-boulangerie-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-pharmacie-dessinee.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Que peut-on gagner en répondant aux questions ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Des livres",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Des vêtements"
+              },
+              {
+                "id": "c",
+                "texte": "Des vélos"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Des livres"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-vetements-dessines.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/vocab-velos.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Où faut-il s’inscrire pour jouer ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "À l’accueil, derrière les caisses",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "À l’entrée, devant les vitrines"
+              },
+              {
+                "id": "c",
+                "texte": "Au rayon des magazines"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "À l’accueil, derrière les caisses"
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Où les visiteurs doivent-ils se changer ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Dans les vestiaires",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Dans les piscines"
+              },
+              {
+                "id": "c",
+                "texte": "À l’accueil"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Dans les vestiaires"
+              }
+            },
+            "audio": 5
+          },
+          {
+            "enonce": "Que faut-il faire avant d’accéder aux piscines ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Prendre une douche",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Prendre un repas"
+              },
+              {
+                "id": "c",
+                "texte": "Faire une réservation"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Prendre une douche"
+              }
+            },
+            "audio": 5
+          },
+          {
+            "enonce": "Quel accessoire est obligatoire pour se baigner ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un bonnet de bain",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Un masque de plongée"
+              },
+              {
+                "id": "c",
+                "texte": "Une paire de palmes"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un bonnet de bain"
+              }
+            },
+            "audio": 5
+          },
+          {
+            "enonce": "Jusqu’à quelle heure le zoo est-il ouvert ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Jusqu’à 20 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Jusqu’à 18 h"
+              },
+              {
+                "id": "c",
+                "texte": "Jusqu’à 22 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Jusqu’à 20 h"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-2000-dessinee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-2200-dessinee.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 6
+          },
+          {
+            "enonce": "Quels animaux peut-on voir à 10 h ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Les bébés girafes",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Les bébés éléphants"
+              },
+              {
+                "id": "c",
+                "texte": "Les bébés singes"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Les bébés girafes"
+              }
+            },
+            "audio": 6
+          },
+          {
+            "enonce": "Que peut-on voir à 11 h ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Le repas des lions",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Le repas des girafes"
+              },
+              {
+                "id": "c",
+                "texte": "Le repas des dauphins"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Le repas des lions"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/5e661b9f0701.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/d1f862e82237.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/aa5adb3a720f.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 6
+          }
+        ],
+        "consigne_supplementaire": null
+      },
+      "after": {
+        "id": "tcf-a2j-s1-co-1",
+        "niveau": "A1-A2",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Test blanc A2 Junior · série 1 · Annonces dans des lieux publics",
+        "scenario": "radio",
+        "scene": "Les annonces publiques",
+        "consigne": "Vous allez écouter des annonces dans des lieux publics. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "transcription": [
+            "Le spectacle va bientôt commencer.\nMerci de présenter votre billet à l’hôtesse, puis d’entrer dans la salle.\nFermeture des portes dans 10 minutes.",
+            "La ligne 9 du métro est fermée pour travaux ce week-end.\nDes bus de remplacement circulent gratuitement de samedi 7 h à dimanche 23 h.",
+            "Chers élèves, bienvenue au musée de la Mer.\nNous allons commencer par visiter l’exposition sur les bateaux.\nAttention, vous ne pouvez pas prendre de photos.",
+            "Aujourd'hui, notre librairie est en fête. Gagnez des dizaines de livres en répondant à des questions. Pour jouer, inscrivez-vous à l'accueil derrière les caisses du magasin.",
+            "Bienvenue au parc Aquatica. Avant d'accéder aux piscines, merci de vous changer dans les vestiaires et de prendre une douche. Le port du bonnet de bain est obligatoire.",
+            "Le zoo est ouvert jusqu’à 20 h.\nÀ 10 h, venez voir les bébés girafes.\nÀ 11 h, c’est le repas des lions.\nEt à 14 h, venez voir danser les dauphins."
+          ],
+          "audios": [
+            "/lib/audio/tcf/co/radio/les-annonces-publiques-1-1.mp3",
+            "/lib/audio/tcf/co/radio/les-annonces-publiques-1-2.mp3",
+            "/lib/audio/tcf/co/radio/les-annonces-publiques-1-3.mp3",
+            "/lib/audio/tcf/co/radio/les-annonces-publiques-1-4.mp3",
+            "/lib/audio/tcf/co/radio/les-annonces-publiques-1-5.mp3",
+            "/lib/audio/tcf/co/radio/les-annonces-publiques-1-6.mp3"
+          ],
+          "images_descriptions": [
+            "Scénario vidéo (audio CO moyen, « Les annonces publiques — dialogue 1 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un contexte d’annonce ou de conversation du quotidien. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Le spectacle va bientôt commencer » ; B : « Merci de présenter votre billet à l’hôtesse, puis d’entrer dans la salle » ; A : « Fermeture des portes dans 10 minutes ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Les annonces publiques — dialogue 2 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un contexte d’annonce ou de conversation du quotidien. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « La ligne 9 du métro est fermée pour travaux ce week-end » ; B : « Des bus de remplacement circulent gratuitement de samedi 7 h à dimanche 23 h ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Les annonces publiques — dialogue 3 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un contexte d’annonce ou de conversation du quotidien. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Chers élèves, bienvenue au musée de la Mer » ; B : « Nous allons commencer par visiter l’exposition sur les bateaux » ; A : « Attention, vous ne pouvez pas prendre de photos ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Les annonces publiques — dialogue 4 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un contexte d’annonce ou de conversation du quotidien. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Aujourd’hui, notre librairie est en fête » ; B : « Gagnez des dizaines de livres en répondant à des questions » ; A : « Pour jouer, inscrivez-vous à l’accueil, derrière les caisses du magasin ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Les annonces publiques — dialogue 5 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un contexte d’annonce ou de conversation du quotidien. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Bienvenue au parc Aquatica » ; B : « Avant d’accéder aux piscines, merci de vous changer dans les vestiaires et de prendre une douche » ; A : « Le port du bonnet de bain est obligatoire ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Les annonces publiques — dialogue 6 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un contexte d’annonce ou de conversation du quotidien. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Le zoo est ouvert jusqu’à 20 h » ; B : « À 10 h, venez voir les bébés girafes » ; A : « À 11 h, c’est le repas des lions » ; B : « Et à 14 h, venez voir danser les dauphins ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
+          ]
+        },
+        "questions": [
+          {
+            "enonce": "Que faut-il présenter à l’hôtesse ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Son billet",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Sa carte d’identité"
+              },
+              {
+                "id": "c",
+                "texte": "Son passeport"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Son billet"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Où faut-il entrer après avoir présenté son billet ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Dans la salle",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Dans les vestiaires"
+              },
+              {
+                "id": "c",
+                "texte": "Dans le restaurant"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Dans la salle"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Dans combien de temps les portes ferment-elles ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Dans dix minutes",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Dans vingt minutes"
+              },
+              {
+                "id": "c",
+                "texte": "Dans trente minutes"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Dans dix minutes"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "image": "/lib/images/tcf/qcm-audit/duree-10-minutes.webp",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/duree-20-minutes.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/duree-30-minutes.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Quelle ligne de métro est fermée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La ligne 9",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "La ligne 3"
+              },
+              {
+                "id": "c",
+                "texte": "La ligne 6"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "La ligne 9"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Pourquoi la ligne de métro est-elle fermée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Pour des travaux",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Pour une fête"
+              },
+              {
+                "id": "c",
+                "texte": "Pour une compétition"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Pour des travaux"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Quels véhicules remplacent le métro ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Des bus",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Des tramways"
+              },
+              {
+                "id": "c",
+                "texte": "Des taxis"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Des bus"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/vocab-tramways.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/vocab-taxis.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Combien coûte le transport de remplacement ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Il est gratuit",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Il coûte un euro"
+              },
+              {
+                "id": "c",
+                "texte": "Il coûte deux euros"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Il est gratuit"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Dans quel musée les élèves arrivent-ils ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Au musée de la Mer",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Au musée du Jouet"
+              },
+              {
+                "id": "c",
+                "texte": "Au musée du Cinéma"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Au musée de la Mer"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Sur quoi porte la première exposition visitée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Sur les bateaux",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Sur les poissons"
+              },
+              {
+                "id": "c",
+                "texte": "Sur les avions"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Sur les bateaux"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quelle activité est interdite dans le musée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Prendre des photos",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Poser des questions"
+              },
+              {
+                "id": "c",
+                "texte": "Regarder les bateaux"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Prendre des photos"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quel magasin organise un jeu ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Une librairie",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Une boulangerie"
+              },
+              {
+                "id": "c",
+                "texte": "Une pharmacie"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Une librairie"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "image": "/lib/images/tcf/qcm-audit/vocab-librairie.webp",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-boulangerie-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-pharmacie-dessinee.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Que peut-on gagner en répondant aux questions ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Des livres",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Des vêtements"
+              },
+              {
+                "id": "c",
+                "texte": "Des vélos"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Des livres"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-vetements-dessines.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/vocab-velos.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Où faut-il s’inscrire pour jouer ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "À l’accueil, derrière les caisses",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "À l’entrée, devant les vitrines"
+              },
+              {
+                "id": "c",
+                "texte": "Au rayon des magazines"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "À l’accueil, derrière les caisses"
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Où les visiteurs doivent-ils se changer ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Dans les vestiaires",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Dans les piscines"
+              },
+              {
+                "id": "c",
+                "texte": "À l’accueil"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Dans les vestiaires"
+              }
+            },
+            "audio": 5
+          },
+          {
+            "enonce": "Que faut-il faire avant d’accéder aux piscines ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Prendre une douche",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Prendre un repas"
+              },
+              {
+                "id": "c",
+                "texte": "Faire une réservation"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Prendre une douche"
+              }
+            },
+            "audio": 5
+          },
+          {
+            "enonce": "Quel accessoire est obligatoire pour se baigner ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un bonnet de bain",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Un masque de plongée"
+              },
+              {
+                "id": "c",
+                "texte": "Une paire de palmes"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un bonnet de bain"
+              }
+            },
+            "audio": 5
+          },
+          {
+            "enonce": "Jusqu’à quelle heure le zoo est-il ouvert ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Jusqu’à 20 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Jusqu’à 18 h"
+              },
+              {
+                "id": "c",
+                "texte": "Jusqu’à 22 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Jusqu’à 20 h"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-2000-dessinee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-2200-dessinee.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 6
+          },
+          {
+            "enonce": "Quels animaux peut-on voir à 10 h ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Les bébés girafes",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Les bébés éléphants"
+              },
+              {
+                "id": "c",
+                "texte": "Les bébés singes"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Les bébés girafes"
+              }
+            },
+            "audio": 6
+          },
+          {
+            "enonce": "Que peut-on voir à 11 h ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Le repas des lions",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Le repas des girafes"
+              },
+              {
+                "id": "c",
+                "texte": "Le repas des dauphins"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Le repas des lions"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/5e661b9f0701.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/d1f862e82237.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/aa5adb3a720f.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 6
+          }
+        ],
+        "consigne_supplementaire": null
+      }
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-ss-a2-s7-co-3",
+      "before": {
+        "id": "tcf-ss-a2-s7-co-3",
+        "niveau": "A1-A2",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Annonce 40",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "transcription": [
+            "Lundi prochain, la cafétéria ouvrira exceptionnellement à 11h30 au lieu de midi et demi. Les élèves qui veulent manger plus tôt lundi doivent prévenir le secrétariat avant demain à 14h00.",
+            "Votre professeur d'histoire, monsieur Lemaître, sera absent aujourd'hui.\nC'est madame Lenfant qui vous accueillera en salle 4 pour un cours de chant.",
+            "Pour s'inscrire à la sortie au musée du 6 novembre, les élèves doivent apporter 10 euros et le formulaire d'autorisation rempli par les parents à la vie scolaire.",
+            "Cette année, les trois gagnants du Grand Concours d'écriture de l'école Victor Hugo de Tours pourront participer au Concours national de Poésie qui se déroulera à Paris au mois de mai. Inscrivez-vous vite !",
+            "Tous les jours après le repas, le collège vous propose des activités de 13 heures à 14 heures.\nVous pourrez faire du badminton, du foot ou du basket.\nPour plus de renseignements, venez au secrétariat.",
+            "La bibliothèque du collège sera fermée la semaine prochaine, car la bibliothécaire accompagne la classe de 5e en séjour linguistique.\nSi vous devez prendre ou rapporter des livres, rendez-vous à la bibliothèque avant ce soir à 16 heures."
+          ],
+          "audios": [
+            "/lib/audio/tcf/co/ecole/ecole-5-1.mp3",
+            "/lib/audio/tcf/co/ecole/ecole-5-2.mp3",
+            "/lib/audio/tcf/co/ecole/ecole-5-3.mp3",
+            "/lib/audio/tcf/co/ecole/ecole-5-4.mp3",
+            "/lib/audio/tcf/co/ecole/ecole-5-5.mp3",
+            "/lib/audio/tcf/co/ecole/ecole-5-6.mp3"
+          ],
+          "images_descriptions": [
+            "Scénario vidéo (audio CO moyen, « École — dialogue 1 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un établissement scolaire (couloir, classe ou secrétariat). Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Lundi prochain, la cafétéria ouvrira exceptionnellement à 11 h 30 au lieu de midi et demi » ; B : « Les élèves qui veulent manger plus tôt lundi doivent se prévenir au secrétariat avant demain à 14 heures ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « École — dialogue 2 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un établissement scolaire (couloir, classe ou secrétariat). Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Notre professeur d'histoire, monsieur Lemaître, sera absent aujourd'hui » ; B : « C'est madame Lenfant qui vous accueillera en salle 4 pour un cours de chant ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « École — dialogue 3 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un établissement scolaire (couloir, classe ou secrétariat). Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Pour s'inscrire à la sortie au musée du 5 novembre, les élèves doivent apporter 10 euros et le formulaire d'autorisation rempli par les parents à la vie scolaire ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « École — dialogue 4 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un établissement scolaire (couloir, classe ou secrétariat). Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Cette année, les trois gagnants du grand concours d'écriture de l'école pourront participer au concours national de poésie, qui se déroulera à Paris au mois de mai » ; B : « Inscrivez-vous vite ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « École — dialogue 5 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un établissement scolaire (couloir, classe ou secrétariat). Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Tous les jours après le repas, le collège vous propose des activités de 13 heures à 14 heures » ; B : « Vous pourrez faire du badminton, du foot ou du basket » ; A : « Pour plus de renseignements, venez au secrétariat ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « École — dialogue 6 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un établissement scolaire (couloir, classe ou secrétariat). Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « La bibliothèque du collège sera fermée la semaine prochaine, car la bibliothécaire accompagne la classe de 5e en séjour linguistique » ; B : « Si vous devez prendre ou rapporter des livres, rendez-vous à la bibliothèque avant ce soir à 16 heures ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
+          ]
+        },
+        "questions": [
+          {
+            "enonce": "À quelle heure la cafétéria ouvrira-t-elle lundi prochain ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "À 11 h 30",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "À 12 h 30"
+              },
+              {
+                "id": "c",
+                "texte": "À 13 h 30"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "À 11 h 30"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/vocab-horloge-1130.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1230-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1330-dessinee.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Quel horaire d’ouverture est habituel ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Midi et demi",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Onze heures et demie"
+              },
+              {
+                "id": "c",
+                "texte": "Dix heures et demie"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Midi et demi"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1230-dessinee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/vocab-horloge-1130.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1030-dessinee.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Avant quelle heure faut-il prévenir le secrétariat demain ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Avant 14 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Avant midi"
+              },
+              {
+                "id": "c",
+                "texte": "Avant 16 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Avant 14 h"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Quel professeur est absent aujourd’hui ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Le professeur d’histoire",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Le professeur de musique"
+              },
+              {
+                "id": "c",
+                "texte": "Le professeur de maths"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Le professeur d’histoire"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Quel cours madame Lenfant donnera-t-elle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un cours de chant",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Un cours de danse"
+              },
+              {
+                "id": "c",
+                "texte": "Un cours de dessin"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un cours de chant"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/e86658ac6ca0.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-cours-danse-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-cours-dessin-dessine.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Dans quelle salle les élèves doivent-ils aller ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La salle 4",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "La salle 2"
+              },
+              {
+                "id": "c",
+                "texte": "La salle 8"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "La salle 4"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Où la sortie du 6 novembre aura-t-elle lieu ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Au musée",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Au cinéma"
+              },
+              {
+                "id": "c",
+                "texte": "Au théâtre"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Au musée"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "image": "/lib/images/tcf/qcm-audit/co306-musee-dessine.webp",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co306-batiment-theatre-dessine.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Combien les élèves doivent-ils apporter ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Dix euros",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Cinq euros"
+              },
+              {
+                "id": "c",
+                "texte": "Quinze euros"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Dix euros"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Qui doit remplir le formulaire d’autorisation ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Les parents",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Les élèves seuls"
+              },
+              {
+                "id": "c",
+                "texte": "La guide du musée"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Les parents"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quel concours l’école organise-t-elle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un concours d’écriture",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Un concours de dessin"
+              },
+              {
+                "id": "c",
+                "texte": "Un concours de musique"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un concours d’écriture"
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Combien de gagnants pourront participer au concours national ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Trois",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Deux"
+              },
+              {
+                "id": "c",
+                "texte": "Cinq"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Trois"
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Où le concours national de poésie aura-t-il lieu ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "À Paris",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "À Lyon"
+              },
+              {
+                "id": "c",
+                "texte": "À Lille"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "À Paris"
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "À quel moment les activités ont-elles lieu ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Après le repas",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Avant les cours"
+              },
+              {
+                "id": "c",
+                "texte": "Après la fermeture du collège"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Après le repas"
+              }
+            },
+            "audio": 5
+          },
+          {
+            "enonce": "Quels sont les horaires des activités ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "De 13 h à 14 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "De midi à 13 h"
+              },
+              {
+                "id": "c",
+                "texte": "De 14 h à 15 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "De 13 h à 14 h"
+              }
+            },
+            "audio": 5
+          },
+          {
+            "enonce": "Où faut-il demander des renseignements ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Au secrétariat",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "À la cantine"
+              },
+              {
+                "id": "c",
+                "texte": "Au musée"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Au secrétariat"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "image": "/lib/images/tcf/co/bg/secretariat.webp",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/co/bg/cantine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co306-musee-dessine.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 5
+          },
+          {
+            "enonce": "Quel lieu du collège sera fermé la semaine prochaine ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La bibliothèque",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "La cafétéria"
+              },
+              {
+                "id": "c",
+                "texte": "Le gymnase"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "La bibliothèque"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "image": "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co57-cafeteria.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co306-gymnase-municipal-dessine.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 6
+          },
+          {
+            "enonce": "Pourquoi ce lieu sera-t-il fermé ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La bibliothécaire accompagne une classe en voyage",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Des travaux sont prévus"
+              },
+              {
+                "id": "c",
+                "texte": "Les livres ont été vendus"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "La bibliothécaire accompagne une classe en voyage"
+              }
+            },
+            "audio": 6
+          },
+          {
+            "enonce": "Quelle classe part en séjour linguistique ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La classe de 5e",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "La classe de 4e"
+              },
+              {
+                "id": "c",
+                "texte": "La classe de 3e"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "La classe de 5e"
+              }
+            },
+            "audio": 6
+          },
+          {
+            "enonce": "Avant quelle heure faut-il venir prendre ou rendre ses livres ce soir ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Avant 16 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Avant 14 h"
+              },
+              {
+                "id": "c",
+                "texte": "Avant 18 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Avant 16 h"
+              }
+            },
+            "audio": 6
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "ecole",
+        "scene": "École"
+      },
+      "after": {
+        "id": "tcf-ss-a2-s7-co-3",
+        "niveau": "A1-A2",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Annonce 40",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "transcription": [
+            "Lundi prochain, la cafétéria ouvrira exceptionnellement à 11h30 au lieu de midi et demi. Les élèves qui veulent manger plus tôt lundi doivent prévenir le secrétariat avant demain à 14h00.",
+            "Votre professeur d'histoire, monsieur Lemaître, sera absent aujourd'hui.\nC'est madame Lenfant qui vous accueillera en salle 4 pour un cours de chant.",
+            "Pour s'inscrire à la sortie au musée du 6 novembre, les élèves doivent apporter 10 euros et le formulaire d'autorisation rempli par les parents à la vie scolaire.",
+            "Cette année, les trois gagnants du Grand Concours d'écriture de l'école Victor Hugo de Tours pourront participer au Concours national de Poésie qui se déroulera à Paris au mois de mai. Inscrivez-vous vite !",
+            "Tous les jours après le repas, le collège vous propose des activités de 13 heures à 14 heures.\nVous pourrez faire du badminton, du foot ou du basket.\nPour plus de renseignements, venez au secrétariat.",
+            "La bibliothèque du collège sera fermée la semaine prochaine car la bibliothécaire accompagne la classe de cinquième quatre en séjour linguistique. Si vous devez prendre ou rapporter des livres, rendez-vous à la bibliothèque avant ce soir à 16h00."
+          ],
+          "audios": [
+            "/lib/audio/tcf/co/ecole/ecole-5-1.mp3",
+            "/lib/audio/tcf/co/ecole/ecole-5-2.mp3",
+            "/lib/audio/tcf/co/ecole/ecole-5-3.mp3",
+            "/lib/audio/tcf/co/ecole/ecole-5-4.mp3",
+            "/lib/audio/tcf/co/ecole/ecole-5-5.mp3",
+            "/lib/audio/tcf/co/ecole/ecole-5-6.mp3"
+          ],
+          "images_descriptions": [
+            "Scénario vidéo (audio CO moyen, « École — dialogue 1 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un établissement scolaire (couloir, classe ou secrétariat). Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Lundi prochain, la cafétéria ouvrira exceptionnellement à 11 h 30 au lieu de midi et demi » ; B : « Les élèves qui veulent manger plus tôt lundi doivent se prévenir au secrétariat avant demain à 14 heures ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « École — dialogue 2 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un établissement scolaire (couloir, classe ou secrétariat). Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Notre professeur d'histoire, monsieur Lemaître, sera absent aujourd'hui » ; B : « C'est madame Lenfant qui vous accueillera en salle 4 pour un cours de chant ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « École — dialogue 3 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un établissement scolaire (couloir, classe ou secrétariat). Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Pour s'inscrire à la sortie au musée du 5 novembre, les élèves doivent apporter 10 euros et le formulaire d'autorisation rempli par les parents à la vie scolaire ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « École — dialogue 4 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un établissement scolaire (couloir, classe ou secrétariat). Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Cette année, les trois gagnants du grand concours d'écriture de l'école pourront participer au concours national de poésie, qui se déroulera à Paris au mois de mai » ; B : « Inscrivez-vous vite ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « École — dialogue 5 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un établissement scolaire (couloir, classe ou secrétariat). Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Tous les jours après le repas, le collège vous propose des activités de 13 heures à 14 heures » ; B : « Vous pourrez faire du badminton, du foot ou du basket » ; A : « Pour plus de renseignements, venez au secrétariat ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « École — dialogue 6 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un établissement scolaire (couloir, classe ou secrétariat). Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « La bibliothèque du collège sera fermée la semaine prochaine, car la bibliothécaire accompagne la classe de 5e en séjour linguistique » ; B : « Si vous devez prendre ou rapporter des livres, rendez-vous à la bibliothèque avant ce soir à 16 heures ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
+          ]
+        },
+        "questions": [
+          {
+            "enonce": "À quelle heure la cafétéria ouvrira-t-elle lundi prochain ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "À 11 h 30",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "À 12 h 30"
+              },
+              {
+                "id": "c",
+                "texte": "À 13 h 30"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "À 11 h 30"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/vocab-horloge-1130.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1230-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1330-dessinee.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Quel horaire d’ouverture est habituel ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Midi et demi",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Onze heures et demie"
+              },
+              {
+                "id": "c",
+                "texte": "Dix heures et demie"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Midi et demi"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1230-dessinee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/vocab-horloge-1130.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1030-dessinee.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Avant quelle heure faut-il prévenir le secrétariat demain ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Avant 14 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Avant midi"
+              },
+              {
+                "id": "c",
+                "texte": "Avant 16 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Avant 14 h"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Quel professeur est absent aujourd’hui ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Le professeur d’histoire",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Le professeur de musique"
+              },
+              {
+                "id": "c",
+                "texte": "Le professeur de maths"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Le professeur d’histoire"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Quel cours madame Lenfant donnera-t-elle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un cours de chant",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Un cours de danse"
+              },
+              {
+                "id": "c",
+                "texte": "Un cours de dessin"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un cours de chant"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/e86658ac6ca0.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-cours-danse-dessine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-cours-dessin-dessine.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Dans quelle salle les élèves doivent-ils aller ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La salle 4",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "La salle 2"
+              },
+              {
+                "id": "c",
+                "texte": "La salle 8"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "La salle 4"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Où la sortie du 6 novembre aura-t-elle lieu ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Au musée",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Au cinéma"
+              },
+              {
+                "id": "c",
+                "texte": "Au théâtre"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Au musée"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "image": "/lib/images/tcf/qcm-audit/co306-musee-dessine.webp",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co306-batiment-theatre-dessine.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Combien les élèves doivent-ils apporter ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Dix euros",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Cinq euros"
+              },
+              {
+                "id": "c",
+                "texte": "Quinze euros"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Dix euros"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Qui doit remplir le formulaire d’autorisation ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Les parents",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Les élèves seuls"
+              },
+              {
+                "id": "c",
+                "texte": "La guide du musée"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Les parents"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quel concours l’école organise-t-elle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Un concours d’écriture",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Un concours de dessin"
+              },
+              {
+                "id": "c",
+                "texte": "Un concours de musique"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Un concours d’écriture"
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Combien de gagnants pourront participer au concours national ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Trois",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Deux"
+              },
+              {
+                "id": "c",
+                "texte": "Cinq"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Trois"
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Où le concours national de poésie aura-t-il lieu ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "À Paris",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "À Lyon"
+              },
+              {
+                "id": "c",
+                "texte": "À Lille"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "À Paris"
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "À quel moment les activités ont-elles lieu ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Après le repas",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Avant les cours"
+              },
+              {
+                "id": "c",
+                "texte": "Après la fermeture du collège"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Après le repas"
+              }
+            },
+            "audio": 5
+          },
+          {
+            "enonce": "Quels sont les horaires des activités ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "De 13 h à 14 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "De midi à 13 h"
+              },
+              {
+                "id": "c",
+                "texte": "De 14 h à 15 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "De 13 h à 14 h"
+              }
+            },
+            "audio": 5
+          },
+          {
+            "enonce": "Où faut-il demander des renseignements ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Au secrétariat",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "À la cantine"
+              },
+              {
+                "id": "c",
+                "texte": "Au musée"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Au secrétariat"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "image": "/lib/images/tcf/co/bg/secretariat.webp",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/co/bg/cantine.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co306-musee-dessine.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 5
+          },
+          {
+            "enonce": "Quel lieu du collège sera fermé la semaine prochaine ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La bibliothèque",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "La cafétéria"
+              },
+              {
+                "id": "c",
+                "texte": "Le gymnase"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "La bibliothèque"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "image": "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co57-cafeteria.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co306-gymnase-municipal-dessine.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 6
+          },
+          {
+            "enonce": "Pourquoi ce lieu sera-t-il fermé ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La bibliothécaire accompagne une classe en voyage",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Des travaux sont prévus"
+              },
+              {
+                "id": "c",
+                "texte": "Les livres ont été vendus"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "La bibliothécaire accompagne une classe en voyage"
+              }
+            },
+            "audio": 6
+          },
+          {
+            "enonce": "Quelle classe part en séjour linguistique ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La classe de 5e 4",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "La classe de 4e"
+              },
+              {
+                "id": "c",
+                "texte": "La classe de 3e"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "La classe de 5e 4"
+              }
+            },
+            "audio": 6
+          },
+          {
+            "enonce": "Avant quelle heure faut-il venir prendre ou rendre ses livres ce soir ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Avant 16 h",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Avant 14 h"
+              },
+              {
+                "id": "c",
+                "texte": "Avant 18 h"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Avant 16 h"
+              }
+            },
+            "audio": 6
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "ecole",
+        "scene": "École"
+      }
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-ss-a2-s56-co-2",
+      "before": {
+        "id": "tcf-ss-a2-s56-co-2",
+        "niveau": "A1-A2",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Message 36",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/transports/bonjour-ici-agence-voyages.mp3",
+          "transcription": "Bonjour, ici l’agence de voyages Lacrosse.\nJe vous appelle à propos de deux changements pour votre voyage en Turquie.\nLe premier changement concerne votre vol : vous partirez le mardi 16, comme prévu.\nMais le départ sera 2 heures plus tôt, à 9 heures 25.\nLe numéro de vol ne change pas, c’est le vol AF 0305.\nLe deuxième changement concerne l’hôtel : vous occuperez la chambre 23B au lieu de la 24B.\nPour aller de l’aéroport à l’hôtel, vous pouvez prendre un taxi ou le bus numéro 13.\nEn cas de doute, n’hésitez pas à nous contacter par téléphone au 04 97 22 63 13.\nAu revoir."
+        },
+        "questions": [
+          {
+            "enonce": "De combien d'heures le départ est-il avancé ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "1 heure"
+              },
+              {
+                "id": "b",
+                "texte": "2 heures",
+                "correct": true
+              },
+              {
+                "id": "c",
+                "texte": "3 heures"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "2 heures"
+              }
+            }
+          },
+          {
+            "enonce": "À quelle heure part le vol modifié ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "À 7 h 25"
+              },
+              {
+                "id": "b",
+                "texte": "À 9 h 25",
+                "correct": true
+              },
+              {
+                "id": "c",
+                "texte": "À 11 h 25"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "À 9 h 25"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "image": "/lib/images/tcf/qcm-audit/vocab-horloge-0725.webp"
+                  },
+                  {
+                    "id": "b",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/vocab-horloge-0925.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/vocab-horloge-1125.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "Quel est le numéro de vol ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "AF 0305",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "AF 3050"
+              },
+              {
+                "id": "c",
+                "texte": "DY 7040"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "AF 0305"
+              }
+            }
+          },
+          {
+            "enonce": "Quelle chambre d'hôtel est attribuée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La 23B",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "La 24B"
+              },
+              {
+                "id": "c",
+                "texte": "La 23A"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "La 23B"
+              }
+            }
+          },
+          {
+            "enonce": "Quelle était l'ancienne chambre ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La 23B"
+              },
+              {
+                "id": "b",
+                "texte": "La 24B",
+                "correct": true
+              },
+              {
+                "id": "c",
+                "texte": "La 25B"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "La 24B"
+              }
+            }
+          },
+          {
+            "enonce": "Quel bus peut-on prendre de l'aéroport ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Le bus 4"
+              },
+              {
+                "id": "b",
+                "texte": "Le bus 13",
+                "correct": true
+              },
+              {
+                "id": "c",
+                "texte": "Le bus 16"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Le bus 13"
+              }
+            }
+          },
+          {
+            "enonce": "Quelle est la destination du voyage ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La Turquie",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "La Grèce"
+              },
+              {
+                "id": "c",
+                "texte": "L'Espagne"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "La Turquie"
+              }
+            }
+          },
+          {
+            "enonce": "Combien de changements l'agence annonce-t-elle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Deux",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Trois"
+              },
+              {
+                "id": "c",
+                "texte": "Quatre"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Deux"
+              }
+            }
+          },
+          {
+            "enonce": "Quel jour le départ reste-t-il prévu ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Mardi 16",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Jeudi 18"
+              },
+              {
+                "id": "c",
+                "texte": "Samedi 20"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Mardi 16"
+              }
+            }
+          },
+          {
+            "enonce": "Comment peut-on joindre l'agence en cas de doute ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Par téléphone",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Par courrier postal"
+              },
+              {
+                "id": "c",
+                "texte": "En envoyant un SMS au pilote"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Par téléphone"
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "transports",
+        "scene": "Bonjour ici agence voyages"
+      },
+      "after": {
+        "id": "tcf-ss-a2-s56-co-2",
+        "niveau": "A1-A2",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Message 36",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "audio": "/lib/audio/tcf/co/transports/bonjour-ici-agence-voyages.mp3",
+          "transcription": "Bonjour, ici l'agence de voyages Lacrosse. Je vous appelle à propos de deux changements pour votre voyage en Turquie. Le premier changement concerne votre vol. Vous partirez le mardi 16 comme prévu. Mais le départ sera 2 heures plus tôt, à 9h25. Le numéro de vol ne change pas, c'est le vol AF 0305. Le deuxième changement concerne l'hôtel. Vous occuperez la chambre 23B, au lieu de la 24B. Pour aller de l'aéroport à l'hôtel, vous pouvez prendre un taxi ou le bus numéro 13. En cas de doute, n'hésitez pas à nous contacter par téléphone au 04 97 22 63 13. Au revoir."
+        },
+        "questions": [
+          {
+            "enonce": "De combien d'heures le départ est-il avancé ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "1 heure"
+              },
+              {
+                "id": "b",
+                "texte": "2 heures",
+                "correct": true
+              },
+              {
+                "id": "c",
+                "texte": "3 heures"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "2 heures"
+              }
+            }
+          },
+          {
+            "enonce": "À quelle heure part le vol modifié ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "À 7 h 25"
+              },
+              {
+                "id": "b",
+                "texte": "À 9 h 25",
+                "correct": true
+              },
+              {
+                "id": "c",
+                "texte": "À 11 h 25"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "À 9 h 25"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "image": "/lib/images/tcf/qcm-audit/vocab-horloge-0725.webp"
+                  },
+                  {
+                    "id": "b",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/vocab-horloge-0925.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/vocab-horloge-1125.webp"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "enonce": "Quel est le numéro de vol ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "AF 0305",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "AF 3050"
+              },
+              {
+                "id": "c",
+                "texte": "DY 7040"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "AF 0305"
+              }
+            }
+          },
+          {
+            "enonce": "Quelle chambre d'hôtel est attribuée ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La 23B",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "La 24B"
+              },
+              {
+                "id": "c",
+                "texte": "La 23A"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "La 23B"
+              }
+            }
+          },
+          {
+            "enonce": "Quelle était l'ancienne chambre ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La 23B"
+              },
+              {
+                "id": "b",
+                "texte": "La 24B",
+                "correct": true
+              },
+              {
+                "id": "c",
+                "texte": "La 25B"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "La 24B"
+              }
+            }
+          },
+          {
+            "enonce": "Quel bus peut-on prendre de l'aéroport ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Le bus 4"
+              },
+              {
+                "id": "b",
+                "texte": "Le bus 13",
+                "correct": true
+              },
+              {
+                "id": "c",
+                "texte": "Le bus 16"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Le bus 13"
+              }
+            }
+          },
+          {
+            "enonce": "Quelle est la destination du voyage ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La Turquie",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "La Grèce"
+              },
+              {
+                "id": "c",
+                "texte": "L'Espagne"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "La Turquie"
+              }
+            }
+          },
+          {
+            "enonce": "Combien de changements l'agence annonce-t-elle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Deux",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Trois"
+              },
+              {
+                "id": "c",
+                "texte": "Quatre"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Deux"
+              }
+            }
+          },
+          {
+            "enonce": "Quel jour le départ reste-t-il prévu ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Mardi 16",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Jeudi 18"
+              },
+              {
+                "id": "c",
+                "texte": "Samedi 20"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Mardi 16"
+              }
+            }
+          },
+          {
+            "enonce": "Comment peut-on joindre l'agence en cas de doute ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Par téléphone",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Par courrier postal"
+              },
+              {
+                "id": "c",
+                "texte": "En envoyant un SMS au pilote"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Par téléphone"
+              }
+            }
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "transports",
+        "scene": "Bonjour ici agence voyages"
+      }
+    }
+  ],
+  "status": "installed",
+  "received_originals_modified": 0,
+  "human_listening_performed": false
+}

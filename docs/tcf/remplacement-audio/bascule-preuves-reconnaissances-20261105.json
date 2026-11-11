@@ -2307,34 +2307,11 @@
         "provenance": "https://github.com/k2-fsa/sherpa-onnx/releases/tag/asr-models"
       }
     },
-    "2c9eb6395ca81934892212b1a35b17ed0b84a7b69520036698d7e6737467f594": {
-      "parakeet": {
-        "file_sha256": "34ea1ad4344b3a4867d83bdd32c7e64cc45f86275c2b5283b2f16356f51fb47b",
-        "source_sha256": "2c9eb6395ca81934892212b1a35b17ed0b84a7b69520036698d7e6737467f594",
-        "text": "Mesdames et messieurs, venez approchez, acheter mes légumes, ils sont 100% biologiques! Vous vous demandez pourquoi acheter bio? Mais c'est très simple, côté santé, c'est ce qu'il y a de meilleur. Regardez ces courgettes, ces aubergines, ces carottes. D'abord, c'est des légumes de saison. Rien à voir avec ce que vous trouvez au supermarché, ici, pas d'import export, ces tomates, elles viennent directement de mon jardin. Choisir des produits bio, c'est choisir la sécurité alimentaire. Vous êtes sûr de ne trouver aucun résidu chimique dans mes légumes. Vous pouvez manger les fruits et les légumes bio sans les éplucher, sans aucun souci, d'autant que c'est sous la peau que se concentrent les vitamines et minéraux. Saviez-vous que les aliments biologiques ont une qualité nutritionnelle supérieure de 30% par rapport à ceux issus de l'agriculture conventionnelle? Donc, manger bio veut dire manger des aliment plus riches en vitamines et en minéraux. Madame, avec la poucette, donnez à manger bio à votre enfant et ses risques d'allergie alimentaire seront réduits. En plus, les produits bio ont un goût tellement meilleur. Vous vous demandez encore pourquoi choisir le bio? Vous voulez une autre raison? L'agriculture biologique respecte la nature. Comment? Eh bien, en refusant d'utiliser les produits chimiques, le bio favorise la biodiversité. Voilà un petit geste écologique pour la planète qui ne coûte pas très cher. Achetez chez moi 6 oeufs biologiques. Vous coûte 2,40 € contre 1,95€ dans une grande surface. Ça fait une différence de 45 centimes. Qu'est-ce que 45 centimes pour un produit tellement plus savoureux et qui respecte l'équilibre de la nature? Regardez, madame, cette photo derrière moi. Vous voyez cette montagne, cette verdure? Voilà où sont élevées mes poules! Vous penserez à elle en mangeant votre omelette ce soir à la maison!",
-        "parameters": {
-          "pipeline_version": 4,
-          "engine": "sherpa-onnx",
-          "version": "2.0.1",
-          "model": "nemo-parakeet-tdt-0.6b-v3-int8",
-          "language": "multilingual_auto_includes_fr",
-          "model_files_sha256": {
-            "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/encoder.int8.onnx": "acfc2b4456377e15d04f0243af540b7fe7c992f8d898d751cf134c3a55fd2247",
-            "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/decoder.int8.onnx": "179e50c43d1a9de79c8a24149a2f9bac6eb5981823f2a2ed88d655b24248db4e",
-            "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/joiner.int8.onnx": "3164c13fc2821009440d20fcb5fdc78bff28b4db2f8d0f0b329101719c0948b3",
-            "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/tokens.txt": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
-          },
-          "provider": "cpu",
-          "decoding_method": "greedy_search",
-          "native_tdt_frame_step_seconds": 0.08,
-          "processing_windows": "Silero VAD utterances merged into <=27s processing windows for inputs >=29s; max 26s speech, 350ms silence, 200ms padding"
-        },
-        "provenance": "https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8.tar.bz2"
-      },
+    "5392eaf9977bb567ee9e4ff8c41f4c7638ae01f1f30782954c421745243c326d": {
       "whisper": {
-        "file_sha256": "f8353e8dfc7230e66ece4cc2fb21bc359780b55af45f58b96961703dacd8d3fd",
-        "source_sha256": "2c9eb6395ca81934892212b1a35b17ed0b84a7b69520036698d7e6737467f594",
-        "text": "Mesdames et messieurs, venez approcher, acheter mes légumes, ils sont 100% biologiques. Vous vous demandez pourquoi acheter bio ? Mais c'est très simple, côté santé, c'est ce qu'il y a de meilleur. Regardez ces courgettes, ces aubergines, ces carottes. D'abord, ces légumes de saison. Rien à voir avec ce que vous trouvez au supermarché. Ici, pendant un peu export, ces tomates viennent directement de Mont-Jardin. Choisir des produits bio, c'est choisir la sécurité alimentaire. Vous êtes sûrs de ne trouver aucun résidus chimique dans mes légumes. Vous pouvez manger les fruits et les légumes bio sans les éplucher, sans aucun souci, d'autant que c'est sous la peau que se concentrent les vitamines et minéraux. Saviez-vous que les aliments biologiques ont une qualité nutritionnelle supérieure de 30% par rapport à ceux issus de l'agriculture conventionnelle ? Donc manger bio veut dire manger des aliments plus riches en vitamine et en minéraux. Madame, avec la poussette, donnez à manger bio à votre enfant et ces risques d'allergie alimentaire seront réduits. En plus, les produits bio ont un goût tellement meilleur. Vous vous demandez encore pourquoi choisir le bio ? Vous voulez une autre raison ? L'agriculture biologique respecte la nature. Comment ? Eh bien en refusant d'utiliser les produits chimiques, le bio favorise la biodiversité. Voilà un petit geste écologique pour la planète qui ne coûte pas très cher. Achetez chez moi 6 biologiques. vous coûte 2,40€ contre 1,95€ dans une grande surface. Ça fait une différence de 45 centimes. Qu'est-ce que 45 centimes pour un produit tellement plus savoureux et qui respecte l'équilibre de la nature ? Regardez, madame, cette photo derrière moi. Vous voyez cette montagne, cette verdure ? Voilà où sont élevés mes poules ! Vous penserez à elle en mangeant votre omelette ce soir à la maison.",
+        "file_sha256": "9310cacab1e56c864292ff7d45ec68afe3a59798450f5bb8dddf6f945cb20298",
+        "source_sha256": "5392eaf9977bb567ee9e4ff8c41f4c7638ae01f1f30782954c421745243c326d",
+        "text": "Mesdames et messieurs, venez approcher, acheter mes légumes, ils sont 100% biologiques. Vous vous demandez pourquoi acheter bio ? Mais c'est très simple, côté santé, c'est ce qu'il y a de meilleur. Regardez ces courgettes, ces aubergines, ces carottes. D'abord, ces légumes de saison. Rien à voir avec ce que vous trouvez au supermarché. Ici, pendant un peu export, ces tomates viennent directement de Mont-Jardin. Choisir des produits bio, c'est choisir la sécurité alimentaire. Vous êtes sûrs de ne trouver aucun résidus chimique dans mes légumes. Vous pouvez manger les fruits et les légumes bio sans les éplucher, sans aucun souci, d'autant que c'est sous la peau que se concentrent les vitamines et minéraux. Saviez-vous que les aliments biologiques ont une qualité nutritionnelle supérieure de 30% par rapport à ceux issus de l'agriculture conventionnelle ? Donc manger bio veut dire manger des aliments plus riches en vitamine et en minéraux. Madame, avec la poussette, donnez à manger bio à votre enfant et ces risques d'allergie alimentaire seront réduits. En plus, les produits bio ont un goût tellement meilleur. Vous vous demandez encore pourquoi choisir le bio ? Vous voulez une autre raison ? L'agriculture biologique respecte la nature. Comment ? Eh bien en refusant d'utiliser les produits chimiques, le bio favorise la biodiversité. Voilà un petit geste écologique pour la planète qui ne coûte pas très cher. Achetez chez moi 6 biologiques. vous coûte 2,40€ contre 1,95€ dans une grande surface. Ça fait une différence de 45 centimes. Qu'est-ce que 45 centimes pour un produit tellement plus savoureux et qui respecte l'équilibre de la nature ? Regardez, madame, cette photo derrière moi. Vous voyez cette montagne ? Cette verdure ? Voilà où sont élevés mes poules ! Vous penserez à elle en mangeant votre omelette ce soir à la maison.",
         "parameters": {
           "engine": "sherpa-onnx",
           "version": "2.0.1",
@@ -2354,9 +2331,9 @@
         "provenance": "https://github.com/k2-fsa/sherpa-onnx/releases/tag/asr-models"
       },
       "ctc": {
-        "file_sha256": "c3ceae26c99a0833f593c653aabb3d943e1116a2d391f13dc0da8af495cae4d2",
-        "source_sha256": "2c9eb6395ca81934892212b1a35b17ed0b84a7b69520036698d7e6737467f594",
-        "text": "Mesdames et messieurs. Venez. Approchez. Achet mes légumes, ils sont cent pourcent biologiques. Vous vous demandez pourquoi acheter bio? Mais c'est très simple. Côté santé, c'est ce qu'il y a de meilleur. Regardez ces courgettes, ces aubergines, ces carottes. D'abord, c'est des légumes de saison. Rien à voir avec ce que vous le trouvez au supermarché. Ici, pas d'import export. Cs tomates. Elles viennent directement de mon jardin. Choisir des produits bio, c'est choisir la sécurité alimentaire. Vous êtes sûr de ne trouver aucun résidu chimique dans mes légumes. Vous pouvez manger les fruits et les légumes bio sans les éplucher, sans aucun souci, d'autant que c'est sous la peau que se concentrent les vitamines et minéraux. Saviez vous que les aliments biologiques ont une qualité nutritionnelle supérieure de trente pourent par rapport à ceux issus de l'agriculture conventionnelle Donc manger bio veut dire manger des aliments plus riches en vitamines et en minéraux. Madame, avec la poucette. Donnez à manger bio à votre enfant, et ces risques d'allergie alimentaire seront réduits. En plus, les produits bio ont un goût tellement meilleur. Vous vous demandez encore pourquoi choisir le bio. Vous voulez une autre raison. L'agriculture biologique respecte la nature. Comment? Eh bien, en refusant d'utiliser les produits chimiques, le bio favorise la biodiversité. Voilà un petit geste écologique pour la planète qui ne coûte pas très cher. Achetez chez moi six œufs biologiques vous coûte deux euros quarante contre un euro quatre vingt - quinze dans une grande surface. CÇa fait une différence de quarante cinq centimes. Qu'est ce que quarante cinq centimes pour un produit tellement plus savoureux et qui respecte l'équilibre de la natu. Regardez, made, cette photo derrière moi. Vous voyez cette montagne, cette verdure. Voilà où sont élevées mes poules. Vous penserez à elles en mangant votre omelette ce soir à la maison",
+        "file_sha256": "ad38aa3fe4583867771d60afa8c4d10d0d6bdddb13a795556b37c74514ee5e47",
+        "source_sha256": "5392eaf9977bb567ee9e4ff8c41f4c7638ae01f1f30782954c421745243c326d",
+        "text": "Mesdames et messieurs. Venez. Approchez. Achetez mes légumes ils sont cent pourcent biologiques. Vous vous demandez pourquoi acheter bio? Mais c'est très simple. Côté santé, c'est ce qu'il y a de meilleur. Regardez ces courgettes, ces aubergines, ces carottes. D'abord, c'est des légumes de saison Rien à voir avec ce que vous le trouvez au supermarché. Ici, pas d'import export. Ces tomates. Elles viennent directement de mon jardin. Choisir des produits bio, c'est choisir la sécurité alimentaire. Vous êtes sûr de ne trouver aucun résidu chimique dans mes légumes. Vous pouvez manger les fruits et les légumes bio sans les éplucher, sans aucun souci, d'autant que c'est sous la peau que se concentrent les vitamines et minéraux. Saviez vous que les aliments biologiques ont une qualité nutritionnelle supérieure de trente pour cent par rapport à ceux issus de l'agriculture conventionnelle? Donc manger bio veut dire manger des aliments plus riches en vitamines et en minéraux. Madame, avec la poucette. Donnez à manger bio à votre enfant, et ces risques d'allergie alimentaire seront réduits. En plus, les produits bio ont un goût tellement meilleur. Vous vous demandez encore pourquoi choisir le bio. Vous voulez une autre raison. L'agriculture biologique respecte la nature. Comment? Eh bien, enEn refusant d'utiliser les produits chimiques, le bio favorise la biodiversité. Voilà un petit geste écologique pour la planète qui ne coûte pas très cher. Achetez chez moi six œufs biologiques vous coûte deux euros quarante contre un euro quatre vingt - quinze dans une grande surface. Ca fait une différence de quarante cinq centimes. Qu'est ce que quarante cinq centimes pour un produit tellement plus savoureux et qui respecte l'équilibre de la nature. Regardez, made, cette photo derrière moi. Vous voyez cette montagne, cette verdure. Voilà où sont élevées mes poules. Vous penserez à elles en mangeant votre omelette ce soir à la maison",
         "parameters": {
           "engine": "sherpa-nemo-fast-conformer-ctc-en-de-es-fr-14288-int8",
           "model_sha256": "85451f03e004d607f86f4d6291ca55a8ca984d7e32dedc828cebe7fe61447511"
@@ -2409,6 +2386,16 @@
           "long_audio_segmentation": "Silero VAD utterances merged into <=27s processing windows; max 26s speech, 350ms silence, 200ms padding"
         },
         "provenance": "https://github.com/k2-fsa/sherpa-onnx/releases/tag/asr-models"
+      },
+      "ctc": {
+        "file_sha256": "fca0bc354e21edfa350101c5f57b14b9535a383700803829082ddb471f5a762e",
+        "source_sha256": "524c00aa771addd49f2675161129bca4a4b9bb3345051d206695526be7d02b16",
+        "text": "C de l'école est fermé du quatorze au vingt - six janvier pour travaux. Vos nouvelles salles de classe pendant cette période sont indiqué sur le tableau d'information à l'entrée. L'association des parents d'élèves organise le concours Dessine ton école idéale. Pour participer, vous devez envoyer votre dessein avant le douze mars, à l'adresse. P Lycée. f. Chers élèves. Lundi vingt - trois avril, nous avons la chance d'accueillir l'auteur Bernard Werber dans l'auditorium du collège. Il donnera une conférence sur son métier à l'occasion de la Journée innternationale du livre. Ceci est une simulation d'alerte au feu. Nous vous demandons de sortir du bâtiment dans le calme. Merci de laisser vos affaires dans la classe et de ne pas courir. Nous allons tous nous retrouver dans la cour. Votre professeur d'Italien, monsieur Damiani, est absent cette semaine. Il est remplacé à partir de mercredi par monsieur Biancardi. L'examen d'Italien a bien lieu vendredi. Il est surveillé par madame Blanchard. Une vente de livres est organisé mardi vingt - deux mai par les élèves de quatrième B dans la salle B cent seize. L'argent de la vente est pour l'association Sourire d'enfant, qui aide les enfants malades à l'hôpital",
+        "parameters": {
+          "engine": "sherpa-nemo-fast-conformer-ctc-en-de-es-fr-14288-int8",
+          "model_sha256": "85451f03e004d607f86f4d6291ca55a8ca984d7e32dedc828cebe7fe61447511"
+        },
+        "provenance": null
       }
     },
     "cb2e24b05e9dd3dddcc8078963de11fc85025d8f764f57d486eedb75a8874719": {
@@ -2656,33 +2643,10 @@
         "provenance": "https://github.com/k2-fsa/sherpa-onnx/releases/tag/asr-models"
       }
     },
-    "499a16940e32c0dc9f7f31199f646a2034d1fe292f6def85d630f8a332fd96a0": {
-      "parakeet": {
-        "file_sha256": "2297449e5cfe141b66f14572f57ac2171e8256aed5dfc4619f4be9a8a145e2b8",
-        "source_sha256": "499a16940e32c0dc9f7f31199f646a2034d1fe292f6def85d630f8a332fd96a0",
-        "text": "La biblique du collège sera fermée la semaine prochaine, car la bibliothécaire accompagne la classe de 5e 4 en séjour linguistique. Si vous devez prendre ou rapporter des livres, rendez-vous à la bibliothèque ce soir à 16h.",
-        "parameters": {
-          "pipeline_version": 4,
-          "engine": "sherpa-onnx",
-          "version": "2.0.1",
-          "model": "nemo-parakeet-tdt-0.6b-v3-int8",
-          "language": "multilingual_auto_includes_fr",
-          "model_files_sha256": {
-            "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/encoder.int8.onnx": "acfc2b4456377e15d04f0243af540b7fe7c992f8d898d751cf134c3a55fd2247",
-            "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/decoder.int8.onnx": "179e50c43d1a9de79c8a24149a2f9bac6eb5981823f2a2ed88d655b24248db4e",
-            "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/joiner.int8.onnx": "3164c13fc2821009440d20fcb5fdc78bff28b4db2f8d0f0b329101719c0948b3",
-            "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/tokens.txt": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
-          },
-          "provider": "cpu",
-          "decoding_method": "greedy_search",
-          "native_tdt_frame_step_seconds": 0.08,
-          "processing_windows": "Silero VAD utterances merged into <=27s processing windows for inputs >=29s; max 26s speech, 350ms silence, 200ms padding"
-        },
-        "provenance": "https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8.tar.bz2"
-      },
+    "1b2cbb983647d2462dc6616d68a069b3092259d0700dd2795b17f5df3a21df69": {
       "whisper": {
-        "file_sha256": "d2ba7a1608a6f62cc55920cbefe818f8e3f1773d91e238b436a4f29715ba0abd",
-        "source_sha256": "499a16940e32c0dc9f7f31199f646a2034d1fe292f6def85d630f8a332fd96a0",
+        "file_sha256": "57343bd1850c14adfeef6929345c06269580bb54c90ac872c9cd2552b7f53a2d",
+        "source_sha256": "1b2cbb983647d2462dc6616d68a069b3092259d0700dd2795b17f5df3a21df69",
         "text": "La bibliothèque du collège sera fermée la semaine prochaine car la bibliothécaire accompagne la classe de cinquième quatre en séjour linguistique. Si vous devez prendre ou rapporter des livres, rendez-vous à la bibliothèque avant ce soir à 16h00.",
         "parameters": {
           "engine": "sherpa-onnx",
@@ -2703,8 +2667,8 @@
         "provenance": "https://github.com/k2-fsa/sherpa-onnx/releases/tag/asr-models"
       },
       "ctc": {
-        "file_sha256": "2f5cb951987632cee45dfcfcbb41633e8b09b323e82f6c838228b589834687b6",
-        "source_sha256": "499a16940e32c0dc9f7f31199f646a2034d1fe292f6def85d630f8a332fd96a0",
+        "file_sha256": "8cd7a6549f8c19bf1ec93b466544fc6cc1b85703b2f45c73fb517f5bd72c7bbe",
+        "source_sha256": "1b2cbb983647d2462dc6616d68a069b3092259d0700dd2795b17f5df3a21df69",
         "text": "La bibliothèque du collège sera fermée la semaine prochaine, car la bibliothécaire accompagne la classe de cinquième quatre en séjour linguistique. Si vous devez prendre ou rapporter des livres, rendez vous à la bibliothèque avant ce soir, à seize heures",
         "parameters": {
           "engine": "sherpa-nemo-fast-conformer-ctc-en-de-es-fr-14288-int8",
@@ -7214,34 +7178,11 @@
         "provenance": "https://github.com/k2-fsa/sherpa-onnx/releases/tag/asr-models"
       }
     },
-    "35385706f4bd060721ee53a739da2aad9bd4695987ef8779c3d3617276460c8d": {
-      "parakeet": {
-        "file_sha256": "ef988a4b19dcd61a83cd1ac1866ff4c842609c7a7416f6233b9a6622da7e1949",
-        "source_sha256": "35385706f4bd060721ee53a739da2aad9bd4695987ef8779c3d3617276460c8d",
-        "text": "Bienvenue au Salon de la Bande dessinée de Montréal. Nous sommes le samedi 26 mai. Voici le programme du jour. De 9h à 20h, vous pouvez visiter les stands de nos 150 exposants venus de 17 pays. Les plus grandes maisons d'édition francophone sont là pour vous présenter leur collection. Les auteurs et dessinateurs des bandes dessinées sont également présents. Pour faire signer vos albums préférés par leurs auteurs, rendez-vous tous les jours à partir de 18h dans le salon Obelix. Les festivités commenceront cet après-midi avec un spectacle de danse asiatique dans le hall principal à 15h. Les artistes nous viennent directement du Japon et ont été invités par la maison d'édition KRL spécialisée en manga japonais. L'artiste Paul Mugatti et sa bande nous présenteront ensuite leur spectacle original et émouvant intitulé Tout pour vos yeux. Ce spectacle mène dessin, théâtre, danse et musique. Je ne vous en dis pas plus pour garder la surprise car il s'agit d'un événement particulièrement original. Le café rencontre est ouvert tous les jours à partir de 10h. Vous y rencontrerez tous les professionnels de la bande dessinée dans un cadre convivial et détendu. Si vous êtes dessinateur ou auteur de BD, c'est le lieu idéal pour faire des rencontres et présenter vos créations. D'ailleurs, si vous aimez dessiner, vous pouvez participer à notre événement Dessine-moi une histoire. A 19h ce soir, les personnes qui se seront inscrites seront invitées à réaliser un projet collectif de bande dessinée. Grâce à 10 ordinateurs équipés d'une table de dessin, vous pourrez réaliser en direct sur un grand écran une œuvre collective. Pour vous inscrire, présentez-vous à la réception avant 18h. Attention, les places sont limitées à 10 personnes par session. Il y aura une session à 19h et une autre à 21h. Enfin, demain, à 16h, nous présenterons les lauréats de notre concours à vos planches dans le hall principal. Les trois premiers prix recevront des cadeaux en récompense de leur travail et leurs œuvres seront éditées par notre maison d'édition partenaire, la plus nouvelle. Rendez-vous donc demain à 1h pour ce grand moment attendu par tous ces jeunes talents. Profitez de ces trois journées de festival et n'hésitez pas à contacter les Hôtesses si vous avez des questions.",
-        "parameters": {
-          "pipeline_version": 4,
-          "engine": "sherpa-onnx",
-          "version": "2.0.1",
-          "model": "nemo-parakeet-tdt-0.6b-v3-int8",
-          "language": "multilingual_auto_includes_fr",
-          "model_files_sha256": {
-            "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/encoder.int8.onnx": "acfc2b4456377e15d04f0243af540b7fe7c992f8d898d751cf134c3a55fd2247",
-            "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/decoder.int8.onnx": "179e50c43d1a9de79c8a24149a2f9bac6eb5981823f2a2ed88d655b24248db4e",
-            "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/joiner.int8.onnx": "3164c13fc2821009440d20fcb5fdc78bff28b4db2f8d0f0b329101719c0948b3",
-            "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/tokens.txt": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
-          },
-          "provider": "cpu",
-          "decoding_method": "greedy_search",
-          "native_tdt_frame_step_seconds": 0.08,
-          "processing_windows": "Silero VAD utterances merged into <=27s processing windows for inputs >=29s; max 26s speech, 350ms silence, 200ms padding"
-        },
-        "provenance": "https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8.tar.bz2"
-      },
+    "8663dc9405a5067e66d79f7cc7e8d702eafb42912b13eff1873fc3319320b058": {
       "whisper": {
-        "file_sha256": "7e784cec93b7be643b60aa567c8488858e7e6df1ace55ec0241bc37236518bf7",
-        "source_sha256": "35385706f4bd060721ee53a739da2aad9bd4695987ef8779c3d3617276460c8d",
-        "text": "Bienvenue au salon de la bande dessinée de Montréal. Nous sommes au samedi 26 mai. Voici le programme du jour. De 9h à 20h, vous pouvez visiter les stands de nos 150 exposants, venus de 17 pays. Les plus grandes maisons d'édition francophones sont là pour vous présenter leur collection. Les auteurs et dessinateurs des bandes dessinées sont également présents. Pour faire signer vos albums préférés par leurs auteurs, rendez-vous tous les jours à partir de 18h dans le salon OPX. Les festivités commenceront cet après-midi avec un spectacle de danse asiatique dans le hall principal à 15h. Les artistes nous viennent directement du Japon et ont été invités par la maison d'édition KRL spécialisée en mongages japonais. L'artiste Paul Mougatier et sa bande nous présenteront ensuite leur spectacle original et émouvant intitulé \"Tout pour vos yeux\". Ce spectacle met des seins, théâtres, danse et musique. Je ne vous en dis pas plus pour garder la surprise car il s'agit d'un événement particulièrement original. Le café rencontre est ouvert tous les jours à partir de 10h. Vous y rencontrerez tous les professionnels de la Banque Décinée dans un cadre convivial et détendu. Si vous êtes dessinateur ou auteur de BD, c'est le lieu idéal pour faire des rencontres et présenter vos créations. D'ailleurs, si vous aimez dessiner, vous pouvez participer à notre événement \"Décide-moi une histoire\". A 19h ce soir, les personnes qui se seront inscrites seront invitées à réaliser un projet collectif de Banque Décinée. Grâce à 10 ordinateurs équipés d'une table de dessins, vous pourrez réaliser en direct, sur un grand écran, une œuvre collective. Pour vous inscrire, présentez-vous à la réception avant 18h. Attention, les places sont limitées à 10 personnes par session. Il y aura une session à 19h et une autre à 21h. Enfin, demain, à 16h, nous présenterons les L'Oréa de notre concours à vos planches dans le hall principal. Les trois premiers prix recevront des cadeaux en récompense de leur travail et leurs oeuvres seront éditées par votre maison d'édition partenaire la plus mauvais. Rendez-vous donc demain à 16h pour ce grand moment attendu par tous ces jeunes talents. profitez de ces trois journées de festival et n'hésitez pas à contacter les hôtesse si vous avez des questions.",
+        "file_sha256": "4de38ee98e58ae48f086a56d613d7ba8e4cc128c542bfd19861af77b758b0fa4",
+        "source_sha256": "8663dc9405a5067e66d79f7cc7e8d702eafb42912b13eff1873fc3319320b058",
+        "text": "Bienvenue au salon de la bande dessinée de Montréal. Nous sommes au samedi 26 mai. Voici le programme du jour. De 9h à 20h, vous pouvez visiter les stands de nos 150 exposants, venus de 17 pays. Les plus grandes maisons d'édition francophones sont là pour vous présenter leur collection. Les auteurs et dessinateurs des bandes dessinées sont également présents. Pour faire signer vos albums préférés par leurs auteurs, rendez-vous tous les jours à partir de 18h dans le salon OPX. Les festivités commenceront cet après-midi avec un spectacle de danse asiatique dans le hall principal à 15h. Les artistes nous viennent directement du Japon et ont été invités par la maison d'édition KRL spécialisée en mongage japonais. L'artiste Paul Mougatier s'abande, nous présenteront ensuite leur spectacle original et émouvant, intitulé \"Tout pour vos yeux\". Ce spectacle mette dessin, théâtre, danse et musique. Je ne vous en dis pas plus pour garder la surprise, car il s'agit d'un événement particulièrement original. Le café rencontre est ouvert tous les jours à partir de 10h. Vous y rencontrerez tous les professionnels de la Banque des Ciné dans un cadre convivial et détendu. Si vous êtes dessinateur ou auteur de BD, c'est le lieu idéal pour faire des rencontres et présenter vos créations. D'ailleurs, si vous aimez dessiner, vous pouvez participer à notre événement. Décide-moi une histoire. A 19h ce soir, les personnes qui se seront inscrites seront invitées à réaliser un projet collectif de Banque des Ciné. Grâce à 10 ordinateurs équipés d'une table de dessins, vous pourrez réaliser en direct sur un grand écran une œuvre collective. Pour vous inscrire, présentez-vous à la réception avant 18h. Attention, les places sont limitées à 10 personnes par session. Il y aura une session à 19h et une autre à 21h. Enfin, demain, à 16h, nous présentons les L'Oréa de notre concours à vos planches dans le hall principal. Les trois premiers prix recevront des cadeaux en récompense de leur travail et leurs oeuvres seront éditées par votre maison d'édition partenaire, la plus mauvais. Rendez-vous donc demain à 16h pour ce grand moment attendu par tous ces jeunes talents. profitez de ces trois journées de festival et n'hésitez pas à contacter les autesses si vous avez des questions.",
         "parameters": {
           "engine": "sherpa-onnx",
           "version": "2.0.1",
@@ -7259,6 +7200,16 @@
           "long_audio_segmentation": "Silero VAD utterances merged into <=27s processing windows; max 26s speech, 350ms silence, 200ms padding"
         },
         "provenance": "https://github.com/k2-fsa/sherpa-onnx/releases/tag/asr-models"
+      },
+      "ctc": {
+        "file_sha256": "abc10796a03fd98c218945d28e4c6d5674a5c992043e9ff47ad67c5b6fd8042e",
+        "source_sha256": "8663dc9405a5067e66d79f7cc7e8d702eafb42912b13eff1873fc3319320b058",
+        "text": "Bienvenues au salon de la Bande dessinée de Montréal. Nous sommes au samedi vingt simé. Voici le programme du jour. De neuf heures à vingt heures, vous pouvez visiter les stands de nos cent cinquante exposants venus de dix sept pays. Les plus grandes maisons d'édition francophones sont là pour vous présenter leurs collections. Les auteurs et dessinateurs des bandes dessinées sont également présents. Pour faire signer vos albums préférés par leurs auteurs, rendez vous tous les jours à partir de dix huit heures dans le salon Bobeix. Les festivités commenceront cept après midi avec un spectacle de danse asiatique dans le rôle principal à quinze heures. Les artistes nous viennent directement du Japon et ont été invités par la maison d'édition KL spécialisé en manga japonais. L'artiste Paul Mougatier et sa bande nous présenteront ensuite leur spectacle original et émouvant intitulé Tout pour vos yeux. Ce spectacle mène dessin, théâtre, danse et musique. Je ne vous en dis pas plus pour garder la surprise, car il s'agit d'un événement particulièrement original. Le café Rncontre est ouvert tous les jours à partir de dix heures. Vous y rencontrerez tous les professionnels de la bande dessinée dans un cadre convivial et d détendu. Si vous êtes dessinateurs ou auteurs de Béd, c'est le lieu idéal pour faire des rencontres et présenter vos créations. D'ailleurs, si vous aimez dessiner, vous pouvez participer à notre événement des six mois une histoire. À dix neuf heures, ce soir, les personnes qui se seront inscrites seront invitées à réaliser un projet collectif de bande dessinée. Grâce à dix ordinateurs équipés d'une table de dessin, vous pourrez réaliser en direct, sur un grand écran une œuvre collective. Pour vous inscrire, présentez moi la réception avant dix huit heures. Attention. Les places sont limitées à dix personnes par session. Il y aura une session à dix neuf heures et une autre à vint et une heure. Enfin, demain, à seize heures, nous présenterons les lauréats de notre concours à vos planches dans le hall principal. Les trois premiers prix recevront des cadeaux en récompense de leur travail, et leurs œuvres seront éditées par notre maison d'édition partenaire la plus mouvant. Rendez vous donc demain à seize heures pour ce grand moment attendu par tous ces jeunes alents. Profitez de ces trois journées de festival et n'hésitez pas à contacter les hôtesses si vous avez des questions",
+        "parameters": {
+          "engine": "sherpa-nemo-fast-conformer-ctc-en-de-es-fr-14288-int8",
+          "model_sha256": "85451f03e004d607f86f4d6291ca55a8ca984d7e32dedc828cebe7fe61447511"
+        },
+        "provenance": null
       }
     },
     "ed2561b5521dab92e64ced8d5af4760804eaac8d8effacfcd26b19c69dd399cc": {
@@ -8138,6 +8089,16 @@
           "long_audio_segmentation": "Silero VAD utterances merged into <=27s processing windows; max 26s speech, 350ms silence, 200ms padding"
         },
         "provenance": "https://github.com/k2-fsa/sherpa-onnx/releases/tag/asr-models"
+      },
+      "ctc": {
+        "file_sha256": "7840f9abf49c54b4a459ff5fede9b7565aef38cd0012a3426b7a658080ea1ea4",
+        "source_sha256": "9c11b46703e22584738a7b46f10efd4ff19bfba9970e0513d6ec89c5afca9c5a",
+        "text": "Cher client, suite à un problème technique, nous vous rappelons que la caisse prioritaire pour les personnes handicapées est fermée. Veuillez vous rediriger vers les caisses rapides ouù les caisses",
+        "parameters": {
+          "engine": "sherpa-nemo-fast-conformer-ctc-en-de-es-fr-14288-int8",
+          "model_sha256": "85451f03e004d607f86f4d6291ca55a8ca984d7e32dedc828cebe7fe61447511"
+        },
+        "provenance": null
       }
     },
     "a1d5c35508f32309bdd4305a31e16588a85a863224c67c86e420a4e53dde0db5": {
@@ -11915,6 +11876,16 @@
           "long_audio_segmentation": "Silero VAD utterances merged into <=27s processing windows; max 26s speech, 350ms silence, 200ms padding"
         },
         "provenance": "https://github.com/k2-fsa/sherpa-onnx/releases/tag/asr-models"
+      },
+      "ctc": {
+        "file_sha256": "8199c9d8d62a1225b30cac4eadd4f1e9bb48013e9e3570bd450313db1c010d46",
+        "source_sha256": "6f370c99e7bdc97a3f3cd18597aad5da74f5dcfe2efa4e6f0f0719c98e4ac7fb",
+        "text": "Bonjour. Nous vous rappelons que, le week end, le magasin ferme ses portes à douze heures quinze au lieu de vingt heures trente en semaine. Bonne journée",
+        "parameters": {
+          "engine": "sherpa-nemo-fast-conformer-ctc-en-de-es-fr-14288-int8",
+          "model_sha256": "85451f03e004d607f86f4d6291ca55a8ca984d7e32dedc828cebe7fe61447511"
+        },
+        "provenance": null
       }
     },
     "534131219e006920d7e898995b7726779ac52512e33f25422e583ae8722b2fc2": {
@@ -13536,6 +13507,16 @@
           "long_audio_segmentation": "Silero VAD utterances merged into <=27s processing windows; max 26s speech, 350ms silence, 200ms padding"
         },
         "provenance": "https://github.com/k2-fsa/sherpa-onnx/releases/tag/asr-models"
+      },
+      "ctc": {
+        "file_sha256": "8e92c8ccfedf055d3faf7f6a861583bff483a7c7fb885c6e72f259b8943527ac",
+        "source_sha256": "519465e83d576fb521683d08cfb5830f628847eb91d3d4f0cddd65df19d6a3ac",
+        "text": "RadiotrafIique. Messages au conducteur. Il faut faire attention sur l'autoroute à un. Il y a beaucoup de neige à l'île. La vitesse est limitée à cent kilomètres heures sur neuf kilomètres. Pour plus d'informations, appeler le zéro neuf dix",
+        "parameters": {
+          "engine": "sherpa-nemo-fast-conformer-ctc-en-de-es-fr-14288-int8",
+          "model_sha256": "85451f03e004d607f86f4d6291ca55a8ca984d7e32dedc828cebe7fe61447511"
+        },
+        "provenance": null
       }
     },
     "acc624c3985f33ff15043e7e253f9dd9b4ea329e109c1b39448d64471b22020f": {
@@ -14112,34 +14093,11 @@
         "provenance": "https://github.com/k2-fsa/sherpa-onnx/releases/tag/asr-models"
       }
     },
-    "5ac30f8f1be6457685b9d60b2f2620efcc5dd5bc03162e026489f21d2d7bef0f": {
-      "parakeet": {
-        "file_sha256": "d9f5679bc4527c9f9acb1f59ee8ebd17529542ba0a11a4fdce09ca6bce0aba62",
-        "source_sha256": "5ac30f8f1be6457685b9d60b2f2620efcc5dd5bc03162e026489f21d2d7bef0f",
-        "text": "Bienvenue au parc Aquatica. Avant accéder aux piscines, merci de vous changer dans les vestiaires et de prendre une douche. Le port du bonnet de bain est obligatoire.",
-        "parameters": {
-          "pipeline_version": 4,
-          "engine": "sherpa-onnx",
-          "version": "2.0.1",
-          "model": "nemo-parakeet-tdt-0.6b-v3-int8",
-          "language": "multilingual_auto_includes_fr",
-          "model_files_sha256": {
-            "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/encoder.int8.onnx": "acfc2b4456377e15d04f0243af540b7fe7c992f8d898d751cf134c3a55fd2247",
-            "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/decoder.int8.onnx": "179e50c43d1a9de79c8a24149a2f9bac6eb5981823f2a2ed88d655b24248db4e",
-            "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/joiner.int8.onnx": "3164c13fc2821009440d20fcb5fdc78bff28b4db2f8d0f0b329101719c0948b3",
-            "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/tokens.txt": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
-          },
-          "provider": "cpu",
-          "decoding_method": "greedy_search",
-          "native_tdt_frame_step_seconds": 0.08,
-          "processing_windows": "Silero VAD utterances merged into <=27s processing windows for inputs >=29s; max 26s speech, 350ms silence, 200ms padding"
-        },
-        "provenance": "https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8.tar.bz2"
-      },
+    "b0111a7dc952a396dad692dbc8c7b648637647482f1e3d9b0cae9b1fa9312467": {
       "whisper": {
-        "file_sha256": "2038577adf9c60908b775c26d3b27f113360e97e5f5d495002ed79ecca146588",
-        "source_sha256": "5ac30f8f1be6457685b9d60b2f2620efcc5dd5bc03162e026489f21d2d7bef0f",
-        "text": "Bienvenue au parc Aquaticà. Avant d'accéler aux piscines, merci de vous changer dans les vestiaires et de prendre une douche. Le port du Bonnet de Bain est obligatoire.",
+        "file_sha256": "85a76f17b012ef34464389f0aa86070479ac92025ec419bc53c6399b7651c117",
+        "source_sha256": "b0111a7dc952a396dad692dbc8c7b648637647482f1e3d9b0cae9b1fa9312467",
+        "text": "Bienvenue au parc Aquaticà. Avant d'accéder aux piscines, merci de vous changer dans les vestiaires et de prendre une douche. Le port du Bonnet de Bain est obligatoire.",
         "parameters": {
           "engine": "sherpa-onnx",
           "version": "2.0.1",
@@ -14159,9 +14117,9 @@
         "provenance": "https://github.com/k2-fsa/sherpa-onnx/releases/tag/asr-models"
       },
       "ctc": {
-        "file_sha256": "93ba72ece4277188a7e7c607e59fce7fa5959c8011d9abe1039e7765767c87b8",
-        "source_sha256": "5ac30f8f1be6457685b9d60b2f2620efcc5dd5bc03162e026489f21d2d7bef0f",
-        "text": "Bienvenu au parc Aquatica. Avant d'accéder aux piscines, merci de vous changer dans les vestiaires et de prendre une douche. Le port du bonnet de bain est obligatoire",
+        "file_sha256": "24927172b8771450236c8c368b60923c9888bf008b0d4443ef7d895d6006cc4a",
+        "source_sha256": "b0111a7dc952a396dad692dbc8c7b648637647482f1e3d9b0cae9b1fa9312467",
+        "text": "Bienvenue au parc Aquatica. Avant d'accéder aux piscines, merci de vous changer dans les vestiaires et de prendre une douche. Le port du bonnet de bain est obligatoire",
         "parameters": {
           "engine": "sherpa-nemo-fast-conformer-ctc-en-de-es-fr-14288-int8",
           "model_sha256": "85451f03e004d607f86f4d6291ca55a8ca984d7e32dedc828cebe7fe61447511"
@@ -15304,34 +15262,11 @@
         "provenance": "https://github.com/k2-fsa/sherpa-onnx/releases/tag/asr-models"
       }
     },
-    "346f3417821e75cd2bce27a0cc9dd391ef8e38da1f53c8867fc6b642cd540fb8": {
-      "parakeet": {
-        "file_sha256": "fea142414f85bb3a3601feb477fb68c702ecd84e8649fd0cbae401561c84527b",
-        "source_sha256": "346f3417821e75cd2bce27a0cc9dd391ef8e38da1f53c8867fc6b642cd540fb8",
-        "text": "Alors voici l'addition. Merci. Alors voyons, ça fait pour nous trois 40 euros en tout. Tiens, regarde. Bon. On divise en trois, non? Ah non. Moi j'ai pris qu'une salade verte à 6 euros et de l'eau. Pardon Ludivine, c'est vrai. Faisons les calculs donc. Toi, Nicolas, qu'est-ce que tu as pris déjà? J'ai pris un steak frites, ça coûtait 10 euros. Plus un jus de fruit à 3,50 euros. Ok. Moi j'ai pris un plat de pâte à 7 euros et un dessert à 4 euros. 7 plus 4 plus 10 plus. On n'a pas dépensé autant. Ils ont fait une erreur à la caisse apparemment. Attends Aurore, j'ai pas compté mon dessert. Finalement tu as dépensé autant que nous. Je calcule à nouveau. Il coûtait combien ton dessert? Euh. Dans les 5 euros? Bon. Mais ils ont quand même compté trop. Je rappelle le serveur. S'il vous plaît? Oui, mademoiselle. Je crois que vous avez fait une petite erreur dans l'addition. Il y a 4,50 euros en plus. Attendez, donnez-moi votre ticket, je vais vérifier tout de suite avec le patron à la caisse. Heureusement qu'on a refait nos comptes. Si on avait divisé par 3, on ne s'en serait pas aperçu. Voilà voilà, je vous explique tout. Les 4,50 euros en plus correspondent exactement au prix du couvert. 1,50€ par personne. Et qu'est-ce que c'est le prix du couvert? Ce sont des frais pour le service et pour le pain, etc. Ah, très bien, merci. Alors récapitulons. Moi je dois 15 euros. Ludivine, 12 euros cinquante. Et Aurore. 12,50 euros aussi. Voilà, monsieur. 40 euros. Merci. Au revoir et à bientôt.",
-        "parameters": {
-          "pipeline_version": 4,
-          "engine": "sherpa-onnx",
-          "version": "2.0.1",
-          "model": "nemo-parakeet-tdt-0.6b-v3-int8",
-          "language": "multilingual_auto_includes_fr",
-          "model_files_sha256": {
-            "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/encoder.int8.onnx": "acfc2b4456377e15d04f0243af540b7fe7c992f8d898d751cf134c3a55fd2247",
-            "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/decoder.int8.onnx": "179e50c43d1a9de79c8a24149a2f9bac6eb5981823f2a2ed88d655b24248db4e",
-            "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/joiner.int8.onnx": "3164c13fc2821009440d20fcb5fdc78bff28b4db2f8d0f0b329101719c0948b3",
-            "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/tokens.txt": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
-          },
-          "provider": "cpu",
-          "decoding_method": "greedy_search",
-          "native_tdt_frame_step_seconds": 0.08,
-          "processing_windows": "Silero VAD utterances merged into <=27s processing windows for inputs >=29s; max 26s speech, 350ms silence, 200ms padding"
-        },
-        "provenance": "https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8.tar.bz2"
-      },
+    "b8cdbac76cc4c303456ee1f8b6a112f00c88dac5d30cf23577e4f5cbbac0baf4": {
       "whisper": {
-        "file_sha256": "c1b1ed01a7ec42ba8df2e5ccc42400739e780e881bc27eca16621b33d12334b0",
-        "source_sha256": "346f3417821e75cd2bce27a0cc9dd391ef8e38da1f53c8867fc6b642cd540fb8",
-        "text": "Alors, voici l'addition. Merci. Alors voyons, ça fait pour nous trois... 40 euros en tout. Tiens, regarde, Aurora. Bon, on divise en trois, non ? Ah non ! Moi, j'ai pris qu'une salle adverte à 6 euros et de l'eau. Pardon, Ludivine, c'est vrai. Faisons les calculs, donc. Toi, Nicolas, qu'est-ce que tu as pris déjà ? J'ai pris un steak frite, ça coûtait 10 euros. Plus un jus de fruit à 3,50 euros. Ok. Moi, j'ai pris un plat de pâte à 7 euros et un dessert à 4 euros. 7 + 4 + 10 +... On n'a pas dépensé autant. Ils ont fait une erreur à la caisse, apparemment. Attends, auror, j'ai pas compté mon dessert. Finalement, tu as dépensé autant que nous. Je calcul à nouveau. Il coûtait combien ton dessert ? Dans les 5 euros ? Bon, mais ils ont quand même compté trop. Je rappelle le serveur. S'il vous plaît ? Oui, mademoiselle. Je crois que vous avez fait une petite erreur dans l'addition. Il y a 4,50 euros en plus. Attendez, donnez-moi votre ticket. Je vais vérifier tout de suite avec le patron à la caisse. Heureusement qu'on a refait nos comptes. Si on avait divisé par 3, on ne s'en serait pas aperçu. Voilà voilà, je vous explique tout. Les 4 euros 50 en plus correspondent exactement au prix du couvert 1,50 euros par personne. Et qu'est-ce que c'est le prix du couvert ? Ce sont des frais pour le service et pour le pain, etc. Ah, très bien, merci. Alors récapitulons, moi je dois 15 euros, Ludivine 12,50 euros et Aurora... 12,50€ aussi. Voilà monsieur, 40€. Merci. Au revoir et à bientôt.",
+        "file_sha256": "71397006744c81b8b711f49f57c3338509a8703a28aa83f340f310d2e26f9dc8",
+        "source_sha256": "b8cdbac76cc4c303456ee1f8b6a112f00c88dac5d30cf23577e4f5cbbac0baf4",
+        "text": "Alors, voici l'addition. Merci. Alors voyons, ça fait pour nous trois... 40 euros en tout. Tiens, regarde, Aurora. Bon, on divise en trois, non ? Ah non ! Moi, j'ai pris qu'une salade verte à 6 euros et de l'eau. Pardon, Ludivine, c'est vrai. Faisons les calculs donc. Toi, Nicolas, qu'est-ce que tu as pris déjà ? J'ai pris un steak frite, ça coûtait 10 euros. Plus un jus de fruit à 3,50 euros. Ok. Moi j'ai pris un plat de pâte à 7 euros et un dessert à 4 euros. 7 + 4 + 10 +... On n'a pas dépensé autant. Ils ont fait une erreur à la caisse apparemment. Attends, auror, j'ai pas compté mon dessert. Finalement tu as dépensé autant que nous. Je calcul à nouveau. Il coutait combien ton dessert ? Dans les 5 euros ? Bon, mais ils ont quand même compté trop. Je rappelle le serveur. S'il vous plaît ? Oui, mademoiselle. Je crois que vous avez fait une petite erreur dans l'addition. Il y a 4,50 euros en plus. Attendez, donnez-moi votre ticket. Je vais vérifier tout de suite avec le patron à la caisse. Heureusement qu'on a refait nos comptes. Si on avait divisé par 3, on ne s'en serait pas aperçu. Voilà voilà, je vous explique tout. Les 4 euros 50 en plus correspondent exactement au prix du couvert 1,50 euros par personne. Et qu'est-ce que c'est le prix du couvert ? Ce sont des frais pour le service et pour le pain, etc. Ah, très bien, merci. Alors récapitulons, moi je dois 15 euros, Ludivine 12,50 euros et Aurora... 12,50€ aussi. Voilà monsieur, 40€. Merci. Au revoir et à bientôt.",
         "parameters": {
           "engine": "sherpa-onnx",
           "version": "2.0.1",
@@ -15351,9 +15286,9 @@
         "provenance": "https://github.com/k2-fsa/sherpa-onnx/releases/tag/asr-models"
       },
       "ctc": {
-        "file_sha256": "0ef651b88bb62dd2c3e1e3d9aeec35c59eb7f5ced107ec5897d7503c48f836ba",
-        "source_sha256": "346f3417821e75cd2bce27a0cc9dd391ef8e38da1f53c8867fc6b642cd540fb8",
-        "text": "Alors, voici l'addition. Merci. Alors voyons, Ça fait pour nous trois quarante euros en tout. Tiens, regarde Aurore. Bon. On divise en trois nanon. Ah. Non. Moi, j'ai pris qu'une salade verte à six euros et de l'eau. Pardon le divine, c'est vrai. Faisons les calculs donc. Toi, Nicolas, Qu'est ce tu as pris déjà? J'ai pris un stacck frite, ça coûtait dix euros, plus un jus de fruit à trois euros cinquante. Oc. Moi j'ai pris un plat de pâte à sept euros et un dessert à quatre euros. Sept, plus quatre, plus dix plus On n'a pas dépensé autant. Ils ont fait une erreur à la caisse apparem. Attends, Aurore, J'ai pas compté mon dessert. Finalement tu as dépensé autant que nous. Je calcule à nouveau. Ils coûtait combien ton dessert. E Dans les cinq euros, bon. Mais ils ont quand même compté trop. Je rappelle le serveur. S'il vous plaît? Oui, Mademoiselle. Je crois que vous avez fait une petite erreur dans l'addition. Il y a quatre euros cinquante en plus. Attendez. donnez moi votre tickt. jeJe vais vérifier tout de suite avec le patron à la caisse. Heureusement qu'on a refait nos comptes. Si on avait divisés par trois, on ne s'en serait pas aperçu. Voilà, voilà. Je vous explique tout. Les quatre euros cinquante en plus, correspondent exactement au prix du couvert. unU euro cinquante par personne. Et qu'est ce que c'est le prix du couvert? Ce sont des frais pour le service et pour le pain, etc. Ah. Très bien, merci. Alors récapitulons. Moi, je dois quinze euros. L divin, douze euros cinquante, et Aurore douze euros cinquante aussi. Voilà, monsieur.Quarante euros. Merci. A voir, et à bientôt",
+        "file_sha256": "a29f905f6083a2b565a6d1857bd4469431cf02df09acc405312759e502983b9f",
+        "source_sha256": "b8cdbac76cc4c303456ee1f8b6a112f00c88dac5d30cf23577e4f5cbbac0baf4",
+        "text": "Alors, voici l'addition. Merci. Alors voyons, Ça fait pour nous trois quarante euros en tout. Tiens, regarde Aurore. Bon. On divise en trois nan. Ah. Non. Moi, j'ai pris qu'une salade verte à six euros et de l'eau. Pardon le divine, c'est vrai. Faisons les calculs donc. Toi, Nicolas,  qu'est ce que tu as pris déjà? J'ai pris un stacck frite, Çça coûtait dix euros, plus un jus de fruit à trois euros cinquante. O. Moi, j'ai pris un plat de pâte à sept euros, et un dessert à quatre euros. Sept plus quatre, plus dix plus On n'a pas dépensé autant. Ils ont fait une erreur à la caisse, apparemment Attends Aurore, J'aia pas compté mon dessert. Finalement tu as dépensé autant que nous. Je calcule à nouveau. Ils coûtait combien ton dessert.  Dans les cinq euros, bon. Mais ils ont quand même compté trop. Je rappelle le serveur. S'il vous plaît? Oui, Mademoiselle. Je crois que vous avez fait une petite erreur dans l'addition. Il y a quatre euros cinquante en plus. Attendez. donnez moi votre tickt. jeJe vais vérifier tout de suite avec le patron à la caisse. Heureusement qu'on a refait nos comptes. Si on avait divisés par trois, on ne s'en serait pas aperçu. Voilà. voilà. Je vous explique tout. Les quatre euros cinquante en plus, correspondent exactement au prix du couvert U euroro cinquante par personne. Et qu'est ce que c'est le prix du couvert? Ce sont des frais pour le service et pour le pain, etc. Ah. Très bien, merci. Alors récapitulons. Moi, je dois quinze euros. L divine, douze euros cinquante, et Aurore douze euros cinquante aussi. Voilà, monsieur. Quarante euros. Merci. Au voir, et à bientôt",
         "parameters": {
           "engine": "sherpa-nemo-fast-conformer-ctc-en-de-es-fr-14288-int8",
           "model_sha256": "85451f03e004d607f86f4d6291ca55a8ca984d7e32dedc828cebe7fe61447511"
@@ -24068,6 +24003,16 @@
           "long_audio_segmentation": "Silero VAD utterances merged into <=27s processing windows; max 26s speech, 350ms silence, 200ms padding"
         },
         "provenance": "https://github.com/k2-fsa/sherpa-onnx/releases/tag/asr-models"
+      },
+      "ctc": {
+        "file_sha256": "52b6a7cd4a8b28d17b0159e0f9bbb95b5caee7b85876b0d4382463feff665d46",
+        "source_sha256": "f126b0e84254dc4e1127dfa9af29ab7fe6e116435a406436724cb214d4307f72",
+        "text": "n'oubliez pas votre manteau, votre écharpe et vos gants, seulement quatre degrés à l'île",
+        "parameters": {
+          "engine": "sherpa-nemo-fast-conformer-ctc-en-de-es-fr-14288-int8",
+          "model_sha256": "85451f03e004d607f86f4d6291ca55a8ca984d7e32dedc828cebe7fe61447511"
+        },
+        "provenance": null
       }
     },
     "1a3efe2723917bfff0cd6405d28c9ce2403cdd5c624a79f92bfb35cc1d426c7d": {
@@ -32584,6 +32529,16 @@
           "long_audio_segmentation": "Silero VAD utterances merged into <=27s processing windows; max 26s speech, 350ms silence, 200ms padding"
         },
         "provenance": "https://github.com/k2-fsa/sherpa-onnx/releases/tag/asr-models"
+      },
+      "ctc": {
+        "file_sha256": "c570c71f276a04bdfb9add342c3577b1689cf67dd68ad6d2e3d0dc73e15e5f1d",
+        "source_sha256": "72ddbff44e178f8b8d283041024bd702e6435f0c940dfd6a3f3a18afc8ea83e0",
+        "text": "Michal, tu m'aides à sortir les courses de la voiture, s'il te plaît? Oui, j'arrive",
+        "parameters": {
+          "engine": "sherpa-nemo-fast-conformer-ctc-en-de-es-fr-14288-int8",
+          "model_sha256": "85451f03e004d607f86f4d6291ca55a8ca984d7e32dedc828cebe7fe61447511"
+        },
+        "provenance": null
       }
     },
     "bcbc8fbf1e370223a2b669a5472112080d7b553b575c31b436030fb03c1cabc2": {
@@ -33017,6 +32972,16 @@
           "long_audio_segmentation": "Silero VAD utterances merged into <=27s processing windows; max 26s speech, 350ms silence, 200ms padding"
         },
         "provenance": "https://github.com/k2-fsa/sherpa-onnx/releases/tag/asr-models"
+      },
+      "ctc": {
+        "file_sha256": "5dcff3bafa952a8830b28929b6c5c90077ae7edcb6c49b731ed880d0c8d75b68",
+        "source_sha256": "7bdc951ce40674cdbad949c948de1a046476879493559306e1450c8aacc4036c",
+        "text": "Ah. Salut, Tom. Quelle surprise de te retrouver là. Tu es venu voir le concert de missterg. Salut, Sophie. Je ne pensais pas que tu viendrais voir ce genre de concert. Tu as aimé. Pour être sincère. Non, pas vraiment. Je suis venu accompagner ma soeur qui est fane de misterg. Pour moi, ce n'est pas de la musique, c'est plutôt du bruit. Je me suis ennuyé du début jusqu'à la fin, et j'ai un mal de tête horrible. La musique électro punc qu'il faut aimer, c'est sûr. Moi j'ai adoré. J'ai t tout leur cédé. C'était un rêve de les voir en vrai. Ils sont uniques. Il n'y a pas un groupe qui' leur ressembleent. Heureusement, car je n'aimerais pas les entendre encore une fois. Moi, je trouve ça trop violent. Il n'y a pas de mélodie, sauf peut - être une chanson qui était simpa. Attends. Laisse moi deviner. Tu as aimé, laisse parler ton cœur. Oui, c'est celle là. C'est mon côté romantique. Franchement, les autres n'avaient aucun intérêt, ni dans les textes, ni dans la composition. Même les titres sont ridicules. La mouche voleuse, crache ton destin. Moi, je trouve ça original. Il faut un peu de temps. Je suis sûr que si tu écoutes plus souvent, tu vas finir par apprécier. Franchement, je n'ai pas envie. Par contre, j'ai adoré le lieu. Au bord du lac, avec toutes les scènes. Le festival est vraiment génial. Il mélange toutes les musiques. C'est vrai. C'est un super endroit. Si tu aimes le reggae, il y a un concert génial qui commence dans Attends. Je regarde le programme. Voilà. c'est ça. Dans dix minutes, sur la scène numéro trois. Tu veux venir avec nous? Je suis avec deux copins. Oui, avec plaisir. J'adore le reggae. Génial. On passe dans une caféterria avant pour manger un sandwich? Je ne sais pas toi, mais nous on a très faim. Je demande à ma soeur si elle est d'accord. Percau, j'adorerai. Ça me changera de l'lectu.",
+        "parameters": {
+          "engine": "sherpa-nemo-fast-conformer-ctc-en-de-es-fr-14288-int8",
+          "model_sha256": "85451f03e004d607f86f4d6291ca55a8ca984d7e32dedc828cebe7fe61447511"
+        },
+        "provenance": null
       }
     },
     "6855344a2e8f271868821adb6333ca6cc76f902e7b9738f5c8d9d5781ec29e92": {
@@ -33935,33 +33900,10 @@
         "provenance": "https://github.com/k2-fsa/sherpa-onnx/releases/tag/asr-models"
       }
     },
-    "1e10990fa438c9c3290f2b64447343b8469777738350279d948bbf0d37840add": {
-      "parakeet": {
-        "file_sha256": "20bc251a3d57864c56432dc714eb7eaa98f18994ce8ac14cce7cc1c8b0b7a9ca",
-        "source_sha256": "1e10990fa438c9c3290f2b64447343b8469777738350279d948bbf0d37840add",
-        "text": "Ne manquez pas ce week-end, le plus grand festival de gastronomie au monde, qui aura lieu à Paris du 20 au 25 juillet. Vous pouvez dès à présent réserver vos billets en ligne sur www.festivalculinaire.fr.",
-        "parameters": {
-          "pipeline_version": 4,
-          "engine": "sherpa-onnx",
-          "version": "2.0.1",
-          "model": "nemo-parakeet-tdt-0.6b-v3-int8",
-          "language": "multilingual_auto_includes_fr",
-          "model_files_sha256": {
-            "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/encoder.int8.onnx": "acfc2b4456377e15d04f0243af540b7fe7c992f8d898d751cf134c3a55fd2247",
-            "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/decoder.int8.onnx": "179e50c43d1a9de79c8a24149a2f9bac6eb5981823f2a2ed88d655b24248db4e",
-            "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/joiner.int8.onnx": "3164c13fc2821009440d20fcb5fdc78bff28b4db2f8d0f0b329101719c0948b3",
-            "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/tokens.txt": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
-          },
-          "provider": "cpu",
-          "decoding_method": "greedy_search",
-          "native_tdt_frame_step_seconds": 0.08,
-          "processing_windows": "Silero VAD utterances merged into <=27s processing windows for inputs >=29s; max 26s speech, 350ms silence, 200ms padding"
-        },
-        "provenance": "https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8.tar.bz2"
-      },
+    "b11393aed055cec4343e81bcb590b777dadb493d2b9ed47d201134b6f2fcbda2": {
       "whisper": {
-        "file_sha256": "d8411560dbbd7dcdd405817705677de669775979db62036ae5d5aba537c41113",
-        "source_sha256": "1e10990fa438c9c3290f2b64447343b8469777738350279d948bbf0d37840add",
+        "file_sha256": "c499c00aa64ac6ff93f240b3c3a8e048161818deb59406462e2345fdc5b6df9d",
+        "source_sha256": "b11393aed055cec4343e81bcb590b777dadb493d2b9ed47d201134b6f2fcbda2",
         "text": "Ne manquez pas ce week-end le plus grand festival de gastronomie au monde qui aura lieu à Paris du 20 au 25 juillet. Vous pouvez dés appréhend réserver vos billets en ligne sur www.festivalculinaire.fr",
         "parameters": {
           "engine": "sherpa-onnx",
@@ -33982,9 +33924,9 @@
         "provenance": "https://github.com/k2-fsa/sherpa-onnx/releases/tag/asr-models"
       },
       "ctc": {
-        "file_sha256": "60bf54dd6e843f41150fc5a2ff0be1c19115be5db13e9fa18260a599a2593341",
-        "source_sha256": "1e10990fa438c9c3290f2b64447343b8469777738350279d948bbf0d37840add",
-        "text": "Ne manquez pas ce week end, le plus grand festival de gastronomie au monde qui aura lieu à Paris du vingt au vingt - cinq juillet. Vous pouvez ds à présent réserver vos billets en ligne sur . f culinaire. fr",
+        "file_sha256": "e8f5e314e2cf91c576613223fa5b6e174fedc47ef2b88292d322e0e7f0fd865d",
+        "source_sha256": "b11393aed055cec4343e81bcb590b777dadb493d2b9ed47d201134b6f2fcbda2",
+        "text": "Ne manquez pas ce week end, le plus grand festival de gastronomie au monde qui aura lieu à Paris du vingt au vingt - cinq juillet. Vous pouvez ds à présent réserver vos billets en ligne sur  culinaire. f",
         "parameters": {
           "engine": "sherpa-nemo-fast-conformer-ctc-en-de-es-fr-14288-int8",
           "model_sha256": "85451f03e004d607f86f4d6291ca55a8ca984d7e32dedc828cebe7fe61447511"
@@ -40239,6 +40181,16 @@
           "long_audio_segmentation": "Silero VAD utterances merged into <=27s processing windows; max 26s speech, 350ms silence, 200ms padding"
         },
         "provenance": "https://github.com/k2-fsa/sherpa-onnx/releases/tag/asr-models"
+      },
+      "ctc": {
+        "file_sha256": "0cf72ae30e4610febcf901b76121584c82963ff94fb596a9025e92a8993b78b6",
+        "source_sha256": "d0c88f559597cc03dc32f9e884dcd03d2ce93394855f1667ed08374d0a64a6cd",
+        "text": "Alors, aujourd'hui, dans l'émission Graine de jeune. Oonn va comparer deux modes de vie complètement différents. Nous avons invité Eddi, Treize ans, qui habite sur une petite île de la Bretagne, etE Béa, quinze ans. qui vit au cour d'une grande ville, à l'île. D quotidiens opposés. Eddi. Comment définiriez vous, en deux mots. La vie sur l'île de Wédick au large de Quibron. En deux mots. calme et sérénité. Trop parfois. Et vous Béa? à l'île? Tout le contraire. Stress et quotidien rempis. Alors, Eddi. Décrivez nous une journée type. En fait, il n'y a pas de collège à Wédick. Alors le matin, je prends le bateau pour aller à Quiberron, et je rentre le soir après les cours. J'adore le trajet du soir, surtout quand arrivent les beaux jours, le bon air de la mer. Évidemment, le soir à Wédick, il n'y a pas grand'chose à faire. Il n'y a qu'une centaine d'habitants, et les jeunes peuvent se compter sur les doigts d'une main. Alors des fois, on se rencontre pour se promener, discuter ou faire de la musique. Le cinéma, les spectacles et le shopping? Il n'y en a pas. c'est sur le continent, et les bateaux ne circulent pas très tard, sauf l'été. Donc l'hiver, c'est très, très calme. Mais j'apprécie aussi la solitude. Je suis habitué comme ça, et ça ne me déplaît pas. On s'amuse bien l'été par contre. Les restaurants ouvrent, les touristes arrivent et on fait connaissance avec des jeunes de tous les horizons. Vous, Béa, à l'île? C'est comment? On court tout le temps. Le matin, j'accompagne mon peit frère à l'école, et je cours prendre le bus pour aller au lycée. Il y a beaucoup de trafic. Aalors il m'et presque une heure pour arriver. Le soir, c'est pareil. Pendant la semaine, c'est un peu stressant. Par contre, je sors beaucoup avec mes amis le week end. Il y a toujours quelque chose à faire. Des sorties au bowling, des soirées à la Pizzeria, les boutiques, les anniversaires des uns et des autres. Je ne passe pas un samedi sans voir mes amis. Ça, c'est important pour moi. Béa. Eddi, E ce que vous aimeriez échanger votre quotidien? Oui. Pourquoi pas? Mais pas pour la vie",
+        "parameters": {
+          "engine": "sherpa-nemo-fast-conformer-ctc-en-de-es-fr-14288-int8",
+          "model_sha256": "85451f03e004d607f86f4d6291ca55a8ca984d7e32dedc828cebe7fe61447511"
+        },
+        "provenance": null
       }
     },
     "7a93098200c637d7169d8796bc94d31ff2e087990ed68953553fc446166053ae": {
@@ -41427,6 +41379,16 @@
           "long_audio_segmentation": "Silero VAD utterances merged into <=27s processing windows; max 26s speech, 350ms silence, 200ms padding"
         },
         "provenance": "https://github.com/k2-fsa/sherpa-onnx/releases/tag/asr-models"
+      },
+      "ctc": {
+        "file_sha256": "176ca73817c894b6a5f84f63d72c80fe412d7b26dbf218725e63554d4db15df5",
+        "source_sha256": "668f156c3c6f00fa508c118249c5111172d05b7adc9bf4f4502faf3d16699f58",
+        "text": "où sont les yaourtes, s'il vous plaît? Dans le rayon frais au fond du magasin. Merci, monsieur",
+        "parameters": {
+          "engine": "sherpa-nemo-fast-conformer-ctc-en-de-es-fr-14288-int8",
+          "model_sha256": "85451f03e004d607f86f4d6291ca55a8ca984d7e32dedc828cebe7fe61447511"
+        },
+        "provenance": null
       }
     },
     "acef2dc9341028dc303ee860cd57dcaab56b25e6be27321a39438284c8e906a5": {
@@ -43879,34 +43841,11 @@
         "provenance": "https://github.com/k2-fsa/sherpa-onnx/releases/tag/asr-models"
       }
     },
-    "e3ba69667cc1a73ba8f3becb238cdc856c1bd66ac76a0d5b8f802c07a00310a3": {
-      "parakeet": {
-        "file_sha256": "0581f61c80abec7efd4e163ec49786b83380e0ef6e80f5738b019e058f00ac8d",
-        "source_sha256": "e3ba69667cc1a73ba8f3becb238cdc856c1bd66ac76a0d5b8f802c07a00310a3",
-        "text": "Dis, ça te dit de venir au cinéma avec Lucie et moi? Oui, pourquoi pas. Quand? Vendredi soir. La séance est à 21h. Désolée, mais je suis déjà prise vendredi. Dommage. Sera pour une autre fois.",
-        "parameters": {
-          "pipeline_version": 4,
-          "engine": "sherpa-onnx",
-          "version": "2.0.1",
-          "model": "nemo-parakeet-tdt-0.6b-v3-int8",
-          "language": "multilingual_auto_includes_fr",
-          "model_files_sha256": {
-            "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/encoder.int8.onnx": "acfc2b4456377e15d04f0243af540b7fe7c992f8d898d751cf134c3a55fd2247",
-            "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/decoder.int8.onnx": "179e50c43d1a9de79c8a24149a2f9bac6eb5981823f2a2ed88d655b24248db4e",
-            "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/joiner.int8.onnx": "3164c13fc2821009440d20fcb5fdc78bff28b4db2f8d0f0b329101719c0948b3",
-            "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/tokens.txt": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
-          },
-          "provider": "cpu",
-          "decoding_method": "greedy_search",
-          "native_tdt_frame_step_seconds": 0.08,
-          "processing_windows": "Silero VAD utterances merged into <=27s processing windows for inputs >=29s; max 26s speech, 350ms silence, 200ms padding"
-        },
-        "provenance": "https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8.tar.bz2"
-      },
+    "3f914fd72b86013cef82fcdc8bd732ed621a495fc8ef42f2102cfce654e79f4c": {
       "whisper": {
-        "file_sha256": "1de86bfd8a6878f86f1bcd09421f64a7e12565fb720c4f051a40ee642d75e93d",
-        "source_sha256": "e3ba69667cc1a73ba8f3becb238cdc856c1bd66ac76a0d5b8f802c07a00310a3",
-        "text": "Dis, ça te dit de venir au cinéma avec Lucie et moi ? Oui, pourquoi pas ? Quand ? Vendredi soir, la séance est à 21h. Désolé, mais je suis déjà prise vendredi. Dommage, ce sera pour une autre fois.",
+        "file_sha256": "3a0488dbc3ceb6d138200139441ccc24ff40067bcd01024e8543316087093f1b",
+        "source_sha256": "3f914fd72b86013cef82fcdc8bd732ed621a495fc8ef42f2102cfce654e79f4c",
+        "text": "Dis, ça te dit de venir au cinéma avec Lucie et moi ? Oui, pourquoi pas ? Quand ? Vendredi soir, la séance est à 21h. Désolé, mais je suis déjà prise vendredi. Dommage, ça sera pour une autre fois.",
         "parameters": {
           "engine": "sherpa-onnx",
           "version": "2.0.1",
@@ -43926,9 +43865,9 @@
         "provenance": "https://github.com/k2-fsa/sherpa-onnx/releases/tag/asr-models"
       },
       "ctc": {
-        "file_sha256": "8a774714ba0420fdfbc38e3d8672856562e948f2031628f264ff03c0c249197a",
-        "source_sha256": "e3ba69667cc1a73ba8f3becb238cdc856c1bd66ac76a0d5b8f802c07a00310a3",
-        "text": "Ça te dit de venir au cinéma avec Lucer et moi? Oui. Pourquoi pas? Quand? Vendredi soir. La séance est à vingt et une heurees. Désolée, mais je suis déjà prise vendredi. Dommage. C sera pour une autre fois",
+        "file_sha256": "da9813803227ad2620507150e6737f142b661be2108689505e333b7e9482744f",
+        "source_sha256": "3f914fd72b86013cef82fcdc8bd732ed621a495fc8ef42f2102cfce654e79f4c",
+        "text": "Ça te dit de venir au cinéma avec Lucier et moi? Oui. Pourquoi pas? Quand? Vendredi soir. La séance est à vingt et une heure. Désolée, mais je suis déjà prise vendredi. Dommage. Ce sera pour une autre fois",
         "parameters": {
           "engine": "sherpa-nemo-fast-conformer-ctc-en-de-es-fr-14288-int8",
           "model_sha256": "85451f03e004d607f86f4d6291ca55a8ca984d7e32dedc828cebe7fe61447511"

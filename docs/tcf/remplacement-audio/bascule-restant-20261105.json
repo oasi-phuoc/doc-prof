@@ -1,33 +1,36 @@
 {
   "summary": {
-    "remaining_references": 213,
+    "remaining_references": 208,
     "reasons": {
-      "editorial_transcript_and_question_review_required": 46,
-      "source_boundary_review_required": 105,
+      "editorial_transcript_and_question_review_required": 36,
+      "source_boundary_review_required": 98,
       "whisper_end_difference": 7,
       "ctc_text_difference": 38,
-      "ctc_end_difference": 27,
+      "ctc_end_difference": 28,
       "whisper_numeric_difference": 29,
-      "ctc_numeric_difference": 51,
+      "ctc_numeric_difference": 50,
+      "per_component_email_room_and_final_word_review_required": 1,
+      "ctc_start_difference": 20,
       "parakeet_numeric_difference": 52,
       "whisper_text_difference": 30,
       "whisper_start_difference": 14,
       "parakeet_start_difference": 10,
-      "parakeet_end_difference": 7,
-      "parakeet_text_difference": 27,
-      "ctc_start_difference": 18,
-      "final_gift_word_requires_native_recrop_and_confirmation": 1
+      "parakeet_end_difference": 9,
+      "parakeet_text_difference": 28,
+      "publisher_name_and_full_numbers_require_review": 1,
+      "final_gift_word_requires_native_recrop_and_confirmation": 1,
+      "initial_given_name_disagreement": 1
     },
     "recognition_progress": {
       "pending_references_initial": 945,
       "unique_candidates": 933,
-      "parakeet_recognitions": 927,
+      "parakeet_recognitions": 920,
       "french_whisper_recognitions": 933,
-      "third_ctc_recognitions": 186,
-      "technical_files_checked": 1016,
+      "third_ctc_recognitions": 196,
+      "technical_files_checked": 1023,
       "exact_equivalence_ready": 198,
-      "editorial_decisions": 701,
-      "manual_reviews_ready": 531,
+      "editorial_decisions": 711,
+      "manual_reviews_ready": 536,
       "instruction_flags": 0
     }
   },
@@ -156,9 +159,8 @@
     {
       "ref": "/lib/audio/tcf/co/ecole/ecole-3.mp3",
       "source_id": "09035196:038:359323596792",
-      "candidate_sha256": "2c9eb6395ca81934892212b1a35b17ed0b84a7b69520036698d7e6737467f594",
+      "candidate_sha256": "5392eaf9977bb567ee9e4ff8c41f4c7638ae01f1f30782954c421745243c326d",
       "reasons": [
-        "source_boundary_review_required",
         "whisper_numeric_difference",
         "ctc_numeric_difference"
       ],
@@ -178,9 +180,25 @@
       "candidate_sha256": "524c00aa771addd49f2675161129bca4a4b9bb3345051d206695526be7d02b16",
       "reasons": [
         "source_boundary_review_required",
-        "editorial_transcript_and_question_review_required"
+        "per_component_email_room_and_final_word_review_required",
+        "whisper_numeric_difference",
+        "ctc_start_difference"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Le bâtiment C de l'école est fermé du 14 au 26 janvier pour travaux. Vos nouvelles salles de classe pendant cette période sont indiquées sur le tableau d'information à l'entrée. L'association des parents d'élèves organise le concours Décine ton école idéale. Pour participer, vous devez envoyer votre dessin avant le 12 mars à l'adresse parents.fr Chers élèves. Lundi 23 April, nous avons la chance d'accueillir l'auteur Bernard Werber dans l'auditorium du college. Il donnera une conférence sur son métier à l'occasion de la journée internationale du livre. This is une simulation d'alerte au feu. Nous vous demandons de sortir du bâtiment dans le calme. Merci de laisser vos affaires dans la classe and ne pas courir. Nous allons tous nous retrouver dans la cour. Votre professeur d'Italien, Monsieur Damiani, est absent cette semaine. Il est remplacé à partir de mercredi par Monsieur Biancardi. L'examen d'Italien a bien lieu vendredi. Il est surveillé par Madame Blanchard. Une vente de livres est organisée mardi 22 mai par les élèves de 4e B dans la salle B 116. L'argent de la vente est pour l'association Sourir d'enfants qui aide les enfants malades à l'hôpital.",
+        "reason": "Six annonces scolaires et dix questions relues. Le professeur est Damiani et non Damien ; l’adresse du concours et le numéro B16/B116 divergent, la fin hôpital est tronquée dans Whisper. Révision par composant et reconnaissance de l’adresse encore nécessaires ; aucune installation forcée.",
+        "question_changes": [
+          {
+            "exercise": "tcf-ss-a2-s7-co-2",
+            "question": 8,
+            "enonce": "Quelle matière monsieur Damiani enseigne-t-il ?"
+          }
+        ],
+        "blocked_reasons": [
+          "per_component_email_room_and_final_word_review_required"
+        ]
+      },
       "exercises": [
         "tcf-ss-a2-s7-co-2"
       ]
@@ -197,29 +215,6 @@
         "selected_text": "Tous les jours après le repas, le collège vous propose des activités de 13h à 14h. Vous pourrez faire du badminton, du foot ou du basket. Pour plus de renseignements, venez au secrétariat.",
         "reason": "Reconnaissances finales comparées, transcriptions et questions relues ; homophones et accords corrigés.",
         "question_changes": []
-      },
-      "exercises": [
-        "tcf-ss-a2-s7-co-3"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/ecole/ecole-5-6.mp3",
-      "source_id": "9782090351958:042:d86fac163633",
-      "candidate_sha256": "499a16940e32c0dc9f7f31199f646a2034d1fe292f6def85d630f8a332fd96a0",
-      "reasons": [
-        "source_boundary_review_required"
-      ],
-      "editorial_decision": {
-        "status": "editorial_review",
-        "selected_text": "La bibliothèque du collège sera fermée la semaine prochaine car la bibliothécaire accompagne la classe de cinquième quatre en séjour linguistique. Si vous devez prendre ou rapporter des livres, rendez-vous à la bibliothèque avant ce soir à 16h00.",
-        "reason": "Reconnaissances Parakeet et Whisper comparées ; dix questions au maximum et trois propositions par question relues, réponses présentes et distracteurs distincts. Qualification des frontières et des deux fichiers de reconnaissance reste obligatoire. La classe est la cinquième quatre ; réponse précisée.",
-        "question_changes": [
-          {
-            "exercise": "tcf-ss-a2-s7-co-3",
-            "question": 18,
-            "correct_answer": "La classe de 5e 4"
-          }
-        ]
       },
       "exercises": [
         "tcf-ss-a2-s7-co-3"
@@ -565,12 +560,110 @@
     {
       "ref": "/lib/audio/tcf/co/loisirs/pour-faire-signer-vos.mp3",
       "source_id": "09035196:035:0a472f193258",
-      "candidate_sha256": "35385706f4bd060721ee53a739da2aad9bd4695987ef8779c3d3617276460c8d",
+      "candidate_sha256": "8663dc9405a5067e66d79f7cc7e8d702eafb42912b13eff1873fc3319320b058",
       "reasons": [
-        "source_boundary_review_required",
-        "editorial_transcript_and_question_review_required"
+        "publisher_name_and_full_numbers_require_review",
+        "ctc_numeric_difference"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Bienvenue au salon de la bande dessinée de Montréal. Nous sommes le samedi 26 mai. Voici le programme du jour. De 9h à 20h, vous pouvez visiter les stands de nos 150 exposants, venus de 17 pays. Les plus grandes maisons d'édition francophones sont là pour vous présenter leur collection. Les auteurs et dessinateurs des bandes dessinées sont également présents. Pour faire signer vos albums préférés par leurs auteurs, rendez-vous tous les jours à partir de 18h dans le salon Obélix. Les festivités commenceront cet après-midi avec un spectacle de danse asiatique dans le hall principal à 15h. Les artistes nous viennent directement du Japon et ont été invités par la maison d'édition KRL spécialisée en mangas japonais. L'artiste Paul Mougatier et sa bande nous présenteront ensuite leur spectacle original et émouvant intitulé \"Tout pour vos yeux\". Ce spectacle mêle dessin, théâtre, danse et musique. Je ne vous en dis pas plus pour garder la surprise car il s'agit d'un événement particulièrement original. Le café rencontre est ouvert tous les jours à partir de 10h. Vous y rencontrerez tous les professionnels de la bande dessinée dans un cadre convivial et détendu. Si vous êtes dessinateur ou auteur de BD, c'est le lieu idéal pour faire des rencontres et présenter vos créations. D'ailleurs, si vous aimez dessiner, vous pouvez participer à notre événement \"Dessine-moi une histoire\". A 19h ce soir, les personnes qui se seront inscrites seront invitées à réaliser un projet collectif de bande dessinée. Grâce à 10 ordinateurs équipés d'une table de dessins, vous pourrez réaliser en direct, sur un grand écran, une œuvre collective. Pour vous inscrire, présentez-vous à la réception avant 18h. Attention, les places sont limitées à 10 personnes par session. Il y aura une session à 19h et une autre à 21h. Enfin, demain, à 16h, nous présenterons les lauréats de notre concours à vos planches dans le hall principal. Les trois premiers prix recevront des cadeaux en récompense de leur travail et leurs oeuvres seront éditées par votre maison d'édition partenaire la plus mauvais. Rendez-vous donc demain à 16h pour ce grand moment attendu par tous ces jeunes talents. profitez de ces trois journées de festival et n'hésitez pas à contacter les hôtesses si vous avez des questions.",
+        "reason": "Trois reconnaissances finales comparées. Anciennes réponses non étayées retirées : Open Space, Carré en BD, huit participants et lycéens/étudiants. Le document donne Obélix, café-rencontre et dix participants ; nouvelle question sur la réception. Nom de la maison partenaire encore mal reconnu : ne pas installer avant clarification.",
+        "question_changes": [
+          {
+            "exercise": "tcf-ss-b1-s5-co-4",
+            "question": 1,
+            "enonce": "Où peut-on faire signer ses albums ?",
+            "correct_answer": "Dans le salon Obélix",
+            "choices": [
+              {
+                "id": "a",
+                "texte": "Dans le salon Obélix",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "À la mairie"
+              },
+              {
+                "id": "c",
+                "texte": "Au cinéma"
+              }
+            ]
+          },
+          {
+            "exercise": "tcf-ss-b1-s5-co-4",
+            "question": 4,
+            "enonce": "Quel espace permet aux dessinateurs de rencontrer les professionnels ?",
+            "correct_answer": "Le café-rencontre",
+            "choices": [
+              {
+                "id": "a",
+                "texte": "Le café-rencontre",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Le guichet de la gare"
+              },
+              {
+                "id": "c",
+                "texte": "Le parking du festival"
+              }
+            ]
+          },
+          {
+            "exercise": "tcf-ss-b1-s5-co-4",
+            "question": 5,
+            "enonce": "Quel projet les participants à « Dessine-moi une histoire » réalisent-ils ?"
+          },
+          {
+            "exercise": "tcf-ss-b1-s5-co-4",
+            "question": 6,
+            "enonce": "Combien de personnes chaque session d’atelier peut-elle accueillir au maximum ?",
+            "correct_answer": "Dix personnes",
+            "choices": [
+              {
+                "id": "a",
+                "texte": "Dix personnes",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Cinq personnes"
+              },
+              {
+                "id": "c",
+                "texte": "Huit personnes"
+              }
+            ]
+          },
+          {
+            "exercise": "tcf-ss-b1-s5-co-4",
+            "question": 9,
+            "enonce": "Où faut-il se présenter pour s’inscrire à l’atelier ?",
+            "correct_answer": "À la réception",
+            "choices": [
+              {
+                "id": "a",
+                "texte": "À la réception",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "À la mairie"
+              },
+              {
+                "id": "c",
+                "texte": "À la gare"
+              }
+            ]
+          }
+        ],
+        "blocked_reasons": [
+          "publisher_name_and_full_numbers_require_review"
+        ]
+      },
       "exercises": [
         "tcf-ss-b1-s5-co-4"
       ]
@@ -707,9 +800,14 @@
       "candidate_sha256": "9c11b46703e22584738a7b46f10efd4ff19bfba9970e0513d6ec89c5afca9c5a",
       "reasons": [
         "source_boundary_review_required",
-        "editorial_transcript_and_question_review_required"
+        "ctc_start_difference"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Chers clients, suite à un problème technique, nous vous rappelons que la caisse prioritaire pour les personnes handicapées est fermée. Veuillez vous rediriger vers les caisses rapides ou les caisses automatiques.",
+        "reason": "Trois questions et neuf choix relus : caisse prioritaire fermée pour problème technique, orientation vers caisses rapides ou automatiques. Deux moteurs confirment le contenu.",
+        "question_changes": []
+      },
       "exercises": [
         "tcf-ssx-a2-annonce-3-3-co-2"
       ]
@@ -1118,9 +1216,14 @@
       "candidate_sha256": "6f370c99e7bdc97a3f3cd18597aad5da74f5dcfe2efa4e6f0f0719c98e4ac7fb",
       "reasons": [
         "source_boundary_review_required",
-        "editorial_transcript_and_question_review_required"
+        "parakeet_end_difference"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Bonjour ! Nous vous rappelons que le week-end, le magasin ferme ses portes à 12h15 au lieu de 20h30 en semaine. Bonne journée !",
+        "reason": "Deux questions et six propositions relues : fermeture le week-end à 12 h 15 et en semaine à 20 h 30. Whisper reconnaît la formule finale Bonne journée, Parakeet Bonjour ; fin encore soumise aux contrôles croisés.",
+        "question_changes": []
+      },
       "exercises": [
         "tcf-ssx-a2-annonce-4-2-co-2"
       ]
@@ -1280,18 +1383,6 @@
       ]
     },
     {
-      "ref": "/lib/audio/tcf/co/radio/l-info-trafic.mp3",
-      "source_id": "additional-20261102:mdf-a1-abc:65:578139bef04d:2b383621",
-      "candidate_sha256": "519465e83d576fb521683d08cfb5830f628847eb91d3d4f0cddd65df19d6a3ac",
-      "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "tcf-a1-s4-co-2"
-      ]
-    },
-    {
       "ref": "/lib/audio/tcf/co/radio/les-annonces-a-la-radio-1-1.mp3",
       "source_id": "9782090351958:063:707f08c2e451",
       "candidate_sha256": "2df1a42690e9a19628f7dd3845a8151ab3157105673b0e1734b66a3f0ff334f4",
@@ -1313,23 +1404,6 @@
         "editorial_transcript_and_question_review_required"
       ],
       "editorial_decision": null,
-      "exercises": [
-        "tcf-a2j-s1-co-1"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-1-5.mp3",
-      "source_id": "9782090351958:062:a14e3edb351f",
-      "candidate_sha256": "5ac30f8f1be6457685b9d60b2f2620efcc5dd5bc03162e026489f21d2d7bef0f",
-      "reasons": [
-        "source_boundary_review_required"
-      ],
-      "editorial_decision": {
-        "status": "editorial_review",
-        "selected_text": "Bienvenue au parc Aquatica. Avant d'accéder aux piscines, merci de vous changer dans les vestiaires et de prendre une douche. Le port du bonnet de bain est obligatoire.",
-        "reason": "Reconnaissances Parakeet et Whisper comparées ; dix questions au maximum et trois propositions par question relues, réponses présentes et distracteurs distincts. Qualification des frontières et des deux fichiers de reconnaissance reste obligatoire. ",
-        "question_changes": []
-      },
       "exercises": [
         "tcf-a2j-s1-co-1"
       ]
@@ -1419,9 +1493,8 @@
     {
       "ref": "/lib/audio/tcf/co/restaurant/08-restaurant-problème-avec-l-addition.mp3",
       "source_id": "09035196:010:23954638ae27",
-      "candidate_sha256": "346f3417821e75cd2bce27a0cc9dd391ef8e38da1f53c8867fc6b642cd540fb8",
+      "candidate_sha256": "b8cdbac76cc4c303456ee1f8b6a112f00c88dac5d30cf23577e4f5cbbac0baf4",
       "reasons": [
-        "source_boundary_review_required",
         "ctc_numeric_difference"
       ],
       "editorial_decision": {
@@ -2100,9 +2173,17 @@
       "source_id": "delf_a1_2022:015:49f970d16035",
       "candidate_sha256": "f126b0e84254dc4e1127dfa9af29ab7fe6e116435a406436724cb214d4307f72",
       "reasons": [
-        "editorial_transcript_and_question_review_required"
+        "parakeet_text_difference",
+        "parakeet_end_difference",
+        "ctc_text_difference",
+        "ctc_end_difference"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "N'oubliez pas votre manteau, votre écharpe et vos gants. Seulement 4°C à Lille.",
+        "reason": "Deux questions et six choix relus. Quatre degrés et manteau/écharpe/gants confirmés par Parakeet et Whisper ; Lille rétabli dans le contexte de bulletin météo.",
+        "question_changes": []
+      },
       "exercises": [
         "delf-a1-2022-co-ex2-15"
       ]
@@ -2550,29 +2631,19 @@
       "source_id": "09035276:047:b3c0fdfac8a8",
       "candidate_sha256": "72ddbff44e178f8b8d283041024bd702e6435f0c940dfd6a3f3a18afc8ea83e0",
       "reasons": [
-        "editorial_transcript_and_question_review_required"
-      ],
-      "editorial_decision": null,
-      "exercises": [
-        "tcf-ss-a1-s54-co-2"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/transports/bonjour-ici-agence-voyages.mp3",
-      "source_id": "additional-20261102:mdf-a2-abc-direct:85:6f2842b225ef:5ebc5db9",
-      "candidate_sha256": "cd33f27a94296657d6eace729e8c618721f0a77e37415584d9821f2a8ddaa6d1",
-      "reasons": [
-        "whisper_numeric_difference",
-        "ctc_numeric_difference"
+        "initial_given_name_disagreement"
       ],
       "editorial_decision": {
         "status": "editorial_review",
-        "selected_text": "Bonjour, ici l'agence de voyages Lacrosse. Je vous appelle à propos de deux changements pour votre voyage en Turquie. Le premier changement concerne votre vol. Vous partirez le mardi 16 comme prévu. Mais le départ sera 2 heures plus tôt, à 9h25. Le numéro de vol ne change pas, c'est le vol AF 0305. Le deuxième changement concerne l'hôtel. Vous occuperez la chambre 23B, au lieu de la 24B. Pour aller de l'aéroport à l'hôtel, vous pouvez prendre un taxi ou le bus numéro 13. En cas de doute, n'hésitez pas à nous contacter par téléphone au 04 97 22 63 13. Au revoir.",
-        "reason": "Reconnaissances Parakeet et Whisper comparées ; dix questions au maximum et trois propositions par question relues, réponses présentes et distracteurs distincts. Qualification des frontières et des deux fichiers de reconnaissance reste obligatoire. Vol AF 0305, chambres 23B et 24B, départ mardi 16 à 9 h 25, bus 13 et téléphone comparés aux deux sorties. Nom propre de l’agence non épelé, graphie non attestée par écoute humaine. Le troisième moteur CTC confirme Lacrosse, comme Whisper.",
-        "question_changes": []
+        "selected_text": "Mickaël, tu m’aides à sortir les courses de la voiture, s’il te plaît ? Oui, j’arrive.",
+        "reason": "Prénom reconnu Mickaël par Parakeet, Michel par Whisper et Michal par CTC. Les courses viennent de la voiture. Conserver en attente de clarification du prénom, sans sélectionner une graphie pour forcer la validation.",
+        "question_changes": [],
+        "blocked_reasons": [
+          "initial_given_name_disagreement"
+        ]
       },
       "exercises": [
-        "tcf-ss-a2-s56-co-2"
+        "tcf-ss-a1-s54-co-2"
       ]
     },
     {
@@ -2580,10 +2651,14 @@
       "source_id": "09035196:011:4d0f035a1c11",
       "candidate_sha256": "7bdc951ce40674cdbad949c948de1a046476879493559306e1450c8aacc4036c",
       "reasons": [
-        "source_boundary_review_required",
-        "editorial_transcript_and_question_review_required"
+        "source_boundary_review_required"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Ah salut Tom ! Quelle surprise de te retrouver là ! Tu es venu voir le concert de Mr. G ? Salut Sophie ! Je ne pensais pas que tu viendrais voir ce genre de concert. Tu as aimé ? Pour être sincère, non, pas vraiment. Je suis venue accompagner ma soeur qui est fan de Mr. G. Pour moi ce n'est pas de la musique, c'est plutôt du bruit. Je me suis ennuyée du début jusqu'à la fin et j'ai un mal de tête horrible. La musique électropunk qu'il faut aimer, c'est sûr. Moi, j'ai adoré. J’ai tous leurs CD. C'était un rêve de les voir en vrai. Ils sont uniques. Il n'y a pas un groupe qui leur ressemble. Heureusement, car je n'aimerais pas les entendre encore une fois. Moi, je trouve ça trop violent. Il n'y a pas de mélodie. Sauf peut-être une chanson qui était sympa. Attends, laisse-moi deviner. Tu as aimé, laisse parler ton cœur. Oui, c'est celle-là. C'est mon côté romantique. Franchement, les autres n'avaient aucun intérêt, ni dans les textes, ni dans la composition. Même les titres sont ridicules. La mouche voleuse, Crache ton destin... Moi, je trouve ça original. Il faut un peu de temps. Je suis sûr que si tu écoutes plus souvent, tu vas finir par apprécier. Franchement, je n'ai pas envie. Par contre, j'ai adoré le lieu. Au bord du lac, avec toutes les scènes, le festival est vraiment génial. Il mélange toutes les musiques. C'est vrai, c'est un super endroit. Si tu aimes le reggae, il y a un concert génial qui commence dans... Attends, j'ai regardé le programme. Voilà, c'est ça. Dans 10 minutes, sur la scène numéro 3. Tu veux venir avec nous ? Je suis avec deux copains. Oui, avec plaisir. J'adore le reggae. Génial ! On passe dans une cafétéria avant pour manger un sandwich. Je ne sais pas toi, mais nous, on a très faim. Je demande à ma soeur si elle est d'accord. Perso, j'adorerais. Ça me changera de l'électropunk.",
+        "reason": "Reconnaissances comparées, dix questions et trente propositions relues : désaccord musical, accompagnement de la sœur, électropunk puis reggae sur la scène trois, sandwich à la cafétéria. Titres conservés selon les deux transcriptions françaises.",
+        "question_changes": []
+      },
       "exercises": [
         "tcf-ss-b1-s13-co-3"
       ]
@@ -2772,9 +2847,8 @@
     {
       "ref": "/lib/audio/tcf/co/transports/moyen-a2__radio-18.3.mp3",
       "source_id": "additional-20261102:mdf-a2-abc-direct:63:e8a39f601d19:38745a2a",
-      "candidate_sha256": "1e10990fa438c9c3290f2b64447343b8469777738350279d948bbf0d37840add",
+      "candidate_sha256": "b11393aed055cec4343e81bcb590b777dadb493d2b9ed47d201134b6f2fcbda2",
       "reasons": [
-        "source_boundary_review_required",
         "ctc_end_difference"
       ],
       "editorial_decision": {
@@ -3372,10 +3446,14 @@
       "source_id": "09035196:018:f8ff3289739f",
       "candidate_sha256": "d0c88f559597cc03dc32f9e884dcd03d2ce93394855f1667ed08374d0a64a6cd",
       "reasons": [
-        "source_boundary_review_required",
-        "editorial_transcript_and_question_review_required"
+        "source_boundary_review_required"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Alors aujourd'hui dans l'émission \"Graines de jeunes\", on va comparer deux modes de vie complètement différents. Nous avons invité Eddy, 13 ans, qui habite sur une petite île de la Bretagne, et Béa, 15 ans, qui vit au cœur d'une grande ville, à Lille, des quotidiens opposés. Eddy. Comment définiriez-vous en deux mots la vie sur l’île de Hoëdic au large de Quiberon ? En deux mots, calme et sérénité. Trop parfois. Et vous, Béa, à Lille ? Tout le contraire, stress et quotidien rempli. Alors, Eddy, décrivez-nous une journée type. En fait, il n'y a pas de collège à Hoëdic. Alors le matin, je prends le bateau pour aller à Quiberon, et je rentre le soir après les cours. J'adore le trajet du soir, surtout quand arrivent les beaux jours, le bon air de la mer. Évidemment, le soir à Hoëdic, il n'y a pas grand-chose à faire. Il n'y a qu'une centaine d'habitants et les jeunes peuvent se compter sur les doigts d'une main. Alors des fois, on se rencontre pour se promener et discuter ou faire de la musique. Le cinéma, les spectacles et le shopping, il n'y en a pas. C'est sur le continent et les bateaux ne circulent pas très tard, sauf l'été. Donc l'hiver, c'est très très calme. Mais j'apprécie aussi la solitude. Je suis habitué comme ça et ça ne me déplaît pas. On s'amuse bien l'été par contre. Les restaurants ouvrent, les touristes arrivent et on fait connaissance avec des jeunes de tous les horizons. Vous, Béa, à Lille, c'est comment ? On court tout le temps. Le matin, j'accompagne mon petit frère à l'école et je cours prendre le bus pour aller au lycée. Il y a beaucoup de trafic, alors il met presque une heure pour arriver. Le soir, c'est pareil. Pendant la semaine, c'est un peu stressant. Par contre, je sors beaucoup avec mes amis le week-end. Il y a toujours quelque chose à faire. Des sorties au bowling, des soirées à la pizzeria, les boutiques, les anniversaires des uns et des autres. Je ne passe pas un samedi sans voir mes amis. Ça, c'est important pour moi. Béa, Eddy, est-ce que vous aimeriez échanger votre quotidien ? Oui, pourquoi pas, mais pas pour la vie.",
+        "reason": "Dix questions et trente propositions relues. Île d’Hoëdic et Quiberon rétablies dans leur graphie géographique ; Eddy et Béa non épelés. Les faits utiles concordent : bateau faute de collège, centaine d’habitants, été animé, petit frère accompagné, bus presque une heure. Qualification finale reste obligatoire.",
+        "question_changes": []
+      },
       "exercises": [
         "tcf-ss-b1-s5-co-2"
       ]
@@ -3467,10 +3545,14 @@
       "source_id": "additional-20261102:mdf-a1-abc:62:cdfafe749af2:cf61c1c3",
       "candidate_sha256": "668f156c3c6f00fa508c118249c5111172d05b7adc9bf4f4502faf3d16699f58",
       "reasons": [
-        "source_boundary_review_required",
-        "editorial_transcript_and_question_review_required"
+        "source_boundary_review_required"
       ],
-      "editorial_decision": null,
+      "editorial_decision": {
+        "status": "editorial_review",
+        "selected_text": "Où sont les yaourts s'il vous plaît ? Dans le rayon frais, au fond du magasin. Merci, monsieur.",
+        "reason": "Trois questions et neuf propositions relues ; rayon frais au fond du magasin confirmé par les reconnaissances.",
+        "question_changes": []
+      },
       "exercises": [
         "tcf-a1-s3-co-4"
       ]
@@ -3686,25 +3768,6 @@
       },
       "exercises": [
         "tcf-ss-a1-s47-co-3"
-      ]
-    },
-    {
-      "ref": "/lib/audio/tcf/co/vie-quotidienne/salut-julie-2-4.mp3",
-      "source_id": "additional-20261102:mdf-a2-abc-direct:94:757d861a3c3f:61709954",
-      "candidate_sha256": "e3ba69667cc1a73ba8f3becb238cdc856c1bd66ac76a0d5b8f802c07a00310a3",
-      "reasons": [
-        "source_boundary_review_required",
-        "ctc_text_difference",
-        "ctc_numeric_difference"
-      ],
-      "editorial_decision": {
-        "status": "editorial_review",
-        "selected_text": "Dis, ça te dit de venir au cinéma avec Lucie et moi ? Oui, pourquoi pas ? Quand ? Vendredi soir, la séance est à 21h. Désolée, mais je suis déjà prise vendredi. Dommage, ce sera pour une autre fois.",
-        "reason": "Reconnaissances Parakeet et Whisper comparées ; dix questions au maximum et trois propositions par question relues, réponses présentes et distracteurs distincts. Qualification des frontières et des deux fichiers de reconnaissance reste obligatoire. ",
-        "question_changes": []
-      },
-      "exercises": [
-        "tcf-ss-a2-s50-co-1"
       ]
     },
     {
