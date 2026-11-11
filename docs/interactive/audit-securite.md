@@ -22,3 +22,5 @@ Les tests utilisent un rôle de démonstration et un bearer fictif uniquement da
 ## Contrôle des modifications — 11 novembre 2026
 
 Le workflow ajoute Gitleaks 8.30.1 sur les commits depuis C0 et les fichiers modifiés courants, avec outil vérifié par empreinte, autotest sur jeton non émis et sortie sans contenu de secret. Ce périmètre protège les nouveaux changements ; il ne certifie ni l’ancien historique, ni le bundle, ni les accès déployés. Les constats critiques de ce document restent ouverts avant la bascule d’authentification F22. Les artefacts de CI contiennent rapports et captures de fixtures, sans bundle de production.
+
+L’[ADR 0019](adr-0019-empreintes-et-detection.md) documente l’exception limitée aux empreintes de vocabulaires de modèles dans un rapport audio précis. L’autotest vérifie aussi qu’une clé générique dans ce même fichier reste détectée ; les autres règles officielles restent actives.
