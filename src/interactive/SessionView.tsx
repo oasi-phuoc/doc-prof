@@ -614,5 +614,5 @@ function BetweenQuestionsTimer({ seconds, roundId, attempt, initialClock, suspen
     onElapsed: onNext,
     onRemaining: (remainingMs) => onClock({ roundId, phase: 'revealed', durationMs, remainingMs, attempt }),
   })
-  return <p role="status">Question suivante dans {Math.ceil(remaining / 1000)} s</p>
+  return <p role="timer" aria-live="off" aria-label="Temps avant la question suivante">Question suivante dans {Math.ceil(remaining / 1000)} s</p>
 }

@@ -15,8 +15,8 @@ Ce registre complète les anciennes checklists de livraison. Il distingue les fo
 | F29 médias | Précontrôle, décodeurs, cache, préchargement suivant ; quotas de consigne, écoutes et autorisations journalisées, erreurs et blocage de huit secondes ; `listening-results.json`, ADR 0012 | Préchargement intégral hors ligne et transcriptions configurables |
 | F30 comptage et observations | Compteurs validés, provenance et partage explicite, bilan, marques et notes locales ; `manual-count-results.json` | Badges ; plusieurs bilans déjà conservés |
 | F31 oral guidé | Scènes, zoom, relances, modèle et évaluation humaine présents | Recette complète S03 et extension de conversion prouvée |
-| F32 routes / chargement / drapeau | Chargement paresseux, routes brouillon, fiche, démo ; diagnostic dédié | Drapeau réconcilié avec la bascule déjà demandée par le propriétaire |
-| F33 CI | Suites locales et résultats présents | Pipeline complet, budgets, détection de secrets et accessibilité automatisée |
+| F32 routes / chargement / drapeau | Générateur et bibliothèque différés ; routeur léger, jeu, cartes et diagnostic distincts ; routes de source et reprise vérifiées ; `performance-browser-results.json` | Drapeau réconcilié avec la bascule déjà demandée par le propriétaire |
+| F33 CI | Workflow, orchestration des parcours et A4, axe (26 vues), budgets par route et Gitleaks sur les modifications ; ADR 0016 | Observer la CI hébergée ; réduire les banques du jeu ; sécurité globale après F22 et mesures ENI |
 | F34 mélange équilibré | Graines par usage, identité canonique, quotas équilibrés et séquences maximales de deux ; 100 graines et 5 000 questions dans `slots.test.mjs` ; ordre source, mélangé, personnalisé et numérique croissant ; ADR 0004 et 0011 | Étendre ces politiques aux nouvelles mécaniques |
 | F35 tokens et polices | Palette et contrastes de texte testés ; polices locales, chiffres tabulaires, français et budget contrôlés ; `fonts-results.json` et ADR 0005 | Vérification complète des tokens et essai typographique sur ENI |
 | F46 lisibilité | Gabarits desktop/mobile testés | Précontrôle automatique des débordements avant lancement |

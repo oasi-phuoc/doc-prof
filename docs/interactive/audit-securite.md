@@ -18,3 +18,7 @@ Le module ajoute uniquement de l’état local : palette sans identité dans `lo
 Les tests utilisent un rôle de démonstration et un bearer fictif uniquement dans un navigateur isolé, avec une API interceptée. Aucun envoi à un serveur réel ni modification de fiche enregistrée.
 
 **La remise à niveau de l’accès n’est pas terminée dans ce premier jalon. La mise en production et les fonctions partagées restent à traiter après cette correction.** Une simple suppression des paramètres frontend casserait les accès actuels sans fournir de remplacement ; il faut réaliser et tester la chaîne serveur complète avant la bascule.
+
+## Contrôle des modifications — 11 novembre 2026
+
+Le workflow ajoute Gitleaks 8.30.1 sur les commits depuis C0 et les fichiers modifiés courants, avec outil vérifié par empreinte, autotest sur jeton non émis et sortie sans contenu de secret. Ce périmètre protège les nouveaux changements ; il ne certifie ni l’ancien historique, ni le bundle, ni les accès déployés. Les constats critiques de ce document restent ouverts avant la bascule d’authentification F22. Les artefacts de CI contiennent rapports et captures de fixtures, sans bundle de production.

@@ -77,9 +77,10 @@ export function TeacherConfirmation({ action, remaining, questionCount, onConfir
   const description = useId()
   useEffect(() => {
     const previous = document.activeElement
-    dialog.current?.showModal()
+    const element = dialog.current
+    element?.showModal()
     cancel.current?.focus()
-    return () => { if (previous instanceof HTMLElement && previous.isConnected) previous.focus() }
+    return () => { element?.close(); if (previous instanceof HTMLElement && previous.isConnected) previous.focus() }
   }, [])
   return <dialog className="ci-teacher-confirm" ref={dialog} aria-labelledby={title} aria-describedby={description} onCancel={(event) => { event.preventDefault(); onCancel() }}>
     <h2 id={title}>{action === 'retry' ? 'Réessayer cette question ?' : action === 'skip' ? questionCount === 2 ? 'Passer ces deux questions ?' : 'Passer cette question ?' : 'Terminer la séance ?'}</h2>

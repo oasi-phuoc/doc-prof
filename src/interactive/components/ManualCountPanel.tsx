@@ -14,8 +14,9 @@ export function ManualCountPanel({ questions, votes, onSave, onClose }: {
   const question = questions[index]!
   useEffect(() => {
     const previous = document.activeElement
-    dialog.current?.showModal()
-    return () => { if (previous instanceof HTMLElement && previous.isConnected) previous.focus() }
+    const element = dialog.current
+    element?.showModal()
+    return () => { element?.close(); if (previous instanceof HTMLElement && previous.isConnected) previous.focus() }
   }, [])
   return <dialog className="ci-count-dialog" ref={dialog} aria-labelledby="ci-count-title" onCancel={(event) => { event.preventDefault(); onClose() }}>
     <h2 id="ci-count-title">Comptage saisi par l’enseignant</h2>

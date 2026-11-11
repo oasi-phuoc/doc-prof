@@ -33,12 +33,14 @@ export function ReflectionTimer({
     <div className="ci-timer">
       <output
         aria-label="Temps de réflexion restant"
+        aria-live="off"
         className="ci-timer-value"
       >
         {settings.enabled
           ? `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, '0')}`
           : 'Sans minuteur'}
       </output>
+      <span className="ci-sr-only" role="status">{settings.enabled && seconds === 0 ? 'Temps de réflexion écoulé.' : ''}</span>
       {audioFailed && waitingForAudio && (
         <button disabled={controlsDisabled} onClick={onAudioOverride}>
           Démarrer le temps de réflexion

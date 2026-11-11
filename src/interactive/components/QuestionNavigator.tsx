@@ -8,9 +8,10 @@ export function QuestionNavigator({ game, state, onGo, onRetry, onClose }: { gam
   const title = useId()
   useEffect(() => {
     const previous = document.activeElement
-    dialog.current?.showModal()
-    dialog.current?.querySelector<HTMLButtonElement>('[aria-current="step"]')?.focus()
-    return () => { if (previous instanceof HTMLElement && previous.isConnected) previous.focus() }
+    const element = dialog.current
+    element?.showModal()
+    element?.querySelector<HTMLButtonElement>('[aria-current="step"]')?.focus()
+    return () => { element?.close(); if (previous instanceof HTMLElement && previous.isConnected) previous.focus() }
   }, [])
   const rounds = roundsFor(game)
   return <dialog className="ci-teacher-confirm ci-question-navigator" ref={dialog} aria-labelledby={title} onCancel={(event) => { event.preventDefault(); onClose() }}>
