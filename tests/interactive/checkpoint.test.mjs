@@ -46,6 +46,32 @@ try {
     assert.equal(restored.record.clock.remainingMs, 2900)
     assert.equal(restored.state.history[0].correct, true)
   })
+  await test('solo checkpoint recomputes verdicts from the answer key, including a timeout with no selection', () => {
+    for (const action of [{ type: 'SELECT', questionId: 'q1', choiceId: 'a' }, { type: 'TIMEOUT' }]) {
+      const original = record([action], 'solo')
+      const state = replaySession(game, original, planId, now, 'solo').state
+      assert.equal(state.history[0].correct, false)
+      const compacted = compactSession(original, state)
+      for (const verdict of [true, undefined]) {
+        const forged = structuredClone(compacted)
+        if (verdict === undefined) delete forged.checkpoint.state.history[0].correct
+        else forged.checkpoint.state.history[0].correct = verdict
+        const copy = structuredClone(forged)
+        assert.throws(() => replaySession(game, forged, planId, now, 'solo'), /Instantané/)
+        assert.deepEqual(forged, copy)
+      }
+      assert.deepEqual(replaySession(game, compacted, planId, now, 'solo').state, state)
+    }
+  })
+  await test('legacy solo checkpoints cannot display a selection different from the recorded revealed attempt', () => {
+    const original = record([{ type: 'SELECT', questionId: 'q1', choiceId: 'a' }], 'solo')
+    const compacted = compactSession(original, replaySession(game, original, planId, now, 'solo').state)
+    delete compacted.checkpoint.state.roundStates
+    assert.equal(replaySession(game, compacted, planId, now, 'solo').state.selected, 'a')
+    const forged = structuredClone(compacted)
+    forged.checkpoint.state.selected = 'b'; forged.checkpoint.state.selections.q1 = 'b'
+    assert.throws(() => replaySession(game, forged, planId, now, 'solo'), /Instantané/)
+  })
   await test('corrupt or source-mismatched checkpoints are refused without changing the saved object', () => {
     const original = record([{ type: 'CARDS_UP' }])
     const compacted = compactSession(original, replaySession(game, original, planId, now).state)

@@ -14,13 +14,17 @@ try {
   await page.getByRole('heading', { name: 'Cartes de la classe', exact: true }).waitFor({ timeout: 120000 })
   const edgeControl = page.getByRole('combobox', { name: 'Retournement recto verso', exact: true })
   assert.equal(await edgeControl.inputValue(), 'long')
+  await mkdir('docs/interactive/screenshots', { recursive: true })
+  await page.emulateMedia({ media: 'print' })
+  const example = await page.pdf({ preferCSSPageSize: true, printBackground: true, path: 'docs/interactive/screenshots/cartes-recto-verso-a4.pdf' })
+  assert.equal((example.toString('latin1').match(/\/Type\s*\/Page\b/g) ?? []).length, 2)
+  await page.emulateMedia({ media: 'screen' })
   // Custom colors and swapped shapes must use the identity of a card, not its position.
   await page.getByLabel('Couleur de la carte A', { exact: true }).fill('#123456')
   await page.waitForFunction(() => document.querySelector('.ci-paper-card').style.getPropertyValue('--card-color') === '#123456')
   await page.getByLabel('Forme de la carte A', { exact: true }).selectOption('star')
   await page.waitForFunction(() => document.querySelector('.ci-paper-card svg').getAttribute('aria-label').toLowerCase().includes('étoile'))
   assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false)
-  await mkdir('docs/interactive/screenshots', { recursive: true })
   for (const edge of ['long', 'short']) {
     await edgeControl.selectOption(edge)
     for (const inkSaving of [false, true]) {
@@ -63,8 +67,7 @@ try {
           if (!inkSaving) assert.equal(front.cards[0].color, 'rgb(18, 52, 86)')
         }
         assert.equal(await page.locator('.ci-print-pages small').count(), 0)
-        const pdf = await page.pdf({ preferCSSPageSize: true, printBackground: true,
-          ...(edge === 'long' && !inkSaving && sets === 1 ? { path: 'docs/interactive/screenshots/cartes-recto-verso-a4.pdf' } : {}) })
+        const pdf = await page.pdf({ preferCSSPageSize: true, printBackground: true })
         assert.equal((pdf.toString('latin1').match(/\/Type\s*\/Page\b/g) ?? []).length, sets * 2)
         results.push({ flip: edge, inkSaving, sets, pages: sheets.length, squaresPerFace: 6,
           alignment: 'matching letter, shape, color and pattern at reflected A4 centers', captions: 'letters only' })

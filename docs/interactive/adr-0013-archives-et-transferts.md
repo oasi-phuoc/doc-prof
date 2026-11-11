@@ -10,6 +10,8 @@ Le format JSON `clairfle-session` version 1 contient le schéma de séance, la d
 
 L’import vérifie l’enveloppe, les versions, les dates, l’identifiant, la référence de fiche, le plan complet, l’instantané et le bilan recalculé avant toute écriture. Un aperçu propose Importer ou Annuler. Une partie ou un identifiant déjà présent ne sont jamais remplacés. Une autre fenêtre propriétaire empêche la mutation. Après validation, l’import constitue une nouvelle utilisation locale : sa durée de conservation repart de la date d’import. Aucun transfert n’écrit au serveur.
 
+L’[ADR 0020](adr-0020-coherence-des-verdicts.md) renforce la vérification des instantanés : chaque verdict Solo est comparé au choix enregistré et au corrigé du plan reconstruit, y compris en l’absence de réponse. Modifier ensemble un verdict et les totaux du bilan ne suffit pas à rendre un fichier incohérent importable.
+
 La fiche d’origine doit rester accessible et inchangée, avec ses médias nécessaires. Un brouillon local doit encore exister sur l’appareil de destination ; l’export n’embarque pas sa recette et ne le recrée pas. Ces fichiers ne constituent donc pas une sauvegarde autonome des fiches.
 
 « Effacer les données locales du jeu » demande confirmation puis vide les magasins du jeu, y compris les versions inconnues explicitement visées par cet effacement, et retire ses anciens drapeaux. Les accès et données sans rapport avec le jeu sont conservés. Une fenêtre active ayant une ancienne révision ne peut pas recréer son journal supprimé. Les écritures de temps et de contexte sont regroupées et vidées seulement lorsqu’elles ont changé, ce qui évite de modifier une révision lors d’une seconde fermeture du même écran.

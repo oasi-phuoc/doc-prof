@@ -65,6 +65,22 @@ try {
     await assert.rejects(validateTransfer(changed, transfer), /changé/)
     await assert.rejects(validateTransfer(game, { ...transfer, exportVersion: 99 }), /Version/)
   })
+  await test('a forged solo verdict is refused even when the report totals are changed consistently', async () => {
+    const solo = sourcePlan(template, title, context, 'solo')
+    const q = solo.questions[0]
+    const wrong = q.choices.find((choice) => choice.id !== solo.corrections[q.id].choiceId).id
+    let state = transition(solo, startSession(solo, 'solo'), { type: 'SELECT', choiceId: wrong })
+    state = transition(solo, state, { type: 'FINISH' })
+    const exported = await makeTransfer(solo, await newRecord(solo, 'solo', context), state)
+    assert.equal(exported.bilan.correct, 0); assert.equal(exported.bilan.incorrect, 1)
+    await validateTransfer(solo, exported)
+    const forged = structuredClone(exported)
+    forged.session.checkpoint.state.history.find((attempt) => !attempt.skipped).correct = true
+    forged.bilan.correct = 1; forged.bilan.incorrect = 0
+    const copy = structuredClone(forged)
+    await assert.rejects(validateTransfer(solo, forged), /Instantané/)
+    assert.deepEqual(forged, copy)
+  })
   await test('source reconstruction preserves replay, custom order, choice cap and media exclusions exactly', async () => {
     assert.equal(game.questions.length, 2)
     assert.equal(positionOf(game.questions[0]), keys[1])
