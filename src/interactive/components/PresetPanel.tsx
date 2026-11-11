@@ -5,10 +5,11 @@ import { positionOf, type PlanOptions } from '../domain/plan-options'
 import type { Game, PlayMode } from '../domain/types'
 import type { TimerSettings } from '../domain/settings'
 
-export function PresetPanel({ sourceKey, contentHash, questions, selected, options, timer, mode, onOptions, onApply, activePresetId }: {
+export function PresetPanel({ sourceKey, contentHash, questions, selected, options, timer, mode, onOptions, onApply, activePresetId, paletteVersion = 1 }: {
   sourceKey: string; contentHash: string; questions: Game['questions']; selected: string[]; options: PlanOptions; timer: TimerSettings; mode: PlayMode
   onOptions: (options: PlanOptions) => void; onApply: (preset: LocalPreset) => void
   activePresetId?: string
+  paletteVersion?: number
 }) {
   const [items, setItems] = useState<LocalPreset[]>([])
   const [unavailable, setUnavailable] = useState(0)
@@ -29,7 +30,7 @@ export function PresetPanel({ sourceKey, contentHash, questions, selected, optio
     modal.current?.querySelector<HTMLButtonElement>('[data-ci-cancel]')?.focus()
     return () => { if (previous instanceof HTMLElement && previous.isConnected) previous.focus() }
   }, [stale, deleting])
-  const input = (entry?: LocalPreset): PresetInput => ({ sourceKey, contentHashAtSave: contentHash, name: entry?.name ?? name.trim(), selectedQuestionIds: entry ? entry.selectedQuestionIds.filter((id) => questions.some((q) => positionOf(q) === id)) : selected,
+  const input = (entry?: LocalPreset): PresetInput => ({ sourceKey, paletteVersion, contentHashAtSave: contentHash, name: entry?.name ?? name.trim(), selectedQuestionIds: entry ? entry.selectedQuestionIds.filter((id) => questions.some((q) => positionOf(q) === id)) : selected,
     options: entry ? { ...presetOptions(entry), customOrder: entry.customOrder.filter((id) => questions.some((q) => positionOf(q) === id)) } : options,
     timer: entry ? { enabled: entry.timer.enabled, seconds: entry.timer.defaultSec, feedbackSeconds: entry.timer.feedbackSec } : timer, playMode: entry?.playMode ?? mode })
   const run = (work: () => Promise<void>) => { setBusy(true); setMessage(''); void work().catch((error: unknown) => setMessage(error instanceof Error ? error.message : 'Action impossible.')).finally(() => setBusy(false)) }

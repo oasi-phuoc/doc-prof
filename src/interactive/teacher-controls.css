@@ -74,3 +74,16 @@
   .ci-app .ci-word-session .ci-model-answer { padding: 12px 18px; }
   .ci-app .ci-word-session .ci-model-answer p { margin: 8px 0; }
 }
+.ci-app .ci-answer:not(.ci-answer-key):not(.ci-answer-muted) { border: 3px solid #182238; }
+.ci-app .ci-answer.ci-answer-muted { border-color: #657084; }
+.ci-app .ci-answer.ci-chosen:not(.ci-answer-key):not(.ci-answer-muted), .ci-app .ci-answer:focus-visible { outline: 4px solid #182238; outline-offset: 3px; box-shadow: 0 0 0 3px #fff; }
+@media print {
+  .ci-ink-saving .ci-paper-card:nth-child(1) { --ci-paper-pattern: radial-gradient(#aaa .35mm, transparent .45mm); --ci-paper-pattern-size: 4mm 4mm; }
+  .ci-ink-saving .ci-paper-card:nth-child(2) { --ci-paper-pattern: repeating-linear-gradient(45deg, transparent 0 3mm, #bbb 3mm 3.3mm); }
+  .ci-ink-saving .ci-paper-card:nth-child(3) { --ci-paper-pattern: linear-gradient(#bbb .25mm, transparent .25mm), linear-gradient(90deg, #bbb .25mm, transparent .25mm); --ci-paper-pattern-size: 5mm 5mm; }
+  .ci-ink-saving .ci-paper-card:nth-child(4) { --ci-paper-pattern: repeating-radial-gradient(ellipse at 50% 100%, transparent 0 1.7mm, #aaa 1.8mm 2mm, transparent 2.1mm 4mm); --ci-paper-pattern-size: 10mm 5mm; }
+  .ci-ink-saving .ci-paper-card:nth-child(5) { --ci-paper-pattern: conic-gradient(#ddd 25%, white 0 50%, #ddd 0 75%, white 0); --ci-paper-pattern-size: 8mm 8mm; }
+  .ci-ink-saving .ci-paper-card:nth-child(6) { --ci-paper-pattern: linear-gradient(#eee, #eee); }
+  .ci-app .ci-ink-saving .ci-paper-card { background: #fff !important; background-image: var(--ci-paper-pattern) !important; background-size: var(--ci-paper-pattern-size, auto) !important; color: #000 !important; }
+  .ci-app .ci-ink-saving .ci-card-badge { color: #000 !important; background: #fff; border-radius: 3mm; padding: 1mm; }
+}

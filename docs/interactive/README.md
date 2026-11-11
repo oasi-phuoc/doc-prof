@@ -35,6 +35,8 @@ La préparation vérifie les images et les audios avant le lancement, avec rappo
 
 Les six cartes pastel A–F utilisent des lettres et des formes de même taille. La palette se configure en trois colonnes et deux rangées ; l’impression produit des carrés de 88 mm sur deux colonnes et trois lignes A4. Dans un écran à deux questions, A–C sont empilés à gauche et D–F à droite. Changer une forme échange sa place avec la forme existante pour conserver six repères distincts.
 
+La [page de comparaison des cartes](adr-0015-cartes-et-etalonnage.md), `/interactif/cartes`, affiche de grands échantillons et mémorise la comparaison visuelle effectuée par l’enseignant. Couleurs, formes, contrastes et version sont partagés avec l’impression. Le mode économie d’encre ajoute six motifs distincts. Une palette modifiée nécessite une nouvelle comparaison.
+
 Le minuteur vaut 30 secondes par défaut. En Classe, avec un audio, il attend la fin de l’écoute et la suite reste manuelle ; en Solo, il démarre à l’affichage de la question. Il se règle et se désactive avant ou pendant la séance. La pause et le masquage de l’onglet suspendent le minuteur et l’audio. Sur mobile, la question est agrandie et encadrée, puis les cartes sont suivies de la mascotte et du minuteur centrés.
 
 Le [compteur audio](adr-0012-ecoutes-audio.md) respecte la limite explicite de la consigne. Pause et reprise comptent comme un seul passage ; les écoutes consommées et les autorisations supplémentaires de l’enseignant sont conservées dans le journal. Une erreur avant lecture ne compte pas. Un blocage de plus de huit secondes propose un réessai.

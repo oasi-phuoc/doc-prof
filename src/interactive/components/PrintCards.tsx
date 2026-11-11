@@ -10,9 +10,11 @@ import { CardBadge } from './CardBadge'
 export function PrintCards({
   colors,
   shapes = defaultShapes,
+  paletteVersion,
 }: {
   colors: string[]
   shapes?: ShapeId[]
+  paletteVersion?: number
 }) {
   const [sets, setSets] = useState(1)
   const [inkSaving, setInkSaving] = useState(false)
@@ -63,7 +65,7 @@ export function PrintCards({
                 }
               >
                 <CardBadge letter={entry.letter} shape={shapes[i]!} />
-                <small>CLAIRFLE · carte réponse</small>
+                <small>CLAIRFLE · carte réponse{paletteVersion ? ` · palette ${paletteVersion}` : ''}</small>
               </div>
             ))}
           </div>

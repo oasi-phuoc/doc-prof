@@ -123,6 +123,7 @@ async function deletePreparedSession(game: Game, mode: PlayMode): Promise<void> 
 }
 
 const DiagnosticPage = lazy(() => import('./DiagnosticPage'))
+const CardsPage = lazy(() => import('./CardsPage'))
 export default function InteractiveApp() {
   const [loaded, setLoaded] = useState<{ preferences: ClassroomPreferences; warning: string } | null>(null)
   useEffect(() => {
@@ -135,6 +136,7 @@ export default function InteractiveApp() {
     return () => { active = false }
   }, [])
   if (!loaded) return <p role="status">Chargement des réglages…</p>
+  if (window.location.pathname.replace(/\/+$/, '') === '/interactif/cartes') return <Suspense fallback={<p role="status">Chargement des cartes…</p>}><CardsPage initial={loaded.preferences} initialWarning={loaded.warning} /></Suspense>
   if (window.location.pathname.replace(/\/+$/, '') === '/interactif/diagnostic') return <Suspense fallback={<p role="status">Chargement du diagnostic…</p>}><DiagnosticPage colors={loaded.preferences.colors} shapes={loaded.preferences.shapes} /></Suspense>
   return <GameApp initialPreferences={loaded.preferences} initialWarning={loaded.warning} />
 }
@@ -158,6 +160,7 @@ function GameApp({ initialPreferences, initialWarning }: { initialPreferences: C
   const [draftWarning] = useState(readDraftWarning)
   const [colors, setColors] = useState(initialPreferences.colors)
   const [shapes, setShapes] = useState(initialPreferences.shapes)
+  const [paletteVersion, setPaletteVersion] = useState(initialPreferences.paletteVersion ?? 1)
   const [timer, setTimer] = useState(initialPreferences.timer)
   const [contrast, setContrast] = useState(initialPreferences.contrast)
   const [mascot, setMascot] = useState<MascotKind>(initialPreferences.mascot)
@@ -322,7 +325,7 @@ function GameApp({ initialPreferences, initialWarning }: { initialPreferences: C
     setTimer(next)
     savePreferences({ timer: next })
   }
-  const savePreferences = (patch: Partial<ClassroomPreferences>) => { void patchClassroomPreferences(patch, initialPreferences).catch((error: unknown) => setPreferencesWarning(error instanceof Error ? error.message : 'Réglages non enregistrés.')) }
+  const savePreferences = (patch: Partial<ClassroomPreferences>) => { void patchClassroomPreferences(patch, initialPreferences).then((next) => setPaletteVersion(next.paletteVersion ?? 1), (error: unknown) => setPreferencesWarning(error instanceof Error ? error.message : 'Réglages non enregistrés.')) }
   const header = {
     toolbarGuard,
     mascot,
@@ -616,7 +619,7 @@ function GameApp({ initialPreferences, initialWarning }: { initialPreferences: C
                     }} />Maintenir le bouton pour révéler</label><p>Un appui de 600 ms évite une correction affichée par erreur. Fonctionne aussi avec Entrée ou Espace.</p></div>}
                   </aside>
                 </div>
-                {source && <PresetPanel key={source.reference ? `${source.reference.kind}:${source.reference.id}` : source.sourceKey} sourceKey={source.reference ? `${source.reference.kind}:${source.reference.id}` : source.sourceKey} contentHash={String(hash(canonicalJson(source.template)))} questions={game.questions} selected={selectedSources} options={source.options} timer={timer} mode={mode} onOptions={changePlanOptions} onApply={applyPreset} activePresetId={source.presetId} />}
+                {source && <PresetPanel key={source.reference ? `${source.reference.kind}:${source.reference.id}` : source.sourceKey} sourceKey={source.reference ? `${source.reference.kind}:${source.reference.id}` : source.sourceKey} contentHash={String(hash(canonicalJson(source.template)))} questions={game.questions} selected={selectedSources} options={source.options} timer={timer} mode={mode} onOptions={changePlanOptions} onApply={applyPreset} activePresetId={source.presetId} paletteVersion={paletteVersion} />}
                 {source?.reference && <SessionArchive reference={source.reference} template={source.template} title={source.name} onOpen={(run) => { const url = new URL(window.location.href); url.searchParams.set('s', run.sessionId); window.history.pushState({ ...window.history.state, clairfleOpenSession: run.sessionId }, '', url); window.dispatchEvent(new PopStateEvent('popstate')) }} onErased={() => { window.history.pushState({}, '', '/generateur'); window.dispatchEvent(new PopStateEvent('popstate')) }} />}
                 <section className="ci-panel ci-no-print">
                   <PaletteSettings
@@ -642,8 +645,8 @@ function GameApp({ initialPreferences, initialWarning }: { initialPreferences: C
                   </details>
                 )}
                 <TeacherSheet game={activeGame} colors={colors} shapes={shapes} disabled={!media.complete} lastSignature={teacherSheetExport} onExport={setTeacherSheetExport} />
-                <PrintCards colors={colors} shapes={shapes} />
-                <p className="ci-no-print"><a href="/interactif/diagnostic" target="_blank" rel="noreferrer">Diagnostic de l’écran</a></p>
+                <PrintCards colors={colors} shapes={shapes} paletteVersion={paletteVersion} />
+                <p className="ci-no-print"><a href="/interactif/cartes" target="_blank" rel="noreferrer">Comparer les cartes avec cet écran</a> · <a href="/interactif/diagnostic" target="_blank" rel="noreferrer">Diagnostic de l’écran</a></p>
               </main>
             )}
           </>

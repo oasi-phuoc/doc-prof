@@ -1,0 +1,23 @@
+.ci-card-page-header { display: flex; align-items: center; gap: 16px; padding: 16px; background: var(--ci-paper); }
+.ci-card-page-header .brand { margin-right: auto; }
+.ci-card-page-header > a:not(.brand) { display: grid; place-items: center; padding: 8px; min-height: 44px; border: 1px solid #7a859e; border-radius: 12px; text-decoration: none; }
+.ci-calibration-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; }
+.ci-calibration-picks { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 16px 0; }
+.ci-app .ci-calibration-picks button { color: var(--card-ink); background: var(--card-color); border: 3px solid #182238; min-height: 80px; padding: 8px; }
+.ci-app .ci-calibration-picks button[aria-pressed="true"] { outline: 3px solid #182238; outline-offset: 3px; box-shadow: 0 0 0 3px white; }
+.ci-calibration-picks .ci-card-badge { font-size: 32px; justify-content: center; }
+.ci-calibration-swatch { display: grid; place-items: center; color: var(--card-ink); background: var(--card-color); border: 3px solid #182238; border-radius: 18px; width: min(88mm, 100%); aspect-ratio: 1; margin: 24px auto; }
+.ci-calibration-swatch .ci-card-badge { flex-direction: column; font-size: 100px; gap: 16px; }
+.ci-calibration-controls > label { display: grid; gap: 8px; margin: 12px 0; }
+.ci-calibration-controls input[type="color"], .ci-calibration-controls select { min-height: 44px; width: 100%; }
+.ci-calibration-controls table { border-collapse: collapse; width: 100%; margin: 12px 0; }
+.ci-calibration-controls th, .ci-calibration-controls td { padding: 6px; border-bottom: 1px solid var(--ci-line); text-align: center; }
+.ci-calibration-controls summary { min-height: 44px; padding: 8px 0; }
+.ci-calibration-confirm { border-top: 2px solid #7a859e; margin-top: 24px; padding-top: 12px; }
+.ci-calibration-confirm label { display: flex; align-items: start; gap: 12px; margin-bottom: 12px; }
+@media (max-width: 650px) {
+  .ci-calibration-grid { grid-template-columns: 1fr; }
+  .ci-card-page-header { gap: 6px; padding: 8px; }
+  .ci-card-page-header .brand { font-size: 20px; }
+  .ci-card-page-header > a:not(.brand) { font-size: 12px; }
+}
