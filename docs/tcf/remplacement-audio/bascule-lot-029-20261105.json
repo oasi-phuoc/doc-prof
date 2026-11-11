@@ -1,0 +1,1648 @@
+{
+  "batch": 29,
+  "audio_replacements": [
+    {
+      "ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_37-3.mp3",
+      "previous_sha256": "617019d3aafb5e774dff1903d37d1c3ecbd6697653932f976b63d4fff79f8638",
+      "candidate_sha256": "fc68735ceab31c7c3c83481c0fa1608802c743a27e01ea6681a7b4083583d678",
+      "rollback_git_blob": "ab456d8a065ce33b69f0df3837a787353474e0a7",
+      "source_id": "delf_a2_2021:037:4c04751c8451",
+      "source_sha256": "4c04751c84512f18e04d55b82bf2ab67ceae89c598cfcf0a659ab605082d0955",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "fc68735ceab31c7c3c83481c0fa1608802c743a27e01ea6681a7b4083583d678",
+        "duration": 16.456,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "4c04751c84512f18e04d55b82bf2ab67ceae89c598cfcf0a659ab605082d0955",
+          "proof": {
+            "previous_sha256": "9571eacfdc793cfec0d7bf14682930198e437ee314aae135a4ba4f49bd9835c5",
+            "sha256": "fc68735ceab31c7c3c83481c0fa1608802c743a27e01ea6681a7b4083583d678",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/49-9571eacfdc79-2847448-3573158/candidate.mp3",
+            "source_sha256": "4c04751c84512f18e04d55b82bf2ab67ceae89c598cfcf0a659ab605082d0955",
+            "source_file": "/workspace/work/tcf-audio-replacement/incoming/a2/DELF_A2_2021_Piste_37.mp3",
+            "source_decoded_pcm_sha256": "57fc753769843db152a53c3b46f986676a7e3b0feb1ae6dde2fbf79cd605de4c",
+            "source_sample_rate": 44100,
+            "source_channels": 2,
+            "source_start_frame": 2847448,
+            "source_end_frame": 3573158,
+            "source_start": 64.56798185941044,
+            "source_end": 81.02399092970522,
+            "source_slice_pcm_sha256": "7e2835a00701e15aa426b3f04dd7ff713ac7d835614b7ce3fc73a729472fd682",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/49-9571eacfdc79-2847448-3573158/start_before.flac",
+                "sha256": "32b157d1cf1313ffc215dd918b30920cf97a1da533b81c746bad4ca480f36b0e",
+                "source_start_frame": 2759248,
+                "source_end_frame": 2847448,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/49-9571eacfdc79-2847448-3573158/start_after.flac",
+                "sha256": "4421a6cf246800a89b38ff362a73c61e999ae54469132cd4e8497faf5a79c8d7",
+                "source_start_frame": 2847448,
+                "source_end_frame": 2935648,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/49-9571eacfdc79-2847448-3573158/end_before.flac",
+                "sha256": "a4c270615eace678a6de36a2c41cd0fa6f757dd2c6384643229da4a5d7bdc507",
+                "source_start_frame": 3484958,
+                "source_end_frame": 3573158,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/49-9571eacfdc79-2847448-3573158/end_after.flac",
+                "sha256": "1e2029ce67c892504f426e9a1c038b731990ea716c7a7c50982ba2781d22ea86",
+                "source_start_frame": 3573158,
+                "source_end_frame": 3661358,
+                "available_seconds": 2.0
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Cet",
+                "start": 64.647999,
+                "end": 65.208,
+                "kind": "dialogue",
+                "asr_word_index": 84,
+                "raw_start": 64.64799946594238,
+                "raw_end": 65.2080001090765,
+                "native_token_indices": [
+                  5,
+                  6
+                ]
+              },
+              "last": {
+                "text": "plus!",
+                "start": 80.568,
+                "end": 80.808,
+                "kind": "dialogue",
+                "asr_word_index": 121,
+                "raw_start": 80.56799954223632,
+                "raw_end": 80.88799931156635,
+                "native_token_indices": [
+                  89,
+                  90
+                ]
+              },
+              "previous_word_end": 57.288,
+              "next_word_start": 83.46122448979592,
+              "first_source_speech_region": [
+                65.216,
+                67.52
+              ],
+              "last_source_speech_region": [
+                80.0,
+                80.864
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/49-9571eacfdc79-2847448-3573158/waveform.svg",
+              "sha256": "b83cc0309a01fceeeca0cc48c53bec25f95e5d5994d9b23bfdf4ea79a8938d36"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.2,
+          "relative_rms_threshold": 0.011254174262285234,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.48,
+          "trailing_non_speech_seconds": 0.168,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
+      "editorial_reason": "Transcription et réponses confrontées aux deux reconnaissances finales concordantes ; les références dont les frontières restent incertaines attendent la reprise des coupes.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 25.99,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_19-3.mp3",
+      "previous_sha256": "97b3033c5b166153422dbb0cea623b56ffece1b8cff513f814cdc762424b8a8d",
+      "candidate_sha256": "0ee7757fa453cb5d1e4816e51c64d1b72053ee4da3cfbfa8f5b870b2123690e6",
+      "rollback_git_blob": "7a6882a757f997f21d586bfa06aaefca78f8e5de",
+      "source_id": "delf_a1_2022:019:f956db0544b7",
+      "source_sha256": "f956db0544b7dd3fee1328d9a0bdbc5bb8875a734fd2c5528865e8e612fd0245",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "0ee7757fa453cb5d1e4816e51c64d1b72053ee4da3cfbfa8f5b870b2123690e6",
+        "duration": 8.6,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "f956db0544b7dd3fee1328d9a0bdbc5bb8875a734fd2c5528865e8e612fd0245",
+          "proof": {
+            "previous_sha256": "afd2adb9eae05106e861c1f7a53b5234e403ef7376fa6f8aca6b8e32e0c8be67",
+            "sha256": "0ee7757fa453cb5d1e4816e51c64d1b72053ee4da3cfbfa8f5b870b2123690e6",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/53-afd2adb9eae0-1491991-1871251/candidate.mp3",
+            "source_sha256": "f956db0544b7dd3fee1328d9a0bdbc5bb8875a734fd2c5528865e8e612fd0245",
+            "source_file": "/workspace/work/tcf-audio-replacement/incoming/a1/delf_a1_2022_piste_19.mp3",
+            "source_decoded_pcm_sha256": "31e9aab59021030eafde399804a5a2aa02c88c7a7a615c41eea4fc35aeaa9805",
+            "source_sample_rate": 44100,
+            "source_channels": 2,
+            "source_start_frame": 1491991,
+            "source_end_frame": 1871251,
+            "source_start": 33.83199546485261,
+            "source_end": 42.431995464852605,
+            "source_slice_pcm_sha256": "6f9983ec996e75e74ee9a642c4f26f96f503939ca411eb3adb30722c7007a2ed",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/53-afd2adb9eae0-1491991-1871251/start_before.flac",
+                "sha256": "f3ca03c1bad5569c65e4f58e997a39227616f5f9101308af2220d763de89138d",
+                "source_start_frame": 1403791,
+                "source_end_frame": 1491991,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/53-afd2adb9eae0-1491991-1871251/start_after.flac",
+                "sha256": "fb66069cef9cde1a4d13f619526441b401448900ecbbfd589b1cb7ca8cd33382",
+                "source_start_frame": 1491991,
+                "source_end_frame": 1580191,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/53-afd2adb9eae0-1491991-1871251/end_before.flac",
+                "sha256": "52a3f38efcb806b13671e569b72bae4adb86052bdbf2b66600e7348bc0850598",
+                "source_start_frame": 1783051,
+                "source_end_frame": 1871251,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/53-afd2adb9eae0-1491991-1871251/end_after.flac",
+                "sha256": "ac197a639384446d4e71721fc325e9a043c2ff228e499d3edea8d8a6610a9258",
+                "source_start_frame": 1871251,
+                "source_end_frame": 1958400,
+                "available_seconds": 1.9761678004535148
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Allô?",
+                "start": 33.912,
+                "end": 34.472,
+                "kind": "dialogue",
+                "asr_word_index": 44,
+                "raw_start": 33.911999637603756,
+                "raw_end": 34.63199997913837,
+                "native_token_indices": [
+                  11,
+                  12,
+                  14
+                ]
+              },
+              "last": {
+                "text": "Bisous!",
+                "start": 41.671999,
+                "end": 42.232,
+                "kind": "dialogue",
+                "asr_word_index": 63,
+                "raw_start": 41.671999389648434,
+                "raw_end": 42.39199973118305,
+                "native_token_indices": [
+                  55,
+                  56,
+                  57,
+                  58,
+                  60
+                ]
+              },
+              "previous_word_end": 31.112,
+              "next_word_start": 44.40816326530612,
+              "first_source_speech_region": [
+                34.4,
+                34.496
+              ],
+              "last_source_speech_region": [
+                41.856,
+                42.272
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/53-afd2adb9eae0-1491991-1871251/waveform.svg",
+              "sha256": "88c262c1b24a426ecb6b4f82f08a03c8f61a1d5f46c042a62034d482e43c894f"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.22,
+          "relative_rms_threshold": 0.005119729265570641,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.48,
+          "trailing_non_speech_seconds": 0.184,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
+      "editorial_reason": "Transcription et réponses confrontées aux deux reconnaissances finales concordantes ; les références dont les frontières restent incertaines attendent la reprise des coupes.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 9.85,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_25-3.mp3",
+      "previous_sha256": "9553f75c9a0da20565dd390bfb6fd084ed11f8647b5e3acd370cc0e30b153f13",
+      "candidate_sha256": "5f4759eb4eb0ced5c5095c30ea1936976b64e5207398e0ef63a3be4205d493fb",
+      "rollback_git_blob": "1bae87d2077b86f25b3f97de4384331084eb9303",
+      "source_id": "delf_a1_2022:025:f51720efd4b0",
+      "source_sha256": "f51720efd4b00833725328c39264a82b0a1db863754a5058c61581295b269966",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "5f4759eb4eb0ced5c5095c30ea1936976b64e5207398e0ef63a3be4205d493fb",
+        "duration": 11.512,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "f51720efd4b00833725328c39264a82b0a1db863754a5058c61581295b269966",
+          "proof": {
+            "previous_sha256": "f7a87eb4ee6ab4e4e03a53689de4e175c492ad3861567ac306dd64bace553e3d",
+            "sha256": "5f4759eb4eb0ced5c5095c30ea1936976b64e5207398e0ef63a3be4205d493fb",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/54-f7a87eb4ee6a-2286496-2794176/candidate.mp3",
+            "source_sha256": "f51720efd4b00833725328c39264a82b0a1db863754a5058c61581295b269966",
+            "source_file": "/workspace/work/tcf-audio-replacement/incoming/a1/delf_a1_2022_piste_25.mp3",
+            "source_decoded_pcm_sha256": "331a0c90aeb74cb092d36d116c1ee7dc4f4b70865be353047f6f7276a7b95d3f",
+            "source_sample_rate": 44100,
+            "source_channels": 2,
+            "source_start_frame": 2286496,
+            "source_end_frame": 2794176,
+            "source_start": 51.84798185941043,
+            "source_end": 63.36,
+            "source_slice_pcm_sha256": "e251d3157c5ea3e5309f26c2b0b86c035914893bc45e77dce599f6bc1054b94a",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/54-f7a87eb4ee6a-2286496-2794176/start_before.flac",
+                "sha256": "b005e1f82c1c5c76915cde3c13843f9efdc72be23e18a78d269cfbdc3fba304f",
+                "source_start_frame": 2198296,
+                "source_end_frame": 2286496,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/54-f7a87eb4ee6a-2286496-2794176/start_after.flac",
+                "sha256": "34eb579bf6baac6f9981f609c172a1838030b89fcd0cd9206251593e7e8cc0b2",
+                "source_start_frame": 2286496,
+                "source_end_frame": 2374696,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/54-f7a87eb4ee6a-2286496-2794176/end_before.flac",
+                "sha256": "9c1a61ab56dfbaf1fa7ce132f73dac74afda83521ab97ff757daebfda77451ed",
+                "source_start_frame": 2705976,
+                "source_end_frame": 2794176,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/54-f7a87eb4ee6a-2286496-2794176/end_after.flac",
+                "sha256": "83b97d554b9d02a70c84df38efc6ba3c045b286a54c0209e1f2237f0e3b64597",
+                "source_start_frame": 2794176,
+                "source_end_frame": 2880000,
+                "available_seconds": 1.9461224489795919
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Mesdames,",
+                "start": 51.927999,
+                "end": 52.648,
+                "kind": "dialogue",
+                "asr_word_index": 43,
+                "raw_start": 51.92799908447266,
+                "raw_end": 52.808000301599506,
+                "native_token_indices": [
+                  53,
+                  54,
+                  55,
+                  56,
+                  57
+                ]
+              },
+              "last": {
+                "text": "9h03.",
+                "start": 61.832,
+                "end": 63.112,
+                "kind": "dialogue",
+                "asr_word_index": 60,
+                "raw_start": 61.831999847412106,
+                "raw_end": 63.351999902844426,
+                "native_token_indices": [
+                  23,
+                  24,
+                  25,
+                  26,
+                  27
+                ]
+              },
+              "previous_word_end": 45.608,
+              "next_word_start": 65.3061224489796,
+              "first_source_speech_region": [
+                52.288,
+                53.472
+              ],
+              "last_source_speech_region": [
+                60.832,
+                63.2
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/54-f7a87eb4ee6a-2286496-2794176/waveform.svg",
+              "sha256": "79d2526b63a7e41b31f8513949a23b7946fa220a755305537a5a4faaf1e83b2a"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.02,
+          "relative_rms_threshold": 0.0075701989233493815,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.32,
+          "trailing_non_speech_seconds": 0.184,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
+      "editorial_reason": "Transcription et réponses confrontées aux deux reconnaissances finales concordantes ; les références dont les frontières restent incertaines attendent la reprise des coupes.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 20.85,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/excusez-moi-essaie-retirer-2-2.mp3",
+      "previous_sha256": "450d3753429a1c33f35172c64d747fb470017f7b52c1e29f830e9a08fd2da682",
+      "candidate_sha256": "6378ffc15cf2e5f853653490e68532b0a2b2388d8c6e2861a9ea48429c45712e",
+      "rollback_git_blob": "5fc3f86a51c415816dd854f2b747cba5df8a0d76",
+      "source_id": "additional-20261102:mdf-a2-abc-direct:92:13977bdd8c90:a0d8314f",
+      "source_sha256": "13977bdd8c90106e28e0c0a4b6e826fb0a97f32d2b9bad9ef8fb0331168ec249",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "6378ffc15cf2e5f853653490e68532b0a2b2388d8c6e2861a9ea48429c45712e",
+        "duration": 10.2160625,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "13977bdd8c90106e28e0c0a4b6e826fb0a97f32d2b9bad9ef8fb0331168ec249",
+          "proof": {
+            "previous_sha256": "ea1ab5a3e8da92e7e8fd9f2fafd46061544a8ad38341c387a3208f3111e426fe",
+            "sha256": "6378ffc15cf2e5f853653490e68532b0a2b2388d8c6e2861a9ea48429c45712e",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/354-ea1ab5a3e8da-990309-1440836/candidate.mp3",
+            "source_sha256": "13977bdd8c90106e28e0c0a4b6e826fb0a97f32d2b9bad9ef8fb0331168ec249",
+            "source_file": "/workspace/attachments/083feeaf-f2ed-45fb-ac2c-c50982816fde/09035199_092_ACT 43.mp3",
+            "source_decoded_pcm_sha256": "df3d09b8fc3f1a620aa66e4fe57633cf29ba22fd1b0a7a80348461aa48a45f3e",
+            "source_sample_rate": 44100,
+            "source_channels": 1,
+            "source_start_frame": 990309,
+            "source_end_frame": 1440836,
+            "source_start": 22.455986394557822,
+            "source_end": 32.67201814058957,
+            "source_slice_pcm_sha256": "b4587537cedb21aacf79c750d82c5e7a6a2cb046ce8af435a5b3bca97a55ce3f",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/354-ea1ab5a3e8da-990309-1440836/start_before.flac",
+                "sha256": "c4783cfad11ba1cbc2948482eb5d8d06336510dce93e965bb461924a17ed6bb4",
+                "source_start_frame": 902109,
+                "source_end_frame": 990309,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/354-ea1ab5a3e8da-990309-1440836/start_after.flac",
+                "sha256": "be9cc1c89aab2277a60cc4c27400d354cf78149e30715bf2a8fec900978b7a6e",
+                "source_start_frame": 990309,
+                "source_end_frame": 1078509,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/354-ea1ab5a3e8da-990309-1440836/end_before.flac",
+                "sha256": "fd74ea9a38d16140666683016260fda14c22b1224918aa5cb84d63bee6024165",
+                "source_start_frame": 1352636,
+                "source_end_frame": 1440836,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/354-ea1ab5a3e8da-990309-1440836/end_after.flac",
+                "sha256": "8773ca8a52b9d7633a62d88df6761eeba7dd796c65464cd704a9704fd144f0a6",
+                "source_start_frame": 1440836,
+                "source_end_frame": 1529036,
+                "available_seconds": 2.0
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Bonjour",
+                "start": 22.536,
+                "end": 23.015999,
+                "kind": "dialogue",
+                "asr_word_index": 41,
+                "raw_start": 22.53599954223633,
+                "raw_end": 23.015999158978463,
+                "native_token_indices": [
+                  92,
+                  93,
+                  94,
+                  95
+                ]
+              },
+              "last": {
+                "text": "l'heure.",
+                "start": 31.752,
+                "end": 32.552,
+                "kind": "dialogue",
+                "asr_word_index": 71,
+                "raw_start": 31.751999961853027,
+                "raw_end": 32.87199966859818,
+                "native_token_indices": [
+                  38,
+                  39,
+                  40,
+                  41,
+                  42
+                ]
+              },
+              "previous_word_end": 21.816,
+              "next_word_start": 34.872,
+              "first_source_speech_region": [
+                22.912,
+                23.52
+              ],
+              "last_source_speech_region": [
+                30.304,
+                31.776
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. Natural native margins up to one second are retained to avoid trimming a quiet first word or its final decay. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/354-ea1ab5a3e8da-990309-1440836/waveform.svg",
+              "sha256": "0687e3561aff230e3b53608329afc2254e8a76f39f02d1930adbe8e8ae465374"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.0,
+          "relative_rms_threshold": 0.005297186076641083,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.448,
+          "trailing_non_speech_seconds": 0.9040625,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
+      "editorial_reason": "Revue éditoriale du dialogue, des questions et de leurs trois propositions. Corrections des faits uniquement lorsque les reconnaissances les étayent ; deux reconnaissances finales et marges qualifiées restent requises avant bascule.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 14.47,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/madame-bienvenue-train-2.mp3",
+      "previous_sha256": "018ba015e8fb73a9a4285a42b643f31b74a689af24744aa36bba7a5f8590ef15",
+      "candidate_sha256": "e36a43fb41f17780fea3ab83fc031e1e05f5f018f802621bf956d31d7a25b6c1",
+      "rollback_git_blob": "cbb280c6f0783a371d8e0956fc67d0a00a36fe5e",
+      "source_id": "additional-20261102:mdf-a2-abc-direct:43:05f804517f60:e8a8300d",
+      "source_sha256": "05f804517f60927a28a151bee6802bdb8be50a118d988ffdb70e6ed23f32b37b",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "e36a43fb41f17780fea3ab83fc031e1e05f5f018f802621bf956d31d7a25b6c1",
+        "duration": 32.912,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "05f804517f60927a28a151bee6802bdb8be50a118d988ffdb70e6ed23f32b37b",
+          "proof": {
+            "previous_sha256": "d9386f654d18cd304d641e9f44c57ce0020d81e930cbf8102673f4c690091b36",
+            "sha256": "e36a43fb41f17780fea3ab83fc031e1e05f5f018f802621bf956d31d7a25b6c1",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/61-d9386f654d18-165816-1617235/candidate.mp3",
+            "source_sha256": "05f804517f60927a28a151bee6802bdb8be50a118d988ffdb70e6ed23f32b37b",
+            "source_file": "/workspace/attachments/b978c17c-a571-42c4-81d7-5c2bfe3fe288/09035199_043_ACT 8.mp3",
+            "source_decoded_pcm_sha256": "6e1261a5e52fc31740d1bfed8177a4849e84ac1e9613f3b24d85789c6bb34036",
+            "source_sample_rate": 44100,
+            "source_channels": 1,
+            "source_start_frame": 165816,
+            "source_end_frame": 1617235,
+            "source_start": 3.76,
+            "source_end": 36.67199546485261,
+            "source_slice_pcm_sha256": "ae5e7d092ed7386d2f185780e8b41f5dcac4bbde708dce11378264751db2b998",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/61-d9386f654d18-165816-1617235/start_before.flac",
+                "sha256": "6d7d5c63ba208ec318d073f8e291d21dbdda68e5f74b1c2e1b282f4baa38d774",
+                "source_start_frame": 77616,
+                "source_end_frame": 165816,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/61-d9386f654d18-165816-1617235/start_after.flac",
+                "sha256": "262218f0a9616b0ed1171ff31ae58ef8129892ed136504ca598b764f8ac0f5da",
+                "source_start_frame": 165816,
+                "source_end_frame": 254016,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/61-d9386f654d18-165816-1617235/end_before.flac",
+                "sha256": "75793ee18a61795420e0a7cbee4196edf8ad3e441bdcd8f3693479b3be541b48",
+                "source_start_frame": 1529035,
+                "source_end_frame": 1617235,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/61-d9386f654d18-165816-1617235/end_after.flac",
+                "sha256": "325d5db0bd2a7099be6b15bbb1df83e812d399b221b9fafe5395220ede376878",
+                "source_start_frame": 1617235,
+                "source_end_frame": 1705435,
+                "available_seconds": 2.0
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Madame",
+                "start": 3.84,
+                "end": 4.48,
+                "kind": "dialogue",
+                "asr_word_index": 2,
+                "raw_start": 3.8399999141693115,
+                "raw_end": 4.47999969124794,
+                "native_token_indices": [
+                  5,
+                  6
+                ]
+              },
+              "last": {
+                "text": "voyage!",
+                "start": 35.992,
+                "end": 36.471999,
+                "kind": "dialogue",
+                "asr_word_index": 62,
+                "raw_start": 35.99199961853027,
+                "raw_end": 36.55200003814697,
+                "native_token_indices": [
+                  58,
+                  59,
+                  60,
+                  62
+                ]
+              },
+              "previous_word_end": 1.36,
+              "next_word_start": 42.34448979591837,
+              "first_source_speech_region": [
+                4.096,
+                9.728
+              ],
+              "last_source_speech_region": [
+                35.936,
+                36.512
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/61-d9386f654d18-165816-1617235/waveform.svg",
+              "sha256": "61d76917b55d89be5d0271e1765ffbb3cce293f8c06addbc4a194557e78a70e2"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.0,
+          "relative_rms_threshold": 0.004912639558315278,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.352,
+          "trailing_non_speech_seconds": 0.144,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
+      "editorial_reason": "Texte, questions et réponses relus en regard des reconnaissances finales ; frontières incertaines maintenues en attente.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 38.3,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/excusez-moi-essaie-retirer-2-3.mp3",
+      "previous_sha256": "92fb9cd7bdf91dece9e8a2af19f379310b8667707eeeefed607f2b82bc956c59",
+      "candidate_sha256": "23029057e7d0e19d8ca1f177d989a78c00fa0e8687297d0a05c33082bc91ee3d",
+      "rollback_git_blob": "3de1258a3d283395800372f715d92d9f0888cba2",
+      "source_id": "additional-20261102:mdf-a2-abc-direct:92:13977bdd8c90:a0d8314f",
+      "source_sha256": "13977bdd8c90106e28e0c0a4b6e826fb0a97f32d2b9bad9ef8fb0331168ec249",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "23029057e7d0e19d8ca1f177d989a78c00fa0e8687297d0a05c33082bc91ee3d",
+        "duration": 10.3600625,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "13977bdd8c90106e28e0c0a4b6e826fb0a97f32d2b9bad9ef8fb0331168ec249",
+          "proof": {
+            "previous_sha256": "c78b4e772ca1c1f38b8b125e0bd362970d6af0b11d9e243e09e7eca04d45c7f6",
+            "sha256": "23029057e7d0e19d8ca1f177d989a78c00fa0e8687297d0a05c33082bc91ee3d",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/471-c78b4e772ca1-1615471-2072348/candidate.mp3",
+            "source_sha256": "13977bdd8c90106e28e0c0a4b6e826fb0a97f32d2b9bad9ef8fb0331168ec249",
+            "source_file": "/workspace/attachments/083feeaf-f2ed-45fb-ac2c-c50982816fde/09035199_092_ACT 43.mp3",
+            "source_decoded_pcm_sha256": "df3d09b8fc3f1a620aa66e4fe57633cf29ba22fd1b0a7a80348461aa48a45f3e",
+            "source_sample_rate": 44100,
+            "source_channels": 1,
+            "source_start_frame": 1615471,
+            "source_end_frame": 2072348,
+            "source_start": 36.63199546485261,
+            "source_end": 46.99201814058957,
+            "source_slice_pcm_sha256": "34179bb028efd8738adb3a81ac4ca10728af9f67299beb6cb253cb0f6f3e9a2e",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/471-c78b4e772ca1-1615471-2072348/start_before.flac",
+                "sha256": "80044c61a50669f5be8cdd5d16bd17e5822d500c3b1654e25798d35aa7a3a0d2",
+                "source_start_frame": 1527271,
+                "source_end_frame": 1615471,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/471-c78b4e772ca1-1615471-2072348/start_after.flac",
+                "sha256": "9262c043a7c873961f491a1c38c1949879da11fdeb0077b2c931cd20b0692141",
+                "source_start_frame": 1615471,
+                "source_end_frame": 1703671,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/471-c78b4e772ca1-1615471-2072348/end_before.flac",
+                "sha256": "75050d81b981b838b435e69170ac1fe6fa03084ddee8bdceb3ce44922f9a3d5d",
+                "source_start_frame": 1984148,
+                "source_end_frame": 2072348,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/471-c78b4e772ca1-1615471-2072348/end_after.flac",
+                "sha256": "1b5745ff1a5fe681be52efc3fbb69916a9d2b1ffca6f3db2ff4f77365f5465a4",
+                "source_start_frame": 2072348,
+                "source_end_frame": 2160548,
+                "available_seconds": 2.0
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Excusez-moi,",
+                "start": 36.712,
+                "end": 37.672,
+                "kind": "dialogue",
+                "asr_word_index": 74,
+                "raw_start": 36.712,
+                "raw_end": 37.75200003635884,
+                "native_token_indices": [
+                  50,
+                  51,
+                  52,
+                  53,
+                  54,
+                  55,
+                  56,
+                  57
+                ]
+              },
+              "last": {
+                "text": "d'autre.",
+                "start": 46.232,
+                "end": 46.872,
+                "kind": "dialogue",
+                "asr_word_index": 105,
+                "raw_start": 46.232000457763675,
+                "raw_end": 47.191999840259555,
+                "native_token_indices": [
+                  117,
+                  118,
+                  119,
+                  120,
+                  121
+                ]
+              },
+              "previous_word_end": 36.232,
+              "next_word_start": 49.192,
+              "first_source_speech_region": [
+                37.312,
+                38.112
+              ],
+              "last_source_speech_region": [
+                45.216,
+                46.4
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. Natural native margins up to one second are retained to avoid trimming a quiet first word or its final decay. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/471-c78b4e772ca1-1615471-2072348/waveform.svg",
+              "sha256": "5be45ef5e44a433241650beca8db8484de0714785d3670ff73d50a83a165d530"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.0,
+          "relative_rms_threshold": 0.006582379043102265,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.512,
+          "trailing_non_speech_seconds": 0.5680625,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "whisper",
+        "ctc"
+      ],
+      "editorial_reason": "Comparaison détaillée relue : ponctuation, graphies, accords et formats de nombres ; les éventuelles divergences chiffrées restent soumises au contrôle indépendant des fichiers finaux avant installation.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 13.74,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    }
+  ],
+  "exercise_changes": [
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-ss-a2-s49-co-4",
+      "before": {
+        "id": "tcf-ss-a2-s49-co-4",
+        "niveau": "A1-A2",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Conversation 43",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "transcription": [
+            "Excusez-moi, monsieur. J'essaie de retirer de l'argent au distributeur de billets, mais je n'y arrive pas. Il a un problème technique. Vous pouvez utiliser celui à l'intérieur de la banque, si vous voulez. D'accord.",
+            "Bonjour madame, vous savez à quelle heure la banque va ouvrir ?\n— Bonjour.\nJe ne suis pas sûre, mais je crois qu’elle ouvre à 13h30.\n— D’accord.\nJe vais revenir tout à l’heure.",
+            "Excusez-moi monsieur, je cherche la mairie de Sèvres.\n— Je suis vraiment désolé, mais je ne sais pas.\nJe ne suis pas d’ici.\n— Ce n’est pas grave.\nJe vais demander à quelqu’un d’autre.",
+            "Attendez madame, vous voulez que je vous aide à porter les sacs ?\n— Oh c’est très gentil, monsieur.\nOui, je veux bien.\nMerci beaucoup.\nIls sont vraiment très lourds.\n— Avec plaisir madame."
+          ],
+          "audios": [
+            "/lib/audio/tcf/co/vie-quotidienne/excusez-moi-essaie-retirer-2-1.mp3",
+            "/lib/audio/tcf/co/vie-quotidienne/excusez-moi-essaie-retirer-2-2.mp3",
+            "/lib/audio/tcf/co/vie-quotidienne/excusez-moi-essaie-retirer-2-3.mp3",
+            "/lib/audio/tcf/co/vie-quotidienne/excusez-moi-essaie-retirer-2-4.mp3"
+          ],
+          "images_descriptions": [
+            "Scénario vidéo (audio CO moyen, « Excusez moi essaie retirer — dialogue 1 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans une situation de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Excusez-moi monsieur, j’essaie de retirer de l’argent au distributeur de billets, mais je n’y arrive pas » ; B : « Il a un problème technique » ; A : « Vous pouvez utiliser celui à l’intérieur de la banque si vous voulez » ; B : « D’accord ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Excusez moi essaie retirer — dialogue 2 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans une situation de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Bonjour madame, vous savez à quelle heure la banque va ouvrir ? » ; B : « Bonjour » ; A : « Je ne suis pas sûre, mais je crois qu’elle ouvre à 13h30 » ; B : « D’accord » ; A : « Je vais revenir tout à l’heure ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Excusez moi essaie retirer — dialogue 3 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans une situation de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Excusez-moi monsieur, je cherche la mairie de Sèvres » ; B : « Je suis vraiment désolé, mais je ne sais pas » ; A : « Je ne suis pas d’ici » ; B : « Ce n’est pas grave » ; A : « Je vais demander à quelqu’un d’autre ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Excusez moi essaie retirer — dialogue 4 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans une situation de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Attendez madame, vous voulez que je vous aide à porter les sacs ? » ; B : « Oh c’est très gentil, monsieur » ; A : « Oui, je veux bien » ; B : « Merci beaucoup » ; A : « Ils sont vraiment très lourds » ; B : « Avec plaisir madame ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
+          ]
+        },
+        "questions": [
+          {
+            "enonce": "Qu’est-ce que la personne essaie de faire ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Retirer de l'argent",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Déposer un colis"
+              },
+              {
+                "id": "c",
+                "texte": "Acheter un billet"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Retirer de l'argent"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Quel problème rencontre-t-elle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Une panne technique du distributeur",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Une carte perdue"
+              },
+              {
+                "id": "c",
+                "texte": "Un compte fermé"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Une panne technique du distributeur"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Quelle solution lui propose-t-on ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Utiliser le distributeur dans la banque",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Revenir le mois prochain"
+              },
+              {
+                "id": "c",
+                "texte": "Aller au bureau de poste"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Utiliser le distributeur dans la banque"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Quel établissement la personne attend-elle de voir ouvrir ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La banque",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "La pharmacie"
+              },
+              {
+                "id": "c",
+                "texte": "La bibliothèque"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "La banque"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "image": "/lib/images/tcf/qcm-audit/co306-banque-dessine.webp",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-pharmacie-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "À quelle heure la dame pense-t-elle qu'il ouvre ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "À 13 h 30",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "À 12 h 30"
+              },
+              {
+                "id": "c",
+                "texte": "À 14 h 30"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "À 13 h 30"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1330-dessinee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1230-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1430-dessinee.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Que décide le client ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Revenir un peu plus tard",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Entrer immédiatement"
+              },
+              {
+                "id": "c",
+                "texte": "Changer de banque"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Revenir un peu plus tard"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Quel bâtiment la personne cherche-t-elle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La mairie de Sèvres",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "La gare de Sèvres"
+              },
+              {
+                "id": "c",
+                "texte": "La bibliothèque de Sèvres"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "La mairie de Sèvres"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Pourquoi l'homme ne peut-il pas indiquer le chemin ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Il n'est pas d'ici",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Il n'entend pas la question"
+              },
+              {
+                "id": "c",
+                "texte": "Il ne parle pas français"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Il n'est pas d'ici"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Que va faire la personne ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Demander à quelqu'un d'autre",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Téléphoner à la mairie"
+              },
+              {
+                "id": "c",
+                "texte": "Rentrer chez elle"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Demander à quelqu'un d'autre"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quelle aide l'homme propose-t-il ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Porter les sacs",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Appeler un taxi"
+              },
+              {
+                "id": "c",
+                "texte": "Ouvrir une porte"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Porter les sacs"
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Pourquoi la dame accepte-t-elle cette aide ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Ses sacs sont très lourds",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Elle a perdu son chemin"
+              },
+              {
+                "id": "c",
+                "texte": "Elle a oublié son téléphone"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Ses sacs sont très lourds"
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Comment remercie-t-elle l'homme ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Elle le remercie chaleureusement",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Elle refuse de lui parler"
+              },
+              {
+                "id": "c",
+                "texte": "Elle lui demande de partir"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Elle le remercie chaleureusement"
+              }
+            },
+            "audio": 4
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "vie-quotidienne",
+        "scene": "Excusez moi essaie retirer"
+      },
+      "after": {
+        "id": "tcf-ss-a2-s49-co-4",
+        "niveau": "A1-A2",
+        "competence": "CO",
+        "type_exercice": "complet",
+        "theme": "Soutien scolaire · Conversation 43",
+        "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+        "support": {
+          "transcription": [
+            "Excusez-moi, monsieur. J'essaie de retirer de l'argent au distributeur de billets, mais je n'y arrive pas. Il a un problème technique. Vous pouvez utiliser celui à l'intérieur de la banque, si vous voulez. D'accord.",
+            "Bonjour madame, vous savez à quelle heure la banque va ouvrir ? Bonjour, je ne suis pas sûre, mais je crois qu'elle ouvre à 13h30. D'accord, je vais revenir tout à l'heure.",
+            "Excusez-moi monsieur, je cherche la mairie de Sèvres.\n— Je suis vraiment désolé, mais je ne sais pas.\nJe ne suis pas d’ici.\n— Ce n’est pas grave.\nJe vais demander à quelqu’un d’autre.",
+            "Attendez madame, vous voulez que je vous aide à porter les sacs ?\n— Oh c’est très gentil, monsieur.\nOui, je veux bien.\nMerci beaucoup.\nIls sont vraiment très lourds.\n— Avec plaisir madame."
+          ],
+          "audios": [
+            "/lib/audio/tcf/co/vie-quotidienne/excusez-moi-essaie-retirer-2-1.mp3",
+            "/lib/audio/tcf/co/vie-quotidienne/excusez-moi-essaie-retirer-2-2.mp3",
+            "/lib/audio/tcf/co/vie-quotidienne/excusez-moi-essaie-retirer-2-3.mp3",
+            "/lib/audio/tcf/co/vie-quotidienne/excusez-moi-essaie-retirer-2-4.mp3"
+          ],
+          "images_descriptions": [
+            "Scénario vidéo (audio CO moyen, « Excusez moi essaie retirer — dialogue 1 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans une situation de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Excusez-moi monsieur, j’essaie de retirer de l’argent au distributeur de billets, mais je n’y arrive pas » ; B : « Il a un problème technique » ; A : « Vous pouvez utiliser celui à l’intérieur de la banque si vous voulez » ; B : « D’accord ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Excusez moi essaie retirer — dialogue 2 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans une situation de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Bonjour madame, vous savez à quelle heure la banque va ouvrir ? » ; B : « Bonjour » ; A : « Je ne suis pas sûre, mais je crois qu’elle ouvre à 13h30 » ; B : « D’accord » ; A : « Je vais revenir tout à l’heure ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Excusez moi essaie retirer — dialogue 3 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans une situation de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Excusez-moi monsieur, je cherche la mairie de Sèvres » ; B : « Je suis vraiment désolé, mais je ne sais pas » ; A : « Je ne suis pas d’ici » ; B : « Ce n’est pas grave » ; A : « Je vais demander à quelqu’un d’autre ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.",
+            "Scénario vidéo (audio CO moyen, « Excusez moi essaie retirer — dialogue 4 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans une situation de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Attendez madame, vous voulez que je vous aide à porter les sacs ? » ; B : « Oh c’est très gentil, monsieur » ; A : « Oui, je veux bien » ; B : « Merci beaucoup » ; A : « Ils sont vraiment très lourds » ; B : « Avec plaisir madame ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
+          ]
+        },
+        "questions": [
+          {
+            "enonce": "Qu’est-ce que la personne essaie de faire ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Retirer de l'argent",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Déposer un colis"
+              },
+              {
+                "id": "c",
+                "texte": "Acheter un billet"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Retirer de l'argent"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Quel problème rencontre-t-elle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Une panne technique du distributeur",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Une carte perdue"
+              },
+              {
+                "id": "c",
+                "texte": "Un compte fermé"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Une panne technique du distributeur"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Quelle solution lui propose-t-on ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Utiliser le distributeur dans la banque",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Revenir le mois prochain"
+              },
+              {
+                "id": "c",
+                "texte": "Aller au bureau de poste"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Utiliser le distributeur dans la banque"
+              }
+            },
+            "audio": 1
+          },
+          {
+            "enonce": "Quel établissement la personne attend-elle de voir ouvrir ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La banque",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "La pharmacie"
+              },
+              {
+                "id": "c",
+                "texte": "La bibliothèque"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "La banque"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "image": "/lib/images/tcf/qcm-audit/co306-banque-dessine.webp",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-pharmacie-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "À quelle heure la dame pense-t-elle qu'il ouvre ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "À 13 h 30",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "À 12 h 30"
+              },
+              {
+                "id": "c",
+                "texte": "À 14 h 30"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "À 13 h 30"
+              },
+              "qcm_image": {
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "correct": true,
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1330-dessinee.webp"
+                  },
+                  {
+                    "id": "b",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1230-dessinee.webp"
+                  },
+                  {
+                    "id": "c",
+                    "image": "/lib/images/tcf/qcm-audit/co834-horloge-1430-dessinee.webp"
+                  }
+                ]
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Que décide le client ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Revenir un peu plus tard",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Entrer immédiatement"
+              },
+              {
+                "id": "c",
+                "texte": "Changer de banque"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Revenir un peu plus tard"
+              }
+            },
+            "audio": 2
+          },
+          {
+            "enonce": "Quel bâtiment la personne cherche-t-elle ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "La mairie de Sèvres",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "La gare de Sèvres"
+              },
+              {
+                "id": "c",
+                "texte": "La bibliothèque de Sèvres"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "La mairie de Sèvres"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Pourquoi l'homme ne peut-il pas indiquer le chemin ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Il n'est pas d'ici",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Il n'entend pas la question"
+              },
+              {
+                "id": "c",
+                "texte": "Il ne parle pas français"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Il n'est pas d'ici"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Que va faire la personne ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Demander à quelqu'un d'autre",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Téléphoner à la mairie"
+              },
+              {
+                "id": "c",
+                "texte": "Rentrer chez elle"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Demander à quelqu'un d'autre"
+              }
+            },
+            "audio": 3
+          },
+          {
+            "enonce": "Quelle aide l'homme propose-t-il ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Porter les sacs",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Appeler un taxi"
+              },
+              {
+                "id": "c",
+                "texte": "Ouvrir une porte"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Porter les sacs"
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Pourquoi la dame accepte-t-elle cette aide ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Ses sacs sont très lourds",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Elle a perdu son chemin"
+              },
+              {
+                "id": "c",
+                "texte": "Elle a oublié son téléphone"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Ses sacs sont très lourds"
+              }
+            },
+            "audio": 4
+          },
+          {
+            "enonce": "Comment remercie-t-elle l'homme ?",
+            "type_reponse": "qcm_texte",
+            "points": 1,
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Elle le remercie chaleureusement",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Elle refuse de lui parler"
+              },
+              {
+                "id": "c",
+                "texte": "Elle lui demande de partir"
+              }
+            ],
+            "formes": {
+              "lignes": {
+                "nb_lignes": 1,
+                "reponse_modele": "Elle le remercie chaleureusement"
+              }
+            },
+            "audio": 4
+          }
+        ],
+        "consigne_supplementaire": null,
+        "scenario": "vie-quotidienne",
+        "scene": "Excusez moi essaie retirer"
+      }
+    }
+  ],
+  "status": "installed",
+  "received_originals_modified": 0,
+  "human_listening_performed": false
+}

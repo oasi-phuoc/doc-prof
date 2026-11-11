@@ -35440,6 +35440,3453 @@
       "previous_pool": null,
       "question_changes": [],
       "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/ecole/14-école-ne-pas-jouer-ici.mp3",
+      "previous_sha256": "6bd8f0045240f68fcba4f1a9bc0381e90149f4b0ca8fb9f848c157a5b6d4618d",
+      "candidate_sha256": "35cb532af5dee6a3059d8654bf9780d365a6bfe8a8bd132785b9129808bd7a51",
+      "rollback_git_blob": "d6055cfa500ff48e2e61ffeceee4011a3479482f",
+      "source_id": "09035276:067:0f32d1f3511b",
+      "source_sha256": "0f32d1f3511bd0b4fa2c948360659d83e41f8c963ee11a2262080ee74ce087eb",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "35cb532af5dee6a3059d8654bf9780d365a6bfe8a8bd132785b9129808bd7a51",
+        "duration": 7.7200625,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "0f32d1f3511bd0b4fa2c948360659d83e41f8c963ee11a2262080ee74ce087eb",
+          "proof": {
+            "previous_sha256": "ec2f3f4c4db3a722f23a0d5ce03100eece3b9ce381af5c92f46f8044ab5fcda1",
+            "sha256": "35cb532af5dee6a3059d8654bf9780d365a6bfe8a8bd132785b9129808bd7a51",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/41-ec2f3f4c4db3-696074-1036527/candidate.mp3",
+            "source_sha256": "0f32d1f3511bd0b4fa2c948360659d83e41f8c963ee11a2262080ee74ce087eb",
+            "source_file": "/workspace/work/tcf-audio-additional-20261102-work/incoming/a1/mdf-a1-abc-junior/MDF_A1_ABC-DELF-Junior-Scolaire_AUDIO/09035276_67_Delf blanc 3- Ex 4.mp3",
+            "source_decoded_pcm_sha256": "1873dde967c76a509ef9f81ee61622f334ab325835409553f4f11421d40db689",
+            "source_sample_rate": 44100,
+            "source_channels": 1,
+            "source_start_frame": 696074,
+            "source_end_frame": 1036527,
+            "source_start": 15.783990929705215,
+            "source_end": 23.504013605442175,
+            "source_slice_pcm_sha256": "c485dcabfb9c44df829b05861a25348dc3439832b54ab118d3f8ad811f2a159c",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/41-ec2f3f4c4db3-696074-1036527/start_before.flac",
+                "sha256": "c12e75f216b4574c11be02dd85727eaceca62c7e9c7253c8ec058ce000b23533",
+                "source_start_frame": 607874,
+                "source_end_frame": 696074,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/41-ec2f3f4c4db3-696074-1036527/start_after.flac",
+                "sha256": "163cedc4eea891b14d0a6537efdbc9c41e3a0b92893757826b12ed45b6c28361",
+                "source_start_frame": 696074,
+                "source_end_frame": 784274,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/41-ec2f3f4c4db3-696074-1036527/end_before.flac",
+                "sha256": "d6f89b3ef6d4697f3017c6df3a45f8c27ceb054e1637e96f100ed68fd391f5f4",
+                "source_start_frame": 948327,
+                "source_end_frame": 1036527,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/41-ec2f3f4c4db3-696074-1036527/end_after.flac",
+                "sha256": "caa44b375ee887fd4caa96c93f2e785a7b0acd12746ee5bcc799ebd98530bd68",
+                "source_start_frame": 1036527,
+                "source_end_frame": 1124727,
+                "available_seconds": 2.0
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "S'il",
+                "start": 15.863999,
+                "end": 16.264,
+                "kind": "dialogue",
+                "asr_word_index": 30,
+                "raw_start": 15.863999198913573,
+                "raw_end": 16.26399984562397,
+                "native_token_indices": [
+                  69,
+                  70,
+                  71
+                ]
+              },
+              "last": {
+                "text": "monsieur.",
+                "start": 22.344,
+                "end": 23.383999,
+                "kind": "dialogue",
+                "asr_word_index": 48,
+                "raw_start": 22.34399969482422,
+                "raw_end": 23.703998695850373,
+                "native_token_indices": [
+                  106,
+                  107,
+                  108,
+                  109,
+                  110
+                ]
+              },
+              "previous_word_end": 15.063999,
+              "next_word_start": 25.143999,
+              "first_source_speech_region": [
+                16.192,
+                18.048
+              ],
+              "last_source_speech_region": [
+                21.184,
+                22.656
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. Natural native margins up to one second are retained to avoid trimming a quiet first word or its final decay. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/41-ec2f3f4c4db3-696074-1036527/waveform.svg",
+              "sha256": "95a178cdac28f83986cd0fcb57486bb8f5ad22620e15a9d21d4dc937995e6d39"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.31,
+          "trailing_quiet_seconds": 0.87,
+          "relative_rms_threshold": 0.006596606150269509,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.416,
+          "trailing_non_speech_seconds": 0.8400625,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "ctc"
+      ],
+      "editorial_reason": "Transcription et réponses confrontées aux deux reconnaissances finales concordantes ; les références dont les frontières restent incertaines attendent la reprise des coupes.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 8.05,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/ecole/27-école-proposer-manger-cantine.mp3",
+      "previous_sha256": "4b8be81faa64b67bdd9abedfe3c0c8ac93b10d4767f0827d271dfd2361a9a741",
+      "candidate_sha256": "f899f0edfb9269e8c76c5e08395a6e00bcface57190d7c312b4e72f39cc4cffe",
+      "rollback_git_blob": "1c5fa754cec51652117e3d5da5297d06ec53561f",
+      "source_id": "9782090351958:010:fa08edbcc754",
+      "source_sha256": "fa08edbcc75481fc2fd4bdb4cf44d28cc3d9d212af85afeece97a2e9d3d8ebde",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "f899f0edfb9269e8c76c5e08395a6e00bcface57190d7c312b4e72f39cc4cffe",
+        "duration": 10.504,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "fa08edbcc75481fc2fd4bdb4cf44d28cc3d9d212af85afeece97a2e9d3d8ebde",
+          "proof": {
+            "previous_sha256": "1be9ac36d63f508af654496efa1b2b50011fad90c9f32a215672b6efe1c722c0",
+            "sha256": "f899f0edfb9269e8c76c5e08395a6e00bcface57190d7c312b4e72f39cc4cffe",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/42-1be9ac36d63f-1936519-2399746/candidate.mp3",
+            "source_sha256": "fa08edbcc75481fc2fd4bdb4cf44d28cc3d9d212af85afeece97a2e9d3d8ebde",
+            "source_file": "/workspace/attachments/d8f84666-6fac-47d8-848e-d781db29387a/9782090351958_10_CO_ex08.mp3",
+            "source_decoded_pcm_sha256": "ed2806be890f9ba22923a763e0a4319fb9980860653639bc27b109efe1468d3c",
+            "source_sample_rate": 44100,
+            "source_channels": 1,
+            "source_start_frame": 1936519,
+            "source_end_frame": 2399746,
+            "source_start": 43.91199546485261,
+            "source_end": 54.416009070294784,
+            "source_slice_pcm_sha256": "90eda3677b558c4eb2a7da2a65fa8e95fa8f7600aafaf108cb1b52978be0b3d5",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/42-1be9ac36d63f-1936519-2399746/start_before.flac",
+                "sha256": "fa718101b1fe19ae616785457f5425ad5c4af9056ffb9402242c252c505c7d98",
+                "source_start_frame": 1848319,
+                "source_end_frame": 1936519,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/42-1be9ac36d63f-1936519-2399746/start_after.flac",
+                "sha256": "a69364fa1ffa5f4602ccfea66aadf85aa88642ace2c09e99c79f6a97f4a2d8ce",
+                "source_start_frame": 1936519,
+                "source_end_frame": 2024719,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/42-1be9ac36d63f-1936519-2399746/end_before.flac",
+                "sha256": "363b4f85c2f390fe8a2ec25ed9bdaa05192efd0073bd2f2b19d6b5bc98e4339f",
+                "source_start_frame": 2311546,
+                "source_end_frame": 2399746,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/42-1be9ac36d63f-1936519-2399746/end_after.flac",
+                "sha256": "adfdfbf06dc336396832e1414d27c14a73b2ef5ddc4a5c2a9f52058ff3c1b825",
+                "source_start_frame": 2399746,
+                "source_end_frame": 2487946,
+                "available_seconds": 2.0
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "On",
+                "start": 43.991999,
+                "end": 44.231999,
+                "kind": "dialogue",
+                "asr_word_index": 66,
+                "raw_start": 43.99199908447265,
+                "raw_end": 44.231999079108235,
+                "native_token_indices": [
+                  68
+                ]
+              },
+              "last": {
+                "text": "tard.",
+                "start": 53.736,
+                "end": 54.296,
+                "kind": "dialogue",
+                "asr_word_index": 93,
+                "raw_start": 53.73600001430511,
+                "raw_end": 54.93600000238418,
+                "native_token_indices": [
+                  7,
+                  8,
+                  9
+                ]
+              },
+              "previous_word_end": 42.071999,
+              "next_word_start": 56.696,
+              "first_source_speech_region": [
+                44.448,
+                46.4
+              ],
+              "last_source_speech_region": [
+                53.408,
+                53.952
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. Natural native margins up to one second are retained to avoid trimming a quiet first word or its final decay. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/42-1be9ac36d63f-1936519-2399746/waveform.svg",
+              "sha256": "6bebb52e22964df82f2bb51ed2a84617748b42d049152326441f9978fd8c9fed"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.26,
+          "relative_rms_threshold": 0.006056710928678513,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.512,
+          "trailing_non_speech_seconds": 0.488,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "ctc"
+      ],
+      "editorial_reason": "Transcription et réponses confrontées aux deux reconnaissances finales concordantes ; les références dont les frontières restent incertaines attendent la reprise des coupes.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 13.76,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/ecole/ecole-5-5.mp3",
+      "previous_sha256": "ef7f9b0049cd452f5c0542e82169d9b656466621ffde06be676d39680d585657",
+      "candidate_sha256": "cc1e5f8067d26973c0cb5f236813cc05f21d7a8caaabf5776bab573d9c834633",
+      "rollback_git_blob": "10251fdb86af53a110a137b5cb1b0517756d6510",
+      "source_id": "9782090351958:042:d86fac163633",
+      "source_sha256": "d86fac163633bb892d26155c1ca9120d69af6af10423cd026887c3dcbac391e1",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "cc1e5f8067d26973c0cb5f236813cc05f21d7a8caaabf5776bab573d9c834633",
+        "duration": 13.426939,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T013850-4a449376a9/manifest.json",
+          "manifest_sha256": "2bc01e139870212158f741297414bfcac6002642a1b33ce072420c67b91d6a42",
+          "lossless_sha256": "42dec6722e9d207bb15a68d157413ef7bee7b52f5300c30e4ffe000dfdaec912"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "needs_boundary_review",
+          "leading_quiet_seconds": 0.01,
+          "trailing_quiet_seconds": 0.15,
+          "relative_rms_threshold": 0.0082373,
+          "safe_quiet_margins": false,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.256,
+          "trailing_non_speech_seconds": 0.44,
+          "speech_region_count": 7,
+          "safe_voiced_margins": true,
+          "method": "Silero VAD with no padding; supplementary speech-vs-music evidence, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "whisper",
+        "ctc"
+      ],
+      "editorial_reason": "Reconnaissances finales comparées, transcriptions et questions relues ; homophones et accords corrigés.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 14.45,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/magasins/18-magasin-annoncer-service-de-laverie.mp3",
+      "previous_sha256": "003059932c3a78339ab63531cc20861aaf9e8bd5486f9e86dac80b2e42f47d17",
+      "candidate_sha256": "44624972397f3548a57fac17a9234b15a5c74f5df0240036053988f25a713d61",
+      "rollback_git_blob": "c4ee0009652d6686d3dc9bff191554c3e5c3545c",
+      "source_id": "additional-20261102:mdf-a2-abc-direct:35:ce7a05ef4597:ff66a5ad",
+      "source_sha256": "ce7a05ef4597a827bbed54c79d2c3eb56916979343eca5ac9c140b4d76ff6431",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "44624972397f3548a57fac17a9234b15a5c74f5df0240036053988f25a713d61",
+        "duration": 10.768,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "ce7a05ef4597a827bbed54c79d2c3eb56916979343eca5ac9c140b4d76ff6431",
+          "proof": {
+            "previous_sha256": "5e9559dd16f796115b3be9285ea0064a85ea151385a503435e62eaa75db98195",
+            "sha256": "44624972397f3548a57fac17a9234b15a5c74f5df0240036053988f25a713d61",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/43-5e9559dd16f7-123480-598349/candidate.mp3",
+            "source_sha256": "ce7a05ef4597a827bbed54c79d2c3eb56916979343eca5ac9c140b4d76ff6431",
+            "source_file": "/workspace/attachments/54130460-70fb-458b-8d9f-a0c6ce8c5054/09035199_035_ACT 6-5.mp3",
+            "source_decoded_pcm_sha256": "43a0b956d4dfc0e88fe9f49286a9da09acc093ae378565d0e2980776b9c65cff",
+            "source_sample_rate": 44100,
+            "source_channels": 1,
+            "source_start_frame": 123480,
+            "source_end_frame": 598349,
+            "source_start": 2.8,
+            "source_end": 13.568004535147391,
+            "source_slice_pcm_sha256": "1f6de2fe52ad9726e1aaa85770c5e95f26772882d64a84ab251989a473cc0979",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/43-5e9559dd16f7-123480-598349/start_before.flac",
+                "sha256": "01843837fd8c480d5e1ec8c3a9abb9419f88b18f0794cf8af00020d64aaabc7f",
+                "source_start_frame": 35280,
+                "source_end_frame": 123480,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/43-5e9559dd16f7-123480-598349/start_after.flac",
+                "sha256": "79b40c0097ca2994da44427a75f613c16b803ca967e7196ee41f27e766d8259e",
+                "source_start_frame": 123480,
+                "source_end_frame": 211680,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/43-5e9559dd16f7-123480-598349/end_before.flac",
+                "sha256": "2e40c4256d76adc593d73cd91830dc9173a9d5966d0f23fc3b5eb4a1e017518e",
+                "source_start_frame": 510149,
+                "source_end_frame": 598349,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/43-5e9559dd16f7-123480-598349/end_after.flac",
+                "sha256": "9d1bd96b5a1128be6ab973cd09b2a66ecf0e54b39189b0a196dbff9add106a5b",
+                "source_start_frame": 598349,
+                "source_end_frame": 641664,
+                "available_seconds": 0.9821995464852608
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Découvrez",
+                "start": 2.88,
+                "end": 3.6,
+                "kind": "dialogue",
+                "asr_word_index": 3,
+                "raw_start": 2.879999876022339,
+                "raw_end": 3.599999815225601,
+                "native_token_indices": [
+                  8,
+                  9,
+                  10,
+                  11,
+                  12
+                ]
+              },
+              "last": {
+                "text": "internet.",
+                "start": 12.88,
+                "end": 13.2,
+                "kind": "dialogue",
+                "asr_word_index": 28,
+                "raw_start": 12.880000114440918,
+                "raw_end": 14.160000145435333,
+                "native_token_indices": [
+                  62,
+                  63
+                ]
+              },
+              "previous_word_end": 2.16,
+              "next_word_start": 14.550204081632653,
+              "first_source_speech_region": [
+                3.072,
+                5.632
+              ],
+              "last_source_speech_region": [
+                10.816,
+                13.408
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/43-5e9559dd16f7-123480-598349/waveform.svg",
+              "sha256": "3c5bff8cf74888ba3e3db2280244b4d7f7277680216319716a9aba0ae4c55276"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.0,
+          "relative_rms_threshold": 0.005401318967342378,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.256,
+          "trailing_non_speech_seconds": 0.144,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "ctc"
+      ],
+      "editorial_reason": "Transcription et réponses confrontées aux deux reconnaissances finales concordantes ; les références dont les frontières restent incertaines attendent la reprise des coupes.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 12.46,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/maison/bonjour-fruits-legumes-par-3-4.mp3",
+      "previous_sha256": "3d01d7138ea84734366e7e1ac77b08d19b8b26c22cae7951968f7e5cc4905daf",
+      "candidate_sha256": "d5897d13daa66ed42d1d30ea67b99a9a65be6461308f678b6b7be1c858f456a8",
+      "rollback_git_blob": "27f4b655259f72300f18395aea6804be27a16ffe",
+      "source_id": "9782090351958:008:bbec346152c1",
+      "source_sha256": "bbec346152c15793411245efa4719780bc5d3d42f29c7f43021424e865e9c2d8",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "d5897d13daa66ed42d1d30ea67b99a9a65be6461308f678b6b7be1c858f456a8",
+        "duration": 9.544,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "bbec346152c15793411245efa4719780bc5d3d42f29c7f43021424e865e9c2d8",
+          "proof": {
+            "previous_sha256": "e72a8724f016315060adee6367c1fb7d1e9509ebc0f663f1e96eebaa34618e1c",
+            "sha256": "d5897d13daa66ed42d1d30ea67b99a9a65be6461308f678b6b7be1c858f456a8",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/44-e72a8724f016-2882728-3303619/candidate.mp3",
+            "source_sha256": "bbec346152c15793411245efa4719780bc5d3d42f29c7f43021424e865e9c2d8",
+            "source_file": "/workspace/attachments/1ea6e8ac-df68-48b4-927b-183830027a09/9782090351958_08_CO_ex06.mp3",
+            "source_decoded_pcm_sha256": "a5d715e8b116464d96055a8d387f38ebcaa776711087be7c7fbff7300fd88584",
+            "source_sample_rate": 44100,
+            "source_channels": 1,
+            "source_start_frame": 2882728,
+            "source_end_frame": 3303619,
+            "source_start": 65.36798185941043,
+            "source_end": 74.91199546485261,
+            "source_slice_pcm_sha256": "d68f372a291c27d1007033e4a72a47653ecdf49c61f08c62b08a14833f154596",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/44-e72a8724f016-2882728-3303619/start_before.flac",
+                "sha256": "75d9b7045136d448c2e0e9ab2a8d08f2a3046d083ed70566a6ebefd36809fb73",
+                "source_start_frame": 2794528,
+                "source_end_frame": 2882728,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/44-e72a8724f016-2882728-3303619/start_after.flac",
+                "sha256": "861bb3532bdda80f165647043bca970bf031db8eade5dee76af71e0d2f4d64f7",
+                "source_start_frame": 2882728,
+                "source_end_frame": 2970928,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/44-e72a8724f016-2882728-3303619/end_before.flac",
+                "sha256": "8cce1c4c36c9de541d92f8906cbbefa5a7add73d05165db629f5283407dce820",
+                "source_start_frame": 3215419,
+                "source_end_frame": 3303619,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/44-e72a8724f016-2882728-3303619/end_after.flac",
+                "sha256": "2cfe5095a61729f76c91b436bfcc15d511c0bd9645ac1490fbb9bfec63c27243",
+                "source_start_frame": 3303619,
+                "source_end_frame": 3391819,
+                "available_seconds": 2.0
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Camille,",
+                "start": 65.448,
+                "end": 66.327999,
+                "kind": "dialogue",
+                "asr_word_index": 129,
+                "raw_start": 65.44800003814697,
+                "raw_end": 66.40800015079975,
+                "native_token_indices": [
+                  38,
+                  39,
+                  40,
+                  41
+                ]
+              },
+              "last": {
+                "text": "Merci!",
+                "start": 74.248,
+                "end": 74.648,
+                "kind": "dialogue",
+                "asr_word_index": 156,
+                "raw_start": 74.24800022888184,
+                "raw_end": 74.80799976933002,
+                "native_token_indices": [
+                  94,
+                  95,
+                  97
+                ]
+              },
+              "previous_word_end": 64.648,
+              "next_word_start": 78.4195918367347,
+              "first_source_speech_region": [
+                65.824,
+                66.272
+              ],
+              "last_source_speech_region": [
+                74.272,
+                74.752
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/44-e72a8724f016-2882728-3303619/waveform.svg",
+              "sha256": "d6dae9f66a2b14001638e00094a95e0c3060e7564b28be8b741bfe5c0e3bf54c"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.0,
+          "relative_rms_threshold": 0.0063338675349950795,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.448,
+          "trailing_non_speech_seconds": 0.168,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "ctc"
+      ],
+      "editorial_reason": "Transcription et réponses confrontées aux deux reconnaissances finales concordantes ; les références dont les frontières restent incertaines attendent la reprise des coupes.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 10.79,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-2-2.mp3",
+      "previous_sha256": "247146b40e1f14405b5711bd29fec1f4b66f1599d734fdd4f6861f90f82491d9",
+      "candidate_sha256": "ea7362728d8ea058cec9f46c80ed3be001ed51a158fbb15eea9a0ca7d7c097cb",
+      "rollback_git_blob": "82d26694bb5e9e025a5a569deb03b8c3c6eda180",
+      "source_id": "9782090351958:066:3f7dc91934fc",
+      "source_sha256": "3f7dc91934fcda040e1f79211916750bd1fe1393428d2c26c18c9d1c0cc2ef3a",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "ea7362728d8ea058cec9f46c80ed3be001ed51a158fbb15eea9a0ca7d7c097cb",
+        "duration": 10.501224,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T013801-6c924dc85e/manifest.json",
+          "manifest_sha256": "60fb563061547ebf168c32b8f87bcad9d53123a1ca637337d1edf537fff2d3ee",
+          "lossless_sha256": "8f6d903e63b38d752acc4305287861f50bbcc939f07c1174f8af0a76ffbc388a"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.02,
+          "trailing_quiet_seconds": 0.02,
+          "relative_rms_threshold": 0.0058832,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "whisper",
+        "ctc"
+      ],
+      "editorial_reason": "Reconnaissances finales comparées ; transcription, questions et corrigés relus. Noms non épelés : graphies éditoriales documentées.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 10.89,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_22-2.mp3",
+      "previous_sha256": "44c676c973ae206f96f480771c26581166dc31824bb7c301b2003bd69efcf23a",
+      "candidate_sha256": "24e8cd3af6260763cd88191fd2b6eaf1a4cb4f059594dff323bbfc0d50ccd885",
+      "rollback_git_blob": "104053efabb5007af734efe3f35edce86c26af6b",
+      "source_id": "delf_a1_2022:022:60e05a9083eb",
+      "source_sha256": "60e05a9083ebb4e489fa3842754dbb731dbff54480b36d6b422a10793f97f893",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "24e8cd3af6260763cd88191fd2b6eaf1a4cb4f059594dff323bbfc0d50ccd885",
+        "duration": 6.635102,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111607-2489e1bd67/manifest.json",
+          "manifest_sha256": "a73b189c39c0b264e4afbe8ad995f06a6ad39b294070fbe10bb6415411b3fff7",
+          "lossless_sha256": "aaadc9bd89ac16a4141d337f6faf57fcc1ac9c7b719159379f5599fd6959cb30"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.24,
+          "trailing_quiet_seconds": 0.07,
+          "relative_rms_threshold": 0.009099,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "ctc"
+      ],
+      "editorial_reason": "Reconnaissances finales comparées, transcriptions et questions relues. Les noms non épelés sont normalisés comme graphies éditoriales.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 8.33,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_74-2.mp3",
+      "previous_sha256": "9e49546805bb3e837969657db28df075d1004838e31b3f6afcc3d846a3859307",
+      "candidate_sha256": "04102d01036a4ba0c1a52bdef0eb2feab15b24385252b03245b1970efc732948",
+      "rollback_git_blob": "2e83b37399d8c921c996fb144468eca38f151ce0",
+      "source_id": "delf_a1_2022:074:ca3dd2977475",
+      "source_sha256": "ca3dd297747506f8dbf5d8d7ef76c4983c0c48b57bd6e9a3f8f793fe09a5e56c",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "04102d01036a4ba0c1a52bdef0eb2feab15b24385252b03245b1970efc732948",
+        "duration": 2.873469,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261103T014708-0d003216c7/manifest.json",
+          "manifest_sha256": "ba66c73cf4e64e6fcc26c19fcf7786c33a9347969bc80cd7d4621267912bcd2a",
+          "lossless_sha256": "c4a5bd8bc2aba167e179bc44fea12799521990850511c08a4b50e7c4da56e200"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "needs_boundary_review",
+          "leading_quiet_seconds": 0.22,
+          "trailing_quiet_seconds": 0.71,
+          "relative_rms_threshold": 0.0098407,
+          "safe_quiet_margins": false,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.224,
+          "trailing_non_speech_seconds": 0.664,
+          "speech_region_count": 1,
+          "safe_voiced_margins": true,
+          "method": "Silero VAD with no padding; supplementary speech-vs-music evidence, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "ctc"
+      ],
+      "editorial_reason": "Reconnaissances finales comparées ; transcription, questions et corrigés relus. Noms non épelés : graphies éditoriales documentées.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 7.84,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_79-3.mp3",
+      "previous_sha256": "9c60b8841d599f71d619d416d114c162209add25f0208895c38eee539b546c3e",
+      "candidate_sha256": "f85f23bbb2eb1bf2c72976fd4284773ca964ee259583b941b98f2937c24096a3",
+      "rollback_git_blob": "026c5424c39d8e4c8581960628732e960c21a49a",
+      "source_id": "delf_a1_2022:079:171161d1919f",
+      "source_sha256": "171161d1919f0402e344f87eec0a62eeb199ffa7286e73a93a68a7c522531060",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "f85f23bbb2eb1bf2c72976fd4284773ca964ee259583b941b98f2937c24096a3",
+        "duration": 9.848163,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111752-8391bdea5c/manifest.json",
+          "manifest_sha256": "915a79861c4961cf4876175282a722f5cade55603406f035db824928c9d3a135",
+          "lossless_sha256": "8e5d485cc349071ad8464e2de76049e74527284ad83acfd1b7f8b24eddd892bc"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.28,
+          "trailing_quiet_seconds": 0.62,
+          "relative_rms_threshold": 0.006161,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "ctc"
+      ],
+      "editorial_reason": "Reconnaissances finales comparées ; transcription, questions et corrigés relus. Noms non épelés : graphies éditoriales documentées.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 12.88,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-ici-cabinet-dentaire.mp3",
+      "previous_sha256": "705855de7064485a3882108671016f0caafdbc519b10356ab2235cdee7bc6b04",
+      "candidate_sha256": "47bf47daf8863f65682b7b75403ec7b988689df72155cf5995883439efd7db04",
+      "rollback_git_blob": "e03e8a7139ed61e5dfd5e75440afe721d9ddc303",
+      "source_id": "additional-20261102:mdf-a2-abc-direct:77:21fac940b428:5d5debd6",
+      "source_sha256": "21fac940b42858c54b4239910af2f5ff25507703f2fa9287e54dc7aca2f55d4a",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "47bf47daf8863f65682b7b75403ec7b988689df72155cf5995883439efd7db04",
+        "duration": 27.846531,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014146-40fb12943c/manifest.json",
+          "manifest_sha256": "ed684f0debaa17c89ce2583b52961d97a067a589e7e0820c1986447e92d0298b",
+          "lossless_sha256": "e21ace26c41530d83e113246a2eb378310bf304593620ea8ac0892e148380c82"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.24,
+          "trailing_quiet_seconds": 0.13,
+          "relative_rms_threshold": 0.0052886,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "whisper",
+        "ctc"
+      ],
+      "editorial_reason": "Reconnaissances finales comparées ; transcription et toutes les questions relues, erreurs de segmentation corrigées.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 30.88,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/transports/aujourd-hui-cours-portera.mp3",
+      "previous_sha256": "22da78d665ec60a61953034a9a56247faa2001a748f10be01e37cdf85016a958",
+      "candidate_sha256": "fdef5d70c237a614ea6f8c32f174cf6005b5a79a2b75b6bb65376b4a8052b78b",
+      "rollback_git_blob": "79dae270c46b114e34d7a101d54cfbb44357a61b",
+      "source_id": "09035196:012:e73f53259514",
+      "source_sha256": "e73f532595141c93779fe5da50270a9064c3c71b687f76d11658889109277e71",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "fdef5d70c237a614ea6f8c32f174cf6005b5a79a2b75b6bb65376b4a8052b78b",
+        "duration": 72.933878,
+        "category": "long",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T013726-af2128cc46/manifest.json",
+          "manifest_sha256": "4fdc4f6fb85f6a4753db5153102e3b2516e25a0c53ab98876d1aaf5b090d5d71",
+          "lossless_sha256": "2415654fba8fcb3b9f9fb497ddd77a36055aa6fbeb8675e3545e5d36e55e0672"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.34,
+          "trailing_quiet_seconds": 0.11,
+          "relative_rms_threshold": 0.0059194,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "whisper",
+        "ctc"
+      ],
+      "editorial_reason": "Reconnaissances finales comparées ; transcription et questions relues, graphies éditoriales et homophones corrigés.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 73.87,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/fetes/25-invitation-fête-d-anniversaire.mp3",
+      "previous_sha256": "01b970ec317fa2b6a02e79fefa1214ca83ff5cfd2c19b346683e6dedd01880c1",
+      "candidate_sha256": "cab9fef2d1543467bea8749a5afd1eb213f49c82ea007cbde5c5c97ae14054ba",
+      "rollback_git_blob": "5f1a100d983f7b7ccca1fc40367891a3ad1014bc",
+      "source_id": "9782090351958:069:38399e6d0f4e",
+      "source_sha256": "38399e6d0f4ec8a1a871c80b6264e40931a8d4345d877b2ddc8fb60c269d0d04",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "cab9fef2d1543467bea8749a5afd1eb213f49c82ea007cbde5c5c97ae14054ba",
+        "duration": 11.441633,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T013629-990b25d506/manifest.json",
+          "manifest_sha256": "4ce8019155a73a09529bdd0323e66c70efb111055ca9dc5b37d759297d6ca046",
+          "lossless_sha256": "6e2be439580e4b6af75bc174476677e1ddedd1ff1149ace6b0f9efb42c708ac4"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "needs_boundary_review",
+          "leading_quiet_seconds": 0.34,
+          "trailing_quiet_seconds": 0.7,
+          "relative_rms_threshold": 0.0088645,
+          "safe_quiet_margins": false,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.352,
+          "trailing_non_speech_seconds": 0.68,
+          "speech_region_count": 8,
+          "safe_voiced_margins": true,
+          "method": "Silero VAD with no padding; supplementary speech-vs-music evidence, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "whisper",
+        "ctc"
+      ],
+      "editorial_reason": "Reconnaissances finales comparées ; transcriptions, trois choix et corrigés relus. Les questions sur les annonces techniques retirées sont remplacées par des questions portant sur le contenu entendu.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 11.97,
+      "previous_pool": {
+        "tag": "court",
+        "questions": 2
+      },
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/magasins/magasins-3-5.mp3",
+      "previous_sha256": "a8feeba56144a71267a55e82f24650cb864607fd12ea0c908262fc28f2978c92",
+      "candidate_sha256": "1f427abdf33856e218dc60721327aa8624ef7a2726d75eb4b8fc2ed75683fb71",
+      "rollback_git_blob": "a152121f3ca5d99d70490465d53d31cbb5907378",
+      "source_id": "9782090351958:049:a4431f87ae61",
+      "source_sha256": "a4431f87ae61175f42764e9be38995308b7ae8812677b3cdda5c291cfb632b6a",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "1f427abdf33856e218dc60721327aa8624ef7a2726d75eb4b8fc2ed75683fb71",
+        "duration": 10.553469,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T013857-37b532402c/manifest.json",
+          "manifest_sha256": "21a69a4f7aaf8541a2bec18c1f750ae2b011e6c92ba56a2c4a2609f15b7c95f8",
+          "lossless_sha256": "799b700a5c9329868a824f85ed20abd2c9b8a05bbedd24faaffe67ee4f64ff2e"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "needs_boundary_review",
+          "leading_quiet_seconds": 0.01,
+          "trailing_quiet_seconds": 0.0,
+          "relative_rms_threshold": 0.0083269,
+          "safe_quiet_margins": false,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.352,
+          "trailing_non_speech_seconds": 0.184,
+          "speech_region_count": 4,
+          "safe_voiced_margins": true,
+          "method": "Silero VAD with no padding; supplementary speech-vs-music evidence, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "whisper",
+        "ctc"
+      ],
+      "editorial_reason": "Reconnaissances finales comparées, transcriptions et questions relues. Les noms non épelés sont normalisés comme graphies éditoriales.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 11.49,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/maison/le-secret-c-est-l-anticipation-1.mp3",
+      "previous_sha256": "9c3bd475530e7a2cb4d449ba36d33b60d46deaeadbbd7d203665ced51ee0c4c7",
+      "candidate_sha256": "e2aa8c47de2b29f539065f5df66a93b01bddd7191e7bc1d8fc255af63be8c3de",
+      "rollback_git_blob": "125885ee7e9c99d7fb4e373b8c83bf646a487b30",
+      "source_id": "additional-20261102:mdf-b1-abc-direct:49:2b27cb1a80cb:d31316e9",
+      "source_sha256": "2b27cb1a80cb576172e68d44f0ed06324e398ac8a581fd300a085b53ac725b6a",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "e2aa8c47de2b29f539065f5df66a93b01bddd7191e7bc1d8fc255af63be8c3de",
+        "duration": 130.429388,
+        "category": "long",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014802-b3597e7ce9/manifest.json",
+          "manifest_sha256": "d1e0265dc88dd1f35327bd6652760dc9da216ff1da13b778bbf615c53b3a71bf",
+          "lossless_sha256": "b559cc05561caf65f192e0db87658ecd8b1f101935edbd1273b245253220b499"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "quiet_margins_detected",
+          "leading_quiet_seconds": 0.25,
+          "trailing_quiet_seconds": 0.21,
+          "relative_rms_threshold": 0.0050367,
+          "safe_quiet_margins": true,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "whisper",
+        "ctc"
+      ],
+      "editorial_reason": "Reconnaissances finales comparées ; transcription et questions relues, graphies éditoriales et homophones corrigés.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 131.45,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/ecole/25-école-résultat-du-concours.mp3",
+      "previous_sha256": "4b5e8160c0af3875d13ffc2c71d488edefa19aec155b7bfd40a410abe70e669a",
+      "candidate_sha256": "f10cfd6ffebbb89eeaa89bd46579c4b6adf8449a123ee60ff05d9b0919473cc5",
+      "rollback_git_blob": "2eb960cdcbebf9347d149756f643ec4ace3f31f2",
+      "source_id": "additional-20261102:mdf-a2-abc-direct:89:bd98123eea96:e4d4b672",
+      "source_sha256": "bd98123eea964bd463443f31b930aa13a0ee7352a34dfe40b356228ced20f9c0",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "f10cfd6ffebbb89eeaa89bd46579c4b6adf8449a123ee60ff05d9b0919473cc5",
+        "duration": 12.2340625,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "bd98123eea964bd463443f31b930aa13a0ee7352a34dfe40b356228ced20f9c0",
+          "proof": {
+            "previous_sha256": "014ae9f55b8aa06940610554808018f063af9016a07d4cdf5232e50ac279b127",
+            "previous_file": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014434-adc5d56b78/additional-20261102-mdf-a2-abc-direct-89-bd98123eea96-e4d4b672-d4/candidate.mp3",
+            "status": "new_candidate_requires_two_recognitions",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/014ae9f55b8aa06940610554808018f063af9016a07d4cdf5232e50ac279b127-2489709-3029230/candidate.mp3",
+            "sha256": "f10cfd6ffebbb89eeaa89bd46579c4b6adf8449a123ee60ff05d9b0919473cc5",
+            "source_sha256": "bd98123eea964bd463443f31b930aa13a0ee7352a34dfe40b356228ced20f9c0",
+            "source_file": "/workspace/attachments/7fc92777-3369-4e3a-81ee-6d41084f6759/09035199_089_ACT 40.mp3",
+            "source_decoded_pcm_sha256": "f1a5d19ade42f07e8acbe559a33cfeed867be518b9505277d2e97a6bac505f95",
+            "source_sample_rate": 44100,
+            "source_channels": 1,
+            "source_start_frame": 2489709,
+            "source_end_frame": 3029230,
+            "source_start": 56.455986394557826,
+            "source_end": 68.69002267573696,
+            "source_slice_pcm_sha256": "ce95cbdc2fc9dc4857c55d4ca0a4f067a85ade1797c2a74f1e10ee06fb18eb3b",
+            "previous_start": 56.455986394557826,
+            "previous_end": 68.25600907029478,
+            "word_anchors_and_signal": [
+              {
+                "edge": "end",
+                "quiet_interval": [
+                  68.57000000000001,
+                  69.13
+                ],
+                "last_word": "génial!",
+                "next_word_start": 69.70510204081631
+              }
+            ],
+            "human_listening_performed": false
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.36,
+          "trailing_quiet_seconds": 0.13,
+          "relative_rms_threshold": 0.008657552227377893,
+          "safe_quiet_margins": true
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.384,
+          "trailing_non_speech_seconds": 0.394,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
+      "editorial_reason": "Revue éditoriale du dialogue, des questions et de leurs trois propositions. Corrections des faits uniquement lorsque les reconnaissances les étayent ; deux reconnaissances finales et marges qualifiées restent requises avant bascule.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 13.16,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/magasins/magasins-3-4.mp3",
+      "previous_sha256": "d3102b78c280d57fb2dea33d69b8fb8c4b8dafe7f9a77bde6460e5dfce0b18af",
+      "candidate_sha256": "017fb872b80db3c47288eaf391dc9b6fdad6bb1dc2abbba7360c70f69a44c142",
+      "rollback_git_blob": "c56f08b5301939dd58746d4587d0350da82cc45d",
+      "source_id": "9782090351958:049:a4431f87ae61",
+      "source_sha256": "a4431f87ae61175f42764e9be38995308b7ae8812677b3cdda5c291cfb632b6a",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "017fb872b80db3c47288eaf391dc9b6fdad6bb1dc2abbba7360c70f69a44c142",
+        "duration": 10.318367,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "single_source_slice",
+          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T013857-37b532402c/manifest.json",
+          "manifest_sha256": "21a69a4f7aaf8541a2bec18c1f750ae2b011e6c92ba56a2c4a2609f15b7c95f8",
+          "lossless_sha256": "429a46a88d0c970a9afcb94d76ea2567d72a555f8f6e22e3567363369aca1b6b"
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "status": "needs_boundary_review",
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.02,
+          "relative_rms_threshold": 0.0062093,
+          "safe_quiet_margins": false,
+          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.288,
+          "trailing_non_speech_seconds": 0.36,
+          "speech_region_count": 5,
+          "safe_voiced_margins": true,
+          "method": "Silero VAD with no padding; supplementary speech-vs-music evidence, not phonetic certification."
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "whisper",
+        "ctc"
+      ],
+      "editorial_reason": "Reconnaissances finales comparées ; transcription et questions relues. Graphies des noms non épelés retenues à titre éditorial.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 10.95,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/presenter/moyen-a2__annonce-4.2.mp3",
+      "previous_sha256": "0583f5df97e54552e499d0f3bf8cb55a32ef4d8a66744ad30252564df654a8bb",
+      "candidate_sha256": "abc8dadacdd68dfb01a802048fa190edd4f066f2500c84232ef97ef6e97f54bd",
+      "rollback_git_blob": "e0ee6cb7b87899d6309c63d5782c524b591dfde6",
+      "source_id": "additional-20261102:mdf-a2-abc-direct:20:dd2e4d63b1c7:3202cf5d",
+      "source_sha256": "dd2e4d63b1c79e658275b95d34ddba30bbb3c2096188e97ba88934cc6c65d9fc",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "abc8dadacdd68dfb01a802048fa190edd4f066f2500c84232ef97ef6e97f54bd",
+        "duration": 9.72,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "dd2e4d63b1c79e658275b95d34ddba30bbb3c2096188e97ba88934cc6c65d9fc",
+          "proof": {
+            "previous_sha256": "6f370c99e7bdc97a3f3cd18597aad5da74f5dcfe2efa4e6f0f0719c98e4ac7fb",
+            "sha256": "abc8dadacdd68dfb01a802048fa190edd4f066f2500c84232ef97ef6e97f54bd",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/338-6f370c99e7bd-155232-583884/candidate.mp3",
+            "source_sha256": "dd2e4d63b1c79e658275b95d34ddba30bbb3c2096188e97ba88934cc6c65d9fc",
+            "source_file": "/workspace/attachments/31b34f05-74e3-4894-9ecd-06467e1f8470/09035199_020_ACT 4-2.mp3",
+            "source_decoded_pcm_sha256": "eee3647e516f1a257319a9ad06aa2cb537649a3c6acb6253bded191426d5fa2e",
+            "source_sample_rate": 44100,
+            "source_channels": 1,
+            "source_start_frame": 155232,
+            "source_end_frame": 583884,
+            "source_start": 3.52,
+            "source_end": 13.24,
+            "source_slice_pcm_sha256": "5399e3f41b12938c3982a48f9f27c427b2ee7ca8e3f0deee38192ac1c49803d4",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/338-6f370c99e7bd-155232-583884/start_before.flac",
+                "sha256": "2da3c02c48e7f1b83e0a445de3f3616e60c6ac38da987f0591958cd51c307351",
+                "source_start_frame": 67032,
+                "source_end_frame": 155232,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/338-6f370c99e7bd-155232-583884/start_after.flac",
+                "sha256": "88aa8a041b070293162e76f6b8c974b15582237dfdc7eee845412a72177385cd",
+                "source_start_frame": 155232,
+                "source_end_frame": 243432,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/338-6f370c99e7bd-155232-583884/end_before.flac",
+                "sha256": "11f5011c25e3287df7dcd0ac5022aeeea8757186e69a09bbe731aef8572463b1",
+                "source_start_frame": 495684,
+                "source_end_frame": 583884,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/338-6f370c99e7bd-155232-583884/end_after.flac",
+                "sha256": "29bab8c78105b33b2aa16af1ee4292af2b1e776601a89e499e6ea1eb8f0e445f",
+                "source_start_frame": 583884,
+                "source_end_frame": 645120,
+                "available_seconds": 1.3885714285714286
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Bonjour.",
+                "start": 3.6,
+                "end": 4.4,
+                "kind": "dialogue",
+                "asr_word_index": 3,
+                "raw_start": 3.5999999046325684,
+                "raw_end": 4.640000090003014,
+                "native_token_indices": [
+                  8,
+                  9,
+                  10,
+                  11,
+                  12
+                ]
+              },
+              "last": {
+                "text": "journée.",
+                "start": 12.4,
+                "end": 13.119999,
+                "kind": "dialogue",
+                "asr_word_index": 24,
+                "raw_start": 12.399999618530273,
+                "raw_end": 14.559999540448189,
+                "native_token_indices": [
+                  59,
+                  60,
+                  61,
+                  62
+                ]
+              },
+              "previous_word_end": 2.16,
+              "next_word_start": 14.628571428571428,
+              "first_source_speech_region": [
+                3.872,
+                4.288
+              ],
+              "last_source_speech_region": [
+                12.128,
+                12.832
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/338-6f370c99e7bd-155232-583884/waveform.svg",
+              "sha256": "dc58e8864062280a99211710d17f6d8ed4e5757c0c29a93cca7a340982e57db6"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.0,
+          "relative_rms_threshold": 0.008553224802017213,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.352,
+          "trailing_non_speech_seconds": 0.408,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "whisper",
+        "ctc"
+      ],
+      "editorial_reason": "Deux questions et six propositions relues : fermeture le week-end à 12 h 15 et en semaine à 20 h 30. Whisper reconnaît la formule finale Bonne journée, Parakeet Bonjour ; fin encore soumise aux contrôles croisés.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 6.9,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/radio/02-radio-salon-du-tatouage.mp3",
+      "previous_sha256": "a0f1b1e9fc01afa74c301838c740b2f144308e201d041100245b856b6dc01b7d",
+      "candidate_sha256": "6c01e429a984aec164301fe62e9c04dd683e5233639fd300771ef9194965d099",
+      "rollback_git_blob": "6f553c451c941305d19d5693512f9aa5ac54c824",
+      "source_id": "9782090351958:057:0dc3afbbc24a",
+      "source_sha256": "0dc3afbbc24a55144bdf39c6db4887b555abe005cdcf28effbe4dff86d79aa13",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "6c01e429a984aec164301fe62e9c04dd683e5233639fd300771ef9194965d099",
+        "duration": 13.446,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "0dc3afbbc24a55144bdf39c6db4887b555abe005cdcf28effbe4dff86d79aa13",
+          "proof": {
+            "previous_sha256": "6753f498513445e2719f347df086855f479862bbbc3d871013aac9942a29f766",
+            "sha256": "6c01e429a984aec164301fe62e9c04dd683e5233639fd300771ef9194965d099",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/45-6753f4985134-660177-1253146/candidate.mp3",
+            "source_sha256": "0dc3afbbc24a55144bdf39c6db4887b555abe005cdcf28effbe4dff86d79aa13",
+            "source_file": "/workspace/attachments/6c815902-3fda-4f62-a48a-d7dd930156a0/9782090351958_57_CO_ex55.mp3",
+            "source_decoded_pcm_sha256": "98da534a5979a79c6d9af294533f1e38f1e265d8d10dbbda7b782b2cd9a285d5",
+            "source_sample_rate": 44100,
+            "source_channels": 1,
+            "source_start_frame": 660177,
+            "source_end_frame": 1253146,
+            "source_start": 14.97,
+            "source_end": 28.416009070294784,
+            "source_slice_pcm_sha256": "907c46f413e160392b0cdf00dcf68d97abe98ef147a3fed5057ae7ed7ef51c1c",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/45-6753f4985134-660177-1253146/start_before.flac",
+                "sha256": "0b3ba116cd53632a69f5754e2eb1ffb31ce1f31271abf731b8c20ca02c88e276",
+                "source_start_frame": 571977,
+                "source_end_frame": 660177,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/45-6753f4985134-660177-1253146/start_after.flac",
+                "sha256": "e60cbdcc80f63ddcb41fd9673c1e58a1509da8956a5a00477682005ab73a6a12",
+                "source_start_frame": 660177,
+                "source_end_frame": 748377,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/45-6753f4985134-660177-1253146/end_before.flac",
+                "sha256": "1379207ac33c825f8b79688a98b6c88c463365c7f294fd71526f8de2ad15580e",
+                "source_start_frame": 1164946,
+                "source_end_frame": 1253146,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/45-6753f4985134-660177-1253146/end_after.flac",
+                "sha256": "670b48980dab8f7deb14195209073394b815568d0a5ae9c56f59d2b5ce0a19fb",
+                "source_start_frame": 1253146,
+                "source_end_frame": 1341346,
+                "available_seconds": 2.0
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Cette",
+                "start": 15.05,
+                "end": 15.31,
+                "kind": "dialogue",
+                "asr_word_index": 21,
+                "raw_start": 15.05,
+                "raw_end": 15.309999990463258,
+                "native_token_indices": [
+                  0
+                ]
+              },
+              "last": {
+                "text": "d'hommes.",
+                "start": 27.882,
+                "end": 28.122,
+                "kind": "dialogue",
+                "asr_word_index": 66,
+                "raw_start": 27.881999980926512,
+                "raw_end": 28.301999818801878,
+                "native_token_indices": [
+                  15,
+                  16,
+                  17,
+                  18,
+                  19
+                ]
+              },
+              "previous_word_end": 13.734,
+              "next_word_start": 32.426,
+              "first_source_speech_region": [
+                15.2,
+                17.888
+              ],
+              "last_source_speech_region": [
+                27.104,
+                28.256
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/45-6753f4985134-660177-1253146/waveform.svg",
+              "sha256": "4434bfbc6a947c0b55b9961e5e8f02f89dbe57f2fdc2a596935c9c25cd6398e1"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.0,
+          "relative_rms_threshold": 0.00831393986940384,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.224,
+          "trailing_non_speech_seconds": 0.166,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
+      "editorial_reason": "Transcription et réponses confrontées aux deux reconnaissances finales concordantes ; les références dont les frontières restent incertaines attendent la reprise des coupes.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 17.53,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/radio/04-radio-fête-de-la-ville.mp3",
+      "previous_sha256": "2e9536060f795c19befac35fb472e5c759a7501c6ed2bab294a746f5699b74da",
+      "candidate_sha256": "2ac87cc6ddcda0a1c706bab4514b15007d2f802b2710f1e6342c9c2c23d36f11",
+      "rollback_git_blob": "8438959d78f217502feed8aa67add5b18a5b83de",
+      "source_id": "9782090351958:057:0dc3afbbc24a",
+      "source_sha256": "0dc3afbbc24a55144bdf39c6db4887b555abe005cdcf28effbe4dff86d79aa13",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "2ac87cc6ddcda0a1c706bab4514b15007d2f802b2710f1e6342c9c2c23d36f11",
+        "duration": 13.0300625,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "0dc3afbbc24a55144bdf39c6db4887b555abe005cdcf28effbe4dff86d79aa13",
+          "proof": {
+            "previous_sha256": "01daca65573459653ad48daa66e180f6f5b1c1b72ad9f4c4e88c7eff8dba50e0",
+            "sha256": "2ac87cc6ddcda0a1c706bab4514b15007d2f802b2710f1e6342c9c2c23d36f11",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/46-01daca655734-2357850-2932474/candidate.mp3",
+            "source_sha256": "0dc3afbbc24a55144bdf39c6db4887b555abe005cdcf28effbe4dff86d79aa13",
+            "source_file": "/workspace/attachments/6c815902-3fda-4f62-a48a-d7dd930156a0/9782090351958_57_CO_ex55.mp3",
+            "source_decoded_pcm_sha256": "98da534a5979a79c6d9af294533f1e38f1e265d8d10dbbda7b782b2cd9a285d5",
+            "source_sample_rate": 44100,
+            "source_channels": 1,
+            "source_start_frame": 2357850,
+            "source_end_frame": 2932474,
+            "source_start": 53.465986394557824,
+            "source_end": 66.49600907029479,
+            "source_slice_pcm_sha256": "2525ce59cfee1de046660f56bfb808b9a69498d66d8a79eedb3c68040d86a490",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/46-01daca655734-2357850-2932474/start_before.flac",
+                "sha256": "33bee29edd5aae2c5c2f1b2c062574a140d578eeb35f10a6cf5b09e193d86866",
+                "source_start_frame": 2269650,
+                "source_end_frame": 2357850,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/46-01daca655734-2357850-2932474/start_after.flac",
+                "sha256": "cf3f39285f8923683f470cad30fe6c3b18b36349553d67667975badf4982b961",
+                "source_start_frame": 2357850,
+                "source_end_frame": 2446050,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/46-01daca655734-2357850-2932474/end_before.flac",
+                "sha256": "eff9d2325ad0466e178e701277af056f4008790b540a110a9a20f1206ed7fa2f",
+                "source_start_frame": 2844274,
+                "source_end_frame": 2932474,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/46-01daca655734-2357850-2932474/end_after.flac",
+                "sha256": "0b4f49b1ea39f9a196a67b434a698f3d149798bfd1578b31ae364ff3e7ccd7ce",
+                "source_start_frame": 2932474,
+                "source_end_frame": 2989440,
+                "available_seconds": 1.2917460317460316
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "samedi,",
+                "start": 53.546,
+                "end": 53.966,
+                "kind": "dialogue",
+                "asr_word_index": 108,
+                "raw_start": 53.546,
+                "raw_end": 54.32599997138977,
+                "native_token_indices": [
+                  0,
+                  1,
+                  2
+                ]
+              },
+              "last": {
+                "text": "centrale.",
+                "start": 65.626,
+                "end": 66.246,
+                "kind": "dialogue",
+                "asr_word_index": 144,
+                "raw_start": 65.62599992370605,
+                "raw_end": 66.46600007629394,
+                "native_token_indices": [
+                  59,
+                  60,
+                  61
+                ]
+              },
+              "previous_word_end": 51.874,
+              "next_word_start": 67.78775510204082,
+              "first_source_speech_region": [
+                53.696,
+                54.112
+              ],
+              "last_source_speech_region": [
+                63.392,
+                66.336
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/46-01daca655734-2357850-2932474/waveform.svg",
+              "sha256": "6f9902e06ed625684af0dbebe1274ca0e25c2d33ed85191ced6793582c48f5fd"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.0,
+          "relative_rms_threshold": 0.00904877707362175,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.096,
+          "trailing_non_speech_seconds": 0.1660625,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "ctc"
+      ],
+      "editorial_reason": "Transcription et réponses confrontées aux deux reconnaissances finales concordantes ; les références dont les frontières restent incertaines attendent la reprise des coupes.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 15.6,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-2-6.mp3",
+      "previous_sha256": "af6b1f5a125bfa544681d9c4346ab14392ba653c68f0a0321cac1691ed347a80",
+      "candidate_sha256": "3a6dda510bc71d178a8e637b82e64e0cb40dd0ab191186443790fc98ef1ae6b9",
+      "rollback_git_blob": "0fd804ccfde4e08b94b55d80bd938f91b08ac9fa",
+      "source_id": "9782090351958:066:3f7dc91934fc",
+      "source_sha256": "3f7dc91934fcda040e1f79211916750bd1fe1393428d2c26c18c9d1c0cc2ef3a",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "3a6dda510bc71d178a8e637b82e64e0cb40dd0ab191186443790fc98ef1ae6b9",
+        "duration": 9.16,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "3f7dc91934fcda040e1f79211916750bd1fe1393428d2c26c18c9d1c0cc2ef3a",
+          "proof": {
+            "previous_sha256": "27d194f93eaba7a23d7f8b70cc5af333416f08ed7588c8866cf806461635fdbe",
+            "sha256": "3a6dda510bc71d178a8e637b82e64e0cb40dd0ab191186443790fc98ef1ae6b9",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/47-27d194f93eab-3596796-4000752/candidate.mp3",
+            "source_sha256": "3f7dc91934fcda040e1f79211916750bd1fe1393428d2c26c18c9d1c0cc2ef3a",
+            "source_file": "/workspace/attachments/f7a94d69-1e6a-440e-aa37-842710c45052/9782090351958_66_DELF2_ex1.mp3",
+            "source_decoded_pcm_sha256": "2722f31a6152904d937c260b539315a2ce2594a654dc4056d5ca3e67631a5101",
+            "source_sample_rate": 44100,
+            "source_channels": 1,
+            "source_start_frame": 3596796,
+            "source_end_frame": 4000752,
+            "source_start": 81.56,
+            "source_end": 90.72,
+            "source_slice_pcm_sha256": "6858429cf4b95ed7d91d2be0f9608f5c3d247cfb37a4267812b4b77fe7a50d72",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/47-27d194f93eab-3596796-4000752/start_before.flac",
+                "sha256": "a6fd93e57234f4f80a17a2c87b43d8996411b77c39b90d9fa46e082eae230760",
+                "source_start_frame": 3508596,
+                "source_end_frame": 3596796,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/47-27d194f93eab-3596796-4000752/start_after.flac",
+                "sha256": "ad59d9b176cd921211db0be93da6d2e1946f795c8624a360f268ab0d3dafa499",
+                "source_start_frame": 3596796,
+                "source_end_frame": 3684996,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/47-27d194f93eab-3596796-4000752/end_before.flac",
+                "sha256": "64579ee517a218aab712a0b6c3f555cf46e16c770b6ce472dfae2bcb1d428198",
+                "source_start_frame": 3912552,
+                "source_end_frame": 4000752,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/47-27d194f93eab-3596796-4000752/end_after.flac",
+                "sha256": "4298ff95d2842f877586cf584c5073db0abbe174eab52547a072eff3891a35be",
+                "source_start_frame": 4000752,
+                "source_end_frame": 4070016,
+                "available_seconds": 1.5706122448979591
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Alerte",
+                "start": 81.64,
+                "end": 82.12,
+                "kind": "dialogue",
+                "asr_word_index": 154,
+                "raw_start": 81.63999999821186,
+                "raw_end": 82.11999997258187,
+                "native_token_indices": [
+                  0,
+                  1,
+                  2
+                ]
+              },
+              "last": {
+                "text": "journée.",
+                "start": 90.28,
+                "end": 90.52,
+                "kind": "dialogue",
+                "asr_word_index": 181,
+                "raw_start": 90.28000026702881,
+                "raw_end": 90.60000003635884,
+                "native_token_indices": [
+                  56,
+                  57,
+                  58,
+                  59
+                ]
+              },
+              "previous_word_end": 79.536,
+              "next_word_start": 92.29061224489796,
+              "first_source_speech_region": [
+                81.76,
+                82.432
+              ],
+              "last_source_speech_region": [
+                88.8,
+                90.56
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/47-27d194f93eab-3596796-4000752/waveform.svg",
+              "sha256": "141b9592d1f6aad3b9abc64f530537ed90b31cf0a710a52bff6600d766dceafd"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.01,
+          "trailing_quiet_seconds": 0.0,
+          "relative_rms_threshold": 0.009044567197561264,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.16,
+          "trailing_non_speech_seconds": 0.136,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "ctc"
+      ],
+      "editorial_reason": "Transcription et réponses confrontées aux deux reconnaissances finales concordantes ; les références dont les frontières restent incertaines attendent la reprise des coupes.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 10.34,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-5-2.mp3",
+      "previous_sha256": "ae5bb9d015e1f52b649b3ec25dbd608f4c9c1c67185c0891767fcfb9754cc549",
+      "candidate_sha256": "763b1eb92ac2958c7f8d66189502309f34a85175c17ebc9bad1c277be00c4599",
+      "rollback_git_blob": "f2b5e63c49b011204a022fa0a809cce1efc5a222",
+      "source_id": "delf_a2_eb1w:001:7e749af22d6c",
+      "source_sha256": "7e749af22d6c33aeb01a42e88d9d4968c2efac67a1461e5f3cb90ac7f0f18f5a",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "763b1eb92ac2958c7f8d66189502309f34a85175c17ebc9bad1c277be00c4599",
+        "duration": 14.504,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "7e749af22d6c33aeb01a42e88d9d4968c2efac67a1461e5f3cb90ac7f0f18f5a",
+          "proof": {
+            "previous_sha256": "f5690aba309e4d8263f3993f8f8c3b4f0145a7898da4b7c418e43e26c28811b9",
+            "sha256": "763b1eb92ac2958c7f8d66189502309f34a85175c17ebc9bad1c277be00c4599",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/362-f5690aba309e-6173647-6813274/candidate.mp3",
+            "source_sha256": "7e749af22d6c33aeb01a42e88d9d4968c2efac67a1461e5f3cb90ac7f0f18f5a",
+            "source_file": "/workspace/work/tcf-audio-replacement/incoming/a2/delf_a2_2021_eb1w_piste_01.mp3",
+            "source_decoded_pcm_sha256": "34e3aa9bf3574bff432965c7f7121ec889c7859669fcb370729e8bc7d98dba87",
+            "source_sample_rate": 44100,
+            "source_channels": 2,
+            "source_start_frame": 6173647,
+            "source_end_frame": 6813274,
+            "source_start": 139.9919954648526,
+            "source_end": 154.49600907029478,
+            "source_slice_pcm_sha256": "4e0bdddcdb60a7fef55387c6ae599ab2887557d79c008731f296a7166e0c50b1",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/362-f5690aba309e-6173647-6813274/start_before.flac",
+                "sha256": "56f88683253f06d8ff7f0d85eae1e2f075b37c3a23d72262cbaaf35c00b5245e",
+                "source_start_frame": 6085447,
+                "source_end_frame": 6173647,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/362-f5690aba309e-6173647-6813274/start_after.flac",
+                "sha256": "0b659d4d00c362888a4b3e0478d83a3f6d0753cb87149363ee523a9824dbb758",
+                "source_start_frame": 6173647,
+                "source_end_frame": 6261847,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/362-f5690aba309e-6173647-6813274/end_before.flac",
+                "sha256": "507590db552c6aabdbd93968ffc58a3f73a57875d80991ecdd99cc8c4fa902f2",
+                "source_start_frame": 6725074,
+                "source_end_frame": 6813274,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/362-f5690aba309e-6173647-6813274/end_after.flac",
+                "sha256": "99fb5a1cd42fd13c70d28a6643aa9532753ed2b12db7e48b25928511671b1537",
+                "source_start_frame": 6813274,
+                "source_end_frame": 6901474,
+                "available_seconds": 2.0
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Chers",
+                "start": 140.071999,
+                "end": 140.551999,
+                "kind": "dialogue",
+                "asr_word_index": 115,
+                "raw_start": 140.07199946594238,
+                "raw_end": 140.55199915719032,
+                "native_token_indices": [
+                  23,
+                  24
+                ]
+              },
+              "last": {
+                "text": "discussion.",
+                "start": 153.656,
+                "end": 154.216,
+                "kind": "dialogue",
+                "asr_word_index": 144,
+                "raw_start": 153.6560001525879,
+                "raw_end": 154.29599961674214,
+                "native_token_indices": [
+                  55,
+                  56,
+                  57,
+                  58
+                ]
+              },
+              "previous_word_end": 120.552,
+              "next_word_start": 172.216,
+              "first_source_speech_region": [
+                140.384,
+                141.6
+              ],
+              "last_source_speech_region": [
+                153.408,
+                154.336
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/362-f5690aba309e-6173647-6813274/waveform.svg",
+              "sha256": "74b3c94870f3cd7b0eb54fe9a15ac9b39403a58ea65120ad95d559fe5dcead9d"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.17,
+          "trailing_quiet_seconds": 0.05,
+          "relative_rms_threshold": 0.007346868962049485,
+          "safe_quiet_margins": true
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.384,
+          "trailing_non_speech_seconds": 0.168,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "ctc"
+      ],
+      "editorial_reason": "Questions et trois réponses relues, informations comparées aux transcriptions. Les pourcentages et affirmations sont rapportés au document. Vérification des frontières et deux reconnaissances du fichier final requises.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 18.34,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_86-2.mp3",
+      "previous_sha256": "9c55d90a47108413e954aa04e86362e6e57a556bdf903a7d46828f9dd1c3be4a",
+      "candidate_sha256": "2b4e924706fb1f60644bfba12cf9dcd5fa37441ac3a1102316eb9bef21fff569",
+      "rollback_git_blob": "fa55edbb0ddffcf70576656cd921e5eb467f9e35",
+      "source_id": "delf_a1_2022:086:c9d1659a97e4",
+      "source_sha256": "c9d1659a97e4a453228a7a970efb9ba7475b7ff1bc7e6212e3914f1ca0a91f31",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "2b4e924706fb1f60644bfba12cf9dcd5fa37441ac3a1102316eb9bef21fff569",
+        "duration": 3.4800625,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "c9d1659a97e4a453228a7a970efb9ba7475b7ff1bc7e6212e3914f1ca0a91f31",
+          "proof": {
+            "previous_sha256": "ba1c520113b072bd9c89a831dd3beb1833b23338387bd1644b7100cf531ce4f0",
+            "sha256": "2b4e924706fb1f60644bfba12cf9dcd5fa37441ac3a1102316eb9bef21fff569",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/57-ba1c520113b0-508031-661500/candidate.mp3",
+            "source_sha256": "c9d1659a97e4a453228a7a970efb9ba7475b7ff1bc7e6212e3914f1ca0a91f31",
+            "source_file": "/workspace/work/tcf-audio-replacement/incoming/a1/delf_a1_2022_piste_86.mp3",
+            "source_decoded_pcm_sha256": "6f3ae1f53c716364cc36eddab2dbc6872650f80c0dc6ab87b9f653cee756c258",
+            "source_sample_rate": 44100,
+            "source_channels": 2,
+            "source_start_frame": 508031,
+            "source_end_frame": 661500,
+            "source_start": 11.519977324263039,
+            "source_end": 15.0,
+            "source_slice_pcm_sha256": "88ffac9a8990a75637a1cda74b6f98056aa8e01352c8143e005088f81dd908ff",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/57-ba1c520113b0-508031-661500/start_before.flac",
+                "sha256": "8a75d7b0cf90f08c28db2661090bf9e109aacea63d0c827c7fdbb21ad9cb1c68",
+                "source_start_frame": 419831,
+                "source_end_frame": 508031,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/57-ba1c520113b0-508031-661500/start_after.flac",
+                "sha256": "d8ee143b8271e0456ebeed2aeaf5ac6058176c46eec2ca63ff0773153e7a8547",
+                "source_start_frame": 508031,
+                "source_end_frame": 596231,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/57-ba1c520113b0-508031-661500/end_before.flac",
+                "sha256": "ac00f331acac9e0450c8493e177ba3dbdd9335a358d02aa1ac20e82aab1e4e26",
+                "source_start_frame": 573300,
+                "source_end_frame": 661500,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/57-ba1c520113b0-508031-661500/end_after.flac",
+                "sha256": "93a9852cef4432d9fcae212f2f6d56ff18c762d1da50bf4fe8df5d72ad888ff8",
+                "source_start_frame": 661500,
+                "source_end_frame": 749700,
+                "available_seconds": 2.0
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Quel",
+                "start": 11.599999,
+                "end": 12.0,
+                "kind": "dialogue",
+                "asr_word_index": 16,
+                "raw_start": 11.59999942779541,
+                "raw_end": 12.000000149011612,
+                "native_token_indices": [
+                  43,
+                  44
+                ]
+              },
+              "last": {
+                "text": "plaît?",
+                "start": 14.0,
+                "end": 14.879999,
+                "kind": "dialogue",
+                "asr_word_index": 24,
+                "raw_start": 14.0,
+                "raw_end": 15.20000010728836,
+                "native_token_indices": [
+                  61,
+                  62,
+                  63,
+                  64
+                ]
+              },
+              "previous_word_end": 10.72,
+              "next_word_start": 16.16,
+              "first_source_speech_region": [
+                11.968,
+                14.112
+              ],
+              "last_source_speech_region": [
+                11.968,
+                14.112
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. Natural native margins up to one second are retained to avoid trimming a quiet first word or its final decay. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/57-ba1c520113b0-508031-661500/waveform.svg",
+              "sha256": "a4581611db5757fc92122337fd6dd4f5a274903901a5e1a24c379ed1b2e2255d"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.41000000000000003,
+          "trailing_quiet_seconds": 0.92,
+          "relative_rms_threshold": 0.0038044585287570955,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.448,
+          "trailing_non_speech_seconds": 0.8880625,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "ctc"
+      ],
+      "editorial_reason": "Transcription et réponses confrontées aux deux reconnaissances finales concordantes ; les références dont les frontières restent incertaines attendent la reprise des coupes.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 6.4,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/transports/moyen-a2__radio-18.3.mp3",
+      "previous_sha256": "8f447d8361238a856f5065134c69dc039824b1dec298d14d61b84d461f2e3d27",
+      "candidate_sha256": "b11393aed055cec4343e81bcb590b777dadb493d2b9ed47d201134b6f2fcbda2",
+      "rollback_git_blob": "6c485cb11f1d8395af094ab1c160ed78887388fc",
+      "source_id": "additional-20261102:mdf-a2-abc-direct:63:e8a39f601d19:38745a2a",
+      "source_sha256": "e8a39f601d198e18e7791e930e4040ffc35906728b90c5d2217802875be44737",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "b11393aed055cec4343e81bcb590b777dadb493d2b9ed47d201134b6f2fcbda2",
+        "duration": 16.08,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "e8a39f601d198e18e7791e930e4040ffc35906728b90c5d2217802875be44737",
+          "proof": {
+            "previous_sha256": "1e10990fa438c9c3290f2b64447343b8469777738350279d948bbf0d37840add",
+            "sha256": "b11393aed055cec4343e81bcb590b777dadb493d2b9ed47d201134b6f2fcbda2",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/322-1e10990fa438-151704-860832/candidate.mp3",
+            "source_sha256": "e8a39f601d198e18e7791e930e4040ffc35906728b90c5d2217802875be44737",
+            "source_file": "/workspace/attachments/777844e1-0e4b-48ab-90be-8a9d315e73f9/09035199_063_ACT 18-3.mp3",
+            "source_decoded_pcm_sha256": "d0f8154c075943d06ff678b7ec6773828a731fc8e519c3bac2760a25f6a99282",
+            "source_sample_rate": 44100,
+            "source_channels": 1,
+            "source_start_frame": 151704,
+            "source_end_frame": 860832,
+            "source_start": 3.44,
+            "source_end": 19.52,
+            "source_slice_pcm_sha256": "01f5f2ca1e4ea8fcb399661757a59ec60746c1049f81fbf95fe16005e87d2962",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/322-1e10990fa438-151704-860832/start_before.flac",
+                "sha256": "ecc875c18fcc19989266b7bf0a79b68f5169b6ecaa006822c22dd45a3fca688a",
+                "source_start_frame": 63504,
+                "source_end_frame": 151704,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/322-1e10990fa438-151704-860832/start_after.flac",
+                "sha256": "6ce4bdd5ee1d11f040228d1311466ccbc7c1f57302011ced77e3761f2d46e5de",
+                "source_start_frame": 151704,
+                "source_end_frame": 239904,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/322-1e10990fa438-151704-860832/end_before.flac",
+                "sha256": "6d4d93cc1d8484fd4d210dc8f0443944704a0acd2ae7e434b581fce98d545044",
+                "source_start_frame": 772632,
+                "source_end_frame": 860832,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/322-1e10990fa438-151704-860832/end_after.flac",
+                "sha256": "b3b189b965b2869c6436970afe6833b0f3e6c97c02882a28080dcd9b7f6ee912",
+                "source_start_frame": 860832,
+                "source_end_frame": 949032,
+                "available_seconds": 2.0
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Ne",
+                "start": 3.52,
+                "end": 3.76,
+                "kind": "dialogue",
+                "asr_word_index": 3,
+                "raw_start": 3.5199999809265137,
+                "raw_end": 3.7599999755620956,
+                "native_token_indices": [
+                  9
+                ]
+              },
+              "last": {
+                "text": "www.festivalculinaire.fr",
+                "start": 16.0,
+                "end": 19.199999,
+                "kind": "dialogue",
+                "asr_word_index": 37,
+                "raw_start": 16.0,
+                "raw_end": 19.199999153614044,
+                "native_token_indices": [
+                  77,
+                  78,
+                  79,
+                  80,
+                  81,
+                  82,
+                  83,
+                  84,
+                  85,
+                  86,
+                  87,
+                  88
+                ]
+              },
+              "previous_word_end": 2.4,
+              "next_word_start": 22.386938775510203,
+              "first_source_speech_region": [
+                3.808,
+                8.224
+              ],
+              "last_source_speech_region": [
+                18.592,
+                19.36
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/322-1e10990fa438-151704-860832/waveform.svg",
+              "sha256": "a52df7f4dd53a43cd2abec93daac16bc26f06947d974861a64680bc21f2a2682"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.0,
+          "relative_rms_threshold": 0.008829740434885026,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.384,
+          "trailing_non_speech_seconds": 0.144,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
+      "editorial_reason": "Reconnaissances Parakeet et Whisper comparées ; dix questions au maximum et trois propositions par question relues, réponses présentes et distracteurs distincts. Qualification des frontières et des deux fichiers de reconnaissance reste obligatoire. « Dès à présent » est confirmé par Parakeet, contrairement à la mauvaise segmentation « dés appréhend » de Whisper.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 19.72,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/excuse-moi-eric-ai-3.mp3",
+      "previous_sha256": "f679d871b05198889d5a6a63f2d2926c1f462d77c56e47738c97cc22a4f614e1",
+      "candidate_sha256": "96c50f9b23f218a857cfad93656f70f4345d0d58830261841597abcdad7253b8",
+      "rollback_git_blob": "1efb3685d9be5e83ac238dee5e91de580411a86c",
+      "source_id": "additional-20261102:mdf-a2-abc-direct:98:24d5f36f616e:19751042",
+      "source_sha256": "24d5f36f616e049a51b4150854b8153e3316cb90df9ce8258703b4273933af83",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "96c50f9b23f218a857cfad93656f70f4345d0d58830261841597abcdad7253b8",
+        "duration": 19.464,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "24d5f36f616e049a51b4150854b8153e3316cb90df9ce8258703b4273933af83",
+          "proof": {
+            "previous_sha256": "2bed69511e2fe4175856b44c5de890ae8aaee2d65653fd19f2eac512caeab349",
+            "sha256": "96c50f9b23f218a857cfad93656f70f4345d0d58830261841597abcdad7253b8",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/305-2bed69511e2f-1944986-2803349/candidate.mp3",
+            "source_sha256": "24d5f36f616e049a51b4150854b8153e3316cb90df9ce8258703b4273933af83",
+            "source_file": "/workspace/attachments/2ed30caa-d425-44b5-baad-f99d75ab78ab/09035199_098_ACT 49.mp3",
+            "source_decoded_pcm_sha256": "f36742814a0f02544e0d1e61d28d6153574204eae128eb57cebc73756d8f7d46",
+            "source_sample_rate": 44100,
+            "source_channels": 1,
+            "source_start_frame": 1944986,
+            "source_end_frame": 2803349,
+            "source_start": 44.10399092970521,
+            "source_end": 63.568004535147395,
+            "source_slice_pcm_sha256": "ecde7334125e7bc9c66770f495f75c4f7f82e3b29fa3dff9671d09a10aac7d7e",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/305-2bed69511e2f-1944986-2803349/start_before.flac",
+                "sha256": "db68bd3beff86e7547023e27eb339a236623cb956486aa5abca53c53af306c1d",
+                "source_start_frame": 1856786,
+                "source_end_frame": 1944986,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/305-2bed69511e2f-1944986-2803349/start_after.flac",
+                "sha256": "5e43ded95dd8ff5163eaca99eb67edb3bd0d064e616547a325c97305aaf67913",
+                "source_start_frame": 1944986,
+                "source_end_frame": 2033186,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/305-2bed69511e2f-1944986-2803349/end_before.flac",
+                "sha256": "d7b34ecea584e5877e9b99e6b2ca4909efa4b1dea55521c7a006f7135090f32f",
+                "source_start_frame": 2715149,
+                "source_end_frame": 2803349,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/305-2bed69511e2f-1944986-2803349/end_after.flac",
+                "sha256": "d74f28331519258e8277cfa197c0f53e1863a140af87148aaa32157194574f89",
+                "source_start_frame": 2803349,
+                "source_end_frame": 2891549,
+                "available_seconds": 2.0
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Astrid,",
+                "start": 44.184001,
+                "end": 44.744,
+                "kind": "dialogue",
+                "asr_word_index": 75,
+                "raw_start": 44.18400053405762,
+                "raw_end": 45.38399953866005,
+                "native_token_indices": [
+                  85,
+                  86,
+                  87,
+                  88
+                ]
+              },
+              "last": {
+                "text": "bibliothèque.",
+                "start": 62.247999,
+                "end": 63.448,
+                "kind": "dialogue",
+                "asr_word_index": 121,
+                "raw_start": 62.247999465942385,
+                "raw_end": 63.76800022172928,
+                "native_token_indices": [
+                  45,
+                  46,
+                  47,
+                  48,
+                  49,
+                  50,
+                  51
+                ]
+              },
+              "previous_word_end": 42.903999,
+              "next_word_start": 66.008,
+              "first_source_speech_region": [
+                44.512,
+                45.312
+              ],
+              "last_source_speech_region": [
+                61.568,
+                62.848
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. Natural native margins up to one second are retained to avoid trimming a quiet first word or its final decay. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/305-2bed69511e2f-1944986-2803349/waveform.svg",
+              "sha256": "e2c6bf01456d65d5cca2dd814d6ee2f7f6850f4d25382f3810a1591377de7c70"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.17,
+          "trailing_quiet_seconds": 0.73,
+          "relative_rms_threshold": 0.00734613098204136,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.416,
+          "trailing_non_speech_seconds": 0.712,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "ctc"
+      ],
+      "editorial_reason": "Questions et trois propositions relues dans le contexte : une réponse correcte et présente dans le dialogue. Transcriptions finales comparées ; conserver en attente tant que les frontières ou les deux reconnaissances finales ne sont pas qualifiées.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 25.29,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/excusez-moi-3.mp3",
+      "previous_sha256": "a9ea380bb1ba6876a4b8156b1b18021a16353e4b1b44bf8365832b330dd1a2b0",
+      "candidate_sha256": "fe7e0b3e3767869f1cb6e98b5d5f1816d78656c733c445d2155134e49142c465",
+      "rollback_git_blob": "01d2842d2cb477228832424f60a48bad3d106ab3",
+      "source_id": "additional-20261102:mdf-a2-abc-direct:87:8ee567589532:102fea99",
+      "source_sha256": "8ee567589532aebed5259904fc92b0843db871da288544cb609fc329680f6740",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "fe7e0b3e3767869f1cb6e98b5d5f1816d78656c733c445d2155134e49142c465",
+        "duration": 15.176,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "8ee567589532aebed5259904fc92b0843db871da288544cb609fc329680f6740",
+          "proof": {
+            "previous_sha256": "d0df075f7e2654acc64a3bfbeeed7b1439f5cfc1419b78de42e426093a1e70cb",
+            "sha256": "fe7e0b3e3767869f1cb6e98b5d5f1816d78656c733c445d2155134e49142c465",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/313-d0df075f7e26-1996495-2665757/candidate.mp3",
+            "source_sha256": "8ee567589532aebed5259904fc92b0843db871da288544cb609fc329680f6740",
+            "source_file": "/workspace/attachments/1c915f18-71fe-453c-8963-35d4755d573c/09035199_087_ACT 38.mp3",
+            "source_decoded_pcm_sha256": "41a810e9417a9a4002ec88c22f43c352b6680ccd2e83c00505dbe65826254ce5",
+            "source_sample_rate": 44100,
+            "source_channels": 1,
+            "source_start_frame": 1996495,
+            "source_end_frame": 2665757,
+            "source_start": 45.27199546485261,
+            "source_end": 60.44800453514739,
+            "source_slice_pcm_sha256": "d7d76de553f008944118cb68461fa55d2c2cf36b47bdb2c901827d7326960ccc",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/313-d0df075f7e26-1996495-2665757/start_before.flac",
+                "sha256": "0a66775ebe0c08c451139fe977919c52de57ca1e4fc003dc9df46ea40d6a2a0e",
+                "source_start_frame": 1908295,
+                "source_end_frame": 1996495,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/313-d0df075f7e26-1996495-2665757/start_after.flac",
+                "sha256": "49428ec145d4c3ac1eae5eca4154b0c0a5e32ab5926e64bbd2996b827c30893d",
+                "source_start_frame": 1996495,
+                "source_end_frame": 2084695,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/313-d0df075f7e26-1996495-2665757/end_before.flac",
+                "sha256": "0bfd055700410ffa0451f71d071fadb25c741a5d20a3852888a0ea6859ab9efa",
+                "source_start_frame": 2577557,
+                "source_end_frame": 2665757,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/313-d0df075f7e26-1996495-2665757/end_after.flac",
+                "sha256": "dc9377100d75d949b5067cae4c0758a71cf8088fd5820019dd3d02b296c2d975",
+                "source_start_frame": 2665757,
+                "source_end_frame": 2753957,
+                "available_seconds": 2.0
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Allô",
+                "start": 45.351999,
+                "end": 45.912,
+                "kind": "dialogue",
+                "asr_word_index": 73,
+                "raw_start": 45.351998931884765,
+                "raw_end": 45.91200045418739,
+                "native_token_indices": [
+                  67,
+                  68
+                ]
+              },
+              "last": {
+                "text": "D'accord.",
+                "start": 59.448,
+                "end": 60.328,
+                "kind": "dialogue",
+                "asr_word_index": 108,
+                "raw_start": 59.44800022888184,
+                "raw_end": 60.64799938249588,
+                "native_token_indices": [
+                  64,
+                  65,
+                  66,
+                  67
+                ]
+              },
+              "previous_word_end": 39.992,
+              "next_word_start": 62.088,
+              "first_source_speech_region": [
+                45.856,
+                46.496
+              ],
+              "last_source_speech_region": [
+                59.456,
+                59.872
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. Natural native margins up to one second are retained to avoid trimming a quiet first word or its final decay. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/313-d0df075f7e26-1996495-2665757/waveform.svg",
+              "sha256": "acc7368db2ef0a84749170a75f304cba1a3a235f29afa7370eec16ea39e971e4"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.51,
+          "trailing_quiet_seconds": 0.61,
+          "relative_rms_threshold": 0.008700534477829935,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.544,
+          "trailing_non_speech_seconds": 0.552,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "ctc"
+      ],
+      "editorial_reason": "Questions et trois propositions relues dans le contexte : une réponse correcte et présente dans le dialogue. Transcriptions finales comparées ; conserver en attente tant que les frontières ou les deux reconnaissances finales ne sont pas qualifiées.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 23.17,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-1-2.mp3",
+      "previous_sha256": "ba1773fbd8c1578342f267c3d4ea9c6a6c7daa187f89bd48850941b01f15151d",
+      "candidate_sha256": "4ba1e47d3ff1fbca5ac97c6c3a9b3352362dfbc0a880193fcf2a5f4caaa4fbd0",
+      "rollback_git_blob": "7470f88b8a27b7b8435f7d443645d06d24d2b26e",
+      "source_id": "additional-20261102:mdf-a1-abc:62:cdfafe749af2:cf61c1c3",
+      "source_sha256": "cdfafe749af20ad007dd5d66f9b170f1cf44516c39b64d0ca15fd2051a8e2550",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "4ba1e47d3ff1fbca5ac97c6c3a9b3352362dfbc0a880193fcf2a5f4caaa4fbd0",
+        "duration": 9.3200625,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "cdfafe749af20ad007dd5d66f9b170f1cf44516c39b64d0ca15fd2051a8e2550",
+          "proof": {
+            "previous_sha256": "668f156c3c6f00fa508c118249c5111172d05b7adc9bf4f4502faf3d16699f58",
+            "sha256": "4ba1e47d3ff1fbca5ac97c6c3a9b3352362dfbc0a880193fcf2a5f4caaa4fbd0",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/331-668f156c3c6f-1221040-1632053/candidate.mp3",
+            "source_sha256": "cdfafe749af20ad007dd5d66f9b170f1cf44516c39b64d0ca15fd2051a8e2550",
+            "source_file": "/workspace/work/tcf-audio-additional-20261102-work/incoming/a1/mdf-a1-abc/MDF_A1_ABC-DELF_AUDIO/09035257_062.mp3",
+            "source_decoded_pcm_sha256": "c1b6e232e7e1f8212d892b9d8323c14d6692eb08da072760b5d13eccf1980e99",
+            "source_sample_rate": 44100,
+            "source_channels": 1,
+            "source_start_frame": 1221040,
+            "source_end_frame": 1632053,
+            "source_start": 27.68798185941043,
+            "source_end": 37.00800453514739,
+            "source_slice_pcm_sha256": "faf1f9bbc99290378d6081fc1498128b94ed49a9cd78f9c9124376f9444bc317",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/331-668f156c3c6f-1221040-1632053/start_before.flac",
+                "sha256": "e42b88f98bee0e4535f152a58f1b97622cf0a2b9469c89408437ce1f9bcbea28",
+                "source_start_frame": 1132840,
+                "source_end_frame": 1221040,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/331-668f156c3c6f-1221040-1632053/start_after.flac",
+                "sha256": "03fc0ba8d06d3c773d05c91867306a3a7685f16c5b87e1fe2d1b3dec9d19acaa",
+                "source_start_frame": 1221040,
+                "source_end_frame": 1309240,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/331-668f156c3c6f-1221040-1632053/end_before.flac",
+                "sha256": "81cd17aa68a058ba58c89616b85d9eaecb5a9b1e34cbb6a3518dd2b70043e4c6",
+                "source_start_frame": 1543853,
+                "source_end_frame": 1632053,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/331-668f156c3c6f-1221040-1632053/end_after.flac",
+                "sha256": "957e9b5263dfbb37c4021d4aed8feae1fad3f2300d52479e8cf98f81d2ad7417",
+                "source_start_frame": 1632053,
+                "source_end_frame": 1720253,
+                "available_seconds": 2.0
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Où",
+                "start": 27.768,
+                "end": 28.168,
+                "kind": "dialogue",
+                "asr_word_index": 26,
+                "raw_start": 27.768,
+                "raw_end": 28.167999991059304,
+                "native_token_indices": [
+                  0,
+                  1
+                ]
+              },
+              "last": {
+                "text": "monsieur.",
+                "start": 35.768,
+                "end": 36.888,
+                "kind": "dialogue",
+                "asr_word_index": 42,
+                "raw_start": 35.768,
+                "raw_end": 40.64799923527241,
+                "native_token_indices": [
+                  36,
+                  37,
+                  38,
+                  39,
+                  40
+                ]
+              },
+              "previous_word_end": 25.783998,
+              "next_word_start": 40.968,
+              "first_source_speech_region": [
+                27.968,
+                28.192
+              ],
+              "last_source_speech_region": [
+                34.976,
+                36.288
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. Natural native margins up to one second are retained to avoid trimming a quiet first word or its final decay. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/331-668f156c3c6f-1221040-1632053/waveform.svg",
+              "sha256": "1b01851ab8cf9b591c78dbd3691554e643c8ae7ad6ac885d8b9d6b740a154409"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.07,
+          "trailing_quiet_seconds": 0.0,
+          "relative_rms_threshold": 0.00797320380806923,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.224,
+          "trailing_non_speech_seconds": 0.7440625,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "ctc"
+      ],
+      "editorial_reason": "Trois questions et neuf propositions relues ; rayon frais au fond du magasin confirmé par les reconnaissances.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 10.34,
+      "previous_pool": {
+        "tag": "court",
+        "questions": 2
+      },
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-21-6.mp3",
+      "previous_sha256": "d59f39c7ef9a56da70f942dd3b076484765c268baeb11ceeeff95204d61b1b15",
+      "candidate_sha256": "db88d89b7e5f9d17182ba16733942ba369a7ca725354d1b1c719d47dd56625a0",
+      "rollback_git_blob": "40da230a9375458eae19306459a67be11f320702",
+      "source_id": "9782090351958:040:42a9a64a8955",
+      "source_sha256": "42a9a64a8955779c29d69bb885962d29516f1e44dc49c864205697e967b67640",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "db88d89b7e5f9d17182ba16733942ba369a7ca725354d1b1c719d47dd56625a0",
+        "duration": 9.544,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "42a9a64a8955779c29d69bb885962d29516f1e44dc49c864205697e967b67640",
+          "proof": {
+            "previous_sha256": "aee9ff2fe91b79c4e89f35e5942dece02d170e22a47de1a6a7a37cd27a9f4c1a",
+            "sha256": "db88d89b7e5f9d17182ba16733942ba369a7ca725354d1b1c719d47dd56625a0",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/62-aee9ff2fe91b-4169743-4590634/candidate.mp3",
+            "source_sha256": "42a9a64a8955779c29d69bb885962d29516f1e44dc49c864205697e967b67640",
+            "source_file": "/workspace/attachments/83441618-4749-4f13-9011-45078755fabe/9782090351958_40_CO_ex38.mp3",
+            "source_decoded_pcm_sha256": "53e455fa075ca410a6fcf14d68f9aff8a78b39f0cea7a1f6855718a1569b20d7",
+            "source_sample_rate": 44100,
+            "source_channels": 1,
+            "source_start_frame": 4169743,
+            "source_end_frame": 4590634,
+            "source_start": 94.55199546485261,
+            "source_end": 104.09600907029478,
+            "source_slice_pcm_sha256": "882d9356e5c8db77dc4bdceabbb246f3597da016445bc0250c62bc0b1770d6cc",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/62-aee9ff2fe91b-4169743-4590634/start_before.flac",
+                "sha256": "9123273d470bab6ffddff51b0630afdeb20491afe7c3aaa4d423d878bb0eeafe",
+                "source_start_frame": 4081543,
+                "source_end_frame": 4169743,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/62-aee9ff2fe91b-4169743-4590634/start_after.flac",
+                "sha256": "1417ca84743adc503cba6f3c2104e233b7f10b9f3942a63ebce4cd12aaa7fd6c",
+                "source_start_frame": 4169743,
+                "source_end_frame": 4257943,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/62-aee9ff2fe91b-4169743-4590634/end_before.flac",
+                "sha256": "ee1c327973c0d7323b0440ca081d41afc6ef7dd7e8a98d86eb38e9627f05f58d",
+                "source_start_frame": 4502434,
+                "source_end_frame": 4590634,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/62-aee9ff2fe91b-4169743-4590634/end_after.flac",
+                "sha256": "742fee2f010cd11c7f9f8fc6d48b1a64e8142777fce09c98ac2199ef6fff8eb2",
+                "source_start_frame": 4590634,
+                "source_end_frame": 4646016,
+                "available_seconds": 1.2558276643990929
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Voici",
+                "start": 94.632,
+                "end": 95.191999,
+                "kind": "dialogue",
+                "asr_word_index": 178,
+                "raw_start": 94.63199950408935,
+                "raw_end": 95.19199926805496,
+                "native_token_indices": [
+                  55,
+                  56
+                ]
+              },
+              "last": {
+                "text": "l'histoire.",
+                "start": 103.352,
+                "end": 103.831999,
+                "kind": "dialogue",
+                "asr_word_index": 205,
+                "raw_start": 103.35199977111816,
+                "raw_end": 103.91199931156635,
+                "native_token_indices": [
+                  110,
+                  111,
+                  112,
+                  113,
+                  114,
+                  115
+                ]
+              },
+              "previous_word_end": 93.832,
+              "next_word_start": 105.35183673469388,
+              "first_source_speech_region": [
+                94.88,
+                96.192
+              ],
+              "last_source_speech_region": [
+                101.12,
+                103.936
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/62-aee9ff2fe91b-4169743-4590634/waveform.svg",
+              "sha256": "67a93c7b2f1acb6c6b82e05ad1825b88bac830b261327b5d135189444962eb7d"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.01,
+          "relative_rms_threshold": 0.005962033048272133,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.288,
+          "trailing_non_speech_seconds": 0.168,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "ctc"
+      ],
+      "editorial_reason": "Texte, questions et réponses relus en regard des reconnaissances finales ; frontières incertaines maintenues en attente.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 12.33,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_37-3.mp3",
+      "previous_sha256": "617019d3aafb5e774dff1903d37d1c3ecbd6697653932f976b63d4fff79f8638",
+      "candidate_sha256": "fc68735ceab31c7c3c83481c0fa1608802c743a27e01ea6681a7b4083583d678",
+      "rollback_git_blob": "ab456d8a065ce33b69f0df3837a787353474e0a7",
+      "source_id": "delf_a2_2021:037:4c04751c8451",
+      "source_sha256": "4c04751c84512f18e04d55b82bf2ab67ceae89c598cfcf0a659ab605082d0955",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "fc68735ceab31c7c3c83481c0fa1608802c743a27e01ea6681a7b4083583d678",
+        "duration": 16.456,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "4c04751c84512f18e04d55b82bf2ab67ceae89c598cfcf0a659ab605082d0955",
+          "proof": {
+            "previous_sha256": "9571eacfdc793cfec0d7bf14682930198e437ee314aae135a4ba4f49bd9835c5",
+            "sha256": "fc68735ceab31c7c3c83481c0fa1608802c743a27e01ea6681a7b4083583d678",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/49-9571eacfdc79-2847448-3573158/candidate.mp3",
+            "source_sha256": "4c04751c84512f18e04d55b82bf2ab67ceae89c598cfcf0a659ab605082d0955",
+            "source_file": "/workspace/work/tcf-audio-replacement/incoming/a2/DELF_A2_2021_Piste_37.mp3",
+            "source_decoded_pcm_sha256": "57fc753769843db152a53c3b46f986676a7e3b0feb1ae6dde2fbf79cd605de4c",
+            "source_sample_rate": 44100,
+            "source_channels": 2,
+            "source_start_frame": 2847448,
+            "source_end_frame": 3573158,
+            "source_start": 64.56798185941044,
+            "source_end": 81.02399092970522,
+            "source_slice_pcm_sha256": "7e2835a00701e15aa426b3f04dd7ff713ac7d835614b7ce3fc73a729472fd682",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/49-9571eacfdc79-2847448-3573158/start_before.flac",
+                "sha256": "32b157d1cf1313ffc215dd918b30920cf97a1da533b81c746bad4ca480f36b0e",
+                "source_start_frame": 2759248,
+                "source_end_frame": 2847448,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/49-9571eacfdc79-2847448-3573158/start_after.flac",
+                "sha256": "4421a6cf246800a89b38ff362a73c61e999ae54469132cd4e8497faf5a79c8d7",
+                "source_start_frame": 2847448,
+                "source_end_frame": 2935648,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/49-9571eacfdc79-2847448-3573158/end_before.flac",
+                "sha256": "a4c270615eace678a6de36a2c41cd0fa6f757dd2c6384643229da4a5d7bdc507",
+                "source_start_frame": 3484958,
+                "source_end_frame": 3573158,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/49-9571eacfdc79-2847448-3573158/end_after.flac",
+                "sha256": "1e2029ce67c892504f426e9a1c038b731990ea716c7a7c50982ba2781d22ea86",
+                "source_start_frame": 3573158,
+                "source_end_frame": 3661358,
+                "available_seconds": 2.0
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Cet",
+                "start": 64.647999,
+                "end": 65.208,
+                "kind": "dialogue",
+                "asr_word_index": 84,
+                "raw_start": 64.64799946594238,
+                "raw_end": 65.2080001090765,
+                "native_token_indices": [
+                  5,
+                  6
+                ]
+              },
+              "last": {
+                "text": "plus!",
+                "start": 80.568,
+                "end": 80.808,
+                "kind": "dialogue",
+                "asr_word_index": 121,
+                "raw_start": 80.56799954223632,
+                "raw_end": 80.88799931156635,
+                "native_token_indices": [
+                  89,
+                  90
+                ]
+              },
+              "previous_word_end": 57.288,
+              "next_word_start": 83.46122448979592,
+              "first_source_speech_region": [
+                65.216,
+                67.52
+              ],
+              "last_source_speech_region": [
+                80.0,
+                80.864
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/49-9571eacfdc79-2847448-3573158/waveform.svg",
+              "sha256": "b83cc0309a01fceeeca0cc48c53bec25f95e5d5994d9b23bfdf4ea79a8938d36"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.2,
+          "relative_rms_threshold": 0.011254174262285234,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.48,
+          "trailing_non_speech_seconds": 0.168,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
+      "editorial_reason": "Transcription et réponses confrontées aux deux reconnaissances finales concordantes ; les références dont les frontières restent incertaines attendent la reprise des coupes.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 25.99,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_19-3.mp3",
+      "previous_sha256": "97b3033c5b166153422dbb0cea623b56ffece1b8cff513f814cdc762424b8a8d",
+      "candidate_sha256": "0ee7757fa453cb5d1e4816e51c64d1b72053ee4da3cfbfa8f5b870b2123690e6",
+      "rollback_git_blob": "7a6882a757f997f21d586bfa06aaefca78f8e5de",
+      "source_id": "delf_a1_2022:019:f956db0544b7",
+      "source_sha256": "f956db0544b7dd3fee1328d9a0bdbc5bb8875a734fd2c5528865e8e612fd0245",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "0ee7757fa453cb5d1e4816e51c64d1b72053ee4da3cfbfa8f5b870b2123690e6",
+        "duration": 8.6,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "f956db0544b7dd3fee1328d9a0bdbc5bb8875a734fd2c5528865e8e612fd0245",
+          "proof": {
+            "previous_sha256": "afd2adb9eae05106e861c1f7a53b5234e403ef7376fa6f8aca6b8e32e0c8be67",
+            "sha256": "0ee7757fa453cb5d1e4816e51c64d1b72053ee4da3cfbfa8f5b870b2123690e6",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/53-afd2adb9eae0-1491991-1871251/candidate.mp3",
+            "source_sha256": "f956db0544b7dd3fee1328d9a0bdbc5bb8875a734fd2c5528865e8e612fd0245",
+            "source_file": "/workspace/work/tcf-audio-replacement/incoming/a1/delf_a1_2022_piste_19.mp3",
+            "source_decoded_pcm_sha256": "31e9aab59021030eafde399804a5a2aa02c88c7a7a615c41eea4fc35aeaa9805",
+            "source_sample_rate": 44100,
+            "source_channels": 2,
+            "source_start_frame": 1491991,
+            "source_end_frame": 1871251,
+            "source_start": 33.83199546485261,
+            "source_end": 42.431995464852605,
+            "source_slice_pcm_sha256": "6f9983ec996e75e74ee9a642c4f26f96f503939ca411eb3adb30722c7007a2ed",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/53-afd2adb9eae0-1491991-1871251/start_before.flac",
+                "sha256": "f3ca03c1bad5569c65e4f58e997a39227616f5f9101308af2220d763de89138d",
+                "source_start_frame": 1403791,
+                "source_end_frame": 1491991,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/53-afd2adb9eae0-1491991-1871251/start_after.flac",
+                "sha256": "fb66069cef9cde1a4d13f619526441b401448900ecbbfd589b1cb7ca8cd33382",
+                "source_start_frame": 1491991,
+                "source_end_frame": 1580191,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/53-afd2adb9eae0-1491991-1871251/end_before.flac",
+                "sha256": "52a3f38efcb806b13671e569b72bae4adb86052bdbf2b66600e7348bc0850598",
+                "source_start_frame": 1783051,
+                "source_end_frame": 1871251,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/53-afd2adb9eae0-1491991-1871251/end_after.flac",
+                "sha256": "ac197a639384446d4e71721fc325e9a043c2ff228e499d3edea8d8a6610a9258",
+                "source_start_frame": 1871251,
+                "source_end_frame": 1958400,
+                "available_seconds": 1.9761678004535148
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Allô?",
+                "start": 33.912,
+                "end": 34.472,
+                "kind": "dialogue",
+                "asr_word_index": 44,
+                "raw_start": 33.911999637603756,
+                "raw_end": 34.63199997913837,
+                "native_token_indices": [
+                  11,
+                  12,
+                  14
+                ]
+              },
+              "last": {
+                "text": "Bisous!",
+                "start": 41.671999,
+                "end": 42.232,
+                "kind": "dialogue",
+                "asr_word_index": 63,
+                "raw_start": 41.671999389648434,
+                "raw_end": 42.39199973118305,
+                "native_token_indices": [
+                  55,
+                  56,
+                  57,
+                  58,
+                  60
+                ]
+              },
+              "previous_word_end": 31.112,
+              "next_word_start": 44.40816326530612,
+              "first_source_speech_region": [
+                34.4,
+                34.496
+              ],
+              "last_source_speech_region": [
+                41.856,
+                42.272
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/53-afd2adb9eae0-1491991-1871251/waveform.svg",
+              "sha256": "88c262c1b24a426ecb6b4f82f08a03c8f61a1d5f46c042a62034d482e43c894f"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.22,
+          "relative_rms_threshold": 0.005119729265570641,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.48,
+          "trailing_non_speech_seconds": 0.184,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
+      "editorial_reason": "Transcription et réponses confrontées aux deux reconnaissances finales concordantes ; les références dont les frontières restent incertaines attendent la reprise des coupes.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 9.85,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_25-3.mp3",
+      "previous_sha256": "9553f75c9a0da20565dd390bfb6fd084ed11f8647b5e3acd370cc0e30b153f13",
+      "candidate_sha256": "5f4759eb4eb0ced5c5095c30ea1936976b64e5207398e0ef63a3be4205d493fb",
+      "rollback_git_blob": "1bae87d2077b86f25b3f97de4384331084eb9303",
+      "source_id": "delf_a1_2022:025:f51720efd4b0",
+      "source_sha256": "f51720efd4b00833725328c39264a82b0a1db863754a5058c61581295b269966",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "5f4759eb4eb0ced5c5095c30ea1936976b64e5207398e0ef63a3be4205d493fb",
+        "duration": 11.512,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "f51720efd4b00833725328c39264a82b0a1db863754a5058c61581295b269966",
+          "proof": {
+            "previous_sha256": "f7a87eb4ee6ab4e4e03a53689de4e175c492ad3861567ac306dd64bace553e3d",
+            "sha256": "5f4759eb4eb0ced5c5095c30ea1936976b64e5207398e0ef63a3be4205d493fb",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/54-f7a87eb4ee6a-2286496-2794176/candidate.mp3",
+            "source_sha256": "f51720efd4b00833725328c39264a82b0a1db863754a5058c61581295b269966",
+            "source_file": "/workspace/work/tcf-audio-replacement/incoming/a1/delf_a1_2022_piste_25.mp3",
+            "source_decoded_pcm_sha256": "331a0c90aeb74cb092d36d116c1ee7dc4f4b70865be353047f6f7276a7b95d3f",
+            "source_sample_rate": 44100,
+            "source_channels": 2,
+            "source_start_frame": 2286496,
+            "source_end_frame": 2794176,
+            "source_start": 51.84798185941043,
+            "source_end": 63.36,
+            "source_slice_pcm_sha256": "e251d3157c5ea3e5309f26c2b0b86c035914893bc45e77dce599f6bc1054b94a",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/54-f7a87eb4ee6a-2286496-2794176/start_before.flac",
+                "sha256": "b005e1f82c1c5c76915cde3c13843f9efdc72be23e18a78d269cfbdc3fba304f",
+                "source_start_frame": 2198296,
+                "source_end_frame": 2286496,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/54-f7a87eb4ee6a-2286496-2794176/start_after.flac",
+                "sha256": "34eb579bf6baac6f9981f609c172a1838030b89fcd0cd9206251593e7e8cc0b2",
+                "source_start_frame": 2286496,
+                "source_end_frame": 2374696,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/54-f7a87eb4ee6a-2286496-2794176/end_before.flac",
+                "sha256": "9c1a61ab56dfbaf1fa7ce132f73dac74afda83521ab97ff757daebfda77451ed",
+                "source_start_frame": 2705976,
+                "source_end_frame": 2794176,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/54-f7a87eb4ee6a-2286496-2794176/end_after.flac",
+                "sha256": "83b97d554b9d02a70c84df38efc6ba3c045b286a54c0209e1f2237f0e3b64597",
+                "source_start_frame": 2794176,
+                "source_end_frame": 2880000,
+                "available_seconds": 1.9461224489795919
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Mesdames,",
+                "start": 51.927999,
+                "end": 52.648,
+                "kind": "dialogue",
+                "asr_word_index": 43,
+                "raw_start": 51.92799908447266,
+                "raw_end": 52.808000301599506,
+                "native_token_indices": [
+                  53,
+                  54,
+                  55,
+                  56,
+                  57
+                ]
+              },
+              "last": {
+                "text": "9h03.",
+                "start": 61.832,
+                "end": 63.112,
+                "kind": "dialogue",
+                "asr_word_index": 60,
+                "raw_start": 61.831999847412106,
+                "raw_end": 63.351999902844426,
+                "native_token_indices": [
+                  23,
+                  24,
+                  25,
+                  26,
+                  27
+                ]
+              },
+              "previous_word_end": 45.608,
+              "next_word_start": 65.3061224489796,
+              "first_source_speech_region": [
+                52.288,
+                53.472
+              ],
+              "last_source_speech_region": [
+                60.832,
+                63.2
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/54-f7a87eb4ee6a-2286496-2794176/waveform.svg",
+              "sha256": "79d2526b63a7e41b31f8513949a23b7946fa220a755305537a5a4faaf1e83b2a"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.02,
+          "relative_rms_threshold": 0.0075701989233493815,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.32,
+          "trailing_non_speech_seconds": 0.184,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
+      "editorial_reason": "Transcription et réponses confrontées aux deux reconnaissances finales concordantes ; les références dont les frontières restent incertaines attendent la reprise des coupes.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 20.85,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/excusez-moi-essaie-retirer-2-2.mp3",
+      "previous_sha256": "450d3753429a1c33f35172c64d747fb470017f7b52c1e29f830e9a08fd2da682",
+      "candidate_sha256": "6378ffc15cf2e5f853653490e68532b0a2b2388d8c6e2861a9ea48429c45712e",
+      "rollback_git_blob": "5fc3f86a51c415816dd854f2b747cba5df8a0d76",
+      "source_id": "additional-20261102:mdf-a2-abc-direct:92:13977bdd8c90:a0d8314f",
+      "source_sha256": "13977bdd8c90106e28e0c0a4b6e826fb0a97f32d2b9bad9ef8fb0331168ec249",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "6378ffc15cf2e5f853653490e68532b0a2b2388d8c6e2861a9ea48429c45712e",
+        "duration": 10.2160625,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "13977bdd8c90106e28e0c0a4b6e826fb0a97f32d2b9bad9ef8fb0331168ec249",
+          "proof": {
+            "previous_sha256": "ea1ab5a3e8da92e7e8fd9f2fafd46061544a8ad38341c387a3208f3111e426fe",
+            "sha256": "6378ffc15cf2e5f853653490e68532b0a2b2388d8c6e2861a9ea48429c45712e",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/354-ea1ab5a3e8da-990309-1440836/candidate.mp3",
+            "source_sha256": "13977bdd8c90106e28e0c0a4b6e826fb0a97f32d2b9bad9ef8fb0331168ec249",
+            "source_file": "/workspace/attachments/083feeaf-f2ed-45fb-ac2c-c50982816fde/09035199_092_ACT 43.mp3",
+            "source_decoded_pcm_sha256": "df3d09b8fc3f1a620aa66e4fe57633cf29ba22fd1b0a7a80348461aa48a45f3e",
+            "source_sample_rate": 44100,
+            "source_channels": 1,
+            "source_start_frame": 990309,
+            "source_end_frame": 1440836,
+            "source_start": 22.455986394557822,
+            "source_end": 32.67201814058957,
+            "source_slice_pcm_sha256": "b4587537cedb21aacf79c750d82c5e7a6a2cb046ce8af435a5b3bca97a55ce3f",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/354-ea1ab5a3e8da-990309-1440836/start_before.flac",
+                "sha256": "c4783cfad11ba1cbc2948482eb5d8d06336510dce93e965bb461924a17ed6bb4",
+                "source_start_frame": 902109,
+                "source_end_frame": 990309,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/354-ea1ab5a3e8da-990309-1440836/start_after.flac",
+                "sha256": "be9cc1c89aab2277a60cc4c27400d354cf78149e30715bf2a8fec900978b7a6e",
+                "source_start_frame": 990309,
+                "source_end_frame": 1078509,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/354-ea1ab5a3e8da-990309-1440836/end_before.flac",
+                "sha256": "fd74ea9a38d16140666683016260fda14c22b1224918aa5cb84d63bee6024165",
+                "source_start_frame": 1352636,
+                "source_end_frame": 1440836,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/354-ea1ab5a3e8da-990309-1440836/end_after.flac",
+                "sha256": "8773ca8a52b9d7633a62d88df6761eeba7dd796c65464cd704a9704fd144f0a6",
+                "source_start_frame": 1440836,
+                "source_end_frame": 1529036,
+                "available_seconds": 2.0
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Bonjour",
+                "start": 22.536,
+                "end": 23.015999,
+                "kind": "dialogue",
+                "asr_word_index": 41,
+                "raw_start": 22.53599954223633,
+                "raw_end": 23.015999158978463,
+                "native_token_indices": [
+                  92,
+                  93,
+                  94,
+                  95
+                ]
+              },
+              "last": {
+                "text": "l'heure.",
+                "start": 31.752,
+                "end": 32.552,
+                "kind": "dialogue",
+                "asr_word_index": 71,
+                "raw_start": 31.751999961853027,
+                "raw_end": 32.87199966859818,
+                "native_token_indices": [
+                  38,
+                  39,
+                  40,
+                  41,
+                  42
+                ]
+              },
+              "previous_word_end": 21.816,
+              "next_word_start": 34.872,
+              "first_source_speech_region": [
+                22.912,
+                23.52
+              ],
+              "last_source_speech_region": [
+                30.304,
+                31.776
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. Natural native margins up to one second are retained to avoid trimming a quiet first word or its final decay. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/354-ea1ab5a3e8da-990309-1440836/waveform.svg",
+              "sha256": "0687e3561aff230e3b53608329afc2254e8a76f39f02d1930adbe8e8ae465374"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.0,
+          "relative_rms_threshold": 0.005297186076641083,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.448,
+          "trailing_non_speech_seconds": 0.9040625,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
+      "editorial_reason": "Revue éditoriale du dialogue, des questions et de leurs trois propositions. Corrections des faits uniquement lorsque les reconnaissances les étayent ; deux reconnaissances finales et marges qualifiées restent requises avant bascule.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 14.47,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/madame-bienvenue-train-2.mp3",
+      "previous_sha256": "018ba015e8fb73a9a4285a42b643f31b74a689af24744aa36bba7a5f8590ef15",
+      "candidate_sha256": "e36a43fb41f17780fea3ab83fc031e1e05f5f018f802621bf956d31d7a25b6c1",
+      "rollback_git_blob": "cbb280c6f0783a371d8e0956fc67d0a00a36fe5e",
+      "source_id": "additional-20261102:mdf-a2-abc-direct:43:05f804517f60:e8a8300d",
+      "source_sha256": "05f804517f60927a28a151bee6802bdb8be50a118d988ffdb70e6ed23f32b37b",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "e36a43fb41f17780fea3ab83fc031e1e05f5f018f802621bf956d31d7a25b6c1",
+        "duration": 32.912,
+        "category": "moyen",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "05f804517f60927a28a151bee6802bdb8be50a118d988ffdb70e6ed23f32b37b",
+          "proof": {
+            "previous_sha256": "d9386f654d18cd304d641e9f44c57ce0020d81e930cbf8102673f4c690091b36",
+            "sha256": "e36a43fb41f17780fea3ab83fc031e1e05f5f018f802621bf956d31d7a25b6c1",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/61-d9386f654d18-165816-1617235/candidate.mp3",
+            "source_sha256": "05f804517f60927a28a151bee6802bdb8be50a118d988ffdb70e6ed23f32b37b",
+            "source_file": "/workspace/attachments/b978c17c-a571-42c4-81d7-5c2bfe3fe288/09035199_043_ACT 8.mp3",
+            "source_decoded_pcm_sha256": "6e1261a5e52fc31740d1bfed8177a4849e84ac1e9613f3b24d85789c6bb34036",
+            "source_sample_rate": 44100,
+            "source_channels": 1,
+            "source_start_frame": 165816,
+            "source_end_frame": 1617235,
+            "source_start": 3.76,
+            "source_end": 36.67199546485261,
+            "source_slice_pcm_sha256": "ae5e7d092ed7386d2f185780e8b41f5dcac4bbde708dce11378264751db2b998",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/61-d9386f654d18-165816-1617235/start_before.flac",
+                "sha256": "6d7d5c63ba208ec318d073f8e291d21dbdda68e5f74b1c2e1b282f4baa38d774",
+                "source_start_frame": 77616,
+                "source_end_frame": 165816,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/61-d9386f654d18-165816-1617235/start_after.flac",
+                "sha256": "262218f0a9616b0ed1171ff31ae58ef8129892ed136504ca598b764f8ac0f5da",
+                "source_start_frame": 165816,
+                "source_end_frame": 254016,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/61-d9386f654d18-165816-1617235/end_before.flac",
+                "sha256": "75793ee18a61795420e0a7cbee4196edf8ad3e441bdcd8f3693479b3be541b48",
+                "source_start_frame": 1529035,
+                "source_end_frame": 1617235,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/61-d9386f654d18-165816-1617235/end_after.flac",
+                "sha256": "325d5db0bd2a7099be6b15bbb1df83e812d399b221b9fafe5395220ede376878",
+                "source_start_frame": 1617235,
+                "source_end_frame": 1705435,
+                "available_seconds": 2.0
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Madame",
+                "start": 3.84,
+                "end": 4.48,
+                "kind": "dialogue",
+                "asr_word_index": 2,
+                "raw_start": 3.8399999141693115,
+                "raw_end": 4.47999969124794,
+                "native_token_indices": [
+                  5,
+                  6
+                ]
+              },
+              "last": {
+                "text": "voyage!",
+                "start": 35.992,
+                "end": 36.471999,
+                "kind": "dialogue",
+                "asr_word_index": 62,
+                "raw_start": 35.99199961853027,
+                "raw_end": 36.55200003814697,
+                "native_token_indices": [
+                  58,
+                  59,
+                  60,
+                  62
+                ]
+              },
+              "previous_word_end": 1.36,
+              "next_word_start": 42.34448979591837,
+              "first_source_speech_region": [
+                4.096,
+                9.728
+              ],
+              "last_source_speech_region": [
+                35.936,
+                36.512
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/61-d9386f654d18-165816-1617235/waveform.svg",
+              "sha256": "61d76917b55d89be5d0271e1765ffbb3cce293f8c06addbc4a194557e78a70e2"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.0,
+          "relative_rms_threshold": 0.004912639558315278,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.352,
+          "trailing_non_speech_seconds": 0.144,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
+      "editorial_reason": "Texte, questions et réponses relus en regard des reconnaissances finales ; frontières incertaines maintenues en attente.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 38.3,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/excusez-moi-essaie-retirer-2-3.mp3",
+      "previous_sha256": "92fb9cd7bdf91dece9e8a2af19f379310b8667707eeeefed607f2b82bc956c59",
+      "candidate_sha256": "23029057e7d0e19d8ca1f177d989a78c00fa0e8687297d0a05c33082bc91ee3d",
+      "rollback_git_blob": "3de1258a3d283395800372f715d92d9f0888cba2",
+      "source_id": "additional-20261102:mdf-a2-abc-direct:92:13977bdd8c90:a0d8314f",
+      "source_sha256": "13977bdd8c90106e28e0c0a4b6e826fb0a97f32d2b9bad9ef8fb0331168ec249",
+      "technical_check": {
+        "status": "technical_integrity_passed",
+        "sha256": "23029057e7d0e19d8ca1f177d989a78c00fa0e8687297d0a05c33082bc91ee3d",
+        "duration": 10.3600625,
+        "category": "court",
+        "full_decode_checked": true,
+        "provenance": {
+          "type": "word_anchored_native_pcm_boundary_repair",
+          "source_sha256": "13977bdd8c90106e28e0c0a4b6e826fb0a97f32d2b9bad9ef8fb0331168ec249",
+          "proof": {
+            "previous_sha256": "c78b4e772ca1c1f38b8b125e0bd362970d6af0b11d9e243e09e7eca04d45c7f6",
+            "sha256": "23029057e7d0e19d8ca1f177d989a78c00fa0e8687297d0a05c33082bc91ee3d",
+            "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/471-c78b4e772ca1-1615471-2072348/candidate.mp3",
+            "source_sha256": "13977bdd8c90106e28e0c0a4b6e826fb0a97f32d2b9bad9ef8fb0331168ec249",
+            "source_file": "/workspace/attachments/083feeaf-f2ed-45fb-ac2c-c50982816fde/09035199_092_ACT 43.mp3",
+            "source_decoded_pcm_sha256": "df3d09b8fc3f1a620aa66e4fe57633cf29ba22fd1b0a7a80348461aa48a45f3e",
+            "source_sample_rate": 44100,
+            "source_channels": 1,
+            "source_start_frame": 1615471,
+            "source_end_frame": 2072348,
+            "source_start": 36.63199546485261,
+            "source_end": 46.99201814058957,
+            "source_slice_pcm_sha256": "34179bb028efd8738adb3a81ac4ca10728af9f67299beb6cb253cb0f6f3e9a2e",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/471-c78b4e772ca1-1615471-2072348/start_before.flac",
+                "sha256": "80044c61a50669f5be8cdd5d16bd17e5822d500c3b1654e25798d35aa7a3a0d2",
+                "source_start_frame": 1527271,
+                "source_end_frame": 1615471,
+                "available_seconds": 2.0
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/471-c78b4e772ca1-1615471-2072348/start_after.flac",
+                "sha256": "9262c043a7c873961f491a1c38c1949879da11fdeb0077b2c931cd20b0692141",
+                "source_start_frame": 1615471,
+                "source_end_frame": 1703671,
+                "available_seconds": 2.0
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/471-c78b4e772ca1-1615471-2072348/end_before.flac",
+                "sha256": "75050d81b981b838b435e69170ac1fe6fa03084ddee8bdceb3ce44922f9a3d5d",
+                "source_start_frame": 1984148,
+                "source_end_frame": 2072348,
+                "available_seconds": 2.0
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/471-c78b4e772ca1-1615471-2072348/end_after.flac",
+                "sha256": "1b5745ff1a5fe681be52efc3fbb69916a9d2b1ffca6f3db2ff4f77365f5465a4",
+                "source_start_frame": 2072348,
+                "source_end_frame": 2160548,
+                "available_seconds": 2.0
+              }
+            },
+            "word_anchors": {
+              "first": {
+                "text": "Excusez-moi,",
+                "start": 36.712,
+                "end": 37.672,
+                "kind": "dialogue",
+                "asr_word_index": 74,
+                "raw_start": 36.712,
+                "raw_end": 37.75200003635884,
+                "native_token_indices": [
+                  50,
+                  51,
+                  52,
+                  53,
+                  54,
+                  55,
+                  56,
+                  57
+                ]
+              },
+              "last": {
+                "text": "d'autre.",
+                "start": 46.232,
+                "end": 46.872,
+                "kind": "dialogue",
+                "asr_word_index": 105,
+                "raw_start": 46.232000457763675,
+                "raw_end": 47.191999840259555,
+                "native_token_indices": [
+                  117,
+                  118,
+                  119,
+                  120,
+                  121
+                ]
+              },
+              "previous_word_end": 36.232,
+              "next_word_start": 49.192,
+              "first_source_speech_region": [
+                37.312,
+                38.112
+              ],
+              "last_source_speech_region": [
+                45.216,
+                46.4
+              ]
+            },
+            "status": "new_native_candidate_requires_two_final_recognitions",
+            "human_listening_performed": false,
+            "method": "Source word anchors and neighbouring words constrain native VAD margins. Natural native margins up to one second are retained to avoid trimming a quiet first word or its final decay. No synthetic silence. Source hashes, PCM frames and final-file decode verified; source word recognition is not phonetic certification.",
+            "waveform": {
+              "file": "/workspace/work/tcf-bascule-complete-20261105/reviewed-native-margins/471-c78b4e772ca1-1615471-2072348/waveform.svg",
+              "sha256": "5be45ef5e44a433241650beca8db8484de0714785d3670ff73d50a83a165d530"
+            }
+          }
+        },
+        "human_listening_performed": false,
+        "boundary_signal": {
+          "leading_quiet_seconds": 0.0,
+          "trailing_quiet_seconds": 0.0,
+          "relative_rms_threshold": 0.006582379043102265,
+          "safe_quiet_margins": false
+        },
+        "boundary_vad": {
+          "first_speech_seconds": 0.512,
+          "trailing_non_speech_seconds": 0.5680625,
+          "safe_voiced_margins": true
+        }
+      },
+      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation_engines": [
+        "whisper",
+        "ctc"
+      ],
+      "editorial_reason": "Comparaison détaillée relue : ponctuation, graphies, accords et formats de nombres ; les éventuelles divergences chiffrées restent soumises au contrôle indépendant des fichiers finaux avant installation.",
+      "numeric_resolution": null,
+      "additional_recognition_evidence": null,
+      "previous_duration": 13.74,
+      "previous_pool": null,
+      "question_changes": [],
+      "human_listening_performed": false
     }
   ],
   "batches": [
@@ -35572,6 +39019,21 @@
       "batch": 26,
       "report": "bascule-lot-026-20261105.json",
       "files": 1
+    },
+    {
+      "batch": 27,
+      "report": "bascule-lot-027-20261105.json",
+      "files": 16
+    },
+    {
+      "batch": 28,
+      "report": "bascule-lot-028-20261105.json",
+      "files": 11
+    },
+    {
+      "batch": 29,
+      "report": "bascule-lot-029-20261105.json",
+      "files": 6
     }
   ],
   "human_listening_performed": false,
@@ -35580,9 +39042,9 @@
   "policy": "Existing exercise IDs and audio URLs retained. Received sources and git rollback objects preserved. Unchecked candidates are not installed.",
   "summary": {
     "installed_before_this_switch": 80,
-    "installed_this_switch": 737,
-    "total_installed": 817,
-    "remaining_references": 208,
+    "installed_this_switch": 770,
+    "total_installed": 850,
+    "remaining_references": 175,
     "active_library_references": 1025,
     "full_switch_complete": false
   }
