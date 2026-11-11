@@ -14,10 +14,10 @@ async function measure(keys, maximumGzip) {
   return total
 }
 const bootstrap = 'src/interactive/InteractiveApp.tsx'
-const report = { generatedAt: new Date().toISOString(), landing: await measure(['index.html'], 150 * 1024), calibration: await measure([bootstrap, 'src/interactive/CardsPage.tsx'], 200 * 1024), diagnostic: await measure([bootstrap, 'src/interactive/DiagnosticPage.tsx'], 200 * 1024), game: await measure([bootstrap, 'src/interactive/GameApp.tsx'], 3 * 1024 * 1024), limitation: 'Le jeu complet inclut encore les banques et du code partagé. Son plafond provisoire de 3 Mio dépasse la proposition V4 de 200 Ko ; découpage par domaine et mesures ENI restent ouverts.' }
+const report = { generatedAt: new Date().toISOString(), landing: await measure(['index.html'], 150 * 1024), calibration: await measure([bootstrap, 'src/interactive/CardsPage.tsx'], 200 * 1024), diagnostic: await measure([bootstrap, 'src/interactive/DiagnosticPage.tsx'], 200 * 1024), competition: await measure([bootstrap, 'src/interactive/competition/CompetitionPage.tsx'], 200 * 1024), game: await measure([bootstrap, 'src/interactive/GameApp.tsx'], 3 * 1024 * 1024), limitation: 'Le jeu complet inclut encore les banques et du code partagé. Son plafond provisoire de 3 Mio dépasse la proposition V4 de 200 Ko ; découpage par domaine et mesures ENI restent ouverts.' }
 const gameOnly = new Set(report.game.files.map((file) => file.file))
-for (const route of ['landing', 'calibration', 'diagnostic']) {
+for (const route of ['landing', 'calibration', 'diagnostic', 'competition']) {
   assert.ok(!report[route].files.some((file) => gameOnly.has(file.file) && file.raw > 1024 * 1024), `${route} charge encore les banques du jeu`)
 }
 await writeFile('docs/interactive/performance-results.json', JSON.stringify(report, null, 2) + '\n')
-console.log(JSON.stringify(Object.fromEntries(['landing', 'calibration', 'diagnostic', 'game'].map((route) => [route, { gzip: report[route].gzip, maximumGzip: report[route].maximumGzip }])), null, 2))
+console.log(JSON.stringify(Object.fromEntries(['landing', 'calibration', 'diagnostic', 'competition', 'game'].map((route) => [route, { gzip: report[route].gzip, maximumGzip: report[route].maximumGzip }])), null, 2))

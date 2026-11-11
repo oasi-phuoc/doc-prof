@@ -1,6 +1,6 @@
 # ClairFLE — jouer avec la classe
 
-[Fonctions réutilisables](etat-utilisable-v4.md) · [Suivi V4](suivi-v4.md) · [Diagnostic](diagnostic-eni.md) · [Feuille enseignant](feuille-enseignant.md) · [Mobile et cartes carrées](livraison-mobile-question-cartes.md)
+[Fonctions réutilisables](etat-utilisable-v4.md) · [Suivi V4](suivi-v4.md) · [Compétition](guide-competition.md) · [Diagnostic](diagnostic-eni.md) · [Feuille enseignant](feuille-enseignant.md) · [Mobile et cartes carrées](livraison-mobile-question-cartes.md)
 
 Le mode Classe est le mode par défaut : chacun répond avec ses cartes physiques, puis l’enseignant conduit la discussion et révèle la correction. Aucun élève ne sélectionne une réponse au tableau. Le bouton icône Classe/Solo change directement le mode.
 
@@ -15,6 +15,8 @@ Les parties et réglages se retrouvent après fermeture de l’onglet dans le m�
 La préparation peut être enregistrée dans un [préréglage local](adr-0011-prereglages-locaux.md) : sélection, ordre personnalisé ou mélangé, plafond de choix, classement numérique, mode et durées. Une fiche modifiée déclenche une proposition d’adaptation. La reprise d’une partie conserve ses options même si le préréglage a été supprimé.
 
 En Solo, le choix déclenche la correction puis la question suivante après un battement réglable de 1 à 10 secondes (5 par défaut). Le minuteur est facultatif ; s’il est activé, son expiration compte comme une réponse incorrecte. Les productions ouvertes gardent un modèle et une appréciation humaine.
+
+L’icône trophée ouvre la [compétition](guide-competition.md) : code de salle, douze nouvelles mascottes sans nom ni pseudo, scores et classement. Les salles Internet nécessitent l’activation du Worker décrite dans le guide ; le défi sur un appareil commun continue sans réseau après préparation complète des médias. Des appareils sans aucun lien entre eux ne peuvent pas partager une salle synchronisée.
 
 Depuis le générateur : **Jouer avec la classe**, puis **Commencer la séance**. Depuis la bibliothèque : **Jouer**. `/interactif/demo` propose dix questions de la banque réelle avec un compte autorisé.
 
@@ -67,13 +69,17 @@ node scripts/interactive-secrets.mjs
 PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run test:interactive:browser
 PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run test:interactive:classroom
 PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run test:interactive:media
+PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run test:interactive:competition
+npm ci --prefix api/fiches --no-audit --no-fund
+npm run typecheck:api
+npm run test:interactive:competition-worker
 ```
 
 Chromium système évite tout téléchargement supplémentaire. À défaut, installer Chromium avec Playwright. `test:interactive:a4` compare à un checkout témoin sur le port 5181 (`A4_BASELINE_URL`). Le témoin de cette livraison est `726a9ec5`, le `main` avant ces ajustements. `test:interactive:saved` utilise une instance sur 5182 démarrée avec `VITE_FICHES_API_URL=http://127.0.0.1:5182/__test_api` ; l’API est interceptée, aucune fiche réelle n’est modifiée.
 
 Les tests navigateur avec horloge simulée valident le minuteur ; la suite de démonstration vérifie également une lecture réelle dans Chromium. Les événements tactiles simulés ne constituent pas un essai sur ENI physique.
 
-`npm run test:interactive:all` démarre et ferme ses serveurs sur 5180, 5181 et 5182, puis exécute les parcours, axe et la comparaison A4. Ces ports doivent être libres. Pour une autre instance principale, utiliser `INTERACTIVE_CI_PORT` et `INTERACTIVE_CI_BASELINE_PORT` ; les API simulées gardent 5182 et la mesure du build utilise 5192. Le checkout doit contenir la référence C0 ; aucun second checkout ni fichier d’environnement n’est créé. La CI sous Node 24 exécute les mêmes commandes. Voir [qualité et chargement](adr-0016-qualite-et-chargement.md) pour le périmètre des audits et les limites encore ouvertes.
+`npm run test:interactive:all` démarre et ferme ses serveurs sur 5180, 5181 et 5182, puis exécute les parcours, axe et la comparaison A4. Ces ports doivent être libres. Pour une autre instance principale, utiliser `INTERACTIVE_CI_PORT` et `INTERACTIVE_CI_BASELINE_PORT` ; les API simulées gardent 5182, le serveur de compétition des tests utilise 5193 et la mesure du build utilise 5192. Le checkout doit contenir la référence C0 ; aucun second checkout ni fichier d’environnement n’est créé. La CI sous Node 24 exécute les mêmes commandes. Voir [qualité et chargement](adr-0016-qualite-et-chargement.md) pour le périmètre des audits et les limites encore ouvertes.
 
 Voir [acceptation](checklist-acceptation.md), [architecture](architecture.md), [audit](audit-compatibilite.md), [sécurité](audit-securite.md), [livraison](livraison-classe.md) et [captures](design-system.md). Le cahier V4 décrit une cible plus large : les fonctions P1/P2 et toutes les familles du catalogue ne sont pas annoncées terminées.
 

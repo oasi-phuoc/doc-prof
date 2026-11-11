@@ -8,6 +8,7 @@ import './teacher-controls.css'
 const DiagnosticPage = lazy(() => import('./DiagnosticPage'))
 const CardsPage = lazy(() => import('./CardsPage'))
 const GameApp = lazy(() => import('./GameApp'))
+const CompetitionPage = lazy(() => import('./competition/CompetitionPage'))
 export default function InteractiveApp() {
   const [loaded, setLoaded] = useState<{ preferences: ClassroomPreferences; warning: string } | null>(null)
   useEffect(() => {
@@ -19,6 +20,9 @@ export default function InteractiveApp() {
     )
     return () => { active = false }
   }, [])
+  const path = window.location.pathname.replace(/\/+$/, '')
+  if (/^\/interactif\/rejoindre(?:\/\d{6})?$/.test(path)) return <Suspense fallback={<p role="status">Chargement de la compétition…</p>}><CompetitionPage /></Suspense>
+  if (/^\/interactif\/salle\/\d{6}$/.test(path)) return <Suspense fallback={<p role="status">Chargement de la salle…</p>}><CompetitionPage host /></Suspense>
   if (!loaded) return <p role="status">Chargement des réglages…</p>
   if (window.location.pathname.replace(/\/+$/, '') === '/interactif/cartes') return <Suspense fallback={<p role="status">Chargement des cartes…</p>}><CardsPage initial={loaded.preferences} initialWarning={loaded.warning} /></Suspense>
   if (window.location.pathname.replace(/\/+$/, '') === '/interactif/diagnostic') return <Suspense fallback={<p role="status">Chargement du diagnostic…</p>}><DiagnosticPage colors={loaded.preferences.colors} shapes={loaded.preferences.shapes} /></Suspense>

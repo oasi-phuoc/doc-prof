@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState, type CSSProperties } from 'react'
+import { lazy, Suspense, useCallback, useEffect, useMemo, useState, type CSSProperties } from 'react'
 import { listFiches } from '@/fiches/api'
 import { domainsForAccount, readAccessAccount } from '@/access'
 import type { MascotKind } from './domain/mascot'
@@ -39,9 +39,11 @@ import {
   type TimerSettings,
 } from './domain/settings'
 import { MODE_KEY } from './legacy-preferences'
+import { hasLocalCompetition } from './competition/storage-key'
 
 
 type Source = GameSource
+const CompetitionSetup = lazy(() => import('./competition/CompetitionPage').then((module) => ({ default: module.CompetitionSetup })))
 function savedIdFromPath(): string | null {
   if (window.location.pathname === '/interactif') return null
   try {
@@ -101,6 +103,7 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
     try { return sessionStorage.getItem(MODE_KEY) === 'solo' ? 'solo' : 'class' } catch { return 'class' }
   })
   const [playing, setPlaying] = useState(false)
+  const [competitionOpen, setCompetitionOpen] = useState(false)
   const [toolbarGuard, setToolbarGuard] = useState<ToolbarGuard>(initialPreferences.toolbarGuard)
   const [selection, setSelected] = useState<string[] | null>(() => source?.selectedKeys ?? null)
   const [selectionModified, setSelectionModified] = useState(false)
@@ -259,6 +262,7 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
   }
   const savePreferences = (patch: Partial<ClassroomPreferences>) => { void patchClassroomPreferences(patch, initialPreferences).then((next) => setPaletteVersion(next.paletteVersion ?? 1), (error: unknown) => setPreferencesWarning(error instanceof Error ? error.message : 'Réglages non enregistrés.')) }
   const header = {
+    onCompetition: activeGame && media.complete ? () => { if (!hasLocalCompetition(activeGame.id)) newPart(false); setCompetitionOpen(true) } : undefined,
     toolbarGuard,
     mascot,
     onMascot: (next: MascotKind) => { setMascot(next); savePreferences({ mascot: next }) },
@@ -286,6 +290,8 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
       }
     },
   }
+  if (competitionOpen && activeGame && !media.complete) return <div className="ci-app"><p role="status">Préparation des médias de la nouvelle compétition…</p></div>
+  if (competitionOpen && activeGame) return <Suspense fallback={<p role="status">Chargement de la compétition…</p>}><CompetitionSetup key={activeGame.id} game={activeGame} timer={timer} colors={colors} shapes={shapes} onNewPart={() => newPart(false)} onExit={() => setCompetitionOpen(false)} /></Suspense>
   return (
     <div className={`ci-app${contrast ? ' ci-high-contrast' : ''}${playing ? ' ci-playing' : ''}${fullscreen ? ' ci-immersive' : ''}`} data-mascot={mascot}>
       {preferencesWarning && <p className="ci-notice" role="status">{preferencesWarning} Le jeu reste utilisable.</p>}
