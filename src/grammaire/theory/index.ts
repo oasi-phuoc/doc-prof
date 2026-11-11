@@ -17,7 +17,6 @@ import { avenirDocs } from './avenir'
 import { faitsDocs } from './faits'
 import { argumenterDocs } from './argumenter'
 import { exprimerDocs } from './exprimer'
-import { aideDocs } from './aide'
 
 export const GRAMMAIRE_THEORY_DOCS: GrammaireTheoryDoc[] = [
   ...sePresenterDocs,
@@ -38,7 +37,6 @@ export const GRAMMAIRE_THEORY_DOCS: GrammaireTheoryDoc[] = [
   ...faitsDocs,
   ...argumenterDocs,
   ...exprimerDocs,
-  ...aideDocs,
 ]
 
 export const theoryDocByTypeId: Record<string, GrammaireTheoryDoc> = Object.fromEntries(

@@ -1,0 +1,19 @@
+[
+  {
+    "launch": "real generator action creates a random draft URL and an exact snapshot",
+    "migration": "database 1 → 4 retains sessions and adds drafts/settings/presets-local and session indexes",
+    "reload": "direct address with no history restores identical questions and renews lastOpenedAt",
+    "session": "collective voting phase resumes without revealing answers"
+  },
+  {
+    "retention": "24 hours after last opening; expired drafts removed, unknown schemas and invalid dates preserved",
+    "invalidLinks": "clear error and generator link; stale history cannot bypass the stored record"
+  },
+  {
+    "unavailableStorage": "generator-to-game handoff remains playable in the current tab, with a visible warning"
+  },
+  {
+    "images": "only image references persist; inline bytes use the current-tab handoff",
+    "snapshot": "later changes to the source object cannot change the stored draft"
+  }
+]

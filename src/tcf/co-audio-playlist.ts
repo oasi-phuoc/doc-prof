@@ -51,7 +51,9 @@ export function buildCoMultiDocsPlaylist(docs: readonly string[], variant: 1 | 2
     if (!doc) continue
     const n = i + 1
     for (let listen = 0; listen < 2; listen++) {
-      urls.push(TCF_SON_MELODIE, tcfAudioNumeroSrc(n), doc, tcfSilenceSrc(15))
+      urls.push(TCF_SON_MELODIE)
+      if (n <= 6) urls.push(tcfAudioNumeroSrc(n))
+      urls.push(doc, tcfSilenceSrc(15))
     }
   }
   return urls
@@ -122,7 +124,7 @@ export function buildTcfCoPlaylist(
   const docs = audioRefs.map((r) => r.trim()).filter(Boolean)
   switch (typeExercice) {
     case 'six_courts':
-      return buildCoMultiDocsPlaylist(docs.slice(0, 6), 1)
+      return buildCoMultiDocsPlaylist(docs, 1)
     case 'trois_moyens':
       return buildCoMultiDocsPlaylist(docs.slice(0, 3), 2)
     case 'complet':

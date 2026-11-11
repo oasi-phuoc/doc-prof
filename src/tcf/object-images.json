@@ -1,0 +1,2425 @@
+[
+  {
+    "id": "telephone",
+    "label": "Téléphoner",
+    "image": "/lib/images/tcf/qcm-audit/communication-appeler.webp",
+    "aliases": [
+      "telephone",
+      "telephones",
+      "telephone portable",
+      "telephones portables",
+      "smartphone",
+      "smartphones",
+      "telephone fixe",
+      "telephones fixes"
+    ],
+    "family": "telephone",
+    "sha256": "623ea14df2d82d1b6e6eb2e7727a444ff52346cdfec5cf7069fcead5cc8e2cbe",
+    "variants": [
+      {
+        "image": "/lib/images/tcf/qcm-audit/vocab-telephone-fixe.webp",
+        "sha256": "cf7ea1022b9237339429aee8a5c0882f8d46feb412eebdd7679a62032ead4d1a",
+        "aliases": [
+          "telephone fixe",
+          "telephones fixes"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ordinateur",
+    "label": "Un ordinateur portable",
+    "image": "/lib/images/tcf/qcm-audit/vocab-ordinateur-portable.webp",
+    "aliases": [
+      "ordinateur",
+      "ordinateurs",
+      "ordinateur portable",
+      "ordinateurs portables"
+    ],
+    "family": "electronique",
+    "sha256": "e3ac17ccce680c76a54c22e56cdbc57dac93c4aa354e13141ed5b7c82f0a9c97"
+  },
+  {
+    "id": "television",
+    "label": "Une télévision",
+    "image": "/lib/images/tcf/qcm-audit/co834-television-dessinee.webp",
+    "aliases": [
+      "television",
+      "televisions",
+      "televiseur",
+      "televiseurs"
+    ],
+    "family": "electronique",
+    "sha256": "09d037f6c1b5d11e462a9ad472143b1b7d45f9a674efd19e8d22334534628619"
+  },
+  {
+    "id": "appareil-photo",
+    "label": "Un appareil photo",
+    "image": "/lib/images/tcf/qcm-audit/co834-appareil-photo-dessine.webp",
+    "aliases": [
+      "appareil photo",
+      "appareils photo",
+      "appareil photographique"
+    ],
+    "family": "electronique",
+    "sha256": "1e063cce50a301dd6eba49cae24ba4bfa2096ee941a07f2d7ab764c7b153ca9d"
+  },
+  {
+    "id": "casque-audio",
+    "label": "Un casque audio",
+    "image": "/lib/images/tcf/qcm-audit/vocab-casque-audio.webp",
+    "aliases": [
+      "casque audio",
+      "casques audio",
+      "casque pour ecouter"
+    ],
+    "family": "electronique",
+    "sha256": "101d2bd4433b1007d3516d042561e8c2a12144b0cb29c20239a61f1b7c635b60"
+  },
+  {
+    "id": "refrigerateur",
+    "label": "Un réfrigérateur",
+    "image": "/lib/images/tcf/qcm-audit/vocab-refrigerateur.webp",
+    "aliases": [
+      "refrigerateur",
+      "refrigerateurs",
+      "frigo",
+      "frigos"
+    ],
+    "family": "electromenager",
+    "sha256": "b866622b33f7d931d666395c951d8a69940358de84c0697e55f7a32d45abe8fa"
+  },
+  {
+    "id": "four",
+    "label": "Un four",
+    "image": "/lib/images/tcf/qcm-audit/vocab-four.webp",
+    "aliases": [
+      "four",
+      "fours"
+    ],
+    "family": "electromenager",
+    "sha256": "bdd83808cbb9ba94383b53747e9d7af5b787ab2a22b37a9dcc089110b61e9934"
+  },
+  {
+    "id": "micro-ondes",
+    "label": "Un micro-ondes",
+    "image": "/lib/images/tcf/qcm-audit/vocab-micro-ondes.webp",
+    "aliases": [
+      "micro ondes",
+      "four a micro ondes"
+    ],
+    "family": "electromenager",
+    "sha256": "04e815ba8fd2c49a9e51d2b336e5faf52fa13319203017b14a2450449b427dd0"
+  },
+  {
+    "id": "aspirateur",
+    "label": "Un aspirateur",
+    "image": "/lib/images/tcf/qcm-audit/vocab-aspirateur.webp",
+    "aliases": [
+      "aspirateur",
+      "aspirateurs"
+    ],
+    "family": "electromenager",
+    "sha256": "d74e298ea6bc9db74ee1598f6d68d62b79817436714edd1f96d051a6a14a7fcc"
+  },
+  {
+    "id": "lave-linge",
+    "label": "Un lave-linge",
+    "image": "/lib/images/tcf/qcm-audit/vocab-lave-linge.webp",
+    "aliases": [
+      "lave linge",
+      "machine a laver"
+    ],
+    "family": "electromenager",
+    "sha256": "17b797821526df0a05173d89dbc750f501160d063a90497ffc901e74714421dd"
+  },
+  {
+    "id": "mixeur",
+    "label": "Un mixeur",
+    "image": "/lib/images/tcf/qcm-audit/vocab-mixeur.webp",
+    "aliases": [
+      "mixeur",
+      "mixeurs"
+    ],
+    "family": "electromenager",
+    "sha256": "a7f55196863f7931b009938ae8613a9ef3557f51260fe9ec52da18cb937f646d"
+  },
+  {
+    "id": "grille-pain",
+    "label": "Un grille-pain",
+    "image": "/lib/images/tcf/qcm-audit/vocab-grille-pain.webp",
+    "aliases": [
+      "grille pain",
+      "grilles pain"
+    ],
+    "family": "electromenager",
+    "sha256": "872512368c75af5674dec583ca491fb86a6359b4117f939180b426b2e7761892"
+  },
+  {
+    "id": "congelateur",
+    "label": "Un congélateur",
+    "image": "/lib/images/tcf/qcm-audit/vocab-congelateur.webp",
+    "aliases": [
+      "congelateur",
+      "congelateurs"
+    ],
+    "family": "electromenager",
+    "sha256": "31ad850d097154124977f14cce27f03ec23f5f183a9ecdc19bc202572d355b4a"
+  },
+  {
+    "id": "seche-cheveux",
+    "label": "Un sèche-cheveux",
+    "image": "/lib/images/tcf/qcm-audit/vocab-seche-cheveux.webp",
+    "aliases": [
+      "seche cheveux"
+    ],
+    "family": "electromenager",
+    "sha256": "38c54bb954fda15dc74916ee65f4b4ae466880dc76a57e23895d4d8dc5e72876"
+  },
+  {
+    "id": "valise",
+    "label": "Une valise",
+    "image": "/lib/images/tcf/qcm-audit/vocab-valise.webp",
+    "aliases": [
+      "valise",
+      "valises"
+    ],
+    "family": "bagage",
+    "sha256": "744040e659df36bec4d86ba0ed84f1f6c64f49c5410ef53c5efab716806e2f2c"
+  },
+  {
+    "id": "sac",
+    "label": "Un sac à dos",
+    "image": "/lib/images/tcf/qcm-audit/vocab-sac-dos.webp",
+    "aliases": [
+      "sac",
+      "sacs",
+      "sac a dos",
+      "sacs a dos",
+      "sac de courses",
+      "sacs de courses",
+      "sac a courses"
+    ],
+    "family": "bagage",
+    "sha256": "39fecb91cc22acc3046157be1a637a432a00c481f181b4bfd4927c5bc474b16e",
+    "variants": [
+      {
+        "image": "/lib/images/tcf/qcm-audit/vocab-sac-course.webp",
+        "sha256": "f4d155d0a845ea07b520c6ac98dd96fbc968587a36474defa85cb74092007f69",
+        "aliases": [
+          "sac de courses",
+          "sacs de courses",
+          "sac a courses"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cartable",
+    "label": "Un cartable",
+    "image": "/lib/images/tcf/qcm-audit/vocab-cartable.webp",
+    "aliases": [
+      "cartable",
+      "cartables"
+    ],
+    "family": "bagage",
+    "sha256": "390b17f32d14c5c388e392b64a0485120c83e8a5b1a69b84d47da0f01f419791"
+  },
+  {
+    "id": "trousse",
+    "label": "Une trousse",
+    "image": "/lib/images/tcf/qcm-audit/vocab-trousse.webp",
+    "aliases": [
+      "trousse",
+      "trousses"
+    ],
+    "family": "papeterie",
+    "sha256": "e33fd8537df50e0bc0c197205747ba3ec20d72b997b768f3a52d0c87e95e7881"
+  },
+  {
+    "id": "stylo",
+    "label": "Un stylo bleu",
+    "image": "/lib/images/tcf/qcm-audit/vocab-stylo-bleu.webp",
+    "aliases": [
+      "stylo",
+      "stylos"
+    ],
+    "family": "papeterie",
+    "sha256": "b926430e204f8e46b9e9613c40bef550131e14a5d1f071d9aa030078ceebc866"
+  },
+  {
+    "id": "crayon",
+    "label": "Des crayons",
+    "image": "/lib/images/tcf/qcm-audit/vocab-crayons.webp",
+    "aliases": [
+      "crayon",
+      "crayons",
+      "crayon de couleur",
+      "crayons de couleur"
+    ],
+    "family": "papeterie",
+    "sha256": "50e3fb307e1ef99b74ba8214a35e5b3e612ca74e1e0679766428361ad9635446"
+  },
+  {
+    "id": "feutre",
+    "label": "Les feutres",
+    "image": "/lib/images/tcf/qcm-audit/vocab-feutres.webp",
+    "aliases": [
+      "feutre",
+      "feutres"
+    ],
+    "family": "papeterie",
+    "sha256": "c647e9fc453d767006238bb47ae38caa7549cdf0202f6be6acce8c15c227255f"
+  },
+  {
+    "id": "gomme",
+    "label": "Une gomme",
+    "image": "/lib/images/tcf/qcm-audit/vocab-gomme.webp",
+    "aliases": [
+      "gomme",
+      "gommes"
+    ],
+    "family": "papeterie",
+    "sha256": "28e85508af9c09739ee1bbe5a9727a8fbbc809a9163fa44059a604a710947c28"
+  },
+  {
+    "id": "cahier",
+    "label": "Des cahiers",
+    "image": "/lib/images/tcf/qcm-audit/vocab-cahiers.webp",
+    "aliases": [
+      "cahier",
+      "cahiers"
+    ],
+    "family": "papeterie",
+    "sha256": "ce135d6bff2d4efed9562dab89d2c6eb2e7dcd88706b616adf3612c83ab324e3"
+  },
+  {
+    "id": "papier",
+    "label": "Une feuille de papier",
+    "image": "/lib/images/tcf/qcm-audit/vocab-feuille-papier.webp",
+    "aliases": [
+      "papier",
+      "papiers",
+      "feuille",
+      "feuilles",
+      "feuille de papier",
+      "feuilles de papier"
+    ],
+    "family": "document",
+    "sha256": "009c8b37eadd4b6ffaad17080af7b693fc51094acff4bd66e6a942bc35fa9cc3"
+  },
+  {
+    "id": "livre",
+    "label": "Un livre",
+    "image": "/lib/images/tcf/qcm-audit/co834-livre-dessine.webp",
+    "aliases": [
+      "livre",
+      "livres"
+    ],
+    "family": "document",
+    "sha256": "73b86876898820010571df5731f532855fbba462297e5d9f4e651a5bfee505f2"
+  },
+  {
+    "id": "dictionnaire",
+    "label": "Le dictionnaire",
+    "image": "/lib/images/tcf/qcm-audit/co306-dictionnaire-dessine.webp",
+    "aliases": [
+      "dictionnaire",
+      "dictionnaires"
+    ],
+    "family": "document",
+    "sha256": "e3bc1989eff5fd73033efdf48858ff89579c3de55b7f53b3866861a4da4ca7b1"
+  },
+  {
+    "id": "ciseaux",
+    "label": "Des ciseaux",
+    "image": "/lib/images/tcf/qcm-audit/vocab-ciseaux.webp",
+    "aliases": [
+      "ciseaux"
+    ],
+    "family": "papeterie",
+    "sha256": "b27c85ca839d97a738e1bf6a307542b76ea01d79227d00ceef8734095393d16e"
+  },
+  {
+    "id": "regle",
+    "label": "Une règle",
+    "image": "/lib/images/tcf/qcm-audit/vocab-regle.webp",
+    "aliases": [
+      "ta regle",
+      "ma regle",
+      "sa regle",
+      "regle graduee",
+      "regles graduees"
+    ],
+    "family": "papeterie",
+    "sha256": "a52668a93f30836d33ce51d0989c5bdae30e89c33724d8f886b8a6b0095e5aaa"
+  },
+  {
+    "id": "passeport",
+    "label": "Un passeport",
+    "image": "/lib/images/tcf/qcm-audit/co306-passeport-dessine.webp",
+    "aliases": [
+      "passeport",
+      "passeports"
+    ],
+    "family": "carte",
+    "sha256": "c2f0b65db0e431c49bf0c0c17fe43e7cd5cc3f195e44b7208cff5ed2b5200ac0"
+  },
+  {
+    "id": "identite",
+    "label": "Une carte d’identité",
+    "image": "/lib/images/tcf/qcm-audit/vocab-carte-identite.webp",
+    "aliases": [
+      "carte d identite",
+      "cartes d identite",
+      "piece d identite",
+      "pieces d identite"
+    ],
+    "family": "carte",
+    "sha256": "047a4c60989ad2fa697f656c9c0475e17c74024479bb48c4314bff347199ac4f"
+  },
+  {
+    "id": "carte-bancaire",
+    "label": "Une carte bancaire",
+    "image": "/lib/images/tcf/qcm-audit/co834-carte-bancaire-dessinee.webp",
+    "aliases": [
+      "carte bancaire",
+      "cartes bancaires",
+      "carte de credit",
+      "carte bleue"
+    ],
+    "family": "carte",
+    "sha256": "8503834770cdaed7fa7d72026cd4e3625453955224a34a51dd7b8a9d3006c583"
+  },
+  {
+    "id": "carte-etudiant",
+    "label": "Une carte d’étudiant",
+    "image": "/lib/images/tcf/qcm-audit/audit-context-carte-etudiant.webp",
+    "aliases": [
+      "carte d etudiant",
+      "carte d etudiante",
+      "carte de lyceen",
+      "carte de lyceenne"
+    ],
+    "family": "carte",
+    "sha256": "2f81cc692cf54d72ffd54eba3b01e0190032eb55183f4671fdef52932e95c37a"
+  },
+  {
+    "id": "carte-bibliotheque",
+    "label": "Une carte de bibliothèque",
+    "image": "/lib/images/tcf/qcm-audit/co306-carte-bibliotheque-dessine.webp",
+    "aliases": [
+      "carte de bibliotheque",
+      "cartes de bibliotheque"
+    ],
+    "family": "carte",
+    "sha256": "d5e7bed44862388d409e471ae5bbb87b7f2b02d31a5e54c9ba1e86e0ca5d8929"
+  },
+  {
+    "id": "carte-transport",
+    "label": "Une carte de transport",
+    "image": "/lib/images/tcf/qcm-audit/co306-carte-transport-dessine.webp",
+    "aliases": [
+      "carte de transport",
+      "carte de bus",
+      "carte de metro"
+    ],
+    "family": "carte",
+    "sha256": "4817395e118594a1168a68d265de7029664cf48eca3cd576606de1040761c884"
+  },
+  {
+    "id": "permis",
+    "label": "Un permis de conduire",
+    "image": "/lib/images/tcf/qcm-audit/audit-context-permis-conduire.webp",
+    "aliases": [
+      "permis de conduire"
+    ],
+    "family": "carte",
+    "sha256": "ee11a9c25ce1e01918f1570be499c4f7c1bee66bf30715f8a9dff7c9c416d455"
+  },
+  {
+    "id": "ordonnance",
+    "label": "Une ordonnance",
+    "image": "/lib/images/tcf/qcm-audit/vocab-ordonnance.webp",
+    "aliases": [
+      "ordonnance",
+      "ordonnances"
+    ],
+    "family": "document",
+    "sha256": "e8415a7701274dd5b73e2ef39fca2f0b650eb81aa4a8e7a4037c1cb8093d2d27"
+  },
+  {
+    "id": "contrat-travail",
+    "label": "Le contrat de travail",
+    "image": "/lib/images/tcf/qcm-audit/audit-context-contrat-travail.webp",
+    "aliases": [
+      "contrat de travail",
+      "contrats de travail"
+    ],
+    "family": "document",
+    "sha256": "315cb59f0cc9d313b858adf9ca01f3409f45acc40f711421057576a87f9b0f9e"
+  },
+  {
+    "id": "billet-train",
+    "label": "Un billet de train",
+    "image": "/lib/images/tcf/qcm-audit/audit-context-billet-train.webp",
+    "aliases": [
+      "billet de train",
+      "billets de train"
+    ],
+    "family": "document",
+    "sha256": "89f410c418e846d406e133c82e5c82563b738571bca3df9b5f3860ac81919734"
+  },
+  {
+    "id": "carte-postale",
+    "label": "Des cartes postales",
+    "image": "/lib/images/tcf/qcm-audit/co306-cartes-postales-dessine.webp",
+    "aliases": [
+      "carte postale",
+      "cartes postales"
+    ],
+    "family": "courrier",
+    "sha256": "6a0c2b04f62594b5e1d7919190cb7d3929b5f0cb37f53c09bab0585cfbc9166a"
+  },
+  {
+    "id": "lettre",
+    "label": "Écrire ou envoyer une lettre",
+    "image": "/lib/images/tcf/qcm-audit/communication-lettre.webp",
+    "aliases": [
+      "lettre",
+      "lettres",
+      "courrier postal"
+    ],
+    "family": "courrier",
+    "sha256": "3b54ef391ab12452bcac4045003d366191911b9444e3abd690c5cbf53b3dbc30"
+  },
+  {
+    "id": "enveloppe",
+    "label": "Une enveloppe",
+    "image": "/lib/images/tcf/qcm-audit/vocab-enveloppe.webp",
+    "aliases": [
+      "enveloppe",
+      "enveloppes"
+    ],
+    "family": "courrier",
+    "sha256": "6d5fb6b2471cf5d78816c90e96cc1d9c5b11f46b3338fb5e4e7d0deea5d88997"
+  },
+  {
+    "id": "timbre",
+    "label": "Un timbre",
+    "image": "/lib/images/tcf/qcm-audit/vocab-timbre.webp",
+    "aliases": [
+      "timbre",
+      "timbres"
+    ],
+    "family": "courrier",
+    "sha256": "82c47708ff491cf71c4685f2c6d9a7aa16389ffc3dae41bbeef649af7cee73ae"
+  },
+  {
+    "id": "colis",
+    "label": "Un colis",
+    "image": "/lib/images/tcf/qcm-audit/vocab-colis.webp",
+    "aliases": [
+      "colis"
+    ],
+    "family": "courrier",
+    "sha256": "e6e696fc6d8c0927f1ab2527b1f5ac4051d3e35474a607b4b8ed8ef5dda349dd"
+  },
+  {
+    "id": "cheque",
+    "label": "Un chéquier bancaire",
+    "image": "/lib/images/tcf/qcm-audit/vocab-chequier-bancaire.webp",
+    "aliases": [
+      "cheque",
+      "cheques",
+      "chequier",
+      "chequiers"
+    ],
+    "family": "paiement",
+    "sha256": "e9e230f63bb80e5b2e3050285c33d2209fc31e2b6eddd7692d6c36f727cb8791"
+  },
+  {
+    "id": "pieces",
+    "label": "Des pièces de monnaie",
+    "image": "/lib/images/tcf/qcm-audit/vocab-piece-monnaie.webp",
+    "aliases": [
+      "piece de monnaie",
+      "pieces de monnaie",
+      "monnaie"
+    ],
+    "family": "paiement",
+    "sha256": "e823ac99feb9d3420a4c9a09d106e1b148eafe95a10c5952d608b2ef2a5220de"
+  },
+  {
+    "id": "billet-banque",
+    "label": "Un billet de banque",
+    "image": "/lib/images/tcf/qcm-audit/vocab-billet-banque.webp",
+    "aliases": [
+      "billet de banque",
+      "billets de banque"
+    ],
+    "family": "paiement",
+    "sha256": "f73dd351e60d04f47f578d24dc61183e001dd0fe968a0cab73d937d3b9dab7de"
+  },
+  {
+    "id": "cle",
+    "label": "Une clé",
+    "image": "/lib/images/tcf/qcm-audit/vocab-cle.webp",
+    "aliases": [
+      "cle",
+      "cles",
+      "clef",
+      "clefs"
+    ],
+    "family": "cle",
+    "sha256": "404068902bac5737bf070b1f67aa984fb2895aa6c53d5612846eaa17d15c7de4"
+  },
+  {
+    "id": "montre",
+    "label": "Une montre",
+    "image": "/lib/images/tcf/qcm-audit/co834-montre-dessinee.webp",
+    "aliases": [
+      "montre",
+      "montres"
+    ],
+    "family": "montre",
+    "sha256": "848dec4d460520d45c51f6e90d8c6c278ab8fcce203949573b460d5130106629"
+  },
+  {
+    "id": "reveil",
+    "label": "Un réveil",
+    "image": "/lib/images/tcf/qcm-audit/vocab-reveil.webp",
+    "aliases": [
+      "reveil",
+      "reveils"
+    ],
+    "family": "montre",
+    "sha256": "1e48367ff177787169c730f799c7bbc18eb7cd9a81bb656f61acb94b59fa6ba6"
+  },
+  {
+    "id": "lunettes",
+    "label": "Des lunettes",
+    "image": "/lib/images/tcf/qcm-audit/co306-lunettes-vue-dessine.webp",
+    "aliases": [
+      "lunettes",
+      "lunettes de vue"
+    ],
+    "family": "lunettes",
+    "sha256": "4ac6813cf46bd0006c902ab979474337c00683ed4c01d8df7dde19c9ab7af245"
+  },
+  {
+    "id": "lunettes-soleil",
+    "label": "Des lunettes de soleil",
+    "image": "/lib/images/tcf/qcm-audit/vocab-lunettes-soleil.webp",
+    "aliases": [
+      "lunettes de soleil"
+    ],
+    "family": "lunettes",
+    "sha256": "cd8d28b76764dda7d88781c7fd11efe6d7ed4db5f4901c9af43b1f2e8cd51ab8"
+  },
+  {
+    "id": "chapeau",
+    "label": "Un chapeau",
+    "image": "/lib/images/tcf/qcm-audit/co834-chapeau-dessine.webp",
+    "aliases": [
+      "chapeau",
+      "chapeaux"
+    ],
+    "family": "tete",
+    "sha256": "021727df752448f8655530fbe6b3acff8243aa0ab9bc929b860ab882f35bcd39"
+  },
+  {
+    "id": "bonnet",
+    "label": "Un bonnet",
+    "image": "/lib/images/tcf/qcm-audit/vocab-bonnet.webp",
+    "aliases": [
+      "bonnet",
+      "bonnets"
+    ],
+    "family": "tete",
+    "sha256": "18ded0938f6848b5e76f051abb158478b89ac22a63570e227d7f6a84fa1cbbc2"
+  },
+  {
+    "id": "casquette",
+    "label": "Une casquette",
+    "image": "/lib/images/tcf/qcm-audit/co834-casquette-dessinee.webp",
+    "aliases": [
+      "casquette",
+      "casquettes"
+    ],
+    "family": "tete",
+    "sha256": "ba55b24905b1260c27eb35d8095788a283e42df3900ceb2b2052b30074af7f9f"
+  },
+  {
+    "id": "beret",
+    "label": "Un béret",
+    "image": "/lib/images/tcf/qcm-audit/vocab-beret.webp",
+    "aliases": [
+      "beret",
+      "berets"
+    ],
+    "family": "tete",
+    "sha256": "27ac1a36ca0d98ed810b41a3934e008c391c90d27604efc8308b80746fb465b3"
+  },
+  {
+    "id": "echarpe",
+    "label": "Une écharpe",
+    "image": "/lib/images/tcf/qcm-audit/vocab-echarpe.webp",
+    "aliases": [
+      "echarpe",
+      "echarpes"
+    ],
+    "family": "vetement",
+    "sha256": "6266453837086853656bdab88f619546024cfc6a4f0f2c19af16ead2c38d8747"
+  },
+  {
+    "id": "gants",
+    "label": "Des gants",
+    "image": "/lib/images/tcf/qcm-audit/vocab-gants.webp",
+    "aliases": [
+      "gant",
+      "gants"
+    ],
+    "family": "vetement",
+    "sha256": "32f74faa6e40551abab2ed09b2f0bb9809d00e68f17df6b7439149347ad343a3"
+  },
+  {
+    "id": "chemise",
+    "label": "Une chemise",
+    "image": "/lib/images/tcf/qcm-audit/vocab-chemise.webp",
+    "aliases": [
+      "chemise",
+      "chemises"
+    ],
+    "family": "vetement",
+    "sha256": "313e2ec2df6f62e1258d3ba92ca8b983a83e1fdee96ded72a55b972a26281f90"
+  },
+  {
+    "id": "pull",
+    "label": "Un pull",
+    "image": "/lib/images/tcf/qcm-audit/vocab-pull.webp",
+    "aliases": [
+      "pull",
+      "pulls",
+      "pull over",
+      "pulls overs"
+    ],
+    "family": "vetement",
+    "sha256": "f2331f1b4efe4ecc1066a7a5cbd7a55dba9e9199e4b75cd13e28a652a5682069"
+  },
+  {
+    "id": "veste",
+    "label": "Une veste",
+    "image": "/lib/images/tcf/qcm-audit/vocab-veste.webp",
+    "aliases": [
+      "veste",
+      "vestes"
+    ],
+    "family": "vetement",
+    "sha256": "0f7859a2a0c1c671a10877af09fce7b6f03f91002fc1868876c7a1458fcbf65b"
+  },
+  {
+    "id": "pantalon",
+    "label": "Un pantalon",
+    "image": "/lib/images/tcf/qcm-audit/vocab-pantalon.webp",
+    "aliases": [
+      "pantalon",
+      "pantalons"
+    ],
+    "family": "vetement",
+    "sha256": "5800a918010832838d307f2bdaba4e946d60f123fb7af0f9a51770e9a38b986f"
+  },
+  {
+    "id": "robe",
+    "label": "Des robes",
+    "image": "/lib/images/tcf/qcm-audit/vocab-robes.webp",
+    "aliases": [
+      "robe",
+      "robes"
+    ],
+    "family": "vetement",
+    "sha256": "bde3773cdff9efb0621906b00d308b01f41afc14f4e3d220f9d17d77fdd55e63"
+  },
+  {
+    "id": "jupe",
+    "label": "Des jupes",
+    "image": "/lib/images/tcf/qcm-audit/vocab-jupes.webp",
+    "aliases": [
+      "jupe",
+      "jupes"
+    ],
+    "family": "vetement",
+    "sha256": "949ae4d4ff3008b97fed1f53518b100761454611f04402774203e1d75fbb4fca"
+  },
+  {
+    "id": "short",
+    "label": "Un short",
+    "image": "/lib/images/tcf/qcm-audit/vocab-short.webp",
+    "aliases": [
+      "short",
+      "shorts"
+    ],
+    "family": "vetement",
+    "sha256": "eb8060e02e626f1fbef7555a5342b5f18741bfeea70b7a7ad11bc238ee4b4766"
+  },
+  {
+    "id": "cravate",
+    "label": "Une cravate",
+    "image": "/lib/images/tcf/qcm-audit/vocab-cravate.webp",
+    "aliases": [
+      "cravate",
+      "cravates"
+    ],
+    "family": "vetement",
+    "sha256": "94027d04782c64696a71654e9e2bca6a2b511ec340db72ab46887061ac8a6db1"
+  },
+  {
+    "id": "maillot-bain",
+    "label": "Un maillot de bain",
+    "image": "/lib/images/tcf/qcm-audit/vocab-maillot-une-piece.webp",
+    "aliases": [
+      "maillot de bain",
+      "maillots de bain"
+    ],
+    "family": "vetement",
+    "sha256": "d0f90c9e45f467fb47fad8a5fac6ab35873fd6f0361800d26c41fc5379368f82"
+  },
+  {
+    "id": "bottes",
+    "label": "Des bottes",
+    "image": "/lib/images/tcf/qcm-audit/vocab-bottes.webp",
+    "aliases": [
+      "botte",
+      "bottes"
+    ],
+    "family": "chaussure",
+    "sha256": "e3ebb554020b25ccfc12b9500a9b1e18b4772dbe5994cc9ca9da0a21a9b95581"
+  },
+  {
+    "id": "baskets",
+    "label": "Des baskets",
+    "image": "/lib/images/tcf/qcm-audit/vocab-baskets.webp",
+    "aliases": [
+      "baskets",
+      "chaussures de sport"
+    ],
+    "family": "chaussure",
+    "sha256": "c635478376c7c8bf7d1a6df3371946bccb33df04cc8d053d68bca52f68bcf1be"
+  },
+  {
+    "id": "tongs",
+    "label": "Des tongs",
+    "image": "/lib/images/tcf/qcm-audit/vocab-tongs.webp",
+    "aliases": [
+      "tong",
+      "tongs",
+      "chaussures de plage"
+    ],
+    "family": "chaussure",
+    "sha256": "a06266485f3a8a96af6cdf99ec077181b9f62c7a870f7c1327129f41def25f10"
+  },
+  {
+    "id": "patins",
+    "label": "Une paire de patins",
+    "image": "/lib/images/tcf/qcm-audit/audit-context-paire-patins.webp",
+    "aliases": [
+      "patin",
+      "patins",
+      "patins a glace",
+      "paire de patins"
+    ],
+    "family": "chaussure",
+    "sha256": "b248154982bebae9f38cfbfa5dc7d6a280c95cb568d4c5e3fb3c1282542252b8"
+  },
+  {
+    "id": "brosse-dents",
+    "label": "Une brosse à dents",
+    "image": "/lib/images/tcf/qcm-audit/vocab-brosse-dents.webp",
+    "aliases": [
+      "brosse a dents",
+      "brosses a dents"
+    ],
+    "family": "toilette",
+    "sha256": "13e7464e72800dc2225520856ea9688d110189f1a9bcbe7997bc58bbb981a995"
+  },
+  {
+    "id": "dentifrice",
+    "label": "Du dentifrice",
+    "image": "/lib/images/tcf/qcm-audit/co834-dentifrice-dessine.webp",
+    "aliases": [
+      "dentifrice",
+      "dentifrices"
+    ],
+    "family": "toilette",
+    "sha256": "1ceef03705d7a53c2d204752ebae060f78bb9c17e241c240a7f997307f0ff78a"
+  },
+  {
+    "id": "brosse-cheveux",
+    "label": "Une brosse à cheveux",
+    "image": "/lib/images/tcf/qcm-audit/vocab-brosse-cheveux.webp",
+    "aliases": [
+      "brosse a cheveux",
+      "brosses a cheveux"
+    ],
+    "family": "toilette",
+    "sha256": "bcf272a09b07081c7d2dec52fabf54e2ad8befc14c3957b3b16c3e0b569176b2"
+  },
+  {
+    "id": "peigne",
+    "label": "Un peigne",
+    "image": "/lib/images/tcf/qcm-audit/vocab-peigne.webp",
+    "aliases": [
+      "peigne",
+      "peignes"
+    ],
+    "family": "toilette",
+    "sha256": "8d140f6720c93eb85fbfcd4953d92306e69e9a4022b30ea2454f9d53f304cd3f"
+  },
+  {
+    "id": "savon",
+    "label": "Du savon",
+    "image": "/lib/images/tcf/qcm-audit/co834-savon-dessine.webp",
+    "aliases": [
+      "savon",
+      "savons"
+    ],
+    "family": "toilette",
+    "sha256": "7581a905ab128b946bb41a38c86c19c6433236abcfba6bd67cbd39da71cd6393"
+  },
+  {
+    "id": "shampoing",
+    "label": "Le shampoing",
+    "image": "/lib/images/tcf/qcm-audit/co306-shampoing-dessine.webp",
+    "aliases": [
+      "shampooing",
+      "shampooings",
+      "shampoing",
+      "shampoings"
+    ],
+    "family": "toilette",
+    "sha256": "a1cf08b1e8a5be3c4a37e5d826a38cecf9fe8e84c1b12a2e4bb10e426d494fd6"
+  },
+  {
+    "id": "creme-solaire",
+    "label": "De la crème solaire",
+    "image": "/lib/images/tcf/qcm-audit/co834-creme-solaire-dessinee.webp",
+    "aliases": [
+      "creme solaire",
+      "cremes solaires"
+    ],
+    "family": "cosmetique",
+    "sha256": "91843a621156271275bb997488cb541a090bd548b61d799db23ce9d966eb1667"
+  },
+  {
+    "id": "papier-toilette",
+    "label": "Du papier toilette",
+    "image": "/lib/images/tcf/qcm-audit/vocab-papier-toilette.webp",
+    "aliases": [
+      "papier toilette"
+    ],
+    "family": "toilette",
+    "sha256": "2f2daa24bdc9ee6d0e62485387179d0de766dce1412e825f57e7f36c50a7bd72"
+  },
+  {
+    "id": "medicament",
+    "label": "Des médicaments",
+    "image": "/lib/images/tcf/qcm-audit/vocab-medicament.webp",
+    "aliases": [
+      "medicament",
+      "medicaments"
+    ],
+    "family": "medicament",
+    "sha256": "274d4c2b78bc6e5c124c79e77e17c0d6cb36fca0709bce7b57ddafdb7868aedf"
+  },
+  {
+    "id": "thermometre",
+    "label": "Le thermomètre",
+    "image": "/lib/images/tcf/qcm-audit/vocab-thermometre.webp",
+    "aliases": [
+      "thermometre",
+      "thermometres"
+    ],
+    "family": "medicament",
+    "sha256": "a88f60d57a18b66151ae1ed005188f9bca1dcf2c02cbcb3884570f6ce400c92c"
+  },
+  {
+    "id": "couteau",
+    "label": "Un couteau",
+    "image": "/lib/images/tcf/qcm-audit/vocab-couteau.webp",
+    "aliases": [
+      "couteau",
+      "couteaux"
+    ],
+    "family": "cuisine",
+    "sha256": "faea7a19d7a1b8934a4b93faf6458f7289b0b05a4020d1c2ce465a183269dbeb"
+  },
+  {
+    "id": "fourchette",
+    "label": "Une fourchette",
+    "image": "/lib/images/tcf/qcm-audit/vocab-fourchette.webp",
+    "aliases": [
+      "fourchette",
+      "fourchettes"
+    ],
+    "family": "cuisine",
+    "sha256": "af45b4bca634241c0e4aee9c28a8fc2b799bbeba09be3980ad170e5f81d71df8"
+  },
+  {
+    "id": "cuillere",
+    "label": "Une cuillère",
+    "image": "/lib/images/tcf/qcm-audit/vocab-cuillere.webp",
+    "aliases": [
+      "cuillere",
+      "cuilleres",
+      "cuiller",
+      "cuillers"
+    ],
+    "family": "cuisine",
+    "sha256": "91e0b0b01df867fd66ae96a693b3acb9c3209606fa3e32e1d7bcb98619947b5f"
+  },
+  {
+    "id": "louche",
+    "label": "Une louche",
+    "image": "/lib/images/tcf/qcm-audit/vocab-louche.webp",
+    "aliases": [
+      "louche",
+      "louches"
+    ],
+    "family": "cuisine",
+    "sha256": "9a3760cfdad85ba1e0d415c2be40974ed7d7c26aad9391d52c7af05f332e726b"
+  },
+  {
+    "id": "fouet",
+    "label": "Un fouet",
+    "image": "/lib/images/tcf/qcm-audit/vocab-fouet.webp",
+    "aliases": [
+      "fouet",
+      "fouets"
+    ],
+    "family": "cuisine",
+    "sha256": "3fda5c41f8c471de93e68fd995ea6b7efd1f7415b6017579d13841f2567832ce"
+  },
+  {
+    "id": "passoire",
+    "label": "Une passoire",
+    "image": "/lib/images/tcf/qcm-audit/vocab-passoire.webp",
+    "aliases": [
+      "passoire",
+      "passoires"
+    ],
+    "family": "cuisine",
+    "sha256": "a6bd5ee23f41753a449752fd54d73effe8a9815ea22a178227c23cdc57cf3c97"
+  },
+  {
+    "id": "casserole",
+    "label": "Une casserole",
+    "image": "/lib/images/tcf/qcm-audit/vocab-casserole.webp",
+    "aliases": [
+      "casserole",
+      "casseroles"
+    ],
+    "family": "cuisine",
+    "sha256": "457ac55c68abbf41430497c940bcff0914ee0ed195ee1151277ddff8fa94b378"
+  },
+  {
+    "id": "poele",
+    "label": "Une poêle",
+    "image": "/lib/images/tcf/qcm-audit/vocab-poele.webp",
+    "aliases": [
+      "poele",
+      "poeles"
+    ],
+    "family": "cuisine",
+    "sha256": "c21c9503fee17b05c386cc8828f4fb7778c629165fb720eb97bb25ffafdb56d1"
+  },
+  {
+    "id": "saladier",
+    "label": "Un saladier",
+    "image": "/lib/images/tcf/qcm-audit/vocab-saladier.webp",
+    "aliases": [
+      "saladier",
+      "saladiers"
+    ],
+    "family": "cuisine",
+    "sha256": "81f2ddfec0c173e649d95f8eb1f04acb733ca478f55afdcea2a64810d4345dab"
+  },
+  {
+    "id": "bol",
+    "label": "Un bol",
+    "image": "/lib/images/tcf/qcm-audit/vocab-bol.webp",
+    "aliases": [
+      "bol",
+      "bols"
+    ],
+    "family": "cuisine",
+    "sha256": "661250cd8aa8fad33568603946c3502b4d466e83b6970fd1be070c16efba7f84"
+  },
+  {
+    "id": "assiette",
+    "label": "Une assiette",
+    "image": "/lib/images/tcf/qcm-audit/vocab-assiette.webp",
+    "aliases": [
+      "assiette",
+      "assiettes"
+    ],
+    "family": "cuisine",
+    "sha256": "ebf430f79629215efe2bd66ebac40ee75b344af49bae82835fb59a4d53abd517"
+  },
+  {
+    "id": "tasse",
+    "label": "Une tasse",
+    "image": "/lib/images/tcf/qcm-audit/vocab-tasse.webp",
+    "aliases": [
+      "tasse",
+      "tasses"
+    ],
+    "family": "cuisine",
+    "sha256": "9d5ea739e499e5f8b7af4a800cbc240965bf44ab1ad2ce0a9cac7ef065fe3f71"
+  },
+  {
+    "id": "verre",
+    "label": "Un verre",
+    "image": "/lib/images/tcf/qcm-audit/vocab-verre.webp",
+    "aliases": [
+      "verre",
+      "verres"
+    ],
+    "family": "cuisine",
+    "sha256": "d9dc3955f9446d392ebca8432f7cf8c86ae5af7d99e80c25e194335661132bfb"
+  },
+  {
+    "id": "bouteille-eau",
+    "label": "Une bouteille d’eau",
+    "image": "/lib/images/tcf/qcm-audit/co834-bouteille-eau-dessinee.webp",
+    "aliases": [
+      "bouteille d eau",
+      "bouteilles d eau"
+    ],
+    "family": "boisson",
+    "sha256": "c0f525c2f7e347128c94a162d9f516a910aaa1935a35727de6a69ef2dfd958eb"
+  },
+  {
+    "id": "panier",
+    "label": "Le panier",
+    "image": "/lib/images/tcf/qcm-audit/co306-panier-vide-dessine.webp",
+    "aliases": [
+      "panier",
+      "paniers"
+    ],
+    "family": "bagage",
+    "sha256": "d486afcb022c7ebec0c12dde5370910920fc5f87feec3f6d3795c011acfcd8d3"
+  },
+  {
+    "id": "chaise",
+    "label": "Une chaise",
+    "image": "/lib/images/tcf/qcm-audit/vocab-chaise.webp",
+    "aliases": [
+      "chaise",
+      "chaises"
+    ],
+    "family": "mobilier",
+    "sha256": "00c76569cc1c5c224e4d9da2104dbed6fd65bf571b753324df8de05eb1d223c1"
+  },
+  {
+    "id": "table",
+    "label": "Une table",
+    "image": "/lib/images/tcf/qcm-audit/co306-table-dessine.webp",
+    "aliases": [
+      "table",
+      "tables"
+    ],
+    "family": "mobilier",
+    "sha256": "2e9b91bedaa7986c66c3350e1404bba26cea475ed4db3a67604708237c74b208"
+  },
+  {
+    "id": "lit",
+    "label": "Un lit",
+    "image": "/lib/images/tcf/qcm-audit/vocab-lit.webp",
+    "aliases": [
+      "lit",
+      "lits"
+    ],
+    "family": "mobilier",
+    "sha256": "27bd74632bb9ba0443c6b77c20fcb0611386dd45a258aedd781915dd9ecfd07f"
+  },
+  {
+    "id": "armoire",
+    "label": "Une armoire",
+    "image": "/lib/images/tcf/qcm-audit/vocab-armoire.webp",
+    "aliases": [
+      "armoire",
+      "armoires"
+    ],
+    "family": "mobilier",
+    "sha256": "24f5158c235ac0a0803e45ae392970b9466c98105e262d2e7a467d9b966b1fde"
+  },
+  {
+    "id": "etagere",
+    "label": "Une étagère",
+    "image": "/lib/images/tcf/qcm-audit/vocab-etagere.webp",
+    "aliases": [
+      "etagere",
+      "etageres"
+    ],
+    "family": "mobilier",
+    "sha256": "9a07e763f2219e9f5189e904bbed9622802978dc148af0c7dcff051045a16d5d"
+  },
+  {
+    "id": "lampe",
+    "label": "Une lampe",
+    "image": "/lib/images/tcf/qcm-audit/vocab-lampe.webp",
+    "aliases": [
+      "lampe",
+      "lampes"
+    ],
+    "family": "mobilier",
+    "sha256": "aba19c7597c27e84e6bed0de4634c359693d2dba08d71760d74b555e2107a9c4"
+  },
+  {
+    "id": "poubelle",
+    "label": "Une poubelle",
+    "image": "/lib/images/tcf/qcm-audit/vocab-poubelle.webp",
+    "aliases": [
+      "poubelle",
+      "poubelles"
+    ],
+    "family": "mobilier",
+    "sha256": "dc9c1c288598cf6d7498add5baf767af76839050d1260939baca4464d42f9eb3"
+  },
+  {
+    "id": "tente",
+    "label": "Une tente",
+    "image": "/lib/images/tcf/qcm-audit/vocab-tente.webp",
+    "aliases": [
+      "tente",
+      "tentes"
+    ],
+    "family": "camping",
+    "sha256": "7c9569dc5ad37d57efaeeae89c2d40edf4c8e1bbef4aa3cefef3dbd4f3cd6204"
+  },
+  {
+    "id": "cadeau",
+    "label": "Un cadeau",
+    "image": "/lib/images/tcf/qcm-audit/vocab-cadeau.webp",
+    "aliases": [
+      "cadeau",
+      "cadeaux"
+    ],
+    "family": "cadeau",
+    "sha256": "40c84c495c9e833e3eafb59fb6e4437192b7929524d59f3d54b5a6b6ab70e7d2"
+  },
+  {
+    "id": "bougie",
+    "label": "Des bougies",
+    "image": "/lib/images/tcf/qcm-audit/vocab-bougies.webp",
+    "aliases": [
+      "bougie",
+      "bougies"
+    ],
+    "family": "cadeau",
+    "sha256": "ce47200136eb8f45534a601e72c0279e5ff5d7ded706f60cc7b37d423ad8ffcf"
+  },
+  {
+    "id": "ballon",
+    "label": "Un ballon rond",
+    "image": "/lib/images/tcf/qcm-audit/vocab-ballon-rond.webp",
+    "aliases": [
+      "ballon",
+      "ballons",
+      "ballon de football",
+      "ballon de basket"
+    ],
+    "family": "sport",
+    "sha256": "ad28a928219bbd46e28e1638f8528b862dd757eb94ce4fb6aa9dcacc1ee36757"
+  },
+  {
+    "id": "raquette",
+    "label": "Une raquette",
+    "image": "/lib/images/tcf/qcm-audit/vocab-raquette.webp",
+    "aliases": [
+      "raquette",
+      "raquettes",
+      "raquette de tennis"
+    ],
+    "family": "sport",
+    "sha256": "dbe83597f5ae28b640c34ce9e9dbde3fd8c1db02bd7a1df5970df011f6deaf55"
+  },
+  {
+    "id": "corde-sauter",
+    "label": "Une corde à sauter",
+    "image": "/lib/images/tcf/qcm-audit/vocab-corde-sauter.webp",
+    "aliases": [
+      "corde a sauter",
+      "cordes a sauter"
+    ],
+    "family": "sport",
+    "sha256": "0f293b9bebf3db3b1a1f4b7e654aa2dad7256fd304f99840bbc0a60526b18b15"
+  },
+  {
+    "id": "tapis",
+    "label": "Un tapis de yoga",
+    "image": "/lib/images/tcf/qcm-audit/vocab-tapis-yoga.webp",
+    "aliases": [
+      "tapis de yoga",
+      "tapis de sport"
+    ],
+    "family": "sport",
+    "sha256": "e9dbfa00db330930d81f8426e465e9f6aefa5cc5f69d2036a7a0092bf1536239"
+  },
+  {
+    "id": "cartes-jeu",
+    "label": "Un jeu de cartes",
+    "image": "/lib/images/tcf/qcm-audit/co306-jeu-cartes-dessine.webp",
+    "aliases": [
+      "jeu de cartes",
+      "jeux de cartes",
+      "jeu de carte"
+    ],
+    "family": "jeux",
+    "sha256": "feab05dbf3eae3394474b48168a26e58ce989bbef983ce5c99462011559f676c"
+  },
+  {
+    "id": "echecs",
+    "label": "Les échecs",
+    "image": "/lib/images/tcf/qcm-audit/vocab-echecs.webp",
+    "aliases": [
+      "jeu d echecs",
+      "jeu d echec",
+      "jeux d echecs",
+      "echecs"
+    ],
+    "family": "jeux",
+    "sha256": "057afc80cda6cdc3030db61be052d7ad3178a030510f46e2ed282a86f3872971"
+  },
+  {
+    "id": "velo",
+    "label": "Un vélo",
+    "image": "/lib/images/tcf/qcm-audit/vocab-velo-isole.webp",
+    "aliases": [
+      "velo",
+      "velos",
+      "bicyclette",
+      "bicyclettes"
+    ],
+    "family": "vehicule",
+    "sha256": "e65db9d18d6e12f54982a3650fc68d64ecd66b11a98cb634f5e5e4c48a480085"
+  },
+  {
+    "id": "train",
+    "label": "Un train",
+    "image": "/lib/images/tcf/qcm-audit/vocab-train-isole.webp",
+    "aliases": [
+      "train",
+      "trains",
+      "petit train",
+      "petits trains"
+    ],
+    "family": "vehicule",
+    "sha256": "f201b60e59b3825aa6069503e70326fffd9850799b947efad3dc6e1bc4b7517a",
+    "variants": [
+      {
+        "image": "/lib/images/tcf/qcm-audit/revue-20261107-36fb5f5b7e.webp",
+        "sha256": "1c9aa7357747726394c9920ecddb44d5057e1b77a790ce343764db07fbc7ad2c",
+        "aliases": [
+          "petit train",
+          "petits trains"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bus",
+    "label": "Un bus",
+    "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+    "aliases": [
+      "bus",
+      "autobus",
+      "autocar"
+    ],
+    "family": "vehicule",
+    "sha256": "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420"
+  },
+  {
+    "id": "metro",
+    "label": "Un métro",
+    "image": "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp",
+    "aliases": [
+      "metro",
+      "metros"
+    ],
+    "family": "vehicule",
+    "sha256": "8331a26621d06601a525e2f234f602474af07d5f9b5cd8b55443ec8143a40c7b"
+  },
+  {
+    "id": "tramway",
+    "label": "Un tramway",
+    "image": "/lib/images/tcf/qcm-audit/vocab-tramway.webp",
+    "aliases": [
+      "tram",
+      "tramway",
+      "tramways"
+    ],
+    "family": "vehicule",
+    "sha256": "1bd163ec73ed18626b1d9a6f44beffd6589feb8d0dfa23469dedf95d66bb2abf"
+  },
+  {
+    "id": "voiture",
+    "label": "Une voiture bleue",
+    "image": "/lib/images/tcf/qcm-audit/vocab-voiture-bleue.webp",
+    "aliases": [
+      "voiture",
+      "voitures",
+      "automobile",
+      "automobiles"
+    ],
+    "family": "vehicule",
+    "sha256": "6d5b16472a6e3f93898c80a83f509c0397a895cf89f5ae88d36684f0d2f2f2f7"
+  },
+  {
+    "id": "moto",
+    "label": "Des motos",
+    "image": "/lib/images/tcf/qcm-audit/vocab-motos.webp",
+    "aliases": [
+      "moto",
+      "motos",
+      "motocyclette"
+    ],
+    "family": "vehicule",
+    "sha256": "f48051b1f7700466e3018be8e783829a662e25c696895bc8a9bee216e784f455"
+  },
+  {
+    "id": "scooter",
+    "label": "Un scooter",
+    "image": "/lib/images/tcf/qcm-audit/vocab-scooter.webp",
+    "aliases": [
+      "scooter",
+      "scooters"
+    ],
+    "family": "vehicule",
+    "sha256": "87bacb6a0e08976f329ae5c4016482d98ed65a0965c36cd4e3c680bdf263f590"
+  },
+  {
+    "id": "trottinette",
+    "label": "Une trottinette",
+    "image": "/lib/images/tcf/qcm-audit/vocab-trottinette.webp",
+    "aliases": [
+      "trottinette",
+      "trottinettes"
+    ],
+    "family": "vehicule",
+    "sha256": "d41829d59983e7508e1fa4ce6fa6e7445d900421c62b35b8f293ca1f0bffdac6"
+  },
+  {
+    "id": "avion",
+    "label": "Un avion",
+    "image": "/lib/images/tcf/qcm-audit/vocab-avion.webp",
+    "aliases": [
+      "avion",
+      "avions"
+    ],
+    "family": "vehicule",
+    "sha256": "1e312cf1a4a4bfc617dbf5a4532511403112bb78ca54899aa42660b3b74b140f"
+  },
+  {
+    "id": "caravane",
+    "label": "Une caravane",
+    "image": "/lib/images/tcf/qcm-audit/vocab-caravane.webp",
+    "aliases": [
+      "caravane",
+      "caravanes"
+    ],
+    "family": "vehicule",
+    "sha256": "706eb9a955b9bbdf4d697176583ddbf5b3df44bc55b09f8cbae5a7dab22f46d8"
+  },
+  {
+    "id": "piano",
+    "label": "Le piano",
+    "image": "/lib/images/tcf/qcm-audit/vocab-piano.webp",
+    "aliases": [
+      "piano",
+      "pianos"
+    ],
+    "family": "instrument",
+    "sha256": "5bbe9787f9ae1bb09e5e498205ded4508611d133186333919fc00c91ddf36cf3"
+  },
+  {
+    "id": "violon",
+    "label": "Le violon",
+    "image": "/lib/images/tcf/qcm-audit/vocab-violon.webp",
+    "aliases": [
+      "violon",
+      "violons"
+    ],
+    "family": "instrument",
+    "sha256": "4318b9daea7e763100086a889c644e9691900d743b61ff29ee2ea4ef086b93dd"
+  },
+  {
+    "id": "guitare",
+    "label": "Les guitares",
+    "image": "/lib/images/tcf/qcm-audit/vocab-guitares.webp",
+    "aliases": [
+      "guitare",
+      "guitares"
+    ],
+    "family": "instrument",
+    "sha256": "cb48e5cacae064457400bc6877c2ac79c6cd68b4526b8484d2ee9451df6efade"
+  },
+  {
+    "id": "trompette",
+    "label": "La trompette",
+    "image": "/lib/images/tcf/qcm-audit/vocab-trompette.webp",
+    "aliases": [
+      "trompette",
+      "trompettes"
+    ],
+    "family": "instrument",
+    "sha256": "d503da67e3f62f8ba1f817e2f29892328c381feea2daabd4253672146c316218"
+  },
+  {
+    "id": "banane",
+    "label": "Une banane",
+    "image": "/lib/images/tcf/qcm-audit/vocab-banane.webp",
+    "aliases": [
+      "banane",
+      "bananes"
+    ],
+    "family": "fruit",
+    "sha256": "cf938ac6281f4bdfae4584062cc770e399883340fa26885add42f65e07e2e397"
+  },
+  {
+    "id": "pomme",
+    "label": "Une pomme",
+    "image": "/lib/images/tcf/qcm-audit/vocab-pomme.webp",
+    "aliases": [
+      "pomme",
+      "pommes"
+    ],
+    "family": "fruit",
+    "sha256": "d2a2550f18e70458e8e9a96413068e6543bdd3395d56ea3b5f4f04c60945b7a0"
+  },
+  {
+    "id": "poire",
+    "label": "La poire",
+    "image": "/lib/images/tcf/qcm-audit/vocab-poire.webp",
+    "aliases": [
+      "poire",
+      "poires"
+    ],
+    "family": "fruit",
+    "sha256": "cfbc07a6dbade26f043aa0185640a3a047180be2f178e596ff593a9a78db3688"
+  },
+  {
+    "id": "orange",
+    "label": "Des oranges",
+    "image": "/lib/images/tcf/qcm-audit/vocab-oranges.webp",
+    "aliases": [
+      "orange",
+      "oranges"
+    ],
+    "family": "fruit",
+    "sha256": "b472e97c128059c1adeb5c9f763139d33dc9726df1865a3874f567220a677192"
+  },
+  {
+    "id": "citron",
+    "label": "Le citron",
+    "image": "/lib/images/tcf/qcm-audit/vocab-citron.webp",
+    "aliases": [
+      "citron",
+      "citrons"
+    ],
+    "family": "fruit",
+    "sha256": "76978e818bcfd5df1024eadb85d68a8c44dcb1460de95e09bc7f71ba312a7fe3"
+  },
+  {
+    "id": "fraise",
+    "label": "Des fraises",
+    "image": "/lib/images/tcf/qcm-audit/vocab-fraises.webp",
+    "aliases": [
+      "fraise",
+      "fraises"
+    ],
+    "family": "fruit",
+    "sha256": "5e140801bc3630fd6c54ab54d52419dd961899723b3f6a1dc54d718831867122"
+  },
+  {
+    "id": "raisin",
+    "label": "Du raisin",
+    "image": "/lib/images/tcf/qcm-audit/vocab-raisin.webp",
+    "aliases": [
+      "raisin",
+      "raisins"
+    ],
+    "family": "fruit",
+    "sha256": "19b167f43f5adac7c2c94fe930493e5c2c496217560028d7eda75b893209a59b"
+  },
+  {
+    "id": "tomate",
+    "label": "Une tomate",
+    "image": "/lib/images/tcf/qcm-audit/vocab-tomate.webp",
+    "aliases": [
+      "tomate",
+      "tomates"
+    ],
+    "family": "legume",
+    "sha256": "181d9b4fa506d2cfc1aa2172b2917a4d26e6fcbbbe092c328ac550931758f988"
+  },
+  {
+    "id": "carotte",
+    "label": "La carotte",
+    "image": "/lib/images/tcf/qcm-audit/vocab-carotte.webp",
+    "aliases": [
+      "carotte",
+      "carottes"
+    ],
+    "family": "legume",
+    "sha256": "b4cc53ab17658bcb29650fcdb043d7237d86a56e59aec4eb696654188971eccb"
+  },
+  {
+    "id": "pomme-terre",
+    "label": "La pomme de terre",
+    "image": "/lib/images/tcf/qcm-audit/vocab-pomme-terre.webp",
+    "aliases": [
+      "pomme de terre",
+      "pommes de terre"
+    ],
+    "family": "legume",
+    "sha256": "79a70c80170f4009eaf81f2f40b16b81989f95eafe08aa42bdc48224cd3640c6"
+  },
+  {
+    "id": "courgette",
+    "label": "La courgette",
+    "image": "/lib/images/tcf/qcm-audit/vocab-courgette.webp",
+    "aliases": [
+      "courgette",
+      "courgettes"
+    ],
+    "family": "legume",
+    "sha256": "a61503166c21cbeff3fe587bacea4ad2d8d5a855b1c84dafa6db70bfd6bea762"
+  },
+  {
+    "id": "concombre",
+    "label": "Le concombre",
+    "image": "/lib/images/tcf/qcm-audit/vocab-concombre.webp",
+    "aliases": [
+      "concombre",
+      "concombres"
+    ],
+    "family": "legume",
+    "sha256": "c25f1bd9a00aa4fe45b57fbc105da5d699dc9b006f51f6f981b8ad5666cfa06f"
+  },
+  {
+    "id": "poivron",
+    "label": "Le poivron",
+    "image": "/lib/images/tcf/qcm-audit/vocab-poivron.webp",
+    "aliases": [
+      "poivron",
+      "poivrons"
+    ],
+    "family": "legume",
+    "sha256": "0b16a85c0f62a834284b7258f04a9f84ef3ded43db147cda02391ed4722a8310"
+  },
+  {
+    "id": "aubergine",
+    "label": "L’aubergine",
+    "image": "/lib/images/tcf/qcm-audit/vocab-aubergine.webp",
+    "aliases": [
+      "aubergine",
+      "aubergines"
+    ],
+    "family": "legume",
+    "sha256": "28c1b004202c04b5aa1f71dde8b350773b3a4010fd1432f5b8d8733d6f6c8a33"
+  },
+  {
+    "id": "beurre",
+    "label": "Du beurre",
+    "image": "/lib/images/tcf/qcm-audit/vocab-beurre.webp",
+    "aliases": [
+      "beurre"
+    ],
+    "family": "ingredient",
+    "sha256": "e5fcb80d08c31b65f9ec8a2d7852e1768f7ec820cda289edf82a9c5cdb368987"
+  },
+  {
+    "id": "oeuf",
+    "label": "Des œufs",
+    "image": "/lib/images/tcf/qcm-audit/vocab-oeufs.webp",
+    "aliases": [
+      "oeuf",
+      "oeufs"
+    ],
+    "family": "ingredient",
+    "sha256": "de693c364e448efdb342beb856eed1afc5a56797b6b9ecbd5a1ef9f16fcd4e27"
+  },
+  {
+    "id": "farine",
+    "label": "La farine",
+    "image": "/lib/images/tcf/qcm-audit/vocab-farine.webp",
+    "aliases": [
+      "farine"
+    ],
+    "family": "ingredient",
+    "sha256": "c444b841e4e0426be994dd273dec1e4edc4400605090f5011139451c0c975610"
+  },
+  {
+    "id": "sucre",
+    "label": "Le sucre",
+    "image": "/lib/images/tcf/qcm-audit/vocab-sucre.webp",
+    "aliases": [
+      "sucre"
+    ],
+    "family": "ingredient",
+    "sha256": "74a03f3fa1fc46b26f33f79ea346ba9d147922cae8b6aa4ccc29a969a8c524a3"
+  },
+  {
+    "id": "sel",
+    "label": "Du sel",
+    "image": "/lib/images/tcf/qcm-audit/vocab-sel.webp",
+    "aliases": [
+      "sel"
+    ],
+    "family": "ingredient",
+    "sha256": "ec9a3028658534ba61dbf5536ba7ce3fbbab51e5e42b0aae9ef5c9eed676237c"
+  },
+  {
+    "id": "miel",
+    "label": "Le miel",
+    "image": "/lib/images/tcf/qcm-audit/vocab-miel.webp",
+    "aliases": [
+      "miel"
+    ],
+    "family": "ingredient",
+    "sha256": "63c63852584cf4953cc28806ca9d3e4a4221fb02f11eb60e8659c379ca181bce"
+  },
+  {
+    "id": "confiture",
+    "label": "La confiture",
+    "image": "/lib/images/tcf/qcm-audit/vocab-confiture.webp",
+    "aliases": [
+      "confiture",
+      "confitures"
+    ],
+    "family": "aliment",
+    "sha256": "a416ab806778a11978df5cb31a1d444a4bb6cff21f436ce6c96578c9d723562f"
+  },
+  {
+    "id": "chocolat",
+    "label": "Le chocolat",
+    "image": "/lib/images/tcf/qcm-audit/vocab-chocolat-tablette.webp",
+    "aliases": [
+      "chocolat",
+      "chocolats"
+    ],
+    "family": "aliment",
+    "sha256": "667d6db1c750d0390bbcd8e5beae7121e629c1af9e62ca94a6ede53cda6a7d96"
+  },
+  {
+    "id": "yaourt",
+    "label": "Un yaourt",
+    "image": "/lib/images/tcf/qcm-audit/vocab-yaourt.webp",
+    "aliases": [
+      "yaourt",
+      "yaourts",
+      "yogourt",
+      "yogourts"
+    ],
+    "family": "aliment",
+    "sha256": "105c25eaed5891a8e2994e635d3d5fd91411c3d04c9dadc08506c778a5e02480"
+  },
+  {
+    "id": "glace",
+    "label": "Une glace",
+    "image": "/lib/images/tcf/qcm-audit/vocab-glace-cornet.webp",
+    "aliases": [
+      "glace",
+      "glaces",
+      "creme glacee"
+    ],
+    "family": "aliment",
+    "sha256": "29152bb7cb5df718407477be059e94cbcd281dbf4c8a2bdbe5101e3cd06e3331"
+  },
+  {
+    "id": "gateau",
+    "label": "Un gâteau au chocolat",
+    "image": "/lib/images/tcf/qcm-audit/audit-context-gateau-chocolat.webp",
+    "aliases": [
+      "gateau",
+      "gateaux"
+    ],
+    "family": "aliment",
+    "sha256": "0fbe8d4104ec63f5429821dbb693234081a4517652df31ad22dd1b15d6104153"
+  },
+  {
+    "id": "biscuit",
+    "label": "Des biscuits",
+    "image": "/lib/images/tcf/qcm-audit/vocab-biscuits.webp",
+    "aliases": [
+      "biscuit",
+      "biscuits"
+    ],
+    "family": "aliment",
+    "sha256": "b1805aca892c70d8035ebc8a545ef52f19d3c9d139fe6197131d1a55c2b475af"
+  },
+  {
+    "id": "bonbon",
+    "label": "Des bonbons",
+    "image": "/lib/images/tcf/qcm-audit/vocab-bonbons.webp",
+    "aliases": [
+      "bonbon",
+      "bonbons"
+    ],
+    "family": "aliment",
+    "sha256": "3d04c09b8ecb36d04026af9f7c9388b6e4c14b269e44b04a1e2f145ce9778ee4"
+  },
+  {
+    "id": "pizza",
+    "label": "Une pizza",
+    "image": "/lib/images/tcf/qcm-audit/co834-pizza-dessinee.webp",
+    "aliases": [
+      "pizza",
+      "pizzas"
+    ],
+    "family": "aliment",
+    "sha256": "be5d4a7cf9dab36bbba9217877079d73e81a98419c319dcd4050deb14d2e5599"
+  },
+  {
+    "id": "crepe",
+    "label": "Une crêpe",
+    "image": "/lib/images/tcf/qcm-audit/vocab-crepe.webp",
+    "aliases": [
+      "crepe",
+      "crepes"
+    ],
+    "family": "aliment",
+    "sha256": "9d52de3287243f60f8641e75fde8c2334e007bb1435c31cde809d5e2ae0c56e0"
+  },
+  {
+    "id": "quiche",
+    "label": "Une quiche",
+    "image": "/lib/images/tcf/qcm-audit/vocab-quiche.webp",
+    "aliases": [
+      "quiche",
+      "quiches"
+    ],
+    "family": "aliment",
+    "sha256": "020f4ce264538e01bac8111bf7e134104c54c2e0ea9b965d294ebf9bc2f53572"
+  },
+  {
+    "id": "hamburger",
+    "label": "Un hamburger",
+    "image": "/lib/images/tcf/qcm-audit/vocab-hamburger.webp",
+    "aliases": [
+      "hamburger",
+      "hamburgers"
+    ],
+    "family": "aliment",
+    "sha256": "c590ee3d07fa2b7c279fa1f9bf4a5746575a4bac3308d67703afae5296be15e3"
+  },
+  {
+    "id": "sandwich",
+    "label": "Des sandwichs",
+    "image": "/lib/images/tcf/qcm-audit/vocab-sandwichs-pluriel.webp",
+    "aliases": [
+      "sandwich",
+      "sandwichs",
+      "sandwiches"
+    ],
+    "family": "aliment",
+    "sha256": "ea8df2222ed6b8d2b3ca82d124747b8f5a4eb802ed4e474df448d59d30ec5a23"
+  },
+  {
+    "id": "pain",
+    "label": "Du pain",
+    "image": "/lib/images/tcf/qcm-audit/co834-pain-dessine.webp",
+    "aliases": [
+      "pain",
+      "pains"
+    ],
+    "family": "aliment",
+    "sha256": "6a760b1c2914ae938d1ea3e04f5a81e327d52b1782580a35635f3afb660d9034"
+  },
+  {
+    "id": "poulet",
+    "label": "Du poulet",
+    "image": "/lib/images/tcf/qcm-audit/vocab-poulet.webp",
+    "aliases": [
+      "poulet",
+      "poulets"
+    ],
+    "family": "aliment",
+    "sha256": "9c2647e1160f1094d61160adc24ca7ebf523eb6b94b4f3d815ea3c36069eba01"
+  },
+  {
+    "id": "saumon",
+    "label": "Du saumon",
+    "image": "/lib/images/tcf/qcm-audit/vocab-saumon.webp",
+    "aliases": [
+      "saumon",
+      "saumons"
+    ],
+    "family": "aliment",
+    "sha256": "bd4ef414224faf3c8fcdef4e4ebc9fb8443fec2c117b62827021fa624cc33c6f"
+  },
+  {
+    "id": "thon",
+    "label": "Du thon",
+    "image": "/lib/images/tcf/qcm-audit/vocab-thon.webp",
+    "aliases": [
+      "thon"
+    ],
+    "family": "aliment",
+    "sha256": "823aa9e03b2952885c3322c604dbdf4cc54c673fc3d18dd3b84c6f2df01c0813"
+  },
+  {
+    "id": "riz",
+    "label": "Du riz",
+    "image": "/lib/images/tcf/qcm-audit/co306-riz-dessine.webp",
+    "aliases": [
+      "riz"
+    ],
+    "family": "aliment",
+    "sha256": "000b14a297384b03d100f2acfc84d56490c54892ee9723c2724f1254d074210b"
+  },
+  {
+    "id": "lait",
+    "label": "Un verre de lait",
+    "image": "/lib/images/tcf/qcm-audit/fc08f12c7321.webp",
+    "aliases": [
+      "lait"
+    ],
+    "family": "boisson",
+    "sha256": "457d17820beb5f41eeeaad11312702365a913525e52894916cce37b920bcb60b"
+  },
+  {
+    "id": "jus-fruits",
+    "label": "Un jus d’orange",
+    "image": "/lib/images/tcf/qcm-audit/co834-jus-orange-dessine.webp",
+    "aliases": [
+      "jus de fruits",
+      "jus de fruit",
+      "jus d orange"
+    ],
+    "family": "boisson",
+    "sha256": "47bf446aec09cf3930268a1421321038c144cd5013a23a44b2f9f2b2e8d35822"
+  },
+  {
+    "id": "chien",
+    "label": "Un chien",
+    "image": "/lib/images/tcf/qcm-audit/vocab-chien.webp",
+    "aliases": [
+      "chien",
+      "chiens"
+    ],
+    "family": "animal",
+    "sha256": "ad3f8e5f558a25ac591a80263255af7a88766f8525f1c3648c51421da873b183"
+  },
+  {
+    "id": "chat",
+    "label": "Un chat",
+    "image": "/lib/images/tcf/qcm-audit/vocab-chat.webp",
+    "aliases": [
+      "chat",
+      "chats"
+    ],
+    "family": "animal",
+    "sha256": "6925353daec05239436ccaabaa6717f92f1116db020622734bd70cb39345da78"
+  },
+  {
+    "id": "lapin",
+    "label": "Un lapin",
+    "image": "/lib/images/tcf/qcm-audit/vocab-lapin.webp",
+    "aliases": [
+      "lapin",
+      "lapins"
+    ],
+    "family": "animal",
+    "sha256": "4badc760f9b54d704a7ad015aa54689fa93bef2940fce4840d3cd12ec336d34d"
+  },
+  {
+    "id": "cheval",
+    "label": "Un cheval",
+    "image": "/lib/images/tcf/qcm-audit/vocab-cheval.webp",
+    "aliases": [
+      "cheval",
+      "chevaux"
+    ],
+    "family": "animal",
+    "sha256": "8919f4597c75c4cf3926938fa769eecd0c5ba3c03ebc71c9619ecb64c8943463"
+  },
+  {
+    "id": "vache",
+    "label": "Une vache",
+    "image": "/lib/images/tcf/qcm-audit/vocab-vache.webp",
+    "aliases": [
+      "vache",
+      "vaches"
+    ],
+    "family": "animal",
+    "sha256": "57cbb9e7b7370db69710a66541b423f233f0d1767bcb34f84f72a04272bcfda7"
+  },
+  {
+    "id": "tortue",
+    "label": "Tortue",
+    "image": "/lib/images/tcf/qcm-audit/vocab-tortue.webp",
+    "aliases": [
+      "tortue",
+      "tortues"
+    ],
+    "family": "animal",
+    "sha256": "2044d25b4104bdcbe8c8c357faf67f9af5801f2fdeff0060fc67f3cd6d642fbc"
+  },
+  {
+    "id": "renard",
+    "label": "Un renard",
+    "image": "/lib/images/tcf/qcm-audit/vocab-renard.webp",
+    "aliases": [
+      "renard",
+      "renards"
+    ],
+    "family": "animal",
+    "sha256": "7f750af83af98aa4dce599040d751bcd2c0f6cf701427a62749a5973e659e289"
+  },
+  {
+    "id": "loup",
+    "label": "Un loup",
+    "image": "/lib/images/tcf/qcm-audit/vocab-loup.webp",
+    "aliases": [
+      "loup",
+      "loups"
+    ],
+    "family": "animal",
+    "sha256": "343b6470e450625de41e70a665bfc8eb3b1e0a62b5541821da0f34e9fbd1266b"
+  },
+  {
+    "id": "ours",
+    "label": "Un ours",
+    "image": "/lib/images/tcf/qcm-audit/vocab-ours.webp",
+    "aliases": [
+      "ours"
+    ],
+    "family": "animal",
+    "sha256": "980c5d13eeea7aaf57e3d67b1c54fb04960192fbda743d37203936a6c63f189d"
+  },
+  {
+    "id": "oiseau",
+    "label": "Un oiseau",
+    "image": "/lib/images/tcf/qcm-audit/vocab-oiseau.webp",
+    "aliases": [
+      "oiseau",
+      "oiseaux"
+    ],
+    "family": "animal",
+    "sha256": "b8ddf7664fcd8822633daf94f7bdc1de09a61008d88e66472f4d1d56e1da7179"
+  },
+  {
+    "id": "disque-volant",
+    "label": "Un disque volant",
+    "image": "/lib/images/tcf/qcm-audit/vocab-disque-volant.webp",
+    "aliases": [
+      "disque volant",
+      "disques volants",
+      "frisbee",
+      "frisbees"
+    ],
+    "family": "sport",
+    "sha256": "adbc9509db8581db09b27338d5c8a177e4fa17266d7e058ee6049d0af1a5e843"
+  },
+  {
+    "id": "bandeau",
+    "label": "Un bandeau",
+    "image": "/lib/images/tcf/qcm-audit/vocab-bandeau.webp",
+    "aliases": [
+      "bandeau",
+      "bandeaux"
+    ],
+    "family": "tete",
+    "sha256": "0e131d980e7e5c8637269b5534cf223df8101a19affeb0a7e5ce7f226ec23bdb"
+  },
+  {
+    "id": "rouleau-patisserie",
+    "label": "Un rouleau à pâtisserie",
+    "image": "/lib/images/tcf/qcm-audit/vocab-rouleau-patisserie.webp",
+    "aliases": [
+      "rouleau a patisserie",
+      "rouleaux a patisserie"
+    ],
+    "family": "cuisine",
+    "sha256": "476e5b0aa80bc88b7ed3f4bfc5a171177a4d2cb5bfc63451fc6cbe4b8503d70d"
+  },
+  {
+    "id": "elephant",
+    "label": "Un éléphant",
+    "image": "/lib/images/tcf/qcm-audit/vocab-elephant.webp",
+    "aliases": [
+      "elephant",
+      "elephants"
+    ],
+    "family": "animal",
+    "sha256": "051ec2982c01f542bd728491c1a35f75c509a2fa00d12d0756eb0b078c9e569f"
+  },
+  {
+    "id": "cochon",
+    "label": "Des cochons",
+    "image": "/lib/images/tcf/qcm-audit/vocab-cochons.webp",
+    "aliases": [
+      "cochon",
+      "cochons"
+    ],
+    "family": "animal",
+    "sha256": "f3b6f1b7dc4ea26081ae6164ccc2fff8eea447e768bc1ba2d678deacbcb6bec0"
+  },
+  {
+    "id": "canard",
+    "label": "Des canards",
+    "image": "/lib/images/tcf/qcm-audit/vocab-canards.webp",
+    "aliases": [
+      "canard",
+      "canards"
+    ],
+    "family": "animal",
+    "sha256": "c0b0e6da7fd0fdca71c6bff06108ecf421b07b796c47535ef509661286678fbc"
+  },
+  {
+    "id": "girafe",
+    "label": "Une girafe",
+    "image": "/lib/images/tcf/qcm-audit/vocab-girafe.webp",
+    "aliases": [
+      "girafe",
+      "girafes"
+    ],
+    "family": "animal",
+    "sha256": "417546c4ccda1c47bea490e72d618e16b1ab24e6326f3bc499982b336c7dc378"
+  },
+  {
+    "id": "lion",
+    "label": "Un lion",
+    "image": "/lib/images/tcf/qcm-audit/vocab-lion.webp",
+    "aliases": [
+      "lion",
+      "lions",
+      "lionceau",
+      "lionceaux",
+      "lionceau",
+      "lionceaux"
+    ],
+    "family": "animal",
+    "sha256": "36959714dd134a43c1d51425f7f2de0e22fb97bb9ececdc40e31bb50af4d9604",
+    "variants": [
+      {
+        "image": "/lib/images/tcf/qcm-audit/revue-20261107-06ab0283c8.webp",
+        "sha256": "f44d84483444f4ec5a55b24691331db05a1570945260f171935fd883b7d156af",
+        "aliases": [
+          "lionceau",
+          "lionceaux"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "dauphin",
+    "label": "Le dauphin",
+    "image": "/lib/images/tcf/qcm-audit/vocab-dauphin.webp",
+    "aliases": [
+      "dauphin",
+      "dauphins"
+    ],
+    "family": "animal",
+    "sha256": "daa06bbbd19204120e4e06562eb5362befe23b8dc45dd11523bcee00ada33adf"
+  },
+  {
+    "id": "bague",
+    "label": "Des bagues",
+    "image": "/lib/images/tcf/qcm-audit/vocab-bagues.webp",
+    "aliases": [
+      "bague",
+      "bagues"
+    ],
+    "family": "bijou",
+    "sha256": "a38809d1d8bb800cea09923c54e486f531d287bb422516197a35eb67296673fc"
+  },
+  {
+    "id": "collier",
+    "label": "Un collier",
+    "image": "/lib/images/tcf/qcm-audit/vocab-collier.webp",
+    "aliases": [
+      "collier",
+      "colliers"
+    ],
+    "family": "bijou",
+    "sha256": "9e8353da599620fcb2b633bd3e1ac0feaaf45e6599a06017ce5c786f1e44c31f"
+  },
+  {
+    "id": "bijou",
+    "label": "Un bijou",
+    "image": "/lib/images/tcf/qcm-audit/vocab-bijou.webp",
+    "aliases": [
+      "bijou",
+      "bijoux"
+    ],
+    "family": "bijou",
+    "sha256": "adf1441b84e21e557d8072657e4244a4894effd6249dd7d8018c6792834677b0"
+  },
+  {
+    "id": "basilic",
+    "label": "Le basilic",
+    "image": "/lib/images/tcf/qcm-audit/vocab-basilic.webp",
+    "aliases": [
+      "basilic"
+    ],
+    "family": "ingredient",
+    "sha256": "27ac5a346bf6d5e9af6c1243bfc8f4ea7dbf9dc149c1d4f2c239d8c3375ebcfd"
+  },
+  {
+    "id": "curry",
+    "label": "Le curry",
+    "image": "/lib/images/tcf/qcm-audit/vocab-curry.webp",
+    "aliases": [
+      "curry"
+    ],
+    "family": "ingredient",
+    "sha256": "7afdb1d671780bddc635659cc9a1b77e0f3cde2a6f340d21e51a8ed21ee5da41"
+  },
+  {
+    "id": "corde",
+    "label": "Une corde",
+    "image": "/lib/images/tcf/qcm-audit/vocab-corde.webp",
+    "aliases": [
+      "corde",
+      "cordes"
+    ],
+    "family": "sport",
+    "sha256": "564805fb48f4ae44bc028110ada7f57b6229f0de0ef25b60b72ac970b285b0be"
+  },
+  {
+    "id": "balance",
+    "label": "La balance",
+    "image": "/lib/images/tcf/qcm-audit/vocab-balance.webp",
+    "aliases": [
+      "balance de cuisine",
+      "balance electronique"
+    ],
+    "family": "cuisine",
+    "sha256": "96eebd7af1fc10483b8cbefd4dcc8dc96abb5607de317e7b46f21ede81f5d474"
+  },
+  {
+    "id": "taxi",
+    "label": "Des taxis",
+    "image": "/lib/images/tcf/qcm-audit/vocab-taxis.webp",
+    "aliases": [
+      "taxi",
+      "taxis"
+    ],
+    "family": "vehicule",
+    "sha256": "cae7305382158614987610417fc584e93abecb377ee2a4dacbcf6207df123c19"
+  },
+  {
+    "id": "sous-marin",
+    "label": "Dans un sous-marin",
+    "image": "/lib/images/tcf/qcm-audit/vocab-sous-marin.webp",
+    "aliases": [
+      "sous marin",
+      "sous marins"
+    ],
+    "family": "vehicule",
+    "sha256": "b09dad371167eef0cdfe61490c696f34bcfa5d20b8d4280951dacc92c7cc55f1"
+  },
+  {
+    "id": "fusee",
+    "label": "Dans une fusée",
+    "image": "/lib/images/tcf/qcm-audit/vocab-fusee.webp",
+    "aliases": [
+      "fusee",
+      "fusees"
+    ],
+    "family": "vehicule",
+    "sha256": "7c6f5226aad79fc72bf669fcf57b3a4bb795f32c45865d457b5dd59d0bf438d8"
+  },
+  {
+    "id": "costume",
+    "label": "Un costume",
+    "image": "/lib/images/tcf/qcm-audit/vocab-costume.webp",
+    "aliases": [
+      "costume",
+      "costumes"
+    ],
+    "family": "vetement",
+    "sha256": "3d55875146bd97fce4744ad922d0762c2a21aca616d058ce5cc323dbc77f3704"
+  },
+  {
+    "id": "cornichon",
+    "label": "Les cornichons",
+    "image": "/lib/images/tcf/qcm-audit/vocab-cornichons.webp",
+    "aliases": [
+      "cornichon",
+      "cornichons"
+    ],
+    "family": "legume",
+    "sha256": "02a220b4c924fec9ee20b4dc97e9a812cab3d49f8df8c7b0c24e0f87241a19b1"
+  },
+  {
+    "id": "cereales",
+    "label": "Des céréales",
+    "image": "/lib/images/tcf/qcm-audit/vocab-cereales.webp",
+    "aliases": [
+      "cereales"
+    ],
+    "family": "aliment",
+    "sha256": "ebb73c4710617ae2647b2f5968b54255ae4645cfb4b31f34d8760667c35ce499"
+  },
+  {
+    "id": "nouilles",
+    "label": "Les nouilles",
+    "image": "/lib/images/tcf/qcm-audit/vocab-nouilles.webp",
+    "aliases": [
+      "pates",
+      "nouilles"
+    ],
+    "family": "aliment",
+    "sha256": "c8baaa8bb09d91e8803a04805554e1102ea739870e79d555d8d1dd6664e28f21"
+  },
+  {
+    "id": "sushi",
+    "label": "Des sushis",
+    "image": "/lib/images/tcf/qcm-audit/vocab-sushis.webp",
+    "aliases": [
+      "sushi",
+      "sushis"
+    ],
+    "family": "aliment",
+    "sha256": "4524cbd39b12b3b87294936057a50d6fd9e75b2d667cbef0045130bcb77e35d6"
+  },
+  {
+    "id": "crevette",
+    "label": "Des crevettes",
+    "image": "/lib/images/tcf/qcm-audit/vocab-crevettes.webp",
+    "aliases": [
+      "crevette",
+      "crevettes"
+    ],
+    "family": "aliment",
+    "sha256": "60a63b528d740f8172f4229fa7f15e71dd9888f9c681e6540c1e553ed329b188"
+  },
+  {
+    "id": "huitre",
+    "label": "Des huîtres",
+    "image": "/lib/images/tcf/qcm-audit/vocab-huitres.webp",
+    "aliases": [
+      "huitre",
+      "huitres"
+    ],
+    "family": "aliment",
+    "sha256": "d16131c0576799d4b04717d34e05f172d56c79ebf8ece41b6b86845f457da636"
+  },
+  {
+    "id": "caramel",
+    "label": "Du caramel",
+    "image": "/lib/images/tcf/qcm-audit/vocab-caramel.webp",
+    "aliases": [
+      "caramel",
+      "caramels"
+    ],
+    "family": "aliment",
+    "sha256": "bc7e74ef43cece6fa8cda6b5593ef9738b3a186da23ca08563fd0c2dbd16f77e"
+  },
+  {
+    "id": "tiramisu",
+    "label": "Un tiramisu",
+    "image": "/lib/images/tcf/qcm-audit/vocab-tiramisu.webp",
+    "aliases": [
+      "tiramisu",
+      "tiramisus"
+    ],
+    "family": "aliment",
+    "sha256": "ebab416f5c999f85e104e1cae3d9190ada1ea70c0b22da8c1cc9bc32d750d039"
+  },
+  {
+    "id": "soupe",
+    "label": "Des soupes",
+    "image": "/lib/images/tcf/qcm-audit/vocab-soupes.webp",
+    "aliases": [
+      "soupe",
+      "soupes",
+      "potage",
+      "potages"
+    ],
+    "family": "aliment",
+    "sha256": "71316dd531a50c22961544bcb8269625cd1fbafcb7d8328e0292dc4e098d94ee"
+  },
+  {
+    "id": "limonade",
+    "label": "De la limonade",
+    "image": "/lib/images/tcf/qcm-audit/vocab-limonade.webp",
+    "aliases": [
+      "limonade",
+      "limonades"
+    ],
+    "family": "boisson",
+    "sha256": "137fcbda4134062d8383093f03eee27cdbfc731b114d5ebcca788489eea29312"
+  },
+  {
+    "id": "palmes",
+    "label": "Des palmes",
+    "image": "/lib/images/tcf/qcm-audit/vocab-palmes.webp",
+    "aliases": [
+      "palme",
+      "palmes"
+    ],
+    "family": "sport",
+    "sha256": "3d01b615c27cbb3a2744f8343f4d9a1d627b6431e06c087a5fd5c05893948382"
+  },
+  {
+    "id": "comprime",
+    "label": "Des comprimés",
+    "image": "/lib/images/tcf/qcm-audit/vocab-comprimes.webp",
+    "aliases": [
+      "comprime",
+      "comprimes"
+    ],
+    "family": "medicament",
+    "sha256": "f3745b9d9a870550e1d6644501bf2e29eb94a3f63b4a7096b59954213018e7cd"
+  },
+  {
+    "id": "gelule",
+    "label": "Des gélules",
+    "image": "/lib/images/tcf/qcm-audit/vocab-gelules.webp",
+    "aliases": [
+      "gelule",
+      "gelules"
+    ],
+    "family": "medicament",
+    "sha256": "5d2b971860e85c79d43d0f94ca247aaaa90b8c1cc9611025bfb783f49ed3d5da"
+  },
+  {
+    "id": "ticket-caisse",
+    "label": "Un ticket de caisse",
+    "image": "/lib/images/tcf/qcm-audit/vocab-ticket-caisse.webp",
+    "aliases": [
+      "ticket de caisse",
+      "tickets de caisse"
+    ],
+    "family": "document",
+    "sha256": "8002ad66a41d04e457adc942fbbafe3cc6b8adf6b491443d4620e624be45ea7e"
+  },
+  {
+    "id": "photo",
+    "label": "Une photo",
+    "image": "/lib/images/tcf/qcm-audit/vocab-photo-imprimee.webp",
+    "aliases": [
+      "photo imprimee",
+      "photo papier",
+      "photographie imprimee"
+    ],
+    "family": "document",
+    "sha256": "93d4872a6d6549d8a2c6af28d81da587f472ed235863de85ff0e9d82ae65155c"
+  },
+  {
+    "id": "bureau",
+    "label": "Un bureau",
+    "image": "/lib/images/tcf/qcm-audit/vocab-bureau.webp",
+    "aliases": [
+      "bureau de travail",
+      "meuble bureau"
+    ],
+    "family": "mobilier",
+    "sha256": "88eb07b6ac9804972add86419fdc3410e6a08730b077396300e7c014e4088a69"
+  }
+]

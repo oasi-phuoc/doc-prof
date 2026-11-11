@@ -1,0 +1,11 @@
+# Durée de conservation locale
+
+Les journaux et instantanés de schéma 1 à 5 datant de plus de sept jours sont effacés lors d’une ouverture ou reprise de séance. Le nettoyage est mutualisé entre les lectures et répété au plus une fois par heure dans un même document. Les parties récemment utilisées sont conservées.
+
+Les schémas inconnus et les dates impossibles à vérifier sont préservés : un ancien moteur ne doit pas supprimer les données d’une version future. La lecture d’une séance invalide reste refusée. Un échec d’accès à IndexedDB laisse le jeu utilisable avec le message de sauvegarde indisponible.
+
+La purge se déroule dans une transaction IndexedDB. Une fenêtre restée ouverte sur un journal expiré ne peut pas le recréer avec une ancienne révision. Le modèle de fiche sur le serveur et les réglages permanents ne sont pas concernés.
+
+Validation : `retention-browser.mjs` couvre les cinq schémas expirés, une séance récente, un schéma futur, une date invalide, le refus d’une ancienne écriture et le lancement du jeu après nettoyage. Résultats : `retention-results.json`.
+
+Les brouillons de recette ont une durée distincte : 24 heures après la dernière ouverture. Le nettoyage à l’ouverture ou à la création du brouillon retire les instantanés expirés, en préservant les versions inconnues et les dates invalides. Une lecture d’un brouillon expiré est toujours refusée, même si le nettoyage périodique vient déjà de s’exécuter. Voir l’[ADR 0007](adr-0007-brouillons-locaux.md) et `drafts-results.json`.

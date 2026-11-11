@@ -1,3 +1,6 @@
+import { ceArtFor } from '@/tcf/ce-art'
+import { CePoster } from './CePoster'
+import { WorksheetImage } from '@/components/WorksheetImage'
 import { useState, type ReactNode } from 'react'
 import { SheetCopy } from '@/components/sheet-copy'
 import type { PreviewMode } from '@/math/types'
@@ -6,6 +9,7 @@ import {
   parseAssociationDocuments,
 } from '@/tcf/association-documents'
 import { tcfImageSrc } from '@/tcf/media'
+import { threeThemeImageSrc } from '@/tcf/three-themes-images'
 import type { TcfCeAnnonce, TcfExercise } from '@/tcf/types'
 
 /** Paragraphes : une ligne vide sépare deux paragraphes. */
@@ -99,7 +103,7 @@ function TcfImage({
     )
   }
   return (
-    <img
+    <WorksheetImage
       className={className}
       src={resolved}
       alt={alt}
@@ -139,8 +143,9 @@ function ceDoc(children: ReactNode) {
 }
 
 /** Support de l’exercice : document à lire, audio, images, consignes de production. */
-export function TexteSupport({ exercise: ex, mode }: { exercise: TcfExercise; mode: PreviewMode }) {
+export function TexteSupport({ exercise: ex, mode, ceFormat = 'texte' }: { exercise: TcfExercise; mode: PreviewMode; ceFormat?: 'texte' | 'image' }) {
   const banque = <MotsBanque mots={ex.mots_banque} />
+  if (ceFormat === 'image' && ex.competence === 'CE' && ceArtFor(ex)) return <CePoster exercise={ex} />
   switch (ex.type_exercice) {
     case 'sms':
       return ceDoc(
@@ -337,35 +342,14 @@ export function TexteSupport({ exercise: ex, mode }: { exercise: TcfExercise; mo
       )
     case 'entretien': {
       if (mode !== 'answers') return null
-      const echanges =
-        ex.support.echanges?.filter((e) => e.question.trim() && e.reponse.trim()) ?? []
-      if (echanges.length) {
-        return (
-          <div className="tcf-modele tcf-entretien-dialogue">
-            <b>Exemple d’entretien</b>
-            <ol>
-              {echanges.map((e, i) => (
-                <li key={i}>
-                  <p>
-                    <b>Examinateur·trice :</b> {e.question}
-                  </p>
-                  <p>
-                    <b>Candidat·e :</b> {e.reponse}
-                  </p>
-                </li>
-              ))}
-            </ol>
-          </div>
-        )
-      }
       return (
         <div className="tcf-modele">
-          <b>Questions possibles de l’examinateur :</b>
-          <ul className="tcf-entretien-questions">
+          <b>Questions possibles :</b>
+          <ol className="tcf-entretien-questions">
             {ex.support.questions.filter((q) => q.trim()).map((q, i) => (
               <li key={i}>{q}</li>
             ))}
-          </ul>
+          </ol>
         </div>
       )
     }
@@ -377,23 +361,20 @@ export function TexteSupport({ exercise: ex, mode }: { exercise: TcfExercise; mo
               <div className="tcf-theme-frame-head">Thème {i + 1}</div>
               <div className="tcf-theme-frame-body">
                 <p className="tcf-po-theme">{t.theme}</p>
+                {mode === 'answers' && t.exemples_questions.some((q) => q.trim()) ? (
+                  <ol className="tcf-theme-questions">
+                    {t.exemples_questions.filter((q) => q.trim()).slice(0, 4).map((q, questionIndex) => (
+                      <li key={questionIndex}>{q}</li>
+                    ))}
+                  </ol>
+                ) : null}
                 <ul className="tcf-po-images is-4">
                   {t.images.map((src, k) => (
                     <li key={k}>
-                      <TcfImage src={src} alt="" />
+                      <TcfImage src={threeThemeImageSrc(src)} alt="" />
                     </li>
                   ))}
                 </ul>
-                {mode === 'answers' && t.exemples_questions.some((q) => q.trim()) ? (
-                  <ul className="tcf-modele tcf-exemples is-two-cols">
-                    {t.exemples_questions
-                      .filter((q) => q.trim())
-                      .slice(0, 8)
-                      .map((q, k) => (
-                        <li key={k}>{q}</li>
-                      ))}
-                  </ul>
-                ) : null}
               </div>
             </section>
           ))}

@@ -4,6 +4,7 @@ import {
   accountCanAccessDomain,
 } from '@/access'
 import { applyType, isOralComprehensionExercise, isProblemExercise } from '@/components/generator/page-helpers'
+import { typeChoicesForBlock } from '@/components/generator/generator-derived'
 import {
   defaultPage,
   exerciseTypeById,
@@ -124,15 +125,18 @@ export function usePageNavigation({
   }
   /** Prochain type du même thème (même logique que « + Exercice »). */
   const createNextExerciseBlock = (): ExerciseBlock | null => {
-    const currentTypes = typesForTopic(
-      activeBlock.topic,
-      activePage.domain === 'français' ? (activeBlock.track ?? 'voc') : undefined,
-    )
+    const currentTypes =
+      activePage.domain === 'grammaire'
+        ? typeChoicesForBlock(activePage.domain, activeBlock)
+        : typesForTopic(
+            activeBlock.topic,
+            activePage.domain === 'français' ? (activeBlock.track ?? 'voc') : undefined,
+          )
     const currentIdx = currentTypes.findIndex((type) => type.id === activeBlock.exerciseType)
     const nextType =
-      currentTypes[(currentIdx + 1) % Math.max(currentTypes.length, 1)] ??
-      currentTypes[0] ??
-      firstTypeFor(activePage.domain, activeBlock.topic, activeBlock.track)
+      currentIdx >= 0
+        ? currentTypes[Math.min(currentIdx + 1, currentTypes.length - 1)]
+        : currentTypes[0] ?? firstTypeFor(activePage.domain, activeBlock.topic, activeBlock.track)
     if (!nextType) return null
     const fields = applyType(nextType, activeBlock)
     const isSoutienNext = nextType.topic.startsWith('soutien-')

@@ -1,3 +1,4 @@
+import { WorksheetImage } from '@/components/WorksheetImage'
 import type { LogiquePuzzle } from '@/logique/types'
 import type { MathItem, PreviewMode } from '@/math/types'
 
@@ -20,7 +21,7 @@ function ChoiceCell({
 }) {
   return (
     <li className={`logique-choice${isAnswer ? ' is-answer' : ''}`}>
-      <img className="logique-img" src={src} alt="" />
+      <WorksheetImage className="logique-img" src={src} alt="" />
       <span className="logique-choice-meta">
         <span className="logique-choice-lab">{lab}.</span>
         <CheckBox checked={isAnswer} />
@@ -46,7 +47,7 @@ export function LogiqueBlock({ item, mode }: { item: MathItem; mode: PreviewMode
       <div className="logique-block is-case-intrus">
         {src ? (
           <div className="logique-stem is-single">
-            <img className="logique-img" src={src} alt="" />
+            <WorksheetImage className="logique-img" src={src} alt="" />
           </div>
         ) : null}
       </div>
@@ -59,7 +60,7 @@ export function LogiqueBlock({ item, mode }: { item: MathItem; mode: PreviewMode
       <div className="logique-block is-rotation">
         <ul className="logique-rotation-row">
           <li className="logique-model">
-            {model ? <img className="logique-img" src={model} alt="" /> : null}
+            {model ? <WorksheetImage className="logique-img" src={model} alt="" /> : null}
           </li>
           {p.choices.map((src, i) => {
             const lab = p.choiceLabels?.[i] ?? String.fromCharCode(65 + i)
@@ -83,7 +84,7 @@ export function LogiqueBlock({ item, mode }: { item: MathItem; mode: PreviewMode
       <div className={`logique-block is-matrice${p.mode === 'case-manquante' ? ' is-case-manquante' : ''}`}>
         <ul className="logique-matrice-grid">
           <li className="logique-model">
-            {model ? <img className="logique-img" src={model} alt="" /> : null}
+            {model ? <WorksheetImage className="logique-img" src={model} alt="" /> : null}
           </li>
           {p.choices.map((src, i) => {
             const lab = p.choiceLabels?.[i] ?? String.fromCharCode(65 + i)
@@ -107,7 +108,7 @@ export function LogiqueBlock({ item, mode }: { item: MathItem; mode: PreviewMode
       <div className="logique-block is-assemblage">
         <div className="logique-assemblage-stack">
           <div className="logique-model">
-            {model ? <img className="logique-img" src={model} alt="" /> : null}
+            {model ? <WorksheetImage className="logique-img" src={model} alt="" /> : null}
           </div>
           <ul className="logique-assemblage-choices">
             {p.choices.map((src, i) => {
@@ -133,7 +134,7 @@ export function LogiqueBlock({ item, mode }: { item: MathItem; mode: PreviewMode
         <ul className={`logique-stem${p.stem.length === 1 ? ' is-single' : ''}`}>
           {p.stem.map((src, i) => (
             <li key={`s-${i}`} className="logique-img-wrap">
-              <img className="logique-img" src={src} alt="" />
+              <WorksheetImage className="logique-img" src={src} alt="" />
             </li>
           ))}
         </ul>

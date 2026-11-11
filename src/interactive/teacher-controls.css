@@ -1,0 +1,89 @@
+.ci-app .ci-setup-guard { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--ci-line); }
+.ci-app .ci-setup-guard label { display: flex; align-items: center; gap: 10px; font-weight: 700; }
+.ci-app .ci-setup-guard p { font-size: 14px; color: var(--ci-muted); margin: 10px 0 0; }
+.ci-app .ci-class-controls { display: grid; grid-template-columns: minmax(88px, 1fr) minmax(220px, auto) minmax(88px, 1fr); column-gap: 12px; }
+.ci-app .ci-class-controls > .ci-primary { grid-column: 2; grid-row: 1; }
+.ci-app .ci-control-start, .ci-app .ci-control-end { display: flex; align-items: center; gap: 6px; grid-row: 1; }
+.ci-app .ci-control-start { grid-column: 1; justify-self: end; }
+.ci-app .ci-control-end { grid-column: 3; justify-self: start; }
+.ci-app .ci-control-start .ci-teacher-action, .ci-app .ci-control-end .ci-teacher-action { width: 44px; height: 44px; min-height: 44px; padding: 8px; border-radius: 12px; flex-shrink: 0; }
+.ci-app .ci-teacher-action[aria-pressed='true'] { background: var(--ci-ink); color: var(--ci-paper); border-color: var(--ci-ink); }
+.ci-app .ci-header [aria-disabled='true'] { opacity: .55; }
+.ci-app .ci-reveal-button { touch-action: none; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; }
+.ci-app .ci-hold-ring { width: 24px; height: 24px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 2; transform: rotate(-90deg); }
+.ci-app .ci-hold-ring circle:first-child { opacity: .3; }
+.ci-app .ci-hold-progress { stroke-dasharray: 1; stroke-dashoffset: 1; }
+.ci-app .ci-holding .ci-hold-progress { animation: ci-hold-to-reveal 600ms linear forwards; }
+@keyframes ci-hold-to-reveal { to { stroke-dashoffset: 0; } }
+.ci-app .ci-teacher-confirm { width: min(500px, calc(100vw - 24px)); max-height: calc(100dvh - 24px); overflow: auto; border: 1px solid var(--ci-line); border-radius: 18px; padding: 24px; background: var(--ci-paper); color: var(--ci-ink); }
+.ci-app .ci-teacher-confirm::backdrop { background: rgb(24 34 56 / .45); }
+.ci-app .ci-teacher-confirm h2 { font-size: 24px; }
+.ci-app .ci-teacher-confirm .ci-toolbar { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; }
+.ci-app .ci-header button.ci-progress { min-height: 0; padding: 4px; border: 1px solid transparent; border-radius: 8px; background: transparent; color: var(--ci-ink); }
+.ci-app .ci-header button.ci-progress:hover { border-color: var(--ci-accent); }
+.ci-app .ci-question-navigator ol { display: grid; gap: 8px; list-style: none; padding: 0; margin: 16px 0; max-height: 48dvh; overflow: auto; }
+.ci-app .ci-question-navigator li button { width: 100%; display: grid; gap: 4px; text-align: left; justify-content: stretch; }
+.ci-app .ci-question-navigator li button[aria-current='step'] { border: 2px solid var(--ci-accent); }
+.ci-app .ci-question-navigator li span { font-size: 14px; font-weight: 400; overflow-wrap: anywhere; }
+.ci-app .ci-question-navigator li small { color: var(--ci-muted); }
+.ci-app .ci-attempt-history section { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--ci-line); }
+.ci-app .ci-presets { margin: 20px 0; }
+.ci-app .ci-preset-options, .ci-app .ci-preset-form { display: flex; flex-wrap: wrap; align-items: end; gap: 12px; margin: 16px 0; }
+.ci-app .ci-preset-options label, .ci-app .ci-preset-form label { display: grid; gap: 6px; max-width: 100%; }
+.ci-app .ci-preset-options label:has(input[type='checkbox']) { display: flex; align-items: center; }
+.ci-app .ci-preset-form input[type='text'] { min-height: 44px; width: min(280px, 100%); border: 1px solid var(--ci-line); border-radius: 8px; padding: 8px; font: inherit; color: var(--ci-ink); background: var(--ci-paper); }
+.ci-app .ci-presets select { max-width: 100%; min-height: 44px; }
+.ci-app .ci-preset-order { max-height: 320px; overflow: auto; padding: 0; list-style: none; }
+.ci-app .ci-preset-order li { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 8px; border-bottom: 1px solid var(--ci-line); }
+.ci-app .ci-preset-order li > span { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.ci-app .ci-preset-order li > div { display: flex; gap: 4px; }
+@media screen and (max-width: 700px) {
+  .ci-app.ci-playing .ci-class-controls { grid-template-columns: 84px minmax(0, 1fr) 84px; column-gap: 4px; }
+  .ci-app.ci-playing .ci-class-controls > .ci-primary { min-width: 0; width: 100%; min-height: 44px; padding: 6px 8px; gap: 6px; font-size: 14px; line-height: 1.2; }
+  .ci-app .ci-control-start, .ci-app .ci-control-end { gap: 4px; }
+  .ci-app .ci-control-start .ci-teacher-action, .ci-app .ci-control-end .ci-teacher-action { width: 40px; height: 44px; min-height: 44px; padding: 8px; }
+  .ci-app .ci-hold-ring { width: 20px; height: 20px; }
+  .ci-app .ci-teacher-confirm { padding: 20px; }
+}
+.ci-app .ci-header .ci-audio { flex-direction: column; gap: 2px; }
+.ci-app .ci-audio-caption { display: flex; justify-content: space-between; gap: 12px; width: 100%; font-size: 12px; line-height: 1.3; font-variant-numeric: tabular-nums; }
+.ci-app .ci-audio audio[aria-disabled="true"] { opacity: .65; }
+.ci-app .ci-audio-quota { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 4px; font-size: 12px; }
+.ci-app .ci-audio-quota button { min-height: 44px; padding: 4px 10px; font-size: 13px; }
+.ci-app .ci-archive-list { list-style: none; margin: 12px 0; padding: 0; }
+.ci-app .ci-archive-list > li { padding: 16px 0; border-bottom: 1px solid var(--ci-line); }
+.ci-app .ci-archive-list time { display: block; margin: 4px 0 8px; }
+.ci-app .ci-import-file { display: grid; gap: 4px; min-width: 0; }
+.ci-app .ci-import-file input { max-width: 100%; min-height: 44px; }
+.ci-app .ci-local-erase { margin-top: 24px; }
+.ci-app .ci-summary-print-only { display: none; }
+@media print {
+  body:has(.ci-summary), body:has(.ci-summary) #root, .ci-app:has(.ci-summary) { height: auto !important; overflow: visible !important; display: block !important; }
+  .ci-app.ci-playing > .ci-summary { height: auto !important; overflow: visible !important; padding: 10mm !important; }
+  .ci-app .ci-summary-print-only { display: block; }
+  .ci-summary .ci-toolbar, .ci-summary .ci-teacher-marks, .ci-summary .ci-observations, .ci-summary .ci-vote-summary { display: none !important; }
+  .ci-summary .ci-summary-questions > p { break-inside: avoid; }
+}
+.ci-app .ci-word-sequence { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 12px 0; }
+.ci-app .ci-word-sequence button { display: flex; flex-direction: column; justify-content: center; min-height: 72px; padding: 6px 12px; background: var(--ci-soft); border: 2px solid var(--ci-line); font-size: clamp(24px, 2.8vw, 44px); overflow-wrap: anywhere; touch-action: manipulation; }
+.ci-app .ci-word-sequence button small { font-size: 12px; }
+.ci-app .ci-word-sequence button[aria-pressed="true"] { border-color: var(--ci-accent); box-shadow: 0 0 0 2px var(--ci-accent); }
+.ci-app .ci-word-order > p { margin: 0; font-size: 16px; }
+.ci-app .ci-word-undo { min-height: 44px; }
+@media (min-width: 901px) {
+  .ci-app .ci-word-session .ci-model-answer { padding: 12px 18px; }
+  .ci-app .ci-word-session .ci-model-answer p { margin: 8px 0; }
+}
+.ci-app .ci-answer:not(.ci-answer-key):not(.ci-answer-muted) { border: 3px solid #182238; }
+.ci-app .ci-answer.ci-answer-muted { border-color: #657084; }
+.ci-app .ci-answer.ci-chosen:not(.ci-answer-key):not(.ci-answer-muted), .ci-app .ci-answer:focus-visible { outline: 4px solid #182238; outline-offset: 3px; box-shadow: 0 0 0 3px #fff; }
+@media print {
+  .ci-ink-saving .ci-paper-card:nth-child(1) { --ci-paper-pattern: radial-gradient(#aaa .35mm, transparent .45mm); --ci-paper-pattern-size: 4mm 4mm; }
+  .ci-ink-saving .ci-paper-card:nth-child(2) { --ci-paper-pattern: repeating-linear-gradient(45deg, transparent 0 3mm, #bbb 3mm 3.3mm); }
+  .ci-ink-saving .ci-paper-card:nth-child(3) { --ci-paper-pattern: linear-gradient(#bbb .25mm, transparent .25mm), linear-gradient(90deg, #bbb .25mm, transparent .25mm); --ci-paper-pattern-size: 5mm 5mm; }
+  .ci-ink-saving .ci-paper-card:nth-child(4) { --ci-paper-pattern: repeating-radial-gradient(ellipse at 50% 100%, transparent 0 1.7mm, #aaa 1.8mm 2mm, transparent 2.1mm 4mm); --ci-paper-pattern-size: 10mm 5mm; }
+  .ci-ink-saving .ci-paper-card:nth-child(5) { --ci-paper-pattern: conic-gradient(#ddd 25%, white 0 50%, #ddd 0 75%, white 0); --ci-paper-pattern-size: 8mm 8mm; }
+  .ci-ink-saving .ci-paper-card:nth-child(6) { --ci-paper-pattern: linear-gradient(#eee, #eee); }
+  .ci-app .ci-ink-saving .ci-paper-card { background: #fff !important; background-image: var(--ci-paper-pattern) !important; background-size: var(--ci-paper-pattern-size, auto) !important; color: #000 !important; }
+  .ci-app .ci-ink-saving .ci-card-badge { color: #000 !important; background: #fff; border-radius: 3mm; padding: 1mm; }
+}

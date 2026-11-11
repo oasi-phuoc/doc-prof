@@ -7,7 +7,14 @@
     "dev": "vite",
     "build": "git config lfs.url https://github.com/oasi-phuoc/doc-prof.git/info/lfs >/dev/null 2>&1; git lfs pull || true; tsc -b && vite build",
     "lint": "oxlint",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "node --test --test-concurrency=1 tests/interactive/*.test.mjs",
+    "interactive:inventory": "node scripts/interactive-inventory.mjs",
+    "test:interactive:browser": "node tests/interactive/browser.mjs",
+    "test:interactive:classroom": "node tests/interactive/classroom-browser.mjs",
+    "test:interactive:media": "node tests/interactive/media-browser.mjs",
+    "test:interactive:a4": "node tests/interactive/a4-regression.mjs",
+    "test:interactive:saved": "node tests/interactive/saved-fiches.mjs"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",
@@ -25,6 +32,7 @@
     "@types/react-dom": "^19.2.7",
     "@vitejs/plugin-react": "^6.1.1",
     "oxlint": "^1.81.0",
+    "playwright": "^1.65.0",
     "typescript": "~6.0.2",
     "vite": "^8.3.0"
   }

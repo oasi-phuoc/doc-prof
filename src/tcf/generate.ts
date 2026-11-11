@@ -19,6 +19,8 @@ import {
   type TcfSlotMeta,
 } from './catalog'
 import { isAssociationAnnonce } from './association-documents'
+import { tcfAudioSrc } from './media'
+import { threeThemeImageSrc } from './three-themes-images'
 import { limitTcfCeQuestions } from './ce-questions'
 import { tcfCoConsigneForSlot, tcfCoConsigneForType } from './consignes'
 import {
@@ -33,6 +35,7 @@ import { filledForms, isTcfBaremeConsigne, resolveQuestionForm } from './formes'
 import { tcfBank, tcfExerciseById, tcfSlotBank } from './loader'
 import { melangerChoix } from './melanger'
 import { tcfPeSlotDefaults } from './pe-defaults'
+import { peEvaluation } from './pe-evaluation'
 import { TCF_PO_GROUPS, tcfGroupId } from './sources'
 import { emptyTcfExercise, TCF_LETTRES, TCF_LETTRES_SITUATIONS, tcfExerciseId } from './templates'
 import type {
@@ -120,6 +123,16 @@ function defaultQuestionForm(
   return q.type_reponse
 }
 
+/** Piste du bandeau « Audio N » (index 1-based). */
+function coFrameAudioSrc(ex: TcfExercise, audioNumber: number): string | undefined {
+  if (ex.competence !== 'CO') return undefined
+  const support = ex.support as { audio?: string; audios?: string[] }
+  const list = (support.audios ?? []).map((src) => src.trim()).filter(Boolean)
+  const ref = list.length > 0 ? list[Math.max(0, audioNumber - 1)] : support.audio?.trim()
+  const src = ref ? tcfAudioSrc(ref) : ''
+  return src || undefined
+}
+
 function questionItem(
   q: TcfQuestion,
   numero: number,
@@ -129,6 +142,7 @@ function questionItem(
   exerciseId?: string,
   /** Cadre « Audio N » (six audios courts). */
   audioFrame = false,
+  audioSrc?: string,
 ): MathItem {
   const filled = filledForms(q)
   const active =
@@ -136,7 +150,8 @@ function questionItem(
       ? activeOverride
       : defaultQuestionForm(q, filled, competence, exerciseId)
   const resolved = resolveQuestionForm(q, active)
-  const audioLabel = resolved.audio != null ? `Audio ${resolved.audio}` : undefined
+  const audioNumber = resolved.audio ?? (audioFrame ? numero : undefined)
+  const audioLabel = audioNumber != null ? `Audio ${audioNumber}` : undefined
   const variants = questionFormVariants(q, filled, rng)
   const formSelect: TcfFormSelect | undefined =
     filled.length > 0
@@ -154,6 +169,7 @@ function questionItem(
         reponseModele: variant.reponseModele,
         audioLabel,
         audioFrame: audioFrame && Boolean(audioLabel),
+        audioSrc: audioFrame && audioLabel ? audioSrc : undefined,
         image: resolved.image,
         images: resolved.images,
         tableau: variant.tableau,
@@ -174,6 +190,7 @@ function questionItem(
       choix: variant.choix ?? [],
       audioLabel,
       audioFrame: audioFrame && Boolean(audioLabel),
+      audioSrc: audioFrame && audioLabel ? audioSrc : undefined,
       image: resolved.image,
       images: resolved.images,
       formSelect,
@@ -263,10 +280,12 @@ function audioCadreItems(
     })
     const answer = inner.map((q) => q.answer).filter(Boolean).join(' · ')
     const points = inner.reduce((sum, q) => sum + (q.points ?? 0), 0) || undefined
+    const audioSrc = coFrameAudioSrc(ex, group.audio)
     return tcfItem(
       {
         kind: 'audio_cadre',
         audioLabel: `Audio ${group.audio}`,
+        audioSrc,
         questions: inner,
       },
       true,
@@ -327,7 +346,16 @@ export function tcfExerciseItems(
       return [
         support(),
         ...ex.questions.map((q, i) =>
-          questionItem(q, i + 1, rng, formModes?.[i + 1], ex.competence, ex.id, framed),
+          questionItem(
+            q,
+            i + 1,
+            rng,
+            formModes?.[i + 1],
+            ex.competence,
+            ex.id,
+            framed,
+            framed ? coFrameAudioSrc(ex, q.audio ?? i + 1) : undefined,
+          ),
         ),
       ]
     }
@@ -373,6 +401,8 @@ export function tcfExerciseItems(
             lettre: TCF_LETTRES_SITUATIONS[i] ?? String(i + 1),
             image: s.image_pending ? '' : s.image,
             dialogue: s.dialogue,
+            audioSrc: s.dialogue != null && ((ex.support.audios?.length ?? 0) > 1 || ex.support.nb_dialogues === 1)
+              ? coFrameAudioSrc(ex, s.dialogue) : undefined,
           })),
         }),
       ]
@@ -440,7 +470,7 @@ export function tcfExerciseItems(
       }
       const themes = shuffle(rng, pool)
         .slice(0, 3)
-        .map((t) => ({ ...t, images: shuffle(rng, t.images.filter((src) => src.trim())).slice(0, 4) }))
+        .map((t) => ({ ...t, images: shuffle(rng, t.images.filter((src) => src.trim()).map(threeThemeImageSrc)).slice(0, 4) }))
       return [tcfItem({ kind: 'support', exercise: { ...ex, support: { themes } } }, true, '', ex.points)]
     }
     case 'entretien':
@@ -687,7 +717,10 @@ export function tryGenerateTcfBlock(
         (slot?.competence === 'CO' ? tcfCoConsigneForSlot(slot.numero) : undefined)
       : undefined
   const customConsigne = config.tcfExercise != null ? ex.consigne?.trim() : undefined
+  // PE : la situation (« Vous allez en vacances… ») est le texte élève, pas la grille.
+  const peConsigne = ex.competence === 'PE' ? ex.consigne?.trim() : undefined
   const instruction =
+    peConsigne ||
     customConsigne ||
     typeConsigne ||
     tcfTypeMeta(ex.competence, ex.type_exercice)?.instruction ||
@@ -695,6 +728,8 @@ export function tryGenerateTcfBlock(
   let items = tcfExerciseItems(ex, rng, config.tcfFormModes).map((item) => ({
     ...item,
     tcfExerciseId: ex.id,
+    ...(config.domain === 'tcf-csc' && ex.competence === 'CE' && item.tcf?.kind === 'support'
+      ? { tcf: { ...item.tcf, ceFormat: config.tcfCeFormat ?? 'texte' } } : {}),
   }))
   // PE : points = total de l’exercice (un seul barème), pas par question.
   if (ex.competence === 'PE' && config.pointsPerQuestion != null) {
@@ -709,10 +744,12 @@ export function tryGenerateTcfBlock(
       return { ...item, points: item.points === 0 ? 0 : 0 }
     })
   }
-  return {
-    instruction,
-    items,
+  if (ex.competence === 'PE' && items.length) {
+    const last = items.length - 1
+    const total = config.pointsPerQuestion ?? ex.points ?? (ex.type_exercice === 'formulaire' ? 5 : 10)
+    items[last] = { ...items[last], tcfPeEvaluation: peEvaluation(ex, total) }
   }
+  return { instruction, items }
 }
 
 /** Page 1 : informations du test (non notée). */
@@ -755,6 +792,27 @@ export function tcfPage(
 /** Les exemples de démonstration (`tcf-a0a1-ce-001`) ne viennent d’aucun test. */
 function numberedBank(n: TcfNiveau, slot: TcfSlotMeta) {
   return tcfSlotBank(n, slot).filter((ex) => !/^tcf-[a-z0-9]+-(?:co|ce|pe|po)-\d{3}$/.test(ex.id))
+}
+
+/**
+ * Dernier exercice PO (CSC / CFR), au rafraîchissement :
+ * seulement les thèmes en images et les interactions.
+ */
+export function nextLastPoExercise(
+  niveau: TcfNiveau,
+  seed: number,
+  avoidIds: readonly string[] = [],
+): { id: string; scenario: string } | undefined {
+  const slot = TCF_SLOTS.find((entry) => entry.typeId === 'tcf-po')
+  if (!slot) return undefined
+  const avoid = new Set(avoidIds)
+  const pool = numberedBank(niveau, slot).filter(
+    (ex) => ex.type_exercice === 'trois_themes' || ex.type_exercice === 'image_interaction',
+  )
+  if (pool.length === 0) return undefined
+  const fresh = pool.filter((ex) => !avoid.has(ex.id))
+  const chosen = pick(createRng(seed), fresh.length > 0 ? fresh : pool)
+  return { id: chosen.id, scenario: tcfGroupId(chosen) }
 }
 
 function appendNiveauExercisePages(

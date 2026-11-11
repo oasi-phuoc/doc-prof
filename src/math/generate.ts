@@ -1,3 +1,6 @@
+import { paginateCePosters } from '@/tcf/ce-poster-pages'
+import { ceArtFor } from '@/tcf/ce-art'
+import { withTcfInformationTotals } from '@/tcf/information-totals'
 /**
  * Orchestrateur de fiches : buildPage / buildWorksheets.
  * Tirage maths purs → `./generate-items` ; colonnes → `./column-arith`.
@@ -49,6 +52,7 @@ import type {
   WorksheetPage,
 } from './types'
 import { generateItems } from './generate-items'
+import { headingForSlice } from './page-break-heading'
 
 /** CE instructions multi-docs → un bloc Exercice par document. */
 function expandTcfInstructionDocuments(page: PageConfig, seed: number): PageConfig {
@@ -60,6 +64,10 @@ function expandTcfInstructionDocuments(page: PageConfig, seed: number): PageConf
     const local = block.contentSeed ?? 0
     const rng = createRng(seed + index * 10007 + local)
     const ex = resolveTcfExercise(pageAsConfig(page, block), rng)
+    if (page.domain === 'tcf-csc' && block.tcfCeFormat === 'image' && ex?.competence === 'CE' && ceArtFor(ex)) {
+      out.push(block)
+      return
+    }
     const parts = ex ? splitMultiDocumentAnnonce(ex) : null
     if (!parts) {
       out.push(block)
@@ -424,6 +432,10 @@ export function buildPage(
     const items = rawItems.map((item) => sanitizeItemNumberNoise(item as Record<string, unknown>) as MathItem)
     const libreGivens = givensFromEvaluerLibre(rawItems)
     const corrigeAudios = collectCorrigeAudioSrcs(items, result.document?.audioSrc)
+    const tcfPageBreakAfter =
+      block.tcfPageBreakAfter ??
+      page.tcfPageBreakAfter ??
+      (isTheory ? items.map((item) => Boolean(item.theoryPageBreakAfter)) : undefined)
     return {
       exerciseIndex,
       title: isTpmConsignes
@@ -446,7 +458,7 @@ export function buildPage(
       inlineBlankPx: block.inlineBlankPx,
       oralAnswerModes: block.oralAnswerModes,
       tcfFormModes: block.tcfFormModes,
-      tcfPageBreakAfter: block.tcfPageBreakAfter,
+      tcfPageBreakAfter,
       bankQuestionCap: result.bankQuestionCap,
       corrigeAudios: corrigeAudios.length ? corrigeAudios : undefined,
     }
@@ -523,7 +535,7 @@ function collectSoutienReservedWords(pages: PageConfig[], seed: number): {
   return { reserved: [...reserved], type1Words, type5Words }
 }
 
-export function buildWorksheets(pages: PageConfig[], seed: number): WorksheetPage[] {
+export function buildWorksheets(pages: PageConfig[], seed: number, defaultPoints = 1): WorksheetPage[] {
   let exerciseNo = 1
   const out: WorksheetPage[] = []
   const { reserved, type1Words, type5Words } = collectSoutienReservedWords(pages, seed)
@@ -619,6 +631,12 @@ export function buildWorksheets(pages: PageConfig[], seed: number): WorksheetPag
       return
     }
 
+    const cePosterPages = paginateCePosters(worksheet)
+    if (cePosterPages) {
+      out.push(...cePosterPages.map((sheet) => ({ ...sheet, configIndex: index })))
+      return
+    }
+
     // TPF / TCF : sauts de page manuels après certaines questions (marge « Page »).
     if (isTpfFamilyDomain(page.domain)) {
       const sourceBlock = worksheet.blocks[0]
@@ -644,21 +662,11 @@ export function buildWorksheets(pages: PageConfig[], seed: number): WorksheetPag
           const offset = indexes[0] ?? 0
           out.push({
             ...worksheet,
-            title: part === 0 ? worksheet.title : `${worksheet.title} — suite`,
-            instruction:
-              part === 0 ? worksheet.instruction : 'Continuez. Répondez aux questions suivantes.',
             items: sliceItems,
             blocks: [
               {
                 ...sourceBlock,
-                title:
-                  part === 0
-                    ? sourceBlock.title
-                    : `${sourceBlock.title.replace(/ \(suite\)$/, '')} (suite)`,
-                instruction:
-                  part === 0
-                    ? sourceBlock.instruction
-                    : 'Continuez. Répondez aux questions suivantes.',
+                ...headingForSlice(sourceBlock, offset, items),
                 items: sliceItems,
                 itemOffset: offset,
                 // Tableaux complets : les callbacks UI rajoutent itemOffset.
@@ -667,6 +675,7 @@ export function buildWorksheets(pages: PageConfig[], seed: number): WorksheetPag
               },
             ],
             configIndex: index,
+            // Même bouton de page : feuille physique en plus, pas un onglet « suite ».
             isContinuation: part > 0,
           })
         })
@@ -678,15 +687,19 @@ export function buildWorksheets(pages: PageConfig[], seed: number): WorksheetPag
     if (isTheory) {
       const sourceBlock = worksheet.blocks[0]
       const items = sourceBlock?.items ?? worksheet.items
-      const followBreaks = page.continueOnNextPage !== false
+      const breaks = sourceBlock?.tcfPageBreakAfter ?? page.tcfPageBreakAfter
       const segments: MathItem[][] = [[]]
-      for (const item of items) {
+      items.forEach((item, itemIndex) => {
         if (item.theoryBlock?.kind === 'page') {
-          if (followBreaks) segments.push([])
-          continue
+          if (page.continueOnNextPage !== false) segments.push([])
+          return
         }
         segments[segments.length - 1]!.push(item)
-      }
+        if (
+          itemIndex < items.length - 1 &&
+          (breaks?.[itemIndex] ?? item.theoryPageBreakAfter ?? false)
+        ) segments.push([])
+      })
       const sheets = segments.filter((slice) => slice.length > 0)
       if (!sourceBlock || sheets.length <= 1) {
         const kept = sheets[0] ?? items.filter((item) => item.theoryBlock?.kind !== 'page')
@@ -699,20 +712,21 @@ export function buildWorksheets(pages: PageConfig[], seed: number): WorksheetPag
         })
         return
       }
-      const suiteInstruction = 'Suite de la théorie.'
+      const keptItems = sheets.flat()
+      let itemStart = 0
       sheets.forEach((sliceItems, part) => {
+        const offset = itemStart
+        itemStart += sliceItems.length
         out.push({
           ...worksheet,
-          title: part === 0 ? worksheet.title : `${worksheet.title} — suite`,
-          instruction: part === 0 ? worksheet.instruction : suiteInstruction,
           items: sliceItems,
           blocks: [
             {
               ...sourceBlock,
-              title: part === 0 ? sourceBlock.title : `${sourceBlock.title.replace(/ \(suite\)$/, '')} (suite)`,
-              instruction: part === 0 ? sourceBlock.instruction : suiteInstruction,
+              ...headingForSlice(sourceBlock, offset, keptItems),
               document: part === 0 ? sourceBlock.document : undefined,
               items: sliceItems,
+              itemOffset: offset,
             },
           ],
           configIndex: index,
@@ -729,9 +743,6 @@ export function buildWorksheets(pages: PageConfig[], seed: number): WorksheetPag
       return
     }
 
-    const suiteInstruction = 'Continuez. Répondez aux questions suivantes.'
-    const suiteTitleSuffix = 'Suite des questions.'
-
     let offset = 0
     let part = 0
     while (offset < totalItems) {
@@ -739,10 +750,10 @@ export function buildWorksheets(pages: PageConfig[], seed: number): WorksheetPag
       const headBlocks = worksheet.blocks
         .map((block) => ({
           ...block,
-          title: part === 0 ? block.title : `${block.title.replace(/ \(suite\)$/, '')} (suite)`,
-          instruction: part === 0 ? block.instruction : suiteInstruction,
+          ...headingForSlice(block, offset, block.items),
           document: part === 0 ? block.document : undefined,
           items: block.items.slice(offset, sliceEnd),
+          itemOffset: offset,
           oralAnswerModes: block.oralAnswerModes?.slice(offset, sliceEnd),
           problemDraftGrids: block.problemDraftGrids?.slice(offset, sliceEnd),
         }))
@@ -750,8 +761,6 @@ export function buildWorksheets(pages: PageConfig[], seed: number): WorksheetPag
 
       out.push({
         ...worksheet,
-        title: part === 0 ? worksheet.title : `${worksheet.title} — suite`,
-        instruction: part === 0 ? worksheet.instruction : suiteTitleSuffix,
         items: headBlocks.flatMap((block) => block.items),
         blocks: headBlocks,
         configIndex: index,
@@ -762,5 +771,5 @@ export function buildWorksheets(pages: PageConfig[], seed: number): WorksheetPag
     }
   })
 
-  return out
+  return withTcfInformationTotals(out, defaultPoints)
 }

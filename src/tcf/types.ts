@@ -140,7 +140,7 @@ export type TcfCeExercise = TcfCeSms | TcfCeEmail | TcfCeAnnonce
 
 export type TcfImageACocher = { id: string; image: string; correct: boolean; fixe?: boolean }
 
-export type TcfCoImages = TcfBase<'CO', 'images_a_reconnaitre', { audio: string }> & {
+export type TcfCoImages = TcfBase<'CO', 'images_a_reconnaitre', { audio: string; transcription?: string }> & {
   melanger?: boolean
   /** par_image : 1 point par image juste ; tout_ou_rien : les 5 justes. */
   score?: 'par_image' | 'tout_ou_rien'
@@ -295,7 +295,7 @@ export type TcfPoMotsTheme = TcfBase<
   'mots_theme',
   { theme: string; mots: string[]; exemples_questions: string[]; audio?: string }
 >
-/** Entretien dirigé : questions sur la fiche, échange examinateur / candidat au corrigé. */
+/** Entretien dirigé : questions possibles affichées au corrigé. */
 export type TcfPoEntretien = TcfBase<
   'PO',
   'entretien',
@@ -392,7 +392,8 @@ export type TcfCadreQuestion =
     }
 
 export type TcfSheetItem =
-  | { kind: 'support'; exercise: TcfExercise }
+  | { kind: 'ce_association_answers'; exercise: TcfCeAnnonce }
+  | { kind: 'support'; exercise: TcfExercise; ceFormat?: 'texte' | 'image' }
   | {
       kind: 'qcm'
       numero: number
@@ -404,6 +405,8 @@ export type TcfSheetItem =
       audioLabel?: string
       /** Cadre autour de la question avec pastille Audio N (six courts). */
       audioFrame?: boolean
+      /** Piste du bandeau, lue dans le corrigé. */
+      audioSrc?: string
       /** Forcer l’affichage du n° dans un cadre Audio (ex. 2 : 2 Q / audio). */
       showNumero?: boolean
       image?: string
@@ -422,6 +425,8 @@ export type TcfSheetItem =
       audioLabel?: string
       /** Cadre autour de la question avec pastille Audio N (six courts). */
       audioFrame?: boolean
+      /** Piste du bandeau, lue dans le corrigé. */
+      audioSrc?: string
       /** Forcer l’affichage du n° dans un cadre Audio (ex. 2 : 2 Q / audio). */
       showNumero?: boolean
       image?: string
@@ -433,12 +438,14 @@ export type TcfSheetItem =
       /** Cadre Audio N : plusieurs questions sous le même bandeau (trois moyens, audio complet). */
       kind: 'audio_cadre'
       audioLabel: string
+      /** Piste du bandeau, lue dans le corrigé. */
+      audioSrc?: string
       questions: TcfCadreQuestion[]
     }
   | {
       kind: 'association'
       nbDialogues: number
-      situations: Array<{ lettre: string; image: string; dialogue: number | null }>
+      situations: Array<{ lettre: string; image: string; dialogue: number | null; audioSrc?: string }>
     }
   | { kind: 'grille'; grille: TcfGrille }
   | {
@@ -474,4 +481,4 @@ export type TcfSheetItem =
       bulles?: boolean
     }
   | { kind: 'vide'; message: string }
-  | { kind: 'informations'; niveau: TcfNiveau }
+  | { kind: 'informations'; niveau: TcfNiveau; pointsByCompetence?: Record<TcfCompetence, number> }

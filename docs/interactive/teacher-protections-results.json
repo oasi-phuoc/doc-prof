@@ -1,0 +1,35 @@
+[
+  {
+    "viewport": "360x640",
+    "hold": "tap, short hold and pointer cancellation ignored; mouse and Enter holds reveal after 600 ms",
+    "retract": "correction hidden without duplicate result; expires after 10 seconds",
+    "lock": "teacher commands and keyboard blocked; lock and correction survive reload; fullscreen exit stays available",
+    "confirmations": "skip and finish cancel safely; countdown suspended; early finish preserves corrected question and marks nine skipped",
+    "layout": "all controls and cards fit",
+    "errors": []
+  },
+  {
+    "viewport": "390x700",
+    "hold": "tap, short hold and pointer cancellation ignored; mouse and Enter holds reveal after 600 ms",
+    "retract": "correction hidden without duplicate result; expires after 10 seconds",
+    "lock": "teacher commands and keyboard blocked; lock and correction survive reload; fullscreen exit stays available",
+    "confirmations": "skip and finish cancel safely; countdown suspended; early finish preserves corrected question and marks nine skipped",
+    "layout": "all controls and cards fit",
+    "errors": []
+  },
+  {
+    "viewport": "1366x768",
+    "hold": "tap, short hold and pointer cancellation ignored; mouse and Enter holds reveal after 600 ms",
+    "retract": "correction hidden without duplicate result; expires after 10 seconds",
+    "lock": "teacher commands and keyboard blocked; lock and correction survive reload; fullscreen exit stays available",
+    "confirmations": "skip and finish cancel safely; countdown suspended; early finish preserves corrected question and marks nine skipped",
+    "layout": "all controls and cards fit",
+    "errors": []
+  },
+  {
+    "solo": "automatic answer, correction and next question retained; teacher protections absent even with hold preference saved"
+  },
+  {
+    "paired": "confirmation explicitly covers both audio questions; cancel retains them; confirm skips both"
+  }
+]

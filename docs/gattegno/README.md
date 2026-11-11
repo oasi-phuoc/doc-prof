@@ -4,9 +4,13 @@ Les thèmes de phrases sont désormais : **Simple**, **Déterminants**, **Verbes
 
 Chaque exercice propose **Positive / Négative / Mixte**. Le réglage est propre à l’exercice, conservé lors d’un changement de format et propagé aux exercices/pages ajoutés. Le mode mixte équilibre les deux formes à une phrase près dès qu’au moins deux phrases sont demandées. Les anciennes recettes de négation sont migrées vers le thème correspondant avec la forme négative sélectionnée.
 
+## Groupes de verbes
+
+Le générateur propose **1er**, **2e**, **3e** et **Mixte**. Les verbes en `-er` (sauf *aller*) sont classés au 1er groupe ; *finir* et *choisir* sont les modèles actuellement disponibles au 2e ; les autres verbes sont au 3e. **Mixte** réunit les trois groupes. Un même verbe ne figurant qu’une fois par fiche, le 2e groupe est actuellement plafonné au nombre de ses deux modèles disponibles.
+
 ## Quotas des combinaisons
 
-Chaque thème et chaque groupe de verbes (« Simple » et « Autres ») dispose désormais d’au moins **525 constructions affirmatives**, avec leurs **525 formes négatives**. Les 16 catégories sont séparées dans [combinations.json](combinations.json), avec les phrases complètes.
+Chaque thème et chaque banque source historique (`er` et `autres`) dispose d’au moins **525 constructions affirmatives**, avec leurs **525 formes négatives**. Les 16 catégories sont séparées dans [combinations.json](combinations.json), avec les phrases complètes. Ces noms désignent les banques internes, pas les groupes affichés dans le générateur.
 
 | Catégories présentes | Nombre par cas | Cas | Total |
 |---|---:|---:|---:|
@@ -16,15 +20,15 @@ Chaque thème et chaque groupe de verbes (« Simple » et « Autres ») dispose 
 | Trois catégories : les quatre trios possibles | 25 | 4 | 100 |
 | Les quatre catégories ensemble | 25 | 1 | 25 |
 
-Les sept thèmes et les deux groupes représentent **14 banques**, soit **7 350 références affirmatives et 7 350 négatives** dans ce rapport. Les six thèmes non pronominaux partagent des familles de constructions compatibles avec leur vocabulaire ; « Déterminants » conserve ses sujets avec déterminants. Les pronominaux ont leurs propres actions. Les anciennes constructions restent disponibles en complément de ces quotas. Les quantités sont des tailles de banque : une fiche conserve un seul modèle par verbe.
+Les sept thèmes et les deux banques sources représentent **14 banques**, soit **7 350 références affirmatives et 7 350 négatives** dans ce rapport. Les six thèmes non pronominaux partagent des familles de constructions compatibles avec leur vocabulaire ; « Déterminants » conserve ses sujets avec déterminants. Les pronominaux ont leurs propres actions. Les anciennes constructions restent disponibles en complément de ces quotas. Les quantités sont des tailles de banque : une fiche conserve un seul modèle par verbe.
 
 Les combinaisons associent des prédicats complets issus des banques, des adjectifs postnominaux explicitement accordés avec leur nom, des adverbes compatibles avec le verbe et des coordinations additives avec *et*. Le deuxième verbe garde son propre infinitif et sa conjugaison. Les phrases ne sont jamais rendues simples en supprimant une préposition obligatoire.
 
 ## Échantillon de contrôle historique
 
-[audit.json](audit.json) contient **100 phrases distinctes par thème, par forme et par groupe de verbes** : 2 800 références au total, soit 100 affirmatives et 100 négatives pour chacun des deux groupes dans chacun des sept thèmes. Les noms propres, groupes nominaux et pronoms sont représentés. Les phrases proviennent de modèles verbaux avec des compléments rédigés et relus ; le moteur peut produire d’autres instanciations de ces modèles.
+[audit.json](audit.json) contient **100 phrases distinctes par thème, par forme et par banque source historique** : 2 800 références au total, soit 100 affirmatives et 100 négatives pour chacune des deux banques dans chacun des sept thèmes. Les noms propres, groupes nominaux et pronoms sont représentés. Les phrases proviennent de modèles verbaux avec des compléments rédigés et relus ; le moteur peut produire d’autres instanciations de ces modèles.
 
-La banque pronominale comporte 61 constructions : 42 dans « Simple » et 19 dans « Autres », avec au moins trois contextes par construction. Les pronoms réfléchis et les verbes reçoivent des pastilles distinctes. Un même verbe n’est pas répété sur une fiche ; le nombre demandé est donc plafonné au nombre de modèles disponibles dans le groupe choisi. Cela ne limite pas la banque à ce nombre de phrases : chaque modèle possède plusieurs contextes et sujets possibles.
+La banque pronominale comporte 61 constructions : 42 dans la source `er` et 19 dans la source `autres`, avec au moins trois contextes par construction. Les pronoms réfléchis et les verbes reçoivent des pastilles distinctes. Un même verbe n’est pas répété sur une fiche ; le nombre demandé est donc plafonné au nombre de modèles disponibles dans le groupe choisi. Cela ne limite pas la banque à ce nombre de phrases : chaque modèle possède plusieurs contextes et sujets possibles.
 
 ## Catégories autorisées
 

@@ -18,6 +18,9 @@ export function QuestionEditor({
   question: q,
   reponses,
   audioCount,
+  hideQuestionImage = false,
+  hideFormsHint = false,
+  hideQuestionRemove = false,
   onChange,
   onRemove,
 }: {
@@ -26,6 +29,12 @@ export function QuestionEditor({
   reponses: readonly TcfTypeReponse[]
   /** CO 6 / 3 audios : choix du n° d’audio. */
   audioCount?: number
+  /** Exclure l’image commune au format six audios courts. */
+  hideQuestionImage?: boolean
+  /** Masquer l’aide sur les formes de réponse dans les blocs CO. */
+  hideFormsHint?: boolean
+  /** Pour garder une question obligatoire par audio. */
+  hideQuestionRemove?: boolean
   onChange: (next: TcfQuestion) => void
   onRemove: () => void
 }) {
@@ -40,14 +49,16 @@ export function QuestionEditor({
       <legend>
         <span className="tcf-q-legend-title">
           Question {index + 1}
-          <button
-            type="button"
-            className="calli-field-remove"
-            aria-label={`Supprimer la question ${index + 1}`}
-            onClick={onRemove}
-          >
-            ×
-          </button>
+          {!hideQuestionRemove ? (
+            <button
+              type="button"
+              className="calli-field-remove"
+              aria-label={`Supprimer la question ${index + 1}`}
+              onClick={onRemove}
+            >
+              ×
+            </button>
+          ) : null}
         </span>
         <div className="mode-toggle is-3" role="group" aria-label="Type de réponse">
           {TCF_REPONSES.filter((r) => reponses.includes(r.id)).map((r) => (
@@ -68,10 +79,12 @@ export function QuestionEditor({
           ))}
         </div>
       </legend>
-      <p className="muted" style={{ margin: 0, fontSize: 'calc(11px * var(--app-font-scale, 1))' }}>
-        Trois formes (Texte / Image / Phrase) : basculez pour les remplir. Sur la fiche, les
-        icônes sont en colonne dans la marge gauche ; seules les formes remplies sont actives.
-      </p>
+      {!hideFormsHint ? (
+        <p className="muted" style={{ margin: 0, fontSize: 'calc(11px * var(--app-font-scale, 1))' }}>
+          Trois formes (Texte / Image / Phrase) : basculez pour les remplir. Sur la fiche, les
+          icônes sont en colonne dans la marge gauche ; seules les formes remplies sont actives.
+        </p>
+      ) : null}
       {audioCount ? (
         <label className="tcf-field is-number">
           <span>Audio n°</span>
@@ -98,11 +111,13 @@ export function QuestionEditor({
           step={0.5}
           onChange={(points) => onChange({ ...q, points: points > 0 ? points : undefined })}
         />
-        <ImageField
-          label="Image sous l’énoncé (optionnelle)"
-          value={q.image ?? ''}
-          onChange={(image) => onChange({ ...q, image: image || undefined })}
-        />
+        {!hideQuestionImage ? (
+          <ImageField
+            label="Image sous l’énoncé (optionnelle)"
+            value={q.image ?? ''}
+            onChange={(image) => onChange({ ...q, image: image || undefined })}
+          />
+        ) : null}
       </div>
 
       {q.type_reponse === 'lignes' ? (

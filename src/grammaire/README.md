@@ -7,7 +7,7 @@ Domaine dédié pour les **fiches de théorie** FALC et les **exercices** liés 
 | `catalog.ts` | Thèmes SCAI + types théorie + types exercices |
 | `theory/*.ts` | Contenu FALC français |
 | `exercises/` | kinds, sous-thèmes, banques, générateur |
-| `exercises/bank/lessons-revised.ts` | 104 banques de 50 phrases, une par sous-thème repris |
+| `exercises/bank/lessons-revised.ts` | 90 banques de 50 phrases, une par sous-thème repris |
 | `exercises/bank/lessons-protected.ts` | 7 banques d’introduction conservées et complétées à 50 |
 | `exercises/communication-data.json` | 160 situations, dix variantes de CE/PE/PO par thème communicatif |
 | `scripts/grammar_curriculum/` | Sources éditoriales et reconstruction des contenus |
@@ -19,7 +19,7 @@ Domaine dédié pour les **fiches de théorie** FALC et les **exercices** liés 
 2. **Sous-thème** = notion (Être, Avoir, -er… / Passé composé… / fiche théorie)
 3. **Type** = **Théorie** + exercices du sous-thème (libellés de leçon)
 
-Les 113 fiches de théorie sont conservées dans leur état antérieur au commit `b04247cb`. La reconstruction des exercices ne les modifie plus. Chaque sous-thème repris a une banque de 50 phrases distinctes avec une seule réponse, trois choix et une variante inline dans le même type d’exercice. Les activités communicatives proposent dix situations par type CE, PE et PO. Les modules particuliers de présentation restent disponibles. Le [rapport de reprise](../../docs/grammaire/README.md) décrit la couverture et la validation.
+Les 99 fiches de théorie sont conservées dans leur état antérieur au commit `b04247cb`, hors ancien thème Aide-mémoire. La reconstruction des exercices ne les modifie plus. Chaque sous-thème repris a une banque de 50 phrases distinctes avec une seule réponse, trois choix et une variante inline dans le même type d’exercice. Les activités communicatives proposent dix situations par type CE, PE et PO. Les modules particuliers de présentation restent disponibles. Le [rapport de reprise](../../docs/grammaire/README.md) décrit la couverture et la validation.
 
 ## Types d’exercice (kinds)
 
@@ -70,13 +70,13 @@ Deux tabulations et une flèche :
 
 ## Feuille suivante
 
-La théorie n’est plus coupée tous les 6 blocs. Tout reste sur une feuille, sauf si vous insérez un bloc page :
+La théorie n’est plus coupée tous les 6 blocs. Les boutons « Page » à droite des sections « Je regarde », « J’explique » et « Je retiens » permettent de placer la suite sur une nouvelle feuille. Les blocs page déjà présents dans les données définissent les coupures initiales :
 
 ```ts
 { kind: 'page' },
 ```
 
-La suite (tableau, astuce, etc.) commence alors sur la feuille suivante. « Une fiche » dans le panneau ignore ces blocs.
+La suite commence alors sur la feuille suivante. Les coupures peuvent être activées ou retirées dans l’aperçu.
 
 ## Déterminisme
 
@@ -91,7 +91,7 @@ Tirage via `createRng(seed)` + `shuffle` ; jamais `Math.random()` dans le géné
 
 ## Compléments pour tous les sous-thèmes du présent
 
-Chacun des onze sous-thèmes propose **Corriger l’erreur** (50 phrases à réécrire), **Mots dans l’ordre (A1)** (50 phrases) et **Mots dans l’ordre (A2)** (50 phrases). Les mots mélangés utilisent les pastilles de couleur Gattegno et une ligne pour réécrire la phrase ; le corrigé montre la phrase complète. Les catégories qui regroupent plusieurs verbes affichent l’infinitif en couleur après la ligne de réponse. Les banques sont dans `exercises/present-supplement-data.json` ; `scripts/build-present-supplement.py` reconstruit les groupes à partir du lexique et conserve les banques être/avoir rédigées séparément. Le générateur du curriculum ne les réécrit pas.
+Chacun des onze sous-thèmes propose **Corriger l’erreur** (50 phrases à réécrire) et **Mots dans l’ordre** (banques A1 et A2 réunies). Les mots mélangés utilisent les pastilles de couleur Gattegno et une ligne pour réécrire la phrase ; le corrigé montre la phrase complète. Pour l’ordre, les paramètres permettent de choisir la forme affirmative, négative ou mixte, ainsi que les catégories facultatives ; le plafond de questions suit les filtres choisis. Les catégories qui regroupent plusieurs verbes affichent l’infinitif en couleur après la ligne de réponse. Les banques sont dans `exercises/present-supplement-data.json` ; `scripts/build-present-supplement.py` reconstruit les groupes à partir du lexique et conserve les banques être/avoir rédigées séparément. Le générateur du curriculum ne les réécrit pas.
 
 ## Poser une question : questions fermées, ouvertes et avec quel
 

@@ -1,3 +1,4 @@
+import { WorksheetImage } from '@/components/WorksheetImage'
 import type { CSSProperties, ReactNode } from 'react'
 import { alphaToneClass, tokenizeAlpha } from './alpha-phonics'
 import { gameBorderSrc } from './borders'
@@ -51,7 +52,7 @@ function SeriesIdentity({
 
 function BorderOverlay({ src }: { src?: string }) {
   if (!src) return null
-  return <img className="game-card-border" src={src} alt="" aria-hidden draggable={false} />
+  return <WorksheetImage className="game-card-border" src={src} alt="" aria-hidden draggable={false} />
 }
 
 function cardShell(
@@ -111,7 +112,7 @@ function CardFace({
       <div className="game-domino">
         <div className={`game-domino-half${card.imageSrc ? ' is-image' : ' is-word'}`}>
           {card.imageSrc ? (
-            <img src={card.imageSrc} alt="" />
+            <WorksheetImage src={card.imageSrc} alt="" />
           ) : (
             <span className="game-domino-label">
               {renderCardWord(card.text, alphaPhonics)}
@@ -218,7 +219,7 @@ function CardFace({
       {showImageSlot ? (
         <div className="game-card-image">
           {card.imageSrc ? (
-            <img src={card.imageSrc} alt="" />
+            <WorksheetImage src={card.imageSrc} alt="" />
           ) : (
             <span className="game-card-empty" aria-hidden />
           )}

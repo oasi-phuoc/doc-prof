@@ -1,0 +1,11 @@
+# ADR 0012 — Écoutes audio et quotas de la consigne
+
+Décision du 11 novembre 2026 : limiter les écoutes uniquement lorsqu’une limite explicite figure dans la consigne source ou dans les métadonnées de la question. La consigne TCF « Il y a 2 écoutes » donne deux passages. Les autres enregistrements restent libres ; il n’y a pas de plafond global aveugle. Deux questions projetées pour un même document partagent le lecteur et son compteur. Si leurs limites explicites diffèrent, la plus restrictive est retenue.
+
+Une écoute est comptée sur l’événement média `playing` depuis moins de 0,5 seconde. Une reprise après pause ne compte pas à nouveau ; revenir au début après avoir avancé commence un nouveau passage. Une nouvelle lecture demandée depuis le milieu est ramenée au début. À quota épuisé, le lecteur bloque une nouvelle lecture mais laisse terminer ou reprendre le passage déjà commencé. L’enseignant peut accorder une écoute de plus en Classe, avec un événement journalisé. Cette commande est absente en Solo et inactive pendant la pause ou le verrouillage.
+
+Le compteur, les autorisations et la fin de lecture appartiennent à l’état de chaque écran. Une nouvelle tentative archive les compteurs précédents avant de les remettre à zéro. Le schéma de séance passe à 5 ; les versions 1 à 4 restent lisibles. Le nombre de lectures anciennes non journalisées ne peut pas être reconstitué et commence à zéro. Un rechargement conserve les passages consommés ; il ne rétablit pas la position d’un son interrompu.
+
+Une erreur avant `playing` ne consomme rien. Une erreur après le démarrage conserve l’écoute consommée. Un blocage de lecture de plus de huit secondes propose Réessayer ; une pause annule cette attente. Le volume système n’est pas changé et aucun démarrage automatique n’est ajouté. Le lecteur garde ses commandes natives et affiche le numéro d’écoute et le temps écoulé / total.
+
+Vérification : cinq tests de domaine supplémentaires (quotas, grants, pause, verrou, événements tardifs, navigation, tentatives, rejouabilité et validation d’instantané) et lecture native Chromium dans [listening-results.json](listening-results.json). Le préchargement intégral hors ligne et les transcriptions configurables restent des extensions distinctes.

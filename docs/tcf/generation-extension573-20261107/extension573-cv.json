@@ -1,0 +1,18 @@
+{
+  "id": "extension573-cv",
+  "label": "Un CV",
+  "kind": "document",
+  "prompt": "Modifier la première image de référence : enlever tous les personnages, la table, la tasse et les livres. Remplacer le contrat par le document décrit ci-dessous, posé seul sur un fond crème uni opaque, avec une ombre légère. La deuxième image est uniquement la référence de style et de fond crème ; ne pas reprendre ses boissons. FORMAT PAYSAGE EXACTEMENT 4:3, sujet entier avec des marges, une seule composition cohérente sans collage, assemblage, bulle ou encadré. Peinture numérique semi-réaliste douce, volumes progressifs, contours fins discrets, couleurs naturelles chaleureuses. Ni photo, ni 3D, ni gros contours BD. Aucun logo, signature, montant, prix, pourcentage, date, jour ou mois. Aucun texte ni nombre, sauf les rares repères explicitement demandés pour reconnaître un document ou lieu. Sujet : Un véritable CV sur une feuille entière, mise en page en deux colonnes, petite silhouette de portrait neutre, rubriques et puces représentées par de simples traits. Seul le titre CV est lisible.",
+  "reference_images": [
+    "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/audit-context-contrat-travail.webp",
+    "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+  ],
+  "status": "visually_reviewed",
+  "output_hint": "Generated images are saved to /workspace/generated_images as /workspace/generated_images/exec-4cb8140b-d831-4599-90e5-6e826b7a3fbf.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+  "source": "/workspace/generated_images/exec-4cb8140b-d831-4599-90e5-6e826b7a3fbf.png",
+  "review_note": "Sujet entier et signification vérifiés sur planche ; quantités 4/5/7/8/9 livres et 9 DVD recomptées. Documents réels stylisés avec mise en page distinctive, sans données personnelles ni montants/dates.",
+  "generation_stage": "extension-573-20261107",
+  "style_references": [
+    "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+  ]
+}

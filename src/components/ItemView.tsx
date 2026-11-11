@@ -80,6 +80,8 @@ export function ItemView({
   onSelectTcfFormAt,
   tcfPageBreakBefore,
   onToggleTcfPageBreak,
+  theoryPageBreakAfter,
+  onToggleTheoryPageBreakAfter,
   hideTcfFormIcons = false,
   formulaireLetterGrid = false,
   onToggleFormulaireLetterGrid,
@@ -106,6 +108,9 @@ export function ItemView({
   /** TCF : cette question (et les suivantes) commence une nouvelle page. */
   tcfPageBreakBefore?: boolean
   onToggleTcfPageBreak?: () => void
+  /** Théorie : la section suivante commence sur une nouvelle page. */
+  theoryPageBreakAfter?: boolean
+  onToggleTheoryPageBreakAfter?: () => void
   /** Masquer les icônes de forme en marge (ex. dual form sur le titre). */
   hideTcfFormIcons?: boolean
   formulaireLetterGrid?: boolean
@@ -155,8 +160,19 @@ export function ItemView({
       (item.tcf?.kind === 'qcm' ||
         item.tcf?.kind === 'lignes' ||
         item.tcf?.kind === 'audio_cadre' ||
+        item.tcf?.kind === 'ce_association_answers' ||
         item.tcf?.kind === 'dialogue'),
   )
+  const showTheoryPageChip = Boolean(
+    onToggleTheoryPageBreakAfter && item.layout === 'theory' && item.theoryBlock?.kind === 'section',
+  )
+  const pageBreakChipLabel = showTheoryPageChip
+    ? theoryPageBreakAfter
+      ? 'Annuler le saut de page après cette section'
+      : 'Passer la section suivante sur une nouvelle page'
+    : tcfPageBreakBefore
+      ? 'Remettre cette question et les suivantes sur la page précédente'
+      : 'Passer cette question et les suivantes sur une nouvelle page'
   const hideNumber =
     Boolean(item.hideItemNumber) ||
     item.layout === 'gattegno-chart' ||
@@ -244,24 +260,16 @@ export function ItemView({
           onSelect={onSelectTcfForm}
         />
       ) : null}
-      {showTcfPageChip ? (
+      {showTcfPageChip || showTheoryPageChip ? (
         <button
           type="button"
           className={`no-print draft-grid-chip draft-grid-chip-margin tcf-page-chip ${
-            tcfPageBreakBefore ? 'on' : 'off'
+            (showTheoryPageChip ? theoryPageBreakAfter : tcfPageBreakBefore) ? 'on' : 'off'
           }`}
-          aria-pressed={Boolean(tcfPageBreakBefore)}
-          aria-label={
-            tcfPageBreakBefore
-              ? 'Remettre cette question et les suivantes sur la page précédente'
-              : 'Passer cette question et les suivantes sur une nouvelle page'
-          }
-          title={
-            tcfPageBreakBefore
-              ? 'Remettre cette question et les suivantes sur la page précédente'
-              : 'Passer cette question et les suivantes sur une nouvelle page'
-          }
-          onClick={onToggleTcfPageBreak}
+          aria-pressed={Boolean(showTheoryPageChip ? theoryPageBreakAfter : tcfPageBreakBefore)}
+          aria-label={pageBreakChipLabel}
+          title={pageBreakChipLabel}
+          onClick={showTheoryPageChip ? onToggleTheoryPageBreakAfter : onToggleTcfPageBreak}
         >
           <svg viewBox="0 0 16 16" width="12" height="12" aria-hidden>
             <path

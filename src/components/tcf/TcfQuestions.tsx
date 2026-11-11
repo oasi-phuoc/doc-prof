@@ -145,6 +145,8 @@ function Enonce({
   blankStyle?: 'line' | 'dots'
   /** Afficher le numéro (désactivé pour six courts seul dans le cadre). */
   showNumero?: boolean
+  /** Piste lue dans le bandeau du corrigé. */
+  audioSrc?: string
   /** Icônes de format (cadre multi-questions) : à droite de l’énoncé. */
   trailing?: ReactNode
 }) {
@@ -164,8 +166,17 @@ function Enonce({
   )
 }
 
-function AudioFrameHead({ label }: { label: string }) {
-  return <div className="tcf-audio-frame-head">{label}</div>
+function AudioFrameHead({ label, audioSrc }: { label: string; audioSrc?: string }) {
+  return (
+    <div className={`tcf-audio-frame-head${audioSrc ? ' has-player' : ''}`}>
+      <span className={`tcf-audio-frame-label${label.startsWith('Audio ') ? ' is-audio' : ''}`}>{label}</span>
+      {audioSrc ? (
+        <audio className="tcf-audio-frame-player no-print" aria-label={`Enregistrement — ${label}`} controls preload="none" src={audioSrc}>
+          Écoutez l’enregistrement.
+        </audio>
+      ) : null}
+    </div>
+  )
 }
 
 /** Énoncé au-dessus ; image(s) à gauche des réponses. */
@@ -176,6 +187,7 @@ function QuestionShell({
   enonceSlot,
   audioLabel,
   audioFrame,
+  audioSrc,
   children,
 }: {
   image?: string
@@ -184,13 +196,15 @@ function QuestionShell({
   enonceSlot?: ReactNode
   audioLabel?: string
   audioFrame?: boolean
+  /** Lecteur du corrigé, dans le bandeau. */
+  audioSrc?: string
   children: ReactNode
 }) {
   const pics = (images?.length ? images : image ? [image] : [])
     .map((src) => src.trim())
     .filter(Boolean)
   const framed = Boolean(audioFrame)
-  const head = framed && audioLabel ? <AudioFrameHead label={audioLabel} /> : null
+  const head = framed && audioLabel ? <AudioFrameHead label={audioLabel} audioSrc={audioSrc} /> : null
   const answers = pics.length ? (
     <div className="tcf-q-beside">
       <div className={`tcf-q-beside-images${pics.length > 1 ? ' is-multi' : ''}`}>
@@ -242,6 +256,8 @@ type QuestionHead = {
   images?: string[]
   showNumero?: boolean
   blankStyle?: 'line' | 'dots'
+  /** Piste lue dans le bandeau du corrigé. */
+  audioSrc?: string
   /** Icônes Texte / Image / Phrase à droite de l’énoncé (cadre multi-questions). */
   trailing?: ReactNode
 }
@@ -262,6 +278,7 @@ export function QuestionQCMTexte({
       numero={head.numero}
       audioLabel={head.audioLabel}
       audioFrame={head.audioFrame}
+      audioSrc={mode === 'answers' ? head.audioSrc : undefined}
       enonceSlot={
         <Enonce
           {...head}
@@ -299,6 +316,7 @@ export function QuestionQCMImage({
       numero={head.numero}
       audioLabel={head.audioLabel}
       audioFrame={head.audioFrame}
+      audioSrc={mode === 'answers' ? head.audioSrc : undefined}
       enonceSlot={
         <Enonce
           {...head}
@@ -344,6 +362,7 @@ export function QuestionLignes({
       numero={head.numero}
       audioLabel={head.audioLabel}
       audioFrame={head.audioFrame}
+      audioSrc={mode === 'answers' ? head.audioSrc : undefined}
       enonceSlot={
         <Enonce
           {...head}
@@ -376,6 +395,7 @@ export function QuestionLignes({
 /** Cadre Audio N contenant plusieurs questions (trois audios moyens). */
 export function AudioCadre({
   audioLabel,
+  audioSrc,
   questions,
   mode,
   onSelectForm,
@@ -383,13 +403,14 @@ export function AudioCadre({
 }: {
   blankStyle?: 'line' | 'dots'
   audioLabel: string
+  audioSrc?: string
   questions: TcfCadreQuestion[]
   mode: PreviewMode
   onSelectForm?: (modeIndex: number, form: TcfTypeReponse) => void
 }) {
   return (
     <div className="tcf-question is-audio-frame is-audio-cadre">
-      <AudioFrameHead label={audioLabel} />
+      <AudioFrameHead label={audioLabel} audioSrc={mode === 'answers' ? audioSrc : undefined} />
       <div className="tcf-audio-frame-body tcf-audio-cadre-body">
         {questions.map((q) => {
           const formSelect = q.formSelect
@@ -484,29 +505,30 @@ export function LignesReponse({ nbLignes, texte }: { nbLignes: number; texte?: s
   )
 }
 
-/** CO : scènes illustrées en cadre, pastille Situation A–F, « Audio n° : ___ » (50 px). */
+/** CO : bandeau Situation A–F ; au corrigé, la piste du dialogue correspondant. */
 export function AssociationSituations({
   situations,
   mode,
 }: {
-  situations: Array<{ lettre: string; image: string; dialogue: number | null }>
+  situations: Array<{ lettre: string; image: string; dialogue: number | null; audioSrc?: string }>
   mode: PreviewMode
 }) {
   const show = mode === 'answers'
   const n = situations.length
-  const gridClass = n >= 8 ? 'is-8' : n >= 6 ? 'is-6' : n === 4 ? 'is-4' : ''
   return (
-    <ul className={`tcf-situations${gridClass ? ` ${gridClass}` : ''}`}>
+    <ul className={`tcf-situations${n > 6 ? ' is-many' : ''}`}>
       {situations.map((s, i) => (
-        <li key={`${s.lettre}-${i}`}>
-          <span className="tcf-audio-frame-tag">Situation {s.lettre}</span>
-          <TcfImage src={s.image} alt={`Scène ${s.lettre}`} />
-          <span className="tcf-situation-foot">
-            <span className="tcf-dialogue-label">Audio n°&nbsp;:</span>
-            <span className="answer-line-field tcf-situation-num">
-              {show ? (s.dialogue != null ? String(s.dialogue) : '—') : ''}
+        <li key={`${s.lettre}-${i}`} className="tcf-question is-audio-frame tcf-situation-frame">
+          <AudioFrameHead label={`Situation ${s.lettre}`} audioSrc={show && s.dialogue != null ? s.audioSrc : undefined} />
+          <div className="tcf-situation-body">
+            <TcfImage src={s.image} alt={`Scène ${s.lettre}`} />
+            <span className="tcf-situation-foot">
+              <span className="tcf-dialogue-label">Audio n°&nbsp;:</span>
+              <span className="answer-line-field tcf-situation-num">
+                {show ? (s.dialogue != null ? String(s.dialogue) : '—') : ''}
+              </span>
             </span>
-          </span>
+          </div>
         </li>
       ))}
     </ul>
@@ -535,7 +557,7 @@ export function GrilleOral({ grille }: { grille: TcfGrille }) {
 
 const OBJET_LETTRES = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'] as const
 
-/** CO objets A1 : 5 images cadrées (2 / ligne, 5ᵉ centrée), pastille Objet A–E, Oui / Non. */
+/** CO objets A1 : un cadre Objet A–E avec image et choix Oui / Non. */
 export function ImagesACocher({
   numero,
   consigne,
@@ -555,27 +577,26 @@ export function ImagesACocher({
       {consigne ? <Enonce numero={numero} enonce={consigne} /> : null}
       <ul className="tcf-images-cocher">
         {images.map((img, i) => (
-          <li
-            key={img.id}
-            className={show ? (img.correct ? 'is-correct' : 'is-wrong') : undefined}
-          >
-            <span className="tcf-audio-frame-tag">Objet {OBJET_LETTRES[i] ?? i + 1}</span>
-            <TcfImage src={img.image} alt={`Objet ${OBJET_LETTRES[i] ?? i + 1}`} />
-            <div className="tcf-yn" aria-label={show ? (img.correct ? 'Oui' : 'Non') : undefined}>
-              <span className="tcf-yn-option">
-                <span
-                  className={`tcf-case is-large${show && img.correct ? ' is-filled' : ''}`}
-                  aria-hidden
-                />
-                <span className="tcf-yn-label">Oui</span>
-              </span>
-              <span className="tcf-yn-option">
-                <span
-                  className={`tcf-case is-large${show && !img.correct ? ' is-filled' : ''}`}
-                  aria-hidden
-                />
-                <span className="tcf-yn-label">Non</span>
-              </span>
+          <li key={img.id} className="tcf-question is-audio-frame tcf-objet-frame">
+            <AudioFrameHead label={`Objet ${OBJET_LETTRES[i] ?? i + 1}`} />
+            <div className="tcf-objet-body">
+              <TcfImage src={img.image} alt={`Objet ${OBJET_LETTRES[i] ?? i + 1}`} />
+              <div className="tcf-yn" aria-label={show ? (img.correct ? 'Oui' : 'Non') : undefined}>
+                <span className="tcf-yn-option">
+                  <span className="tcf-yn-label">Oui</span>
+                  <span
+                    className={`tcf-case is-large${show && img.correct ? ' is-filled' : ''}`}
+                    aria-hidden
+                  />
+                </span>
+                <span className="tcf-yn-option">
+                  <span className="tcf-yn-label">Non</span>
+                  <span
+                    className={`tcf-case is-large${show && !img.correct ? ' is-filled' : ''}`}
+                    aria-hidden
+                  />
+                </span>
+              </div>
             </div>
           </li>
         ))}

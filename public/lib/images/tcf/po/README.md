@@ -16,7 +16,7 @@ Les **407 images ont été entièrement régénérées** et contrôlées pour le
 
 Le contrôle du style a entraîné **14 corrections CFR**, avec la [référence BD du projet](../../comprehension/_style-ref-bd-realiste.webp) : contours dessinés visibles, couleurs et ombres illustrées, décors également dessinés, sans rendu photographique. La référence guide le style et ne fournit pas les identités des personnages.
 
-**Quatre images identifiées restent à corriger pour le style** : `a1/billet-bus-automate-1.webp` à `a1/billet-bus-automate-4.webp`. Leurs personnages et leurs actions ont été recréés et restent cohérents ; leur rendu est encore trop photographique. La limite de génération bloque leur nouvelle correction jusqu’au **2 novembre 2026 vers 12:36, heure suisse**. Une tentative produisant un montage a été écartée et n’est utilisée par aucune fiche. Les quatre corrections devront être validées puis appliquées ensemble.
+**Correction achevée le 7 novembre 2026** : les quatre étapes `a1/billet-bus-automate-1.webp` à `a1/billet-bus-automate-4.webp` ont été reprises en illustration dessinée et vérifiées ensemble. Le registre `docs/tcf/po-corrections-style-20261107.json` conserve les empreintes avant/après. Le manifeste ne contient plus aucune entrée `style_pending`.
 
 Le manifeste distingue l’état de génération (`counts`) et le suivi du style (`style_reviewed`, `style_revision`, `style_pending`). Les champs `original` sont historiques. Les descriptions ne mentionnent plus de médaillon téléphonique lorsque le nouvel appel est montré dans un seul décor. Les dialogues sont conservés.
 

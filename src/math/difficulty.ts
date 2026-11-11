@@ -134,6 +134,22 @@ export function pairAdd(
   return { a, b, result: a + b }
 }
 
+/** Deux nombres de l’intervalle dont la différence est positive. */
+function positiveSubPair(rng: Rng, min: number, max: number): { a: number; b: number; result: number } {
+  const lo = Math.ceil(min)
+  const hi = Math.floor(max)
+  if (!Number.isFinite(lo) || !Number.isFinite(hi) || hi < lo) return { a: 1, b: 0, result: 1 }
+  if (hi === lo) return { a: hi, b: hi, result: 0 }
+  for (let attempt = 0; attempt < 24; attempt++) {
+    const x = int(rng, lo, hi)
+    const y = int(rng, lo, hi)
+    const a = Math.max(x, y)
+    const b = Math.min(x, y)
+    if (a > b) return { a, b, result: a - b }
+  }
+  return { a: hi, b: lo, result: hi - lo }
+}
+
 export function pairSub(
   rng: Rng,
   difficulty: Difficulty,
@@ -141,12 +157,7 @@ export function pairSub(
 ): { a: number; b: number; result: number } {
   if (range) {
     if (range.decimals) return columnSubPair(rng, difficulty, range)
-    const hi = pickInRange(rng, range)
-    const loBound = Math.max(range.min, 0)
-    const span: NumberRange = { min: loBound, max: hi, decimals: false }
-    let b = pickInRange(rng, span)
-    if (b >= hi) b = Math.max(loBound, hi - 1)
-    return { a: hi, b, result: hi - b }
+    return positiveSubPair(rng, range.min, range.max)
   }
   const max = calcBound(difficulty)
   const a = int(rng, 2, max)
@@ -237,7 +248,9 @@ export function columnSubPair(
         if (b >= a) b = roundToPlaces(Math.max(range.min, a - step), Math.max(pa, pb, 1))
       }
       const places = Math.max(pa, pb, 1)
-      return { a, b, result: roundToPlaces(a - b, places) }
+      const result = roundToPlaces(a - b, places)
+      if (result < 0) return { a: b, b: a, result: roundToPlaces(b - a, places) }
+      return { a, b, result }
     }
     const lo = Math.max(1, Math.ceil(range.min))
     const hi = Math.max(lo + 1, Math.floor(range.max))
@@ -249,6 +262,7 @@ export function columnSubPair(
       b = Math.min(t, b)
       if (b >= a) b = Math.max(lo, a - 1)
     }
+    if (a - b < 0) return { a: b, b: a, result: b - a }
     return { a, b, result: a - b }
   }
   const { min, max } = columnBounds(difficulty)
@@ -408,7 +422,9 @@ export function decimalSubPair(
     b = roundToPlaces(Math.max(step, a - step), Math.max(pb, 1))
   }
   const places = Math.max(pa, pb, 1)
-  return { a, b, result: roundToPlaces(a - b, places) }
+  const result = roundToPlaces(a - b, places)
+  if (result < 0) return { a: b, b: a, result: roundToPlaces(b - a, places) }
+  return { a, b, result }
 }
 
 /** × décimal : a à 1–3 décimales, b ∈ [1,1 ; 9,9] à 1 décimale. */

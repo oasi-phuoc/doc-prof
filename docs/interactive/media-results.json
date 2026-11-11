@@ -1,0 +1,21 @@
+{
+  "browser": "Chromium",
+  "results": [
+    {
+      "missing": "shared image checked once; both affected questions excluded without clearing selection"
+    },
+    {
+      "retry": "fixed image decoded; questions restored; URL cache reused across selection changes"
+    },
+    {
+      "cancellation": "removing pending media questions cancels probes; late results do not alter selection or block launch"
+    },
+    {
+      "invalidMime": "HTML fallback excluded; explicit keep preserves runtime error and skip fallback"
+    },
+    {
+      "originPolicy": "unapproved origin blocked before network, including explicit keep at runtime"
+    }
+  ],
+  "errors": []
+}

@@ -45,38 +45,30 @@ export function PageStructureTabs({
             </div>
             <div className="mode-toggle is-tabs page-tabs" role="tablist" aria-label="Feuilles">
               {worksheets.map((sheet, index) => {
+                if (sheet.isContinuation) return null
+                const config = sheet.configIndex ?? index
+                const isJeux = sheet.domain === 'jeux'
                 const sideLabel = sheet.title?.includes('—')
                   ? sheet.title.split('—').pop()?.trim()
                   : undefined
-                const tabLabel =
-                  sheet.domain === 'jeux' && sideLabel
-                    ? sideLabel
-                    : sheet.isContinuation
-                      ? 'suite'
-                      : String(index + 1)
+                const activeConfig = activeSheet?.configIndex ?? safeSheetIndex
+                const tabLabel = isJeux && sideLabel ? sideLabel : isJeux ? String(index + 1) : String(config + 1)
+                const active = isJeux ? safeSheetIndex === index : config === activeConfig
                 return (
                 <button
-                  key={`${sheet.configIndex ?? index}-${sheet.isContinuation ? 'suite' : 'main'}-${index}`}
+                  key={`${config}-main-${index}`}
                   type="button"
-                  className={safeSheetIndex === index ? 'active' : ''}
+                  className={active ? 'active' : ''}
                   onClick={() => {
                     setSheetIndex(index)
                     setBlockIndex(0)
                   }}
-                  aria-label={
-                    sheet.domain === 'jeux' && sideLabel
-                      ? sideLabel
-                      : sheet.isContinuation
-                        ? `Page ${index + 1} (suite)`
-                        : `Page ${index + 1}`
-                  }
+                  aria-label={isJeux && sideLabel ? sideLabel : `Page ${config + 1}`}
                 >
                   <span className="tab-number">{tabLabel}</span>
                   {!isTpmLike &&
                   pages.length > 1 &&
-                  !sheet.isContinuation &&
-                  (sheet.configIndex ?? index) === pageIndex &&
-                  safeSheetIndex === index ? (
+                  (isJeux ? safeSheetIndex === index : config === pageIndex) ? (
                     <TabRemoveButton
                       label="Retirer cette page"
                       onRemove={() => removePage(sheet.configIndex ?? index)}

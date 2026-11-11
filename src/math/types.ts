@@ -341,8 +341,8 @@ export type Topic = {
 }
 
 export type FrenchTrack = 'voc' | 'gram' | 'com'
-/** Banque de verbes Gattegno, ou mode libre (édition des phrases générées). */
-export type PhraseVerbGroup = 'er' | 'autres' | 'libre'
+/** Gattegno : 1er (`er`), 2e (`ir`), 3e (`autres`) ou mixte ; `libre` est historique. */
+export type PhraseVerbGroup = 'er' | 'ir' | 'autres' | 'mixte' | 'libre'
 
 export type ExerciseType = {
   id: string
@@ -440,6 +440,8 @@ export type MathItem = {
   selectVariant?: 'pills' | 'oral' | 'cards'
   /** Bloc de théorie grammaticale (fiche lecture seule). */
   theoryBlock?: GrammarTheoryBlock
+  /** Coupure de page initiale après cette section de théorie, modifiable dans l’aperçu. */
+  theoryPageBreakAfter?: boolean
   /** Entrée de glossaire maths (mot + définition + schéma). */
   glossary?: {
     term: string
@@ -770,6 +772,8 @@ export type MathItem = {
   tcf?: import('@/tcf/types').TcfSheetItem
   /** TCF : id de l’exercice de banque affiché (copie modifiable en mode libre). */
   tcfExerciseId?: string
+  /** Grille du corrigé PE, portée par le dernier item pour suivre les pages de suite. */
+  tcfPeEvaluation?: import('@/tcf/pe-evaluation').PeEvaluation
   /** Domaine Logique : puzzle SVG (suite, intrus, matrice, cubes…). */
   logique?: import('@/logique/types').LogiquePuzzle
   /** Item non compté dans le total de points (support, message). */
@@ -827,7 +831,7 @@ export type ExerciseBlock = {
   pointsPerQuestion?: number
   /** Voc / Gram / Com — domaine français uniquement. */
   track?: FrenchTrack
-  /** Phrase : Simple (er), Autres (2e/3e), ou Libre (édition). */
+  /** Groupe de verbes Gattegno ; `libre` reste lisible pour les anciennes fiches. */
   verbGroup?: PhraseVerbGroup
   /** Gattegno: affirmative, negative or a balanced mixture of both banks. */
   phrasePolarity?: import('@/francais/phrase-themes').PhrasePolarity
@@ -1022,6 +1026,8 @@ export type ExerciseBlock = {
   tcfExercise?: import('@/tcf/types').TcfExercise
   /** TCF : exercice choisi dans la banque (sinon tirage selon la graine). */
   tcfBankId?: string
+  /** TCF CSC CE : présentation du document à lire. */
+  tcfCeFormat?: 'texte' | 'image'
   /** TCF : scénario qui limite la banque (id de `TCF_SCENARIOS`). */
   tcfScenario?: string
   /**
@@ -1079,6 +1085,13 @@ export type WorksheetBlock = {
   exerciseType: string
   /** Points par question (propagé depuis ExerciseBlock). */
   pointsPerQuestion?: number
+  /**
+   * Poids de toutes les questions de l’exercice, posé sur la première feuille
+   * d’un saut de page. Le badge affiche cette somme ; les feuilles suivantes
+   * ne répètent ni le total, ni le titre, ni la consigne.
+   * `undefined` dans le tableau = barème courant.
+   */
+  pointsWeights?: Array<number | undefined>
   givens?: AlgebraGiven[]
   document?: WorksheetDocument
   problemDraftGrids?: boolean[]

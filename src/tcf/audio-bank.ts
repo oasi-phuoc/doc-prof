@@ -1,3 +1,4 @@
+import { tcfObjectPool, tcfObjectTranscription, type TcfObjectPool } from './object-pool'
 import {
   TCF_AUDIO_TAG_COURT,
   TCF_AUDIO_TAG_LONG,
@@ -33,6 +34,8 @@ export type TcfAudioEntry = {
   tags: TcfAudioTag[]
   /** N° de dialogue / piste 1-based (scenario, court, moyen ou long multi). */
   dialogueIndex?: number
+  /** Objets illustrés repérés dans la transcription exacte de cette piste. */
+  objectPool?: TcfObjectPool
   /** Pool de questions liées à cette piste (tags `court` / `moyen` / `long`). */
   questionPool?: TcfQuestion[]
 }
@@ -411,6 +414,9 @@ export function tcfAudioEntries(exercises: readonly TcfExercise[]): TcfAudioEntr
       total <= 1
         ? row.base
         : `${row.base} ${index}`
+    const objectPool = tcfObjectPool(tcfObjectTranscription(row.exercise, row.audio))
+    row.tags = row.tags.filter((tag) => tag !== TCF_AUDIO_TAG_OBJET)
+    if (objectPool) row.tags = tcfMergeAudioTags(row.tags, [TCF_AUDIO_TAG_OBJET])
     const tagBits = row.tags.length ? `tag:${row.tags.join(',')}` : ''
     out.push({
       audio: row.audio,
@@ -430,6 +436,7 @@ export function tcfAudioEntries(exercises: readonly TcfExercise[]): TcfAudioEntr
       tags: row.tags,
       dialogueIndex: row.dialogueIndex,
       questionPool: row.questionPool,
+      objectPool,
     })
   }
   return out.sort((a, b) => a.label.localeCompare(b.label, 'fr', { numeric: true }))
@@ -467,7 +474,7 @@ export function tcfLongAudioEntries(exercises: readonly TcfExercise[]): TcfAudio
 
 /** Audios tagués `objet` (ex. 5 — images Oui / Non). */
 export function tcfObjetAudioEntries(exercises: readonly TcfExercise[]): TcfAudioEntry[] {
-  return tcfAudioEntries(exercises).filter((e) => tcfAudioHasTag(e.tags, TCF_AUDIO_TAG_OBJET))
+  return tcfAudioEntries(exercises).filter((e) => tcfAudioHasTag(e.tags, TCF_AUDIO_TAG_OBJET) && !!e.objectPool)
 }
 
 /** Chemins des dialogues scénario (pour validation). */

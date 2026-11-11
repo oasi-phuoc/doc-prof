@@ -1,0 +1,9 @@
+{
+  "migration": "schema 1–3 readable; new writes upgrade to schema 4",
+  "boundary": "5000 accepted actions compact into a resumable discussion, no reveal",
+  "beforeBytes": 356569,
+  "compactedBytes": 712,
+  "summary": "finished checkpoint retains all attempts and later observations after reload",
+  "noAnswerKey": "no source text or answer sheet in checkpoint",
+  "errors": []
+}

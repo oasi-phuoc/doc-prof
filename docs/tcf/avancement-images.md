@@ -1,5 +1,29 @@
 # Avancement des illustrations CE / CO
 
+> État actuel : voir le [rapport global du 7 novembre 2026](rapport-global-20261107.md). Les compteurs historiques ci-dessous sont conservés pour la traçabilité.
+
+## Reprise du 6 novembre 2026 — objets CO inclus
+
+La nouvelle demande utilisateur reprend l’harmonisation des images et inclut désormais les 26 banques CO **OBJET**. Elle remplace les anciennes consignes de pause audio et d’exclusion des objets conservées ci-dessous pour l’historique. Le style validé du commit `48a753d8`, le paysage 4:3 et les réponses restent inchangés.
+
+Le [rapport vérifiable de cette reprise](reprise-images-20261106.json) compare les banques au commit de départ : il distingue les usages remplacés, les images réellement générées ou réutilisées et les usages encore à traiter. Les 1 229 usages réels au départ incluent les objets ; le précédent suivi de 1 036 + 202 était décalé de neuf usages déjà absents, non comptés comme remplacements ici.
+
+Les QCM image déjà complets peuvent être harmonisés choix par choix : chaque nouvelle cible est relue, chaque trio reste complet et distinct, et les choix non résolus gardent leur image actuelle. Cela n’active aucune nouvelle variante incomplète. Les objets et supports ont des correspondances explicites distinctes. Les anciens fichiers du vocabulaire sont conservés.
+
+Commandes depuis la racine :
+
+```sh
+python3 scripts/tcf_direct_image_reuses.py --apply
+python3 scripts/tcf_replace_vocabulary_images.py --incremental --apply
+python3 scripts/check-tcf-image-harmonization.py --write-report docs/tcf/reprise-images-20261106.json
+python3 scripts/check-tcf-object-images.py
+```
+
+La comparaison utilise le commit de départ enregistré dans le rapport (option `--baseline` si HEAD change). Elle vérifie que seules les adresses image changent : textes, réponses, ids et audios identiques ; originaux conservés à l’octet près ; nouvelles cibles relues et empreintes en 4:3. La première image d’enseignant avec une addition fausse a été rejetée ; seule sa correction au tableau de botanique est utilisée.
+
+## État antérieur au 6 novembre
+
+
 Mise à jour du 5 novembre 2026. Le lot prioritaire de **57 questions** compte **49 questions entièrement illustrées, relues et activées**. Il a demandé **110 nouvelles illustrations** et **37 réutilisations** d’images déjà disponibles. Chaque trio comporte trois images distinctes correspondant aux trois réponses texte. Les images sont en **4:3, 1 280 × 960**, dans le style dessiné du commit `48a753d8`, avec des personnages variés. Les premiers rendus trop photographiques, dont celui du repas gastronomique, sont écartés au profit des reprises.
 
 **Les huit autres questions ne sont pas annoncées comme illustrées :** cinq restent en QCM texte parce que leur sens temporel, leur fréquence ou leur lien familial ne peut pas être prouvé par une image seule ; trois attendent leurs images adaptées après correction audio (accueil de librairie, rayon DVD et caisses automatiques). Les identifiants, choix, sources et raisons sont consignés dans [le suivi des 57 questions](images-57-priorite.json). Aucun choix ni corrigé texte n’a été changé pour faire correspondre une illustration.

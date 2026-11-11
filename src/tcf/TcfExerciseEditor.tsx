@@ -1,3 +1,4 @@
+import { markMotATrouver, resetMotsATrouver } from './texte-images-editing'
 import { useMemo, useRef, useState } from 'react'
 import { SelectBox } from '@/components/generator/SelectBox'
 import { RefreshIcon } from '@/components/generator/WorksheetSheet'
@@ -10,7 +11,13 @@ import {
   tcfAudioHasTag,
   type TcfAudioEntry,
 } from './audio-bank'
-import { TCF_TYPES, tcfDefaultTypeReponse, tcfSlotByTypeId, tcfTypeMeta } from './catalog'
+import {
+  TCF_TYPES,
+  tcfDefaultTypeReponse,
+  tcfSlotByTypeId,
+  tcfTypeMeta,
+  tcfTypeReponses,
+} from './catalog'
 import { AudioField, ImageField, LinesField, NumberField, TextField } from './fields'
 import {
   limitTcfCeQuestions,
@@ -61,33 +68,7 @@ function NbMotsFields({ value, onChange }: { value: TcfNbMots; onChange: (next: 
   )
 }
 
-const TEXTE_IMAGES_BLANK = '_____'
-
-/** Remplace la sélection par `_____ (n)` et enregistre le mot à l’index n−1. */
-function markMotATrouver(
-  texte: string,
-  start: number,
-  end: number,
-  mots: TcfMotImage[],
-): { texte: string; mots: TcfMotImage[]; caret: number } | null {
-  const raw = texte.slice(start, end)
-  const selected = raw.replace(/^[\s.,;:!?«»"']+|[\s.,;:!?«»"']+$/g, '')
-  if (!selected || /_{3,}/.test(selected)) return null
-  const index = mots.findIndex((m) => !m.mot.trim())
-  if (index < 0 || index >= 5) return null
-  const n = index + 1
-  const lead = raw.match(/^[\s.,;:!?«»"']*/)?.[0] ?? ''
-  const trail = raw.match(/[\s.,;:!?«»"']*$/)?.[0] ?? ''
-  const before = texte.slice(0, start) + lead
-  const after = trail + texte.slice(end)
-  const needsSpaceBefore = before.length > 0 && !/\s$/.test(before)
-  const needsSpaceAfter = after.length > 0 && !/^\s|[.,;:!?]/.test(after)
-  const blank = `${needsSpaceBefore ? ' ' : ''}${TEXTE_IMAGES_BLANK} (${n})${needsSpaceAfter ? ' ' : ''}`
-  const nextMots = mots.map((m, i) => (i === index ? { ...m, mot: selected } : m))
-  return { texte: before + blank + after, mots: nextMots, caret: before.length + blank.length }
-}
-
-function TexteImagesEditor({
+export function TexteImagesEditor({
   ex,
   set,
 }: {
@@ -95,6 +76,8 @@ function TexteImagesEditor({
   set: (next: TcfExercise) => void
 }) {
   const areaRef = useRef<HTMLTextAreaElement>(null)
+  const selection = useRef<{ start: number; end: number } | null>(null)
+  const [markError, setMarkError] = useState('')
   const mots = ex.support.mots.length === 5
     ? ex.support.mots
     : Array.from({ length: 5 }, (_, i) => ex.support.mots[i] ?? { mot: '', image: '' })
@@ -105,11 +88,19 @@ function TexteImagesEditor({
   const onMark = () => {
     const el = areaRef.current
     if (!el) return
-    const start = el.selectionStart
-    const end = el.selectionEnd
-    if (start === end) return
-    const next = markMotATrouver(ex.support.texte, start, end, mots)
-    if (!next) return
+    const selected = el.selectionEnd > el.selectionStart
+      ? { start: el.selectionStart, end: el.selectionEnd } : selection.current
+    if (!selected || selected.start === selected.end) {
+      setMarkError('Sélectionnez d’abord un mot dans le texte.')
+      return
+    }
+    const next = markMotATrouver(ex.support.texte, selected.start, selected.end, mots)
+    if (!next) {
+      setMarkError('Sélectionnez un mot sans blanc existant. Si les 5 mots sont déjà définis, réinitialisez-les pour recommencer.')
+      return
+    }
+    setMarkError('')
+    selection.current = null
     setSupport(next.texte, next.mots)
     requestAnimationFrame(() => {
       el.focus()
@@ -127,15 +118,24 @@ function TexteImagesEditor({
           className="pill-input tcf-textarea"
           rows={8}
           value={ex.support.texte}
-          onChange={(event) => setSupport(event.target.value, mots)}
+          onSelect={(event) => {
+            const el = event.currentTarget
+            if (el.selectionEnd > el.selectionStart) selection.current = { start: el.selectionStart, end: el.selectionEnd }
+          }}
+          onChange={(event) => { selection.current = null; setMarkError(''); setSupport(event.target.value, mots) }}
         />
       </label>
       <div className="tcf-row">
-        <button type="button" className="tcf-btn" onClick={onMark}>
+        <button type="button" className="tcf-btn" onMouseDown={(event) => event.preventDefault()} onClick={onMark}>
           Mot à trouver
         </button>
-        <small className="muted">Sélectionnez un mot dans le texte, puis cliquez.</small>
+        <button type="button" className="tcf-btn" onClick={() => {
+          const reset = resetMotsATrouver(ex.support.texte, mots)
+          selection.current = null; setMarkError(''); setSupport(reset.texte, reset.mots)
+        }}>Réinitialiser les mots à trouver</button>
+        <small className="muted">Sélectionnez jusqu’à 5 mots. Les numéros suivent leur position dans le texte.</small>
       </div>
+      {markError ? <p role="alert">{markError}</p> : null}
       {mots.map((m, i) => (
         <fieldset className="tcf-question-editor" key={i}>
           <legend>Mot {i + 1}</legend>
@@ -358,7 +358,100 @@ function SupportEditor({
           </div>
         </>
       )
-    case 'six_courts':
+    case 'six_courts': {
+      const questions = ex.questions.map((question, index) => ({
+        ...question,
+        audio: question.audio ?? Math.min(index + 1, ex.support.audios.length),
+      }))
+      const reponses = tcfTypeReponses(ex.competence, ex.type_exercice)
+      const setQuestions = (next: typeof questions) =>
+        set({
+          ...ex,
+          questions: [...next].sort((a, b) => (a.audio ?? 1) - (b.audio ?? 1)),
+        })
+      const addAudio = () => {
+        const audioNumber = ex.support.audios.length + 1
+        set({
+          ...ex,
+          support: { ...ex.support, audios: [...ex.support.audios, ''] },
+          questions: [
+            ...questions,
+            { ...emptyTcfQuestion(tcfDefaultTypeReponse(ex.competence)), audio: audioNumber },
+          ],
+        })
+      }
+      const removeAudio = (audioIndex: number) => {
+        const audioNumber = audioIndex + 1
+        const audios = ex.support.audios.filter((_, index) => index !== audioIndex)
+        const remainingQuestions = questions.flatMap((question) => {
+          if (question.audio === audioNumber) return []
+          return [{
+            ...question,
+            audio: question.audio != null && question.audio > audioNumber
+              ? question.audio - 1
+              : question.audio,
+          }]
+        })
+        set({ ...ex, support: { ...ex.support, audios }, questions: remainingQuestions })
+      }
+
+      return (
+        <div className="tcf-six-courts-audios">
+          {ex.support.audios.map((audio, audioIndex) => {
+            const audioNumber = audioIndex + 1
+            const group = questions.flatMap((question, questionIndex) =>
+              question.audio === audioNumber ? [{ question, questionIndex }] : [],
+            )
+            return (
+              <fieldset className="tcf-six-courts-audio" key={audioIndex}>
+                <legend>Audio {audioNumber}</legend>
+                <AudioField
+                  label={`Piste audio ${audioNumber}`}
+                  value={audio}
+                  onChange={(next) =>
+                    set(withSupport(ex, { audios: ex.support.audios.map((source, index) => (index === audioIndex ? next : source)) }))
+                  }
+                  bankEntries={audioBank}
+                  onPickFromBank={(entry) =>
+                    set(applyAudioSlotFromEntry({ ...ex, questions }, entry, audioIndex))
+                  }
+                />
+                {ex.support.audios.length > 1 ? (
+                  <button
+                    type="button"
+                    className="tcf-six-courts-remove"
+                    aria-label={`Supprimer l’audio ${audioNumber} et ses questions`}
+                    onClick={() => removeAudio(audioIndex)}
+                  >
+                    Supprimer cet audio
+                  </button>
+                ) : null}
+                {group.map(({ question, questionIndex }) => (
+                  <QuestionEditor
+                    key={questionIndex}
+                    index={questionIndex}
+                    question={question}
+                    reponses={reponses}
+                    hideQuestionImage
+                    hideFormsHint
+                    hideQuestionRemove
+                    onChange={(next) => setQuestions(
+                      questions.map((current, index) =>
+                        index === questionIndex ? { ...next, audio: audioNumber } : current,
+                      ),
+                    )}
+                    onRemove={() => setQuestions(questions.filter((_, index) => index !== questionIndex))}
+                  />
+                ))}
+              </fieldset>
+            )
+          })}
+          <button type="button" className="tcf-btn tcf-six-courts-add" onClick={addAudio}>
+            + ajouter un audio et sa question
+          </button>
+        </div>
+      )
+    }
     case 'trois_moyens':
       return (
         <>
@@ -1117,15 +1210,19 @@ export function TcfExerciseEditor({
   const mediaErrors = mediaCheck && mediaCheck.for === current ? mediaCheck.errors : null
   const copied = copiedFor != null && copiedFor === current
   const meta = current ? tcfTypeMeta(current.competence, current.type_exercice) : undefined
+  const questionReponses = current
+    ? tcfTypeReponses(current.competence, current.type_exercice)
+    : []
   const validation = useMemo(
     () =>
       current
         ? validateTcfExercise(current, {
+            allowVariableAudioCount: current.type_exercice === 'six_courts' && edited,
             scenarioAudioPaths:
               current.type_exercice === 'association_images' ? scenarioAudioPaths : undefined,
           })
         : null,
-    [current, scenarioAudioPaths],
+    [current, scenarioAudioPaths, edited],
   )
 
   if (!current || (!isGrammaire && !slot)) return null
@@ -1169,6 +1266,7 @@ export function TcfExerciseEditor({
 
   const exercise = current
   const usesQuestions = (meta?.reponses.length ?? 0) > 0
+  const isSixCourts = exercise.type_exercice === 'six_courts'
   const audioCount =
     exercise.type_exercice === 'six_courts' || exercise.type_exercice === 'trois_moyens'
       ? exercise.support.audios.length
@@ -1181,7 +1279,7 @@ export function TcfExerciseEditor({
     exercise.type_exercice === 'question_texte'
 
   return (
-    <div className="quad-libre-block tcf-editor">
+    <div className={`quad-libre-block tcf-editor${isSixCourts ? ' is-six-courts' : ''}`}>
       <div className="libre-item-num-col" style={{ alignItems: 'flex-start', marginBottom: 8 }}>
         <b>{isGrammaire ? 'Mode libre' : 'Exercice TCF'}</b>
         <button
@@ -1201,21 +1299,25 @@ export function TcfExerciseEditor({
           <RefreshIcon />
         </button>
       </div>
-      <div className="tcf-row">
-        <button type="button" className="tcf-btn" disabled={!edited} onClick={() => onChange({ tcfExercise: undefined })}>
-          Revenir à la banque
-        </button>
-        <button type="button" className="tcf-btn" onClick={() => startBlank()}>
-          Nouvel exercice vide
-        </button>
-      </div>
-      <small className="muted">
-        {edited
-          ? 'Exercice modifié : la fiche affiche cette version.'
-          : isGrammaire
-            ? 'Exercice de la banque Grammaire : toute modification crée une version libre.'
-            : 'Exercice de la banque : toute modification crée une version libre.'}
-      </small>
+      {!isSixCourts ? (
+        <>
+          <div className="tcf-row">
+            <button type="button" className="tcf-btn" disabled={!edited} onClick={() => onChange({ tcfExercise: undefined })}>
+              Revenir à la banque
+            </button>
+            <button type="button" className="tcf-btn" onClick={() => startBlank()}>
+              Nouvel exercice vide
+            </button>
+          </div>
+          <small className="muted">
+            {edited
+              ? 'Exercice modifié : la fiche affiche cette version.'
+              : isGrammaire
+                ? 'Exercice de la banque Grammaire : toute modification crée une version libre.'
+                : 'Exercice de la banque : toute modification crée une version libre.'}
+          </small>
+        </>
+      ) : null}
       <>
           <SelectBox
             label="Type d’exercice"
@@ -1238,16 +1340,33 @@ export function TcfExerciseEditor({
               </option>
             ))}
           </SelectBox>
-          <small className="muted">Choisissez un type : un audio est tiré au hasard, avec ses questions.</small>
+          {!isSixCourts ? (
+            <small className="muted">Choisissez un type : un audio est tiré au hasard, avec ses questions.</small>
+          ) : null}
           {exercise.type_exercice !== 'images_a_reconnaitre' ? (
-            <TextField
-              label="Consigne (sinon consigne du type)"
-              value={exercise.consigne ?? ''}
-              placeholder={
-                meta?.instruction ?? slot?.instruction ?? 'Consigne liée au type d’exercice'
-              }
-              onChange={(consigne) => set({ ...exercise, consigne: consigne || undefined })}
-            />
+            isSixCourts ? (
+              <div className="tcf-six-courts-consigne">
+                <TextField
+                  label="Consigne (sinon consigne du type)"
+                  value={exercise.consigne ?? ''}
+                  multiline
+                  rows={2}
+                  placeholder={
+                    meta?.instruction ?? slot?.instruction ?? 'Consigne liée au type d’exercice'
+                  }
+                  onChange={(consigne) => set({ ...exercise, consigne: consigne || undefined })}
+                />
+              </div>
+            ) : (
+              <TextField
+                label="Consigne (sinon consigne du type)"
+                value={exercise.consigne ?? ''}
+                placeholder={
+                  meta?.instruction ?? slot?.instruction ?? 'Consigne liée au type d’exercice'
+                }
+                onChange={(consigne) => set({ ...exercise, consigne: consigne || undefined })}
+              />
+            )
           ) : null}
 
           {!usesQuestions ? (
@@ -1352,7 +1471,7 @@ export function TcfExerciseEditor({
               </button>
             </>
           ) : null}
-          {usesQuestions && !isCeBankPicker ? (
+          {usesQuestions && !isCeBankPicker && !isSixCourts ? (
             <>
               <b>Questions ({exercise.questions.length})</b>
               {exercise.questions.map((q, i) => (
@@ -1360,7 +1479,7 @@ export function TcfExerciseEditor({
                   key={i}
                   index={i}
                   question={q}
-                  reponses={meta?.reponses ?? []}
+                  reponses={questionReponses}
                   audioCount={audioCount}
                   onChange={(next) => set({ ...exercise, questions: exercise.questions.map((x, k) => (k === i ? next : x)) })}
                   onRemove={() => set({ ...exercise, questions: exercise.questions.filter((_, k) => k !== i) })}
@@ -1383,59 +1502,63 @@ export function TcfExerciseEditor({
             </>
           ) : null}
 
-          {validation && validation.errors.length > 0 ? (
-            <ul className="tcf-errors" role="alert">
-              {validation.errors.map((e, i) => (
-                <li key={i}>{e}</li>
-              ))}
-            </ul>
-          ) : (
-            <p className="tcf-ok">Exercice valide.</p>
-          )}
-          {validation && validation.warnings.length > 0 ? (
-            <ul className="tcf-warnings">
-              {validation.warnings.map((w, i) => (
-                <li key={i}>{w}</li>
-              ))}
-            </ul>
+          {!isSixCourts ? (
+            <>
+              {validation && validation.errors.length > 0 ? (
+                <ul className="tcf-errors" role="alert">
+                  {validation.errors.map((e, i) => (
+                    <li key={i}>{e}</li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="tcf-ok">Exercice valide.</p>
+              )}
+              {validation && validation.warnings.length > 0 ? (
+                <ul className="tcf-warnings">
+                  {validation.warnings.map((w, i) => (
+                    <li key={i}>{w}</li>
+                  ))}
+                </ul>
+              ) : null}
+              {mediaErrors ? (
+                mediaErrors.length > 0 ? (
+                  <ul className="tcf-errors" role="alert">
+                    {mediaErrors.map((e, i) => (
+                      <li key={i}>{e}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="tcf-ok">Tous les fichiers référencés existent.</p>
+                )
+              ) : null}
+              <div className="tcf-row">
+                <button type="button" className="tcf-btn" onClick={() => void checkTcfMedia(exercise).then((errors) => setMediaCheck({ for: exercise, errors }))}>
+                  Vérifier les fichiers
+                </button>
+                <button
+                  type="button"
+                  className="tcf-btn"
+                  disabled={(validation?.errors.length ?? 0) > 0}
+                  onClick={() => void exportJson('copy')}
+                >
+                  {copied ? 'JSON copié' : 'Copier le JSON'}
+                </button>
+                <button
+                  type="button"
+                  className="tcf-btn"
+                  disabled={(validation?.errors.length ?? 0) > 0}
+                  onClick={() => void exportJson('download')}
+                >
+                  Télécharger
+                </button>
+              </div>
+              <small className="muted">
+                {isGrammaire
+                  ? 'L’export est bloqué tant qu’il reste des erreurs.'
+                  : `L’export est bloqué tant qu’il reste des erreurs. Collez le JSON dans src/tcf/content/${niveau.toLowerCase()}/${slot?.competence.toLowerCase()}.json.`}
+              </small>
+            </>
           ) : null}
-          {mediaErrors ? (
-            mediaErrors.length > 0 ? (
-              <ul className="tcf-errors" role="alert">
-                {mediaErrors.map((e, i) => (
-                  <li key={i}>{e}</li>
-                ))}
-              </ul>
-            ) : (
-              <p className="tcf-ok">Tous les fichiers référencés existent.</p>
-            )
-          ) : null}
-          <div className="tcf-row">
-            <button type="button" className="tcf-btn" onClick={() => void checkTcfMedia(exercise).then((errors) => setMediaCheck({ for: exercise, errors }))}>
-              Vérifier les fichiers
-            </button>
-            <button
-              type="button"
-              className="tcf-btn"
-              disabled={(validation?.errors.length ?? 0) > 0}
-              onClick={() => void exportJson('copy')}
-            >
-              {copied ? 'JSON copié' : 'Copier le JSON'}
-            </button>
-            <button
-              type="button"
-              className="tcf-btn"
-              disabled={(validation?.errors.length ?? 0) > 0}
-              onClick={() => void exportJson('download')}
-            >
-              Télécharger
-            </button>
-          </div>
-          <small className="muted">
-            {isGrammaire
-              ? 'L’export est bloqué tant qu’il reste des erreurs.'
-              : `L’export est bloqué tant qu’il reste des erreurs. Collez le JSON dans src/tcf/content/${niveau.toLowerCase()}/${slot?.competence.toLowerCase()}.json.`}
-          </small>
       </>
     </div>
   )

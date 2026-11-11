@@ -11,7 +11,7 @@ import {
 } from '@/components/math/PrintDocumentChrome'
 import { DecomposeExample } from '@/components/item-view/decompose'
 import { isDraftPadExercise } from '@/math/catalog'
-import { blockPointsTotal, formatPointsLabel } from '@/tpm/test'
+import { blockPointsTotal, formatPointsLabel, sumPointWeights } from '@/tpm/test'
 import { isReperageConstruire } from '@/math/coord-reperage'
 import type {
   CoordReply,
@@ -35,6 +35,22 @@ import { tcfPeSlotDefaults } from '@/tcf/pe-defaults'
 function blockCorrigeAudios(block: WorksheetBlock): string[] {
   if (block.corrigeAudios?.length) return block.corrigeAudios
   return collectCorrigeAudioSrcs(block.items, block.document?.audioSrc)
+}
+
+/** CO à bandeaux Audio N : le lecteur du corrigé est dans le bandeau, pas à côté du titre. */
+function coAudioInBanner(block: WorksheetBlock): boolean {
+  return block.items.some((item) => {
+    const tcf = item.tcf
+    if (!tcf) return false
+    if (tcf.kind === 'audio_cadre') return true
+    if (tcf.kind === 'association' && tcf.situations.some((situation) => situation.audioSrc)) return true
+    if ((tcf.kind === 'qcm' || tcf.kind === 'lignes') && tcf.audioFrame) return true
+    if (tcf.kind === 'support' && tcf.exercise.competence === 'CO') {
+      const type = tcf.exercise.type_exercice
+      return type === 'six_courts' || type === 'trois_moyens' || type === 'complet'
+    }
+    return false
+  })
 }
 
 export function defaultCoordQuestionReply(exerciseType: string): CoordReply {
@@ -220,8 +236,11 @@ export function WorksheetSheet({
           const blockHeading = block.title
           const isTheoryBlock = block.items.some((item) => item.layout === 'theory')
           const perQ = block.pointsPerQuestion ?? pointsPerQuestion
-          const blockPts = blockPointsTotal(block.items, perQ)
+          const blockPts = block.pointsWeights
+            ? sumPointWeights(block.pointsWeights, perQ)
+            : blockPointsTotal(block.items, perQ)
           const pointsBadge = formatPointsLabel(blockPts)
+          const continuedSlice = (block.itemOffset ?? 0) > 0
           const dualForm = isGramDualFormExercise(block.exerciseType)
           const marginForm = isGramMarginFormExercise(block.exerciseType)
           const firstQuestion = block.items.find(
@@ -266,12 +285,12 @@ export function WorksheetSheet({
                   : undefined
               }
             >
-              {isJeuxSheet || isTheoryBlock ? null : (
+              {isJeuxSheet || isTheoryBlock || continuedSlice ? null : (
               <header className="exercise-heading">
                 <div className="exercise-heading-main">
                   <div className="exercise-heading-title-row">
                     <h3>{blockHeading}</h3>
-                    {mode === 'answers'
+                    {mode === 'answers' && !coAudioInBanner(block)
                       ? blockCorrigeAudios(block).map((src) => (
                           <audio
                             key={src}
@@ -431,6 +450,19 @@ export function WorksheetSheet({
                     Boolean(
                       block.tcfPageBreakAfter?.[sourceIndex - 1] ?? page.tcfPageBreakAfter?.[sourceIndex - 1],
                     )
+                  const theoryBreakCount =
+                    block.tcfPageBreakAfter?.length ??
+                    page.tcfPageBreakAfter?.length ??
+                    block.items.length + (block.itemOffset ?? 0)
+                  const isTheoryPageBreakable =
+                    item.layout === 'theory' &&
+                    item.theoryBlock?.kind === 'section' &&
+                    sourceIndex < theoryBreakCount - 1
+                  const theoryPageBreakAfter = Boolean(
+                    block.tcfPageBreakAfter?.[sourceIndex] ??
+                      page.tcfPageBreakAfter?.[sourceIndex] ??
+                      item.theoryPageBreakAfter,
+                  )
                   const blockAllowsDraftGrid = isDraftPadExercise(block.exerciseType)
                   const isTcfQuestion =
                     item.layout === 'tcf' &&
@@ -440,7 +472,7 @@ export function WorksheetSheet({
                   const isTcfPageBreakable =
                     isTcfQuestion ||
                     isTcfAudioCadre ||
-                    (item.layout === 'tcf' && item.tcf?.kind === 'dialogue')
+                    (item.layout === 'tcf' && (item.tcf?.kind === 'dialogue' || item.tcf?.kind === 'ce_association_answers'))
                   const showMarginForms =
                     interactiveTcfOptions &&
                     isTcfQuestion &&
@@ -497,6 +529,12 @@ export function WorksheetSheet({
                         sourceIndex > 0 &&
                         onToggleTcfPageBreak
                           ? () => onToggleTcfPageBreak(index, blockIndex)
+                          : undefined
+                      }
+                      theoryPageBreakAfter={isTheoryPageBreakable ? theoryPageBreakAfter : undefined}
+                      onToggleTheoryPageBreakAfter={
+                        interactiveTcfPageBreaks && isTheoryPageBreakable && onToggleTcfPageBreak
+                          ? () => onToggleTcfPageBreak(index + 1, blockIndex)
                           : undefined
                       }
                       formulaireLetterGrid={Boolean(block.formulaireLetterGrid)}

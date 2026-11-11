@@ -324,15 +324,40 @@ export function isTpmConsignesType(exerciseType: string | undefined): boolean {
   return exerciseType === 'tpm-consignes'
 }
 
+type ScoredItem = { layout?: string; noPoints?: boolean; points?: number }
+
+function isScoredItem(item: ScoredItem): boolean {
+  return item.layout !== 'theory' && !item.noPoints
+}
+
 /** Total de points d’un bloc (ignore les items théorie / consignes). */
 export function blockPointsTotal(
-  items: ReadonlyArray<{ layout?: string; noPoints?: boolean; points?: number }>,
+  items: ReadonlyArray<ScoredItem>,
   pointsPerQuestion: number,
 ): number {
   if (pointsPerQuestion === 0) return 0
   return items
-    .filter((item) => item.layout !== 'theory' && !item.noPoints)
+    .filter(isScoredItem)
     .reduce((sum, item) => sum + (item.points ?? pointsPerQuestion), 0)
+}
+
+/**
+ * Poids des questions notées d’un exercice entier.
+ * `undefined` = barème courant (points par question), pour que le badge
+ * suive un changement de barème sans regénérer la fiche.
+ */
+export function scoredPointWeights(items: ReadonlyArray<ScoredItem>): Array<number | undefined> {
+  return items.filter(isScoredItem).map((item) => item.points)
+}
+
+export function sumPointWeights(
+  weights: ReadonlyArray<number | undefined>,
+  pointsPerQuestion: number,
+): number {
+  if (pointsPerQuestion === 0) return 0
+  let sum = 0
+  for (const weight of weights) sum += weight ?? pointsPerQuestion
+  return sum
 }
 
 export function formatPointsLabel(points: number): string {

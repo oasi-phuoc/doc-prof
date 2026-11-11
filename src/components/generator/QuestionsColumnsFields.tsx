@@ -553,8 +553,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                 </label>
               ) : null}
               {isOralComprehensionExercise(activeBlock.exerciseType) ||
-              activeBlock.exerciseType.includes('-com-ecrite') ||
-              isGramTheory ? (
+              activeBlock.exerciseType.includes('-com-ecrite') ? (
                 <div className="mode-toggle-block">
                   <b>Saut de page</b>
                   <div className="mode-toggle" role="group" aria-label="Saut de page pour les questions">
@@ -571,8 +570,8 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                       onClick={() => updatePage({ continueOnNextPage: true })}
                       title={
                         isGramTheory
-                          ? 'Un bloc page dans la théorie commence la feuille suivante'
-                          : 'Les questions au-delà de 4 passent sur la feuille suivante'
+                          ? 'Un bloc page ajoute une feuille sur le même bouton'
+                          : 'Les questions au-delà de 4 passent sur une feuille du même bouton'
                       }
                     >
                       {isGramTheory ? 'Blocs page' : 'Suite auto'}
@@ -581,8 +580,8 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                   {activeBlock.continueOnNextPage ? (
                     <small className="muted">
                       {isGramTheory
-                        ? 'La théorie tient sur une feuille. Un bloc { kind: \'page\' } commence la suivante.'
-                        : 'Au-delà de 4 questions, une feuille « suite » est ajoutée automatiquement.'}
+                        ? 'La théorie tient sur une feuille. Un bloc page ajoute une feuille sur le même bouton.'
+                        : 'Au-delà de 4 questions, une feuille s’ajoute sur le même bouton de page.'}
                     </small>
                   ) : null}
                 </div>

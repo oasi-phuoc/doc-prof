@@ -1,0 +1,93 @@
+{
+  "version": 1,
+  "pages": [
+    {
+      "domain": "algèbre",
+      "topic": "addition",
+      "exerciseType": "addition-ligne",
+      "difficulty": "moyen",
+      "count": 2,
+      "columns": 2,
+      "libreItems": [
+        {
+          "layout": "inline",
+          "op": "+",
+          "a": 788,
+          "b": 771,
+          "missing": "result",
+          "answer": "1559"
+        },
+        {
+          "layout": "inline",
+          "op": "+",
+          "a": 46,
+          "b": 37,
+          "missing": "result",
+          "answer": "83"
+        }
+      ]
+    },
+    {
+      "domain": "géométrie",
+      "topic": "aires",
+      "exerciseType": "aire-carre",
+      "difficulty": "moyen",
+      "count": 1,
+      "columns": 2,
+      "problemDraftGrids": [
+        true,
+        true
+      ],
+      "libreInstruction": "Calculez l’aire du carré.",
+      "libreItems": [
+        {
+          "layout": "geo",
+          "figure": "square",
+          "dims": {
+            "side": 349,
+            "unit": "cm"
+          },
+          "prompt": "Calculez l’aire.",
+          "answer": "121801 cm²"
+        }
+      ]
+    },
+    {
+      "domain": "tcf-csc",
+      "topic": "tcf-co",
+      "exerciseType": "tcf-co-ex-1",
+      "difficulty": "facile",
+      "count": 1,
+      "columns": 1
+    },
+    {
+      "domain": "tcf-csc",
+      "topic": "tcf-po",
+      "exerciseType": "tcf-po",
+      "difficulty": "facile",
+      "count": 1,
+      "columns": 1,
+      "tcfBankId": "tcf-a0a1-po-img-accident-velo"
+    }
+  ],
+  "seed": 20261107,
+  "institutional": {
+    "schoolName": "Classe d'accueil",
+    "schoolYear": "2026-2027",
+    "schoolTagline": "",
+    "orgLine1": "Département de la santé, des affaires sociales et de la culture",
+    "orgLine2": "Service de l'action sociale",
+    "orgLine3": "Office de l'asile",
+    "orgLine4": "Centre de formation \"Le Botza\"",
+    "classLevel": "",
+    "classNumber": "",
+    "course": "Mathématiques",
+    "documentTitle": "",
+    "reference": "",
+    "logoSrc": "/src/assets/logos/etat-du-valais.webp"
+  },
+  "evalMode": false,
+  "pointsPerQuestion": 1,
+  "libreMode": true,
+  "libreSnapshot": null
+}

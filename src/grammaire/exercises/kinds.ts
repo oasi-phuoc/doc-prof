@@ -101,20 +101,6 @@ export const GRAM_EXERCISE_KINDS = [
     layout: 'write' as const,
   },
   {
-    id: 'ordre-a1',
-    label: 'Mots dans l’ordre (A1)',
-    description: '50 phrases A1 à reconstruire avec les couleurs Gattegno.',
-    instruction: 'Remettez les mots dans l’ordre pour écrire une phrase.',
-    layout: 'write' as const,
-  },
-  {
-    id: 'ordre-a2',
-    label: 'Mots dans l’ordre (A2)',
-    description: '50 phrases A2 à reconstruire avec les couleurs Gattegno.',
-    instruction: 'Remettez les mots dans l’ordre pour écrire une phrase.',
-    layout: 'write' as const,
-  },
-  {
     id: 'qcm-conj',
     label: 'Choisissez la bonne conjugaison',
     description: 'Phrase avec un blanc et trois formes proposées.',
@@ -411,13 +397,17 @@ export const GRAM_EXERCISE_KINDS = [
   },
 ] as const
 
-export type GramExerciseKindId = (typeof GRAM_EXERCISE_KINDS)[number]['id']
+type LegacyGramExerciseKindId = 'ordre-a1' | 'ordre-a2'
+export type GramExerciseKindId = (typeof GRAM_EXERCISE_KINDS)[number]['id'] | LegacyGramExerciseKindId
 
 /** Ids du plus long au plus court (parse `gram-ex-{sub}-{kind}`). */
 export const GRAM_KIND_IDS: GramExerciseKindId[] = (
-  [...GRAM_EXERCISE_KINDS].map((k) => k.id) as GramExerciseKindId[]
+  [...GRAM_EXERCISE_KINDS.map((kind) => kind.id), 'ordre-a1', 'ordre-a2'] as GramExerciseKindId[]
 ).sort((a, b) => b.length - a.length)
 
 export function gramKindById(id: string) {
-  return GRAM_EXERCISE_KINDS.find((k) => k.id === id)
+  return GRAM_EXERCISE_KINDS.find((kind) => kind.id === id) ??
+    (id === 'ordre-a1' || id === 'ordre-a2'
+      ? GRAM_EXERCISE_KINDS.find((kind) => kind.id === 'ordre')
+      : undefined)
 }

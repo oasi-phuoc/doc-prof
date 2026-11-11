@@ -1,5 +1,7 @@
 # Audit des questions CE et CO — contrôle visuel du 2 novembre 2026
 
+> État actuel : voir le [rapport global du 7 novembre 2026](rapport-global-20261107.md). Les compteurs historiques ci-dessous sont conservés pour la traçabilité.
+
 Les 1 262 supports de la banque ont été relus : 339 supports CE et 923 exercices CO. La banque contient **9 463 questions**, contre 5 104 avant audit, soit **4 359 questions supplémentaires**.
 
 Les questions ont été réécrites ou vérifiées à partir des textes et transcriptions. Chaque question comporte un mot interrogatif, trois propositions distinctes et un seul corrigé. Les réponses rédigées et les variantes QCM sont synchronisées. Les énoncés sans rapport avec le support, les réponses fausses et les distracteurs incohérents ont été remplacés. Une seconde relecture a corrigé des choix numériques qui se recoupaient et des réponses insuffisamment étayées.

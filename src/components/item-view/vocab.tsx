@@ -1,3 +1,4 @@
+import { WorksheetImage } from '@/components/WorksheetImage'
 import { useEffect, useState, type CSSProperties } from 'react'
 import QRCode from 'qrcode'
 import type { MathItem, PreviewMode } from '@/math/types'
@@ -53,7 +54,7 @@ export function VocabTable({ item }: { item: MathItem }) {
           <div className="vocab-card-top">
             <div className="vocab-card-qr">
               {qrSrcs[index] ? (
-                <img src={qrSrcs[index]} alt={entry?.label ? `Audio ${entry.label}` : ''} />
+                <WorksheetImage editable={false} src={qrSrcs[index]} alt={entry?.label ? `Audio ${entry.label}` : ''} />
               ) : (
                 <span className="vocab-card-qr-ph" aria-hidden />
               )}
@@ -61,7 +62,7 @@ export function VocabTable({ item }: { item: MathItem }) {
           </div>
           <div className="vocab-card-image">
             {entry?.imageSrc ? (
-              <img src={entry.imageSrc} alt="" />
+              <WorksheetImage src={entry.imageSrc} alt="" />
             ) : (
               <span className="vocab-card-empty" aria-hidden />
             )}
@@ -171,7 +172,7 @@ export function VocabMatch({ item, mode }: { item: MathItem; mode: PreviewMode }
             <div className="vocab-match-item" key={`L-${index}`}>
               <span className="vocab-match-num">{index + 1}.</span>
               {imageMode ? (
-                <img className="vocab-match-img" src={value} alt="" />
+                <WorksheetImage className="vocab-match-img" src={value} alt="" />
               ) : (
                 <span className="vocab-match-text">{value}</span>
               )}
@@ -327,7 +328,7 @@ export function AudioMatchBlock({ item, mode }: { item: MathItem; mode: PreviewM
                 <td className="audio-match-num">{index + 1}.</td>
                 <td className="audio-match-qr">
                   {qrSrcs[index] ? (
-                    <img src={qrSrcs[index]} alt={`Audio ${index + 1}`} />
+                    <WorksheetImage editable={false} src={qrSrcs[index]} alt={`Audio ${index + 1}`} />
                   ) : (
                     <span className="audio-match-qr-ph" aria-hidden />
                   )}

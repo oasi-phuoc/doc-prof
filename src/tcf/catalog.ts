@@ -281,7 +281,7 @@ export const TCF_TYPES: readonly TcfTypeMeta[] = [
     label: 'Entretien dirigé',
     description: 'Répondre aux questions de l’examinateur·trice sur soi (questions au corrigé).',
     instruction:
-      'Entretien dirigé. Vous saluez l’examinateur et vous répondez à ses questions sur vous : votre identité, votre famille, votre logement, vos activités et vos goûts.',
+      'Répondez aux questions de l’examinateur. Si vous ne comprenez pas, vous pouvez demander de répéter.',
     reponses: [],
   },
   {
@@ -341,6 +341,15 @@ export function isTcfType(typeId: string | undefined): boolean {
 
 export function tcfTypeMeta(competence: TcfCompetence, typeExercice: TcfTypeExercice): TcfTypeMeta | undefined {
   return TCF_TYPES.find((m) => m.competence === competence && m.typeExercice === typeExercice)
+}
+
+export function tcfTypeReponses(
+  competence: TcfCompetence,
+  typeExercice: TcfTypeExercice,
+): readonly TcfTypeReponse[] {
+  const meta = tcfTypeMeta(competence, typeExercice)
+  if (competence === 'CO' && meta) return ALL_REPONSES
+  return meta?.reponses ?? []
 }
 
 /**
@@ -519,7 +528,7 @@ export const TCF_EXERCISE_TYPES: ExerciseType[] = [
     id: TCF_CONSIGNES_TYPE,
     topic: TCF_INFO_TOPIC,
     label: 'Informations du test',
-    description: 'Page d’informations : quatre cadres (CE, CO, PE, PO), 25 pts chacun.',
+    description: 'Page d’informations : les quatre compétences (CE, CO, PE, PO) et leurs points.',
     instruction: '',
     visual: 'texte',
     preferredColumns: 1,
