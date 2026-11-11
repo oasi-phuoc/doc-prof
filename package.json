@@ -20,6 +20,7 @@
     "test:interactive:competition": "node tests/interactive/competition-browser.mjs",
     "test:interactive:readability": "node tests/interactive/readability-browser.mjs",
     "test:tcm-csc:browser": "node tests/interactive/tcm-csc-browser.mjs",
+    "test:tcf:formats": "node tests/interactive/tcf-formats-browser.mjs",
     "test:interactive:competition-worker": "node tests/interactive/competition-worker.mjs",
     "typecheck:api": "tsc -b api/fiches/tsconfig.json",
     "check:interactive:budgets": "node scripts/interactive-budgets.mjs",
