@@ -577,7 +577,7 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
                   </details>
                 )}
                 <TeacherSheet game={activeGame} colors={colors} shapes={shapes} disabled={!media.complete} lastSignature={teacherSheetExport} onExport={setTeacherSheetExport} />
-                <PrintCards colors={colors} shapes={shapes} paletteVersion={paletteVersion} />
+                <PrintCards colors={colors} shapes={shapes} />
                 <p className="ci-no-print"><a href="/interactif/cartes" target="_blank" rel="noreferrer">Comparer les cartes avec cet écran</a> · <a href="/interactif/diagnostic" target="_blank" rel="noreferrer">Diagnostic de l’écran</a></p>
               </main>
             )}

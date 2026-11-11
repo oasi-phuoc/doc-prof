@@ -59,7 +59,7 @@ try {
     await page.emulateMedia({ media: 'print' })
     const print = await page.evaluate(() => {
       const cards = [...document.querySelectorAll('.ci-card-sheet:first-child .ci-paper-card')]
-      return { rects: cards.map((card) => { const rect = card.getBoundingClientRect(); return { x: rect.x, y: rect.y, width: rect.width, height: rect.height } }), patterns: cards.map((card) => getComputedStyle(card).backgroundImage), inks: cards.map((card) => getComputedStyle(card.querySelector('.ci-card-badge')).color), captions: cards.map((card) => card.querySelector('small').textContent) }
+      return { rects: cards.map((card) => { const rect = card.getBoundingClientRect(); return { x: rect.x, y: rect.y, width: rect.width, height: rect.height } }), patterns: cards.map((card) => getComputedStyle(card).backgroundImage), inks: cards.map((card) => getComputedStyle(card.querySelector('.ci-card-badge')).color), text: cards.map((card) => card.textContent.trim()) }
     })
     assert.equal(print.rects.length, 6)
     assert.equal(new Set(print.rects.map((rect) => Math.round(rect.x))).size, 2)
@@ -67,9 +67,9 @@ try {
     assert.ok(print.rects.every((rect) => Math.abs(rect.width - rect.height) < 1 && Math.abs(rect.width / (96 / 25.4) - 88) < .1))
     assert.equal(new Set(print.patterns).size, 6)
     assert.ok(print.inks.every((color) => color === 'rgb(0, 0, 0)'))
-    assert.ok(print.captions.every((caption) => caption.includes('palette 4')))
+    assert.deepEqual(print.text, ['A', 'B', 'C', 'D', 'E', 'F'])
     const pdf = await page.pdf({ format: 'A4', printBackground: true })
-    assert.equal((pdf.toString('latin1').match(/\/Type\s*\/Page\b/g) ?? []).length, 2)
+    assert.equal((pdf.toString('latin1').match(/\/Type\s*\/Page\b/g) ?? []).length, 4)
     await writeFile(`/tmp/clairfle-calibration-${width}.pdf`, pdf)
     await page.emulateMedia({ media: 'screen' })
     await page.goto(`${base}/interactif/demo`)
@@ -89,7 +89,7 @@ try {
     assert.equal(outline.width, '3px')
     assert.equal(outline.outline, 'rgb(24, 34, 56)')
     assert.ok(outline.shadow.includes('rgb(255, 255, 255)'))
-    results.push({ viewport: `${width}x${height}`, directRoute: 'six cards and visual-comparison workflow load without requiring a worksheet', preferences: 'color, distinct shape swap, confirmation and version persist; palette edits invalidate the confirmation', concurrency: 'a stale comparison cannot be confirmed after another palette change', print: 'two A4 sheets, six 88 mm squares per sheet in two columns and three rows; six distinct monochrome patterns, readable marks and current palette version', playing: 'neutral border and two-layer focus remain visible', layout: 'no horizontal overflow' })
+    results.push({ viewport: `${width}x${height}`, directRoute: 'six cards and visual-comparison workflow load without requiring a worksheet', preferences: 'color, distinct shape swap, confirmation and version persist; palette edits invalidate the confirmation', concurrency: 'a stale comparison cannot be confirmed after another palette change', print: 'four A4 pages for two duplex sheets, six 88 mm squares per face in two columns and three rows; six distinct monochrome patterns and readable marks without captions', playing: 'neutral border and two-layer focus remain visible', layout: 'no horizontal overflow' })
     await page.close()
   }
   assert.deepEqual(errors, [])

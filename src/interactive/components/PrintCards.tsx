@@ -10,23 +10,36 @@ import { CardBadge } from './CardBadge'
 export function PrintCards({
   colors,
   shapes = defaultShapes,
-  paletteVersion,
 }: {
   colors: string[]
   shapes?: ShapeId[]
-  paletteVersion?: number
 }) {
   const [sets, setSets] = useState(1)
   const [inkSaving, setInkSaving] = useState(false)
+  const [duplexEdge, setDuplexEdge] = useState<'long' | 'short'>('long')
+  // Mirror the positions, not the card artwork, across the printer's flip edge.
+  const backOrder = duplexEdge === 'long' ? [1, 0, 3, 2, 5, 4] : [4, 5, 2, 3, 0, 1]
   return (
     <section className="ci-print-tool">
       <div className="ci-no-print">
         <h2>Les cartes de la classe</h2>
         <p>
-          Une feuille A4, six cartes carrées à découper par élève : deux par ligne sur trois lignes. Les lettres et les
-          formes restent identiques à l’écran.
+          Un jeu contient six cartes carrées à découper, deux par ligne sur trois lignes.
+          Les deux pages forment le recto et le verso d’une même feuille A4, avec la même
+          couleur, lettre et forme des deux côtés.
         </p>
         <div className="ci-toolbar">
+          <label>
+            Retournement recto verso{' '}
+            <select
+              aria-label="Retournement recto verso"
+              value={duplexEdge}
+              onChange={(event) => setDuplexEdge(event.target.value === 'short' ? 'short' : 'long')}
+            >
+              <option value="long">Bord long</option>
+              <option value="short">Bord court</option>
+            </select>
+          </label>
           <label>
             Jeux de cartes{' '}
             <input
@@ -49,14 +62,20 @@ export function PrintCards({
           </label>
           <button onClick={() => window.print()}>Imprimer les cartes</button>
         </div>
+        <p>
+          Dans la fenêtre d’impression, choisissez A4, taille réelle (100 %), recto verso
+          sur le {duplexEdge === 'long' ? 'bord long' : 'bord court'} et activez les couleurs
+          ou les arrière-plans. Désactivez les en-têtes et pieds de page.
+        </p>
       </div>
       <div className={`ci-print-pages${inkSaving ? ' ci-ink-saving' : ''}`}>
-        {Array.from({ length: sets }, (_, set) => (
-          <div className="ci-card-sheet" key={set}>
-            {PALETTE.map((entry, i) => (
+        {Array.from({ length: sets }, (_, set) => ['front', 'back'].map((side) => (
+          <div className="ci-card-sheet" key={`${set}-${side}`} data-set={set + 1} data-side={side}>
+            {(side === 'front' ? [0, 1, 2, 3, 4, 5] : backOrder).map((i) => (
               <div
-                key={entry.letter}
+                key={PALETTE[i]!.letter}
                 className="ci-paper-card"
+                data-card-slot={PALETTE[i]!.letter}
                 style={
                   {
                     '--card-color': colors[i],
@@ -64,12 +83,11 @@ export function PrintCards({
                   } as CSSProperties
                 }
               >
-                <CardBadge letter={entry.letter} shape={shapes[i]!} />
-                <small>CLAIRFLE · carte réponse{paletteVersion ? ` · palette ${paletteVersion}` : ''}</small>
+                <CardBadge letter={PALETTE[i]!.letter} shape={shapes[i]!} />
               </div>
             ))}
           </div>
-        ))}
+        )))}
       </div>
     </section>
   )

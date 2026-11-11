@@ -31,7 +31,7 @@ const passed = []
 const run = async (name) => { if (!started && name !== startAt) return; started = true; console.log(`Parcours : ${name}`); await command(process.execPath, [`tests/interactive/${name}.mjs`], { env }); passed.push(name) }
 try {
   await serve(root, mainPort, 'main')
-  for (const name of ['browser', 'classroom-browser', 'solo-browser', 'untimed-browser', 'mobile-play-browser', 'mobile-layout-print-browser', 'media-browser', 'card-feedback-browser', 'teacher-protections-browser', 'navigation-browser', 'resume-browser', 'session-lease-browser', 'checkpoint-browser', 'retention-browser', 'drafts-browser', 'votes-browser', 'teacher-sheet-browser', 'diagnostic-browser', 'fonts-browser', 'mascot-browser', 'calibration-browser', 'accessibility-browser']) await run(name)
+  for (const name of ['browser', 'classroom-browser', 'solo-browser', 'untimed-browser', 'mobile-play-browser', 'mobile-layout-print-browser', 'duplex-browser', 'media-browser', 'card-feedback-browser', 'teacher-protections-browser', 'navigation-browser', 'resume-browser', 'session-lease-browser', 'checkpoint-browser', 'retention-browser', 'drafts-browser', 'votes-browser', 'teacher-sheet-browser', 'diagnostic-browser', 'fonts-browser', 'mascot-browser', 'calibration-browser', 'accessibility-browser']) await run(name)
 
   // These existing integration fixtures own port 5182 one after another.
   for (const name of ['game-run-browser', 'durable-run-browser', 'presets-browser', 'listening-browser', 'archives-browser', 'source-adapters-browser']) await run(name)
