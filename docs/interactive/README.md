@@ -88,3 +88,7 @@ Voir [acceptation](checklist-acceptation.md), [architecture](architecture.md), [
 Les cartes A4 s’impriment désormais en [recto verso](adr-0017-cartes-recto-verso.md), avec six carrés sur chaque face et les mêmes repères des deux côtés. Le réglage par défaut est le bord long ; le même bord doit être choisi dans la fenêtre d’impression.
 
 Les exercices d’[écoute des sons](adr-0018-ecouter-les-sons.md) sont proposés mot par mot avec cartes Oui / Non, en gardant le son, les pistes, les images et les réponses de la fiche.
+
+Le [test TCM CSC](../tcm-csc/README.md) comprend 23 exercices imprimables et trois pistes audio ; l’exercice 21 reste réservé. Les signes à compléter, les opérations posées et les problèmes rejoignent le jeu Classe / Solo. Les [103 contextes de problèmes](adr-0023-problemes-csc.md) conservent leurs énoncés et leurs nombres, avec des propositions numériques vérifiées ; les nouvelles parties des modèles générés renouvellent leurs valeurs.
+
+Dans le générateur, les [formats CO et corrigés CE](../tcf/formats-et-corriges.md) conservent les boutons Texte / Image / Phrase sur les tests assemblés et les coches imprimables, même sans arrière-plans.
