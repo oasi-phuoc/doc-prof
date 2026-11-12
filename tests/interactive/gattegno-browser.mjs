@@ -18,6 +18,7 @@ recipe.seed = 75
 recipe.libreMode = false
 recipe.libreSnapshot = null
 recipe.printCorrections = true
+recipe.institutional = { ...recipe.institutional, course: 'Français' }
 const browser = await chromium.launch({ executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH || undefined, args: ['--no-sandbox'] })
 const results = [], errors = []
 const button = (page, name) => page.getByRole('button', { name, exact: true })
