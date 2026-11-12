@@ -152,7 +152,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
     (isTcf && peMotsClesSlot)
   return (
     <>
-              {grammarAudioOnly || isPhraseChart ||
+              {activeBlock.grammarPresentation==='document-set' || grammarAudioOnly || isPhraseChart ||
               isVocabLearn ||
               isGramTheory ||
               isJeuxDomain ||

@@ -1,4 +1,4 @@
-import { GrammarCurriculumError, type GrammarBank, type GrammarQuestion, type GrammarSnapshot, type GrammarUnit } from './types'
+import { GRAMMAR_PRESENTATIONS, GrammarCurriculumError, type GrammarBank, type GrammarQuestion, type GrammarReadingQuestion, type GrammarSnapshot, type GrammarUnit } from './types'
 
 const text = (v: unknown): v is string => typeof v === 'string' && v.trim().length > 0
 const record = (v: unknown): v is Record<string, unknown> => v !== null && typeof v === 'object' && !Array.isArray(v)
@@ -9,39 +9,74 @@ const key = (value: string) => value.normalize('NFC').trim().replace(/\s+/g, ' '
 const choices = (v: unknown) => Array.isArray(v) && v.length >= 2 && v.length <= 6 &&
   v.every(c=>record(c) && text(c.id) && text(c.text)) && unique(v.map(c=>c.id)) && unique(v.map(c=>key(c.text)))
 
+function sameChoices(value: unknown, source: Array<{id:string;text:string}>): boolean {
+  return choices(value) && (value as typeof source).length===source.length &&
+    (value as typeof source).every(c=>source.some(o=>o.id===c.id&&o.text===c.text))
+}
+export function validGrammarReadingQuestion(value: unknown, document: string): value is GrammarReadingQuestion {
+  if (!record(value) || !text(value.id) || !text(value.prompt) || !strings(value.answers) || !text(value.explanation) ||
+    !strings(value.evidence) || !value.evidence.every(quote=>document.includes(quote))) return false
+  if (value.response==='short') return value.options===undefined
+  return value.response==='choice' && choices(value.options) &&
+    (value.options as Array<{text:string}>).filter(c=>(value.answers as string[]).some(a=>key(a)===key(c.text))).length===1
+}
+
 export function validGrammarUnit(value: unknown): value is GrammarUnit {
-  if (!record(value) || !text(value.id) || !text(value.prompt) || !strings(value.answers) ||
+  if (!record(value) || !text(value.id) || !text(value.prompt) || !(value.kind==='reading'?Array.isArray(value.answers)&&value.answers.length===0:strings(value.answers)) ||
     !text(value.explanation) || !record(value.source) || !text(value.source.path) ||
     !text(value.source.typeId) || !Number.isInteger(value.source.position) || Number(value.source.position)<0) return false
-  if (value.givenVerb!==undefined && !text(value.givenVerb) ||
+  if (value.givenVerb!==undefined && !text(value.givenVerb) || value.cue!==undefined && !text(value.cue) ||
     value.responseLines!==undefined && value.responseLines!==1 && value.responseLines!==2) return false
   if (value.kind==='completion') return choices(value.options) && value.prompt.split('___').length===2 &&
     (value.options as Array<{text:string}>).filter(c=>(value.answers as string[]).some(answer=>key(c.text)===key(answer))).length===1
-  if (value.kind==='correct') return value.answers.every(answer=>key(answer)!==key(value.prompt as string))
-  if (value.kind==='transform') return text(value.targetSubject) && value.answers.every(answer=>key(answer)!==key(value.prompt as string))
+  if (value.kind==='correct') return (value.answers as string[]).every(answer=>key(answer)!==key(value.prompt as string))
+  if (value.kind==='transform') return (text(value.targetSubject) && value.directive===undefined ||
+    text(value.directive) && value.targetSubject===undefined) && (value.answers as string[]).every(answer=>key(answer)!==key(value.prompt as string))
   if (value.kind==='order') return Array.isArray(value.tokens) && value.tokens.length>=2 && value.tokens.length<=32 &&
     value.tokens.every(t=>record(t)&&text(t.id)&&text(t.text)&&categories.includes(String(t.category))) && unique(value.tokens.map(t=>t.id)) &&
     new Set(value.tokens.map(t=>t.text)).size>1
   if (value.kind==='match') return Array.isArray(value.pairs) && value.pairs.length>=2 && value.pairs.length<=6 &&
     value.pairs.every(p=>record(p)&&text(p.id)&&text(p.left)&&text(p.right)&&text(p.sourceId)) &&
     unique(value.pairs.map(p=>p.id)) && unique(value.pairs.map(p=>key(p.left))) && unique(value.pairs.map(p=>key(p.right)))
+  if (value.kind==='reading') return text(value.genre) && text(value.text) && Array.isArray(value.questions) &&
+    value.questions.length>=3 && value.questions.length<=8 && value.questions.every(q=>validGrammarReadingQuestion(q,value.text as string)) &&
+    unique(value.questions.map(q=>q.id))
+  if (value.kind==='production') return ['written','oral'].includes(String(value.mode)) && text(value.task) &&
+    Array.isArray(value.rubric) && value.rubric.length>=3 && value.rubric.length<=8 &&
+    value.rubric.every(r=>record(r)&&text(r.id)&&text(r.label)) && unique(value.rubric.map(r=>r.id)) &&
+    Number.isInteger(value.writeLines) && Number(value.writeLines)>=(value.mode==='written'?1:0) && Number(value.writeLines)<=10
   return false
 }
 
 export function assertGrammarBank(bank: GrammarBank): void {
   const fail = () => { throw new GrammarCurriculumError('GRAMMAR_BANK_INVALID',`Banque grammaticale invalide : ${bank.activityId}.`) }
   if (bank.schemaVersion!==1 || !text(bank.revision) || !text(bank.activityId) || !['A1','A2','B1'].includes(bank.level) ||
-    !Array.isArray(bank.units) || bank.units.length<50 || !bank.units.every(validGrammarUnit) || !unique(bank.units.map(u=>u.id))) fail()
-  const meanings=bank.units.map(u=>key(u.kind==='order'?u.answers[0]!:u.kind==='match'?u.pairs.map(p=>p.left).sort().join('|'):u.prompt))
+    !Array.isArray(bank.units) || bank.units.length<(bank.presentations.includes('document-set')?20:50) || !bank.units.every(validGrammarUnit) || !unique(bank.units.map(u=>u.id))) fail()
+  if (bank.presentations.includes('document-set') && bank.units.reduce((n,u)=>n+(u.kind==='reading'?u.questions.length:0),0)<50) fail()
+  if (!unique(bank.units.flatMap(u=>u.kind==='reading'?u.questions.map(q=>q.id):[]))) fail()
+  const meanings=bank.units.map(u=>key(u.kind==='reading'?u.text:u.kind==='order'?u.answers[0]!:u.kind==='match'?u.pairs.map(p=>p.left).sort().join('|'):u.prompt))
   if (!unique(meanings) || !bank.presentations.length || bank.presentations.some(p=>!text(bank.instructions[p]))) fail()
   for (const p of bank.presentations) if (bank.units.some(u=>
-    p==='choice'||p==='gap' ? u.kind!=='completion' : u.kind!==p)) fail()
+    p==='choice'||p==='gap' ? u.kind!=='completion' : p==='document-set'?u.kind!=='reading':
+      p==='open-written'||p==='open-oral'?u.kind!=='production'||u.mode!==(p==='open-written'?'written':'oral'):u.kind!==p)) fail()
   if (bank.editorialStatus==='approved' && bank.review.humanReview!=='approved') fail()
 }
 
 export function isGrammarQuestion(q: unknown): q is GrammarQuestion {
   if (!record(q) || !validGrammarUnit(q.unit) || q.id!==q.unit.id) return false
   const u=q.unit
+  if (q.presentation==='document-set') {
+    if (u.kind!=='reading' || !record(q.readingOptions)) return false
+    const choiceQuestions=u.questions.filter(child=>child.response==='choice')
+    if (Object.keys(q.readingOptions).length!==choiceQuestions.length || !choiceQuestions.every(child=>sameChoices((q.readingOptions as Record<string,unknown>)[child.id],child.options!))) return false
+    if (q.readingPart===undefined) return true
+    const part=q.readingPart
+    return record(part) && (part.kind==='support'?
+      Number.isInteger(part.documentNumber)&&Number(part.documentNumber)>=1&&Number(part.documentNumber)<=20&&(part.continued===undefined||typeof part.continued==='boolean'):
+      part.kind==='question' && u.questions.some((child,index)=>child.id===part.questionId&&part.number===index+1))
+  }
+  if (q.readingPart!==undefined) return false
+  if (q.presentation==='open-written'||q.presentation==='open-oral') return u.kind==='production'&&u.mode===(q.presentation==='open-written'?'written':'oral')
   if (q.presentation==='choice') return u.kind==='completion' && choices(q.options) &&
     JSON.stringify((q.options as Array<{id:string}>).map(c=>c.id).sort())===JSON.stringify(u.options.map(c=>c.id).sort()) &&
     (q.options as Array<{id:string;text:string}>).every(c=>u.options.some(o=>o.id===c.id&&o.text===c.text))
@@ -59,9 +94,16 @@ export function isGrammarQuestion(q: unknown): q is GrammarQuestion {
 
 /** Validate imported snapshots without depending on the current bank revision. */
 export function isGrammarSnapshot(v: unknown): v is GrammarSnapshot {
-  return record(v) && v.schemaVersion===1 && text(v.activityId) && ['A1','A2','B1'].includes(String(v.level)) &&
-    ['choice','gap','correct','order','match','transform'].includes(String(v.presentation)) && text(v.bankRevision) &&
+  const valid=record(v) && v.schemaVersion===1 && text(v.activityId) && ['A1','A2','B1'].includes(String(v.level)) &&
+    (GRAMMAR_PRESENTATIONS as string[]).includes(String(v.presentation)) && text(v.bankRevision) &&
     typeof v.seed==='number' && Number.isFinite(v.seed) && text(v.requestKey) && text(v.instruction) && typeof v.pilot==='boolean' &&
     Array.isArray(v.questions) && v.questions.length>0 && v.questions.length<=50 && v.questions.every(isGrammarQuestion) &&
     v.questions.every(q=>q.presentation===v.presentation) && unique(v.questions.map(q=>q.id))
+  if (!valid || !record(v)) return false
+  if (v.presentation!=='document-set') return true
+  const questions=v.questions as GrammarQuestion[]
+  const groups=questions.map(q=>({id:q.id,kind:'document',supportIds:[q.id],questionIds:q.unit.kind==='reading'?q.unit.questions.map(c=>c.id):[]}))
+  return questions.length<=20 && questions.every(q=>q.readingPart===undefined) && unique(groups.flatMap(g=>g.questionIds)) &&
+    Array.isArray(v.groups) && v.groups.length===groups.length && v.groups.every((group,index)=>record(group)&&group.id===groups[index]!.id&&group.kind==='document'&&
+      JSON.stringify(group.supportIds)===JSON.stringify(groups[index]!.supportIds)&&JSON.stringify(group.questionIds)===JSON.stringify(groups[index]!.questionIds))
 }

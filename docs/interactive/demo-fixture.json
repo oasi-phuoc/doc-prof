@@ -99,31 +99,32 @@
       "title": "Exercice 2",
       "instruction": "Calculez l’aire du carré.",
       "prompt": "Quelle est l’aire de ce carré ?",
+      "context": "Côté : 349 cm.",
       "images": [],
       "choices": [
         {
-          "id": "n349",
-          "text": "349 cm²"
+          "id": "n121799",
+          "text": "121'799 cm²"
         },
         {
-          "id": "n122150",
-          "text": "122'150 cm²"
-        },
-        {
-          "id": "n698",
-          "text": "698 cm²"
+          "id": "n121811",
+          "text": "121'811 cm²"
         },
         {
           "id": "n121801",
           "text": "121'801 cm²"
         },
         {
-          "id": "n121452",
-          "text": "121'452 cm²"
+          "id": "n121806",
+          "text": "121'806 cm²"
         },
         {
-          "id": "n1396",
-          "text": "1'396 cm²"
+          "id": "n121791",
+          "text": "121'791 cm²"
+        },
+        {
+          "id": "n121802",
+          "text": "121'802 cm²"
         }
       ],
       "mode": "choice",
@@ -131,8 +132,8 @@
       "figure": {
         "type": "square",
         "dims": {
-          "side": 349,
-          "unit": "cm"
+          "unit": "cm",
+          "side": 349
         }
       }
     },
@@ -298,7 +299,7 @@
       "compatibility": "auto"
     },
     {
-      "id": "p2b0i6s0-1588924098",
+      "id": "p2b0i6s0-821332226",
       "source": {
         "page": 2,
         "block": 0,
@@ -308,21 +309,24 @@
       },
       "title": "Exercice 3",
       "instruction": "Vous allez écouter [[em]]6 documents audio[[/em]] différents. Il y a 2 écoutes.\nAvant chaque écoute, vous entendez le son suivant [[bell]].\n[[em]]1.[[/em]] Lisez les questions.\n[[em]]2.[[/em]] Écoutez les documents audio\n[[em]]3.[[/em]] Répondez aux questions\nIl y a 1 question par document audio.",
-      "prompt": "Comment s’appelle la personne qui téléphone ?",
-      "audio": "/lib/audio/tcf/co/famille/21-famille-appeler-une-amie-Lorie.mp3",
+      "prompt": "Où veut-elle acheter à manger ?",
+      "audio": "/lib/audio/tcf/co/vie-quotidienne/julie-dois-aller-nouveau-1-3.mp3",
       "images": [],
       "choices": [
         {
           "id": "c0",
-          "text": "Laura"
+          "text": "",
+          "image": "/lib/images/tcf/qcm-audit/co306-distributeur-aliments-dessine.webp"
         },
         {
           "id": "c1",
-          "text": "Laurie"
+          "text": "",
+          "image": "/lib/images/tcf/qcm-audit/co834-boulangerie-dessinee.webp"
         },
         {
           "id": "c2",
-          "text": "Lara"
+          "text": "",
+          "image": "/lib/images/tcf/qcm-audit/co306-restaurant-entreprise-dessine.webp"
         }
       ],
       "mode": "choice",
@@ -390,8 +394,8 @@
       "text": "",
       "choiceId": "c1"
     },
-    "p2b0i6s0-1588924098": {
-      "text": "Laura",
+    "p2b0i6s0-821332226": {
+      "text": "",
       "choiceId": "c0"
     },
     "p3b0i0s0-2209731824": {

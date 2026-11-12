@@ -29,6 +29,8 @@ export function blockFromPage(page: PageConfig): ExerciseBlock {
     grammarBankRevision: page.grammarBankRevision,
     grammarSnapshot: page.grammarSnapshot,
     grammarPreview: page.grammarPreview,
+    grammarDocumentCount: page.grammarDocumentCount,
+    grammarPageBreakAfterQuestionIds: page.grammarPageBreakAfterQuestionIds,
     tcfFormModes: page.tcfFormModes,
     tcfPageBreakAfter: page.tcfPageBreakAfter,
     continueOnNextPage: page.continueOnNextPage,
@@ -95,7 +97,8 @@ export function pageBlocks(page: PageConfig): ExerciseBlock[] {
 export function pageAsConfig(page: PageConfig, block: ExerciseBlock): PageConfig {
   return { ...page, ...block, phraseCategories: block.phraseCategories, grammarCoLevel: block.grammarCoLevel, grammarCoAudioId: block.grammarCoAudioId,
     grammarLevel:block.grammarLevel,grammarActivityId:block.grammarActivityId,grammarPresentation:block.grammarPresentation,
-    grammarBankRevision:block.grammarBankRevision,grammarSnapshot:block.grammarSnapshot,grammarPreview:block.grammarPreview,extraBlocks:undefined }
+    grammarBankRevision:block.grammarBankRevision,grammarSnapshot:block.grammarSnapshot,grammarPreview:block.grammarPreview,
+    grammarDocumentCount:block.grammarDocumentCount,grammarPageBreakAfterQuestionIds:block.grammarPageBreakAfterQuestionIds,extraBlocks:undefined }
 }
 
 export function setPageBlock(page: PageConfig, blockIndex: number, patch: Partial<ExerciseBlock>): PageConfig {

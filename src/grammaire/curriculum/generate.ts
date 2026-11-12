@@ -3,17 +3,22 @@ import type { ExerciseBlock, MathItem, PageConfig } from '@/math/types'
 import { grammarBankFor } from './registry'
 import { GrammarCurriculumError, isProtectedGrammarCo, type GrammarBank, type GrammarQuestion, type GrammarSnapshot, type GrammarUnit } from './types'
 import { isGrammarSnapshot } from './validation'
+import { grammarItems } from './items'
 
 export function hasGrammarSettings(block: ExerciseBlock): boolean {
-  return ['grammarLevel','grammarActivityId','grammarPresentation','grammarBankRevision','grammarSnapshot','grammarPreview']
+  return ['grammarLevel','grammarActivityId','grammarPresentation','grammarBankRevision','grammarSnapshot','grammarPreview','grammarDocumentCount','grammarPageBreakAfterQuestionIds']
     .some(key=>(block as unknown as Record<string,unknown>)[key]!==undefined)
 }
 
 export function grammarRequestKey(block: ExerciseBlock): string {
   return JSON.stringify({activity:block.grammarActivityId,type:block.exerciseType,level:block.grammarLevel,
-    presentation:block.grammarPresentation,revision:block.grammarBankRevision,count:block.count,
+    presentation:block.grammarPresentation,revision:block.grammarBankRevision,count:grammarSelectionCount(block),
+    documentCount:block.grammarPresentation==='document-set'?block.grammarDocumentCount:undefined,
     preview:block.grammarPreview===true,polarity:block.phrasePolarity??'positive',
     excluded:Object.entries(block.phraseCategories??{}).filter(([,value])=>value===false).map(([key])=>key).sort()})
+}
+export function grammarSelectionCount(block: ExerciseBlock): number {
+  return block.grammarPresentation==='document-set' ? block.grammarDocumentCount??0 : block.count
 }
 function eligible(bank: GrammarBank, block: ExerciseBlock): GrammarUnit[] {
   if (block.grammarPresentation!=='order') return bank.units
@@ -37,16 +42,17 @@ function invalid(message: string): never { throw new GrammarCurriculumError('GRA
 
 export function generateGrammarSelection(block: ExerciseBlock, seed: number): GrammarSnapshot {
   if (isProtectedGrammarCo(block.exerciseType)) invalid('La compréhension orale conserve ses paramètres actuels.')
+  const count=grammarSelectionCount(block), documents=block.grammarPresentation==='document-set'
   if (!block.grammarLevel || !block.grammarActivityId || !block.grammarPresentation || !block.grammarBankRevision ||
-    block.grammarActivityId!==block.exerciseType || !Number.isSafeInteger(block.count) || block.count<1 || block.count>50 || !Number.isFinite(seed))
-    invalid('Choisissez une activité, un niveau et un mode de réponse grammaticaux disponibles (1 à 50 questions).')
+    block.grammarActivityId!==block.exerciseType || !Number.isSafeInteger(count) || count<1 || count>(documents?20:50) || !Number.isFinite(seed))
+    invalid(`Choisissez une activité, un niveau et un mode de réponse grammaticaux disponibles (${documents?'1 à 20 textes':'1 à 50 questions'}).`)
   const key=grammarRequestKey(block)
   if (block.grammarSnapshot!==undefined) {
     if (!isGrammarSnapshot(block.grammarSnapshot)) throw new GrammarCurriculumError('GRAMMAR_SNAPSHOT_INVALID','La sélection grammaticale sauvegardée est invalide. Conservez le fichier et régénérez explicitement cet exercice.')
     const s=block.grammarSnapshot
     if (s.activityId!==block.grammarActivityId || s.level!==block.grammarLevel || s.presentation!==block.grammarPresentation || s.bankRevision!==block.grammarBankRevision)
       invalid('Les paramètres et la sélection sauvegardée diffèrent. Régénérez cet exercice pour appliquer le changement.')
-    if (s.seed===seed && s.requestKey===key && s.questions.length===block.count) return s
+    if (s.seed===seed && s.requestKey===key && s.questions.length===count) return s
   }
   const bank=grammarBankFor(block.exerciseType,block.grammarLevel)
   if (!bank || !bank.presentations.includes(block.grammarPresentation))
@@ -57,10 +63,10 @@ export function generateGrammarSelection(block: ExerciseBlock, seed: number): Gr
   if (pilot && block.grammarPreview!==true)
     throw new GrammarCurriculumError('GRAMMAR_ACTIVITY_UNAVAILABLE','Cette banque est un pilote. Sélectionnez le niveau pilote pour la relire avant diffusion.')
   const pool=eligible(bank,block)
-  if (block.count>pool.length) throw new GrammarCurriculumError('GRAMMAR_CAPACITY_EXCEEDED',
-    `Ces paramètres permettent ${pool.length} question${pool.length===1?'':'s'}. Réduisez le nombre ou modifiez explicitement les filtres.`)
+  if (count>pool.length) throw new GrammarCurriculumError('GRAMMAR_CAPACITY_EXCEEDED',
+    `Ces paramètres permettent ${pool.length} ${documents?'texte':'question'}${pool.length===1?'':'s'}. Réduisez le nombre ou modifiez explicitement les filtres.`)
   const rng=createRng(seed)
-  let selected=shuffle(rng,pool).slice(0,block.count)
+  let selected=shuffle(rng,pool).slice(0,count)
   if (block.grammarPresentation==='order' && block.phrasePolarity==='mixed') {
     const isNegative=(u:GrammarUnit)=>u.kind==='order'&&u.tokens.some(t=>t.category==='negation')
     const a=shuffle(rng,pool.filter(u=>!isNegative(u))), n=shuffle(rng,pool.filter(isNegative))
@@ -80,16 +86,17 @@ export function generateGrammarSelection(block: ExerciseBlock, seed: number): Gr
       if (question.tokens.every((token,i)=>token.text===unit.tokens[i]!.text)) question.tokens.push(question.tokens.shift()!)
     }
     if (unit.kind==='match') question.rightOptions=shuffle(local,unit.pairs.map(p=>({id:p.id,text:p.right})))
+    if (unit.kind==='reading') question.readingOptions=Object.fromEntries(unit.questions.filter(q=>q.response==='choice').map(q=>[q.id,shuffle(local,q.options!)]))
     return question
   })
   return {schemaVersion:1,activityId:bank.activityId,level:bank.level,presentation:block.grammarPresentation,
-    bankRevision:bank.revision,seed,requestKey:key,instruction:bank.instructions[block.grammarPresentation]!,pilot,questions}
+    bankRevision:bank.revision,seed,requestKey:key,instruction:bank.instructions[block.grammarPresentation]!,pilot,questions,
+    ...(documents?{groups:questions.map(q=>({id:q.id,kind:'document' as const,supportIds:[q.id],questionIds:q.unit.kind==='reading'?q.unit.questions.map(c=>c.id):[]}))}:{})}
 }
 
 export function generateGradedGrammarBlock(config: PageConfig, seed: number): { instruction:string;items:MathItem[];bankQuestionCap:number } | null {
   if (config.domain!=='grammaire' || isProtectedGrammarCo(config.exerciseType)) return null
   if (!hasGrammarSettings(config) && !config.exerciseType.includes('-curriculum-')) return null
   const selection=generateGrammarSelection(config,seed)
-  return {instruction:selection.instruction,items:selection.questions.map(question=>({layout:'grammar',
-    prompt:question.unit.prompt,answer:question.unit.answers[0]!,grammar:question})),bankQuestionCap:grammarEligibleCount(config)||selection.questions.length}
+  return {instruction:selection.instruction,items:grammarItems(selection),bankQuestionCap:grammarEligibleCount(config)||selection.questions.length}
 }

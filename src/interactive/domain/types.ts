@@ -20,6 +20,7 @@ export type Question = {
     item: number
     part: number
     exerciseType: string
+    documentId?: string
   }
   title: string
   instruction: string

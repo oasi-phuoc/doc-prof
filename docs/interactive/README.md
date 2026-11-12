@@ -35,6 +35,10 @@ La préparation vérifie les images et les audios avant le lancement, avec rappo
 
 Le [contrôle de lisibilité](adr-0022-lisibilite-mesuree.md) mesure aussi les questions à 1 920 × 1 080 et 1 366 × 768 et signale les textes longs. Pendant le jeu, l’affichage s’adapte à la place disponible ; **Suite** ouvre le texte complet lorsque le défilement est nécessaire. Cette lecture conserve la réponse choisie et la phase.
 
+Les [carrés et rectangles](adr-0029-mesures-geometriques.md) proposent périmètres, aires et dimensions manquantes, avec figure, mesures lisibles et unités sur les cartes. Les corrigés sont recalculés exactement ; les résultats arrondis et les figures non prises en charge sont signalés en préparation.
+
+Les [triangles et parallélogrammes](adr-0030-triangles-et-parallelogrammes.md) proposent aussi périmètres, aires, côtés et hauteurs à retrouver. Les triangles impossibles et les corrigés arrondis sont signalés ; les cotes cherchées restent masquées sur le dessin après correction.
+
 ## Rituel et réglages
 
 Les six cartes pastel A–F utilisent des lettres et des formes de même taille. La palette se configure en trois colonnes et deux rangées ; l’impression produit des carrés de 88 mm sur deux colonnes et trois lignes A4. Dans un écran à deux questions, A–C sont empilés à gauche et D–F à droite. Changer une forme échange sa place avec la forme existante pour conserver six repères distincts.

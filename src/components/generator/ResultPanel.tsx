@@ -253,6 +253,7 @@ export function ResultPanel({
         isTcf ||
         pageExerciseBlocks.some(
           (block) =>
+            block.grammarPresentation==='document-set' ||
             isGrammarReadingType(block.exerciseType) ||
             isGrammarTheoryType(block.exerciseType) ||
             isGrammaireTheoryType(block.exerciseType),
@@ -496,7 +497,7 @@ export function ResultPanel({
                           interactiveTcfOptions={
                             isTcf || (Boolean(isGrammaireExercise) && activeBlock.tcfExercise == null)
                           }
-                          interactiveTcfPageBreaks={isTcf || pageExerciseBlocks.some(block => isGrammarReadingType(block.exerciseType))}
+                          interactiveTcfPageBreaks={isTcf || pageExerciseBlocks.some(block => block.grammarPresentation==='document-set'||isGrammarReadingType(block.exerciseType))}
                           onSelectTcfForm={selectTcfForm}
                           onSelectTcfFormForExercise={selectTcfFormForExercise}
                           onToggleFormulaireLetterGrid={toggleFormulaireLetterGrid}

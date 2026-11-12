@@ -461,6 +461,7 @@ export function buildPage(
       tcfFormModes: block.tcfFormModes,
       tcfPageBreakAfter,
       bankQuestionCap: result.bankQuestionCap,
+      grammarPageBreakAfterQuestionIds: block.grammarPageBreakAfterQuestionIds,
       corrigeAudios: corrigeAudios.length ? corrigeAudios : undefined,
     }
   })

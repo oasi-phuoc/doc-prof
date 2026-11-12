@@ -3,8 +3,8 @@
   "seed": 20261107,
   "scope": "Un tirage réel par type de catalogue, count=2, niveau par défaut. Ne garantit pas les autres graines, variantes et niveaux.",
   "summary": {
-    "types": 2103,
-    "catalogTypes": 2071,
+    "types": 2106,
+    "catalogTypes": 2074,
     "declaredDomains": [
       "français",
       "algèbre",
@@ -105,6 +105,7 @@
       "word-search"
     ],
     "declaredLayouts": [
+      "grammar",
       "inline",
       "column",
       "column-empty",
@@ -160,10 +161,11 @@
       "logique"
     ],
     "unobservedLayouts": [
+      "grammar",
       "vocab-write",
       "audio-match"
     ],
-    "playableTypes": 684,
+    "playableTypes": 703,
     "generationErrors": 8
   },
   "rows": [
@@ -13171,11 +13173,11 @@
       "issues": [
         {
           "source": "1/1/1 figures-nommer",
-          "reason": "Rendu « geo » non pris en charge dans ce premier prototype."
+          "reason": "Géométrie : la consigne doit être un texte de longueur raisonnable."
         },
         {
           "source": "1/1/2 figures-nommer",
-          "reason": "Rendu « geo » non pris en charge dans ce premier prototype."
+          "reason": "Géométrie : la consigne doit être un texte de longueur raisonnable."
         }
       ],
       "fields": [
@@ -13709,20 +13711,11 @@
       ],
       "tcfKinds": [],
       "sourceItems": 2,
-      "playableQuestions": 0,
+      "playableQuestions": 2,
       "compatibility": [
-        "unsupported"
+        "assisted"
       ],
-      "issues": [
-        {
-          "source": "1/1/1 perimetres-carre",
-          "reason": "Rendu « geo » non pris en charge dans ce premier prototype."
-        },
-        {
-          "source": "1/1/2 perimetres-carre",
-          "reason": "Rendu « geo » non pris en charge dans ce premier prototype."
-        }
-      ],
+      "issues": [],
       "fields": [
         "answer",
         "calcAnswer",
@@ -13782,20 +13775,11 @@
       ],
       "tcfKinds": [],
       "sourceItems": 2,
-      "playableQuestions": 0,
+      "playableQuestions": 2,
       "compatibility": [
-        "unsupported"
+        "assisted"
       ],
-      "issues": [
-        {
-          "source": "1/1/1 perimetres-rectangle",
-          "reason": "Rendu « geo » non pris en charge dans ce premier prototype."
-        },
-        {
-          "source": "1/1/2 perimetres-rectangle",
-          "reason": "Rendu « geo » non pris en charge dans ce premier prototype."
-        }
-      ],
+      "issues": [],
       "fields": [
         "answer",
         "calcAnswer",
@@ -13857,20 +13841,11 @@
       ],
       "tcfKinds": [],
       "sourceItems": 2,
-      "playableQuestions": 0,
+      "playableQuestions": 2,
       "compatibility": [
-        "unsupported"
+        "assisted"
       ],
-      "issues": [
-        {
-          "source": "1/1/1 perimetres-triangle",
-          "reason": "Rendu « geo » non pris en charge dans ce premier prototype."
-        },
-        {
-          "source": "1/1/2 perimetres-triangle",
-          "reason": "Rendu « geo » non pris en charge dans ce premier prototype."
-        }
-      ],
+      "issues": [],
       "fields": [
         "answer",
         "calcAnswer",
@@ -13936,20 +13911,11 @@
       ],
       "tcfKinds": [],
       "sourceItems": 2,
-      "playableQuestions": 0,
+      "playableQuestions": 2,
       "compatibility": [
-        "unsupported"
+        "assisted"
       ],
-      "issues": [
-        {
-          "source": "1/1/1 perimetres-parallelogramme",
-          "reason": "Rendu « geo » non pris en charge dans ce premier prototype."
-        },
-        {
-          "source": "1/1/2 perimetres-parallelogramme",
-          "reason": "Rendu « geo » non pris en charge dans ce premier prototype."
-        }
-      ],
+      "issues": [],
       "fields": [
         "answer",
         "calcAnswer",
@@ -14163,20 +14129,11 @@
       ],
       "tcfKinds": [],
       "sourceItems": 2,
-      "playableQuestions": 0,
+      "playableQuestions": 2,
       "compatibility": [
-        "unsupported"
+        "assisted"
       ],
-      "issues": [
-        {
-          "source": "1/1/1 perimetres-quadrilatere",
-          "reason": "Rendu « geo » non pris en charge dans ce premier prototype."
-        },
-        {
-          "source": "1/1/2 perimetres-quadrilatere",
-          "reason": "Rendu « geo » non pris en charge dans ce premier prototype."
-        }
-      ],
+      "issues": [],
       "fields": [
         "answer",
         "calcAnswer",
@@ -14311,20 +14268,11 @@
       ],
       "tcfKinds": [],
       "sourceItems": 2,
-      "playableQuestions": 0,
+      "playableQuestions": 2,
       "compatibility": [
-        "unsupported"
+        "assisted"
       ],
-      "issues": [
-        {
-          "source": "1/1/1 perimetres-carre-manquant",
-          "reason": "Rendu « geo » non pris en charge dans ce premier prototype."
-        },
-        {
-          "source": "1/1/2 perimetres-carre-manquant",
-          "reason": "Rendu « geo » non pris en charge dans ce premier prototype."
-        }
-      ],
+      "issues": [],
       "fields": [
         "answer",
         "calcAnswer",
@@ -14384,20 +14332,11 @@
       ],
       "tcfKinds": [],
       "sourceItems": 2,
-      "playableQuestions": 0,
+      "playableQuestions": 2,
       "compatibility": [
-        "unsupported"
+        "assisted"
       ],
-      "issues": [
-        {
-          "source": "1/1/1 perimetres-rectangle-manquant",
-          "reason": "Rendu « geo » non pris en charge dans ce premier prototype."
-        },
-        {
-          "source": "1/1/2 perimetres-rectangle-manquant",
-          "reason": "Rendu « geo » non pris en charge dans ce premier prototype."
-        }
-      ],
+      "issues": [],
       "fields": [
         "answer",
         "calcAnswer",
@@ -14459,20 +14398,11 @@
       ],
       "tcfKinds": [],
       "sourceItems": 2,
-      "playableQuestions": 0,
+      "playableQuestions": 2,
       "compatibility": [
-        "unsupported"
+        "assisted"
       ],
-      "issues": [
-        {
-          "source": "1/1/1 perimetres-triangle-manquant",
-          "reason": "Rendu « geo » non pris en charge dans ce premier prototype."
-        },
-        {
-          "source": "1/1/2 perimetres-triangle-manquant",
-          "reason": "Rendu « geo » non pris en charge dans ce premier prototype."
-        }
-      ],
+      "issues": [],
       "fields": [
         "answer",
         "calcAnswer",
@@ -14538,20 +14468,11 @@
       ],
       "tcfKinds": [],
       "sourceItems": 2,
-      "playableQuestions": 0,
+      "playableQuestions": 2,
       "compatibility": [
-        "unsupported"
+        "assisted"
       ],
-      "issues": [
-        {
-          "source": "1/1/1 perimetres-parallelogramme-manquant",
-          "reason": "Rendu « geo » non pris en charge dans ce premier prototype."
-        },
-        {
-          "source": "1/1/2 perimetres-parallelogramme-manquant",
-          "reason": "Rendu « geo » non pris en charge dans ce premier prototype."
-        }
-      ],
+      "issues": [],
       "fields": [
         "answer",
         "calcAnswer",
@@ -14765,20 +14686,11 @@
       ],
       "tcfKinds": [],
       "sourceItems": 2,
-      "playableQuestions": 0,
+      "playableQuestions": 2,
       "compatibility": [
-        "unsupported"
+        "assisted"
       ],
-      "issues": [
-        {
-          "source": "1/1/1 perimetres-quadrilatere-manquant",
-          "reason": "Rendu « geo » non pris en charge dans ce premier prototype."
-        },
-        {
-          "source": "1/1/2 perimetres-quadrilatere-manquant",
-          "reason": "Rendu « geo » non pris en charge dans ce premier prototype."
-        }
-      ],
+      "issues": [],
       "fields": [
         "answer",
         "calcAnswer",
@@ -14913,20 +14825,11 @@
       ],
       "tcfKinds": [],
       "sourceItems": 2,
-      "playableQuestions": 0,
+      "playableQuestions": 2,
       "compatibility": [
-        "unsupported"
+        "assisted"
       ],
-      "issues": [
-        {
-          "source": "1/1/1 perimetres-melange",
-          "reason": "Rendu « geo » non pris en charge dans ce premier prototype."
-        },
-        {
-          "source": "1/1/2 perimetres-melange",
-          "reason": "Rendu « geo » non pris en charge dans ce premier prototype."
-        }
-      ],
+      "issues": [],
       "fields": [
         "answer",
         "calcAnswer",
@@ -15179,20 +15082,11 @@
       ],
       "tcfKinds": [],
       "sourceItems": 2,
-      "playableQuestions": 0,
+      "playableQuestions": 2,
       "compatibility": [
-        "unsupported"
+        "assisted"
       ],
-      "issues": [
-        {
-          "source": "1/1/1 aires-rectangle",
-          "reason": "Rendu « geo » non pris en charge dans ce premier prototype."
-        },
-        {
-          "source": "1/1/2 aires-rectangle",
-          "reason": "Rendu « geo » non pris en charge dans ce premier prototype."
-        }
-      ],
+      "issues": [],
       "fields": [
         "answer",
         "calcAnswer",
@@ -15254,20 +15148,11 @@
       ],
       "tcfKinds": [],
       "sourceItems": 2,
-      "playableQuestions": 0,
+      "playableQuestions": 2,
       "compatibility": [
-        "unsupported"
+        "assisted"
       ],
-      "issues": [
-        {
-          "source": "1/1/1 aires-triangle",
-          "reason": "Rendu « geo » non pris en charge dans ce premier prototype."
-        },
-        {
-          "source": "1/1/2 aires-triangle",
-          "reason": "Rendu « geo » non pris en charge dans ce premier prototype."
-        }
-      ],
+      "issues": [],
       "fields": [
         "answer",
         "calcAnswer",
@@ -15331,20 +15216,11 @@
       ],
       "tcfKinds": [],
       "sourceItems": 2,
-      "playableQuestions": 0,
+      "playableQuestions": 2,
       "compatibility": [
-        "unsupported"
+        "assisted"
       ],
-      "issues": [
-        {
-          "source": "1/1/1 aires-parallelogramme",
-          "reason": "Rendu « geo » non pris en charge dans ce premier prototype."
-        },
-        {
-          "source": "1/1/2 aires-parallelogramme",
-          "reason": "Rendu « geo » non pris en charge dans ce premier prototype."
-        }
-      ],
+      "issues": [],
       "fields": [
         "answer",
         "calcAnswer",
@@ -15558,20 +15434,11 @@
       ],
       "tcfKinds": [],
       "sourceItems": 2,
-      "playableQuestions": 0,
+      "playableQuestions": 2,
       "compatibility": [
-        "unsupported"
+        "assisted"
       ],
-      "issues": [
-        {
-          "source": "1/1/1 aires-quadrilatere",
-          "reason": "Rendu « geo » non pris en charge dans ce premier prototype."
-        },
-        {
-          "source": "1/1/2 aires-quadrilatere",
-          "reason": "Rendu « geo » non pris en charge dans ce premier prototype."
-        }
-      ],
+      "issues": [],
       "fields": [
         "answer",
         "calcAnswer",
@@ -15706,20 +15573,11 @@
       ],
       "tcfKinds": [],
       "sourceItems": 2,
-      "playableQuestions": 0,
+      "playableQuestions": 2,
       "compatibility": [
-        "unsupported"
+        "assisted"
       ],
-      "issues": [
-        {
-          "source": "1/1/1 aires-carre-manquant",
-          "reason": "Rendu « geo » non pris en charge dans ce premier prototype."
-        },
-        {
-          "source": "1/1/2 aires-carre-manquant",
-          "reason": "Rendu « geo » non pris en charge dans ce premier prototype."
-        }
-      ],
+      "issues": [],
       "fields": [
         "answer",
         "calcAnswer",
@@ -15779,20 +15637,11 @@
       ],
       "tcfKinds": [],
       "sourceItems": 2,
-      "playableQuestions": 0,
+      "playableQuestions": 2,
       "compatibility": [
-        "unsupported"
+        "assisted"
       ],
-      "issues": [
-        {
-          "source": "1/1/1 aires-rectangle-manquant",
-          "reason": "Rendu « geo » non pris en charge dans ce premier prototype."
-        },
-        {
-          "source": "1/1/2 aires-rectangle-manquant",
-          "reason": "Rendu « geo » non pris en charge dans ce premier prototype."
-        }
-      ],
+      "issues": [],
       "fields": [
         "answer",
         "calcAnswer",
@@ -15854,20 +15703,11 @@
       ],
       "tcfKinds": [],
       "sourceItems": 2,
-      "playableQuestions": 0,
+      "playableQuestions": 2,
       "compatibility": [
-        "unsupported"
+        "assisted"
       ],
-      "issues": [
-        {
-          "source": "1/1/1 aires-triangle-manquant",
-          "reason": "Rendu « geo » non pris en charge dans ce premier prototype."
-        },
-        {
-          "source": "1/1/2 aires-triangle-manquant",
-          "reason": "Rendu « geo » non pris en charge dans ce premier prototype."
-        }
-      ],
+      "issues": [],
       "fields": [
         "answer",
         "calcAnswer",
@@ -15931,20 +15771,11 @@
       ],
       "tcfKinds": [],
       "sourceItems": 2,
-      "playableQuestions": 0,
+      "playableQuestions": 2,
       "compatibility": [
-        "unsupported"
+        "assisted"
       ],
-      "issues": [
-        {
-          "source": "1/1/1 aires-parallelogramme-manquant",
-          "reason": "Rendu « geo » non pris en charge dans ce premier prototype."
-        },
-        {
-          "source": "1/1/2 aires-parallelogramme-manquant",
-          "reason": "Rendu « geo » non pris en charge dans ce premier prototype."
-        }
-      ],
+      "issues": [],
       "fields": [
         "answer",
         "calcAnswer",
@@ -16158,20 +15989,11 @@
       ],
       "tcfKinds": [],
       "sourceItems": 2,
-      "playableQuestions": 0,
+      "playableQuestions": 2,
       "compatibility": [
-        "unsupported"
+        "assisted"
       ],
-      "issues": [
-        {
-          "source": "1/1/1 aires-quadrilatere-manquant",
-          "reason": "Rendu « geo » non pris en charge dans ce premier prototype."
-        },
-        {
-          "source": "1/1/2 aires-quadrilatere-manquant",
-          "reason": "Rendu « geo » non pris en charge dans ce premier prototype."
-        }
-      ],
+      "issues": [],
       "fields": [
         "answer",
         "calcAnswer",
@@ -16306,16 +16128,11 @@
       ],
       "tcfKinds": [],
       "sourceItems": 2,
-      "playableQuestions": 1,
+      "playableQuestions": 2,
       "compatibility": [
         "assisted"
       ],
-      "issues": [
-        {
-          "source": "1/1/1 aires-melange",
-          "reason": "Rendu « geo » non pris en charge dans ce premier prototype."
-        }
-      ],
+      "issues": [],
       "fields": [
         "answer",
         "calcAnswer",
@@ -78703,52 +78520,52 @@
               "points": 6,
               "support": {
                 "audios": [
-                  "/lib/audio/tcf/co/maison/la-recette-1.mp3",
+                  "/lib/audio/tcf/co/fetes/18-fêtes-chez-Elise.mp3",
                   "/lib/audio/tcf/co/fetes/14-invitation-aller-à-la-montagne.mp3",
-                  "/lib/audio/tcf/co/vie-quotidienne/bonjour-messieurs-dames-voici-1.mp3"
+                  "/lib/audio/tcf/co/vie-quotidienne/bonjour-nicolas-dimanche-octobre-1.mp3"
                 ]
               },
               "questions": [
                 {
-                  "enonce": "Avec quel aliment peut-on manger le gâteau ?",
+                  "enonce": "Quels objets Adrien prend-il pour jouer ?",
                   "type_reponse": "qcm_texte",
                   "points": 1,
                   "melanger": true,
                   "choix": [
                     {
                       "id": "a",
-                      "texte": "Un yaourt",
+                      "texte": "Un ballon et un jeu de cartes",
                       "correct": true
                     },
                     {
                       "id": "b",
-                      "texte": "Une glace"
+                      "texte": "Une raquette et un ballon"
                     },
                     {
                       "id": "c",
-                      "texte": "Une compote"
+                      "texte": "Un jeu d’échecs et un puzzle"
                     }
                   ],
                   "formes": {
                     "lignes": {
                       "nb_lignes": 1,
-                      "reponse_modele": "Un yaourt"
+                      "reponse_modele": "Un ballon et un jeu de cartes"
                     },
                     "qcm_image": {
                       "melanger": true,
                       "choix": [
                         {
                           "id": "a",
-                          "image": "/lib/images/tcf/qcm-audit/vocab-yaourt.webp",
+                          "image": "/lib/images/tcf/qcm-audit/audit-context-ballon-cartes.webp",
                           "correct": true
                         },
                         {
                           "id": "b",
-                          "image": "/lib/images/tcf/qcm-audit/vocab-glace-cornet.webp"
+                          "image": "/lib/images/tcf/qcm-audit/audit-context-raquette-ballon.webp"
                         },
                         {
                           "id": "c",
-                          "image": "/lib/images/tcf/qcm-audit/audit-context-compote.webp"
+                          "image": "/lib/images/tcf/qcm-audit/audit-context-echecs-puzzle.webp"
                         }
                       ]
                     }
@@ -78756,78 +78573,32 @@
                   "audio": 1
                 },
                 {
-                  "enonce": "Quelle quantité de sucre faut-il ajouter ?",
+                  "enonce": "Qui laisse le message ?",
                   "type_reponse": "qcm_texte",
                   "points": 1,
                   "melanger": true,
                   "choix": [
                     {
                       "id": "a",
-                      "texte": "50 g",
+                      "texte": "Adrien",
                       "correct": true
                     },
                     {
                       "id": "b",
-                      "texte": "100 g"
+                      "texte": "Manu"
                     },
                     {
                       "id": "c",
-                      "texte": "150 g"
+                      "texte": "Jonathan"
                     }
                   ],
                   "formes": {
                     "lignes": {
                       "nb_lignes": 1,
-                      "reponse_modele": "50 g"
+                      "reponse_modele": "Adrien"
                     }
                   },
                   "audio": 1
-                },
-                {
-                  "enonce": "Que feront-ils le soir ?",
-                  "type_reponse": "qcm_texte",
-                  "points": 1,
-                  "melanger": true,
-                  "choix": [
-                    {
-                      "id": "a",
-                      "texte": "Regarder la télévision",
-                      "correct": true
-                    },
-                    {
-                      "id": "b",
-                      "texte": "Aller au cinéma"
-                    },
-                    {
-                      "id": "c",
-                      "texte": "Jouer au tennis"
-                    }
-                  ],
-                  "formes": {
-                    "lignes": {
-                      "nb_lignes": 1,
-                      "reponse_modele": "Regarder la télévision"
-                    },
-                    "qcm_image": {
-                      "melanger": true,
-                      "choix": [
-                        {
-                          "id": "a",
-                          "correct": true,
-                          "image": "/lib/images/tcf/qcm-audit/b14ac3e444af.webp"
-                        },
-                        {
-                          "id": "b",
-                          "image": "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp"
-                        },
-                        {
-                          "id": "c",
-                          "image": "/lib/images/tcf/qcm-audit/26876e2318ce.webp"
-                        }
-                      ]
-                    }
-                  },
-                  "audio": 2
                 },
                 {
                   "enonce": "À quelle heure part son train ?",
@@ -78876,75 +78647,85 @@
                   "audio": 2
                 },
                 {
-                  "enonce": "Quel aliment principal compose ce menu ?",
+                  "enonce": "Quelle activité est prévue dans la neige ?",
                   "type_reponse": "qcm_texte",
                   "points": 1,
                   "melanger": true,
                   "choix": [
                     {
                       "id": "a",
-                      "texte": "Du poisson",
+                      "texte": "Des promenades",
                       "correct": true
                     },
                     {
                       "id": "b",
-                      "texte": "Du poulet"
+                      "texte": "Du ski"
                     },
                     {
                       "id": "c",
-                      "texte": "Du bœuf"
+                      "texte": "De la luge"
                     }
                   ],
                   "formes": {
                     "lignes": {
                       "nb_lignes": 1,
-                      "reponse_modele": "Du poisson"
+                      "reponse_modele": "Des promenades"
+                    }
+                  },
+                  "audio": 2
+                },
+                {
+                  "enonce": "Avec qui le destinataire est-il invité ?",
+                  "type_reponse": "qcm_texte",
+                  "points": 1,
+                  "melanger": true,
+                  "choix": [
+                    {
+                      "id": "a",
+                      "texte": "Sarah",
+                      "correct": true
                     },
-                    "qcm_image": {
-                      "melanger": true,
-                      "choix": [
-                        {
-                          "id": "a",
-                          "image": "/lib/images/tcf/qcm-audit/extension573-poisson-aliment.webp",
-                          "correct": true
-                        },
-                        {
-                          "id": "b",
-                          "image": "/lib/images/tcf/qcm-audit/extension573-poulet-roti.webp"
-                        },
-                        {
-                          "id": "c",
-                          "image": "/lib/images/tcf/qcm-audit/extension573-boeuf-viande.webp"
-                        }
-                      ]
+                    {
+                      "id": "b",
+                      "texte": "Roxane"
+                    },
+                    {
+                      "id": "c",
+                      "texte": "Léa"
+                    }
+                  ],
+                  "formes": {
+                    "lignes": {
+                      "nb_lignes": 1,
+                      "reponse_modele": "Sarah"
                     }
                   },
                   "audio": 3
                 },
                 {
-                  "enonce": "Avec quoi cet aliment est-il servi ?",
+                  "enonce": "À quelle heure la fête commence-t-elle ?",
                   "type_reponse": "qcm_texte",
                   "points": 1,
                   "melanger": true,
                   "choix": [
                     {
                       "id": "a",
-                      "texte": "Des petits légumes",
+                      "texte": "À sept heures et demie",
                       "correct": true
                     },
                     {
                       "id": "b",
-                      "texte": "Des frites"
+                      "texte": "À six heures"
                     },
                     {
                       "id": "c",
-                      "texte": "Des pâtes"
+                      "texte": "À huit heures et demie"
                     }
                   ],
                   "formes": {
                     "lignes": {
                       "nb_lignes": 1,
-                      "reponse_modele": "Des petits légumes"
+                      "reponse_modele": "À sept heures et demie"
                     },
                     "qcm_image": {
                       "melanger": true,
@@ -78952,15 +78733,15 @@
                         {
                           "id": "a",
                           "correct": true,
-                          "image": "/lib/images/tcf/qcm-audit/co306-petits-legumes-dessine.webp"
+                          "image": "/lib/images/tcf/qcm-audit/vocab-horloge-0730.webp"
                         },
                         {
                           "id": "b",
-                          "image": "/lib/images/tcf/qcm-audit/co306-frites-dessine.webp"
+                          "image": "/lib/images/tcf/qcm-audit/vocab-horloge-0600.webp"
                         },
                         {
                           "id": "c",
-                          "image": "/lib/images/tcf/qcm-audit/abf45c70332d.webp"
+                          "image": "/lib/images/tcf/qcm-audit/vocab-horloge-0830.webp"
                         }
                       ]
                     }
@@ -78980,27 +78761,27 @@
           "tcf": {
             "kind": "audio_cadre",
             "audioLabel": "Audio 1",
-            "audioSrc": "/lib/audio/tcf/co/maison/la-recette-1.mp3",
+            "audioSrc": "/lib/audio/tcf/co/fetes/18-fêtes-chez-Elise.mp3",
             "questions": [
               {
                 "kind": "qcm",
                 "numero": 1,
-                "enonce": "Avec quel aliment peut-on manger le gâteau ?",
+                "enonce": "Quels objets Adrien prend-il pour jouer ?",
                 "mode": "texte",
                 "choix": [
                   {
                     "lettre": "A",
-                    "texte": "Une glace",
+                    "texte": "Une raquette et un ballon",
                     "correct": false
                   },
                   {
                     "lettre": "B",
-                    "texte": "Un yaourt",
+                    "texte": "Un ballon et un jeu de cartes",
                     "correct": true
                   },
                   {
                     "lettre": "C",
-                    "texte": "Une compote",
+                    "texte": "Un jeu d’échecs et un puzzle",
                     "correct": false
                   }
                 ],
@@ -79018,17 +78799,17 @@
                       "choix": [
                         {
                           "lettre": "A",
-                          "texte": "Une glace",
+                          "texte": "Une raquette et un ballon",
                           "correct": false
                         },
                         {
                           "lettre": "B",
-                          "texte": "Un yaourt",
+                          "texte": "Un ballon et un jeu de cartes",
                           "correct": true
                         },
                         {
                           "lettre": "C",
-                          "texte": "Une compote",
+                          "texte": "Un jeu d’échecs et un puzzle",
                           "correct": false
                         }
                       ],
@@ -79040,17 +78821,17 @@
                       "choix": [
                         {
                           "lettre": "A",
-                          "image": "/lib/images/tcf/qcm-audit/vocab-glace-cornet.webp",
+                          "image": "/lib/images/tcf/qcm-audit/audit-context-raquette-ballon.webp",
                           "correct": false
                         },
                         {
                           "lettre": "B",
-                          "image": "/lib/images/tcf/qcm-audit/vocab-yaourt.webp",
+                          "image": "/lib/images/tcf/qcm-audit/audit-context-ballon-cartes.webp",
                           "correct": true
                         },
                         {
                           "lettre": "C",
-                          "image": "/lib/images/tcf/qcm-audit/audit-context-compote.webp",
+                          "image": "/lib/images/tcf/qcm-audit/audit-context-echecs-puzzle.webp",
                           "correct": false
                         }
                       ],
@@ -79059,8 +78840,8 @@
                     "lignes": {
                       "kind": "lignes",
                       "nbLignes": 1,
-                      "reponseModele": "Un yaourt",
-                      "answer": "Un yaourt"
+                      "reponseModele": "Un ballon et un jeu de cartes",
+                      "answer": "Un ballon et un jeu de cartes"
                     }
                   }
                 },
@@ -79071,23 +78852,23 @@
               {
                 "kind": "qcm",
                 "numero": 2,
-                "enonce": "Quelle quantité de sucre faut-il ajouter ?",
+                "enonce": "Qui laisse le message ?",
                 "mode": "texte",
                 "choix": [
                   {
                     "lettre": "A",
-                    "texte": "150 g",
-                    "correct": false
+                    "texte": "Adrien",
+                    "correct": true
                   },
                   {
                     "lettre": "B",
-                    "texte": "100 g",
+                    "texte": "Manu",
                     "correct": false
                   },
                   {
                     "lettre": "C",
-                    "texte": "50 g",
-                    "correct": true
+                    "texte": "Jonathan",
+                    "correct": false
                   }
                 ],
                 "formSelect": {
@@ -79103,38 +78884,38 @@
                       "choix": [
                         {
                           "lettre": "A",
-                          "texte": "150 g",
-                          "correct": false
+                          "texte": "Adrien",
+                          "correct": true
                         },
                         {
                           "lettre": "B",
-                          "texte": "100 g",
+                          "texte": "Manu",
                           "correct": false
                         },
                         {
                           "lettre": "C",
-                          "texte": "50 g",
-                          "correct": true
+                          "texte": "Jonathan",
+                          "correct": false
                         }
                       ],
-                      "answer": "C"
+                      "answer": "A"
                     },
                     "lignes": {
                       "kind": "lignes",
                       "nbLignes": 1,
-                      "reponseModele": "50 g",
-                      "answer": "50 g"
+                      "reponseModele": "Adrien",
+                      "answer": "Adrien"
                     }
                   }
                 },
                 "formModeIndex": 2,
                 "points": 1,
-                "answer": "C"
+                "answer": "A"
               }
             ]
           },
           "noPoints": false,
-          "answer": "B · C",
+          "answer": "B · A",
           "points": 2,
           "tcfExerciseId": "tcf-co-trois-moyens-draw-a0-a1"
         }
@@ -79192,52 +78973,52 @@
               "points": 6,
               "support": {
                 "audios": [
-                  "/lib/audio/tcf/co/maison/la-recette-1.mp3",
+                  "/lib/audio/tcf/co/fetes/18-fêtes-chez-Elise.mp3",
                   "/lib/audio/tcf/co/fetes/14-invitation-aller-à-la-montagne.mp3",
-                  "/lib/audio/tcf/co/vie-quotidienne/bonjour-messieurs-dames-voici-1.mp3"
+                  "/lib/audio/tcf/co/vie-quotidienne/bonjour-nicolas-dimanche-octobre-1.mp3"
                 ]
               },
               "questions": [
                 {
-                  "enonce": "Avec quel aliment peut-on manger le gâteau ?",
+                  "enonce": "Quels objets Adrien prend-il pour jouer ?",
                   "type_reponse": "qcm_texte",
                   "points": 1,
                   "melanger": true,
                   "choix": [
                     {
                       "id": "a",
-                      "texte": "Un yaourt",
+                      "texte": "Un ballon et un jeu de cartes",
                       "correct": true
                     },
                     {
                       "id": "b",
-                      "texte": "Une glace"
+                      "texte": "Une raquette et un ballon"
                     },
                     {
                       "id": "c",
-                      "texte": "Une compote"
+                      "texte": "Un jeu d’échecs et un puzzle"
                     }
                   ],
                   "formes": {
                     "lignes": {
                       "nb_lignes": 1,
-                      "reponse_modele": "Un yaourt"
+                      "reponse_modele": "Un ballon et un jeu de cartes"
                     },
                     "qcm_image": {
                       "melanger": true,
                       "choix": [
                         {
                           "id": "a",
-                          "image": "/lib/images/tcf/qcm-audit/vocab-yaourt.webp",
+                          "image": "/lib/images/tcf/qcm-audit/audit-context-ballon-cartes.webp",
                           "correct": true
                         },
                         {
                           "id": "b",
-                          "image": "/lib/images/tcf/qcm-audit/vocab-glace-cornet.webp"
+                          "image": "/lib/images/tcf/qcm-audit/audit-context-raquette-ballon.webp"
                         },
                         {
                           "id": "c",
-                          "image": "/lib/images/tcf/qcm-audit/audit-context-compote.webp"
+                          "image": "/lib/images/tcf/qcm-audit/audit-context-echecs-puzzle.webp"
                         }
                       ]
                     }
@@ -79245,78 +79026,32 @@
                   "audio": 1
                 },
                 {
-                  "enonce": "Quelle quantité de sucre faut-il ajouter ?",
+                  "enonce": "Qui laisse le message ?",
                   "type_reponse": "qcm_texte",
                   "points": 1,
                   "melanger": true,
                   "choix": [
                     {
                       "id": "a",
-                      "texte": "50 g",
+                      "texte": "Adrien",
                       "correct": true
                     },
                     {
                       "id": "b",
-                      "texte": "100 g"
+                      "texte": "Manu"
                     },
                     {
                       "id": "c",
-                      "texte": "150 g"
+                      "texte": "Jonathan"
                     }
                   ],
                   "formes": {
                     "lignes": {
                       "nb_lignes": 1,
-                      "reponse_modele": "50 g"
+                      "reponse_modele": "Adrien"
                     }
                   },
                   "audio": 1
-                },
-                {
-                  "enonce": "Que feront-ils le soir ?",
-                  "type_reponse": "qcm_texte",
-                  "points": 1,
-                  "melanger": true,
-                  "choix": [
-                    {
-                      "id": "a",
-                      "texte": "Regarder la télévision",
-                      "correct": true
-                    },
-                    {
-                      "id": "b",
-                      "texte": "Aller au cinéma"
-                    },
-                    {
-                      "id": "c",
-                      "texte": "Jouer au tennis"
-                    }
-                  ],
-                  "formes": {
-                    "lignes": {
-                      "nb_lignes": 1,
-                      "reponse_modele": "Regarder la télévision"
-                    },
-                    "qcm_image": {
-                      "melanger": true,
-                      "choix": [
-                        {
-                          "id": "a",
-                          "correct": true,
-                          "image": "/lib/images/tcf/qcm-audit/b14ac3e444af.webp"
-                        },
-                        {
-                          "id": "b",
-                          "image": "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp"
-                        },
-                        {
-                          "id": "c",
-                          "image": "/lib/images/tcf/qcm-audit/26876e2318ce.webp"
-                        }
-                      ]
-                    }
-                  },
-                  "audio": 2
                 },
                 {
                   "enonce": "À quelle heure part son train ?",
@@ -79365,75 +79100,85 @@
                   "audio": 2
                 },
                 {
-                  "enonce": "Quel aliment principal compose ce menu ?",
+                  "enonce": "Quelle activité est prévue dans la neige ?",
                   "type_reponse": "qcm_texte",
                   "points": 1,
                   "melanger": true,
                   "choix": [
                     {
                       "id": "a",
-                      "texte": "Du poisson",
+                      "texte": "Des promenades",
                       "correct": true
                     },
                     {
                       "id": "b",
-                      "texte": "Du poulet"
+                      "texte": "Du ski"
                     },
                     {
                       "id": "c",
-                      "texte": "Du bœuf"
+                      "texte": "De la luge"
                     }
                   ],
                   "formes": {
                     "lignes": {
                       "nb_lignes": 1,
-                      "reponse_modele": "Du poisson"
+                      "reponse_modele": "Des promenades"
+                    }
+                  },
+                  "audio": 2
+                },
+                {
+                  "enonce": "Avec qui le destinataire est-il invité ?",
+                  "type_reponse": "qcm_texte",
+                  "points": 1,
+                  "melanger": true,
+                  "choix": [
+                    {
+                      "id": "a",
+                      "texte": "Sarah",
+                      "correct": true
                     },
-                    "qcm_image": {
-                      "melanger": true,
-                      "choix": [
-                        {
-                          "id": "a",
-                          "image": "/lib/images/tcf/qcm-audit/extension573-poisson-aliment.webp",
-                          "correct": true
-                        },
-                        {
-                          "id": "b",
-                          "image": "/lib/images/tcf/qcm-audit/extension573-poulet-roti.webp"
-                        },
-                        {
-                          "id": "c",
-                          "image": "/lib/images/tcf/qcm-audit/extension573-boeuf-viande.webp"
-                        }
-                      ]
+                    {
+                      "id": "b",
+                      "texte": "Roxane"
+                    },
+                    {
+                      "id": "c",
+                      "texte": "Léa"
+                    }
+                  ],
+                  "formes": {
+                    "lignes": {
+                      "nb_lignes": 1,
+                      "reponse_modele": "Sarah"
                     }
                   },
                   "audio": 3
                 },
                 {
-                  "enonce": "Avec quoi cet aliment est-il servi ?",
+                  "enonce": "À quelle heure la fête commence-t-elle ?",
                   "type_reponse": "qcm_texte",
                   "points": 1,
                   "melanger": true,
                   "choix": [
                     {
                       "id": "a",
-                      "texte": "Des petits légumes",
+                      "texte": "À sept heures et demie",
                       "correct": true
                     },
                     {
                       "id": "b",
-                      "texte": "Des frites"
+                      "texte": "À six heures"
                     },
                     {
                       "id": "c",
-                      "texte": "Des pâtes"
+                      "texte": "À huit heures et demie"
                     }
                   ],
                   "formes": {
                     "lignes": {
                       "nb_lignes": 1,
-                      "reponse_modele": "Des petits légumes"
+                      "reponse_modele": "À sept heures et demie"
                     },
                     "qcm_image": {
                       "melanger": true,
@@ -79441,15 +79186,15 @@
                         {
                           "id": "a",
                           "correct": true,
-                          "image": "/lib/images/tcf/qcm-audit/co306-petits-legumes-dessine.webp"
+                          "image": "/lib/images/tcf/qcm-audit/vocab-horloge-0730.webp"
                         },
                         {
                           "id": "b",
-                          "image": "/lib/images/tcf/qcm-audit/co306-frites-dessine.webp"
+                          "image": "/lib/images/tcf/qcm-audit/vocab-horloge-0600.webp"
                         },
                         {
                           "id": "c",
-                          "image": "/lib/images/tcf/qcm-audit/abf45c70332d.webp"
+                          "image": "/lib/images/tcf/qcm-audit/vocab-horloge-0830.webp"
                         }
                       ]
                     }
@@ -79469,27 +79214,27 @@
           "tcf": {
             "kind": "audio_cadre",
             "audioLabel": "Audio 1",
-            "audioSrc": "/lib/audio/tcf/co/maison/la-recette-1.mp3",
+            "audioSrc": "/lib/audio/tcf/co/fetes/18-fêtes-chez-Elise.mp3",
             "questions": [
               {
                 "kind": "qcm",
                 "numero": 1,
-                "enonce": "Avec quel aliment peut-on manger le gâteau ?",
+                "enonce": "Quels objets Adrien prend-il pour jouer ?",
                 "mode": "texte",
                 "choix": [
                   {
                     "lettre": "A",
-                    "texte": "Une glace",
+                    "texte": "Une raquette et un ballon",
                     "correct": false
                   },
                   {
                     "lettre": "B",
-                    "texte": "Un yaourt",
+                    "texte": "Un ballon et un jeu de cartes",
                     "correct": true
                   },
                   {
                     "lettre": "C",
-                    "texte": "Une compote",
+                    "texte": "Un jeu d’échecs et un puzzle",
                     "correct": false
                   }
                 ],
@@ -79507,17 +79252,17 @@
                       "choix": [
                         {
                           "lettre": "A",
-                          "texte": "Une glace",
+                          "texte": "Une raquette et un ballon",
                           "correct": false
                         },
                         {
                           "lettre": "B",
-                          "texte": "Un yaourt",
+                          "texte": "Un ballon et un jeu de cartes",
                           "correct": true
                         },
                         {
                           "lettre": "C",
-                          "texte": "Une compote",
+                          "texte": "Un jeu d’échecs et un puzzle",
                           "correct": false
                         }
                       ],
@@ -79529,17 +79274,17 @@
                       "choix": [
                         {
                           "lettre": "A",
-                          "image": "/lib/images/tcf/qcm-audit/vocab-glace-cornet.webp",
+                          "image": "/lib/images/tcf/qcm-audit/audit-context-raquette-ballon.webp",
                           "correct": false
                         },
                         {
                           "lettre": "B",
-                          "image": "/lib/images/tcf/qcm-audit/vocab-yaourt.webp",
+                          "image": "/lib/images/tcf/qcm-audit/audit-context-ballon-cartes.webp",
                           "correct": true
                         },
                         {
                           "lettre": "C",
-                          "image": "/lib/images/tcf/qcm-audit/audit-context-compote.webp",
+                          "image": "/lib/images/tcf/qcm-audit/audit-context-echecs-puzzle.webp",
                           "correct": false
                         }
                       ],
@@ -79548,8 +79293,8 @@
                     "lignes": {
                       "kind": "lignes",
                       "nbLignes": 1,
-                      "reponseModele": "Un yaourt",
-                      "answer": "Un yaourt"
+                      "reponseModele": "Un ballon et un jeu de cartes",
+                      "answer": "Un ballon et un jeu de cartes"
                     }
                   }
                 },
@@ -79560,23 +79305,23 @@
               {
                 "kind": "qcm",
                 "numero": 2,
-                "enonce": "Quelle quantité de sucre faut-il ajouter ?",
+                "enonce": "Qui laisse le message ?",
                 "mode": "texte",
                 "choix": [
                   {
                     "lettre": "A",
-                    "texte": "150 g",
-                    "correct": false
+                    "texte": "Adrien",
+                    "correct": true
                   },
                   {
                     "lettre": "B",
-                    "texte": "100 g",
+                    "texte": "Manu",
                     "correct": false
                   },
                   {
                     "lettre": "C",
-                    "texte": "50 g",
-                    "correct": true
+                    "texte": "Jonathan",
+                    "correct": false
                   }
                 ],
                 "formSelect": {
@@ -79592,38 +79337,38 @@
                       "choix": [
                         {
                           "lettre": "A",
-                          "texte": "150 g",
-                          "correct": false
+                          "texte": "Adrien",
+                          "correct": true
                         },
                         {
                           "lettre": "B",
-                          "texte": "100 g",
+                          "texte": "Manu",
                           "correct": false
                         },
                         {
                           "lettre": "C",
-                          "texte": "50 g",
-                          "correct": true
+                          "texte": "Jonathan",
+                          "correct": false
                         }
                       ],
-                      "answer": "C"
+                      "answer": "A"
                     },
                     "lignes": {
                       "kind": "lignes",
                       "nbLignes": 1,
-                      "reponseModele": "50 g",
-                      "answer": "50 g"
+                      "reponseModele": "Adrien",
+                      "answer": "Adrien"
                     }
                   }
                 },
                 "formModeIndex": 2,
                 "points": 1,
-                "answer": "C"
+                "answer": "A"
               }
             ]
           },
           "noPoints": false,
-          "answer": "B · C",
+          "answer": "B · A",
           "points": 2,
           "tcfExerciseId": "tcf-co-trois-moyens-draw-a0-a1"
         }
@@ -79681,148 +79426,64 @@
               "points": 6,
               "support": {
                 "audios": [
-                  "/lib/audio/tcf/co/transports/moyen-a2__radio-18.3.mp3",
-                  "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-22.mp3",
-                  "/lib/audio/tcf/co/transports/madame-etes-arrive-2.mp3"
+                  "/lib/audio/tcf/co/loisirs/loisirs-3-1.mp3",
+                  "/lib/audio/tcf/co/transports/moyen-a2__radio-20.3.mp3",
+                  "/lib/audio/tcf/co/transports/bonjour-desirez-2-3.mp3"
                 ]
               },
               "questions": [
                 {
-                  "enonce": "À partir de quand peut-on réserver ?",
+                  "enonce": "Qui peut-on rencontrer au musée ?",
                   "type_reponse": "qcm_texte",
                   "points": 1,
                   "melanger": true,
                   "choix": [
                     {
                       "id": "a",
-                      "texte": "Dès maintenant",
+                      "texte": "Des créateurs de jeux",
                       "correct": true
                     },
                     {
                       "id": "b",
-                      "texte": "Seulement après le festival"
+                      "texte": "Des sportifs professionnels"
                     },
                     {
                       "id": "c",
-                      "texte": "Seulement à la fin du mois"
+                      "texte": "Des acteurs de cinéma"
                     }
                   ],
                   "formes": {
                     "lignes": {
                       "nb_lignes": 1,
-                      "reponse_modele": "Dès maintenant"
+                      "reponse_modele": "Des créateurs de jeux"
                     }
                   },
                   "audio": 1
                 },
                 {
-                  "enonce": "Dans quelle ville le festival aura-t-il lieu ?",
+                  "enonce": "Jusqu’à quelle heure la cafétéria reste-t-elle ouverte ?",
                   "type_reponse": "qcm_texte",
                   "points": 1,
                   "melanger": true,
                   "choix": [
                     {
                       "id": "a",
-                      "texte": "Paris",
+                      "texte": "19 h",
                       "correct": true
                     },
                     {
                       "id": "b",
-                      "texte": "Lyon"
+                      "texte": "18 h"
                     },
                     {
                       "id": "c",
-                      "texte": "Marseille"
+                      "texte": "20 h"
                     }
                   ],
                   "formes": {
                     "lignes": {
                       "nb_lignes": 1,
-                      "reponse_modele": "Paris"
-                    }
-                  },
-                  "audio": 1
-                },
-                {
-                  "enonce": "Qui téléphone ?",
-                  "type_reponse": "qcm_texte",
-                  "points": 1,
-                  "melanger": true,
-                  "choix": [
-                    {
-                      "id": "a",
-                      "texte": "Le magasin d’électronique Eurovidéo",
-                      "correct": true
-                    },
-                    {
-                      "id": "b",
-                      "texte": "La librairie Saint-Rome"
-                    },
-                    {
-                      "id": "c",
-                      "texte": "L’agence de voyages Eurovoyages"
-                    }
-                  ],
-                  "formes": {
-                    "lignes": {
-                      "nb_lignes": 1,
-                      "reponse_modele": "Le magasin d’électronique Eurovidéo"
-                    }
-                  },
-                  "audio": 2
-                },
-                {
-                  "enonce": "Quels documents devez-vous apporter pour retirer la commande ?",
-                  "type_reponse": "qcm_texte",
-                  "points": 1,
-                  "melanger": true,
-                  "choix": [
-                    {
-                      "id": "a",
-                      "texte": "Le bon de commande et une carte d'identité",
-                      "correct": true
-                    },
-                    {
-                      "id": "b",
-                      "texte": "Une carte bancaire"
-                    },
-                    {
-                      "id": "c",
-                      "texte": "Un passeport"
-                    }
-                  ],
-                  "formes": {
-                    "lignes": {
-                      "nb_lignes": 1,
-                      "reponse_modele": "Le bon de commande et une carte d'identité"
-                    }
-                  },
-                  "audio": 2
-                },
-                {
-                  "enonce": "À quelle heure part le train pour Perpignan ?",
-                  "type_reponse": "qcm_texte",
-                  "points": 1,
-                  "melanger": true,
-                  "choix": [
-                    {
-                      "id": "a",
-                      "texte": "À 12 h 02",
-                      "correct": true
-                    },
-                    {
-                      "id": "b",
-                      "texte": "À 12 h 20"
-                    },
-                    {
-                      "id": "c",
-                      "texte": "À 13 h 02"
-                    }
-                  ],
-                  "formes": {
-                    "lignes": {
-                      "nb_lignes": 1,
-                      "reponse_modele": "À 12 h 02"
+                      "reponse_modele": "19 h"
                     },
                     "qcm_image": {
                       "melanger": true,
@@ -79830,45 +79491,147 @@
                         {
                           "id": "a",
                           "correct": true,
-                          "image": "/lib/images/tcf/qcm-audit/co306-horloge-1202-dessinee.webp"
+                          "image": "/lib/images/tcf/qcm-audit/co834-horloge-1900-dessinee.webp"
                         },
                         {
                           "id": "b",
-                          "image": "/lib/images/tcf/qcm-audit/co306-horloge-1220-dessinee.webp"
+                          "image": "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp"
                         },
                         {
                           "id": "c",
-                          "image": "/lib/images/tcf/qcm-audit/co306-horloge-1302-dessinee.webp"
+                          "image": "/lib/images/tcf/qcm-audit/co834-horloge-2000-dessinee.webp"
                         }
                       ]
                     }
                   },
-                  "audio": 3
+                  "audio": 1
                 },
                 {
-                  "enonce": "Sur quel quai se trouve ce train ?",
+                  "enonce": "Quelle heure est annoncée sur RadioTraffic ?",
                   "type_reponse": "qcm_texte",
                   "points": 1,
                   "melanger": true,
                   "choix": [
                     {
                       "id": "a",
-                      "texte": "Le quai 7",
+                      "texte": "7 h 45",
                       "correct": true
                     },
                     {
                       "id": "b",
-                      "texte": "Le quai 4"
+                      "texte": "8 h 15"
                     },
                     {
                       "id": "c",
-                      "texte": "Le quai 9"
+                      "texte": "9 h 30"
                     }
                   ],
                   "formes": {
                     "lignes": {
                       "nb_lignes": 1,
-                      "reponse_modele": "Le quai 7"
+                      "reponse_modele": "7 h 45"
+                    },
+                    "qcm_image": {
+                      "melanger": true,
+                      "choix": [
+                        {
+                          "id": "a",
+                          "correct": true,
+                          "image": "/lib/images/tcf/qcm-audit/vocab-horloge-1945.webp"
+                        },
+                        {
+                          "id": "b",
+                          "image": "/lib/images/tcf/qcm-audit/vocab-horloge-0815.webp"
+                        },
+                        {
+                          "id": "c",
+                          "image": "/lib/images/tcf/qcm-audit/co834-horloge-0930-dessinee.webp"
+                        }
+                      ]
+                    }
+                  },
+                  "audio": 2
+                },
+                {
+                  "enonce": "Sur quelle route y a-t-il un problème ?",
+                  "type_reponse": "qcm_texte",
+                  "points": 1,
+                  "melanger": true,
+                  "choix": [
+                    {
+                      "id": "a",
+                      "texte": "L’autoroute A10",
+                      "correct": true
+                    },
+                    {
+                      "id": "b",
+                      "texte": "L’autoroute A1"
+                    },
+                    {
+                      "id": "c",
+                      "texte": "La route nationale 19"
+                    }
+                  ],
+                  "formes": {
+                    "lignes": {
+                      "nb_lignes": 1,
+                      "reponse_modele": "L’autoroute A10"
+                    }
+                  },
+                  "audio": 2
+                },
+                {
+                  "enonce": "Que vont-ils consulter pour préparer la sortie ?",
+                  "type_reponse": "qcm_texte",
+                  "points": 1,
+                  "melanger": true,
+                  "choix": [
+                    {
+                      "id": "a",
+                      "texte": "Le programme culturel",
+                      "correct": true
+                    },
+                    {
+                      "id": "b",
+                      "texte": "La météo"
+                    },
+                    {
+                      "id": "c",
+                      "texte": "Un guide de randonnée"
+                    }
+                  ],
+                  "formes": {
+                    "lignes": {
+                      "nb_lignes": 1,
+                      "reponse_modele": "Le programme culturel"
+                    }
+                  },
+                  "audio": 3
+                },
+                {
+                  "enonce": "Quel film est proposé ?",
+                  "type_reponse": "qcm_texte",
+                  "points": 1,
+                  "melanger": true,
+                  "choix": [
+                    {
+                      "id": "a",
+                      "texte": "Les Infidèles",
+                      "correct": true
+                    },
+                    {
+                      "id": "b",
+                      "texte": "Hors normes"
+                    },
+                    {
+                      "id": "c",
+                      "texte": "Les Intouchables"
+                    }
+                  ],
+                  "formes": {
+                    "lignes": {
+                      "nb_lignes": 1,
+                      "reponse_modele": "Les Infidèles"
                     }
                   },
                   "audio": 3
@@ -79886,28 +79649,28 @@
           "tcf": {
             "kind": "audio_cadre",
             "audioLabel": "Audio 1",
-            "audioSrc": "/lib/audio/tcf/co/transports/moyen-a2__radio-18.3.mp3",
+            "audioSrc": "/lib/audio/tcf/co/loisirs/loisirs-3-1.mp3",
             "questions": [
               {
                 "kind": "qcm",
                 "numero": 1,
-                "enonce": "À partir de quand peut-on réserver ?",
+                "enonce": "Qui peut-on rencontrer au musée ?",
                 "mode": "texte",
                 "choix": [
                   {
                     "lettre": "A",
-                    "texte": "Seulement après le festival",
+                    "texte": "Des sportifs professionnels",
                     "correct": false
                   },
                   {
                     "lettre": "B",
-                    "texte": "Seulement à la fin du mois",
-                    "correct": false
+                    "texte": "Des créateurs de jeux",
+                    "correct": true
                   },
                   {
                     "lettre": "C",
-                    "texte": "Dès maintenant",
-                    "correct": true
+                    "texte": "Des acteurs de cinéma",
+                    "correct": false
                   }
                 ],
                 "formSelect": {
@@ -79923,17 +79686,103 @@
                       "choix": [
                         {
                           "lettre": "A",
-                          "texte": "Seulement après le festival",
+                          "texte": "Des sportifs professionnels",
                           "correct": false
                         },
                         {
                           "lettre": "B",
-                          "texte": "Seulement à la fin du mois",
+                          "texte": "Des créateurs de jeux",
+                          "correct": true
+                        },
+                        {
+                          "lettre": "C",
+                          "texte": "Des acteurs de cinéma",
+                          "correct": false
+                        }
+                      ],
+                      "answer": "B"
+                    },
+                    "lignes": {
+                      "kind": "lignes",
+                      "nbLignes": 1,
+                      "reponseModele": "Des créateurs de jeux",
+                      "answer": "Des créateurs de jeux"
+                    }
+                  }
+                },
+                "formModeIndex": 1,
+                "points": 1,
+                "answer": "B"
+              },
+              {
+                "kind": "qcm",
+                "numero": 2,
+                "enonce": "Jusqu’à quelle heure la cafétéria reste-t-elle ouverte ?",
+                "mode": "texte",
+                "choix": [
+                  {
+                    "lettre": "A",
+                    "texte": "18 h",
+                    "correct": false
+                  },
+                  {
+                    "lettre": "B",
+                    "texte": "20 h",
+                    "correct": false
+                  },
+                  {
+                    "lettre": "C",
+                    "texte": "19 h",
+                    "correct": true
+                  }
+                ],
+                "formSelect": {
+                  "active": "qcm_texte",
+                  "filled": [
+                    "qcm_texte",
+                    "qcm_image",
+                    "lignes"
+                  ],
+                  "variants": {
+                    "qcm_texte": {
+                      "kind": "qcm",
+                      "mode": "texte",
+                      "choix": [
+                        {
+                          "lettre": "A",
+                          "texte": "18 h",
+                          "correct": false
+                        },
+                        {
+                          "lettre": "B",
+                          "texte": "20 h",
                           "correct": false
                         },
                         {
                           "lettre": "C",
-                          "texte": "Dès maintenant",
+                          "texte": "19 h",
+                          "correct": true
+                        }
+                      ],
+                      "answer": "C"
+                    },
+                    "qcm_image": {
+                      "kind": "qcm",
+                      "mode": "image",
+                      "choix": [
+                        {
+                          "lettre": "A",
+                          "image": "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp",
+                          "correct": false
+                        },
+                        {
+                          "lettre": "B",
+                          "image": "/lib/images/tcf/qcm-audit/co834-horloge-2000-dessinee.webp",
+                          "correct": false
+                        },
+                        {
+                          "lettre": "C",
+                          "image": "/lib/images/tcf/qcm-audit/co834-horloge-1900-dessinee.webp",
                           "correct": true
                         }
                       ],
@@ -79942,82 +79791,19 @@
                     "lignes": {
                       "kind": "lignes",
                       "nbLignes": 1,
-                      "reponseModele": "Dès maintenant",
-                      "answer": "Dès maintenant"
-                    }
-                  }
-                },
-                "formModeIndex": 1,
-                "points": 1,
-                "answer": "C"
-              },
-              {
-                "kind": "qcm",
-                "numero": 2,
-                "enonce": "Dans quelle ville le festival aura-t-il lieu ?",
-                "mode": "texte",
-                "choix": [
-                  {
-                    "lettre": "A",
-                    "texte": "Paris",
-                    "correct": true
-                  },
-                  {
-                    "lettre": "B",
-                    "texte": "Marseille",
-                    "correct": false
-                  },
-                  {
-                    "lettre": "C",
-                    "texte": "Lyon",
-                    "correct": false
-                  }
-                ],
-                "formSelect": {
-                  "active": "qcm_texte",
-                  "filled": [
-                    "qcm_texte",
-                    "lignes"
-                  ],
-                  "variants": {
-                    "qcm_texte": {
-                      "kind": "qcm",
-                      "mode": "texte",
-                      "choix": [
-                        {
-                          "lettre": "A",
-                          "texte": "Paris",
-                          "correct": true
-                        },
-                        {
-                          "lettre": "B",
-                          "texte": "Marseille",
-                          "correct": false
-                        },
-                        {
-                          "lettre": "C",
-                          "texte": "Lyon",
-                          "correct": false
-                        }
-                      ],
-                      "answer": "A"
-                    },
-                    "lignes": {
-                      "kind": "lignes",
-                      "nbLignes": 1,
-                      "reponseModele": "Paris",
-                      "answer": "Paris"
+                      "reponseModele": "19 h",
+                      "answer": "19 h"
                     }
                   }
                 },
                 "formModeIndex": 2,
                 "points": 1,
-                "answer": "A"
+                "answer": "C"
               }
             ]
           },
           "noPoints": false,
-          "answer": "C · A",
+          "answer": "B · C",
           "points": 2,
           "tcfExerciseId": "tcf-co-trois-moyens-draw-a1-a2"
         }
@@ -81126,148 +80912,184 @@
               "niveau": "A1-A2",
               "competence": "CO",
               "type_exercice": "complet",
-              "theme": "Soutien scolaire · Annonce 36",
-              "scenario": "ecole",
-              "scene": "École",
+              "theme": "Soutien scolaire · Radio 35",
+              "scenario": "maison",
+              "scene": "Maison",
               "consigne": "Vous allez écouter [[em]]1 document audio[[/em]] différent. Il y a 2 écoutes.\nAvant chaque écoute, vous entendez le son suivant [[bell]].\n[[em]]1.[[/em]] Lisez les questions.\n[[em]]2.[[/em]] Écoutez le document audio\n[[em]]3.[[/em]] Répondez aux questions",
               "points": 5,
               "support": {
-                "audio": "/lib/audio/tcf/co/ecole/ecole-4.mp3",
-                "transcription": "Le bâtiment C de l'école est fermé du 14 au 26 janvier pour travaux. Vos nouvelles salles de classe pendant cette période sont indiquées sur le tableau d'information à l'entrée. L'association des parents d'élèves organise le concours Décine ton école idéale. Pour participer, vous devez envoyer votre dessin avant le 12 mars à l'adresse [adresse électronique à confirmer] Chers élèves. Lundi 23 April, nous avons la chance d'accueillir l'auteur Bernard Werber dans l'auditorium du college. Il donnera une conférence sur son métier à l'occasion de la journée internationale du livre. This is une simulation d'alerte au feu. Nous vous demandons de sortir du bâtiment dans le calme. Merci de laisser vos affaires dans la classe and ne pas courir. Nous allons tous nous retrouver dans la cour. Votre professeur d'Italien, Monsieur Damiani, est absent cette semaine. Il est remplacé à partir de mercredi par Monsieur Biancardi. L'examen d'Italien a bien lieu vendredi. Il est surveillé par Madame Blanchard. Une vente de livres est organisée mardi 22 mai par les élèves de 4e B dans la salle B 116. L'argent de la vente est pour l'association Sourir d'enfants qui aide les enfants malades à l'hôpital."
+                "audio": "/lib/audio/tcf/co/maison/maison-3.mp3",
+                "transcription": "Bonjour ! Dans notre émission \"Roulez jeunesse\", nous allons parler aujourd'hui de l'alimentation des adolescents. Le repas préféré des adolescents ? Le hamburger-frites, bien sûr ! Mais attention ! Les adolescents mangent aussi d'autres produits. Des pâtes, du riz, du poulet. Johan, bonjour ! Bonjour ! Alors, qu'est-ce que tu aimes manger ? C'est vrai ! J'aime bien le hamburger frites. Mais je n'en mange pas tous les jours. Mon plat préféré, c'est la pizza. Et les légumes, les fruits ? Oui, les légumes aussi. Chez mes parents, on mange tous les jours de la salade. Les fruits, ça dépend. J'aime bien les fraises, les bananes, les oranges, mais je n'aime pas les pommes ni les poires. En fait, je préfère boire des jus de fruits plutôt que de manger des fruits. Et au petit-déjeuner, qu'est-ce que tu prends ? En général, du pain avec du chocolat et un verre de lait. Merci, Johan."
               },
               "questions": [
                 {
-                  "enonce": "Quel bâtiment de l’école est fermé pour travaux ?",
+                  "enonce": "Quel est le nom de l’émission ?",
                   "type_reponse": "qcm_texte",
                   "points": 1,
                   "melanger": true,
                   "choix": [
                     {
                       "id": "a",
-                      "texte": "Le bâtiment C",
+                      "texte": "Roulez jeunesse",
                       "correct": true
                     },
                     {
                       "id": "b",
-                      "texte": "Le bâtiment A"
+                      "texte": "Paroles de voyageurs"
                     },
                     {
                       "id": "c",
-                      "texte": "Le bâtiment B"
+                      "texte": "Les experts du sport"
                     }
                   ],
                   "formes": {
                     "lignes": {
                       "nb_lignes": 1,
-                      "reponse_modele": "Le bâtiment C"
+                      "reponse_modele": "Roulez jeunesse"
                     }
                   }
                 },
                 {
-                  "enonce": "Quel écrivain vient au collège ?",
+                  "enonce": "Quel est le plat préféré de Johan ?",
                   "type_reponse": "qcm_texte",
                   "points": 1,
                   "melanger": true,
                   "choix": [
                     {
                       "id": "a",
-                      "texte": "Bernard Werber",
+                      "texte": "La pizza",
                       "correct": true
                     },
                     {
                       "id": "b",
-                      "texte": "Marc Galland"
+                      "texte": "Le hamburger-frites"
                     },
                     {
                       "id": "c",
-                      "texte": "David Dupré"
+                      "texte": "Les pâtes"
                     }
                   ],
                   "formes": {
                     "lignes": {
                       "nb_lignes": 1,
-                      "reponse_modele": "Bernard Werber"
+                      "reponse_modele": "La pizza"
+                    },
+                    "qcm_image": {
+                      "melanger": true,
+                      "choix": [
+                        {
+                          "id": "a",
+                          "correct": true,
+                          "image": "/lib/images/tcf/qcm-audit/co834-pizza-dessinee.webp"
+                        },
+                        {
+                          "id": "b",
+                          "image": "/lib/images/tcf/qcm-audit/vocab-hamburger-frites.webp"
+                        },
+                        {
+                          "id": "c",
+                          "image": "/lib/images/tcf/qcm-audit/abf45c70332d.webp"
+                        }
+                      ]
                     }
                   }
                 },
                 {
-                  "enonce": "Où la conférence de l’écrivain a-t-elle lieu ?",
+                  "enonce": "Quel plat populaire est cité au début ?",
                   "type_reponse": "qcm_texte",
                   "points": 1,
                   "melanger": true,
                   "choix": [
                     {
                       "id": "a",
-                      "texte": "Dans l’auditorium",
+                      "texte": "Le hamburger-frites",
                       "correct": true
                     },
                     {
                       "id": "b",
-                      "texte": "Dans la cantine"
+                      "texte": "Le couscous"
                     },
                     {
                       "id": "c",
-                      "texte": "Dans le gymnase"
+                      "texte": "La paella"
                     }
                   ],
                   "formes": {
                     "lignes": {
                       "nb_lignes": 1,
-                      "reponse_modele": "Dans l’auditorium"
+                      "reponse_modele": "Le hamburger-frites"
+                    },
+                    "qcm_image": {
+                      "melanger": true,
+                      "choix": [
+                        {
+                          "id": "a",
+                          "image": "/lib/images/tcf/qcm-audit/vocab-hamburger-frites.webp",
+                          "correct": true
+                        },
+                        {
+                          "id": "b",
+                          "image": "/lib/images/tcf/qcm-audit/extension573-couscous.webp"
+                        },
+                        {
+                          "id": "c",
+                          "image": "/lib/images/tcf/qcm-audit/extension573-paella.png"
+                        }
+                      ]
                     }
                   }
                 },
                 {
-                  "enonce": "Quel dessin faut-il envoyer pour le concours ?",
+                  "enonce": "À quelle fréquence Johan et ses parents mangent-ils de la salade ?",
                   "type_reponse": "qcm_texte",
                   "points": 1,
                   "melanger": true,
                   "choix": [
                     {
                       "id": "a",
-                      "texte": "Un dessin de son école idéale",
+                      "texte": "Tous les jours",
                       "correct": true
                     },
                     {
                       "id": "b",
-                      "texte": "Un dessin de son animal préféré"
+                      "texte": "Une fois par semaine"
                     },
                     {
                       "id": "c",
-                      "texte": "Un dessin de ses vacances"
+                      "texte": "Une fois par mois"
                     }
                   ],
                   "formes": {
                     "lignes": {
                       "nb_lignes": 1,
-                      "reponse_modele": "Un dessin de son école idéale"
+                      "reponse_modele": "Tous les jours"
                     }
                   }
                 },
                 {
-                  "enonce": "Où peut-on trouver les nouvelles salles de classe ?",
+                  "enonce": "Que préfère-t-il à la consommation de fruits entiers ?",
                   "type_reponse": "qcm_texte",
                   "points": 1,
                   "melanger": true,
                   "choix": [
                     {
                       "id": "a",
-                      "texte": "Sur le tableau d’informations à l’entrée",
+                      "texte": "Boire des jus de fruits",
                       "correct": true
                     },
                     {
                       "id": "b",
-                      "texte": "Dans le cahier de musique"
+                      "texte": "Manger des légumes crus"
                     },
                     {
                       "id": "c",
-                      "texte": "Sur la porte du gymnase"
+                      "texte": "Boire uniquement de l’eau"
                     }
                   ],
                   "formes": {
                     "lignes": {
                       "nb_lignes": 1,
-                      "reponse_modele": "Sur le tableau d’informations à l’entrée"
+                      "reponse_modele": "Boire des jus de fruits"
                     }
                   }
                 }
@@ -81284,27 +81106,27 @@
           "tcf": {
             "kind": "audio_cadre",
             "audioLabel": "Audio 1",
-            "audioSrc": "/lib/audio/tcf/co/ecole/ecole-4.mp3",
+            "audioSrc": "/lib/audio/tcf/co/maison/maison-3.mp3",
             "questions": [
               {
                 "kind": "qcm",
                 "numero": 1,
-                "enonce": "Quel bâtiment de l’école est fermé pour travaux ?",
+                "enonce": "Quel est le nom de l’émission ?",
                 "mode": "texte",
                 "choix": [
                   {
                     "lettre": "A",
-                    "texte": "Le bâtiment A",
-                    "correct": false
-                  },
-                  {
-                    "lettre": "B",
-                    "texte": "Le bâtiment C",
+                    "texte": "Roulez jeunesse",
                     "correct": true
                   },
                   {
+                    "lettre": "B",
+                    "texte": "Paroles de voyageurs",
+                    "correct": false
+                  },
+                  {
                     "lettre": "C",
-                    "texte": "Le bâtiment B",
+                    "texte": "Les experts du sport",
                     "correct": false
                   }
                 ],
@@ -81321,53 +81143,53 @@
                       "choix": [
                         {
                           "lettre": "A",
-                          "texte": "Le bâtiment A",
-                          "correct": false
-                        },
-                        {
-                          "lettre": "B",
-                          "texte": "Le bâtiment C",
+                          "texte": "Roulez jeunesse",
                           "correct": true
                         },
                         {
+                          "lettre": "B",
+                          "texte": "Paroles de voyageurs",
+                          "correct": false
+                        },
+                        {
                           "lettre": "C",
-                          "texte": "Le bâtiment B",
+                          "texte": "Les experts du sport",
                           "correct": false
                         }
                       ],
-                      "answer": "B"
+                      "answer": "A"
                     },
                     "lignes": {
                       "kind": "lignes",
                       "nbLignes": 1,
-                      "reponseModele": "Le bâtiment C",
-                      "answer": "Le bâtiment C"
+                      "reponseModele": "Roulez jeunesse",
+                      "answer": "Roulez jeunesse"
                     }
                   }
                 },
                 "formModeIndex": 1,
                 "points": 1,
-                "answer": "B"
+                "answer": "A"
               },
               {
                 "kind": "qcm",
                 "numero": 2,
-                "enonce": "Quel écrivain vient au collège ?",
+                "enonce": "Quel est le plat préféré de Johan ?",
                 "mode": "texte",
                 "choix": [
                   {
                     "lettre": "A",
-                    "texte": "Marc Galland",
-                    "correct": false
-                  },
-                  {
-                    "lettre": "B",
-                    "texte": "Bernard Werber",
+                    "texte": "La pizza",
                     "correct": true
                   },
                   {
+                    "lettre": "B",
+                    "texte": "Les pâtes",
+                    "correct": false
+                  },
+                  {
                     "lettre": "C",
-                    "texte": "David Dupré",
+                    "texte": "Le hamburger-frites",
                     "correct": false
                   }
                 ],
@@ -81375,6 +81197,7 @@
                   "active": "qcm_texte",
                   "filled": [
                     "qcm_texte",
+                    "qcm_image",
                     "lignes"
                   ],
                   "variants": {
@@ -81384,53 +81207,75 @@
                       "choix": [
                         {
                           "lettre": "A",
-                          "texte": "Marc Galland",
-                          "correct": false
-                        },
-                        {
-                          "lettre": "B",
-                          "texte": "Bernard Werber",
+                          "texte": "La pizza",
                           "correct": true
                         },
                         {
+                          "lettre": "B",
+                          "texte": "Les pâtes",
+                          "correct": false
+                        },
+                        {
                           "lettre": "C",
-                          "texte": "David Dupré",
+                          "texte": "Le hamburger-frites",
                           "correct": false
                         }
                       ],
-                      "answer": "B"
+                      "answer": "A"
+                    },
+                    "qcm_image": {
+                      "kind": "qcm",
+                      "mode": "image",
+                      "choix": [
+                        {
+                          "lettre": "A",
+                          "image": "/lib/images/tcf/qcm-audit/co834-pizza-dessinee.webp",
+                          "correct": true
+                        },
+                        {
+                          "lettre": "B",
+                          "image": "/lib/images/tcf/qcm-audit/abf45c70332d.webp",
+                          "correct": false
+                        },
+                        {
+                          "lettre": "C",
+                          "image": "/lib/images/tcf/qcm-audit/vocab-hamburger-frites.webp",
+                          "correct": false
+                        }
+                      ],
+                      "answer": "A"
                     },
                     "lignes": {
                       "kind": "lignes",
                       "nbLignes": 1,
-                      "reponseModele": "Bernard Werber",
-                      "answer": "Bernard Werber"
+                      "reponseModele": "La pizza",
+                      "answer": "La pizza"
                     }
                   }
                 },
                 "formModeIndex": 2,
                 "points": 1,
-                "answer": "B"
+                "answer": "A"
               },
               {
                 "kind": "qcm",
                 "numero": 3,
-                "enonce": "Où la conférence de l’écrivain a-t-elle lieu ?",
+                "enonce": "Quel plat populaire est cité au début ?",
                 "mode": "texte",
                 "choix": [
                   {
                     "lettre": "A",
-                    "texte": "Dans la cantine",
-                    "correct": false
-                  },
-                  {
-                    "lettre": "B",
-                    "texte": "Dans l’auditorium",
+                    "texte": "Le hamburger-frites",
                     "correct": true
                   },
                   {
+                    "lettre": "B",
+                    "texte": "La paella",
+                    "correct": false
+                  },
+                  {
                     "lettre": "C",
-                    "texte": "Dans le gymnase",
+                    "texte": "Le couscous",
                     "correct": false
                   }
                 ],
@@ -81438,6 +81283,7 @@
                   "active": "qcm_texte",
                   "filled": [
                     "qcm_texte",
+                    "qcm_image",
                     "lignes"
                   ],
                   "variants": {
@@ -81447,53 +81293,75 @@
                       "choix": [
                         {
                           "lettre": "A",
-                          "texte": "Dans la cantine",
-                          "correct": false
-                        },
-                        {
-                          "lettre": "B",
-                          "texte": "Dans l’auditorium",
+                          "texte": "Le hamburger-frites",
                           "correct": true
                         },
                         {
+                          "lettre": "B",
+                          "texte": "La paella",
+                          "correct": false
+                        },
+                        {
                           "lettre": "C",
-                          "texte": "Dans le gymnase",
+                          "texte": "Le couscous",
                           "correct": false
                         }
                       ],
-                      "answer": "B"
+                      "answer": "A"
+                    },
+                    "qcm_image": {
+                      "kind": "qcm",
+                      "mode": "image",
+                      "choix": [
+                        {
+                          "lettre": "A",
+                          "image": "/lib/images/tcf/qcm-audit/vocab-hamburger-frites.webp",
+                          "correct": true
+                        },
+                        {
+                          "lettre": "B",
+                          "image": "/lib/images/tcf/qcm-audit/extension573-paella.png",
+                          "correct": false
+                        },
+                        {
+                          "lettre": "C",
+                          "image": "/lib/images/tcf/qcm-audit/extension573-couscous.webp",
+                          "correct": false
+                        }
+                      ],
+                      "answer": "A"
                     },
                     "lignes": {
                       "kind": "lignes",
                       "nbLignes": 1,
-                      "reponseModele": "Dans l’auditorium",
-                      "answer": "Dans l’auditorium"
+                      "reponseModele": "Le hamburger-frites",
+                      "answer": "Le hamburger-frites"
                     }
                   }
                 },
                 "formModeIndex": 3,
                 "points": 1,
-                "answer": "B"
+                "answer": "A"
               },
               {
                 "kind": "qcm",
                 "numero": 4,
-                "enonce": "Quel dessin faut-il envoyer pour le concours ?",
+                "enonce": "À quelle fréquence Johan et ses parents mangent-ils de la salade ?",
                 "mode": "texte",
                 "choix": [
                   {
                     "lettre": "A",
-                    "texte": "Un dessin de ses vacances",
+                    "texte": "Une fois par mois",
                     "correct": false
                   },
                   {
                     "lettre": "B",
-                    "texte": "Un dessin de son école idéale",
+                    "texte": "Tous les jours",
                     "correct": true
                   },
                   {
                     "lettre": "C",
-                    "texte": "Un dessin de son animal préféré",
+                    "texte": "Une fois par semaine",
                     "correct": false
                   }
                 ],
@@ -81510,17 +81378,17 @@
                       "choix": [
                         {
                           "lettre": "A",
-                          "texte": "Un dessin de ses vacances",
+                          "texte": "Une fois par mois",
                           "correct": false
                         },
                         {
                           "lettre": "B",
-                          "texte": "Un dessin de son école idéale",
+                          "texte": "Tous les jours",
                           "correct": true
                         },
                         {
                           "lettre": "C",
-                          "texte": "Un dessin de son animal préféré",
+                          "texte": "Une fois par semaine",
                           "correct": false
                         }
                       ],
@@ -81529,8 +81397,8 @@
                     "lignes": {
                       "kind": "lignes",
                       "nbLignes": 1,
-                      "reponseModele": "Un dessin de son école idéale",
-                      "answer": "Un dessin de son école idéale"
+                      "reponseModele": "Tous les jours",
+                      "answer": "Tous les jours"
                     }
                   }
                 },
@@ -81541,23 +81409,23 @@
               {
                 "kind": "qcm",
                 "numero": 5,
-                "enonce": "Où peut-on trouver les nouvelles salles de classe ?",
+                "enonce": "Que préfère-t-il à la consommation de fruits entiers ?",
                 "mode": "texte",
                 "choix": [
                   {
                     "lettre": "A",
-                    "texte": "Sur le tableau d’informations à l’entrée",
-                    "correct": true
+                    "texte": "Manger des légumes crus",
+                    "correct": false
                   },
                   {
                     "lettre": "B",
-                    "texte": "Sur la porte du gymnase",
+                    "texte": "Boire uniquement de l’eau",
                     "correct": false
                   },
                   {
                     "lettre": "C",
-                    "texte": "Dans le cahier de musique",
-                    "correct": false
+                    "texte": "Boire des jus de fruits",
+                    "correct": true
                   }
                 ],
                 "formSelect": {
@@ -81573,38 +81441,38 @@
                       "choix": [
                         {
                           "lettre": "A",
-                          "texte": "Sur le tableau d’informations à l’entrée",
-                          "correct": true
+                          "texte": "Manger des légumes crus",
+                          "correct": false
                         },
                         {
                           "lettre": "B",
-                          "texte": "Sur la porte du gymnase",
+                          "texte": "Boire uniquement de l’eau",
                           "correct": false
                         },
                         {
                           "lettre": "C",
-                          "texte": "Dans le cahier de musique",
-                          "correct": false
+                          "texte": "Boire des jus de fruits",
+                          "correct": true
                         }
                       ],
-                      "answer": "A"
+                      "answer": "C"
                     },
                     "lignes": {
                       "kind": "lignes",
                       "nbLignes": 1,
-                      "reponseModele": "Sur le tableau d’informations à l’entrée",
-                      "answer": "Sur le tableau d’informations à l’entrée"
+                      "reponseModele": "Boire des jus de fruits",
+                      "answer": "Boire des jus de fruits"
                     }
                   }
                 },
                 "formModeIndex": 5,
                 "points": 1,
-                "answer": "A"
+                "answer": "C"
               }
             ]
           },
           "noPoints": false,
-          "answer": "B · B · B · B · A",
+          "answer": "A · A · A · B · C",
           "points": 5,
           "tcfExerciseId": "tcf-co-long-draw-a1-a2"
         }
@@ -81688,16 +81556,6 @@
                   "dialogue": 1
                 },
                 {
-                  "id": "l1",
-                  "image": "/lib/images/tcf/co/scenes/famille/preparer-un-repas.webp",
-                  "dialogue": null
-                },
-                {
-                  "id": "d2",
-                  "image": "/lib/images/tcf/co/scenes/travail/se-serrer-la-main.webp",
-                  "dialogue": 2
-                },
-                {
                   "id": "d4",
                   "image": "/lib/images/tcf/co/scenes/sante/demander-a-l-accueil.webp",
                   "dialogue": 4
@@ -81708,8 +81566,18 @@
                   "dialogue": 3
                 },
                 {
+                  "id": "l1",
+                  "image": "/lib/images/tcf/qcm-audit/vocab-eleve-tableau.webp",
+                  "dialogue": null
+                },
+                {
+                  "id": "d2",
+                  "image": "/lib/images/tcf/co/scenes/travail/se-serrer-la-main.webp",
+                  "dialogue": 2
+                },
+                {
                   "id": "l2",
-                  "image": "/lib/images/tcf/co/scenes/magasins/demander-un-rayon.webp",
+                  "image": "/lib/images/tcf/qcm-audit/co-personnages-20261112-59.png",
                   "dialogue": null
                 }
               ],
@@ -81734,30 +81602,30 @@
               },
               {
                 "lettre": "B",
-                "image": "/lib/images/tcf/co/scenes/famille/preparer-un-repas.webp",
-                "dialogue": null
-              },
-              {
-                "lettre": "C",
-                "image": "/lib/images/tcf/co/scenes/travail/se-serrer-la-main.webp",
-                "dialogue": 2,
-                "audioSrc": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-2-4.mp3"
-              },
-              {
-                "lettre": "D",
                 "image": "/lib/images/tcf/co/scenes/sante/demander-a-l-accueil.webp",
                 "dialogue": 4,
                 "audioSrc": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-2-3.mp3"
               },
               {
-                "lettre": "E",
+                "lettre": "C",
                 "image": "/lib/images/tcf/co/scenes/famille/aider-aux-devoirs.webp",
                 "dialogue": 3,
                 "audioSrc": "/lib/audio/tcf/co/ecole/les-etudes-2-2.mp3"
               },
               {
+                "lettre": "D",
+                "image": "/lib/images/tcf/qcm-audit/vocab-eleve-tableau.webp",
+                "dialogue": null
+              },
+              {
+                "lettre": "E",
+                "image": "/lib/images/tcf/co/scenes/travail/se-serrer-la-main.webp",
+                "dialogue": 2,
+                "audioSrc": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-2-4.mp3"
+              },
+              {
                 "lettre": "F",
-                "image": "/lib/images/tcf/co/scenes/magasins/demander-un-rayon.webp",
+                "image": "/lib/images/tcf/qcm-audit/co-personnages-20261112-59.png",
                 "dialogue": null
               }
             ]
@@ -81847,16 +81715,6 @@
                   "dialogue": 1
                 },
                 {
-                  "id": "l1",
-                  "image": "/lib/images/tcf/co/scenes/famille/preparer-un-repas.webp",
-                  "dialogue": null
-                },
-                {
-                  "id": "d2",
-                  "image": "/lib/images/tcf/co/scenes/travail/se-serrer-la-main.webp",
-                  "dialogue": 2
-                },
-                {
                   "id": "d4",
                   "image": "/lib/images/tcf/co/scenes/sante/demander-a-l-accueil.webp",
                   "dialogue": 4
@@ -81867,8 +81725,18 @@
                   "dialogue": 3
                 },
                 {
+                  "id": "l1",
+                  "image": "/lib/images/tcf/qcm-audit/vocab-eleve-tableau.webp",
+                  "dialogue": null
+                },
+                {
+                  "id": "d2",
+                  "image": "/lib/images/tcf/co/scenes/travail/se-serrer-la-main.webp",
+                  "dialogue": 2
+                },
+                {
                   "id": "l2",
-                  "image": "/lib/images/tcf/co/scenes/magasins/demander-un-rayon.webp",
+                  "image": "/lib/images/tcf/qcm-audit/co-personnages-20261112-59.png",
                   "dialogue": null
                 }
               ],
@@ -81893,30 +81761,30 @@
               },
               {
                 "lettre": "B",
-                "image": "/lib/images/tcf/co/scenes/famille/preparer-un-repas.webp",
-                "dialogue": null
-              },
-              {
-                "lettre": "C",
-                "image": "/lib/images/tcf/co/scenes/travail/se-serrer-la-main.webp",
-                "dialogue": 2,
-                "audioSrc": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-2-4.mp3"
-              },
-              {
-                "lettre": "D",
                 "image": "/lib/images/tcf/co/scenes/sante/demander-a-l-accueil.webp",
                 "dialogue": 4,
                 "audioSrc": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-2-3.mp3"
               },
               {
-                "lettre": "E",
+                "lettre": "C",
                 "image": "/lib/images/tcf/co/scenes/famille/aider-aux-devoirs.webp",
                 "dialogue": 3,
                 "audioSrc": "/lib/audio/tcf/co/ecole/les-etudes-2-2.mp3"
               },
               {
+                "lettre": "D",
+                "image": "/lib/images/tcf/qcm-audit/vocab-eleve-tableau.webp",
+                "dialogue": null
+              },
+              {
+                "lettre": "E",
+                "image": "/lib/images/tcf/co/scenes/travail/se-serrer-la-main.webp",
+                "dialogue": 2,
+                "audioSrc": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-2-4.mp3"
+              },
+              {
                 "lettre": "F",
-                "image": "/lib/images/tcf/co/scenes/magasins/demander-un-rayon.webp",
+                "image": "/lib/images/tcf/qcm-audit/co-personnages-20261112-59.png",
                 "dialogue": null
               }
             ]
@@ -82001,34 +81869,34 @@
               "questions": [],
               "situations": [
                 {
+                  "id": "l2",
+                  "image": "/lib/images/tcf/qcm-audit/vocab-cafe-entre-amis.webp",
+                  "dialogue": null
+                },
+                {
                   "id": "d3",
                   "image": "/lib/images/tcf/qcm-audit/revue-20261107-f680821041.webp",
                   "dialogue": 3
                 },
                 {
-                  "id": "d2",
-                  "image": "/lib/images/tcf/co/scenes/magasins/les-achats-4.webp",
-                  "dialogue": 2
-                },
-                {
                   "id": "d1",
-                  "image": "/lib/images/tcf/co/scenes/magasins/les-achats-3.webp",
+                  "image": "/lib/images/tcf/qcm-audit/co-personnages-20261112-56.png",
                   "dialogue": 1
                 },
                 {
-                  "id": "l1",
-                  "image": "/lib/images/tcf/co/scenes/vie-quotidienne/les-nouvelles-3.webp",
-                  "dialogue": null
-                },
-                {
-                  "id": "l2",
-                  "image": "/lib/images/tcf/co/scenes/vie-quotidienne/les-nouvelles-1.webp",
-                  "dialogue": null
-                },
-                {
                   "id": "d4",
-                  "image": "/lib/images/tcf/co/scenes/magasins/les-achats-1.webp",
+                  "image": "/lib/images/tcf/qcm-audit/co-personnages-20261112-54.png",
                   "dialogue": 4
+                },
+                {
+                  "id": "d2",
+                  "image": "/lib/images/tcf/qcm-audit/co-personnages-20261112-57.png",
+                  "dialogue": 2
+                },
+                {
+                  "id": "l1",
+                  "image": "/lib/images/tcf/co/scenes/vie-quotidienne/les-nouvelles-leurre-2.webp",
+                  "dialogue": null
                 }
               ],
               "consigne_supplementaire": null
@@ -82046,37 +81914,37 @@
             "situations": [
               {
                 "lettre": "A",
+                "image": "/lib/images/tcf/qcm-audit/vocab-cafe-entre-amis.webp",
+                "dialogue": null
+              },
+              {
+                "lettre": "B",
                 "image": "/lib/images/tcf/qcm-audit/revue-20261107-f680821041.webp",
                 "dialogue": 3,
                 "audioSrc": "/lib/audio/tcf/co/vie-quotidienne/les-nouvelles-4.mp3"
               },
               {
-                "lettre": "B",
-                "image": "/lib/images/tcf/co/scenes/magasins/les-achats-4.webp",
-                "dialogue": 2,
-                "audioSrc": "/lib/audio/tcf/co/magasins/les-achats-4.mp3"
-              },
-              {
                 "lettre": "C",
-                "image": "/lib/images/tcf/co/scenes/magasins/les-achats-3.webp",
+                "image": "/lib/images/tcf/qcm-audit/co-personnages-20261112-56.png",
                 "dialogue": 1,
                 "audioSrc": "/lib/audio/tcf/co/magasins/les-achats-3.mp3"
               },
               {
                 "lettre": "D",
-                "image": "/lib/images/tcf/co/scenes/vie-quotidienne/les-nouvelles-3.webp",
-                "dialogue": null
+                "image": "/lib/images/tcf/qcm-audit/co-personnages-20261112-54.png",
+                "dialogue": 4,
+                "audioSrc": "/lib/audio/tcf/co/magasins/les-achats-1.mp3"
               },
               {
                 "lettre": "E",
-                "image": "/lib/images/tcf/co/scenes/vie-quotidienne/les-nouvelles-1.webp",
-                "dialogue": null
+                "image": "/lib/images/tcf/qcm-audit/co-personnages-20261112-57.png",
+                "dialogue": 2,
+                "audioSrc": "/lib/audio/tcf/co/magasins/les-achats-4.mp3"
               },
               {
                 "lettre": "F",
-                "image": "/lib/images/tcf/co/scenes/magasins/les-achats-1.webp",
-                "dialogue": 4,
-                "audioSrc": "/lib/audio/tcf/co/magasins/les-achats-1.mp3"
+                "image": "/lib/images/tcf/co/scenes/vie-quotidienne/les-nouvelles-leurre-2.webp",
+                "dialogue": null
               }
             ]
           },
@@ -82137,42 +82005,42 @@
               "niveau": "A0-A1",
               "competence": "CO",
               "type_exercice": "images_a_reconnaitre",
-              "theme": "Soutien scolaire · Dialogue 182",
+              "theme": "Soutien scolaire · Dialogue 192",
               "scenario": "vie-quotidienne",
-              "scene": "Bonjour quelle votre destination",
+              "scene": "Bonjour votre passeport votre",
               "consigne": "Vous allez écouter [[em]]1 document audio[[/em]] différent. Il y a 2 écoutes.\nAvant chaque écoute, vous entendez le son suivant [[bell]].\n[[em]]1.[[/em]] Regardez les images.\n[[em]]2.[[/em]] Écoutez le document audio\n[[em]]3.[[/em]] Cochez [[em]]oui[[/em]] sous l’image quand vous [[em]]entendez le nom[[/em]] de l’objet\n[[em]]4.[[/em]] Cochez [[em]]non[[/em]] sous l’image quand vous [[em]]n’entendez pas le nom[[/em]] de l’objet",
               "points": 5,
               "support": {
-                "audio": "/lib/audio/tcf/co/vie-quotidienne/bonjour-quelle-votre-destination-1.mp3",
-                "transcription": "- Bonjour madame, quelle est votre destination ?\n- Bonjour, je vais à Bruxelles.\n- Bien…\nle vol à destination de Bruxelles, départ 7 h 15…\nVotre passeport s'il vous plaît.\n- J'ai ma carte d'identité.\nEt voici une copie de mon billet électronique.\n- Très bien.\nVous avez des bagages à enregistrer ?\n- Non, j'ai seulement une valise cabine et mon sac à main.\n- Voici votre carte d'embarquement.\nVous avez le siège 28F.\n- C'est bien côté hublot ?\n- Oui.\nL'embarquement commence à 6 h 45.\n- Je ne vois pas la porte d'embarquement sur la carte !\n- C'est normal.\nLa porte n'est pas encore indiquée.\nVous devez regarder sur le tableau des départs.\n- Merci monsieur !\n- Bon séjour en Belgique !"
+                "audio": "/lib/audio/tcf/co/vie-quotidienne/bonjour-votre-passeport-votre-1.mp3",
+                "transcription": "Bonjour, votre passeport et votre carte d'embarquement, s'il vous plaît. Voilà. C'est votre bagage, monsieur? Vous avez un ordinateur dans le sac? Non. Mon ordinateur est ici. Avec ma trousse de toilette. C'est votre valise, monsieur. Vous pouvez l'ouvrir s'il vous plaît. Oui, bien sûr. C'est une bouteille d'eau? C'est interdit, vous savez. Ah oui, désolé. Très bien. Je vous souhaite un bon vol, monsieur."
               },
               "questions": [],
               "melanger": true,
               "images": [
-                {
-                  "id": "objet-identite",
-                  "image": "/lib/images/tcf/qcm-audit/vocab-carte-identite.webp",
-                  "correct": true
-                },
-                {
-                  "id": "objet-panier",
-                  "image": "/lib/images/tcf/qcm-audit/co306-panier-vide-dessine.webp",
-                  "correct": false
-                },
-                {
-                  "id": "objet-carte-bancaire",
-                  "image": "/lib/images/tcf/qcm-audit/co834-carte-bancaire-dessinee.webp",
-                  "correct": false
-                },
                 {
                   "id": "objet-passeport",
                   "image": "/lib/images/tcf/qcm-audit/co306-passeport-dessine.webp",
                   "correct": true
                 },
                 {
-                  "id": "objet-valise",
-                  "image": "/lib/images/tcf/qcm-audit/vocab-valise.webp",
+                  "id": "objet-ordinateur",
+                  "image": "/lib/images/tcf/qcm-audit/vocab-ordinateur-portable.webp",
                   "correct": true
+                },
+                {
+                  "id": "objet-ticket-caisse",
+                  "image": "/lib/images/tcf/qcm-audit/vocab-ticket-caisse.webp",
+                  "correct": false
+                },
+                {
+                  "id": "objet-trousse",
+                  "image": "/lib/images/tcf/qcm-audit/vocab-trousse.webp",
+                  "correct": true
+                },
+                {
+                  "id": "objet-crayon",
+                  "image": "/lib/images/tcf/qcm-audit/vocab-crayons.webp",
+                  "correct": false
                 }
               ]
             }
@@ -82190,8 +82058,8 @@
             "score": "par_image",
             "images": [
               {
-                "id": "objet-panier",
-                "image": "/lib/images/tcf/qcm-audit/co306-panier-vide-dessine.webp",
+                "id": "objet-ticket-caisse",
+                "image": "/lib/images/tcf/qcm-audit/vocab-ticket-caisse.webp",
                 "correct": false
               },
               {
@@ -82200,19 +82068,19 @@
                 "correct": true
               },
               {
-                "id": "objet-identite",
-                "image": "/lib/images/tcf/qcm-audit/vocab-carte-identite.webp",
+                "id": "objet-trousse",
+                "image": "/lib/images/tcf/qcm-audit/vocab-trousse.webp",
                 "correct": true
               },
               {
-                "id": "objet-valise",
-                "image": "/lib/images/tcf/qcm-audit/vocab-valise.webp",
-                "correct": true
-              },
-              {
-                "id": "objet-carte-bancaire",
-                "image": "/lib/images/tcf/qcm-audit/co834-carte-bancaire-dessinee.webp",
+                "id": "objet-crayon",
+                "image": "/lib/images/tcf/qcm-audit/vocab-crayons.webp",
                 "correct": false
+              },
+              {
+                "id": "objet-ordinateur",
+                "image": "/lib/images/tcf/qcm-audit/vocab-ordinateur-portable.webp",
+                "correct": true
               }
             ]
           },
@@ -82273,42 +82141,42 @@
               "niveau": "A0-A1",
               "competence": "CO",
               "type_exercice": "images_a_reconnaitre",
-              "theme": "Soutien scolaire · Dialogue 182",
+              "theme": "Soutien scolaire · Dialogue 192",
               "scenario": "vie-quotidienne",
-              "scene": "Bonjour quelle votre destination",
+              "scene": "Bonjour votre passeport votre",
               "consigne": "Vous allez écouter [[em]]1 document audio[[/em]] différent. Il y a 2 écoutes.\nAvant chaque écoute, vous entendez le son suivant [[bell]].\n[[em]]1.[[/em]] Regardez les images.\n[[em]]2.[[/em]] Écoutez le document audio\n[[em]]3.[[/em]] Cochez [[em]]oui[[/em]] sous l’image quand vous [[em]]entendez le nom[[/em]] de l’objet\n[[em]]4.[[/em]] Cochez [[em]]non[[/em]] sous l’image quand vous [[em]]n’entendez pas le nom[[/em]] de l’objet",
               "points": 5,
               "support": {
-                "audio": "/lib/audio/tcf/co/vie-quotidienne/bonjour-quelle-votre-destination-1.mp3",
-                "transcription": "- Bonjour madame, quelle est votre destination ?\n- Bonjour, je vais à Bruxelles.\n- Bien…\nle vol à destination de Bruxelles, départ 7 h 15…\nVotre passeport s'il vous plaît.\n- J'ai ma carte d'identité.\nEt voici une copie de mon billet électronique.\n- Très bien.\nVous avez des bagages à enregistrer ?\n- Non, j'ai seulement une valise cabine et mon sac à main.\n- Voici votre carte d'embarquement.\nVous avez le siège 28F.\n- C'est bien côté hublot ?\n- Oui.\nL'embarquement commence à 6 h 45.\n- Je ne vois pas la porte d'embarquement sur la carte !\n- C'est normal.\nLa porte n'est pas encore indiquée.\nVous devez regarder sur le tableau des départs.\n- Merci monsieur !\n- Bon séjour en Belgique !"
+                "audio": "/lib/audio/tcf/co/vie-quotidienne/bonjour-votre-passeport-votre-1.mp3",
+                "transcription": "Bonjour, votre passeport et votre carte d'embarquement, s'il vous plaît. Voilà. C'est votre bagage, monsieur? Vous avez un ordinateur dans le sac? Non. Mon ordinateur est ici. Avec ma trousse de toilette. C'est votre valise, monsieur. Vous pouvez l'ouvrir s'il vous plaît. Oui, bien sûr. C'est une bouteille d'eau? C'est interdit, vous savez. Ah oui, désolé. Très bien. Je vous souhaite un bon vol, monsieur."
               },
               "questions": [],
               "melanger": true,
               "images": [
-                {
-                  "id": "objet-identite",
-                  "image": "/lib/images/tcf/qcm-audit/vocab-carte-identite.webp",
-                  "correct": true
-                },
-                {
-                  "id": "objet-panier",
-                  "image": "/lib/images/tcf/qcm-audit/co306-panier-vide-dessine.webp",
-                  "correct": false
-                },
-                {
-                  "id": "objet-carte-bancaire",
-                  "image": "/lib/images/tcf/qcm-audit/co834-carte-bancaire-dessinee.webp",
-                  "correct": false
-                },
                 {
                   "id": "objet-passeport",
                   "image": "/lib/images/tcf/qcm-audit/co306-passeport-dessine.webp",
                   "correct": true
                 },
                 {
-                  "id": "objet-valise",
-                  "image": "/lib/images/tcf/qcm-audit/vocab-valise.webp",
+                  "id": "objet-ordinateur",
+                  "image": "/lib/images/tcf/qcm-audit/vocab-ordinateur-portable.webp",
                   "correct": true
+                },
+                {
+                  "id": "objet-ticket-caisse",
+                  "image": "/lib/images/tcf/qcm-audit/vocab-ticket-caisse.webp",
+                  "correct": false
+                },
+                {
+                  "id": "objet-trousse",
+                  "image": "/lib/images/tcf/qcm-audit/vocab-trousse.webp",
+                  "correct": true
+                },
+                {
+                  "id": "objet-crayon",
+                  "image": "/lib/images/tcf/qcm-audit/vocab-crayons.webp",
+                  "correct": false
                 }
               ]
             }
@@ -82326,8 +82194,8 @@
             "score": "par_image",
             "images": [
               {
-                "id": "objet-panier",
-                "image": "/lib/images/tcf/qcm-audit/co306-panier-vide-dessine.webp",
+                "id": "objet-ticket-caisse",
+                "image": "/lib/images/tcf/qcm-audit/vocab-ticket-caisse.webp",
                 "correct": false
               },
               {
@@ -82336,19 +82204,19 @@
                 "correct": true
               },
               {
-                "id": "objet-identite",
-                "image": "/lib/images/tcf/qcm-audit/vocab-carte-identite.webp",
+                "id": "objet-trousse",
+                "image": "/lib/images/tcf/qcm-audit/vocab-trousse.webp",
                 "correct": true
               },
               {
-                "id": "objet-valise",
-                "image": "/lib/images/tcf/qcm-audit/vocab-valise.webp",
-                "correct": true
-              },
-              {
-                "id": "objet-carte-bancaire",
-                "image": "/lib/images/tcf/qcm-audit/co834-carte-bancaire-dessinee.webp",
+                "id": "objet-crayon",
+                "image": "/lib/images/tcf/qcm-audit/vocab-crayons.webp",
                 "correct": false
+              },
+              {
+                "id": "objet-ordinateur",
+                "image": "/lib/images/tcf/qcm-audit/vocab-ordinateur-portable.webp",
+                "correct": true
               }
             ]
           },
@@ -114699,6 +114567,132 @@
           "noPoints": false,
           "answer": "",
           "tcfExerciseId": "gram-co-integration-entreprise-a2-piste_187"
+        }
+      ]
+    },
+    {
+      "id": "gram-ex-etre-curriculum-a",
+      "domain": "grammaire",
+      "topic": "gram-present",
+      "label": "Associer les sujets et les formes",
+      "seed": 20261107,
+      "config": {
+        "domain": "grammaire",
+        "topic": "gram-present",
+        "exerciseType": "gram-ex-etre-curriculum-a",
+        "difficulty": "moyen",
+        "count": 2,
+        "columns": 1
+      },
+      "layouts": [
+        "text"
+      ],
+      "tcfKinds": [],
+      "sourceItems": 1,
+      "playableQuestions": 0,
+      "compatibility": [
+        "unsupported"
+      ],
+      "issues": [
+        {
+          "source": "1/1/1 gram-ex-etre-curriculum-a",
+          "reason": "Rendu « text » non pris en charge dans ce premier prototype."
+        }
+      ],
+      "fields": [
+        "answer",
+        "layout",
+        "prompt"
+      ],
+      "sourceFixture": [
+        {
+          "layout": "text",
+          "prompt": "Choisissez une activité, un niveau et un mode de réponse grammaticaux disponibles (1 à 50 questions).",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "id": "gram-ex-er-particuliers-curriculum-t",
+      "domain": "grammaire",
+      "topic": "gram-present",
+      "label": "Transformer une phrase",
+      "seed": 20261107,
+      "config": {
+        "domain": "grammaire",
+        "topic": "gram-present",
+        "exerciseType": "gram-ex-er-particuliers-curriculum-t",
+        "difficulty": "moyen",
+        "count": 2,
+        "columns": 1
+      },
+      "layouts": [
+        "text"
+      ],
+      "tcfKinds": [],
+      "sourceItems": 1,
+      "playableQuestions": 0,
+      "compatibility": [
+        "unsupported"
+      ],
+      "issues": [
+        {
+          "source": "1/1/1 gram-ex-er-particuliers-curriculum-t",
+          "reason": "Rendu « text » non pris en charge dans ce premier prototype."
+        }
+      ],
+      "fields": [
+        "answer",
+        "layout",
+        "prompt"
+      ],
+      "sourceFixture": [
+        {
+          "layout": "text",
+          "prompt": "Choisissez une activité, un niveau et un mode de réponse grammaticaux disponibles (1 à 50 questions).",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "id": "gram-ex-imparfait-ou-pc-curriculum-t",
+      "domain": "grammaire",
+      "topic": "gram-passe",
+      "label": "Transformer une phrase",
+      "seed": 20261107,
+      "config": {
+        "domain": "grammaire",
+        "topic": "gram-passe",
+        "exerciseType": "gram-ex-imparfait-ou-pc-curriculum-t",
+        "difficulty": "moyen",
+        "count": 2,
+        "columns": 1
+      },
+      "layouts": [
+        "text"
+      ],
+      "tcfKinds": [],
+      "sourceItems": 1,
+      "playableQuestions": 0,
+      "compatibility": [
+        "unsupported"
+      ],
+      "issues": [
+        {
+          "source": "1/1/1 gram-ex-imparfait-ou-pc-curriculum-t",
+          "reason": "Rendu « text » non pris en charge dans ce premier prototype."
+        }
+      ],
+      "fields": [
+        "answer",
+        "layout",
+        "prompt"
+      ],
+      "sourceFixture": [
+        {
+          "layout": "text",
+          "prompt": "Choisissez une activité, un niveau et un mode de réponse grammaticaux disponibles (1 à 50 questions).",
+          "answer": ""
         }
       ]
     },
@@ -190601,19 +190595,19 @@
           "layout": "phrase-color",
           "tokens": [
             {
-              "text": "Elise",
+              "text": "Ruth",
               "category": "nom"
             },
             {
-              "text": "corrige",
+              "text": "partage",
               "category": "verbe"
             },
             {
-              "text": "une",
+              "text": "des",
               "category": "determinant"
             },
             {
-              "text": "faute",
+              "text": "bonbons",
               "category": "nom"
             }
           ],
@@ -190623,27 +190617,23 @@
           "layout": "phrase-color",
           "tokens": [
             {
-              "text": "Pawel",
-              "category": "nom"
+              "text": "Tu",
+              "category": "pronom"
             },
             {
-              "text": "mange",
+              "text": "allumes",
               "category": "verbe"
-            },
-            {
-              "text": "dans",
-              "category": "preposition"
             },
             {
               "text": "la",
               "category": "determinant"
             },
             {
-              "text": "cuisine",
+              "text": "lampe",
               "category": "nom"
             }
           ],
-          "answer": "nom · verbe · preposition · determinant · nom"
+          "answer": "pronom · verbe · determinant · nom"
         }
       ]
     },
@@ -190692,63 +190682,58 @@
           "layout": "phrase-order",
           "tokens": [
             {
-              "text": "Elise",
+              "text": "Ruth",
               "category": "nom"
             },
             {
-              "text": "une",
-              "category": "determinant"
-            },
-            {
-              "text": "corrige",
+              "text": "partage",
               "category": "verbe"
             },
             {
-              "text": "faute",
+              "text": "bonbons",
               "category": "nom"
+            },
+            {
+              "text": "des",
+              "category": "determinant"
             }
           ],
-          "answer": "Elise corrige une faute.",
-          "responseAnswer": "Elise corrige une faute.",
+          "answer": "Ruth partage des bonbons.",
+          "responseAnswer": "Ruth partage des bonbons.",
           "labels": [
-            "Elise",
-            "corrige",
-            "une",
-            "faute"
+            "Ruth",
+            "partage",
+            "des",
+            "bonbons"
           ]
         },
         {
           "layout": "phrase-order",
           "tokens": [
             {
-              "text": "mange",
+              "text": "allumes",
               "category": "verbe"
             },
             {
-              "text": "cuisine",
-              "category": "nom"
-            },
-            {
-              "text": "dans",
-              "category": "preposition"
-            },
-            {
-              "text": "Pawel",
+              "text": "lampe",
               "category": "nom"
             },
             {
               "text": "la",
               "category": "determinant"
+            },
+            {
+              "text": "tu",
+              "category": "pronom"
             }
           ],
-          "answer": "Pawel mange dans la cuisine.",
-          "responseAnswer": "Pawel mange dans la cuisine.",
+          "answer": "Tu allumes la lampe.",
+          "responseAnswer": "Tu allumes la lampe.",
           "labels": [
-            "Pawel",
-            "mange",
-            "dans",
+            "tu",
+            "allumes",
             "la",
-            "cuisine"
+            "lampe"
           ]
         }
       ]
@@ -190797,30 +190782,29 @@
       "sourceFixture": [
         {
           "layout": "phrase-build",
-          "prompt": "corriger",
+          "prompt": "partager",
           "pastilles": [
             "nom",
             "verbe",
             "determinant",
             "nom"
           ],
-          "answer": "Elise corrige une faute.",
-          "responseAnswer": "Elise corrige une faute.",
-          "calcAnswer": "corriger"
+          "answer": "Ruth partage des bonbons.",
+          "responseAnswer": "Ruth partage des bonbons.",
+          "calcAnswer": "partager"
         },
         {
           "layout": "phrase-build",
-          "prompt": "manger",
+          "prompt": "allumer",
           "pastilles": [
-            "nom",
+            "pronom",
             "verbe",
-            "preposition",
             "determinant",
             "nom"
           ],
-          "answer": "Pawel mange dans la cuisine.",
-          "responseAnswer": "Pawel mange dans la cuisine.",
-          "calcAnswer": "manger"
+          "answer": "Tu allumes la lampe.",
+          "responseAnswer": "Tu allumes la lampe.",
+          "calcAnswer": "allumer"
         }
       ]
     },
@@ -190867,14 +190851,14 @@
         {
           "layout": "phrase-write",
           "writeLines": 1,
-          "answer": "Elise corrige une faute.",
-          "responseAnswer": "Elise corrige une faute."
+          "answer": "Ruth partage des bonbons.",
+          "responseAnswer": "Ruth partage des bonbons."
         },
         {
           "layout": "phrase-write",
           "writeLines": 1,
-          "answer": "Pawel mange dans la cuisine.",
-          "responseAnswer": "Pawel mange dans la cuisine."
+          "answer": "Tu allumes la lampe.",
+          "responseAnswer": "Tu allumes la lampe."
         }
       ]
     },
@@ -190922,23 +190906,23 @@
           "layout": "phrase-color",
           "tokens": [
             {
-              "text": "Un",
+              "text": "Mon",
               "category": "determinant"
             },
             {
-              "text": "ami",
+              "text": "frère",
               "category": "nom"
             },
             {
-              "text": "corrige",
+              "text": "partage",
               "category": "verbe"
             },
             {
-              "text": "un",
+              "text": "des",
               "category": "determinant"
             },
             {
-              "text": "devoir",
+              "text": "bonbons",
               "category": "nom"
             }
           ],
@@ -190956,19 +190940,23 @@
               "category": "nom"
             },
             {
-              "text": "longe",
+              "text": "mange",
               "category": "verbe"
             },
             {
-              "text": "le",
+              "text": "dans",
+              "category": "preposition"
+            },
+            {
+              "text": "la",
               "category": "determinant"
             },
             {
-              "text": "mur",
+              "text": "cuisine",
               "category": "nom"
             }
           ],
-          "answer": "determinant · nom · verbe · determinant · nom"
+          "answer": "determinant · nom · verbe · preposition · determinant · nom"
         }
       ]
     },
@@ -191017,68 +191005,73 @@
           "layout": "phrase-order",
           "tokens": [
             {
-              "text": "un",
-              "category": "determinant"
-            },
-            {
-              "text": "ami",
+              "text": "bonbons",
               "category": "nom"
             },
             {
-              "text": "devoir",
-              "category": "nom"
-            },
-            {
-              "text": "corrige",
+              "text": "partage",
               "category": "verbe"
             },
             {
-              "text": "un",
+              "text": "frère",
+              "category": "nom"
+            },
+            {
+              "text": "des",
+              "category": "determinant"
+            },
+            {
+              "text": "mon",
               "category": "determinant"
             }
           ],
-          "answer": "Un ami corrige un devoir.",
-          "responseAnswer": "Un ami corrige un devoir.",
+          "answer": "Mon frère partage des bonbons.",
+          "responseAnswer": "Mon frère partage des bonbons.",
           "labels": [
-            "un",
-            "ami",
-            "corrige",
-            "un",
-            "devoir"
+            "mon",
+            "frère",
+            "partage",
+            "des",
+            "bonbons"
           ]
         },
         {
           "layout": "phrase-order",
           "tokens": [
             {
-              "text": "garçon",
+              "text": "cuisine",
               "category": "nom"
             },
             {
-              "text": "le",
-              "category": "determinant"
-            },
-            {
-              "text": "mur",
-              "category": "nom"
-            },
-            {
-              "text": "longe",
+              "text": "mange",
               "category": "verbe"
             },
             {
               "text": "le",
               "category": "determinant"
+            },
+            {
+              "text": "dans",
+              "category": "preposition"
+            },
+            {
+              "text": "garçon",
+              "category": "nom"
+            },
+            {
+              "text": "la",
+              "category": "determinant"
             }
           ],
-          "answer": "Le garçon longe le mur.",
-          "responseAnswer": "Le garçon longe le mur.",
+          "answer": "Le garçon mange dans la cuisine.",
+          "responseAnswer": "Le garçon mange dans la cuisine.",
           "labels": [
             "le",
             "garçon",
-            "longe",
-            "le",
-            "mur"
+            "mange",
+            "dans",
+            "la",
+            "cuisine"
           ]
         }
       ]
@@ -191127,7 +191120,7 @@
       "sourceFixture": [
         {
           "layout": "phrase-build",
-          "prompt": "corriger",
+          "prompt": "partager",
           "pastilles": [
             "determinant",
             "nom",
@@ -191135,23 +191128,24 @@
             "determinant",
             "nom"
           ],
-          "answer": "Un ami corrige un devoir.",
-          "responseAnswer": "Un ami corrige un devoir.",
-          "calcAnswer": "corriger"
+          "answer": "Mon frère partage des bonbons.",
+          "responseAnswer": "Mon frère partage des bonbons.",
+          "calcAnswer": "partager"
         },
         {
           "layout": "phrase-build",
-          "prompt": "longer",
+          "prompt": "manger",
           "pastilles": [
             "determinant",
             "nom",
             "verbe",
+            "preposition",
             "determinant",
             "nom"
           ],
-          "answer": "Le garçon longe le mur.",
-          "responseAnswer": "Le garçon longe le mur.",
-          "calcAnswer": "longer"
+          "answer": "Le garçon mange dans la cuisine.",
+          "responseAnswer": "Le garçon mange dans la cuisine.",
+          "calcAnswer": "manger"
         }
       ]
     },
@@ -191198,14 +191192,14 @@
         {
           "layout": "phrase-write",
           "writeLines": 1,
-          "answer": "Un ami corrige un devoir.",
-          "responseAnswer": "Un ami corrige un devoir."
+          "answer": "Mon frère partage des bonbons.",
+          "responseAnswer": "Mon frère partage des bonbons."
         },
         {
           "layout": "phrase-write",
           "writeLines": 1,
-          "answer": "Le garçon longe le mur.",
-          "responseAnswer": "Le garçon longe le mur."
+          "answer": "Le garçon mange dans la cuisine.",
+          "responseAnswer": "Le garçon mange dans la cuisine."
         }
       ]
     },
@@ -191257,19 +191251,19 @@
               "category": "nom"
             },
             {
-              "text": "se",
+              "text": "s’",
               "category": "pronom"
             },
             {
-              "text": "penche",
+              "text": "intéresse",
               "category": "verbe"
             },
             {
-              "text": "avec",
+              "text": "au",
               "category": "preposition"
             },
             {
-              "text": "prudence",
+              "text": "cinéma",
               "category": "nom"
             }
           ],
@@ -191287,19 +191281,23 @@
               "category": "pronom"
             },
             {
-              "text": "rappelles",
+              "text": "penches",
               "category": "verbe"
             },
             {
-              "text": "le",
+              "text": "vers",
+              "category": "preposition"
+            },
+            {
+              "text": "la",
               "category": "determinant"
             },
             {
-              "text": "rendez-vous",
+              "text": "fenêtre",
               "category": "nom"
             }
           ],
-          "answer": "pronom · pronom · verbe · determinant · nom"
+          "answer": "pronom · pronom · verbe · preposition · determinant · nom"
         }
       ]
     },
@@ -191348,7 +191346,7 @@
           "layout": "phrase-order",
           "tokens": [
             {
-              "text": "se",
+              "text": "s’",
               "category": "pronom"
             },
             {
@@ -191356,26 +191354,26 @@
               "category": "nom"
             },
             {
-              "text": "prudence",
+              "text": "cinéma",
               "category": "nom"
             },
             {
-              "text": "penche",
+              "text": "intéresse",
               "category": "verbe"
             },
             {
-              "text": "avec",
+              "text": "au",
               "category": "preposition"
             }
           ],
-          "answer": "Ruth se penche avec prudence.",
-          "responseAnswer": "Ruth se penche avec prudence.",
+          "answer": "Ruth s’intéresse au cinéma.",
+          "responseAnswer": "Ruth s’intéresse au cinéma.",
           "labels": [
             "Ruth",
-            "se",
-            "penche",
-            "avec",
-            "prudence"
+            "s’",
+            "intéresse",
+            "au",
+            "cinéma"
           ]
         },
         {
@@ -191386,11 +191384,15 @@
               "category": "pronom"
             },
             {
-              "text": "rappelles",
+              "text": "vers",
+              "category": "preposition"
+            },
+            {
+              "text": "penches",
               "category": "verbe"
             },
             {
-              "text": "le",
+              "text": "la",
               "category": "determinant"
             },
             {
@@ -191398,18 +191400,19 @@
               "category": "pronom"
             },
             {
-              "text": "rendez-vous",
+              "text": "fenêtre",
               "category": "nom"
             }
           ],
-          "answer": "Tu te rappelles le rendez-vous.",
-          "responseAnswer": "Tu te rappelles le rendez-vous.",
+          "answer": "Tu te penches vers la fenêtre.",
+          "responseAnswer": "Tu te penches vers la fenêtre.",
           "labels": [
             "tu",
             "te",
-            "rappelles",
-            "le",
-            "rendez-vous"
+            "penches",
+            "vers",
+            "la",
+            "fenêtre"
           ]
         }
       ]
@@ -191458,7 +191461,7 @@
       "sourceFixture": [
         {
           "layout": "phrase-build",
-          "prompt": "se pencher",
+          "prompt": "s’intéresser",
           "pastilles": [
             "nom",
             "pronom",
@@ -191466,23 +191469,24 @@
             "preposition",
             "nom"
           ],
-          "answer": "Ruth se penche avec prudence.",
-          "responseAnswer": "Ruth se penche avec prudence.",
-          "calcAnswer": "se pencher"
+          "answer": "Ruth s’intéresse au cinéma.",
+          "responseAnswer": "Ruth s’intéresse au cinéma.",
+          "calcAnswer": "s’intéresser"
         },
         {
           "layout": "phrase-build",
-          "prompt": "se rappeler",
+          "prompt": "se pencher",
           "pastilles": [
             "pronom",
             "pronom",
             "verbe",
+            "preposition",
             "determinant",
             "nom"
           ],
-          "answer": "Tu te rappelles le rendez-vous.",
-          "responseAnswer": "Tu te rappelles le rendez-vous.",
-          "calcAnswer": "se rappeler"
+          "answer": "Tu te penches vers la fenêtre.",
+          "responseAnswer": "Tu te penches vers la fenêtre.",
+          "calcAnswer": "se pencher"
         }
       ]
     },
@@ -191529,14 +191533,14 @@
         {
           "layout": "phrase-write",
           "writeLines": 1,
-          "answer": "Ruth se penche avec prudence.",
-          "responseAnswer": "Ruth se penche avec prudence."
+          "answer": "Ruth s’intéresse au cinéma.",
+          "responseAnswer": "Ruth s’intéresse au cinéma."
         },
         {
           "layout": "phrase-write",
           "writeLines": 1,
-          "answer": "Tu te rappelles le rendez-vous.",
-          "responseAnswer": "Tu te rappelles le rendez-vous."
+          "answer": "Tu te penches vers la fenêtre.",
+          "responseAnswer": "Tu te penches vers la fenêtre."
         }
       ]
     },
@@ -191584,11 +191588,15 @@
           "layout": "phrase-color",
           "tokens": [
             {
-              "text": "Ruth",
+              "text": "Le",
+              "category": "determinant"
+            },
+            {
+              "text": "garçon",
               "category": "nom"
             },
             {
-              "text": "corrige",
+              "text": "partage",
               "category": "verbe"
             },
             {
@@ -191596,41 +191604,69 @@
               "category": "determinant"
             },
             {
-              "text": "devoir",
+              "text": "repas",
               "category": "nom"
             },
             {
-              "text": "long",
+              "text": "convivial",
               "category": "adjectif"
             }
           ],
-          "answer": "nom · verbe · determinant · nom · adjectif"
+          "answer": "determinant · nom · verbe · determinant · nom · adjectif"
         },
         {
           "layout": "phrase-color",
           "tokens": [
             {
-              "text": "Tu",
-              "category": "pronom"
+              "text": "Ibrahim",
+              "category": "nom"
             },
             {
-              "text": "protèges",
+              "text": "mange",
               "category": "verbe"
+            },
+            {
+              "text": "souvent",
+              "category": "adverbe"
+            },
+            {
+              "text": "dans",
+              "category": "preposition"
             },
             {
               "text": "la",
               "category": "determinant"
             },
             {
-              "text": "forêt",
+              "text": "cuisine",
               "category": "nom"
             },
             {
-              "text": "verte",
-              "category": "adjectif"
+              "text": "et",
+              "category": "conjonction"
+            },
+            {
+              "text": "la",
+              "category": "determinant"
+            },
+            {
+              "text": "tante",
+              "category": "nom"
+            },
+            {
+              "text": "range",
+              "category": "verbe"
+            },
+            {
+              "text": "les",
+              "category": "determinant"
+            },
+            {
+              "text": "chaussures",
+              "category": "nom"
             }
           ],
-          "answer": "pronom · verbe · determinant · nom · adjectif"
+          "answer": "nom · verbe · adverbe · preposition · determinant · nom · conjonction · determinant · nom · verbe · determinant · nom"
         }
       ]
     },
@@ -191653,7 +191689,7 @@
       ],
       "tcfKinds": [],
       "sourceItems": 2,
-      "playableQuestions": 2,
+      "playableQuestions": 1,
       "compatibility": [
         "teacher-led"
       ],
@@ -191664,7 +191700,7 @@
         },
         {
           "source": "1/1/2 phrase-adjectif-ordre",
-          "reason": "Phrase manipulable avec modèle source ; les autres ordres possibles sont appréciés par l’enseignant, sans verdict automatique."
+          "reason": "Phrase à ordonner non vérifiable ou hors limite de deux à six éléments."
         }
       ],
       "fields": [
@@ -191679,68 +191715,108 @@
           "layout": "phrase-order",
           "tokens": [
             {
-              "text": "corrige",
-              "category": "verbe"
-            },
-            {
-              "text": "Ruth",
-              "category": "nom"
-            },
-            {
-              "text": "long",
-              "category": "adjectif"
+              "text": "le",
+              "category": "determinant"
             },
             {
               "text": "un",
               "category": "determinant"
             },
             {
-              "text": "devoir",
+              "text": "partage",
+              "category": "verbe"
+            },
+            {
+              "text": "repas",
               "category": "nom"
+            },
+            {
+              "text": "garçon",
+              "category": "nom"
+            },
+            {
+              "text": "convivial",
+              "category": "adjectif"
             }
           ],
-          "answer": "Ruth corrige un devoir long.",
-          "responseAnswer": "Ruth corrige un devoir long.",
+          "answer": "Le garçon partage un repas convivial.",
+          "responseAnswer": "Le garçon partage un repas convivial.",
           "labels": [
-            "Ruth",
-            "corrige",
+            "le",
+            "garçon",
+            "partage",
             "un",
-            "devoir",
-            "long"
+            "repas",
+            "convivial"
           ]
         },
         {
           "layout": "phrase-order",
           "tokens": [
             {
-              "text": "tu",
-              "category": "pronom"
+              "text": "chaussures",
+              "category": "nom"
+            },
+            {
+              "text": "range",
+              "category": "verbe"
+            },
+            {
+              "text": "mange",
+              "category": "verbe"
+            },
+            {
+              "text": "Ibrahim",
+              "category": "nom"
+            },
+            {
+              "text": "cuisine",
+              "category": "nom"
+            },
+            {
+              "text": "souvent",
+              "category": "adverbe"
+            },
+            {
+              "text": "et",
+              "category": "conjonction"
+            },
+            {
+              "text": "dans",
+              "category": "preposition"
             },
             {
               "text": "la",
               "category": "determinant"
             },
             {
-              "text": "forêt",
+              "text": "la",
+              "category": "determinant"
+            },
+            {
+              "text": "les",
+              "category": "determinant"
+            },
+            {
+              "text": "tante",
               "category": "nom"
-            },
-            {
-              "text": "protèges",
-              "category": "verbe"
-            },
-            {
-              "text": "verte",
-              "category": "adjectif"
             }
           ],
-          "answer": "Tu protèges la forêt verte.",
-          "responseAnswer": "Tu protèges la forêt verte.",
+          "answer": "Ibrahim mange souvent dans la cuisine et la tante range les chaussures.",
+          "responseAnswer": "Ibrahim mange souvent dans la cuisine et la tante range les chaussures.",
           "labels": [
-            "tu",
-            "protèges",
+            "Ibrahim",
+            "mange",
+            "souvent",
+            "dans",
             "la",
-            "forêt",
-            "verte"
+            "cuisine",
+            "et",
+            "la",
+            "tante",
+            "range",
+            "les",
+            "chaussures"
           ]
         }
       ]
@@ -191789,31 +191865,39 @@
       "sourceFixture": [
         {
           "layout": "phrase-build",
-          "prompt": "corriger",
+          "prompt": "partager",
           "pastilles": [
+            "determinant",
             "nom",
             "verbe",
             "determinant",
             "nom",
             "adjectif"
           ],
-          "answer": "Ruth corrige un devoir long.",
-          "responseAnswer": "Ruth corrige un devoir long.",
-          "calcAnswer": "corriger"
+          "answer": "Le garçon partage un repas convivial.",
+          "responseAnswer": "Le garçon partage un repas convivial.",
+          "calcAnswer": "partager"
         },
         {
           "layout": "phrase-build",
-          "prompt": "protéger",
+          "prompt": "manger",
           "pastilles": [
-            "pronom",
+            "nom",
             "verbe",
+            "adverbe",
+            "preposition",
             "determinant",
             "nom",
-            "adjectif"
+            "conjonction",
+            "determinant",
+            "nom",
+            "verbe",
+            "determinant",
+            "nom"
           ],
-          "answer": "Tu protèges la forêt verte.",
-          "responseAnswer": "Tu protèges la forêt verte.",
-          "calcAnswer": "protéger"
+          "answer": "Ibrahim mange souvent dans la cuisine et la tante range les chaussures.",
+          "responseAnswer": "Ibrahim mange souvent dans la cuisine et la tante range les chaussures.",
+          "calcAnswer": "manger"
         }
       ]
     },
@@ -191860,14 +191944,14 @@
         {
           "layout": "phrase-write",
           "writeLines": 1,
-          "answer": "Ruth corrige un devoir long.",
-          "responseAnswer": "Ruth corrige un devoir long."
+          "answer": "Le garçon partage un repas convivial.",
+          "responseAnswer": "Le garçon partage un repas convivial."
         },
         {
           "layout": "phrase-write",
           "writeLines": 1,
-          "answer": "Tu protèges la forêt verte.",
-          "responseAnswer": "Tu protèges la forêt verte."
+          "answer": "Ibrahim mange souvent dans la cuisine et la tante range les chaussures.",
+          "responseAnswer": "Ibrahim mange souvent dans la cuisine et la tante range les chaussures."
         }
       ]
     },
@@ -191915,15 +191999,23 @@
           "layout": "phrase-color",
           "tokens": [
             {
-              "text": "Elise",
+              "text": "Ruth",
               "category": "nom"
             },
             {
-              "text": "patine",
+              "text": "accroche",
               "category": "verbe"
             },
             {
-              "text": "sur",
+              "text": "une",
+              "category": "determinant"
+            },
+            {
+              "text": "étagère",
+              "category": "nom"
+            },
+            {
+              "text": "à",
               "category": "preposition"
             },
             {
@@ -191931,41 +192023,45 @@
               "category": "determinant"
             },
             {
-              "text": "glace",
+              "text": "maison",
               "category": "nom"
             }
           ],
-          "answer": "nom · verbe · preposition · determinant · nom"
+          "answer": "nom · verbe · determinant · nom · preposition · determinant · nom"
         },
         {
           "layout": "phrase-color",
           "tokens": [
             {
-              "text": "Pawel",
-              "category": "nom"
+              "text": "Tu",
+              "category": "pronom"
             },
             {
-              "text": "habite",
+              "text": "quittes",
               "category": "verbe"
             },
             {
-              "text": "souvent",
-              "category": "adverbe"
-            },
-            {
-              "text": "dans",
-              "category": "preposition"
-            },
-            {
-              "text": "une",
+              "text": "la",
               "category": "determinant"
             },
             {
               "text": "maison",
               "category": "nom"
+            },
+            {
+              "text": "après",
+              "category": "preposition"
+            },
+            {
+              "text": "le",
+              "category": "determinant"
+            },
+            {
+              "text": "dîner",
+              "category": "nom"
             }
           ],
-          "answer": "nom · verbe · adverbe · preposition · determinant · nom"
+          "answer": "pronom · verbe · determinant · nom · preposition · determinant · nom"
         }
       ]
     },
@@ -191988,18 +192084,18 @@
       ],
       "tcfKinds": [],
       "sourceItems": 2,
-      "playableQuestions": 2,
+      "playableQuestions": 0,
       "compatibility": [
-        "teacher-led"
+        "unsupported"
       ],
       "issues": [
         {
           "source": "1/1/1 phrase-preposition-ordre",
-          "reason": "Phrase manipulable avec modèle source ; les autres ordres possibles sont appréciés par l’enseignant, sans verdict automatique."
+          "reason": "Phrase à ordonner non vérifiable ou hors limite de deux à six éléments."
         },
         {
           "source": "1/1/2 phrase-preposition-ordre",
-          "reason": "Phrase manipulable avec modèle source ; les autres ordres possibles sont appréciés par l’enseignant, sans verdict automatique."
+          "reason": "Phrase à ordonner non vérifiable ou hors limite de deux à six éléments."
         }
       ],
       "fields": [
@@ -192014,73 +192110,88 @@
           "layout": "phrase-order",
           "tokens": [
             {
-              "text": "Elise",
-              "category": "nom"
-            },
-            {
-              "text": "patine",
+              "text": "accroche",
               "category": "verbe"
-            },
-            {
-              "text": "glace",
-              "category": "nom"
-            },
-            {
-              "text": "sur",
-              "category": "preposition"
             },
             {
               "text": "la",
               "category": "determinant"
-            }
-          ],
-          "answer": "Elise patine sur la glace.",
-          "responseAnswer": "Elise patine sur la glace.",
-          "labels": [
-            "Elise",
-            "patine",
-            "sur",
-            "la",
-            "glace"
-          ]
-        },
-        {
-          "layout": "phrase-order",
-          "tokens": [
-            {
-              "text": "Pawel",
-              "category": "nom"
-            },
-            {
-              "text": "souvent",
-              "category": "adverbe"
-            },
-            {
-              "text": "dans",
-              "category": "preposition"
-            },
-            {
-              "text": "maison",
-              "category": "nom"
             },
             {
               "text": "une",
               "category": "determinant"
             },
             {
-              "text": "habite",
-              "category": "verbe"
+              "text": "Ruth",
+              "category": "nom"
+            },
+            {
+              "text": "étagère",
+              "category": "nom"
+            },
+            {
+              "text": "maison",
+              "category": "nom"
+            },
+            {
+              "text": "à",
+              "category": "preposition"
             }
           ],
-          "answer": "Pawel habite souvent dans une maison.",
-          "responseAnswer": "Pawel habite souvent dans une maison.",
+          "answer": "Ruth accroche une étagère à la maison.",
+          "responseAnswer": "Ruth accroche une étagère à la maison.",
           "labels": [
-            "Pawel",
-            "habite",
-            "souvent",
-            "dans",
+            "Ruth",
+            "accroche",
             "une",
+            "étagère",
+            "à",
+            "la",
             "maison"
+          ]
+        },
+        {
+          "layout": "phrase-order",
+          "tokens": [
+            {
+              "text": "quittes",
+              "category": "verbe"
+            },
+            {
+              "text": "tu",
+              "category": "pronom"
+            },
+            {
+              "text": "dîner",
+              "category": "nom"
+            },
+            {
+              "text": "le",
+              "category": "determinant"
+            },
+            {
+              "text": "la",
+              "category": "determinant"
+            },
+            {
+              "text": "après",
+              "category": "preposition"
+            },
+            {
+              "text": "maison",
+              "category": "nom"
+            }
+          ],
+          "answer": "Tu quittes la maison après le dîner.",
+          "responseAnswer": "Tu quittes la maison après le dîner.",
+          "labels": [
+            "tu",
+            "quittes",
+            "la",
+            "maison",
+            "après",
+            "le",
+            "dîner"
           ]
         }
       ]
@@ -192129,32 +192240,35 @@
       "sourceFixture": [
         {
           "layout": "phrase-build",
-          "prompt": "patiner",
+          "prompt": "accrocher",
           "pastilles": [
             "nom",
             "verbe",
+            "determinant",
+            "nom",
             "preposition",
             "determinant",
             "nom"
           ],
-          "answer": "Elise patine sur la glace.",
-          "responseAnswer": "Elise patine sur la glace.",
-          "calcAnswer": "patiner"
+          "answer": "Ruth accroche une étagère à la maison.",
+          "responseAnswer": "Ruth accroche une étagère à la maison.",
+          "calcAnswer": "accrocher"
         },
         {
           "layout": "phrase-build",
-          "prompt": "habiter",
+          "prompt": "quitter",
           "pastilles": [
-            "nom",
+            "pronom",
             "verbe",
-            "adverbe",
+            "determinant",
+            "nom",
             "preposition",
             "determinant",
             "nom"
           ],
-          "answer": "Pawel habite souvent dans une maison.",
-          "responseAnswer": "Pawel habite souvent dans une maison.",
-          "calcAnswer": "habiter"
+          "answer": "Tu quittes la maison après le dîner.",
+          "responseAnswer": "Tu quittes la maison après le dîner.",
+          "calcAnswer": "quitter"
         }
       ]
     },
@@ -192201,14 +192315,14 @@
         {
           "layout": "phrase-write",
           "writeLines": 1,
-          "answer": "Elise patine sur la glace.",
-          "responseAnswer": "Elise patine sur la glace."
+          "answer": "Ruth accroche une étagère à la maison.",
+          "responseAnswer": "Ruth accroche une étagère à la maison."
         },
         {
           "layout": "phrase-write",
           "writeLines": 1,
-          "answer": "Pawel habite souvent dans une maison.",
-          "responseAnswer": "Pawel habite souvent dans une maison."
+          "answer": "Tu quittes la maison après le dîner.",
+          "responseAnswer": "Tu quittes la maison après le dîner."
         }
       ]
     },
@@ -192256,11 +192370,11 @@
           "layout": "phrase-color",
           "tokens": [
             {
-              "text": "Elise",
+              "text": "Ruth",
               "category": "nom"
             },
             {
-              "text": "corrige",
+              "text": "partage",
               "category": "verbe"
             },
             {
@@ -192268,11 +192382,11 @@
               "category": "adverbe"
             },
             {
-              "text": "une",
+              "text": "des",
               "category": "determinant"
             },
             {
-              "text": "faute",
+              "text": "bonbons",
               "category": "nom"
             }
           ],
@@ -192282,27 +192396,27 @@
           "layout": "phrase-color",
           "tokens": [
             {
-              "text": "Pawel",
-              "category": "nom"
+              "text": "Tu",
+              "category": "pronom"
             },
             {
-              "text": "mange",
+              "text": "allumes",
               "category": "verbe"
             },
             {
-              "text": "vite",
+              "text": "souvent",
               "category": "adverbe"
             },
             {
-              "text": "du",
+              "text": "la",
               "category": "determinant"
             },
             {
-              "text": "pain",
+              "text": "lampe",
               "category": "nom"
             }
           ],
-          "answer": "nom · verbe · adverbe · determinant · nom"
+          "answer": "pronom · verbe · adverbe · determinant · nom"
         }
       ]
     },
@@ -192351,15 +192465,15 @@
           "layout": "phrase-order",
           "tokens": [
             {
-              "text": "Elise",
-              "category": "nom"
-            },
-            {
-              "text": "corrige",
+              "text": "partage",
               "category": "verbe"
             },
             {
-              "text": "faute",
+              "text": "Ruth",
+              "category": "nom"
+            },
+            {
+              "text": "bonbons",
               "category": "nom"
             },
             {
@@ -192367,52 +192481,52 @@
               "category": "adverbe"
             },
             {
-              "text": "une",
+              "text": "des",
               "category": "determinant"
             }
           ],
-          "answer": "Elise corrige souvent une faute.",
-          "responseAnswer": "Elise corrige souvent une faute.",
+          "answer": "Ruth partage souvent des bonbons.",
+          "responseAnswer": "Ruth partage souvent des bonbons.",
           "labels": [
-            "Elise",
-            "corrige",
+            "Ruth",
+            "partage",
             "souvent",
-            "une",
-            "faute"
+            "des",
+            "bonbons"
           ]
         },
         {
           "layout": "phrase-order",
           "tokens": [
             {
-              "text": "pain",
-              "category": "nom"
+              "text": "tu",
+              "category": "pronom"
             },
             {
-              "text": "vite",
+              "text": "souvent",
               "category": "adverbe"
             },
             {
-              "text": "Pawel",
-              "category": "nom"
-            },
-            {
-              "text": "du",
+              "text": "la",
               "category": "determinant"
             },
             {
-              "text": "mange",
+              "text": "allumes",
               "category": "verbe"
+            },
+            {
+              "text": "lampe",
+              "category": "nom"
             }
           ],
-          "answer": "Pawel mange vite du pain.",
-          "responseAnswer": "Pawel mange vite du pain.",
+          "answer": "Tu allumes souvent la lampe.",
+          "responseAnswer": "Tu allumes souvent la lampe.",
           "labels": [
-            "Pawel",
-            "mange",
-            "vite",
-            "du",
-            "pain"
+            "tu",
+            "allumes",
+            "souvent",
+            "la",
+            "lampe"
           ]
         }
       ]
@@ -192461,7 +192575,7 @@
       "sourceFixture": [
         {
           "layout": "phrase-build",
-          "prompt": "corriger",
+          "prompt": "partager",
           "pastilles": [
             "nom",
             "verbe",
@@ -192469,23 +192583,23 @@
             "determinant",
             "nom"
           ],
-          "answer": "Elise corrige souvent une faute.",
-          "responseAnswer": "Elise corrige souvent une faute.",
-          "calcAnswer": "corriger"
+          "answer": "Ruth partage souvent des bonbons.",
+          "responseAnswer": "Ruth partage souvent des bonbons.",
+          "calcAnswer": "partager"
         },
         {
           "layout": "phrase-build",
-          "prompt": "manger",
+          "prompt": "allumer",
           "pastilles": [
-            "nom",
+            "pronom",
             "verbe",
             "adverbe",
             "determinant",
             "nom"
           ],
-          "answer": "Pawel mange vite du pain.",
-          "responseAnswer": "Pawel mange vite du pain.",
-          "calcAnswer": "manger"
+          "answer": "Tu allumes souvent la lampe.",
+          "responseAnswer": "Tu allumes souvent la lampe.",
+          "calcAnswer": "allumer"
         }
       ]
     },
@@ -192532,14 +192646,14 @@
         {
           "layout": "phrase-write",
           "writeLines": 1,
-          "answer": "Elise corrige souvent une faute.",
-          "responseAnswer": "Elise corrige souvent une faute."
+          "answer": "Ruth partage souvent des bonbons.",
+          "responseAnswer": "Ruth partage souvent des bonbons."
         },
         {
           "layout": "phrase-write",
           "writeLines": 1,
-          "answer": "Pawel mange vite du pain.",
-          "responseAnswer": "Pawel mange vite du pain."
+          "answer": "Tu allumes souvent la lampe.",
+          "responseAnswer": "Tu allumes souvent la lampe."
         }
       ]
     },
@@ -192587,11 +192701,11 @@
           "layout": "phrase-color",
           "tokens": [
             {
-              "text": "Elise",
+              "text": "Ruth",
               "category": "nom"
             },
             {
-              "text": "corrige",
+              "text": "partage",
               "category": "verbe"
             },
             {
@@ -192599,7 +192713,7 @@
               "category": "determinant"
             },
             {
-              "text": "devoir",
+              "text": "secret",
               "category": "nom"
             },
             {
@@ -192607,23 +192721,23 @@
               "category": "conjonction"
             },
             {
-              "text": "la",
-              "category": "determinant"
-            },
-            {
-              "text": "cousine",
-              "category": "nom"
-            },
-            {
-              "text": "mesure",
-              "category": "verbe"
-            },
-            {
               "text": "le",
               "category": "determinant"
             },
             {
-              "text": "mur",
+              "text": "garçon",
+              "category": "nom"
+            },
+            {
+              "text": "salue",
+              "category": "verbe"
+            },
+            {
+              "text": "une",
+              "category": "determinant"
+            },
+            {
+              "text": "commerçante",
               "category": "nom"
             }
           ],
@@ -192633,19 +192747,23 @@
           "layout": "phrase-color",
           "tokens": [
             {
-              "text": "Ibrahim",
-              "category": "nom"
-            },
-            {
-              "text": "gagne",
-              "category": "verbe"
-            },
-            {
-              "text": "une",
+              "text": "Le",
               "category": "determinant"
             },
             {
-              "text": "médaille",
+              "text": "boulanger",
+              "category": "nom"
+            },
+            {
+              "text": "cherche",
+              "category": "verbe"
+            },
+            {
+              "text": "un",
+              "category": "determinant"
+            },
+            {
+              "text": "contact",
               "category": "nom"
             },
             {
@@ -192657,23 +192775,23 @@
               "category": "determinant"
             },
             {
-              "text": "tante",
+              "text": "factrice",
               "category": "nom"
             },
             {
-              "text": "emprunte",
+              "text": "utilise",
               "category": "verbe"
             },
             {
-              "text": "un",
+              "text": "une",
               "category": "determinant"
             },
             {
-              "text": "crayon",
+              "text": "tablette",
               "category": "nom"
             }
           ],
-          "answer": "nom · verbe · determinant · nom · conjonction · determinant · nom · verbe · determinant · nom"
+          "answer": "determinant · nom · verbe · determinant · nom · conjonction · determinant · nom · verbe · determinant · nom"
         }
       ]
     },
@@ -192722,7 +192840,94 @@
           "layout": "phrase-order",
           "tokens": [
             {
-              "text": "Elise",
+              "text": "Ruth",
+              "category": "nom"
+            },
+            {
+              "text": "salue",
+              "category": "verbe"
+            },
+            {
+              "text": "partage",
+              "category": "verbe"
+            },
+            {
+              "text": "secret",
+              "category": "nom"
+            },
+            {
+              "text": "un",
+              "category": "determinant"
+            },
+            {
+              "text": "une",
+              "category": "determinant"
+            },
+            {
+              "text": "le",
+              "category": "determinant"
+            },
+            {
+              "text": "commerçante",
+              "category": "nom"
+            },
+            {
+              "text": "garçon",
+              "category": "nom"
+            },
+            {
+              "text": "et",
+              "category": "conjonction"
+            }
+          ],
+          "answer": "Ruth partage un secret et le garçon salue une commerçante.",
+          "responseAnswer": "Ruth partage un secret et le garçon salue une commerçante.",
+          "labels": [
+            "Ruth",
+            "partage",
+            "un",
+            "secret",
+            "et",
+            "le",
+            "garçon",
+            "salue",
+            "une",
+            "commerçante"
+          ]
+        },
+        {
+          "layout": "phrase-order",
+          "tokens": [
+            {
+              "text": "factrice",
+              "category": "nom"
+            },
+            {
+              "text": "cherche",
+              "category": "verbe"
+            },
+            {
+              "text": "boulanger",
+              "category": "nom"
+            },
+            {
+              "text": "et",
+              "category": "conjonction"
+            },
+            {
+              "text": "utilise",
+              "category": "verbe"
+            },
+            {
+              "text": "la",
+              "category": "determinant"
+            },
+            {
+              "text": "une",
+              "category": "determinant"
+            },
+            {
+              "text": "tablette",
               "category": "nom"
             },
             {
@@ -192730,110 +192935,28 @@
               "category": "determinant"
             },
             {
-              "text": "corrige",
-              "category": "verbe"
-            },
-            {
-              "text": "et",
-              "category": "conjonction"
-            },
-            {
-              "text": "cousine",
-              "category": "nom"
-            },
-            {
-              "text": "mesure",
-              "category": "verbe"
-            },
-            {
-              "text": "la",
-              "category": "determinant"
-            },
-            {
-              "text": "devoir",
+              "text": "contact",
               "category": "nom"
             },
             {
               "text": "un",
               "category": "determinant"
-            },
-            {
-              "text": "mur",
-              "category": "nom"
             }
           ],
-          "answer": "Elise corrige un devoir et la cousine mesure le mur.",
-          "responseAnswer": "Elise corrige un devoir et la cousine mesure le mur.",
+          "answer": "Le boulanger cherche un contact et la factrice utilise une tablette.",
+          "responseAnswer": "Le boulanger cherche un contact et la factrice utilise une tablette.",
           "labels": [
-            "Elise",
-            "corrige",
-            "un",
-            "devoir",
-            "et",
-            "la",
-            "cousine",
-            "mesure",
             "le",
-            "mur"
-          ]
-        },
-        {
-          "layout": "phrase-order",
-          "tokens": [
-            {
-              "text": "gagne",
-              "category": "verbe"
-            },
-            {
-              "text": "la",
-              "category": "determinant"
-            },
-            {
-              "text": "tante",
-              "category": "nom"
-            },
-            {
-              "text": "et",
-              "category": "conjonction"
-            },
-            {
-              "text": "emprunte",
-              "category": "verbe"
-            },
-            {
-              "text": "Ibrahim",
-              "category": "nom"
-            },
-            {
-              "text": "crayon",
-              "category": "nom"
-            },
-            {
-              "text": "une",
-              "category": "determinant"
-            },
-            {
-              "text": "un",
-              "category": "determinant"
-            },
-            {
-              "text": "médaille",
-              "category": "nom"
-            }
-          ],
-          "answer": "Ibrahim gagne une médaille et la tante emprunte un crayon.",
-          "responseAnswer": "Ibrahim gagne une médaille et la tante emprunte un crayon.",
-          "labels": [
-            "Ibrahim",
-            "gagne",
-            "une",
-            "médaille",
+            "boulanger",
+            "cherche",
+            "un",
+            "contact",
             "et",
             "la",
-            "tante",
-            "emprunte",
-            "un",
-            "crayon"
+            "factrice",
+            "utilise",
+            "une",
+            "tablette"
           ]
         }
       ]
@@ -192882,7 +193005,7 @@
       "sourceFixture": [
         {
           "layout": "phrase-build",
-          "prompt": "corriger",
+          "prompt": "partager",
           "pastilles": [
             "nom",
             "verbe",
@@ -192895,14 +193018,15 @@
             "determinant",
             "nom"
           ],
-          "answer": "Elise corrige un devoir et la cousine mesure le mur.",
-          "responseAnswer": "Elise corrige un devoir et la cousine mesure le mur.",
-          "calcAnswer": "corriger"
+          "answer": "Ruth partage un secret et le garçon salue une commerçante.",
+          "responseAnswer": "Ruth partage un secret et le garçon salue une commerçante.",
+          "calcAnswer": "partager"
         },
         {
           "layout": "phrase-build",
-          "prompt": "gagner",
+          "prompt": "chercher",
           "pastilles": [
+            "determinant",
             "nom",
             "verbe",
             "determinant",
@@ -192914,9 +193038,9 @@
             "determinant",
             "nom"
           ],
-          "answer": "Ibrahim gagne une médaille et la tante emprunte un crayon.",
-          "responseAnswer": "Ibrahim gagne une médaille et la tante emprunte un crayon.",
-          "calcAnswer": "gagner"
+          "answer": "Le boulanger cherche un contact et la factrice utilise une tablette.",
+          "responseAnswer": "Le boulanger cherche un contact et la factrice utilise une tablette.",
+          "calcAnswer": "chercher"
         }
       ]
     },
@@ -192963,14 +193087,14 @@
         {
           "layout": "phrase-write",
           "writeLines": 1,
-          "answer": "Elise corrige un devoir et la cousine mesure le mur.",
-          "responseAnswer": "Elise corrige un devoir et la cousine mesure le mur."
+          "answer": "Ruth partage un secret et le garçon salue une commerçante.",
+          "responseAnswer": "Ruth partage un secret et le garçon salue une commerçante."
         },
         {
           "layout": "phrase-write",
           "writeLines": 1,
-          "answer": "Ibrahim gagne une médaille et la tante emprunte un crayon.",
-          "responseAnswer": "Ibrahim gagne une médaille et la tante emprunte un crayon."
+          "answer": "Le boulanger cherche un contact et la factrice utilise une tablette.",
+          "responseAnswer": "Le boulanger cherche un contact et la factrice utilise une tablette."
         }
       ]
     }

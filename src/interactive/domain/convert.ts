@@ -12,6 +12,7 @@ import { adaptNumeracy } from './numeracy'
 import { verifiedWrittenArithmetic } from './written-arithmetic'
 import { decimalChoices } from './decimal-choices'
 import { adaptOrdering } from './ordering'
+import { verifiedGeometry } from './geometry'
 export { hash } from './seeds'
 const normalized = (s: string) =>
   s
@@ -274,6 +275,8 @@ export function convertRecipe(
               const q = base(item.part)
               q.prompt = item.prompt; q.instruction = `${block.instruction}\n${item.instruction}`; q.choices = item.choices
               q.mode = item.mode ?? 'choice'; q.audio = item.audio ?? q.audio; q.images = item.images ?? []
+              if (item.context!==undefined) q.context=item.context
+              if (item.documentId!==undefined) q.source.documentId=item.documentId
               if (item.words) q.words = item.words
               if (item.choiceOrderPolicy) q.choiceOrderPolicy = item.choiceOrderPolicy
               if (item.teacherLed) q.compatibility = 'teacher-led'
@@ -393,49 +396,20 @@ export function convertRecipe(
             add(q, written.model, choices.correctId)
             return
           }
-          if (
-            item.layout === 'geo' &&
-            item.figure === 'square' &&
-            /aire/i.test(block.instruction + ' ' + item.prompt) &&
-            item.dims?.side &&
-            item.dims.side > 0
-          ) {
-            const area = item.dims.side ** 2
-            const sourceUnit = item.answer.match(
-              /(cm|mm|dm|km|m)(?:²|2)\s*$/,
-            )?.[1]
-            if (
-              (!sourceUnit || sourceUnit === (item.dims.unit ?? 'cm')) &&
-              Number.isSafeInteger(area) &&
-              numeric(
-                item.answer.replace(/\s*(?:cm|mm|dm|m|km)(?:²|2)\s*$/, ''),
-              ) === area
-            ) {
-              const q = base()
-              q.prompt = `Quelle est l’aire de ce carré ?`
-              q.figure = { type: 'square', dims: item.dims }
-              q.compatibility = 'assisted'
-              const side = item.dims.side
-              const choices = numberChoices(
-                area,
-                deriveSeed({ originalSeed: recipe.seed, sourceKey: q.id, purpose: 'distractors' }),
-                `${item.dims.unit ?? 'cm'}²`,
-                [
-                  side,
-                  side * 2,
-                  side * 4,
-                  side * (side - 1),
-                  side * (side + 1),
-                ],
-              )
-              q.choices = choices.choices
-              add(
-                q,
-                `${item.dims.side} × ${item.dims.side} = ${area.toLocaleString('fr-CH')} ${item.dims.unit ?? 'cm'}²`,
-                choices.correctId,
-              )
-              return
-            }
+          const geometry = verifiedGeometry(item)
+          if (geometry) {
+            if ('reason' in geometry) { reject(geometry.reason); return }
+            const q = base()
+            q.prompt = geometry.prompt
+            q.context = [q.context,geometry.context].filter(Boolean).join('\n\n') || undefined
+            q.figure = geometry.figure
+            q.compatibility = 'assisted'
+            const options = decimalChoices(geometry.value.units,geometry.value.precision,10n**BigInt(geometry.value.precision),geometry.correctText,
+              deriveSeed({originalSeed:recipe.seed,sourceKey:q.id,purpose:'distractors'}))
+            const unit = geometry.correctText.split(' ').at(-1)!
+            q.choices = options.choices.map(choice=>({...choice,text:choice.id===options.correctId?choice.text:`${choice.text} ${unit}`}))
+            add(q,geometry.model,options.correctId)
+            return
           }
           reject(
             `Rendu « ${item.layout} » non pris en charge dans ce premier prototype.`,

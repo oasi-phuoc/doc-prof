@@ -2,6 +2,7 @@ import type { Game, Question } from '../domain/types'
 import { PALETTE, defaultShapes, SHAPES, type ShapeId } from '../domain/palette'
 import { validAvatar, type CompetitionAvatar } from './avatars'
 import { MAX_AUDIO_PARTS } from '../domain/audio'
+import type { Figure, FigureDims } from '@/math/types'
 
 export type CompetitionQuestion = Pick<Question, 'id' | 'prompt' | 'context' | 'numberSequence' | 'audio' | 'audioParts' | 'images' | 'choices' | 'figure'>
 export type CompetitionQuiz = { id: string; title: string; items: { question: CompetitionQuestion; correctChoiceId: string }[] }
@@ -36,6 +37,46 @@ const record = (value: unknown): value is Record<string, unknown> => !!value && 
 const string = (value: unknown, max: number): value is string => typeof value === 'string' && value.trim().length > 0 && value.length <= max
 const clamp = (value: number, low: number, high: number) => Math.max(low, Math.min(high, value))
 export const ROOM_LIFETIME = 2 * 60 * 60 * 1000
+
+const FIGURES = new Set<Figure>(['rectangle', 'square', 'triangle', 'cube', 'circle', 'parallelogram', 'trapezoid', 'rhombus', 'cuboid', 'cylinder', 'cone', 'sphere', 'oval', 'pentagon'])
+const NUMERIC_DIMS = ['side', 'length', 'width', 'height', 'base', 'radius', 'diameter', 'top', 'bottom', 'a', 'b', 'c', 'd1', 'd2', 'perimeter'] as const
+type NumericDim = typeof NUMERIC_DIMS[number]
+const FIGURE_UNITS = new Set(['mm', 'cm', 'dm', 'm', 'dam', 'hm', 'km'])
+const FIGURE_ASK = new Set(['side', 'length', 'width', 'height', 'radius', 'a', 'b', 'c', 'base', 'top'])
+
+/** Figure metadata travels to learners, so only known public rendering fields
+ * may cross the room boundary. In particular, an asked dimension stays absent. */
+function parseFigure(value: unknown): NonNullable<CompetitionQuestion['figure']> {
+  const invalid = () => new CompetitionError('Figure invalide.', 400)
+  if (!record(value) || typeof value.type !== 'string' || !FIGURES.has(value.type as Figure) ||
+    Object.keys(value).some(key => key !== 'type' && key !== 'dims')) throw invalid()
+  if (value.dims === undefined) return { type: value.type as Figure }
+  if (!record(value.dims) || Object.keys(value.dims).length > 20) throw invalid()
+  const dims: FigureDims = {}
+  for (const [key, entry] of Object.entries(value.dims)) {
+    if ((NUMERIC_DIMS as readonly string[]).includes(key)) {
+      if (typeof entry !== 'number' || !Number.isFinite(entry) || entry <= 0 || entry > 1e12) throw invalid()
+      dims[key as NumericDim] = entry
+    } else if (key === 'unit') {
+      if (typeof entry !== 'string' || !FIGURE_UNITS.has(entry)) throw invalid()
+      dims.unit = entry
+    } else if (key === 'ask') {
+      if (typeof entry !== 'string' || !FIGURE_ASK.has(entry)) throw invalid()
+      dims.ask = entry as NonNullable<FigureDims['ask']>
+    } else if (key === 'triangleKind') {
+      if (typeof entry !== 'string' || !['equilateral', 'isosceles', 'scalene', 'right'].includes(entry)) throw invalid()
+      dims.triangleKind = entry as NonNullable<FigureDims['triangleKind']>
+    } else if (key === 'trapezoidKind') {
+      if (typeof entry !== 'string' || !['rectangle', 'isosceles', 'scalene'].includes(entry)) throw invalid()
+      dims.trapezoidKind = entry as NonNullable<FigureDims['trapezoidKind']>
+    } else if (key === 'bare') {
+      if (typeof entry !== 'boolean') throw invalid()
+      dims.bare = entry
+    } else throw invalid()
+  }
+  if (dims.ask !== undefined && dims[dims.ask] !== undefined) throw invalid()
+  return { type: value.type as Figure, dims }
+}
 
 export function competitionQuiz(game: Game, origin: string): CompetitionQuiz {
   const media = (value: string) => value.startsWith('/') ? new URL(value, origin).href : value
@@ -75,8 +116,7 @@ export function parseCompetitionQuiz(value: unknown, mediaOrigins: string[] = []
     if (typeof entry.correctChoiceId !== 'string' || !choiceIds.has(entry.correctChoiceId)) throw new CompetitionError('La bonne réponse n’est pas vérifiable.', 400)
     let figure: CompetitionQuestion['figure']
     if (q.figure !== undefined) {
-      if (!record(q.figure) || !string(q.figure.type, 60) || q.figure.dims !== undefined && (!record(q.figure.dims) || Object.keys(q.figure.dims).length > 20 || Object.values(q.figure.dims).some((n) => typeof n !== 'number' || !Number.isFinite(n) || Math.abs(n) > 1e12))) throw new CompetitionError('Figure invalide.', 400)
-      figure = { type: q.figure.type as NonNullable<CompetitionQuestion['figure']>['type'], ...(q.figure.dims ? { dims: { ...q.figure.dims as Record<string, number> } } : {}) }
+      figure = parseFigure(q.figure)
     }
     const audio = q.audio ? media(q.audio) : undefined
     let audioParts: string[] | undefined

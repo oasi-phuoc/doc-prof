@@ -167,10 +167,10 @@ export function ItemView({
         item.tcf?.kind === 'dialogue'),
   )
   const showTheoryPageChip = Boolean(
-    onToggleTheoryPageBreakAfter && item.layout === 'theory' && item.theoryBlock?.kind === 'section',
+    onToggleTheoryPageBreakAfter && (item.layout === 'theory' && item.theoryBlock?.kind === 'section' || item.layout==='grammar'&&item.grammar?.readingPart?.kind==='question'),
   )
   const pageBreakChipLabel = showTheoryPageChip
-    ? theoryPageBreakAfter
+    ? item.layout==='grammar' ? theoryPageBreakAfter?'Annuler le saut de page après cette question':'Ajouter un saut de page après cette question' : theoryPageBreakAfter
       ? 'Annuler le saut de page après cette section'
       : 'Passer la section suivante sur une nouvelle page'
     : tcfPageBreakBefore
@@ -300,7 +300,7 @@ export function ItemView({
           </svg>
         </button>
       ) : null}
-      {item.coordScene || hideNumber ? null : <div className="item-number">{index + 1}.</div>}
+      {item.coordScene || hideNumber ? null : <div className="item-number">{item.grammar?.readingPart?.kind==='question'?item.grammar.readingPart.number:index + 1}.</div>}
       <div className="item-content">
         {item.layout==='grammar' ? isGrammarQuestion(item.grammar) ? <GrammarQuestionView question={item.grammar} mode={mode}/> : <p>Question grammaticale à vérifier.</p> : null}
         {(item.layout === 'column' || item.layout === 'column-empty') && <ColumnOp item={item} mode={mode} />}

@@ -458,7 +458,9 @@ export function WorksheetSheet({
                     item.layout === 'theory' &&
                     item.theoryBlock?.kind === 'section' &&
                     sourceIndex < theoryBreakCount - 1
-                  const theoryPageBreakAfter = Boolean(
+                  const readingPart=item.grammar?.readingPart
+                  const isGrammarPageBreakable=item.layout==='grammar'&&readingPart?.kind==='question'
+                  const theoryPageBreakAfter = isGrammarPageBreakable ? Boolean(block.grammarPageBreakAfterQuestionIds?.includes(readingPart.questionId)) : Boolean(
                     block.tcfPageBreakAfter?.[sourceIndex] ??
                       page.tcfPageBreakAfter?.[sourceIndex] ??
                       item.theoryPageBreakAfter,
@@ -531,10 +533,10 @@ export function WorksheetSheet({
                           ? () => onToggleTcfPageBreak(index, blockIndex)
                           : undefined
                       }
-                      theoryPageBreakAfter={isTheoryPageBreakable ? theoryPageBreakAfter : undefined}
+                      theoryPageBreakAfter={isTheoryPageBreakable||isGrammarPageBreakable ? theoryPageBreakAfter : undefined}
                       onToggleTheoryPageBreakAfter={
-                        interactiveTcfPageBreaks && isTheoryPageBreakable && onToggleTcfPageBreak
-                          ? () => onToggleTcfPageBreak(index + 1, blockIndex)
+                        interactiveTcfPageBreaks && (isTheoryPageBreakable||isGrammarPageBreakable) && onToggleTcfPageBreak
+                          ? () => onToggleTcfPageBreak(index + (isGrammarPageBreakable?0:1), blockIndex)
                           : undefined
                       }
                       formulaireLetterGrid={Boolean(block.formulaireLetterGrid)}

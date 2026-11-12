@@ -1,0 +1,66 @@
+{
+  "date": "2026-11-12",
+  "scope": "Triangles et parallélogrammes : huit types de mesures supplémentaires et correction de la disposition des cartes sur mobile",
+  "integratedMain": "93adc490ef7b40578b5c19c40d01cd2a6262f65b",
+  "unitTests": {
+    "passed": 217,
+    "failed": 0,
+    "newPolygonTests": 8,
+    "realPolygonConfigurations": 2400,
+    "focusedFinalPolygonTestsPassed": 8
+  },
+  "checks": {
+    "appTypes": "passed",
+    "apiTypes": "passed",
+    "lint": "passed with existing warnings",
+    "productionBuild": "passed",
+    "bundleBudgets": "passed",
+    "changedFilesSecrets": "Gitleaks 8.30.1 passed, zero findings across 904 files in the configured change scope"
+  },
+  "browser": {
+    "passed": [
+      "polygon-measures-browser",
+      "geometry-browser",
+      "readability-browser",
+      "mobile-play-browser",
+      "performance-browser",
+      "a4-regression"
+    ],
+    "all46StagesRun": false,
+    "polygonReport": "polygon-measures-results.json",
+    "ciPartialReport": "quality-polygon-measures-ci-results.json",
+    "a4Report": "a4-results.json"
+  },
+  "layout": {
+    "viewports": [
+      "390x844",
+      "1366x768",
+      "360x640"
+    ],
+    "numericCards": "Every card and badge within viewport; no overlaps and no unnecessary answer reading controls",
+    "compactFigureContext": "Short figure contexts retain their measures without a document toolbar; long documents retain the reader",
+    "questionReading": "A long question preserves the short-answer grid; full question and figure remain available through Suite",
+    "accessibility": "Axe passes on exercised views; long reading dialogs and keyboard regression pass"
+  },
+  "source": {
+    "serverWrites": 0,
+    "templates": "unchanged",
+    "newSeeds": "verified",
+    "paper": "unchanged, A4 screenshot identical against 93adc490"
+  },
+  "inventory": {
+    "catalogTypes": 2074,
+    "variants": 2106,
+    "playableVariants": 703,
+    "geometryPlayableVariants": 22,
+    "newDedicatedGeometryTypes": 8,
+    "allDedicatedGeometryTypes": 16,
+    "generationErrors": 8
+  },
+  "limits": [
+    "Aires et inverses arrondis signalés plutôt que convertis.",
+    "Autres variantes de dessin du triangle, losanges, trapèzes, cercles, volumes et conversions entre unités à adapter.",
+    "La suite complète de 46 parcours navigateur n’a pas été relancée.",
+    "Les essais matériels ENI et l’activation du Worker Internet restent distincts."
+  ]
+}

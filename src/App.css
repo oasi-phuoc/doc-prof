@@ -6363,6 +6363,7 @@ textarea.pill-input,
 }
 
 /* Additive graded grammar: same canonical questions on paper and at the board. */
+.exercise-item.layout-grammar { position: relative; }
 .grammar-question { min-width: 0; break-inside: avoid; }
 .grammar-question p { margin: 0 0 2mm; }
 .grammar-answer-inline { display: inline-block; min-width: 22mm; min-height: 1em; border-bottom: 1px solid var(--purple); color: var(--purple); text-align: center; margin: 0 .2em; }
@@ -6385,3 +6386,14 @@ textarea.pill-input,
 .grammar-two-lines .grammar-written-response .answer-line-field,
 .grammar-two-lines .phrase-write-line { min-height: 16mm; background: linear-gradient(var(--purple), var(--purple)) left 8mm / 100% 1px no-repeat; }
 .grammar-question .phrase-slot-answer { min-width: 0; overflow-wrap: anywhere; }
+.grammar-cue { font-weight: 600; color: var(--purple); }
+.grammar-transform-directive, .grammar-production-task { font-weight: 600; }
+.grammar-reading-support h3 { margin: 0 0 3mm; font-size: 1.05em; }
+.grammar-reading-genre { color: var(--muted); font-size: .9em; }
+.grammar-reading-text { white-space: pre-line; line-height: 1.6; text-align: justify; }
+.grammar-production-lines .answer-line-field { height: 8mm; }
+.grammar-production-model { white-space: pre-line; line-height: 1.6; }
+.grammar-production h3 { margin: 0 0 2mm; font-size: 1em; }
+.grammar-model-label { font-style: italic; }
+.grammar-rubric { list-style: none; padding: 0; margin: 0; }
+.grammar-rubric li { margin: 2mm 0; }

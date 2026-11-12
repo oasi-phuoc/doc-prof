@@ -61,7 +61,9 @@ export function QuestionStage({
           )}
           <span className="ci-question-prompt">{q.prompt}</span>
         </h1>
-        {q.context && <ReadingDocument text={q.context} />}
+        {q.context && (q.figure && q.context.length <= 240
+          ? <section className="ci-context ci-figure-context" aria-label="Mesures de la figure"><p>{q.context}</p></section>
+          : <ReadingDocument text={q.context} />)}
         {q.numberSequence && <NumberSequenceView sequence={q.numberSequence} />}
         {q.mode === 'sequence' && (
           <details className="ci-full-instruction">
