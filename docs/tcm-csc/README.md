@@ -43,6 +43,25 @@ Une incohérence entre énoncé, nombres et corrigé, ou une ancienne égalité 
 
 ## Vérification
 
+### Prises Denise demandées — préparation, génération encore bloquée
+
+Le [prompt des neuf enregistrements](prompt-audios-denise.md) est désormais conservé dans le dépôt. `scripts/generate-tcm-csc-denise.py` prépare deux consignes, les cinq lettres françaises et les mots « plus » (/plys/) et « moins », avec **fr-FR-DeniseNeural, −25 %, volume normal, mono 24 kHz, MP3 96 kb/s**, puis un ZIP de neuf fichiers. Il ne remplace jamais la voix demandée par une autre.
+
+```sh
+python -m pip install 'edge-tts>=7.2,<8'
+python scripts/generate-tcm-csc-denise.py --dry-run
+# Après autorisation du service Microsoft dans les paramètres réseau :
+python scripts/generate-tcm-csc-denise.py --output /tmp/tcm-csc-denise --install
+```
+
+La génération et l’installation sont séparées par `--install`. Les neuf prises doivent toutes être décodables, audibles et au bon format avant activation. Elles utilisent un dossier dédié ; les anciens nombres et opérateurs partagés restent disponibles. Le manifeste `src/tcm-csc/denise-recordings.json` reste actuellement à **`not_generated`** : les téléchargements existants continuent donc de fonctionner selon leur montage historique.
+
+Le nouveau montage est préparé : consigne une fois, cinq secondes de silence réel, bip TCF existant, questions A à E, sept secondes entre les questions, sept secondes et bip avant une deuxième écoute strictement identique. Il réutilise les nombres variables et n’ajoute jamais le résultat d’un calcul. Les marges silencieuses des clips sont retirées avant insertion des pauses ; le résultat est un WAV mono 24 kHz. Ce montage demande cinq questions et ne sera activé qu’après disponibilité des neuf fichiers validés.
+
+**Blocage confirmé :** le proxy sortant refuse `speech.platform.bing.com` avec un CONNECT 403. Aucun des neuf MP3 ni leur ZIP n’a été généré dans cette reprise. Les [contrôles navigateur du montage](denise-montage-test-20261112.json) utilisent uniquement des signaux synthétiques de test ; ils ne constituent ni des prises Denise ni une validation humaine de prononciation. Le contrôle vérifie les trois exercices, une pause exacte de cinq secondes, neuf pauses exactes de sept secondes, deux bips et dix lettres par piste, malgré les marges silencieuses ajoutées aux signaux d’entrée.
+
+Tests : `node --test tests/interactive/csc-denise-audio.test.mjs tests/interactive/tcm-csc.test.mjs` et, avec Vite sur le port 5189, `node tests/interactive/csc-denise-audio-browser.mjs`.
+
 Le [complément audio et impression](audio-grilles-20261112.json) consigne les cinq lecteurs et les grilles réduites, avec des [exemples CFR imprimés](tcm-cfr-grilles-exemple.pdf). Le [relevé initial du 12 novembre](revision-20261112.json) consigne les nouvelles consignes, les dimensions, les 220 tests et les vérifications d’impression et d’audio.
 
 - [Exemple A4 élèves et corrigés](tcm-csc-exemple.pdf).

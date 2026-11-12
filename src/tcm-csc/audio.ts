@@ -3,6 +3,8 @@ import { concatPlaylistsWithGap } from '@/tcm-cfr/audio-nombres'
 import { zipStoreBlob } from '@/lib/zip-store'
 import { recalculateCsc } from './recalculate'
 import { cscNumberParts } from './items'
+import { cscDeniseRecordingsReady } from './denise-recordings'
+import { planCscDeniseAudio, renderCscDeniseAudio } from './denise-audio'
 
 /** One prompt is one number or one complete operation, never its fragments. */
 export function cscAudioPrompts(type: string, items: readonly MathItem[]): string[][] | undefined {
@@ -37,7 +39,7 @@ export async function buildCscAudioZip(sheets: WorksheetPage[]): Promise<Blob> {
   const groups = cscAudioGroups(sheets)
   if (!groups.length) throw new Error('Aucun audio CSC n’est présent dans cette fiche.')
   const files = []
-  for (const group of groups) files.push({ name: group.name, data: await concatPlaylistsWithGap(group.parts) })
+  for (const group of groups) files.push({ name: group.name, data: cscDeniseRecordingsReady() ? await renderCscDeniseAudio(planCscDeniseAudio(group.number, group.parts)) : await concatPlaylistsWithGap(group.parts) })
   return zipStoreBlob(files)
 }
 export async function downloadCscAudios(sheets: WorksheetPage[]) {
