@@ -18,29 +18,30 @@ try {
  const base=demoRecipe(),config=type=>({...defaultPage('tcm-cfr'),topic:'tcm-cfr-test',exerciseType:type,count:3,extraBlocks:undefined,libreItems:undefined})
  const recipeFor=(type,items,seed=14)=>({...base,seed,pages:[{...config(type),...(items?{libreItems:items,count:items.length}:{})}],libreMode:!!items})
  const key=(game,q)=>q.choices.find(choice=>choice.id===game.corrections[q.id].choiceId).text
- const names={square:'carré',rectangle:'rectangle',rhombus:'losange',parallelogram:'parallélogramme',circle:'cercle',trapezoid:'trapèze',pentagon:'pentagone'}
- const answers={square:['4','4'],rectangle:['côtés opposés','4'],rhombus:['4','égaux'],parallelogram:['côtés opposés','côtés opposés'],circle:['égales','0'],trapezoid:['1','4'],pentagon:['5','5']}
- const sourceFacts={square:['4 côtés égaux','4 angles droits'],rectangle:['côtés opposés égaux','4 angles droits'],rhombus:['4 côtés égaux','angles opposés égaux'],parallelogram:['côtés opposés parallèles','côtés opposés égaux'],circle:['tous les points à égale distance du centre','pas de côté'],trapezoid:['une paire de côtés parallèles','4 côtés'],pentagon:['5 côtés','5 sommets']}
- const card=(figure,properties)=>({layout:'geo',figure,dims:{bare:true,...(figure==='trapezoid'?{trapezoidKind:'isosceles'}:{})},geoNameCard:true,propertyLines:[{label:'Nom',answer:names[figure]},...(properties?sourceFacts[figure].map((answer,index)=>({label:`Propriété ${index+1}`,answer})):[])],answer:properties?[names[figure],...sourceFacts[figure]].join(' ; '):names[figure]})
+ const names={square:'carré',rectangle:'rectangle',rhombus:'losange',parallelogram:'parallélogramme',circle:'cercle',trapezoid:'trapèze',pentagon:'pentagone','triangle:equilateral':'triangle équilatéral','triangle:isosceles':'triangle isocèle','triangle:right':'triangle rectangle'}
+ const answers={square:['4','4'],rectangle:['côtés opposés','4'],rhombus:['4','égaux'],parallelogram:['côtés opposés','côtés opposés'],circle:['égales','0'],trapezoid:['1','4'],pentagon:['5','5'],'triangle:equilateral':['3','3'],'triangle:isosceles':['2','2'],'triangle:right':['1','3']}
+ const sourceFacts={square:['4 côtés égaux','4 angles droits'],rectangle:['côtés opposés égaux','4 angles droits'],rhombus:['4 côtés égaux','angles opposés égaux'],parallelogram:['côtés opposés parallèles','côtés opposés égaux'],circle:['tous les points à égale distance du centre','pas de côté'],trapezoid:['une paire de côtés parallèles','4 côtés'],pentagon:['5 côtés','5 sommets'],'triangle:equilateral':['3 côtés égaux','3 angles égaux'],'triangle:isosceles':['2 côtés égaux','2 angles égaux'],'triangle:right':['un angle droit','3 côtés']}
+ const cardKey=item=>item.figure==='triangle'?`triangle:${item.dims.triangleKind}`:item.figure
+ const card=(figure,properties)=>({layout:'geo',figure:figure.split(':')[0],dims:{bare:true,...(figure.startsWith('triangle:')?{triangleKind:figure.split(':')[1]}:{}),...(figure==='trapezoid'?{trapezoidKind:'isosceles'}:{})},geoNameCard:true,propertyLines:[{label:'Nom',answer:names[figure]},...(properties?sourceFacts[figure].map((answer,index)=>({label:`Propriété ${index+1}`,answer})):[])],answer:properties?[names[figure],...sourceFacts[figure]].join(' ; '):names[figure]})
  await test('two CFR figure types across 600 real configurations retain their verified source cards and paper',()=>{
   for(const type of ['tcm-cfr-ex16','tcm-cfr-ex17'])for(const difficulty of ['facile','moyen','avance'])for(let seed=1;seed<=100;seed++){
    const recipe=recipeFor(type,undefined,seed);recipe.pages[0].difficulty=difficulty
    const before=structuredClone(recipe),items=buildPage(recipe.pages[0],seed).blocks[0].items,paper=seed===1?buildWorksheets(recipe.pages,seed):undefined
    const game=convertRecipe(recipe)
-   assert.equal(game.questions.length,type.endsWith('16')?6:3);assert.equal(game.issues.length,type.endsWith('16')?1:0)
-   for(const q of game.questions){const item=items[q.source.item],part=q.source.part??0;assert.equal(key(game,q),part===0?names[item.figure]:answers[item.figure][part-1]);assert.equal(q.figure.type,item.figure);assert.equal(q.figure.dims.bare,true);assert.equal(q.compatibility,'assisted');assert.ok(!('propertyLines' in q));assert.ok(!('answer' in q.figure.dims));assert.equal(new Set(q.choices.map(choice=>choice.text)).size,q.choices.length)}
+   assert.equal(game.questions.length,type.endsWith('16')?9:3);assert.equal(game.issues.length,0)
+   for(const q of game.questions){const item=items[q.source.item],part=q.source.part??0;assert.equal(key(game,q),part===0?names[cardKey(item)]:answers[cardKey(item)][part-1]);assert.equal(q.figure.type,item.figure);assert.equal(q.figure.dims.bare,true);assert.equal(q.compatibility,'assisted');assert.ok(!('propertyLines' in q));assert.ok(!('answer' in q.figure.dims));assert.equal(new Set(q.choices.map(choice=>choice.text)).size,q.choices.length)}
    assert.deepEqual(recipe,before);assert.deepEqual(convertRecipe(recipe),game)
    if(paper)assert.deepEqual(buildWorksheets(recipe.pages,seed),paper)
   }
  })
- await test('seven reviewed freely chosen CFR figures keep independent side, vertex, angle and distance facts',()=>{
+ await test('ten reviewed freely chosen CFR figures keep independent side, vertex, angle and distance facts',()=>{
   for(const figure of Object.keys(names)){
    const item=card(figure,true),recipe=recipeFor('tcm-cfr-ex16',[item]),before=structuredClone(recipe),game=convertRecipe(recipe)
    assert.deepEqual(game.questions.map(q=>key(game,q)),[names[figure],...answers[figure]]);assert.deepEqual(game.issues,[]);assert.deepEqual(recipe,before)
    const naming=convertRecipe(recipeFor('tcm-cfr-ex17',[card(figure,false)]));assert.equal(naming.questions.length,1);assert.equal(key(naming,naming.questions[0]),names[figure])
   }
  })
- await test('stale names, reversed or unreviewed properties, measured cards and triangle subtypes cannot invent a verdict',()=>{
+ await test('stale names, reversed or unreviewed properties, measured cards and contradictory triangle subtypes cannot invent a verdict',()=>{
   const good=card('rectangle',true)
   const bad=[{...good,answer:'rectangle ; 4 côtés égaux ; 4 angles droits'},{...good,propertyLines:[...good.propertyLines].reverse()},{...good,propertyLines:good.propertyLines.map((line,index)=>index===2?{...line,answer:'3 angles droits'}:line)},{...good,dims:{bare:true,length:7}},{...good,dims:{bare:false}},{...good,geoNameCard:false},{...good,prompt:'La réponse est rectangle.'},{...good,geoDualPads:true},{...good,figure:'triangle',dims:{bare:true,triangleKind:'right'}},{...good,figure:'triangle',dims:{bare:true,triangleKind:'equilateral'}},{...good,figure:'triangle',dims:{bare:true,triangleKind:'isosceles'}}]
   for(const item of bad){const before=structuredClone(item),game=convertRecipe(recipeFor('tcm-cfr-ex16',[item]));assert.equal(game.questions.length,0);assert.equal(game.issues.length,1);assert.deepEqual(item,before)}
@@ -61,7 +62,7 @@ try {
   const recipe={...base,libreMode:false,pages:[config('tcm-cfr-ex16'),config('tcm-cfr-ex17')]},before=structuredClone(recipe),figures=new Set(),choices=new Set()
   let source=createGameSource({recipe,name:'Formes CFR'},'saved','cfr-figures')
   for(let run=0;run<12;run++){
-   const game=convertRecipe(source.recipe);assert.equal(game.questions.length,9);assert.equal(game.issues.length,1)
+   const game=convertRecipe(source.recipe);assert.equal(game.questions.length,12);assert.equal(game.issues.length,0)
    figures.add(JSON.stringify(game.questions.filter(q=>(q.source.part??0)===0).map(q=>q.figure.type)));choices.add(JSON.stringify(game.questions.map(q=>q.choices)))
    const first=game.questions.filter(q=>q.source.page===0).map(q=>q.figure.type),second=game.questions.filter(q=>q.source.page===1).map(q=>q.figure.type)
    assert.equal(first.includes('rhombus'),second.includes('parallelogram'));assert.equal(first.includes('parallelogram'),second.includes('rhombus'))

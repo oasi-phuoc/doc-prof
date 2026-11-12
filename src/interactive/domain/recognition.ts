@@ -9,8 +9,8 @@ import { hash } from './seeds'
 type Entry = { part: number; prompt: string; figure: NonNullable<Question['figure']>; choices: Choice[]; correctId: string; model: string }
 type Result = { items: Entry[]; issues: string[] }
 const reject = (reason: string): Result => ({items:[],issues:[reason]})
-const names = Array.from({length:16},(_,index)=>tryGenerateFigure('figures-nommer',index)!).filter(item=>item.figure!=='triangle'||item.dims?.triangleKind==='scalene')
-const properties = Array.from({length:13},(_,index)=>tryGenerateFigure('figures-proprietes',index)!).filter(item=>['square','rectangle','rhombus','parallelogram','circle','oval'].includes(item.figure!))
+const names = Array.from({length:16},(_,index)=>tryGenerateFigure('figures-nommer',index)!)
+const properties = Array.from({length:13},(_,index)=>tryGenerateFigure('figures-proprietes',index)!).filter(item=>['square','rectangle','rhombus','parallelogram','circle','oval','triangle'].includes(item.figure!))
 const namePool = [...new Set([...names.map(item=>item.answer),...CSC_FIGURES.map(entry=>entry.label)])]
 const normalize = (value: string) => value.normalize('NFC').trim()
 function figureKey(item: MathItem): string | null {
@@ -42,12 +42,16 @@ const cfrCards:Record<string,{name:string;facts:[CfrFact,CfrFact];dims?:MathItem
   circle:{name:'cercle',facts:[{source:'tous les points à égale distance du centre',prompt:'Comment sont les distances du centre aux points de cette figure ?',answer:'égales',pool:['égales','différentes','nulles']},{source:'pas de côté',prompt:'Combien de côtés possède cette figure ?',answer:'0'}]},
   trapezoid:{name:'trapèze',dims:{trapezoidKind:'isosceles'},facts:[{source:'une paire de côtés parallèles',prompt:'Combien de paires de côtés parallèles possède cette figure ?',answer:'1'},{source:'4 côtés',prompt:'Combien de côtés possède cette figure ?',answer:'4'}]},
   pentagon:{name:'pentagone',facts:[{source:'5 côtés',prompt:'Combien de côtés possède cette figure ?',answer:'5'},{source:'5 sommets',prompt:'Combien de sommets possède cette figure ?',answer:'5'}]},
+  'triangle:equilateral':{name:'triangle équilatéral',dims:{triangleKind:'equilateral'},facts:[{source:'3 côtés égaux',prompt:'Combien de côtés de même longueur possède cette figure ?',answer:'3'},{source:'3 angles égaux',prompt:'Combien d’angles de même mesure possède cette figure ?',answer:'3'}]},
+  'triangle:isosceles':{name:'triangle isocèle',dims:{triangleKind:'isosceles'},facts:[{source:'2 côtés égaux',prompt:'Combien de côtés de même longueur possède cette figure ?',answer:'2'},{source:'2 angles égaux',prompt:'Combien d’angles de même mesure possède cette figure ?',answer:'2'}]},
+  'triangle:right':{name:'triangle rectangle',dims:{triangleKind:'right'},facts:[{source:'un angle droit',prompt:'Combien d’angles droits possède cette figure ?',answer:'1'},{source:'3 côtés',prompt:'Combien de côtés possède cette figure ?',answer:'3'}]},
 }
 function cfrRecognition(item:MathItem,type:string,seedFor:(part:number)=>number):Result|undefined {
   if(!/^tcm-cfr-ex(?:16|17)$/.test(type))return undefined
   if(item.layout!=='geo'||item.geoNameCard!==true||item.dims?.bare!==true||item.prompt?.trim()||item.geoDualPads||item.compositeScene||item.calcAnswer||item.responseAnswer)return reject('Cette carte CFR doit montrer une seule forme sans mesure ni autre calcul.')
-  const reference=Object.hasOwn(cfrCards,item.figure??'')?cfrCards[item.figure!]:undefined
-  if(!reference||figureKey(item)!==figureKey({layout:'geo',figure:item.figure,dims:reference.dims,answer:reference.name}))return reject('Cette variante CFR, notamment les sous-types de triangles, demande encore une validation de son dessin.')
+  const cardKey=item.figure==='triangle'?`triangle:${item.dims?.triangleKind??'scalene'}`:item.figure??''
+  const reference=Object.hasOwn(cfrCards,cardKey)?cfrCards[cardKey]:undefined
+  if(!reference||figureKey(item)!==figureKey({layout:'geo',figure:item.figure,dims:reference.dims,answer:reference.name}))return reject('Cette forme CFR ne correspond pas à un dessin vérifié.')
   const withProperties=type==='tcm-cfr-ex16'
   const lines=[{label:'Nom',answer:reference.name},...(withProperties?reference.facts.map((fact,index)=>({label:`Propriété ${index+1}`,answer:fact.source})):[])]
   const answer=withProperties?[reference.name,...reference.facts.map(fact=>fact.source)].join(' ; '):reference.name
@@ -79,12 +83,12 @@ export function adaptRecognition(item: MathItem, exerciseType: string, seedFor: 
   if (!key) return reject('Les données de la figure ne correspondent pas à un dessin simple vérifiable.')
   if (exerciseType==='figures-nommer') {
     const reference=names.find(candidate=>figureKey(candidate)===key)
-    if (!reference) return reject('Cette variante de triangle demande encore une validation de son dessin avant un score automatique.')
+    if (!reference) return reject('Cette variante de forme ne correspond pas à un dessin vérifié.')
     if (item.propertyLines || normalize(item.answer)!==reference.answer) return reject('La figure et son nom ne correspondent plus. Validez la fiche avant de jouer.')
     return {items:[naming(item,0,reference.answer,namePool,seedFor(0))],issues:[]}
   }
   const reference=properties.find(candidate=>figureKey(candidate)===key)
-  if (!reference) return reject('Les propriétés de cette variante de triangle ou de trapèze demandent encore une validation de son dessin.')
+  if (!reference) return reject('Les propriétés de cette forme, notamment les trapèzes, demandent encore une validation de son dessin.')
   if (JSON.stringify(item.propertyLines)!==JSON.stringify(reference.propertyLines) || normalize(item.answer)!==reference.answer) return reject('La figure, ses propriétés et son corrigé ne correspondent plus. Validez la fiche avant de jouer.')
   const figure=publicFigure(item)
   const items=reference.propertyLines!.map(({label,answer},part): Entry=>{

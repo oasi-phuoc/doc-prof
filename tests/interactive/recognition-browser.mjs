@@ -13,10 +13,12 @@ const properties=[['Nom','cercle'],['Côtés','0'],['Angles droits','0'],['Axes 
 const csc={layout:'csc-task',answer:'carré ; rectangle ; cercle ; triangle',cscTask:{kind:'shape-names',figures:['square','rectangle','circle','triangle']}}
 const cfrRectangle={layout:'geo',figure:'rectangle',dims:{bare:true},geoNameCard:true,propertyLines:[{label:'Nom',answer:'rectangle'},{label:'Propriété 1',answer:'côtés opposés égaux'},{label:'Propriété 2',answer:'4 angles droits'}],answer:'rectangle ; côtés opposés égaux ; 4 angles droits'}
 const cfrPentagon={layout:'geo',figure:'pentagon',dims:{bare:true},geoNameCard:true,propertyLines:[{label:'Nom',answer:'pentagone'}],answer:'pentagone'}
+const triangles=[['equilateral','triangle équilatéral','3 côtés égaux','3 angles égaux'],['isosceles','triangle isocèle','2 côtés égaux','2 angles égaux'],['right','triangle rectangle','un angle droit','3 côtés']].map(([triangleKind,name,first,second])=>({layout:'geo',figure:'triangle',dims:{bare:true,triangleKind},geoNameCard:true,propertyLines:[{label:'Nom',answer:name},{label:'Propriété 1',answer:first},{label:'Propriété 2',answer:second}],answer:`${name} ; ${first} ; ${second}`}))
 recipe.pages=[{...recipe.pages[0],domain:'tcm-csc',topic:'tcm-csc-test',exerciseType:'tcm-csc-ex17',count:2,libreItems:[csc,{...csc,answer:'carré ; carré ; carré ; carré'}]},
  {...recipe.pages[0],domain:'géométrie',topic:'figures',exerciseType:'figures-proprietes',count:1,libreItems:[{layout:'geo',figure:'circle',propertyLines:properties,answer:properties.map(({label,answer})=>`${label} : ${answer}`).join(' · ')}]},
  {...recipe.pages[0],domain:'géométrie',topic:'figures',exerciseType:'figures-nommer',count:1,libreItems:[{layout:'geo',figure:'cube',answer:'cube'}]},
- {...recipe.pages[0],domain:'tcm-cfr',topic:'tcm-cfr-test',exerciseType:'tcm-cfr-ex16',count:1,libreItems:[cfrRectangle],extraBlocks:[{topic:'tcm-cfr-test',exerciseType:'tcm-cfr-ex17',count:2,columns:1,libreItems:[cfrPentagon,{...cfrPentagon,answer:'trapèze'}]}]}]
+ {...recipe.pages[0],domain:'tcm-cfr',topic:'tcm-cfr-test',exerciseType:'tcm-cfr-ex16',count:1,libreItems:[cfrRectangle],extraBlocks:[{topic:'tcm-cfr-test',exerciseType:'tcm-cfr-ex17',count:2,columns:1,libreItems:[cfrPentagon,{...cfrPentagon,answer:'trapèze'}]}]},
+ {...recipe.pages[0],domain:'tcm-cfr',topic:'tcm-cfr-test',exerciseType:'tcm-cfr-ex16',count:3,libreItems:triangles}]
 const original=structuredClone(recipe)
 const saved={id:'recognition-source',name:'Formes et propriétés',domains:['tcm-csc','géométrie','tcm-cfr'],recipe,createdAt:'2026-11-12T00:00:00Z',updatedAt:'2026-11-12T00:00:00Z'}
 const browser=await chromium.launch({executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH||undefined,args:['--no-sandbox']})
@@ -62,10 +64,21 @@ async function fits(page,width,height) {
  const scan=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa','wcag22aa']).analyze()
  assert.deepEqual(scan.violations.map(v=>({id:v.id,targets:v.nodes.map(n=>n.target)})),[])
 }
+async function checkTriangle(page,kind,target=page.locator('.ci-figure polygon')) {
+ const measured=await target.evaluate(polygon=>{
+  const matrix=polygon.getScreenCTM(),points=[...polygon.points].map(p=>new DOMPoint(p.x,p.y).matrixTransform(matrix))
+  const length=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y),sides=points.map((p,i)=>length(p,points[(i+1)%3])),epsilon=Math.max(...sides)*1e-6
+  const equal=Math.max(...sides.map(value=>sides.filter(other=>Math.abs(other-value)<epsilon).length))
+  const right=points.filter((p,i)=>{const a=points[(i+1)%3],b=points[(i+2)%3];return Math.abs((a.x-p.x)*(b.x-p.x)+(a.y-p.y)*(b.y-p.y))<epsilon*epsilon}).length
+  return {equal:equal===1?0:equal,right}
+ })
+ assert.deepEqual(measured,kind==='equilateral'?{equal:3,right:0}:kind==='isosceles'?{equal:2,right:0}:{equal:0,right:1})
+}
 try {
+ if(process.env.RECOGNITION_PRINT_ONLY!=='1') {
  for(const [width,height] of [[390,844],[1366,768],[360,640]]) {
   const {context,page}=await setup(width,height)
-  assert.equal(await page.locator('.ci-question-list fieldset > label').count(),13)
+  assert.equal(await page.locator('.ci-question-list fieldset > label').count(),22)
   await page.getByText(/formes CSC et leur corrigé ne correspondent plus/).waitFor({state:'attached'})
   await page.getByRole('checkbox',{name:'Activer le minuteur',exact:true}).uncheck()
   await page.locator('.ci-launch').click();await page.locator('.ci-answer').first().waitFor()
@@ -82,34 +95,56 @@ try {
   await navigate(page,11);await reveal(page,'4');await fits(page,width,height)
   await navigate(page,12);await reveal(page,'pentagone');await fits(page,width,height)
   await page.screenshot({path:`docs/interactive/screenshots/cfr-recognition-${width}.png`})
-  results.push({viewport:`${width}x${height}`,class:'four CSC shape names; circle properties including infinitely many axes; cube name; CFR opposite-side and right-angle properties and pentagon name',resume:'same circle correction and public figure',layout:'figure, cards and controls inside viewport without overlap; axe passes'})
+  for(const [index,kind,name,angleIndex,angles] of [[13,'equilateral','triangle équilatéral',15,'3'],[16,'isosceles','triangle isocèle',18,'2'],[19,'right','triangle rectangle',20,'1']]) {
+   await navigate(page,index);await reveal(page,name);await checkTriangle(page,kind);await fits(page,width,height)
+   if(kind==='equilateral')await page.screenshot({path:`docs/interactive/screenshots/triangles-${width}.png`})
+   await navigate(page,angleIndex);await reveal(page,angles);await fits(page,width,height)
+  }
+  results.push({viewport:`${width}x${height}`,class:'CSC and generic shapes, CFR properties, and all three specific triangle names/angle facts',geometry:'projected SVG side lengths and right angles verified at actual screen size',resume:'same circle correction and public figure',layout:'figure, cards and controls inside viewport without overlap; axe passes'})
   await context.close()
  }
  const {context,page}=await setup(390,844)
  await button(page,'Tout désélectionner').click()
- for(const index of [10,11,12])await page.locator('.ci-question-list fieldset > label').nth(index).locator('input').check()
+ for(const index of [14,18,20])await page.locator('.ci-question-list fieldset > label').nth(index).locator('input').check()
  await button(page,'Mode de jeu').click()
  await page.getByRole('spinbutton',{name:'Temps de réflexion (secondes)',exact:true}).fill('5')
  await button(page,'Régler le minuteur').click();await page.getByRole('spinbutton',{name:'Temps entre les questions (secondes)',exact:true}).fill('1');await button(page,'Fermer les réglages').click()
  await page.clock.install();await page.clock.pauseAt(new Date(Date.now()+1000))
  await page.locator('.ci-launch').click();await page.locator('.ci-answer:enabled').first().waitFor()
- await card(page,'côtés opposés').click();await page.locator('.ci-answer-correct').waitFor();await page.clock.runFor(1100)
- await page.locator('.ci-answer:enabled').first().waitFor();await page.locator('.ci-answer').filter({hasNot:page.getByText('4',{exact:true})}).first().click();await page.locator('.ci-answer-incorrect').waitFor()
- assert.equal(await page.locator('.ci-answer-key .ci-answer-content').innerText(),'4')
+ await card(page,'3').click();await page.locator('.ci-answer-correct').waitFor();await page.clock.runFor(1100)
+ await page.locator('.ci-answer:enabled').first().waitFor();await page.locator('.ci-answer').filter({hasNot:page.getByText('2',{exact:true})}).first().click();await page.locator('.ci-answer-incorrect').waitFor()
+ assert.equal(await page.locator('.ci-answer-key .ci-answer-content').innerText(),'2')
  await page.clock.runFor(1100);await page.locator('.ci-answer:enabled').first().waitFor();await page.clock.runFor(5100);await page.locator('.ci-reveal').waitFor()
- assert.equal(await page.locator('.ci-answer-key .ci-answer-content').innerText(),'pentagone')
+ assert.equal(await page.locator('.ci-answer-key .ci-answer-content').innerText(),'1')
  assert.equal((await page.locator('.ci-correction-status').innerText()).trim(),'Temps écoulé')
  await page.clock.runFor(1100);await page.locator('.ci-summary').waitFor();assert.equal(await page.locator('.ci-summary-questions > p').count(),3)
- await context.close();results.push({solo:'correct opposite sides, incorrect right-angle count and timeout on pentagon; automatic one-second progression'})
+ await context.close();results.push({solo:'three equal sides accepted, wrong equal-angle count corrected, timeout on the right angle; automatic one-second progression'})
  const local=await setup(390,844)
- await button(local.page,'Tout désélectionner').click();await local.page.locator('.ci-question-list fieldset > label').nth(12).locator('input').check()
+ await button(local.page,'Tout désélectionner').click();await local.page.locator('.ci-question-list fieldset > label').nth(13).locator('input').check()
  await local.page.getByRole('checkbox',{name:'Activer le minuteur',exact:true}).uncheck()
  await button(local.page,'Compétition').click();await button(local.page,'Préparer le défi local').click()
  await button(local.page,'Ajouter cette mascotte').click();await button(local.page,'Renard').click();await button(local.page,'Ajouter cette mascotte').click()
  await button(local.page,'Commencer la compétition').click();await button(local.page,'Je suis prêt').click();await local.page.locator('.ci-answer:enabled').first().waitFor();await local.context.setOffline(true)
- await card(local.page,'pentagone').click();await button(local.page,'Je suis prêt').click();await local.page.locator('.ci-answer').filter({hasNot:local.page.getByText('pentagone',{exact:true})}).first().click();await local.page.locator('.ci-answer-key').waitFor()
- assert.equal(await local.page.locator('.ci-answer-key .ci-answer-content').innerText(),'pentagone');await fits(local.page,390,844);await local.context.close()
+ await card(local.page,'triangle équilatéral').click();await button(local.page,'Je suis prêt').click();await local.page.locator('.ci-answer').filter({hasNot:local.page.getByText('triangle équilatéral',{exact:true})}).first().click();await local.page.locator('.ci-answer-key').waitFor()
+ assert.equal(await local.page.locator('.ci-answer-key .ci-answer-content').innerText(),'triangle équilatéral');await checkTriangle(local.page,'equilateral');await fits(local.page,390,844);await local.context.close()
  assert.deepEqual(recipe,original);assert.ok(methods.every(method=>method==='GET'));assert.deepEqual(errors,[])
- results.push({competition:'six CFR pentagon-name cards, public bare figure, two fixed mascots, offline local turns and correction',sourceTemplate:'unchanged',serverWrites:0,errors})
+ results.push({competition:'six triangle-name cards, exact equilateral drawing, two fixed mascots, offline local turns and correction',sourceTemplate:'unchanged',serverWrites:0,errors})
  await writeFile('docs/interactive/recognition-results.json',JSON.stringify(results,null,2)+'\n');console.log(JSON.stringify(results,null,2))
+ }
+ const paper=await setup(1366,1000)
+ const paperRecipe={...recipe,pages:[{...recipe.pages.at(-1),columns:1,exerciseNo:16}],printCorrections:true,hideChrome:false}
+ await paper.page.evaluate(source=>{history.pushState({clairfleFiche:{id:'triangles-paper',name:'Triangles CFR vérifiés',recipe:source}},'','/generateur');window.dispatchEvent(new PopStateEvent('popstate'))},paperRecipe)
+ await paper.page.locator('.a4-frame .worksheet-sheet').first().waitFor({timeout:120000})
+ await paper.page.evaluate(()=>document.fonts.ready)
+ await paper.page.emulateMedia({media:'print'})
+ const printed=paper.page.locator('.print-only-sheets .worksheet-sheet')
+ assert.equal(await printed.count(),2)
+ for(const sheet of await printed.all())for(const [index,kind] of ['equilateral','isosceles','right'].entries())await checkTriangle(paper.page,kind,sheet.locator('.geometry-figure polygon').nth(index))
+ const overflow=await printed.evaluateAll(sheets=>sheets.flatMap((sheet,index)=>{const bottom=sheet.querySelector('.doc-footer').getBoundingClientRect().top;return [...sheet.querySelectorAll('.exercise-block')].filter(block=>block.getBoundingClientRect().bottom>bottom+1).map(()=>index+1)}))
+ assert.deepEqual(overflow,[])
+ const pdf=await paper.page.pdf({path:'docs/interactive/triangles-a4-exemple.pdf',preferCSSPageSize:true,printBackground:true})
+ assert.equal([...pdf.toString('latin1').matchAll(/\/Type\s*\/Page\b/g)].length,2)
+ assert.deepEqual(recipe,original);assert.ok(methods.every(method=>method==='GET'));assert.deepEqual(errors,[])
+ await paper.context.close()
+ await writeFile('docs/interactive/triangles-print-results.json',JSON.stringify({pages:2,figures:'three mathematically checked triangle kinds on student and answer sheets',overflow,sourceTemplate:'unchanged',errors},null,2)+'\n')
 } finally {await browser.close();await server.close()}

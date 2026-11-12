@@ -20,7 +20,7 @@ try {
  const base=demoRecipe()
  const families=[['géométrie','figures-nommer',16],['géométrie','figures-proprietes',13],['tcm-csc','tcm-csc-ex17',2]]
  const configFor=(domain,type,count)=>({...defaultPage(domain),topic:exerciseTypes.find(entry=>entry.id===type).topic,exerciseType:type,count,extraBlocks:undefined,libreItems:undefined})
- const supportedProperties=new Set(['square','rectangle','rhombus','parallelogram','circle','oval'])
+ const supportedProperties=new Set(['square','rectangle','rhombus','parallelogram','circle','oval','triangle'])
  const gameFor=(type,...items)=>convertRecipe({...base,pages:[{...configFor(type.startsWith('tcm')?'tcm-csc':'géométrie',type,items.length),libreItems:items}]})
  const keyOf=(game,q)=>q.choices.find(choice=>choice.id===game.corrections[q.id].choiceId).text
 
@@ -29,9 +29,9 @@ try {
    const config={...configFor(domain,type,count),difficulty},recipe={...base,pages:[config],seed,libreMode:false},before=structuredClone(recipe)
    const items=buildPage(config,seed).blocks.flatMap(block=>block.items),paper=seed===1?structuredClone(buildWorksheets(recipe.pages,seed)):undefined
    const game=convertRecipe(recipe)
-   const expected=type==='figures-nommer'?13:type==='figures-proprietes'?23:8
+   const expected=type==='figures-nommer'?16:type==='figures-proprietes'?39:8
    assert.equal(game.questions.length,expected,JSON.stringify(game.issues))
-   assert.equal(game.issues.length,type==='figures-nommer'?3:type==='figures-proprietes'?7:0)
+   assert.equal(game.issues.length,type==='figures-proprietes'?3:0)
    for(const q of game.questions) {
     const item=items[q.source.item],part=q.source.part
     assert.equal(q.figure.type,type==='tcm-csc-ex17'?item.cscTask.figures[part]:item.figure)
@@ -49,12 +49,12 @@ try {
   }
  })
  await test('reviewed simple property facts include zero, four equal sides, opposite sides and infinitely many circle axes',()=>{
-  const facts={square:['carré','4','4','4'],rectangle:['rectangle','côtés opposés','4','2'],rhombus:['losange','4','égaux','2'],parallelogram:['parallélogramme','côtés opposés','0','0'],circle:['cercle','0','0','une infinité'],oval:['ovale','0','2']}
+  const facts={square:['carré','4','4','4'],rectangle:['rectangle','côtés opposés','4','2'],rhombus:['losange','4','égaux','2'],parallelogram:['parallélogramme','côtés opposés','0','0'],circle:['cercle','0','0','une infinité'],oval:['ovale','0','2'],'triangle:equilateral':['triangle équilatéral','3','0','3'],'triangle:isosceles':['triangle isocèle','2','0','1'],'triangle:right':['triangle rectangle','0','1','0'],'triangle:scalene':['triangle quelconque','0','0','0']}
   for(let index=0;index<13;index++) {
    const item=tryGenerateFigure('figures-proprietes',index)
    if(!supportedProperties.has(item.figure))continue
    const game=gameFor('figures-proprietes',item)
-   assert.deepEqual(game.questions.map(q=>keyOf(game,q)),facts[item.figure])
+   assert.deepEqual(game.questions.map(q=>keyOf(game,q)),facts[item.figure==='triangle'?`triangle:${item.dims.triangleKind}`:item.figure])
    for(const q of game.questions)assert.equal(q.figure.dims.answer,undefined)
   }
  })
@@ -63,7 +63,7 @@ try {
   const bad=[
    ['figures-nommer',{...name,answer:'rectangle'}],['figures-nommer',{...name,dims:{side:3}}],
    ['figures-nommer',{...name,dims:{triangleKind:'equilateral'}}],['figures-nommer',{...name,prompt:'Le nom est carré.'}],
-   ['figures-nommer',{...name,figure:'untrusted'}],['figures-nommer',tryGenerateFigure('figures-nommer',3)],
+   ['figures-nommer',{...name,figure:'untrusted'}],['figures-nommer',{...tryGenerateFigure('figures-nommer',3),dims:{triangleKind:'unverified'}}],
    ['figures-proprietes',{...properties,answer:'Nom : rectangle'}],
    ['figures-proprietes',{...properties,propertyLines:properties.propertyLines.map((line,index)=>index===2?{...line,answer:'3'}:line)}],
    ['figures-proprietes',{...properties,propertyLines:[...properties.propertyLines].reverse()}],
