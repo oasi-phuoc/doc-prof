@@ -45,4 +45,4 @@ Les deux leurres du trio « Quel plat espagnol est cité ? » sont remplacés pa
 
 `node scripts/check-tcf-pe-dialogue-consignes.mjs` vérifie les 50 dialogues, la conservation des situations et échanges, ainsi que le rendu des anciennes recettes TPF/CSC/CFR. Les tests d’évaluation PE et TypeScript passent.
 
-Galerie `/images` : les 5 772 fichiers image présents dans le dépôt sont désormais recherchables et téléchargeables, individuellement ou en ZIP par sélection et filtres. Les deux tartelettes aux fraises sont sauvegardées et relues ; leur trio CO attend encore ses deux leurres, sans activation anticipée.
+Galerie `/images` : les 5 777 fichiers image présents dans le dépôt sont désormais recherchables et téléchargeables, individuellement ou en ZIP par sélection et filtres. Les deux tartelettes aux fraises sont sauvegardées et relues ; leur trio CO attend encore ses deux leurres, sans activation anticipée.
