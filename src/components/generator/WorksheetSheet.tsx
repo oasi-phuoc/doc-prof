@@ -22,6 +22,8 @@ import type {
 } from '@/math/types'
 import type { TcfTypeReponse } from '@/tcf/types'
 import { collectCorrigeAudioSrcs } from '@/tcf/download-audios'
+import { hasMathAudioPrompts } from '@/math/audio-prompts'
+import { MathExerciseAudio } from '@/components/math/MathExerciseAudio'
 import { TcfFormMarginIcons } from '@/components/tcf/TcfFormIcons'
 import {
   isGramDualFormExercise,
@@ -278,6 +280,7 @@ export function WorksheetSheet({
           return (
             <section
               className="exercise-block"
+              data-exercise-type={block.exerciseType}
               key={`${block.exerciseType}-${block.exerciseIndex}`}
               style={
                 blankPx != null
@@ -290,7 +293,7 @@ export function WorksheetSheet({
                 <div className="exercise-heading-main">
                   <div className="exercise-heading-title-row">
                     <h3>{blockHeading}</h3>
-                    {mode === 'answers' && !coAudioInBanner(block)
+                    {mode === 'answers' && !coAudioInBanner(block) && !hasMathAudioPrompts(block.exerciseType)
                       ? blockCorrigeAudios(block).map((src) => (
                           <audio
                             key={src}
@@ -362,6 +365,7 @@ export function WorksheetSheet({
                       <span className="instruction-points">{pointsBadge}</span>
                     ) : null}
                   </div>
+                  {mode==='answers' && hasMathAudioPrompts(block.exerciseType) && <MathExerciseAudio block={block}/>}
                   {block.instruction ? (
                     <p className="exercise-instruction">{renderSheetCopy(block.instruction)}</p>
                   ) : null}
@@ -439,7 +443,7 @@ export function WorksheetSheet({
                 {block.items.map((item, index) => {
                   const padLeft =
                     item.layout === 'algebra' ? Math.max(0, maxTokens - tokenizeAlgebra(item.prompt ?? '').length) : 0
-                  const draftGrid = block.problemDraftGrids?.[index] ?? page.problemDraftGrids?.[index] ?? true
+                  const draftGrid = block.problemDraftGrids?.[index] ?? page.problemDraftGrids?.[index] ?? !/^tcm-csc-ex(?:22|23|24)$/.test(block.exerciseType)
                   const oralAnswerMode =
                     block.oralAnswerModes?.[index] ?? page.oralAnswerModes?.[index] ?? item.answerMode ?? 'qcm'
                   const sourceIndex = index + (block.itemOffset ?? 0)
@@ -492,7 +496,7 @@ export function WorksheetSheet({
                       key={`${block.exerciseType}-${block.exerciseIndex}-${index}-${item.answer}-${tcfFormMode ?? ''}`}
                       item={item}
                       mode={mode}
-                      index={index}
+                      index={index + (/^tcm-csc-ex(?:10|11)$/.test(block.exerciseType) ? block.itemOffset ?? 0 : 0)}
                       algebraPadLeft={padLeft}
                       draftGrid={draftGrid}
                       onToggleDraftGrid={

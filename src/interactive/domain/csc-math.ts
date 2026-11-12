@@ -1,15 +1,21 @@
 import type { MathItem } from '@/math/types'
 import { buildCscProblem } from '@/tcm-csc/problems'
+import { CSC_SIGN_NAMES } from '@/tcm-csc/items'
 import type { Choice } from './types'
 
 type CscMath =
-  | { kind: 'operator'; prompt: string; choices: Choice[]; correctId: string; model: string }
+  | { kind: 'operator' | 'sign-name'; prompt: string; choices: Choice[]; correctId: string; model: string }
   | { kind: 'problem'; prompt: string; context: string; result: number; model: string }
   | { kind: 'invalid'; reason: string }
 
 /** Only explicit, consistent CSC data can produce an automatic game answer. */
 export function verifiedCscMath(item: MathItem): CscMath | undefined {
   const task = item.cscTask
+  if (task?.kind === 'sign-name') {
+    if (item.layout !== 'inline' || item.libreError || !Object.hasOwn(CSC_SIGN_NAMES,task.symbol) || item.prompt !== task.symbol || item.answer !== CSC_SIGN_NAMES[task.symbol]) return {kind:'invalid',reason:'Le signe et son nom ne correspondent plus. Validez la fiche avant de jouer.'}
+    const choices = Object.values(CSC_SIGN_NAMES).map((text,index)=>({id:`name${index}`,text}))
+    return {kind:'sign-name',prompt:`Comment se lit le signe « ${task.symbol} » ?`,choices,correctId:choices.find(choice=>choice.text===item.answer)!.id,model:`${task.symbol} : ${item.answer}`}
+  }
   if (task?.kind === 'problem') {
     try {
       const problem = buildCscProblem(task.templateId, task.a, task.b)

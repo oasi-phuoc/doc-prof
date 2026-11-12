@@ -7,6 +7,7 @@ import { buildCountIconsItem } from '@/math/count-icons'
 import { tryGenerateReperage } from '@/math/coord-reperage'
 import { tryGenerateLogiqueBlock } from '@/logique/generate'
 import { CSC_DEFAULT_PROBLEMS, rollCscProblem } from './problems'
+import { tryGenerateTcmCfrItems } from '@/tcm-cfr/items'
 
 export const CSC_FIGURES: readonly { value: Figure; label: string }[] = [
   { value: 'square', label: 'carré' }, { value: 'rectangle', label: 'rectangle' },
@@ -17,6 +18,7 @@ export const CSC_FIGURES: readonly { value: Figure; label: string }[] = [
 ]
 export const CSC_PLUS_AUDIO = '/lib/audio/nombre/plus.mp3'
 export const CSC_MINUS_AUDIO = '/lib/audio/nombre/moins.mp3'
+export const CSC_SIGN_NAMES = { '+': 'plus', '−': 'moins', '=': 'égal' } as const
 export const cscNumberParts = (value: number) => value === 0 ? ['/lib/audio/vocabulaire/objets/zéro.mp3'] : numberAudioParts(value)
 export const cscCalculationParts = (a: number, b: number, operation: '+' | '−') => [...numberAudioParts(a), operation === '+' ? CSC_PLUS_AUDIO : CSC_MINUS_AUDIO, ...numberAudioParts(b)]
 const uniqueNumbers = (rng: Rng, count: number, min: number, max: number) => shuffle(rng, Array.from({ length: max - min + 1 }, (_, i) => i + min)).slice(0, count)
@@ -33,7 +35,7 @@ function calculations(rng: Rng, count: number): MathItem[] {
   })
 }
 function numberGrid(rng: Rng): MathItem {
-  const numbers = uniqueNumbers(rng, 30, 0, 100), heard = shuffle(rng, numbers.filter((n) => n > 0)).slice(0, 5)
+  const numbers = uniqueNumbers(rng, 36, 0, 100), heard = shuffle(rng, numbers.filter((n) => n > 0)).slice(0, 5)
   const parts = heard.flatMap((n, i) => [...(i ? [SILENCE_6S_AUDIO] : []), ...numberAudioParts(n)])
   return { layout: 'csc-task', answer: heard.join(' ; '), audioParts: parts, cscTask: { kind: 'number-grid', numbers, heard } }
 }
@@ -41,7 +43,7 @@ function sequences(rng: Rng, count: number, help: boolean): MathItem[] {
   return Array.from({ length: count }, (_, i) => {
     const step = int(rng, 2, 10) * (i % 2 ? -1 : 1), start = step < 0 ? int(rng, -4 * step, 100) : int(rng, 0, 100 - 4 * step)
     const sequence = Array.from({ length: 5 }, (_, j) => String(start + j * step)), blankIndexes = i % 2 ? [1, 3] : [3, 4]
-    return { layout: 'sequence', prompt: help ? `Aide : ${step > 0 ? '+' : '−'}${Math.abs(step)}` : undefined, sequence, blankIndexes, answer: blankIndexes.map((j) => sequence[j]).join(' ; ') }
+    return { layout: 'sequence', prompt: help ? `${step > 0 ? '+' : '−'}${Math.abs(step)}` : undefined, ...(help ? { cscTask: { kind: 'sequence-hint' as const, step } } : {}), sequence, blankIndexes, answer: blankIndexes.map((j) => sequence[j]).join(' ; ') }
   })
 }
 function order(rng: Rng, count: number): MathItem[] {
@@ -58,12 +60,8 @@ function comparisons(rng: Rng, count: number, large: boolean): MathItem[] {
     return { layout: 'compare', left: String(sign === '>' ? b : a), right: String(sign === '=' ? a : sign === '>' ? a : b), answer: sign }
   })
 }
-function operators(rng: Rng, count: number): MathItem[] {
-  return shuffle(rng, Array.from({ length: count }, (_, i) => {
-    const operation = i % 3 === 1 || i % 3 === 2 && i % 2 ? '−' : '+', a = int(rng, 10, 90), b = int(rng, 1, operation === '+' ? 100 - a : a - 1)
-    const blank = i % 3 === 2 ? 'equals' : 'operator'
-    return { layout: 'csc-task', answer: blank === 'equals' ? '=' : operation, cscTask: { kind: 'operator', a, b, operation, blank } } as MathItem
-  }))
+function signNames(rng: Rng, count: number): MathItem[] {
+  return shuffle(rng, ['+', '−', '='] as const).slice(0, count).map(symbol => ({layout:'inline',prompt:symbol,answer:CSC_SIGN_NAMES[symbol],cscTask:{kind:'sign-name',symbol}}))
 }
 function columnOperations(rng: Rng, count: number, empty: boolean): MathItem[] {
   return Array.from({ length: count }, (_, i) => {
@@ -73,7 +71,7 @@ function columnOperations(rng: Rng, count: number, empty: boolean): MathItem[] {
     let a = int(rng, lo, operation === '+' ? hi - (small ? 1 : lo) : hi)
     let b = int(rng, small ? 1 : lo, small ? 9 : operation === '+' ? hi - a : a)
     if (operation === '−' && b > a) [a, b] = [b, a]
-    return withFixedColumnWidth(columnItem(operation, a, b, operation === '+' ? a + b : a - b, empty), 3)
+    return withFixedColumnWidth(columnItem(operation, a, b, operation === '+' ? a + b : a - b, empty), 5)
   })
 }
 function lengthTable(rng: Rng): MathItem {
@@ -85,6 +83,17 @@ function coordinates(rng: Rng, place: boolean): MathItem[] {
   return (tryGenerateReperage(config, rng)?.items ?? []).map((item) => ({ ...item, cscTask: { kind: 'coordinates-left' } }))
 }
 
+function connectingPoints(rng: Rng): MathItem {
+  const points: {label:string;x:number;y:number}[] = []
+  for (const label of ['A','B','C','D']) {
+    let x: number, y: number
+    do { x = int(rng,8,148); y = int(rng,8,72) } while (points.some(p => Math.hypot(p.x-x,p.y-y) < 16))
+    points.push({label,x,y})
+  }
+  const labeled = shuffle(rng,points).map((point,index)=>({...point,label:'ABCD'[index]!}))
+  return {layout:'csc-task',answer:'AB en rouge ; CD en bleu.',cscTask:{kind:'connect-points',points:labeled}}
+}
+
 export function tryGenerateTcmCscItems(typeId: string, count: number, rng: Rng, seed = 0): MathItem[] | null {
   if (!typeId.startsWith('tcm-csc-ex')) return null
   const n = Math.max(1, Math.min(100, count)), exercise = Number(typeId.slice(-2))
@@ -93,15 +102,16 @@ export function tryGenerateTcmCscItems(typeId: string, count: number, rng: Rng, 
   if (exercise === 3) return [numberGrid(rng)]
   if (exercise === 4 || exercise === 5) return sequences(rng, n, exercise === 4)
   if (exercise === 6) return order(rng, n)
-  if (exercise === 7 || exercise === 8) return comparisons(rng, n, exercise === 8)
-  if (exercise === 9) return operators(rng, n)
+  if (exercise === 7) return comparisons(rng, n, false)
+  if (exercise === 8) return tryGenerateTcmCfrItems('tcm-cfr-ex05', Math.min(2,n), rng, seed)
+  if (exercise === 9) return signNames(rng, n)
   if (exercise === 10 || exercise === 11) return columnOperations(rng, n, exercise === 11)
   if (exercise === 12 || exercise === 13) return [{ layout: 'symmetry-grid', symmetryFigure: pickSymmetryTemplate(rng), cscTask: { kind: 'copy', scale: exercise === 13 ? 2 : 1 }, answer: 'Figure reproduite dans le même sens.' }]
   if (exercise === 14) return [lengthTable(rng)]
-  if (exercise === 15) return [{ layout: 'csc-task', answer: 'AB en rouge ; CD en bleu.', cscTask: { kind: 'connect-points', points: ['A', 'B', 'C', 'D'].map((label, i) => ({ label, x: i % 2 ? int(rng, 95, 140) : int(rng, 15, 50), y: i < 2 ? int(rng, 12, 27) : int(rng, 45, 65) })) } }]
+  if (exercise === 15) return [connectingPoints(rng)]
   if (exercise === 16) return tryGenerateLogiqueBlock({ domain: 'logique', topic: 'logique', exerciseType: 'logique-suite-graphique', difficulty: 'moyen', count: Math.min(2, n), columns: 1 }, seed)?.items ?? []
   if (exercise === 17) return Array.from({ length: n }, () => {
-    const figures = shuffle(rng, [...CSC_FIGURES]).slice(0, 4)
+    const figures = shuffle(rng, CSC_FIGURES.filter(entry => ['square','rectangle','circle','triangle'].includes(entry.value)))
     return { layout: 'csc-task', cscTask: { kind: 'shape-names', figures: figures.map((entry) => entry.value) }, answer: figures.map((entry) => entry.label).join(' ; ') }
   })
   if (exercise === 18) return [{ ...buildCountIconsItem(rng), cscTask: { kind: 'large-count' } }]

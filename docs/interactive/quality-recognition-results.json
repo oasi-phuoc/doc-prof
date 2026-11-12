@@ -1,0 +1,62 @@
+{
+  "date": "2026-11-12",
+  "baseline": "7bb65146",
+  "scope": "Reconnaissance des formes CSC 17 et génériques, propriétés simples",
+  "unitTests": {
+    "passed": 237,
+    "failed": 0,
+    "newRecognitionTests": 8,
+    "realConfigurations": 900,
+    "newCscAudioTest": 1
+  },
+  "browser": {
+    "passed": [
+      "recognition-browser",
+      "geometry-browser",
+      "polygon-measures-browser",
+      "readability-browser",
+      "a4-regression"
+    ],
+    "all48StagesRun": false,
+    "report": "recognition-results.json",
+    "viewports": [
+      "390x844",
+      "1366x768",
+      "360x640"
+    ]
+  },
+  "behaviour": {
+    "class": "collective, four source shape names or six verified choices; correction only in cards",
+    "solo": "correct, wrong and timeout; automatic one-second advancement",
+    "resume": "same circle-axis question and correction after reload",
+    "competition": "public bare shapes; local offline turns after preparation; transport verified in domain tests",
+    "mobile": "complete figure remains visible; cards, figures and controls inside viewport without overlap; axe passes",
+    "templates": "CSC order renews; generic indexed figures stay the same while their cards vary; saved recipe unchanged",
+    "paper": "conversion leaves paper unchanged; CSC/CFR intentional audio/grid changes documented in separate 7bb65146 increment"
+  },
+  "inventory": {
+    "catalogTypes": 2074,
+    "variants": 2106,
+    "playableVariants": 710,
+    "automatic": 518,
+    "assisted": 68,
+    "teacherLed": 90,
+    "mixed": 34,
+    "generationErrors": 8
+  },
+  "limits": [
+    "Generic shape generator keeps its indexed figures between new seeds.",
+    "Three triangle subtypes and seven property variants are still signalled.",
+    "206 imported logic keys default to zero and require a verified correction before automatic scoring.",
+    "All 48 browser stages were not rerun; online Worker activation and physical devices remain separate."
+  ],
+  "checks": {
+    "appTypes": "passed",
+    "apiTypes": "passed",
+    "lint": "passed with existing warnings",
+    "productionBuild": "passed",
+    "bundleBudgets": "passed",
+    "a4Regression": "identical arithmetic/geometry witness against 0addb36d662842040cc8ed64e8b2c0ca81eac810; intentional column grid revisions are checked in the CSC/CFR increment",
+    "changedFilesSecrets": "Gitleaks 8.30.1, zero findings"
+  }
+}

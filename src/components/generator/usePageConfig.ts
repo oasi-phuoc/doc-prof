@@ -106,7 +106,7 @@ export function usePageConfig({
                 ? undefined
                 : fixed.phraseInstruction,
             problemDraftGrids: isProblemExercise(fixed.exerciseType)
-              ? resizeDraftGrids(fixed.problemDraftGrids, count)
+              ? resizeDraftGrids(fixed.problemDraftGrids, count, !/^tcm-csc-ex(?:22|23|24)$/.test(fixed.exerciseType))
               : undefined,
             oralAnswerModes: isOralComprehensionExercise(fixed.exerciseType)
               ? resizeOralAnswerModes(fixed.oralAnswerModes, count)
@@ -224,7 +224,7 @@ export function usePageConfig({
       current.map((page, index) => {
         if (index !== pageIndex) return page
         const block = pageBlocks(page)[targetBlock] ?? blockFromPage(page)
-        const grids = resizeDraftGrids(block.problemDraftGrids, block.count)
+        const grids = resizeDraftGrids(block.problemDraftGrids, block.count, !/^tcm-csc-ex(?:22|23|24)$/.test(block.exerciseType))
         grids[itemIndex] = !(grids[itemIndex] ?? true)
         return setPageBlock(page, targetBlock, { problemDraftGrids: grids })
       }),

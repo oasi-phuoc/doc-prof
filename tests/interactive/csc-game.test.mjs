@@ -15,6 +15,7 @@ try {
   const base = demoRecipe()
   function game(items, seed = 42) { return convertRecipe({ ...base, seed, pages: [{ ...base.pages[0], domain: 'tcm-csc', topic: 'tcm-csc-test', exerciseType: 'tcm-csc-ex22', count: items.length, extraBlocks: undefined, libreItems: items }] }) }
   function problemItem(id, a, b) { const p = buildCscProblem(id, a, b); return { layout: 'algebra', prompt: p.statement, answer: p.answer, cscTask: { kind: 'problem', templateId: id, a, b } } }
+  function legacyOperators(seed) { return Array.from({length:6},(_,index)=>{const operation=index%2?'−':'+',blank=index%3===2?'equals':'operator';return {layout:'csc-task',answer:blank==='equals'?'=':operation,cscTask:{kind:'operator',a:20+seed%50,b:7,operation,blank}}}) }
 
   await test('real CSC generator problems remain playable across 100 seeds', () => {
     for (let seed = 1; seed <= 100; seed++) for (const number of [22, 23, 24]) {
@@ -25,9 +26,9 @@ try {
     }
   })
 
-  await test('CSC operators retain exactly one correct source sign over 100 seeds', () => {
+  await test('legacy saved CSC operators retain exactly one correct source sign over 100 seeds', () => {
     for (let seed = 1; seed <= 100; seed++) {
-      const items = generateCscExercise('tcm-csc-ex09', 6, seed), converted = game(items, seed)
+      const items = legacyOperators(seed), converted = game(items, seed)
       assert.equal(converted.questions.length, 6); assert.deepEqual(converted.issues, [])
       for (const [index, question] of converted.questions.entries()) {
         const answer = converted.corrections[question.id]
@@ -88,7 +89,7 @@ try {
     ]) { const rejected = game([broken]); assert.equal(rejected.questions.length, 0); assert.ok(rejected.issues.length > 0) }
   })
   await test('ambiguous zero operators, corrupt signs and impossible sums are reported instead of auto-graded', () => {
-    const item = generateCscExercise('tcm-csc-ex09', 6, 42).find((entry) => entry.cscTask.blank === 'operator')
+    const item = legacyOperators(42).find((entry) => entry.cscTask.blank === 'operator')
     for (const broken of [
       { ...item, answer: '+' , cscTask: { ...item.cscTask, a: 3, b: 0, operation: '+' } },
       { ...item, cscTask: { ...item.cscTask, operation: '×' } },

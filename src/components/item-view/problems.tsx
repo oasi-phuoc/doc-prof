@@ -572,7 +572,7 @@ export function ConvertRow({ item, mode }: { item: MathItem; mode: PreviewMode }
   )
 }
 
-const OP_NAME_SYMBOLS = new Set(['+', '−', '-', '×', '÷', '*', '/'])
+const OP_NAME_SYMBOLS = new Set(['+', '−', '-', '×', '÷', '*', '/', '='])
 
 export function InlinePrompt({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const prompt = item.prompt ?? ''
@@ -590,7 +590,7 @@ export function InlinePrompt({ item, mode }: { item: MathItem; mode: PreviewMode
   const opSymbol = (item.op ?? prompt.trim()).replace(/-/g, '−').replace(/\*/g, '×').replace(/\//g, '÷')
   if (
     (item.op && item.a == null && item.b == null) ||
-    (OP_NAME_SYMBOLS.has(prompt.trim()) && !prompt.includes('='))
+    OP_NAME_SYMBOLS.has(prompt.trim())
   ) {
     return (
       <div className="op-name-row" aria-label="Nommer l’opération">

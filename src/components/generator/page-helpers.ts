@@ -516,8 +516,8 @@ export function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<Exe
   }
 }
 
-export function resizeDraftGrids(prev: boolean[] | undefined, count: number): boolean[] {
-  return Array.from({ length: count }, (_, i) => prev?.[i] ?? true)
+export function resizeDraftGrids(prev: boolean[] | undefined, count: number, fallback = true): boolean[] {
+  return Array.from({ length: count }, (_, i) => prev?.[i] ?? fallback)
 }
 
 export function resizeOralAnswerModes(

@@ -40,4 +40,9 @@
 .ci-readability-check li { margin: 8px 0; }
 .ci-readability-check progress { width: 100%; }
 .ci-readability-frame { position: fixed; top: 0; left: -100000px; border: 0; pointer-events: none; visibility: hidden; }
+@media screen and (max-width: 700px) {
+  /* A short shape question needs room for the complete drawing as well as its title. */
+  .ci-app.ci-playing .ci-round-question .ci-question:has(.ci-figure):not(:has(.ci-context)) { max-height: 55%; }
+  .ci-app.ci-playing .ci-round-question .ci-question:has(.ci-figure):not(:has(.ci-context)) .ci-figure { height: 65px; margin: 4px auto; }
+}
 @media print { .ci-readability-frame, .ci-text-dialog { display: none !important; } }

@@ -1,11 +1,11 @@
-.csc-number-grid { border-collapse: collapse; width: 100%; max-width: 150mm; margin: 8px auto; table-layout: fixed; }
-.csc-number-grid td { border: 1px solid var(--muted); text-align: center; height: 11mm; font-size: 17pt; }
+.csc-number-grid { border-collapse: collapse; width: 108mm; height: 108mm; margin: 8px auto; table-layout: fixed; }
+.csc-number-grid td { border: 1px solid var(--muted); text-align: center; width: 18mm; height: 18mm; padding: 0; font-size: 17pt; }
 .csc-number-grid td span { display: inline-grid; place-items: center; width: 10mm; height: 10mm; }
 .csc-heard { border: 2px solid #174eae; border-radius: 50%; }
 .csc-operator { display: flex; align-items: baseline; justify-content: center; gap: 10px; font-size: 17pt; padding: 6px 0; }
 .csc-operator .answer-line-field { width: 2ch; min-width: 2ch; }
-.csc-shape-names { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; width: 100%; }
-.csc-shape-names > div { text-align: center; min-width: 0; }
+.csc-shape-names { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6mm; width: 100%; }
+.csc-shape-names > div { text-align: center; min-width: 0; border: 1.5px solid var(--muted); padding: 4mm; }
 .csc-name-figure { height: 28mm; width: 100%; }
 .csc-shape-names .answer-line-field { width: 100%; font-size: 11pt; }
 .csc-connect svg { display: block; width: 100%; height: 75mm; }
@@ -19,11 +19,16 @@
 .csc-length-table th, .csc-length-table td { border: 1px solid var(--muted); padding: 6px 10px; text-align: center; }
 .csc-length-table th:first-child { text-align: left; }
 .csc-length-check { display: inline-grid; place-items: center; width: 5mm; height: 5mm; border: 1px solid var(--ink); font-size: 12pt; line-height: 1; }
-.worksheet-sheet .exercise-item .count-icons-block.is-csc-large > .count-icons-frame { height: 195mm; max-height: 195mm; aspect-ratio: auto; }
+.worksheet-sheet .exercise-item .count-icons-block.is-csc-large > .count-icons-frame { height: 97.5mm; max-height: 97.5mm; aspect-ratio: auto; }
 .worksheet-sheet .coord-block.is-csc-left { display: flex; flex-direction: row-reverse; align-items: center; gap: 5mm; }
 .worksheet-sheet .coord-block.is-csc-left .coord-side { flex: 1; min-width: 0; }
 .worksheet-sheet .coord-block.is-csc-left .coord-questions { display: grid; grid-template-columns: 1fr; gap: 10px; }
 .worksheet-sheet .coord-block.is-csc-left .coord-question { min-width: 0; }
+.worksheet-sheet .coord-block.is-csc-left > .coord-grid { flex: 0 0 auto; max-width: none; }
+.worksheet-sheet .coord-block.is-csc-left .coord-question { display: flex; align-items: center; flex-wrap: nowrap; gap: 2mm; }
+.worksheet-sheet .coord-block.is-csc-left .coord-question-icon { display: inline-flex; flex: 0 0 24px; }
+.worksheet-sheet .coord-block.is-csc-left .coord-pair { white-space: nowrap; font-size: 11pt; gap: 2px; }
+.worksheet-sheet .coord-block.is-csc-left .coord-pair .answer-line-field { min-width: 2ch; width: 2ch; flex: 0 0 2ch; font-size: inherit; }
 .csc-free-fields { display: grid; gap: 12px; }
 .csc-free-fields label { display: grid; gap: 5px; }
 .csc-free-fields input, .csc-free-fields select, .csc-free-fields textarea { width: 100%; max-width: 100%; min-height: 38px; font: inherit; }
@@ -32,4 +37,14 @@
 .csc-free-fields img { width: 100%; max-height: 120px; object-fit: contain; }
 .csc-problem-text { white-space: pre-line; }
 .csc-problem-text p { margin: 5px 0; }
-.csc-problem-working { min-height: 14mm; margin: 6px 0; border-bottom: 1px solid var(--muted); }
+.csc-sequence-hint { display: flex; align-items: center; gap: 5mm; }
+.csc-step-hint { border: 2px solid #6d3ca8; background: #f0e4ff; color: #492171; padding: 2mm 3mm; margin: 0; min-width: 14mm; text-align: center; font-weight: 700; print-color-adjust: exact; }
+.exercise-block:is([data-exercise-type="tcm-csc-ex04"], [data-exercise-type="tcm-csc-ex05"]) .exercise-grid { row-gap: calc(2mm + 10px); }
+.exercise-block:is([data-exercise-type="tcm-csc-ex04"], [data-exercise-type="tcm-csc-ex05"]) .sequence-row { gap: 16px; }
+.exercise-block[data-exercise-type="tcm-csc-ex16"] .exercise-grid { row-gap: 8mm; }
+.exercise-block[data-exercise-type="tcm-csc-ex16"] .exercise-item { border: 1.5px solid var(--muted) !important; padding: 4mm; border-radius: 2mm; }
+.exercise-block:is([data-exercise-type="tcm-csc-ex10"], [data-exercise-type="tcm-csc-ex11"]) .digit-cell { width: 42px; height: 42px; flex: 0 0 42px; font-size: 17px; }
+.exercise-block:is([data-exercise-type="tcm-csc-ex10"], [data-exercise-type="tcm-csc-ex11"]) .digit-cell.carry { height: 27px; font-size: 12px; }
+.math-exercise-audios { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0; }
+.math-prompt-audio { display: grid; gap: 3px; font-size: 11px; }
+.math-prompt-audio audio { width: 120px; height: 32px; }

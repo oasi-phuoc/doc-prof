@@ -141,13 +141,17 @@ function CellsScene({
   editable,
   onPlace,
   onRemove,
+  cellScale = 1,
+  shapeColors,
 }: {
   scene: CoordScene
   editable?: boolean
   onPlace?: (x: number, y: number) => void
   onRemove?: (x: number, y: number) => void
+  cellScale?: number
+  shapeColors?: Partial<Record<CoordShape,string>>
 }) {
-  const cellMm = scene.cellMm ?? 8
+  const cellMm = (scene.cellMm ?? 8) * cellScale
   const { padL, padR, padT, padB } = mmPads('cells')
   const gridW = scene.cols * cellMm
   const gridH = scene.rows * cellMm
@@ -221,7 +225,7 @@ function CellsScene({
                 />
               ) : null}
               {mark ? (
-                <g fill="currentColor" stroke="currentColor" strokeWidth={0.22} strokeLinejoin="round">
+                <g data-coord-shape={mark.kind} style={{color:shapeColors?.[mark.kind]}} fill="currentColor" stroke="currentColor" strokeWidth={0.22} strokeLinejoin="round">
                   <CoordShapeGlyph kind={mark.kind} x={cx} y={cy} size={glyph} />
                   {mark.label ? (
                     <text x={cx + 1.8} y={cy - 1.6} className="point-label" fontSize={3.4}>
@@ -806,6 +810,8 @@ export function CoordGrid({
   onPlace,
   onPlaceOrigin,
   onRemove,
+  cellScale = 1,
+  shapeColors,
 }: {
   point?: Pt
   pointImage?: Pt
@@ -816,6 +822,8 @@ export function CoordGrid({
   onPlace?: (x: number, y: number) => void
   onPlaceOrigin?: (col: number, row: number) => void
   onRemove?: (x: number, y: number) => void
+  cellScale?: number
+  shapeColors?: Partial<Record<CoordShape,string>>
 }) {
   if (scene?.variant === 'polygon') return <PolygonScene scene={scene} />
   if (scene?.variant === 'polar') return <PolarScene scene={scene} />
@@ -837,7 +845,7 @@ export function CoordGrid({
     )
   }
   if (scene?.variant === 'cells') {
-    return <CellsScene scene={scene} editable={editable} onPlace={onPlace} onRemove={onRemove} />
+    return <CellsScene scene={scene} editable={editable} onPlace={onPlace} onRemove={onRemove} cellScale={cellScale} shapeColors={shapeColors} />
   }
 
   const ticks = Array.from({ length: 2 * RANGE + 1 }, (_, i) => i - RANGE)

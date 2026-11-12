@@ -203,10 +203,8 @@ function genEx04(rng: Rng, count: number): MathItem[] {
 }
 
 /** Ex. 5 — décomposer 101–999 et 1001–9999. */
-function genEx05(rng: Rng): MathItem[] {
-  const small = int(rng, 101, 999)
-  const big = int(rng, 1001, 9999)
-  const decomp = (value: number, four: boolean): MathItem => {
+export function numberDecomposition(value: number): MathItem {
+    const four = value >= 1000
     const u = value % 10
     const d = Math.floor((value % 100) / 10)
     const c = Math.floor((value % 1000) / 100)
@@ -224,10 +222,13 @@ function genEx05(rng: Rng): MathItem[] {
       placeParts,
       answer: placeParts.join(' + '),
     }
-  }
+}
+function genEx05(rng: Rng): MathItem[] {
+  const small = int(rng, 101, 999)
+  const big = int(rng, 1001, 9999)
   return rng() < 0.5
-    ? [decomp(small, false), decomp(big, true)]
-    : [decomp(big, true), decomp(small, false)]
+    ? [numberDecomposition(small), numberDecomposition(big)]
+    : [numberDecomposition(big), numberDecomposition(small)]
 }
 
 /** Ex. 6 — nommer + × ÷ − (signe encadré, trait sur la même ligne). */

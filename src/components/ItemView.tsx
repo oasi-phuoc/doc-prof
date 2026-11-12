@@ -330,7 +330,7 @@ export function ItemView({
         {item.layout === 'fraction-shape' && <FractionShapeBlock item={item} mode={mode} />}
         {item.layout === 'geo' && <GeoBlock item={item} mode={mode} draftGrid={draftGrid} />}
         {item.layout === 'coord' && <CoordBlock item={item} mode={mode} coordEdit={coordEdit} />}
-        {item.layout === 'algebra' && item.cscTask?.kind === 'problem' && <CscProblemBlock item={item} mode={mode} />}
+        {item.layout === 'algebra' && item.cscTask?.kind === 'problem' && <CscProblemBlock item={item} mode={mode} draftGrid={draftGrid} />}
         {item.layout === 'algebra' && item.cscTask?.kind !== 'problem' && (
           <AlgebraRow item={item} mode={mode} padLeft={algebraPadLeft} draftGrid={draftGrid} />
         )}

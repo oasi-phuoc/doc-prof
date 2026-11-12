@@ -75,11 +75,11 @@ try {
     for (const item of invalid) { const adapted = adaptNumeracy(item, seedFor); assert.equal(adapted.items.length, 0, JSON.stringify(item)); assert.ok(adapted.issues.length) }
   })
 
-  await test('all sixteen real catalogue types work across 100 seeds at all three difficulty levels', () => {
+  await test('all fifteen comparison and sequence catalogue types work across 100 seeds at all three difficulty levels', () => {
     const families = [
       ['tpm', 'tpm-comparer'], ['tpm', 'tpm-suite'], ['tpm', 'tpm-grandes-suites'], ['tpm', 'tpm-suites-6'],
       ...['nombres-comparer', 'nombres-suite', 'addition-comparer', 'soustraction-comparer', 'fractions-comparer', 'decimaux-comparer', 'relatifs-comparer'].map((type) => ['algèbre', type]),
-      ...['tcm-csc-ex04', 'tcm-csc-ex05', 'tcm-csc-ex07', 'tcm-csc-ex08'].map((type) => ['tcm-csc', type]), ['tcm-cfr', 'tcm-cfr-ex04'],
+      ...['tcm-csc-ex04', 'tcm-csc-ex05', 'tcm-csc-ex07'].map((type) => ['tcm-csc', type]), ['tcm-cfr', 'tcm-cfr-ex04'],
     ]
     for (const [domain, type] of families) for (const difficulty of ['facile', 'moyen', 'difficile']) for (let seed = 1; seed <= 100; seed++) {
       const config = { ...defaultPage(domain), topic: exerciseTypes.find((entry) => entry.id === type).topic, exerciseType: type, difficulty, count: 6, libreItems: undefined }

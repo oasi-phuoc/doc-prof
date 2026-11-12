@@ -39,6 +39,8 @@ Les [carrés et rectangles](adr-0029-mesures-geometriques.md) proposent périmè
 
 Les [triangles et parallélogrammes](adr-0030-triangles-et-parallelogrammes.md) proposent aussi périmètres, aires, côtés et hauteurs à retrouver. Les triangles impossibles et les corrigés arrondis sont signalés ; les cotes cherchées restent masquées sur le dessin après correction.
 
+Les [décompositions et noms des signes CSC](adr-0031-decompositions-et-noms-des-signes.md) proposent une question par position du nombre, avec sa valeur complète, puis les mots « plus », « moins » et « égal ». Les positions nulles, corrigés, nouvelles graines et reprises sont vérifiés.
+
 ## Rituel et réglages
 
 Les six cartes pastel A–F utilisent des lettres et des formes de même taille. La palette se configure en trois colonnes et deux rangées ; l’impression produit des carrés de 88 mm sur deux colonnes et trois lignes A4. Dans un écran à deux questions, A–C sont empilés à gauche et D–F à droite. Changer une forme échange sa place avec la forme existante pour conserver six repères distincts.
