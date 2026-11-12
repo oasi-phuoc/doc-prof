@@ -1,13 +1,18 @@
-import type { PhraseCategory } from '@/math/types'
+import type { ExerciseType, PhraseCategory } from '@/math/types'
 
 export type GrammarLevel = 'A1' | 'A2' | 'B1'
-export type GrammarPresentation = 'choice' | 'gap' | 'correct' | 'order' | 'match'
+export type GrammarPresentation = 'choice' | 'gap' | 'correct' | 'order' | 'match' | 'transform'
 export type GrammarChoice = { id: string; text: string }
 type Source = { path: string; typeId: string; position: number; partition?: string }
-type BaseUnit = { id: string; prompt: string; answers: string[]; explanation: string; source: Source }
+type BaseUnit = {
+  id: string; prompt: string; answers: string[]; explanation: string; source: Source
+  givenVerb?: string
+  responseLines?: 1 | 2
+}
 export type GrammarUnit = BaseUnit & (
   | { kind: 'completion'; options: GrammarChoice[] }
   | { kind: 'correct' }
+  | { kind: 'transform'; targetSubject: string }
   | { kind: 'order'; tokens: Array<{ id: string; text: string; category: PhraseCategory }> }
   | { kind: 'match'; pairs: Array<{ id: string; left: string; right: string; sourceId: string }> }
 )
@@ -16,6 +21,7 @@ export type GrammarBank = {
   revision: string
   activityId: string
   subthemeId: string
+  topic?: ExerciseType['topic']
   level: GrammarLevel
   label: string
   objective: string

@@ -224,7 +224,7 @@ export function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<Exe
     grammarBankRevision: undefined,
     grammarSnapshot: undefined,
     grammarPreview: undefined,
-    ...(type.id==='gram-ex-etre-curriculum-a' ? defaultGrammarPilot(type.id) : {}),
+    ...(type.id.includes('-curriculum-') ? defaultGrammarPilot(type.id) : {}),
     columns: type.preferredColumns ?? 2,
     ...clearLibreContentFreeze(),
     ...(isDecompose
@@ -240,7 +240,7 @@ export function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<Exe
           : isPhraseChart || isVocabLearn || isJeux || isCalli || isTheory
             ? { count: 1 }
             : isGramEx
-              ? { count: type.id==='gram-ex-etre-curriculum-a'?2:quiSuisJeCount ?? (isGrammarReadingType(type.id) ? 5 : 6) }
+              ? { count: type.id.includes('-curriculum-')?2:quiSuisJeCount ?? (isGrammarReadingType(type.id) ? 5 : 6) }
             : isVocabPool
               ? { count: Math.min(6, Math.max(2, vocabSelected.length)) }
               : isPhrase

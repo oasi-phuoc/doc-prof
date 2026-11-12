@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-11",
+  "date": "2026-11-12",
   "baselineCommit": "ff743145ce6724a78cc898789c5aaf36a0004474",
   "reference": {
     "fixtures": 735,
@@ -7,8 +7,9 @@
     "protectedFiles": 256
   },
   "editorial": {
-    "reviewedResponseVariants": 250,
-    "humanApproval": "pending"
+    "reviewedResponseVariants": 650,
+    "humanApproval": "pending",
+    "reviewedActivityUnits": 500
   },
   "browser": {
     "results": [
@@ -57,7 +58,7 @@
     ],
     "errors": []
   },
-  "remaining": "This is the Être A1 pilot slice, not the whole curriculum.",
+  "remaining": "Être A1 et -er particuliers A1/A2 sont en pilote explicite. Les autres notions et activités du curriculum restent à implémenter.",
   "validation": {
     "typeScript": {
       "command": "node node_modules/typescript/bin/tsc -b --pretty false",
@@ -72,8 +73,12 @@
     "pilot": {
       "command": "node scripts/test-grammar-levels.cjs",
       "result": "passed",
-      "reviewedVariants": 250,
-      "paperAndBoardOptionOrder": "identical"
+      "reviewedVariants": 650,
+      "paperAndBoardOptionOrder": "identical",
+      "levels": [
+        "A1",
+        "A2"
+      ]
     },
     "existingInteractiveAdapters": {
       "command": "node --test tests/interactive/source-adapters.test.mjs",
@@ -81,15 +86,100 @@
       "tests": 7
     },
     "chrome": {
-      "command": "node tests/grammar/pilot-browser.mjs",
+      "command": "npm run test:grammar:browser",
       "result": "passed",
       "printedQuestionsPerPresentation": 100,
       "overflow": false,
       "javascriptErrors": 0,
       "emptyFilterPool": "clear notice; no broken session",
-      "classroomLaunch": "passed"
+      "classroomLaunch": "passed",
+      "presentationsChecked": 13,
+      "classroomTransform": "source and imposed subject visible"
+    },
+    "legacyGlobalCurriculum": {
+      "command": "node scripts/test-grammar-curriculum.cjs",
+      "result": "pre_existing_failure",
+      "firstFailingAssertion": "all theory ids retained: expects 99 visible theory documents; catalog already has 98",
+      "context": "a5 is resolved by the existing a4 alias. The old theory-source reference also predates earlier theory changes; this slice changes no theory file.",
+      "action": "Recorded without changing theory or weakening historical assertions. G0 compatibility and current pilot contracts are checked by their dedicated suites."
     }
   },
-  "upstreamIntegrated": "9fccae6fd197c287d31d93c114e3025446b96dd0",
-  "lastValidatedDate": "2026-11-12"
+  "upstreamIntegrated": "5e16eb69",
+  "lastValidatedDate": "2026-11-12",
+  "browserM5": {
+    "results": [
+      {
+        "levelSwitch": "A1 ↔ A2 preserves the response mode"
+      },
+      {
+        "type": "gram-ex-er-particuliers-qcm-conj",
+        "level": "A1",
+        "presentation": "choice",
+        "sheets": 34,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "type": "gram-ex-er-particuliers-qcm-conj",
+        "level": "A1",
+        "presentation": "gap",
+        "sheets": 26,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "type": "gram-ex-er-particuliers-qcm-conj",
+        "level": "A2",
+        "presentation": "choice",
+        "sheets": 34,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "type": "gram-ex-er-particuliers-qcm-conj",
+        "level": "A2",
+        "presentation": "gap",
+        "sheets": 26,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "type": "gram-ex-er-particuliers-ordre",
+        "level": "A1",
+        "presentation": "order",
+        "sheets": 26,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "type": "gram-ex-er-particuliers-ordre",
+        "level": "A2",
+        "presentation": "order",
+        "sheets": 50,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "type": "gram-ex-er-particuliers-corriger-erreur",
+        "level": "A2",
+        "presentation": "correct",
+        "sheets": 50,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "type": "gram-ex-er-particuliers-curriculum-t",
+        "level": "A2",
+        "presentation": "transform",
+        "sheets": 50,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "classroomTransform": "source and target subject preserved",
+        "selectedQuestions": 3
+      }
+    ],
+    "errors": []
+  }
 }

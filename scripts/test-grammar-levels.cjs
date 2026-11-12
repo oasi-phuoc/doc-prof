@@ -16,12 +16,14 @@ const {typeChoicesForBlock}=load(root+'/src/components/generator/generator-deriv
 assert(typeChoicesForBlock('grammaire',base()).some(t=>t.id==='gram-ex-etre-curriculum-a'))
 assert(!typeChoicesForBlock('grammaire',{...base(),exerciseType:'gram-ex-avoir-qcm-conj'}).some(t=>t.id==='gram-ex-etre-curriculum-a'))
 const recipeInput=pages=>({pages,seed:839,institutional:{},evalMode:false,pointsPerQuestion:1,libreMode:false,libreSnapshot:null})
+const targetRegistry=load(root+'/docs/grammaire/implementation/target-registry.json')
 let variants=0
 for (const bank of banks) {
  assert.equal(bank.units.length,50)
  assert.equal(bank.review.humanReview,'pending')
  for (const presentation of bank.presentations) {
-  const block={...base(bank.activityId),count:50,grammarPresentation:presentation}
+  assert.equal(targetRegistry.offerings.filter(o=>o.activityId===bank.activityId&&o.level===bank.level&&o.presentation===presentation).length,1,'A pilot offering must belong to the agreed curriculum.')
+  const block={...base(bank.activityId),count:50,grammarLevel:bank.level,grammarBankRevision:bank.revision,grammarPresentation:presentation}
   const selected=select(block,839)
   assert(isGrammarSnapshot(selected))
   assert.equal(selected.questions.length,50)
@@ -39,6 +41,17 @@ for (const bank of banks) {
    if(presentation==='order') {
     assert.notDeepEqual(q.tokens.map(t=>t.text),q.unit.tokens.map(t=>t.text))
     assert.equal(adapted.items[0].mode,'sequence')
+   }
+   if(q.unit.givenVerb) {
+    if(presentation==='choice'||presentation==='gap') assert(adapted.items[0].prompt.includes(`___ (${q.unit.givenVerb})`))
+    else assert((adapted.items[0].prompt+' '+adapted.items[0].instruction).includes(`(${q.unit.givenVerb})`))
+   }
+   if(presentation==='transform') {
+    assert.equal(adapted.items[0].teacherLed,true)
+    assert(adapted.items[0].instruction.includes(q.unit.targetSubject))
+    assert(adapted.items[0].prompt.includes(`Réécrivez avec le sujet « ${q.unit.targetSubject} ».`))
+    assert.equal(adapted.items[0].correctId,undefined)
+    assert(adapted.items[0].model.includes(q.unit.answers[0]))
    }
   }
   const sheets=buildWorksheets([block],839)
@@ -63,6 +76,40 @@ for (const bank of banks) {
   variants+=selected.questions.length
  }
 }
+// m5 follows the approved matrix: Q/L and order at both levels, C/T at A2.
+const m5='gram-ex-er-particuliers-'
+const m5Banks=banks.filter(b=>b.activityId.startsWith(m5))
+assert.equal(m5Banks.length,6)
+assert.equal(m5Banks.reduce((sum,b)=>sum+b.presentations.length*50,0),400)
+const {grammarBanksForType,GRAMMAR_NEW_PILOT_TYPES}=load(root+'/src/grammaire/curriculum/registry.ts')
+assert.deepEqual(grammarBanksForType(m5+'corriger-erreur').map(b=>b.level),['A2'])
+assert.deepEqual(grammarBanksForType(m5+'curriculum-t').map(b=>b.level),['A2'])
+assert.equal(GRAMMAR_NEW_PILOT_TYPES.filter(t=>t.id===m5+'curriculum-t').length,1)
+assert.equal(typeChoicesForBlock('grammaire',base(m5+'qcm-conj')).filter(t=>t.id===m5+'curriculum-t').length,1)
+assert(!typeChoicesForBlock('grammaire',base()).some(t=>t.id===m5+'curriculum-t'))
+const grade=(suffix,level)=>{
+ const b=grammarBanksForType(m5+suffix).find(b=>b.level===level)
+ return {...base(b.activityId),grammarLevel:level,grammarBankRevision:b.revision}
+}
+for(const level of ['A1','A2']) {
+ const block=grade('qcm-conj',level)
+ const choice=select(block,71),gap=select({...block,grammarPresentation:'gap'},71)
+ assert.deepEqual(choice.questions.map(q=>q.unit),gap.questions.map(q=>q.unit),'QCM and gap use the same sources at each level.')
+}
+const a2=grade('qcm-conj','A2'),a1=grade('qcm-conj','A1')
+assert.notDeepEqual(select(a1,71).questions.map(q=>q.id),select(a2,71).questions.map(q=>q.id))
+assert.throws(()=>select({...a2,grammarLevel:'B1'},71),e=>e.code==='GRAMMAR_ACTIVITY_UNAVAILABLE')
+const fullOrder=select({...grade('ordre','A2'),count:50},71)
+assert(fullOrder.questions.every(q=>q.tokens.every(t=>t.category!=='negation')))
+const transform=buildFicheRecipe(recipeInput([{...grade('curriculum-t','A2'),count:50}]))
+const malformedTransform=structuredClone(transform)
+delete malformedTransform.pages[0].grammarSnapshot.questions[0].unit.targetSubject
+assert.equal(parseFicheRecipe(malformedTransform),null)
+const malformedHint=structuredClone(transform)
+malformedHint.pages[0].grammarSnapshot.questions[0].unit.givenVerb=''
+assert.equal(parseFicheRecipe(malformedHint),null)
+const payForms=banks.flatMap(b=>b.units).filter(u=>u.kind==='completion'&&u.answers.includes('paie'))
+assert(payForms.length>0 && payForms.every(u=>u.answers.includes('paye')))
 // Missing new fields is the legacy route, never implicit A1.
 const old={...base(),grammarLevel:undefined,grammarActivityId:undefined,grammarPresentation:undefined,grammarBankRevision:undefined,grammarPreview:undefined}
 assert.equal(generateGradedGrammarBlock(old,17),null)

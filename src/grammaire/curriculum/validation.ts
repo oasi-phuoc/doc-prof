@@ -13,9 +13,12 @@ export function validGrammarUnit(value: unknown): value is GrammarUnit {
   if (!record(value) || !text(value.id) || !text(value.prompt) || !strings(value.answers) ||
     !text(value.explanation) || !record(value.source) || !text(value.source.path) ||
     !text(value.source.typeId) || !Number.isInteger(value.source.position) || Number(value.source.position)<0) return false
+  if (value.givenVerb!==undefined && !text(value.givenVerb) ||
+    value.responseLines!==undefined && value.responseLines!==1 && value.responseLines!==2) return false
   if (value.kind==='completion') return choices(value.options) && value.prompt.split('___').length===2 &&
     (value.options as Array<{text:string}>).filter(c=>(value.answers as string[]).some(answer=>key(c.text)===key(answer))).length===1
   if (value.kind==='correct') return value.answers.every(answer=>key(answer)!==key(value.prompt as string))
+  if (value.kind==='transform') return text(value.targetSubject) && value.answers.every(answer=>key(answer)!==key(value.prompt as string))
   if (value.kind==='order') return Array.isArray(value.tokens) && value.tokens.length>=2 && value.tokens.length<=32 &&
     value.tokens.every(t=>record(t)&&text(t.id)&&text(t.text)&&categories.includes(String(t.category))) && unique(value.tokens.map(t=>t.id)) &&
     new Set(value.tokens.map(t=>t.text)).size>1
@@ -44,6 +47,7 @@ export function isGrammarQuestion(q: unknown): q is GrammarQuestion {
     (q.options as Array<{id:string;text:string}>).every(c=>u.options.some(o=>o.id===c.id&&o.text===c.text))
   if (q.presentation==='gap') return u.kind==='completion'
   if (q.presentation==='correct') return u.kind==='correct'
+  if (q.presentation==='transform') return u.kind==='transform'
   if (q.presentation==='order') return u.kind==='order' && Array.isArray(q.tokens) && q.tokens.length===u.tokens.length &&
     q.tokens.every(t=>record(t)&&text(t.id)&&text(t.text)) && unique(q.tokens.map(t=>t.id)) &&
     q.tokens.every(t=>u.tokens.some(o=>o.id===t.id&&o.text===t.text&&o.category===t.category))
@@ -56,7 +60,7 @@ export function isGrammarQuestion(q: unknown): q is GrammarQuestion {
 /** Validate imported snapshots without depending on the current bank revision. */
 export function isGrammarSnapshot(v: unknown): v is GrammarSnapshot {
   return record(v) && v.schemaVersion===1 && text(v.activityId) && ['A1','A2','B1'].includes(String(v.level)) &&
-    ['choice','gap','correct','order','match'].includes(String(v.presentation)) && text(v.bankRevision) &&
+    ['choice','gap','correct','order','match','transform'].includes(String(v.presentation)) && text(v.bankRevision) &&
     typeof v.seed==='number' && Number.isFinite(v.seed) && text(v.requestKey) && text(v.instruction) && typeof v.pilot==='boolean' &&
     Array.isArray(v.questions) && v.questions.length>0 && v.questions.length<=50 && v.questions.every(isGrammarQuestion) &&
     v.questions.every(q=>q.presentation===v.presentation) && unique(v.questions.map(q=>q.id))
