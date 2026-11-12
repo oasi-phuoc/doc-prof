@@ -203,13 +203,14 @@ export function WorksheetSheet({
     : page.columns
   const isSoutienFr = page.domain === 'soutien-fr'
   const isAlphabetisation = page.domain === 'alphabetisation'
+  const domainClass = page.domain === 'tcm-csc' ? ' is-tcm-csc' : ''
   const Root = asHalf ? 'div' : 'article'
   const rootClass = asHalf
     ? `a5-half is-${asHalf}${isJeuxSheet ? ' is-jeux' : ''}${isSoutienFr ? ' is-soutien-fr' : ''}${isAlphabetisation ? ' is-alphabetisation' : ''}${evalMode ? ' is-eval' : ''}`
     : `worksheet-sheet ${parity}${isJeuxSheet ? ' is-jeux' : ''}${isSoutienFr ? ' is-soutien-fr' : ''}${isAlphabetisation ? ' is-alphabetisation' : ''}${evalMode ? ' is-eval' : ''}`
   return (
     <Root
-      className={rootClass}
+      className={rootClass + domainClass}
       style={{ '--sheet-columns': sheetColumns } as CSSProperties}
     >
       {showHeader ? (
@@ -496,6 +497,8 @@ export function WorksheetSheet({
                       key={`${block.exerciseType}-${block.exerciseIndex}-${index}-${item.answer}-${tcfFormMode ?? ''}`}
                       item={item}
                       mode={mode}
+                      itemLabel={/^tcm-(?:csc|cfr)-ex0[12]$/.test(block.exerciseType)?String.fromCharCode(65+index+itemOffset):undefined}
+                      seriesNumber={/^tcm-csc-ex(?:06|16)$/.test(block.exerciseType)?index+itemOffset+1:undefined}
                       index={index + (/^tcm-csc-ex(?:10|11)$/.test(block.exerciseType) ? block.itemOffset ?? 0 : 0)}
                       algebraPadLeft={padLeft}
                       draftGrid={draftGrid}

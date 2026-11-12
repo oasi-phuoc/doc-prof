@@ -24,6 +24,10 @@ try {
     assert.equal(blocks.filter((block) => block.exerciseNo === 21).length, 0)
     assert.equal(blocks.slice(1).reduce((sum, block) => sum + block.count * block.pointsPerQuestion, 0), TCM_CSC_MAX_SCORE)
     assert.equal(TCM_CSC_MAX_SCORE,82)
+    const sheets=buildWorksheets(pages,77)
+    assert.ok(sheets.some(sheet=>[6,7].every(number=>sheet.blocks.some(block=>block.exerciseIndex===number))))
+    const problemPage=number=>sheets.findIndex(sheet=>sheet.blocks.some(block=>block.exerciseIndex===number))
+    assert.equal(problemPage(22),problemPage(23));assert.equal(problemPage(24),problemPage(23)+1)
     for (const sample of samples) for (const step of TCM_CSC_STEPS) assert.equal(sample.get(step.number).length, step.count)
   })
   await test('five numbers and five spoken calculations stay within CSC bounds across 100 seeds', async () => {

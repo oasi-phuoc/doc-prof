@@ -64,7 +64,7 @@ try {
     assert.ok(new Set(variants.map((question) => JSON.stringify(question.choices))).size > 1)
   })
   await test('relaunching a saved CSC recipe changes its numbers while preserving all three source contexts and the template', () => {
-    const recipe = { ...base, pages: buildTcmCscTestPages().slice(-1), libreMode: false, libreSnapshot: null }, original = structuredClone(recipe)
+    const recipe = { ...base, pages: buildTcmCscTestPages().filter(page=>[page,...(page.extraBlocks??[])].some(block=>/^tcm-csc-ex(?:22|23|24)$/.test(block.exerciseType))), libreMode: false, libreSnapshot: null }, original = structuredClone(recipe)
     let source = createGameSource({ recipe, name: 'Problèmes CSC' }, 'saved', 'csc-template')
     const statements = new Set()
     for (let run = 0; run < 8; run++) {

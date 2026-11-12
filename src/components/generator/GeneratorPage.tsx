@@ -102,7 +102,7 @@ export function GeneratorPage({
   const [seed, setSeed] = useState(() => openedFiche?.recipe.seed ?? randomSeed())
   const [selectedCoordShape, setSelectedCoordShape] = useState<CoordShape | null>('triangle')
   const [themeColor, setThemeColor] = useState(readThemeColor)
-  const [fontSize, setFontSize] = useState(readBaseFontSize)
+  const [fontSizes, setFontSizes] = useState(() => ({default:readBaseFontSize(),csc:readBaseFontSize('tcm-csc')}))
   const [sheetFormat, setSheetFormat] = useState<SheetFormat>(
     () => openedFiche?.recipe.sheetFormat ?? 'a4-portrait',
   )
@@ -128,7 +128,8 @@ export function GeneratorPage({
   }
 
   const changeFontSize = (size: number) => {
-    setFontSize(applyBaseFontSize(size))
+    const value=applyBaseFontSize(size,true,activePage.domain)
+    setFontSizes(current=>({...current,[activePage.domain==='tcm-csc'?'csc':'default']:value}))
   }
 
   const worksheets = useMemo(() => buildWorksheets(pages, seed, pointsPerQuestion), [pages, seed, pointsPerQuestion])
@@ -139,6 +140,7 @@ export function GeneratorPage({
   const activeSheet = worksheets[safeSheetIndex] ?? worksheets[0]
   const pageIndex = activeSheet?.configIndex ?? Math.min(sheetIndex, Math.max(0, pages.length - 1))
   const activePage = pages[pageIndex] ?? pages[0]!
+  const fontSize = activePage.domain === 'tcm-csc' ? fontSizes.csc : fontSizes.default
   const referenceLocked = isAlphaSoutienDomain(activePage.domain)
   useEffect(() => {
     if (!referenceLocked) return

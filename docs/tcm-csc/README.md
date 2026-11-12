@@ -1,35 +1,39 @@
 # Test TCM CSC
 
-Le domaine **TCM CSC** charge les exercices 1 à 20 et 22 à 24, précédés d’une page d’informations. L’exercice 21 reste réservé. La révision du 12 novembre 2026 produit **seize pages élèves** et **trente-deux pages avec les corrigés**. Les seize pages de configuration séparent désormais les exercices 4–5 du rangement de l’exercice 6 ; les huit calculs de l’exercice 10 tiennent sur une page. Aucun exercice ne déborde sous son pied de page.
+Le domaine **TCM CSC** charge les exercices 1 à 20 et 22 à 24, précédés d’une page d’informations. L’exercice 21 reste réservé. La révision du 12 novembre 2026 produit **dix-sept pages élèves** et **trente-quatre pages avec les corrigés**. Les dix-sept pages de configuration gardent les exercices 6 et 7 ensemble et placent le 24 sur une nouvelle page ; les huit calculs de l’exercice 10 tiennent sur une page. Aucun exercice ne déborde sous son pied de page.
 
 La demande initiale provient de `tcmcsc.txt`. Les précisions du propriétaire du 12 novembre remplacent les comparaisons de l’exercice 8 par la décomposition du TCM CFR, exercice 5 ; l’exercice 9 devient la lecture écrite des trois signes `+`, `−` et `=` suivant la présentation du TCM CFR, exercice 6.
 
 | Exercice | Contenu |
 |---|---|
-| 1 | Cinq nombres entendus distincts de 1 à 100 |
-| 2 | Cinq additions ou soustractions : nombre, « plus » ou « moins », nombre ; aucun résultat dans l’audio |
-| 3 | 36 nombres dans six colonnes et six lignes de cases carrées de 18 mm ; cinq nombres à entourer |
-| 4–5 | Quatre suites par exercice ; 10 px supplémentaires entre lignes et entre nombres ; pour le 4, pas au début de la ligne dans un cadre coloré |
-| 6 | Deux rangements de sept entiers entre 0 et 100 |
+| 1 | Cinq nombres entendus distincts de 1 à 100 ; lignes A à E en gras et en couleur |
+| 2 | Cinq additions ou soustractions : nombre, « plus » ou « moins », nombre ; aucun résultat dans l’audio ; lignes A à E et calcul complet avec résultat dans le corrigé |
+| 3 | 36 nombres en gras dans six colonnes et six lignes de cases carrées de 18 mm ; cinq nombres à entourer |
+| 4–5 | Quatre suites par exercice, tous les nombres encadrés sans trait intérieur ; 10 px supplémentaires entre lignes et entre nombres ; pour le 4, pas au début de la ligne dans un cadre coloré |
+| 6 | Deux rangements de sept entiers entre 0 et 100, cadres « Série 1 » et « Série 2 », consignes en texte normal ; sur la même page que le 7 |
 | 7 | Douze comparaisons de 0 à 100, quatre de chaque signe ; consigne « Coloriez le signe correct » |
 | 8 | Deux décompositions identiques au modèle CFR : un nombre à trois chiffres et un à quatre chiffres |
 | 9 | Trois signes à nommer : « plus », « moins », « égal » ; signe encadré et trait de réponse sur la même ligne |
-| 10 | Quatre additions et quatre soustractions sur une page ; cinq colonnes fixes, cases de 42 × 42 px, retenues de 27 px |
+| 10 | Quatre additions et quatre soustractions sur une page ; cinq colonnes fixes, cases de 42 × 42 px, retenues de 27 px ; chiffres de 36 px au réglage par défaut |
 | 11 | Deux additions et deux soustractions à poser ; mêmes cinq colonnes et cases de 42 × 42 px |
-| 12–13 | Deux grilles séparées pour reproduire dans le même sens ; puis agrandissement avec deux fois plus de colonnes et de lignes |
-| 14 | Trois segments à mesurer ; tableau A, B, C avec cases pour le plus long et le plus court |
-| 15 | A, B, C et D peuvent se trouver dans toute la zone ; lettres séparées ; AB en rouge et CD en bleu |
-| 16 | Deux questions de logique, chacune dans son cadre avec marge intérieure et espacement entre les questions |
-| 17 | Carré, rectangle, cercle et triangle ; deux cadres par ligne sur deux lignes, avec les traits de réponse dans les cadres |
-| 18 | Cadre de comptage réduit de moitié : hauteur de 97,5 mm |
-| 19–20 | Cases du quadrillage doublées à 16 mm ; six couleurs distinctes ; forme et coordonnées sur la même ligne à gauche, sans nom écrit |
-| 22–24 | Trois problèmes et leurs zones de développement au format du brouillon court CFR ; sans grille par défaut, avec bascule individuelle |
+| 12–13 | Deux grilles séparées pour reproduire dans le même sens ; puis agrandissement avec deux fois plus de colonnes et de lignes ; carrés de 4,6 mm (+15 %) et figures dans la couleur du thème |
+| 14 | Bandeaux « Partie 1 » (mesurer à la règle) et « Partie 2 » (cocher le tableau) ; questions numérotées sur le segment le plus long et le plus court ; longueurs physiques conservées |
+| 15 | A, B, C et D peuvent se trouver dans toute la zone ; lettres séparées ; grand cadre sur toute la largeur et une seule consigne AB en rouge / CD en bleu |
+| 16 | Deux cadres de logique « Série 1 » et « Série 2 », sans numérotation supplémentaire |
+| 17 | Carré, rectangle, cercle et triangle ; deux cadres par ligne sur deux lignes, avec bandeaux « Forme 1 » à « Forme 4 », figures centrées et 50 px supplémentaires avant la zone de réponse |
+| 18 | Cadre de comptage réduit de moitié : hauteur de 97,5 mm ; repère coloré uniquement dans la consigne, formes du cadre noires ; pas de « 1. » ; 10 px supplémentaires avant la phrase de réponse |
+| 19–20 | Cases du quadrillage doublées à 16 mm ; six couleurs distinctes ; forme et coordonnées sur la même ligne à gauche, sans nom écrit ; grille alignée à droite, axes agrandis en gras dans la couleur du thème, pictogrammes à la même taille physique que dans la grille et 20 px entre les lignes |
+| 22–24 | Trois problèmes ; hauteur du brouillon doublée et distance au trait de réponse doublée ; le 24 commence sur une autre page ; sans grille par défaut, avec bascule individuelle |
+
+La taille de base du corps CSC passe de 16 à **18 px**. Le réglage **Taille du corps du texte** ne modifie plus l’en-tête ni le pied de page, en A4 et double A5. Le réglage CSC est mémorisé séparément de celui des autres domaines (16 px par défaut).
 
 Les valeurs changent avec la graine du générateur. En mode libre, les choix et valeurs validés sont conservés. Le sélecteur de problèmes propose **103 contextes** : les trois exemples fournis, 50 additions supplémentaires et 50 soustractions supplémentaires. On peut choisir un autre énoncé, saisir les nombres ou utiliser **Changer les nombres**. Les réponses et les pistes audio sont recalculées à partir des valeurs. Une soustraction négative ou une donnée incompatible signale une erreur au lieu de fabriquer un corrigé.
 
 Le mode libre permet également de choisir explicitement chacune des deux suites graphiques, de modifier les suites numériques, les nombres entendus, la grille, les points, les formes et la figure à reproduire. **Valider les changements** applique ces modifications à l’aperçu et à l’impression. L’icône d’aperçu permet de consulter le corrigé.
 
-Dans l’aperçu du corrigé, les exercices 1, 2 et 3 affichent chacun **cinq lecteurs audio**. Chaque lecteur du 2 lit un calcul complet (« deux plus cinq », « dix moins trois »), sans son résultat. Le 3 propose cinq nombres, sans lecteur supplémentaire pour les silences. Les exercices oraux CFR utilisent également un lecteur par consigne complète. Les grilles d’opérations CSC et CFR ont des bordures entières de 1 px, sans marges négatives ; les retenues sont assombries à l’impression.
+Dans l’aperçu du corrigé, les exercices 1, 2 et 3 affichent chacun **cinq lecteurs audio**. Chaque lecteur du 2 lit un calcul complet (« deux plus cinq », « dix moins trois »), sans son résultat. Le 3 propose cinq nombres, sans lecteur supplémentaire pour les silences. Les exercices oraux CFR utilisent également un lecteur par consigne complète et les lettres A à E ; leurs nombres, multiplications, consignes imprimées et corrigés numériques sont conservés. Les grilles d’opérations CSC et CFR ont des bordures entières de 1 px, sans marges négatives ; les retenues sont assombries à l’impression.
+
+Le [prompt des neuf prises CSC DeniseNeural −25 % et du complément CFR](prompt-audios-denise.md) et le montage prévu à deux écoutes sont prêts. **La nouvelle narration reste à intégrer après réception de ces enregistrements** ; l’accès Microsoft est bloqué dans cet environnement. Les « plus / moins » existants restent ceux décrits dans `operator-audio.json`. Aucun remplacement par une autre voix n’est annoncé.
 
 L’icône audio télécharge `TCM-CSC_AUDIOS.zip`, contenant trois WAV séparés : nombres de l’exercice 1, calculs de l’exercice 2 et nombres à entourer de l’exercice 3. Chaque piste comprend cinq consignes séparées par six secondes. Les clips sont décodés avant composition ; les MP3 ne sont pas simplement collés. Un échec de chargement est signalé et permet de réessayer. Les mots d’opérateur et leur provenance sont décrits dans [operator-audio.json](operator-audio.json).
 

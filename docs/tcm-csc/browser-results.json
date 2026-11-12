@@ -1,6 +1,9 @@
 {
   "results": [
     {
+      "typography": "CSC base size defaults to 18px rather than 16px; only body text changes at 10–24px; A4/A5 headers and footers stay fixed; custom CSC setting survives reload"
+    },
+    {
       "players": "CSC 2: five complete operand/operator/operand recordings, no result; CSC 3: five number recordings, no silence player; real playback verified"
     },
     {
@@ -8,34 +11,34 @@
       "files": [
         {
           "name": "TCM-CSC_EXERCICE-01_NOMBRES.wav",
-          "seconds": 34.8
+          "seconds": 35.6
         },
         {
           "name": "TCM-CSC_EXERCICE-02_CALCULS.wav",
-          "seconds": 48.5
+          "seconds": 48.2
         },
         {
           "name": "TCM-CSC_EXERCICE-03_ENTOURER.wav",
-          "seconds": 35.2
+          "seconds": 35.3
         }
       ]
     },
     {
-      "print": "32 portrait A4 pages; no exercise crosses its footer",
-      "revisions": "36 square number cells; four sequences per exercise with 10 extra pixels between rows and numbers; twelve comparisons; CFR decomposition; three sign names; five columns, 42px cells and 27px carry rows",
+      "print": "34 portrait A4 pages; no exercise crosses its footer",
+      "revisions": "18px CSC base body setting; fixed A4/A5 header/footer typography; bold A–E audio lines; boxed sequences; Series 1/2 ordering next to exercise 7; 36px operation digits in fixed 42px cells",
       "gridEdges": {
         "csc": 12,
         "check": "bottom and right strokes cover over 95% of the last cell in print-media screenshots; one-pixel borders, no negative margin"
       },
-      "copies": "two separate grids, unchanged orientation, doubled rows and columns for enlargement; target figures hidden in student copies",
-      "geometry": "framed logic questions; four fixed forms in a 2x2 frame grid; 97.5 mm counting frame; double-size coordinate cells with six distinct colors and inline shape/coordinate rows"
+      "copies": "4.6mm squares (+15%); theme-colored figures; two separate grids and unchanged orientation; doubled rows and columns for enlargement; target figures hidden in student copies",
+      "geometry": "Part 1/2 measuring frames preserve physical lengths; full-width point zone with one instruction; Series 1/2 logic frames; Form 1–4 centered in 2x2 frames with 50px response padding; black counting shapes, colored prompt target and extra 10px padding; right-aligned coordinate grid, bold colored axes, same-size legend glyphs and 20px row gaps; double-height problem drafts and response spacing, exercise 24 on the next page"
     },
     {
       "freeMode": "source logic question selectable; 103 problem contexts available; changing to subtraction with 98 and 54 recomputes 44 books after validation",
       "numbering": "exercise 21 omitted; exercises 22, 23 and 24 kept"
     },
     {
-      "cfr": "five whole multiplication recordings with real playback",
+      "cfr": "five whole multiplication recordings with real playback; A–E on number/multiplication lines and player labels; exercise values and numeric product corrections retained; fixed header/footer typography",
       "gridEdges": {
         "cfr": 16,
         "check": "bottom and right strokes cover over 95% of the last cell in print-media screenshots"

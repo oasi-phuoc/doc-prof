@@ -180,6 +180,58 @@ const readingBank=grammarBanksForType(h8+'communication-ce')[0]
 assert.equal(readingBank.units.reduce((n,u)=>n+u.questions.length,0),60)
 assert.equal(new Set(readingBank.units.map(u=>u.genre)).size,20)
 assert(readingBank.units.every(u=>u.text.split(/\s+/).length>=60&&u.text.split(/\s+/).length<=120))
+// COD: all four forms, precise references and frozen UTF-16 error intervals.
+const codPrefix='gram-ex-i4-',codBanks=banks.filter(b=>b.activityId.startsWith(codPrefix))
+assert.equal(codBanks.length,6)
+assert.equal(codBanks.reduce((n,b)=>n+b.presentations.reduce((sum,p)=>sum+(p==='document-set'?60:50),0),0),360)
+const codQ=grammarBanksForType(codPrefix+'qcm-verbe')[0],codC=grammarBanksForType(codPrefix+'curriculum-c')[0]
+assert.deepEqual(Object.fromEntries(['le','la','les','l’'].map(p=>[p,codQ.units.filter(u=>u.answers[0]===p).length])),{le:12,la:12,les:14,'l’':12})
+assert(codQ.units.every(u=>u.reference&&u.cue.includes(u.reference.text)))
+assert(codQ.units.filter(u=>u.reference.number==='plural').every(u=>u.answers[0]==='les'))
+assert(codQ.units.filter(u=>u.answers[0]==='l’').every(u=>/^[aàâeéèêiîoôuûh]/i.test(u.prompt.split('___')[1])))
+assert(codQ.units.find(u=>u.reference.text==='le drapeau').answers[0]==='le')
+assert(codQ.units.filter(u=>u.answers[0]==='l’').every(u=>!u.prompt.replace('___',u.answers[0]).includes('l’ ')))
+assert.equal(GRAMMAR_NEW_PILOT_TYPES.filter(t=>t.id===codPrefix+'curriculum-c').length,1)
+assert.equal(typeChoicesForBlock('grammaire',{...base(codPrefix+'qcm-verbe'),topic:'gram-pronoms'}).filter(t=>t.id===codPrefix+'curriculum-c').length,1)
+const codCorrection={...base(codPrefix+'curriculum-c'),topic:'gram-pronoms',count:50}
+for(const u of codC.units) {
+ assert.equal(u.error.segmentId,'prompt')
+ assert.equal(u.prompt.slice(u.error.start,u.error.end),u.error.text)
+ assert(u.reference&&u.cue.includes(u.reference.text))
+}
+const codFrozen=buildFicheRecipe(recipeInput([codCorrection]))
+for(const change of ['bounds','segment','text','reference']) {
+ const bad=structuredClone(codFrozen),unit=bad.pages[0].grammarSnapshot.questions[0].unit
+ if(change==='bounds')unit.error.end=unit.prompt.length+1
+ if(change==='segment')unit.error.segmentId='absent'
+ if(change==='text')unit.error.text='erreur étrangère au segment'
+ if(change==='reference')unit.reference.number='dual'
+ assert.equal(parseFicheRecipe(bad),null,change)
+}
+// k10: the agreed B1 pilot concerns present-subjunctive uses, with guided writing.
+const subjPrefix='gram-ex-k10-',subjBanks=grammarBanksForType(subjPrefix+'qcm-conj')
+assert.deepEqual(subjBanks.map(b=>b.level),['B1'])
+assert.equal(banks.filter(b=>b.activityId.startsWith(subjPrefix)).length,4)
+assert.equal(GRAMMAR_NEW_PILOT_TYPES.filter(t=>t.id===subjPrefix+'curriculum-e').length,1)
+const subjBlock={...base(subjPrefix+'qcm-conj'),topic:'gram-exprimer',count:50}
+assert.throws(()=>select({...subjBlock,grammarLevel:'A2'},839),e=>e.code==='GRAMMAR_ACTIVITY_UNAVAILABLE')
+assert.deepEqual(select(subjBlock,839).questions.map(q=>q.unit),select({...subjBlock,grammarPresentation:'gap'},839).questions.map(q=>q.unit))
+const subjUnits=subjBanks[0].units
+const implementedOffers=new Set(banks.flatMap(b=>b.presentations.map(p=>`${b.activityId}@${b.level}@${p}`)))
+assert(targetRegistry.offerings.filter(o=>o.phase==='G2').every(o=>implementedOffers.has(o.offeringId)),'Every offering in the five agreed pilot notions must be implemented.')
+assert.deepEqual(Object.fromEntries(['volonte','sentiment','necessite','doute'].map(f=>[f,subjUnits.filter(u=>u.source.partition.startsWith(f+'-')).length])),{volonte:13,sentiment:13,necessite:12,doute:12})
+// Whole negative and pronominal groups are accepted, not just their endings.
+assert(subjUnits.some(u=>u.answers[0]==='ne comprennes pas'))
+assert(subjUnits.some(u=>u.answers[0]==='te souviennes'))
+assert(subjUnits.some(u=>u.answers[0]==='voyions'))
+assert(subjUnits.some(u=>u.prompt.startsWith('Il est possible qu’il')))
+const subjC=grammarBanksForType(subjPrefix+'curriculum-c')[0]
+assert(subjC.units.every(u=>u.prompt.slice(u.error.start,u.error.end)===u.error.text&&u.prompt!==u.answers[0]))
+const subjProduction={...base(subjPrefix+'curriculum-e'),topic:'gram-exprimer',count:50}
+const subjGame=convertRecipe(buildFicheRecipe(recipeInput([subjProduction])))
+assert(subjGame.questions.every(q=>q.compatibility==='teacher-led'&&q.choices.length===0))
+assert(subjGame.questions.every(q=>!subjGame.corrections[q.id].choiceId&&/Repères enseignant/.test(subjGame.corrections[q.id].text)))
+assert(grammarBanksForType(subjPrefix+'curriculum-e')[0].units.every(u=>u.rubric.length===5&&u.writeLines===6&&u.task.includes('deux phrases')))
 // Missing new fields is the legacy route, never implicit A1.
 const old={...base(),grammarLevel:undefined,grammarActivityId:undefined,grammarPresentation:undefined,grammarBankRevision:undefined,grammarPreview:undefined}
 assert.equal(generateGradedGrammarBlock(old,17),null)

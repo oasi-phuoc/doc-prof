@@ -36,5 +36,5 @@ export function MathExerciseAudio({block}:{block:WorksheetBlock}) {
   let prompts:string[][]|undefined
   try{prompts=mathAudioPrompts(block)}catch{return <p className="no-print" role="alert">Validez les données de l’exercice pour préparer ses audios.</p>}
   const calculation=block.exerciseType.endsWith('02')
-  return <div className="math-exercise-audios no-print" role="group" aria-label={`Audios de l’exercice ${block.exerciseIndex}`}>{prompts?.map((parts,index)=><PromptAudio key={index} parts={parts} label={`${calculation?'Calcul':'Nombre'} ${index+1}`}/>)}</div>
+  return <div className="math-exercise-audios no-print" role="group" aria-label={`Audios de l’exercice ${block.exerciseIndex}`}>{prompts?.map((parts,index)=><PromptAudio key={index} parts={parts} label={`${calculation?'Calcul':'Nombre'} ${/^tcm-(?:csc|cfr)-ex0[12]$/.test(block.exerciseType)?String.fromCharCode(65+index):index+1}`}/>)}</div>
 }

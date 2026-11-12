@@ -1,4 +1,4 @@
-# Implémentation du curriculum Grammaire — pilotes Être, -er particuliers et récit au passé
+# Implémentation du curriculum Grammaire — cinq notions pilotes
 
 Lancement du 11 novembre 2026. Référence G0 : `ff743145ce6724a78cc898789c5aaf36a0004474`.
 
@@ -50,6 +50,38 @@ La lecture possède un champ **Nombre de textes** (1–20). Tous les documents t
 
 Cette tranche ajoute **310 variantes de réponse** : 100 QCM/lacunes, 50 transformations, 100 productions et 60 questions de lecture. Les trois pilotes totalisent **960 variantes**, avec 20 documents de lecture comptés séparément. Les 220 unités sélectionnables de h8 comprennent 200 questions/situations et 20 documents ; les questions enfants d’un document ne sont pas des documents supplémentaires. Toutes les validations enseignant restent en attente.
 
+### Les pronoms COD — A2
+
+Dans **Grammaire → Les pronoms → Les pronoms COD**, sélectionner **A2 — pilote** :
+
+| Activité | Banque du pilote |
+| --- | --- |
+| Remplacer le COD | 50 contextes, une activité avec QCM / Lacune |
+| Transformer une phrase | 50 réécritures avec groupe à remplacer explicite |
+| Corriger l’erreur | 50 phrases ; genre, nombre, élision ou place du pronom |
+| Lire une situation | 20 textes distincts, 60 questions et preuves |
+| Écrire une phrase utile | 50 situations avec tâche, modèle possible et critères |
+| Dire une phrase utile | 50 situations avec interlocuteur et appréciation humaine |
+
+Les complétions couvrent **le, la, les et l’**, avec négation et infinitif. Le référent est explicite ; une question de lecture cite la proposition exacte qui contient le pronom. Les sources sont relues dans la [fiche i4](pilote-i4-relecture.md). Le corrigé imprime `l’` attaché au verbe, tout en conservant le trait vide sur la fiche élève. Les intervalles d’erreur sont figés dans le texte canonique de chaque correction et contrôlés à la lecture d’une sauvegarde.
+
+Les 50 scènes sont partagées entre les activités courtes et les productions, avec une tâche adaptée ; les lectures utilisent 20 textes supplémentaires. Cette tranche apporte **360 variantes**, soit **1 320 variantes pour les quatre pilotes**. Les **40 documents / 120 questions de lecture** restent comptés séparément. Les 990 unités sélectionnables incluent les documents et les questions/situations ordinaires ; il ne s’agit pas de 990 textes sources uniques. Aucun audio, fichier CO ou contenu de théorie n’est modifié.
+
+### Le subjonctif, emplois principaux — B1
+
+Dans **Grammaire → Exprimer quelque chose → Le subjonctif (emplois principaux)**, sélectionner **B1 — pilote** :
+
+| Activité | Banque du pilote |
+| --- | --- |
+| Employer le subjonctif | 50 phrases, une activité avec réglage QCM / Lacune |
+| Transformer une phrase | 50 phrases avec expression introductrice imposée |
+| Corriger l’erreur | 50 phrases avec réécriture complète et intervalle d’erreur figé |
+| Produire à l’écrit | 50 situations guidées, deux phrases, modèle possible et cinq critères enseignant |
+
+Les 50 scènes couvrent **13 volontés ou préférences, 13 sentiments ou appréciations, 12 nécessités ou conseils et 12 doutes ou possibilités**. Elles sont partagées entre les quatre activités, avec une tâche propre à chacune. Les consignes imposent le subjonctif présent ; les formes homographes de l’indicatif ne sont pas présentées comme fautives. Les réécritures conservent le sujet, les informations et la négation. La production commence par une seule situation et réserve six lignes. Les modèles et critères restent au corrigé ; l’appréciation des réponses libres appartient à l’enseignant. Les phrases et cas linguistiques sont répertoriés dans la [fiche k10](pilote-k10-relecture.md).
+
+Cette tranche ajoute **200 unités sélectionnables et 250 variantes de réponse**. Les cinq notions pilotes du registre sont désormais couvertes : **23 activités, 31 offres activité/niveau/présentation, 1 190 unités sélectionnables et 1 570 variantes**, dont **40 documents et 120 questions de lecture**. Les documents sont inclus dans les unités sélectionnables ; leurs questions enfants sont comptées dans les variantes. Les banques restent au statut pilote, avec validation enseignante en attente.
+
 Les nouvelles séries vont jusqu’à 50 questions et se répartissent sur plusieurs feuilles A4, avec des marges réservées aux corrigés. La pagination ne relance pas le tirage. Le pilote utilise un nouveau rendu grammatical, compatible avec 2 à 6 propositions, sans modifier les limites TCF.
 
 ## Tableau collectif et sauvegardes
@@ -64,22 +96,22 @@ Les anciennes recettes et la compréhension orale restent sur leurs chemins hist
 
 ## Sources et revue
 
-`src/grammaire/curriculum/data/etre.json`, `er-particuliers.json` et `imparfait-ou-pc.json` sont les sources éditoriales des pilotes, et non des sorties TS à régénérer. Les IDs de migration y sont stockés une fois, avec type, chemin et position de provenance ; ils ne sont pas recalculés à chaque tirage. Les associations référencent leurs phrases sources. Les scripts historiques ne doivent pas écraser ces sources complémentaires.
+`src/grammaire/curriculum/data/etre.json`, `er-particuliers.json`, `imparfait-ou-pc.json`, `i4.json` et `k10.json` sont les sources éditoriales des pilotes, et non des sorties TS à régénérer. Les IDs de migration y sont stockés une fois, avec type, chemin et position de provenance ; ils ne sont pas recalculés à chaque tirage. Les associations référencent leurs phrases sources. Les scripts historiques ne doivent pas écraser ces sources complémentaires.
 
 Pour publier une banque après revue enseignant : enregistrer la personne, la date et la décision dans `review`, puis passer `review.humanReview` et `editorialStatus` à `approved`. Ne pas déclarer l’approbation à partir d’un simple comptage automatique. Les variantes QCM sont relues avec leurs distracteurs ; les variantes ouvertes sont contrôlées avec leurs solutions ou critères.
 
 ## Vérifications reproductibles
 
 - `npm run test:grammar:baseline` : 735 sorties à graines fixes, types actuels et alias CO ; empreintes de 256 fichiers CO/audio. Le script refuse d’écraser la référence G0 existante.
-- `npm run test:grammar:levels` : 960 variantes, niveaux A1/A2, tirages et filtres, capacité réelle, snapshots, recettes, blocs supplémentaires, révisions archivées, propositions 2–6, pagination et adaptation au tableau.
+- `npm run test:grammar:levels` : 1 570 variantes, niveaux A1/A2/B1, tirages et filtres, capacité réelle, snapshots, recettes, blocs supplémentaires, révisions archivées, propositions 2–6, pagination et adaptation au tableau.
 - `node node_modules/typescript/bin/tsc -b --pretty false` : contrôle TypeScript.
-- Démarrer Vite sur le port 5183, puis `npm run test:grammar:browser` : parcours réels Être A1, -er particuliers A1/A2 et imparfait/passé composé A2 dans Chrome, QCM/Lacune, 50 questions sur chaque présentation, élève/corrigé, absence de débordement et lancement de la séance. `GRAMMAR_TEST_URL` et `GRAMMAR_QA_DIR` permettent de choisir le serveur et le dossier de preuves.
+- Démarrer Vite sur le port 5183, puis `npm run test:grammar:browser` : parcours réels Être A1, -er particuliers A1/A2, imparfait/passé composé A2, COD A2 et subjonctif B1 dans Chrome, QCM/Lacune, 50 unités par présentation ordinaire et 20 textes/60 questions par banque de lecture, élève/corrigé, absence de débordement et lancement de la séance. `GRAMMAR_TEST_URL` et `GRAMMAR_QA_DIR` permettent de choisir le serveur et le dossier de preuves.
 
 Résultats du lot : [verification.json](verification.json). Les scénarios du cahier des charges restent des critères à exécuter lors des lots concernés ; ce premier lot ne prétend pas les avoir tous réalisés.
 
 ## Suite de l’implémentation
 
-G0 est capturé ; le socle G1 et le raccordement au tableau sont engagés. G2 comporte les tranches Être A1, -er particuliers A1/A2 et imparfait/passé composé A2. Restent notamment les autres notions pilotes (COD, subjonctif), les lectures multi-textes avec leurs 20 supports, les productions et rubriques enseignant, les supports images, l’ensemble des nouvelles activités et les autres extensions A2/B1. Les 98 notions / 123 couples notion-niveau du registre sont des cibles, pas une couverture livrée.
+G0 est capturé ; le socle G1 et le raccordement au tableau sont engagés. Les cinq notions prévues pour G2 sont utilisables en pilote : Être A1, -er particuliers A1/A2, imparfait/passé composé A2, COD A2 et subjonctif B1. Restent la validation enseignante, les essais de dialogue/situation et de support image prévus par G2, la généralisation aux autres notions et les lots suivants. Les 98 notions / 123 couples notion-niveau du registre sont des cibles, pas une couverture livrée.
 
 Aucun audio, transcription, banque CO ou contenu des autres domaines n’est modifié par ce lot.
 
@@ -92,3 +124,11 @@ La tranche m5 porte le contrôle ciblé à 650 variantes et ajoute huit parcours
 Le lot h8 a été vérifié avec les 960 variantes, les 19 présentations dans Chrome (1 920 questions imprimées élève/corrigé), les groupes de lecture, les coupures réversibles, les preuves et révisions archivées, le réassemblage des continuations, les sept tests des adaptateurs existants et TypeScript. Les banques sont relues par l’assistant ; aucune approbation enseignante n’est déclarée.
 
 Les commits arrivés jusqu’à `a4a97144` ont été intégrés par rebase. Après intégration, G0, les 960 variantes, TypeScript, Chrome h8 et les 15 tests des adaptateurs/géométrie passent.
+
+Le lot COD a été vérifié avec 1 320 variantes et 26 présentations dans Chrome (2 640 questions imprimées élève/corrigé), dont les élisions sans espace ajouté, les coupures de lecture et le lancement collectif. Les références G0, les sauvegardes et TypeScript passent. Les sources restent au statut pilote, avec relecture enseignante en attente.
+
+Les commits arrivés jusqu’à `54478049` ont été intégrés par rebase pour le lot COD. Après intégration, G0, les 1 320 variantes, TypeScript, Chrome COD et les sept tests des adaptateurs existants passent.
+
+Les commits jusqu’à `033d50bb` sont intégrés pour le lot COD ; les 1 320 variantes, G0, TypeScript et Chrome COD passent sur cette base.
+
+Le lot k10 couvre les cinq offres B1 prévues pour les emplois principaux du subjonctif. Les 1 570 variantes et les 31 présentations passent les contrôles ciblés et Chrome (3 140 questions imprimées élève/corrigé). G0, les sept tests des adaptateurs existants et TypeScript passent. Les cinq notions restent en pilote, sans validation enseignante déclarée.

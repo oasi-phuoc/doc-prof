@@ -5,6 +5,7 @@ import { applyBaseFontSize, readBaseFontSize } from '@/components/generator/typo
 import App from './App.tsx'
 
 applyBaseFontSize(readBaseFontSize(), false)
+applyBaseFontSize(readBaseFontSize('tcm-csc'), false, 'tcm-csc')
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

@@ -1,0 +1,55 @@
+{
+  "date": "2026-11-12",
+  "scope": "TCM CSC typography, framed exercises, physical grid dimensions and pagination",
+  "typography": {
+    "baseSizePx": 18,
+    "previousBaseSizePx": 16,
+    "headersAndFooters": "fixed type sizes; range 10–24 only affects body; checked in A4, double A5 and CFR",
+    "persistence": "separate CSC preference; survives reload"
+  },
+  "exercises": {
+    "1and2": "A–E labels in bold/theme color; exercise 2 requests the calculation and result; printed correction contains full operation",
+    "3": "36 bold numbers in square 6×6 grid",
+    "4and5": "five boxes per line including blanks, without an inner answer rule",
+    "6and7": "two Series frames with normal-weight ordering instructions; exercise 7 shares the page",
+    "10": "36px main digits in unchanged 42px cells; carry digits fit 27px rows",
+    "12and13": "4.6mm square cells (+15%), theme-colored shapes",
+    "14": "Part 1 and Part 2 frames with numbered longest/shortest questions; physical segment lengths checked",
+    "15": "one instruction and a full-width frame around four points",
+    "16": "Series 1 and Series 2 banners without question numbers",
+    "17": "Form 1–4 frames, two columns, centered figures and 50px response padding",
+    "18": "no question number; colored target only in instruction, black counting shapes, extra 10px before caption",
+    "19and20": "right-aligned grid; enlarged bold theme-colored axes; physically matching legend glyphs; 20px between inline shape/coordinate rows",
+    "22to24": "double-height development area, doubled space to response rule; 24 on next page"
+  },
+  "print": {
+    "studentPages": 17,
+    "withCorrectionsPages": 34,
+    "footerOverflows": 0,
+    "columns": "five 42px cells retained; bottom/right borders verified in CSC and CFR"
+  },
+  "checks": {
+    "focusedUnitPassed": 23,
+    "browser": "CSC/CFR full generator, A4/A5 font controls, real audio playback, letters and PDF checks passed",
+    "appTypes": "passed",
+    "lint": "passed with existing warnings",
+    "productionBuild": "passed",
+    "unitSuitePassed": 237,
+    "a4Regression": "identical witness screenshot against 0addb36d662842040cc8ed64e8b2c0ca81eac810"
+  },
+  "audio": {
+    "newNarration": "pending recordings, deferred by user",
+    "prompt": "prompt-audios-denise.md",
+    "requiredVoice": "fr-FR-DeniseNeural",
+    "rate": "-25%",
+    "scheme": "instruction once, 5s, TCF beep, A–E with 7s gaps; same A–E repeated after second beep",
+    "blocker": "speech.platform.bing.com denied by Cloud proxy (CONNECT 403)",
+    "currentAssets": "existing clips retained, including eSpeak operators; no fabricated Denise replacement",
+    "coverage": "CSC numbers/calculations and CFR numbers/multiplications; ten requested MP3 clips"
+  },
+  "cfr": {
+    "exercises1and2": "A–E letters on printed response lines and individual player labels",
+    "mathematics": "numbers, multiplications, printed instructions and product-only corrections unchanged",
+    "narration": "deferred by user until the ten Denise recordings are available"
+  }
+}
