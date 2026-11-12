@@ -1,12 +1,13 @@
 import { hasAccessCookie } from '@/access'
 
-export type AppRoute = 'landing' | 'access' | 'generator' | 'fiches' | 'interactive'
+export type AppRoute = 'landing' | 'access' | 'generator' | 'fiches' | 'interactive' | 'images'
 
 export function pathFromLocation(): AppRoute {
   const path = window.location.pathname.replace(/\/+$/, '') || '/'
   if (path === '/interactif' || path.startsWith('/interactif/')) return 'interactive'
   if (path === '/generateur') return 'generator'
   if (path === '/fiches') return 'fiches'
+  if (path === '/images') return 'images'
   if (path === '/acces') return 'access'
   return 'landing'
 }
@@ -20,7 +21,7 @@ export function navigateTo(path: string) {
 export function resolveRoute(): AppRoute {
   const initial = pathFromLocation()
   const publicCompetition = /^\/interactif\/rejoindre(?:\/\d{6})?\/?$/.test(window.location.pathname)
-  if ((initial === 'generator' || initial === 'fiches' || initial === 'interactive' && !publicCompetition) && !hasAccessCookie()) {
+  if ((initial === 'generator' || initial === 'fiches' || initial === 'images' || initial === 'interactive' && !publicCompetition) && !hasAccessCookie()) {
     if (typeof window !== 'undefined') {
       window.history.replaceState({}, '', '/acces')
     }

@@ -4,6 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "predev": "node scripts/image-gallery-catalog.mjs",
+    "prebuild": "node scripts/image-gallery-catalog.mjs",
+    "gallery:index": "node scripts/image-gallery-catalog.mjs",
+    "test:gallery": "node --test tests/gallery/catalog.test.mjs",
+    "test:gallery:browser": "node tests/gallery/browser.mjs",
     "dev": "vite",
     "build": "git config lfs.url https://github.com/oasi-phuoc/doc-prof.git/info/lfs >/dev/null 2>&1; git lfs pull || true; tsc -b && vite build",
     "lint": "oxlint",
