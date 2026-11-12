@@ -1,6 +1,6 @@
-# Prompt pour les enregistrements TCM CSC
+# Prompt pour les enregistrements TCM CSC et CFR
 
-Génère **neuf fichiers MP3 séparés**, puis regroupe-les dans un ZIP. Utilise la voix française Microsoft **fr-FR-DeniseNeural**, avec un débit de **−25 %**, un volume normal et une intonation naturelle. Conserve la même voix et les mêmes réglages pour tous les fichiers. Si cet outil ne propose pas cette voix, indique-le sans la remplacer par une autre voix.
+Génère **dix fichiers MP3 séparés** : les neuf prises CSC du premier tableau et la consigne supplémentaire CFR en bas de ce document. Regroupe les dix fichiers dans un seul ZIP. Utilise la voix française Microsoft **fr-FR-DeniseNeural**, avec un débit de **−25 %**, un volume normal et une intonation naturelle. Conserve la même voix et les mêmes réglages pour tous les fichiers. Si cet outil ne propose pas cette voix, indique-le sans la remplacer par une autre voix.
 
 Enregistre exactement les textes suivants, sans annoncer les noms des fichiers :
 
