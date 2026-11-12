@@ -1,4 +1,5 @@
-import { type CSSProperties } from 'react'
+import { Children, type CSSProperties, type HTMLAttributes, type ReactElement } from 'react'
+import { ExerciseFrame } from '@/components/math/ExerciseFrame'
 import { renderSheetCopy } from '@/components/sheet-copy'
 import { ItemView, tokenizeAlgebra } from '@/components/ItemView'
 import {
@@ -16,6 +17,7 @@ import { isReperageConstruire } from '@/math/coord-reperage'
 import type {
   CoordReply,
   CoordShape,
+  MathItem,
   PreviewMode,
   WorksheetBlock,
   WorksheetPage,
@@ -53,6 +55,17 @@ function coAudioInBanner(block: WorksheetBlock): boolean {
     }
     return false
   })
+}
+
+function WorksheetItems({groupedOperations=false,children,...props}:HTMLAttributes<HTMLDivElement>&{groupedOperations?:boolean}) {
+  if(!groupedOperations)return <div {...props}>{children}</div>
+  const items=Children.toArray(children) as ReactElement<{item:MathItem}>[]
+  // Preserve any legacy freely edited operation outside the CSC addition/subtraction groups.
+  if(items.some(child=>child.props.item.op!=='+'&&child.props.item.op!=='−'))return <div {...props}>{children}</div>
+  return <div className="csc-operation-groups">{(['+','−'] as const).map(operation=>{
+    const group=items.filter(child=>child.props.item.op===operation)
+    return group.length?<ExerciseFrame key={operation} title={operation==='+'?'Addition':'Soustraction'} className="csc-operation-group"><div {...props}>{group}</div></ExerciseFrame>:null
+  })}</div>
 }
 
 export function defaultCoordQuestionReply(exerciseType: string): CoordReply {
@@ -402,7 +415,8 @@ export function WorksheetSheet({
                   )}
                 </div>
               ) : null}
-              <div
+              <WorksheetItems
+                groupedOperations={/^tcm-csc-ex(?:10|11)$/.test(block.exerciseType)}
                 className={`exercise-grid${
                   block.items.every((item) => item.layout === 'algebra')
                     ? ' algebra-grid'
@@ -499,6 +513,7 @@ export function WorksheetSheet({
                       mode={mode}
                       itemLabel={/^tcm-(?:csc|cfr)-ex0[12]$/.test(block.exerciseType)?String.fromCharCode(65+index+itemOffset):undefined}
                       seriesNumber={/^tcm-csc-ex(?:06|16)$/.test(block.exerciseType)?index+itemOffset+1:undefined}
+                      hideNumber={/^tcm-csc-ex(?:10|11)$/.test(block.exerciseType)}
                       index={index + (/^tcm-csc-ex(?:10|11)$/.test(block.exerciseType) ? block.itemOffset ?? 0 : 0)}
                       algebraPadLeft={padLeft}
                       draftGrid={draftGrid}
@@ -557,7 +572,7 @@ export function WorksheetSheet({
                     />
                   )
                 })}
-              </div>
+              </WorksheetItems>
             </section>
           )
         })}

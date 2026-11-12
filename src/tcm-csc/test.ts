@@ -6,7 +6,7 @@ export const TCM_CSC_DOCUMENT_TITLE = 'Test de connaissance de mathÃ©matiques â€
 export const TCM_CSC_STEPS = [
   { number: 1, count: 5 }, { number: 2, count: 5 }, { number: 3, count: 1, points: 5 },
   { number: 4, count: 4 }, { number: 5, count: 4 }, { number: 6, count: 2 },
-  { number: 7, count: 12, columns: 2 }, { number: 8, count: 2 }, { number: 9, count: 3 },
+  { number: 7, count: 10, columns: 2 }, { number: 8, count: 4 }, { number: 9, count: 3 },
   { number: 10, count: 8, columns: 2 }, { number: 11, count: 4, columns: 2 },
   { number: 12, count: 1 }, { number: 13, count: 1 }, { number: 14, count: 1, points: 2 },
   { number: 15, count: 1, points: 2 }, { number: 16, count: 2 }, { number: 17, count: 1, points: 4 },

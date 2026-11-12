@@ -118469,7 +118469,7 @@
       ],
       "tcfKinds": [],
       "sourceItems": 2,
-      "playableQuestions": 7,
+      "playableQuestions": 4,
       "compatibility": [
         "assisted"
       ],
@@ -118484,35 +118484,29 @@
       "sourceFixture": [
         {
           "layout": "place-value",
-          "prompt": "614",
+          "prompt": "61",
           "labels": [
-            "centaines",
             "dizaines",
             "unités"
           ],
           "placeParts": [
-            "600",
-            "10",
-            "4"
+            "60",
+            "1"
           ],
-          "answer": "600 + 10 + 4"
+          "answer": "60 + 1"
         },
         {
           "layout": "place-value",
-          "prompt": "2'801",
+          "prompt": "28",
           "labels": [
-            "milliers",
-            "centaines",
             "dizaines",
             "unités"
           ],
           "placeParts": [
-            "2000",
-            "800",
-            "0",
-            "1"
+            "20",
+            "8"
           ],
-          "answer": "2000 + 800 + 0 + 1"
+          "answer": "20 + 8"
         }
       ]
     },
@@ -119119,7 +119113,12 @@
         {
           "layout": "segment-measure",
           "cscTask": {
-            "kind": "length-table"
+            "kind": "length-table",
+            "colors": [
+              3,
+              1,
+              0
+            ]
           },
           "segments": [
             {

@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-12",
+  "scope": "Révision CSC demandée : alignements, corps 20 px, contenus et cadres communs des opérations",
+  "changes": {
+    "body": "20 px par défaut ; en-tête et pied de page inchangés ; réglage CSC indépendant",
+    "ex01ex02": "A–E alignés sur les traits ; 15 px ajoutés à l’intervalle vertical, soit un row-gap de 25 px",
+    "ex04ex05": "Numérotation centrée verticalement sur les cases",
+    "ex06": "15 px sous les traits de réponse",
+    "ex07": "10 questions ; répartition 4/3/3 des trois signes",
+    "ex08": "4 questions : deux nombres de 11 à 99 puis deux de 101 à 999 ; éditions anciennes à quatre chiffres conservées",
+    "ex10": "8 grilles sur une page : 4 additions dans un cadre commun et 4 soustractions dans un autre, sans numérotation",
+    "ex11": "4 grilles sur une page : 2 additions dans un cadre commun, 2 soustractions dans l’autre ; calculs en couleur à 1,5 em, centrés sur chaque grille",
+    "operationCells": "39 × 39 px identiques aux exercices 10 et 11 ; retenues de 25 px ; 5 colonnes fixes",
+    "operationSpacing": "Au moins 25 px sous les dernières grilles ; 34 px réellement mesurés ; intervalle réduit à 15 px entre rangées du 10 pour conserver les huit grilles sur une page",
+    "ex13": "Seconde ligne : 1 carré à droite = 2 carrés à gauche. Ancienne explication retirée",
+    "ex14": "A–C et numéros 1/2 dans la couleur du thème ; trois couleurs de segments distinctes parmi vert, bleu, rouge et orange, variables avec la graine ; longueurs physiques conservées",
+    "ex15": "Cadre centré réduit de 10 % en largeur et hauteur",
+    "ex17": "Formes agrandies de 50 %, 25 px avant le trait et 15 px sous le trait",
+    "ex18": "Pictogramme de la forme dans la phrase de réponse à la place du nom",
+    "ex19ex20": "Axes centrés sur les cases et écartés du quadrillage ; 30 px entre les lignes de forme et coordonnées"
+  },
+  "validation": {
+    "domainSuitePassed": 251,
+    "focusedCscPassed": 15,
+    "browser": "Parcours CSC/CFR : polices A4/A5, corps indépendant, téléchargement et lecture des audios existants, contenus, grilles, corrigés et mode libre",
+    "finalPrint": "cadres-grilles-results.json : 34 pages élèves et corrigés, huit grilles du 10 et quatre du 11 sur leurs pages respectives, cases identiques, centrage et espace inférieur vérifiés, aucun dépassement de pied de page",
+    "manualReview": "PDF rendu en PNG pour vérifier les lettres sur les traits, les cadres des 10/11, les segments et les axes",
+    "errors": []
+  },
+  "audio": "Aucune nouvelle synthèse générée ni activée ; narration Denise toujours reportée"
+}

@@ -20,7 +20,7 @@ export function recalculateCsc(item: MathItem, typeId: string): MathItem | null 
     }
     if (typeId === 'tcm-csc-ex08' && item.layout === 'place-value') {
       const raw = (item.prompt ?? '').replace(/['’\s]/g,''), value = Number(raw)
-      if (!/^\d{3,4}$/.test(raw) || !integers([value],100,9999)) throw new Error('Choisissez un nombre entier de trois ou quatre chiffres.')
+      if (!/^\d{2,4}$/.test(raw) || !integers([value],11,9999)) throw new Error('Choisissez un nombre entier de deux à quatre chiffres, à partir de 11.')
       return {...item,...numberDecomposition(value),libreError:undefined}
     }
     if (task?.kind === 'sign-name') {
@@ -66,7 +66,7 @@ export function recalculateCsc(item: MathItem, typeId: string): MathItem | null 
     if (typeId.endsWith('ex14') && item.segments?.length) {
       const lengths = item.segments.map((segment) => segment.mm)
       if (lengths.length !== 3 || new Set(lengths).size !== 3 || !integers(lengths, 10, 160)) throw new Error('Choisissez trois longueurs distinctes entre 10 et 160 mm.')
-      return { ...item, cscTask: { kind: 'length-table' }, segments: item.segments.map((segment) => ({ ...segment, display: String(segment.unit === 'cm' ? segment.mm / 10 : segment.mm).replace('.', ',') })), answer: `${String.fromCharCode(65 + lengths.indexOf(Math.max(...lengths)))} ; ${String.fromCharCode(65 + lengths.indexOf(Math.min(...lengths)))}`, libreError: undefined }
+      return { ...item, cscTask: { kind: 'length-table', ...(task?.kind==='length-table'?{colors:task.colors}:{}) }, segments: item.segments.map((segment) => ({ ...segment, display: String(segment.unit === 'cm' ? segment.mm / 10 : segment.mm).replace('.', ',') })), answer: `${String.fromCharCode(65 + lengths.indexOf(Math.max(...lengths)))} ; ${String.fromCharCode(65 + lengths.indexOf(Math.min(...lengths)))}`, libreError: undefined }
     }
     return null
   } catch (error) { return { ...item, libreError: error instanceof Error ? error.message : 'Vérifiez les données de cet exercice.', answer: '' } }

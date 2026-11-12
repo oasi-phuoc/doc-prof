@@ -7,7 +7,7 @@ export type CscTask =
   | { kind: 'sign-name'; symbol: '+' | '−' | '=' }
   | { kind: 'sequence-hint'; step: number }
   | { kind: 'copy'; scale: 1 | 2 }
-  | { kind: 'length-table' }
+  | { kind: 'length-table'; colors?: number[] }
   | { kind: 'connect-points'; points: { label: string; x: number; y: number }[] }
   | { kind: 'shape-names'; figures: Figure[] }
   | { kind: 'large-count' }

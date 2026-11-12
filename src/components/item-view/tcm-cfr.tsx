@@ -154,7 +154,7 @@ export function SegmentMeasureBlock({
             <div className="tcm-cfr-segment-row" key={`seg-${i}`}>
               <span className="tcm-cfr-segment-num">{letter}.</span>
               <div className="tcm-cfr-segment-line-wrap">
-                <div className="tcm-cfr-segment-line" style={{ width: `${widthMm}mm` }} />
+                <div className="tcm-cfr-segment-line" style={{ width: `${widthMm}mm`, ...(item.cscTask?.kind==='length-table'?{borderColor:`var(--csc-segment-${item.cscTask.colors?.[i]??i}, ${['#23723b','#174eae','#b52335','#aa5811'][(item.cscTask.colors?.[i]??i)%4]})`}:{}) }} />
               </div>
               <span className="tcm-cfr-segment-answer">
                 <span className={`answer-line-field compact ${show ? 'filled' : ''}`}>
