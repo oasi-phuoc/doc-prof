@@ -2,11 +2,11 @@
 
 `npm run interactive:inventory` produit `inventory.json` à partir de **chaque type réel du catalogue**, avec `buildPage`, puis applique le nouvel adaptateur. Paramètres : graine 20261107, deux items, niveau par défaut ; source, champs, layouts, configuration et deux items témoins sont conservés par entrée. Le résultat est reproductible, sans modification des banques.
 
-- 2 074 types de catalogue ; 2 106 couples type/domaine après ajout des variantes TCF CSC et CFR.
+- 2 079 types de catalogue ; 2 111 couples type/domaine après ajout des variantes TCF CSC et CFR.
 - 20 domaines déclarés : 19 présents dans les variantes du catalogue. `français` est un ancien domaine sans thème actif dans le catalogue actuel ; son fallback de configuration est une addition, ce qui ne constitue pas une couverture du français.
 - 51 layouts observés sur 54 déclarés. `grammar`, `vocab-write` et `audio-match` ne sortent pas dans ces tirages : couverture non démontrée.
-- 710 variantes produisent au moins une activité convertible : 518 uniquement en QCM source, comparaisons, classements ou noms de signes vérifiés, 68 adaptations vérifiées, 90 uniquement guidées et 34 mêlant QCM et activités guidées. Ce nombre décrit la conversion structurelle observée, pas une validation pédagogique de chaque famille, graine et niveau.
-- 1 396 variantes sont non prises en charge, y compris huit échecs de génération déjà présents : association de syllabes `alpha-x-gz` et sept exercices Soutien contenant un jeton sans catégorie. Les détails sont conservés dans l’inventaire ; aucune donnée de banque n’a été réécrite pour masquer ces erreurs.
+- 712 variantes produisent au moins une activité convertible : 518 uniquement en QCM source, comparaisons, classements ou noms de signes vérifiés, 70 adaptations vérifiées, 90 uniquement guidées et 34 mêlant QCM et activités guidées. Ce nombre décrit la conversion structurelle observée, pas une validation pédagogique de chaque famille, graine et niveau.
+- 1 399 variantes sont non prises en charge, y compris huit échecs de génération déjà présents : association de syllabes `alpha-x-gz` et sept exercices Soutien contenant un jeton sans catégorie. Les détails sont conservés dans l’inventaire ; aucune donnée de banque n’a été réécrite pour masquer ces erreurs.
 
 ## Contrats de conversion actuels
 
@@ -21,6 +21,7 @@
 | Triangles et parallélogrammes : mesures | Périmètres, aires, côtés et hauteurs manquantes ; inégalité triangulaire et résultats exacts vérifiés ; huit types supplémentaires | Schéma générique du triangle ; aires arrondies refusées ; autres variantes et figures à adapter ; ADR 0030 |
 | Décompositions et noms des signes | Une question par position pour cinq types ; termes et somme vérifiés ; trois noms CSC vérifiés | Entiers de deux à quatre chiffres ; pas de décomposition décimale ; ADR 0031 |
 | Reconnaissance des formes et propriétés | CSC 17, treize formes nommées et six familles de propriétés ; dessin nu, noms et propriétés vérifiés | Sous-types de triangles, propriétés des trapèzes et clés de logique importées à vérifier ; ADR 0032 |
+| Cartes de formes CFR | Nom et deux propriétés vérifiés dans les cartes 16–17 ; sept figures simples, une question par propriété | Trois sous-types de triangles à valider ; contrats libres exacts ; ADR 0033 |
 | Signes et problèmes CSC | Signe unique recalculé ; problème, nombres et corrigé comparés à la banque ; contexte conservé et cartes numériques déterministes | Cinq types CSC observés avec les opérations posées ; les autres rendus demandent encore leur adaptation ; les signes ambigus sont signalés |
 | QCM `select` | 2–6 choix source distincts ; réponse unique retrouvée | Choix audio individuels non pris en charge dans ce layout |
 | Dictées et calculs oraux CSC/CFR | Tous les extraits vérifiés contre le lexique et le corrigé ; une piste complète, une question par dictée | Nombres de 0 à 1 000 et calculs explicitement vérifiables ; extrait manquant ou incohérent signalé |
@@ -40,6 +41,6 @@ Vérifier les contextes et médias propres à chaque famille ; les QCM multi-ré
 
 Inventaire recalculé le 12 novembre 2026. Les nombres historiques du prototype décrivaient un catalogue antérieur ; plusieurs exercices de grammaire auparavant rendus en TCF utilisent maintenant le layout `text` et demandent un adaptateur dédié. Aucune compatibilité générique n’est déduite du seul domaine.
 
-Le tirage courant trouve 24 variantes de géométrie jouables : seize types de mesures, deux types de reconnaissance et six mélanges. Les deux items de chaque mélange de ce relevé sont convertibles ; les autres figures de ces mélanges restent signalées quand elles apparaissent sur une autre graine. Il trouve cinq variantes Gattegno, contre six dans le relevé précédent : les phrases issues de la banque enrichie restent soumises à la limite de deux à six mots manipulables. Les trois types de catalogue supplémentaires depuis le relevé du 11 novembre proviennent du travail de grammaire intégré.
+Le tirage courant trouve 24 variantes de géométrie jouables : seize types de mesures, deux types de reconnaissance et six mélanges. Les deux items de chaque mélange de ce relevé sont convertibles ; les autres figures de ces mélanges restent signalées quand elles apparaissent sur une autre graine. Il trouve cinq variantes Gattegno, contre six dans le relevé précédent : les phrases issues de la banque enrichie restent soumises à la limite de deux à six mots manipulables. Les nouveaux types de grammaire intégrés sont conservés dans ce relevé ; ils ne sont pas assimilés à une adaptation automatique au jeu.
 
 La banque de logique importée contient 206 `correctIndex` initialisés à 0 faute de corrigé connu ; ces valeurs ne sont pas utilisées pour inventer un verdict. Une relecture des bonnes réponses est nécessaire avant leur adaptation au score automatique. Voir [ADR 0032](adr-0032-reconnaissance-des-formes.md).

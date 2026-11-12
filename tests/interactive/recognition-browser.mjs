@@ -11,11 +11,14 @@ await server.listen()
 const recipe=JSON.parse(await readFile('docs/interactive/demo-source-recipe.json','utf8'))
 const properties=[['Nom','cercle'],['Côtés','0'],['Angles droits','0'],['Axes de symétrie','une infinité']].map(([label,answer])=>({label,answer}))
 const csc={layout:'csc-task',answer:'carré ; rectangle ; cercle ; triangle',cscTask:{kind:'shape-names',figures:['square','rectangle','circle','triangle']}}
+const cfrRectangle={layout:'geo',figure:'rectangle',dims:{bare:true},geoNameCard:true,propertyLines:[{label:'Nom',answer:'rectangle'},{label:'Propriété 1',answer:'côtés opposés égaux'},{label:'Propriété 2',answer:'4 angles droits'}],answer:'rectangle ; côtés opposés égaux ; 4 angles droits'}
+const cfrPentagon={layout:'geo',figure:'pentagon',dims:{bare:true},geoNameCard:true,propertyLines:[{label:'Nom',answer:'pentagone'}],answer:'pentagone'}
 recipe.pages=[{...recipe.pages[0],domain:'tcm-csc',topic:'tcm-csc-test',exerciseType:'tcm-csc-ex17',count:2,libreItems:[csc,{...csc,answer:'carré ; carré ; carré ; carré'}]},
  {...recipe.pages[0],domain:'géométrie',topic:'figures',exerciseType:'figures-proprietes',count:1,libreItems:[{layout:'geo',figure:'circle',propertyLines:properties,answer:properties.map(({label,answer})=>`${label} : ${answer}`).join(' · ')}]},
- {...recipe.pages[0],domain:'géométrie',topic:'figures',exerciseType:'figures-nommer',count:1,libreItems:[{layout:'geo',figure:'cube',answer:'cube'}]}]
+ {...recipe.pages[0],domain:'géométrie',topic:'figures',exerciseType:'figures-nommer',count:1,libreItems:[{layout:'geo',figure:'cube',answer:'cube'}]},
+ {...recipe.pages[0],domain:'tcm-cfr',topic:'tcm-cfr-test',exerciseType:'tcm-cfr-ex16',count:1,libreItems:[cfrRectangle],extraBlocks:[{topic:'tcm-cfr-test',exerciseType:'tcm-cfr-ex17',count:2,columns:1,libreItems:[cfrPentagon,{...cfrPentagon,answer:'trapèze'}]}]}]
 const original=structuredClone(recipe)
-const saved={id:'recognition-source',name:'Formes et propriétés',domains:['tcm-csc','géométrie'],recipe,createdAt:'2026-11-12T00:00:00Z',updatedAt:'2026-11-12T00:00:00Z'}
+const saved={id:'recognition-source',name:'Formes et propriétés',domains:['tcm-csc','géométrie','tcm-cfr'],recipe,createdAt:'2026-11-12T00:00:00Z',updatedAt:'2026-11-12T00:00:00Z'}
 const browser=await chromium.launch({executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH||undefined,args:['--no-sandbox']})
 const results=[],errors=[],methods=[]
 const button=(page,name)=>page.getByRole('button',{name,exact:true})
@@ -62,7 +65,7 @@ async function fits(page,width,height) {
 try {
  for(const [width,height] of [[390,844],[1366,768],[360,640]]) {
   const {context,page}=await setup(width,height)
-  assert.equal(await page.locator('.ci-question-list fieldset > label').count(),9)
+  assert.equal(await page.locator('.ci-question-list fieldset > label').count(),13)
   await page.getByText(/formes CSC et leur corrigé ne correspondent plus/).waitFor({state:'attached'})
   await page.getByRole('checkbox',{name:'Activer le minuteur',exact:true}).uncheck()
   await page.locator('.ci-launch').click();await page.locator('.ci-answer').first().waitFor()
@@ -75,34 +78,38 @@ try {
   assert.equal(await page.locator('.ci-answer-key .ci-answer-content').innerText(),'une infinité')
   await navigate(page,8);await reveal(page,'cube');await fits(page,width,height)
   if(width!==360)await page.screenshot({path:`docs/interactive/screenshots/recognition-${width}.png`})
-  results.push({viewport:`${width}x${height}`,class:'four CSC shape names; circle properties including infinitely many axes; cube name',resume:'same circle correction and public figure',layout:'figure, cards and controls inside viewport without overlap; axe passes'})
+  await navigate(page,10);await reveal(page,'côtés opposés');await fits(page,width,height)
+  await navigate(page,11);await reveal(page,'4');await fits(page,width,height)
+  await navigate(page,12);await reveal(page,'pentagone');await fits(page,width,height)
+  await page.screenshot({path:`docs/interactive/screenshots/cfr-recognition-${width}.png`})
+  results.push({viewport:`${width}x${height}`,class:'four CSC shape names; circle properties including infinitely many axes; cube name; CFR opposite-side and right-angle properties and pentagon name',resume:'same circle correction and public figure',layout:'figure, cards and controls inside viewport without overlap; axe passes'})
   await context.close()
  }
  const {context,page}=await setup(390,844)
  await button(page,'Tout désélectionner').click()
- for(const index of [0,1,2])await page.locator('.ci-question-list fieldset > label').nth(index).locator('input').check()
+ for(const index of [10,11,12])await page.locator('.ci-question-list fieldset > label').nth(index).locator('input').check()
  await button(page,'Mode de jeu').click()
  await page.getByRole('spinbutton',{name:'Temps de réflexion (secondes)',exact:true}).fill('5')
  await button(page,'Régler le minuteur').click();await page.getByRole('spinbutton',{name:'Temps entre les questions (secondes)',exact:true}).fill('1');await button(page,'Fermer les réglages').click()
  await page.clock.install();await page.clock.pauseAt(new Date(Date.now()+1000))
  await page.locator('.ci-launch').click();await page.locator('.ci-answer:enabled').first().waitFor()
- await card(page,'carré').click();await page.locator('.ci-answer-correct').waitFor();await page.clock.runFor(1100)
- await page.locator('.ci-answer:enabled').first().waitFor();await card(page,'triangle').click();await page.locator('.ci-answer-incorrect').waitFor()
- assert.equal(await page.locator('.ci-answer-key .ci-answer-content').innerText(),'rectangle')
+ await card(page,'côtés opposés').click();await page.locator('.ci-answer-correct').waitFor();await page.clock.runFor(1100)
+ await page.locator('.ci-answer:enabled').first().waitFor();await page.locator('.ci-answer').filter({hasNot:page.getByText('4',{exact:true})}).first().click();await page.locator('.ci-answer-incorrect').waitFor()
+ assert.equal(await page.locator('.ci-answer-key .ci-answer-content').innerText(),'4')
  await page.clock.runFor(1100);await page.locator('.ci-answer:enabled').first().waitFor();await page.clock.runFor(5100);await page.locator('.ci-reveal').waitFor()
- assert.equal(await page.locator('.ci-answer-key .ci-answer-content').innerText(),'cercle')
+ assert.equal(await page.locator('.ci-answer-key .ci-answer-content').innerText(),'pentagone')
  assert.equal((await page.locator('.ci-correction-status').innerText()).trim(),'Temps écoulé')
  await page.clock.runFor(1100);await page.locator('.ci-summary').waitFor();assert.equal(await page.locator('.ci-summary-questions > p').count(),3)
- await context.close();results.push({solo:'correct square, incorrect rectangle and timeout on circle; automatic one-second progression'})
+ await context.close();results.push({solo:'correct opposite sides, incorrect right-angle count and timeout on pentagon; automatic one-second progression'})
  const local=await setup(390,844)
- await button(local.page,'Tout désélectionner').click();await local.page.locator('.ci-question-list fieldset > label').first().locator('input').check()
+ await button(local.page,'Tout désélectionner').click();await local.page.locator('.ci-question-list fieldset > label').nth(12).locator('input').check()
  await local.page.getByRole('checkbox',{name:'Activer le minuteur',exact:true}).uncheck()
  await button(local.page,'Compétition').click();await button(local.page,'Préparer le défi local').click()
  await button(local.page,'Ajouter cette mascotte').click();await button(local.page,'Renard').click();await button(local.page,'Ajouter cette mascotte').click()
  await button(local.page,'Commencer la compétition').click();await button(local.page,'Je suis prêt').click();await local.page.locator('.ci-answer:enabled').first().waitFor();await local.context.setOffline(true)
- await card(local.page,'carré').click();await button(local.page,'Je suis prêt').click();await card(local.page,'triangle').click();await local.page.locator('.ci-answer-key').waitFor()
- assert.equal(await local.page.locator('.ci-answer-key .ci-answer-content').innerText(),'carré');await fits(local.page,390,844);await local.context.close()
+ await card(local.page,'pentagone').click();await button(local.page,'Je suis prêt').click();await local.page.locator('.ci-answer').filter({hasNot:local.page.getByText('pentagone',{exact:true})}).first().click();await local.page.locator('.ci-answer-key').waitFor()
+ assert.equal(await local.page.locator('.ci-answer-key .ci-answer-content').innerText(),'pentagone');await fits(local.page,390,844);await local.context.close()
  assert.deepEqual(recipe,original);assert.ok(methods.every(method=>method==='GET'));assert.deepEqual(errors,[])
- results.push({competition:'four shape-name cards, public bare figure, two fixed mascots, offline local turns and correction',sourceTemplate:'unchanged',serverWrites:0,errors})
+ results.push({competition:'six CFR pentagon-name cards, public bare figure, two fixed mascots, offline local turns and correction',sourceTemplate:'unchanged',serverWrites:0,errors})
  await writeFile('docs/interactive/recognition-results.json',JSON.stringify(results,null,2)+'\n');console.log(JSON.stringify(results,null,2))
 } finally {await browser.close();await server.close()}

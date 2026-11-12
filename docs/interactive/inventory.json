@@ -3,8 +3,8 @@
   "seed": 20261107,
   "scope": "Un tirage réel par type de catalogue, count=2, niveau par défaut. Ne garantit pas les autres graines, variantes et niveaux.",
   "summary": {
-    "types": 2106,
-    "catalogTypes": 2074,
+    "types": 2111,
+    "catalogTypes": 2079,
     "declaredDomains": [
       "français",
       "algèbre",
@@ -165,7 +165,7 @@
       "vocab-write",
       "audio-match"
     ],
-    "playableTypes": 710,
+    "playableTypes": 712,
     "generationErrors": 8
   },
   "rows": [
@@ -114652,6 +114652,216 @@
       ]
     },
     {
+      "id": "gram-ex-i4-curriculum-t",
+      "domain": "grammaire",
+      "topic": "gram-pronoms",
+      "label": "Transformer une phrase",
+      "seed": 20261107,
+      "config": {
+        "domain": "grammaire",
+        "topic": "gram-pronoms",
+        "exerciseType": "gram-ex-i4-curriculum-t",
+        "difficulty": "moyen",
+        "count": 2,
+        "columns": 1
+      },
+      "layouts": [
+        "text"
+      ],
+      "tcfKinds": [],
+      "sourceItems": 1,
+      "playableQuestions": 0,
+      "compatibility": [
+        "unsupported"
+      ],
+      "issues": [
+        {
+          "source": "1/1/1 gram-ex-i4-curriculum-t",
+          "reason": "Rendu « text » non pris en charge dans ce premier prototype."
+        }
+      ],
+      "fields": [
+        "answer",
+        "layout",
+        "prompt"
+      ],
+      "sourceFixture": [
+        {
+          "layout": "text",
+          "prompt": "Choisissez une activité, un niveau et un mode de réponse grammaticaux disponibles (1 à 50 questions).",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "id": "gram-ex-i4-curriculum-c",
+      "domain": "grammaire",
+      "topic": "gram-pronoms",
+      "label": "Corriger l’erreur",
+      "seed": 20261107,
+      "config": {
+        "domain": "grammaire",
+        "topic": "gram-pronoms",
+        "exerciseType": "gram-ex-i4-curriculum-c",
+        "difficulty": "moyen",
+        "count": 2,
+        "columns": 1
+      },
+      "layouts": [
+        "text"
+      ],
+      "tcfKinds": [],
+      "sourceItems": 1,
+      "playableQuestions": 0,
+      "compatibility": [
+        "unsupported"
+      ],
+      "issues": [
+        {
+          "source": "1/1/1 gram-ex-i4-curriculum-c",
+          "reason": "Rendu « text » non pris en charge dans ce premier prototype."
+        }
+      ],
+      "fields": [
+        "answer",
+        "layout",
+        "prompt"
+      ],
+      "sourceFixture": [
+        {
+          "layout": "text",
+          "prompt": "Choisissez une activité, un niveau et un mode de réponse grammaticaux disponibles (1 à 50 questions).",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "id": "gram-ex-k10-curriculum-t",
+      "domain": "grammaire",
+      "topic": "gram-exprimer",
+      "label": "Transformer une phrase",
+      "seed": 20261107,
+      "config": {
+        "domain": "grammaire",
+        "topic": "gram-exprimer",
+        "exerciseType": "gram-ex-k10-curriculum-t",
+        "difficulty": "moyen",
+        "count": 2,
+        "columns": 1
+      },
+      "layouts": [
+        "text"
+      ],
+      "tcfKinds": [],
+      "sourceItems": 1,
+      "playableQuestions": 0,
+      "compatibility": [
+        "unsupported"
+      ],
+      "issues": [
+        {
+          "source": "1/1/1 gram-ex-k10-curriculum-t",
+          "reason": "Rendu « text » non pris en charge dans ce premier prototype."
+        }
+      ],
+      "fields": [
+        "answer",
+        "layout",
+        "prompt"
+      ],
+      "sourceFixture": [
+        {
+          "layout": "text",
+          "prompt": "Choisissez une activité, un niveau et un mode de réponse grammaticaux disponibles (1 à 50 questions).",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "id": "gram-ex-k10-curriculum-c",
+      "domain": "grammaire",
+      "topic": "gram-exprimer",
+      "label": "Corriger l’erreur",
+      "seed": 20261107,
+      "config": {
+        "domain": "grammaire",
+        "topic": "gram-exprimer",
+        "exerciseType": "gram-ex-k10-curriculum-c",
+        "difficulty": "moyen",
+        "count": 2,
+        "columns": 1
+      },
+      "layouts": [
+        "text"
+      ],
+      "tcfKinds": [],
+      "sourceItems": 1,
+      "playableQuestions": 0,
+      "compatibility": [
+        "unsupported"
+      ],
+      "issues": [
+        {
+          "source": "1/1/1 gram-ex-k10-curriculum-c",
+          "reason": "Rendu « text » non pris en charge dans ce premier prototype."
+        }
+      ],
+      "fields": [
+        "answer",
+        "layout",
+        "prompt"
+      ],
+      "sourceFixture": [
+        {
+          "layout": "text",
+          "prompt": "Choisissez une activité, un niveau et un mode de réponse grammaticaux disponibles (1 à 50 questions).",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "id": "gram-ex-k10-curriculum-e",
+      "domain": "grammaire",
+      "topic": "gram-exprimer",
+      "label": "Produire à l’écrit",
+      "seed": 20261107,
+      "config": {
+        "domain": "grammaire",
+        "topic": "gram-exprimer",
+        "exerciseType": "gram-ex-k10-curriculum-e",
+        "difficulty": "moyen",
+        "count": 2,
+        "columns": 1
+      },
+      "layouts": [
+        "text"
+      ],
+      "tcfKinds": [],
+      "sourceItems": 1,
+      "playableQuestions": 0,
+      "compatibility": [
+        "unsupported"
+      ],
+      "issues": [
+        {
+          "source": "1/1/1 gram-ex-k10-curriculum-e",
+          "reason": "Rendu « text » non pris en charge dans ce premier prototype."
+        }
+      ],
+      "fields": [
+        "answer",
+        "layout",
+        "prompt"
+      ],
+      "sourceFixture": [
+        {
+          "layout": "text",
+          "prompt": "Choisissez une activité, un niveau et un mode de réponse grammaticaux disponibles (1 à 50 questions).",
+          "answer": ""
+        }
+      ]
+    },
+    {
       "id": "vocabulaire-placeholder",
       "domain": "vocabulaire",
       "topic": "vocabulaire-a-venir",
@@ -121742,18 +121952,14 @@
       ],
       "tcfKinds": [],
       "sourceItems": 2,
-      "playableQuestions": 0,
+      "playableQuestions": 3,
       "compatibility": [
-        "unsupported"
+        "assisted"
       ],
       "issues": [
         {
-          "source": "1/1/1 tcm-cfr-ex16",
-          "reason": "Rendu « geo » non pris en charge dans ce premier prototype."
-        },
-        {
           "source": "1/1/2 tcm-cfr-ex16",
-          "reason": "Rendu « geo » non pris en charge dans ce premier prototype."
+          "reason": "Cette variante CFR, notamment les sous-types de triangles, demande encore une validation de son dessin."
         }
       ],
       "fields": [
@@ -121833,20 +122039,11 @@
       ],
       "tcfKinds": [],
       "sourceItems": 2,
-      "playableQuestions": 0,
+      "playableQuestions": 2,
       "compatibility": [
-        "unsupported"
+        "assisted"
       ],
-      "issues": [
-        {
-          "source": "1/1/1 tcm-cfr-ex17",
-          "reason": "Rendu « geo » non pris en charge dans ce premier prototype."
-        },
-        {
-          "source": "1/1/2 tcm-cfr-ex17",
-          "reason": "Rendu « geo » non pris en charge dans ce premier prototype."
-        }
-      ],
+      "issues": [],
       "fields": [
         "answer",
         "dims",

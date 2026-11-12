@@ -30,9 +30,42 @@ function naming(item: MathItem, part: number, answer: string, pool: string[], se
   return {part,prompt:'Choisis le nom le plus précis de cette figure.',figure:publicFigure(item),...wordChoices(answer,pool,seed),model:answer}
 }
 
+type CfrFact = {source:string;prompt:string;answer:string;pool?:string[]}
+const equalSides = (source:string):CfrFact => ({source,prompt:'Quels côtés ont la même longueur ?',answer:'côtés opposés',pool:['côtés opposés','côtés qui se touchent','aucun côté']})
+const fourEqual:CfrFact = {source:'4 côtés égaux',prompt:'Combien de côtés de même longueur possède cette figure ?',answer:'4'}
+const fourRight:CfrFact = {source:'4 angles droits',prompt:'Combien d’angles droits possède cette figure ?',answer:'4'}
+const cfrCards:Record<string,{name:string;facts:[CfrFact,CfrFact];dims?:MathItem['dims']}> = {
+  square:{name:'carré',facts:[fourEqual,fourRight]},
+  rectangle:{name:'rectangle',facts:[equalSides('côtés opposés égaux'),fourRight]},
+  rhombus:{name:'losange',facts:[fourEqual,{source:'angles opposés égaux',prompt:'Comment sont les angles opposés de cette figure ?',answer:'égaux',pool:['égaux','différents','toujours droits']}]},
+  parallelogram:{name:'parallélogramme',facts:[{source:'côtés opposés parallèles',prompt:'Quels côtés sont parallèles ?',answer:'côtés opposés',pool:['côtés opposés','côtés qui se touchent','aucun côté']},equalSides('côtés opposés égaux')]},
+  circle:{name:'cercle',facts:[{source:'tous les points à égale distance du centre',prompt:'Comment sont les distances du centre aux points de cette figure ?',answer:'égales',pool:['égales','différentes','nulles']},{source:'pas de côté',prompt:'Combien de côtés possède cette figure ?',answer:'0'}]},
+  trapezoid:{name:'trapèze',dims:{trapezoidKind:'isosceles'},facts:[{source:'une paire de côtés parallèles',prompt:'Combien de paires de côtés parallèles possède cette figure ?',answer:'1'},{source:'4 côtés',prompt:'Combien de côtés possède cette figure ?',answer:'4'}]},
+  pentagon:{name:'pentagone',facts:[{source:'5 côtés',prompt:'Combien de côtés possède cette figure ?',answer:'5'},{source:'5 sommets',prompt:'Combien de sommets possède cette figure ?',answer:'5'}]},
+}
+function cfrRecognition(item:MathItem,type:string,seedFor:(part:number)=>number):Result|undefined {
+  if(!/^tcm-cfr-ex(?:16|17)$/.test(type))return undefined
+  if(item.layout!=='geo'||item.geoNameCard!==true||item.dims?.bare!==true||item.prompt?.trim()||item.geoDualPads||item.compositeScene||item.calcAnswer||item.responseAnswer)return reject('Cette carte CFR doit montrer une seule forme sans mesure ni autre calcul.')
+  const reference=Object.hasOwn(cfrCards,item.figure??'')?cfrCards[item.figure!]:undefined
+  if(!reference||figureKey(item)!==figureKey({layout:'geo',figure:item.figure,dims:reference.dims,answer:reference.name}))return reject('Cette variante CFR, notamment les sous-types de triangles, demande encore une validation de son dessin.')
+  const withProperties=type==='tcm-cfr-ex16'
+  const lines=[{label:'Nom',answer:reference.name},...(withProperties?reference.facts.map((fact,index)=>({label:`Propriété ${index+1}`,answer:fact.source})):[])]
+  const answer=withProperties?[reference.name,...reference.facts.map(fact=>fact.source)].join(' ; '):reference.name
+  if(JSON.stringify(item.propertyLines)!==JSON.stringify(lines)||normalize(item.answer)!==answer)return reject('La forme CFR, ses propriétés et son corrigé ne correspondent plus. Validez la fiche avant de jouer.')
+  const first=naming(item,0,reference.name,namePool,seedFor(0))
+  const facts=withProperties?reference.facts.map((fact,index):Entry=>{
+    const part=index+1
+    const choices=fact.pool?wordChoices(fact.answer,fact.pool,seedFor(part)):decimalChoices(BigInt(fact.answer),0,1n,fact.answer,seedFor(part))
+    return {part,figure:publicFigure(item),prompt:fact.prompt,model:fact.source,...choices}
+  }):[]
+  return {items:[first,...facts],issues:[]}
+}
+
 /** Closed, reviewed geometric relations only; no imported image-bank key is inferred. */
 export function adaptRecognition(item: MathItem, exerciseType: string, seedFor: (part: number)=>number): Result | undefined {
   if (item.layout==='logique') return reject('Les corrigés importés de cette banque de logique doivent être vérifiés avant un score automatique.')
+  const cfr=cfrRecognition(item,exerciseType,seedFor)
+  if(cfr)return cfr
   if (item.cscTask?.kind==='shape-names' && exerciseType==='tcm-csc-ex17') {
     const figures=item.cscTask.figures
     if (item.layout!=='csc-task' || !Array.isArray(figures) || figures.length!==4 || new Set(figures).size!==4 || figures.some(figure=>!CSC_FIGURES.some(entry=>entry.value===figure))) return reject('Les quatre formes CSC doivent être distinctes et appartenir à la liste des formes proposées.')
