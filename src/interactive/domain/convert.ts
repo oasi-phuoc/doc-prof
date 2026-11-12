@@ -13,6 +13,7 @@ import { verifiedWrittenArithmetic } from './written-arithmetic'
 import { decimalChoices } from './decimal-choices'
 import { adaptOrdering } from './ordering'
 import { verifiedGeometry } from './geometry'
+import { adaptRecognition } from './recognition'
 export { hash } from './seeds'
 const normalized = (s: string) =>
   s
@@ -247,6 +248,16 @@ export function convertRecipe(
             const choices = numberChoices(numericAudio.value, deriveSeed({ originalSeed: recipe.seed, sourceKey: q.id, purpose: 'distractors' }))
             q.choices = choices.choices
             add(q, numericAudio.model, choices.correctId)
+            return
+          }
+          const recognition=adaptRecognition(item,block.exerciseType,part=>deriveSeed({originalSeed:recipe.seed,sourceKey:base(part).id,purpose:'distractors'}))
+          if (recognition) {
+            recognition.issues.forEach(reject)
+            for (const entry of recognition.items) {
+              const q=base(entry.part)
+              q.prompt=entry.prompt; q.figure=entry.figure; q.choices=entry.choices; q.compatibility='assisted'
+              add(q,entry.model,entry.correctId)
+            }
             return
           }
           const csc = verifiedCscMath(item)
