@@ -11,6 +11,7 @@ import { verifiedNumericAudio } from './audio-math'
 import { adaptNumeracy } from './numeracy'
 import { verifiedWrittenArithmetic } from './written-arithmetic'
 import { decimalChoices } from './decimal-choices'
+import { adaptOrdering } from './ordering'
 export { hash } from './seeds'
 const normalized = (s: string) =>
   s
@@ -206,6 +207,18 @@ export function convertRecipe(
           }
           if (item.libreError) {
             reject(item.libreError)
+            return
+          }
+          const ordering = adaptOrdering(item, (part) => deriveSeed({ originalSeed: recipe.seed, sourceKey: base(part).id, purpose: 'distractors' }))
+          if (ordering) {
+            ordering.issues.forEach(reject)
+            ordering.items.forEach((entry) => {
+              const q = base(entry.part)
+              q.prompt = entry.prompt
+              q.context = [q.context, entry.context].filter(Boolean).join('\n\n')
+              q.choices = entry.choices
+              add(q, entry.model, entry.correctId)
+            })
             return
           }
           const numeracy = adaptNumeracy(item, (part) => deriveSeed({ originalSeed: recipe.seed, sourceKey: base(part).id, purpose: 'distractors' }))

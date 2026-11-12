@@ -13,6 +13,11 @@ function capChoices(choices: Choice[], correctId: string, key: string): Choice[]
   return choices.filter((choice) => kept.has(choice.id))
 }
 
+function phraseOrdering(words: string[], ordered: string[], model: string): Result {
+  if (words.length < 2 || words.length > 6 || words.some((word) => !word) || new Set(words.map(textKey)).size < 2 || !sameBag(words, ordered) || !model || letters(model) !== letters(ordered.join(' '))) return { items: [], issues: ['Phrase à ordonner non vérifiable ou hors limite de deux à six éléments.'] }
+  return { items: [{ part: 0, prompt: 'Remets les mots dans l’ordre.', instruction: 'Choisissez un mot puis une autre place, ou utilisez les flèches du clavier.', choices: [], model, mode: 'sequence', words: words.every((word, index) => word === ordered[index]) ? [...words.slice(1), words[0]!] : words, teacherLed: true }], issues: ['Phrase manipulable avec modèle source ; les autres ordres possibles sont appréciés par l’enseignant, sans verdict automatique.'] }
+}
+
 /** Explicit source relations only. Each audio/association gets its own stable source part. */
 export function adaptSourceItem(item: MathItem, exerciseType: string, sourceInstruction = ''): Result | undefined {
   if (item.layout === 'listen-check') {
@@ -93,11 +98,14 @@ export function adaptSourceItem(item: MathItem, exerciseType: string, sourceInst
     issues.push('L’association est proposée en micro-questions indépendantes ; aucune réponse déjà utilisée n’est retirée automatiquement. Les mots à compléter montrent le mot source complet.')
     return { items, issues }
   }
+  if (item.layout === 'order' && item.orderOp === undefined) {
+    if (!/^remettez la phrase en ordre[.]?$/.test(textKey(item.prompt ?? ''))) return { items: [], issues: ['Ce classement demande une activité dédiée ; sa consigne ne décrit pas une phrase à remettre en ordre.'] }
+    return phraseOrdering(item.sequence?.map((word) => word.trim()) ?? [], item.placeParts ?? [], item.answer.trim())
+  }
   if (item.layout === 'phrase-order') {
     const words = item.tokens?.map((token) => token.text.trim()) ?? []
     const ordered = item.labels ?? []
     const model = item.responseAnswer?.trim() || item.answer.trim()
-    if (words.length < 2 || words.length > 6 || words.some((word) => !word) || new Set(words.map(textKey)).size < 2 || !sameBag(words, ordered) || !model || letters(model) !== letters(ordered.join(' '))) return { items: [], issues: ['Phrase à ordonner non vérifiable ou hors limite de deux à six éléments.'] }
-    return { items: [{ part: 0, prompt: 'Remets les mots dans l’ordre.', instruction: 'Choisissez un mot puis une autre place, ou utilisez les flèches du clavier.', choices: [], model, mode: 'sequence', words: sameBag(words, ordered) && words.every((word, index) => word === ordered[index]) ? [...words.slice(1), words[0]!] : words, teacherLed: true }], issues: ['Phrase manipulable avec modèle source ; les autres ordres possibles sont appréciés par l’enseignant, sans verdict automatique.'] }
+    return phraseOrdering(words, ordered, model)
   }
 }

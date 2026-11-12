@@ -74,6 +74,7 @@ PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run test:interactive:m
 PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run test:interactive:competition
 PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run test:interactive:numeracy
 PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run test:interactive:arithmetic
+PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run test:interactive:ordering
 npm ci --prefix api/fiches --no-audit --no-fund
 npm run typecheck:api
 npm run test:interactive:competition-worker
@@ -100,3 +101,5 @@ Les [nombres et calculs oraux](adr-0024-sequences-audio.md) lisent tous leurs ex
 Les [comparaisons et suites numériques](adr-0026-comparaisons-et-suites.md) proposent les signes `<`, `=` et `>` ou une question par case manquante. Les nombres de la fiche et son aide sont conservés ; la case demandée est encadrée, les autres blancs restent masqués et la correction apparaît uniquement dans les cartes. Entiers, décimaux et fractions sont vérifiés exactement ; les suites doivent avoir un pas constant. Ces activités fonctionnent aussi en compétition.
 
 Les [calculs à trou, divisions et décimaux](adr-0027-calculs-a-trou-et-decimaux.md) gardent l’équation de la fiche et sa case manquante. Les résultats décimaux sont exacts, les calculs ambigus ou incohérents sont signalés, et le jeu conserve ses parcours Classe, Solo et compétition. Les fractions non décimales, les quotients arrondis et les divisions avec reste demandent encore une adaptation.
+
+L’[ordre des nombres et des lettres](adr-0028-classements-et-phrases.md) propose une question par position avec les éléments source comme cartes, tout en montrant la liste complète. Les phrases courtes à remettre en ordre réutilisent les mots manipulables et la validation humaine. Les classements stricts avec nombres répétés et les phrases trop longues sont signalés avant de jouer.
