@@ -165,7 +165,7 @@
       "vocab-write",
       "audio-match"
     ],
-    "playableTypes": 703,
+    "playableTypes": 707,
     "generationErrors": 8
   },
   "rows": [
@@ -639,20 +639,11 @@
       ],
       "tcfKinds": [],
       "sourceItems": 2,
-      "playableQuestions": 0,
+      "playableQuestions": 4,
       "compatibility": [
-        "unsupported"
+        "assisted"
       ],
-      "issues": [
-        {
-          "source": "1/1/1 tpm-decompose-99",
-          "reason": "Rendu « place-value » non pris en charge dans ce premier prototype."
-        },
-        {
-          "source": "1/1/2 tpm-decompose-99",
-          "reason": "Rendu « place-value » non pris en charge dans ce premier prototype."
-        }
-      ],
+      "issues": [],
       "fields": [
         "answer",
         "labels",
@@ -774,20 +765,11 @@
       ],
       "tcfKinds": [],
       "sourceItems": 2,
-      "playableQuestions": 0,
+      "playableQuestions": 8,
       "compatibility": [
-        "unsupported"
+        "assisted"
       ],
-      "issues": [
-        {
-          "source": "1/1/1 tpm-decompose-9999",
-          "reason": "Rendu « place-value » non pris en charge dans ce premier prototype."
-        },
-        {
-          "source": "1/1/2 tpm-decompose-9999",
-          "reason": "Rendu « place-value » non pris en charge dans ce premier prototype."
-        }
-      ],
+      "issues": [],
       "fields": [
         "answer",
         "labels",
@@ -4522,20 +4504,11 @@
       ],
       "tcfKinds": [],
       "sourceItems": 2,
-      "playableQuestions": 0,
+      "playableQuestions": 7,
       "compatibility": [
-        "unsupported"
+        "assisted"
       ],
-      "issues": [
-        {
-          "source": "1/1/1 nombres-decompose",
-          "reason": "Rendu « place-value » non pris en charge dans ce premier prototype."
-        },
-        {
-          "source": "1/1/2 nombres-decompose",
-          "reason": "Rendu « place-value » non pris en charge dans ce premier prototype."
-        }
-      ],
+      "issues": [],
       "fields": [
         "answer",
         "labels",
@@ -117949,17 +117922,17 @@
       "sourceFixture": [
         {
           "layout": "csc-task",
-          "answer": "76 ; 7 ; 72 ; 37 ; 68",
+          "answer": "72 ; 7 ; 30 ; 89 ; 77",
           "audioParts": [
-            "/lib/audio/nombre/76.mp3",
+            "/lib/audio/nombre/72.mp3",
             "/lib/audio/nombre/silence-6s.mp3",
             "/lib/audio/nombre/7.mp3",
             "/lib/audio/nombre/silence-6s.mp3",
-            "/lib/audio/nombre/72.mp3",
+            "/lib/audio/nombre/30.mp3",
             "/lib/audio/nombre/silence-6s.mp3",
-            "/lib/audio/nombre/37.mp3",
+            "/lib/audio/nombre/89.mp3",
             "/lib/audio/nombre/silence-6s.mp3",
-            "/lib/audio/nombre/68.mp3"
+            "/lib/audio/nombre/77.mp3"
           ],
           "cscTask": {
             "kind": "number-grid",
@@ -117993,14 +117966,20 @@
               72,
               88,
               44,
-              67
+              67,
+              94,
+              38,
+              77,
+              30,
+              95,
+              16
             ],
             "heard": [
-              76,
-              7,
               72,
-              37,
-              68
+              7,
+              30,
+              89,
+              77
             ]
           }
         }
@@ -118010,7 +117989,7 @@
       "id": "tcm-csc-ex04",
       "domain": "tcm-csc",
       "topic": "tcm-csc-test",
-      "label": "4 — Suites avec aide",
+      "label": "4 — Suites avec indication",
       "seed": 20261107,
       "config": {
         "domain": "tcm-csc",
@@ -118033,6 +118012,7 @@
       "fields": [
         "answer",
         "blankIndexes",
+        "cscTask",
         "layout",
         "prompt",
         "sequence"
@@ -118040,7 +118020,11 @@
       "sourceFixture": [
         {
           "layout": "sequence",
-          "prompt": "Aide : +7",
+          "prompt": "+7",
+          "cscTask": {
+            "kind": "sequence-hint",
+            "step": 7
+          },
           "sequence": [
             "14",
             "21",
@@ -118056,7 +118040,11 @@
         },
         {
           "layout": "sequence",
-          "prompt": "Aide : −4",
+          "prompt": "−4",
+          "cscTask": {
+            "kind": "sequence-hint",
+            "step": -4
+          },
           "sequence": [
             "49",
             "45",
@@ -118274,7 +118262,7 @@
       "id": "tcm-csc-ex08",
       "domain": "tcm-csc",
       "topic": "tcm-csc-test",
-      "label": "8 — Comparer jusqu’à 999",
+      "label": "8 — Décomposer les nombres",
       "seed": 20261107,
       "config": {
         "domain": "tcm-csc",
@@ -118285,33 +118273,54 @@
         "columns": 1
       },
       "layouts": [
-        "compare"
+        "place-value"
       ],
       "tcfKinds": [],
       "sourceItems": 2,
-      "playableQuestions": 2,
+      "playableQuestions": 7,
       "compatibility": [
-        "auto"
+        "assisted"
       ],
       "issues": [],
       "fields": [
         "answer",
+        "labels",
         "layout",
-        "left",
-        "right"
+        "placeParts",
+        "prompt"
       ],
       "sourceFixture": [
         {
-          "layout": "compare",
-          "left": "19",
-          "right": "42",
-          "answer": "<"
+          "layout": "place-value",
+          "prompt": "614",
+          "labels": [
+            "centaines",
+            "dizaines",
+            "unités"
+          ],
+          "placeParts": [
+            "600",
+            "10",
+            "4"
+          ],
+          "answer": "600 + 10 + 4"
         },
         {
-          "layout": "compare",
-          "left": "400",
-          "right": "398",
-          "answer": ">"
+          "layout": "place-value",
+          "prompt": "2'801",
+          "labels": [
+            "milliers",
+            "centaines",
+            "dizaines",
+            "unités"
+          ],
+          "placeParts": [
+            "2000",
+            "800",
+            "0",
+            "1"
+          ],
+          "answer": "2000 + 800 + 0 + 1"
         }
       ]
     },
@@ -118319,7 +118328,7 @@
       "id": "tcm-csc-ex09",
       "domain": "tcm-csc",
       "topic": "tcm-csc-test",
-      "label": "9 — Compléter les signes",
+      "label": "9 — Nommer les signes",
       "seed": 20261107,
       "config": {
         "domain": "tcm-csc",
@@ -118330,7 +118339,7 @@
         "columns": 1
       },
       "layouts": [
-        "csc-task"
+        "inline"
       ],
       "tcfKinds": [],
       "sourceItems": 2,
@@ -118342,29 +118351,26 @@
       "fields": [
         "answer",
         "cscTask",
-        "layout"
+        "layout",
+        "prompt"
       ],
       "sourceFixture": [
         {
-          "layout": "csc-task",
-          "answer": "−",
+          "layout": "inline",
+          "prompt": "=",
+          "answer": "égal",
           "cscTask": {
-            "kind": "operator",
-            "a": 32,
-            "b": 13,
-            "operation": "−",
-            "blank": "operator"
+            "kind": "sign-name",
+            "symbol": "="
           }
         },
         {
-          "layout": "csc-task",
-          "answer": "+",
+          "layout": "inline",
+          "prompt": "+",
+          "answer": "plus",
           "cscTask": {
-            "kind": "operator",
-            "a": 56,
-            "b": 9,
-            "operation": "+",
-            "blank": "operator"
+            "kind": "sign-name",
+            "symbol": "+"
           }
         }
       ]
@@ -118418,20 +118424,28 @@
           "result": 62,
           "digitsA": [
             "",
+            "",
+            "",
             "6",
             "0"
           ],
           "digitsB": [
             "",
             "",
+            "",
+            "",
             "2"
           ],
           "digitsResult": [
+            "",
+            "",
             "",
             "6",
             "2"
           ],
           "carries": [
+            "",
+            "",
             "",
             "",
             ""
@@ -118447,20 +118461,28 @@
           "result": 31,
           "digitsA": [
             "",
+            "",
+            "",
             "3",
             "5"
           ],
           "digitsB": [
             "",
             "",
+            "",
+            "",
             "4"
           ],
           "digitsResult": [
+            "",
+            "",
             "",
             "3",
             "1"
           ],
           "carries": [
+            "",
+            "",
             "",
             "",
             ""
@@ -118529,20 +118551,28 @@
           "result": 72,
           "digitsA": [
             "",
+            "",
+            "",
             "5",
             "5"
           ],
           "digitsB": [
+            "",
+            "",
             "",
             "1",
             "7"
           ],
           "digitsResult": [
             "",
+            "",
+            "",
             "7",
             "2"
           ],
           "carries": [
+            "",
+            "",
             "",
             "1",
             ""
@@ -118559,20 +118589,28 @@
           "result": 15,
           "digitsA": [
             "",
+            "",
+            "",
             "3",
             "5"
           ],
           "digitsB": [
+            "",
+            "",
             "",
             "2",
             "0"
           ],
           "digitsResult": [
             "",
+            "",
+            "",
             "1",
             "5"
           ],
           "carries": [
+            "",
+            "",
             "",
             "",
             ""
@@ -118955,23 +118993,23 @@
             "points": [
               {
                 "label": "A",
-                "x": 35,
-                "y": 15
+                "x": 88,
+                "y": 21
               },
               {
                 "label": "B",
-                "x": 108,
-                "y": 18
+                "x": 47,
+                "y": 33
               },
               {
                 "label": "C",
-                "x": 15,
-                "y": 55
+                "x": 31,
+                "y": 58
               },
               {
                 "label": "D",
-                "x": 95,
-                "y": 59
+                "x": 8,
+                "y": 40
               }
             ]
           }
@@ -119120,26 +119158,26 @@
           "cscTask": {
             "kind": "shape-names",
             "figures": [
+              "rectangle",
               "circle",
-              "trapezoid",
-              "rhombus",
-              "oval"
+              "square",
+              "triangle"
             ]
           },
-          "answer": "cercle ; trapèze ; losange ; ovale"
+          "answer": "rectangle ; cercle ; carré ; triangle"
         },
         {
           "layout": "csc-task",
           "cscTask": {
             "kind": "shape-names",
             "figures": [
-              "oval",
-              "parallelogram",
               "triangle",
-              "square"
+              "circle",
+              "square",
+              "rectangle"
             ]
           },
-          "answer": "ovale ; parallélogramme ; triangle ; carré"
+          "answer": "triangle ; cercle ; carré ; rectangle"
         }
       ]
     },
@@ -120348,20 +120386,11 @@
       ],
       "tcfKinds": [],
       "sourceItems": 2,
-      "playableQuestions": 0,
+      "playableQuestions": 7,
       "compatibility": [
-        "unsupported"
+        "assisted"
       ],
-      "issues": [
-        {
-          "source": "1/1/1 tcm-cfr-ex05",
-          "reason": "Rendu « place-value » non pris en charge dans ce premier prototype."
-        },
-        {
-          "source": "1/1/2 tcm-cfr-ex05",
-          "reason": "Rendu « place-value » non pris en charge dans ce premier prototype."
-        }
-      ],
+      "issues": [],
       "fields": [
         "answer",
         "labels",

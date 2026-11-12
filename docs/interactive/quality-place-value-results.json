@@ -1,0 +1,58 @@
+{
+  "date": "2026-11-12",
+  "baseline": "83d615d4e427e59e2366cf039f125197f05ef26f",
+  "scope": "Décompositions par valeur de position et noms des signes du nouveau CSC 9",
+  "unitTests": {
+    "passed": 228,
+    "failed": 0,
+    "newTests": 8,
+    "focusedTestsPassed": 24,
+    "realDecompositionConfigurations": 1500,
+    "signNameSeeds": 100
+  },
+  "browser": {
+    "passed": [
+      "place-value-browser",
+      "numeracy-browser",
+      "presets-browser"
+    ],
+    "all47StagesRun": false,
+    "report": "place-value-results.json",
+    "viewports": [
+      "390x844",
+      "1366x768",
+      "360x640"
+    ]
+  },
+  "checks": {
+    "appTypes": "passed",
+    "apiTypes": "passed",
+    "lint": "passed with existing warnings",
+    "productionBuild": "passed",
+    "bundleBudgets": "passed",
+    "changedFilesSecrets": "Gitleaks 8.30.1 passed, zero findings across 947 files in the configured change scope"
+  },
+  "behaviour": {
+    "class": "collective; correction only in answer cards",
+    "solo": "zero accepted; incorrect answer and timeout; automatic one-second progression",
+    "resume": "same zero-place correction after reload",
+    "competition": "three sign-name cards, two mascots, offline local turns after preparation",
+    "templates": "five families renew their numbers without changing the saved recipe",
+    "paper": "source worksheets unchanged by conversion; CSC printing verified in the previous increment"
+  },
+  "inventory": {
+    "catalogTypes": 2074,
+    "variants": 2106,
+    "playableVariants": 707,
+    "automatic": 518,
+    "assisted": 65,
+    "teacherLed": 90,
+    "mixed": 34,
+    "generationErrors": 8
+  },
+  "limits": [
+    "Entiers de deux à quatre chiffres ; pas de décomposition décimale.",
+    "La suite complète des 47 parcours navigateur n’a pas été relancée.",
+    "Activation du Worker Internet et essais matériels distincts."
+  ]
+}

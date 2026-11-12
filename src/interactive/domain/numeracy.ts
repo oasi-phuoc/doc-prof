@@ -1,6 +1,6 @@
 import type { MathItem } from '@/math/types'
 import type { Choice, NumberSequence } from './types'
-import { compareExact, exactDecimal, exactExpression, scaledDecimal } from './exact-math'
+import { compareExact, exactDecimal, exactExpression, scaledDecimal, formatDecimal } from './exact-math'
 import { decimalChoices } from './decimal-choices'
 
 type Adaptation = { part: number; prompt: string; choices: Choice[]; correctId: string; model: string; numberSequence?: NumberSequence; compatibility: 'auto' | 'assisted' }
@@ -9,6 +9,20 @@ const reject = (message: string): Result => ({ items: [], issues: [message] })
 
 /** Verify the worksheet itself before creating any answer or masking its blanks. */
 export function adaptNumeracy(item: MathItem, seedFor: (part: number) => number): Result | undefined {
+  if (item.layout === 'place-value') {
+    const number = exactDecimal(item.prompt ?? '')
+    if (!number || number.precision !== 0 || number.units < 10n || number.units > 9999n) return reject('La décomposition doit porter sur un entier de deux à quatre chiffres.')
+    const digits = number.units.toString(), labels = ['milliers','centaines','dizaines','unités'].slice(4-digits.length)
+    const values = [...digits].map((digit,index)=>BigInt(digit)*10n**BigInt(digits.length-1-index))
+    const answers = item.answer.split(' + ')
+    if (!Array.isArray(item.placeParts) || item.placeParts.length !== values.length || !Array.isArray(item.labels) ||
+      JSON.stringify(item.labels) !== JSON.stringify(labels) || answers.length !== values.length || values.some((value,index)=>{
+        const part=exactDecimal(item.placeParts![index]!),answer=exactDecimal(answers[index]!)
+        return !part || part.precision !== 0 || part.units !== value || !answer || answer.precision !== 0 || answer.units !== value
+      })) return reject('Le nombre, les positions et les termes de la décomposition ne correspondent plus. Validez la fiche avant de jouer.')
+    const show = (value:bigint)=>formatDecimal(value,0)
+    return {items:values.map((value,part)=>({part,prompt:`Décompose ${show(number.units)} : quelle valeur pour les ${labels[part]} ?`,...decimalChoices(value,0,10n**BigInt(values.length-1-part),show(value),seedFor(part)),model:`${labels[part]} : ${show(value)}. ${show(number.units)} = ${values.map(show).join(' + ')}`,compatibility:'assisted'})),issues:[]}
+  }
   if (item.layout === 'compare') {
     const left = exactExpression(item.left ?? ''), right = exactExpression(item.right ?? '')
     if (!left || !right) return reject('Comparaison non vérifiable : utilisez des nombres, fractions ou calculs simples sans parenthèses.')

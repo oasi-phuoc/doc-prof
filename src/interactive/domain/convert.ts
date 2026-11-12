@@ -254,8 +254,8 @@ export function convertRecipe(
             if (csc.kind === 'invalid') { reject(csc.reason); return }
             const q = base()
             q.prompt = csc.prompt
-            if (csc.kind === 'operator') {
-              q.instruction = 'Choisis le signe qui complète l’égalité.'
+            if (csc.kind !== 'problem') {
+              q.instruction = csc.kind === 'sign-name' ? 'Choisis le nom du signe.' : 'Choisis le signe qui complète l’égalité.'
               q.choices = csc.choices
               add(q, csc.model, csc.correctId)
             } else {

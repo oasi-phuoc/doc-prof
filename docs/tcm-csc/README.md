@@ -35,9 +35,9 @@ Le barème par défaut vaut 82 points et se modifie dans le générateur. Les gr
 
 ## Jeu interactif
 
-Les dictées de nombres et calculs oraux (exercices 1 et 2), les opérations posées avec résultat manquant (10) et les problèmes (22 à 24) peuvent être repris dans le jeu Classe ou Solo. Les problèmes gardent leur énoncé et leurs valeurs ; une nouvelle partie d’un modèle généré renouvelle les nombres en conservant le contexte. Les éditions libres restent associées au texte validé. Les 103 contextes sont vérifiés, avec des propositions numériques déterministes et une correction affichée uniquement dans les cartes après révélation.
+Les dictées de nombres et calculs oraux (exercices 1 et 2), les décompositions (8), les noms des signes (9), les opérations posées avec résultat manquant (10) et les problèmes (22 à 24) peuvent être repris dans le jeu Classe ou Solo. Les problèmes gardent leur énoncé et leurs valeurs ; une nouvelle partie d’un modèle généré renouvelle les nombres en conservant le contexte. Les éditions libres restent associées au texte validé. Les 103 contextes sont vérifiés, avec des propositions numériques déterministes et une correction affichée uniquement dans les cartes après révélation.
 
-Une incohérence entre énoncé, nombres et corrigé, ou une ancienne égalité enregistrée admettant plusieurs signes, est signalée pendant la préparation. Les autres exercices CSC demandent encore une adaptation au jeu. Voir [le contrat et les vérifications](../interactive/adr-0023-problemes-csc.md).
+Une incohérence entre énoncé, nombres et corrigé, ou une ancienne égalité enregistrée admettant plusieurs signes, est signalée pendant la préparation. Les suites (4–5), le rangement (6) et les comparaisons (7) réutilisent aussi leurs adaptateurs existants. Les autres exercices CSC demandent encore une adaptation au jeu. Voir les [décompositions et noms des signes](../interactive/adr-0031-decompositions-et-noms-des-signes.md). Voir [le contrat et les vérifications](../interactive/adr-0023-problemes-csc.md).
 
 ## Vérification
 
