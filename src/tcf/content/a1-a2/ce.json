@@ -6906,6 +6906,24 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Une pièce d’identité et une photo"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/extension573-identite-photo.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/extension573-passeport-deux-factures.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/extension573-diplome-formulaire-signe.png"
+              }
+            ]
           }
         }
       },

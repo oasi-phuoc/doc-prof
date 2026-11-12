@@ -1,22 +1,14 @@
 {
   "scope": "CE TCF CSC uniquement",
-  "readyCount": 161,
-  "pendingCount": 1,
+  "readyCount": 162,
+  "pendingCount": 0,
   "font": {
     "family": "URW Gothic",
     "scope": "Texte dans les images CE uniquement",
     "messagesExported": 41
   },
-  "pending": [
-    {
-      "id": "delf-a1s-ce-045",
-      "label": "Le magasin de musique",
-      "engine": "imagegen",
-      "genre": "notice",
-      "reason": "Refaire selon les critères : Suisse, CHF, police proche de Century Gothic, personnages renouvelés, sans surlignage."
-    }
-  ],
-  "generationState": "En cours, selon l’ordre des documents donné par l’utilisateur.",
+  "pending": [],
+  "generationState": "Terminé ; tous les documents CE sont intégrés.",
   "generationOrder": [
     "tcf-a1-s4-ce-1",
     "tcf-a1j-s1-ce-1",
@@ -139,16 +131,5 @@
     "delf-a1s-ce-045",
     "delf-a1s-ce-046",
     "delf-a1s-ce-049"
-  ],
-  "generationBlocker": {
-    "code": "usage_limit_reached",
-    "httpStatus": 429,
-    "resetsAt": "2026-11-08T06:51:55Z",
-    "resetsAtEuropeZurich": "2026-11-08T07:51:55+01:00",
-    "remainingCeIds": [
-      "delf-a1s-ce-045"
-    ],
-    "remainingCoJobs": 10,
-    "nextAction": "Générer La clé de sol selon ce-art-prompts.json, contrôler et intégrer ; puis reprendre les dix scènes de co-character-refresh.json."
-  }
+  ]
 }

@@ -1,5 +1,6 @@
 """Activate only the complete, source-bound trios approved in the 763-question review."""
 from collections import Counter
+import argparse
 from copy import deepcopy
 import json
 from tcf_context_audit import ROOT,BANKS,source_for,digest,semantic_question,text_form
@@ -7,9 +8,14 @@ from tcf_context_images import PLAN,JOURNAL
 from tcf_replace_vocabulary_images import checked_images
 
 ledger_path=ROOT/'docs/tcf/revue-763-20261107.json';ledger=json.loads(ledger_path.read_text())
+parser=argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--key', action='append', help='Apply only these individually reviewed question keys.')
+args=parser.parse_args()
+selected=set(args.key or [])
 assert ledger['initial_review_complete'] and ledger['review_pending']==0
 reviewed=checked_images(json.loads((ROOT/'docs/tcf/images-generees.json').read_text()))
 rows={r['key']:r for r in ledger['questions']};assert len(rows)==763
+assert not selected-set(rows), 'Unknown review key'
 plan=json.loads(PLAN.read_text());plans={r['key']:r for r in plan['questions']}
 journal=json.loads(JOURNAL.read_text());ops=journal['operations'];changed=0
 for bank in BANKS:
@@ -18,6 +24,7 @@ for bank in BANKS:
   for i,q in enumerate(ex.get('questions',[]),1):
    key=f"{ex['id']}#{i}";row=rows.get(key)
    if not row:continue
+   if selected and key not in selected:continue
    source,_=source_for(ex,q);assert digest(source)==row['source_sha256'];assert digest(semantic_question(q))==row['semantic_sha256']
    assert row['reviewed'];p=plans[key];p['review_763_decision']=row['status'];p['review_763_reason']=row['reason']
    if row['status'] not in ['ready_reviewed_trio','active_reviewed_trio']:

@@ -5259,7 +5259,7 @@
         "Devant les caisses"
       ],
       "status": "artwork_needed_contextual_locations",
-      "source_sha256": "80c6cd6272fb0fd3fa9cdefb267bd5e226727eda19c965877c25bd0e1102d4db",
+      "source_sha256": "3d3e1d23deaee8b465431d16bfae663a6e2977a131420cfc2485f68a2ca1e83a",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-1-2.mp3",
       "review_index": 119,
       "semantic_sha256": "3b4bf11e64c1c84355e5acd7fd85f5e6c0dd46c979fe5e4bbbd92329cfb2dc31",
@@ -5276,7 +5276,7 @@
         "source_bank": "src/tcf/content/a0-a1/co.json",
         "source_exercise": "tcf-a1-s3-co-4",
         "source_question": 6,
-        "source_sha256": "80c6cd6272fb0fd3fa9cdefb267bd5e226727eda19c965877c25bd0e1102d4db",
+        "source_sha256": "3d3e1d23deaee8b465431d16bfae663a6e2977a131420cfc2485f68a2ca1e83a",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -5285,6 +5285,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -5914,7 +5918,7 @@
         "Vers l’accueil"
       ],
       "status": "artwork_needed_contextual_locations",
-      "source_sha256": "74005ae1d5a95480c011d617b93aa83b102a57c3d07519eda26da6c975bc2d02",
+      "source_sha256": "87f177803ab1df25e52c1e52fc444e6cb1c4c477bcb8239419837a7539557d2f",
       "audio": "/lib/audio/tcf/co/magasins/chers-clients-magasin-ferme.mp3",
       "review_index": 136,
       "semantic_sha256": "ae735215b0340b6896f5186a56123427995bb21e8f06b9bd55f58ee0cba4df48",
@@ -5931,7 +5935,7 @@
         "source_bank": "src/tcf/content/a0-a1/co.json",
         "source_exercise": "tcf-ss-a1-s1-co-3",
         "source_question": 2,
-        "source_sha256": "74005ae1d5a95480c011d617b93aa83b102a57c3d07519eda26da6c975bc2d02",
+        "source_sha256": "87f177803ab1df25e52c1e52fc444e6cb1c4c477bcb8239419837a7539557d2f",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -5940,6 +5944,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -5994,13 +6002,17 @@
         "Place de la Mairie"
       ],
       "status": "keep_text_named_identity_or_location",
-      "source_sha256": "12c0629e918cabd5583a1c521fd77b9ad0e0a5a9dc3d0c1e71453b50bba6ef82",
+      "source_sha256": "c0cd72ec3c2bd076ff8a7ba669f5a86cdc5170af0a8b76f8690d8be2fe07108d",
       "audio": "/lib/audio/tcf/co/magasins/chers-clients-magasin-vetimarche.mp3",
       "review_index": 138,
       "semantic_sha256": "7fe6bd11185c27962b2e24ac1a64b6262dbda87c96fda4abeedc65d120b350b9",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Les choix dépendent de noms propres, adresses ou identités exactes ; une architecture inventée ou un portrait générique ne prouve pas cette distinction."
+      "reason": "Les choix dépendent de noms propres, adresses ou identités exactes ; une architecture inventée ou un portrait générique ne prouve pas cette distinction.",
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
+      }
     },
     {
       "key": "tcf-ss-a1-s2-co-2#5",
@@ -6014,7 +6026,7 @@
         "Des chemises"
       ],
       "status": "active_reviewed_trio",
-      "source_sha256": "12c0629e918cabd5583a1c521fd77b9ad0e0a5a9dc3d0c1e71453b50bba6ef82",
+      "source_sha256": "c0cd72ec3c2bd076ff8a7ba669f5a86cdc5170af0a8b76f8690d8be2fe07108d",
       "audio": "/lib/audio/tcf/co/magasins/chers-clients-magasin-vetimarche.mp3",
       "review_index": 139,
       "semantic_sha256": "d445ec260e096b303748f9f8a5e7b8ae7e8ac1323e2871407491eccd1100582a",
@@ -6031,7 +6043,7 @@
         "source_bank": "src/tcf/content/a0-a1/co.json",
         "source_exercise": "tcf-ss-a1-s2-co-2",
         "source_question": 5,
-        "source_sha256": "12c0629e918cabd5583a1c521fd77b9ad0e0a5a9dc3d0c1e71453b50bba6ef82",
+        "source_sha256": "c0cd72ec3c2bd076ff8a7ba669f5a86cdc5170af0a8b76f8690d8be2fe07108d",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -6051,7 +6063,11 @@
         "907323e83b0d38198a53a1e1bff040bf9096a2d7b4cfee8ed40fcb879675b40f",
         "6beffd32d3752fbcb126ee351cf85ffdf5ac5b27b1324b17561087f471cb42dd"
       ],
-      "extension573_phase": "20261107"
+      "extension573_phase": "20261107",
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
+      }
     },
     {
       "key": "tcf-ss-a1-s2-co-2#7",
@@ -6065,7 +6081,7 @@
         "Une écharpe"
       ],
       "status": "active_reviewed_trio",
-      "source_sha256": "12c0629e918cabd5583a1c521fd77b9ad0e0a5a9dc3d0c1e71453b50bba6ef82",
+      "source_sha256": "c0cd72ec3c2bd076ff8a7ba669f5a86cdc5170af0a8b76f8690d8be2fe07108d",
       "audio": "/lib/audio/tcf/co/magasins/chers-clients-magasin-vetimarche.mp3",
       "review_index": 140,
       "selected_images": [
@@ -6081,7 +6097,11 @@
       "semantic_sha256": "6fcde6295bddc9f5fee3fe4046a89095d8a10c0e04b3c1cd2fbb002439670b5c",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Trois illustrations contrôlées visuellement, distinctes et fidèles aux catégories, couleurs ou quantités demandées. Source et corrigé conservés."
+      "reason": "Trois illustrations contrôlées visuellement, distinctes et fidèles aux catégories, couleurs ou quantités demandées. Source et corrigé conservés.",
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
+      }
     },
     {
       "key": "tcf-ss-a1-s2-co-3#1",
@@ -6095,7 +6115,7 @@
         "À l’école du centre"
       ],
       "status": "artwork_needed_contextual_locations",
-      "source_sha256": "df12e19c47e044859e7f4989cd477d1206b070c6f3c0f27544fe4601ef070954",
+      "source_sha256": "80e22c783052bb1fd46c1c757b545c2ca836a3aa158ee695571b42067197fcc3",
       "audio": "/lib/audio/tcf/co/magasins/demain-venez-participer-grande.mp3",
       "review_index": 141,
       "semantic_sha256": "5116be8ae963c6a506d99678b871f275b74a724113de3e265856e863b55fb53f",
@@ -6112,7 +6132,7 @@
         "source_bank": "src/tcf/content/a0-a1/co.json",
         "source_exercise": "tcf-ss-a1-s2-co-3",
         "source_question": 1,
-        "source_sha256": "df12e19c47e044859e7f4989cd477d1206b070c6f3c0f27544fe4601ef070954",
+        "source_sha256": "80e22c783052bb1fd46c1c757b545c2ca836a3aa158ee695571b42067197fcc3",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -6121,6 +6141,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -6386,7 +6410,7 @@
         "Ses lunettes"
       ],
       "status": "active_reviewed_trio",
-      "source_sha256": "e28afbea2fc98dc3ed4acb968391d720e52d51513a18f8edac77825061949e74",
+      "source_sha256": "c270720d6e26baf66386958adfda51e0638bdc1f0d6e39956e4f7d2aac371fea",
       "audio": "/lib/audio/tcf/co/famille/19-maison-où-sont-clés.mp3",
       "review_index": 148,
       "selected_images": [
@@ -6402,7 +6426,11 @@
       "semantic_sha256": "bd4d2d5c0eba85e0feb68aca4a2cf890469401854212868f61321b5856c97206",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Trois illustrations contrôlées visuellement, distinctes et fidèles aux catégories, couleurs ou quantités demandées. Source et corrigé conservés."
+      "reason": "Trois illustrations contrôlées visuellement, distinctes et fidèles aux catégories, couleurs ou quantités demandées. Source et corrigé conservés.",
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
+      }
     },
     {
       "key": "tcf-ss-a1-s5b-co-1#2",
@@ -6416,7 +6444,7 @@
         "Sous la chaise"
       ],
       "status": "artwork_needed_contextual_locations",
-      "source_sha256": "e28afbea2fc98dc3ed4acb968391d720e52d51513a18f8edac77825061949e74",
+      "source_sha256": "c270720d6e26baf66386958adfda51e0638bdc1f0d6e39956e4f7d2aac371fea",
       "audio": "/lib/audio/tcf/co/famille/19-maison-où-sont-clés.mp3",
       "review_index": 149,
       "semantic_sha256": "453a21fbfd9320892c14a65116eab8c712c900d4c5fd07ee75dc38590e10ada5",
@@ -6433,7 +6461,7 @@
         "source_bank": "src/tcf/content/a0-a1/co.json",
         "source_exercise": "tcf-ss-a1-s5b-co-1",
         "source_question": 2,
-        "source_sha256": "e28afbea2fc98dc3ed4acb968391d720e52d51513a18f8edac77825061949e74",
+        "source_sha256": "c270720d6e26baf66386958adfda51e0638bdc1f0d6e39956e4f7d2aac371fea",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -6442,6 +6470,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -7114,7 +7146,7 @@
         "Une heure"
       ],
       "status": "active_reviewed_trio",
-      "source_sha256": "0bc521ef93975a65c5ba641c82709fba26aadc7c13a00222cb706409412cd101",
+      "source_sha256": "977058002a8291cbe4b36aa0cd865f060c735a57225a7d08bee6e662443a53c5",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/salut-c-est-hugo.mp3",
       "review_index": 166,
       "selected_images": [
@@ -7130,7 +7162,11 @@
       "semantic_sha256": "d4763eebe49dde629da641a25aff62d8458ba4488dfbc5bb592c0d6830415b5c",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Trois illustrations contrôlées visuellement, distinctes et fidèles aux catégories, couleurs ou quantités demandées. Source et corrigé conservés."
+      "reason": "Trois illustrations contrôlées visuellement, distinctes et fidèles aux catégories, couleurs ou quantités demandées. Source et corrigé conservés.",
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
+      }
     },
     {
       "key": "tcf-ss-a1-s14-co-3#4",
@@ -7432,28 +7468,32 @@
       "question": 1,
       "enonce": "Dans combien de temps le magasin ferme-t-il ?",
       "labels": [
-        "30 minutes",
+        "20 minutes",
         "15 minutes",
         "Une heure"
       ],
       "status": "active_reviewed_trio",
-      "source_sha256": "b61719ef5a5062f68a03fdad63fa2c34c1c3835a3784260ee0246366dbcf99a2",
+      "source_sha256": "ab1c7f619f62a11780669e228404d443c92d4e06c23bd8b77decd3f4075a78c0",
       "audio": "/lib/audio/tcf/co/loisirs/bienvenue-parc-asterix-1.mp3",
       "review_index": 174,
       "selected_images": [
-        "/lib/images/tcf/qcm-audit/duree-30-minutes.webp",
+        "/lib/images/tcf/qcm-audit/duree-20-minutes.webp",
         "/lib/images/tcf/qcm-audit/duree-15-minutes.webp",
         "/lib/images/tcf/qcm-audit/duree-60-minutes.webp"
       ],
       "selected_sha256": [
-        "fc13c27b57ab90347c47cfca4392f9997cdc4a5936d8d5ed765b12ccb105f600",
+        "fe25b5b3c02885658942988aad4a590b86330a3a43e9817a45e15871c63bd145",
         "461186ca4290818f5aaf384a61651ba1493f8249731a80482f6a78f8de95202d",
         "cfa15c80b13894f2addc3817ad1229ed7141cce298786461c9a1916959c213ba"
       ],
-      "semantic_sha256": "6329732b956d5d280e8f39837b1c14a2ac0b6983b4b248b3dd34f1705d23e470",
+      "semantic_sha256": "72e73ce93abfe7c9878cda88e2f65cdc5482d79cc6d7e1a8a85bb3d7e8641f39",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Trois illustrations contrôlées visuellement, distinctes et fidèles aux catégories, couleurs ou quantités demandées. Source et corrigé conservés."
+      "reason": "Trois illustrations contrôlées visuellement, distinctes et fidèles aux catégories, couleurs ou quantités demandées. Source et corrigé conservés.",
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée. Le magasin ferme dans vingt minutes ; le visuel de durée vingt minutes déjà approuvé remplace celui de trente minutes."
+      }
     },
     {
       "key": "tcf-ss-a1-s18-co-3#5",
@@ -7467,13 +7507,17 @@
         "Seulement pendant la dernière heure"
       ],
       "status": "keep_text_calendar_or_temporal_scope",
-      "source_sha256": "b61719ef5a5062f68a03fdad63fa2c34c1c3835a3784260ee0246366dbcf99a2",
+      "source_sha256": "ab1c7f619f62a11780669e228404d443c92d4e06c23bd8b77decd3f4075a78c0",
       "audio": "/lib/audio/tcf/co/loisirs/bienvenue-parc-asterix-1.mp3",
       "review_index": 175,
       "semantic_sha256": "6ab2db12f44bdf40ce8f78f93ab63091121c3aa0bf5c1f4e56b20fb2d45c26d9",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Durée calendaire ou portée relative : Toute la journée / Seulement le matin / Seulement pendant la dernière heure. Ne pas la remplacer par une heure de cadran ni par des dates inventées."
+      "reason": "Durée calendaire ou portée relative : Toute la journée / Seulement le matin / Seulement pendant la dernière heure. Ne pas la remplacer par une heure de cadran ni par des dates inventées.",
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
+      }
     },
     {
       "key": "tcf-ss-a1-s19-co-1#8",
@@ -7627,7 +7671,7 @@
         "Seulement des boissons froides"
       ],
       "status": "artwork_needed_contextual_locations",
-      "source_sha256": "741c12ee06d4def2ca32f66e4f6d7df2e5f746e8350c895c89849b3d60d80d5b",
+      "source_sha256": "1ed82fc8c8744e941e62344b339f9a977aff4a801fdc8c0efce201981597487d",
       "audio": "/lib/audio/tcf/co/maison/mesdames-messieurs-bienvenue-bord.mp3",
       "review_index": 181,
       "semantic_sha256": "a75fea1345436972a32d1a7f4b67ce68e68ae2b1d676ac396e531f249227527a",
@@ -7644,7 +7688,7 @@
         "source_bank": "src/tcf/content/a0-a1/co.json",
         "source_exercise": "tcf-ss-a1-s22-co-2",
         "source_question": 2,
-        "source_sha256": "741c12ee06d4def2ca32f66e4f6d7df2e5f746e8350c895c89849b3d60d80d5b",
+        "source_sha256": "1ed82fc8c8744e941e62344b339f9a977aff4a801fdc8c0efce201981597487d",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -7653,6 +7697,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -7818,7 +7866,7 @@
         "À la poste"
       ],
       "status": "active_reviewed_trio",
-      "source_sha256": "29d8a9f22dfee2dfaec4f987bca37cd91a9205ab5bdbec08b9440a5ae0d4f0ce",
+      "source_sha256": "f036de63b8517b37217c218d6d0d638e0a69e7dc627c4958bd3448de4d0752a2",
       "audio": "/lib/audio/tcf/co/maison/maison-2.mp3",
       "review_index": 186,
       "selected_images": [
@@ -7834,7 +7882,11 @@
       "semantic_sha256": "b9ebe9d93743abd1acda626526c8016ff6ac06b911a8efedbc8fe11b35f17e25",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Trois illustrations contrôlées visuellement, distinctes et fidèles aux catégories, couleurs ou quantités demandées. Source et corrigé conservés."
+      "reason": "Trois illustrations contrôlées visuellement, distinctes et fidèles aux catégories, couleurs ou quantités demandées. Source et corrigé conservés.",
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
+      }
     },
     {
       "key": "tcf-ss-a1-s23-co-4#7",
@@ -8695,7 +8747,7 @@
         "À côté de la forêt"
       ],
       "status": "artwork_needed_contextual_locations",
-      "source_sha256": "409cc25e03a44dc089b0b67d493e855d511ffc80e1cc2faf3dc60a7605568544",
+      "source_sha256": "e6657ceb5285a322730d1040d5906e1736bc18494c98b57b89b6b537980da097",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/vous-etes-aussi-camping.mp3",
       "review_index": 207,
       "semantic_sha256": "647af74134b5eea5218b466a5a9767558a961c905aa4b3ed43a6b891d038617b",
@@ -8712,7 +8764,7 @@
         "source_bank": "src/tcf/content/a0-a1/co.json",
         "source_exercise": "tcf-ss-a1-s34-co-2",
         "source_question": 1,
-        "source_sha256": "409cc25e03a44dc089b0b67d493e855d511ffc80e1cc2faf3dc60a7605568544",
+        "source_sha256": "e6657ceb5285a322730d1040d5906e1736bc18494c98b57b89b6b537980da097",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -8721,6 +8773,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -8735,7 +8791,7 @@
         "Au bord du lac"
       ],
       "status": "artwork_needed_contextual_locations",
-      "source_sha256": "409cc25e03a44dc089b0b67d493e855d511ffc80e1cc2faf3dc60a7605568544",
+      "source_sha256": "e6657ceb5285a322730d1040d5906e1736bc18494c98b57b89b6b537980da097",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/vous-etes-aussi-camping.mp3",
       "review_index": 208,
       "semantic_sha256": "731ceedd80d77d83020e3e35d4a9938802a1b9d39ede34d662f86d774fea4e7b",
@@ -8752,7 +8808,7 @@
         "source_bank": "src/tcf/content/a0-a1/co.json",
         "source_exercise": "tcf-ss-a1-s34-co-2",
         "source_question": 2,
-        "source_sha256": "409cc25e03a44dc089b0b67d493e855d511ffc80e1cc2faf3dc60a7605568544",
+        "source_sha256": "e6657ceb5285a322730d1040d5906e1736bc18494c98b57b89b6b537980da097",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -8761,6 +8817,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -8917,7 +8977,7 @@
         "Trois heures"
       ],
       "status": "active_reviewed_trio",
-      "source_sha256": "5f9cc6ffac7a82e171901599cdfab33b3c09a919a8a589801176c6a193e58d66",
+      "source_sha256": "93af3df286186730ccbcc721e45942d330bb52b52fa318330b01e4bfcd981136",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/bonjour-fait.mp3",
       "review_index": 212,
       "semantic_sha256": "bcf8c46d3ccc3560f6b24b47ce7d4737a35dd31db9d163a79bb5f36d7d8dd54d",
@@ -8934,7 +8994,7 @@
         "source_bank": "src/tcf/content/a0-a1/co.json",
         "source_exercise": "tcf-ss-a1-s35-co-4",
         "source_question": 3,
-        "source_sha256": "5f9cc6ffac7a82e171901599cdfab33b3c09a919a8a589801176c6a193e58d66",
+        "source_sha256": "93af3df286186730ccbcc721e45942d330bb52b52fa318330b01e4bfcd981136",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -8954,7 +9014,11 @@
         "644d67c8a4bebd4765f90695908ea4b985bab0e30fad621c65879d91346cc820",
         "34fda4208036b8b75e14d8cbd826c8f3116fdc893c8cf34882e1768739c5dbd5"
       ],
-      "extension_573_phase": "duration_models"
+      "extension_573_phase": "duration_models",
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
+      }
     },
     {
       "key": "tcf-ss-a1-s36-co-1#1",
@@ -8968,13 +9032,17 @@
         "Le musée Chagall"
       ],
       "status": "keep_text_named_identity_or_location",
-      "source_sha256": "4d5be3e866aa69ce40cc1d340d95003a8ca1392d0b1ad4cc84794186ef12be28",
+      "source_sha256": "271ab2987243a3545f795bf8ab7bfdfa1f7ffbb3a425db65f6f1eaf8f0223ba1",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/on-journee-libre.mp3",
       "review_index": 213,
       "semantic_sha256": "63cf3c7b80b02d813547113ef8b16e6d0ff23fbaf2a74cbc3c90e1305beed89a",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Les choix dépendent de noms propres, adresses ou identités exactes ; une architecture inventée ou un portrait générique ne prouve pas cette distinction."
+      "reason": "Les choix dépendent de noms propres, adresses ou identités exactes ; une architecture inventée ou un portrait générique ne prouve pas cette distinction.",
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
+      }
     },
     {
       "key": "tcf-ss-a1-s36-co-1#3",
@@ -8988,7 +9056,7 @@
         "Le parc zoologique"
       ],
       "status": "artwork_needed_whole_answer_concepts",
-      "source_sha256": "4d5be3e866aa69ce40cc1d340d95003a8ca1392d0b1ad4cc84794186ef12be28",
+      "source_sha256": "271ab2987243a3545f795bf8ab7bfdfa1f7ffbb3a425db65f6f1eaf8f0223ba1",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/on-journee-libre.mp3",
       "review_index": 214,
       "semantic_sha256": "88444f9da488caf9d98dd9b328b7e63a94a3c6dc708885bbe5fe7807b0011e25",
@@ -9005,7 +9073,7 @@
         "source_bank": "src/tcf/content/a0-a1/co.json",
         "source_exercise": "tcf-ss-a1-s36-co-1",
         "source_question": 3,
-        "source_sha256": "4d5be3e866aa69ce40cc1d340d95003a8ca1392d0b1ad4cc84794186ef12be28",
+        "source_sha256": "271ab2987243a3545f795bf8ab7bfdfa1f7ffbb3a425db65f6f1eaf8f0223ba1",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -9014,6 +9082,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -9319,7 +9391,7 @@
         "Devant la boutique"
       ],
       "status": "artwork_needed_contextual_locations",
-      "source_sha256": "a59287cf9691cde003f465b752b40bdc890e1a79e77b7b38913f8fc1b4b2b99d",
+      "source_sha256": "1282c8cda07a631cf08482eac7efc21580220ebc7ee1e97c6110194c80534bb7",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/bonjour-bienvenue-musee.mp3",
       "review_index": 223,
       "semantic_sha256": "c04eb60faf9a2033f2188fda0a22fbc98e9e2d9d4bfd6393ac605f8ff174112c",
@@ -9336,7 +9408,7 @@
         "source_bank": "src/tcf/content/a0-a1/co.json",
         "source_exercise": "tcf-ss-a1-s39-co-2",
         "source_question": 2,
-        "source_sha256": "a59287cf9691cde003f465b752b40bdc890e1a79e77b7b38913f8fc1b4b2b99d",
+        "source_sha256": "1282c8cda07a631cf08482eac7efc21580220ebc7ee1e97c6110194c80534bb7",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -9345,6 +9417,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -9359,7 +9435,7 @@
         "Une heure"
       ],
       "status": "active_reviewed_trio",
-      "source_sha256": "a59287cf9691cde003f465b752b40bdc890e1a79e77b7b38913f8fc1b4b2b99d",
+      "source_sha256": "1282c8cda07a631cf08482eac7efc21580220ebc7ee1e97c6110194c80534bb7",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/bonjour-bienvenue-musee.mp3",
       "review_index": 224,
       "selected_images": [
@@ -9375,37 +9451,55 @@
       "semantic_sha256": "2415a4b3fcc7d9d2b21d859f1666ee5e541b89fc94edf31b2aa6304df26c9286",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Trois illustrations contrôlées visuellement, distinctes et fidèles aux catégories, couleurs ou quantités demandées. Source et corrigé conservés."
+      "reason": "Trois illustrations contrôlées visuellement, distinctes et fidèles aux catégories, couleurs ou quantités demandées. Source et corrigé conservés.",
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
+      }
     },
     {
       "key": "tcf-ss-a1-s39-co-2#4",
       "bank": "src/tcf/content/a0-a1/co.json",
       "exercise": "tcf-ss-a1-s39-co-2",
       "question": 4,
-      "enonce": "Quel objet faut-il laisser à l’accueil ?",
+      "enonce": "Quels objets faut-il laisser à l’accueil ?",
       "labels": [
-        "Son sac à dos",
-        "Son manteau",
-        "Ses lunettes"
+        "Ses sacs",
+        "Ses vêtements",
+        "Ses chaussures"
       ],
-      "status": "active_reviewed_trio",
-      "source_sha256": "a59287cf9691cde003f465b752b40bdc890e1a79e77b7b38913f8fc1b4b2b99d",
+      "status": "artwork_needed_whole_answer_concepts",
+      "source_sha256": "1282c8cda07a631cf08482eac7efc21580220ebc7ee1e97c6110194c80534bb7",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/bonjour-bienvenue-musee.mp3",
       "review_index": 225,
-      "selected_images": [
-        "/lib/images/tcf/qcm-audit/vocab-sac-dos.webp",
-        "/lib/images/tcf/qcm-audit/co834-manteau-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co306-lunettes-vue-dessine.webp"
-      ],
-      "selected_sha256": [
-        "39fecb91cc22acc3046157be1a637a432a00c481f181b4bfd4927c5bc474b16e",
-        "fdf16b04ffb9351bb6a2a01cbc9c1e27941ae7183aa62b71c0d69868e3013662",
-        "4ac6813cf46bd0006c902ab979474337c00683ed4c01d8df7dde19c9ab7af245"
-      ],
-      "semantic_sha256": "6fbe4e6c3776ec7d13274a116fe0d755d83516f19dde081fd5953177a4b0f00d",
+      "semantic_sha256": "0921c728f2f63c206759cfd10a76ce2967bf13ac60cb642adcc45a6fa924d44e",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Trois illustrations contrôlées visuellement, distinctes et fidèles aux catégories, couleurs ou quantités demandées. Source et corrigé conservés."
+      "reason": "La transcription corrigée demande de laisser ses sacs. Préparer trois illustrations de groupes d’objets distincts : sacs, vêtements, chaussures. L’ancien trio sac à dos/manteau/lunettes ne correspond plus aux choix actuels et reste désactivé.",
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée. Ancien trio désactivé dans la banque ; décision remise en préparation pour correspondre aux trois nouvelles catégories au pluriel."
+      },
+      "brief": {
+        "context_question": "Quels objets faut-il laisser à l’accueil ?",
+        "choices_to_illustrate": [
+          "Ses sacs",
+          "Ses vêtements",
+          "Ses chaussures"
+        ],
+        "source_bank": "src/tcf/content/a0-a1/co.json",
+        "source_exercise": "tcf-ss-a1-s39-co-2",
+        "source_question": 4,
+        "source_sha256": "1282c8cda07a631cf08482eac7efc21580220ebc7ee1e97c6110194c80534bb7",
+        "constraints": [
+          "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
+          "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
+          "Style peint semi-réaliste validé, contours fins, paysage 4:3 exact, sujets entiers.",
+          "Réutiliser les images existantes seulement si le sens entier correspond ; aucune activation partielle.",
+          "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
+          "Revue visuelle et corrigé synchronisé avant toute activation."
+        ]
+      }
     },
     {
       "key": "tcf-ss-a1-s40-co-1#7",
@@ -9419,7 +9513,7 @@
         "Leur carte d’étudiant"
       ],
       "status": "active_reviewed_trio",
-      "source_sha256": "bfd1b1be65f0d8739cd3e608fdc42bd104867a349c69ec2529d02f1b39fcaf50",
+      "source_sha256": "4c96fd3ac7d8ea86f0ed31b005c5eed60e64743fc853c01ee6eefc770e704bf4",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/paolo-bonjour-1.mp3",
       "review_index": 226,
       "semantic_sha256": "2fcb455346f8b596b8d37363d572e30c6e87bec05e01cc415b5fba5fcefda62d",
@@ -9436,7 +9530,7 @@
         "source_bank": "src/tcf/content/a0-a1/co.json",
         "source_exercise": "tcf-ss-a1-s40-co-1",
         "source_question": 7,
-        "source_sha256": "bfd1b1be65f0d8739cd3e608fdc42bd104867a349c69ec2529d02f1b39fcaf50",
+        "source_sha256": "4c96fd3ac7d8ea86f0ed31b005c5eed60e64743fc853c01ee6eefc770e704bf4",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -9456,7 +9550,11 @@
         "c2f0b65db0e431c49bf0c0c17fe43e7cd5cc3f195e44b7208cff5ed2b5200ac0",
         "2f81cc692cf54d72ffd54eba3b01e0190032eb55183f4671fdef52932e95c37a"
       ],
-      "extension573_phase": "20261107"
+      "extension573_phase": "20261107",
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
+      }
     },
     {
       "key": "tcf-ss-a1-s41-co-1#3",
@@ -10693,13 +10791,17 @@
         "Place du Marché"
       ],
       "status": "keep_text_named_identity_or_location",
-      "source_sha256": "7cb38ad8a426eed69222d1b695ae0e15784b685bd1118bc98bb485e05ad3f22a",
+      "source_sha256": "051bb3ada486c5b22793ea474dfd1869e7b20dd2d04451b7633126fd421f4db1",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/vous-voulez-apprendre-langue.mp3",
       "review_index": 260,
       "semantic_sha256": "1963c12f80324434e0463abeaa101a6364fc56598ca786c07230bb6f49e50446",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Les choix dépendent de noms propres, adresses ou identités exactes ; une architecture inventée ou un portrait générique ne prouve pas cette distinction."
+      "reason": "Les choix dépendent de noms propres, adresses ou identités exactes ; une architecture inventée ou un portrait générique ne prouve pas cette distinction.",
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
+      }
     },
     {
       "key": "tcf-ss-a1-s50-co-2#5",
@@ -10793,7 +10895,7 @@
         "Une boîte de chocolats"
       ],
       "status": "artwork_needed_whole_answer_concepts",
-      "source_sha256": "6ecefc2ab9843ad32480873575c30cbf29e8f1ebaa6bac169b4ff95cbedd5a6b",
+      "source_sha256": "bf27cdf5154d76e3aa0363d0e1702505c061967bf829c50f55151946401b1b52",
       "audio": "/lib/audio/tcf/co/transports/madame-etes-arrive-1.mp3",
       "review_index": 263,
       "semantic_sha256": "ffd7f93ab93587770fcfb0e58a78814c117ac51121d1f99b5762d36d7ab2238c",
@@ -10810,7 +10912,7 @@
         "source_bank": "src/tcf/content/a0-a1/co.json",
         "source_exercise": "tcf-ss-a1-s54-co-1",
         "source_question": 5,
-        "source_sha256": "6ecefc2ab9843ad32480873575c30cbf29e8f1ebaa6bac169b4ff95cbedd5a6b",
+        "source_sha256": "bf27cdf5154d76e3aa0363d0e1702505c061967bf829c50f55151946401b1b52",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -10819,6 +10921,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -10833,7 +10939,7 @@
         "Du réfrigérateur"
       ],
       "status": "artwork_needed_contextual_locations",
-      "source_sha256": "6e6272e4b2e0c6f57d9e2d43f2a07c8bf4181b35c8b19ad506a5d066b156db0b",
+      "source_sha256": "921d5dd9f731c381f53e0fd1d40af03124fc580349ab226ee683478da52ff55e",
       "audio": "/lib/audio/tcf/co/transports/bonjour-desirez-1-1.mp3",
       "review_index": 264,
       "semantic_sha256": "5f15aa032e23ad65054b2a22516c35582d40ebfe8c7c9db2c277bc10b539a8e0",
@@ -10850,7 +10956,7 @@
         "source_bank": "src/tcf/content/a0-a1/co.json",
         "source_exercise": "tcf-ss-a1-s54-co-2",
         "source_question": 2,
-        "source_sha256": "6e6272e4b2e0c6f57d9e2d43f2a07c8bf4181b35c8b19ad506a5d066b156db0b",
+        "source_sha256": "921d5dd9f731c381f53e0fd1d40af03124fc580349ab226ee683478da52ff55e",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -10859,6 +10965,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -11747,7 +11857,7 @@
         "Une robe et des sandales"
       ],
       "status": "artwork_needed_whole_answer_concepts",
-      "source_sha256": "ef112a10b75f024cc73177b3c52d6ea2ecb07785f88ac4e3039f877c84a914ae",
+      "source_sha256": "130b9b90e641338e5aaa8db36d27a8d1661638a1a6caf499ce5a29eb5caf971f",
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_15-2.mp3",
       "review_index": 287,
       "semantic_sha256": "272d65fd80d4d4dca689e2bb2e6fcac2a42a7a59a68495c3c330214e7c20418f",
@@ -11764,7 +11874,7 @@
         "source_bank": "src/tcf/content/a0-a1/co.json",
         "source_exercise": "delf-a1-2022-co-ex2-15",
         "source_question": 4,
-        "source_sha256": "ef112a10b75f024cc73177b3c52d6ea2ecb07785f88ac4e3039f877c84a914ae",
+        "source_sha256": "130b9b90e641338e5aaa8db36d27a8d1661638a1a6caf499ce5a29eb5caf971f",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -11773,6 +11883,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -12303,14 +12417,14 @@
         "Le passeport et le permis",
         "La facture et le devis"
       ],
-      "status": "artwork_needed_distinct_document_types",
+      "status": "active_reviewed_trio",
       "source_sha256": "9ba943135a41902cf4141388838f2a17c8546304bee35a61afcbd8107ca4a1e8",
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_29-2.mp3",
       "review_index": 299,
       "semantic_sha256": "81217c0d8afb3e8af5a63dc5e70b9552b22679b59bddf6baddace238a55e5547",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Préparer ou retrouver les types exacts de documents et leurs éventuelles combinaisons ; aucun montant, date ou renseignement personnel inventé. Ne pas confondre certificat, ordonnance, diplôme ou carte.",
+      "reason": "Transcription relue : le magasin Nature & Jardin a reçu le CV et la lettre de motivation. Les trois paires sont intégralement représentées ; les leurres appartiennent au même thème documentaire et ne sont pas cités. Contrôle visuel des trois PNG originaux en 4:3 et style validé, sans chiffres, montants ni dates.",
       "brief": {
         "context_question": "Quels documents le magasin a-t-il reçus ?",
         "choices_to_illustrate": [
@@ -12330,7 +12444,17 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/extension573-cv-motivation.png",
+        "/lib/images/tcf/qcm-audit/extension573-passeport-permis.png",
+        "/lib/images/tcf/qcm-audit/extension573-facture-devis.png"
+      ],
+      "selected_sha256": [
+        "81192b7dedc55b0f481f6726be7a9f6e196243f77e9d07f73a5f4851c5bf0b40",
+        "1739dee4451b9b41578dab5ab497a95e52fcba5e396e364ccd28429c15a3c4d0",
+        "7bfdbf1bc61c2b6761e0944bc65187e1a888bdd22449c1a3bd08e1d0530dafbe"
+      ]
     },
     {
       "key": "delf-a1-2022-co-ex3-29#11",
@@ -12415,7 +12539,7 @@
         "À la gare"
       ],
       "status": "artwork_needed_contextual_locations",
-      "source_sha256": "15a2b6bdf76dea57fceaf61ec276312dce5c2c2fb35c4581c23039da13d01588",
+      "source_sha256": "8ecb2929033f366b68924642f09a9632dfa03e111854223b6d3012c1b506f0d9",
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_34-2.mp3",
       "review_index": 302,
       "semantic_sha256": "f91d73e3be24e9f56265e26ebbdc1ee8b124f89443d4dd9935d1ed32feb8c77a",
@@ -12432,7 +12556,7 @@
         "source_bank": "src/tcf/content/a0-a1/co.json",
         "source_exercise": "delf-a1-2022-co-ex3-34",
         "source_question": 5,
-        "source_sha256": "15a2b6bdf76dea57fceaf61ec276312dce5c2c2fb35c4581c23039da13d01588",
+        "source_sha256": "8ecb2929033f366b68924642f09a9632dfa03e111854223b6d3012c1b506f0d9",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -12441,6 +12565,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -16146,14 +16274,14 @@
         "Un passeport et deux factures",
         "Un diplôme et un formulaire signé"
       ],
-      "status": "artwork_needed_distinct_document_types",
+      "status": "active_reviewed_trio",
       "source_sha256": "c1c9203a9d380a754072369f7dc0bc7772804322360abbe432bc4f3335cdc60d",
       "audio": null,
       "review_index": 396,
       "semantic_sha256": "ae772d730f954fb1c408952603c40ef258836b5a83bced3d9bcdc4697279f564",
       "reviewed": true,
-      "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Préparer ou retrouver les types exacts de documents et leurs éventuelles combinaisons ; aucun montant, date ou renseignement personnel inventé. Ne pas confondre certificat, ordonnance, diplôme ou carte.",
+      "review_method": "Relecture source, énoncé et trois choix ; contrôle visuel individuel des trois originaux le 12 novembre 2026.",
+      "reason": "Source CE relue : demander une pièce d’identité et une photo. Trois paires exactes contrôlées visuellement individuellement ; les deux leurres sont des documents du même thème, absents de la demande. Réemploi de la pièce d’identité/photo approuvée ; deux paires nouvelles en 4:3 sans données personnelles, montants ni dates.",
       "brief": {
         "context_question": "Document 1 — Quels documents faut-il demander pour une nouvelle carte ?",
         "choices_to_illustrate": [
@@ -16173,7 +16301,17 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/extension573-identite-photo.webp",
+        "/lib/images/tcf/qcm-audit/extension573-passeport-deux-factures.png",
+        "/lib/images/tcf/qcm-audit/extension573-diplome-formulaire-signe.png"
+      ],
+      "selected_sha256": [
+        "eac4a21006504b2d92182855c1f05968ce25622d5d65b952da6b3d8aaa462133",
+        "bce15d81b3a2392f729cdc2aae58816f0dced9b71d9eb2673fb19219a5a4a67d",
+        "84c3567204d3a08e8ec27e29d0cfcb3656fc9e9109420f097475103cb855ef20"
+      ]
     },
     {
       "key": "tcf-a2-sa-ce-3#4",
@@ -22162,7 +22300,7 @@
         "Dans le restaurant"
       ],
       "status": "artwork_needed_contextual_locations",
-      "source_sha256": "de50ce485193dfe22606f0a64f8ff4c0a8e852411719802e858272ac089febd7",
+      "source_sha256": "f740e8bcbf54650b22c848f0e01cce594296fe2db64dbc803b28de74f7f1f9a8",
       "audio": "/lib/audio/tcf/co/radio/les-annonces-publiques-1-1.mp3",
       "review_index": 554,
       "semantic_sha256": "70ab3310d72ba855f583c8a9ebb0886e0412883a24f2f6c62f034acfe5bd826b",
@@ -22179,7 +22317,7 @@
         "source_bank": "src/tcf/content/a1-a2/co.json",
         "source_exercise": "tcf-a2j-s1-co-1",
         "source_question": 2,
-        "source_sha256": "de50ce485193dfe22606f0a64f8ff4c0a8e852411719802e858272ac089febd7",
+        "source_sha256": "f740e8bcbf54650b22c848f0e01cce594296fe2db64dbc803b28de74f7f1f9a8",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -22188,6 +22326,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -22242,7 +22384,7 @@
         "À l’accueil"
       ],
       "status": "artwork_needed_contextual_locations",
-      "source_sha256": "bdf3d5c9e5fa19b60f2c01b3b714c94fb82f902d882f09f06b58f44313161296",
+      "source_sha256": "a78062a0e5cf1a5bcbeb754af1c3dc2cddd071e23f4517b171730d2f001ee3fb",
       "audio": "/lib/audio/tcf/co/radio/les-annonces-publiques-1-5.mp3",
       "review_index": 556,
       "semantic_sha256": "0dfef50a1ebd71f119943643b51e15c6bb12111ef7d88ed26c5611e531d60692",
@@ -22259,7 +22401,7 @@
         "source_bank": "src/tcf/content/a1-a2/co.json",
         "source_exercise": "tcf-a2j-s1-co-1",
         "source_question": 14,
-        "source_sha256": "bdf3d5c9e5fa19b60f2c01b3b714c94fb82f902d882f09f06b58f44313161296",
+        "source_sha256": "a78062a0e5cf1a5bcbeb754af1c3dc2cddd071e23f4517b171730d2f001ee3fb",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -22268,6 +22410,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -22282,7 +22428,7 @@
         "Une paire de palmes"
       ],
       "status": "artwork_needed_whole_answer_concepts",
-      "source_sha256": "bdf3d5c9e5fa19b60f2c01b3b714c94fb82f902d882f09f06b58f44313161296",
+      "source_sha256": "a78062a0e5cf1a5bcbeb754af1c3dc2cddd071e23f4517b171730d2f001ee3fb",
       "audio": "/lib/audio/tcf/co/radio/les-annonces-publiques-1-5.mp3",
       "review_index": 557,
       "semantic_sha256": "725b111e4ecd8752aea58ca8c12ef9c46b018ae4b65d33fc405cd444870e2cb3",
@@ -22299,7 +22445,7 @@
         "source_bank": "src/tcf/content/a1-a2/co.json",
         "source_exercise": "tcf-a2j-s1-co-1",
         "source_question": 16,
-        "source_sha256": "bdf3d5c9e5fa19b60f2c01b3b714c94fb82f902d882f09f06b58f44313161296",
+        "source_sha256": "a78062a0e5cf1a5bcbeb754af1c3dc2cddd071e23f4517b171730d2f001ee3fb",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -22308,6 +22454,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -22402,7 +22552,7 @@
         "Devant le musée"
       ],
       "status": "artwork_needed_contextual_locations",
-      "source_sha256": "97187e5640acb82ad43caf7f494368de955a99566ac03a01974d5e2e115fbff4",
+      "source_sha256": "5ddf2ee949b2c820cab9496e28afb096ce6a6e96832a885cb42b03b12c1590f9",
       "audio": "/lib/audio/tcf/co/radio/les-annonces-publiques-2-2.mp3",
       "review_index": 560,
       "semantic_sha256": "c107f41fbf54729e114efb2c0c71ffd74fc826de4133b36a2cec4ff904dce42f",
@@ -22419,7 +22569,7 @@
         "source_bank": "src/tcf/content/a1-a2/co.json",
         "source_exercise": "tcf-a2j-s2-co-1",
         "source_question": 6,
-        "source_sha256": "97187e5640acb82ad43caf7f494368de955a99566ac03a01974d5e2e115fbff4",
+        "source_sha256": "5ddf2ee949b2c820cab9496e28afb096ce6a6e96832a885cb42b03b12c1590f9",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -22428,6 +22578,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -22582,7 +22736,7 @@
         "Une heure"
       ],
       "status": "active_reviewed_trio",
-      "source_sha256": "bb5578697a4d4ea89cd0a8737ae90b1d747bbf926d8f571900991e5d73d564ea",
+      "source_sha256": "bf5cc2a6e91572f8b07f9d7d36fa2d0c7275991e9940c620d96d784109a82941",
       "audio": "/lib/audio/tcf/co/radio/les-annonces-a-la-radio-2-3.mp3",
       "review_index": 565,
       "selected_images": [
@@ -22598,7 +22752,11 @@
       "semantic_sha256": "6d86a69ccf558a5b422b6cbf689615714f2f63e7d62457200a1fc1a6691d27ae",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Trois illustrations contrôlées visuellement, distinctes et fidèles aux catégories, couleurs ou quantités demandées. Source et corrigé conservés."
+      "reason": "Trois illustrations contrôlées visuellement, distinctes et fidèles aux catégories, couleurs ou quantités demandées. Source et corrigé conservés.",
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
+      }
     },
     {
       "key": "tcf-a2j-s2b-co-2#2",
@@ -22612,7 +22770,7 @@
         "Dans une salle municipale"
       ],
       "status": "artwork_needed_contextual_locations",
-      "source_sha256": "69c0d3120f1b8a96b3cbe847b58e046e36d6bc4d59ef9b69d3859e5b5ee9d0c0",
+      "source_sha256": "2f3f6e5b6b27c6404f3cf0d5bafe69b39042a47604ac109d4a7e6d7a955e5a25",
       "audio": "/lib/audio/tcf/co/fetes/25-invitation-fête-d-anniversaire.mp3",
       "review_index": 566,
       "semantic_sha256": "7dcb0d64e69c10e8b23e02d28be69f53bc3b2bb0e635fe3f0ba9570aab06b0d2",
@@ -22629,7 +22787,7 @@
         "source_bank": "src/tcf/content/a1-a2/co.json",
         "source_exercise": "tcf-a2j-s2b-co-2",
         "source_question": 2,
-        "source_sha256": "69c0d3120f1b8a96b3cbe847b58e046e36d6bc4d59ef9b69d3859e5b5ee9d0c0",
+        "source_sha256": "2f3f6e5b6b27c6404f3cf0d5bafe69b39042a47604ac109d4a7e6d7a955e5a25",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -22638,6 +22796,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -23104,7 +23266,7 @@
         "À la poste"
       ],
       "status": "artwork_needed_contextual_locations",
-      "source_sha256": "0154be4e90481eba7a133ac537cd6e9c91d5d9194b95b98b6f9f42dd8fb8cb5b",
+      "source_sha256": "39953bf9d82d5f02f7d18f60ddc6fa05fee7b4998fc3b1e78954641e757f550c",
       "audio": "/lib/audio/tcf/co/magasins/bonjour-societe-fmac.mp3",
       "review_index": 580,
       "semantic_sha256": "8462a4bbf93337ea3af6898dfa4ce9d78a7489ed2685d72fe8f689777376f3ed",
@@ -23121,7 +23283,7 @@
         "source_bank": "src/tcf/content/a1-a2/co.json",
         "source_exercise": "tcf-ss-a2-s3-co-2",
         "source_question": 6,
-        "source_sha256": "0154be4e90481eba7a133ac537cd6e9c91d5d9194b95b98b6f9f42dd8fb8cb5b",
+        "source_sha256": "39953bf9d82d5f02f7d18f60ddc6fa05fee7b4998fc3b1e78954641e757f550c",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -23130,6 +23292,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -23224,7 +23390,7 @@
         "Un abonnement sportif"
       ],
       "status": "active_reviewed_trio",
-      "source_sha256": "21e420aa2f3e5971004bdd0a27fcb8ecd3764e4b115e64e320c3a563a8b9e800",
+      "source_sha256": "431506743fc62d80a811bba14fa41f1aa1bcbdfae62ed03c05d849c2dfe7a03e",
       "audio": "/lib/audio/tcf/co/magasins/magasins-3-4.mp3",
       "review_index": 583,
       "semantic_sha256": "51d6eff05c166c733380b263f3bcd7d6ee3bbc51b5fceda84483c7917ac8c231",
@@ -23241,7 +23407,7 @@
         "source_bank": "src/tcf/content/a1-a2/co.json",
         "source_exercise": "tcf-ss-a2-s3-co-3",
         "source_question": 12,
-        "source_sha256": "21e420aa2f3e5971004bdd0a27fcb8ecd3764e4b115e64e320c3a563a8b9e800",
+        "source_sha256": "431506743fc62d80a811bba14fa41f1aa1bcbdfae62ed03c05d849c2dfe7a03e",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -23261,7 +23427,11 @@
         "89f410c418e846d406e133c82e5c82563b738571bca3df9b5f3860ac81919734",
         "4ccf8cfae6f535a66b6ef7959df7c39a8a5d27930b0188d7a7462342610fea05"
       ],
-      "extension573_phase": "20261107"
+      "extension573_phase": "20261107",
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
+      }
     },
     {
       "key": "tcf-ss-a2-s3-co-3#15",
@@ -23275,7 +23445,7 @@
         "Au deuxième étage"
       ],
       "status": "artwork_needed_contextual_locations",
-      "source_sha256": "85746999bac72b513fc6ac3245478b00a178205f93839040708d282929f1be69",
+      "source_sha256": "8e3578965f47f46a5d6a7bf4f675da2664e8674945599bae995a120f9dfb12b8",
       "audio": "/lib/audio/tcf/co/magasins/magasins-3-5.mp3",
       "review_index": 584,
       "semantic_sha256": "5229b6d240ca405ec1643ecc3efb804a8816cc9c98a40c31fabda247ee12c2a6",
@@ -23292,7 +23462,7 @@
         "source_bank": "src/tcf/content/a1-a2/co.json",
         "source_exercise": "tcf-ss-a2-s3-co-3",
         "source_question": 15,
-        "source_sha256": "85746999bac72b513fc6ac3245478b00a178205f93839040708d282929f1be69",
+        "source_sha256": "8e3578965f47f46a5d6a7bf4f675da2664e8674945599bae995a120f9dfb12b8",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -23301,6 +23471,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -23366,7 +23540,7 @@
         "Sur la porte du gymnase"
       ],
       "status": "artwork_needed_contextual_locations",
-      "source_sha256": "4d7fc474224408bea0519b05aa34ce0d90e83c0b2ed760352c4e18f6861fc3fa",
+      "source_sha256": "14ec5681797e79fca362aef06906e44a6a0f49193615ef2c0c5730c75da1fb7a",
       "audio": "/lib/audio/tcf/co/ecole/ecole-4.mp3",
       "review_index": 586,
       "semantic_sha256": "81c9cba7511afc13a21851be0b57ac807f9b6298250cebaa0ef084bfff7c49df",
@@ -23383,7 +23557,7 @@
         "source_bank": "src/tcf/content/a1-a2/co.json",
         "source_exercise": "tcf-ss-a2-s7-co-2",
         "source_question": 3,
-        "source_sha256": "4d7fc474224408bea0519b05aa34ce0d90e83c0b2ed760352c4e18f6861fc3fa",
+        "source_sha256": "14ec5681797e79fca362aef06906e44a6a0f49193615ef2c0c5730c75da1fb7a",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -23392,6 +23566,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -23406,7 +23584,7 @@
         "Dans le gymnase"
       ],
       "status": "artwork_needed_contextual_locations",
-      "source_sha256": "4d7fc474224408bea0519b05aa34ce0d90e83c0b2ed760352c4e18f6861fc3fa",
+      "source_sha256": "14ec5681797e79fca362aef06906e44a6a0f49193615ef2c0c5730c75da1fb7a",
       "audio": "/lib/audio/tcf/co/ecole/ecole-4.mp3",
       "review_index": 587,
       "semantic_sha256": "b489cc36f6cdd234541eebe77972f740df1aace41225e93f8f07987ebf3bcd6a",
@@ -23423,7 +23601,7 @@
         "source_bank": "src/tcf/content/a1-a2/co.json",
         "source_exercise": "tcf-ss-a2-s7-co-2",
         "source_question": 6,
-        "source_sha256": "4d7fc474224408bea0519b05aa34ce0d90e83c0b2ed760352c4e18f6861fc3fa",
+        "source_sha256": "14ec5681797e79fca362aef06906e44a6a0f49193615ef2c0c5730c75da1fb7a",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -23432,6 +23610,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -23466,7 +23648,7 @@
         "Avant 18 h"
       ],
       "status": "artwork_needed_contextual_locations",
-      "source_sha256": "39dfe349ef02b271e5ac2848c85b8cfdeaa12372f5409251e00efb4738251bc0",
+      "source_sha256": "8588bd5d0c8c9dbb8b9bc5f3e3b55c0a941053860e4c55b276380eacd90986a8",
       "audio": "/lib/audio/tcf/co/ecole/ecole-5-6.mp3",
       "review_index": 589,
       "semantic_sha256": "1171d3b5006c1556455de579f8f4e86766c246fd5e4af90c5bf2e72242fc090f",
@@ -23483,7 +23665,7 @@
         "source_bank": "src/tcf/content/a1-a2/co.json",
         "source_exercise": "tcf-ss-a2-s7-co-3",
         "source_question": 19,
-        "source_sha256": "39dfe349ef02b271e5ac2848c85b8cfdeaa12372f5409251e00efb4738251bc0",
+        "source_sha256": "8588bd5d0c8c9dbb8b9bc5f3e3b55c0a941053860e4c55b276380eacd90986a8",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -23492,6 +23674,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -23506,7 +23692,7 @@
         "Sur une feuille de dessin"
       ],
       "status": "artwork_needed_contextual_locations",
-      "source_sha256": "73cba5284bb55b4b1aa1cacccbb92b4496840878153220dc96d236177d4fd464",
+      "source_sha256": "2510aaf1ebd3ee0d667e59ae6e4030c559694529b1ac72900da7f8a7a64380d2",
       "audio": "/lib/audio/tcf/co/ecole/28-école-demander-explication-devoir.mp3",
       "review_index": 590,
       "semantic_sha256": "e276d5d54a4c4cff55d8e5f4fe1348faba6ad67f97820526c4d8288e9831abcb",
@@ -23523,7 +23709,7 @@
         "source_bank": "src/tcf/content/a1-a2/co.json",
         "source_exercise": "tcf-ss-a2-s8b-co-2",
         "source_question": 2,
-        "source_sha256": "73cba5284bb55b4b1aa1cacccbb92b4496840878153220dc96d236177d4fd464",
+        "source_sha256": "2510aaf1ebd3ee0d667e59ae6e4030c559694529b1ac72900da7f8a7a64380d2",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -23532,6 +23718,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -23606,7 +23796,7 @@
         "À côté de la mairie"
       ],
       "status": "artwork_needed_contextual_locations",
-      "source_sha256": "9b8dfc68722fefa818af01cd289b55f0a70056b4f3e5f2b8694c713733f40584",
+      "source_sha256": "53b184c8d030123a046a435a65aaa61366aae63d138f9e33f6f5693f07351d18",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-19.mp3",
       "review_index": 593,
       "semantic_sha256": "58ebf289d531666c3f2856199f7d3911ccb1808209f00b67e1cb09521879d3a8",
@@ -23623,7 +23813,7 @@
         "source_bank": "src/tcf/content/a1-a2/co.json",
         "source_exercise": "tcf-ss-a2-s14-co-2",
         "source_question": 3,
-        "source_sha256": "9b8dfc68722fefa818af01cd289b55f0a70056b4f3e5f2b8694c713733f40584",
+        "source_sha256": "53b184c8d030123a046a435a65aaa61366aae63d138f9e33f6f5693f07351d18",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -23632,6 +23822,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -23646,7 +23840,7 @@
         "Les fraises et les cerises"
       ],
       "status": "artwork_needed_whole_answer_concepts",
-      "source_sha256": "baeebbe9be6ff0f96fffa1d20586d3fe0a95fb17a9a6915ab9de69f629698221",
+      "source_sha256": "8f948e0dc1577d39f30df0701c62e67e9b7ec96209e54162a449f415ae76f22b",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/alors-isabelle-week-end-2-4.mp3",
       "review_index": 594,
       "semantic_sha256": "4e61021c0767a41b9cc88d2fc95c7ca2731f0845f00c89642ed396fcd9d1a7f1",
@@ -23663,7 +23857,7 @@
         "source_bank": "src/tcf/content/a1-a2/co.json",
         "source_exercise": "tcf-ss-a2-s14-co-4",
         "source_question": 13,
-        "source_sha256": "baeebbe9be6ff0f96fffa1d20586d3fe0a95fb17a9a6915ab9de69f629698221",
+        "source_sha256": "8f948e0dc1577d39f30df0701c62e67e9b7ec96209e54162a449f415ae76f22b",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -23672,6 +23866,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -23686,7 +23884,7 @@
         "Quarante minutes"
       ],
       "status": "active_reviewed_trio",
-      "source_sha256": "5a83e5a3d88a09e214fa98fd18441522d8dde2a6b9347279b82e0590bcefda60",
+      "source_sha256": "ef5fbf777668a603eafefc0d91e12a200bdfd04c0b48c9d0ae8d629be4443bab",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-28.mp3",
       "review_index": 595,
       "selected_images": [
@@ -23702,7 +23900,11 @@
       "semantic_sha256": "8a51c5ccef098912b126f9acece96d6413373d2a4363b526b6a85d1993b32e69",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Trois illustrations contrôlées visuellement, distinctes et fidèles aux catégories, couleurs ou quantités demandées. Source et corrigé conservés."
+      "reason": "Trois illustrations contrôlées visuellement, distinctes et fidèles aux catégories, couleurs ou quantités demandées. Source et corrigé conservés.",
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
+      }
     },
     {
       "key": "tcf-ss-a2-s16-co-1#3",
@@ -23716,13 +23918,17 @@
         "Un an"
       ],
       "status": "keep_text_calendar_or_temporal_scope",
-      "source_sha256": "40688752f73b6873547615350cf753b645ff3fe1ad995a6dcd40363c0d31914d",
+      "source_sha256": "65ebd81a4fe3d572aa523576b1c6073e004b1fe083d641d90e74db06b60c54c2",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-29.mp3",
       "review_index": 596,
       "semantic_sha256": "0fe05ead901dd0edf4a0f9cf9fc1cfdd03e8e534c3e97035d1cbf5c39f335df3",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Durée calendaire ou portée relative : Une semaine / Un mois / Un an. Ne pas la remplacer par une heure de cadran ni par des dates inventées."
+      "reason": "Durée calendaire ou portée relative : Une semaine / Un mois / Un an. Ne pas la remplacer par une heure de cadran ni par des dates inventées.",
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
+      }
     },
     {
       "key": "tcf-ss-a2-s16-co-2#7",
@@ -23736,7 +23942,7 @@
         "Sur le toit de l’hôtel Negresco"
       ],
       "status": "artwork_needed_contextual_locations",
-      "source_sha256": "1bc0949b942830a7f28b63b0bbd160f8f39498bd59d13ea09f920c07108ff33b",
+      "source_sha256": "cf88ade07d87c5773c3dae696187d99b664d8f74c46049dde4ecc6e2dffc1f42",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-30.mp3",
       "review_index": 597,
       "semantic_sha256": "20a9b144df8e046d864ad1411de8ef3a61fe5db989a6c0d3dadc3c5a4ff67f91",
@@ -23753,7 +23959,7 @@
         "source_bank": "src/tcf/content/a1-a2/co.json",
         "source_exercise": "tcf-ss-a2-s16-co-2",
         "source_question": 7,
-        "source_sha256": "1bc0949b942830a7f28b63b0bbd160f8f39498bd59d13ea09f920c07108ff33b",
+        "source_sha256": "cf88ade07d87c5773c3dae696187d99b664d8f74c46049dde4ecc6e2dffc1f42",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -23762,6 +23968,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -24047,7 +24257,7 @@
         "Dans la rue"
       ],
       "status": "artwork_needed_contextual_locations",
-      "source_sha256": "c61abd2d446f63fe985a4052c843fe7479fd7ea739252fd36f2f7c86738168eb",
+      "source_sha256": "1b412b3071a20c791c82a606d7a47a2e28d6002d1d6b8ff4b5db32679d5278c6",
       "audio": "/lib/audio/tcf/co/loisirs/loisirs-3-2.mp3",
       "review_index": 605,
       "semantic_sha256": "31e75607609200f2c1d50303aeb96a014fa82cfb69e7edf58e71cce1b3742856",
@@ -24064,7 +24274,7 @@
         "source_bank": "src/tcf/content/a1-a2/co.json",
         "source_exercise": "tcf-ss-a2-s21-co-3",
         "source_question": 8,
-        "source_sha256": "c61abd2d446f63fe985a4052c843fe7479fd7ea739252fd36f2f7c86738168eb",
+        "source_sha256": "1b412b3071a20c791c82a606d7a47a2e28d6002d1d6b8ff4b5db32679d5278c6",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -24073,6 +24283,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -24391,13 +24605,17 @@
         "Un mois"
       ],
       "status": "keep_text_calendar_or_temporal_scope",
-      "source_sha256": "22d6a827e34d788f182d6c0e267bc31c199cac420153887832a856c8bca8bf40",
+      "source_sha256": "dc8a3a81178601bf3c569c69bdeee4996116c51fd3a52b550c2d9d1d4eaab26a",
       "audio": "/lib/audio/tcf/co/maison/salut-lucie.mp3",
       "review_index": 613,
       "semantic_sha256": "b76fbb6ae8768e7ce0e5c8bc7e06cf0cbe6dd0ea6ed37dff0fff4d3cacdbea37",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Durée calendaire ou portée relative : Deux semaines / Une semaine / Un mois. Ne pas la remplacer par une heure de cadran ni par des dates inventées."
+      "reason": "Durée calendaire ou portée relative : Deux semaines / Une semaine / Un mois. Ne pas la remplacer par une heure de cadran ni par des dates inventées.",
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
+      }
     },
     {
       "key": "tcf-ss-a2-s25-co-1#5",
@@ -24411,7 +24629,7 @@
         "Des légumes uniquement"
       ],
       "status": "artwork_needed_whole_answer_concepts",
-      "source_sha256": "22d6a827e34d788f182d6c0e267bc31c199cac420153887832a856c8bca8bf40",
+      "source_sha256": "dc8a3a81178601bf3c569c69bdeee4996116c51fd3a52b550c2d9d1d4eaab26a",
       "audio": "/lib/audio/tcf/co/maison/salut-lucie.mp3",
       "review_index": 614,
       "semantic_sha256": "63518e3f6e180708dac654b353cdbcf97ff7f1e2dd942e05bd0103c8e071f698",
@@ -24428,7 +24646,7 @@
         "source_bank": "src/tcf/content/a1-a2/co.json",
         "source_exercise": "tcf-ss-a2-s25-co-1",
         "source_question": 5,
-        "source_sha256": "22d6a827e34d788f182d6c0e267bc31c199cac420153887832a856c8bca8bf40",
+        "source_sha256": "dc8a3a81178601bf3c569c69bdeee4996116c51fd3a52b550c2d9d1d4eaab26a",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -24437,6 +24655,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -24451,7 +24673,7 @@
         "Du bouillon"
       ],
       "status": "artwork_needed_whole_answer_concepts",
-      "source_sha256": "22d6a827e34d788f182d6c0e267bc31c199cac420153887832a856c8bca8bf40",
+      "source_sha256": "dc8a3a81178601bf3c569c69bdeee4996116c51fd3a52b550c2d9d1d4eaab26a",
       "audio": "/lib/audio/tcf/co/maison/salut-lucie.mp3",
       "review_index": 615,
       "semantic_sha256": "faa8c6ba1aaf74ff44d29e57e7c0edc00bcf03643e40c412e47ed8cd105d495b",
@@ -24468,7 +24690,7 @@
         "source_bank": "src/tcf/content/a1-a2/co.json",
         "source_exercise": "tcf-ss-a2-s25-co-1",
         "source_question": 6,
-        "source_sha256": "22d6a827e34d788f182d6c0e267bc31c199cac420153887832a856c8bca8bf40",
+        "source_sha256": "dc8a3a81178601bf3c569c69bdeee4996116c51fd3a52b550c2d9d1d4eaab26a",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -24477,6 +24699,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -24491,7 +24717,7 @@
         "Sur le balcon"
       ],
       "status": "artwork_needed_contextual_locations",
-      "source_sha256": "22d6a827e34d788f182d6c0e267bc31c199cac420153887832a856c8bca8bf40",
+      "source_sha256": "dc8a3a81178601bf3c569c69bdeee4996116c51fd3a52b550c2d9d1d4eaab26a",
       "audio": "/lib/audio/tcf/co/maison/salut-lucie.mp3",
       "review_index": 616,
       "semantic_sha256": "792ec2fecc330ac8fbd546010ca465cc7e17f353438f4cf3b520952c75c7bc3d",
@@ -24508,7 +24734,7 @@
         "source_bank": "src/tcf/content/a1-a2/co.json",
         "source_exercise": "tcf-ss-a2-s25-co-1",
         "source_question": 7,
-        "source_sha256": "22d6a827e34d788f182d6c0e267bc31c199cac420153887832a856c8bca8bf40",
+        "source_sha256": "dc8a3a81178601bf3c569c69bdeee4996116c51fd3a52b550c2d9d1d4eaab26a",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -24517,6 +24743,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -24571,7 +24801,7 @@
         "La paella"
       ],
       "status": "artwork_needed_whole_answer_concepts",
-      "source_sha256": "c170507cfe71953d60b609bea73bf0e8fc3d76922be7e9533ac2ed1ae962f052",
+      "source_sha256": "2637c9750420477822c5c8090ba3a9c135d695ea2d2e8ec7ede8123db2310c01",
       "audio": "/lib/audio/tcf/co/maison/maison-3.mp3",
       "review_index": 619,
       "semantic_sha256": "2667952410b4dcb99d056c84367d077e153d3a6c2b6a5b75de6fda1485f6ab5d",
@@ -24588,7 +24818,7 @@
         "source_bank": "src/tcf/content/a1-a2/co.json",
         "source_exercise": "tcf-ss-a2-s25-co-4",
         "source_question": 3,
-        "source_sha256": "c170507cfe71953d60b609bea73bf0e8fc3d76922be7e9533ac2ed1ae962f052",
+        "source_sha256": "2637c9750420477822c5c8090ba3a9c135d695ea2d2e8ec7ede8123db2310c01",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -24597,6 +24827,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -24611,7 +24845,7 @@
         "Les cerises, les kiwis et les raisins"
       ],
       "status": "artwork_needed_whole_answer_concepts",
-      "source_sha256": "c170507cfe71953d60b609bea73bf0e8fc3d76922be7e9533ac2ed1ae962f052",
+      "source_sha256": "2637c9750420477822c5c8090ba3a9c135d695ea2d2e8ec7ede8123db2310c01",
       "audio": "/lib/audio/tcf/co/maison/maison-3.mp3",
       "review_index": 620,
       "semantic_sha256": "2578cb1e69b893ff0d78841113da1f74156a1c2bd9f97c6f645cd25c79ef74a6",
@@ -24628,7 +24862,7 @@
         "source_bank": "src/tcf/content/a1-a2/co.json",
         "source_exercise": "tcf-ss-a2-s25-co-4",
         "source_question": 6,
-        "source_sha256": "c170507cfe71953d60b609bea73bf0e8fc3d76922be7e9533ac2ed1ae962f052",
+        "source_sha256": "2637c9750420477822c5c8090ba3a9c135d695ea2d2e8ec7ede8123db2310c01",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -24637,6 +24871,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -24731,7 +24969,7 @@
         "Sur le site d’un musée"
       ],
       "status": "artwork_needed_contextual_locations",
-      "source_sha256": "fe2f6190745c39f3b3d060a02759c1bef3c11fd8fb485886e97a153be7beedba",
+      "source_sha256": "b4fe96e275cc3f7edd43b29b374bf7052ad3b9d5c6f52b0bf3bbd6d29f2bf346",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/en-moins-d-une-dizaine-2.mp3",
       "review_index": 623,
       "semantic_sha256": "1762970627ab6efc224941871cdf9a9db62e12fc4b7d2789e63a6ab2605434aa",
@@ -24748,7 +24986,7 @@
         "source_bank": "src/tcf/content/a1-a2/co.json",
         "source_exercise": "tcf-ss-a2-s38-co-2",
         "source_question": 5,
-        "source_sha256": "fe2f6190745c39f3b3d060a02759c1bef3c11fd8fb485886e97a153be7beedba",
+        "source_sha256": "b4fe96e275cc3f7edd43b29b374bf7052ad3b9d5c6f52b0bf3bbd6d29f2bf346",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -24757,6 +24995,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -24942,7 +25184,7 @@
         "Sa carte de cantine"
       ],
       "status": "artwork_needed_distinct_document_types",
-      "source_sha256": "59aacfd8c1ea126a9e9b2bba4e1b7e23c5bc3cbcc6043606bb3d83cd98150729",
+      "source_sha256": "9bbf3221a7cbdaa3795f1b92cbc56cd7bec4376e61b408bf371c61b6bc6ef39b",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/presenter-conversation-3-4.mp3",
       "review_index": 628,
       "semantic_sha256": "0164ea5485daf32c54bb1e926dd22242f27a134e57c9962b858d1b5c1f64a1be",
@@ -24959,7 +25201,7 @@
         "source_bank": "src/tcf/content/a1-a2/co.json",
         "source_exercise": "tcf-ss-a2-s48-co-4",
         "source_question": 12,
-        "source_sha256": "59aacfd8c1ea126a9e9b2bba4e1b7e23c5bc3cbcc6043606bb3d83cd98150729",
+        "source_sha256": "9bbf3221a7cbdaa3795f1b92cbc56cd7bec4376e61b408bf371c61b6bc6ef39b",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -24968,6 +25210,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -25452,7 +25698,7 @@
         "Les chaussures"
       ],
       "status": "active_reviewed_trio",
-      "source_sha256": "261100fcb2bf7946dbb8cae02aa67f4ab9a02d4ef2136344a49bb5c75cb547c1",
+      "source_sha256": "04d508a07192236e1dea783bfa53cdb01e9a7752d7225f94dd03ef4cf44b56ed",
       "audio": "/lib/audio/tcf/co/magasins/11-magasin-annonce-remise-sur-les-bijoux.mp3",
       "review_index": 642,
       "selected_images": [
@@ -25468,7 +25714,11 @@
       "semantic_sha256": "34d8d86a6a9287f9b55aa78d213c7165a710221d9788531ed6666e063a2ca8b0",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Trois illustrations contrôlées visuellement, distinctes et fidèles aux catégories, couleurs ou quantités demandées. Source et corrigé conservés."
+      "reason": "Trois illustrations contrôlées visuellement, distinctes et fidèles aux catégories, couleurs ou quantités demandées. Source et corrigé conservés.",
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
+      }
     },
     {
       "key": "tcf-ssx-a2-annonce-3-3-co-2#3",
@@ -25482,7 +25732,7 @@
         "Dans un autre magasin"
       ],
       "status": "artwork_needed_contextual_locations",
-      "source_sha256": "42c61e6e192af5510ed8668e5f542d57306f824db9b05ff12ee45647aaac0a19",
+      "source_sha256": "a02087d486e06db756d10e058c20d74c92fb0929b60d41259d6bac2cbf3a26f6",
       "audio": "/lib/audio/tcf/co/magasins/13-magasin-annonce-problème-de-caisse.mp3",
       "review_index": 643,
       "semantic_sha256": "a43066be9cce56349682cd999ac2f7c0a1451d3e15149497ae5d997c9aad6efa",
@@ -25499,7 +25749,7 @@
         "source_bank": "src/tcf/content/a1-a2/co.json",
         "source_exercise": "tcf-ssx-a2-annonce-3-3-co-2",
         "source_question": 3,
-        "source_sha256": "42c61e6e192af5510ed8668e5f542d57306f824db9b05ff12ee45647aaac0a19",
+        "source_sha256": "a02087d486e06db756d10e058c20d74c92fb0929b60d41259d6bac2cbf3a26f6",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -25508,6 +25758,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -25783,7 +26037,7 @@
         "Les meubles"
       ],
       "status": "artwork_needed_whole_answer_concepts",
-      "source_sha256": "be2e33939e0f00182184b348e1310944219f4d53a7eccfa1d4c746aedb7347ef",
+      "source_sha256": "e0124a5a07dc82047cf6a13bf577ba8745db577a35b683a51ace49a7e1f1936a",
       "audio": "/lib/audio/tcf/co/magasins/17-magasin-annonce-offre-électroménager.mp3",
       "review_index": 651,
       "semantic_sha256": "4eb7884abe265eae984de36a91a89bad424d5fd546023f247ca7027d583cc325",
@@ -25800,7 +26054,7 @@
         "source_bank": "src/tcf/content/a1-a2/co.json",
         "source_exercise": "tcf-ssx-a2-annonce-2-4-co-2",
         "source_question": 1,
-        "source_sha256": "be2e33939e0f00182184b348e1310944219f4d53a7eccfa1d4c746aedb7347ef",
+        "source_sha256": "e0124a5a07dc82047cf6a13bf577ba8745db577a35b683a51ace49a7e1f1936a",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -25809,6 +26063,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -25934,7 +26192,7 @@
         "10 minutes"
       ],
       "status": "active_reviewed_trio",
-      "source_sha256": "9a225432eaa371e374be415d33bb7891a77f8f1d1accd531f14af6e91fabf6ea",
+      "source_sha256": "0824677c7866e18508abe6e69900959451228ef07d4fee3799e0efd3bdbb958f",
       "audio": "/lib/audio/tcf/co/presenter/moyen-a2__radio-17.1.mp3",
       "review_index": 655,
       "semantic_sha256": "4b9289d057652d6cac28afce13f39d0117b6afb06e9795df93d037ac3a26fda8",
@@ -25951,7 +26209,7 @@
         "source_bank": "src/tcf/content/a1-a2/co.json",
         "source_exercise": "tcf-ssx-a2-radio-17-1-co-3",
         "source_question": 1,
-        "source_sha256": "9a225432eaa371e374be415d33bb7891a77f8f1d1accd531f14af6e91fabf6ea",
+        "source_sha256": "0824677c7866e18508abe6e69900959451228ef07d4fee3799e0efd3bdbb958f",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -25971,7 +26229,11 @@
         "4de47038af6b49f13271236ad1d6ef08ef996f90d8554510b19593cffca4392e",
         "0be5ab41b7ebf1c763e1d8fc461d3023cc1081bd2bd486a2527ba675a7ca0471"
       ],
-      "extension_573_phase": "duration_models"
+      "extension_573_phase": "duration_models",
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
+      }
     },
     {
       "key": "tcf-ssx-a2-annonce-1-4-co-2#3",
@@ -26025,7 +26287,7 @@
         "Au bar"
       ],
       "status": "artwork_needed_contextual_locations",
-      "source_sha256": "76e5f0de92b4959a10d6273e6f6ce32867b38d88062e6e2f868ec98c64fbef63",
+      "source_sha256": "aa74bb28ac59731a1e0b5b8e25fd600bdbcf5e313b3049e83e40f269d734f454",
       "audio": "/lib/audio/tcf/co/transports/moyen-a2__annonce-1.6.mp3",
       "review_index": 657,
       "semantic_sha256": "2073f570df33eb58451a1b5e38e2fc716c8c9171732fd997a087caad4add0ca0",
@@ -26042,7 +26304,7 @@
         "source_bank": "src/tcf/content/a1-a2/co.json",
         "source_exercise": "tcf-ssx-a2-annonce-1-6-co-2",
         "source_question": 2,
-        "source_sha256": "76e5f0de92b4959a10d6273e6f6ce32867b38d88062e6e2f868ec98c64fbef63",
+        "source_sha256": "aa74bb28ac59731a1e0b5b8e25fd600bdbcf5e313b3049e83e40f269d734f454",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -26051,6 +26313,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -26065,7 +26331,7 @@
         "Au bar"
       ],
       "status": "artwork_needed_contextual_locations",
-      "source_sha256": "6e484c1ff3c5335adc1797a6b437bc6ee4e2bb7c1485ef1b5fdab47d7ed3cb70",
+      "source_sha256": "8aad7f304245d6eae30b63bdf8b3662ba9a77792177583284b20b9a5c66dca87",
       "audio": "/lib/audio/tcf/co/transports/moyen-a2__annonce-3.5.mp3",
       "review_index": 658,
       "semantic_sha256": "ce9dc7c5b92ecb47fd2bed92d8200f72cfc37d82e6c42e69ef83fb719005cbd6",
@@ -26082,7 +26348,7 @@
         "source_bank": "src/tcf/content/a1-a2/co.json",
         "source_exercise": "tcf-ssx-a2-annonce-3-5-co-2",
         "source_question": 2,
-        "source_sha256": "6e484c1ff3c5335adc1797a6b437bc6ee4e2bb7c1485ef1b5fdab47d7ed3cb70",
+        "source_sha256": "8aad7f304245d6eae30b63bdf8b3662ba9a77792177583284b20b9a5c66dca87",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -26091,6 +26357,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -26695,13 +26965,17 @@
         "Bruxelles"
       ],
       "status": "keep_text_named_identity_or_location",
-      "source_sha256": "ee93123939df2a0a33f66e4790a9ed64a8c71aecc839001748793ec9eb3cf087",
+      "source_sha256": "daa42e5c99bc5dfc4763eb37cd5d3b57706e310140c6febbc48037e897e9f6e9",
       "audio": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_03-3.mp3",
       "review_index": 676,
       "semantic_sha256": "6cca036c49d23855045eef2f05007fde92460d741f9babefe2017b4aea621f07",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Les choix dépendent de noms propres, adresses ou identités exactes ; une architecture inventée ou un portrait générique ne prouve pas cette distinction."
+      "reason": "Les choix dépendent de noms propres, adresses ou identités exactes ; une architecture inventée ou un portrait générique ne prouve pas cette distinction.",
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
+      }
     },
     {
       "key": "delf-a2-2021-co-ex1-05#2",
@@ -28198,7 +28472,7 @@
         "Une pharmacie"
       ],
       "status": "active_reviewed_trio",
-      "source_sha256": "1ce9a709ba0e40f3a77b7bc412bc4926d166276f66cd8a857d8dc4d64f2a143e",
+      "source_sha256": "5fccc62195370b895f9e91bb921ce0e949d963f46d87834d19da4a291756ea5f",
       "audio": "/lib/audio/tcf/co/magasins/achats-annonce-3.mp3",
       "review_index": 720,
       "selected_images": [
@@ -28214,7 +28488,11 @@
       "semantic_sha256": "abc86b1db06621ec01fe3fbabe7334f10c1d62c2edae8136be27d385f7039bf6",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Trois illustrations contrôlées visuellement, distinctes et fidèles aux catégories, couleurs ou quantités demandées. Source et corrigé conservés."
+      "reason": "Trois illustrations contrôlées visuellement, distinctes et fidèles aux catégories, couleurs ou quantités demandées. Source et corrigé conservés.",
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
+      }
     },
     {
       "key": "tcf-ss-b1-s1-co-3#9",
@@ -28228,13 +28506,17 @@
         "Une démocratie directe"
       ],
       "status": "keep_text_nonvisual_or_quantified_claim",
-      "source_sha256": "07af7ae0e2e816d71bff8f52d2af363e389d79511b13764ca011b6b4821a3940",
+      "source_sha256": "e768556e37bf9fb8df0f7d69be7f673d939e69adf82add1f41bec347facfae82",
       "audio": "/lib/audio/tcf/co/actualite/07-actualité-annonymat-sur-internet.mp3",
       "review_index": 721,
       "semantic_sha256": "fabd7a6107aeccf5ec974d6a8e79eb469374ca2500e20aaf35ed93f9db1ab77a",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Les régimes politiques ne sont pas distinguables par l’apparence des personnes ou des bâtiments."
+      "reason": "Les régimes politiques ne sont pas distinguables par l’apparence des personnes ou des bâtiments.",
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
+      }
     },
     {
       "key": "tcf-ss-b1-s1-co-4#6",
@@ -28248,13 +28530,17 @@
         "Cinq ans"
       ],
       "status": "keep_text_calendar_or_temporal_scope",
-      "source_sha256": "f0ca00f56cfed0b3ab10174e6e2543a237d7baf5bac28eb4c662490af818b53c",
+      "source_sha256": "ac5c1986078fa273d5f9ad08cc1cbbf5d57af91c6259e1769d3b828cdb078df8",
       "audio": "/lib/audio/tcf/co/actualite/06-actualité-les-étiquettes-vertes.mp3",
       "review_index": 722,
       "semantic_sha256": "58b0bf24c92b6f255d163ee569bbd7d5340a6a3557c84c16419282c5ca0564d0",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Durée calendaire ou portée relative : Un an / Six mois / Cinq ans. Ne pas la remplacer par une heure de cadran ni par des dates inventées."
+      "reason": "Durée calendaire ou portée relative : Un an / Six mois / Cinq ans. Ne pas la remplacer par une heure de cadran ni par des dates inventées.",
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
+      }
     },
     {
       "key": "tcf-ss-b1-s2-co-2#3",
@@ -28268,13 +28554,17 @@
         "Dans les emballages"
       ],
       "status": "keep_text_nonvisual_or_quantified_claim",
-      "source_sha256": "2d790a0c6b546fe45f7a3741dcd9ebb1c9d360758eee865442a4f01dbe13f368",
+      "source_sha256": "ea6fcefa084a89dc5a93d45b6fb0bd4200f5d230dfbac64e05d4bd56f9027b71",
       "audio": "/lib/audio/tcf/co/ecole/ecole-3.mp3",
       "review_index": 723,
       "semantic_sha256": "b173fc423894ff8722d657cff7fd85a16319075359e3a1a0e41a128de03575db",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "La concentration des nutriments n’est pas visible dans une scène ordinaire ; éviter une fausse preuve visuelle."
+      "reason": "La concentration des nutriments n’est pas visible dans une scène ordinaire ; éviter une fausse preuve visuelle.",
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
+      }
     },
     {
       "key": "tcf-ss-b1-s2-co-2#5",
@@ -28288,7 +28578,7 @@
         "D'un pays lointain"
       ],
       "status": "artwork_needed_contextual_locations",
-      "source_sha256": "2d790a0c6b546fe45f7a3741dcd9ebb1c9d360758eee865442a4f01dbe13f368",
+      "source_sha256": "ea6fcefa084a89dc5a93d45b6fb0bd4200f5d230dfbac64e05d4bd56f9027b71",
       "audio": "/lib/audio/tcf/co/ecole/ecole-3.mp3",
       "review_index": 724,
       "semantic_sha256": "1bd02cd2ad78360c950015cd6610143da44866c51503f6ead935612a59fbd1b0",
@@ -28305,7 +28595,7 @@
         "source_bank": "src/tcf/content/a2-b1/co.json",
         "source_exercise": "tcf-ss-b1-s2-co-2",
         "source_question": 5,
-        "source_sha256": "2d790a0c6b546fe45f7a3741dcd9ebb1c9d360758eee865442a4f01dbe13f368",
+        "source_sha256": "ea6fcefa084a89dc5a93d45b6fb0bd4200f5d230dfbac64e05d4bd56f9027b71",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -28314,6 +28604,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -28328,7 +28622,7 @@
         "Un plat de pâtes"
       ],
       "status": "artwork_needed_whole_answer_concepts",
-      "source_sha256": "2e1c9da069138a6032ac04f016e7e3632adcf106b048e296652939643181ea31",
+      "source_sha256": "b07bb6e0b3a16b14ad0fc7036a22a48c039d23e994b5fe08157de3c9b677622d",
       "audio": "/lib/audio/tcf/co/restaurant/08-restaurant-problème-avec-l-addition.mp3",
       "review_index": 725,
       "semantic_sha256": "14831dd4d64a4ad18fc61b4ac5f2b6eb5d6fa0ef416c222eba591e11b65207f1",
@@ -28345,7 +28639,7 @@
         "source_bank": "src/tcf/content/a2-b1/co.json",
         "source_exercise": "tcf-ss-b1-s2-co-3",
         "source_question": 8,
-        "source_sha256": "2e1c9da069138a6032ac04f016e7e3632adcf106b048e296652939643181ea31",
+        "source_sha256": "b07bb6e0b3a16b14ad0fc7036a22a48c039d23e994b5fe08157de3c9b677622d",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -28354,6 +28648,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -28368,7 +28666,7 @@
         "Le tennis"
       ],
       "status": "artwork_needed_whole_answer_concepts",
-      "source_sha256": "f292fb6a5acfda8b850ea2ad19e8d1f3c0a98a553760b2f2b1090df042fa8248",
+      "source_sha256": "b6f6c0c0762df2365c853f9c1613ad4f53fcd566a2650a0f7d2335c38b605a32",
       "audio": "/lib/audio/tcf/co/radio/10-radio-loisirs-préférés-des-adolescents.mp3",
       "review_index": 726,
       "semantic_sha256": "66db011ee3d42f7b609077aae1d7a02dd686daaac279cca6d47fa836e4c2374c",
@@ -28385,7 +28683,7 @@
         "source_bank": "src/tcf/content/a2-b1/co.json",
         "source_exercise": "tcf-ss-b1-s2-co-4",
         "source_question": 3,
-        "source_sha256": "f292fb6a5acfda8b850ea2ad19e8d1f3c0a98a553760b2f2b1090df042fa8248",
+        "source_sha256": "b6f6c0c0762df2365c853f9c1613ad4f53fcd566a2650a0f7d2335c38b605a32",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -28394,6 +28692,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -28408,13 +28710,17 @@
         "Deux mois"
       ],
       "status": "keep_text_calendar_or_temporal_scope",
-      "source_sha256": "485effd71ec6977d1c85700a7c745ccfa0f91d4dd322180a9da5ff95ace389d5",
+      "source_sha256": "490bae1174160d83b7c686bf1e15ad6d0767f0a4cbf2eb584a4b3477f2d6793c",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/bonjour-thierry-deja.mp3",
       "review_index": 727,
       "semantic_sha256": "d320371013ae1b887ef53a3c443563e7d91a49c9e77df70a6e6a311db3c6efad",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Durée calendaire ou portée relative : Deux semaines / Deux jours / Deux mois. Ne pas la remplacer par une heure de cadran ni par des dates inventées."
+      "reason": "Durée calendaire ou portée relative : Deux semaines / Deux jours / Deux mois. Ne pas la remplacer par une heure de cadran ni par des dates inventées.",
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
+      }
     },
     {
       "key": "tcf-ss-b1-s3-co-3#4",
@@ -28428,7 +28734,7 @@
         "Dans un train pour Lille"
       ],
       "status": "artwork_needed_contextual_locations",
-      "source_sha256": "98647aa4ad960cf8c874922a253fe8bf32676a2049429137e8d4bb5e7d70c531",
+      "source_sha256": "dfa3d0e3f4298483797b198260eb1c45e5fe9df6e498c4212801deaf0522e5c3",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/famille-radio.mp3",
       "review_index": 728,
       "semantic_sha256": "23754004fd4a8ac0d5be84a0bc4494b82a115979f59479d4a57fbd066a692f6e",
@@ -28445,7 +28751,7 @@
         "source_bank": "src/tcf/content/a2-b1/co.json",
         "source_exercise": "tcf-ss-b1-s3-co-3",
         "source_question": 4,
-        "source_sha256": "98647aa4ad960cf8c874922a253fe8bf32676a2049429137e8d4bb5e7d70c531",
+        "source_sha256": "dfa3d0e3f4298483797b198260eb1c45e5fe9df6e498c4212801deaf0522e5c3",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -28454,6 +28760,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -28468,13 +28778,17 @@
         "Un mois"
       ],
       "status": "keep_text_calendar_or_temporal_scope",
-      "source_sha256": "06ddb8b7df08616add737e31ebe18f8d429568c18f9719317679bc96368e4d71",
+      "source_sha256": "4db5b579a1f9375ae9c700c440f9fa51ccec5adef65f882b19cbb18ac50ff2fb",
       "audio": "/lib/audio/tcf/co/fetes/10-fêtes-conversation-Ingrid.mp3",
       "review_index": 729,
       "semantic_sha256": "caad075931c722167a20fcb6dcd6788d00ab352ad53f4d237b215825c68f57e6",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Durée calendaire ou portée relative : Deux jours / Une semaine / Un mois. Ne pas la remplacer par une heure de cadran ni par des dates inventées."
+      "reason": "Durée calendaire ou portée relative : Deux jours / Une semaine / Un mois. Ne pas la remplacer par une heure de cadran ni par des dates inventées.",
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
+      }
     },
     {
       "key": "tcf-ss-b1-s5-co-2#10",
@@ -28488,13 +28802,17 @@
         "Plus de trois heures"
       ],
       "status": "keep_text_nonvisual_or_quantified_claim",
-      "source_sha256": "4b0e3755fda95dc9303521abcc374d5b2b8deb64c35d2241e2f69a73424342cd",
+      "source_sha256": "c1add9fee12cea918e8417bf13652458ed535ae56bfcc85a1ecb39a1dfd719fb",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/journee-radio-1.mp3",
       "review_index": 730,
       "semantic_sha256": "88c863fa5c939cb1e960ca4c4e0f110610b18413a2537560246584d04b72b31c",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Les bornes « presque », « moins de » et « plus de » ne correspondent pas à trois durées exactes de minuteur."
+      "reason": "Les bornes « presque », « moins de » et « plus de » ne correspondent pas à trois durées exactes de minuteur.",
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
+      }
     },
     {
       "key": "tcf-ss-b1-s5-co-4#1",
@@ -28503,29 +28821,29 @@
       "question": 1,
       "enonce": "Où peut-on faire signer ses albums ?",
       "labels": [
-        "Dans le salon Open Space",
+        "Dans le salon Obélix",
         "À la mairie",
         "Au cinéma"
       ],
       "status": "artwork_needed_contextual_locations",
-      "source_sha256": "c1453a5556c94e700b5119c33e1f0e25d64c69bb1df0653b7593d41d02d97fea",
+      "source_sha256": "989f0b97665a98fcf57a76daed619d97bf7739771eb6e1081e1aad4e46bb2b0d",
       "audio": "/lib/audio/tcf/co/loisirs/pour-faire-signer-vos.mp3",
       "review_index": 731,
-      "semantic_sha256": "c27186a6daa23323248382bf8ffbad6add0be0328272838d6ac26bfa2412c3a8",
+      "semantic_sha256": "0d985fe7fa88f68d505f000d8aa6470e1834b8831a3f3bdc72882438bfdc97b8",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
       "reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
       "brief": {
         "context_question": "Où peut-on faire signer ses albums ?",
         "choices_to_illustrate": [
-          "Dans le salon Open Space",
+          "Dans le salon Obélix",
           "À la mairie",
           "Au cinéma"
         ],
         "source_bank": "src/tcf/content/a2-b1/co.json",
         "source_exercise": "tcf-ss-b1-s5-co-4",
         "source_question": 1,
-        "source_sha256": "c1453a5556c94e700b5119c33e1f0e25d64c69bb1df0653b7593d41d02d97fea",
+        "source_sha256": "989f0b97665a98fcf57a76daed619d97bf7739771eb6e1081e1aad4e46bb2b0d",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -28534,6 +28852,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -28548,13 +28870,17 @@
         "De Corée"
       ],
       "status": "keep_text_named_identity_or_location",
-      "source_sha256": "c1453a5556c94e700b5119c33e1f0e25d64c69bb1df0653b7593d41d02d97fea",
+      "source_sha256": "989f0b97665a98fcf57a76daed619d97bf7739771eb6e1081e1aad4e46bb2b0d",
       "audio": "/lib/audio/tcf/co/loisirs/pour-faire-signer-vos.mp3",
       "review_index": 732,
       "semantic_sha256": "56f7f51b7ccc592cc75a654b66fe15fbfb559711328cd906879265a403948836",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Les choix dépendent de noms propres, adresses ou identités exactes ; une architecture inventée ou un portrait générique ne prouve pas cette distinction."
+      "reason": "Les choix dépendent de noms propres, adresses ou identités exactes ; une architecture inventée ou un portrait générique ne prouve pas cette distinction.",
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
+      }
     },
     {
       "key": "tcf-ss-b1-s6-co-2#8",
@@ -28568,13 +28894,17 @@
         "Six mois"
       ],
       "status": "keep_text_calendar_or_temporal_scope",
-      "source_sha256": "d68351be3b1ec2e3f51056435f7ab9a2ea14505891b32070c805d9dec91a0e22",
+      "source_sha256": "f2296346c178ff657ade82d2ce5272ad8a8215424dfa4816ecc6cf709548cedc",
       "audio": "/lib/audio/tcf/co/loisirs/loisirs-annonce.mp3",
       "review_index": 733,
       "semantic_sha256": "96e77d5450df8f20d5ad0960ee3ebaaa652e603684b4ce7f43aadb937b757322",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Durée calendaire ou portée relative : Trois ans / Dix ans / Six mois. Ne pas la remplacer par une heure de cadran ni par des dates inventées."
+      "reason": "Durée calendaire ou portée relative : Trois ans / Dix ans / Six mois. Ne pas la remplacer par une heure de cadran ni par des dates inventées.",
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
+      }
     },
     {
       "key": "tcf-ss-b1-s6-co-2#10",
@@ -28588,7 +28918,7 @@
         "Luthier"
       ],
       "status": "artwork_needed_whole_answer_concepts",
-      "source_sha256": "d68351be3b1ec2e3f51056435f7ab9a2ea14505891b32070c805d9dec91a0e22",
+      "source_sha256": "f2296346c178ff657ade82d2ce5272ad8a8215424dfa4816ecc6cf709548cedc",
       "audio": "/lib/audio/tcf/co/loisirs/loisirs-annonce.mp3",
       "review_index": 734,
       "semantic_sha256": "a823a2e8c3a1a56765342819c0d80852473aaef37e4fde8aff4fc6f4ee9c29d2",
@@ -28605,7 +28935,7 @@
         "source_bank": "src/tcf/content/a2-b1/co.json",
         "source_exercise": "tcf-ss-b1-s6-co-2",
         "source_question": 10,
-        "source_sha256": "d68351be3b1ec2e3f51056435f7ab9a2ea14505891b32070c805d9dec91a0e22",
+        "source_sha256": "f2296346c178ff657ade82d2ce5272ad8a8215424dfa4816ecc6cf709548cedc",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -28614,6 +28944,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -28628,7 +28962,7 @@
         "Éditeur"
       ],
       "status": "artwork_needed_whole_answer_concepts",
-      "source_sha256": "63201803216d9c4335a25d303abcf6246a417a60cb5c5659c8f65c07d2abc99f",
+      "source_sha256": "ac0cd8caf22bc812299c3a5ff77e6954c24ea7b666b75a739d027a0488a4c63b",
       "audio": "/lib/audio/tcf/co/loisirs/remi-bezancon-possede-son.mp3",
       "review_index": 735,
       "semantic_sha256": "c16c53f3bed2dbf7b503809570a2abba6a635729d7ce24c9f440dfc8c068f1b7",
@@ -28645,7 +28979,7 @@
         "source_bank": "src/tcf/content/a2-b1/co.json",
         "source_exercise": "tcf-ss-b1-s6-co-4",
         "source_question": 5,
-        "source_sha256": "63201803216d9c4335a25d303abcf6246a417a60cb5c5659c8f65c07d2abc99f",
+        "source_sha256": "ac0cd8caf22bc812299c3a5ff77e6954c24ea7b666b75a739d027a0488a4c63b",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -28654,6 +28988,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -28668,7 +29006,7 @@
         "Costumière"
       ],
       "status": "artwork_needed_whole_answer_concepts",
-      "source_sha256": "dfb521b18d97219ea92dc7783472802270984a4fd33bc8aba7e22e3e3e03a32e",
+      "source_sha256": "7d03db36a27b69a978a74b541f9b7d8907c009122b414df33a28b9b25dbe41cf",
       "audio": "/lib/audio/tcf/co/loisirs/loisirs-radio.mp3",
       "review_index": 736,
       "semantic_sha256": "ea295cd80ce744ff6eb51ba5003f67db28c87e3f6d2570675cfddbea35128e03",
@@ -28685,7 +29023,7 @@
         "source_bank": "src/tcf/content/a2-b1/co.json",
         "source_exercise": "tcf-ss-b1-s7-co-1",
         "source_question": 10,
-        "source_sha256": "dfb521b18d97219ea92dc7783472802270984a4fd33bc8aba7e22e3e3e03a32e",
+        "source_sha256": "7d03db36a27b69a978a74b541f9b7d8907c009122b414df33a28b9b25dbe41cf",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -28694,6 +29032,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -28748,13 +29090,17 @@
         "Une semaine"
       ],
       "status": "keep_text_calendar_or_temporal_scope",
-      "source_sha256": "128a560899713b49651db5a30ed05d49952d66dcc74e6534633c1bbb4aea5360",
+      "source_sha256": "16074eb5a38b8654b249e1e84e6ae61dd5bf03f59e159a0c55371821e46a3bce",
       "audio": "/lib/audio/tcf/co/loisirs/nature-conversation-3.mp3",
       "review_index": 738,
       "semantic_sha256": "3173e49ff6d72b2e0c2080771280f5bc516fa2cfefcb612564aac80c362d5974",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Durée calendaire ou portée relative : Un jour et demi / Trois jours / Une semaine. Ne pas la remplacer par une heure de cadran ni par des dates inventées."
+      "reason": "Durée calendaire ou portée relative : Un jour et demi / Trois jours / Une semaine. Ne pas la remplacer par une heure de cadran ni par des dates inventées.",
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
+      }
     },
     {
       "key": "tcf-ss-b1-s8-co-2#7",
@@ -28808,7 +29154,7 @@
         "Une salade"
       ],
       "status": "artwork_needed_whole_answer_concepts",
-      "source_sha256": "024ccdaa870f55459160f52a8d7af1682714f35419d8e955a891654b111215ab",
+      "source_sha256": "88d55377d2bf95a7ed2ca1275201b833f1fdcb981e925b64af6a444d409b0267",
       "audio": "/lib/audio/tcf/co/maison/nourriture-annonce.mp3",
       "review_index": 741,
       "semantic_sha256": "3f757bda2343553d682f158851880dd8ee8b86f47ea40ee705ba37553a9e7342",
@@ -28825,7 +29171,7 @@
         "source_bank": "src/tcf/content/a2-b1/co.json",
         "source_exercise": "tcf-ss-b1-s8-co-4",
         "source_question": 6,
-        "source_sha256": "024ccdaa870f55459160f52a8d7af1682714f35419d8e955a891654b111215ab",
+        "source_sha256": "88d55377d2bf95a7ed2ca1275201b833f1fdcb981e925b64af6a444d409b0267",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -28834,6 +29180,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -28848,13 +29198,17 @@
         "Uniquement les aliments surgelés"
       ],
       "status": "keep_text_nonvisual_or_quantified_claim",
-      "source_sha256": "024ccdaa870f55459160f52a8d7af1682714f35419d8e955a891654b111215ab",
+      "source_sha256": "88d55377d2bf95a7ed2ca1275201b833f1fdcb981e925b64af6a444d409b0267",
       "audio": "/lib/audio/tcf/co/maison/nourriture-annonce.mp3",
       "review_index": 742,
       "semantic_sha256": "e4bd1a8a33e510556bb7d05c7c8c3f85ca37e5f9fd0e4b3326f4afdb1bdb6f07",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Les quantificateurs « tous » et « uniquement » ne sont pas démontrés par une sélection finie d’aliments."
+      "reason": "Les quantificateurs « tous » et « uniquement » ne sont pas démontrés par une sélection finie d’aliments.",
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
+      }
     },
     {
       "key": "tcf-ss-b1-s9-co-3#6",
@@ -28868,7 +29222,7 @@
         "Dans la notice"
       ],
       "status": "artwork_needed_contextual_locations",
-      "source_sha256": "e19311449ec1a8bef98c47628a7c21d0e64a0ee50132fff14d38a2fc7eb091d8",
+      "source_sha256": "34febc2ae1c3fe28e4276437eae75a87ec0503ccb004964673966c51bfe430fc",
       "audio": "/lib/audio/tcf/co/maison/moules-silicone-boites-film.mp3",
       "review_index": 743,
       "semantic_sha256": "ab0c3d61f916910aa61dbb2eddaa804a432de87c99de7ef0fa8d8c3e7e854d2d",
@@ -28885,7 +29239,7 @@
         "source_bank": "src/tcf/content/a2-b1/co.json",
         "source_exercise": "tcf-ss-b1-s9-co-3",
         "source_question": 6,
-        "source_sha256": "e19311449ec1a8bef98c47628a7c21d0e64a0ee50132fff14d38a2fc7eb091d8",
+        "source_sha256": "34febc2ae1c3fe28e4276437eae75a87ec0503ccb004964673966c51bfe430fc",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -28894,6 +29248,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -28901,20 +29259,24 @@
       "bank": "src/tcf/content/a2-b1/co.json",
       "exercise": "tcf-ss-b1-s10-co-1",
       "question": 8,
-      "enonce": "Depuis combien de temps travaille-t-il sur Aslac ?",
+      "enonce": "Depuis combien de temps travaille-t-il sur Aslak ?",
       "labels": [
         "Environ deux ans",
         "Environ deux mois",
         "Environ dix ans"
       ],
       "status": "keep_text_calendar_or_temporal_scope",
-      "source_sha256": "b305436bcd0a164141df4e398e15f17d73e96c3b1ea846170ef1e888606160a0",
+      "source_sha256": "6b9e5d90ef2f9add89b62adf09a030830a48c2a2e7c53fc4f05917330d31f19d",
       "audio": "/lib/audio/tcf/co/maison/quarante-ans-apres-l-ouverture-1.mp3",
       "review_index": 744,
-      "semantic_sha256": "80bd62e69a95a2441ea0377456a415fbb03ebeaa9e5ed870c722567c108d4fa9",
+      "semantic_sha256": "6dcd9c8cdf395b5d47eb0000360a647ab3012b7928116e18ad2a76346c185bd1",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Durée calendaire ou portée relative : Environ deux ans / Environ deux mois / Environ dix ans. Ne pas la remplacer par une heure de cadran ni par des dates inventées."
+      "reason": "Durée calendaire ou portée relative : Environ deux ans / Environ deux mois / Environ dix ans. Ne pas la remplacer par une heure de cadran ni par des dates inventées.",
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
+      }
     },
     {
       "key": "tcf-ss-b1-s10-co-2#4",
@@ -28928,7 +29290,7 @@
         "Un panier en osier"
       ],
       "status": "artwork_needed_whole_answer_concepts",
-      "source_sha256": "93e418de9249ce0ab7ce448c0031d3b11e6f46bd43630f76bd01c84ac14df6ff",
+      "source_sha256": "6b5e68b3d82aca8f5818631eda9def487bc02f00f9fa0a77375cb7f08b954860",
       "audio": "/lib/audio/tcf/co/maison/le-secret-c-est-l-anticipation-1.mp3",
       "review_index": 745,
       "semantic_sha256": "c442d99668c4a418300122838c2ebc669c1a7c20dbc926fbfbd43363a62a3fbc",
@@ -28945,7 +29307,7 @@
         "source_bank": "src/tcf/content/a2-b1/co.json",
         "source_exercise": "tcf-ss-b1-s10-co-2",
         "source_question": 4,
-        "source_sha256": "93e418de9249ce0ab7ce448c0031d3b11e6f46bd43630f76bd01c84ac14df6ff",
+        "source_sha256": "6b5e68b3d82aca8f5818631eda9def487bc02f00f9fa0a77375cb7f08b954860",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -28954,6 +29316,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -29008,7 +29374,7 @@
         "Sur le menu d'un restaurant"
       ],
       "status": "artwork_needed_contextual_locations",
-      "source_sha256": "8f2e0ee852a7b3fa9c9994da74a8aa87ed6a99b49a381b5f2f6e9de824e1c4c8",
+      "source_sha256": "496ee1a09a0a1d827a9d9bcb41c891dd8f8079cd5d1b02a3d97e71ad637a74b2",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/cette-semaine-encore-cinema-1.mp3",
       "review_index": 747,
       "semantic_sha256": "077a85d9c561e8aa3313d9dc495e5fe10990cdf9e47d4eedc41f0f7dcd902824",
@@ -29025,7 +29391,7 @@
         "source_bank": "src/tcf/content/a2-b1/co.json",
         "source_exercise": "tcf-ss-b1-s11-co-2",
         "source_question": 8,
-        "source_sha256": "8f2e0ee852a7b3fa9c9994da74a8aa87ed6a99b49a381b5f2f6e9de824e1c4c8",
+        "source_sha256": "496ee1a09a0a1d827a9d9bcb41c891dd8f8079cd5d1b02a3d97e71ad637a74b2",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -29034,6 +29400,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -29041,22 +29411,22 @@
       "bank": "src/tcf/content/a2-b1/co.json",
       "exercise": "tcf-ss-b1-s11-co-2",
       "question": 10,
-      "enonce": "Quel métier Gaspar exerce-t-il dans Une sirène à Paris ?",
+      "enonce": "Quel métier Gaspard exerce-t-il dans Une sirène à Paris ?",
       "labels": [
         "Chanteur",
         "Journaliste",
         "Professeur"
       ],
       "status": "artwork_needed_whole_answer_concepts",
-      "source_sha256": "8f2e0ee852a7b3fa9c9994da74a8aa87ed6a99b49a381b5f2f6e9de824e1c4c8",
+      "source_sha256": "496ee1a09a0a1d827a9d9bcb41c891dd8f8079cd5d1b02a3d97e71ad637a74b2",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/cette-semaine-encore-cinema-1.mp3",
       "review_index": 748,
-      "semantic_sha256": "6d071b9f7125fac0fd8ebaa9511c26626ee354e18da3fa73b0bb0d80d170c880",
+      "semantic_sha256": "0b47a21cfba1945dee7bf10ea2e1ea96d3fcb64242c9e160bbf143f95a52bd5d",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
       "reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
       "brief": {
-        "context_question": "Quel métier Gaspar exerce-t-il dans Une sirène à Paris ?",
+        "context_question": "Quel métier Gaspard exerce-t-il dans Une sirène à Paris ?",
         "choices_to_illustrate": [
           "Chanteur",
           "Journaliste",
@@ -29065,7 +29435,7 @@
         "source_bank": "src/tcf/content/a2-b1/co.json",
         "source_exercise": "tcf-ss-b1-s11-co-2",
         "source_question": 10,
-        "source_sha256": "8f2e0ee852a7b3fa9c9994da74a8aa87ed6a99b49a381b5f2f6e9de824e1c4c8",
+        "source_sha256": "496ee1a09a0a1d827a9d9bcb41c891dd8f8079cd5d1b02a3d97e71ad637a74b2",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -29074,6 +29444,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -29148,7 +29522,7 @@
         "Dans une boulangerie"
       ],
       "status": "artwork_needed_contextual_locations",
-      "source_sha256": "3816ea04e857ae749a9c90b3d166e5d9d5ce9ab2a8e5aa54778fab1ea65ee960",
+      "source_sha256": "b17c6f1d7e4b8b6bacef508be32fd04101cc1a3016446a97b95bdd2cf323e2bd",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/hmm-ca-sent-bon.mp3",
       "review_index": 751,
       "semantic_sha256": "ae4e802244870070202e54c4bbbc9f601153deef0a3ec6abb83a1563c00501ed",
@@ -29165,7 +29539,7 @@
         "source_bank": "src/tcf/content/a2-b1/co.json",
         "source_exercise": "tcf-ss-b1-s11-co-4",
         "source_question": 6,
-        "source_sha256": "3816ea04e857ae749a9c90b3d166e5d9d5ce9ab2a8e5aa54778fab1ea65ee960",
+        "source_sha256": "b17c6f1d7e4b8b6bacef508be32fd04101cc1a3016446a97b95bdd2cf323e2bd",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -29174,6 +29548,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -29188,7 +29566,7 @@
         "Sur une affiche au cinéma"
       ],
       "status": "artwork_needed_contextual_locations",
-      "source_sha256": "d9b9e0c26dee7aace0afb4047ac01b0097ab25e3b50e5559f3c0eebba1fdf8e9",
+      "source_sha256": "443a55486cae715ce86060c5783c905cd99e2ba1c295bceafd8fab4558e3df1f",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/jacques-as-petite-1.mp3",
       "review_index": 752,
       "semantic_sha256": "487f1b807066813bfed9e68fcb51b5114f3e42554d4c50316faab8abe8617ba2",
@@ -29205,7 +29583,7 @@
         "source_bank": "src/tcf/content/a2-b1/co.json",
         "source_exercise": "tcf-ss-b1-s12-co-1",
         "source_question": 8,
-        "source_sha256": "d9b9e0c26dee7aace0afb4047ac01b0097ab25e3b50e5559f3c0eebba1fdf8e9",
+        "source_sha256": "443a55486cae715ce86060c5783c905cd99e2ba1c295bceafd8fab4558e3df1f",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -29214,6 +29592,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -29228,13 +29610,17 @@
         "2 ans"
       ],
       "status": "keep_text_calendar_or_temporal_scope",
-      "source_sha256": "b66d30cc681bcf88a5f2e1138514011961168ce3efec808ec16abea2246a823e",
+      "source_sha256": "daebce620a0b5826d9c1f486e5e949476bdc73cfc81275126cccc1f8575c78cd",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/presenter-radio.mp3",
       "review_index": 753,
       "semantic_sha256": "b122419f21a326911b384e5d76df334f34456f3821ceae2d38d1aab673fc9cd6",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Durée calendaire ou portée relative : 2 mois / 1 an / 2 ans. Ne pas la remplacer par une heure de cadran ni par des dates inventées."
+      "reason": "Durée calendaire ou portée relative : 2 mois / 1 an / 2 ans. Ne pas la remplacer par une heure de cadran ni par des dates inventées.",
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
+      }
     },
     {
       "key": "tcf-ss-b1-s12-co-4#1",
@@ -29248,7 +29634,7 @@
         "Dans une gare"
       ],
       "status": "artwork_needed_contextual_locations",
-      "source_sha256": "58b4f208e777626bb9137f1ed56756ce27bedbcaa4e8d3aa8e33977686053d49",
+      "source_sha256": "52e47cc78002a6629386d7ed05da8d66c85a194073406a4bdc861fe3555364d5",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/les-cabines-telephoniques-sont.mp3",
       "review_index": 754,
       "semantic_sha256": "9f54b285fdae7127e9f1a24a2a57fe74dc8ab058d73893bd230c91d44fe12c58",
@@ -29265,7 +29651,7 @@
         "source_bank": "src/tcf/content/a2-b1/co.json",
         "source_exercise": "tcf-ss-b1-s12-co-4",
         "source_question": 1,
-        "source_sha256": "58b4f208e777626bb9137f1ed56756ce27bedbcaa4e8d3aa8e33977686053d49",
+        "source_sha256": "52e47cc78002a6629386d7ed05da8d66c85a194073406a4bdc861fe3555364d5",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -29274,6 +29660,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -29288,7 +29678,7 @@
         "Une salle de cinéma"
       ],
       "status": "artwork_needed_whole_answer_concepts",
-      "source_sha256": "58b4f208e777626bb9137f1ed56756ce27bedbcaa4e8d3aa8e33977686053d49",
+      "source_sha256": "52e47cc78002a6629386d7ed05da8d66c85a194073406a4bdc861fe3555364d5",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/les-cabines-telephoniques-sont.mp3",
       "review_index": 755,
       "semantic_sha256": "5dbd51121a2ccfa1b6e239774598fec14c37f55796c1b29556d19e6d2c5e7311",
@@ -29305,7 +29695,7 @@
         "source_bank": "src/tcf/content/a2-b1/co.json",
         "source_exercise": "tcf-ss-b1-s12-co-4",
         "source_question": 2,
-        "source_sha256": "58b4f208e777626bb9137f1ed56756ce27bedbcaa4e8d3aa8e33977686053d49",
+        "source_sha256": "52e47cc78002a6629386d7ed05da8d66c85a194073406a4bdc861fe3555364d5",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -29314,6 +29704,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -29328,13 +29722,17 @@
         "Cinq ans"
       ],
       "status": "keep_text_calendar_or_temporal_scope",
-      "source_sha256": "58b4f208e777626bb9137f1ed56756ce27bedbcaa4e8d3aa8e33977686053d49",
+      "source_sha256": "52e47cc78002a6629386d7ed05da8d66c85a194073406a4bdc861fe3555364d5",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/les-cabines-telephoniques-sont.mp3",
       "review_index": 756,
       "semantic_sha256": "4f73c91c1b6915d8d8a07c0f3ab9850876426eecb533504ad3ba67c93551f649",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Durée calendaire ou portée relative : Deux ans / Six mois / Cinq ans. Ne pas la remplacer par une heure de cadran ni par des dates inventées."
+      "reason": "Durée calendaire ou portée relative : Deux ans / Six mois / Cinq ans. Ne pas la remplacer par une heure de cadran ni par des dates inventées.",
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
+      }
     },
     {
       "key": "tcf-ss-b1-s13-co-4#10",
@@ -29388,13 +29786,17 @@
         "Le pont du Gard"
       ],
       "status": "keep_text_named_identity_or_location",
-      "source_sha256": "61225173b7816d8d6dbf6bc7ed4ba7d647a02c25f2345fb5bbf2e425ce560cea",
+      "source_sha256": "98f4adc344d39103a92eafd7bbe273d92251366fa28e365d553ffc175c364b62",
       "audio": "/lib/audio/tcf/co/transports/et-maintenant-notre-rubrique.mp3",
       "review_index": 758,
       "semantic_sha256": "32af4921cdab6861f3f56756648ef0d5b399c9f48ccc79677ee6772492c7a117",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Les choix dépendent de noms propres, adresses ou identités exactes ; une architecture inventée ou un portrait générique ne prouve pas cette distinction."
+      "reason": "Les choix dépendent de noms propres, adresses ou identités exactes ; une architecture inventée ou un portrait générique ne prouve pas cette distinction.",
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
+      }
     },
     {
       "key": "tcf-ss-b1-s14-co-3#6",
@@ -29408,7 +29810,7 @@
         "En forêt"
       ],
       "status": "artwork_needed_contextual_locations",
-      "source_sha256": "00ebbcc5420c0709cf7726603406aae3fb5c910920ddba4a965f8ef7414edfb8",
+      "source_sha256": "5da1f6fc3eb636be9e352d354ca8d09a2252bed850a4a9f73b00a34320116f75",
       "audio": "/lib/audio/tcf/co/travail/energie-propre-traitement-dechets.mp3",
       "review_index": 759,
       "semantic_sha256": "922df6465b6bb343748a62f4c280014a2d8b211ebd8fd5f63545b6b08ee7cb53",
@@ -29425,7 +29827,7 @@
         "source_bank": "src/tcf/content/a2-b1/co.json",
         "source_exercise": "tcf-ss-b1-s14-co-3",
         "source_question": 6,
-        "source_sha256": "00ebbcc5420c0709cf7726603406aae3fb5c910920ddba4a965f8ef7414edfb8",
+        "source_sha256": "5da1f6fc3eb636be9e352d354ca8d09a2252bed850a4a9f73b00a34320116f75",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -29434,6 +29836,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -29448,7 +29854,7 @@
         "À la poste"
       ],
       "status": "artwork_needed_contextual_locations",
-      "source_sha256": "2f7980f173001758d56a788d0f4db9b1c4a712c36c4ac463d24011ab615f3b9a",
+      "source_sha256": "736c95fdb1e213eb380781c18fce67fa5b29edf74b9920aa9f0f4045fa4530ff",
       "audio": "/lib/audio/tcf/co/magasins/allo-annie.mp3",
       "review_index": 760,
       "semantic_sha256": "0f96acaf5a8531de039bd62b8e56257625ec609a2eadacec9dd8c0df99f91821",
@@ -29465,7 +29871,7 @@
         "source_bank": "src/tcf/content/a2-b1/co.json",
         "source_exercise": "tcf-ss-b1-s14-co-4",
         "source_question": 3,
-        "source_sha256": "2f7980f173001758d56a788d0f4db9b1c4a712c36c4ac463d24011ab615f3b9a",
+        "source_sha256": "736c95fdb1e213eb380781c18fce67fa5b29edf74b9920aa9f0f4045fa4530ff",
         "constraints": [
           "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
           "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -29474,6 +29880,10 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       }
     },
     {
@@ -29488,13 +29898,17 @@
         "Deux ans"
       ],
       "status": "keep_text_calendar_or_temporal_scope",
-      "source_sha256": "eb69605967e30f60bf5308a51e34676b8116f4c44fec803c69d97bb95eb47cfa",
+      "source_sha256": "7bcd57aaa6d2aa576c2c8292604f70e18e99cc7d47b2150f54b46c0e85355236",
       "audio": "/lib/audio/tcf/co/magasins/tiens-jacqueline-comment-vas-1.mp3",
       "review_index": 761,
       "semantic_sha256": "cd1a4ccc2f2375ff8488feab270f4a850c6fd59735574039e70bd8194e5668cf",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Durée calendaire ou portée relative : Deux mois / Deux semaines / Deux ans. Ne pas la remplacer par une heure de cadran ni par des dates inventées."
+      "reason": "Durée calendaire ou portée relative : Deux mois / Deux semaines / Deux ans. Ne pas la remplacer par une heure de cadran ni par des dates inventées.",
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
+      }
     },
     {
       "key": "tcf-ss-b1-s15-co-1#8",
@@ -29508,13 +29922,17 @@
         "Dix ans"
       ],
       "status": "keep_text_calendar_or_temporal_scope",
-      "source_sha256": "eb69605967e30f60bf5308a51e34676b8116f4c44fec803c69d97bb95eb47cfa",
+      "source_sha256": "7bcd57aaa6d2aa576c2c8292604f70e18e99cc7d47b2150f54b46c0e85355236",
       "audio": "/lib/audio/tcf/co/magasins/tiens-jacqueline-comment-vas-1.mp3",
       "review_index": 762,
       "semantic_sha256": "f651b145deaf14736fb73dd122237ff2c219186785dcf1f02a5e7c9a56ace031",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Durée calendaire ou portée relative : Trois ans / Trois mois / Dix ans. Ne pas la remplacer par une heure de cadran ni par des dates inventées."
+      "reason": "Durée calendaire ou portée relative : Trois ans / Trois mois / Dix ans. Ne pas la remplacer par une heure de cadran ni par des dates inventées.",
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
+      }
     }
   ],
   "review_batches": [
@@ -29557,10 +29975,10 @@
   "summary": {
     "artwork_needed_contextual_locations": 279,
     "keep_text_named_identity_or_location": 39,
-    "active_reviewed_trio": 218,
-    "artwork_needed_whole_answer_concepts": 121,
+    "active_reviewed_trio": 219,
+    "artwork_needed_whole_answer_concepts": 122,
     "keep_text_calendar_or_temporal_scope": 49,
-    "artwork_needed_distinct_document_types": 33,
+    "artwork_needed_distinct_document_types": 31,
     "keep_text_private_home_identity": 3,
     "keep_text_source_referent_unspecified": 3,
     "keep_text_nonvisual_or_quantified_claim": 9,
@@ -29570,7 +29988,7 @@
   "review_pending": 0,
   "initial_review_complete": true,
   "method": "763 énoncés et leurs trois choix relus en sept blocs ; liaison exacte aux sources et à leur revue contextuelle antérieure. 87 fichiers réutilisés et 18 minuteurs inspectés pour les trios prêts. Les briefs restants sont un plan de recherche/réalisation, pas des images générées.",
-  "activated_total": 218,
+  "activated_total": 219,
   "retained_text_total": 112,
-  "artwork_pending_total": 433
+  "artwork_pending_total": 432
 }

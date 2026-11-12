@@ -8,6 +8,7 @@ import {
   type TcfAudioEntry,
 } from './audio-bank'
 import { isTcfCoAssociation } from './association-audio'
+import { associationThemedDecoyImages } from './association-image-themes'
 import { resolveTcfAudioReference } from './audio-replacements'
 import {
   tcfCoConsigneForType,
@@ -174,22 +175,6 @@ function pickDialogueSlots(
 }
 
 /**
- * Leurres = scènes d’autres unités `scenario` non tirées (pas les chemins
- * « *-leurre-* » des packs, souvent absents du dépôt).
- */
-function associationLeurreImages(exclude: Set<string>, units: DialogueUnit[]): string[] {
-  const imgs: string[] = []
-  const seen = new Set<string>(exclude)
-  for (const u of units) {
-    const img = u.image.trim()
-    if (!img || seen.has(img)) continue
-    seen.add(img)
-    imgs.push(img)
-  }
-  return imgs
-}
-
-/**
  * Compose « association scénarios » : 4 pistes taguées `scenario` (image liée)
  * + 2 scènes leurres (dialogue null) → 6 images, 1 point chacune.
  */
@@ -203,8 +188,9 @@ export function drawAssociationCompose(
   const picked = pickDialogueSlots(pool, 4, rng, opts.audioSlots, all)
   if (!picked) return null
   const usedImages = new Set(picked.map((u) => u.image))
-  // Leurres depuis le même pool de niveau (évite les scènes A1-A2 absentes du dépôt).
-  const leurrePool = associationLeurreImages(usedImages, pool)
+  if (usedImages.size !== picked.length) return null
+  // Réemplois contrôlés : thème entendu, concept absent, source inchangée.
+  const leurrePool = associationThemedDecoyImages(picked)
   if (leurrePool.length < 2) return null
   const leurres = shuffle(rng, leurrePool).slice(0, 2)
 

@@ -3146,7 +3146,11 @@
         "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
       ],
       "kind": "document_pair",
-      "status": "generation_blocked_quota"
+      "status": "visually_reviewed",
+      "source": "/lib/images/tcf/qcm-audit/extension573-cv-motivation.png",
+      "sha256": "81192b7dedc55b0f481f6726be7a9f6e196243f77e9d07f73a5f4851c5bf0b40",
+      "review_note": "Deux feuilles distinctes entières : CV avec silhouette et lettre de motivation en lignes neutres. Sans données, sommes ni dates. Contrôle visuel individuel : peinture semi-réaliste douce, contours fins et fond crème alignés avec la référence ; paysage exact 4:3.",
+      "generation_stage": "extension-573-20261107"
     },
     {
       "id": "extension573-passeport-permis",
@@ -3156,7 +3160,11 @@
         "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
       ],
       "kind": "document_pair",
-      "status": "generation_blocked_quota"
+      "status": "visually_reviewed",
+      "source": "/lib/images/tcf/qcm-audit/extension573-passeport-permis.png",
+      "sha256": "1739dee4451b9b41578dab5ab497a95e52fcba5e396e364ccd28429c15a3c4d0",
+      "review_note": "Un passeport fermé et une carte de permis portant un pictogramme automobile et une silhouette ; aucune donnée personnelle. Contrôle visuel individuel : peinture semi-réaliste douce, contours fins et fond crème alignés avec la référence ; paysage exact 4:3.",
+      "generation_stage": "extension-573-20261107"
     },
     {
       "id": "extension573-facture-devis",
@@ -3166,7 +3174,11 @@
         "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
       ],
       "kind": "document_pair",
-      "status": "generation_blocked_quota"
+      "status": "visually_reviewed",
+      "source": "/lib/images/tcf/qcm-audit/extension573-facture-devis.png",
+      "sha256": "7bfdbf1bc61c2b6761e0944bc65187e1a888bdd22449c1a3bd08e1d0530dafbe",
+      "review_note": "Une facture et un devis, deux feuilles entières avec tableaux vides, aucun chiffre, montant ni date. Contrôle visuel individuel : peinture semi-réaliste douce, contours fins et fond crème alignés avec la référence ; paysage exact 4:3.",
+      "generation_stage": "extension-573-20261107"
     },
     {
       "id": "extension573-passeport-deux-factures",
@@ -3176,7 +3188,11 @@
         "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
       ],
       "kind": "document_pair",
-      "status": "queued_after_quota_reset"
+      "status": "visually_reviewed",
+      "source": "/lib/images/tcf/qcm-audit/extension573-passeport-deux-factures.png",
+      "sha256": "bce15d81b3a2392f729cdc2aae58816f0dced9b71d9eb2673fb19219a5a4a67d",
+      "review_note": "Un passeport bleu entier et exactement deux factures séparées. Aucun montant ni date ; contours fins, volumes peints doux et fond crème ; contrôle individuel sur l’original.",
+      "generation_stage": "extension-573-20261107"
     },
     {
       "id": "extension573-diplome-formulaire-signe",
@@ -3186,7 +3202,11 @@
         "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
       ],
       "kind": "document_pair",
-      "status": "queued_after_quota_reset"
+      "status": "visually_reviewed",
+      "source": "/lib/images/tcf/qcm-audit/extension573-diplome-formulaire-signe.png",
+      "sha256": "84c3567204d3a08e8ec27e29d0cfcb3656fc9e9109420f097475103cb855ef20",
+      "review_note": "Un diplôme avec sceau et un formulaire distinct portant un paraphe. Aucun nom, montant ni date ; tous les documents entiers ; peinture douce et fond crème. Contrôle individuel sur l’original.",
+      "generation_stage": "extension-573-20261107"
     },
     {
       "id": "extension573-cheveux-bruns",
@@ -3640,33 +3660,37 @@
       "status": "queued_after_quota_reset"
     }
   ],
-  "status": "blocked_image_generation_quota",
+  "status": "in_progress",
   "progress": {
-    "activated_trios": 139,
+    "activated_trios": 141,
     "retained_text": 1,
-    "pending_trios": 433,
+    "pending_trios": 431,
     "pending_categories": {
       "artwork_needed_contextual_locations": 279,
       "artwork_needed_whole_answer_concepts": 121,
-      "artwork_needed_distinct_document_types": 33
+      "artwork_needed_distinct_document_types": 31
     },
     "generation_status": {
-      "visually_reviewed": 118,
-      "generation_blocked_quota": 3,
-      "queued_after_quota_reset": 42
+      "visually_reviewed": 123,
+      "queued_after_quota_reset": 40
     }
   },
-  "generation_blocker": {
-    "code": "usage_limit_reached",
-    "http_status": 429,
-    "message": "The usage limit has been reached",
-    "resets_at": 1794120715,
-    "resets_at_utc": "2026-11-08T06:51:55+00:00",
-    "affected_jobs": [
-      "extension573-cv-motivation",
-      "extension573-passeport-permis",
-      "extension573-facture-devis"
-    ],
-    "note": "Les 40 concepts suivants sont préparés, mais non lancés ; aucune approbation visuelle anticipée."
-  }
+  "generation_history": [
+    {
+      "code": "usage_limit_reached",
+      "http_status": 429,
+      "message": "The usage limit has been reached",
+      "resets_at": 1794120715,
+      "resets_at_utc": "2026-11-08T06:51:55+00:00",
+      "affected_jobs": [
+        "extension573-cv-motivation",
+        "extension573-passeport-permis",
+        "extension573-facture-devis"
+      ],
+      "note": "Les 40 concepts suivants sont préparés, mais non lancés ; aucune approbation visuelle anticipée.",
+      "resolved_at": "2026-11-12",
+      "resolution": "Deux générations ont abouti ; anciens échecs conservés comme historique."
+    }
+  ],
+  "generation_blocker": null
 }

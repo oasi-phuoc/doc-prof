@@ -28,8 +28,8 @@ lines = ['# Avancement des 573 trios TCF', '',
          f"État vérifié du lot initial : **{len(active)} trios activés**, **{len(text)} question(s) conservée(s) en texte**, **{len(pending)} trios à préparer**.", '',
          'Les trios activés comportent trois images distinctes approuvées et liées à leurs empreintes. Les choix et corrigés des questions sont conservés ; aucune nouvelle écoute audio n’est revendiquée.', '',
          'Les générations en attente de contrôle ne sont pas comptées comme des trios prêts. Une illustration seule peut servir à plusieurs questions, mais chaque trio est vérifié avant activation.', '',
-         'Les 299 références audio nécessitant les fichiers originaux restent suivies séparément dans `remplacement-audio/correspondance-299-audios-20261107.csv`.', '',
-         f"Blocage constaté : HTTP 429 `usage_limit_reached` du service d’images. Réinitialisation annoncée : {phase.get('generation_blocker', {}).get('resets_at_utc', 'non précisée')}. Les productions non lancées et les trois échecs sont conservés dans le registre JSON.", '',
+         'Le lot audio demandé de 87 validations et les quatre corrections d’édition sont clôturés dans `remplacement-audio/validation-87-20261111.json`. Les revues supplémentaires de la bibliothèque restent suivies séparément.', '',
+         (f"Blocage constaté : {phase['generation_blocker'].get('code', 'non précisé')}. Réinitialisation annoncée : {phase['generation_blocker'].get('resets_at_utc', 'non précisée')}." if phase.get('generation_blocker') else 'La génération a repris le 12 novembre. Seules les images effectivement produites et contrôlées sont comptées comme prêtes.'), '',
          '## Répartition du travail restant', '', '| Catégorie | Trios |', '|---|---:|']
 for category, number in phase['progress']['pending_categories'].items():
     label = {'artwork_needed_contextual_locations': 'Lieux et positions dans leur contexte',

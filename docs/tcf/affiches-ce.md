@@ -45,3 +45,7 @@ Pour les CO TCF, `co-character-refresh.json` prépare séparément la reprise de
 ## Point de reprise du 7 novembre 2026
 
 161 documents sur 162 sont actifs après génération ou réexport et contrôle visuel. Il reste uniquement « La clé de sol » (`delf-a1s-ce-045`), puis les dix scènes CO du registre dédié. Le service de génération a répondu `429 usage_limit_reached` ; réinitialisation annoncée le 8 novembre 2026 à 7 h 51 min 55 s, heure suisse. Les textes originaux restent disponibles en attendant.
+
+## Reprise du 12 novembre 2026
+
+Les 162 documents CE sont maintenant actifs après intégration de « La clé de sol », dont le texte, les dates, le pourcentage, les horaires et le site ont été comparés visuellement au support. Le PNG original 1448 × 1086 est conservé sans conversion. Les dix scènes CO du registre de diversité sont également reprises et appliquées ; les deux leurres coiffure/vélo de « Les achats » ont été remplacés par salade de fruits/bouilloire, dans les thèmes entendus et absents des transcriptions. L’ancien blocage de quota ci-dessus décrit l’état du 7 novembre ; la génération a repris.
