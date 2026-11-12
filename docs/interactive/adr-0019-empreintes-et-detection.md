@@ -9,3 +9,18 @@ L’autotest génère trois valeurs temporaires sans autorité : une empreinte d
 Gitleaks 8.30 lit les fichiers par fragments de 100 Ko et cherche une ligne vide avant de couper. Sans séparateur, le gros rapport peut produire une correspondance sur un préfixe incomplet de SHA-256. Sa copie temporaire est donc validée comme JSON, puis chaque saut de ligne est doublé : aucune valeur ni champ n’est retiré ou changé. Le scanner retrouve des limites sûres et le rapport final remappe les numéros vers les lignes d’origine. Le fichier versionné reste intact. L’autotest utilise aussi un document de plus de 100 Ko ; les préfixes hexadécimaux incomplets ne sont pas ajoutés à l’exception.
 
 Le périmètre reste les commits depuis C0 et les fichiers actuellement modifiés. Cette correction de faux positifs ne clôt pas la migration de l’authentification F22 et ne certifie pas l’historique antérieur ni le bundle complet. Voir [secrets-results.json](secrets-results.json).
+
+## Actualisation du 12 novembre 2026
+
+L’intégration des relectures TCF apporte les mêmes preuves de fichiers de modèles dans cinq rapports supplémentaires, ainsi que le vocabulaire `medium-tokens.txt`. Les signalements vérifiés portent sur des valeurs SHA-256 de 64 caractères hexadécimaux sous des chemins de fichiers de modèles. L’exception conserve la condition simultanée sur le champ exact et le chemin du rapport ; les noms de vocabulaire admis sont `tokens.txt`, `small-tokens.txt` et `medium-tokens.txt`.
+
+Les six fichiers admis, tous dans `docs/tcf/remplacement-audio/`, sont :
+
+- `bascule-preuves-reconnaissances-20261105.json` ;
+- `correction-debut-allo-brigitte-20261112.json` ;
+- `adjudications-contextuelles-20261112.json` ;
+- `corrections-4-editions-20261111.json` ;
+- `verification-numero-radio-cinema-20261112.json` ;
+- `validation-87-20261111.json`.
+
+Chaque copie temporaire reçoit les mêmes séparateurs JSON sûrs. L’autotest exige huit détections masquées : un jeton GitHub synthétique, une clé générique dans chacun des six rapports et une empreinte de vocabulaire placée dans un rapport non autorisé. Les trois variantes de vocabulaire sont testées dans chacun des rapports autorisés. Les valeurs des documents versionnés sont conservées et les autres règles restent actives.

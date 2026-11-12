@@ -2,18 +2,12 @@ import { framesForTheme, tagged } from './phrase-sentences'
 import { combinationFrames } from './phrase-combinations'
 import { affirmativePhraseTheme, PHRASE_OPTIONAL_CATEGORIES, type PhraseCategories, type PhraseOptionalCategory, type PhraseThemeId } from './phrase-themes'
 import type { PhraseVerbGroup } from '@/math/types'
-import type { ThemedFrame } from './phrase-theme-frames'
+import type { PhraseContext, ThemedFrame } from './phrase-theme-frames'
+import { phraseVerbGroupOf } from './phrase-verb-groups'
 
 type Selection = { theme: PhraseThemeId; frames: readonly ThemedFrame[] }
 const selections = new Map<string, Selection>()
 const banks = new Map<string, readonly ThemedFrame[]>()
-const SECOND_GROUP_VERBS = new Set(['finir', 'choisir'])
-
-function phraseVerbGroupOf(verb: string): Exclude<PhraseVerbGroup, 'libre' | 'mixte'> {
-  if (SECOND_GROUP_VERBS.has(verb)) return 'ir'
-  if (verb.endsWith('er') && verb !== 'aller') return 'er'
-  return 'autres'
-}
 
 /** Select complete predicates: never remove a verb's necessary complement. */
 export function phraseSelection(theme: PhraseThemeId, group: PhraseVerbGroup, categories?: PhraseCategories): Selection {
@@ -50,7 +44,8 @@ export function phraseSelection(theme: PhraseThemeId, group: PhraseVerbGroup, ca
         const contexts = frame.contexts.filter(
           (context) =>
             accepts(context.pred) &&
-            (!context.rightPred || (categories?.conjonction !== false && accepts(context.rightPred))),
+            (!context.rightPred || (categories?.conjonction !== false && accepts(context.rightPred) &&
+              (bank === 'mixte' || (context.rightId && phraseVerbGroupOf(context.rightId) === bank)))),
         )
         return contexts.length ? [{ ...frame, preds: [...new Set(contexts.map((context) => context.pred))], contexts }] : []
       }
@@ -59,7 +54,17 @@ export function phraseSelection(theme: PhraseThemeId, group: PhraseVerbGroup, ca
       if (!preds.length || (rightPreds && !rightPreds.length)) return []
       return [{ ...frame, preds, ...(rightPreds ? { rightPreds } : {}) }]
     })
-  const result = { theme: effectiveTheme, frames }
+  // A legacy bank can store the same infinitive in two places (e.g. perdre).
+  // Consolidate it before imposing the one-verb-per-worksheet rule.
+  const unique = new Map<string, ThemedFrame>()
+  for (const frame of frames) {
+    const previous = unique.get(frame.id)
+    if (!previous) { unique.set(frame.id,frame); continue }
+    const contexts: PhraseContext[] = [...(previous.contexts ?? previous.preds.map(pred=>({pred}))), ...(frame.contexts ?? frame.preds.map(pred=>({pred})))]
+    const distinct = [...new Map(contexts.map(context=>[JSON.stringify([context.pred,context.rightId,context.rightPred]),context])).values()]
+    unique.set(frame.id,{id:frame.id,preds:[...new Set(distinct.map(context=>context.pred))],contexts:distinct})
+  }
+  const result = { theme: effectiveTheme, frames:[...unique.values()] }
   selections.set(key,result)
   return result
 }

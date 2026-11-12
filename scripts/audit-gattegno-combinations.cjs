@@ -10,18 +10,19 @@ const {instantiateThemeFrame,sentenceOf,verbPersonOf,pronounsForFrame,DET_SUBJEC
 const {withNegation}=get('phrase-negation.ts')
 const {conjugateCore,verbCoreFromToken}=get('phrase-conjugate.ts')
 const {phraseSelection}=get('phrase-options.ts')
+const {phraseVerbGroupOf}=get('phrase-verb-groups.ts')
 const {tryGeneratePhraseBatch}=get('phrase.ts')
 const {createRng}=load(path.join(root,'src/math/rng.ts'))
 let checks=0
 function check(value,message){assert.ok(value,message);checks++}
-const report={quotaPerThemeAndGroup:525,affirmativeReferences:0,negativeReferences:0,banks:[]}
+const report={quotaPerThemeAndGroup:1050,affirmativeReferences:0,negativeReferences:0,banks:[]}
 const key=context=>JSON.stringify([context.id,context.pred,context.rightId,context.rightPred])
 function tokenMask(tokens){
   return COMBINATION_CATEGORIES.reduce((mask,category,bit)=>tokens.some(token=>token.category===category&&!(category==='adverbe'&&['ne','n’','pas'].includes(token.text.toLowerCase())))?mask|(1<<bit):mask,0)
 }
 for(const {topic,label}of PHRASE_THEME_DEFS)for(const group of ['er','autres']){
   const contexts=combinationContexts(topic,group)
-  check(contexts.length===525&&new Set(contexts.map(key)).size===525,'525 distinct complete constructions '+topic+group)
+  check(contexts.length===1050&&new Set(contexts.map(key)).size===1050,'1050 distinct complete constructions '+topic+group)
   const bank={theme:topic,label,group,buckets:[]}
   const allSentences=new Set()
   for(let mask=0;mask<16;mask++){
@@ -45,6 +46,7 @@ for(const {topic,label}of PHRASE_THEME_DEFS)for(const group of ['er','autres']){
         const rightRaw=tagged(entry.rightPred).find(token=>token.category==='verbe').text
         check(verbs.length===2&&verbs[1].text===conjugateCore(entry.rightId,'il',verbCoreFromToken(rightRaw).core),'right verb agreement: '+positiveText)
         check(entry.id!==entry.rightId,'two coordinated actions use different verbs')
+        check(phraseVerbGroupOf(entry.id)===phraseVerbGroupOf(entry.rightId),'both verbs belong to the same grammatical group')
       }
       check(neg.filter(token=>['ne','n’'].includes(token.text)).length===verbs.length,'every clause is negated')
       affirmative.push(positiveText);negative.push(negativeText);allSentences.add(positiveText)
@@ -53,17 +55,17 @@ for(const {topic,label}of PHRASE_THEME_DEFS)for(const group of ['er','autres']){
     bank.buckets.push({mask,categories:COMBINATION_CATEGORIES.filter((_,bit)=>mask&(1<<bit)),count:entries.length,affirmative,negative})
     report.affirmativeReferences+=affirmative.length;report.negativeReferences+=negative.length
   }
-  check(allSentences.size===525,'525 distinct affirmative references '+topic+group)
+  check(allSentences.size===1050,'1050 distinct affirmative references '+topic+group)
   report.banks.push(bank)
   for(let allowed=0;allowed<16;allowed++){
     const categories=Object.fromEntries(COMBINATION_CATEGORIES.map((category,bit)=>[category,Boolean(allowed&(1<<bit))]))
-    const selection=phraseSelection(topic,group,categories)
+    const selection=phraseSelection(topic,'mixte',categories)
     const available=new Set(selection.frames.flatMap(frame=>frame.contexts?.map(context=>key({id:frame.id,...context}))??[]))
     for(const context of contexts.filter(context=>(context.mask&~allowed)===0))check(available.has(key(context)),'quota construction actually reachable through settings '+topic+group+allowed)
     for(const polarity of ['positive','negative','mixed']){
       let reference
       for(const kind of ['colorier','ordre','construire','ecrire']){
-        const batch=tryGeneratePhraseBatch(topic+'-'+kind,12,createRng(389+allowed),'moyen',group,polarity,categories)
+        const batch=tryGeneratePhraseBatch(topic+'-'+kind,12,createRng(389+allowed),'moyen','mixte',polarity,categories)
         check(batch.items.length===Math.min(12,selection.frames.length),'filtered model cap')
         const sentences=batch.items.map(item=>kind==='colorier'?sentenceOf(item.tokens):item.responseAnswer)
         if(kind==='colorier')reference=sentences

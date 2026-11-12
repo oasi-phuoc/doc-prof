@@ -1,5 +1,6 @@
 import type { PhraseToken } from '@/math/types'
 import { startsWithVowelSound } from './phrase-phonetics'
+import { isDurationComplement } from './phrase-complements'
 
 const CLITICS = new Set(['me', 'm’', 'te', 't’', 'se', 's’', 'nous', 'vous', 'le', 'la', 'les', 'l’', 'lui', 'leur', 'y', 'en'])
 const ETRE = new Set(['suis', 'es', 'est', 'sommes', 'êtes', 'sont'])
@@ -24,7 +25,9 @@ function negateClause(clause: PhraseToken[], infinitive?: string): PhraseToken[]
   if (!isEtre) {
     const object = after.findIndex(token => token.category !== 'adverbe')
     const article = after[object]
-    if (article?.category === 'determinant' && INDEFINITE.has(article.text.toLowerCase()) && after[object + 1]) {
+    const noun = after.slice(object + 1).find(token => token.category === 'nom')
+    const duration = noun && isDurationComplement(infinitive,noun.text)
+    if (!duration && article?.category === 'determinant' && INDEFINITE.has(article.text.toLowerCase()) && after[object + 1]) {
       article.text = startsWithVowelSound(after[object + 1]!.text) ? 'd’' : 'de'
     }
   }

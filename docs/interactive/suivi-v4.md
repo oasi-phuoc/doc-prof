@@ -4,6 +4,8 @@ Ce registre complète les anciennes checklists de livraison. Il distingue les fo
 
 ## Priorités P0
 
+Complément du 12 novembre : à la demande du propriétaire, priorité à l’[audit linguistique et à l’enrichissement Gattegno](../gattegno/README.md). Les constructions distinctes passent de 5 476 à 19 513 dans douze domaines ; les banques existantes ont au moins doublé et les pronominaux du deuxième groupe sont disponibles. Les quatre formats, les filtres, les nouvelles graines et les fiches/corrigés A4 sont vérifiés. Ce travail concerne la qualité des fiches sources ; il ne clôt pas les adaptateurs du jeu encore ouverts ci-dessous.
+
 | Travail | État et preuve | Reste à faire |
 |---|---|---|
 | Parcours brouillon / fiche enregistrée | Convertisseurs, préparation, sélection ; brouillon local par adresse et rechargement ; graine renouvelée dès le clic bibliothèque sans modifier le modèle serveur ; reconnaissance du son par mot avec audio et image, ADR 0018 ; signes et 103 problèmes CSC, ADR 0023 ; dictées et calculs oraux CSC/CFR, ADR 0024 ; comparaisons et suites, ADR 0026 ; calculs à trou, divisions et décimaux exacts, ADR 0027 ; rangs numériques et alphabétiques et phrases courtes, ADR 0028, `ordering-results.json` ; `drafts-results.json`, `game-run-results.json` | 684 variantes avec activité sur 2 103 ; poursuivre les familles restantes et les variantes non échantillonnées |

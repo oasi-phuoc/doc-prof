@@ -1,0 +1,179 @@
+{
+  "date": "2026-11-12",
+  "scope": "Audit éditorial et enrichissement Gattegno ; intégration des modifications parallèles de grammaire et TCF conservée.",
+  "baselineCommit": "9fccae6f",
+  "integratedRemote": "063a0e5a",
+  "all44BrowserStagesRun": false,
+  "domainTests": {
+    "passed": 198,
+    "failed": 0
+  },
+  "audits": {
+    "sourceChecks": 2744291,
+    "sourceInstantiations": 281776,
+    "combinationChecks": 197288,
+    "editorialChecks": 1376028,
+    "editorialInstantiations": 350922,
+    "uniqueBefore": 5476,
+    "uniqueAfter": 19513,
+    "expandedExistingBanks": 27,
+    "newSecondGroupReflexiveBank": true
+  },
+  "browser": {
+    "gattegno": {
+      "results": [
+        {
+          "width": 1366,
+          "themes": 7,
+          "formats": 4,
+          "secondGroupReflexives": "usable",
+          "categoryFilters": "whole predicates retained",
+          "newDraw": "different",
+          "print": [
+            {
+              "width": 793.6875,
+              "height": 1122.515625,
+              "overflow": 0
+            },
+            {
+              "width": 793.6875,
+              "height": 1122.515625,
+              "overflow": 0
+            },
+            {
+              "width": 793.6875,
+              "height": 1122.515625,
+              "overflow": 0
+            },
+            {
+              "width": 793.6875,
+              "height": 1122.515625,
+              "overflow": 0
+            },
+            {
+              "width": 793.6875,
+              "height": 1122.515625,
+              "overflow": 0
+            },
+            {
+              "width": 793.6875,
+              "height": 1122.515625,
+              "overflow": 0
+            },
+            {
+              "width": 793.6875,
+              "height": 1122.515625,
+              "overflow": 0
+            },
+            {
+              "width": 793.6875,
+              "height": 1122.515625,
+              "overflow": 0
+            }
+          ]
+        },
+        {
+          "width": 390,
+          "themes": 7,
+          "formats": 4,
+          "secondGroupReflexives": "usable",
+          "categoryFilters": "whole predicates retained",
+          "newDraw": "different",
+          "print": [
+            {
+              "width": 793.6875,
+              "height": 1122.515625,
+              "overflow": 0
+            },
+            {
+              "width": 793.6875,
+              "height": 1122.515625,
+              "overflow": 0
+            },
+            {
+              "width": 793.6875,
+              "height": 1122.515625,
+              "overflow": 0
+            },
+            {
+              "width": 793.6875,
+              "height": 1122.515625,
+              "overflow": 0
+            },
+            {
+              "width": 793.6875,
+              "height": 1122.515625,
+              "overflow": 0
+            },
+            {
+              "width": 793.6875,
+              "height": 1122.515625,
+              "overflow": 0
+            },
+            {
+              "width": 793.6875,
+              "height": 1122.515625,
+              "overflow": 0
+            },
+            {
+              "width": 793.6875,
+              "height": 1122.515625,
+              "overflow": 0
+            }
+          ]
+        }
+      ],
+      "errors": []
+    },
+    "regression": {
+      "allStagesRun": false,
+      "startAt": "performance-browser",
+      "passed": [
+        "performance-browser",
+        "a4-regression"
+      ],
+      "baseline": "9fccae6f"
+    },
+    "identicalExistingA4": true,
+    "firstPreparedGameQuestionMs": 39
+  },
+  "checks": {
+    "applicationTypes": "passed",
+    "apiTypes": "passed",
+    "lint": "passed with existing warnings",
+    "productionBuild": "passed",
+    "parallelGrammarRegression": "650 reviewed variants passed",
+    "gitleaks": {
+      "tool": "Gitleaks 8.30.1",
+      "findings": 0,
+      "changedFiles": 803,
+      "selfTest": "Jeton GitHub et clés génériques synthétiques non émis détectés dans chacun des six rapports, contenus masqués ; trois noms de fichiers de vocabulaire admis uniquement dans ces rapports, empreinte dans un rapport non autorisé détectée."
+    }
+  },
+  "budgets": {
+    "landing": {
+      "gzip": 120752,
+      "maximumGzip": 153600
+    },
+    "calibration": {
+      "gzip": 139648,
+      "maximumGzip": 204800
+    },
+    "diagnostic": {
+      "gzip": 141799,
+      "maximumGzip": 204800
+    },
+    "competition": {
+      "gzip": 168758,
+      "maximumGzip": 204800
+    },
+    "game": {
+      "gzip": 2499198,
+      "maximumGzip": 3145728
+    }
+  },
+  "limits": [
+    "Les assertions automatiques ne prouvent pas le sens de toute phrase française.",
+    "Les 44 parcours du workflow ne sont pas tous relancés pour ce lot."
+  ]
+}

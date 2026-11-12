@@ -9,6 +9,8 @@
     "lint": "oxlint",
     "preview": "vite preview",
     "test": "node --test --test-concurrency=1 tests/interactive/*.test.mjs",
+    "test:gattegno": "node scripts/audit-gattegno.cjs && node scripts/audit-gattegno-combinations.cjs && node scripts/audit-gattegno-editorial.cjs",
+    "test:gattegno:browser": "node tests/interactive/gattegno-browser.mjs",
     "interactive:inventory": "node scripts/interactive-inventory.mjs",
     "test:interactive:browser": "node tests/interactive/browser.mjs",
     "test:interactive:classroom": "node tests/interactive/classroom-browser.mjs",

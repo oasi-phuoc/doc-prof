@@ -7,8 +7,8 @@ useDefault = true
 id = "generic-api-key"
 
 [[rules.allowlists]]
-description = "Empreintes SHA-256 de vocabulaires de modèles audio, vérifiées dans le rapport de reconnaissance (ADR 0019)."
+description = "Empreintes SHA-256 de vocabulaires de modèles audio dans les six rapports de reconnaissance vérifiés (ADR 0019)."
 condition = "AND"
-paths = ['''(^|/)docs/tcf/remplacement-audio/bascule-preuves-reconnaissances-20261105\.json$''']
+paths = ['''(^|/)docs/tcf/remplacement-audio/(?:bascule-preuves-reconnaissances-20261105|correction-debut-allo-brigitte-20261112|adjudications-contextuelles-20261112|corrections-4-editions-20261111|verification-numero-radio-cinema-20261112|validation-87-20261111)\.json$''']
 regexTarget = "match"
-regexes = ['''^(?:small-)?tokens\.txt"\s*:\s*"[0-9a-f]{64}"?$''']
+regexes = ['''^(?:(?:small|medium)-)?tokens\.txt"\s*:\s*"[0-9a-f]{64}"?$''']
