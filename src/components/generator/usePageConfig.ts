@@ -310,6 +310,11 @@ export function usePageConfig({
         const block = pageBlocks(page)[targetBlock] ?? blockFromPage(page)
         const sheet = worksheets[sheetAt]
         const sheetBlock = sheet?.blocks.find((entry, i) => (entry.sourceBlockIndex ?? i) === targetBlock)
+        const readingPart=sheetBlock?.items[itemIndex]?.grammar?.readingPart
+        if (block.grammarPresentation==='document-set'&&readingPart?.kind==='question') {
+          const ids=block.grammarPageBreakAfterQuestionIds??[]
+          return setPageBlock(page,targetBlock,{grammarPageBreakAfterQuestionIds:ids.includes(readingPart.questionId)?ids.filter(id=>id!==readingPart.questionId):[...ids,readingPart.questionId]})
+        }
         const offset = sheetBlock?.itemOffset ?? 0
         // Saut avant la question = coupure après l’item précédent.
         const modeIndex = itemIndex + offset - 1

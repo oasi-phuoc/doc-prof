@@ -883,6 +883,9 @@ export type ExerciseBlock = {
   grammarSnapshot?: import('@/grammaire/curriculum/types').GrammarSnapshot
   /** Explicit opt-in to editorial pilots, never a claim of teacher approval. */
   grammarPreview?: boolean
+  /** Graded CE selects whole documents; count keeps its legacy meaning. */
+  grammarDocumentCount?: number
+  grammarPageBreakAfterQuestionIds?: string[]
   /**
    * TCF : forme de réponse par item (qcm_texte / qcm_image / lignes).
    * Index = rang de l’item dans le bloc.
@@ -1120,6 +1123,7 @@ export type WorksheetBlock = {
   itemOffset?: number
   /** Nombre max de questions distinctes dans la banque du document tiré (CO/CE). */
   bankQuestionCap?: number
+  grammarPageBreakAfterQuestionIds?: string[]
   /**
    * Audios du corrigé (à droite du titre Exercice N).
    * Figés à la génération pour survivre aux feuilles « suite » sans item support.

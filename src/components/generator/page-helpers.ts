@@ -224,6 +224,8 @@ export function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<Exe
     grammarBankRevision: undefined,
     grammarSnapshot: undefined,
     grammarPreview: undefined,
+    grammarDocumentCount: undefined,
+    grammarPageBreakAfterQuestionIds: undefined,
     ...(type.id.includes('-curriculum-') ? defaultGrammarPilot(type.id) : {}),
     columns: type.preferredColumns ?? 2,
     ...clearLibreContentFreeze(),

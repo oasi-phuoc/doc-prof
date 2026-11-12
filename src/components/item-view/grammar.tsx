@@ -2,6 +2,8 @@ import { Fragment } from 'react'
 import type { PreviewMode } from '@/math/types'
 import type { GrammarQuestion } from '@/grammaire/curriculum/types'
 import { PhraseOrderBlock } from './phrase'
+import { GrammarReadingView } from './grammar-reading'
+import { GrammarProductionView } from './grammar-production'
 
 function VerbHint({verb}:{verb?:string}) {
   return verb?<span className="grammar-verb-hint tcf-verbe-theme">({verb})</span>:null
@@ -11,7 +13,10 @@ function Sentence({ text, answer, givenVerb }: {text:string;answer?:string;given
 }
 export function GrammarQuestionView({ question:q, mode }: {question:GrammarQuestion;mode:PreviewMode}) {
   const u=q.unit, corrected=mode==='answers'
+  if (u.kind==='reading') return <GrammarReadingView question={q} mode={mode}/>
+  if (u.kind==='production') return <GrammarProductionView unit={u} mode={mode}/>
   return <div className={`grammar-question${u.responseLines===2?' grammar-two-lines':''}`}>
+    {u.cue?<p className="grammar-cue">{u.cue}</p>:null}
     {u.kind==='completion'?<>
       <p><Sentence text={u.prompt} answer={corrected?u.answers[0]:undefined} givenVerb={u.givenVerb}/></p>
       {q.presentation==='choice'?<ul className="grammar-choices" aria-label="Propositions">
@@ -25,7 +30,7 @@ export function GrammarQuestionView({ question:q, mode }: {question:GrammarQuest
       </div>
     </>:u.kind==='order'?<PhraseOrderBlock item={{layout:'phrase-order',tokens:q.tokens,answer:u.answers[0]!,responseAnswer:u.answers[0],responseVerb:u.givenVerb}} mode={mode}/>:<>
       <p>{u.prompt}</p>
-      {u.kind==='transform'?<p className="grammar-target-subject">Sujet à utiliser : <strong>{u.targetSubject}</strong></p>:null}
+      {u.kind==='transform'?u.targetSubject?<p className="grammar-target-subject">Sujet à utiliser : <strong>{u.targetSubject}</strong></p>:<p className="grammar-transform-directive">{u.directive}</p>:null}
       <div className="grammar-written-response">
         <span className={`answer-line-field${corrected?' filled':''}`}>{corrected?u.answers.join(' / '):'\u00a0'}</span>
         <VerbHint verb={u.givenVerb}/>

@@ -37,6 +37,18 @@ export function blockItemsForConfig(
     return { items: main.items, instruction: main.instruction }
   }
   parts.sort((a, b) => a.offset - b.offset)
+  // Graded CE repeats its support on continuation sheets. Numeric offsets alone
+  // would overwrite the preceding question with that repeated support.
+  if (parts.every(part=>part.items.every(item=>item.grammar?.unit.kind==='reading'))) {
+    const seen=new Set<string>(),items:MathItem[]=[]
+    for (const part of parts) for (const item of part.items) {
+      const q=item.grammar!,p=q.readingPart
+      const key=q.id+':'+(p?.kind==='question'?p.questionId:'support')
+      if (seen.has(key)) continue
+      seen.add(key);items.push(item)
+    }
+    return {items,instruction:parts.find(part=>part.instruction.trim())?.instruction??''}
+  }
   const items: MathItem[] = []
   let instruction = parts[0]!.instruction
   for (const part of parts) {
