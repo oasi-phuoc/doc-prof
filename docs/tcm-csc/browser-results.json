@@ -1,15 +1,18 @@
 {
   "results": [
     {
+      "players": "CSC 2: five complete operand/operator/operand recordings, no result; CSC 3: five number recordings, no silence player; real playback verified"
+    },
+    {
       "audio": "three real decoded WAV files, five prompts each and six-second gaps",
       "files": [
         {
           "name": "TCM-CSC_EXERCICE-01_NOMBRES.wav",
-          "seconds": 36
+          "seconds": 34.8
         },
         {
           "name": "TCM-CSC_EXERCICE-02_CALCULS.wav",
-          "seconds": 47.9
+          "seconds": 48.5
         },
         {
           "name": "TCM-CSC_EXERCICE-03_ENTOURER.wav",
@@ -19,13 +22,24 @@
     },
     {
       "print": "32 portrait A4 pages; no exercise crosses its footer",
-      "revisions": "36 square number cells; four sequences per exercise; twelve comparisons; CFR decomposition; three sign names; five columns with doubled writing cells",
+      "revisions": "36 square number cells; four sequences per exercise with 10 extra pixels between rows and numbers; twelve comparisons; CFR decomposition; three sign names; five columns, 42px cells and 27px carry rows",
+      "gridEdges": {
+        "csc": 12,
+        "check": "bottom and right strokes cover over 95% of the last cell in print-media screenshots; one-pixel borders, no negative margin"
+      },
       "copies": "two separate grids, unchanged orientation, doubled rows and columns for enlargement; target figures hidden in student copies",
       "geometry": "framed logic questions; four fixed forms in a 2x2 frame grid; 97.5 mm counting frame; double-size coordinate cells with six distinct colors and inline shape/coordinate rows"
     },
     {
       "freeMode": "source logic question selectable; 103 problem contexts available; changing to subtraction with 98 and 54 recomputes 44 books after validation",
       "numbering": "exercise 21 omitted; exercises 22, 23 and 24 kept"
+    },
+    {
+      "cfr": "five whole multiplication recordings with real playback",
+      "gridEdges": {
+        "cfr": 16,
+        "check": "bottom and right strokes cover over 95% of the last cell in print-media screenshots"
+      }
     }
   ],
   "errors": []

@@ -22,6 +22,8 @@ import type {
 } from '@/math/types'
 import type { TcfTypeReponse } from '@/tcf/types'
 import { collectCorrigeAudioSrcs } from '@/tcf/download-audios'
+import { hasMathAudioPrompts } from '@/math/audio-prompts'
+import { MathExerciseAudio } from '@/components/math/MathExerciseAudio'
 import { TcfFormMarginIcons } from '@/components/tcf/TcfFormIcons'
 import {
   isGramDualFormExercise,
@@ -291,7 +293,7 @@ export function WorksheetSheet({
                 <div className="exercise-heading-main">
                   <div className="exercise-heading-title-row">
                     <h3>{blockHeading}</h3>
-                    {mode === 'answers' && !coAudioInBanner(block)
+                    {mode === 'answers' && !coAudioInBanner(block) && !hasMathAudioPrompts(block.exerciseType)
                       ? blockCorrigeAudios(block).map((src) => (
                           <audio
                             key={src}
@@ -363,6 +365,7 @@ export function WorksheetSheet({
                       <span className="instruction-points">{pointsBadge}</span>
                     ) : null}
                   </div>
+                  {mode==='answers' && hasMathAudioPrompts(block.exerciseType) && <MathExerciseAudio block={block}/>}
                   {block.instruction ? (
                     <p className="exercise-instruction">{renderSheetCopy(block.instruction)}</p>
                   ) : null}

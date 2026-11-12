@@ -37,7 +37,7 @@ function buildConsignesPage(): PageConfig {
   }
 }
 
-const PAGE_GROUPS = [[1, 2], [3], [4, 5, 6], [7, 8, 9], [10], [11], [12, 13], [14, 15], [16], [17], [18], [19], [20], [22, 23, 24]]
+const PAGE_GROUPS = [[1, 2], [3], [4, 5], [6], [7, 8, 9], [10], [11], [12, 13], [14, 15], [16], [17], [18], [19], [20], [22, 23, 24]]
 export function buildTcmCscTestPages(): PageConfig[] {
   return [buildConsignesPage(), ...PAGE_GROUPS.map((numbers): PageConfig => {
     const blocks = numbers.map((number): ExerciseBlock => {

@@ -20,6 +20,46 @@ function zipEntries(buffer) {
   }
   return entries
 }
+async function checkGridEdges(page, grids) {
+  let checked=0
+  for(const grid of await grids.all()) {
+    const cell=grid.locator('.digit-cell:not(.carry)').last()
+    const style=await cell.evaluate(node=>{const s=getComputedStyle(node);return {right:s.borderRightWidth,bottom:s.borderBottomWidth,margin:s.margin}})
+    assert.deepEqual(style,{right:'1px',bottom:'1px',margin:'0px'})
+    const png=await cell.screenshot()
+    const ink=await page.evaluate(async data=>{
+      const image=new Image();image.src='data:image/png;base64,'+data;await image.decode()
+      const canvas=document.createElement('canvas');canvas.width=image.width;canvas.height=image.height
+      const ctx=canvas.getContext('2d');ctx.drawImage(image,0,0)
+      const {width:w,height:h}=canvas,{data:p}=ctx.getImageData(0,0,w,h)
+      const dark=(x,y)=>p[(y*w+x)*4]<170&&p[(y*w+x)*4+1]<170&&p[(y*w+x)*4+2]<170
+      let bottom=0,right=0
+      for(let x=2;x<w-2;x++)if(dark(x,h-1)||dark(x,h-2))bottom++
+      for(let y=2;y<h-2;y++)if(dark(w-1,y)||dark(w-2,y))right++
+      return {bottom:bottom/(w-4),right:right/(h-4)}
+    },png.toString('base64'))
+    assert.ok(ink.bottom>.95&&ink.right>.95,JSON.stringify(ink));checked++
+  }
+  return checked
+}
+async function checkPlayers(page, type, label, multipart) {
+  const block=preview(page).locator(`[data-exercise-type="${type}"]`)
+  const players=block.locator('.math-exercise-audios audio')
+  assert.equal(await players.count(),5)
+  assert.equal(await block.locator('.exercise-heading-audio').count(),0)
+  for(let index=0;index<5;index++) {
+    const player=players.nth(index)
+    assert.equal(await player.getAttribute('aria-label'),`${label} ${index+1}`)
+    const parts=JSON.parse(await player.getAttribute('data-audio-parts'))
+    assert.equal(parts.length,multipart?3:1);assert.ok(parts.every(src=>!src.includes('silence')))
+    if(multipart) assert.match(parts[1],/\/(?:plus|moins|fois)\.mp3$/)
+    await player.scrollIntoViewIfNeeded()
+    if(multipart) await player.evaluate(node=>new Promise((resolve,reject)=>{const check=()=>{if(node.readyState>=1&&node.src.startsWith('blob:'))resolve();else setTimeout(check,100)};setTimeout(()=>reject(new Error('Composed audio not ready')),30000);check()}))
+  }
+  await players.first().evaluate(async node=>{await node.play()})
+  await page.waitForFunction(type=>{const audio=document.querySelector(`.sheet-stage:not(.print-only-sheets) [data-exercise-type="${type}"] audio`);return audio?.currentTime>0.1},type)
+  await players.first().evaluate(node=>node.pause())
+}
 try {
   await mkdir('docs/tcm-csc/screenshots', { recursive: true })
   const context = await browser.newContext({ viewport: { width: 1440, height: 1000 } })
@@ -29,10 +69,18 @@ try {
   await page.goto(`${base}/generateur`)
   await page.getByLabel('Domaine', { exact: true }).click({ timeout: 120000 })
   await page.getByRole('option', { name: 'TCM CSC', exact: true }).click()
-  await page.getByLabel('Page 15', { exact: true }).waitFor()
+  await page.getByLabel('Page 16', { exact: true }).waitFor()
   assert.match(await preview(page).innerText(), /23 exercices/)
   assert.equal(await page.getByRole('spinbutton', { name: 'Points par question de l’exercice sélectionné', exact: true }).count(), 0)
   console.log('CSC : test complet chargé depuis le menu Domaine.')
+
+  await page.getByLabel('Page 2', { exact: true }).click()
+  await button(page,'Fiche élève (cliquer pour corrigé)').click()
+  await checkPlayers(page,'tcm-csc-ex02','Calcul',true)
+  await page.getByLabel('Page 3', { exact: true }).click()
+  await checkPlayers(page,'tcm-csc-ex03','Nombre',false)
+  await button(page,'Corrigé (cliquer pour fiche élève)').click()
+  results.push({players:'CSC 2: five complete operand/operator/operand recordings, no result; CSC 3: five number recordings, no silence player; real playback verified'})
 
   await page.getByLabel('Page 3', { exact: true }).click()
   await preview(page).locator('.csc-number-grid').waitFor()
@@ -90,14 +138,17 @@ try {
   assert.deepEqual((await exercise(9).first().locator('.op-name-box').allTextContents()).sort(),['+','−','='].sort())
   const digitRows=await printed.locator('[data-exercise-type="tcm-csc-ex10"] .digit-row, [data-exercise-type="tcm-csc-ex11"] .digit-row').evaluateAll(rows=>rows.map(row=>({count:row.children.length,sizes:[...row.children].map(cell=>({w:cell.getBoundingClientRect().width,h:cell.getBoundingClientRect().height,carry:cell.classList.contains('carry')}))})))
   assert.deepEqual((await exercise(10).locator('.item-number').allTextContents()).slice(0,8),['1.','2.','3.','4.','5.','6.','7.','8.'])
-  for(const row of digitRows){assert.equal(row.count,5);for(const cell of row.sizes){assert.ok(Math.abs(cell.w-56)<1);assert.ok(Math.abs(cell.h-(cell.carry?36:56))<1)}}
+  for(const row of digitRows){assert.equal(row.count,5);for(const cell of row.sizes){assert.ok(Math.abs(cell.w-42)<1);assert.ok(Math.abs(cell.h-(cell.carry?27:42))<1)}}
+  const spacing=await exercise(4).first().evaluate(node=>({rows:parseFloat(getComputedStyle(node.querySelector('.exercise-grid')).rowGap),numbers:parseFloat(getComputedStyle(node.querySelector('.sequence-row')).gap)}))
+  assert.ok(Math.abs(spacing.rows-(2*96/25.4+10))<.1);assert.equal(spacing.numbers,16)
+  const cscEdges=await checkGridEdges(page,exercise(10).first().locator('.column-grid'))+await checkGridEdges(page,exercise(11).first().locator('.column-grid'))
   const frames=await exercise(16).locator('.exercise-item').evaluateAll(nodes=>nodes.map(node=>({border:parseFloat(getComputedStyle(node).borderWidth),padding:parseFloat(getComputedStyle(node).paddingTop)})))
   assert.ok(frames.every(frame=>frame.border>0&&frame.padding>=15),JSON.stringify(frames))
   for(const block of await exercise(17).locator('.csc-shape-names').all()){assert.equal((await block.evaluate(node=>getComputedStyle(node).gridTemplateColumns)).split(' ').length,2);assert.equal(await block.locator('.answer-line-field').count(),4)}
   assert.equal(await printed.locator('.csc-problem-text .draft-pad.plain').count(),copiesCount*3)
   const pdf = await page.pdf({ path: 'docs/tcm-csc/tcm-csc-exemple.pdf', preferCSSPageSize: true, printBackground: true })
   assert.equal([...pdf.toString('latin1').matchAll(/\/Type\s*\/Page\b/g)].length, pages)
-  results.push({ print: `${pages} portrait A4 pages; no exercise crosses its footer`, revisions:'36 square number cells; four sequences per exercise; twelve comparisons; CFR decomposition; three sign names; five columns with doubled writing cells', copies: 'two separate grids, unchanged orientation, doubled rows and columns for enlargement; target figures hidden in student copies', geometry: 'framed logic questions; four fixed forms in a 2x2 frame grid; 97.5 mm counting frame; double-size coordinate cells with six distinct colors and inline shape/coordinate rows' })
+  results.push({ print: `${pages} portrait A4 pages; no exercise crosses its footer`, revisions:'36 square number cells; four sequences per exercise with 10 extra pixels between rows and numbers; twelve comparisons; CFR decomposition; three sign names; five columns, 42px cells and 27px carry rows',gridEdges:{csc:cscEdges,check:'bottom and right strokes cover over 95% of the last cell in print-media screenshots; one-pixel borders, no negative margin'}, copies: 'two separate grids, unchanged orientation, doubled rows and columns for enlargement; target figures hidden in student copies', geometry: 'framed logic questions; four fixed forms in a 2x2 frame grid; 97.5 mm counting frame; double-size coordinate cells with six distinct colors and inline shape/coordinate rows' })
   console.log('CSC : impression et géométrie vérifiées.')
   await page.close()
   page = await context.newPage()
@@ -106,7 +157,7 @@ try {
   await page.getByLabel('Domaine', { exact: true }).click({ timeout: 120000 })
   await page.getByRole('option', { name: 'TCM CSC', exact: true }).click()
 
-  await page.getByLabel('Page 10', { exact: true }).click()
+  await page.getByLabel('Page 11', { exact: true }).click()
   await button(page, 'Mode libre').click()
   const editor = page.getByRole('complementary', { name: 'Mode libre', exact: true })
   const logic = editor.getByLabel('Choisir la suite graphique', { exact: true }).first()
@@ -117,7 +168,7 @@ try {
   await button(page, 'Valider les changements').click()
   const current = await logic.inputValue(); assert.equal(current, selected)
   await button(page, 'Fermer le mode libre').click()
-  await page.getByLabel('Page 15', { exact: true }).click()
+  await page.getByLabel('Page 16', { exact: true }).click()
   const pads=preview(page).locator('.csc-problem-text .draft-pad')
   assert.equal(await pads.count(),3);assert.equal(await pads.first().getAttribute('class'),'draft-pad draft-pad-short plain')
   await preview(page).getByRole('button',{name:'Sans',exact:true}).first().click()
@@ -138,6 +189,18 @@ try {
   assert.match(await preview(page).locator('.csc-problem-text').first().innerText(), /44 livres/)
   await preview(page).screenshot({ path: 'docs/tcm-csc/screenshots/problemes-corriges.png' })
   results.push({ freeMode: 'source logic question selectable; 103 problem contexts available; changing to subtraction with 98 and 54 recomputes 44 books after validation', numbering: 'exercise 21 omitted; exercises 22, 23 and 24 kept' })
+  await page.getByLabel('Domaine', { exact: true }).click()
+  await page.getByRole('option',{name:'TCM CFR',exact:true}).click()
+  await page.getByLabel('Page 2',{exact:true}).click()
+  await button(page,'Fiche élève (cliquer pour corrigé)').click()
+  await checkPlayers(page,'tcm-cfr-ex02','Calcul',true)
+  await page.emulateMedia({media:'print'})
+  const cfrPrinted=page.locator('.print-only-sheets .worksheet-sheet')
+  const cfrGrid=cfrPrinted.locator('[data-exercise-type="tcm-cfr-ex07"] .column-grid, [data-exercise-type="tcm-cfr-ex08"] .column-grid')
+  const cfrEdges=await checkGridEdges(page,cfrGrid)
+  assert.ok(cfrEdges>=8)
+  await page.pdf({path:'docs/tcm-csc/tcm-cfr-grilles-exemple.pdf',preferCSSPageSize:true,printBackground:true,pageRanges:'4'})
+  results.push({cfr:'five whole multiplication recordings with real playback',gridEdges:{cfr:cfrEdges,check:'bottom and right strokes cover over 95% of the last cell in print-media screenshots'}})
   assert.deepEqual(errors, [])
   await writeFile('docs/tcm-csc/browser-results.json', JSON.stringify({ results, errors }, null, 2) + '\n')
   console.log(JSON.stringify(results, null, 2))

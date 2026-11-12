@@ -273,7 +273,7 @@ html,body,#root{
 .digit-cell{
   display:inline-flex;align-items:center;justify-content:center;
   width:28px;height:28px;position:relative;
-  border:0.75px solid #d8d4de;margin:0 -0.75px -0.75px 0;
+  border:1px solid #d8d4de;margin:0;flex:0 0 auto;
   font-size:calc(15px * var(--app-font-scale, 1));font-weight:600;background:#fff;border-radius:0;text-align:center;line-height:1;
   color:var(--ink)
 }
@@ -1883,7 +1883,7 @@ html,body,#root{
 
 @media print{
   .digit-cell{border-color:#d0ccd8!important}
-  .digit-cell.carry{border-color:#ddd9e3!important}
+  .digit-cell.carry{border-color:#333!important}
   .column-rule{border-bottom-color:var(--purple)!important}
   .sequence-term,.select-pill,.digit-cell,.letter-cell{border-color:#000!important}
   .compare-circle,.op-name-box,.order-given-box,.geo-block.geo-name-card,.frac-shape-card{border-color:#c8c4d0!important}
