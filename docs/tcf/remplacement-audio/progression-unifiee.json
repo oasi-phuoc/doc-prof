@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-11",
+  "updated_at": "2026-11-12",
   "received_source_file_entries": 836,
   "copyright_tracks_removed_at_user_request": 2,
   "active_source_entries": 834,
@@ -32,9 +32,7 @@
     "grammar": "/workspace/work/tcf-audio-reconciliation-20261104/grammar-cuts-work/segmentation-index-v3.json"
   },
   "blockers": [
-    "Contrôle final des transcriptions et réponses non terminé ; 87 validations différées dans le registre de bascule.",
-    "Quatre divergences d’édition identifiées par les PDF : nouveaux extraits et réponses associés à finaliser.",
-    "Nouvelles collections reçues après la bascule : 205 fichiers conservés séparément, à découper et intégrer selon le cahier des charges.",
+    "Les contrôles complémentaires historiques de la bibliothèque entière restent distincts du lot de 87 validations demandé, désormais terminé.",
     "D1 : accès serveur nécessaire pour migrer les fiches enregistrées."
   ],
   "question_additions": 27,
@@ -125,7 +123,7 @@
   },
   "audio_switch_complete": true,
   "final_validation_complete": false,
-  "final_transcript_reviews_pending": 87,
+  "final_transcript_reviews_pending": 0,
   "new_collections_received_after_switch": {
     "a1_039803": 82,
     "a2_039802": 62,
@@ -136,6 +134,27 @@
       53,
       54
     ],
-    "pdf_verification_report": "verification-pdf-fournis-20261111.json"
+    "pdf_verification_report": "verification-pdf-fournis-20261111.json",
+    "integration_cancelled": true,
+    "received_local_copies_retired": 205,
+    "discarded_local_files": 201,
+    "retained_only_for_edition_correction": 4,
+    "missing_a1_reminder_cancelled": true
+  },
+  "requested_87_review": {
+    "requested": 87,
+    "completed": 87,
+    "remaining": 0,
+    "editorial_context_reviews": 5,
+    "report": "validation-87-20261111.json",
+    "human_listening_performed": false
+  },
+  "edition_corrections": {
+    "completed": 4,
+    "report": "corrections-4-editions-20261111.json"
+  },
+  "native_greeting_repair": {
+    "completed": 1,
+    "report": "correction-debut-allo-brigitte-20261112.json"
   }
 }

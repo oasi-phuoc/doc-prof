@@ -24,12 +24,28 @@ def verified_resolution(resolution,digest):
  path=Path(resolution.get('evidence_file','/nonexistent'))
  return bool(path.is_file() and resolution.get('candidate_sha256')==digest and hashlib.sha256(path.read_bytes()).hexdigest()==resolution.get('evidence_sha256') and read(path).get('source_sha256')==digest)
 
+def reviewed_lexical_text(text, decision, digest, engine):
+ actual=canonical(text,engine);applied=[];resolution=decision.get('lexical_resolution',{})
+ if not (verified_resolution(resolution,digest) and resolution.get('review_notes')):return actual,applied
+ evidence=canonical(read(resolution['evidence_file']).get('text',''))
+ expected=canonical(decision['selected_text'])
+ for before,after in resolution.get('aliases',{}).get(engine,{}).items():
+  old,new=canonical(before,engine),canonical(after,engine)
+  # A file-bound second recognition must contain the proposed spelling.
+  # This handles ASR word fusion, never numerical differences or absent words.
+  if not old or not new or numbers(old) or numbers(new):continue
+  if f' {new} ' not in f' {evidence} ' or f' {new} ' not in f' {expected} ':continue
+  pattern=r'(?<!\w)'+re.escape(old)+r'(?!\w)'
+  actual,count=re.subn(pattern,new,actual)
+  if count:applied.append(dict(before=old,after=new,count=count))
+ return actual,applied
+
 recognitions={}
 for h,engines in read(work/'existing-recognitions.json').items():
  for engine,path in engines.items():
   data=read(path);assert data['source_sha256']==h
   recognitions.setdefault(h,{})[engine]=data
-for engine in ['parakeet','whisper','ctc']:
+for engine in ['parakeet','whisper','ctc','whisper_medium','whisper_components']:
  for path in (work/engine).glob('*.json'):
   try:data=read(path)
   except (ValueError,OSError):continue
@@ -47,9 +63,9 @@ for row in rows:
  decision=decisions.get(row['ref']);blocked=(decision or {}).get('blocked_reasons',[]);flags=list(blocked);qualified=[];per_engine={}
  if decision:
   selected=decision['selected_text'];expected=norm(selected);resolution=decision.get('numeric_resolution',{})
-  for engine in ['parakeet','whisper','ctc']:
+  for engine in ['parakeet','whisper','ctc','whisper_medium','whisper_components']:
    if engine not in rs:continue
-   actual=canonical(rs[engine]['text'],engine);issues=[]
+   actual,lexical_aliases=reviewed_lexical_text(rs[engine]['text'],decision,h,engine);issues=[]
    similarity=difflib.SequenceMatcher(None,expected.split(),actual.split(),autojunk=False).ratio()
    # Token fusion (e.g. salucarine) can distort a short transcript's word
    # score. A nearly identical character sequence is supplementary evidence;
@@ -60,14 +76,15 @@ for row in rows:
    if numbers(selected)!=numbers(rs[engine]['text'],engine):
     adjudicated=(resolution.get('verification_mode')=='span_review_across_three_recognitions' and bool(resolution.get('span_review_notes')))
     other_support=any(numbers(selected)==numbers(v['text'],other) for other,v in rs.items())
-    confirmed=(verified_resolution(resolution,h) and resolution.get('reviewed_numbers')==numbers(selected) and (adjudicated or other_support))
+    approved_engine=engine in resolution.get('approved_engines',['parakeet','whisper','ctc','whisper_medium','whisper_components'])
+    confirmed=(approved_engine and verified_resolution(resolution,h) and resolution.get('reviewed_numbers')==numbers(selected) and (adjudicated or other_support))
     if not confirmed:issues.append(engine+'_numeric_difference')
    start_chars=difflib.SequenceMatcher(None,expected_chars[:24],actual_chars[:24],autojunk=False).ratio()
    end_chars=difflib.SequenceMatcher(None,expected_chars[-24:],actual_chars[-24:],autojunk=False).ratio()
    if (expected.split()[0] not in actual.split()[:6] or len(set(expected.split()[:3])&set(actual.split()[:6]))<min(2,len(set(expected.split()[:3])))) and start_chars<.90:issues.append(engine+'_start_difference')
    if (expected.split()[-1] not in actual.split()[-6:] or len(set(expected.split()[-3:])&set(actual.split()[-6:]))<min(2,len(set(expected.split()[-3:])))) and end_chars<.90:issues.append(engine+'_end_difference')
    if leading_instruction(rs[engine]['text']):issues.append(engine+'_instruction_flag')
-   per_engine[engine]=dict(word_similarity=round(similarity,4),character_similarity=round(character_similarity,4),start_character_similarity=round(start_chars,4),end_character_similarity=round(end_chars,4),flags=issues)
+   per_engine[engine]=dict(word_similarity=round(similarity,4),character_similarity=round(character_similarity,4),start_character_similarity=round(start_chars,4),end_character_similarity=round(end_chars,4),reviewed_lexical_aliases=lexical_aliases,flags=issues)
    if not issues:qualified.append(engine)
    flags.extend(issues)
  manual_ready=bool(decision and len(qualified)>=2 and technical_ok and not blocked)

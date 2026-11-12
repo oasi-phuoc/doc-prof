@@ -34,7 +34,7 @@ def main():
     recognitions = {}
     for digest, engines in read(work / 'existing-recognitions.json').items():
         recognitions[digest] = {engine: Path(path) for engine, path in engines.items()}
-    for engine in ('parakeet', 'whisper', 'ctc'):
+    for engine in ('parakeet', 'whisper', 'ctc', 'whisper_medium', 'whisper_components'):
         for path in (work / engine).glob('*.json'):
             data = read(path)
             if data.get('status') == 'transcribed' or (engine == 'ctc' and data.get('engine') and data.get('source_sha256') and isinstance(data.get('text'), str)):
@@ -48,7 +48,7 @@ def main():
         assert current == expected, ('Unexpected production audio bytes', ref)
         if item['status'] == 'installed_previously_reviewed':
             continue
-        digest = item['proposal']['candidate_sha256']
+        digest = installed[ref]['candidate_sha256'] if ref in installed else item['proposal']['candidate_sha256']
         records = {}
         for engine, path in recognitions.get(digest, {}).items():
             data = read(path)
@@ -59,6 +59,15 @@ def main():
                 parameters=data.get('parameters') or dict(engine=data.get('engine'), model_sha256=data.get('model_sha256')),
                 provenance=data.get('provenance'))
         evidence[digest] = records
+        edition_report = installed.get(ref, {}).get('edition_correction_report')
+        if edition_report:
+            correction = next(r for r in read(output / edition_report)['corrections'] if r['ref'] == ref)
+            assert correction['candidate_sha256'] == digest
+            evidence[digest] = {engine: dict(
+                file_sha256=record['file_sha256'], source_sha256=record['audio_sha256'],
+                text=record['text'], parameters=record.get('parameters'),
+                provenance=edition_report)
+                for engine, record in correction['recognitions'].items()}
         if ref in installed:
             continue
         state, technical = states[ref], checks[digest]
@@ -92,7 +101,10 @@ def main():
     for ref, record in installed.items():
         state = states[ref]
         deferred = record.get('final_transcript_review_pending', False)
-        recheck = bool(state['editorial_decision_present'] and not state['manual_review_ready'])
+        reviewed = record.get('final_transcript_validation', {})
+        current_review = (reviewed.get('candidate_sha256') == record['candidate_sha256']
+                          and str(reviewed.get('status', '')).startswith('validated'))
+        recheck = bool(state['editorial_decision_present'] and not state['manual_review_ready'] and not current_review)
         if deferred or recheck:
             final_review.append(dict(ref=ref, source_id=record['source_id'],
                                      candidate_sha256=record['candidate_sha256'],

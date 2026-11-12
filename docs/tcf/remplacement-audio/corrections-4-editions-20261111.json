@@ -1,0 +1,2969 @@
+{
+  "status": "installed",
+  "human_listening_performed": false,
+  "new_collection_integration": false,
+  "corrections": [
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/radio-france.mp3",
+      "previous_audio_sha256": "9ff5fb66c13ec911ff92bdc3b2cb315f88854a646b25910a961eb28b9d5fa96c",
+      "rollback_git_blob": "6a226f0e21464998c51561f3004a1933f912f9a8",
+      "candidate_sha256": "79bf5c1bdf32bfa436a2aee97abe502f3ee0dcc5d91f01ef4bb4821909f215ed",
+      "source_provenance": {
+        "ref": "/lib/audio/tcf/co/vie-quotidienne/radio-france.mp3",
+        "level": "a1",
+        "track": 21,
+        "source_id": "039803:021",
+        "source_file": "/workspace/work/tcf-validation-87-20261111/edition-source-evidence/039803_021.mp3",
+        "source_sha256": "6f9b1144dfbfc4249cf3b9f48f0517a52acb62289addf264c8aaea4d3c18b194",
+        "source_decoded_pcm_sha256": "788e83904f0a248be43c5f8370edcae9e86686f39e32f89c484e8f1e6584d915",
+        "source_sample_rate": 44100,
+        "source_channels": 2,
+        "source_start_frame": 194040,
+        "source_end_frame": 1301832,
+        "source_slice_pcm_sha256": "880f9b97d05e26138b682337e67f36794c3af1af3d04210edc021906e719e302",
+        "first_source_word": {
+          "word": "Radio",
+          "start": 4.559999942779541,
+          "end": 5.200000032782555,
+          "chunk_index": 0,
+          "native_token_indices": [
+            6,
+            7,
+            8
+          ],
+          "zero_duration_token": false
+        },
+        "last_source_word": {
+          "word": "0805-151215.",
+          "start": 25.41599996185303,
+          "end": 29.255999712109567,
+          "chunk_index": 1,
+          "native_token_indices": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "zero_duration_token": false
+        },
+        "previous_technical_word": {
+          "word": "21",
+          "start": 0.8799999952316284,
+          "end": 1.519999921321869,
+          "chunk_index": 0,
+          "native_token_indices": [
+            4,
+            5
+          ],
+          "zero_duration_token": false
+        },
+        "candidate_file": "/workspace/work/tcf-transcripts-official-20261111/edition-replacements/cuts/039803-021/candidate.mp3",
+        "candidate_sha256": "79bf5c1bdf32bfa436a2aee97abe502f3ee0dcc5d91f01ef4bb4821909f215ed",
+        "duration_seconds": 25.12,
+        "category": "moyen",
+        "first_speech_seconds": 0.448,
+        "trailing_non_speech_seconds": 0.576,
+        "windows": {
+          "start_before": {
+            "file": "/workspace/work/tcf-transcripts-official-20261111/edition-replacements/cuts/039803-021/start_before.flac",
+            "sha256": "1846be631e58147bde7cab11da41f36ca5a73220ac637ff0bdcc1ed5d3790dcd",
+            "source_start_frame": 105840,
+            "source_end_frame": 194040,
+            "available_seconds": 2.0
+          },
+          "start_after": {
+            "file": "/workspace/work/tcf-transcripts-official-20261111/edition-replacements/cuts/039803-021/start_after.flac",
+            "sha256": "d37c08cbaf73045520aeaf0449253c778c6b455dbb8a3c6765a5728e14eab92b",
+            "source_start_frame": 194040,
+            "source_end_frame": 282240,
+            "available_seconds": 2.0
+          },
+          "end_before": {
+            "file": "/workspace/work/tcf-transcripts-official-20261111/edition-replacements/cuts/039803-021/end_before.flac",
+            "sha256": "7347fd103f52e0aa01dc713233f52c2af1681ea5a1c459279bbed9956f24a182",
+            "source_start_frame": 1213632,
+            "source_end_frame": 1301832,
+            "available_seconds": 2.0
+          },
+          "end_after": {
+            "file": "/workspace/work/tcf-transcripts-official-20261111/edition-replacements/cuts/039803-021/end_after.flac",
+            "sha256": "a419e08144b289ec4194f250d9f8e55770cbc6f2ab57e12142320310945840de",
+            "source_start_frame": 1301832,
+            "source_end_frame": 1390032,
+            "available_seconds": 2.0
+          }
+        },
+        "waveform_file": "/workspace/work/tcf-transcripts-official-20261111/edition-replacements/cuts/039803-021/waveform.svg",
+        "waveform_sha256": "218952a03f5fd211cfa76f77815423b1e3d9142bb0e874d376637c8f045e01d5",
+        "human_listening_performed": false,
+        "production_modified": false
+      },
+      "official_pdf": {
+        "ref": "/lib/audio/tcf/co/vie-quotidienne/radio-france.mp3",
+        "status": "resolved_with_matching_official_edition_audio",
+        "similarity": 0.967,
+        "pdf_collection": "A1 tout public",
+        "pdf_track": 21,
+        "pdf_section": "piste_complete",
+        "pdf_sha256": "1e4bf004210f4172237ec217dc8de06114075ef43014d6d4d4f9296d252b53ae",
+        "file_id": "file_00000000434c8210bf153d5f832cec03",
+        "contexts": [
+          {
+            "bank": "src/tcf/content/a0-a1/co.json",
+            "exercise": "tcf-ss-a1-s12-co-2",
+            "audio": 1
+          }
+        ],
+        "differences": [
+          {
+            "kind": "delete",
+            "current": "et le dimanche",
+            "official": ""
+          }
+        ],
+        "facts": {
+          "installed": "Samedi et dimanche",
+          "pdf": "Samedi uniquement"
+        },
+        "source_evidence": "Installed recording reconfirmed in saved Parakeet/Whisper outputs; CTC also available for first three references.",
+        "new_audio_sha256": "79bf5c1bdf32bfa436a2aee97abe502f3ee0dcc5d91f01ef4bb4821909f215ed",
+        "correction_report": "corrections-4-editions-20261111.json"
+      },
+      "recognitions": {
+        "parakeet": {
+          "file": "/workspace/work/tcf-transcripts-official-20261111/edition-replacements/final-parakeet/candidate-79bf5c1bdf32.json",
+          "file_sha256": "383b605df89ddfc6fbf87e0009303a4ef062df3ec78e290d17dbfd47915af60b",
+          "audio_sha256": "79bf5c1bdf32bfa436a2aee97abe502f3ee0dcc5d91f01ef4bb4821909f215ed",
+          "text": "Radio France, il est 10h. Le nouveau musée d'Art Modernes va ouvrir jeudi prochain. Les horaires sont de 9h à 19h, du mardi au vendredi et de 9h30 à 17h30 le samedi. Radio France offre 20 places. Pour participer, appelez le 0805-151215.",
+          "parameters": {
+            "pipeline_version": 4,
+            "engine": "sherpa-onnx",
+            "version": "2.0.1",
+            "model": "nemo-parakeet-tdt-0.6b-v3-int8",
+            "language": "multilingual_auto_includes_fr",
+            "model_files_sha256": {
+              "/tmp/clairfle-parakeet-preserved-20261105/encoder.int8.onnx": "1afbe69c1ffdabee94755f42e4daf1d93549131a3da11356bda84fcef0f2c479",
+              "/tmp/clairfle-parakeet-preserved-20261105/decoder.int8.onnx": "0222a86147299d4dee90edf95b6d13827edb42ad8b7c9cf0b2582f030937c0b5",
+              "/tmp/clairfle-parakeet-preserved-20261105/joiner.int8.onnx": "cbd02f3696e9944970111fb439d9c3fd365a80374565f13f2b9c7007d253fc98",
+              "/tmp/clairfle-parakeet-preserved-20261105/tokens.txt": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
+            },
+            "provider": "cpu",
+            "decoding_method": "greedy_search",
+            "native_tdt_frame_step_seconds": 0.08,
+            "processing_windows": "Silero VAD utterances merged into <=27s processing windows for inputs >=29s; max 26s speech, 350ms silence, 200ms padding"
+          }
+        },
+        "whisper_small": {
+          "file": "/workspace/work/tcf-transcripts-official-20261111/edition-replacements/whisper/candidate-79bf5c1bdf32.json",
+          "file_sha256": "06603d2ba8dee363b0b393fed9746f3297d4c988d5716ac38a4a475e2be17e7b",
+          "audio_sha256": "79bf5c1bdf32bfa436a2aee97abe502f3ee0dcc5d91f01ef4bb4821909f215ed",
+          "text": "Radio France, il est 10h. Le Nouveau Musée d'Art moderne va ouvrir jeudi prochain. Les horaires sont de 9h à 19h, du mardi au vendredi et de 9h30 à 17h30 le samedi. Radio France offre 20 places. Pour participer, appelez le 0805 151215.",
+          "parameters": {
+            "engine": "sherpa-onnx",
+            "version": "2.0.1",
+            "model_files_sha256": {
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-whisper-small/small-encoder.int8.onnx": "4cbe7b22fa9026b843b60a68640c747de05bafb1a11b57edc0e66c232d9f33a9",
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-whisper-small/small-decoder.int8.onnx": "acad50b5c782696e91b55914cc5ab4f756f1532f76e22aa6fc615f39fb69a8ee",
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-whisper-small/small-tokens.txt": "b34b360dbb493e781e479794586d661700670d65564001f23024971d1f2fa126"
+            },
+            "language": "fr",
+            "task": "transcribe",
+            "provider": "cpu",
+            "decoding_method": "greedy_search",
+            "enable_segment_timestamps": false,
+            "enable_token_timestamps": false,
+            "long_audio_segmentation": "Silero VAD utterances merged into <=27s processing windows; max 26s speech, 350ms silence, 200ms padding"
+          }
+        },
+        "whisper_medium": {
+          "file": "/workspace/work/tcf-validation-87-20261111/whisper-medium/candidate-79bf5c1bdf32.json",
+          "file_sha256": "e29c806ee822752608acf324de67c7ee4913d5a6aa0faf70791ae4d3871dc14a",
+          "audio_sha256": "79bf5c1bdf32bfa436a2aee97abe502f3ee0dcc5d91f01ef4bb4821909f215ed",
+          "text": "Radio France, il est 10h. Le nouveau Musée d'art moderne va ouvrir jeudi prochain. Les horaires sont de 9h à 19h, du mardi au vendredi, et de 9h30 à 17h30 le samedi. Radio France offre 20 places. Pour participer, appelez le 0805 15 12 15.",
+          "parameters": {
+            "engine": "sherpa-onnx",
+            "version": "2.0.1",
+            "model_files_sha256": {
+              "/tmp/clairfle-whisper-medium-20261111/medium-encoder.int8.onnx": "1c54582b4d829de0089f6cb63bbbdb3bf7555398bacaf855fbecf1a84dfd193e",
+              "/tmp/clairfle-whisper-medium-20261111/medium-decoder.int8.onnx": "595d00a338a365a7bfa0ca7f296cabc639583bef770ab6130df90f49a6412747",
+              "/tmp/clairfle-whisper-medium-20261111/medium-tokens.txt": "b34b360dbb493e781e479794586d661700670d65564001f23024971d1f2fa126"
+            },
+            "language": "fr",
+            "task": "transcribe",
+            "provider": "cpu",
+            "decoding_method": "greedy_search",
+            "enable_segment_timestamps": false,
+            "enable_token_timestamps": false,
+            "long_audio_segmentation": "Silero VAD utterances merged into <=27s processing windows; max 26s speech, 350ms silence, 200ms padding"
+          }
+        }
+      },
+      "selected_transcription": "Radio France, il est 10 h. Le nouveau musée d’art moderne va ouvrir jeudi prochain. Les horaires sont de 9 h à 19 h du mardi au vendredi, et de 9 h 30 à 17 h 30 le samedi. Radio France offre vingt places. Pour participer, appelez le 0 805 15 12 15.",
+      "changes": [
+        {
+          "bank": "src/tcf/content/a0-a1/co.json",
+          "exercise": "tcf-ss-a1-s12-co-2",
+          "before": {
+            "id": "tcf-ss-a1-s12-co-2",
+            "niveau": "A0-A1",
+            "competence": "CO",
+            "type_exercice": "complet",
+            "theme": "Soutien scolaire · Annonce 5",
+            "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+            "support": {
+              "audio": "/lib/audio/tcf/co/vie-quotidienne/radio-france.mp3",
+              "transcription": "Radio France, il est 10 h.\nLe nouveau musée d'art moderne va ouvrir jeudi prochain.\nLes horaires sont de 9 h à 19 h du mardi au vendredi, et de 9 h 30 à 17 h 30 le samedi et le dimanche.\nRadio France offre vingt places.\nPour participer, appelez le 0 805 15 12 15."
+            },
+            "questions": [
+              {
+                "enonce": "Quel musée va ouvrir ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "Un musée d’art moderne",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "Un musée des sciences"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "Un musée d’histoire"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "Un musée d’art moderne"
+                  },
+                  "qcm_image": {
+                    "melanger": true,
+                    "choix": [
+                      {
+                        "id": "a",
+                        "correct": true,
+                        "image": "/lib/images/tcf/qcm-audit/0ab5acf21bf4.webp"
+                      },
+                      {
+                        "id": "b",
+                        "image": "/lib/images/tcf/qcm-audit/46975abea508.webp"
+                      },
+                      {
+                        "id": "c",
+                        "image": "/lib/images/tcf/qcm-audit/co834-musee-histoire-dessine.webp"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "enonce": "Quel jour le musée ouvrira-t-il ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "Jeudi prochain",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "Lundi prochain"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "Samedi prochain"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "Jeudi prochain"
+                  }
+                }
+              },
+              {
+                "enonce": "À quelle heure le musée ouvre-t-il du mardi au vendredi ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "À 9 h",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "À 9 h 30"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "À 10 h"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "À 9 h"
+                  },
+                  "qcm_image": {
+                    "melanger": true,
+                    "choix": [
+                      {
+                        "id": "a",
+                        "correct": true,
+                        "image": "/lib/images/tcf/qcm-audit/co834-horloge-0900-dessinee.webp"
+                      },
+                      {
+                        "id": "b",
+                        "image": "/lib/images/tcf/qcm-audit/co834-horloge-0930-dessinee.webp"
+                      },
+                      {
+                        "id": "c",
+                        "image": "/lib/images/tcf/qcm-audit/co834-horloge-1000-dessinee.webp"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "enonce": "À quelle heure le musée ferme-t-il du mardi au vendredi ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "À 19 h",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "À 17 h 30"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "À 18 h"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "À 19 h"
+                  },
+                  "qcm_image": {
+                    "melanger": true,
+                    "choix": [
+                      {
+                        "id": "a",
+                        "correct": true,
+                        "image": "/lib/images/tcf/qcm-audit/co834-horloge-1900-dessinee.webp"
+                      },
+                      {
+                        "id": "b",
+                        "image": "/lib/images/tcf/qcm-audit/co834-horloge-1730-dessinee.webp"
+                      },
+                      {
+                        "id": "c",
+                        "image": "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "enonce": "À quelle heure le musée ouvre-t-il le week-end ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "À 9 h 30",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "À 9 h"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "À 10 h 30"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "À 9 h 30"
+                  },
+                  "qcm_image": {
+                    "melanger": true,
+                    "choix": [
+                      {
+                        "id": "a",
+                        "correct": true,
+                        "image": "/lib/images/tcf/qcm-audit/co834-horloge-0930-dessinee.webp"
+                      },
+                      {
+                        "id": "b",
+                        "image": "/lib/images/tcf/qcm-audit/co834-horloge-0900-dessinee.webp"
+                      },
+                      {
+                        "id": "c",
+                        "image": "/lib/images/tcf/qcm-audit/co834-horloge-1030-dessinee.webp"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "enonce": "À quelle heure le musée ferme-t-il le week-end ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "À 17 h 30",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "À 19 h"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "À 18 h 30"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "À 17 h 30"
+                  },
+                  "qcm_image": {
+                    "melanger": true,
+                    "choix": [
+                      {
+                        "id": "a",
+                        "correct": true,
+                        "image": "/lib/images/tcf/qcm-audit/co834-horloge-1730-dessinee.webp"
+                      },
+                      {
+                        "id": "b",
+                        "image": "/lib/images/tcf/qcm-audit/co834-horloge-1900-dessinee.webp"
+                      },
+                      {
+                        "id": "c",
+                        "image": "/lib/images/tcf/qcm-audit/co834-horloge-1830-dessinee.webp"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "enonce": "Combien de places Radio France offre-t-elle ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "Vingt",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "Dix"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "Trente"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "Vingt"
+                  }
+                }
+              },
+              {
+                "enonce": "Comment faut-il participer au jeu ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "En téléphonant",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "En envoyant une lettre"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "En allant au musée"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "En téléphonant"
+                  }
+                }
+              }
+            ],
+            "consigne_supplementaire": null,
+            "scenario": "vie-quotidienne",
+            "scene": "Radio France"
+          },
+          "after": {
+            "id": "tcf-ss-a1-s12-co-2",
+            "niveau": "A0-A1",
+            "competence": "CO",
+            "type_exercice": "complet",
+            "theme": "Soutien scolaire · Annonce 5",
+            "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+            "support": {
+              "audio": "/lib/audio/tcf/co/vie-quotidienne/radio-france.mp3",
+              "transcription": "Radio France, il est 10 h. Le nouveau musée d’art moderne va ouvrir jeudi prochain. Les horaires sont de 9 h à 19 h du mardi au vendredi, et de 9 h 30 à 17 h 30 le samedi. Radio France offre vingt places. Pour participer, appelez le 0 805 15 12 15."
+            },
+            "questions": [
+              {
+                "enonce": "Quel musée va ouvrir ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "Un musée d’art moderne",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "Un musée des sciences"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "Un musée d’histoire"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "Un musée d’art moderne"
+                  },
+                  "qcm_image": {
+                    "melanger": true,
+                    "choix": [
+                      {
+                        "id": "a",
+                        "correct": true,
+                        "image": "/lib/images/tcf/qcm-audit/0ab5acf21bf4.webp"
+                      },
+                      {
+                        "id": "b",
+                        "image": "/lib/images/tcf/qcm-audit/46975abea508.webp"
+                      },
+                      {
+                        "id": "c",
+                        "image": "/lib/images/tcf/qcm-audit/co834-musee-histoire-dessine.webp"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "enonce": "Quel jour le musée ouvrira-t-il ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "Jeudi prochain",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "Lundi prochain"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "Samedi prochain"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "Jeudi prochain"
+                  }
+                }
+              },
+              {
+                "enonce": "À quelle heure le musée ouvre-t-il du mardi au vendredi ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "À 9 h",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "À 9 h 30"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "À 10 h"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "À 9 h"
+                  },
+                  "qcm_image": {
+                    "melanger": true,
+                    "choix": [
+                      {
+                        "id": "a",
+                        "correct": true,
+                        "image": "/lib/images/tcf/qcm-audit/co834-horloge-0900-dessinee.webp"
+                      },
+                      {
+                        "id": "b",
+                        "image": "/lib/images/tcf/qcm-audit/co834-horloge-0930-dessinee.webp"
+                      },
+                      {
+                        "id": "c",
+                        "image": "/lib/images/tcf/qcm-audit/co834-horloge-1000-dessinee.webp"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "enonce": "À quelle heure le musée ferme-t-il du mardi au vendredi ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "À 19 h",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "À 17 h 30"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "À 18 h"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "À 19 h"
+                  },
+                  "qcm_image": {
+                    "melanger": true,
+                    "choix": [
+                      {
+                        "id": "a",
+                        "correct": true,
+                        "image": "/lib/images/tcf/qcm-audit/co834-horloge-1900-dessinee.webp"
+                      },
+                      {
+                        "id": "b",
+                        "image": "/lib/images/tcf/qcm-audit/co834-horloge-1730-dessinee.webp"
+                      },
+                      {
+                        "id": "c",
+                        "image": "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "enonce": "À quelle heure le musée ouvre-t-il le samedi ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "À 9 h 30",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "À 9 h"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "À 10 h 30"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "À 9 h 30"
+                  },
+                  "qcm_image": {
+                    "melanger": true,
+                    "choix": [
+                      {
+                        "id": "a",
+                        "correct": true,
+                        "image": "/lib/images/tcf/qcm-audit/co834-horloge-0930-dessinee.webp"
+                      },
+                      {
+                        "id": "b",
+                        "image": "/lib/images/tcf/qcm-audit/co834-horloge-0900-dessinee.webp"
+                      },
+                      {
+                        "id": "c",
+                        "image": "/lib/images/tcf/qcm-audit/co834-horloge-1030-dessinee.webp"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "enonce": "À quelle heure le musée ferme-t-il le samedi ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "À 17 h 30",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "À 19 h"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "À 18 h 30"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "À 17 h 30"
+                  },
+                  "qcm_image": {
+                    "melanger": true,
+                    "choix": [
+                      {
+                        "id": "a",
+                        "correct": true,
+                        "image": "/lib/images/tcf/qcm-audit/co834-horloge-1730-dessinee.webp"
+                      },
+                      {
+                        "id": "b",
+                        "image": "/lib/images/tcf/qcm-audit/co834-horloge-1900-dessinee.webp"
+                      },
+                      {
+                        "id": "c",
+                        "image": "/lib/images/tcf/qcm-audit/co834-horloge-1830-dessinee.webp"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "enonce": "Combien de places Radio France offre-t-elle ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "Vingt",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "Dix"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "Trente"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "Vingt"
+                  }
+                }
+              },
+              {
+                "enonce": "Comment faut-il participer au jeu ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "En téléphonant",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "En envoyant une lettre"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "En allant au musée"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "En téléphonant"
+                  }
+                }
+              }
+            ],
+            "consigne_supplementaire": null,
+            "scenario": "vie-quotidienne",
+            "scene": "Radio France"
+          }
+        }
+      ],
+      "human_listening_performed": false,
+      "status": "installed",
+      "review_notes": "Deux modèles Whisper français et Parakeet comparés ; les quatre valeurs d’édition, débuts et fins sont recoupés. Pour FMAC, le 3 % de Parakeet est écarté au profit de 30 %, lu dans le PDF et reconnu par les deux modèles Whisper."
+    },
+    {
+      "ref": "/lib/audio/tcf/co/loisirs/bienvenue-parc-asterix-1.mp3",
+      "previous_audio_sha256": "f3210c4719c3b069edd097dbdc95d77432d449bc9302a97a3d935a05689d98c4",
+      "rollback_git_blob": "c90832a2a6d21223d8534f4a6999bf2fd339a828",
+      "candidate_sha256": "131928eb367e7218078abd0c7ae310646922a1069c14fd2186459d63fa93074b",
+      "source_provenance": {
+        "ref": "/lib/audio/tcf/co/loisirs/bienvenue-parc-asterix-1.mp3",
+        "level": "a1",
+        "track": 29,
+        "source_id": "039803:029",
+        "source_file": "/workspace/work/tcf-validation-87-20261111/edition-source-evidence/039803_029.mp3",
+        "source_sha256": "619849d1f7d560e14ab05a73ec76f35b6cc30177bc27d9dddd2273d5924466b7",
+        "source_decoded_pcm_sha256": "2c3eb55da8e5c3200c075750ee683df27c43cf63414f389f484874d8657c88ea",
+        "source_sample_rate": 44100,
+        "source_channels": 2,
+        "source_start_frame": 201096,
+        "source_end_frame": 1042171,
+        "source_slice_pcm_sha256": "263d2d860c875e43fd55f9142292148db21bbefc5e255a640ea999ba0c459ef2",
+        "first_source_word": {
+          "word": "Chers",
+          "start": 4.71999979019165,
+          "end": 5.120000034570694,
+          "chunk_index": 0,
+          "native_token_indices": [
+            6,
+            7
+          ],
+          "zero_duration_token": false
+        },
+        "last_source_word": {
+          "word": "soirée.",
+          "start": 22.8799991607666,
+          "end": 24.000000298023224,
+          "chunk_index": 0,
+          "native_token_indices": [
+            98,
+            99,
+            100,
+            101
+          ],
+          "zero_duration_token": false
+        },
+        "previous_technical_word": {
+          "word": "29",
+          "start": 0.8799999952316284,
+          "end": 1.4399999976158142,
+          "chunk_index": 0,
+          "native_token_indices": [
+            4,
+            5
+          ],
+          "zero_duration_token": false
+        },
+        "candidate_file": "/workspace/work/tcf-transcripts-official-20261111/edition-replacements/cuts/039803-029/candidate.mp3",
+        "candidate_sha256": "131928eb367e7218078abd0c7ae310646922a1069c14fd2186459d63fa93074b",
+        "duration_seconds": 19.072,
+        "category": "moyen",
+        "first_speech_seconds": 0.48,
+        "trailing_non_speech_seconds": 0.416,
+        "windows": {
+          "start_before": {
+            "file": "/workspace/work/tcf-transcripts-official-20261111/edition-replacements/cuts/039803-029/start_before.flac",
+            "sha256": "b2c522c788009ccccc8903933568d0651b8fe0707d04ec60dc78f76628167664",
+            "source_start_frame": 112896,
+            "source_end_frame": 201096,
+            "available_seconds": 2.0
+          },
+          "start_after": {
+            "file": "/workspace/work/tcf-transcripts-official-20261111/edition-replacements/cuts/039803-029/start_after.flac",
+            "sha256": "6e669fdadf781dfe3067f125db29f22e67023d338cdb37e011c8394f69b71970",
+            "source_start_frame": 201096,
+            "source_end_frame": 289296,
+            "available_seconds": 2.0
+          },
+          "end_before": {
+            "file": "/workspace/work/tcf-transcripts-official-20261111/edition-replacements/cuts/039803-029/end_before.flac",
+            "sha256": "4b5efabf4a218da83c56b263a9cd0621f1480ad2c3eff96823a7b926c67d2688",
+            "source_start_frame": 953971,
+            "source_end_frame": 1042171,
+            "available_seconds": 2.0
+          },
+          "end_after": {
+            "file": "/workspace/work/tcf-transcripts-official-20261111/edition-replacements/cuts/039803-029/end_after.flac",
+            "sha256": "63a057a342dee6acbc2ef5b057066796a0854640639012ef2338a19dfabe4927",
+            "source_start_frame": 1042171,
+            "source_end_frame": 1130371,
+            "available_seconds": 2.0
+          }
+        },
+        "waveform_file": "/workspace/work/tcf-transcripts-official-20261111/edition-replacements/cuts/039803-029/waveform.svg",
+        "waveform_sha256": "4d6be44fcad9337cf5ff3e598dd71266cbbb515c72f4fd0c5a6a9c0cc9438ae7",
+        "human_listening_performed": false,
+        "production_modified": false
+      },
+      "official_pdf": {
+        "ref": "/lib/audio/tcf/co/loisirs/bienvenue-parc-asterix-1.mp3",
+        "status": "resolved_with_matching_official_edition_audio",
+        "similarity": 0.9302,
+        "pdf_collection": "A1 tout public",
+        "pdf_track": 29,
+        "pdf_section": "piste_complete",
+        "pdf_sha256": "7c2b3d6dfeb3fda04aa773715a6e1137a5d49be46f998beeb03d689059b93822",
+        "file_id": "file_00000000d1fc8246b3004c0c2caab8d7",
+        "contexts": [
+          {
+            "bank": "src/tcf/content/a0-a1/co.json",
+            "exercise": "tcf-ss-a1-s18-co-3",
+            "audio": 1
+          }
+        ],
+        "differences": [
+          {
+            "kind": "replace",
+            "current": "le",
+            "official": "votre"
+          },
+          {
+            "kind": "insert",
+            "current": "",
+            "official": "de chaussures"
+          },
+          {
+            "kind": "replace",
+            "current": "30",
+            "official": "20"
+          }
+        ],
+        "facts": {
+          "installed": "Fermeture dans 30 minutes",
+          "pdf": "Magasin de chaussures ; fermeture dans 20 minutes"
+        },
+        "source_evidence": "Installed recording reconfirmed in saved Parakeet/Whisper outputs; CTC also available for first three references.",
+        "new_audio_sha256": "131928eb367e7218078abd0c7ae310646922a1069c14fd2186459d63fa93074b",
+        "correction_report": "corrections-4-editions-20261111.json"
+      },
+      "recognitions": {
+        "parakeet": {
+          "file": "/workspace/work/tcf-transcripts-official-20261111/edition-replacements/final-parakeet/candidate-131928eb367e.json",
+          "file_sha256": "0ebda1e7ae691a985ba9b1a8cd69b5b135cea42c567446f79d108bc5b368a70c",
+          "audio_sha256": "131928eb367e7218078abd0c7ae310646922a1069c14fd2186459d63fa93074b",
+          "text": "Chers clients, votre magasin de chaussures ferme dans 20 minutes. Merci de vous présenter à la caisse pour payer vos achats. Demain matin, le magasin ouvre à 9h15 et ferme à 20h. Le magasin proposera des promotions toute la journée. Merci et bonne soirée.",
+          "parameters": {
+            "pipeline_version": 4,
+            "engine": "sherpa-onnx",
+            "version": "2.0.1",
+            "model": "nemo-parakeet-tdt-0.6b-v3-int8",
+            "language": "multilingual_auto_includes_fr",
+            "model_files_sha256": {
+              "/tmp/clairfle-parakeet-preserved-20261105/encoder.int8.onnx": "1afbe69c1ffdabee94755f42e4daf1d93549131a3da11356bda84fcef0f2c479",
+              "/tmp/clairfle-parakeet-preserved-20261105/decoder.int8.onnx": "0222a86147299d4dee90edf95b6d13827edb42ad8b7c9cf0b2582f030937c0b5",
+              "/tmp/clairfle-parakeet-preserved-20261105/joiner.int8.onnx": "cbd02f3696e9944970111fb439d9c3fd365a80374565f13f2b9c7007d253fc98",
+              "/tmp/clairfle-parakeet-preserved-20261105/tokens.txt": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
+            },
+            "provider": "cpu",
+            "decoding_method": "greedy_search",
+            "native_tdt_frame_step_seconds": 0.08,
+            "processing_windows": "Silero VAD utterances merged into <=27s processing windows for inputs >=29s; max 26s speech, 350ms silence, 200ms padding"
+          }
+        },
+        "whisper_small": {
+          "file": "/workspace/work/tcf-transcripts-official-20261111/edition-replacements/whisper/candidate-131928eb367e.json",
+          "file_sha256": "e6f386901730166d5bb3b45ab839a48c208b4debe1c9fd323a7aea779267c45f",
+          "audio_sha256": "131928eb367e7218078abd0c7ae310646922a1069c14fd2186459d63fa93074b",
+          "text": "Chers clients, votre magasin de chaussures ferme dans 20 minutes. Merci de vous présenter à la caisse pour payer vos achats. Demain matin, le magasin ouvre à 9h15 et ferme à 20h. Le magasin proposera des promotions toute la journée. Merci et bonne soirée.",
+          "parameters": {
+            "engine": "sherpa-onnx",
+            "version": "2.0.1",
+            "model_files_sha256": {
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-whisper-small/small-encoder.int8.onnx": "4cbe7b22fa9026b843b60a68640c747de05bafb1a11b57edc0e66c232d9f33a9",
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-whisper-small/small-decoder.int8.onnx": "acad50b5c782696e91b55914cc5ab4f756f1532f76e22aa6fc615f39fb69a8ee",
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-whisper-small/small-tokens.txt": "b34b360dbb493e781e479794586d661700670d65564001f23024971d1f2fa126"
+            },
+            "language": "fr",
+            "task": "transcribe",
+            "provider": "cpu",
+            "decoding_method": "greedy_search",
+            "enable_segment_timestamps": false,
+            "enable_token_timestamps": false,
+            "long_audio_segmentation": "Silero VAD utterances merged into <=27s processing windows; max 26s speech, 350ms silence, 200ms padding"
+          }
+        },
+        "whisper_medium": {
+          "file": "/workspace/work/tcf-validation-87-20261111/whisper-medium/candidate-131928eb367e.json",
+          "file_sha256": "8c50552fc8ac808fab9a4340f54f2336a49b78b77080f24a6b6b52c85d2f2fe3",
+          "audio_sha256": "131928eb367e7218078abd0c7ae310646922a1069c14fd2186459d63fa93074b",
+          "text": "Chers clients, votre magasin de chaussures ferme dans 20 minutes. Merci de vous présenter à la caisse pour payer vos achats. Demain matin, le magasin ouvre à 9h15 et ferme à 20h. Le magasin proposera des promotions toute la journée. Merci et bonne soirée.",
+          "parameters": {
+            "engine": "sherpa-onnx",
+            "version": "2.0.1",
+            "model_files_sha256": {
+              "/tmp/clairfle-whisper-medium-20261111/medium-encoder.int8.onnx": "1c54582b4d829de0089f6cb63bbbdb3bf7555398bacaf855fbecf1a84dfd193e",
+              "/tmp/clairfle-whisper-medium-20261111/medium-decoder.int8.onnx": "595d00a338a365a7bfa0ca7f296cabc639583bef770ab6130df90f49a6412747",
+              "/tmp/clairfle-whisper-medium-20261111/medium-tokens.txt": "b34b360dbb493e781e479794586d661700670d65564001f23024971d1f2fa126"
+            },
+            "language": "fr",
+            "task": "transcribe",
+            "provider": "cpu",
+            "decoding_method": "greedy_search",
+            "enable_segment_timestamps": false,
+            "enable_token_timestamps": false,
+            "long_audio_segmentation": "Silero VAD utterances merged into <=27s processing windows; max 26s speech, 350ms silence, 200ms padding"
+          }
+        }
+      },
+      "selected_transcription": "Chers clients, votre magasin de chaussures ferme dans 20 minutes. Merci de vous présenter à la caisse pour payer vos achats. Demain matin, le magasin ouvre à 9 h 15 et ferme à 20 h. Le magasin proposera des promotions toute la journée. Merci et bonne soirée.",
+      "changes": [
+        {
+          "bank": "src/tcf/content/a0-a1/co.json",
+          "exercise": "tcf-ss-a1-s18-co-3",
+          "before": {
+            "id": "tcf-ss-a1-s18-co-3",
+            "niveau": "A0-A1",
+            "competence": "CO",
+            "type_exercice": "complet",
+            "theme": "Soutien scolaire · Annonce 13",
+            "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+            "support": {
+              "audio": "/lib/audio/tcf/co/loisirs/bienvenue-parc-asterix-1.mp3",
+              "transcription": "Chers clients, le magasin ferme dans 30 minutes. Merci de vous présenter à la caisse pour payer vos achats. Demain matin, le magasin ouvre à 9h15 et ferme à 20h. Le magasin proposera des promotions toute la journée. Merci et bonne soirée."
+            },
+            "questions": [
+              {
+                "enonce": "Dans combien de temps le magasin ferme-t-il ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "30 minutes",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "15 minutes"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "Une heure"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "30 minutes"
+                  },
+                  "qcm_image": {
+                    "melanger": true,
+                    "choix": [
+                      {
+                        "id": "a",
+                        "image": "/lib/images/tcf/qcm-audit/duree-30-minutes.webp",
+                        "correct": true
+                      },
+                      {
+                        "id": "b",
+                        "image": "/lib/images/tcf/qcm-audit/duree-15-minutes.webp"
+                      },
+                      {
+                        "id": "c",
+                        "image": "/lib/images/tcf/qcm-audit/duree-60-minutes.webp"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "enonce": "Où les clients doivent-ils aller pour payer leurs achats ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "À la caisse",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "À l’accueil"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "À la sortie du parking"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "À la caisse"
+                  },
+                  "qcm_image": {
+                    "melanger": true,
+                    "choix": [
+                      {
+                        "id": "a",
+                        "correct": true,
+                        "image": "/lib/images/tcf/qcm-audit/co834-caisse-dessinee.webp"
+                      },
+                      {
+                        "id": "b",
+                        "image": "/lib/images/tcf/qcm-audit/co834-accueil-dessine.webp"
+                      },
+                      {
+                        "id": "c",
+                        "image": "/lib/images/tcf/qcm-audit/co834-sortie-parking-dessinee.webp"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "enonce": "À quelle heure le magasin ouvrira-t-il demain ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "À 9 h 15",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "À 9 h"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "À 10 h"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "À 9 h 15"
+                  },
+                  "qcm_image": {
+                    "melanger": true,
+                    "choix": [
+                      {
+                        "id": "a",
+                        "correct": true,
+                        "image": "/lib/images/tcf/qcm-audit/vocab-horloge-0915.webp"
+                      },
+                      {
+                        "id": "b",
+                        "image": "/lib/images/tcf/qcm-audit/co834-horloge-0900-dessinee.webp"
+                      },
+                      {
+                        "id": "c",
+                        "image": "/lib/images/tcf/qcm-audit/co834-horloge-1000-dessinee.webp"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "enonce": "À quelle heure fermera-t-il demain ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "À 20 h",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "À 19 h"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "À 21 h"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "À 20 h"
+                  },
+                  "qcm_image": {
+                    "melanger": true,
+                    "choix": [
+                      {
+                        "id": "a",
+                        "correct": true,
+                        "image": "/lib/images/tcf/qcm-audit/co834-horloge-2000-dessinee.webp"
+                      },
+                      {
+                        "id": "b",
+                        "image": "/lib/images/tcf/qcm-audit/co834-horloge-1900-dessinee.webp"
+                      },
+                      {
+                        "id": "c",
+                        "image": "/lib/images/tcf/qcm-audit/co834-horloge-2100-dessinee.webp"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "enonce": "Pendant combien de temps les promotions de demain seront-elles proposées ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "Toute la journée",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "Seulement le matin"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "Seulement pendant la dernière heure"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "Toute la journée"
+                  }
+                }
+              }
+            ],
+            "consigne_supplementaire": null,
+            "scenario": "loisirs",
+            "scene": "Bienvenue parc Astérix"
+          },
+          "after": {
+            "id": "tcf-ss-a1-s18-co-3",
+            "niveau": "A0-A1",
+            "competence": "CO",
+            "type_exercice": "complet",
+            "theme": "Soutien scolaire · Annonce 13",
+            "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+            "support": {
+              "audio": "/lib/audio/tcf/co/loisirs/bienvenue-parc-asterix-1.mp3",
+              "transcription": "Chers clients, votre magasin de chaussures ferme dans 20 minutes. Merci de vous présenter à la caisse pour payer vos achats. Demain matin, le magasin ouvre à 9 h 15 et ferme à 20 h. Le magasin proposera des promotions toute la journée. Merci et bonne soirée."
+            },
+            "questions": [
+              {
+                "enonce": "Dans combien de temps le magasin ferme-t-il ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "20 minutes",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "15 minutes"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "Une heure"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "20 minutes"
+                  },
+                  "qcm_image": {
+                    "melanger": true,
+                    "choix": [
+                      {
+                        "id": "a",
+                        "image": "/lib/images/tcf/qcm-audit/duree-20-minutes.webp",
+                        "correct": true
+                      },
+                      {
+                        "id": "b",
+                        "image": "/lib/images/tcf/qcm-audit/duree-15-minutes.webp"
+                      },
+                      {
+                        "id": "c",
+                        "image": "/lib/images/tcf/qcm-audit/duree-60-minutes.webp"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "enonce": "Où les clients doivent-ils aller pour payer leurs achats ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "À la caisse",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "À l’accueil"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "À la sortie du parking"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "À la caisse"
+                  },
+                  "qcm_image": {
+                    "melanger": true,
+                    "choix": [
+                      {
+                        "id": "a",
+                        "correct": true,
+                        "image": "/lib/images/tcf/qcm-audit/co834-caisse-dessinee.webp"
+                      },
+                      {
+                        "id": "b",
+                        "image": "/lib/images/tcf/qcm-audit/co834-accueil-dessine.webp"
+                      },
+                      {
+                        "id": "c",
+                        "image": "/lib/images/tcf/qcm-audit/co834-sortie-parking-dessinee.webp"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "enonce": "À quelle heure le magasin ouvrira-t-il demain ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "À 9 h 15",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "À 9 h"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "À 10 h"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "À 9 h 15"
+                  },
+                  "qcm_image": {
+                    "melanger": true,
+                    "choix": [
+                      {
+                        "id": "a",
+                        "correct": true,
+                        "image": "/lib/images/tcf/qcm-audit/vocab-horloge-0915.webp"
+                      },
+                      {
+                        "id": "b",
+                        "image": "/lib/images/tcf/qcm-audit/co834-horloge-0900-dessinee.webp"
+                      },
+                      {
+                        "id": "c",
+                        "image": "/lib/images/tcf/qcm-audit/co834-horloge-1000-dessinee.webp"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "enonce": "À quelle heure fermera-t-il demain ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "À 20 h",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "À 19 h"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "À 21 h"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "À 20 h"
+                  },
+                  "qcm_image": {
+                    "melanger": true,
+                    "choix": [
+                      {
+                        "id": "a",
+                        "correct": true,
+                        "image": "/lib/images/tcf/qcm-audit/co834-horloge-2000-dessinee.webp"
+                      },
+                      {
+                        "id": "b",
+                        "image": "/lib/images/tcf/qcm-audit/co834-horloge-1900-dessinee.webp"
+                      },
+                      {
+                        "id": "c",
+                        "image": "/lib/images/tcf/qcm-audit/co834-horloge-2100-dessinee.webp"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "enonce": "Pendant combien de temps les promotions de demain seront-elles proposées ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "Toute la journée",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "Seulement le matin"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "Seulement pendant la dernière heure"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "Toute la journée"
+                  }
+                }
+              }
+            ],
+            "consigne_supplementaire": null,
+            "scenario": "magasins",
+            "scene": "Fermeture du magasin de chaussures"
+          }
+        }
+      ],
+      "human_listening_performed": false,
+      "status": "installed",
+      "review_notes": "Deux modèles Whisper français et Parakeet comparés ; les quatre valeurs d’édition, débuts et fins sont recoupés. Pour FMAC, le 3 % de Parakeet est écarté au profit de 30 %, lu dans le PDF et reconnu par les deux modèles Whisper."
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/bonsoir-votre-commande-prete.mp3",
+      "previous_audio_sha256": "607f21f0c868ea8d9527cb10355603765573d2ec430ba89bc2491c90ae26c42b",
+      "rollback_git_blob": "ce7ab2ca0b5ccbf3e7e980976a8bc6dc591cc36c",
+      "candidate_sha256": "d67811d811077438d2c0269b9b5816c540bc84753bcc481d3e8412bda964f7c9",
+      "source_provenance": {
+        "ref": "/lib/audio/tcf/co/vie-quotidienne/bonsoir-votre-commande-prete.mp3",
+        "level": "a1",
+        "track": 38,
+        "source_id": "039803:038",
+        "source_file": "/workspace/work/tcf-validation-87-20261111/edition-source-evidence/039803_038.mp3",
+        "source_sha256": "b471bd3fc5a2ccfd0ca3c4ef5fad150be4b94cade82fcca3dae253e19cba1961",
+        "source_decoded_pcm_sha256": "9ecd5236daf2eb2f81dc1d6595b2af21eff84c87d4d64830631225aaf76ef9c7",
+        "source_sample_rate": 44100,
+        "source_channels": 2,
+        "source_start_frame": 148176,
+        "source_end_frame": 971611,
+        "source_slice_pcm_sha256": "d9dd0b9e7d809d4536ecf99726515e000701302229dfa7f4616b24ae18927c6d",
+        "first_source_word": {
+          "word": "Bonsoir,",
+          "start": 3.5199999809265137,
+          "end": 4.640000090003014,
+          "chunk_index": 0,
+          "native_token_indices": [
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "zero_duration_token": false
+        },
+        "last_source_word": {
+          "word": "journée.",
+          "start": 21.279998779296875,
+          "end": 22.63999968767166,
+          "chunk_index": 0,
+          "native_token_indices": [
+            113,
+            114,
+            115,
+            116
+          ],
+          "zero_duration_token": false
+        },
+        "previous_technical_word": {
+          "word": "38",
+          "start": 1.0399999618530273,
+          "end": 1.5999999642372131,
+          "chunk_index": 0,
+          "native_token_indices": [
+            4,
+            5
+          ],
+          "zero_duration_token": false
+        },
+        "candidate_file": "/workspace/work/tcf-transcripts-official-20261111/edition-replacements/cuts/039803-038/candidate.mp3",
+        "candidate_sha256": "d67811d811077438d2c0269b9b5816c540bc84753bcc481d3e8412bda964f7c9",
+        "duration_seconds": 18.672,
+        "category": "moyen",
+        "first_speech_seconds": 0.448,
+        "trailing_non_speech_seconds": 0.4,
+        "windows": {
+          "start_before": {
+            "file": "/workspace/work/tcf-transcripts-official-20261111/edition-replacements/cuts/039803-038/start_before.flac",
+            "sha256": "73906e1042fc676377d81807dd41930f091dfb372e1797b2f2e6f051d5d59c62",
+            "source_start_frame": 59976,
+            "source_end_frame": 148176,
+            "available_seconds": 2.0
+          },
+          "start_after": {
+            "file": "/workspace/work/tcf-transcripts-official-20261111/edition-replacements/cuts/039803-038/start_after.flac",
+            "sha256": "35e4a2ca4c5d7b839ee3cbe9cdc52ce0a427b85ff9be834a63186aa379c532e1",
+            "source_start_frame": 148176,
+            "source_end_frame": 236376,
+            "available_seconds": 2.0
+          },
+          "end_before": {
+            "file": "/workspace/work/tcf-transcripts-official-20261111/edition-replacements/cuts/039803-038/end_before.flac",
+            "sha256": "e96c2a908816503da340a0dddbaf9e3224f4d8606a3304b72f709e5c0ce7e3d0",
+            "source_start_frame": 883411,
+            "source_end_frame": 971611,
+            "available_seconds": 2.0
+          },
+          "end_after": {
+            "file": "/workspace/work/tcf-transcripts-official-20261111/edition-replacements/cuts/039803-038/end_after.flac",
+            "sha256": "0ab10f40cefa9b2bacbb8837a85af72a4099c12bf54bb42a02d2eced54966314",
+            "source_start_frame": 971611,
+            "source_end_frame": 1059811,
+            "available_seconds": 2.0
+          }
+        },
+        "waveform_file": "/workspace/work/tcf-transcripts-official-20261111/edition-replacements/cuts/039803-038/waveform.svg",
+        "waveform_sha256": "9c567e8119ffec957d08fa86c251a71c403885b2d7d871f690181ef04754edff",
+        "human_listening_performed": false,
+        "production_modified": false
+      },
+      "official_pdf": {
+        "ref": "/lib/audio/tcf/co/vie-quotidienne/bonsoir-votre-commande-prete.mp3",
+        "status": "resolved_with_matching_official_edition_audio",
+        "similarity": 0.9011,
+        "pdf_collection": "A1 tout public",
+        "pdf_track": 38,
+        "pdf_section": "piste_complete",
+        "pdf_sha256": "e6afb0a3bc1f4eaa02d9e49398f13fc843db9dd00162fdc504d97d9bfeb2cbab",
+        "file_id": "file_00000000adc482108741d59ba35eca38",
+        "contexts": [
+          {
+            "bank": "src/tcf/content/a0-a1/co.json",
+            "exercise": "tcf-ss-a1-s12-co-4",
+            "audio": 1
+          }
+        ],
+        "differences": [
+          {
+            "kind": "delete",
+            "current": "n",
+            "official": ""
+          },
+          {
+            "kind": "replace",
+            "current": "pas les cheques",
+            "official": "seulement le paiement en especes"
+          }
+        ],
+        "facts": {
+          "installed": "Chèques non acceptés",
+          "pdf": "Paiement en espèces uniquement"
+        },
+        "source_evidence": "Installed recording reconfirmed in saved Parakeet/Whisper outputs; CTC also available for first three references.",
+        "new_audio_sha256": "d67811d811077438d2c0269b9b5816c540bc84753bcc481d3e8412bda964f7c9",
+        "correction_report": "corrections-4-editions-20261111.json"
+      },
+      "recognitions": {
+        "parakeet": {
+          "file": "/workspace/work/tcf-transcripts-official-20261111/edition-replacements/final-parakeet/candidate-d67811d81107.json",
+          "file_sha256": "e7b9415fdd0a1b4fb9ed305aa09518f8fdce6a49eccdee810dc8d6fddfc8bd75",
+          "audio_sha256": "d67811d811077438d2c0269b9b5816c540bc84753bcc481d3e8412bda964f7c9",
+          "text": "Bonsoir, votre commande est prête à la boulangerie. Vous pouvez la récupérer dès 15h. Comme tous les lundis et mardis, la bouti ferme à 18h30 aujourd'hui. On ferme à 20h les autres jours. Je vous rappelle que nous acceptons seulement le paiement en espèces. Bon journée.",
+          "parameters": {
+            "pipeline_version": 4,
+            "engine": "sherpa-onnx",
+            "version": "2.0.1",
+            "model": "nemo-parakeet-tdt-0.6b-v3-int8",
+            "language": "multilingual_auto_includes_fr",
+            "model_files_sha256": {
+              "/tmp/clairfle-parakeet-preserved-20261105/encoder.int8.onnx": "1afbe69c1ffdabee94755f42e4daf1d93549131a3da11356bda84fcef0f2c479",
+              "/tmp/clairfle-parakeet-preserved-20261105/decoder.int8.onnx": "0222a86147299d4dee90edf95b6d13827edb42ad8b7c9cf0b2582f030937c0b5",
+              "/tmp/clairfle-parakeet-preserved-20261105/joiner.int8.onnx": "cbd02f3696e9944970111fb439d9c3fd365a80374565f13f2b9c7007d253fc98",
+              "/tmp/clairfle-parakeet-preserved-20261105/tokens.txt": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
+            },
+            "provider": "cpu",
+            "decoding_method": "greedy_search",
+            "native_tdt_frame_step_seconds": 0.08,
+            "processing_windows": "Silero VAD utterances merged into <=27s processing windows for inputs >=29s; max 26s speech, 350ms silence, 200ms padding"
+          }
+        },
+        "whisper_small": {
+          "file": "/workspace/work/tcf-transcripts-official-20261111/edition-replacements/whisper/candidate-d67811d81107.json",
+          "file_sha256": "337a8f1dea168a67b184007a2c351e21dfaef8707480e284439f8d0a8a4c0808",
+          "audio_sha256": "d67811d811077438d2c0269b9b5816c540bc84753bcc481d3e8412bda964f7c9",
+          "text": "Bonsoir, votre commande est prête à la boulangerie. Vous pouvez la récupérer dès 15h. Comme tous les lundi et mardi, la boutique ferme à 18h30 aujourd'hui. On ferme à 20h les autres jours. Je vous rappelle que nous acceptons seulement le paiement en espèce. Bonne journée.",
+          "parameters": {
+            "engine": "sherpa-onnx",
+            "version": "2.0.1",
+            "model_files_sha256": {
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-whisper-small/small-encoder.int8.onnx": "4cbe7b22fa9026b843b60a68640c747de05bafb1a11b57edc0e66c232d9f33a9",
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-whisper-small/small-decoder.int8.onnx": "acad50b5c782696e91b55914cc5ab4f756f1532f76e22aa6fc615f39fb69a8ee",
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-whisper-small/small-tokens.txt": "b34b360dbb493e781e479794586d661700670d65564001f23024971d1f2fa126"
+            },
+            "language": "fr",
+            "task": "transcribe",
+            "provider": "cpu",
+            "decoding_method": "greedy_search",
+            "enable_segment_timestamps": false,
+            "enable_token_timestamps": false,
+            "long_audio_segmentation": "Silero VAD utterances merged into <=27s processing windows; max 26s speech, 350ms silence, 200ms padding"
+          }
+        },
+        "whisper_medium": {
+          "file": "/workspace/work/tcf-validation-87-20261111/whisper-medium/candidate-d67811d81107.json",
+          "file_sha256": "ae241af1dc40c15c3a319b14eef8a821a015f7c2128dc259be71082b6dacddd9",
+          "audio_sha256": "d67811d811077438d2c0269b9b5816c540bc84753bcc481d3e8412bda964f7c9",
+          "text": "Bonsoir, votre commande est prête à la boulangerie. Vous pouvez la récupérer dès 15h. Comme tous les lundis et mardis, la boutique ferme à 18h30 aujourd'hui. On ferme à 20h les autres jours. Je vous rappelle que nous acceptons seulement le paiement en espèces. Bonne journée !",
+          "parameters": {
+            "engine": "sherpa-onnx",
+            "version": "2.0.1",
+            "model_files_sha256": {
+              "/tmp/clairfle-whisper-medium-20261111/medium-encoder.int8.onnx": "1c54582b4d829de0089f6cb63bbbdb3bf7555398bacaf855fbecf1a84dfd193e",
+              "/tmp/clairfle-whisper-medium-20261111/medium-decoder.int8.onnx": "595d00a338a365a7bfa0ca7f296cabc639583bef770ab6130df90f49a6412747",
+              "/tmp/clairfle-whisper-medium-20261111/medium-tokens.txt": "b34b360dbb493e781e479794586d661700670d65564001f23024971d1f2fa126"
+            },
+            "language": "fr",
+            "task": "transcribe",
+            "provider": "cpu",
+            "decoding_method": "greedy_search",
+            "enable_segment_timestamps": false,
+            "enable_token_timestamps": false,
+            "long_audio_segmentation": "Silero VAD utterances merged into <=27s processing windows; max 26s speech, 350ms silence, 200ms padding"
+          }
+        }
+      },
+      "selected_transcription": "Bonsoir, votre commande est prête à la boulangerie. Vous pouvez la récupérer dès 15 h. Comme tous les lundis et mardis, la boutique ferme à 18 h 30 aujourd’hui. On ferme à 20 h les autres jours. Je vous rappelle que nous acceptons seulement le paiement en espèces. Bonne journée.",
+      "changes": [
+        {
+          "bank": "src/tcf/content/a0-a1/co.json",
+          "exercise": "tcf-ss-a1-s12-co-4",
+          "before": {
+            "id": "tcf-ss-a1-s12-co-4",
+            "niveau": "A0-A1",
+            "competence": "CO",
+            "type_exercice": "complet",
+            "theme": "Soutien scolaire · Instruction 5",
+            "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+            "support": {
+              "audio": "/lib/audio/tcf/co/vie-quotidienne/bonsoir-votre-commande-prete.mp3",
+              "transcription": "Bonsoir, votre commande est prête à la boulangerie.\nVous pouvez la récupérer dès 15 heures.\nComme tous les lundis et mardis, la boutique ferme à 18 heures 30 aujourd'hui.\nOn ferme à 20 heures les autres jours.\nJe vous rappelle que nous n'acceptons pas les chèques.\nBonne journée."
+            },
+            "questions": [
+              {
+                "enonce": "Dans quel commerce la commande est-elle prête ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "Une boulangerie",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "Une pharmacie"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "Une librairie"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "Une boulangerie"
+                  },
+                  "qcm_image": {
+                    "melanger": true,
+                    "choix": [
+                      {
+                        "id": "a",
+                        "image": "/lib/images/tcf/qcm-audit/co834-boulangerie-dessinee.webp",
+                        "correct": true
+                      },
+                      {
+                        "id": "b",
+                        "image": "/lib/images/tcf/qcm-audit/co834-pharmacie-dessinee.webp"
+                      },
+                      {
+                        "id": "c",
+                        "image": "/lib/images/tcf/qcm-audit/vocab-librairie.webp"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "enonce": "À partir de quelle heure peut-on la récupérer ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "À partir de 15 h",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "À partir de 14 h"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "À partir de 18 h"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "À partir de 15 h"
+                  }
+                }
+              },
+              {
+                "enonce": "À quelle heure le commerce ferme-t-il le lundi et le mardi ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "À 18 h 30",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "À 20 h"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "À 19 h"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "À 18 h 30"
+                  },
+                  "qcm_image": {
+                    "melanger": true,
+                    "choix": [
+                      {
+                        "id": "a",
+                        "correct": true,
+                        "image": "/lib/images/tcf/qcm-audit/co834-horloge-1830-dessinee.webp"
+                      },
+                      {
+                        "id": "b",
+                        "image": "/lib/images/tcf/qcm-audit/co834-horloge-2000-dessinee.webp"
+                      },
+                      {
+                        "id": "c",
+                        "image": "/lib/images/tcf/qcm-audit/co834-horloge-1900-dessinee.webp"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "enonce": "À quelle heure ferme-t-il les autres jours ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "À 20 h",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "À 18 h 30"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "À 21 h"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "À 20 h"
+                  },
+                  "qcm_image": {
+                    "melanger": true,
+                    "choix": [
+                      {
+                        "id": "a",
+                        "correct": true,
+                        "image": "/lib/images/tcf/qcm-audit/co834-horloge-2000-dessinee.webp"
+                      },
+                      {
+                        "id": "b",
+                        "image": "/lib/images/tcf/qcm-audit/co834-horloge-1830-dessinee.webp"
+                      },
+                      {
+                        "id": "c",
+                        "image": "/lib/images/tcf/qcm-audit/co834-horloge-2100-dessinee.webp"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "enonce": "Quel moyen de paiement est refusé ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "Les chèques",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "Les espèces"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "La carte bancaire"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "Les chèques"
+                  },
+                  "qcm_image": {
+                    "melanger": true,
+                    "choix": [
+                      {
+                        "id": "a",
+                        "correct": true,
+                        "image": "/lib/images/tcf/qcm-audit/co834-cheque-dessine.webp"
+                      },
+                      {
+                        "id": "b",
+                        "image": "/lib/images/tcf/qcm-audit/co834-especes-dessinees.webp"
+                      },
+                      {
+                        "id": "c",
+                        "image": "/lib/images/tcf/qcm-audit/co834-carte-bancaire-dessinee.webp"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "consigne_supplementaire": null,
+            "scenario": "vie-quotidienne",
+            "scene": "Bonsoir votre commande prête"
+          },
+          "after": {
+            "id": "tcf-ss-a1-s12-co-4",
+            "niveau": "A0-A1",
+            "competence": "CO",
+            "type_exercice": "complet",
+            "theme": "Soutien scolaire · Instruction 5",
+            "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+            "support": {
+              "audio": "/lib/audio/tcf/co/vie-quotidienne/bonsoir-votre-commande-prete.mp3",
+              "transcription": "Bonsoir, votre commande est prête à la boulangerie. Vous pouvez la récupérer dès 15 h. Comme tous les lundis et mardis, la boutique ferme à 18 h 30 aujourd’hui. On ferme à 20 h les autres jours. Je vous rappelle que nous acceptons seulement le paiement en espèces. Bonne journée."
+            },
+            "questions": [
+              {
+                "enonce": "Dans quel commerce la commande est-elle prête ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "Une boulangerie",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "Une pharmacie"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "Une librairie"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "Une boulangerie"
+                  },
+                  "qcm_image": {
+                    "melanger": true,
+                    "choix": [
+                      {
+                        "id": "a",
+                        "image": "/lib/images/tcf/qcm-audit/co834-boulangerie-dessinee.webp",
+                        "correct": true
+                      },
+                      {
+                        "id": "b",
+                        "image": "/lib/images/tcf/qcm-audit/co834-pharmacie-dessinee.webp"
+                      },
+                      {
+                        "id": "c",
+                        "image": "/lib/images/tcf/qcm-audit/vocab-librairie.webp"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "enonce": "À partir de quelle heure peut-on la récupérer ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "À partir de 15 h",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "À partir de 14 h"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "À partir de 18 h"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "À partir de 15 h"
+                  }
+                }
+              },
+              {
+                "enonce": "À quelle heure le commerce ferme-t-il le lundi et le mardi ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "À 18 h 30",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "À 20 h"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "À 19 h"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "À 18 h 30"
+                  },
+                  "qcm_image": {
+                    "melanger": true,
+                    "choix": [
+                      {
+                        "id": "a",
+                        "correct": true,
+                        "image": "/lib/images/tcf/qcm-audit/co834-horloge-1830-dessinee.webp"
+                      },
+                      {
+                        "id": "b",
+                        "image": "/lib/images/tcf/qcm-audit/co834-horloge-2000-dessinee.webp"
+                      },
+                      {
+                        "id": "c",
+                        "image": "/lib/images/tcf/qcm-audit/co834-horloge-1900-dessinee.webp"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "enonce": "À quelle heure ferme-t-il les autres jours ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "À 20 h",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "À 18 h 30"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "À 21 h"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "À 20 h"
+                  },
+                  "qcm_image": {
+                    "melanger": true,
+                    "choix": [
+                      {
+                        "id": "a",
+                        "correct": true,
+                        "image": "/lib/images/tcf/qcm-audit/co834-horloge-2000-dessinee.webp"
+                      },
+                      {
+                        "id": "b",
+                        "image": "/lib/images/tcf/qcm-audit/co834-horloge-1830-dessinee.webp"
+                      },
+                      {
+                        "id": "c",
+                        "image": "/lib/images/tcf/qcm-audit/co834-horloge-2100-dessinee.webp"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "enonce": "Quel est le seul moyen de paiement accepté ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "Les espèces",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "La carte bancaire"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "Les chèques"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "Les espèces"
+                  },
+                  "qcm_image": {
+                    "melanger": true,
+                    "choix": [
+                      {
+                        "id": "a",
+                        "image": "/lib/images/tcf/qcm-audit/co834-especes-dessinees.webp",
+                        "correct": true
+                      },
+                      {
+                        "id": "b",
+                        "image": "/lib/images/tcf/qcm-audit/co834-carte-bancaire-dessinee.webp"
+                      },
+                      {
+                        "id": "c",
+                        "image": "/lib/images/tcf/qcm-audit/co834-cheque-dessine.webp"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "consigne_supplementaire": null,
+            "scenario": "vie-quotidienne",
+            "scene": "Bonsoir votre commande prête"
+          }
+        }
+      ],
+      "human_listening_performed": false,
+      "status": "installed",
+      "review_notes": "Deux modèles Whisper français et Parakeet comparés ; les quatre valeurs d’édition, débuts et fins sont recoupés. Pour FMAC, le 3 % de Parakeet est écarté au profit de 30 %, lu dans le PDF et reconnu par les deux modèles Whisper."
+    },
+    {
+      "ref": "/lib/audio/tcf/co/magasins/bonjour-societe-fmac.mp3",
+      "previous_audio_sha256": "68809e62b5a16af0a5f83259bb9fdd81c81c808b077e3e68236291c26b7ad930",
+      "rollback_git_blob": "48a01d44c1d26b4c8f1b31f9b0ea0410af43da06",
+      "candidate_sha256": "49aaa8ae7bcf977bd77558dc5e4ab8d051668589132bcf52f34d2af8fe5bcf36",
+      "source_provenance": {
+        "ref": "/lib/audio/tcf/co/magasins/bonjour-societe-fmac.mp3",
+        "level": "a2",
+        "track": 37,
+        "source_id": "039802:037",
+        "source_file": "/workspace/work/tcf-validation-87-20261111/edition-source-evidence/039802_037.mp3",
+        "source_sha256": "9c1534f19b6bc83343652811e2fa32b06f6192b678340cdf30194bfc108117de",
+        "source_decoded_pcm_sha256": "6d8c6c530db650fc0ae8fed4ef875aa77156fe66f136c321c3440b2075cd7e0c",
+        "source_sample_rate": 44100,
+        "source_channels": 2,
+        "source_start_frame": 148176,
+        "source_end_frame": 1493755,
+        "source_slice_pcm_sha256": "3167dfc049f3f2473dbc3cbb8fdf1a6954b9e39dafd415b0bc210bbbc86c53b1",
+        "first_source_word": {
+          "word": "Bonjour,",
+          "start": 3.5199999809265137,
+          "end": 4.319999843835831,
+          "chunk_index": 0,
+          "native_token_indices": [
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "zero_duration_token": false
+        },
+        "last_source_word": {
+          "word": "mars.",
+          "start": 33.143999637603756,
+          "end": 33.62399973118305,
+          "chunk_index": 1,
+          "native_token_indices": [
+            37,
+            38,
+            39
+          ],
+          "zero_duration_token": false
+        },
+        "previous_technical_word": {
+          "word": "37",
+          "start": 1.1999999284744263,
+          "end": 1.6800000071525574,
+          "chunk_index": 0,
+          "native_token_indices": [
+            4,
+            5
+          ],
+          "zero_duration_token": false
+        },
+        "candidate_file": "/workspace/work/tcf-transcripts-official-20261111/edition-replacements/cuts/039802-037/candidate.mp3",
+        "candidate_sha256": "49aaa8ae7bcf977bd77558dc5e4ab8d051668589132bcf52f34d2af8fe5bcf36",
+        "duration_seconds": 30.512125,
+        "category": "moyen",
+        "first_speech_seconds": 0.64,
+        "trailing_non_speech_seconds": 0.400125,
+        "windows": {
+          "start_before": {
+            "file": "/workspace/work/tcf-transcripts-official-20261111/edition-replacements/cuts/039802-037/start_before.flac",
+            "sha256": "febd2c943b538cfcf7f24ec789d2abeba68558bdac23a31ae9b161bd3c0b9384",
+            "source_start_frame": 59976,
+            "source_end_frame": 148176,
+            "available_seconds": 2.0
+          },
+          "start_after": {
+            "file": "/workspace/work/tcf-transcripts-official-20261111/edition-replacements/cuts/039802-037/start_after.flac",
+            "sha256": "23b55e133caf81e067b84e4997b7e69abad81346ffae1cbf214fca3e57446078",
+            "source_start_frame": 148176,
+            "source_end_frame": 236376,
+            "available_seconds": 2.0
+          },
+          "end_before": {
+            "file": "/workspace/work/tcf-transcripts-official-20261111/edition-replacements/cuts/039802-037/end_before.flac",
+            "sha256": "ec794c5b0f78ad96814248638d74ca8c44869ec9c150eaba0fd4f2338ad181b3",
+            "source_start_frame": 1405555,
+            "source_end_frame": 1493755,
+            "available_seconds": 2.0
+          },
+          "end_after": {
+            "file": "/workspace/work/tcf-transcripts-official-20261111/edition-replacements/cuts/039802-037/end_after.flac",
+            "sha256": "341403652afad391774f6686583c6c138d496a53f14cd10e747f554ffed9e1ba",
+            "source_start_frame": 1493755,
+            "source_end_frame": 1581955,
+            "available_seconds": 2.0
+          }
+        },
+        "waveform_file": "/workspace/work/tcf-transcripts-official-20261111/edition-replacements/cuts/039802-037/waveform.svg",
+        "waveform_sha256": "5742606be04ee8c765778505afe013e1e415d82014989ff42e969883dd920d31",
+        "human_listening_performed": false,
+        "production_modified": false
+      },
+      "official_pdf": {
+        "ref": "/lib/audio/tcf/co/magasins/bonjour-societe-fmac.mp3",
+        "status": "resolved_with_matching_official_edition_audio",
+        "similarity": 0.9221,
+        "pdf_collection": "A2 tout public",
+        "pdf_track": 37,
+        "pdf_section": "piste_complete",
+        "pdf_sha256": "9934291935374d8fabecfddf3cc118c8871599f4f71a44853ae861b1e5fa4fba",
+        "file_id": "file_000000004f6081f48837683fdb4fd007",
+        "contexts": [
+          {
+            "bank": "src/tcf/content/a1-a2/co.json",
+            "exercise": "tcf-ss-a2-s3-co-2",
+            "audio": 1
+          }
+        ],
+        "differences": [
+          {
+            "kind": "replace",
+            "current": "02 50 88 23 40",
+            "official": "3912"
+          },
+          {
+            "kind": "insert",
+            "current": "",
+            "official": "postale"
+          },
+          {
+            "kind": "replace",
+            "current": "lecteurs dvd",
+            "official": "imprimantes"
+          },
+          {
+            "kind": "replace",
+            "current": "29",
+            "official": "16"
+          }
+        ],
+        "facts": {
+          "installed": "02 50 88 23 40 ; lecteurs DVD ; du 9 au 29 mars",
+          "pdf": "3912 ; imprimantes ; du 9 au 16 mars"
+        },
+        "source_evidence": "Installed recording reconfirmed in saved Parakeet/Whisper outputs; CTC also available for first three references.",
+        "new_audio_sha256": "49aaa8ae7bcf977bd77558dc5e4ab8d051668589132bcf52f34d2af8fe5bcf36",
+        "correction_report": "corrections-4-editions-20261111.json"
+      },
+      "recognitions": {
+        "parakeet": {
+          "file": "/workspace/work/tcf-transcripts-official-20261111/edition-replacements/final-parakeet/candidate-49aaa8ae7bcf.json",
+          "file_sha256": "9b0d23df64b6fe12e730d0e112b66f0f85c8566335f8004b9859f93335196cb9",
+          "audio_sha256": "49aaa8ae7bcf977bd77558dc5e4ab8d051668589132bcf52f34d2af8fe5bcf36",
+          "text": "Bonjour, c'est la société FMAC. Vous avez participé à notre grand jeu concours le mois dernier. Je vous informe que vous avez gagné une télévision. Félicitations. Rappelez-nous au 3912 pour nous donner votre adresse postale et récupérer votre cadeau. Vous pouvez consulter toutes nos offres promotionnelles sur notre site internet www.fmac.fr Vous avez 3% de réduction sur les imprimantes et 25% de réduction sur les ordinateurs du 9 au 16 mars.",
+          "parameters": {
+            "pipeline_version": 4,
+            "engine": "sherpa-onnx",
+            "version": "2.0.1",
+            "model": "nemo-parakeet-tdt-0.6b-v3-int8",
+            "language": "multilingual_auto_includes_fr",
+            "model_files_sha256": {
+              "/tmp/clairfle-parakeet-preserved-20261105/encoder.int8.onnx": "1afbe69c1ffdabee94755f42e4daf1d93549131a3da11356bda84fcef0f2c479",
+              "/tmp/clairfle-parakeet-preserved-20261105/decoder.int8.onnx": "0222a86147299d4dee90edf95b6d13827edb42ad8b7c9cf0b2582f030937c0b5",
+              "/tmp/clairfle-parakeet-preserved-20261105/joiner.int8.onnx": "cbd02f3696e9944970111fb439d9c3fd365a80374565f13f2b9c7007d253fc98",
+              "/tmp/clairfle-parakeet-preserved-20261105/tokens.txt": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
+            },
+            "provider": "cpu",
+            "decoding_method": "greedy_search",
+            "native_tdt_frame_step_seconds": 0.08,
+            "processing_windows": "Silero VAD utterances merged into <=27s processing windows for inputs >=29s; max 26s speech, 350ms silence, 200ms padding"
+          }
+        },
+        "whisper_small": {
+          "file": "/workspace/work/tcf-transcripts-official-20261111/edition-replacements/whisper/candidate-49aaa8ae7bcf.json",
+          "file_sha256": "cb393e20430d72c692addeea1e07fd734efc977f8ada9e2e4c91a1d9f46c9e76",
+          "audio_sha256": "49aaa8ae7bcf977bd77558dc5e4ab8d051668589132bcf52f34d2af8fe5bcf36",
+          "text": "Bonjour, c'est la société FMAC. Vous avez participé à notre grand jeu concours le mois dernier. Je vous informe que vous avez gagné une télévision. Félicitations. Rappelez-nous au 3912 pour nous donner votre adresse postale et récupérer votre cadeau. Vous pouvez consulter toutes nos offres promotionnelles sur notre site internet www.fmac.fr Vous avez 30% de réduction sur les imprimantes et 25% de réduction sur les ordinateurs du 9 au 16 mars.",
+          "parameters": {
+            "engine": "sherpa-onnx",
+            "version": "2.0.1",
+            "model_files_sha256": {
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-whisper-small/small-encoder.int8.onnx": "4cbe7b22fa9026b843b60a68640c747de05bafb1a11b57edc0e66c232d9f33a9",
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-whisper-small/small-decoder.int8.onnx": "acad50b5c782696e91b55914cc5ab4f756f1532f76e22aa6fc615f39fb69a8ee",
+              "/workspace/work/asr-runtime-20261105/models/sherpa-onnx-whisper-small/small-tokens.txt": "b34b360dbb493e781e479794586d661700670d65564001f23024971d1f2fa126"
+            },
+            "language": "fr",
+            "task": "transcribe",
+            "provider": "cpu",
+            "decoding_method": "greedy_search",
+            "enable_segment_timestamps": false,
+            "enable_token_timestamps": false,
+            "long_audio_segmentation": "Silero VAD utterances merged into <=27s processing windows; max 26s speech, 350ms silence, 200ms padding"
+          }
+        },
+        "whisper_medium": {
+          "file": "/workspace/work/tcf-validation-87-20261111/whisper-medium/candidate-49aaa8ae7bcf.json",
+          "file_sha256": "3c9581ef130ce2a7bf32d71fdd2450ea2a086817ec76463f786770e5104469d0",
+          "audio_sha256": "49aaa8ae7bcf977bd77558dc5e4ab8d051668589132bcf52f34d2af8fe5bcf36",
+          "text": "Bonjour, c'est la société F.M.A.C. Vous avez participé à notre grand jeu concours le mois dernier. Je vous informe que vous avez gagné une télévision. Félicitations. Rappelez-nous au 3912 pour nous donner votre adresse postale et récupérer votre cadeau. Vous pouvez consulter toutes nos offres promotionnelles sur notre site internet www.fmac.fr Vous avez 30% de réduction sur les imprimantes et 25% de réduction sur les ordinateurs du 9 au 16 mars.",
+          "parameters": {
+            "engine": "sherpa-onnx",
+            "version": "2.0.1",
+            "model_files_sha256": {
+              "/tmp/clairfle-whisper-medium-20261111/medium-encoder.int8.onnx": "1c54582b4d829de0089f6cb63bbbdb3bf7555398bacaf855fbecf1a84dfd193e",
+              "/tmp/clairfle-whisper-medium-20261111/medium-decoder.int8.onnx": "595d00a338a365a7bfa0ca7f296cabc639583bef770ab6130df90f49a6412747",
+              "/tmp/clairfle-whisper-medium-20261111/medium-tokens.txt": "b34b360dbb493e781e479794586d661700670d65564001f23024971d1f2fa126"
+            },
+            "language": "fr",
+            "task": "transcribe",
+            "provider": "cpu",
+            "decoding_method": "greedy_search",
+            "enable_segment_timestamps": false,
+            "enable_token_timestamps": false,
+            "long_audio_segmentation": "Silero VAD utterances merged into <=27s processing windows; max 26s speech, 350ms silence, 200ms padding"
+          }
+        }
+      },
+      "selected_transcription": "Bonjour, c’est la société FMAC. Vous avez participé à notre grand jeu-concours le mois dernier. Je vous informe que vous avez gagné une télévision. Félicitations. Rappelez-nous au 3912 pour nous donner votre adresse postale et récupérer votre cadeau. Vous pouvez consulter toutes nos offres promotionnelles sur notre site Internet www.fmac.fr. Vous avez 30 % de réduction sur les imprimantes et 25 % de réduction sur les ordinateurs du 9 au 16 mars.",
+      "changes": [
+        {
+          "bank": "src/tcf/content/a1-a2/co.json",
+          "exercise": "tcf-ss-a2-s3-co-2",
+          "before": {
+            "id": "tcf-ss-a2-s3-co-2",
+            "niveau": "A1-A2",
+            "competence": "CO",
+            "type_exercice": "complet",
+            "theme": "Soutien scolaire · Message 37",
+            "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+            "support": {
+              "audio": "/lib/audio/tcf/co/magasins/bonjour-societe-fmac.mp3",
+              "transcription": "Bonjour, c'est la société FMAC. Vous avez participé à notre grand jeu concours le mois dernier. Je vous informe que vous avez gagné une télévision. Félicitations. Rappelez-nous au 02 50 88 23 40 pour nous donner votre adresse et récupérer votre cadeau. Vous pouvez consulter toutes nos offres promotionnelles sur notre site internet www.fmac.fr. Vous avez 30% de réduction sur les lecteurs DVD et 25% de réduction sur les ordinateurs du 9 au 29 mars."
+            },
+            "questions": [
+              {
+                "enonce": "Quelle société a laissé le message ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "FMAC",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "Autoprix"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "Bureau déco"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "FMAC"
+                  }
+                }
+              },
+              {
+                "enonce": "Quand la personne a-t-elle participé au jeu-concours ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "Le mois dernier",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "La semaine dernière"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "L’année dernière"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "Le mois dernier"
+                  }
+                }
+              },
+              {
+                "enonce": "Quel cadeau la personne a-t-elle gagné ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "Une télévision",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "Un ordinateur"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "Un lecteur DVD"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "Une télévision"
+                  },
+                  "qcm_image": {
+                    "melanger": true,
+                    "choix": [
+                      {
+                        "id": "a",
+                        "correct": true,
+                        "image": "/lib/images/tcf/qcm-audit/co834-television-dessinee.webp"
+                      },
+                      {
+                        "id": "b",
+                        "image": "/lib/images/tcf/qcm-audit/co834-ordinateur-dessine.webp"
+                      },
+                      {
+                        "id": "c",
+                        "image": "/lib/images/tcf/qcm-audit/c9dcae8daa9f.webp"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "enonce": "Que doit-elle faire pour récupérer son cadeau ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "Rappeler la société",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "Aller à la mairie"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "Envoyer une lettre recommandée"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "Rappeler la société"
+                  }
+                }
+              },
+              {
+                "enonce": "Quelle information doit-elle donner à la société ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "Son adresse",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "Son salaire"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "Son numéro de passeport"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "Son adresse"
+                  }
+                }
+              },
+              {
+                "enonce": "Où peut-on consulter les offres promotionnelles ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "Sur le site Internet de la société",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "Dans une bibliothèque"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "À la poste"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "Sur le site Internet de la société"
+                  }
+                }
+              },
+              {
+                "enonce": "Quelle réduction s’applique aux lecteurs DVD ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "30 %",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "25 %"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "50 %"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "30 %"
+                  }
+                }
+              },
+              {
+                "enonce": "Quelle réduction s’applique aux ordinateurs ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "25 %",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "30 %"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "40 %"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "25 %"
+                  }
+                }
+              },
+              {
+                "enonce": "Pendant quelle période les promotions ont-elles lieu ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "Du 9 au 29 mars",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "Du 9 au 29 avril"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "Du 19 au 29 mars"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "Du 9 au 29 mars"
+                  }
+                }
+              }
+            ],
+            "consigne_supplementaire": null,
+            "scenario": "magasins",
+            "scene": "Bonjour société FMAC"
+          },
+          "after": {
+            "id": "tcf-ss-a2-s3-co-2",
+            "niveau": "A1-A2",
+            "competence": "CO",
+            "type_exercice": "complet",
+            "theme": "Soutien scolaire · Message 37",
+            "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+            "support": {
+              "audio": "/lib/audio/tcf/co/magasins/bonjour-societe-fmac.mp3",
+              "transcription": "Bonjour, c’est la société FMAC. Vous avez participé à notre grand jeu-concours le mois dernier. Je vous informe que vous avez gagné une télévision. Félicitations. Rappelez-nous au 3912 pour nous donner votre adresse postale et récupérer votre cadeau. Vous pouvez consulter toutes nos offres promotionnelles sur notre site Internet www.fmac.fr. Vous avez 30 % de réduction sur les imprimantes et 25 % de réduction sur les ordinateurs du 9 au 16 mars."
+            },
+            "questions": [
+              {
+                "enonce": "Quelle société a laissé le message ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "FMAC",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "Autoprix"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "Bureau déco"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "FMAC"
+                  }
+                }
+              },
+              {
+                "enonce": "Quand la personne a-t-elle participé au jeu-concours ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "Le mois dernier",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "La semaine dernière"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "L’année dernière"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "Le mois dernier"
+                  }
+                }
+              },
+              {
+                "enonce": "Quel cadeau la personne a-t-elle gagné ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "Une télévision",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "Un ordinateur"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "Un lecteur DVD"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "Une télévision"
+                  },
+                  "qcm_image": {
+                    "melanger": true,
+                    "choix": [
+                      {
+                        "id": "a",
+                        "correct": true,
+                        "image": "/lib/images/tcf/qcm-audit/co834-television-dessinee.webp"
+                      },
+                      {
+                        "id": "b",
+                        "image": "/lib/images/tcf/qcm-audit/co834-ordinateur-dessine.webp"
+                      },
+                      {
+                        "id": "c",
+                        "image": "/lib/images/tcf/qcm-audit/c9dcae8daa9f.webp"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "enonce": "Que doit-elle faire pour récupérer son cadeau ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "Rappeler la société",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "Aller à la mairie"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "Envoyer une lettre recommandée"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "Rappeler la société"
+                  }
+                }
+              },
+              {
+                "enonce": "Quelle information doit-elle donner à la société ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "Son adresse postale",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "Son salaire"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "Son numéro de passeport"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "Son adresse postale"
+                  }
+                }
+              },
+              {
+                "enonce": "Où peut-on consulter les offres promotionnelles ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "Sur le site Internet de la société",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "Dans une bibliothèque"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "À la poste"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "Sur le site Internet de la société"
+                  }
+                }
+              },
+              {
+                "enonce": "Quelle réduction s’applique aux imprimantes ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "30 %",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "25 %"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "50 %"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "30 %"
+                  }
+                }
+              },
+              {
+                "enonce": "Quelle réduction s’applique aux ordinateurs ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "25 %",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "30 %"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "40 %"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "25 %"
+                  }
+                }
+              },
+              {
+                "enonce": "Pendant quelle période les promotions ont-elles lieu ?",
+                "type_reponse": "qcm_texte",
+                "points": 1,
+                "melanger": true,
+                "choix": [
+                  {
+                    "id": "a",
+                    "texte": "Du 9 au 16 mars",
+                    "correct": true
+                  },
+                  {
+                    "id": "b",
+                    "texte": "Du 9 au 16 avril"
+                  },
+                  {
+                    "id": "c",
+                    "texte": "Du 19 au 26 mars"
+                  }
+                ],
+                "formes": {
+                  "lignes": {
+                    "nb_lignes": 1,
+                    "reponse_modele": "Du 9 au 16 mars"
+                  }
+                }
+              }
+            ],
+            "consigne_supplementaire": null,
+            "scenario": "magasins",
+            "scene": "Bonjour société FMAC"
+          }
+        }
+      ],
+      "human_listening_performed": false,
+      "status": "installed",
+      "review_notes": "Deux modèles Whisper français et Parakeet comparés ; les quatre valeurs d’édition, débuts et fins sont recoupés. Pour FMAC, le 3 % de Parakeet est écarté au profit de 30 %, lu dans le PDF et reconnu par les deux modèles Whisper."
+    }
+  ]
+}

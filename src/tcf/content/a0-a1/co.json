@@ -2054,7 +2054,7 @@
     "type_exercice": "complet",
     "theme": "Test blanc A1 Junior · série 3 · Le cours de musique",
     "scenario": "loisirs",
-    "scene": "Le cours de musique",
+    "scene": "Cours de piano",
     "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
     "support": {
       "audio": "/lib/audio/tcf/co/loisirs/le-cours-de-musique.mp3",
@@ -13409,7 +13409,7 @@
     "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
     "support": {
       "audio": "/lib/audio/tcf/co/magasins/demain-venez-participer-grande.mp3",
-      "transcription": "Demain, venez participer à la grande fête de la lecture à la Librairie du Parc. A 14h, vous pouvez écouter des histoires racontées par Maya. A 16h, venez découvrir le groupe Orchestra et ses chansons pour danser. Et pour l'achat de livres, on vous offre un postillo."
+      "transcription": "Demain, venez participer à la grande fête de la lecture à la Librairie du Parc. A 14h, vous pouvez écouter des histoires racontées par Maya. A 16h, venez découvrir le groupe Orquestra et ses chansons pour danser. Et pour l'achat de livres, on vous offre un beau stylo."
     },
     "questions": [
       {
@@ -13630,8 +13630,8 @@
       }
     ],
     "consigne_supplementaire": null,
-    "scenario": "magasins",
-    "scene": "Demain venez participer grande"
+    "scenario": "loisirs",
+    "scene": "Fête de la lecture à la librairie"
   },
   {
     "id": "tcf-ss-a1-s2-co-4",
@@ -14310,8 +14310,8 @@
       }
     ],
     "consigne_supplementaire": null,
-    "scenario": "maison",
-    "scene": "L'appel à une amie"
+    "scenario": "vie-quotidienne",
+    "scene": "Appeler une amie"
   },
   {
     "id": "tcf-ss-a1-s3-co-4",
@@ -21622,7 +21622,7 @@
     "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
     "support": {
       "audio": "/lib/audio/tcf/co/vie-quotidienne/radio-france.mp3",
-      "transcription": "Radio France, il est 10 h.\nLe nouveau musée d'art moderne va ouvrir jeudi prochain.\nLes horaires sont de 9 h à 19 h du mardi au vendredi, et de 9 h 30 à 17 h 30 le samedi et le dimanche.\nRadio France offre vingt places.\nPour participer, appelez le 0 805 15 12 15."
+      "transcription": "Radio France, il est 10 h. Le nouveau musée d’art moderne va ouvrir jeudi prochain. Les horaires sont de 9 h à 19 h du mardi au vendredi, et de 9 h 30 à 17 h 30 le samedi. Radio France offre vingt places. Pour participer, appelez le 0 805 15 12 15."
     },
     "questions": [
       {
@@ -21788,7 +21788,7 @@
         }
       },
       {
-        "enonce": "À quelle heure le musée ouvre-t-il le week-end ?",
+        "enonce": "À quelle heure le musée ouvre-t-il le samedi ?",
         "type_reponse": "qcm_texte",
         "points": 1,
         "melanger": true,
@@ -21833,7 +21833,7 @@
         }
       },
       {
-        "enonce": "À quelle heure le musée ferme-t-il le week-end ?",
+        "enonce": "À quelle heure le musée ferme-t-il le samedi ?",
         "type_reponse": "qcm_texte",
         "points": 1,
         "melanger": true,
@@ -22124,7 +22124,7 @@
     "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
     "support": {
       "audio": "/lib/audio/tcf/co/vie-quotidienne/bonsoir-votre-commande-prete.mp3",
-      "transcription": "Bonsoir, votre commande est prête à la boulangerie.\nVous pouvez la récupérer dès 15 heures.\nComme tous les lundis et mardis, la boutique ferme à 18 heures 30 aujourd'hui.\nOn ferme à 20 heures les autres jours.\nJe vous rappelle que nous n'acceptons pas les chèques.\nBonne journée."
+      "transcription": "Bonsoir, votre commande est prête à la boulangerie. Vous pouvez la récupérer dès 15 h. Comme tous les lundis et mardis, la boutique ferme à 18 h 30 aujourd’hui. On ferme à 20 h les autres jours. Je vous rappelle que nous acceptons seulement le paiement en espèces. Bonne journée."
     },
     "questions": [
       {
@@ -22290,45 +22290,45 @@
         }
       },
       {
-        "enonce": "Quel moyen de paiement est refusé ?",
+        "enonce": "Quel est le seul moyen de paiement accepté ?",
         "type_reponse": "qcm_texte",
         "points": 1,
         "melanger": true,
         "choix": [
           {
             "id": "a",
-            "texte": "Les chèques",
+            "texte": "Les espèces",
             "correct": true
           },
           {
             "id": "b",
-            "texte": "Les espèces"
+            "texte": "La carte bancaire"
           },
           {
             "id": "c",
-            "texte": "La carte bancaire"
+            "texte": "Les chèques"
           }
         ],
         "formes": {
           "lignes": {
             "nb_lignes": 1,
-            "reponse_modele": "Les chèques"
+            "reponse_modele": "Les espèces"
           },
           "qcm_image": {
             "melanger": true,
             "choix": [
               {
                 "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/qcm-audit/co834-cheque-dessine.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-especes-dessinees.webp",
+                "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/qcm-audit/co834-especes-dessinees.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-carte-bancaire-dessinee.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/qcm-audit/co834-carte-bancaire-dessinee.webp"
+                "image": "/lib/images/tcf/qcm-audit/co834-cheque-dessine.webp"
               }
             ]
           }
@@ -23824,8 +23824,8 @@
       }
     ],
     "consigne_supplementaire": null,
-    "scenario": "vie-quotidienne",
-    "scene": "Salut c'est Hugo"
+    "scenario": "loisirs",
+    "scene": "Invitation à courir au parc"
   },
   {
     "id": "tcf-ss-a1-s14-co-3",
@@ -26685,7 +26685,7 @@
     "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
     "support": {
       "audio": "/lib/audio/tcf/co/loisirs/bienvenue-parc-asterix-1.mp3",
-      "transcription": "Chers clients, le magasin ferme dans 30 minutes. Merci de vous présenter à la caisse pour payer vos achats. Demain matin, le magasin ouvre à 9h15 et ferme à 20h. Le magasin proposera des promotions toute la journée. Merci et bonne soirée."
+      "transcription": "Chers clients, votre magasin de chaussures ferme dans 20 minutes. Merci de vous présenter à la caisse pour payer vos achats. Demain matin, le magasin ouvre à 9 h 15 et ferme à 20 h. Le magasin proposera des promotions toute la journée. Merci et bonne soirée."
     },
     "questions": [
       {
@@ -26696,7 +26696,7 @@
         "choix": [
           {
             "id": "a",
-            "texte": "30 minutes",
+            "texte": "20 minutes",
             "correct": true
           },
           {
@@ -26711,14 +26711,14 @@
         "formes": {
           "lignes": {
             "nb_lignes": 1,
-            "reponse_modele": "30 minutes"
+            "reponse_modele": "20 minutes"
           },
           "qcm_image": {
             "melanger": true,
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/tcf/qcm-audit/duree-30-minutes.webp",
+                "image": "/lib/images/tcf/qcm-audit/duree-20-minutes.webp",
                 "correct": true
               },
               {
@@ -26897,8 +26897,8 @@
       }
     ],
     "consigne_supplementaire": null,
-    "scenario": "loisirs",
-    "scene": "Bienvenue parc Astérix"
+    "scenario": "magasins",
+    "scene": "Fermeture du magasin de chaussures"
   },
   {
     "id": "tcf-ss-a1-s18-co-4",
@@ -27193,8 +27193,8 @@
       }
     ],
     "consigne_supplementaire": null,
-    "scenario": "loisirs",
-    "scene": "Radio Zik"
+    "scenario": "radio",
+    "scene": "Jeu de Radio Zik"
   },
   {
     "id": "tcf-ss-a1-s19-co-1",
@@ -27481,7 +27481,7 @@
     ],
     "consigne_supplementaire": null,
     "scenario": "loisirs",
-    "scene": "Radio Cinéma"
+    "scene": "Programme de cinéma"
   },
   {
     "id": "tcf-ss-a1-s19-co-2",
@@ -32732,8 +32732,8 @@
       }
     ],
     "consigne_supplementaire": null,
-    "scenario": "vie-quotidienne",
-    "scene": "La société Allô Paul"
+    "scenario": "maison",
+    "scene": "Dépannage d’appareils électriques"
   },
   {
     "id": "tcf-ss-a1-s25-co-2",
@@ -38577,8 +38577,8 @@
       }
     ],
     "consigne_supplementaire": null,
-    "scenario": "vie-quotidienne",
-    "scene": "Vous toussez"
+    "scenario": "sante",
+    "scene": "Publicité pour des pastilles"
   },
   {
     "id": "tcf-ss-a1-s31-co-3",
@@ -39554,8 +39554,8 @@
       }
     ],
     "consigne_supplementaire": null,
-    "scenario": "vie-quotidienne",
-    "scene": "Bonjour voudrais prix"
+    "scenario": "transports",
+    "scene": "Choisir un billet de train"
   },
   {
     "id": "tcf-ss-a1-s32-co-3",
@@ -43486,8 +43486,8 @@
       }
     ],
     "consigne_supplementaire": null,
-    "scenario": "vie-quotidienne",
-    "scene": "Alors va cinéma ou"
+    "scenario": "loisirs",
+    "scene": "Sortie au cinéma"
   },
   {
     "id": "tcf-ss-a1-s37-co-2",
@@ -44544,8 +44544,8 @@
       }
     ],
     "consigne_supplementaire": null,
-    "scenario": "vie-quotidienne",
-    "scene": "Bonjour m'appelle Tim"
+    "scenario": "travail",
+    "scene": "Les horaires des serveurs"
   },
   {
     "id": "tcf-ss-a1-s38-co-2",
@@ -46616,7 +46616,7 @@
     ],
     "consigne_supplementaire": null,
     "scenario": "vie-quotidienne",
-    "scene": "Paolo Bonjour"
+    "scene": "Faire connaissance"
   },
   {
     "id": "tcf-ss-a1-s40-co-3",
@@ -54471,7 +54471,7 @@
     "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
     "support": {
       "audio": "/lib/audio/tcf/co/vie-quotidienne/vous-voulez-apprendre-langue.mp3",
-      "transcription": "Vous voulez apprendre une langue étrangère ? L'école de langue ABC vous propose des cours d’anglais, d’espagnol, d’italien et d’allemand pour enfants, adolescents et adultes, du lundi au samedi. L'école est située boulevard de la République. Pour plus d'informations, téléphonez au 05-43-98-66-54. ou allez sur notre site internet www.ecole-abc.fr"
+      "transcription": "Vous voulez apprendre une langue étrangère ? L'école de langue ABC vous propose des cours d’anglais, d’espagnol, d’italien et d’allemand pour enfants, adolescents et adultes, du lundi au samedi. L'école est située boulevard de la République. Pour plus d'informations, téléphonez au 05 43 98 76 54. ou allez sur notre site internet www.ecole-abc.fr"
     },
     "questions": [
       {
@@ -54482,7 +54482,7 @@
         "choix": [
           {
             "id": "a",
-            "texte": "Abécée",
+            "texte": "ABC",
             "correct": true
           },
           {
@@ -54497,7 +54497,7 @@
         "formes": {
           "lignes": {
             "nb_lignes": 1,
-            "reponse_modele": "Abécée"
+            "reponse_modele": "ABC"
           }
         }
       },
@@ -54611,8 +54611,8 @@
       }
     ],
     "consigne_supplementaire": null,
-    "scenario": "vie-quotidienne",
-    "scene": "Vous voulez apprendre langue"
+    "scenario": "ecole",
+    "scene": "Cours de langues à l’école ABC"
   },
   {
     "id": "tcf-ss-a1-s50-co-2",
@@ -56393,7 +56393,7 @@
     ],
     "consigne_supplementaire": null,
     "scenario": "transports",
-    "scene": "Mesdames messieurs train numéro"
+    "scene": "Annulation d’un train"
   },
   {
     "id": "tcf-ss-a1-s53-co-2",
@@ -56581,7 +56581,7 @@
     ],
     "consigne_supplementaire": null,
     "scenario": "transports",
-    "scene": "Mesdames messieurs l'embarquement vol"
+    "scene": "Embarquement du vol AF717"
   },
   {
     "id": "tcf-ss-a1-s53-co-3",
@@ -56903,7 +56903,7 @@
     ],
     "consigne_supplementaire": null,
     "scenario": "transports",
-    "scene": "Mesdames messieurs station République"
+    "scene": "Fermeture de la station République"
   },
   {
     "id": "tcf-ss-a1-s54-co-1",
@@ -57087,7 +57087,7 @@
         "choix": [
           {
             "id": "a",
-            "texte": "Mikael",
+            "texte": "Mickaël",
             "correct": true
           },
           {
@@ -57102,7 +57102,7 @@
         "formes": {
           "lignes": {
             "nb_lignes": 1,
-            "reponse_modele": "Mikael"
+            "reponse_modele": "Mickaël"
           }
         },
         "audio": 1
@@ -58548,7 +58548,7 @@
     "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
     "support": {
       "audio": "/lib/audio/tcf/co/travail/bonjour-bienvenue-camping-beau-1.mp3",
-      "transcription": "Bonjour et bienvenue au camping Beauval Bonjour, on voudrait réserver pour deux nuits s'il vous plaît Vous avez une tente, un camping-car, une caravane peut-être ? Non ! On voudrait un bungalow pour quatre. Un moment, je regarde les disponibilités. Il me reste deux bungalows pour quatre. Je vous montre sur le plan. Un ici, devant la rivière, et un autre à droite de la forêt. Qu'est-ce que vous préférez ? La rivière ! La rivière ! - Devant la forêt, non ? - La rivière ! La rivière ! - Bon, d'accord, à côté de la rivière. Et, c'est combien, s'il vous plaît ? - 160 euros pour deux nuits. C'est à quel nom ? - Nocella. Voilà ma carte. - Merci. Et voilà la clé du bungalow numéro 23."
+      "transcription": "Bonjour et bienvenue au camping Beauval Bonjour, on voudrait réserver pour deux nuits s'il vous plaît Vous avez une tente, un camping-car, une caravane peut-être ? Non ! On voudrait un bungalow pour quatre. Un moment, je regarde les disponibilités. Il me reste deux bungalows pour quatre. Je vous montre sur le plan. Un ici, devant la rivière, et un autre à droite de la forêt. Qu'est-ce que vous préférez ? La rivière ! La rivière ! — Devant la forêt, non ? — La rivière ! La rivière ! — Bon, d'accord, à côté de la rivière. Et, c'est combien, s'il vous plaît ? — 160 euros pour deux nuits. C'est à quel nom ? — Nocella. Voilà ma carte. — Merci. Et voilà la clé du bungalow numéro 23."
     },
     "questions": [
       {
@@ -58841,8 +58841,8 @@
       }
     ],
     "consigne_supplementaire": null,
-    "scenario": "travail",
-    "scene": "Bonjour bienvenue camping Beau"
+    "scenario": "loisirs",
+    "scene": "Réserver un bungalow"
   },
   {
     "id": "tcf-ss-a1-s56-co-4",
@@ -59012,7 +59012,7 @@
     ],
     "consigne_supplementaire": null,
     "scenario": "travail",
-    "scene": "Bonjour ici Dujardin"
+    "scene": "Confirmer une réunion"
   },
   {
     "id": "tcf-ss-a1-s57-co-2",

@@ -21264,46 +21264,96 @@
     {
       "ref": "/lib/audio/tcf/co/magasins/bonjour-societe-fmac.mp3",
       "previous_sha256": "f3c48de95059cbb7cde9d78b890e7ddffd1b185240c2506e3f5433adbf95f43d",
-      "candidate_sha256": "68809e62b5a16af0a5f83259bb9fdd81c81c808b077e3e68236291c26b7ad930",
+      "candidate_sha256": "49aaa8ae7bcf977bd77558dc5e4ab8d051668589132bcf52f34d2af8fe5bcf36",
       "rollback_git_blob": "b30e9c8273c3f3308ba9273cc34027d8dc7bbc9f",
-      "source_id": "additional-20261102:mdf-a2-abc-direct:86:4d678702e0e2:f9841f3d",
-      "source_sha256": "4d678702e0e2200d7180d807ca098f899b50b5cf7dc939378a4b4d16a6e7d148",
+      "source_id": "039802:037",
+      "source_sha256": "9c1534f19b6bc83343652811e2fa32b06f6192b678340cdf30194bfc108117de",
       "technical_check": {
         "status": "technical_integrity_passed",
-        "sha256": "68809e62b5a16af0a5f83259bb9fdd81c81c808b077e3e68236291c26b7ad930",
-        "duration": 49.893878,
-        "category": "long",
+        "sha256": "49aaa8ae7bcf977bd77558dc5e4ab8d051668589132bcf52f34d2af8fe5bcf36",
+        "duration": 30.512125,
+        "category": "moyen",
         "full_decode_checked": true,
         "provenance": {
-          "type": "single_source_slice",
-          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014322-d8f9ca981a/manifest.json",
-          "manifest_sha256": "66f3da21dbc543399e8952009fb5f6cf75ee92001356994ced643505ef668665",
-          "lossless_sha256": "080b6f58855ba4a184a1fef427bb2e923aa6d92333eb8aacd64aae57da576b6d"
-        },
-        "human_listening_performed": false,
-        "boundary_signal": {
-          "status": "needs_boundary_review",
-          "leading_quiet_seconds": 0.3,
-          "trailing_quiet_seconds": 0.01,
-          "relative_rms_threshold": 0.0078782,
-          "safe_quiet_margins": false,
-          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+          "type": "edition_correction_native_source_slice",
+          "report": "corrections-4-editions-20261111.json"
         },
         "boundary_vad": {
-          "first_speech_seconds": 0.288,
-          "trailing_non_speech_seconds": 0.168,
-          "speech_region_count": 23,
           "safe_voiced_margins": true,
-          "method": "Silero VAD with no padding; supplementary speech-vs-music evidence, not phonetic certification."
-        }
+          "first_speech_seconds": 0.64,
+          "trailing_non_speech_seconds": 0.400125
+        },
+        "human_listening_performed": false
       },
-      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation": "official_pdf_and_three_recognitions_reviewed",
       "editorial_reason": "Reconnaissances finales comparées et questions/réponses relues ; désaccords numériques maintenus en attente.",
       "numeric_resolution": null,
       "previous_duration": 52.92,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "validation_engines": [
+        "whisper_small",
+        "whisper_medium"
+      ],
+      "recognition_engines": [
+        "parakeet",
+        "whisper_small",
+        "whisper_medium"
+      ],
+      "final_transcript_review_pending": false,
+      "edition_correction_report": "corrections-4-editions-20261111.json",
+      "edition_correction_history": [
+        {
+          "ref": "/lib/audio/tcf/co/magasins/bonjour-societe-fmac.mp3",
+          "previous_sha256": "f3c48de95059cbb7cde9d78b890e7ddffd1b185240c2506e3f5433adbf95f43d",
+          "candidate_sha256": "68809e62b5a16af0a5f83259bb9fdd81c81c808b077e3e68236291c26b7ad930",
+          "rollback_git_blob": "b30e9c8273c3f3308ba9273cc34027d8dc7bbc9f",
+          "source_id": "additional-20261102:mdf-a2-abc-direct:86:4d678702e0e2:f9841f3d",
+          "source_sha256": "4d678702e0e2200d7180d807ca098f899b50b5cf7dc939378a4b4d16a6e7d148",
+          "technical_check": {
+            "status": "technical_integrity_passed",
+            "sha256": "68809e62b5a16af0a5f83259bb9fdd81c81c808b077e3e68236291c26b7ad930",
+            "duration": 49.893878,
+            "category": "long",
+            "full_decode_checked": true,
+            "provenance": {
+              "type": "single_source_slice",
+              "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014322-d8f9ca981a/manifest.json",
+              "manifest_sha256": "66f3da21dbc543399e8952009fb5f6cf75ee92001356994ced643505ef668665",
+              "lossless_sha256": "080b6f58855ba4a184a1fef427bb2e923aa6d92333eb8aacd64aae57da576b6d"
+            },
+            "human_listening_performed": false,
+            "boundary_signal": {
+              "status": "needs_boundary_review",
+              "leading_quiet_seconds": 0.3,
+              "trailing_quiet_seconds": 0.01,
+              "relative_rms_threshold": 0.0078782,
+              "safe_quiet_margins": false,
+              "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+            },
+            "boundary_vad": {
+              "first_speech_seconds": 0.288,
+              "trailing_non_speech_seconds": 0.168,
+              "speech_region_count": 23,
+              "safe_voiced_margins": true,
+              "method": "Silero VAD with no padding; supplementary speech-vs-music evidence, not phonetic certification."
+            }
+          },
+          "validation": "editorial_review_and_two_final_file_recognitions",
+          "editorial_reason": "Reconnaissances finales comparées et questions/réponses relues ; désaccords numériques maintenus en attente.",
+          "numeric_resolution": null,
+          "previous_duration": 52.92,
+          "previous_pool": null,
+          "question_changes": [],
+          "human_listening_performed": false
+        }
+      ],
+      "final_transcript_validation": {
+        "status": "validated_with_official_pdf_and_recorded_recognitions",
+        "candidate_sha256": "49aaa8ae7bcf977bd77558dc5e4ab8d051668589132bcf52f34d2af8fe5bcf36",
+        "report": "corrections-4-editions-20261111.json"
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/magasins/tiens-jacqueline-comment-vas-2.mp3",
@@ -24561,80 +24611,130 @@
     {
       "ref": "/lib/audio/tcf/co/vie-quotidienne/radio-france.mp3",
       "previous_sha256": "25f0c3f9ed680426f5ce97ef0916c6d945c058e553aeb1f0725291663c426cdc",
-      "candidate_sha256": "9ff5fb66c13ec911ff92bdc3b2cb315f88854a646b25910a961eb28b9d5fa96c",
+      "candidate_sha256": "79bf5c1bdf32bfa436a2aee97abe502f3ee0dcc5d91f01ef4bb4821909f215ed",
       "rollback_git_blob": "307b719d3790f3c91686d454349aafce99537352",
-      "source_id": "additional-20261102:mdf-a1-abc:21:9d63b76876e1:a27d4dd0",
-      "source_sha256": "9d63b76876e1b7326ed6132b22d519104ac72d9f4773d5ebf31490e4ba01c0b2",
+      "source_id": "039803:021",
+      "source_sha256": "6f9b1144dfbfc4249cf3b9f48f0517a52acb62289addf264c8aaea4d3c18b194",
       "technical_check": {
         "status": "technical_integrity_passed",
-        "sha256": "9ff5fb66c13ec911ff92bdc3b2cb315f88854a646b25910a961eb28b9d5fa96c",
-        "duration": 28.66,
+        "sha256": "79bf5c1bdf32bfa436a2aee97abe502f3ee0dcc5d91f01ef4bb4821909f215ed",
+        "duration": 25.12,
         "category": "moyen",
         "full_decode_checked": true,
         "provenance": {
-          "type": "word_anchored_native_pcm_boundary_repair",
-          "source_sha256": "9d63b76876e1b7326ed6132b22d519104ac72d9f4773d5ebf31490e4ba01c0b2",
-          "proof": {
-            "previous_sha256": "ac91e18a427e62f922e41ccb43ba9180f5d986f6bc8555b8e75e02c313225408",
-            "previous_file": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014149-c86d5565dd/additional-20261102-mdf-a1-abc-21-9d63b76876e1-a27d4dd0-d1/candidate.mp3",
-            "status": "new_candidate_requires_two_recognitions",
-            "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/ac91e18a427e62f922e41ccb43ba9180f5d986f6bc8555b8e75e02c313225408-126567-1390473/candidate.mp3",
-            "sha256": "9ff5fb66c13ec911ff92bdc3b2cb315f88854a646b25910a961eb28b9d5fa96c",
-            "source_sha256": "9d63b76876e1b7326ed6132b22d519104ac72d9f4773d5ebf31490e4ba01c0b2",
-            "source_file": "/workspace/work/tcf-audio-additional-20261102-work/incoming/a1/mdf-a1-abc/MDF_A1_ABC-DELF_AUDIO/09035257_021.mp3",
-            "source_decoded_pcm_sha256": "fbafc1d3de766aec8615ece532f827609fc979f06f57c9d9244e226de4aba88d",
-            "source_sample_rate": 44100,
-            "source_channels": 1,
-            "source_start_frame": 126567,
-            "source_end_frame": 1390473,
-            "source_start": 2.87,
-            "source_end": 31.53,
-            "source_slice_pcm_sha256": "e1df1cbe3f4329988b7e96e3205801fdac854378a060051a7c44ae6b88bf90b3",
-            "previous_start": 4.04,
-            "previous_end": 31.328004535147393,
-            "word_anchors_and_signal": [
-              {
-                "edge": "start",
-                "quiet_interval": [
-                  1.8800000000000001,
-                  2.95
-                ],
-                "first_word": "Radio",
-                "previous_word_end": 1.8
-              },
-              {
-                "edge": "end",
-                "quiet_interval": [
-                  31.41,
-                  32.199999999999996
-                ],
-                "last_word": "quinze.",
-                "next_word_start": 33.081428571428575
-              }
-            ],
-            "human_listening_performed": false
-          }
-        },
-        "human_listening_performed": false,
-        "boundary_signal": {
-          "leading_quiet_seconds": 0.09,
-          "trailing_quiet_seconds": 0.17,
-          "relative_rms_threshold": 0.008066579923033715,
-          "safe_quiet_margins": true
+          "type": "edition_correction_native_source_slice",
+          "report": "corrections-4-editions-20261111.json"
         },
         "boundary_vad": {
-          "first_speech_seconds": 1.536,
-          "trailing_non_speech_seconds": 0.116,
-          "safe_voiced_margins": false
-        }
+          "safe_voiced_margins": true,
+          "first_speech_seconds": 0.448,
+          "trailing_non_speech_seconds": 0.576
+        },
+        "human_listening_performed": false
       },
-      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation": "official_pdf_and_three_recognitions_reviewed",
       "editorial_reason": "Texte, questions et réponses relus en regard des reconnaissances finales ; frontières incertaines maintenues en attente.",
       "numeric_resolution": null,
       "previous_duration": 29.78,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "validation_engines": [
+        "whisper_small",
+        "whisper_medium"
+      ],
+      "recognition_engines": [
+        "parakeet",
+        "whisper_small",
+        "whisper_medium"
+      ],
+      "final_transcript_review_pending": false,
+      "edition_correction_report": "corrections-4-editions-20261111.json",
+      "edition_correction_history": [
+        {
+          "ref": "/lib/audio/tcf/co/vie-quotidienne/radio-france.mp3",
+          "previous_sha256": "25f0c3f9ed680426f5ce97ef0916c6d945c058e553aeb1f0725291663c426cdc",
+          "candidate_sha256": "9ff5fb66c13ec911ff92bdc3b2cb315f88854a646b25910a961eb28b9d5fa96c",
+          "rollback_git_blob": "307b719d3790f3c91686d454349aafce99537352",
+          "source_id": "additional-20261102:mdf-a1-abc:21:9d63b76876e1:a27d4dd0",
+          "source_sha256": "9d63b76876e1b7326ed6132b22d519104ac72d9f4773d5ebf31490e4ba01c0b2",
+          "technical_check": {
+            "status": "technical_integrity_passed",
+            "sha256": "9ff5fb66c13ec911ff92bdc3b2cb315f88854a646b25910a961eb28b9d5fa96c",
+            "duration": 28.66,
+            "category": "moyen",
+            "full_decode_checked": true,
+            "provenance": {
+              "type": "word_anchored_native_pcm_boundary_repair",
+              "source_sha256": "9d63b76876e1b7326ed6132b22d519104ac72d9f4773d5ebf31490e4ba01c0b2",
+              "proof": {
+                "previous_sha256": "ac91e18a427e62f922e41ccb43ba9180f5d986f6bc8555b8e75e02c313225408",
+                "previous_file": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014149-c86d5565dd/additional-20261102-mdf-a1-abc-21-9d63b76876e1-a27d4dd0-d1/candidate.mp3",
+                "status": "new_candidate_requires_two_recognitions",
+                "file": "/workspace/work/tcf-bascule-complete-20261105/boundary-repairs/ac91e18a427e62f922e41ccb43ba9180f5d986f6bc8555b8e75e02c313225408-126567-1390473/candidate.mp3",
+                "sha256": "9ff5fb66c13ec911ff92bdc3b2cb315f88854a646b25910a961eb28b9d5fa96c",
+                "source_sha256": "9d63b76876e1b7326ed6132b22d519104ac72d9f4773d5ebf31490e4ba01c0b2",
+                "source_file": "/workspace/work/tcf-audio-additional-20261102-work/incoming/a1/mdf-a1-abc/MDF_A1_ABC-DELF_AUDIO/09035257_021.mp3",
+                "source_decoded_pcm_sha256": "fbafc1d3de766aec8615ece532f827609fc979f06f57c9d9244e226de4aba88d",
+                "source_sample_rate": 44100,
+                "source_channels": 1,
+                "source_start_frame": 126567,
+                "source_end_frame": 1390473,
+                "source_start": 2.87,
+                "source_end": 31.53,
+                "source_slice_pcm_sha256": "e1df1cbe3f4329988b7e96e3205801fdac854378a060051a7c44ae6b88bf90b3",
+                "previous_start": 4.04,
+                "previous_end": 31.328004535147393,
+                "word_anchors_and_signal": [
+                  {
+                    "edge": "start",
+                    "quiet_interval": [
+                      1.8800000000000001,
+                      2.95
+                    ],
+                    "first_word": "Radio",
+                    "previous_word_end": 1.8
+                  },
+                  {
+                    "edge": "end",
+                    "quiet_interval": [
+                      31.41,
+                      32.199999999999996
+                    ],
+                    "last_word": "quinze.",
+                    "next_word_start": 33.081428571428575
+                  }
+                ],
+                "human_listening_performed": false
+              }
+            },
+            "human_listening_performed": false,
+            "boundary_signal": {
+              "leading_quiet_seconds": 0.09,
+              "trailing_quiet_seconds": 0.17,
+              "relative_rms_threshold": 0.008066579923033715,
+              "safe_quiet_margins": true
+            },
+            "boundary_vad": {
+              "first_speech_seconds": 1.536,
+              "trailing_non_speech_seconds": 0.116,
+              "safe_voiced_margins": false
+            }
+          },
+          "validation": "editorial_review_and_two_final_file_recognitions",
+          "editorial_reason": "Texte, questions et réponses relus en regard des reconnaissances finales ; frontières incertaines maintenues en attente.",
+          "numeric_resolution": null,
+          "previous_duration": 29.78,
+          "previous_pool": null,
+          "question_changes": [],
+          "human_listening_performed": false
+        }
+      ],
+      "final_transcript_validation": {
+        "status": "validated_with_official_pdf_and_recorded_recognitions",
+        "candidate_sha256": "79bf5c1bdf32bfa436a2aee97abe502f3ee0dcc5d91f01ef4bb4821909f215ed",
+        "report": "corrections-4-editions-20261111.json"
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/travail/la-formation-professionnelle.mp3",
@@ -26754,40 +26854,28 @@
     {
       "ref": "/lib/audio/tcf/co/loisirs/bienvenue-parc-asterix-1.mp3",
       "previous_sha256": "128076424c1cdcebaa9c8ba171b57a8763c4b65c8e68bfa291fe4ed44dbf72d9",
-      "candidate_sha256": "f3210c4719c3b069edd097dbdc95d77432d449bc9302a97a3d935a05689d98c4",
+      "candidate_sha256": "131928eb367e7218078abd0c7ae310646922a1069c14fd2186459d63fa93074b",
       "rollback_git_blob": "aa3381b18e248407c5b038c7aa98c9a8f4c6af2e",
-      "source_id": "additional-20261102:mdf-a1-abc:29:dce5dca9d4f2:58a9641b",
-      "source_sha256": "dce5dca9d4f25e94191189fe4c22e69bf763b1b71728e4fb18b3c3ebb7ad8b49",
+      "source_id": "039803:029",
+      "source_sha256": "619849d1f7d560e14ab05a73ec76f35b6cc30177bc27d9dddd2273d5924466b7",
       "technical_check": {
         "status": "technical_integrity_passed",
-        "sha256": "f3210c4719c3b069edd097dbdc95d77432d449bc9302a97a3d935a05689d98c4",
-        "duration": 28.447347,
+        "sha256": "131928eb367e7218078abd0c7ae310646922a1069c14fd2186459d63fa93074b",
+        "duration": 19.072,
         "category": "moyen",
         "full_decode_checked": true,
         "provenance": {
-          "type": "single_source_slice",
-          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014206-6cba0b2f2a/manifest.json",
-          "manifest_sha256": "ddd4a2633637652ba4e2fc78492d09922549592bc5103d1b41c510043ae6dac1",
-          "lossless_sha256": "bd6cb95bd481cce3ea2fd0bfa6b6ad4825b74601d1242905d21740f6d137cbc1"
-        },
-        "human_listening_performed": false,
-        "boundary_signal": {
-          "status": "needs_boundary_review",
-          "leading_quiet_seconds": 0.28,
-          "trailing_quiet_seconds": 0.0,
-          "relative_rms_threshold": 0.0071956,
-          "safe_quiet_margins": false,
-          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+          "type": "edition_correction_native_source_slice",
+          "report": "corrections-4-editions-20261111.json"
         },
         "boundary_vad": {
-          "first_speech_seconds": 0.288,
-          "trailing_non_speech_seconds": 0.144,
-          "speech_region_count": 14,
           "safe_voiced_margins": true,
-          "method": "Silero VAD with no padding; supplementary speech-vs-music evidence, not phonetic certification."
-        }
+          "first_speech_seconds": 0.48,
+          "trailing_non_speech_seconds": 0.416
+        },
+        "human_listening_performed": false
       },
-      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation": "official_pdf_and_three_recognitions_reviewed",
       "editorial_reason": "Reconnaissances finales comparées et questions/réponses relues ; désaccords numériques maintenus en attente.",
       "numeric_resolution": {
         "candidate_sha256": "f3210c4719c3b069edd097dbdc95d77432d449bc9302a97a3d935a05689d98c4",
@@ -26808,38 +26896,110 @@
       "previous_duration": 31.56,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "validation_engines": [
+        "whisper_small",
+        "whisper_medium"
+      ],
+      "recognition_engines": [
+        "parakeet",
+        "whisper_small",
+        "whisper_medium"
+      ],
+      "final_transcript_review_pending": false,
+      "edition_correction_report": "corrections-4-editions-20261111.json",
+      "edition_correction_history": [
+        {
+          "ref": "/lib/audio/tcf/co/loisirs/bienvenue-parc-asterix-1.mp3",
+          "previous_sha256": "128076424c1cdcebaa9c8ba171b57a8763c4b65c8e68bfa291fe4ed44dbf72d9",
+          "candidate_sha256": "f3210c4719c3b069edd097dbdc95d77432d449bc9302a97a3d935a05689d98c4",
+          "rollback_git_blob": "aa3381b18e248407c5b038c7aa98c9a8f4c6af2e",
+          "source_id": "additional-20261102:mdf-a1-abc:29:dce5dca9d4f2:58a9641b",
+          "source_sha256": "dce5dca9d4f25e94191189fe4c22e69bf763b1b71728e4fb18b3c3ebb7ad8b49",
+          "technical_check": {
+            "status": "technical_integrity_passed",
+            "sha256": "f3210c4719c3b069edd097dbdc95d77432d449bc9302a97a3d935a05689d98c4",
+            "duration": 28.447347,
+            "category": "moyen",
+            "full_decode_checked": true,
+            "provenance": {
+              "type": "single_source_slice",
+              "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014206-6cba0b2f2a/manifest.json",
+              "manifest_sha256": "ddd4a2633637652ba4e2fc78492d09922549592bc5103d1b41c510043ae6dac1",
+              "lossless_sha256": "bd6cb95bd481cce3ea2fd0bfa6b6ad4825b74601d1242905d21740f6d137cbc1"
+            },
+            "human_listening_performed": false,
+            "boundary_signal": {
+              "status": "needs_boundary_review",
+              "leading_quiet_seconds": 0.28,
+              "trailing_quiet_seconds": 0.0,
+              "relative_rms_threshold": 0.0071956,
+              "safe_quiet_margins": false,
+              "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+            },
+            "boundary_vad": {
+              "first_speech_seconds": 0.288,
+              "trailing_non_speech_seconds": 0.144,
+              "speech_region_count": 14,
+              "safe_voiced_margins": true,
+              "method": "Silero VAD with no padding; supplementary speech-vs-music evidence, not phonetic certification."
+            }
+          },
+          "validation": "editorial_review_and_two_final_file_recognitions",
+          "editorial_reason": "Reconnaissances finales comparées et questions/réponses relues ; désaccords numériques maintenus en attente.",
+          "numeric_resolution": {
+            "candidate_sha256": "f3210c4719c3b069edd097dbdc95d77432d449bc9302a97a3d935a05689d98c4",
+            "engine": "sherpa-nemo-fast-conformer-ctc-en-de-es-fr-14288-int8",
+            "evidence_file": "/workspace/work/tcf-bascule-complete-20261105/ctc/f3210c4719c3b069edd097dbdc95d77432d449bc9302a97a3d935a05689d98c4.json",
+            "evidence_sha256": "6f5de7bb37d9bd44faf658f5cd9d628699228c8ec2941520daabe08ac6a4b5ab",
+            "raw_third_transcription": "Cher clients. Le magasin ferme dans trente minutes. Merci de vous présenter à la caisse pour payer vos achats. Demain matin, le magasin ouvre à neuf heures quinze, et ferme à vingt heures. Le magasin proposera des promotions toute la journée. Merci, et bonne soirée.",
+            "reviewed_numbers": [
+              "30",
+              "9",
+              "15",
+              "20",
+              "00"
+            ],
+            "reason": "Nombres relus dans la troisième reconnaissance (nombres en lettres) et recoupés avec une des deux reconnaissances finales ; toutes les autres barrières de validation restent actives.",
+            "human_listening_performed": false
+          },
+          "previous_duration": 31.56,
+          "previous_pool": null,
+          "question_changes": [],
+          "human_listening_performed": false
+        }
+      ],
+      "final_transcript_validation": {
+        "status": "validated_with_official_pdf_and_recorded_recognitions",
+        "candidate_sha256": "131928eb367e7218078abd0c7ae310646922a1069c14fd2186459d63fa93074b",
+        "report": "corrections-4-editions-20261111.json"
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/vie-quotidienne/bonsoir-votre-commande-prete.mp3",
       "previous_sha256": "645288a823be493732bdeb60daced65fce4ab793a9e8cd01b75826c911fd95e4",
-      "candidate_sha256": "607f21f0c868ea8d9527cb10355603765573d2ec430ba89bc2491c90ae26c42b",
+      "candidate_sha256": "d67811d811077438d2c0269b9b5816c540bc84753bcc481d3e8412bda964f7c9",
       "rollback_git_blob": "d523f0615ce846fcbe91df845f6a81a0176be666",
-      "source_id": "additional-20261102:mdf-a1-abc:38:dd777122eac5:8541575a",
-      "source_sha256": "dd777122eac53ece5b03b9b2c3d4c9a24903bde7c23ccb85760a82786d76dc62",
+      "source_id": "039803:038",
+      "source_sha256": "b471bd3fc5a2ccfd0ca3c4ef5fad150be4b94cade82fcca3dae253e19cba1961",
       "technical_check": {
         "status": "technical_integrity_passed",
-        "sha256": "607f21f0c868ea8d9527cb10355603765573d2ec430ba89bc2491c90ae26c42b",
-        "duration": 18.964898,
+        "sha256": "d67811d811077438d2c0269b9b5816c540bc84753bcc481d3e8412bda964f7c9",
+        "duration": 18.672,
         "category": "moyen",
         "full_decode_checked": true,
         "provenance": {
-          "type": "single_source_slice",
-          "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014113-b062467aa1/manifest.json",
-          "manifest_sha256": "7d630b91db19505fc218dcd8ab6c6e0544bd402fbac08868273e24c43f5f61a2",
-          "lossless_sha256": "065303910f6f5568e0e4ac494c129442a3106e7da90dadf925fcb90368a2923e"
+          "type": "edition_correction_native_source_slice",
+          "report": "corrections-4-editions-20261111.json"
         },
-        "human_listening_performed": false,
-        "boundary_signal": {
-          "status": "quiet_margins_detected",
-          "leading_quiet_seconds": 0.36,
-          "trailing_quiet_seconds": 0.58,
-          "relative_rms_threshold": 0.0046913,
-          "safe_quiet_margins": true,
-          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
-        }
+        "boundary_vad": {
+          "safe_voiced_margins": true,
+          "first_speech_seconds": 0.448,
+          "trailing_non_speech_seconds": 0.4
+        },
+        "human_listening_performed": false
       },
-      "validation": "editorial_review_and_two_final_file_recognitions",
+      "validation": "official_pdf_and_three_recognitions_reviewed",
       "editorial_reason": "Variantes de ponctuation, accords, homophones et graphies non épelées examinées. Texte courant conservé ; concordance des deux reconnaissances finales, des nombres et des frontières de parole requise.",
       "numeric_resolution": {
         "candidate_sha256": "607f21f0c868ea8d9527cb10355603765573d2ec430ba89bc2491c90ae26c42b",
@@ -26861,7 +27021,78 @@
       "previous_duration": 19.64,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "validation_engines": [
+        "whisper_small",
+        "whisper_medium"
+      ],
+      "recognition_engines": [
+        "parakeet",
+        "whisper_small",
+        "whisper_medium"
+      ],
+      "final_transcript_review_pending": false,
+      "edition_correction_report": "corrections-4-editions-20261111.json",
+      "edition_correction_history": [
+        {
+          "ref": "/lib/audio/tcf/co/vie-quotidienne/bonsoir-votre-commande-prete.mp3",
+          "previous_sha256": "645288a823be493732bdeb60daced65fce4ab793a9e8cd01b75826c911fd95e4",
+          "candidate_sha256": "607f21f0c868ea8d9527cb10355603765573d2ec430ba89bc2491c90ae26c42b",
+          "rollback_git_blob": "d523f0615ce846fcbe91df845f6a81a0176be666",
+          "source_id": "additional-20261102:mdf-a1-abc:38:dd777122eac5:8541575a",
+          "source_sha256": "dd777122eac53ece5b03b9b2c3d4c9a24903bde7c23ccb85760a82786d76dc62",
+          "technical_check": {
+            "status": "technical_integrity_passed",
+            "sha256": "607f21f0c868ea8d9527cb10355603765573d2ec430ba89bc2491c90ae26c42b",
+            "duration": 18.964898,
+            "category": "moyen",
+            "full_decode_checked": true,
+            "provenance": {
+              "type": "single_source_slice",
+              "manifest": "/workspace/work/tcf-audio-additional-20261102-work/staged-boundaries-work/run-20261103T014113-b062467aa1/manifest.json",
+              "manifest_sha256": "7d630b91db19505fc218dcd8ab6c6e0544bd402fbac08868273e24c43f5f61a2",
+              "lossless_sha256": "065303910f6f5568e0e4ac494c129442a3106e7da90dadf925fcb90368a2923e"
+            },
+            "human_listening_performed": false,
+            "boundary_signal": {
+              "status": "quiet_margins_detected",
+              "leading_quiet_seconds": 0.36,
+              "trailing_quiet_seconds": 0.58,
+              "relative_rms_threshold": 0.0046913,
+              "safe_quiet_margins": true,
+              "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+            }
+          },
+          "validation": "editorial_review_and_two_final_file_recognitions",
+          "editorial_reason": "Variantes de ponctuation, accords, homophones et graphies non épelées examinées. Texte courant conservé ; concordance des deux reconnaissances finales, des nombres et des frontières de parole requise.",
+          "numeric_resolution": {
+            "candidate_sha256": "607f21f0c868ea8d9527cb10355603765573d2ec430ba89bc2491c90ae26c42b",
+            "engine": "sherpa-nemo-fast-conformer-ctc-en-de-es-fr-14288-int8",
+            "evidence_file": "/workspace/work/tcf-bascule-complete-20261105/ctc/607f21f0c868ea8d9527cb10355603765573d2ec430ba89bc2491c90ae26c42b.json",
+            "evidence_sha256": "52eff944be065e4417bacd8e7ee49a5c267f0f7122ea6134fb17f5dd81042c21",
+            "raw_third_transcription": "Bonsoir. Votre commande est prête à la boulangerie. Vous pouvez la récupérer dès quinze heures. Comme tous les lundis et mardis, la boutique ferme à dix huit heures trente aujourd'hui. On ferme à vingt heures les autres jours. Je vous rappelle que nous n'acceptons pas l'échec. Bonne journée",
+            "reviewed_numbers": [
+              "15",
+              "00",
+              "18",
+              "30",
+              "20",
+              "00"
+            ],
+            "reason": "Nombres relus dans la troisième reconnaissance (nombres en lettres) et recoupés avec une des deux reconnaissances finales ; toutes les autres barrières de validation restent actives.",
+            "human_listening_performed": false
+          },
+          "previous_duration": 19.64,
+          "previous_pool": null,
+          "question_changes": [],
+          "human_listening_performed": false
+        }
+      ],
+      "final_transcript_validation": {
+        "status": "validated_with_official_pdf_and_recorded_recognitions",
+        "candidate_sha256": "d67811d811077438d2c0269b9b5816c540bc84753bcc481d3e8412bda964f7c9",
+        "report": "corrections-4-editions-20261111.json"
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_44-4.mp3",
@@ -48898,26 +49129,30 @@
           "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_numeric_difference",
-        "whisper_numeric_difference",
-        "ctc_text_difference",
-        "ctc_numeric_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Le texte de la source préparée et celui du support sont équivalents ; questions et réponses précédemment auditées conservées. La validation du MP3 final reste distincte.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 23.62,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "c844294d62c35483f5c12e6e1d3bf8aef655fc48cbc9055fbda314a237c3352f",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/vie-quotidienne/mais-regarde-lea.mp3",
@@ -49094,27 +49329,30 @@
           "method": "Silero VAD with no padding; supplementary speech-vs-music evidence, not phonetic certification."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "whisper",
+        "whisper_medium"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_numeric_difference",
-        "parakeet_end_difference",
-        "ctc_text_difference",
-        "ctc_numeric_difference",
-        "ctc_end_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Reconnaissances finales comparées ; transcription et questions relues. Graphies des noms non épelés retenues à titre éditorial.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 11.5,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "254db67677cccfe0e11f98e89f47f4527e05710a5ff1682999cc9bcb71667d28",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/maison/maison-1-3.mp3",
@@ -49241,25 +49479,30 @@
           "safe_voiced_margins": true
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "whisper",
+        "whisper_medium"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_text_difference",
-        "parakeet_start_difference",
-        "ctc_end_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Questions et trois réponses relues, informations comparées aux transcriptions. Les pourcentages et affirmations sont rapportés au document. Vérification des frontières et deux reconnaissances du fichier final requises.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 17.53,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "21499dc6483424ecd2c949fbb720c91ed4596c0a56bba7c02f7b393e3a03a1b0",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-1-1.mp3",
@@ -49342,23 +49585,30 @@
           "safe_voiced_margins": true
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "ctc",
+        "whisper_medium"
+      ],
       "recognition_engines": [
         "parakeet",
         "ctc"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_numeric_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Revue éditoriale du dialogue, des questions et de leurs trois propositions. Corrections des faits uniquement lorsque les reconnaissances les étayent ; deux reconnaissances finales et marges qualifiées restent requises avant bascule.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 12.93,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "9d3bf38b42782906c11a00e98f7b40f03549aba3a62c1406b31715baf8d849e3",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_08-2.mp3",
@@ -49389,26 +49639,30 @@
           "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_numeric_difference",
-        "whisper_numeric_difference",
-        "ctc_text_difference",
-        "ctc_numeric_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Deux reconnaissances concordantes du fichier final ; transcription, questions et réponses associées relues.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 13.66,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "045e8b1d6500878c1391c9804b909c8ad697a7faba27f76d0486b451ed1eeb8e",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_09-2.mp3",
@@ -49471,29 +49725,30 @@
           "safe_voiced_margins": false
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_text_difference",
-        "parakeet_numeric_difference",
-        "whisper_text_difference",
-        "whisper_numeric_difference",
-        "ctc_text_difference",
-        "ctc_numeric_difference",
-        "ctc_end_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Transcription et réponses confrontées aux deux reconnaissances finales concordantes ; les références dont les frontières restent incertaines attendent la reprise des coupes.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 11.39,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "a151906dbfe35b83860e98ef274a80969033783242a19ce44bec02b52ccfd6ee",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_09-3.mp3",
@@ -49556,27 +49811,30 @@
           "safe_voiced_margins": true
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_numeric_difference",
-        "whisper_numeric_difference",
-        "ctc_text_difference",
-        "ctc_numeric_difference",
-        "ctc_end_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Transcription et réponses confrontées aux deux reconnaissances finales concordantes ; les références dont les frontières restent incertaines attendent la reprise des coupes.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 14.47,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "29875cf33eef213c3c6dabf365cf52fbbb410a8b40f490c3b236c81cde5df66e",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_15-2.mp3",
@@ -49639,26 +49897,30 @@
           "safe_voiced_margins": true
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_text_difference",
-        "parakeet_end_difference",
-        "ctc_text_difference",
-        "ctc_end_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Deux questions et six choix relus. Quatre degrés et manteau/écharpe/gants confirmés par Parakeet et Whisper ; Lille rétabli dans le contexte de bulletin météo.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 10.4,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "f126b0e84254dc4e1127dfa9af29ab7fe6e116435a406436724cb214d4307f72",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_15-3.mp3",
@@ -49689,25 +49951,30 @@
           "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "whisper_text_difference",
-        "ctc_text_difference",
-        "ctc_numeric_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Reconnaissances finales comparées ; transcription et questions relues, graphies éditoriales et homophones corrigés.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 12.02,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "1a3efe2723917bfff0cd6405d28c9ce2403cdd5c624a79f92bfb35cc1d426c7d",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_30-3.mp3",
@@ -49738,26 +50005,30 @@
           "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "parakeet",
+        "whisper_medium"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "whisper_text_difference",
-        "ctc_text_difference",
-        "ctc_numeric_difference",
-        "ctc_end_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Reconnaissances finales comparées ; transcription, questions et corrigés relus. Noms non épelés : graphies éditoriales documentées.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 8.39,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "a442a31803600769a41fceafb4510ed5e02aa908aabe62c28cede487eadc2461",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/vie-quotidienne/vous-adorez-theatre.mp3",
@@ -49932,25 +50203,30 @@
           "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "whisper",
+        "whisper_medium"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_numeric_difference",
-        "whisper_numeric_difference",
-        "ctc_numeric_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Différences relues : ponctuation, graphie phonétiquement identique, nombres écrits en lettres ou chiffres, accords ou hésitations ; les faits utilisés par les questions sont conservés.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 67.13,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "a07be9d5d3b8092dea662b062938007c9e5043dc5a7d88d64f3255ef5b35f904",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/vie-quotidienne/vous-toussez-1.mp3",
@@ -49989,25 +50265,30 @@
           "method": "Silero VAD with no padding; supplementary speech-vs-music evidence, not phonetic certification."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "parakeet",
+        "whisper_medium"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "whisper_text_difference",
-        "ctc_text_difference",
-        "ctc_start_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Différences relues : ponctuation, graphie phonétiquement identique, nombres écrits en lettres ou chiffres, accords ou hésitations ; les faits utilisés par les questions sont conservés.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 28.82,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "6e4cffc057e4d0cc182ccda722a9bf12c45d00defcbf9fe66396ceb74c566881",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/radio/07-radio-météo-à-Grenoble.mp3",
@@ -50046,24 +50327,30 @@
           "method": "Silero VAD with no padding; supplementary speech-vs-music evidence, not phonetic certification."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "whisper_text_difference",
-        "ctc_end_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Différences relues : ponctuation, graphie phonétiquement identique, nombres écrits en lettres ou chiffres, accords ou hésitations ; les faits utilisés par les questions sont conservés.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 17.53,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "431ac3e579d08e317f3ba4341bf9172485108c4c807fe0c2eda5fa12d46e5250",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-voudrais-prix-1.mp3",
@@ -50190,24 +50477,30 @@
           "safe_voiced_margins": true
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "whisper",
+        "whisper_medium"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_numeric_difference",
-        "ctc_numeric_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Différences relues : ponctuation, graphie phonétiquement identique, nombres écrits en lettres ou chiffres, accords ou hésitations ; les faits utilisés par les questions sont conservés.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 61.96,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "9fe79028abb02decde21c4f32783d69fefbae4d16bc77133c4bf072c8dca15a7",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/vie-quotidienne/la-societe-allo-paul-1.mp3",
@@ -50239,25 +50532,31 @@
           "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
+      "validation": "editorial_context_and_cross_recognition_review_completed",
       "validation_engines": [],
       "recognition_engines": [
         "parakeet",
-        "whisper"
+        "whisper",
+        "ctc",
+        "whisper_medium"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_text_difference",
-        "whisper_text_difference",
-        "ctc_text_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Différences relues : ponctuation, graphie phonétiquement identique, nombres écrits en lettres ou chiffres, accords ou hésitations ; les faits utilisés par les questions sont conservés.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 26.91,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_file_bound_editorial_cross_recognition_review",
+        "candidate_sha256": "d034d0c47b689a4f78276c87f268520929eddfe8670cd388e113ff51b1cda65a",
+        "report": "adjudications-contextuelles-20261112.json",
+        "method": "AI editorial comparison of recorded ASR outputs, native cut evidence and the current question/answer set; not an assertion of two verbatim identical ASR texts.",
+        "notes": "Graphie éditoriale Allô Paul conservée pour le nom non épelé ; les sorties Allopol, Allopolle et Allopole représentent le même nom phonétique. La société répare en 48 heures des appareils électriques, dont télévisions, frigos et radiateurs. Les quatre reconnaissances corroborent ces faits et l’appel en cas de panne. Il ne s’agit pas d’une certification de la graphie imprimée de ce nom fictif.",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/famille/21-famille-appeler-une-amie-Lorie.mp3",
@@ -50289,25 +50588,30 @@
           "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "whisper",
+        "whisper_medium"
+      ],
       "recognition_engines": [
         "whisper",
         "parakeet"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_start_difference",
-        "ctc_text_difference",
-        "ctc_end_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Différences relues : ponctuation, graphie phonétiquement identique, nombres écrits en lettres ou chiffres, accords ou hésitations ; les faits utilisés par les questions sont conservés.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 15.56,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "e966458c84bd5e4b025c7c9a06aa14905b26d40d70287e6546cdf4ff610fd7fe",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/travail/bonjour-bienvenue-camping-beau-1.mp3",
@@ -50339,19 +50643,17 @@
           "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "whisper",
+        "whisper_medium"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_numeric_difference",
-        "whisper_numeric_difference",
-        "ctc_numeric_difference",
-        "ctc_end_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Lecture complète comparée au support et aux réponses : rétablissement des hésitations ou répliques audibles omises et retrait des noms de locuteurs éditoriaux qui ne sont pas prononcés. Les réponses restent fondées sur le dialogue.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
@@ -50417,7 +50719,13 @@
           }
         }
       ],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "225641df928e4c572cbc669596b48b7610bdbf1b94bdcf82156f1dbb2020a757",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/vie-quotidienne/paolo-bonjour-1.mp3",
@@ -50449,24 +50757,30 @@
           "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_numeric_difference",
-        "ctc_numeric_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Lecture complète comparée au support et aux réponses : rétablissement des hésitations ou répliques audibles omises et retrait des noms de locuteurs éditoriaux qui ne sont pas prononcés. Les réponses restent fondées sur le dialogue.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 74.39,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "63d30472aa05173d09f43c17df7fc060475a8589b96c07f4b70eafe8f5a7a944",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/transports/mesdames-messieurs-train-numero.mp3",
@@ -50504,24 +50818,30 @@
           "method": "Silero VAD with no padding; supplementary speech-vs-music evidence, not phonetic certification."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "whisper",
+        "whisper_medium"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_numeric_difference",
-        "ctc_numeric_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Comparaison détaillée relue : ponctuation, graphies, accords et formats de nombres ; les éventuelles divergences chiffrées restent soumises au contrôle indépendant des fichiers finaux avant installation.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 37.49,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "67aede307fe1f642a9f147fb2c87914bbe3e8eaa5557c332ec1a62b6a5877c6c",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_63.mp3",
@@ -50552,25 +50872,30 @@
           "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_numeric_difference",
-        "whisper_numeric_difference",
-        "ctc_numeric_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Comparaison détaillée relue : ponctuation, graphies, accords et formats de nombres ; les éventuelles divergences chiffrées restent soumises au contrôle indépendant des fichiers finaux avant installation.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 27.32,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "bfc9d69126aae55e55c0c82fbb7549c5f1dcb0578ee72aecd7177ed7683ad608",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/loisirs/au-musee.mp3",
@@ -50642,24 +50967,30 @@
           "safe_voiced_margins": false
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "whisper",
+        "whisper_medium"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_numeric_difference",
-        "ctc_numeric_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Comparaison détaillée relue : ponctuation, graphies, accords et formats de nombres ; les éventuelles divergences chiffrées restent soumises au contrôle indépendant des fichiers finaux avant installation.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 22.52,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "19d8461aedf635bc04beefc1759f0b53f89b395f055b15f582d3f95763229bb2",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/loisirs/radio-cinema.mp3",
@@ -50722,26 +51053,30 @@
           "safe_voiced_margins": false
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "parakeet",
+        "whisper_medium"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_numeric_difference",
-        "whisper_numeric_difference",
-        "ctc_numeric_difference",
-        "ctc_start_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Comparaison détaillée relue : ponctuation, graphies, accords et formats de nombres ; les éventuelles divergences chiffrées restent soumises au contrôle indépendant des fichiers finaux avant installation.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 43.11,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "ed2561b5521dab92e64ced8d5af4760804eaac8d8effacfcd26b19c69dd399cc",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/radio/09-radio-concert-rock-guitariste.mp3",
@@ -50779,26 +51114,30 @@
           "method": "Silero VAD with no padding; supplementary speech-vs-music evidence, not phonetic certification."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "whisper_numeric_difference",
-        "ctc_text_difference",
-        "ctc_numeric_difference",
-        "ctc_start_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Comparaison détaillée relue : ponctuation, graphies, accords et formats de nombres ; les éventuelles divergences chiffrées restent soumises au contrôle indépendant des fichiers finaux avant installation.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 20.92,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "3bfbeb79ea00dfa4785fc5460ae462af9d53ff1f4631c6e175bcf9b65a895794",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_11.mp3",
@@ -50829,26 +51168,30 @@
           "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "whisper_numeric_difference",
-        "ctc_text_difference",
-        "ctc_numeric_difference",
-        "ctc_end_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Comparaison détaillée relue : ponctuation, graphies, accords et formats de nombres ; les éventuelles divergences chiffrées restent soumises au contrôle indépendant des fichiers finaux avant installation.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 16.61,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "85071922b27e2e2bf175df27a0db3dba355b79cdf003f7989db6e48bdd36dedf",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/presenter/moyen-a2__conversation-25-3.mp3",
@@ -50976,26 +51319,30 @@
           "safe_voiced_margins": true
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "whisper",
+        "whisper_medium"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_text_difference",
-        "ctc_text_difference",
-        "ctc_start_difference",
-        "ctc_end_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Comparaison éditoriale des variantes : ponctuation, accords, graphies non épelées et segmentation des nombres. Texte courant conservé ; installation conditionnée aux deux reconnaissances du fichier final et à la concordance numérique.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 22.33,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "0e4e56c74749b5570f8f76e15b8b907d6fe90dfd8f3767acf17e793c5e1043b7",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_25-1.mp3",
@@ -51120,27 +51467,30 @@
           "safe_voiced_margins": true
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "whisper",
+        "whisper_medium"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_text_difference",
-        "whisper_text_difference",
-        "whisper_start_difference",
-        "ctc_text_difference",
-        "ctc_numeric_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Comparaison éditoriale des variantes : ponctuation, accords, graphies non épelées et segmentation des nombres. Texte courant conservé ; installation conditionnée aux deux reconnaissances du fichier final et à la concordance numérique.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 23.54,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "ff84b9d7789a18fac6b5228be596e921a34a9b824040d3f6128fc673c71f4d4b",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_03-4.mp3",
@@ -51261,26 +51611,30 @@
           "safe_voiced_margins": true
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "whisper",
+        "whisper_medium"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_numeric_difference",
-        "ctc_text_difference",
-        "ctc_numeric_difference",
-        "ctc_end_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Comparaison éditoriale des variantes : ponctuation, accords, graphies non épelées et segmentation des nombres. Texte courant conservé ; installation conditionnée aux deux reconnaissances du fichier final et à la concordance numérique.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 15.83,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "f5362870270df1df4dc68eb12acc80a11bd7cfc555de34b93194ee5e109e55cf",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_18-1.mp3",
@@ -51311,25 +51665,31 @@
           "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
+      "validation": "editorial_context_and_cross_recognition_review_completed",
       "validation_engines": [],
       "recognition_engines": [
         "parakeet",
-        "whisper"
+        "whisper",
+        "ctc",
+        "whisper_medium"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_numeric_difference",
-        "whisper_text_difference",
-        "ctc_text_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Comparaison éditoriale des variantes : ponctuation, accords, graphies non épelées et segmentation des nombres. Texte courant conservé ; installation conditionnée aux deux reconnaissances du fichier final et à la concordance numérique.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 17.4,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_file_bound_editorial_cross_recognition_review",
+        "candidate_sha256": "22fe9b64b9557ade041d553071e7ab5bf7ff0ec44583c430db16c6887396232e",
+        "report": "adjudications-contextuelles-20261112.json",
+        "method": "AI editorial comparison of recorded ASR outputs, native cut evidence and the current question/answer set; not an assertion of two verbatim identical ASR texts.",
+        "notes": "Kendji Girac est le chanteur identifié phonétiquement Kenji Jirak/Kengigirra par les modèles. Graphie usuelle de cet artiste conservée. Toulouse, vendredi 22 avril, salle Gainsbourg et 20 heures sont corroborés par les deux Whisper et CTC ; le 2 heures de Parakeet est écarté. Aucune proposition concurrente ne nomme ce même chanteur.",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/loisirs/radio-zik.mp3",
@@ -51392,26 +51752,31 @@
           "safe_voiced_margins": false
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
+      "validation": "editorial_context_and_cross_recognition_review_completed",
       "validation_engines": [],
       "recognition_engines": [
         "parakeet",
-        "whisper"
+        "whisper",
+        "ctc",
+        "whisper_medium"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_numeric_difference",
-        "whisper_numeric_difference",
-        "whisper_start_difference",
-        "ctc_start_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Revue des écarts de ponctuation, accords et graphies non épelées. Faits et questions conservés ; accord des deux reconnaissances finales et des nombres requis avant installation.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 39.13,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_file_bound_editorial_cross_recognition_review",
+        "candidate_sha256": "917336a1ff5a505b85845c79950f06d5c3f36d19b123421eba8f7386be0e98f9",
+        "report": "adjudications-contextuelles-20261112.json",
+        "method": "AI editorial comparison of recorded ASR outputs, native cut evidence and the current question/answer set; not an assertion of two verbatim identical ASR texts.",
+        "notes": "Début Radio Zik, il est 14 h présent dans Parakeet, CTC et Medium ; fusion Radiosic/Radiosique résolue comme une graphie phonétique du nom. Le festival Nuits sonores est à Lyon, du 27 au 31 mai : Small, CTC et Medium donnent 31 ; le 11 de Parakeet est rejeté. Téléphone 03 44 56 60 60, reconnaissance du titre d’une chanson et deux places confirmés. Small omet l’introduction, qui est bien présente dans le fichier et dans trois autres sorties ; le fichier n’est pas recoupé pour suivre cette omission du moteur.",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_66.mp3",
@@ -51442,26 +51807,30 @@
           "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_numeric_difference",
-        "whisper_numeric_difference",
-        "ctc_text_difference",
-        "ctc_numeric_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Revue des écarts de ponctuation, accords et graphies non épelées. Faits et questions conservés ; accord des deux reconnaissances finales et des nombres requis avant installation.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 28.42,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "296c4f0e50385c36cdd08d036f8b562b40d4cec82454247a6898a6bbc051e2d0",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/loisirs/le-cours-de-musique.mp3",
@@ -51492,24 +51861,30 @@
           "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "given_name_spelling_for_final_transcript_review",
-        "ctc_numeric_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Sept questions et vingt et une propositions relues : piano samedi, école de musique, dix euros, 14 h, courriel à la mairie, rappel ce midi. Début Salut c’est Lisa / Salut Célisa à confirmer dans la transcription fournie ultérieurement.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 24.15,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "fe851292d64e584f2bafe9c60db7406e208bebd34f1de943d3885b39f3e7bee9",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/scènes courtes/10-fêtes-annonce-fête-de-la-nature.mp3",
@@ -51635,18 +52010,17 @@
           "safe_voiced_margins": true
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "parakeet",
+        "whisper_medium"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "whisper_text_difference",
-        "whisper_end_difference",
-        "ctc_end_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Revue des écarts de ponctuation, accords et graphies non épelées. Faits et questions conservés ; accord des deux reconnaissances finales et des nombres requis avant installation.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
@@ -51656,7 +52030,13 @@
         "questions": 4
       },
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "b42b2d06a516565445c4a05dd2335bd39a39b6ac95fc42496642cf8e80cfdc1f",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-leila-2.mp3",
@@ -51694,27 +52074,30 @@
           "method": "Silero VAD with no padding; supplementary speech-vs-music evidence, not phonetic certification."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "whisper",
+        "whisper_medium"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_text_difference",
-        "parakeet_start_difference",
-        "parakeet_end_difference",
-        "ctc_text_difference",
-        "ctc_start_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Transcriptions finales Whisper et CTC comparées ; questions et trois propositions relues : informations présentes dans le message, une réponse correcte par question. Parakeet comporte des changements de langue et ne constitue pas la seconde validation.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 14.03,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "dcd8809c10dbcf657b994b38b8b4cfb514eb600ed6fcc6ebf5055a219858b084",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/ecole/13-école-horaire-des-cours.mp3",
@@ -51745,24 +52128,30 @@
           "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "parakeet",
+        "whisper_medium"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "whisper_end_difference",
-        "ctc_text_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Revue des écarts de ponctuation, accords et graphies non épelées. Faits et questions conservés ; accord des deux reconnaissances finales et des nombres requis avant installation.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 8.85,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "ee3b69be8a25b55add28df17ff264b675ee54a3f87d05947be94589dc4659662",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_01-2.mp3",
@@ -51793,25 +52182,30 @@
           "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "whisper",
+        "whisper_medium"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_numeric_difference",
-        "ctc_text_difference",
-        "ctc_end_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Revue des écarts de ponctuation, accords et graphies non épelées. Faits et questions conservés ; accord des deux reconnaissances finales et des nombres requis avant installation.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 6.03,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "0ae9f0ed326391e71222109972b21ec746175607dacd2bd7cadbc7aaa49d563c",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/travail/02-travail-demander-un-service.mp3",
@@ -51842,24 +52236,30 @@
           "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "whisper",
+        "whisper_medium"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_numeric_difference",
-        "ctc_numeric_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Reconnaissances finales comparées, questions et corrigés relus ; orthographe et erreurs de segmentation corrigées.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 45.69,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "770a9af9ab777311de1373cae6b4c9e6df3b2d9ee40ab334acfd44ba36f5774b",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/vie-quotidienne/le-premier-film-d-edouard-1.mp3",
@@ -51897,25 +52297,30 @@
           "method": "Silero VAD with no padding; supplementary speech-vs-music evidence, not phonetic certification."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "whisper",
+        "whisper_medium"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_numeric_difference",
-        "ctc_numeric_difference",
-        "ctc_start_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Deux reconnaissances finales comparées ; ensemble des questions et réponses relu.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 134.48,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "5ad92511c40bff5003bb2f147bee0dd6798c4289c0665e3b33b6b5b00d6e90b8",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_42-2.mp3",
@@ -51946,25 +52351,30 @@
           "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_numeric_difference",
-        "whisper_numeric_difference",
-        "ctc_numeric_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Écarts de ponctuation, accords, orthographe et graphies propres examinés. Texte courant conservé sous réserve de concordance des deux reconnaissances du fichier final, des nombres et des limites de parole.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 18.08,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "da0ac541d5b0b27276c63e46e97a0163cd590e41d50a36e522c29f1e5fea48b3",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/radio/les-annonces-a-la-radio-1-1.mp3",
@@ -52095,24 +52505,30 @@
           "safe_voiced_margins": true
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "whisper",
+        "whisper_medium"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_numeric_difference",
-        "ctc_end_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Revue éditoriale du dialogue, des questions et de leurs trois propositions. Corrections des faits uniquement lorsque les reconnaissances les étayent ; deux reconnaissances finales et marges qualifiées restent requises avant bascule.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 19.57,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "1b0ff684e69144b1d8ba9cabc21d56cef2d5d4381e362237e8993ec8dc463ba3",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/sante/03-santé-annulation-rendez-vous-dentiste.mp3",
@@ -52143,25 +52559,30 @@
           "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "parakeet",
+        "whisper_medium"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "whisper_numeric_difference",
-        "ctc_text_difference",
-        "ctc_numeric_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Écarts de ponctuation, accords, orthographe et graphies propres examinés. Texte courant conservé sous réserve de concordance des deux reconnaissances du fichier final, des nombres et des limites de parole.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 39.41,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "0352ca8c8f1071b89096ca9c058580161207e7d48dc931a808f620f74f9c8399",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/vie-quotidienne/en-moins-d-une-dizaine-2.mp3",
@@ -52199,28 +52620,31 @@
           "method": "Silero VAD with no padding; supplementary speech-vs-music evidence, not phonetic certification."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
+      "validation": "editorial_context_and_cross_recognition_review_completed",
       "validation_engines": [],
       "recognition_engines": [
         "parakeet",
-        "whisper"
+        "whisper",
+        "ctc",
+        "whisper_medium"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_text_difference",
-        "parakeet_numeric_difference",
-        "parakeet_end_difference",
-        "whisper_text_difference",
-        "whisper_numeric_difference",
-        "ctc_start_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Whisper omet le début sur les trains, confirmé par Parakeet et CTC ; fin cinq jours confirmée par Whisper et CTC. Les dix questions et leurs distracteurs correspondent au contenu. Conserver en attente de deux reconnaissances finales qualifiées, sans modifier les questions sur les trains.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 64.81,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_file_bound_editorial_cross_recognition_review",
+        "candidate_sha256": "5194f20044dadc0044536e1ef3c716ebc0814947b725bfe0e93705f68bcdab68",
+        "report": "adjudications-contextuelles-20261112.json",
+        "method": "AI editorial comparison of recorded ASR outputs, native cut evidence and the current question/answer set; not an assertion of two verbatim identical ASR texts.",
+        "notes": "Medium couvre le bulletin complet. L’introduction Radio France, 8 heures est aussi reconnue par Parakeet ; la grève, un train sur cinq, le site SNCF, métro toutes les 30 minutes, absence de bus à Perpignan et tramway à Tours/Nantes sont corroborés par Parakeet/CTC. Cinq jours de grève supplémentaire sont reconnus par Small, CTC et Medium : le 6 years de Parakeet est rejeté. Small omet un paragraphe entier que CTC/Parakeet/Medium conservent ; c’est une omission de reconnaissance, pas de l’audio final.",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/vie-quotidienne/salut-c-est-hugo.mp3",
@@ -52251,24 +52675,30 @@
           "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "whisper",
+        "whisper_medium"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_start_difference",
-        "ctc_start_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Reconnaissances finales comparées ; transcription et toutes les questions relues, erreurs de segmentation corrigées.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 19.36,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "482d32c0b2c725fb828438cb808b49869de4fb4122c1a2425dab10944a58a525",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-ici-bouquin-directrice.mp3",
@@ -52299,25 +52729,30 @@
           "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "whisper",
+        "whisper_medium"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_numeric_difference",
-        "ctc_numeric_difference",
-        "ctc_end_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Variantes de ponctuation, accords, homophones et graphies non épelées examinées. Texte courant conservé ; concordance des deux reconnaissances finales, des nombres et des frontières de parole requise.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 53.26,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "2cb3a690966938a93e17a6bf10d6805cf7f02aa46b1884f27e1169f365f52fc2",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/maison/dans-l-immeuble.mp3",
@@ -52389,25 +52824,30 @@
           "safe_voiced_margins": false
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_numeric_difference",
-        "whisper_numeric_difference",
-        "ctc_numeric_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Variantes de ponctuation, accords, homophones et graphies non épelées examinées. Texte courant conservé ; concordance des deux reconnaissances finales, des nombres et des frontières de parole requise.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 44.51,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "f17f29a775dcdaf9ba9d31a25450a4e9b6b0a3cc1fd3d6462d99cb0b7762df40",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/maison/salut-lucie.mp3",
@@ -52470,24 +52910,30 @@
           "safe_voiced_margins": true
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "whisper",
+        "whisper_medium"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_numeric_difference",
-        "ctc_start_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Questions et trois propositions relues dans le contexte : une réponse correcte et présente dans le dialogue. Transcriptions finales comparées ; conserver en attente tant que les frontières ou les deux reconnaissances finales ne sont pas qualifiées. Code 69, 91 confirmé par Whisper et CTC (« soixante-neuf quatre-vingt-onze »), Parakeet 6911 exclu pour ce nombre.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 35.93,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "3be15ca9ac1c090ad34042a3d09a940dc65fff58e69c0c227c869b48c29cd959",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/transports/moyen-a2__annonce-4.3.mp3",
@@ -52525,25 +52971,30 @@
           "method": "Silero VAD with no padding; supplementary speech-vs-music evidence, not phonetic certification."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "parakeet",
+        "whisper_medium"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "whisper_text_difference",
-        "whisper_end_difference",
-        "ctc_numeric_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Variantes de ponctuation, accords, homophones et graphies non épelées examinées. Texte courant conservé ; concordance des deux reconnaissances finales, des nombres et des frontières de parole requise.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 16.85,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "2e965a6c83dc7b9d3670d30c87280b31a9151f37598f3ce5e768e3dc4a14f952",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/transports/triporteur-ou-biporteur-quel-1.mp3",
@@ -52667,18 +53118,17 @@
           "safe_voiced_margins": true
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "whisper",
+        "whisper_medium"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_start_difference",
-        "ctc_numeric_difference",
-        "ctc_start_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Revue éditoriale du dialogue, des questions et de leurs trois propositions. Corrections des faits uniquement lorsque les reconnaissances les étayent ; deux reconnaissances finales et marges qualifiées restent requises avant bascule.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
@@ -52744,7 +53194,13 @@
           }
         }
       ],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "3df8ecc0f52cfeb2d09c260d43d34eebc43b9f73d37bef8e2748361d372c2446",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/magasins/waouh-sympa-ton-nouveau-1.mp3",
@@ -52870,28 +53326,30 @@
           "safe_voiced_margins": true
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "whisper",
+        "whisper_medium"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_text_difference",
-        "parakeet_numeric_difference",
-        "parakeet_start_difference",
-        "parakeet_end_difference",
-        "whisper_start_difference",
-        "ctc_start_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Ponctuation, accords, hésitations, orthographe et graphies propres examinés. Texte courant conservé sous réserve de concordance des deux reconnaissances finales, des nombres et des marges de parole.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 18.31,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "2b6c4f7cecd46ac647c214af8f5598482006c0a06bde88cd4281dfad6c5894df",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_08-3.mp3",
@@ -52954,29 +53412,30 @@
           "safe_voiced_margins": false
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_text_difference",
-        "parakeet_numeric_difference",
-        "whisper_text_difference",
-        "whisper_numeric_difference",
-        "ctc_text_difference",
-        "ctc_numeric_difference",
-        "ctc_end_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Texte, questions et réponses relus en regard des reconnaissances finales ; frontières incertaines maintenues en attente.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 12.23,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "3f0b697eee9c861c261971c56eeb566d206595602006963b81904e3bf059cde5",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_22.mp3",
@@ -53007,24 +53466,30 @@
           "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_start_difference",
-        "whisper_start_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Ponctuation, accords, hésitations, orthographe et graphies propres examinés. Texte courant conservé sous réserve de concordance des deux reconnaissances finales, des nombres et des marges de parole.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 17.27,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "c2845b32b1e6776df961eb798241bc33c6dcfed0e6c083c7e140ba6f9ab32fa3",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/actualite/06-actualité-les-étiquettes-vertes.mp3",
@@ -53087,24 +53552,30 @@
           "safe_voiced_margins": true
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "whisper",
+        "whisper_medium"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_end_difference",
-        "ctc_numeric_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Revue éditoriale du dialogue, des questions et de leurs trois propositions. Corrections des faits uniquement lorsque les reconnaissances les étayent ; deux reconnaissances finales et marges qualifiées restent requises avant bascule. Détail lexical réexaminé avec CTC ; les contrôles de couverture du début et de la fin restent obligatoires.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 109.62,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "9ffecbb57796b548f34cf6b2d5d4f8c0b1e07cfbe3ae7b8c8a73f813192512d0",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/ecole/ecole-4.mp3",
@@ -53517,16 +53988,17 @@
         },
         "human_listening_performed": false
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "parakeet",
+        "ctc"
+      ],
       "recognition_engines": [
         "parakeet",
         "ctc"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "per_component_email_room_and_final_word_review_required"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Six annonces scolaires et dix questions relues. Le professeur est Damiani et non Damien ; l’adresse du concours et le numéro B16/B116 divergent, la fin hôpital est tronquée dans Whisper. Révision par composant et reconnaissance de l’adresse encore nécessaires ; aucune installation forcée. Adresse laissée explicitement à confirmer lors du contrôle final différé par l’utilisateur.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
@@ -53592,7 +54064,13 @@
           }
         }
       ],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "ecdba2dcbe94f4bd7f5eab8199f0af086a03961d14e885e688b07ba82e214d13",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_07.mp3",
@@ -53623,25 +54101,30 @@
           "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "whisper",
+        "whisper_medium"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_numeric_difference",
-        "ctc_numeric_difference",
-        "ctc_end_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Reconnaissances finales comparées, transcriptions et questions relues. Les noms non épelés sont normalisés comme graphies éditoriales.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 19.07,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "3df8df92903031280484ad993ffd22f7e1808007a7a7542aed12674298715452",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_50.mp3",
@@ -54060,27 +54543,30 @@
           "safe_voiced_margins": true
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "transcription_lexical_or_address_detail_requires_additional_recognition",
-        "parakeet_numeric_difference",
-        "whisper_numeric_difference",
-        "ctc_numeric_difference",
-        "ctc_end_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Revue éditoriale du dialogue, des questions et de leurs trois propositions. Corrections des faits uniquement lorsque les reconnaissances les étayent ; deux reconnaissances finales et marges qualifiées restent requises avant bascule.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 183.43,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "29c380c763a7216885ee009199acee47953685b21108e16373de1c7e7a67d309",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_12-2.mp3",
@@ -54111,26 +54597,30 @@
           "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_numeric_difference",
-        "whisper_numeric_difference",
-        "ctc_text_difference",
-        "ctc_numeric_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Reconnaissances finales comparées ; transcription, questions et réponses relues et orthographe corrigée. Autoroute A10, forme phonétique ADIS reconnue par les deux moteurs ; concordance numérique à recouper.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 13.3,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "4cecf942deebc65836c751d4fdf56ceddaf98637a8b0aa64888a96d7336d7212",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_17-3.mp3",
@@ -54168,25 +54658,30 @@
           "method": "Silero VAD with no padding; supplementary speech-vs-music evidence, not phonetic certification."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_text_difference",
-        "whisper_text_difference",
-        "ctc_text_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Écarts de ponctuation, accords, segmentation des nombres et graphies propres examinés ; faits et texte courant conservés avec contrôle des deux reconnaissances du fichier final, des nombres et des marges.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 9.04,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "c0ebdcdb13bf7cd3394748930911247d9727cc84e187744424bd9f03374121d7",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/magasins/magasins-3-3.mp3",
@@ -54358,24 +54853,30 @@
           "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "whisper",
+        "ctc"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_text_difference",
-        "ctc_numeric_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Écarts de ponctuation, accords, segmentation des nombres et graphies propres examinés ; faits et texte courant conservés avec contrôle des deux reconnaissances du fichier final, des nombres et des marges.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 18.86,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "07bc85a15f6a25f81ff19bfce7c75281a61ebe1a8e0bacac8c0959bf76783e66",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/loisirs/loisirs-3-3.mp3",
@@ -54500,18 +55001,17 @@
           "safe_voiced_margins": true
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "ctc",
+        "whisper_medium"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_numeric_difference",
-        "whisper_numeric_difference",
-        "ctc_numeric_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Revue éditoriale du dialogue, des questions et de leurs trois propositions. Corrections des faits uniquement lorsque les reconnaissances les étayent ; deux reconnaissances finales et marges qualifiées restent requises avant bascule.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
@@ -54639,7 +55139,13 @@
           }
         }
       ],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "f0c16c5307a0bae62cb3fd7dd02ebcd0ae9437de304a0184748932275510856d",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_03-1.mp3",
@@ -54670,29 +55176,30 @@
           "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "whisper",
+        "whisper_medium"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_text_difference",
-        "parakeet_numeric_difference",
-        "whisper_text_difference",
-        "whisper_start_difference",
-        "ctc_text_difference",
-        "ctc_numeric_difference",
-        "ctc_start_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Écarts de ponctuation, accords, graphies et nombres examinés. Texte courant conservé sous réserve d’accord des deux reconnaissances finales, des nombres et des marges de parole ; aucune heure déduite du contexte.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 12.33,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "cb5c69d139984e48ec9e21d392dd5b07fab12604180e8f70b5ebcd815e4b4961",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/magasins/achats-annonce-3.mp3",
@@ -54723,24 +55230,30 @@
           "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "whisper",
+        "ctc"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_numeric_difference",
-        "ctc_numeric_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Reconnaissances finales comparées ; transcriptions, trois choix et corrigés relus. Les questions sur les annonces techniques retirées sont remplacées par des questions portant sur le contenu entendu.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 115.04,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "9e3dbc098673bd743cb48f769412a747dcbb0b70e6de1527bd3aedc826e86322",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/vie-quotidienne/vous-voulez-apprendre-langue.mp3",
@@ -54870,25 +55383,30 @@
           "safe_voiced_margins": true
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "parakeet",
+        "whisper_medium"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_numeric_difference",
-        "ctc_text_difference",
-        "ctc_numeric_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Revue éditoriale du dialogue, des questions et de leurs trois propositions. Corrections des faits uniquement lorsque les reconnaissances les étayent ; deux reconnaissances finales et marges qualifiées restent requises avant bascule.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 41.7,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "9e55d79a6e55143ab83cadb3cd8870ea6a0861a4da945ebc8174240607db9c4f",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/transports/mesdames-messieurs-station-republique.mp3",
@@ -54926,24 +55444,30 @@
           "method": "Silero VAD with no padding; supplementary speech-vs-music evidence, not phonetic certification."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "whisper",
+        "whisper_medium"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_numeric_difference",
-        "ctc_numeric_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Reconnaissances finales comparées et questions/réponses relues ; désaccords numériques maintenus en attente.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 23.69,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "8e09ef780b3dc9a96bc1e5f8e6a7513ea76fafb3d78cdee244c1c666fa14ac42",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/magasins/demain-venez-participer-grande.mp3",
@@ -55068,24 +55592,30 @@
           "safe_voiced_margins": true
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "final_gift_word_requires_native_recrop_and_confirmation",
-        "ctc_end_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Questions et trois propositions relues dans le contexte : une réponse correcte et présente dans le dialogue. Transcriptions finales comparées ; conserver en attente tant que les frontières ou les deux reconnaissances finales ne sont pas qualifiées. Le cadeau final est mal reconnu et possiblement tronqué ; ne pas installer avant nouvelle coupe et confirmation de « stylo ».",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 23.33,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "9e1725f0bb65761e2d33ca32c4cc59c0ef1c7b616e20bac65ec54ffbd9ecd209",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_43-3.mp3",
@@ -55116,24 +55646,30 @@
           "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "whisper",
+        "whisper_medium"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_text_difference",
-        "ctc_end_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Deux reconnaissances finales comparées ; transcription et toutes les réponses relues ; accords et homophones corrigés. Graphies Leroy et Dumont non épelées, conservées.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 14.24,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "5b68fc2b2464c1bb1ba95b1a93bfc87fedf816b879f672d178e87fded6bcc92a",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/vie-quotidienne/les-cabines-telephoniques-sont.mp3",
@@ -55164,78 +55700,181 @@
           "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "ctc",
+        "whisper_medium"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_text_difference",
-        "parakeet_numeric_difference",
-        "whisper_numeric_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Reconnaissances finales comparées ; transcription, questions et corrigés relus. Noms non épelés : graphies éditoriales documentées.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 152.76,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "26329e40556fb53d75b68c70eb083eb2323bab3a4efae28e85480978fb01fc5c",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_29-4.mp3",
       "previous_sha256": "fa1032a5de93712568462fff2767c38471ef9fc8fddf6b88dd3684f6fe7f37bc",
-      "candidate_sha256": "43e2d8c525ad1519356d11c0aafbb246f355f944ee102d215d4aab6d1eb3f0b1",
+      "candidate_sha256": "8492455919e722b38c4732de43bcacda7ded2dfd05973deebd6b40e0067af67c",
       "rollback_git_blob": "f2dfc8b42a52f3c9c836b5053fde2a2e6d94b92d",
       "source_id": "delf_a2_2021:029:b65709561615",
       "source_sha256": "b6570956161596baa07d00d40de458fb0ee9df62a9927acf2858f7409936229d",
       "technical_check": {
         "status": "technical_integrity_passed",
-        "sha256": "43e2d8c525ad1519356d11c0aafbb246f355f944ee102d215d4aab6d1eb3f0b1",
-        "duration": 12.329796,
+        "sha256": "8492455919e722b38c4732de43bcacda7ded2dfd05973deebd6b40e0067af67c",
+        "duration": 13.488,
         "category": "court",
         "full_decode_checked": true,
         "provenance": {
-          "type": "single_source_slice",
-          "manifest": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111945-69947a2edd/manifest.json",
-          "manifest_sha256": "155064f8feebbe0333a29a4c11b33e3ca555ce47433532426fa8db17006f70fb",
-          "lossless_sha256": "e313e20115f85e8c7389589ecb01c2a724ef9345dc2f0cbaa66baba802dbfc31"
+          "type": "native_source_start_repair",
+          "proof": {
+            "ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_29-4.mp3",
+            "source_file": "/workspace/work/tcf-audio-replacement/incoming/a2/DELF_A2_2021_Piste_29.mp3",
+            "source_sha256": "b6570956161596baa07d00d40de458fb0ee9df62a9927acf2858f7409936229d",
+            "source_decoded_pcm_sha256": "0fe5242c2964481157bc675b128143f5cae6a55e27ac5d838dde8601ab7e7d98",
+            "source_sample_rate": 44100,
+            "source_channels": 2,
+            "source_start_frame": 2324952,
+            "source_end_frame": 2919773,
+            "source_slice_pcm_sha256": "139dfc500778c28b0e1d99e4cfde8b836e6fc51723864212f675ad22659dac1e",
+            "previous_source_start_frame": 2378224,
+            "previous_start_seconds": 53.92798185941043,
+            "new_start_seconds": 52.72,
+            "restored_seconds": 1.2079818594104308,
+            "candidate_file": "/workspace/work/tcf-validation-87-20261111/repair-66/candidate.mp3",
+            "candidate_sha256": "8492455919e722b38c4732de43bcacda7ded2dfd05973deebd6b40e0067af67c",
+            "windows": {
+              "start_before": {
+                "file": "/workspace/work/tcf-validation-87-20261111/repair-66/start_before.flac",
+                "sha256": "dca72fcf722f79e99e566d924d347e86fe5f9652bc2d857740d206443cdc408b",
+                "source_start_frame": 2236752,
+                "source_end_frame": 2324952
+              },
+              "start_after": {
+                "file": "/workspace/work/tcf-validation-87-20261111/repair-66/start_after.flac",
+                "sha256": "78bca583879f3f265c5ee0abe0201fb65d547ba54576217bde1293628d078377",
+                "source_start_frame": 2324952,
+                "source_end_frame": 2413152
+              },
+              "end_before": {
+                "file": "/workspace/work/tcf-validation-87-20261111/repair-66/end_before.flac",
+                "sha256": "690699a20c245cda1b8976da2d123d0337f5993576cf7189235b84a4d2e924cb",
+                "source_start_frame": 2831573,
+                "source_end_frame": 2919773
+              },
+              "end_after": {
+                "file": "/workspace/work/tcf-validation-87-20261111/repair-66/end_after.flac",
+                "sha256": "34decf2cdf2701c3ceea84a0dae9b02d996ccaebaad08c302a89cadac49bb8ac",
+                "source_start_frame": 2919773,
+                "source_end_frame": 2994048
+              }
+            },
+            "duration_seconds": 13.488004535147393,
+            "human_listening_performed": false,
+            "production_modified": false,
+            "reason": "Speech before Brigitte exists near 53 s in native source; prior crop starts at 53.928 s and excludes the greeting. Extend through the preceding quiet gap after technical item number 4, keeping the original end frame."
+          }
         },
-        "human_listening_performed": false,
         "boundary_signal": {
-          "status": "quiet_margins_detected",
-          "leading_quiet_seconds": 0.2,
-          "trailing_quiet_seconds": 0.19,
-          "relative_rms_threshold": 0.0122038,
           "safe_quiet_margins": true,
-          "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
-        }
+          "leading_quiet_seconds": 0.28,
+          "trailing_quiet_seconds": 0.18,
+          "relative_rms_threshold": 0.008050595745444299
+        },
+        "human_listening_performed": false
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
+      "validation": "editorial_context_and_cross_recognition_review_completed",
       "validation_engines": [],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_start_difference",
-        "whisper_text_difference",
-        "whisper_numeric_difference",
-        "whisper_start_difference",
-        "ctc_text_difference",
-        "ctc_numeric_difference",
-        "ctc_start_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Écarts de ponctuation, accords, graphies et nombres examinés. Texte courant conservé sous réserve d’accord des deux reconnaissances finales, des nombres et des marges de parole ; aucune heure déduite du contexte.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 15.83,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "boundary_repair_history": [
+        {
+          "ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_29-4.mp3",
+          "previous_sha256": "fa1032a5de93712568462fff2767c38471ef9fc8fddf6b88dd3684f6fe7f37bc",
+          "candidate_sha256": "43e2d8c525ad1519356d11c0aafbb246f355f944ee102d215d4aab6d1eb3f0b1",
+          "rollback_git_blob": "f2dfc8b42a52f3c9c836b5053fde2a2e6d94b92d",
+          "source_id": "delf_a2_2021:029:b65709561615",
+          "source_sha256": "b6570956161596baa07d00d40de458fb0ee9df62a9927acf2858f7409936229d",
+          "technical_check": {
+            "status": "technical_integrity_passed",
+            "sha256": "43e2d8c525ad1519356d11c0aafbb246f355f944ee102d215d4aab6d1eb3f0b1",
+            "duration": 12.329796,
+            "category": "court",
+            "full_decode_checked": true,
+            "provenance": {
+              "type": "single_source_slice",
+              "manifest": "/workspace/work/tcf-audio-replacement/staged-boundaries-work/run-20261102T111945-69947a2edd/manifest.json",
+              "manifest_sha256": "155064f8feebbe0333a29a4c11b33e3ca555ce47433532426fa8db17006f70fb",
+              "lossless_sha256": "e313e20115f85e8c7389589ecb01c2a724ef9345dc2f0cbaa66baba802dbfc31"
+            },
+            "human_listening_performed": false,
+            "boundary_signal": {
+              "status": "quiet_margins_detected",
+              "leading_quiet_seconds": 0.2,
+              "trailing_quiet_seconds": 0.19,
+              "relative_rms_threshold": 0.0122038,
+              "safe_quiet_margins": true,
+              "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
+            }
+          },
+          "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
+          "validation_engines": [],
+          "recognition_engines": [
+            "parakeet",
+            "whisper"
+          ],
+          "final_transcript_review_pending": true,
+          "pending_final_review_reasons": [
+            "parakeet_start_difference",
+            "whisper_text_difference",
+            "whisper_numeric_difference",
+            "whisper_start_difference",
+            "ctc_text_difference",
+            "ctc_numeric_difference",
+            "ctc_start_difference"
+          ],
+          "editorial_reason": "Écarts de ponctuation, accords, graphies et nombres examinés. Texte courant conservé sous réserve d’accord des deux reconnaissances finales, des nombres et des marges de parole ; aucune heure déduite du contexte.",
+          "numeric_resolution": null,
+          "additional_recognition_evidence": null,
+          "previous_duration": 15.83,
+          "previous_pool": null,
+          "question_changes": [],
+          "human_listening_performed": false
+        }
+      ],
+      "boundary_repair_report": "correction-debut-allo-brigitte-20261112.json",
+      "final_transcript_validation": {
+        "status": "validated_by_file_bound_editorial_cross_recognition_review",
+        "candidate_sha256": "8492455919e722b38c4732de43bcacda7ded2dfd05973deebd6b40e0067af67c",
+        "report": "adjudications-contextuelles-20261112.json",
+        "method": "AI editorial comparison of recorded ASR outputs, native cut evidence and the current question/answer set; not an assertion of two verbatim identical ASR texts.",
+        "notes": "Le préfixe Allô a été rétabli depuis l’original et reconnu par les deux moteurs sur le nouveau MP3. Les deux nouvelles sorties donnent 3 kilos (au) cent : poids de trois kilos et cent grammes, écrit 3,100 kg dans la question. L’ancien Medium donne explicitement 3,1 kg ; son intervalle natif est intégralement conservé dans la nouvelle coupe, à la même fin, ce qui est prouvé par les trames PCM. km dans Parakeet est une confusion d’unité, et épaisse dans Small une fusion de et pèse. Aurélie, grand-mère et visite au retour à la maison restent corroborés. Aucun ajout de parole ni de silence artificiel.",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_06-1.mp3",
@@ -55266,25 +55905,30 @@
           "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_numeric_difference",
-        "ctc_text_difference",
-        "ctc_numeric_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Reconnaissances finales comparées, transcriptions et questions relues. Les noms non épelés sont normalisés comme graphies éditoriales.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 10.4,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "1179743c9784cc86dbdf391fefa7c29f91b1e37f8cdbac3aac294d8c6dac125a",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/maison/nourriture-annonce.mp3",
@@ -55411,18 +56055,17 @@
           "safe_voiced_margins": true
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "whisper",
+        "whisper_medium"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_numeric_difference",
-        "parakeet_start_difference",
-        "ctc_numeric_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Questions et trois réponses relues, informations comparées aux transcriptions. Les pourcentages et affirmations sont rapportés au document. Vérification des frontières et deux reconnaissances du fichier final requises.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
@@ -55546,7 +56189,13 @@
           }
         }
       ],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "d926836d65af70fb620400ce8b79bc8f37efd45db7d08e4ed70a459ef3dc6b70",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/transports/mesdames-messieurs-l-embarquement-vol.mp3",
@@ -55584,24 +56233,30 @@
           "method": "Silero VAD with no padding; supplementary speech-vs-music evidence, not phonetic certification."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_numeric_difference",
-        "whisper_numeric_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Écarts de ponctuation, accords, graphies et nombres examinés. Texte courant conservé sous réserve d’accord des deux reconnaissances finales, des nombres et des marges de parole ; aucune heure déduite du contexte.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 30.41,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "9a5ea399d27c4c4e5299385dc1a72518fd0d38f6f9b0a8f1f683e948301f8e0c",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-28.mp3",
@@ -55725,24 +56380,30 @@
           "safe_voiced_margins": true
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "whisper",
+        "whisper_medium"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_text_difference",
-        "ctc_numeric_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Questions et trois réponses relues, informations comparées aux transcriptions. Les pourcentages et affirmations sont rapportés au document. Vérification des frontières et deux reconnaissances du fichier final requises.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 37.41,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "79811a5e5994d6b50c7fbdc742275b388573385527402c2477cdec617977c6d4",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/vie-quotidienne/cette-semaine-encore-cinema-1.mp3",
@@ -55773,17 +56434,17 @@
           "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "whisper",
+        "ctc"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_numeric_difference",
-        "ctc_numeric_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Reconnaissances finales comparées, transcriptions et questions relues. Les noms non épelés sont normalisés comme graphies éditoriales.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
@@ -55965,7 +56626,13 @@
           }
         }
       ],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "b72c13cb1c46d67c8eb3e9beb70fedadc46a168a4638565bc4d57c663d19216b",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/transports/bonjour-desirez-1-1.mp3",
@@ -56028,23 +56695,30 @@
           "safe_voiced_margins": true
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "initial_given_name_disagreement"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Prénom reconnu Mickaël par Parakeet, Michel par Whisper et Michal par CTC. Les courses viennent de la voiture. Conserver en attente de clarification du prénom, sans sélectionner une graphie pour forcer la validation.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 9.14,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "72ddbff44e178f8b8d283041024bd702e6435f0c940dfd6a3f3a18afc8ea83e0",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-27.mp3",
@@ -56075,24 +56749,30 @@
           "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "parakeet",
+        "whisper_medium"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "whisper_numeric_difference",
-        "ctc_start_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Deux reconnaissances finales comparées ; transcription et toutes les réponses relues ; accords et homophones corrigés.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 34.06,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "1078cdd22a797144962844aad50ca32af829a45a1b2a0ed95d3b6452e0a45d45",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/loisirs/nature-conversation-3.mp3",
@@ -56131,24 +56811,30 @@
           "manual_signal_review": "Existing native source slice preserves full text, with natural voiced margins below one second. No shortening to force old half-second threshold; final textual review deferred."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "ctc",
+        "whisper_medium"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_text_difference",
-        "whisper_numeric_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Questions et trois réponses relues, informations comparées aux transcriptions. Les pourcentages et affirmations sont rapportés au document. Vérification des frontières et deux reconnaissances du fichier final requises.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 99.74,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "d820feb9625f091373c110040613c0cde23865898144dcccd9a5d9c1b7dc1a5b",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-30.mp3",
@@ -56186,25 +56872,30 @@
           "method": "Silero VAD with no padding; supplementary speech-vs-music evidence, not phonetic certification."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "whisper",
+        "ctc"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_text_difference",
-        "parakeet_start_difference",
-        "ctc_numeric_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Reconnaissances finales comparées ; transcription, questions et corrigés relus. Noms non épelés : graphies éditoriales documentées.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 45.87,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "885ac13fb9b82571da98cb7cc4dc450b8394b5d0797b23d5403567bf6f9b8851",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/transports/et-maintenant-notre-rubrique.mp3",
@@ -56235,17 +56926,17 @@
           "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "whisper",
+        "whisper_medium"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_numeric_difference",
-        "ctc_numeric_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Reconnaissances finales comparées ; transcription et questions relues. Graphies des noms non épelés retenues à titre éditorial. Les deux reconnaissances concordent sur 1963 et Paris-Vintimille ; les anciens corrigés 1973 et Paris-Nice sont remplacés.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
@@ -56369,7 +57060,13 @@
           }
         }
       ],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "8669f284b283ad9a6b8483e3300ffbb7a2566da137621064bc4cf694d661fc4c",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/loisirs/plaisir-authenticite-emotion-venez.mp3",
@@ -56407,18 +57104,17 @@
           "method": "Silero VAD with no padding; supplementary speech-vs-music evidence, not phonetic certification."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "whisper",
+        "whisper_medium"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_numeric_difference",
-        "whisper_numeric_difference",
-        "ctc_numeric_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Reconnaissances finales comparées ; transcription, questions et réponses relues. Les noms non épelés sont des graphies éditoriales.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
@@ -56578,7 +57274,13 @@
           }
         }
       ],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "166adc81df742ff6e2dbf365113fddf4a2763bdc8d53094fdf2e971ac3e19146",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/vie-quotidienne/alors-isabelle-week-end-1.mp3",
@@ -56641,25 +57343,30 @@
           "safe_voiced_margins": true
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "whisper",
+        "whisper_medium"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_text_difference",
-        "parakeet_numeric_difference",
-        "ctc_end_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Questions et trois réponses relues, informations comparées aux transcriptions. Les pourcentages et affirmations sont rapportés au document. Vérification des frontières et deux reconnaissances du fichier final requises. Détail lexical réexaminé avec CTC ; les contrôles de couverture du début et de la fin restent obligatoires.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 115.33,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "f1f85c9eb785b23eb4b93304ad965eba1a1cac2fddceb44f287e1273e6c8d71d",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/travail/bonjour-ici-dujardin.mp3",
@@ -56690,24 +57397,30 @@
           "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "parakeet",
+        "ctc"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "whisper_numeric_difference",
-        "ctc_numeric_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Variantes de ponctuation et mise en chiffres examinées ; texte courant conservé sous réserve des contrôles finaux.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 32.86,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "ad3ec745d2f17b0abca61e05832d335d2a99ab37f64cf716cfd8c706844b35da",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_06-2.mp3",
@@ -56738,26 +57451,30 @@
           "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "parakeet",
+        "ctc"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_text_difference",
-        "parakeet_numeric_difference",
-        "whisper_text_difference",
-        "whisper_numeric_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Variantes de ponctuation et mise en chiffres examinées ; texte courant conservé sous réserve des contrôles finaux.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 7.39,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "0d2d856fa5f704f9d3b6a4b72abd7e10bb6db74861a477bbb9d31c1a219e2a61",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/loisirs/nature-conversation-4.mp3",
@@ -57147,18 +57864,17 @@
           "method": "10 ms RMS frames; quiet threshold = max(1e-5, speech RMS 80th percentile * .035). Signal evidence only, not phonetic certification."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "whisper",
+        "whisper_medium"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_text_difference",
-        "parakeet_start_difference",
-        "ctc_start_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Reconnaissances finales comparées ; transcription, attribution des informations, questions et réponses relues.",
       "numeric_resolution": {
         "candidate_sha256": "b83b3147fff135c0841e5c1c25ff409ebb1eff1ee5e89a97e3787c81f8b5825b",
@@ -57179,7 +57895,13 @@
       "previous_duration": 114.63,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "b83b3147fff135c0841e5c1c25ff409ebb1eff1ee5e89a97e3787c81f8b5825b",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/vie-quotidienne/famille-radio.mp3",
@@ -57304,27 +58026,30 @@
           "safe_voiced_margins": true
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "whisper",
+        "whisper_medium"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "specific_lexical_or_initial_final_word_review_required",
-        "parakeet_text_difference",
-        "parakeet_numeric_difference",
-        "parakeet_end_difference",
-        "ctc_start_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Questions et trois réponses relues, informations comparées aux transcriptions. Les pourcentages et affirmations sont rapportés au document. Vérification des frontières et deux reconnaissances du fichier final requises.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 133.98,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "bef99022a44e7084a74703ae8d29b8ffe215494dd342413aa71af7b94becb1fb",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/loisirs/pour-faire-signer-vos.mp3",
@@ -57449,18 +58174,17 @@
           "safe_voiced_margins": true
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "whisper",
+        "whisper_medium"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "publisher_name_and_full_numbers_require_review",
-        "parakeet_numeric_difference",
-        "ctc_numeric_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Trois reconnaissances finales comparées. Anciennes réponses non étayées retirées : Open Space, Carré en BD, huit participants et lycéens/étudiants. Le document donne Obélix, café-rencontre et dix participants ; nouvelle question sur la réception. Nom de la maison partenaire encore mal reconnu : ne pas installer avant clarification.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
@@ -57758,7 +58482,13 @@
           }
         }
       ],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "8663dc9405a5067e66d79f7cc7e8d702eafb42912b13eff1873fc3319320b058",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-29.mp3",
@@ -57796,17 +58526,17 @@
           "method": "Silero VAD with no padding; supplementary speech-vs-music evidence, not phonetic certification."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "whisper",
+        "ctc"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_text_difference",
-        "ctc_numeric_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Reconnaissances finales comparées ; transcription, attribution des informations, questions et réponses relues.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
@@ -57930,7 +58660,13 @@
           }
         }
       ],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "280676464bb65955f95d025c29343b441226130f9ada17523207899bcb1832f5",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/maison/quand-parle-pollution.mp3",
@@ -58051,26 +58787,30 @@
           "safe_voiced_margins": true
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "whisper",
+        "whisper_medium"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "specific_lexical_or_initial_final_word_review_required",
-        "parakeet_text_difference",
-        "parakeet_numeric_difference",
-        "ctc_numeric_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Questions et trois réponses relues, informations comparées aux transcriptions. Les pourcentages et affirmations sont rapportés au document. Vérification des frontières et deux reconnaissances du fichier final requises.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 110.84,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "ea0307c89d7c3b40f3c3ebcf341574f8e5ee0cb31125cb0c692f79e4603a5954",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-6-6.mp3",
@@ -58108,26 +58848,30 @@
           "method": "Silero VAD with no padding; supplementary speech-vs-music evidence, not phonetic certification."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "parakeet",
+        "whisper"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "whisper_end_difference",
-        "ctc_text_difference",
-        "ctc_numeric_difference",
-        "ctc_end_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Reconnaissances finales comparées ; transcription et questions relues. Graphies des noms non épelés retenues à titre éditorial.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 15.23,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "37037829ccdda5926195e0781382dc020612f59fc9595500a95ae3b082244fc8",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     },
     {
       "ref": "/lib/audio/tcf/co/fetes/10-fêtes-conversation-Ingrid.mp3",
@@ -58166,26 +58910,30 @@
           "manual_signal_review": "Existing native source slice preserves full text, with natural voiced margins below one second. No shortening to force old half-second threshold; final textual review deferred."
         }
       },
-      "validation": "native_source_and_boundaries_checked_final_transcript_review_deferred",
-      "validation_engines": [],
+      "validation": "source_boundaries_transcript_numbers_and_questions_reviewed",
+      "validation_engines": [
+        "whisper",
+        "whisper_medium"
+      ],
       "recognition_engines": [
         "parakeet",
         "whisper"
       ],
-      "final_transcript_review_pending": true,
-      "pending_final_review_reasons": [
-        "parakeet_text_difference",
-        "parakeet_numeric_difference",
-        "parakeet_end_difference",
-        "ctc_start_difference"
-      ],
+      "final_transcript_review_pending": false,
+      "pending_final_review_reasons": [],
       "editorial_reason": "Questions et trois réponses relues, informations comparées aux transcriptions. Les pourcentages et affirmations sont rapportés au document. Vérification des frontières et deux reconnaissances du fichier final requises. Détail lexical réexaminé avec CTC ; les contrôles de couverture du début et de la fin restent obligatoires.",
       "numeric_resolution": null,
       "additional_recognition_evidence": null,
       "previous_duration": 99.93,
       "previous_pool": null,
       "question_changes": [],
-      "human_listening_performed": false
+      "human_listening_performed": false,
+      "final_transcript_validation": {
+        "status": "validated_by_two_qualified_recognitions_and_editorial_question_review",
+        "candidate_sha256": "0964f9e136dcab98c41e4841ae6680ddc948b860e1acd1c8a3c20328de89742d",
+        "report": "validation-87-20261111.json",
+        "human_listening_performed": false
+      }
     }
   ],
   "batches": [
@@ -58401,7 +59149,7 @@
     "remaining_references": 0,
     "active_library_references": 1025,
     "full_switch_complete": true,
-    "final_transcript_reviews_pending": 87,
+    "final_transcript_reviews_pending": 0,
     "final_validation_complete": false
   },
   "final_review_policy": "User requested audio switch now, official transcripts and final check later. Pending records are installations, not completed transcript validations."
