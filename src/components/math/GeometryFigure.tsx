@@ -108,6 +108,9 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
   const bare = Boolean(d.bare)
   const unit = u(dims)
   const kind = d.triangleKind ?? 'scalene'
+  // Recognition figures need equal drawn sides; measured diagrams keep their existing layout.
+  const plainTriangle = bare || ![d.side,d.a,d.b,d.c,d.base,d.height,d.ask].some(value=>value!=null)
+  const equilateralPoints = plainTriangle ? `130,32 ${130+120/Math.sqrt(3)},152 ${130-120/Math.sqrt(3)},152` : '130,32 220,152 40,152'
   const hasHeight = !bare && d.height != null
   const forArea = !bare && (hasHeight || (type === 'triangle' && d.base != null && d.a == null))
 
@@ -298,7 +301,7 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
 
         {type === 'triangle' && !triPlacement && kind === 'equilateral' && (
           <>
-            <polygon points="130,32 220,152 40,152" />
+            <polygon points={equilateralPoints} />
             {forArea && (d.base != null || d.side != null) && d.height != null ? (
               <>
                 <line

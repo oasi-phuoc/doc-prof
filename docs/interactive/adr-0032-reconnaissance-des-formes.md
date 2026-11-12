@@ -1,5 +1,7 @@
 # ADR 0032 — Reconnaissance des formes et propriétés simples
 
+Complément : l’[ADR 0034](adr-0034-triangles-reconnaissance.md) valide les dessins et active les triangles laissés en attente dans ce jalon.
+
 Le jeu reprend `tcm-csc-ex17`, `figures-nommer` et `figures-proprietes`. Chaque forme CSC devient une question indépendante, avec les quatre noms de la fiche comme cartes. La banque générique permet de reconnaître treize formes planes et solides : les trois sous-types de triangles restent signalés. Six familles de propriétés sont vérifiées : carré, rectangle, losange, parallélogramme, cercle et ovale. Chaque ligne devient une question, notamment les côtés égaux, angles droits et axes de symétrie. Le cercle propose bien « une infinité » ; l’ovale non circulaire possède deux axes.
 
 L’adaptateur exige un dessin simple sans mesure ni autre calcul et compare le nom, les lignes de propriétés et le corrigé au contrat relu. Une édition incohérente, des formes CSC répétées, une cote ajoutée ou un sous-type non vérifié sont signalés dans la préparation. La question publique contient uniquement le dessin nu ; aucun nom, corrigé ou propriété résolue n’est ajouté au SVG. Les choix de noms demandent le nom le plus précis pour distinguer, par exemple, carré et rectangle. Les identifiants des mots ne désignent pas leur rang source.

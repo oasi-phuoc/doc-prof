@@ -1,5 +1,7 @@
 # ADR 0033 — Formes et propriétés du TCM CFR
 
+Complément : l’[ADR 0034](adr-0034-triangles-reconnaissance.md) valide les dessins et active les triangles laissés en attente dans ce jalon.
+
 Le jeu reprend les cartes `geoNameCard` des exercices `tcm-cfr-ex16` et `tcm-cfr-ex17`. L’exercice 17 produit une question de nom par carte. L’exercice 16 produit une question pour le nom et une question pour chacune de ses deux propriétés ; chaque partie conserve ses références source.
 
 Sept figures simples sont relues dans ce contrat : carré, rectangle, losange, parallélogramme, cercle, trapèze isocèle non parallélogramme et pentagone. Les quatre premières apparaissent dans le tirage de propriétés ; les trois autres sont également acceptées dans des cartes librement choisies si les champs correspondent au contrat. Les sous-types de triangles restent signalés, car leur dessin demande encore une validation. Un tirage ordinaire de l’exercice 16 donne donc six micro-questions vérifiées pour deux cartes et un avertissement pour la troisième carte triangulaire. L’exercice 17 reprend ses trois noms.

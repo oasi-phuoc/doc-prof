@@ -1,0 +1,57 @@
+{
+  "date": "2026-11-12",
+  "baseline": "0bae17265f92bd80df5e9a56df86b7d174c51c1d",
+  "scope": "Triangle SVG geometry, generic recognition and complete CFR 16 cards",
+  "tests": {
+    "newTests": 4,
+    "focusedPassed": 18,
+    "fullSuitePassed": 251,
+    "failed": 0,
+    "genericConfigurations": 900,
+    "cfrConfigurations": 600,
+    "independentGeometry": "Actual rendered polygon vertices: side lengths, angle measures and reflection axes for all four triangle kinds; keys compared to measured SVG facts",
+    "measuredDiagrams": "Existing polygon points and three dimension labels retained for measured equilateral, isosceles and right triangles",
+    "preciseNames": "Four triangle names across 100 seeds; generic triangle cannot receive triangle quelconque as a false alternative"
+  },
+  "coverage": {
+    "genericNames": 16,
+    "genericPropertyVariants": 10,
+    "genericPropertyQuestions": 39,
+    "cfrFreelyChosenFigures": 10,
+    "generatedCfr16": {"cards": 3, "questions": 9, "issues": 0},
+    "inventoryPlayableVariants": 712,
+    "inventoryVariants": 2111,
+    "inventoryGenerationErrors": 8
+  },
+  "browser": {
+    "passed": ["recognition-browser", "recognition-browser print section", "a4-regression"],
+    "all48StagesRun": false,
+    "viewports": ["390x844", "1366x768", "360x640"],
+    "class": "All three specific triangle names and angle facts; exact projected SVG sides and right angles; correction in cards only",
+    "solo": "Correct equal-side count, wrong equal-angle count and timeout on right angle; automatic one-second progression",
+    "competition": "Two fixed mascots and exact equilateral drawing; local offline turns after preparation",
+    "accessibility": "axe passes; figure, cards and controls stay inside each viewport without overlap",
+    "sourceTemplate": "unchanged",
+    "serverWrites": 0,
+    "errors": []
+  },
+  "paper": {
+    "pdf": "triangles-a4-exemple.pdf",
+    "pages": 2,
+    "copies": "Three triangles on both student and answer sheets, geometric properties checked in print media",
+    "footerOverflow": [],
+    "a4Witness": "Identical screenshot against 0addb36d662842040cc8ed64e8b2c0ca81eac810"
+  },
+  "checks": {
+    "appTypes": "passed",
+    "lint": "passed with existing warnings; no new warnings in changed files",
+    "productionBuild": "passed",
+    "bundleBudgets": "passed"
+  },
+  "limits": [
+    "Three generic trapezoid property variants still require independent drawing validation.",
+    "The 206 unknown imported logic keys remain excluded from automatic scoring.",
+    "New CSC/CFR narration remains deferred and not_generated; existing audio is retained.",
+    "The complete 48-stage browser suite was not rerun; physical classroom devices and online Worker activation remain separate."
+  ]
+}
