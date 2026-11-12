@@ -1,0 +1,197 @@
+{
+  "candidate_sha256": "ed2561b5521dab92e64ced8d5af4760804eaac8d8effacfcd26b19c69dd399cc",
+  "evidence_file": "/workspace/work/tcf-validation-87-20261111/whisper-medium/radio-cinema-ed2561b5521d.json",
+  "evidence_sha256": "f67251b1594f2fe91735a874224c28bf030994b90fc90c963f1225d87940d58b",
+  "reviewed_numbers": [
+    "7",
+    "1946",
+    "1",
+    "0800631010",
+    "2"
+  ],
+  "approved_engines": [
+    "parakeet"
+  ],
+  "verification_mode": "span_review_across_three_recognitions",
+  "span_review_notes": [
+    "Medium donne le numéro entier 0800 63 10 10. La relecture séparée de l’amorce complète Si vous appelez le, trames 32,4–34,55 s du même MP3, donne explicitement 0800 dans Parakeet ; la fin 63 10 10 est présente dans sa reconnaissance entière. Le 080 de la sortie entière est une concaténation incomplète corrigée par cette reconnaissance de sa propre sous-séquence, sans modifier l’audio. Les autres fenêtres diagnostiques sont conservées, mais celle démarrant au milieu de la phrase n’est pas retenue."
+  ],
+  "native_prefix_proof": {
+    "file": "/workspace/work/tcf-validation-87-20261111/targeted-spans/radio-phone-prefix-1.flac",
+    "sha256": "42383638026084210afbefd51538803894c2f70822c97d49d714827b007bbe13",
+    "source_file": "/workspace/doc-prof/public/lib/audio/tcf/co/loisirs/radio-cinema.mp3",
+    "source_sha256": "ed2561b5521dab92e64ced8d5af4760804eaac8d8effacfcd26b19c69dd399cc",
+    "start": 32.4,
+    "end": 34.55
+  },
+  "prefix_recognition": {
+    "status": "transcribed",
+    "source_id": "radio-phone-prefix-1-423836380260",
+    "source": "/workspace/work/tcf-validation-87-20261111/targeted-spans/radio-phone-prefix-1.flac",
+    "source_sha256": "42383638026084210afbefd51538803894c2f70822c97d49d714827b007bbe13",
+    "source_metadata": {},
+    "parameters": {
+      "pipeline_version": 4,
+      "engine": "sherpa-onnx",
+      "version": "2.0.1",
+      "model": "nemo-parakeet-tdt-0.6b-v3-int8",
+      "language": "multilingual_auto_includes_fr",
+      "model_files_sha256": {
+        "/tmp/clairfle-parakeet-20261112/encoder.int8.onnx": "1afbe69c1ffdabee94755f42e4daf1d93549131a3da11356bda84fcef0f2c479",
+        "/tmp/clairfle-parakeet-20261112/decoder.int8.onnx": "0222a86147299d4dee90edf95b6d13827edb42ad8b7c9cf0b2582f030937c0b5",
+        "/tmp/clairfle-parakeet-20261112/joiner.int8.onnx": "cbd02f3696e9944970111fb439d9c3fd365a80374565f13f2b9c7007d253fc98",
+        "/tmp/clairfle-parakeet-20261112/tokens.txt": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
+      },
+      "provider": "cpu",
+      "decoding_method": "greedy_search",
+      "native_tdt_frame_step_seconds": 0.08,
+      "processing_windows": "Silero VAD utterances merged into <=27s processing windows for inputs >=29s; max 26s speech, 350ms silence, 200ms padding"
+    },
+    "quality": "automatic_draft_requires_review",
+    "word_timing_method": "aggregate native TDT token emissions and predicted skip durations; estimated bounds, 80ms frame step",
+    "provenance": "https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8.tar.bz2",
+    "text": "Si vous appelez le 0800",
+    "duration_seconds": 2.15,
+    "chunks": [
+      {
+        "start": 0.0,
+        "end": 2.15,
+        "text": "Si vous appelez le 0800",
+        "tokens": [
+          " Si",
+          " vous",
+          " app",
+          "ele",
+          "z",
+          " le",
+          " ",
+          "0",
+          "8",
+          "0",
+          "0"
+        ],
+        "timestamps": [
+          0.0,
+          0.23999999463558197,
+          0.3999999761581421,
+          0.47999998927116394,
+          0.6399999856948853,
+          0.7999999523162842,
+          0.9599999785423279,
+          1.0399999618530273,
+          1.1999999284744263,
+          1.4399999380111694,
+          1.5199999809265137
+        ],
+        "durations": [
+          0.23999999463558197,
+          0.1599999964237213,
+          0.07999999821186066,
+          0.1599999964237213,
+          0.1599999964237213,
+          0.1599999964237213,
+          0.07999999821186066,
+          0.1599999964237213,
+          0.07999999821186066,
+          0.07999999821186066,
+          0.07999999821186066
+        ],
+        "ys_log_probs": [
+          -0.0029969215393066406,
+          -4.3392181396484375e-05,
+          -1.430511474609375e-05,
+          -0.00010347366333007812,
+          -3.814697265625e-06,
+          -0.0006966590881347656,
+          -0.061144351959228516,
+          -0.22640323638916016,
+          -0.08585548400878906,
+          -0.27315616607666016,
+          -0.47623634338378906
+        ],
+        "reconstructed_word_text": "Si vous appelez le 0800",
+        "word_text_matches_result": true
+      }
+    ],
+    "words": [
+      {
+        "word": "Si",
+        "start": 0.0,
+        "end": 0.23999999463558197,
+        "chunk_index": 0,
+        "native_token_indices": [
+          0
+        ],
+        "zero_duration_token": false
+      },
+      {
+        "word": "vous",
+        "start": 0.23999999463558197,
+        "end": 0.3999999910593033,
+        "chunk_index": 0,
+        "native_token_indices": [
+          1
+        ],
+        "zero_duration_token": false
+      },
+      {
+        "word": "appelez",
+        "start": 0.3999999761581421,
+        "end": 0.7999999821186066,
+        "chunk_index": 0,
+        "native_token_indices": [
+          2,
+          3,
+          4
+        ],
+        "zero_duration_token": false
+      },
+      {
+        "word": "le",
+        "start": 0.7999999523162842,
+        "end": 0.9599999487400055,
+        "chunk_index": 0,
+        "native_token_indices": [
+          5
+        ],
+        "zero_duration_token": false
+      },
+      {
+        "word": "0800",
+        "start": 1.0399999618530273,
+        "end": 1.5999999791383743,
+        "chunk_index": 0,
+        "native_token_indices": [
+          7,
+          8,
+          9,
+          10
+        ],
+        "zero_duration_token": false
+      }
+    ],
+    "word_text_matches_result": true,
+    "instruction_numbering_candidates": [
+      {
+        "type": "number_candidate",
+        "text": "0800",
+        "start": 1.0399999618530273,
+        "end": 1.5999999791383743,
+        "word_indices": [
+          4
+        ],
+        "context": "Si vous appelez le 0800",
+        "requires_review": true
+      }
+    ],
+    "processing_windows": [
+      {
+        "start": 0.0,
+        "end": 2.15
+      }
+    ],
+    "wall_seconds": 0.23962127100003272,
+    "cpu_seconds": 0.39090704200000026
+  },
+  "prefix_recognition_file_sha256": "4e4acffeb082bad561c14d4c9c187bdfef09b701ba5959b5f0dc9572d93cd5ee"
+}

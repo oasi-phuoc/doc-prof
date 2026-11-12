@@ -21,6 +21,7 @@ import {
 } from '@/francais/vocab-learn'
 import { isGrammarTheoryType } from '@/francais/grammar-theory'
 import { parseGramExerciseType } from '@/grammaire/exercises/subthemes'
+import { defaultGrammarPilot } from '@/grammaire/curriculum/registry'
 import { QUI_SUIS_JE_DEFAULT_COUNT, isQuiSuisJeKind } from '@/grammaire/exercises/qui-suis-je'
 import {
   NATIONALITE_DEFAULT_COUNT,
@@ -217,6 +218,13 @@ export function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<Exe
     phraseCategories: isPhrase ? prev?.phraseCategories : undefined,
     grammarCoLevel,
     grammarCoAudioId: isGrammarCoType(type.id) && prev?.exerciseType===type.id ? prev.grammarCoAudioId : undefined,
+    grammarLevel: undefined,
+    grammarActivityId: undefined,
+    grammarPresentation: undefined,
+    grammarBankRevision: undefined,
+    grammarSnapshot: undefined,
+    grammarPreview: undefined,
+    ...(type.id==='gram-ex-etre-curriculum-a' ? defaultGrammarPilot(type.id) : {}),
     columns: type.preferredColumns ?? 2,
     ...clearLibreContentFreeze(),
     ...(isDecompose
@@ -232,7 +240,7 @@ export function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<Exe
           : isPhraseChart || isVocabLearn || isJeux || isCalli || isTheory
             ? { count: 1 }
             : isGramEx
-              ? { count: quiSuisJeCount ?? (isGrammarReadingType(type.id) ? 5 : 6) }
+              ? { count: type.id==='gram-ex-etre-curriculum-a'?2:quiSuisJeCount ?? (isGrammarReadingType(type.id) ? 5 : 6) }
             : isVocabPool
               ? { count: Math.min(6, Math.max(2, vocabSelected.length)) }
               : isPhrase

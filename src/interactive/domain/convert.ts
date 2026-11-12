@@ -275,6 +275,7 @@ export function convertRecipe(
               q.prompt = item.prompt; q.instruction = `${block.instruction}\n${item.instruction}`; q.choices = item.choices
               q.mode = item.mode ?? 'choice'; q.audio = item.audio ?? q.audio; q.images = item.images ?? []
               if (item.words) q.words = item.words
+              if (item.choiceOrderPolicy) q.choiceOrderPolicy = item.choiceOrderPolicy
               if (item.teacherLed) q.compatibility = 'teacher-led'
               add(q, item.model, item.correctId)
             })

@@ -9,6 +9,8 @@ import { GattegnoChart } from './math/GattegnoChart'
 import { GlossaryFigure } from './math/GlossaryFigure'
 import { LogiqueBlock } from './item-view/logique'
 import { TcfItemView } from './tcf/TcfItemView'
+import { GrammarQuestionView } from './item-view/grammar'
+import { isGrammarQuestion } from '@/grammaire/curriculum/validation'
 import { AlgebraRow } from './item-view/algebra'
 import { ColumnOp, DivisionColumn } from './item-view/columns'
 import { DecomposeBlock } from './item-view/decompose'
@@ -300,6 +302,7 @@ export function ItemView({
       ) : null}
       {item.coordScene || hideNumber ? null : <div className="item-number">{index + 1}.</div>}
       <div className="item-content">
+        {item.layout==='grammar' ? isGrammarQuestion(item.grammar) ? <GrammarQuestionView question={item.grammar} mode={mode}/> : <p>Question grammaticale à vérifier.</p> : null}
         {(item.layout === 'column' || item.layout === 'column-empty') && <ColumnOp item={item} mode={mode} />}
         {item.layout === 'division-column' && <DivisionColumn item={item} mode={mode} />}
         {item.layout === 'op-table' && <OpTableBlock item={item} mode={mode} />}

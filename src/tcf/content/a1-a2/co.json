@@ -9257,7 +9257,7 @@
     "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
     "support": {
       "audio": "/lib/audio/tcf/co/magasins/bonjour-societe-fmac.mp3",
-      "transcription": "Bonjour, c'est la société FMAC. Vous avez participé à notre grand jeu concours le mois dernier. Je vous informe que vous avez gagné une télévision. Félicitations. Rappelez-nous au 02 50 88 23 40 pour nous donner votre adresse et récupérer votre cadeau. Vous pouvez consulter toutes nos offres promotionnelles sur notre site internet www.fmac.fr. Vous avez 30% de réduction sur les lecteurs DVD et 25% de réduction sur les ordinateurs du 9 au 29 mars."
+      "transcription": "Bonjour, c’est la société FMAC. Vous avez participé à notre grand jeu-concours le mois dernier. Je vous informe que vous avez gagné une télévision. Félicitations. Rappelez-nous au 3912 pour nous donner votre adresse postale et récupérer votre cadeau. Vous pouvez consulter toutes nos offres promotionnelles sur notre site Internet www.fmac.fr. Vous avez 30 % de réduction sur les imprimantes et 25 % de réduction sur les ordinateurs du 9 au 16 mars."
     },
     "questions": [
       {
@@ -9394,7 +9394,7 @@
         "choix": [
           {
             "id": "a",
-            "texte": "Son adresse",
+            "texte": "Son adresse postale",
             "correct": true
           },
           {
@@ -9409,7 +9409,7 @@
         "formes": {
           "lignes": {
             "nb_lignes": 1,
-            "reponse_modele": "Son adresse"
+            "reponse_modele": "Son adresse postale"
           }
         }
       },
@@ -9441,7 +9441,7 @@
         }
       },
       {
-        "enonce": "Quelle réduction s’applique aux lecteurs DVD ?",
+        "enonce": "Quelle réduction s’applique aux imprimantes ?",
         "type_reponse": "qcm_texte",
         "points": 1,
         "melanger": true,
@@ -9502,22 +9502,22 @@
         "choix": [
           {
             "id": "a",
-            "texte": "Du 9 au 29 mars",
+            "texte": "Du 9 au 16 mars",
             "correct": true
           },
           {
             "id": "b",
-            "texte": "Du 9 au 29 avril"
+            "texte": "Du 9 au 16 avril"
           },
           {
             "id": "c",
-            "texte": "Du 19 au 29 mars"
+            "texte": "Du 19 au 26 mars"
           }
         ],
         "formes": {
           "lignes": {
             "nb_lignes": 1,
-            "reponse_modele": "Du 9 au 29 mars"
+            "reponse_modele": "Du 9 au 16 mars"
           }
         }
       }
@@ -10653,7 +10653,7 @@
     "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
     "support": {
       "audio": "/lib/audio/tcf/co/ecole/ecole-4.mp3",
-      "transcription": "Le bâtiment C de l'école est fermé du 14 au 26 janvier pour travaux. Vos nouvelles salles de classe pendant cette période sont indiquées sur le tableau d'information à l'entrée. L'association des parents d'élèves organise le concours Décine ton école idéale. Pour participer, vous devez envoyer votre dessin avant le 12 mars à l'adresse [adresse électronique à confirmer] Chers élèves. Lundi 23 April, nous avons la chance d'accueillir l'auteur Bernard Werber dans l'auditorium du college. Il donnera une conférence sur son métier à l'occasion de la journée internationale du livre. This is une simulation d'alerte au feu. Nous vous demandons de sortir du bâtiment dans le calme. Merci de laisser vos affaires dans la classe and ne pas courir. Nous allons tous nous retrouver dans la cour. Votre professeur d'Italien, Monsieur Damiani, est absent cette semaine. Il est remplacé à partir de mercredi par Monsieur Biancardi. L'examen d'Italien a bien lieu vendredi. Il est surveillé par Madame Blanchard. Une vente de livres est organisée mardi 22 mai par les élèves de 4e B dans la salle B 116. L'argent de la vente est pour l'association Sourir d'enfants qui aide les enfants malades à l'hôpital."
+      "transcription": "Le bâtiment C de l’école est fermé du 14 au 26 janvier pour travaux. Vos nouvelles salles de classe pendant cette période sont indiquées sur le tableau d’information à l’entrée.\nL’association des parents d’élèves organise le concours « Dessine ton école idéale ». Pour participer, vous devez envoyer votre dessin avant le 12 mars à l’adresse parents@lycee.fr.\nChers élèves, lundi 23 avril, nous avons la chance d’accueillir l’auteur Bernard Werber dans l’auditorium du collège. Il donnera une conférence sur son métier à l’occasion de la Journée internationale du livre.\nCeci est une simulation d’alerte au feu. Nous vous demandons de sortir du bâtiment dans le calme. Merci de laisser vos affaires dans la classe et de ne pas courir. Nous allons tous nous retrouver dans la cour.\nVotre professeur d’italien, monsieur Damiani, est absent cette semaine. Il est remplacé à partir de mercredi par monsieur Biancardi. L’examen d’italien a bien lieu vendredi. Il est surveillé par madame Blanchard.\nUne vente de livres est organisée mardi 22 mai par les élèves de 4e B dans la salle B 116. L’argent de la vente est pour l’association Sourire d’enfants, qui aide les enfants malades à l’hôpital."
     },
     "questions": [
       {
@@ -10947,7 +10947,7 @@
     ],
     "consigne_supplementaire": null,
     "scenario": "ecole",
-    "scene": "École"
+    "scene": "Six annonces scolaires"
   },
   {
     "id": "tcf-ss-a2-s7-co-3",
@@ -13483,8 +13483,8 @@
       }
     ],
     "consigne_supplementaire": null,
-    "scenario": "travail",
-    "scene": "Demander un service"
+    "scenario": "vie-quotidienne",
+    "scene": "Accompagner Olga"
   },
   {
     "id": "tcf-ss-a2-s14-co-2",
@@ -15123,8 +15123,8 @@
       }
     ],
     "consigne_supplementaire": null,
-    "scenario": "vie-quotidienne",
-    "scene": "Bonjour ici Bouquin directrice"
+    "scenario": "travail",
+    "scene": "Livraison de livres à la bibliothèque"
   },
   {
     "id": "tcf-ss-a2-s15-co-3",
@@ -15419,8 +15419,8 @@
       }
     ],
     "consigne_supplementaire": null,
-    "scenario": "vie-quotidienne",
-    "scene": "Vie quotidienne"
+    "scenario": "loisirs",
+    "scene": "Invitation à la montagne"
   },
   {
     "id": "tcf-ss-a2-s15-co-4",
@@ -15760,8 +15760,8 @@
       }
     ],
     "consigne_supplementaire": null,
-    "scenario": "vie-quotidienne",
-    "scene": "Vie quotidienne"
+    "scenario": "loisirs",
+    "scene": "Horaires et fermeture de la piscine"
   },
   {
     "id": "tcf-ss-a2-s16-co-1",
@@ -16056,8 +16056,8 @@
       }
     ],
     "consigne_supplementaire": null,
-    "scenario": "vie-quotidienne",
-    "scene": "Vie quotidienne"
+    "scenario": "loisirs",
+    "scene": "Ouverture d’un centre sportif"
   },
   {
     "id": "tcf-ss-a2-s16-co-2",
@@ -16334,8 +16334,8 @@
       }
     ],
     "consigne_supplementaire": null,
-    "scenario": "vie-quotidienne",
-    "scene": "Vie quotidienne"
+    "scenario": "loisirs",
+    "scene": "Concerts à Paris, Nice et Toulouse"
   },
   {
     "id": "tcf-ss-a2-s20-co-2",
@@ -19960,7 +19960,7 @@
     ],
     "consigne_supplementaire": null,
     "scenario": "maison",
-    "scene": "Salut Lucie"
+    "scene": "Garder le chat de Lucie"
   },
   {
     "id": "tcf-ss-a2-s25-co-2",
@@ -22229,8 +22229,8 @@
       }
     ],
     "consigne_supplementaire": null,
-    "scenario": "vie-quotidienne",
-    "scene": "En moins d'une dizaine"
+    "scenario": "transports",
+    "scene": "Grève des transports"
   },
   {
     "id": "tcf-ss-a2-s48-co-3",
@@ -46972,7 +46972,7 @@
       "transcription": [
         "C’est votre voisine. Ma fille a oublié ses clés chez vous. Elle viendra les chercher en fin d’après-midi.",
         "On demande M. Férand chez le directeur dans les plus brefs délais.",
-        "Les résultats des analyses médicales de M me Chapry sont disponibles à partir de 17 h.",
+        "Les résultats des analyses médicales de Madame Chapry sont disponibles à partir de 17 h.",
         "L’assuré doit prendre un ticket à l’entrée du bureau des réclamations."
       ],
       "audios": [
@@ -48314,7 +48314,7 @@
     "consigne": "Vous entendez ce message téléphonique, répondez à la question ci-dessous.",
     "support": {
       "audio": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_22.mp3",
-      "transcription": "M me Deval ? C’est Arthur Gulvy, le professeur de\nguitare de votre fils. Je ne pourrai pas venir cet\naprès-midi, mais demain après le lycée, Léo peut\nrattraper le cours avec sa cousine Isabelle et Martin.",
+      "transcription": "Madame Deval ? C’est Arthur Gulvy, le professeur de\nguitare de votre fils. Je ne pourrai pas venir cet\naprès-midi, mais demain après le lycée, Léo peut\nrattraper le cours avec sa cousine Isabelle et Martin.",
       "image_description": "Scénario vidéo (audio CO moyen, « Piste 22 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « M me Deval ? » ; B : « C’est Arthur Gulvy, le professeur de » ; A : « Guitare de votre fils » ; B : « Je ne pourrai pas venir cet » ; A : « Après-midi, mais demain après le lycée, Léo peut » ; B : « Rattraper le cours avec sa cousine Isabelle et Martin ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
     },
     "questions": [

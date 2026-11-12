@@ -31,9 +31,10 @@
       "total_bytes": 122106709,
       "total_duration_seconds": 7627.62,
       "production_modified": false,
-      "content_pairs_confirmed_with_two_recognizers": 61
+      "content_pairs_confirmed_with_two_recognizers": 61,
+      "integration_cancelled": true
     },
-    "audio_files_modified": 0,
+    "audio_files_modified": 4,
     "final_check_complete": false,
     "human_listening_performed": false,
     "reviewed_correction_records": 10,
@@ -54,7 +55,8 @@
       "previously_catalogued_byte_identical": 0,
       "total_bytes": 74624147,
       "total_duration_seconds": 3105.7,
-      "production_modified": false
+      "production_modified": false,
+      "integration_cancelled": true
     },
     "new_a2_sources": {
       "received": 62,
@@ -67,10 +69,14 @@
       "previously_catalogued_byte_identical": 0,
       "total_bytes": 114126901,
       "total_duration_seconds": 4752.54,
-      "production_modified": false
-    }
+      "production_modified": false,
+      "integration_cancelled": true
+    },
+    "recording_pdf_version_conflicts_resolved": 4,
+    "recording_pdf_version_conflicts_pending": 0,
+    "new_collection_integration_cancelled_at_user_request": true
   },
-  "scope_note": "Les PDF concernent des éditions précises. Les 61 nouvelles sources B1 039804 ont été appariées aux 61 PDF par comparaison de contenu avec deux moteurs de reconnaissance ; elles ne sont pas encore intégrées aux exercices actifs. Les 82 sources A1 039803 et 62 sources A2 039802 sont conservées séparément. Aucun rapprochement ne vaut attestation d’écoute humaine ni validation de toutes les questions.",
+  "scope_note": "Les PDF concernent des éditions précises. Les 61 nouvelles sources B1 039804 ont été appariées aux 61 PDF par comparaison de contenu avec deux moteurs de reconnaissance ; elles ne sont pas encore intégrées aux exercices actifs. Les 82 sources A1 039803 et 62 sources A2 039802 sont conservées séparément. Aucun rapprochement ne vaut attestation d’écoute humaine ni validation de toutes les questions. Les nouvelles collections sont ensuite exclues à la demande de l’utilisateur : leurs appariements restent des archives de preuve, sans projet d’intégration supplémentaire. Quatre sources seulement servent aux corrections d’édition demandées.",
   "matches": [
     {
       "ref": "/lib/audio/tcf/co/fetes/02-fêtes_anniversaire-de-Gerald.mp3",
@@ -3523,7 +3529,7 @@
   "version_conflicts": [
     {
       "ref": "/lib/audio/tcf/co/vie-quotidienne/radio-france.mp3",
-      "status": "recording_pdf_version_difference_not_overwritten",
+      "status": "resolved_with_matching_official_edition_audio",
       "similarity": 0.967,
       "pdf_collection": "A1 tout public",
       "pdf_track": 21,
@@ -3548,11 +3554,13 @@
         "installed": "Samedi et dimanche",
         "pdf": "Samedi uniquement"
       },
-      "source_evidence": "Installed recording reconfirmed in saved Parakeet/Whisper outputs; CTC also available for first three references."
+      "source_evidence": "Installed recording reconfirmed in saved Parakeet/Whisper outputs; CTC also available for first three references.",
+      "new_audio_sha256": "79bf5c1bdf32bfa436a2aee97abe502f3ee0dcc5d91f01ef4bb4821909f215ed",
+      "correction_report": "corrections-4-editions-20261111.json"
     },
     {
       "ref": "/lib/audio/tcf/co/vie-quotidienne/bonsoir-votre-commande-prete.mp3",
-      "status": "recording_pdf_version_difference_not_overwritten",
+      "status": "resolved_with_matching_official_edition_audio",
       "similarity": 0.9011,
       "pdf_collection": "A1 tout public",
       "pdf_track": 38,
@@ -3582,11 +3590,13 @@
         "installed": "Chèques non acceptés",
         "pdf": "Paiement en espèces uniquement"
       },
-      "source_evidence": "Installed recording reconfirmed in saved Parakeet/Whisper outputs; CTC also available for first three references."
+      "source_evidence": "Installed recording reconfirmed in saved Parakeet/Whisper outputs; CTC also available for first three references.",
+      "new_audio_sha256": "d67811d811077438d2c0269b9b5816c540bc84753bcc481d3e8412bda964f7c9",
+      "correction_report": "corrections-4-editions-20261111.json"
     },
     {
       "ref": "/lib/audio/tcf/co/loisirs/bienvenue-parc-asterix-1.mp3",
-      "status": "recording_pdf_version_difference_not_overwritten",
+      "status": "resolved_with_matching_official_edition_audio",
       "similarity": 0.9302,
       "pdf_collection": "A1 tout public",
       "pdf_track": 29,
@@ -3621,11 +3631,13 @@
         "installed": "Fermeture dans 30 minutes",
         "pdf": "Magasin de chaussures ; fermeture dans 20 minutes"
       },
-      "source_evidence": "Installed recording reconfirmed in saved Parakeet/Whisper outputs; CTC also available for first three references."
+      "source_evidence": "Installed recording reconfirmed in saved Parakeet/Whisper outputs; CTC also available for first three references.",
+      "new_audio_sha256": "131928eb367e7218078abd0c7ae310646922a1069c14fd2186459d63fa93074b",
+      "correction_report": "corrections-4-editions-20261111.json"
     },
     {
       "ref": "/lib/audio/tcf/co/magasins/bonjour-societe-fmac.mp3",
-      "status": "recording_pdf_version_difference_not_overwritten",
+      "status": "resolved_with_matching_official_edition_audio",
       "similarity": 0.9221,
       "pdf_collection": "A2 tout public",
       "pdf_track": 37,
@@ -3665,7 +3677,9 @@
         "installed": "02 50 88 23 40 ; lecteurs DVD ; du 9 au 29 mars",
         "pdf": "3912 ; imprimantes ; du 9 au 16 mars"
       },
-      "source_evidence": "Installed recording reconfirmed in saved Parakeet/Whisper outputs; CTC also available for first three references."
+      "source_evidence": "Installed recording reconfirmed in saved Parakeet/Whisper outputs; CTC also available for first three references.",
+      "new_audio_sha256": "49aaa8ae7bcf977bd77558dc5e4ab8d051668589132bcf52f34d2af8fe5bcf36",
+      "correction_report": "corrections-4-editions-20261111.json"
     }
   ]
 }

@@ -1,0 +1,78 @@
+{
+  "human_listening_performed": false,
+  "items": [
+    {
+      "index": 37,
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/le-premier-film-d-edouard-1.mp3",
+      "note": "Les seules différences de nombres dans Medium sont l’article un dans un certain goût (rendu à certains goûts). Aucun changement des quantités : quatre aliments sur cinq ; quatrième cause de mortalité ; deux tiers des maladies du cœur ; 40 % des cancers. Small les donne et Medium les confirme dans le contexte. Les articles grammaticaux ne deviennent pas des quantités fictives.",
+      "approved_engines": [
+        "whisper_medium"
+      ],
+      "source_sha256": "5ad92511c40bff5003bb2f147bee0dd6798c4289c0665e3b33b6b5b00d6e90b8",
+      "evidence_file": "/workspace/work/tcf-validation-87-20261111/whisper-medium/le-premier-film-d-edouard-1-5ad92511c40b.json",
+      "evidence_sha256": "2d56a24eaad8c30ccbb182e8dd3420cc63cf032f49801694c5f94b529f8c0e9e"
+    },
+    {
+      "index": 38,
+      "ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_42-2.mp3",
+      "note": "Les quatre sorties reconnaissent deux gars à la place du nom propre Degas. Le dialogue parle d’une exposition au musée d’Orsay et se conclut par j’adore ce peintre, au singulier. La graphie du peintre Degas est conservée ; le 2 produit par les moteurs ne représente pas deux personnes ni une quantité demandée.",
+      "approved_engines": [
+        "parakeet",
+        "whisper",
+        "ctc",
+        "whisper_medium"
+      ],
+      "source_sha256": "da0ac541d5b0b27276c63e46e97a0163cd590e41d50a36e522c29f1e5fea48b3",
+      "evidence_file": "/workspace/work/tcf-validation-87-20261111/whisper-medium/DELF_A2_2021_Piste_42-2-da0ac541d5b0.json",
+      "evidence_sha256": "044ad903997fd00a256638cf92f01901371e88847571f118bc76884724f20946"
+    },
+    {
+      "index": 45,
+      "ref": "/lib/audio/tcf/co/maison/salut-lucie.mp3",
+      "note": "Le code de l’immeuble est dicté en deux groupes 69 puis 91, reconnus par Small, Medium et CTC. Il s’écrit 6991, selon la correction PDF déjà enregistrée. Le 6911 de Parakeet est rejeté ; ce moteur n’est pas approuvé pour cette résolution.",
+      "approved_engines": [
+        "whisper",
+        "whisper_medium",
+        "ctc"
+      ],
+      "source_sha256": "3be15ca9ac1c090ad34042a3d09a940dc65fff58e69c0c227c869b48c29cd959",
+      "evidence_file": "/workspace/work/tcf-validation-87-20261111/whisper-medium/salut-lucie-3be15ca9ac1c.json",
+      "evidence_sha256": "c0881689a467fe1210e647ea3d4847bde46b2f1e25f5ef4ded665b9d68d9da41"
+    },
+    {
+      "index": 55,
+      "ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_12-2.mp3",
+      "note": "Sur l’autoroute A10 est rendu Adis/addis par les moteurs : notation de la lettre A et du nombre dix, pas suppression d’un nombre de kilomètres. Tous concordent sur 29 km en Île-de-France et 196 km en province ; la route est A10. Le type autoroute et le nom phonétique sont explicités dans le contexte.",
+      "approved_engines": [
+        "parakeet",
+        "whisper",
+        "whisper_medium"
+      ],
+      "source_sha256": "4cecf942deebc65836c751d4fdf56ceddaf98637a8b0aa64888a96d7336d7212",
+      "evidence_file": "/workspace/work/tcf-validation-87-20261111/whisper-medium/DELF_A2_2021_Piste_12-2-4cecf942deeb.json",
+      "evidence_sha256": "904bfdd34fa1d00a65632cae412e9ee1e918abace8fe7c1b3010eb0e3aab10fe"
+    },
+    {
+      "index": 77,
+      "ref": "/lib/audio/tcf/co/loisirs/plaisir-authenticite-emotion-venez.mp3",
+      "note": "Small confond cinq sens avec 500 ; Parakeet, CTC et Medium rendent bien les cinq sens d’un spectateur. Hauteur de propulsion supérieure à 30 mètres confirmée par Small, Medium et CTC ; le 3 de Parakeet est rejeté. Menus à 8,50 euros dans Small, Medium et Parakeet ; les 8,51 de CTC sont rejetés. Seul Small est approuvé pour corriger son homophonie cinq sens, en conservant ses autres valeurs correctes.",
+      "approved_engines": [
+        "whisper"
+      ],
+      "source_sha256": "166adc81df742ff6e2dbf365113fddf4a2763bdc8d53094fdf2e971ac3e19146",
+      "evidence_file": "/workspace/work/tcf-validation-87-20261111/whisper-medium/plaisir-authenticite-emotion-venez-166adc81df74.json",
+      "evidence_sha256": "8dc868a354041f9fc189ec73cd776b4b8fa6f31b98d211e20ec430147a96eb73"
+    },
+    {
+      "index": 79,
+      "ref": "/lib/audio/tcf/co/travail/bonjour-ici-dujardin.mp3",
+      "note": "Le numéro est 04 78 96 12 14 dans Parakeet. CTC énonce quatre, soixante-dix-huit, quatre-vingt-seize, douze, quatorze : mêmes groupes, avec le zéro initial omis dans sa notation. Les deux variantes Whisper 04 70 18 96 12 réordonnent les groupes et perdent quatorze ; elles sont rejetées pour le numéro, même si les autres informations sont bonnes. Seul CTC est approuvé pour sa notation groupée du numéro, confirmée par Parakeet.",
+      "approved_engines": [
+        "ctc"
+      ],
+      "source_sha256": "ad3ec745d2f17b0abca61e05832d335d2a99ab37f64cf716cfd8c706844b35da",
+      "evidence_file": "/workspace/work/tcf-bascule-complete-20261105/parakeet/candidate-ad3ec745d2f1.json",
+      "evidence_sha256": "64fd7a74e7dcee8441c57ff17eaa61aa8a776d4a0ad915df580056a812b1d91c"
+    }
+  ]
+}

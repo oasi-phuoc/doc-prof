@@ -1,0 +1,95 @@
+{
+  "date": "2026-11-11",
+  "baselineCommit": "ff743145ce6724a78cc898789c5aaf36a0004474",
+  "reference": {
+    "fixtures": 735,
+    "coFixtures": 138,
+    "protectedFiles": 256
+  },
+  "editorial": {
+    "reviewedResponseVariants": 250,
+    "humanApproval": "pending"
+  },
+  "browser": {
+    "results": [
+      {
+        "type": "gram-ex-etre-qcm-conj",
+        "presentation": "choice",
+        "sheets": 20,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "type": "gram-ex-etre-qcm-conj",
+        "presentation": "gap",
+        "sheets": 18,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "type": "gram-ex-etre-corriger-erreur",
+        "presentation": "correct",
+        "sheets": 26,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "type": "gram-ex-etre-ordre",
+        "presentation": "order",
+        "sheets": 26,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "type": "gram-ex-etre-curriculum-a",
+        "presentation": "match",
+        "sheets": 50,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "unavailableFilters": "clear notice, no broken session"
+      },
+      {
+        "classroomLaunch": "passed",
+        "selectedQuestions": 3
+      }
+    ],
+    "errors": []
+  },
+  "remaining": "This is the Être A1 pilot slice, not the whole curriculum.",
+  "validation": {
+    "typeScript": {
+      "command": "node node_modules/typescript/bin/tsc -b --pretty false",
+      "result": "passed"
+    },
+    "legacyAndCo": {
+      "command": "node scripts/grammar-baseline.cjs",
+      "result": "passed",
+      "fixtures": 735,
+      "protectedFiles": 256
+    },
+    "pilot": {
+      "command": "node scripts/test-grammar-levels.cjs",
+      "result": "passed",
+      "reviewedVariants": 250,
+      "paperAndBoardOptionOrder": "identical"
+    },
+    "existingInteractiveAdapters": {
+      "command": "node --test tests/interactive/source-adapters.test.mjs",
+      "result": "passed",
+      "tests": 7
+    },
+    "chrome": {
+      "command": "node tests/grammar/pilot-browser.mjs",
+      "result": "passed",
+      "printedQuestionsPerPresentation": 100,
+      "overflow": false,
+      "javascriptErrors": 0,
+      "emptyFilterPool": "clear notice; no broken session",
+      "classroomLaunch": "passed"
+    }
+  },
+  "upstreamIntegrated": "9fccae6fd197c287d31d93c114e3025446b96dd0",
+  "lastValidatedDate": "2026-11-12"
+}

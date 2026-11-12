@@ -1,4 +1,5 @@
 import { isOralComprehensionExercise } from '@/components/generator/page-helpers'
+import { grammarEligibleCount } from '@/grammaire/curriculum/generate'
 import { maxQuestionsFor } from '@/components/generator/generator-derived'
 import {
   defaultCalliPhraseCount,
@@ -161,6 +162,7 @@ const isAlphaSyllabeTableCols =
 const isAlphaPrononcerCols = isAlphabetisation && soutienKind === 'syllabes-prononcer'
 /** Types sans option colonnes (lettre / souligner). */
 const hideColumnsOption =
+  Boolean(isGrammaireDomain && activeBlock.grammarLevel) ||
   soutienKind === 'lettres-maj' ||
   soutienKind === 'lettres-min' ||
   soutienKind === 'souligner-maj' ||
@@ -251,7 +253,9 @@ const baseMaxQuestions = maxQuestionsFor({
 })
 const activeSheetBlock = worksheets[safeSheetIndex]?.blocks[safeBlockIndex]
 const bankQuestionCap = activeSheetBlock?.bankQuestionCap
-const maxQuestions = activePage.domain === 'gattegno' && bankQuestionCap != null
+const maxQuestions = isGrammaireDomain && activeBlock.grammarLevel
+  ? Math.max(1,Math.min(50,grammarEligibleCount(activeBlock)))
+  : activePage.domain === 'gattegno' && bankQuestionCap != null
   ? Math.min(baseMaxQuestions, bankQuestionCap)
   : baseMaxQuestions
 const bankOverflow =

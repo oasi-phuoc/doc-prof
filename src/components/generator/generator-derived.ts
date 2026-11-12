@@ -42,6 +42,7 @@ import {
   subthemesForTopicAll,
 } from '@/grammaire/exercises'
 import { GRAM_EXERCISE_KINDS } from '@/grammaire/exercises/kinds'
+import { GRAMMAR_NEW_PILOT_TYPES, grammarBanksForType } from '@/grammaire/curriculum/registry'
 import { COORD_LETTER_MAX, COORD_SHAPES } from '@/math/coord-reperage'
 import { TRANSFORM_MAX_POINTS } from '@/math/coord-transformations'
 import type { Domain, ExerciseBlock, WorksheetPage } from '@/math/types'
@@ -130,7 +131,8 @@ export function typeChoicesForBlock(
       const id = gramExerciseTypeId(sub.id, kind.id)
       return exerciseTypeById[id]
     }).filter((t): t is NonNullable<typeof t> => Boolean(t))
-    return [...theory, ...practice]
+    const graded=GRAMMAR_NEW_PILOT_TYPES.filter(type=>grammarBanksForType(type.id).some(bank=>bank.subthemeId===sub.id))
+    return [...theory, ...practice, ...graded]
   }
   return typesForTopic(
     block.topic,

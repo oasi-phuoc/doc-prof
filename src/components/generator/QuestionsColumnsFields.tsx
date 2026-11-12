@@ -185,7 +185,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                   aria-invalid={questionsInputOverflow}
                   title={
                     bankOverflow
-                      ? `La banque de cet enregistrement ne contient que ${bankQuestionCap} questions.`
+                      ? activeBlock.grammarLevel ? `Ces paramètres permettent ${bankQuestionCap} questions.` : `La banque de cet enregistrement ne contient que ${bankQuestionCap} questions.`
                       : questionsOverflow
                         ? 'Trop de questions pour une seule fiche A4. Réduisez le nombre ou ajoutez une page.'
                         : undefined
@@ -279,8 +279,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                 {bankOverflow ? (
                   <p className="questions-overflow-hint" role="status">
                     La banque ne contient que {bankQuestionCap} question
-                    {(bankQuestionCap ?? 0) > 1 ? 's' : ''} pour cet enregistrement. Réduisez le
-                    nombre ou générez une nouvelle fiche.
+                    {(bankQuestionCap ?? 0) > 1 ? 's' : ''} {activeBlock.grammarLevel?'avec ces paramètres. Modifiez les filtres ou le nombre demandé.':'pour cet enregistrement. Réduisez le nombre ou générez une nouvelle fiche.'}
                   </p>
                 ) : questionsOverflow && !activeBlock.continueOnNextPage ? (
                   <p className="questions-overflow-hint" role="status">
