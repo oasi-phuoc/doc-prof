@@ -5,9 +5,13 @@ import { headingForSlice } from '@/math/page-break-heading'
 function cost(item: MathItem): number {
   const q=item.grammar
   if (!q) return 0
+  const long=q.unit.responseLines===2
   if (q.presentation==='match') return 70
-  if (q.presentation==='correct') return 38
-  if (q.presentation==='order') return 40
+  if (q.presentation==='transform') return 58
+  if (q.presentation==='correct') return long?55:38
+  if (q.presentation==='order') return long?55:40
+  // Include the longest spelling explanation in the corrigé, not only the gap.
+  if (q.unit.givenVerb) return q.presentation==='choice'?45:34
   return q.presentation==='choice'?32:23
 }
 export function splitGradedGrammarPages(page: WorksheetPage): WorksheetPage[] | null {

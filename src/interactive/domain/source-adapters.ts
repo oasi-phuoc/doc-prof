@@ -25,17 +25,22 @@ export function adaptSourceItem(item: MathItem, exerciseType: string, sourceInst
     if (!isGrammarQuestion(item.grammar)) return {items:[],issues:['Question grammaticale invalide : vérifiez la fiche source.']}
     const q=item.grammar, u=q.unit
     const model=u.answers.join(' / ')+'\n'+u.explanation
+    const prompt=u.kind==='completion' && u.givenVerb?u.prompt.replace('___',`___ (${u.givenVerb})`):u.prompt
     if (u.kind==='completion' && q.presentation==='choice') {
       const correct=q.options!.find(option=>u.answers.includes(option.text))!
-      return {items:[{part:0,prompt:u.prompt,instruction:'',choices:q.options!,correctId:correct.id,choiceOrderPolicy:'fixed',
+      return {items:[{part:0,prompt,instruction:'',choices:q.options!,correctId:correct.id,choiceOrderPolicy:'fixed',
         model:u.prompt.replace('___',correct.text)+'\n'+u.explanation}],issues:[]}
     }
     if (u.kind==='match') return {items:u.pairs.map((pair,part)=>({part,prompt:pair.left,
       instruction:'Une phrase à la fois : choisissez la forme qui convient.',choices:q.rightOptions!,correctId:pair.id,choiceOrderPolicy:'fixed' as const,
       model:pair.left.replace('___',pair.right)})),issues:[]}
-    if (u.kind==='order') return {items:[{part:0,prompt:sourceInstruction,instruction:'Choisissez un mot puis sa place, ou utilisez les flèches du clavier.',
+    if (u.kind==='order') return {items:[{part:0,prompt:sourceInstruction+(u.givenVerb?` (${u.givenVerb})`:''),instruction:'Choisissez un mot puis sa place, ou utilisez les flèches du clavier.',
       choices:[],mode:'sequence',words:q.tokens!.map(t=>t.text),model,teacherLed:true}],issues:[]}
-    return {items:[{part:0,prompt:u.prompt,instruction:'',choices:[],mode:'oral',model,teacherLed:true}],issues:[]}
+    const instruction=u.kind==='transform'?`Réécrivez avec le sujet « ${u.targetSubject} ».`:sourceInstruction
+    // Oral stages display the prompt. The target subject must be visible there,
+    // not only in the instruction used by the reading dialog.
+    const oralPrompt=u.kind==='transform'?`${prompt}\n${instruction}`:prompt
+    return {items:[{part:0,prompt:oralPrompt,instruction:instruction+(u.givenVerb?` (${u.givenVerb})`:''),choices:[],mode:'oral',model,teacherLed:true}],issues:[]}
   }
   if (item.layout === 'listen-check') {
     const options = item.options ?? [], checked = item.labels

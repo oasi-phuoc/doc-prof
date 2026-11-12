@@ -21,7 +21,7 @@ export function validGrammarRecipePages(pages: PageConfig[], seed: number): bool
     if (isProtectedGrammarCo(block.exerciseType)) return true
     if (!hasGrammarSettings(block) && !block.exerciseType.includes('-curriculum-')) return true
     if (!['A1','A2','B1'].includes(block.grammarLevel??'') || !block.grammarActivityId ||
-      !['choice','gap','correct','order','match'].includes(block.grammarPresentation??'') || !block.grammarBankRevision ||
+      !['choice','gap','correct','order','match','transform'].includes(block.grammarPresentation??'') || !block.grammarBankRevision ||
       typeof block.grammarBankRevision!=='string' || block.grammarActivityId!==block.exerciseType ||
       !Number.isSafeInteger(block.count) || block.count<1 || block.count>50 ||
       (block.grammarPreview!==undefined && typeof block.grammarPreview!=='boolean')) return false

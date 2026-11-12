@@ -6377,3 +6377,11 @@ textarea.pill-input,
 .grammar-match-slot { color: var(--purple); margin-left: 3mm; }
 .grammar-match-answer { color: var(--purple); }
 .grammar-level-note { color: var(--muted); line-height: 1.5; }
+.grammar-verb-hint { white-space: nowrap; margin-left: .3em; }
+.grammar-written-response { display: flex; align-items: flex-end; gap: 2mm; min-width: 0; }
+.grammar-written-response .answer-line-field { flex: 1 1 auto; min-width: 0; white-space: normal; overflow-wrap: anywhere; line-height: 8mm; min-height: 8mm; }
+.grammar-written-response .grammar-verb-hint { flex: 0 0 auto; padding-bottom: 1mm; }
+.grammar-target-subject strong { color: var(--purple); }
+.grammar-two-lines .grammar-written-response .answer-line-field,
+.grammar-two-lines .phrase-write-line { min-height: 16mm; background: linear-gradient(var(--purple), var(--purple)) left 8mm / 100% 1px no-repeat; }
+.grammar-question .phrase-slot-answer { min-width: 0; overflow-wrap: anywhere; }
