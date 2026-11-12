@@ -1,0 +1,73 @@
+{
+  "date": "2026-11-12",
+  "trios": [
+    {
+      "key": "delf-a1v-ce-025#2",
+      "source_sha256": "884a5bef52d5b71420e8226bd213ce74e601c66ec13da49590c55ef555923537",
+      "semantic_sha256": "9f725b44137435e408648c7f7e66a4ea212f4879c171f52cbe67bedf8282c9b4",
+      "source": "Salut !\nMon avion décolle à 16 h 30 et j’ai oublié mon passeport sur mon bureau ! Peux-tu me l’apporter à l’aéroport ? De la maison, prends le tram 10 jusqu’au terminus. Va tout droit, prends l’escalier à droite et traverse le hall : je suis devant le guichet 14.\nJe n’ai plus de batterie. Envoie-moi un SMS pour dire que tu arrives. Merci !\nNora",
+      "question": {
+        "enonce": "Quel document Nora a-t-elle oublié ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Son passeport",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Son billet",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Sa carte bancaire",
+            "correct": false
+          }
+        ],
+        "written_model": "Son passeport"
+      },
+      "image_ids": [
+        "co306-passeport-dessine",
+        "extension573-billet-avion",
+        "co834-carte-bancaire-dessinee"
+      ],
+      "reason": "Nora écrit que son avion décolle et qu’elle a oublié son passeport sur son bureau. Le billet est donc représenté par un billet d’avion ; la carte bancaire est un autre document plausible, absent de la demande. La réponse passeport reste unique.",
+      "visual_review": "Trois originaux vus séparément : passeport bleu fermé avec titre et globe, billet d’avion entier avec pictogramme d’avion et champs sans données, carte bancaire bleue avec puce et symbole sans contact. Aucun montant ni date, fond crème et peinture douce en paysage 4:3. Réemploi des trois images."
+    },
+    {
+      "key": "delf-a2j-ce-016#4",
+      "source_sha256": "5de362212a38d3eb5a29eb1c93c7522b9744f5571e433632e2df94c26099ca9a",
+      "semantic_sha256": "f30798e8045e5596b24eac1cab7fd38a122302374c694e58de1e84881184c34a",
+      "source": "Le MAMCO — Rendez-vous des amateurs d’art moderne : les œuvres des artistes les plus connus.\n\nLe Musée du chocolat — Pour tous les gourmands : l’origine du cacao, la fabrication du chocolat et les meilleures recettes.\n\nLe Musée du Léman — Des bateaux de toute l’histoire du Léman et une belle collection de voiles et de tissus de bateaux.",
+      "question": {
+        "enonce": "De quel produit le Musée du chocolat présente-t-il l’origine ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Le cacao",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Le café",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Le thé",
+            "correct": false
+          }
+        ],
+        "written_model": "Le cacao"
+      },
+      "image_ids": [
+        "extension573-cacao",
+        "vocab-cafe-ingredient",
+        "extension573-the-feuilles"
+      ],
+      "reason": "Le Musée du chocolat présente explicitement l’origine du cacao. Le café et le thé sont des produits végétaux cohérents comme leurres et ne sont pas mentionnés dans le descriptif. La bonne réponse et les trois libellés sont conservés.",
+      "visual_review": "Trois originaux vus individuellement : cabosse de cacao entière et ouverte avec fèves ; coupelle de café moulu avec grains de café distinctifs ; coupelle de feuilles de thé sèches avec branche à deux feuilles fraîches. Trois produits représentés comme ingrédients, éléments entiers, fond crème, peinture douce et paysage 4:3. Cacao et café réutilisés."
+    }
+  ]
+}

@@ -20788,6 +20788,24 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Son passeport"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/co306-passeport-dessine.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/extension573-billet-avion.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/co834-carte-bancaire-dessinee.webp"
+              }
+            ]
           }
         }
       },
