@@ -25,7 +25,14 @@
     "browser": "Parcours CSC/CFR : polices A4/A5, corps indépendant, téléchargement et lecture des audios existants, contenus, grilles, corrigés et mode libre",
     "finalPrint": "cadres-grilles-results.json : 34 pages élèves et corrigés, huit grilles du 10 et quatre du 11 sur leurs pages respectives, cases identiques, centrage et espace inférieur vérifiés, aucun dépassement de pied de page",
     "manualReview": "PDF rendu en PNG pour vérifier les lettres sur les traits, les cadres des 10/11, les segments et les axes",
-    "errors": []
+    "errors": [],
+    "checks": {
+      "types": "passed",
+      "productionBuild": "passed after merging the latest TCF/gallery changes",
+      "budgets": "passed",
+      "a4Witness": "identical screenshot against 0addb36d662842040cc8ed64e8b2c0ca81eac810",
+      "secrets": "Gitleaks 8.30.1: zero findings in the changed-file scope"
+    }
   },
   "audio": "Aucune nouvelle synthèse générée ni activée ; narration Denise toujours reportée"
 }
