@@ -1,4 +1,5 @@
 import { paginateCePosters } from '@/tcf/ce-poster-pages'
+import { splitCscColumnPages } from '@/tcm-csc/pagination'
 import { ceArtFor } from '@/tcf/ce-art'
 import { withTcfInformationTotals } from '@/tcf/information-totals'
 /**
@@ -625,6 +626,11 @@ export function buildWorksheets(pages: PageConfig[], seed: number, defaultPoints
         pushSheet(cur, kind === 'loto-call' ? 'Lot animateur' : '')
         i += 1
       }
+      return
+    }
+    const cscPages = splitCscColumnPages(worksheet)
+    if (cscPages) {
+      out.push(...cscPages.map(sheet=>({...sheet,configIndex:index})))
       return
     }
     const grammarReadingPages = splitGrammarReadingPages(worksheet)

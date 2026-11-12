@@ -972,6 +972,7 @@ export function isDraftPadExercise(typeId: string): boolean {
     typeId === 'tcm-cfr-ex24' ||
     typeId === 'tcm-cfr-ex25' ||
     typeId === 'tcm-cfr-ex26'
+    || /^tcm-csc-ex(?:22|23|24)$/.test(typeId)
   )
 }
 

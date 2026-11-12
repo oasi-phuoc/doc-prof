@@ -163,6 +163,8 @@ export function CoordBlock({
   const questions = item.coordQuestions ?? []
   const columns = item.coordColumns
   const scene = item.coordScene
+  const csc = item.cscTask?.kind === 'coordinates-left'
+  const shapeColors = csc ? Object.fromEntries((scene?.marks ?? []).map((mark,index)=>[mark.kind,['#174eae','#b52335','#23723b','#873e9c','#aa5811','#087d87'][index % 6]])) : undefined
   const hasLines = Boolean(scene?.lines?.length)
   const numbered = hasLines || (isConstruct && questions.length > 0)
   const displayScene = !scene
@@ -253,6 +255,8 @@ export function CoordBlock({
         </div>
       ) : null}
       <CoordGrid
+        cellScale={csc ? 2 : 1}
+        shapeColors={shapeColors}
         point={item.point}
         pointImage={item.pointImage}
         showImage={show && Boolean(item.pointImage)}
@@ -338,13 +342,13 @@ export function CoordBlock({
                 >
                   {numbered ? <span className="coord-question-num">{index + 1}.</span> : null}
                   {showShape ? (
-                    <span className="coord-question-icon">
-                      <CoordShapeButton kind={question.kind!} size={16} />
+                    <span className="coord-question-icon" role={csc ? 'img' : undefined} aria-label={csc ? question.prompt : undefined} style={{color:shapeColors?.[question.kind!]}}>
+                      <CoordShapeButton kind={question.kind!} size={csc ? 24 : 16} />
                     </span>
                   ) : null}
-                  <span className="coord-question-label">
+                  {!csc && <span className="coord-question-label">
                     {isAxesPoint ? `${question.prompt} est en` : question.prompt}
-                  </span>
+                  </span>}
                   {isDraw ? null : isPlace || (isPair && show) ? (
                     <strong className={isPlace ? 'coord-given' : 'filled-answer'}>{question.answer}</strong>
                   ) : isPair ? (

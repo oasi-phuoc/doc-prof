@@ -40,7 +40,7 @@ export function adaptNumeracy(item: MathItem, seedFor: (part: number) => number)
   const values = decimals.map((value) => scaledDecimal(value, precision)), step = values[1]! - values[0]!
   if (values.some((value, index) => index > 0 && value - values[index - 1]! !== step)) return reject('Cette suite n’a pas un pas constant : elle demande une autre activité ou une vérification enseignante.')
   if (item.prompt?.trim()) {
-    const hint = /^Aide\s*:\s*(.+)$/.exec(item.prompt.trim())?.[1], delta = hint ? exactDecimal(hint) : null
+    const hint = /^Aide\s*:\s*(.+)$/.exec(item.prompt.trim())?.[1] ?? (item.cscTask?.kind === 'sequence-hint' ? item.prompt.trim() : undefined), delta = hint ? exactDecimal(hint) : null
     if (!delta || scaledDecimal(delta, Math.max(delta.precision, precision)) !== step * 10n ** BigInt(Math.max(delta.precision, precision) - precision)) return reject('L’aide de la suite ne correspond pas à son pas. Validez la fiche avant de jouer.')
   }
   const masked = terms.map((term, index) => blanks.includes(index) ? null : term)

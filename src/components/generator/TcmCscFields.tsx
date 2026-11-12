@@ -2,7 +2,7 @@ import { useState } from 'react'
 import type { MathItem, Figure } from '@/math/types'
 import { createRng, randomSeed } from '@/math/rng'
 import { CSC_PROBLEM_BANK, buildCscProblem, rollCscProblem } from '@/tcm-csc/problems'
-import { CSC_FIGURES } from '@/tcm-csc/items'
+import { CSC_FIGURES, CSC_SIGN_NAMES } from '@/tcm-csc/items'
 import { logiqueBankOptions, logiqueItemById } from '@/logique/generate'
 import { buildSymmetryFigure, SYMMETRY_TEMPLATES, SYMMETRY_FIGURE_LABELS } from '@/tcm-cfr/symetrie'
 import { recalculateCsc } from '@/tcm-csc/recalculate'
@@ -31,8 +31,12 @@ export function TcmCscFields({ item, typeId, change: onChange }: { item: MathIte
     fields = <><label>Choisir la suite graphique<select aria-label="Choisir la suite graphique" value={item.logique.id ?? choices.find((choice) => choice.stem[0] === item.logique?.stem[0])?.id ?? ''} onChange={(e) => change(logiqueItemById('logique-suite-graphique', e.target.value, createRng(randomSeed())))}>{choices.map((choice, i) => <option key={choice.id} value={choice.id}>Suite graphique {i + 1}</option>)}</select></label>{item.logique.stem.map((src, i) => <img key={i} src={src} alt={`Suite graphique, image ${i + 1}`} />)}</>
   } else if (task?.kind === 'calculation-audio' || task?.kind === 'operator') {
     fields = <><div className="csc-free-columns">{number('Premier nombre', task.a, (a) => change({ ...item, cscTask: { ...task, a } }), task.kind === 'operator' ? 0 : 1)}{number('Deuxième nombre', task.b, (b) => change({ ...item, cscTask: { ...task, b } }), task.kind === 'operator' ? 0 : 1)}</div><label>Opération<select aria-label="Opération" value={task.operation} onChange={(e) => change({ ...item, cscTask: { ...task, operation: e.target.value as '+' | '−' } })}><option value="+">Addition</option><option value="−">Soustraction</option></select></label>{task.kind === 'operator' && <label>Signe à compléter<select aria-label="Signe à compléter" value={task.blank} onChange={(e) => change({ ...item, cscTask: { ...task, blank: e.target.value as 'operator' | 'equals' } })}><option value="operator">+ ou −</option><option value="equals">=</option></select></label>}</>
+  } else if (task?.kind === 'sign-name') {
+    fields = <label>Signe à nommer<select aria-label="Signe à nommer" value={task.symbol} onChange={e=>change({...item,cscTask:{...task,symbol:e.target.value as keyof typeof CSC_SIGN_NAMES}})}>{Object.keys(CSC_SIGN_NAMES).map(symbol=><option key={symbol} value={symbol}>{symbol}</option>)}</select></label>
+  } else if (item.layout === 'place-value' && typeId === 'tcm-csc-ex08') {
+    fields = number('Nombre à décomposer', Number((item.prompt ?? '').replace(/['’\s]/g,'')), value=>change({...item,prompt:String(value)}),100,9999)
   } else if (task?.kind === 'number-grid') {
-    fields = <><NumberList key={`grid:${task.numbers.join()}`} label="Les 30 nombres de la grille (0–100)" values={task.numbers} change={(numbers) => change({ ...item, cscTask: { ...task, numbers } })} /><NumberList key={`heard:${task.heard.join()}`} label="Les cinq nombres à entendre" values={task.heard} change={(heard) => change({ ...item, cscTask: { ...task, heard } })} /></>
+    fields = <><NumberList key={`grid:${task.numbers.join()}`} label="Les 36 nombres de la grille (0–100)" values={task.numbers} change={(numbers) => change({ ...item, cscTask: { ...task, numbers } })} /><NumberList key={`heard:${task.heard.join()}`} label="Les cinq nombres à entendre" values={task.heard} change={(heard) => change({ ...item, cscTask: { ...task, heard } })} /></>
   } else if (task?.kind === 'shape-names') {
     fields = task.figures.map((figure, i) => <label key={i}>Forme {String.fromCharCode(65 + i)}<select aria-label={`Forme ${String.fromCharCode(65 + i)}`} value={figure} onChange={(e) => change({ ...item, cscTask: { ...task, figures: task.figures.map((f, j) => j === i ? e.target.value as Figure : f) } })}>{CSC_FIGURES.map((entry) => <option key={entry.value} value={entry.value}>{entry.label}</option>)}</select></label>)
   } else if (task?.kind === 'copy') {

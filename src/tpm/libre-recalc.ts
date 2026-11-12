@@ -375,6 +375,7 @@ function needsFixedDivisionGrid(exerciseType: string): boolean {
 
 /** Largeur de grille imposée après édition libre (+ / − / ×). */
 function fixedColumnWidth(exerciseType: string): number | null {
+  if (/^tcm-csc-ex(?:10|11)$/.test(exerciseType)) return 5
   if (isCfrColSeven(exerciseType)) return 7
   if (
     exerciseType === 'tpm-add-sub-col-3' ||

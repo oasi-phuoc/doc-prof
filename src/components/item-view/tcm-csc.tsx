@@ -7,13 +7,13 @@ import './tcm-csc.css'
 export function CscTaskBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const task = item.cscTask, show = mode === 'answers'
   if (!task) return null
-  if (task.kind === 'number-grid') return <table className="csc-number-grid" aria-label="Nombres à entourer"><tbody>{Array.from({ length: Math.ceil(task.numbers.length / 5) }, (_, row) => <tr key={row}>{task.numbers.slice(row * 5, row * 5 + 5).map((n) => <td key={n}><span className={show && task.heard.includes(n) ? 'csc-heard' : undefined}>{n}</span></td>)}</tr>)}</tbody></table>
+  if (task.kind === 'number-grid') return <table className="csc-number-grid" aria-label="Nombres à entourer"><tbody>{Array.from({ length: Math.ceil(task.numbers.length / 6) }, (_, row) => <tr key={row}>{task.numbers.slice(row * 6, row * 6 + 6).map((n) => <td key={n}><span className={show && task.heard.includes(n) ? 'csc-heard' : undefined}>{n}</span></td>)}</tr>)}</tbody></table>
   if (task.kind === 'operator') {
     const result = task.operation === '+' ? task.a + task.b : task.a - task.b
     const blank = <span className={`answer-line-field compact${show ? ' filled' : ''}`}>{show ? item.answer : '\u00a0'}</span>
     return <div className="csc-operator"><span>{task.a}</span>{task.blank === 'operator' ? blank : <span>{task.operation}</span>}<span>{task.b}</span>{task.blank === 'equals' ? blank : <span>=</span>}<span>{result}</span></div>
   }
-  if (task.kind === 'shape-names') return <div className="csc-shape-names">{task.figures.map((figure, i) => <div key={i}><b>{String.fromCharCode(65 + i)}.</b><div className="csc-name-figure"><GeometryFigure type={figure} /></div><span className={`answer-line-field${show ? ' filled' : ''}`}>{show ? CSC_FIGURES.find((entry) => entry.value === figure)?.label : '\u00a0'}</span></div>)}</div>
+  if (task.kind === 'shape-names') return <div className="csc-shape-names">{task.figures.map((figure, i) => <div key={i}><b>{String.fromCharCode(65 + i)}.</b><div className="csc-name-figure"><GeometryFigure type={figure} dims={{bare:true}} /></div><span className={`answer-line-field${show ? ' filled' : ''}`}>{show ? CSC_FIGURES.find((entry) => entry.value === figure)?.label : '\u00a0'}</span></div>)}</div>
   if (task.kind === 'connect-points') return <div className="csc-connect"><ol><li>AB en rouge.</li><li>CD en bleu.</li></ol><svg viewBox="0 0 160 80" role="img" aria-label="Quatre points A, B, C et D à relier avec la règle">
     {show && [[0, 1, '#c02030'], [2, 3, '#174eae']].map(([from, to, color]) => { const a = task.points[Number(from)], b = task.points[Number(to)]; return a && b ? <line key={String(from)} x1={a.x} y1={a.y} x2={b.x} y2={b.y} stroke={String(color)} strokeWidth=".8" /> : null })}
     {task.points.map((point) => <g key={point.label}><circle cx={point.x} cy={point.y} r=".8" fill="#182238" /><text x={point.x + 2} y={point.y - 2} fontSize="5">{point.label}</text></g>)}
@@ -21,10 +21,10 @@ export function CscTaskBlock({ item, mode }: { item: MathItem; mode: PreviewMode
   return null
 }
 
-export function CscProblemBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
+export function CscProblemBlock({ item, mode, draftGrid = false }: { item: MathItem; mode: PreviewMode; draftGrid?: boolean }) {
   const parts = (item.prompt ?? '').split('\n\n'), question = parts.pop(), task = item.cscTask
   const operation = task?.kind === 'problem' ? CSC_PROBLEM_BANK.find((entry) => entry.id === task.templateId)?.operation : undefined
-  return <div className="csc-problem-text"><p>{parts.join('\n\n')}</p><p><b>{question}</b></p><div className="csc-problem-working" aria-label="Espace pour le calcul">{mode === 'answers' && task?.kind === 'problem' && operation && <strong>{task.a} {operation} {task.b} = {operation === '+' ? task.a + task.b : task.a - task.b}</strong>}</div><span className={`answer-line-field${mode === 'answers' ? ' filled' : ''}`}>{mode === 'answers' ? item.answer : '\u00a0'}</span></div>
+  return <div className="csc-problem-text"><p>{parts.join('\n\n')}</p><p><b>{question}</b></p><div className={`draft-pad draft-pad-short ${draftGrid ? 'with-grid' : 'plain'}`} aria-label="Zone de développement">{mode === 'answers' && task?.kind === 'problem' && operation && <strong className="filled-answer draft-pad-answer">{task.a} {operation} {task.b} = {operation === '+' ? task.a + task.b : task.a - task.b}</strong>}</div><span className={`answer-line-field${mode === 'answers' ? ' filled' : ''}`}>{mode === 'answers' ? item.answer : '\u00a0'}</span></div>
 }
 
 export function CscCopyBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {

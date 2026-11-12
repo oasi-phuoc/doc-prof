@@ -98,8 +98,8 @@ export function SequenceRow({ item, mode }: { item: MathItem; mode: PreviewMode 
   const digitsClass =
     item.sequenceDigits === 5 ? ' sequence-digits-5' : item.sequenceDigits ? ` sequence-digits-${item.sequenceDigits}` : ''
   return (
-    <div className="sequence-block">
-      {item.prompt && <p className="column-prompt">{item.prompt}</p>}
+    <div className={`sequence-block${item.cscTask?.kind === 'sequence-hint' ? ' csc-sequence-hint' : ''}`}>
+      {item.prompt && <p className={item.cscTask?.kind === 'sequence-hint' ? 'csc-step-hint' : 'column-prompt'}>{item.prompt}</p>}
       <div className={`sequence-row${digitsClass}`}>
         {(item.sequence ?? []).map((term, index) => {
           const isBlank = term === '□' || blanks.has(index)

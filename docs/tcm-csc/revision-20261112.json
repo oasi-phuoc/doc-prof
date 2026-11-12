@@ -1,0 +1,56 @@
+{
+  "date": "2026-11-12",
+  "integratedMain": "544780492ed14bc6992d4adb2d29f5c282f12bf2",
+  "unitTests": {
+    "passed": 220,
+    "failed": 0,
+    "cscTests": 14,
+    "sourceSeeds": 100
+  },
+  "browser": [
+    "tcm-csc-browser",
+    "performance-browser",
+    "a4-regression"
+  ],
+  "print": {
+    "studentPages": 16,
+    "withAnswers": 32,
+    "overflowingExercises": 0,
+    "referenceRegression": "unchanged arithmetic/geometry A4 against 54478049",
+    "numbering": "exercise 10 continues at questions 5–8"
+  },
+  "audio": {
+    "recordings": 3,
+    "calculation": "operand + plus/minus + operand; canonical export removes any appended result",
+    "download": "three decoded WAV files in TCM-CSC_AUDIOS.zip"
+  },
+  "requests": {
+    "numberGrid": "6x6; 36 square 18 mm cells",
+    "sequences": "four questions each; colored step before exercise 4 row without the word Aide",
+    "comparisons": "12 questions, Coloriez instruction",
+    "decomposition": "same generator as CFR exercise 5",
+    "signNames": [
+      "plus",
+      "moins",
+      "égal"
+    ],
+    "columnGrids": "five columns; writing cells 56x56 px and carry cells 56x36 px",
+    "points": "each label can appear in all four quadrants; labels stay separated",
+    "logic": "one padded frame per question with space between questions",
+    "shapeNames": "square, rectangle, circle, triangle in framed 2x2 grid",
+    "countingFrameHeightMm": 97.5,
+    "coordinates": "16 mm cells; six colors; shape and pair on one line without written shape name",
+    "problems": "CFR short working area; no grid by default; individual toggle verified"
+  },
+  "checks": {
+    "appTypes": "passed",
+    "apiTypes": "passed",
+    "lint": "passed with existing warnings",
+    "productionBuild": "passed",
+    "bundleBudgets": "passed"
+  },
+  "limits": [
+    "No physical printer or ENI test.",
+    "New decomposition and sign-name activities will receive their game adapters in the following increment."
+  ]
+}
