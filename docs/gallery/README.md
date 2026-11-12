@@ -2,7 +2,7 @@
 
 La rubrique `/images` est accessible par l’icône image du menu supérieur. Elle partage l’accès du créateur de fiches, mais reste une page indépendante : elle ne génère aucune fiche.
 
-- Toutes les images du dépôt sont indexées, y compris les fichiers hors de `public` : 5 797 fichiers au 12 novembre 2026.
+- Toutes les images du dépôt sont indexées, y compris les fichiers hors de `public` : 5 800 fichiers au 12 novembre 2026.
 - Recherche sans distinction de casse ou d’accents, par mots, libellé et nom de fichier ; filtres combinables par thème, type et collection.
 - Les catalogues existants enrichissent les titres et thèmes. Les fichiers non catalogués restent accessibles. Les thèmes complémentaires et certains types sont déduits des noms et dossiers : ce classement peut être affiné sans modifier les images.
 - Aperçu agrandi et sélection conservée pendant les changements de filtres et de page.

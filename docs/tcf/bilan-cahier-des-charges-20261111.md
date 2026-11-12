@@ -45,7 +45,7 @@ Les deux leurres du trio « Quel plat espagnol est cité ? » sont remplacés pa
 
 `node scripts/check-tcf-pe-dialogue-consignes.mjs` vérifie les 50 dialogues, la conservation des situations et échanges, ainsi que le rendu des anciennes recettes TPF/CSC/CFR. Les tests d’évaluation PE et TypeScript passent.
 
-Galerie `/images` : les 5 797 fichiers image présents dans le dépôt sont désormais recherchables et téléchargeables, individuellement ou en ZIP par sélection et filtres. Les trios des desserts et boissons du restaurant sont intégrés. Deux questions sur les documents à apporter à un examen partagent la nouvelle paire pièce d’identité/convocation, avec trois leurres existants réutilisés et une paire carte de bibliothèque/billet créée.
+Galerie `/images` : les 5 800 fichiers image présents dans le dépôt sont désormais recherchables et téléchargeables, individuellement ou en ZIP par sélection et filtres. Les trios des desserts et boissons du restaurant sont intégrés. Deux questions sur les documents à apporter à un examen partagent la nouvelle paire pièce d’identité/convocation, avec trois leurres existants réutilisés et une paire carte de bibliothèque/billet créée.
 
 Reprise suivante : six trios supplémentaires intégrés depuis `033d50bb` (quatre A1 et deux A2), avec sept nouveaux originaux et réemploi de dix images distinctes déjà vérifiées. Les transcriptions, choix et bonnes réponses restent liés aux preuves de relecture.
 
