@@ -19,12 +19,20 @@
     "test:interactive:all": "node scripts/interactive-ci.mjs",
     "test:interactive:competition": "node tests/interactive/competition-browser.mjs",
     "test:interactive:readability": "node tests/interactive/readability-browser.mjs",
+    "test:interactive:audio-sequences": "node tests/interactive/audio-sequences-browser.mjs",
+    "test:interactive:loading": "node tests/interactive/loading-browser.mjs",
+    "test:interactive:numeracy": "node tests/interactive/numeracy-browser.mjs",
+    "test:interactive:arithmetic": "node tests/interactive/written-arithmetic-browser.mjs",
+    "test:interactive:ordering": "node tests/interactive/ordering-browser.mjs",
     "test:tcm-csc:browser": "node tests/interactive/tcm-csc-browser.mjs",
     "test:tcf:formats": "node tests/interactive/tcf-formats-browser.mjs",
     "test:interactive:competition-worker": "node tests/interactive/competition-worker.mjs",
     "typecheck:api": "tsc -b api/fiches/tsconfig.json",
     "check:interactive:budgets": "node scripts/interactive-budgets.mjs",
-    "check:interactive:secrets": "node scripts/interactive-secrets.mjs"
+    "check:interactive:secrets": "node scripts/interactive-secrets.mjs",
+    "test:grammar:baseline": "node scripts/grammar-baseline.cjs",
+    "test:grammar:levels": "node scripts/test-grammar-levels.cjs",
+    "test:grammar:browser": "node tests/grammar/pilot-browser.mjs"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",

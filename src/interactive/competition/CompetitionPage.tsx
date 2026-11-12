@@ -5,6 +5,7 @@ import type { TimerSettings } from '../domain/settings'
 import { IconButton } from '../components/Icons'
 import { QuestionStage } from '../components/QuestionStage'
 import { AudioPlayer } from '../components/Media'
+import { LoadingScreen } from '@/components/LoadingScreen'
 import { CompetitionAvatarPicker, CompetitionPortrait } from './Avatar'
 import { CompetitionArt } from './artwork'
 import type { CompetitionAvatar } from './avatars'
@@ -70,7 +71,7 @@ function RoomGame({ view, host, local = false, busy = false, now, command, answe
         </div>
         {revealed && <button onClick={() => setScoresAt(view.index)}>Voir le classement</button>}
       </div>
-      {q?.audio && <div className="ci-competition-audio"><AudioPlayer key={`${q.id}:${view.turnPlayerId ?? ''}`} src={q.audio} paused={view.paused || revealed} /></div>}
+      {q?.audio && <div className="ci-competition-audio"><AudioPlayer key={`${q.id}:${view.turnPlayerId ?? ''}`} src={q.audio} parts={q.audioParts} paused={view.paused || revealed} /></div>}
       {view.self?.correct && revealed && <div className="ci-competition-confetti" aria-hidden="true">{Array.from({ length: 12 }, (_, i) => <i key={i} data-ci-motion style={{ left: `${i * 8}%`, animationDelay: `${i % 4 * -.3}s`, background: view.colors[i % 6] }} />)}</div>}
     </>}
     {host && <div className="ci-toolbar ci-competition-host-controls"><IconButton icon={view.paused ? 'play' : 'pause'} label={view.paused ? 'Reprendre' : 'Pause'} disabled={busy} onClick={() => command(view.paused ? 'resume' : 'pause')} />
@@ -117,7 +118,7 @@ function LocalPreparation(props: Parameters<typeof LocalGame>[0]) {
     void prepareLocalCompetition(props.quiz, controller.signal).then((result) => { if (controller.signal.aborted) result.dispose(); else { prepared = result; setLoaded(result) } }, (reason: unknown) => { if (!controller.signal.aborted) setError(reason instanceof Error ? reason.message : 'Préparation impossible.') })
     return () => { controller.abort(); prepared?.dispose() }
   }, [props.quiz])
-  if (!loaded) return <CompetitionShell onExit={props.onExit}><main className="ci-container"><h1>Préparer le défi local</h1><p role="status">{error || 'Chargement complet de la série, des images, des audios et des mascottes…'}</p><p>Une fois prêt, ce défi continue sur cet appareil sans connexion.</p></main></CompetitionShell>
+  if (!loaded) return <CompetitionShell onExit={props.onExit}><main className="ci-container"><h1>Préparer le défi local</h1>{error ? <p role="alert">{error}</p> : <LoadingScreen variant="panel" title="Préparation du défi" description="Vos questions, audios et mascottes arrivent…" />}<p>Une fois prêt, ce défi continue sur cet appareil sans connexion.</p></main></CompetitionShell>
   return <CompetitionArt value={loaded.artwork}><LocalGame {...props} quiz={loaded.quiz} /></CompetitionArt>
 }
 function RemoteGame({ access, onExit }: { access: RoomCapability; onExit: () => void }) {
@@ -133,7 +134,7 @@ function RemoteGame({ access, onExit }: { access: RoomCapability; onExit: () => 
   const mutate = (work: () => ReturnType<typeof readRoom>) => { if (busy) return; setBusy(true); void work().then((reply) => accept(reply.view), (error: unknown) => setWarning(error instanceof Error ? error.message : 'Commande indisponible.')).finally(() => setBusy(false)) }
   return <CompetitionShell title={`Salle ${access.code}`} playing={!!view && !['lobby', 'finished'].includes(view.phase)} onExit={onExit}>
     {warning && <p role="status" className="ci-notice">{warning}</p>}
-    {view ? <RoomGame view={view} now={view.serverNow + Math.max(0, clock - sample!.receivedAt)} host={access.role === 'host'} busy={busy || !!warning} command={(action, playerId) => mutate(() => roomCommand(access, action, playerId, { index: view.index, phase: view.phase }))} answer={(choiceId) => { if (choiceId && view.question) mutate(() => answerRoom(access, view.question!.id, choiceId)) }} /> : <main className="ci-container"><p role="status">Connexion à la salle…</p></main>}
+    {view ? <RoomGame view={view} now={view.serverNow + Math.max(0, clock - sample!.receivedAt)} host={access.role === 'host'} busy={busy || !!warning} command={(action, playerId) => mutate(() => roomCommand(access, action, playerId, { index: view.index, phase: view.phase }))} answer={(choiceId) => { if (choiceId && view.question) mutate(() => answerRoom(access, view.question!.id, choiceId)) }} /> : <main className="ci-container"><LoadingScreen variant="panel" title="Connexion à la salle" description="Votre salle arrive…" /></main>}
   </CompetitionShell>
 }
 

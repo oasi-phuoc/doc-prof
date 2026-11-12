@@ -3,6 +3,7 @@ import type { SheetFormat } from '@/components/generator/sheet-format'
 import type { Domain, PageConfig } from '@/math/types'
 import { normalizeLegacyPhraseBlock } from '@/francais/phrase-themes'
 import { normalizeGrammarCoBlock } from '@/grammaire/exercises/co-themes'
+import { freezeGrammarPages, validGrammarRecipePages } from '@/grammaire/curriculum/recipe'
 
 /** Recette qui reproduit la fiche imprimée : config, graine, en-tête, points. */
 export type FicheRecipe = {
@@ -127,7 +128,9 @@ export function parseFicheRecipe(value: unknown): FicheRecipe | null {
     if (!Array.isArray(value.libreSnapshot) || !value.libreSnapshot.every(isPage)) return null
   }
   const pages = (value.pages as PageConfig[]).map(migratePage)
+  if (!validGrammarRecipePages(pages,value.seed)) return null
   const snapshot = (value.libreSnapshot as PageConfig[] | null) ?? null
+  if (snapshot && !validGrammarRecipePages(snapshot,value.seed)) return null
   const sheetFormat =
     value.sheetFormat === 'a5-double-landscape' || value.sheetFormat === 'a4-portrait'
       ? value.sheetFormat
@@ -175,7 +178,8 @@ export function buildFicheRecipe(input: {
   /** Remplacements d’images provenant de la banque ; fichiers temporaires exclus. */
   imageOverrides?: Record<string, string>
 }): FicheRecipe {
-  return { version: 1, ...input }
+  return { version: 1, ...input, pages:freezeGrammarPages(input.pages,input.seed),
+    libreSnapshot:input.libreSnapshot ? freezeGrammarPages(input.libreSnapshot,input.seed) : null }
 }
 
 export function domainsOfPages(pages: readonly { domain?: string }[]): Domain[] {

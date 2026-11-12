@@ -1,8 +1,9 @@
 import type { Game, Question } from '../domain/types'
 import { PALETTE, defaultShapes, SHAPES, type ShapeId } from '../domain/palette'
 import { validAvatar, type CompetitionAvatar } from './avatars'
+import { MAX_AUDIO_PARTS } from '../domain/audio'
 
-export type CompetitionQuestion = Pick<Question, 'id' | 'prompt' | 'context' | 'audio' | 'images' | 'choices' | 'figure'>
+export type CompetitionQuestion = Pick<Question, 'id' | 'prompt' | 'context' | 'numberSequence' | 'audio' | 'audioParts' | 'images' | 'choices' | 'figure'>
 export type CompetitionQuiz = { id: string; title: string; items: { question: CompetitionQuestion; correctChoiceId: string }[] }
 export type CompetitionSettings = { enabled: boolean; seconds: number; feedbackSeconds: number; speedPoints: boolean }
 export type CompetitionPhase = 'lobby' | 'handoff' | 'question' | 'correction' | 'finished'
@@ -41,8 +42,8 @@ export function competitionQuiz(game: Game, origin: string): CompetitionQuiz {
   return { id: game.id, title: game.title, items: game.questions.flatMap((q) => {
     const correctChoiceId = game.corrections[q.id]?.choiceId
     if (q.mode !== 'choice' || !correctChoiceId || !q.choices.some((choice) => choice.id === correctChoiceId)) return []
-    return [{ correctChoiceId, question: { id: q.id, prompt: q.prompt, ...(q.context ? { context: q.context } : {}), ...(q.audio ? { audio: media(q.audio) } : {}),
-      images: q.images.map(media), choices: q.choices.map((choice) => ({ id: choice.id, text: choice.text, ...(choice.image ? { image: media(choice.image) } : {}) })), ...(q.figure ? { figure: structuredClone(q.figure) } : {}) } }]
+    return [{ correctChoiceId, question: { id: q.id, prompt: q.prompt, ...(q.context ? { context: q.context } : {}), ...(q.audio ? { audio: media(q.audio) } : {}), ...(q.audioParts ? { audioParts: q.audioParts.map(media) } : {}),
+      images: q.images.map(media), choices: q.choices.map((choice) => ({ id: choice.id, text: choice.text, ...(choice.image ? { image: media(choice.image) } : {}) })), ...(q.figure ? { figure: structuredClone(q.figure) } : {}), ...(q.numberSequence ? { numberSequence: { terms: [...q.numberSequence.terms], target: q.numberSequence.target, ...(q.numberSequence.hint ? { hint: q.numberSequence.hint } : {}) } } : {}) } }]
   }) }
 }
 
@@ -77,7 +78,20 @@ export function parseCompetitionQuiz(value: unknown, mediaOrigins: string[] = []
       if (!record(q.figure) || !string(q.figure.type, 60) || q.figure.dims !== undefined && (!record(q.figure.dims) || Object.keys(q.figure.dims).length > 20 || Object.values(q.figure.dims).some((n) => typeof n !== 'number' || !Number.isFinite(n) || Math.abs(n) > 1e12))) throw new CompetitionError('Figure invalide.', 400)
       figure = { type: q.figure.type as NonNullable<CompetitionQuestion['figure']>['type'], ...(q.figure.dims ? { dims: { ...q.figure.dims as Record<string, number> } } : {}) }
     }
-    return { correctChoiceId: `c${originalChoiceIds.indexOf(entry.correctChoiceId)}`, question: { id: `q${questionIndex + 1}`, prompt: q.prompt, images: q.images.map(media), choices, ...(q.context ? { context: q.context as string } : {}), ...(q.audio ? { audio: media(q.audio) } : {}), ...(figure ? { figure } : {}) } }
+    const audio = q.audio ? media(q.audio) : undefined
+    let audioParts: string[] | undefined
+    if (q.audioParts !== undefined) {
+      if (!Array.isArray(q.audioParts) || !q.audioParts.length || q.audioParts.length > MAX_AUDIO_PARTS) throw new CompetitionError('Séquence audio invalide.', 400)
+      audioParts = q.audioParts.map(media)
+      if (!audio || audioParts[0] !== audio || audioParts.some((part) => !/^https?:\/\//.test(part))) throw new CompetitionError('La séquence audio doit conserver sa première piste et ses adresses autorisées.', 400)
+    }
+    let numberSequence: CompetitionQuestion['numberSequence']
+    if (q.numberSequence !== undefined) {
+      const sequence = q.numberSequence
+      if (!record(sequence) || !Array.isArray(sequence.terms) || sequence.terms.length < 3 || sequence.terms.length > 12 || sequence.terms.some((term) => term !== null && !string(term, 80)) || sequence.terms.filter((term) => term !== null).length < 2 || sequence.terms.filter((term) => term === null).length > 6 || !Number.isInteger(sequence.target) || Number(sequence.target) < 0 || Number(sequence.target) >= sequence.terms.length || sequence.terms[Number(sequence.target)] !== null || sequence.hint !== undefined && !string(sequence.hint, 160)) throw new CompetitionError('Suite numérique invalide.', 400)
+      numberSequence = { terms: [...sequence.terms] as (string | null)[], target: Number(sequence.target), ...(sequence.hint ? { hint: sequence.hint as string } : {}) }
+    }
+    return { correctChoiceId: `c${originalChoiceIds.indexOf(entry.correctChoiceId)}`, question: { id: `q${questionIndex + 1}`, prompt: q.prompt, images: q.images.map(media), choices, ...(q.context ? { context: q.context as string } : {}), ...(audio ? { audio } : {}), ...(audioParts ? { audioParts } : {}), ...(figure ? { figure } : {}), ...(numberSequence ? { numberSequence } : {}) } }
   })
   return { id: value.id, title: value.title, items }
 }

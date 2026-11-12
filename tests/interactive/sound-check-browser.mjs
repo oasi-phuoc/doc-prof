@@ -2,6 +2,7 @@ import assert from 'node:assert/strict'
 import { readFile, writeFile } from 'node:fs/promises'
 import { createServer } from 'vite'
 import { chromium } from 'playwright'
+import { waitForBrowserValue } from './browser-actions.mjs'
 
 const base = 'http://127.0.0.1:5182'
 process.env.VITE_FICHES_API_URL = `${base}/__test_api`
@@ -90,8 +91,7 @@ try {
     await page.clock.runFor(10100)
     await page.locator('.ci-summary').waitFor()
     await page.clock.resume()
-    await page.waitForFunction(async () => { const { requestLocal } = await import('/src/interactive/storage.ts'); const rows = await requestLocal('sessions', 'readonly', (store) => store.getAll()); return rows.some((row) => row.mode === 'solo' && row.checkpoint?.state.finished) })
-    const history = await page.evaluate(async () => { const { requestLocal } = await import('/src/interactive/storage.ts'); const rows = await requestLocal('sessions', 'readonly', (store) => store.getAll()); return rows.find((row) => row.mode === 'solo' && row.checkpoint?.state.finished).checkpoint.state.history })
+    const history = await waitForBrowserValue(page, async () => { const { requestLocal } = await import('/src/interactive/storage.ts'); const rows = await requestLocal('sessions', 'readonly', (store) => store.getAll()); return rows.find((row) => row.mode === 'solo' && row.checkpoint?.state.finished)?.checkpoint.state.history })
     assert.deepEqual(history.map((attempt) => attempt.correct), [false, true, false])
     results.push({ viewport: `${width}x${height}`, class: 'three independent listening questions, source sound and image, two response cards, teacher-only reveal and exact negative-result reload', solo: 'wrong choice, correct negative choice and timeout; ten-second automatic progression and derived report', missing: 'fourth source word excluded with a visible reason', serverWrites: 0 })
     await context.close()

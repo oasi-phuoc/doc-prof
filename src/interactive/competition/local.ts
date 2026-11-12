@@ -35,7 +35,7 @@ export function writeLocalCompetition(journal: LocalCompetitionJournal) { try { 
 
 /** Full blobs, including the avatar sheet, stay available after network loss. */
 export async function prepareLocalCompetition(quiz: CompetitionQuiz, signal: AbortSignal): Promise<{ quiz: CompetitionQuiz; artwork: string; dispose: () => void }> {
-  const sources = new Set([new URL(COMPETITION_ART, location.origin).href, ...quiz.items.flatMap(({ question: q }) => [...q.images, ...(q.audio ? [q.audio] : []), ...q.choices.flatMap((choice) => choice.image ? [choice.image] : [])])].filter((source) => !source.startsWith('data:') && !source.startsWith('blob:')))
+  const sources = new Set([new URL(COMPETITION_ART, location.origin).href, ...quiz.items.flatMap(({ question: q }) => [...q.images, ...(q.audio ? [q.audio] : []), ...(q.audioParts ?? []), ...q.choices.flatMap((choice) => choice.image ? [choice.image] : [])])].filter((source) => !source.startsWith('data:') && !source.startsWith('blob:')))
   const urls = new Map<string, string>(); let total = 0
   const dispose = () => { for (const value of urls.values()) URL.revokeObjectURL(value) }
   try {
@@ -48,7 +48,7 @@ export async function prepareLocalCompetition(quiz: CompetitionQuiz, signal: Abo
       urls.set(source, URL.createObjectURL(blob))
     }
     const copy = structuredClone(quiz), media = (source: string) => urls.get(source) ?? source
-    for (const item of copy.items) { const q = item.question; q.images = q.images.map(media); if (q.audio) q.audio = media(q.audio); q.choices = q.choices.map((choice) => ({ ...choice, ...(choice.image ? { image: media(choice.image) } : {}) })) }
+    for (const item of copy.items) { const q = item.question; q.images = q.images.map(media); if (q.audio) q.audio = media(q.audio); if (q.audioParts) q.audioParts = q.audioParts.map(media); q.choices = q.choices.map((choice) => ({ ...choice, ...(choice.image ? { image: media(choice.image) } : {}) })) }
     return { quiz: copy, artwork: media(new URL(COMPETITION_ART, location.origin).href), dispose }
   } catch (error) { dispose(); throw error }
 }

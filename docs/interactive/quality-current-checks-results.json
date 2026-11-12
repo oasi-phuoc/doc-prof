@@ -1,0 +1,49 @@
+{
+  "domainTestsPassed": 198,
+  "distinctBrowserStagesPassed": 8,
+  "fullPipelineStageCount": 43,
+  "fullPipelineRun": false,
+  "passed": [
+    "ordering-browser",
+    "browser",
+    "source-adapters-browser",
+    "game-run-browser",
+    "presets-browser",
+    "readability-browser",
+    "performance-browser",
+    "a4-regression"
+  ],
+  "reports": [
+    "ordering-results.json",
+    "quality-ordering-main-results.json",
+    "quality-browser-results.json"
+  ],
+  "scope": "Numeric and alphabetic rank questions and short source phrases; regression of existing main route, source associations and word movements, generated-template relaunches, presets, measured readability, production performance and pixel A4 comparison. The full hosted workflow is not claimed.",
+  "newAdapter": {
+    "catalogFamiliesChecked": 20,
+    "numericOrAlphabetFamilies": 5,
+    "phraseFamilies": 15,
+    "seedsPerType": 100,
+    "difficultyLevels": 3,
+    "configurationsChecked": 6000,
+    "domainTests": 9,
+    "newPlayableCatalogTypes": 17,
+    "sourceTemplates": "unchanged",
+    "limits": "Strict rankings containing duplicate values and phrases outside two to six words are explicitly rejected, not truncated or auto-graded."
+  },
+  "previousValidation": {
+    "sourceCommit": "8d49a849",
+    "domainTestsPassed": 189,
+    "distinctBrowserStagesPassed": 7,
+    "fullPipelineStageCount": 42,
+    "passed": [
+      "written-arithmetic-browser",
+      "browser",
+      "game-run-browser",
+      "presets-browser",
+      "numeracy-browser",
+      "performance-browser",
+      "a4-regression"
+    ]
+  }
+}

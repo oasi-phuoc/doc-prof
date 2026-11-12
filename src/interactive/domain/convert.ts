@@ -7,6 +7,11 @@ import type { Choice, Game, Question } from './types'
 import { canonicalJson, deriveSeed, hash } from './seeds'
 import { adaptSourceItem } from './source-adapters'
 import { verifiedCscMath } from './csc-math'
+import { verifiedNumericAudio } from './audio-math'
+import { adaptNumeracy } from './numeracy'
+import { verifiedWrittenArithmetic } from './written-arithmetic'
+import { decimalChoices } from './decimal-choices'
+import { adaptOrdering } from './ordering'
 export { hash } from './seeds'
 const normalized = (s: string) =>
   s
@@ -204,6 +209,45 @@ export function convertRecipe(
             reject(item.libreError)
             return
           }
+          const ordering = adaptOrdering(item, (part) => deriveSeed({ originalSeed: recipe.seed, sourceKey: base(part).id, purpose: 'distractors' }))
+          if (ordering) {
+            ordering.issues.forEach(reject)
+            ordering.items.forEach((entry) => {
+              const q = base(entry.part)
+              q.prompt = entry.prompt
+              q.context = [q.context, entry.context].filter(Boolean).join('\n\n')
+              q.choices = entry.choices
+              add(q, entry.model, entry.correctId)
+            })
+            return
+          }
+          const numeracy = adaptNumeracy(item, (part) => deriveSeed({ originalSeed: recipe.seed, sourceKey: base(part).id, purpose: 'distractors' }))
+          if (numeracy) {
+            numeracy.issues.forEach(reject)
+            numeracy.items.forEach((entry) => {
+              const q = base(entry.part)
+              q.prompt = entry.prompt
+              q.choices = entry.choices
+              q.compatibility = entry.compatibility
+              if (entry.numberSequence) q.numberSequence = entry.numberSequence
+              add(q, entry.model, entry.correctId)
+            })
+            return
+          }
+          const numericAudio = verifiedNumericAudio(item)
+          if (numericAudio) {
+            if ('reason' in numericAudio) { reject(numericAudio.reason); return }
+            const q = base()
+            q.prompt = numericAudio.prompt
+            q.audio = numericAudio.parts[0]
+            q.audioGrouping = 'individual'
+            if (numericAudio.parts.length > 1) q.audioParts = numericAudio.parts
+            q.compatibility = 'assisted'
+            const choices = numberChoices(numericAudio.value, deriveSeed({ originalSeed: recipe.seed, sourceKey: q.id, purpose: 'distractors' }))
+            q.choices = choices.choices
+            add(q, numericAudio.model, choices.correctId)
+            return
+          }
           const csc = verifiedCscMath(item)
           if (csc) {
             if (csc.kind === 'invalid') { reject(csc.reason); return }
@@ -231,6 +275,7 @@ export function convertRecipe(
               q.prompt = item.prompt; q.instruction = `${block.instruction}\n${item.instruction}`; q.choices = item.choices
               q.mode = item.mode ?? 'choice'; q.audio = item.audio ?? q.audio; q.images = item.images ?? []
               if (item.words) q.words = item.words
+              if (item.choiceOrderPolicy) q.choiceOrderPolicy = item.choiceOrderPolicy
               if (item.teacherLed) q.compatibility = 'teacher-led'
               add(q, item.model, item.correctId)
             })
@@ -335,6 +380,17 @@ export function convertRecipe(
               `${item.a} ${item.op} ${item.b} = ${result.toLocaleString('fr-CH')}`,
               choices.correctId,
             )
+            return
+          }
+          const written = verifiedWrittenArithmetic(item)
+          if (written) {
+            if ('reason' in written) { reject(written.reason); return }
+            const q = base()
+            q.prompt = written.prompt
+            q.compatibility = 'assisted'
+            const choices = decimalChoices(written.value.units, written.value.precision, 10n ** BigInt(written.value.precision), written.correctText, deriveSeed({ originalSeed: recipe.seed, sourceKey: q.id, purpose: 'distractors' }), written.signed)
+            q.choices = choices.choices
+            add(q, written.model, choices.correctId)
             return
           }
           if (

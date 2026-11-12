@@ -18,6 +18,7 @@ import { isQuestionReadingType } from './reading-types'
 import { OPEN_QUESTION_KIND_IDS } from './open-questions'
 import { QUEL_QUESTION_KIND_IDS } from './quel-questions'
 import { GRAMMAR_CO_THEMES, grammarCoTypeId } from './co-themes'
+import { GRAMMAR_NEW_PILOT_TYPES } from '../curriculum/registry'
 import { grammarCoSubthemes, hasGrammarCoTheme } from './co-bank'
 
 /** Sous-thèmes dérivés des fiches théorie (PDF / notions hors conjugaison listée). */
@@ -135,7 +136,7 @@ export function buildGrammairePracticeTypes(): ExerciseType[] {
     if (familyWriting>=0) types.splice(familyWriting,0,importedType)
     else types.push(importedType)
   }
-  return types
+  return [...types,...GRAMMAR_NEW_PILOT_TYPES]
 }
 
 export function subthemesForTopicAll(topic: string) {

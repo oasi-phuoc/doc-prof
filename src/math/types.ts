@@ -59,6 +59,7 @@ export type Figure =
   | 'pentagon'
 
 export type Layout =
+  | 'grammar'
   | 'inline'
   | 'column'
   | 'column-empty'
@@ -396,6 +397,7 @@ export type DivisionStep = {
 
 export type MathItem = {
   layout: Layout
+  grammar?: import('@/grammaire/curriculum/types').GrammarQuestion
   cscTask?: import('@/tcm-csc/task-types').CscTask
   answer: string
   prompt?: string
@@ -873,6 +875,14 @@ export type ExerciseBlock = {
   /** Imported grammar listening lots: all current sources are A1; A2 is separate. */
   grammarCoLevel?: 'A1' | 'A2'
   grammarCoAudioId?: string
+  /** Additive non-CO curriculum. Absence preserves the historical generator. */
+  grammarLevel?: import('@/grammaire/curriculum/types').GrammarLevel
+  grammarActivityId?: string
+  grammarPresentation?: import('@/grammaire/curriculum/types').GrammarPresentation
+  grammarBankRevision?: string
+  grammarSnapshot?: import('@/grammaire/curriculum/types').GrammarSnapshot
+  /** Explicit opt-in to editorial pilots, never a claim of teacher approval. */
+  grammarPreview?: boolean
   /**
    * TCF : forme de réponse par item (qcm_texte / qcm_image / lignes).
    * Index = rang de l’item dans le bloc.

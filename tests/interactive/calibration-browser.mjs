@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict'
 import { writeFile } from 'node:fs/promises'
 import { chromium } from 'playwright'
+import { waitForBrowserValue } from './browser-actions.mjs'
 const base = process.env.INTERACTIVE_TEST_URL ?? 'http://127.0.0.1:5180'
 const browser = await chromium.launch({ executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH || undefined, args: ['--no-sandbox'] })
 const results = [], errors = []
@@ -16,7 +17,7 @@ try {
     assert.equal(await page.locator('.ci-calibration-picks button').count(), 6)
     assert.equal(await button(page, 'Enregistrer la comparaison').isDisabled(), true)
     await page.getByLabel('Couleur de la carte A', { exact: true }).fill('#111111')
-    await page.waitForFunction(async () => { const { requestLocal } = await import('/src/interactive/storage.ts'); return (await requestLocal('settings', 'readonly', (store) => store.get('classroom'))).settings.paletteVersion === 2 })
+    await waitForBrowserValue(page, async () => { const { requestLocal } = await import('/src/interactive/storage.ts'); return (await requestLocal('settings', 'readonly', (store) => store.get('classroom')))?.settings.paletteVersion === 2 })
     await page.waitForFunction(() => getComputedStyle(document.querySelector('.ci-calibration-swatch')).backgroundColor === 'rgb(17, 17, 17)')
     assert.equal(await page.locator('.ci-calibration-swatch').evaluate((element) => getComputedStyle(element).color), 'rgb(255, 255, 255)')
     await page.getByRole('checkbox', { name: 'J’ai comparé les six cartes avec cet écran.', exact: true }).check()

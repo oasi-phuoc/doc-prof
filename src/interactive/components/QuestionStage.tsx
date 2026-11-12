@@ -12,6 +12,7 @@ import { CardBadge } from './CardBadge'
 import { IconButton } from './Icons'
 import { Icon } from './Icons'
 import { TextReadingDialog } from './TextReadingDialog'
+import { NumberSequenceView } from './NumberSequenceView'
 import { useReadableQuestion } from '../layout/useReadableQuestion'
 import '../layout/readability.css'
 
@@ -45,7 +46,7 @@ export function QuestionStage({
   number?: number
   onSelect: (id: string) => void
 }) {
-  const { section, report } = useReadableQuestion(JSON.stringify([q.id, q.prompt, q.context, q.choices, q.images, phase, number]))
+  const { section, report } = useReadableQuestion(JSON.stringify([q.id, q.prompt, q.context, q.numberSequence, q.choices, q.images, phase, number]))
   const [reading, setReading] = useState<number | 'question' | null>(null)
   const showCorrection =
     phase === 'revealed' &&
@@ -61,6 +62,7 @@ export function QuestionStage({
           <span className="ci-question-prompt">{q.prompt}</span>
         </h1>
         {q.context && <ReadingDocument text={q.context} />}
+        {q.numberSequence && <NumberSequenceView sequence={q.numberSequence} />}
         {q.mode === 'sequence' && (
           <details className="ci-full-instruction">
             <summary>Consigne complète</summary>
@@ -160,7 +162,7 @@ export function QuestionStage({
         </section>
       )}
       {report.manualScroll && <button className="ci-read-more" onClick={() => setReading('question')}>Suite ▾ <span className="ci-sr-only">Lire la consigne complète</span></button>}
-      {reading !== null && <TextReadingDialog title={reading === 'question' ? 'Question et document' : `Proposition ${PALETTE[slotOffset + reading]!.letter}`} text={reading === 'question' ? [q.prompt, q.context, q.mode === 'choice' ? '' : q.instruction].filter(Boolean).join('\n\n') : q.choices[reading]?.text ?? ''} images={reading === 'question' ? q.images : q.choices[reading]?.image ? [q.choices[reading]!.image!] : []} figure={reading === 'question' ? q.figure : undefined} onClose={() => setReading(null)} />}
+      {reading !== null && <TextReadingDialog title={reading === 'question' ? 'Question et document' : `Proposition ${PALETTE[slotOffset + reading]!.letter}`} text={reading === 'question' ? [q.prompt, q.context, q.mode === 'choice' ? '' : q.instruction].filter(Boolean).join('\n\n') : q.choices[reading]?.text ?? ''} images={reading === 'question' ? q.images : q.choices[reading]?.image ? [q.choices[reading]!.image!] : []} figure={reading === 'question' ? q.figure : undefined} numberSequence={reading === 'question' ? q.numberSequence : undefined} onClose={() => setReading(null)} />}
     </>
   )
 }

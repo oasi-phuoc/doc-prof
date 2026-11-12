@@ -4,6 +4,7 @@ import { loadLegacyPreferences } from './legacy-preferences'
 import './interactive.css'
 import './projection.css'
 import './teacher-controls.css'
+import { LoadingScreen } from '@/components/LoadingScreen'
 
 const DiagnosticPage = lazy(() => import('./DiagnosticPage'))
 const CardsPage = lazy(() => import('./CardsPage'))
@@ -21,10 +22,10 @@ export default function InteractiveApp() {
     return () => { active = false }
   }, [])
   const path = window.location.pathname.replace(/\/+$/, '')
-  if (/^\/interactif\/rejoindre(?:\/\d{6})?$/.test(path)) return <Suspense fallback={<p role="status">Chargement de la compétition…</p>}><CompetitionPage /></Suspense>
-  if (/^\/interactif\/salle\/\d{6}$/.test(path)) return <Suspense fallback={<p role="status">Chargement de la salle…</p>}><CompetitionPage host /></Suspense>
-  if (!loaded) return <p role="status">Chargement des réglages…</p>
-  if (window.location.pathname.replace(/\/+$/, '') === '/interactif/cartes') return <Suspense fallback={<p role="status">Chargement des cartes…</p>}><CardsPage initial={loaded.preferences} initialWarning={loaded.warning} /></Suspense>
-  if (window.location.pathname.replace(/\/+$/, '') === '/interactif/diagnostic') return <Suspense fallback={<p role="status">Chargement du diagnostic…</p>}><DiagnosticPage colors={loaded.preferences.colors} shapes={loaded.preferences.shapes} /></Suspense>
-  return <Suspense fallback={<p role="status">Chargement de la séance…</p>}><GameApp initialPreferences={loaded.preferences} initialWarning={loaded.warning} /></Suspense>
+  if (/^\/interactif\/rejoindre(?:\/\d{6})?$/.test(path)) return <Suspense fallback={<LoadingScreen title="Ouverture de la compétition" />}><CompetitionPage /></Suspense>
+  if (/^\/interactif\/salle\/\d{6}$/.test(path)) return <Suspense fallback={<LoadingScreen title="Ouverture de la salle" />}><CompetitionPage host /></Suspense>
+  if (!loaded) return <LoadingScreen title="Préparation du jeu" description="Votre séance arrive…" />
+  if (window.location.pathname.replace(/\/+$/, '') === '/interactif/cartes') return <Suspense fallback={<LoadingScreen title="Préparation des cartes" />}><CardsPage initial={loaded.preferences} initialWarning={loaded.warning} /></Suspense>
+  if (window.location.pathname.replace(/\/+$/, '') === '/interactif/diagnostic') return <Suspense fallback={<LoadingScreen title="Ouverture du diagnostic" />}><DiagnosticPage colors={loaded.preferences.colors} shapes={loaded.preferences.shapes} /></Suspense>
+  return <Suspense fallback={<LoadingScreen title="Préparation de la séance" />}><GameApp initialPreferences={loaded.preferences} initialWarning={loaded.warning} /></Suspense>
 }

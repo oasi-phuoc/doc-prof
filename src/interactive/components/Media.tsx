@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from 'react'
 import { IconButton } from './Icons'
 import { browserMediaUrl } from '../media/policy'
 import { canListen, ListeningPass } from '../domain/listening'
+import { useAudioSequence } from '../media/useAudioSequence'
+import { LoadingScreen } from '@/components/LoadingScreen'
 
 export function SafeImage({
   src,
@@ -110,16 +112,7 @@ export function SafeImage({
 }
 
 export type AudioStatus = 'waiting' | 'playing' | 'ended' | 'error'
-export function AudioPlayer({
-  src,
-  paused = false,
-  onStatus,
-  listens = 0,
-  extraListens = 0,
-  maxListens,
-  onListenStarted,
-  onExtraListen,
-}: {
+type AudioProps = {
   src: string
   paused?: boolean
   onStatus?: (status: AudioStatus) => void
@@ -128,7 +121,26 @@ export function AudioPlayer({
   maxListens?: number
   onListenStarted?: () => void
   onExtraListen?: () => void
-}) {
+}
+export function AudioPlayer({ parts, ...props }: AudioProps & { parts?: readonly string[] }) {
+  const [attempt, setAttempt] = useState(0)
+  const result = useAudioSequence(props.src, parts, attempt), callback = useRef(props.onStatus)
+  useEffect(() => { callback.current = props.onStatus }, [props.onStatus])
+  useEffect(() => { if (result.status !== 'ready') callback.current?.(result.status === 'error' ? 'error' : 'waiting') }, [result.key, result.status])
+  if (result.status === 'loading') return <div className="ci-audio"><LoadingScreen variant="inline" title="Chargement de l’audio…" /></div>
+  if (result.status === 'error') return <div className="ci-audio"><div className="ci-media-error" role="status"><p>Piste audio indisponible. Vous pouvez réessayer ou passer cette question.</p><button disabled={props.paused} onClick={() => setAttempt((value) => value + 1)}>Réessayer l’audio</button></div></div>
+  return <NativeAudioPlayer key={result.src} {...props} src={result.src} />
+}
+function NativeAudioPlayer({
+  src,
+  paused = false,
+  onStatus,
+  listens = 0,
+  extraListens = 0,
+  maxListens,
+  onListenStarted,
+  onExtraListen,
+}: AudioProps) {
   const [failed, setFailed] = useState(false)
   const [attempt, setAttempt] = useState(0)
   const audio = useRef<HTMLAudioElement>(null)

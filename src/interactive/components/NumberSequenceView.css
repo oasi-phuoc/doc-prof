@@ -1,0 +1,8 @@
+.ci-number-sequence { margin: .6em 0; font-size: clamp(22px, 2.4vw, 34px); }
+.ci-number-sequence ol { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: .35em; margin: 0; padding: 0; list-style: none; }
+.ci-number-sequence li { display: flex; flex-direction: column; justify-content: center; gap: .15em; min-width: 0; padding: .3em; border: 2px solid var(--ci-line, #c8c8d9); border-radius: .6em; background: var(--ci-paper, #fff); text-align: center; }
+.ci-number-sequence small { font-size: max(.65rem, .45em); font-weight: 600; }
+.ci-number-sequence b { overflow-wrap: anywhere; font-variant-numeric: tabular-nums; line-height: 1.2; }
+.ci-number-sequence .ci-number-target { border: 3px solid #6940c8; outline: 2px solid var(--ci-ink, #172033); outline-offset: 2px; background: #ede5ff; color: #20143b; }
+.ci-number-hint { margin: .4em 0 0; font-size: .75em; }
+@media (max-width: 639px) { .ci-number-sequence ol { grid-template-columns: repeat(3, minmax(0, 1fr)); } }

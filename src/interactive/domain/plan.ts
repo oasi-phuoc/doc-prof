@@ -1,6 +1,9 @@
 import { hash } from './convert'
 import type { Game, Question, Round, PlayMode } from './types'
 import { assignChoicePositions, choiceOrderPolicy } from './slots'
+import { audioIdentity } from './audio'
+
+const audioGroup = (q: Question) => q.audioGrouping === 'individual' ? `${q.id}:${audioIdentity(q)}` : audioIdentity(q)
 
 export function roundsFor(game: Game): Round[] {
   return (
@@ -9,6 +12,7 @@ export function roundsFor(game: Game): Round[] {
       id: q.id,
       questionIds: [q.id],
       audio: q.audio,
+      ...(q.audioParts ? { audioParts: [...q.audioParts] } : {}),
     }))
   )
 }
@@ -57,8 +61,8 @@ export function prepareGame(
   const source = game.questions.filter((q) => selected.includes(q.id))
   const audioGroups = new Map<string, Question[]>()
   for (const q of source) {
-    if (q.audio)
-      audioGroups.set(q.audio, [...(audioGroups.get(q.audio) ?? []), q])
+    const recording = audioGroup(q)
+    if (recording) audioGroups.set(recording, [...(audioGroups.get(recording) ?? []), q])
   }
   const keep = new Set<string>()
   const issues = [...game.issues]
@@ -82,13 +86,14 @@ export function prepareGame(
     .map((q) => ({
       ...q,
       choices: q.choices.map((choice) => ({ ...choice })),
+      ...(q.audioParts ? { audioParts: [...q.audioParts] } : {}),
     }))
   const rounds: Round[] = []
   const used = new Set<string>()
   for (const q of questions) {
     if (used.has(q.id)) continue
     const peers = q.audio
-      ? questions.filter((other) => other.audio === q.audio)
+      ? questions.filter((other) => audioGroup(other) === audioGroup(q))
       : [q]
     // Open productions stay teacher-led; grouping never invents answer cards.
     const group =
@@ -131,6 +136,7 @@ export function prepareGame(
       id: group.map((member) => member.id).join(':'),
       questionIds: group.map((member) => member.id),
       audio: q.audio,
+      ...(q.audioParts ? { audioParts: [...q.audioParts] } : {}),
     })
   }
   return {

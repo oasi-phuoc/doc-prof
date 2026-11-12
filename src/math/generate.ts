@@ -31,6 +31,7 @@ import { collectCorrigeAudioSrcs } from '@/tcf/download-audios'
 import { tryGenerateGrammaireBlock } from '@/grammaire/generate'
 import { isGrammaireTheoryType } from '@/grammaire/types'
 import { splitGrammarReadingPages } from '@/grammaire/exercises/reading-pagination'
+import { splitGradedGrammarPages } from '@/grammaire/curriculum/pagination'
 import { tryGenerateAcmBlock } from '@/acm/generate'
 import { tryGenerateLogiqueBlock } from '@/logique/generate'
 import { tryGenerateSanteBlock } from '@/sante/generate'
@@ -627,7 +628,13 @@ export function buildWorksheets(pages: PageConfig[], seed: number, defaultPoints
     }
     const grammarReadingPages = splitGrammarReadingPages(worksheet)
     if (grammarReadingPages) {
-      out.push(...grammarReadingPages.map(sheet => ({ ...sheet, configIndex: index })))
+      out.push(...grammarReadingPages.flatMap(sheet => (splitGradedGrammarPages(sheet)??[sheet]).map(part=>({...part,configIndex:index}))))
+      return
+    }
+
+    const gradedPages=splitGradedGrammarPages(worksheet)
+    if (gradedPages) {
+      out.push(...gradedPages.map(sheet=>({...sheet,configIndex:index})))
       return
     }
 

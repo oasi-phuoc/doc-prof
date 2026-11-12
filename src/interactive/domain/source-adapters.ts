@@ -2,8 +2,9 @@ import type { MathItem } from '@/math/types'
 import { soutienAudioFor } from '@/francais/soutien/audio'
 import type { Choice, Question } from './types'
 import { hash } from './seeds'
+import { isGrammarQuestion } from '@/grammaire/curriculum/validation'
 
-type Adaptation = { part: number; prompt: string; instruction: string; choices: Choice[]; correctId?: string; model: string; mode?: Question['mode']; audio?: string; images?: string[]; words?: string[]; teacherLed?: boolean }
+type Adaptation = { part: number; prompt: string; instruction: string; choices: Choice[]; correctId?: string; model: string; mode?: Question['mode']; audio?: string; images?: string[]; words?: string[]; teacherLed?: boolean; choiceOrderPolicy?: Question['choiceOrderPolicy'] }
 type Result = { items: Adaptation[]; issues: string[] }
 const textKey = (value: string) => value.normalize('NFC').trim().replace(/\s+/g, ' ').toLocaleLowerCase('fr')
 const letters = (value: string) => textKey(value).replace(/[^\p{L}\p{N}]/gu, '')
@@ -13,8 +14,29 @@ function capChoices(choices: Choice[], correctId: string, key: string): Choice[]
   return choices.filter((choice) => kept.has(choice.id))
 }
 
+function phraseOrdering(words: string[], ordered: string[], model: string): Result {
+  if (words.length < 2 || words.length > 6 || words.some((word) => !word) || new Set(words.map(textKey)).size < 2 || !sameBag(words, ordered) || !model || letters(model) !== letters(ordered.join(' '))) return { items: [], issues: ['Phrase à ordonner non vérifiable ou hors limite de deux à six éléments.'] }
+  return { items: [{ part: 0, prompt: 'Remets les mots dans l’ordre.', instruction: 'Choisissez un mot puis une autre place, ou utilisez les flèches du clavier.', choices: [], model, mode: 'sequence', words: words.every((word, index) => word === ordered[index]) ? [...words.slice(1), words[0]!] : words, teacherLed: true }], issues: ['Phrase manipulable avec modèle source ; les autres ordres possibles sont appréciés par l’enseignant, sans verdict automatique.'] }
+}
+
 /** Explicit source relations only. Each audio/association gets its own stable source part. */
 export function adaptSourceItem(item: MathItem, exerciseType: string, sourceInstruction = ''): Result | undefined {
+  if (item.layout==='grammar') {
+    if (!isGrammarQuestion(item.grammar)) return {items:[],issues:['Question grammaticale invalide : vérifiez la fiche source.']}
+    const q=item.grammar, u=q.unit
+    const model=u.answers.join(' / ')+'\n'+u.explanation
+    if (u.kind==='completion' && q.presentation==='choice') {
+      const correct=q.options!.find(option=>u.answers.includes(option.text))!
+      return {items:[{part:0,prompt:u.prompt,instruction:'',choices:q.options!,correctId:correct.id,choiceOrderPolicy:'fixed',
+        model:u.prompt.replace('___',correct.text)+'\n'+u.explanation}],issues:[]}
+    }
+    if (u.kind==='match') return {items:u.pairs.map((pair,part)=>({part,prompt:pair.left,
+      instruction:'Une phrase à la fois : choisissez la forme qui convient.',choices:q.rightOptions!,correctId:pair.id,choiceOrderPolicy:'fixed' as const,
+      model:pair.left.replace('___',pair.right)})),issues:[]}
+    if (u.kind==='order') return {items:[{part:0,prompt:sourceInstruction,instruction:'Choisissez un mot puis sa place, ou utilisez les flèches du clavier.',
+      choices:[],mode:'sequence',words:q.tokens!.map(t=>t.text),model,teacherLed:true}],issues:[]}
+    return {items:[{part:0,prompt:u.prompt,instruction:'',choices:[],mode:'oral',model,teacherLed:true}],issues:[]}
+  }
   if (item.layout === 'listen-check') {
     const options = item.options ?? [], checked = item.labels
     const keys = options.map(textKey), checkedKeys = checked?.map(textKey)
@@ -93,11 +115,14 @@ export function adaptSourceItem(item: MathItem, exerciseType: string, sourceInst
     issues.push('L’association est proposée en micro-questions indépendantes ; aucune réponse déjà utilisée n’est retirée automatiquement. Les mots à compléter montrent le mot source complet.')
     return { items, issues }
   }
+  if (item.layout === 'order' && item.orderOp === undefined) {
+    if (!/^remettez la phrase en ordre[.]?$/.test(textKey(item.prompt ?? ''))) return { items: [], issues: ['Ce classement demande une activité dédiée ; sa consigne ne décrit pas une phrase à remettre en ordre.'] }
+    return phraseOrdering(item.sequence?.map((word) => word.trim()) ?? [], item.placeParts ?? [], item.answer.trim())
+  }
   if (item.layout === 'phrase-order') {
     const words = item.tokens?.map((token) => token.text.trim()) ?? []
     const ordered = item.labels ?? []
     const model = item.responseAnswer?.trim() || item.answer.trim()
-    if (words.length < 2 || words.length > 6 || words.some((word) => !word) || new Set(words.map(textKey)).size < 2 || !sameBag(words, ordered) || !model || letters(model) !== letters(ordered.join(' '))) return { items: [], issues: ['Phrase à ordonner non vérifiable ou hors limite de deux à six éléments.'] }
-    return { items: [{ part: 0, prompt: 'Remets les mots dans l’ordre.', instruction: 'Choisissez un mot puis une autre place, ou utilisez les flèches du clavier.', choices: [], model, mode: 'sequence', words: sameBag(words, ordered) && words.every((word, index) => word === ordered[index]) ? [...words.slice(1), words[0]!] : words, teacherLed: true }], issues: ['Phrase manipulable avec modèle source ; les autres ordres possibles sont appréciés par l’enseignant, sans verdict automatique.'] }
+    return phraseOrdering(words, ordered, model)
   }
 }

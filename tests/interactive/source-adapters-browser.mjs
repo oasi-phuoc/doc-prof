@@ -2,6 +2,7 @@ import assert from 'node:assert/strict'
 import { readFile, writeFile } from 'node:fs/promises'
 import { createServer } from 'vite'
 import { chromium } from 'playwright'
+import { waitForBrowserValue } from './browser-actions.mjs'
 const base = 'http://127.0.0.1:5182'
 process.env.VITE_FICHES_API_URL = `${base}/__test_api`
 const server = await createServer({ cacheDir: '/tmp/clairfle-source-adapters-vite', server: { host: '127.0.0.1', port: 5182, strictPort: true } })
@@ -100,7 +101,7 @@ try {
     assert.match(await page.locator('.ci-model-answer').innerText(), /Elle est petite\./)
     assert.equal(await page.locator('.ci-answer-key').count(), 0)
     await button(page, 'Acquis').click()
-    await page.waitForFunction(async () => { const { requestLocal } = await import('/src/interactive/storage.ts'); return (await requestLocal('sessions', 'readonly', (store) => store.getAll())).some((record) => record.events.some((event) => event.action.type === 'ASSESS')) })
+    await waitForBrowserValue(page, async () => { const { requestLocal } = await import('/src/interactive/storage.ts'); return (await requestLocal('sessions', 'readonly', (store) => store.getAll())).some((record) => record.events.some((event) => event.action.type === 'ASSESS')) })
     const rows = await page.evaluate(async () => { const { requestLocal } = await import('/src/interactive/storage.ts'); return requestLocal('sessions', 'readonly', (store) => store.getAll()) })
     assert.ok(rows[0].events.some((event) => event.action.type === 'ASSESS'))
     assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false)
