@@ -208,6 +208,30 @@ for(const change of ['bounds','segment','text','reference']) {
  if(change==='reference')unit.reference.number='dual'
  assert.equal(parseFicheRecipe(bad),null,change)
 }
+// k10: the agreed B1 pilot concerns present-subjunctive uses, with guided writing.
+const subjPrefix='gram-ex-k10-',subjBanks=grammarBanksForType(subjPrefix+'qcm-conj')
+assert.deepEqual(subjBanks.map(b=>b.level),['B1'])
+assert.equal(banks.filter(b=>b.activityId.startsWith(subjPrefix)).length,4)
+assert.equal(GRAMMAR_NEW_PILOT_TYPES.filter(t=>t.id===subjPrefix+'curriculum-e').length,1)
+const subjBlock={...base(subjPrefix+'qcm-conj'),topic:'gram-exprimer',count:50}
+assert.throws(()=>select({...subjBlock,grammarLevel:'A2'},839),e=>e.code==='GRAMMAR_ACTIVITY_UNAVAILABLE')
+assert.deepEqual(select(subjBlock,839).questions.map(q=>q.unit),select({...subjBlock,grammarPresentation:'gap'},839).questions.map(q=>q.unit))
+const subjUnits=subjBanks[0].units
+const implementedOffers=new Set(banks.flatMap(b=>b.presentations.map(p=>`${b.activityId}@${b.level}@${p}`)))
+assert(targetRegistry.offerings.filter(o=>o.phase==='G2').every(o=>implementedOffers.has(o.offeringId)),'Every offering in the five agreed pilot notions must be implemented.')
+assert.deepEqual(Object.fromEntries(['volonte','sentiment','necessite','doute'].map(f=>[f,subjUnits.filter(u=>u.source.partition.startsWith(f+'-')).length])),{volonte:13,sentiment:13,necessite:12,doute:12})
+// Whole negative and pronominal groups are accepted, not just their endings.
+assert(subjUnits.some(u=>u.answers[0]==='ne comprennes pas'))
+assert(subjUnits.some(u=>u.answers[0]==='te souviennes'))
+assert(subjUnits.some(u=>u.answers[0]==='voyions'))
+assert(subjUnits.some(u=>u.prompt.startsWith('Il est possible qu’il')))
+const subjC=grammarBanksForType(subjPrefix+'curriculum-c')[0]
+assert(subjC.units.every(u=>u.prompt.slice(u.error.start,u.error.end)===u.error.text&&u.prompt!==u.answers[0]))
+const subjProduction={...base(subjPrefix+'curriculum-e'),topic:'gram-exprimer',count:50}
+const subjGame=convertRecipe(buildFicheRecipe(recipeInput([subjProduction])))
+assert(subjGame.questions.every(q=>q.compatibility==='teacher-led'&&q.choices.length===0))
+assert(subjGame.questions.every(q=>!subjGame.corrections[q.id].choiceId&&/Repères enseignant/.test(subjGame.corrections[q.id].text)))
+assert(grammarBanksForType(subjPrefix+'curriculum-e')[0].units.every(u=>u.rubric.length===5&&u.writeLines===6&&u.task.includes('deux phrases')))
 // Missing new fields is the legacy route, never implicit A1.
 const old={...base(),grammarLevel:undefined,grammarActivityId:undefined,grammarPresentation:undefined,grammarBankRevision:undefined,grammarPreview:undefined}
 assert.equal(generateGradedGrammarBlock(old,17),null)

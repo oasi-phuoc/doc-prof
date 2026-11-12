@@ -13,6 +13,8 @@ function cost(item: MathItem): number {
   if (q.presentation==='correct') return long?55:38
   if (q.presentation==='order') return long?55:40
   if (q.unit.reference) return 45
+  // A cue and a longer explanation need extra room on corrected gap sheets.
+  if (q.presentation==='gap' && q.unit.cue && q.unit.explanation.length>90) return 45
   // Include the longest spelling explanation in the corrigé, not only the gap.
   if (q.unit.givenVerb) return q.presentation==='choice'?45:34
   return q.presentation==='choice'?32:23
