@@ -7,12 +7,15 @@
     "protectedFiles": 256
   },
   "editorial": {
-    "reviewedResponseVariants": 960,
+    "reviewedResponseVariants": 1570,
     "humanApproval": "pending",
-    "reviewedActivityUnits": 720,
-    "reviewedSelectableUnits": 720,
-    "reviewedDocuments": 20,
-    "reviewedDocumentQuestions": 60
+    "reviewedActivityUnits": 1190,
+    "reviewedSelectableUnits": 1190,
+    "reviewedDocuments": 40,
+    "reviewedDocumentQuestions": 120,
+    "reviewedActivities": 23,
+    "reviewedOfferings": 31,
+    "reviewedPilotNotions": 5
   },
   "browser": {
     "results": [
@@ -61,7 +64,7 @@
     ],
     "errors": []
   },
-  "remaining": "Être A1, -er particuliers A1/A2 et imparfait/passé composé A2 sont en pilote explicite. COD, subjonctif et les autres notions/niveaux du curriculum restent à implémenter.",
+  "remaining": "Les cinq notions pilotes sont accessibles en aperçu explicite. Validation enseignante, essais dialogue/situation/support image et généralisation aux autres notions/niveaux restent à effectuer.",
   "validation": {
     "typeScript": {
       "command": "node node_modules/typescript/bin/tsc -b --pretty false",
@@ -76,20 +79,25 @@
     "pilot": {
       "command": "node scripts/test-grammar-levels.cjs",
       "result": "passed",
-      "reviewedVariants": 960,
+      "reviewedVariants": 1570,
       "paperAndBoardOptionOrder": "identical",
       "levels": [
         "A1",
-        "A2"
+        "A2",
+        "B1"
       ],
-      "documentGroups": "20 texts / 60 child questions",
+      "documentGroups": "40 texts / 120 child questions",
       "archiveSupport": "text, options and evidence preserved without current bank revision",
-      "manualEditingAssembly": "repeated supports removed without overwriting questions"
+      "manualEditingAssembly": "repeated supports removed without overwriting questions",
+      "codReferences": "50 explicit noun references; genre, number, elision and placement checked",
+      "correctionIntervals": "50 frozen UTF-16 intervals, malformed bounds/segments/text rejected",
+      "allPilotOfferings": "31 agreed G2 offerings implemented; 23 activities across five notions"
     },
     "existingInteractiveAdapters": {
       "command": "node --test tests/interactive/source-adapters.test.mjs",
       "result": "passed",
-      "tests": 7
+      "tests": 7,
+      "validatedAtUpstream": "7c7c353f3e5279b8f79c7257a79a526b5bee38d4"
     },
     "chrome": {
       "command": "npm run test:grammar:browser",
@@ -98,13 +106,17 @@
       "javascriptErrors": 0,
       "emptyFilterPool": "clear notice; no broken session",
       "classroomLaunch": "passed",
-      "presentationsChecked": 19,
+      "presentationsChecked": 31,
       "classroomTransform": "source and imposed subject visible",
       "printedQuestionsPerOrdinaryPresentation": 100,
-      "printedCeQuestions": 120,
-      "printedQuestionsTotal": 1920,
+      "printedCeQuestions": 240,
+      "printedQuestionsTotal": 3140,
       "cePageBreak": "reversible; stable IDs and options; support repeated",
-      "classroomCe": "two texts, six linked questions; source text visible"
+      "classroomCe": "two texts, six linked questions; source text visible",
+      "printedCeQuestionsPerBank": 120,
+      "elision": "l’ joins the following verb; 12 per COD completion presentation",
+      "classroomSubjunctive": "source, required introductory expression and human assessment visible",
+      "subjunctiveWritingDefault": "one task, six answer lines; model and rubric only in correction"
     },
     "legacyGlobalCurriculum": {
       "command": "node scripts/test-grammar-curriculum.cjs",
@@ -117,18 +129,51 @@
       "command": "node --test tests/interactive/source-adapters.test.mjs tests/interactive/geometry.test.mjs",
       "result": "passed",
       "tests": 15,
-      "purpose": "Validate the shared converter after rebasing the upstream geometry changes."
+      "purpose": "Validate the shared converter after rebasing the upstream geometry changes.",
+      "validatedAtUpstream": "a4a971447d0095ca2c6d1f2d08246d20f7e32a8c"
     },
     "postRebase": {
-      "upstream": "a4a971447d0095ca2c6d1f2d08246d20f7e32a8c",
+      "upstream": "033d50bba1d6c876cbfcc9552330a89e1d295fa0",
       "typeScript": "passed",
       "legacyAndCo": "passed",
-      "pilotVariants": 960,
-      "h8Chrome": "passed",
-      "interactiveTests": 15
+      "pilotVariants": 1320,
+      "codChrome": "passed",
+      "allChromePresentationsBeforeGalleryMerge": 26,
+      "interactiveAdapterTests": 7
+    },
+    "cod": {
+      "references": 50,
+      "cliticDistribution": {
+        "le": 12,
+        "la": 12,
+        "les": 14,
+        "l’": 12
+      },
+      "correctionIntervals": 50,
+      "readingDocuments": 20,
+      "readingQuestions": 60,
+      "elisions": "printed l’ attaches to the following verb; empty student slots preserved",
+      "humanReview": "pending"
+    },
+    "subjunctive": {
+      "level": "B1",
+      "activityUnits": 200,
+      "responseVariants": 250,
+      "activities": 4,
+      "presentations": 5,
+      "functions": {
+        "volonte": 13,
+        "sentiment": 13,
+        "necessite": 12,
+        "doute": 12
+      },
+      "correctionIntervals": 50,
+      "productionCriteria": 5,
+      "tense": "present subjunctive; past subjunctive belongs to k12",
+      "humanReview": "pending"
     }
   },
-  "upstreamIntegrated": "a4a971447d0095ca2c6d1f2d08246d20f7e32a8c",
+  "upstreamIntegrated": "7c7c353f3e5279b8f79c7257a79a526b5bee38d4",
   "lastValidatedDate": "2026-11-12",
   "browserM5": {
     "results": [
@@ -263,6 +308,124 @@
       },
       {
         "classroomCE": "two documents and six linked questions; selected text visible"
+      }
+    ],
+    "errors": []
+  },
+  "browserI4": {
+    "results": [
+      {
+        "type": "gram-ex-i4-qcm-verbe",
+        "level": "A2",
+        "presentation": "choice",
+        "sheets": 34,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "type": "gram-ex-i4-qcm-verbe",
+        "level": "A2",
+        "presentation": "gap",
+        "sheets": 34,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "type": "gram-ex-i4-curriculum-t",
+        "level": "A2",
+        "presentation": "transform",
+        "sheets": 50,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "type": "gram-ex-i4-curriculum-c",
+        "level": "A2",
+        "presentation": "correct",
+        "sheets": 50,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "type": "gram-ex-i4-communication-pe",
+        "level": "A2",
+        "presentation": "open-written",
+        "sheets": 100,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "type": "gram-ex-i4-communication-po",
+        "level": "A2",
+        "presentation": "open-oral",
+        "sheets": 100,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "type": "gram-ex-i4-communication-ce",
+        "level": "A2",
+        "presentation": "document-set",
+        "documents": 20,
+        "questions": 60,
+        "sheets": 80,
+        "printedQuestions": 120,
+        "overflow": false
+      },
+      {
+        "manualPageBreak": "stable IDs and all questions preserved; toggle reversible"
+      },
+      {
+        "classroomCE": "two documents, six linked questions and source text visible"
+      }
+    ],
+    "errors": []
+  },
+  "browserK10": {
+    "results": [
+      {
+        "type": "gram-ex-k10-qcm-conj",
+        "level": "B1",
+        "presentation": "choice",
+        "sheets": 34,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "type": "gram-ex-k10-qcm-conj",
+        "level": "B1",
+        "presentation": "gap",
+        "sheets": 34,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "type": "gram-ex-k10-curriculum-t",
+        "level": "B1",
+        "presentation": "transform",
+        "sheets": 50,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "type": "gram-ex-k10-curriculum-c",
+        "level": "B1",
+        "presentation": "correct",
+        "sheets": 50,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "type": "gram-ex-k10-curriculum-e",
+        "level": "B1",
+        "presentation": "open-written",
+        "sheets": 100,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "classroomTransform": "source, required introductory expression and human assessment visible",
+        "selectedQuestions": 3
       }
     ],
     "errors": []

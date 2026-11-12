@@ -28095,6 +28095,72 @@
       "source_sha256": "e354374cf55c4f61c95ba317dc3607a4a3543b2b4d1db20fa2691603441bf581",
       "reason": "La consigne de la salle d’escalade recommande explicitement un pantalon souple et un tee-shirt. Le pantalon souple est donc la seule bonne réponse ; costume et robe de soirée sont des vêtements plausibles mais non recommandés. Originaux vus individuellement : pantalon ample gris à taille élastiquée et cordon ; costume bleu composé d’une veste et du pantalon assorti ; robe longue en satin bleu nuit sur cintre. Les vêtements sont entiers et distincts sur fond crème, en paysage 4:3 et dans le style de peinture douce approuvé. Réemploi du costume existant.",
       "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "delf-a1v-ce-025",
+      "question": 2,
+      "node": [
+        "questions",
+        1,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/co306-passeport-dessine.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/extension573-billet-avion.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-carte-bancaire-dessinee.webp"
+          }
+        ]
+      },
+      "source_sha256": "884a5bef52d5b71420e8226bd213ce74e601c66ec13da49590c55ef555923537",
+      "reason": "Nora écrit que son avion décolle et qu’elle a oublié son passeport sur son bureau. Le billet est donc représenté par un billet d’avion ; la carte bancaire est un autre document plausible, absent de la demande. La réponse passeport reste unique. Trois originaux vus séparément : passeport bleu fermé avec titre et globe, billet d’avion entier avec pictogramme d’avion et champs sans données, carte bancaire bleue avec puce et symbole sans contact. Aucun montant ni date, fond crème et peinture douce en paysage 4:3. Réemploi des trois images.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "exercise": "delf-a2j-ce-016",
+      "question": 4,
+      "node": [
+        "questions",
+        3,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/extension573-cacao.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-cafe-ingredient.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/extension573-the-feuilles.png"
+          }
+        ]
+      },
+      "source_sha256": "5de362212a38d3eb5a29eb1c93c7522b9744f5571e433632e2df94c26099ca9a",
+      "reason": "Le Musée du chocolat présente explicitement l’origine du cacao. Le café et le thé sont des produits végétaux cohérents comme leurres et ne sont pas mentionnés dans le descriptif. La bonne réponse et les trois libellés sont conservés. Trois originaux vus individuellement : cabosse de cacao entière et ouverte avec fèves ; coupelle de café moulu avec grains de café distinctifs ; coupelle de feuilles de thé sèches avec branche à deux feuilles fraîches. Trois produits représentés comme ingrédients, éléments entiers, fond crème, peinture douce et paysage 4:3. Cacao et café réutilisés.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
     }
   ]
 }

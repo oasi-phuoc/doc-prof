@@ -3,9 +3,9 @@
   "scope": "Inventaire exhaustif des questions CE/CO à trois choix ; contrôle contre le texte ou la transcription active, sans nouvelle écoute intégrale des MP3.",
   "summary": {
     "text_variant_pending_images_or_intentionally_text": 5353,
-    "reviewed_trio": 1846,
+    "reviewed_trio": 1848,
     "existing_variant_partial_reviewed_reuse": 81,
-    "reviewed_763_artwork_pending": 422,
+    "reviewed_763_artwork_pending": 420,
     "reviewed_763_keep_text": 112,
     "existing_variant_needs_further_visual_review": 23,
     "retire_ambiguous_image_variant": 14
@@ -19200,19 +19200,27 @@
         "Son billet",
         "Sa carte bancaire"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_763_candidate_review",
       "source_sha256": "884a5bef52d5b71420e8226bd213ce74e601c66ec13da49590c55ef555923537",
       "semantic_before_sha256": "9f725b44137435e408648c7f7e66a4ea212f4879c171f52cbe67bedf8282c9b4",
       "semantic_after_sha256": "9f725b44137435e408648c7f7e66a4ea212f4879c171f52cbe67bedf8282c9b4",
       "audio": null,
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/co306-passeport-dessine.webp",
+        "/lib/images/tcf/qcm-audit/extension573-billet-avion.webp",
+        "/lib/images/tcf/qcm-audit/co834-carte-bancaire-dessinee.webp"
+      ],
+      "target_sha256": [
+        "c2f0b65db0e431c49bf0c0c17fe43e7cd5cc3f195e44b7208cff5ed2b5200ac0",
+        "4804cb3f21954966f4cf3992dc2580d9ece97d0ec0f95b43314418faf2f1cb93",
+        "8503834770cdaed7fa7d72026cd4e3625453955224a34a51dd7b8a9d3006c583"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_distinct_document_types",
-      "review_763_reason": "Préparer ou retrouver les types exacts de documents et leurs éventuelles combinaisons ; aucun montant, date ou renseignement personnel inventé. Ne pas confondre certificat, ordonnance, diplôme ou carte."
+      "reason": "Nora écrit que son avion décolle et qu’elle a oublié son passeport sur son bureau. Le billet est donc représenté par un billet d’avion ; la carte bancaire est un autre document plausible, absent de la demande. La réponse passeport reste unique. Trois originaux vus séparément : passeport bleu fermé avec titre et globe, billet d’avion entier avec pictogramme d’avion et champs sans données, carte bancaire bleue avec puce et symbole sans contact. Aucun montant ni date, fond crème et peinture douce en paysage 4:3. Réemploi des trois images.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Nora écrit que son avion décolle et qu’elle a oublié son passeport sur son bureau. Le billet est donc représenté par un billet d’avion ; la carte bancaire est un autre document plausible, absent de la demande. La réponse passeport reste unique. Trois originaux vus séparément : passeport bleu fermé avec titre et globe, billet d’avion entier avec pictogramme d’avion et champs sans données, carte bancaire bleue avec puce et symbole sans contact. Aucun montant ni date, fond crème et peinture douce en paysage 4:3. Réemploi des trois images."
     },
     {
       "key": "delf-a1v-ce-025#3",
@@ -127799,19 +127807,27 @@
         "Le café",
         "Le thé"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_763_candidate_review",
       "source_sha256": "5de362212a38d3eb5a29eb1c93c7522b9744f5571e433632e2df94c26099ca9a",
       "semantic_before_sha256": "f30798e8045e5596b24eac1cab7fd38a122302374c694e58de1e84881184c34a",
       "semantic_after_sha256": "f30798e8045e5596b24eac1cab7fd38a122302374c694e58de1e84881184c34a",
       "audio": null,
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/extension573-cacao.webp",
+        "/lib/images/tcf/qcm-audit/vocab-cafe-ingredient.webp",
+        "/lib/images/tcf/qcm-audit/extension573-the-feuilles.png"
+      ],
+      "target_sha256": [
+        "3f019698a7d3f6615513ba9f2ca361e152e6f5fd6026197e024c476150ddf062",
+        "dc7454a682de347a16bbd9809f1687213bc33c909e3fa0045a7f59d8e0fe5b6f",
+        "ee571cc3c9595faf91943721ba1cfec186072a5cab5329280fb799f142acfc56"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_whole_answer_concepts",
-      "review_763_reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel."
+      "reason": "Le Musée du chocolat présente explicitement l’origine du cacao. Le café et le thé sont des produits végétaux cohérents comme leurres et ne sont pas mentionnés dans le descriptif. La bonne réponse et les trois libellés sont conservés. Trois originaux vus individuellement : cabosse de cacao entière et ouverte avec fèves ; coupelle de café moulu avec grains de café distinctifs ; coupelle de feuilles de thé sèches avec branche à deux feuilles fraîches. Trois produits représentés comme ingrédients, éléments entiers, fond crème, peinture douce et paysage 4:3. Cacao et café réutilisés.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Le Musée du chocolat présente explicitement l’origine du cacao. Le café et le thé sont des produits végétaux cohérents comme leurres et ne sont pas mentionnés dans le descriptif. La bonne réponse et les trois libellés sont conservés. Trois originaux vus individuellement : cabosse de cacao entière et ouverte avec fèves ; coupelle de café moulu avec grains de café distinctifs ; coupelle de feuilles de thé sèches avec branche à deux feuilles fraîches. Trois produits représentés comme ingrédients, éléments entiers, fond crème, peinture douce et paysage 4:3. Cacao et café réutilisés."
     },
     {
       "key": "delf-a2j-ce-016#5",

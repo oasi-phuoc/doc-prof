@@ -4,6 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "predev": "node scripts/image-gallery-catalog.mjs",
+    "prebuild": "node scripts/image-gallery-catalog.mjs",
+    "gallery:index": "node scripts/image-gallery-catalog.mjs",
+    "test:gallery": "node --test tests/gallery/catalog.test.mjs",
+    "test:gallery:browser": "node tests/gallery/browser.mjs",
     "dev": "vite",
     "build": "git config lfs.url https://github.com/oasi-phuoc/doc-prof.git/info/lfs >/dev/null 2>&1; git lfs pull || true; tsc -b && vite build",
     "lint": "oxlint",
@@ -38,7 +43,7 @@
     "check:interactive:secrets": "node scripts/interactive-secrets.mjs",
     "test:grammar:baseline": "node scripts/grammar-baseline.cjs",
     "test:grammar:levels": "node scripts/test-grammar-levels.cjs",
-    "test:grammar:browser": "node tests/grammar/pilot-browser.mjs && node tests/grammar/er-particuliers-browser.mjs && node tests/grammar/past-contrast-browser.mjs"
+    "test:grammar:browser": "node tests/grammar/pilot-browser.mjs && node tests/grammar/er-particuliers-browser.mjs && node tests/grammar/past-contrast-browser.mjs && node tests/grammar/direct-objects-browser.mjs && node tests/grammar/subjunctive-browser.mjs"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",

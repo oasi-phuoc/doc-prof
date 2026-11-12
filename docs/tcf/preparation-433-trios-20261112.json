@@ -4,13 +4,13 @@
   "scope": "433 trios demandés, réemplois proposés liés aux questions actuelles ; reprise supplémentaire d’un ancien trio invalidé par une correction audio.",
   "summary": {
     "initial_trios": 433,
-    "activated_since_baseline": 12,
-    "initial_pending": 421,
+    "activated_since_baseline": 14,
+    "initial_pending": 419,
     "additional_pending": 1,
-    "total_pending": 422,
+    "total_pending": 420,
     "pending_by_level": {
-      "A0-A1": 183,
-      "A1-A2": 216,
+      "A0-A1": 182,
+      "A1-A2": 215,
       "A2-B1": 23
     }
   },
@@ -2018,8 +2018,8 @@
       "audio": null,
       "source_sha256": "884a5bef52d5b71420e8226bd213ce74e601c66ec13da49590c55ef555923537",
       "semantic_sha256": "9f725b44137435e408648c7f7e66a4ea212f4879c171f52cbe67bedf8282c9b4",
-      "current_status": "artwork_needed_distinct_document_types",
-      "decision": "Préparer ou retrouver les types exacts de documents et leurs éventuelles combinaisons ; aucun montant, date ou renseignement personnel inventé. Ne pas confondre certificat, ordonnance, diplôme ou carte.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Nora écrit que son avion décolle et qu’elle a oublié son passeport sur son bureau. Le billet est donc représenté par un billet d’avion ; la carte bancaire est un autre document plausible, absent de la demande. La réponse passeport reste unique. Trois originaux vus séparément : passeport bleu fermé avec titre et globe, billet d’avion entier avec pictogramme d’avion et champs sans données, carte bancaire bleue avec puce et symbole sans contact. Aucun montant ni date, fond crème et peinture douce en paysage 4:3. Réemploi des trois images.",
       "choices": [
         {
           "id": "a",
@@ -2043,7 +2043,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-passeport-dessine.webp",
+        "/lib/images/tcf/qcm-audit/extension573-billet-avion.webp",
+        "/lib/images/tcf/qcm-audit/co834-carte-bancaire-dessinee.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -2052,7 +2056,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -7167,11 +7171,18 @@
           "id": "a",
           "label": "Deux tartes aux fraises",
           "correct": true,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-deux-tartes-fraises.png",
+              "sha256": "72a5da8b28b4cac5e53e5a4d24dd2e99981cdc26895260152e0fd20ac65a1fcb",
+              "label": "Deux tartes aux fraises"
+            }
+          ],
           "generation_jobs": [
             {
               "id": "extension573-deux-tartes-fraises",
-              "status": "queued_after_quota_reset"
+              "status": "visually_reviewed",
+              "source": "/lib/images/tcf/qcm-audit/extension573-deux-tartes-fraises.png"
             }
           ]
         },
@@ -10811,8 +10822,8 @@
       "audio": null,
       "source_sha256": "5de362212a38d3eb5a29eb1c93c7522b9744f5571e433632e2df94c26099ca9a",
       "semantic_sha256": "f30798e8045e5596b24eac1cab7fd38a122302374c694e58de1e84881184c34a",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Le Musée du chocolat présente explicitement l’origine du cacao. Le café et le thé sont des produits végétaux cohérents comme leurres et ne sont pas mentionnés dans le descriptif. La bonne réponse et les trois libellés sont conservés. Trois originaux vus individuellement : cabosse de cacao entière et ouverte avec fèves ; coupelle de café moulu avec grains de café distinctifs ; coupelle de feuilles de thé sèches avec branche à deux feuilles fraîches. Trois produits représentés comme ingrédients, éléments entiers, fond crème, peinture douce et paysage 4:3. Cacao et café réutilisés.",
       "choices": [
         {
           "id": "a",
@@ -10865,7 +10876,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/extension573-cacao.webp",
+        "/lib/images/tcf/qcm-audit/vocab-cafe-ingredient.webp",
+        "/lib/images/tcf/qcm-audit/extension573-the-feuilles.png"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -10874,7 +10889,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {

@@ -10,6 +10,7 @@ type BaseUnit = {
   givenVerb?: string
   responseLines?: 1 | 2
   cue?: string
+  reference?: { text: string; gender: 'masculine' | 'feminine'; number: 'singular' | 'plural' }
 }
 export type GrammarReadingQuestion = {
   id: string; prompt: string; answers: string[]; explanation: string; evidence: string[]
@@ -17,7 +18,7 @@ export type GrammarReadingQuestion = {
 }
 export type GrammarUnit = BaseUnit & (
   | { kind: 'completion'; options: GrammarChoice[] }
-  | { kind: 'correct' }
+  | { kind: 'correct'; error?: { segmentId: 'prompt'; start: number; end: number; text: string } }
   | ({ kind: 'transform' } & ({ targetSubject: string; directive?: never } | { directive: string; targetSubject?: never }))
   | { kind: 'order'; tokens: Array<{ id: string; text: string; category: PhraseCategory }> }
   | { kind: 'match'; pairs: Array<{ id: string; left: string; right: string; sourceId: string }> }
