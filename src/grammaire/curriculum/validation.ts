@@ -27,9 +27,19 @@ export function validGrammarUnit(value: unknown): value is GrammarUnit {
     !text(value.source.typeId) || !Number.isInteger(value.source.position) || Number(value.source.position)<0) return false
   if (value.givenVerb!==undefined && !text(value.givenVerb) || value.cue!==undefined && !text(value.cue) ||
     value.responseLines!==undefined && value.responseLines!==1 && value.responseLines!==2) return false
+  if (value.reference!==undefined && (!record(value.reference)||!text(value.reference.text)||
+    !['masculine','feminine'].includes(String(value.reference.gender))||!['singular','plural'].includes(String(value.reference.number)))) return false
   if (value.kind==='completion') return choices(value.options) && value.prompt.split('___').length===2 &&
     (value.options as Array<{text:string}>).filter(c=>(value.answers as string[]).some(answer=>key(c.text)===key(answer))).length===1
-  if (value.kind==='correct') return (value.answers as string[]).every(answer=>key(answer)!==key(value.prompt as string))
+  if (value.kind==='correct') {
+    if (value.error!==undefined) {
+      const e=value.error,prompt=value.prompt as string
+      if (!record(e)||e.segmentId!=='prompt'||!Number.isInteger(e.start)||!Number.isInteger(e.end)||
+        Number(e.start)<0||Number(e.end)<=Number(e.start)||Number(e.end)>prompt.length||!text(e.text)||
+        prompt.normalize('NFC')!==prompt||prompt.slice(Number(e.start),Number(e.end))!==e.text) return false
+    }
+    return (value.answers as string[]).every(answer=>key(answer)!==key(value.prompt as string))
+  }
   if (value.kind==='transform') return (text(value.targetSubject) && value.directive===undefined ||
     text(value.directive) && value.targetSubject===undefined) && (value.answers as string[]).every(answer=>key(answer)!==key(value.prompt as string))
   if (value.kind==='order') return Array.isArray(value.tokens) && value.tokens.length>=2 && value.tokens.length<=32 &&

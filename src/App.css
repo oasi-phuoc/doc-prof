@@ -6367,6 +6367,7 @@ textarea.pill-input,
 .grammar-question { min-width: 0; break-inside: avoid; }
 .grammar-question p { margin: 0 0 2mm; }
 .grammar-answer-inline { display: inline-block; min-width: 22mm; min-height: 1em; border-bottom: 1px solid var(--purple); color: var(--purple); text-align: center; margin: 0 .2em; }
+.grammar-answer-inline.is-attached { min-width: 0; margin: 0; text-align: left; }
 .grammar-choices { list-style: none; padding: 0; margin: 2mm 0; display: flex; flex-wrap: wrap; gap: 2mm 7mm; }
 .grammar-choice-box { display: inline-block; width: 3mm; height: 3mm; border: 1px solid var(--ink); font-size: 10px; line-height: 3mm; text-align: center; }
 .grammar-words { display: flex; flex-wrap: wrap; gap: 2mm 4mm; }

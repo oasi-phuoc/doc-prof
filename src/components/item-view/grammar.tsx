@@ -9,7 +9,7 @@ function VerbHint({verb}:{verb?:string}) {
   return verb?<span className="grammar-verb-hint tcf-verbe-theme">({verb})</span>:null
 }
 function Sentence({ text, answer, givenVerb }: {text:string;answer?:string;givenVerb?:string}) {
-  return <>{text.split('___').map((part,index)=><Fragment key={index}>{index>0?<><span className="grammar-answer-inline">{answer??'\u00a0'}</span><VerbHint verb={givenVerb}/></>:null}{part}</Fragment>)}</>
+  return <>{text.split('___').map((part,index)=><Fragment key={index}>{index>0?<><span className={`grammar-answer-inline${answer?.endsWith('’')&&part.length>0&&!/^\s/.test(part)?' is-attached':''}`}>{answer??'\u00a0'}</span><VerbHint verb={givenVerb}/></>:null}{part}</Fragment>)}</>
 }
 export function GrammarQuestionView({ question:q, mode }: {question:GrammarQuestion;mode:PreviewMode}) {
   const u=q.unit, corrected=mode==='answers'

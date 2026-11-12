@@ -12,6 +12,7 @@ function cost(item: MathItem): number {
   if (q.presentation==='transform') return 58
   if (q.presentation==='correct') return long?55:38
   if (q.presentation==='order') return long?55:40
+  if (q.unit.reference) return 45
   // Include the longest spelling explanation in the corrigé, not only the gap.
   if (q.unit.givenVerb) return q.presentation==='choice'?45:34
   return q.presentation==='choice'?32:23

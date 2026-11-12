@@ -7,12 +7,12 @@
     "protectedFiles": 256
   },
   "editorial": {
-    "reviewedResponseVariants": 960,
+    "reviewedResponseVariants": 1320,
     "humanApproval": "pending",
-    "reviewedActivityUnits": 720,
-    "reviewedSelectableUnits": 720,
-    "reviewedDocuments": 20,
-    "reviewedDocumentQuestions": 60
+    "reviewedActivityUnits": 990,
+    "reviewedSelectableUnits": 990,
+    "reviewedDocuments": 40,
+    "reviewedDocumentQuestions": 120
   },
   "browser": {
     "results": [
@@ -61,7 +61,7 @@
     ],
     "errors": []
   },
-  "remaining": "Être A1, -er particuliers A1/A2 et imparfait/passé composé A2 sont en pilote explicite. COD, subjonctif et les autres notions/niveaux du curriculum restent à implémenter.",
+  "remaining": "Être A1, -er particuliers A1/A2, imparfait/passé composé A2 et COD A2 sont en pilote explicite. Subjonctif B1, autres notions/niveaux et supports images restent à implémenter.",
   "validation": {
     "typeScript": {
       "command": "node node_modules/typescript/bin/tsc -b --pretty false",
@@ -76,20 +76,23 @@
     "pilot": {
       "command": "node scripts/test-grammar-levels.cjs",
       "result": "passed",
-      "reviewedVariants": 960,
+      "reviewedVariants": 1320,
       "paperAndBoardOptionOrder": "identical",
       "levels": [
         "A1",
         "A2"
       ],
-      "documentGroups": "20 texts / 60 child questions",
+      "documentGroups": "40 texts / 120 child questions",
       "archiveSupport": "text, options and evidence preserved without current bank revision",
-      "manualEditingAssembly": "repeated supports removed without overwriting questions"
+      "manualEditingAssembly": "repeated supports removed without overwriting questions",
+      "codReferences": "50 explicit noun references; genre, number, elision and placement checked",
+      "correctionIntervals": "50 frozen UTF-16 intervals, malformed bounds/segments/text rejected"
     },
     "existingInteractiveAdapters": {
       "command": "node --test tests/interactive/source-adapters.test.mjs",
       "result": "passed",
-      "tests": 7
+      "tests": 7,
+      "validatedAtUpstream": "eec3f6cd4cbc62a6efafad2643546887b8f04c6e"
     },
     "chrome": {
       "command": "npm run test:grammar:browser",
@@ -98,13 +101,15 @@
       "javascriptErrors": 0,
       "emptyFilterPool": "clear notice; no broken session",
       "classroomLaunch": "passed",
-      "presentationsChecked": 19,
+      "presentationsChecked": 26,
       "classroomTransform": "source and imposed subject visible",
       "printedQuestionsPerOrdinaryPresentation": 100,
-      "printedCeQuestions": 120,
-      "printedQuestionsTotal": 1920,
+      "printedCeQuestions": 240,
+      "printedQuestionsTotal": 2640,
       "cePageBreak": "reversible; stable IDs and options; support repeated",
-      "classroomCe": "two texts, six linked questions; source text visible"
+      "classroomCe": "two texts, six linked questions; source text visible",
+      "printedCeQuestionsPerBank": 120,
+      "elision": "l’ joins the following verb; 12 per COD completion presentation"
     },
     "legacyGlobalCurriculum": {
       "command": "node scripts/test-grammar-curriculum.cjs",
@@ -117,18 +122,34 @@
       "command": "node --test tests/interactive/source-adapters.test.mjs tests/interactive/geometry.test.mjs",
       "result": "passed",
       "tests": 15,
-      "purpose": "Validate the shared converter after rebasing the upstream geometry changes."
+      "purpose": "Validate the shared converter after rebasing the upstream geometry changes.",
+      "validatedAtUpstream": "a4a971447d0095ca2c6d1f2d08246d20f7e32a8c"
     },
     "postRebase": {
-      "upstream": "a4a971447d0095ca2c6d1f2d08246d20f7e32a8c",
+      "upstream": "033d50bba1d6c876cbfcc9552330a89e1d295fa0",
       "typeScript": "passed",
       "legacyAndCo": "passed",
-      "pilotVariants": 960,
-      "h8Chrome": "passed",
-      "interactiveTests": 15
+      "pilotVariants": 1320,
+      "codChrome": "passed",
+      "allChromePresentationsBeforeGalleryMerge": 26,
+      "interactiveAdapterTests": 7
+    },
+    "cod": {
+      "references": 50,
+      "cliticDistribution": {
+        "le": 12,
+        "la": 12,
+        "les": 14,
+        "l’": 12
+      },
+      "correctionIntervals": 50,
+      "readingDocuments": 20,
+      "readingQuestions": 60,
+      "elisions": "printed l’ attaches to the following verb; empty student slots preserved",
+      "humanReview": "pending"
     }
   },
-  "upstreamIntegrated": "a4a971447d0095ca2c6d1f2d08246d20f7e32a8c",
+  "upstreamIntegrated": "033d50bba1d6c876cbfcc9552330a89e1d295fa0",
   "lastValidatedDate": "2026-11-12",
   "browserM5": {
     "results": [
@@ -263,6 +284,75 @@
       },
       {
         "classroomCE": "two documents and six linked questions; selected text visible"
+      }
+    ],
+    "errors": []
+  },
+  "browserI4": {
+    "results": [
+      {
+        "type": "gram-ex-i4-qcm-verbe",
+        "level": "A2",
+        "presentation": "choice",
+        "sheets": 34,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "type": "gram-ex-i4-qcm-verbe",
+        "level": "A2",
+        "presentation": "gap",
+        "sheets": 34,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "type": "gram-ex-i4-curriculum-t",
+        "level": "A2",
+        "presentation": "transform",
+        "sheets": 50,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "type": "gram-ex-i4-curriculum-c",
+        "level": "A2",
+        "presentation": "correct",
+        "sheets": 50,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "type": "gram-ex-i4-communication-pe",
+        "level": "A2",
+        "presentation": "open-written",
+        "sheets": 100,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "type": "gram-ex-i4-communication-po",
+        "level": "A2",
+        "presentation": "open-oral",
+        "sheets": 100,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "type": "gram-ex-i4-communication-ce",
+        "level": "A2",
+        "presentation": "document-set",
+        "documents": 20,
+        "questions": 60,
+        "sheets": 80,
+        "printedQuestions": 120,
+        "overflow": false
+      },
+      {
+        "manualPageBreak": "stable IDs and all questions preserved; toggle reversible"
+      },
+      {
+        "classroomCE": "two documents, six linked questions and source text visible"
       }
     ],
     "errors": []

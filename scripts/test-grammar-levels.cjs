@@ -180,6 +180,34 @@ const readingBank=grammarBanksForType(h8+'communication-ce')[0]
 assert.equal(readingBank.units.reduce((n,u)=>n+u.questions.length,0),60)
 assert.equal(new Set(readingBank.units.map(u=>u.genre)).size,20)
 assert(readingBank.units.every(u=>u.text.split(/\s+/).length>=60&&u.text.split(/\s+/).length<=120))
+// COD: all four forms, precise references and frozen UTF-16 error intervals.
+const codPrefix='gram-ex-i4-',codBanks=banks.filter(b=>b.activityId.startsWith(codPrefix))
+assert.equal(codBanks.length,6)
+assert.equal(codBanks.reduce((n,b)=>n+b.presentations.reduce((sum,p)=>sum+(p==='document-set'?60:50),0),0),360)
+const codQ=grammarBanksForType(codPrefix+'qcm-verbe')[0],codC=grammarBanksForType(codPrefix+'curriculum-c')[0]
+assert.deepEqual(Object.fromEntries(['le','la','les','l’'].map(p=>[p,codQ.units.filter(u=>u.answers[0]===p).length])),{le:12,la:12,les:14,'l’':12})
+assert(codQ.units.every(u=>u.reference&&u.cue.includes(u.reference.text)))
+assert(codQ.units.filter(u=>u.reference.number==='plural').every(u=>u.answers[0]==='les'))
+assert(codQ.units.filter(u=>u.answers[0]==='l’').every(u=>/^[aàâeéèêiîoôuûh]/i.test(u.prompt.split('___')[1])))
+assert(codQ.units.find(u=>u.reference.text==='le drapeau').answers[0]==='le')
+assert(codQ.units.filter(u=>u.answers[0]==='l’').every(u=>!u.prompt.replace('___',u.answers[0]).includes('l’ ')))
+assert.equal(GRAMMAR_NEW_PILOT_TYPES.filter(t=>t.id===codPrefix+'curriculum-c').length,1)
+assert.equal(typeChoicesForBlock('grammaire',{...base(codPrefix+'qcm-verbe'),topic:'gram-pronoms'}).filter(t=>t.id===codPrefix+'curriculum-c').length,1)
+const codCorrection={...base(codPrefix+'curriculum-c'),topic:'gram-pronoms',count:50}
+for(const u of codC.units) {
+ assert.equal(u.error.segmentId,'prompt')
+ assert.equal(u.prompt.slice(u.error.start,u.error.end),u.error.text)
+ assert(u.reference&&u.cue.includes(u.reference.text))
+}
+const codFrozen=buildFicheRecipe(recipeInput([codCorrection]))
+for(const change of ['bounds','segment','text','reference']) {
+ const bad=structuredClone(codFrozen),unit=bad.pages[0].grammarSnapshot.questions[0].unit
+ if(change==='bounds')unit.error.end=unit.prompt.length+1
+ if(change==='segment')unit.error.segmentId='absent'
+ if(change==='text')unit.error.text='erreur étrangère au segment'
+ if(change==='reference')unit.reference.number='dual'
+ assert.equal(parseFicheRecipe(bad),null,change)
+}
 // Missing new fields is the legacy route, never implicit A1.
 const old={...base(),grammarLevel:undefined,grammarActivityId:undefined,grammarPresentation:undefined,grammarBankRevision:undefined,grammarPreview:undefined}
 assert.equal(generateGradedGrammarBlock(old,17),null)

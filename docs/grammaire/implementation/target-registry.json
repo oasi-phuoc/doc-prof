@@ -10454,7 +10454,7 @@
       "sourceDocumentCount": 10,
       "sourceQuestionTotal": 50,
       "currentGenerationQuestionCap": 5,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": 20,
       "selectionUnit": "document",
@@ -10468,12 +10468,23 @@
       },
       "scopeReason": "initial_matrix_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/i4.json",
       "instructionsByPresentation": {
         "document-set": "Lisez le document et répondez aux questions."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/i4.json",
+        "levels": [
+          "A2"
+        ],
+        "reviewedActivityUnits": 20,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "reviewedDocuments": 20,
+        "reviewedQuestions": 60
       }
     },
     {
@@ -10506,7 +10517,7 @@
       "sourceDocumentCount": 10,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 1,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "situation",
@@ -10520,12 +10531,21 @@
       },
       "scopeReason": "extension_to_preserve_uncovered_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/i4.json",
       "instructionsByPresentation": {
         "open-written": "Écrivez une seule phrase adaptée à la situation."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/i4.json",
+        "levels": [
+          "A2"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -10558,7 +10578,7 @@
       "sourceDocumentCount": 10,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 1,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "situation",
@@ -10572,12 +10592,21 @@
       },
       "scopeReason": "extension_to_preserve_uncovered_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/i4.json",
       "instructionsByPresentation": {
         "open-oral": "Dites une seule phrase adaptée à la situation."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/i4.json",
+        "levels": [
+          "A2"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -10610,7 +10639,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 50,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -10625,13 +10654,22 @@
       },
       "scopeReason": "initial_matrix_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/i4.json",
       "instructionsByPresentation": {
         "choice": "Choisissez la forme qui convient.",
         "gap": "Complétez avec la forme qui convient."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/i4.json",
+        "levels": [
+          "A2"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -19244,7 +19282,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -19258,12 +19296,21 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/i4.json",
       "instructionsByPresentation": {
         "transform": "Réécrivez la phrase en respectant l’indication."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/i4.json",
+        "levels": [
+          "A2"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -19291,7 +19338,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -19305,12 +19352,21 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/i4.json",
       "instructionsByPresentation": {
         "correct": "Corrigez l’erreur et réécrivez la phrase entière."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/i4.json",
+        "levels": [
+          "A2"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -29955,16 +30011,22 @@
       "selectionUnit": "document",
       "targetMinimum": 50,
       "targetMinimumDocuments": 20,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Remplacer le/la/les/l' sans ambiguïté de référent",
       "scopeReason": "initial_matrix_activity",
       "phase": "G2",
       "sourceFiles": "src/grammaire/exercises/communication.ts | src/grammaire/exercises/communication-data.json",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-i4-communication-ce",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 60,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "i4-a2-communication-ce-2026-11-12.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/i4.json",
+      "reviewedDocumentCount": 20
     },
     {
       "offeringId": "gram-ex-i4-communication-pe@A2@open-written",
@@ -29979,16 +30041,21 @@
       "selectionUnit": "situation",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Remplacer le/la/les/l' sans ambiguïté de référent",
       "scopeReason": "extension_to_preserve_uncovered_activity",
       "phase": "G2",
       "sourceFiles": "src/grammaire/exercises/communication.ts | src/grammaire/exercises/communication-data.json",
       "sourceRawCount": 10,
       "existingTypeIds": "gram-ex-i4-communication-pe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "i4-a2-communication-pe-2026-11-12.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/i4.json"
     },
     {
       "offeringId": "gram-ex-i4-communication-po@A2@open-oral",
@@ -30003,16 +30070,21 @@
       "selectionUnit": "situation",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Remplacer le/la/les/l' sans ambiguïté de référent",
       "scopeReason": "extension_to_preserve_uncovered_activity",
       "phase": "G2",
       "sourceFiles": "src/grammaire/exercises/communication.ts | src/grammaire/exercises/communication-data.json",
       "sourceRawCount": 10,
       "existingTypeIds": "gram-ex-i4-communication-po",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "i4-a2-communication-po-2026-11-12.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/i4.json"
     },
     {
       "offeringId": "gram-ex-i4-qcm-verbe@A2@choice",
@@ -30027,16 +30099,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Remplacer le/la/les/l' sans ambiguïté de référent",
       "scopeReason": "initial_matrix_activity",
       "phase": "G2",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-i4-qcm-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "i4-a2-qcm-verbe-2026-11-12.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/i4.json"
     },
     {
       "offeringId": "gram-ex-i4-qcm-verbe@A2@gap",
@@ -30051,16 +30128,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Remplacer le/la/les/l' sans ambiguïté de référent",
       "scopeReason": "initial_matrix_activity",
       "phase": "G2",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-i4-qcm-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "i4-a2-qcm-verbe-2026-11-12.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/i4.json"
     },
     {
       "offeringId": "gram-ex-i5-qcm-verbe@A2@choice",
@@ -35706,16 +35788,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Remplacer le/la/les/l' sans ambiguïté de référent",
       "scopeReason": "missing_initial_family",
       "phase": "G2",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "i4-a2-curriculum-t-2026-11-12.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/i4.json"
     },
     {
       "offeringId": "gram-ex-i4-curriculum-c@A2@correct",
@@ -35730,16 +35817,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Remplacer le/la/les/l' sans ambiguïté de référent",
       "scopeReason": "missing_initial_family",
       "phase": "G2",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "i4-a2-curriculum-c-2026-11-12.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/i4.json"
     },
     {
       "offeringId": "gram-ex-i5-curriculum-t@A2@transform",
@@ -38132,20 +38224,21 @@
   "implementation": {
     "baselineCommit": "ff743145",
     "firstVerticalSlice": "etre A1",
-    "reviewedVariants": 960,
+    "reviewedVariants": 1320,
     "teacherApprovedVariants": 0,
     "status": "pilot_preview",
-    "remaining": "COD, subjonctif, autres notions/niveaux et supports images suivent les lots prévus ; validation enseignant des pilotes en attente.",
-    "reviewedActivityUnits": 720,
+    "remaining": "Subjonctif B1, autres notions/niveaux et supports images suivent les lots prévus ; validation enseignant des pilotes en attente.",
+    "reviewedActivityUnits": 990,
     "deliveredSlices": [
       "etre A1",
       "er-particuliers A1/A2",
-      "imparfait-ou-pc A2"
+      "imparfait-ou-pc A2",
+      "i4 COD A2"
     ],
-    "reviewedOfferings": 19,
+    "reviewedOfferings": 26,
     "lastUpdated": "2026-11-12",
-    "reviewedSelectableUnits": 720,
-    "reviewedDocuments": 20,
-    "reviewedDocumentQuestions": 60
+    "reviewedSelectableUnits": 990,
+    "reviewedDocuments": 40,
+    "reviewedDocumentQuestions": 120
   }
 }
