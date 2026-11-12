@@ -1,6 +1,7 @@
 import type {PreviewMode} from '@/math/types'
 import type {GrammarQuestion} from '@/grammaire/curriculum/types'
 import {grammarReadingChild} from '@/grammaire/curriculum/items'
+import { GrammarImageSupports } from '@/components/grammar/GrammarImageSupports'
 
 export function GrammarReadingView({question:q,mode}:{question:GrammarQuestion;mode:PreviewMode}) {
   const u=q.unit,corrected=mode==='answers'
@@ -10,6 +11,7 @@ export function GrammarReadingView({question:q,mode}:{question:GrammarQuestion;m
     <p className="grammar-reading-genre">Texte {q.readingPart?.kind==='support'?q.readingPart.documentNumber:''} · {u.genre}</p>
     <h3>{u.prompt}{q.readingPart?.kind==='support'&&q.readingPart.continued?' (suite)':''}</h3>
     <div className="grammar-reading-text">{u.text}</div>
+    <GrammarImageSupports supports={u.imageSupports}/>
   </div>
   const options=q.readingOptions?.[child.id]
   return <div className="grammar-question grammar-reading-question grammar-two-lines" data-reading-question-id={child.id}>

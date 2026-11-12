@@ -1,5 +1,6 @@
 import { openInteractive } from '@/interactive/navigation'
 import { GrammarCurriculumError } from '@/grammaire/curriculum/types'
+import { waitForGrammarPrintImages } from '@/components/grammar/print-media'
 import { WorksheetImageProvider } from '@/components/WorksheetImage'
 import {
   useEffect,
@@ -389,8 +390,14 @@ export function GeneratorPage({
     updatePage({ calliText: joinCalliLines(ctx.calliFields.filter((_, i) => i !== index)) })
   }
 
-  function printAll() {
-    window.print()
+  async function printAll() {
+    try {
+      const printRoot=document.querySelector<HTMLElement>('.print-only-sheets')
+      if(printRoot)await waitForGrammarPrintImages(printRoot)
+      window.print()
+    } catch(error) {
+      window.alert(error instanceof Error?error.message:'Les images de la fiche ne sont pas prêtes pour l’impression.')
+    }
   }
 
   function playWithClass() {

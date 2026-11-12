@@ -174,8 +174,9 @@ export function ItemView({
         item.tcf?.kind === 'ce_association_answers' ||
         item.tcf?.kind === 'dialogue'),
   )
+  const grammarPart=item.grammar?.readingPart??item.grammar?.scenarioPart
   const showTheoryPageChip = Boolean(
-    onToggleTheoryPageBreakAfter && (item.layout === 'theory' && item.theoryBlock?.kind === 'section' || item.layout==='grammar'&&item.grammar?.readingPart?.kind==='question'),
+    onToggleTheoryPageBreakAfter && (item.layout === 'theory' && item.theoryBlock?.kind === 'section' || item.layout==='grammar'&&grammarPart?.kind==='question'),
   )
   const pageBreakChipLabel = showTheoryPageChip
     ? item.layout==='grammar' ? theoryPageBreakAfter?'Annuler le saut de page après cette question':'Ajouter un saut de page après cette question' : theoryPageBreakAfter
@@ -310,7 +311,7 @@ export function ItemView({
           </svg>
         </button>
       ) : null}
-      {item.coordScene || (hideNumber && itemLabel===undefined) || seriesNumber!==undefined ? null : <div className="item-number">{itemLabel ?? (item.grammar?.readingPart?.kind==='question'?item.grammar.readingPart.number:index + 1)}.</div>}
+      {item.coordScene || (hideNumber && itemLabel===undefined) || seriesNumber!==undefined ? null : <div className="item-number">{itemLabel ?? (grammarPart?.kind==='question'?grammarPart.number:index + 1)}.</div>}
       <div className="item-content">
         {item.layout==='grammar' ? isGrammarQuestion(item.grammar) ? <GrammarQuestionView question={item.grammar} mode={mode}/> : <p>Question grammaticale à vérifier.</p> : null}
         {(item.layout === 'column' || item.layout === 'column-empty') && <ColumnOp item={item} mode={mode} />}

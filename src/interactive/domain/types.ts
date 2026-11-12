@@ -1,5 +1,6 @@
 import type { Figure, FigureDims } from '@/math/types'
 import type { ManualVote } from './votes'
+import type { GrammarImageSupport } from '@/grammaire/curriculum/types'
 
 export type PlayMode = 'class' | 'solo'
 export type ChoiceOrderPolicy = 'shuffle' | 'fixed' | 'ascending' | 'pin-last'
@@ -21,6 +22,7 @@ export type Question = {
     part: number
     exerciseType: string
     documentId?: string
+    scenarioId?: string
   }
   title: string
   instruction: string
@@ -33,6 +35,7 @@ export type Question = {
   audioGrouping?: 'individual'
   audioMaxListens?: number
   images: string[]
+  grammarImages?: GrammarImageSupport[]
   words?: string[]
   figure?: { type: Figure; dims?: FigureDims }
   mode: 'choice' | 'oral' | 'sequence'

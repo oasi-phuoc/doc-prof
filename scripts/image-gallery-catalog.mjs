@@ -11,7 +11,7 @@ const read = (root, file, fallback = []) => {
 }
 function walk(root, dir = '') {
   return readdirSync(path.join(root, dir), { withFileTypes: true }).flatMap(entry => {
-    if (['node_modules', '.git', 'dist', '.vercel', '.codex', '.agents'].includes(entry.name)) return []
+    if (['node_modules', '.git', 'dist', '.vercel', '.codex', '.agents', 'work'].includes(entry.name)) return []
     const file = path.posix.join(dir, entry.name)
     return entry.isDirectory() ? walk(root, file) : IMAGE.test(file) ? [file] : []
   })
@@ -19,7 +19,7 @@ function walk(root, dir = '') {
 export function repositoryImages(root) {
   try {
     return [...new Set(execFileSync('git', ['ls-files', '--cached', '--others', '--exclude-standard', '-z'], { cwd: root, maxBuffer: 32 * 1024 * 1024 }).toString().split('\0'))]
-      .filter(file => IMAGE.test(file) && existsSync(path.join(root, file))).sort()
+      .filter(file => !file.startsWith('work/') && IMAGE.test(file) && existsSync(path.join(root, file))).sort()
   } catch { return walk(root).sort() }
 }
 
@@ -60,6 +60,9 @@ export function buildGalleryCatalog(root, files = repositoryImages(root)) {
   }
   for (const image of read(root, 'public/lib/images/tcf/po/illustrations-manifest.json', {}).images ?? []) {
     add(image.path, { labels: [image.title && `${image.title} — scène ${image.step ?? ''}`], themes: [image.title], types: ['Scénario'], terms: [image.action] })
+  }
+  for (const image of read(root, 'docs/grammaire/implementation/media-supports.json', {}).supports ?? []) {
+    add(image.src, { labels: [image.alt], themes: ['Grammaire'], types: ['Illustration'], terms: [image.source?.path] })
   }
   for (const image of read(root, 'src/tcf/content/ce-art.json')) add(image.src, { labels: [image.label], types: ['Document'], terms: [image.genre] })
   for (const image of read(root, 'src/tcf/object-images.json')) add(image.image, { labels: [image.label], themes: [pretty(image.family ?? '')], types: ['Objet'], terms: image.aliases })

@@ -13,7 +13,7 @@ export function grammarReadingSlices(block:WorksheetBlock,sourceBlockIndex:numbe
     let end=start+1
     while (end<block.items.length && block.items[end]!.grammar?.readingPart?.kind==='question') end++
     const questions=block.items.slice(start+1,end)
-    const supportCost=80+Math.max(0,q.unit.text.split(/\s+/).length-100)*.25
+    const supportCost=80+Math.max(0,q.unit.text.split(/\s+/).length-100)*.25+(q.unit.imageSupports?.length?45:0)
     let pending:typeof questions=[],used=supportCost,offset=start,continued=false
     const push=()=>{
       if (!pending.length) return

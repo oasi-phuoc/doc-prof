@@ -1,21 +1,19 @@
-import { Fragment } from 'react'
 import type { PreviewMode } from '@/math/types'
 import type { GrammarQuestion } from '@/grammaire/curriculum/types'
 import { PhraseOrderBlock } from './phrase'
 import { GrammarReadingView } from './grammar-reading'
 import { GrammarProductionView } from './grammar-production'
+import { GrammarScenarioView } from './grammar-scenario'
+import { GrammarImageSupports } from '@/components/grammar/GrammarImageSupports'
+import { GrammarSentence as Sentence, GrammarVerbHint as VerbHint } from './grammar-fields'
 
-function VerbHint({verb}:{verb?:string}) {
-  return verb?<span className="grammar-verb-hint tcf-verbe-theme">({verb})</span>:null
-}
-function Sentence({ text, answer, givenVerb }: {text:string;answer?:string;givenVerb?:string}) {
-  return <>{text.split('___').map((part,index)=><Fragment key={index}>{index>0?<><span className={`grammar-answer-inline${answer?.endsWith('’')&&part.length>0&&!/^\s/.test(part)?' is-attached':''}`}>{answer??'\u00a0'}</span><VerbHint verb={givenVerb}/></>:null}{part}</Fragment>)}</>
-}
 export function GrammarQuestionView({ question:q, mode }: {question:GrammarQuestion;mode:PreviewMode}) {
   const u=q.unit, corrected=mode==='answers'
   if (u.kind==='reading') return <GrammarReadingView question={q} mode={mode}/>
   if (u.kind==='production') return <GrammarProductionView unit={u} mode={mode}/>
+  if (u.kind==='scenario') return <GrammarScenarioView question={q} mode={mode}/>
   return <div className={`grammar-question${u.responseLines===2?' grammar-two-lines':''}`}>
+    <GrammarImageSupports supports={u.imageSupports}/>
     {u.cue?<p className="grammar-cue">{u.cue}</p>:null}
     {u.kind==='completion'?<>
       <p><Sentence text={u.prompt} answer={corrected?u.answers[0]:undefined} givenVerb={u.givenVerb}/></p>

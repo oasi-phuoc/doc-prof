@@ -1,11 +1,13 @@
 import type {PreviewMode} from '@/math/types'
 import type {GrammarUnit} from '@/grammaire/curriculum/types'
+import { GrammarImageSupports } from '@/components/grammar/GrammarImageSupports'
 
 export function GrammarProductionView({unit:u,mode}:{unit:Extract<GrammarUnit,{kind:'production'}>;mode:PreviewMode}) {
   const corrected=mode==='answers'
   const [title,...facts]=u.prompt.split('\n')
   return <div className="grammar-question grammar-production">
     {facts.length?<><h3>{title}</h3><p>{facts.join('\n')}</p></>:<p>{u.prompt}</p>}
+    <GrammarImageSupports supports={u.imageSupports}/>
     <p className="grammar-production-task">{u.task}</p>
     {corrected?<>
       <p className="grammar-model-label">Exemple de réponse — d’autres formulations sont possibles.</p>

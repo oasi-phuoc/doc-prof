@@ -1,0 +1,96 @@
+{
+  "status": "technical-fixtures-only",
+  "image": {
+    "id": "grammar-fixture-five-tomatoes",
+    "src": "/lib/images/grammaire/curriculum/sha256/d0dd14c1bd3f7348f5061247ff6fdc0760e3ea0cc933d2bddfa594baa4f1acc7.webp",
+    "sha256": "d0dd14c1bd3f7348f5061247ff6fdc0760e3ea0cc933d2bddfa594baa4f1acc7",
+    "alt": "Cinq tomates entières sur un fond blanc.",
+    "width": 1536,
+    "height": 1024,
+    "source": {
+      "path": "/lib/images/tcf/co/objets/5-tomates.webp",
+      "manifest": "public/lib/images/tcf/co/objets/manifest.json",
+      "rights": "project-generated",
+      "note": "Illustration générée pour le projet selon le manifeste source (status: generated, visual_reviewed: true). Copie binaire pour le réemploi interne prévu par PED-02 ; aucune licence tierce inventée."
+    }
+  },
+  "cases": {
+    "closed": {
+      "activityId": "gram-ex-b1-curriculum-s", "topic": "gram-entrer-contact", "presentation": "scenario-set",
+      "instruction": "Lisez chaque dialogue et complétez les répliques. Choisissez une proposition quand des choix sont donnés.",
+      "units": [
+        {
+          "id": "fixture-dialogue-accueil", "kind": "scenario", "contract": "closed", "prompt": "À l’accueil du centre", "situation": "Maël arrive pour un rendez-vous avec Mme Roux.",
+          "roles": [{"id":"visitor","label":"Maël","goal":"Se présenter et confirmer son rendez-vous."},{"id":"reception","label":"La personne à l’accueil","goal":"Vérifier le rendez-vous et accueillir Maël."}],
+          "turns": [
+            {"id":"t1","roleId":"visitor","text":"Bonjour ! Je ___ Maël.","questionId":"fixture-accueil-name"},
+            {"id":"t2","roleId":"reception","text":"Bonjour, Maël. Vous ___ rendez-vous ?","questionId":"fixture-accueil-avoir"},
+            {"id":"t3","roleId":"visitor","text":"Oui, avec Mme Roux."},
+            {"id":"t4","roleId":"reception","text":"Installez-vous ici, s’il vous plaît."}
+          ],
+          "questions": [
+            {"id":"fixture-accueil-name","response":"choice","answers":["m’appelle"],"explanation":"Avec je, le verbe s’appeler prend la forme m’appelle.","options":[{"id":"a","text":"m’appelle"},{"id":"b","text":"t’appelles"},{"id":"c","text":"s’appelle"}]},
+            {"id":"fixture-accueil-avoir","response":"gap","answers":["avez"],"explanation":"Avec vous, on emploie avez dans avoir rendez-vous."}
+          ],
+          "answers": [], "explanation": "Chaque réponse fermée complète une réplique identifiée du dialogue.",
+          "source": {"path":"tests/grammar/fixtures/contracts.json","typeId":"gram-ex-b1-curriculum-s","position":0}
+        },
+        {
+          "id": "fixture-dialogue-bibliotheque", "kind": "scenario", "contract": "closed", "prompt": "Une première visite", "situation": "Lina vient s’inscrire à la bibliothèque. La bibliothécaire lui demande son nom.",
+          "roles": [{"id":"reader","label":"Lina","goal":"Demander une inscription et donner son nom."},{"id":"librarian","label":"La bibliothécaire","goal":"Accueillir la nouvelle lectrice et demander son nom."}],
+          "turns": [
+            {"id":"t1","roleId":"reader","text":"Bonjour, je voudrais m’inscrire."},
+            {"id":"t2","roleId":"librarian","text":"Bonjour. Comment ___ appelez-vous ?","questionId":"fixture-bibliotheque-vous"},
+            {"id":"t3","roleId":"reader","text":"Je m’appelle Lina."},
+            {"id":"t4","roleId":"librarian","text":"___, Lina ! Je vais préparer votre carte.","questionId":"fixture-bibliotheque-accueil"}
+          ],
+          "questions": [
+            {"id":"fixture-bibliotheque-vous","response":"gap","answers":["vous"],"explanation":"On demande poliment le nom avec Comment vous appelez-vous ?"},
+            {"id":"fixture-bibliotheque-accueil","response":"choice","answers":["Bienvenue"],"explanation":"Bienvenue accueille une personne qui arrive. Les autres expressions terminent un échange.","options":[{"id":"a","text":"Bienvenue"},{"id":"b","text":"Au revoir"},{"id":"c","text":"À demain"}]}
+          ],
+          "answers": [], "explanation": "Le dialogue distingue la demande du nom et l’expression d’accueil.",
+          "source": {"path":"tests/grammar/fixtures/contracts.json","typeId":"gram-ex-b1-curriculum-s","position":1}
+        }
+      ]
+    },
+    "open": {
+      "activityId": "gram-ex-b1-curriculum-s", "topic": "gram-entrer-contact", "presentation": "scenario-set",
+      "instruction": "Jouez la situation à deux. Utilisez les rôles et les informations donnés.",
+      "units": [{
+        "id":"fixture-roleplay-rendez-vous","kind":"scenario","contract":"open","prompt":"Un premier rendez-vous",
+        "situation":"Au centre de langues, deux créneaux sont disponibles : mardi à seize heures et mercredi à dix heures. Utilisez des identités fictives.",
+        "roles":[{"id":"learner","label":"La personne qui s’inscrit","goal":"Saluer, se présenter et demander un rendez-vous."},{"id":"secretary","label":"Le secrétariat","goal":"Accueillir la personne et proposer les deux créneaux disponibles."}],
+        "turns":[{"id":"opening","roleId":"secretary","text":"Bonjour, bienvenue au centre de langues !"}],
+        "task":"Poursuivez le dialogue : présentez-vous, demandez un rendez-vous, proposez les deux horaires, puis choisissez un créneau et remerciez.",
+        "followUps":["Demandez de répéter un horaire si nécessaire.","Confirmez le jour et l’heure choisis."],
+        "rubric":[{"id":"greeting","label":"Les salutations et les remerciements conviennent à la situation."},{"id":"identity","label":"La présentation emploie correctement je m’appelle."},{"id":"interaction","label":"Les deux rôles participent à un échange compréhensible."},{"id":"facts","label":"Le créneau choisi correspond aux informations données."}],
+        "writeLines":2,
+        "answers":["— Bonjour, je m’appelle Noor. Je voudrais un rendez-vous.\n— Bonjour ! Mardi à seize heures ou mercredi à dix heures ?\n— Mercredi à dix heures, s’il vous plaît. Merci !\n— Très bien, à mercredi !"],
+        "explanation":"Exemple possible. L’enseignant apprécie les autres échanges cohérents ; aucune réponse libre n’est notée automatiquement.",
+        "source":{"path":"tests/grammar/fixtures/contracts.json","typeId":"gram-ex-b1-curriculum-s","position":2}
+      }]
+    },
+    "imageChoice": {
+      "activityId":"gram-ex-g1-qcm-verbe","topic":"gram-aliments","presentation":"choice","hasImage":true,
+      "instruction":"Regardez l’image et choisissez l’article indéfini qui convient.",
+      "units":[{
+        "id":"fixture-image-article","kind":"completion","prompt":"Voici ___ tomates pour la salade.","answers":["des"],
+        "options":[{"id":"a","text":"des"},{"id":"b","text":"un"},{"id":"c","text":"une"}],
+        "explanation":"Tomates est un nom au pluriel : l’article indéfini est des.",
+        "source":{"path":"tests/grammar/fixtures/contracts.json","typeId":"gram-ex-g1-qcm-verbe","position":0}
+      }]
+    },
+    "imageWriting": {
+      "activityId":"gram-ex-g1-curriculum-e","topic":"gram-aliments","presentation":"open-written","hasImage":true,
+      "instruction":"Regardez l’image puis écrivez deux phrases adaptées à la situation.",
+      "units":[{
+        "id":"fixture-image-message","kind":"production","mode":"written","prompt":"Un repas à partager\nVous préparez le repas avec votre colocataire. Voici les aliments disponibles.",
+        "task":"Écrivez un message : présentez les aliments avec un article indéfini et proposez un plat.","writeLines":3,
+        "rubric":[{"id":"article","label":"L’article indéfini s’accorde avec le nom."},{"id":"context","label":"Les aliments présentés correspondent à l’image."},{"id":"proposal","label":"La proposition de plat est compréhensible et cohérente."}],
+        "answers":["Voici des tomates pour le repas. Je propose une salade."],
+        "explanation":"Modèle possible, non exclusif. L’enseignant apprécie les autres propositions cohérentes.",
+        "source":{"path":"tests/grammar/fixtures/contracts.json","typeId":"gram-ex-g1-curriculum-e","position":0}
+      }]
+    }
+  }
+}

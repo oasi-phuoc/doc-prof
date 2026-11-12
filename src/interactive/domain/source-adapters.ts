@@ -4,8 +4,9 @@ import type { Choice, Question } from './types'
 import { hash } from './seeds'
 import { isGrammarQuestion } from '@/grammaire/curriculum/validation'
 import { grammarReadingChild } from '@/grammaire/curriculum/items'
+import { grammarScenarioChild, grammarScenarioContext } from '@/grammaire/curriculum/scenario'
 
-type Adaptation = { part: number; prompt: string; instruction: string; choices: Choice[]; correctId?: string; model: string; mode?: Question['mode']; audio?: string; images?: string[]; words?: string[]; teacherLed?: boolean; choiceOrderPolicy?: Question['choiceOrderPolicy']; context?: string; documentId?: string }
+type Adaptation = { part: number; prompt: string; instruction: string; choices: Choice[]; correctId?: string; model: string; mode?: Question['mode']; audio?: string; images?: string[]; grammarImages?: Question['grammarImages']; words?: string[]; teacherLed?: boolean; choiceOrderPolicy?: Question['choiceOrderPolicy']; context?: string; documentId?: string; scenarioId?: string }
 type Result = { items: Adaptation[]; issues: string[] }
 const textKey = (value: string) => value.normalize('NFC').trim().replace(/\s+/g, ' ').toLocaleLowerCase('fr')
 const letters = (value: string) => textKey(value).replace(/[^\p{L}\p{N}]/gu, '')
@@ -25,35 +26,48 @@ export function adaptSourceItem(item: MathItem, exerciseType: string, sourceInst
   if (item.layout==='grammar') {
     if (!isGrammarQuestion(item.grammar)) return {items:[],issues:['Question grammaticale invalide : vérifiez la fiche source.']}
     const q=item.grammar, u=q.unit
+    const imageSupport=u.imageSupports?{grammarImages:u.imageSupports}:{}
     const model=u.answers.join(' / ')+'\n'+u.explanation
     const rawPrompt=u.kind==='completion' && u.givenVerb?u.prompt.replace('___',`___ (${u.givenVerb})`):u.prompt
     const prompt=u.cue?u.cue+'\n'+rawPrompt:rawPrompt
+    if(u.kind==='scenario') {
+      const common={...imageSupport,part:0,instruction:sourceInstruction,context:grammarScenarioContext(u),scenarioId:u.id}
+      if(u.contract==='open')return {items:[{...common,prompt:[u.task,'Pour poursuivre l’échange :',...u.followUps].join('\n'),choices:[],mode:'oral',teacherLed:true,
+        model:'Exemple de dialogue — d’autres formulations sont possibles.\n'+u.answers.join('\n\n')+'\n'+u.explanation+'\nRepères enseignant :\n'+u.rubric.map(r=>'□ '+r.label).join('\n')}],issues:[]}
+      const child=grammarScenarioChild(q)
+      if(!child)return {items:[],issues:[]}
+      const turn=u.turns.find(t=>t.questionId===child.id)!,role=u.roles.find(r=>r.id===turn.roleId)!
+      const reply={...common,prompt:`${role.label} : ${turn.text}`,model:turn.text.replace('___',child.answers[0]!)+'\n'+child.explanation}
+      if(child.response==='gap')return {items:[{...reply,choices:[],mode:'oral',teacherLed:true}],issues:[]}
+      const options=q.scenarioOptions![child.id]!,correct=options.find(o=>child.answers.includes(o.text))!
+      return {items:[{...reply,choices:options,correctId:correct.id,choiceOrderPolicy:'fixed'}],issues:[]}
+    }
     if (u.kind==='reading') {
       const child=grammarReadingChild(q)
       if (!child) return {items:[],issues:[]}
       const childModel=child.answers.join(' / ')+'\n'+child.explanation+'\n'+child.evidence.map(s=>`« ${s} »`).join('\n')
-      const common={part:0,prompt:child.prompt,instruction:sourceInstruction,context:`${u.genre} — ${u.prompt}\n\n${u.text}`,documentId:u.id,model:childModel}
+      const common={...imageSupport,part:0,prompt:child.prompt,instruction:sourceInstruction,context:`${u.genre} — ${u.prompt}\n\n${u.text}`,documentId:u.id,model:childModel}
       if (child.response==='short') return {items:[{...common,choices:[],mode:'oral',teacherLed:true}],issues:[]}
       const options=q.readingOptions![child.id]!,correct=options.find(o=>child.answers.includes(o.text))!
       return {items:[{...common,choices:options,correctId:correct.id,choiceOrderPolicy:'fixed'}],issues:[]}
     }
-    if (u.kind==='production') return {items:[{part:0,prompt:`${u.prompt}\n${u.task}`,instruction:sourceInstruction,choices:[],mode:'oral',teacherLed:true,
+    if (u.kind==='production') return {items:[{...imageSupport,part:0,prompt:`${u.prompt}\n${u.task}`,instruction:sourceInstruction,choices:[],mode:'oral',teacherLed:true,
       model:'Exemple de réponse — d’autres formulations sont possibles.\n'+model+'\nRepères enseignant :\n'+u.rubric.map(r=>'□ '+r.label).join('\n')}],issues:[]}
     if (u.kind==='completion' && q.presentation==='choice') {
       const correct=q.options!.find(option=>u.answers.includes(option.text))!
-      return {items:[{part:0,prompt,instruction:'',choices:q.options!,correctId:correct.id,choiceOrderPolicy:'fixed',
+      return {items:[{...imageSupport,part:0,prompt,instruction:'',choices:q.options!,correctId:correct.id,choiceOrderPolicy:'fixed',
         model:u.prompt.replace('___',correct.text)+'\n'+u.explanation}],issues:[]}
     }
-    if (u.kind==='match') return {items:u.pairs.map((pair,part)=>({part,prompt:pair.left,
+    if (u.kind==='match') return {items:u.pairs.map((pair,part)=>({...imageSupport,part,prompt:pair.left,
       instruction:'Une phrase à la fois : choisissez la forme qui convient.',choices:q.rightOptions!,correctId:pair.id,choiceOrderPolicy:'fixed' as const,
       model:pair.left.replace('___',pair.right)})),issues:[]}
-    if (u.kind==='order') return {items:[{part:0,prompt:sourceInstruction+(u.givenVerb?` (${u.givenVerb})`:''),instruction:'Choisissez un mot puis sa place, ou utilisez les flèches du clavier.',
+    if (u.kind==='order') return {items:[{...imageSupport,part:0,prompt:sourceInstruction+(u.givenVerb?` (${u.givenVerb})`:''),instruction:'Choisissez un mot puis sa place, ou utilisez les flèches du clavier.',
       choices:[],mode:'sequence',words:q.tokens!.map(t=>t.text),model,teacherLed:true}],issues:[]}
     const instruction=u.kind==='transform'?(u.targetSubject?`Réécrivez avec le sujet « ${u.targetSubject} ».`:u.directive):sourceInstruction
     // Oral stages display the prompt. The target subject must be visible there,
     // not only in the instruction used by the reading dialog.
     const oralPrompt=u.kind==='transform'?`${prompt}\n${instruction}`:prompt
-    return {items:[{part:0,prompt:oralPrompt,instruction:instruction+(u.givenVerb?` (${u.givenVerb})`:''),choices:[],mode:'oral',model,teacherLed:true}],issues:[]}
+    return {items:[{...imageSupport,part:0,prompt:oralPrompt,instruction:instruction+(u.givenVerb?` (${u.givenVerb})`:''),choices:[],mode:'oral',model,teacherLed:true}],issues:[]}
   }
   if (item.layout === 'listen-check') {
     const options = item.options ?? [], checked = item.labels
