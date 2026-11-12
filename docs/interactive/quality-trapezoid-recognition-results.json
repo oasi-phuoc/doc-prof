@@ -1,0 +1,58 @@
+{
+  "date": "2026-11-12",
+  "baseline": "1ab49f236d3a474e86a215b475fce6978089320f",
+  "scope": "Three generic trapezoid property variants and relevant parallel-pair / equal-leg questions",
+  "tests": {
+    "newTests": 4,
+    "focusedPassed": 12,
+    "fullSuitePassed": 255,
+    "failed": 0,
+    "genericConfigurations": 900,
+    "trapezoidSeeds": 100,
+    "independentSvgFacts": "One parallel pair in every drawing; 2/0/0 right angles; 0/1/0 reflection axes; equal non-parallel legs only for the isosceles drawing",
+    "edits": "Changed keys, fact order, unknown subtypes and measurements rejected; source retained"
+  },
+  "coverage": {
+    "genericNames": 16,
+    "genericPropertyVariants": 13,
+    "genericPropertyQuestions": 52,
+    "genericPropertyIssues": 0,
+    "playableVariants": 712,
+    "inventoryVariants": 2111,
+    "generationErrors": 8
+  },
+  "browser": {
+    "passed": [
+      "recognition-browser",
+      "final trapezoid wording spot-check"
+    ],
+    "all48StagesRun": false,
+    "viewports": [
+      "390x844",
+      "1366x768",
+      "360x640"
+    ],
+    "class": "All three trapezoid names, one parallel pair, symmetry axes and equal legs; actual projected parallelism and right angles checked",
+    "solo": "Correct parallel-pair answer, wrong equal-leg relation and zero-right-angle timeout; automatic one-second progression",
+    "competition": "Two fixed mascots, two equal-leg choices and offline local turns after preparation",
+    "finalWording": "trapezoid-text-results.json: short French wording, exact correction, viewport bounds and axe pass on all three sizes",
+    "sourceTemplate": "unchanged",
+    "serverWrites": 0,
+    "errors": []
+  },
+  "paper": "No rendering changes in this increment; triangle paper fixture still passes with student and answer sheets",
+  "limits": [
+    "All 48 browser stages were not rerun.",
+    "The 206 unknown imported logic keys remain excluded from automatic scoring.",
+    "Other source families, physical classroom tests and authentication work remain open.",
+    "New CSC/CFR narration remains deferred and not_generated."
+  ],
+  "checks": {
+    "appTypes": "passed",
+    "lint": "passed with existing warnings; no new warnings in changed files",
+    "productionBuild": "passed",
+    "a4Witness": "identical screenshot against 0addb36d662842040cc8ed64e8b2c0ca81eac810",
+    "bundleBudgets": "passed",
+    "changedFilesSecrets": "Gitleaks 8.30.1: zero findings"
+  }
+}

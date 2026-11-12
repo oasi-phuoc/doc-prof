@@ -20,7 +20,7 @@ try {
  const base=demoRecipe()
  const families=[['géométrie','figures-nommer',16],['géométrie','figures-proprietes',13],['tcm-csc','tcm-csc-ex17',2]]
  const configFor=(domain,type,count)=>({...defaultPage(domain),topic:exerciseTypes.find(entry=>entry.id===type).topic,exerciseType:type,count,extraBlocks:undefined,libreItems:undefined})
- const supportedProperties=new Set(['square','rectangle','rhombus','parallelogram','circle','oval','triangle'])
+ const supportedProperties=new Set(['square','rectangle','rhombus','parallelogram','circle','oval','triangle','trapezoid'])
  const gameFor=(type,...items)=>convertRecipe({...base,pages:[{...configFor(type.startsWith('tcm')?'tcm-csc':'géométrie',type,items.length),libreItems:items}]})
  const keyOf=(game,q)=>q.choices.find(choice=>choice.id===game.corrections[q.id].choiceId).text
 
@@ -29,9 +29,9 @@ try {
    const config={...configFor(domain,type,count),difficulty},recipe={...base,pages:[config],seed,libreMode:false},before=structuredClone(recipe)
    const items=buildPage(config,seed).blocks.flatMap(block=>block.items),paper=seed===1?structuredClone(buildWorksheets(recipe.pages,seed)):undefined
    const game=convertRecipe(recipe)
-   const expected=type==='figures-nommer'?16:type==='figures-proprietes'?39:8
+   const expected=type==='figures-nommer'?16:type==='figures-proprietes'?52:8
    assert.equal(game.questions.length,expected,JSON.stringify(game.issues))
-   assert.equal(game.issues.length,type==='figures-proprietes'?3:0)
+   assert.equal(game.issues.length,0)
    for(const q of game.questions) {
     const item=items[q.source.item],part=q.source.part
     assert.equal(q.figure.type,type==='tcm-csc-ex17'?item.cscTask.figures[part]:item.figure)
@@ -54,7 +54,8 @@ try {
    const item=tryGenerateFigure('figures-proprietes',index)
    if(!supportedProperties.has(item.figure))continue
    const game=gameFor('figures-proprietes',item)
-   assert.deepEqual(game.questions.map(q=>keyOf(game,q)),facts[item.figure==='triangle'?`triangle:${item.dims.triangleKind}`:item.figure])
+   const trapezoidFacts={rectangle:['trapèze rectangle','1 paire','2','0'],isosceles:['trapèze isocèle','1 paire','égaux','0','1'],scalene:['trapèze quelconque','1 paire','0','0']}
+   assert.deepEqual(game.questions.map(q=>keyOf(game,q)),item.figure==='trapezoid'?trapezoidFacts[item.dims.trapezoidKind]:facts[item.figure==='triangle'?`triangle:${item.dims.triangleKind}`:item.figure])
    for(const q of game.questions)assert.equal(q.figure.dims.answer,undefined)
   }
  })

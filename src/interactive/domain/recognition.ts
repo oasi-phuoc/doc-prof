@@ -10,7 +10,7 @@ type Entry = { part: number; prompt: string; figure: NonNullable<Question['figur
 type Result = { items: Entry[]; issues: string[] }
 const reject = (reason: string): Result => ({items:[],issues:[reason]})
 const names = Array.from({length:16},(_,index)=>tryGenerateFigure('figures-nommer',index)!)
-const properties = Array.from({length:13},(_,index)=>tryGenerateFigure('figures-proprietes',index)!).filter(item=>['square','rectangle','rhombus','parallelogram','circle','oval','triangle'].includes(item.figure!))
+const properties = Array.from({length:13},(_,index)=>tryGenerateFigure('figures-proprietes',index)!)
 const namePool = [...new Set([...names.map(item=>item.answer),...CSC_FIGURES.map(entry=>entry.label)])]
 const normalize = (value: string) => value.normalize('NFC').trim()
 function figureKey(item: MathItem): string | null {
@@ -88,12 +88,14 @@ export function adaptRecognition(item: MathItem, exerciseType: string, seedFor: 
     return {items:[naming(item,0,reference.answer,namePool,seedFor(0))],issues:[]}
   }
   const reference=properties.find(candidate=>figureKey(candidate)===key)
-  if (!reference) return reject('Les propriétés de cette forme, notamment les trapèzes, demandent encore une validation de son dessin.')
+  if (!reference) return reject('Les propriétés de cette forme ne correspondent pas à un dessin vérifié.')
   if (JSON.stringify(item.propertyLines)!==JSON.stringify(reference.propertyLines) || normalize(item.answer)!==reference.answer) return reject('La figure, ses propriétés et son corrigé ne correspondent plus. Validez la fiche avant de jouer.')
   const figure=publicFigure(item)
   const items=reference.propertyLines!.map(({label,answer},part): Entry=>{
     if (label==='Nom') return naming(item,part,answer,namePool,seedFor(part))
     const common={part,figure,model:`${label} : ${answer}`}
+    if (label==='Côtés parallèles' && answer==='1 paire') return {...common,prompt:'Combien de paires de côtés parallèles possède cette figure ?',...wordChoices(answer,['aucune paire','1 paire','2 paires','3 paires'],seedFor(part))}
+    if (label==='Côtés non parallèles' && answer==='égaux') return {...common,prompt:'Comment sont les deux côtés non parallèles de cette figure ?',...wordChoices(answer,['égaux','différents'],seedFor(part))}
     if (answer==='une infinité') return {...common,prompt:'Combien d’axes de symétrie possède cette figure ?',choices:['0','1','2','3','4','une infinité'].map((text,index)=>({id:`axis${index}`,text})),correctId:'axis5'}
     if (/^\d+$/.test(answer)) {
       const prompt=label==='Côtés égaux'?'Combien de côtés de même longueur possède cette figure ?':label==='Angles droits'?'Combien d’angles droits possède cette figure ?':label==='Axes de symétrie'?'Combien d’axes de symétrie possède cette figure ?':'Combien de côtés possède cette figure ?'

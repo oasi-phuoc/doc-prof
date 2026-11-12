@@ -1,5 +1,7 @@
 # ADR 0034 — Triangles : dessins et reconnaissance
 
+Complément : l’[ADR 0035](adr-0035-proprietes-des-trapezes.md) valide ensuite les trois variantes de trapèzes et leurs propriétés.
+
 Les triangles équilatéral, isocèle et rectangle deviennent disponibles dans les questions de noms et de propriétés du jeu, y compris dans les cartes CFR 16–17. Cette étape clôt l’exclusion provisoire décrite dans les ADR 0032 et 0033.
 
 Le dessin équilatéral sans mesures avait deux côtés de 150 unités et une base de 180. Sa base vaut maintenant `240 / √3` pour une hauteur de 120 : ses trois côtés mesurent environ 138,564 unités et ses trois angles valent 60°. Cette correction s’applique aussi aux figures nues imprimées. Les schémas portant des cotes gardent leur disposition et leurs libellés ; ils restent des schémas de calcul.
