@@ -4,12 +4,12 @@
   "scope": "433 trios demandés, réemplois proposés liés aux questions actuelles ; reprise supplémentaire d’un ancien trio invalidé par une correction audio.",
   "summary": {
     "initial_trios": 433,
-    "activated_since_baseline": 9,
-    "initial_pending": 424,
+    "activated_since_baseline": 12,
+    "initial_pending": 421,
     "additional_pending": 1,
-    "total_pending": 425,
+    "total_pending": 422,
     "pending_by_level": {
-      "A0-A1": 186,
+      "A0-A1": 183,
       "A1-A2": 216,
       "A2-B1": 23
     }
@@ -1208,18 +1208,25 @@
       "audio": null,
       "source_sha256": "e354374cf55c4f61c95ba317dc3607a4a3543b2b4d1db20fa2691603441bf581",
       "semantic_sha256": "2b9db26fc7cedc50506b1c9e58a84a1617d643be9434144af8232d8a00ba776f",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "La consigne de la salle d’escalade recommande explicitement un pantalon souple et un tee-shirt. Le pantalon souple est donc la seule bonne réponse ; costume et robe de soirée sont des vêtements plausibles mais non recommandés. Originaux vus individuellement : pantalon ample gris à taille élastiquée et cordon ; costume bleu composé d’une veste et du pantalon assorti ; robe longue en satin bleu nuit sur cintre. Les vêtements sont entiers et distincts sur fond crème, en paysage 4:3 et dans le style de peinture douce approuvé. Réemploi du costume existant.",
       "choices": [
         {
           "id": "a",
           "label": "Un pantalon souple",
           "correct": true,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-pantalon-souple.png",
+              "sha256": "133b7b51714575cc0a777b1bb4a2ab7bff78654076a0196d966789b8dc29c1a1",
+              "label": "Un pantalon souple"
+            }
+          ],
           "generation_jobs": [
             {
               "id": "extension573-pantalon-souple",
-              "status": "queued_after_quota_reset"
+              "status": "visually_reviewed",
+              "source": "/lib/images/tcf/qcm-audit/extension573-pantalon-souple.png"
             }
           ]
         },
@@ -1240,16 +1247,27 @@
           "id": "c",
           "label": "Une robe de soirée",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-robe-soiree.png",
+              "sha256": "bb2fc55cc710ce177ec13a991c478a383c24c71769d4901f514ac0f15e03e564",
+              "label": "Une robe de soirée"
+            }
+          ],
           "generation_jobs": [
             {
               "id": "extension573-robe-soiree",
-              "status": "queued_after_quota_reset"
+              "status": "visually_reviewed",
+              "source": "/lib/images/tcf/qcm-audit/extension573-robe-soiree.png"
             }
           ]
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/extension573-pantalon-souple.png",
+        "/lib/images/tcf/qcm-audit/vocab-costume.webp",
+        "/lib/images/tcf/qcm-audit/extension573-robe-soiree.png"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -1258,7 +1276,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -1476,18 +1494,25 @@
       "audio": null,
       "source_sha256": "879065ce2667d8614e7cbc9581204062f94afa389785c01ffc057bf3f6f77a92",
       "semantic_sha256": "a29d33cd0d81cec72f28731ae5e8bf1082ba4bbc099a2d181ff70fb82705ef32",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Le message de départ à la retraite indique explicitement un livre de recettes et une plante. Les deux leurres sont d’autres paires de cadeaux du même thème, absentes du message. Aucun changement des choix, du corrigé, du barème ou des identifiants. Trois paires contrôlées individuellement : livre de recettes/plante en pot, roman/bouquet, livre d’art/boîte de chocolats. Les deux éléments de chaque réponse sont entiers et distincts, avec style peint et format 4:3 cohérents.",
       "choices": [
         {
           "id": "a",
           "label": "Un livre de recettes et une plante",
           "correct": true,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-cadeau-recettes-plante.png",
+              "sha256": "c08ddf3055dceff469818fad57b7d3fc9d542d64bb33d29d88a0fcbc3b845799",
+              "label": "Un livre de recettes et une plante"
+            }
+          ],
           "generation_jobs": [
             {
               "id": "extension573-cadeau-recettes-plante",
-              "status": "queued_after_quota_reset"
+              "status": "visually_reviewed",
+              "source": "/lib/images/tcf/qcm-audit/extension573-cadeau-recettes-plante.png"
             }
           ]
         },
@@ -1495,11 +1520,18 @@
           "id": "b",
           "label": "Un roman et des fleurs",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-cadeau-roman-fleurs.png",
+              "sha256": "f4169638821f4e0f199eedf5404ad51014afc08c3f54a25c427817a25ef5adbd",
+              "label": "Un roman et des fleurs"
+            }
+          ],
           "generation_jobs": [
             {
               "id": "extension573-cadeau-roman-fleurs",
-              "status": "queued_after_quota_reset"
+              "status": "visually_reviewed",
+              "source": "/lib/images/tcf/qcm-audit/extension573-cadeau-roman-fleurs.png"
             }
           ]
         },
@@ -1507,16 +1539,27 @@
           "id": "c",
           "label": "Un livre d'art et des chocolats",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-cadeau-art-chocolats.png",
+              "sha256": "1e24863a7eb3153eabc6cce0e2f5f80e31659cc72899d03323ebf602211b9f78",
+              "label": "Un livre d’art et des chocolats"
+            }
+          ],
           "generation_jobs": [
             {
               "id": "extension573-cadeau-art-chocolats",
-              "status": "queued_after_quota_reset"
+              "status": "visually_reviewed",
+              "source": "/lib/images/tcf/qcm-audit/extension573-cadeau-art-chocolats.png"
             }
           ]
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/extension573-cadeau-recettes-plante.png",
+        "/lib/images/tcf/qcm-audit/extension573-cadeau-roman-fleurs.png",
+        "/lib/images/tcf/qcm-audit/extension573-cadeau-art-chocolats.png"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -1525,7 +1568,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -2435,18 +2478,25 @@
       "audio": null,
       "source_sha256": "5d957fc8abd49a92b437f2655791217a7e0fa8a8a86d2aee46f39e56352caac7",
       "semantic_sha256": "601e4c635a5a503b2ab32ad9430a2c050b27c29ae3a67fecda75c7f3206702fa",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "L’annonce 2 propose explicitement un canapé et deux fauteuils. Les leurres sont d’autres ensembles de trois meubles du même thème, absents de l’annonce. Réponses texte, corrigé et identifiants sont conservés. Compte et types contrôlés individuellement : un canapé/deux fauteuils, un lit/deux tables, une armoire/deux chaises. Tous les meubles sont entiers et séparés ; chaises sans accoudoirs distinctes des fauteuils, peinture douce et format exact 4:3.",
       "choices": [
         {
           "id": "a",
           "label": "Un canapé et deux fauteuils",
           "correct": true,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-meubles-canape-2-fauteuils.png",
+              "sha256": "49d875190f887efffa3806a843707e2a843b3d4a50d6f48e730aae710002ad1c",
+              "label": "Un canapé et deux fauteuils"
+            }
+          ],
           "generation_jobs": [
             {
               "id": "extension573-meubles-canape-2-fauteuils",
-              "status": "queued_after_quota_reset"
+              "status": "visually_reviewed",
+              "source": "/lib/images/tcf/qcm-audit/extension573-meubles-canape-2-fauteuils.png"
             }
           ]
         },
@@ -2454,11 +2504,18 @@
           "id": "b",
           "label": "Un lit et deux tables",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-meubles-lit-2-tables.png",
+              "sha256": "e66af1b44bfa8c1c0bb539ec31f2bf0f3986a30cb0231f98967408b8b8e795a6",
+              "label": "Un lit et deux tables"
+            }
+          ],
           "generation_jobs": [
             {
               "id": "extension573-meubles-lit-2-tables",
-              "status": "queued_after_quota_reset"
+              "status": "visually_reviewed",
+              "source": "/lib/images/tcf/qcm-audit/extension573-meubles-lit-2-tables.png"
             }
           ]
         },
@@ -2466,16 +2523,27 @@
           "id": "c",
           "label": "Une armoire et deux chaises",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-meubles-armoire-2-chaises.png",
+              "sha256": "775e7f650bfcf5200598ffe49f1d0bb21b3b3492b5bb390643ae5439f076db91",
+              "label": "Une armoire et deux chaises"
+            }
+          ],
           "generation_jobs": [
             {
               "id": "extension573-meubles-armoire-2-chaises",
-              "status": "queued_after_quota_reset"
+              "status": "visually_reviewed",
+              "source": "/lib/images/tcf/qcm-audit/extension573-meubles-armoire-2-chaises.png"
             }
           ]
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/extension573-meubles-canape-2-fauteuils.png",
+        "/lib/images/tcf/qcm-audit/extension573-meubles-lit-2-tables.png",
+        "/lib/images/tcf/qcm-audit/extension573-meubles-armoire-2-chaises.png"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -2484,7 +2552,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {

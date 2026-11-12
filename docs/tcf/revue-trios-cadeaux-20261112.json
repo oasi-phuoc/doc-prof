@@ -1,0 +1,39 @@
+{
+  "date": "2026-11-12",
+  "trios": [
+    {
+      "key": "delf-a1v-ce-009#2",
+      "source_sha256": "879065ce2667d8614e7cbc9581204062f94afa389785c01ffc057bf3f6f77a92",
+      "semantic_sha256": "a29d33cd0d81cec72f28731ae5e8bf1082ba4bbc099a2d181ff70fb82705ef32",
+      "source": "Salut !\nVendredi, nous fêtons le départ en retraite de Mme Dubois. On lui offre un livre de recettes et une plante. Chacun met 10 CHF dans la cagnotte. Julie apporte les boissons et moi, des sandwichs. Peux-tu apporter un gâteau ?\nRendez-vous dans la salle de pause à 16 h. Je serai peut-être en retard : j’ai une réunion jusqu’à 16 h 15.\nAntoine",
+      "question": {
+        "enonce": "Quels cadeaux offre-t-on ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un livre de recettes et une plante",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un roman et des fleurs",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un livre d'art et des chocolats",
+            "correct": false
+          }
+        ],
+        "written_model": "Un livre de recettes et une plante"
+      },
+      "image_ids": [
+        "extension573-cadeau-recettes-plante",
+        "extension573-cadeau-roman-fleurs",
+        "extension573-cadeau-art-chocolats"
+      ],
+      "reason": "Le message de départ à la retraite indique explicitement un livre de recettes et une plante. Les deux leurres sont d’autres paires de cadeaux du même thème, absentes du message. Aucun changement des choix, du corrigé, du barème ou des identifiants.",
+      "visual_review": "Trois paires contrôlées individuellement : livre de recettes/plante en pot, roman/bouquet, livre d’art/boîte de chocolats. Les deux éléments de chaque réponse sont entiers et distincts, avec style peint et format 4:3 cohérents."
+    }
+  ]
+}

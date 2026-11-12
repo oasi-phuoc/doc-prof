@@ -1,0 +1,39 @@
+{
+  "date": "2026-11-12",
+  "trios": [
+    {
+      "key": "delf-a1v-ce-002#4",
+      "source_sha256": "e354374cf55c4f61c95ba317dc3607a4a3543b2b4d1db20fa2691603441bf581",
+      "semantic_sha256": "2b9db26fc7cedc50506b1c9e58a84a1617d643be9434144af8232d8a00ba776f",
+      "source": "Bienvenue !\nPour grimper, vous avez besoin de :\n– chaussons d’escalade (location possible : 5 CHF) ;\n– un pantalon souple et un tee-shirt.\nLes bijoux et les montres sont interdits. Les casiers sont gratuits.\nLa salle est ouverte du lundi au vendredi de 9 h à 22 h et le samedi de 10 h à 18 h. Elle est fermée le dimanche.\nNadia Favre\nResponsable",
+      "question": {
+        "enonce": "Quel vêtement est conseillé ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un pantalon souple",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un costume",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une robe de soirée",
+            "correct": false
+          }
+        ],
+        "written_model": "Un pantalon souple"
+      },
+      "image_ids": [
+        "extension573-pantalon-souple",
+        "vocab-costume",
+        "extension573-robe-soiree"
+      ],
+      "reason": "La consigne de la salle d’escalade recommande explicitement un pantalon souple et un tee-shirt. Le pantalon souple est donc la seule bonne réponse ; costume et robe de soirée sont des vêtements plausibles mais non recommandés.",
+      "visual_review": "Originaux vus individuellement : pantalon ample gris à taille élastiquée et cordon ; costume bleu composé d’une veste et du pantalon assorti ; robe longue en satin bleu nuit sur cintre. Les vêtements sont entiers et distincts sur fond crème, en paysage 4:3 et dans le style de peinture douce approuvé. Réemploi du costume existant."
+    }
+  ]
+}

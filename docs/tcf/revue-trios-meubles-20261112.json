@@ -1,0 +1,39 @@
+{
+  "date": "2026-11-12",
+  "trios": [
+    {
+      "key": "delf-a1v-ce-047#6",
+      "source_sha256": "5d957fc8abd49a92b437f2655791217a7e0fa8a8a86d2aee46f39e56352caac7",
+      "semantic_sha256": "601e4c635a5a503b2ab32ad9430a2c050b27c29ae3a67fecda75c7f3206702fa",
+      "source": "Annonce 1 — Annonce n° 2210 : chalet à louer\nWeek-end à la montagne\n4 personnes = 480 CHF\n\nAnnonce 2 — Vend canapé et 2 fauteuils\nBon état\n300 CHF\nSMS au 079 777 66 55",
+      "question": {
+        "enonce": "Quels meubles sont à vendre ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un canapé et deux fauteuils",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un lit et deux tables",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une armoire et deux chaises",
+            "correct": false
+          }
+        ],
+        "written_model": "Un canapé et deux fauteuils"
+      },
+      "image_ids": [
+        "extension573-meubles-canape-2-fauteuils",
+        "extension573-meubles-lit-2-tables",
+        "extension573-meubles-armoire-2-chaises"
+      ],
+      "reason": "L’annonce 2 propose explicitement un canapé et deux fauteuils. Les leurres sont d’autres ensembles de trois meubles du même thème, absents de l’annonce. Réponses texte, corrigé et identifiants sont conservés.",
+      "visual_review": "Compte et types contrôlés individuellement : un canapé/deux fauteuils, un lit/deux tables, une armoire/deux chaises. Tous les meubles sont entiers et séparés ; chaises sans accoudoirs distinctes des fauteuils, peinture douce et format exact 4:3."
+    }
+  ]
+}

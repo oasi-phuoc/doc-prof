@@ -27996,6 +27996,105 @@
       "source_sha256": "58c18321822f6a07e218e010873a2d9464f60b1317a0fc177531be5592578f46",
       "reason": "Source relue : le vélo de ville bleu est vendu avec un panier. Trois variantes du même vélo bleu entier, avec panier avant, siège enfant arrière ou remorque attachée ; un seul accessoire distinctif par image. Ce choix préserve le contexte « fixé au vélo », sans remplacer le panier par un panier-repas ou un objet isolé ambigu. Trois originaux contrôlés en 4:3, style et proportions cohérents, corrigé conservé.",
       "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "delf-a1v-ce-009",
+      "question": 2,
+      "node": [
+        "questions",
+        1,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/extension573-cadeau-recettes-plante.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/extension573-cadeau-roman-fleurs.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/extension573-cadeau-art-chocolats.png"
+          }
+        ]
+      },
+      "source_sha256": "879065ce2667d8614e7cbc9581204062f94afa389785c01ffc057bf3f6f77a92",
+      "reason": "Le message de départ à la retraite indique explicitement un livre de recettes et une plante. Les deux leurres sont d’autres paires de cadeaux du même thème, absentes du message. Aucun changement des choix, du corrigé, du barème ou des identifiants. Trois paires contrôlées individuellement : livre de recettes/plante en pot, roman/bouquet, livre d’art/boîte de chocolats. Les deux éléments de chaque réponse sont entiers et distincts, avec style peint et format 4:3 cohérents.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "delf-a1v-ce-047",
+      "question": 6,
+      "node": [
+        "questions",
+        5,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/extension573-meubles-canape-2-fauteuils.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/extension573-meubles-lit-2-tables.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/extension573-meubles-armoire-2-chaises.png"
+          }
+        ]
+      },
+      "source_sha256": "5d957fc8abd49a92b437f2655791217a7e0fa8a8a86d2aee46f39e56352caac7",
+      "reason": "L’annonce 2 propose explicitement un canapé et deux fauteuils. Les leurres sont d’autres ensembles de trois meubles du même thème, absents de l’annonce. Réponses texte, corrigé et identifiants sont conservés. Compte et types contrôlés individuellement : un canapé/deux fauteuils, un lit/deux tables, une armoire/deux chaises. Tous les meubles sont entiers et séparés ; chaises sans accoudoirs distinctes des fauteuils, peinture douce et format exact 4:3.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "delf-a1v-ce-002",
+      "question": 4,
+      "node": [
+        "questions",
+        3,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/extension573-pantalon-souple.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-costume.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/extension573-robe-soiree.png"
+          }
+        ]
+      },
+      "source_sha256": "e354374cf55c4f61c95ba317dc3607a4a3543b2b4d1db20fa2691603441bf581",
+      "reason": "La consigne de la salle d’escalade recommande explicitement un pantalon souple et un tee-shirt. Le pantalon souple est donc la seule bonne réponse ; costume et robe de soirée sont des vêtements plausibles mais non recommandés. Originaux vus individuellement : pantalon ample gris à taille élastiquée et cordon ; costume bleu composé d’une veste et du pantalon assorti ; robe longue en satin bleu nuit sur cintre. Les vêtements sont entiers et distincts sur fond crème, en paysage 4:3 et dans le style de peinture douce approuvé. Réemploi du costume existant.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
     }
   ]
 }
