@@ -12,6 +12,7 @@ const { phraseVerbGroupOf } = get('phrase-verb-groups.ts')
 const { sentenceOf, instantiateThemeFrame, tagged, pronounsForFrame } = get('phrase-sentences.ts')
 const { tryGeneratePhraseBatch } = get('phrase.ts')
 const { conjugateCore, baseInfinitive } = get('phrase-conjugate.ts')
+const { withNegation } = get('phrase-negation.ts')
 const { createRng } = load(path.join(root, 'src/math/rng.ts'))
 const baseline = require('../docs/gattegno/expansion-baseline.json')
 let checks = 0
@@ -48,6 +49,9 @@ if (baseline.uniqueConstructionsAcrossThemes) check(all.size >= 2 * baseline.uni
 let instantiated = 0, coordinated = 0
 for (const entry of all.values()) {
   check(!/grimpe\/verbe (?:un|une|le|la|l’)\/determinant|sait\/verbe une\/determinant recette\/nom|rappelle\/verbe le\/determinant rendez-vous\/nom|se_tait\/verbe chaque\/determinant matin\/nom/.test(entry.pred), 'awkward legacy construction removed: ' + entry.pred)
+  if (['se taire','s’asseoir'].includes(entry.id)) check(!/moment\/nom calme\/adjectif/.test(entry.pred), 'no artificial adjective on an adverbial duration')
+  if (entry.id === 'se découvrir') check(!/(?:souvent|parfois|régulièrement)\/adverbe/.test(entry.pred), 'discovering a new aptitude uses an appropriate aspectual adverb')
+  check(!(entry.pred.includes('soigneusement/adverbe') && entry.pred.includes('avec/preposition soin/nom')), 'no duplicated manner expression')
   check(tagged(entry.pred).filter(t => t.category === 'verbe').length === 1, 'one finite verb per source predicate')
   if (entry.rightPred) {
     check(baseInfinitive(entry.id) !== baseInfinitive(entry.rightId), 'different coordinated verb roots, including reflexive forms')
@@ -59,6 +63,7 @@ for (const entry of all.values()) {
     const tokens = instantiateThemeFrame(theme, frameForContext(entry.id, entry), () => subject, preds => preds[0], () => 'La/determinant collègue/nom')
     const text = sentenceOf(tokens)
     check(!/(?<![\p{L}])(?:à le|à les|de le|de les|de un|de une)(?![\p{L}])|[Jj]’n’|\b(?:me|te|se) ne\b|_|\s{2}/u.test(text), 'contractions, clitics and spacing: ' + text)
+    check(!/\b(?:tais|tait|taisons|taisez|taisent|assieds|assied|asseyons|asseyez|asseyent) pas de moment\b/.test(text), 'duration is not converted to a direct object: ' + text)
     check(tokens.filter(t => t.category === 'verbe').length === (entry.rightPred ? 2 : 1), 'both complete actions retained: ' + text)
     instantiated++
   }
@@ -73,6 +78,13 @@ for (const [subject, determiner] of [['Je/pronom','mon'],['Tu/pronom','ton'],['N
 assert.equal(say('s’offrir','s’offre/verbe un/determinant livre/nom pour/preposition son/determinant anniversaire/nom'), 'Je m’offre un livre pour mon anniversaire.'); checks++
 assert.equal(say('se réunir','se_réunit/verbe avec/preposition ses/determinant collègues/nom','Nous/pronom'), 'Nous nous réunissons avec nos collègues.'); checks++
 assert.equal(say('se choisir','se_choisit/verbe un/determinant livre/nom','Vous/pronom'), 'Vous vous choisissez un livre.'); checks++
+for (const [source, infinitive, expected] of [
+  ['Je/pronom me_tais/verbe un/determinant moment/nom','se taire','Je ne me tais pas un moment.'],
+  ['Je/pronom m’assieds/verbe un/determinant moment/nom','s’asseoir','Je ne m’assieds pas un moment.'],
+  ['Il/pronom attend/verbe une/determinant heure/nom','attendre','Il n’attend pas une heure.'],
+  ['Elle/pronom attend/verbe une/determinant amie/nom','attendre','Elle n’attend pas d’amie.'],
+  ['Je/pronom me_réserve/verbe un/determinant moment/nom','se réserver','Je ne me réserve pas de moment.'],
+]) { assert.equal(sentenceOf(withNegation(tagged(source),[infinitive])), expected); checks++ }
 for (const [id, third, person, expected] of [
   ['remplir','remplit','nous','remplissons'], ['réussir','réussit','ils','réussissent'],
   ['nourrir','nourrit','ils','nourrissent'], ['applaudir','applaudit','je','applaudis'],

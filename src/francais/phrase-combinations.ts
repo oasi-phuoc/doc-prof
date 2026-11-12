@@ -4,6 +4,7 @@ import { themedFramesFor, type PhraseContext, type ThemedFrame } from './phrase-
 import { affirmativePhraseTheme, type PhraseThemeId } from './phrase-themes'
 import { REVIEWED_ADJECTIVE_PREPOSITIONS, REVIEWED_ADJECTIVES } from './phrase-reviewed-corpus'
 import { coherentRightActions, coordinatedFrames } from './phrase-coordinations'
+import { isDurationComplement } from './phrase-complements'
 
 /** Bits follow the settings order: adverb, preposition, conjunction, adjective. */
 export const COMBINATION_CATEGORIES = ['adverbe', 'preposition', 'conjonction', 'adjectif'] as const
@@ -280,6 +281,7 @@ function withAdjective(pred: string, id: string): string | undefined {
     const part = parts[i]!
     if (!part.endsWith('/nom')) continue
     const noun = part.slice(0, -4)
+    if (isDurationComplement(id,noun)) continue
     const adjective = id === 'se sécher' && noun === 'mains' ? 'mouillées'
       : id === 'se sécher' && ['visage','bras','pieds','jambes','nuque'].includes(noun) ? ({visage:'mouillé',bras:'mouillés',pieds:'mouillés',jambes:'mouillées',nuque:'mouillée'} as Record<string,string>)[noun]
       : id === 'se réchauffer' && ['bras','jambes'].includes(noun) ? (noun === 'bras' ? 'froids' : 'froides')
@@ -332,7 +334,9 @@ function compile(group: 'er' | 'autres', reflexive: boolean): readonly Entry[] {
     for (const [index,entry] of base.entries()) {
       let pred = entry.pred
       if (mask & 1) {
-        const adverb = ['aimer','adorer','détester','préférer','connaître','vouloir'].includes(entry.id)
+        const adverb = entry.id === 'se découvrir' ? 'enfin'
+          : entry.id === 'se choisir' ? 'enfin'
+          : ['aimer','adorer','détester','préférer','connaître','vouloir'].includes(entry.id)
           ? 'vraiment' : entry.id === 'avoir' ? 'déjà' : ['souvent','parfois','régulièrement'][index%3]!
         pred = pred.replace('/verbe', `/verbe ${adverb}/adverbe`)
       }

@@ -14,6 +14,7 @@ Exemples de révision :
 - **Compléments précis** : *montrer son abonnement*, *fermer le sac*, *débarquer du bateau*, *visiter le musée avec un guide* ; les emplois isolés comme *visite avec un guide* sont complétés.
 - **Possessifs** : *j’emporte mon sac*, *nous nous réunissons avec nos collègues*, *je m’offre un livre pour mon anniversaire*. Les possessifs des prédicats relus renvoient au sujet ; une référence à un tiers est formulée explicitement.
 - **Adverbes et gestes** : *connaît bien* ; *se tait quelques instants* ; *se sèche les mains mouillées* ; *se réchauffe les jambes froides*.
+- **Durées à la forme négative** : *Je ne me tais pas un moment*, sans transformer la durée en *de moment*. La distinction avec un complément d’objet est conservée : *Je ne me réserve pas de moment*.
 - **Coordinations** : les deux actions sont choisies dans un même domaine, avec des infinitifs distincts même après retrait de *se/s’*. Les paires complètes sont conservées ; les compléments des deux propositions ne sont plus croisés librement.
 - **Catégories et vocabulaire** : distinction entre article partitif et préposition contractée ; remplacement de compléments trop vagues ; conservation des compléments nécessaires lorsqu’une catégorie est exclue.
 
