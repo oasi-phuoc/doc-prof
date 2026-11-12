@@ -13,7 +13,7 @@ import {
 } from './phrase-conjugate'
 import { SIMPLE_FRAMES_AUTRES, SIMPLE_FRAMES_ER } from './phrase-simple-frames'
 import { REFLEXIVE_FRAMES_ER, REFLEXIVE_FRAMES_AUTRES } from './phrase-reflexive-frames'
-import { themedFramesFor, type ThemedFrame } from './phrase-theme-frames'
+import { frameForContext, themedFramesFor, type ThemedFrame } from './phrase-theme-frames'
 import { FEMALE_PROPER_NAMES, PROPER_NAMES, PROPER_TAGGED } from './phrase-proper-names'
 
 /** Découpe « mot/catégorie » — l’espace après une apostrophe est omise à l’affichage. */
@@ -83,7 +83,7 @@ function isEtreVerb(token: PhraseToken): boolean {
   return token.category === 'verbe' && ETRE_FORMS.test(token.text)
 }
 
-function assertBank(theme: PhraseThemeId, list: PhraseToken[][], min = 100): PhraseToken[][] {
+function assertBank(theme: PhraseThemeId, list: PhraseToken[][], min = 200): PhraseToken[][] {
   atLeast(list, theme, min)
   const needAdj = theme === 'phrase-adjectif' || theme === 'phrase-negation-adjectif'
   const needPrep = theme === 'phrase-preposition' || theme === 'phrase-negation-preposition'
@@ -302,7 +302,7 @@ function frameHasPrep(frame: ThemedFrame): boolean {
   return frame.preds.some(predHasPrep) || (frame.rightPreds ?? []).some(predHasPrep)
 }
 
-/** Le modèle doit coller aux pastilles du thème (pas d’« habiter » en phrase simple). */
+/** Le modèle doit respecter les catégories retenues pour ce thème. */
 export function frameMatchesTheme(theme: PhraseThemeId, frame: ThemedFrame): boolean {
   if (frame.id === 'être' && !theme.includes('adjectif') && !theme.includes('preposition')) return false
   if (theme.includes('pronominaux')) return true
@@ -439,8 +439,16 @@ function applyPredForSubject(
   pred: string,
 ): { subject: string; pred: string } {
   const person = verbPersonOf(subject)
-  const conjugated = conjugateTaggedPred(pred, frameId, person)
-  const nextPred = conjugated ?? pred
+  // In these reviewed constructions, possessives designate the subject's own
+  // belongings/relatives (third-party ownership is written explicitly).
+  const possessives: Record<VerbPerson, readonly string[]> = {
+    je:['mon','ma','mes'],tu:['ton','ta','tes'],il:['son','sa','ses'],
+    nous:['notre','notre','nos'],vous:['votre','votre','vos'],ils:['leur','leur','leurs'],
+  }
+  const owned = pred.replace(/\b(son|sa|ses)\/determinant\b/g, (_, determiner: string) =>
+    `${possessives[person][['son','sa','ses'].indexOf(determiner)]}/determinant`)
+  const conjugated = conjugateTaggedPred(owned, frameId, person)
+  const nextPred = conjugated ?? owned
   return { subject: elideJeSubject(subject, nextPred), pred: nextPred }
 }
 
@@ -452,6 +460,11 @@ export function instantiateThemeFrame(
   pickRightSubject: () => string = () => COMMON[0]!,
   adjPlacement: AdjPlacement = 'comp',
 ): PhraseToken[] {
+  if (frame.contexts?.length) {
+    const pred = pickPred(frame.preds)
+    const context = frame.contexts.find(context => context.pred === pred) ?? frame.contexts[0]!
+    return instantiateThemeFrame(theme, frameForContext(frame.id,context), pickSubject, pickPred, pickRightSubject, adjPlacement)
+  }
   if (frame.rightPreds?.length) {
     const leftRaw = pickSubject()
     let right = pickRightSubject()
@@ -528,7 +541,7 @@ function samplesFromThemed(theme: PhraseThemeId, group: PhraseVerbGroup): Phrase
   const frames = framesForTheme(theme, group)
   const out: PhraseToken[][] = []
   const seen = new Set<string>()
-  for (let round = 0; round < 100 && out.length < 100; round++) {
+  for (let round = 0; round < 200 && out.length < 200; round++) {
     for (const [index, frame] of frames.entries()) {
       const placement = isAdjTheme(theme) ? ADJ_PLACEMENTS[round % ADJ_PLACEMENTS.length]! : 'comp'
       const tokens = instantiateThemeFrame(
@@ -544,7 +557,7 @@ function samplesFromThemed(theme: PhraseThemeId, group: PhraseVerbGroup): Phrase
         seen.add(sentence)
         out.push(tokens)
       }
-      if (out.length === 100) break
+      if (out.length === 200) break
     }
   }
   return out
@@ -552,7 +565,7 @@ function samplesFromThemed(theme: PhraseThemeId, group: PhraseVerbGroup): Phrase
 
 function bankFor(group: PhraseVerbGroup): Record<PhraseThemeId, PhraseToken[][]> {
   return Object.fromEntries(PHRASE_ALL_THEME_DEFS.map(({ topic }) => [
-    topic, assertBank(topic, samplesFromThemed(topic, group), 100),
+    topic, assertBank(topic, samplesFromThemed(topic, group), 200),
   ])) as Record<PhraseThemeId, PhraseToken[][]>
 }
 

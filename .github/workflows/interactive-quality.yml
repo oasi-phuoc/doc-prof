@@ -37,6 +37,7 @@ jobs:
       - run: npx tsc -b
       - run: npx tsc -b api/fiches/tsconfig.json
       - run: npm test
+      - run: npm run test:gattegno
       - run: npx vite build --manifest
       - run: npm run check:interactive:budgets
       - run: npx playwright install --with-deps chromium
@@ -56,4 +57,7 @@ jobs:
             docs/tcf/*-results.json
             docs/tcf/screenshots/*.png
             docs/tcf/*.pdf
+            docs/gattegno/*-results.json
+            docs/gattegno/screenshots/*.png
+            docs/gattegno/*.pdf
           retention-days: 7

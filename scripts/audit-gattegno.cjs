@@ -63,7 +63,7 @@ for (const [inf, form3sg, person, expected] of [
 
 assert.deepEqual(PHRASE_THEME_DEFS.map(theme => theme.topic), ['phrase-simple','phrase-determinants','phrase-pronominaux','phrase-adjectif','phrase-preposition','phrase-adverbe','phrase-conjonctions'])
 const report = {
-  referenceSentencesPerThemeAndGroup:100,
+  referenceSentencesPerThemeAndGroup:200,
   visibleThemes:PHRASE_THEME_DEFS.map(theme=>theme.label),
   findingsCorrected:[
     'Je rétabli devant ne/n’ ; pronoms réfléchis placés après ne et séparés des verbes.',
@@ -79,12 +79,12 @@ const report = {
 let exhaustiveCases=0
 for (const {topic:theme} of PHRASE_ALL_THEME_DEFS) {
   const groupReports=[]
-  check(PRODUCTION_PROMPTS_BY_THEME[theme].length===15 && new Set(PRODUCTION_PROMPTS_BY_THEME[theme]).size===15,'fifteen prompts '+theme)
+  check(PRODUCTION_PROMPTS_BY_THEME[theme].length===30 && new Set(PRODUCTION_PROMPTS_BY_THEME[theme]).size===30,'thirty prompts '+theme)
   for (const group of ['er','autres']) {
     const frames=framesForTheme(theme,group)
     check(frames.length>0 && new Set(frames.map(frame=>frame.id)).size===frames.length,'unique verb models '+theme+group)
     const references=phrasesFor(theme,group)
-    check(references.length===100 && new Set(references.map(sentenceOf)).size===100,'one hundred distinct reference sentences '+theme+group)
+    check(references.length===200 && new Set(references.map(sentenceOf)).size===200,'two hundred distinct reference sentences '+theme+group)
     for(const sentence of references)validate(sentence,theme)
     for(const frame of frames){
       check(frame.preds.length>=2 && new Set(frame.preds).size===frame.preds.length,'distinct reviewed contexts '+frame.id)
@@ -108,7 +108,7 @@ for(const {topic}of PHRASE_THEME_DEFS)for(const group of ['er','autres'])for(con
   let gold
   for(const kind of ['colorier','ordre','construire','ecrire']){
     const result=tryGeneratePhraseBatch(topic+'-'+kind,count,createRng(seed),'moyen',group,polarity)
-    check(result.items.length===Math.min(count,framesForTheme(topic,group).length),'count bounded by distinct verbs')
+    check(result.items.length===Math.min(count,phraseSelection(topic,group).frames.length),'count bounded by distinct verbs')
     const sentences=result.items.map(item=>kind==='colorier'?sentenceOf(item.tokens):item.responseAnswer)
     check(new Set(sentences).size===sentences.length,'no duplicate sentences on a worksheet')
     if(kind==='colorier')gold=sentences
@@ -184,7 +184,7 @@ for(const pages of [restored.pages,restored.libreSnapshot]){
   assert.deepEqual(pages[0].extraBlocks[0].phraseItems,manualItems,'migration preserves manual content')
 }
 const conjunction=framesForTheme('phrase-conjonctions','er').find(frame=>frame.id==='manger')
-assert.equal(sentenceOf(instantiateThemeFrame('phrase-conjonctions',conjunction,()=> 'Nous/pronom',preds=>preds[0],()=> 'La/determinant voisine/nom')),'Nous mangeons une pomme et la voisine cuisine un plat.')
+assert.equal(sentenceOf(instantiateThemeFrame('phrase-conjonctions',conjunction,()=> 'Nous/pronom',preds=>preds[0],()=> 'La/determinant voisine/nom')),'Nous mangeons une pomme et la voisine goûte une compote.')
 for(const chart of ['categories','mots','vide'])check(tryGeneratePhraseBatch('phrase-tableau-'+chart,6,createRng(1),'moyen','er','mixed').items.length===1,'reference charts remain unchanged')
 
 // Category exclusions select whole predicates and work in all layouts and polarities.
@@ -245,4 +245,4 @@ for(const value of [undefined,allWithout,{adverbe:false,preposition:true}]){
 }
 report.exhaustiveCases=exhaustiveCases;report.checks=checks
 if(process.argv.includes('--write'))fs.writeFileSync(path.join(root,'docs/gattegno/audit.json'),JSON.stringify(report,null,2)+'\n')
-console.log(`${checks} contrôles réussis ; ${exhaustiveCases} instanciations contrôlées ; ${report.themes.length*200} phrases de référence (100 par banque).`)
+console.log(`${checks} contrôles réussis ; ${exhaustiveCases} instanciations contrôlées ; ${report.themes.length*400} phrases de référence (200 par banque).`)

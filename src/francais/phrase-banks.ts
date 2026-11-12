@@ -1,5 +1,6 @@
 import type { PhraseCategory } from '@/math/types'
 import type { PhraseThemeId } from './phrase-themes'
+import { extraProductionPrompts } from './phrase-writing-prompts'
 export type { PhraseThemeId } from './phrase-themes'
 
 /** Couleurs Gattegno — grammaire en couleur (imprimables, contrastées). */
@@ -629,7 +630,7 @@ export const INTERJECTIONS = [
 ] as const
 
 /**
- * 15 consignes distinctes de production écrite par thème
+ * 30 consignes distinctes de production écrite par thème
  * (structure attendue de la phrase).
  */
 export const PRODUCTION_PROMPTS_BY_THEME: Record<PhraseThemeId, readonly string[]> = {
@@ -873,12 +874,16 @@ export const PRODUCTION_PROMPTS_BY_THEME: Record<PhraseThemeId, readonly string[
   ],
 }
 
+for (const theme of Object.keys(PRODUCTION_PROMPTS_BY_THEME) as PhraseThemeId[]) {
+  PRODUCTION_PROMPTS_BY_THEME[theme] = [...PRODUCTION_PROMPTS_BY_THEME[theme], ...extraProductionPrompts(theme)]
+}
+
 /** Toutes les consignes, utiles pour contrôles d’unicité. */
 export const PRODUCTION_PROMPTS: readonly string[] = Object.values(PRODUCTION_PROMPTS_BY_THEME).flat()
 
 for (const [theme, prompts] of Object.entries(PRODUCTION_PROMPTS_BY_THEME)) {
-  if (prompts.length !== 15) {
-    throw new Error(`${theme} : ${prompts.length} consignes de production (15 attendues)`)
+  if (prompts.length !== 30) {
+    throw new Error(`${theme} : ${prompts.length} consignes de production (30 attendues)`)
   }
   if (new Set(prompts).size !== prompts.length) {
     throw new Error(`${theme} : consignes de production en double`)

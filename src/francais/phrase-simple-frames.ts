@@ -1,3 +1,5 @@
+import { mergeReviewedFrames, reviewedFrames } from './phrase-reviewed-corpus'
+
 /** Un modèle = un verbe / une construction. Sujet et complément varient à l’instanciation. */
 export type SimpleFrame = {
   id: string
@@ -8,8 +10,8 @@ function frame(id: string, preds: readonly string[]): SimpleFrame {
   return { id, preds }
 }
 
-/** 100 modèles du 1er groupe + avoir. Pas de « être » ni d’« habiter » (préposition obligatoire). */
-export const SIMPLE_FRAMES_ER: readonly SimpleFrame[] = [
+/** Banque historique enrichie : la sélection classe ensuite les infinitifs par groupe. */
+const BASE_ER: readonly SimpleFrame[] = [
   frame('manger', ['mange/verbe une/determinant pomme/nom', 'mange/verbe un/determinant sandwich/nom', 'mange/verbe une/determinant soupe/nom', 'mange/verbe une/determinant salade/nom', 'mange/verbe une/determinant pizza/nom', 'mange/verbe du/determinant pain/nom']),
   frame('goûter', ['goûte/verbe un/determinant gâteau/nom', 'goûte/verbe une/determinant tarte/nom', 'goûte/verbe un/determinant yaourt/nom']),
   frame('préparer', ['prépare/verbe le/determinant dîner/nom', 'prépare/verbe un/determinant gâteau/nom', 'prépare/verbe le/determinant petit-déjeuner/nom']),
@@ -35,7 +37,7 @@ export const SIMPLE_FRAMES_ER: readonly SimpleFrame[] = [
   frame('ranger', ['range/verbe sa/determinant chambre/nom', 'range/verbe les/determinant jouets/nom', 'range/verbe la/determinant classe/nom']),
   frame('poser', ['pose/verbe le/determinant sac/nom', 'pose/verbe un/determinant vase/nom', 'pose/verbe le/determinant livre/nom']),
   frame('cacher', ['cache/verbe un/determinant trésor/nom', 'cache/verbe un/determinant cadeau/nom', 'cache/verbe la/determinant clé/nom']),
-  frame('montrer', ['montre/verbe une/determinant photo/nom', 'montre/verbe un/determinant dessin/nom', 'montre/verbe le/determinant chemin/nom', 'montre/verbe sa/determinant réservation/nom', 'montre/verbe son/determinant aller-retour/nom', 'montre/verbe son/determinant billet/nom', 'montre/verbe son/determinant passeport/nom', 'montre/verbe son/determinant visa/nom']),
+  frame('montrer', ['montre/verbe une/determinant photo/nom', 'montre/verbe un/determinant dessin/nom', 'montre/verbe le/determinant chemin/nom', 'montre/verbe sa/determinant réservation/nom', 'montre/verbe son/determinant abonnement/nom', 'montre/verbe son/determinant billet/nom', 'montre/verbe son/determinant passeport/nom', 'montre/verbe son/determinant visa/nom']),
   frame('chercher', ['cherche/verbe un/determinant stylo/nom', 'cherche/verbe le/determinant chat/nom', 'cherche/verbe ses/determinant clés/nom', 'cherche/verbe un/determinant livre/nom', 'cherche/verbe la/determinant colle/nom', 'cherche/verbe la/determinant crème/nom', 'cherche/verbe la/determinant douane/nom', 'cherche/verbe la/determinant feuille/nom', 'cherche/verbe la/determinant gare/nom', 'cherche/verbe la/determinant gomme/nom']),
   frame('trouver', ['trouve/verbe une/determinant pièce/nom', 'trouve/verbe un/determinant trésor/nom', 'trouve/verbe son/determinant cartable/nom']),
   frame('ramasser', ['ramasse/verbe les/determinant feuilles/nom', 'ramasse/verbe un/determinant papier/nom', 'ramasse/verbe des/determinant cailloux/nom']),
@@ -65,7 +67,6 @@ export const SIMPLE_FRAMES_ER: readonly SimpleFrame[] = [
   frame('traverser', ['traverse/verbe la/determinant rue/nom', 'traverse/verbe le/determinant pont/nom', 'traverse/verbe le/determinant parc/nom']),
   frame('longer', ['longe/verbe la/determinant rivière/nom', 'longe/verbe le/determinant mur/nom', 'longe/verbe la/determinant plage/nom']),
   frame('contourner', ['contourne/verbe le/determinant lac/nom', 'contourne/verbe un/determinant obstacle/nom', 'contourne/verbe la/determinant place/nom']),
-  frame('grimper', ['grimpe/verbe un/determinant arbre/nom', 'grimpe/verbe une/determinant colline/nom', 'grimpe/verbe l’/determinant échelle/nom']),
   frame('inviter', ['invite/verbe un/determinant ami/nom', 'invite/verbe une/determinant cousine/nom', 'invite/verbe le/determinant voisin/nom']),
   frame('aider', ['aide/verbe la/determinant voisine/nom', 'aide/verbe un/determinant élève/nom', 'aide/verbe le/determinant maître/nom']),
   frame('remercier', ['remercie/verbe le/determinant facteur/nom', 'remercie/verbe une/determinant amie/nom', 'remercie/verbe le/determinant chauffeur/nom']),
@@ -82,7 +83,7 @@ export const SIMPLE_FRAMES_ER: readonly SimpleFrame[] = [
   frame('réparer', ['répare/verbe un/determinant vélo/nom', 'répare/verbe une/determinant chaise/nom', 'répare/verbe le/determinant jouet/nom']),
   frame('bricoler', ['bricole/verbe une/determinant étagère/nom', 'bricole/verbe un/determinant nichoir/nom', 'bricole/verbe une/determinant cabane/nom']),
   frame('coller', ['colle/verbe un/determinant papier/nom', 'colle/verbe une/determinant étiquette/nom', 'colle/verbe une/determinant photo/nom']),
-  frame('plier', ['plie/verbe une/determinant lettre/nom', 'plie/verbe un/determinant linge/nom', 'plie/verbe une/determinant carte/nom']),
+  frame('plier', ['plie/verbe une/determinant lettre/nom', 'plie/verbe le/determinant linge/nom', 'plie/verbe une/determinant carte/nom']),
   frame('déchirer', ['déchire/verbe un/determinant papier/nom', 'déchire/verbe une/determinant feuille/nom', 'déchire/verbe un/determinant ticket/nom']),
   frame('étudier', ['étudie/verbe une/determinant leçon/nom', 'étudie/verbe une/determinant carte/nom', 'étudie/verbe un/determinant poème/nom', 'étudie/verbe le/determinant français/nom', 'étudie/verbe les/determinant maths/nom']),
   frame('réviser', ['révise/verbe sa/determinant leçon/nom', 'révise/verbe un/determinant verbe/nom', 'révise/verbe les/determinant tables/nom']),
@@ -95,7 +96,7 @@ export const SIMPLE_FRAMES_ER: readonly SimpleFrame[] = [
   frame('demander', ['demande/verbe une/determinant explication/nom', 'demande/verbe un/determinant service/nom', 'demande/verbe une/determinant permission/nom']),
   frame('expliquer', ['explique/verbe une/determinant règle/nom', 'explique/verbe un/determinant jeu/nom', 'explique/verbe le/determinant chemin/nom']),
   frame('allumer', ['allume/verbe la/determinant lampe/nom', 'allume/verbe une/determinant bougie/nom', 'allume/verbe le/determinant feu/nom']),
-  frame('fermer', ['ferme/verbe la/determinant porte/nom', 'ferme/verbe la/determinant fenêtre/nom', 'ferme/verbe le/determinant cahier/nom', 'ferme/verbe la/determinant valise/nom', 'ferme/verbe le/determinant bagage/nom']),
+  frame('fermer', ['ferme/verbe la/determinant porte/nom', 'ferme/verbe la/determinant fenêtre/nom', 'ferme/verbe le/determinant cahier/nom', 'ferme/verbe la/determinant valise/nom', 'ferme/verbe le/determinant sac/nom']),
   frame('commencer', ['commence/verbe un/determinant dessin/nom', 'commence/verbe une/determinant histoire/nom', 'commence/verbe un/determinant jeu/nom']),
   frame('terminer', ['termine/verbe un/determinant devoir/nom', 'termine/verbe un/determinant puzzle/nom', 'termine/verbe une/determinant lettre/nom']),
   frame('continuer', ['continue/verbe son/determinant dessin/nom', 'continue/verbe une/determinant histoire/nom', 'continue/verbe le/determinant jeu/nom']),
@@ -117,12 +118,12 @@ export const SIMPLE_FRAMES_ER: readonly SimpleFrame[] = [
 ]
 
 /** 2e et 3e groupes : un modèle par verbe. */
-export const SIMPLE_FRAMES_AUTRES: readonly SimpleFrame[] = [
+const BASE_AUTRES: readonly SimpleFrame[] = [
   frame('lire', ['lit/verbe un/determinant journal/nom', 'lit/verbe une/determinant recette/nom', 'lit/verbe une/determinant revue/nom', 'lit/verbe un/determinant roman/nom']),
   frame('boire', ['boit/verbe un/determinant jus/nom', 'boit/verbe un/determinant thé/nom', 'boit/verbe un/determinant chocolat/nom']),
   frame('écrire', ['écrit/verbe une/determinant lettre/nom', 'écrit/verbe un/determinant poème/nom', 'écrit/verbe un/determinant message/nom']),
   frame('ouvrir', ['ouvre/verbe la/determinant fenêtre/nom', 'ouvre/verbe la/determinant porte/nom', 'ouvre/verbe la/determinant boîte/nom']),
-  frame('prendre', ['prend/verbe le/determinant bus/nom', 'prend/verbe le/determinant train/nom', 'prend/verbe une/determinant photo/nom', 'prend/verbe la/determinant montgolfière/nom', 'prend/verbe la/determinant moto/nom', 'prend/verbe la/determinant trottinette/nom', 'prend/verbe la/determinant voiture/nom', 'prend/verbe le/determinant bateau/nom', 'prend/verbe le/determinant camion/nom']),
+  frame('prendre', ['prend/verbe le/determinant bus/nom', 'prend/verbe le/determinant train/nom', 'prend/verbe une/determinant photo/nom', 'prend/verbe l’/determinant autocar/nom', 'prend/verbe la/determinant moto/nom', 'prend/verbe la/determinant trottinette/nom', 'prend/verbe la/determinant voiture/nom', 'prend/verbe le/determinant bateau/nom', 'prend/verbe le/determinant camion/nom']),
   frame('finir', ['finit/verbe un/determinant puzzle/nom', 'finit/verbe un/determinant devoir/nom', 'finit/verbe un/determinant dessin/nom']),
   frame('choisir', ['choisit/verbe une/determinant robe/nom', 'choisit/verbe un/determinant film/nom', 'choisit/verbe une/determinant pomme/nom']),
   frame('voir', ['voit/verbe un/determinant oiseau/nom', 'voit/verbe un/determinant chat/nom', 'voit/verbe la/determinant mer/nom']),
@@ -134,7 +135,7 @@ export const SIMPLE_FRAMES_AUTRES: readonly SimpleFrame[] = [
   frame('attendre', ['attend/verbe le/determinant bus/nom', 'attend/verbe un/determinant ami/nom', 'attend/verbe le/determinant train/nom']),
   frame('vendre', ['vend/verbe un/determinant vélo/nom', 'vend/verbe des/determinant fleurs/nom', 'vend/verbe un/determinant journal/nom']),
   frame('perdre', ['perd/verbe un/determinant ticket/nom', 'perd/verbe une/determinant clé/nom', 'perd/verbe un/determinant gant/nom']),
-  frame('dire', ['dit/verbe la/determinant vérité/nom', 'dit/verbe un/determinant mot/nom', 'dit/verbe une/determinant blague/nom']),
+  frame('dire', ['dit/verbe la/determinant vérité/nom', 'dit/verbe un/determinant mot/nom', 'dit/verbe son/determinant nom/nom']),
   frame('suivre', ['suit/verbe un/determinant chemin/nom', 'suit/verbe le/determinant guide/nom', 'suit/verbe une/determinant piste/nom']),
   frame('vivre', ['vit/verbe une/determinant aventure/nom', 'vit/verbe une/determinant histoire/nom', 'vit/verbe un/determinant rêve/nom']),
   frame('conduire', ['conduit/verbe une/determinant voiture/nom', 'conduit/verbe un/determinant bus/nom', 'conduit/verbe un/determinant tracteur/nom']),
@@ -158,6 +159,10 @@ export const SIMPLE_FRAMES_AUTRES: readonly SimpleFrame[] = [
   frame('atteindre', ['atteint/verbe le/determinant sommet/nom', 'atteint/verbe un/determinant but/nom', 'atteint/verbe la/determinant rive/nom']),
   frame('résoudre', ['résout/verbe un/determinant problème/nom', 'résout/verbe une/determinant énigme/nom', 'résout/verbe une/determinant équation/nom']),
 ]
+
+const reviewed = reviewedFrames('simple')
+export const SIMPLE_FRAMES_ER = mergeReviewedFrames(BASE_ER, reviewed.filter(frame => frame.id.endsWith('er')))
+export const SIMPLE_FRAMES_AUTRES = mergeReviewedFrames(BASE_AUTRES, reviewed.filter(frame => !frame.id.endsWith('er')))
 
 function assertUniqueFrames(frames: readonly SimpleFrame[], label: string) {
   const ids = new Set<string>()

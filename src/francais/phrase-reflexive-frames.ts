@@ -1,5 +1,8 @@
 import type { ThemedFrame } from './phrase-theme-frames'
 import { REFLEXIVE_SUPPLEMENT_ER, REFLEXIVE_SUPPLEMENT_AUTRES } from './phrase-reflexive-supplement'
+import { REVIEWED_REFLEXIVES } from './phrase-reviewed-reflexives'
+import { mergeReviewedFrames } from './phrase-reviewed-corpus'
+import { phraseVerbGroupOf } from './phrase-verb-groups'
 
 /** Complete simple variants, without adverbs, prepositions, conjunctions or adjectives. */
 const SIMPLE_COMPLEMENTS: Record<string, readonly string[]> = {
@@ -21,8 +24,8 @@ const SIMPLE_COMPLEMENTS: Record<string, readonly string[]> = {
   'se rafraîchir': ['le/determinant visage/nom', 'les/determinant mains/nom'],
   's’endormir': ['le/determinant soir/nom', 'chaque/determinant soir/nom'],
   'se détendre': ['le/determinant dimanche/nom', 'chaque/determinant soir/nom'],
-  'se taire': ['le/determinant matin/nom', 'chaque/determinant matin/nom'],
-  's’asseoir': ['le/determinant soir/nom', 'chaque/determinant heure/nom'],
+  'se taire': ['quelques/determinant instants/nom', 'un/determinant moment/nom'],
+  's’asseoir': ['quelques/determinant minutes/nom', 'un/determinant moment/nom'],
   'se vêtir': ['le/determinant matin/nom', 'chaque/determinant matin/nom'],
 }
 
@@ -54,7 +57,7 @@ const BASE_REFLEXIVE_FRAMES_ER: readonly ThemedFrame[] = [
   frame('se baigner', 'baigne', ['dans/preposition le/determinant lac/nom', 'dans/preposition la/determinant mer/nom', 'près_du/preposition rivage/nom']),
   frame('se doucher', 'douche', ['après/preposition le/determinant sport/nom', 'avant/preposition le/determinant repas/nom', 'le/determinant matin/nom']),
   frame('s’occuper', 'occupe', ['du/preposition jardin/nom', 'des/preposition plantes/nom', 'de/preposition son/determinant chien/nom']),
-  frame('se rappeler', 'rappelle', ['le/determinant rendez-vous/nom', 'la/determinant consigne/nom', 'les/determinant vacances/nom']),
+  frame('se rappeler', 'rappelle', ['la/determinant date/nom du/preposition rendez-vous/nom', 'la/determinant consigne/nom', 'les/determinant vacances/nom']),
   frame('se tromper', 'trompe', ['de/preposition numéro/nom', 'de/preposition chemin/nom', 'dans/preposition le/determinant calcul/nom']),
   frame('se cacher', 'cache', ['derrière/preposition un/determinant arbre/nom', 'sous/preposition la/determinant table/nom', 'dans/preposition la/determinant cabane/nom']),
   frame('se pencher', 'penche', ['vers/preposition la/determinant fenêtre/nom', 'sur/preposition le/determinant dessin/nom', 'avec/preposition prudence/nom']),
@@ -71,7 +74,7 @@ const BASE_REFLEXIVE_FRAMES_ER: readonly ThemedFrame[] = [
   frame('se réchauffer', 'réchauffe', ['près_du/preposition feu/nom', 'avec/preposition une/determinant couverture/nom', 'après/preposition la/determinant promenade/nom']),
   frame('se sécher', 'sèche', ['les/determinant mains/nom', 'les/determinant cheveux/nom', 'avec/preposition une/determinant serviette/nom']),
   frame('se changer', 'change', ['après/preposition le/determinant travail/nom', 'dans/preposition la/determinant cabine/nom', 'avant/preposition la/determinant fête/nom']),
-  frame('se couper', 'coupe', ['les/determinant ongles/nom', 'les/determinant cheveux/nom', 'avec/preposition du/determinant verre/nom']),
+  frame('se couper', 'coupe', ['les/determinant ongles/nom', 'les/determinant cheveux/nom', 'une/determinant mèche/nom']),
   frame('se baisser', 'baisse', ['sous/preposition la/determinant branche/nom', 'devant/preposition le/determinant placard/nom', 'lentement/adverbe']),
   frame('se raser', 'rase', ['la/determinant barbe/nom', 'le/determinant menton/nom', 'les/determinant jambes/nom']),
 ]
@@ -85,7 +88,7 @@ const BASE_REFLEXIVE_FRAMES_AUTRES: readonly ThemedFrame[] = [
   frame('se détendre', 'détend', ['après/preposition le/determinant travail/nom', 'dans/preposition le/determinant jardin/nom', 'avec/preposition de_la/determinant musique/nom']),
   frame('se taire', 'tait', ['pendant/preposition le/determinant spectacle/nom', 'après/preposition la/determinant sonnerie/nom', 'dans/preposition la/determinant bibliothèque/nom']),
   frame('s’asseoir', 'assied', ['sur/preposition le/determinant banc/nom', 'près_de/preposition la/determinant fenêtre/nom', 'à/preposition côté/nom du/preposition bureau/nom']),
-  frame('se souvenir', 'souvient', ['des/preposition vacances/nom', 'du/preposition voyage/nom', 'de/preposition la/determinant chanson/nom']),
+  frame('se souvenir', 'souvient', ['des/preposition vacances/nom', 'du/preposition voyage/nom', 'de/preposition la/determinant chanson/nom', 'du/preposition rendez-vous/nom']),
   frame('se mettre', 'met', ['au/preposition travail/nom', 'à/preposition l’/determinant abri/nom', 'près_du/preposition feu/nom']),
   frame('se rendre', 'rend', ['à/preposition la/determinant mairie/nom', 'au/preposition marché/nom', 'chez/preposition le/determinant médecin/nom']),
   frame('se réjouir', 'réjouit', ['de/preposition la/determinant visite/nom', 'du/preposition retour/nom de/preposition son/determinant ami/nom', 'des/preposition retrouvailles/nom']),
@@ -102,5 +105,5 @@ function mergeFrames(base: readonly ThemedFrame[], extra: readonly ThemedFrame[]
   }
   return [...frames.values()]
 }
-export const REFLEXIVE_FRAMES_ER = mergeFrames(BASE_REFLEXIVE_FRAMES_ER, REFLEXIVE_SUPPLEMENT_ER)
-export const REFLEXIVE_FRAMES_AUTRES = mergeFrames(BASE_REFLEXIVE_FRAMES_AUTRES, REFLEXIVE_SUPPLEMENT_AUTRES)
+export const REFLEXIVE_FRAMES_ER = mergeReviewedFrames(mergeFrames(BASE_REFLEXIVE_FRAMES_ER, REFLEXIVE_SUPPLEMENT_ER), REVIEWED_REFLEXIVES.filter(frame => phraseVerbGroupOf(frame.id) === 'er'))
+export const REFLEXIVE_FRAMES_AUTRES = mergeReviewedFrames(mergeFrames(BASE_REFLEXIVE_FRAMES_AUTRES, REFLEXIVE_SUPPLEMENT_AUTRES), REVIEWED_REFLEXIVES.filter(frame => phraseVerbGroupOf(frame.id) !== 'er'))

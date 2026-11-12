@@ -2,6 +2,8 @@ import { SIMPLE_FRAMES_ER, SIMPLE_FRAMES_AUTRES } from './phrase-simple-frames'
 import { REFLEXIVE_FRAMES_ER, REFLEXIVE_FRAMES_AUTRES } from './phrase-reflexive-frames'
 import { themedFramesFor, type PhraseContext, type ThemedFrame } from './phrase-theme-frames'
 import { affirmativePhraseTheme, type PhraseThemeId } from './phrase-themes'
+import { REVIEWED_ADJECTIVE_PREPOSITIONS, REVIEWED_ADJECTIVES } from './phrase-reviewed-corpus'
+import { coherentRightActions, coordinatedFrames } from './phrase-coordinations'
 
 /** Bits follow the settings order: adverb, preposition, conjunction, adjective. */
 export const COMBINATION_CATEGORIES = ['adverbe', 'preposition', 'conjonction', 'adjectif'] as const
@@ -13,7 +15,7 @@ export function phraseContextMask(context: PhraseContext): number {
   }, 0)
 }
 export function combinationQuota(mask: number): number {
-  return mask === 0 || (mask & (mask - 1)) === 0 ? 50 : 25
+  return mask === 0 || (mask & (mask - 1)) === 0 ? 100 : 50
 }
 
 type Entry = PhraseContext & { id: string; mask: number }
@@ -215,14 +217,73 @@ const NOUN_ADJECTIVES: Record<string,
   médicaments:'prescrits',
   horaires:'précis',
   animaux:'sauvages',
+  poignets:'raides',
+  mèche:'rebelle',
+  tempes:'douloureuses',
+  front:'humide',
+  épaules:'dénudées',
+  cuisses:'mouillées',
+  genoux:'sales',
+  aisselles:'sensibles',
+  sourcils:'épais',
+  billet:'numéroté',
+  soirée:'tranquille',
+  moment:'calme',
+  journée:'libre',
+  'week-end':'prolongé',
+  pantalon:'confortable',
+  jupe:'longue',
+  sandales:'légères',
+  manuel:'scolaire',
+  calculatrice:'solaire',
+  règle:'graduée',
+  stylo:'bleu',
+  talent:'musical',
+  passion:'nouvelle',
+  don:'artistique',
+  vocation:'artistique',
+  intérêt:'nouveau',
+  aptitude:'nouvelle',
+  étagère:'solide',
+  costume:'élégant',
+  tisane:'parfumée',
+  gratin:'doré',
+  quiche:'salée',
+  curry:'épicé',
+  risotto:'crémeux',
+  tabouret:'bas',
+  coffre:'solide',
+  bonnet:'chaud',
+  chaussettes:'épaisses',
+  gilet:'chaud',
+  bouillon:'chaud',
+  crêpe:'fine',
+  compote:'tiède',
+  limonade:'fraîche',
+  casquette:'verte',
+  baskets:'neuves',
+  cravate:'bleue',
+  ceinture:'noire',
+  guitare:'acoustique',
+  violon:'ancien',
+  caméra:'numérique',
+  puzzle:'complexe',
+  instrument:'neuf',
+  abonnement:'annuel',
+  vinaigrette:'maison',
+  smoothie:'fruité',
 
 }
-function withAdjective(pred: string): string | undefined {
+function withAdjective(pred: string, id: string): string | undefined {
   const parts = pred.split(' ')
   for (let i = parts.length - 1; i >= 0; i--) {
     const part = parts[i]!
     if (!part.endsWith('/nom')) continue
-    const adjective = NOUN_ADJECTIVES[part.slice(0, -4)]
+    const noun = part.slice(0, -4)
+    const adjective = id === 'se sécher' && noun === 'mains' ? 'mouillées'
+      : id === 'se sécher' && ['visage','bras','pieds','jambes','nuque'].includes(noun) ? ({visage:'mouillé',bras:'mouillés',pieds:'mouillés',jambes:'mouillées',nuque:'mouillée'} as Record<string,string>)[noun]
+      : id === 'se réchauffer' && ['bras','jambes'].includes(noun) ? (noun === 'bras' ? 'froids' : 'froides')
+      : NOUN_ADJECTIVES[noun]
     if (adjective) { parts.splice(i + 1, 0, adjective + '/adjectif'); return parts.join(' ') }
   }
   return undefined
@@ -253,14 +314,21 @@ function compile(group: 'er' | 'autres', reflexive: boolean): readonly Entry[] {
   const prep = flatten(reflexive ? simpleFrames : themedFramesFor('phrase-preposition',group)).filter(entry => entry.mask === 2)
   const adjectives = reflexive ? [] : flatten(themedFramesFor('phrase-adjectif',group)).filter(entry => entry.mask === 8 && entry.id !== 'être')
   const enrich = (entries: readonly Entry[]) => entries.flatMap(entry => {
-    const pred = withAdjective(entry.pred)
+    const pred = withAdjective(entry.pred, entry.id)
     return pred ? [{...entry,pred,mask:entry.mask|8}] : []
   })
-  const sources = new Map<number, readonly Entry[]>([[0,simple],[2,prep],[8,unique([...adjectives,...enrich(simple)])],[10,enrich(prep)]])
-  const rightPool = balanced(simple,50)
+  const reviewedForBank = (entries: typeof REVIEWED_ADJECTIVES) => entries
+    .filter(entry => simpleFrames.some(frame => frame.id === entry.id))
+    .map(entry => ({ ...entry, mask: phraseContextMask(entry) }))
+  const sources = new Map<number, readonly Entry[]>([[0,simple],[2,prep],
+    [8,unique([...adjectives,...(reflexive ? enrich(simple) : reviewedForBank(REVIEWED_ADJECTIVES))])],
+    [10,reflexive ? enrich(prep) : reviewedForBank(REVIEWED_ADJECTIVE_PREPOSITIONS)]])
   const result: Entry[] = []
   for (let mask=0;mask<16;mask++) {
-    const base = balanced(sources.get(mask & 10)!,combinationQuota(mask))
+    const eligible = sources.get(mask & 10)!.filter(entry => !(mask & 4) || coherentRightActions(entry.id,entry.pred).length > 0)
+    let base: Entry[]
+    try { base = balanced(eligible,combinationQuota(mask)) }
+    catch (error) { throw new Error(`${group}/${reflexive ? 'pronominal' : 'régulier'}/masque ${mask}`, { cause: error }) }
     for (const [index,entry] of base.entries()) {
       let pred = entry.pred
       if (mask & 1) {
@@ -268,7 +336,8 @@ function compile(group: 'er' | 'autres', reflexive: boolean): readonly Entry[] {
           ? 'vraiment' : entry.id === 'avoir' ? 'déjà' : ['souvent','parfois','régulièrement'][index%3]!
         pred = pred.replace('/verbe', `/verbe ${adverb}/adverbe`)
       }
-      const right = mask & 4 ? rightPool.find((candidate,i) => i >= index % rightPool.length && candidate.id !== entry.id) ?? rightPool.find(candidate=>candidate.id!==entry.id) : undefined
+      const rights = mask & 4 ? coherentRightActions(entry.id,entry.pred) : []
+      const right = rights.length ? rights[index % rights.length] : undefined
       if ((mask & 4) && !right) throw new Error('Gattegno : second verbe distinct manquant')
       result.push({ id:entry.id,pred,mask,...(right?{rightId:right.id,rightPred:right.pred}:{}) })
     }
@@ -288,9 +357,16 @@ export function combinationFrames(theme: PhraseThemeId, group: 'er' | 'autres', 
   const contexts = new Map<string, PhraseContext[]>()
   for (const entry of combinationContexts(theme,group)) { const list=contexts.get(entry.id)??[]; list.push(entry); contexts.set(entry.id,list) }
   const frames = new Map(original.map(frame=>[frame.id,frame]))
+  if (affirmativePhraseTheme(theme) === 'phrase-pronominaux') {
+    const coordinated = coordinatedFrames(original.map(frame => ({ ...frame, preds:frame.preds.filter(pred => phraseContextMask({pred}) === 0) })))
+    for (const frame of coordinated) {
+      const previous = frames.get(frame.id)!
+      frames.set(frame.id,{...previous,contexts:[...previous.preds.map(pred=>({pred})),...frame.contexts!]})
+    }
+  }
   for (const [id,added] of contexts) {
     const old = frames.get(id)
-    const existing: PhraseContext[] = old ? old.preds.flatMap(pred => old.rightPreds ? old.rightPreds.map(rightPred=>({pred,rightId:old.rightId,rightPred})) : [{pred}]) : []
+    const existing: readonly PhraseContext[] = old?.contexts ?? (old ? old.preds.flatMap(pred => old.rightPreds ? old.rightPreds.map(rightPred=>({pred,rightId:old.rightId,rightPred})) : [{pred}]) : [])
     const merged = [...new Map([...existing,...added].map(context=>[JSON.stringify([context.pred,context.rightId,context.rightPred]),context])).values()]
     frames.set(id,{id,preds:[...new Set(merged.map(context=>context.pred))],contexts:merged})
   }
