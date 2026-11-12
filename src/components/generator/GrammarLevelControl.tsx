@@ -1,5 +1,5 @@
 import type { ExerciseBlock } from '@/math/types'
-import { grammarBanksForType } from '@/grammaire/curriculum/registry'
+import { grammarBanksForType, isNewGrammarPilotType } from '@/grammaire/curriculum/registry'
 import { clearLibreContentFreeze } from './page-helpers'
 import { SelectBox } from './SelectBox'
 
@@ -11,7 +11,7 @@ export function GrammarLevelControl({block,onChange}:{block:ExerciseBlock;onChan
     if (block.libreItems?.length && !window.confirm('Ce changement remplacera les modifications manuelles de cet exercice. Continuer ?')) return
     onChange({...clearLibreContentFreeze(),grammarSnapshot:undefined,...patch})
   }
-  const newOnly=block.exerciseType==='gram-ex-etre-curriculum-a'
+  const newOnly=isNewGrammarPilotType(block.exerciseType)
   return <>
     <SelectBox label="Niveau de grammaire" value={block.grammarLevel??'legacy'} onChange={value=>{
       const next=banks.find(b=>b.level===value)
