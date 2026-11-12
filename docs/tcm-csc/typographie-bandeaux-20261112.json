@@ -30,11 +30,12 @@
   },
   "checks": {
     "focusedUnitPassed": 23,
-    "browser": "tcm-csc-browser passed, including A–E lettering, full calculation correction, typography range and physical print dimensions",
+    "browser": "CSC/CFR full generator, A4/A5 font controls, real audio playback, letters and PDF checks passed",
     "appTypes": "passed",
     "lint": "passed with existing warnings",
     "productionBuild": "passed",
-    "unitSuitePassed": 237
+    "unitSuitePassed": 237,
+    "a4Regression": "identical witness screenshot against 0addb36d662842040cc8ed64e8b2c0ca81eac810"
   },
   "audio": {
     "newNarration": "pending recordings, deferred by user",
@@ -45,5 +46,10 @@
     "blocker": "speech.platform.bing.com denied by Cloud proxy (CONNECT 403)",
     "currentAssets": "existing clips retained, including eSpeak operators; no fabricated Denise replacement",
     "coverage": "CSC numbers/calculations and CFR numbers/multiplications; ten requested MP3 clips"
+  },
+  "cfr": {
+    "exercises1and2": "A–E letters on printed response lines and individual player labels",
+    "mathematics": "numbers, multiplications, printed instructions and product-only corrections unchanged",
+    "narration": "deferred by user until the ten Denise recordings are available"
   }
 }

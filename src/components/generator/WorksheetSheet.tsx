@@ -497,7 +497,7 @@ export function WorksheetSheet({
                       key={`${block.exerciseType}-${block.exerciseIndex}-${index}-${item.answer}-${tcfFormMode ?? ''}`}
                       item={item}
                       mode={mode}
-                      itemLabel={/^tcm-csc-ex0[12]$/.test(block.exerciseType)?String.fromCharCode(65+index+itemOffset):undefined}
+                      itemLabel={/^tcm-(?:csc|cfr)-ex0[12]$/.test(block.exerciseType)?String.fromCharCode(65+index+itemOffset):undefined}
                       seriesNumber={/^tcm-csc-ex(?:06|16)$/.test(block.exerciseType)?index+itemOffset+1:undefined}
                       index={index + (/^tcm-csc-ex(?:10|11)$/.test(block.exerciseType) ? block.itemOffset ?? 0 : 0)}
                       algebraPadLeft={padLeft}
