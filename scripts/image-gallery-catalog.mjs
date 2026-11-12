@@ -56,7 +56,7 @@ export function buildGalleryCatalog(root, files = repositoryImages(root)) {
     }
   }
   for (const image of read(root, 'docs/tcf/images-generees.json', {}).images ?? []) {
-    add(image.path, { labels: [image.label], terms: [image.id] })
+    add(image.path, { labels: [image.label], types: image.gallery_types, terms: [image.id] })
   }
   for (const image of read(root, 'public/lib/images/tcf/po/illustrations-manifest.json', {}).images ?? []) {
     add(image.path, { labels: [image.title && `${image.title} — scène ${image.step ?? ''}`], themes: [image.title], types: ['Scénario'], terms: [image.action] })

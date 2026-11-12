@@ -1,0 +1,107 @@
+{
+  "date": "2026-11-12",
+  "trios": [
+    {
+      "key": "tcf-ss-a1-s7-co-4#5",
+      "source_sha256": "0a3428584ff61ebcd457a504195176b7b5c5e1cc8931ee349dca829d6448e0c3",
+      "semantic_sha256": "dcfed6d81bab8b9b5a134cd8d30d820ccb5e209ada6b8bcd584d993de4d2342a",
+      "source": "C'est l'hiver.\nÀ Grenoble, il va faire moins cinq degrés.\nMettez un manteau et des chaussures chaudes.\nEt surtout, n'oubliez pas le bonnet, l'écharpe et les gants !",
+      "question": {
+        "enonce": "Quels accessoires ne faut-il pas oublier ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Le bonnet, l’écharpe et les gants",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Le chapeau, les lunettes et l’éventail",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "La casquette, la cravate et la ceinture",
+            "correct": false
+          }
+        ],
+        "written_model": "Le bonnet, l’écharpe et les gants"
+      },
+      "image_ids": [
+        "extension573-bonnet-echarpe-gants",
+        "extension573-chapeau-lunettes-eventail",
+        "extension573-casquette-cravate-ceinture"
+      ],
+      "reason": "Le message d’hiver demande explicitement de ne pas oublier bonnet, écharpe et gants. Les deux autres trios d’accessoires ne sont pas nommés dans la transcription. Chaque réponse conserve ses trois catégories, sans réduire le groupe à un seul objet.",
+      "visual_review": "Originaux vus séparément : bonnet et écharpe avec deux gants ; chapeau et lunettes avec éventail ; casquette et cravate avec ceinture. Catégories complètes, objets entiers et séparés, aucun texte ni chiffre, même peinture douce sur fond crème et paysage 4:3."
+    },
+    {
+      "key": "tcf-ss-a2-s14-co-4#13",
+      "source_sha256": "8f948e0dc1577d39f30df0701c62e67e9b7ec96209e54162a449f415ae76f22b",
+      "semantic_sha256": "4e61021c0767a41b9cc88d2fc95c7ca2731f0845f00c89642ed396fcd9d1a7f1",
+      "source": "C'est combien le kilo de pommes ? Attendez, je vais regarder. C'est 2,50 euros. Et les poires ? Celles-ci sont à 3 euros. Très bien, merci.",
+      "question": {
+        "enonce": "Quels fruits font l’objet de la demande de prix ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Les pommes et les poires",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Les oranges et les bananes",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Les fraises et les cerises",
+            "correct": false
+          }
+        ],
+        "written_model": "Les pommes et les poires"
+      },
+      "image_ids": [
+        "9dd6fb9363ec",
+        "extension573-oranges-bananes",
+        "extension573-fraises-cerises"
+      ],
+      "reason": "La cliente demande le prix des pommes puis celui des poires. Les autres paires de fruits ne sont pas mentionnées et restent dans le thème du marché. Aucun prix ni montant de la transcription n’est dessiné.",
+      "visual_review": "Originaux vus séparément : deux pommes et deux poires ; deux oranges et deux bananes ; trois fraises et quatre cerises. Chaque groupe contient ses deux types de fruits au pluriel, sans autre variété ni étiquette chiffrée. Même peinture douce sur fond crème, paysages 4:3. Pommes/poires réutilisées."
+    },
+    {
+      "key": "delf-a1v-ce-050#1",
+      "source_sha256": "a7a7a4594bc2a1d2a9ce9055fcf1c1104d4b68a2b6271e967a305e65f1f76416",
+      "semantic_sha256": "bf05ff62e96c2a176c3240c66935f069ac99986996de4349dfe9b81dac8e6338",
+      "source": "Annonce 1 — Fromages et miel à la ferme\nPrix spéciaux !\nÀ 10 minutes de Fribourg\n\nAnnonce 2 — Tombola de la bibliothèque\nDes bons d’achat de 30 CHF à gagner\nInscrivez-vous avant le 20",
+      "question": {
+        "enonce": "Quels produits vend-on à la ferme ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Du fromage et du miel",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Du pain et de la confiture",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Des fruits et des légumes",
+            "correct": false
+          }
+        ],
+        "written_model": "Du fromage et du miel"
+      },
+      "image_ids": [
+        "extension573-fromage-miel",
+        "extension573-pain-confiture",
+        "co306-fruits-legumes-dessine"
+      ],
+      "reason": "La première annonce indique explicitement fromages et miel à la ferme. Pain/confiture et fruits/légumes sont deux autres paires de produits alimentaires, absentes de cette annonce. La tombola de la seconde annonce ne fournit aucune autre réponse alimentaire.",
+      "visual_review": "Originaux vus séparément : fromage avec pot de miel ; pain avec pot de confiture ; assortiment de fruits et légumes reconnaissables. Deux catégories complètes par image, sans prix, date ou montant, même peinture douce sur fond crème en paysage 4:3. Fruits/légumes réutilisés."
+    }
+  ]
+}

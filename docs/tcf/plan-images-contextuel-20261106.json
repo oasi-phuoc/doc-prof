@@ -3,9 +3,9 @@
   "scope": "Inventaire exhaustif des questions CE/CO à trois choix ; contrôle contre le texte ou la transcription active, sans nouvelle écoute intégrale des MP3.",
   "summary": {
     "text_variant_pending_images_or_intentionally_text": 5353,
-    "reviewed_trio": 1862,
+    "reviewed_trio": 1867,
     "existing_variant_partial_reviewed_reuse": 81,
-    "reviewed_763_artwork_pending": 406,
+    "reviewed_763_artwork_pending": 401,
     "reviewed_763_keep_text": 112,
     "existing_variant_needs_further_visual_review": 23,
     "retire_ambiguous_image_variant": 14
@@ -13561,19 +13561,27 @@
         "Les lunettes et les chapeaux",
         "Les sacs et les téléphones"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_763_candidate_review",
       "source_sha256": "e354374cf55c4f61c95ba317dc3607a4a3543b2b4d1db20fa2691603441bf581",
       "semantic_before_sha256": "fa404e13ff59430ba4c44506f3620b44c8afd7923b16a4bda504ec624aae1daa",
       "semantic_after_sha256": "fa404e13ff59430ba4c44506f3620b44c8afd7923b16a4bda504ec624aae1daa",
       "audio": null,
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/extension573-bijoux-montres.png",
+        "/lib/images/tcf/qcm-audit/extension573-lunettes-chapeaux.png",
+        "/lib/images/tcf/qcm-audit/extension573-sacs-telephones.png"
+      ],
+      "target_sha256": [
+        "0dbd308eafbf2a700da2be824782ced42173730ee481ef464fe4377ae10f51d5",
+        "ec66adb8a265663f727aa8950ae2a3d6e1c44c68157383107a1c87702cf63255",
+        "0a47d9eb4d7d6215cd9f56dd4af711205e3b6a30fa8bec6759fc18767923bb39"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_whole_answer_concepts",
-      "review_763_reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "reason": "Le règlement de la salle d’escalade interdit explicitement les bijoux et les montres. Lunettes/chapeaux et sacs/téléphones sont deux autres groupes d’effets personnels non interdits dans ce texte. Les trois réponses gardent leurs deux catégories complètes et le corrigé reste identique. Originaux vus séparément : bijoux variés et deux montres sans chiffres ; deux paires de lunettes et deux chapeaux ; deux sacs et deux téléphones à écran éteint. Objets entiers, catégories complètes, aucun montant, date ni personnage, peinture douce et fond crème en paysage 4:3.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Le règlement de la salle d’escalade interdit explicitement les bijoux et les montres. Lunettes/chapeaux et sacs/téléphones sont deux autres groupes d’effets personnels non interdits dans ce texte. Les trois réponses gardent leurs deux catégories complètes et le corrigé reste identique. Originaux vus séparément : bijoux variés et deux montres sans chiffres ; deux paires de lunettes et deux chapeaux ; deux sacs et deux téléphones à écran éteint. Objets entiers, catégories complètes, aucun montant, date ni personnage, peinture douce et fond crème en paysage 4:3.",
       "before_upstream_integration": {
         "source_sha256": "ac313d9f8c3ea281e682c20b6d4812e521c417de8b6422cf33755ac799641c6a",
         "semantic_before_sha256": "fa404e13ff59430ba4c44506f3620b44c8afd7923b16a4bda504ec624aae1daa",
@@ -25946,19 +25954,27 @@
         "Du pain et de la confiture",
         "Des fruits et des légumes"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_763_candidate_review",
       "source_sha256": "a7a7a4594bc2a1d2a9ce9055fcf1c1104d4b68a2b6271e967a305e65f1f76416",
       "semantic_before_sha256": "bf05ff62e96c2a176c3240c66935f069ac99986996de4349dfe9b81dac8e6338",
       "semantic_after_sha256": "bf05ff62e96c2a176c3240c66935f069ac99986996de4349dfe9b81dac8e6338",
       "audio": null,
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/extension573-fromage-miel.png",
+        "/lib/images/tcf/qcm-audit/extension573-pain-confiture.png",
+        "/lib/images/tcf/qcm-audit/co306-fruits-legumes-dessine.webp"
+      ],
+      "target_sha256": [
+        "57fea7829b5d4fb33c13457a6afbf88b3c90f10cc8240b88fa1e2f4c54e6da6f",
+        "5104d5ee4533707a2e4fdf0741fa219625d5f74657e8c1ef5c3ff84252ca1e61",
+        "a2c16cb8e61354daf3b1a09793d3e08e5c050498f353b3e2fd25ebd94b6e2469"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_whole_answer_concepts",
-      "review_763_reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "reason": "La première annonce indique explicitement fromages et miel à la ferme. Pain/confiture et fruits/légumes sont deux autres paires de produits alimentaires, absentes de cette annonce. La tombola de la seconde annonce ne fournit aucune autre réponse alimentaire. Originaux vus séparément : fromage avec pot de miel ; pain avec pot de confiture ; assortiment de fruits et légumes reconnaissables. Deux catégories complètes par image, sans prix, date ou montant, même peinture douce sur fond crème en paysage 4:3. Fruits/légumes réutilisés.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "La première annonce indique explicitement fromages et miel à la ferme. Pain/confiture et fruits/légumes sont deux autres paires de produits alimentaires, absentes de cette annonce. La tombola de la seconde annonce ne fournit aucune autre réponse alimentaire. Originaux vus séparément : fromage avec pot de miel ; pain avec pot de confiture ; assortiment de fruits et légumes reconnaissables. Deux catégories complètes par image, sans prix, date ou montant, même peinture douce sur fond crème en paysage 4:3. Fruits/légumes réutilisés.",
       "before_upstream_integration": {
         "source_sha256": "7c5d3371c212a8dfa00f1bec8f9087f7aa1d8dcc5b97a4ddaae9cb0db01fefed",
         "semantic_before_sha256": "bf05ff62e96c2a176c3240c66935f069ac99986996de4349dfe9b81dac8e6338",
@@ -58340,19 +58356,27 @@
         "Le chapeau, les lunettes et l’éventail",
         "La casquette, la cravate et la ceinture"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_763_candidate_review",
       "source_sha256": "0a3428584ff61ebcd457a504195176b7b5c5e1cc8931ee349dca829d6448e0c3",
       "semantic_before_sha256": "dcfed6d81bab8b9b5a134cd8d30d820ccb5e209ada6b8bcd584d993de4d2342a",
       "semantic_after_sha256": "dcfed6d81bab8b9b5a134cd8d30d820ccb5e209ada6b8bcd584d993de4d2342a",
       "audio": "/lib/audio/tcf/co/radio/07-radio-météo-à-Grenoble.mp3",
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/extension573-bonnet-echarpe-gants.png",
+        "/lib/images/tcf/qcm-audit/extension573-chapeau-lunettes-eventail.png",
+        "/lib/images/tcf/qcm-audit/extension573-casquette-cravate-ceinture.png"
+      ],
+      "target_sha256": [
+        "492485213ef63e4ee7e6964aa27f6ebd6e77d9d24e10670e8ece13a93294cc28",
+        "11ec5a94b95281c7f994b11a50c018fd9efd3667335569686b1947394edf0b13",
+        "f16a656884c8a42481eb65d4565d747fa0012376900bdc115098259efb826bc0"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_whole_answer_concepts",
-      "review_763_reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel."
+      "reason": "Le message d’hiver demande explicitement de ne pas oublier bonnet, écharpe et gants. Les deux autres trios d’accessoires ne sont pas nommés dans la transcription. Chaque réponse conserve ses trois catégories, sans réduire le groupe à un seul objet. Originaux vus séparément : bonnet et écharpe avec deux gants ; chapeau et lunettes avec éventail ; casquette et cravate avec ceinture. Catégories complètes, objets entiers et séparés, aucun texte ni chiffre, même peinture douce sur fond crème et paysage 4:3.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Le message d’hiver demande explicitement de ne pas oublier bonnet, écharpe et gants. Les deux autres trios d’accessoires ne sont pas nommés dans la transcription. Chaque réponse conserve ses trois catégories, sans réduire le groupe à un seul objet. Originaux vus séparément : bonnet et écharpe avec deux gants ; chapeau et lunettes avec éventail ; casquette et cravate avec ceinture. Catégories complètes, objets entiers et séparés, aucun texte ni chiffre, même peinture douce sur fond crème et paysage 4:3."
     },
     {
       "key": "tcf-ss-a1-s8-co-2#1",
@@ -156634,19 +156658,27 @@
         "Des gants et des écharpes",
         "Des bottes et des parapluies"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_763_candidate_review",
       "source_sha256": "28648741bda83f6bf1201f6f47542cbd85a168f5305b6d74da7f32d0765a017c",
       "semantic_before_sha256": "f55a52760189e2e55840669020e64c3a37cb71f5b4fea7e5d145c4d30b2a525c",
       "semantic_after_sha256": "f55a52760189e2e55840669020e64c3a37cb71f5b4fea7e5d145c4d30b2a525c",
       "audio": "/lib/audio/tcf/co/radio/les-annonces-a-la-radio-2-2.mp3",
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/extension573-lunettes-chapeaux.png",
+        "/lib/images/tcf/qcm-audit/extension573-gants-echarpes.png",
+        "/lib/images/tcf/qcm-audit/extension573-bottes-parapluies.png"
+      ],
+      "target_sha256": [
+        "ec66adb8a265663f727aa8950ae2a3d6e1c44c68157383107a1c87702cf63255",
+        "6c6cb818a9d33f80b4b266a403bb6d123d4ae6a105621f620430dbd75d2c5114",
+        "c5bd02a139efd9cf58e578b130116e4e30d384fac77d1d63692c74caee03e2d7"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_whole_answer_concepts",
-      "review_763_reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel."
+      "reason": "La météo annonce du soleil demain et conseille explicitement lunettes et chapeaux. Gants/écharpes et bottes/parapluies sont des accessoires adaptés à d’autres météos, absents de cette transcription. Les trois groupes restent cohérents par thème. Originaux vus séparément : lunettes de soleil et chapeaux de paille ; paire de gants et deux écharpes ; paire de bottes et deux parapluies fermés. Toutes les catégories sont représentées, sans texte ni chiffre, peinture douce et fond crème en paysage 4:3. La paire de catégories lunettes/chapeaux est réutilisée entre CE et CO.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "La météo annonce du soleil demain et conseille explicitement lunettes et chapeaux. Gants/écharpes et bottes/parapluies sont des accessoires adaptés à d’autres météos, absents de cette transcription. Les trois groupes restent cohérents par thème. Originaux vus séparément : lunettes de soleil et chapeaux de paille ; paire de gants et deux écharpes ; paire de bottes et deux parapluies fermés. Toutes les catégories sont représentées, sans texte ni chiffre, peinture douce et fond crème en paysage 4:3. La paire de catégories lunettes/chapeaux est réutilisée entre CE et CO."
     },
     {
       "key": "tcf-a2j-s2-co-2#8",
@@ -165415,19 +165447,27 @@
         "Les oranges et les bananes",
         "Les fraises et les cerises"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_763_candidate_review",
       "source_sha256": "8f948e0dc1577d39f30df0701c62e67e9b7ec96209e54162a449f415ae76f22b",
       "semantic_before_sha256": "4e61021c0767a41b9cc88d2fc95c7ca2731f0845f00c89642ed396fcd9d1a7f1",
       "semantic_after_sha256": "4e61021c0767a41b9cc88d2fc95c7ca2731f0845f00c89642ed396fcd9d1a7f1",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/alors-isabelle-week-end-2-4.mp3",
-      "targets": [],
-      "target_sha256": [],
+      "targets": [
+        "/lib/images/tcf/qcm-audit/9dd6fb9363ec.webp",
+        "/lib/images/tcf/qcm-audit/extension573-oranges-bananes.png",
+        "/lib/images/tcf/qcm-audit/extension573-fraises-cerises.png"
+      ],
+      "target_sha256": [
+        "8d12afe0ea8d8b62e9abad89feab1c713e162cf749a4f2b7aea592dc75b30690",
+        "9c5a304d3fa5d564e356c5799f305511fbdefd70d2fe771934b987ff8839f2cc",
+        "d8f4d30bb62d731ed6078541acd72afcf62e12b4bbf3e578b7307bda583e587d"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_whole_answer_concepts",
-      "review_763_reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "reason": "La cliente demande le prix des pommes puis celui des poires. Les autres paires de fruits ne sont pas mentionnées et restent dans le thème du marché. Aucun prix ni montant de la transcription n’est dessiné. Originaux vus séparément : deux pommes et deux poires ; deux oranges et deux bananes ; trois fraises et quatre cerises. Chaque groupe contient ses deux types de fruits au pluriel, sans autre variété ni étiquette chiffrée. Même peinture douce sur fond crème, paysages 4:3. Pommes/poires réutilisées.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "La cliente demande le prix des pommes puis celui des poires. Les autres paires de fruits ne sont pas mentionnées et restent dans le thème du marché. Aucun prix ni montant de la transcription n’est dessiné. Originaux vus séparément : deux pommes et deux poires ; deux oranges et deux bananes ; trois fraises et quatre cerises. Chaque groupe contient ses deux types de fruits au pluriel, sans autre variété ni étiquette chiffrée. Même peinture douce sur fond crème, paysages 4:3. Pommes/poires réutilisées.",
       "semantic_sha256": "4e61021c0767a41b9cc88d2fc95c7ca2731f0845f00c89642ed396fcd9d1a7f1"
     },
     {

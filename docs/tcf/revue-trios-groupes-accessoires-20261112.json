@@ -1,0 +1,73 @@
+{
+  "date": "2026-11-12",
+  "trios": [
+    {
+      "key": "delf-a1v-ce-002#5",
+      "source_sha256": "e354374cf55c4f61c95ba317dc3607a4a3543b2b4d1db20fa2691603441bf581",
+      "semantic_sha256": "fa404e13ff59430ba4c44506f3620b44c8afd7923b16a4bda504ec624aae1daa",
+      "source": "Bienvenue !\nPour grimper, vous avez besoin de :\n– chaussons d’escalade (location possible : 5 CHF) ;\n– un pantalon souple et un tee-shirt.\nLes bijoux et les montres sont interdits. Les casiers sont gratuits.\nLa salle est ouverte du lundi au vendredi de 9 h à 22 h et le samedi de 10 h à 18 h. Elle est fermée le dimanche.\nNadia Favre\nResponsable",
+      "question": {
+        "enonce": "Quels objets sont interdits ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Les bijoux et les montres",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Les lunettes et les chapeaux",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Les sacs et les téléphones",
+            "correct": false
+          }
+        ],
+        "written_model": "Les bijoux et les montres"
+      },
+      "image_ids": [
+        "extension573-bijoux-montres",
+        "extension573-lunettes-chapeaux",
+        "extension573-sacs-telephones"
+      ],
+      "reason": "Le règlement de la salle d’escalade interdit explicitement les bijoux et les montres. Lunettes/chapeaux et sacs/téléphones sont deux autres groupes d’effets personnels non interdits dans ce texte. Les trois réponses gardent leurs deux catégories complètes et le corrigé reste identique.",
+      "visual_review": "Originaux vus séparément : bijoux variés et deux montres sans chiffres ; deux paires de lunettes et deux chapeaux ; deux sacs et deux téléphones à écran éteint. Objets entiers, catégories complètes, aucun montant, date ni personnage, peinture douce et fond crème en paysage 4:3."
+    },
+    {
+      "key": "tcf-a2j-s2-co-2#7",
+      "source_sha256": "28648741bda83f6bf1201f6f47542cbd85a168f5305b6d74da7f32d0765a017c",
+      "semantic_sha256": "f55a52760189e2e55840669020e64c3a37cb71f5b4fea7e5d145c4d30b2a525c",
+      "source": "Beaucoup de nuages aujourd'hui dans le sud de la France, mais il ne pleut pas. Demain, le vent va faire partir les nuages et nous apporter du soleil. Alors, sortez les lunettes et les chapeaux.",
+      "question": {
+        "enonce": "Quels accessoires conseille-t-on pour demain ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Des lunettes et des chapeaux",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Des gants et des écharpes",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Des bottes et des parapluies",
+            "correct": false
+          }
+        ],
+        "written_model": "Des lunettes et des chapeaux"
+      },
+      "image_ids": [
+        "extension573-lunettes-chapeaux",
+        "extension573-gants-echarpes",
+        "extension573-bottes-parapluies"
+      ],
+      "reason": "La météo annonce du soleil demain et conseille explicitement lunettes et chapeaux. Gants/écharpes et bottes/parapluies sont des accessoires adaptés à d’autres météos, absents de cette transcription. Les trois groupes restent cohérents par thème.",
+      "visual_review": "Originaux vus séparément : lunettes de soleil et chapeaux de paille ; paire de gants et deux écharpes ; paire de bottes et deux parapluies fermés. Toutes les catégories sont représentées, sans texte ni chiffre, peinture douce et fond crème en paysage 4:3. La paire de catégories lunettes/chapeaux est réutilisée entre CE et CO."
+    }
+  ]
+}
