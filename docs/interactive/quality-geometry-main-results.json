@@ -1,0 +1,51 @@
+{
+  "date": "2026-11-12",
+  "scope": "Carrés et rectangles : périmètres, aires et dimensions manquantes dans le jeu",
+  "baseline": "b8a8da4c27774484e20c3542ab730f87bbc17561",
+  "integratedMain": "2171f67995b1dcbb670adcf7817e89a09c44d1fe",
+  "unitTests": {
+    "passed": 209,
+    "failed": 0,
+    "geometryTests": 8,
+    "realGeometryConfigurations": 2400,
+    "addedCompetitionFigureTests": 3
+  },
+  "checks": {
+    "appTypes": "passed",
+    "apiTypes": "passed",
+    "lint": "passed with existing warnings",
+    "productionBuild": "passed",
+    "bundleBudgets": "passed",
+    "changedFilesSecrets": "passed, zero findings"
+  },
+  "browser": {
+    "passed": [
+      "geometry-browser",
+      "game-run-browser",
+      "presets-browser",
+      "competition-browser",
+      "performance-browser",
+      "a4-regression"
+    ],
+    "all45StagesRun": false,
+    "geometryReport": "geometry-results.json",
+    "partialCiReport": "quality-geometry-browser-results.json",
+    "a4Report": "a4-results.json"
+  },
+  "inventory": {
+    "catalogTypes": 2073,
+    "variants": 2105,
+    "playableVariants": 695,
+    "geometryPlayableVariants": 14,
+    "geometryDedicatedTypes": 8,
+    "geometryPartialMixes": 6
+  },
+  "limits": [
+    "Autres figures et conversions entre unités non couvertes.",
+    "Activation du Worker pour la compétition Internet distincte de ce lot.",
+    "La suite complète de 45 parcours navigateur n’a pas été relancée ; six parcours ciblés ont été validés.",
+    "Les fiches imprimées restent inchangées ; comparaison A4 identique au jalon de référence."
+  ],
+  "verificationHead": "c50c45b7cdd0304ebb4fc3e8ed2a8ce15df5e2e2",
+  "integrationNote": "Illustrations et contenus TCF intégrés après les tests complets ; aucune modification des adaptateurs géométriques."
+}

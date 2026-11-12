@@ -1,7 +1,8 @@
 import { createServer } from 'vite'
 import { mkdir, writeFile, readFile } from 'node:fs/promises'
 const server = await createServer({
-  server: { middlewareMode: true, hmr: { port: 0 } },
+  cacheDir: '/tmp/clairfle-inventory-cache',
+  server: { middlewareMode: true, hmr: false },
   appType: 'custom',
 })
 try {

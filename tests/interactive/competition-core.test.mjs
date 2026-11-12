@@ -13,6 +13,75 @@ try {
     room = step(room, { type: 'join', avatarId: 'panda' }, startAt)
     return step(room, { type: 'start' }, startAt)
   }
+  await test('competition accepts measured figures and missing dimensions without mutating or sharing source metadata', () => {
+    const figures = [
+      { type: 'square', dims: { side: 349, unit: 'cm' } },
+      { type: 'rectangle', dims: { length: 7.5, ask: 'width', unit: 'm' } },
+      { type: 'square', dims: { ask: 'side', unit: 'mm' } },
+      { type: 'triangle', dims: { a: 3, b: 4, c: 5, triangleKind: 'right', unit: 'dm' } },
+      { type: 'trapezoid', dims: { top: 2, bottom: 6, height: 3, trapezoidKind: 'isosceles', unit: 'hm' } },
+      { type: 'circle', dims: { diameter: 10, unit: 'dam' } },
+      { type: 'pentagon', dims: { bare: true } },
+      { type: 'oval' },
+    ]
+    for (const figure of figures) {
+      const source = structuredClone(quiz)
+      source.items[0].question.figure = structuredClone(figure)
+      const original = structuredClone(source)
+      const parsed = parseCompetitionQuiz(source)
+      assert.deepEqual(parsed.items[0].question.figure, figure)
+      assert.deepEqual(source, original)
+      assert.notEqual(parsed.items[0].question.figure, source.items[0].question.figure)
+      if (figure.dims) assert.notEqual(parsed.items[0].question.figure.dims, source.items[0].question.figure.dims)
+    }
+    for (const unit of ['mm', 'cm', 'dm', 'm', 'dam', 'hm', 'km']) {
+      const source = structuredClone(quiz)
+      source.items[0].question.figure = { type: 'rectangle', dims: { length: 2.5, ask: 'width', unit } }
+      const parsed = parseCompetitionQuiz(source)
+      source.items[0].question.figure.dims.length = 100
+      assert.deepEqual(parsed.items[0].question.figure.dims, { length: 2.5, ask: 'width', unit })
+    }
+  })
+  await test('competition refuses unknown figure fields, invalid rendering metadata and exposed missing dimensions', () => {
+    const badFigures = [
+      null, [], { type: 'untrusted' }, { type: 'square', answer: 9 },
+      { type: 'square', dims: null }, { type: 'square', dims: [] },
+      ...[0, -1, NaN, Infinity, 1e12 + 1, '3'].map(side => ({ type: 'square', dims: { side } })),
+      ...['cm²', 'javascript:invalid', 3, ['cm']].map(unit => ({ type: 'square', dims: { side: 3, unit } })),
+      { type: 'square', dims: { side: 3, correct: 9 } },
+      { type: 'square', dims: { unit: 'cm', ask: 'answer' } },
+      { type: 'square', dims: { unit: 'cm', ask: 3 } },
+      { type: 'square', dims: { unit: 'cm', ask: 'side', side: 3 } },
+      { type: 'rectangle', dims: { unit: 'cm', ask: 'width', length: 7, width: 4 } },
+      { type: 'triangle', dims: { triangleKind: ['right'] } },
+      { type: 'triangle', dims: { triangleKind: 'unknown' } },
+      { type: 'trapezoid', dims: { trapezoidKind: { toString: () => 'isosceles' } } },
+      { type: 'trapezoid', dims: { trapezoidKind: 'unknown' } },
+      { type: 'square', dims: { bare: 'true' } },
+      { type: 'square', dims: JSON.parse('{"__proto__":{"answer":9}}') },
+    ]
+    for (const figure of badFigures) {
+      const source = structuredClone(quiz)
+      source.items[0].question.figure = figure
+      assert.throws(() => parseCompetitionQuiz(source), error => error.status === 400 && /Figure invalide/.test(error.message))
+    }
+  })
+  await test('learner views retain public figure measurements while withholding correction until reveal', () => {
+    const source = structuredClone(quiz)
+    source.items[0].question.figure = { type: 'rectangle', dims: { length: 7.5, unit: 'cm', ask: 'width' } }
+    const parsed = parseCompetitionQuiz(source)
+    let room = createCompetition(parsed, settings, 'online', '123456', startAt)
+    room = step(room, { type: 'join', avatarId: 'panda' }, startAt)
+    room = step(room, { type: 'start' }, startAt)
+    const question = view(room, startAt, 'p1')
+    assert.deepEqual(question.question.figure, { type: 'rectangle', dims: { length: 7.5, unit: 'cm', ask: 'width' } })
+    assert.equal(question.correctChoiceId, undefined)
+    assert.equal(Object.hasOwn(question.question.figure.dims, 'width'), false)
+    room = step(room, { type: 'answer', playerId: 'p1', questionId: 'q1', choiceId: 'c0' }, startAt + 1000)
+    const correction = view(room, startAt + 1000, 'p1')
+    assert.equal(correction.correctChoiceId, 'c0')
+    assert.deepEqual(correction.question.figure, question.question.figure)
+  })
   await test('competition exposes only the current question, never future answers or another player’s vote', () => {
     let room = ready()
     room = step(room, { type: 'answer', playerId: 'p1', questionId: 'q1', choiceId: 'c0' }, startAt + 2000)
