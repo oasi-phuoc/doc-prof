@@ -6,7 +6,7 @@ import { createServer } from 'vite'
 const server = await createServer({ server: { middlewareMode: true, hmr: false }, appType: 'custom' })
 try {
   const { buildTcmCscTestPages, TCM_CSC_STEPS, TCM_CSC_MAX_SCORE } = await server.ssrLoadModule('/src/tcm-csc/test.ts')
-  const { generateCscExercise } = await server.ssrLoadModule('/src/tcm-csc/items.ts')
+  const { generateCscExercise, CSC_PLUS_AUDIO, CSC_MINUS_AUDIO } = await server.ssrLoadModule('/src/tcm-csc/items.ts')
   const { CSC_PROBLEM_BANK, CSC_DEFAULT_PROBLEMS, buildCscProblem, rollCscProblem } = await server.ssrLoadModule('/src/tcm-csc/problems.ts')
   const { recalculateCsc } = await server.ssrLoadModule('/src/tcm-csc/recalculate.ts')
   const { createRng } = await server.ssrLoadModule('/src/math/rng.ts')
@@ -40,8 +40,8 @@ try {
         const { a, b, operation } = item.cscTask
         assert.equal(Number(item.answer), operation === '+' ? a + b : a - b)
         assert.ok(Number(item.answer) >= 0 && Number(item.answer) <= 100)
-        assert.ok(item.audioParts.includes(operation === '+' ? '/lib/audio/nombre/plus.mp3' : '/lib/audio/nombre/moins.mp3'))
-        assert.deepEqual(item.audioParts,[`/lib/audio/nombre/${a}.mp3`,operation === '+' ? '/lib/audio/nombre/plus.mp3' : '/lib/audio/nombre/moins.mp3',`/lib/audio/nombre/${b}.mp3`])
+        assert.ok(item.audioParts.includes(operation === '+' ? CSC_PLUS_AUDIO : CSC_MINUS_AUDIO))
+        assert.deepEqual(item.audioParts,[`/lib/audio/nombre/${a}.mp3`,operation === '+' ? CSC_PLUS_AUDIO : CSC_MINUS_AUDIO,`/lib/audio/nombre/${b}.mp3`])
         item.audioParts.forEach((src) => assets.add(src))
       }
     }
@@ -153,7 +153,7 @@ try {
   await test('free edits recompute answers and audio, while invalid tasks report an error instead of guessing', () => {
     const item = structuredClone(samples[0].get(2)[0]); item.answer = '999'; item.cscTask = { kind: 'calculation-audio', a: 21, b: 7, operation: '−' }
     const fixed = recalculateCsc(item, 'tcm-csc-ex02')
-    assert.equal(fixed.answer, '14'); assert.ok(fixed.audioParts.includes('/lib/audio/nombre/moins.mp3'))
+    assert.equal(fixed.answer, '14'); assert.ok(fixed.audioParts.includes(CSC_MINUS_AUDIO))
     const bad = recalculateCsc({ ...item, cscTask: { ...item.cscTask, b: 50 } }, 'tcm-csc-ex02')
     assert.ok(bad.libreError); assert.equal(bad.answer, '')
     const story = recalculateCsc({ layout: 'algebra', answer: 'stale', cscTask: { kind: 'problem', templateId: 'perles-patricia', a: 98, b: 54 } }, 'tcm-csc-ex24')

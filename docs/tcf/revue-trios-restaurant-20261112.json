@@ -1,0 +1,73 @@
+{
+  "date": "2026-11-12",
+  "trios": [
+    {
+      "key": "tcf-ss-a1-s29-co-1#5",
+      "source_sha256": "42d6ac6fe3e3a530478155d6bfdccdfacddd01a699b63b2b5308e682de42006c",
+      "semantic_sha256": "90abbbaf6253a857de8166f89e419886f9ca511d4c4c70e154f250e27ea92fdc",
+      "source": "- Bonjour, c'est pour déjeuner ?\n- Oui, vous avez une table pour deux ?\n- Ici.\nVoici le menu du jour.\n- Tu prends du poisson ou de la viande ?\n- Mais, je suis végétarien !\n- C'est vrai !\nTu ne manges pas de viande, pas de poisson.\nUne salade ?\n- D'accord.\n- Et tu bois quoi ?\n- Pas d'alcool, je bois de l'eau.\n- Je peux prendre votre commande ?\n- Alors…\nune salade chinoise, un steak-frites et deux tartes aux fraises.\n- Qu'est-ce que vous buvez ?\n- Une carafe d'eau s'il vous plaît.\n- Tout va bien ?\n- Oui, c'est excellent !\n- L'addition s'il vous plaît !\n- On laisse un pourboire ?\n- Oui, bien sûr !",
+      "question": {
+        "enonce": "Quels desserts les clients commandent-ils ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Deux tartes aux fraises",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Deux glaces au chocolat",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Deux salades de fruits",
+            "correct": false
+          }
+        ],
+        "written_model": "Deux tartes aux fraises"
+      },
+      "image_ids": [
+        "extension573-deux-tartes-fraises",
+        "extension573-deux-glaces-chocolat",
+        "extension573-deux-salades-fruits"
+      ],
+      "reason": "La commande du restaurant indique explicitement deux tartes aux fraises. Les glaces au chocolat et les salades de fruits sont deux autres desserts de restaurant non commandés dans la transcription. La salade chinoise entendue est un plat salé, distinct du dessert salade de fruits. Chaque choix conserve exactement deux portions.",
+      "visual_review": "Trois originaux vus séparément : deux tartelettes aux fraises sur deux assiettes ; deux coupes à pied avec glace brune au chocolat ; deux bols de fruits coupés. Six récipients entiers, chaque image avec exactement deux desserts, fond crème, peinture douce et paysage 4:3."
+    },
+    {
+      "key": "tcf-ss-a1-s29-co-1#6",
+      "source_sha256": "42d6ac6fe3e3a530478155d6bfdccdfacddd01a699b63b2b5308e682de42006c",
+      "semantic_sha256": "0e3ed4bb11b42581bd843c61e069372b049a1f1cff699d30a5ac8df3362376c3",
+      "source": "- Bonjour, c'est pour déjeuner ?\n- Oui, vous avez une table pour deux ?\n- Ici.\nVoici le menu du jour.\n- Tu prends du poisson ou de la viande ?\n- Mais, je suis végétarien !\n- C'est vrai !\nTu ne manges pas de viande, pas de poisson.\nUne salade ?\n- D'accord.\n- Et tu bois quoi ?\n- Pas d'alcool, je bois de l'eau.\n- Je peux prendre votre commande ?\n- Alors…\nune salade chinoise, un steak-frites et deux tartes aux fraises.\n- Qu'est-ce que vous buvez ?\n- Une carafe d'eau s'il vous plaît.\n- Tout va bien ?\n- Oui, c'est excellent !\n- L'addition s'il vous plaît !\n- On laisse un pourboire ?\n- Oui, bien sûr !",
+      "question": {
+        "enonce": "Quelle boisson est commandée pour la table ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Une carafe d’eau",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Une bouteille de vin",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Deux jus d’orange",
+            "correct": false
+          }
+        ],
+        "written_model": "Une carafe d’eau"
+      },
+      "image_ids": [
+        "co306-carafe-eau-dessine",
+        "co834-bouteille-vin-dessinee",
+        "extension573-deux-jus-orange"
+      ],
+      "reason": "La commande finale dit explicitement une carafe d’eau. Le vin n’est pas commandé et le personnage exclut l’alcool ; les deux jus d’orange ne sont pas mentionnés. Trois réponses cohérentes comme boissons de restaurant, quantités et libellés conservés.",
+      "visual_review": "Trois originaux vus séparément : une carafe transparente contenant de l’eau, une bouteille de verre vert avec vin rouge et bouchon sans étiquette, exactement deux verres de jus d’orange. Objets entiers, sans texte ni chiffre, fond crème et peinture douce, paysage 4:3. Carafe et bouteille réutilisées."
+    }
+  ]
+}

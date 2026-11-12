@@ -3371,12 +3371,16 @@
     {
       "id": "extension573-residence-universitaire",
       "label": "Une résidence universitaire",
-      "prompt": "Remplacer intégralement les boissons de la référence par le sujet décrit ; ne garder que sa technique de peinture semi-réaliste douce, contours fins discrets et couleurs naturelles. FORMAT PAYSAGE EXACTEMENT 4:3 ; sujets entiers avec marges. Une composition cohérente, pas de collage ni panneaux. Aucun logo, signature, prix, montant, nombre, date, jour ou mois. Aucun texte sauf les rares titres explicitement demandés. Scène et décor entièrement peints avec lumière naturelle douce. Sujet : Extérieur d’une résidence universitaire moderne avec plusieurs fenêtres de chambres, étudiants adultes entrant avec sacs et livres, titre RÉSIDENCE UNIVERSITAIRE.",
+      "prompt": "Remplacer la maison de la référence par UNE résidence universitaire contemporaine, immeuble collectif de taille modeste à plusieurs étages, façade crème et bois clair, nombreuses fenêtres de chambres et entrée commune accessible avec une courte rampe. Vue d'ensemble extérieure en trois quarts, bâtiment et entrée entièrement visibles, chemin piéton sobre, deux petits arbres et peu d'objets. Une enseigne au-dessus de la porte porte seulement « RÉSIDENCE UNIVERSITAIRE », titre lisible et correctement accentué. Devant l'entrée, deux adultes étudiants distincts échangent calmement : une jeune femme à peau noire, cheveux crépus courts, veste vert sauge et livre contre elle ; un jeune homme à peau claire, cheveux roux courts et barbe légère, pull bleu, en fauteuil roulant manuel, sac à dos accroché au dossier. Postures naturelles, mains correctes, aucun geste exagéré. Conserver la peinture semi-réaliste douce de la référence, contours fins, proportions humaines et architecturales crédibles, couleurs naturelles et lumière douce. Une seule scène continue, FORMAT PAYSAGE EXACTEMENT 4:3, sans collage, panneaux multiples ou bordure. Aucun autre texte, nom, logo, drapeau, prix, montant, chiffre, numéro, date, jour ou mois.",
       "reference_images": [
-        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co306-maison-dessine.webp"
       ],
       "kind": "scene",
-      "status": "queued_after_quota_reset"
+      "status": "visually_reviewed",
+      "source": "/lib/images/tcf/qcm-audit/extension573-residence-universitaire.png",
+      "sha256": "b0dce3b549b6bb531ec30c239649697c10e57a7bc54da4594962b5e38b9ff017",
+      "review_note": "Immeuble collectif avec chambres, entrée commune, enseigne RÉSIDENCE UNIVERSITAIRE et rampe accessible. Deux étudiants distincts : jeune femme noire aux cheveux courts et jeune homme roux en fauteuil roulant, postures et mains plausibles. Peinture douce, proportions naturelles, scène entière en paysage exact 4:3, aucun montant ni date.",
+      "generation_stage": "extension-573-20261107"
     },
     {
       "id": "extension573-accueil-musee",
@@ -3576,32 +3580,44 @@
     {
       "id": "extension573-deux-glaces-chocolat",
       "label": "Deux glaces au chocolat",
-      "prompt": "Remplacer intégralement les boissons de la référence par le sujet décrit ; ne garder que sa technique de peinture semi-réaliste douce, contours fins discrets et couleurs naturelles. FORMAT PAYSAGE EXACTEMENT 4:3 ; sujets entiers avec marges. Une composition cohérente, pas de collage ni panneaux. Aucun logo, signature, prix, montant, nombre, date, jour ou mois. Aucun texte sauf les rares titres explicitement demandés. Fond crème uni opaque avec ombre douce, sujet isolé. Sujet : Exactement deux coupes séparées contenant chacune une portion de glace au chocolat brun, aucune vanille ni fruit.",
+      "prompt": "Remplacer entièrement les deux tartelettes de la référence par exactement DEUX desserts individuels de glace au CHOCOLAT, chacun dans sa propre coupe à glace en verre transparent avec un pied court. Deux coupes entières, distinctes et séparées, côte à côte, chacune contenant deux boules brun chocolat sans chantilly. Le verre et l'aspect crémeux froid doivent évoquer deux portions de glace servies au restaurant, pas une boisson ni une mousse. Aucun autre parfum, fruit, gâteau, biscuit, couvert, personne ou inscription. Garder uniquement la peinture semi-réaliste douce de la référence : contours fins, volumes naturels, couleurs sobres, fond crème opaque et ombres légères. FORMAT PAYSAGE EXACTEMENT 4:3. Composition centrée, tous les objets entiers avec marges généreuses. Aucun texte, chiffre, prix, montant, date, jour, mois ou logo.",
       "reference_images": [
-        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/extension573-deux-tartes-fraises.png"
       ],
       "kind": "object",
-      "status": "queued_after_quota_reset"
+      "status": "visually_reviewed",
+      "source": "/lib/images/tcf/qcm-audit/extension573-deux-glaces-chocolat.png",
+      "sha256": "01ff02a221bad0e6a31ece3f821c3dbf53b224b84b65681606b4bc6905a04856",
+      "review_note": "Exactement deux coupes distinctes de glace au chocolat, chacune avec des boules brunes à texture crémeuse, pieds et bords entiers. Contrôle visuel individuel : deux portions, aucun autre dessert, peinture douce, fond crème, paysage exact 4:3, sans texte ni chiffre.",
+      "generation_stage": "extension-573-20261107"
     },
     {
       "id": "extension573-deux-salades-fruits",
       "label": "Deux salades de fruits",
-      "prompt": "Remplacer intégralement les boissons de la référence par le sujet décrit ; ne garder que sa technique de peinture semi-réaliste douce, contours fins discrets et couleurs naturelles. FORMAT PAYSAGE EXACTEMENT 4:3 ; sujets entiers avec marges. Une composition cohérente, pas de collage ni panneaux. Aucun logo, signature, prix, montant, nombre, date, jour ou mois. Aucun texte sauf les rares titres explicitement demandés. Fond crème uni opaque avec ombre douce, sujet isolé. Sujet : Exactement deux coupes séparées de salade de fruits variés coupés, entièrement visibles, aucun gâteau ou glace.",
+      "prompt": "Remplacer entièrement les deux tartelettes de la référence par exactement DEUX salades de fruits individuelles, chacune dans son propre petit bol de verre transparent. Deux bols entiers, distincts et séparés côte à côte, contenant des morceaux de fruits coupés reconnaissables : kiwi vert, fraise rouge, banane pâle, orange et petits morceaux de pomme. Fruits mélangés comme un dessert servi au restaurant, aucune feuille de salade verte, aucune boule de glace, chantilly, gâteau ou fruit posé à l'extérieur. Aucun couvert, verre à boire, personne ni inscription. Garder la peinture semi-réaliste douce de la référence, contours fins, modelé naturel, couleurs sobres, fond crème opaque avec ombres légères. FORMAT PAYSAGE EXACTEMENT 4:3, composition centrée, tous les bords des deux bols entièrement visibles avec marges généreuses. Aucun texte, chiffre, prix, montant, date, jour, mois ou logo.",
       "reference_images": [
-        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/extension573-deux-tartes-fraises.png"
       ],
       "kind": "object",
-      "status": "queued_after_quota_reset"
+      "status": "visually_reviewed",
+      "source": "/lib/images/tcf/qcm-audit/extension573-deux-salades-fruits.png",
+      "sha256": "630af7ddf82193832b1d99d942281c1a533bc161b13d3a9ec4457331a176f344",
+      "review_note": "Exactement deux bols transparents distincts de fruits coupés, avec kiwi, fraise, banane, orange et pomme, sans salade verte. Contrôle visuel individuel : deux portions, bords entiers, peinture douce, fond crème, paysage exact 4:3, sans texte ni chiffre.",
+      "generation_stage": "extension-573-20261107"
     },
     {
       "id": "extension573-deux-jus-orange",
       "label": "Deux jus d’orange",
-      "prompt": "Remplacer intégralement les boissons de la référence par le sujet décrit ; ne garder que sa technique de peinture semi-réaliste douce, contours fins discrets et couleurs naturelles. FORMAT PAYSAGE EXACTEMENT 4:3 ; sujets entiers avec marges. Une composition cohérente, pas de collage ni panneaux. Aucun logo, signature, prix, montant, nombre, date, jour ou mois. Aucun texte sauf les rares titres explicitement demandés. Fond crème uni opaque avec ombre douce, sujet isolé. Sujet : Exactement deux verres entiers de jus d’orange côte à côte, aucun fruit ou autre boisson.",
+      "prompt": "Remplacer entièrement les boissons de la référence par exactement DEUX verres droits transparents, identiques, chacun rempli de jus d’orange orange vif légèrement opaque. Deux verres entiers côte à côte avec un espace net, même taille et niveau de jus, formes et reflets naturels. Aucun autre récipient, carafe, bouteille, tasse, fruit, paille, glaçon, alcool ou personne. Les deux bases et les deux bords supérieurs sont entièrement visibles avec marges généreuses. Garder la peinture semi-réaliste douce de la référence, contours fins, volumes naturels, couleurs sobres, fond crème opaque avec ombres légères. FORMAT PAYSAGE EXACTEMENT 4:3. Aucun texte, chiffre, logo, prix, montant, date, jour ou mois.",
       "reference_images": [
         "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
       ],
       "kind": "object",
-      "status": "queued_after_quota_reset"
+      "status": "visually_reviewed",
+      "source": "/lib/images/tcf/qcm-audit/extension573-deux-jus-orange.png",
+      "sha256": "09be3d3dca20c4c919d4db14175c5e7c488daaf59f31ae3fa68b2444d98eb025",
+      "review_note": "Exactement deux verres droits transparents, chacun rempli de jus orange, verres entiers et séparés, sans autre récipient. Contrôle visuel individuel : deux boissons, peinture douce, fond crème, paysage exact 4:3, sans texte ni chiffre.",
+      "generation_stage": "extension-573-20261107"
     },
     {
       "id": "extension573-pantalon-souple",
@@ -3634,12 +3650,16 @@
     {
       "id": "extension573-carte-lyceen",
       "label": "La carte de lycéen",
-      "prompt": "Remplacer intégralement les boissons de la référence par le sujet décrit ; ne garder que sa technique de peinture semi-réaliste douce, contours fins discrets et couleurs naturelles. FORMAT PAYSAGE EXACTEMENT 4:3 ; sujets entiers avec marges. Une composition cohérente, pas de collage ni panneaux. Aucun logo, signature, prix, montant, nombre, date, jour ou mois. Aucun texte sauf les rares titres explicitement demandés. Fond crème uni opaque avec ombre douce, sujet isolé. Sujet : Une vraie carte physique scolaire titre CARTE DE LYCÉEN avec dessin de lycée et silhouette photo neutre, cases vides, aucun nom ou chiffre.",
+      "prompt": "Remplacer entièrement les deux documents de la référence par UNE SEULE carte de lycéen horizontale, claire et reconnaissable, posée au centre du fond crème. Carte bleu-vert douce, portant uniquement le titre lisible « CARTE DE LYCÉEN », un petit pictogramme de livre ouvert et le portrait illustré fictif d'une jeune personne adolescente à peau mate claire, cheveux noirs lisses courts, lunettes fines et haut prune. Portrait distinct du monsieur de la référence, proportions humaines naturelles et expression neutre. Des champs neutres en lignes grises sans aucune donnée personnelle. Pas de convocation, permis de conduire, passeport, carte bancaire, document séparé ou autre objet. Carte entièrement visible avec marges généreuses. Conserver la peinture semi-réaliste douce de la référence : contours fins, modelé naturel, couleurs sobres, fond crème opaque et ombre légère. FORMAT PAYSAGE EXACTEMENT 4:3. Aucun numéro, chiffre, prix, montant, date, jour, mois, nom, adresse, logo ni texte autre que le titre demandé.",
       "reference_images": [
-        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/extension573-identite-convocation.png"
       ],
       "kind": "object",
-      "status": "queued_after_quota_reset"
+      "status": "visually_reviewed",
+      "source": "/lib/images/tcf/qcm-audit/extension573-carte-lyceen.png",
+      "sha256": "7858b044b97d98579f604f025d14e7edd3e63873eaaa5b0ce690a7724fdffcc3",
+      "review_note": "Une seule carte bleu-vert titrée CARTE DE LYCÉEN, livre ouvert et portrait fictif d’une jeune personne à peau mate, cheveux noirs courts et lunettes, distincte du portrait de la pièce d’identité. Cadre entier, aucune donnée personnelle ni date, fond crème et peinture douce, paysage exact 4:3.",
+      "generation_stage": "extension-573-20261107"
     },
     {
       "id": "extension573-couturiere",
@@ -3744,21 +3764,49 @@
         "/lib/images/tcf/qcm-audit/vocab-velo-isole.webp",
         "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
       ]
+    },
+    {
+      "id": "extension573-bibliotheque-billet",
+      "label": "Une carte de bibliothèque et un billet",
+      "kind": "whole_answer_concept",
+      "prompt": "Remplacer entièrement les documents de la référence par exactement DEUX documents distincts, entièrement visibles et côte à côte sur fond crème. À gauche UNE carte de bibliothèque horizontale, sobre vert sauge, portant seulement le titre lisible « CARTE DE BIBLIOTHÈQUE » et un petit dessin de livres, avec lignes grises neutres pour les champs. À droite UN billet d’entrée générique en papier crème et bleu pâle, rectangulaire à petites encoches latérales et bordure perforée, portant seulement le titre lisible « BILLET » et un petit pictogramme d’étoile, champs neutres sans mots. Deux supports séparés par un espace clair, tailles et perspective plausibles, contour de chaque document entier, marges généreuses. Aucun document d’identité, convocation, diplôme, permis, photographie, argent ni autre objet. Garder uniquement la peinture semi-réaliste douce de la référence : contours fins, volumes naturels, couleurs sobres, fond crème opaque et ombres légères. FORMAT PAYSAGE EXACTEMENT 4:3. Aucun nom personnel, prix, montant, nombre, date, jour, mois, numéro ni logo. Aucun texte autre que les deux titres demandés.",
+      "status": "visually_reviewed",
+      "source": "/lib/images/tcf/qcm-audit/extension573-bibliotheque-billet.png",
+      "sha256": "7d9beb70995d66fd91f9125950771260d6bb6e7ed4af2d143e8ae3d02096779a",
+      "review_note": "Carte verte titrée CARTE DE BIBLIOTHÈQUE avec livres et billet générique bleu et crème à encoches titré BILLET avec étoile. Deux supports distincts et entiers, aucun montant ni date, peinture douce sur fond crème, paysage exact 4:3.",
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/extension573-transport-diplome.webp"
+      ],
+      "generation_stage": "extension-573-20261107"
+    },
+    {
+      "id": "extension573-identite-convocation",
+      "label": "Une pièce d’identité et la convocation",
+      "kind": "whole_answer_concept",
+      "prompt": "Remplacer entièrement les documents de la référence par exactement DEUX documents distincts posés côte à côte sur le même fond crème : à gauche UNE carte d’identité horizontale portant uniquement le titre lisible « CARTE D’IDENTITÉ », un petit portrait illustré fictif d’un homme adulte à peau brune, cheveux courts poivre et sel, barbe courte et lunettes rondes, et des lignes neutres grises sans mots ; à droite UNE feuille de convocation verticale entière portant uniquement le titre lisible « CONVOCATION » avec des lignes neutres grises. Carte et feuille sont nettement séparées, chaque contour entier visible avec marges généreuses, perspective douce et proportions plausibles. Pas de permis de conduire, diplôme, carte de transport, photographie séparée, enveloppe ou objet supplémentaire. Garder la peinture semi-réaliste douce de la référence, contours fins, volumes naturels, couleurs sobres, fond crème opaque et ombres légères. FORMAT PAYSAGE EXACTEMENT 4:3. Aucun nom personnel, adresse, montant, prix, nombre, date, jour, mois, numéro ni logo. Texte autorisé uniquement les deux titres demandés.",
+      "status": "visually_reviewed",
+      "source": "/lib/images/tcf/qcm-audit/extension573-identite-convocation.png",
+      "sha256": "fea89e2552ad5e64c02407b4ec634391423b10fca9a50a96281a1a5980f3d0ff",
+      "review_note": "Deux documents distincts : carte d’identité horizontale bleue avec portrait illustré fictif d’un homme à peau brune, cheveux et barbe poivre et sel, lunettes ; feuille verticale titrée CONVOCATION. Contours entiers, titres corrects, champs gris sans données personnelles ni dates, peinture douce sur fond crème, paysage exact 4:3.",
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/extension573-transport-diplome.webp"
+      ],
+      "generation_stage": "extension-573-20261107"
     }
   ],
   "status": "in_progress",
   "progress": {
-    "activated_trios": 153,
+    "activated_trios": 159,
     "retained_text": 1,
-    "pending_trios": 419,
+    "pending_trios": 413,
     "pending_categories": {
       "artwork_needed_contextual_locations": 279,
-      "artwork_needed_whole_answer_concepts": 110,
-      "artwork_needed_distinct_document_types": 30
+      "artwork_needed_whole_answer_concepts": 107,
+      "artwork_needed_distinct_document_types": 27
     },
     "generation_status": {
-      "visually_reviewed": 143,
-      "queued_after_quota_reset": 21
+      "visually_reviewed": 150,
+      "queued_after_quota_reset": 16
     }
   },
   "generation_history": [

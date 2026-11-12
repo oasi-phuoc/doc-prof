@@ -29683,6 +29683,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "La carte de lycéen"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/extension573-carte-lyceen.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/co306-passeport-dessine.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/audit-context-permis-conduire.webp"
+              }
+            ]
           }
         }
       }
@@ -57771,6 +57789,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Une maison"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/co306-studio-dessine.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/extension573-residence-universitaire.png"
+              }
+            ]
           }
         }
       },

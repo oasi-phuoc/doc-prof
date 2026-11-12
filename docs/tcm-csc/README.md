@@ -33,7 +33,7 @@ Le mode libre permet également de choisir explicitement chacune des deux suites
 
 Dans l’aperçu du corrigé, les exercices 1, 2 et 3 affichent chacun **cinq lecteurs audio**. Chaque lecteur du 2 lit un calcul complet (« deux plus cinq », « dix moins trois »), sans son résultat. Le 3 propose cinq nombres, sans lecteur supplémentaire pour les silences. Les exercices oraux CFR utilisent également un lecteur par consigne complète et les lettres A à E ; leurs nombres, multiplications, consignes imprimées et corrigés numériques sont conservés. Les grilles d’opérations CSC et CFR ont des bordures entières de 1 px, sans marges négatives ; les retenues sont assombries à l’impression.
 
-Le [prompt des dix enregistrements DeniseNeural −25 %](prompt-audios-denise.md) et le montage prévu à deux écoutes sont prêts. **La nouvelle narration reste à intégrer après réception de ces enregistrements** ; l’accès Microsoft est bloqué dans cet environnement. Les « plus / moins » existants restent ceux décrits dans `operator-audio.json`. Aucun remplacement par une autre voix n’est annoncé.
+Le [prompt des neuf prises CSC DeniseNeural −25 % et du complément CFR](prompt-audios-denise.md) et le montage prévu à deux écoutes sont prêts. **La nouvelle narration reste à intégrer après réception de ces enregistrements** ; l’accès Microsoft est bloqué dans cet environnement. Les « plus / moins » existants restent ceux décrits dans `operator-audio.json`. Aucun remplacement par une autre voix n’est annoncé.
 
 L’icône audio télécharge `TCM-CSC_AUDIOS.zip`, contenant trois WAV séparés : nombres de l’exercice 1, calculs de l’exercice 2 et nombres à entourer de l’exercice 3. Chaque piste comprend cinq consignes séparées par six secondes. Les clips sont décodés avant composition ; les MP3 ne sont pas simplement collés. Un échec de chargement est signalé et permet de réessayer. Les mots d’opérateur et leur provenance sont décrits dans [operator-audio.json](operator-audio.json).
 
@@ -46,6 +46,25 @@ Les dictées de nombres et calculs oraux (exercices 1 et 2), les décompositions
 Une incohérence entre énoncé, nombres et corrigé, ou une ancienne égalité enregistrée admettant plusieurs signes, est signalée pendant la préparation. Les suites (4–5), le rangement (6) et les comparaisons (7) réutilisent aussi leurs adaptateurs existants. L’exercice 17 propose maintenant une question par forme, avec les quatre noms comme choix ; voir [la reconnaissance des formes](../interactive/adr-0032-reconnaissance-des-formes.md). Les autres exercices CSC demandent encore une adaptation au jeu. Voir les [décompositions et noms des signes](../interactive/adr-0031-decompositions-et-noms-des-signes.md). Voir [le contrat et les vérifications](../interactive/adr-0023-problemes-csc.md).
 
 ## Vérification
+
+### Prises Denise demandées — préparation, génération encore bloquée
+
+Le [prompt des neuf enregistrements](prompt-audios-denise.md) est désormais conservé dans le dépôt. `scripts/generate-tcm-csc-denise.py` prépare deux consignes, les cinq lettres françaises et les mots « plus » (/plys/) et « moins », avec **fr-FR-DeniseNeural, −25 %, volume normal, mono 24 kHz, MP3 96 kb/s**, puis un ZIP de neuf fichiers. Il ne remplace jamais la voix demandée par une autre.
+
+```sh
+python -m pip install 'edge-tts>=7.2,<8'
+python scripts/generate-tcm-csc-denise.py --dry-run
+# Après autorisation du service Microsoft dans les paramètres réseau :
+python scripts/generate-tcm-csc-denise.py --output /tmp/tcm-csc-denise --install
+```
+
+La génération et l’installation sont séparées par `--install`. Les neuf prises doivent toutes être décodables, audibles et au bon format avant activation. Elles utilisent un dossier dédié ; les anciens nombres et opérateurs partagés restent disponibles. Le manifeste `src/tcm-csc/denise-recordings.json` reste actuellement à **`not_generated`** : les téléchargements existants continuent donc de fonctionner selon leur montage historique.
+
+Le nouveau montage est préparé : consigne une fois, cinq secondes de silence réel, bip TCF existant, questions A à E, sept secondes entre les questions, sept secondes et bip avant une deuxième écoute strictement identique. Il réutilise les nombres variables et n’ajoute jamais le résultat d’un calcul. Les marges silencieuses des clips sont retirées avant insertion des pauses ; le résultat est un WAV mono 24 kHz. Ce montage demande cinq questions et ne sera activé qu’après disponibilité des neuf fichiers validés.
+
+**Blocage confirmé :** le proxy sortant refuse `speech.platform.bing.com` avec un CONNECT 403. Aucun des neuf MP3 ni leur ZIP n’a été généré dans cette reprise. Les [contrôles navigateur du montage](denise-montage-test-20261112.json) utilisent uniquement des signaux synthétiques de test ; ils ne constituent ni des prises Denise ni une validation humaine de prononciation. Le contrôle vérifie les trois exercices, une pause exacte de cinq secondes, neuf pauses exactes de sept secondes, deux bips et dix lettres par piste, malgré les marges silencieuses ajoutées aux signaux d’entrée.
+
+Tests : `node --test tests/interactive/csc-denise-audio.test.mjs tests/interactive/tcm-csc.test.mjs` et, avec Vite sur le port 5189, `node tests/interactive/csc-denise-audio-browser.mjs`.
 
 Le [complément audio et impression](audio-grilles-20261112.json) consigne les cinq lecteurs et les grilles réduites, avec des [exemples CFR imprimés](tcm-cfr-grilles-exemple.pdf). Le [relevé initial du 12 novembre](revision-20261112.json) consigne les nouvelles consignes, les dimensions, les 220 tests et les vérifications d’impression et d’audio.
 

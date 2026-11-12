@@ -8,6 +8,7 @@ import { tryGenerateReperage } from '@/math/coord-reperage'
 import { tryGenerateLogiqueBlock } from '@/logique/generate'
 import { CSC_DEFAULT_PROBLEMS, rollCscProblem } from './problems'
 import { tryGenerateTcmCfrItems } from '@/tcm-cfr/items'
+import { cscDeniseOperator } from './denise-recordings'
 
 export const CSC_FIGURES: readonly { value: Figure; label: string }[] = [
   { value: 'square', label: 'carré' }, { value: 'rectangle', label: 'rectangle' },
@@ -16,8 +17,8 @@ export const CSC_FIGURES: readonly { value: Figure; label: string }[] = [
   { value: 'trapezoid', label: 'trapèze' }, { value: 'pentagon', label: 'pentagone' },
   { value: 'oval', label: 'ovale' },
 ]
-export const CSC_PLUS_AUDIO = '/lib/audio/nombre/plus.mp3'
-export const CSC_MINUS_AUDIO = '/lib/audio/nombre/moins.mp3'
+export const CSC_PLUS_AUDIO = cscDeniseOperator('plus')
+export const CSC_MINUS_AUDIO = cscDeniseOperator('moins')
 export const CSC_SIGN_NAMES = { '+': 'plus', '−': 'moins', '=': 'égal' } as const
 export const cscNumberParts = (value: number) => value === 0 ? ['/lib/audio/vocabulaire/objets/zéro.mp3'] : numberAudioParts(value)
 export const cscCalculationParts = (a: number, b: number, operation: '+' | '−') => [...numberAudioParts(a), operation === '+' ? CSC_PLUS_AUDIO : CSC_MINUS_AUDIO, ...numberAudioParts(b)]

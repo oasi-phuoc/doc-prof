@@ -2043,14 +2043,14 @@
         "Un permis de conduire et une photo",
         "Une carte de transport et un diplôme"
       ],
-      "status": "artwork_needed_distinct_document_types",
+      "status": "active_reviewed_trio",
       "source_sha256": "7f92d50fea5f5a29de4651ee7cd1d9344703cf32bf04db5ef06c8aba37b503de",
       "audio": null,
       "review_index": 44,
       "semantic_sha256": "ac6f0b4a78eae3098498bbdae9cc700d268545d64c382f76f021081ba7955aea",
       "reviewed": true,
-      "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Préparer ou retrouver les types exacts de documents et leurs éventuelles combinaisons ; aucun montant, date ou renseignement personnel inventé. Ne pas confondre certificat, ordonnance, diplôme ou carte.",
+      "review_method": "Source, énoncé, trois réponses et originaux relus individuellement le 12 novembre 2026 ; aucune nouvelle écoute humaine.",
+      "reason": "Le centre d’examen du permis demande explicitement la pièce d’identité et cette convocation. Le permis de conduire est le titre visé par l’examen, pas une pièce à apporter avec une photo. Carte de transport et diplôme sont deux autres documents non demandés. Libellés, bonne réponse et contexte conservés. Originaux vus séparément : carte d’identité avec portrait fictif et feuille CONVOCATION ; permis rose et photo séparée ; carte de transport avec bus/train et diplôme encadré. Chaque réponse contient exactement ses deux documents, sans date ni montant. Personnages distincts dans les portraits, fond crème, peinture douce et paysage 4:3. Deux paires réutilisées.",
       "brief": {
         "context_question": "Quels documents faut-il apporter ?",
         "choices_to_illustrate": [
@@ -2070,7 +2070,18 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/extension573-identite-convocation.png",
+        "/lib/images/tcf/qcm-audit/extension573-permis-photo.webp",
+        "/lib/images/tcf/qcm-audit/extension573-transport-diplome.webp"
+      ],
+      "selected_sha256": [
+        "fea89e2552ad5e64c02407b4ec634391423b10fca9a50a96281a1a5980f3d0ff",
+        "6fd70f58b2ec62c76fb390dbbae8f28fdb6cfe85bc49fd2caa885dd05d01e54a",
+        "68081c1e452d2fc0713b55e88f639f5ff1ec55def38ba2a98761f93595b2e971"
+      ],
+      "incremental_review": "docs/tcf/revue-trios-examens-20261112.json"
     },
     {
       "key": "delf-a1v-ce-020#7",
@@ -3248,14 +3259,14 @@
         "Un diplôme et une photo",
         "Une carte de bibliothèque et un billet"
       ],
-      "status": "artwork_needed_distinct_document_types",
+      "status": "active_reviewed_trio",
       "source_sha256": "6a0ab498a7914460d4aa5b95696fe1fb10da7d2785e1f5ef749882e88c64c8b3",
       "audio": null,
       "review_index": 71,
       "semantic_sha256": "c9f33dc546063d99c335996c79face809cc00d97f1d336b35c2c69e2edd99970",
       "reviewed": true,
-      "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Préparer ou retrouver les types exacts de documents et leurs éventuelles combinaisons ; aucun montant, date ou renseignement personnel inventé. Ne pas confondre certificat, ordonnance, diplôme ou carte.",
+      "review_method": "Source, énoncé, trois réponses et originaux relus individuellement le 12 novembre 2026 ; aucune nouvelle écoute humaine.",
+      "reason": "Le message du professeur demande explicitement une pièce d’identité et la convocation pour le DELF scolaire. Diplôme avec photo et carte de bibliothèque avec billet sont des paires de documents cohérentes mais non demandées. La même image de la bonne paire convient au second support sans inventer de date ou de lieu. Originaux vus séparément : carte d’identité avec portrait fictif et feuille CONVOCATION ; diplôme encadré et photo séparée ; carte de bibliothèque verte avec livres et billet générique distinct. Deux documents entiers par réponse, aucun chiffre, date ou montant, fond crème, peinture douce et paysage 4:3. Bonne paire commune et diplôme/photo réutilisés.",
       "brief": {
         "context_question": "Quels documents faut-il apporter ?",
         "choices_to_illustrate": [
@@ -3275,7 +3286,18 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/extension573-identite-convocation.png",
+        "/lib/images/tcf/qcm-audit/extension573-diplome-photo.webp",
+        "/lib/images/tcf/qcm-audit/extension573-bibliotheque-billet.png"
+      ],
+      "selected_sha256": [
+        "fea89e2552ad5e64c02407b4ec634391423b10fca9a50a96281a1a5980f3d0ff",
+        "7f58958a986247af7f93ac0be81b346affafb97bdfe1d412e9ceafefdd5b4c9b",
+        "7d9beb70995d66fd91f9125950771260d6bb6e7ed4af2d143e8ae3d02096779a"
+      ],
+      "incremental_review": "docs/tcf/revue-trios-examens-20261112.json"
     },
     {
       "key": "delf-a1s-ce-002#1",
@@ -8376,14 +8398,14 @@
         "Deux glaces au chocolat",
         "Deux salades de fruits"
       ],
-      "status": "artwork_needed_whole_answer_concepts",
+      "status": "active_reviewed_trio",
       "source_sha256": "42d6ac6fe3e3a530478155d6bfdccdfacddd01a699b63b2b5308e682de42006c",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/bonjour-c-est-dejeuner-1.mp3",
       "review_index": 197,
       "semantic_sha256": "90abbbaf6253a857de8166f89e419886f9ca511d4c4c70e154f250e27ea92fdc",
       "reviewed": true,
-      "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "review_method": "Source, énoncé, trois réponses et originaux relus individuellement le 12 novembre 2026 ; aucune nouvelle écoute humaine.",
+      "reason": "La commande du restaurant indique explicitement deux tartes aux fraises. Les glaces au chocolat et les salades de fruits sont deux autres desserts de restaurant non commandés dans la transcription. La salade chinoise entendue est un plat salé, distinct du dessert salade de fruits. Chaque choix conserve exactement deux portions. Trois originaux vus séparément : deux tartelettes aux fraises sur deux assiettes ; deux coupes à pied avec glace brune au chocolat ; deux bols de fruits coupés. Six récipients entiers, chaque image avec exactement deux desserts, fond crème, peinture douce et paysage 4:3.",
       "brief": {
         "context_question": "Quels desserts les clients commandent-ils ?",
         "choices_to_illustrate": [
@@ -8403,7 +8425,18 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/extension573-deux-tartes-fraises.png",
+        "/lib/images/tcf/qcm-audit/extension573-deux-glaces-chocolat.png",
+        "/lib/images/tcf/qcm-audit/extension573-deux-salades-fruits.png"
+      ],
+      "selected_sha256": [
+        "72a5da8b28b4cac5e53e5a4d24dd2e99981cdc26895260152e0fd20ac65a1fcb",
+        "01ff02a221bad0e6a31ece3f821c3dbf53b224b84b65681606b4bc6905a04856",
+        "630af7ddf82193832b1d99d942281c1a533bc161b13d3a9ec4457331a176f344"
+      ],
+      "incremental_review": "docs/tcf/revue-trios-restaurant-20261112.json"
     },
     {
       "key": "tcf-ss-a1-s29-co-1#6",
@@ -8416,14 +8449,14 @@
         "Une bouteille de vin",
         "Deux jus d’orange"
       ],
-      "status": "artwork_needed_whole_answer_concepts",
+      "status": "active_reviewed_trio",
       "source_sha256": "42d6ac6fe3e3a530478155d6bfdccdfacddd01a699b63b2b5308e682de42006c",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/bonjour-c-est-dejeuner-1.mp3",
       "review_index": 198,
       "semantic_sha256": "0e3ed4bb11b42581bd843c61e069372b049a1f1cff699d30a5ac8df3362376c3",
       "reviewed": true,
-      "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "review_method": "Source, énoncé, trois réponses et originaux relus individuellement le 12 novembre 2026 ; aucune nouvelle écoute humaine.",
+      "reason": "La commande finale dit explicitement une carafe d’eau. Le vin n’est pas commandé et le personnage exclut l’alcool ; les deux jus d’orange ne sont pas mentionnés. Trois réponses cohérentes comme boissons de restaurant, quantités et libellés conservés. Trois originaux vus séparément : une carafe transparente contenant de l’eau, une bouteille de verre vert avec vin rouge et bouchon sans étiquette, exactement deux verres de jus d’orange. Objets entiers, sans texte ni chiffre, fond crème et peinture douce, paysage 4:3. Carafe et bouteille réutilisées.",
       "brief": {
         "context_question": "Quelle boisson est commandée pour la table ?",
         "choices_to_illustrate": [
@@ -8443,7 +8476,18 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/co306-carafe-eau-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-bouteille-vin-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/extension573-deux-jus-orange.png"
+      ],
+      "selected_sha256": [
+        "1d65694297f8518381996db1a894bf046f096f88880e1c1114aa91ea94c24959",
+        "ea110be4a173f1f67f5b0e68e20e7f01142d9153f50f88eac66516c688313b09",
+        "09be3d3dca20c4c919d4db14175c5e7c488daaf59f31ae3fa68b2444d98eb025"
+      ],
+      "incremental_review": "docs/tcf/revue-trios-restaurant-20261112.json"
     },
     {
       "key": "tcf-ss-a1-s29-co-3#4",
@@ -25782,14 +25826,14 @@
         "Le passeport",
         "Le permis de conduire"
       ],
-      "status": "artwork_needed_distinct_document_types",
+      "status": "active_reviewed_trio",
       "source_sha256": "419aa7652ea5d9aa0c02a2fafca8924d2701440a40eee2717fcd6421abda7c32",
       "audio": "/lib/audio/tcf/co/transports/transports-3.mp3",
       "review_index": 641,
       "semantic_sha256": "5aba4da06e76558e2328ee0e3c146efeb28a77658f8cbae79038e1bba549e214",
       "reviewed": true,
-      "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Préparer ou retrouver les types exacts de documents et leurs éventuelles combinaisons ; aucun montant, date ou renseignement personnel inventé. Ne pas confondre certificat, ordonnance, diplôme ou carte.",
+      "review_method": "Source, énoncé, trois réponses et originaux relus individuellement le 12 novembre 2026 ; aucune nouvelle écoute humaine.",
+      "reason": "Le message de Max précise le tarif réduit du cinéma pour les jeunes et demande explicitement de ne pas oublier sa carte de lycéen. Le passeport et le permis ne sont pas mentionnés : ce sont deux autres documents cohérents mais non demandés pour ce tarif. Aucun prix ni jour n’est ajouté dans les images. Originaux vus individuellement : carte de lycéen bleu-vert avec portrait fictif jeune et livre ; passeport bleu avec globe et titre ; permis rose avec portrait adulte distinct et pictogramme automobile. Trois documents seuls et entiers, texte limité aux titres, fond crème, peinture douce et paysage 4:3. Passeport et permis réutilisés.",
       "brief": {
         "context_question": "Quel document faut-il apporter pour le tarif jeune ?",
         "choices_to_illustrate": [
@@ -25809,7 +25853,18 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/extension573-carte-lyceen.png",
+        "/lib/images/tcf/qcm-audit/co306-passeport-dessine.webp",
+        "/lib/images/tcf/qcm-audit/audit-context-permis-conduire.webp"
+      ],
+      "selected_sha256": [
+        "7858b044b97d98579f604f025d14e7edd3e63873eaaa5b0ce690a7724fdffcc3",
+        "c2f0b65db0e431c49bf0c0c17fe43e7cd5cc3f195e44b7208cff5ed2b5200ac0",
+        "ee11a9c25ce1e01918f1570be499c4f7c1bee66bf30715f8a9dff7c9c416d455"
+      ],
+      "incremental_review": "docs/tcf/revue-trios-a2-etudes-logement-20261112.json"
     },
     {
       "key": "tcf-ssx-a2-annonce-1-2-co-2#1",
@@ -28556,14 +28611,14 @@
         "Un studio",
         "Une résidence universitaire"
       ],
-      "status": "artwork_needed_whole_answer_concepts",
+      "status": "active_reviewed_trio",
       "source_sha256": "0e4f5ad9d6a926f1ef7bd307d099cc97aff4c94fd9b67b5dd00323b3d59fc10f",
       "audio": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_48.mp3",
       "review_index": 719,
       "semantic_sha256": "60924c7b9f583d6d508093c7d1a86c84a0fca8a14897160275a7a5395a62eb5d",
       "reviewed": true,
-      "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "review_method": "Source, énoncé, trois réponses et originaux relus individuellement le 12 novembre 2026 ; aucune nouvelle écoute humaine.",
+      "reason": "Carolina dit explicitement habiter dans une maison. Elle est étudiante, mais elle ne dit pas habiter en résidence universitaire ; le studio est également absent du récit. Les trois choix représentent un type de logement, avec la maison comme seule bonne réponse. Originaux vus individuellement : maison individuelle avec jardin et toit ; studio montrant lit et cuisine dans la même pièce ; immeuble collectif titré résidence universitaire avec entrée commune et deux étudiants, dont un en fauteuil roulant. Les lieux sont reconnaissables et distincts, même peinture douce, paysages 4:3. Maison et studio réutilisés.",
       "brief": {
         "context_question": "Dans quel type de logement habite-t-elle ?",
         "choices_to_illustrate": [
@@ -28583,7 +28638,18 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-studio-dessine.webp",
+        "/lib/images/tcf/qcm-audit/extension573-residence-universitaire.png"
+      ],
+      "selected_sha256": [
+        "0c404fb24adfab9187ed1b424e63e0567f456c98f4fff5447a8d8d418604c8db",
+        "36c913c514d7ced8228c6f392eff56eb4ab69f513d3d838cfcc554a836430066",
+        "b0dce3b549b6bb531ec30c239649697c10e57a7bc54da4594962b5e38b9ff017"
+      ],
+      "incremental_review": "docs/tcf/revue-trios-a2-etudes-logement-20261112.json"
     },
     {
       "key": "tcf-ss-b1-s1-co-1#2",
@@ -30100,12 +30166,12 @@
   "summary": {
     "artwork_needed_contextual_locations": 279,
     "keep_text_named_identity_or_location": 39,
-    "active_reviewed_trio": 231,
-    "artwork_needed_whole_answer_concepts": 111,
+    "active_reviewed_trio": 237,
+    "artwork_needed_whole_answer_concepts": 108,
     "keep_text_calendar_or_temporal_scope": 49,
-    "artwork_needed_distinct_document_types": 30,
     "keep_text_private_home_identity": 3,
     "keep_text_source_referent_unspecified": 3,
+    "artwork_needed_distinct_document_types": 27,
     "keep_text_nonvisual_or_quantified_claim": 9,
     "keep_text_arbitrary_identifier": 8,
     "keep_text_rule_temporal_scope": 1
@@ -30113,7 +30179,7 @@
   "review_pending": 0,
   "initial_review_complete": true,
   "method": "763 énoncés et leurs trois choix relus en sept blocs ; liaison exacte aux sources et à leur revue contextuelle antérieure. 87 fichiers réutilisés et 18 minuteurs inspectés pour les trios prêts. Les briefs restants sont un plan de recherche/réalisation, pas des images générées.",
-  "activated_total": 231,
+  "activated_total": 237,
   "retained_text_total": 112,
-  "artwork_pending_total": 420
+  "artwork_pending_total": 414
 }
