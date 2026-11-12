@@ -7,7 +7,7 @@ import { buildCountIconsItem } from '@/math/count-icons'
 import { tryGenerateReperage } from '@/math/coord-reperage'
 import { tryGenerateLogiqueBlock } from '@/logique/generate'
 import { CSC_DEFAULT_PROBLEMS, rollCscProblem } from './problems'
-import { tryGenerateTcmCfrItems } from '@/tcm-cfr/items'
+import { numberDecomposition } from '@/tcm-cfr/items'
 import { cscDeniseOperator } from './denise-recordings'
 
 export const CSC_FIGURES: readonly { value: Figure; label: string }[] = [
@@ -73,11 +73,11 @@ function columnOperations(rng: Rng, count: number, empty: boolean): MathItem[] {
     let b = int(rng, small ? 1 : lo, small ? 9 : operation === '+' ? hi - a : a)
     if (operation === '−' && b > a) [a, b] = [b, a]
     return withFixedColumnWidth(columnItem(operation, a, b, operation === '+' ? a + b : a - b, empty), 5)
-  })
+  }).sort((a,b)=>a.op===b.op?0:a.op==='+'?-1:1)
 }
 function lengthTable(rng: Rng): MathItem {
   const lengths = shuffle(rng, [int(rng, 25, 40), int(rng, 50, 75), int(rng, 90, 120)])
-  return { layout: 'segment-measure', cscTask: { kind: 'length-table' }, segments: lengths.map((mm) => ({ mm, unit: 'cm', display: String(mm / 10).replace('.', ',') })), answer: `${String.fromCharCode(65 + lengths.indexOf(Math.max(...lengths)))} ; ${String.fromCharCode(65 + lengths.indexOf(Math.min(...lengths)))}` }
+  return { layout: 'segment-measure', cscTask: { kind: 'length-table', colors: shuffle(rng,[0,1,2,3]).slice(0,3) }, segments: lengths.map((mm) => ({ mm, unit: 'cm', display: String(mm / 10).replace('.', ',') })), answer: `${String.fromCharCode(65 + lengths.indexOf(Math.max(...lengths)))} ; ${String.fromCharCode(65 + lengths.indexOf(Math.min(...lengths)))}` }
 }
 function coordinates(rng: Rng, place: boolean): MathItem[] {
   const config: PageConfig = { domain: 'géométrie', topic: 'reperage', exerciseType: place ? 'reperage-placer' : 'reperage-lire', difficulty: 'facile', count: 6, columns: 1, coordCols: 8, coordRows: 8, coordCellMm: 8 }
@@ -104,7 +104,7 @@ export function tryGenerateTcmCscItems(typeId: string, count: number, rng: Rng, 
   if (exercise === 4 || exercise === 5) return sequences(rng, n, exercise === 4)
   if (exercise === 6) return order(rng, n)
   if (exercise === 7) return comparisons(rng, n, false)
-  if (exercise === 8) return tryGenerateTcmCfrItems('tcm-cfr-ex05', Math.min(2,n), rng, seed)
+  if (exercise === 8) return Array.from({length:n},(_,i)=>numberDecomposition(i%4<2?int(rng,11,99):int(rng,101,999)))
   if (exercise === 9) return signNames(rng, n)
   if (exercise === 10 || exercise === 11) return columnOperations(rng, n, exercise === 11)
   if (exercise === 12 || exercise === 13) return [{ layout: 'symmetry-grid', symmetryFigure: pickSymmetryTemplate(rng), cscTask: { kind: 'copy', scale: exercise === 13 ? 2 : 1 }, answer: 'Figure reproduite dans le même sens.' }]

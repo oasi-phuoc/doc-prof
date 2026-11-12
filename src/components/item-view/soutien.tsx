@@ -184,12 +184,12 @@ export function CountIconsBlock({ item, mode }: { item: MathItem; mode: PreviewM
         <span className={`answer-line-field compact count-icons-blank${show ? ' filled' : ''}`}>
           {show ? String(scene.targetCount) : '\u00a0'}
         </span>{' '}
-        {scene.label}{' '}
-        {!isCsc && <span className="count-icons-caption-icon" aria-hidden>
+        {!isCsc && scene.label}{' '}
+        <span className="count-icons-caption-icon" role={isCsc?'img':undefined} aria-label={isCsc?scene.label:undefined} aria-hidden={!isCsc}>
           <svg viewBox="0 0 24 24" focusable="false">
             <CountIconGlyph kind={scene.targetKind} />
           </svg>
-        </span>}
+        </span>
       </p>
     </div>
   )

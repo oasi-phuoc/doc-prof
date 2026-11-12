@@ -145,6 +145,7 @@ function CellsScene({
   onRemove,
   cellScale = 1,
   shapeColors,
+  paddedLabels = false,
 }: {
   scene: CoordScene
   editable?: boolean
@@ -152,9 +153,10 @@ function CellsScene({
   onRemove?: (x: number, y: number) => void
   cellScale?: number
   shapeColors?: Partial<Record<CoordShape,string>>
+  paddedLabels?: boolean
 }) {
   const cellMm = (scene.cellMm ?? 8) * cellScale
-  const { padL, padR, padT, padB } = mmPads('cells')
+  const { padL, padR, padT, padB } = paddedLabels ? {padL:10,padR:2,padT:4,padB:10} : mmPads('cells')
   const gridW = scene.cols * cellMm
   const gridH = scene.rows * cellMm
   const svgW = padL + gridW + padR
@@ -177,7 +179,7 @@ function CellsScene({
         return (
           <g key={`h-${y}`}>
             <line x1={padL} y1={gy} x2={padL + gridW} y2={gy} className="grid-line" />
-            <text x={padL - 1.2} y={gy + cellMm / 2 + 1.1} className="axis-label" textAnchor="end" fontSize={3.4}>
+            <text x={padL - (paddedLabels?3:1.2)} y={gy + cellMm / 2 + (paddedLabels?0:1.1)} dominantBaseline={paddedLabels?'middle':undefined} className="axis-label" textAnchor="end" fontSize={3.4}>
               {axisTickLabel(y, scene.axis, 'y')}
             </text>
           </g>
@@ -191,10 +193,11 @@ function CellsScene({
           <g key={`v-${x}`}>
             <line x1={gx} y1={padT} x2={gx} y2={padT + gridH} className="grid-line" />
             <text
-              x={x === scene.cols ? gx + cellMm - 0.2 : gx + cellMm / 2}
-              y={padT + gridH + 3.6}
+              x={paddedLabels || x !== scene.cols ? gx + cellMm / 2 : gx + cellMm - 0.2}
+              y={padT + gridH + (paddedLabels?5.5:3.6)}
+              dominantBaseline={paddedLabels?'middle':undefined}
               className="axis-label"
-              textAnchor={x === scene.cols ? 'end' : 'middle'}
+              textAnchor={!paddedLabels && x === scene.cols ? 'end' : 'middle'}
               fontSize={3.4}
             >
               {axisTickLabel(x, scene.axis, 'x')}
@@ -814,6 +817,7 @@ export function CoordGrid({
   onRemove,
   cellScale = 1,
   shapeColors,
+  paddedLabels = false,
 }: {
   point?: Pt
   pointImage?: Pt
@@ -826,6 +830,7 @@ export function CoordGrid({
   onRemove?: (x: number, y: number) => void
   cellScale?: number
   shapeColors?: Partial<Record<CoordShape,string>>
+  paddedLabels?: boolean
 }) {
   if (scene?.variant === 'polygon') return <PolygonScene scene={scene} />
   if (scene?.variant === 'polar') return <PolarScene scene={scene} />
@@ -847,7 +852,7 @@ export function CoordGrid({
     )
   }
   if (scene?.variant === 'cells') {
-    return <CellsScene scene={scene} editable={editable} onPlace={onPlace} onRemove={onRemove} cellScale={cellScale} shapeColors={shapeColors} />
+    return <CellsScene scene={scene} editable={editable} onPlace={onPlace} onRemove={onRemove} cellScale={cellScale} shapeColors={shapeColors} paddedLabels={paddedLabels} />
   }
 
   const ticks = Array.from({ length: 2 * RANGE + 1 }, (_, i) => i - RANGE)

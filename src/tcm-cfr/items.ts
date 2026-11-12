@@ -209,10 +209,10 @@ export function numberDecomposition(value: number): MathItem {
     const d = Math.floor((value % 100) / 10)
     const c = Math.floor((value % 1000) / 100)
     const m = Math.floor(value / 1000)
-    const placeParts = four
+    const placeParts = value < 100 ? [String(d * 10), String(u)] : four
       ? [String(m * 1000), String(c * 100), String(d * 10), String(u)]
       : [String(c * 100), String(d * 10), String(u)]
-    const labels = four
+    const labels = value < 100 ? ['dizaines', 'unités'] : four
       ? ['milliers', 'centaines', 'dizaines', 'unités']
       : ['centaines', 'dizaines', 'unités']
     return {

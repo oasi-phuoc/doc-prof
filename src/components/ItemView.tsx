@@ -75,6 +75,7 @@ export function ItemView({
   index,
   itemLabel,
   seriesNumber,
+  hideNumber: hideNumberOverride = false,
   algebraPadLeft = 0,
   draftGrid = true,
   onToggleDraftGrid,
@@ -100,6 +101,7 @@ export function ItemView({
   itemLabel?: string
   /** Bandeau de série pour le rangement et la logique du TCM CSC. */
   seriesNumber?: number
+  hideNumber?: boolean
   /** Cases vides à gauche pour aligner verticalement les atomes entre questions. */
   algebraPadLeft?: number
   /** Zone de brouillon avec grille 4×4 mm (problèmes). */
@@ -183,6 +185,7 @@ export function ItemView({
       ? 'Remettre cette question et les suivantes sur la page précédente'
       : 'Passer cette question et les suivantes sur une nouvelle page'
   const hideNumber =
+    hideNumberOverride ||
     Boolean(item.hideItemNumber) ||
     item.cscTask?.kind === 'large-count' ||
     item.layout === 'gattegno-chart' ||

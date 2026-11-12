@@ -256,6 +256,7 @@ export function CoordBlock({
       ) : null}
       <CoordGrid
         cellScale={csc ? 2 : 1}
+        paddedLabels={csc}
         shapeColors={shapeColors}
         point={item.point}
         pointImage={item.pointImage}

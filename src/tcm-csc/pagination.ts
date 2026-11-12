@@ -1,7 +1,7 @@
 import type { WorksheetPage } from '@/math/types'
 import { headingForSlice } from '@/math/page-break-heading'
 
-/** Eight operations with 42 px cells fit on one A4 page. */
+/** Eight operations grouped in two shared frames fit on one A4 page. */
 export function splitCscColumnPages(page: WorksheetPage): WorksheetPage[] | null {
   const block = page.blocks[0]
   if (page.blocks.length !== 1 || !block || !/^tcm-csc-ex(?:10|11)$/.test(block.exerciseType) || block.items.length <= 8) return null

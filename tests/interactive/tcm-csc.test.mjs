@@ -70,7 +70,7 @@ try {
       if (exercise === 4) { assert.doesNotMatch(item.prompt,/aide/i); assert.equal(item.cscTask.kind,'sequence-hint'); assert.equal(item.cscTask.step,step) }
     }
   })
-  await test('sorting contains integers only and twelve comparisons contain four of each sign', () => {
+  await test('sorting contains integers only and ten comparisons balance the three signs', () => {
     for (const sample of samples) {
       for (const item of sample.get(6)) {
         assert.equal(new Set(item.sequence).size, 7)
@@ -80,7 +80,8 @@ try {
       }
       for (const exercise of [7]) {
         const items = sample.get(exercise)
-        for (const sign of ['<', '=', '>']) assert.equal(items.filter((item) => item.answer === sign).length, 4)
+        assert.equal(items.length,10)
+        assert.deepEqual(['<', '=', '>'].map(sign=>items.filter(item=>item.answer===sign).length).sort(),[3,3,4])
         for (const item of items) {
           const a = Number(item.left), b = Number(item.right)
           assert.ok([a, b].every((n) => Number.isInteger(n) && n >= 0 && n <= (exercise === 7 ? 100 : 999)))
@@ -91,12 +92,13 @@ try {
       assert.deepEqual(sample.get(9).map((item) => item.answer).sort(), ['plus','moins','égal'].sort())
     }
   })
-  await test('posed columns preserve left additions, right subtractions and the requested digit progression', () => {
+  await test('posed columns group additions before subtractions and preserve the requested digit progression', () => {
     for (const sample of samples) for (const exercise of [10, 11]) sample.get(exercise).forEach((item, i) => {
-      assert.equal(item.op, i % 2 ? '−' : '+')
+      const perSign=sample.get(exercise).length/2
+      assert.equal(item.op,i<perSign?'+':'−')
       assert.equal(Number(item.answer), item.op === '+' ? item.a + item.b : item.a - item.b)
       assert.ok([item.a, item.b].every((n) => Number.isInteger(n) && n >= 1 && n <= 999))
-      const row = Math.floor(i / 2), expectedDigits = exercise === 10 ? row === 3 ? 3 : 2 : row === 0 ? 2 : 3
+      const row = i%perSign, expectedDigits = exercise === 10 ? row === 3 ? 3 : 2 : row === 0 ? 2 : 3
       assert.equal(String(item.a).length, expectedDigits)
       assert.equal(String(item.b).length, exercise === 10 && row === 0 ? 1 : expectedDigits)
       assert.equal(Boolean(item.blankOperands), exercise === 11)
@@ -107,6 +109,8 @@ try {
   })
   await test('geometry retains source figures, four names, a single large counting frame and six coordinates', () => {
     for (const sample of samples) {
+      const colors=sample.get(14)[0].cscTask.colors
+      assert.equal(colors.length,3);assert.equal(new Set(colors).size,3);assert.ok(colors.every(color=>Number.isInteger(color)&&color>=0&&color<=3))
       assert.equal(sample.get(12)[0].cscTask.scale, 1); assert.equal(sample.get(13)[0].cscTask.scale, 2)
       for (const number of [12, 13]) assert.ok(sample.get(number)[0].symmetryFigure.polylines.length)
       const names = sample.get(17)[0]
@@ -173,11 +177,22 @@ try {
     assert.deepEqual(cscAudioGroups(altered).find(group=>group.number===2).parts,cscAudioGroups(first).find(group=>group.number===2).parts,'The exported calculation never appends its result, including for a stale saved playlist.')
   })
 
-  await test('CSC decomposition reuses CFR exercise five and free edits rebuild every place value', () => {
-    for (let seed=1;seed<=100;seed++) assert.deepEqual(generateCscExercise('tcm-csc-ex08',2,seed),tryGenerateTcmCfrItems('tcm-cfr-ex05',2,createRng(seed),seed))
+  await test('CSC decomposition has two two-digit and two three-digit values, retaining CFR place-value rendering and legacy edits', () => {
+    for (let seed=1;seed<=100;seed++) {
+      const items=generateCscExercise('tcm-csc-ex08',4,seed)
+      assert.equal(items.length,4)
+      items.forEach((item,index)=>{
+        const value=Number(item.prompt.replace(/['’\s]/g,''))
+        assert.ok(index<2?value>=11&&value<=99:value>=101&&value<=999)
+        assert.equal(item.placeParts.length,index<2?2:3)
+        assert.equal(item.placeParts.map(Number).reduce((sum,n)=>sum+n,0),value)
+      })
+    }
     const item = generateCscExercise('tcm-csc-ex08',2,1)[0]
     const edited = recalculateCsc({...item,prompt:'4 070'},'tcm-csc-ex08')
     assert.deepEqual(edited.placeParts,['4000','0','70','0']); assert.equal(edited.answer,'4000 + 0 + 70 + 0')
+    const small=recalculateCsc({...item,prompt:'57'},'tcm-csc-ex08')
+    assert.deepEqual(small.labels,['dizaines','unités']);assert.deepEqual(small.placeParts,['50','7']);assert.equal(small.libreError,undefined)
     assert.ok(recalculateCsc({...item,prompt:'4,5'},'tcm-csc-ex08').libreError)
   })
   await test('each connecting point can appear in all four quadrants and remains separated from the other labels', () => {
@@ -197,6 +212,7 @@ try {
     assert.equal(parts.length,1)
     assert.deepEqual(parts.flatMap(block=>block.items),generateCscExercise('tcm-csc-ex10',8,77+pages.findIndex(page=>page.exerciseType==='tcm-csc-ex10')*7919))
     assert.equal(parts[0].items.length,8)
+    assert.ok(parts[0].items.slice(0,4).every(item=>item.op==='+'));assert.ok(parts[0].items.slice(4).every(item=>item.op==='−'))
     const extended=structuredClone(pages);extended.find(page=>page.exerciseType==='tcm-csc-ex10').count=16
     const extra=buildWorksheets(extended,77).flatMap(sheet=>sheet.blocks).filter(block=>block.exerciseType==='tcm-csc-ex10')
     assert.deepEqual(extra.map(block=>block.itemOffset),[0,8]);assert.ok(extra.every(block=>block.items.length===8))
