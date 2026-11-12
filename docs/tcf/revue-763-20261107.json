@@ -6415,14 +6415,14 @@
         "Un chapeau de soleil",
         "Un éventail"
       ],
-      "status": "artwork_needed_whole_answer_concepts",
+      "status": "active_reviewed_trio",
       "source_sha256": "20fcfa0407b03e8e18f669deb74dd0205c4b12c6de7dbe48c5e1fde265a0ca36",
       "audio": "/lib/audio/tcf/co/radio/11-radio-prévision-météo-2.mp3",
       "review_index": 146,
       "semantic_sha256": "caa46a14337faaccf6421d3fb2094119f7329207cde273bff8cfb32605d264f8",
       "reviewed": true,
-      "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "review_method": "Source, énoncé, trois réponses et originaux relus individuellement le 12 novembre 2026 ; aucune nouvelle écoute humaine.",
+      "reason": "La météo annonce la pluie dans le nord le matin et dit de sortir les parapluies. Le chapeau de soleil et l’éventail sont des accessoires cohérents pour d’autres conditions météorologiques, mais ne sont pas nommés dans ce message. Le parapluie reste la seule réponse pour la zone et le moment demandés. Originaux vus séparément : parapluie bleu ouvert entier ; chapeau de paille à bord protégeant du soleil ; éventail pliant bleu-vert ouvert avec tiges en bois. Trois accessoires seuls et distincts, aucun chiffre ni calendrier, fond crème et peinture douce en paysage 4:3. Parapluie et chapeau réutilisés.",
       "brief": {
         "context_question": "Quel objet faut-il prendre dans le nord le matin ?",
         "choices_to_illustrate": [
@@ -6442,7 +6442,18 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/co834-parapluie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-chapeau-dessine.webp",
+        "/lib/images/tcf/qcm-audit/extension573-eventail.png"
+      ],
+      "selected_sha256": [
+        "fdf64ab8d755a92ec7982bd398575d9d3cd5f174c06f0eca639244a30ce6ffc3",
+        "021727df752448f8655530fbe6b3acff8243aa0ab9bc929b860ab882f35bcd39",
+        "250af03daa38b125f1dfb04bee3fdfd11adc127018a44584118f46aab00eda68"
+      ],
+      "incremental_review": "docs/tcf/revue-trios-meteo-voyage-piscine-20261112.json"
     },
     {
       "key": "tcf-ss-a1-s5-co-1#2",
@@ -6898,14 +6909,14 @@
         "Une robe légère",
         "Un tee-shirt"
       ],
-      "status": "artwork_needed_whole_answer_concepts",
+      "status": "active_reviewed_trio",
       "source_sha256": "0a3428584ff61ebcd457a504195176b7b5c5e1cc8931ee349dca829d6448e0c3",
       "audio": "/lib/audio/tcf/co/radio/07-radio-météo-à-Grenoble.mp3",
       "review_index": 158,
       "semantic_sha256": "11f131258025dbe676cfa3eca3a950331d2d1e4f019eccc0aa910261280f6a65",
       "reviewed": true,
-      "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "review_method": "Source, énoncé, trois réponses et originaux relus individuellement le 12 novembre 2026 ; aucune nouvelle écoute humaine.",
+      "reason": "Le message d’hiver à Grenoble recommande explicitement un manteau avec des chaussures chaudes. La robe légère et le tee-shirt sont deux autres vêtements du même domaine, absents de la transcription et inadaptés au froid indiqué. Les vêtements complémentaires cités restent dans leurs autres questions. Originaux vus séparément : manteau long bleu foncé à boutons ; robe d’été légère jaune sans manches, vide sur cintre ; tee-shirt vert à manches courtes. Trois vêtements seuls et entiers, sans personne ni inscription, fond crème et peinture douce en paysage 4:3. Manteau et tee-shirt réutilisés.",
       "brief": {
         "context_question": "Quel vêtement faut-il mettre ?",
         "choices_to_illustrate": [
@@ -6925,7 +6936,18 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/co834-manteau-dessine.webp",
+        "/lib/images/tcf/qcm-audit/extension573-robe-legere.png",
+        "/lib/images/tcf/qcm-audit/co306-t-shirt-dessine.webp"
+      ],
+      "selected_sha256": [
+        "fdf16b04ffb9351bb6a2a01cbc9c1e27941ae7183aa62b71c0d69868e3013662",
+        "902e833a3a0f8379dc23bdc5d85dd2b7cfc9162679997fd37c3691a59b367b15",
+        "41b7b9239a145b75a6e719d0dd02699068913a119ae8b7a0d3957f82967f3414"
+      ],
+      "incremental_review": "docs/tcf/revue-trios-meteo-voyage-piscine-20261112.json"
     },
     {
       "key": "tcf-ss-a1-s7-co-4#5",
@@ -8591,14 +8613,14 @@
         "De la bière",
         "Du champagne"
       ],
-      "status": "artwork_needed_whole_answer_concepts",
+      "status": "active_reviewed_trio",
       "source_sha256": "7ace0f9aee5e5b93ae7805777ee76166553c202d9d820182fe23e4c76af16096",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/bonjour-avons-reservation-1.mp3",
       "review_index": 201,
       "semantic_sha256": "277a3bb4493dddce389c80427bfddf261f7a53a5af8f8870b9e76fc97bcf3191",
       "reviewed": true,
-      "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "review_method": "Source, énoncé, trois réponses et originaux relus individuellement le 12 novembre 2026 ; aucune nouvelle écoute humaine.",
+      "reason": "Le serveur propose du vin, explicitement refusé par les clients. Bière et champagne sont deux autres boissons alcoolisées non nommées dans ce dialogue. La formulation proposée mais refusée garde le vin comme seule bonne réponse. Originaux vus séparément : bouteille verte avec vin rouge ; chope blonde à mousse ; bouteille de champagne identifiée et flûte effervescente. Trois boissons distinctes dans le même style peint sur fond crème, paysages 4:3, aucun prix ni date. Bouteille de vin réutilisée.",
       "brief": {
         "context_question": "Quelle boisson alcoolisée est proposée mais refusée ?",
         "choices_to_illustrate": [
@@ -8618,7 +8640,18 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/co834-bouteille-vin-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/extension573-biere.png",
+        "/lib/images/tcf/qcm-audit/extension573-champagne.png"
+      ],
+      "selected_sha256": [
+        "ea110be4a173f1f67f5b0e68e20e7f01142d9153f50f88eac66516c688313b09",
+        "df707a8f4cf958d83d42a76dc6252d6d773ef5ec6bb31797402e60dd3c6c4dc5",
+        "bbb16b9cbf0695a30b5112e989f2ff734d43c2aaed5416cfc190f68d0c9c122c"
+      ],
+      "incremental_review": "docs/tcf/revue-trios-boissons-cadeaux-aliments-cirque-20261112.json"
     },
     {
       "key": "tcf-ss-a1-s32-co-2#8",
@@ -8814,14 +8847,14 @@
         "Son parapluie",
         "Son manteau"
       ],
-      "status": "artwork_needed_whole_answer_concepts",
+      "status": "active_reviewed_trio",
       "source_sha256": "31147df6a6193300d189fd1190fbe1a02060a3630f2d5d8d25929d10984e0d89",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/bonjour-votre-passeport-votre-1.mp3",
       "review_index": 206,
       "semantic_sha256": "b5ea6bda5f0539b765569f181bc8e0a3b5247b50a6c0b0447f98e1d914278c8c",
       "reviewed": true,
-      "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "review_method": "Source, énoncé, trois réponses et originaux relus individuellement le 12 novembre 2026 ; aucune nouvelle écoute humaine.",
+      "reason": "Au contrôle de bagages, le voyageur dit que l’ordinateur est avec sa trousse de toilette. Le parapluie et le manteau sont deux autres affaires de voyage plausibles, non mentionnées dans cette transcription. La trousse de toilette se distingue clairement d’une trousse à crayons. Originaux vus séparément : trousse de toilette avec brosse à dents et peigne dans la pochette ; parapluie bleu ouvert ; manteau bleu foncé entier. Trois affaires personnelles reconnaissables et distinctes, sans texte, fond crème, peinture douce et paysages 4:3. Parapluie et manteau réutilisés.",
       "brief": {
         "context_question": "Avec quel objet le voyageur a-t-il placé son ordinateur ?",
         "choices_to_illustrate": [
@@ -8841,7 +8874,18 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/extension573-trousse-toilette.png",
+        "/lib/images/tcf/qcm-audit/co834-parapluie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-manteau-dessine.webp"
+      ],
+      "selected_sha256": [
+        "3084675d6965b3825b38d556b114e142ccbefa55fec102436cee422e240e42e3",
+        "fdf64ab8d755a92ec7982bd398575d9d3cd5f174c06f0eca639244a30ce6ffc3",
+        "fdf16b04ffb9351bb6a2a01cbc9c1e27941ae7183aa62b71c0d69868e3013662"
+      ],
+      "incremental_review": "docs/tcf/revue-trios-meteo-voyage-piscine-20261112.json"
     },
     {
       "key": "tcf-ss-a1-s34-co-2#1",
@@ -22556,14 +22600,14 @@
         "Un masque de plongée",
         "Une paire de palmes"
       ],
-      "status": "artwork_needed_whole_answer_concepts",
+      "status": "active_reviewed_trio",
       "source_sha256": "a78062a0e5cf1a5bcbeb754af1c3dc2cddd071e23f4517b171730d2f001ee3fb",
       "audio": "/lib/audio/tcf/co/radio/les-annonces-publiques-1-5.mp3",
       "review_index": 557,
       "semantic_sha256": "725b111e4ecd8752aea58ca8c12ef9c46b018ae4b65d33fc405cd444870e2cb3",
       "reviewed": true,
-      "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "review_method": "Source, énoncé, trois réponses et originaux relus individuellement le 12 novembre 2026 ; aucune nouvelle écoute humaine.",
+      "reason": "Le parc Aquatica annonce que le bonnet de bain est obligatoire avant l’accès aux piscines. Le masque de plongée et les palmes sont d’autres accessoires de baignade non cités dans le message. Les trois réponses restent dans le même thème et le bonnet est le seul accessoire imposé. Originaux vus séparément : bonnet de bain bleu en silicone ; masque de plongée bleu à vitre et poche nasale ; paire de palmes entière. Trois accessoires aquatiques distincts, objets seuls, sans inscription, fond crème et peinture douce en paysage 4:3. Bonnet et palmes réutilisés.",
       "brief": {
         "context_question": "Quel accessoire est obligatoire pour se baigner ?",
         "choices_to_illustrate": [
@@ -22587,7 +22631,18 @@
       "source_refresh_review": {
         "date": "2026-11-12",
         "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
-      }
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/07b2c36cc965.webp",
+        "/lib/images/tcf/qcm-audit/extension573-masque-plongee.png",
+        "/lib/images/tcf/qcm-audit/vocab-palmes.webp"
+      ],
+      "selected_sha256": [
+        "8918d804763e27073a4b920eeab5ab9933fffcfaf67442ed114219f6520aec08",
+        "2a798c63268263bf6e9104ff70b3633dad3828666893b8cb7200355fc67413b5",
+        "3d01b615c27cbb3a2744f8343f4d9a1d627b6431e06c087a5fd5c05893948382"
+      ],
+      "incremental_review": "docs/tcf/revue-trios-meteo-voyage-piscine-20261112.json"
     },
     {
       "key": "tcf-a2j-s1-co-2#4",
@@ -25396,14 +25451,14 @@
         "Un jeu de société",
         "Un ballon"
       ],
-      "status": "artwork_needed_whole_answer_concepts",
+      "status": "active_reviewed_trio",
       "source_sha256": "aa4974f02209714287624ac96a566314af3189544f362887a5c4bcf1c6c115ea",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/jacques-as-petite-2-1.mp3",
       "review_index": 629,
       "semantic_sha256": "4882c1f4271d199040420a5e499fdf875267d35b2680654f0c6d910c2378d97c",
       "reviewed": true,
-      "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "review_method": "Source, énoncé, trois réponses et originaux relus individuellement le 12 novembre 2026 ; aucune nouvelle écoute humaine.",
+      "reason": "Pour la fête d’Enzo, le cadeau proposé est explicitement une BD. Jeu de société et ballon sont deux autres cadeaux plausibles, non mentionnés dans cet échange. Les trois libellés et la bonne réponse sont conservés. Originaux vus séparément : livre ouvert avec cases et bulles vides ; plateau de jeu avec pions et boîte ; ballon rond seul. Trois objets cadeaux distincts et entiers, sans inscription chiffrée ni montant, peinture douce sur fond crème et paysage 4:3. Ballon réutilisé.",
       "brief": {
         "context_question": "Quel cadeau est proposé ?",
         "choices_to_illustrate": [
@@ -25423,7 +25478,18 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/extension573-bande-dessinee.png",
+        "/lib/images/tcf/qcm-audit/extension573-jeu-societe.png",
+        "/lib/images/tcf/qcm-audit/vocab-ballon-rond.webp"
+      ],
+      "selected_sha256": [
+        "42bb1a3a540a4c963a8afcb9298bc0199906f2fa1bc1ebdcb260b807dd511771",
+        "952185d1618f78d792eb8a352affdf72a247e146155a9499aef91b3e2bebbf95",
+        "ad28a928219bbd46e28e1638f8528b862dd757eb94ce4fb6aa9dcacc1ee36757"
+      ],
+      "incremental_review": "docs/tcf/revue-trios-boissons-cadeaux-aliments-cirque-20261112.json"
     },
     {
       "key": "tcf-ss-a2-s49-co-1#9",
@@ -25466,14 +25532,14 @@
         "Un sandwich",
         "Une crêpe"
       ],
-      "status": "artwork_needed_whole_answer_concepts",
+      "status": "active_reviewed_trio",
       "source_sha256": "e962c859b68f0701d1bfdc14177784c8f0a77ce6ccc82e9ee61cbabeb90130e8",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/jacques-as-petite-2-4.mp3",
       "review_index": 631,
       "semantic_sha256": "6742d7f7e16d4c128fee54d4e489ece5d7be74b81b549036dfa36961e895b226",
       "reviewed": true,
-      "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "review_method": "Source, énoncé, trois réponses et originaux relus individuellement le 12 novembre 2026 ; aucune nouvelle écoute humaine.",
+      "reason": "Le premier aliment proposé est un bout du gâteau fait par la mère. Le sandwich et la crêpe sont deux autres aliments individuels, absents de la transcription. Les fruits proposés ensuite ne figurent pas parmi les leurres. Originaux vus séparément : part de gâteau sur assiette ; sandwich en baguette garni ; une crêpe pliée sur assiette. Quantités au singulier respectées, objets entiers et distincts, sans inscription, peinture douce sur fond crème et paysage 4:3. Sandwich et crêpe réutilisés.",
       "brief": {
         "context_question": "Quel aliment est proposé ?",
         "choices_to_illustrate": [
@@ -25493,7 +25559,18 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/extension573-morceau-gateau.png",
+        "/lib/images/tcf/qcm-audit/co834-sandwich-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-crepe.webp"
+      ],
+      "selected_sha256": [
+        "559fbce1cfa7a5ccbb29c0d23d8d4587bd07b0885b4475c6e8c23bd5cd45d9d5",
+        "a1be35905e3ba7734f3be031c33e2a06408fa846de84a39391461d1ddc2256bc",
+        "9d52de3287243f60f8641e75fde8c2334e007bb1435c31cde809d5e2ae0c56e0"
+      ],
+      "incremental_review": "docs/tcf/revue-trios-boissons-cadeaux-aliments-cirque-20261112.json"
     },
     {
       "key": "tcf-ss-a2-s49-co-3#15",
@@ -26146,14 +26223,14 @@
         "Dans une ferme",
         "Dans un cirque"
       ],
-      "status": "artwork_needed_contextual_locations",
+      "status": "active_reviewed_trio",
       "source_sha256": "3b41ca5b7fef87dfd61da84afe2f29162ee5a714d06701ff10b4221d5aa0d479",
       "audio": "/lib/audio/tcf/co/loisirs/06-loisirs-zoo-spectacle-de-félins.mp3",
       "review_index": 649,
       "semantic_sha256": "24f91895c5513b4a88668d8f8a2f3a421ff992a270be47adb96ef0b5dd3af250",
       "reviewed": true,
-      "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "review_method": "Source, énoncé, trois réponses et originaux relus individuellement le 12 novembre 2026 ; aucune nouvelle écoute humaine.",
+      "reason": "L’annonce invite les visiteurs à découvrir différentes espèces et nourrir girafes et éléphants : le zoo est le lieu cohérent. Ferme et cirque sont deux autres lieux de visite, non nommés dans le message. La bonne réponse et les trois choix restent conservés. Originaux vus séparément : entrée de zoo avec panneau et visiteurs ; cour de ferme avec bâtiments et matériel agricole ; chapiteau de cirque avec piste. Trois lieux clairement identifiables dans la même peinture douce et en paysage 4:3, aucun montant ni date. Zoo et ferme réutilisés.",
       "brief": {
         "context_question": "Où se passe cette annonce ?",
         "choices_to_illustrate": [
@@ -26173,7 +26250,18 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/co57-visiter-zoo.webp",
+        "/lib/images/tcf/co/bg/ferme.webp",
+        "/lib/images/tcf/qcm-audit/extension573-cirque.png"
+      ],
+      "selected_sha256": [
+        "b84a6bf9e79ba909e5f9d9a467b040db461a9323ed9f549985d2fe1fdc1ff1fb",
+        "ee4ec731fbceabb5c8e75a3b0a3f176ad2dbe985d1b57add95fe7800eb060a7b",
+        "1626565a1962aaf83efe4fd1be3a8ecdd8b772f0902f893e3ff1d9cfbb792500"
+      ],
+      "incremental_review": "docs/tcf/revue-trios-boissons-cadeaux-aliments-cirque-20261112.json"
     },
     {
       "key": "tcf-ssx-a2-annonce-2-3-co-2#3",
@@ -30164,10 +30252,10 @@
     }
   ],
   "summary": {
-    "artwork_needed_contextual_locations": 279,
+    "artwork_needed_contextual_locations": 278,
     "keep_text_named_identity_or_location": 39,
-    "active_reviewed_trio": 237,
-    "artwork_needed_whole_answer_concepts": 108,
+    "active_reviewed_trio": 245,
+    "artwork_needed_whole_answer_concepts": 101,
     "keep_text_calendar_or_temporal_scope": 49,
     "keep_text_private_home_identity": 3,
     "keep_text_source_referent_unspecified": 3,
@@ -30179,7 +30267,7 @@
   "review_pending": 0,
   "initial_review_complete": true,
   "method": "763 énoncés et leurs trois choix relus en sept blocs ; liaison exacte aux sources et à leur revue contextuelle antérieure. 87 fichiers réutilisés et 18 minuteurs inspectés pour les trios prêts. Les briefs restants sont un plan de recherche/réalisation, pas des images générées.",
-  "activated_total": 237,
+  "activated_total": 245,
   "retained_text_total": 112,
-  "artwork_pending_total": 414
+  "artwork_pending_total": 406
 }

@@ -1,0 +1,141 @@
+{
+  "date": "2026-11-12",
+  "trios": [
+    {
+      "key": "tcf-ss-a1-s29-co-4#5",
+      "source_sha256": "7ace0f9aee5e5b93ae7805777ee76166553c202d9d820182fe23e4c76af16096",
+      "semantic_sha256": "277a3bb4493dddce389c80427bfddf261f7a53a5af8f8870b9e76fc97bcf3191",
+      "source": "- Bonjour, nous avons une réservation pour huit.\n- Ah oui, voici une table pour huit.\nJe vous apporte le menu.\n- Je prends votre commande ?\n- Oui, nous prenons huit menus, huit entrées et huit plats, mais pas de dessert.\n- Est-ce que vous prenez du fromage ?\n- Non, pas de fromage.\n- Et qu'est-ce que vous buvez ?\nDu vin ?\n- Non, pas de vin.\nTrois jus d'orange, une eau gazeuse, un jus de tomate et une carafe d'eau.",
+      "question": {
+        "enonce": "Quelle boisson alcoolisée est proposée mais refusée ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Du vin",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "De la bière",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Du champagne",
+            "correct": false
+          }
+        ],
+        "written_model": "Du vin"
+      },
+      "image_ids": [
+        "co834-bouteille-vin-dessinee",
+        "extension573-biere",
+        "extension573-champagne"
+      ],
+      "reason": "Le serveur propose du vin, explicitement refusé par les clients. Bière et champagne sont deux autres boissons alcoolisées non nommées dans ce dialogue. La formulation proposée mais refusée garde le vin comme seule bonne réponse.",
+      "visual_review": "Originaux vus séparément : bouteille verte avec vin rouge ; chope blonde à mousse ; bouteille de champagne identifiée et flûte effervescente. Trois boissons distinctes dans le même style peint sur fond crème, paysages 4:3, aucun prix ni date. Bouteille de vin réutilisée."
+    },
+    {
+      "key": "tcf-ss-a2-s49-co-1#2",
+      "source_sha256": "aa4974f02209714287624ac96a566314af3189544f362887a5c4bcf1c6c115ea",
+      "semantic_sha256": "4882c1f4271d199040420a5e499fdf875267d35b2680654f0c6d910c2378d97c",
+      "source": "Mathias, tu viens à la fête d’Enzo samedi ? Oui, bien sûr. Je ne sais pas quoi lui offrir. Tu as des idées ? Oui, tu pourrais lui acheter une BD, il adore ça. Ah oui, très bien, bonne idée.",
+      "question": {
+        "enonce": "Quel cadeau est proposé ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Une bande dessinée",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un jeu de société",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un ballon",
+            "correct": false
+          }
+        ],
+        "written_model": "Une bande dessinée"
+      },
+      "image_ids": [
+        "extension573-bande-dessinee",
+        "extension573-jeu-societe",
+        "vocab-ballon-rond"
+      ],
+      "reason": "Pour la fête d’Enzo, le cadeau proposé est explicitement une BD. Jeu de société et ballon sont deux autres cadeaux plausibles, non mentionnés dans cet échange. Les trois libellés et la bonne réponse sont conservés.",
+      "visual_review": "Originaux vus séparément : livre ouvert avec cases et bulles vides ; plateau de jeu avec pions et boîte ; ballon rond seul. Trois objets cadeaux distincts et entiers, sans inscription chiffrée ni montant, peinture douce sur fond crème et paysage 4:3. Ballon réutilisé."
+    },
+    {
+      "key": "tcf-ss-a2-s49-co-1#12",
+      "source_sha256": "e962c859b68f0701d1bfdc14177784c8f0a77ce6ccc82e9ee61cbabeb90130e8",
+      "semantic_sha256": "6742d7f7e16d4c128fee54d4e489ece5d7be74b81b549036dfa36961e895b226",
+      "source": "Tu veux un bout de mon gâteau ? C'est ma mère qui l'a fait. Non, merci. C'est gentil. J'ai des fruits aussi, si tu préfères. Non, non, vraiment. Je n'ai pas faim, merci.",
+      "question": {
+        "enonce": "Quel aliment est proposé ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un morceau de gâteau",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un sandwich",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une crêpe",
+            "correct": false
+          }
+        ],
+        "written_model": "Un morceau de gâteau"
+      },
+      "image_ids": [
+        "extension573-morceau-gateau",
+        "co834-sandwich-dessine",
+        "vocab-crepe"
+      ],
+      "reason": "Le premier aliment proposé est un bout du gâteau fait par la mère. Le sandwich et la crêpe sont deux autres aliments individuels, absents de la transcription. Les fruits proposés ensuite ne figurent pas parmi les leurres.",
+      "visual_review": "Originaux vus séparément : part de gâteau sur assiette ; sandwich en baguette garni ; une crêpe pliée sur assiette. Quantités au singulier respectées, objets entiers et distincts, sans inscription, peinture douce sur fond crème et paysage 4:3. Sandwich et crêpe réutilisés."
+    },
+    {
+      "key": "tcf-ssx-a2-annonce-6-6-co-2#3",
+      "source_sha256": "3b41ca5b7fef87dfd61da84afe2f29162ee5a714d06701ff10b4221d5aa0d479",
+      "semantic_sha256": "24f91895c5513b4a88668d8f8a2f3a421ff992a270be47adb96ef0b5dd3af250",
+      "source": "Chers visiteurs, ne manquez pas à 14h aujourd’hui le spectacle incroyable des félins !\nVenez donner à manger aux girafes et aux éléphants et découvrir plein d’espèces animales incroyables !",
+      "question": {
+        "enonce": "Où se passe cette annonce ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Dans un zoo",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Dans une ferme",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Dans un cirque",
+            "correct": false
+          }
+        ],
+        "written_model": "Dans un zoo"
+      },
+      "image_ids": [
+        "co57-visiter-zoo",
+        "retained-20261107-15fc692a16ba",
+        "extension573-cirque"
+      ],
+      "reason": "L’annonce invite les visiteurs à découvrir différentes espèces et nourrir girafes et éléphants : le zoo est le lieu cohérent. Ferme et cirque sont deux autres lieux de visite, non nommés dans le message. La bonne réponse et les trois choix restent conservés.",
+      "visual_review": "Originaux vus séparément : entrée de zoo avec panneau et visiteurs ; cour de ferme avec bâtiments et matériel agricole ; chapiteau de cirque avec piste. Trois lieux clairement identifiables dans la même peinture douce et en paysage 4:3, aucun montant ni date. Zoo et ferme réutilisés."
+    }
+  ]
+}
