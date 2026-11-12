@@ -20,12 +20,14 @@ function criterion(title: string, descriptions: string[]): PeCriterion {
 }
 
 /** Les trois références ISA servent de barèmes, sans imposer leur sujet aux autres tâches. */
-export function peEvaluation(ex: TcfPeExercise, total: number): PeEvaluation {
+export function peEvaluation(ex: TcfPeExercise, total: number, instruction?: string): PeEvaluation {
   const form = ex.type_exercice === 'formulaire'
   const words = ex.type_exercice === 'texte_images'
   const dialogue = ex.type_exercice === 'dialogue_a_completer'
   const short = dialogue || ex.type_exercice === 'sms_reponse' || ex.type_exercice === 'image_question'
-  const task = 'consigne' in ex.support ? ex.support.consigne : ex.consigne ?? ''
+  const task = ex.type_exercice === 'dialogue_a_completer' && ex.support.situation?.trim()
+    ? [instruction ?? ex.consigne, ex.support.situation.trim()].filter(Boolean).join('\n\n')
+    : 'consigne' in ex.support ? ex.support.consigne : ex.consigne ?? ''
   const format = dialogue ? 'dialogue' : ex.type_exercice === 'email_reponse' || (ex.type_exercice === 'question_texte' && ex.support.email)
     ? 'e-mail' : 'message'
   const expected = 'nb_mots' in ex.support ? ex.support.nb_mots : undefined

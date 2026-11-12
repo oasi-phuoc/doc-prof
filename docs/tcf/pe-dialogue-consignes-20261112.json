@@ -1,0 +1,407 @@
+{
+  "date": "2026-11-12",
+  "count": 50,
+  "scope": "Retirer le contexte répété de la consigne des dialogues PE. La situation détaillée reste affichée une seule fois avant les répliques ; support, corrigé, identifiants et barème conservés. Les anciennes recettes sont normalisées au rendu sans migration D1.",
+  "changes": [
+    {
+      "bank": "src/tcf/content/a0-a1/pe.json",
+      "exercise": "tcf-a1-s1-pe-3",
+      "before": "Un ami vous propose de jouer au basket au parc. Complétez le dialogue.",
+      "after": "Complétez le dialogue.",
+      "situation": "Un ami vous propose de jouer au basket au parc.",
+      "unchanged_sha256": "6573b645a8e3f7b2fffa50b1ffbc29d755b711e4172f4db1b056bcad4d814709"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/pe.json",
+      "exercise": "tcf-a1-s2-pe-3",
+      "before": "Vous êtes aux urgences après un accident de vélo. Complétez le dialogue.",
+      "after": "Complétez le dialogue.",
+      "situation": "Vous êtes aux urgences. Vous avez eu un accident de vélo.",
+      "unchanged_sha256": "bd5af942167bf4e6f0ef3adbba64f8e53e34c3b0e13ac44f806d2ba80f8b7899"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/pe.json",
+      "exercise": "tcf-a1-tpa-pe-3",
+      "before": "Vous avez mal à la tête. Vous entrez dans une pharmacie. Complétez le dialogue.",
+      "after": "Complétez le dialogue.",
+      "situation": "Vous avez mal à la tête. Vous entrez dans une pharmacie.",
+      "unchanged_sha256": "a6a8802280c4f7609d9038969495899c3bc0c78aacea66bc922102d0b711d12f"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/pe.json",
+      "exercise": "tcf-a1-tpb-pe-3",
+      "before": "Vous êtes à l’arrêt de bus. Une personne vous demande le chemin. Complétez le dialogue.",
+      "after": "Complétez le dialogue.",
+      "situation": "Vous êtes à l’arrêt de bus. Une personne vous demande des informations.",
+      "unchanged_sha256": "0a55b22b57d8869b02f887d3762cf048459b4e1949ff6b143891390e3890ff04"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/pe.json",
+      "exercise": "tcf-a1-sem1-pe-4",
+      "before": "Vous rencontrez un ami. Vous ne vous sentez pas bien. Complétez le dialogue.",
+      "after": "Complétez le dialogue.",
+      "situation": "Vous rencontrez un ami. Vous ne vous sentez pas bien.",
+      "unchanged_sha256": "2e3ab57a3a01b137283d7a8c4be00755c12c768f71cbb08c7f51ee0e21bf16f6"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/pe.json",
+      "exercise": "tcf-a1-dlg-marche",
+      "before": "Vous êtes au marché. Vous voulez acheter des pommes. Complétez le dialogue.",
+      "after": "Complétez le dialogue.",
+      "situation": "Vous êtes au marché. Vous voulez acheter des pommes.",
+      "unchanged_sha256": "061b6bded2278024945f5d7800e37fa3a753e3579ed73ca09d81f91e16036f30"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/pe.json",
+      "exercise": "tcf-a1-dlg-docteur",
+      "before": "Vous êtes chez le médecin. Vous avez mal à la gorge. Complétez le dialogue.",
+      "after": "Complétez le dialogue.",
+      "situation": "Vous êtes chez le médecin. Vous avez mal à la gorge.",
+      "unchanged_sha256": "6ee72f37405a992a4119dfefe2140f96895a77a6bebc70ccd071d6fb5161b7c1"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/pe.json",
+      "exercise": "tcf-a1-dlg-cafe-ami",
+      "before": "Un ami vous invite à prendre un café. Complétez le dialogue.",
+      "after": "Complétez le dialogue.",
+      "situation": "Un ami vous invite à prendre un café.",
+      "unchanged_sha256": "4c9d593208d2b0f7cd10620cc27b728d968d30c5a20d8299ac78af2f81abc195"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/pe.json",
+      "exercise": "tcf-a1-dlg-cinema",
+      "before": "Vous voulez inviter un ami au cinéma samedi. Complétez le dialogue.",
+      "after": "Complétez le dialogue.",
+      "situation": "Vous voulez inviter un ami au cinéma samedi.",
+      "unchanged_sha256": "37ef9052509feb8d93f9e898c25d6179336d58ce61b48b7906f3dafabb435919"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/pe.json",
+      "exercise": "tcf-a1-dlg-boulangerie",
+      "before": "Vous entrez dans une boulangerie. Vous voulez du pain. Complétez le dialogue.",
+      "after": "Complétez le dialogue.",
+      "situation": "Vous entrez dans une boulangerie. Vous voulez du pain.",
+      "unchanged_sha256": "78eeb9ad9e1c9fe822c4b2d40cc83724b99ac37178651beb23fbab52cd2c15ab"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/pe.json",
+      "exercise": "tcf-a1-dlg-supermarche",
+      "before": "Vous cherchez le lait au supermarché. Complétez le dialogue.",
+      "after": "Complétez le dialogue.",
+      "situation": "Vous cherchez le lait au supermarché.",
+      "unchanged_sha256": "8f14827d9f35d843955941d4b84bb48e305a70800e78470d1d36aa3269c068d1"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/pe.json",
+      "exercise": "tcf-a1-dlg-gare",
+      "before": "Vous êtes à la gare. Vous voulez un billet pour Lausanne. Complétez le dialogue.",
+      "after": "Complétez le dialogue.",
+      "situation": "Vous êtes à la gare. Vous voulez un billet pour Lausanne.",
+      "unchanged_sha256": "feeaaf1e696a936d814ffb5079f792d22953625bf92de425fe641c84adb9b91a"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/pe.json",
+      "exercise": "tcf-a1-dlg-cafe",
+      "before": "Vous êtes au café. Vous voulez boire quelque chose. Complétez le dialogue.",
+      "after": "Complétez le dialogue.",
+      "situation": "Vous êtes au café. Vous voulez boire quelque chose.",
+      "unchanged_sha256": "00cd7bc8ac19960e455af704a88c1ca8193119a61e74e970320c0db47c4619c3"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/pe.json",
+      "exercise": "tcf-a1-dlg-dentiste",
+      "before": "Vous avez mal à une dent. Vous êtes chez le dentiste. Complétez le dialogue.",
+      "after": "Complétez le dialogue.",
+      "situation": "Vous avez mal à une dent. Vous êtes chez le dentiste.",
+      "unchanged_sha256": "1570db713823728f4bfa09b068645de161d39e7ca39f5bf33eeed11022ff81fa"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/pe.json",
+      "exercise": "tcf-a1-dlg-bibliotheque",
+      "before": "Vous voulez emprunter un livre à la bibliothèque. Complétez le dialogue.",
+      "after": "Complétez le dialogue.",
+      "situation": "Vous voulez emprunter un livre à la bibliothèque.",
+      "unchanged_sha256": "951dd1f4d3600380e64ddd7fc7fb1a67dc68773c20d910309b074c924c83953d"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/pe.json",
+      "exercise": "tcf-a1-dlg-vetements",
+      "before": "Vous êtes dans un magasin. Vous voulez un t-shirt. Complétez le dialogue.",
+      "after": "Complétez le dialogue.",
+      "situation": "Vous êtes dans un magasin de vêtements. Vous voulez un t-shirt.",
+      "unchanged_sha256": "86f27a6bf63d02f9dbf58bd189a88d70484ac090d493e82457f8b416598c35fd"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/pe.json",
+      "exercise": "tcf-a1-dlg-poste",
+      "before": "Vous êtes à la poste. Vous voulez envoyer une lettre. Complétez le dialogue.",
+      "after": "Complétez le dialogue.",
+      "situation": "Vous êtes à la poste. Vous voulez envoyer une lettre.",
+      "unchanged_sha256": "ca31be7a27cdb6c60468f78f9bc48a5bdbe89225efc2129bd6a86108ce1bb615"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/pe.json",
+      "exercise": "tcf-a1-dlg-cantine",
+      "before": "Vous êtes à la cantine de l’école. Vous voulez manger. Complétez le dialogue.",
+      "after": "Complétez le dialogue.",
+      "situation": "Vous êtes à la cantine de l’école. Vous voulez manger.",
+      "unchanged_sha256": "f4a5beed14aa8c5ce9f514949d61c558e5b0f97c8944be35311c8e62fd8f64c5"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/pe.json",
+      "exercise": "tcf-a1-dlg-coiffeur",
+      "before": "Vous voulez vous faire couper les cheveux. Complétez le dialogue.",
+      "after": "Complétez le dialogue.",
+      "situation": "Vous voulez vous faire couper les cheveux.",
+      "unchanged_sha256": "edad8b2863b23bae0cc1a1b60b76d16c9b8da3625fd929ca0dd89ca8316558f5"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/pe.json",
+      "exercise": "tcf-a1-dlg-kiosque",
+      "before": "Vous êtes au kiosque. Vous voulez un journal. Complétez le dialogue.",
+      "after": "Complétez le dialogue.",
+      "situation": "Vous êtes au kiosque. Vous voulez un journal.",
+      "unchanged_sha256": "0f9f067b42ac0f15082f482207b5a6d2a3bc81e4199594424dcb70dcac07003c"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/pe.json",
+      "exercise": "tcf-a1-dlg-piscine",
+      "before": "Vous voulez nager à la piscine. Complétez le dialogue.",
+      "after": "Complétez le dialogue.",
+      "situation": "Vous voulez nager à la piscine. Vous demandez un billet.",
+      "unchanged_sha256": "d342a16ee2fbf44a2bc7b73af9944ab351e2a2b11ccddd28c14ea9fb4d54ad82"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/pe.json",
+      "exercise": "tcf-a1-dlg-chemin",
+      "before": "Vous êtes dans la rue. Vous demandez le chemin de la gare. Complétez le dialogue.",
+      "after": "Complétez le dialogue.",
+      "situation": "Vous êtes dans la rue. Vous demandez le chemin de la gare.",
+      "unchanged_sha256": "c4487e30ecf827361d99bf138dcf5efe7c3c61da949191fbdd6159cddbbc759a"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/pe.json",
+      "exercise": "tcf-a1-dlg-rdv-parc",
+      "before": "Vous retrouvez un ami au parc. Complétez le dialogue.",
+      "after": "Complétez le dialogue.",
+      "situation": "Vous retrouvez un ami au parc.",
+      "unchanged_sha256": "c8265be41058e68c20275def2ee5042d844c0d6d3975fbfddd730858763fd6d7"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/pe.json",
+      "exercise": "tcf-a1-dlg-hotel",
+      "before": "Vous arrivez à l’hôtel. Vous avez une réservation. Complétez le dialogue.",
+      "after": "Complétez le dialogue.",
+      "situation": "Vous arrivez à l’hôtel. Vous avez une réservation.",
+      "unchanged_sha256": "5620196abc8632f1a5dfff4bd7f4d7e31e53998d22f4f05b6606efdd9e5ccc2d"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/pe.json",
+      "exercise": "tcf-a1-dlg-nouvelles",
+      "before": "Vous téléphonez à un ami pour prendre de ses nouvelles. Complétez le dialogue.",
+      "after": "Complétez le dialogue.",
+      "situation": "Vous téléphonez à un ami pour prendre de ses nouvelles.",
+      "unchanged_sha256": "21864db14892bdbee5d8a88d3de1243abcef7d419801b2b7a6a967627fecd0ba"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/pe.json",
+      "exercise": "tcf-a2-sa-pe-3",
+      "before": "Vous entrez dans une boulangerie. Vous voulez du pain et vous n’avez pas d’espèces. Complétez le dialogue.",
+      "after": "Complétez le dialogue.",
+      "situation": "Vous voulez acheter des baguettes et des croissants. Vous n’avez pas d’espèces.",
+      "unchanged_sha256": "321714ad168eb6be22df6175e698984512d7133467e871262ec3275d23535982"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/pe.json",
+      "exercise": "tcf-a2-sb-pe-3",
+      "before": "Vous entrez dans un restaurant avec un ami. Complétez le dialogue.",
+      "after": "Complétez le dialogue.",
+      "situation": "Vous êtes au restaurant avec un ami. Vous voulez un steak et un poisson. Vous ne buvez pas d’alcool.",
+      "unchanged_sha256": "c02aa0963b1af15572020653d7a25f2a94221cce6ac11fefcaffad8b65110335"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/pe.json",
+      "exercise": "tcf-a2-sc-pe-3",
+      "before": "Vous téléphonez à un hôtel pour réserver une chambre. Complétez le dialogue.",
+      "after": "Complétez le dialogue.",
+      "situation": "Vous téléphonez à un hôtel. Vous voulez une chambre du 10 au 12 mars, sans petit-déjeuner.",
+      "unchanged_sha256": "085d94ebbe0d5bdda076471611520c1d3d43c22caa385d7f6d43bc3db630198e"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/pe.json",
+      "exercise": "tcf-a2-dlg-marche",
+      "before": "Vous êtes au marché. Vous voulez des légumes et vous comparez le prix. Complétez le dialogue.",
+      "after": "Complétez le dialogue.",
+      "situation": "Vous êtes au marché. Vous voulez des tomates et des salades.",
+      "unchanged_sha256": "fe0bc2f25b788adde2ecdde4817fe9f6275e2b8550ebb0b95841ca60b40da678"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/pe.json",
+      "exercise": "tcf-a2-dlg-medecin",
+      "before": "Vous êtes chez le médecin parce que vous êtes malade depuis trois jours. Complétez le dialogue.",
+      "after": "Complétez le dialogue.",
+      "situation": "Vous êtes chez le médecin. Vous toussez et vous avez de la fièvre depuis trois jours.",
+      "unchanged_sha256": "59d240bfde4f4d4821563777752bed3262976aa87d5ec3555dc42e67ca08f215"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/pe.json",
+      "exercise": "tcf-a2-dlg-fete",
+      "before": "Un ami vous invite à sa fête samedi. Complétez le dialogue.",
+      "after": "Complétez le dialogue.",
+      "situation": "Un ami vous invite à une fête chez lui samedi soir.",
+      "unchanged_sha256": "59078f0c906dffcb21bd7e76e8be87c28bee1f3353d15a5c1c1ec00ea4786ea9"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/pe.json",
+      "exercise": "tcf-a2-dlg-diner",
+      "before": "Vous invitez un ami à dîner chez vous vendredi. Complétez le dialogue.",
+      "after": "Complétez le dialogue.",
+      "situation": "Vous voulez inviter un ami à dîner chez vous vendredi soir.",
+      "unchanged_sha256": "fc6a35b18f30ca23b8a465bad917e45e615896205afa1bec2db8eab0a077f786"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/pe.json",
+      "exercise": "tcf-a2-dlg-gare",
+      "before": "Vous êtes à la gare. Votre train a du retard. Complétez le dialogue.",
+      "after": "Complétez le dialogue.",
+      "situation": "Vous êtes à la gare. Le train pour Genève a du retard et vous demandez des informations.",
+      "unchanged_sha256": "4b0b4b0e3ad9ee50cce37861ee2f2c801809e496d228796e034db134b90d5615"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/pe.json",
+      "exercise": "tcf-a2-dlg-pharmacie",
+      "before": "Vous avez mal au ventre. Vous demandez un conseil à la pharmacie. Complétez le dialogue.",
+      "after": "Complétez le dialogue.",
+      "situation": "Vous avez mal au ventre depuis hier. Vous demandez un conseil à la pharmacie.",
+      "unchanged_sha256": "0f8d806875c891c403ed89e2be58cb21d798864d1551e4e9aa2d1cc01e0065bd"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/pe.json",
+      "exercise": "tcf-a2-dlg-echange",
+      "before": "Vous rapportez un pull trop petit au magasin. Complétez le dialogue.",
+      "after": "Complétez le dialogue.",
+      "situation": "Vous avez acheté un pull trop petit. Vous voulez l’échanger.",
+      "unchanged_sha256": "6a9b33fffb853b33c3e6bc2d6f613f26662feeb4a542520afbf5f88cfc3b7022"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/pe.json",
+      "exercise": "tcf-a2-dlg-cinema",
+      "before": "Vous voulez deux places pour le film de 20 h 30. Complétez le dialogue.",
+      "after": "Complétez le dialogue.",
+      "situation": "Vous êtes au cinéma. Vous voulez deux places pour le film de 20 h 30.",
+      "unchanged_sha256": "ee81a3cbc51247277e503cd6873fadefcf484f9433bfacd1f1ffe833aafd7f83"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/pe.json",
+      "exercise": "tcf-a2-dlg-sport",
+      "before": "Vous voulez vous inscrire à un cours de natation. Complétez le dialogue.",
+      "after": "Complétez le dialogue.",
+      "situation": "Vous voulez vous inscrire à un cours de natation le mardi soir.",
+      "unchanged_sha256": "3ef26ada925a5f378caf30e32531a0eba2f2898aa59dc715e91145149f938676"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/pe.json",
+      "exercise": "tcf-a2-dlg-pique-nique",
+      "before": "Des amis vous invitent à un pique-nique dimanche. Complétez le dialogue.",
+      "after": "Complétez le dialogue.",
+      "situation": "Un ami vous invite à un pique-nique au parc dimanche.",
+      "unchanged_sha256": "58b99ab5cb4b2d46f80cbec6de67ad957d8be04f4b30d5a5140f9faa6aebaf3b"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/pe.json",
+      "exercise": "tcf-a2-dlg-tourisme",
+      "before": "Vous voulez visiter la ville aujourd’hui. Complétez le dialogue.",
+      "after": "Complétez le dialogue.",
+      "situation": "Vous êtes à l’office du tourisme. Vous voulez visiter le centre-ville à pied.",
+      "unchanged_sha256": "afdff565027fa3e1676c3dc6bc9e3bd8d7c7dcb7775514a86fc9ea18e0590bfa"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/pe.json",
+      "exercise": "tcf-a2-dlg-taxi",
+      "before": "Vous prenez un taxi pour aller à la gare. Complétez le dialogue.",
+      "after": "Complétez le dialogue.",
+      "situation": "Vous montez dans un taxi. Vous devez être à la gare avant 18 heures.",
+      "unchanged_sha256": "21fd5ac9a62a098bceb6037b2c36e17faf2f4208a8d832c68d2ae60c15f021dd"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/pe.json",
+      "exercise": "tcf-a2-dlg-bibliotheque",
+      "before": "Vous voulez une carte de bibliothèque. Complétez le dialogue.",
+      "after": "Complétez le dialogue.",
+      "situation": "Vous voulez vous inscrire à la bibliothèque pour emprunter des livres.",
+      "unchanged_sha256": "8fed5f1de08aa7724b6ce51f341c125508a9a5ef261af25d776adbb747a7fe77"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/pe.json",
+      "exercise": "tcf-a2-dlg-travail",
+      "before": "Un collègue vous propose de prendre un café. Complétez le dialogue.",
+      "after": "Complétez le dialogue.",
+      "situation": "Un collègue vous propose une pause café avant la réunion de 15 heures.",
+      "unchanged_sha256": "1a56462de6cece0cd87352c89e1e12e9d390086585a52736e7e9305e782178dd"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/pe.json",
+      "exercise": "tcf-a2-dlg-secretariat",
+      "before": "Vous n’avez pas pu venir au cours d’hier. Vous expliquez pourquoi. Complétez le dialogue.",
+      "after": "Complétez le dialogue.",
+      "situation": "Vous allez au secrétariat. Vous étiez absent au cours d’hier parce que vous étiez malade.",
+      "unchanged_sha256": "859d783a617e3598223a8405f6cf05da7c38fe9b766ad5e113f676227498f86e"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/pe.json",
+      "exercise": "tcf-a2-dlg-velo",
+      "before": "Vous voulez louer un vélo pour l’après-midi. Complétez le dialogue.",
+      "after": "Complétez le dialogue.",
+      "situation": "Vous voulez louer un vélo de 14 heures à 18 heures.",
+      "unchanged_sha256": "76a17109b51fc5c67e8c40e19afa91e844506905b1d9a8142a468768195fa04b"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/pe.json",
+      "exercise": "tcf-a2-dlg-banque",
+      "before": "Vous voulez un rendez-vous à la banque pour ouvrir un compte. Complétez le dialogue.",
+      "after": "Complétez le dialogue.",
+      "situation": "Vous entrez dans une banque. Vous voulez prendre rendez-vous pour ouvrir un compte.",
+      "unchanged_sha256": "891f433c02bea3ebd5d40e5887b9cfe787a7cf4fcdf895d23e8c9437c3af50f9"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/pe.json",
+      "exercise": "tcf-a2-dlg-musee",
+      "before": "Vous voulez entrer au musée. Complétez le dialogue.",
+      "after": "Complétez le dialogue.",
+      "situation": "Vous êtes à l’entrée du musée. Vous voulez un billet et vous demandez les horaires.",
+      "unchanged_sha256": "60f27be6d4470b27e0b002dd1a964e38f8c364a20d52a5a4c2b0582cb9a72b01"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/pe.json",
+      "exercise": "tcf-a2-dlg-coiffeur",
+      "before": "Vous téléphonez pour prendre rendez-vous chez le coiffeur. Complétez le dialogue.",
+      "after": "Complétez le dialogue.",
+      "situation": "Vous téléphonez chez le coiffeur. Vous voulez un rendez-vous samedi matin.",
+      "unchanged_sha256": "05cc20c1beaa5d7a0a89bc5945f278918dbc5adc4fa135e0136c48eadc3953f4"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/pe.json",
+      "exercise": "tcf-a2-dlg-rayon",
+      "before": "Au supermarché, vous ne trouvez pas l’huile. Complétez le dialogue.",
+      "after": "Complétez le dialogue.",
+      "situation": "Vous êtes au supermarché. Vous ne trouvez pas l’huile d’olive.",
+      "unchanged_sha256": "4d592881fc1de3e916a85b8360bf6f174b622b5cdcb05ab41d84026adfd0a04f"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/pe.json",
+      "exercise": "tcf-a2-dlg-restaurant-ami",
+      "before": "Un ami vous invite au restaurant ce soir. Complétez le dialogue.",
+      "after": "Complétez le dialogue.",
+      "situation": "Un ami vous invite au restaurant ce soir. Vous pouvez venir, mais pas avant 19 h 30.",
+      "unchanged_sha256": "a02d75c092f04eb9447d55d142bb6c067c5cd37e2d16ad61265d83c5cd3f18f1"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/pe.json",
+      "exercise": "tcf-a2-dlg-appartement",
+      "before": "Vous visitez un appartement. Vous posez des questions simples. Complétez le dialogue.",
+      "after": "Complétez le dialogue.",
+      "situation": "Vous visitez un appartement de deux pièces. Vous voulez savoir le loyer et les charges.",
+      "unchanged_sha256": "008065a2512bee16a0b09f84e8341c25e97ee6813f55c304abd07b9144c74f88"
+    }
+  ]
+}

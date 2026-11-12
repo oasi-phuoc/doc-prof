@@ -22,7 +22,7 @@ import { isAssociationAnnonce } from './association-documents'
 import { tcfAudioSrc } from './media'
 import { threeThemeImageSrc } from './three-themes-images'
 import { limitTcfCeQuestions } from './ce-questions'
-import { tcfCoConsigneForSlot, tcfCoConsigneForType } from './consignes'
+import { tcfCoConsigneForSlot, tcfCoConsigneForType, tcfPeConsigne } from './consignes'
 import {
   drawAssociationCompose,
   drawObjetsCompose,
@@ -718,7 +718,7 @@ export function tryGenerateTcfBlock(
       : undefined
   const customConsigne = config.tcfExercise != null ? ex.consigne?.trim() : undefined
   // PE : la situation (« Vous allez en vacances… ») est le texte élève, pas la grille.
-  const peConsigne = ex.competence === 'PE' ? ex.consigne?.trim() : undefined
+  const peConsigne = tcfPeConsigne(ex)
   const instruction =
     peConsigne ||
     customConsigne ||
@@ -747,7 +747,7 @@ export function tryGenerateTcfBlock(
   if (ex.competence === 'PE' && items.length) {
     const last = items.length - 1
     const total = config.pointsPerQuestion ?? ex.points ?? (ex.type_exercice === 'formulaire' ? 5 : 10)
-    items[last] = { ...items[last], tcfPeEvaluation: peEvaluation(ex, total) }
+    items[last] = { ...items[last], tcfPeEvaluation: peEvaluation(ex, total, peConsigne) }
   }
   return { instruction, items }
 }

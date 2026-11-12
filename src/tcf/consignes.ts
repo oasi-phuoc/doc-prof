@@ -2,7 +2,21 @@
  * Consignes CO liées au type / emplacement d’exercice (pas à chaque audio).
  * Marqueurs : [[em]]…[[/em]] = gras couleur thème ; [[bell]] = icône sonnerie.
  */
-import type { TcfTypeExercice } from './types'
+import type { TcfExercise, TcfTypeExercice } from './types'
+
+/** La situation du dialogue PE est déjà affichée avant le premier échange. */
+export function tcfPeConsigne(ex: TcfExercise): string | undefined {
+  if (ex.competence !== 'PE') return undefined
+  const consigne = ex.consigne?.trim()
+  if (ex.type_exercice !== 'dialogue_a_completer' || !ex.support.situation?.trim()) return consigne
+  // Anciennes fiches : retirer seulement le préambule de situation connu ;
+  // conserver l'action et les éventuelles instructions qui la suivent.
+  const action = consigne?.search(/\bComplétez le dialogue\b/iu) ?? -1
+  if (consigne && action > 0 && /^(?:Vous\b|Un ami\b|Une amie\b|Des amis\b|Un collègue\b|Au\b)/iu.test(consigne)) {
+    return consigne.slice(action)
+  }
+  return consigne || 'Complétez le dialogue.'
+}
 
 export const TCF_CO_CONSIGNE_SIX_COURTS = [
   'Vous allez écouter [[em]]6 documents audio[[/em]] différents. Il y a 2 écoutes.',
