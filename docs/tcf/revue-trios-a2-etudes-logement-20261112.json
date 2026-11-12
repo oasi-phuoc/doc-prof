@@ -1,0 +1,73 @@
+{
+  "date": "2026-11-12",
+  "trios": [
+    {
+      "key": "tcf-ss-a2-s56-co-3#7",
+      "source_sha256": "419aa7652ea5d9aa0c02a2fafca8924d2701440a40eee2717fcd6421abda7c32",
+      "semantic_sha256": "5aba4da06e76558e2328ee0e3c146efeb28a77658f8cbae79038e1bba549e214",
+      "source": "Salut, c'est Max ! Mercredi prochain, avec Lola, on va voir un film à la séance de 18h. Pour y aller, on va prendre le métro, et au retour, c'est mon père qui va venir nous chercher en voiture. Vers 22h, il nous attendra devant l'entrée du cinéma. Si tu veux venir avec nous, rendez-vous à la station Jean Jaurès, à 17h mercredi. Ah, j'oubliais ! Le billet de cinéma est à 5€. C'est tarif réduit le mercredi pour les jeunes. Alors n'oublie pas ta carte de lycéen !",
+      "question": {
+        "enonce": "Quel document faut-il apporter pour le tarif jeune ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "La carte de lycéen",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Le passeport",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Le permis de conduire",
+            "correct": false
+          }
+        ],
+        "written_model": "La carte de lycéen"
+      },
+      "image_ids": [
+        "extension573-carte-lyceen",
+        "co306-passeport-dessine",
+        "audit-context-permis-conduire"
+      ],
+      "reason": "Le message de Max précise le tarif réduit du cinéma pour les jeunes et demande explicitement de ne pas oublier sa carte de lycéen. Le passeport et le permis ne sont pas mentionnés : ce sont deux autres documents cohérents mais non demandés pour ce tarif. Aucun prix ni jour n’est ajouté dans les images.",
+      "visual_review": "Originaux vus individuellement : carte de lycéen bleu-vert avec portrait fictif jeune et livre ; passeport bleu avec globe et titre ; permis rose avec portrait adulte distinct et pictogramme automobile. Trois documents seuls et entiers, texte limité aux titres, fond crème, peinture douce et paysage 4:3. Passeport et permis réutilisés."
+    },
+    {
+      "key": "delf-a2-2021-co-48#7",
+      "source_sha256": "0e4f5ad9d6a926f1ef7bd307d099cc97aff4c94fd9b67b5dd00323b3d59fc10f",
+      "semantic_sha256": "60924c7b9f583d6d508093c7d1a86c84a0fca8a14897160275a7a5395a62eb5d",
+      "source": "Je m’appelle Carolina, je suis suisse et j’ai 25 ans. Je\nvis en France à Grenoble depuis 1 an. Je suis venue\nen France pour faire mes études. J’habite dans une\nmaison qui se trouve près de la boulangerie. Je vois\nles montagnes à travers ma fenêtre. C’est super, car\nj’adore la montagne ! L’été, je fais des randonnées,\nl’hiver je vais faire du ski tous les week-ends.",
+      "question": {
+        "enonce": "Dans quel type de logement habite-t-elle ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Une maison",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un studio",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une résidence universitaire",
+            "correct": false
+          }
+        ],
+        "written_model": "Une maison"
+      },
+      "image_ids": [
+        "co306-maison-dessine",
+        "co306-studio-dessine",
+        "extension573-residence-universitaire"
+      ],
+      "reason": "Carolina dit explicitement habiter dans une maison. Elle est étudiante, mais elle ne dit pas habiter en résidence universitaire ; le studio est également absent du récit. Les trois choix représentent un type de logement, avec la maison comme seule bonne réponse.",
+      "visual_review": "Originaux vus individuellement : maison individuelle avec jardin et toit ; studio montrant lit et cuisine dans la même pièce ; immeuble collectif titré résidence universitaire avec entrée commune et deux étudiants, dont un en fauteuil roulant. Les lieux sont reconnaissables et distincts, même peinture douce, paysages 4:3. Maison et studio réutilisés."
+    }
+  ]
+}

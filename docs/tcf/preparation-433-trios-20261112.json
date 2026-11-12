@@ -4,13 +4,13 @@
   "scope": "433 trios demandés, réemplois proposés liés aux questions actuelles ; reprise supplémentaire d’un ancien trio invalidé par une correction audio.",
   "summary": {
     "initial_trios": 433,
-    "activated_since_baseline": 14,
-    "initial_pending": 419,
+    "activated_since_baseline": 20,
+    "initial_pending": 413,
     "additional_pending": 1,
-    "total_pending": 420,
+    "total_pending": 414,
     "pending_by_level": {
-      "A0-A1": 182,
-      "A1-A2": 215,
+      "A0-A1": 178,
+      "A1-A2": 213,
       "A2-B1": 23
     }
   },
@@ -134,15 +134,27 @@
       "audio": null,
       "source_sha256": "6a0ab498a7914460d4aa5b95696fe1fb10da7d2785e1f5ef749882e88c64c8b3",
       "semantic_sha256": "c9f33dc546063d99c335996c79face809cc00d97f1d336b35c2c69e2edd99970",
-      "current_status": "artwork_needed_distinct_document_types",
-      "decision": "Préparer ou retrouver les types exacts de documents et leurs éventuelles combinaisons ; aucun montant, date ou renseignement personnel inventé. Ne pas confondre certificat, ordonnance, diplôme ou carte.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Le message du professeur demande explicitement une pièce d’identité et la convocation pour le DELF scolaire. Diplôme avec photo et carte de bibliothèque avec billet sont des paires de documents cohérentes mais non demandées. La même image de la bonne paire convient au second support sans inventer de date ou de lieu. Originaux vus séparément : carte d’identité avec portrait fictif et feuille CONVOCATION ; diplôme encadré et photo séparée ; carte de bibliothèque verte avec livres et billet générique distinct. Deux documents entiers par réponse, aucun chiffre, date ou montant, fond crème, peinture douce et paysage 4:3. Bonne paire commune et diplôme/photo réutilisés.",
       "choices": [
         {
           "id": "a",
           "label": "Une pièce d'identité et la convocation",
           "correct": true,
-          "exact_label_reuse_candidates": [],
-          "generation_jobs": []
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-identite-convocation.png",
+              "sha256": "fea89e2552ad5e64c02407b4ec634391423b10fca9a50a96281a1a5980f3d0ff",
+              "label": "Une pièce d’identité et la convocation"
+            }
+          ],
+          "generation_jobs": [
+            {
+              "id": "extension573-identite-convocation",
+              "status": "visually_reviewed",
+              "source": "/lib/images/tcf/qcm-audit/extension573-identite-convocation.png"
+            }
+          ]
         },
         {
           "id": "b",
@@ -167,11 +179,27 @@
           "id": "c",
           "label": "Une carte de bibliothèque et un billet",
           "correct": false,
-          "exact_label_reuse_candidates": [],
-          "generation_jobs": []
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-bibliotheque-billet.png",
+              "sha256": "7d9beb70995d66fd91f9125950771260d6bb6e7ed4af2d143e8ae3d02096779a",
+              "label": "Une carte de bibliothèque et un billet"
+            }
+          ],
+          "generation_jobs": [
+            {
+              "id": "extension573-bibliotheque-billet",
+              "status": "visually_reviewed",
+              "source": "/lib/images/tcf/qcm-audit/extension573-bibliotheque-billet.png"
+            }
+          ]
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/extension573-identite-convocation.png",
+        "/lib/images/tcf/qcm-audit/extension573-diplome-photo.webp",
+        "/lib/images/tcf/qcm-audit/extension573-bibliotheque-billet.png"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -180,7 +208,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -1892,15 +1920,27 @@
       "audio": null,
       "source_sha256": "7f92d50fea5f5a29de4651ee7cd1d9344703cf32bf04db5ef06c8aba37b503de",
       "semantic_sha256": "ac6f0b4a78eae3098498bbdae9cc700d268545d64c382f76f021081ba7955aea",
-      "current_status": "artwork_needed_distinct_document_types",
-      "decision": "Préparer ou retrouver les types exacts de documents et leurs éventuelles combinaisons ; aucun montant, date ou renseignement personnel inventé. Ne pas confondre certificat, ordonnance, diplôme ou carte.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Le centre d’examen du permis demande explicitement la pièce d’identité et cette convocation. Le permis de conduire est le titre visé par l’examen, pas une pièce à apporter avec une photo. Carte de transport et diplôme sont deux autres documents non demandés. Libellés, bonne réponse et contexte conservés. Originaux vus séparément : carte d’identité avec portrait fictif et feuille CONVOCATION ; permis rose et photo séparée ; carte de transport avec bus/train et diplôme encadré. Chaque réponse contient exactement ses deux documents, sans date ni montant. Personnages distincts dans les portraits, fond crème, peinture douce et paysage 4:3. Deux paires réutilisées.",
       "choices": [
         {
           "id": "a",
           "label": "Une pièce d'identité et la convocation",
           "correct": true,
-          "exact_label_reuse_candidates": [],
-          "generation_jobs": []
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-identite-convocation.png",
+              "sha256": "fea89e2552ad5e64c02407b4ec634391423b10fca9a50a96281a1a5980f3d0ff",
+              "label": "Une pièce d’identité et la convocation"
+            }
+          ],
+          "generation_jobs": [
+            {
+              "id": "extension573-identite-convocation",
+              "status": "visually_reviewed",
+              "source": "/lib/images/tcf/qcm-audit/extension573-identite-convocation.png"
+            }
+          ]
         },
         {
           "id": "b",
@@ -1941,7 +1981,11 @@
           ]
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/extension573-identite-convocation.png",
+        "/lib/images/tcf/qcm-audit/extension573-permis-photo.webp",
+        "/lib/images/tcf/qcm-audit/extension573-transport-diplome.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -1950,7 +1994,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -7164,8 +7208,8 @@
       "audio": "/lib/audio/tcf/co/vie-quotidienne/bonjour-c-est-dejeuner-1.mp3",
       "source_sha256": "42d6ac6fe3e3a530478155d6bfdccdfacddd01a699b63b2b5308e682de42006c",
       "semantic_sha256": "90abbbaf6253a857de8166f89e419886f9ca511d4c4c70e154f250e27ea92fdc",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "La commande du restaurant indique explicitement deux tartes aux fraises. Les glaces au chocolat et les salades de fruits sont deux autres desserts de restaurant non commandés dans la transcription. La salade chinoise entendue est un plat salé, distinct du dessert salade de fruits. Chaque choix conserve exactement deux portions. Trois originaux vus séparément : deux tartelettes aux fraises sur deux assiettes ; deux coupes à pied avec glace brune au chocolat ; deux bols de fruits coupés. Six récipients entiers, chaque image avec exactement deux desserts, fond crème, peinture douce et paysage 4:3.",
       "choices": [
         {
           "id": "a",
@@ -7190,11 +7234,18 @@
           "id": "b",
           "label": "Deux glaces au chocolat",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-deux-glaces-chocolat.png",
+              "sha256": "01ff02a221bad0e6a31ece3f821c3dbf53b224b84b65681606b4bc6905a04856",
+              "label": "Deux glaces au chocolat"
+            }
+          ],
           "generation_jobs": [
             {
               "id": "extension573-deux-glaces-chocolat",
-              "status": "queued_after_quota_reset"
+              "status": "visually_reviewed",
+              "source": "/lib/images/tcf/qcm-audit/extension573-deux-glaces-chocolat.png"
             }
           ]
         },
@@ -7202,16 +7253,27 @@
           "id": "c",
           "label": "Deux salades de fruits",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-deux-salades-fruits.png",
+              "sha256": "630af7ddf82193832b1d99d942281c1a533bc161b13d3a9ec4457331a176f344",
+              "label": "Deux salades de fruits"
+            }
+          ],
           "generation_jobs": [
             {
               "id": "extension573-deux-salades-fruits",
-              "status": "queued_after_quota_reset"
+              "status": "visually_reviewed",
+              "source": "/lib/images/tcf/qcm-audit/extension573-deux-salades-fruits.png"
             }
           ]
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/extension573-deux-tartes-fraises.png",
+        "/lib/images/tcf/qcm-audit/extension573-deux-glaces-chocolat.png",
+        "/lib/images/tcf/qcm-audit/extension573-deux-salades-fruits.png"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -7220,7 +7282,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -7234,8 +7296,8 @@
       "audio": "/lib/audio/tcf/co/vie-quotidienne/bonjour-c-est-dejeuner-1.mp3",
       "source_sha256": "42d6ac6fe3e3a530478155d6bfdccdfacddd01a699b63b2b5308e682de42006c",
       "semantic_sha256": "0e3ed4bb11b42581bd843c61e069372b049a1f1cff699d30a5ac8df3362376c3",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "La commande finale dit explicitement une carafe d’eau. Le vin n’est pas commandé et le personnage exclut l’alcool ; les deux jus d’orange ne sont pas mentionnés. Trois réponses cohérentes comme boissons de restaurant, quantités et libellés conservés. Trois originaux vus séparément : une carafe transparente contenant de l’eau, une bouteille de verre vert avec vin rouge et bouchon sans étiquette, exactement deux verres de jus d’orange. Objets entiers, sans texte ni chiffre, fond crème et peinture douce, paysage 4:3. Carafe et bouteille réutilisées.",
       "choices": [
         {
           "id": "a",
@@ -7267,16 +7329,27 @@
           "id": "c",
           "label": "Deux jus d’orange",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-deux-jus-orange.png",
+              "sha256": "09be3d3dca20c4c919d4db14175c5e7c488daaf59f31ae3fa68b2444d98eb025",
+              "label": "Deux jus d’orange"
+            }
+          ],
           "generation_jobs": [
             {
               "id": "extension573-deux-jus-orange",
-              "status": "queued_after_quota_reset"
+              "status": "visually_reviewed",
+              "source": "/lib/images/tcf/qcm-audit/extension573-deux-jus-orange.png"
             }
           ]
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-carafe-eau-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-bouteille-vin-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/extension573-deux-jus-orange.png"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -7285,7 +7358,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -16523,8 +16596,8 @@
       "audio": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_48.mp3",
       "source_sha256": "0e4f5ad9d6a926f1ef7bd307d099cc97aff4c94fd9b67b5dd00323b3d59fc10f",
       "semantic_sha256": "60924c7b9f583d6d508093c7d1a86c84a0fca8a14897160275a7a5395a62eb5d",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Carolina dit explicitement habiter dans une maison. Elle est étudiante, mais elle ne dit pas habiter en résidence universitaire ; le studio est également absent du récit. Les trois choix représentent un type de logement, avec la maison comme seule bonne réponse. Originaux vus individuellement : maison individuelle avec jardin et toit ; studio montrant lit et cuisine dans la même pièce ; immeuble collectif titré résidence universitaire avec entrée commune et deux étudiants, dont un en fauteuil roulant. Les lieux sont reconnaissables et distincts, même peinture douce, paysages 4:3. Maison et studio réutilisés.",
       "choices": [
         {
           "id": "a",
@@ -16556,16 +16629,27 @@
           "id": "c",
           "label": "Une résidence universitaire",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-residence-universitaire.png",
+              "sha256": "b0dce3b549b6bb531ec30c239649697c10e57a7bc54da4594962b5e38b9ff017",
+              "label": "Une résidence universitaire"
+            }
+          ],
           "generation_jobs": [
             {
               "id": "extension573-residence-universitaire",
-              "status": "queued_after_quota_reset"
+              "status": "visually_reviewed",
+              "source": "/lib/images/tcf/qcm-audit/extension573-residence-universitaire.png"
             }
           ]
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-studio-dessine.webp",
+        "/lib/images/tcf/qcm-audit/extension573-residence-universitaire.png"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -16574,7 +16658,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -20896,18 +20980,25 @@
       "audio": "/lib/audio/tcf/co/transports/transports-3.mp3",
       "source_sha256": "419aa7652ea5d9aa0c02a2fafca8924d2701440a40eee2717fcd6421abda7c32",
       "semantic_sha256": "5aba4da06e76558e2328ee0e3c146efeb28a77658f8cbae79038e1bba549e214",
-      "current_status": "artwork_needed_distinct_document_types",
-      "decision": "Préparer ou retrouver les types exacts de documents et leurs éventuelles combinaisons ; aucun montant, date ou renseignement personnel inventé. Ne pas confondre certificat, ordonnance, diplôme ou carte.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Le message de Max précise le tarif réduit du cinéma pour les jeunes et demande explicitement de ne pas oublier sa carte de lycéen. Le passeport et le permis ne sont pas mentionnés : ce sont deux autres documents cohérents mais non demandés pour ce tarif. Aucun prix ni jour n’est ajouté dans les images. Originaux vus individuellement : carte de lycéen bleu-vert avec portrait fictif jeune et livre ; passeport bleu avec globe et titre ; permis rose avec portrait adulte distinct et pictogramme automobile. Trois documents seuls et entiers, texte limité aux titres, fond crème, peinture douce et paysage 4:3. Passeport et permis réutilisés.",
       "choices": [
         {
           "id": "a",
           "label": "La carte de lycéen",
           "correct": true,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-carte-lyceen.png",
+              "sha256": "7858b044b97d98579f604f025d14e7edd3e63873eaaa5b0ce690a7724fdffcc3",
+              "label": "La carte de lycéen"
+            }
+          ],
           "generation_jobs": [
             {
               "id": "extension573-carte-lyceen",
-              "status": "queued_after_quota_reset"
+              "status": "visually_reviewed",
+              "source": "/lib/images/tcf/qcm-audit/extension573-carte-lyceen.png"
             }
           ]
         },
@@ -20938,7 +21029,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/extension573-carte-lyceen.png",
+        "/lib/images/tcf/qcm-audit/co306-passeport-dessine.webp",
+        "/lib/images/tcf/qcm-audit/audit-context-permis-conduire.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -20947,7 +21042,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {

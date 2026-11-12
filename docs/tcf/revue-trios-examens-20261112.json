@@ -1,0 +1,73 @@
+{
+  "date": "2026-11-12",
+  "trios": [
+    {
+      "key": "delf-a1v-ce-020#6",
+      "source_sha256": "7f92d50fea5f5a29de4651ee7cd1d9344703cf32bf04db5ef06c8aba37b503de",
+      "semantic_sha256": "ac6f0b4a78eae3098498bbdae9cc700d268545d64c382f76f021081ba7955aea",
+      "source": "Vous passez l’examen de théorie du permis de conduire le jeudi 9 juin à 14 h au centre d’examens de Delémont. Arrivez 20 minutes avant. Apportez votre pièce d’identité et cette convocation. L’examen dure environ une heure.\nLe centre est près de l’arrêt « Gare » (bus 2). En descendant du bus, prenez la deuxième rue à droite et marchez cent mètres. Le centre est au numéro 8.",
+      "question": {
+        "enonce": "Quels documents faut-il apporter ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Une pièce d'identité et la convocation",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un permis de conduire et une photo",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une carte de transport et un diplôme",
+            "correct": false
+          }
+        ],
+        "written_model": "Une pièce d'identité et la convocation"
+      },
+      "image_ids": [
+        "extension573-identite-convocation",
+        "extension573-permis-photo",
+        "extension573-transport-diplome"
+      ],
+      "reason": "Le centre d’examen du permis demande explicitement la pièce d’identité et cette convocation. Le permis de conduire est le titre visé par l’examen, pas une pièce à apporter avec une photo. Carte de transport et diplôme sont deux autres documents non demandés. Libellés, bonne réponse et contexte conservés.",
+      "visual_review": "Originaux vus séparément : carte d’identité avec portrait fictif et feuille CONVOCATION ; permis rose et photo séparée ; carte de transport avec bus/train et diplôme encadré. Chaque réponse contient exactement ses deux documents, sans date ni montant. Personnages distincts dans les portraits, fond crème, peinture douce et paysage 4:3. Deux paires réutilisées."
+    },
+    {
+      "key": "delf-a1s-ce-001#5",
+      "source_sha256": "6a0ab498a7914460d4aa5b95696fe1fb10da7d2785e1f5ef749882e88c64c8b3",
+      "semantic_sha256": "c9f33dc546063d99c335996c79face809cc00d97f1d336b35c2c69e2edd99970",
+      "source": "Chers élèves,\nLundi prochain, vous passez l’examen du DELF scolaire A1. Soyez à l’école à 13 h 45 précises. N’oubliez pas votre pièce d’identité et votre convocation. Venez bien habillés et éteignez votre natel avant le début de l’épreuve. Rappel : le dictionnaire est interdit. Je vous souhaite beaucoup de courage et de bonnes révisions !\nM. Rémiour, votre professeur de français",
+      "question": {
+        "enonce": "Quels documents faut-il apporter ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Une pièce d'identité et la convocation",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un diplôme et une photo",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une carte de bibliothèque et un billet",
+            "correct": false
+          }
+        ],
+        "written_model": "Une pièce d'identité et la convocation"
+      },
+      "image_ids": [
+        "extension573-identite-convocation",
+        "extension573-diplome-photo",
+        "extension573-bibliotheque-billet"
+      ],
+      "reason": "Le message du professeur demande explicitement une pièce d’identité et la convocation pour le DELF scolaire. Diplôme avec photo et carte de bibliothèque avec billet sont des paires de documents cohérentes mais non demandées. La même image de la bonne paire convient au second support sans inventer de date ou de lieu.",
+      "visual_review": "Originaux vus séparément : carte d’identité avec portrait fictif et feuille CONVOCATION ; diplôme encadré et photo séparée ; carte de bibliothèque verte avec livres et billet générique distinct. Deux documents entiers par réponse, aucun chiffre, date ou montant, fond crème, peinture douce et paysage 4:3. Bonne paire commune et diplôme/photo réutilisés."
+    }
+  ]
+}
