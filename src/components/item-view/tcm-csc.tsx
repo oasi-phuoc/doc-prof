@@ -1,5 +1,7 @@
+import type { ReactNode } from 'react'
 import type { MathItem, PreviewMode } from '@/math/types'
 import { GeometryFigure } from '@/components/math/GeometryFigure'
+import { ExerciseFrame } from '@/components/math/ExerciseFrame'
 import { CSC_FIGURES } from '@/tcm-csc/items'
 import { CSC_PROBLEM_BANK } from '@/tcm-csc/problem-bank'
 import './tcm-csc.css'
@@ -13,12 +15,24 @@ export function CscTaskBlock({ item, mode }: { item: MathItem; mode: PreviewMode
     const blank = <span className={`answer-line-field compact${show ? ' filled' : ''}`}>{show ? item.answer : '\u00a0'}</span>
     return <div className="csc-operator"><span>{task.a}</span>{task.blank === 'operator' ? blank : <span>{task.operation}</span>}<span>{task.b}</span>{task.blank === 'equals' ? blank : <span>=</span>}<span>{result}</span></div>
   }
-  if (task.kind === 'shape-names') return <div className="csc-shape-names">{task.figures.map((figure, i) => <div key={i}><b>{String.fromCharCode(65 + i)}.</b><div className="csc-name-figure"><GeometryFigure type={figure} dims={{bare:true}} /></div><span className={`answer-line-field${show ? ' filled' : ''}`}>{show ? CSC_FIGURES.find((entry) => entry.value === figure)?.label : '\u00a0'}</span></div>)}</div>
-  if (task.kind === 'connect-points') return <div className="csc-connect"><ol><li>AB en rouge.</li><li>CD en bleu.</li></ol><svg viewBox="0 0 160 80" role="img" aria-label="Quatre points A, B, C et D à relier avec la règle">
+  if (task.kind === 'shape-names') return <div className="csc-shape-names">{task.figures.map((figure, i) => <ExerciseFrame key={i} title={`Forme ${i+1}`}><div className="csc-name-figure"><GeometryFigure type={figure} dims={{bare:true}} /></div><div className="csc-shape-answer"><span className={`answer-line-field${show ? ' filled' : ''}`}>{show ? CSC_FIGURES.find((entry) => entry.value === figure)?.label : '\u00a0'}</span></div></ExerciseFrame>)}</div>
+  if (task.kind === 'connect-points') return <div className="csc-connect"><svg viewBox="0 0 160 80" role="img" aria-label="Quatre points A, B, C et D à relier avec la règle">
     {show && [[0, 1, '#c02030'], [2, 3, '#174eae']].map(([from, to, color]) => { const a = task.points[Number(from)], b = task.points[Number(to)]; return a && b ? <line key={String(from)} x1={a.x} y1={a.y} x2={b.x} y2={b.y} stroke={String(color)} strokeWidth=".8" /> : null })}
     {task.points.map((point) => <g key={point.label}><circle cx={point.x} cy={point.y} r=".8" fill="#182238" /><text x={point.x + 2} y={point.y - 2} fontSize="5">{point.label}</text></g>)}
   </svg></div>
   return null
+}
+
+export function CscLengthBlock({item,mode,children}:{item:MathItem;mode:PreviewMode;children:ReactNode}) {
+  const segments=item.segments??[],answers=item.answer.split(';').map(value=>value.trim())
+  return <div className="csc-length-parts">
+    <ExerciseFrame title="Partie 1"><p className="csc-part-instruction">Mesurez les segments avec la règle.</p>{children}</ExerciseFrame>
+    <ExerciseFrame title="Partie 2"><p className="csc-part-instruction">Cochez la bonne réponse.</p>
+      <table className="csc-length-table" aria-label="Comparaison des segments"><thead><tr><th scope="col">Question</th>{segments.map((_,index)=><th scope="col" key={index}>{String.fromCharCode(65+index)}</th>)}</tr></thead>
+        <tbody>{['Quel est le plus long segment ?','Quel est le plus court segment ?'].map((question,row)=><tr key={question}><th scope="row"><span className="csc-numbered-label"><span>{row+1}.</span><span>{question}</span></span></th>{segments.map((_,index)=><td key={index}><span className="csc-length-check">{mode==='answers'&&answers[row]===String.fromCharCode(65+index)?'✓':'\u00a0'}</span></td>)}</tr>)}</tbody>
+      </table>
+    </ExerciseFrame>
+  </div>
 }
 
 export function CscProblemBlock({ item, mode, draftGrid = false }: { item: MathItem; mode: PreviewMode; draftGrid?: boolean }) {
@@ -30,16 +44,17 @@ export function CscProblemBlock({ item, mode, draftGrid = false }: { item: MathI
 export function CscCopyBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const template = item.symmetryFigure, task = item.cscTask
   if (!template || task?.kind !== 'copy') return null
+  const cellMm=4*1.15
   const columns = template.side === 'left' ? template.axisX : template.cols - template.axisX
   const offset = template.side === 'left' ? 0 : template.axisX
   return <div className="csc-copy">{[1, task.scale].map((scale, index) => {
     const cols = columns * scale, rows = template.rows * scale, reveal = index === 0 || mode === 'answers'
     const point = (p: { x: number; y: number }) => ({ x: 1 + (p.x - offset) * scale, y: 1 + rows - p.y * scale })
-    return <div key={index}><p>{index === 0 ? 'Modèle' : task.scale === 2 ? 'Reproduction agrandie' : 'Reproduction'}</p><svg data-copy-scale={scale} data-copy-cols={cols} data-copy-rows={rows} viewBox={`0 0 ${cols + 2} ${rows + 2}`} style={{ width: `${cols * 4 + 8}mm`, height: `${rows * 4 + 8}mm` }} role="img" aria-label={index === 0 ? 'Quadrillage du modèle' : 'Quadrillage de reproduction'}>
+    return <div key={index}><p>{index === 0 ? 'Modèle' : task.scale === 2 ? 'Reproduction agrandie' : 'Reproduction'}</p><svg data-copy-scale={scale} data-copy-cols={cols} data-copy-rows={rows} viewBox={`0 0 ${cols + 2} ${rows + 2}`} style={{ width: `${(cols+2)*cellMm}mm`, height: `${(rows+2)*cellMm}mm` }} role="img" aria-label={index === 0 ? 'Quadrillage du modèle' : 'Quadrillage de reproduction'}>
       {Array.from({ length: cols + 1 }, (_, x) => <line key={`x${x}`} x1={x + 1} x2={x + 1} y1="1" y2={rows + 1} className="csc-copy-grid" />)}
       {Array.from({ length: rows + 1 }, (_, y) => <line key={`y${y}`} y1={y + 1} y2={y + 1} x1="1" x2={cols + 1} className="csc-copy-grid" />)}
-      {reveal && template.polylines.map((poly, i) => <path key={i} data-copy-figure d={poly.map((p, j) => { const s = point(p); return `${j ? 'L' : 'M'}${s.x},${s.y}` }).join(' ')} fill="none" stroke={index === 0 ? '#182238' : '#174eae'} strokeWidth=".1" />)}
-      {reveal && template.dots?.map((p, i) => { const s = point(p); return <circle key={i} cx={s.x} cy={s.y} r=".15" fill="#182238" /> })}
+      {reveal && template.polylines.map((poly, i) => <path key={i} data-copy-figure d={poly.map((p, j) => { const s = point(p); return `${j ? 'L' : 'M'}${s.x},${s.y}` }).join(' ')} fill="none" stroke="var(--purple)" strokeWidth=".1" />)}
+      {reveal && template.dots?.map((p, i) => { const s = point(p); return <circle key={i} cx={s.x} cy={s.y} r=".15" fill="var(--purple)" /> })}
     </svg></div>
   })}</div>
 }

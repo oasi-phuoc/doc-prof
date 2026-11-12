@@ -156,9 +156,11 @@ export function CountIconGlyph({
 export function CountIconsBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const scene = item.countIcons
   const show = mode === 'answers'
+  const isCsc = item.cscTask?.kind === 'large-count'
   if (!scene) return null
   return (
     <div className={`count-icons-block${item.cscTask?.kind === 'large-count' ? ' is-csc-large' : ''}`} aria-label="Compter les formes">
+      {isCsc && <p className="csc-count-instruction">Comptez les formes <span className="csc-count-target" role="img" aria-label={scene.label}><svg viewBox="0 0 24 24" aria-hidden><CountIconGlyph kind={scene.targetKind}/></svg></span>.</p>}
       <div className="count-icons-frame" role="img" aria-label={`Cadre avec ${scene.label}`}>
         {scene.tokens.map((token, index) => (
           <span
@@ -183,11 +185,11 @@ export function CountIconsBlock({ item, mode }: { item: MathItem; mode: PreviewM
           {show ? String(scene.targetCount) : '\u00a0'}
         </span>{' '}
         {scene.label}{' '}
-        <span className="count-icons-caption-icon" aria-hidden>
+        {!isCsc && <span className="count-icons-caption-icon" aria-hidden>
           <svg viewBox="0 0 24 24" focusable="false">
             <CountIconGlyph kind={scene.targetKind} />
           </svg>
-        </span>
+        </span>}
       </p>
     </div>
   )

@@ -342,8 +342,8 @@ export function CoordBlock({
                 >
                   {numbered ? <span className="coord-question-num">{index + 1}.</span> : null}
                   {showShape ? (
-                    <span className="coord-question-icon" role={csc ? 'img' : undefined} aria-label={csc ? question.prompt : undefined} style={{color:shapeColors?.[question.kind!]}}>
-                      <CoordShapeButton kind={question.kind!} size={csc ? 24 : 16} />
+                    <span className="coord-question-icon" data-coord-shape={csc?question.kind:undefined} role={csc ? 'img' : undefined} aria-label={csc ? question.prompt : undefined} style={{color:shapeColors?.[question.kind!]}}>
+                      <CoordShapeButton kind={question.kind!} size={16} cellMm={csc?(scene?.cellMm??8)*2:undefined} />
                     </span>
                   ) : null}
                   {!csc && <span className="coord-question-label">

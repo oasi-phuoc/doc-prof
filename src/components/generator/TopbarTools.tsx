@@ -183,7 +183,7 @@ function FontSizeSection({
   return (
     <div className="settings-section" role="group" aria-label="Taille du texte">
       <label className="settings-font-label" htmlFor="base-font-size">
-        <span>Taille du texte de la fiche</span>
+        <span>Taille du corps du texte</span>
         <output htmlFor="base-font-size">{fontSize} px</output>
       </label>
       <input

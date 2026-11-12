@@ -2,6 +2,7 @@ import { Fragment } from 'react'
 import type { MathItem, PreviewMode } from '@/math/types'
 import { renderMathText } from '../math/FractionView'
 import { formatOperand } from './algebra'
+import { ExerciseFrame } from '../math/ExerciseFrame'
 
 export function EncadrementRow({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const show = mode === 'answers'
@@ -44,14 +45,14 @@ export function CompareRow({ item, mode }: { item: MathItem; mode: PreviewMode }
   )
 }
 
-export function OrderRow({ item, mode }: { item: MathItem; mode: PreviewMode }) {
+export function OrderRow({ item, mode, series }: { item: MathItem; mode: PreviewMode; series?: number }) {
   const show = mode === 'answers'
   const given = item.sequence ?? []
   const parts = item.placeParts ?? []
   const sep = item.orderOp === '>' ? '>' : '<'
   const slots = Math.max(parts.length, given.length, 5)
   const compact = Boolean(item.orderCompact)
-  return (
+  const content = (
     <div className={`order-block${compact ? ' order-compact' : ''}`}>
       {item.prompt && <p className="column-prompt">{item.prompt}</p>}
       {item.orderBoxed ? (
@@ -89,6 +90,7 @@ export function OrderRow({ item, mode }: { item: MathItem; mode: PreviewMode }) 
       </div>
     </div>
   )
+  return series===undefined ? content : <ExerciseFrame title={`Série ${series}`} className="csc-order-series">{content}</ExerciseFrame>
 }
 
 export function SequenceRow({ item, mode }: { item: MathItem; mode: PreviewMode }) {

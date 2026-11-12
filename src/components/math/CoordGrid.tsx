@@ -114,11 +114,13 @@ export function CoordShapeGlyph({
   }
 }
 
-export function CoordShapeButton({ kind, size = 22 }: { kind: CoordShape; size?: number }) {
+export function CoordShapeButton({ kind, size = 22, cellMm }: { kind: CoordShape; size?: number; cellMm?: number }) {
+  const glyph=cellMm===undefined?8:Math.max(1.4,cellMm*.32)
+  const extent=cellMm===undefined?22:glyph*1.8
   return (
-    <svg viewBox="0 0 22 22" width={size} height={size} aria-hidden>
-      <g fill="currentColor" stroke="currentColor" strokeWidth={0.6} strokeLinejoin="round">
-        <CoordShapeGlyph kind={kind} x={11} y={11} size={8} />
+    <svg viewBox={`0 0 ${extent} ${extent}`} width={cellMm===undefined?size:`${extent}mm`} height={cellMm===undefined?size:`${extent}mm`} aria-hidden>
+      <g fill="currentColor" stroke="currentColor" strokeWidth={cellMm===undefined?0.6:0.22} strokeLinejoin="round">
+        <CoordShapeGlyph kind={kind} x={extent/2} y={extent/2} size={glyph} />
       </g>
     </svg>
   )

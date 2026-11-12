@@ -8,6 +8,7 @@ import { CalligraphyView } from './math/CalligraphyView'
 import { GattegnoChart } from './math/GattegnoChart'
 import { GlossaryFigure } from './math/GlossaryFigure'
 import { LogiqueBlock } from './item-view/logique'
+import { ExerciseFrame } from './math/ExerciseFrame'
 import { TcfItemView } from './tcf/TcfItemView'
 import { GrammarQuestionView } from './item-view/grammar'
 import { isGrammarQuestion } from '@/grammaire/curriculum/validation'
@@ -72,6 +73,8 @@ export function ItemView({
   item,
   mode,
   index,
+  itemLabel,
+  seriesNumber,
   algebraPadLeft = 0,
   draftGrid = true,
   onToggleDraftGrid,
@@ -94,6 +97,9 @@ export function ItemView({
   item: MathItem
   mode: PreviewMode
   index: number
+  itemLabel?: string
+  /** Bandeau de série pour le rangement et la logique du TCM CSC. */
+  seriesNumber?: number
   /** Cases vides à gauche pour aligner verticalement les atomes entre questions. */
   algebraPadLeft?: number
   /** Zone de brouillon avec grille 4×4 mm (problèmes). */
@@ -178,6 +184,7 @@ export function ItemView({
       : 'Passer cette question et les suivantes sur une nouvelle page'
   const hideNumber =
     Boolean(item.hideItemNumber) ||
+    item.cscTask?.kind === 'large-count' ||
     item.layout === 'gattegno-chart' ||
     item.layout === 'phrase-write' ||
     item.layout === 'vocab-table' ||
@@ -300,7 +307,7 @@ export function ItemView({
           </svg>
         </button>
       ) : null}
-      {item.coordScene || hideNumber ? null : <div className="item-number">{item.grammar?.readingPart?.kind==='question'?item.grammar.readingPart.number:index + 1}.</div>}
+      {item.coordScene || (hideNumber && itemLabel===undefined) || seriesNumber!==undefined ? null : <div className="item-number">{itemLabel ?? (item.grammar?.readingPart?.kind==='question'?item.grammar.readingPart.number:index + 1)}.</div>}
       <div className="item-content">
         {item.layout==='grammar' ? isGrammarQuestion(item.grammar) ? <GrammarQuestionView question={item.grammar} mode={mode}/> : <p>Question grammaticale à vérifier.</p> : null}
         {(item.layout === 'column' || item.layout === 'column-empty') && <ColumnOp item={item} mode={mode} />}
@@ -325,7 +332,7 @@ export function ItemView({
         ) : null}
         {item.layout === 'letter-grid' && <LetterGridRow item={item} mode={mode} />}
         {item.layout === 'syllable-table' && <SyllableTableBlock item={item} />}
-        {item.layout === 'order' && <OrderRow item={item} mode={mode} />}
+        {item.layout === 'order' && <OrderRow item={item} mode={mode} series={seriesNumber} />}
         {item.layout === 'sequence' && <SequenceRow item={item} mode={mode} />}
         {item.layout === 'fraction-shape' && <FractionShapeBlock item={item} mode={mode} />}
         {item.layout === 'geo' && <GeoBlock item={item} mode={mode} draftGrid={draftGrid} />}
@@ -395,7 +402,7 @@ export function ItemView({
             hideMotsBanque={hideMotsBanque}
           />
         )}
-        {item.layout === 'logique' && <LogiqueBlock item={item} mode={mode} />}
+        {item.layout === 'logique' && (seriesNumber===undefined ? <LogiqueBlock item={item} mode={mode} /> : <ExerciseFrame title={`Série ${seriesNumber}`} className="csc-logic-series"><LogiqueBlock item={item} mode={mode}/></ExerciseFrame>)}
         {item.layout === 'audio-dictation' && <AudioDictationBlock item={item} mode={mode} />}
         {item.layout === 'symmetry-grid' && <SymmetryGridBlock item={item} mode={mode} />}
         {item.layout === 'segment-measure' && <SegmentMeasureBlock item={item} mode={mode} />}

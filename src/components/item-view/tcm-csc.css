@@ -1,33 +1,44 @@
 .csc-number-grid { border-collapse: collapse; width: 108mm; height: 108mm; margin: 8px auto; table-layout: fixed; }
-.csc-number-grid td { border: 1px solid var(--muted); text-align: center; width: 18mm; height: 18mm; padding: 0; font-size: 17pt; }
+.is-tcm-csc > .sheet-body { --app-font-scale: var(--sheet-tcm-csc-font-scale, 1.125); }
+.csc-number-grid td { border: 1px solid var(--muted); text-align: center; width: 18mm; height: 18mm; padding: 0; font-size: calc(17pt * var(--app-font-scale, 1)); font-weight: 700; }
 .csc-number-grid td span { display: inline-grid; place-items: center; width: 10mm; height: 10mm; }
 .csc-heard { border: 2px solid #174eae; border-radius: 50%; }
-.csc-operator { display: flex; align-items: baseline; justify-content: center; gap: 10px; font-size: 17pt; padding: 6px 0; }
+.csc-operator { display: flex; align-items: baseline; justify-content: center; gap: 10px; font-size: calc(17pt * var(--app-font-scale, 1)); padding: 6px 0; }
 .csc-operator .answer-line-field { width: 2ch; min-width: 2ch; }
 .csc-shape-names { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6mm; width: 100%; }
-.csc-shape-names > div { text-align: center; min-width: 0; border: 1.5px solid var(--muted); padding: 4mm; }
-.csc-name-figure { height: 28mm; width: 100%; }
-.csc-shape-names .answer-line-field { width: 100%; font-size: 11pt; }
+.csc-shape-names > .tcf-question { text-align: center; min-width: 0; margin: 0; }
+.csc-name-figure { height: 28mm; width: 100%; display: flex; align-items: center; justify-content: center; }
+.csc-name-figure .geometry-figure { margin: 0; height: 100%; max-width: 100%; }
+.csc-shape-answer { padding-top: 50px; }
+.csc-shape-names .answer-line-field { width: 100%; font-size: calc(11pt * var(--app-font-scale, 1)); }
 .csc-connect svg { display: block; width: 100%; height: 75mm; }
+.csc-connect { width: 100%; border: 1.5px solid var(--purple); }
 .csc-connect ol { margin: 0 0 4px; padding-left: 24px; }
 .csc-copy { display: flex; align-items: flex-start; justify-content: center; gap: 6mm; width: 100%; }
 .csc-copy > div { flex: 0 0 auto; text-align: center; }
-.csc-copy p { margin: 2px 0 5px; font-size: 11pt; }
+.csc-copy p { margin: 2px 0 5px; font-size: calc(11pt * var(--app-font-scale, 1)); }
 .csc-copy svg { display: block; }
 .csc-copy-grid { stroke: #9aa5b8; stroke-width: .025; }
 .csc-length-table { width: 100%; border-collapse: collapse; margin-top: 8px; }
 .csc-length-table th, .csc-length-table td { border: 1px solid var(--muted); padding: 6px 10px; text-align: center; }
 .csc-length-table th:first-child { text-align: left; }
-.csc-length-check { display: inline-grid; place-items: center; width: 5mm; height: 5mm; border: 1px solid var(--ink); font-size: 12pt; line-height: 1; }
+.csc-length-check { display: inline-grid; place-items: center; width: 5mm; height: 5mm; border: 1px solid var(--ink); font-size: calc(12pt * var(--app-font-scale, 1)); line-height: 1; }
 .worksheet-sheet .exercise-item .count-icons-block.is-csc-large > .count-icons-frame { height: 97.5mm; max-height: 97.5mm; aspect-ratio: auto; }
-.worksheet-sheet .coord-block.is-csc-left { display: flex; flex-direction: row-reverse; align-items: center; gap: 5mm; }
+.csc-count-instruction { margin: 0; display: flex; align-items: center; gap: .3em; }
+.csc-count-target { display: inline-flex; width: 1.5em; height: 1.5em; color: var(--purple); print-color-adjust: exact; }
+.csc-count-target svg { width: 100%; height: 100%; }
+.is-csc-large .count-icon-token { color: #000; }
+.is-csc-large .count-icons-caption { padding-top: 10px; }
+.worksheet-sheet .coord-block.is-csc-left { display: flex; flex-direction: row-reverse; align-items: center; justify-content: space-between; gap: 5mm; width: 100%; }
 .worksheet-sheet .coord-block.is-csc-left .coord-side { flex: 1; min-width: 0; }
-.worksheet-sheet .coord-block.is-csc-left .coord-questions { display: grid; grid-template-columns: 1fr; gap: 10px; }
+.worksheet-sheet .coord-block.is-csc-left .coord-questions { display: grid; grid-template-columns: 1fr; gap: 20px; }
 .worksheet-sheet .coord-block.is-csc-left .coord-question { min-width: 0; }
-.worksheet-sheet .coord-block.is-csc-left > .coord-grid { flex: 0 0 auto; max-width: none; }
+.worksheet-sheet .coord-block.is-csc-left > .coord-grid { flex: 0 0 auto; max-width: none; margin: 0; }
 .worksheet-sheet .coord-block.is-csc-left .coord-question { display: flex; align-items: center; flex-wrap: nowrap; gap: 2mm; }
-.worksheet-sheet .coord-block.is-csc-left .coord-question-icon { display: inline-flex; flex: 0 0 24px; }
-.worksheet-sheet .coord-block.is-csc-left .coord-pair { white-space: nowrap; font-size: 11pt; gap: 2px; }
+.worksheet-sheet .coord-block.is-csc-left .coord-question-icon { display: inline-flex; flex: 0 0 auto; width: auto; }
+.worksheet-sheet .coord-block.is-csc-left .coord-question-icon svg { flex: none; display: block; }
+.worksheet-sheet .coord-block.is-csc-left .coord-grid.is-fixed-mm .axis-label { font-size: calc(4.5px * var(--app-font-scale, 1)); font-weight: 800; fill: var(--purple); }
+.worksheet-sheet .coord-block.is-csc-left .coord-pair { white-space: nowrap; font-size: calc(11pt * var(--app-font-scale, 1)); gap: 2px; }
 .worksheet-sheet .coord-block.is-csc-left .coord-pair .answer-line-field { min-width: 2ch; width: 2ch; flex: 0 0 2ch; font-size: inherit; }
 .csc-free-fields { display: grid; gap: 12px; }
 .csc-free-fields label { display: grid; gap: 5px; }
@@ -37,14 +48,26 @@
 .csc-free-fields img { width: 100%; max-height: 120px; object-fit: contain; }
 .csc-problem-text { white-space: pre-line; }
 .csc-problem-text p { margin: 5px 0; }
+.csc-problem-text .draft-pad.draft-pad-short { --grid-rows: calc(6 * var(--sheet-columns, 1)); }
+.csc-problem-text .draft-pad + .answer-line-field { margin-top: calc(1lh + 3.5px); }
 .csc-sequence-hint { display: flex; align-items: center; gap: 5mm; }
 .csc-step-hint { border: 2px solid #6d3ca8; background: #f0e4ff; color: #492171; padding: 2mm 3mm; margin: 0; min-width: 14mm; text-align: center; font-weight: 700; print-color-adjust: exact; }
 .exercise-block:is([data-exercise-type="tcm-csc-ex04"], [data-exercise-type="tcm-csc-ex05"]) .exercise-grid { row-gap: calc(2mm + 10px); }
 .exercise-block:is([data-exercise-type="tcm-csc-ex04"], [data-exercise-type="tcm-csc-ex05"]) .sequence-row { gap: 16px; }
+.exercise-block:is([data-exercise-type="tcm-csc-ex04"], [data-exercise-type="tcm-csc-ex05"]) .sequence-term { border: 1.5px solid var(--purple); min-width: 2.8em; min-height: 2em; padding: 4px; }
+.is-tcm-csc .tcf-audio-frame-head { margin: 0; }
+.csc-order-series .column-prompt { font-weight: 400; }
 .exercise-block[data-exercise-type="tcm-csc-ex16"] .exercise-grid { row-gap: 8mm; }
-.exercise-block[data-exercise-type="tcm-csc-ex16"] .exercise-item { border: 1.5px solid var(--muted) !important; padding: 4mm; border-radius: 2mm; }
-.exercise-block:is([data-exercise-type="tcm-csc-ex10"], [data-exercise-type="tcm-csc-ex11"]) .digit-cell { width: 42px; height: 42px; flex: 0 0 42px; font-size: 17px; }
-.exercise-block:is([data-exercise-type="tcm-csc-ex10"], [data-exercise-type="tcm-csc-ex11"]) .digit-cell.carry { height: 27px; font-size: 12px; }
+.exercise-block[data-exercise-type="tcm-csc-ex16"] .exercise-item { border: 0 !important; padding: 0; }
+.csc-length-parts { display: grid; gap: 4mm; }
+.csc-length-parts .tcm-cfr-segment-frame { border: 0; padding: 0; }
+.csc-length-parts .tcm-cfr-segment-row { grid-template-columns: 1.2em minmax(0, 1fr) 14mm 8mm; column-gap: 2mm; }
+.csc-part-instruction { margin: 0; font-weight: 400; }
+.csc-numbered-label { display: grid; grid-template-columns: 1.4em minmax(0, 1fr); gap: 4px; font-weight: 400; }
+.exercise-block:is([data-exercise-type="tcm-csc-ex10"], [data-exercise-type="tcm-csc-ex11"]) .digit-cell { width: 42px; height: 42px; flex: 0 0 42px; font-size: calc(17px * var(--app-font-scale, 1)); }
+.exercise-block:is([data-exercise-type="tcm-csc-ex10"], [data-exercise-type="tcm-csc-ex11"]) .digit-cell.carry { height: 27px; font-size: calc(12px * var(--app-font-scale, 1)); }
+.exercise-block[data-exercise-type="tcm-csc-ex10"] .digit-cell { font-size: min(calc(32px * var(--app-font-scale, 1)), 36px); }
+.exercise-block[data-exercise-type="tcm-csc-ex10"] .digit-cell.carry { font-size: min(calc(20px * var(--app-font-scale, 1)), 23px); }
 .math-exercise-audios { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0; }
 .math-prompt-audio { display: grid; gap: 3px; font-size: 11px; }
 .math-prompt-audio audio { width: 120px; height: 32px; }

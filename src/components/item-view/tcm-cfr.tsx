@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import type { MathItem, PreviewMode } from '@/math/types'
 import { mirrorPoint, type GridPt } from '@/tcm-cfr/symetrie'
-import { CscCopyBlock } from './tcm-csc'
+import { CscCopyBlock, CscLengthBlock } from './tcm-csc'
 
 /**
  * Dictée audio TCM CFR (ex. 1–2) : uniquement la zone de réponse sur la fiche.
@@ -15,10 +15,12 @@ export function AudioDictationBlock({
   mode: PreviewMode
 }) {
   const show = mode === 'answers'
+  const task=item.cscTask
+  const answer=task?.kind==='calculation-audio'?`${task.a} ${task.operation} ${task.b} = ${item.answer}`:item.answer
   return (
     <div className="tcm-cfr-audio-dictation">
       <span className={`answer-line-field ${show ? 'filled' : ''}`}>
-        {show ? item.answer : '\u00a0'}
+        {show ? answer : '\u00a0'}
       </span>
     </div>
   )
@@ -143,8 +145,7 @@ export function SegmentMeasureBlock({
   const qPrompts = item.options ?? []
   const answers = (item.answer ?? '').split(';').map((s) => s.trim())
 
-  return (
-    <div className="tcm-cfr-segments">
+  const drawing = (
       <div className="tcm-cfr-segment-frame">
         {segments.map((seg, i) => {
           const widthMm = Math.min(160, seg.mm)
@@ -165,8 +166,12 @@ export function SegmentMeasureBlock({
           )
         })}
       </div>
-      {item.cscTask?.kind === 'length-table' && <table className="csc-length-table"><thead><tr><th scope="col">Segment</th>{segments.map((_, i) => <th scope="col" key={i}>{String.fromCharCode(65 + i)}</th>)}</tr></thead><tbody>{['Le plus long', 'Le plus court'].map((label, row) => <tr key={label}><th scope="row">{label}</th>{segments.map((_, i) => <td key={i}><span className="csc-length-check">{show && answers[row] === String.fromCharCode(65 + i) ? '✓' : '\u00a0'}</span></td>)}</tr>)}</tbody></table>}
-      {item.cscTask?.kind !== 'length-table' && qPrompts.map((q, qi) => (
+  )
+  if (item.cscTask?.kind==='length-table') return <CscLengthBlock item={item} mode={mode}>{drawing}</CscLengthBlock>
+  return (
+    <div className="tcm-cfr-segments">
+      {drawing}
+      {qPrompts.map((q, qi) => (
         <div className="tcm-cfr-segment-q-line" key={`q-${qi}`}>
           <span className="tcm-cfr-segment-q-num" aria-hidden>
             {qi + 1}.
