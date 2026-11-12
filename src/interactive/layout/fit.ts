@@ -58,7 +58,21 @@ export function fitQuestion(root: HTMLElement, height = questionSpace(root)): Re
     size(1)
     if (!fits()) {
       size(0)
-      if (!fits()) continue
+      if (!fits()) {
+        // A long question can need its own reading control while the six
+        // short cards still fit. Keep that grid instead of making a list.
+        const current = flags()
+        if (layout === 'grid' && current.questionScroll && !current.answersScroll && !current.manualScroll && root.scrollHeight <= height + 2) {
+          root.dataset.ciMoreQuestion = 'true'
+          const result = { level: 3 as const, ...flags() }
+          if (!result.answersScroll && !result.manualScroll && root.scrollHeight <= height + 2) {
+            root.dataset.ciReadability = '3'
+            return result
+          }
+          delete root.dataset.ciMoreQuestion
+        }
+        continue
+      }
       let low = 0, high = 1
       for (let n = 0; n < 7; n++) { const middle = (low + high) / 2; size(middle); if (fits()) low = middle; else high = middle }
       size(low)

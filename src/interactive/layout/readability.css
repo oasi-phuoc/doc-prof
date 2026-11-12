@@ -1,4 +1,6 @@
 .ci-question-body { display: contents; }
+.ci-app .ci-figure-context { width: auto; margin: 6px auto; padding: 6px 10px; }
+.ci-app .ci-figure-context p { font-size: clamp(18px, 2vw, 26px); line-height: 1.35; }
 .ci-answer-wrap { display: contents; }
 .ci-app [data-ci-fit] { display: flex; flex-direction: column; height: var(--ci-fit-height); min-height: 0; gap: 8px; }
 .ci-app [data-ci-fit] .ci-question { position: relative; display: flex; flex-direction: column; min-height: 60px; flex: 0 1 var(--ci-fit-question-height); max-height: 42%; overflow: hidden; margin-bottom: 0; }
@@ -6,7 +8,8 @@
 .ci-app [data-ci-fit] .ci-question-body h1 { min-height: 0; }
 .ci-app [data-ci-fit] .ci-question .ci-figure { position: static; width: 100%; max-width: 300px; height: 110px; margin: 8px auto; }
 .ci-app [data-ci-fit] .ci-answer-grid { flex: 1; min-height: 0; grid-auto-rows: minmax(44px, 1fr); }
-.ci-app [data-ci-fit] .ci-answer { min-height: 44px; min-width: 0; }
+.ci-app [data-ci-fit] .ci-answer,
+.ci-app .ci-session:has(.ci-figure) [data-ci-fit] .ci-answer { min-height: 44px; min-width: 0; }
 .ci-app [data-ci-fit] .ci-answer-content { min-height: 0; overflow: hidden; align-content: safe center; justify-content: safe center; align-items: safe center; }
 .ci-app [data-ci-fit] .ci-answer-content > span { display: block; max-width: 100%; }
 .ci-app [data-ci-fit='list'] .ci-answer-grid,
@@ -21,6 +24,7 @@
 .ci-app [data-ci-more-question] .ci-question { padding-bottom: 32px; }
 .ci-app .ci-question > .ci-read-more { position: absolute; bottom: 0; right: 0; left: 0; width: 100%; }
 .ci-app [data-ci-fit='scroll'] .ci-answer-grid { overflow: auto; overscroll-behavior: contain; scrollbar-gutter: stable; }
+.ci-app [data-ci-fit='scroll'][data-ci-more-answers] .ci-answer-grid { grid-auto-rows: minmax(76px, max-content); align-content: start; }
 .ci-app [data-ci-fit='scroll'] .ci-question { max-height: min(42%, max(60px, calc(100% - var(--ci-fit-card-space, 0px)))); }
 .ci-app [data-ci-fit='scroll'] .ci-answer-content { align-content: flex-start; justify-content: center; align-items: flex-start; }
 .ci-text-dialog { width: min(1000px, calc(100vw - 24px)); max-height: calc(100dvh - 24px); padding: 20px; border: 2px solid var(--ci-ink); border-radius: 16px; background: var(--ci-paper); color: var(--ci-ink); }

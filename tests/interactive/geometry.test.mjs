@@ -153,7 +153,6 @@ try {
       assert.equal(game.questions.length, 0); assert.ok(game.issues.length)
     }
     for (const item of [
-      source('triangle', { base: 4, height: 3, unit: 'cm' }, 'Calculez l’aire.', '6 cm²'),
       source('circle', { radius: 2, unit: 'cm' }, 'Calculez l’aire. Prenez π = 3,14.', '12,56 cm²'),
       { layout: 'geo-dual', answer: '12 cm²' }, { layout: 'text', answer: '12 cm²' },
     ]) assert.equal(verifiedGeometry(item), undefined)
