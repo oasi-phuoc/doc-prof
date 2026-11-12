@@ -4,13 +4,13 @@
   "scope": "433 trios demandés, réemplois proposés liés aux questions actuelles ; reprise supplémentaire d’un ancien trio invalidé par une correction audio.",
   "summary": {
     "initial_trios": 433,
-    "activated_since_baseline": 2,
-    "initial_pending": 431,
+    "activated_since_baseline": 9,
+    "initial_pending": 424,
     "additional_pending": 1,
-    "total_pending": 432,
+    "total_pending": 425,
     "pending_by_level": {
-      "A0-A1": 188,
-      "A1-A2": 221,
+      "A0-A1": 186,
+      "A1-A2": 216,
       "A2-B1": 23
     }
   },
@@ -1587,8 +1587,8 @@
       "audio": null,
       "source_sha256": "58c18321822f6a07e218e010873a2d9464f60b1317a0fc177531be5592578f46",
       "semantic_sha256": "bf4a8de5e26b9291f98c1b8337fab9c346a7daff7cddf1f13f619044d6e1579c",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Source relue : le vélo de ville bleu est vendu avec un panier. Trois variantes du même vélo bleu entier, avec panier avant, siège enfant arrière ou remorque attachée ; un seul accessoire distinctif par image. Ce choix préserve le contexte « fixé au vélo », sans remplacer le panier par un panier-repas ou un objet isolé ambigu. Trois originaux contrôlés en 4:3, style et proportions cohérents, corrigé conservé.",
       "choices": [
         {
           "id": "a",
@@ -1618,7 +1618,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/extension573-panier-velo.png",
+        "/lib/images/tcf/qcm-audit/extension573-siege-enfant-velo.png",
+        "/lib/images/tcf/qcm-audit/extension573-remorque-velo.png"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -1627,7 +1631,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -2343,18 +2347,25 @@
       "audio": null,
       "source_sha256": "7541eb05b0f5bb726d09eafb7e16e620fed9d561c89557a8b9ecb76ece824b9b",
       "semantic_sha256": "243df2f14d52fb4e75ac6fd89784521b64e83e210c210cae68c28ae867034d58",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Annonce 2 relue : un chaton de trois mois est proposé à l’adoption. Trois jeunes animaux entiers et distincts, même cadrage et fond crème, sans texte donnant la réponse. Contrôle visuel individuel : 4:3 et style validé. Corrigé et choix conservés.",
       "choices": [
         {
           "id": "a",
           "label": "Un chaton",
           "correct": true,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-chaton.png",
+              "sha256": "825f105e6c29be6592d50956ddd13269e648081675d6c5f03aec0f42955e5280",
+              "label": "Un chaton"
+            }
+          ],
           "generation_jobs": [
             {
               "id": "extension573-chaton",
-              "status": "queued_after_quota_reset"
+              "status": "visually_reviewed",
+              "source": "/lib/images/tcf/qcm-audit/extension573-chaton.png"
             }
           ]
         },
@@ -2362,11 +2373,18 @@
           "id": "b",
           "label": "Un chiot",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-chiot.png",
+              "sha256": "dbbc5d7761c3f3984d3441b64c3813c7a8cb266f88c2e5062ac61e4d58e0f161",
+              "label": "Un chiot"
+            }
+          ],
           "generation_jobs": [
             {
               "id": "extension573-chiot",
-              "status": "queued_after_quota_reset"
+              "status": "visually_reviewed",
+              "source": "/lib/images/tcf/qcm-audit/extension573-chiot.png"
             }
           ]
         },
@@ -2374,16 +2392,27 @@
           "id": "c",
           "label": "Un lapereau",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-lapereau.png",
+              "sha256": "c57be7d45827556514208c43fc85cdbc879fd80410d7cf23dedb195932984be6",
+              "label": "Un lapereau"
+            }
+          ],
           "generation_jobs": [
             {
               "id": "extension573-lapereau",
-              "status": "queued_after_quota_reset"
+              "status": "visually_reviewed",
+              "source": "/lib/images/tcf/qcm-audit/extension573-lapereau.png"
             }
           ]
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/extension573-chaton.png",
+        "/lib/images/tcf/qcm-audit/extension573-chiot.png",
+        "/lib/images/tcf/qcm-audit/extension573-lapereau.png"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -2392,7 +2421,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -16276,18 +16305,25 @@
       "audio": null,
       "source_sha256": "f8a03371294749c5e62b557ed772b10e6608f90d1955313f2755dbd003d2acf4",
       "semantic_sha256": "b102608fe4d3dea31792408db1ca757331f89992124980f0bf2116f8e5d6e893",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Le menu 4 se termine par un clafoutis aux cerises. La mousse et la tarte appartiennent à d’autres menus ; les trois desserts sont distincts et reconnaissables. Réemploi de la mousse et de la tarte approuvées. Contrôle visuel individuel en 4:3, peinture douce et fond crème, sans texte, montants ou dates.",
       "choices": [
         {
           "id": "a",
           "label": "Un clafoutis aux cerises",
           "correct": true,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-clafoutis-cerises.png",
+              "sha256": "a88a23bb177a0bcc82fb2130eb223843245258a157baff5c872fe37d179b9777",
+              "label": "Un clafoutis aux cerises"
+            }
+          ],
           "generation_jobs": [
             {
               "id": "extension573-clafoutis-cerises",
-              "status": "queued_after_quota_reset"
+              "status": "visually_reviewed",
+              "source": "/lib/images/tcf/qcm-audit/extension573-clafoutis-cerises.png"
             }
           ]
         },
@@ -16324,7 +16360,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/extension573-clafoutis-cerises.png",
+        "/lib/images/tcf/qcm-audit/extension573-mousse-chocolat.webp",
+        "/lib/images/tcf/qcm-audit/co834-tarte-pommes-4-3.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -16333,7 +16373,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -17778,8 +17818,8 @@
       "audio": "/lib/audio/tcf/co/radio/les-annonces-publiques-5-4.mp3",
       "source_sha256": "b0d86241acb161c5eeaaddb88eb4922a3315bb74b6a872905eaae09b0ff1efc3",
       "semantic_sha256": "1f254e34c465d6f73404d76f1810903eda54a19d238ca81cd91f4f8a7df5dedb",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "La piste s’adresse aux familles dans un zoo. Les leurres aquarium public et parc d’attractions sont des lieux de visite du même thème absents de la transcription. Réemploi des deux scènes approuvées, aquarium public contrôlé avec personnages renouvelés. Contrôle visuel individuel : 4:3 et style validé. Corrigé et choix conservés.",
       "choices": [
         {
           "id": "a",
@@ -17796,7 +17836,8 @@
           "generation_jobs": [
             {
               "id": "extension573-aquarium",
-              "status": "queued_after_quota_reset"
+              "status": "visually_reviewed",
+              "source": "/lib/images/tcf/qcm-audit/extension573-aquarium.png"
             }
           ]
         },
@@ -17814,7 +17855,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co57-visiter-zoo.webp",
+        "/lib/images/tcf/qcm-audit/extension573-aquarium.png",
+        "/lib/images/tcf/qcm-audit/co57-parc-attractions.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -17823,7 +17868,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -19217,8 +19262,8 @@
       "audio": "/lib/audio/tcf/co/maison/nourriture-conversation-2-4.mp3",
       "source_sha256": "2f321e1342db21464fa203ae94423a99604058b06c81d00480021e22d653694d",
       "semantic_sha256": "f06c6e0b207145e152d8b87722ef7c654cc77c74c991a52ef28180d967036739",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Dans la quatrième situation, le repas annoncé est le couscous. Les leurres paella/risotto sont des plats absents de cette piste ; semoule, riz jaune et riz crémeux sont visuellement distincts. Contrôle visuel individuel en 4:3, peinture douce et fond crème, sans texte, montants ou dates.",
       "choices": [
         {
           "id": "a",
@@ -19243,11 +19288,18 @@
           "id": "b",
           "label": "De la paella",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-paella.png",
+              "sha256": "ce8f46e5dd1254236dd18cef28ee7bca7639d0d0ad582cfc2352415c625430c9",
+              "label": "La paella"
+            }
+          ],
           "generation_jobs": [
             {
               "id": "extension573-paella",
-              "status": "queued_after_quota_reset"
+              "status": "visually_reviewed",
+              "source": "/lib/images/tcf/qcm-audit/extension573-paella.png"
             }
           ]
         },
@@ -19255,16 +19307,27 @@
           "id": "c",
           "label": "Du risotto",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-risotto.png",
+              "sha256": "151cbe2c85ec5a988f5e49584842c457f20b3abbb0dba740a988dcce9b6b83a8",
+              "label": "Du risotto"
+            }
+          ],
           "generation_jobs": [
             {
               "id": "extension573-risotto",
-              "status": "queued_after_quota_reset"
+              "status": "visually_reviewed",
+              "source": "/lib/images/tcf/qcm-audit/extension573-risotto.png"
             }
           ]
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/extension573-couscous.webp",
+        "/lib/images/tcf/qcm-audit/extension573-paella.png",
+        "/lib/images/tcf/qcm-audit/extension573-risotto.png"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -19273,7 +19336,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -19496,8 +19559,8 @@
       "audio": "/lib/audio/tcf/co/maison/maison-3.mp3",
       "source_sha256": "2637c9750420477822c5c8090ba3a9c135d695ea2d2e8ec7ede8123db2310c01",
       "semantic_sha256": "2667952410b4dcb99d056c84367d077e153d3a6c2b6a5b75de6fda1485f6ab5d",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Le hamburger-frites est cité comme repas préféré au début. Les plats couscous/paella ne figurent pas dans la transcription et restent dans le thème alimentation. Réemploi du hamburger-frites et du couscous entiers contrôlés. Contrôle visuel individuel en 4:3, peinture douce et fond crème, sans texte, montants ou dates.",
       "choices": [
         {
           "id": "a",
@@ -19535,16 +19598,27 @@
           "id": "c",
           "label": "La paella",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-paella.png",
+              "sha256": "ce8f46e5dd1254236dd18cef28ee7bca7639d0d0ad582cfc2352415c625430c9",
+              "label": "La paella"
+            }
+          ],
           "generation_jobs": [
             {
               "id": "extension573-paella",
-              "status": "queued_after_quota_reset"
+              "status": "visually_reviewed",
+              "source": "/lib/images/tcf/qcm-audit/extension573-paella.png"
             }
           ]
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/vocab-hamburger-frites.webp",
+        "/lib/images/tcf/qcm-audit/extension573-couscous.webp",
+        "/lib/images/tcf/qcm-audit/extension573-paella.png"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -19553,7 +19627,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -20088,50 +20162,67 @@
       "source": "Aujourd'hui, pour la semaine du goût, notre cuisinier Cyril vous propose de la cuisine du monde. Couscous marocain, pâtes italiennes, paella espagnole. Pour l'occasion, ouverture de la cantine dès 11h30.",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-21-5.mp3",
       "source_sha256": "bcd921444b0337e6dd89a4d9542a23ca578ed91d69915a56a2a7b80f2e8330ae",
-      "semantic_sha256": "0a55114cb1d477c3b4dba498551dbdf8e68e38cb485f3e5aab6cb24417b796ee",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "semantic_sha256": "c047beb18596449115d728c0e10af4452a26866da69efc2f5393f08e9aefb764",
+      "current_status": "active_reviewed_trio",
+      "decision": "L’annonce cite explicitement la paella espagnole. Les leurres ont été corrigés en risotto/hamburger-frites, absents de la transcription. Paella, risotto et hamburger-frites entiers vérifiés ; corrigé et identifiants conservés. Contrôle visuel individuel en 4:3, peinture douce et fond crème, sans texte, montants ou dates.",
       "choices": [
         {
           "id": "a",
           "label": "La paella",
           "correct": true,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-paella.png",
+              "sha256": "ce8f46e5dd1254236dd18cef28ee7bca7639d0d0ad582cfc2352415c625430c9",
+              "label": "La paella"
+            }
+          ],
           "generation_jobs": [
             {
               "id": "extension573-paella",
-              "status": "queued_after_quota_reset"
+              "status": "visually_reviewed",
+              "source": "/lib/images/tcf/qcm-audit/extension573-paella.png"
             }
           ]
         },
         {
           "id": "b",
-          "label": "Le couscous",
+          "label": "Du risotto",
           "correct": false,
           "exact_label_reuse_candidates": [
             {
-              "path": "/lib/images/tcf/qcm-audit/extension573-couscous.webp",
-              "sha256": "ec664e311e5896d67783c931d3e4fd59d1c3fe98eeae167955045afc1a87870c",
-              "label": "Le couscous"
+              "path": "/lib/images/tcf/qcm-audit/extension573-risotto.png",
+              "sha256": "151cbe2c85ec5a988f5e49584842c457f20b3abbb0dba740a988dcce9b6b83a8",
+              "label": "Du risotto"
             }
           ],
           "generation_jobs": [
             {
-              "id": "extension573-couscous",
+              "id": "extension573-risotto",
               "status": "visually_reviewed",
-              "source": "/workspace/generated_images/exec-c79b17d6-f667-4eb3-a027-e0ecf7842588.png"
+              "source": "/lib/images/tcf/qcm-audit/extension573-risotto.png"
             }
           ]
         },
         {
           "id": "c",
-          "label": "Les pâtes",
+          "label": "Le hamburger-frites",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/vocab-hamburger-frites.webp",
+              "sha256": "85af3e75bb5015bb6404683462501bdd9494ce3b81299e0ea37bf04e78b11db8",
+              "label": "Le hamburger-frites"
+            }
+          ],
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/extension573-paella.png",
+        "/lib/images/tcf/qcm-audit/extension573-risotto.png",
+        "/lib/images/tcf/qcm-audit/vocab-hamburger-frites.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -20140,7 +20231,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {

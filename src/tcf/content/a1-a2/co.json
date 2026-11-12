@@ -4294,6 +4294,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Un zoo"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/co57-visiter-zoo.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/extension573-aquarium.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/co57-parc-attractions.webp"
+              }
+            ]
           }
         },
         "audio": 4
@@ -19069,6 +19087,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Du couscous"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/extension573-couscous.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/extension573-paella.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/extension573-risotto.png"
+              }
+            ]
           }
         },
         "audio": 4
@@ -20716,6 +20752,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Le hamburger-frites"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/vocab-hamburger-frites.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/extension573-couscous.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/extension573-paella.png"
+              }
+            ]
           }
         }
       },
@@ -22771,17 +22825,35 @@
           },
           {
             "id": "b",
-            "texte": "Le couscous"
+            "texte": "Du risotto"
           },
           {
             "id": "c",
-            "texte": "Les pâtes"
+            "texte": "Le hamburger-frites"
           }
         ],
         "formes": {
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "La paella"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/extension573-paella.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/extension573-risotto.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/vocab-hamburger-frites.webp"
+              }
+            ]
           }
         },
         "audio": 5

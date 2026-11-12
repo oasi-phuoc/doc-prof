@@ -3,9 +3,9 @@
   "scope": "Inventaire exhaustif des questions CE/CO à trois choix ; contrôle contre le texte ou la transcription active, sans nouvelle écoute intégrale des MP3.",
   "summary": {
     "text_variant_pending_images_or_intentionally_text": 5353,
-    "reviewed_trio": 1836,
+    "reviewed_trio": 1843,
     "existing_variant_partial_reviewed_reuse": 81,
-    "reviewed_763_artwork_pending": 432,
+    "reviewed_763_artwork_pending": 425,
     "reviewed_763_keep_text": 112,
     "existing_variant_needs_further_visual_review": 23,
     "retire_ambiguous_image_variant": 14
@@ -16386,19 +16386,27 @@
         "Un siège enfant",
         "Une remorque"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_763_candidate_review",
       "source_sha256": "58c18321822f6a07e218e010873a2d9464f60b1317a0fc177531be5592578f46",
       "semantic_before_sha256": "bf4a8de5e26b9291f98c1b8337fab9c346a7daff7cddf1f13f619044d6e1579c",
       "semantic_after_sha256": "bf4a8de5e26b9291f98c1b8337fab9c346a7daff7cddf1f13f619044d6e1579c",
       "audio": null,
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/extension573-panier-velo.png",
+        "/lib/images/tcf/qcm-audit/extension573-siege-enfant-velo.png",
+        "/lib/images/tcf/qcm-audit/extension573-remorque-velo.png"
+      ],
+      "target_sha256": [
+        "d62b8d6e47b50419fa8631ac54f5309c06853f2b36c826cc7b55ca735f02f45e",
+        "7bb47dd26a6f8716fca41eb830c54cad33ffe43f683c946b4c80835fde12a994",
+        "e0c7e69fcaeae2d90cb88fee8f2f56c5b576bd05f8383096bd3f3537ff1b53ea"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_whole_answer_concepts",
-      "review_763_reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "reason": "Source relue : le vélo de ville bleu est vendu avec un panier. Trois variantes du même vélo bleu entier, avec panier avant, siège enfant arrière ou remorque attachée ; un seul accessoire distinctif par image. Ce choix préserve le contexte « fixé au vélo », sans remplacer le panier par un panier-repas ou un objet isolé ambigu. Trois originaux contrôlés en 4:3, style et proportions cohérents, corrigé conservé.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Source relue : le vélo de ville bleu est vendu avec un panier. Trois variantes du même vélo bleu entier, avec panier avant, siège enfant arrière ou remorque attachée ; un seul accessoire distinctif par image. Ce choix préserve le contexte « fixé au vélo », sans remplacer le panier par un panier-repas ou un objet isolé ambigu. Trois originaux contrôlés en 4:3, style et proportions cohérents, corrigé conservé.",
       "before_upstream_integration": {
         "source_sha256": "ccf552675af7ee09a0de5f0e98fc084157d47bd198df6cd75d8050260ed1512f",
         "semantic_before_sha256": "bf4a8de5e26b9291f98c1b8337fab9c346a7daff7cddf1f13f619044d6e1579c",
@@ -22510,19 +22518,27 @@
         "Un chiot",
         "Un lapereau"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_763_candidate_review",
       "source_sha256": "7541eb05b0f5bb726d09eafb7e16e620fed9d561c89557a8b9ecb76ece824b9b",
       "semantic_before_sha256": "243df2f14d52fb4e75ac6fd89784521b64e83e210c210cae68c28ae867034d58",
       "semantic_after_sha256": "243df2f14d52fb4e75ac6fd89784521b64e83e210c210cae68c28ae867034d58",
       "audio": null,
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/extension573-chaton.png",
+        "/lib/images/tcf/qcm-audit/extension573-chiot.png",
+        "/lib/images/tcf/qcm-audit/extension573-lapereau.png"
+      ],
+      "target_sha256": [
+        "825f105e6c29be6592d50956ddd13269e648081675d6c5f03aec0f42955e5280",
+        "dbbc5d7761c3f3984d3441b64c3813c7a8cb266f88c2e5062ac61e4d58e0f161",
+        "c57be7d45827556514208c43fc85cdbc879fd80410d7cf23dedb195932984be6"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_whole_answer_concepts",
-      "review_763_reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "reason": "Annonce 2 relue : un chaton de trois mois est proposé à l’adoption. Trois jeunes animaux entiers et distincts, même cadrage et fond crème, sans texte donnant la réponse. Contrôle visuel individuel : 4:3 et style validé. Corrigé et choix conservés.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Annonce 2 relue : un chaton de trois mois est proposé à l’adoption. Trois jeunes animaux entiers et distincts, même cadrage et fond crème, sans texte donnant la réponse. Contrôle visuel individuel : 4:3 et style validé. Corrigé et choix conservés.",
       "before_upstream_integration": {
         "source_sha256": "4899ac17d2cdac41cb08ca09fe056a931589cc62c6bd3e8d55827206bad67cec",
         "semantic_before_sha256": "243df2f14d52fb4e75ac6fd89784521b64e83e210c210cae68c28ae867034d58",
@@ -120763,19 +120779,27 @@
         "Une mousse au chocolat",
         "Une tarte aux pommes"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_763_candidate_review",
       "source_sha256": "f8a03371294749c5e62b557ed772b10e6608f90d1955313f2755dbd003d2acf4",
       "semantic_before_sha256": "b102608fe4d3dea31792408db1ca757331f89992124980f0bf2116f8e5d6e893",
       "semantic_after_sha256": "b102608fe4d3dea31792408db1ca757331f89992124980f0bf2116f8e5d6e893",
       "audio": null,
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/extension573-clafoutis-cerises.png",
+        "/lib/images/tcf/qcm-audit/extension573-mousse-chocolat.webp",
+        "/lib/images/tcf/qcm-audit/co834-tarte-pommes-4-3.webp"
+      ],
+      "target_sha256": [
+        "a88a23bb177a0bcc82fb2130eb223843245258a157baff5c872fe37d179b9777",
+        "07d11afff5b246bb7d0b708cc20cd64c9298696aa4a94f4e157383266449be3f",
+        "e28bb9d9188dc9d628f4945d34d5324017e4814e02b4b76e3b9c00cd1b3716f5"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_whole_answer_concepts",
-      "review_763_reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel."
+      "reason": "Le menu 4 se termine par un clafoutis aux cerises. La mousse et la tarte appartiennent à d’autres menus ; les trois desserts sont distincts et reconnaissables. Réemploi de la mousse et de la tarte approuvées. Contrôle visuel individuel en 4:3, peinture douce et fond crème, sans texte, montants ou dates.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Le menu 4 se termine par un clafoutis aux cerises. La mousse et la tarte appartiennent à d’autres menus ; les trois desserts sont distincts et reconnaissables. Réemploi de la mousse et de la tarte approuvées. Contrôle visuel individuel en 4:3, peinture douce et fond crème, sans texte, montants ou dates."
     },
     {
       "key": "tcf-a2p-s2-ce-1#6",
@@ -157517,19 +157541,27 @@
         "Un aquarium",
         "Un parc d’attractions"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_763_candidate_review",
       "source_sha256": "b0d86241acb161c5eeaaddb88eb4922a3315bb74b6a872905eaae09b0ff1efc3",
       "semantic_before_sha256": "1f254e34c465d6f73404d76f1810903eda54a19d238ca81cd91f4f8a7df5dedb",
       "semantic_after_sha256": "1f254e34c465d6f73404d76f1810903eda54a19d238ca81cd91f4f8a7df5dedb",
       "audio": "/lib/audio/tcf/co/radio/les-annonces-publiques-5-4.mp3",
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/co57-visiter-zoo.webp",
+        "/lib/images/tcf/qcm-audit/extension573-aquarium.png",
+        "/lib/images/tcf/qcm-audit/co57-parc-attractions.webp"
+      ],
+      "target_sha256": [
+        "b84a6bf9e79ba909e5f9d9a467b040db461a9323ed9f549985d2fe1fdc1ff1fb",
+        "b2a56748b28b25514f43137303611f1f4ca3da9cf916edf27e056c1d0a0073c6",
+        "28be68e5ee976beb823fe3cfa691eb7bbad77feffb46a09542e82a0d36d4d3ff"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_whole_answer_concepts",
-      "review_763_reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel."
+      "reason": "La piste s’adresse aux familles dans un zoo. Les leurres aquarium public et parc d’attractions sont des lieux de visite du même thème absents de la transcription. Réemploi des deux scènes approuvées, aquarium public contrôlé avec personnages renouvelés. Contrôle visuel individuel : 4:3 et style validé. Corrigé et choix conservés.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "La piste s’adresse aux familles dans un zoo. Les leurres aquarium public et parc d’attractions sont des lieux de visite du même thème absents de la transcription. Réemploi des deux scènes approuvées, aquarium public contrôlé avec personnages renouvelés. Contrôle visuel individuel : 4:3 et style validé. Corrigé et choix conservés."
     },
     {
       "key": "tcf-a2-sa-co-1#14",
@@ -168785,19 +168817,27 @@
         "De la paella",
         "Du risotto"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_763_candidate_review",
       "source_sha256": "2f321e1342db21464fa203ae94423a99604058b06c81d00480021e22d653694d",
       "semantic_before_sha256": "f06c6e0b207145e152d8b87722ef7c654cc77c74c991a52ef28180d967036739",
       "semantic_after_sha256": "f06c6e0b207145e152d8b87722ef7c654cc77c74c991a52ef28180d967036739",
       "audio": "/lib/audio/tcf/co/maison/nourriture-conversation-2-4.mp3",
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/extension573-couscous.webp",
+        "/lib/images/tcf/qcm-audit/extension573-paella.png",
+        "/lib/images/tcf/qcm-audit/extension573-risotto.png"
+      ],
+      "target_sha256": [
+        "ec664e311e5896d67783c931d3e4fd59d1c3fe98eeae167955045afc1a87870c",
+        "ce8f46e5dd1254236dd18cef28ee7bca7639d0d0ad582cfc2352415c625430c9",
+        "151cbe2c85ec5a988f5e49584842c457f20b3abbb0dba740a988dcce9b6b83a8"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_whole_answer_concepts",
-      "review_763_reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel."
+      "reason": "Dans la quatrième situation, le repas annoncé est le couscous. Les leurres paella/risotto sont des plats absents de cette piste ; semoule, riz jaune et riz crémeux sont visuellement distincts. Contrôle visuel individuel en 4:3, peinture douce et fond crème, sans texte, montants ou dates.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Dans la quatrième situation, le repas annoncé est le couscous. Les leurres paella/risotto sont des plats absents de cette piste ; semoule, riz jaune et riz crémeux sont visuellement distincts. Contrôle visuel individuel en 4:3, peinture douce et fond crème, sans texte, montants ou dates."
     },
     {
       "key": "tcf-ss-a2-s24-co-3#11",
@@ -170072,19 +170112,27 @@
         "Le couscous",
         "La paella"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_763_candidate_review",
       "source_sha256": "2637c9750420477822c5c8090ba3a9c135d695ea2d2e8ec7ede8123db2310c01",
       "semantic_before_sha256": "2667952410b4dcb99d056c84367d077e153d3a6c2b6a5b75de6fda1485f6ab5d",
       "semantic_after_sha256": "2667952410b4dcb99d056c84367d077e153d3a6c2b6a5b75de6fda1485f6ab5d",
       "audio": "/lib/audio/tcf/co/maison/maison-3.mp3",
-      "targets": [],
-      "target_sha256": [],
+      "targets": [
+        "/lib/images/tcf/qcm-audit/vocab-hamburger-frites.webp",
+        "/lib/images/tcf/qcm-audit/extension573-couscous.webp",
+        "/lib/images/tcf/qcm-audit/extension573-paella.png"
+      ],
+      "target_sha256": [
+        "85af3e75bb5015bb6404683462501bdd9494ce3b81299e0ea37bf04e78b11db8",
+        "ec664e311e5896d67783c931d3e4fd59d1c3fe98eeae167955045afc1a87870c",
+        "ce8f46e5dd1254236dd18cef28ee7bca7639d0d0ad582cfc2352415c625430c9"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_whole_answer_concepts",
-      "review_763_reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "reason": "Le hamburger-frites est cité comme repas préféré au début. Les plats couscous/paella ne figurent pas dans la transcription et restent dans le thème alimentation. Réemploi du hamburger-frites et du couscous entiers contrôlés. Contrôle visuel individuel en 4:3, peinture douce et fond crème, sans texte, montants ou dates.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Le hamburger-frites est cité comme repas préféré au début. Les plats couscous/paella ne figurent pas dans la transcription et restent dans le thème alimentation. Réemploi du hamburger-frites et du couscous entiers contrôlés. Contrôle visuel individuel en 4:3, peinture douce et fond crème, sans texte, montants ou dates.",
       "semantic_sha256": "2667952410b4dcb99d056c84367d077e153d3a6c2b6a5b75de6fda1485f6ab5d"
     },
     {
@@ -171680,22 +171728,31 @@
       "enonce": "Quel plat espagnol est cité ?",
       "labels": [
         "La paella",
-        "Le couscous",
-        "Les pâtes"
+        "Du risotto",
+        "Le hamburger-frites"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_763_candidate_review",
       "source_sha256": "bcd921444b0337e6dd89a4d9542a23ca578ed91d69915a56a2a7b80f2e8330ae",
       "semantic_before_sha256": "0a55114cb1d477c3b4dba498551dbdf8e68e38cb485f3e5aab6cb24417b796ee",
       "semantic_after_sha256": "0a55114cb1d477c3b4dba498551dbdf8e68e38cb485f3e5aab6cb24417b796ee",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-21-5.mp3",
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/extension573-paella.png",
+        "/lib/images/tcf/qcm-audit/extension573-risotto.png",
+        "/lib/images/tcf/qcm-audit/vocab-hamburger-frites.webp"
+      ],
+      "target_sha256": [
+        "ce8f46e5dd1254236dd18cef28ee7bca7639d0d0ad582cfc2352415c625430c9",
+        "151cbe2c85ec5a988f5e49584842c457f20b3abbb0dba740a988dcce9b6b83a8",
+        "85af3e75bb5015bb6404683462501bdd9494ce3b81299e0ea37bf04e78b11db8"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_whole_answer_concepts",
-      "review_763_reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel."
+      "reason": "L’annonce cite explicitement la paella espagnole. Les leurres ont été corrigés en risotto/hamburger-frites, absents de la transcription. Paella, risotto et hamburger-frites entiers vérifiés ; corrigé et identifiants conservés. Contrôle visuel individuel en 4:3, peinture douce et fond crème, sans texte, montants ou dates.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "L’annonce cite explicitement la paella espagnole. Les leurres ont été corrigés en risotto/hamburger-frites, absents de la transcription. Paella, risotto et hamburger-frites entiers vérifiés ; corrigé et identifiants conservés. Contrôle visuel individuel en 4:3, peinture douce et fond crème, sans texte, montants ou dates.",
+      "semantic_sha256": "c047beb18596449115d728c0e10af4452a26866da69efc2f5393f08e9aefb764"
     },
     {
       "key": "tcf-ss-a2-s48-co-3#17",

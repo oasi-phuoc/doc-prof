@@ -27765,6 +27765,237 @@
       "after": "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp",
       "source_sha256": "7ffde53318125f027987ebf8a6837252bc9a16d6dd0dd998db982c9af9e99da1",
       "reason": "Leurre de même thème que les dialogues, concept distinct et absent des transcriptions actuelles ; image existante réutilisée et contrôlée."
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "exercise": "tcf-a2p-s2-ce-1",
+      "question": 5,
+      "node": [
+        "questions",
+        4,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/extension573-clafoutis-cerises.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/extension573-mousse-chocolat.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-tarte-pommes-4-3.webp"
+          }
+        ]
+      },
+      "source_sha256": "f8a03371294749c5e62b557ed772b10e6608f90d1955313f2755dbd003d2acf4",
+      "reason": "Le menu 4 se termine par un clafoutis aux cerises. La mousse et la tarte appartiennent à d’autres menus ; les trois desserts sont distincts et reconnaissables. Réemploi de la mousse et de la tarte approuvées. Contrôle visuel individuel en 4:3, peinture douce et fond crème, sans texte, montants ou dates.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-ss-a2-s24-co-3",
+      "question": 10,
+      "node": [
+        "questions",
+        9,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/extension573-couscous.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/extension573-paella.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/extension573-risotto.png"
+          }
+        ]
+      },
+      "source_sha256": "2f321e1342db21464fa203ae94423a99604058b06c81d00480021e22d653694d",
+      "reason": "Dans la quatrième situation, le repas annoncé est le couscous. Les leurres paella/risotto sont des plats absents de cette piste ; semoule, riz jaune et riz crémeux sont visuellement distincts. Contrôle visuel individuel en 4:3, peinture douce et fond crème, sans texte, montants ou dates.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-ss-a2-s25-co-4",
+      "question": 3,
+      "node": [
+        "questions",
+        2,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/vocab-hamburger-frites.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/extension573-couscous.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/extension573-paella.png"
+          }
+        ]
+      },
+      "source_sha256": "2637c9750420477822c5c8090ba3a9c135d695ea2d2e8ec7ede8123db2310c01",
+      "reason": "Le hamburger-frites est cité comme repas préféré au début. Les plats couscous/paella ne figurent pas dans la transcription et restent dans le thème alimentation. Réemploi du hamburger-frites et du couscous entiers contrôlés. Contrôle visuel individuel en 4:3, peinture douce et fond crème, sans texte, montants ou dates.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-ss-a2-s48-co-3",
+      "question": 16,
+      "node": [
+        "questions",
+        15,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/extension573-paella.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/extension573-risotto.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-hamburger-frites.webp"
+          }
+        ]
+      },
+      "source_sha256": "bcd921444b0337e6dd89a4d9542a23ca578ed91d69915a56a2a7b80f2e8330ae",
+      "reason": "L’annonce cite explicitement la paella espagnole. Les leurres ont été corrigés en risotto/hamburger-frites, absents de la transcription. Paella, risotto et hamburger-frites entiers vérifiés ; corrigé et identifiants conservés. Contrôle visuel individuel en 4:3, peinture douce et fond crème, sans texte, montants ou dates.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "delf-a1v-ce-037",
+      "question": 6,
+      "node": [
+        "questions",
+        5,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/extension573-chaton.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/extension573-chiot.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/extension573-lapereau.png"
+          }
+        ]
+      },
+      "source_sha256": "7541eb05b0f5bb726d09eafb7e16e620fed9d561c89557a8b9ecb76ece824b9b",
+      "reason": "Annonce 2 relue : un chaton de trois mois est proposé à l’adoption. Trois jeunes animaux entiers et distincts, même cadrage et fond crème, sans texte donnant la réponse. Contrôle visuel individuel : 4:3 et style validé. Corrigé et choix conservés.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-a2-sa-co-1",
+      "question": 13,
+      "node": [
+        "questions",
+        12,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/co57-visiter-zoo.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/extension573-aquarium.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co57-parc-attractions.webp"
+          }
+        ]
+      },
+      "source_sha256": "b0d86241acb161c5eeaaddb88eb4922a3315bb74b6a872905eaae09b0ff1efc3",
+      "reason": "La piste s’adresse aux familles dans un zoo. Les leurres aquarium public et parc d’attractions sont des lieux de visite du même thème absents de la transcription. Réemploi des deux scènes approuvées, aquarium public contrôlé avec personnages renouvelés. Contrôle visuel individuel : 4:3 et style validé. Corrigé et choix conservés.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "delf-a1v-ce-013",
+      "question": 3,
+      "node": [
+        "questions",
+        2,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/extension573-panier-velo.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/extension573-siege-enfant-velo.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/extension573-remorque-velo.png"
+          }
+        ]
+      },
+      "source_sha256": "58c18321822f6a07e218e010873a2d9464f60b1317a0fc177531be5592578f46",
+      "reason": "Source relue : le vélo de ville bleu est vendu avec un panier. Trois variantes du même vélo bleu entier, avec panier avant, siège enfant arrière ou remorque attachée ; un seul accessoire distinctif par image. Ce choix préserve le contexte « fixé au vélo », sans remplacer le panier par un panier-repas ou un objet isolé ambigu. Trois originaux contrôlés en 4:3, style et proportions cohérents, corrigé conservé.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
     }
   ]
 }
