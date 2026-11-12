@@ -104,51 +104,54 @@ import asset101 from "/docs/interactive/screenshots/teacher-protections-1366.png
 import asset102 from "/docs/interactive/screenshots/teacher-protections-360.png?url"
 import asset103 from "/docs/interactive/screenshots/teacher-protections-390.png?url"
 import asset104 from "/docs/interactive/screenshots/teacher-protections-paired.png?url"
-import asset105 from "/docs/interactive/screenshots/triangles-1366.png?url"
-import asset106 from "/docs/interactive/screenshots/triangles-360.png?url"
-import asset107 from "/docs/interactive/screenshots/triangles-390.png?url"
-import asset108 from "/src/assets/vite.svg?url"
-import asset109 from "/docs/interactive/screenshots/word-order-1366.png?url"
-import asset110 from "/docs/interactive/screenshots/word-order-390.png?url"
-import asset111 from "/docs/interactive/screenshots/written-arithmetic-1366.png?url"
-import asset112 from "/docs/interactive/screenshots/written-arithmetic-390.png?url"
-import asset113 from "/docs/interactive/screenshots/01-setup-1280.png?url"
-import asset114 from "/docs/interactive/screenshots/01-setup-1366.png?url"
-import asset115 from "/docs/interactive/screenshots/01-setup-1920.png?url"
-import asset116 from "/docs/interactive/screenshots/02-thinking-1280.png?url"
-import asset117 from "/docs/interactive/screenshots/02-thinking-1366.png?url"
-import asset118 from "/docs/interactive/screenshots/02-thinking-1920.png?url"
-import asset119 from "/docs/interactive/screenshots/03-reveal-1280.png?url"
-import asset120 from "/docs/interactive/screenshots/03-reveal-1366.png?url"
-import asset121 from "/docs/interactive/screenshots/03-reveal-1920.png?url"
-import asset122 from "/docs/interactive/screenshots/04-geometry-1280.png?url"
-import asset123 from "/docs/interactive/screenshots/04-geometry-1366.png?url"
-import asset124 from "/docs/interactive/screenshots/04-geometry-1920.png?url"
-import asset125 from "/docs/interactive/screenshots/05-audio-1280.png?url"
-import asset126 from "/docs/interactive/screenshots/05-audio-1366.png?url"
-import asset127 from "/docs/interactive/screenshots/05-audio-1920.png?url"
-import asset128 from "/docs/interactive/screenshots/06-oral-1280.png?url"
-import asset129 from "/docs/interactive/screenshots/06-oral-1366.png?url"
-import asset130 from "/docs/interactive/screenshots/06-oral-1920.png?url"
-import asset131 from "/docs/interactive/screenshots/07-summary-1280.png?url"
-import asset132 from "/docs/interactive/screenshots/07-summary-1366.png?url"
-import asset133 from "/docs/interactive/screenshots/07-summary-1920.png?url"
-import asset134 from "/docs/interactive/screenshots/08-classroom-setup-1280.png?url"
-import asset135 from "/docs/interactive/screenshots/08-classroom-setup-1366.png?url"
-import asset136 from "/docs/interactive/screenshots/08-classroom-setup-1920.png?url"
-import asset137 from "/docs/interactive/screenshots/09-reading-1280.png?url"
-import asset138 from "/docs/interactive/screenshots/09-reading-1366.png?url"
-import asset139 from "/docs/interactive/screenshots/09-reading-1920.png?url"
-import asset140 from "/docs/interactive/screenshots/10-image-correction-1280.png?url"
-import asset141 from "/docs/interactive/screenshots/10-image-correction-1366.png?url"
-import asset142 from "/docs/interactive/screenshots/10-image-correction-1920.png?url"
-import asset143 from "/docs/interactive/screenshots/11-paired-audio-1280.png?url"
-import asset144 from "/docs/interactive/screenshots/11-paired-audio-1366.png?url"
-import asset145 from "/docs/interactive/screenshots/11-paired-audio-1920.png?url"
-import asset146 from "/docs/interactive/screenshots/12-paired-correction-1280.png?url"
-import asset147 from "/docs/interactive/screenshots/12-paired-correction-1366.png?url"
-import asset148 from "/docs/interactive/screenshots/12-paired-correction-1920.png?url"
-import asset149 from "/docs/interactive/screenshots/13-media-missing.png?url"
+import asset105 from "/docs/interactive/screenshots/trapezoids-1366.png?url"
+import asset106 from "/docs/interactive/screenshots/trapezoids-360.png?url"
+import asset107 from "/docs/interactive/screenshots/trapezoids-390.png?url"
+import asset108 from "/docs/interactive/screenshots/triangles-1366.png?url"
+import asset109 from "/docs/interactive/screenshots/triangles-360.png?url"
+import asset110 from "/docs/interactive/screenshots/triangles-390.png?url"
+import asset111 from "/src/assets/vite.svg?url"
+import asset112 from "/docs/interactive/screenshots/word-order-1366.png?url"
+import asset113 from "/docs/interactive/screenshots/word-order-390.png?url"
+import asset114 from "/docs/interactive/screenshots/written-arithmetic-1366.png?url"
+import asset115 from "/docs/interactive/screenshots/written-arithmetic-390.png?url"
+import asset116 from "/docs/interactive/screenshots/01-setup-1280.png?url"
+import asset117 from "/docs/interactive/screenshots/01-setup-1366.png?url"
+import asset118 from "/docs/interactive/screenshots/01-setup-1920.png?url"
+import asset119 from "/docs/interactive/screenshots/02-thinking-1280.png?url"
+import asset120 from "/docs/interactive/screenshots/02-thinking-1366.png?url"
+import asset121 from "/docs/interactive/screenshots/02-thinking-1920.png?url"
+import asset122 from "/docs/interactive/screenshots/03-reveal-1280.png?url"
+import asset123 from "/docs/interactive/screenshots/03-reveal-1366.png?url"
+import asset124 from "/docs/interactive/screenshots/03-reveal-1920.png?url"
+import asset125 from "/docs/interactive/screenshots/04-geometry-1280.png?url"
+import asset126 from "/docs/interactive/screenshots/04-geometry-1366.png?url"
+import asset127 from "/docs/interactive/screenshots/04-geometry-1920.png?url"
+import asset128 from "/docs/interactive/screenshots/05-audio-1280.png?url"
+import asset129 from "/docs/interactive/screenshots/05-audio-1366.png?url"
+import asset130 from "/docs/interactive/screenshots/05-audio-1920.png?url"
+import asset131 from "/docs/interactive/screenshots/06-oral-1280.png?url"
+import asset132 from "/docs/interactive/screenshots/06-oral-1366.png?url"
+import asset133 from "/docs/interactive/screenshots/06-oral-1920.png?url"
+import asset134 from "/docs/interactive/screenshots/07-summary-1280.png?url"
+import asset135 from "/docs/interactive/screenshots/07-summary-1366.png?url"
+import asset136 from "/docs/interactive/screenshots/07-summary-1920.png?url"
+import asset137 from "/docs/interactive/screenshots/08-classroom-setup-1280.png?url"
+import asset138 from "/docs/interactive/screenshots/08-classroom-setup-1366.png?url"
+import asset139 from "/docs/interactive/screenshots/08-classroom-setup-1920.png?url"
+import asset140 from "/docs/interactive/screenshots/09-reading-1280.png?url"
+import asset141 from "/docs/interactive/screenshots/09-reading-1366.png?url"
+import asset142 from "/docs/interactive/screenshots/09-reading-1920.png?url"
+import asset143 from "/docs/interactive/screenshots/10-image-correction-1280.png?url"
+import asset144 from "/docs/interactive/screenshots/10-image-correction-1366.png?url"
+import asset145 from "/docs/interactive/screenshots/10-image-correction-1920.png?url"
+import asset146 from "/docs/interactive/screenshots/11-paired-audio-1280.png?url"
+import asset147 from "/docs/interactive/screenshots/11-paired-audio-1366.png?url"
+import asset148 from "/docs/interactive/screenshots/11-paired-audio-1920.png?url"
+import asset149 from "/docs/interactive/screenshots/12-paired-correction-1280.png?url"
+import asset150 from "/docs/interactive/screenshots/12-paired-correction-1366.png?url"
+import asset151 from "/docs/interactive/screenshots/12-paired-correction-1920.png?url"
+import asset152 from "/docs/interactive/screenshots/13-media-missing.png?url"
 export const galleryAssetUrls: Record<string, string> = {
   "docs/interactive/screenshots/a4-baseline.png": asset0,
   "docs/interactive/screenshots/a4-prototype.png": asset1,
@@ -255,49 +258,52 @@ export const galleryAssetUrls: Record<string, string> = {
   "docs/interactive/screenshots/teacher-protections-360.png": asset102,
   "docs/interactive/screenshots/teacher-protections-390.png": asset103,
   "docs/interactive/screenshots/teacher-protections-paired.png": asset104,
-  "docs/interactive/screenshots/triangles-1366.png": asset105,
-  "docs/interactive/screenshots/triangles-360.png": asset106,
-  "docs/interactive/screenshots/triangles-390.png": asset107,
-  "src/assets/vite.svg": asset108,
-  "docs/interactive/screenshots/word-order-1366.png": asset109,
-  "docs/interactive/screenshots/word-order-390.png": asset110,
-  "docs/interactive/screenshots/written-arithmetic-1366.png": asset111,
-  "docs/interactive/screenshots/written-arithmetic-390.png": asset112,
-  "docs/interactive/screenshots/01-setup-1280.png": asset113,
-  "docs/interactive/screenshots/01-setup-1366.png": asset114,
-  "docs/interactive/screenshots/01-setup-1920.png": asset115,
-  "docs/interactive/screenshots/02-thinking-1280.png": asset116,
-  "docs/interactive/screenshots/02-thinking-1366.png": asset117,
-  "docs/interactive/screenshots/02-thinking-1920.png": asset118,
-  "docs/interactive/screenshots/03-reveal-1280.png": asset119,
-  "docs/interactive/screenshots/03-reveal-1366.png": asset120,
-  "docs/interactive/screenshots/03-reveal-1920.png": asset121,
-  "docs/interactive/screenshots/04-geometry-1280.png": asset122,
-  "docs/interactive/screenshots/04-geometry-1366.png": asset123,
-  "docs/interactive/screenshots/04-geometry-1920.png": asset124,
-  "docs/interactive/screenshots/05-audio-1280.png": asset125,
-  "docs/interactive/screenshots/05-audio-1366.png": asset126,
-  "docs/interactive/screenshots/05-audio-1920.png": asset127,
-  "docs/interactive/screenshots/06-oral-1280.png": asset128,
-  "docs/interactive/screenshots/06-oral-1366.png": asset129,
-  "docs/interactive/screenshots/06-oral-1920.png": asset130,
-  "docs/interactive/screenshots/07-summary-1280.png": asset131,
-  "docs/interactive/screenshots/07-summary-1366.png": asset132,
-  "docs/interactive/screenshots/07-summary-1920.png": asset133,
-  "docs/interactive/screenshots/08-classroom-setup-1280.png": asset134,
-  "docs/interactive/screenshots/08-classroom-setup-1366.png": asset135,
-  "docs/interactive/screenshots/08-classroom-setup-1920.png": asset136,
-  "docs/interactive/screenshots/09-reading-1280.png": asset137,
-  "docs/interactive/screenshots/09-reading-1366.png": asset138,
-  "docs/interactive/screenshots/09-reading-1920.png": asset139,
-  "docs/interactive/screenshots/10-image-correction-1280.png": asset140,
-  "docs/interactive/screenshots/10-image-correction-1366.png": asset141,
-  "docs/interactive/screenshots/10-image-correction-1920.png": asset142,
-  "docs/interactive/screenshots/11-paired-audio-1280.png": asset143,
-  "docs/interactive/screenshots/11-paired-audio-1366.png": asset144,
-  "docs/interactive/screenshots/11-paired-audio-1920.png": asset145,
-  "docs/interactive/screenshots/12-paired-correction-1280.png": asset146,
-  "docs/interactive/screenshots/12-paired-correction-1366.png": asset147,
-  "docs/interactive/screenshots/12-paired-correction-1920.png": asset148,
-  "docs/interactive/screenshots/13-media-missing.png": asset149,
+  "docs/interactive/screenshots/trapezoids-1366.png": asset105,
+  "docs/interactive/screenshots/trapezoids-360.png": asset106,
+  "docs/interactive/screenshots/trapezoids-390.png": asset107,
+  "docs/interactive/screenshots/triangles-1366.png": asset108,
+  "docs/interactive/screenshots/triangles-360.png": asset109,
+  "docs/interactive/screenshots/triangles-390.png": asset110,
+  "src/assets/vite.svg": asset111,
+  "docs/interactive/screenshots/word-order-1366.png": asset112,
+  "docs/interactive/screenshots/word-order-390.png": asset113,
+  "docs/interactive/screenshots/written-arithmetic-1366.png": asset114,
+  "docs/interactive/screenshots/written-arithmetic-390.png": asset115,
+  "docs/interactive/screenshots/01-setup-1280.png": asset116,
+  "docs/interactive/screenshots/01-setup-1366.png": asset117,
+  "docs/interactive/screenshots/01-setup-1920.png": asset118,
+  "docs/interactive/screenshots/02-thinking-1280.png": asset119,
+  "docs/interactive/screenshots/02-thinking-1366.png": asset120,
+  "docs/interactive/screenshots/02-thinking-1920.png": asset121,
+  "docs/interactive/screenshots/03-reveal-1280.png": asset122,
+  "docs/interactive/screenshots/03-reveal-1366.png": asset123,
+  "docs/interactive/screenshots/03-reveal-1920.png": asset124,
+  "docs/interactive/screenshots/04-geometry-1280.png": asset125,
+  "docs/interactive/screenshots/04-geometry-1366.png": asset126,
+  "docs/interactive/screenshots/04-geometry-1920.png": asset127,
+  "docs/interactive/screenshots/05-audio-1280.png": asset128,
+  "docs/interactive/screenshots/05-audio-1366.png": asset129,
+  "docs/interactive/screenshots/05-audio-1920.png": asset130,
+  "docs/interactive/screenshots/06-oral-1280.png": asset131,
+  "docs/interactive/screenshots/06-oral-1366.png": asset132,
+  "docs/interactive/screenshots/06-oral-1920.png": asset133,
+  "docs/interactive/screenshots/07-summary-1280.png": asset134,
+  "docs/interactive/screenshots/07-summary-1366.png": asset135,
+  "docs/interactive/screenshots/07-summary-1920.png": asset136,
+  "docs/interactive/screenshots/08-classroom-setup-1280.png": asset137,
+  "docs/interactive/screenshots/08-classroom-setup-1366.png": asset138,
+  "docs/interactive/screenshots/08-classroom-setup-1920.png": asset139,
+  "docs/interactive/screenshots/09-reading-1280.png": asset140,
+  "docs/interactive/screenshots/09-reading-1366.png": asset141,
+  "docs/interactive/screenshots/09-reading-1920.png": asset142,
+  "docs/interactive/screenshots/10-image-correction-1280.png": asset143,
+  "docs/interactive/screenshots/10-image-correction-1366.png": asset144,
+  "docs/interactive/screenshots/10-image-correction-1920.png": asset145,
+  "docs/interactive/screenshots/11-paired-audio-1280.png": asset146,
+  "docs/interactive/screenshots/11-paired-audio-1366.png": asset147,
+  "docs/interactive/screenshots/11-paired-audio-1920.png": asset148,
+  "docs/interactive/screenshots/12-paired-correction-1280.png": asset149,
+  "docs/interactive/screenshots/12-paired-correction-1366.png": asset150,
+  "docs/interactive/screenshots/12-paired-correction-1920.png": asset151,
+  "docs/interactive/screenshots/13-media-missing.png": asset152,
 }
