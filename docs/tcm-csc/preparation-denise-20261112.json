@@ -4,8 +4,8 @@
   "status": "awaiting_speech_network_access",
   "requested_prompt": "docs/tcm-csc/prompt-audios-denise.md",
   "prompt_found_locally": true,
-  "prompt_found_on_origin_main": false,
-  "checked_origin_main": "6d304c446d0926a97bd98926e9fb4fda35f60bf7",
+  "prompt_found_on_origin_main": true,
+  "checked_origin_main": "01f8f7922968411d76be92b728eeee961eef57e1",
   "network_probe": {
     "host": "speech.platform.bing.com",
     "status": 403,
@@ -1138,5 +1138,6 @@
   "operator_provenance": "docs/tcm-csc/operator-audio.json records eSpeak NG for plus and moins.",
   "next_step": "Autoriser speech.platform.bing.com dans les paramètres réseau, puis exécuter scripts/generate-tcm-csc-denise.py. Les neuf prises mono 24 kHz et le ZIP doivent être validés avant activation du montage préparé.",
   "requested_files": 9,
-  "recordings_generated": 0
+  "recordings_generated": 0,
+  "prompt_scope": "Neuf prises CSC selon le texte fourni dans cette conversation ; consigne de multiplications CFR conservée séparément dans le document partagé."
 }
