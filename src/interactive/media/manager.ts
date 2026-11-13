@@ -9,12 +9,14 @@ import type {
   MediaResult,
   PublicMediaPlan,
 } from './types'
+import type { MediaResolver } from './prepared-context'
 
 type Cached = { result: MediaResult; checkedAt: number }
 export class MediaManager {
   private readonly cache = new Map<string, Cached>()
   private readonly deps: MediaProbeDependencies
   private readonly options: MediaProbeOptions
+  private prepared: MediaResolver = source => source
   constructor(options: MediaProbeOptions, deps?: MediaProbeDependencies) {
     this.options = options
     this.deps = deps ?? browserDependencies()
@@ -22,6 +24,11 @@ export class MediaManager {
 
   assets(plan: PublicMediaPlan): MediaAsset[] {
     return collectMedia(plan.questions, this.options)
+  }
+
+  usePrepared(resolve: MediaResolver): void {
+    this.prepared = resolve
+    this.cache.clear()
   }
 
   async preflight(
@@ -44,9 +51,12 @@ export class MediaManager {
           !asset.conflictingKinds &&
           cached &&
           this.deps.now() - cached.checkedAt < 300000
+        const source = mediaUrl(asset.url, this.options)
+        const prepared = source ? mediaUrl(this.prepared(source), this.options) : null
+        const target = prepared && prepared !== asset.url ? { ...asset, url: prepared } : asset
         const result = useCache
           ? { ...cached.result, asset }
-          : await probeMedia(asset, this.options, signal, this.deps)
+          : { ...await probeMedia(target, this.options, signal, this.deps), asset }
         if (signal.aborted) throw aborted()
         results[index] = result
         if (!asset.conflictingKinds)
@@ -64,7 +74,7 @@ export class MediaManager {
   }
 
   /** Warm every asset of the next screen equally. Never inspect a correction. */
-  async preload(plan: PublicMediaPlan, signal: AbortSignal): Promise<void> {
+  async preload(plan: PublicMediaPlan, signal: AbortSignal, resolve: MediaResolver = this.prepared): Promise<void> {
     const assets = this.assets(plan)
     let next = 0
     const worker = async () => {
@@ -72,7 +82,8 @@ export class MediaManager {
         const asset = assets[next++]!
         const cached = this.cache.get(`${asset.kind}:${asset.url}`)
         if (cached && !['ok', 'slow'].includes(cached.result.status)) continue
-        const url = mediaUrl(asset.url, this.options)
+        const source = mediaUrl(asset.url, this.options)
+        const url = source ? mediaUrl(resolve(source), this.options) : null
         if (!url) continue
         const controller = new AbortController()
         const stop = () => controller.abort()

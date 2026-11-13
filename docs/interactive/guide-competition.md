@@ -4,7 +4,7 @@ Depuis la préparation d’une fiche, sélectionnez les questions, réglez le mi
 
 ## Salle sur Internet
 
-L’enseignant crée la salle avec son accès aux salles, puis partage le code à six chiffres ou le QR. Les élèves ouvrent `/interactif/rejoindre`, saisissent le code et choisissent une image parmi douze nouvelles mascottes animées. Aucun compte élève, nom, pseudo ou texte libre n’est demandé. Un numéro automatique distingue les mascottes identiques.
+L’enseignant crée la salle avec son accès aux salles, puis partage le code à six chiffres ou le QR. Les élèves ouvrent `/interactif/rejoindre`, saisissent le code et choisissent une image parmi 30 mascottes animées communes aux modes Classe et Solo. Aucun compte élève, nom, pseudo ou texte libre n’est demandé. Un numéro automatique distingue les mascottes identiques.
 
 La liste des participants s’affiche avant le départ. L’enseignant peut retirer une inscription, commencer, mettre en pause, révéler la correction ou terminer après confirmation. Les inscriptions ferment au départ. Pendant la question, chaque élève choisit une seule carte sur son appareil ; la correction apparaît quand tous ont répondu ou à la fin du temps. La bonne carte reste en couleur et les cinq autres deviennent grises. Le classement est consultable pendant la correction, puis affiché à la fin.
 
@@ -24,7 +24,7 @@ Gardez la page ouverte pour continuer sans connexion. Un démarrage à froid ent
 
 ## Duel et équipes sur le même écran
 
-Choisissez **Préparer un duel**, puis une mascotte pour chaque côté. Chaque joueur commence à 100 % de vie. Le premier clic décide : juste, l’adversaire perd 10 % ; faux, le joueur perd lui-même 10 %. Les questions **Critique !** infligent 20 % et arrivent au hasard, environ une fois sur quatre. Les traits animés au centre et la réaction de la mascotte indiquent le coup. Le premier à 0 % perd.
+Choisissez **Préparer un duel**, puis une mascotte pour chaque côté. Chaque joueur commence à 100 % de vie. Le premier clic décide : juste, l’adversaire perd 10 % ; faux, le joueur perd lui-même 10 %. Les questions **Critique !** infligent 20 % et arrivent au hasard, environ une fois sur quatre. Les formes animées et la réaction de la mascotte indiquent le coup. Le premier à 0 % perd. La préparation propose dix attaques et dix effets d’erreur à prévisualiser dans les deux sens. Un coup juste part de sa mascotte vers l’adversaire ; une erreur fait tomber les objets choisis sur soi-même. Les effets sélectionnés sont conservés à la reprise.
 
 Le minuteur est facultatif ; sans clic à la fin du temps, personne ne perd de vie. Réglez la correction de 1 à 10 secondes : les questions s’enchaînent automatiquement, en répétant la série sélectionnée jusqu’à une victoire. Les cartes restent tactiles ; au clavier, utilisez A–F pour le côté gauche et 1–6 pour le côté droit. Sur téléphone les deux zones sont l’une sous l’autre.
 

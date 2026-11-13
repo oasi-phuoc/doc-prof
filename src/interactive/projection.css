@@ -681,15 +681,15 @@
   width: 86%;
   height: 86%;
   background-image: var(--ci-mascot-image, url('/lib/images/interactive/leaf-mascot.webp'));
-  background-size: 300% 200%;
+  background-size: var(--ci-mascot-size, 300% 200%);
   background-repeat: no-repeat;
 }
-.ci-mascot-thinking { background-position: 0 0; }
-.ci-mascot-cards-up { background-position: 50% 0; }
-.ci-mascot-discussion { background-position: 100% 0; }
-.ci-mascot-correct { background-position: 0 100%; }
-.ci-mascot-incorrect { background-position: 50% 100%; }
-.ci-mascot-pause { background-position: 100% 100%; }
+.ci-mascot-thinking { background-position: var(--ci-thinking-x, 0%) var(--ci-thinking-y, 0%); }
+.ci-mascot-cards-up { background-position: var(--ci-cards-up-x, 50%) var(--ci-cards-up-y, 0%); }
+.ci-mascot-discussion { background-position: var(--ci-discussion-x, 100%) var(--ci-discussion-y, 0%); }
+.ci-mascot-correct { background-position: var(--ci-correct-x, 0%) var(--ci-correct-y, 100%); }
+.ci-mascot-incorrect { background-position: var(--ci-incorrect-x, 50%) var(--ci-incorrect-y, 100%); }
+.ci-mascot-pause { background-position: var(--ci-pause-x, 100%) var(--ci-pause-y, 100%); }
 .ci-app .ci-result-face { width: 100%; height: 100%; }
 .ci-app .ci-pause-mascot { width: 140px; }
 .ci-app[data-mascot='owl'] { --ci-mascot-image: url('/lib/images/interactive/owl-mascot.webp'); }
@@ -796,7 +796,7 @@
 .ci-app .ci-timer-options .ci-timer-enabled { display: flex; align-items: center; gap: 8px; }
 .ci-app .ci-timer-options input[type='number'] { width: 100%; min-height: 44px; font-size: 18px; }
 .ci-app .ci-timer-options p { margin: 0; font-size: 13px; line-height: 1.4; }
-.ci-app .ci-header .ci-mascot-picker { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.ci-app .ci-header .ci-mascot-picker { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; max-height: min(440px, calc(100dvh - 155px)); overflow-y: auto; overscroll-behavior: contain; }
 .ci-app .ci-mascot-pick { min-width: 0; width: 100%; height: 88px; min-height: 88px; padding: 4px; border: 2px solid transparent; background: var(--ci-soft); }
 .ci-app .ci-mascot-pick[aria-pressed='true'] { border-color: var(--ci-ink); background: #e2eadc; }
 .ci-app .ci-mascot-pick .ci-mascot { height: 100%; max-width: 100%; }

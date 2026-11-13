@@ -32,7 +32,7 @@ try {
     for (let index = 0; index < names.length; index++) {
       await page.getByRole('button', { name: 'Mascotte', exact: true }).click()
       const gallery = page.getByRole('dialog', { name: 'Choisir la mascotte' })
-      assert.equal(await gallery.getByRole('button').count(), 6)
+      assert.equal(await gallery.getByRole('button').count(), 30)
       assert.equal((await gallery.innerText()).trim(), '')
       const previews = await gallery.locator('.ci-mascot-sprite').evaluateAll((elements) => elements.map((element) => getComputedStyle(element).backgroundImage))
       for (let i = 0; i < ids.length; i++) assert.ok(previews[i].includes(`${ids[i]}-mascot`))
@@ -93,7 +93,7 @@ try {
     const generatorOptions = await page.locator('.topbar-right').boundingBox()
     assert.ok(generatorOptions.y >= generatorBrand.y + generatorBrand.height)
     assert.deepEqual(errors, [])
-    results.push({ width, header: 'identity and primary action aligned; options below', mascot: '6 choices; persisted and switchable in session', phaseAndTimer: 'centered', numbering: 'hanging indent verified on wrapped lines' })
+    results.push({ width, header: 'identity and primary action aligned; options below', mascot: '30 image-only choices; original six persisted and switchable in session', phaseAndTimer: 'centered', numbering: 'hanging indent verified on wrapped lines' })
     await page.close()
   }
   console.log(JSON.stringify(results, null, 2))

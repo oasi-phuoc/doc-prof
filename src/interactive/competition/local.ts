@@ -1,4 +1,5 @@
-import { COMPETITION_ART } from './artwork'
+import { MASCOT_IMAGES } from '../domain/mascot'
+import type { MediaResolver } from '../media/prepared-context'
 import { CompetitionError, competitionStep, createCompetition, parseCompetitionSettings, type CompetitionAction, type CompetitionQuiz, type CompetitionSettings } from './core'
 import type { ShapeId } from '../domain/palette'
 import { validAvatar } from './avatars'
@@ -34,8 +35,8 @@ export function readLocalCompetition(quiz: CompetitionQuiz, settings: Competitio
 export function writeLocalCompetition(journal: LocalCompetitionJournal) { try { sessionStorage.setItem(key(journal.quizId), JSON.stringify(journal)); return true } catch { return false } }
 
 /** Full blobs, including the avatar sheet, stay available after network loss. */
-export async function prepareLocalCompetition(quiz: CompetitionQuiz, signal: AbortSignal): Promise<{ quiz: CompetitionQuiz; artwork: string; dispose: () => void }> {
-  const sources = new Set([new URL(COMPETITION_ART, location.origin).href, ...quiz.items.flatMap(({ question: q }) => [...q.images, ...(q.audio ? [q.audio] : []), ...(q.audioParts ?? []), ...q.choices.flatMap((choice) => choice.image ? [choice.image] : [])])].filter((source) => !source.startsWith('data:') && !source.startsWith('blob:')))
+export async function prepareLocalCompetition(quiz: CompetitionQuiz, signal: AbortSignal): Promise<{ quiz: CompetitionQuiz; artwork: MediaResolver; dispose: () => void }> {
+  const sources = new Set([...MASCOT_IMAGES.map(src=>new URL(src,location.origin).href), ...quiz.items.flatMap(({ question: q }) => [...q.images, ...(q.audio ? [q.audio] : []), ...(q.audioParts ?? []), ...q.choices.flatMap((choice) => choice.image ? [choice.image] : [])])].filter((source) => !source.startsWith('data:') && !source.startsWith('blob:')))
   const urls = new Map<string, string>(); let total = 0
   const dispose = () => { for (const value of urls.values()) URL.revokeObjectURL(value) }
   try {
@@ -49,6 +50,6 @@ export async function prepareLocalCompetition(quiz: CompetitionQuiz, signal: Abo
     }
     const copy = structuredClone(quiz), media = (source: string) => urls.get(source) ?? source
     for (const item of copy.items) { const q = item.question; q.images = q.images.map(media); if (q.audio) q.audio = media(q.audio); if (q.audioParts) q.audioParts = q.audioParts.map(media); q.choices = q.choices.map((choice) => ({ ...choice, ...(choice.image ? { image: media(choice.image) } : {}) })) }
-    return { quiz: copy, artwork: media(new URL(COMPETITION_ART, location.origin).href), dispose }
+    return { quiz: copy, artwork: source=>media(new URL(source,location.origin).href), dispose }
   } catch (error) { dispose(); throw error }
 }

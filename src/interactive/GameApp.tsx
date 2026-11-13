@@ -2,7 +2,7 @@ import { lazy, Suspense, useCallback, useEffect, useMemo, useState, type CSSProp
 import { listFiches } from '@/fiches/api'
 import { LoadingScreen } from '@/components/LoadingScreen'
 import { domainsForAccount, readAccessAccount } from '@/access'
-import type { MascotKind } from './domain/mascot'
+import { mascotStyle, type MascotKind } from './domain/mascot'
 import type { Game, PlayMode } from './domain/types'
 import { createGameSource, loadGameSource, renewGameSource, saveGameRun, questionSourceKey, type GameSource } from './game-run'
 import { runById } from './local-runs'
@@ -19,6 +19,9 @@ import { useMediaPreflight } from './media/useMediaPreflight'
 import type { ToolbarGuard } from './domain/teacher'
 import { patchClassroomPreferences, type ClassroomPreferences } from './preferences'
 import { MediaCheck } from './components/MediaCheck'
+import { FullPreload } from './components/FullPreload'
+import { useFullPreload } from './media/useFullPreload'
+import { PreparedMediaContext } from './media/prepared-context'
 import {
   PALETTE,
   inkForColor,
@@ -187,9 +190,10 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
     if (source?.resolvedKeys && !selectionModified) return excludeQuestions(selectedGame, new Set(selectedGame.questions.filter((q) => !source.resolvedKeys!.includes(questionSourceKey(q))).map((q) => q.id)))
     return excludeUnavailable ? excludeQuestions(selectedGame, media.excluded) : selectedGame
   }, [selectedGame, excludeUnavailable, media.excluded, source, selectionModified])
+  const preload = useFullPreload(activeGame, media.manager)
   const readabilityPlan = useMemo(() => activeGame ? { id: activeGame.id, questions: activeGame.questions, rounds: activeGame.rounds } : null, [activeGame])
   const readabilityOptions = useMemo(() => ({ mode, colors, shapes, timer, mascot, contrast }), [mode, colors, shapes, timer, mascot, contrast])
-  const readability = useReadabilityPreflight(readabilityPlan, readabilityOptions, !playing && !competitionOpen && media.complete)
+  const readability = useReadabilityPreflight(readabilityPlan, readabilityOptions, !playing && !competitionOpen && media.complete, preload.resolve)
   const resumeKey = activeGame?.id ?? ''
   const [resumeResult, setResumeResult] = useState<{ key: string; saved: Resume | null; warning: string } | null>(null)
   const resumeChecked = resumeResult?.key === resumeKey
@@ -244,7 +248,7 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
     setResumeResult(null); setPendingStart(true)
   }
   useEffect(() => {
-    if (!pendingStart || !activeGame || !media.complete || !resumeChecked || !readability.complete) return
+    if (!pendingStart || !activeGame || !media.complete || !resumeChecked || !readability.complete || preload.phase === 'loading') return
     let active = true
     void Promise.resolve().then(() => {
       if (!active) return
@@ -254,7 +258,7 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
       if (activeGame.questions.length && (!requested || saved && !resumeWarning)) setPlaying(true)
     })
     return () => { active = false }
-  }, [pendingStart, activeGame, media.complete, resumeChecked, saved, resumeWarning, readability.complete])
+  }, [pendingStart, activeGame, media.complete, resumeChecked, saved, resumeWarning, readability.complete, preload.phase])
   const changeColors = (next: string[]) => {
     setColors(next)
     savePreferences({ colors: next })
@@ -270,7 +274,7 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
   }
   const savePreferences = (patch: Partial<ClassroomPreferences>) => { void patchClassroomPreferences(patch, initialPreferences).then((next) => setPaletteVersion(next.paletteVersion ?? 1), (error: unknown) => setPreferencesWarning(error instanceof Error ? error.message : 'Réglages non enregistrés.')) }
   const header = {
-    onCompetition: activeGame && media.complete && readability.complete ? () => { if (!hasLocalCompetition(activeGame.id) && !hasDuel(activeGame.id, 'duel') && !hasDuel(activeGame.id, 'teams')) newPart(false); setCompetitionOpen(true) } : undefined,
+    onCompetition: activeGame && media.complete && readability.complete && preload.phase !== 'loading' ? () => { if (!hasLocalCompetition(activeGame.id) && !hasDuel(activeGame.id, 'duel') && !hasDuel(activeGame.id, 'teams')) newPart(false); setCompetitionOpen(true) } : undefined,
     toolbarGuard,
     mascot,
     onMascot: (next: MascotKind) => { setMascot(next); savePreferences({ mascot: next }) },
@@ -301,7 +305,8 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
   if (competitionOpen && activeGame && !media.complete) return <div className="ci-app"><LoadingScreen title="Préparation de la compétition" description="Vos questions et leurs médias se préparent." /></div>
   if (competitionOpen && activeGame) return <Suspense fallback={<LoadingScreen title="Ouverture de la compétition" />}><CompetitionSetup key={activeGame.id} game={activeGame} timer={timer} colors={colors} shapes={shapes} showTranscripts={showTranscripts} onNewPart={() => newPart(false)} onExit={() => setCompetitionOpen(false)} /></Suspense>
   return (
-    <div className={`ci-app${contrast ? ' ci-high-contrast' : ''}${playing ? ' ci-playing' : ''}${fullscreen ? ' ci-immersive' : ''}`} data-mascot={mascot}>
+    <PreparedMediaContext value={preload.resolve}>
+    <div className={`ci-app${contrast ? ' ci-high-contrast' : ''}${playing ? ' ci-playing' : ''}${fullscreen ? ' ci-immersive' : ''}`} data-mascot={mascot} style={mascotStyle(mascot,preload.resolve)}>
       {preferencesWarning && <p className="ci-notice" role="status">{preferencesWarning} Le jeu reste utilisable.</p>}
       {!playing && <ClassroomHeader {...header} />}
       {loading ? (
@@ -489,6 +494,7 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
                         onRetry={media.retry}
                       />
                     )}
+                    <FullPreload phase={preload.phase} progress={preload.progress} error={preload.error} disabled={!media.complete || !activeGame.questions.length} onStart={preload.start} onCancel={preload.release} onRelease={preload.release} />
                     {media.complete && <ReadabilityCheck questions={activeGame.questions} {...readability} />}
                     {(!media.complete || !readability.complete || !resumeChecked || pendingStart) && <LoadingScreen variant="inline" title={mode === 'solo' ? 'Préparation du mode Solo…' : 'Préparation du mode Classe…'} />}
                     <p className="ci-run-note">Une nouvelle partie renouvelle les tirages du générateur, avec les mêmes types, limites et durées. Les questions saisies manuellement sont conservées ; une reprise garde la partie en cours.</p>
@@ -499,7 +505,7 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
                     {canResume && saved && <p>Reprendre la séance du {new Date(saved.record.updatedAt).toLocaleString('fr-CH')} (question {saved.state.index + 1} sur {activeGame.rounds?.length ?? activeGame.questions.length}) ?</p>}
                     <button
                       className="ci-primary ci-launch"
-                      disabled={!activeGame.questions.length || !media.complete || !resumeChecked || !readability.complete || pendingStart || resumeWarning === PLAN_CHANGED}
+                      disabled={!activeGame.questions.length || !media.complete || !resumeChecked || !readability.complete || pendingStart || resumeWarning === PLAN_CHANGED || preload.phase === 'loading'}
                       onClick={() => { if (saved?.state.finished) newPart(true); else setPlaying(true) }}
                     >
                       {pendingStart ? 'Préparation de la nouvelle partie…' : saved?.state.finished ? 'Nouvelle partie' : canResume ? 'Reprendre la séance' : 'Commencer la séance'}{' '}
@@ -510,7 +516,7 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
                       <>
                       <button
                         className="ci-fresh-start"
-                        disabled={!media.complete}
+                        disabled={!media.complete || preload.phase === 'loading'}
                         onClick={() => newPart(true)}
                       >
                         Nouvelle partie
@@ -605,5 +611,6 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
         )
       )}
     </div>
+    </PreparedMediaContext>
   )
 }

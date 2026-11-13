@@ -1,0 +1,179 @@
+{
+  "date": "2026-11-13",
+  "baseline": "2a40a993c55443d13fbfa3fabf2da79511470742",
+  "tests": {
+    "fullSuitePassed": 344,
+    "failed": 0,
+    "newDomainTests": 16,
+    "guidedTeacherSheetRegression": "Le modèle est vérifié exactement dans la colonne réponse pour les activités guidées, et dans explication pour les choix. Huit tests ciblés puis la suite entière réussissent."
+  },
+  "browser": {
+    "passed": [
+      "full-preload-browser",
+      "mascots-effects-browser",
+      "duel-browser",
+      "competition-browser",
+      "audio-sequences-browser",
+      "readability-browser",
+      "mascot-browser",
+      "mobile-browser",
+      "media-browser",
+      "competition-worker",
+      "a4-regression"
+    ],
+    "allWorkflowStagesRun": false,
+    "workflowStagesAvailable": 57,
+    "newFeatureViewports": [
+      "390x844",
+      "1366x768",
+      "360x640"
+    ],
+    "serverWritesToFicheApi": 0,
+    "sourceTemplates": "unchanged",
+    "errors": []
+  },
+  "checks": {
+    "types": "tsc -b et typecheck:api réussis",
+    "lint": "oxlint réussi ; 81 avertissements préexistants, aucun nouvel avertissement dans le lot.",
+    "build": "vite build --manifest réussi après les dix mouvements distincts ; duel chargé à la demande.",
+    "budgets": {
+      "landing": {
+        "gzip": 121709,
+        "maximumGzip": 153600
+      },
+      "calibration": {
+        "gzip": 141624,
+        "maximumGzip": 204800
+      },
+      "diagnostic": {
+        "gzip": 143768,
+        "maximumGzip": 204800
+      },
+      "competition": {
+        "gzip": 176933,
+        "maximumGzip": 204800
+      },
+      "game": {
+        "gzip": 2760399,
+        "maximumGzip": 3145728
+      }
+    },
+    "secrets": "Contrôle des modifications et de l’historique depuis C0 consigné dans secrets-results.json ; ne remplace pas F22."
+  },
+  "paper": {
+    "identicalScreenshot": true,
+    "dimensions": [
+      {
+        "width": "793.688px",
+        "height": "1122.52px",
+        "overflow": "hidden"
+      },
+      {
+        "width": "793.688px",
+        "height": "1122.52px",
+        "overflow": "hidden"
+      }
+    ],
+    "draftLaunch": "passed",
+    "baseline": "0addb36d662842040cc8ed64e8b2c0ca81eac810",
+    "fonts": "same pinned fonts; baseline Google CSS response served from local assets",
+    "viewport": "1366x1000"
+  },
+  "scope": "Trente mascottes animées communes, dix styles de coups aux mouvements distincts et dix chutes locales en cas d’erreur.",
+  "artwork": {
+    "mascots": 30,
+    "originalsRetained": 6,
+    "newMascots": 24,
+    "posesPerMascot": 6,
+    "animatedExamples": 180,
+    "newAtlases": 4,
+    "generation": "mascots-generation.json",
+    "motionProof": "mascot-results.json"
+  },
+  "effects": {
+    "proof": "mascots-effects-results.json",
+    "checks": [
+      {
+        "viewport": "390x844",
+        "mascots": "30 image-only choices, each selectable and animated in Class; same 30 in each competition picker; legacy six and new atlas rows verified",
+        "previews": "all ten attacks have distinct motion curves and measured intermediate transforms, reach their target and work in both directions; all ten falling-object errors tested on both players; critical doubles attacks and impact flashes or falling objects",
+        "attackMotions": [
+          "ci-attack-crescent",
+          "ci-attack-twin",
+          "ci-attack-vortex",
+          "ci-attack-leaves",
+          "ci-attack-petals",
+          "ci-attack-wave",
+          "ci-attack-spiral",
+          "ci-attack-claws",
+          "ci-attack-gust",
+          "ci-attack-shockwave"
+        ],
+        "duel": "offline leaf versus Kitsune uses prepared shared sprite sheets; wrong answer triggers a bucket drop on oneself, correct answer flies from right player to left, upward on portrait phones",
+        "resume": "chosen effects and both mascot identities survive the paused journal replay",
+        "axeViolations": 0
+      },
+      {
+        "viewport": "1366x768",
+        "mascots": "30 image-only choices, each selectable and animated in Class; same 30 in each competition picker; legacy six and new atlas rows verified",
+        "previews": "all ten attacks have distinct motion curves and measured intermediate transforms, reach their target and work in both directions; all ten falling-object errors tested on both players; critical doubles attacks and impact flashes or falling objects",
+        "attackMotions": [
+          "ci-attack-crescent",
+          "ci-attack-twin",
+          "ci-attack-vortex",
+          "ci-attack-leaves",
+          "ci-attack-petals",
+          "ci-attack-wave",
+          "ci-attack-spiral",
+          "ci-attack-claws",
+          "ci-attack-gust",
+          "ci-attack-shockwave"
+        ],
+        "duel": "offline leaf versus Kitsune uses prepared shared sprite sheets; wrong answer triggers a bucket drop on oneself, correct answer flies from right player to left, upward on portrait phones",
+        "resume": "chosen effects and both mascot identities survive the paused journal replay",
+        "axeViolations": 0
+      },
+      {
+        "viewport": "360x640",
+        "mascots": "30 image-only choices, each selectable and animated in Class; same 30 in each competition picker; legacy six and new atlas rows verified",
+        "previews": "all ten attacks have distinct motion curves and measured intermediate transforms, reach their target and work in both directions; all ten falling-object errors tested on both players; critical doubles attacks and impact flashes or falling objects",
+        "attackMotions": [
+          "ci-attack-crescent",
+          "ci-attack-twin",
+          "ci-attack-vortex",
+          "ci-attack-leaves",
+          "ci-attack-petals",
+          "ci-attack-wave",
+          "ci-attack-spiral",
+          "ci-attack-claws",
+          "ci-attack-gust",
+          "ci-attack-shockwave"
+        ],
+        "duel": "offline leaf versus Kitsune uses prepared shared sprite sheets; wrong answer triggers a bucket drop on oneself, correct answer flies from right player to left, upward on portrait phones",
+        "resume": "chosen effects and both mascot identities survive the paused journal replay",
+        "axeViolations": 0
+      }
+    ],
+    "critical": "Deux coups et deux éclats décalés de 160 ms ; six objets au lieu de trois pour une erreur critique.",
+    "compatibility": "Les anciens journaux sans effets choisis restent lisibles ; identités historiques conservées."
+  },
+  "worker": {
+    "runtime": "real workerd through Miniflare, SQLite-backed Durable Objects",
+    "workerBytes": 53212,
+    "quiz": "60 questions, serialized content larger than 128 KiB; bounded atomic KV chunks accepted by the real runtime",
+    "authority": "teacher key and room capabilities; learner cannot control host; original source IDs and future keys absent from learner view",
+    "grading": "1000 and 0 points derived by server",
+    "restart": "new workerd instance restores quiz, capabilities, pause, answer key and scores from durable storage",
+    "matching": "Three-pair group retained after restart; an already associated word is rejected with HTTP 400; the next correct pair scores 2000 points in total; current key stays private",
+    "productionDeployment": false,
+    "transcripts": "Two listeners and two questions on the same recording: no transcript in lobby, questions or first correction; final correction releases only the current text; stale pause refused; paused review text and scores survive a new SQLite runtime.",
+    "wordClassification": "Only neutral tokens and the target position reach learners; injected category tags are rejected; SQLite restart preserves the phrase and private grading.",
+    "mascots": "The common Leaf and new Kitsune identities join the real Worker, remain in the public roster and keep their scores after restart; no name or nickname supplied."
+  },
+  "limits": [
+    "Duels et tournoi sur écran commun ; synchronisation des duels sur les salles Internet encore ouverte.",
+    "Activation du service Internet de production à faire par l’administrateur ; aucun déploiement Cloudflare effectué.",
+    "Le jeu local fonctionne après préparation, dans la page ouverte ; démarrage à froid hors ligne non couvert.",
+    "Aucune nouvelle synthèse audio ni publication de configuration cloud."
+  ]
+}

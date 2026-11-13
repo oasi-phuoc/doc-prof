@@ -3,10 +3,11 @@ import { hash } from '../domain/seeds'
 import { validAvatar, type CompetitionAvatar } from '../competition/avatars'
 import type { CompetitionQuiz } from '../competition/core'
 import type { TimerSettings } from '../domain/settings'
+import { validEffects, type DuelEffects } from './effects'
 
 export type Side = 'left' | 'right'
 export type DuelMode = 'duel' | 'teams'
-export type DuelConfig = { mode: DuelMode; seed: number; left: CompetitionAvatar[]; right: CompetitionAvatar[] }
+export type DuelConfig = { mode: DuelMode; seed: number; left: CompetitionAvatar[]; right: CompetitionAvatar[]; effects?:DuelEffects }
 export type Fighter = { avatarId: CompetitionAvatar; seat: number }
 export type DuelPair = { left: Fighter; right: Fighter }
 export type DuelPhase = 'ready' | 'question' | 'feedback' | 'finished'
@@ -29,8 +30,8 @@ export const otherSide = (side: Side): Side => side === 'left' ? 'right' : 'left
 const object = (value: unknown): value is Record<string, unknown> => !!value && typeof value === 'object' && !Array.isArray(value)
 
 export function parseDuelConfig(value: unknown): DuelConfig {
-  if (!object(value) || Object.keys(value).some(key => !['mode', 'seed', 'left', 'right'].includes(key)) || !['duel', 'teams'].includes(value.mode as string) || !Number.isSafeInteger(value.seed) || Number(value.seed) < 0 || Number(value.seed) > 0xffffffff || !Array.isArray(value.left) || !Array.isArray(value.right) || value.left.length < 1 || value.left.length > 30 || value.left.length !== value.right.length || value.mode === 'duel' && value.left.length !== 1 || [...value.left, ...value.right].some(avatar => !validAvatar(avatar))) throw new Error('Choisissez le même nombre de mascottes dans les deux équipes, sans nom ni pseudo.')
-  return { mode: value.mode as DuelMode, seed: Number(value.seed), left: [...value.left] as CompetitionAvatar[], right: [...value.right] as CompetitionAvatar[] }
+  if (!object(value) || Object.keys(value).some(key => !['mode', 'seed', 'left', 'right', 'effects'].includes(key)) || !['duel', 'teams'].includes(value.mode as string) || !Number.isSafeInteger(value.seed) || Number(value.seed) < 0 || Number(value.seed) > 0xffffffff || !Array.isArray(value.left) || !Array.isArray(value.right) || value.left.length < 1 || value.left.length > 30 || value.left.length !== value.right.length || value.mode === 'duel' && value.left.length !== 1 || [...value.left, ...value.right].some(avatar => !validAvatar(avatar)) || value.effects!==undefined&&!validEffects(value.effects)) throw new Error('Choisissez le même nombre de mascottes dans les deux équipes, sans nom ni pseudo, et des animations proposées.')
+  return { mode: value.mode as DuelMode, seed: Number(value.seed), left: [...value.left] as CompetitionAvatar[], right: [...value.right] as CompetitionAvatar[], ...(value.effects!==undefined?{effects:{...value.effects as DuelEffects}}:{}) }
 }
 export function parseDuelTimer(value: unknown): TimerSettings {
   if (!object(value) || Object.keys(value).some(key => !['enabled', 'seconds', 'feedbackSeconds'].includes(key)) || typeof value.enabled !== 'boolean' || !Number.isInteger(value.seconds) || Number(value.seconds) < 5 || Number(value.seconds) > 600 || !Number.isInteger(value.feedbackSeconds) || Number(value.feedbackSeconds) < 1 || Number(value.feedbackSeconds) > 10) throw new Error('Minuteur du duel invalide.')
