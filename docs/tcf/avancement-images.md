@@ -20,6 +20,8 @@ Suite horaires et déplacements : **81 trios supplémentaires** (40 A1, 33 A2, h
 
 Suite appareils, lieux, fêtes, vêtements et aliments : **40 trios** (28 A1, 12 A2), dont cinq historiques, avec **sept nouveaux PNG 4:3** et **108 réemplois**. Le reliquat historique passe à **370** ; DELF Actif compte **187 trios actifs** et **183 candidats concrets**. Les 1 021 questions à examiner en contexte restent suivies séparément.
 
+Suite sports, quarts d’heure, bagages et matériel : **18 trios** (dix A1, sept A2, un B1), **six nouveaux PNG natifs 4:3**, sept usages de ces nouveaux fichiers et **47 réemplois**. Les 205 trios DELF Actif sont répartis en 102 A1, 94 A2 et neuf B1 ; 165 candidats concrets restent à vérifier, ainsi que 1 021 questions en contexte. Les 370 trios historiques restent séparés. Les sources, réponses et MP3 sont conservés, comparaison complète des six banques à l’appui ([sports et quarts](revue-trios-sports-quarts-20261113.json), [bagages](revue-trios-bagages-materiel-20261113.json)). Les contrôles des images, des 346 supports DELF Actif, de la banque, des catalogues et TypeScript passent ; 2 202 variantes QCM image et 5 917 images de galerie sont recensées. Aucune nouvelle écoute humaine n’est attestée.
+
 ## Reprise du 6 novembre 2026 — objets CO inclus
 
 La nouvelle demande utilisateur reprend l’harmonisation des images et inclut désormais les 26 banques CO **OBJET**. Elle remplace les anciennes consignes de pause audio et d’exclusion des objets conservées ci-dessous pour l’historique. Le style validé du commit `48a753d8`, le paysage 4:3 et les réponses restent inchangés.

@@ -1,0 +1,212 @@
+{
+  "date": "2026-11-13",
+  "baseline_commit": "6ebf7a5a72e6361d43b46834c995b3f9f1090a7b",
+  "human_audio_listening_performed": false,
+  "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+  "trios": [
+    {
+      "key": "tcf-delf-actif-a1-003-01#4",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut, c’est Agathe. Mercredi la prof de français est absente. On sort à 11h00. On peut aller à la bibliothèque Albert Camus. Apporte ton cahier à spirale. On prépare le contrôle pour vendredi. On rentre à la maison en voiture avec mes parents. J’attends ta réponse avant 18h00.",
+      "source_sha256": "3583736e738653c2b5107d647dc5edf7796d9e465469519e8add9ed5cd1e6ae0",
+      "semantic_sha256": "41a074e7e27d1cb7a3005df6edf179a187aa8124db5c37408634a61ed92fd96d",
+      "question": {
+        "enonce": "Quel matériel faut-il apporter ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un cahier à spirale",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un ordinateur",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un dictionnaire",
+            "correct": false
+          }
+        ],
+        "written_model": "Un cahier à spirale"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-003-01.mp3",
+      "audio_sha256": "13e47bdeaf5e5cc9cc27110f970758a7f4529594b263c996540516eeca60feb7",
+      "image_ids": [
+        "co306-cahier-dessine",
+        "vocab-ordinateur-portable",
+        "co306-dictionnaire-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-cahier-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-ordinateur-portable.webp",
+        "/lib/images/tcf/qcm-audit/co306-dictionnaire-dessine.webp"
+      ],
+      "image_sha256": [
+        "2684f0cd8700af31abf18fefa1af9fa66c2a6e1a63aacb72c71ab76033072d97",
+        "e3ac17ccce680c76a54c22e56cdbc57dac93c4aa354e13141ed5b7c82f0a9c97",
+        "e3bc1989eff5fd73033efdf48858ff89579c3de55b7f53b3866861a4da4ca7b1"
+      ],
+      "reason": "Agathe demande le cahier à spirale pour préparer le contrôle à la bibliothèque.",
+      "visual_review": "Cahier rouge avec spirale visible, ordinateur portable transportable et dictionnaire ouvert avec entrées et index : trois matériels distincts."
+    },
+    {
+      "key": "tcf-delf-actif-a1-010-01#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut l’espagnol, c’est Adam ! Mardi c’est le 14 juillet, les français sont en fête. On va voir les feux d’artifice ? Je viens te chercher l’après-midi à la gare. Le soir tu dors chez moi et tu rentres mercredi. Prends un sac à dos pour être plus libre.",
+      "source_sha256": "d3634f92935a48fbdc56b847f78c07605c006fa7ddd045115213f8eec0dc73e4",
+      "semantic_sha256": "b40d72e3018c95dd4563d4cd97cf1bc4339e2121e294bf364e2ebcf25a8592a4",
+      "question": {
+        "enonce": "Quel bagage faut-il prendre ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un sac à dos",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Une grande valise",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un sac de sport",
+            "correct": false
+          }
+        ],
+        "written_model": "Un sac à dos"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-010-01.mp3",
+      "audio_sha256": "ab41b273a4d918e9a636db74b03fbbba537ec07013ae2df2357142985642ce47",
+      "image_ids": [
+        "vocab-sac-dos",
+        "co306-grande-valise-dessine",
+        "extension573-sac-sport-noir"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-sac-dos.webp",
+        "/lib/images/tcf/qcm-audit/co306-grande-valise-dessine.webp",
+        "/lib/images/tcf/qcm-audit/extension573-sac-sport-noir.png"
+      ],
+      "image_sha256": [
+        "39fecb91cc22acc3046157be1a637a432a00c481f181b4bfd4927c5bc474b16e",
+        "f20169823daa745440f0da1a808e34d00f39138275b7a352e9a828d889f681a8",
+        "55b14c396533ba7cb40b7f7d6f8b3ae0da01560436061bb246c8944f3554e01b"
+      ],
+      "reason": "Adam demande un sac à dos pour être plus libre pendant la visite et la nuit chez lui.",
+      "visual_review": "Sac à dos bleu entier, grande valise à roulettes et sac de sport noir à anses ; trois bagages distincts."
+    },
+    {
+      "key": "tcf-delf-actif-a1-027-01#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "C’est Livia. Je te rappelle le voyage d’une journée à Nice. Nous partons de l’aéroport de Paris à 8h15, nous allons visiter le musée Matisse et revenons à Paris à 23 heures. Demain, apporte-moi ton petit sac bleu et n’oublie pas d’arriver à l’école de langue à 6h00.",
+      "source_sha256": "ef686138b3097402aeaec9319230a02e5bda2411364277f359d8abbdec0ccd5e",
+      "semantic_sha256": "c10fa13e3ef1fdac3b7d7ac1862e7125508259964c91f53ce9e41322983aaad5",
+      "question": {
+        "enonce": "Quel objet faut-il apporter ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un petit sac bleu",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Une grande valise rouge",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un sac de sport noir",
+            "correct": false
+          }
+        ],
+        "written_model": "Un petit sac bleu"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-027-01.mp3",
+      "audio_sha256": "ebd01e0803cff53911978e140d7f7c317b5cfc80ca190d15560b3388f59cd2b9",
+      "image_ids": [
+        "extension573-petit-sac-bleu",
+        "extension573-valise-rouge-grande",
+        "extension573-sac-sport-noir"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-petit-sac-bleu.png",
+        "/lib/images/tcf/qcm-audit/extension573-valise-rouge-grande.png",
+        "/lib/images/tcf/qcm-audit/extension573-sac-sport-noir.png"
+      ],
+      "image_sha256": [
+        "886e50705a29a252ebb8c7b1462b7537e84758f414ca080492b3572decb9ecc0",
+        "adcd92413a92a7692cc2fcba0e44be4e811a07d0aef307d60e4e0e46465654a2",
+        "55b14c396533ba7cb40b7f7d6f8b3ae0da01560436061bb246c8944f3554e01b"
+      ],
+      "reason": "Livia demande précisément le petit sac bleu pour la journée à Nice.",
+      "visual_review": "Trois bagages entiers, bleu rouge et noir ; petit sac compact, grande valise à roulettes et sac de sport. Les anciens modèles orange ou bleus ne remplacent pas la valise rouge."
+    },
+    {
+      "key": "tcf-delf-actif-a1-049-03-01#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "C’est Hugo! Tu es toujours d’accord pour venir en vacances chez moi ? Tu peux m’apporter la boussole ? Prends le bus de 11h30, je viens te chercher à l’arrêt à 12h30. N’oublie pas tes chaussures de marche pour nos randonnées. Appelle-moi ce soir avant ton entraînement.",
+      "source_sha256": "d6a3a0c1159c0e82d68740f3d477d27100c5111c5fc27ceee96dc0ad17830689",
+      "semantic_sha256": "5152cdc4785c0c2204c9eb7a031e8c53fa9fc35eb56662378a116b6a2b8ce329",
+      "question": {
+        "enonce": "Quel instrument Hugo demande-t-il d’apporter ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Une boussole",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un thermomètre",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une lampe",
+            "correct": false
+          }
+        ],
+        "written_model": "Une boussole"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-049-03-01.mp3",
+      "audio_sha256": "63f65325049a585a2aa6a7f359cca9a61c24f432735f4b5237e8c04d83db5516",
+      "image_ids": [
+        "extension573-boussole",
+        "vocab-thermometre",
+        "vocab-lampe"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-boussole.png",
+        "/lib/images/tcf/qcm-audit/vocab-thermometre.webp",
+        "/lib/images/tcf/qcm-audit/vocab-lampe.webp"
+      ],
+      "image_sha256": [
+        "0b135f7a37cf9aba70a0690b4c4a67a0d4c408abdc7deb14a70d7d69e89369c3",
+        "a88f60d57a18b66151ae1ed005188f9bca1dcf2c02cbcb3884570f6ce400c92c",
+        "aba19c7597c27e84e6bed0de4634c359693d2dba08d71760d74b555e2107a9c4"
+      ],
+      "reason": "Hugo demande une boussole pour les vacances avec randonnées.",
+      "visual_review": "Boussole avec points cardinaux et aiguille magnétique, thermomètre numérique sans température affichée et lampe de table ; trois objets entiers peints sur crème."
+    }
+  ],
+  "verification": {
+    "baseline_commit": "6ebf7a5a72e6361d43b46834c995b3f9f1090a7b",
+    "compared_all_six_banks": true,
+    "question_changes": 0,
+    "source_changes": 0,
+    "answer_changes": 0,
+    "added_image_forms_total": 18,
+    "registers": [
+      "docs/tcf/revue-trios-sports-quarts-20261113.json",
+      "docs/tcf/revue-trios-bagages-materiel-20261113.json"
+    ]
+  }
+}

@@ -8,25 +8,25 @@
     "supports": 346,
     "questions": 1663,
     "statuses": {
-      "active_reviewed_trio": 187,
+      "active_reviewed_trio": 205,
       "keep_text_calendar_or_duration": 139,
       "needs_context_review": 1021,
-      "candidate_visual_review": 183,
+      "candidate_visual_review": 165,
       "keep_text_named_identity_or_code": 60,
       "keep_text_amount": 73
     },
     "by_level": {
       "A0-A1": {
-        "active_reviewed_trio": 92,
+        "active_reviewed_trio": 102,
         "keep_text_calendar_or_duration": 46,
         "needs_context_review": 208,
-        "candidate_visual_review": 60,
+        "candidate_visual_review": 50,
         "keep_text_named_identity_or_code": 23,
         "keep_text_amount": 37
       },
       "A1-A2": {
-        "candidate_visual_review": 89,
-        "active_reviewed_trio": 87,
+        "candidate_visual_review": 82,
+        "active_reviewed_trio": 94,
         "needs_context_review": 363,
         "keep_text_named_identity_or_code": 28,
         "keep_text_calendar_or_duration": 58,
@@ -34,8 +34,8 @@
       },
       "A2-B1": {
         "needs_context_review": 450,
-        "candidate_visual_review": 34,
-        "active_reviewed_trio": 8,
+        "candidate_visual_review": 33,
+        "active_reviewed_trio": 9,
         "keep_text_calendar_or_duration": 35,
         "keep_text_named_identity_or_code": 9,
         "keep_text_amount": 12
@@ -4693,8 +4693,8 @@
       "semantic_sha256": "41a074e7e27d1cb7a3005df6edf179a187aa8124db5c37408634a61ed92fd96d",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-003-01.mp3",
       "audio_sha256": "13e47bdeaf5e5cc9cc27110f970758a7f4529594b263c996540516eeca60feb7",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -4735,8 +4735,24 @@
           "brief": "Représenter entièrement « Un dictionnaire » pour « Quel matériel faut-il apporter ? ». Vérifier la transcription du support tcf-delf-actif-a1-003-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co306-cahier-dessine.webp",
+          "sha256": "2684f0cd8700af31abf18fefa1af9fa66c2a6e1a63aacb72c71ab76033072d97"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-ordinateur-portable.webp",
+          "sha256": "e3ac17ccce680c76a54c22e56cdbc57dac93c4aa354e13141ed5b7c82f0a9c97"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-dictionnaire-dessine.webp",
+          "sha256": "e3bc1989eff5fd73033efdf48858ff89579c3de55b7f53b3866861a4da4ca7b1"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -4747,7 +4763,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-bagages-materiel-20261113.json",
+        "reason": "Agathe demande le cahier à spirale pour préparer le contrôle à la bibliothèque.",
+        "note": "Cahier rouge avec spirale visible, ordinateur portable transportable et dictionnaire ouvert avec entrées et index : trois matériels distincts."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-003-01#5",
@@ -7036,8 +7058,8 @@
       "semantic_sha256": "b40d72e3018c95dd4563d4cd97cf1bc4339e2121e294bf364e2ebcf25a8592a4",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-010-01.mp3",
       "audio_sha256": "ab41b273a4d918e9a636db74b03fbbba537ec07013ae2df2357142985642ce47",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -7078,8 +7100,24 @@
           "brief": "Représenter entièrement « Un sac de sport » pour « Quel bagage faut-il prendre ? ». Vérifier la transcription du support tcf-delf-actif-a1-010-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-sac-dos.webp",
+          "sha256": "39fecb91cc22acc3046157be1a637a432a00c481f181b4bfd4927c5bc474b16e"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-grande-valise-dessine.webp",
+          "sha256": "f20169823daa745440f0da1a808e34d00f39138275b7a352e9a828d889f681a8"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/extension573-sac-sport-noir.png",
+          "sha256": "55b14c396533ba7cb40b7f7d6f8b3ae0da01560436061bb246c8944f3554e01b"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -7090,7 +7128,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-bagages-materiel-20261113.json",
+        "reason": "Adam demande un sac à dos pour être plus libre pendant la visite et la nuit chez lui.",
+        "note": "Sac à dos bleu entier, grande valise à roulettes et sac de sport noir à anses ; trois bagages distincts."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-011-01#1",
@@ -10692,8 +10736,8 @@
       "semantic_sha256": "0234a4dfd312532ffaad1bd865c1aa15d3e73a1277edefe5364b499677b97c8f",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-019-01.mp3",
       "audio_sha256": "e49455c9a7542ca299bfe327d62fb32207bc0a704dd6b31f9615cd94011a6e5e",
-      "status": "candidate_visual_review",
-      "reason": "Trois horaires précis à représenter. Vérifier notamment que les cadrans distinguent toutes les heures, y compris matin/soir.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -10727,8 +10771,24 @@
           "brief": "Représenter entièrement « À 10 h 45 » pour « À quelle heure le rendez-vous est-il fixé ? ». Vérifier la transcription du support tcf-delf-actif-a1-019-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-horloge-0945.webp",
+          "sha256": "a4ce9ed3cba6a0fbd250cd5a4bb3942f87447181861f3287339d6cb05a270655"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-horloge-0915.webp",
+          "sha256": "8ed8061711c2dcd0ca99edfc09a4a2eef9b5c3e5be185468a1a03ed84cdb66d5"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-horloge-1045-dessinee.webp",
+          "sha256": "d53dd99a41f0ae087da11d7425ff8f0c7a126ff4ea622559adc987f9a08e769d"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -10739,7 +10799,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-sports-quarts-20261113.json",
+        "reason": "Le rendez-vous pour le jogging est fixé dimanche à 9 h 45.",
+        "note": "Cadrans 9 h 45, 9 h 15 et 10 h 45 examinés : minutes sur 9/3/9 et petites aiguilles dans les secteurs correspondants. Aucun jour ou date illustrés."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-019-01#3",
@@ -11024,8 +11090,8 @@
       "semantic_sha256": "f435c7660f23236d5e8d873d06aca4bb9657fc0fc1cda30af90345d6df0ea0da",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-019-03.mp3",
       "audio_sha256": "29e549e9e0aa053b9f232ed8fcedc8321b94659660ce6a689bdb73e45de36b88",
-      "status": "candidate_visual_review",
-      "reason": "Trois horaires précis à représenter. Vérifier notamment que les cadrans distinguent toutes les heures, y compris matin/soir.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -11039,7 +11105,14 @@
           "id": "b",
           "label": "À 13 h 15",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-horloge-1315.png",
+              "sha256": "12593c0870441aa4cbe7e52a8d3c29f7c8017acb42b7064577127988c90aa43b",
+              "label": "À 13 h 15",
+              "visual_review_required": true
+            }
+          ],
           "asset": "c7085c7da9bc1797",
           "brief": "Représenter entièrement « À 13 h 15 » pour « À quelle heure la personne passe-t-elle chercher son ami ? ». Vérifier la transcription du support tcf-delf-actif-a1-019-03 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         },
@@ -11052,8 +11125,24 @@
           "brief": "Représenter entièrement « À 13 h 45 » pour « À quelle heure la personne passe-t-elle chercher son ami ? ». Vérifier la transcription du support tcf-delf-actif-a1-019-03 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-horloge-1245.webp",
+          "sha256": "30af7d50af1e57370b5280996fda7aa4c3c675dfe1f8bea21e510f9c6dd2ae96"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/extension573-horloge-1315.png",
+          "sha256": "12593c0870441aa4cbe7e52a8d3c29f7c8017acb42b7064577127988c90aa43b"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/vocab-horloge-1345.webp",
+          "sha256": "7299db383f2ff3ff36ade773a2a08cc332740eb2ddcda92979d1b380196a1a38"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -11064,7 +11153,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-sports-quarts-20261113.json",
+        "reason": "La personne passe chez son ami à une heure moins le quart, soit 12 h 45.",
+        "note": "12 h 45 : grande aiguille sur 9, petite entre 12 et 1 ; 13 h 15 : grande sur 3, petite entre 1 et 2 ; 13 h 45 : grande sur 9, petite près du 2. Les trois lectures sont distinctes."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-019-04#1",
@@ -12862,8 +12957,8 @@
       "semantic_sha256": "723b7db4eb8db20112dcaa97370fb9605c958899bc1f97766df5b9400e203f2b",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-024-01.mp3",
       "audio_sha256": "c9aace00f25adc5c2604804549a12e762ad6891fa3bd4d1be96b7de5c872ab85",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -12904,8 +12999,24 @@
           "brief": "Représenter entièrement « Le ski » pour « Pour quel sport veut-il ce vêtement ? ». Vérifier la transcription du support tcf-delf-actif-a1-024-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/26876e2318ce.webp",
+          "sha256": "58f115a3bb9f3bc80a0a69592ad775da19b1bd86b3699030cea12ade79faa727"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-football-dessine.webp",
+          "sha256": "d952554cab4531f173addde56923d82b0c5158616a2a0eee8e87217380502593"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-ski-dessine.webp",
+          "sha256": "77991eaa00a37536135fc55956abe576d56a3b85640d6cd3bba28e62aeb21316"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -12916,7 +13027,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-sports-quarts-20261113.json",
+        "reason": "Transcription entière relue : Pour quel sport veut-il ce vêtement ? Réponse justifiée : Le tennis.",
+        "note": "Scènes sportives examinées : tennis avec raquettes, filet et balle ; natation avec nageuse dans l’eau ; ski avec skis et neige ; course avec personnes courant ; football/rugby avec ballon et équipements distincts. Les personnes représentent une activité, sans servir de portrait de la personne citée. Le cyclisme sur route reste séparé, sans réemploi du simple vélo de ville."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-024-01#4",
@@ -13956,14 +14073,21 @@
       "semantic_sha256": "c10fa13e3ef1fdac3b7d7ac1862e7125508259964c91f53ce9e41322983aaad5",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-027-01.mp3",
       "audio_sha256": "ebd01e0803cff53911978e140d7f7c317b5cfc80ca190d15560b3388f59cd2b9",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
           "label": "Un petit sac bleu",
           "correct": true,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-petit-sac-bleu.png",
+              "sha256": "886e50705a29a252ebb8c7b1462b7537e84758f414ca080492b3572decb9ecc0",
+              "label": "Petit sac bleu",
+              "visual_review_required": true
+            }
+          ],
           "asset": "e5ae0184a404c63b",
           "brief": "Représenter entièrement « Un petit sac bleu » pour « Quel objet faut-il apporter ? ». Vérifier la transcription du support tcf-delf-actif-a1-027-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         },
@@ -13971,7 +14095,14 @@
           "id": "b",
           "label": "Une grande valise rouge",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-valise-rouge-grande.png",
+              "sha256": "adcd92413a92a7692cc2fcba0e44be4e811a07d0aef307d60e4e0e46465654a2",
+              "label": "Grande valise rouge",
+              "visual_review_required": true
+            }
+          ],
           "asset": "8ce17e87c497a41c",
           "brief": "Représenter entièrement « Une grande valise rouge » pour « Quel objet faut-il apporter ? ». Vérifier la transcription du support tcf-delf-actif-a1-027-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         },
@@ -13979,13 +14110,36 @@
           "id": "c",
           "label": "Un sac de sport noir",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-sac-sport-noir.png",
+              "sha256": "55b14c396533ba7cb40b7f7d6f8b3ae0da01560436061bb246c8944f3554e01b",
+              "label": "Sac de sport noir",
+              "visual_review_required": true
+            }
+          ],
           "asset": "0341143ab03bc6b9",
           "brief": "Représenter entièrement « Un sac de sport noir » pour « Quel objet faut-il apporter ? ». Vérifier la transcription du support tcf-delf-actif-a1-027-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/extension573-petit-sac-bleu.png",
+          "sha256": "886e50705a29a252ebb8c7b1462b7537e84758f414ca080492b3572decb9ecc0"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/extension573-valise-rouge-grande.png",
+          "sha256": "adcd92413a92a7692cc2fcba0e44be4e811a07d0aef307d60e4e0e46465654a2"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/extension573-sac-sport-noir.png",
+          "sha256": "55b14c396533ba7cb40b7f7d6f8b3ae0da01560436061bb246c8944f3554e01b"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -13996,7 +14150,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-bagages-materiel-20261113.json",
+        "reason": "Livia demande précisément le petit sac bleu pour la journée à Nice.",
+        "note": "Trois bagages entiers, bleu rouge et noir ; petit sac compact, grande valise à roulettes et sac de sport. Les anciens modèles orange ou bleus ne remplacent pas la valise rouge."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-028-01#1",
@@ -19184,8 +19344,8 @@
       "semantic_sha256": "c979132270c646623812e3333d1ece41448086f4655773c9ceaf6ab4d437c196",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-036-01.mp3",
       "audio_sha256": "79b6a76ab44b0f54af8c6e98989af54e05e8ad4b73e0b1e6776dd2b153e54458",
-      "status": "candidate_visual_review",
-      "reason": "Trois horaires précis à représenter. Vérifier notamment que les cadrans distinguent toutes les heures, y compris matin/soir.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -19212,8 +19372,24 @@
           "brief": "Représenter entièrement « À 7 h 30 » pour « À quelle heure le départ est-il prévu ? ». Vérifier la transcription du support tcf-delf-actif-a1-036-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-horloge-0700.webp",
+          "sha256": "4ebf9c619b6f1182ae1a982235d8a29c414b79ceacede37067c7e8a2e53f69ce"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-horloge-0645.webp",
+          "sha256": "68884dcf86d692dc03b11ffae7ff36fb3b0f3d656c17ad59940f41678cf158d6"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/vocab-horloge-0730.webp",
+          "sha256": "513b6b33bc42475659b325bbffe2c1a02e06a306a0b3df08a45e39bd94555182"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -19224,7 +19400,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-sports-quarts-20261113.json",
+        "reason": "Le départ pour Chamonix est à 7 heures ; le rendez-vous préalable est à 6 h 45.",
+        "note": "7 h, 6 h 45 et 7 h 30 : aiguilles examinées, minutes sur 12/9/6, heures distinctes. Ne pas confondre heure de rendez-vous et heure de départ."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-036-01#3",
@@ -19304,8 +19486,8 @@
       "semantic_sha256": "50bbed198c23f07c6927a28a73641e5a9b33b28d0d8f6ddc793bcab4143be970",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-036-01.mp3",
       "audio_sha256": "79b6a76ab44b0f54af8c6e98989af54e05e8ad4b73e0b1e6776dd2b153e54458",
-      "status": "candidate_visual_review",
-      "reason": "Trois horaires précis à représenter. Vérifier notamment que les cadrans distinguent toutes les heures, y compris matin/soir.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -19332,8 +19514,24 @@
           "brief": "Représenter entièrement « À 7 h 15 » pour « À quelle heure faut-il être au rendez-vous ? ». Vérifier la transcription du support tcf-delf-actif-a1-036-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-horloge-0645.webp",
+          "sha256": "68884dcf86d692dc03b11ffae7ff36fb3b0f3d656c17ad59940f41678cf158d6"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-horloge-0700.webp",
+          "sha256": "4ebf9c619b6f1182ae1a982235d8a29c414b79ceacede37067c7e8a2e53f69ce"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/vocab-horloge-0715.webp",
+          "sha256": "ac29887b9ef9284489d46dba46f8b64beaf7d5f2fd059c0c6d8fdf371c33832f"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -19344,7 +19542,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-sports-quarts-20261113.json",
+        "reason": "Le rendez-vous à la gare est à 6 h 45, avant le départ de 7 heures.",
+        "note": "6 h 45, 7 h et 7 h 15 : positions des deux aiguilles examinées. Les trois images illustrent bien le rendez-vous demandé et ses alternatives."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-036-01#5",
@@ -21886,8 +22090,8 @@
       "semantic_sha256": "7efe467764b981f0c729952fd8dbb139087501a19650696daacee5e3ddefa2f9",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-044-01.mp3",
       "audio_sha256": "7ae5813a59079de19398f3f5aa1868276bac4bcb546837079eccd6fec25f292a",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -21921,8 +22125,24 @@
           "brief": "Représenter entièrement « La course » pour « Quel sport pratique-t-elle ? ». Vérifier la transcription du support tcf-delf-actif-a1-044-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/eb82d6d99458.webp",
+          "sha256": "97987baa5a97169addee30579a22ea18907f2dfb2912ec7b943a139b2adcca84"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/26876e2318ce.webp",
+          "sha256": "58f115a3bb9f3bc80a0a69592ad775da19b1bd86b3699030cea12ade79faa727"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/vocab-course.webp",
+          "sha256": "03bb8b4ee9ac54ddebc4bebd22002e4e7837f00d76874f662c4137b45a02fe1f"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -21933,7 +22153,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-sports-quarts-20261113.json",
+        "reason": "Transcription entière relue : Quel sport pratique-t-elle ? Réponse justifiée : La natation.",
+        "note": "Scènes sportives examinées : tennis avec raquettes, filet et balle ; natation avec nageuse dans l’eau ; ski avec skis et neige ; course avec personnes courant ; football/rugby avec ballon et équipements distincts. Les personnes représentent une activité, sans servir de portrait de la personne citée. Le cyclisme sur route reste séparé, sans réemploi du simple vélo de ville."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-044-01#3",
@@ -25103,14 +25329,21 @@
       "semantic_sha256": "5152cdc4785c0c2204c9eb7a031e8c53fa9fc35eb56662378a116b6a2b8ce329",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-049-03-01.mp3",
       "audio_sha256": "63f65325049a585a2aa6a7f359cca9a61c24f432735f4b5237e8c04d83db5516",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
           "label": "Une boussole",
           "correct": true,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-boussole.png",
+              "sha256": "0b135f7a37cf9aba70a0690b4c4a67a0d4c408abdc7deb14a70d7d69e89369c3",
+              "label": "Boussole",
+              "visual_review_required": true
+            }
+          ],
           "asset": "f5617225e4c818c3",
           "brief": "Représenter entièrement « Une boussole » pour « Quel instrument Hugo demande-t-il d’apporter ? ». Vérifier la transcription du support tcf-delf-actif-a1-049-03-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         },
@@ -25145,8 +25378,24 @@
           "brief": "Représenter entièrement « Une lampe » pour « Quel instrument Hugo demande-t-il d’apporter ? ». Vérifier la transcription du support tcf-delf-actif-a1-049-03-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/extension573-boussole.png",
+          "sha256": "0b135f7a37cf9aba70a0690b4c4a67a0d4c408abdc7deb14a70d7d69e89369c3"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-thermometre.webp",
+          "sha256": "a88f60d57a18b66151ae1ed005188f9bca1dcf2c02cbcb3884570f6ce400c92c"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/vocab-lampe.webp",
+          "sha256": "aba19c7597c27e84e6bed0de4634c359693d2dba08d71760d74b555e2107a9c4"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -25157,7 +25406,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-bagages-materiel-20261113.json",
+        "reason": "Hugo demande une boussole pour les vacances avec randonnées.",
+        "note": "Boussole avec points cardinaux et aiguille magnétique, thermomètre numérique sans température affichée et lampe de table ; trois objets entiers peints sur crème."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-049-03-01#2",
@@ -39618,8 +39873,8 @@
       "semantic_sha256": "84a4e00d56a980a863c736b559bd349969296e564b6dc934e20147e3624eb4e4",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-008-04.mp3",
       "audio_sha256": "96d06031d6cf9fe227a7a1b290b26650f97094cf30c13dbd98ce6583e197287b",
-      "status": "candidate_visual_review",
-      "reason": "Trois horaires précis à représenter. Vérifier notamment que les cadrans distinguent toutes les heures, y compris matin/soir.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -39646,8 +39901,24 @@
           "brief": "Représenter entièrement « À 4 heures » pour « À quelle heure le changement a-t-il lieu ? ». Vérifier la transcription du support tcf-delf-actif-a2-008-04 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co834-horloge-1500-dessinee.webp",
+          "sha256": "ffd5f71d22ebb14c724a3772acbfa354f17775d5823e5ca770b159ab029b0dd8"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-horloge-1400-dessinee.webp",
+          "sha256": "f00ba0da7654f85d959a5224b23dc3b27b34a31d3c8f6815ed98e33130643d92"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-horloge-1600-dessinee.webp",
+          "sha256": "c49899115db9190c883a88a022df131beea6069b029ec11430576d24ae45aecc"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -39658,7 +39929,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-sports-quarts-20261113.json",
+        "reason": "Le changement vers l’heure d’hiver se produit à 3 heures dans la nuit.",
+        "note": "Cadrans analogiques à douze heures lus 3 h, 2 h et 4 h. Les fichiers anciennement nommés 15/14/16 h ne portent aucune heure numérique à 24 h : les mêmes positions représentent exactement 3/2/4 h. Le contexte nocturne reste dans la transcription et aucun choix ne compare 3 h à 15 h."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-008-04#3",
@@ -40010,8 +40287,8 @@
       "semantic_sha256": "daa65c10b864dba4ab1145614162bd9861fe50ab7853ef60f23d8f630ba1cc7a",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-008-06.mp3",
       "audio_sha256": "065aabaa96e093a2f8bb48b7a321b3b82ea438c93f6be40300abb2729a825e94",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -40052,8 +40329,24 @@
           "brief": "Représenter entièrement « Le football » pour « Quel sport le tournoi concerne-t-il ? ». Vérifier la transcription du support tcf-delf-actif-a2-008-06 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/26876e2318ce.webp",
+          "sha256": "58f115a3bb9f3bc80a0a69592ad775da19b1bd86b3699030cea12ade79faa727"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-rugby.webp",
+          "sha256": "72eb2cf8c8f4002ea7eab0e4301c99ed438ffbfffd9d1a7b456af7d5df953704"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-football-dessine.webp",
+          "sha256": "d952554cab4531f173addde56923d82b0c5158616a2a0eee8e87217380502593"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -40064,7 +40357,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-sports-quarts-20261113.json",
+        "reason": "Transcription entière relue : Quel sport le tournoi concerne-t-il ? Réponse justifiée : Le tennis.",
+        "note": "Scènes sportives examinées : tennis avec raquettes, filet et balle ; natation avec nageuse dans l’eau ; ski avec skis et neige ; course avec personnes courant ; football/rugby avec ballon et équipements distincts. Les personnes représentent une activité, sans servir de portrait de la personne citée. Le cyclisme sur route reste séparé, sans réemploi du simple vélo de ville."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-008-06#2",
@@ -40289,8 +40588,8 @@
       "semantic_sha256": "b4237f6514a31d6d178ea0f179403efab8f76917ad94c1a8bb33e6fc357c596f",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-010-01.mp3",
       "audio_sha256": "58d4e6c266799f9209872458f2b964b08163a772237e01924a10f238c4cfa853",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -40324,8 +40623,24 @@
           "brief": "Représenter entièrement « Le ski » pour « Quelle activité peut-on pratiquer avec l’appareil présenté ? ». Vérifier la transcription du support tcf-delf-actif-a2-010-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/eb82d6d99458.webp",
+          "sha256": "97987baa5a97169addee30579a22ea18907f2dfb2912ec7b943a139b2adcca84"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/26876e2318ce.webp",
+          "sha256": "58f115a3bb9f3bc80a0a69592ad775da19b1bd86b3699030cea12ade79faa727"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-ski-dessine.webp",
+          "sha256": "77991eaa00a37536135fc55956abe576d56a3b85640d6cd3bba28e62aeb21316"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -40336,7 +40651,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-sports-quarts-20261113.json",
+        "reason": "Transcription entière relue : Quelle activité peut-on pratiquer avec l’appareil présenté ? Réponse justifiée : La natation.",
+        "note": "Scènes sportives examinées : tennis avec raquettes, filet et balle ; natation avec nageuse dans l’eau ; ski avec skis et neige ; course avec personnes courant ; football/rugby avec ballon et équipements distincts. Les personnes représentent une activité, sans servir de portrait de la personne citée. Le cyclisme sur route reste séparé, sans réemploi du simple vélo de ville."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-010-01#2",
@@ -41857,8 +42178,8 @@
       "semantic_sha256": "1dfbab7f6daac26a4217990cd652a42c2f4bf7574551c90a4827d509a073f87e",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-012-02.mp3",
       "audio_sha256": "32d80c9386696711de47cd698549771bfd6259853c4534ef286299020662e15c",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -41899,8 +42220,24 @@
           "brief": "Représenter entièrement « Le rugby » pour « Quel sport sera diffusé ? ». Vérifier la transcription du support tcf-delf-actif-a2-012-02 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co834-football-dessine.webp",
+          "sha256": "d952554cab4531f173addde56923d82b0c5158616a2a0eee8e87217380502593"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/26876e2318ce.webp",
+          "sha256": "58f115a3bb9f3bc80a0a69592ad775da19b1bd86b3699030cea12ade79faa727"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/vocab-rugby.webp",
+          "sha256": "72eb2cf8c8f4002ea7eab0e4301c99ed438ffbfffd9d1a7b456af7d5df953704"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -41911,7 +42248,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-sports-quarts-20261113.json",
+        "reason": "Transcription entière relue : Quel sport sera diffusé ? Réponse justifiée : Le football.",
+        "note": "Scènes sportives examinées : tennis avec raquettes, filet et balle ; natation avec nageuse dans l’eau ; ski avec skis et neige ; course avec personnes courant ; football/rugby avec ballon et équipements distincts. Les personnes représentent une activité, sans servir de portrait de la personne citée. Le cyclisme sur route reste séparé, sans réemploi du simple vélo de ville."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-012-02#2",
@@ -41977,8 +42320,8 @@
       "semantic_sha256": "400ccf8f19bcfe43c634840b9d641a7780fecf71b0a374ef5ce0f9ced319aca2",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-012-02.mp3",
       "audio_sha256": "32d80c9386696711de47cd698549771bfd6259853c4534ef286299020662e15c",
-      "status": "candidate_visual_review",
-      "reason": "Trois horaires précis à représenter. Vérifier notamment que les cadrans distinguent toutes les heures, y compris matin/soir.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -41992,7 +42335,14 @@
           "id": "b",
           "label": "À 14 h 45",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-horloge-1445.png",
+              "sha256": "58cb70421d1718f09fb4a270d24057589a2a2f1d22d00cbfa6392b8d4a7e06b0",
+              "label": "À 14 h 45",
+              "visual_review_required": true
+            }
+          ],
           "asset": "8f2803914bfe9abb",
           "brief": "Représenter entièrement « À 14 h 45 » pour « À quelle heure le match commence-t-il ? ». Vérifier la transcription du support tcf-delf-actif-a2-012-02 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         },
@@ -42005,8 +42355,24 @@
           "brief": "Représenter entièrement « À 16 h 45 » pour « À quelle heure le match commence-t-il ? ». Vérifier la transcription du support tcf-delf-actif-a2-012-02 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-horloge-1545.webp",
+          "sha256": "ca08fd976af7b55af80aad9c74facaa8346e243cb51c0990d4e1c7081b749517"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/extension573-horloge-1445.png",
+          "sha256": "58cb70421d1718f09fb4a270d24057589a2a2f1d22d00cbfa6392b8d4a7e06b0"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/vocab-horloge-1645.webp",
+          "sha256": "550944f70049bb33d5803946d58c92f79816c65527033d2138998f876bcae7ff"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -42017,7 +42383,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-sports-quarts-20261113.json",
+        "reason": "La diffusion du match de football est annoncée à 15 h 45.",
+        "note": "Trois cadrans aux minutes sur le 9 : petites aiguilles avancées entre 3/4, 2/3 et 4/5. Lectures 15 h 45, 14 h 45 et 16 h 45 distinctes, sans date illustrée."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-012-02#4",
@@ -52997,8 +53369,8 @@
       "semantic_sha256": "f98c94d26b7402130d83c87cec116474d400b241e5d5bf3ff42f0a00c657853e",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-036.mp3",
       "audio_sha256": "078b6e861fb60b030e8d8a1cda20979240b36056d75a45b2fac09e0a74029a61",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -53032,8 +53404,24 @@
           "brief": "Représenter entièrement « La natation » pour « Quel sport est apprécié ? ». Vérifier la transcription du support tcf-delf-actif-a2-036 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co834-ski-dessine.webp",
+          "sha256": "77991eaa00a37536135fc55956abe576d56a3b85640d6cd3bba28e62aeb21316"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/26876e2318ce.webp",
+          "sha256": "58f115a3bb9f3bc80a0a69592ad775da19b1bd86b3699030cea12ade79faa727"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/eb82d6d99458.webp",
+          "sha256": "97987baa5a97169addee30579a22ea18907f2dfb2912ec7b943a139b2adcca84"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -53044,7 +53432,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-sports-quarts-20261113.json",
+        "reason": "Transcription entière relue : Quel sport est apprécié ? Réponse justifiée : Le ski.",
+        "note": "Scènes sportives examinées : tennis avec raquettes, filet et balle ; natation avec nageuse dans l’eau ; ski avec skis et neige ; course avec personnes courant ; football/rugby avec ballon et équipements distincts. Les personnes représentent une activité, sans servir de portrait de la personne citée. Le cyclisme sur route reste séparé, sans réemploi du simple vélo de ville."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-036#7",
@@ -54927,8 +55321,8 @@
       "semantic_sha256": "72aaaf52ce04cd33c519ab7b5211ef1028ce7b3fd57a167e494b1bb9d4935982",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-040-01.mp3",
       "audio_sha256": "1cbd3e597b0662d895c0653b271646607f548f25acf36734673399dffb66be07",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -54962,8 +55356,24 @@
           "brief": "Représenter entièrement « Le football » pour « Quel sport font-ils ensemble ? ». Vérifier la transcription du support tcf-delf-actif-a2-040-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/eb82d6d99458.webp",
+          "sha256": "97987baa5a97169addee30579a22ea18907f2dfb2912ec7b943a139b2adcca84"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/26876e2318ce.webp",
+          "sha256": "58f115a3bb9f3bc80a0a69592ad775da19b1bd86b3699030cea12ade79faa727"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-football-dessine.webp",
+          "sha256": "d952554cab4531f173addde56923d82b0c5158616a2a0eee8e87217380502593"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -54974,7 +55384,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-sports-quarts-20261113.json",
+        "reason": "Transcription entière relue : Quel sport font-ils ensemble ? Réponse justifiée : La natation.",
+        "note": "Scènes sportives examinées : tennis avec raquettes, filet et balle ; natation avec nageuse dans l’eau ; ski avec skis et neige ; course avec personnes courant ; football/rugby avec ballon et équipements distincts. Les personnes représentent une activité, sans servir de portrait de la personne citée. Le cyclisme sur route reste séparé, sans réemploi du simple vélo de ville."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-040-01#9",
@@ -87163,8 +87579,8 @@
       "semantic_sha256": "0d9606426596ea87bb5e7fa3f66b9247ba41b7494a73a1c8398ff0d2d52c519d",
       "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-024-01.mp3",
       "audio_sha256": "d60ca6e7ad550006d76e7b9054a7a076606be61a4e8b4c2680edaffa058073fe",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -87205,8 +87621,24 @@
           "brief": "Représenter entièrement « Le rugby » pour « Quel sport Pierre a-t-il d’abord pratiqué ? ». Vérifier la transcription du support tcf-delf-actif-b1-024-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co834-football-dessine.webp",
+          "sha256": "d952554cab4531f173addde56923d82b0c5158616a2a0eee8e87217380502593"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/26876e2318ce.webp",
+          "sha256": "58f115a3bb9f3bc80a0a69592ad775da19b1bd86b3699030cea12ade79faa727"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/vocab-rugby.webp",
+          "sha256": "72eb2cf8c8f4002ea7eab0e4301c99ed438ffbfffd9d1a7b456af7d5df953704"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -87217,7 +87649,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-sports-quarts-20261113.json",
+        "reason": "Transcription entière relue : Quel sport Pierre a-t-il d’abord pratiqué ? Réponse justifiée : Le football.",
+        "note": "Scènes sportives examinées : tennis avec raquettes, filet et balle ; natation avec nageuse dans l’eau ; ski avec skis et neige ; course avec personnes courant ; football/rugby avec ballon et équipements distincts. Les personnes représentent une activité, sans servir de portrait de la personne citée. Le cyclisme sur route reste séparé, sans réemploi du simple vélo de ville."
+      }
     },
     {
       "key": "tcf-delf-actif-b1-024-01#2",
@@ -104063,7 +104501,14 @@
     {
       "id": "c7085c7da9bc1797",
       "label": "À 13 h 15",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/extension573-horloge-1315.png",
+          "sha256": "12593c0870441aa4cbe7e52a8d3c29f7c8017acb42b7064577127988c90aa43b",
+          "label": "À 13 h 15",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-019-03#3",
@@ -104830,7 +105275,14 @@
     {
       "id": "e5ae0184a404c63b",
       "label": "Un petit sac bleu",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/extension573-petit-sac-bleu.png",
+          "sha256": "886e50705a29a252ebb8c7b1462b7537e84758f414ca080492b3572decb9ecc0",
+          "label": "Petit sac bleu",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-027-01#5",
@@ -104841,7 +105293,14 @@
     {
       "id": "8ce17e87c497a41c",
       "label": "Une grande valise rouge",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/extension573-valise-rouge-grande.png",
+          "sha256": "adcd92413a92a7692cc2fcba0e44be4e811a07d0aef307d60e4e0e46465654a2",
+          "label": "Grande valise rouge",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-027-01#5",
@@ -104852,7 +105311,14 @@
     {
       "id": "0341143ab03bc6b9",
       "label": "Un sac de sport noir",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/extension573-sac-sport-noir.png",
+          "sha256": "55b14c396533ba7cb40b7f7d6f8b3ae0da01560436061bb246c8944f3554e01b",
+          "label": "Sac de sport noir",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-027-01#5",
@@ -106914,7 +107380,14 @@
     {
       "id": "f5617225e4c818c3",
       "label": "Une boussole",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/extension573-boussole.png",
+          "sha256": "0b135f7a37cf9aba70a0690b4c4a67a0d4c408abdc7deb14a70d7d69e89369c3",
+          "label": "Boussole",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-049-03-01#1",
@@ -108845,7 +109318,14 @@
     {
       "id": "8f2803914bfe9abb",
       "label": "À 14 h 45",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/extension573-horloge-1445.png",
+          "sha256": "58cb70421d1718f09fb4a270d24057589a2a2f1d22d00cbfa6392b8d4a7e06b0",
+          "label": "À 14 h 45",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a2-012-02#3",
