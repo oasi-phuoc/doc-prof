@@ -56,23 +56,23 @@
     "productionBuild": "réussi",
     "bundleBudgets": {
       "landing": {
-        "gzip": 121679,
+        "gzip": 121673,
         "maximumGzip": 153600
       },
       "calibration": {
-        "gzip": 140605,
+        "gzip": 140589,
         "maximumGzip": 204800
       },
       "diagnostic": {
-        "gzip": 142756,
+        "gzip": 142743,
         "maximumGzip": 204800
       },
       "competition": {
-        "gzip": 172523,
+        "gzip": 172507,
         "maximumGzip": 204800
       },
       "game": {
-        "gzip": 2747760,
+        "gzip": 2748550,
         "maximumGzip": 3145728
       }
     },
@@ -110,5 +110,19 @@
     "Les contrôles sur 600 configurations utilisent le thème des fruits ; les autres thèmes ne sont pas déclarés relus pédagogiquement.",
     "M08, M11 et les autres familles non converties restent ouverts.",
     "Aucune nouvelle synthèse audio, configuration cloud ou publication d’environnement effectuée."
-  ]
+  ],
+  "integration": {
+    "incomingMain": "cab9e0eaba3ef0b3b050132a08e3002fb2f14569",
+    "mergeCommit": "b4538f38d1d9338071846316ffed700d805d24d0",
+    "changes": "Quinze trios illustrés TCF, catalogue audio et galerie ; aucun chevauchement avec le nouveau moteur de devinettes et intrus.",
+    "postMergeChecks": {
+      "newRiddleTests": 8,
+      "audioCatalogueTests": 6,
+      "inventory": "716 variantes sur 2 112 ; huit erreurs de génération inchangées",
+      "types": "passed",
+      "productionBuild": "passed",
+      "bundleBudgets": "passed"
+    },
+    "fullSuiteReference": "1c427370d0a2002e31b5b7a780ad6f45418512a9"
+  }
 }
