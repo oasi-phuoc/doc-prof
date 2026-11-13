@@ -21089,11 +21089,29 @@
         "qcm_image"
       ],
       "before": null,
-      "after": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/extension573-sacs-pluriel.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-vetements-dessines.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co306-chaussures-paire-dessine.webp"
+          }
+        ]
+      },
       "source_sha256": "1282c8cda07a631cf08482eac7efc21580220ebc7ee1e97c6110194c80534bb7",
-      "reason": "Trois illustrations contrôlées visuellement, distinctes et fidèles aux catégories, couleurs ou quantités demandées. Source et corrigé conservés.",
+      "reason": "La visite du musée demande de laisser ses sacs à l'accueil. Les vêtements et chaussures ne sont pas cités comme objets à déposer. Nouveau groupe de trois sacs entiers ; vêtements pliés et paire de chaussures existants examinés. Chaque catégorie correspond au pluriel et reste distincte. Rien ne prétend identifier le propriétaire par l'apparence.",
       "review_ledger": "docs/tcf/revue-763-20261107.json",
-      "source_refresh_note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée. Ancien trio désactivé dans la banque ; décision remise en préparation pour correspondre aux trois nouvelles catégories au pluriel."
+      "source_refresh_note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée. Ancien trio désactivé dans la banque ; décision remise en préparation pour correspondre aux trois nouvelles catégories au pluriel.",
+      "previous_activation_reason": "Trois illustrations contrôlées visuellement, distinctes et fidèles aux catégories, couleurs ou quantités demandées. Source et corrigé conservés."
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -29051,6 +29069,72 @@
       },
       "source_sha256": "a707a4921d7735ab12dfa10de2cbf9d582ebb7d9c14006abc69297ecb7b0a35d",
       "reason": "L'annonce d'embarquement demande explicitement le billet et la pièce d'identité. Les trois paires conservent le billet commun ; la seconde pièce différencie la bonne réponse des cartes bancaire et d'étudiant, toutes deux absentes de l'annonce. Aucune autre paire ne satisfait la consigne. Trois nouvelles images comparées individuellement : même billet d'avion à gauche, carte d'identité bleue avec jeune homme à lunettes, carte de paiement à puce, puis carte d'étudiant verte avec jeune femme rousse. Les deux portraits diffèrent. Documents entiers sans données, dates ni montants, même peinture crème en 4:3.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s25-co-4",
+      "question": 8,
+      "node": [
+        "questions",
+        7,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/vocab-velos.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-chaises.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/extension573-poussettes-pluriel.png"
+          }
+        ]
+      },
+      "source_sha256": "2652733227774f3f4426223044a912f558196d4f562d064c6c1bf2bbb151b36b",
+      "reason": "Le troisième extrait associé à cette question dit Rangez les vélos dans le local. Les chaises et poussettes ne sont pas nommées dans cet extrait. Deux vélos et trois chaises en bois réutilisés, deux poussettes vides nouvelles. Sujets complets, roues et poignées visibles ; les trois groupes respectent les pluriels. Le réemploi vient du dossier TCF, sans nouvel usage du dossier vocabulaire.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s42-co-3",
+      "question": 1,
+      "node": [
+        "questions",
+        0,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/vocab-velos.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/extension573-fauteuils-pluriel.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/extension573-cartons-pluriel.png"
+          }
+        ]
+      },
+      "source_sha256": "5b07a118055333c7a622198e54eb98f82c2df71101859200ac67f8e2bb5ed294",
+      "reason": "Le dialogue dit il y a des vélos dans le hall et on ne peut plus passer. Les bouteilles sont dans l'escalier ; ni fauteuils ni cartons ne sont mentionnés. La question vise l'objet qui bloque le hall. Deux vélos réutilisés, deux fauteuils avec accoudoirs et trois cartons nouvellement peints. Catégories distinctes, aucun canapé, aucun objet parasite. La scène du hall n'est pas ajoutée aux seuls leurres : les trois choix montrent leur catégorie d'objets.",
       "review_ledger": "docs/tcf/revue-763-20261107.json"
     }
   ]

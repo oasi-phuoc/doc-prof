@@ -2,6 +2,12 @@
 
 > État actuel : voir le [bilan du cahier des charges du 11 novembre 2026](bilan-cahier-des-charges-20261111.md). Les compteurs historiques ci-dessous sont conservés pour la traçabilité.
 
+## Reprise du 13 novembre 2026 — nouveaux audios inclus
+
+La génération des images adaptées est ajoutée aux tâches des 346 nouveaux supports DELF Actif, soit 1 663 questions. Le [plan complémentaire](delf-actif-20261113/images-a-preparer.md) distingue les trios actifs, les candidats à vérifier et les réponses maintenues en texte. Ce lot complète le reliquat historique sans les confondre.
+
+Quinze nouveaux trios sont intégrés : trois historiques A1 et douze des nouveaux audios (six A1, six A2). Six nouveaux PNG exacts 4:3 et 39 réemplois d’images examinées ; 390 trios historiques restent à préparer. Le [registre de relecture](revue-trios-pluriels-delf-actif-20261113.json) conserve les sources et les raisons du choix de chaque image.
+
 ## Reprise du 6 novembre 2026 — objets CO inclus
 
 La nouvelle demande utilisateur reprend l’harmonisation des images et inclut désormais les 26 banques CO **OBJET**. Elle remplace les anciennes consignes de pause audio et d’exclusion des objets conservées ci-dessous pour l’historique. Le style validé du commit `48a753d8`, le paysage 4:3 et les réponses restent inchangés.

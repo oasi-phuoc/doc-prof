@@ -72,4 +72,20 @@ class ReviewGate(unittest.TestCase):
         self.assertEqual(q['formes']['lignes']['reponse_modele'],'La certitude')
         self.assertNotIn('qcm_image',q['formes'])
 
+    def test_reinstallation_preserves_added_images_but_rejects_source_edits(self):
+        unit=dict(key='a1:999',level='a1',transcription='Apporte une bouteille d’eau.')
+        item=dict(title='Le pique-nique',theme='alimentation',questions=[dict(enonce='Quelle boisson faut-il apporter ?',choices=['Une bouteille d’eau','Une bouteille de lait','Une bouteille de jus'])])
+        prepared=importer.make_exercise(unit,item,'/lib/audio/tcf/co/example.mp3')
+        existing=copy.deepcopy(prepared)
+        images=dict(choix=[dict(id=c['id'],image=f"/{c['id']}.png",correct=bool(c.get('correct'))) for c in prepared['questions'][0]['choix']])
+        existing['questions'][0]['formes']['qcm_image']=images
+        snapshot=copy.deepcopy(existing)
+        importer.check_existing_exercise(existing,prepared)
+        self.assertEqual(existing,snapshot)
+        for section,field,value in [('support','transcription','Apporte une bouteille de lait.'),('support','audio','/changed.mp3')]:
+            changed=copy.deepcopy(existing);changed[section][field]=value
+            with self.assertRaises(AssertionError):importer.check_existing_exercise(changed,prepared)
+        changed=copy.deepcopy(existing);changed['questions'][0]['choix'][0]['texte']='Du lait'
+        with self.assertRaises(AssertionError):importer.check_existing_exercise(changed,prepared)
+
 if __name__=='__main__':unittest.main()

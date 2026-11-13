@@ -1,0 +1,728 @@
+{
+  "date": "2026-11-13",
+  "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+  "baseline_commit": "1c427370",
+  "human_audio_listening_performed": false,
+  "trios": [
+    {
+      "key": "tcf-ss-a1-s39-co-2#4",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Mesdames et Messieurs, la visite du musée va bientôt commencer. Vous devez laisser vos sacs à l'accueil. Vous devez aller porte 1 pour retrouver votre guide. La visite dure 45 minutes. Vous pouvez prendre des photos, mais il est interdit de manger. Il y a un restaurant au premier étage. Bonne visite !",
+      "source_sha256": "1282c8cda07a631cf08482eac7efc21580220ebc7ee1e97c6110194c80534bb7",
+      "semantic_sha256": "0921c728f2f63c206759cfd10a76ce2967bf13ac60cb642adcc45a6fa924d44e",
+      "question": {
+        "enonce": "Quels objets faut-il laisser à l’accueil ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Ses sacs",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Ses vêtements",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Ses chaussures",
+            "correct": false
+          }
+        ],
+        "written_model": "Ses sacs"
+      },
+      "audio": "/lib/audio/tcf/co/vie-quotidienne/bonjour-bienvenue-musee.mp3",
+      "audio_sha256": "6986436ecae56d91c4a115fef2c4d472c667db0c287b27f4396ebde9df3a057d",
+      "image_ids": [
+        "extension573-sacs-pluriel",
+        "co834-vetements-dessines",
+        "co306-chaussures-paire-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-sacs-pluriel.png",
+        "/lib/images/tcf/qcm-audit/co834-vetements-dessines.webp",
+        "/lib/images/tcf/qcm-audit/co306-chaussures-paire-dessine.webp"
+      ],
+      "image_sha256": [
+        "e0af73edfac463a23866a28a53151daa56b4b8354661605175a33b6cae3aeaee",
+        "ca295f7204f681476b9c1eea1dcd37fdf283ceddd597661781fc622d209ffdcf",
+        "51705179ee0346336ee540dfdacb108025a8e4f55a0a0ab996532d0caf377b54"
+      ],
+      "reason": "La visite du musée demande de laisser ses sacs à l'accueil. Les vêtements et chaussures ne sont pas cités comme objets à déposer.",
+      "visual_review": "Nouveau groupe de trois sacs entiers ; vêtements pliés et paire de chaussures existants examinés. Chaque catégorie correspond au pluriel et reste distincte. Rien ne prétend identifier le propriétaire par l'apparence."
+    },
+    {
+      "key": "tcf-ss-a1-s25-co-4#8",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Rangez les vélos dans le local",
+      "source_sha256": "2652733227774f3f4426223044a912f558196d4f562d064c6c1bf2bbb151b36b",
+      "semantic_sha256": "4b0a9346bae969d842174db9a0a70de3d9368d124a185bd07a7b7440351ef3d8",
+      "question": {
+        "enonce": "Quels objets faut-il ranger dans le local ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Les vélos",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Les chaises",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Les poussettes",
+            "correct": false
+          }
+        ],
+        "written_model": "Les vélos"
+      },
+      "audio": "/lib/audio/tcf/co/vie-quotidienne/rangement-velos-local.mp3",
+      "audio_sha256": "343d704e89a729339653ac3a2a2f966b7499ef25751c9d0e889594a8b081f25e",
+      "image_ids": [
+        "vocab-velos",
+        "vocab-chaises",
+        "extension573-poussettes-pluriel"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-velos.webp",
+        "/lib/images/tcf/qcm-audit/vocab-chaises.webp",
+        "/lib/images/tcf/qcm-audit/extension573-poussettes-pluriel.png"
+      ],
+      "image_sha256": [
+        "8e93b5ef2b7c917408215e31c0407ac16e08eca00fca720344703efe70c7ea59",
+        "066983b6ec0938ab2ce7cf8d608d2c313b05d31c62e1432d9502dc9214c68027",
+        "73073e4744c7a983734060738963df89d6b09fca5cb938f77ddb9e8d3fc71387"
+      ],
+      "reason": "Le troisième extrait associé à cette question dit Rangez les vélos dans le local. Les chaises et poussettes ne sont pas nommées dans cet extrait.",
+      "visual_review": "Deux vélos et trois chaises en bois réutilisés, deux poussettes vides nouvelles. Sujets complets, roues et poignées visibles ; les trois groupes respectent les pluriels. Le réemploi vient du dossier TCF, sans nouvel usage du dossier vocabulaire."
+    },
+    {
+      "key": "tcf-ss-a1-s42-co-3#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "- Bonjour Monsieur Garant, vous allez bien ?\n- Ça va, merci.\nEt vous ?\n- Ça va, mais…\nil y a des vélos dans le hall et on ne peut plus passer !\n- Ah bon ?\nMais nous avons un local à vélos !\n- Oui !\nEt puis il y a aussi des bouteilles dans les escaliers.\n- Mais nous avons un local à poubelles…\net une poubelle pour le verre.\n- Et il y a le chien de madame Martin…\nil n'est pas en laisse.\n- Il est gros, mais il n'est pas méchant…\n- Et puis, elle fume dans les couloirs !\n- Ouh là là !\nEt le règlement alors ?\n!",
+      "source_sha256": "5b07a118055333c7a622198e54eb98f82c2df71101859200ac67f8e2bb5ed294",
+      "semantic_sha256": "59088f494d7738760b7e67f686476582f034a513d23e9ab65c5497a40ea5979a",
+      "question": {
+        "enonce": "Quel objet bloque le passage dans le hall ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Des vélos",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Des fauteuils",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Des cartons",
+            "correct": false
+          }
+        ],
+        "written_model": "Des vélos"
+      },
+      "audio": "/lib/audio/tcf/co/vie-quotidienne/bonjour-garant-allez-bien-1.mp3",
+      "audio_sha256": "8b9479051ef59a7deb2a2b4c29c8c3b1be380821efe3aae3296bb6a472caa09b",
+      "image_ids": [
+        "vocab-velos",
+        "extension573-fauteuils-pluriel",
+        "extension573-cartons-pluriel"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-velos.webp",
+        "/lib/images/tcf/qcm-audit/extension573-fauteuils-pluriel.png",
+        "/lib/images/tcf/qcm-audit/extension573-cartons-pluriel.png"
+      ],
+      "image_sha256": [
+        "8e93b5ef2b7c917408215e31c0407ac16e08eca00fca720344703efe70c7ea59",
+        "4e936ea295ad3c6aa507590b2ec8d0cd3e718ef42ac3f12299d7823f85c43d48",
+        "88b6b858914063a9e53dd5937996ea10ea410165e876a0220cb70547f70b06c0"
+      ],
+      "reason": "Le dialogue dit il y a des vélos dans le hall et on ne peut plus passer. Les bouteilles sont dans l'escalier ; ni fauteuils ni cartons ne sont mentionnés. La question vise l'objet qui bloque le hall.",
+      "visual_review": "Deux vélos réutilisés, deux fauteuils avec accoudoirs et trois cartons nouvellement peints. Catégories distinctes, aucun canapé, aucun objet parasite. La scène du hall n'est pas ajoutée aux seuls leurres : les trois choix montrent leur catégorie d'objets."
+    },
+    {
+      "key": "tcf-delf-actif-a1-001-04#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Alors pour l’anniversaire de Quentin j’apporte des boissons. C’est tout ?",
+      "source_sha256": "5cc7d83ce5cfe956c300ca718ceca293a4e88449465a3d898397c4a66b3e0def",
+      "semantic_sha256": "886e8b11086267036f78f69b97dd3b9c93cd89cd9c3176bd440a6bcb18311ff0",
+      "question": {
+        "enonce": "Qu’apporte la personne qui parle ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Des boissons",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Des gâteaux",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Des fruits",
+            "correct": false
+          }
+        ],
+        "written_model": "Des boissons"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-001-04.mp3",
+      "audio_sha256": "4c8208c695715cfbb07e89c539a24bc9d0971ffa3811f1025c80a47012caf8c7",
+      "image_ids": [
+        "co834-boissons-dessinees",
+        "co834-gateaux-dessines",
+        "co834-fruits-dessines"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-gateaux-dessines.webp",
+        "/lib/images/tcf/qcm-audit/co834-fruits-dessines.webp"
+      ],
+      "image_sha256": [
+        "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+        "be46913f2ea811a999f22e150a4591807a7468de2785ff6a7e843687902c9dc1",
+        "a6d85d7b468c6ca2fbd7fbe0a0dba2c13a6bfeb5b5feb33ec599f21263a635c9"
+      ],
+      "reason": "La personne apporte des boissons pour l'anniversaire de Quentin. Aucun gâteau ni fruit n'est cité dans cet extrait.",
+      "visual_review": "Trois contenants de boissons, trois pâtisseries et quatre types de fruits déjà disponibles examinés. Catégories entières, au pluriel, sans emballage de prix ni texte. Le réemploi des boissons est aussi une référence du style approuvé."
+    },
+    {
+      "key": "tcf-delf-actif-a1-002-01#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut, c’est Manon. Samedi je t’invite à un pique-nique à la campagne. Qu’en dis-tu ? On y va en vélo avec Léo. Mets un vieux jean et de vieilles baskets. Apporte une bouteille d’eau. Moi, je pense aux sandwichs et Léo apporte des fruits. Rendez-vous à l’arrêt de bus.",
+      "source_sha256": "1072af32e155d2b65bedbb1698e3ddad908f7a5dc026bf06d0a93917c46a9180",
+      "semantic_sha256": "8b5bc3ca8af34f1289373d11c496a9344b850421721d4267441c3c31fa2a10c2",
+      "question": {
+        "enonce": "Quelle boisson faut-il apporter ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Une bouteille d’eau",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Une bouteille de lait",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une bouteille de jus",
+            "correct": false
+          }
+        ],
+        "written_model": "Une bouteille d’eau"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-002-01.mp3",
+      "audio_sha256": "40b684f1d3edebf63f98ef948f0edbebadd4125c7edb560c60d61720f34ccfbd",
+      "image_ids": [
+        "co834-bouteille-eau-dessinee",
+        "co834-bouteille-lait-dessinee",
+        "co834-bouteille-jus-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-bouteille-eau-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-bouteille-lait-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-bouteille-jus-dessinee.webp"
+      ],
+      "image_sha256": [
+        "c0f525c2f7e347128c94a162d9f516a910aaa1935a35727de6a69ef2dfd958eb",
+        "aaf1746c6df84474fd5f25938f9df329eb5caa5e25198e2c7e49d08139259920",
+        "8bd878215bf131df46c9929d60b3ef9aacb4a101bf78a0aa937c018decee96bb"
+      ],
+      "reason": "Manon demande Apporte une bouteille d'eau. Les sandwichs et fruits sont apportés par d'autres personnes ; lait et jus ne sont pas cités.",
+      "visual_review": "Trois bouteilles entières déjà disponibles : eau transparente, lait blanc opaque, jus orange. Les trois réponses nomment une bouteille et l'image conserve ce contenant. Aucun prix, nom de marque ou quantité arbitraire."
+    },
+    {
+      "key": "tcf-delf-actif-a1-003-01#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut, c’est Agathe. Mercredi la prof de français est absente. On sort à 11h00. On peut aller à la bibliothèque Albert Camus. Apporte ton cahier à spirale. On prépare le contrôle pour vendredi. On rentre à la maison en voiture avec mes parents. J’attends ta réponse avant 18h00.",
+      "source_sha256": "3583736e738653c2b5107d647dc5edf7796d9e465469519e8add9ed5cd1e6ae0",
+      "semantic_sha256": "c8bce99a71f0bf2076b8c82ec3fc38c366729bfbe5a8269c488278086102d107",
+      "question": {
+        "enonce": "Où Agathe propose-t-elle de travailler ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À la bibliothèque",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À la maison",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Au collège",
+            "correct": false
+          }
+        ],
+        "written_model": "À la bibliothèque"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-003-01.mp3",
+      "audio_sha256": "13e47bdeaf5e5cc9cc27110f970758a7f4529594b263c996540516eeca60feb7",
+      "image_ids": [
+        "co306-bibliotheque-dessine",
+        "co306-maison-dessine",
+        "co306-college-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-college-dessine.webp"
+      ],
+      "image_sha256": [
+        "d6ee5b5ae9d03c94d9694d6a19bc019a016884ba62411ffe82862d2719dfacc9",
+        "0c404fb24adfab9187ed1b424e63e0567f456c98f4fff5447a8d8d418604c8db",
+        "eaa0ac8043b543e479947111dc0b06aca54bfa29008fb891c4687aa4f56b6248"
+      ],
+      "reason": "Agathe propose d'aller à la bibliothèque pour préparer le contrôle. Le retour à la maison est mentionné après le travail ; aucun travail au collège n'est proposé. Une seule réponse répond au lieu du travail.",
+      "visual_review": "Bibliothèque avec rayonnages et lecteurs, maison et cour de collège existants examinés. Trois lieux distincts en peinture douce. Les lecteurs sont des figurants de bibliothèque, jamais attribués à Agathe ou à ses parents ; aucune identité n'est déduite de leur apparence."
+    },
+    {
+      "key": "tcf-delf-actif-a1-007-01#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Bonjour Inès, samedi 10 c’est l’anniversaire d’Alice. Alors aujourd’hui on va acheter son cadeau au nouveau magasin de danse du centre-ville ? Elle voudrait un nouveau sac pour ses affaires. Rendez- vous devant le théâtre à 16h00 heures ! Après on passe à la papeterie pour acheter un cahier de dessin pour moi.",
+      "source_sha256": "7c4bd75c2b30f4a33bb08a6536d8ad633641556e9ea80ac410a5c436be36fa60",
+      "semantic_sha256": "73ea0cdc63b4826d2b071f5cddae1fe822f7e056a7199a513f7e29d7f27fc513",
+      "question": {
+        "enonce": "Quel cadeau Alice souhaite-t-elle ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un sac",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Une écharpe",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une montre",
+            "correct": false
+          }
+        ],
+        "written_model": "Un sac"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-007-01.mp3",
+      "audio_sha256": "0ca7443e88e1a2641d970d6e7c1afddde51b3f4ee80dd730d89fe737f7790dbf",
+      "image_ids": [
+        "b48c69f2021e",
+        "vocab-echarpe",
+        "co834-montre-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/b48c69f2021e.webp",
+        "/lib/images/tcf/qcm-audit/vocab-echarpe.webp",
+        "/lib/images/tcf/qcm-audit/co834-montre-dessinee.webp"
+      ],
+      "image_sha256": [
+        "6b93cbe2659a4ece110b3aab1503718f72bd70f5809fe352cda84ea996471e1a",
+        "6266453837086853656bdab88f619546024cfc6a4f0f2c19af16ead2c38d8747",
+        "848dec4d460520d45c51f6e90d8c6c278ab8fcce203949573b460d5130106629"
+      ],
+      "reason": "Alice voudrait un nouveau sac pour ses affaires. Écharpe et montre ne sont jamais demandées. Le cadeau est distinct du cahier de dessin acheté ensuite par la personne qui appelle.",
+      "visual_review": "Sac souple beige à anses, écharpe rouge et montre bracelet entière réutilisés. Trois accessoires distincts ; le texte ne précise ni modèle ni couleur du sac, la représentation ne prétend pas identifier une marque."
+    },
+    {
+      "key": "tcf-delf-actif-a1-031-02#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Alors prenez votre cahier. Ce matin nous préparons l’interrogation de la semaine prochaine. Monsieur on peut utiliser la calculatrice ? Non pas aujourd’hui. Les calculs sont faciles à faire.",
+      "source_sha256": "5903058bbd54e5de59992eb9ea49b66b8147b4fce56808ff8144620cae754f43",
+      "semantic_sha256": "927984de1e8777540f4372d93e14e08fb7a37ee2af7659126a6733602d84ec7a",
+      "question": {
+        "enonce": "Quel appareil est interdit pour les calculs ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "La calculatrice",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "L’ordinateur",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Le téléphone",
+            "correct": false
+          }
+        ],
+        "written_model": "La calculatrice"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-031-02.mp3",
+      "audio_sha256": "b55bee5b9363c74450abbb82a4208c966c2061b4434fdf8bf3a4cd31f91483a7",
+      "image_ids": [
+        "co306-calculatrice-dessine",
+        "co834-ordinateur-dessine",
+        "co834-telephone-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-calculatrice-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-ordinateur-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-telephone-dessine.webp"
+      ],
+      "image_sha256": [
+        "1837752fe613b91d6070f982dba8d8b5eb5a4ef0aa2b695b73ed8035d976981b",
+        "0975b4d983b9e0896f2bd09e2ddbb38bab9d3244e28a84c359e13db6f8a7fd42",
+        "0720a4239b45116cfd5bf748a207e2739a022f81bfd469b29b201e7ba465ef63"
+      ],
+      "reason": "À la demande d'utiliser la calculatrice, l'enseignant répond Non pas aujourd'hui puis précise que les calculs sont faciles. Ordinateur et téléphone ne sont pas évoqués.",
+      "visual_review": "Calculatrice à écran vide, ordinateur de bureau complet et téléphone existants examinés. L'écran de calculatrice n'affiche aucun résultat ni prix. Trois appareils reconnaissables, entiers, de style cohérent."
+    },
+    {
+      "key": "tcf-delf-actif-a1-033-01#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Nous avons plusieurs modèles d’écouteurs au rayon multimédia.",
+      "source_sha256": "bd9ec95d3985c945f53698754be68761d9c266c2b570675d6384f608c4d70cf1",
+      "semantic_sha256": "987a5f214d224aa45ffefc2a1e09ddfecb05dff176f8170daec600045ab8a2c3",
+      "question": {
+        "enonce": "Quels appareils sont proposés ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Des écouteurs",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Des ordinateurs",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Des téléphones",
+            "correct": false
+          }
+        ],
+        "written_model": "Des écouteurs"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-033-01.mp3",
+      "audio_sha256": "6901be8b4e34dc511efe845a9b7f859147e2eb683cf4dadd82297b6a76db7c67",
+      "image_ids": [
+        "co306-ecouteurs-dessine",
+        "vocab-ordinateurs",
+        "vocab-telephones"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-ecouteurs-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-ordinateurs.webp",
+        "/lib/images/tcf/qcm-audit/vocab-telephones.webp"
+      ],
+      "image_sha256": [
+        "e25cb11740e390c4adfdbfce7acca0c879814113e3f83b02bd66d53d9dfe3772",
+        "d4048434051064d69d3e55031f56795318cac3c26a950fad9cba06a98ada786a",
+        "1a56738e046d9744ec1241a9f699fc509a94f85bfc93ef40f8f781d5492c451c"
+      ],
+      "reason": "L'annonce propose plusieurs modèles d'écouteurs au rayon multimédia. Ni ordinateur ni téléphone n'est proposé dans cette phrase. La source ne dit pas sans fil ; les écouteurs filaires existants conviennent ici.",
+      "visual_review": "Paire d'écouteurs intra-auriculaires avec câble, deux ordinateurs portables et trois téléphones déjà disponibles examinés. Les pluriels sont conservés ; les écouteurs ne sont pas remplacés par un casque à arceau."
+    },
+    {
+      "key": "tcf-delf-actif-a2-036#9",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Bonjour Monsieur !\nAu revoir Madame !\nMon nom est Dufour, D comme David, U comme Uli.\nMon prénom est Valentine.\nJ’ai 15 ans .\nJe suis espagnol.\nJ’habite à Prague.\nJ’adore faire du ski.\nJ’ai deux sœurs et un frère.\nÀ la maison nous avons un chien.\nJ’écoute de la musique.\nMon signe zodiacal est la balance.",
+      "source_sha256": "7a5596a6a0cc8ad1333ae1d6f480ee378657ce8b9b2de1682b768c2e53bc465c",
+      "semantic_sha256": "7c62689f42054a1281649d2b44bdf58c9ad5bac9a319c074cf6ab41ec6611a71",
+      "question": {
+        "enonce": "Quel animal se trouve à la maison ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un chien",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un chat",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un lapin",
+            "correct": false
+          }
+        ],
+        "written_model": "Un chien"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-036.mp3",
+      "audio_sha256": "078b6e861fb60b030e8d8a1cda20979240b36056d75a45b2fac09e0a74029a61",
+      "image_ids": [
+        "vocab-chien",
+        "vocab-chat",
+        "vocab-lapin"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-chien.webp",
+        "/lib/images/tcf/qcm-audit/vocab-chat.webp",
+        "/lib/images/tcf/qcm-audit/vocab-lapin.webp"
+      ],
+      "image_sha256": [
+        "ad3f8e5f558a25ac591a80263255af7a88766f8525f1c3648c51421da873b183",
+        "6925353daec05239436ccaabaa6717f92f1116db020622734bd70cb39345da78",
+        "4badc760f9b54d704a7ad015aa54689fa93bef2940fce4840d3cd12ec336d34d"
+      ],
+      "reason": "Une des phrases dit À la maison nous avons un chien. Aucun chat ni lapin n'est cité dans la série de présentation.",
+      "visual_review": "Chien, chat et lapin entiers réutilisés après examen, trois espèces domestiques distinctes sur fond crème. Aucun signe, visage humain ou accessoire ne sert à déduire l'identité ou la nationalité."
+    },
+    {
+      "key": "tcf-delf-actif-a2-040-01#5",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Je vais parler d’un ami. Il s’appelle Richard Lanvin, il a 15 ans et il habite à Rennes comme moi. Il est costaud et il a des cheveux frisés. Son nez est allongé et ses oreilles sont décollées. Ses yeux sont marron et il porte des lunettes. Il est bavard et dépensier. Je l’ai rencontré le premier jour du collège . Aujourd’hui nous fréquentons le même lycée mais nous ne sommes pas dans la même classe. Je le vois le lundi et le vendredi parce que nous faisons de la natation ensemble. Il aime le sport comme moi. Nous nous téléphonons souvent le soir pour nous raconter nos journées.",
+      "source_sha256": "22c5328b283006f95e6d46934b467540b46b44fb94a5869b4e43a60a73c555fb",
+      "semantic_sha256": "4167cee2a61320f1837c0c7768504551608388081a1dc044327cf83ce16f5c86",
+      "question": {
+        "enonce": "Quel accessoire porte-t-il ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Des lunettes",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un chapeau",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une montre",
+            "correct": false
+          }
+        ],
+        "written_model": "Des lunettes"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-040-01.mp3",
+      "audio_sha256": "1cbd3e597b0662d895c0653b271646607f548f25acf36734673399dffb66be07",
+      "image_ids": [
+        "co306-lunettes-vue-dessine",
+        "co834-chapeau-dessine",
+        "co834-montre-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-lunettes-vue-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-chapeau-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-montre-dessinee.webp"
+      ],
+      "image_sha256": [
+        "4ac6813cf46bd0006c902ab979474337c00683ed4c01d8df7dde19c9ab7af245",
+        "021727df752448f8655530fbe6b3acff8243aa0ab9bc929b860ab882f35bcd39",
+        "848dec4d460520d45c51f6e90d8c6c278ab8fcce203949573b460d5130106629"
+      ],
+      "reason": "Le portrait de Richard dit il porte des lunettes. Chapeau et montre ne figurent pas dans la description. Le choix reste un accessoire et ne doit pas faire deviner un visage particulier.",
+      "visual_review": "Paire de lunettes à verres clairs, chapeau de paille et montre bracelet réutilisés. Objets isolés et entiers : aucune couleur de cheveux, origine ou morphologie du personnage n'est inventée par une scène de portrait."
+    },
+    {
+      "key": "tcf-delf-actif-a2-042-01#8",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "J’ai une jolie petite chambre pour moi tout seul. La pièce est lumineuse et une porte-fenêtre donne sur un balcon. Dans ma chambre il y a mon lit. C’est un lit à une place avec un beau dessus de lit bleu. Il y a une grande armoire en bois blanc qui occupe un côté de la pièce. J’ai bien sûr une table de nuit avec une lampe de chevet et un réveil. Devant l’armoire, il y a un tapis moderne avec du bleu et du jaune. Les rideaux aussi sont bleus et jaunes. Près de la fenêtre se trouve mon bureau avec une chaise et une petite bibliothèque. Mon ordinateur est posé sur mon bureau avec mes livres de classe. Dans ma chambre, il n’y a pas de télévision parce que mes parents ne sont pas d’accord et d’habitude je la regarde dans le salon. Comme tous les jeunes de mon âge j’aime les posters et j’en ai mis partout sur les murs.",
+      "source_sha256": "4f32f2ef5489358c204f66f94ce1d9cb680508bcbe30ae4e37d97b512ee70f16",
+      "semantic_sha256": "577f62e8ec4c23e50f90dfd8a8ee01e364fc1c956a8c996ee425f3b19879a607",
+      "question": {
+        "enonce": "Quel appareil est posé sur le bureau ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un ordinateur",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Une télévision",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une radio",
+            "correct": false
+          }
+        ],
+        "written_model": "Un ordinateur"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-042-01.mp3",
+      "audio_sha256": "33f3b3d7f5d84d1c2866818b3b1bb39d69bfa43b497b6076b508b3fd188fa73b",
+      "image_ids": [
+        "co834-ordinateur-dessine",
+        "co834-television-dessinee",
+        "co57-radio"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-ordinateur-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-television-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co57-radio.webp"
+      ],
+      "image_sha256": [
+        "0975b4d983b9e0896f2bd09e2ddbb38bab9d3244e28a84c359e13db6f8a7fd42",
+        "09d037f6c1b5d11e462a9ad472143b1b7d45f9a674efd19e8d22334534628619",
+        "f40404f0267b38ce1ff1796498b1a1c8a24c7e63c653e06a7e45b1d819b581ce"
+      ],
+      "reason": "L'ordinateur est posé sur le bureau avec les livres de classe. La télévision est explicitement absente de la chambre et regardée au salon. Aucune radio n'est citée. La question porte sur l'appareil posé sur le bureau.",
+      "visual_review": "Ordinateur avec tour/clavier/souris, téléviseur avec télécommande et radio à antenne déjà disponibles examinés. Trois appareils distincts ; la source ne précise pas portable ou fixe, l'ordinateur de bureau convient au choix générique."
+    },
+    {
+      "key": "tcf-delf-actif-a2-043-01-04#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Au rez-de-chaussée venez découvrir nos nouveaux écouteurs sans fil à un prix intéressant. Ils vont vous accompagner tous les jours pour écouter parfaitement votre musique préférée.",
+      "source_sha256": "b86edd9d86359b563b30f74dc2ac219672db4820c8a35fdeb44907e132293f09",
+      "semantic_sha256": "f6ad5a955e1071a2888f024dab1e4787d1bce0e27bb01f65a26d27e7a9c1a623",
+      "question": {
+        "enonce": "Quels appareils sont proposés ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Des écouteurs",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Des téléphones",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Des ordinateurs",
+            "correct": false
+          }
+        ],
+        "written_model": "Des écouteurs"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-043-01-04.mp3",
+      "audio_sha256": "f9678a836fd54d5b38366abf4061f3cba51f38cbb98adec4339fc12eab676cc1",
+      "image_ids": [
+        "delf-actif-ecouteurs-sans-fil",
+        "vocab-telephones",
+        "vocab-ordinateurs"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/delf-actif-ecouteurs-sans-fil.png",
+        "/lib/images/tcf/qcm-audit/vocab-telephones.webp",
+        "/lib/images/tcf/qcm-audit/vocab-ordinateurs.webp"
+      ],
+      "image_sha256": [
+        "76e11dc01d2c9948fb86167b53b222c03f82bfb16091170557ab208c97cc211e",
+        "1a56738e046d9744ec1241a9f699fc509a94f85bfc93ef40f8f781d5492c451c",
+        "d4048434051064d69d3e55031f56795318cac3c26a950fad9cba06a98ada786a"
+      ],
+      "reason": "L'annonce présente nos nouveaux écouteurs sans fil, pour écouter sa musique. Téléphones et ordinateurs ne sont pas proposés. L'ancienne paire filaire a été examinée et rejetée pour cette transcription.",
+      "visual_review": "Nouvelle paire d'écouteurs blancs sans câble ni connecteur, deux ordinateurs et trois téléphones réutilisés. Tous les appareils sont entiers et les pluriels sont respectés ; les trois choix gardent les mêmes ids et le même corrigé."
+    },
+    {
+      "key": "tcf-delf-actif-a2-044-01-02#2",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Chers passagers, nous commençons notre service de restauration avec sandwichs et boissons. Nous vous demandons de baisser votre tablette et de mettre votre fauteuil en position droite.",
+      "source_sha256": "9b6198b9a6dcbf2c3b98056828968d76e20f772ada786f3a22f27095913a369c",
+      "semantic_sha256": "b2c47336fcba9b37bc3a4dde0e52a5bb0730dfabb264bd993536db992e9fb928",
+      "question": {
+        "enonce": "Quels aliments sont proposés avec les boissons ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Des sandwichs",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Des gâteaux",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Des fruits",
+            "correct": false
+          }
+        ],
+        "written_model": "Des sandwichs"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-044-01-02.mp3",
+      "audio_sha256": "3d180f1040e107538078b3e71ab5cf1823c456b6b0b78589e9b2931d97f305d6",
+      "image_ids": [
+        "vocab-sandwichs-pluriel",
+        "co834-gateaux-dessines",
+        "co834-fruits-dessines"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-sandwichs-pluriel.webp",
+        "/lib/images/tcf/qcm-audit/co834-gateaux-dessines.webp",
+        "/lib/images/tcf/qcm-audit/co834-fruits-dessines.webp"
+      ],
+      "image_sha256": [
+        "ea8df2222ed6b8d2b3ca82d124747b8f5a4eb802ed4e474df448d59d30ec5a23",
+        "be46913f2ea811a999f22e150a4591807a7468de2785ff6a7e843687902c9dc1",
+        "a6d85d7b468c6ca2fbd7fbe0a0dba2c13a6bfeb5b5feb33ec599f21263a635c9"
+      ],
+      "reason": "Le service de restauration propose sandwichs et boissons. Gâteaux et fruits ne figurent pas dans cette annonce aux passagers.",
+      "visual_review": "Deux sandwichs entiers sur assiette réutilisés, avec pâtisseries et fruits déjà examinés dans le même lot. Trois catégories alimentaires au pluriel, sans boissons ajoutées aux seuls choix pour ne pas mélanger le discriminant."
+    },
+    {
+      "key": "tcf-delf-actif-a2-045-01-03#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Votre attention s’il vous plaît ! Un portefeuille rouge contenant une carte étudiante vient d’être trouvé. Nous attendons son propriétaire à l’accueil situé à l’entrée du magasin.",
+      "source_sha256": "fa127bb0fe9709f53a184f2d0ee93ce2a3763731f77549b16abe707a8fd83531",
+      "semantic_sha256": "56342f200262c809560ce4b238328809e258ccf74c407945dda728fbff853f2d",
+      "question": {
+        "enonce": "Quel objet a été trouvé ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un portefeuille",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un téléphone",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un sac",
+            "correct": false
+          }
+        ],
+        "written_model": "Un portefeuille"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-045-01-03.mp3",
+      "audio_sha256": "dc9096af294c7197f9c870842e12e878a466ece62c9491e966b1375880f93590",
+      "image_ids": [
+        "delf-actif-portefeuille-rouge",
+        "co834-telephone-dessine",
+        "b48c69f2021e"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/delf-actif-portefeuille-rouge.png",
+        "/lib/images/tcf/qcm-audit/co834-telephone-dessine.webp",
+        "/lib/images/tcf/qcm-audit/b48c69f2021e.webp"
+      ],
+      "image_sha256": [
+        "8509d01f01a8258356a20f95e576e151e2cb946bd95e0976ce5316fcf810d1a0",
+        "0720a4239b45116cfd5bf748a207e2739a022f81bfd469b29b201e7ba465ef63",
+        "6b93cbe2659a4ece110b3aab1503718f72bd70f5809fe352cda84ea996471e1a"
+      ],
+      "reason": "L'annonce signale un portefeuille rouge contenant une carte étudiante trouvé dans le magasin. Téléphone et sac ne sont pas nommés. Le portefeuille marron existant a été rejeté à cause de la couleur donnée dans la transcription.",
+      "visual_review": "Nouveau portefeuille rouge ouvert avec carte anonyme visible, téléphone et sac entiers existants réutilisés. La carte ne porte ni nom, date, numéro ni montant ; le rouge du portefeuille est conforme à la source."
+    }
+  ]
+}

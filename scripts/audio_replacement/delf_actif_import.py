@@ -11,6 +11,7 @@ from __future__ import annotations
 import argparse
 from array import array
 from collections import Counter
+from copy import deepcopy
 import hashlib
 import json
 from pathlib import Path
@@ -460,6 +461,16 @@ def check_ready(unit, item, cut, approval):
     assert set(approval.get('final_recognition_engines',[]))=={'final-parakeet','final-whisper'},unit['key']
 
 
+def check_existing_exercise(existing, prepared):
+    """A later image review may add a form, never silently change the source bank."""
+    if existing is None:
+        return
+    base=deepcopy(existing)
+    for question in base['questions']:
+        question.get('formes',{}).pop('qcm_image',None)
+    assert base==prepared,('Existing entry changed; review a deliberate update before replacing it',prepared['id'])
+
+
 def install():
     units=json.loads((DOCS/'preparation.json').read_text())['units']
     cuts={r['key']:r for r in json.loads((WORK/'cuts-index.json').read_text())['units']}
@@ -475,7 +486,7 @@ def install():
         url=f"/lib/audio/tcf/co/delf-actif-{unit['level']}/{key.replace(':','-')}.mp3"
         exercise=make_exercise(unit,item,url)
         old=next((e for e in banks[unit['level']] if e['id']==exercise['id']),None)
-        assert old is None or old==exercise,('Existing entry changed; review a deliberate update before replacing it',key)
+        check_existing_exercise(old,exercise)
         target=ROOT/'public'/url.lstrip('/')
         assert not target.exists() or sha(target)==cut['sha256'],('Existing audio changed',key)
         plan.append((unit,item,cut,target,url,exercise,old))

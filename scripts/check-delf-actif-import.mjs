@@ -6,6 +6,9 @@ import { createServer } from 'vite'
 const directory = 'docs/tcf/delf-actif-20261113'
 const installation = JSON.parse(readFileSync(`${directory}/installation.json`, 'utf8'))
 const expected = new Map(installation.units.map(row => [row.exercise_id, row]))
+const approvedImages = new Map(JSON.parse(readFileSync('docs/tcf/images-generees.json', 'utf8')).images
+  .filter(row => row.status === 'visually_reviewed' && ['aligned', 'aligned_after_redraw'].includes(row.style_review?.status))
+  .map(row => [row.path, row]))
 assert.equal(expected.size, 346)
 assert.equal(installation.questions, 1663)
 const server = await createServer({ cacheDir: '/tmp/clairfle-delf-actif-vite', server: { middlewareMode: true, hmr: false, ws: false }, appType: 'custom' })
@@ -33,7 +36,18 @@ try {
       assert.equal(q.choix.filter(c => c.correct).length, 1)
       assert.equal(new Set(q.choix.map(c => c.texte.toLowerCase())).size, 3)
       assert.ok(q.formes.lignes.reponse_modele)
-      assert.equal(q.formes.qcm_image, undefined)
+      if (q.formes.qcm_image) {
+        const choices = q.formes.qcm_image.choix
+        assert.equal(choices.length, 3)
+        assert.equal(new Set(choices.map(c => c.image)).size, 3)
+        assert.deepEqual(choices.map(c => [c.id, Boolean(c.correct)]), q.choix.map(c => [c.id, Boolean(c.correct)]))
+        for (const c of choices) {
+          const image = approvedImages.get(c.image)
+          assert.ok(image, `${exercise.id}: unreviewed image ${c.image}`)
+          assert.equal(image.width * 3, image.height * 4)
+          assert.equal(createHash('sha256').update(readFileSync(`public${c.image}`)).digest('hex'), image.sha256)
+        }
+      }
     }
     questions += record.questions
   }
