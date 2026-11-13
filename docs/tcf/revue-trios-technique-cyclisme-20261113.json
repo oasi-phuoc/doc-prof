@@ -1,0 +1,116 @@
+{
+  "date": "2026-11-13",
+  "baseline_commit": "5bbae181401c5cae7d90f4553a9db4be44e42198",
+  "human_audio_listening_performed": false,
+  "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+  "trios": [
+    {
+      "key": "tcf-delf-actif-a1-052-02-01#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Profitez d’une offre exceptionnelle sur tout le rayon informatique. Les montres connectées sont en promotion à 150€. Pour tout renseignement des vendeurs vous attendent au rayon. Pour les achats de plus de 200€, vous participez au tirage au sort pour gagner deux entrées au Parc Astérix au mois de juillet.",
+      "source_sha256": "1722c838d92b272cbbabde2d07c114afc6bfeabd1d4a5a90618de006d2541ef2",
+      "semantic_sha256": "b6d15b3679eee827ad883fec50fe198627d545dbc4865a3a64eae06f76a43178",
+      "question": {
+        "enonce": "Quel objet est en promotion ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Une montre connectée",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un téléphone",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une tablette",
+            "correct": false
+          }
+        ],
+        "written_model": "Une montre connectée"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-052-02-01.mp3",
+      "audio_sha256": "8acfc8b19bcf63d6ab645f6aebf0077c2d1554ac616a6e1dee0f562825595681",
+      "image_ids": [
+        "extension573-montre-connectee",
+        "co834-telephone-dessine",
+        "co834-tablette-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-montre-connectee.png",
+        "/lib/images/tcf/qcm-audit/co834-telephone-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-tablette-dessinee.webp"
+      ],
+      "image_sha256": [
+        "c41198a6263829dec14279653bd047f9145f05af82639dabcf9cad1463cadbfa",
+        "0720a4239b45116cfd5bf748a207e2739a022f81bfd469b29b201e7ba465ef63",
+        "30088a6b6f16d236e81df2edd8d413d5d0540da5507b9b30866e7b0d8447f032"
+      ],
+      "reason": "L’annonce indique la promotion sur les montres connectées au rayon informatique.",
+      "visual_review": "Montre avec écran à icônes de connexion, téléphone et tablette entiers sur crème ; aucun prix ou date dans les images."
+    },
+    {
+      "key": "tcf-delf-actif-a2-046-02-03#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Le 14 juillet, le leader du Tour de France cyclisme porte un maillot jaune à l’arrivée de cette course sur l’avenue des Champs Élysées. Objectif pour l’an prochain départ d’un pays étranger.",
+      "source_sha256": "9ca09abc6ad102f19dfb73997fbcb5f7c9603b476dc8853dbb0adf08bb73c52c",
+      "semantic_sha256": "5552269439a902220a7a37fd01d5f922ab9f053be770672d6f218c0b8fb44d43",
+      "question": {
+        "enonce": "Quel sport est présenté ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Le cyclisme",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Le tennis",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Le rugby",
+            "correct": false
+          }
+        ],
+        "written_model": "Le cyclisme"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-046-02-03.mp3",
+      "audio_sha256": "cf52878433c083f84deab53aec643154a0dce43760cdcc244150a07ee39402da",
+      "image_ids": [
+        "extension573-cyclisme-route",
+        "co306-raquette-tennis-dessine",
+        "vocab-rugby"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-cyclisme-route.png",
+        "/lib/images/tcf/qcm-audit/co306-raquette-tennis-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-rugby.webp"
+      ],
+      "image_sha256": [
+        "714d58a331f9528b6d1babd0dce439dd6f702393340a8d2dcf7eae10fdc72085",
+        "2d5de4383163cf1b0d7928e8d17084c6ea8fa64347536eec219a3ae86874aa4b",
+        "72eb2cf8c8f4002ea7eab0e4301c99ed438ffbfffd9d1a7b456af7d5df953704"
+      ],
+      "reason": "L’annonce parle du Tour de France cyclisme et du maillot jaune.",
+      "visual_review": "Cycliste en maillot jaune sur vélo de course entier, raquette de tennis et scène de rugby avec ballon ovale ; le vélo de ville est écarté."
+    }
+  ],
+  "verification": {
+    "baseline_commit": "5bbae181401c5cae7d90f4553a9db4be44e42198",
+    "compared_all_six_banks": true,
+    "question_changes": 0,
+    "source_changes": 0,
+    "answer_changes": 0,
+    "added_image_forms_total": 7,
+    "registers": [
+      "docs/tcf/revue-trios-technique-cyclisme-20261113.json",
+      "docs/tcf/revue-trios-paysages-20261113.json"
+    ]
+  }
+}

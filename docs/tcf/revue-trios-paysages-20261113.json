@@ -1,0 +1,260 @@
+{
+  "date": "2026-11-13",
+  "baseline_commit": "5bbae181401c5cae7d90f4553a9db4be44e42198",
+  "human_audio_listening_performed": false,
+  "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+  "trios": [
+    {
+      "key": "tcf-delf-actif-a1-001-02#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut, c’est Manon. Je t’invite à un pique-nique à la campagne. Qu’en dis-tu ?",
+      "source_sha256": "533f9e6da2db33fe7244fff38af57b43c2372e1e38b60bc2e74813d69ff08a76",
+      "semantic_sha256": "7b744df593d066ee3ed24165361d2205f633f9b411e5da00e0c5c2593bf8a19f",
+      "question": {
+        "enonce": "Où Manon propose-t-elle d’aller ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À la campagne",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À la plage",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À la montagne",
+            "correct": false
+          }
+        ],
+        "written_model": "À la campagne"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-001-02.mp3",
+      "audio_sha256": "0398e8a89afa529950f872cd827cca18132a0375de09dd8f2261803358a53913",
+      "image_ids": [
+        "co306-campagne-rivieres-dessine",
+        "co306-mer-plages-dessine",
+        "co306-montagnes-forets-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-campagne-rivieres-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-mer-plages-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-montagnes-forets-dessine.webp"
+      ],
+      "image_sha256": [
+        "499375f99be9fa0c26be1b8228efd9bdbe0afb56b595e6e5aee4a6471f8c2cc1",
+        "81a240394b5c1baae22b65aee7cee28b53a130f811bea908ee1a43415b0b6883",
+        "48a7dccec5ffb03aaf2b426b5377b50f0fadc5f7d5d0f8fa91f1745ec0443d38"
+      ],
+      "reason": "Manon propose explicitement un pique-nique à la campagne.",
+      "visual_review": "Campagne basse avec champs et ferme sans grands sommets, montagne avec relief rocheux dominant, mer avec plage et vagues, centre-ville avec commerces et rue pavée. Réemplois peints contrôlés individuellement ; les illustrations représentent le type de lieu, sans inventer une adresse."
+    },
+    {
+      "key": "tcf-delf-actif-a1-037-01#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Dimanche on va faire une randonnée à la montagne. Apporte tes chaussures de marche et ta casquette. Peux-tu apporter aussi ton appareil photo pour photographier les animaux ? Les portables sont interdits, on ne peut pas déranger les animaux. On vient te chercher avec mes parents à 7h30 et on rentre le soir.",
+      "source_sha256": "d52023f020b6f7081031c7c673230b907d4ed7cf74082fd440a06834c6ecc503",
+      "semantic_sha256": "17662b32e0bcab1dc85a323f5f158cb49070fe4638780ddfc651c9571f01cfd0",
+      "question": {
+        "enonce": "Dans quel milieu les amis vont-ils marcher ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À la montagne",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Au bord de la mer",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Dans la ville",
+            "correct": false
+          }
+        ],
+        "written_model": "À la montagne"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-037-01.mp3",
+      "audio_sha256": "6dedbe11f268f6a2d22781005ded7ce9c87b49876fa0b41e5931662ac1109a33",
+      "image_ids": [
+        "co306-montagnes-forets-dessine",
+        "co306-mer-plages-dessine",
+        "retained-20261107-2ea2762cc434"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-montagnes-forets-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-mer-plages-dessine.webp",
+        "/lib/images/tcf/co/bg/ville.webp"
+      ],
+      "image_sha256": [
+        "48a7dccec5ffb03aaf2b426b5377b50f0fadc5f7d5d0f8fa91f1745ec0443d38",
+        "81a240394b5c1baae22b65aee7cee28b53a130f811bea908ee1a43415b0b6883",
+        "e78242a71b7a92603511158469ce7781ca6cf3971dc1cca923f4b59d3d2e828c"
+      ],
+      "reason": "Le message annonce une randonnée à la montagne et des chaussures de marche.",
+      "visual_review": "Campagne basse avec champs et ferme sans grands sommets, montagne avec relief rocheux dominant, mer avec plage et vagues, centre-ville avec commerces et rue pavée. Réemplois peints contrôlés individuellement ; les illustrations représentent le type de lieu, sans inventer une adresse."
+    },
+    {
+      "key": "tcf-delf-actif-a1-039-01#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut Salima. J’habite une nouvelle maison à la campagne. Elle est super belle. J’ai une chambre pour moi toute seule au premier étage. Elle est spacieuse et j’ai un grand lit, un beau fauteuil et un grand bureau. Je t’invite samedi après-midi si tu es libre.",
+      "source_sha256": "6d542905e3a33f9de49f905bce687422dc9c01d259d8f9c55a57c5d757d59eac",
+      "semantic_sha256": "b95be96587bf1b8fb1e89154751e1b35dc94ab8a085a1634ce5f411fe32214d9",
+      "question": {
+        "enonce": "Où se trouve la nouvelle maison ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À la campagne",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Au centre-ville",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Au bord de la mer",
+            "correct": false
+          }
+        ],
+        "written_model": "À la campagne"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-039-01.mp3",
+      "audio_sha256": "1339fdb115ada4ca16db5ee12451ded82015a678dfe3f6e77b83e41c294b941d",
+      "image_ids": [
+        "co306-campagne-rivieres-dessine",
+        "retained-20261107-2ea2762cc434",
+        "co306-mer-plages-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-campagne-rivieres-dessine.webp",
+        "/lib/images/tcf/co/bg/ville.webp",
+        "/lib/images/tcf/qcm-audit/co306-mer-plages-dessine.webp"
+      ],
+      "image_sha256": [
+        "499375f99be9fa0c26be1b8228efd9bdbe0afb56b595e6e5aee4a6471f8c2cc1",
+        "e78242a71b7a92603511158469ce7781ca6cf3971dc1cca923f4b59d3d2e828c",
+        "81a240394b5c1baae22b65aee7cee28b53a130f811bea908ee1a43415b0b6883"
+      ],
+      "reason": "La personne situe sa nouvelle maison à la campagne ; la question demande le milieu, pas un plan de la maison.",
+      "visual_review": "Campagne basse avec champs et ferme sans grands sommets, montagne avec relief rocheux dominant, mer avec plage et vagues, centre-ville avec commerces et rue pavée. Réemplois peints contrôlés individuellement ; les illustrations représentent le type de lieu, sans inventer une adresse."
+    },
+    {
+      "key": "tcf-delf-actif-a2-015-01#2",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Dimanche, c’est le premier jour de printemps. On va faire un tour à la campagne ? On peut prendre nos VTT, partir vers 9h00 et rentrer dans l’après-midi. Pour déjeuner on apporte des sandwichs et une tablette de chocolat. J’appelle Camille pour demander si elle veut venir avec nous.",
+      "source_sha256": "f0c7956024c32254a75655b7529b0d8318d91e79c020335bb436a8452698abe0",
+      "semantic_sha256": "caa721d0f359200aa4766f1fdfc5e712290533a54940da1a4d376b49081e2ce0",
+      "question": {
+        "enonce": "Où les amis veulent-ils aller ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À la campagne",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À la plage",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À la montagne",
+            "correct": false
+          }
+        ],
+        "written_model": "À la campagne"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-015-01.mp3",
+      "audio_sha256": "64fba8569ddca2e55dd1d14e48bb7ce50a8465999fc0d4bc79556680b31dd0e6",
+      "image_ids": [
+        "co306-campagne-rivieres-dessine",
+        "co306-mer-plages-dessine",
+        "co306-montagnes-forets-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-campagne-rivieres-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-mer-plages-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-montagnes-forets-dessine.webp"
+      ],
+      "image_sha256": [
+        "499375f99be9fa0c26be1b8228efd9bdbe0afb56b595e6e5aee4a6471f8c2cc1",
+        "81a240394b5c1baae22b65aee7cee28b53a130f811bea908ee1a43415b0b6883",
+        "48a7dccec5ffb03aaf2b426b5377b50f0fadc5f7d5d0f8fa91f1745ec0443d38"
+      ],
+      "reason": "La sortie en VTT est proposée à la campagne.",
+      "visual_review": "Campagne basse avec champs et ferme sans grands sommets, montagne avec relief rocheux dominant, mer avec plage et vagues, centre-ville avec commerces et rue pavée. Réemplois peints contrôlés individuellement ; les illustrations représentent le type de lieu, sans inventer une adresse."
+    },
+    {
+      "key": "tcf-delf-actif-a2-043-04-01#4",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Tu as vu la nouvelle voiture de mon père ? Oui, tu dois être content, parce que tu adores les voitures sport. Très content. Ça te dirait d’aller faire un tour demain jusqu’au bord de mer ? D’accord.",
+      "source_sha256": "cf703dda64e26c9f4f78ca745a994c3a4d151b347d436557e64fd245cb3da371",
+      "semantic_sha256": "90f783333ca399cbc5f22b11eb62105a7cafa81ca2a45e1eca4f4dfaebe87b39",
+      "question": {
+        "enonce": "Jusqu’où veulent-ils aller ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Au bord de mer",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À la montagne",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Au centre-ville",
+            "correct": false
+          }
+        ],
+        "written_model": "Au bord de mer"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-043-04-01.mp3",
+      "audio_sha256": "d1ecde18ed0bfb2aef004ad1fdf564c61bf0a0d881860858cf7bc032b49a0d4b",
+      "image_ids": [
+        "co306-mer-plages-dessine",
+        "co306-montagnes-forets-dessine",
+        "retained-20261107-2ea2762cc434"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-mer-plages-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-montagnes-forets-dessine.webp",
+        "/lib/images/tcf/co/bg/ville.webp"
+      ],
+      "image_sha256": [
+        "81a240394b5c1baae22b65aee7cee28b53a130f811bea908ee1a43415b0b6883",
+        "48a7dccec5ffb03aaf2b426b5377b50f0fadc5f7d5d0f8fa91f1745ec0443d38",
+        "e78242a71b7a92603511158469ce7781ca6cf3971dc1cca923f4b59d3d2e828c"
+      ],
+      "reason": "Les amis proposent un tour en voiture jusqu’au bord de mer.",
+      "visual_review": "Campagne basse avec champs et ferme sans grands sommets, montagne avec relief rocheux dominant, mer avec plage et vagues, centre-ville avec commerces et rue pavée. Réemplois peints contrôlés individuellement ; les illustrations représentent le type de lieu, sans inventer une adresse."
+    }
+  ],
+  "verification": {
+    "baseline_commit": "5bbae181401c5cae7d90f4553a9db4be44e42198",
+    "compared_all_six_banks": true,
+    "question_changes": 0,
+    "source_changes": 0,
+    "answer_changes": 0,
+    "added_image_forms_total": 7,
+    "registers": [
+      "docs/tcf/revue-trios-technique-cyclisme-20261113.json",
+      "docs/tcf/revue-trios-paysages-20261113.json"
+    ]
+  }
+}

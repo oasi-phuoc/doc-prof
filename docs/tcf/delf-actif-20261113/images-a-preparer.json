@@ -8,25 +8,25 @@
     "supports": 346,
     "questions": 1663,
     "statuses": {
-      "active_reviewed_trio": 205,
+      "active_reviewed_trio": 212,
       "keep_text_calendar_or_duration": 139,
       "needs_context_review": 1021,
-      "candidate_visual_review": 165,
       "keep_text_named_identity_or_code": 60,
-      "keep_text_amount": 73
+      "keep_text_amount": 73,
+      "candidate_visual_review": 158
     },
     "by_level": {
       "A0-A1": {
-        "active_reviewed_trio": 102,
+        "active_reviewed_trio": 106,
         "keep_text_calendar_or_duration": 46,
         "needs_context_review": 208,
-        "candidate_visual_review": 50,
         "keep_text_named_identity_or_code": 23,
-        "keep_text_amount": 37
+        "keep_text_amount": 37,
+        "candidate_visual_review": 46
       },
       "A1-A2": {
-        "candidate_visual_review": 82,
-        "active_reviewed_trio": 94,
+        "candidate_visual_review": 79,
+        "active_reviewed_trio": 97,
         "needs_context_review": 363,
         "keep_text_named_identity_or_code": 28,
         "keep_text_calendar_or_duration": 58,
@@ -3448,8 +3448,8 @@
       "semantic_sha256": "7b744df593d066ee3ed24165361d2205f633f9b411e5da00e0c5c2593bf8a19f",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-001-02.mp3",
       "audio_sha256": "0398e8a89afa529950f872cd827cca18132a0375de09dd8f2261803358a53913",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -3476,8 +3476,24 @@
           "brief": "Représenter entièrement « À la montagne » pour « Où Manon propose-t-elle d’aller ? ». Vérifier la transcription du support tcf-delf-actif-a1-001-02 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co306-campagne-rivieres-dessine.webp",
+          "sha256": "499375f99be9fa0c26be1b8228efd9bdbe0afb56b595e6e5aee4a6471f8c2cc1"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-mer-plages-dessine.webp",
+          "sha256": "81a240394b5c1baae22b65aee7cee28b53a130f811bea908ee1a43415b0b6883"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-montagnes-forets-dessine.webp",
+          "sha256": "48a7dccec5ffb03aaf2b426b5377b50f0fadc5f7d5d0f8fa91f1745ec0443d38"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -3488,7 +3504,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-paysages-20261113.json",
+        "reason": "Manon propose explicitement un pique-nique à la campagne.",
+        "note": "Campagne basse avec champs et ferme sans grands sommets, montagne avec relief rocheux dominant, mer avec plage et vagues, centre-ville avec commerces et rue pavée. Réemplois peints contrôlés individuellement ; les illustrations représentent le type de lieu, sans inventer une adresse."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-001-03#1",
@@ -19667,8 +19689,8 @@
       "semantic_sha256": "17662b32e0bcab1dc85a323f5f158cb49070fe4638780ddfc651c9571f01cfd0",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-037-01.mp3",
       "audio_sha256": "6dedbe11f268f6a2d22781005ded7ce9c87b49876fa0b41e5931662ac1109a33",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -19702,8 +19724,24 @@
           "brief": "Représenter entièrement « Dans la ville » pour « Dans quel milieu les amis vont-ils marcher ? ». Vérifier la transcription du support tcf-delf-actif-a1-037-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co306-montagnes-forets-dessine.webp",
+          "sha256": "48a7dccec5ffb03aaf2b426b5377b50f0fadc5f7d5d0f8fa91f1745ec0443d38"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-mer-plages-dessine.webp",
+          "sha256": "81a240394b5c1baae22b65aee7cee28b53a130f811bea908ee1a43415b0b6883"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/co/bg/ville.webp",
+          "sha256": "e78242a71b7a92603511158469ce7781ca6cf3971dc1cca923f4b59d3d2e828c"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -19714,7 +19752,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-paysages-20261113.json",
+        "reason": "Le message annonce une randonnée à la montagne et des chaussures de marche.",
+        "note": "Campagne basse avec champs et ferme sans grands sommets, montagne avec relief rocheux dominant, mer avec plage et vagues, centre-ville avec commerces et rue pavée. Réemplois peints contrôlés individuellement ; les illustrations représentent le type de lieu, sans inventer une adresse."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-037-01#3",
@@ -20230,8 +20274,8 @@
       "semantic_sha256": "b95be96587bf1b8fb1e89154751e1b35dc94ab8a085a1634ce5f411fe32214d9",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-039-01.mp3",
       "audio_sha256": "1339fdb115ada4ca16db5ee12451ded82015a678dfe3f6e77b83e41c294b941d",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -20265,8 +20309,24 @@
           "brief": "Représenter entièrement « Au bord de la mer » pour « Où se trouve la nouvelle maison ? ». Vérifier la transcription du support tcf-delf-actif-a1-039-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co306-campagne-rivieres-dessine.webp",
+          "sha256": "499375f99be9fa0c26be1b8228efd9bdbe0afb56b595e6e5aee4a6471f8c2cc1"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/co/bg/ville.webp",
+          "sha256": "e78242a71b7a92603511158469ce7781ca6cf3971dc1cca923f4b59d3d2e828c"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-mer-plages-dessine.webp",
+          "sha256": "81a240394b5c1baae22b65aee7cee28b53a130f811bea908ee1a43415b0b6883"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -20277,7 +20337,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-paysages-20261113.json",
+        "reason": "La personne situe sa nouvelle maison à la campagne ; la question demande le milieu, pas un plan de la maison.",
+        "note": "Campagne basse avec champs et ferme sans grands sommets, montagne avec relief rocheux dominant, mer avec plage et vagues, centre-ville avec commerces et rue pavée. Réemplois peints contrôlés individuellement ; les illustrations représentent le type de lieu, sans inventer une adresse."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-039-01#2",
@@ -31056,14 +31122,21 @@
       "semantic_sha256": "b6d15b3679eee827ad883fec50fe198627d545dbc4865a3a64eae06f76a43178",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-052-02-01.mp3",
       "audio_sha256": "8acfc8b19bcf63d6ab645f6aebf0077c2d1554ac616a6e1dee0f562825595681",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
           "label": "Une montre connectée",
           "correct": true,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-montre-connectee.png",
+              "sha256": "c41198a6263829dec14279653bd047f9145f05af82639dabcf9cad1463cadbfa",
+              "label": "Montre connectée",
+              "visual_review_required": true
+            }
+          ],
           "asset": "25a6afaa359fd78c",
           "brief": "Représenter entièrement « Une montre connectée » pour « Quel objet est en promotion ? ». Vérifier la transcription du support tcf-delf-actif-a1-052-02-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         },
@@ -31091,8 +31164,24 @@
           "brief": "Représenter entièrement « Une tablette » pour « Quel objet est en promotion ? ». Vérifier la transcription du support tcf-delf-actif-a1-052-02-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/extension573-montre-connectee.png",
+          "sha256": "c41198a6263829dec14279653bd047f9145f05af82639dabcf9cad1463cadbfa"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-telephone-dessine.webp",
+          "sha256": "0720a4239b45116cfd5bf748a207e2739a022f81bfd469b29b201e7ba465ef63"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-tablette-dessinee.webp",
+          "sha256": "30088a6b6f16d236e81df2edd8d413d5d0540da5507b9b30866e7b0d8447f032"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -31103,7 +31192,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-technique-cyclisme-20261113.json",
+        "reason": "L’annonce indique la promotion sur les montres connectées au rayon informatique.",
+        "note": "Montre avec écran à icônes de connexion, téléphone et tablette entiers sur crème ; aucun prix ou date dans les images."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-052-02-01#3",
@@ -43431,8 +43526,8 @@
       "semantic_sha256": "caa721d0f359200aa4766f1fdfc5e712290533a54940da1a4d376b49081e2ce0",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-015-01.mp3",
       "audio_sha256": "64fba8569ddca2e55dd1d14e48bb7ce50a8465999fc0d4bc79556680b31dd0e6",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -43459,8 +43554,24 @@
           "brief": "Représenter entièrement « À la montagne » pour « Où les amis veulent-ils aller ? ». Vérifier la transcription du support tcf-delf-actif-a2-015-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co306-campagne-rivieres-dessine.webp",
+          "sha256": "499375f99be9fa0c26be1b8228efd9bdbe0afb56b595e6e5aee4a6471f8c2cc1"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-mer-plages-dessine.webp",
+          "sha256": "81a240394b5c1baae22b65aee7cee28b53a130f811bea908ee1a43415b0b6883"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-montagnes-forets-dessine.webp",
+          "sha256": "48a7dccec5ffb03aaf2b426b5377b50f0fadc5f7d5d0f8fa91f1745ec0443d38"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -43471,7 +43582,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-paysages-20261113.json",
+        "reason": "La sortie en VTT est proposée à la campagne.",
+        "note": "Campagne basse avec champs et ferme sans grands sommets, montagne avec relief rocheux dominant, mer avec plage et vagues, centre-ville avec commerces et rue pavée. Réemplois peints contrôlés individuellement ; les illustrations représentent le type de lieu, sans inventer une adresse."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-015-01#3",
@@ -59262,8 +59379,8 @@
       "semantic_sha256": "90f783333ca399cbc5f22b11eb62105a7cafa81ca2a45e1eca4f4dfaebe87b39",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-043-04-01.mp3",
       "audio_sha256": "d1ecde18ed0bfb2aef004ad1fdf564c61bf0a0d881860858cf7bc032b49a0d4b",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -59297,8 +59414,24 @@
           "brief": "Représenter entièrement « Au centre-ville » pour « Jusqu’où veulent-ils aller ? ». Vérifier la transcription du support tcf-delf-actif-a2-043-04-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co306-mer-plages-dessine.webp",
+          "sha256": "81a240394b5c1baae22b65aee7cee28b53a130f811bea908ee1a43415b0b6883"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-montagnes-forets-dessine.webp",
+          "sha256": "48a7dccec5ffb03aaf2b426b5377b50f0fadc5f7d5d0f8fa91f1745ec0443d38"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/co/bg/ville.webp",
+          "sha256": "e78242a71b7a92603511158469ce7781ca6cf3971dc1cca923f4b59d3d2e828c"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -59309,7 +59442,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-paysages-20261113.json",
+        "reason": "Les amis proposent un tour en voiture jusqu’au bord de mer.",
+        "note": "Campagne basse avec champs et ferme sans grands sommets, montagne avec relief rocheux dominant, mer avec plage et vagues, centre-ville avec commerces et rue pavée. Réemplois peints contrôlés individuellement ; les illustrations représentent le type de lieu, sans inventer une adresse."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-043-04-02#1",
@@ -69998,8 +70137,8 @@
       "semantic_sha256": "5552269439a902220a7a37fd01d5f922ab9f053be770672d6f218c0b8fb44d43",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-046-02-03.mp3",
       "audio_sha256": "cf52878433c083f84deab53aec643154a0dce43760cdcc244150a07ee39402da",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -70033,8 +70172,24 @@
           "brief": "Représenter entièrement « Le rugby » pour « Quel sport est présenté ? ». Vérifier la transcription du support tcf-delf-actif-a2-046-02-03 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/extension573-cyclisme-route.png",
+          "sha256": "714d58a331f9528b6d1babd0dce439dd6f702393340a8d2dcf7eae10fdc72085"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-raquette-tennis-dessine.webp",
+          "sha256": "2d5de4383163cf1b0d7928e8d17084c6ea8fa64347536eec219a3ae86874aa4b"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/vocab-rugby.webp",
+          "sha256": "72eb2cf8c8f4002ea7eab0e4301c99ed438ffbfffd9d1a7b456af7d5df953704"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -70045,7 +70200,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-technique-cyclisme-20261113.json",
+        "reason": "L’annonce parle du Tour de France cyclisme et du maillot jaune.",
+        "note": "Cycliste en maillot jaune sur vélo de course entier, raquette de tennis et scène de rugby avec ballon ovale ; le vélo de ville est écarté."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-046-02-03#2",
@@ -98985,7 +99146,14 @@
           "id": "a",
           "label": "Une montre connectée",
           "correct": true,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-montre-connectee.png",
+              "sha256": "c41198a6263829dec14279653bd047f9145f05af82639dabcf9cad1463cadbfa",
+              "label": "Montre connectée",
+              "visual_review_required": true
+            }
+          ],
           "asset": "25a6afaa359fd78c",
           "brief": "Représenter entièrement « Une montre connectée » pour « Quel autre objet Patrick possède-t-il déjà ? ». Vérifier la transcription du support tcf-delf-actif-b1-040-01-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         },
@@ -108111,7 +108279,14 @@
     {
       "id": "25a6afaa359fd78c",
       "label": "Une montre connectée",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/extension573-montre-connectee.png",
+          "sha256": "c41198a6263829dec14279653bd047f9145f05af82639dabcf9cad1463cadbfa",
+          "label": "Montre connectée",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-052-02-01#2",
