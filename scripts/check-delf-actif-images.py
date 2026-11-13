@@ -83,6 +83,10 @@ def verify():
     paper = next(c for c in rows['tcf-delf-actif-a2-043-01-03#1']['choices'] if 'feuilles' in c['label'].casefold())
     assert paper['reuse_candidates'] and all(not c['path'].endswith('/vocab-feuilles.webp') for c in paper['reuse_candidates'])
     assert any(c['path'].endswith('/vocab-papiers.webp') for c in paper['reuse_candidates'])
+    for key in ['tcf-delf-actif-a2-008-01#3','tcf-delf-actif-a2-008-01#4']:
+        orange = next(c for c in rows[key]['choices'] if c['label']=='Orange')
+        assert any('extension573-couleur-orange' in c['path'] for c in orange['reuse_candidates'])
+        assert all(not c['path'].endswith('/extension573-orange.webp') for c in orange['reuse_candidates'])
     print(f'346 supports et 1 663 questions suivis ; {active} trios actifs liés à leur relecture, images et MP3 vérifiés.')
 
 

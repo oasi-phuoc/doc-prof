@@ -61957,6 +61957,38 @@
         "Objet"
       ],
       "generation_date": "2026-11-13"
+    },
+    {
+      "id": "extension573-couleur-orange",
+      "label": "Orange",
+      "path": "/lib/images/tcf/qcm-audit/extension573-couleur-orange.png",
+      "prompt": "À partir de l’échantillon de tissu rouge joint, créer exactement le même type d’illustration pédagogique : un seul carré de tissu à couture fine, entièrement visible avec marge, sur fond crème et petite ombre douce. Changer sa couleur en ORANGE FRANC ET UNIFORME (entre rouge et jaune, nettement distinct du rouge de référence). Même peinture semi-réaliste douce, texture fine et contours discrets du commit 48a753d8. Image finale paysage EXACT 4:3, 1448 × 1086. Aucun fruit, personne, symbole, mot, chiffre, date, prix ou objet supplémentaire. L’image représente uniquement la couleur orange.",
+      "source_png": "/tmp/orange-couleur.png",
+      "source_sha256": "f68601f0c91a7669fcfb8f9b3d53a4a66e14365eff08ff704fa5c3107c95ce5f",
+      "sha256": "f68601f0c91a7669fcfb8f9b3d53a4a66e14365eff08ff704fa5c3107c95ce5f",
+      "bytes": 2334102,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "reprise-20261106-objets-inclus",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-couleur-rouge-dessinee.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-couleur-rouge-dessinee.webp"
+      ],
+      "review_note": "Échantillon orange entier sur crème, distinct du rouge, couture et matière cohérentes avec la référence ; aucun fruit, texte ou chiffre. Paysage exact 4:3.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-couleur-rouge-dessinee.webp"
+        ]
+      },
+      "original_bytes_preserved": true
     }
   ],
   "activated_questions": [

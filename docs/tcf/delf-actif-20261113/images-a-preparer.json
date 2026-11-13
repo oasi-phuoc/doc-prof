@@ -8,11 +8,11 @@
     "supports": 346,
     "questions": 1663,
     "statuses": {
-      "candidate_visual_review": 307,
+      "candidate_visual_review": 304,
       "keep_text_calendar_or_duration": 139,
       "needs_context_review": 1021,
       "keep_text_named_identity_or_code": 60,
-      "active_reviewed_trio": 63,
+      "active_reviewed_trio": 66,
       "keep_text_amount": 73
     },
     "by_level": {
@@ -25,8 +25,8 @@
         "keep_text_amount": 37
       },
       "A1-A2": {
-        "candidate_visual_review": 140,
-        "active_reviewed_trio": 36,
+        "candidate_visual_review": 137,
+        "active_reviewed_trio": 39,
         "needs_context_review": 363,
         "keep_text_named_identity_or_code": 28,
         "keep_text_calendar_or_duration": 58,
@@ -37117,8 +37117,8 @@
       "semantic_sha256": "3e66af8c0847d2d61817855a93c766d527eb6d2a84029f34f8151c8c8612e833",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-008-01.mp3",
       "audio_sha256": "e1c33e7d65106b0fc07c48460bd74277632005e6213c9d8c9e09b047362b18f7",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -37141,9 +37141,9 @@
           "correct": false,
           "reuse_candidates": [
             {
-              "path": "/lib/images/tcf/qcm-audit/extension573-orange.webp",
-              "sha256": "d2c6e30398b97123da0fce7f6c1f67fdbbf2e29d071e4dbcd1998cadf8d7c86f",
-              "label": "Une orange",
+              "path": "/lib/images/tcf/qcm-audit/extension573-couleur-orange.png",
+              "sha256": "f68601f0c91a7669fcfb8f9b3d53a4a66e14365eff08ff704fa5c3107c95ce5f",
+              "label": "Orange",
               "visual_review_required": true
             }
           ],
@@ -37166,8 +37166,24 @@
           "brief": "Représenter entièrement « Vert » pour « Quelle couleur est annoncée dans le sens des départs ? ». Vérifier la transcription du support tcf-delf-actif-a2-008-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co834-couleur-rouge-dessinee.webp",
+          "sha256": "cd2c251c5c8504d6e817502f0ef2d0ea4bd4d6dc965632473f9ee8ea741c0729"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/extension573-couleur-orange.png",
+          "sha256": "f68601f0c91a7669fcfb8f9b3d53a4a66e14365eff08ff704fa5c3107c95ce5f"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-couleur-vert-dessinee.webp",
+          "sha256": "ce3137c87389115e7486d019c7b3ff9ffe5700c09d5097968f0f636008e046cc"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -37178,7 +37194,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-orange-matieres-20261113.json",
+        "reason": "La circulation est annoncée rouge dans le sens des départs, orange dans le sens des retours.",
+        "note": "Échantillons rouge, orange et vert entiers. Le nouveau tissu orange remplace le candidat fruit rejeté ; aucun mois ou jour dessiné."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-008-01#4",
@@ -37191,8 +37213,8 @@
       "semantic_sha256": "09dd5b0b4d64328f7a2477491c5cfa054c8acb7216eb5daa1424463c5ba2335b",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-008-01.mp3",
       "audio_sha256": "e1c33e7d65106b0fc07c48460bd74277632005e6213c9d8c9e09b047362b18f7",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -37200,9 +37222,9 @@
           "correct": true,
           "reuse_candidates": [
             {
-              "path": "/lib/images/tcf/qcm-audit/extension573-orange.webp",
-              "sha256": "d2c6e30398b97123da0fce7f6c1f67fdbbf2e29d071e4dbcd1998cadf8d7c86f",
-              "label": "Une orange",
+              "path": "/lib/images/tcf/qcm-audit/extension573-couleur-orange.png",
+              "sha256": "f68601f0c91a7669fcfb8f9b3d53a4a66e14365eff08ff704fa5c3107c95ce5f",
+              "label": "Orange",
               "visual_review_required": true
             }
           ],
@@ -37240,8 +37262,24 @@
           "brief": "Représenter entièrement « Vert » pour « Quelle couleur est annoncée dans le sens des retours ? ». Vérifier la transcription du support tcf-delf-actif-a2-008-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/extension573-couleur-orange.png",
+          "sha256": "f68601f0c91a7669fcfb8f9b3d53a4a66e14365eff08ff704fa5c3107c95ce5f"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-couleur-rouge-dessinee.webp",
+          "sha256": "cd2c251c5c8504d6e817502f0ef2d0ea4bd4d6dc965632473f9ee8ea741c0729"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-couleur-vert-dessinee.webp",
+          "sha256": "ce3137c87389115e7486d019c7b3ff9ffe5700c09d5097968f0f636008e046cc"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -37252,7 +37290,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-orange-matieres-20261113.json",
+        "reason": "Le sens des retours est orange, alors que les départs sont rouges.",
+        "note": "Même trio de couleurs réutilisé dans un ordre différent ; les réponses départs et retours restent distinctes. Aucun fruit représenté."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-008-02#1",
@@ -47415,8 +47459,8 @@
       "semantic_sha256": "bc9282a23ff36685b0440b4b76f8035a4844ee017862e8ac95af7ec870aac4b0",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-032-03.mp3",
       "audio_sha256": "39a6d51e7573398c427093dc5f6969fc21a85a68f7bf4b2853291929a2eac61f",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -47464,8 +47508,24 @@
           "brief": "Représenter entièrement « La soie » pour « Quelle matière demande-t-il d’abord ? ». Vérifier la transcription du support tcf-delf-actif-a2-032-03 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-laine.webp",
+          "sha256": "10040f7874d82e7e47f1b2ac2c85003c8c7f0258620bf3dc64e4e9c4e04b505d"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-coton.webp",
+          "sha256": "7afd864e0295c5b2d4382554a28f2ee44b85508eb8c00fd313a0b8a33bd781f5"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/vocab-soie.webp",
+          "sha256": "23d696ad2d1d02548c9f7278fc3973cc0f57e3a8fb2929a0d3d2e30a0163ac17"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -47476,7 +47536,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-orange-matieres-20261113.json",
+        "reason": "Le client demande d’abord des pulls en laine. Il demande ensuite du coton car la laine est indisponible. La soie n’est pas demandée.",
+        "note": "Pelotes avec échantillon tricoté, coton avec tissu et branche de cotonnier, soie drapée brillante examinés. Trois matières distinctes, pas trois vêtements arbitraires. La question porte sur la demande initiale, pas le choix final."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-032-03#3",
@@ -85277,6 +85343,12 @@
           "correct": false,
           "reuse_candidates": [
             {
+              "path": "/lib/images/tcf/qcm-audit/extension573-couleur-orange.png",
+              "sha256": "f68601f0c91a7669fcfb8f9b3d53a4a66e14365eff08ff704fa5c3107c95ce5f",
+              "label": "Orange",
+              "visual_review_required": true
+            },
+            {
               "path": "/lib/images/tcf/qcm-audit/extension573-orange.webp",
               "sha256": "d2c6e30398b97123da0fce7f6c1f67fdbbf2e29d071e4dbcd1998cadf8d7c86f",
               "label": "Une orange",
@@ -105615,9 +105687,9 @@
       "label": "Orange",
       "reuse_candidates": [
         {
-          "path": "/lib/images/tcf/qcm-audit/extension573-orange.webp",
-          "sha256": "d2c6e30398b97123da0fce7f6c1f67fdbbf2e29d071e4dbcd1998cadf8d7c86f",
-          "label": "Une orange",
+          "path": "/lib/images/tcf/qcm-audit/extension573-couleur-orange.png",
+          "sha256": "f68601f0c91a7669fcfb8f9b3d53a4a66e14365eff08ff704fa5c3107c95ce5f",
+          "label": "Orange",
           "visual_review_required": true
         }
       ],
