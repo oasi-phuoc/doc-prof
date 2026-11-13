@@ -16,6 +16,8 @@ Suite orange et matières : **trois trios A2** ajoutés, une nouvelle image 4:3 
 
 Suite corps, animaux et lieux : **cinq trios** (deux A1, trois A2) et **15 réemplois** vérifiés. Les nouveaux audios comptent **71 trios actifs** et **299 candidats à vérifier** ; le reliquat historique reste de 375 trios ([registre](revue-trios-corps-animaux-lieux-20261113.json)).
 
+Suite horaires et déplacements : **81 trios supplémentaires** (40 A1, 33 A2, huit B1), une nouvelle scène de handball 4:3 utilisée deux fois et 241 réemplois. Le suivi DELF Actif atteint **152 trios actifs**, avec **218 candidats concrets** restants ; les 375 trios historiques sont toujours suivis séparément ([horaires](revue-trios-horaires-delf-actif-20261113.json), [sports/transports](revue-trios-sports-transports-20261113.json)).
+
 ## Reprise du 6 novembre 2026 — objets CO inclus
 
 La nouvelle demande utilisateur reprend l’harmonisation des images et inclut désormais les 26 banques CO **OBJET**. Elle remplace les anciennes consignes de pause audio et d’exclusion des objets conservées ci-dessous pour l’historique. Le style validé du commit `48a753d8`, le paysage 4:3 et les réponses restent inchangés.
