@@ -5,6 +5,7 @@ import type { TimerSettings } from '../domain/settings'
 import { IconButton } from '../components/Icons'
 import { QuestionStage } from '../components/QuestionStage'
 import { AudioPlayer } from '../components/Media'
+import { TextReadingDialog } from '../components/TextReadingDialog'
 import { LoadingScreen } from '@/components/LoadingScreen'
 import { CompetitionAvatarPicker, CompetitionPortrait } from './Avatar'
 import { CompetitionArt } from './artwork'
@@ -45,8 +46,16 @@ function RoomJoinLink({ code }: { code: string }) {
 }
 function RoomGame({ view, host, local = false, busy = false, now, command, answer, addPlayer }: { view: RoomView; host: boolean; local?: boolean; busy?: boolean; now: number; command: (action: string, playerId?: string) => void; answer: (choiceId?: string) => void; addPlayer?: (avatar: CompetitionAvatar) => void }) {
   const [avatar, setAvatar] = useState<CompetitionAvatar>('panda'), [scoresAt, setScoresAt] = useState<number | null>(null), [finishAt, setFinishAt] = useState<number | null>(null)
+  const [readingAt, setReadingAt] = useState<number | null>(null)
   const q = view.question, self = view.players.find((player) => player.id === view.self?.id), turn = view.players.find((player) => player.id === view.turnPlayerId)
   const revealed = view.phase === 'correction'
+  const transcript = revealed ? view.transcript : undefined
+  if (readingAt !== null && (readingAt !== view.index || !transcript || host && !view.paused && !busy)) setReadingAt(null)
+  const reviewButton = transcript ? <IconButton key="transcript" icon="transcript" label="Lire la transcription" aria-haspopup="dialog" aria-disabled={busy || undefined} onClick={() => {
+    if (busy) return
+    if (host && !view.paused) command('pause')
+    setReadingAt(view.index)
+  }} /> : undefined
   const seconds = view.paused ? Math.ceil((view.remainingMs ?? 0) / 1000) : view.deadline === undefined ? null : Math.max(0, Math.ceil((view.deadline - now) / 1000))
   const publicQuestion = useMemo((): Question | undefined => q ? { ...q, source: { page: 0, block: 0, item: view.index, part: 0, exerciseType: 'competition' }, title: view.title, instruction: '', mode: 'choice', compatibility: 'auto' } : undefined, [q, view.index, view.title])
   useEffect(() => { document.querySelector<HTMLElement>('.ci-competition-main h1')?.focus({ preventScroll: true }) }, [view.phase, q?.id])
@@ -77,8 +86,11 @@ function RoomGame({ view, host, local = false, busy = false, now, command, answe
     {host && <div className="ci-toolbar ci-competition-host-controls"><IconButton icon={view.paused ? 'play' : 'pause'} label={view.paused ? 'Reprendre' : 'Pause'} disabled={busy} onClick={() => command(view.paused ? 'resume' : 'pause')} />
       {!view.paused && (revealed || !local) && <button className="ci-primary" disabled={busy} onClick={() => command('next')}>{revealed ? 'Question suivante' : 'Afficher la correction'}</button>}
       {local && !revealed && !view.paused && <button disabled={busy} onClick={() => answer()}>Passer mon tour</button>}
+      {reviewButton}
       <IconButton icon="finish" label="Terminer la compétition" disabled={busy} onClick={() => setFinishAt(view.index)} />
     </div>}
+    {!host && reviewButton && <div className="ci-competition-review-controls">{reviewButton}</div>}
+    {readingAt === view.index && transcript && (!host || view.paused) && <TextReadingDialog title="Transcription de l’écoute" text={transcript} onClose={() => setReadingAt(null)} />}
     {scoresAt === view.index && revealed && <ScoresDialog view={view} close={() => setScoresAt(null)} />}
     {finishAt === view.index && <ConfirmFinish confirm={() => { setFinishAt(null); command('finish') }} close={() => setFinishAt(null)} />}
   </main>
@@ -90,8 +102,9 @@ function ConfirmFinish({ confirm, close }: { confirm: () => void; close: () => v
 }
 function LocalGame({ quiz, settings, colors, shapes, onExit, onNewPart }: { quiz: CompetitionQuiz; settings: CompetitionSettings; colors: string[]; shapes: ShapeId[]; onExit: () => void; onNewPart?: () => void }) {
   const [state, setState] = useState(() => readLocalCompetition(quiz, settings, colors, shapes)), current = useRef(state), [now, setNow] = useState(Date.now)
-  const dispatch = useCallback((action: CompetitionAction) => {
+  const dispatch = useCallback((action: CompetitionAction, target?: Pick<RoomView, 'index' | 'phase'>) => {
     const previous = current.current, at = Date.now()
+    if (target && (target.index !== previous.room.index || target.phase !== previous.room.phase || !previous.room.paused && previous.room.deadline !== undefined && at >= previous.room.deadline)) return
     try {
       const room = competitionStep(previous.room, action, at)
       if (room === previous.room) return
@@ -107,7 +120,7 @@ function LocalGame({ quiz, settings, colors, shapes, onExit, onNewPart }: { quiz
   const reset = () => { const next = newLocalCompetition(quiz, settings, colors, shapes); writeLocalCompetition(next.journal); current.current = next; setState(next) }
   return <CompetitionShell title="Défi local" playing={!['lobby', 'finished'].includes(view.phase)} onExit={() => { dispatch({ type: 'pause' }); onExit() }}>
     {state.warning && <p className="ci-notice" role="status">{state.warning} <button onClick={reset}>Recommencer le défi local</button></p>}
-    <RoomGame view={view} now={now} host local command={(type, playerId) => { if (type === 'remove') dispatch({ type, playerId: playerId! }); else dispatch({ type: type as 'start' | 'begin-turn' | 'pause' | 'resume' | 'next' | 'finish' }) }} addPlayer={(avatarId) => dispatch({ type: 'join', avatarId })} answer={(choiceId) => dispatch({ type: 'answer', questionId: view.question!.id, playerId: view.turnPlayerId!, ...(choiceId ? { choiceId } : {}) })} />
+    <RoomGame view={view} now={now} host local command={(type, playerId) => { if (type === 'remove') dispatch({ type, playerId: playerId! }); else dispatch({ type: type as 'start' | 'begin-turn' | 'pause' | 'resume' | 'next' | 'finish' }, ['pause', 'resume'].includes(type) ? { index: view.index, phase: view.phase } : undefined) }} addPlayer={(avatarId) => dispatch({ type: 'join', avatarId })} answer={(choiceId) => dispatch({ type: 'answer', questionId: view.question!.id, playerId: view.turnPlayerId!, ...(choiceId ? { choiceId } : {}) })} />
     {view.phase === 'finished' && <button className="ci-primary ci-competition-restart" onClick={onNewPart ?? reset}>Nouvelle compétition</button>}
   </CompetitionShell>
 }
@@ -138,10 +151,12 @@ function RemoteGame({ access, onExit }: { access: RoomCapability; onExit: () => 
   </CompetitionShell>
 }
 
-export function CompetitionSetup({ game, timer, colors, shapes, onExit, onNewPart }: { game: Game; timer: TimerSettings; colors: string[]; shapes: ShapeId[]; onExit: () => void; onNewPart?: () => void }) {
-  const quiz = useMemo(() => competitionQuiz(game, location.origin), [game])
+export function CompetitionSetup({ game, timer, colors, shapes, showTranscripts: initialTranscripts = true, onExit, onNewPart }: { game: Game; timer: TimerSettings; colors: string[]; shapes: ShapeId[]; showTranscripts?: boolean; onExit: () => void; onNewPart?: () => void }) {
+  const [showTranscripts, setShowTranscripts] = useState(initialTranscripts)
+  const hasTranscripts = game.questions.some(q => q.audio && game.corrections[q.id]?.transcript)
+  const quiz = useMemo(() => competitionQuiz(game, location.origin, hasTranscripts && showTranscripts), [game, hasTranscripts, showTranscripts])
   const [kind, setKind] = useState<'setup' | 'local'>('setup'), [speedPoints, setSpeedPoints] = useState(true), [teacherKey, setTeacherKey] = useState(''), [busy, setBusy] = useState(false), [error, setError] = useState('')
-  const settings = useMemo(() => ({ ...timer, speedPoints }), [timer, speedPoints])
+  const settings = useMemo(() => ({ ...timer, speedPoints, ...(hasTranscripts ? { showTranscripts } : {}) }), [timer, speedPoints, hasTranscripts, showTranscripts])
   const [availability, setAvailability] = useState<boolean | null>(null)
   useEffect(() => { const controller = new AbortController(); void competitionAvailable(controller.signal).then((ready) => { if (!controller.signal.aborted) setAvailability(ready) }); return () => controller.abort() }, [])
   if (kind === 'local') return <LocalPreparation quiz={quiz} settings={settings} colors={colors} shapes={shapes} onExit={onExit} onNewPart={onNewPart} />
@@ -153,6 +168,7 @@ export function CompetitionSetup({ game, timer, colors, shapes, onExit, onNewPar
     {quiz.items.length !== game.questions.length && <p role="status">Les activités guidées restent dans les modes Classe et Solo. La compétition utilise les questions à réponse vérifiable.</p>}
     <p>Une mascotte et un numéro par joueur, sans nom ni pseudo. Une bonne réponse rapporte jusqu’à 1 000 points ; une erreur ou le temps écoulé rapporte 0.</p>
     <label><input type="checkbox" checked={speedPoints} onChange={(event) => setSpeedPoints(event.target.checked)} />Bonus de rapidité</label>
+    {hasTranscripts && <div className="ci-competition-transcript-setting"><label><input type="checkbox" checked={showTranscripts} onChange={event => setShowTranscripts(event.target.checked)} />Proposer la transcription après les réponses</label><p>Disponible après toutes les questions d’une écoute. L’enseignant peut ouvrir le texte pour mettre la correction en pause, puis reprendre la partie.</p></div>}
     <p>{timer.enabled ? `${timer.seconds} secondes par question` : 'Sans limite de temps'} · {timer.feedbackSeconds} seconde(s) de correction.</p>
     <div className="ci-competition-modes"><section className="ci-panel"><h2>Salle en ligne</h2><p>Chaque élève rejoint la salle sur son appareil, avec le code et une mascotte. Les réponses et scores sont synchronisés par le serveur.</p>
       {availability ? <><label>Accès enseignant aux salles<input type="password" autoComplete="off" value={teacherKey} onChange={(event) => setTeacherKey(event.target.value)} /></label><button className="ci-primary" disabled={busy || !teacherKey || !quiz.items.length} onClick={online}>{busy ? 'Création de la salle…' : 'Créer la salle'}</button></> : <p role="status">{availability === null ? 'Vérification des salles…' : 'Les salles en ligne ne sont pas encore activées sur ce site.'}</p>}

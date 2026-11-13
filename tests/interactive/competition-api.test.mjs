@@ -136,4 +136,44 @@ try {
     assert.equal((await h.request(`/rooms/${h.code}/host`, 'POST', { action: 'next', index: 0, phase: 'correction' }, h.host)).status, 409)
     assert.equal(h.stores.get(h.code).value.room.index, 1)
   })
+  await test('transcripts remain server-private until the final related correction and survive a room restart without granting learner controls', async () => {
+    const h = harness(), text = 'Texte privé : rendez-vous à midi.'
+    const listening = { ...quiz, items: quiz.items.map(item => ({ ...item, transcript: text, question: { ...item.question, audio: `${origin}/listen.mp3` } })) }
+    const created = await h.request('/rooms', 'POST', { quiz: listening, settings: { ...settings, showTranscripts: true } }, teacherKey)
+    assert.equal(created.status, 201)
+    const { code, token: host } = created.body
+    const first = (await h.request(`/rooms/${code}/join`, 'POST', { avatarId: 'panda' })).body
+    const second = (await h.request(`/rooms/${code}/join`, 'POST', { avatarId: 'fox' })).body
+    await h.request(`/rooms/${code}/host`, 'POST', { action: 'start' }, host)
+    for (const id of ['q1', 'q2']) {
+      const before = (await h.request(`/rooms/${code}`, 'GET', undefined, first.token)).body.view
+      assert.ok(!JSON.stringify(before).includes(text))
+      assert.equal((await h.request(`/rooms/${code}/answer`, 'POST', { questionId: id, choiceId: 'c0', transcript: text }, first.token)).status, 400)
+      await h.request(`/rooms/${code}/answer`, 'POST', { questionId: id, choiceId: 'c0' }, first.token)
+      assert.ok(!JSON.stringify((await h.request(`/rooms/${code}`, 'GET', undefined, first.token)).body.view).includes(text))
+      const corrected = (await h.request(`/rooms/${code}/answer`, 'POST', { questionId: id, choiceId: 'c1' }, second.token)).body.view
+      assert.equal(corrected.transcript, id === 'q2' ? text : undefined)
+      if (id === 'q1') await h.request(`/rooms/${code}/host`, 'POST', { action: 'next', index: 0, phase: 'correction' }, host)
+    }
+    assert.equal((await h.request(`/rooms/${code}/host`, 'POST', { action: 'pause' }, first.token)).status, 403)
+    await h.request(`/rooms/${code}/host`, 'POST', { action: 'pause', index: 1, phase: 'correction' }, host)
+    h.restart(code)
+    const restored = (await h.request(`/rooms/${code}`, 'GET', undefined, first.token)).body.view
+    assert.equal(restored.transcript, text); assert.equal(restored.paused, true)
+    assert.equal(restored.question.transcript, undefined); assert.equal(restored.quiz, undefined)
+    assert.ok(h.stores.get(code).value.room.quiz.items.every(item => item.transcript === text))
+  })
+  await test('delayed pause and resume commands cannot affect another question or phase, while legacy commands stay accepted', async () => {
+    const h = await room()
+    await h.request(`/rooms/${h.code}/join`, 'POST', { avatarId: 'panda' })
+    await h.request(`/rooms/${h.code}/host`, 'POST', { action: 'start' }, h.host)
+    await h.request(`/rooms/${h.code}/host`, 'POST', { action: 'next', index: 0, phase: 'question' }, h.host)
+    await h.request(`/rooms/${h.code}/host`, 'POST', { action: 'next', index: 0, phase: 'correction' }, h.host)
+    assert.equal((await h.request(`/rooms/${h.code}/host`, 'POST', { action: 'pause', index: 0, phase: 'correction' }, h.host)).status, 409)
+    assert.equal(h.stores.get(h.code).value.room.paused, false)
+    assert.equal((await h.request(`/rooms/${h.code}/host`, 'POST', { action: 'pause' }, h.host)).status, 200)
+    assert.equal((await h.request(`/rooms/${h.code}/host`, 'POST', { action: 'resume', index: 1, phase: 'correction' }, h.host)).status, 409)
+    assert.equal(h.stores.get(h.code).value.room.paused, true)
+    assert.equal((await h.request(`/rooms/${h.code}/host`, 'POST', { action: 'resume', index: 1, phase: 'question' }, h.host)).status, 200)
+  })
 } finally { Date.now = actualNow; await server.close() }

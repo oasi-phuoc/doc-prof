@@ -298,7 +298,7 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
     },
   }
   if (competitionOpen && activeGame && !media.complete) return <div className="ci-app"><LoadingScreen title="Préparation de la compétition" description="Vos questions et leurs médias se préparent." /></div>
-  if (competitionOpen && activeGame) return <Suspense fallback={<LoadingScreen title="Ouverture de la compétition" />}><CompetitionSetup key={activeGame.id} game={activeGame} timer={timer} colors={colors} shapes={shapes} onNewPart={() => newPart(false)} onExit={() => setCompetitionOpen(false)} /></Suspense>
+  if (competitionOpen && activeGame) return <Suspense fallback={<LoadingScreen title="Ouverture de la compétition" />}><CompetitionSetup key={activeGame.id} game={activeGame} timer={timer} colors={colors} shapes={shapes} showTranscripts={showTranscripts} onNewPart={() => newPart(false)} onExit={() => setCompetitionOpen(false)} /></Suspense>
   return (
     <div className={`ci-app${contrast ? ' ci-high-contrast' : ''}${playing ? ' ci-playing' : ''}${fullscreen ? ' ci-immersive' : ''}`} data-mascot={mascot}>
       {preferencesWarning && <p className="ci-notice" role="status">{preferencesWarning} Le jeu reste utilisable.</p>}

@@ -12,6 +12,8 @@ Une bonne réponse rapporte de 500 à 1 000 points avec le bonus de rapidité, o
 
 Un rechargement dans le même onglet retrouve l’accès à la salle. La clé enseignant n’est pas mémorisée ; seule une autorisation limitée à cette salle et à ce rôle reste dans l’onglet. Les salles et leurs accès expirent au plus tard deux heures après leur création. Fermer l’onglet peut faire perdre cet accès.
 
+Si l’option **Proposer la transcription après les réponses** est activée, l’icône livre apparaît après la dernière question liée à une écoute. L’enseignant peut ouvrir le texte pour mettre la correction en pause, puis fermer la lecture et choisir **Reprendre**. Les élèves peuvent lire le texte publié sur leur appareil ; leur lecture n’arrête pas la salle et se ferme quand la question suivante arrive. Le même réglage est disponible pour le défi local.
+
 ## Sans aucun réseau entre appareils
 
 Les appareils séparés ne peuvent pas synchroniser leurs réponses sans moyen de communication. Choisissez **Sur cet appareil** pour jouer sur un appareil commun que les joueurs se passent à tour de rôle.

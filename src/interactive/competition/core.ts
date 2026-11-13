@@ -1,13 +1,13 @@
 import type { Game, Question } from '../domain/types'
 import { PALETTE, defaultShapes, SHAPES, type ShapeId } from '../domain/palette'
 import { validAvatar, type CompetitionAvatar } from './avatars'
-import { MAX_AUDIO_PARTS } from '../domain/audio'
+import { audioIdentity, MAX_AUDIO_PARTS } from '../domain/audio'
 import type { Figure, FigureDims } from '@/math/types'
 import { matchingTextKey } from '../domain/matching'
 
 export type CompetitionQuestion = Pick<Question, 'id' | 'prompt' | 'context' | 'numberSequence' | 'matchingGroup' | 'audio' | 'audioParts' | 'images' | 'choices' | 'figure'>
-export type CompetitionQuiz = { id: string; title: string; items: { question: CompetitionQuestion; correctChoiceId: string }[] }
-export type CompetitionSettings = { enabled: boolean; seconds: number; feedbackSeconds: number; speedPoints: boolean }
+export type CompetitionQuiz = { id: string; title: string; items: { question: CompetitionQuestion; correctChoiceId: string; transcript?: string }[] }
+export type CompetitionSettings = { enabled: boolean; seconds: number; feedbackSeconds: number; speedPoints: boolean; showTranscripts?: boolean }
 export type CompetitionPhase = 'lobby' | 'handoff' | 'question' | 'correction' | 'finished'
 type Answer = { questionId: string; choiceId?: string; elapsedMs: number }
 export type CompetitionPlayer = { id: string; seat: number; avatarId: CompetitionAvatar; score: number; lastPoints: number; lastCorrect?: boolean; scoredThrough: number; answers: Answer[] }
@@ -27,6 +27,7 @@ export type RoomView = {
   paused: boolean; deadline?: number; remainingMs?: number; serverNow: number; revision: number;
   settings: CompetitionSettings; colors: string[]; shapes: ShapeId[]; question?: CompetitionQuestion; correctChoiceId?: string;
   unavailableChoiceIds?: string[];
+  transcript?: string;
   turnPlayerId?: string; answered: number;
   players: { id: string; seat: number; avatarId: CompetitionAvatar; score: number; lastPoints: number; lastCorrect?: boolean; rank: number }[];
   self?: { id: string; answered: boolean; selected?: string; correct?: boolean; points?: number };
@@ -80,17 +81,19 @@ function parseFigure(value: unknown): NonNullable<CompetitionQuestion['figure']>
   return { type: value.type as Figure, dims }
 }
 
-export function competitionQuiz(game: Game, origin: string): CompetitionQuiz {
+export function competitionQuiz(game: Game, origin: string, includeTranscripts = false): CompetitionQuiz {
   const media = (value: string) => value.startsWith('/') ? new URL(value, origin).href : value
   return { id: game.id, title: game.title, items: game.questions.flatMap((q) => {
     const correctChoiceId = game.corrections[q.id]?.choiceId
     if (q.mode !== 'choice' || !correctChoiceId || !q.choices.some((choice) => choice.id === correctChoiceId)) return []
-    return [{ correctChoiceId, question: { id: q.id, prompt: q.prompt, ...(q.context ? { context: q.context } : {}), ...(q.audio ? { audio: media(q.audio) } : {}), ...(q.audioParts ? { audioParts: q.audioParts.map(media) } : {}),
+    const transcript = includeTranscripts && q.audio ? game.corrections[q.id]?.transcript?.trim() : undefined
+    return [{ correctChoiceId, ...(transcript ? { transcript } : {}), question: { id: q.id, prompt: q.prompt, ...(q.context ? { context: q.context } : {}), ...(q.audio ? { audio: media(q.audio) } : {}), ...(q.audioParts ? { audioParts: q.audioParts.map(media) } : {}),
       images: q.images.map(media), choices: q.choices.map((choice) => ({ id: choice.id, text: choice.text, ...(choice.image ? { image: media(choice.image) } : {}) })), ...(q.matchingGroup ? { matchingGroup: { ...q.matchingGroup } } : {}), ...(q.figure ? { figure: structuredClone(q.figure) } : {}), ...(q.numberSequence ? { numberSequence: { terms: [...q.numberSequence.terms], target: q.numberSequence.target, ...(q.numberSequence.hint ? { hint: q.numberSequence.hint } : {}) } } : {}) } }]
   }) }
 }
 
-/** Explicit public fields only: extra keys, including any student name, are never copied. */
+/** Whitelist public question fields; optional review text stays beside the key,
+ * in the private quiz, until competitionView explicitly permits its release. */
 export function parseCompetitionQuiz(value: unknown, mediaOrigins: string[] = []): CompetitionQuiz {
   if (!record(value) || !string(value.id, 160) || !string(value.title, 200) || !Array.isArray(value.items) || !value.items.length || value.items.length > 100) throw new CompetitionError('Choisissez entre 1 et 100 questions à réponse vérifiable.', 400)
   const media = (value: unknown): string => {
@@ -128,6 +131,7 @@ export function parseCompetitionQuiz(value: unknown, mediaOrigins: string[] = []
       audioParts = q.audioParts.map(media)
       if (!audio || audioParts[0] !== audio || audioParts.some((part) => !/^https?:\/\//.test(part))) throw new CompetitionError('La séquence audio doit conserver sa première piste et ses adresses autorisées.', 400)
     }
+    if (entry.transcript !== undefined && (!audio || !string(entry.transcript, 30_000))) throw new CompetitionError('Transcription audio invalide.', 400)
     let numberSequence: CompetitionQuestion['numberSequence']
     if (q.numberSequence !== undefined) {
       const sequence = q.numberSequence
@@ -143,7 +147,7 @@ export function parseCompetitionQuiz(value: unknown, mediaOrigins: string[] = []
       matchingGroup = existing ?? {groupId:`m${matchingGroups.size+1}`,number:Number(group.number),total:Number(group.total)}
       matchingGroups.set(group.groupId,matchingGroup)
     }
-    return { correctChoiceId: `c${originalChoiceIds.indexOf(entry.correctChoiceId)}`, question: { id: `q${questionIndex + 1}`, prompt: q.prompt, images: q.images.map(media), choices, ...(q.context ? { context: q.context as string } : {}), ...(audio ? { audio } : {}), ...(audioParts ? { audioParts } : {}), ...(figure ? { figure } : {}), ...(numberSequence ? { numberSequence } : {}), ...(matchingGroup ? { matchingGroup } : {}) } }
+    return { correctChoiceId: `c${originalChoiceIds.indexOf(entry.correctChoiceId)}`, ...(entry.transcript !== undefined ? { transcript: (entry.transcript as string).trim() } : {}), question: { id: `q${questionIndex + 1}`, prompt: q.prompt, images: q.images.map(media), choices, ...(q.context ? { context: q.context as string } : {}), ...(audio ? { audio } : {}), ...(audioParts ? { audioParts } : {}), ...(figure ? { figure } : {}), ...(numberSequence ? { numberSequence } : {}), ...(matchingGroup ? { matchingGroup } : {}) } }
   })
   for (const {groupId} of matchingGroups.values()) {
     const members=items.filter(item=>item.question.matchingGroup?.groupId===groupId)
@@ -165,7 +169,8 @@ function usedCompetitionChoices(room: CompetitionRoom): string[] {
 
 export function parseCompetitionSettings(value: unknown): CompetitionSettings {
   if (!record(value) || typeof value.enabled !== 'boolean' || typeof value.speedPoints !== 'boolean' || !Number.isInteger(value.seconds) || Number(value.seconds) < 5 || Number(value.seconds) > 600 || !Number.isInteger(value.feedbackSeconds) || Number(value.feedbackSeconds) < 1 || Number(value.feedbackSeconds) > 10) throw new CompetitionError('Réglages de la compétition invalides.', 400)
-  return { enabled: value.enabled, seconds: Number(value.seconds), feedbackSeconds: Number(value.feedbackSeconds), speedPoints: value.speedPoints }
+  if (value.showTranscripts !== undefined && typeof value.showTranscripts !== 'boolean') throw new CompetitionError('Réglage des transcriptions invalide.', 400)
+  return { enabled: value.enabled, seconds: Number(value.seconds), feedbackSeconds: Number(value.feedbackSeconds), speedPoints: value.speedPoints, ...(value.showTranscripts !== undefined ? { showTranscripts: value.showTranscripts } : {}) }
 }
 export function createCompetition(quiz: CompetitionQuiz, settings: CompetitionSettings, mode: CompetitionRoom['mode'], code: string, now: number, colors: string[] = PALETTE.map((entry) => entry.color), shapes = defaultShapes): CompetitionRoom {
   if (!Array.isArray(colors) || colors.length !== 6 || colors.some((color) => typeof color !== 'string' || !/^#[0-9a-f]{6}$/i.test(color)) || !Array.isArray(shapes) || shapes.length !== 6 || shapes.some((shape) => !SHAPES.some((entry) => entry.id === shape))) throw new CompetitionError('Palette invalide.', 400)
@@ -269,9 +274,22 @@ export function competitionStep(original: CompetitionRoom, action: CompetitionAc
   return room
 }
 
+/** Only a publicly corrected recording whose last retained question is over may
+ * release review text. A shared prefix does not identify a composed recording. */
+function correctedTranscript(room: CompetitionRoom): string | undefined {
+  if (!room.settings.showTranscripts || room.phase !== 'correction') return undefined
+  const recording = audioIdentity(room.quiz.items[room.index]!.question)
+  if (!recording) return undefined
+  const related = room.quiz.items.flatMap((item, index) => audioIdentity(item.question) === recording ? [{ ...item, index }] : [])
+  if (related.some(item => item.index > room.index)) return undefined
+  const texts = new Set(related.flatMap(item => item.transcript?.trim() ? [item.transcript.trim()] : []))
+  return texts.size === 1 ? [...texts][0] : undefined
+}
+
 /** A learner gets this view only: no future question, answer key or other vote. */
 export function competitionView(room: CompetitionRoom, now: number, playerId?: string): RoomView {
   const item = room.quiz.items[room.index]!, revealed = room.phase === 'correction'
+  const transcript = correctedTranscript(room)
   const ranked = [...room.players].sort((a, b) => b.score - a.score || a.seat - b.seat)
   const players = ranked.map((player, index) => ({ id: player.id, seat: player.seat, avatarId: player.avatarId, score: player.score, lastPoints: player.lastPoints,
     ...(revealed || room.phase === 'finished' ? { lastCorrect: player.lastCorrect } : {}), rank: ranked.findIndex((other) => other.score === player.score) + 1 || index + 1 }))
@@ -280,6 +298,7 @@ export function competitionView(room: CompetitionRoom, now: number, playerId?: s
   return { code: room.code, title: room.quiz.title, mode: room.mode, phase: room.phase, index: room.index, total: room.quiz.items.length,
     paused: room.paused, deadline: room.deadline, remainingMs: room.remainingMs, serverNow: now, revision: room.revision, settings: { ...room.settings }, colors: [...room.colors], shapes: [...room.shapes],
     ...(['question', 'correction'].includes(room.phase) ? { question: structuredClone(item.question), ...(item.question.matchingGroup ? { unavailableChoiceIds: usedCompetitionChoices(room) } : {}) } : {}), ...(revealed ? { correctChoiceId: item.correctChoiceId } : {}),
+    ...(transcript ? { transcript } : {}),
     ...(room.mode === 'local' ? { turnPlayerId: room.players[room.turn]?.id } : {}), answered: room.players.filter((player) => player.answers.some((answer) => answer.questionId === item.question.id)).length, players,
     ...(self ? { self: { id: self.id, answered: !!answer, ...(answer?.choiceId ? { selected: answer.choiceId } : {}), ...(revealed ? { correct: self.lastCorrect, points: self.lastPoints } : {}) } } : {}) }
 }
