@@ -1,0 +1,36 @@
+[
+  {
+    "word": {
+      "tables": 3,
+      "embeddedImages": 3,
+      "allQuestions": true
+    }
+  },
+  {
+    "groupZip": [
+      "lib/audio/tcf/co/scènes courtes/01-transport-arrêt-de-bus.mp3",
+      "lib/audio/tcf/co/scènes courtes/01-transport-arrêt-de-bus.docx",
+      "lib/audio/tcf/co/ecole/27-école-proposer-manger-cantine.mp3",
+      "lib/audio/tcf/co/ecole/27-école-proposer-manger-cantine.docx"
+    ]
+  },
+  {
+    "stream": "sequential disk writer preserves two originals and valid CRCs",
+    "fallback": "ordinary download works when the file picker is unavailable in an embedded frame"
+  },
+  {
+    "auth": "anonymous route protected",
+    "navigation": "audio button left of image button; both catalogues accessible",
+    "playback": "real recording decoded and played",
+    "singleAudio": "original bytes retained",
+    "word": "all prepared questions and response forms, transcripts, tables, letters, checkboxes and embedded pictures",
+    "filters": "combined collection, level and prepared-content filters; persistent selection and empty state",
+    "failures": "HTML image fallback rejected, cancellation preserved selection",
+    "viewports": [
+      "1440x1000",
+      "390x950"
+    ],
+    "axe": "passed",
+    "errors": []
+  }
+]

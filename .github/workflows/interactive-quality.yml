@@ -37,12 +37,15 @@ jobs:
       - run: npx tsc -b
       - run: npx tsc -b api/fiches/tsconfig.json
       - run: npm test
+      - run: npm run test:audio-catalog
       - run: npm run test:gattegno
       - run: npx vite build --manifest
       - run: npm run check:interactive:budgets
       - run: npx playwright install --with-deps chromium
       - name: Parcours, accessibilité et non-régression A4
         run: npm run test:interactive:all
+      - name: Catalogue audio et exports Word
+        run: npm run test:audio-catalog:browser
       - name: Résultats et captures de test
         if: always()
         uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
@@ -60,4 +63,7 @@ jobs:
             docs/gattegno/*-results.json
             docs/gattegno/screenshots/*.png
             docs/gattegno/*.pdf
+            docs/audio-catalog/*-results.json
+            docs/audio-catalog/screenshots/*.png
+            docs/audio-catalog/*.docx
           retention-days: 7

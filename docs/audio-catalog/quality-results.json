@@ -1,0 +1,98 @@
+{
+  "date": "2026-11-13",
+  "baseline": "dad1bab1d4501fa59f38a358e24d5c274df722f2",
+  "scope": "Catalogue des fichiers audio disponibles, transcriptions et toutes les questions déjà préparées dans les banques ; téléchargements audio et Word individuels ou groupés.",
+  "catalog": {
+    "audios": 8455,
+    "withTranscript": 4711,
+    "withQuestions": 1025,
+    "questions": 4971,
+    "responseForms": 11234,
+    "allPublicAudioFoldersCovered": true,
+    "preparedTcfQuestionsVerified": 4924,
+    "newAudioGenerated": 0
+  },
+  "tests": {
+    "audioCataloguePassed": 6,
+    "existingInteractiveSuitePassed": 274,
+    "failed": 0,
+    "preparedBankCoverage": "Toutes les questions TCF et toutes leurs formes de réponse sont comparées aux banques sources ; transcriptions et questions vérifiées piste par piste, y compris les remplacements."
+  },
+  "browser": {
+    "passed": true,
+    "viewports": [
+      "1440x1000",
+      "390x950"
+    ],
+    "checks": [
+      "accès protégé et bouton audio à gauche du catalogue des images",
+      "aucun préchargement des enregistrements dans la liste",
+      "lecture réelle, un seul lecteur actif à la fois",
+      "fichier audio téléchargé identique octet par octet",
+      "Word OOXML ouvert avec python-docx, tableaux, lettres, cases à cocher, questions, transcriptions et images intégrées vérifiés",
+      "ZIP avec deux enregistrements et leurs deux documents ; CRC et octets des MP3 vérifiés",
+      "écriture séquentielle avec le sélecteur de fichier et repli en téléchargement ordinaire",
+      "filtres combinés, sélection persistante et aucun résultat",
+      "image indisponible signalée, annulation sans perte de sélection",
+      "navigation vers le catalogue des images et retour",
+      "aucun débordement horizontal et contrôle axe réussi"
+    ],
+    "errors": []
+  },
+  "checks": {
+    "types": "tsc -p tsconfig.app.json --noEmit et tsc -b réussis",
+    "lint": "réussi avec avertissements préexistants ; aucun dans le catalogue audio",
+    "productionBuild": "réussi",
+    "bundleBudgets": {
+      "landing": {
+        "gzip": 121676,
+        "maximumGzip": 153600
+      },
+      "calibration": {
+        "gzip": 140601,
+        "maximumGzip": 204800
+      },
+      "diagnostic": {
+        "gzip": 142753,
+        "maximumGzip": 204800
+      },
+      "competition": {
+        "gzip": 172458,
+        "maximumGzip": 204800
+      },
+      "game": {
+        "gzip": 2600630,
+        "maximumGzip": 3145728
+      }
+    },
+    "a4Witness": {
+      "identicalScreenshot": true,
+      "dimensions": [
+        {
+          "width": "793.688px",
+          "height": "1122.52px",
+          "overflow": "hidden"
+        },
+        {
+          "width": "793.688px",
+          "height": "1122.52px",
+          "overflow": "hidden"
+        }
+      ],
+      "draftLaunch": "passed",
+      "baseline": "0addb36d662842040cc8ed64e8b2c0ca81eac810",
+      "fonts": "same pinned fonts; baseline Google CSS response served from local assets",
+      "viewport": "1366x1000"
+    },
+    "a4ScreenshotSha256": "2c70ef917508f9ea7ac0dcee1ddbf012aaa6137ec7aca5adc5d49841dd135331",
+    "changedFilesSecrets": "Voir docs/interactive/secrets-results.json, contrôle Gitleaks du périmètre des modifications."
+  },
+  "limits": [
+    "La présence d’un fichier audio ne garantit pas qu’une transcription ou des questions soient renseignées dans les banques ; leur absence est affichée.",
+    "Les sources de travail non installées dans les banques actives ne sont pas exposées.",
+    "La génération conserve les textes des banques ; aucune nouvelle synthèse, transcription automatique ou question pédagogique.",
+    "Téléchargement ZIP habituel limité à 512 Mio ; écriture directe sur disque si disponible.",
+    "Le parcours A4 et le nouveau parcours du catalogue ont été exécutés ; les 49 étapes navigateur interactives complètes n’ont pas toutes été relancées.",
+    "Aucun déploiement ou changement de configuration de l’environnement cloud effectué."
+  ]
+}

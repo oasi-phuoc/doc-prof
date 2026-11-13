@@ -15,6 +15,11 @@ const modelEvidence = [
   'verification-numero-radio-cinema-20261112.json',
   'validation-87-20261111.json',
 ].map(file => `docs/tcf/remplacement-audio/${file}`)
+const delfEvidence = [
+  'signature-52-1-d7caa132e648.json',
+  'signature-52-2-caaca983b5dd.json',
+].map(file => `docs/tcf/delf-actif-20261113/relectures/${file}`)
+const normalizedEvidence = [...modelEvidence, ...delfEvidence]
 async function separateJsonLines(file) {
   const source = await readFile(file, 'utf8')
   JSON.parse(source)
@@ -37,7 +42,7 @@ async function scan(binary, args, name) {
   if (![0, 1].includes(result.code)) throw new Error(`Le contrôle Gitleaks ${name} n’a pas pu terminer (code ${result.code}).`)
   const findings = JSON.parse(await readFile(output, 'utf8')) ?? []
   // Deliberately never print Match, Secret, commit messages or raw scanner output.
-  return findings.map((finding) => ({ rule: finding.RuleID, file: finding.File.replace(temporary + path.sep, ''), line: name === 'changed' && modelEvidence.some(file => finding.File.endsWith(file)) ? Math.ceil(finding.StartLine / 2) : finding.StartLine }))
+  return findings.map((finding) => ({ rule: finding.RuleID, file: finding.File.replace(temporary + path.sep, ''), line: name === 'changed' && normalizedEvidence.some(file => finding.File.endsWith(file)) ? Math.ceil(finding.StartLine / 2) : finding.StartLine }))
 }
 try {
   if (process.platform !== 'linux' || process.arch !== 'x64') throw new Error('Le scanner épinglé nécessite Linux x64.')
@@ -62,12 +67,22 @@ try {
     }, null, 2))
     await separateJsonLines(evidenceCanary)
   }
+  for (const file of delfEvidence) {
+    const evidenceCanary = path.join(canaryDirectory, file)
+    await mkdir(path.dirname(evidenceCanary), { recursive: true })
+    await writeFile(evidenceCanary, JSON.stringify({
+      padding: 'A'.repeat(100_000),
+      '/tmp/clairfle-model/small-tokens.txt': randomBytes(32).toString('hex'),
+      api_key: genericCanary,
+    }, null, 2))
+    await separateJsonLines(evidenceCanary)
+  }
   const outsideEvidence = path.join(evidenceDirectory,'unreviewed.json')
   await writeFile(outsideEvidence,JSON.stringify({ '/tmp/clairfle-model/tokens.txt':randomBytes(32).toString('hex') },null,2))
   const selfTest = await scan(binary, ['dir', canaryDirectory], 'canary')
   const canaryReport = await readFile(path.join(temporary, 'canary.json'), 'utf8')
-  if (selfTest.length !== modelEvidence.length + 2 || !selfTest.some((finding) => finding.rule.includes('github')) ||
-    modelEvidence.some(file => !selfTest.some(finding => finding.rule === 'generic-api-key' && finding.file.endsWith(file))) ||
+  if (selfTest.length !== normalizedEvidence.length + 2 || !selfTest.some((finding) => finding.rule.includes('github')) ||
+    normalizedEvidence.some(file => !selfTest.some(finding => finding.rule === 'generic-api-key' && finding.file.endsWith(file))) ||
     !selfTest.some(finding => finding.rule === 'generic-api-key' && finding.file.endsWith('unreviewed.json')) ||
     canaryReport.includes(canary) || canaryReport.includes(genericCanary)) throw new Error('L’autotest de détection, d’exception ou de masquage du scanner a échoué.')
   await required('git', ['cat-file', '-e', `${baseline}^{commit}`])
@@ -80,11 +95,11 @@ try {
     if (!source.startsWith(root + path.sep) || !destination.startsWith(tree + path.sep)) throw new Error('Chemin de fichier invalide.')
     if (!(await lstat(source)).isFile()) continue
     await mkdir(path.dirname(destination), { recursive: true }); await copyFile(source, destination)
-    if (modelEvidence.includes(file)) await separateJsonLines(destination)
+    if (normalizedEvidence.includes(file)) await separateJsonLines(destination)
   }
   const history = await scan(binary, ['git', `--log-opts=${baseline}..HEAD`, root], 'history')
   const changed = await scan(binary, ['dir', tree], 'changed')
-  const report = { tool: `Gitleaks ${version}`, selfTest: 'Jeton GitHub et clés génériques synthétiques non émis détectés dans chacun des six rapports, contenus masqués ; trois noms de fichiers de vocabulaire admis uniquement dans ces rapports, empreinte dans un rapport non autorisé détectée.', baseline, changedFiles: files.length, findings: [...history, ...changed], scope: 'Commits depuis le jalon C0 et fichiers modifiés/non suivis actuels. Les secrets historiques préexistants et le bundle complet exigent encore la migration d’authentification F22 ; ce contrôle ne certifie pas leur absence.' }
+  const report = { tool: `Gitleaks ${version}`, selfTest: 'Jeton GitHub et clés génériques synthétiques non émis détectés dans chacun des huit rapports, contenus masqués ; noms de vocabulaires admis dans les six rapports initiaux et small-tokens.txt dans les deux relectures DELF précises ; empreinte dans un rapport non autorisé détectée.', baseline, changedFiles: files.length, findings: [...history, ...changed], scope: 'Commits depuis le jalon C0 et fichiers modifiés/non suivis actuels. Les secrets historiques préexistants et le bundle complet exigent encore la migration d’authentification F22 ; ce contrôle ne certifie pas leur absence.' }
   await writeFile('docs/interactive/secrets-results.json', JSON.stringify(report, null, 2) + '\n')
   if (report.findings.length) { console.error(JSON.stringify(report.findings, null, 2)); throw new Error('Gitleaks a trouvé des valeurs à vérifier ; leur contenu est masqué.') }
   console.log(`Gitleaks ${version} : aucun secret détecté dans le périmètre des modifications (${files.length} fichiers).`)
