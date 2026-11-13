@@ -1,0 +1,179 @@
+{
+  "checked_at": "2026-11-13T20:18:05.847133+01:00",
+  "source_commit": "41832f36de82f5936de9a5d05ddcff5a5cf4d73c",
+  "scope": "Catalogue CO CFR A2 et préparation de nouvelles scènes ; aucun nouveau dessin généré après le quota.",
+  "summary": {
+    "exercises": 379,
+    "audio_passages": 563,
+    "existing_linked_scenarios": 8,
+    "reviewed_catalogue_reuses": 1,
+    "generated_reviewed_scenarios": 0,
+    "generated_pending_visual_review": 0,
+    "existing_decoy_images": 4,
+    "scene_review_required": 554,
+    "unique_preparation_jobs": 554,
+    "priority_briefs_read": 48,
+    "priority_preparation_jobs": 47,
+    "passages_with_catalogue_suggestions": 548,
+    "missing_audio_files": 0
+  },
+  "catalogue_cfr_scenes": [
+    {
+      "src": "/lib/images/tcf/qcm-audit/co-personnages-20261112-59.png",
+      "label": "Bouilloire — leurre électroménager",
+      "types": [
+        "Scénario",
+        "Personnage"
+      ]
+    },
+    {
+      "src": "/lib/images/tcf/co/scenes/vie-quotidienne/les-nouvelles-1.webp",
+      "label": "Illustration existante : les nouvelles 1",
+      "types": [
+        "Scénario"
+      ]
+    },
+    {
+      "src": "/lib/images/tcf/co/scenes/vie-quotidienne/les-nouvelles-2.webp",
+      "label": "Illustration existante : les nouvelles 2",
+      "types": [
+        "Scénario"
+      ]
+    },
+    {
+      "src": "/lib/images/tcf/co/scenes/vie-quotidienne/les-nouvelles-3.webp",
+      "label": "Illustration existante : les nouvelles 3",
+      "types": [
+        "Scénario"
+      ]
+    },
+    {
+      "src": "/lib/images/tcf/co/scenes/vie-quotidienne/les-nouvelles-leurre-2.webp",
+      "label": "Illustration existante : les nouvelles leurre 2",
+      "types": [
+        "Scénario"
+      ]
+    },
+    {
+      "src": "/lib/images/tcf/qcm-audit/revue-20261107-f680821041.webp",
+      "label": "les nouvelles 4",
+      "types": [
+        "Scénario"
+      ]
+    },
+    {
+      "src": "/lib/images/tcf/qcm-audit/co-personnages-20261112-54.png",
+      "label": "les-achats-1",
+      "types": [
+        "Scénario",
+        "Personnage"
+      ]
+    },
+    {
+      "src": "/lib/images/tcf/qcm-audit/co-personnages-20261112-55.png",
+      "label": "les-achats-2",
+      "types": [
+        "Scénario",
+        "Personnage"
+      ]
+    },
+    {
+      "src": "/lib/images/tcf/qcm-audit/co-personnages-20261112-56.png",
+      "label": "les-achats-3",
+      "types": [
+        "Scénario",
+        "Personnage"
+      ]
+    },
+    {
+      "src": "/lib/images/tcf/qcm-audit/co-personnages-20261112-57.png",
+      "label": "les-achats-4",
+      "types": [
+        "Scénario",
+        "Personnage"
+      ]
+    },
+    {
+      "src": "/lib/images/tcf/catalogue/metiers/receptionniste.webp",
+      "label": "réceptionniste",
+      "types": [
+        "Métier",
+        "Scénario"
+      ]
+    },
+    {
+      "src": "/lib/images/tcf/qcm-audit/co-personnages-20261112-58.png",
+      "label": "Salade de fruits — leurre cuisine",
+      "types": [
+        "Scénario",
+        "Personnage"
+      ]
+    },
+    {
+      "src": "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp",
+      "label": "Une séance de cinéma",
+      "types": [
+        "Scénario"
+      ]
+    }
+  ],
+  "checks": {
+    "catalogue_unit_tests": {
+      "passed": true,
+      "tests": 4
+    },
+    "typescript": {
+      "passed": true
+    },
+    "production_build": {
+      "passed": true
+    },
+    "production_browser": {
+      "passed": true,
+      "results": [
+        "La galerie conserve la protection d’accès du site.",
+        {
+          "selectionZip": [
+            "lib/images/tcf/qcm-audit/extension573-passeport-embarquement.webp",
+            "lib/images/tcf/qcm-audit/extension573-passeport-billet.png"
+          ],
+          "labels": [
+            "Le passeport et la carte d’embarquement",
+            "Le passeport et le billet"
+          ]
+        },
+        "Les cinq types TCF, le thème du style validé et la recherche des douleurs avec apostrophe simple affichent des images disponibles.",
+        "Les 12 scènes et leurres CFR A2 ainsi que le réemploi hôtel sont accessibles sous Scénario ; la recherche du contexte téléphonique conserve le fichier existant.",
+        "Recherche sans accents, filtres combinés, sélection persistante, aperçu clavier, fichier individuel et ZIP de thème vérifiés.",
+        "ZIP écrit séquentiellement : trois originaux, CRC valides, aucun nom écrasé.",
+        "Une image indisponible interrompt le ZIP et affiche une erreur explicite.",
+        "Annulation vérifiée ; la sélection est conservée."
+      ],
+      "browserErrors": []
+    },
+    "browser_test_sha256": "f0c0c166ab78013c46ea11542d753ea3ad29786063e35db16592d2b8d019993d",
+    "source_audio_bank_unchanged": true,
+    "existing_image_bytes_unchanged": true,
+    "inventory": {
+      "passed": true,
+      "distinct_passages": 563,
+      "unique_preparation_jobs": 554,
+      "priority_briefs": 48,
+      "priority_preparation_jobs": 47,
+      "reproducible": true
+    },
+    "visual_review": {
+      "existing_situations_and_decoys": 12,
+      "reviewed_hotel_reuse": 1,
+      "production_screenshot_reviewed": true
+    }
+  },
+  "generation_blocker": {
+    "code": "usage_limit_reached",
+    "http_status": 429,
+    "error": "image generation failed: http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1794663055,\\\"eligible_promo\\\":null,\\\"limit_window_minutes\\\":null,\\\"resets_in_seconds\\\":74789}}\")",
+    "resets_at": 1794663055,
+    "timezone": "Europe/Zurich",
+    "resets_at_local": "2026-11-14T14:30:55+01:00"
+  }
+}

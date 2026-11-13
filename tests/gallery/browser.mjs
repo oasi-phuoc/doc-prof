@@ -73,8 +73,11 @@ try {
   await page.getByLabel('Type d’image', { exact: true }).selectOption('Scénario')
   assert.equal(await page.locator('.gallery-card').count(), 13)
   await page.waitForFunction(() => {
-    const image = document.querySelector('.gallery-card img')
-    return image?.complete && image.naturalWidth > 0
+    const visible = [...document.querySelectorAll('.gallery-card img')].filter(image => {
+      const rect = image.getBoundingClientRect()
+      return rect.top < innerHeight && rect.bottom > 0
+    })
+    return visible.length > 0 && visible.every(image => image.complete && image.naturalWidth > 0)
   })
   await page.screenshot({ path: output + '/gallery-co-cfr-a2.png', fullPage: false })
   await page.getByLabel('Rechercher une image', { exact: true }).fill('reservation telephonique')
