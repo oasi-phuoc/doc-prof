@@ -5,6 +5,7 @@ import type { PlayMode, Question, Round } from '../domain/types'
 import type { ShapeId } from '../domain/palette'
 import type { ClassroomHeaderProps } from '../components/ClassroomHeader'
 import { fitQuestion, type Readability } from './fit'
+import { originalMedia, PreparedMediaContext, type MediaResolver } from '../media/prepared-context'
 
 export type ReadabilityPlan = { id: string; questions: Question[]; rounds?: Round[] }
 export type ReadabilityOptions = Pick<ClassroomHeaderProps, 'mascot' | 'contrast' | 'timer'> & { mode: PlayMode; colors: string[]; shapes: ShapeId[] }
@@ -21,7 +22,7 @@ function interruptible<T>(work: Promise<T>, signal: AbortSignal): Promise<T> {
 }
 
 /** Same-origin sandbox with its own viewport: media queries, vw/vh and fonts are measured, not guessed. */
-export async function inspectReadability(plan: ReadabilityPlan, options: ReadabilityOptions, signal: AbortSignal, progress: (done: number, total: number) => void): Promise<ReadabilityResult[]> {
+export async function inspectReadability(plan: ReadabilityPlan, options: ReadabilityOptions, signal: AbortSignal, progress: (done: number, total: number) => void, resolve: MediaResolver = originalMedia): Promise<ReadabilityResult[]> {
   signal = AbortSignal.any([signal, AbortSignal.timeout(30_000)])
   const profiles = [[1920, 1080], [1366, 768]]
   if (window.innerWidth <= 700) profiles.push([window.innerWidth, window.innerHeight])
@@ -48,7 +49,7 @@ export async function inspectReadability(plan: ReadabilityPlan, options: Readabi
       await interruptible(Promise.all(styles), signal)
       for (const round of rounds) {
         const questions = round.questionIds.flatMap((id) => { const q = plan.questions.find((question) => question.id === id); return q ? [q] : [] })
-        flushSync(() => root.render(<Preview questions={questions} options={options} total={plan.questions.length} />))
+        flushSync(() => root.render(<PreparedMediaContext value={resolve}><Preview questions={questions} options={options} total={plan.questions.length} /></PreparedMediaContext>))
         await interruptible(doc.fonts.ready, signal)
         await interruptible(Promise.all([...doc.images].map((image) => image.decode().catch(() => {}))), signal)
         for (const element of doc.querySelectorAll<HTMLElement>('.ci-round-question')) results.push({ width, height, questionId: element.dataset.ciQuestionId!, ...fitQuestion(element) })

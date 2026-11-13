@@ -1,0 +1,160 @@
+{
+  "date": "2026-11-13",
+  "baseline": "2a40a993c55443d13fbfa3fabf2da79511470742",
+  "tests": {
+    "fullSuitePassed": 344,
+    "failed": 0,
+    "newDomainTests": 16,
+    "guidedTeacherSheetRegression": "Le modèle est vérifié exactement dans la colonne réponse pour les activités guidées, et dans explication pour les choix. Huit tests ciblés puis la suite entière réussissent."
+  },
+  "browser": {
+    "passed": [
+      "full-preload-browser",
+      "mascots-effects-browser",
+      "duel-browser",
+      "competition-browser",
+      "audio-sequences-browser",
+      "readability-browser",
+      "mascot-browser",
+      "mobile-browser",
+      "media-browser",
+      "competition-worker",
+      "a4-regression"
+    ],
+    "allWorkflowStagesRun": false,
+    "workflowStagesAvailable": 57,
+    "newFeatureViewports": [
+      "390x844",
+      "1366x768",
+      "360x640"
+    ],
+    "serverWritesToFicheApi": 0,
+    "sourceTemplates": "unchanged",
+    "errors": []
+  },
+  "checks": {
+    "types": "tsc -b et typecheck:api réussis",
+    "lint": "oxlint réussi ; 81 avertissements préexistants, aucun nouvel avertissement dans le lot.",
+    "build": "vite build --manifest réussi après les dix mouvements distincts ; duel chargé à la demande.",
+    "budgets": {
+      "landing": {
+        "gzip": 121709,
+        "maximumGzip": 153600
+      },
+      "calibration": {
+        "gzip": 141624,
+        "maximumGzip": 204800
+      },
+      "diagnostic": {
+        "gzip": 143768,
+        "maximumGzip": 204800
+      },
+      "competition": {
+        "gzip": 176933,
+        "maximumGzip": 204800
+      },
+      "game": {
+        "gzip": 2760399,
+        "maximumGzip": 3145728
+      }
+    },
+    "secrets": "Contrôle des modifications et de l’historique depuis C0 consigné dans secrets-results.json ; ne remplace pas F22."
+  },
+  "paper": {
+    "identicalScreenshot": true,
+    "dimensions": [
+      {
+        "width": "793.688px",
+        "height": "1122.52px",
+        "overflow": "hidden"
+      },
+      {
+        "width": "793.688px",
+        "height": "1122.52px",
+        "overflow": "hidden"
+      }
+    ],
+    "draftLaunch": "passed",
+    "baseline": "0addb36d662842040cc8ed64e8b2c0ca81eac810",
+    "fonts": "same pinned fonts; baseline Google CSS response served from local assets",
+    "viewport": "1366x1000"
+  },
+  "scope": "F40 : préchargement manuel intégral en mémoire pour Classe et Solo, avec les trente mascottes communes.",
+  "preload": {
+    "proof": "full-preload-results.json",
+    "classAndSolo": [
+      {
+        "class": "390x844",
+        "offline": "five questions complete after network cutoff; two image choices, simple audio, complete dictated number and addition, verified grammar image and zoom",
+        "assets": 20,
+        "bytes": 9370757,
+        "realAudioSeconds": [
+          1.968,
+          5.615986,
+          4.724218
+        ],
+        "mascots": "all thirty choices and the selected Dragon animate from prepared blobs",
+        "return": "original plan and correction retained; offline return, teacher sheet with embedded images and resume succeed",
+        "journal": "no blob URLs or answer keys stored",
+        "cleanup": "pack, composed recordings and verified image URLs released when leaving the page",
+        "axeViolations": 0
+      },
+      {
+        "class": "1366x768",
+        "offline": "five questions complete after network cutoff; two image choices, simple audio, complete dictated number and addition, verified grammar image and zoom",
+        "assets": 20,
+        "bytes": 9370757,
+        "realAudioSeconds": [
+          1.968,
+          5.615986,
+          4.724218
+        ],
+        "mascots": "all thirty choices and the selected Dragon animate from prepared blobs",
+        "return": "original plan and correction retained; offline return, teacher sheet with embedded images and resume succeed",
+        "journal": "no blob URLs or answer keys stored",
+        "cleanup": "pack, composed recordings and verified image URLs released when leaving the page",
+        "axeViolations": 0
+      },
+      {
+        "class": "360x640",
+        "offline": "five questions complete after network cutoff; two image choices, simple audio, complete dictated number and addition, verified grammar image and zoom",
+        "assets": 20,
+        "bytes": 9370757,
+        "realAudioSeconds": [
+          1.968,
+          5.615986,
+          4.724218
+        ],
+        "mascots": "all thirty choices and the selected Dragon animate from prepared blobs",
+        "return": "original plan and correction retained; offline return, teacher sheet with embedded images and resume succeed",
+        "journal": "no blob URLs or answer keys stored",
+        "cleanup": "pack, composed recordings and verified image URLs released when leaving the page",
+        "axeViolations": 0
+      },
+      {
+        "solo": "390x844",
+        "offline": "switching from Class to Solo retains the ready pack; all five answers correct, with real plays, automatic corrections, progression and durable score 5/5"
+      },
+      {
+        "solo": "1366x768",
+        "offline": "switching from Class to Solo retains the ready pack; all five answers correct, with real plays, automatic corrections, progression and durable score 5/5"
+      },
+      {
+        "solo": "360x640",
+        "offline": "switching from Class to Solo retains the ready pack; all five answers correct, with real plays, automatic corrections, progression and durable score 5/5"
+      }
+    ],
+    "lifecycle": "cancel restores normal launch and ignores the late response; a missing clip prevents ready; retry recovers; changed selection invalidates and frees the pack; explicit release frees it again",
+    "limits": {
+      "fileBytes": 33554432,
+      "packBytes": 134217728,
+      "parallelDownloads": 4
+    },
+    "selectionRegression": "Revenir à une sélection précédente ne réutilise pas un lot déjà libéré."
+  },
+  "limits": [
+    "Garder la page ouverte ; démarrage à froid et rechargement hors ligne non couverts. Aucun service worker ajouté.",
+    "Aucune nouvelle synthèse audio ni écriture des fiches sur le serveur.",
+    "La proposition V4 de 200 Ko pour le jeu complet reste ouverte ; budgets provisoires respectés."
+  ]
+}

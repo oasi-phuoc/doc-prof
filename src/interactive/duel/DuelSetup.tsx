@@ -12,6 +12,8 @@ import { duelPairs, type DuelConfig, type DuelMode, type Side } from './core'
 import { duelPlanId, hasDuel } from './storage'
 import { DuelGame } from './DuelGame'
 import './duel.css'
+import type { MediaResolver } from '../media/prepared-context'
+import { MascotAttackPreview } from './MascotAttackPreview'
 
 type Props = { quiz: CompetitionQuiz; mode: DuelMode; timer: TimerSettings; colors: string[]; shapes: ShapeId[]; onExit: () => void; onNewPart?: () => void }
 const randomSeed = () => crypto.getRandomValues(new Uint32Array(1))[0]!
@@ -34,6 +36,7 @@ export default function DuelSetup(props: Props) {
       {props.mode === 'teams' && <><button disabled={config[side].length >= 30} onClick={() => change(side, [...config[side], picked[side]])}>Ajouter à l’équipe {index + 1}</button><ol className="ci-duel-roster-list">{config[side].map((avatarId, seat) => <li key={seat}><CompetitionPortrait avatarId={avatarId} seat={seat + 1} /><button aria-label={`Retirer le joueur ${seat + 1} de l’équipe ${index + 1}`} onClick={() => change(side, config[side].filter((_, position) => position !== seat))}>Retirer</button></li>)}</ol><p>{config[side].length} joueur(s)</p></>}
     </section>)}</div>
     {props.mode === 'teams' && <section className="ci-panel"><h2>Ordre des duels</h2>{valid ? <ol className="ci-duel-pair-preview">{pairs.map((pair, index) => <li key={index}><b>Duel {index + 1}</b><CompetitionPortrait {...pair.left} /><span>contre</span><CompetitionPortrait {...pair.right} /></li>)}</ol> : <p role="status">Ajoutez le même nombre de mascottes dans les deux équipes pour donner un duel à chaque membre.</p>}</section>}
+    <MascotAttackPreview key={`${props.mode==='duel'?left[0]:picked.left}:${props.mode==='duel'?right[0]:picked.right}`} left={props.mode==='duel'?left[0]!:picked.left} right={props.mode==='duel'?right[0]!:picked.right}/>
     <div className="ci-duel-timer"><label><input type="checkbox" checked={timer.enabled} onChange={event => setTimer({ ...timer, enabled: event.target.checked })} />Activer le minuteur du duel</label>
       <label>Temps par question (secondes)<input type="number" min="5" max="600" value={timer.seconds} onChange={event => setTimer({ ...timer, seconds: validSeconds(Number(event.target.value)) })} /></label>
       <label>Temps de correction (secondes)<input type="number" min="1" max="10" value={timer.feedbackSeconds} onChange={event => setTimer({ ...timer, feedbackSeconds: validFeedbackSeconds(Number(event.target.value)) })} /></label>
@@ -44,7 +47,7 @@ export default function DuelSetup(props: Props) {
   </main></CompetitionShell>
 }
 function PreparedDuel(props: Props & { config: DuelConfig; timer: TimerSettings; resume: boolean; onRestart: () => void }) {
-  const [prepared, setPrepared] = useState<{ quiz: CompetitionQuiz; artwork: string; planId: string } | null>(null), [error, setError] = useState('')
+  const [prepared, setPrepared] = useState<{ quiz: CompetitionQuiz; artwork: MediaResolver; planId: string } | null>(null), [error, setError] = useState('')
   useEffect(() => {
     const controller = new AbortController(); let release: (() => void) | undefined
     void (async () => {

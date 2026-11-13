@@ -2,12 +2,14 @@
 .ci-competition .ci-header { flex-shrink: 0; }
 .ci-competition-heading { font-weight: 800; font-size: 17px; }
 .ci-competition .ci-competition-portrait { display: inline-block; position: relative; width: 72px; height: 72px; flex: 0 0 auto; }
-.ci-competition .ci-competition-avatar { display: block; width: 100%; height: 100%; background-repeat: no-repeat; background-size: 400% 300%; animation: ci-competition-bob 3s ease-in-out infinite; }
+.ci-competition .ci-competition-avatar { display: block; width: 100%; height: 100%; animation: ci-competition-bob 3s ease-in-out infinite; }
+.ci-competition-avatar .ci-mascot { width: 100%; height: 100%; }
 .ci-competition-seat { position: absolute; right: 0; bottom: -2px; min-width: 25px; padding: 3px 6px; border-radius: 20px; background: #182238; color: white; font-size: 15px; border: 2px solid white; }
-.ci-competition-avatars { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; max-width: 480px; margin: 20px auto; }
+.ci-competition-avatars { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; max-width: 480px; max-height: 330px; overflow-y: auto; padding: 8px; margin: 20px auto; }
 .ci-competition-avatars > button { padding: 6px; min-width: 0; background: white; border: 2px solid #c6ccda; border-radius: 20px; }
 .ci-competition-avatars > button[aria-pressed='true'] { border-color: #6738d6; box-shadow: 0 0 0 3px white, 0 0 0 6px #6738d6; }
 .ci-competition-avatars .ci-competition-portrait { width: 100%; height: auto; aspect-ratio: 1; vertical-align: middle; }
+@media (max-width:700px) { .ci-competition-avatars { grid-template-columns: repeat(3,minmax(0,1fr)); } }
 .ci-competition-join, .ci-competition-lobby, .ci-competition-setup, .ci-competition-finished { text-align: center; width: 100%; }
 .ci-competition-join { max-width: 600px; }
 .ci-competition-join > label, .ci-competition-modes label { display: flex; flex-direction: column; gap: 8px; max-width: 400px; margin: 16px auto; }

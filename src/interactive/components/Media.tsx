@@ -3,6 +3,7 @@ import { IconButton } from './Icons'
 import { browserMediaUrl } from '../media/policy'
 import { canListen, ListeningPass } from '../domain/listening'
 import { useAudioSequence } from '../media/useAudioSequence'
+import { usePreparedMedia } from '../media/prepared-context'
 import { LoadingScreen } from '@/components/LoadingScreen'
 
 export function SafeImage({
@@ -21,7 +22,8 @@ export function SafeImage({
   const [open, setOpen] = useState(false)
   const [scale, setScale] = useState(1)
   const dialog = useRef<HTMLDialogElement>(null)
-  const allowedSrc = browserMediaUrl(src)
+  const resolve = usePreparedMedia()
+  const allowedSrc = browserMediaUrl(resolve(src))
   useEffect(() => {
     if (open) dialog.current?.showModal()
     else dialog.current?.close()
@@ -124,7 +126,8 @@ type AudioProps = {
 }
 export function AudioPlayer({ parts, ...props }: AudioProps & { parts?: readonly string[] }) {
   const [attempt, setAttempt] = useState(0)
-  const result = useAudioSequence(props.src, parts, attempt), callback = useRef(props.onStatus)
+  const resolve = usePreparedMedia()
+  const result = useAudioSequence(resolve(props.src), parts?.map(resolve), attempt), callback = useRef(props.onStatus)
   useEffect(() => { callback.current = props.onStatus }, [props.onStatus])
   useEffect(() => { if (result.status !== 'ready') callback.current?.(result.status === 'error' ? 'error' : 'waiting') }, [result.key, result.status])
   if (result.status === 'loading') return <div className="ci-audio"><LoadingScreen variant="inline" title="Chargement de l’audio…" /></div>

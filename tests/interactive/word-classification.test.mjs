@@ -82,6 +82,10 @@ try{
     const one=item([['pain','nom'],['eau','nom']]),game=custom(many,one)
     assert.equal(game.questions.length,10);assert.ok(game.questions.every(q=>q.mode==='oral'&&q.compatibility==='teacher-led'&&!q.choices.length))
     assert.equal(competitionQuiz(game,'https://class.example').items.length,0)
+    for(const row of teacherSheetRows(prepareGame(game),colors,defaultShapes)){
+      assert.equal(row.answer,game.corrections[row.questionId].text)
+      assert.ok(row.answer.includes('Phrase :'));assert.equal(row.card,undefined)
+    }
     const state=transition(game,startSession(game,'solo'),{type:'TIMEOUT'})
     assert.equal(state.history[0].correct,undefined)
     assert.equal(adaptWordClassification({layout:'text',answer:''}),undefined)
@@ -121,7 +125,12 @@ try{
       const game=prepareGame(convertRecipe(source.recipe))
       sentences.add(game.questions[0].wordClassification.tokens.join(' '))
       const rows=teacherSheetRows(game,colors,defaultShapes)
-      assert.ok(rows.every((row,index)=>row.explanation.includes('Phrase :')&&(game.questions[index].mode==='choice'?!!row.card:!row.card)))
+      for(const row of rows){
+        const question=game.questions.find(question=>question.id===row.questionId)
+        // Guided activities put the model in the answer column, without a card.
+        assert.equal(question.mode==='choice'?row.explanation:row.answer,game.corrections[question.id].text)
+        assert.equal(!!row.card,question.mode==='choice')
+      }
       source=renewGameSource(source,null)
       assert.equal(source.recipe.pages[0].verbGroup,'mixte');assert.equal(source.recipe.pages[0].phrasePolarity,'mixed')
     }

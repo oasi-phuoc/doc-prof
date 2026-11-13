@@ -29,12 +29,13 @@ try {
   const created = await request('/rooms', { quiz, settings }, teacherKey)
   assert.equal(created.status, 201, created.body.error)
   const { code, token: host } = created.body
-  const first = (await request(`/rooms/${code}/join`, { avatarId: 'panda' })).body
-  const second = (await request(`/rooms/${code}/join`, { avatarId: 'tiger' })).body
+  const first = (await request(`/rooms/${code}/join`, { avatarId: 'leaf' })).body
+  const second = (await request(`/rooms/${code}/join`, { avatarId: 'kitsune' })).body
   assert.equal((await request(`/rooms/${code}/host`, { action: 'start' }, first.token)).status, 403)
   await request(`/rooms/${code}/host`, { action: 'start' }, host)
   const before = await request(`/rooms/${code}`, undefined, first.token)
   assert.equal(before.body.view.correctChoiceId, undefined); assert.equal(before.body.view.total, 60)
+  assert.deepEqual(before.body.view.players.map(player=>player.avatarId), ['leaf','kitsune'])
   assert.equal(before.body.view.question.id, 'q1'); assert.ok(!JSON.stringify(before.body.view).includes('original-yes'))
   await request(`/rooms/${code}/answer`, { questionId: 'q1', choiceId: 'c0' }, first.token)
   const corrected = await request(`/rooms/${code}/answer`, { questionId: 'q1', choiceId: 'c1' }, second.token)
@@ -84,6 +85,7 @@ try {
   const restored = await request(`/rooms/${code}`, undefined, first.token)
   assert.equal(restored.status, 200); assert.equal(restored.body.view.paused, true)
   assert.equal(restored.body.view.correctChoiceId, 'c0'); assert.deepEqual(restored.body.view.players.map((player) => player.score), [1000, 0])
+  assert.deepEqual(restored.body.view.players.map(player=>player.avatarId), ['leaf','kitsune'])
   const resumedMatching=(await request(`/rooms/${matchingCode}`,undefined,learner)).body.view
   assert.equal(resumedMatching.paused,true);assert.equal(resumedMatching.question.id,'q2');assert.deepEqual(resumedMatching.unavailableChoiceIds,['c0']);assert.equal(resumedMatching.correctChoiceId,undefined)
   assert.equal(resumedMatching.question.matchingGroup.groupId,'m1');assert.ok(!JSON.stringify(resumedMatching).includes('source-word-'))
@@ -104,6 +106,7 @@ try {
     quiz: '60 questions, serialized content larger than 128 KiB; bounded atomic KV chunks accepted by the real runtime', authority: 'teacher key and room capabilities; learner cannot control host; original source IDs and future keys absent from learner view', grading: '1000 and 0 points derived by server', restart: 'new workerd instance restores quiz, capabilities, pause, answer key and scores from durable storage', matching:'Three-pair group retained after restart; an already associated word is rejected with HTTP 400; the next correct pair scores 2000 points in total; current key stays private', productionDeployment: false }
   report.transcripts='Two listeners and two questions on the same recording: no transcript in lobby, questions or first correction; final correction releases only the current text; stale pause refused; paused review text and scores survive a new SQLite runtime.'
   report.wordClassification='Only neutral tokens and the target position reach learners; injected category tags are rejected; SQLite restart preserves the phrase and private grading.'
+  report.mascots='The common Leaf and new Kitsune identities join the real Worker, remain in the public roster and keep their scores after restart; no name or nickname supplied.'
   await writeFile('docs/interactive/competition-worker-results.json', JSON.stringify(report, null, 2) + '\n')
   console.log(JSON.stringify(report, null, 2))
 } finally { await runtime?.dispose(); await rm(temporary, { recursive: true, force: true }) }

@@ -4,10 +4,13 @@ import type { ReadabilityOptions } from './preflight'
 import { ClassroomHeader } from '../components/ClassroomHeader'
 import { QuestionStage } from '../components/QuestionStage'
 import { PhaseBanner } from '../components/PhaseBanner'
+import { mascotStyle } from '../domain/mascot'
+import { usePreparedMedia } from '../media/prepared-context'
 const noop = () => {}
 
 export function ReadabilityPreview({ questions, options, total }: { questions: Question[]; options: ReadabilityOptions; total: number }) {
-  return <div className={`ci-app ci-playing${options.contrast ? ' ci-high-contrast' : ''}`} data-mascot={options.mascot}>
+  const resolve=usePreparedMedia()
+  return <div className={`ci-app ci-playing${options.contrast ? ' ci-high-contrast' : ''}`} data-mascot={options.mascot} style={mascotStyle(options.mascot,resolve)}>
     <ClassroomHeader {...options} playing fullscreen={false} onContrast={noop} onMode={noop} onMascot={noop} onTimer={noop} onFullscreen={noop} onFiches={noop}
       session={{ progress: `Question 1 / ${total}`, paused: false, canSkip: true, onSkip: noop, onPause: noop, onExit: noop,
         audio: questions.some((q) => q.audio) ? <div className="ci-audio"><audio controls preload="none" aria-label="Extrait audio" /><small>Écoute 1 / 2</small></div> : undefined }} />

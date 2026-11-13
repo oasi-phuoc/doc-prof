@@ -1,0 +1,89 @@
+{
+  "date": "2026-11-13",
+  "baseline": "220a412493e5b8464bc892095d3ebebeb38dceb9",
+  "scope": "Une attaque automatique propre à chacune des trente mascottes ; critiques à trois, quatre ou cinq coups avec lueurs, auras et particules thématiques.",
+  "tests": {
+    "fullSuitePassed": 347,
+    "focusedDuelAndMascotTestsPassed": 19,
+    "newDomainTests": 3,
+    "failed": 0,
+    "geometry": "Thirty distinct motifs remain different after removing colours and identity attributes.",
+    "legacy": "Old journals with or without config.effects keep their health and results; former effect choices no longer override mascot attacks."
+  },
+  "browser": {
+    "passed": [
+      "mascots-effects-browser",
+      "duel-browser",
+      "a4-regression"
+    ],
+    "allWorkflowStagesRun": false,
+    "workflowStagesAvailable": 57,
+    "viewports": [
+      "390x844",
+      "1366x768",
+      "360x640"
+    ],
+    "signaturesPerViewport": 30,
+    "direction": "All thirty previewed in both directions; real portraits determine horizontal or vertical targets.",
+    "game": "Offline Koi water jet and Kitsune fire tornado; four and five critical hits respectively, each deducting exactly twenty health points once.",
+    "critical": "Three-to-five-hit sequences, themed glow, two auras and twenty animated sparkles; complete inside the minimum one-second correction.",
+    "errors": [],
+    "teams": "Two complete offline duels on each viewport; every answering member uses their own signature; 100% health per pair, fixed initial draw, final team score 2–0.",
+    "resume": "Both mascot identities, health and actions retained; new journals contain no effect-selection setting.",
+    "accessibility": "No attack selector; image-only mascot choices and read-only signature previews; axe reports zero violations; active animations retained with reduced-motion preference.",
+    "serverWritesToFicheApi": 0
+  },
+  "checks": {
+    "types": "tsc -b and typecheck:api passed",
+    "lint": "oxlint passed; 81 pre-existing warnings, no new warning in this increment",
+    "build": "vite build --manifest passed",
+    "budgets": {
+      "landing": {
+        "gzip": 121754,
+        "maximumGzip": 153600
+      },
+      "calibration": {
+        "gzip": 141651,
+        "maximumGzip": 204800
+      },
+      "diagnostic": {
+        "gzip": 143801,
+        "maximumGzip": 204800
+      },
+      "competition": {
+        "gzip": 176965,
+        "maximumGzip": 204800
+      },
+      "game": {
+        "gzip": 2760420,
+        "maximumGzip": 3145728
+      }
+    },
+    "secrets": "Scoped Gitleaks result in secrets-results.json; not a global F22 audit."
+  },
+  "paper": {
+    "identicalScreenshot": true,
+    "dimensions": [
+      {
+        "width": "793.688px",
+        "height": "1122.52px",
+        "overflow": "hidden"
+      },
+      {
+        "width": "793.688px",
+        "height": "1122.52px",
+        "overflow": "hidden"
+      }
+    ],
+    "draftLaunch": "passed",
+    "baseline": "0addb36d662842040cc8ed64e8b2c0ca81eac810",
+    "fonts": "same pinned fonts; baseline Google CSS response served from local assets",
+    "viewport": "1366x1000"
+  },
+  "limits": [
+    "The duel uses a shared screen; synchronization between devices remains open.",
+    "No Cloudflare production deployment, new audio synthesis or cloud configuration publication.",
+    "Offline play requires preparing the media and keeping the page open.",
+    "The V4 proposal of 200 KB for the complete game remains open; provisional route budgets passed."
+  ]
+}

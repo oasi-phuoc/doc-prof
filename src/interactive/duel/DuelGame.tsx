@@ -13,18 +13,24 @@ import { WordClassificationView } from '../components/WordClassificationView'
 import { GeometryFigure } from '@/components/math/GeometryFigure'
 import { duelRound, duelRoundId, stepDuel, type DuelAction, type DuelConfig, type Fighter, type Side } from './core'
 import { newDuelRun, readDuel, writeDuel } from './storage'
+import { DuelImpact } from './DuelImpact'
+import { impactFor, measureFighters, type FighterPoints } from './effects'
 
 type Props = { quiz: CompetitionQuiz; planId: string; config: DuelConfig; timer: TimerSettings; colors: string[]; shapes: ShapeId[]; resume: boolean; onExit: () => void; onRestart: () => void }
 const fighterName = (fighter: Fighter) => `${COMPETITION_AVATARS.find(avatar => avatar.id === fighter.avatarId)!.label} ${fighter.seat}`
 export function DuelGame(props: Props) {
   const [run, setRun] = useState(() => props.resume ? readDuel(props.quiz, props.planId, props.config, props.timer) : newDuelRun(props.quiz, props.planId, props.config, props.timer))
   const current = useRef(run), [now, setNow] = useState(Date.now), [confirming, setConfirming] = useState(false)
+  const [hitPoints,setHitPoints]=useState<FighterPoints|null>(null)
   const { state } = run, pair = state.pairs[state.pairIndex]!, round = duelRound(props.quiz, state)
   const dispatch = useCallback((action: DuelAction) => {
     const previous = current.current, at = Date.now()
     try {
       const nextState = stepDuel(props.quiz, previous.state, action, at)
       if (nextState === previous.state) return
+      if(nextState.phase==='feedback'&&nextState.resolution?.damage&&nextState.resolution.at!==previous.state.resolution?.at){
+        setHitPoints(measureFighters(document.querySelector('.ci-duel-player[data-side="left"] .ci-competition-portrait'),document.querySelector('.ci-duel-player[data-side="right"] .ci-competition-portrait')))
+      }
       const journal = { ...previous.journal, events: [...previous.journal.events, { at, action }] }
       const writable = previous.writable && writeDuel(journal)
       const next = { state: nextState, journal, writable, warning: previous.warning || (writable ? '' : 'La partie continue, mais sa reprise après fermeture n’est pas disponible.') }
@@ -53,6 +59,7 @@ export function DuelGame(props: Props) {
   }, [dispatch, props.quiz])
   useEffect(() => { document.querySelector<HTMLElement>('.ci-duel-arena h1, .ci-duel-ready h1, .ci-duel-finished h1')?.focus({ preventScroll: true }) }, [state.phase, round.id])
   const resolution = state.resolution, freshImpact = state.phase === 'feedback' && !!resolution?.damage && now - resolution.at >= 0 && now - resolution.at < 1100
+  const impact=impactFor(resolution,pair,round.id)
   const seconds = state.paused ? state.remainingMs === undefined ? null : Math.ceil(state.remainingMs / 1000) : state.deadline === undefined ? null : Math.max(0, Math.ceil((state.deadline - now) / 1000))
   const message = state.phase === 'question' ? 'Le premier clic décide du coup.' : !resolution?.side ? 'Temps écoulé : aucun dégât.' : `${resolution.correct ? 'Bonne réponse' : 'Mauvaise réponse'} : ${fighterName(pair[resolution.victim!])} perd ${resolution.damage} %.${resolution.winner ? ` ${fighterName(pair[resolution.winner])} remporte le duel !` : ''}`
   return <CompetitionShell title={state.config.mode === 'teams' ? 'Duels par équipes' : 'Duel à deux'} playing={['question', 'feedback'].includes(state.phase)} onExit={() => { pause(); props.onExit() }}>
@@ -69,10 +76,10 @@ export function DuelGame(props: Props) {
       {state.paused ? <section className="ci-duel-pause"><h1 tabIndex={-1}>Duel en pause</h1><p>Les vies et le temps sont conservés.</p><button className="ci-primary" onClick={() => dispatch({ type: 'resume', roundId: round.id, phase: state.phase })}>Reprendre le duel</button></section> : <>
         <section className="ci-duel-question"><div className="ci-duel-round-meta"><span>Duel {state.pairIndex + 1}/{state.pairs.length} · Question {state.turn + 1}</span><strong data-ci-motion className={round.critical ? 'ci-duel-critical' : 'ci-duel-normal'}>{round.critical ? 'Critique ! 20 %' : '10 % de dégâts'}</strong></div><h1 tabIndex={-1}>{round.item.question.prompt}</h1><DuelSupport question={round.item.question} paused={state.phase !== 'question'} /></section>
         <div className="ci-duel-sides">{(['left', 'right'] as const).map((side, index) => <section key={side} className={`ci-duel-player${freshImpact && resolution?.victim === side ? resolution.critical ? ' ci-duel-hurt ci-duel-super-hurt' : ' ci-duel-hurt' : ''}`} data-side={side} aria-label={`Joueur ${index + 1}`}>
-          <div className="ci-duel-fighter"><CompetitionPortrait {...pair[side]} outcome={state.phase === 'feedback' ? resolution?.winner === side ? true : resolution?.victim === side ? false : undefined : undefined} /><div><b>{fighterName(pair[side])}</b><div className="ci-duel-health-row"><progress max="100" value={state.hp[side]} aria-label={`Vie du joueur ${index + 1}`} /><strong className="ci-duel-hp">{state.hp[side]} %</strong></div><small>{state.config.mode === 'teams' ? `Équipe ${index + 1} · ${state.wins[side]} victoire(s)` : index ? 'Clavier : 1–6' : 'Clavier : A–F'}</small></div></div>
+          <div className="ci-duel-fighter"><CompetitionPortrait {...pair[side]} outcome={state.phase === 'feedback' ? resolution?.winner === side || resolution?.side === side && resolution.correct ? true : resolution?.victim === side ? false : undefined : undefined} /><div><b>{fighterName(pair[side])}</b><div className="ci-duel-health-row"><progress max="100" value={state.hp[side]} aria-label={`Vie du joueur ${index + 1}`} /><strong className="ci-duel-hp">{state.hp[side]} %</strong></div><small>{state.config.mode === 'teams' ? `Équipe ${index + 1} · ${state.wins[side]} victoire(s)` : index ? 'Clavier : 1–6' : 'Clavier : A–F'}</small></div></div>
           <DuelChoices key={round.id} question={round.item.question} side={side} colors={props.colors} shapes={props.shapes} disabled={state.phase !== 'question'} correctId={state.phase === 'feedback' ? round.item.correctChoiceId : undefined} selected={resolution?.side === side ? resolution.choiceId : undefined} onAnswer={choiceId => dispatch({ type: 'answer', roundId: round.id, side, choiceId })} />
         </section>)}</div>
-        {freshImpact && <div key={`${round.id}:${resolution!.at}`} className={`ci-duel-impact${resolution!.critical ? ' ci-duel-double-impact' : ''}`} aria-hidden="true"><svg viewBox="0 0 100 100"><path data-ci-motion className="ci-duel-slash" d="M12 88 88 12" />{resolution!.critical && <path data-ci-motion className="ci-duel-slash ci-duel-second-slash" d="M12 12 88 88" />}</svg></div>}
+        {freshImpact&&impact&&hitPoints&&<DuelImpact key={`${round.id}:${resolution!.at}`} impact={impact} points={hitPoints}/>}
       </>}
       <footer className="ci-duel-controls"><IconButton icon={state.paused ? 'play' : 'pause'} label={state.paused ? 'Reprendre le duel' : 'Pause'} onClick={() => state.paused ? dispatch({ type: 'resume', roundId: round.id, phase: state.phase }) : pause()} /><p role="status">{state.paused ? 'Pause' : message}</p>{seconds !== null && <output role="timer" aria-live="off" aria-label={state.phase === 'feedback' ? 'Temps de correction' : 'Temps restant'}>{seconds} s</output>}<IconButton icon="finish" label="Arrêter la partie" onClick={() => { pause(); setConfirming(true) }} /></footer>
     </main>}

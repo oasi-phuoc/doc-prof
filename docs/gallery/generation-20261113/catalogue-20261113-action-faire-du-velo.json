@@ -1,0 +1,23 @@
+{
+  "id": "catalogue-20261113-action-faire-du-velo",
+  "label": "Faire du vélo",
+  "type": "Action",
+  "subtype": "Actions quotidiennes",
+  "original": "/lib/images/vocabulaire/actions/faire-du-velo.webp",
+  "original_sha256": "d9544af7c45927a1d02474225d5a26c63c0c97afeb1a3652445da5fde90a20b9",
+  "path": "/lib/images/tcf/catalogue/actions/faire-du-velo.webp",
+  "status": "visually_reviewed",
+  "prompt": "Refaire entièrement la PREMIÈRE référence dans le style graphique de la DEUXIÈME référence TCF validée. La première ne fournit que le sens de l’action ; supprimer son rendu photo/détouré, ses visages et ses éventuels textes. La seconde est une référence de peinture uniquement : ne pas reprendre ses personnages ni leurs instruments. Peinture numérique semi-réaliste détaillée, volumes doux, contours fins discrets, couleurs naturelles chaleureuses ; aucun rendu photo, 3D ou gros contour BD. Paysage EXACTEMENT 4:3. Sujet et accessoires entiers, marges suffisantes. Une seule scène cohérente, décor également peint sobre avec fond crème lumineux ; pas de collage, bulle ou panneau explicatif. Aucun texte, chiffre, date, jour, mois, prix, pourcentage, logo ou signature. Ne jamais reproduire les mêmes visages d’une scène à l’autre. Sujet : Une adulte fait du vélo en ville sur une piste cyclable, bicyclette entière, casque, jardin au fond. Personnage principal proposé : un homme blanc adulte aux cheveux gris et lunettes, chemise bleu clair. Adapter naturellement le genre au rôle ; ne pas utiliser de stéréotype. Si un enfant est nécessaire à l’action, garder un adulte accompagnant.",
+  "reference_images": [
+    "/workspace/doc-prof/public/lib/images/vocabulaire/actions/faire-du-velo.webp",
+    "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+  ],
+  "output_hint": "Generated images are saved to /workspace/generated_images as /workspace/generated_images/exec-a4e93812-c0ff-4b41-b5e0-fed5c4c6c258.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+  "source_png": "/workspace/generated_images/exec-a4e93812-c0ff-4b41-b5e0-fed5c4c6c258.png",
+  "style_references": [
+    "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+  ],
+  "review_note": "Action entière et accessoires pertinents contrôlés sur planche, peinture douce TCF, silhouettes et visages variés ; ni prix ni date ni panneaux multiples. Libellé grammatical adapté au genre effectivement représenté si nécessaire.",
+  "sha256": "2b542cbefd8aafdfb414bed69d5fd15e078e1c6bde56675e0126d1bb969ba952",
+  "original_label": "faire du vélo"
+}

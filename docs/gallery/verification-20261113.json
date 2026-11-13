@@ -1,0 +1,105 @@
+{
+  "checked_at": "2026-11-13T19:35:36.848477+01:00",
+  "source_commit": "6fdeec83a8d0b052684498776a8574ef1f6f1ca8",
+  "merged_origin_main": "6ebf7a5a72e6361d43b46834c995b3f9f1090a7b",
+  "gallery_images": 6487,
+  "reviewed_subjects": 631,
+  "new_images": 576,
+  "reused_images": 55,
+  "remaining_subjects": 163,
+  "progress": {
+    "Action": {
+      "planned": 84,
+      "reviewed": 84,
+      "generated": 83,
+      "reused": 1,
+      "remaining": 0
+    },
+    "Animal": {
+      "planned": 231,
+      "reviewed": 151,
+      "generated": 137,
+      "reused": 14,
+      "remaining": 80
+    },
+    "Végétal": {
+      "planned": 208,
+      "reviewed": 154,
+      "generated": 139,
+      "reused": 15,
+      "remaining": 54
+    },
+    "Métier": {
+      "planned": 171,
+      "reviewed": 144,
+      "generated": 124,
+      "reused": 20,
+      "remaining": 27
+    },
+    "Maladie": {
+      "planned": 100,
+      "reviewed": 98,
+      "generated": 93,
+      "reused": 5,
+      "remaining": 2
+    }
+  },
+  "checks": {
+    "catalog_unit_tests": {
+      "passed": true,
+      "tests": 3
+    },
+    "typescript": {
+      "passed": true,
+      "command": "tsc -b"
+    },
+    "production_build": {
+      "passed": true,
+      "command": "vite build --outDir /tmp/doc-prof-gallery-build --emptyOutDir"
+    },
+    "reviewed_csv": {
+      "passed": true,
+      "subjects": 631,
+      "all_files_exist": true
+    },
+    "resume_queue": {
+      "passed": true,
+      "unique_subjects": 163,
+      "matches_remaining_subjects": true,
+      "idempotent": true
+    },
+    "unlinked_generated_png": {
+      "count": 0
+    },
+    "production_browser": {
+      "passed": true,
+      "results": [
+        "La galerie conserve la protection d’accès du site.",
+        {
+          "selectionZip": [
+            "lib/images/tcf/qcm-audit/extension573-passeport-embarquement.webp",
+            "lib/images/tcf/qcm-audit/extension573-passeport-billet.png"
+          ],
+          "labels": [
+            "Le passeport et la carte d’embarquement",
+            "Le passeport et le billet"
+          ]
+        },
+        "Les cinq types TCF, le thème du style validé et la recherche des douleurs avec apostrophe simple affichent des images disponibles.",
+        "Recherche sans accents, filtres combinés, sélection persistante, aperçu clavier, fichier individuel et ZIP de thème vérifiés.",
+        "ZIP écrit séquentiellement : trois originaux, CRC valides, aucun nom écrasé.",
+        "Une image indisponible interrompt le ZIP et affiche une erreur explicite.",
+        "Annulation vérifiée ; la sélection est conservée."
+      ],
+      "browserErrors": []
+    }
+  },
+  "generation_blocker": {
+    "code": "usage_limit_reached",
+    "http_status": 429,
+    "error": "image generation failed: http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1794663055,\\\"eligible_promo\\\":null,\\\"limit_window_minutes\\\":null,\\\"resets_in_seconds\\\":74789}}\")",
+    "resets_at": 1794663055,
+    "timezone": "Europe/Zurich",
+    "resets_at_local": "2026-11-14T14:30:55+01:00"
+  }
+}

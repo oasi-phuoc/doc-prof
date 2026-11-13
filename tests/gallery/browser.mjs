@@ -52,6 +52,39 @@ try {
   await page.getByLabel('Collection', { exact: true }).selectOption('TCF')
   assert((await page.locator('.gallery-card-body > p').allTextContents()).every(t => t.includes('TCF')))
   await page.getByRole('button', { name: 'Effacer les filtres', exact: true }).click()
+  await page.getByLabel('Thème', { exact: true }).selectOption('Style TCF validé')
+  for (const type of ['Action', 'Animal', 'Végétal', 'Métier', 'Maladie']) {
+    await page.getByLabel('Type d’image', { exact: true }).selectOption(type)
+    assert(await page.locator('.gallery-card').count() > 0, `${type} doit contenir des images contrôlées`)
+    assert((await page.locator('.gallery-card-body > p').allTextContents()).every(t => t.includes(type)))
+    await page.waitForFunction(() => {
+      const image = document.querySelector('.gallery-card img')
+      return image?.complete && image.naturalWidth > 0
+    })
+    assert((await page.locator('.gallery-card img').evaluateAll(images => images.map(i => i.src))).every(src => src.includes('/lib/images/tcf/')))
+  }
+  await page.getByLabel('Rechercher une image', { exact: true }).fill("mal a l'epaule")
+  assert.equal(await page.locator('.gallery-card').count(), 1)
+  assert.match(await page.locator('.gallery-card h2').textContent(), /épaule/)
+  assert(!await page.getByLabel('Type d’image', { exact: true }).locator('option').allTextContents().then(values => values.includes('Animal et végétal')))
+  results.push('Les cinq types TCF, le thème du style validé et la recherche des douleurs avec apostrophe simple affichent des images disponibles.')
+  await page.getByRole('button', { name: 'Effacer les filtres', exact: true }).click()
+  await page.getByLabel('Thème', { exact: true }).selectOption('CO CFR A2')
+  await page.getByLabel('Type d’image', { exact: true }).selectOption('Scénario')
+  assert.equal(await page.locator('.gallery-card').count(), 13)
+  await page.waitForFunction(() => {
+    const visible = [...document.querySelectorAll('.gallery-card img')].filter(image => {
+      const rect = image.getBoundingClientRect()
+      return rect.top < innerHeight && rect.bottom > 0
+    })
+    return visible.length > 0 && visible.every(image => image.complete && image.naturalWidth > 0)
+  })
+  await page.screenshot({ path: output + '/gallery-co-cfr-a2.png', fullPage: false })
+  await page.getByLabel('Rechercher une image', { exact: true }).fill('reservation telephonique')
+  assert.equal(await page.locator('.gallery-card').count(), 1)
+  assert.match(await page.locator('.gallery-card img').getAttribute('src'), /receptionniste\.webp$/)
+  results.push('Les 12 scènes et leurres CFR A2 ainsi que le réemploi hôtel sont accessibles sous Scénario ; la recherche du contexte téléphonique conserve le fichier existant.')
+  await page.getByRole('button', { name: 'Effacer les filtres', exact: true }).click()
   await page.getByLabel('Rechercher une image', { exact: true }).fill('extension573-cadeau')
   assert.equal(await page.locator('.gallery-card').count(), 3)
   await page.getByLabel('Thème', { exact: true }).selectOption('Loisirs et culture')

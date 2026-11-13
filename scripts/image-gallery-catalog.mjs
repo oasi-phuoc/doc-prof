@@ -2,9 +2,10 @@ import { execFileSync } from 'node:child_process'
 import { existsSync, readFileSync, readdirSync, statSync, writeFileSync, mkdirSync } from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { createHash } from 'node:crypto'
 
 const IMAGE = /\.(?:png|jpe?g|webp|svg|gif|avif|bmp|ico)$/i
-const norm = text => String(text).normalize('NFD').replace(/\p{M}/gu, '').toLowerCase()
+const norm = text => String(text).normalize('NFD').replace(/\p{M}/gu, '').toLowerCase().replace(/œ/g, 'oe').replace(/[’‘]/g, "'")
 const pretty = text => text.replace(/[-_]/g, ' ').replace(/^./, c => c.toUpperCase())
 const read = (root, file, fallback = []) => {
   try { return JSON.parse(readFileSync(path.join(root, file), 'utf8')) } catch { return fallback }
@@ -41,6 +42,11 @@ const RULES = [
 /** Index every repository image once, then enrich it from the existing banks. */
 export function buildGalleryCatalog(root, files = repositoryImages(root)) {
   const metadata = new Map()
+  const associationScenes = new Set()
+  const coSources = new Map()
+  const curated = read(root, 'docs/gallery/classement-tcf-20261113.json', {})
+  const classifications = new Map((curated.images ?? []).map(image => [image.path, image]))
+  const replaced = new Set((curated.replacements ?? []).map(image => image.original))
   const add = (src, data) => {
     if (typeof src !== 'string' || !src.startsWith('/')) return
     const previous = metadata.get(src) ?? { labels: [], themes: [], types: [], terms: [] }
@@ -66,10 +72,24 @@ export function buildGalleryCatalog(root, files = repositoryImages(root)) {
   }
   for (const image of read(root, 'src/tcf/content/ce-art.json')) add(image.src, { labels: [image.label], types: ['Document'], terms: [image.genre] })
   for (const image of read(root, 'src/tcf/object-images.json')) add(image.image, { labels: [image.label], themes: [pretty(image.family ?? '')], types: ['Objet'], terms: image.aliases })
+  for (const image of classifications.values()) add(image.path, { labels: [image.label], themes: image.themes, terms: image.aliases })
   const tcf = path.join(root, 'src/tcf/content')
   if (existsSync(tcf)) for (const level of ['a0-a1', 'a1-a2', 'a2-b1']) for (const skill of ['ce', 'co', 'pe', 'po']) {
     for (const ex of read(root, `src/tcf/content/${level}/${skill}.json`)) {
       const context = [ex.scenario && pretty(ex.scenario)]
+      if (skill === 'co') {
+        coSources.set(ex.id, ex)
+        if (ex.type_exercice === 'association_images') {
+          const levelTheme = level === 'a1-a2' ? 'CO CFR A2' : `CO ${level.toUpperCase()}`
+          const transcriptions = Array.isArray(ex.support?.transcription) ? ex.support.transcription : []
+          for (const situation of ex.situations ?? []) {
+            if (!situation.image?.startsWith('/')) continue
+            associationScenes.add(situation.image)
+            add(situation.image, { types: ['Scénario'], themes: [...context, levelTheme, situation.dialogue == null ? 'Leurres CO' : 'Situations CO'],
+              terms: [ex.id, ex.scene, situation.dialogue == null ? '' : transcriptions[situation.dialogue - 1]] })
+          }
+        }
+      }
       for (const q of ex.questions ?? []) {
         const texts = new Map((q.choix ?? []).map(c => [c.id, c.texte]))
         for (const c of [...(q.choix ?? []), ...(q.formes?.qcm_image?.choix ?? [])]) {
@@ -77,6 +97,17 @@ export function buildGalleryCatalog(root, files = repositoryImages(root)) {
         }
       }
     }
+  }
+  for (const reuse of read(root, 'docs/gallery/co-cfr-a2-reuses-20261113.json', {}).reuses ?? []) {
+    if (reuse.status !== 'visually_reviewed') continue
+    const source = coSources.get(reuse.source_id)
+    if (!source || source.niveau !== 'A1-A2') continue
+    const support = source.support ?? {}, index = reuse.audio_index - 1
+    const text = Array.isArray(support.transcription) ? support.transcription[index] : support.transcription
+    const audio = support.audios?.[index] ?? (index === 0 ? support.audio : undefined)
+    if (audio !== reuse.audio || typeof text !== 'string' || createHash('sha256').update(text).digest('hex') !== reuse.transcription_sha256) continue
+    associationScenes.add(reuse.path)
+    add(reuse.path, { types: ['Scénario'], labels: [reuse.label], themes: ['CO CFR A2', 'Situations CO'], terms: [reuse.source_id, text] })
   }
   return files.map(file => {
     const src = file.startsWith('public/') ? '/' + file.slice(7) : '/' + file
@@ -93,9 +124,19 @@ export function buildGalleryCatalog(root, files = repositoryImages(root)) {
     else if (/\/po\/|\/scenes\/|\/communication\//.test(file)) types.push('Scénario')
     else if (/ce-art|ce-documents/.test(file)) types.push('Document')
     else if (/\/bg\//.test(file)) types.push('Lieu et décor')
-    else if (/personnage|portrait|metiers|famille|emotion/.test(norm(file))) types.push('Personnage')
+    else if (/\/metiers\//.test(norm(file))) {
+      types.push('Personnage')
+      if (!/^(?:etudiant|etudiante|eleve|retraite|retraitee|chomeur|chomeuse)$/.test(norm(label))) types.push('Métier')
+    }
+    else if (/personnage|portrait|famille|emotion/.test(norm(file))) types.push('Personnage')
     else if (/\/vocabulaire\/(?:ville|nature|pays|ciel-espace|orientation)\//.test(file)) types.push('Lieu et décor')
-    else if (/\/vocabulaire\/(?:animaux[^/]*|oiseaux|insectes[^/]*|plantes)\//.test(file)) types.push('Animal et végétal')
+    else if (/\/vocabulaire\/(?:animaux[^/]*|oiseaux|insectes[^/]*)\//.test(file)) {
+      const subject = norm(label)
+      if (['ferme', 'chenil', 'ecurie', 'poulailler', 'zoo'].includes(subject)) types.push('Lieu et décor')
+      else if (['niche', 'groin', 'nid', 'plume', 'laisse', 'collier', 'cage'].includes(subject)) types.push('Objet')
+      else types.push('Animal')
+    }
+    else if (/\/vocabulaire\/(?:plantes|fruits[^/]*|legumes[^/]*)\//.test(file)) types.push('Végétal')
     else if (/\/vocabulaire\//.test(file) && !types.length) types.push('Objet')
     else if (/qcm-audit/.test(file) && !types.length) {
       const subject = norm(label)
@@ -104,6 +145,18 @@ export function buildGalleryCatalog(root, files = repositoryImages(root)) {
       else if (/\b(?:pantalon|robe|costume|canape|fauteuil|lit|armoire|chaise|table|velo|voiture|train|bus|avion|bateau|horloge|montre|sac|livre|bouteille|carafe|jus|tarte|glace|salade|chocolat|cafe|cacao|the|plante|fleur|telephone|cle|crayon|stylo|cahier|assiette|verre|guitare|pain|pomme|banane|casque|pompe|antivol|manteau|chaussure|parapluie|gant|lunette|lampe)\b/.test(subject)) types.push('Objet')
     }
     if (!types.length) types.push('Illustration')
+    const classification = classifications.get(src)
+    if (classification) {
+      types = [...classification.types]
+      if (classification.label) label = classification.label
+    }
+    if (associationScenes.has(src)) types.push('Scénario')
+    // Originals remain individually downloadable; the Action filter shows the
+    // reviewed TCF replacement once it exists, rather than both style versions.
+    if (replaced.has(src)) types = ['Version antérieure']
+    types = types.filter(type => type !== 'Animal et végétal')
+    if (!types.length) types.push('Illustration')
+    if (!replaced.has(src) && /\/vocabulaire\/sante\//.test(file) && /^(?:allergie|blessure|brulure|coupure|douleur|fievre|fracture|grippe|infection|mal de tete|mal de ventre|malade|nausee|rhume|toux|vomissement|vertige)$/.test(norm(label))) types = ['Maladie']
     const themes = new Set(meta.themes)
     if (file.includes('/vocabulaire/')) themes.add(pretty(file.split('/vocabulaire/')[1].split('/')[0]))
     const subject = norm([label, ...meta.labels, ...meta.themes, file].join(' '))

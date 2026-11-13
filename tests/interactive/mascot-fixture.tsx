@@ -12,7 +12,7 @@ export function mountMascots() {
     {MASCOTS.map((mascot) => <section key={mascot.id} className="ci-app" data-mascot={mascot.id} style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 120px)', gap: 16, padding: 24 }}>
       <h2 style={{ gridColumn: '1 / -1' }}>{mascot.label}</h2>
       {poses.map((pose) => <div key={pose} data-test-mascot={mascot.id} data-test-pose={pose} style={{ width: 110 }}>
-        <Mascot pose={pose} label={`${mascot.label} ${pose}`} className="ci-phase-art" />
+        <Mascot kind={mascot.id} pose={pose} label={`${mascot.label} ${pose}`} className="ci-phase-art" />
         <p>{pose}</p>
       </div>)}
     </section>)}

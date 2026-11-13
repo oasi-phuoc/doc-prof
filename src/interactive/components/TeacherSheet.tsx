@@ -3,9 +3,10 @@ import type { Game } from '../domain/types'
 import type { ShapeId } from '../domain/palette'
 import { teacherSheetData, teacherSheetHtml, teacherSheetSignature } from '../domain/teacher-sheet'
 import { browserMediaUrl } from '../media/policy'
+import { usePreparedMedia, type MediaResolver } from '../media/prepared-context'
 
-async function embedImage(source: string, budget: { bytes: number }): Promise<string | undefined> {
-  const url = browserMediaUrl(source)
+async function embedImage(source: string, budget: { bytes: number }, resolve: MediaResolver): Promise<string | undefined> {
+  const url = browserMediaUrl(resolve(source))
   if (!url) return undefined
   const controller = new AbortController()
   const timeout = setTimeout(() => controller.abort(), 8000)
@@ -41,6 +42,7 @@ async function embedImage(source: string, budget: { bytes: number }): Promise<st
 export function TeacherSheet({ game, colors, shapes, disabled, lastSignature, onExport }: { game: Game; colors: string[]; shapes: ShapeId[]; disabled: boolean; lastSignature: string; onExport: (signature: string) => void }) {
   const [busy, setBusy] = useState(false)
   const [message, setMessage] = useState('')
+  const resolve = usePreparedMedia()
   const signature = teacherSheetSignature(game, colors, shapes)
   const outdated = !!lastSignature && signature !== lastSignature
   const download = async () => {
@@ -55,7 +57,7 @@ export function TeacherSheet({ game, colors, shapes, disabled, lastSignature, on
       await Promise.all(Array.from({ length: Math.min(4, urls.length) }, async () => {
         while (index < urls.length) {
           const source = urls[index++]!
-          const value = await embedImage(source, budget)
+          const value = await embedImage(source, budget, resolve)
           if (value) images.set(source, value)
         }
       }))

@@ -1,0 +1,23 @@
+{
+  "id": "catalogue-20261113-action-demander-une-salle",
+  "label": "Demander une salle",
+  "type": "Action",
+  "subtype": "Actions quotidiennes",
+  "original": "/lib/images/vocabulaire/actions/demander-une-salle.webp",
+  "original_sha256": "dfc6acde300ad1dc92a83d47d8f13d07804350503e0a697ac64540c0a7bba6c4",
+  "path": "/lib/images/tcf/catalogue/actions/demander-une-salle.webp",
+  "status": "visually_reviewed",
+  "prompt": "Refaire entièrement la PREMIÈRE référence dans le style graphique de la DEUXIÈME référence TCF validée. La première ne fournit que le sens de l’action ; supprimer son rendu photo/détouré, ses visages et ses éventuels textes. La seconde est une référence de peinture uniquement : ne pas reprendre ses personnages ni leurs instruments. Peinture numérique semi-réaliste détaillée, volumes doux, contours fins discrets, couleurs naturelles chaleureuses ; aucun rendu photo, 3D ou gros contour BD. Paysage EXACTEMENT 4:3. Sujet et accessoires entiers, marges suffisantes. Une seule scène cohérente, décor également peint sobre avec fond crème lumineux ; pas de collage, bulle ou panneau explicatif. Aucun texte, chiffre, date, jour, mois, prix, pourcentage, logo ou signature. Ne jamais reproduire les mêmes visages d’une scène à l’autre. Sujet : Représenter clairement l’action « demander une salle » montrée dans la première référence, avec tous les accessoires utiles et un décor approprié sobre. Personnage principal proposé : une femme blanche adulte aux cheveux roux bouclés, pull vert sauge. Adapter naturellement le genre au rôle ; ne pas utiliser de stéréotype. Si un enfant est nécessaire à l’action, garder un adulte accompagnant.",
+  "reference_images": [
+    "/workspace/doc-prof/public/lib/images/vocabulaire/actions/demander-une-salle.webp",
+    "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+  ],
+  "output_hint": "Generated images are saved to /workspace/generated_images as /workspace/generated_images/exec-82e6d07f-a298-472d-9d0f-dc1487f715a2.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+  "source_png": "/workspace/generated_images/exec-82e6d07f-a298-472d-9d0f-dc1487f715a2.png",
+  "style_references": [
+    "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+  ],
+  "review_note": "Action entière et accessoires pertinents contrôlés sur planche, peinture douce TCF, silhouettes et visages variés ; ni prix ni date ni panneaux multiples. Libellé grammatical adapté au genre effectivement représenté si nécessaire.",
+  "sha256": "b1a742ae6795f7a80b62010065bff59eea6a165964e86887507f9c939f273cb3",
+  "original_label": "demander une salle"
+}

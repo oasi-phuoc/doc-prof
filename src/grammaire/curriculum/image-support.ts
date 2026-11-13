@@ -25,13 +25,13 @@ export function consistentGrammarImages(units:Array<{imageSupports?:GrammarImage
   return true
 }
 /** Verify bytes before exposing a blob URL. A changed file never replaces a saved visual. */
-export function loadGrammarImage(support: GrammarImageSupport): Promise<Blob> {
+export function loadGrammarImage(support: GrammarImageSupport, fetchMedia: typeof fetch = globalThis.fetch.bind(globalThis)): Promise<Blob> {
   if (!validGrammarImage(support)) return Promise.reject(new Error('Référence d’image invalide.'))
   const key=support.src+':'+support.sha256,cached=verified.get(key)
   if (cached) return cached
   const request=(async()=>{
     let response:Response
-    try {response=await fetch(support.src,{redirect:'error',credentials:'same-origin'})}
+    try {response=await fetchMedia(support.src,{redirect:'error',credentials:'same-origin'})}
     catch {throw new Error('Image indisponible. Réessayez son chargement.')}
     if (!response.ok) throw new Error('Image indisponible.')
     const blob=await response.blob()

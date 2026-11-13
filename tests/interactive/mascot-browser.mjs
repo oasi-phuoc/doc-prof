@@ -13,7 +13,7 @@ try {
   await page.evaluate(async () => { const { mountMascots } = await import('/tests/interactive/mascot-fixture.tsx'); mountMascots() })
   await page.locator('[data-test-effects] .ci-mascot-incorrect').waitFor()
   const examples = page.locator('#mascot-test-root [data-test-pose] .ci-mascot-sprite')
-  assert.equal(await examples.count(), 36)
+  assert.equal(await examples.count(), 180)
   const samples = await examples.evaluateAll((elements) => elements.map((element) => {
     const style = getComputedStyle(element)
     const animation = element.getAnimations()[0]
@@ -40,7 +40,7 @@ try {
     await Promise.all([...urls].map(async (url) => { const image = new Image(); image.src = url; await image.decode() }))
   })
   assert.deepEqual(errors, [])
-  const results = { mascots: 6, poses: 6, movingExamples: samples.length, reducedMotion: 'mascots and effects remain active as requested', dragon: 'six poses decoded and animated', errors }
+  const results = { mascots: 30, poses: 6, movingExamples: samples.length, reducedMotion: 'mascots and effects remain active as requested', dragon: 'six poses decoded and animated', errors }
   await writeFile('docs/interactive/mascot-results.json', JSON.stringify(results, null, 2) + '\n')
   console.log(JSON.stringify(results, null, 2))
 } finally { await browser.close() }

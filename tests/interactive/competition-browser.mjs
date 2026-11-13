@@ -55,7 +55,7 @@ try {
     page.on('pageerror', (error) => errors.push(error.message))
     await page.goto(`${base}/interactif/rejoindre/${code}`)
     await page.getByRole('heading', { name: 'Rejoins la compétition', exact: true }).waitFor()
-    assert.equal(await page.getByRole('group', { name: 'Choisir ta mascotte', exact: true }).getByRole('button').count(), 12)
+    assert.equal(await page.getByRole('group', { name: 'Choisir ta mascotte', exact: true }).getByRole('button').count(), 30)
     await publicClean(page)
     await button(page, i ? 'Tigre' : 'Panda').click(); await button(page, 'Rejoindre la salle').click()
     await page.getByText('Tu es dans la salle. Attends le départ.', { exact: true }).waitFor()
@@ -85,7 +85,7 @@ try {
   await host.locator('.ci-answer-key').waitFor()
   await button(host, 'Terminer la compétition').click(); await button(host, 'Terminer et voir le classement').click()
   await host.getByRole('heading', { name: 'Bravo à tous !', exact: true }).waitFor()
-  results.push({ online: 'real Worker router and room objects over HTTP; host and two independent browsers; public join without account or name; 12 mascot choices and QR', grading: 'server score, hidden key until reveal, one submitted answer, six-card correction and durable restart', accessibility: 'axe join screens pass; phone answer cards and controls fit', source: 'two selected worksheet questions kept' })
+  results.push({ online: 'real Worker router and room objects over HTTP; host and two independent browsers; public join without account or name; 30 mascot choices and QR', grading: 'server score, hidden key until reveal, one submitted answer, six-card correction and durable restart', accessibility: 'axe join screens pass; phone answer cards and controls fit', source: 'two selected worksheet questions kept' })
   for (const learner of learners) await learner.context.close()
   await hostContext.close()
 

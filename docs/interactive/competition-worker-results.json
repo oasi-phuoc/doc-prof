@@ -1,6 +1,6 @@
 {
   "runtime": "real workerd through Miniflare, SQLite-backed Durable Objects",
-  "workerBytes": 51201,
+  "workerBytes": 53212,
   "quiz": "60 questions, serialized content larger than 128 KiB; bounded atomic KV chunks accepted by the real runtime",
   "authority": "teacher key and room capabilities; learner cannot control host; original source IDs and future keys absent from learner view",
   "grading": "1000 and 0 points derived by server",
@@ -8,5 +8,6 @@
   "matching": "Three-pair group retained after restart; an already associated word is rejected with HTTP 400; the next correct pair scores 2000 points in total; current key stays private",
   "productionDeployment": false,
   "transcripts": "Two listeners and two questions on the same recording: no transcript in lobby, questions or first correction; final correction releases only the current text; stale pause refused; paused review text and scores survive a new SQLite runtime.",
-  "wordClassification": "Only neutral tokens and the target position reach learners; injected category tags are rejected; SQLite restart preserves the phrase and private grading."
+  "wordClassification": "Only neutral tokens and the target position reach learners; injected category tags are rejected; SQLite restart preserves the phrase and private grading.",
+  "mascots": "The common Leaf and new Kitsune identities join the real Worker, remain in the public roster and keep their scores after restart; no name or nickname supplied."
 }

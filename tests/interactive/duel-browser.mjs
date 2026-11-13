@@ -85,15 +85,21 @@ try{
       const find=(side,text)=>[...document.querySelectorAll(`.ci-duel-player[data-side="${side}"] .ci-duel-answer`)].find(node=>node.querySelector('.ci-duel-answer-content').textContent===text)
       find('left','4').click();find('right','5').click()
     })
-    assert.deepEqual(await hp(page),[100,90]);assert.equal(await page.locator('.ci-duel-impact path').count(),1)
+    assert.deepEqual(await hp(page),[100,90]);assert.equal(await page.locator('.ci-duel-flight').count(),1)
+    assert.equal(await page.locator('.ci-duel-impact').getAttribute('data-attacker'),'left')
+    assert.equal(await page.locator('.ci-duel-impact').getAttribute('data-direction'),width<=700?'down':'right')
     assert.equal(await side(page,'right').locator('.ci-duel-answer-key').count(),1)
     assert.equal(await side(page,'right').locator('.ci-duel-answer-muted').count(),5)
     await next(page,first);assert.equal(await page.locator('.ci-duel-critical').innerText(),'Critique ! 20 %')
     const second=await id(page);await answer(page,'left','5').click()
-    assert.deepEqual(await hp(page),[80,90]);assert.equal(await page.locator('.ci-duel-impact path').count(),2)
+    assert.deepEqual(await hp(page),[80,90]);assert.equal(await page.locator('.ci-mistake-object').count(),6)
+    assert.equal(await page.locator('.ci-duel-flight').count(),0)
+    assert.equal(await page.locator('.ci-duel-impact').getAttribute('data-impact-kind'),'mistake')
+    assert.equal(await page.locator('.ci-duel-impact').getAttribute('data-attacker'),null)
+    assert.equal(await page.locator('.ci-duel-impact').getAttribute('data-victim'),'left')
     assert.equal(await side(page,'left').locator('.ci-competition-portrait').evaluate(node=>getComputedStyle(node).animationName),'ci-duel-super-hurt')
-    assert.deepEqual(await page.locator('.ci-duel-impact path').evaluateAll(nodes=>nodes.map(node=>getComputedStyle(node).animationName)),['ci-duel-slash','ci-duel-slash'])
-    await page.waitForTimeout(200) // Capture the delayed second slash during the impact, before the next question.
+    assert.ok((await page.locator('.ci-mistake-object').evaluateAll(nodes=>nodes.map(node=>getComputedStyle(node).animationName))).every(name=>name==='ci-duel-fall'))
+    await page.waitForTimeout(200) // Capture the falling objects during the critical mistake.
     await page.screenshot({path:`docs/interactive/screenshots/duel-critical-${width}.png`})
     await next(page,second);await axe(page)
     await button(page,'Plein écran').click();await fits(page)
@@ -129,7 +135,7 @@ try{
       assert.equal((await page.evaluate(()=>Object.keys(sessionStorage).filter(key=>key.startsWith('clairfle.duel.duel.')).length)),2)
       results.push({duel:'first simultaneous click wins; normal correct answer deals 10%; critical wrong answer deals 20% to oneself; repeated questions continue to zero; one winner',resume:'exit through all setup screens retains source quiz, seed, 80/90 health and progress',restart:'explicit new game renews the source session and creates a separate empty journal; the previous completed duel is preserved',journal:'replayed actions only, without question bodies, private keys or score snapshots'})
     }
-    results.push({viewport:`${width}x${height}`,cards:'two players and health bars fit; touch targets at least 44 px; only correct cards retain color',animation:'one central unarmed slash, two on critical and stronger hurt, active with reduced-motion preference',fullscreen:'only exit-fullscreen remains in the header',axeViolations:0})
+    results.push({viewport:`${width}x${height}`,cards:'two players and health bars fit; touch targets at least 44 px; only correct cards retain color',animation:'directional curved attack on a correct answer; critical mistake drops six objects on oneself with stronger hurt; active with reduced-motion preference',fullscreen:'only exit-fullscreen remains in the header',axeViolations:0})
     await context.close()
   }
   for(const [width,height]of [[390,844],[1366,768],[360,640]]){
@@ -162,6 +168,7 @@ try{
         const label={determinant:'Déterminants',nom:'Noms',pronom:'Pronoms',verbe:'Verbes'}[tokens[position].category]
         const damage=await page.locator('.ci-duel-critical').count()?20:10
         await answer(page,'left',label).click();targetHP=Math.max(0,targetHP-damage);assert.equal((await hp(page))[1],targetHP)
+        assert.equal(await page.locator('.ci-duel-impact').getAttribute('data-effect'),expected[pairIndex].left.avatarId)
         if(targetHP)await next(page,old)
       }
       assert.equal(targetHP,0)

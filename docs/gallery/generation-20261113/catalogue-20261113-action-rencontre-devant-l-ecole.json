@@ -1,0 +1,23 @@
+{
+  "id": "catalogue-20261113-action-rencontre-devant-l-ecole",
+  "label": "Rencontre devant l'école",
+  "type": "Action",
+  "subtype": "Actions quotidiennes",
+  "original": "/lib/images/vocabulaire/actions/rencontre-devant-l-ecole.webp",
+  "original_sha256": "1fe1770153043b1450159432d5d8b7dc1253c1ba3a182249b4f65c16f5fed496",
+  "path": "/lib/images/tcf/catalogue/actions/rencontre-devant-l-ecole.webp",
+  "status": "visually_reviewed",
+  "prompt": "Refaire entièrement la PREMIÈRE référence dans le style graphique de la DEUXIÈME référence TCF validée. La première ne fournit que le sens de l’action ; supprimer son rendu photo/détouré, ses visages et ses éventuels textes. La seconde est une référence de peinture uniquement : ne pas reprendre ses personnages ni leurs instruments. Peinture numérique semi-réaliste détaillée, volumes doux, contours fins discrets, couleurs naturelles chaleureuses ; aucun rendu photo, 3D ou gros contour BD. Paysage EXACTEMENT 4:3. Sujet et accessoires entiers, marges suffisantes. Une seule scène cohérente, décor également peint sobre avec fond crème lumineux ; pas de collage, bulle ou panneau explicatif. Aucun texte, chiffre, date, jour, mois, prix, pourcentage, logo ou signature. Ne jamais reproduire les mêmes visages d’une scène à l’autre. Sujet : Deux personnes se retrouvent devant une école, façade et entrée visibles, salut amical. Personnage principal proposé : une femme blanche adulte aux cheveux roux bouclés, pull vert sauge. Adapter naturellement le genre au rôle ; ne pas utiliser de stéréotype. Si un enfant est nécessaire à l’action, garder un adulte accompagnant.",
+  "reference_images": [
+    "/workspace/doc-prof/public/lib/images/vocabulaire/actions/rencontre-devant-l-ecole.webp",
+    "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+  ],
+  "output_hint": "Generated images are saved to /workspace/generated_images as /workspace/generated_images/exec-70f551a7-7786-4eeb-8d88-4f1913b52286.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+  "source_png": "/workspace/generated_images/exec-70f551a7-7786-4eeb-8d88-4f1913b52286.png",
+  "style_references": [
+    "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+  ],
+  "review_note": "Action entière et accessoires pertinents contrôlés sur planche, peinture douce TCF, silhouettes et visages variés ; ni prix ni date ni panneaux multiples. Libellé grammatical adapté au genre effectivement représenté si nécessaire.",
+  "sha256": "c623939ad9cbd21b749434aa46646eece6a6c0550ab0eeef356a5de51a9f9e8f",
+  "original_label": "rencontre devant l'ecole"
+}

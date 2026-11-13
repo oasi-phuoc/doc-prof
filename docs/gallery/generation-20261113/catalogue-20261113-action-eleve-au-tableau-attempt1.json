@@ -1,0 +1,18 @@
+{
+  "id": "catalogue-20261113-action-eleve-au-tableau",
+  "label": "eleve au tableau",
+  "type": "Action",
+  "subtype": "Actions quotidiennes",
+  "original": "/lib/images/vocabulaire/actions/eleve-au-tableau.webp",
+  "original_sha256": "6d988c23055853cb8d817d9d183d1fcf31b4c5084d1d283c7e91204e9eb87f05",
+  "path": "/lib/images/tcf/catalogue/actions/eleve-au-tableau.webp",
+  "status": "rejected_visual_review",
+  "prompt": "Refaire entièrement la PREMIÈRE référence dans le style graphique de la DEUXIÈME référence TCF validée. La première ne fournit que le sens de l’action ; supprimer son rendu photo/détouré, ses visages et ses éventuels textes. La seconde est une référence de peinture uniquement : ne pas reprendre ses personnages ni leurs instruments. Peinture numérique semi-réaliste détaillée, volumes doux, contours fins discrets, couleurs naturelles chaleureuses ; aucun rendu photo, 3D ou gros contour BD. Paysage EXACTEMENT 4:3. Sujet et accessoires entiers, marges suffisantes. Une seule scène cohérente, décor également peint sobre avec fond crème lumineux ; pas de collage, bulle ou panneau explicatif. Aucun texte, chiffre, date, jour, mois, prix, pourcentage, logo ou signature. Ne jamais reproduire les mêmes visages d’une scène à l’autre. Sujet : Représenter clairement l’action « eleve au tableau » montrée dans la première référence, avec tous les accessoires utiles et un décor approprié sobre. Personnage principal proposé : un homme noir adulte avec barbe courte, veste marine. Adapter naturellement le genre au rôle ; ne pas utiliser de stéréotype. Si un enfant est nécessaire à l’action, garder un adulte accompagnant.",
+  "reference_images": [
+    "/workspace/doc-prof/public/lib/images/vocabulaire/actions/eleve-au-tableau.webp",
+    "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+  ],
+  "output_hint": "Generated images are saved to /workspace/generated_images as /workspace/generated_images/exec-749e16e1-04d7-4804-9824-3a424b823059.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+  "source_png": "/workspace/generated_images/exec-749e16e1-04d7-4804-9824-3a424b823059.png",
+  "review_note": "L’élève doit être au tableau ; le rendu montre le professeur au tableau."
+}

@@ -1,0 +1,12 @@
+{
+  "policy": "Trois files indépendantes de 400, 128 et 128 sujets. Seules les fins non encore lues des files actives ont été détachées ; aucun indice déjà consommé ni sujet en cours n’a été déplacé. La file complète de 656 sujets est conservée. Les partitions sont désormais historiques ; la file de reprise courante est reconstruite à partir des sujets manquants.",
+  "complete": "generation-file-sujets-complete-20261113.json",
+  "active_first": "generation-partition-initiale-20261113.json",
+  "active_tail": "generation-file-sujets-suite-20261113.json",
+  "first_count": 400,
+  "tail_count": 128,
+  "active_tail2": "generation-file-sujets-suite2-20261113.json",
+  "tail2_count": 128,
+  "status": "stopped_usage_limit_reached",
+  "resume_queue": "generation-file-sujets-20261113.json"
+}
