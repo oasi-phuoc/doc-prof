@@ -1,0 +1,227 @@
+{
+  "date": "2026-11-13",
+  "human_audio_listening_performed": false,
+  "method": "Bornes localisées à partir des mots natifs et des silences du signal, suivies d’une nouvelle reconnaissance du MP3 encodé. Les seuils de silence seuls ne valident pas un mot.",
+  "units": {
+    "a1:019:03": {
+      "source_sha256": "ed3db7ae4db7b24632e2deb49dc500807e0ca2b422fb4ea3499c7b59efed3005",
+      "segments": {
+        "0": {
+          "start": 23.182,
+          "end": 29.9,
+          "reason": "Conserver le quart final après moins ; parole jusque 29.515 s, puis silence avant le numéro suivant."
+        }
+      }
+    },
+    "a1:042": {
+      "source_sha256": "b9130a63e7205987778e584435d5a149fc9ce98ff9657259e8142d5e782487aa",
+      "segments": {
+        "0": {
+          "start": 3.4,
+          "end": 5.27,
+          "reason": "Silence séparant le numéro de la phrase horaire ; conservation de la fin de l’heure avant le numéro suivant."
+        },
+        "1": {
+          "start": 6.9,
+          "end": 8.85,
+          "reason": "Silence séparant le numéro de la phrase horaire ; conservation de la fin de l’heure avant le numéro suivant."
+        },
+        "2": {
+          "start": 10.35,
+          "end": 12.15,
+          "reason": "Silence séparant le numéro de la phrase horaire ; conservation de la fin de l’heure avant le numéro suivant."
+        },
+        "3": {
+          "start": 13.8,
+          "end": 15.72,
+          "reason": "Silence séparant le numéro de la phrase horaire ; conservation de la fin de l’heure avant le numéro suivant."
+        },
+        "4": {
+          "start": 17.23,
+          "end": 19.64,
+          "reason": "Silence séparant le numéro de la phrase horaire ; conservation de la fin de l’heure avant le numéro suivant."
+        },
+        "5": {
+          "start": 21.55,
+          "end": 23.23,
+          "reason": "Silence séparant le numéro de la phrase horaire ; conservation de la fin de l’heure avant le numéro suivant."
+        }
+      }
+    },
+    "a1:051:05:01": {
+      "source_sha256": "7b037541f17f87fa35fe5deada6bf4c2832fc718dc133e2436c20205eee42f65",
+      "segments": {
+        "0": {
+          "start": 858.14,
+          "end": 877.75,
+          "reason": "Seconde lecture complète après le silence 843.028–858.314, sans la fin de la première lecture."
+        }
+      }
+    },
+    "a1:052:05:01": {
+      "source_sha256": "fff1814ef9f25e089a99e94db5e2fb3816e59e98724c19a2cf4fcbaa6d534045",
+      "segments": {
+        "0": {
+          "start": 849.2,
+          "end": 870.65,
+          "reason": "Seconde lecture complète après le silence 833.807–849.376, avec vacances final."
+        }
+      }
+    },
+    "a2:001": {
+      "source_sha256": "6311980e0bfd184be93df6af2323145259448270c23c28a109d82b6a01c1effd",
+      "segments": {
+        "0": {
+          "start": 17.0,
+          "end": 19.73,
+          "reason": "Début après le numéro un, et fin de billet avant la pause."
+        }
+      }
+    },
+    "a2:007:01": {
+      "source_sha256": "9fe199df217a29ade76f0d6054720c2c3e443b4c04641514306fd7048b7d78a7",
+      "segments": {
+        "0": {
+          "start": 22.7,
+          "end": 38.404,
+          "reason": "Retrait de écoutez le document puis répondez avant l’annonce publique."
+        }
+      }
+    },
+    "a2:017:01": {
+      "source_sha256": "06410c8679834f437ee0d398d6c772043845f063e3f84cef85c1a89f4409ea6f",
+      "segments": {
+        "0": {
+          "start": 31.08,
+          "end": 50.9,
+          "reason": "Bonjour Léo après la consigne et sa longue pause ; aucune consigne dans le MP3."
+        }
+      }
+    },
+    "a2:036": {
+      "source_sha256": "847f407a436d17227d73a22a7ed93bf9da0ede8c205a95e4467376ca7d3ddcd1",
+      "segments": {
+        "6": {
+          "start": 35.12,
+          "end": 36.88,
+          "reason": "J’habite à Prague après la lettre G : silence 34.772–35.260, parole jusque36.635. Alignement Whisper local prague-local-dtw.json et signal."
+        }
+      }
+    },
+    "a2:037": {
+      "source_sha256": "a343bae2469c9897473583cde087617684bb6a290e7af5d9cdff1a66d2936413",
+      "segments": {
+        "9": {
+          "start": 88.86,
+          "end": 92.12,
+          "reason": "Dernière réponse seule, sans 10 D et la question précédente ; confirmation sur le nouveau MP3 demandée."
+        }
+      }
+    },
+    "a2:039": {
+      "source_sha256": "6334a7c215cb38c9a86dbd8b82d868cb820997cb29bccb4d1fc094c9d6b97df8",
+      "segments": {
+        "0": {
+          "start": 11.2,
+          "end": 16.0,
+          "reason": "Retrait du numéro et de la lettre de corrigé avant la paire de formules."
+        },
+        "1": {
+          "start": 18.65,
+          "end": 24.5,
+          "reason": "Retrait du numéro et de la lettre de corrigé avant la paire de formules."
+        },
+        "2": {
+          "start": 25.82,
+          "end": 31.3,
+          "reason": "Retrait du numéro et de la lettre de corrigé avant la paire de formules."
+        },
+        "3": {
+          "start": 32.85,
+          "end": 39.0,
+          "reason": "Retrait du numéro et de la lettre de corrigé avant la paire de formules."
+        },
+        "4": {
+          "start": 40.6,
+          "end": 46.82,
+          "reason": "Retrait du numéro et de la lettre de corrigé avant la paire de formules."
+        },
+        "5": {
+          "start": 48.75,
+          "end": 55.06,
+          "reason": "Retrait du numéro et de la lettre de corrigé avant la paire de formules."
+        }
+      }
+    },
+    "b1:008:01": {
+      "source_sha256": "30ae0850add12de5f386700cc40b0bf1eba175618ba92b401e9aef532f9f50ea",
+      "segments": {
+        "0": {
+          "start": 8.67,
+          "end": 94.02,
+          "reason": "Début du dialogue après puis répondez ; mots natifs et marge avant la première syllabe. Contrôle du fichier final obligatoire."
+        }
+      }
+    },
+    "b1:009:01": {
+      "source_sha256": "b849579cccbf3e01d9d8fe84ab3edaf287fe87622d416f73663f575bc2818276",
+      "segments": {
+        "0": {
+          "start": 7.39,
+          "end": 97.332,
+          "reason": "Début du dialogue après puis répondez ; mots natifs et marge avant la première syllabe. Contrôle du fichier final obligatoire."
+        }
+      }
+    },
+    "b1:011:01": {
+      "source_sha256": "15e1e0a45fb37604983c2677c2721dbed0776787116416c0600ab97a4abd6e89",
+      "segments": {
+        "0": {
+          "start": 9.31,
+          "end": 116.7,
+          "reason": "Début du dialogue après puis répondez ; mots natifs et marge avant la première syllabe. Contrôle du fichier final obligatoire."
+        }
+      }
+    },
+    "b1:012:01": {
+      "source_sha256": "24a320216c1a89ef05868e7e2fab97beb41da17d6648d709f6cc4dccb424a392",
+      "segments": {
+        "0": {
+          "start": 7.72,
+          "end": 108.18,
+          "reason": "Début du dialogue après puis répondez ; mots natifs et marge avant la première syllabe. Contrôle du fichier final obligatoire."
+        }
+      }
+    },
+    "b1:022:01": {
+      "source_sha256": "560d7eb313ecccb44327f02c95b437ea2bad3facd4df60e6dfcb69ac41056097",
+      "segments": {
+        "0": {
+          "start": 8.85,
+          "end": 121.764,
+          "reason": "Début du dialogue après puis répondez ; mots natifs et marge avant la première syllabe. Contrôle du fichier final obligatoire."
+        }
+      }
+    },
+    "b1:024:01": {
+      "source_sha256": "e04800b35e65c08e3672a7b10c3e1e8de5b06be9503d8505138bd42ee8e55789",
+      "segments": {
+        "0": {
+          "start": 8.45,
+          "end": 121.1385,
+          "reason": "Début du dialogue après puis répondez ; mots natifs et marge avant la première syllabe. Contrôle du fichier final obligatoire."
+        }
+      }
+    },
+    "b1:025:01": {
+      "source_sha256": "92e19e7f4795875de50b2d56a0957404f15c8c16021fc7f71a1e0b1f9ae61bff",
+      "segments": {
+        "0": {
+          "start": 8.62,
+          "end": 127.412,
+          "reason": "Début du dialogue après puis répondez ; mots natifs et marge avant la première syllabe. Contrôle du fichier final obligatoire."
+        }
+      }
+    }
+  }
+}

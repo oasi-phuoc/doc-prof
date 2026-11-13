@@ -3,17 +3,116 @@
   "human_audio_listening_performed": false,
   "units": {
     "a1:039:01": {
-      "replace": [["un grand un lit", "un grand lit"]],
+      "replace": [
+        [
+          "un grand un lit",
+          "un grand lit"
+        ]
+      ],
       "reason": "Coquille du PDF : le double article n'est présent ni dans Parakeet ni dans la reconnaissance française indépendante Whisper. Les questions ne dépendent pas de cette correction."
     },
     "a1:052:01:01": {
-      "replace": [["Hugo", "Vanessa."]],
+      "replace": [
+        [
+          "Hugo",
+          "Vanessa."
+        ]
+      ],
       "reason": "Écart de signature entre le PDF et le fichier reçu. Parakeet reconnaît Vanessa aux deux lectures. La seconde lecture locale est aussi transcrite Vanessa par Whisper en français (signature-52-2-caaca983b5dd.json). La graphie d'un nom non épelé reste une convention éditoriale ; aucune question ne porte sur cette signature.",
-      "evidence": "work/delf-actif-20261113/signature-52.json"
+      "evidence": "relectures/signature-52.json"
     },
     "a2:036": {
-      "replace": [["D come David, U comme…", "D comme David, U comme Uli."]],
+      "replace": [
+        [
+          "D come David, U comme…",
+          "D comme David, U comme Uli."
+        ]
+      ],
       "reason": "La phrase d'épellation est rétablie d'après Parakeet et Whisper français ; le PDF écrit come et s'interrompt après U comme. Uli est une graphie éditoriale d'un prénom non épelé, sans question portant sur ce prénom."
+    },
+    "a1:051:04:02": {
+      "replace": [
+        [
+          "de Chine",
+          "d’Allemagne"
+        ]
+      ],
+      "reason": "Les deux reconnaissances indépendantes du MP3 final indiquent Allemagne, contrairement au PDF. La réponse du QCM est corrigée en même temps.",
+      "evidence_audio_key": "a1:051:04:02"
+    },
+    "a1:052:05:01": {
+      "replace": [
+        [
+          "On va passer des vacances super.",
+          "On va passer de super vacances."
+        ]
+      ],
+      "reason": "Ordre des mots du fichier audio confirmé par Parakeet et Whisper français."
+    },
+    "a1:024:01": {
+      "replace": [
+        [
+          "aller jouer du tennis",
+          "aller faire du tennis"
+        ],
+        [
+          "Je dois aller chez le dentiste à 18h30.",
+          "À 18h30, on doit terminer d’étudier. Je dois aller chez le dentiste."
+        ],
+        [
+          "apporte ton pantalon",
+          "apporte le pantalon"
+        ]
+      ],
+      "reason": "Les deux moteurs confirment la phrase sur la fin des devoirs à 18h30, distincte du rendez-vous chez le dentiste. Aucune question ne demande un horaire de rendez-vous médical."
+    },
+    "a2:001": {
+      "replace": [
+        [
+          "Composter votre billet.",
+          "Compostez votre billet."
+        ],
+        [
+          "Monter dans le train.",
+          "Montez dans le train."
+        ],
+        [
+          "Montrer vos passeports.",
+          "Montrez vos passeports."
+        ],
+        [
+          "Regarder le panneau lumineux.",
+          "Regardez le panneau lumineux."
+        ]
+      ],
+      "reason": "Les verbes entendus sont des impératifs en -ez, contrairement à la liste infinitive du PDF ; confirmation par les deux moteurs."
+    },
+    "a2:039": {
+      "replace": [
+        [
+          "vous dises tu",
+          "vous dise tu"
+        ]
+      ],
+      "reason": "Correction de la coquille du PDF, cohérente avec l’audio."
+    },
+    "b1:039:02:01": {
+      "replace": [
+        [
+          "destinée. <",
+          "destinée."
+        ]
+      ],
+      "reason": "Suppression d’un caractère de mise en page non prononcé."
+    },
+    "b1:039:03:01": {
+      "replace": [
+        [
+          "compétences qu’on y Alors",
+          "compétences qu’on y développe. Alors"
+        ]
+      ],
+      "reason": "Mot manquant dans le PDF extrait, présent dans la reconnaissance de l’audio ; seconde reconnaissance française demandée."
     }
   }
 }

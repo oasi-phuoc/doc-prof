@@ -19,8 +19,8 @@ import subprocess
 import unicodedata
 from functools import lru_cache
 import concurrent.futures
-import math
 import difflib
+import shutil
 
 ROOT = Path(__file__).resolve().parents[2]
 WORK = Path('/workspace/work/delf-actif-20261113')
@@ -34,6 +34,10 @@ def write(path, value):
 
 def sha(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
+def content_sha(value):
+    return hashlib.sha256(json.dumps(value,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode()).hexdigest()
 
 
 def literal_words(text):
@@ -57,6 +61,8 @@ def speech(text):
     text = re.sub(r'(?m)^\s*(?:Maman|Bastien|Audrey|Alain|Martin|Monsieur|Madame|Kevin|Elsa|Petite-fille|Mamie|Homme|Femme|Garçon|Fille|Agent|Victor|Clément|Jade|Alice|Julia|Léo|Bertrand|Jérôme|Garçon [12]|Le prof|L’élève)\s*:{1,2}\s*', '', text)
     # Other named speakers also have labels in the official dialogue layout.
     text = re.sub(r'(?m)^\s*(?!(?:Attention|Important|Rappel|Remarque|Conseil)\s*:)[A-ZÀ-Ÿ][a-zà-ÿ]+(?: [A-ZÀ-Ÿ][a-zà-ÿ]+)?\s*:{1,2}\s*', '', text)
+    text = re.sub(r'(?m)^\s*(?:La mère|Le père|Le grand-père|La grand-mère|La journaliste|Le journaliste|L[’\']agent|Le garçon|La fille)\s*:?[ \t]*', '', text)
+    text = re.sub(r'(?m)^\s*(?:Journaliste|Hugo)\s*[-–−]?\s*', '', text)
     text = re.sub(r'(?m)^\s*[–−-]\s*', '', text)
     return re.sub(r'\s+', ' ', unicodedata.normalize('NFC', text)).strip()
 
@@ -80,7 +86,11 @@ def body(block, level, track):
         if not kept and re.match(r'^(?:correspondante|correspondantes|correspondant|le document|les réponses|répondez\.|tableau|l’enregistrement|les réponses enregistrées|les expressions|situation correspondante|d’un dialogue|document en cochant|l’enregistrement et|l’épreuve orale|écoutez l’enregistrement|pendant l’examen|modèle\.)', clean, re.I):
             continue
         kept.append(line)
-    return '\n'.join(kept).strip()
+    result = '\n'.join(kept).strip()
+    # A PDF can wrap the introductory instruction across lines. It must not
+    # become the first sentence of the message after its first line is removed.
+    result = re.sub(r'^les questions,\s*[Éé]coutez le document puis répondez\.\s*', '', result)
+    return result
 
 
 def split_units(text):
@@ -101,7 +111,7 @@ def split_units(text):
 
 def pdf_units(level):
     text = (DOCS/'sources'/f'transcriptions-corriges-{level}.txt').read_text().replace('\f', '\n')
-    headers = list(re.finditer(r'(?m)^Piste\s*(\d+)\b[^\n]*', text))
+    headers = list(re.finditer(r'(?m)^Piste\s*(\d+)(?!\d)[^\n]*', text))
     out = []
     for i, h in enumerate(headers):
         track = int(h.group(1))
@@ -142,6 +152,10 @@ def pdf_units(level):
                           'Oui, j’ai un chat et un chien.',
                           'Oui, je pratique le tennis et la natation.',
                           'Je fais mes devoirs et je sors avec mes amis.']
+            if level == 'a2' and track == 39:
+                # These are answer-key letters printed before each complete
+                # pair of expressions, not part of the spoken message.
+                spoken = [re.sub(r'^[A-F] +', '', s) for s in spoken]
             out.append(dict(key=f'{level}:{track:03d}', level=level, track=track, part=1, reference_parts=spoken, transcription='\n'.join(spoken), pdf_line=text[:h.start()].count('\n')+1, thematic_compilation=True))
         else:
             for label, spoken in units:
@@ -203,6 +217,7 @@ def prepare():
     sources = {level: json.loads((WORK/f'{level}-sources.json').read_text())['sources'] for level in ['a1','a2','b1']}
     prepared = []
     corrections=json.loads((DOCS/'corrections-transcriptions.json').read_text())['units'] if (DOCS/'corrections-transcriptions.json').exists() else {}
+    boundaries=json.loads((DOCS/'relectures-bornes.json').read_text())['units'] if (DOCS/'relectures-bornes.json').exists() else {}
     for level in sources:
         for u in pdf_units(level):
             if u['key'] in corrections:
@@ -226,7 +241,15 @@ def prepare():
             recognitions={name:json.loads(path.read_text()) for name,path in recognition_paths.items()}
             assert all(r['source_sha256']==source['sha256'] and r['status']=='transcribed' for r in recognitions.values())
             parts=[];previous_time=-1
-            for spoken in u['reference_parts']:
+            for part_index,spoken in enumerate(u['reference_parts']):
+                reviewed=boundaries.get(u['key'],{})
+                if str(part_index) in reviewed.get('segments',{}):
+                    assert reviewed['source_sha256']==source['sha256'],u['key']
+                    override=reviewed['segments'][str(part_index)]
+                    assert 0<=override['start']<override['end']<=source['duration_seconds']
+                    parts.append(dict(reference=spoken,status='candidate',start=override['start'],end=override['end'],reviewed_boundary=override,recognition=dict(recognition_model='localized_acoustic_review',similarity=None)))
+                    previous_time=override['end']
+                    continue
                 candidates=[]
                 for model,recognition in recognitions.items():
                     for candidate in best_occurrences(spoken,recognition['words']):
@@ -315,7 +338,7 @@ def cut(levels):
     def one(u):
         if u['status']!='candidate' or u.get('parallel_reference_only'):
             return dict(key=u['key'],status='not_cut',reason=u.get('parallel_reference_only',u['status']))
-        if min(s['recognition']['similarity'] for s in u['segments'])<.65:
+        if any(s['recognition']['similarity'] is not None and s['recognition']['similarity']<.65 for s in u['segments']):
             return dict(key=u['key'],status='needs_french_alignment',source_id=u['source_id'])
         source=Path(u['source_file']);assert sha(source)==u['source_sha256']
         name=u['key'].replace(':','-');prior=WORK/'cut-reviews'/(name+'.json')
@@ -348,10 +371,129 @@ def cut(levels):
     # Two encoders bound memory, disk traffic and CPU alongside recognizers.
     with concurrent.futures.ThreadPoolExecutor(2) as pool:
         for result in pool.map(one,selected):reports.append(result)
+    # A level-specific refresh must retain the other levels in the shared
+    # catalogue, otherwise a later recognition/publish would silently omit them.
+    refreshed={r['key']:r for r in reports}
+    reports=[]
+    for u in units:
+        if u['key'] in refreshed:
+            reports.append(refreshed[u['key']]);continue
+        previous=WORK/'cut-reviews'/(u['key'].replace(':','-')+'.json')
+        if u.get('parallel_reference_only'):
+            reports.append(dict(key=u['key'],status='not_cut',reason=u['parallel_reference_only']))
+        elif previous.exists():
+            prior=json.loads(previous.read_text())
+            assert prior['source_sha256']==u['source_sha256'],u['key']
+            reports.append(prior)
+        else:
+            reports.append(dict(key=u['key'],status='cut_pending'))
     write(WORK/'cuts-index.json',dict(date='2026-11-13',units=reports))
     catalogue=[dict(source_id='actif-final-'+r['key'].replace(':','-'),source_file=r['path'],sha256=r['sha256'],unit_key=r['key']) for r in reports if 'path' in r]
     write(WORK/'cuts-sources.json',dict(sources=catalogue))
     print(json.dumps(dict(units=len(reports),status=dict(Counter(r['status'] for r in reports))),ensure_ascii=False))
+
+
+def best_quote_match(reference, text):
+    """Bounded contiguous ASR evidence, with no rewriting of recognized words."""
+    # The shared hour normalizer can consume the space after an hour (17h00
+    # devant -> 17h00devant). Repair the token boundary for this diagnostic;
+    # never merge, round or replace numerical values.
+    def diagnostic_tokens(value):
+        return [piece for token in words(value) for piece in re.sub(r'(\d+h\d{2})(?=[a-z])',r'\1 ',token).split()]
+    query=diagnostic_tokens(reference);actual=diagnostic_tokens(text)
+    if not query or not actual:return dict(score=0,recognized='')
+    prev=[0]*(len(actual)+1);starts=list(range(len(actual)+1))
+    for i,a in enumerate(query,1):
+        row=[i];next_starts=[0]
+        for j,b in enumerate(actual,1):
+            options=[(prev[j-1]+(a!=b),starts[j-1]),(prev[j]+1,starts[j]),(row[j-1]+1,next_starts[j-1])]
+            cost,start=min(options,key=lambda p:p[0]);row.append(cost);next_starts.append(start)
+        prev,starts=row,next_starts
+    end=min(range(1,len(actual)+1),key=lambda j:(prev[j],j-starts[j]))
+    span=actual[starts[end]:end]
+    return dict(score=round(1-prev[end]/len(query),4),recognized=' '.join(span),numeric_missing=[t for t in query if any(c.isdigit() for c in t) and t not in span and not(t=='1' and re.search(r'\b(?:un|une)\b',reference,re.I))])
+
+
+def evidence_report():
+    comparisons=json.loads((WORK/'final-comparisons.json').read_text())['units']
+    ed={k:v for l in ['a1','a2','b1'] for k,v in editorial(l).items()};checks=[]
+    for row in comparisons:
+        if row['key'] not in ed:continue
+        for i,q in enumerate(ed[row['key']]['questions'],1):
+            matches=[dict(engine=r['engine'],**best_quote_match(q['evidence_quote'],r['text'])) for r in row.get('comparisons',[])]
+            best=max(matches,key=lambda r:r['score'],default=dict(score=0,numeric_missing=[]))
+            checks.append(dict(key=row['key'],question=i,quote=q['evidence_quote'],matches=matches,needs_review=best['score']<.7 or bool(best['numeric_missing'])))
+    write(WORK/'question-evidence-asr.json',dict(method='Contiguous approximate quotation matching in independently recognized final MP3s. A match is supporting evidence, not a semantic or human-listening certificate.',checks=checks))
+    flagged=[r for r in checks if r['needs_review']]
+    print(json.dumps(dict(questions=len(checks),needs_review=len(flagged)),ensure_ascii=False))
+
+
+LEVELS={'a1':('a0-a1','A0-A1'),'a2':('a1-a2','A1-A2'),'b1':('a2-b1','A2-B1')}
+
+
+def make_exercise(unit, item, audio_url):
+    """Use the existing text/inline-answer forms and normal TCF audio composer."""
+    return dict(id='tcf-delf-actif-'+unit['key'].replace(':','-'),
+                niveau=LEVELS[unit['level']][1],competence='CO',type_exercice='complet',
+                theme=f"DELF Actif {unit['level'].upper()} · {item['title']}",
+                scenario=item['theme'],scene=item['title'],
+                consigne='Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.',
+                support=dict(audio=audio_url,transcription=unit['transcription']),
+                questions=[dict(enonce=q['enonce'],type_reponse='qcm_texte',points=1,melanger=True,
+                                choix=[dict(id=chr(97+i),texte=t,**({'correct':True} if i==0 else {})) for i,t in enumerate(q['choices'])],
+                                formes=dict(lignes=dict(nb_lignes=1,reponse_modele=q['choices'][0]))) for q in item['questions']])
+
+
+def check_ready(unit, item, cut, approval):
+    """An edited transcript, question or MP3 invalidates the recorded review."""
+    assert approval.get('decision')=='ready_for_tcf',unit['key']
+    assert approval.get('human_audio_listening_performed') is False
+    assert cut['source_sha256']==unit['source_sha256']
+    assert sha(cut['path'])==cut['sha256']==approval['audio_sha256'],unit['key']
+    assert content_sha(unit['transcription'])==approval['transcription_sha256'],unit['key']
+    assert content_sha(item)==approval['questions_sha256'],unit['key']
+    seconds=cut['duration_seconds'];minimum=2 if seconds<=15 else 4 if seconds<=45 else 8
+    assert len(item['questions'])>=minimum,(unit['key'],minimum)
+    spoken=' '.join(literal_words(unit['transcription']))
+    for q in item['questions']:
+        assert ' '.join(literal_words(q['evidence_quote'])) in spoken,(unit['key'],q)
+    assert approval.get('final_recognition_engines'),unit['key']
+
+
+def install():
+    units=json.loads((DOCS/'preparation.json').read_text())['units']
+    cuts={r['key']:r for r in json.loads((WORK/'cuts-index.json').read_text())['units']}
+    approvals=json.loads((DOCS/'validation-finale.json').read_text())['units']
+    ed={k:v for l in LEVELS for k,v in editorial(l).items()}
+    banks={level:json.loads((ROOT/f'src/tcf/content/{folder}/co.json').read_text()) for level,(folder,_) in LEVELS.items()}
+    durations=json.loads((ROOT/'src/tcf/content/audio-durations.json').read_text())
+    pools=json.loads((ROOT/'src/tcf/content/co-reviewed-pools.json').read_text())
+    plan=[]
+    for unit in units:
+        if unit.get('parallel_reference_only'):continue
+        key=unit['key'];item=ed[key];cut=cuts[key];check_ready(unit,item,cut,approvals[key])
+        url=f"/lib/audio/tcf/co/delf-actif-{unit['level']}/{key.replace(':','-')}.mp3"
+        exercise=make_exercise(unit,item,url)
+        old=next((e for e in banks[unit['level']] if e['id']==exercise['id']),None)
+        assert old is None or old==exercise,('Existing entry changed; review a deliberate update before replacing it',key)
+        target=ROOT/'public'/url.lstrip('/')
+        assert not target.exists() or sha(target)==cut['sha256'],('Existing audio changed',key)
+        plan.append((unit,item,cut,target,url,exercise,old))
+    # All reviews and conflicts are checked before any production mutation.
+    installed=[]
+    for unit,item,cut,target,url,exercise,old in plan:
+        if not target.exists():
+            target.parent.mkdir(parents=True,exist_ok=True);temporary=target.with_suffix('.tmp')
+            shutil.copyfile(cut['path'],temporary);assert sha(temporary)==cut['sha256'];temporary.replace(target)
+        if old is None:banks[unit['level']].append(exercise)
+        seconds=cut['duration_seconds'];durations[url]=seconds
+        pools[url]=dict(tag='court' if seconds<=15 else 'moyen' if seconds<=45 else 'long',questions=len(item['questions']))
+        installed.append(dict(key=unit['key'],exercise_id=exercise['id'],audio=url,audio_sha256=cut['sha256'],duration_seconds=seconds,questions=len(item['questions']),source_id=unit['source_id'],source_sha256=unit['source_sha256']))
+    for level,rows in banks.items():write(ROOT/f'src/tcf/content/{LEVELS[level][0]}/co.json',rows)
+    write(ROOT/'src/tcf/content/audio-durations.json',durations)
+    write(ROOT/'src/tcf/content/co-reviewed-pools.json',pools)
+    write(DOCS/'installation.json',dict(date='2026-11-13',supports=len(installed),questions=sum(r['questions'] for r in installed),units=installed,human_audio_listening_performed=False))
+    print(json.dumps(dict(installed=len(installed),questions=sum(r['questions'] for r in installed))))
 
 
 def recognition_report():
@@ -387,10 +529,12 @@ def recognition_report():
 
 if __name__ == '__main__':
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('command',choices=['prepare','quotes','cut','recognitions'])
+    parser.add_argument('command',choices=['prepare','quotes','cut','recognitions','evidence','install'])
     parser.add_argument('--level',action='append',choices=['a1','a2','b1'])
     args=parser.parse_args()
     if args.command == 'prepare':prepare()
     elif args.command == 'quotes':quote_report()
     elif args.command == 'cut':cut(args.level or ['a1','a2','b1'])
     elif args.command == 'recognitions':recognition_report()
+    elif args.command == 'evidence':evidence_report()
+    elif args.command == 'install':install()
