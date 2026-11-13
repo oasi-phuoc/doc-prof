@@ -8,25 +8,25 @@
     "supports": 346,
     "questions": 1663,
     "statuses": {
-      "active_reviewed_trio": 212,
+      "active_reviewed_trio": 220,
       "keep_text_calendar_or_duration": 139,
       "needs_context_review": 1021,
       "keep_text_named_identity_or_code": 60,
       "keep_text_amount": 73,
-      "candidate_visual_review": 158
+      "candidate_visual_review": 150
     },
     "by_level": {
       "A0-A1": {
-        "active_reviewed_trio": 106,
+        "active_reviewed_trio": 110,
         "keep_text_calendar_or_duration": 46,
         "needs_context_review": 208,
         "keep_text_named_identity_or_code": 23,
         "keep_text_amount": 37,
-        "candidate_visual_review": 46
+        "candidate_visual_review": 42
       },
       "A1-A2": {
-        "candidate_visual_review": 79,
-        "active_reviewed_trio": 97,
+        "candidate_visual_review": 75,
+        "active_reviewed_trio": 101,
         "needs_context_review": 363,
         "keep_text_named_identity_or_code": 28,
         "keep_text_calendar_or_duration": 58,
@@ -12321,8 +12321,8 @@
       "semantic_sha256": "00c9ab0c03a6f20385394dd7f693e1b7e7940d18defb1a1a55762b03eee34d27",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-022-01.mp3",
       "audio_sha256": "c27cf624334085f1126a8ae70d674c13f28e034a2c30d81fab85ab484cebafd7",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -12362,8 +12362,24 @@
           "brief": "Représenter entièrement « Au gymnase » pour « Où le concert a-t-il lieu ? ». Vérifier la transcription du support tcf-delf-actif-a1-022-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co57-concert-stade.webp",
+          "sha256": "b2cff5644455c42407ed6c46a9e4c6af70ba31ab2872324265859b9326b3ba0f"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-batiment-theatre-dessine.webp",
+          "sha256": "99f986d751ea4f636f0254ed7d560de30c0b40c7461098d7fd291a124987cf02"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-gymnase-municipal-dessine.webp",
+          "sha256": "8cc8baeaec008f3baed7df4c8989b43a518394f23739dd6680f424cc27b00cf4"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -12374,7 +12390,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-fleurs-sorties-sante-20261113.json",
+        "reason": "Le rendez-vous pour le concert rock est au stade.",
+        "note": "Concert dans une enceinte à gradins, façade de théâtre et gymnase avec terrains intérieurs ; trois types de lieux distincts."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-022-01#4",
@@ -12499,7 +12521,14 @@
           "id": "c",
           "label": "Le professeur de musique",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/catalogue/metiers/professeur-de-musique.webp",
+              "sha256": "18797647dfb39c749e9ab50093f72e2d526d74304488d627b3aa50fe546ea79e",
+              "label": "professeur de musique",
+              "visual_review_required": true
+            }
+          ],
           "asset": "ad8dd7f556350bbf",
           "brief": "Représenter entièrement « Le professeur de musique » pour « Qui vient chercher les amis après le concert ? ». Vérifier la transcription du support tcf-delf-actif-a1-022-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
@@ -13794,8 +13823,8 @@
       "semantic_sha256": "9bf018fa75a651a24032f53ae031b495a9a3d0d3458303e9da56c053773c9e5a",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-026-01.mp3",
       "audio_sha256": "805f360ad93efdb149d20ad765ca297850f3875c9dda4f8237e12a971fe1977b",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -13836,8 +13865,24 @@
           "brief": "Représenter entièrement « Au cinéma » pour « Où les amis se verront-ils dans l’après-midi ? ». Vérifier la transcription du support tcf-delf-actif-a1-026-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-salle-sport.webp",
+          "sha256": "b3ed604b17d0af077c57ff88212771b81a8758969930e8f4927fb87113c810de"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp",
+          "sha256": "d6ee5b5ae9d03c94d9694d6a19bc019a016884ba62411ffe82862d2719dfacc9"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/extension573-cinema-facade.webp",
+          "sha256": "6e8465f5f0037f68775a737f82ac89ad99b0f53038be6479cbe9ec8fd85e8914"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -13848,7 +13893,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-fleurs-sorties-sante-20261113.json",
+        "reason": "Justine retrouvera son ami en salle de sport à 16 heures pour emprunter de l’argent.",
+        "note": "Salle avec appareils sportifs, bibliothèque avec livres et façade de cinéma ; aucun horaire illustré arbitrairement."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-027-01#1",
@@ -16171,7 +16222,14 @@
           "id": "b",
           "label": "Musicien",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/catalogue/metiers/musicien.webp",
+              "sha256": "264574bac6e102e4ad577d7b298e408752a9e066d7125df33afd0ee2a4b3c8ba",
+              "label": "musicien",
+              "visual_review_required": true
+            }
+          ],
           "asset": "6d6c46f9e14ca21c",
           "brief": "Représenter entièrement « Musicien » pour « Quel métier cet artiste exerce-t-il ? ». Vérifier la transcription du support tcf-delf-actif-a1-030-04 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         },
@@ -16179,7 +16237,14 @@
           "id": "c",
           "label": "Écrivain",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/catalogue/metiers/ecrivain.webp",
+              "sha256": "5ca96cd58e4c6bf643b2971e9101e603f185217788e6feed5d5879c6546706d0",
+              "label": "écrivain",
+              "visual_review_required": true
+            }
+          ],
           "asset": "bb417d9c3bb234dd",
           "brief": "Représenter entièrement « Écrivain » pour « Quel métier cet artiste exerce-t-il ? ». Vérifier la transcription du support tcf-delf-actif-a1-030-04 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
@@ -17435,6 +17500,12 @@
           "label": "Le cours d’anglais",
           "correct": true,
           "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/catalogue/actions/cours-d-anglais.webp",
+              "sha256": "f103f2d07c2b2fdd92c0a1c9b37772a9b3e85719aedbe8a2ef65d66c8c46ab26",
+              "label": "Cours d'anglais",
+              "visual_review_required": true
+            },
             {
               "path": "/lib/images/tcf/co/bg/cours-anglais.webp",
               "sha256": "14b36f9cd91518b844a8fda6fcee1af3e187803974881937ea8f221a785b104c",
@@ -22682,6 +22753,12 @@
           "label": "Faire du vélo",
           "correct": false,
           "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/catalogue/actions/faire-du-velo.webp",
+              "sha256": "2b542cbefd8aafdfb414bed69d5fd15e078e1c6bde56675e0126d1bb969ba952",
+              "label": "Faire du vélo",
+              "visual_review_required": true
+            },
             {
               "path": "/lib/images/tcf/qcm-audit/co306-faire-velo-dessine.webp",
               "sha256": "cf547a08822a952696ecd9be9719aeaf66a72544d715419293e1aef4e158cf77",
@@ -28234,8 +28311,8 @@
       "semantic_sha256": "0c6d2205615eafa2a1c9270dfbbcebf75073d7ab9e0577a28ff8d9bd67aa984d",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-050-04-04.mp3",
       "audio_sha256": "a9f7450d048097695796133dac1d8846d0e527bb25c308795f2d4623153aad53",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -28269,8 +28346,24 @@
           "brief": "Représenter entièrement « Au genou » pour « Où Diego a-t-il mal ? ». Vérifier la transcription du support tcf-delf-actif-a1-050-04-04 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/catalogue/maladies/mal-au-ventre.webp",
+          "sha256": "1b59129edb1a0b50c181fa3749703cf161f1dd7df5cb38ded504164241e99ca2"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-mal-tete-dessine.webp",
+          "sha256": "5044660ae9e50443c7d9fb496967c62c2bc6fbf9a07270bc2c2ae14386b114e8"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/catalogue/maladies/mal-au-genou.webp",
+          "sha256": "4f797eed70f5b14ff40bc899d9a65a59a975c9167c9d2117a7de7330cbb7343e"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -28281,7 +28374,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-fleurs-sorties-sante-20261113.json",
+        "reason": "Diego dit explicitement avoir mal au ventre avant d’aller à l’infirmerie.",
+        "note": "Trois personnes génériques montrent ventre, tête et genou douloureux ; la zone rouge et le geste rendent le symptôme lisible. Ces personnages illustrent les douleurs, pas l’identité ou le portrait de Diego."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-050-04-04#2",
@@ -28833,8 +28932,8 @@
       "semantic_sha256": "51fa7d5ff89b33542d8bbd330ed40e7aee3eca3a45f4678b5b3c94ff07ff016a",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-051-01-01.mp3",
       "audio_sha256": "1fcdc5f7115af7eacad95e017421f7d0370e4113ede11aea549168b75678c5f7",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -28874,8 +28973,24 @@
           "brief": "Représenter entièrement « Au cinéma » pour « Dans quel lieu le concert se déroule-t-il ? ». Vérifier la transcription du support tcf-delf-actif-a1-051-01-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co57-concert-stade.webp",
+          "sha256": "b2cff5644455c42407ed6c46a9e4c6af70ba31ab2872324265859b9326b3ba0f"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-batiment-theatre-dessine.webp",
+          "sha256": "99f986d751ea4f636f0254ed7d560de30c0b40c7461098d7fd291a124987cf02"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/extension573-cinema-facade.webp",
+          "sha256": "6e8465f5f0037f68775a737f82ac89ad99b0f53038be6479cbe9ec8fd85e8914"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -28886,7 +29001,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-fleurs-sorties-sante-20261113.json",
+        "reason": "Après le métro, les amis iront directement au stade pour le concert.",
+        "note": "Stade avec scène musicale et gradins ; théâtre et cinéma identifiables par leurs façades. Aucun portrait de Stromae inventé."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-051-01-01#4",
@@ -33224,6 +33345,12 @@
           "correct": false,
           "reuse_candidates": [
             {
+              "path": "/lib/images/tcf/catalogue/actions/reunion.webp",
+              "sha256": "51fa824d52db68cba50fabdf8d1113bb1d67e985609c06c7b70a87863229242a",
+              "label": "Réunion",
+              "visual_review_required": true
+            },
+            {
               "path": "/lib/images/tcf/co/bg/salle-de-reunion.webp",
               "sha256": "85a7c475d59b43ed07216d158fd2c0c0af7772fb37d6a04b46fc3ece5b0031dd",
               "label": "La salle de réunion",
@@ -33380,7 +33507,14 @@
           "id": "b",
           "label": "Un photographe",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/catalogue/metiers/photographe.webp",
+              "sha256": "b5e977be3d66a1848c6ebf2042707a41c12a4feec9efc24c21df2a17b54032e7",
+              "label": "photographe",
+              "visual_review_required": true
+            }
+          ],
           "asset": "910e63799b3a4652",
           "brief": "Représenter entièrement « Un photographe » pour « Quel professionnel peut-on rencontrer ? ». Vérifier la transcription du support tcf-delf-actif-a2-002-04 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         },
@@ -34455,6 +34589,12 @@
           "label": "Manger",
           "correct": true,
           "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/catalogue/actions/manger.webp",
+              "sha256": "96ea9f2bd141b04d53b8ee20400b6bc548b113014875b438eaf763c502f19fa9",
+              "label": "Manger",
+              "visual_review_required": true
+            },
             {
               "path": "/lib/images/tcf/qcm-audit/vocab-manger.webp",
               "sha256": "18aafaf507a30392e8825392ac4a023eb2cc612d62e462e7e749b6f7703b00cf",
@@ -37958,6 +38098,12 @@
           "label": "Manger",
           "correct": false,
           "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/catalogue/actions/manger.webp",
+              "sha256": "96ea9f2bd141b04d53b8ee20400b6bc548b113014875b438eaf763c502f19fa9",
+              "label": "Manger",
+              "visual_review_required": true
+            },
             {
               "path": "/lib/images/tcf/qcm-audit/vocab-manger.webp",
               "sha256": "18aafaf507a30392e8825392ac4a023eb2cc612d62e462e7e749b6f7703b00cf",
@@ -47206,8 +47352,8 @@
       "semantic_sha256": "ca73deff54f46a7fbcdfb35bb9b7c4e614feb70f8c96c2b7739acef08b283ab8",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-028.mp3",
       "audio_sha256": "f88f04eaf57c57ad358968302532acde00f7df027af032fda2d9e0d12ddf025b",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -47254,8 +47400,24 @@
           "brief": "Représenter entièrement « Le restaurant » pour « Quelle sortie la deuxième question propose-t-elle ? ». Vérifier la transcription du support tcf-delf-actif-a2-028 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/extension573-cinema-facade.webp",
+          "sha256": "6e8465f5f0037f68775a737f82ac89ad99b0f53038be6479cbe9ec8fd85e8914"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-batiment-theatre-dessine.webp",
+          "sha256": "99f986d751ea4f636f0254ed7d560de30c0b40c7461098d7fd291a124987cf02"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp",
+          "sha256": "2059fd4bda4dddc629accc3d1ded4327c95adb088df8a68af267de4c8500a0b4"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -47266,7 +47428,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-fleurs-sorties-sante-20261113.json",
+        "reason": "La deuxième formule demande si la personne a envie d’aller au cinéma ce soir.",
+        "note": "Cinéma avec entrée et affiches, théâtre avec salle visible, restaurant avec tables dressées : trois lieux de sortie distincts."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-028#3",
@@ -49388,8 +49556,8 @@
       "semantic_sha256": "078a951abd333aa02f1eca64c6d768678fafd7eadf9ff9114e26cc4ac7e253d1",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-032-01.mp3",
       "audio_sha256": "03634682b150c8a5ea1988e2760cce0aa1e8c0e3f3bd84c349858c24bfeffbce",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -49416,8 +49584,24 @@
           "brief": "Représenter entièrement « Des lys » pour « Quelles fleurs la cliente veut-elle commander ? ». Vérifier la transcription du support tcf-delf-actif-a2-032-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/extension573-roses-blanches.png",
+          "sha256": "b795b3cc0c1d59f0bf779b04f2f58d86a9773f86131364dd0b52ef03a4551a43"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/extension573-tulipes-bouquet.png",
+          "sha256": "d8212cec713ed935964459fe6afddea48c9c03526d6756969e450f9049978809"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/extension573-lys-bouquet.png",
+          "sha256": "5431f460d0d10a2e02687348c89dd5deab46d61ba9c84b5db09ebf865b2cb5cc"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -49428,7 +49612,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-fleurs-sorties-sante-20261113.json",
+        "reason": "La cliente commande un bouquet de dix-huit roses blanches.",
+        "note": "Dix-huit roses blanches comptées en trois rangées de six ; cinq tulipes en coupe ; lys étoilés. Chaque image contient plusieurs fleurs, plantes distinctes, sujets entiers."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-032-01#2",
@@ -53168,7 +53358,14 @@
           "id": "a",
           "label": "Marcher",
           "correct": true,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/catalogue/actions/marcher.webp",
+              "sha256": "2438361464b2ccc25fed1f2df021613a9106d3e36543fc91dcf94850394e6002",
+              "label": "Marcher",
+              "visual_review_required": true
+            }
+          ],
           "asset": "6c121d92bf076769",
           "brief": "Représenter entièrement « Marcher » pour « Quelle est sa préférence personnelle ? ». Vérifier la transcription du support tcf-delf-actif-a2-035-04 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         },
@@ -53185,6 +53382,12 @@
           "label": "Faire du vélo",
           "correct": false,
           "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/catalogue/actions/faire-du-velo.webp",
+              "sha256": "2b542cbefd8aafdfb414bed69d5fd15e078e1c6bde56675e0126d1bb969ba952",
+              "label": "Faire du vélo",
+              "visual_review_required": true
+            },
             {
               "path": "/lib/images/tcf/qcm-audit/co306-faire-velo-dessine.webp",
               "sha256": "cf547a08822a952696ecd9be9719aeaf66a72544d715419293e1aef4e158cf77",
@@ -58928,8 +59131,8 @@
       "semantic_sha256": "d12fcf5d18b9e0be34562ed0ae8837324dfe62ba2392e325c2df86c8dcd07338",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-043-03-01.mp3",
       "audio_sha256": "f06f96622a8c280b6e6408d83ca039d1b776267d39b179b72be3800b0d16b3b5",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -58956,8 +59159,24 @@
           "brief": "Représenter entièrement « Des lys » pour « Quelles fleurs souhaite-t-il sur la table ? ». Vérifier la transcription du support tcf-delf-actif-a2-043-03-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/extension573-roses-rouges.png",
+          "sha256": "e7764424e10edc52c55d7ff335462197a52b7afef4660a7633c7ca97fb4f2c77"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/extension573-tulipes-bouquet.png",
+          "sha256": "d8212cec713ed935964459fe6afddea48c9c03526d6756969e450f9049978809"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/extension573-lys-bouquet.png",
+          "sha256": "5431f460d0d10a2e02687348c89dd5deab46d61ba9c84b5db09ebf865b2cb5cc"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -58968,7 +59187,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-fleurs-sorties-sante-20261113.json",
+        "reason": "Hugo demande un vase de roses rouges sur la table pour l’anniversaire de son amie.",
+        "note": "Roses rouges dans un vase transparent, tulipes en coupe et lys étoilés ; pas de fleurs blanches substituées aux roses rouges."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-043-03-01#7",
@@ -62047,14 +62272,21 @@
       "semantic_sha256": "ac73618c83a86d82ba9c983937087f3c138fa48927f8041118b0930fde628770",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-044-02-02.mp3",
       "audio_sha256": "1f5bcd526cf31f4593b460daa70846b81a66f8d4b12f0a5a9794cbe65b01c80e",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
           "label": "Du muguet",
           "correct": true,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/catalogue/vegetaux/muguet.webp",
+              "sha256": "600685566ac19d7f2b89bfa1a04801eca60de56363c85b0ad67aa36f810807d9",
+              "label": "muguet",
+              "visual_review_required": true
+            }
+          ],
           "asset": "11d9a23702c75277",
           "brief": "Représenter entièrement « Du muguet » pour « Quelles fleurs offre-t-on traditionnellement ? ». Vérifier la transcription du support tcf-delf-actif-a2-044-02-02 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         },
@@ -62075,8 +62307,24 @@
           "brief": "Représenter entièrement « Des tulipes » pour « Quelles fleurs offre-t-on traditionnellement ? ». Vérifier la transcription du support tcf-delf-actif-a2-044-02-02 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/catalogue/vegetaux/muguet.webp",
+          "sha256": "600685566ac19d7f2b89bfa1a04801eca60de56363c85b0ad67aa36f810807d9"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/extension573-roses-rouges.png",
+          "sha256": "e7764424e10edc52c55d7ff335462197a52b7afef4660a7633c7ca97fb4f2c77"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/extension573-tulipes-bouquet.png",
+          "sha256": "d8212cec713ed935964459fe6afddea48c9c03526d6756969e450f9049978809"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -62087,7 +62335,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-fleurs-sorties-sante-20261113.json",
+        "reason": "Le muguet est offert traditionnellement pour porter bonheur lors de la fête évoquée.",
+        "note": "Brin de muguet avec clochettes blanches, roses rouges et tulipes ; aucun jour, mois ou date dans les illustrations."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-044-02-02#5",
@@ -68916,7 +69170,14 @@
           "id": "c",
           "label": "L’abricot",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/catalogue/vegetaux/abricot.webp",
+              "sha256": "9fdab7876e4f4e7a4b5ce31574fd50019a31282f37c995ddbdc19ce17051e7e1",
+              "label": "abricot",
+              "visual_review_required": true
+            }
+          ],
           "asset": "b525bee83f2bb5d9",
           "brief": "Représenter entièrement « L’abricot » pour « Quel parfum de tarte est cité ? ». Vérifier la transcription du support tcf-delf-actif-a2-046-01-04 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
@@ -69049,7 +69310,14 @@
           "id": "a",
           "label": "Le pâtissier",
           "correct": true,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/catalogue/metiers/patissier.webp",
+              "sha256": "827fad3ba5a8201842a4e861e98ebe417a7b74691e78caef6cafb69368c3f899",
+              "label": "pâtissier",
+              "visual_review_required": true
+            }
+          ],
           "asset": "acc188cb7ccbbcfe",
           "brief": "Représenter entièrement « Le pâtissier » pour « Chez quel professionnel une surprise attend-elle les clients ? ». Vérifier la transcription du support tcf-delf-actif-a2-046-01-04 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         },
@@ -69057,7 +69325,14 @@
           "id": "b",
           "label": "Le boucher",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/catalogue/metiers/boucher.webp",
+              "sha256": "43eca4be8b4f05b6b8acdd7950adf53e753d9db67c71030f66eb5b5f78aacff2",
+              "label": "boucher",
+              "visual_review_required": true
+            }
+          ],
           "asset": "82d5feb27dee7a6a",
           "brief": "Représenter entièrement « Le boucher » pour « Chez quel professionnel une surprise attend-elle les clients ? ». Vérifier la transcription du support tcf-delf-actif-a2-046-01-04 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         },
@@ -69065,7 +69340,14 @@
           "id": "c",
           "label": "Le fromager",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/catalogue/metiers/fromager.webp",
+              "sha256": "4ebadfb37ce215234505a9e18ea4533cadc5773b36fb1be22c2ec8af2c6f363b",
+              "label": "fromager",
+              "visual_review_required": true
+            }
+          ],
           "asset": "7e3b9cfa02e714a0",
           "brief": "Représenter entièrement « Le fromager » pour « Chez quel professionnel une surprise attend-elle les clients ? ». Vérifier la transcription du support tcf-delf-actif-a2-046-01-04 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
@@ -78867,7 +79149,14 @@
           "id": "a",
           "label": "Pharmacien",
           "correct": true,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/catalogue/metiers/pharmacien.webp",
+              "sha256": "b323d357a0e7ae0b74dc4fbf3830978e536ce4956d83dbba0d9717e76c4225cb",
+              "label": "pharmacien",
+              "visual_review_required": true
+            }
+          ],
           "asset": "4c7e67b1130eac62",
           "brief": "Représenter entièrement « Pharmacien » pour « Quel métier son grand-père exerçait-il ? ». Vérifier la transcription du support tcf-delf-actif-b1-010-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         },
@@ -78891,6 +79180,12 @@
           "label": "Architecte",
           "correct": false,
           "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/catalogue/metiers/architecte.webp",
+              "sha256": "0f59ab12dc1d820fd9fe7b9641577b7b8e1259ebe97e1092f4333a8065075b99",
+              "label": "architecte",
+              "visual_review_required": true
+            },
             {
               "path": "/lib/images/tcf/qcm-audit/extension573-architecte-atelier.png",
               "sha256": "dc3ace93e42962803312028f29c4d3a8e455d205555a5549f053970aa62bb5c1",
@@ -88261,6 +88556,12 @@
           "label": "Un cours d’anglais",
           "correct": true,
           "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/catalogue/actions/cours-d-anglais.webp",
+              "sha256": "f103f2d07c2b2fdd92c0a1c9b37772a9b3e85719aedbe8a2ef65d66c8c46ab26",
+              "label": "Cours d'anglais",
+              "visual_review_required": true
+            },
             {
               "path": "/lib/images/tcf/co/bg/cours-anglais.webp",
               "sha256": "14b36f9cd91518b844a8fda6fcee1af3e187803974881937ea8f221a785b104c",
@@ -105794,6 +106095,12 @@
       "label": "Le cours d’anglais",
       "reuse_candidates": [
         {
+          "path": "/lib/images/tcf/catalogue/actions/cours-d-anglais.webp",
+          "sha256": "f103f2d07c2b2fdd92c0a1c9b37772a9b3e85719aedbe8a2ef65d66c8c46ab26",
+          "label": "Cours d'anglais",
+          "visual_review_required": true
+        },
+        {
           "path": "/lib/images/tcf/co/bg/cours-anglais.webp",
           "sha256": "14b36f9cd91518b844a8fda6fcee1af3e187803974881937ea8f221a785b104c",
           "label": "Le cours d’anglais",
@@ -107151,6 +107458,12 @@
       "id": "e7d92e5b1a713b56",
       "label": "Faire du vélo",
       "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/catalogue/actions/faire-du-velo.webp",
+          "sha256": "2b542cbefd8aafdfb414bed69d5fd15e078e1c6bde56675e0126d1bb969ba952",
+          "label": "Faire du vélo",
+          "visual_review_required": true
+        },
         {
           "path": "/lib/images/tcf/qcm-audit/co306-faire-velo-dessine.webp",
           "sha256": "cf547a08822a952696ecd9be9719aeaf66a72544d715419293e1aef4e158cf77",
@@ -110422,7 +110735,14 @@
     {
       "id": "6c121d92bf076769",
       "label": "Marcher",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/catalogue/actions/marcher.webp",
+          "sha256": "2438361464b2ccc25fed1f2df021613a9106d3e36543fc91dcf94850394e6002",
+          "label": "Marcher",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a2-035-04#4",
@@ -111292,7 +111612,14 @@
     {
       "id": "11d9a23702c75277",
       "label": "Du muguet",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/catalogue/vegetaux/muguet.webp",
+          "sha256": "600685566ac19d7f2b89bfa1a04801eca60de56363c85b0ad67aa36f810807d9",
+          "label": "muguet",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a2-044-02-02#4",
@@ -111696,7 +112023,14 @@
     {
       "id": "b525bee83f2bb5d9",
       "label": "L’abricot",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/catalogue/vegetaux/abricot.webp",
+          "sha256": "9fdab7876e4f4e7a4b5ce31574fd50019a31282f37c995ddbdc19ce17051e7e1",
+          "label": "abricot",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a2-046-01-04#2",

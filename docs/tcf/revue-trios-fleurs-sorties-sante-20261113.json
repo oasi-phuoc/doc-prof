@@ -1,0 +1,400 @@
+{
+  "date": "2026-11-13",
+  "baseline_commit": "eb708888f954444b6709cc3d0b8b887c22006403",
+  "human_audio_listening_performed": false,
+  "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+  "trios": [
+    {
+      "key": "tcf-delf-actif-a1-022-01#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut. Un nouveau groupe rock passe dans notre ville. On va assister à leur concert ? J’ai deux billets. Il faut être au stade à 19h30. Après le concert mes parents viennent nous chercher. Fais attention il va faire froid. Tu peux dormir chez moi mais apporte le nécessaire.",
+      "source_sha256": "d722a9c148654dfc200b92471e9d3d54ad4366d5bdab5f3564d941713e28bc7f",
+      "semantic_sha256": "00c9ab0c03a6f20385394dd7f693e1b7e7940d18defb1a1a55762b03eee34d27",
+      "question": {
+        "enonce": "Où le concert a-t-il lieu ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Au stade",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Au théâtre",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Au gymnase",
+            "correct": false
+          }
+        ],
+        "written_model": "Au stade"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-022-01.mp3",
+      "audio_sha256": "c27cf624334085f1126a8ae70d674c13f28e034a2c30d81fab85ab484cebafd7",
+      "image_ids": [
+        "co57-concert-stade",
+        "co306-batiment-theatre-dessine",
+        "co306-gymnase-municipal-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co57-concert-stade.webp",
+        "/lib/images/tcf/qcm-audit/co306-batiment-theatre-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-gymnase-municipal-dessine.webp"
+      ],
+      "image_sha256": [
+        "b2cff5644455c42407ed6c46a9e4c6af70ba31ab2872324265859b9326b3ba0f",
+        "99f986d751ea4f636f0254ed7d560de30c0b40c7461098d7fd291a124987cf02",
+        "8cc8baeaec008f3baed7df4c8989b43a518394f23739dd6680f424cc27b00cf4"
+      ],
+      "reason": "Le rendez-vous pour le concert rock est au stade.",
+      "visual_review": "Concert dans une enceinte à gradins, façade de théâtre et gymnase avec terrains intérieurs ; trois types de lieux distincts."
+    },
+    {
+      "key": "tcf-delf-actif-a1-026-01#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut, c’est Justine. Je ne trouve plus mon portefeuille. Peux-tu m’aider ? Je dois acheter un ticket de bus pour rentrer chez moi ce soir à 18h00 et je n’ai pas d’argent. Tu me prêtes 1€ cet après- midi à 16h00 quand on est en salle de sport ?",
+      "source_sha256": "881566ef5a6f40a455f38f4c6262f05c7434966a697c1a22dee40f41145ab9c0",
+      "semantic_sha256": "9bf018fa75a651a24032f53ae031b495a9a3d0d3458303e9da56c053773c9e5a",
+      "question": {
+        "enonce": "Où les amis se verront-ils dans l’après-midi ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Dans la salle de sport",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À la bibliothèque",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Au cinéma",
+            "correct": false
+          }
+        ],
+        "written_model": "Dans la salle de sport"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-026-01.mp3",
+      "audio_sha256": "805f360ad93efdb149d20ad765ca297850f3875c9dda4f8237e12a971fe1977b",
+      "image_ids": [
+        "vocab-salle-sport",
+        "co306-bibliotheque-dessine",
+        "extension573-cinema-facade"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-salle-sport.webp",
+        "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp",
+        "/lib/images/tcf/qcm-audit/extension573-cinema-facade.webp"
+      ],
+      "image_sha256": [
+        "b3ed604b17d0af077c57ff88212771b81a8758969930e8f4927fb87113c810de",
+        "d6ee5b5ae9d03c94d9694d6a19bc019a016884ba62411ffe82862d2719dfacc9",
+        "6e8465f5f0037f68775a737f82ac89ad99b0f53038be6479cbe9ec8fd85e8914"
+      ],
+      "reason": "Justine retrouvera son ami en salle de sport à 16 heures pour emprunter de l’argent.",
+      "visual_review": "Salle avec appareils sportifs, bibliothèque avec livres et façade de cinéma ; aucun horaire illustré arbitrairement."
+    },
+    {
+      "key": "tcf-delf-actif-a1-051-01-01#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Alessio, tu es toujours d’accord pour venir au concert de Stromae ? Rendez-vous devant la gare pour prendre le métro. Après on va directement au stade. N’apporte pas de boissons. Elles sont interdites. Après le concert on mange un sandwich. On rentre avec Gabriel et les autres copains.",
+      "source_sha256": "250e234af8db9c005f3a74373861eb5556e14375f13572e8ad7c6f777b648946",
+      "semantic_sha256": "51fa7d5ff89b33542d8bbd330ed40e7aee3eca3a45f4678b5b3c94ff07ff016a",
+      "question": {
+        "enonce": "Dans quel lieu le concert se déroule-t-il ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Au stade",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Au théâtre",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Au cinéma",
+            "correct": false
+          }
+        ],
+        "written_model": "Au stade"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-051-01-01.mp3",
+      "audio_sha256": "1fcdc5f7115af7eacad95e017421f7d0370e4113ede11aea549168b75678c5f7",
+      "image_ids": [
+        "co57-concert-stade",
+        "co306-batiment-theatre-dessine",
+        "extension573-cinema-facade"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co57-concert-stade.webp",
+        "/lib/images/tcf/qcm-audit/co306-batiment-theatre-dessine.webp",
+        "/lib/images/tcf/qcm-audit/extension573-cinema-facade.webp"
+      ],
+      "image_sha256": [
+        "b2cff5644455c42407ed6c46a9e4c6af70ba31ab2872324265859b9326b3ba0f",
+        "99f986d751ea4f636f0254ed7d560de30c0b40c7461098d7fd291a124987cf02",
+        "6e8465f5f0037f68775a737f82ac89ad99b0f53038be6479cbe9ec8fd85e8914"
+      ],
+      "reason": "Après le métro, les amis iront directement au stade pour le concert.",
+      "visual_review": "Stade avec scène musicale et gradins ; théâtre et cinéma identifiables par leurs façades. Aucun portrait de Stromae inventé."
+    },
+    {
+      "key": "tcf-delf-actif-a2-028#2",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Tu sais me dire où se trouve la banque ?\nTu as envie d’aller au cinéma ce soir ?\nC’est le dernier modèle de téléphone ?\nEn France les musées ferment à quelle heure ?",
+      "source_sha256": "0c669820e339c5d68f99705b8f6db74e741811acaab1fc41338d946322cfc79a",
+      "semantic_sha256": "ca73deff54f46a7fbcdfb35bb9b7c4e614feb70f8c96c2b7739acef08b283ab8",
+      "question": {
+        "enonce": "Quelle sortie la deuxième question propose-t-elle ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Le cinéma",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Le théâtre",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Le restaurant",
+            "correct": false
+          }
+        ],
+        "written_model": "Le cinéma"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-028.mp3",
+      "audio_sha256": "f88f04eaf57c57ad358968302532acde00f7df027af032fda2d9e0d12ddf025b",
+      "image_ids": [
+        "extension573-cinema-facade",
+        "co306-batiment-theatre-dessine",
+        "co306-restaurant-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-cinema-facade.webp",
+        "/lib/images/tcf/qcm-audit/co306-batiment-theatre-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp"
+      ],
+      "image_sha256": [
+        "6e8465f5f0037f68775a737f82ac89ad99b0f53038be6479cbe9ec8fd85e8914",
+        "99f986d751ea4f636f0254ed7d560de30c0b40c7461098d7fd291a124987cf02",
+        "2059fd4bda4dddc629accc3d1ded4327c95adb088df8a68af267de4c8500a0b4"
+      ],
+      "reason": "La deuxième formule demande si la personne a envie d’aller au cinéma ce soir.",
+      "visual_review": "Cinéma avec entrée et affiches, théâtre avec salle visible, restaurant avec tables dressées : trois lieux de sortie distincts."
+    },
+    {
+      "key": "tcf-delf-actif-a1-050-04-04#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Diego, comment ça va, tu es malade ? J’ai mal au ventre, je n’en peux plus ! Viens on va à l’infirmerie. Je t’accompagne.",
+      "source_sha256": "20f554fb3de867456d24fa974359ca29060ad13a8a7c00342da26facd8a42e70",
+      "semantic_sha256": "0c6d2205615eafa2a1c9270dfbbcebf75073d7ab9e0577a28ff8d9bd67aa984d",
+      "question": {
+        "enonce": "Où Diego a-t-il mal ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Au ventre",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À la tête",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Au genou",
+            "correct": false
+          }
+        ],
+        "written_model": "Au ventre"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-050-04-04.mp3",
+      "audio_sha256": "a9f7450d048097695796133dac1d8846d0e527bb25c308795f2d4623153aad53",
+      "image_ids": [
+        "catalogue-20261113-maladie-mal-au-ventre",
+        "co306-mal-tete-dessine",
+        "catalogue-20261113-maladie-mal-au-genou"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/catalogue/maladies/mal-au-ventre.webp",
+        "/lib/images/tcf/qcm-audit/co306-mal-tete-dessine.webp",
+        "/lib/images/tcf/catalogue/maladies/mal-au-genou.webp"
+      ],
+      "image_sha256": [
+        "1b59129edb1a0b50c181fa3749703cf161f1dd7df5cb38ded504164241e99ca2",
+        "5044660ae9e50443c7d9fb496967c62c2bc6fbf9a07270bc2c2ae14386b114e8",
+        "4f797eed70f5b14ff40bc899d9a65a59a975c9167c9d2117a7de7330cbb7343e"
+      ],
+      "reason": "Diego dit explicitement avoir mal au ventre avant d’aller à l’infirmerie.",
+      "visual_review": "Trois personnes génériques montrent ventre, tête et genou douloureux ; la zone rouge et le geste rendent le symptôme lisible. Ces personnages illustrent les douleurs, pas l’identité ou le portrait de Diego."
+    },
+    {
+      "key": "tcf-delf-actif-a2-032-01#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Bonjour Madame, je voudrais vous commander un bouquet de roses blanches à apporter chez une amie. Oui, vous voulez combien de roses ? Elle fête ses 18 ans, alors 18 roses… Vous me laissez son adresse ? La voici.",
+      "source_sha256": "923fe5d8b4267f8da8a437f7d050fcd6efd1a48cb5c465567b711c478d2eabed",
+      "semantic_sha256": "078a951abd333aa02f1eca64c6d768678fafd7eadf9ff9114e26cc4ac7e253d1",
+      "question": {
+        "enonce": "Quelles fleurs la cliente veut-elle commander ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Des roses",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Des tulipes",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Des lys",
+            "correct": false
+          }
+        ],
+        "written_model": "Des roses"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-032-01.mp3",
+      "audio_sha256": "03634682b150c8a5ea1988e2760cce0aa1e8c0e3f3bd84c349858c24bfeffbce",
+      "image_ids": [
+        "extension573-roses-blanches",
+        "extension573-tulipes-bouquet",
+        "extension573-lys-bouquet"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-roses-blanches.png",
+        "/lib/images/tcf/qcm-audit/extension573-tulipes-bouquet.png",
+        "/lib/images/tcf/qcm-audit/extension573-lys-bouquet.png"
+      ],
+      "image_sha256": [
+        "b795b3cc0c1d59f0bf779b04f2f58d86a9773f86131364dd0b52ef03a4551a43",
+        "d8212cec713ed935964459fe6afddea48c9c03526d6756969e450f9049978809",
+        "5431f460d0d10a2e02687348c89dd5deab46d61ba9c84b5db09ebf865b2cb5cc"
+      ],
+      "reason": "La cliente commande un bouquet de dix-huit roses blanches.",
+      "visual_review": "Dix-huit roses blanches comptées en trois rangées de six ; cinq tulipes en coupe ; lys étoilés. Chaque image contient plusieurs fleurs, plantes distinctes, sujets entiers."
+    },
+    {
+      "key": "tcf-delf-actif-a2-043-03-01#6",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Bonjour. Je sais que votre restaurant ouvre à 11h. Je ne peux pas vous appeler plus tard alors j’anticipe ma réservation pour demain samedi à 20h. J’ai besoin d’une table pour fêter l’anniversaire de mon amie. Mon nom est Hugo Fabre. Je vous demande de mettre un vase de roses rouges sur la table, de préparer un gâteau à la crème avec 18 bougies et de nous placer dans un coin devant la fenêtre. Merci de me confirmer.",
+      "source_sha256": "0fa93ca945970cc5b96c2daebd90d592c1a4dcc4b5fa292f48b71154969c4839",
+      "semantic_sha256": "d12fcf5d18b9e0be34562ed0ae8837324dfe62ba2392e325c2df86c8dcd07338",
+      "question": {
+        "enonce": "Quelles fleurs souhaite-t-il sur la table ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Des roses",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Des tulipes",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Des lys",
+            "correct": false
+          }
+        ],
+        "written_model": "Des roses"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-043-03-01.mp3",
+      "audio_sha256": "f06f96622a8c280b6e6408d83ca039d1b776267d39b179b72be3800b0d16b3b5",
+      "image_ids": [
+        "extension573-roses-rouges",
+        "extension573-tulipes-bouquet",
+        "extension573-lys-bouquet"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-roses-rouges.png",
+        "/lib/images/tcf/qcm-audit/extension573-tulipes-bouquet.png",
+        "/lib/images/tcf/qcm-audit/extension573-lys-bouquet.png"
+      ],
+      "image_sha256": [
+        "e7764424e10edc52c55d7ff335462197a52b7afef4660a7633c7ca97fb4f2c77",
+        "d8212cec713ed935964459fe6afddea48c9c03526d6756969e450f9049978809",
+        "5431f460d0d10a2e02687348c89dd5deab46d61ba9c84b5db09ebf865b2cb5cc"
+      ],
+      "reason": "Hugo demande un vase de roses rouges sur la table pour l’anniversaire de son amie.",
+      "visual_review": "Roses rouges dans un vase transparent, tulipes en coupe et lys étoilés ; pas de fleurs blanches substituées aux roses rouges."
+    },
+    {
+      "key": "tcf-delf-actif-a2-044-02-02#4",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Demain c’est le premier mai, la fête du travail. Pas d’école pour cette fête civile. Vous allez être nombreux à recevoir ou à offrir du muguet pour porter bonheur comme le veut la tradition.",
+      "source_sha256": "de6a3e6f5100876eedd8234ac4fbad850387bc48f7dd1a8170eeef02aa149da2",
+      "semantic_sha256": "ac73618c83a86d82ba9c983937087f3c138fa48927f8041118b0930fde628770",
+      "question": {
+        "enonce": "Quelles fleurs offre-t-on traditionnellement ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Du muguet",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Des roses",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Des tulipes",
+            "correct": false
+          }
+        ],
+        "written_model": "Du muguet"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-044-02-02.mp3",
+      "audio_sha256": "1f5bcd526cf31f4593b460daa70846b81a66f8d4b12f0a5a9794cbe65b01c80e",
+      "image_ids": [
+        "catalogue-20261113-vegetal-muguet",
+        "extension573-roses-rouges",
+        "extension573-tulipes-bouquet"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/catalogue/vegetaux/muguet.webp",
+        "/lib/images/tcf/qcm-audit/extension573-roses-rouges.png",
+        "/lib/images/tcf/qcm-audit/extension573-tulipes-bouquet.png"
+      ],
+      "image_sha256": [
+        "600685566ac19d7f2b89bfa1a04801eca60de56363c85b0ad67aa36f810807d9",
+        "e7764424e10edc52c55d7ff335462197a52b7afef4660a7633c7ca97fb4f2c77",
+        "d8212cec713ed935964459fe6afddea48c9c03526d6756969e450f9049978809"
+      ],
+      "reason": "Le muguet est offert traditionnellement pour porter bonheur lors de la fête évoquée.",
+      "visual_review": "Brin de muguet avec clochettes blanches, roses rouges et tulipes ; aucun jour, mois ou date dans les illustrations."
+    }
+  ],
+  "verification": {
+    "baseline_commit": "eb708888f954444b6709cc3d0b8b887c22006403",
+    "compared_all_six_banks": true,
+    "question_changes": 0,
+    "source_changes": 0,
+    "answer_changes": 0,
+    "added_image_forms_total": 8
+  }
+}
