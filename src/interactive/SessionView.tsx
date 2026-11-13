@@ -18,6 +18,8 @@ import { advanceAction } from './domain/progression'
 import { isLessonEnter } from './keyboard'
 import { AudioPlayer, type AudioStatus } from './components/Media'
 import { maxListensFor } from './domain/listening'
+import { reviewTranscript } from './domain/transcripts'
+import { TextReadingDialog } from './components/TextReadingDialog'
 import { ReflectionTimer } from './components/ReflectionTimer'
 import { ManualCountPanel, ManualVoteView } from './components/ManualCountPanel'
 import { SessionObservations } from './components/SessionObservations'
@@ -75,6 +77,7 @@ function ActiveSessionView({
   colors,
   shapes,
   timer,
+  showTranscripts,
   onExit,
   onFinish,
   onNewPart,
@@ -96,6 +99,7 @@ function ActiveSessionView({
   colors: string[]
   shapes: ShapeId[]
   timer: TimerSettings
+  showTranscripts?: boolean
   onExit: () => void
   onFinish?: () => void
   onNewPart?: () => void
@@ -324,6 +328,7 @@ function ActiveSessionView({
       colors={colors}
       shapes={shapes}
       timer={timer}
+      showTranscripts={showTranscripts}
       header={header}
       onExit={() => { flushClock(); void writes.current.then(onExit) }}
       suspended={state.paused || hidden}
@@ -341,6 +346,7 @@ function PlayingRound({
   colors,
   shapes,
   timer,
+  showTranscripts = true,
   header,
   onExit,
   suspended,
@@ -355,6 +361,7 @@ function PlayingRound({
   colors: string[]
   shapes: ShapeId[]
   timer: TimerSettings
+  showTranscripts?: boolean
   header: ClassroomHeaderProps
   onExit: () => void
   suspended: boolean
@@ -373,12 +380,16 @@ function PlayingRound({
   const [counting, setCounting] = useState(false)
   const [confirmation, setConfirmation] = useState<'skip' | 'finish' | 'retry' | null>(null)
   const [navigating, setNavigating] = useState(false)
+  const [readingTranscript, setReadingTranscript] = useState(false)
+  const transcript = showTranscripts ? reviewTranscript(game, state) : undefined
   const controls = useRef<HTMLElement>(null)
   const locked = !!state.teacherLocked
-  const blocked = suspended || locked || confirmation !== null || navigating
+  const blocked = suspended || locked || confirmation !== null || navigating || readingTranscript
   const reveal = state.phase === 'revealed'
   const solo = state.mode === 'solo'
   const roundId = rounds[state.index]!.id
+  // A withdrawn or suspended review must stay closed when controls return.
+  if (readingTranscript && (!transcript || suspended || locked || confirmation !== null || navigating)) setReadingTranscript(false)
   useEffect(() => { document.querySelector<HTMLElement>('.ci-question h1')?.focus({ preventScroll: true }) }, [])
   useEffect(() => {
     const keydown = (event: KeyboardEvent) => {
@@ -397,11 +408,12 @@ function PlayingRound({
     return () => document.removeEventListener('keydown', keydown)
   }, [game, state, dispatch, blocked, header.toolbarGuard])
   const audioPlayer = audio ? (
+    <div className="ci-audio-review">
     <AudioPlayer
       key={audio}
       src={audio}
       parts={rounds[state.index]?.audioParts}
-      paused={suspended || locked || confirmation !== null || navigating}
+      paused={blocked}
       listens={runtime.audioListens}
       extraListens={runtime.extraListens}
       maxListens={maxListensFor(questions)}
@@ -415,6 +427,8 @@ function PlayingRound({
         if (status === 'ended') dispatch({ type: 'AUDIO_STATE', roundId, status: 'ended' })
       }}
     />
+    {transcript && <IconButton icon="transcript" label="Lire la transcription" disabled={suspended || locked || confirmation !== null || navigating} aria-haspopup="dialog" onClick={() => setReadingTranscript(true)} />}
+    </div>
   ) : undefined
   return (
     <>
@@ -600,9 +614,10 @@ function PlayingRound({
             )}
             {!solo && <div className="ci-control-end">{reveal && state.revealedAt !== undefined && <RetractRevealButton key={state.revealedAt} revealedAt={state.revealedAt} disabled={blocked} onRetract={() => dispatch({ type: 'UNREVEAL', roundId })} />}
             <IconButton className="ci-teacher-action" icon="finish" label="Terminer la séance" disabled={locked} onClick={() => setConfirmation('finish')} /></div>}
-            {solo && (reveal ? <BetweenQuestionsTimer key={timer.feedbackSeconds} seconds={timer.feedbackSeconds} roundId={roundId} attempt={runtime.attempt} initialClock={initialClock} suspended={suspended} onClock={onClock} onNext={() => dispatch({ type: 'NEXT' })} /> : questions[0]?.mode === 'choice' ? <p role="status">{timer.enabled ? 'Choisis une réponse avant la fin du temps.' : 'Choisis une réponse à ton rythme.'}</p> : <><p role="status">{timer.enabled ? 'Activité ouverte : compare ta réponse au modèle à la fin du temps.' : 'Activité ouverte : prépare ta réponse, puis compare-la au modèle.'}</p>{!timer.enabled && <button className="ci-primary" onClick={() => dispatch({ type: 'TIMEOUT' })}>Voir le modèle</button>}</>)}
+            {solo && (reveal ? <BetweenQuestionsTimer key={timer.feedbackSeconds} seconds={timer.feedbackSeconds} roundId={roundId} attempt={runtime.attempt} initialClock={initialClock} suspended={suspended || readingTranscript} onClock={onClock} onNext={() => dispatch({ type: 'NEXT' })} /> : questions[0]?.mode === 'choice' ? <p role="status">{timer.enabled ? 'Choisis une réponse avant la fin du temps.' : 'Choisis une réponse à ton rythme.'}</p> : <><p role="status">{timer.enabled ? 'Activité ouverte : compare ta réponse au modèle à la fin du temps.' : 'Activité ouverte : prépare ta réponse, puis compare-la au modèle.'}</p>{!timer.enabled && <button className="ci-primary" onClick={() => dispatch({ type: 'TIMEOUT' })}>Voir le modèle</button>}</>)}
           </footer>
         </div>
+        {readingTranscript && transcript && !suspended && !locked && <TextReadingDialog title="Transcription de l’écoute" text={transcript} onClose={() => setReadingTranscript(false)} />}
         {counting && !state.paused && !locked && <ManualCountPanel questions={questions} votes={state.manualVotes} onSave={(questionId, vote) => dispatch({ type: 'MANUAL_VOTE_SET', questionId, vote })} onClose={() => setCounting(false)} />}
         {navigating && !locked && <QuestionNavigator game={game} state={state} onClose={() => setNavigating(false)} onGo={(index) => { setNavigating(false); dispatch({ type: 'NAVIGATE', index }) }} onRetry={() => { setNavigating(false); setConfirmation('retry') }} />}
         {confirmation && !locked && <TeacherConfirmation action={confirmation} questionCount={questions.length} remaining={game.questions.filter((q) => !state.history.some((attempt) => attempt.questionId === q.id && !attempt.skipped)).length} onCancel={() => setConfirmation(null)} onConfirm={() => { setConfirmation(null); dispatch(confirmation === 'retry' ? { type: 'RETRY_QUESTION', roundId } : { type: confirmation === 'skip' ? 'SKIP' : 'FINISH' }) }} />}

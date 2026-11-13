@@ -99,6 +99,7 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
   const [shapes, setShapes] = useState(initialPreferences.shapes)
   const [paletteVersion, setPaletteVersion] = useState(initialPreferences.paletteVersion ?? 1)
   const [timer, setTimer] = useState(initialPreferences.timer)
+  const [showTranscripts, setShowTranscripts] = useState(initialPreferences.showTranscripts ?? true)
   const [contrast, setContrast] = useState(initialPreferences.contrast)
   const [mascot, setMascot] = useState<MascotKind>(initialPreferences.mascot)
   const [preferencesWarning, setPreferencesWarning] = useState(initialWarning)
@@ -329,6 +330,7 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
                 colors={colors}
                 shapes={shapes}
                 timer={timer}
+                showTranscripts={showTranscripts}
                 onExit={() => setPlaying(false)}
                 onFinish={() => newPart(false)}
                 onNewPart={() => newPart(true)}
@@ -559,6 +561,9 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
                         {mode === 'solo' ? '30 secondes par défaut, ou sans limite si le minuteur est désactivé. La correction et la suite sont automatiques après le choix.' : '30 secondes par défaut. Avec un document audio, le décompte commence à la fin de l’écoute. Vous choisissez toujours quand continuer.'}
                       </p>
                     </div>
+                    {activeGame.questions.some(question => activeGame.corrections[question.id]?.transcript) && <div className="ci-setup-guard"><label><input type="checkbox" checked={showTranscripts} onChange={(event) => {
+                      setShowTranscripts(event.target.checked); savePreferences({ showTranscripts: event.target.checked })
+                    }} />Proposer la transcription après les réponses</label><p>En Classe et en Solo, le texte de l’écoute devient accessible une fois toutes ses questions corrigées. La lecture suspend le passage automatique à la question suivante.</p></div>}
                     {mode === 'class' && <div className="ci-setup-guard"><label><input type="checkbox" checked={toolbarGuard === 'hold-to-reveal'} onChange={(event) => {
                       const next = event.target.checked ? 'hold-to-reveal' : 'none'
                       setToolbarGuard(next); savePreferences({ toolbarGuard: next })

@@ -17,6 +17,7 @@ import { adaptRecognition } from './recognition'
 import { adaptPrintablePairs } from './printable-pairs'
 import { adaptPrintableDecks } from './printable-decks'
 import { adaptPrintableRiddles } from './printable-riddles'
+import { sourceTranscript } from './transcripts'
 export { hash } from './seeds'
 const normalized = (s: string) =>
   s
@@ -169,7 +170,8 @@ export function convertRecipe(
               image: c.image ? image(c.image) : undefined,
             }))
             game.questions.push(q)
-            game.corrections[q.id] = { text, choiceId }
+            const transcript = exercise?.competence === 'CO' ? sourceTranscript(media, q.audio, q.audioParts) : undefined
+            game.corrections[q.id] = { text, choiceId, ...(transcript ? { transcript } : {}) }
           }
           const tcfQuestion = (
             t:

@@ -36,9 +36,15 @@ export type SavedSession = {
 }
 export type Resume = { record: SavedSession; state: Session }
 
-/** Hash the complete resolved plan, including the answer key, but never store it. */
+/** Hash the resolved plan and answer key, but never store them. Optional review
+ * text must not invalidate a journal made before transcripts were available. */
 export async function planIdentity(game: Game): Promise<string> {
-  const bytes = new TextEncoder().encode(JSON.stringify({ version: 1, game, rounds: roundsFor(game) }))
+  const plan = { ...game, corrections: Object.fromEntries(Object.entries(game.corrections).map(([id, correction]) => {
+    const answer = { ...correction }
+    delete answer.transcript
+    return [id, answer]
+  })) }
+  const bytes = new TextEncoder().encode(JSON.stringify({ version: 1, game: plan, rounds: roundsFor(game) }))
   const digest = await crypto.subtle.digest('SHA-256', bytes)
   return Array.from(new Uint8Array(digest), (n) => n.toString(16).padStart(2, '0')).join('')
 }

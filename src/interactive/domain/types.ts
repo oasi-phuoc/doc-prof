@@ -46,7 +46,7 @@ export type Question = {
   compatibility: Exclude<Compatibility, 'unsupported'>
   hints?: string[]
 }
-export type Correction = { choiceId?: string; text: string }
+export type Correction = { choiceId?: string; text: string; transcript?: string }
 export type Issue = { source: string; reason: string }
 export type Game = {
   id: string
