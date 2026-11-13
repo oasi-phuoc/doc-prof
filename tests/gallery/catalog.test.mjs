@@ -62,3 +62,24 @@ test('gallery replacements require approved images and retain the original bytes
     assert(catalog.get(replacement.original).types.includes('Version antérieure'))
   }
 })
+
+test('CFR A2 situation scenes and a reviewed context reuse are searchable as scenarios', () => {
+  const catalogue = new Map(buildGalleryCatalog(process.cwd()).map(image => [image.src, image]))
+  const exercises = JSON.parse(readFileSync('src/tcf/content/a1-a2/co.json'))
+  const scenes = exercises.filter(ex => ex.type_exercice === 'association_images').flatMap(ex => ex.situations)
+  assert.equal(scenes.length, 12)
+  for (const scene of scenes) {
+    assert(catalogue.get(scene.image).types.includes('Scénario'))
+    assert(catalogue.get(scene.image).themes.includes('CO CFR A2'))
+  }
+  const reuses = JSON.parse(readFileSync('docs/gallery/co-cfr-a2-reuses-20261113.json')).reuses
+  for (const reuse of reuses) {
+    const source = exercises.find(ex => ex.id === reuse.source_id)
+    const text = Array.isArray(source.support.transcription) ? source.support.transcription[reuse.audio_index - 1] : source.support.transcription
+    assert.equal(createHash('sha256').update(text).digest('hex'), reuse.transcription_sha256)
+    assert.equal(createHash('sha256').update(readFileSync('public' + reuse.path)).digest('hex'), reuse.sha256)
+    assert(catalogue.get(reuse.path).types.includes('Scénario'))
+    assert(catalogue.get(reuse.path).types.includes('Métier'))
+  }
+  assert(!catalogue.get('/lib/images/tcf/qcm-audit/co834-sac-vert-dessine.webp').types.includes('Scénario'), 'a QCM object is not promoted to a whole scene')
+})
