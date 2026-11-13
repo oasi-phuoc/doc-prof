@@ -29136,6 +29136,138 @@
       "source_sha256": "5b07a118055333c7a622198e54eb98f82c2df71101859200ac67f8e2bb5ed294",
       "reason": "Le dialogue dit il y a des vélos dans le hall et on ne peut plus passer. Les bouteilles sont dans l'escalier ; ni fauteuils ni cartons ne sont mentionnés. La question vise l'objet qui bloque le hall. Deux vélos réutilisés, deux fauteuils avec accoudoirs et trois cartons nouvellement peints. Catégories distinctes, aucun canapé, aucun objet parasite. La scène du hall n'est pas ajoutée aux seuls leurres : les trois choix montrent leur catégorie d'objets.",
       "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s22-co-4",
+      "question": 3,
+      "node": [
+        "questions",
+        2,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/extension573-gateau-salade-fruits.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/extension573-tarte-glace-duo.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/extension573-mousse-crepes-duo.png"
+          }
+        ]
+      },
+      "source_sha256": "ce16e983a671570d5fe16f0723fb79c49e40500d21202471e66c4c73231f7828",
+      "reason": "Le repas comprend un gâteau, une salade de fruits et un poulet rôti. La question porte uniquement sur les desserts : gâteau et salade de fruits. Tarte, glace, mousse et crêpes ne sont pas citées. Trois nouveaux duos complets examinés : gâteau entier et salade de fruits, tarte entière et coupe de glace, mousse aérée et deux crêpes fines. Aucun poulet ni légume ajouté au duo des desserts, ni pancake à la place des crêpes. Même style peint sur crème, exact 4:3.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s54-co-4",
+      "question": 5,
+      "node": [
+        "questions",
+        4,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/extension573-vitale-ordonnance.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/extension573-passeport-billet.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/extension573-permis-carte-grise.png"
+          }
+        ]
+      },
+      "source_sha256": "46e95742432e9a0c2aa592ad77bf4576beb68c05372e3e20969b9a9b69307696",
+      "reason": "Le message de la pharmacie de garde demande la carte Vitale et l'ordonnance. Ni passeport et billet ni permis et carte grise ne sont cités. Les deux documents de chaque réponse sont nécessaires. Trois nouvelles paires relues : carte Vitale verte et ordonnance, passeport et billet de train, permis rose et carte grise papier. Titres courts corrects, lignes abstraites et silhouette anonyme ; aucun montant, date, identité ou numéro. Aucune carte d'identité ou bancaire substituée.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "delf-a1-2022-co-94",
+      "question": 7,
+      "node": [
+        "questions",
+        6,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/extension573-chapeaux-pluriel.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/extension573-sacs-pluriel.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co306-lunettes-vue-dessine.webp"
+          }
+        ]
+      },
+      "source_sha256": "683746fe3ed553b6870ed41ae55e40138e5a613524fe6e4671d8e8559882ccf9",
+      "reason": "L'annonce distingue la réduction générale du prix spécial sur tous les chapeaux. Sacs et lunettes ne sont pas cités. La question demande l'accessoire, jamais le montant. Nouveaux trois chapeaux entiers, groupe de trois sacs et paire de lunettes existants relus. Pluriels conservés, aucun prix, pourcentage, date ou jour dessiné. Le chapeau isolé ne suffisait pas pour les chapeaux.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-ssx-a2-annonce-2-4-co-2",
+      "question": 1,
+      "node": [
+        "questions",
+        0,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/extension573-electromenager-ensemble.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-vetements-dessines.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co306-meubles-dessine.webp"
+          }
+        ]
+      },
+      "source_sha256": "e0124a5a07dc82047cf6a13bf577ba8745db577a35b683a51ace49a7e1f1936a",
+      "reason": "La promotion vise tout l'électroménager et l'annonce énumère téléviseurs, réfrigérateurs, fours et machines à laver. Aucun vêtement ou meuble n'est proposé dans cet extrait. Nouvel ensemble de quatre appareils correspondant aux quatre catégories citées. Vêtements pliés et ensemble table/fauteuil/commode existants relus. Aucun pourcentage, montant ou texte de promotion ; pas de bouilloire seule substituée à l'ensemble.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
     }
   ]
 }

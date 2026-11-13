@@ -1,0 +1,968 @@
+{
+  "date": "2026-11-13",
+  "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+  "baseline_commit": "cab9e0ea",
+  "human_audio_listening_performed": false,
+  "trios": [
+    {
+      "key": "delf-a1-2022-co-94#7",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Ce week-end, c'est la fête des mères. Venez dans notre magasin. Nous sommes ouverts de 10h à 19h. Et il y a 15% de réduction sur tous les produits. Venez vite, il y a plein d'idées pour vos cadeaux. Nous avons beaucoup de parfums pour les mamans. Et on vous propose un prix spécial de 25€ sur tous les chapeaux.",
+      "source_sha256": "683746fe3ed553b6870ed41ae55e40138e5a613524fe6e4671d8e8559882ccf9",
+      "semantic_sha256": "8c66b97d84183662a714fc3cc9bb4829358823a2f81df4078654abeb4f8b9618",
+      "question": {
+        "enonce": "Quel accessoire a un prix spécial ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Les chapeaux",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Les sacs",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Les lunettes",
+            "correct": false
+          }
+        ],
+        "written_model": "Les chapeaux"
+      },
+      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_94.mp3",
+      "audio_sha256": "acc624c3985f33ff15043e7e253f9dd9b4ea329e109c1b39448d64471b22020f",
+      "image_ids": [
+        "extension573-chapeaux-pluriel",
+        "extension573-sacs-pluriel",
+        "co306-lunettes-vue-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-chapeaux-pluriel.png",
+        "/lib/images/tcf/qcm-audit/extension573-sacs-pluriel.png",
+        "/lib/images/tcf/qcm-audit/co306-lunettes-vue-dessine.webp"
+      ],
+      "image_sha256": [
+        "a4bdbf4f30f9f215eb4749d2c7c654ca9346c407786ef1765dd10999c960eec2",
+        "e0af73edfac463a23866a28a53151daa56b4b8354661605175a33b6cae3aeaee",
+        "4ac6813cf46bd0006c902ab979474337c00683ed4c01d8df7dde19c9ab7af245"
+      ],
+      "reason": "L'annonce distingue la réduction générale du prix spécial sur tous les chapeaux. Sacs et lunettes ne sont pas cités. La question demande l'accessoire, jamais le montant.",
+      "visual_review": "Nouveaux trois chapeaux entiers, groupe de trois sacs et paire de lunettes existants relus. Pluriels conservés, aucun prix, pourcentage, date ou jour dessiné. Le chapeau isolé ne suffisait pas pour les chapeaux."
+    },
+    {
+      "key": "tcf-ssx-a2-annonce-2-4-co-2#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Chers clients, profitez de notre offre exceptionnelle sur tout l'électroménager aujourd'hui. 50% sur les téléviseurs, réfrigérateurs, fours et machines à laver. N'attendez plus !",
+      "source_sha256": "e0124a5a07dc82047cf6a13bf577ba8745db577a35b683a51ace49a7e1f1936a",
+      "semantic_sha256": "4eb7884abe265eae984de36a91a89bad424d5fd546023f247ca7027d583cc325",
+      "question": {
+        "enonce": "Quels produits sont en promotion ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "L’électroménager",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Les vêtements",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Les meubles",
+            "correct": false
+          }
+        ],
+        "written_model": "L’électroménager"
+      },
+      "audio": "/lib/audio/tcf/co/magasins/17-magasin-annonce-offre-électroménager.mp3",
+      "audio_sha256": "b81b4f1dad36b46debac1504bd245b6615655c788f490c4e1eb7c2aa48469f7b",
+      "image_ids": [
+        "extension573-electromenager-ensemble",
+        "co834-vetements-dessines",
+        "co306-meubles-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-electromenager-ensemble.png",
+        "/lib/images/tcf/qcm-audit/co834-vetements-dessines.webp",
+        "/lib/images/tcf/qcm-audit/co306-meubles-dessine.webp"
+      ],
+      "image_sha256": [
+        "8c55516af368dcf044ec88c9d04e6e819c32fc25724fef4facf6e08f3ca4d23a",
+        "ca295f7204f681476b9c1eea1dcd37fdf283ceddd597661781fc622d209ffdcf",
+        "64bc5e33321fdb227877b0f84bc11d82d1b0a1006721d82cfe1d0b4098d0e895"
+      ],
+      "reason": "La promotion vise tout l'électroménager et l'annonce énumère téléviseurs, réfrigérateurs, fours et machines à laver. Aucun vêtement ou meuble n'est proposé dans cet extrait.",
+      "visual_review": "Nouvel ensemble de quatre appareils correspondant aux quatre catégories citées. Vêtements pliés et ensemble table/fauteuil/commode existants relus. Aucun pourcentage, montant ou texte de promotion ; pas de bouilloire seule substituée à l'ensemble."
+    },
+    {
+      "key": "tcf-ss-a1-s54-co-4#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Bonjour, le week-end des 3 et 4 octobre, la pharmacie de garde est la pharmacie Dujardin, boulevard Rossi.\nElle est ouverte le jour et la nuit.\nN'oubliez pas votre carte Vitale et votre ordonnance.",
+      "source_sha256": "46e95742432e9a0c2aa592ad77bf4576beb68c05372e3e20969b9a9b69307696",
+      "semantic_sha256": "d505d9c0005b7614447c63cbd4132f67d108924ee180cbf216ed050164d73719",
+      "question": {
+        "enonce": "Quels documents faut-il apporter ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "La carte Vitale et l'ordonnance",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Le passeport et le billet",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Le permis et la carte grise",
+            "correct": false
+          }
+        ],
+        "written_model": "La carte Vitale et l'ordonnance"
+      },
+      "audio": "/lib/audio/tcf/co/travail/bonjour-week-end-1.mp3",
+      "audio_sha256": "962c6c5c4271e509b1801c36280feddf739a6b2897ec4a0d2935c3d628f4d90c",
+      "image_ids": [
+        "extension573-vitale-ordonnance",
+        "extension573-passeport-billet",
+        "extension573-permis-carte-grise"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-vitale-ordonnance.png",
+        "/lib/images/tcf/qcm-audit/extension573-passeport-billet.png",
+        "/lib/images/tcf/qcm-audit/extension573-permis-carte-grise.png"
+      ],
+      "image_sha256": [
+        "b4f8a436a254e0383612dacf6ce387105cc70a22261d0583752c1964fe92c252",
+        "b538e632204396fa078fe3a0199690e318aa4ae4f93fd89b54fc5e25107777a0",
+        "e11a1e05de9a0ce084753a60ff27c10daa5bb2a25bcfe61024bf5b766ee61dc0"
+      ],
+      "reason": "Le message de la pharmacie de garde demande la carte Vitale et l'ordonnance. Ni passeport et billet ni permis et carte grise ne sont cités. Les deux documents de chaque réponse sont nécessaires.",
+      "visual_review": "Trois nouvelles paires relues : carte Vitale verte et ordonnance, passeport et billet de train, permis rose et carte grise papier. Titres courts corrects, lignes abstraites et silhouette anonyme ; aucun montant, date, identité ou numéro. Aucune carte d'identité ou bancaire substituée."
+    },
+    {
+      "key": "tcf-ss-a1-s22-co-4#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Pour le repas de ce soir j'ai préparé un gâteau, une salade de fruits et un poulet rôti.\nJe voulais rajouter des carottes et des pommes de terre, mais je n'en ai pas à la maison.\nJe sais que Jasmine aime les légumes.\nJe lui ai fait une salade pour me faire pardonner.",
+      "source_sha256": "ce16e983a671570d5fe16f0723fb79c49e40500d21202471e66c4c73231f7828",
+      "semantic_sha256": "b683dd4113da1a16d9ae014e057dadafc6c0e2039d4487c7def92387720782c9",
+      "question": {
+        "enonce": "Quels desserts sont préparés ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un gâteau et une salade de fruits",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Une tarte et une glace",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une mousse et des crêpes",
+            "correct": false
+          }
+        ],
+        "written_model": "Un gâteau et une salade de fruits"
+      },
+      "audio": "/lib/audio/tcf/co/maison/pour-repas-soir.mp3",
+      "audio_sha256": "587ea3b8d16b750d8d29375daa00b43d6e96212d7dc77fce78ec8b23aa83129f",
+      "image_ids": [
+        "extension573-gateau-salade-fruits",
+        "extension573-tarte-glace-duo",
+        "extension573-mousse-crepes-duo"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-gateau-salade-fruits.png",
+        "/lib/images/tcf/qcm-audit/extension573-tarte-glace-duo.png",
+        "/lib/images/tcf/qcm-audit/extension573-mousse-crepes-duo.png"
+      ],
+      "image_sha256": [
+        "99e75fb756a810ca60239ddea1f5907fcc7824f05947b51e8d17cb81c8957a54",
+        "c2101c2427e550338c79f8c81a3d3e69176c4876be850f92d447f2aa0f935ec1",
+        "7b1552e7be385f2d1d624eac8657dc7a9a2212499364acc2f8d6f75317c74150"
+      ],
+      "reason": "Le repas comprend un gâteau, une salade de fruits et un poulet rôti. La question porte uniquement sur les desserts : gâteau et salade de fruits. Tarte, glace, mousse et crêpes ne sont pas citées.",
+      "visual_review": "Trois nouveaux duos complets examinés : gâteau entier et salade de fruits, tarte entière et coupe de glace, mousse aérée et deux crêpes fines. Aucun poulet ni légume ajouté au duo des desserts, ni pancake à la place des crêpes. Même style peint sur crème, exact 4:3."
+    },
+    {
+      "key": "tcf-delf-actif-a1-025-01#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "C’est Zoé, j’ai besoin d’un cadeau pour ce soir à 20h00. On fête mon père. Je cherche une belle écharpe. Tu as du temps pour venir avec moi chez Accessory ? Tu peux apporter ta carte pour avoir une réduction ? On s’attend à 17h00 devant la pharmacie de rue Lagrange.",
+      "source_sha256": "93dd3019e70c1f5838510181a603ef1bc393b41d6565fbfa1121b7365e141e0e",
+      "semantic_sha256": "3e44b835736f1e8996d60f0044f379e7da19bb66c0f18e584fb40481c8f45096",
+      "question": {
+        "enonce": "Quel cadeau veut-elle acheter ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Une écharpe",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Une ceinture",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une cravate",
+            "correct": false
+          }
+        ],
+        "written_model": "Une écharpe"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-025-01.mp3",
+      "audio_sha256": "81d5119bcd0e266667b83324f0eed8ea2e03e926cbd1878d931557b4965a15f1",
+      "image_ids": [
+        "vocab-echarpe",
+        "co306-ceinture-dessine",
+        "vocab-cravate"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-echarpe.webp",
+        "/lib/images/tcf/qcm-audit/co306-ceinture-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-cravate.webp"
+      ],
+      "image_sha256": [
+        "6266453837086853656bdab88f619546024cfc6a4f0f2c19af16ead2c38d8747",
+        "61cb61ccb19380cd2ffd164693317fdbaf12c17591c376d0af05c8b079215c7d",
+        "94027d04782c64696a71654e9e2bca6a2b511ec340db72ab46887061ac8a6db1"
+      ],
+      "reason": "Zoé cherche une belle écharpe comme cadeau pour son père. Ceinture et cravate ne sont pas demandées ; les horaires et la carte de réduction ne sont pas le sujet du QCM.",
+      "visual_review": "Écharpe en laine rouge, ceinture de vêtement brune à boucle et cravate rouge entières réutilisées. La ceinture de sécurité proposée par un alias a été rejetée. Aucun genre ou visage déduit pour représenter le père."
+    },
+    {
+      "key": "tcf-delf-actif-a1-032-04#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Le cours de gym se termine. Aidez-moi à ranger le matériel. Madame je m’occupe des tapis ? Très bien Tonin. Merci pour ton aide.",
+      "source_sha256": "f096342cf130a32dd87307b83d058d2eb1f530eb99563b276211acda7b390629",
+      "semantic_sha256": "40a8302bd2f8163de17b7a848be7377dbf93fbb5ba28b87eeb964486b45626be",
+      "question": {
+        "enonce": "De quel matériel Tonin propose-t-il de s’occuper ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Des tapis",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Des ballons",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Des raquettes",
+            "correct": false
+          }
+        ],
+        "written_model": "Des tapis"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-032-04.mp3",
+      "audio_sha256": "7f241b9e20bc40c14c59b5ca31294662b84598c34d581a474754adf6fc99daf0",
+      "image_ids": [
+        "vocab-tapis-yoga-pluriel",
+        "vocab-ballons-football",
+        "vocab-raquettes"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-tapis-yoga-pluriel.webp",
+        "/lib/images/tcf/qcm-audit/vocab-ballons-football.webp",
+        "/lib/images/tcf/qcm-audit/vocab-raquettes.webp"
+      ],
+      "image_sha256": [
+        "998840c7e41f2ac70c7aac0727e19d5386b52ce06c1a92466d50181676895902",
+        "843d52ba1cc4a2a21bf61d539092cc86e32b5382e977157d65dedc081e8798f5",
+        "78effb185fcf42217dc7c808825c48e5387c3a8f63c0729a9be250a2a5934d34"
+      ],
+      "reason": "À la fin du cours de gym, Tonin propose de s'occuper des tapis pendant le rangement. Les ballons et raquettes ne sont pas cités dans cet échange.",
+      "visual_review": "Deux tapis de sport partiellement déroulés, trois ballons de football et deux raquettes réutilisés. Les trois catégories de matériel sont au pluriel ; les ballons de fête sont écartés pour ce contexte sportif."
+    },
+    {
+      "key": "tcf-delf-actif-a1-035-01#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut, c’est Sébastien. J’ai un superbe vélo. C’est le cadeau de mes parents pour mon anniversaire. J’ai aussi une nouvelle montre de la part de mes grands-parents et un bracelet offert par ma sœur. La fête c’est samedi à 16h00. Viens manger le gâteau d’anniversaire et passer un bel après-midi.",
+      "source_sha256": "51e1bdfb1584f9ebd950a71e98c9175bd374da4590b8a8eaf73767de07397a06",
+      "semantic_sha256": "c1757ab9a0f924467a840337eb5e9366f59351b87d47a699f0dcd9027e20759d",
+      "question": {
+        "enonce": "Quel cadeau Sébastien a-t-il reçu de ses parents ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un vélo",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un ordinateur",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un téléphone",
+            "correct": false
+          }
+        ],
+        "written_model": "Un vélo"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-035-01.mp3",
+      "audio_sha256": "8253139f00025835e659cd60c15f3eb032fc8c7206b53ce267b57a0c428f21dd",
+      "image_ids": [
+        "vocab-velo-isole",
+        "co834-ordinateur-dessine",
+        "co834-telephone-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-velo-isole.webp",
+        "/lib/images/tcf/qcm-audit/co834-ordinateur-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-telephone-dessine.webp"
+      ],
+      "image_sha256": [
+        "e65db9d18d6e12f54982a3650fc68d64ecd66b11a98cb634f5e5e4c48a480085",
+        "0975b4d983b9e0896f2bd09e2ddbb38bab9d3244e28a84c359e13db6f8a7fd42",
+        "0720a4239b45116cfd5bf748a207e2739a022f81bfd469b29b201e7ba465ef63"
+      ],
+      "reason": "Sébastien a reçu un vélo de ses parents. La montre vient de ses grands-parents et le bracelet de sa sœur. Ni ordinateur ni téléphone n'est cité comme cadeau des parents.",
+      "visual_review": "Vélo bleu isolé entier, ordinateur complet et téléphone existants examinés. Trois objets au singulier ; aucune marque, couleur imposée ou relation familiale n'est inventée par une scène de personnages."
+    },
+    {
+      "key": "tcf-delf-actif-a1-040-01#4",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "On achète quoi pour l’anniversaire de Mme Dubois ? C’est demain et on n’a pas de cadeau. Elle aime les fleurs mais ma mère conseille un parfum. Ou alors on peut prendre un foulard. Rappelle- moi, je suis dans le centre -ville, je peux m’occuper du cadeau.",
+      "source_sha256": "821ad8e191e838d723c87473035a197d82b307ca98860b3521c4d160a296ec2b",
+      "semantic_sha256": "a50fe0346728e140cefd386e584b4277c199603cf44b954a11983bd6eb19b7c8",
+      "question": {
+        "enonce": "Quel cadeau la mère conseille-t-elle ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un parfum",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Une écharpe",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une montre",
+            "correct": false
+          }
+        ],
+        "written_model": "Un parfum"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-040-01.mp3",
+      "audio_sha256": "e74f7f97d6eb0e2073e3c353f097c28b60108c33dc2bd4ed2c811516690670eb",
+      "image_ids": [
+        "vocab-parfum",
+        "vocab-echarpe",
+        "co834-montre-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-parfum.webp",
+        "/lib/images/tcf/qcm-audit/vocab-echarpe.webp",
+        "/lib/images/tcf/qcm-audit/co834-montre-dessinee.webp"
+      ],
+      "image_sha256": [
+        "5a9e59b463603f40dc5f2d2035eabdca9c883138d5c699f069e8a9e11a22ab72",
+        "6266453837086853656bdab88f619546024cfc6a4f0f2c19af16ead2c38d8747",
+        "848dec4d460520d45c51f6e90d8c6c278ab8fcce203949573b460d5130106629"
+      ],
+      "reason": "Pour l'anniversaire de Mme Dubois, la mère conseille un parfum. Un foulard est proposé ensuite comme autre idée ; la montre n'est pas citée. L'énoncé vise précisément le conseil de la mère.",
+      "visual_review": "Flacon de parfum à vaporisateur, écharpe en laine et montre bracelet entiers réutilisés. Aucun flacon alimentaire ou cosmétique ambigu, pas de marque ou d'identité. Le foulard du dialogue ne modifie pas le conseil attribué à la mère."
+    },
+    {
+      "key": "tcf-delf-actif-a1-044-04#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Pendant votre temps libre, que faites-vous avec vos copains ? Nous faisons du vélo et des promenades. Ça me plaît. Et vous ne faites pas les magasins ? Ah non ! j’ai horreur de ça !",
+      "source_sha256": "58ace409677a841c9561d46a9e951ec59d4a8fa52a09c61451716cbf0654592e",
+      "semantic_sha256": "e1c43f8339bc50645503c13417bd76531d5dc02e7120121e3e3aa8562618d3b8",
+      "question": {
+        "enonce": "Quel véhicule les amis utilisent-ils pendant leurs loisirs ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Le vélo",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Le scooter",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "La trottinette",
+            "correct": false
+          }
+        ],
+        "written_model": "Le vélo"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-044-04.mp3",
+      "audio_sha256": "0cabf393d89799eaf9defcd7d2d9f47ef6efdad5a7879b7c4a1c5e264d9f64bc",
+      "image_ids": [
+        "vocab-velo-isole",
+        "vocab-scooter",
+        "vocab-trottinette"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-velo-isole.webp",
+        "/lib/images/tcf/qcm-audit/vocab-scooter.webp",
+        "/lib/images/tcf/qcm-audit/vocab-trottinette.webp"
+      ],
+      "image_sha256": [
+        "e65db9d18d6e12f54982a3650fc68d64ecd66b11a98cb634f5e5e4c48a480085",
+        "87bacb6a0e08976f329ae5c4016482d98ed65a0965c36cd4e3c680bdf263f590",
+        "d41829d59983e7508e1fa4ce6fa6e7445d900421c62b35b8f293ca1f0bffdac6"
+      ],
+      "reason": "Les amis disent Nous faisons du vélo et des promenades. Aucun scooter ou trottinette n'est mentionné. La question vise le véhicule et ne confond pas la promenade à pied avec un autre engin.",
+      "visual_review": "Vélo sans moteur, scooter motorisé à selle et trottinette à plateforme réutilisés. Trois véhicules entiers et clairement distincts, sans personne ni texte ; les roues et guidons sont visibles."
+    },
+    {
+      "key": "tcf-delf-actif-a1-049-04-01#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Pour toi aussi du poisson avec des légumes ? Je veux bien du poisson mais avec du riz. Voilà ton poisson et ton riz. Je te mets de la sauce ?",
+      "source_sha256": "d6de28f6ab6f97f6baa30a4861a93d2f5db40684efaba12f7e07f88bee5be3b6",
+      "semantic_sha256": "07785595ff4b1796be3ee607fb51624f301836d0870b341b0cf94768a2941e02",
+      "question": {
+        "enonce": "Quel accompagnement choisit-elle ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Du riz",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Des légumes",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Des frites",
+            "correct": false
+          }
+        ],
+        "written_model": "Du riz"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-049-04-01.mp3",
+      "audio_sha256": "6f31eef2578ae1cb4b9a22ecc964152df82b7b50714fc1a168bc9e0234389128",
+      "image_ids": [
+        "co306-riz-dessine",
+        "co306-petits-legumes-dessine",
+        "co306-frites-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-riz-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-petits-legumes-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-frites-dessine.webp"
+      ],
+      "image_sha256": [
+        "000b14a297384b03d100f2acfc84d56490c54892ee9723c2724f1254d074210b",
+        "5ed33b54f7ee637086246196bcc56b5815694fe6a1d30968d7ae9cabd4e94f91",
+        "27e2a2cd255a71a0985b4494d6c9475c42bd9edd1692a0ad1a1c61f4d572f773"
+      ],
+      "reason": "On lui propose du poisson avec des légumes, mais elle choisit du riz. Les légumes sont donc une proposition écartée, et les frites ne sont pas citées. La réponse reste unique malgré la présence du mot légumes dans l'échange.",
+      "visual_review": "Trois accompagnements servis sur assiette existants examinés : riz cuit, petits légumes cuits et frites. Le groupe de légumes crus est écarté au profit d'une assiette qui convient au repas. Aucun poisson ajouté aux seuls choix."
+    },
+    {
+      "key": "tcf-delf-actif-a1-050-01-01#4",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut, c’est Sacha. Je dois changer un pantalon acheté samedi. Tu viens au magasin avec moi mercredi ? On va prendre la taille la plus petite. Je veux voir aussi les nouveaux modèles de baskets. Rendez-vous à l’arrêt de bus 234 Place Joffre. Après on va manger une gaufre.",
+      "source_sha256": "51a741967f5ed6d75ec72f9c5d19b0bfd4bb45f5f66ebb6182bedb1fe225af5f",
+      "semantic_sha256": "b6c51168b5a645f1d56c73e0ad94eeb2b912cf868acda84e68bd42416c9fcfaf",
+      "question": {
+        "enonce": "Quels autres articles veut-il regarder ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Des baskets",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Des bottes",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Des sandales",
+            "correct": false
+          }
+        ],
+        "written_model": "Des baskets"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-050-01-01.mp3",
+      "audio_sha256": "794be2f094b10366775152311289a3f101157f1b014e60a97d513d733fb838e9",
+      "image_ids": [
+        "vocab-baskets",
+        "vocab-bottes",
+        "co306-sandales-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-baskets.webp",
+        "/lib/images/tcf/qcm-audit/vocab-bottes.webp",
+        "/lib/images/tcf/qcm-audit/co306-sandales-dessine.webp"
+      ],
+      "image_sha256": [
+        "c635478376c7c8bf7d1a6df3371946bccb33df04cc8d053d68bca52f68bcf1be",
+        "e3ebb554020b25ccfc12b9500a9b1e18b4772dbe5994cc9ca9da0a21a9b95581",
+        "0d2b8c57c019a0406e87a8f45d4b7c5a3f10f0de67b1a3e84f71c8d7a17fe48d"
+      ],
+      "reason": "Sacha doit changer un pantalon et veut regarder les nouveaux modèles de baskets. Bottes et sandales ne sont pas citées. Le type d'article demandé en plus du retour du pantalon est bien la basket.",
+      "visual_review": "Trois paires entières de chaussures : baskets bleu/blanc, bottes vertes et sandales brunes réutilisées. Pluriels, types, talons et semelles visibles ; pas de marque ou de prix."
+    },
+    {
+      "key": "tcf-delf-actif-a2-001#2",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Compostez votre billet.\nMontez dans le train.\nIl est interdit de filmer.\nPour réserver vos places, téléphonez !\nMontrez vos passeports.\nRegardez le panneau lumineux.",
+      "source_sha256": "c180a7959adf7ce92b3b3ee908d1d7ce47123f33abfd3cdb1b7bb81836a0c95a",
+      "semantic_sha256": "bb222c1df310cacf7a18a51d48111f363b834411eb1e9f3481e2d31796c2fcb2",
+      "question": {
+        "enonce": "Dans quel véhicule faut-il monter ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Le train",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Le bus",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "L’avion",
+            "correct": false
+          }
+        ],
+        "written_model": "Le train"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-001.mp3",
+      "audio_sha256": "82737f9bdf2765a671cf89f8eb93e97d60cb12b6fa5b0161b09c19c9e519e4af",
+      "image_ids": [
+        "vocab-train-isole",
+        "vocab-bus-isole",
+        "vocab-avion"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-train-isole.webp",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/vocab-avion.webp"
+      ],
+      "image_sha256": [
+        "f201b60e59b3825aa6069503e70326fffd9850799b947efad3dc6e1bc4b7517a",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "1e312cf1a4a4bfc617dbf5a4532511403112bb78ca54899aa42660b3b74b140f"
+      ],
+      "reason": "La suite de consignes dit Montez dans le train. Aucune montée dans un bus ou un avion n'est demandée. Le passeport et le billet dans les autres phrases ne changent pas le véhicule nommé.",
+      "visual_review": "Train bleu/blanc, bus à roues et avion à deux réacteurs réutilisés, véhicules entiers sans trajet ou destination. Les trois types de transport sont distincts ; aucune scène de voyageurs ne remplace le véhicule."
+    },
+    {
+      "key": "tcf-delf-actif-a2-006-04#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Votre attention s’il vous plaît. Merci de vous préparer à la descente du train et de vérifier de ne rien avoir oublié à bord.",
+      "source_sha256": "524e78e6afa2d955a463dc7781289262ec06f29c195e1f9239c5679cfab85e08",
+      "semantic_sha256": "a36afcee160a3fc4a92e440e512d78e01f9ac9ff56758773012ce388e41dffa4",
+      "question": {
+        "enonce": "De quel véhicule les voyageurs vont-ils descendre ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Le train",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Le bus",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "L’avion",
+            "correct": false
+          }
+        ],
+        "written_model": "Le train"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-006-04.mp3",
+      "audio_sha256": "04423258354a2bb76f74ef70524399ee47ff6d142de04ea877139ae8d21941f3",
+      "image_ids": [
+        "vocab-train-isole",
+        "vocab-bus-isole",
+        "vocab-avion"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-train-isole.webp",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/vocab-avion.webp"
+      ],
+      "image_sha256": [
+        "f201b60e59b3825aa6069503e70326fffd9850799b947efad3dc6e1bc4b7517a",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "1e312cf1a4a4bfc617dbf5a4532511403112bb78ca54899aa42660b3b74b140f"
+      ],
+      "reason": "L'annonce demande de se préparer à la descente du train et de ne rien oublier à bord. Bus et avion ne sont pas cités.",
+      "visual_review": "Le trio train/bus/avion contrôlé pour l'autre nouvelle consigne est réutilisé. Véhicules complets et distincts, même peinture douce, pas de nouveau dessin ni de panneau arbitraire."
+    },
+    {
+      "key": "tcf-delf-actif-a2-016-01#4",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Coucou, Manu, c’est Danielle. Samedi soir je ne peux pas assister à ton spectacle de danse. Je viens de savoir que mon père arrive en avion à 20h00. Nous allons l’attendre ma mère, ma sœur et moi. Je regrette mais je viens te voir volontiers la prochaine fois. Bisous.",
+      "source_sha256": "0f6f693aeda0ceb36ab7f955d28cd5aad22a214f5c0cab2c2a29aa7dc07a2d34",
+      "semantic_sha256": "0da63ee6a4102623416c8e87b68c2065c031c21bc39a79d3e6f96c1db1a5a438",
+      "question": {
+        "enonce": "Par quel moyen de transport arrive-t-il ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "En avion",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "En train",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "En voiture",
+            "correct": false
+          }
+        ],
+        "written_model": "En avion"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-016-01.mp3",
+      "audio_sha256": "b6e98586ae950703009f894e6e3a0a222e44e6e9d1aa0623fd5298f58a35ed89",
+      "image_ids": [
+        "vocab-avion",
+        "vocab-train-isole",
+        "co834-voiture-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-avion.webp",
+        "/lib/images/tcf/qcm-audit/vocab-train-isole.webp",
+        "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp"
+      ],
+      "image_sha256": [
+        "1e312cf1a4a4bfc617dbf5a4532511403112bb78ca54899aa42660b3b74b140f",
+        "f201b60e59b3825aa6069503e70326fffd9850799b947efad3dc6e1bc4b7517a",
+        "55da4bb01d69290bbaf21e97b935c9e72f115dbbffbc0e6ae23b4374cde28b85"
+      ],
+      "reason": "Danielle annonce que son père arrive en avion et que la famille va l'attendre. Aucun train ou voiture n'est indiqué comme moyen d'arrivée du père.",
+      "visual_review": "Avion entier, train isolé et voiture verte entière existants relus. La voiture de la banque ne prétend pas appartenir au père ; seule sa catégorie sert de leurre. Aucun horaire ou lien familial dessiné."
+    },
+    {
+      "key": "tcf-delf-actif-a2-018-01#3",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Salut Carole, tu es toujours d’accord pour faire des achats demain après-midi? Au centre-ville dans le magasin Jean-Pierre Sport il y a le dernier modèle de ma marque préférée de basket en promotion et le survêtement bleu de Jules et Jim à 60€.",
+      "source_sha256": "93a1fbfd60d573a4798782c98cbb9bcebca629cc28eae80fc2a17019636f7a35",
+      "semantic_sha256": "5deb4856205e5b6152cc1039b8f270a28bb1677879a614fc1364755252275ef1",
+      "question": {
+        "enonce": "Quel type de chaussures est en promotion ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Les baskets",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Les bottes",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Les sandales",
+            "correct": false
+          }
+        ],
+        "written_model": "Les baskets"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-018-01.mp3",
+      "audio_sha256": "0576ae06942c458bdabfdc85bc4a75aeeb82cff510e455ff55f479ba5c1b1fee",
+      "image_ids": [
+        "vocab-baskets",
+        "vocab-bottes",
+        "co306-sandales-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-baskets.webp",
+        "/lib/images/tcf/qcm-audit/vocab-bottes.webp",
+        "/lib/images/tcf/qcm-audit/co306-sandales-dessine.webp"
+      ],
+      "image_sha256": [
+        "c635478376c7c8bf7d1a6df3371946bccb33df04cc8d053d68bca52f68bcf1be",
+        "e3ebb554020b25ccfc12b9500a9b1e18b4772dbe5994cc9ca9da0a21a9b95581",
+        "0d2b8c57c019a0406e87a8f45d4b7c5a3f10f0de67b1a3e84f71c8d7a17fe48d"
+      ],
+      "reason": "Le magasin de sport propose le dernier modèle de baskets en promotion. Les bottes et sandales ne figurent pas dans le message ; le survêtement bleu est un autre produit.",
+      "visual_review": "Même trio de paires de chaussures réutilisé après examen de cette source : baskets, bottes et sandales. Aucun prix de la source ou marque du modèle n'est dessiné, aucun survêtement ne remplace la catégorie de chaussures."
+    },
+    {
+      "key": "tcf-delf-actif-a2-030-04#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Pour aller au lycée, tu utilises le train ou le bus ? Je prends toujours le train. Mais la gare est loin du lycée ! Oui c’est vrai ! Mais je marche vite et j’arrive à l’heure.",
+      "source_sha256": "86dac8e2a2abe79db9eefeef776fe521bbcc8dfee3b6ff884e400a5d4b38fc79",
+      "semantic_sha256": "245a5d7a3a3ae01eab925387b8b865199661acfdc1828853bcc9d8c5a9434b22",
+      "question": {
+        "enonce": "Quel transport l’élève prend-il pour aller au lycée ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Le train",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Le bus",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Le métro",
+            "correct": false
+          }
+        ],
+        "written_model": "Le train"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-030-04.mp3",
+      "audio_sha256": "8699f34db32e43328b392eb09aad79b802da11993a7a4bd185784b48ebefdb20",
+      "image_ids": [
+        "vocab-train-isole",
+        "vocab-bus-isole",
+        "co834-metro-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-train-isole.webp",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/co834-metro-dessine.webp"
+      ],
+      "image_sha256": [
+        "f201b60e59b3825aa6069503e70326fffd9850799b947efad3dc6e1bc4b7517a",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "581856c7701fe4ec5aa26b284000f54d46cf6c6a79cd6245118883dcb5a0199c"
+      ],
+      "reason": "L'élève répond Je prends toujours le train à l'alternative train ou bus. Le bus est entendu comme proposition et non comme réponse retenue ; le métro n'est pas évoqué.",
+      "visual_review": "Train régional isolé et bus entiers réutilisés ; pour le métro, la rame en station souterraine est retenue plutôt que la rame isolée trop semblable au train. Le contexte de station rend la catégorie métropolitaine plus lisible sans changer les choix."
+    },
+    {
+      "key": "tcf-delf-actif-a2-031-03#2",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Pour ce soir, qu’est-ce que tu voudrais manger ? Qu’est-ce que tu dis d’une pizza ? Il y a tout à la maison? Oui, on peut faire une pizza aux fromages. C’est une très bonne idée.",
+      "source_sha256": "fb1d5289bb81181aa111e68cc29317aefcf5ffa06af201c606d5fcd5e943ea3f",
+      "semantic_sha256": "6ff5db259f540d076e23e92c40b367a963a788070df05913cd65bfe1e8045d85",
+      "question": {
+        "enonce": "Quel plat choisissent-elles ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Une pizza",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Une quiche",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une soupe",
+            "correct": false
+          }
+        ],
+        "written_model": "Une pizza"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-031-03.mp3",
+      "audio_sha256": "a54967244ffd26d148a41c06c0408c1c83a71930d3a7818280b9330ca7838ac8",
+      "image_ids": [
+        "co834-pizza-dessinee",
+        "vocab-quiche",
+        "co834-soupe-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-pizza-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/vocab-quiche.webp",
+        "/lib/images/tcf/qcm-audit/co834-soupe-dessine.webp"
+      ],
+      "image_sha256": [
+        "be5d4a7cf9dab36bbba9217877079d73e81a98419c319dcd4050deb14d2e5599",
+        "020f4ce264538e01bac8111bf7e134104c54c2e0ea9b965d294ebf9bc2f53572",
+        "c1f7b76ef0b78671c6fb4199e4062f21b0b47d4f04a82fc89109b06a3bc26b9e"
+      ],
+      "reason": "Les deux personnes se mettent d'accord sur une pizza aux fromages. Ni quiche ni soupe ne sont proposées. Le type de plat correct reste la pizza.",
+      "visual_review": "Pizza au fromage fondu sans viande visible, quiche à croûte haute et soupe en bol existants examinés. La pizza déjà disponible respecte la garniture décrite : aucune nouvelle pizza n'est nécessaire. Trois plats entiers distincts."
+    },
+    {
+      "key": "tcf-delf-actif-a2-043-04-03#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Excusez-moi, vous pouvez garder mon chien 1 minute s’il vous plaît ? Oui mais vous allez où ? Je rentre dans la pâtisserie prendre un gâteau. Pas de problèmes, allez-y.",
+      "source_sha256": "7052cd271ca75d1a38ab10896a53fcfad8bb1fa67b1b738be08e8318b079a651",
+      "semantic_sha256": "808b50e40573f1625f4d1db0deeacb6872a40df361fd0174689d327ab4f8c149",
+      "question": {
+        "enonce": "Quel animal faut-il garder ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un chien",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un chat",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un lapin",
+            "correct": false
+          }
+        ],
+        "written_model": "Un chien"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-043-04-03.mp3",
+      "audio_sha256": "1602983632dfa1891577678667007dc27c706b8699a12c1666405c82401005ea",
+      "image_ids": [
+        "vocab-chien",
+        "vocab-chat",
+        "vocab-lapin"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-chien.webp",
+        "/lib/images/tcf/qcm-audit/vocab-chat.webp",
+        "/lib/images/tcf/qcm-audit/vocab-lapin.webp"
+      ],
+      "image_sha256": [
+        "ad3f8e5f558a25ac591a80263255af7a88766f8525f1c3648c51421da873b183",
+        "6925353daec05239436ccaabaa6717f92f1116db020622734bd70cb39345da78",
+        "4badc760f9b54d704a7ad015aa54689fa93bef2940fce4840d3cd12ec336d34d"
+      ],
+      "reason": "La personne demande de garder son chien pendant qu'elle entre dans la pâtisserie. Aucun chat ni lapin n'est cité.",
+      "visual_review": "Chien, chat et lapin entiers existants réutilisés. Trois espèces distinctes, sans laisse ou personne ajoutée qui ferait inventer une apparence ou une relation. L'animal est isolé pour répondre au type demandé."
+    },
+    {
+      "key": "tcf-delf-actif-a2-046-04-01#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Ces îles ne sont pas loin. On peut prendre un bateau pour aller les visiter. Tu viens ? Pourquoi pas, je veux bien. Alors on prend un billet pour demain ? Oui... mais pas le matin.",
+      "source_sha256": "ecf859a42a26dbcd7a1308edc74707261e86a59293d052096751f4813fb83ad4",
+      "semantic_sha256": "93aeb282710a0583f295a21ac37187c9a89129fd0c4e414a83aaa54ce1899ff3",
+      "question": {
+        "enonce": "Quel moyen de transport est proposé ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un bateau",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un avion",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un train",
+            "correct": false
+          }
+        ],
+        "written_model": "Un bateau"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-046-04-01.mp3",
+      "audio_sha256": "dc72d0785e8beb3833bad63b1d0308c1766d2d64ada84aeebc0ca66526021c61",
+      "image_ids": [
+        "co834-bateau-dessine",
+        "vocab-avion",
+        "vocab-train-isole"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-avion.webp",
+        "/lib/images/tcf/qcm-audit/vocab-train-isole.webp"
+      ],
+      "image_sha256": [
+        "85671abeca9f1cc829020d4c47f0cee3c1992c7b656533cf6f206c5379a9cae7",
+        "1e312cf1a4a4bfc617dbf5a4532511403112bb78ca54899aa42660b3b74b140f",
+        "f201b60e59b3825aa6069503e70326fffd9850799b947efad3dc6e1bc4b7517a"
+      ],
+      "reason": "Les îles ne sont pas loin et la personne propose de prendre un bateau pour les visiter. Avion et train ne sont pas cités. Le billet évoqué ensuite n'en change pas le moyen de transport.",
+      "visual_review": "Bateau de transport de passagers entier sur l'eau, avion et train existants examinés. Aucun voilier de sport ne remplace la traversée proposée, pas de destination ou horaire inventé."
+    },
+    {
+      "key": "tcf-delf-actif-a2-046-04-03#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Super cette journée aux îles, n’est-ce pas ! Prendre le bateau, nager, se faire bronzer, visiter l’île… Oh oui ! Je te remercie de m’avoir invitée. Tu es contente ? Oui vraiment, très contente. Merci encore !",
+      "source_sha256": "fbc6e73c584af746cb934d5f6d97a9e1aa78fbaf80d7c484e6321f8459cfb8b3",
+      "semantic_sha256": "defb30685175ea06cbff3abfd06d6686886062258d19f75df60e1061f87610d5",
+      "question": {
+        "enonce": "Quel transport les amis ont-ils utilisé ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Le bateau",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "L’avion",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Le train",
+            "correct": false
+          }
+        ],
+        "written_model": "Le bateau"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-046-04-03.mp3",
+      "audio_sha256": "d6384901ab4b5fb7ee603953ed316f61ae996acd3a06b91a5a8e581747566bc5",
+      "image_ids": [
+        "co834-bateau-dessine",
+        "vocab-avion",
+        "vocab-train-isole"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-avion.webp",
+        "/lib/images/tcf/qcm-audit/vocab-train-isole.webp"
+      ],
+      "image_sha256": [
+        "85671abeca9f1cc829020d4c47f0cee3c1992c7b656533cf6f206c5379a9cae7",
+        "1e312cf1a4a4bfc617dbf5a4532511403112bb78ca54899aa42660b3b74b140f",
+        "f201b60e59b3825aa6069503e70326fffd9850799b947efad3dc6e1bc4b7517a"
+      ],
+      "reason": "Après la journée aux îles, la personne récapitule Prendre le bateau, nager, se faire bronzer, visiter l'île. Avion et train ne sont pas nommés.",
+      "visual_review": "Même trio de moyens de transport réutilisé pour cette autre transcription, relue séparément. Le bateau de passagers convient à la visite, les trois véhicules sont distincts et la source ne précise pas de modèle."
+    }
+  ]
+}

@@ -8,29 +8,29 @@
     "supports": 346,
     "questions": 1663,
     "statuses": {
-      "candidate_visual_review": 358,
+      "candidate_visual_review": 342,
       "keep_text_calendar_or_duration": 139,
       "needs_context_review": 1021,
       "keep_text_named_identity_or_code": 60,
-      "active_reviewed_trio": 12,
+      "active_reviewed_trio": 28,
       "keep_text_amount": 73
     },
     "by_level": {
       "A0-A1": {
-        "candidate_visual_review": 146,
+        "candidate_visual_review": 139,
         "keep_text_calendar_or_duration": 46,
         "needs_context_review": 208,
         "keep_text_named_identity_or_code": 23,
-        "active_reviewed_trio": 6,
+        "active_reviewed_trio": 13,
         "keep_text_amount": 37
       },
       "A1-A2": {
-        "candidate_visual_review": 170,
+        "candidate_visual_review": 161,
+        "active_reviewed_trio": 15,
         "needs_context_review": 363,
         "keep_text_named_identity_or_code": 28,
         "keep_text_calendar_or_duration": 58,
-        "keep_text_amount": 24,
-        "active_reviewed_trio": 6
+        "keep_text_amount": 24
       },
       "A2-B1": {
         "needs_context_review": 450,
@@ -12434,8 +12434,8 @@
       "semantic_sha256": "3e44b835736f1e8996d60f0044f379e7da19bb66c0f18e584fb40481c8f45096",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-025-01.mp3",
       "audio_sha256": "81d5119bcd0e266667b83324f0eed8ea2e03e926cbd1878d931557b4965a15f1",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -12489,8 +12489,24 @@
           "brief": "Représenter entièrement « Une cravate » pour « Quel cadeau veut-elle acheter ? ». Vérifier la transcription du support tcf-delf-actif-a1-025-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-echarpe.webp",
+          "sha256": "6266453837086853656bdab88f619546024cfc6a4f0f2c19af16ead2c38d8747"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-ceinture-dessine.webp",
+          "sha256": "61cb61ccb19380cd2ffd164693317fdbaf12c17591c376d0af05c8b079215c7d"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/vocab-cravate.webp",
+          "sha256": "94027d04782c64696a71654e9e2bca6a2b511ec340db72ab46887061ac8a6db1"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -12501,7 +12517,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-documents-desserts-transports-20261113.json",
+        "reason": "Zoé cherche une belle écharpe comme cadeau pour son père. Ceinture et cravate ne sont pas demandées ; les horaires et la carte de réduction ne sont pas le sujet du QCM.",
+        "note": "Écharpe en laine rouge, ceinture de vêtement brune à boucle et cravate rouge entières réutilisées. La ceinture de sécurité proposée par un alias a été rejetée. Aucun genre ou visage déduit pour représenter le père."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-025-01#3",
@@ -16576,8 +16598,8 @@
       "semantic_sha256": "40a8302bd2f8163de17b7a848be7377dbf93fbb5ba28b87eeb964486b45626be",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-032-04.mp3",
       "audio_sha256": "7f241b9e20bc40c14c59b5ca31294662b84598c34d581a474754adf6fc99daf0",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -16631,8 +16653,24 @@
           "brief": "Représenter entièrement « Des raquettes » pour « De quel matériel Tonin propose-t-il de s’occuper ? ». Vérifier la transcription du support tcf-delf-actif-a1-032-04 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-tapis-yoga-pluriel.webp",
+          "sha256": "998840c7e41f2ac70c7aac0727e19d5386b52ce06c1a92466d50181676895902"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-ballons-football.webp",
+          "sha256": "843d52ba1cc4a2a21bf61d539092cc86e32b5382e977157d65dedc081e8798f5"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/vocab-raquettes.webp",
+          "sha256": "78effb185fcf42217dc7c808825c48e5387c3a8f63c0729a9be250a2a5934d34"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -16643,7 +16681,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-documents-desserts-transports-20261113.json",
+        "reason": "À la fin du cours de gym, Tonin propose de s'occuper des tapis pendant le rangement. Les ballons et raquettes ne sont pas cités dans cet échange.",
+        "note": "Deux tapis de sport partiellement déroulés, trois ballons de football et deux raquettes réutilisés. Les trois catégories de matériel sont au pluriel ; les ballons de fête sont écartés pour ce contexte sportif."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-033-01#1",
@@ -17314,7 +17358,14 @@
           "id": "b",
           "label": "Des chapeaux",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-chapeaux-pluriel.png",
+              "sha256": "a4bdbf4f30f9f215eb4749d2c7c654ca9346c407786ef1765dd10999c960eec2",
+              "label": "Des chapeaux",
+              "visual_review_required": true
+            }
+          ],
           "asset": "00c1e94171039fb6",
           "brief": "Représenter entièrement « Des chapeaux » pour « Quel accessoire peut-on essayer ? ». Vérifier la transcription du support tcf-delf-actif-a1-033-06 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         },
@@ -17719,8 +17770,8 @@
       "semantic_sha256": "c1757ab9a0f924467a840337eb5e9366f59351b87d47a699f0dcd9027e20759d",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-035-01.mp3",
       "audio_sha256": "8253139f00025835e659cd60c15f3eb032fc8c7206b53ce267b57a0c428f21dd",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -17774,8 +17825,24 @@
           "brief": "Représenter entièrement « Un téléphone » pour « Quel cadeau Sébastien a-t-il reçu de ses parents ? ». Vérifier la transcription du support tcf-delf-actif-a1-035-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-velo-isole.webp",
+          "sha256": "e65db9d18d6e12f54982a3650fc68d64ecd66b11a98cb634f5e5e4c48a480085"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-ordinateur-dessine.webp",
+          "sha256": "0975b4d983b9e0896f2bd09e2ddbb38bab9d3244e28a84c359e13db6f8a7fd42"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-telephone-dessine.webp",
+          "sha256": "0720a4239b45116cfd5bf748a207e2739a022f81bfd469b29b201e7ba465ef63"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -17786,7 +17853,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-documents-desserts-transports-20261113.json",
+        "reason": "Sébastien a reçu un vélo de ses parents. La montre vient de ses grands-parents et le bracelet de sa sœur. Ni ordinateur ni téléphone n'est cité comme cadeau des parents.",
+        "note": "Vélo bleu isolé entier, ordinateur complet et téléphone existants examinés. Trois objets au singulier ; aucune marque, couleur imposée ou relation familiale n'est inventée par une scène de personnages."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-035-01#2",
@@ -19349,8 +19422,8 @@
       "semantic_sha256": "a50fe0346728e140cefd386e584b4277c199603cf44b954a11983bd6eb19b7c8",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-040-01.mp3",
       "audio_sha256": "e74f7f97d6eb0e2073e3c353f097c28b60108c33dc2bd4ed2c811516690670eb",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -19398,8 +19471,24 @@
           "brief": "Représenter entièrement « Une montre » pour « Quel cadeau la mère conseille-t-elle ? ». Vérifier la transcription du support tcf-delf-actif-a1-040-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-parfum.webp",
+          "sha256": "5a9e59b463603f40dc5f2d2035eabdca9c883138d5c699f069e8a9e11a22ab72"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-echarpe.webp",
+          "sha256": "6266453837086853656bdab88f619546024cfc6a4f0f2c19af16ead2c38d8747"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-montre-dessinee.webp",
+          "sha256": "848dec4d460520d45c51f6e90d8c6c278ab8fcce203949573b460d5130106629"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -19410,7 +19499,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-documents-desserts-transports-20261113.json",
+        "reason": "Pour l'anniversaire de Mme Dubois, la mère conseille un parfum. Un foulard est proposé ensuite comme autre idée ; la montre n'est pas citée. L'énoncé vise précisément le conseil de la mère.",
+        "note": "Flacon de parfum à vaporisateur, écharpe en laine et montre bracelet entiers réutilisés. Aucun flacon alimentaire ou cosmétique ambigu, pas de marque ou d'identité. Le foulard du dialogue ne modifie pas le conseil attribué à la mère."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-040-01#5",
@@ -20938,8 +21033,8 @@
       "semantic_sha256": "e1c43f8339bc50645503c13417bd76531d5dc02e7120121e3e3aa8562618d3b8",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-044-04.mp3",
       "audio_sha256": "0cabf393d89799eaf9defcd7d2d9f47ef6efdad5a7879b7c4a1c5e264d9f64bc",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -20993,8 +21088,24 @@
           "brief": "Représenter entièrement « La trottinette » pour « Quel véhicule les amis utilisent-ils pendant leurs loisirs ? ». Vérifier la transcription du support tcf-delf-actif-a1-044-04 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-velo-isole.webp",
+          "sha256": "e65db9d18d6e12f54982a3650fc68d64ecd66b11a98cb634f5e5e4c48a480085"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-scooter.webp",
+          "sha256": "87bacb6a0e08976f329ae5c4016482d98ed65a0965c36cd4e3c680bdf263f590"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/vocab-trottinette.webp",
+          "sha256": "d41829d59983e7508e1fa4ce6fa6e7445d900421c62b35b8f293ca1f0bffdac6"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -21005,7 +21116,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-documents-desserts-transports-20261113.json",
+        "reason": "Les amis disent Nous faisons du vélo et des promenades. Aucun scooter ou trottinette n'est mentionné. La question vise le véhicule et ne confond pas la promenade à pied avec un autre engin.",
+        "note": "Vélo sans moteur, scooter motorisé à selle et trottinette à plateforme réutilisés. Trois véhicules entiers et clairement distincts, sans personne ni texte ; les roues et guidons sont visibles."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-044-04#2",
@@ -24005,8 +24122,8 @@
       "semantic_sha256": "07785595ff4b1796be3ee607fb51624f301836d0870b341b0cf94768a2941e02",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-049-04-01.mp3",
       "audio_sha256": "6f31eef2578ae1cb4b9a22ecc964152df82b7b50714fc1a168bc9e0234389128",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -24054,8 +24171,24 @@
           "brief": "Représenter entièrement « Des frites » pour « Quel accompagnement choisit-elle ? ». Vérifier la transcription du support tcf-delf-actif-a1-049-04-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co306-riz-dessine.webp",
+          "sha256": "000b14a297384b03d100f2acfc84d56490c54892ee9723c2724f1254d074210b"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-petits-legumes-dessine.webp",
+          "sha256": "5ed33b54f7ee637086246196bcc56b5815694fe6a1d30968d7ae9cabd4e94f91"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-frites-dessine.webp",
+          "sha256": "27e2a2cd255a71a0985b4494d6c9475c42bd9edd1692a0ad1a1c61f4d572f773"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -24066,7 +24199,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-documents-desserts-transports-20261113.json",
+        "reason": "On lui propose du poisson avec des légumes, mais elle choisit du riz. Les légumes sont donc une proposition écartée, et les frites ne sont pas citées. La réponse reste unique malgré la présence du mot légumes dans l'échange.",
+        "note": "Trois accompagnements servis sur assiette existants examinés : riz cuit, petits légumes cuits et frites. Le groupe de légumes crus est écarté au profit d'une assiette qui convient au repas. Aucun poisson ajouté aux seuls choix."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-049-04-01#3",
@@ -25084,8 +25223,8 @@
       "semantic_sha256": "b6c51168b5a645f1d56c73e0ad94eeb2b912cf868acda84e68bd42416c9fcfaf",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-050-01-01.mp3",
       "audio_sha256": "794be2f094b10366775152311289a3f101157f1b014e60a97d513d733fb838e9",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -25133,8 +25272,24 @@
           "brief": "Représenter entièrement « Des sandales » pour « Quels autres articles veut-il regarder ? ». Vérifier la transcription du support tcf-delf-actif-a1-050-01-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-baskets.webp",
+          "sha256": "c635478376c7c8bf7d1a6df3371946bccb33df04cc8d053d68bca52f68bcf1be"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-bottes.webp",
+          "sha256": "e3ebb554020b25ccfc12b9500a9b1e18b4772dbe5994cc9ca9da0a21a9b95581"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-sandales-dessine.webp",
+          "sha256": "0d2b8c57c019a0406e87a8f45d4b7c5a3f10f0de67b1a3e84f71c8d7a17fe48d"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -25145,7 +25300,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-documents-desserts-transports-20261113.json",
+        "reason": "Sacha doit changer un pantalon et veut regarder les nouveaux modèles de baskets. Bottes et sandales ne sont pas citées. Le type d'article demandé en plus du retour du pantalon est bien la basket.",
+        "note": "Trois paires entières de chaussures : baskets bleu/blanc, bottes vertes et sandales brunes réutilisées. Pluriels, types, talons et semelles visibles ; pas de marque ou de prix."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-050-01-01#5",
@@ -30388,8 +30549,8 @@
       "semantic_sha256": "bb222c1df310cacf7a18a51d48111f363b834411eb1e9f3481e2d31796c2fcb2",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-001.mp3",
       "audio_sha256": "82737f9bdf2765a671cf89f8eb93e97d60cb12b6fa5b0161b09c19c9e519e4af",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -30449,8 +30610,24 @@
           "brief": "Représenter entièrement « L’avion » pour « Dans quel véhicule faut-il monter ? ». Vérifier la transcription du support tcf-delf-actif-a2-001 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-train-isole.webp",
+          "sha256": "f201b60e59b3825aa6069503e70326fffd9850799b947efad3dc6e1bc4b7517a"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+          "sha256": "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/vocab-avion.webp",
+          "sha256": "1e312cf1a4a4bfc617dbf5a4532511403112bb78ca54899aa42660b3b74b140f"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -30461,7 +30638,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-documents-desserts-transports-20261113.json",
+        "reason": "La suite de consignes dit Montez dans le train. Aucune montée dans un bus ou un avion n'est demandée. Le passeport et le billet dans les autres phrases ne changent pas le véhicule nommé.",
+        "note": "Train bleu/blanc, bus à roues et avion à deux réacteurs réutilisés, véhicules entiers sans trajet ou destination. Les trois types de transport sont distincts ; aucune scène de voyageurs ne remplace le véhicule."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-001#3",
@@ -34750,8 +34933,8 @@
       "semantic_sha256": "a36afcee160a3fc4a92e440e512d78e01f9ac9ff56758773012ce388e41dffa4",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-006-04.mp3",
       "audio_sha256": "04423258354a2bb76f74ef70524399ee47ff6d142de04ea877139ae8d21941f3",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -34811,8 +34994,24 @@
           "brief": "Représenter entièrement « L’avion » pour « De quel véhicule les voyageurs vont-ils descendre ? ». Vérifier la transcription du support tcf-delf-actif-a2-006-04 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-train-isole.webp",
+          "sha256": "f201b60e59b3825aa6069503e70326fffd9850799b947efad3dc6e1bc4b7517a"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+          "sha256": "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/vocab-avion.webp",
+          "sha256": "1e312cf1a4a4bfc617dbf5a4532511403112bb78ca54899aa42660b3b74b140f"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -34823,7 +35022,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-documents-desserts-transports-20261113.json",
+        "reason": "L'annonce demande de se préparer à la descente du train et de ne rien oublier à bord. Bus et avion ne sont pas cités.",
+        "note": "Le trio train/bus/avion contrôlé pour l'autre nouvelle consigne est réutilisé. Véhicules complets et distincts, même peinture douce, pas de nouveau dessin ni de panneau arbitraire."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-006-04#2",
@@ -41062,8 +41267,8 @@
       "semantic_sha256": "0da63ee6a4102623416c8e87b68c2065c031c21bc39a79d3e6f96c1db1a5a438",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-016-01.mp3",
       "audio_sha256": "b6e98586ae950703009f894e6e3a0a222e44e6e9d1aa0623fd5298f58a35ed89",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -41117,8 +41322,24 @@
           "brief": "Représenter entièrement « En voiture » pour « Par quel moyen de transport arrive-t-il ? ». Vérifier la transcription du support tcf-delf-actif-a2-016-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-avion.webp",
+          "sha256": "1e312cf1a4a4bfc617dbf5a4532511403112bb78ca54899aa42660b3b74b140f"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-train-isole.webp",
+          "sha256": "f201b60e59b3825aa6069503e70326fffd9850799b947efad3dc6e1bc4b7517a"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp",
+          "sha256": "55da4bb01d69290bbaf21e97b935c9e72f115dbbffbc0e6ae23b4374cde28b85"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -41129,7 +41350,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-documents-desserts-transports-20261113.json",
+        "reason": "Danielle annonce que son père arrive en avion et que la famille va l'attendre. Aucun train ou voiture n'est indiqué comme moyen d'arrivée du père.",
+        "note": "Avion entier, train isolé et voiture verte entière existants relus. La voiture de la banque ne prétend pas appartenir au père ; seule sa catégorie sert de leurre. Aucun horaire ou lien familial dessiné."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-016-01#5",
@@ -41573,8 +41800,8 @@
       "semantic_sha256": "5deb4856205e5b6152cc1039b8f270a28bb1677879a614fc1364755252275ef1",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-018-01.mp3",
       "audio_sha256": "0576ae06942c458bdabfdc85bc4a75aeeb82cff510e455ff55f479ba5c1b1fee",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -41622,8 +41849,24 @@
           "brief": "Représenter entièrement « Les sandales » pour « Quel type de chaussures est en promotion ? ». Vérifier la transcription du support tcf-delf-actif-a2-018-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-baskets.webp",
+          "sha256": "c635478376c7c8bf7d1a6df3371946bccb33df04cc8d053d68bca52f68bcf1be"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-bottes.webp",
+          "sha256": "e3ebb554020b25ccfc12b9500a9b1e18b4772dbe5994cc9ca9da0a21a9b95581"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-sandales-dessine.webp",
+          "sha256": "0d2b8c57c019a0406e87a8f45d4b7c5a3f10f0de67b1a3e84f71c8d7a17fe48d"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -41634,7 +41877,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-documents-desserts-transports-20261113.json",
+        "reason": "Le magasin de sport propose le dernier modèle de baskets en promotion. Les bottes et sandales ne figurent pas dans le message ; le survêtement bleu est un autre produit.",
+        "note": "Même trio de paires de chaussures réutilisé après examen de cette source : baskets, bottes et sandales. Aucun prix de la source ou marque du modèle n'est dessiné, aucun survêtement ne remplace la catégorie de chaussures."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-018-01#4",
@@ -45244,8 +45493,8 @@
       "semantic_sha256": "245a5d7a3a3ae01eab925387b8b865199661acfdc1828853bcc9d8c5a9434b22",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-030-04.mp3",
       "audio_sha256": "8699f34db32e43328b392eb09aad79b802da11993a7a4bd185784b48ebefdb20",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -45311,8 +45560,24 @@
           "brief": "Représenter entièrement « Le métro » pour « Quel transport l’élève prend-il pour aller au lycée ? ». Vérifier la transcription du support tcf-delf-actif-a2-030-04 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-train-isole.webp",
+          "sha256": "f201b60e59b3825aa6069503e70326fffd9850799b947efad3dc6e1bc4b7517a"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+          "sha256": "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-metro-dessine.webp",
+          "sha256": "581856c7701fe4ec5aa26b284000f54d46cf6c6a79cd6245118883dcb5a0199c"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -45323,7 +45588,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-documents-desserts-transports-20261113.json",
+        "reason": "L'élève répond Je prends toujours le train à l'alternative train ou bus. Le bus est entendu comme proposition et non comme réponse retenue ; le métro n'est pas évoqué.",
+        "note": "Train régional isolé et bus entiers réutilisés ; pour le métro, la rame en station souterraine est retenue plutôt que la rame isolée trop semblable au train. Le contexte de station rend la catégorie métropolitaine plus lisible sans changer les choix."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-030-04#2",
@@ -45820,8 +46091,8 @@
       "semantic_sha256": "6ff5db259f540d076e23e92c40b367a963a788070df05913cd65bfe1e8045d85",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-031-03.mp3",
       "audio_sha256": "a54967244ffd26d148a41c06c0408c1c83a71930d3a7818280b9330ca7838ac8",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -45869,8 +46140,24 @@
           "brief": "Représenter entièrement « Une soupe » pour « Quel plat choisissent-elles ? ». Vérifier la transcription du support tcf-delf-actif-a2-031-03 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co834-pizza-dessinee.webp",
+          "sha256": "be5d4a7cf9dab36bbba9217877079d73e81a98419c319dcd4050deb14d2e5599"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-quiche.webp",
+          "sha256": "020f4ce264538e01bac8111bf7e134104c54c2e0ea9b965d294ebf9bc2f53572"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-soupe-dessine.webp",
+          "sha256": "c1f7b76ef0b78671c6fb4199e4062f21b0b47d4f04a82fc89109b06a3bc26b9e"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -45881,7 +46168,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-documents-desserts-transports-20261113.json",
+        "reason": "Les deux personnes se mettent d'accord sur une pizza aux fromages. Ni quiche ni soupe ne sont proposées. Le type de plat correct reste la pizza.",
+        "note": "Pizza au fromage fondu sans viande visible, quiche à croûte haute et soupe en bol existants examinés. La pizza déjà disponible respecte la garniture décrite : aucune nouvelle pizza n'est nécessaire. Trois plats entiers distincts."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-031-03#3",
@@ -56055,8 +56348,8 @@
       "semantic_sha256": "808b50e40573f1625f4d1db0deeacb6872a40df361fd0174689d327ab4f8c149",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-043-04-03.mp3",
       "audio_sha256": "1602983632dfa1891577678667007dc27c706b8699a12c1666405c82401005ea",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -56104,8 +56397,24 @@
           "brief": "Représenter entièrement « Un lapin » pour « Quel animal faut-il garder ? ». Vérifier la transcription du support tcf-delf-actif-a2-043-04-03 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-chien.webp",
+          "sha256": "ad3f8e5f558a25ac591a80263255af7a88766f8525f1c3648c51421da873b183"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-chat.webp",
+          "sha256": "6925353daec05239436ccaabaa6717f92f1116db020622734bd70cb39345da78"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/vocab-lapin.webp",
+          "sha256": "4badc760f9b54d704a7ad015aa54689fa93bef2940fce4840d3cd12ec336d34d"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -56116,7 +56425,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-documents-desserts-transports-20261113.json",
+        "reason": "La personne demande de garder son chien pendant qu'elle entre dans la pâtisserie. Aucun chat ni lapin n'est cité.",
+        "note": "Chien, chat et lapin entiers existants réutilisés. Trois espèces distinctes, sans laisse ou personne ajoutée qui ferait inventer une apparence ou une relation. L'animal est isolé pour répondre au type demandé."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-043-04-03#2",
@@ -66877,8 +67192,8 @@
       "semantic_sha256": "93aeb282710a0583f295a21ac37187c9a89129fd0c4e414a83aaa54ce1899ff3",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-046-04-01.mp3",
       "audio_sha256": "dc72d0785e8beb3833bad63b1d0308c1766d2d64ada84aeebc0ca66526021c61",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -66932,8 +67247,24 @@
           "brief": "Représenter entièrement « Un train » pour « Quel moyen de transport est proposé ? ». Vérifier la transcription du support tcf-delf-actif-a2-046-04-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp",
+          "sha256": "85671abeca9f1cc829020d4c47f0cee3c1992c7b656533cf6f206c5379a9cae7"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-avion.webp",
+          "sha256": "1e312cf1a4a4bfc617dbf5a4532511403112bb78ca54899aa42660b3b74b140f"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/vocab-train-isole.webp",
+          "sha256": "f201b60e59b3825aa6069503e70326fffd9850799b947efad3dc6e1bc4b7517a"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -66944,7 +67275,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-documents-desserts-transports-20261113.json",
+        "reason": "Les îles ne sont pas loin et la personne propose de prendre un bateau pour les visiter. Avion et train ne sont pas cités. Le billet évoqué ensuite n'en change pas le moyen de transport.",
+        "note": "Bateau de transport de passagers entier sur l'eau, avion et train existants examinés. Aucun voilier de sport ne remplace la traversée proposée, pas de destination ou horaire inventé."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-046-04-01#2",
@@ -67356,8 +67693,8 @@
       "semantic_sha256": "defb30685175ea06cbff3abfd06d6686886062258d19f75df60e1061f87610d5",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-046-04-03.mp3",
       "audio_sha256": "d6384901ab4b5fb7ee603953ed316f61ae996acd3a06b91a5a8e581747566bc5",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -67411,8 +67748,24 @@
           "brief": "Représenter entièrement « Le train » pour « Quel transport les amis ont-ils utilisé ? ». Vérifier la transcription du support tcf-delf-actif-a2-046-04-03 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp",
+          "sha256": "85671abeca9f1cc829020d4c47f0cee3c1992c7b656533cf6f206c5379a9cae7"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-avion.webp",
+          "sha256": "1e312cf1a4a4bfc617dbf5a4532511403112bb78ca54899aa42660b3b74b140f"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/vocab-train-isole.webp",
+          "sha256": "f201b60e59b3825aa6069503e70326fffd9850799b947efad3dc6e1bc4b7517a"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -67423,7 +67776,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-documents-desserts-transports-20261113.json",
+        "reason": "Après la journée aux îles, la personne récapitule Prendre le bateau, nager, se faire bronzer, visiter l'île. Avion et train ne sont pas nommés.",
+        "note": "Même trio de moyens de transport réutilisé pour cette autre transcription, relue séparément. Le bateau de passagers convient à la visite, les trois véhicules sont distincts et la source ne précise pas de modèle."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-046-04-03#2",
@@ -75369,7 +75728,14 @@
           "id": "b",
           "label": "Le passeport et le billet",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-passeport-billet.png",
+              "sha256": "b538e632204396fa078fe3a0199690e318aa4ae4f93fd89b54fc5e25107777a0",
+              "label": "Le passeport et le billet",
+              "visual_review_required": true
+            }
+          ],
           "asset": "3a5be90ba1ba74d3",
           "brief": "Représenter entièrement « Le passeport et le billet » pour « Quels documents l’agent demande-t-il ? ». Vérifier la transcription du support tcf-delf-actif-b1-012-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         },

@@ -6,7 +6,7 @@
 
 La génération des images adaptées est ajoutée aux tâches des 346 nouveaux supports DELF Actif, soit 1 663 questions. Le [plan complémentaire](delf-actif-20261113/images-a-preparer.md) distingue les trios actifs, les candidats à vérifier et les réponses maintenues en texte. Ce lot complète le reliquat historique sans les confondre.
 
-Quinze nouveaux trios sont intégrés : trois historiques A1 et douze des nouveaux audios (six A1, six A2). Six nouveaux PNG exacts 4:3 et 39 réemplois d’images examinées ; 390 trios historiques restent à préparer. Le [registre de relecture](revue-trios-pluriels-delf-actif-20261113.json) conserve les sources et les raisons du choix de chaque image.
+Le dernier lot ajoute vingt trios : quatre historiques et seize des nouveaux audios, soit dix A1 et dix A2. Huit nouveaux PNG exacts 4:3 et 52 réemplois d’images examinées ; 386 trios historiques restent à préparer. Les nouveaux audios comptent 28 trios actifs au total. Le [registre de relecture](revue-trios-documents-desserts-transports-20261113.json) conserve les sources et les raisons du choix de chaque image.
 
 ## Reprise du 6 novembre 2026 — objets CO inclus
 

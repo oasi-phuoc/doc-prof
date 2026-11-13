@@ -3,9 +3,9 @@
   "scope": "Inventaire exhaustif des questions CE/CO à trois choix ; contrôle contre le texte ou la transcription active, sans nouvelle écoute intégrale des MP3.",
   "summary": {
     "text_variant_pending_images_or_intentionally_text": 5353,
-    "reviewed_trio": 1878,
+    "reviewed_trio": 1882,
     "existing_variant_partial_reviewed_reuse": 81,
-    "reviewed_763_artwork_pending": 390,
+    "reviewed_763_artwork_pending": 386,
     "reviewed_763_keep_text": 112,
     "existing_variant_needs_further_visual_review": 23,
     "retire_ambiguous_image_variant": 14
@@ -68077,19 +68077,27 @@
         "Une tarte et une glace",
         "Une mousse et des crêpes"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_763_candidate_review",
       "source_sha256": "ce16e983a671570d5fe16f0723fb79c49e40500d21202471e66c4c73231f7828",
       "semantic_before_sha256": "b683dd4113da1a16d9ae014e057dadafc6c0e2039d4487c7def92387720782c9",
       "semantic_after_sha256": "b683dd4113da1a16d9ae014e057dadafc6c0e2039d4487c7def92387720782c9",
       "audio": "/lib/audio/tcf/co/maison/pour-repas-soir.mp3",
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/extension573-gateau-salade-fruits.png",
+        "/lib/images/tcf/qcm-audit/extension573-tarte-glace-duo.png",
+        "/lib/images/tcf/qcm-audit/extension573-mousse-crepes-duo.png"
+      ],
+      "target_sha256": [
+        "99e75fb756a810ca60239ddea1f5907fcc7824f05947b51e8d17cb81c8957a54",
+        "c2101c2427e550338c79f8c81a3d3e69176c4876be850f92d447f2aa0f935ec1",
+        "7b1552e7be385f2d1d624eac8657dc7a9a2212499364acc2f8d6f75317c74150"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_whole_answer_concepts",
-      "review_763_reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel."
+      "reason": "Le repas comprend un gâteau, une salade de fruits et un poulet rôti. La question porte uniquement sur les desserts : gâteau et salade de fruits. Tarte, glace, mousse et crêpes ne sont pas citées. Trois nouveaux duos complets examinés : gâteau entier et salade de fruits, tarte entière et coupe de glace, mousse aérée et deux crêpes fines. Aucun poulet ni légume ajouté au duo des desserts, ni pancake à la place des crêpes. Même style peint sur crème, exact 4:3.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Le repas comprend un gâteau, une salade de fruits et un poulet rôti. La question porte uniquement sur les desserts : gâteau et salade de fruits. Tarte, glace, mousse et crêpes ne sont pas citées. Trois nouveaux duos complets examinés : gâteau entier et salade de fruits, tarte entière et coupe de glace, mousse aérée et deux crêpes fines. Aucun poulet ni légume ajouté au duo des desserts, ni pancake à la place des crêpes. Même style peint sur crème, exact 4:3."
     },
     {
       "key": "tcf-ss-a1-s22-co-4#4",
@@ -88565,19 +88573,27 @@
         "Le passeport et le billet",
         "Le permis et la carte grise"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_763_candidate_review",
       "source_sha256": "46e95742432e9a0c2aa592ad77bf4576beb68c05372e3e20969b9a9b69307696",
       "semantic_before_sha256": "d505d9c0005b7614447c63cbd4132f67d108924ee180cbf216ed050164d73719",
       "semantic_after_sha256": "d505d9c0005b7614447c63cbd4132f67d108924ee180cbf216ed050164d73719",
       "audio": "/lib/audio/tcf/co/travail/bonjour-week-end-1.mp3",
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/extension573-vitale-ordonnance.png",
+        "/lib/images/tcf/qcm-audit/extension573-passeport-billet.png",
+        "/lib/images/tcf/qcm-audit/extension573-permis-carte-grise.png"
+      ],
+      "target_sha256": [
+        "b4f8a436a254e0383612dacf6ce387105cc70a22261d0583752c1964fe92c252",
+        "b538e632204396fa078fe3a0199690e318aa4ae4f93fd89b54fc5e25107777a0",
+        "e11a1e05de9a0ce084753a60ff27c10daa5bb2a25bcfe61024bf5b766ee61dc0"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_distinct_document_types",
-      "review_763_reason": "Préparer ou retrouver les types exacts de documents et leurs éventuelles combinaisons ; aucun montant, date ou renseignement personnel inventé. Ne pas confondre certificat, ordonnance, diplôme ou carte."
+      "reason": "Le message de la pharmacie de garde demande la carte Vitale et l'ordonnance. Ni passeport et billet ni permis et carte grise ne sont cités. Les deux documents de chaque réponse sont nécessaires. Trois nouvelles paires relues : carte Vitale verte et ordonnance, passeport et billet de train, permis rose et carte grise papier. Titres courts corrects, lignes abstraites et silhouette anonyme ; aucun montant, date, identité ou numéro. Aucune carte d'identité ou bancaire substituée.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Le message de la pharmacie de garde demande la carte Vitale et l'ordonnance. Ni passeport et billet ni permis et carte grise ne sont cités. Les deux documents de chaque réponse sont nécessaires. Trois nouvelles paires relues : carte Vitale verte et ordonnance, passeport et billet de train, permis rose et carte grise papier. Titres courts corrects, lignes abstraites et silhouette anonyme ; aucun montant, date, identité ou numéro. Aucune carte d'identité ou bancaire substituée."
     },
     {
       "key": "tcf-ss-a1-s55-co-1#1",
@@ -113469,19 +113485,27 @@
         "Les sacs",
         "Les lunettes"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_763_candidate_review",
       "source_sha256": "683746fe3ed553b6870ed41ae55e40138e5a613524fe6e4671d8e8559882ccf9",
       "semantic_before_sha256": "8c66b97d84183662a714fc3cc9bb4829358823a2f81df4078654abeb4f8b9618",
       "semantic_after_sha256": "8c66b97d84183662a714fc3cc9bb4829358823a2f81df4078654abeb4f8b9618",
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_94.mp3",
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/extension573-chapeaux-pluriel.png",
+        "/lib/images/tcf/qcm-audit/extension573-sacs-pluriel.png",
+        "/lib/images/tcf/qcm-audit/co306-lunettes-vue-dessine.webp"
+      ],
+      "target_sha256": [
+        "a4bdbf4f30f9f215eb4749d2c7c654ca9346c407786ef1765dd10999c960eec2",
+        "e0af73edfac463a23866a28a53151daa56b4b8354661605175a33b6cae3aeaee",
+        "4ac6813cf46bd0006c902ab979474337c00683ed4c01d8df7dde19c9ab7af245"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_whole_answer_concepts",
-      "review_763_reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel."
+      "reason": "L'annonce distingue la réduction générale du prix spécial sur tous les chapeaux. Sacs et lunettes ne sont pas cités. La question demande l'accessoire, jamais le montant. Nouveaux trois chapeaux entiers, groupe de trois sacs et paire de lunettes existants relus. Pluriels conservés, aucun prix, pourcentage, date ou jour dessiné. Le chapeau isolé ne suffisait pas pour les chapeaux.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "L'annonce distingue la réduction générale du prix spécial sur tous les chapeaux. Sacs et lunettes ne sont pas cités. La question demande l'accessoire, jamais le montant. Nouveaux trois chapeaux entiers, groupe de trois sacs et paire de lunettes existants relus. Pluriels conservés, aucun prix, pourcentage, date ou jour dessiné. Le chapeau isolé ne suffisait pas pour les chapeaux."
     },
     {
       "key": "delf-a1-2022-co-94#8",
@@ -180131,19 +180155,27 @@
         "Les vêtements",
         "Les meubles"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_763_candidate_review",
       "source_sha256": "e0124a5a07dc82047cf6a13bf577ba8745db577a35b683a51ace49a7e1f1936a",
       "semantic_before_sha256": "4eb7884abe265eae984de36a91a89bad424d5fd546023f247ca7027d583cc325",
       "semantic_after_sha256": "4eb7884abe265eae984de36a91a89bad424d5fd546023f247ca7027d583cc325",
       "audio": "/lib/audio/tcf/co/magasins/17-magasin-annonce-offre-électroménager.mp3",
-      "targets": [],
-      "target_sha256": [],
+      "targets": [
+        "/lib/images/tcf/qcm-audit/extension573-electromenager-ensemble.png",
+        "/lib/images/tcf/qcm-audit/co834-vetements-dessines.webp",
+        "/lib/images/tcf/qcm-audit/co306-meubles-dessine.webp"
+      ],
+      "target_sha256": [
+        "8c55516af368dcf044ec88c9d04e6e819c32fc25724fef4facf6e08f3ca4d23a",
+        "ca295f7204f681476b9c1eea1dcd37fdf283ceddd597661781fc622d209ffdcf",
+        "64bc5e33321fdb227877b0f84bc11d82d1b0a1006721d82cfe1d0b4098d0e895"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_whole_answer_concepts",
-      "review_763_reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "reason": "La promotion vise tout l'électroménager et l'annonce énumère téléviseurs, réfrigérateurs, fours et machines à laver. Aucun vêtement ou meuble n'est proposé dans cet extrait. Nouvel ensemble de quatre appareils correspondant aux quatre catégories citées. Vêtements pliés et ensemble table/fauteuil/commode existants relus. Aucun pourcentage, montant ou texte de promotion ; pas de bouilloire seule substituée à l'ensemble.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "La promotion vise tout l'électroménager et l'annonce énumère téléviseurs, réfrigérateurs, fours et machines à laver. Aucun vêtement ou meuble n'est proposé dans cet extrait. Nouvel ensemble de quatre appareils correspondant aux quatre catégories citées. Vêtements pliés et ensemble table/fauteuil/commode existants relus. Aucun pourcentage, montant ou texte de promotion ; pas de bouilloire seule substituée à l'ensemble.",
       "semantic_sha256": "4eb7884abe265eae984de36a91a89bad424d5fd546023f247ca7027d583cc325"
     },
     {
