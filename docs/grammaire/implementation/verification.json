@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-12",
+  "date": "2026-11-13",
   "baselineCommit": "ff743145ce6724a78cc898789c5aaf36a0004474",
   "reference": {
     "fixtures": 735,
@@ -7,16 +7,16 @@
     "protectedFiles": 256
   },
   "editorial": {
-    "reviewedResponseVariants": 1820,
+    "reviewedResponseVariants": 2370,
     "humanApproval": "pending",
-    "reviewedActivityUnits": 1390,
-    "reviewedSelectableUnits": 1390,
+    "reviewedActivityUnits": 1840,
+    "reviewedSelectableUnits": 1840,
     "reviewedDocuments": 40,
     "reviewedDocumentQuestions": 120,
-    "reviewedActivities": 27,
-    "reviewedOfferings": 36,
+    "reviewedActivities": 36,
+    "reviewedOfferings": 47,
     "reviewedPilotNotions": 5,
-    "reviewedNotions": 6
+    "reviewedNotions": 8
   },
   "browser": {
     "results": [
@@ -65,22 +65,24 @@
     ],
     "errors": []
   },
-  "remaining": "Les cinq notions G2 et Avoir A1 (première extension G3) sont accessibles en aperçu explicite. Les contrats techniques situation/dialogue et image sont éprouvés, hors quotas. Validation enseignante et généralisation aux autres banques, supports et niveaux restent à effectuer.",
+  "remaining": "Huit notions et 47 offres en pilote explicite ; validation enseignante en attente. 388 activités sans banque graduée pilote et 554 offres restent à préparer. Les contrats techniques situation/dialogue et image restent hors quotas. Voir avancement-20261113.md.",
   "validation": {
     "typeScript": {
       "command": "node node_modules/typescript/bin/tsc -b --pretty false",
-      "result": "passed"
+      "result": "passed",
+      "validatedAtUpstream": "59a76f48"
     },
     "legacyAndCo": {
       "command": "node scripts/grammar-baseline.cjs",
       "result": "passed",
       "fixtures": 735,
-      "protectedFiles": 256
+      "protectedFiles": 256,
+      "validatedAtUpstream": "59a76f48"
     },
     "pilot": {
       "command": "node scripts/test-grammar-levels.cjs",
       "result": "passed",
-      "reviewedVariants": 1820,
+      "reviewedVariants": 2370,
       "paperAndBoardOptionOrder": "identical",
       "levels": [
         "A1",
@@ -93,8 +95,14 @@
       "codReferences": "50 explicit noun references; genre, number, elision and placement checked",
       "correctionIntervals": "50 frozen UTF-16 intervals, malformed bounds/segments/text rejected",
       "allPilotOfferings": "31 agreed G2 offerings implemented; 23 activities across five notions",
-      "reviewedActivityOfferings": 36,
-      "g3FirstNotion": "avoir A1; five agreed offerings; no automatic A2 extension"
+      "reviewedActivityOfferings": 47,
+      "g3FirstNotion": "avoir A1; five agreed offerings; no automatic A2 extension",
+      "g3Notions": [
+        "avoir A1",
+        "aller-destination A1",
+        "er A1"
+      ],
+      "validatedAtUpstream": "59a76f48"
     },
     "existingInteractiveAdapters": {
       "command": "node --test tests/interactive/source-adapters.test.mjs",
@@ -109,11 +117,11 @@
       "javascriptErrors": 0,
       "emptyFilterPool": "clear notice; no broken session",
       "classroomLaunch": "passed",
-      "presentationsChecked": 36,
+      "presentationsChecked": 47,
       "classroomTransform": "source and imposed subject visible",
       "printedQuestionsPerOrdinaryPresentation": 100,
       "printedCeQuestions": 240,
-      "printedQuestionsTotal": 3640,
+      "printedQuestionsTotal": 4740,
       "cePageBreak": "reversible; stable IDs and options; support repeated",
       "classroomCe": "two texts, six linked questions; source text visible",
       "printedCeQuestionsPerBank": 120,
@@ -121,8 +129,9 @@
       "classroomSubjunctive": "source, required introductory expression and human assessment visible",
       "subjunctiveWritingDefault": "one task, six answer lines; model and rubric only in correction",
       "avoirElision": "J’ joins ai in the corrected inline answer; empty student fields stay wide",
-      "validatedAtUpstream": "0bae17265f92bd80df5e9a56df86b7d174c51c1d",
-      "latestTargetedValidation": "Avoir A1 and technical contracts checked again after the final TCM/triangle merge; full 36-presentation run remains recorded on the preceding base."
+      "validatedAtUpstream": "220a412493e5b8464bc892095d3ebebeb38dceb9",
+      "latestTargetedValidation": "Full 47-presentation run on 220a4124; after integrating 59a76f48 (duel mascots), all eleven new presentations and both classroom launches passed again.",
+      "latestTargetedUpstream": "59a76f48"
     },
     "legacyGlobalCurriculum": {
       "command": "node scripts/test-grammar-curriculum.cjs",
@@ -290,9 +299,9 @@
         ],
         "errors": []
       },
-      "validatedAtUpstream": "1ab49f236d3a474e86a215b475fce6978089320f",
-      "coreValidatedAtUpstream": "e3f734b24cf88aa1c3d6b08aa849ce9dea4f11ed",
-      "browserValidatedAtUpstream": "1ab49f236d3a474e86a215b475fce6978089320f"
+      "validatedAtUpstream": "220a412493e5b8464bc892095d3ebebeb38dceb9",
+      "coreValidatedAtUpstream": "59a76f48",
+      "browserValidatedAtUpstream": "220a412493e5b8464bc892095d3ebebeb38dceb9"
     },
     "mergedSharedContracts": {
       "command": "node --test --test-concurrency=1 tests/interactive/source-adapters.test.mjs tests/interactive/cfr-recognition.test.mjs tests/interactive/tcm-csc.test.mjs tests/interactive/csc-game.test.mjs",
@@ -327,9 +336,57 @@
       "adapterCommand": "node --test --test-concurrency=2 tests/interactive/source-adapters.test.mjs tests/interactive/trapezoid-recognition.test.mjs",
       "adapterTests": 11,
       "adapterResult": "passed"
+    },
+    "presentG3": {
+      "command": "npm run test:grammar:present-g3",
+      "result": "passed",
+      "sourceReuse": "50 completion / correction / order sources per notion, original files unchanged",
+      "transformations": "50 explicit subjects per notion; elision and remaining information preserved",
+      "oralTasks": 50,
+      "oralAssessment": "teacher-led; non-exclusive models and five criteria",
+      "menuRouting": "curriculum-p retains Aller rather than falling back to Être",
+      "a4Regression": "long destination explanations reserve correction space without changing frozen selection",
+      "activities": 9,
+      "offerings": 11,
+      "reviewedSelectableUnits": 450,
+      "reviewedResponseVariants": 550,
+      "humanApproval": "pending",
+      "validatedAtUpstream": "59a76f48"
+    },
+    "g3MergeChecks": {
+      "date": "2026-11-13",
+      "upstream": "220a412493e5b8464bc892095d3ebebeb38dceb9",
+      "typeScript": "passed",
+      "grammarVariants": 2370,
+      "legacyFixtures": 735,
+      "protectedFiles": 256,
+      "contracts": "passed",
+      "browserPresentations": 47,
+      "browserPrintedQuestions": 4740,
+      "technicalContractPrintedResponses": 16,
+      "javascriptErrors": 0
+    },
+    "g3PostIntegration": {
+      "upstream": "59a76f48",
+      "changesIntegrated": "Duel mascot signature attacks; no grammar bank or paper rendering changes upstream.",
+      "typeScript": "passed",
+      "productionBuild": "passed",
+      "productionBuildCommand": "node node_modules/vite/bin/vite.js build --outDir /tmp/doc-prof-grammar-g3-build --emptyOutDir",
+      "legacyFixtures": 735,
+      "protectedFiles": 256,
+      "grammarVariants": 2370,
+      "grammarContracts": "passed",
+      "presentG3Contracts": "passed",
+      "mascotEffectsCommand": "node --test tests/interactive/mascot-effects.test.mjs",
+      "mascotEffects": "passed",
+      "browserPresentationsRetested": 11,
+      "printedQuestionsRetested": 1100,
+      "classroomLaunchesRetested": 2,
+      "javascriptErrors": 0,
+      "full47PresentationRunAtUpstream": "220a4124"
     }
   },
-  "upstreamIntegrated": "e3f734b24cf88aa1c3d6b08aa849ce9dea4f11ed",
+  "upstreamIntegrated": "59a76f48",
   "lastValidatedDate": "2026-11-13",
   "browserM5": {
     "results": [
@@ -633,7 +690,111 @@
         "selectedQuestions": 3
       }
     ],
-    "errors": [],
-    "validatedAtUpstream": "1ab49f236d3a474e86a215b475fce6978089320f"
+    "errors": []
+  },
+  "browserPresentG3": {
+    "results": [
+      {
+        "sub": "aller-destination",
+        "level": "A1",
+        "presentation": "choice",
+        "sheets": 26,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "aller-destination",
+        "level": "A1",
+        "presentation": "gap",
+        "sheets": 18,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "aller-destination",
+        "level": "A1",
+        "presentation": "correct",
+        "sheets": 26,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "aller-destination",
+        "level": "A1",
+        "presentation": "order",
+        "sheets": 26,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "aller-destination",
+        "level": "A1",
+        "presentation": "transform",
+        "sheets": 50,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "aller-destination",
+        "level": "A1",
+        "presentation": "open-oral",
+        "sheets": 100,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "aller-destination",
+        "classroomLaunch": "passed",
+        "selectedQuestions": 3,
+        "automaticScoring": false
+      },
+      {
+        "sub": "er",
+        "level": "A1",
+        "presentation": "choice",
+        "sheets": 34,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "er",
+        "level": "A1",
+        "presentation": "gap",
+        "sheets": 26,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "er",
+        "level": "A1",
+        "presentation": "correct",
+        "sheets": 26,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "er",
+        "level": "A1",
+        "presentation": "order",
+        "sheets": 26,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "er",
+        "level": "A1",
+        "presentation": "transform",
+        "sheets": 50,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "er",
+        "classroomLaunch": "passed",
+        "selectedQuestions": 3,
+        "automaticScoring": false
+      }
+    ],
+    "errors": []
   }
 }

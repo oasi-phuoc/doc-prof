@@ -19,7 +19,10 @@ function cost(item: MathItem): number {
   if (q.presentation==='gap' && q.unit.cue && q.unit.explanation.length>90) return 45
   // Include the longest spelling explanation in the corrigé, not only the gap.
   if (q.unit.givenVerb) return q.presentation==='choice'?45:34
-  return q.presentation==='choice'?32:23
+  // Destination rules can wrap even without an infinitive hint. Reserve room
+  // for those extra correction lines on both student and correction pages.
+  const explanationExtra=Math.max(0,Math.ceil((q.unit.explanation.length-90)/70))*7
+  return (q.presentation==='choice'?32:23)+explanationExtra
 }
 export function splitGradedGrammarPages(page: WorksheetPage): WorksheetPage[] | null {
   if (!page.blocks.some(b=>b.items.some(i=>i.layout==='grammar'))) return null

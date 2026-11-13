@@ -1,0 +1,5489 @@
+[
+  {
+    "schemaVersion": 1,
+    "revision": "er-a1-qcm-conj-2026-11-13.1",
+    "activityId": "gram-ex-er-qcm-conj",
+    "subthemeId": "er",
+    "topic": "gram-present",
+    "level": "A1",
+    "label": "Conjuguer les verbes en -er",
+    "objective": "Conjuguer les verbes en -er au présent avec un sujet simple, sans changement de radical.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-13",
+      "humanReview": "pending",
+      "note": "Sources relues, tâches et modèles contrôlés ; pilote explicite en attente de relecture enseignante des cinquante unités de chaque activité."
+    },
+    "presentations": [
+      "choice",
+      "gap"
+    ],
+    "instructions": {
+      "choice": "Choisissez la forme du verbe qui convient.",
+      "gap": "Conjuguez le verbe indiqué au présent."
+    },
+    "units": [
+      {
+        "id": "er-a1-completion-001",
+        "kind": "completion",
+        "prompt": "Je ___ avec le voisin.",
+        "answers": [
+          "parle"
+        ],
+        "options": [
+          {
+            "id": "o1",
+            "text": "parle"
+          },
+          {
+            "id": "o2",
+            "text": "parles"
+          },
+          {
+            "id": "o3",
+            "text": "parlons"
+          }
+        ],
+        "explanation": "Le verbe parler s’accorde avec le sujet : la forme attendue est « parle ».",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-er-qcm-conj",
+          "position": 0
+        },
+        "givenVerb": "parler"
+      },
+      {
+        "id": "er-a1-completion-002",
+        "kind": "completion",
+        "prompt": "Paul ___ les consignes.",
+        "answers": [
+          "écoute"
+        ],
+        "options": [
+          {
+            "id": "o1",
+            "text": "écoute"
+          },
+          {
+            "id": "o2",
+            "text": "écoutes"
+          },
+          {
+            "id": "o3",
+            "text": "écoutons"
+          }
+        ],
+        "explanation": "Le verbe écouter s’accorde avec le sujet : la forme attendue est « écoute ».",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-er-qcm-conj",
+          "position": 1
+        },
+        "givenVerb": "écouter"
+      },
+      {
+        "id": "er-a1-completion-003",
+        "kind": "completion",
+        "prompt": "Les voisins ___ la météo.",
+        "answers": [
+          "regardent"
+        ],
+        "options": [
+          {
+            "id": "o1",
+            "text": "regardent"
+          },
+          {
+            "id": "o2",
+            "text": "regarde"
+          },
+          {
+            "id": "o3",
+            "text": "regardes"
+          }
+        ],
+        "explanation": "Le verbe regarder s’accorde avec le sujet : la forme attendue est « regardent ».",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-er-qcm-conj",
+          "position": 2
+        },
+        "givenVerb": "regarder"
+      },
+      {
+        "id": "er-a1-completion-004",
+        "kind": "completion",
+        "prompt": "Tu ___ un logement.",
+        "answers": [
+          "cherches"
+        ],
+        "options": [
+          {
+            "id": "o1",
+            "text": "cherches"
+          },
+          {
+            "id": "o2",
+            "text": "cherche"
+          },
+          {
+            "id": "o3",
+            "text": "cherchons"
+          }
+        ],
+        "explanation": "Le verbe chercher s’accorde avec le sujet : la forme attendue est « cherches ».",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-er-qcm-conj",
+          "position": 3
+        },
+        "givenVerb": "chercher"
+      },
+      {
+        "id": "er-a1-completion-005",
+        "kind": "completion",
+        "prompt": "Nous ___ à la bibliothèque.",
+        "answers": [
+          "travaillons"
+        ],
+        "options": [
+          {
+            "id": "o1",
+            "text": "travaillons"
+          },
+          {
+            "id": "o2",
+            "text": "travaille"
+          },
+          {
+            "id": "o3",
+            "text": "travailles"
+          }
+        ],
+        "explanation": "Le verbe travailler s’accorde avec le sujet : la forme attendue est « travaillons ».",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-er-qcm-conj",
+          "position": 4
+        },
+        "givenVerb": "travailler"
+      },
+      {
+        "id": "er-a1-completion-006",
+        "kind": "completion",
+        "prompt": "Les voisines ___ près du marché.",
+        "answers": [
+          "habitent"
+        ],
+        "options": [
+          {
+            "id": "o1",
+            "text": "habitent"
+          },
+          {
+            "id": "o2",
+            "text": "habite"
+          },
+          {
+            "id": "o3",
+            "text": "habites"
+          }
+        ],
+        "explanation": "Le verbe habiter s’accorde avec le sujet : la forme attendue est « habitent ».",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-er-qcm-conj",
+          "position": 5
+        },
+        "givenVerb": "habiter"
+      },
+      {
+        "id": "er-a1-completion-007",
+        "kind": "completion",
+        "prompt": "Lina ___ la salade.",
+        "answers": [
+          "prépare"
+        ],
+        "options": [
+          {
+            "id": "o1",
+            "text": "prépare"
+          },
+          {
+            "id": "o2",
+            "text": "prépares"
+          },
+          {
+            "id": "o3",
+            "text": "préparons"
+          }
+        ],
+        "explanation": "Le verbe préparer s’accorde avec le sujet : la forme attendue est « prépare ».",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-er-qcm-conj",
+          "position": 6
+        },
+        "givenVerb": "préparer"
+      },
+      {
+        "id": "er-a1-completion-008",
+        "kind": "completion",
+        "prompt": "Vous ___ une attestation.",
+        "answers": [
+          "demandez"
+        ],
+        "options": [
+          {
+            "id": "o1",
+            "text": "demandez"
+          },
+          {
+            "id": "o2",
+            "text": "demande"
+          },
+          {
+            "id": "o3",
+            "text": "demandes"
+          }
+        ],
+        "explanation": "Le verbe demander s’accorde avec le sujet : la forme attendue est « demandez ».",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-er-qcm-conj",
+          "position": 7
+        },
+        "givenVerb": "demander"
+      },
+      {
+        "id": "er-a1-completion-009",
+        "kind": "completion",
+        "prompt": "J’___ à la gare.",
+        "answers": [
+          "arrive"
+        ],
+        "options": [
+          {
+            "id": "o1",
+            "text": "arrive"
+          },
+          {
+            "id": "o2",
+            "text": "arrives"
+          },
+          {
+            "id": "o3",
+            "text": "arrivons"
+          }
+        ],
+        "explanation": "Le verbe arriver s’accorde avec le sujet : la forme attendue est « arrive ».",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-er-qcm-conj",
+          "position": 8
+        },
+        "givenVerb": "arriver"
+      },
+      {
+        "id": "er-a1-completion-010",
+        "kind": "completion",
+        "prompt": "Paul ___ chez ma sœur.",
+        "answers": [
+          "reste"
+        ],
+        "options": [
+          {
+            "id": "o1",
+            "text": "reste"
+          },
+          {
+            "id": "o2",
+            "text": "restes"
+          },
+          {
+            "id": "o3",
+            "text": "restons"
+          }
+        ],
+        "explanation": "Le verbe rester s’accorde avec le sujet : la forme attendue est « reste ».",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-er-qcm-conj",
+          "position": 9
+        },
+        "givenVerb": "rester"
+      },
+      {
+        "id": "er-a1-completion-011",
+        "kind": "completion",
+        "prompt": "Les voisins ___ la randonnée.",
+        "answers": [
+          "aiment"
+        ],
+        "options": [
+          {
+            "id": "o1",
+            "text": "aiment"
+          },
+          {
+            "id": "o2",
+            "text": "aime"
+          },
+          {
+            "id": "o3",
+            "text": "aimes"
+          }
+        ],
+        "explanation": "Le verbe aimer s’accorde avec le sujet : la forme attendue est « aiment ».",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-er-qcm-conj",
+          "position": 10
+        },
+        "givenVerb": "aimer"
+      },
+      {
+        "id": "er-a1-completion-012",
+        "kind": "completion",
+        "prompt": "Tu ___ un paysage.",
+        "answers": [
+          "dessines"
+        ],
+        "options": [
+          {
+            "id": "o1",
+            "text": "dessines"
+          },
+          {
+            "id": "o2",
+            "text": "dessine"
+          },
+          {
+            "id": "o3",
+            "text": "dessinons"
+          }
+        ],
+        "explanation": "Le verbe dessiner s’accorde avec le sujet : la forme attendue est « dessines ».",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-er-qcm-conj",
+          "position": 11
+        },
+        "givenVerb": "dessiner"
+      },
+      {
+        "id": "er-a1-completion-013",
+        "kind": "completion",
+        "prompt": "Nous ___ un repas simple.",
+        "answers": [
+          "cuisinons"
+        ],
+        "options": [
+          {
+            "id": "o1",
+            "text": "cuisinons"
+          },
+          {
+            "id": "o2",
+            "text": "cuisine"
+          },
+          {
+            "id": "o3",
+            "text": "cuisines"
+          }
+        ],
+        "explanation": "Le verbe cuisiner s’accorde avec le sujet : la forme attendue est « cuisinons ».",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-er-qcm-conj",
+          "position": 12
+        },
+        "givenVerb": "cuisiner"
+      },
+      {
+        "id": "er-a1-completion-014",
+        "kind": "completion",
+        "prompt": "Les voisines ___ la sonnette.",
+        "answers": [
+          "réparent"
+        ],
+        "options": [
+          {
+            "id": "o1",
+            "text": "réparent"
+          },
+          {
+            "id": "o2",
+            "text": "répare"
+          },
+          {
+            "id": "o3",
+            "text": "répares"
+          }
+        ],
+        "explanation": "Le verbe réparer s’accorde avec le sujet : la forme attendue est « réparent ».",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-er-qcm-conj",
+          "position": 13
+        },
+        "givenVerb": "réparer"
+      },
+      {
+        "id": "er-a1-completion-015",
+        "kind": "completion",
+        "prompt": "Lina ___ la fenêtre.",
+        "answers": [
+          "ferme"
+        ],
+        "options": [
+          {
+            "id": "o1",
+            "text": "ferme"
+          },
+          {
+            "id": "o2",
+            "text": "fermes"
+          },
+          {
+            "id": "o3",
+            "text": "fermons"
+          }
+        ],
+        "explanation": "Le verbe fermer s’accorde avec le sujet : la forme attendue est « ferme ».",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-er-qcm-conj",
+          "position": 14
+        },
+        "givenVerb": "fermer"
+      },
+      {
+        "id": "er-a1-completion-016",
+        "kind": "completion",
+        "prompt": "Vous ___ les légumes.",
+        "answers": [
+          "lavez"
+        ],
+        "options": [
+          {
+            "id": "o1",
+            "text": "lavez"
+          },
+          {
+            "id": "o2",
+            "text": "lave"
+          },
+          {
+            "id": "o3",
+            "text": "laves"
+          }
+        ],
+        "explanation": "Le verbe laver s’accorde avec le sujet : la forme attendue est « lavez ».",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-er-qcm-conj",
+          "position": 15
+        },
+        "givenVerb": "laver"
+      },
+      {
+        "id": "er-a1-completion-017",
+        "kind": "completion",
+        "prompt": "Je ___ un sac léger.",
+        "answers": [
+          "porte"
+        ],
+        "options": [
+          {
+            "id": "o1",
+            "text": "porte"
+          },
+          {
+            "id": "o2",
+            "text": "portes"
+          },
+          {
+            "id": "o3",
+            "text": "portons"
+          }
+        ],
+        "explanation": "Le verbe porter s’accorde avec le sujet : la forme attendue est « porte ».",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-er-qcm-conj",
+          "position": 16
+        },
+        "givenVerb": "porter"
+      },
+      {
+        "id": "er-a1-completion-018",
+        "kind": "completion",
+        "prompt": "Paul ___ le musée.",
+        "answers": [
+          "visite"
+        ],
+        "options": [
+          {
+            "id": "o1",
+            "text": "visite"
+          },
+          {
+            "id": "o2",
+            "text": "visites"
+          },
+          {
+            "id": "o3",
+            "text": "visitons"
+          }
+        ],
+        "explanation": "Le verbe visiter s’accorde avec le sujet : la forme attendue est « visite ».",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-er-qcm-conj",
+          "position": 17
+        },
+        "givenVerb": "visiter"
+      },
+      {
+        "id": "er-a1-completion-019",
+        "kind": "completion",
+        "prompt": "Les voisins ___ les outils.",
+        "answers": [
+          "rangent"
+        ],
+        "options": [
+          {
+            "id": "o1",
+            "text": "rangent"
+          },
+          {
+            "id": "o2",
+            "text": "range"
+          },
+          {
+            "id": "o3",
+            "text": "ranges"
+          }
+        ],
+        "explanation": "Le verbe ranger s’accorde avec le sujet : la forme attendue est « rangent ».",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-er-qcm-conj",
+          "position": 18
+        },
+        "givenVerb": "ranger"
+      },
+      {
+        "id": "er-a1-completion-020",
+        "kind": "completion",
+        "prompt": "Tu ___ le trajet.",
+        "answers": [
+          "expliques"
+        ],
+        "options": [
+          {
+            "id": "o1",
+            "text": "expliques"
+          },
+          {
+            "id": "o2",
+            "text": "explique"
+          },
+          {
+            "id": "o3",
+            "text": "expliquons"
+          }
+        ],
+        "explanation": "Le verbe expliquer s’accorde avec le sujet : la forme attendue est « expliques ».",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-er-qcm-conj",
+          "position": 19
+        },
+        "givenVerb": "expliquer"
+      },
+      {
+        "id": "er-a1-completion-021",
+        "kind": "completion",
+        "prompt": "Nous ___ la nouvelle élève.",
+        "answers": [
+          "aidons"
+        ],
+        "options": [
+          {
+            "id": "o1",
+            "text": "aidons"
+          },
+          {
+            "id": "o2",
+            "text": "aide"
+          },
+          {
+            "id": "o3",
+            "text": "aides"
+          }
+        ],
+        "explanation": "Le verbe aider s’accorde avec le sujet : la forme attendue est « aidons ».",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-er-qcm-conj",
+          "position": 20
+        },
+        "givenVerb": "aider"
+      },
+      {
+        "id": "er-a1-completion-022",
+        "kind": "completion",
+        "prompt": "Les voisines ___ le vocabulaire.",
+        "answers": [
+          "étudient"
+        ],
+        "options": [
+          {
+            "id": "o1",
+            "text": "étudient"
+          },
+          {
+            "id": "o2",
+            "text": "étudie"
+          },
+          {
+            "id": "o3",
+            "text": "étudies"
+          }
+        ],
+        "explanation": "Le verbe étudier s’accorde avec le sujet : la forme attendue est « étudient ».",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-er-qcm-conj",
+          "position": 21
+        },
+        "givenVerb": "étudier"
+      },
+      {
+        "id": "er-a1-completion-023",
+        "kind": "completion",
+        "prompt": "Lina ___ au basket.",
+        "answers": [
+          "joue"
+        ],
+        "options": [
+          {
+            "id": "o1",
+            "text": "joue"
+          },
+          {
+            "id": "o2",
+            "text": "joues"
+          },
+          {
+            "id": "o3",
+            "text": "jouons"
+          }
+        ],
+        "explanation": "Le verbe jouer s’accorde avec le sujet : la forme attendue est « joue ».",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-er-qcm-conj",
+          "position": 22
+        },
+        "givenVerb": "jouer"
+      },
+      {
+        "id": "er-a1-completion-024",
+        "kind": "completion",
+        "prompt": "Vous ___ avec la chorale.",
+        "answers": [
+          "chantez"
+        ],
+        "options": [
+          {
+            "id": "o1",
+            "text": "chantez"
+          },
+          {
+            "id": "o2",
+            "text": "chante"
+          },
+          {
+            "id": "o3",
+            "text": "chantes"
+          }
+        ],
+        "explanation": "Le verbe chanter s’accorde avec le sujet : la forme attendue est « chantez ».",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-er-qcm-conj",
+          "position": 23
+        },
+        "givenVerb": "chanter"
+      },
+      {
+        "id": "er-a1-completion-025",
+        "kind": "completion",
+        "prompt": "Je ___ à la fête.",
+        "answers": [
+          "danse"
+        ],
+        "options": [
+          {
+            "id": "o1",
+            "text": "danse"
+          },
+          {
+            "id": "o2",
+            "text": "danses"
+          },
+          {
+            "id": "o3",
+            "text": "dansons"
+          }
+        ],
+        "explanation": "Le verbe danser s’accorde avec le sujet : la forme attendue est « danse ».",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-er-qcm-conj",
+          "position": 24
+        },
+        "givenVerb": "danser"
+      },
+      {
+        "id": "er-a1-completion-026",
+        "kind": "completion",
+        "prompt": "Paul ___ une place.",
+        "answers": [
+          "réserve"
+        ],
+        "options": [
+          {
+            "id": "o1",
+            "text": "réserve"
+          },
+          {
+            "id": "o2",
+            "text": "réserves"
+          },
+          {
+            "id": "o3",
+            "text": "réservons"
+          }
+        ],
+        "explanation": "Le verbe réserver s’accorde avec le sujet : la forme attendue est « réserve ».",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-er-qcm-conj",
+          "position": 25
+        },
+        "givenVerb": "réserver"
+      },
+      {
+        "id": "er-a1-completion-027",
+        "kind": "completion",
+        "prompt": "Les voisins ___ un sandwich.",
+        "answers": [
+          "commandent"
+        ],
+        "options": [
+          {
+            "id": "o1",
+            "text": "commandent"
+          },
+          {
+            "id": "o2",
+            "text": "commande"
+          },
+          {
+            "id": "o3",
+            "text": "commandes"
+          }
+        ],
+        "explanation": "Le verbe commander s’accorde avec le sujet : la forme attendue est « commandent ».",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-er-qcm-conj",
+          "position": 26
+        },
+        "givenVerb": "commander"
+      },
+      {
+        "id": "er-a1-completion-028",
+        "kind": "completion",
+        "prompt": "Tu ___ le dessert.",
+        "answers": [
+          "partages"
+        ],
+        "options": [
+          {
+            "id": "o1",
+            "text": "partages"
+          },
+          {
+            "id": "o2",
+            "text": "partage"
+          },
+          {
+            "id": "o3",
+            "text": "partageons"
+          }
+        ],
+        "explanation": "Le verbe partager s’accorde avec le sujet : la forme attendue est « partages ».",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-er-qcm-conj",
+          "position": 27
+        },
+        "givenVerb": "partager"
+      },
+      {
+        "id": "er-a1-completion-029",
+        "kind": "completion",
+        "prompt": "Nous ___ les collègues.",
+        "answers": [
+          "invitons"
+        ],
+        "options": [
+          {
+            "id": "o1",
+            "text": "invitons"
+          },
+          {
+            "id": "o2",
+            "text": "invite"
+          },
+          {
+            "id": "o3",
+            "text": "invites"
+          }
+        ],
+        "explanation": "Le verbe inviter s’accorde avec le sujet : la forme attendue est « invitons ».",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-er-qcm-conj",
+          "position": 28
+        },
+        "givenVerb": "inviter"
+      },
+      {
+        "id": "er-a1-completion-030",
+        "kind": "completion",
+        "prompt": "Les voisines ___ une anecdote.",
+        "answers": [
+          "racontent"
+        ],
+        "options": [
+          {
+            "id": "o1",
+            "text": "racontent"
+          },
+          {
+            "id": "o2",
+            "text": "raconte"
+          },
+          {
+            "id": "o3",
+            "text": "racontes"
+          }
+        ],
+        "explanation": "Le verbe raconter s’accorde avec le sujet : la forme attendue est « racontent ».",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-er-qcm-conj",
+          "position": 29
+        },
+        "givenVerb": "raconter"
+      },
+      {
+        "id": "er-a1-completion-031",
+        "kind": "completion",
+        "prompt": "Lina ___ le plan du quartier.",
+        "answers": [
+          "dessine"
+        ],
+        "options": [
+          {
+            "id": "o1",
+            "text": "dessine"
+          },
+          {
+            "id": "o2",
+            "text": "dessines"
+          },
+          {
+            "id": "o3",
+            "text": "dessinons"
+          }
+        ],
+        "explanation": "Le verbe dessiner s’accorde avec le sujet : la forme attendue est « dessine ».",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-er-qcm-conj",
+          "position": 30
+        },
+        "givenVerb": "dessiner"
+      },
+      {
+        "id": "er-a1-completion-032",
+        "kind": "completion",
+        "prompt": "Vous ___ un roman.",
+        "answers": [
+          "empruntez"
+        ],
+        "options": [
+          {
+            "id": "o1",
+            "text": "empruntez"
+          },
+          {
+            "id": "o2",
+            "text": "emprunte"
+          },
+          {
+            "id": "o3",
+            "text": "empruntes"
+          }
+        ],
+        "explanation": "Le verbe emprunter s’accorde avec le sujet : la forme attendue est « empruntez ».",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-er-qcm-conj",
+          "position": 31
+        },
+        "givenVerb": "emprunter"
+      },
+      {
+        "id": "er-a1-completion-033",
+        "kind": "completion",
+        "prompt": "Je ___ le livre.",
+        "answers": [
+          "rapporte"
+        ],
+        "options": [
+          {
+            "id": "o1",
+            "text": "rapporte"
+          },
+          {
+            "id": "o2",
+            "text": "rapportes"
+          },
+          {
+            "id": "o3",
+            "text": "rapportons"
+          }
+        ],
+        "explanation": "Le verbe rapporter s’accorde avec le sujet : la forme attendue est « rapporte ».",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-er-qcm-conj",
+          "position": 32
+        },
+        "givenVerb": "rapporter"
+      },
+      {
+        "id": "er-a1-completion-034",
+        "kind": "completion",
+        "prompt": "Paul ___ une gourde.",
+        "answers": [
+          "apporte"
+        ],
+        "options": [
+          {
+            "id": "o1",
+            "text": "apporte"
+          },
+          {
+            "id": "o2",
+            "text": "apportes"
+          },
+          {
+            "id": "o3",
+            "text": "apportons"
+          }
+        ],
+        "explanation": "Le verbe apporter s’accorde avec le sujet : la forme attendue est « apporte ».",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-er-qcm-conj",
+          "position": 33
+        },
+        "givenVerb": "apporter"
+      },
+      {
+        "id": "er-a1-completion-035",
+        "kind": "completion",
+        "prompt": "Les voisins ___ la sortie.",
+        "answers": [
+          "montrent"
+        ],
+        "options": [
+          {
+            "id": "o1",
+            "text": "montrent"
+          },
+          {
+            "id": "o2",
+            "text": "montre"
+          },
+          {
+            "id": "o3",
+            "text": "montres"
+          }
+        ],
+        "explanation": "Le verbe montrer s’accorde avec le sujet : la forme attendue est « montrent ».",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-er-qcm-conj",
+          "position": 34
+        },
+        "givenVerb": "montrer"
+      },
+      {
+        "id": "er-a1-completion-036",
+        "kind": "completion",
+        "prompt": "Tu ___ le prix du billet.",
+        "answers": [
+          "demandes"
+        ],
+        "options": [
+          {
+            "id": "o1",
+            "text": "demandes"
+          },
+          {
+            "id": "o2",
+            "text": "demande"
+          },
+          {
+            "id": "o3",
+            "text": "demandons"
+          }
+        ],
+        "explanation": "Le verbe demander s’accorde avec le sujet : la forme attendue est « demandes ».",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-er-qcm-conj",
+          "position": 35
+        },
+        "givenVerb": "demander"
+      },
+      {
+        "id": "er-a1-completion-037",
+        "kind": "completion",
+        "prompt": "Nous ___ la nouvelle adresse.",
+        "answers": [
+          "notons"
+        ],
+        "options": [
+          {
+            "id": "o1",
+            "text": "notons"
+          },
+          {
+            "id": "o2",
+            "text": "note"
+          },
+          {
+            "id": "o3",
+            "text": "notes"
+          }
+        ],
+        "explanation": "Le verbe noter s’accorde avec le sujet : la forme attendue est « notons ».",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-er-qcm-conj",
+          "position": 36
+        },
+        "givenVerb": "noter"
+      },
+      {
+        "id": "er-a1-completion-038",
+        "kind": "completion",
+        "prompt": "Les voisines ___ le formulaire.",
+        "answers": [
+          "signent"
+        ],
+        "options": [
+          {
+            "id": "o1",
+            "text": "signent"
+          },
+          {
+            "id": "o2",
+            "text": "signe"
+          },
+          {
+            "id": "o3",
+            "text": "signes"
+          }
+        ],
+        "explanation": "Le verbe signer s’accorde avec le sujet : la forme attendue est « signent ».",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-er-qcm-conj",
+          "position": 37
+        },
+        "givenVerb": "signer"
+      },
+      {
+        "id": "er-a1-completion-039",
+        "kind": "completion",
+        "prompt": "Lina ___ devant le guichet.",
+        "answers": [
+          "patiente"
+        ],
+        "options": [
+          {
+            "id": "o1",
+            "text": "patiente"
+          },
+          {
+            "id": "o2",
+            "text": "patientes"
+          },
+          {
+            "id": "o3",
+            "text": "patientons"
+          }
+        ],
+        "explanation": "Le verbe patienter s’accorde avec le sujet : la forme attendue est « patiente ».",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-er-qcm-conj",
+          "position": 38
+        },
+        "givenVerb": "patienter"
+      },
+      {
+        "id": "er-a1-completion-040",
+        "kind": "completion",
+        "prompt": "Vous ___ la rue.",
+        "answers": [
+          "traversez"
+        ],
+        "options": [
+          {
+            "id": "o1",
+            "text": "traversez"
+          },
+          {
+            "id": "o2",
+            "text": "traverse"
+          },
+          {
+            "id": "o3",
+            "text": "traverses"
+          }
+        ],
+        "explanation": "Le verbe traverser s’accorde avec le sujet : la forme attendue est « traversez ».",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-er-qcm-conj",
+          "position": 39
+        },
+        "givenVerb": "traverser"
+      },
+      {
+        "id": "er-a1-completion-041",
+        "kind": "completion",
+        "prompt": "Je ___ à droite.",
+        "answers": [
+          "tourne"
+        ],
+        "options": [
+          {
+            "id": "o1",
+            "text": "tourne"
+          },
+          {
+            "id": "o2",
+            "text": "tournes"
+          },
+          {
+            "id": "o3",
+            "text": "tournons"
+          }
+        ],
+        "explanation": "Le verbe tourner s’accorde avec le sujet : la forme attendue est « tourne ».",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-er-qcm-conj",
+          "position": 40
+        },
+        "givenVerb": "tourner"
+      },
+      {
+        "id": "er-a1-completion-042",
+        "kind": "completion",
+        "prompt": "Paul ___ jusqu’au parc.",
+        "answers": [
+          "marche"
+        ],
+        "options": [
+          {
+            "id": "o1",
+            "text": "marche"
+          },
+          {
+            "id": "o2",
+            "text": "marches"
+          },
+          {
+            "id": "o3",
+            "text": "marchons"
+          }
+        ],
+        "explanation": "Le verbe marcher s’accorde avec le sujet : la forme attendue est « marche ».",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-er-qcm-conj",
+          "position": 41
+        },
+        "givenVerb": "marcher"
+      },
+      {
+        "id": "er-a1-completion-043",
+        "kind": "completion",
+        "prompt": "Les voisins ___ les cartons.",
+        "answers": [
+          "montent"
+        ],
+        "options": [
+          {
+            "id": "o1",
+            "text": "montent"
+          },
+          {
+            "id": "o2",
+            "text": "monte"
+          },
+          {
+            "id": "o3",
+            "text": "montes"
+          }
+        ],
+        "explanation": "Le verbe monter s’accorde avec le sujet : la forme attendue est « montent ».",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-er-qcm-conj",
+          "position": 42
+        },
+        "givenVerb": "monter"
+      },
+      {
+        "id": "er-a1-completion-044",
+        "kind": "completion",
+        "prompt": "Tu ___ la valise.",
+        "answers": [
+          "poses"
+        ],
+        "options": [
+          {
+            "id": "o1",
+            "text": "poses"
+          },
+          {
+            "id": "o2",
+            "text": "pose"
+          },
+          {
+            "id": "o3",
+            "text": "posons"
+          }
+        ],
+        "explanation": "Le verbe poser s’accorde avec le sujet : la forme attendue est « poses ».",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-er-qcm-conj",
+          "position": 43
+        },
+        "givenVerb": "poser"
+      },
+      {
+        "id": "er-a1-completion-045",
+        "kind": "completion",
+        "prompt": "Nous ___ le colis.",
+        "answers": [
+          "déposons"
+        ],
+        "options": [
+          {
+            "id": "o1",
+            "text": "déposons"
+          },
+          {
+            "id": "o2",
+            "text": "dépose"
+          },
+          {
+            "id": "o3",
+            "text": "déposes"
+          }
+        ],
+        "explanation": "Le verbe déposer s’accorde avec le sujet : la forme attendue est « déposons ».",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-er-qcm-conj",
+          "position": 44
+        },
+        "givenVerb": "déposer"
+      },
+      {
+        "id": "er-a1-completion-046",
+        "kind": "completion",
+        "prompt": "Les voisines ___ les verbes.",
+        "answers": [
+          "révisent"
+        ],
+        "options": [
+          {
+            "id": "o1",
+            "text": "révisent"
+          },
+          {
+            "id": "o2",
+            "text": "révise"
+          },
+          {
+            "id": "o3",
+            "text": "révises"
+          }
+        ],
+        "explanation": "Le verbe réviser s’accorde avec le sujet : la forme attendue est « révisent ».",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-er-qcm-conj",
+          "position": 45
+        },
+        "givenVerb": "réviser"
+      },
+      {
+        "id": "er-a1-completion-047",
+        "kind": "completion",
+        "prompt": "Lina ___ le dictionnaire.",
+        "answers": [
+          "utilise"
+        ],
+        "options": [
+          {
+            "id": "o1",
+            "text": "utilise"
+          },
+          {
+            "id": "o2",
+            "text": "utilises"
+          },
+          {
+            "id": "o3",
+            "text": "utilisons"
+          }
+        ],
+        "explanation": "Le verbe utiliser s’accorde avec le sujet : la forme attendue est « utilise ».",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-er-qcm-conj",
+          "position": 46
+        },
+        "givenVerb": "utiliser"
+      },
+      {
+        "id": "er-a1-completion-048",
+        "kind": "completion",
+        "prompt": "Vous ___ les oiseaux.",
+        "answers": [
+          "observez"
+        ],
+        "options": [
+          {
+            "id": "o1",
+            "text": "observez"
+          },
+          {
+            "id": "o2",
+            "text": "observe"
+          },
+          {
+            "id": "o3",
+            "text": "observes"
+          }
+        ],
+        "explanation": "Le verbe observer s’accorde avec le sujet : la forme attendue est « observez ».",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-er-qcm-conj",
+          "position": 47
+        },
+        "givenVerb": "observer"
+      },
+      {
+        "id": "er-a1-completion-049",
+        "kind": "completion",
+        "prompt": "Je ___ du projet.",
+        "answers": [
+          "discute"
+        ],
+        "options": [
+          {
+            "id": "o1",
+            "text": "discute"
+          },
+          {
+            "id": "o2",
+            "text": "discutes"
+          },
+          {
+            "id": "o3",
+            "text": "discutons"
+          }
+        ],
+        "explanation": "Le verbe discuter s’accorde avec le sujet : la forme attendue est « discute ».",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-er-qcm-conj",
+          "position": 48
+        },
+        "givenVerb": "discuter"
+      },
+      {
+        "id": "er-a1-completion-050",
+        "kind": "completion",
+        "prompt": "Paul ___ une sortie.",
+        "answers": [
+          "organise"
+        ],
+        "options": [
+          {
+            "id": "o1",
+            "text": "organise"
+          },
+          {
+            "id": "o2",
+            "text": "organises"
+          },
+          {
+            "id": "o3",
+            "text": "organisons"
+          }
+        ],
+        "explanation": "Le verbe organiser s’accorde avec le sujet : la forme attendue est « organise ».",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-er-qcm-conj",
+          "position": 49
+        },
+        "givenVerb": "organiser"
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "revision": "er-a1-corriger-erreur-2026-11-13.1",
+    "activityId": "gram-ex-er-corriger-erreur",
+    "subthemeId": "er",
+    "topic": "gram-present",
+    "level": "A1",
+    "label": "Corriger une erreur",
+    "objective": "Conjuguer les verbes en -er au présent avec un sujet simple, sans changement de radical.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-13",
+      "humanReview": "pending",
+      "note": "Sources relues, tâches et modèles contrôlés ; pilote explicite en attente de relecture enseignante des cinquante unités de chaque activité."
+    },
+    "presentations": [
+      "correct"
+    ],
+    "instructions": {
+      "correct": "Réécrivez la phrase entière en corrigeant le verbe au présent."
+    },
+    "units": [
+      {
+        "id": "er-a1-correct-001",
+        "kind": "correct",
+        "prompt": "Je parles avec le voisin.",
+        "answers": [
+          "Je parle avec le voisin."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 9,
+          "text": "parles"
+        },
+        "explanation": "Le sujet impose la forme « parle ». On remplace « parles » et on conserve le reste de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-corriger-erreur",
+          "position": 0
+        },
+        "givenVerb": "parler"
+      },
+      {
+        "id": "er-a1-correct-002",
+        "kind": "correct",
+        "prompt": "Elle écoutes les consignes.",
+        "answers": [
+          "Elle écoute les consignes."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 12,
+          "text": "écoutes"
+        },
+        "explanation": "Le sujet impose la forme « écoute ». On remplace « écoutes » et on conserve le reste de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-corriger-erreur",
+          "position": 1
+        },
+        "givenVerb": "écouter"
+      },
+      {
+        "id": "er-a1-correct-003",
+        "kind": "correct",
+        "prompt": "Ils regarde la météo.",
+        "answers": [
+          "Ils regardent la météo."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 4,
+          "end": 11,
+          "text": "regarde"
+        },
+        "explanation": "Le sujet impose la forme « regardent ». On remplace « regarde » et on conserve le reste de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-corriger-erreur",
+          "position": 2
+        },
+        "givenVerb": "regarder"
+      },
+      {
+        "id": "er-a1-correct-004",
+        "kind": "correct",
+        "prompt": "Tu cherche un logement.",
+        "answers": [
+          "Tu cherches un logement."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 10,
+          "text": "cherche"
+        },
+        "explanation": "Le sujet impose la forme « cherches ». On remplace « cherche » et on conserve le reste de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-corriger-erreur",
+          "position": 3
+        },
+        "givenVerb": "chercher"
+      },
+      {
+        "id": "er-a1-correct-005",
+        "kind": "correct",
+        "prompt": "Nous travaille à la bibliothèque.",
+        "answers": [
+          "Nous travaillons à la bibliothèque."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 14,
+          "text": "travaille"
+        },
+        "explanation": "Le sujet impose la forme « travaillons ». On remplace « travaille » et on conserve le reste de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-corriger-erreur",
+          "position": 4
+        },
+        "givenVerb": "travailler"
+      },
+      {
+        "id": "er-a1-correct-006",
+        "kind": "correct",
+        "prompt": "Elles habite près du marché.",
+        "answers": [
+          "Elles habitent près du marché."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 6,
+          "end": 12,
+          "text": "habite"
+        },
+        "explanation": "Le sujet impose la forme « habitent ». On remplace « habite » et on conserve le reste de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-corriger-erreur",
+          "position": 5
+        },
+        "givenVerb": "habiter"
+      },
+      {
+        "id": "er-a1-correct-007",
+        "kind": "correct",
+        "prompt": "Il prépares la salade.",
+        "answers": [
+          "Il prépare la salade."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 11,
+          "text": "prépares"
+        },
+        "explanation": "Le sujet impose la forme « prépare ». On remplace « prépares » et on conserve le reste de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-corriger-erreur",
+          "position": 6
+        },
+        "givenVerb": "préparer"
+      },
+      {
+        "id": "er-a1-correct-008",
+        "kind": "correct",
+        "prompt": "Vous demande une attestation.",
+        "answers": [
+          "Vous demandez une attestation."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 12,
+          "text": "demande"
+        },
+        "explanation": "Le sujet impose la forme « demandez ». On remplace « demande » et on conserve le reste de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-corriger-erreur",
+          "position": 7
+        },
+        "givenVerb": "demander"
+      },
+      {
+        "id": "er-a1-correct-009",
+        "kind": "correct",
+        "prompt": "J’arrives à la gare.",
+        "answers": [
+          "J’arrive à la gare."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 2,
+          "end": 9,
+          "text": "arrives"
+        },
+        "explanation": "Le sujet impose la forme « arrive ». On remplace « arrives » et on conserve le reste de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-corriger-erreur",
+          "position": 8
+        },
+        "givenVerb": "arriver"
+      },
+      {
+        "id": "er-a1-correct-010",
+        "kind": "correct",
+        "prompt": "Elle restes chez ma sœur.",
+        "answers": [
+          "Elle reste chez ma sœur."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 11,
+          "text": "restes"
+        },
+        "explanation": "Le sujet impose la forme « reste ». On remplace « restes » et on conserve le reste de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-corriger-erreur",
+          "position": 9
+        },
+        "givenVerb": "rester"
+      },
+      {
+        "id": "er-a1-correct-011",
+        "kind": "correct",
+        "prompt": "Ils aime la randonnée.",
+        "answers": [
+          "Ils aiment la randonnée."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 4,
+          "end": 8,
+          "text": "aime"
+        },
+        "explanation": "Le sujet impose la forme « aiment ». On remplace « aime » et on conserve le reste de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-corriger-erreur",
+          "position": 10
+        },
+        "givenVerb": "aimer"
+      },
+      {
+        "id": "er-a1-correct-012",
+        "kind": "correct",
+        "prompt": "Tu dessine un paysage.",
+        "answers": [
+          "Tu dessines un paysage."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 10,
+          "text": "dessine"
+        },
+        "explanation": "Le sujet impose la forme « dessines ». On remplace « dessine » et on conserve le reste de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-corriger-erreur",
+          "position": 11
+        },
+        "givenVerb": "dessiner"
+      },
+      {
+        "id": "er-a1-correct-013",
+        "kind": "correct",
+        "prompt": "Nous cuisine un repas simple.",
+        "answers": [
+          "Nous cuisinons un repas simple."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 12,
+          "text": "cuisine"
+        },
+        "explanation": "Le sujet impose la forme « cuisinons ». On remplace « cuisine » et on conserve le reste de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-corriger-erreur",
+          "position": 12
+        },
+        "givenVerb": "cuisiner"
+      },
+      {
+        "id": "er-a1-correct-014",
+        "kind": "correct",
+        "prompt": "Elles répare la sonnette.",
+        "answers": [
+          "Elles réparent la sonnette."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 6,
+          "end": 12,
+          "text": "répare"
+        },
+        "explanation": "Le sujet impose la forme « réparent ». On remplace « répare » et on conserve le reste de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-corriger-erreur",
+          "position": 13
+        },
+        "givenVerb": "réparer"
+      },
+      {
+        "id": "er-a1-correct-015",
+        "kind": "correct",
+        "prompt": "Il fermes la fenêtre.",
+        "answers": [
+          "Il ferme la fenêtre."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 9,
+          "text": "fermes"
+        },
+        "explanation": "Le sujet impose la forme « ferme ». On remplace « fermes » et on conserve le reste de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-corriger-erreur",
+          "position": 14
+        },
+        "givenVerb": "fermer"
+      },
+      {
+        "id": "er-a1-correct-016",
+        "kind": "correct",
+        "prompt": "Vous lave les légumes.",
+        "answers": [
+          "Vous lavez les légumes."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 9,
+          "text": "lave"
+        },
+        "explanation": "Le sujet impose la forme « lavez ». On remplace « lave » et on conserve le reste de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-corriger-erreur",
+          "position": 15
+        },
+        "givenVerb": "laver"
+      },
+      {
+        "id": "er-a1-correct-017",
+        "kind": "correct",
+        "prompt": "Je portes un sac léger.",
+        "answers": [
+          "Je porte un sac léger."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 9,
+          "text": "portes"
+        },
+        "explanation": "Le sujet impose la forme « porte ». On remplace « portes » et on conserve le reste de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-corriger-erreur",
+          "position": 16
+        },
+        "givenVerb": "porter"
+      },
+      {
+        "id": "er-a1-correct-018",
+        "kind": "correct",
+        "prompt": "Elle visites le musée.",
+        "answers": [
+          "Elle visite le musée."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 12,
+          "text": "visites"
+        },
+        "explanation": "Le sujet impose la forme « visite ». On remplace « visites » et on conserve le reste de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-corriger-erreur",
+          "position": 17
+        },
+        "givenVerb": "visiter"
+      },
+      {
+        "id": "er-a1-correct-019",
+        "kind": "correct",
+        "prompt": "Ils range les outils.",
+        "answers": [
+          "Ils rangent les outils."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 4,
+          "end": 9,
+          "text": "range"
+        },
+        "explanation": "Le sujet impose la forme « rangent ». On remplace « range » et on conserve le reste de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-corriger-erreur",
+          "position": 18
+        },
+        "givenVerb": "ranger"
+      },
+      {
+        "id": "er-a1-correct-020",
+        "kind": "correct",
+        "prompt": "Tu explique le trajet.",
+        "answers": [
+          "Tu expliques le trajet."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 11,
+          "text": "explique"
+        },
+        "explanation": "Le sujet impose la forme « expliques ». On remplace « explique » et on conserve le reste de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-corriger-erreur",
+          "position": 19
+        },
+        "givenVerb": "expliquer"
+      },
+      {
+        "id": "er-a1-correct-021",
+        "kind": "correct",
+        "prompt": "Nous aide la nouvelle élève.",
+        "answers": [
+          "Nous aidons la nouvelle élève."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 9,
+          "text": "aide"
+        },
+        "explanation": "Le sujet impose la forme « aidons ». On remplace « aide » et on conserve le reste de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-corriger-erreur",
+          "position": 20
+        },
+        "givenVerb": "aider"
+      },
+      {
+        "id": "er-a1-correct-022",
+        "kind": "correct",
+        "prompt": "Elles étudie le vocabulaire.",
+        "answers": [
+          "Elles étudient le vocabulaire."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 6,
+          "end": 12,
+          "text": "étudie"
+        },
+        "explanation": "Le sujet impose la forme « étudient ». On remplace « étudie » et on conserve le reste de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-corriger-erreur",
+          "position": 21
+        },
+        "givenVerb": "étudier"
+      },
+      {
+        "id": "er-a1-correct-023",
+        "kind": "correct",
+        "prompt": "Il joues au basket.",
+        "answers": [
+          "Il joue au basket."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 8,
+          "text": "joues"
+        },
+        "explanation": "Le sujet impose la forme « joue ». On remplace « joues » et on conserve le reste de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-corriger-erreur",
+          "position": 22
+        },
+        "givenVerb": "jouer"
+      },
+      {
+        "id": "er-a1-correct-024",
+        "kind": "correct",
+        "prompt": "Vous chante avec la chorale.",
+        "answers": [
+          "Vous chantez avec la chorale."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 11,
+          "text": "chante"
+        },
+        "explanation": "Le sujet impose la forme « chantez ». On remplace « chante » et on conserve le reste de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-corriger-erreur",
+          "position": 23
+        },
+        "givenVerb": "chanter"
+      },
+      {
+        "id": "er-a1-correct-025",
+        "kind": "correct",
+        "prompt": "Je danses à la fête.",
+        "answers": [
+          "Je danse à la fête."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 9,
+          "text": "danses"
+        },
+        "explanation": "Le sujet impose la forme « danse ». On remplace « danses » et on conserve le reste de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-corriger-erreur",
+          "position": 24
+        },
+        "givenVerb": "danser"
+      },
+      {
+        "id": "er-a1-correct-026",
+        "kind": "correct",
+        "prompt": "Elle réserves une place.",
+        "answers": [
+          "Elle réserve une place."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 13,
+          "text": "réserves"
+        },
+        "explanation": "Le sujet impose la forme « réserve ». On remplace « réserves » et on conserve le reste de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-corriger-erreur",
+          "position": 25
+        },
+        "givenVerb": "réserver"
+      },
+      {
+        "id": "er-a1-correct-027",
+        "kind": "correct",
+        "prompt": "Ils commande un sandwich.",
+        "answers": [
+          "Ils commandent un sandwich."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 4,
+          "end": 12,
+          "text": "commande"
+        },
+        "explanation": "Le sujet impose la forme « commandent ». On remplace « commande » et on conserve le reste de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-corriger-erreur",
+          "position": 26
+        },
+        "givenVerb": "commander"
+      },
+      {
+        "id": "er-a1-correct-028",
+        "kind": "correct",
+        "prompt": "Tu partage le dessert.",
+        "answers": [
+          "Tu partages le dessert."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 10,
+          "text": "partage"
+        },
+        "explanation": "Le sujet impose la forme « partages ». On remplace « partage » et on conserve le reste de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-corriger-erreur",
+          "position": 27
+        },
+        "givenVerb": "partager"
+      },
+      {
+        "id": "er-a1-correct-029",
+        "kind": "correct",
+        "prompt": "Nous invite les collègues.",
+        "answers": [
+          "Nous invitons les collègues."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 11,
+          "text": "invite"
+        },
+        "explanation": "Le sujet impose la forme « invitons ». On remplace « invite » et on conserve le reste de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-corriger-erreur",
+          "position": 28
+        },
+        "givenVerb": "inviter"
+      },
+      {
+        "id": "er-a1-correct-030",
+        "kind": "correct",
+        "prompt": "Elles raconte une anecdote.",
+        "answers": [
+          "Elles racontent une anecdote."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 6,
+          "end": 13,
+          "text": "raconte"
+        },
+        "explanation": "Le sujet impose la forme « racontent ». On remplace « raconte » et on conserve le reste de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-corriger-erreur",
+          "position": 29
+        },
+        "givenVerb": "raconter"
+      },
+      {
+        "id": "er-a1-correct-031",
+        "kind": "correct",
+        "prompt": "Il dessines le plan du quartier.",
+        "answers": [
+          "Il dessine le plan du quartier."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 11,
+          "text": "dessines"
+        },
+        "explanation": "Le sujet impose la forme « dessine ». On remplace « dessines » et on conserve le reste de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-corriger-erreur",
+          "position": 30
+        },
+        "givenVerb": "dessiner"
+      },
+      {
+        "id": "er-a1-correct-032",
+        "kind": "correct",
+        "prompt": "Vous emprunte un roman.",
+        "answers": [
+          "Vous empruntez un roman."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 13,
+          "text": "emprunte"
+        },
+        "explanation": "Le sujet impose la forme « empruntez ». On remplace « emprunte » et on conserve le reste de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-corriger-erreur",
+          "position": 31
+        },
+        "givenVerb": "emprunter"
+      },
+      {
+        "id": "er-a1-correct-033",
+        "kind": "correct",
+        "prompt": "Je rapportes le livre.",
+        "answers": [
+          "Je rapporte le livre."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 12,
+          "text": "rapportes"
+        },
+        "explanation": "Le sujet impose la forme « rapporte ». On remplace « rapportes » et on conserve le reste de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-corriger-erreur",
+          "position": 32
+        },
+        "givenVerb": "rapporter"
+      },
+      {
+        "id": "er-a1-correct-034",
+        "kind": "correct",
+        "prompt": "Elle apportes une gourde.",
+        "answers": [
+          "Elle apporte une gourde."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 13,
+          "text": "apportes"
+        },
+        "explanation": "Le sujet impose la forme « apporte ». On remplace « apportes » et on conserve le reste de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-corriger-erreur",
+          "position": 33
+        },
+        "givenVerb": "apporter"
+      },
+      {
+        "id": "er-a1-correct-035",
+        "kind": "correct",
+        "prompt": "Ils montre la sortie.",
+        "answers": [
+          "Ils montrent la sortie."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 4,
+          "end": 10,
+          "text": "montre"
+        },
+        "explanation": "Le sujet impose la forme « montrent ». On remplace « montre » et on conserve le reste de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-corriger-erreur",
+          "position": 34
+        },
+        "givenVerb": "montrer"
+      },
+      {
+        "id": "er-a1-correct-036",
+        "kind": "correct",
+        "prompt": "Tu demande le prix du billet.",
+        "answers": [
+          "Tu demandes le prix du billet."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 10,
+          "text": "demande"
+        },
+        "explanation": "Le sujet impose la forme « demandes ». On remplace « demande » et on conserve le reste de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-corriger-erreur",
+          "position": 35
+        },
+        "givenVerb": "demander"
+      },
+      {
+        "id": "er-a1-correct-037",
+        "kind": "correct",
+        "prompt": "Nous note la nouvelle adresse.",
+        "answers": [
+          "Nous notons la nouvelle adresse."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 9,
+          "text": "note"
+        },
+        "explanation": "Le sujet impose la forme « notons ». On remplace « note » et on conserve le reste de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-corriger-erreur",
+          "position": 36
+        },
+        "givenVerb": "noter"
+      },
+      {
+        "id": "er-a1-correct-038",
+        "kind": "correct",
+        "prompt": "Elles signe le formulaire.",
+        "answers": [
+          "Elles signent le formulaire."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 6,
+          "end": 11,
+          "text": "signe"
+        },
+        "explanation": "Le sujet impose la forme « signent ». On remplace « signe » et on conserve le reste de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-corriger-erreur",
+          "position": 37
+        },
+        "givenVerb": "signer"
+      },
+      {
+        "id": "er-a1-correct-039",
+        "kind": "correct",
+        "prompt": "Il patientes devant le guichet.",
+        "answers": [
+          "Il patiente devant le guichet."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 12,
+          "text": "patientes"
+        },
+        "explanation": "Le sujet impose la forme « patiente ». On remplace « patientes » et on conserve le reste de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-corriger-erreur",
+          "position": 38
+        },
+        "givenVerb": "patienter"
+      },
+      {
+        "id": "er-a1-correct-040",
+        "kind": "correct",
+        "prompt": "Vous traverse la rue.",
+        "answers": [
+          "Vous traversez la rue."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 13,
+          "text": "traverse"
+        },
+        "explanation": "Le sujet impose la forme « traversez ». On remplace « traverse » et on conserve le reste de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-corriger-erreur",
+          "position": 39
+        },
+        "givenVerb": "traverser"
+      },
+      {
+        "id": "er-a1-correct-041",
+        "kind": "correct",
+        "prompt": "Je tournes à droite.",
+        "answers": [
+          "Je tourne à droite."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 10,
+          "text": "tournes"
+        },
+        "explanation": "Le sujet impose la forme « tourne ». On remplace « tournes » et on conserve le reste de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-corriger-erreur",
+          "position": 40
+        },
+        "givenVerb": "tourner"
+      },
+      {
+        "id": "er-a1-correct-042",
+        "kind": "correct",
+        "prompt": "Elle marches jusqu’au parc.",
+        "answers": [
+          "Elle marche jusqu’au parc."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 12,
+          "text": "marches"
+        },
+        "explanation": "Le sujet impose la forme « marche ». On remplace « marches » et on conserve le reste de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-corriger-erreur",
+          "position": 41
+        },
+        "givenVerb": "marcher"
+      },
+      {
+        "id": "er-a1-correct-043",
+        "kind": "correct",
+        "prompt": "Ils monte les cartons.",
+        "answers": [
+          "Ils montent les cartons."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 4,
+          "end": 9,
+          "text": "monte"
+        },
+        "explanation": "Le sujet impose la forme « montent ». On remplace « monte » et on conserve le reste de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-corriger-erreur",
+          "position": 42
+        },
+        "givenVerb": "monter"
+      },
+      {
+        "id": "er-a1-correct-044",
+        "kind": "correct",
+        "prompt": "Tu pose la valise.",
+        "answers": [
+          "Tu poses la valise."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 7,
+          "text": "pose"
+        },
+        "explanation": "Le sujet impose la forme « poses ». On remplace « pose » et on conserve le reste de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-corriger-erreur",
+          "position": 43
+        },
+        "givenVerb": "poser"
+      },
+      {
+        "id": "er-a1-correct-045",
+        "kind": "correct",
+        "prompt": "Nous dépose le colis.",
+        "answers": [
+          "Nous déposons le colis."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 11,
+          "text": "dépose"
+        },
+        "explanation": "Le sujet impose la forme « déposons ». On remplace « dépose » et on conserve le reste de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-corriger-erreur",
+          "position": 44
+        },
+        "givenVerb": "déposer"
+      },
+      {
+        "id": "er-a1-correct-046",
+        "kind": "correct",
+        "prompt": "Elles révise les verbes.",
+        "answers": [
+          "Elles révisent les verbes."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 6,
+          "end": 12,
+          "text": "révise"
+        },
+        "explanation": "Le sujet impose la forme « révisent ». On remplace « révise » et on conserve le reste de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-corriger-erreur",
+          "position": 45
+        },
+        "givenVerb": "réviser"
+      },
+      {
+        "id": "er-a1-correct-047",
+        "kind": "correct",
+        "prompt": "Il utilises le dictionnaire.",
+        "answers": [
+          "Il utilise le dictionnaire."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 11,
+          "text": "utilises"
+        },
+        "explanation": "Le sujet impose la forme « utilise ». On remplace « utilises » et on conserve le reste de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-corriger-erreur",
+          "position": 46
+        },
+        "givenVerb": "utiliser"
+      },
+      {
+        "id": "er-a1-correct-048",
+        "kind": "correct",
+        "prompt": "Vous observe les oiseaux.",
+        "answers": [
+          "Vous observez les oiseaux."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 12,
+          "text": "observe"
+        },
+        "explanation": "Le sujet impose la forme « observez ». On remplace « observe » et on conserve le reste de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-corriger-erreur",
+          "position": 47
+        },
+        "givenVerb": "observer"
+      },
+      {
+        "id": "er-a1-correct-049",
+        "kind": "correct",
+        "prompt": "Je discutes du projet.",
+        "answers": [
+          "Je discute du projet."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 11,
+          "text": "discutes"
+        },
+        "explanation": "Le sujet impose la forme « discute ». On remplace « discutes » et on conserve le reste de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-corriger-erreur",
+          "position": 48
+        },
+        "givenVerb": "discuter"
+      },
+      {
+        "id": "er-a1-correct-050",
+        "kind": "correct",
+        "prompt": "Elle organises une sortie.",
+        "answers": [
+          "Elle organise une sortie."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 14,
+          "text": "organises"
+        },
+        "explanation": "Le sujet impose la forme « organise ». On remplace « organises » et on conserve le reste de la phrase.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-corriger-erreur",
+          "position": 49
+        },
+        "givenVerb": "organiser"
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "revision": "er-a1-ordre-2026-11-13.1",
+    "activityId": "gram-ex-er-ordre",
+    "subthemeId": "er",
+    "topic": "gram-present",
+    "level": "A1",
+    "label": "Mots dans l’ordre",
+    "objective": "Conjuguer les verbes en -er au présent avec un sujet simple, sans changement de radical.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-13",
+      "humanReview": "pending",
+      "note": "Sources relues, tâches et modèles contrôlés ; pilote explicite en attente de relecture enseignante des cinquante unités de chaque activité."
+    },
+    "presentations": [
+      "order"
+    ],
+    "instructions": {
+      "order": "Remettez les mots dans l’ordre et écrivez la phrase correcte."
+    },
+    "units": [
+      {
+        "id": "er-a1-order-001",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Je parle avec le voisin."
+        ],
+        "tokens": [
+          {
+            "text": "Je",
+            "category": "pronom",
+            "id": "word-1"
+          },
+          {
+            "text": "parle",
+            "category": "verbe",
+            "id": "word-2"
+          },
+          {
+            "text": "avec",
+            "category": "preposition",
+            "id": "word-3"
+          },
+          {
+            "text": "le",
+            "category": "determinant",
+            "id": "word-4"
+          },
+          {
+            "text": "voisin",
+            "category": "nom",
+            "id": "word-5"
+          }
+        ],
+        "explanation": "Une phrase correcte est : Je parle avec le voisin. Le sujet précède le verbe conjugué.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-ordre",
+          "position": 0,
+          "partition": "a1"
+        },
+        "givenVerb": "parler"
+      },
+      {
+        "id": "er-a1-order-002",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Elle écoute les consignes."
+        ],
+        "tokens": [
+          {
+            "text": "Elle",
+            "category": "pronom",
+            "id": "word-1"
+          },
+          {
+            "text": "écoute",
+            "category": "verbe",
+            "id": "word-2"
+          },
+          {
+            "text": "les",
+            "category": "determinant",
+            "id": "word-3"
+          },
+          {
+            "text": "consignes",
+            "category": "nom",
+            "id": "word-4"
+          }
+        ],
+        "explanation": "Une phrase correcte est : Elle écoute les consignes. Le sujet précède le verbe conjugué.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-ordre",
+          "position": 1,
+          "partition": "a1"
+        },
+        "givenVerb": "écouter"
+      },
+      {
+        "id": "er-a1-order-003",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Ils regardent la météo."
+        ],
+        "tokens": [
+          {
+            "text": "Ils",
+            "category": "pronom",
+            "id": "word-1"
+          },
+          {
+            "text": "regardent",
+            "category": "verbe",
+            "id": "word-2"
+          },
+          {
+            "text": "la",
+            "category": "determinant",
+            "id": "word-3"
+          },
+          {
+            "text": "météo",
+            "category": "nom",
+            "id": "word-4"
+          }
+        ],
+        "explanation": "Une phrase correcte est : Ils regardent la météo. Le sujet précède le verbe conjugué.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-ordre",
+          "position": 2,
+          "partition": "a1"
+        },
+        "givenVerb": "regarder"
+      },
+      {
+        "id": "er-a1-order-004",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Tu cherches un logement."
+        ],
+        "tokens": [
+          {
+            "text": "Tu",
+            "category": "pronom",
+            "id": "word-1"
+          },
+          {
+            "text": "cherches",
+            "category": "verbe",
+            "id": "word-2"
+          },
+          {
+            "text": "un",
+            "category": "determinant",
+            "id": "word-3"
+          },
+          {
+            "text": "logement",
+            "category": "nom",
+            "id": "word-4"
+          }
+        ],
+        "explanation": "Une phrase correcte est : Tu cherches un logement. Le sujet précède le verbe conjugué.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-ordre",
+          "position": 3,
+          "partition": "a1"
+        },
+        "givenVerb": "chercher"
+      },
+      {
+        "id": "er-a1-order-005",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Nous travaillons à la bibliothèque."
+        ],
+        "tokens": [
+          {
+            "text": "Nous",
+            "category": "pronom",
+            "id": "word-1"
+          },
+          {
+            "text": "travaillons",
+            "category": "verbe",
+            "id": "word-2"
+          },
+          {
+            "text": "à",
+            "category": "preposition",
+            "id": "word-3"
+          },
+          {
+            "text": "la",
+            "category": "determinant",
+            "id": "word-4"
+          },
+          {
+            "text": "bibliothèque",
+            "category": "nom",
+            "id": "word-5"
+          }
+        ],
+        "explanation": "Une phrase correcte est : Nous travaillons à la bibliothèque. Le sujet précède le verbe conjugué.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-ordre",
+          "position": 4,
+          "partition": "a1"
+        },
+        "givenVerb": "travailler"
+      },
+      {
+        "id": "er-a1-order-006",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Elles habitent près du marché."
+        ],
+        "tokens": [
+          {
+            "text": "Elles",
+            "category": "pronom",
+            "id": "word-1"
+          },
+          {
+            "text": "habitent",
+            "category": "verbe",
+            "id": "word-2"
+          },
+          {
+            "text": "près",
+            "category": "preposition",
+            "id": "word-3"
+          },
+          {
+            "text": "du",
+            "category": "preposition",
+            "id": "word-4"
+          },
+          {
+            "text": "marché",
+            "category": "nom",
+            "id": "word-5"
+          }
+        ],
+        "explanation": "Une phrase correcte est : Elles habitent près du marché. Le sujet précède le verbe conjugué.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-ordre",
+          "position": 5,
+          "partition": "a1"
+        },
+        "givenVerb": "habiter"
+      },
+      {
+        "id": "er-a1-order-007",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Il prépare la salade."
+        ],
+        "tokens": [
+          {
+            "text": "Il",
+            "category": "pronom",
+            "id": "word-1"
+          },
+          {
+            "text": "prépare",
+            "category": "verbe",
+            "id": "word-2"
+          },
+          {
+            "text": "la",
+            "category": "determinant",
+            "id": "word-3"
+          },
+          {
+            "text": "salade",
+            "category": "nom",
+            "id": "word-4"
+          }
+        ],
+        "explanation": "Une phrase correcte est : Il prépare la salade. Le sujet précède le verbe conjugué.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-ordre",
+          "position": 6,
+          "partition": "a1"
+        },
+        "givenVerb": "préparer"
+      },
+      {
+        "id": "er-a1-order-008",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Vous demandez une attestation."
+        ],
+        "tokens": [
+          {
+            "text": "Vous",
+            "category": "pronom",
+            "id": "word-1"
+          },
+          {
+            "text": "demandez",
+            "category": "verbe",
+            "id": "word-2"
+          },
+          {
+            "text": "une",
+            "category": "determinant",
+            "id": "word-3"
+          },
+          {
+            "text": "attestation",
+            "category": "nom",
+            "id": "word-4"
+          }
+        ],
+        "explanation": "Une phrase correcte est : Vous demandez une attestation. Le sujet précède le verbe conjugué.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-ordre",
+          "position": 7,
+          "partition": "a1"
+        },
+        "givenVerb": "demander"
+      },
+      {
+        "id": "er-a1-order-009",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "J’arrive à la gare."
+        ],
+        "tokens": [
+          {
+            "text": "J’",
+            "category": "pronom",
+            "id": "word-1"
+          },
+          {
+            "text": "arrive",
+            "category": "verbe",
+            "id": "word-2"
+          },
+          {
+            "text": "à",
+            "category": "preposition",
+            "id": "word-3"
+          },
+          {
+            "text": "la",
+            "category": "determinant",
+            "id": "word-4"
+          },
+          {
+            "text": "gare",
+            "category": "nom",
+            "id": "word-5"
+          }
+        ],
+        "explanation": "Une phrase correcte est : J’arrive à la gare. Le sujet précède le verbe conjugué.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-ordre",
+          "position": 8,
+          "partition": "a1"
+        },
+        "givenVerb": "arriver"
+      },
+      {
+        "id": "er-a1-order-010",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Elle reste chez ma sœur."
+        ],
+        "tokens": [
+          {
+            "text": "Elle",
+            "category": "pronom",
+            "id": "word-1"
+          },
+          {
+            "text": "reste",
+            "category": "verbe",
+            "id": "word-2"
+          },
+          {
+            "text": "chez",
+            "category": "preposition",
+            "id": "word-3"
+          },
+          {
+            "text": "ma",
+            "category": "determinant",
+            "id": "word-4"
+          },
+          {
+            "text": "sœur",
+            "category": "nom",
+            "id": "word-5"
+          }
+        ],
+        "explanation": "Une phrase correcte est : Elle reste chez ma sœur. Le sujet précède le verbe conjugué.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-ordre",
+          "position": 9,
+          "partition": "a1"
+        },
+        "givenVerb": "rester"
+      },
+      {
+        "id": "er-a1-order-011",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Ils aiment la randonnée."
+        ],
+        "tokens": [
+          {
+            "text": "Ils",
+            "category": "pronom",
+            "id": "word-1"
+          },
+          {
+            "text": "aiment",
+            "category": "verbe",
+            "id": "word-2"
+          },
+          {
+            "text": "la",
+            "category": "determinant",
+            "id": "word-3"
+          },
+          {
+            "text": "randonnée",
+            "category": "nom",
+            "id": "word-4"
+          }
+        ],
+        "explanation": "Une phrase correcte est : Ils aiment la randonnée. Le sujet précède le verbe conjugué.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-ordre",
+          "position": 10,
+          "partition": "a1"
+        },
+        "givenVerb": "aimer"
+      },
+      {
+        "id": "er-a1-order-012",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Tu dessines un paysage."
+        ],
+        "tokens": [
+          {
+            "text": "Tu",
+            "category": "pronom",
+            "id": "word-1"
+          },
+          {
+            "text": "dessines",
+            "category": "verbe",
+            "id": "word-2"
+          },
+          {
+            "text": "un",
+            "category": "determinant",
+            "id": "word-3"
+          },
+          {
+            "text": "paysage",
+            "category": "nom",
+            "id": "word-4"
+          }
+        ],
+        "explanation": "Une phrase correcte est : Tu dessines un paysage. Le sujet précède le verbe conjugué.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-ordre",
+          "position": 11,
+          "partition": "a1"
+        },
+        "givenVerb": "dessiner"
+      },
+      {
+        "id": "er-a1-order-013",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Nous cuisinons un repas simple."
+        ],
+        "tokens": [
+          {
+            "text": "Nous",
+            "category": "pronom",
+            "id": "word-1"
+          },
+          {
+            "text": "cuisinons",
+            "category": "verbe",
+            "id": "word-2"
+          },
+          {
+            "text": "un",
+            "category": "determinant",
+            "id": "word-3"
+          },
+          {
+            "text": "repas",
+            "category": "nom",
+            "id": "word-4"
+          },
+          {
+            "text": "simple",
+            "category": "adjectif",
+            "id": "word-5"
+          }
+        ],
+        "explanation": "Une phrase correcte est : Nous cuisinons un repas simple. Le sujet précède le verbe conjugué.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-ordre",
+          "position": 12,
+          "partition": "a1"
+        },
+        "givenVerb": "cuisiner"
+      },
+      {
+        "id": "er-a1-order-014",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Elles réparent la sonnette."
+        ],
+        "tokens": [
+          {
+            "text": "Elles",
+            "category": "pronom",
+            "id": "word-1"
+          },
+          {
+            "text": "réparent",
+            "category": "verbe",
+            "id": "word-2"
+          },
+          {
+            "text": "la",
+            "category": "determinant",
+            "id": "word-3"
+          },
+          {
+            "text": "sonnette",
+            "category": "nom",
+            "id": "word-4"
+          }
+        ],
+        "explanation": "Une phrase correcte est : Elles réparent la sonnette. Le sujet précède le verbe conjugué.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-ordre",
+          "position": 13,
+          "partition": "a1"
+        },
+        "givenVerb": "réparer"
+      },
+      {
+        "id": "er-a1-order-015",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Il ferme la fenêtre."
+        ],
+        "tokens": [
+          {
+            "text": "Il",
+            "category": "pronom",
+            "id": "word-1"
+          },
+          {
+            "text": "ferme",
+            "category": "verbe",
+            "id": "word-2"
+          },
+          {
+            "text": "la",
+            "category": "determinant",
+            "id": "word-3"
+          },
+          {
+            "text": "fenêtre",
+            "category": "nom",
+            "id": "word-4"
+          }
+        ],
+        "explanation": "Une phrase correcte est : Il ferme la fenêtre. Le sujet précède le verbe conjugué.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-ordre",
+          "position": 14,
+          "partition": "a1"
+        },
+        "givenVerb": "fermer"
+      },
+      {
+        "id": "er-a1-order-016",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Vous lavez les légumes."
+        ],
+        "tokens": [
+          {
+            "text": "Vous",
+            "category": "pronom",
+            "id": "word-1"
+          },
+          {
+            "text": "lavez",
+            "category": "verbe",
+            "id": "word-2"
+          },
+          {
+            "text": "les",
+            "category": "determinant",
+            "id": "word-3"
+          },
+          {
+            "text": "légumes",
+            "category": "nom",
+            "id": "word-4"
+          }
+        ],
+        "explanation": "Une phrase correcte est : Vous lavez les légumes. Le sujet précède le verbe conjugué.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-ordre",
+          "position": 15,
+          "partition": "a1"
+        },
+        "givenVerb": "laver"
+      },
+      {
+        "id": "er-a1-order-017",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Je porte un sac léger."
+        ],
+        "tokens": [
+          {
+            "text": "Je",
+            "category": "pronom",
+            "id": "word-1"
+          },
+          {
+            "text": "porte",
+            "category": "verbe",
+            "id": "word-2"
+          },
+          {
+            "text": "un",
+            "category": "determinant",
+            "id": "word-3"
+          },
+          {
+            "text": "sac",
+            "category": "nom",
+            "id": "word-4"
+          },
+          {
+            "text": "léger",
+            "category": "adjectif",
+            "id": "word-5"
+          }
+        ],
+        "explanation": "Une phrase correcte est : Je porte un sac léger. Le sujet précède le verbe conjugué.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-ordre",
+          "position": 16,
+          "partition": "a1"
+        },
+        "givenVerb": "porter"
+      },
+      {
+        "id": "er-a1-order-018",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Elle visite le musée."
+        ],
+        "tokens": [
+          {
+            "text": "Elle",
+            "category": "pronom",
+            "id": "word-1"
+          },
+          {
+            "text": "visite",
+            "category": "verbe",
+            "id": "word-2"
+          },
+          {
+            "text": "le",
+            "category": "determinant",
+            "id": "word-3"
+          },
+          {
+            "text": "musée",
+            "category": "nom",
+            "id": "word-4"
+          }
+        ],
+        "explanation": "Une phrase correcte est : Elle visite le musée. Le sujet précède le verbe conjugué.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-ordre",
+          "position": 17,
+          "partition": "a1"
+        },
+        "givenVerb": "visiter"
+      },
+      {
+        "id": "er-a1-order-019",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Ils rangent les outils."
+        ],
+        "tokens": [
+          {
+            "text": "Ils",
+            "category": "pronom",
+            "id": "word-1"
+          },
+          {
+            "text": "rangent",
+            "category": "verbe",
+            "id": "word-2"
+          },
+          {
+            "text": "les",
+            "category": "determinant",
+            "id": "word-3"
+          },
+          {
+            "text": "outils",
+            "category": "nom",
+            "id": "word-4"
+          }
+        ],
+        "explanation": "Une phrase correcte est : Ils rangent les outils. Le sujet précède le verbe conjugué.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-ordre",
+          "position": 18,
+          "partition": "a1"
+        },
+        "givenVerb": "ranger"
+      },
+      {
+        "id": "er-a1-order-020",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Tu expliques le trajet."
+        ],
+        "tokens": [
+          {
+            "text": "Tu",
+            "category": "pronom",
+            "id": "word-1"
+          },
+          {
+            "text": "expliques",
+            "category": "verbe",
+            "id": "word-2"
+          },
+          {
+            "text": "le",
+            "category": "determinant",
+            "id": "word-3"
+          },
+          {
+            "text": "trajet",
+            "category": "nom",
+            "id": "word-4"
+          }
+        ],
+        "explanation": "Une phrase correcte est : Tu expliques le trajet. Le sujet précède le verbe conjugué.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-ordre",
+          "position": 19,
+          "partition": "a1"
+        },
+        "givenVerb": "expliquer"
+      },
+      {
+        "id": "er-a1-order-021",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Nous aidons la nouvelle élève."
+        ],
+        "tokens": [
+          {
+            "text": "Nous",
+            "category": "pronom",
+            "id": "word-1"
+          },
+          {
+            "text": "aidons",
+            "category": "verbe",
+            "id": "word-2"
+          },
+          {
+            "text": "la",
+            "category": "determinant",
+            "id": "word-3"
+          },
+          {
+            "text": "nouvelle",
+            "category": "adjectif",
+            "id": "word-4"
+          },
+          {
+            "text": "élève",
+            "category": "nom",
+            "id": "word-5"
+          }
+        ],
+        "explanation": "Une phrase correcte est : Nous aidons la nouvelle élève. Le sujet précède le verbe conjugué.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-ordre",
+          "position": 20,
+          "partition": "a1"
+        },
+        "givenVerb": "aider"
+      },
+      {
+        "id": "er-a1-order-022",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Elles étudient le vocabulaire."
+        ],
+        "tokens": [
+          {
+            "text": "Elles",
+            "category": "pronom",
+            "id": "word-1"
+          },
+          {
+            "text": "étudient",
+            "category": "verbe",
+            "id": "word-2"
+          },
+          {
+            "text": "le",
+            "category": "determinant",
+            "id": "word-3"
+          },
+          {
+            "text": "vocabulaire",
+            "category": "nom",
+            "id": "word-4"
+          }
+        ],
+        "explanation": "Une phrase correcte est : Elles étudient le vocabulaire. Le sujet précède le verbe conjugué.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-ordre",
+          "position": 21,
+          "partition": "a1"
+        },
+        "givenVerb": "étudier"
+      },
+      {
+        "id": "er-a1-order-023",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Il joue au basket."
+        ],
+        "tokens": [
+          {
+            "text": "Il",
+            "category": "pronom",
+            "id": "word-1"
+          },
+          {
+            "text": "joue",
+            "category": "verbe",
+            "id": "word-2"
+          },
+          {
+            "text": "au",
+            "category": "preposition",
+            "id": "word-3"
+          },
+          {
+            "text": "basket",
+            "category": "nom",
+            "id": "word-4"
+          }
+        ],
+        "explanation": "Une phrase correcte est : Il joue au basket. Le sujet précède le verbe conjugué.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-ordre",
+          "position": 22,
+          "partition": "a1"
+        },
+        "givenVerb": "jouer"
+      },
+      {
+        "id": "er-a1-order-024",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Vous chantez avec la chorale."
+        ],
+        "tokens": [
+          {
+            "text": "Vous",
+            "category": "pronom",
+            "id": "word-1"
+          },
+          {
+            "text": "chantez",
+            "category": "verbe",
+            "id": "word-2"
+          },
+          {
+            "text": "avec",
+            "category": "preposition",
+            "id": "word-3"
+          },
+          {
+            "text": "la",
+            "category": "determinant",
+            "id": "word-4"
+          },
+          {
+            "text": "chorale",
+            "category": "nom",
+            "id": "word-5"
+          }
+        ],
+        "explanation": "Une phrase correcte est : Vous chantez avec la chorale. Le sujet précède le verbe conjugué.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-ordre",
+          "position": 23,
+          "partition": "a1"
+        },
+        "givenVerb": "chanter"
+      },
+      {
+        "id": "er-a1-order-025",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Je danse à la fête."
+        ],
+        "tokens": [
+          {
+            "text": "Je",
+            "category": "pronom",
+            "id": "word-1"
+          },
+          {
+            "text": "danse",
+            "category": "verbe",
+            "id": "word-2"
+          },
+          {
+            "text": "à",
+            "category": "preposition",
+            "id": "word-3"
+          },
+          {
+            "text": "la",
+            "category": "determinant",
+            "id": "word-4"
+          },
+          {
+            "text": "fête",
+            "category": "nom",
+            "id": "word-5"
+          }
+        ],
+        "explanation": "Une phrase correcte est : Je danse à la fête. Le sujet précède le verbe conjugué.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-ordre",
+          "position": 24,
+          "partition": "a1"
+        },
+        "givenVerb": "danser"
+      },
+      {
+        "id": "er-a1-order-026",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Elle réserve une place."
+        ],
+        "tokens": [
+          {
+            "text": "Elle",
+            "category": "pronom",
+            "id": "word-1"
+          },
+          {
+            "text": "réserve",
+            "category": "verbe",
+            "id": "word-2"
+          },
+          {
+            "text": "une",
+            "category": "determinant",
+            "id": "word-3"
+          },
+          {
+            "text": "place",
+            "category": "nom",
+            "id": "word-4"
+          }
+        ],
+        "explanation": "Une phrase correcte est : Elle réserve une place. Le sujet précède le verbe conjugué.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-ordre",
+          "position": 25,
+          "partition": "a1"
+        },
+        "givenVerb": "réserver"
+      },
+      {
+        "id": "er-a1-order-027",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Ils commandent un sandwich."
+        ],
+        "tokens": [
+          {
+            "text": "Ils",
+            "category": "pronom",
+            "id": "word-1"
+          },
+          {
+            "text": "commandent",
+            "category": "verbe",
+            "id": "word-2"
+          },
+          {
+            "text": "un",
+            "category": "determinant",
+            "id": "word-3"
+          },
+          {
+            "text": "sandwich",
+            "category": "nom",
+            "id": "word-4"
+          }
+        ],
+        "explanation": "Une phrase correcte est : Ils commandent un sandwich. Le sujet précède le verbe conjugué.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-ordre",
+          "position": 26,
+          "partition": "a1"
+        },
+        "givenVerb": "commander"
+      },
+      {
+        "id": "er-a1-order-028",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Tu partages le dessert."
+        ],
+        "tokens": [
+          {
+            "text": "Tu",
+            "category": "pronom",
+            "id": "word-1"
+          },
+          {
+            "text": "partages",
+            "category": "verbe",
+            "id": "word-2"
+          },
+          {
+            "text": "le",
+            "category": "determinant",
+            "id": "word-3"
+          },
+          {
+            "text": "dessert",
+            "category": "nom",
+            "id": "word-4"
+          }
+        ],
+        "explanation": "Une phrase correcte est : Tu partages le dessert. Le sujet précède le verbe conjugué.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-ordre",
+          "position": 27,
+          "partition": "a1"
+        },
+        "givenVerb": "partager"
+      },
+      {
+        "id": "er-a1-order-029",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Nous invitons les collègues."
+        ],
+        "tokens": [
+          {
+            "text": "Nous",
+            "category": "pronom",
+            "id": "word-1"
+          },
+          {
+            "text": "invitons",
+            "category": "verbe",
+            "id": "word-2"
+          },
+          {
+            "text": "les",
+            "category": "determinant",
+            "id": "word-3"
+          },
+          {
+            "text": "collègues",
+            "category": "nom",
+            "id": "word-4"
+          }
+        ],
+        "explanation": "Une phrase correcte est : Nous invitons les collègues. Le sujet précède le verbe conjugué.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-ordre",
+          "position": 28,
+          "partition": "a1"
+        },
+        "givenVerb": "inviter"
+      },
+      {
+        "id": "er-a1-order-030",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Elles racontent une anecdote."
+        ],
+        "tokens": [
+          {
+            "text": "Elles",
+            "category": "pronom",
+            "id": "word-1"
+          },
+          {
+            "text": "racontent",
+            "category": "verbe",
+            "id": "word-2"
+          },
+          {
+            "text": "une",
+            "category": "determinant",
+            "id": "word-3"
+          },
+          {
+            "text": "anecdote",
+            "category": "nom",
+            "id": "word-4"
+          }
+        ],
+        "explanation": "Une phrase correcte est : Elles racontent une anecdote. Le sujet précède le verbe conjugué.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-ordre",
+          "position": 29,
+          "partition": "a1"
+        },
+        "givenVerb": "raconter"
+      },
+      {
+        "id": "er-a1-order-031",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Il dessine le plan du quartier."
+        ],
+        "tokens": [
+          {
+            "text": "Il",
+            "category": "pronom",
+            "id": "word-1"
+          },
+          {
+            "text": "dessine",
+            "category": "verbe",
+            "id": "word-2"
+          },
+          {
+            "text": "le",
+            "category": "determinant",
+            "id": "word-3"
+          },
+          {
+            "text": "plan",
+            "category": "nom",
+            "id": "word-4"
+          },
+          {
+            "text": "du",
+            "category": "preposition",
+            "id": "word-5"
+          },
+          {
+            "text": "quartier",
+            "category": "nom",
+            "id": "word-6"
+          }
+        ],
+        "explanation": "Une phrase correcte est : Il dessine le plan du quartier. Le sujet précède le verbe conjugué.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-ordre",
+          "position": 30,
+          "partition": "a1"
+        },
+        "givenVerb": "dessiner"
+      },
+      {
+        "id": "er-a1-order-032",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Vous empruntez un roman."
+        ],
+        "tokens": [
+          {
+            "text": "Vous",
+            "category": "pronom",
+            "id": "word-1"
+          },
+          {
+            "text": "empruntez",
+            "category": "verbe",
+            "id": "word-2"
+          },
+          {
+            "text": "un",
+            "category": "determinant",
+            "id": "word-3"
+          },
+          {
+            "text": "roman",
+            "category": "nom",
+            "id": "word-4"
+          }
+        ],
+        "explanation": "Une phrase correcte est : Vous empruntez un roman. Le sujet précède le verbe conjugué.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-ordre",
+          "position": 31,
+          "partition": "a1"
+        },
+        "givenVerb": "emprunter"
+      },
+      {
+        "id": "er-a1-order-033",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Je rapporte le livre."
+        ],
+        "tokens": [
+          {
+            "text": "Je",
+            "category": "pronom",
+            "id": "word-1"
+          },
+          {
+            "text": "rapporte",
+            "category": "verbe",
+            "id": "word-2"
+          },
+          {
+            "text": "le",
+            "category": "determinant",
+            "id": "word-3"
+          },
+          {
+            "text": "livre",
+            "category": "nom",
+            "id": "word-4"
+          }
+        ],
+        "explanation": "Une phrase correcte est : Je rapporte le livre. Le sujet précède le verbe conjugué.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-ordre",
+          "position": 32,
+          "partition": "a1"
+        },
+        "givenVerb": "rapporter"
+      },
+      {
+        "id": "er-a1-order-034",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Elle apporte une gourde."
+        ],
+        "tokens": [
+          {
+            "text": "Elle",
+            "category": "pronom",
+            "id": "word-1"
+          },
+          {
+            "text": "apporte",
+            "category": "verbe",
+            "id": "word-2"
+          },
+          {
+            "text": "une",
+            "category": "determinant",
+            "id": "word-3"
+          },
+          {
+            "text": "gourde",
+            "category": "nom",
+            "id": "word-4"
+          }
+        ],
+        "explanation": "Une phrase correcte est : Elle apporte une gourde. Le sujet précède le verbe conjugué.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-ordre",
+          "position": 33,
+          "partition": "a1"
+        },
+        "givenVerb": "apporter"
+      },
+      {
+        "id": "er-a1-order-035",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Ils montrent la sortie."
+        ],
+        "tokens": [
+          {
+            "text": "Ils",
+            "category": "pronom",
+            "id": "word-1"
+          },
+          {
+            "text": "montrent",
+            "category": "verbe",
+            "id": "word-2"
+          },
+          {
+            "text": "la",
+            "category": "determinant",
+            "id": "word-3"
+          },
+          {
+            "text": "sortie",
+            "category": "nom",
+            "id": "word-4"
+          }
+        ],
+        "explanation": "Une phrase correcte est : Ils montrent la sortie. Le sujet précède le verbe conjugué.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-ordre",
+          "position": 34,
+          "partition": "a1"
+        },
+        "givenVerb": "montrer"
+      },
+      {
+        "id": "er-a1-order-036",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Tu demandes le prix du billet."
+        ],
+        "tokens": [
+          {
+            "text": "Tu",
+            "category": "pronom",
+            "id": "word-1"
+          },
+          {
+            "text": "demandes",
+            "category": "verbe",
+            "id": "word-2"
+          },
+          {
+            "text": "le",
+            "category": "determinant",
+            "id": "word-3"
+          },
+          {
+            "text": "prix",
+            "category": "nom",
+            "id": "word-4"
+          },
+          {
+            "text": "du",
+            "category": "preposition",
+            "id": "word-5"
+          },
+          {
+            "text": "billet",
+            "category": "nom",
+            "id": "word-6"
+          }
+        ],
+        "explanation": "Une phrase correcte est : Tu demandes le prix du billet. Le sujet précède le verbe conjugué.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-ordre",
+          "position": 35,
+          "partition": "a1"
+        },
+        "givenVerb": "demander"
+      },
+      {
+        "id": "er-a1-order-037",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Nous notons la nouvelle adresse."
+        ],
+        "tokens": [
+          {
+            "text": "Nous",
+            "category": "pronom",
+            "id": "word-1"
+          },
+          {
+            "text": "notons",
+            "category": "verbe",
+            "id": "word-2"
+          },
+          {
+            "text": "la",
+            "category": "determinant",
+            "id": "word-3"
+          },
+          {
+            "text": "nouvelle",
+            "category": "adjectif",
+            "id": "word-4"
+          },
+          {
+            "text": "adresse",
+            "category": "nom",
+            "id": "word-5"
+          }
+        ],
+        "explanation": "Une phrase correcte est : Nous notons la nouvelle adresse. Le sujet précède le verbe conjugué.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-ordre",
+          "position": 36,
+          "partition": "a1"
+        },
+        "givenVerb": "noter"
+      },
+      {
+        "id": "er-a1-order-038",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Elles signent le formulaire."
+        ],
+        "tokens": [
+          {
+            "text": "Elles",
+            "category": "pronom",
+            "id": "word-1"
+          },
+          {
+            "text": "signent",
+            "category": "verbe",
+            "id": "word-2"
+          },
+          {
+            "text": "le",
+            "category": "determinant",
+            "id": "word-3"
+          },
+          {
+            "text": "formulaire",
+            "category": "nom",
+            "id": "word-4"
+          }
+        ],
+        "explanation": "Une phrase correcte est : Elles signent le formulaire. Le sujet précède le verbe conjugué.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-ordre",
+          "position": 37,
+          "partition": "a1"
+        },
+        "givenVerb": "signer"
+      },
+      {
+        "id": "er-a1-order-039",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Il patiente devant le guichet."
+        ],
+        "tokens": [
+          {
+            "text": "Il",
+            "category": "pronom",
+            "id": "word-1"
+          },
+          {
+            "text": "patiente",
+            "category": "verbe",
+            "id": "word-2"
+          },
+          {
+            "text": "devant",
+            "category": "preposition",
+            "id": "word-3"
+          },
+          {
+            "text": "le",
+            "category": "determinant",
+            "id": "word-4"
+          },
+          {
+            "text": "guichet",
+            "category": "nom",
+            "id": "word-5"
+          }
+        ],
+        "explanation": "Une phrase correcte est : Il patiente devant le guichet. Le sujet précède le verbe conjugué.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-ordre",
+          "position": 38,
+          "partition": "a1"
+        },
+        "givenVerb": "patienter"
+      },
+      {
+        "id": "er-a1-order-040",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Vous traversez la rue."
+        ],
+        "tokens": [
+          {
+            "text": "Vous",
+            "category": "pronom",
+            "id": "word-1"
+          },
+          {
+            "text": "traversez",
+            "category": "verbe",
+            "id": "word-2"
+          },
+          {
+            "text": "la",
+            "category": "determinant",
+            "id": "word-3"
+          },
+          {
+            "text": "rue",
+            "category": "nom",
+            "id": "word-4"
+          }
+        ],
+        "explanation": "Une phrase correcte est : Vous traversez la rue. Le sujet précède le verbe conjugué.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-ordre",
+          "position": 39,
+          "partition": "a1"
+        },
+        "givenVerb": "traverser"
+      },
+      {
+        "id": "er-a1-order-041",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Je tourne à droite."
+        ],
+        "tokens": [
+          {
+            "text": "Je",
+            "category": "pronom",
+            "id": "word-1"
+          },
+          {
+            "text": "tourne",
+            "category": "verbe",
+            "id": "word-2"
+          },
+          {
+            "text": "à",
+            "category": "preposition",
+            "id": "word-3"
+          },
+          {
+            "text": "droite",
+            "category": "adjectif",
+            "id": "word-4"
+          }
+        ],
+        "explanation": "Une phrase correcte est : Je tourne à droite. Le sujet précède le verbe conjugué.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-ordre",
+          "position": 40,
+          "partition": "a1"
+        },
+        "givenVerb": "tourner"
+      },
+      {
+        "id": "er-a1-order-042",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Elle marche jusqu’au parc."
+        ],
+        "tokens": [
+          {
+            "text": "Elle",
+            "category": "pronom",
+            "id": "word-1"
+          },
+          {
+            "text": "marche",
+            "category": "verbe",
+            "id": "word-2"
+          },
+          {
+            "text": "jusqu’",
+            "category": "preposition",
+            "id": "word-3"
+          },
+          {
+            "text": "au",
+            "category": "preposition",
+            "id": "word-4"
+          },
+          {
+            "text": "parc",
+            "category": "nom",
+            "id": "word-5"
+          }
+        ],
+        "explanation": "Une phrase correcte est : Elle marche jusqu’au parc. Le sujet précède le verbe conjugué.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-ordre",
+          "position": 41,
+          "partition": "a1"
+        },
+        "givenVerb": "marcher"
+      },
+      {
+        "id": "er-a1-order-043",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Ils montent les cartons."
+        ],
+        "tokens": [
+          {
+            "text": "Ils",
+            "category": "pronom",
+            "id": "word-1"
+          },
+          {
+            "text": "montent",
+            "category": "verbe",
+            "id": "word-2"
+          },
+          {
+            "text": "les",
+            "category": "determinant",
+            "id": "word-3"
+          },
+          {
+            "text": "cartons",
+            "category": "nom",
+            "id": "word-4"
+          }
+        ],
+        "explanation": "Une phrase correcte est : Ils montent les cartons. Le sujet précède le verbe conjugué.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-ordre",
+          "position": 42,
+          "partition": "a1"
+        },
+        "givenVerb": "monter"
+      },
+      {
+        "id": "er-a1-order-044",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Tu poses la valise."
+        ],
+        "tokens": [
+          {
+            "text": "Tu",
+            "category": "pronom",
+            "id": "word-1"
+          },
+          {
+            "text": "poses",
+            "category": "verbe",
+            "id": "word-2"
+          },
+          {
+            "text": "la",
+            "category": "determinant",
+            "id": "word-3"
+          },
+          {
+            "text": "valise",
+            "category": "nom",
+            "id": "word-4"
+          }
+        ],
+        "explanation": "Une phrase correcte est : Tu poses la valise. Le sujet précède le verbe conjugué.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-ordre",
+          "position": 43,
+          "partition": "a1"
+        },
+        "givenVerb": "poser"
+      },
+      {
+        "id": "er-a1-order-045",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Nous déposons le colis."
+        ],
+        "tokens": [
+          {
+            "text": "Nous",
+            "category": "pronom",
+            "id": "word-1"
+          },
+          {
+            "text": "déposons",
+            "category": "verbe",
+            "id": "word-2"
+          },
+          {
+            "text": "le",
+            "category": "determinant",
+            "id": "word-3"
+          },
+          {
+            "text": "colis",
+            "category": "nom",
+            "id": "word-4"
+          }
+        ],
+        "explanation": "Une phrase correcte est : Nous déposons le colis. Le sujet précède le verbe conjugué.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-ordre",
+          "position": 44,
+          "partition": "a1"
+        },
+        "givenVerb": "déposer"
+      },
+      {
+        "id": "er-a1-order-046",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Elles révisent les verbes."
+        ],
+        "tokens": [
+          {
+            "text": "Elles",
+            "category": "pronom",
+            "id": "word-1"
+          },
+          {
+            "text": "révisent",
+            "category": "verbe",
+            "id": "word-2"
+          },
+          {
+            "text": "les",
+            "category": "determinant",
+            "id": "word-3"
+          },
+          {
+            "text": "verbes",
+            "category": "nom",
+            "id": "word-4"
+          }
+        ],
+        "explanation": "Une phrase correcte est : Elles révisent les verbes. Le sujet précède le verbe conjugué.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-ordre",
+          "position": 45,
+          "partition": "a1"
+        },
+        "givenVerb": "réviser"
+      },
+      {
+        "id": "er-a1-order-047",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Il utilise le dictionnaire."
+        ],
+        "tokens": [
+          {
+            "text": "Il",
+            "category": "pronom",
+            "id": "word-1"
+          },
+          {
+            "text": "utilise",
+            "category": "verbe",
+            "id": "word-2"
+          },
+          {
+            "text": "le",
+            "category": "determinant",
+            "id": "word-3"
+          },
+          {
+            "text": "dictionnaire",
+            "category": "nom",
+            "id": "word-4"
+          }
+        ],
+        "explanation": "Une phrase correcte est : Il utilise le dictionnaire. Le sujet précède le verbe conjugué.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-ordre",
+          "position": 46,
+          "partition": "a1"
+        },
+        "givenVerb": "utiliser"
+      },
+      {
+        "id": "er-a1-order-048",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Vous observez les oiseaux."
+        ],
+        "tokens": [
+          {
+            "text": "Vous",
+            "category": "pronom",
+            "id": "word-1"
+          },
+          {
+            "text": "observez",
+            "category": "verbe",
+            "id": "word-2"
+          },
+          {
+            "text": "les",
+            "category": "determinant",
+            "id": "word-3"
+          },
+          {
+            "text": "oiseaux",
+            "category": "nom",
+            "id": "word-4"
+          }
+        ],
+        "explanation": "Une phrase correcte est : Vous observez les oiseaux. Le sujet précède le verbe conjugué.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-ordre",
+          "position": 47,
+          "partition": "a1"
+        },
+        "givenVerb": "observer"
+      },
+      {
+        "id": "er-a1-order-049",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Je discute du projet."
+        ],
+        "tokens": [
+          {
+            "text": "Je",
+            "category": "pronom",
+            "id": "word-1"
+          },
+          {
+            "text": "discute",
+            "category": "verbe",
+            "id": "word-2"
+          },
+          {
+            "text": "du",
+            "category": "preposition",
+            "id": "word-3"
+          },
+          {
+            "text": "projet",
+            "category": "nom",
+            "id": "word-4"
+          }
+        ],
+        "explanation": "Une phrase correcte est : Je discute du projet. Le sujet précède le verbe conjugué.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-ordre",
+          "position": 48,
+          "partition": "a1"
+        },
+        "givenVerb": "discuter"
+      },
+      {
+        "id": "er-a1-order-050",
+        "kind": "order",
+        "prompt": "Remettez les mots dans l’ordre.",
+        "answers": [
+          "Elle organise une sortie."
+        ],
+        "tokens": [
+          {
+            "text": "Elle",
+            "category": "pronom",
+            "id": "word-1"
+          },
+          {
+            "text": "organise",
+            "category": "verbe",
+            "id": "word-2"
+          },
+          {
+            "text": "une",
+            "category": "determinant",
+            "id": "word-3"
+          },
+          {
+            "text": "sortie",
+            "category": "nom",
+            "id": "word-4"
+          }
+        ],
+        "explanation": "Une phrase correcte est : Elle organise une sortie. Le sujet précède le verbe conjugué.",
+        "source": {
+          "path": "src/grammaire/exercises/present-supplement-data.json",
+          "typeId": "gram-ex-er-ordre",
+          "position": 49,
+          "partition": "a1"
+        },
+        "givenVerb": "organiser"
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "revision": "er-a1-curriculum-t-2026-11-13.1",
+    "activityId": "gram-ex-er-curriculum-t",
+    "subthemeId": "er",
+    "topic": "gram-present",
+    "level": "A1",
+    "label": "Transformer une phrase",
+    "objective": "Conjuguer les verbes en -er au présent avec un sujet simple, sans changement de radical.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-13",
+      "humanReview": "pending",
+      "note": "Sources relues, tâches et modèles contrôlés ; pilote explicite en attente de relecture enseignante des cinquante unités de chaque activité."
+    },
+    "presentations": [
+      "transform"
+    ],
+    "instructions": {
+      "transform": "Réécrivez chaque phrase avec le sujet indiqué. Conjuguez le verbe au présent et conservez les autres informations."
+    },
+    "units": [
+      {
+        "id": "er-a1-transform-001",
+        "kind": "transform",
+        "prompt": "Je parle avec le voisin.",
+        "targetSubject": "Nous",
+        "responseLines": 2,
+        "answers": [
+          "Nous parlons avec le voisin."
+        ],
+        "explanation": "Avec « Nous », parler devient « parlons ». Les autres informations sont conservées.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/er.json",
+          "typeId": "gram-ex-er-curriculum-t",
+          "position": 0,
+          "partition": "from-order-a1-001"
+        },
+        "givenVerb": "parler"
+      },
+      {
+        "id": "er-a1-transform-002",
+        "kind": "transform",
+        "prompt": "Elle écoute les consignes.",
+        "targetSubject": "Elles",
+        "responseLines": 2,
+        "answers": [
+          "Elles écoutent les consignes."
+        ],
+        "explanation": "Avec « Elles », écouter devient « écoutent ». Les autres informations sont conservées.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/er.json",
+          "typeId": "gram-ex-er-curriculum-t",
+          "position": 1,
+          "partition": "from-order-a1-002"
+        },
+        "givenVerb": "écouter"
+      },
+      {
+        "id": "er-a1-transform-003",
+        "kind": "transform",
+        "prompt": "Ils regardent la météo.",
+        "targetSubject": "Il",
+        "responseLines": 2,
+        "answers": [
+          "Il regarde la météo."
+        ],
+        "explanation": "Avec « Il », regarder devient « regarde ». Les autres informations sont conservées.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/er.json",
+          "typeId": "gram-ex-er-curriculum-t",
+          "position": 2,
+          "partition": "from-order-a1-003"
+        },
+        "givenVerb": "regarder"
+      },
+      {
+        "id": "er-a1-transform-004",
+        "kind": "transform",
+        "prompt": "Tu cherches un logement.",
+        "targetSubject": "Vous",
+        "responseLines": 2,
+        "answers": [
+          "Vous cherchez un logement."
+        ],
+        "explanation": "Avec « Vous », chercher devient « cherchez ». Les autres informations sont conservées.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/er.json",
+          "typeId": "gram-ex-er-curriculum-t",
+          "position": 3,
+          "partition": "from-order-a1-004"
+        },
+        "givenVerb": "chercher"
+      },
+      {
+        "id": "er-a1-transform-005",
+        "kind": "transform",
+        "prompt": "Nous travaillons à la bibliothèque.",
+        "targetSubject": "Je",
+        "responseLines": 2,
+        "answers": [
+          "Je travaille à la bibliothèque."
+        ],
+        "explanation": "Avec « Je », travailler devient « travaille ». Les autres informations sont conservées.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/er.json",
+          "typeId": "gram-ex-er-curriculum-t",
+          "position": 4,
+          "partition": "from-order-a1-005"
+        },
+        "givenVerb": "travailler"
+      },
+      {
+        "id": "er-a1-transform-006",
+        "kind": "transform",
+        "prompt": "Elles habitent près du marché.",
+        "targetSubject": "Elle",
+        "responseLines": 2,
+        "answers": [
+          "Elle habite près du marché."
+        ],
+        "explanation": "Avec « Elle », habiter devient « habite ». Les autres informations sont conservées.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/er.json",
+          "typeId": "gram-ex-er-curriculum-t",
+          "position": 5,
+          "partition": "from-order-a1-006"
+        },
+        "givenVerb": "habiter"
+      },
+      {
+        "id": "er-a1-transform-007",
+        "kind": "transform",
+        "prompt": "Il prépare la salade.",
+        "targetSubject": "Ils",
+        "responseLines": 2,
+        "answers": [
+          "Ils préparent la salade."
+        ],
+        "explanation": "Avec « Ils », préparer devient « préparent ». Les autres informations sont conservées.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/er.json",
+          "typeId": "gram-ex-er-curriculum-t",
+          "position": 6,
+          "partition": "from-order-a1-007"
+        },
+        "givenVerb": "préparer"
+      },
+      {
+        "id": "er-a1-transform-008",
+        "kind": "transform",
+        "prompt": "Vous demandez une attestation.",
+        "targetSubject": "Tu",
+        "responseLines": 2,
+        "answers": [
+          "Tu demandes une attestation."
+        ],
+        "explanation": "Avec « Tu », demander devient « demandes ». Les autres informations sont conservées.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/er.json",
+          "typeId": "gram-ex-er-curriculum-t",
+          "position": 7,
+          "partition": "from-order-a1-008"
+        },
+        "givenVerb": "demander"
+      },
+      {
+        "id": "er-a1-transform-009",
+        "kind": "transform",
+        "prompt": "J’arrive à la gare.",
+        "targetSubject": "Nous",
+        "responseLines": 2,
+        "answers": [
+          "Nous arrivons à la gare."
+        ],
+        "explanation": "Avec « Nous », arriver devient « arrivons ». Les autres informations sont conservées.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/er.json",
+          "typeId": "gram-ex-er-curriculum-t",
+          "position": 8,
+          "partition": "from-order-a1-009"
+        },
+        "givenVerb": "arriver"
+      },
+      {
+        "id": "er-a1-transform-010",
+        "kind": "transform",
+        "prompt": "Elle reste chez ma sœur.",
+        "targetSubject": "Elles",
+        "responseLines": 2,
+        "answers": [
+          "Elles restent chez ma sœur."
+        ],
+        "explanation": "Avec « Elles », rester devient « restent ». Les autres informations sont conservées.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/er.json",
+          "typeId": "gram-ex-er-curriculum-t",
+          "position": 9,
+          "partition": "from-order-a1-010"
+        },
+        "givenVerb": "rester"
+      },
+      {
+        "id": "er-a1-transform-011",
+        "kind": "transform",
+        "prompt": "Ils aiment la randonnée.",
+        "targetSubject": "Il",
+        "responseLines": 2,
+        "answers": [
+          "Il aime la randonnée."
+        ],
+        "explanation": "Avec « Il », aimer devient « aime ». Les autres informations sont conservées.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/er.json",
+          "typeId": "gram-ex-er-curriculum-t",
+          "position": 10,
+          "partition": "from-order-a1-011"
+        },
+        "givenVerb": "aimer"
+      },
+      {
+        "id": "er-a1-transform-012",
+        "kind": "transform",
+        "prompt": "Tu dessines un paysage.",
+        "targetSubject": "Vous",
+        "responseLines": 2,
+        "answers": [
+          "Vous dessinez un paysage."
+        ],
+        "explanation": "Avec « Vous », dessiner devient « dessinez ». Les autres informations sont conservées.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/er.json",
+          "typeId": "gram-ex-er-curriculum-t",
+          "position": 11,
+          "partition": "from-order-a1-012"
+        },
+        "givenVerb": "dessiner"
+      },
+      {
+        "id": "er-a1-transform-013",
+        "kind": "transform",
+        "prompt": "Nous cuisinons un repas simple.",
+        "targetSubject": "Je",
+        "responseLines": 2,
+        "answers": [
+          "Je cuisine un repas simple."
+        ],
+        "explanation": "Avec « Je », cuisiner devient « cuisine ». Les autres informations sont conservées.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/er.json",
+          "typeId": "gram-ex-er-curriculum-t",
+          "position": 12,
+          "partition": "from-order-a1-013"
+        },
+        "givenVerb": "cuisiner"
+      },
+      {
+        "id": "er-a1-transform-014",
+        "kind": "transform",
+        "prompt": "Elles réparent la sonnette.",
+        "targetSubject": "Elle",
+        "responseLines": 2,
+        "answers": [
+          "Elle répare la sonnette."
+        ],
+        "explanation": "Avec « Elle », réparer devient « répare ». Les autres informations sont conservées.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/er.json",
+          "typeId": "gram-ex-er-curriculum-t",
+          "position": 13,
+          "partition": "from-order-a1-014"
+        },
+        "givenVerb": "réparer"
+      },
+      {
+        "id": "er-a1-transform-015",
+        "kind": "transform",
+        "prompt": "Il ferme la fenêtre.",
+        "targetSubject": "Ils",
+        "responseLines": 2,
+        "answers": [
+          "Ils ferment la fenêtre."
+        ],
+        "explanation": "Avec « Ils », fermer devient « ferment ». Les autres informations sont conservées.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/er.json",
+          "typeId": "gram-ex-er-curriculum-t",
+          "position": 14,
+          "partition": "from-order-a1-015"
+        },
+        "givenVerb": "fermer"
+      },
+      {
+        "id": "er-a1-transform-016",
+        "kind": "transform",
+        "prompt": "Vous lavez les légumes.",
+        "targetSubject": "Tu",
+        "responseLines": 2,
+        "answers": [
+          "Tu laves les légumes."
+        ],
+        "explanation": "Avec « Tu », laver devient « laves ». Les autres informations sont conservées.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/er.json",
+          "typeId": "gram-ex-er-curriculum-t",
+          "position": 15,
+          "partition": "from-order-a1-016"
+        },
+        "givenVerb": "laver"
+      },
+      {
+        "id": "er-a1-transform-017",
+        "kind": "transform",
+        "prompt": "Je porte un sac léger.",
+        "targetSubject": "Nous",
+        "responseLines": 2,
+        "answers": [
+          "Nous portons un sac léger."
+        ],
+        "explanation": "Avec « Nous », porter devient « portons ». Les autres informations sont conservées.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/er.json",
+          "typeId": "gram-ex-er-curriculum-t",
+          "position": 16,
+          "partition": "from-order-a1-017"
+        },
+        "givenVerb": "porter"
+      },
+      {
+        "id": "er-a1-transform-018",
+        "kind": "transform",
+        "prompt": "Elle visite le musée.",
+        "targetSubject": "Elles",
+        "responseLines": 2,
+        "answers": [
+          "Elles visitent le musée."
+        ],
+        "explanation": "Avec « Elles », visiter devient « visitent ». Les autres informations sont conservées.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/er.json",
+          "typeId": "gram-ex-er-curriculum-t",
+          "position": 17,
+          "partition": "from-order-a1-018"
+        },
+        "givenVerb": "visiter"
+      },
+      {
+        "id": "er-a1-transform-019",
+        "kind": "transform",
+        "prompt": "Ils rangent les outils.",
+        "targetSubject": "Il",
+        "responseLines": 2,
+        "answers": [
+          "Il range les outils."
+        ],
+        "explanation": "Avec « Il », ranger devient « range ». Les autres informations sont conservées.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/er.json",
+          "typeId": "gram-ex-er-curriculum-t",
+          "position": 18,
+          "partition": "from-order-a1-019"
+        },
+        "givenVerb": "ranger"
+      },
+      {
+        "id": "er-a1-transform-020",
+        "kind": "transform",
+        "prompt": "Tu expliques le trajet.",
+        "targetSubject": "Vous",
+        "responseLines": 2,
+        "answers": [
+          "Vous expliquez le trajet."
+        ],
+        "explanation": "Avec « Vous », expliquer devient « expliquez ». Les autres informations sont conservées.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/er.json",
+          "typeId": "gram-ex-er-curriculum-t",
+          "position": 19,
+          "partition": "from-order-a1-020"
+        },
+        "givenVerb": "expliquer"
+      },
+      {
+        "id": "er-a1-transform-021",
+        "kind": "transform",
+        "prompt": "Nous aidons la nouvelle élève.",
+        "targetSubject": "Je",
+        "responseLines": 2,
+        "answers": [
+          "J’aide la nouvelle élève."
+        ],
+        "explanation": "Avec « Je », aider devient « aide ». Je devient J’ devant une voyelle ou un h muet. Les autres informations sont conservées.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/er.json",
+          "typeId": "gram-ex-er-curriculum-t",
+          "position": 20,
+          "partition": "from-order-a1-021"
+        },
+        "givenVerb": "aider"
+      },
+      {
+        "id": "er-a1-transform-022",
+        "kind": "transform",
+        "prompt": "Elles étudient le vocabulaire.",
+        "targetSubject": "Elle",
+        "responseLines": 2,
+        "answers": [
+          "Elle étudie le vocabulaire."
+        ],
+        "explanation": "Avec « Elle », étudier devient « étudie ». Les autres informations sont conservées.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/er.json",
+          "typeId": "gram-ex-er-curriculum-t",
+          "position": 21,
+          "partition": "from-order-a1-022"
+        },
+        "givenVerb": "étudier"
+      },
+      {
+        "id": "er-a1-transform-023",
+        "kind": "transform",
+        "prompt": "Il joue au basket.",
+        "targetSubject": "Ils",
+        "responseLines": 2,
+        "answers": [
+          "Ils jouent au basket."
+        ],
+        "explanation": "Avec « Ils », jouer devient « jouent ». Les autres informations sont conservées.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/er.json",
+          "typeId": "gram-ex-er-curriculum-t",
+          "position": 22,
+          "partition": "from-order-a1-023"
+        },
+        "givenVerb": "jouer"
+      },
+      {
+        "id": "er-a1-transform-024",
+        "kind": "transform",
+        "prompt": "Vous chantez avec la chorale.",
+        "targetSubject": "Tu",
+        "responseLines": 2,
+        "answers": [
+          "Tu chantes avec la chorale."
+        ],
+        "explanation": "Avec « Tu », chanter devient « chantes ». Les autres informations sont conservées.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/er.json",
+          "typeId": "gram-ex-er-curriculum-t",
+          "position": 23,
+          "partition": "from-order-a1-024"
+        },
+        "givenVerb": "chanter"
+      },
+      {
+        "id": "er-a1-transform-025",
+        "kind": "transform",
+        "prompt": "Je danse à la fête.",
+        "targetSubject": "Nous",
+        "responseLines": 2,
+        "answers": [
+          "Nous dansons à la fête."
+        ],
+        "explanation": "Avec « Nous », danser devient « dansons ». Les autres informations sont conservées.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/er.json",
+          "typeId": "gram-ex-er-curriculum-t",
+          "position": 24,
+          "partition": "from-order-a1-025"
+        },
+        "givenVerb": "danser"
+      },
+      {
+        "id": "er-a1-transform-026",
+        "kind": "transform",
+        "prompt": "Elle réserve une place.",
+        "targetSubject": "Elles",
+        "responseLines": 2,
+        "answers": [
+          "Elles réservent une place."
+        ],
+        "explanation": "Avec « Elles », réserver devient « réservent ». Les autres informations sont conservées.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/er.json",
+          "typeId": "gram-ex-er-curriculum-t",
+          "position": 25,
+          "partition": "from-order-a1-026"
+        },
+        "givenVerb": "réserver"
+      },
+      {
+        "id": "er-a1-transform-027",
+        "kind": "transform",
+        "prompt": "Ils commandent un sandwich.",
+        "targetSubject": "Il",
+        "responseLines": 2,
+        "answers": [
+          "Il commande un sandwich."
+        ],
+        "explanation": "Avec « Il », commander devient « commande ». Les autres informations sont conservées.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/er.json",
+          "typeId": "gram-ex-er-curriculum-t",
+          "position": 26,
+          "partition": "from-order-a1-027"
+        },
+        "givenVerb": "commander"
+      },
+      {
+        "id": "er-a1-transform-028",
+        "kind": "transform",
+        "prompt": "Tu partages le dessert.",
+        "targetSubject": "Vous",
+        "responseLines": 2,
+        "answers": [
+          "Vous partagez le dessert."
+        ],
+        "explanation": "Avec « Vous », partager devient « partagez ». Les autres informations sont conservées.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/er.json",
+          "typeId": "gram-ex-er-curriculum-t",
+          "position": 27,
+          "partition": "from-order-a1-028"
+        },
+        "givenVerb": "partager"
+      },
+      {
+        "id": "er-a1-transform-029",
+        "kind": "transform",
+        "prompt": "Nous invitons les collègues.",
+        "targetSubject": "Je",
+        "responseLines": 2,
+        "answers": [
+          "J’invite les collègues."
+        ],
+        "explanation": "Avec « Je », inviter devient « invite ». Je devient J’ devant une voyelle ou un h muet. Les autres informations sont conservées.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/er.json",
+          "typeId": "gram-ex-er-curriculum-t",
+          "position": 28,
+          "partition": "from-order-a1-029"
+        },
+        "givenVerb": "inviter"
+      },
+      {
+        "id": "er-a1-transform-030",
+        "kind": "transform",
+        "prompt": "Elles racontent une anecdote.",
+        "targetSubject": "Elle",
+        "responseLines": 2,
+        "answers": [
+          "Elle raconte une anecdote."
+        ],
+        "explanation": "Avec « Elle », raconter devient « raconte ». Les autres informations sont conservées.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/er.json",
+          "typeId": "gram-ex-er-curriculum-t",
+          "position": 29,
+          "partition": "from-order-a1-030"
+        },
+        "givenVerb": "raconter"
+      },
+      {
+        "id": "er-a1-transform-031",
+        "kind": "transform",
+        "prompt": "Il dessine le plan du quartier.",
+        "targetSubject": "Ils",
+        "responseLines": 2,
+        "answers": [
+          "Ils dessinent le plan du quartier."
+        ],
+        "explanation": "Avec « Ils », dessiner devient « dessinent ». Les autres informations sont conservées.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/er.json",
+          "typeId": "gram-ex-er-curriculum-t",
+          "position": 30,
+          "partition": "from-order-a1-031"
+        },
+        "givenVerb": "dessiner"
+      },
+      {
+        "id": "er-a1-transform-032",
+        "kind": "transform",
+        "prompt": "Vous empruntez un roman.",
+        "targetSubject": "Tu",
+        "responseLines": 2,
+        "answers": [
+          "Tu empruntes un roman."
+        ],
+        "explanation": "Avec « Tu », emprunter devient « empruntes ». Les autres informations sont conservées.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/er.json",
+          "typeId": "gram-ex-er-curriculum-t",
+          "position": 31,
+          "partition": "from-order-a1-032"
+        },
+        "givenVerb": "emprunter"
+      },
+      {
+        "id": "er-a1-transform-033",
+        "kind": "transform",
+        "prompt": "Je rapporte le livre.",
+        "targetSubject": "Nous",
+        "responseLines": 2,
+        "answers": [
+          "Nous rapportons le livre."
+        ],
+        "explanation": "Avec « Nous », rapporter devient « rapportons ». Les autres informations sont conservées.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/er.json",
+          "typeId": "gram-ex-er-curriculum-t",
+          "position": 32,
+          "partition": "from-order-a1-033"
+        },
+        "givenVerb": "rapporter"
+      },
+      {
+        "id": "er-a1-transform-034",
+        "kind": "transform",
+        "prompt": "Elle apporte une gourde.",
+        "targetSubject": "Elles",
+        "responseLines": 2,
+        "answers": [
+          "Elles apportent une gourde."
+        ],
+        "explanation": "Avec « Elles », apporter devient « apportent ». Les autres informations sont conservées.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/er.json",
+          "typeId": "gram-ex-er-curriculum-t",
+          "position": 33,
+          "partition": "from-order-a1-034"
+        },
+        "givenVerb": "apporter"
+      },
+      {
+        "id": "er-a1-transform-035",
+        "kind": "transform",
+        "prompt": "Ils montrent la sortie.",
+        "targetSubject": "Il",
+        "responseLines": 2,
+        "answers": [
+          "Il montre la sortie."
+        ],
+        "explanation": "Avec « Il », montrer devient « montre ». Les autres informations sont conservées.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/er.json",
+          "typeId": "gram-ex-er-curriculum-t",
+          "position": 34,
+          "partition": "from-order-a1-035"
+        },
+        "givenVerb": "montrer"
+      },
+      {
+        "id": "er-a1-transform-036",
+        "kind": "transform",
+        "prompt": "Tu demandes le prix du billet.",
+        "targetSubject": "Vous",
+        "responseLines": 2,
+        "answers": [
+          "Vous demandez le prix du billet."
+        ],
+        "explanation": "Avec « Vous », demander devient « demandez ». Les autres informations sont conservées.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/er.json",
+          "typeId": "gram-ex-er-curriculum-t",
+          "position": 35,
+          "partition": "from-order-a1-036"
+        },
+        "givenVerb": "demander"
+      },
+      {
+        "id": "er-a1-transform-037",
+        "kind": "transform",
+        "prompt": "Nous notons la nouvelle adresse.",
+        "targetSubject": "Je",
+        "responseLines": 2,
+        "answers": [
+          "Je note la nouvelle adresse."
+        ],
+        "explanation": "Avec « Je », noter devient « note ». Les autres informations sont conservées.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/er.json",
+          "typeId": "gram-ex-er-curriculum-t",
+          "position": 36,
+          "partition": "from-order-a1-037"
+        },
+        "givenVerb": "noter"
+      },
+      {
+        "id": "er-a1-transform-038",
+        "kind": "transform",
+        "prompt": "Elles signent le formulaire.",
+        "targetSubject": "Elle",
+        "responseLines": 2,
+        "answers": [
+          "Elle signe le formulaire."
+        ],
+        "explanation": "Avec « Elle », signer devient « signe ». Les autres informations sont conservées.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/er.json",
+          "typeId": "gram-ex-er-curriculum-t",
+          "position": 37,
+          "partition": "from-order-a1-038"
+        },
+        "givenVerb": "signer"
+      },
+      {
+        "id": "er-a1-transform-039",
+        "kind": "transform",
+        "prompt": "Il patiente devant le guichet.",
+        "targetSubject": "Ils",
+        "responseLines": 2,
+        "answers": [
+          "Ils patientent devant le guichet."
+        ],
+        "explanation": "Avec « Ils », patienter devient « patientent ». Les autres informations sont conservées.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/er.json",
+          "typeId": "gram-ex-er-curriculum-t",
+          "position": 38,
+          "partition": "from-order-a1-039"
+        },
+        "givenVerb": "patienter"
+      },
+      {
+        "id": "er-a1-transform-040",
+        "kind": "transform",
+        "prompt": "Vous traversez la rue.",
+        "targetSubject": "Tu",
+        "responseLines": 2,
+        "answers": [
+          "Tu traverses la rue."
+        ],
+        "explanation": "Avec « Tu », traverser devient « traverses ». Les autres informations sont conservées.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/er.json",
+          "typeId": "gram-ex-er-curriculum-t",
+          "position": 39,
+          "partition": "from-order-a1-040"
+        },
+        "givenVerb": "traverser"
+      },
+      {
+        "id": "er-a1-transform-041",
+        "kind": "transform",
+        "prompt": "Je tourne à droite.",
+        "targetSubject": "Nous",
+        "responseLines": 2,
+        "answers": [
+          "Nous tournons à droite."
+        ],
+        "explanation": "Avec « Nous », tourner devient « tournons ». Les autres informations sont conservées.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/er.json",
+          "typeId": "gram-ex-er-curriculum-t",
+          "position": 40,
+          "partition": "from-order-a1-041"
+        },
+        "givenVerb": "tourner"
+      },
+      {
+        "id": "er-a1-transform-042",
+        "kind": "transform",
+        "prompt": "Elle marche jusqu’au parc.",
+        "targetSubject": "Elles",
+        "responseLines": 2,
+        "answers": [
+          "Elles marchent jusqu’au parc."
+        ],
+        "explanation": "Avec « Elles », marcher devient « marchent ». Les autres informations sont conservées.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/er.json",
+          "typeId": "gram-ex-er-curriculum-t",
+          "position": 41,
+          "partition": "from-order-a1-042"
+        },
+        "givenVerb": "marcher"
+      },
+      {
+        "id": "er-a1-transform-043",
+        "kind": "transform",
+        "prompt": "Ils montent les cartons.",
+        "targetSubject": "Il",
+        "responseLines": 2,
+        "answers": [
+          "Il monte les cartons."
+        ],
+        "explanation": "Avec « Il », monter devient « monte ». Les autres informations sont conservées.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/er.json",
+          "typeId": "gram-ex-er-curriculum-t",
+          "position": 42,
+          "partition": "from-order-a1-043"
+        },
+        "givenVerb": "monter"
+      },
+      {
+        "id": "er-a1-transform-044",
+        "kind": "transform",
+        "prompt": "Tu poses la valise.",
+        "targetSubject": "Vous",
+        "responseLines": 2,
+        "answers": [
+          "Vous posez la valise."
+        ],
+        "explanation": "Avec « Vous », poser devient « posez ». Les autres informations sont conservées.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/er.json",
+          "typeId": "gram-ex-er-curriculum-t",
+          "position": 43,
+          "partition": "from-order-a1-044"
+        },
+        "givenVerb": "poser"
+      },
+      {
+        "id": "er-a1-transform-045",
+        "kind": "transform",
+        "prompt": "Nous déposons le colis.",
+        "targetSubject": "Je",
+        "responseLines": 2,
+        "answers": [
+          "Je dépose le colis."
+        ],
+        "explanation": "Avec « Je », déposer devient « dépose ». Les autres informations sont conservées.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/er.json",
+          "typeId": "gram-ex-er-curriculum-t",
+          "position": 44,
+          "partition": "from-order-a1-045"
+        },
+        "givenVerb": "déposer"
+      },
+      {
+        "id": "er-a1-transform-046",
+        "kind": "transform",
+        "prompt": "Elles révisent les verbes.",
+        "targetSubject": "Elle",
+        "responseLines": 2,
+        "answers": [
+          "Elle révise les verbes."
+        ],
+        "explanation": "Avec « Elle », réviser devient « révise ». Les autres informations sont conservées.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/er.json",
+          "typeId": "gram-ex-er-curriculum-t",
+          "position": 45,
+          "partition": "from-order-a1-046"
+        },
+        "givenVerb": "réviser"
+      },
+      {
+        "id": "er-a1-transform-047",
+        "kind": "transform",
+        "prompt": "Il utilise le dictionnaire.",
+        "targetSubject": "Ils",
+        "responseLines": 2,
+        "answers": [
+          "Ils utilisent le dictionnaire."
+        ],
+        "explanation": "Avec « Ils », utiliser devient « utilisent ». Les autres informations sont conservées.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/er.json",
+          "typeId": "gram-ex-er-curriculum-t",
+          "position": 46,
+          "partition": "from-order-a1-047"
+        },
+        "givenVerb": "utiliser"
+      },
+      {
+        "id": "er-a1-transform-048",
+        "kind": "transform",
+        "prompt": "Vous observez les oiseaux.",
+        "targetSubject": "Tu",
+        "responseLines": 2,
+        "answers": [
+          "Tu observes les oiseaux."
+        ],
+        "explanation": "Avec « Tu », observer devient « observes ». Les autres informations sont conservées.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/er.json",
+          "typeId": "gram-ex-er-curriculum-t",
+          "position": 47,
+          "partition": "from-order-a1-048"
+        },
+        "givenVerb": "observer"
+      },
+      {
+        "id": "er-a1-transform-049",
+        "kind": "transform",
+        "prompt": "Je discute du projet.",
+        "targetSubject": "Nous",
+        "responseLines": 2,
+        "answers": [
+          "Nous discutons du projet."
+        ],
+        "explanation": "Avec « Nous », discuter devient « discutons ». Les autres informations sont conservées.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/er.json",
+          "typeId": "gram-ex-er-curriculum-t",
+          "position": 48,
+          "partition": "from-order-a1-049"
+        },
+        "givenVerb": "discuter"
+      },
+      {
+        "id": "er-a1-transform-050",
+        "kind": "transform",
+        "prompt": "Elle organise une sortie.",
+        "targetSubject": "Elles",
+        "responseLines": 2,
+        "answers": [
+          "Elles organisent une sortie."
+        ],
+        "explanation": "Avec « Elles », organiser devient « organisent ». Les autres informations sont conservées.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/er.json",
+          "typeId": "gram-ex-er-curriculum-t",
+          "position": 49,
+          "partition": "from-order-a1-050"
+        },
+        "givenVerb": "organiser"
+      }
+    ]
+  }
+]
